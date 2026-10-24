@@ -1,10 +1,33 @@
 'use strict';
-const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),http=require('node:http');
 const core=require('../assets/dialogue-core.js'),{createDialogueStore}=require('../server/dialogue.cjs'),{createServer}=require('../server/server.cjs');
 function wav(frequency=220){const b=Buffer.alloc(44+32000);b.write('RIFF');b.writeUInt32LE(b.length-8,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(16000,24);b.writeUInt32LE(32000,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(32000,40);for(let i=0;i<16000;i++)b.writeInt16LE(Math.round(4000*Math.sin(2*Math.PI*frequency*i/16000)),44+i*2);return b;}
 const json=(v,status=200)=>new Response(JSON.stringify(v),{status,headers:{'Content-Type':'application/json'}});
 const sse=v=>new Response('data: '+JSON.stringify({choices:[{delta:{content:JSON.stringify(v)},finish_reason:'stop'}]})+'\n\ndata: [DONE]\n\n',{headers:{'Content-Type':'text/event-stream'}});
-async function fixture(t,fetchImpl){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ielts-dialogue-')),server=createServer({materialMigration:false,dataDir:path.join(dir,'user-data'),fetchImpl,budgetFilePath:path.join(dir,'budget.json')});await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(async()=>{await new Promise(r=>{server.close(r);server.closeAllConnections();});fs.rmSync(dir,{recursive:true,force:true});});return async(route,body,method)=>{const r=await fetch('http://127.0.0.1:'+server.address().port+route,{method:method||(body?'POST':'GET'),headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});return {status:r.status,data:await r.json()};};}
+function localJSON(port,route,body,method){
+ // Ephemeral test listeners can reuse a closed fixture's port. Each request
+ // gets its own TCP connection: a global fetch pool must not carry a socket
+ // across fixture shutdown. A transport failure is rejected, never retried.
+ return new Promise((resolve,reject)=>{
+  const payload=body?JSON.stringify(body):undefined,req=http.request({hostname:'127.0.0.1',port,path:route,method:method||(body?'POST':'GET'),agent:false,headers:{Connection:'close',...(payload?{'Content-Type':'application/json','Content-Length':Buffer.byteLength(payload)}:{})}},res=>{
+   const chunks=[];res.on('data',chunk=>chunks.push(chunk));res.once('error',reject);res.once('aborted',()=>reject(Error('Local dialogue response aborted: '+route)));
+   res.once('end',()=>{try{resolve({status:res.statusCode,data:JSON.parse(Buffer.concat(chunks).toString('utf8'))});}catch(error){reject(error);}});
+  });
+  req.once('error',error=>reject(Object.assign(Error('Local dialogue request failed: '+route+' ('+(error.code||'HTTP_ERROR')+')'),{cause:error})));req.end(payload);
+ });
+}
+async function fixture(t,fetchImpl){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ielts-dialogue-')),server=createServer({materialMigration:false,dataDir:path.join(dir,'user-data'),fetchImpl,budgetFilePath:path.join(dir,'budget.json')});await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(async()=>{await new Promise(r=>{server.close(r);server.closeAllConnections();});fs.rmSync(dir,{recursive:true,force:true});});const port=server.address().port;return(route,body,method)=>localJSON(port,route,body,method);}
+
+test('dialogue HTTP fixtures use fresh sockets when a listener port is immediately reused, without retrying requests',async()=>{
+ let port=0;
+ for(let generation=1;generation<=8;generation++){
+  const sockets=new Set();let requests=0;
+  const server=http.createServer((req,res)=>{requests++;assert.equal(req.headers.connection,'close');req.resume();req.once('end',()=>{res.setHeader('Content-Type','application/json');res.end(JSON.stringify({generation,request:requests}));});});server.on('connection',socket=>sockets.add(socket));
+  await new Promise(r=>server.listen(port,'127.0.0.1',r));port=server.address().port;
+  try{for(let request=1;request<=3;request++){const result=await localJSON(port,'/api/dialogue/start',{taskId:'intro'});assert.equal(result.status,200);assert.equal(result.data.generation,generation);assert.equal(result.data.request,request);}assert.equal(requests,3);assert.equal(sockets.size,3);}
+  finally{await new Promise(r=>{server.close(r);server.closeAllConnections();});}
+ }
+});
 test('unscripted task hints fade, actual latency is labelled and silence/reused audio cannot advance',()=>{
  const store=createDialogueStore(),s=store.start({taskId:'intro'});assert.equal(core.hintsFor(s.task,0).length,3);assert.equal(core.hintsFor(s.task,1).length,1);assert.equal(core.hintsFor(s.task,2).length,0);assert.equal(core.responseLatency('2026-01-01T00:00:00Z','2026-01-01T00:00:03Z'),3000);assert.equal(core.responseLatency('bad','bad'),null);
  const body={sessionId:s.id,sequence:0,mediaId:'work-12345678',audio:wav().toString('base64'),questionShownAt:'2026-01-01T00:00:00Z',recordingStartedAt:'2026-01-01T00:00:03Z'};
