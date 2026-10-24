@@ -1,0 +1,9 @@
+'use strict';
+// Development-only packager. The learner launcher uses the checked local archives.
+const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
+const version='22.23.4',source='https://nodejs.org/dist/v'+version+'/',dir=path.join(__dirname,'../runtime-packages');
+const hash=buffer=>crypto.createHash('sha256').update(buffer).digest('hex');
+async function main(){await fs.mkdir(dir,{recursive:true});const response=await fetch(source+'SHASUMS256.txt',{signal:AbortSignal.timeout(30000),redirect:'error'});if(!response.ok)throw Error('Official checksum download failed: '+response.status);const sums=await response.text();await fs.writeFile(path.join(dir,'SHASUMS256.txt'),sums);const packages=[];
+ for(const architecture of ['x64','arm64']){const file='node-v'+version+'-win-'+architecture+'.zip',line=sums.split(/\r?\n/).find(s=>s.trim().endsWith(' '+file));if(!line||!/^([a-f0-9]{64})\s+/.test(line))throw Error('Official checksum absent for '+file);const sha256=line.match(/^([a-f0-9]{64})/)[1],target=path.join(dir,file);let bytes;try{bytes=await fs.readFile(target);}catch{}if(!bytes||hash(bytes)!==sha256){const download=await fetch(source+file,{redirect:'error',signal:AbortSignal.timeout(300000)});if(!download.ok)throw Error('Official archive download failed: '+download.status);bytes=Buffer.from(await download.arrayBuffer());if(hash(bytes)!==sha256)throw Error('Archive SHA256 mismatch');await fs.writeFile(target+'.part',bytes);await fs.rename(target+'.part',target);}packages.push({architecture,file,sha256,size:bytes.length,folder:'node-v'+version+'-win-'+architecture,url:source+file});console.log(file+' verified, '+bytes.length+' bytes');}
+ await fs.writeFile(path.join(dir,'manifest.json'),JSON.stringify({schemaVersion:1,version,minimumMajor:22,source:source+'SHASUMS256.txt',packages},null,2)+'\n');}
+if(require.main===module)main().catch(e=>{console.error(e.message);process.exitCode=1;});

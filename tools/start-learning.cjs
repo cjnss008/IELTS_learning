@@ -1,6 +1,7 @@
 'use strict';
 const http = require('node:http');
 const path = require('node:path');
+const fs = require('node:fs');
 const { spawn } = require('node:child_process');
 const { DEFAULT_PORT, createServer, closeOnSignals } = require('../server/server.cjs');
 const HOST = '127.0.0.1', SERVICE = 'ielts-learning-local';
@@ -43,12 +44,31 @@ function probeService(port, options = {}) {
   });
 }
 
+function checkedLogPath(dataDir, file) {
+  const target=path.resolve(file),relative=path.relative(dataDir,target);
+  if(!relative||relative==='..'||relative.startsWith('..'+path.sep)||path.isAbsolute(relative))throw new LauncherError('LOG_PATH','启动日志必须保存在用户数据目录内。');
+  let current=dataDir;for(const part of [null,...relative.split(path.sep)]){if(part!==null)current=path.join(current,part);let stat;try{stat=fs.lstatSync(current);}catch(error){if(error.code==='ENOENT')break;throw error;}if(stat.isSymbolicLink()||current===target&&stat.nlink>1)throw new LauncherError('LOG_PATH','启动日志路径不能经过符号链接、目录联接或共享硬链接。');if(current!==target&&!stat.isDirectory())throw new LauncherError('LOG_PATH','启动日志父路径不是文件夹。');if(current===target&&!stat.isFile())throw new LauncherError('LOG_PATH','启动日志路径不是普通文件。');}
+  return target;
+}
+
 function startDetached(port, options = {}) {
   const spawnImpl = options.spawn || spawn;
-  const child = spawnImpl(options.execPath || process.execPath, [path.resolve(__filename), '--serve', '--port', String(parsePort(port))], {
-    cwd: path.resolve(__dirname, '..'), detached: true, windowsHide: true, stdio: 'ignore', env: options.env || process.env,
+  let logFd, logPath;
+  if (!options.spawn || options.logPath) {
+    const dataDir = path.resolve(options.env?.IELTS_DATA_DIR || process.env.IELTS_DATA_DIR || path.join(__dirname, '..', '用户数据'));
+    logPath = checkedLogPath(dataDir, options.logPath || path.join(dataDir, 'logs', 'startup-' + parsePort(port) + '.log'));
+    fs.mkdirSync(path.dirname(logPath), { recursive: true });
+    checkedLogPath(dataDir,logPath);
+    logFd = fs.openSync(logPath, fs.constants.O_WRONLY|fs.constants.O_CREAT|fs.constants.O_TRUNC|(fs.constants.O_NOFOLLOW||0),0o600);
+  }
+  let child;
+  try {
+  child = spawnImpl(options.execPath || process.execPath, [path.resolve(__filename), '--serve', '--port', String(parsePort(port))], {
+    cwd: path.resolve(__dirname, '..'), detached: true, windowsHide: true, stdio: logFd === undefined ? 'ignore' : ['ignore', logFd, logFd], env: options.env || process.env,
   });
+  } finally { if (logFd !== undefined) fs.closeSync(logFd); }
   const status = { exited: false, exitCode: null, error: null };
+  status.failure = () => { if (!logPath) return ''; try { return fs.readFileSync(logPath, 'utf8').slice(-4000).trim(); } catch { return ''; } };
   child.once('error', () => { status.error = 'SPAWN_FAILED'; status.exited = true; });
   child.once('exit', code => { status.exited = true; status.exitCode = code; });
   child.unref();
@@ -89,9 +109,9 @@ async function launch(options = {}) {
       if (status.state === 'occupied') throw occupiedError(port);
       // Check health first: a simultaneous double click may have started the
       // single owning service while this helper lost the listen race.
-      if (processStatus.exited) throw new LauncherError('START_FAILED', '本地学习服务启动进程已退出。请确认Node.js 22或更新版本已安装，且学习包目录可以访问。');
+      if (processStatus.exited) throw new LauncherError('START_FAILED', '本地学习服务启动进程已退出。请检查学习包和用户数据目录。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
     }
-    if (status.state !== 'ready') throw new LauncherError('START_TIMEOUT', '本地学习服务未能按时就绪。请检查学习包目录和Node.js安装后重试；首页尚未打开。');
+    if (status.state !== 'ready') throw new LauncherError('START_TIMEOUT', '本地学习服务未能按时就绪。请检查学习包和用户数据目录后重试；首页尚未打开。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
   }
   await open(url);
   return { ok: true, reused, url, version: status.version };
@@ -116,5 +136,5 @@ async function main(argv = process.argv.slice(2), options = {}) {
   return launch({ ...options, port });
 }
 
-if (require.main === module) main().then(result => { if (result?.url) console.log((result.reused ? '已复用正在运行的本项目服务，首页已打开：' : '本地服务已在后台启动，首页已打开：') + result.url); }).catch(error => { console.error(error instanceof LauncherError ? error.message : '启动失败，请检查Node.js安装和学习包目录。'); process.exitCode = 1; });
+if (require.main === module) main().then(result => { if (result?.url) console.log((result.reused ? '已复用正在运行的本项目服务，首页已打开：' : '本地服务已在后台启动，首页已打开：') + result.url); }).catch(error => { console.error('[' + (error.code || 'START_FAILED') + '] ' + String(error.message || '启动失败，请检查学习包和用户数据目录。').replace(/sk-[a-zA-Z0-9_-]+/g, '[REDACTED]')); process.exitCode = 1; });
 module.exports = { SERVICE, HOST, LauncherError, parsePort, serviceURL, probeService, startDetached, openBrowser, launch, serve, main };

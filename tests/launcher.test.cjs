@@ -10,7 +10,9 @@ test('Windows double-click launcher uses ASCII commands with CRLF on every line'
     if (bytes[i] === 10) assert.equal(bytes[i - 1], 13, 'LF needs a preceding CR for CMD');
     if (bytes[i] === 13) assert.equal(bytes[i + 1], 10, 'CR needs a following LF');
   }
-  assert.match(bytes.toString('ascii'), /"%NODE_EXE%" "%~dp0tools\\start-learning\.cjs"\r\n/);
+  assert.match(bytes.toString('ascii'), /-File "%~dp0tools\\bootstrap-runtime\.ps1" -ProjectRoot "%~dp0\."\r\n/);
+  assert.match(bytes.toString('ascii'), /if errorlevel 1 goto failed\r\nexit \/b 0\r\n:failed/);
+  assert.match(bytes.toString('ascii'), /:failed[\s\S]+pause\r\nexit \/b 1/);
   assert.equal(bytes.at(-1), 10);
 });
 
