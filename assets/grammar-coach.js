@@ -414,6 +414,7 @@
         .forEach(function (item) { parts.append(node('dt', '', item[0]), node('dd', '', item[1])); });
       body.append(parts);
       point.exercises.forEach(function (exercise, exerciseIndex) {
+        const evidence = root.IELTSLearningBridge?.create({materialId:exercise.id,materialVersion:"1",title:point.title+" · "+exercise.prompt,skill:"grammar",taskId:"grammar",source:"lesson-grammar",unit:"题"});
         const form = node('form', 'grammar-coach-exercise');
         const fieldset = node('fieldset');
         fieldset.append(node('legend', '', '练习 ' + (exerciseIndex + 1) + ' · ' + exercise.prompt));
@@ -450,11 +451,13 @@
             return;
           }
           results.set(exercise.id, result.correct);
+          if(evidence)root.IELTSLearningBridge.report(evidence.submit({answer:selected.value,score:result.correct?1:0,feedback:result.explanation}),feedback);
           feedback.className = 'grammar-coach-feedback ' + (result.correct ? 'is-correct' : 'is-incorrect');
           feedback.textContent = (result.correct ? '答对了。' : '再看一遍句子。正确答案：' + result.answer + '。') + '解析：' + result.explanation;
           updateProgress();
         });
         listen(reveal, 'click', function () {
+          evidence?.expose();
           feedback.className = 'grammar-coach-feedback';
           feedback.textContent = '答案：' + exercise.answers.join(' / ') + '。解析：' + exercise.explanation + '（查看答案不计为作答。）';
         });

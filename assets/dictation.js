@@ -29,9 +29,10 @@
   function mount(host, lesson, groups) {
     const rows = sentences(groups); let index = 0, revealed = false, records = {}, blocked = false, request = 0;
     const preview = new URLSearchParams(location.search).get('preview') === '1';
-    const storage = preview ? sessionStorage : localStorage;
+    const storage = root.IELTSProfiles ? root.IELTSProfiles.storage() : preview ? sessionStorage : localStorage;
     const key = `ielts52-dictation${preview ? '-preview' : ''}-v1`;
-    let raw = null;
+    let raw = null; const evidenceAttempts = new Map();
+    function evidence(){const id=rows[index].id;if(!evidenceAttempts.has(id)&&root.IELTSLearningBridge)evidenceAttempts.set(id,root.IELTSLearningBridge.create({materialId:"dictation-"+lesson.day+"-"+id,materialVersion:"1",title:"第"+lesson.day+"篇第"+(index+1)+"句听写",skill:"listening",taskId:"listening",source:"dictation",unit:"题",assisted:revealed}));return evidenceAttempts.get(id);}
     try { raw = storage.getItem(key); records = raw ? JSON.parse(raw) : {}; if (!records || typeof records !== 'object' || Array.isArray(records)) throw Error(); }
     catch { blocked = true; }
     host.innerHTML = `<h2>逐句听写 · 听清再写</h2><p class="small">按现有词级时间点切分慢速音频。先盲听，再核对遗漏、拼写和多写的词；差异分仅用于本句练习。片段边界若不自然，可回到原段重听。</p><div class="toolbar"><button data-d="prev">上一句</button><span data-d="position"></span><button data-d="next">下一句</button><button data-d="weak">下一条错句</button></div><audio data-d="audio" preload="metadata" src="audio/Day${String(lesson.day).padStart(2, '0')}_slow.mp3"></audio><div class="toolbar"><button class="primary" data-d="play">播放本句</button><button data-d="stop">停止</button><label>播放速度 <select data-d="speed"><option value="1">原慢速</option><option value="0.85">更慢</option><option value="1.25">加快</option></select></label><button data-d="hint">显示首字母提示</button></div><p data-d="hintText" lang="en"></p><label>写下听到的句子<textarea data-d="answer" maxlength="4000" spellcheck="false" autocomplete="off"></textarea></label><div class="toolbar"><button data-d="check" class="primary">提交并核对</button><button data-d="reveal">查看原句</button><button data-d="retry">重新闭卷尝试</button></div><p data-d="result" role="status"></p><div data-d="diff" class="dictation-diff" lang="en"></div><p data-d="reference" lang="en" hidden></p><p class="small" data-d="save"></p>`;
@@ -51,7 +52,7 @@
       el('position').textContent = `第 ${index + 1} / ${rows.length} 句 · 段落 ${rows[index].paragraph}`;
       el('answer').value = typeof r?.answer === 'string' ? r.answer.slice(0, 4000) : '';
       el('prev').disabled = index === 0; el('next').disabled = index === rows.length - 1;
-      el('reference').hidden = true; el('reference').textContent = rows[index].text;
+      el('reference').hidden = true; el('reference').textContent = rows[index].text; evidence();
       el('hintText').textContent = ''; el('result').textContent = ''; el('diff').innerHTML = '';
       if (blocked) el('save').textContent = '已有记录无法读取，当前不会覆盖。请使用备份中心保存原始数据。';
     }
@@ -71,11 +72,11 @@
     el('weak').onclick = () => { const next = rows.map((_, k) => (index + k + 1) % rows.length).find(k => { const r = records[`${lesson.day}:${rows[k].id}`]; if (!r?.answer) return false; try { return compare(rows[k].text, r.answer).score < 90 || r.assisted; } catch { return true; } }); if (next === undefined) el('result').textContent = '没有已作答的错句。先完成听写；看过提示的句子也会安排重练。'; else { index = next; render(); } };
     el('answer').oninput = save;
     el('retry').onclick = () => { stop(); revealed = false; el('answer').value = ''; el('reference').hidden = true; el('hintText').textContent = ''; el('diff').innerHTML = ''; el('result').textContent = '新的闭卷尝试已开始。建议间隔一天后再独立听写，不回看原句。'; save(); };
-    el('hint').onclick = () => { revealed = true; el('hintText').textContent = normalize(rows[index].text).map(w => w[0] + '_'.repeat(Math.min(12, w.length - 1))).join(' '); save(); };
-    el('reveal').onclick = () => { revealed = true; el('reference').hidden = false; save(); };
+    el('hint').onclick = () => { evidence()?.expose(); revealed = true; el('hintText').textContent = normalize(rows[index].text).map(w => w[0] + '_'.repeat(Math.min(12, w.length - 1))).join(' '); save(); };
+    el('reveal').onclick = () => { evidence()?.expose(); revealed = true; el('reference').hidden = false; save(); };
     el('check').onclick = () => {
       if (!el('answer').value.trim()) { el('result').textContent = '请先独立写下答案。'; return; }
-      try { const result = compare(rows[index].text, el('answer').value); el('result').textContent = `本句文字准确率 ${result.score}% · ${result.errors} 处词级差异${revealed ? ' · 使用过提示，请隔天闭卷重试' : ''}。忽略大小写和标点，不换算雅思听力分。`; el('diff').innerHTML = result.diff.map(d => `<span class="diff-${d.type}">${d.type === 'correct' ? esc(d.actual) : d.type === 'missing' ? '漏：' + esc(d.expected) : d.type === 'extra' ? '多：' + esc(d.actual) : esc(d.actual) + ' → ' + esc(d.expected)}</span>`).join(' '); save(true); revealed = true; } catch (e) { el('result').textContent = e.message; }
+      try { const result = compare(rows[index].text, el('answer').value); const attempt=evidence(); if(attempt)root.IELTSLearningBridge.report(attempt.submit({answer:el('answer').value,score:result.score,maxScore:100,assisted:revealed,feedback:result.errors+'处词级差异；文字匹配练习，不换算Band。'}),el('result')); el('result').textContent = `本句文字准确率 ${result.score}% · ${result.errors} 处词级差异${revealed ? ' · 使用过提示，请隔天闭卷重试' : ''}。忽略大小写和标点，不换算雅思听力分。`; el('diff').innerHTML = result.diff.map(d => `<span class="diff-${d.type}">${d.type === 'correct' ? esc(d.actual) : d.type === 'missing' ? '漏：' + esc(d.expected) : d.type === 'extra' ? '多：' + esc(d.actual) : esc(d.actual) + ' → ' + esc(d.expected)}</span>`).join(' '); save(true); revealed = true; } catch (e) { el('result').textContent = e.message; }
     };
     render(); return stop;
   }

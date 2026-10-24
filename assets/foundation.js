@@ -211,7 +211,7 @@
     let voice = null, speech = null;
     function status(message, warning) { $('foundationStorage').textContent = message; $('foundationStorage').className = 'foundation-storage' + (warning ? ' is-warning' : ''); }
     try {
-      storage = preview ? root.sessionStorage : root.localStorage;
+      storage = root.IELTSProfiles ? root.IELTSProfiles.storage() : preview ? root.sessionStorage : root.localStorage;
       raw = storage.getItem(key);
       if (raw !== null) state = parseState(raw);
     } catch (_) { blocked = true; status('无法读取已有记录，原记录未覆盖。可以继续练习，但本页的新答案仅临时保留；请通过数据备份检查后再刷新。', true); }
@@ -282,6 +282,7 @@
       const quiz = node('section', 'foundation-section foundation-quiz'); quiz.append(node('h3', '', '8 道基础自检：先选，再核对'));
       const quizStatus = node('p', 'foundation-quiz-status'); quizStatus.id = 'foundationQuizStatus'; quizStatus.setAttribute('role', 'status'); quiz.append(quizStatus);
       unit.questions.forEach(function (item, index) {
+        const evidence = root.IELTSLearningBridge?.create({materialId: "foundation-"+item.id,materialVersion:"1",title:unit.title+" · "+item.prompt,skill:"grammar",taskId:"grammar",source:"foundation",unit:"题",assisted:Object.hasOwn(state.answers,item.id)});
         const form = node('form'); const fieldset = node('fieldset'); fieldset.append(node('legend', '', (index + 1) + '. ' + item.prompt));
         const radios = [];
         item.options.forEach(function (option, optionIndex) {
@@ -298,8 +299,9 @@
           event.preventDefault(); const selected = radios.find(function (radio) { return radio.checked; });
           if (!selected) { feedback.textContent = '先选择一个答案。'; return; }
           const candidate = parseState(state); candidate.answers[item.id] = selected.value; save(candidate); show(selected.value); updateProgress();
+          if(evidence)root.IELTSLearningBridge.report(evidence.submit({answer:selected.value,score:grade(item,selected.value)?1:0,feedback:item.explanation}),feedback);
         });
-        reveal.addEventListener('click', function () { feedback.className = 'foundation-feedback'; feedback.textContent = '答案：' + item.answer + '。解析：' + item.explanation + '（仅查看，不记录作答。）'; });
+        reveal.addEventListener('click', function () { evidence?.expose(); feedback.className = 'foundation-feedback'; feedback.textContent = '答案：' + item.answer + '。解析：' + item.explanation + '（仅查看，不记录作答。）'; });
         radios.forEach(function (radio) { radio.addEventListener('change', function () { feedback.className = 'foundation-feedback'; feedback.textContent = '选择已更改，尚未核对。统计保留上次主动核对的答案。'; }); });
         form.append(fieldset, controls, feedback); quiz.append(form);
       });
