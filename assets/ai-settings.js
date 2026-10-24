@@ -1,8 +1,7 @@
 (function () {
   'use strict';
 
-  const LOCAL_ORIGIN = 'http://127.0.0.1:8765';
-  const allowedOrigin = window.location.origin === LOCAL_ORIGIN;
+  const allowedOrigin = window.location.protocol === 'http:' && ['127.0.0.1', 'localhost', '[::1]'].includes(window.location.hostname);
   const byId = function (id) { return document.getElementById(id); };
   const elements = {
     root: byId('aiSettings'),

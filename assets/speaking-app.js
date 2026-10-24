@@ -1,6 +1,7 @@
 'use strict';
 (() => {
   const $ = id => document.getElementById(id);
+  const { limitsFor, validDuration, formatTime, encodeWav } = globalThis.IELTSSpeakingAudio;
   const lessons = Array.isArray(globalThis.IELTSCourse?.lessons) ? globalThis.IELTSCourse.lessons : [];
   const localService = location.protocol === 'http:' && ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname);
   const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -8,7 +9,7 @@
   const canRecord = Boolean(window.isSecureContext && navigator.mediaDevices?.getUserMedia && window.MediaRecorder && AudioContextClass && OfflineContextClass);
   const freePrompts = {
     part1: '1. What do you enjoy about the place where you live?\n2. How do you usually organise your study time?\n3. Do you prefer learning alone or with other people? Why?\n\n每次选一道题，用直接回答 + 一个细节练习。',
-    part2: 'Describe a skill you would like to learn.\nYou should say:\n• what the skill is\n• why you want to learn it\n• how you would practise it\nand explain how it could change your daily life.\n\n先准备 1 分钟，再分段录制。完整考试练习应另做连续 1–2 分钟陈述。',
+    part2: 'Describe a skill you would like to learn.\nYou should say:\n• what the skill is\n• why you want to learn it\n• how you would practise it\nand explain how it could change your daily life.\n\n先准备 1 分钟，再连续陈述 1–2 分钟。本页支持最长 3 分钟录音，无需拆段。',
     part3: '1. Why do some adults find it difficult to continue learning?\n2. How can communities make learning more accessible?\n3. Should employers give workers time to learn new skills?\n\n每次选一道，用观点 + 理由 + 例子展开，不背整段答案。',
   };
   let sentences = [];
@@ -16,10 +17,12 @@
   let stream = null;
   let recorder = null;
   let recordStarted = 0;
+  let activeRecordLimit = 25;
   let recordTimer = null;
   let displayTimer = null;
   let generation = 0;
   let audioContext = null;
+  let cancelProbe = null;
   let audioUrl = '';
   let wavBytes = null;
   let referenceAtRecording = '';
@@ -37,13 +40,23 @@
   }
   function controls() {
     const locked = phase !== 'idle' || serviceBusy;
-    ['speakingMode', 'speakingLesson', 'speakingSentence', 'referenceText', 'speakingPart', 'audioImport'].forEach(id => { $(id).disabled = locked; });
-    $('recordStart').disabled = locked || !canRecord;
+    const reading = $('speakingMode').value === 'reading';
+    const invalidReference = reading && !referenceValid();
+    ['speakingLesson', 'speakingSentence', 'referenceText', 'speakingPart', 'audioImport'].forEach(id => { $(id).disabled = locked; });
+    $('speakingMode').disabled = serviceBusy;
+    $('recordStart').disabled = locked || !canRecord || invalidReference;
+    $('audioImport').disabled = locked || invalidReference;
+    $('referenceInvalid').hidden = !invalidReference;
+    $('referenceText').setAttribute('aria-invalid', String(invalidReference));
     $('recordStop').disabled = !['requesting', 'recording'].includes(phase);
     ['speechEndpoint', 'speechKey', 'saveSpeechConfig', 'refreshSpeech', 'disconnectSpeech'].forEach(id => { $(id).disabled = serviceBusy || !localService; });
     $('assessSpeech').disabled = locked || !localService || !speechConfig?.configured || !wavBytes || $('speakingMode').value !== 'reading' || !referenceValid();
     $('cancelSpeech').hidden = !requestController;
     $('recordDot').dataset.recording = String(phase === 'recording');
+    $('recordHelp').textContent = reading ? '建议每段 10–25 秒；25 秒自动停止并关闭麦克风。也可导入不超过 30 秒的本地音频。' :
+      '自由口语可连续录音或导入最长 3 分钟音频；03:00 自动停止并关闭麦克风。Part 2 建议连续陈述 1–2 分钟。';
+    $('assessSpeech').textContent = reading ? '发送录音进行发音评测' : '自由口语不发送发音评测';
+    $('speechEmpty').textContent = reading ? '录一段短句，先回听，再决定是否评测。' : '自由口语仅在本机录音、回听和下载，不会调用发音评测接口。';
   }
   function clearResult() { $('speechResults').hidden = true; $('speechEmpty').hidden = false; $('speechWords').replaceChildren(); $('speechScores').replaceChildren(); }
   function clearAudio() {
@@ -56,8 +69,17 @@
   function stopTracks() { stream?.getTracks().forEach(track => track.stop()); stream = null; }
   function stopTimers() { clearTimeout(recordTimer); clearInterval(displayTimer); recordTimer = null; displayTimer = null; }
   function clock() {
-    const seconds = Math.min(25, Math.floor((Date.now() - recordStarted) / 1000));
-    $('recordClock').textContent = '00:' + String(seconds).padStart(2, '0');
+    const seconds = Math.min(activeRecordLimit, (Date.now() - recordStarted) / 1000);
+    $('recordClock').textContent = formatTime(seconds);
+  }
+  function cancelCapture() {
+    generation++;
+    const previousRecorder = recorder; recorder = null;
+    stopTimers(); stopTracks();
+    if (previousRecorder && previousRecorder.state !== 'inactive') previousRecorder.stop();
+    cancelProbe?.(); cancelProbe = null;
+    audioContext?.close().catch(() => {}); audioContext = null;
+    phase = 'idle'; $('recordStatus').textContent = '准备录音'; $('recordClock').textContent = '00:00';
   }
   function splitSentences(text) {
     if (typeof Intl.Segmenter === 'function') return [...new Intl.Segmenter('en', { granularity: 'sentence' }).segment(text)].map(item => item.segment.trim()).filter(Boolean);
@@ -76,41 +98,35 @@
     clearAudio();
   }
   function changeMode() {
+    cancelCapture(); requestController?.abort('mode');
     const reading = $('speakingMode').value === 'reading';
     $('readingControls').hidden = !reading; $('freeControls').hidden = reading;
     $('freePrompt').textContent = freePrompts[$('speakingPart').value];
     clearAudio();
     note('recordMessage', reading ? '先读清参考句，再开始录音。' : '自由回答只在本机录音回听，不进行发音评测。');
   }
-  function wavBuffer(samples) {
-    const buffer = new ArrayBuffer(44 + samples.length * 2), view = new DataView(buffer);
-    function chars(at, text) { for (let i = 0; i < text.length; i++) view.setUint8(at + i, text.charCodeAt(i)); }
-    chars(0, 'RIFF'); view.setUint32(4, buffer.byteLength - 8, true); chars(8, 'WAVE'); chars(12, 'fmt ');
-    view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
-    view.setUint32(24, 16000, true); view.setUint32(28, 32000, true); view.setUint16(32, 2, true); view.setUint16(34, 16, true);
-    chars(36, 'data'); view.setUint32(40, samples.length * 2, true);
-    for (let i = 0; i < samples.length; i++) { const value = Math.max(-1, Math.min(1, samples[i])); view.setInt16(44 + i * 2, value < 0 ? value * 32768 : value * 32767, true); }
-    return new Uint8Array(buffer);
-  }
-  async function prepareAudio(blob, expectedGeneration, selectedReference, selectedMode) {
+  async function prepareAudio(blob, expectedGeneration, selectedReference, selectedMode, recorded = false) {
     if (!AudioContextClass || !OfflineContextClass) throw new Error('此浏览器不支持音频格式转换，请换用近期 Chrome 或 Edge。');
-    audioContext = new AudioContextClass();
+    const decodeContext = new AudioContextClass(); audioContext = decodeContext;
     let decoded;
-    try { decoded = await audioContext.decodeAudioData(await blob.arrayBuffer()); }
-    finally { await audioContext?.close().catch(() => {}); audioContext = null; }
-    if (!Number.isFinite(decoded.duration) || decoded.duration < 0.1 || decoded.duration > 30) throw new Error('请选择 0.1–30 秒的短音频；建议每次练习 10–25 秒。');
-    const frames = Math.floor(decoded.duration * 16000);
+    try { decoded = await decodeContext.decodeAudioData(await blob.arrayBuffer()); }
+    finally { await decodeContext.close().catch(() => {}); if (audioContext === decodeContext) audioContext = null; }
+    if (disposed || generation !== expectedGeneration) return;
+    // Timer callbacks can run slightly late. Trim recordings at their mode limit; imports remain strict.
+    const duration = recorded && Number.isFinite(decoded.duration) ? Math.min(decoded.duration, limitsFor(selectedMode).recordSeconds) : decoded.duration;
+    if (!validDuration(duration, selectedMode)) throw new Error('当前模式仅支持 0.1–' + limitsFor(selectedMode).importSeconds + ' 秒音频。');
+    const frames = Math.floor(duration * 16000);
     const offline = new OfflineContextClass(1, frames, 16000);
     const source = offline.createBufferSource(); source.buffer = decoded; source.connect(offline.destination); source.start();
     const rendered = await offline.startRendering();
     if (disposed || generation !== expectedGeneration) return;
-    wavBytes = wavBuffer(rendered.getChannelData(0));
+    wavBytes = encodeWav(rendered.getChannelData(0));
     referenceAtRecording = selectedReference; modeAtRecording = selectedMode;
     audioUrl = URL.createObjectURL(new Blob([wavBytes], { type: 'audio/wav' }));
     $('recordPlayback').src = audioUrl;
     $('audioDownload').href = audioUrl;
     $('audioDownload').download = 'IELTS口语练习-' + new Date().toISOString().replace(/[:.]/g, '-') + '.wav';
-    $('audioInfo').textContent = decoded.duration.toFixed(1) + ' 秒 · 16 kHz · 单声道 PCM WAV';
+    $('audioInfo').textContent = formatTime(duration) + '（' + duration.toFixed(1) + ' 秒）· 16 kHz · 单声道 PCM WAV';
     $('playbackSection').hidden = false;
     $('recordStatus').textContent = '录音已就绪';
     note('recordMessage', '音频已在本地准备好。先回听；需要保留时请主动下载。');
@@ -131,21 +147,22 @@
       recorder = currentRecorder;
       const chunks = [];
       currentRecorder.ondataavailable = event => { if (event.data?.size) chunks.push(event.data); };
-      currentRecorder.onerror = () => { note('recordMessage', '录音失败，请检查麦克风或换用近期 Chrome / Edge。', 'error'); stopRecording(); };
+      currentRecorder.onerror = () => { if (generation !== thisGeneration || disposed) return; note('recordMessage', '录音失败，请检查麦克风或换用近期 Chrome / Edge。', 'error'); stopRecording(); };
       currentRecorder.onstop = async () => {
-        stopTimers(); stopTracks(); recorder = null;
         if (generation !== thisGeneration || disposed) return;
+        stopTimers(); stopTracks(); recorder = null;
         phase = 'processing'; $('recordStatus').textContent = '正在整理本地音频'; controls();
-        try { await prepareAudio(new Blob(chunks, { type: currentRecorder.mimeType }), thisGeneration, selectedReference, selectedMode); }
-        catch (error) { note('recordMessage', error.message || '无法处理这段录音，请重新录制。', 'error'); $('recordStatus').textContent = '请重新录音'; }
+        try { await prepareAudio(new Blob(chunks, { type: currentRecorder.mimeType }), thisGeneration, selectedReference, selectedMode, true); }
+        catch (error) { if (generation !== thisGeneration || disposed) return; note('recordMessage', error.message || '无法处理这段录音，请重新录制。', 'error'); $('recordStatus').textContent = '请重新录音'; }
         finally { if (generation === thisGeneration) { phase = 'idle'; controls(); } }
       };
       currentRecorder.start(1000); recordStarted = Date.now(); phase = 'recording';
-      $('recordStatus').textContent = '正在录音'; note('recordMessage', '麦克风已开启，25 秒后自动停止。录音尚未发送。');
-      displayTimer = setInterval(clock, 250); recordTimer = setTimeout(stopRecording, 25000); controls();
+      activeRecordLimit = limitsFor(selectedMode).recordSeconds;
+      $('recordStatus').textContent = '正在录音'; note('recordMessage', '麦克风已开启，' + formatTime(activeRecordLimit) + ' 时自动停止。录音尚未发送。');
+      displayTimer = setInterval(clock, 250); recordTimer = setTimeout(stopRecording, activeRecordLimit * 1000); controls();
     } catch (error) {
-      stopTimers(); stopTracks(); recorder = null;
       if (generation !== thisGeneration || disposed) return;
+      stopTimers(); stopTracks(); recorder = null;
       phase = 'idle'; $('recordStatus').textContent = '未能开始录音';
       note('recordMessage', error.name === 'NotAllowedError' ? '麦克风权限未获允许。请在浏览器站点权限中允许麦克风，或导入本地短音频。' : '无法使用麦克风。请检查设备、浏览器权限，或导入本地音频。', 'error');
       controls();
@@ -157,12 +174,13 @@
       clock(); phase = 'processing'; recorder.stop(); stopTimers(); stopTracks(); controls();
     }
   }
-  async function fileDuration(file) {
+  async function fileDuration(file, selectedMode) {
     return new Promise((resolve, reject) => {
       const probe = document.createElement('audio'), url = URL.createObjectURL(file);
       const timer = setTimeout(() => done(new Error('无法确认音频时长，请导入短 WAV 或 MP3 文件。')), 7000);
-      function done(error) { clearTimeout(timer); probe.onloadedmetadata = null; probe.onerror = null; probe.removeAttribute('src'); probe.load(); URL.revokeObjectURL(url); error ? reject(error) : resolve(); }
-      probe.onloadedmetadata = () => done(!Number.isFinite(probe.duration) || probe.duration <= 0 || probe.duration > 30 ? new Error('导入音频需不超过 30 秒；无法确认时长时请先转换为短 WAV 文件。') : null);
+      const cancel = () => done(new Error('音频导入已取消。')); cancelProbe = cancel;
+      function done(error) { clearTimeout(timer); if (cancelProbe === cancel) cancelProbe = null; probe.onloadedmetadata = null; probe.onerror = null; probe.removeAttribute('src'); probe.load(); URL.revokeObjectURL(url); error ? reject(error) : resolve(); }
+      probe.onloadedmetadata = () => done(!validDuration(probe.duration, selectedMode) ? new Error('当前模式导入音频需不超过 ' + limitsFor(selectedMode).importSeconds + ' 秒；无法确认时长时请先转换为 WAV 文件。') : null);
       probe.onerror = () => done(new Error('浏览器无法读取这份音频，请使用 WAV 或 MP3 格式。'));
       probe.preload = 'metadata'; probe.src = url;
     });
@@ -170,12 +188,12 @@
   async function importAudio(event) {
     const file = event.target.files?.[0]; event.target.value = '';
     if (!file || phase !== 'idle' || serviceBusy) return;
-    if (file.size > 20 * 1024 * 1024) { note('recordMessage', '文件过大，请选择不超过 20 MB、30 秒的短音频。', 'error'); return; }
+    if (file.size > 20 * 1024 * 1024) { note('recordMessage', '文件过大，请选择不超过 20 MB、' + limitsFor($('speakingMode').value).importSeconds + ' 秒的音频。', 'error'); return; }
     if ($('speakingMode').value === 'reading' && !referenceValid()) { note('recordMessage', '请先填写准确的短句参考文本。', 'error'); return; }
     const thisGeneration = ++generation, selectedReference = $('referenceText').value.trim(), selectedMode = $('speakingMode').value;
     clearAudio(); phase = 'processing'; $('recordStatus').textContent = '正在读取本地音频'; controls();
-    try { await fileDuration(file); await prepareAudio(file, thisGeneration, selectedReference, selectedMode); }
-    catch (error) { note('recordMessage', error.message || '无法处理此音频，请使用短 WAV 文件。', 'error'); $('recordStatus').textContent = '请重新选择音频'; }
+    try { await fileDuration(file, selectedMode); if (generation !== thisGeneration || disposed) return; await prepareAudio(file, thisGeneration, selectedReference, selectedMode); }
+    catch (error) { if (generation !== thisGeneration || disposed) return; note('recordMessage', error.message || '无法处理此音频，请使用 WAV 文件。', 'error'); $('recordStatus').textContent = '请重新选择音频'; }
     finally { if (generation === thisGeneration) { phase = 'idle'; controls(); } }
   }
   async function speechRequest(path, body, method = body ? 'POST' : 'GET', signal) {
@@ -272,8 +290,8 @@
   });
   $('assessSpeech').addEventListener('click', assess); $('cancelSpeech').addEventListener('click', () => requestController?.abort('user'));
   window.addEventListener('pagehide', () => {
-    disposed = true; generation++; stopTimers(); if (recorder?.state !== 'inactive') recorder?.stop(); stopTracks();
-    requestController?.abort('leave'); audioContext?.close().catch(() => {}); clearAudio(); $('speechKey').value = '';
+    disposed = true; cancelCapture();
+    requestController?.abort('leave'); clearAudio(); $('speechKey').value = '';
   });
   window.addEventListener('pageshow', event => {
     if (!event.persisted) return;
