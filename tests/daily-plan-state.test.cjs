@@ -44,7 +44,7 @@ test('导入拒绝schema、日期、日键、未知字段、错误数组与稀�
   for (const value of ['', '{', 'null', '[]', { ...base, schemaVersion: 2 }, { ...base, startDate: '2026-02-29' }, { ...base, complete: true }, { ...base, days: [] }, { ...base, assessments: {} }, { ...base, boosts: [] }]) {
     assert.throws(() => stateApi.parseState(value));
   }
-  for (const key of ['0', '01', '365', '-1', '1.5', 'week1']) {
+  for (const key of ['0', '01', '366', '-1', '1.5', 'week1']) {
     assert.throws(() => stateApi.parseState({ ...base, days: { [key]: { tasks: {} } } }));
   }
   const sparse = new Array(1);

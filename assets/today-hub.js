@@ -26,7 +26,7 @@ function latestForMaterial(task,records,dayNumber,materials=[],data){
 function taskState(task,records,options={}){
  const required=[...new Set(task.materialIds||[])],latest=latestForMaterial(task,records,options.dayNumber,options.materials||options.data?.materials||root.IELTSCurriculumData?.materials||[],options.data);
  if(task.id==='reflection'){
-  const done=options.completionValid===true;return{done,pending:false,count:done?1:0,total:1,missingMaterialIds:done?[]:required,nextMaterialId:required[0]||null};
+  const annual=options.dayNumber===365&&(Array.isArray(records)?records:[]).some(r=>r.source==='year-review'&&r.materialId==='reflection-365'&&artifact(r.answer)?.yearSummary?.text?.trim().length>=20);const done=annual||options.completionValid===true;return{done,pending:false,count:done?1:0,total:1,missingMaterialIds:done?[]:required,nextMaterialId:required[0]||null};
  }
  const plan=root.IELTSPlanState||(typeof require==='function'?require('./daily-plan-state.js'):null);
  const missingMaterialIds=required.filter(id=>!latest.has(id)),pendingIds=required.filter(id=>{const record=latest.get(id);if(!record)return false;let corrected=false;try{corrected=options.recordCorrectionStatus?.(record)?.corrected===true;}catch(_){}if(corrected)return false;if(['writing','speaking'].includes(task.id)){try{return !plan?.validLinkedReview?.(record);}catch(_){return true;}}return record.evaluation?.result==='pending';});
@@ -50,9 +50,10 @@ function mount(){
   const box=$('todayAdaptiveContent');if(!box)return;box.replaceChildren();
   const adaptive=root.IELTSAdaptivePlan;if(!adaptive?.planRemaining){box.append(node('p','提交真实练习后，再根据核对结果安排同级补强；时间仅供安排。'));return;}
   if(day.adaptation){box.append(node('h3','本日学习策略'),node('p',day.adaptation.reason));const strategies=(day.adaptation.strategies||[]).filter(strategy=>typeof strategy.action==='string');for(const strategy of strategies.slice(0,2))box.append(node('p',(NAMES[strategy.skill]||strategy.skill)+'：'+strategy.action));if(strategies.length>2){const details=node('details'),title=node('summary','查看其余学习策略');details.append(title);for(const strategy of strategies.slice(2))details.append(node('p',(NAMES[strategy.skill]||strategy.skill)+'：'+strategy.action));box.append(details);}}
-  let plan;try{plan=adaptive.planRemaining(day,own,undefined,{data,budgetMinutes:360,exposures:navigation.exposures?.()||{},startedMaterialIds:drafts().map(draft=>draft.materialId)});}catch(error){box.append(node('p','个性化建议暂未更新：'+error.message+'。已有任务与草稿保留。'));return;}
+  let plan;try{plan=adaptive.planRemaining(day,dailyRecords,undefined,{data,budgetMinutes:360,calendarBudget:navigation.budget?.(),exposures:navigation.exposures?.()||{},startedMaterialIds:drafts().map(draft=>draft.materialId)});}catch(error){box.append(node('p','个性化建议暂未更新：'+error.message+'。已有任务与草稿保留。'));return;}
   const amount=value=>Number.isFinite(value)?Math.max(0,value).toFixed(1).replace(/\.0$/,''):'0';
   box.append(node('p','剩余可用预算 '+amount(plan.remainingBudget)+' 分钟；为核心任务保留约 '+amount(plan.reservedCoreMinutes)+' 分钟。均为参考预算，可按掌握速度提前进入下一步。'));
+  if(plan.reservedMemoryMinutes>0){box.append(node('p','另为已学词独立到期回忆保留参考 '+amount(plan.reservedMemoryMinutes)+' 分钟，计入同一360分钟预算；它不替代新词三写三读。'));const a=node('a','打开到期词汇记忆');a.href='词汇记忆.html'+(root.IELTSProfiles?.isPreview?.()?'?preview=1':'');box.append(a);}
   const coreIds=new Set(day.tasks.flatMap(task=>task.coreMaterialIds||task.materialIds||[]));
   const retained=(Array.isArray(plan.retained)?plan.retained:[]).filter(entry=>!coreIds.has(entry.materialId)).slice(0,1);
   const entries=(Array.isArray(plan.tasks)?plan.tasks:[]).filter(entry=>!(entry.kind==='verification'&&coreIds.has(entry.materialId))).slice(0,Math.max(0,2-retained.length));
@@ -63,7 +64,7 @@ function mount(){
   for(const entry of retained){const material=data.materials?.find(item=>item.id===entry.materialId),card=node('article',undefined,'course-record-row');card.append(node('strong',material?.title||'未提交练习'),node('p','继续已有草稿，原始输入和曝光记录保留。'));const go=node('button','继续这份草稿');go.type='button';go.addEventListener('click',async()=>{try{await navigation.resumeNext(entry.skill,entry.materialId);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}});card.append(go);box.append(card);}
   if(entries.length)box.append(node('h3','剩余预算内的适级练习'));
   for(const entry of entries){const material=data.materials?.find(item=>item.id===entry.materialId);if(!material)continue;const card=node('article',undefined,'course-record-row');card.append(node('strong',material.title),node('p',entry.reason||plan.reason),node('p',entry.kind==='verification'?'参考首轮检查 '+amount(entry.estimatedMinutes)+' 分钟；打开原完整材料，须按完整任务实际作答后核对，估时以实际练习为准。':(NAMES[entry.skill]||entry.skill)+' · 参考估时 '+amount(entry.estimatedMinutes)+' 分钟；完成后按真实作答核对，不靠用时升级。'));
-   const open=node('button',entry.kind==='verification'?'先验证／补练（打开原任务）':entry.kind==='reinforcement'?'开始同级补强':'开始同级新练习');open.type='button';open.addEventListener('click',async()=>{if(openingExtra)return;openingExtra=true;open.disabled=true;try{if(typeof navigation.openExtra!=='function')throw Error('追加练习组件尚未就绪，请刷新后继续。');await navigation.openExtra({...entry});$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{openingExtra=false;open.disabled=false;}});card.append(open);box.append(card);
+   const open=node('button',entry.kind==='verification'?'先验证／补练（打开原任务）':entry.kind==='reinforcement'?'开始同级补强':entry.kind==='progression'?'按先修继续下一周':'开始同级新练习');open.type='button';open.addEventListener('click',async()=>{if(openingExtra)return;openingExtra=true;open.disabled=true;try{if(typeof navigation.openExtra!=='function')throw Error('追加练习组件尚未就绪，请刷新后继续。');await navigation.openExtra({...entry});$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{openingExtra=false;open.disabled=false;}});card.append(open);box.append(card);
   }
   if(!entries.length)box.append(node('p',quietFirstDay?'先从上方主按钮继续，完成真实练习核对后再安排同级新材料。':plan.reason||'先完成核心任务与错题核对，再按剩余预算安排新练习。'));
  }
@@ -71,10 +72,10 @@ function mount(){
   const base=data.days.find(item=>item.day===current.day);if(!base)return;const day=planDay(base);
   const mistakes=summary(),own=dailyRecords.filter(record=>record?.dayNumber===current.day);
   states=day.tasks.map(task=>({task,...taskState(task,own,{data,dayNumber:current.day,completionValid:mistakes.completionValid,materials:data.materials,recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record)})}));next=chooseNext(states);allDone=states.length>0&&states.every(state=>state.done);
-  $('todayEyebrow').textContent='第 '+day.week+' 周 · 第 '+day.day+' / 364 天';$('todayTitle').textContent='今天，学习'+day.title+'。';
+  $('todayEyebrow').textContent='第 '+day.week+' 周 · 第 '+day.day+' / 365 天';$('todayTitle').textContent='今天，学习'+day.title+'。';
   $('todayGoal').textContent=day.tasks.length===7&&day.day<=7?'从认识声音和简单句开始。按照下面 7 步学习，不需要先读长篇文章。':'按今天的材料，完成听说读写训练；最后把当天错题全部重做。';
   $('todayDone').textContent=states.filter(state=>state.done).length+' / '+states.length;
-  $('todayMinutes').textContent=own.reduce((sum,record)=>sum+(Number.isFinite(record.minutes)&&record.minutes>0?record.minutes:0),0).toFixed(1)+' / 360 分钟';$('todayMistakes').textContent=(Number.isFinite(mistakes.remaining)?mistakes.remaining:0)+' 道';
+  $('todayMinutes').textContent=(navigation.budget?.()?.spentMinutes??own.reduce((sum,record)=>sum+(Number.isFinite(record.minutes)&&record.minutes>0?record.minutes:0),0)).toFixed(1)+' / 360 分钟';$('todayMistakes').textContent=(Number.isFinite(mistakes.remaining)?mistakes.remaining:0)+' 道';
   const waiting=next?.pending&&!next.missingMaterialIds.length,continued=next&&hasDraft(next.task.id,next.nextMaterialId,drafts(),current);
   $('todayStart').textContent=allDone?'查看今日复盘':waiting?'查看待评作品':next?.legacyTraining&&!continued?'开始新版词汇训练':continued?'继续未提交草稿：'+NAMES[next.task.id]:'继续第 '+(states.indexOf(next)+1)+' 步：'+NAMES[next?.task.id];
   $('todayNext').textContent=waiting?'本任务所需材料已提交，最新作品等待评阅；不会重复创建原稿。':continued?'继续已有输入，不会重新创建一次练习。':next?'参考预算 '+next.task.minutes+' 分钟，可按掌握速度提前进入下一步。':'';
@@ -93,10 +94,11 @@ function mount(){
   try{ensureStart();if(allDone)navigation.showTask(next.task.id,next.nextMaterialId);else if(next.pending&&!next.missingMaterialIds.length)await navigation.showLatestRecord?.(next.task.id,next.nextMaterialId);else{if(typeof navigation.resumeNext!=='function')throw Error('课程续学组件尚未准备，请刷新页面后继续；已有草稿保留。');await navigation.resumeNext(next.task.id,next.nextMaterialId);}$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}
   catch(error){$('todayAdvice').textContent=error.message;}finally{starting=false;$('todayStart').disabled=false;}
  }
- async function refreshRecords(){const ticket=++loading,day=current.day;try{const records=await R.list({dayNumber:day});if(ticket!==loading||current.day!==day)return;dailyRecords=Array.isArray(records)?records:[];render();}catch(error){if(ticket===loading)$('todayAdvice').textContent=error.message;}}
+ async function refreshRecords(){const ticket=++loading,day=current.day;try{const records=await R.list();if(ticket!==loading||current.day!==day)return;dailyRecords=Array.isArray(records)?records:[];render();}catch(error){if(ticket===loading)$('todayAdvice').textContent=error.message;}}
  $('todayStart').addEventListener('click',start);
  root.addEventListener('ielts:course-view',event=>{const changed=current.day!==event.detail.day;current={...event.detail};if(changed){dailyRecords=[];refreshRecords();}render();});
- root.addEventListener('ielts:course-progress',event=>{if(event.detail.day!==current.day)return;loading++;dailyRecords=Array.isArray(event.detail.records)?event.detail.records:[];render();});
+ root.addEventListener('ielts:budget-changed',event=>{if(Array.isArray(event.detail?.records))dailyRecords=event.detail.records;render();});
+ root.addEventListener('ielts:course-progress',event=>{if(event.detail.day!==current.day)return;loading++;dailyRecords=Array.isArray(event.detail.allRecords)?event.detail.allRecords:Array.isArray(event.detail.records)?event.detail.records:[];render();});
  if(root.IELTSMistakes?.EVENT)root.addEventListener(root.IELTSMistakes.EVENT,render);
  refreshRecords();
  if(new URLSearchParams(root.location.search).get('preview')==='1')doc.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href');if(href&&!/^(https?:|#)/.test(href)&&/\.html(?:[?#]|$)/.test(href)){const url=new URL(href,root.location.href);url.searchParams.set('preview','1');link.href=url.href;}});

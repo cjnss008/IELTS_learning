@@ -16,7 +16,7 @@
   const curriculumMaterials = new Map(Curriculum.materials.map((material) => [material.id, material]));
   const key = 'ielts52-daily-plan-v1';
   const skillNames = { listening: '听力', speaking: '口语', reading: '阅读', writing: '写作' };
-  const kindNames = { study: '学习日', review: '复盘日', checkpoint: '阶段测评日' };
+  const kindNames = { study: '学习日', review: '复盘日', checkpoint: '阶段测评日', 'year-review':'年度总结日' };
   const escape = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   function localDate() {
     const d = new Date();
@@ -65,9 +65,9 @@
     showStorageError('当前浏览器不允许保存记录。可以继续填写，并用“导出记录”保存本次进度。');
   }
   const actualDay = () => Core.dayForDate(state.startDate, today());
-  const clampDay = (day) => Math.max(1, Math.min(364, day));
+  const clampDay = (day) => Math.max(1, Math.min(365, day));
   const hashDay = /^#day(\d+)$/.exec(location.hash);
-  let selectedDay = hashDay && Number(hashDay[1]) >= 1 && Number(hashDay[1]) <= 364 ? Number(hashDay[1]) : clampDay(actualDay());
+  let selectedDay = hashDay && Number(hashDay[1]) >= 1 && Number(hashDay[1]) <= 365 ? Number(hashDay[1]) : clampDay(actualDay());
 
   function persist() {
     clearTimeout(persistTimer);
@@ -104,34 +104,35 @@
   function recordFor(day) { return state.days[String(day)] || { tasks: {} }; }
   function isSubmitted(day) {
     const record = recordFor(day);
-    if (!record.completedAt || day > actualDay()) return false;
+    if (day > actualDay()) return false;
     const plan = Store.getPlan(state, day, Content);
+    if(plan.planVersion===Core.LEGACY_PLAN_VERSION&&!record.completedAt)return false;
     if (plan.kind === 'checkpoint' && !state.assessments.some((a) => a.week === plan.week)) return false;
     return Core.summarizeDay(plan, effectiveFor(day, plan)).complete;
   }
   function renderStats() {
     let completed = 0, overdue = 0, minutes = 0;
     const dayNow = actualDay();
-    for (let d = 1; d <= 364; d++) {
+    for (let d = 1; d <= 365; d++) {
       if (isSubmitted(d)) completed++;
       else if (d < dayNow) overdue++;
       if (d <= dayNow) minutes += Core.summarizeDay(Store.getPlan(state, d, Content), effectiveFor(d)).minutes;
     }
-    $('completedDays').innerHTML = `${completed} <small>/ 364</small>`;
+    $('completedDays').innerHTML = `${completed} <small>/ 365</small>`;
     $('loggedHours').innerHTML = `${(minutes / 60).toFixed(1)} <small>小时</small>`;
     $('overdueDays').textContent = String(overdue);
     const missing = Array.from({ length: 13 }, (_, i) => (i + 1) * 4).find((week) => !state.assessments.some((a) => a.week === week));
     $('nextCheckpoint').textContent = missing ? `第 ${missing} 周` : '13 次已记录';
   }
   function renderWeekDays() {
-    const week = Math.ceil(selectedDay / 7);
+    const week = Math.min(52,Math.ceil(selectedDay / 7));
     const dayNow = actualDay();
-    $('weekDays').innerHTML = Array.from({ length: 7 }, (_, i) => {
+    $('weekDays').innerHTML = Array.from({ length: week===52?8:7 }, (_, i) => {
       const d = (week - 1) * 7 + i + 1;
       const done = isSubmitted(d);
       const label = done ? '✓ 已交' : d === dayNow ? '今天' : d < dayNow ? '待补' : '待学';
       const date = Core.dateForDay(state.startDate, d);
-      return `<button type="button" class="day-button" data-day="${d}" aria-current="${d === selectedDay}"><span><strong>第 ${i + 1} 天</strong><small>${date.slice(5).replace('-', '/')}</small></span><span class="day-dot ${!done && d < dayNow ? 'overdue' : ''}">${label}</span></button>`;
+      return `<button type="button" class="day-button" data-day="${d}" aria-current="${d === selectedDay}"><span><strong>${d===365?'年度总结':'第 '+(i+1)+' 天'}</strong><small>${date.slice(5).replace('-', '/')}</small></span><span class="day-dot ${!done && d < dayNow ? 'overdue' : ''}">${label}</span></button>`;
     }).join('');
   }
   function renderWeek() {
@@ -202,7 +203,7 @@
     if (currentPlan.planVersion === Core.LEGACY_PLAN_VERSION) messages.push('此日已有旧版记录，继续沿用原任务、数量和单位。旧记录不会被换算为新课程的题数或词数。');
     else if (currentPlan.curriculumStatus !== 'complete-material-set') messages.push('课程材料仍在开发预览；任务卡只链接当前已生成材料，待材料完整后再按正式日程学习。');
     if (selectedDay > actualDay()) messages.push('这是未来日程预览。到对应日期后即可填写和提交学习成果。');
-    if (actualDay() > 364) messages.push('52 周计划日期已结束。请依据最后测评结果继续补强，并以正式考试成绩确认目标。');
+    if (actualDay() > 365) messages.push('年度日历已结束，课程与草稿仍可继续。请完成积压、补齐准备度证据；未达标继续补强。');
     if (currentPlan.kind === 'checkpoint') messages.push('今天包含阶段检查。请在下方保存本周测评记录，再提交今日成果。基础阶段使用适级任务，不强行换算雅思分数。');
     const previousCheckpoint = Math.floor((currentPlan.week - 1) / 4) * 4;
     if (previousCheckpoint && !state.assessments.some((a) => a.week === previousCheckpoint)) messages.push(`第 ${previousCheckpoint} 周测评尚未记录，请先补齐能力证据，确定本阶段需要加强的项目。`);
@@ -266,7 +267,7 @@
     try {
       const date = $('startDate').value;
       Core.parseStartDate(date);
-      Core.dateForDay(date, 364);
+      Core.dateForDay(date, 365);
       if (blockedStorage) throw new Error('请先导出原始记录并通过导入恢复，再调整日期。');
       if (date !== state.startDate && (Object.keys(state.days).length || state.assessments.length || linkedRecords.length)) {
         $('setupStatus').textContent = '已有学习记录时保持开课日期固定，以免错置历史日期。新计划请先导出备份，再使用新的浏览器档案开始。';
@@ -275,7 +276,7 @@
       }
       state.startDate = date;
       persist(); selectedDay = clampDay(actualDay()); renderAll();
-      $('setupStatus').textContent = `计划从 ${date} 开始，至 ${Core.dateForDay(date, 364)}。每天最多可用 360 分钟；各模块分钟为建议预算，完成后直接继续，不等计时。${preview ? '（预览模式）' : ''}`;
+      $('setupStatus').textContent = `计划从 ${date} 开始，至 ${Core.dateForDay(date, 365)}（含第365天年度总结）。每天最多可用 360 分钟；各模块分钟为建议预算，完成后直接继续，不等计时。${preview ? '（预览模式）' : ''}`;
     } catch (error) { $('setupStatus').textContent = error.message; }
   });
   $('tasksForm').addEventListener('input', (event) => {

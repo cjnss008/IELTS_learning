@@ -65,7 +65,7 @@
   }
 
   function validDayKey(key) {
-    if (!/^[1-9]\d{0,2}$/.test(key) || Number(key) > core.COURSE_DAYS) throw new RangeError('学习日键必须是 1–364 的标准整数。');
+    if (!/^[1-9]\d{0,2}$/.test(key) || Number(key) > core.COURSE_DAYS) throw new RangeError('学习日键必须是 1–365 的标准整数。');
     return Number(key);
   }
 
@@ -239,7 +239,7 @@
     var result = newState(value.startDate);
     plainObject(value.days, '每日记录集合');
     var dayKeys = Reflect.ownKeys(value.days);
-    if (dayKeys.length > core.COURSE_DAYS) throw new RangeError('每日记录超过 364 天。');
+    if (dayKeys.length > core.COURSE_DAYS) throw new RangeError('每日记录超过 365 天。');
     dayKeys.forEach(function (key) {
       if (typeof key !== 'string') throw new TypeError('学习日键必须是字符串。');
       validDayKey(key);
@@ -271,7 +271,7 @@
       var boost = cleanBoost(value.boosts[key]);
       var assessment = assessmentsById.get(boost.assessmentId);
       if (!assessment || assessment.weakSkills.indexOf(boost.skill) < 0) throw new TypeError('补强记录缺少对应的薄弱项测评依据。');
-      if ((day - 1) % 7 === 6 || day <= assessment.week * 7 || day <= core.dayForDate(result.startDate, assessment.date)) {
+      if (day === 365 || (day - 1) % 7 === 6 || day <= assessment.week * 7 || day <= core.dayForDate(result.startDate, assessment.date)) {
         throw new RangeError('补强只能安排在测评之后的后续学习日。');
       }
       result.boosts[key] = boost;

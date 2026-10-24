@@ -24,11 +24,11 @@ function validRecord(definition) {
   return { actualMinutes: definition.minutes, actualQuantity: definition.quantity, evidence: '保存了原始练习和订正稿，并记录了下一次要重练的具体内容。' };
 }
 
-test('52周形成364个日程、13次阶段测评和2184小时预算', () => {
+test('52周加第365天年度总结，13次阶段测评与2190小时可用预算', () => {
   const content = fixtureContent();
   assert.deepEqual(core.getCourseSummary(content), {
-    days: 364, weeks: 52, studyDays: 312, reviewDays: 39, checkpointDays: 13,
-    minutes: 131040, hours: 2184
+    days: 365, 'year-reviewDays':1, weeks: 52, studyDays: 312, reviewDays: 39, checkpointDays: 13,
+    minutes: 131400, hours: 2190
   });
   const all = Array.from({ length: 364 }, (_, index) => core.buildDay(index + 1, content));
   assert.equal(all[0].week, 1);
@@ -46,12 +46,12 @@ test('52周形成364个日程、13次阶段测评和2184小时预算', () => {
   }
 });
 
-test('所有学习周固定42小时；阶段测评限定在每4周第7天', () => {
+test('常规学习周42小时，第52周另含年度总结；阶段测评每4周第7天', () => {
   const content = fixtureContent();
   for (let week = 1; week <= 52; week++) {
     const plans = core.getWeekSchedule(week, content);
-    assert.equal(plans.length, 7);
-    assert.equal(plans.reduce((sum, item) => sum + item.totalMinutes, 0), 2520);
+    assert.equal(plans.length, week===52?8:7);
+    assert.equal(plans.reduce((sum, item) => sum + item.totalMinutes, 0), week===52?2880:2520);
     assert.ok(plans.slice(0, 6).every(item => item.kind === 'study'));
     assert.equal(plans[6].kind, week % 4 === 0 ? 'checkpoint' : 'review');
   }
@@ -86,7 +86,7 @@ test('生成日程不改写传入课程，返回的提示数组也独立', () =>
 
 test('越界日序、错误课程与重复周数据明确报错', () => {
   const content = fixtureContent();
-  for (const value of [0, -1, 365, 1.5, '1', NaN, Infinity]) assert.throws(() => core.buildDay(value, content), RangeError);
+  for (const value of [0, -1, 366, 1.5, '1', NaN, Infinity]) assert.throws(() => core.buildDay(value, content), RangeError);
   assert.throws(() => core.buildDay(1, null), TypeError);
   assert.throws(() => core.buildDay(1, { weeks: [] }), TypeError);
   const duplicate = fixtureContent();
@@ -177,7 +177,7 @@ test('浏览器直接script加载无需Node、DOM或构建步骤', () => {
   const context = vm.createContext({});
   vm.runInContext(source, context);
   assert.equal(typeof context.IELTSPlanCore.buildDay, 'function');
-  assert.equal(context.IELTSPlanCore.COURSE_DAYS, 364);
+  assert.equal(context.IELTSPlanCore.COURSE_DAYS, 365);
   assert.equal(context.IELTSPlanCore.dayForDate('2026-10-24', '2026-10-25'), 2);
 });
 

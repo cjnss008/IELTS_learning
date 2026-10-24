@@ -7,7 +7,7 @@
   'use strict';
 
   var COURSE_WEEKS = 52;
-  var COURSE_DAYS = COURSE_WEEKS * 7;
+  var COURSE_DAYS = 365;
   var DAY_MS = 86400000;
   var OWN = Object.prototype.hasOwnProperty;
   var LEGACY_PLAN_VERSION = 'legacy';
@@ -228,12 +228,12 @@
 
   function buildLegacyDay(dayNumber, content) {
     integerInRange(dayNumber, 1, COURSE_DAYS, '学习日');
-    var week = Math.floor((dayNumber - 1) / 7) + 1;
-    var weekday = ((dayNumber - 1) % 7) + 1;
+    var week = Math.min(52, Math.floor((dayNumber - 1) / 7) + 1);
+    var weekday = dayNumber === 365 ? 8 : ((dayNumber - 1) % 7) + 1;
     var info = getWeekInfo(week, content);
     var stage = stageForWeek(week);
-    var kind = weekday < 7 ? 'study' : week % 4 === 0 ? 'checkpoint' : 'review';
-    var tasks = kind === 'study' ? studyTasks(week, weekday, stage, info) :
+    var kind = dayNumber === 365 ? 'year-review' : weekday < 7 ? 'study' : week % 4 === 0 ? 'checkpoint' : 'review';
+    var tasks = dayNumber === 365 ? [task('reflection', '年度总结与后续补强', 'review', 360, 4, '条技能结论', '回看听读说写的真实证据、未完成项和近三套完整测评；依据剩余短板继续补强。', '分别记录四科证据、可靠性限制和下一周期行动。')] : kind === 'study' ? studyTasks(week, weekday, stage, info) :
       kind === 'review' ? reviewTasks(stage, info) : checkpointTasks(week, stage, info);
     return {
       planVersion: LEGACY_PLAN_VERSION,
@@ -249,13 +249,13 @@
 
   var curriculumIndexes = new WeakMap();
   function curriculumIndex(data) {
-    if (!data || data.version !== '1.0' || !Array.isArray(data.days) || data.days.length !== COURSE_DAYS || !Array.isArray(data.materials)) {
-      throw new TypeError('课程任务数据未完整加载，需包含 1.0 版的 364 天日程与材料。');
+    if (!data || data.version !== '1.0' || !Array.isArray(data.days) || ![364,365].includes(data.days.length) || !Array.isArray(data.materials)) {
+      throw new TypeError('课程任务数据未完整加载，需包含 1.0 版的 365 天日程与材料。');
     }
     var cached = curriculumIndexes.get(data);
     if (cached) return cached;
     data.days.forEach(function (day, index) {
-      if (!day || day.day !== index + 1) throw new TypeError('课程日程必须按 1–364 天排列，且不得缺失或重复。');
+      if (!day || day.day !== index + 1) throw new TypeError('课程日程必须按 1–365 天排列，且不得缺失或重复。');
     });
     var materials = new Map();
     data.materials.forEach(function (item) {
@@ -271,11 +271,13 @@
 
   function buildCurriculumDay(dayNumber, content, data, options) {
     integerInRange(dayNumber, 1, COURSE_DAYS, '学习日');
-    var info = getWeekInfo(Math.ceil(dayNumber / 7), content);
+    var info = getWeekInfo(Math.min(52,Math.ceil(dayNumber / 7)), content);
     var index = curriculumIndex(data);
     var adaptive = options && OWN.call(options, 'adaptivePlan') ? options.adaptivePlan : root.document ? root.IELTSAdaptivePlan : null;
-    var source = adaptive && typeof adaptive.getDay === 'function' ? adaptive.getDay(data.days[dayNumber - 1]) : data.days[dayNumber - 1];
-    var week = Math.ceil(dayNumber / 7), weekday = ((dayNumber - 1) % 7) + 1;
+    var baseSource = data.days[dayNumber - 1];
+    if(!baseSource && dayNumber === 365) return buildLegacyDay(dayNumber,content);
+    var source = adaptive && typeof adaptive.getDay === 'function' ? adaptive.getDay(baseSource) : baseSource;
+    var week = Math.min(52,Math.ceil(dayNumber / 7)), weekday = dayNumber === 365 ? 8 : ((dayNumber - 1) % 7) + 1;
     if (source.week !== week || source.weekday !== weekday || !Array.isArray(source.tasks) || !source.tasks.length) {
       throw new TypeError('第 ' + dayNumber + ' 天的课程任务不完整。');
     }
@@ -306,7 +308,7 @@
         evidenceHint: entry.deliverable + '；保留原始作品、订正依据和下一次复测安排。',
         materialIds: entry.materialIds.slice(),
         materials: materials
-      }, entry.id === 'reflection' ? { dayNumber: dayNumber, requiresMistakeReview: true } : {});
+      }, entry.id === 'reflection' ? { dayNumber: dayNumber, requiresMistakeReview: dayNumber!==365 } : {});
     });
     var totalMinutes = tasks.reduce(function (sum, item) { return sum + item.minutes; }, 0);
     if (totalMinutes !== 360 || source.totalMinutes !== totalMinutes) throw new TypeError('每日课程任务必须合计 360 分钟。');
@@ -314,7 +316,7 @@
       planVersion: CURRICULUM_PLAN_VERSION,
       curriculumStatus: data.status,
       dayNumber: dayNumber, week: week, weekday: weekday,
-      kind: weekday < 7 ? 'study' : week % 4 === 0 ? 'checkpoint' : 'review',
+      kind: dayNumber === 365 ? 'year-review' : weekday < 7 ? 'study' : week % 4 === 0 ? 'checkpoint' : 'review',
       totalMinutes: totalMinutes, tasks: tasks, weekInfo: info,
       adaptation: source.adaptation || null
     };
@@ -426,11 +428,11 @@
 
   function getWeekSchedule(week, content, options) {
     integerInRange(week, 1, COURSE_WEEKS, '学习周');
-    return Array.from({ length: 7 }, function (_, i) { return buildDay((week - 1) * 7 + i + 1, content, options); });
+    return Array.from({ length: week === 52 ? 8 : 7 }, function (_, i) { return buildDay((week - 1) * 7 + i + 1, content, options); });
   }
 
   function getCourseSummary(content, options) {
-    var result = { days: COURSE_DAYS, weeks: COURSE_WEEKS, studyDays: 0, reviewDays: 0, checkpointDays: 0, minutes: 0, hours: 0 };
+    var result = { days: COURSE_DAYS, weeks: COURSE_WEEKS, studyDays: 0, reviewDays: 0, checkpointDays: 0, 'year-reviewDays':0, minutes: 0, hours: 0 };
     for (var day = 1; day <= COURSE_DAYS; day += 1) {
       var plan = buildDay(day, content, options);
       result[plan.kind + 'Days'] += 1;

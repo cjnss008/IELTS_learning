@@ -12,15 +12,15 @@
   <script src="assets/learning-records.js" defer></script>
   <script src="assets/daily-plan-content.js" defer></script>
   <script src="assets/curriculum-data.js" defer></script>
-  <script src="assets/assessment-core.js" defer></script>
-  <script src="assets/adaptive-plan.js" defer></script>
+  <script src="assets/speaking-library.js" defer></script><script src="assets/assessment-core.js" defer></script>
+  <script src="assets/curriculum-legacy-plans.js" defer></script><script src="assets/adaptive-plan.js" defer></script><script src="assets/year-planner.js" defer></script><script src="assets/year-planner-ui.js" defer></script>
   <script src="assets/daily-plan-core.js" defer></script>
   <script src="assets/daily-plan-state.js" defer></script>
   <script src="assets/word-dictionary.js" defer></script>
   <script src="assets/vocabulary-practice.js" defer></script>
   <script src="assets/passage-format.js" defer></script>
   <script src="assets/oral-practice.js" defer></script>
-  <script src="assets/course-player.js" defer></script>
+  <script src="assets/curriculum-coverage.js" defer></script><script src="assets/course-player.js" defer></script>
   <script src="assets/today-hub.js" defer></script>
   <script src="assets/daily-plan-app.js" defer></script>
 </head>
@@ -32,7 +32,7 @@
   <main class="page-shell">
     <section class="hero">
       <div><p class="eyebrow">ACADEMIC · 52 WEEKS</p><h1>把今天的学习，做扎实。</h1><p class="hero-copy">按计划练习，留下真实成果，再用测评确认进步。<br>课程对齐 Academic 听说读写各 <strong>7.0</strong>，为正式考试各 <strong>6.5</strong> 留出余量。零基础从第 1 周起步。</p></div>
-      <div class="hero-aside"><span>每天固定学习量</span><strong>6<span> 小时</span></strong><small>每周 42 小时 · 全年 2184 小时<br>建议分 3 段完成，休息另计；补强安排在 6 小时内</small></div>
+      <div class="hero-aside"><span>每天可用学习预算</span><strong>6<span> 小时</span></strong><small>每周最多 42 小时 · 365 天逐步进阶<br>学会后继续下一份，休息另计；补强安排在预算内</small></div>
     </section>
     <div id="storageMessage" class="notice danger" role="alert" hidden></div>
     <section id="profilePanel" class="setup-panel" aria-label="个人学习档案"></section>
@@ -42,11 +42,12 @@
       <p id="setupStatus" class="small status" role="status"></p>
     </section>
     <section class="stats" aria-label="计划进度">
-      <div class="stat"><span>已提交学习日</span><strong id="completedDays">0 <small>/ 364</small></strong><small>任务量满足且已提交 · 能力另行验证</small></div>
+      <div class="stat"><span>已提交学习日</span><strong id="completedDays">0 <small>/ 365</small></strong><small>任务量满足且已提交 · 能力另行验证</small></div>
       <div class="stat"><span>已记录学习时间</span><strong id="loggedHours">0 <small>小时</small></strong><small>以实际投入分钟累计</small></div>
       <div class="stat"><span>待补交学习日</span><strong id="overdueDays">0</strong><small>逾期任务保留，可分次补做</small></div>
       <div class="stat"><span>下一次阶段检查</span><strong id="nextCheckpoint">第 4 周</strong><small>四项分别检查，及时调整</small></div>
     </section>
+    <section id="yearPlanPanel" class="year-plan-panel" aria-label="全年进度、积压与负荷观察"></section>
     <div class="workspace">
       <aside class="week-sidebar">
         <label for="weekSelect" class="label-heading">选择学习周</label><select id="weekSelect"></select>

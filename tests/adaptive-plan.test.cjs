@@ -20,16 +20,16 @@ test('server adaptation validates skill counts, source week, held-out protection
  assert.equal(adaptive.promiseOfScore('确保每个词完成三写三读后再进入测试。'),false);assert.equal(adaptive.promiseOfScore('你将达到雅思7分。'),true);assert.equal(adaptive.promiseOfScore('You will achieve IELTS band 7.'),true);assert.equal(adaptive.promiseOfScore('训练目标为四项7.0，实际结果须验证。'),false);
 });
 
-test('six subsequent regular days retain all core materials, total 360 and transparent suggested transfers',()=>{
+test('all subsequent unstarted regular days retain all core materials, total 360 and transparent suggested transfers',()=>{
  const data=curriculum(),before=JSON.stringify(data),store=adaptive.createStore({data,storage:memory(),now:()=>NOW});
- const result=store.apply(1,proposal(),{recapToken:'recap-one'});assert.deepEqual(result.targetDays,[2,3,4,7,8,9]);
- for(const n of result.targetDays){const base=data.days[n-1],day=store.getDay(base);assert.equal(day.totalMinutes,360);assert.equal(day.tasks.find(t=>t.id==='reading').minutes,90);assert.equal(day.adaptation.transferredMinutes,30);assert.equal(day.adaptation.minutesAreSuggestions,true);for(const task of day.tasks){assert.ok(task.minutes>=15);assert.ok(task.coreMaterialIds.every(id=>task.materialIds.includes(id)));const change=base.tasks.find(t=>t.id===task.id).minutes-task.minutes;if(change>0)assert.ok(change<=15);}assert.ok(day.tasks.find(t=>t.id==='reading').materialIds.includes('extra-reading'));}
+ const result=store.apply(1,proposal(),{recapToken:'recap-one'});assert.deepEqual(result.targetDays,[2,3,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
+ for(const n of result.targetDays){const base=data.days[n-1],day=store.getDay(base);assert.equal(day.totalMinutes,360);assert.equal(day.tasks.find(t=>t.id==='reading').minutes,120);assert.equal(day.adaptation.transferredMinutes,60);assert.equal(day.adaptation.minutesAreSuggestions,true);for(const task of day.tasks){assert.ok(task.minutes>=15);assert.ok(task.coreMaterialIds.every(id=>task.materialIds.includes(id)));const change=base.tasks.find(t=>t.id===task.id).minutes-task.minutes;if(change>0)assert.ok(change<=30);}assert.equal(day.tasks.find(t=>t.id==='reading').materialIds.includes('extra-reading'),day.week<=2,'source reinforcement is not repeated throughout the whole year');}
  assert.equal(JSON.stringify(data),before);assert.deepEqual(store.getDay(data.days[4]),data.days[4]);
 });
 
-test('two priorities share the additional 30 minutes and no time is added to the day budget',()=>{
+test('two priorities share up to 90 suggested minutes and no time is added to the day budget',()=>{
  const data=curriculum(),store=adaptive.createStore({data,storage:memory(),now:()=>NOW}),p={prioritySkills:['reading','speaking'],reason:'阅读与表达需要补强。',strategies:[{skill:'reading',action:'先定位原句再回答。'},{skill:'speaking',action:'先录原音，再按证据重练。'}],reinforcementMaterialIds:[]};
- store.apply(1,p,{recapToken:'two'});const day=store.getDay(data.days[1]);assert.equal(day.tasks.find(t=>t.id==='reading').minutes,75);assert.equal(day.tasks.find(t=>t.id==='speaking').minutes,75);assert.equal(day.tasks.reduce((s,t)=>s+t.minutes,0),360);
+ store.apply(1,p,{recapToken:'two'});const day=store.getDay(data.days[1]);assert.equal(day.tasks.find(t=>t.id==='reading').minutes,105);assert.equal(day.tasks.find(t=>t.id==='speaking').minutes,105);assert.equal(day.tasks.reduce((s,t)=>s+t.minutes,0),360);
 });
 
 test('new recaps supersede only unstarted future plans, while started days and duplicate recaps stay stable',()=>{
@@ -49,8 +49,8 @@ test('legacy submitted records freeze their real course days even without drafts
   {dayNumber:0,courseDay:365,answer:'{"courseDay":"9"}'},null
  ];
  const next=store.apply(1,proposal(),{recapToken:'legacy-safe',records:legacy});
- assert.deepEqual(next.targetDays,[7,9,10,11,12,13]);
- assert.deepEqual(store.read().startedDays,[2,3,4,8]);
+ assert.deepEqual(next.targetDays,[7,9,10,11,12,13,14,15,16,17,18,19,20]);
+ assert.deepEqual(store.read().startedDays,[2,3,4,8,365]);
  for(const n of [2,3,4,8])assert.deepEqual(store.getDay(data.days[n-1]),data.days[n-1]);
  const before=store.getDay(data.days[6]);
  store.apply(1,proposal('writing',['extra-writing']),{recapToken:'new-recap',records:[...legacy,{dayNumber:7}]});
@@ -134,6 +134,6 @@ test('actual curriculum transitions and final weeks keep the budget and reserved
  const data=require('../assets/curriculum-data.js'),p={prioritySkills:['reading','listening'],reason:'用真实作答安排同级输入练习。',strategies:[{skill:'reading',action:'每题独立定位原文依据。'},{skill:'listening',action:'先完整听音，再闭卷回答。'}],reinforcementMaterialIds:[]};
  for(const source of [1,26,54,82,140,258,335,360]){
   const store=adaptive.createStore({data,storage:memory(),now:()=>NOW}),plan=store.apply(source,p,{recapToken:'actual-'+source});
-  assert.ok(plan.targetDays.length<=6);for(const number of plan.targetDays){const base=data.days.find(d=>d.day===number),adjusted=store.getDay(base);assert.equal(adjusted.totalMinutes,360);assert.equal(adaptive.regularDay(base,data),true);assert.equal(adjusted.tasks.reduce((n,t)=>n+t.minutes,0),360);assert.ok(adjusted.tasks.every(t=>t.minutes>=15));}
+  assert.ok(plan.targetDays.length<=365&&plan.targetDays.every(n=>n<365));for(const number of plan.targetDays){const base=data.days.find(d=>d.day===number),adjusted=store.getDay(base);assert.equal(adjusted.totalMinutes,360);assert.equal(adaptive.regularDay(base,data),true);assert.equal(adjusted.tasks.reduce((n,t)=>n+t.minutes,0),360);assert.ok(adjusted.tasks.every(t=>t.minutes>=15));}
  }
 });

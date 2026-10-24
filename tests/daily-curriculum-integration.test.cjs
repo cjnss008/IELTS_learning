@@ -14,7 +14,7 @@ require('../assets/daily-plan-content.js');
 const content = global.IELTSPlanContent;
 const options = { curriculum };
 
-test('全年364天直接使用课程任务、材料和单位，保持每天360分钟', () => {
+test('全年365天直接使用课程任务、材料和单位，保持每天360分钟', () => {
   const state = Store.newState('2026-01-01');
   let total = 0;
   for (const source of curriculum.days) {
@@ -38,8 +38,8 @@ test('全年364天直接使用课程任务、材料和单位，保持每天360�
       if (['grammar', 'vocabulary'].includes(task.id)) assert.equal(task.skill, 'foundation');
     });
   }
-  assert.equal(total, 364 * 360);
-  assert.equal(Core.getCourseSummary(content, options).hours, 2184);
+  assert.equal(total, curriculum.days.length * 360);
+  assert.equal(Core.getCourseSummary(content, options).hours, 2190);
 });
 
 test('课程作品按真实单位汇总，整日完成仍须通过本日错题和 AI 复盘', () => {

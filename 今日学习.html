@@ -4,27 +4,29 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>今日学习 · IELTS Learning</title>
   <link rel="stylesheet" href="assets/daily-plan.css"><link rel="stylesheet" href="assets/course-player.css"><link rel="stylesheet" href="assets/selection-ai.css">
-<link rel="stylesheet" href="assets/today-hub.css"><link rel="stylesheet" href="assets/vocabulary-practice.css"><link rel="stylesheet" href="assets/mistake-review.css"><link rel="stylesheet" href="assets/oral-practice.css"><link rel="stylesheet" href="assets/word-hover.css">
+<link rel="stylesheet" href="assets/today-hub.css"><link rel="stylesheet" href="assets/memory.css"><link rel="stylesheet" href="assets/vocabulary-practice.css"><link rel="stylesheet" href="assets/mistake-review.css"><link rel="stylesheet" href="assets/oral-practice.css"><link rel="stylesheet" href="assets/word-hover.css">
   <script src="assets/profile-store.js" defer></script><script src="assets/mistake-book.js" defer></script><script src="assets/learning-records.js" defer></script>
   <script src="assets/curriculum-data.js" defer></script><script src="assets/assessment-core.js" defer></script>
   <script src="assets/speaking-audio.js" defer></script><script src="assets/speaking-library.js" defer></script><script src="assets/notebook.js" defer></script>
-  <script src="assets/course-data.js" defer></script><script src="assets/daily-plan-content.js" defer></script><script src="assets/adaptive-plan.js" defer></script><script src="assets/daily-plan-core.js" defer></script><script src="assets/daily-plan-state.js" defer></script>
+  <script src="assets/course-data.js" defer></script><script src="assets/daily-plan-content.js" defer></script><script src="assets/curriculum-legacy-plans.js" defer></script><script src="assets/adaptive-plan.js" defer></script><script src="assets/year-planner.js" defer></script><script src="assets/year-planner-ui.js" defer></script><script src="assets/daily-plan-core.js" defer></script><script src="assets/daily-plan-state.js" defer></script>
   <script src="assets/passage-format.js" defer></script><script src="assets/vocabulary-audio.js" defer></script><script src="assets/oral-model-audio.js" defer></script><script src="assets/word-dictionary.js" defer></script><script src="assets/vocabulary-speaking.js" defer></script><script src="assets/vocabulary-practice.js" defer></script><script src="assets/word-hover.js" defer></script><script src="assets/mistake-review.js" defer></script><script src="assets/oral-practice.js" defer></script><script src="assets/listening-player.js" defer></script>
-  <script src="assets/selection-ai.js" defer></script><script src="assets/course-player.js" defer></script><script src="assets/today-hub.js" defer></script>
+  <script src="assets/selection-ai.js" defer></script><script src="assets/curriculum-coverage.js" defer></script><script src="assets/course-player.js" defer></script><script src="assets/today-hub.js" defer></script>
+  <script src="assets/vendor/ts-fsrs.js" defer></script><script src="assets/memory-core.js" defer></script><script src="assets/memory-session.js" defer></script><script defer src="assets/memory-app.js"></script><script src="assets/backup-core.js" defer></script><script src="assets/profile-reset.js" defer></script><script src="assets/listening-lab.js" defer></script>
 </head>
 <body>
   <header class="site-header"><a class="brand" href="今日学习.html"><span class="brand-icon">I</span><span>IELTS LEARNING<small>52 周 · 从基础到 Academic</small></span></a><nav aria-label="主导航"><a href="今日学习.html" aria-current="page">今日学习</a><a href="每日学习计划.html">52 周进度</a><a href="AI设置.html">AI 与语音设置</a><a href="备份中心.html">备份</a></nav></header>
   <main class="page-shell" id="coursePlayerApp">
     <section class="today-hero" id="todayOverview">
-      <div class="today-copy"><p class="eyebrow" id="todayEyebrow">YOUR DAILY CLASSROOM · DAY 1 / 364</p><h1 id="todayTitle">今天，从第一步开始。</h1><p id="todayGoal">跟着下面的顺序，完成今天的词汇、语法、听说读写和错题复盘。</p><p class="today-teacher">课程告诉你学什么；AI 讲解与批改；阿里云检查发音。每天从这里继续。</p><button class="button primary today-start" id="todayStart" type="button">开始今天第一项</button><span id="todayNext" class="today-next"></span></div>
+      <div class="today-copy"><p class="eyebrow" id="todayEyebrow">YOUR DAILY CLASSROOM · DAY 1 / 365</p><h1 id="todayTitle">今天，从第一步开始。</h1><p id="todayGoal">跟着下面的顺序，完成今天的词汇、语法、听说读写和错题复盘。</p><p class="today-teacher">课程告诉你学什么；AI 讲解与批改；阿里云检查发音。每天从这里继续。</p><button class="button primary today-start" id="todayStart" type="button">开始今天第一项</button><span id="todayNext" class="today-next"></span></div>
       <aside class="today-summary"><span>每天可用学习时间</span><strong>6 <small>小时</small></strong><p>按实际掌握速度推进<br>学得快，就继续新内容<br>有薄弱点，就针对性补强</p><p class="course-small">六小时是学习预算，各项时间仅为参考。完成后立即进入下一步，休息另计。</p></aside>
     </section>
-    <section class="today-status" aria-label="今日进度"><div><span>已提交任务</span><strong id="todayDone">0 / 7</strong></div><div><span>已保存实际学习</span><strong id="todayMinutes">0 / 360 分钟</strong></div><div><span>今日待订正</span><strong id="todayMistakes">0 道</strong></div></section>
+    <section class="today-status" aria-label="今日进度"><div><span>已提交任务</span><strong id="todayDone">0 / 7</strong></div><div><span>今日日历活动（含草稿）</span><strong id="todayMinutes">0 / 360 分钟</strong></div><div><span>今日待订正</span><strong id="todayMistakes">0 道</strong></div></section>
+    <section id="yearPlanPanel" class="year-plan-panel" aria-label="全年进度、积压与负荷观察"></section>
     <div id="todayRoute" class="today-route" aria-label="今日学习顺序"></div>
     <p id="todayAdvice" class="today-advice" role="status">第一次学习：点击“开始今天第一项”，从基础词汇开始。这里就是每天唯一的课程入口。</p>
 <section id="todayAdaptive" class="today-resources" aria-label="个性化学习安排"><h2>根据表现安排下一步</h2><div id="todayAdaptiveContent">提交今天的练习后，系统会在剩余时间内安排适级任务；每日 AI 复盘再调整后续策略。</div></section>
     <div id="courseNotice" class="course-notice" role="status"></div>
-    <div class="course-day-controls"><label for="courseDay">课程日 <input id="courseDay" type="number" min="1" max="364" value="1"></label><button id="coursePrevious" type="button">前一天</button><button id="courseNext" type="button">后一天</button><span id="courseDayTitle"></span></div>
+    <div class="course-day-controls"><label for="courseDay">课程日 <input id="courseDay" type="number" min="1" max="365" value="1"></label><button id="coursePrevious" type="button">前一天</button><button id="courseNext" type="button">后一天</button><span id="courseDayTitle"></span></div>
     <p id="coursePrerequisites" class="course-target" hidden></p>
     <div class="course-layout">
       <aside class="course-sidebar"><h2>今日任务</h2><div id="courseTasks"></div><p id="courseActual" class="course-small"></p><h2>本任务材料</h2><div id="courseMaterials"></div><details><summary>未提交的练习</summary><div id="courseDrafts"></div></details><details><summary>待 AI 评阅</summary><div id="courseQueue"></div></details></aside>
@@ -45,7 +47,7 @@
       </section>
     </div>
     <details class="course-lower"><summary>查看作品、阶段关卡与准备度</summary><h2>当前关卡与补强</h2><div id="courseGates"></div><h2>近期完整训练准备度</h2><div id="courseReadiness"></div><h2>最近提交的作品</h2><div id="courseHistory"></div></details>
-    <details class="today-resources"><summary>需要额外练习时，再打开补充资源</summary><p>这些资源服务于今日任务。零基础请从今日路线学习，原 52 篇课文用于后续补充阅读。</p><a href="开始学习.html">52 篇补充课文</a><a href="基础入门.html">基础专项</a><a href="本地教材.html">教材库</a><a href="生词复习.html">到期生词复习</a></details>
+    <details class="today-resources"><summary>需要额外练习时，再打开补充资源</summary><p>这些资源服务于今日任务。零基础请从今日路线学习，原 52 篇课文用于后续补充阅读。</p><a href="开始学习.html">52 篇补充课文</a><a href="基础入门.html">基础专项</a><a href="本地教材.html">教材库</a><a href="生词复习.html">到期生词复习</a><a href="无稿口语.html">AI无稿原音对话</a><a href="评分校准.html">评分校准与依据</a><a href="课程覆盖.html">课程材料与词汇覆盖</a><a href="词汇记忆.html">词汇记忆与到期回忆</a><a href="写作补强.html">写作题型与订正复测</a></details>
     <footer><p>Academic 四项 7.0 为训练标准，正式考试目标各 6.5。以新题、原稿和原音持续检查进步；完成时长或 AI 分数不能保证正式考试成绩。</p></footer>
     <noscript>本地课程需要 JavaScript 加载材料和记录。正文与客观题可以离线使用，AI 评阅需要本地服务。</noscript>
   </main>
