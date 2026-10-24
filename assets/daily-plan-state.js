@@ -121,8 +121,14 @@
     };
   }
 
+  function cleanPlanVersion(value) {
+    if (value === undefined) return core.LEGACY_PLAN_VERSION;
+    if (value !== core.LEGACY_PLAN_VERSION && value !== core.CURRICULUM_PLAN_VERSION) throw new TypeError('每日记录的日程版本不受支持。');
+    return value;
+  }
+
   function cleanDay(value) {
-    allowedKeys(value, ['tasks', 'completedAt'], '每日记录');
+    allowedKeys(value, ['tasks', 'completedAt', 'planVersion'], '每日记录');
     plainObject(value.tasks, '每日任务记录');
     var taskKeys = Reflect.ownKeys(value.tasks);
     if (taskKeys.length > 10) throw new RangeError('每日任务记录最多 10 项。');
@@ -133,7 +139,7 @@
       if (descriptor && (descriptor.get || descriptor.set)) throw new TypeError('任务记录不得包含访问器。');
       tasks[key] = cleanTaskRecord(value.tasks[key]);
     });
-    var result = { tasks: tasks };
+    var result = { planVersion: cleanPlanVersion(value.planVersion), tasks: tasks };
     var totalMinutes = Object.keys(tasks).reduce(function (sum, key) { return sum + (tasks[key].actualMinutes || 0); }, 0);
     if (totalMinutes > 1440) throw new RangeError('每日实际学习总分钟数不能超过 1440。');
     if (value.completedAt !== undefined) result.completedAt = validTimestamp(value.completedAt);
@@ -273,11 +279,18 @@
     return result;
   }
 
-  function getPlan(state, dayNumber, content) {
+  function getPlan(state, dayNumber, content, curriculum) {
     plainObject(state, '学习记录');
+    plainObject(state.days, '每日记录集合');
     plainObject(state.boosts, '补强记录集合');
-    var plan = core.buildDay(dayNumber, content);
     var dayKey = String(dayNumber);
+    var options = {};
+    if (curriculum !== undefined) options.curriculum = curriculum;
+    if (OWN.call(state.days, dayKey)) {
+      plainObject(state.days[dayKey], '每日记录');
+      options.planVersion = cleanPlanVersion(state.days[dayKey].planVersion);
+    }
+    var plan = core.buildDay(dayNumber, content, options);
     if (!OWN.call(state.boosts, dayKey)) return plan;
     var boost = cleanBoost(state.boosts[dayKey]);
     if (plan.kind !== 'study') throw new RangeError('补强应安排在常规学习日。');
@@ -302,7 +315,7 @@
     return base + counter;
   }
 
-  function addAssessment(state, input, todayDate, content) {
+  function addAssessment(state, input, todayDate, content, curriculum) {
     validDate(todayDate);
     var result = parseState(state, todayDate);
     if (result.assessments.length >= MAX_ASSESSMENTS) throw new RangeError('最多保存 104 条测评记录。');
@@ -318,7 +331,7 @@
       var startDay = Math.max(assessment.week * 7, core.dayForDate(result.startDate, todayDate)) + 1;
       for (var day = startDay; day <= core.COURSE_DAYS && boostDays.length < 6; day += 1) {
         var key = String(day);
-        var plan = core.buildDay(day, content);
+        var plan = getPlan(result, day, content, curriculum);
         if (plan.kind !== 'study' || (result.days[key] && result.days[key].completedAt) || OWN.call(result.boosts, key)) continue;
         result.boosts[key] = { skill: weakSkills[boostDays.length % weakSkills.length], assessmentId: assessment.id };
         boostDays.push(day);
@@ -353,5 +366,23 @@
     return { qualifyingCount: qualifyingCount, ready: recent.length === 3 && qualifyingCount === 3, latestScores: recent.length ? Object.assign({}, recent[0].scores) : null };
   }
 
-  return Object.freeze({ newState: newState, parseState: parseState, getPlan: getPlan, addAssessment: addAssessment, readiness: readiness });
+  function combineEvidence(plan, manual, linked) {
+    var result = {};
+    plan.tasks.forEach(function (task) {
+      var old = manual && manual[task.id] || {};
+      var entry = linked && linked.tasks && linked.tasks[task.id];
+      if (!entry || !entry.count) { result[task.id] = Object.assign({}, old); return; }
+      var recordedMinutes = Math.min(600, Math.max(0, Math.floor(entry.minutes || 0)));
+      var recordedQuantity = Math.min(10000, Math.max(0, Math.floor(entry.quantities && entry.quantities[task.unit] || 0)));
+      var citations = entry.records.map(function (r) { return r.title + '（作品 ' + r.id + '；' + (r.kind === 'retest' ? '复测' : r.kind === 'correction' ? '订正' : '原稿') + '）'; }).join('；');
+      result[task.id] = {
+        actualMinutes: Math.max(old.actualMinutes || 0, recordedMinutes),
+        actualQuantity: Math.max(old.actualQuantity || 0, recordedQuantity),
+        evidence: ((old.evidence || '') + (citations ? '\n关联作品：' + citations + '。以上仅为完成量和作品索引，能力需独立验证。' : '')).slice(0, 1200)
+      };
+    });
+    return result;
+  }
+
+  return Object.freeze({ newState: newState, parseState: parseState, getPlan: getPlan, addAssessment: addAssessment, readiness: readiness, combineEvidence: combineEvidence });
 });

@@ -3,14 +3,18 @@
   const Core = globalThis.IELTSPlanCore;
   const Store = globalThis.IELTSPlanState;
   const Content = globalThis.IELTSPlanContent;
+  const Curriculum = globalThis.IELTSCurriculumData;
+  const Records = globalThis.IELTSRecords;
   const $ = (id) => document.getElementById(id);
-  if (!Core || !Store || !Content) {
+  if (!Core || !Store || !Content || !Curriculum || !Records || !globalThis.IELTSProfiles) {
     $('storageMessage').hidden = false;
     $('storageMessage').textContent = '日程文件未完整加载，请保持 assets 文件夹与页面在同一目录后重新打开。';
     return;
   }
   const preview = new URLSearchParams(location.search).get('preview') === '1';
-  const key = preview ? 'ielts52-daily-plan-preview-v1' : 'ielts52-daily-plan-v1';
+  const previewLink = (url) => url + (preview ? (url.includes('?') ? '&' : '?') + 'preview=1' : '');
+  const curriculumMaterials = new Map(Curriculum.materials.map((material) => [material.id, material]));
+  const key = 'ielts52-daily-plan-v1';
   const skillNames = { listening: '听力', speaking: '口语', reading: '阅读', writing: '写作' };
   const kindNames = { study: '学习日', review: '复盘日', checkpoint: '阶段测评日' };
   const escape = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -19,7 +23,11 @@
     return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
   }
   const today = () => localDate();
-  const storage = () => preview ? sessionStorage : localStorage;
+  let profileStorage;
+  const storage = () => profileStorage || (profileStorage = IELTSProfiles.storage());
+  let linkedRecords = [], linkedByDay = {}, linkedFailure = '';
+  const linkedFor = (day) => linkedByDay[day] || { totalRecords: 0, minutes: 0, tasks: {}, records: [] };
+  const effectiveFor = (day, plan) => Store.combineEvidence(plan || Store.getPlan(state, day, Content), recordFor(day).tasks, linkedFor(day));
   let blockedStorage = false;
   let originalCorruptData = null;
   let state = Store.newState(today());
@@ -92,7 +100,7 @@
     if (!record.completedAt || day > actualDay()) return false;
     const plan = Store.getPlan(state, day, Content);
     if (plan.kind === 'checkpoint' && !state.assessments.some((a) => a.week === plan.week)) return false;
-    return Core.summarizeDay(plan, record.tasks).complete;
+    return Core.summarizeDay(plan, effectiveFor(day, plan)).complete;
   }
   function renderStats() {
     let completed = 0, overdue = 0, minutes = 0;
@@ -100,7 +108,7 @@
     for (let d = 1; d <= 364; d++) {
       if (isSubmitted(d)) completed++;
       else if (d < dayNow) overdue++;
-      if (d <= dayNow) minutes += Core.summarizeDay(Store.getPlan(state, d, Content), recordFor(d).tasks).minutes;
+      if (d <= dayNow) minutes += Core.summarizeDay(Store.getPlan(state, d, Content), effectiveFor(d)).minutes;
     }
     $('completedDays').innerHTML = `${completed} <small>/ 364</small>`;
     $('loggedHours').innerHTML = `${(minutes / 60).toFixed(1)} <small>小时</small>`;
@@ -122,24 +130,38 @@
   function renderWeek() {
     const w = currentPlan.weekInfo;
     const stage = Content.stages.find((s) => s.id === w.stageId);
+    const courseWeek = Curriculum.weeks.find((item) => item.week === currentPlan.week);
+    const guidance = currentPlan.planVersion === Core.LEGACY_PLAN_VERSION ? w.guidance : courseWeek?.extensive?.instructions || '从任务卡进入指定材料，保留独立作答、订正和新题复测的证据。';
     $('weekSelect').value = String(currentPlan.week);
-    $('weekOverview').innerHTML = `<span class="stage-label">${escape(stage?.title || '')}</span><h3>${escape(w.title)}</h3><p><strong>本周语法：</strong>${escape(w.grammarFocus)}</p><p>${escape(w.guidance)}</p>`;
+    $('weekOverview').innerHTML = `<span class="stage-label">${escape(stage?.title || '')}</span><h3>${escape(w.title)}</h3><p><strong>本周语法：</strong>${escape(w.grammarFocus)}</p><p>${escape(guidance)}</p>`;
     const reading = w.foundation ? `<a href="基础入门.html?week=${w.week}">第 ${w.week} 周基础讲解与练习 →</a>` : w.lessonDay ? `<a href="开始学习.html#day${w.lessonDay}">第 ${w.lessonDay} 篇补充课文 →</a>` : '';
-    $('materials').innerHTML = `<h4>学习材料入口</h4>${reading}<a href="生词复习.html">到期词卡与原句复习</a><a href="口语练习.html">口语录音与回听</a><a href="写作与AI辅导.html">写作与语法辅导</a><a href="https://learnenglish.britishcouncil.org/free-resources/listening/a1" target="_blank" rel="noopener">A1 听力练习（联网）</a><a href="https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests/academic" target="_blank" rel="noopener">官方学术类练习（联网）</a><p>${w.foundation ? '从字母发音和简单句起步，按本周目标选择入门材料。' : '按当前阶段选择适合难度的材料。现有短文是补充素材；完整模考另用未练过的试卷。'}</p>`;
+    const extensive = courseWeek?.extensive;
+    const extensiveLinks = [['reading', '本周泛读材料'], ['listening', '本周泛听材料']].map(([skill, title]) => {
+      const ids = extensive?.[skill + 'Ids'] || [];
+      const materials = ids.map((id) => curriculumMaterials.get(id)).filter((material) => material?.skill === skill && material.pool === 'training' && !material.fullTest);
+      return `<section class="extensive-materials" data-skill="${skill}"><h4>${title}</h4>${materials.length ? materials.map((material) => `<a href="${escape(previewLink('学习课程.html?day=' + selectedDay + '&material=' + encodeURIComponent(material.id) + '&mode=practice&activity=extensive'))}">${escape(material.title)} →</a>`).join('') : '<p>此类材料尚未生成。</p>'}</section>`;
+    }).join('');
+    const week = currentPlan.week;
+    // Keep these edition blocks aligned with materials/textbook-training-map.json.
+    const edition = week >= 49 ? 19 : week >= 37 ? 16 + Math.floor((week - 37) / 4) : week >= 21 ? 4 + Math.floor((week - 21) / 4) : null;
+    const testNumber = edition === null ? null : (week - (week >= 37 ? 37 : 21)) % 4 + 1;
+    const textbook = edition === null ? '' : `<h4>第 ${week} 周教材建议</h4><a data-textbook-week="${week}" href="${escape(previewLink('本地教材.html?edition=' + edition + '&type=exam'))}">剑桥 ${edition} · Test ${testNumber}${week >= 49 ? ' · 末期保留' : ''}：先核对曝光 →</a><p>${week >= 49 ? '先在教材库检查是否已见，准备使用时再展开保留卷。' : '教材读写练习安排在原阅读、写作时段内。'}进入索引不会登记曝光；点击 PDF 才登记。当前教材缺配套真题听力音频，不作为四科完整模考。</p>`;
+    $('materials').innerHTML = `<h4>学习材料入口</h4><a href="${escape(previewLink('学习课程.html?day=' + selectedDay))}">第 ${selectedDay} 天课程与作品提交 →</a>${extensiveLinks}<p>泛读、泛听包含在原阅读、听力时段内，不另加时间；每天仍为 360 分钟。已见材料只作流畅度练习，不计陌生测评。</p>${textbook}<a href="${escape(previewLink('本地教材.html'))}">本地教材、剑雅试卷与曝光记录 →</a>${reading}<a href="生词复习.html">到期词卡与原句复习</a><a href="口语练习.html">口语录音与回听</a><a href="写作与AI辅导.html">写作与语法辅导</a><p>${currentPlan.planVersion === Core.LEGACY_PLAN_VERSION ? '此日保留旧版日程与完成量单位；课程可作为补充材料，相同单位的作品才计入旧任务。' : '各任务卡列出今日指定材料。按材料独立作答、提交原稿，再做订正与延迟复测；课程训练不等于正式成绩。'}</p>`;
     renderWeekDays();
   }
   function renderTasks() {
     const records = recordFor(selectedDay).tasks;
     $('taskList').innerHTML = currentPlan.tasks.map((task, i) => {
       const r = records[task.id] || {};
-      return `<article class="task-card" data-task="${escape(task.id)}"><div class="task-top"><div class="task-title"><span class="task-number">${String(i + 1).padStart(2, '0')}</span><div><h3>${escape(task.title)}</h3><p>${task.minutes} 分钟 · 至少 ${task.quantity} ${escape(task.unit)}</p></div></div><span class="task-status">待完成</span></div><p class="task-instruction">${escape(task.instruction)}</p><div class="task-inputs"><label for="minutes-${task.id}">实际学习分钟<input type="number" min="0" max="600" step="1" id="minutes-${task.id}" data-field="actualMinutes" value="${escape(r.actualMinutes ?? '')}" inputmode="numeric"></label><label for="quantity-${task.id}">已完成数量（${escape(task.unit)}）<input type="number" min="0" max="10000" step="1" id="quantity-${task.id}" data-field="actualQuantity" value="${escape(r.actualQuantity ?? '')}" inputmode="numeric"></label></div><label class="evidence-label" for="evidence-${task.id}">学习成果与复盘记录<textarea id="evidence-${task.id}" data-field="evidence" maxlength="1200" placeholder="${escape(task.evidenceHint)}">${escape(r.evidence || '')}</textarea></label><p class="task-issues" hidden></p></article>`;
+      const materials = task.materials ? `<div class="task-materials"><strong>本项指定材料</strong>${task.materials.length ? task.materials.map(m => `<a href="${escape(previewLink(m.url))}">${escape(m.title)} →</a>`).join('') : '<p>此项材料尚未生成，当前仅可预览日程。</p>'}</div>` : '';
+      return `<article class="task-card" data-task="${escape(task.id)}"><div class="task-top"><div class="task-title"><span class="task-number">${String(i + 1).padStart(2, '0')}</span><div><h3>${escape(task.title)}</h3><p>${task.minutes} 分钟 · 至少 ${task.quantity} ${escape(task.unit)}</p></div></div><span class="task-status">待完成</span></div><p class="task-instruction">${escape(task.instruction)}</p>${materials}<div class="task-inputs"><label for="minutes-${task.id}">实际学习分钟<input type="number" min="0" max="600" step="1" id="minutes-${task.id}" data-field="actualMinutes" value="${escape(r.actualMinutes ?? '')}" inputmode="numeric"></label><label for="quantity-${task.id}">已完成数量（${escape(task.unit)}）<input type="number" min="0" max="10000" step="1" id="quantity-${task.id}" data-field="actualQuantity" value="${escape(r.actualQuantity ?? '')}" inputmode="numeric"></label></div><label class="evidence-label" for="evidence-${task.id}">学习成果与复盘记录<textarea id="evidence-${task.id}" data-field="evidence" maxlength="1200" placeholder="${escape(task.evidenceHint)}">${escape(r.evidence || '')}</textarea></label><p class="task-issues" hidden></p></article>`;
     }).join('');
     const future = selectedDay > actualDay();
     $('tasksForm').querySelectorAll('input,textarea,button').forEach((el) => { el.disabled = future || blockedStorage; });
     updateTaskProgress();
   }
   function updateTaskProgress() {
-    const records = recordFor(selectedDay).tasks;
+    const records = effectiveFor(selectedDay, currentPlan);
     currentPlan.tasks.forEach((task) => {
       const card = $('taskList').querySelector(`[data-task="${task.id}"]`);
       const result = Core.validateTask(task, records[task.id]);
@@ -148,12 +170,16 @@
       const issues = card.querySelector('.task-issues');
       issues.hidden = !showValidation || result.complete;
       issues.textContent = result.issues.join('；');
+      let linked = card.querySelector('.linked-task');
+      if (!linked) { linked = document.createElement('p'); linked.className = 'linked-task small'; card.querySelector('.task-instruction').after(linked); }
+      const work = linkedFor(selectedDay).tasks[task.id];
+      linked.textContent = work ? `自动关联 ${work.count} 份作品 · ${work.minutes.toFixed(1)} 分钟 · ${Object.entries(work.quantities).map(([unit, n]) => `${n} ${unit}`).join('、') || '未标数量'}。同单位数量已计入本项；手填值视为包含作品的总量，取较大值以避免重复。` : '此项尚无关联作品。以下可填写线下学习的自报总量；不代表独立掌握。';
     });
     const summary = Core.summarizeDay(currentPlan, records);
     $('taskProgress').textContent = `${summary.completedTasks} / ${summary.totalTasks} 项达到计划量 · 已记 ${summary.minutes} 分钟`;
     $('dayProgress').max = summary.totalTasks;
     $('dayProgress').value = summary.completedTasks;
-    $('dayResult').textContent = isSubmitted(selectedDay) ? '今日成果已提交（自报记录，供后续抽查与测评）。' : '每项填写分钟、数量和至少 12 个非空白字符的成果记录，再提交。';
+    $('dayResult').textContent = isSubmitted(selectedDay) ? '今日完成量已提交。自报记录与关联作品均不等于已掌握；请查看下方订正和复测。' : '关联作品自动计入相同单位的学习量。线下学习可补填自报总量和成果，再提交。';
     $('submitDay').textContent = isSubmitted(selectedDay) ? '更新今日成果' : '提交今日成果';
   }
   function renderDay() {
@@ -165,6 +191,8 @@
     $('daySubtitle').textContent = `${Core.dateForDay(state.startDate, selectedDay)} · ${kindNames[currentPlan.kind]} · ${currentPlan.weekInfo.title}`;
     $('dayMinutes').textContent = currentPlan.totalMinutes;
     const messages = [];
+    if (currentPlan.planVersion === Core.LEGACY_PLAN_VERSION) messages.push('此日已有旧版记录，继续沿用原任务、数量和单位。旧记录不会被换算为新课程的题数或词数。');
+    else if (currentPlan.curriculumStatus !== 'complete-material-set') messages.push('课程材料仍在开发预览；任务卡只链接当前已生成材料，待材料完整后再按正式日程学习。');
     if (selectedDay > actualDay()) messages.push('这是未来日程预览。到对应日期后即可填写和提交学习成果。');
     if (actualDay() > 364) messages.push('52 周计划日期已结束。请依据最后测评结果继续补强，并以正式考试成绩确认目标。');
     if (currentPlan.kind === 'checkpoint') messages.push('今天包含阶段检查。请在下方保存本周测评记录，再提交今日成果。基础阶段使用适级任务，不强行换算雅思分数。');
@@ -177,6 +205,7 @@
     $('boostNotice').textContent = boost ? `本日补强重点：${skillNames[boost.skill]}。在对应任务内安排 20 分钟针对练习和 10 分钟复测，包含在每日 360 分钟内。` : '';
     renderWeek();
     renderTasks();
+    renderEvidence();
     $('assessmentWeek').value = String(currentPlan.week);
   }
   function renderAssessments() {
@@ -195,6 +224,27 @@
     renderAssessments();
     if (preview) $('setupStatus').textContent = '预览模式：记录保存在独立的临时会话中，不影响正式学习记录。';
   }
+  function renderEvidence() {
+    const sum = linkedFor(selectedDay);
+    $('evidenceStatus').textContent = linkedFailure || `本日 ${sum.totalRecords} 份作品，关联有效时间 ${sum.minutes.toFixed(1)} 分钟。时间重叠按提交时段保守去重；数量与掌握状态分别显示。`;
+    const work = Object.values(sum.tasks).flatMap(t => t.records).sort((a,b) => b.submittedAt.localeCompare(a.submittedAt));
+    $('linkedEvidence').innerHTML = work.length ? work.slice(0, 100).map(r => {
+      const s = r.learningStatus, flags = Object.entries(r.assistance).filter(([,v])=>v).map(([k])=>({hint:'提示',answer:'看过答案',ai:'AI 辅助'}[k]));
+      const url = new URLSearchParams({day:String(selectedDay),material:r.materialId,parent:r.id,mode:'practice',kind:'correction'});
+      if(preview)url.set('preview','1');
+      const due = Date.now() >= Date.parse(s.dueAt);
+      const retest = new URLSearchParams({day:String(clampDay(actualDay())),parent:r.id,mode:'assessment',kind:'retest'});
+      if(preview)retest.set('preview','1');
+      const answer = r.answer.length > 12000 ? r.answer.slice(0,12000) + '\n…完整原稿保存在作品库，可到备份中心导出。' : r.answer;
+      return `<article class="evidence-card"><div><strong>${escape(r.title)}</strong><span class="evidence-state">${escape(s.label)}</span></div><p class="small">${escape(r.source)} · ${escape(r.materialId)} · ${escape(r.submittedAt.replace('T',' ').slice(0,16))} UTC · ${r.minutes.toFixed(1)} 分钟 · ${r.quantity} ${escape(r.unit)} · ${flags.length?escape(flags.join('、')):'未标记使用辅助'} · v${r.version}</p><p class="small">${r.kind==='original'?'保留原稿':r.kind==='correction'?'订正作品':'复测作品'}${r.parentId?' · 前一作品 '+escape(r.parentId):''}；复测窗口 ${escape(s.dueAt.slice(0,16).replace('T',' '))}–${escape(s.until.slice(0,16).replace('T',' '))} UTC</p><details><summary>查看原稿、反馈与修订</summary><pre>${escape(answer||'原稿为录音，请到口语页回听或到备份中心导出音频。')}</pre>${r.media.map(m=>`<p class="small">录音：${escape(m.name)} · ${Math.round(m.durationSeconds)} 秒 · ${escape(m.id)}</p>`).join('')}${r.history.map(h=>`<div class="evidence-feedback"><strong>第 ${h.version} 版 · ${escape(h.evaluation.method)} · ${escape(h.evaluation.result)}</strong><pre>${escape(h.evaluation.feedback||'尚无反馈')}</pre><p>${escape(h.notes)}</p></div>`).join('')}</details><p><a href="学习课程.html?${escape(url.toString())}">保留原稿后订正</a>${due?` · <a href="学习课程.html?${escape(retest.toString())}">选择同技能新材料复测</a>`:' · 到 48 小时后可做新题复测'}</p></article>`;
+    }).join('') : '<p class="small">课程、写作、口语或选区练习提交后，作品将自动关联到实际学习日。旧版打卡继续保留为自报；不会自动变成独立掌握证据。</p>';
+    if(work.length>100)$('linkedEvidence').insertAdjacentHTML('beforeend','<p>本页显示最近 100 份作品；完整记录可到备份中心导出。</p>');
+  }
+  async function refreshEvidence() {
+    try { linkedRecords = await Records.list(); linkedByDay = Records.summaries(linkedRecords); linkedFailure = ''; }
+    catch(error) { linkedFailure = '作品库暂时无法读取，原记录保留：'+error.message; }
+    renderEvidence(); updateTaskProgress(); renderStats(); renderWeekDays();
+  }
   $('weekSelect').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周 · ${escape(w.title)}</option>`).join('');
   $('assessmentWeek').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周${w.week % 4 === 0 ? '（阶段检查）' : ''}</option>`).join('');
   $('weekSelect').addEventListener('change', () => { persist(); selectedDay = (Number($('weekSelect').value) - 1) * 7 + 1; renderDay(); });
@@ -207,7 +257,7 @@
       Core.parseStartDate(date);
       Core.dateForDay(date, 364);
       if (blockedStorage) throw new Error('请先导出原始记录并通过导入恢复，再调整日期。');
-      if (date !== state.startDate && (Object.keys(state.days).length || state.assessments.length)) {
+      if (date !== state.startDate && (Object.keys(state.days).length || state.assessments.length || linkedRecords.length)) {
         $('setupStatus').textContent = '已有学习记录时保持开课日期固定，以免错置历史日期。新计划请先导出备份，再使用新的浏览器档案开始。';
         $('startDate').value = state.startDate;
         return;
@@ -221,7 +271,8 @@
     const field = event.target.dataset.field;
     const card = event.target.closest('[data-task]');
     if (!field || !card || selectedDay > actualDay() || blockedStorage) return;
-    const day = state.days[String(selectedDay)] || (state.days[String(selectedDay)] = { tasks: {} });
+    const day = state.days[String(selectedDay)] || (state.days[String(selectedDay)] = { planVersion: currentPlan.planVersion, tasks: {} });
+    day.planVersion = currentPlan.planVersion;
     const r = day.tasks[card.dataset.task] || (day.tasks[card.dataset.task] = { actualMinutes: null, actualQuantity: null, evidence: '' });
     if (field === 'evidence') r[field] = event.target.value.slice(0, 1200);
     else {
@@ -246,10 +297,12 @@
     event.preventDefault();
     if (selectedDay > actualDay() || blockedStorage) return;
     showValidation = true; updateTaskProgress();
-    const summary = Core.summarizeDay(currentPlan, recordFor(selectedDay).tasks);
+    const summary = Core.summarizeDay(currentPlan, effectiveFor(selectedDay, currentPlan));
     if (!summary.complete) { $('dayResult').textContent = '还有任务未达到要求，请按各项提示补齐真实学习成果。'; $('taskList').querySelector('.task-card:not(.complete)')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
     if (currentPlan.kind === 'checkpoint' && !state.assessments.some((a) => a.week === currentPlan.week)) { $('dayResult').textContent = '请先在下方保存本周阶段测评记录，再提交今日成果。'; $('assessmentTitle').scrollIntoView({ behavior: 'smooth' }); return; }
-    state.days[String(selectedDay)].completedAt = new Date().toISOString();
+    const savedDay = state.days[String(selectedDay)] || (state.days[String(selectedDay)] = { planVersion: currentPlan.planVersion, tasks: {} });
+    savedDay.planVersion = currentPlan.planVersion;
+    savedDay.completedAt = new Date().toISOString();
     persist(); updateTaskProgress(); renderStats(); renderWeekDays();
     if (savingFailed) $('dayResult').textContent = '成果已在当前页面整理完成，但浏览器未能保存。请立即导出备份。';
   });
@@ -307,12 +360,15 @@
   });
   window.addEventListener('pagehide', () => persist());
   window.addEventListener('storage', event => {
-    if (!preview && event.key === key && event.newValue !== lastStoredRaw) {
+    if (!preview && event.key === IELTSProfiles.scopeKey(key) && event.newValue !== lastStoredRaw) {
       storageConflict = true;
       showStorageError('另一个标签页已更新记录。请导出本页尚未保存的草稿，再刷新读取最新版本；本页不会覆盖其他标签页。');
     }
   });
   toggleAssessmentFields();
+  IELTSProfiles.mount($('profilePanel'));
   renderAll();
   if (!blockedStorage && lastSavedState === null) persist();
+  window.addEventListener(Records.EVENT, refreshEvidence);
+  refreshEvidence();
 })();

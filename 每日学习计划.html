@@ -6,7 +6,11 @@
   <meta name="description" content="52周雅思学术类学习日程：每日定量任务、学习成果记录、阶段测评和补强安排。">
   <title>每日学习计划 · IELTS 52周</title>
   <link rel="stylesheet" href="assets/daily-plan.css">
+  <style>.evidence-panel{margin:24px 0;padding:24px;background:#fff;border:1px solid #dce5de;border-radius:16px}.evidence-card{padding:18px 0;border-bottom:1px solid #e4e9e5}.evidence-card:last-child{border:0}.evidence-state{display:inline-block;margin:4px 10px;color:#31684e;font-size:13px}.evidence-card pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:13px;background:#f4f7f4;padding:14px;border-radius:8px}.evidence-feedback{margin:12px 0}.linked-task{padding:10px;background:#edf6ee;border-radius:8px}.task-materials{padding:12px 14px;background:#f4f7f1;border-radius:8px;font-size:12px}.task-materials strong{display:block;margin-bottom:6px}.task-materials a{display:block;margin:6px 0;overflow-wrap:anywhere}#profilePanel{display:block}</style>
+  <script src="assets/profile-store.js" defer></script>
+  <script src="assets/learning-records.js" defer></script>
   <script src="assets/daily-plan-content.js" defer></script>
+  <script src="assets/curriculum-data.js" defer></script>
   <script src="assets/daily-plan-core.js" defer></script>
   <script src="assets/daily-plan-state.js" defer></script>
   <script src="assets/daily-plan-app.js" defer></script>
@@ -22,13 +26,14 @@
       <div class="hero-aside"><span>每天固定学习量</span><strong>6<span> 小时</span></strong><small>每周 42 小时 · 全年 2184 小时<br>建议分 3 段完成，休息另计；补强安排在 6 小时内</small></div>
     </section>
     <div id="storageMessage" class="notice danger" role="alert" hidden></div>
+    <section id="profilePanel" class="setup-panel" aria-label="个人学习档案"></section>
     <section class="setup-panel" aria-label="计划设置">
       <form id="startForm" class="inline-form"><label for="startDate">开课日期</label><input type="date" id="startDate" required><button type="submit" class="button secondary">保存日期</button></form>
       <div class="toolbar"><button id="todayButton" class="button primary">回到今天</button><button id="exportButton" class="button secondary">导出记录</button><label class="button secondary import-button" for="importFile">导入记录<input id="importFile" type="file" accept="application/json,.json"></label></div>
       <p id="setupStatus" class="small status" role="status"></p>
     </section>
     <section class="stats" aria-label="计划进度">
-      <div class="stat"><span>已提交学习日</span><strong id="completedDays">0 <small>/ 364</small></strong><small>任务量满足且已提交 · 自报记录</small></div>
+      <div class="stat"><span>已提交学习日</span><strong id="completedDays">0 <small>/ 364</small></strong><small>任务量满足且已提交 · 能力另行验证</small></div>
       <div class="stat"><span>已记录学习时间</span><strong id="loggedHours">0 <small>小时</small></strong><small>以实际投入分钟累计</small></div>
       <div class="stat"><span>待补交学习日</span><strong id="overdueDays">0</strong><small>逾期任务保留，可分次补做</small></div>
       <div class="stat"><span>下一次阶段检查</span><strong id="nextCheckpoint">第 4 周</strong><small>四项分别检查，及时调整</small></div>
@@ -39,7 +44,7 @@
         <div id="weekOverview" class="week-overview"></div>
         <div id="weekDays" class="week-days" aria-label="本周七天"></div>
         <div id="materials" class="materials"></div>
-        <details class="rules"><summary>怎样算完成？</summary><p>每项记录实际分钟、完成数量和学习成果。全部达到当天要求后，点击“提交今日成果”。</p><p>这里保存的是自报学习记录。作品需要抽查，能力进步需要测评；完成日程本身不保证考试分数。</p><p>录音和长篇作文请另行备份，在成果栏记录文件名、材料出处和关键错误。</p></details>
+        <details class="rules"><summary>怎样算完成？</summary><p>新日程直接使用当天课程的任务和材料：听读与语法记题数，词汇记条数，说写记词数，复盘记份数。提交作品后自动计入分钟和相同单位的产出。手填值视为包含作品的自报总量，二者取较大值。全部达到当天要求后，点击“提交今日成果”。</p><p>已保存的旧日程继续沿用原任务与单位，不把旧版句数换算成新课程题数。完成量与掌握状态分开：看过提示和 AI 辅助的作答可以计入学习量；独立掌握需要换用未曝光材料，在订正后 48–72 小时复测。AI 反馈属于训练参考，不等于正式成绩。</p><p>请到备份中心分别备份文字作品与音频。旧版记录仍保持自报性质。</p></details>
       </aside>
       <section class="day-panel" aria-labelledby="dayTitle">
         <div class="day-heading"><div><p id="dayEyebrow" class="eyebrow"></p><h2 id="dayTitle"></h2><p id="daySubtitle" class="muted"></p></div><div class="day-budget"><strong id="dayMinutes"></strong><span>分钟 · 计划量</span></div></div>
@@ -48,6 +53,7 @@
         <div class="progress-row"><span id="taskProgress"></span><span id="saveStatus" class="small" role="status"></span></div>
         <progress id="dayProgress" value="0" max="7" aria-label="每日任务进度"></progress>
         <form id="tasksForm" novalidate><div id="taskList"></div><div class="submit-row"><p id="dayResult" class="small" role="status"></p><button id="submitDay" type="submit" class="button primary">提交今日成果</button></div></form>
+        <section class="evidence-panel" aria-labelledby="evidenceTitle"><h3 id="evidenceTitle">作品、订正与延迟复测</h3><p id="evidenceStatus" class="small" role="status">正在读取本档案作品…</p><div id="linkedEvidence"></div><p class="small"><a href="备份中心.html">备份完整作品与录音</a>。记录中的来源和辅助标记由软件及使用者提供；不会因打卡自动宣称能力达标。</p></section>
       </section>
     </div>
     <section class="assessment-panel" aria-labelledby="assessmentTitle">
