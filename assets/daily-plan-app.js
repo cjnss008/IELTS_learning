@@ -124,8 +124,8 @@
     const stage = Content.stages.find((s) => s.id === w.stageId);
     $('weekSelect').value = String(currentPlan.week);
     $('weekOverview').innerHTML = `<span class="stage-label">${escape(stage?.title || '')}</span><h3>${escape(w.title)}</h3><p><strong>本周语法：</strong>${escape(w.grammarFocus)}</p><p>${escape(w.guidance)}</p>`;
-    const reading = w.lessonDay ? `<a href="开始学习.html#day${w.lessonDay}">第 ${w.lessonDay} 篇补充课文 →</a>` : '';
-    $('materials').innerHTML = `<h4>学习材料入口</h4>${reading}<a href="单词分组学习.html">精选词卡</a><a href="https://learnenglish.britishcouncil.org/free-resources/listening/a1" target="_blank" rel="noopener">A1 听力练习（联网）</a><a href="https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests/academic" target="_blank" rel="noopener">官方学术类练习（联网）</a><p>${w.foundation ? '从字母发音和简单句起步，按本周目标选择入门材料。' : '按当前阶段选择适合难度的材料。现有短文是补充素材；完整模考另用未练过的试卷。'}</p>`;
+    const reading = w.foundation ? `<a href="基础入门.html?week=${w.week}">第 ${w.week} 周基础讲解与练习 →</a>` : w.lessonDay ? `<a href="开始学习.html#day${w.lessonDay}">第 ${w.lessonDay} 篇补充课文 →</a>` : '';
+    $('materials').innerHTML = `<h4>学习材料入口</h4>${reading}<a href="生词复习.html">到期词卡与原句复习</a><a href="口语练习.html">口语录音与回听</a><a href="写作与AI辅导.html">写作与语法辅导</a><a href="https://learnenglish.britishcouncil.org/free-resources/listening/a1" target="_blank" rel="noopener">A1 听力练习（联网）</a><a href="https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests/academic" target="_blank" rel="noopener">官方学术类练习（联网）</a><p>${w.foundation ? '从字母发音和简单句起步，按本周目标选择入门材料。' : '按当前阶段选择适合难度的材料。现有短文是补充素材；完整模考另用未练过的试卷。'}</p>`;
     renderWeekDays();
   }
   function renderTasks() {

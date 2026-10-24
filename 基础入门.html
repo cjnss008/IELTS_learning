@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>基础入门 · IELTS Learning</title>
+  <link rel="stylesheet" href="assets/daily-plan.css">
+  <link rel="stylesheet" href="assets/foundation.css">
+  <script src="assets/foundation.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="开始学习.html"><span class="brand-icon">I</span><span>IELTS LEARNING<small>从句子开始，逐步走向学术英语</small></span></a>
+    <nav aria-label="主导航"><a href="每日学习计划.html">每日学习计划</a><a href="开始学习.html">52 篇课文</a><a href="备份中心.html">数据备份</a></nav>
+  </header>
+  <main class="page-shell" id="foundationApp">
+    <section class="foundation-hero">
+      <p class="eyebrow">FOUNDATION · WEEKS 01–08</p>
+      <h1>先读懂一句话，再走向一篇文章</h1>
+      <p>八个入门单元，从字母与声音开始，练习自我介绍、问答、日常活动与简单时态。中文解释帮助你理解结构，英文小对话帮助你把它用起来。</p>
+      <p class="foundation-scope">这是前 8 周的精读与语法起点。每周单元需要配合适级听力、词汇、跟读和重复练习；这里的内容量不能独立填满每天 6 小时，也不是能力认证或考试成绩保证。</p>
+    </section>
+    <p id="foundationPreview" class="foundation-notice" hidden>预览模式：答案只保存到本次浏览器会话，不影响正式记录。</p>
+    <p id="foundationStorage" class="foundation-storage" role="status"></p>
+    <div class="foundation-layout">
+      <aside class="foundation-sidebar">
+        <label for="foundationWeek">选择周单元</label>
+        <select id="foundationWeek"></select>
+        <p id="foundationProgress"></p>
+        <p class="foundation-small">自检只核对本页的 64 道基础题。不会因答完题而推进每日学习计划或标记达到雅思分数。</p>
+        <a href="每日学习计划.html">查看对应每日用量 →</a>
+        <div class="foundation-audio-note">
+          <strong>可选合成朗读</strong>
+          <p>点击例句旁的“合成朗读”才播放。声音来自浏览器／系统 TTS，非真人录音；音色与可用性依设备而异，部分声音可能需要联网。</p>
+          <p id="foundationVoice" role="status"></p>
+          <button class="button secondary" id="foundationStop" type="button">停止朗读</button>
+        </div>
+      </aside>
+      <article id="foundationUnit" aria-label="当前基础单元"></article>
+    </div>
+    <noscript><p class="foundation-notice">请允许浏览器运行本地 JavaScript 以加载八个单元。此页文字与答题无需联网。</p></noscript>
+  </main>
+</body>
+</html>
