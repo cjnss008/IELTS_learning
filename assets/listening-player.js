@@ -34,11 +34,23 @@
       for (let i = 1; i < ranges.length;) { if (ranges[i][0] <= ranges[i - 1][1] + 0.06) { ranges[i - 1][1] = Math.max(ranges[i - 1][1], ranges[i][1]); ranges.splice(i, 1); } else i++; }
     }
     function resetAnchor(time, active = false, rate = 1) { anchor = { time, wall: now(), active, rate }; }
-    function sample(time, active, rate = 1) {
+    function sample(time, active, rate = 1, evidence = {}) {
       const wall = now(); let jump = false;
-      if (anchor && Number.isFinite(time) && Number.isFinite(anchor.time) && anchor.active && active && rate > 0 && Number.isFinite(rate)) {
+      if (anchor && Number.isFinite(time) && Number.isFinite(anchor.time) && anchor.active && (active || evidence.closePrevious === true) && rate > 0 && Number.isFinite(rate)) {
         const delta = time - anchor.time, elapsed = Math.max(0, (wall - anchor.wall) / 1000), allowed = elapsed * Math.max(anchor.rate, 0.01) + 0.4;
-        if (delta >= 0 && delta <= allowed) add(Math.max(0, anchor.time), time);
+        if (delta >= 0 && delta <= allowed) {
+          if (Array.isArray(evidence.played)) {
+            // Native played ranges advance during actual playback even when a
+            // background tab receives no timeupdate events. Intersect only this
+            // audible interval: the native history also contains muted replays.
+            let proven = 0;
+            for (const range of evidence.played) {
+              const start = Math.max(0, anchor.time, range[0]), end = Math.min(time, range[1]);
+              if (end > start) { add(start, end); proven += end - start; }
+            }
+            if (delta - proven > 0.08) { jump = true; jumps++; }
+          } else add(Math.max(0, anchor.time), time);
+        }
         else if (Math.abs(delta) > 0.08) { jump = true; jumps++; }
       }
       anchor = { time, wall, active, rate };
@@ -51,6 +63,20 @@
       return { ranges: ranges.map(r => r.slice()), coveredSeconds: covered, durationSeconds: Number.isFinite(duration) ? duration : null, complete, jumps };
     }
     return { sample, resetAnchor, state, clear() { ranges.length = 0; anchor = null; jumps = 0; } };
+  }
+  function playedRanges(audio) {
+    try {
+      const played = audio.played;
+      if (!played || typeof played.start !== 'function' || typeof played.end !== 'function') return null;
+      if (!Number.isInteger(played.length) || played.length < 0 || played.length > 10000) return [];
+      const ranges = []; let previousEnd = -Infinity;
+      for (let i = 0; i < played.length; i++) {
+        const start = played.start(i), end = played.end(i);
+        if (!Number.isFinite(start) || !Number.isFinite(end) || start < 0 || end < start || start < previousEnd) return [];
+        ranges.push([start, end]); previousEnd = end;
+      }
+      return ranges;
+    } catch (_) { return []; }
   }
   function mount(host, options = {}) {
     if (!host || !root.document) throw Error('听力播放器缺少挂载位置。');
@@ -73,7 +99,10 @@
     }
     function audible() { return !audio.muted && audio.volume > 0; }
     function sample(active = playing, closingInterval = false) {
-      const result = coverage.sample(audio.currentTime, active && (closingInterval || !audio.paused) && !audio.seeking && audible(), audio.playbackRate);
+      // At the end (or a pause), timeupdate may observe paused=true before the
+      // queued pause/ended listeners run. Close the previous audible interval
+      // before replacing its anchor, rather than discarding a throttled tail.
+      const result = coverage.sample(audio.currentTime, active && (closingInterval || !audio.paused) && !audio.seeking && audible(), audio.playbackRate, { played: playedRanges(audio), closePrevious: closingInterval || playing && !audio.seeking && (audio.paused || audio.ended) });
       if (result.jump) help('seek'); return result;
     }
     function invalidate(detail) { available = false; complete = false; callback('onAvailable', false, detail); callback('onComplete', false, { ...detail, coverage: coverage.state(audio.duration) }); }
@@ -120,8 +149,8 @@
     listen('stalled', () => { if (!disposed && !failed) { stalled = true; render('音频读取暂时停顿。请等待；若仍无声音，可重新载入重试。'); } });
     listen('seeking', () => { if (disposed) return; help('seek'); coverage.resetAnchor(audio.currentTime, false, audio.playbackRate); setComplete(false, { reason: 'seek' }); });
     listen('seeked', () => { if (!disposed) coverage.resetAnchor(audio.currentTime, playing && audible(), audio.playbackRate); });
-    listen('ratechange', () => { if (disposed) return; sample(); if (audio.playbackRate !== 1) help('rate'); coverage.resetAnchor(audio.currentTime, playing && audible(), audio.playbackRate); });
-    listen('volumechange', () => { if (disposed) return; sample(); coverage.resetAnchor(audio.currentTime, playing && audible(), audio.playbackRate); if (!audible() && playing) render('当前音频静音或音量为零，静音时段不会记入完整听音。'); });
+    listen('ratechange', () => { if (disposed) return; sample(playing, true); if (audio.playbackRate !== 1) help('rate'); coverage.resetAnchor(audio.currentTime, playing && !audio.paused && audible(), audio.playbackRate); });
+    listen('volumechange', () => { if (disposed) return; sample(playing, true); coverage.resetAnchor(audio.currentTime, playing && !audio.paused && audible(), audio.playbackRate); if (!audible() && playing) render('当前音频静音或音量为零，静音时段不会记入完整听音。'); });
     listen('ended', () => {
       if (disposed || failed) return;
       sample(playing, true); playing = false; requesting = false; ended = true; stalled = false; phase = 'ended';
@@ -140,5 +169,5 @@
     }
     return { destroy, play, pause, reload, getState: () => ({ phase, available, complete, successful, assessment, failed, error: lastError, coverage: coverage.state(audio.duration), disposed }) };
   }
-  const api = Object.freeze({ mount, safeSource, mediaError, createCoverage }); root.IELTSListeningPlayer = api; if (typeof module === 'object' && module.exports) module.exports = api;
+  const api = Object.freeze({ mount, safeSource, mediaError, createCoverage, playedRanges }); root.IELTSListeningPlayer = api; if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
