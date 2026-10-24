@@ -1,0 +1,317 @@
+{
+  "id": "w20-listen-1",
+  "week": 20,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "基础综合复测与薄弱项整理",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "The Community Pool Schedule Meeting",
+  "instructions": "这是一份模拟的英语听力练习，适合B1水平学习者。请先听录音（或阅读录音文本），然后回答问题。题目包括单选题和填空题。填空题答案必须来自录音原文，且不超过规定的词数。所有解释均为中文。",
+  "passage": "",
+  "transcript": "Mia: Hi, Tom. Are you free to talk about the pool schedule for next week?\nTom: Yes, I am. But I only have ten minutes. I need to go to the pool at eleven.\nMia: That's fine. So, the first thing is the swimming lessons on Monday. We have three classes now, not two.\nTom: Three? Last week we had two. Why the change?\nMia: Because more children want to learn. The new class is for beginners at 4 p.m.\nTom: OK. And who teaches it?\nMia: Sarah does. She is a good teacher. She taught the advanced class last year.\nTom: Good. What about the water aerobics class on Wednesday?\nMia: That class is at 10 a.m., not 9 a.m. The teacher, Mr. Lee, asked for the change.\nTom: So the pool is free at 9 a.m. on Wednesday?\nMia: Yes, it is. We can use that hour for open swimming.\nTom: Great. Now, the pool cleaning on Thursday. Is it still at 2 p.m.?\nMia: No, it is at 3 p.m. this week. The cleaning company is coming later.\nTom: So the pool is closed from 3 p.m. to 5 p.m. on Thursday?\nMia: That's right. And on Friday, we have a swimming competition for children. It starts at 9 a.m. and finishes at 12 p.m.\nTom: Do we need more people to help?\nMia: Yes, we need two more helpers. Can you ask your friend Jack?\nTom: I can ask him, but he is busy on Friday morning. He works at the shop.\nMia: OK, I will ask my sister. She is free on Friday.\nTom: Good. One more thing: the pool opens at 7 a.m. every day, right?\nMia: Yes, but on Sunday it opens at 8 a.m. because the staff meeting is at 7 a.m.\nTom: I see. Thanks for the information. I need to go now. See you later!\nMia: See you, Tom!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many swimming classes are there on Monday now?",
+      "options": [
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answers": [
+        "Three"
+      ],
+      "explanation": "录音中Mia说“We have three classes now, not two.”，所以现在是三节课。",
+      "evidence": "We have three classes now, not two."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who teaches the new beginners' class?",
+      "options": [
+        "Sarah",
+        "Mr. Lee",
+        "Jack"
+      ],
+      "answers": [
+        "Sarah"
+      ],
+      "explanation": "Mia说“Sarah does. She is a good teacher.”，所以新课程由Sarah教。",
+      "evidence": "Sarah does. She is a good teacher."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What time is the water aerobics class on Wednesday?",
+      "options": [
+        "9 a.m.",
+        "10 a.m.",
+        "11 a.m."
+      ],
+      "answers": [
+        "10 a.m."
+      ],
+      "explanation": "Mia说“That class is at 10 a.m., not 9 a.m.”，所以是上午10点。",
+      "evidence": "That class is at 10 a.m., not 9 a.m."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "When is the pool cleaning on Thursday?",
+      "options": [
+        "2 p.m.",
+        "3 p.m.",
+        "5 p.m."
+      ],
+      "answers": [
+        "3 p.m."
+      ],
+      "explanation": "Mia说“No, it is at 3 p.m. this week.”，所以清洁在下午3点。",
+      "evidence": "No, it is at 3 p.m. this week."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What time does the swimming competition start on Friday? (Write one number and a.m./p.m.)",
+      "maxWords": 2,
+      "answers": [
+        "9 a.m."
+      ],
+      "explanation": "Mia说“It starts at 9 a.m. and finishes at 12 p.m.”，所以比赛上午9点开始。",
+      "evidence": "It starts at 9 a.m. and finishes at 12 p.m."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many more helpers do they need for the competition?",
+      "options": [
+        "One",
+        "Two",
+        "Three"
+      ],
+      "answers": [
+        "Two"
+      ],
+      "explanation": "Mia说“Yes, we need two more helpers.”，所以还需要两名帮手。",
+      "evidence": "Yes, we need two more helpers."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Why can't Jack help on Friday morning?",
+      "options": [
+        "He is busy at work.",
+        "He is at school.",
+        "He is on holiday."
+      ],
+      "answers": [
+        "He is busy at work."
+      ],
+      "explanation": "Tom说“he is busy on Friday morning. He works at the shop.”，所以Jack周五上午在商店工作，很忙。",
+      "evidence": "he is busy on Friday morning. He works at the shop."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What time does the pool open on Sunday?",
+      "options": [
+        "7 a.m.",
+        "8 a.m.",
+        "9 a.m."
+      ],
+      "answers": [
+        "8 a.m."
+      ],
+      "explanation": "Mia说“on Sunday it opens at 8 a.m. because the staff meeting is at 7 a.m.”，所以周日8点开门。",
+      "evidence": "on Sunday it opens at 8 a.m. because the staff meeting is at 7 a.m."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What time does the pool close on Thursday?",
+      "options": [
+        "3 p.m.",
+        "5 p.m.",
+        "7 p.m."
+      ],
+      "answers": [
+        "5 p.m."
+      ],
+      "explanation": "Mia说“the pool is closed from 3 p.m. to 5 p.m. on Thursday”，所以周四下午5点关门。",
+      "evidence": "the pool is closed from 3 p.m. to 5 p.m. on Thursday"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Who will Mia ask to help on Friday?",
+      "options": [
+        "Her sister",
+        "Jack",
+        "Tom"
+      ],
+      "answers": [
+        "Her sister"
+      ],
+      "explanation": "Mia说“OK, I will ask my sister. She is free on Friday.”，所以她会问她的姐姐/妹妹。",
+      "evidence": "OK, I will ask my sister. She is free on Friday."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "schedule",
+      "meaning": "日程安排，时间表",
+      "example": "Are you free to talk about the pool schedule for next week?"
+    },
+    {
+      "word": "beginner",
+      "meaning": "初学者，新手",
+      "example": "The new class is for beginners at 4 p.m."
+    },
+    {
+      "word": "advanced",
+      "meaning": "高级的，先进的",
+      "example": "She taught the advanced class last year."
+    },
+    {
+      "word": "aerobics",
+      "meaning": "有氧运动",
+      "example": "What about the water aerobics class on Wednesday?"
+    },
+    {
+      "word": "competition",
+      "meaning": "比赛，竞赛",
+      "example": "we have a swimming competition for children."
+    },
+    {
+      "word": "helper",
+      "meaning": "帮手，助手",
+      "example": "we need two more helpers."
+    },
+    {
+      "word": "staff",
+      "meaning": "员工，全体职员",
+      "example": "the staff meeting is at 7 a.m."
+    },
+    {
+      "word": "free",
+      "meaning": "有空的，免费的",
+      "example": "She is free on Friday."
+    }
+  ],
+  "grammar": {
+    "title": "基础时态、问句、名词数量和常见从句综合复习",
+    "explanation": "本练习复习一般现在时（表示习惯或事实）、一般过去时（表示过去发生的事）、特殊疑问句（如What time...? Who...?）、名词单复数（如class→classes, helper→helpers）以及常见从句（如because引导的原因状语从句）。注意：一般现在时中，主语为第三人称单数时动词加-s（如She teaches）；一般过去时动词用过去式（如taught）。",
+    "example": "She taught the advanced class last year.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She teach the advanced class last year.",
+          "She taught the advanced class last year.",
+          "She teaches the advanced class last year."
+        ],
+        "answers": [
+          "She taught the advanced class last year."
+        ],
+        "explanation": "句子中有last year，表示过去，所以动词用过去式taught。",
+        "evidence": "She taught the advanced class last year."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "What is the correct question?",
+        "options": [
+          "What time the class is?",
+          "What time is the class?",
+          "What time does the class?"
+        ],
+        "answers": [
+          "What time is the class?"
+        ],
+        "explanation": "特殊疑问句结构：疑问词 + be动词 + 主语。所以是What time is the class?",
+        "evidence": "What time is the water aerobics class on Wednesday?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct plural form.",
+        "options": [
+          "three class",
+          "three classes",
+          "three classs"
+        ],
+        "answers": [
+          "three classes"
+        ],
+        "explanation": "class的复数是classes，以s结尾加-es。",
+        "evidence": "We have three classes now, not two."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence with 'because'.",
+        "options": [
+          "The pool opens at 8 a.m. because the staff meeting is at 7 a.m.",
+          "The pool opens at 8 a.m. because the staff meeting are at 7 a.m.",
+          "The pool opens at 8 a.m. because the staff meeting at 7 a.m."
+        ],
+        "answers": [
+          "The pool opens at 8 a.m. because the staff meeting is at 7 a.m."
+        ],
+        "explanation": "because引导原因状语从句，从句中主语the staff meeting是单数，所以用is。",
+        "evidence": "on Sunday it opens at 8 a.m. because the staff meeting is at 7 a.m."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like swimming? Why or why not?",
+        "How often do you go to a swimming pool?",
+        "What do you usually do on weekends?",
+        "Do you prefer to exercise alone or with friends?"
+      ],
+      "part2": "Describe a time when you had to change your plans because of a schedule change. You should say:",
+      "part2Bullets": [
+        "what the original plan was",
+        "why the schedule changed",
+        "what you did instead",
+        "how you felt about the change"
+      ],
+      "part3": [
+        "Do you think it is important to be flexible when plans change?",
+        "How do people usually inform others about schedule changes?",
+        "What problems can happen when a schedule changes suddenly?",
+        "Should community centers have fixed schedules or flexible ones?"
+      ]
+    },
+    "writing": "Write a short email (about 80-100 words) to a friend about a change in your weekend plan. Explain what the original plan was, why it changed, and what the new plan is. Use the simple past and present tenses, and include at least one question."
+  },
+  "figure": "",
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "faec894731f4498987ed89a712f36af0126b6301f0d18b046286d7cfd15d955c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

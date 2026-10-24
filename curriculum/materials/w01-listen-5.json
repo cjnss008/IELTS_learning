@@ -1,0 +1,268 @@
+{
+  "id": "w01-listen-5",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 5,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0初学者编写的模拟听力练习，不是官方考试。请先听录音（或阅读录音文字），然后回答8个问题。问题只有中文说明，选项为完整英文句子。填空题答案必须与录音原文完全一致，且不超过规定字数。",
+  "passage": "",
+  "transcript": "Anna: Hello. I am Anna. Are you a student?\nLi Wei: Yes, I am. I am Li Wei. Are you a student too?\nAnna: No, I am not. I am a teacher. I am from London.\nLi Wei: I am from Shanghai. Are you from China?\nAnna: No, I am not. I am from England. You are from China.\nLi Wei: Yes. You are a teacher. I am a student. Goodbye!\nAnna: Goodbye!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Anna 来自哪里？",
+      "options": [
+        "Anna is from London.",
+        "Anna is from Shanghai.",
+        "Anna is from China."
+      ],
+      "answers": [
+        "Anna is from London."
+      ],
+      "explanation": "Anna 明确说“I am from London.”，所以选第一项。上海是中国城市，但 Anna 没有说来自上海；她也明确否认来自中国。",
+      "evidence": "I am from London."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Li Wei 来自哪里？",
+      "options": [
+        "Li Wei is from Shanghai.",
+        "Li Wei is from London.",
+        "Li Wei is from England."
+      ],
+      "answers": [
+        "Li Wei is from Shanghai."
+      ],
+      "explanation": "Li Wei 说“I am from Shanghai.”，所以选第一项。London 和 England 是 Anna 的来源地。",
+      "evidence": "I am from Shanghai."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Anna 是学生吗？",
+      "options": [
+        "No, Anna is not a student.",
+        "Yes, Anna is a student.",
+        "Anna is a teacher and a student."
+      ],
+      "answers": [
+        "No, Anna is not a student."
+      ],
+      "explanation": "Anna 说“No, I am not. I am a teacher.”，明确否认自己是学生，所以选第一项。",
+      "evidence": "No, I am not. I am a teacher."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Li Wei 是学生吗？",
+      "options": [
+        "Yes, Li Wei is a student.",
+        "No, Li Wei is not a student.",
+        "Li Wei is a teacher."
+      ],
+      "answers": [
+        "Yes, Li Wei is a student."
+      ],
+      "explanation": "Li Wei 说“Yes, I am. I am Li Wei.”回答“Are you a student?”，后面又说“I am a student.”，所以选第一项。",
+      "evidence": "Yes, I am. I am Li Wei."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Anna 是老师吗？",
+      "options": [
+        "Yes, Anna is a teacher.",
+        "No, Anna is not a teacher.",
+        "Anna is a student."
+      ],
+      "answers": [
+        "Yes, Anna is a teacher."
+      ],
+      "explanation": "Anna 说“I am a teacher.”，所以选第一项。",
+      "evidence": "I am a teacher."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Anna 来自中国吗？",
+      "options": [
+        "No, Anna is not from China.",
+        "Yes, Anna is from China.",
+        "Anna is from China and England."
+      ],
+      "answers": [
+        "No, Anna is not from China."
+      ],
+      "explanation": "Li Wei 问“Are you from China?”，Anna 回答“No, I am not. I am from England.”，所以选第一项。",
+      "evidence": "No, I am not. I am from England."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Anna 说：“I am a ______.” 请填一个词。",
+      "maxWords": 1,
+      "answers": [
+        "teacher"
+      ],
+      "explanation": "Anna 在录音中明确说“I am a teacher.”，所以填 teacher。",
+      "evidence": "I am a teacher."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Li Wei 说：“I am from ______.” 请填一个词。",
+      "maxWords": 1,
+      "answers": [
+        "Shanghai"
+      ],
+      "explanation": "Li Wei 在录音中明确说“I am from Shanghai.”，所以填 Shanghai。",
+      "evidence": "I am from Shanghai."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Anna."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am a teacher."
+    },
+    {
+      "word": "from",
+      "meaning": "来自",
+      "example": "I am from London."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "Are you a student too?"
+    },
+    {
+      "word": "goodbye",
+      "meaning": "再见",
+      "example": "Goodbye!"
+    }
+  ],
+  "grammar": {
+    "title": "I / you 与 am / are；句首大写与句号",
+    "explanation": "英语里，说“我”用 I，说“你”用 you。I 后面用 am，you 后面用 are。句子第一个字母要大写，句子结束要写句号。例如：I am Anna. You are a student.",
+    "example": "I am Anna. Are you a student?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "I am a student.",
+          "I are a student.",
+          "i am a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 后面用 am；句首字母 I 要大写，句末要有句号。所以第一句正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "You are a teacher.",
+          "You am a teacher.",
+          "you are a teacher"
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "you 后面用 are；句首字母 Y 要大写，句末要有句号。所以第一句正确。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "补全句子：I ______ from China. 请填一个词。",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "主语是 I，be 动词用 am。",
+        "evidence": "I am from China."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "补全句子：You ______ a student. 请填一个词。",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是 you，be 动词用 are。",
+        "evidence": "You are a student."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you from China?",
+        "Are you a teacher?"
+      ],
+      "part2": "Describe yourself. You should say: your name; if you are a student; where you are from; and say goodbye.",
+      "part3": [
+        "Is Anna a teacher?",
+        "Is Li Wei a student?",
+        "Is Anna from China?",
+        "Are you from Shanghai?"
+      ]
+    },
+    "writing": "写2–4个简单句介绍自己。用 I am ... 和 You are ...。句首字母大写，句末写句号。"
+  },
+  "rubric": {
+    "taskType": "A0 listening comprehension and basic self-introduction"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "e37ae2c25d902571501805f72b3cc3b48b2b4c5403ecc212eaa8987b1460c156"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

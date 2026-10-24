@@ -1,0 +1,408 @@
+{
+  "id": "gate-20-B-listening",
+  "week": 20,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "基础综合复测与薄弱项整理",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。",
+  "pool": "gate",
+  "type": "listening",
+  "fullTest": false,
+  "estimatedMinutes": 20,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 16,
+  "assessmentGroup": "gate-20-B",
+  "form": "B",
+  "timeLimitSeconds": 1200,
+  "title": "Preparing a Museum Model Workshop",
+  "instructions": "本材料为项目原创的模拟关卡，不是官方雅思试题，未经真实考生难度标定。先浏览题目，再独立听音并按顺序作答；作答期间不查看听力原文，提交后再核对原文和中文解释。单选题只选一项；填空须遵守各题词数要求并使用原文信息。本关卡为 B1 综合复习，共16题。判断题中，True 表示原文支持，False 表示原文明确矛盾，Not Given 表示原文没有提供所问信息。数字填空按题面可写英文词或数字。",
+  "transcript": "Rosa: Welcome to Harbour Museum. I'm Rosa, the volunteer coordinator.\nDan: Hi, I'm Dan. I'm helping with the model boat workshop. Does it start at nine?\nRosa: No, it starts at nine thirty. We need five tables.\nDan: I thought we needed four.\nRosa: Ten children have booked. Two children will share each table.\nDan: Where are the tables?\nRosa: In the storeroom behind the ticket desk. Don't use the tables beside the door. They are broken.\nDan: When does the workshop finish?\nRosa: At ten forty-five. Then we'll have tea and biscuits. We have two boxes of biscuits.\nDan: What happens after the break?\nRosa: A short film starts at eleven in the upstairs room. Lunch is at twelve for all volunteers. The museum is closed in the afternoon for a staff meeting, so we'll finish by one.\nDan: Is Emma leading the workshop today?\nRosa: No. She is visiting another museum today, so I will lead it.\nDan: You're coordinating and teaching. What can I do?\nRosa: Bring paper and pencils from the office. They are on the desk near the window.\nDan: How many pencils and sheets of paper?\nRosa: Please bring fifteen pencils and forty sheets of paper. Before the children arrive, put the chairs in a semicircle.\nDan: I'll move the tables first, then get the supplies.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What time does the model boat workshop start?",
+      "options": [
+        "At nine",
+        "At nine thirty",
+        "At ten forty-five",
+        "At eleven"
+      ],
+      "answers": [
+        "At nine thirty"
+      ],
+      "explanation": "Dan 猜九点开始，Rosa 纠正为九点半。",
+      "evidence": "Rosa: No, it starts at nine thirty."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many tables do they need?",
+      "options": [
+        "Four",
+        "Five",
+        "Ten",
+        "Fifteen"
+      ],
+      "answers": [
+        "Five"
+      ],
+      "explanation": "Rosa 明确说需要五张桌子；四张只是 Dan 原来的想法。",
+      "evidence": "We need five tables."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where are the tables they should use?",
+      "options": [
+        "In the storeroom",
+        "Beside the door",
+        "In the upstairs room",
+        "Inside the office"
+      ],
+      "answers": [
+        "In the storeroom"
+      ],
+      "explanation": "Rosa 回答桌子在售票台后面的储藏室中。",
+      "evidence": "In the storeroom behind the ticket desk."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why should Dan avoid the tables beside the door?",
+      "options": [
+        "They are too small",
+        "They are broken",
+        "They are booked for lunch",
+        "They are wet"
+      ],
+      "answers": [
+        "They are broken"
+      ],
+      "explanation": "Rosa 明确说明门边的桌子坏了。",
+      "evidence": "Don't use the tables beside the door. They are broken."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "When does the workshop finish?",
+      "options": [
+        "At nine thirty",
+        "At ten forty-five",
+        "At eleven",
+        "At twelve"
+      ],
+      "answers": [
+        "At ten forty-five"
+      ],
+      "explanation": "Dan 问结束时间，Rosa 回答十点四十五分。",
+      "evidence": "Dan: When does the workshop finish?\nRosa: At ten forty-five."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many boxes of biscuits do they have?",
+      "options": [
+        "One",
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "answers": [
+        "Two"
+      ],
+      "explanation": "Rosa 明确说有两盒饼干。",
+      "evidence": "We have two boxes of biscuits."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What starts at eleven?",
+      "options": [
+        "The model workshop",
+        "A short film",
+        "Lunch",
+        "A staff meeting"
+      ],
+      "answers": [
+        "A short film"
+      ],
+      "explanation": "Rosa 明确说十一点开始播放短片。",
+      "evidence": "A short film starts at eleven in the upstairs room."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Who is lunch provided for?",
+      "options": [
+        "All volunteers",
+        "Only the children",
+        "Only the museum staff",
+        "Visitors with tickets"
+      ],
+      "answers": [
+        "All volunteers"
+      ],
+      "explanation": "原文直接说明十二点的午餐面向所有志愿者。",
+      "evidence": "Lunch is at twelve for all volunteers."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Who will lead the workshop today?",
+      "options": [
+        "Emma",
+        "Dan",
+        "Rosa",
+        "A child"
+      ],
+      "answers": [
+        "Rosa"
+      ],
+      "explanation": "Dan 问 Emma 是否主持，Rosa 否认并说由自己主持；I 指正在说话的 Rosa。",
+      "evidence": "Dan: Is Emma leading the workshop today?\nRosa: No. She is visiting another museum today, so I will lead it."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Why is Emma unavailable for the workshop today?",
+      "options": [
+        "She is ill",
+        "She is visiting another museum",
+        "She is buying supplies",
+        "She is leading the staff meeting"
+      ],
+      "answers": [
+        "She is visiting another museum"
+      ],
+      "explanation": "Rosa 明确说 Emma 今天在参观另一家博物馆。",
+      "evidence": "She is visiting another museum today, so I will lead it."
+    },
+    {
+      "id": "q11",
+      "type": "fill",
+      "prompt": "Dan should bring ______ pencils. Write ONE WORD or A NUMBER.",
+      "answers": [
+        "fifteen",
+        "15"
+      ],
+      "maxWords": 1,
+      "explanation": "Rosa 要求带十五支铅笔；英文 fifteen 或数字15均可。",
+      "evidence": "Please bring fifteen pencils and forty sheets of paper."
+    },
+    {
+      "id": "q12",
+      "type": "fill",
+      "prompt": "Dan should bring ______ sheets of paper. Write ONE WORD or A NUMBER.",
+      "answers": [
+        "forty",
+        "40"
+      ],
+      "maxWords": 1,
+      "explanation": "Rosa 要求带四十张纸；英文 forty 或数字40均可。",
+      "evidence": "Please bring fifteen pencils and forty sheets of paper."
+    },
+    {
+      "id": "q13",
+      "type": "fill",
+      "prompt": "The chairs should be arranged in a ______. Write ONE WORD from the recording.",
+      "answers": [
+        "semicircle"
+      ],
+      "maxWords": 1,
+      "explanation": "Rosa 让 Dan 在孩子到来前把椅子摆成半圆。",
+      "evidence": "Before the children arrive, put the chairs in a semicircle."
+    },
+    {
+      "id": "q14",
+      "type": "single",
+      "prompt": "Ten children have booked the workshop.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Rosa 明确说有十个孩子预约，原文支持这个陈述。",
+      "evidence": "Ten children have booked."
+    },
+    {
+      "id": "q15",
+      "type": "single",
+      "prompt": "The museum is open in the afternoon.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文明确说博物馆下午因员工会议而关闭，与“下午开放”矛盾。",
+      "evidence": "The museum is closed in the afternoon for a staff meeting, so we'll finish by one."
+    },
+    {
+      "id": "q16",
+      "type": "single",
+      "prompt": "Dan has volunteered at Harbour Museum before.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "对话只说明 Dan 今天来帮忙，没有提供他过去是否在这家博物馆做过志愿者的信息。",
+      "evidence": "录音未说明 Dan 以前是否在 Harbour Museum 做过志愿者。"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "volunteer",
+      "meaning": "志愿者",
+      "example": "Lunch is at twelve for all volunteers."
+    },
+    {
+      "word": "coordinator",
+      "meaning": "协调人",
+      "example": "I'm Rosa, the volunteer coordinator."
+    },
+    {
+      "word": "workshop",
+      "meaning": "工作坊；实践活动",
+      "example": "When does the workshop finish?"
+    },
+    {
+      "word": "storeroom",
+      "meaning": "储藏室",
+      "example": "In the storeroom behind the ticket desk."
+    },
+    {
+      "word": "broken",
+      "meaning": "坏了的",
+      "example": "They are broken."
+    },
+    {
+      "word": "biscuits",
+      "meaning": "饼干（复数）",
+      "example": "We have two boxes of biscuits."
+    },
+    {
+      "word": "upstairs",
+      "meaning": "在楼上；楼上的",
+      "example": "A short film starts at eleven in the upstairs room."
+    },
+    {
+      "word": "semicircle",
+      "meaning": "半圆",
+      "example": "Before the children arrive, put the chairs in a semicircle."
+    }
+  ],
+  "grammar": {
+    "title": "一般现在时、问句、数量与原因从句综合复习",
+    "explanation": "表示日常习惯时，一般现在时的 he/she/it 通常配动词第三人称单数形式；问可数物品数量时，用 How many 加复数名词，并按句子需要加 do/does。because 后要有完整的主语和谓语。two boxes of biscuits 这类数量表达中，数量大于一时容器名词用复数，再用 of 接内容。",
+    "example": "We have two boxes of biscuits.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a regular habit.",
+        "options": [
+          "She work at the station every Sunday.",
+          "She works at the station every Sunday.",
+          "She working at the station every Sunday.",
+          "She is work at the station every Sunday."
+        ],
+        "answers": [
+          "She works at the station every Sunday."
+        ],
+        "explanation": "一般现在时描述每周日的习惯；she 后用 works。",
+        "evidence": "She works at the station every Sunday."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct standard question.",
+        "options": [
+          "How many chair do they need?",
+          "How many chairs do they need?",
+          "How much chairs do they need?",
+          "How many chairs they need?"
+        ],
+        "answers": [
+          "How many chairs do they need?"
+        ],
+        "explanation": "chairs 是可数名词复数，用 How many；一般现在时疑问句需要 do。",
+        "evidence": "How many chairs do they need?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the grammatically correct sentence with because.",
+        "options": [
+          "He stays home because he is ill.",
+          "He stays home because he ill.",
+          "He stays home because is he ill.",
+          "He stays home because him is ill."
+        ],
+        "answers": [
+          "He stays home because he is ill."
+        ],
+        "explanation": "because 后用完整的主语 he 和谓语 is ill，不能省略 is 或倒装。",
+        "evidence": "He stays home because he is ill."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct quantity expression.",
+        "options": [
+          "They have four bag of rice.",
+          "They have four bags of rice.",
+          "They have four bags rice.",
+          "They have four bag rice."
+        ],
+        "answers": [
+          "They have four bags of rice."
+        ],
+        "explanation": "four 后的容器名词用复数 bags，再用 of 连接 rice。",
+        "evidence": "They have four bags of rice."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Have you ever made a model?",
+        "What do you like doing in a group?",
+        "How do you prepare for a busy day?",
+        "Do you prefer activities indoors or outdoors?"
+      ],
+      "part2": "Describe an activity you could help to organise. You should say:\n- what the activity would be\n- where and when it would take place\n- what equipment you would prepare\n- how you would help if a problem occurred.",
+      "part3": [
+        "Why is it useful to check equipment before an event?",
+        "How can organisers divide tasks fairly?",
+        "What can volunteers learn by helping at activities?",
+        "How can an organiser make instructions clear?"
+      ]
+    },
+    "writing": "A neighbourhood book exchange takes place next Sunday from 10 a.m. to noon in the park. Write an email of 80–100 words inviting a friend to help. Explain your role, ask your friend to bring two books, and say what to do if it rains. Include two clear questions for your friend and use the present simple for the event timetable."
+  },
+  "rubric": {
+    "taskType": "B1 listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1逐题独立核对与规则校验；未经真实考生难度标定",
+    "contentHash": "9062b166cd5bebab95de3113db199fa59bb0a0aff494347deba57d8caac891ea"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

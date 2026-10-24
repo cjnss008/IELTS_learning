@@ -1,0 +1,276 @@
+{
+  "id": "w01-read-2",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My First English Class",
+  "instructions": "阅读下面的短文，然后回答问题。所有题目都是单选题或填空题。填空题的答案必须来自短文，且不超过规定的字数。请仔细阅读短文，并在答案中引用原文。本材料为模拟教学材料，不是官方雅思考试。",
+  "passage": "Hello. I am Li Ming. I am a student. You are Wang Fang. You are a student, too. We are in Room 5. We are friends. I am happy. You are happy, too. We are a good class. I am from China. You are from China, too. We are in a small room. The room is clean. I am ready for class. You are ready, too. We are a good team.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Li Ming?",
+      "options": [
+        "a student",
+        "a teacher",
+        "a friend"
+      ],
+      "answers": [
+        "a student"
+      ],
+      "explanation": "短文中明确说“I am Li Ming. I am a student.”，所以李明是学生。",
+      "evidence": "I am Li Ming. I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who is Wang Fang?",
+      "options": [
+        "a student",
+        "a teacher",
+        "a friend"
+      ],
+      "answers": [
+        "a student"
+      ],
+      "explanation": "短文中说“You are Wang Fang. You are a student, too.”，所以王芳也是学生。",
+      "evidence": "You are Wang Fang. You are a student, too."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where are Li Ming and Wang Fang?",
+      "options": [
+        "in Room 5",
+        "in Room 4",
+        "in Room 6"
+      ],
+      "answers": [
+        "in Room 5"
+      ],
+      "explanation": "短文中说“We are in Room 5.”，所以他们在5号房间。",
+      "evidence": "We are in Room 5."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Are Li Ming and Wang Fang friends?",
+      "options": [
+        "Yes, they are.",
+        "No, they are not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, they are."
+      ],
+      "explanation": "短文中说“We are friends.”，所以他们是朋友。",
+      "evidence": "We are friends."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How does Li Ming feel?",
+      "options": [
+        "happy",
+        "sad",
+        "tired"
+      ],
+      "answers": [
+        "happy"
+      ],
+      "explanation": "短文中说“I am happy.”，所以李明感到高兴。",
+      "evidence": "I am happy."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Wang Fang feel?",
+      "options": [
+        "happy",
+        "sad",
+        "tired"
+      ],
+      "answers": [
+        "happy"
+      ],
+      "explanation": "短文中说“You are happy, too.”，所以王芳也感到高兴。",
+      "evidence": "You are happy, too."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "We are a good ______.",
+      "maxWords": 1,
+      "answers": [
+        "class"
+      ],
+      "explanation": "短文中说“We are a good class.”，所以填 class。",
+      "evidence": "We are a good class."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "We are in Room ______.",
+      "maxWords": 1,
+      "answers": [
+        "5"
+      ],
+      "explanation": "短文中说“We are in Room 5.”，所以填 5。",
+      "evidence": "We are in Room 5."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li Ming."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "We are friends."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "We are a good class."
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "We are in Room 5."
+    },
+    {
+      "word": "good",
+      "meaning": "好的",
+      "example": "We are a good class."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "You are a student, too."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "在英语中，人称代词I表示“我”，you表示“你”。be动词am用于I，are用于you。句首字母要大写，句末要有句号。例如：I am a student. You are a student.",
+    "example": "I am a student. You are a student, too.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "______ am a student.",
+        "options": [
+          "I",
+          "You",
+          "We"
+        ],
+        "answers": [
+          "I"
+        ],
+        "explanation": "主语是“我”，用I，且be动词是am，所以选I。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "You ______ a student.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是you，be动词用are。",
+        "evidence": "You are a student, too."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "______ are happy.",
+        "options": [
+          "I",
+          "You",
+          "He"
+        ],
+        "answers": [
+          "You"
+        ],
+        "explanation": "主语是“你”，用you，且be动词是are，所以选You。",
+        "evidence": "You are happy, too."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "I ______ happy.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answers": [
+          "am"
+        ],
+        "explanation": "主语是I，be动词用am。",
+        "evidence": "I am happy."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you happy?",
+        "Are you in Room 5?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part3": [
+        "Are you a student?",
+        "Are you happy?",
+        "Are you in Room 5?",
+        "Are you a friend?"
+      ]
+    },
+    "writing": "Write 2-8 simple sentences about yourself. Use 'I am...' and 'You are...'. Example: I am Li Ming. I am a student. You are Wang Fang. You are a student, too."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b6ab1ae26e01eb262c87fc2fb0303784a92afe1c4cf717dfa6d4667c81608543"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

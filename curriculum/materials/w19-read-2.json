@@ -1,0 +1,318 @@
+{
+  "id": "w19-read-2",
+  "week": 19,
+  "skill": "reading",
+  "level": "B1",
+  "topic": "节日、文化与人物故事",
+  "grammarFocus": "过去进行时入门；when / while；who / which / that 定语从句入门。",
+  "pool": "training",
+  "type": "json_object",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "The Lantern-Making Night at Willow Street",
+  "instructions": "这是为B1学习者编写的原创模拟阅读材料（非官方雅思试题，也不代表任何真实考试分数）。请先通读短文，注意过去进行时（was/were + doing）、when/while 的用法，以及 who/which/that 引导的定语从句。然后完成10道题：单选题选出一个完整答案；填空题答案必须与原文完全一致，并注意 maxWords 限制；判断题从 True / False / Not Given 三个完整选项中选一个。所有解释为中文，证据为原文原句。",
+  "passage": "A. Every year, on the fifteenth day of the first lunar month, the people of Willow Street hold a small lantern festival. Last year, the festival was on a cold Saturday. Mei was helping her grandmother in the kitchen when the phone rang. Her grandmother, who was born on Willow Street, answered it quickly. The caller was Mr. Chen, the old man who made lanterns for the whole neighbourhood.\n\nB. Mr. Chen said he was feeling ill and could not finish the big red lantern. While Mei was listening to the conversation, she had an idea. She told her grandmother that she wanted to help. Her grandmother smiled and said, \"You are a careful girl who learns fast.\" Then they walked to Mr. Chen's small workshop, which stood behind the tea shop.\n\nC. When they arrived, Mr. Chen was sitting on a wooden chair and cutting red paper. He showed Mei a lantern that was almost finished. It had a golden fish on it, and the fish looked like it was swimming. Mei was holding the paper carefully while Mr. Chen explained the steps. She made three small mistakes, but she did not stop. After two hours, the big red lantern was ready.\n\nD. In the evening, the whole street was busy. Children were carrying small lanterns, and an old song was playing from a radio. Mei's grandmother, who loved music, was singing quietly. At eight o'clock, Mr. Chen came out of his workshop. He was carrying the big red lantern that Mei had helped to make. Everyone clapped. Mei felt shy but very happy. She said, \"Next year, I want to make one by myself.\"",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "When the phone rang, what was Mei doing?",
+      "options": [
+        "She was helping her grandmother in the kitchen.",
+        "She was carrying a small lantern in the street.",
+        "She was cutting red paper in the workshop.",
+        "She was singing an old song with children."
+      ],
+      "answers": [
+        "She was helping her grandmother in the kitchen."
+      ],
+      "explanation": "原文说电话响时，Mei正在厨房帮奶奶，因此选第一项。其他选项是后文或别人的动作。",
+      "evidence": "Mei was helping her grandmother in the kitchen when the phone rang."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who was Mr. Chen?",
+      "options": [
+        "A man who made lanterns for the neighbourhood.",
+        "A teacher who worked at a local school.",
+        "A shop owner who sold tea and paper.",
+        "A singer who performed on the street."
+      ],
+      "answers": [
+        "A man who made lanterns for the neighbourhood."
+      ],
+      "explanation": "原文用 who 定语从句说明 Mr. Chen 是为整个街区做灯笼的老人，因此选第一项。",
+      "evidence": "The caller was Mr. Chen, the old man who made lanterns for the whole neighbourhood."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which sentence best describes the workshop?",
+      "options": [
+        "It stood behind the tea shop.",
+        "It was inside Mei's kitchen.",
+        "It was next to the radio station.",
+        "It was in front of the school gate."
+      ],
+      "answers": [
+        "It stood behind the tea shop."
+      ],
+      "explanation": "原文用 which 从句说明作坊位于茶馆后面，因此选第一项。",
+      "evidence": "Then they walked to Mr. Chen's small workshop, which stood behind the tea shop."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What was Mr. Chen doing when Mei and her grandmother arrived?",
+      "options": [
+        "He was sitting on a wooden chair and cutting red paper.",
+        "He was sleeping in a small room.",
+        "He was cooking dinner for the children.",
+        "He was cleaning the street with a broom."
+      ],
+      "answers": [
+        "He was sitting on a wooden chair and cutting red paper."
+      ],
+      "explanation": "原文说她们到达时，Mr. Chen正坐在木椅上剪纸，因此选第一项。",
+      "evidence": "When they arrived, Mr. Chen was sitting on a wooden chair and cutting red paper."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What was on the lantern that was almost finished?",
+      "options": [
+        "A golden fish.",
+        "A red dragon.",
+        "A white bird.",
+        "A green tree."
+      ],
+      "answers": [
+        "A golden fish."
+      ],
+      "explanation": "原文明确说灯笼上有一条金色的鱼，因此选第一项。",
+      "evidence": "It had a golden fish on it, and the fish looked like it was swimming."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How many small mistakes did Mei make? (Write the number word from the passage.)",
+      "answers": [
+        "three"
+      ],
+      "maxWords": 1,
+      "explanation": "原文直接写出 Mei 犯了三个小错误，答案为一个词 three。",
+      "evidence": "She made three small mistakes, but she did not stop."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What time did Mr. Chen come out of his workshop? (Write the time as it appears in the passage.)",
+      "answers": [
+        "eight o'clock"
+      ],
+      "maxWords": 2,
+      "explanation": "原文说八点钟 Mr. Chen 从作坊出来，答案不超过两个词。",
+      "evidence": "At eight o'clock, Mr. Chen came out of his workshop."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What was Mei's grandmother doing in the evening?",
+      "options": [
+        "She was singing quietly.",
+        "She was making a new lantern.",
+        "She was talking to Mr. Chen.",
+        "She was carrying a radio."
+      ],
+      "answers": [
+        "She was singing quietly."
+      ],
+      "explanation": "原文说 Mei 的奶奶喜欢音乐，晚上在轻声唱歌，因此选第一项。",
+      "evidence": "Mei's grandmother, who loved music, was singing quietly."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False or Not Given: Mei made the big red lantern completely by herself.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文说 Mei 帮助制作了大红灯笼，并且她说“明年我想自己做一盏”，说明今年不是她独立完成的，因此选 False。",
+      "evidence": "He was carrying the big red lantern that Mei had helped to make."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False or Not Given: Mr. Chen was born on Willow Street.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "原文只说 Mei 的奶奶出生在 Willow Street，没有说明 Mr. Chen 的出生地，因此选 Not Given。",
+      "evidence": "Her grandmother, who was born on Willow Street, answered it quickly."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "lantern",
+      "meaning": "灯笼",
+      "example": "The people of Willow Street hold a small lantern festival."
+    },
+    {
+      "word": "neighbourhood",
+      "meaning": "街区；社区",
+      "example": "Mr. Chen made lanterns for the whole neighbourhood."
+    },
+    {
+      "word": "workshop",
+      "meaning": "作坊；工作间",
+      "example": "They walked to Mr. Chen's small workshop."
+    },
+    {
+      "word": "carefully",
+      "meaning": "小心地；仔细地",
+      "example": "Mei was holding the paper carefully."
+    },
+    {
+      "word": "explain",
+      "meaning": "解释；说明",
+      "example": "Mr. Chen explained the steps."
+    },
+    {
+      "word": "clap",
+      "meaning": "鼓掌",
+      "example": "Everyone clapped."
+    },
+    {
+      "word": "shy",
+      "meaning": "害羞的",
+      "example": "Mei felt shy but very happy."
+    },
+    {
+      "word": "quietly",
+      "meaning": "安静地；轻声地",
+      "example": "Mei's grandmother was singing quietly."
+    }
+  ],
+  "grammar": {
+    "title": "过去进行时入门 + when/while + who/which/that 定语从句入门",
+    "explanation": "过去进行时表示过去某一时刻正在发生的动作，结构是 was/were + 动词-ing。when 后面常接一个短暂动作，while 后面常接一个持续动作。定语从句用来补充说明人或物：who 指人，which 指物，that 既可指人也可指物。",
+    "example": "Mei was helping her grandmother in the kitchen when the phone rang.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I was reading a book when my sister called me.",
+          "I were reading a book when my sister called me.",
+          "I was read a book when my sister called me.",
+          "I reading a book when my sister called me."
+        ],
+        "answers": [
+          "I was reading a book when my sister called me."
+        ],
+        "explanation": "主语 I 用 was，动词用 -ing 形式，因此第一项正确。",
+        "evidence": "Mei was helping her grandmother in the kitchen when the phone rang."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct word: The boy ___ is standing near the door is my cousin.",
+        "options": [
+          "who",
+          "which",
+          "where",
+          "what"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "先行词 the boy 指人，定语从句用 who，因此选 who。",
+        "evidence": "The caller was Mr. Chen, the old man who made lanterns for the whole neighbourhood."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct word: This is the bike ___ I bought last week.",
+        "options": [
+          "which",
+          "who",
+          "whose",
+          "when"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "先行词 the bike 指物，定语从句用 which，因此选 which。",
+        "evidence": "Then they walked to Mr. Chen's small workshop, which stood behind the tea shop."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Fill in the blank with one word: While my mother ___ (cook), I was setting the table.",
+        "answers": [
+          "was cooking"
+        ],
+        "maxWords": 2,
+        "explanation": "while 后接持续动作，用过去进行时；主语 my mother 是第三人称单数，用 was cooking。",
+        "evidence": "Mei was holding the paper carefully while Mr. Chen explained the steps."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like festivals? Why or why not?",
+        "What do you usually do during a festival?",
+        "Have you ever made something by hand? What was it?",
+        "Who do you usually spend festivals with?"
+      ],
+      "part2": "Describe a time when you helped someone make or prepare something for a festival.",
+      "part3": [
+        "Why do people celebrate traditional festivals?",
+        "Is it important for young people to learn traditional skills? Why?",
+        "How have festivals changed in your country?",
+        "Do you think handmade things are more special than bought things?"
+      ],
+      "part2Bullets": [
+        "which festival it was",
+        "who you helped",
+        "what you made or prepared",
+        "how you felt about helping"
+      ]
+    },
+    "writing": "Write a short story (about 100–150 words) about a time when you were helping someone at home when something unexpected happened. Use at least two past continuous sentences with when or while, and at least one who/which/that clause."
+  },
+  "rubric": {
+    "taskType": "reading comprehension with grammar focus (B1, simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "0d123c00cc3e7cf0da6426d981cd2c55e814decf5ea17f6990f6516da9c4cc10",
+    "revisionNote": "补全Part 2话题卡的四项提示；阅读原文、题目和答案不变。",
+    "revisionHash": "55677d19f04aaf5875af64bc7488838ff0c8555adf21c4be7b38aaaa54c53158"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

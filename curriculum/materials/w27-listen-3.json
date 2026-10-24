@@ -1,0 +1,363 @@
+{
+  "id": "w27-listen-3",
+  "week": 27,
+  "skill": "listening",
+  "level": "B1–B2",
+  "topic": "城市交通与图表比较",
+  "grammarFocus": "倍数与比例表达；比较结构；过去和现在数据的时态选择。",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 3,
+  "title": "City Transport Survey: Then and Now",
+  "instructions": "本材料为模拟练习，非官方雅思试题。听录音前先读题；录音播放两遍。注意倍数、比例和比较结构，以及过去与现在数据的时态选择。填空题答案必须与录音原文完全一致，且不超过字数限制。",
+  "passage": "",
+  "transcript": "M: Hi Lin, you look tired. Are you okay?\nW: Yes, I’m fine. I just finished the city transport survey. It’s for my evening class.\nM: Oh, the survey about how people travel to work? How did you do it?\nW: I asked 200 people in our neighbourhood last year, and 280 people this year. Last year, only 40 people took the bus. This year, 80 people take the bus.\nM: So the number of bus passengers is twice as big as last year?\nW: Yes, exactly twice. Last year it was 40, and this year it’s 80. So it is double. But the train is different.\nM: What about the train?\nW: Last year, 50 people took the train. This year, 100 people take the train. So the train number is also double. But the bus is more popular than the train now.\nM: More popular? How do you know?\nW: Because 80 is more than 100? No, sorry, that’s wrong. 80 is less than 100. I mean, the bus is less popular than the train. The train has 100 passengers, and the bus has 80.\nM: Okay, so the train is more popular. What about cars?\nW: Last year, 60 people drove cars to work. This year, only 30 people drive cars. So the number of car drivers is half of last year.\nM: Half? That’s a big change. Why?\nW: I think because the bus is cheaper now. The bus ticket was 3 yuan last year. Now it is 2 yuan. The train ticket is still 4 yuan.\nM: So the bus is the cheapest. And walking?\nW: Last year, 20 people walked to work. This year, 40 people walk. So walking is also twice as popular as last year.\nM: And cycling?\nW: Last year, 30 people cycled. This year, 30 people cycle. The number is the same. No change.\nM: So total last year: 40 bus, 50 train, 60 car, 20 walk, 30 cycle. That’s 200. And this year: 80 bus, 100 train, 30 car, 40 walk, 30 cycle. That’s 280? Wait, that’s more than 200.\nW: Oh no, you’re right. Let me check. This year I asked 280 people, not 200. Last year’s numbers are from 200 people. So we can’t compare the totals directly. But the proportions are still useful.\nM: I see. So the survey size changed. That’s an important point.\nW: Yes. Next time I will ask the same number of people.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many people took the bus this year?",
+      "options": [
+        "40",
+        "80",
+        "100",
+        "30"
+      ],
+      "answers": [
+        "80"
+      ],
+      "explanation": "录音中女士说“This year, 80 people take the bus.”，因此今年乘公交的人数是80。",
+      "evidence": "This year, 80 people take the bus."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the relationship between this year's train passengers and last year's train passengers?",
+      "options": [
+        "The train number is half of last year.",
+        "The train number is double last year's number.",
+        "The train number is the same as last year.",
+        "The train number is three times last year's number."
+      ],
+      "answers": [
+        "The train number is double last year's number."
+      ],
+      "explanation": "女士说去年50人坐火车，今年100人，并说“So the train number is also double.”，即今年是去年的两倍。",
+      "evidence": "So the train number is also double."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which transport is more popular this year, the bus or the train?",
+      "options": [
+        "The bus is more popular.",
+        "The train is more popular.",
+        "They are equally popular.",
+        "The survey does not say."
+      ],
+      "answers": [
+        "The train is more popular."
+      ],
+      "explanation": "女士先口误说公交更受欢迎，随后纠正：“I mean, the bus is less popular than the train. The train has 100 passengers, and the bus has 80.”，所以火车更受欢迎。",
+      "evidence": "I mean, the bus is less popular than the train. The train has 100 passengers, and the bus has 80."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How does the number of car drivers this year compare with last year?",
+      "options": [
+        "It is twice as big as last year.",
+        "It is half of last year.",
+        "It is the same as last year.",
+        "It is three times last year."
+      ],
+      "answers": [
+        "It is half of last year."
+      ],
+      "explanation": "女士说去年60人开车，今年30人，并说“So the number of car drivers is half of last year.”，即今年是去年的一半。",
+      "evidence": "So the number of car drivers is half of last year."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What happened to the number of people walking to work?",
+      "options": [
+        "It stayed the same.",
+        "It became twice as popular as last year.",
+        "It became half of last year.",
+        "It became three times last year."
+      ],
+      "answers": [
+        "It became twice as popular as last year."
+      ],
+      "explanation": "女士说去年20人步行，今年40人，并说“So walking is also twice as popular as last year.”，即步行人数是去年的两倍。",
+      "evidence": "So walking is also twice as popular as last year."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "The bus ticket was ______ yuan last year. (Fill in the number from the recording.)",
+      "options": [],
+      "answers": [
+        "3"
+      ],
+      "maxWords": 1,
+      "explanation": "女士说“The bus ticket was 3 yuan last year.”，所以去年公交车票是3元。",
+      "evidence": "The bus ticket was 3 yuan last year."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "This year, the number of people who cycle is ______ as last year. (Fill in one word from the recording.)",
+      "options": [],
+      "answers": [
+        "the same"
+      ],
+      "maxWords": 2,
+      "explanation": "女士说“The number is the same. No change.”，所以今年骑车人数与去年相同。",
+      "evidence": "The number is the same. No change."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Why can’t the totals of last year and this year be compared directly?",
+      "options": [
+        "Because the survey asked different numbers of people.",
+        "Because the bus ticket price changed.",
+        "Because the train is more popular.",
+        "Because walking became twice as popular."
+      ],
+      "answers": [
+        "Because the survey asked different numbers of people."
+      ],
+      "explanation": "女士最后说今年问了280人，去年是200人，并说“So we can’t compare the totals directly.”，原因是调查人数不同。",
+      "evidence": "This year I asked 280 people, not 200. Last year’s numbers are from 200 people. So we can’t compare the totals directly."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "According to the recording, which statement is true about the train ticket price?",
+      "options": [
+        "It is cheaper than the bus ticket.",
+        "It is still 4 yuan.",
+        "It was 3 yuan last year.",
+        "It is now 2 yuan."
+      ],
+      "answers": [
+        "It is still 4 yuan."
+      ],
+      "explanation": "女士说“The train ticket is still 4 yuan.”，所以火车票仍然是4元。",
+      "evidence": "The train ticket is still 4 yuan."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What does the woman plan to do next time?",
+      "options": [
+        "Ask the same number of people.",
+        "Ask more people than this year.",
+        "Ask fewer people than last year.",
+        "Stop doing surveys."
+      ],
+      "answers": [
+        "Ask the same number of people."
+      ],
+      "explanation": "女士最后说“Next time I will ask the same number of people.”，即下次会问相同数量的人。",
+      "evidence": "Next time I will ask the same number of people."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "I just finished the city transport survey."
+    },
+    {
+      "word": "passenger",
+      "meaning": "乘客",
+      "example": "The train has 100 passengers, and the bus has 80."
+    },
+    {
+      "word": "double",
+      "meaning": "两倍的；加倍",
+      "example": "So the train number is also double."
+    },
+    {
+      "word": "half",
+      "meaning": "一半",
+      "example": "So the number of car drivers is half of last year."
+    },
+    {
+      "word": "popular",
+      "meaning": "受欢迎的",
+      "example": "But the bus is more popular than the train now."
+    },
+    {
+      "word": "proportion",
+      "meaning": "比例",
+      "example": "But the proportions are still useful."
+    },
+    {
+      "word": "directly",
+      "meaning": "直接地",
+      "example": "So we can’t compare the totals directly."
+    },
+    {
+      "word": "cycle",
+      "meaning": "骑自行车",
+      "example": "Last year, 30 people cycled."
+    }
+  ],
+  "grammar": {
+    "title": "倍数与比例表达；比较结构；过去和现在数据的时态选择",
+    "explanation": "英语中表示倍数常用 twice as ... as（是……的两倍）、double（两倍）、half of（……的一半）。比较两个事物时用 more/less + 形容词 + than。描述去年的数据用一般过去时（如 was, took），描述今年的数据用一般现在时（如 is, take）。注意：如果调查人数不同，不能直接比较总数。",
+    "example": "So the number of car drivers is half of last year.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Last year, 20 students joined the club. This year, 40 students join. The number this year is ______ last year.",
+        "options": [
+          "twice as big as",
+          "half of",
+          "the same as",
+          "less than"
+        ],
+        "answers": [
+          "twice as big as"
+        ],
+        "explanation": "40是20的两倍，所以用 twice as big as。",
+        "evidence": "Last year, 20 students joined the club. This year, 40 students join."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The red box weighs 10 kg. The blue box weighs 5 kg. The blue box is ______ the red box.",
+        "options": [
+          "half of",
+          "twice",
+          "more than",
+          "the same as"
+        ],
+        "answers": [
+          "half of"
+        ],
+        "explanation": "5 kg是10 kg的一半，所以用 half of。",
+        "evidence": "The red box weighs 10 kg. The blue box weighs 5 kg."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence about past and present data.",
+        "options": [
+          "Last year, the shop sells 100 books. This year, it sold 200 books.",
+          "Last year, the shop sold 100 books. This year, it sells 200 books.",
+          "Last year, the shop sold 100 books. This year, it sold 200 books.",
+          "Last year, the shop sells 100 books. This year, it sells 200 books."
+        ],
+        "answers": [
+          "Last year, the shop sold 100 books. This year, it sells 200 books."
+        ],
+        "explanation": "去年数据用一般过去时 sold，今年数据用一般现在时 sells。",
+        "evidence": "Last year, the shop sold 100 books. This year, it sells 200 books."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The bus has 80 passengers. The train has 100 passengers. Which sentence is correct?",
+        "options": [
+          "The bus is more popular than the train.",
+          "The train is more popular than the bus.",
+          "The bus is as popular as the train.",
+          "The train is less popular than the bus."
+        ],
+        "answers": [
+          "The train is more popular than the bus."
+        ],
+        "explanation": "100大于80，所以火车比公交更受欢迎。",
+        "evidence": "The bus has 80 passengers. The train has 100 passengers."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "How do you usually travel to work or school?",
+        "Do you prefer taking the bus or the train? Why?",
+        "Is public transport in your city cheap or expensive?",
+        "Have you noticed any changes in transport in your city recently?"
+      ],
+      "part2": "Describe a survey or a chart you have seen about transport. You should say:",
+      "part2Bullets": [
+        "what the survey or chart was about",
+        "where you saw it",
+        "what the main numbers or changes were",
+        "and explain why you found it interesting."
+      ],
+      "part3": [
+        "Why do some people prefer driving cars to taking public transport?",
+        "What can governments do to make public transport more popular?",
+        "Do you think the number of cyclists will increase in the future? Why?",
+        "How can we compare data from different years fairly?"
+      ]
+    },
+    "writing": "The table below shows the number of people using different types of transport in a town in 2010 and 2020. Write a short report (about 120 words) comparing the data. Use expressions like twice as many, half of, more/less than, and choose the correct tenses for past and present data. (This is a simulated task.)"
+  },
+  "figure": {
+    "description": "Simulated data table for writing task (not from a real survey).",
+    "table": {
+      "headers": [
+        "Transport",
+        "Last year",
+        "This year"
+      ],
+      "rows": [
+        [
+          "Bus",
+          "40",
+          "80"
+        ],
+        [
+          "Train",
+          "50",
+          "100"
+        ],
+        [
+          "Car",
+          "60",
+          "30"
+        ],
+        [
+          "Walking",
+          "20",
+          "40"
+        ],
+        [
+          "Cycling",
+          "30",
+          "30"
+        ]
+      ]
+    }
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated educational material, not an official IELTS test)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "0db698b61241db76110c0c7434310abb867d115d4f5d53077c7eb525f5d044c1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

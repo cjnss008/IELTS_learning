@@ -1,0 +1,268 @@
+{
+  "id": "w07-read-1",
+  "week": 7,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "地点、方向与正在发生的事",
+  "grammarFocus": "there is / are；地点介词；现在进行时；祈使句入门。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "At the City Library",
+  "instructions": "这是模拟练习材料，不是官方考试。请先读短文，再回答问题。单选题请选一个最合适的答案；填空题请用短文中的原词填空，不要超过字数限制。所有解释为中文。",
+  "passage": "This is the city library. It is big and quiet. There are many books here. There is a small café near the door. The café is next to the stairs.\n\nA: Look, a man is sitting at a table. He is reading a book. A woman is standing near the window. She is using a computer.\n\nB: Please be quiet in the library. Please put your bag under the chair. Do not eat in the reading room.\n\nC: The children's room is on the first floor. It is behind the café. There are toys and small chairs there. Two boys are playing with a puzzle now.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "图书馆怎么样？",
+      "options": [
+        "It is big and quiet.",
+        "It is small and noisy.",
+        "It is old and dark."
+      ],
+      "answers": [
+        "It is big and quiet."
+      ],
+      "explanation": "短文第一段直接说图书馆又大又安静。",
+      "evidence": "It is big and quiet."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "咖啡馆在哪里？",
+      "options": [
+        "Near the door.",
+        "On the first floor.",
+        "Behind the window."
+      ],
+      "answers": [
+        "Near the door."
+      ],
+      "explanation": "短文说咖啡馆在门附近。",
+      "evidence": "There is a small café near the door."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "那个男人正在做什么？",
+      "options": [
+        "He is reading a book.",
+        "He is using a computer.",
+        "He is playing with a puzzle."
+      ],
+      "answers": [
+        "He is reading a book."
+      ],
+      "explanation": "短文说男人正坐在桌边读书。",
+      "evidence": "He is reading a book."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "那个女人在哪里？",
+      "options": [
+        "Near the window.",
+        "Under the chair.",
+        "Behind the café."
+      ],
+      "answers": [
+        "Near the window."
+      ],
+      "explanation": "短文说女人正站在窗边。",
+      "evidence": "A woman is standing near the window."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "根据短文，下面哪一句是正确的？",
+      "options": [
+        "Please put your bag under the chair.",
+        "Please eat in the reading room.",
+        "Please talk loudly in the library."
+      ],
+      "answers": [
+        "Please put your bag under the chair."
+      ],
+      "explanation": "短文中的祈使句要求把包放在椅子下面，并说不要在阅览室吃东西。",
+      "evidence": "Please put your bag under the chair."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "儿童室在________楼。（用短文中的词填空）",
+      "options": [],
+      "answers": [
+        "first"
+      ],
+      "maxWords": 1,
+      "explanation": "短文说儿童室在一楼，原文用 first。",
+      "evidence": "The children's room is on the first floor."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "儿童室在咖啡馆的________。（用短文中的方位词填空）",
+      "options": [],
+      "answers": [
+        "behind"
+      ],
+      "maxWords": 1,
+      "explanation": "短文说儿童室在咖啡馆后面，原文用 behind。",
+      "evidence": "It is behind the café."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "两个男孩正在玩________。（用短文中的词填空）",
+      "options": [],
+      "answers": [
+        "puzzle"
+      ],
+      "maxWords": 1,
+      "explanation": "短文说两个男孩正在玩拼图，原文用 puzzle。",
+      "evidence": "Two boys are playing with a puzzle now."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "This is the city library."
+    },
+    {
+      "word": "quiet",
+      "meaning": "安静的",
+      "example": "It is big and quiet."
+    },
+    {
+      "word": "café",
+      "meaning": "咖啡馆",
+      "example": "There is a small café near the door."
+    },
+    {
+      "word": "stairs",
+      "meaning": "楼梯",
+      "example": "The café is next to the stairs."
+    },
+    {
+      "word": "window",
+      "meaning": "窗户",
+      "example": "A woman is standing near the window."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "Please put your bag under the chair."
+    },
+    {
+      "word": "floor",
+      "meaning": "楼层",
+      "example": "The children's room is on the first floor."
+    },
+    {
+      "word": "puzzle",
+      "meaning": "拼图",
+      "example": "Two boys are playing with a puzzle now."
+    }
+  ],
+  "grammar": {
+    "title": "there is / are；地点介词；现在进行时；祈使句入门",
+    "explanation": "there is 加单数名词，表示“有一个”；there are 加复数名词，表示“有多个”。地点介词说明位置，如 near（在附近）、next to（在旁边）、under（在下面）、behind（在后面）、on（在……楼层）。现在进行时用 am/is/are 加动词-ing，表示正在发生的事。祈使句用动词原形开头，表示请求或命令，如 Please be quiet. 否定用 Do not 加动词原形。",
+    "example": "There are many books here. / She is using a computer. / Please be quiet in the library.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确句子：",
+        "options": [
+          "There is a small café near the door.",
+          "There are a small café near the door.",
+          "There is many books here."
+        ],
+        "answers": [
+          "There is a small café near the door."
+        ],
+        "explanation": "a small café 是单数，用 there is。",
+        "evidence": "There is a small café near the door."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确句子：",
+        "options": [
+          "He is reading a book.",
+          "He reading a book.",
+          "He are reading a book."
+        ],
+        "answers": [
+          "He is reading a book."
+        ],
+        "explanation": "现在进行时用 is 加动词-ing。",
+        "evidence": "He is reading a book."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "用正确的词填空：Please ________ quiet in the library.（用短文中的词）",
+        "options": [],
+        "answers": [
+          "be"
+        ],
+        "maxWords": 1,
+        "explanation": "祈使句 Please be quiet. 用动词原形 be。",
+        "evidence": "Please be quiet in the library."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "用正确的词填空：The café is ________ to the stairs.（用短文中的词）",
+        "options": [],
+        "answers": [
+          "next"
+        ],
+        "maxWords": 1,
+        "explanation": "next to 表示“在旁边”，原文用 next。",
+        "evidence": "The café is next to the stairs."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Is there a library in your city?",
+        "What do you do in a library?",
+        "Are there many books in your home?",
+        "What are you doing now?"
+      ],
+      "part2": "Describe a place you like. You should say:",
+      "part3": [
+        "Where is the place?",
+        "What is near the place?",
+        "What are people doing there?",
+        "Please be quiet in this place. Do you like quiet places?"
+      ]
+    },
+    "writing": "写 2–8 个简单句子，介绍你的房间或你喜欢的教室。用 there is / there are 和地点介词（near, under, next to, behind）。可以用现在进行时写一个人正在做什么。"
+  },
+  "rubric": {
+    "taskType": "A1 reading comprehension (simulated practice, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a3d8c9b66cb1b4250dae2193b6b66a0983cf410840a646cd1c16fe59b8214962"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

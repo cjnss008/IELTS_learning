@@ -1,0 +1,318 @@
+{
+  "id": "w24-listen-1",
+  "week": 24,
+  "skill": "listening",
+  "level": "B1–B2",
+  "topic": "资源分配与阶段检查",
+  "grammarFocus": "条件句；数量词；段落间的指代与衔接。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "The Community Garden Budget Meeting",
+  "instructions": "本材料为项目原创模拟教学材料，情境和数据均为模拟，非官方试题，未经真实考生难度标定。先读题，再听录音；建议第一遍抓大意，第二遍核对细节。共 10 题；单选题只选一个完整选项。填空用录音中的英文原词或数字，遵守每题词数限制。判断题 True 表示原文明示支持，False 表示原文明示矛盾，Not Given 表示缺少判断所需信息。",
+  "transcript": "David: Welcome to the Green Street Community Garden meeting. I'm David, the coordinator. Our budget for next season is 500 pounds, and we need to prioritise carefully.\nAnna: I'm Anna. I think the tools are most urgent. Our spades are broken, and there are only two watering cans for the whole garden.\nDavid: Some members want a shed to store the tools. It would cost 300 pounds. A water tank is another option. It could collect rainwater for summer.\nAnna: How much would that cost?\nDavid: About 150 pounds. We also need seeds and plants; last year we spent 100 pounds on those.\nAnna: Then a shed and a tank would cost 450 pounds, leaving only 50 for seeds. That would be less than last year's amount.\nDavid: Exactly. Before choosing, let's check last year's progress. We promised to grow vegetables for the food bank. What happened?\nAnna: We gave 20 kilograms of vegetables to the food bank. But we also promised to repair the fence. We didn't do that because we didn't have enough money.\nDavid: So we should keep some money for repairs this time.\nAnna: Yes. A shed is a useful investment because dry tools should last longer, but buying it means delaying something else.\nDavid: How about an agreed proposal: 300 pounds for a shed, 100 for seeds, and 100 for small repairs? We can ask members to donate old tools.\nAnna: That sounds reasonable. I still want the water tank, though. Are we ruling it out permanently?\nDavid: No. We can postpone buying it for now. Let's check again in six months. If we have saved enough money, we can buy it then. We aren't promising a purchase before we know the savings.\nAnna: I agree. So our proposal covers the shed, seeds and repairs, with donated tools if members can help. We'll review the tank in six months.\nDavid: Correct. I'll put that proposal to the members for a vote. Their approval is still needed before we spend anything.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the total budget for the garden next season?",
+      "options": [
+        "500 pounds",
+        "300 pounds",
+        "150 pounds",
+        "100 pounds"
+      ],
+      "answers": [
+        "500 pounds"
+      ],
+      "explanation": "David 明确说下个季节的预算是 500 英镑。",
+      "evidence": "Our budget for next season is 500 pounds"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Anna think is the most urgent need?",
+      "options": [
+        "New tools",
+        "A new shed",
+        "A water tank",
+        "More seeds"
+      ],
+      "answers": [
+        "New tools"
+      ],
+      "explanation": "Anna说“I think the tools are most urgent.”，她认为工具是最紧急的。",
+      "evidence": "I think the tools are most urgent."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete with ONE NUMBER AND ONE WORD from the recording: A water tank would cost about ______.",
+      "maxWords": 2,
+      "answers": [
+        "150 pounds"
+      ],
+      "explanation": "David说“About 150 pounds.”，所以水箱大约150英镑。",
+      "evidence": "About 150 pounds."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How much did the garden give to the food bank last year? Write ONE NUMBER AND ONE WORD from the recording.",
+      "maxWords": 2,
+      "answers": [
+        "20 kilograms"
+      ],
+      "explanation": "Anna说“We gave 20 kilograms of vegetables to the food bank.”，所以是20公斤。",
+      "evidence": "We gave 20 kilograms of vegetables to the food bank."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why didn't the garden repair the fence last year?",
+      "options": [
+        "They didn't have enough money.",
+        "They forgot to do it.",
+        "The fence was not broken.",
+        "They spent the money on a shed."
+      ],
+      "answers": [
+        "They didn't have enough money."
+      ],
+      "explanation": "Anna说“We didn't do that because we didn't have enough money.”，所以是因为钱不够。",
+      "evidence": "We didn't do that because we didn't have enough money."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What do David and Anna agree about the water tank for now?",
+      "options": [
+        "Postpone buying it and review it in six months",
+        "Buy it immediately",
+        "Never buy it",
+        "Buy it regardless of savings"
+      ],
+      "answers": [
+        "Postpone buying it and review it in six months"
+      ],
+      "explanation": "他们只同意暂缓，并在六个月后根据储蓄再考虑，没有承诺一定购买。",
+      "evidence": "We can postpone buying it for now. Let's check again in six months."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "According to their agreed proposal, how much would they spend on a shed?",
+      "options": [
+        "300 pounds",
+        "100 pounds",
+        "150 pounds",
+        "500 pounds"
+      ],
+      "answers": [
+        "300 pounds"
+      ],
+      "explanation": "两人的一致提案给棚屋分配 300 英镑；正式支出仍须成员投票批准。",
+      "evidence": "300 pounds for a shed, 100 for seeds, and 100 for small repairs"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "When will they check their progress again?",
+      "options": [
+        "In six months",
+        "In one year",
+        "Next month",
+        "In two years"
+      ],
+      "answers": [
+        "In six months"
+      ],
+      "explanation": "David说“Let's check again in six months.”，所以六个月后再检查。",
+      "evidence": "Let's check again in six months."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "David rejects the idea of asking members to donate tools.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "David 明确提出可以请成员捐旧工具，所以“他反对这个想法”与原文矛盾。",
+      "evidence": "We can ask members to donate old tools."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True or False or Not Given: The garden has more than 20 members.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "录音中没有提到花园有多少成员，因此无法判断该陈述是否正确，答案为Not Given。",
+      "evidence": "No information about the number of members is given in the transcript."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "budget",
+      "meaning": "预算",
+      "example": "Our budget for next season is 500 pounds"
+    },
+    {
+      "word": "coordinator",
+      "meaning": "协调人",
+      "example": "I'm David, the coordinator."
+    },
+    {
+      "word": "prioritise",
+      "meaning": "按轻重缓急排列",
+      "example": "we need to prioritise carefully."
+    },
+    {
+      "word": "postpone",
+      "meaning": "推迟",
+      "example": "We can postpone buying it for now."
+    },
+    {
+      "word": "donate",
+      "meaning": "捐赠",
+      "example": "We can ask members to donate old tools."
+    },
+    {
+      "word": "urgent",
+      "meaning": "紧急的",
+      "example": "I think the tools are most urgent."
+    },
+    {
+      "word": "investment",
+      "meaning": "投入；投资",
+      "example": "A shed is a useful investment"
+    },
+    {
+      "word": "reasonable",
+      "meaning": "合理的",
+      "example": "That sounds reasonable."
+    }
+  ],
+  "grammar": {
+    "title": "条件句、数量词与指代衔接",
+    "explanation": "条件句用if引导，表示假设。例如：If we buy a shed, we won't have much left. 数量词如much, many, a lot of, enough等用来表示数量。段落间的指代与衔接通过代词（it, they, this, that）和连接词（but, so, then）使文章连贯。",
+    "example": "If we have saved enough money, we can buy it then.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If the club ______ a cupboard, it will have more storage space.",
+        "options": [
+          "buys",
+          "will buy",
+          "buying"
+        ],
+        "answers": [
+          "buys"
+        ],
+        "explanation": "谈可能发生的将来情况时，if 从句通常用一般现在时；the club 配 buys。",
+        "evidence": "If the club buys a cupboard, it will have more storage space."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "We do not have ______ money to buy both a printer and a desk.",
+        "options": [
+          "enough",
+          "many",
+          "a lot",
+          "few"
+        ],
+        "answers": [
+          "enough"
+        ],
+        "explanation": "enough money 表示足够的钱；many/few 不直接修饰不可数名词 money，a lot 之后缺少 of。",
+        "evidence": "We do not have enough money to buy both a printer and a desk."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the singular reference: Nina suggested a picnic, but ______ idea depended on the weather.",
+        "options": [
+          "this",
+          "these",
+          "those",
+          "they"
+        ],
+        "answers": [
+          "this"
+        ],
+        "explanation": "前面是一个建议，空后也是单数 idea，所以用 this。",
+        "evidence": "Nina suggested a picnic, but this idea depended on the weather."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "表达“只有筹到额外资金才会购买”：We will buy new chairs ______ we raise extra funds.",
+        "options": [
+          "only if",
+          "even if",
+          "whether"
+        ],
+        "answers": [
+          "only if"
+        ],
+        "explanation": "only if 表示必要条件“只有……才……”；even if 表示即使，whether 不合此句结构。",
+        "evidence": "We will buy new chairs only if we raise extra funds."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like gardening? Why or why not?",
+        "How often do you spend time outdoors?",
+        "What do you usually do with your friends at weekends?",
+        "Do you prefer to plan things or be spontaneous?"
+      ],
+      "part2": "Describe a time when you had to decide how to spend a limited amount of money.",
+      "part3": [
+        "Why do some people find it difficult to stick to a budget?",
+        "How can communities work together to share resources?",
+        "Do you think it is better to spend money on experiences or on things?",
+        "What are the advantages of checking progress regularly?"
+      ],
+      "part2Bullets": [
+        "what the money was for",
+        "what options you considered",
+        "what you decided",
+        "why that choice was reasonable"
+      ]
+    },
+    "writing": "You are a member of a local sports club. The club has 1000 pounds to spend. Write a short proposal (about 150 words) suggesting how to use the money. Include at least two options and explain which one you recommend and why. Use conditional sentences and quantity words."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1独立逐题核对与规则校验；未经真实考生难度标定",
+    "contentHash": "51f527a3f03e04d3e544200a85999e80ac2d3c9e2c4cb4550680df23d4d80e7c"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

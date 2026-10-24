@@ -1,0 +1,312 @@
+{
+  "id": "w13-listen-2",
+  "week": 13,
+  "skill": "listening",
+  "level": "A2",
+  "topic": "工作、职责与时间管理",
+  "grammarFocus": "have to / must / can；一般现在时与过去时对比。",
+  "pool": "training",
+  "type": "directions",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 2,
+  "title": "A Busy Week at the Office",
+  "instructions": "听录音，完成10个问题。录音会播放两遍。第一遍听大意，第二遍听细节。答案必须来自录音原文。填空题答案必须与原文完全一致，且不超过字数限制。所有题目均为单选题或填空题。",
+  "passage": "",
+  "transcript": "M: Hi, Lisa. How was your week?\nW: Busy! I had to work late on Monday and Tuesday.\nM: Oh no. Why?\nW: My boss gave me a big report. I must finish it by Friday.\nM: That's tough. Do you have to work this weekend?\nW: No, I don't. But I can't relax yet. I have to check the numbers first.\nM: I see. Did you have meetings yesterday?\nW: Yes, I had a meeting at nine o'clock. It lasted thirty minutes.\nM: Thirty minutes? That's short.\nW: Yes, it was quick. But I must prepare for the next one on Thursday.\nM: Can you take a break now?\nW: Not really. I can drink coffee, but I can't leave the office.\nM: You work too hard. Last year, you didn't have to work late so often.\nW: I know. But this month is different. I have to train a new colleague too.\nM: Really? Who is it?\nW: His name is Tom. He started last week. He must learn our system fast.\nM: Good luck. I hope you can rest soon.\nW: Thanks. I must go now. The report is waiting!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Lisa had to work late on which days?",
+      "options": [
+        "Monday and Tuesday",
+        "Wednesday and Thursday",
+        "Friday and Saturday"
+      ],
+      "answers": [
+        "Monday and Tuesday"
+      ],
+      "explanation": "录音中Lisa说：“I had to work late on Monday and Tuesday.”",
+      "evidence": "I had to work late on Monday and Tuesday."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What must Lisa finish by Friday?",
+      "options": [
+        "A big report",
+        "A meeting",
+        "A training session"
+      ],
+      "answers": [
+        "A big report"
+      ],
+      "explanation": "Lisa说：“I must finish it by Friday.” 其中it指代前文的big report。",
+      "evidence": "My boss gave me a big report. I must finish it by Friday."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Does Lisa have to work this weekend?",
+      "options": [
+        "Yes, she does.",
+        "No, she doesn't.",
+        "Not given."
+      ],
+      "answers": [
+        "No, she doesn't."
+      ],
+      "explanation": "男士问：“Do you have to work this weekend?” Lisa回答：“No, I don't.”",
+      "evidence": "No, I don't."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Lisa had a meeting at ______. (填写时间，如：nine o'clock)",
+      "maxWords": 2,
+      "answers": [
+        "nine o'clock"
+      ],
+      "explanation": "Lisa说：“I had a meeting at nine o'clock.”",
+      "evidence": "I had a meeting at nine o'clock."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "The meeting lasted ______ minutes. (填写数字)",
+      "maxWords": 1,
+      "answers": [
+        "thirty"
+      ],
+      "explanation": "Lisa说：“It lasted thirty minutes.”",
+      "evidence": "It lasted thirty minutes."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What must Lisa prepare for?",
+      "options": [
+        "A meeting on Thursday",
+        "A report on Friday",
+        "A training session on Monday"
+      ],
+      "answers": [
+        "A meeting on Thursday"
+      ],
+      "explanation": "Lisa说：“But I must prepare for the next one on Thursday.” 其中the next one指下一个会议。",
+      "evidence": "But I must prepare for the next one on Thursday."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What can Lisa do now?",
+      "options": [
+        "Drink coffee",
+        "Leave the office",
+        "Take a break"
+      ],
+      "answers": [
+        "Drink coffee"
+      ],
+      "explanation": "Lisa说：“I can drink coffee, but I can't leave the office.”",
+      "evidence": "I can drink coffee, but I can't leave the office."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Last year, Lisa didn't have to work late so often.",
+      "options": [
+        "True",
+        "False",
+        "Not given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "男士说：“Last year, you didn't have to work late so often.” Lisa回答：“I know.” 表示同意。",
+      "evidence": "Last year, you didn't have to work late so often."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Who is Tom?",
+      "options": [
+        "A new colleague",
+        "Lisa's boss",
+        "A friend of Lisa"
+      ],
+      "answers": [
+        "A new colleague"
+      ],
+      "explanation": "Lisa说：“I have to train a new colleague too.” 然后男士问：“Who is it?” Lisa回答：“His name is Tom.” 所以Tom是新同事。",
+      "evidence": "I have to train a new colleague too. ... His name is Tom."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What must Tom learn fast?",
+      "options": [
+        "The system",
+        "The report",
+        "The meeting schedule"
+      ],
+      "answers": [
+        "The system"
+      ],
+      "explanation": "Lisa说：“He must learn our system fast.”",
+      "evidence": "He must learn our system fast."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "report",
+      "meaning": "报告",
+      "example": "My boss gave me a big report."
+    },
+    {
+      "word": "finish",
+      "meaning": "完成",
+      "example": "I must finish it by Friday."
+    },
+    {
+      "word": "meeting",
+      "meaning": "会议",
+      "example": "I had a meeting at nine o'clock."
+    },
+    {
+      "word": "last",
+      "meaning": "持续",
+      "example": "It lasted thirty minutes."
+    },
+    {
+      "word": "prepare",
+      "meaning": "准备",
+      "example": "I must prepare for the next one on Thursday."
+    },
+    {
+      "word": "colleague",
+      "meaning": "同事",
+      "example": "I have to train a new colleague too."
+    },
+    {
+      "word": "system",
+      "meaning": "系统",
+      "example": "He must learn our system fast."
+    },
+    {
+      "word": "relax",
+      "meaning": "放松",
+      "example": "I can't relax yet."
+    }
+  ],
+  "grammar": {
+    "title": "have to / must / can; 一般现在时与过去时对比",
+    "explanation": "have to 表示“不得不”，must 表示“必须”，can 表示“能够”。一般现在时表示经常或现在的情况，一般过去时表示过去的情况。例如：I have to work late today. I had to work late yesterday.",
+    "example": "I have to check the numbers first. I had a meeting at nine o'clock.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "She have to work late.",
+          "She has to work late.",
+          "She must to work late."
+        ],
+        "answers": [
+          "She has to work late."
+        ],
+        "explanation": "主语是第三人称单数，have to 变为 has to。must 后直接跟动词原形，不加 to。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "I can to swim.",
+          "I can swim.",
+          "I can swimming."
+        ],
+        "answers": [
+          "I can swim."
+        ],
+        "explanation": "can 是情态动词，后面直接跟动词原形，不加 to，也不用 -ing 形式。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Yesterday, I have a meeting.",
+          "Yesterday, I had a meeting.",
+          "Yesterday, I has a meeting."
+        ],
+        "answers": [
+          "Yesterday, I had a meeting."
+        ],
+        "explanation": "Yesterday 表示过去，动词用过去式 had。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "He must learns fast.",
+          "He must learn fast.",
+          "He must to learn fast."
+        ],
+        "answers": [
+          "He must learn fast."
+        ],
+        "explanation": "must 后跟动词原形，不加 -s 或 to。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you have to work late often?",
+        "What must you do at work or school?",
+        "Can you take a break when you are busy?",
+        "Did you have a busy week last week?"
+      ],
+      "part2": "Describe a busy week you had. You should say:",
+      "part2_bullets": [
+        "when it was",
+        "what you had to do",
+        "who helped you",
+        "how you felt"
+      ],
+      "part3": [
+        "Do you think people have to work too hard today?",
+        "What must students do to succeed?",
+        "Can time management help people relax?",
+        "How did people manage time before computers?"
+      ]
+    },
+    "writing": "Write a short paragraph (5-6 sentences) about a busy day you had. Use have to, must, can, and the past tense. Example: Last Monday, I had to finish a report. I must check the numbers. I can drink coffee, but I can't leave the office."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "cf98b4413284d96cd2203c3f95826368785750af0ed01eef5a09600329b4cf0d"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

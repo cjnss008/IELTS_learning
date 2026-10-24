@@ -1,0 +1,279 @@
+{
+  "id": "w04-read-2",
+  "week": 4,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "A New School and a New Friend",
+  "instructions": "阅读短文，然后回答问题。注意：本材料为模拟教学材料，不是官方考试。",
+  "passage": "This is a new school. It is big and clean. I am a student here. I am not a teacher. My name is Li Ming. I am from China. This is Amy. She is my friend. She is from the UK. She is not a teacher. She is a student too. We are in Class 2. We are not in Class 1. Our teacher is Mr. Wang. He is a good teacher. He is not old. He is young. We like our school.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "学校是什么样的？",
+      "options": [
+        "又大又干净。",
+        "又小又脏。",
+        "又旧又小。"
+      ],
+      "answers": [
+        "又大又干净。"
+      ],
+      "explanation": "短文第一句说“This is a new school. It is big and clean.”，所以学校又大又干净。",
+      "evidence": "This is a new school. It is big and clean."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "李明是老师吗？",
+      "options": [
+        "是的，他是。",
+        "不，他不是。",
+        "不，她是。"
+      ],
+      "answers": [
+        "不，他不是。"
+      ],
+      "explanation": "短文中李明说“I am not a teacher.”，所以李明不是老师。",
+      "evidence": "I am not a teacher."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Amy来自哪里？",
+      "options": [
+        "中国",
+        "英国",
+        "美国"
+      ],
+      "answers": [
+        "英国"
+      ],
+      "explanation": "短文中说“She is from the UK.”，所以Amy来自英国。",
+      "evidence": "She is from the UK."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Amy是老师吗？",
+      "options": [
+        "是的，她是。",
+        "不，她不是。",
+        "不，他是。"
+      ],
+      "answers": [
+        "不，她不是。"
+      ],
+      "explanation": "短文中说“She is not a teacher.”，所以Amy不是老师。",
+      "evidence": "She is not a teacher."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "他们在几班？",
+      "options": [
+        "一班",
+        "二班",
+        "三班"
+      ],
+      "answers": [
+        "二班"
+      ],
+      "explanation": "短文中说“We are in Class 2.”，所以他们在二班。",
+      "evidence": "We are in Class 2."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "他们的老师是谁？",
+      "options": [
+        "王老师",
+        "李老师",
+        "张老师"
+      ],
+      "answers": [
+        "王老师"
+      ],
+      "explanation": "短文中说“Our teacher is Mr. Wang.”，所以他们的老师是王老师。",
+      "evidence": "Our teacher is Mr. Wang."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "王老师老吗？",
+      "options": [
+        "是的，他老。",
+        "不，他不老。",
+        "不，她不老。"
+      ],
+      "answers": [
+        "不，他不老。"
+      ],
+      "explanation": "短文中说“He is not old. He is young.”，所以王老师不老。",
+      "evidence": "He is not old. He is young."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "根据短文填空：Amy is from the ______.",
+      "answers": [
+        "UK"
+      ],
+      "maxWords": 1,
+      "explanation": "短文中说“She is from the UK.”，所以填UK。",
+      "evidence": "She is from the UK."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "This is a new school."
+    },
+    {
+      "word": "big",
+      "meaning": "大的",
+      "example": "It is big and clean."
+    },
+    {
+      "word": "clean",
+      "meaning": "干净的",
+      "example": "It is big and clean."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student here."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am not a teacher."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "She is my friend."
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "We are in Class 2."
+    },
+    {
+      "word": "young",
+      "meaning": "年轻的",
+      "example": "He is young."
+    }
+  ],
+  "grammar": {
+    "title": "be动词否定句与一般疑问句",
+    "explanation": "be动词（am, is, are）的否定句是在be动词后加not，如：I am not a teacher. 一般疑问句是把be动词提到主语前，如：Are you a student? 回答用Yes, I am. 或No, I am not.",
+    "example": "I am not a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：",
+        "options": [
+          "I am not a teacher.",
+          "I not am a teacher.",
+          "I am a teacher not."
+        ],
+        "answers": [
+          "I am not a teacher."
+        ],
+        "explanation": "否定句在be动词后加not，所以是I am not a teacher.",
+        "evidence": "I am not a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的一般疑问句：",
+        "options": [
+          "Are you a student?",
+          "You are a student?",
+          "Do you are a student?"
+        ],
+        "answers": [
+          "Are you a student?"
+        ],
+        "explanation": "一般疑问句把be动词提前，所以是Are you a student?",
+        "evidence": "Are you a student?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的简短肯定回答：",
+        "options": [
+          "Yes, I am.",
+          "Yes, I do.",
+          "Yes, you are."
+        ],
+        "answers": [
+          "Yes, I am."
+        ],
+        "explanation": "用be动词提问，用be动词回答，所以是Yes, I am.",
+        "evidence": "Yes, I am."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的简短否定回答：",
+        "options": [
+          "No, I am not.",
+          "No, I not.",
+          "No, I don't."
+        ],
+        "answers": [
+          "No, I am not."
+        ],
+        "explanation": "否定回答用No, I am not.",
+        "evidence": "No, I am not."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your school big?",
+        "Are you from China?",
+        "Is your teacher young?"
+      ],
+      "part2": "Describe your school. You should say:",
+      "part3": [
+        "Is your school new?",
+        "Are you in Class 1?",
+        "Who is your teacher?",
+        "Is your friend a teacher?"
+      ]
+    },
+    "writing": "写3-5个简单的句子介绍你自己和你的朋友。使用be动词的否定句和一般疑问句。"
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "47d5cd2af63206b2f6dbeeef6bd7bf8bd40861ac4a45abcc2e6533af54cc5a72"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

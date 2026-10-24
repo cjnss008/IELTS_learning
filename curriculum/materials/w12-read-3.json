@@ -1,0 +1,325 @@
+{
+  "id": "w12-read-3",
+  "week": 12,
+  "skill": "reading",
+  "level": "A2",
+  "topic": "旅行经历与基础测评",
+  "grammarFocus": "一般过去时；规则与常用不规则过去式；then / after that / finally。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "A Weekend Trip to Hangzhou",
+  "instructions": "这是为A2水平学习者编写的原创模拟阅读材料（非官方考试）。请先通读短文，再完成10道题。单选题请选择最符合短文内容的完整选项；填空题的答案必须与短文中的原词完全一致，并注意每题的字数限制。所有解析均为中文，并附短文原句作为依据。",
+  "passage": "Last month, my sister and I took a short trip to Hangzhou. We live in Shanghai, so we bought two train tickets on Friday evening. The train left at eight in the morning, and we arrived in Hangzhou before ten. The weather was warm and sunny, and the sky was very blue.\n\nFirst, we visited West Lake. We walked around the lake for two hours and took many photos. The lake was beautiful, and there were many small boats on the water. After that, we ate lunch in a small restaurant near the lake. The food was cheap and very good. We ate fish and rice, and we drank cold juice. In the afternoon, we went to a tea house on a green hill. A friendly woman showed us how to make green tea. We drank three cups and bought a small box for our mother. The tea house was quiet, and we sat there for one hour.\n\nIn the evening, we were tired, so we went back to our hotel early. The hotel was clean, but our room was very small. We watched a little TV and went to bed at nine. My sister read a book in bed, and I wrote three postcards to my friends.\n\nOn Sunday morning, we got up at seven. We ate breakfast in the hotel, and then we walked to a big park. Finally, we visited a big market near the train station. My sister bought a red bag, and I bought a book about Hangzhou. We took the train home at four in the afternoon. We were tired but very happy. It was a short trip, but we want to go back next year.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "作者和姐姐什么时候买的火车票？",
+      "options": [
+        "星期五晚上",
+        "星期六早上",
+        "星期天下午",
+        "上个月一号"
+      ],
+      "answers": [
+        "星期五晚上"
+      ],
+      "explanation": "短文第二句说她们在周五晚上买了两张火车票，因此选“星期五晚上”。",
+      "evidence": "We live in Shanghai, so we bought two train tickets on Friday evening."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "火车什么时候到达杭州？",
+      "options": [
+        "十点以前",
+        "十点以后",
+        "中午十二点",
+        "下午四点"
+      ],
+      "answers": [
+        "十点以前"
+      ],
+      "explanation": "短文说火车早上八点出发，十点前到达杭州，因此选“十点以前”。",
+      "evidence": "The train left at eight in the morning, and we arrived in Hangzhou before ten."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "作者和姐姐在西湖边走了多久？",
+      "options": [
+        "两个小时",
+        "三个小时",
+        "一个小时",
+        "一整个上午"
+      ],
+      "answers": [
+        "两个小时"
+      ],
+      "explanation": "短文明确说她们绕着湖走了两个小时，因此选“两个小时”。",
+      "evidence": "We walked around the lake for two hours and took many photos."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "关于湖边那家餐馆，短文说了什么？",
+      "options": [
+        "食物便宜又好吃",
+        "食物很贵",
+        "餐馆很小但很贵",
+        "她们不喜欢那里的食物"
+      ],
+      "answers": [
+        "食物便宜又好吃"
+      ],
+      "explanation": "短文说那家餐馆的食物便宜而且非常好，因此选“食物便宜又好吃”。",
+      "evidence": "The food was cheap and very good."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "请填空（最多3个词）：在茶馆里，一位友好的女士教她们怎样做____。",
+      "answers": [
+        "green tea"
+      ],
+      "maxWords": 3,
+      "explanation": "短文说一位友好的女士向她们展示如何制作绿茶，因此填 green tea。",
+      "evidence": "A friendly woman showed us how to make green tea."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "请填空（最多2个词）：她们给妈妈买了一个小盒的____。",
+      "answers": [
+        "green tea"
+      ],
+      "maxWords": 2,
+      "explanation": "短文说她们喝了三杯茶，还给妈妈买了一小盒绿茶，因此填 green tea。",
+      "evidence": "We drank three cups and bought a small box for our mother."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "她们的旅馆房间怎么样？",
+      "options": [
+        "很小",
+        "很大",
+        "很脏",
+        "很贵"
+      ],
+      "answers": [
+        "很小"
+      ],
+      "explanation": "短文说旅馆很干净，但房间非常小，因此选“很小”。",
+      "evidence": "The hotel was clean, but our room was very small."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "星期天早上她们几点起床？",
+      "options": [
+        "七点",
+        "八点",
+        "九点",
+        "十点"
+      ],
+      "answers": [
+        "七点"
+      ],
+      "explanation": "短文明确说星期天早上她们七点起床，因此选“七点”。",
+      "evidence": "On Sunday morning, we got up at seven."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "作者的姐姐在市场买了什么？",
+      "options": [
+        "一个红色的包",
+        "一本关于杭州的书",
+        "一盒绿茶",
+        "两张火车票"
+      ],
+      "answers": [
+        "一个红色的包"
+      ],
+      "explanation": "短文说姐姐买了一个红色的包，作者买了一本关于杭州的书，因此选“一个红色的包”。",
+      "evidence": "My sister bought a red bag, and I bought a book about Hangzhou."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "根据短文，下面哪一句是正确的？",
+      "options": [
+        "她们下午四点坐火车回家",
+        "她们星期天晚上才回家",
+        "她们不想再去杭州",
+        "她们在杭州待了一个星期"
+      ],
+      "answers": [
+        "她们下午四点坐火车回家"
+      ],
+      "explanation": "短文说她们下午四点坐火车回家，因此第一项正确。文中没有说她们星期天晚上回家，也没有说不想再去或待了一个星期。",
+      "evidence": "We took the train home at four in the afternoon."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "trip",
+      "meaning": "旅行；短途旅行",
+      "example": "Last month, my sister and I took a short trip to Hangzhou."
+    },
+    {
+      "word": "ticket",
+      "meaning": "票",
+      "example": "We bought two train tickets on Friday evening."
+    },
+    {
+      "word": "arrive",
+      "meaning": "到达",
+      "example": "We arrived in Hangzhou before ten."
+    },
+    {
+      "word": "visit",
+      "meaning": "参观；拜访",
+      "example": "First, we visited West Lake."
+    },
+    {
+      "word": "restaurant",
+      "meaning": "餐馆",
+      "example": "We ate lunch in a small restaurant near the lake."
+    },
+    {
+      "word": "friendly",
+      "meaning": "友好的",
+      "example": "A friendly woman showed us how to make green tea."
+    },
+    {
+      "word": "hotel",
+      "meaning": "旅馆；酒店",
+      "example": "We went back to our hotel early."
+    },
+    {
+      "word": "market",
+      "meaning": "市场",
+      "example": "Finally, we visited a big market near the train station."
+    }
+  ],
+  "grammar": {
+    "title": "一般过去时：规则与常用不规则过去式；then / after that / finally",
+    "explanation": "一般过去时表示过去发生的动作或状态。规则动词一般加 -ed，例如 visit → visited，walk → walked。常用不规则动词要单独记，例如 buy → bought，take → took，go → went，eat → ate，drink → drank，get → got。表示顺序时，可以用 first、then、after that、finally 把动作串起来。",
+    "example": "First, we visited West Lake. After that, we ate lunch in a small restaurant near the lake.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的过去式：Yesterday we ____ two cups of tea.",
+        "options": [
+          "drink",
+          "drank",
+          "drinked",
+          "drinking"
+        ],
+        "answers": [
+          "drank"
+        ],
+        "explanation": "drink 是不规则动词，过去式是 drank。",
+        "evidence": "We drank three cups and bought a small box for our mother."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的过去式：She ____ a red bag at the market.",
+        "options": [
+          "buy",
+          "buyed",
+          "bought",
+          "buys"
+        ],
+        "answers": [
+          "bought"
+        ],
+        "explanation": "buy 是不规则动词，过去式是 bought。",
+        "evidence": "My sister bought a red bag, and I bought a book about Hangzhou."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的过去式：They ____ around the lake for two hours.",
+        "options": [
+          "walk",
+          "walked",
+          "walking",
+          "walks"
+        ],
+        "answers": [
+          "walked"
+        ],
+        "explanation": "walk 是规则动词，过去式加 -ed，变成 walked。",
+        "evidence": "We walked around the lake for two hours and took many photos."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的顺序词：We visited the lake. ____, we ate lunch.",
+        "options": [
+          "First",
+          "After that",
+          "Finally",
+          "Before"
+        ],
+        "answers": [
+          "After that"
+        ],
+        "explanation": "先参观湖，然后吃午饭，用 After that 表示“在那之后”最合适。",
+        "evidence": "After that, we ate lunch in a small restaurant near the lake."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where did you go on your last short trip?",
+        "Who did you go with?",
+        "What did you do there?",
+        "Did you like the trip? Why or why not?"
+      ],
+      "part2": "Describe a short trip you took. You should say:",
+      "part3": [
+        "Do you like short trips or long trips? Why?",
+        "What do you usually buy on a trip?",
+        "How do you feel after a trip?",
+        "Do you want to visit Hangzhou? Why or why not?"
+      ],
+      "part2Bullets": [
+        "where you went",
+        "who was with you",
+        "what you did there",
+        "why you remember the trip"
+      ]
+    },
+    "writing": "请用一般过去时写5–7句话，介绍你最近一次短途旅行。请写清楚：你去了哪里、和谁一起、你做了什么、你买了什么、你什么时候回家。可以使用 first、after that、finally 等顺序词。"
+  },
+  "rubric": {
+    "taskType": "A2 reading comprehension with past-tense grammar focus (simulated educational material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "89d147531e4db1b0d17651cd19d241251504375caf8c235bd258099831cc69cd",
+    "revisionNote": "补全Part 2话题卡的四项提示；阅读原文、题目和答案不变。",
+    "revisionHash": "c3a63d3747d9934612d87b408c48db13031ce02e57bdce18cb04094f82a6f236"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

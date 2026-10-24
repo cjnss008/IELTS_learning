@@ -1,0 +1,274 @@
+{
+  "id": "w01-listen-1",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 1,
+  "title": "First Day Greetings",
+  "instructions": "这是模拟练习，不是官方雅思考试。听录音，完成8个问题。注意：录音中只有I和you，am和are。填空答案必须来自录音原文，且不超过规定词数。",
+  "passage": "",
+  "transcript": "A: Hello. I am Anna. Are you Tom? B: Yes, I am Tom. I am a student. Are you a student? A: Yes, I am a student. I am in Class 1. Are you in Class 1? B: No, I am in Class 2. A: I am from China. Are you from China? B: No, I am from the UK. A: I am happy. Are you happy? B: Yes, I am happy.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Anna 的名字是什么？",
+      "options": [
+        "Anna",
+        "Tom",
+        "Class 1"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "录音开头 Anna 说 'I am Anna.'，所以她的名字是 Anna。",
+      "evidence": "I am Anna."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Tom 是学生吗？",
+      "options": [
+        "是，他是学生。",
+        "不，他不是学生。",
+        "录音没有说。"
+      ],
+      "answers": [
+        "是，他是学生。"
+      ],
+      "explanation": "Tom 说 'I am a student.'，明确表示自己是学生。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Anna 在几班？",
+      "options": [
+        "1班",
+        "2班",
+        "3班"
+      ],
+      "answers": [
+        "1班"
+      ],
+      "explanation": "Anna 说 'I am in Class 1.'，所以她在1班。",
+      "evidence": "I am in Class 1."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Tom 在几班？",
+      "options": [
+        "1班",
+        "2班",
+        "3班"
+      ],
+      "answers": [
+        "2班"
+      ],
+      "explanation": "Tom 说 'I am in Class 2.'，所以他在2班。",
+      "evidence": "I am in Class 2."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Anna 来自哪个国家？请填一个词。",
+      "maxWords": 1,
+      "answers": [
+        "China"
+      ],
+      "explanation": "Anna 说 'I am from China.'，所以填 China。",
+      "evidence": "I am from China."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Tom 来自哪个国家？请填两个词。",
+      "maxWords": 2,
+      "answers": [
+        "the UK"
+      ],
+      "explanation": "Tom 说 'I am from the UK.'，所以填 the UK。",
+      "evidence": "I am from the UK."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Anna 开心吗？",
+      "options": [
+        "是，她开心。",
+        "不，她不开心。",
+        "录音没有说。"
+      ],
+      "answers": [
+        "是，她开心。"
+      ],
+      "explanation": "Anna 说 'I am happy.'，所以她是开心的。",
+      "evidence": "I am happy."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Tom 开心吗？",
+      "options": [
+        "是，他开心。",
+        "不，他不开心。",
+        "录音没有说。"
+      ],
+      "answers": [
+        "是，他开心。"
+      ],
+      "explanation": "Tom 说 'Yes, I am happy.'，所以他是开心的。",
+      "evidence": "Yes, I am happy."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Anna."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "I am in Class 1."
+    },
+    {
+      "word": "from",
+      "meaning": "来自",
+      "example": "I am from China."
+    },
+    {
+      "word": "China",
+      "meaning": "中国",
+      "example": "I am from China."
+    },
+    {
+      "word": "UK",
+      "meaning": "英国",
+      "example": "I am from the UK."
+    },
+    {
+      "word": "happy",
+      "meaning": "开心的",
+      "example": "I am happy."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am Tom."
+    }
+  ],
+  "grammar": {
+    "title": "I am / you are",
+    "explanation": "在英语中，说“我是”用 I am，说“你是”用 you are。句子开头字母要大写，句子结尾要加句号。",
+    "example": "I am Anna. Are you Tom?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 后面用 am，所以 'I am a student.' 正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "You are happy.",
+          "You am happy.",
+          "You is happy."
+        ],
+        "answers": [
+          "You are happy."
+        ],
+        "explanation": "you 后面用 are，所以 'You are happy.' 正确。",
+        "evidence": "Are you happy?"
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "补全句子：I ___ from China. 请填一个词。",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "I 后面用 am，所以填 am。",
+        "evidence": "I am from China."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "补全句子：You ___ a student. 请填一个词。",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "you 后面用 are，所以填 are。",
+        "evidence": "Are you a student?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you from China?",
+        "Are you happy?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part2Bullets": [
+        "your name",
+        "your class",
+        "your country",
+        "how you feel"
+      ],
+      "part3": [
+        "Is your friend a student?",
+        "Are you in Class 1?",
+        "Are you from China?",
+        "Are you happy today?"
+      ]
+    },
+    "writing": "写2到4个简单的英语句子介绍你自己。用 I am ... 和 You are ...。注意句子开头大写，结尾加句号。"
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "37a1794de15c349a973f265b6d1a52c83eb7b1b3e7807d0261bc4f3f43116a42"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

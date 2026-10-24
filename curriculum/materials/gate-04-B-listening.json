@@ -1,0 +1,276 @@
+{
+  "id": "gate-04-B-listening",
+  "week": 4,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "gate",
+  "type": "listening",
+  "fullTest": false,
+  "estimatedMinutes": 20,
+  "minWords": 65,
+  "maxWords": 140,
+  "questionCount": 8,
+  "assessmentGroup": "gate-04-B",
+  "form": "B",
+  "timeLimitSeconds": 1200,
+  "title": "At the Community Library",
+  "instructions": "本材料为项目原创的模拟关卡，不是官方雅思试题，未经真实考生难度标定。先浏览题目，再独立听音并按顺序作答；作答期间不查看听力原文，提交后再核对原文和中文解释。单选题只选一项；填空须遵守各题词数要求并使用原文信息。本关卡为 A1 基础训练，共8题，所有理解题均为直接信息题。口语迁移用自己的信息回答，使用简单句即可。",
+  "transcript": "Anna: Welcome to the library. Are you a new student?\nBen: Yes, I am. My name is Ben.\nAnna: I am Anna. Are you from China?\nBen: No, I am not. I am from Singapore.\nAnna: Who is your teacher?\nBen: My teacher is Mr. Brown. He is not here today.\nAnna: What class are you in?\nBen: English Level 1.\nAnna: Are you free at 3 p.m.?\nBen: No, I am not. I am busy then.\nAnna: Is your class at three?\nBen: No. It is at 4 p.m.\nAnna: Is your teacher from Canada?\nBen: No, he is not. He is from Australia.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "与 Ben 说话的人自称叫什么名字？",
+      "options": [
+        "Anna",
+        "Mary",
+        "Lucy"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "对话中的另一人说 I am Anna.，因此姓名是 Anna。",
+      "evidence": "I am Anna."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Ben 来自哪里？",
+      "options": [
+        "中国",
+        "新加坡",
+        "加拿大"
+      ],
+      "answers": [
+        "新加坡"
+      ],
+      "explanation": "Ben 否认自己来自中国，并明确说来自新加坡。",
+      "evidence": "No, I am not. I am from Singapore."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Ben 的老师是谁？",
+      "options": [
+        "Anna",
+        "Mr. Brown",
+        "Mr. Smith"
+      ],
+      "answers": [
+        "Mr. Brown"
+      ],
+      "explanation": "Ben 明确介绍自己的老师是 Mr. Brown。",
+      "evidence": "My teacher is Mr. Brown."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Brown 老师今天在这里吗？",
+      "options": [
+        "在这里。",
+        "不在这里。",
+        "没有说明。"
+      ],
+      "answers": [
+        "不在这里。"
+      ],
+      "explanation": "Ben 介绍老师后紧接着说老师今天不在这里。",
+      "evidence": "My teacher is Mr. Brown. He is not here today."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Ben 上的是什么课？",
+      "options": [
+        "英语一级",
+        "数学一级",
+        "音乐一级"
+      ],
+      "answers": [
+        "英语一级"
+      ],
+      "explanation": "回答所在课程时，Ben 说 English Level 1。",
+      "evidence": "Anna: What class are you in?\nBen: English Level 1."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Ben 下午3点有空吗？",
+      "options": [
+        "有空。",
+        "没有空。",
+        "没有提到。"
+      ],
+      "answers": [
+        "没有空。"
+      ],
+      "explanation": "Anna 问下午3点是否有空；Ben 明确回答没有空，那时很忙。",
+      "evidence": "Anna: Are you free at 3 p.m.?\nBen: No, I am not. I am busy then."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Ben 的课几点开始？请用数字和 a.m./p.m. 填写。",
+      "answers": [
+        "4 p.m."
+      ],
+      "maxWords": 2,
+      "explanation": "Ben 否认是3点，并说课程在下午4点。",
+      "evidence": "Anna: Is your class at three?\nBen: No. It is at 4 p.m."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Brown 老师来自哪个国家？请填写一个英文词。",
+      "answers": [
+        "Australia"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben 否认老师来自加拿大，明确说老师来自澳大利亚。",
+      "evidence": "No, he is not. He is from Australia."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "Welcome to the library."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a new student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "My teacher is Mr. Brown."
+    },
+    {
+      "word": "class",
+      "meaning": "课；班级",
+      "example": "What class are you in?"
+    },
+    {
+      "word": "free",
+      "meaning": "有空的",
+      "example": "Are you free at 3 p.m.?"
+    },
+    {
+      "word": "busy",
+      "meaning": "忙的",
+      "example": "I am busy then."
+    },
+    {
+      "word": "here",
+      "meaning": "在这里",
+      "example": "He is not here today."
+    },
+    {
+      "word": "from",
+      "meaning": "来自",
+      "example": "I am from Singapore."
+    }
+  ],
+  "grammar": {
+    "title": "be 动词否定句与一般疑问句",
+    "explanation": "否定时，在 be 动词后加 not；提问时，把 be 动词放到主语前。I 用 am；you、we、they 用 are；he、she、it 和单数名词用 is。比如 Are you free? 的否定回答是 No, I am not.；Is she here? 的否定回答是 No, she is not.。不要把所有主语都配上 is。",
+    "example": "Are you free at 3 p.m.?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确形式：I ___ a new worker.（表达“我不是一名新员工”）",
+        "options": [
+          "am not",
+          "not am",
+          "no am"
+        ],
+        "answers": [
+          "am not"
+        ],
+        "explanation": "I 对应 am，否定时在 am 后加 not；a new worker 表示首次介绍的非特指身份。",
+        "evidence": "I am not a new worker."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的 be 动词：___ they ready?",
+        "options": [
+          "Are",
+          "Is",
+          "Am"
+        ],
+        "answers": [
+          "Are"
+        ],
+        "explanation": "主语 they 对应 are；疑问句将 Are 放在主语前。",
+        "evidence": "Are they ready?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "对 Is she at home? 作否定回答，选择正确形式。",
+        "options": [
+          "No, she is not.",
+          "No, she not is.",
+          "No, she not."
+        ],
+        "answers": [
+          "No, she is not."
+        ],
+        "explanation": "she 对应 is，否定简短回答为 No, she is not.。",
+        "evidence": "No, she is not."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的否定句。",
+        "options": [
+          "It is not cold.",
+          "It not is cold.",
+          "It no is cold."
+        ],
+        "answers": [
+          "It is not cold."
+        ],
+        "explanation": "it 对应 is，not 放在 is 后。",
+        "evidence": "It is not cold."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you new here?",
+        "Are you free in the morning?",
+        "Is your friend here today?",
+        "Is your English class small?"
+      ],
+      "part2": "Talk about your friend. You should say:\n- What is your friend’s name?\n- Is your friend a student?\n- Where is your friend from?\n- Is your friend here today?",
+      "part3": [
+        "Are you busy today?",
+        "Is your friend from your city?",
+        "Are you free at four?",
+        "Is your classroom open now?"
+      ]
+    },
+    "writing": "新情境：你叫 May，是一名新员工（a new worker），来自广州。你的同事（worker）叫 Kim，今天不在办公室（in the office）。用4–6个英语简单句介绍你和 Kim，再问对方是否是新员工。使用 am、is、is not 和一个 be 动词一般疑问句，不要抄写图书馆对话。"
+  },
+  "rubric": {
+    "taskType": "A1 listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1逐题独立核对与规则校验；未经真实考生难度标定",
+    "contentHash": "b7c1846bbfeb5e77e3c36a930720f57b6a4ba117004a0542e6604bd820276298"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

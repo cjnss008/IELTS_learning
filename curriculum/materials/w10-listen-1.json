@@ -1,0 +1,316 @@
+{
+  "id": "w10-listen-1",
+  "week": 10,
+  "skill": "listening",
+  "level": "A2",
+  "topic": "住所与生活环境",
+  "grammarFocus": "there be；可数与不可数名词；some / any；地点介词复习。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "My New Apartment",
+  "instructions": "听录音，完成10个问题。录音会播放两遍。第一遍听大意，第二遍注意细节。所有问题都是单选题或填空题。填空题答案必须来自录音原文，且不超过字数限制。本材料为模拟练习，不是官方考试。",
+  "passage": "",
+  "transcript": "A: Hi, I'm Lin. Welcome to my new apartment!  B: Thanks, Lin. It's nice. Is there a balcony?  A: No, there isn't a balcony, but there is a big window.  B: Oh, I see. What's in the living room?  A: There is a sofa, a small table, and two chairs.  B: Are there any books on the table?  A: Yes, there are some books. They are English books.  B: Is there a TV?  A: No, there isn't a TV. I don't watch TV.  B: OK. What about the kitchen? Is there a fridge?  A: Yes, there is a fridge. There is some milk in it, but there aren't any eggs.  B: I see. And are there any cups?  A: Yes, there are some cups on the shelf.  B: Is there a microwave?  A: No, there isn't a microwave.  B: What's in the bedroom?  A: There is a bed and a desk. There is a lamp on the desk.  B: Are there any pictures on the wall?  A: Yes, there are two pictures. They are photos of my family.  B: Is there a bathroom?  A: Yes, there is a small bathroom. There is a shower, but there isn't a bathtub.  B: Thanks, Lin. Your apartment is great!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is there in the living room?",
+      "options": [
+        "A sofa, a small table, and two chairs",
+        "A big table and four chairs",
+        "A sofa and a TV"
+      ],
+      "answers": [
+        "A sofa, a small table, and two chairs"
+      ],
+      "explanation": "录音中明确说客厅里有一个沙发、一张小桌子和两把椅子。",
+      "evidence": "There is a sofa, a small table, and two chairs."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Are there any books on the table?",
+      "options": [
+        "Yes, there are some books.",
+        "No, there aren't any books.",
+        "Yes, there is a book."
+      ],
+      "answers": [
+        "Yes, there are some books."
+      ],
+      "explanation": "录音中林说桌子上有一些书。",
+      "evidence": "Yes, there are some books."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Is there a TV in the living room?",
+      "options": [
+        "Yes, there is.",
+        "No, there isn't.",
+        "There is a TV in the bedroom."
+      ],
+      "answers": [
+        "No, there isn't."
+      ],
+      "explanation": "录音中林说没有电视。",
+      "evidence": "No, there isn't a TV."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is in the fridge?",
+      "options": [
+        "Some milk",
+        "Some eggs",
+        "Some cups"
+      ],
+      "answers": [
+        "Some milk"
+      ],
+      "explanation": "录音中明确说冰箱里有一些牛奶，但没有鸡蛋。",
+      "evidence": "There is some milk in it, but there aren't any eggs."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Where are the cups? (on the ______)",
+      "maxWords": 1,
+      "answers": [
+        "shelf"
+      ],
+      "explanation": "录音中明确说杯子在架子上。",
+      "evidence": "there are some cups on the shelf."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is there a microwave in the kitchen?",
+      "options": [
+        "Yes, there is.",
+        "No, there isn't.",
+        "There is a microwave in the bedroom."
+      ],
+      "answers": [
+        "No, there isn't."
+      ],
+      "explanation": "录音中林说没有微波炉。",
+      "evidence": "No, there isn't a microwave."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is on the desk in the bedroom?",
+      "options": [
+        "A lamp",
+        "A computer",
+        "Some books"
+      ],
+      "answers": [
+        "A lamp"
+      ],
+      "explanation": "录音中明确说桌子上有一盏灯。",
+      "evidence": "There is a lamp on the desk."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Are there any pictures on the wall?",
+      "options": [
+        "Yes, there are two pictures.",
+        "No, there aren't any pictures.",
+        "Yes, there is one picture."
+      ],
+      "answers": [
+        "Yes, there are two pictures."
+      ],
+      "explanation": "录音中林说墙上有两张照片。",
+      "evidence": "Yes, there are two pictures."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is in the bathroom?",
+      "options": [
+        "A shower",
+        "A bathtub",
+        "A shower and a bathtub"
+      ],
+      "answers": [
+        "A shower"
+      ],
+      "explanation": "录音中明确说浴室里有淋浴，但没有浴缸。",
+      "evidence": "There is a shower, but there isn't a bathtub."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "How many chairs are there in the living room?",
+      "options": [
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answers": [
+        "Two"
+      ],
+      "explanation": "录音中明确说有两把椅子。",
+      "evidence": "two chairs"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "apartment",
+      "meaning": "公寓",
+      "example": "Welcome to my new apartment!"
+    },
+    {
+      "word": "balcony",
+      "meaning": "阳台",
+      "example": "Is there a balcony?"
+    },
+    {
+      "word": "fridge",
+      "meaning": "冰箱",
+      "example": "Is there a fridge?"
+    },
+    {
+      "word": "microwave",
+      "meaning": "微波炉",
+      "example": "Is there a microwave?"
+    },
+    {
+      "word": "shelf",
+      "meaning": "架子",
+      "example": "on the shelf"
+    },
+    {
+      "word": "lamp",
+      "meaning": "灯",
+      "example": "There is a lamp on the desk."
+    },
+    {
+      "word": "shower",
+      "meaning": "淋浴",
+      "example": "There is a shower."
+    },
+    {
+      "word": "bathtub",
+      "meaning": "浴缸",
+      "example": "there isn't a bathtub."
+    }
+  ],
+  "grammar": {
+    "title": "There be 句型与可数/不可数名词",
+    "explanation": "我们用 'There is' 表示单数或不可数名词的存在，用 'There are' 表示复数名词的存在。肯定句中，可数名词复数前用 'some'，不可数名词前也用 'some'；否定句和疑问句中，用 'any'。",
+    "example": "There is some milk in it, but there aren't any eggs.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "There ______ some water in the bottle.",
+        "options": [
+          "is",
+          "are",
+          "be"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "water 是不可数名词，所以用 is。",
+        "evidence": "There is some milk in it."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Are there ______ apples on the table?",
+        "options": [
+          "some",
+          "any",
+          "a"
+        ],
+        "answers": [
+          "any"
+        ],
+        "explanation": "疑问句中用 any。",
+        "evidence": "Are there any books on the table?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "There ______ any chairs in the room.",
+        "options": [
+          "isn't",
+          "aren't",
+          "not"
+        ],
+        "answers": [
+          "aren't"
+        ],
+        "explanation": "chairs 是复数，否定用 aren't。",
+        "evidence": "there aren't any eggs."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "There are ______ books on the shelf.",
+        "options": [
+          "some",
+          "any",
+          "a"
+        ],
+        "answers": [
+          "some"
+        ],
+        "explanation": "肯定句中用 some。",
+        "evidence": "there are some books."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you live in a house or an apartment?",
+        "What is your favourite room? Why?",
+        "Is there a balcony in your home?",
+        "What do you have in your bedroom?"
+      ],
+      "part2": "Describe your home. You should say:",
+      "part2_bullets": [
+        "where it is",
+        "what rooms it has",
+        "what furniture is in it",
+        "and explain why you like it"
+      ],
+      "part3": [
+        "Do you think it is better to live in a house or an apartment?",
+        "What furniture is important in a living room?",
+        "How do people decorate their homes in your country?",
+        "Do you prefer old or new homes? Why?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 50 words) describing your living room. Use 'there is/are', 'some/any', and prepositions of place (in, on, under, next to)."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "5d129c998d780fe816ebcdd4e69ed051be1f0588fafc855aa60af49f8ee721f0"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

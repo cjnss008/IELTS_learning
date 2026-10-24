@@ -1,0 +1,321 @@
+{
+  "id": "w35-listen-3",
+  "week": 35,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "科学与口语深入讨论",
+  "grammarFocus": "间接问句；名词性从句；比较、原因和假设表达综合。",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 3,
+  "title": "The Science Café: A Conversation About Sleep and Learning",
+  "instructions": "本材料为项目原创模拟教学材料，情境和数据均为模拟，非官方试题，未经真实考生难度标定。先读题，再听录音；建议第一遍抓大意，第二遍核对细节。共 10 题；单选题只选一个完整选项。填空用录音中的英文原词或数字，遵守每题词数限制。判断题 True 表示原文明示支持，False 表示原文明示矛盾，Not Given 表示缺少判断所需信息。",
+  "transcript": "Maya: Welcome to the Science Café. Tonight we're discussing sleep and learning with Dr. Chen. What sleep range are we using for our classroom discussion?\nDr. Chen: A target of seven to nine hours a night for adults, although individual needs differ. Consistency matters too: going to bed and getting up at roughly the same time.\nMaya: What happens to learning when someone is short of sleep?\nDr. Chen: It becomes harder to concentrate, and mistakes become more likely. One simplified explanation is that the brain replays what we learned during the day and strengthens those connections during sleep. Think of a filing system rather than an instant recording device.\nMaya: So could a student play a language course while asleep and learn it that way?\nDr. Chen: No. Don't rely on sleep recordings to learn complex new information. Gentle music may help someone relax, but it won't teach them a new language.\nMaya: What about a short nap?\nDr. Chen: Around twenty minutes can improve alertness and mood. Long naps may leave someone groggy, especially late in the day. A nap isn't a reason to abandon a regular night-time routine.\nMaya: We also have a caffeine calculation in our classroom worksheet.\nDr. Chen: Yes. The worksheet assumes a half-life of about five hours. That's a simplified estimate, not a fixed value for everyone. Coffee can disturb sleep when taken late, and staying awake isn't the same as learning effectively.\nMaya: Should everyone study in the morning?\nDr. Chen: Not necessarily. People more alert in the morning are called 'larks'; those more alert in the evening are 'owls'. Choose a time when you feel awake, while keeping a regular schedule.\nMaya: What would you include in the bedtime routine we're designing?\nDr. Chen: Avoid screens for at least an hour before bed. Screen light can delay sleep. A paper book or calm music would be alternatives. Review earlier learning rather than expecting new information to enter automatically while you sleep.\nMaya: Any final point for the class?\nDr. Chen: Exercise during the day can improve sleep quality. And remember: consistency is more important than perfection. Keep notes about your routine rather than judging it from one unusual night.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main topic of the conversation?",
+      "options": [
+        "How to become a sleep scientist",
+        "The relationship between sleep and learning",
+        "The history of the Science Café",
+        "How to cure sleep disorders"
+      ],
+      "answers": [
+        "The relationship between sleep and learning"
+      ],
+      "explanation": "对话开头Maya说今晚讨论睡眠和学习，之后Dr. Chen也围绕睡眠如何影响记忆和学习展开。",
+      "evidence": "Tonight we're discussing sleep and learning with Dr. Chen."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which nightly sleep range is used as the adult target in this classroom discussion?",
+      "options": [
+        "Five to six hours",
+        "Seven to nine hours",
+        "Ten to twelve hours",
+        "It varies too much to say"
+      ],
+      "answers": [
+        "Seven to nine hours"
+      ],
+      "explanation": "本次课堂讨论使用七至九小时这个目标范围，原文也明确说明个人需求有差异。",
+      "evidence": "A target of seven to nine hours a night for adults, although individual needs differ."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Dr. Chen says that during sleep, the brain ______ what we learned during the day.",
+      "maxWords": 1,
+      "answers": [
+        "replays"
+      ],
+      "explanation": "Dr. Chen说睡眠时大脑会重放白天学到的内容。填空答案来自原文动词replays。",
+      "evidence": "the brain replays what we learned during the day"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Dr. Chen warn against?",
+      "options": [
+        "Relying on sleep recordings to learn complex new information",
+        "Reviewing earlier learning before sleep",
+        "Using a paper book instead of a screen",
+        "Keeping a regular schedule"
+      ],
+      "answers": [
+        "Relying on sleep recordings to learn complex new information"
+      ],
+      "explanation": "Dr. Chen 明确说不要依靠睡眠录音来学习复杂的新信息；其他项是对话中提出的做法。",
+      "evidence": "Don't rely on sleep recordings to learn complex new information."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What length does Dr. Chen give for a short nap?",
+      "options": [
+        "About ten minutes",
+        "About twenty minutes",
+        "About one hour",
+        "About two hours"
+      ],
+      "answers": [
+        "About twenty minutes"
+      ],
+      "explanation": "Dr. Chen说短睡大约二十分钟可以提高警觉和情绪。",
+      "evidence": "Around twenty minutes can improve alertness and mood."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "In the classroom worksheet, caffeine has an assumed half-life of about ______ hours. Write ONE WORD from the recording.",
+      "maxWords": 1,
+      "answers": [
+        "five"
+      ],
+      "explanation": "题目询问模拟课堂计算使用的假定值，原文为 five；原文并未把该值说成人人固定不变的数值。",
+      "evidence": "The worksheet assumes a half-life of about five hours."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What are 'larks' and 'owls' in the conversation?",
+      "options": [
+        "Types of birds that sleep at night",
+        "People who are more alert in the morning or evening",
+        "Two kinds of coffee",
+        "Names of sleep disorders"
+      ],
+      "answers": [
+        "People who are more alert in the morning or evening"
+      ],
+      "explanation": "Dr. Chen用larks和owls比喻早上或晚上更清醒的人。",
+      "evidence": "People more alert in the morning are called 'larks'; those more alert in the evening are 'owls'."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Which step does Dr. Chen include in the proposed bedtime routine?",
+      "options": [
+        "Drinking coffee",
+        "Avoiding screens for at least an hour",
+        "Taking a long nap",
+        "Studying complex new material"
+      ],
+      "answers": [
+        "Avoiding screens for at least an hour"
+      ],
+      "explanation": "Dr. Chen建议睡前至少一小时避免屏幕。",
+      "evidence": "Avoid screens for at least an hour before bed."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "According to Dr. Chen, which of the following is true about consistency?",
+      "options": [
+        "It is less important than perfection.",
+        "It is more important than perfection.",
+        "It only matters for children.",
+        "It has no effect on sleep."
+      ],
+      "answers": [
+        "It is more important than perfection."
+      ],
+      "explanation": "Dr. Chen最后说一致性比完美更重要。",
+      "evidence": "consistency is more important than perfection."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Dr. Chen says that exercise during the day can improve sleep quality.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Dr. Chen明确提到白天锻炼可以改善睡眠质量。",
+      "evidence": "Exercise during the day can improve sleep quality."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "consistency",
+      "meaning": "持续一致；规律性",
+      "example": "consistency is more important than perfection."
+    },
+    {
+      "word": "concentrate",
+      "meaning": "集中注意力",
+      "example": "It becomes harder to concentrate"
+    },
+    {
+      "word": "replays",
+      "meaning": "重放；回放",
+      "example": "the brain replays what we learned during the day"
+    },
+    {
+      "word": "alertness",
+      "meaning": "清醒程度；警觉性",
+      "example": "Around twenty minutes can improve alertness and mood."
+    },
+    {
+      "word": "groggy",
+      "meaning": "昏昏沉沉的",
+      "example": "Long naps may leave someone groggy"
+    },
+    {
+      "word": "half-life",
+      "meaning": "半衰期；此处指浓度降至一半所需时间",
+      "example": "The worksheet assumes a half-life of about five hours."
+    },
+    {
+      "word": "disturb",
+      "meaning": "干扰",
+      "example": "Coffee can disturb sleep when taken late"
+    },
+    {
+      "word": "delay",
+      "meaning": "推迟",
+      "example": "Screen light can delay sleep."
+    }
+  ],
+  "grammar": {
+    "title": "间接问句、名词性从句与比较/原因/假设表达",
+    "explanation": "间接问句用来礼貌地提问，语序是陈述句语序，如 'Could you tell me where the station is?' 名词性从句在句中充当主语、宾语等，如 'What he said is true.' 比较表达如 'more important than'；原因表达如 'because', 'since'；假设表达如 'if...'。",
+    "example": "consistency is more important than perfection.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the standard indirect question:",
+        "options": [
+          "Can you tell me where is the library?",
+          "Can you tell me where the library is?",
+          "Can you tell me where is the library located?",
+          "Can you tell me where the library located is?"
+        ],
+        "answers": [
+          "Can you tell me where the library is?"
+        ],
+        "explanation": "嵌入式间接问句使用陈述语序 where the library is。",
+        "evidence": "Can you tell me where the library is?"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a noun clause as its subject:",
+        "options": [
+          "What she said were very helpful.",
+          "What she said was very helpful.",
+          "What did she say was very helpful.",
+          "What she said it was very helpful."
+        ],
+        "answers": [
+          "What she said was very helpful."
+        ],
+        "explanation": "What she said 作为一个整体作主语，此处配单数 was；从句不倒装，也不再重复 it。",
+        "evidence": "What she said was very helpful."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct comparative sentence:",
+        "options": [
+          "Checking the source is more useful than guessing.",
+          "Checking the source is usefuller than guessing.",
+          "Checking the source is more useful that guessing.",
+          "Checking the source is most useful than guessing."
+        ],
+        "answers": [
+          "Checking the source is more useful than guessing."
+        ],
+        "explanation": "useful 的常规比较级为 more useful，比较对象用 than 引出。",
+        "evidence": "Checking the source is more useful than guessing."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Express a possible future condition using the present simple in the if-clause:",
+        "options": [
+          "If the room gets noisy, we may move upstairs.",
+          "If the room will get noisy, we may move upstairs.",
+          "If the room got noisy, we may moved upstairs.",
+          "If the room gets noisy, we may moving upstairs."
+        ],
+        "answers": [
+          "If the room gets noisy, we may move upstairs."
+        ],
+        "explanation": "题目要求 if 从句用一般现在时，主句 may 后用动词原形 move。",
+        "evidence": "If the room gets noisy, we may move upstairs."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you usually get enough sleep?",
+        "What do you do to help you concentrate when you study?",
+        "Do you prefer studying in the morning or in the evening?",
+        "Have you ever tried to learn something while sleeping?"
+      ],
+      "part2": "Describe a time when you felt sleepy during the day.",
+      "part2Bullets": [
+        "when and where it happened",
+        "why you felt sleepy",
+        "what you did",
+        "how the situation affected your plans"
+      ],
+      "part3": [
+        "Why do some people have difficulty sleeping?",
+        "How does sleep affect learning?",
+        "Should schools start later in the morning? Why?",
+        "What can governments do to help people sleep better?"
+      ]
+    },
+    "writing": "Some people believe that schools should teach students about the importance of sleep. Others think it is the parents' responsibility. Discuss both views and give your own opinion. Write at least 250 words."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1独立逐题核对与规则校验；未经真实考生难度标定",
+    "contentHash": "919be72e4306deb5163d81abaf5f543af98827a5f8876f05b29e0a4a6da08880"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

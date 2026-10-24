@@ -1,0 +1,282 @@
+{
+  "id": "w02-listen-2",
+  "week": 2,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 2,
+  "title": "At the School Gate",
+  "instructions": "这是模拟练习，不是官方雅思考试。听录音，完成8个问题。每题只有一个正确答案。填空题的答案必须来自录音原文，不超过规定字数。所有解释用中文。",
+  "passage": "",
+  "transcript": "Woman: Hello. Is this your bag? Man: No, it is not. It is a red bag. Woman: Is that your bag? Man: Yes, it is. It is a blue bag. Woman: Is she your teacher? Man: Yes, she is. Her name is Ms. Li. Woman: Is he your teacher? Man: No, he is not. He is a doctor. Woman: Is it a pen? Man: No, it is not. It is a book. Woman: Is this a school? Man: Yes, it is. It is a big school.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "女士问的第一个包是什么颜色？",
+      "options": [
+        "red",
+        "blue",
+        "green"
+      ],
+      "answers": [
+        "red"
+      ],
+      "explanation": "女士问“Is this your bag?”，男士回答“No, it is not. It is a red bag.”，所以第一个包是红色的。",
+      "evidence": "It is a red bag."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "男士的包是什么颜色？",
+      "options": [
+        "red",
+        "blue",
+        "black"
+      ],
+      "answers": [
+        "blue"
+      ],
+      "explanation": "女士问“Is that your bag?”，男士回答“Yes, it is. It is a blue bag.”，所以男士的包是蓝色的。",
+      "evidence": "It is a blue bag."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "男士的女老师叫什么名字？请填一个名字。",
+      "maxWords": 2,
+      "answers": [
+        "Ms. Li"
+      ],
+      "explanation": "女士问男士“Is she your teacher?”，男士回答“Yes, she is. Her name is Ms. Li.”，这里说的是男士的女老师，所以填 Ms. Li。",
+      "evidence": "Woman: Is she your teacher? Man: Yes, she is. Her name is Ms. Li."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "女士用 he 指着问到的那位第三人，是男士的老师吗？",
+      "options": [
+        "是，那位第三人是他的老师。",
+        "不，那位第三人不是他的老师。",
+        "对话没有说明。"
+      ],
+      "answers": [
+        "不，那位第三人不是他的老师。"
+      ],
+      "explanation": "女士问“Is he your teacher?”，男士回答“No, he is not.”。he 指谈话中的第三人，不是正在回答问题的男士，所以那位第三人不是男士的老师。",
+      "evidence": "Woman: Is he your teacher? Man: No, he is not. He is a doctor."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "女士用 he 问到的那位第三人是做什么工作的？",
+      "options": [
+        "老师",
+        "医生",
+        "学生"
+      ],
+      "answers": [
+        "医生"
+      ],
+      "explanation": "男士说“He is a doctor.”，he 指女士刚问到的第三人，所以那位第三人是医生。录音没有给出男士本人的职业。",
+      "evidence": "Woman: Is he your teacher? Man: No, he is not. He is a doctor."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "男士说那个东西是什么？",
+      "options": [
+        "一支笔",
+        "一本书",
+        "一个包"
+      ],
+      "answers": [
+        "一本书"
+      ],
+      "explanation": "女士问“Is it a pen?”，男士回答“No, it is not. It is a book.”，所以那个东西是一本书。",
+      "evidence": "It is a book."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "这所学校大吗？",
+      "options": [
+        "是的，它很大。",
+        "不，它很小。",
+        "对话没有说明。"
+      ],
+      "answers": [
+        "是的，它很大。"
+      ],
+      "explanation": "女士问“Is this a school?”，男士回答“Yes, it is. It is a big school.”，所以学校很大。",
+      "evidence": "It is a big school."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "女士问“Is this a school?”时，男士回答“Yes, it is.”。请填出男士说的学校是什么样的学校（填一个形容词）。",
+      "maxWords": 1,
+      "answers": [
+        "big"
+      ],
+      "explanation": "男士说“It is a big school.”，所以学校是大的（big）。",
+      "evidence": "It is a big school."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "Is this your bag?"
+    },
+    {
+      "word": "red",
+      "meaning": "红色的",
+      "example": "It is a red bag."
+    },
+    {
+      "word": "blue",
+      "meaning": "蓝色的",
+      "example": "It is a blue bag."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "Is she your teacher?"
+    },
+    {
+      "word": "doctor",
+      "meaning": "医生",
+      "example": "He is a doctor."
+    },
+    {
+      "word": "pen",
+      "meaning": "钢笔；笔",
+      "example": "Is it a pen?"
+    },
+    {
+      "word": "book",
+      "meaning": "书",
+      "example": "It is a book."
+    },
+    {
+      "word": "school",
+      "meaning": "学校",
+      "example": "Is this a school?"
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；单数名词；this / that",
+    "explanation": "he 通常指男性，she 通常指女性，it 指物品等；这里的 he/she 指谈话中提到的第三人，不是说话者本人。he、she、it 和表示单个人/物的第三人称名词作主语时，be 动词用 is；I 用 am，you 用 are。第一次介绍一个未特指的单数可数名词时，常用 a/an；紧跟其后的读音以元音音素开头用 an，否则用 a。this 指近处的单个人/物，that 指远处的单个人/物。",
+    "example": "Is she your teacher? Yes, she is. Her name is Ms. Li.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的单词填空：____ is my teacher. (她)",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "“她”用she，所以选She。",
+        "evidence": "She is my teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "第一次介绍一个未特指的苹果，请用不定冠词 a 或 an 填空：This is ____ apple.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple以元音音素开头，所以用an。",
+        "evidence": "This is an apple."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的单词填空：____ is a book. (它)",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "“它”用it，所以选It。",
+        "evidence": "It is a book."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的单词填空：Is ____ your pen? (那个)",
+        "options": [
+          "this",
+          "that",
+          "these"
+        ],
+        "answers": [
+          "that"
+        ],
+        "explanation": "“那个”用that，所以选that。",
+        "evidence": "Is that your pen?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Is this your bag?",
+        "Is that your pen?",
+        "Is she your teacher?",
+        "Is he a doctor?"
+      ],
+      "part2": "Describe a person or a thing near you. You should say:",
+      "part2Bullets": [
+        "what it is",
+        "who he/she is",
+        "what color it is",
+        "where it is"
+      ],
+      "part3": [
+        "Is this a school?",
+        "Is that a book?",
+        "Is she a teacher?",
+        "Is he a doctor?"
+      ]
+    },
+    "writing": "写2-4个简单的英语句子，介绍你身边的人或物。用上he/she/it，is，a/an，this/that。例如：This is my bag. It is a red bag."
+  },
+  "rubric": {
+    "taskType": "A0 Listening Practice (simulated)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；2026-10-24独立内容复核已修订人称指代、冠词题语境与be动词适用范围；未经真人考生标定。contentHash按教学内容字段计算（不含来源、音频和排课元数据）。",
+    "model": "deepseek-flash",
+    "contentHash": "72bdd2ffca934a4f8d580704c9bb6cc9633c54090e47dd407d8e7ef4531f6f92"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,317 @@
+{
+  "id": "w36-read-3",
+  "week": 36,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "学术综合任务与转段检查",
+  "grammarFocus": "根据个人错题复查时态、从句、冠词、数量和主谓一致。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "The Archive Audit: A Simulated Academic Task",
+  "instructions": "阅读以下模拟学术场景短文（约650词），完成10道题目。题目类型包括单选、填空（答案必须来自原文，且不超过字数限制）、匹配标题（单选形式）和判断正误/未提及（仅三个选项）。所有答案和解释均为中文，证据为原文直接引用。本材料为原创模拟练习，非官方雅思试题。",
+  "passage": "A. When Dr. Lin Wei arrived at the university's small research archive on a rainy Monday morning, she expected a quiet week of cataloguing. Instead, she found a note from the outgoing archivist: 'The database migration failed. About 200 records are missing their dates. Please fix before Friday.' Lin Wei, a historian who usually worked on nineteenth-century trade routes, had never managed a digital archive. But the task was urgent: a visiting scholar would arrive on Friday to study the collection. The archive itself was housed in a converted chapel, and the shelves were crowded with boxes that had not been opened for decades. Lin Wei sighed, put down her umbrella, and switched on the old computer at the front desk.\n\nB. Lin Wei began by opening the archive's old backup files. She discovered that the migration had copied most records correctly, but it had dropped the 'date' field for any item whose description contained a question mark. This was an odd rule, probably a bug in the software. She counted 187 affected records, not 200 as the note claimed. The difference mattered: the note's author had likely included 13 records that were already marked 'date unknown' before the migration. To be sure, she checked the list of 'date unknown' items and confirmed that there were exactly 13 of them, all with descriptions that contained no question marks.\n\nC. To recover the missing dates, Lin Wei used three sources. First, she checked the original paper catalogues, which listed acquisition dates for every item. Second, she examined letters and receipts stored in the same boxes; these often mentioned when an object was received. Third, she consulted the archive's annual reports, which summarized new additions each year. By combining these sources, she could estimate a date for most records, though some remained uncertain. The paper catalogues were handwritten and sometimes difficult to read, but they were the most reliable source because they had been created at the time of acquisition.\n\nD. The work was slow. Lin Wei had to cross-check each record against at least two sources. She also had to decide how to record uncertain dates. The archive's policy stated that estimated dates should be written in square brackets, for example [1890], and that the reason for the estimate should be noted in a separate field. Lin Wei followed this policy carefully, because she knew that future researchers would rely on these notes. She also created a simple spreadsheet to track her progress, listing each record number, the sources she had checked, and the date she had assigned.\n\nE. On Wednesday afternoon, a colleague, Dr. Patel, stopped by. He noticed that Lin Wei was entering dates for records that already had dates. 'Wait,' he said, 'aren't you duplicating work? Those records look fine to me.' Lin Wei explained that the migration had also corrupted some existing dates by shifting them by one year. She had found 23 such cases. Dr. Patel was surprised; he had not checked the dates, only the descriptions. He agreed to help by reviewing the records Lin Wei had already fixed. Together, they set up a second spreadsheet to record the corrected dates and the evidence for each correction.\n\nF. By Thursday evening, Lin Wei had resolved 180 of the 187 missing dates. Seven records remained uncertain because no source mentioned them. For these, she wrote 'date unknown' and added a note explaining that the item might have been acquired between 1880 and 1900 based on the box's other contents. She also corrected the 23 shifted dates. Finally, she updated the database so that the question-mark bug would not affect future migrations. She tested the update on a small sample of records, and the dates were preserved correctly.\n\nG. On Friday morning, the visiting scholar arrived. She was impressed by the clear notes and the consistent use of square brackets. 'This is much better than the last archive I visited,' she said. 'There, half the dates were guesses without explanation.' Lin Wei felt relieved. The week had been stressful, but she had learned something valuable: even a historian can manage a digital crisis with careful cross-checking and clear documentation. She also decided to write a short guide for future archivists, explaining how to avoid similar problems during database migrations.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was Lin Wei's usual area of research?",
+      "options": [
+        "Digital archive management",
+        "Nineteenth-century trade routes",
+        "Annual reports of universities",
+        "Database migration software"
+      ],
+      "answers": [
+        "Nineteenth-century trade routes"
+      ],
+      "explanation": "原文第一段明确提到她通常研究十九世纪贸易路线。",
+      "evidence": "Lin Wei, a historian who usually worked on nineteenth-century trade routes"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "According to the passage, what caused the 'date' field to be dropped for some records?",
+      "options": [
+        "A software bug related to question marks",
+        "The archivist deleted them by mistake",
+        "The backup files were corrupted",
+        "The records were too old to have dates"
+      ],
+      "answers": [
+        "A software bug related to question marks"
+      ],
+      "explanation": "第二段指出迁移过程丢弃了描述中含有问号的记录的日期字段，并称这可能是软件缺陷。",
+      "evidence": "it had dropped the 'date' field for any item whose description contained a question mark. This was an odd rule, probably a bug in the software."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How many records did Lin Wei count as affected by the missing dates? (Write a number.)",
+      "maxWords": 1,
+      "answers": [
+        "187"
+      ],
+      "explanation": "第二段明确说林薇数出187条受影响记录。",
+      "evidence": "She counted 187 affected records"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which source did Lin Wei NOT use to recover missing dates?",
+      "options": [
+        "Original paper catalogues",
+        "Letters and receipts in the same boxes",
+        "Annual reports",
+        "Interviews with the outgoing archivist"
+      ],
+      "answers": [
+        "Interviews with the outgoing archivist"
+      ],
+      "explanation": "第三段列出了三个来源：纸质目录、信件收据和年度报告，没有提到采访即将离任的档案管理员。",
+      "evidence": "First, she checked the original paper catalogues... Second, she examined letters and receipts... Third, she consulted the archive's annual reports"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does the archive's policy say about estimated dates?",
+      "options": [
+        "They should be written in square brackets with a note explaining the estimate.",
+        "They should be left blank.",
+        "They should be written in bold.",
+        "They should be recorded only in annual reports."
+      ],
+      "answers": [
+        "They should be written in square brackets with a note explaining the estimate."
+      ],
+      "explanation": "第四段说明政策要求估计日期写在方括号中，并在单独字段注明理由。",
+      "evidence": "estimated dates should be written in square brackets, for example [1890], and that the reason for the estimate should be noted in a separate field"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did Dr. Patel initially think about Lin Wei's work on Wednesday?",
+      "options": [
+        "She was duplicating work on records that already had dates.",
+        "She was using the wrong policy for square brackets.",
+        "She had found all the missing dates.",
+        "She should interview the outgoing archivist."
+      ],
+      "answers": [
+        "She was duplicating work on records that already had dates."
+      ],
+      "explanation": "第五段中Patel博士说她在为已有日期的记录输入日期，以为她在重复工作。",
+      "evidence": "He noticed that Lin Wei was entering dates for records that already had dates. 'Wait,' he said, 'aren't you duplicating work?'"
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "How many records remained uncertain by Thursday evening? (Write a number.)",
+      "maxWords": 1,
+      "answers": [
+        "7"
+      ],
+      "explanation": "第六段明确说七条记录仍不确定。",
+      "evidence": "Seven records remained uncertain"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What did Lin Wei do to prevent future problems?",
+      "options": [
+        "She updated the database to fix the question-mark bug.",
+        "She deleted all records with question marks.",
+        "She hired a new archivist.",
+        "She stopped using square brackets."
+      ],
+      "answers": [
+        "She updated the database to fix the question-mark bug."
+      ],
+      "explanation": "第六段最后说她更新了数据库，使问号缺陷不再影响未来迁移。",
+      "evidence": "she updated the database so that the question-mark bug would not affect future migrations"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Which heading best summarizes paragraph C?",
+      "options": [
+        "Sources used to recover dates",
+        "The visiting scholar's arrival",
+        "The database migration failure",
+        "Dr. Patel's surprise"
+      ],
+      "answers": [
+        "Sources used to recover dates"
+      ],
+      "explanation": "C段主要介绍林薇用来恢复日期的三个来源。",
+      "evidence": "To recover the missing dates, Lin Wei used three sources."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The visiting scholar said that the previous archive she visited had half the dates as guesses without explanation. True, False, or Not Given?",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "最后一段访问学者明确说上一个档案馆一半日期是猜测且无解释。",
+      "evidence": "'There, half the dates were guesses without explanation.'"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "archive",
+      "meaning": "档案馆；档案",
+      "example": "She arrived at the university's small research archive."
+    },
+    {
+      "word": "migration",
+      "meaning": "迁移（数据或系统）",
+      "example": "The database migration failed."
+    },
+    {
+      "word": "cataloguing",
+      "meaning": "编目",
+      "example": "She expected a quiet week of cataloguing."
+    },
+    {
+      "word": "corrupted",
+      "meaning": "损坏的；被破坏的",
+      "example": "the migration had also corrupted some existing dates"
+    },
+    {
+      "word": "duplicating",
+      "meaning": "重复",
+      "example": "aren't you duplicating work?"
+    },
+    {
+      "word": "cross-check",
+      "meaning": "交叉核对",
+      "example": "She had to cross-check each record against at least two sources."
+    },
+    {
+      "word": "uncertain",
+      "meaning": "不确定的",
+      "example": "some remained uncertain"
+    },
+    {
+      "word": "documentation",
+      "meaning": "文档记录；文件编制",
+      "example": "clear documentation"
+    }
+  ],
+  "grammar": {
+    "title": "时态、从句、冠词、数量与主谓一致复查",
+    "explanation": "本部分针对常见错误进行复习：1) 时态：根据时间状语选择过去时、现在完成时等；2) 从句：注意关系代词和连接词的使用；3) 冠词：定冠词the与不定冠词a/an的区别；4) 数量：可数不可数及修饰语；5) 主谓一致：主语与谓语动词的单复数一致。",
+    "example": "She had found 23 such cases.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "By the time the scholar arrived, Lin Wei ______ the database.",
+        "options": [
+          "had updated",
+          "updates",
+          "has updated",
+          "was updating"
+        ],
+        "answers": [
+          "had updated"
+        ],
+        "explanation": "“By the time”引导的从句用一般过去时，主句表示过去的过去，用过去完成时。",
+        "evidence": "By Thursday evening, Lin Wei had resolved 180 of the 187 missing dates."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The records ______ descriptions contained question marks lost their dates.",
+        "options": [
+          "whose",
+          "which",
+          "who",
+          "that"
+        ],
+        "answers": [
+          "whose"
+        ],
+        "explanation": "表示所属关系“记录的描述”，用关系代词whose。",
+        "evidence": "any item whose description contained a question mark"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Lin Wei found ______ odd rule in the software.",
+        "options": [
+          "an",
+          "a",
+          "the",
+          "some"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "odd以元音音素开头，用不定冠词an。",
+        "evidence": "This was an odd rule"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Seven records ______ uncertain because no source mentioned them.",
+        "options": [
+          "remained",
+          "remain",
+          "was remaining",
+          "has remained"
+        ],
+        "answers": [
+          "remained"
+        ],
+        "explanation": "主语Seven records是复数，谓语用复数形式；根据上下文用一般过去时。",
+        "evidence": "Seven records remained uncertain"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use libraries or archives?",
+        "How do you usually organize your digital files?",
+        "Have you ever had to fix a mistake in a database or document?",
+        "What do you think is the most important skill for managing information?"
+      ],
+      "part2": "Describe a time when you had to solve a problem with incomplete information. You should say: what the problem was; what information was missing; how you found or estimated the missing information; and how you felt about the result.",
+      "part3": [
+        "Why is it important to document sources in academic work?",
+        "How can technology help or hinder the preservation of historical records?",
+        "Should archives be open to the public? Why or why not?",
+        "What are the risks of relying on digital backups?"
+      ]
+    },
+    "writing": "You are a student assistant in a university department. The department's online calendar has lost the dates for several events. Write an email to your supervisor (about 150 words) explaining the problem, what you have done to recover the dates, and what you still need to do. Use appropriate tenses and clear paragraphs."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Reading comprehension (simulated academic)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b60b6ac5eeb182d9eeabb465f03cd752c8f4255f558b1366c9a3ee53cb9207e1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

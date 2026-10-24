@@ -1,0 +1,276 @@
+{
+  "id": "w07-listen-1",
+  "week": 7,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "地点、方向与正在发生的事",
+  "grammarFocus": "there is / are；地点介词；现在进行时；祈使句入门。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 65,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "title": "At the Library",
+  "instructions": "这是一个模拟的英语听力练习，适合A1水平学习者。听录音，回答8个问题。所有问题都是单选题或填空题。填空题的答案必须与录音中的原词完全一致，且不超过字数限制。请仔细听录音中的对话和指示。",
+  "passage": "",
+  "transcript": "A: Excuse me, where is the library? B: It is next to the bank. A: Thank you. B: You're welcome. A: Is there a quiet room? B: Yes, there is. It is on the second floor. A: Are there computers? B: Yes, there are. They are in the quiet room. A: Good. What are you doing? B: I am reading a book. A: Please be quiet. B: Sorry. A: Where is the cafe? B: It is behind the library. A: Thanks. B: You're welcome.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "图书馆在哪里？",
+      "options": [
+        "在银行旁边",
+        "在银行后面",
+        "在银行前面"
+      ],
+      "answers": [
+        "在银行旁边"
+      ],
+      "explanation": "录音中B说“It is next to the bank.”，意思是图书馆在银行旁边。",
+      "evidence": "It is next to the bank."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "有安静的房间吗？",
+      "options": [
+        "有",
+        "没有",
+        "不知道"
+      ],
+      "answers": [
+        "有"
+      ],
+      "explanation": "录音中B说“Yes, there is.”，表示有安静的房间。",
+      "evidence": "Yes, there is."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "安静的房间在______楼。（填一个词）",
+      "maxWords": 1,
+      "answers": [
+        "second"
+      ],
+      "explanation": "录音中B说“It is on the second floor.”，所以填second。",
+      "evidence": "It is on the second floor."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "电脑在哪里？",
+      "options": [
+        "在安静的房间",
+        "在银行",
+        "在咖啡馆"
+      ],
+      "answers": [
+        "在安静的房间"
+      ],
+      "explanation": "录音中B说“They are in the quiet room.”，意思是电脑在安静的房间。",
+      "evidence": "They are in the quiet room."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "B正在做什么？",
+      "options": [
+        "读书",
+        "写字",
+        "说话"
+      ],
+      "answers": [
+        "读书"
+      ],
+      "explanation": "录音中B说“I am reading a book.”，意思是B正在读书。",
+      "evidence": "I am reading a book."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "A让B做什么？",
+      "options": [
+        "安静",
+        "说话",
+        "读书"
+      ],
+      "answers": [
+        "安静"
+      ],
+      "explanation": "录音中A说“Please be quiet.”，意思是A让B安静。",
+      "evidence": "Please be quiet."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "咖啡馆在图书馆______。（填一个词）",
+      "maxWords": 1,
+      "answers": [
+        "behind"
+      ],
+      "explanation": "录音中B说“It is behind the library.”，所以填behind。",
+      "evidence": "It is behind the library."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "图书馆旁边是什么？",
+      "options": [
+        "银行",
+        "咖啡馆",
+        "安静的房间"
+      ],
+      "answers": [
+        "银行"
+      ],
+      "explanation": "录音中B说“It is next to the bank.”，意思是图书馆在银行旁边，所以图书馆旁边是银行。",
+      "evidence": "It is next to the bank."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "Where is the library?"
+    },
+    {
+      "word": "bank",
+      "meaning": "银行",
+      "example": "It is next to the bank."
+    },
+    {
+      "word": "quiet",
+      "meaning": "安静的",
+      "example": "Is there a quiet room?"
+    },
+    {
+      "word": "second",
+      "meaning": "第二",
+      "example": "It is on the second floor."
+    },
+    {
+      "word": "computer",
+      "meaning": "电脑",
+      "example": "Are there computers?"
+    },
+    {
+      "word": "read",
+      "meaning": "读",
+      "example": "I am reading a book."
+    },
+    {
+      "word": "behind",
+      "meaning": "在……后面",
+      "example": "It is behind the library."
+    },
+    {
+      "word": "cafe",
+      "meaning": "咖啡馆",
+      "example": "Where is the cafe?"
+    }
+  ],
+  "grammar": {
+    "title": "There is / There are; 地点介词; 现在进行时; 祈使句",
+    "explanation": "我们用“There is”表示有一个东西，用“There are”表示有多个东西。地点介词如“next to”（在旁边）、“behind”（在后面）、“on”（在……上面）用来描述位置。现在进行时表示正在发生的动作，结构是“am/is/are + 动词-ing”。祈使句用来给出指示，比如“Please be quiet.”。",
+    "example": "There is a quiet room. It is on the second floor. I am reading a book. Please be quiet.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "There is a book on the desk.",
+          "There are a book on the desk.",
+          "There is books on the desk."
+        ],
+        "answers": [
+          "There is a book on the desk."
+        ],
+        "explanation": "“a book”是单数，所以用“There is”。",
+        "evidence": "There is a quiet room."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "The cat is under the table.",
+          "The cat is on the table.",
+          "The cat is in the table."
+        ],
+        "answers": [
+          "The cat is under the table."
+        ],
+        "explanation": "“under”表示在……下面，符合图片或常识。",
+        "evidence": "It is behind the library."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "She is reading a book.",
+          "She reading a book.",
+          "She is read a book."
+        ],
+        "answers": [
+          "She is reading a book."
+        ],
+        "explanation": "现在进行时的结构是“is + 动词-ing”，所以“She is reading a book.”正确。",
+        "evidence": "I am reading a book."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的祈使句：",
+        "options": [
+          "Please sit down.",
+          "Please sitting down.",
+          "Please to sit down."
+        ],
+        "answers": [
+          "Please sit down."
+        ],
+        "explanation": "祈使句以动词原形开头，所以“Please sit down.”正确。",
+        "evidence": "Please be quiet."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where is your favorite place?",
+        "Is there a park near your home?",
+        "What are you doing now?",
+        "Please tell me a place you like."
+      ],
+      "part2": "Describe a place you know well. You should say: where it is, what is there, what people are doing there, and why you like it.",
+      "part3": [
+        "Are there many shops in your city?",
+        "What are people doing in the park?",
+        "Is there a library near your home?",
+        "Please give an example of a quiet place."
+      ]
+    },
+    "writing": "Write 5 sentences about your room. Use 'There is/are', prepositions, and present continuous. Example: There is a desk in my room. I am sitting at the desk."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "cede5cf24e20eafed0ec038e12d6c9b0dd3715621da4b82bd59b0957db0dcbd3"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

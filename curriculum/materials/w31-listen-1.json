@@ -1,0 +1,325 @@
+{
+  "id": "w31-listen-1",
+  "week": 31,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "社区服务与问题解决",
+  "grammarFocus": "第一、第二条件句的常见用途；建议与可能性的表达。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "The Community Garden Meeting",
+  "instructions": "这是一个模拟的英语听力练习，适合B2-C1水平的学习者。请先听录音（或阅读录音文本），然后回答问题。题目类型包括单选、填空和判断正误/未提及。填空答案必须使用录音中的原词，且不超过规定字数。所有解释均为中文，并附有原文证据。",
+  "passage": "",
+  "transcript": "M: Hi everyone, thanks for coming to the community garden meeting. I know it's a busy time, but we have a few important issues to discuss. First, the water supply. As you know, the tap near the greenhouse has been broken for two weeks. If we don't fix it soon, the plants in that area will suffer. I've contacted the council, but they say it's not their responsibility. So we need to think about alternatives.\n\nW: Excuse me, could I say something? I'm Sarah, I live on Elm Street. I think we should ask the local hardware store for help. If they donate some materials, we could repair the tap ourselves. My neighbour is a plumber, and he might be willing to give us advice.\n\nM: That's a good suggestion, Sarah. But we should also consider the cost. If we buy the parts ourselves, it might be expensive. Does anyone have other ideas?\n\nW: Well, what if we organise a small fundraising event? A bake sale or something. If we raise enough money, we can pay for the repairs and maybe even buy new tools.\n\nM: I like that idea. But we need to be careful about timing. The summer festival is coming up, and many people will be away. If we hold the event too late, we might not get enough support.\n\nW: That's true. How about next Saturday? It's short notice, but if we spread the word quickly, we could still get a good turnout.\n\nM: Next Saturday could work. Let's put it to a vote. All in favour of the bake sale next Saturday? \n\n(General murmurs of agreement)\n\nM: Great, it's decided. Now, the second issue: the compost heap. Some residents have complained about the smell. If we don't manage it better, we might get more complaints. Any thoughts?\n\nW: We could cover it with a layer of soil. That usually helps. And if we turn it more regularly, it shouldn't smell as much.\n\nM: Good point. I'll add that to the list. Finally, the notice board. It's looking a bit old. If we have time, we could repaint it. But that's not urgent. Let's focus on the tap and the compost first. Thanks everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the first problem discussed at the meeting?",
+      "options": [
+        "The broken tap near the greenhouse",
+        "The smell from the compost heap",
+        "The old notice board",
+        "The lack of volunteers"
+      ],
+      "answers": [
+        "The broken tap near the greenhouse"
+      ],
+      "explanation": "录音开头男士说“First, the water supply. As you know, the tap near the greenhouse has been broken for two weeks.”，明确第一个问题是温室附近的水龙头坏了。",
+      "evidence": "First, the water supply. As you know, the tap near the greenhouse has been broken for two weeks."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does the man say the council will not help?",
+      "options": [
+        "They say it is not their responsibility.",
+        "They do not have enough money.",
+        "They are too busy with other projects.",
+        "They do not know about the problem."
+      ],
+      "answers": [
+        "They say it is not their responsibility."
+      ],
+      "explanation": "男士说“I've contacted the council, but they say it's not their responsibility.”，即议会说这不是他们的责任。",
+      "evidence": "I've contacted the council, but they say it's not their responsibility."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Sarah suggests asking the local ________ for help.",
+      "maxWords": 2,
+      "answers": [
+        "hardware store"
+      ],
+      "explanation": "Sarah说“I think we should ask the local hardware store for help.”，因此填“hardware store”。",
+      "evidence": "I think we should ask the local hardware store for help."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Sarah say her neighbour might do?",
+      "options": [
+        "Donate some materials",
+        "Give them advice",
+        "Organise a bake sale",
+        "Repaint the notice board"
+      ],
+      "answers": [
+        "Give them advice"
+      ],
+      "explanation": "Sarah说“My neighbour is a plumber, and he might be willing to give us advice.”，即她的邻居可能愿意给建议。",
+      "evidence": "My neighbour is a plumber, and he might be willing to give us advice."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is the woman's second suggestion?",
+      "options": [
+        "To organise a fundraising event",
+        "To contact the council again",
+        "To buy new tools",
+        "To ask the plumber to fix the tap"
+      ],
+      "answers": [
+        "To organise a fundraising event"
+      ],
+      "explanation": "女士说“what if we organise a small fundraising event?”，这是她的第二个建议。",
+      "evidence": "what if we organise a small fundraising event?"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why does the man worry about holding the event too late?",
+      "options": [
+        "Many people will be away for the summer festival.",
+        "The weather will be bad.",
+        "The council will not allow it.",
+        "The plants will die."
+      ],
+      "answers": [
+        "Many people will be away for the summer festival."
+      ],
+      "explanation": "男士说“The summer festival is coming up, and many people will be away. If we hold the event too late, we might not get enough support.”，即担心很多人会因夏季节日离开。",
+      "evidence": "The summer festival is coming up, and many people will be away. If we hold the event too late, we might not get enough support."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "They decide to hold the bake sale next ________.",
+      "maxWords": 1,
+      "answers": [
+        "Saturday"
+      ],
+      "explanation": "女士提议“How about next Saturday?”，随后男士说“Next Saturday could work.”并投票通过，因此填“Saturday”。",
+      "evidence": "How about next Saturday? ... Next Saturday could work."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is the second issue discussed?",
+      "options": [
+        "The compost heap",
+        "The notice board",
+        "The water supply",
+        "The bake sale"
+      ],
+      "answers": [
+        "The compost heap"
+      ],
+      "explanation": "男士说“Now, the second issue: the compost heap.”，明确第二个问题是堆肥堆。",
+      "evidence": "Now, the second issue: the compost heap."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What does the woman suggest to reduce the smell from the compost heap?",
+      "options": [
+        "Cover it with a layer of soil.",
+        "Move it to another place.",
+        "Add more kitchen waste.",
+        "Water it every day."
+      ],
+      "answers": [
+        "Cover it with a layer of soil."
+      ],
+      "explanation": "女士说“We could cover it with a layer of soil. That usually helps.”，即建议用一层土覆盖。",
+      "evidence": "We could cover it with a layer of soil. That usually helps."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What does the man say about the notice board?",
+      "options": [
+        "It is not urgent to repaint it.",
+        "It must be replaced immediately.",
+        "It was already repainted last week.",
+        "It is the most important issue."
+      ],
+      "answers": [
+        "It is not urgent to repaint it."
+      ],
+      "explanation": "男士说“But that's not urgent. Let's focus on the tap and the compost first.”，说明重新粉刷公告板不紧急。",
+      "evidence": "But that's not urgent. Let's focus on the tap and the compost first."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "council",
+      "meaning": "委员会；议会（此处指地方议会）",
+      "example": "I've contacted the council, but they say it's not their responsibility."
+    },
+    {
+      "word": "alternative",
+      "meaning": "替代方案；可供选择的方法",
+      "example": "So we need to think about alternatives."
+    },
+    {
+      "word": "donate",
+      "meaning": "捐赠",
+      "example": "If they donate some materials, we could repair the tap ourselves."
+    },
+    {
+      "word": "plumber",
+      "meaning": "水管工",
+      "example": "My neighbour is a plumber, and he might be willing to give us advice."
+    },
+    {
+      "word": "fundraising",
+      "meaning": "筹款",
+      "example": "What if we organise a small fundraising event?"
+    },
+    {
+      "word": "turnout",
+      "meaning": "出席人数；参与人数",
+      "example": "If we spread the word quickly, we could still get a good turnout."
+    },
+    {
+      "word": "compost heap",
+      "meaning": "堆肥堆",
+      "example": "Now, the second issue: the compost heap."
+    },
+    {
+      "word": "urgent",
+      "meaning": "紧急的",
+      "example": "But that's not urgent."
+    }
+  ],
+  "grammar": {
+    "title": "第一、第二条件句的常见用途；建议与可能性的表达",
+    "explanation": "第一条件句（if + 一般现在时，主句用 will/can/may + 动词原形）用于表达真实可能发生的未来情况及其结果。第二条件句（if + 一般过去时，主句用 would/could/might + 动词原形）用于表达假设的、不太可能或想象的情况。建议可以用 'we could...', 'how about...?', 'what if...?' 等表达；可能性可以用 'might', 'could', 'may' 等情态动词。",
+    "example": "If we don't fix it soon, the plants in that area will suffer.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If it ________ tomorrow, we will cancel the garden party.",
+        "options": [
+          "rains",
+          "will rain",
+          "rained",
+          "would rain"
+        ],
+        "answers": [
+          "rains"
+        ],
+        "explanation": "第一条件句的 if 从句用一般现在时表示将来，主句用 will。因此选 rains。",
+        "evidence": "If we don't fix it soon, the plants in that area will suffer."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "If I ________ more free time, I would volunteer at the community centre.",
+        "options": [
+          "have",
+          "had",
+          "will have",
+          "would have"
+        ],
+        "answers": [
+          "had"
+        ],
+        "explanation": "第二条件句表示假设，if 从句用一般过去时，主句用 would + 动词原形。因此选 had。",
+        "evidence": "If they donate some materials, we could repair the tap ourselves."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Which sentence gives a suggestion?",
+        "options": [
+          "We could ask the local shop for help.",
+          "The shop is closed today.",
+          "We asked the shop yesterday.",
+          "The shop will open at nine."
+        ],
+        "answers": [
+          "We could ask the local shop for help."
+        ],
+        "explanation": "'We could...' 用于提出建议。其他选项是陈述事实。",
+        "evidence": "We could cover it with a layer of soil."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "If we ________ the event too late, we might not get enough support.",
+        "options": [
+          "hold",
+          "held",
+          "will hold",
+          "would hold"
+        ],
+        "answers": [
+          "hold"
+        ],
+        "explanation": "第一条件句 if 从句用一般现在时，主句用 might 表示可能性。因此选 hold。",
+        "evidence": "If we hold the event too late, we might not get enough support."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often take part in community activities?",
+        "What kind of community problems are common in your area?",
+        "Have you ever helped to organise an event?",
+        "Do you think neighbours should help each other more?"
+      ],
+      "part2": "Describe a time when you helped solve a problem in your community. You should say:",
+      "part2Bullets": [
+        "what the problem was",
+        "how you became involved",
+        "what you did to help",
+        "and explain how you felt about the result"
+      ],
+      "part3": [
+        "Why do some people avoid getting involved in community issues?",
+        "How can local governments encourage citizens to participate more?",
+        "Do you think fundraising events are effective for solving community problems?",
+        "What role does communication play in solving neighbourhood problems?"
+      ]
+    },
+    "writing": "Write an email (about 150 words) to your neighbours suggesting a way to solve a problem in your building (e.g., noise, rubbish, or parking). Use first and second conditionals and expressions of suggestion and possibility."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "3f1f2eee058938190b98f4a02db9cedaf4230da2cc54cab6ce9f0bbe21ceab34"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

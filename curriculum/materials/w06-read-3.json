@@ -1,0 +1,275 @@
+{
+  "id": "w06-read-3",
+  "week": 6,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "食物、喜好与能力",
+  "grammarFocus": "第三人称单数；do / does 问答；like；can / cannot；and / but。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "Tom's Dinner and Abilities",
+  "instructions": "阅读短文，回答8个问题。问题类型包括单选和填空。填空答案必须来自原文，且不超过字数限制。所有答案和解释在题目后给出。本材料为模拟教学用途，非官方考试。",
+  "passage": "Tom is a Chinese adult student. He lives in Beijing. He likes noodles and vegetables. He does not like fish. He can cook noodles, but he cannot cook fish. His sister, Lily, likes fish. She can cook fish and noodles. Tom and Lily eat dinner together. Tom eats noodles and vegetables. Lily eats fish and noodles. Tom says, \"I like noodles. They are good.\" Lily says, \"I like fish. It is good, too.\" Tom can wash dishes, but Lily cannot wash dishes. Lily can clean the table. They are happy.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Tom喜欢什么食物？",
+      "options": [
+        "面条和蔬菜",
+        "鱼",
+        "米饭"
+      ],
+      "answers": [
+        "面条和蔬菜"
+      ],
+      "explanation": "原文说：Tom likes noodles and vegetables. 所以Tom喜欢面条和蔬菜。",
+      "evidence": "He likes noodles and vegetables."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Tom不喜欢什么食物？",
+      "options": [
+        "鱼",
+        "面条",
+        "蔬菜"
+      ],
+      "answers": [
+        "鱼"
+      ],
+      "explanation": "原文说：He does not like fish. 所以Tom不喜欢鱼。",
+      "evidence": "He does not like fish."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Tom会做什么？",
+      "options": [
+        "做面条",
+        "做鱼",
+        "洗盘子"
+      ],
+      "answers": [
+        "做面条"
+      ],
+      "explanation": "原文说：He can cook noodles. 所以Tom会做面条。",
+      "evidence": "He can cook noodles."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Lily喜欢什么食物？",
+      "options": [
+        "鱼",
+        "面条",
+        "蔬菜"
+      ],
+      "answers": [
+        "鱼"
+      ],
+      "explanation": "原文说：His sister, Lily, likes fish. 所以Lily喜欢鱼。",
+      "evidence": "His sister, Lily, likes fish."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Lily会做什么？",
+      "options": [
+        "做鱼和面条",
+        "洗盘子",
+        "做蔬菜"
+      ],
+      "answers": [
+        "做鱼和面条"
+      ],
+      "explanation": "原文说：She can cook fish and noodles. 所以Lily会做鱼和面条。",
+      "evidence": "She can cook fish and noodles."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Tom会洗什么？请填空：Tom can wash ______.",
+      "answers": [
+        "dishes"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说：Tom can wash dishes. 所以填dishes。",
+      "evidence": "Tom can wash dishes."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "谁不会洗盘子？",
+      "options": [
+        "Lily",
+        "Tom",
+        "Tom和Lily"
+      ],
+      "answers": [
+        "Lily"
+      ],
+      "explanation": "原文说：Lily cannot wash dishes. 所以Lily不会洗盘子。",
+      "evidence": "Lily cannot wash dishes."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Lily会清洁什么？请填空：Lily can clean the ______.",
+      "answers": [
+        "table"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说：Lily can clean the table. 所以填table。",
+      "evidence": "Lily can clean the table."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "noodles",
+      "meaning": "面条",
+      "example": "He likes noodles and vegetables."
+    },
+    {
+      "word": "vegetables",
+      "meaning": "蔬菜",
+      "example": "He likes noodles and vegetables."
+    },
+    {
+      "word": "fish",
+      "meaning": "鱼",
+      "example": "He does not like fish."
+    },
+    {
+      "word": "cook",
+      "meaning": "烹饪",
+      "example": "He can cook noodles."
+    },
+    {
+      "word": "wash",
+      "meaning": "洗",
+      "example": "Tom can wash dishes."
+    },
+    {
+      "word": "dishes",
+      "meaning": "盘子",
+      "example": "Tom can wash dishes."
+    },
+    {
+      "word": "clean",
+      "meaning": "清洁",
+      "example": "Lily can clean the table."
+    },
+    {
+      "word": "table",
+      "meaning": "桌子",
+      "example": "Lily can clean the table."
+    }
+  ],
+  "grammar": {
+    "title": "第三人称单数；do/does问答；like；can/cannot；and/but",
+    "explanation": "在一般现在时中，当主语是第三人称单数（如he, she, it）时，动词要加-s或-es。例如：like变成likes，cook变成cooks。否定句用does not + 动词原形。疑问句用Does + 主语 + 动词原形？can是情态动词，后面直接跟动词原形，否定形式是cannot。and表示并列，but表示转折。",
+    "example": "He likes noodles and vegetables. She can cook fish and noodles. Tom can wash dishes, but Lily cannot wash dishes.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "She like fish.",
+          "She likes fish.",
+          "She liking fish."
+        ],
+        "answers": [
+          "She likes fish."
+        ],
+        "explanation": "主语She是第三人称单数，动词like要加-s，变成likes。",
+        "evidence": "She likes fish."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "He can cooks noodles.",
+          "He can cook noodles.",
+          "He can cooking noodles."
+        ],
+        "answers": [
+          "He can cook noodles."
+        ],
+        "explanation": "can后面接动词原形，所以用cook。",
+        "evidence": "He can cook noodles."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "Does she likes fish?",
+          "Do she like fish?",
+          "Does she like fish?"
+        ],
+        "answers": [
+          "Does she like fish?"
+        ],
+        "explanation": "第三人称单数疑问句用Does，动词用原形like。",
+        "evidence": "Does she like fish?"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "Tom can wash dishes, but Lily cannot.",
+          "Tom can wash dishes, and Lily cannot.",
+          "Tom can wash dishes, but Lily can."
+        ],
+        "answers": [
+          "Tom can wash dishes, but Lily cannot."
+        ],
+        "explanation": "but表示转折，前后意思相反。Tom会，Lily不会，所以用but。",
+        "evidence": "Tom can wash dishes, but Lily cannot wash dishes."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What food do you like?",
+        "Can you cook?",
+        "What can you do at home?",
+        "Do you like fish?"
+      ],
+      "part2": "Describe a meal you like. You should say:",
+      "part3": [
+        "What food do you like to eat?",
+        "Can you cook noodles?",
+        "Who cooks in your home?",
+        "Do you like vegetables?"
+      ]
+    },
+    "writing": "Write 5 sentences about your friend. Use 'like', 'can', and 'but'. Example: My friend likes rice. He can cook. He cannot wash dishes."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (A1) with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "617f8af34e739a60417f250f3c76bec5bd0142bba92ac48a841111bf72d881da"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

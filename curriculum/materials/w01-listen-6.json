@@ -1,0 +1,268 @@
+{
+  "id": "w01-listen-6",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 6,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0水平学习者设计的听力练习。请先听录音（或阅读转录文本），然后回答问题。注意：本材料为模拟教学用途，并非官方雅思考试。",
+  "passage": "",
+  "transcript": "A: Hello. I am Li. Are you Tom?\nB: No, I am not Tom. I am Anna. Are you a student?\nA: Yes, I am. I am a new student. You are a teacher.\nB: No, I am not a teacher. I am a student too. We are students.\nA: Good. I am Li. You are Anna. We are friends.\nB: Yes. We are friends.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is the man?",
+      "options": [
+        "Tom",
+        "Li",
+        "Anna"
+      ],
+      "answers": [
+        "Li"
+      ],
+      "explanation": "男士自我介绍说“I am Li.”，所以他是Li。",
+      "evidence": "I am Li."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is the woman Tom?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "Not given."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "女士说“No, I am not Tom. I am Anna.”，所以她不是Tom。",
+      "evidence": "No, I am not Tom. I am Anna."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "The woman's name is ______.",
+      "answers": [
+        "Anna"
+      ],
+      "maxWords": 1,
+      "explanation": "女士说“I am Anna.”，所以她的名字是Anna。",
+      "evidence": "I am Anna."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is the man a student?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, he is."
+      ],
+      "explanation": "男士说“Yes, I am. I am a new student.”，所以他是学生。",
+      "evidence": "Yes, I am. I am a new student."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Is the woman a teacher?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "Not given."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "女士说“No, I am not a teacher. I am a student too.”，所以她不是老师。",
+      "evidence": "No, I am not a teacher. I am a student too."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "They are ______.",
+      "answers": [
+        "friends"
+      ],
+      "maxWords": 1,
+      "explanation": "对话最后两人都说“We are friends.”，所以他们是朋友。",
+      "evidence": "We are friends."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is the relationship between the man and the woman?",
+      "options": [
+        "Teacher and student",
+        "Friends",
+        "Brother and sister"
+      ],
+      "answers": [
+        "Friends"
+      ],
+      "explanation": "对话结尾两人确认“We are friends.”，所以他们是朋友。",
+      "evidence": "We are friends."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Are they both students?",
+      "options": [
+        "Yes, they are.",
+        "No, they are not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, they are."
+      ],
+      "explanation": "男士说“I am a new student.”，女士说“I am a student too.”，所以两人都是学生。",
+      "evidence": "I am a new student. ... I am a student too."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a new student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am not a teacher."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "We are friends."
+    },
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "I am a new student."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not Tom."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "I am a student too."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "英语中，人称代词I（我）搭配am，you（你）搭配are。句首字母要大写，句末用句号。例如：I am Li. You are Anna.",
+    "example": "I am Li. You are Anna.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "主语I后面用am。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "You am a teacher.",
+          "You is a teacher.",
+          "You are a teacher."
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "主语you后面用are。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "补全句子：I ____ a new student.",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "主语I后面用am。",
+        "evidence": "I am a new student."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "补全句子：You ____ my friend.",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "主语you后面用are。",
+        "evidence": "You are my friend."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you a teacher?",
+        "Is your friend a student?"
+      ],
+      "part2": "Describe yourself. You should say:\n- your name\n- your job (student or teacher)\n- your friend's name\n- if your friend is a student",
+      "part3": [
+        "Are you a new student?",
+        "Is your friend a teacher?",
+        "Are you and your friend students?",
+        "What is your friend's name?"
+      ]
+    },
+    "writing": "Write 2-4 simple sentences about yourself. Use 'I am...' and 'You are...'. Example: I am Li. I am a student. You are Anna. You are my friend."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (A0)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "3c687dd79c40182cb94d3269e018e7161d35807feffc0a025363c85082115f75"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,279 @@
+{
+  "id": "w04-read-4",
+  "week": 4,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "At the School Lost and Found",
+  "instructions": "阅读下面的短文，然后回答问题。这是一个模拟的英语学习材料，不是官方考试。请仔细阅读短文，并根据短文内容选择或填写答案。",
+  "passage": "This is the school lost and found office. It is a small room. The room is not big. A woman is in the room. She is Mrs. Li. She is not a teacher. She is a worker here. A boy is in the room, too. He is Tom. He is a student. Tom is not happy. His bag is not here. Mrs. Li asks, \"Is your bag black?\" Tom says, \"No, it is not. My bag is blue.\" Mrs. Li asks, \"What is in your bag?\" Tom says, \"A book and a pen.\" Mrs. Li says, \"Is this blue bag yours?\" Tom says, \"Yes, it is! Thank you!\" Mrs. Li says, \"You are welcome.\"",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the room?",
+      "options": [
+        "A classroom",
+        "A lost and found office",
+        "A library"
+      ],
+      "answers": [
+        "A lost and found office"
+      ],
+      "explanation": "短文第一句说“This is the school lost and found office.”，所以房间是失物招领处。",
+      "evidence": "This is the school lost and found office."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is the room big?",
+      "options": [
+        "Yes, it is.",
+        "No, it is not.",
+        "We don't know."
+      ],
+      "answers": [
+        "No, it is not."
+      ],
+      "explanation": "短文说“The room is not big.”，所以房间不大。",
+      "evidence": "The room is not big."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is Mrs. Li?",
+      "options": [
+        "A teacher",
+        "A student",
+        "A worker"
+      ],
+      "answers": [
+        "A worker"
+      ],
+      "explanation": "短文说“She is not a teacher. She is a worker here.”，所以李女士是工作人员。",
+      "evidence": "She is not a teacher. She is a worker here."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is Tom happy?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "We don't know."
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "短文说“Tom is not happy.”，所以汤姆不高兴。",
+      "evidence": "Tom is not happy."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What color is Tom's bag?",
+      "options": [
+        "Black",
+        "Blue",
+        "Green"
+      ],
+      "answers": [
+        "Blue"
+      ],
+      "explanation": "汤姆说“My bag is blue.”，所以他的包是蓝色的。",
+      "evidence": "My bag is blue."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What is in Tom's bag? (请用短文中的词填空，不超过5个词)",
+      "maxWords": 5,
+      "answers": [
+        "A book and a pen"
+      ],
+      "explanation": "汤姆说“A book and a pen.”，所以包里有一本书和一支笔。",
+      "evidence": "A book and a pen."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is Tom's bag black?",
+      "options": [
+        "Yes, it is.",
+        "No, it is not.",
+        "We don't know."
+      ],
+      "answers": [
+        "No, it is not."
+      ],
+      "explanation": "李女士问“Is your bag black?”，汤姆回答“No, it is not.”，所以他的包不是黑色的。",
+      "evidence": "No, it is not."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is the blue bag Tom's?",
+      "options": [
+        "Yes, it is.",
+        "No, it is not.",
+        "We don't know."
+      ],
+      "answers": [
+        "Yes, it is."
+      ],
+      "explanation": "李女士问“Is this blue bag yours?”，汤姆说“Yes, it is!”，所以蓝色包是他的。",
+      "evidence": "Yes, it is!"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "lost and found",
+      "meaning": "失物招领",
+      "example": "This is the school lost and found office."
+    },
+    {
+      "word": "office",
+      "meaning": "办公室",
+      "example": "This is the school lost and found office."
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "It is a small room."
+    },
+    {
+      "word": "big",
+      "meaning": "大的",
+      "example": "The room is not big."
+    },
+    {
+      "word": "worker",
+      "meaning": "工作人员",
+      "example": "She is a worker here."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "He is a student."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "Tom is not happy."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "My bag is blue."
+    }
+  ],
+  "grammar": {
+    "title": "be动词否定句与一般疑问句",
+    "explanation": "英语中，be动词（am, is, are）的否定句是在be动词后加not，如“is not”。一般疑问句是把be动词提到主语前面，如“Is your bag black?”。回答时用Yes或No，并重复主语和be动词，如“Yes, it is.”或“No, it is not.”。",
+    "example": "Is your bag black? No, it is not.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：The room is big.",
+        "options": [
+          "The room not is big.",
+          "The room is not big.",
+          "The room is big not."
+        ],
+        "answers": [
+          "The room is not big."
+        ],
+        "explanation": "否定句在be动词后加not，所以是“The room is not big.”。",
+        "evidence": "The room is not big."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的一般疑问句：She is a teacher.",
+        "options": [
+          "Is she a teacher?",
+          "She is a teacher?",
+          "Does she is a teacher?"
+        ],
+        "answers": [
+          "Is she a teacher?"
+        ],
+        "explanation": "一般疑问句把be动词is提到主语she前面，所以是“Is she a teacher?”。",
+        "evidence": "Is she a teacher?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "回答：Is Tom happy? (Tom不高兴)",
+        "options": [
+          "Yes, he is.",
+          "No, he is not.",
+          "No, he not is."
+        ],
+        "answers": [
+          "No, he is not."
+        ],
+        "explanation": "否定回答用No，并重复主语和be动词的否定形式，所以是“No, he is not.”。",
+        "evidence": "No, he is not."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "Is this blue bag yours?",
+          "This is blue bag yours?",
+          "Is this blue bag your?"
+        ],
+        "answers": [
+          "Is this blue bag yours?"
+        ],
+        "explanation": "一般疑问句把is提前，yours是名词性物主代词，表示“你的包”，所以是“Is this blue bag yours?”。",
+        "evidence": "Is this blue bag yours?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Is your bag big?",
+        "What color is your bag?"
+      ],
+      "part2": "Describe your bag. You should say:",
+      "part3": [
+        "Is your bag new?",
+        "What is in your bag?",
+        "Is your bag black?",
+        "Do you like your bag?"
+      ]
+    },
+    "writing": "写一段话介绍你的书包。用3-5个句子。包括：书包的颜色、里面有什么、你是否喜欢它。"
+  },
+  "rubric": {
+    "taskType": "Reading Comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "3094e22da4f6c89236c07196e67e27dcf3c152905eec3edaf13d056af8a7d396"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

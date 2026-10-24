@@ -1,0 +1,287 @@
+{
+  "id": "listening-map-25",
+  "version": "1",
+  "week": 25,
+  "skill": "listening",
+  "level": "B1–B2",
+  "type": "plan-labelling",
+  "topic": "社区学习中心：室内平面图与转弯定位",
+  "title": "Riverside Learning Centre · 找到六个房间",
+  "pool": "training",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "questionCount": 8,
+  "minWords": 250,
+  "maxWords": 450,
+  "instructions": "原创听力平面图练习，非官方 IELTS 试题。先看北向、入口与通道，再听录音并完成 8 题。第 1–6 题选择图中的 A–F；第 7–8 题根据路线或规则选择完整选项。字母区没有地点名称，请用录音中的转弯、相对方位和修正信息定位。可先完整听一遍，再在练习模式重听并复盘；查看转录或解析会记录辅助。无可用音频时可做文字路线练习，但不能作为独立听力证据。",
+  "passage": "",
+  "transcript": "Guide: Welcome to the Riverside Learning Centre. Before we begin, look at the plan. North is at the top, and you are entering through the door in the middle of the south wall. The main passage runs straight north. Three short passages cross it, making three junctions. Count them from the entrance, not from the top of the page.\n\nAt the first junction, turn left. The room at the end of that short passage contains the welcome desk. Please leave large bags there before joining a practical session. You may keep a small notebook with you, but bags must not be left in the main passage.\n\nThe equipment store is opposite the welcome desk, across the main passage. Some older leaflets put it on the western side. That information is out of date: the store is now east of the first junction. Collect gloves there after you have left your bag.\n\nFor the repair workshop, return to the main passage and face north again. Go past the first junction to the second one, then turn right. That room is where the practical session takes place. If you come out of the workshop and walk straight across the main passage, you reach the quiet study room. Please close its door gently; people may be working inside.\n\nThe seed library is farther north. From the entrance, walk past the first two junctions. At the third and last junction, turn left. Across the main passage from the seed library is the community meeting room. The meeting room is not next to the entrance, although that was its location before the centre was rebuilt.\n\nFinally, if you are leaving the repair workshop, walk west to the main passage, turn left, and continue south to the entrance. Turning right would take you towards the seed library instead. Keep the passage clear at all times. We will meet at the welcome desk in ten minutes, so you have time to find each room before the session starts.",
+  "figure": {
+    "type": "plan",
+    "title": "Riverside Learning Centre — ground floor (not to scale)",
+    "plan": {
+      "width": 640,
+      "height": 480,
+      "north": {
+        "x": 605,
+        "y": 35
+      },
+      "entrance": {
+        "x": 320,
+        "y": 440,
+        "label": "Entrance"
+      },
+      "paths": [
+        {
+          "points": [
+            {
+              "x": 320,
+              "y": 440
+            },
+            {
+              "x": 320,
+              "y": 35
+            }
+          ],
+          "label": "南北主通道"
+        },
+        {
+          "points": [
+            {
+              "x": 240,
+              "y": 350
+            },
+            {
+              "x": 400,
+              "y": 350
+            }
+          ],
+          "label": "从入口数第一个岔口"
+        },
+        {
+          "points": [
+            {
+              "x": 240,
+              "y": 225
+            },
+            {
+              "x": 400,
+              "y": 225
+            }
+          ],
+          "label": "从入口数第二个岔口"
+        },
+        {
+          "points": [
+            {
+              "x": 240,
+              "y": 100
+            },
+            {
+              "x": 400,
+              "y": 100
+            }
+          ],
+          "label": "从入口数第三个岔口"
+        }
+      ],
+      "zones": [
+        {
+          "label": "A",
+          "x": 60,
+          "y": 60,
+          "w": 180,
+          "h": 80,
+          "position": "最北一排，西侧"
+        },
+        {
+          "label": "B",
+          "x": 400,
+          "y": 60,
+          "w": 180,
+          "h": 80,
+          "position": "最北一排，东侧"
+        },
+        {
+          "label": "C",
+          "x": 60,
+          "y": 185,
+          "w": 180,
+          "h": 80,
+          "position": "中间一排，西侧"
+        },
+        {
+          "label": "D",
+          "x": 400,
+          "y": 185,
+          "w": 180,
+          "h": 80,
+          "position": "中间一排，东侧"
+        },
+        {
+          "label": "E",
+          "x": 60,
+          "y": 310,
+          "w": 180,
+          "h": 80,
+          "position": "最靠近入口一排，西侧"
+        },
+        {
+          "label": "F",
+          "x": 400,
+          "y": 310,
+          "w": 180,
+          "h": 80,
+          "position": "最靠近入口一排，东侧"
+        }
+      ],
+      "landmarks": []
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which area contains the welcome desk? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "E"
+      ],
+      "evidence": "At the first junction, turn left. The room at the end of that short passage contains the welcome desk.",
+      "explanation": "从南侧入口朝北走，第一个岔口左转即向西，到最南一排的西侧 E。先固定朝向，再判断 left；不是永远把图上左边当说话者左手边。"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which area contains the equipment store? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "F"
+      ],
+      "evidence": "the store is now east of the first junction.",
+      "explanation": "now 表示新位置，旧传单的 western side 是干扰。第一个岔口的东侧是 F，也与 E 隔着主通道相对。"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which area contains the repair workshop? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "D"
+      ],
+      "evidence": "Go past the first junction to the second one, then turn right.",
+      "explanation": "已明确 face north again。向北走到第二个岔口右转，右手方向是东，因此进入 D；不能在第一个岔口提前转弯。"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which area contains the quiet study room? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "C"
+      ],
+      "evidence": "If you come out of the workshop and walk straight across the main passage, you reach the quiet study room.",
+      "explanation": "从东侧 D 出门向西，straight across 表示直穿主通道，不向南北转弯，因此到同一排西侧的 C。"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which area contains the seed library? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "A"
+      ],
+      "evidence": "At the third and last junction, turn left.",
+      "explanation": "从入口朝北，越过前两个岔口，在第三个左转向西，抵达 A。third and last 同时锁定最北一排。"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which area contains the community meeting room? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "B"
+      ],
+      "evidence": "Across the main passage from the seed library is the community meeting room.",
+      "explanation": "seed library 在 A；across the main passage 表示同排相对位置，所以为 B。过去靠近入口的旧位置不能作为现在的答案。"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "After walking west from the repair workshop to the main passage, how should you reach the entrance?",
+      "options": [
+        "Turn left and walk south.",
+        "Turn right and walk north.",
+        "Continue west through the quiet study room."
+      ],
+      "answers": [
+        "Turn left and walk south."
+      ],
+      "evidence": "walk west to the main passage, turn left, and continue south to the entrance.",
+      "explanation": "离开 D 时面向西，左手方向已变为南。入口在南端，所以应左转向南；同一个 left 会随身体朝向变化。"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What must visitors do with large bags before a practical session?",
+      "options": [
+        "Leave them at the welcome desk.",
+        "Leave them in the main passage.",
+        "Take them into the repair workshop."
+      ],
+      "answers": [
+        "Leave them at the welcome desk."
+      ],
+      "evidence": "Please leave large bags there before joining a practical session.",
+      "explanation": "there 承接上一句 welcome desk。large bags 必须留在 E 的接待处；可携带的是 small notebook，不是大包。"
+    }
+  ],
+  "source": {
+    "kind": "original",
+    "rights": "项目原创 AI 辅助教学材料；非官方 IELTS 试题",
+    "verification": "reviewed",
+    "method": "原创文本、路线与图形坐标逐项核对；自动检查答案证据、选项和路径连通性。未经过真人考官验证。"
+  }
+}

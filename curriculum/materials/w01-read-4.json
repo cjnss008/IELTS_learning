@@ -1,0 +1,281 @@
+{
+  "id": "w01-read-4",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "First Day at the Language School",
+  "instructions": "阅读下面的短文，然后回答问题。注意：本材料为模拟教学材料，不是官方雅思考试。所有题目基于短文内容。填空题答案必须来自原文，且不超过字数限制。判断题选择 True、False 或 Not Given。",
+  "passage": "A. I am Li Wei. I am a student. This is my first day at the language school. I am from Shanghai. I am in Class A.\n\nB. This is Ms. Chen. She is my teacher. She is from Beijing. She is very kind. She says, \"Hello, Li Wei. You are in my class. I am your teacher.\"\n\nC. I say, \"Hello, Ms. Chen. I am happy. You are a good teacher.\" Ms. Chen says, \"Thank you. You are a good student. Goodbye!\"",
+  "transcript": "Li Wei: Good morning. I am Li Wei. Are you Ms. Chen?\nMs. Chen: Yes, I am. Hello, Li Wei. You are in my class. I am your teacher.\nLi Wei: Nice to meet you. I am from Shanghai. Are you from Beijing?\nMs. Chen: Yes, I am. But I am not from Shanghai. I am from Beijing.\nLi Wei: Oh, I see. You are from Beijing. I am from Shanghai. We are in the same school.\nMs. Chen: Yes, we are. You are a student. I am a teacher. Goodbye, Li Wei.\nLi Wei: Goodbye, Ms. Chen.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Li Wei?",
+      "options": [
+        "A student",
+        "A teacher",
+        "A doctor"
+      ],
+      "answers": [
+        "A student"
+      ],
+      "explanation": "短文A部分明确说“I am Li Wei. I am a student.”，所以李伟是学生。",
+      "evidence": "I am Li Wei. I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Where is Ms. Chen from?",
+      "options": [
+        "Beijing",
+        "Shanghai",
+        "Class A"
+      ],
+      "answers": [
+        "Beijing"
+      ],
+      "explanation": "短文B部分说“She is from Beijing.”，所以陈老师来自北京。",
+      "evidence": "She is from Beijing."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is Ms. Chen like?",
+      "options": [
+        "Kind",
+        "Tall",
+        "Old"
+      ],
+      "answers": [
+        "Kind"
+      ],
+      "explanation": "短文B部分说“She is very kind.”，所以陈老师很和善。",
+      "evidence": "She is very kind."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Li Wei is from ______. (用原文单词填空)",
+      "maxWords": 1,
+      "answers": [
+        "Shanghai"
+      ],
+      "explanation": "短文A部分说“I am from Shanghai.”，所以李伟来自上海。",
+      "evidence": "I am from Shanghai."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Ms. Chen is Li Wei's ______. (用原文单词填空)",
+      "maxWords": 1,
+      "answers": [
+        "teacher"
+      ],
+      "explanation": "短文B部分说“She is my teacher.”，所以陈老师是李伟的老师。",
+      "evidence": "She is my teacher."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Li Wei is from Beijing.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "短文A部分说李伟来自上海（“I am from Shanghai.”），B部分说陈老师来自北京（“She is from Beijing.”），所以“李伟来自北京”是错误的。",
+      "evidence": "I am from Shanghai. / She is from Beijing."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Ms. Chen is from Shanghai.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "短文B部分说陈老师来自北京（“She is from Beijing.”），所以“陈老师来自上海”是错误的。",
+      "evidence": "She is from Beijing."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Li Wei is in Class B.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "短文A部分说“I am in Class A.”，所以“李伟在B班”是错误的。",
+      "evidence": "I am in Class A."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is my teacher."
+    },
+    {
+      "word": "first",
+      "meaning": "第一",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "day",
+      "meaning": "天",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "language",
+      "meaning": "语言",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "school",
+      "meaning": "学校",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "kind",
+      "meaning": "和善的",
+      "example": "She is very kind."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "英语中，人称代词I（我）搭配am，you（你）搭配are，he/she/it（他/她/它）搭配is。句首字母要大写，句末用句号。例如：I am Li Wei. You are a student. She is a teacher.",
+    "example": "I am Li Wei. You are a student. She is a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的单词填空：______ am a student.",
+        "options": [
+          "I",
+          "You",
+          "He"
+        ],
+        "answers": [
+          "I"
+        ],
+        "explanation": "主语是I，be动词用am，所以填I。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的单词填空：You ______ my teacher.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是you，be动词用are，所以填are。",
+        "evidence": "You are my teacher."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的单词填空：She ______ from Beijing.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "主语是she，be动词用is，所以填is。",
+        "evidence": "She is from Beijing."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "哪个句子正确？",
+        "options": [
+          "i am li wei.",
+          "I am Li Wei.",
+          "I am li wei."
+        ],
+        "answers": [
+          "I am Li Wei."
+        ],
+        "explanation": "句首字母I要大写，人名Li Wei的首字母也要大写，句末用句号。所以“I am Li Wei.”正确。",
+        "evidence": "I am Li Wei."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Where are you from?",
+        "Are you a student?",
+        "Are you happy today?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part2Bullets": [
+        "your name",
+        "where you are from",
+        "your job or school",
+        "how you feel today"
+      ],
+      "part3": [
+        "Is your teacher kind?",
+        "Are you in Class A?",
+        "Is your school big?",
+        "Are you from Shanghai?"
+      ]
+    },
+    "writing": "写2-8个简单的句子介绍你自己。包括你的名字、你来自哪里、你的职业或学校，以及你今天的感觉。使用I am...和You are...。"
+  },
+  "rubric": {
+    "taskType": "Reading and Listening Comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "23e1aceadb17324a114cf50c4a3e6fb363675cff6df96c5d9b8a3b8e463eeb6c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

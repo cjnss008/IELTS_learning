@@ -1,0 +1,317 @@
+{
+  "id": "w24-listen-4",
+  "week": 24,
+  "skill": "listening",
+  "level": "B1–B2",
+  "topic": "资源分配与阶段检查",
+  "grammarFocus": "条件句；数量词；段落间的指代与衔接。",
+  "pool": "training",
+  "type": "lecture",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 4,
+  "title": "The Community Garden Meeting",
+  "instructions": "这是一份模拟听力练习，适合B1–B2水平的成人学习者。请先听录音（或阅读录音文本），然后回答10个问题。问题类型包括单选、填空、匹配（通过单选实现）和判断正误/未提及。填空题答案必须来自原文，且不超过规定字数。所有解释均为中文，并附有原文证据。",
+  "passage": "",
+  "transcript": "M: Good evening, everyone. Thanks for coming to the community garden meeting. We need to decide how to use our small budget this season. As you know, we have 500 dollars from the local council.\nW: Right. And we also have some money left from last year—about 120 dollars. So the total is 620 dollars.\nM: Exactly. Now, last month we agreed to spend 200 dollars on new tools. But then the water pipe broke, and we had to pay 150 dollars to fix it. So we have 270 dollars left for everything else.\nW: Wait, let me check. 620 minus 200 is 420. Then minus 150 is 270. Yes, that's correct.\nM: Good. So what should we do with the 270? We have three possible projects: buying seeds, building a small shed, or renting a tiller for the heavy soil.\nW: I think seeds are the most important. Without seeds, we can't grow anything. But we also need a shed to store the tools.\nM: True. But a shed would cost at least 300 dollars, so we can't afford it this year. The tiller rental is 80 dollars for a week. That leaves 190 for seeds.\nW: That sounds reasonable. But what about the compost? We need compost for the soil. Last year we made our own, but this year we don't have enough.\nM: Good point. Compost costs 50 dollars for a large bag. If we buy one bag, we have 140 left for seeds.\nW: OK. So the plan is: rent the tiller for 80, buy one bag of compost for 50, and spend the rest on seeds. That's 140 for seeds.\nM: Yes. And we should check our progress in two months—say, the first week of June. If the seeds haven't grown well by then, we can adjust the plan.\nW: Agreed. Also, we need to remember that the council wants a short report at the end of the season. So we should keep receipts for everything.\nM: Definitely. I'll write down the decisions: tiller rental 80, compost 50, seeds 140, total 270. And we'll meet again on June 5th to check how things are going.\nW: Perfect. Let's also ask if anyone can donate extra seeds. That could save us some money.\nM: Good idea. I'll put a notice on the board. So, to sum up: we have 270 dollars left, we'll spend it on the tiller, compost, and seeds, and we'll review in June. Thanks, everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How much money does the garden have in total?",
+      "options": [
+        "500 dollars",
+        "620 dollars",
+        "270 dollars",
+        "120 dollars"
+      ],
+      "answers": [
+        "620 dollars"
+      ],
+      "explanation": "女士说“the total is 620 dollars”，即500美元（议会拨款）加上120美元（去年剩余）的总和。",
+      "evidence": "So the total is 620 dollars."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "How much did it cost to fix the water pipe? (Write ONE number and ONE word, e.g., '150 dollars')",
+      "maxWords": 2,
+      "answers": [
+        "150 dollars"
+      ],
+      "explanation": "男士提到“we had to pay 150 dollars to fix it”，明确修理水管花费150美元。",
+      "evidence": "we had to pay 150 dollars to fix it."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is the main reason they cannot build a shed this year?",
+      "options": [
+        "They don't have enough space.",
+        "It would cost at least 300 dollars.",
+        "The council does not allow it.",
+        "They already have a shed."
+      ],
+      "answers": [
+        "It would cost at least 300 dollars."
+      ],
+      "explanation": "男士说“a shed would cost at least 300 dollars, so we can't afford it this year”，说明资金不足是主要原因。",
+      "evidence": "a shed would cost at least 300 dollars, so we can't afford it this year."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How much does it cost to rent the tiller for a week? (Write ONE number and ONE word, e.g., '80 dollars')",
+      "maxWords": 2,
+      "answers": [
+        "80 dollars"
+      ],
+      "explanation": "男士说“The tiller rental is 80 dollars for a week”，直接给出价格。",
+      "evidence": "The tiller rental is 80 dollars for a week."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "After renting the tiller and buying compost, how much money is left for seeds?",
+      "options": [
+        "190 dollars",
+        "140 dollars",
+        "270 dollars",
+        "50 dollars"
+      ],
+      "answers": [
+        "140 dollars"
+      ],
+      "explanation": "男士计算：270减去80（旋耕机）再减去50（堆肥）等于140，并说“That's 140 for seeds”。",
+      "evidence": "That's 140 for seeds."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "When will they meet again to check progress?",
+      "options": [
+        "In two weeks",
+        "On June 5th",
+        "At the end of the season",
+        "Next month"
+      ],
+      "answers": [
+        "On June 5th"
+      ],
+      "explanation": "男士说“we'll meet again on June 5th to check how things are going”，明确下次检查日期。",
+      "evidence": "we'll meet again on June 5th to check how things are going."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does the woman suggest to save money on seeds?",
+      "options": [
+        "Buying fewer seeds",
+        "Asking for donations",
+        "Using old seeds",
+        "Growing different plants"
+      ],
+      "answers": [
+        "Asking for donations"
+      ],
+      "explanation": "女士说“Let's also ask if anyone can donate extra seeds. That could save us some money”，建议寻求捐赠。",
+      "evidence": "Let's also ask if anyone can donate extra seeds. That could save us some money."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does the council want at the end of the season?",
+      "options": [
+        "A short report",
+        "All the receipts",
+        "A new plan",
+        "A list of volunteers"
+      ],
+      "answers": [
+        "A short report"
+      ],
+      "explanation": "女士说“the council wants a short report at the end of the season”，明确议会的要求。",
+      "evidence": "the council wants a short report at the end of the season."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "According to the conversation, which statement is true?",
+      "options": [
+        "They will buy two bags of compost.",
+        "They have exactly 270 dollars left after fixing the pipe and buying tools.",
+        "They will not rent a tiller.",
+        "They will build a shed next year."
+      ],
+      "answers": [
+        "They have exactly 270 dollars left after fixing the pipe and buying tools."
+      ],
+      "explanation": "男士说“So we have 270 dollars left for everything else”，并且之前已扣除工具200美元和水管修理150美元，因此该选项正确。其他选项与原文矛盾：只买一袋堆肥、要租旋耕机、未提及明年建棚。",
+      "evidence": "So we have 270 dollars left for everything else."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The conversation mentions that the council will provide extra money for seeds. Is this true, false, or not given?",
+      "options": [
+        "True",
+        "False",
+        "Not given"
+      ],
+      "answers": [
+        "Not given"
+      ],
+      "explanation": "对话中只提到议会提供500美元并想要报告，没有提及议会会为种子提供额外资金，因此是未提及。",
+      "evidence": "未提及：原文没有关于议会为种子提供额外资金的任何信息。"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "budget",
+      "meaning": "预算",
+      "example": "We need to decide how to use our small budget this season."
+    },
+    {
+      "word": "council",
+      "meaning": "委员会；议会",
+      "example": "We have 500 dollars from the local council."
+    },
+    {
+      "word": "tiller",
+      "meaning": "旋耕机",
+      "example": "The tiller rental is 80 dollars for a week."
+    },
+    {
+      "word": "compost",
+      "meaning": "堆肥",
+      "example": "Compost costs 50 dollars for a large bag."
+    },
+    {
+      "word": "receipts",
+      "meaning": "收据",
+      "example": "We should keep receipts for everything."
+    },
+    {
+      "word": "donate",
+      "meaning": "捐赠",
+      "example": "Ask if anyone can donate extra seeds."
+    },
+    {
+      "word": "adjust",
+      "meaning": "调整",
+      "example": "If the seeds haven't grown well by then, we can adjust the plan."
+    },
+    {
+      "word": "progress",
+      "meaning": "进展",
+      "example": "We should check our progress in two months."
+    }
+  ],
+  "grammar": {
+    "title": "条件句；数量词；段落间的指代与衔接",
+    "explanation": "条件句用if引导，表示“如果……就……”。数量词如some, any, enough, a few等表示不确定的数量。段落间的指代与衔接通过代词（it, they, this, that）和连接词（so, but, then）使文章连贯。",
+    "example": "If the seeds haven't grown well by then, we can adjust the plan.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct word: If it ____ tomorrow, we will cancel the picnic.",
+        "options": [
+          "rains",
+          "will rain",
+          "rained",
+          "is raining"
+        ],
+        "answers": [
+          "rains"
+        ],
+        "explanation": "在条件句中，主句用将来时，if从句用一般现在时表示将来。",
+        "evidence": "If the seeds haven't grown well by then, we can adjust the plan."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct word: We don't have ____ compost for the whole garden.",
+        "options": [
+          "enough",
+          "many",
+          "a few",
+          "some"
+        ],
+        "answers": [
+          "enough"
+        ],
+        "explanation": "enough表示“足够的”，修饰不可数名词compost。many和a few修饰可数名词，some通常用于肯定句。",
+        "evidence": "Last year we made our own, but this year we don't have enough."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "What does 'it' refer to in: 'But then the water pipe broke, and we had to pay 150 dollars to fix it.'?",
+        "options": [
+          "the water pipe",
+          "the garden",
+          "the money",
+          "the tool"
+        ],
+        "answers": [
+          "the water pipe"
+        ],
+        "explanation": "代词it指代前文提到的the water pipe（水管）。",
+        "evidence": "But then the water pipe broke, and we had to pay 150 dollars to fix it."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct linking word: We have 270 dollars left. ____, we can rent the tiller and buy compost.",
+        "options": [
+          "So",
+          "But",
+          "Because",
+          "Although"
+        ],
+        "answers": [
+          "So"
+        ],
+        "explanation": "So表示结果，连接前因后果：因为剩下270美元，所以可以租旋耕机和买堆肥。",
+        "evidence": "So we have 270 dollars left for everything else."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often work in a garden or with plants?",
+        "How do you usually plan your spending for a project?",
+        "Have you ever had to change a plan because of unexpected costs?",
+        "What do you think is more important: saving money or buying good quality tools?"
+      ],
+      "part2": "Describe a small project you planned and carried out. You should say: what the project was; how you decided to use your resources; what problems you faced; and how you checked your progress.",
+      "part3": [
+        "Why is it important to check progress during a project?",
+        "How can people make good decisions when they have a limited budget?",
+        "Do you think community projects are useful? Why?",
+        "What are the advantages of keeping records of spending?"
+      ]
+    },
+    "writing": "You are a member of a local club with a small budget. Write a short plan (about 100 words) explaining how you will spend the money on two or three activities. Use conditional sentences and quantity words. Say when you will check your progress."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "c27ca0d16ca256ec80aaf769f68ac896e171cf88843def6c862340759746294b"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,315 @@
+{
+  "id": "w18-listen-2",
+  "week": 18,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "科技与日常工具",
+  "grammarFocus": "to do 表目的；动词后接 to do / doing 的常见用法；基础被动语态入门。",
+  "pool": "training",
+  "type": "directions",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 2,
+  "title": "The Smart Speaker Setup",
+  "instructions": "本材料为项目原创模拟教学材料，情境和数据均为模拟，非官方试题，未经真实考生难度标定。先读题，再听录音；建议第一遍抓大意，第二遍核对细节。共 10 题；单选题只选一个完整选项。填空用录音中的英文原词或数字，遵守每题词数限制。判断题 True 表示原文明示支持，False 表示原文明示矛盾，Not Given 表示缺少判断所需信息。",
+  "transcript": "Mia: Hi Tom! I'm trying to set up my new smart speaker, but it's not working. Can you help me?\nTom: Sure, Mia. Let's see. First, is it plugged in?\nMia: Yes, the speaker is plugged in. I checked the power cable. The light is on.\nTom: Okay. Maybe you need to restart your phone. Sometimes the app gets stuck.\nMia: I already did that. It didn't help.\nTom: Hmm. Let me think. Oh, did you check the Wi-Fi password? The speaker needs the correct password to connect.\nMia: I think so. But let me try again. ... Oh! I see the problem. I typed the password wrong. Now it's working!\nTom: Great! Next time, once the power is on, check the Wi-Fi password before restarting the phone.\nMia: Yes, I'll remember that. Thanks!\nTom: You're welcome. Also, you should update the app to get new features.\nMia: Good idea. I'll do that later. By the way, my sister has a smart speaker too. She uses it to play music and listen to the news.\nTom: That's cool. Smart speakers are very useful. They can help you do many things.\nMia: Yes, I agree. But sometimes they make mistakes. Yesterday, my speaker played a song when I asked for the weather.\nTom: Ha! That happens. You need to speak clearly. And remember that a working connection matters too.\nMia: I won't. Thanks for your help, Tom.\nTom: No problem. See you later!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is Mia trying to do?",
+      "options": [
+        "Set up a new smart speaker",
+        "Fix her phone",
+        "Buy a new phone"
+      ],
+      "answers": [
+        "Set up a new smart speaker"
+      ],
+      "explanation": "Mia 开头明确说正在设置新的智能扬声器。",
+      "evidence": "I'm trying to set up my new smart speaker"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "After Mia confirms that the power light is on, what action does Tom suggest?",
+      "options": [
+        "Restart her phone",
+        "Check the Wi-Fi password",
+        "Plug in the speaker"
+      ],
+      "answers": [
+        "Restart her phone"
+      ],
+      "explanation": "在 Mia 确认通电以后，Tom 建议重启手机。题目限定了这一次建议所在的位置。",
+      "evidence": "Maybe you need to restart your phone."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "For next time, what does Tom recommend checking after the power and before restarting the phone?",
+      "options": [
+        "The Wi-Fi password",
+        "The power cable",
+        "The phone app"
+      ],
+      "answers": [
+        "The Wi-Fi password"
+      ],
+      "explanation": "这是故障解决后 Tom 对下次操作顺序的建议：确认通电后，先核对 Wi-Fi 密码，再考虑重启手机。",
+      "evidence": "Next time, once the power is on, check the Wi-Fi password before restarting the phone."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Mia says the light on the speaker is ____.",
+      "options": [],
+      "answers": [
+        "on"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说：'The light is on.'，所以填on。",
+      "evidence": "The light is on."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What was the problem with the smart speaker?",
+      "options": [
+        "The Wi-Fi password was wrong",
+        "The power cable was broken",
+        "The phone app was not installed"
+      ],
+      "answers": [
+        "The Wi-Fi password was wrong"
+      ],
+      "explanation": "Mia说：'I typed the password wrong.'，所以选A。",
+      "evidence": "I typed the password wrong."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Tom suggest Mia do to get new features?",
+      "options": [
+        "Update the app",
+        "Restart the phone",
+        "Reinstall the app"
+      ],
+      "answers": [
+        "Update the app"
+      ],
+      "explanation": "Tom说：'you should update the app to get new features.'，所以选A。",
+      "evidence": "you should update the app to get new features."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does Mia's sister use her smart speaker for?",
+      "options": [
+        "To play music and listen to the news",
+        "To make phone calls",
+        "To control the lights"
+      ],
+      "answers": [
+        "To play music and listen to the news"
+      ],
+      "explanation": "Mia说：'She uses it to play music and listen to the news.'，所以选A。",
+      "evidence": "She uses it to play music and listen to the news."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Mia's phone is broken.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "能重启手机不等于手机所有功能正常；录音未确认手机有无损坏，因此选 Not Given。",
+      "evidence": "录音只说明重启手机没有解决扬声器的连接问题，没有说明手机本身是否损坏。"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Yesterday, Mia's speaker gave her the weather report she requested.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Mia 说自己问天气时扬声器却播放了歌曲，和“给出了所要求的天气预报”明确矛盾。",
+      "evidence": "Yesterday, my speaker played a song when I asked for the weather."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Mia will buy a new smart speaker.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "设置好现有扬声器并不能证明她会或不会再买一台；未来购买计划没有提及，选 Not Given。",
+      "evidence": "对话没有说明 Mia 之后会不会再买一台智能扬声器，无法判断该购买计划。"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "set up",
+      "meaning": "安装，设置",
+      "example": "I'm trying to set up my new smart speaker, but it's not working."
+    },
+    {
+      "word": "plugged in",
+      "meaning": "已插上电源的",
+      "example": "First, is it plugged in?"
+    },
+    {
+      "word": "restart",
+      "meaning": "重启",
+      "example": "Maybe you need to restart your phone."
+    },
+    {
+      "word": "app",
+      "meaning": "应用程序",
+      "example": "Sometimes the app gets stuck."
+    },
+    {
+      "word": "stuck",
+      "meaning": "卡住的",
+      "example": "Sometimes the app gets stuck."
+    },
+    {
+      "word": "Wi-Fi password",
+      "meaning": "Wi-Fi密码",
+      "example": "Oh, did you check the Wi-Fi password?"
+    },
+    {
+      "word": "connect",
+      "meaning": "连接",
+      "example": "The speaker needs the correct password to connect."
+    },
+    {
+      "word": "typed",
+      "meaning": "输入了（type 的过去式）",
+      "example": "I typed the password wrong."
+    }
+  ],
+  "grammar": {
+    "title": "to do 表目的；动词后接 to do / doing；基础被动语态",
+    "explanation": "to do 可以表示目的，例如 update the app to get new features 中，to get new features 说明更新应用的目的。to do 也可跟在某些动词后补充意思，如 need to restart、try to set up；try to set up 是“尝试设置”，并非本身就是目的状语。enjoy、finish 等后常接 doing。被动语态用 be + 过去分词，表示主语承受动作，如 The speaker is plugged in.。",
+    "example": "the speaker is plugged in.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "She went to the store ______ a new phone.",
+        "options": [
+          "buy",
+          "to buy",
+          "buying"
+        ],
+        "answers": [
+          "to buy"
+        ],
+        "explanation": "表示去商店的目的，用 to buy。",
+        "evidence": "She went to the store to buy a new phone."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "I need ______ the password.",
+        "options": [
+          "check",
+          "to check",
+          "checking"
+        ],
+        "answers": [
+          "to check"
+        ],
+        "explanation": "此处 need 后接 to do，说明需要做的事。",
+        "evidence": "I need to check the password."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Use the passive voice: The app ______ on my phone.",
+        "options": [
+          "installs",
+          "is installed",
+          "installing"
+        ],
+        "answers": [
+          "is installed"
+        ],
+        "explanation": "题目明确要求被动语态，应用是被安装的，用 is installed。",
+        "evidence": "The app is installed on my phone."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "He enjoys ______ music on his speaker.",
+        "options": [
+          "play",
+          "to play",
+          "playing"
+        ],
+        "answers": [
+          "playing"
+        ],
+        "explanation": "enjoy 后接 doing。",
+        "evidence": "He enjoys playing music on his speaker."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you use any smart devices at home?",
+        "What do you use your phone for?",
+        "Do you find technology easy to use?",
+        "How often do you use the internet?"
+      ],
+      "part2": "Describe a time when you had a problem with a device.",
+      "part3": [
+        "What are the advantages of smart home devices?",
+        "Do you think people rely too much on technology?",
+        "How can technology help elderly people?",
+        "What problems can technology cause?"
+      ],
+      "part2Bullets": [
+        "what the device was",
+        "what the problem was",
+        "how you solved it",
+        "how you felt afterwards"
+      ]
+    },
+    "writing": "Write 100–120 words about a different device problem and its solution. Include one purpose phrase with to do, one verb followed by doing, and one passive sentence. You may use a simulated situation."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1独立逐题核对与规则校验；未经真实考生难度标定",
+    "contentHash": "e63e85a345b238be7161a75ce744fed16ed4b2a893040a63152603e75bb5dca5"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

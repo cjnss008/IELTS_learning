@@ -1,0 +1,322 @@
+{
+  "id": "w11-listen-2",
+  "week": 11,
+  "skill": "listening",
+  "level": "A2",
+  "topic": "饮食与日常选择",
+  "grammarFocus": "much / many / a little / a few；数量表达；should / should not。",
+  "pool": "training",
+  "type": "directions",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 2,
+  "title": "Shopping for a Small Dinner",
+  "instructions": "这是为A2学习者设计的模拟听力练习（非官方考试）。先听录音两遍，再完成10道题。题目包括单选、填空和判断正误（True/False/Not Given）。填空题答案必须来自录音原文，且不超过规定字数。所有解释为中文，证据为英文原句。",
+  "passage": "",
+  "transcript": "Mei: Jun, we should buy food for dinner tonight. What should we get?\nJun: Let's make noodles with vegetables. We have a lot of noodles at home.\nMei: Good. How many eggs do we need?\nJun: We have four eggs in the fridge. We don't need many eggs today. Two eggs are fine.\nMei: OK. And how much rice do we need?\nJun: We don't need much rice. We have a little rice at home. Maybe half a bag.\nMei: I see. What about vegetables? We have a few tomatoes and a little cabbage.\nJun: We should buy some carrots. How many carrots?\nMei: Let's buy three carrots. And we should not buy too much fruit. We have many apples.\nJun: Right. We have many apples. We should not buy more apples.\nMei: Should we buy some milk?\nJun: Yes, a little milk is good for breakfast. But we have much milk? No, wait. We have a little milk. Let's buy one bottle.\nMei: OK. One bottle of milk. And we should not buy soda. It is not good for us.\nJun: I agree. We should drink water. Water is good.\nMei: So, we need two eggs, three carrots, half a bag of rice, and one bottle of milk.\nJun: Yes. And we should not buy soda or more apples.\nMei: Great. Let's go to the shop now.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What food do Mei and Jun plan to make for dinner?",
+      "options": [
+        "Noodles with vegetables",
+        "Rice with eggs",
+        "Bread with milk",
+        "Soup with carrots"
+      ],
+      "answers": [
+        "Noodles with vegetables"
+      ],
+      "explanation": "录音中Jun说“Let's make noodles with vegetables.”，所以晚餐计划是做蔬菜面。",
+      "evidence": "Let's make noodles with vegetables."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many eggs do they decide to buy?",
+      "options": [
+        "Two eggs",
+        "Four eggs",
+        "Three eggs",
+        "One egg"
+      ],
+      "answers": [
+        "Two eggs"
+      ],
+      "explanation": "Jun说“Two eggs are fine.”，Mei最后总结“we need two eggs”，所以决定买两个鸡蛋。",
+      "evidence": "Two eggs are fine."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How much rice do they need to buy?",
+      "options": [
+        "Half a bag",
+        "A full bag",
+        "A little rice",
+        "No rice"
+      ],
+      "answers": [
+        "Half a bag"
+      ],
+      "explanation": "Jun说“Maybe half a bag.”，指需要买半袋米。",
+      "evidence": "Maybe half a bag."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How many carrots do they decide to buy?",
+      "options": [
+        "Three carrots",
+        "Two carrots",
+        "A few carrots",
+        "Many carrots"
+      ],
+      "answers": [
+        "Three carrots"
+      ],
+      "explanation": "Mei说“Let's buy three carrots.”，所以决定买三根胡萝卜。",
+      "evidence": "Let's buy three carrots."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What do they decide NOT to buy?",
+      "options": [
+        "Soda",
+        "Milk",
+        "Carrots",
+        "Rice"
+      ],
+      "answers": [
+        "Soda"
+      ],
+      "explanation": "Mei说“we should not buy soda”，Jun也同意，所以不买苏打饮料。",
+      "evidence": "we should not buy soda"
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "They decide to buy one bottle of ______.",
+      "maxWords": 1,
+      "answers": [
+        "milk"
+      ],
+      "explanation": "Jun说“Let's buy one bottle.”，前文Mei问“Should we buy some milk?”，所以是买一瓶牛奶。",
+      "evidence": "Should we buy some milk?"
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Jun says they should drink ______ because it is good.",
+      "maxWords": 1,
+      "answers": [
+        "water"
+      ],
+      "explanation": "Jun说“We should drink water. Water is good.”，所以应填water。",
+      "evidence": "We should drink water."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: They have many apples at home.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Jun明确说“We have many apples.”，所以“家里有很多苹果”是正确的。",
+      "evidence": "We have many apples."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: They have a lot of milk at home.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Jun说“We have a little milk.”，即家里只有一点牛奶，不是很多，所以该说法错误。",
+      "evidence": "We have a little milk."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Mei and Jun will go to the shop by bus.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "录音只提到“Let's go to the shop now.”，没有说明他们怎么去商店（坐公交、走路等），所以是Not Given。",
+      "evidence": "Let's go to the shop now."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "noodles",
+      "meaning": "面条",
+      "example": "Let's make noodles with vegetables."
+    },
+    {
+      "word": "fridge",
+      "meaning": "冰箱",
+      "example": "We have four eggs in the fridge."
+    },
+    {
+      "word": "cabbage",
+      "meaning": "卷心菜",
+      "example": "We have a few tomatoes and a little cabbage."
+    },
+    {
+      "word": "carrots",
+      "meaning": "胡萝卜",
+      "example": "We should buy some carrots."
+    },
+    {
+      "word": "soda",
+      "meaning": "苏打饮料；汽水",
+      "example": "We should not buy soda."
+    },
+    {
+      "word": "bottle",
+      "meaning": "瓶子；一瓶",
+      "example": "Let's buy one bottle."
+    },
+    {
+      "word": "breakfast",
+      "meaning": "早餐",
+      "example": "A little milk is good for breakfast."
+    },
+    {
+      "word": "agree",
+      "meaning": "同意",
+      "example": "I agree."
+    }
+  ],
+  "grammar": {
+    "title": "much / many / a little / a few；数量表达；should / should not",
+    "explanation": "much 用于不可数名词（如 rice, milk），many 用于可数名词复数（如 eggs, apples）。a little 表示“一点”，用于不可数名词；a few 表示“几个”，用于可数名词复数。should 表示“应该”，should not 表示“不应该”，后面直接跟动词原形。",
+    "example": "We don't need much rice. We have a few tomatoes and a little cabbage. We should not buy soda.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We don't need much rice.",
+          "We don't need many rice.",
+          "We don't need a few rice.",
+          "We don't need much rices."
+        ],
+        "answers": [
+          "We don't need much rice."
+        ],
+        "explanation": "rice 是不可数名词，用 much 修饰，不用 many 或 a few。",
+        "evidence": "We don't need much rice."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We have a few tomatoes.",
+          "We have a little tomatoes.",
+          "We have much tomatoes.",
+          "We have a few tomato."
+        ],
+        "answers": [
+          "We have a few tomatoes."
+        ],
+        "explanation": "tomatoes 是可数名词复数，用 a few 表示“几个”；a little 用于不可数名词。",
+        "evidence": "We have a few tomatoes."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We should not buy soda.",
+          "We should not to buy soda.",
+          "We should not buying soda.",
+          "We should no buy soda."
+        ],
+        "answers": [
+          "We should not buy soda."
+        ],
+        "explanation": "should not 后面跟动词原形 buy，不加 to，也不用 -ing。",
+        "evidence": "We should not buy soda."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We have a little milk.",
+          "We have a few milk.",
+          "We have many milk.",
+          "We have a little milks."
+        ],
+        "answers": [
+          "We have a little milk."
+        ],
+        "explanation": "milk 是不可数名词，用 a little 表示“一点”，不用 a few 或 many。",
+        "evidence": "We have a little milk."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What food do you usually buy at the shop?",
+        "Do you drink much water every day?",
+        "Should people drink soda? Why or why not?",
+        "How many eggs are in your fridge now?"
+      ],
+      "part2": "Describe a small shopping list for dinner. You should say:",
+      "part2Bullets": [
+        "what food you need",
+        "how much or how many of each item",
+        "what you should not buy",
+        "why you choose these things"
+      ],
+      "part3": [
+        "Why should people not buy too much food?",
+        "Is it good to drink a little milk every day?",
+        "How many vegetables should we eat every day?",
+        "What should we drink with dinner?"
+      ]
+    },
+    "writing": "Write 5–7 sentences about a small dinner shopping list. Use much, many, a little, a few, should, and should not. Say what you need, how much or how many, and what you should not buy."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "A2 listening comprehension with mixed question types (single-choice, fill-in, True/False/Not Given)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "22c93dcb4e8b1b209971d4cbf3f0466c2d82622a245fbfee0893d6b8645d1553"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

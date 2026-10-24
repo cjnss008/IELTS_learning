@@ -1,0 +1,306 @@
+{
+  "id": "w16-listen-1",
+  "week": 16,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "环境与原因结果",
+  "grammarFocus": "第一条件句；because / therefore；情态动词建议。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "Community Garden Meeting",
+  "instructions": "这是一份模拟听力练习，适合B1水平成人学习者。听录音前，先阅读问题。录音会播放两次。注意听对话中的原因、结果和建议。回答问题时，请根据录音内容选择或填写。所有答案均来自录音原文。",
+  "passage": "",
+  "transcript": "M: Hi, Lisa. Are you coming to the community garden meeting tonight?\nW: I'm not sure, Tom. I have a lot of work to finish. But I want to help with the garden.\nM: Well, if you come, you can vote on the new plan. We need to decide about the water system.\nW: What's the problem with the water system?\nM: The old pipes are broken. Therefore, we waste a lot of water. If we don't fix them, the plants will die in summer.\nW: That's serious. How much will it cost?\nM: About $500. But if we all give $20, we can pay for it.\nW: That's a good idea. But I'm worried about the time. I'm busy with work.\nM: You should talk to the coordinator. She can give you a small job. For example, you could water the plants once a week.\nW: That sounds manageable. When is the meeting?\nM: At 7 p.m. in the community center. If you come, we can finish early.\nW: Okay, I'll try to come. But I might be late because of work.\nM: No problem. We can start without you. But please come if you can.\nW: I will. Thanks for explaining.\nM: Great. See you tonight.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main problem with the water system?",
+      "options": [
+        "The pipes are broken.",
+        "There is no water.",
+        "The water is dirty."
+      ],
+      "answers": [
+        "The pipes are broken."
+      ],
+      "explanation": "对话中男士说“The old pipes are broken.”，所以主要问题是管道坏了。",
+      "evidence": "The old pipes are broken."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What will happen if they don't fix the pipes?",
+      "options": [
+        "The plants will die.",
+        "The garden will close.",
+        "They will save money."
+      ],
+      "answers": [
+        "The plants will die."
+      ],
+      "explanation": "男士说“If we don't fix them, the plants will die in summer.”，所以如果不修管道，植物会死。",
+      "evidence": "If we don't fix them, the plants will die in summer."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How much will it cost to fix the water system? $______",
+      "maxWords": 1,
+      "answers": [
+        "500"
+      ],
+      "explanation": "男士说“About $500.”，所以费用是500美元。",
+      "evidence": "About $500."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does the man suggest Lisa do?",
+      "options": [
+        "Talk to the coordinator.",
+        "Give more money.",
+        "Come early."
+      ],
+      "answers": [
+        "Talk to the coordinator."
+      ],
+      "explanation": "男士建议“You should talk to the coordinator.”，所以答案是和协调员谈谈。",
+      "evidence": "You should talk to the coordinator."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What example of a small job does the man give?",
+      "options": [
+        "Watering the plants once a week.",
+        "Cleaning the garden.",
+        "Buying new pipes."
+      ],
+      "answers": [
+        "Watering the plants once a week."
+      ],
+      "explanation": "男士说“you could water the plants once a week.”，所以例子是每周浇一次水。",
+      "evidence": "you could water the plants once a week."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What time is the meeting? ______ p.m.",
+      "maxWords": 1,
+      "answers": [
+        "7"
+      ],
+      "explanation": "男士说“At 7 p.m.”，所以会议时间是晚上7点。",
+      "evidence": "At 7 p.m."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Why might Lisa be late?",
+      "options": [
+        "Because of work.",
+        "Because of traffic.",
+        "Because she is sick."
+      ],
+      "answers": [
+        "Because of work."
+      ],
+      "explanation": "Lisa说“I might be late because of work.”，所以可能因为工作迟到。",
+      "evidence": "I might be late because of work."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Where is the meeting?",
+      "options": [
+        "In the community center.",
+        "In the garden.",
+        "At Lisa's office."
+      ],
+      "answers": [
+        "In the community center."
+      ],
+      "explanation": "男士说“in the community center.”，所以会议在社区中心。",
+      "evidence": "in the community center."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Lisa will definitely come to the meeting.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Lisa说“I'll try to come.”，表示她不确定，所以“definitely come”是错误的。",
+      "evidence": "I'll try to come."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Tom is the coordinator.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "对话中没有提到Tom是否是协调员，所以是Not Given。",
+      "evidence": "No information about Tom being the coordinator."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "community",
+      "meaning": "社区",
+      "example": "community garden meeting"
+    },
+    {
+      "word": "vote",
+      "meaning": "投票",
+      "example": "you can vote on the new plan"
+    },
+    {
+      "word": "pipes",
+      "meaning": "管道",
+      "example": "The old pipes are broken."
+    },
+    {
+      "word": "waste",
+      "meaning": "浪费",
+      "example": "we waste a lot of water"
+    },
+    {
+      "word": "coordinator",
+      "meaning": "协调员",
+      "example": "talk to the coordinator"
+    },
+    {
+      "word": "manageable",
+      "meaning": "可管理的",
+      "example": "That sounds manageable."
+    },
+    {
+      "word": "fix",
+      "meaning": "修理",
+      "example": "If we don't fix them"
+    },
+    {
+      "word": "explain",
+      "meaning": "解释",
+      "example": "Thanks for explaining."
+    }
+  ],
+  "grammar": {
+    "title": "第一条件句与情态动词建议",
+    "explanation": "第一条件句表示将来可能发生的情况，结构为“If + 一般现在时，主语 + will + 动词原形”。例如：If you come, you can vote. 情态动词should用于提建议，例如：You should talk to the coordinator.",
+    "example": "If we don't fix them, the plants will die in summer.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If it rains tomorrow, we ______ at home.",
+        "options": [
+          "stay",
+          "will stay",
+          "stayed"
+        ],
+        "answers": [
+          "will stay"
+        ],
+        "explanation": "第一条件句中，主句用will + 动词原形，表示将来结果。",
+        "evidence": "If we don't fix them, the plants will die in summer."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "You ______ see a doctor if you feel sick.",
+        "options": [
+          "should",
+          "should to",
+          "are should"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "should后直接跟动词原形，表示建议。",
+        "evidence": "You should talk to the coordinator."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "If you study hard, you ______ the exam.",
+        "options": [
+          "pass",
+          "will pass",
+          "passed"
+        ],
+        "answers": [
+          "will pass"
+        ],
+        "explanation": "第一条件句主句用will + 动词原形。",
+        "evidence": "If we don't fix them, the plants will die in summer."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "We ______ hurry if we want to catch the bus.",
+        "options": [
+          "should",
+          "should to",
+          "are should"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "should表示建议，后接动词原形。",
+        "evidence": "You should talk to the coordinator."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you have a garden or do you visit parks?",
+        "What do you do to help the environment?",
+        "Do you prefer to work alone or with others?",
+        "How do you usually make decisions in a group?"
+      ],
+      "part2": "Describe a time when you helped solve a problem in your community. You should say: what the problem was, how you helped, who you worked with, and explain why it was important.",
+      "part3": [
+        "Why do some people not want to help in their community?",
+        "What can governments do to encourage people to volunteer?",
+        "How can small actions make a big difference to the environment?",
+        "Do you think money is the best way to solve environmental problems?"
+      ]
+    },
+    "writing": "Write a short email (about 100 words) to your neighbors suggesting a way to save water in your building. Use first conditional sentences and should."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b9fe2d9b66b58637f461bda68fa28d7f5f739eec47bfd5101cfbc58723f9c7f8"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

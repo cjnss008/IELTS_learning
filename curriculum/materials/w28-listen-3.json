@@ -1,0 +1,316 @@
+{
+  "id": "w28-listen-3",
+  "week": 28,
+  "skill": "listening",
+  "level": "B1–B2",
+  "topic": "流程说明与学术阶段复测",
+  "grammarFocus": "被动语态；顺序连接词；定语从句与分词短语的辨认。",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 3,
+  "title": "Campus Library Orientation: The Self-Checkout System",
+  "instructions": "本材料为模拟练习，非官方雅思试题。听力部分包含一段关于图书馆自助借还系统的对话，请先听录音（或阅读转录文本），然后完成10道题目。题目类型包括单选、填空、匹配（以单选形式）和判断正误/未提及。填空题答案必须与原文完全一致，且不超过字数限制。所有解析为中文，并附原文证据。",
+  "passage": "",
+  "transcript": "Mia: Hi, I'm Mia. I'm a new student here, and I need to borrow some books. Could you explain how the self-checkout system works?\n\nTom: Sure, Mia. I'm Tom, the library assistant. The system is quite simple. First, you need to scan your student card at the machine near the entrance. The machine will then ask you to place your books on the glass plate. One book at a time, please.\n\nMia: Okay, scan my card, then put one book on the plate. What happens next?\n\nTom: After you place the book, the machine reads the barcode. You'll hear a beep, and the book's title will appear on the screen. Then you press the 'Borrow' button. The due date is shown automatically. Books can be kept for two weeks.\n\nMia: Two weeks. And can I renew them?\n\nTom: Yes, you can renew online once. But if someone else has reserved the book, renewal is not allowed. Also, the system is checked every morning by the staff, so if there's a problem, it's usually fixed quickly.\n\nMia: What if I forget to check out a book? Will the alarm go off?\n\nTom: Yes, the security gate will sound if a book is taken without being checked out. But don't worry—it's a common mistake. Just come back and scan it.\n\nMia: Got it. And where do I return books?\n\nTom: The return slot is outside, next to the main door. Books are collected from there twice a day. Oh, wait—I said twice, but actually it's three times: morning, noon, and late afternoon. The times are posted on the wall.\n\nMia: Thanks. One more thing: are there any fines?\n\nTom: Yes, if a book is returned late, a fine of 50 pence per day is charged. But you can pay it at the front desk, not at the machine.\n\nMia: Great. I think I understand now.\n\nTom: Good. Remember, the machine is turned off for maintenance every Monday from 9 to 10 a.m., so please use the front desk then.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the first step to borrow a book?",
+      "options": [
+        "Place the book on the glass plate.",
+        "Scan your student card.",
+        "Press the 'Borrow' button.",
+        "Pay a fine at the front desk."
+      ],
+      "answers": [
+        "Scan your student card."
+      ],
+      "explanation": "对话中Tom明确说第一步是扫描学生卡。",
+      "evidence": "First, you need to scan your student card at the machine near the entrance."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "How long can books be kept? (Use one word or a number and a word.)",
+      "maxWords": 2,
+      "answers": [
+        "two weeks"
+      ],
+      "explanation": "Tom说书可以借两周。",
+      "evidence": "Books can be kept for two weeks."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "When is renewal NOT allowed?",
+      "options": [
+        "When the book is returned late.",
+        "When someone else has reserved the book.",
+        "When the machine is turned off.",
+        "When you forget your student card."
+      ],
+      "answers": [
+        "When someone else has reserved the book."
+      ],
+      "explanation": "Tom提到如果有人预约了这本书，就不能续借。",
+      "evidence": "But if someone else has reserved the book, renewal is not allowed."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How often are books collected from the return slot?",
+      "options": [
+        "Twice a day.",
+        "Three times a day.",
+        "Once a day.",
+        "Every morning."
+      ],
+      "answers": [
+        "Three times a day."
+      ],
+      "explanation": "Tom先说了两次，但马上纠正为三次。",
+      "evidence": "Oh, wait—I said twice, but actually it's three times: morning, noon, and late afternoon."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What is the fine per day for a late return? (Use one word or a number and a word.)",
+      "maxWords": 2,
+      "answers": [
+        "50 pence"
+      ],
+      "explanation": "Tom说逾期罚款是每天50便士。",
+      "evidence": "a fine of 50 pence per day is charged."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Where can you pay a fine?",
+      "options": [
+        "At the self-checkout machine.",
+        "At the front desk.",
+        "At the return slot.",
+        "Online."
+      ],
+      "answers": [
+        "At the front desk."
+      ],
+      "explanation": "Tom说罚款在前台支付，不是在机器上。",
+      "evidence": "But you can pay it at the front desk, not at the machine."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What happens if a book is taken without being checked out?",
+      "options": [
+        "The machine beeps.",
+        "The security gate sounds.",
+        "The staff checks your card.",
+        "The book is reserved."
+      ],
+      "answers": [
+        "The security gate sounds."
+      ],
+      "explanation": "Tom说如果书没有被借出就被带走，安全门会响。",
+      "evidence": "Yes, the security gate will sound if a book is taken without being checked out."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "When is the self-checkout machine turned off for maintenance?",
+      "options": [
+        "Every Monday from 9 to 10 a.m.",
+        "Every morning from 8 to 9 a.m.",
+        "Every Friday from 9 to 10 a.m.",
+        "Every day at noon."
+      ],
+      "answers": [
+        "Every Monday from 9 to 10 a.m."
+      ],
+      "explanation": "Tom说机器每周一上午9点到10点关闭维护。",
+      "evidence": "the machine is turned off for maintenance every Monday from 9 to 10 a.m."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True/False/Not Given: The library staff check the system every morning.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Tom明确说系统每天早上由员工检查。",
+      "evidence": "the system is checked every morning by the staff"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True/False/Not Given: The library has more than one self-checkout machine.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "对话中只提到一台机器（the machine），但没有说明图书馆是否有多台机器。因此无法判断。",
+      "evidence": "No information about the number of machines is provided."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "scan",
+      "meaning": "扫描",
+      "example": "you need to scan your student card"
+    },
+    {
+      "word": "barcode",
+      "meaning": "条形码",
+      "example": "the machine reads the barcode"
+    },
+    {
+      "word": "renew",
+      "meaning": "续借",
+      "example": "you can renew online once"
+    },
+    {
+      "word": "reserved",
+      "meaning": "预约的",
+      "example": "someone else has reserved the book"
+    },
+    {
+      "word": "fine",
+      "meaning": "罚款",
+      "example": "a fine of 50 pence per day"
+    },
+    {
+      "word": "maintenance",
+      "meaning": "维护",
+      "example": "turned off for maintenance"
+    },
+    {
+      "word": "security gate",
+      "meaning": "安全门",
+      "example": "the security gate will sound"
+    },
+    {
+      "word": "due date",
+      "meaning": "到期日",
+      "example": "The due date is shown automatically"
+    }
+  ],
+  "grammar": {
+    "title": "被动语态；顺序连接词；定语从句与分词短语的辨认",
+    "explanation": "被动语态表示‘被……’，结构是be + 过去分词，例如‘is checked’。顺序连接词如first, then, after that, finally帮助理清步骤。定语从句用who/which/that连接，修饰名词；分词短语用-ing或-ed形式补充信息，例如‘taken without being checked out’。",
+    "example": "the system is checked every morning by the staff",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct passive sentence:",
+        "options": [
+          "The staff checks the system every morning.",
+          "The system is checked every morning by the staff.",
+          "The system checks every morning.",
+          "The staff is checked every morning."
+        ],
+        "answers": [
+          "The system is checked every morning by the staff."
+        ],
+        "explanation": "被动语态结构：be + 过去分词，主语是动作的承受者。",
+        "evidence": "the system is checked every morning by the staff"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Which word is a sequence connector?",
+        "options": [
+          "First",
+          "Because",
+          "Although",
+          "If"
+        ],
+        "answers": [
+          "First"
+        ],
+        "explanation": "First是顺序连接词，表示第一步。",
+        "evidence": "First, you need to scan your student card"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Identify the relative clause in: 'The book which you borrowed is due today.'",
+        "options": [
+          "The book",
+          "which you borrowed",
+          "is due today",
+          "you borrowed is due"
+        ],
+        "answers": [
+          "which you borrowed"
+        ],
+        "explanation": "定语从句which you borrowed修饰The book。",
+        "evidence": "The book which you borrowed is due today."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "What does the participle phrase 'taken without being checked out' describe?",
+        "options": [
+          "The security gate",
+          "A book",
+          "The student card",
+          "The machine"
+        ],
+        "answers": [
+          "A book"
+        ],
+        "explanation": "过去分词短语taken without being checked out修饰a book，表示书被带走而未被借出。",
+        "evidence": "if a book is taken without being checked out"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use libraries? Why or why not?",
+        "What do you usually do when you borrow books?",
+        "Have you ever had a problem with a library system?",
+        "How do you feel about using self-service machines?"
+      ],
+      "part2": "Describe a time when you had to follow a set of steps to complete a task. You should say: what the task was, what the steps were, whether you had any problems, and how you felt about the process.",
+      "part3": [
+        "Why do some people prefer self-service machines?",
+        "What are the advantages and disadvantages of automated systems?",
+        "How can libraries make their services easier to use?",
+        "Do you think traditional library services will disappear in the future?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 100 words) explaining how to use a self-service machine in a place you know (e.g., a supermarket, a train station). Use passive voice and sequence connectors."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "71a7fd996b14e9d98a42e2c319233db6aef4e36bedb61175310474cac5288550"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

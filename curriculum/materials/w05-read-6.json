@@ -1,0 +1,267 @@
+{
+  "id": "w05-read-6",
+  "week": 5,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "日常安排与习惯",
+  "grammarFocus": "一般现在时；I / you / we / they 的实义动词；时间表达与频率词入门。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "Lin Tao's Weekday Morning",
+  "instructions": "这是模拟练习材料，不是官方考试。请先读短文，再回答问题。单选题请选一个完整答案；填空题请用短文中的原词，不超过字数限制。所有解释为中文。",
+  "passage": "A: I am Lin Tao. I work in a small shop in Beijing. I get up at six every morning. I eat bread and drink milk. I go to work at seven.\n\nB: My friend Wang Mei works with me. We start work at eight. We have lunch at twelve. We finish at five. After work, we walk home together.\n\nC: In the evening, I read books. Sometimes I watch TV. I go to bed at ten. I like my simple day.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "林涛每天早上几点起床？",
+      "options": [
+        "At six.",
+        "At seven.",
+        "At eight."
+      ],
+      "answers": [
+        "At six."
+      ],
+      "explanation": "短文说“I get up at six every morning.”，所以是六点。",
+      "evidence": "I get up at six every morning."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "林涛早上吃什么？",
+      "options": [
+        "Bread.",
+        "Rice.",
+        "Eggs."
+      ],
+      "answers": [
+        "Bread."
+      ],
+      "explanation": "短文说“I eat bread and drink milk.”，所以是面包。",
+      "evidence": "I eat bread and drink milk."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "林涛几点去上班？",
+      "options": [
+        "At seven.",
+        "At six.",
+        "At eight."
+      ],
+      "answers": [
+        "At seven."
+      ],
+      "explanation": "短文说“I go to work at seven.”，所以是七点。",
+      "evidence": "I go to work at seven."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "林涛和王梅几点开始工作？",
+      "options": [
+        "At eight.",
+        "At seven.",
+        "At five."
+      ],
+      "answers": [
+        "At eight."
+      ],
+      "explanation": "短文说“We start work at eight.”，所以是八点。",
+      "evidence": "We start work at eight."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "林涛和王梅几点吃午饭？请填数字英文单词。",
+      "answers": [
+        "twelve"
+      ],
+      "maxWords": 1,
+      "explanation": "短文说“We have lunch at twelve.”，所以填 twelve。",
+      "evidence": "We have lunch at twelve."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "下班后，林涛和王梅一起做什么？请填一个动词短语（两个词）。",
+      "answers": [
+        "walk home"
+      ],
+      "maxWords": 2,
+      "explanation": "短文说“After work, we walk home together.”，所以填 walk home。",
+      "evidence": "After work, we walk home together."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "晚上林涛做什么？",
+      "options": [
+        "He reads books.",
+        "He plays football.",
+        "He cooks dinner."
+      ],
+      "answers": [
+        "He reads books."
+      ],
+      "explanation": "短文说“In the evening, I read books.”，所以是读书。",
+      "evidence": "In the evening, I read books."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "林涛几点睡觉？",
+      "options": [
+        "At ten.",
+        "At nine.",
+        "At eleven."
+      ],
+      "answers": [
+        "At ten."
+      ],
+      "explanation": "短文说“I go to bed at ten.”，所以是十点。",
+      "evidence": "I go to bed at ten."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "get up",
+      "meaning": "起床",
+      "example": "I get up at six every morning."
+    },
+    {
+      "word": "work",
+      "meaning": "工作",
+      "example": "I work in a small shop in Beijing."
+    },
+    {
+      "word": "start",
+      "meaning": "开始",
+      "example": "We start work at eight."
+    },
+    {
+      "word": "finish",
+      "meaning": "结束，完成",
+      "example": "We finish at five."
+    },
+    {
+      "word": "lunch",
+      "meaning": "午饭",
+      "example": "We have lunch at twelve."
+    },
+    {
+      "word": "walk",
+      "meaning": "走路",
+      "example": "After work, we walk home together."
+    },
+    {
+      "word": "read",
+      "meaning": "读，阅读",
+      "example": "In the evening, I read books."
+    },
+    {
+      "word": "sometimes",
+      "meaning": "有时",
+      "example": "Sometimes I watch TV."
+    }
+  ],
+  "grammar": {
+    "title": "一般现在时：I / you / we / they 的实义动词",
+    "explanation": "说每天或经常做的事，用动词原形。主语是 I、you、we、they 时，动词不变。例如“I get up”“We start”。时间词 at six、at eight 放在句末。",
+    "example": "We start work at eight.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确句子：我每天七点去上班。",
+        "options": [
+          "I go to work at seven every day.",
+          "I goes to work at seven every day.",
+          "I going to work at seven every day."
+        ],
+        "answers": [
+          "I go to work at seven every day."
+        ],
+        "explanation": "主语是 I，动词用原形 go。",
+        "evidence": "I go to work at seven."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确句子：我们八点开始工作。",
+        "options": [
+          "We start work at eight.",
+          "We starts work at eight.",
+          "We starting work at eight."
+        ],
+        "answers": [
+          "We start work at eight."
+        ],
+        "explanation": "主语是 we，动词用原形 start。",
+        "evidence": "We start work at eight."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：They ____ (finish) at five. 请填一个词。",
+        "answers": [
+          "finish"
+        ],
+        "maxWords": 1,
+        "explanation": "主语是 they，动词用原形 finish。",
+        "evidence": "We finish at five."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "填空：You ____ (walk) home. 请填一个词。",
+        "answers": [
+          "walk"
+        ],
+        "maxWords": 1,
+        "explanation": "主语是 you，动词用原形 walk。",
+        "evidence": "After work, we walk home together."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What time do you get up?",
+        "What do you eat for breakfast?",
+        "What time do you start work or study?",
+        "What do you do in the evening?"
+      ],
+      "part2": "Describe your weekday morning. You should say:",
+      "part3": [
+        "Do you walk to work or school?",
+        "What time do you have lunch?",
+        "Do you watch TV in the evening?",
+        "What time do you go to bed?"
+      ]
+    },
+    "writing": "写 5 个简单句，介绍你的一天。用 I get up... / I eat... / I go to... / I finish... / I go to bed... 这些句型。每句用一般现在时。"
+  },
+  "rubric": {
+    "taskType": "A1 reading comprehension and grammar practice (simulated material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "173d8ba3aeaf3aa0c8aea99bddda55b15130f625f54b4da69c1b621e642a67ee"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

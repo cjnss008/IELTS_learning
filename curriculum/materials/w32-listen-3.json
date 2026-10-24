@@ -1,0 +1,316 @@
+{
+  "id": "w32-listen-3",
+  "week": 32,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "数据理解与阶段复测",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 3,
+  "title": "The Campus Library Survey: Comparing Data and Checking Facts",
+  "instructions": "这是一份模拟的英语听力与阅读练习材料，并非官方雅思试题，也不对应任何雅思分数。请先听录音（或阅读录音原文），然后完成10道题目。题目类型包括单选题、填空题（答案必须来自原文，且不超过字数限制）和判断题（True/False/Not Given）。所有解释均为中文，证据为英文原文引用。",
+  "passage": "",
+  "transcript": "M: Hi, Mei. You look busy. What are you working on?\nW: I’m checking the results of the campus library survey. We asked 200 students about how often they use the library and what they think of the new study rooms.\nM: Two hundred? That’s more than last year, isn’t it? Last year we only had about 150 responses.\nW: Yes, exactly 150 last year, so this year we have 50 more. But the total number of students is also bigger now, so the response rate is actually a bit lower.\nM: Really? How do you calculate that?\nW: We divide the number of responses by the total number of students. Last year, 150 out of 1,500 students answered, so the rate was 10 percent. This year, 200 out of 2,500 answered, which is only 8 percent.\nM: I see. So even though we got more answers, the proportion is smaller. That’s an important difference.\nW: Exactly. Now, about the study rooms: 120 students said they use them at least once a week. That’s 60 percent of the 200 respondents.\nM: And how many said they never use them?\nW: Only 20 students, or 10 percent. The rest use them occasionally.\nM: What about satisfaction? Are people happy with the rooms?\nW: Mostly. 90 students said they were ‘very satisfied’, and 70 said ‘satisfied’. That leaves 40 who were ‘not satisfied’ or ‘very unsatisfied’.\nM: So 160 out of 200 are positive. That’s 80 percent. But wait, did you check the comments? Some people might have misunderstood the question.\nW: Good point. I read the comments, and a few students thought ‘study rooms’ meant the whole library. But most comments were clear.\nM: OK. So the main finding is that more students use the library than last year, but the response rate is lower. Is that right?\nW: Yes, and also that the study rooms are popular, but there’s still a group who are not satisfied. We should look at why.\nM: Agreed. Let’s prepare a short report for the library committee.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many students responded to the survey this year?",
+      "options": [
+        "150",
+        "200",
+        "250",
+        "1,500"
+      ],
+      "answers": [
+        "200"
+      ],
+      "explanation": "女士明确说今年有200份回复。",
+      "evidence": "We asked 200 students about how often they use the library"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What was the response rate last year?",
+      "options": [
+        "8 percent",
+        "10 percent",
+        "15 percent",
+        "20 percent"
+      ],
+      "answers": [
+        "10 percent"
+      ],
+      "explanation": "女士计算去年回复率为10%。",
+      "evidence": "Last year, 150 out of 1,500 students answered, so the rate was 10 percent."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "This year, the response rate is only ______ percent. (Write ONE number.)",
+      "maxWords": 1,
+      "answers": [
+        "8"
+      ],
+      "explanation": "女士说今年回复率只有8%。",
+      "evidence": "This year, 200 out of 2,500 answered, which is only 8 percent."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How many students said they use the study rooms at least once a week?",
+      "options": [
+        "20",
+        "90",
+        "120",
+        "160"
+      ],
+      "answers": [
+        "120"
+      ],
+      "explanation": "女士提到有120名学生每周至少使用一次学习室。",
+      "evidence": "120 students said they use them at least once a week."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "______ students said they were ‘very satisfied’ with the study rooms. (Write ONE number.)",
+      "maxWords": 1,
+      "answers": [
+        "90"
+      ],
+      "explanation": "女士说有90名学生表示‘非常满意’。",
+      "evidence": "90 students said they were ‘very satisfied’"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What percentage of respondents were positive about the study rooms?",
+      "options": [
+        "60 percent",
+        "70 percent",
+        "80 percent",
+        "90 percent"
+      ],
+      "answers": [
+        "80 percent"
+      ],
+      "explanation": "男士总结160/200为正面评价，即80%。",
+      "evidence": "So 160 out of 200 are positive. That’s 80 percent."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "According to the woman, what did a few students misunderstand?",
+      "options": [
+        "The meaning of ‘study rooms’",
+        "The number of questions",
+        "The survey deadline",
+        "The library opening hours"
+      ],
+      "answers": [
+        "The meaning of ‘study rooms’"
+      ],
+      "explanation": "女士说少数学生以为‘study rooms’指整个图书馆。",
+      "evidence": "a few students thought ‘study rooms’ meant the whole library."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does the man suggest they should do next?",
+      "options": [
+        "Interview more students",
+        "Prepare a short report for the library committee",
+        "Close the study rooms",
+        "Change the survey questions"
+      ],
+      "answers": [
+        "Prepare a short report for the library committee"
+      ],
+      "explanation": "男士建议为图书馆委员会准备一份简短报告。",
+      "evidence": "Let’s prepare a short report for the library committee."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The total number of students this year is 2,500.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "女士说今年200人回复，总学生数为2,500，因此该陈述为真。",
+      "evidence": "This year, 200 out of 2,500 answered"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The library committee has already approved the new study rooms.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "对话只提到要准备报告给委员会，并未说明委员会是否已批准新学习室，因此为Not Given。",
+      "evidence": "Let’s prepare a short report for the library committee."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "We asked 200 students about how often they use the library."
+    },
+    {
+      "word": "response",
+      "meaning": "回复；回答",
+      "example": "Last year we only had about 150 responses."
+    },
+    {
+      "word": "proportion",
+      "meaning": "比例",
+      "example": "So even though we got more answers, the proportion is smaller."
+    },
+    {
+      "word": "satisfied",
+      "meaning": "满意的",
+      "example": "90 students said they were ‘very satisfied’."
+    },
+    {
+      "word": "occasionally",
+      "meaning": "偶尔",
+      "example": "The rest use them occasionally."
+    },
+    {
+      "word": "misunderstand",
+      "meaning": "误解",
+      "example": "Some people might have misunderstood the question."
+    },
+    {
+      "word": "committee",
+      "meaning": "委员会",
+      "example": "Let’s prepare a short report for the library committee."
+    },
+    {
+      "word": "calculate",
+      "meaning": "计算",
+      "example": "How do you calculate that?"
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本课重点是比较结构（more than, fewer than, as...as）、数量表达（a number of, the number of, percent, out of）以及指代（this, that, these, those, it, they）。同时注意冠词（a/an/the）和主谓一致（单复数与动词形式）。",
+    "example": "This year, 200 out of 2,500 answered, which is only 8 percent.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The number of students are increasing.",
+          "The number of students is increasing.",
+          "A number of students is increasing.",
+          "A number of student are increasing."
+        ],
+        "answers": [
+          "The number of students is increasing."
+        ],
+        "explanation": "‘the number of’表示‘……的数量’，谓语动词用单数；‘a number of’表示‘许多’，谓语用复数。",
+        "evidence": "This year, 200 out of 2,500 answered"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Fewer students responded this year than last year.",
+          "Less students responded this year than last year.",
+          "Fewer student responded this year than last year.",
+          "Less student responded this year than last year."
+        ],
+        "answers": [
+          "Fewer students responded this year than last year."
+        ],
+        "explanation": "可数名词复数前用fewer，不可数名词前用less；student需用复数。",
+        "evidence": "Last year we only had about 150 responses."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The survey results is clear.",
+          "The survey results are clear.",
+          "The survey result are clear.",
+          "A survey results is clear."
+        ],
+        "answers": [
+          "The survey results are clear."
+        ],
+        "explanation": "主语results是复数，谓语用are；survey作定语修饰results。",
+        "evidence": "I’m checking the results of the campus library survey."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Each of the students have a response.",
+          "Each of the students has a response.",
+          "Each of the student have a response.",
+          "Each of the student has a response."
+        ],
+        "answers": [
+          "Each of the students has a response."
+        ],
+        "explanation": "‘each of + 复数名词’作主语时，谓语动词用单数has。",
+        "evidence": "We asked 200 students about how often they use the library."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use your school library? Why or why not?",
+        "What do you think is the most important facility in a library?",
+        "Have you ever taken part in a survey? What was it about?",
+        "Do you prefer studying alone or with others? Why?"
+      ],
+      "part2": "Describe a time when you had to compare some numbers or data. You should say: what the data was about; where the data came from; how you compared the numbers; and explain what you learned from the comparison.",
+      "part3": [
+        "Why do you think some surveys have low response rates?",
+        "How can schools encourage more students to take part in surveys?",
+        "Do you think numbers always tell the whole story? Why or why not?",
+        "What are the advantages and disadvantages of using percentages to present data?"
+      ]
+    },
+    "writing": "You have collected survey responses from 100 students about their favourite study places on campus. Write a short report (about 150 words) for the student committee. Summarise the main findings, compare the numbers, and give one recommendation. Use appropriate linking words and check subject-verb agreement."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with integrated grammar and vocabulary practice (simulated educational material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "cd5fe5737cc16d4bdf1060ebbffa9979e5d5124583b8c8baafba677cc24b6f4c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

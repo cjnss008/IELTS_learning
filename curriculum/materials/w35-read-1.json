@@ -1,0 +1,319 @@
+{
+  "id": "w35-read-1",
+  "week": 35,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "科学与口语深入讨论",
+  "grammarFocus": "间接问句；名词性从句；比较、原因和假设表达综合。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "The Science of Everyday Decisions: A Conversation with Dr. Lin",
+  "instructions": "阅读下面的文章，回答10个问题。文章是一篇模拟教育材料，不是真实的研究报告。问题类型包括单选、填空、匹配（通过单选实现）和判断正误/未提及。填空答案必须来自原文，且不超过字数限制。所有解释均为中文。",
+  "passage": "A: Dr. Lin, thank you for joining us. Your work focuses on how people make everyday decisions. Could you start by explaining what you mean by 'everyday decisions'?\n\nB: Certainly. By 'everyday decisions' I mean the small choices we make many times a day—what to eat, when to leave for work, whether to answer a message immediately. These decisions seem trivial, but they add up. In fact, research suggests that adults make about 35,000 decisions each day, though most are automatic.\n\nA: That's a huge number. So how do scientists study something so common?\n\nB: We use a combination of methods. One approach is to ask participants to keep a diary of their choices for a week. Another is to observe them in controlled experiments. For example, we might offer people a choice between two snacks and measure how long they take to decide. What we find is that people often rely on mental shortcuts, which we call heuristics.\n\nA: Heuristics—can you give an example?\n\nB: Sure. The 'availability heuristic' is when we judge the likelihood of an event by how easily examples come to mind. If you recently saw a news report about a plane crash, you might overestimate the danger of flying, even though statistically it's very safe. This is because the memory is vivid and easy to recall.\n\nA: So our brains take shortcuts to save energy. But are these shortcuts always bad?\n\nB: Not at all. Heuristics are often efficient. They allow us to make quick decisions without analyzing every detail. The problem is that they can lead to systematic errors, which we call biases. For instance, the 'confirmation bias' is our tendency to search for information that supports our existing beliefs. This can be problematic in science, where we should be open to evidence that contradicts our views.\n\nA: That's interesting. How does this relate to scientific thinking?\n\nB: Science is essentially a formalized way of overcoming biases. Scientists use methods like double-blind experiments and peer review to reduce the influence of personal biases. However, scientists are human too, so biases can still creep in. That's why replication—repeating studies—is so important.\n\nA: Let's talk about comparisons. Are some people better at avoiding biases than others?\n\nB: Yes, to some extent. Studies show that people with training in statistics or critical thinking tend to make fewer biased decisions. But no one is completely immune. Even experts can fall into traps, especially when they are tired or under time pressure.\n\nA: What about cause and effect? How do we know that a decision is caused by a particular factor?\n\nB: That's a key question. To establish causation, we need controlled experiments where we manipulate one variable and keep others constant. Observational studies can show correlations, but correlation does not imply causation. For example, ice cream sales and drowning incidents both increase in summer, but eating ice cream doesn't cause drowning; the real cause is hot weather.\n\nA: So if we wanted to improve our decision-making, what would you suggest?\n\nB: First, be aware of your biases. Second, slow down when making important decisions. Third, seek out diverse perspectives. And finally, consider the opposite: ask yourself what evidence would prove you wrong. This is a habit that scientists cultivate, and it can benefit everyone.\n\nA: Thank you, Dr. Lin. It's been enlightening.\n\nB: My pleasure.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "According to Dr. Lin, what is the approximate number of decisions adults make each day?",
+      "options": [
+        "About 3,500",
+        "About 35,000",
+        "About 350,000",
+        "About 35 million"
+      ],
+      "answers": [
+        "About 35,000"
+      ],
+      "explanation": "原文明确提到 'adults make about 35,000 decisions each day'，因此答案是 About 35,000。",
+      "evidence": "research suggests that adults make about 35,000 decisions each day"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the 'availability heuristic'?",
+      "options": [
+        "Judging the likelihood of an event by how easily examples come to mind",
+        "The tendency to search for information that supports existing beliefs",
+        "A method to conduct double-blind experiments",
+        "The process of repeating studies to check results"
+      ],
+      "answers": [
+        "Judging the likelihood of an event by how easily examples come to mind"
+      ],
+      "explanation": "原文定义 availability heuristic 为 'when we judge the likelihood of an event by how easily examples come to mind'，因此选第一项。",
+      "evidence": "The 'availability heuristic' is when we judge the likelihood of an event by how easily examples come to mind."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which of the following is an example of the confirmation bias?",
+      "options": [
+        "Overestimating the danger of flying after seeing a news report about a plane crash",
+        "Searching for information that supports your existing beliefs",
+        "Making quick decisions without analyzing every detail",
+        "Repeating a study to check its results"
+      ],
+      "answers": [
+        "Searching for information that supports your existing beliefs"
+      ],
+      "explanation": "原文提到 confirmation bias 是 'our tendency to search for information that supports our existing beliefs'，因此选第二项。",
+      "evidence": "the 'confirmation bias' is our tendency to search for information that supports our existing beliefs."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: According to Dr. Lin, scientists use methods like double-blind experiments and peer review to reduce the influence of personal ______.",
+      "maxWords": 1,
+      "answers": [
+        "biases"
+      ],
+      "explanation": "原文说 'to reduce the influence of personal biases'，因此填 biases。",
+      "evidence": "Scientists use methods like double-blind experiments and peer review to reduce the influence of personal biases."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Dr. Lin say about the relationship between ice cream sales and drowning incidents?",
+      "options": [
+        "Eating ice cream causes drowning",
+        "Both increase in summer, but the real cause is hot weather",
+        "They are not correlated at all",
+        "Drowning causes people to buy ice cream"
+      ],
+      "answers": [
+        "Both increase in summer, but the real cause is hot weather"
+      ],
+      "explanation": "原文指出 'ice cream sales and drowning incidents both increase in summer, but eating ice cream doesn't cause drowning; the real cause is hot weather'，因此选第二项。",
+      "evidence": "ice cream sales and drowning incidents both increase in summer, but eating ice cream doesn't cause drowning; the real cause is hot weather."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "According to Dr. Lin, which of the following is NOT a suggestion for improving decision-making?",
+      "options": [
+        "Be aware of your biases",
+        "Slow down when making important decisions",
+        "Seek out diverse perspectives",
+        "Always trust your first instinct"
+      ],
+      "answers": [
+        "Always trust your first instinct"
+      ],
+      "explanation": "原文中 Dr. Lin 的建议包括：be aware of your biases, slow down, seek out diverse perspectives, consider the opposite。没有提到 'Always trust your first instinct'，因此选第四项。",
+      "evidence": "First, be aware of your biases. Second, slow down when making important decisions. Third, seek out diverse perspectives. And finally, consider the opposite: ask yourself what evidence would prove you wrong."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is the main purpose of the passage?",
+      "options": [
+        "To explain how heuristics and biases affect everyday decisions and how to improve decision-making",
+        "To argue that scientists never make biased decisions",
+        "To describe the history of decision-making research",
+        "To compare ice cream sales and drowning incidents"
+      ],
+      "answers": [
+        "To explain how heuristics and biases affect everyday decisions and how to improve decision-making"
+      ],
+      "explanation": "文章主要讨论了日常决策中的启发式和偏见，并给出了改进建议，因此选第一项。",
+      "evidence": "全文围绕日常决策中的 heuristics 和 biases 展开，并最后提出改进建议。"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Dr. Lin states that people with training in statistics or critical thinking never make biased decisions.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文说 'people with training in statistics or critical thinking tend to make fewer biased decisions. But no one is completely immune.' 因此 'never' 与原文矛盾，答案为 False。",
+      "evidence": "people with training in statistics or critical thinking tend to make fewer biased decisions. But no one is completely immune."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Dr. Lin mentions that replication is important in science.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文明确说 'That's why replication—repeating studies—is so important.' 因此答案为 True。",
+      "evidence": "That's why replication—repeating studies—is so important."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Dr. Lin provides the exact percentage of decisions that are automatic.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "原文只提到 'most are automatic'，但没有给出具体百分比，因此答案为 Not Given。",
+      "evidence": "原文没有提供自动决策的具体百分比，只说了 'most are automatic'。"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "trivial",
+      "meaning": "不重要的，微不足道的",
+      "example": "These decisions seem trivial, but they add up."
+    },
+    {
+      "word": "heuristics",
+      "meaning": "启发法，经验法则",
+      "example": "People often rely on mental shortcuts, which we call heuristics."
+    },
+    {
+      "word": "bias",
+      "meaning": "偏见，偏差",
+      "example": "Heuristics can lead to systematic errors, which we call biases."
+    },
+    {
+      "word": "confirmation bias",
+      "meaning": "确认偏误",
+      "example": "The 'confirmation bias' is our tendency to search for information that supports our existing beliefs."
+    },
+    {
+      "word": "replication",
+      "meaning": "重复，复现",
+      "example": "Replication—repeating studies—is so important."
+    },
+    {
+      "word": "correlation",
+      "meaning": "相关性",
+      "example": "Observational studies can show correlations, but correlation does not imply causation."
+    },
+    {
+      "word": "causation",
+      "meaning": "因果关系",
+      "example": "To establish causation, we need controlled experiments."
+    },
+    {
+      "word": "immune",
+      "meaning": "不受影响的，免疫的",
+      "example": "No one is completely immune to biases."
+    }
+  ],
+  "grammar": {
+    "title": "间接问句；名词性从句；比较、原因和假设表达综合",
+    "explanation": "本课重点复习间接问句（如 'Could you start by explaining what you mean by...'）、名词性从句（如 'What we find is that...'）、以及比较、原因和假设表达（如 'people with training tend to make fewer biased decisions'、'This is because...'、'If you recently saw a news report...'）。间接问句用陈述语序，名词性从句可作主语、宾语等。",
+    "example": "Could you start by explaining what you mean by 'everyday decisions'?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Can you tell me where is the nearest station?",
+          "Can you tell me where the nearest station is?",
+          "Can you tell me where the nearest station is located at?",
+          "Can you tell me where is located the nearest station?"
+        ],
+        "answers": [
+          "Can you tell me where the nearest station is?"
+        ],
+        "explanation": "间接问句用陈述语序，因此 'where the nearest station is' 正确。",
+        "evidence": "间接问句语序规则。"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "What he said were very important.",
+          "What he said was very important.",
+          "What did he say was very important.",
+          "What he said is very important."
+        ],
+        "answers": [
+          "What he said was very important."
+        ],
+        "explanation": "名词性从句 'What he said' 作主语时，谓语动词通常用单数，且句子为过去时，因此 'was' 正确。",
+        "evidence": "名词性从句作主语，谓语用单数。"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "She is more taller than her sister.",
+          "She is taller than her sister.",
+          "She is tallest than her sister.",
+          "She is more tall than her sister."
+        ],
+        "answers": [
+          "She is taller than her sister."
+        ],
+        "explanation": "比较级用 'taller than'，不能加 more。",
+        "evidence": "比较级规则。"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "If I would have known, I would have told you.",
+          "If I had known, I would have told you.",
+          "If I knew, I would have told you.",
+          "If I have known, I would tell you."
+        ],
+        "answers": [
+          "If I had known, I would have told you."
+        ],
+        "explanation": "与过去事实相反的假设用过去完成时 'had known'，主句用 'would have told'。",
+        "evidence": "虚拟语气规则。"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often make quick decisions or do you prefer to take your time?",
+        "Can you give an example of a time when you used a mental shortcut to decide something?",
+        "Do you think people are generally aware of their biases?",
+        "How do you usually make important decisions in your life?"
+      ],
+      "part2": "Describe a decision you made recently that you think was influenced by a bias. You should say: what the decision was, what bias might have influenced you, why you think that bias played a role, and how you felt about the decision afterwards.",
+      "part3": [
+        "How can education help people make better decisions?",
+        "Do you think artificial intelligence can help reduce human biases in decision-making?",
+        "What are the advantages and disadvantages of relying on heuristics?",
+        "In what ways can scientists ensure that their research is not affected by personal biases?"
+      ]
+    },
+    "writing": "Write an essay of about 250 words on the following topic: Some people believe that making decisions quickly is always better than taking a long time. To what extent do you agree or disagree? Give reasons for your answer and include any relevant examples from your own knowledge or experience."
+  },
+  "rubric": {
+    "taskType": "Reading Comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "978d15986295ff5ffdb214c77191ec3661701b16dfade5b8c32fca85b08fb872"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

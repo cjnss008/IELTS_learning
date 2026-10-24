@@ -1,0 +1,281 @@
+{
+  "id": "w07-read-3",
+  "week": 7,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "地点、方向与正在发生的事",
+  "grammarFocus": "there is / are；地点介词；现在进行时；祈使句入门。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "A New Student at the Library",
+  "instructions": "这是为A1水平学习者设计的原创阅读练习（模拟材料，非官方考试）。请先阅读短文，然后回答问题。所有问题都是单选题或填空题。填空题的答案必须来自原文，且不超过字数限制。",
+  "passage": "This is a small library. There is a big desk near the door. A new student is at the desk. Her name is Lily. She is from China. She is a student. She is not a teacher. There are two books on the desk. One book is red. One book is blue. Lily is reading the red book. A man is behind the desk. He is a librarian. He is not a teacher. He is helping Lily. There is a computer on the desk. The computer is black. There is a chair behind the desk. The chair is brown. Lily is sitting on a chair. The chair is near the desk. There are some pens on the desk. The pens are blue. Lily is happy. She is not sad. The library is quiet. It is not noisy.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Lily is a student. Is she a teacher?",
+      "options": [
+        "Yes, she is a teacher.",
+        "No, she is not a teacher.",
+        "Not given."
+      ],
+      "answers": [
+        "No, she is not a teacher."
+      ],
+      "explanation": "原文明确说“She is not a teacher.”，所以答案是否定的。",
+      "evidence": "She is not a teacher."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Where is the big desk?",
+      "options": [
+        "Near the door.",
+        "Behind the chair.",
+        "On the computer."
+      ],
+      "answers": [
+        "Near the door."
+      ],
+      "explanation": "原文说“There is a big desk near the door.”，所以桌子在门附近。",
+      "evidence": "There is a big desk near the door."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How many books are on the desk?",
+      "options": [
+        "One book.",
+        "Two books.",
+        "Three books."
+      ],
+      "answers": [
+        "Two books."
+      ],
+      "explanation": "原文说“There are two books on the desk.”，所以是两本书。",
+      "evidence": "There are two books on the desk."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is Lily reading?",
+      "options": [
+        "The red book.",
+        "The blue book.",
+        "The black book."
+      ],
+      "answers": [
+        "The red book."
+      ],
+      "explanation": "原文说“Lily is reading the red book.”，所以她在读红色的书。",
+      "evidence": "Lily is reading the red book."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Who is behind the desk?",
+      "options": [
+        "A teacher.",
+        "A librarian.",
+        "A student."
+      ],
+      "answers": [
+        "A librarian."
+      ],
+      "explanation": "原文说“A man is behind the desk. He is a librarian.”，所以桌子后面是图书管理员。",
+      "evidence": "A man is behind the desk. He is a librarian."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What color is the computer?",
+      "options": [
+        "Black.",
+        "Brown.",
+        "Blue."
+      ],
+      "answers": [
+        "Black."
+      ],
+      "explanation": "原文说“The computer is black.”，所以电脑是黑色的。",
+      "evidence": "The computer is black."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Fill in the blank with one word from the passage: The chair is ______.",
+      "maxWords": 1,
+      "answers": [
+        "brown"
+      ],
+      "explanation": "原文说“The chair is brown.”，所以椅子是棕色的。",
+      "evidence": "The chair is brown."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Fill in the blank with one word from the passage: Lily is ______. She is not sad.",
+      "maxWords": 1,
+      "answers": [
+        "happy"
+      ],
+      "explanation": "原文说“Lily is happy. She is not sad.”，所以Lily很开心。",
+      "evidence": "Lily is happy."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "This is a small library."
+    },
+    {
+      "word": "desk",
+      "meaning": "书桌；服务台",
+      "example": "There is a big desk near the door."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "She is a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is not a teacher."
+    },
+    {
+      "word": "book",
+      "meaning": "书",
+      "example": "There are two books on the desk."
+    },
+    {
+      "word": "librarian",
+      "meaning": "图书管理员",
+      "example": "He is a librarian."
+    },
+    {
+      "word": "computer",
+      "meaning": "电脑",
+      "example": "There is a computer on the desk."
+    },
+    {
+      "word": "chair",
+      "meaning": "椅子",
+      "example": "There is a chair behind the desk."
+    }
+  ],
+  "grammar": {
+    "title": "There is / There are; 地点介词; 现在进行时; 祈使句入门",
+    "explanation": "我们用 there is 表示“有一个”，there are 表示“有多个”。地点介词如 near（在附近）、on（在上面）、behind（在后面）告诉我们东西在哪里。现在进行时表示正在做的事，结构是 am/is/are + 动词-ing，例如 is reading（正在读）。祈使句用来发出指令，比如 Sit down.（坐下。）",
+    "example": "There is a big desk near the door. Lily is reading the red book.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "There is two books on the desk.",
+          "There are two books on the desk.",
+          "There are a book on the desk."
+        ],
+        "answers": [
+          "There are two books on the desk."
+        ],
+        "explanation": "two books 是复数，所以用 there are。",
+        "evidence": "There are two books on the desk."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The computer is on the desk.",
+          "The computer is in the desk.",
+          "The computer is at the desk."
+        ],
+        "answers": [
+          "The computer is on the desk."
+        ],
+        "explanation": "原文说电脑在桌子上，用 on the desk。",
+        "evidence": "There is a computer on the desk."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Lily is read the red book.",
+          "Lily is reading the red book.",
+          "Lily reading the red book."
+        ],
+        "answers": [
+          "Lily is reading the red book."
+        ],
+        "explanation": "现在进行时结构是 is + 动词-ing，所以是 is reading。",
+        "evidence": "Lily is reading the red book."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct imperative sentence:",
+        "options": [
+          "Sit down.",
+          "You sit down.",
+          "Sitting down."
+        ],
+        "answers": [
+          "Sit down."
+        ],
+        "explanation": "祈使句以动词原形开头，如 Sit down.。",
+        "evidence": "Sit down."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where are you now?",
+        "Is there a book on your desk?",
+        "What are you doing?",
+        "Is your chair brown?"
+      ],
+      "part2": "Describe a place you know. You should say:",
+      "part2Bullets": [
+        "where it is",
+        "what is there",
+        "what people are doing",
+        "why you like it"
+      ],
+      "part3": [
+        "Is there a library near your home?",
+        "What are you doing now?",
+        "Are there many books in your room?",
+        "Is your teacher a man or a woman?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about your classroom. Use there is / there are, one place preposition (near, on, behind), and one present continuous sentence (is/are + verb-ing)."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (A1) with integrated grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "796b1313c17038a1aede621643b32ecf807e335a3e8e5ff1b69d0b7dd2371432"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

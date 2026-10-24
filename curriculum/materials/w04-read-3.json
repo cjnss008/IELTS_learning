@@ -1,0 +1,279 @@
+{
+  "id": "w04-read-3",
+  "week": 4,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "A New Neighbor at the Door",
+  "instructions": "阅读下面的短文，然后回答问题。这是一个模拟练习，不是官方考试。请仔细阅读短文，并根据短文内容选择或填写答案。",
+  "passage": "A: Hello! I am Lin. I am new here. Are you my neighbor?\nB: Hi, Lin. I am Tom. Yes, I am your neighbor. I am in Room 102.\nA: Are you a teacher?\nB: No, I am not a teacher. I am a student. I am not a doctor.\nA: Who is that man?\nB: He is my father. He is a teacher.\nA: Is he a Chinese teacher?\nB: No, he is not. He is an English teacher.\nA: What is your mother?\nB: She is a nurse. She is not a doctor.\nA: Is she at home now?\nB: No, she is not. She is at work.\nA: Are you from China?\nB: Yes, I am. But my father is from the UK.\nA: Is your mother from the UK, too?\nB: No, she is not. She is from China.\nA: Thank you, Tom.\nB: You are welcome.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is the new person?",
+      "options": [
+        "Lin",
+        "Tom",
+        "Tom's father"
+      ],
+      "answers": [
+        "Lin"
+      ],
+      "explanation": "短文中 Lin 说 'I am Lin. I am new here.'，所以新来的人是 Lin。",
+      "evidence": "I am Lin. I am new here."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is Tom a teacher?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "He is a doctor."
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Tom 说 'No, I am not a teacher. I am a student.'，所以 Tom 不是老师。",
+      "evidence": "No, I am not a teacher. I am a student."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is the man?",
+      "options": [
+        "Tom's father",
+        "Tom's teacher",
+        "Lin's father"
+      ],
+      "answers": [
+        "Tom's father"
+      ],
+      "explanation": "Tom 说 'He is my father.'，所以那个男人是 Tom 的父亲。",
+      "evidence": "He is my father."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is Tom's father a Chinese teacher?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "He is a student."
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Tom 说 'No, he is not. He is an English teacher.'，所以他不是语文老师。",
+      "evidence": "No, he is not. He is an English teacher."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What is Tom's mother? (Fill in the blank with one word.)",
+      "maxWords": 1,
+      "answers": [
+        "nurse"
+      ],
+      "explanation": "Tom 说 'She is a nurse.'，所以他的妈妈是护士。",
+      "evidence": "She is a nurse."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is Tom's mother at home now?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "She is at school."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Tom 说 'No, she is not. She is at work.'，所以他的妈妈现在不在家。",
+      "evidence": "No, she is not. She is at work."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is Tom from China?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "He is from the UK."
+      ],
+      "answers": [
+        "Yes, he is."
+      ],
+      "explanation": "Tom 说 'Yes, I am. But my father is from the UK.'，所以 Tom 来自中国。",
+      "evidence": "Yes, I am. But my father is from the UK."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is Tom's mother from the UK?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "She is from the UK."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Tom 说 'No, she is not. She is from China.'，所以他的妈妈不是来自英国。",
+      "evidence": "No, she is not. She is from China."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "neighbor",
+      "meaning": "邻居",
+      "example": "Are you my neighbor?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am not a teacher."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "father",
+      "meaning": "父亲",
+      "example": "He is my father."
+    },
+    {
+      "word": "mother",
+      "meaning": "母亲",
+      "example": "She is a nurse."
+    },
+    {
+      "word": "nurse",
+      "meaning": "护士",
+      "example": "She is a nurse."
+    },
+    {
+      "word": "doctor",
+      "meaning": "医生",
+      "example": "I am not a doctor."
+    },
+    {
+      "word": "welcome",
+      "meaning": "欢迎",
+      "example": "You are welcome."
+    }
+  ],
+  "grammar": {
+    "title": "be 动词否定句与一般疑问句",
+    "explanation": "在英语中，be 动词（am, is, are）的否定句是在 be 动词后加 not。例如：I am not a teacher. 一般疑问句是把 be 动词放到主语前面。例如：Are you a teacher? 回答时用 Yes, I am. 或 No, I am not.",
+    "example": "Are you a teacher? No, I am not a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "I am not a student.",
+          "I not am a student.",
+          "I am a student not."
+        ],
+        "answers": [
+          "I am not a student."
+        ],
+        "explanation": "否定句在 be 动词后加 not，所以 'I am not a student.' 是正确的。",
+        "evidence": "I am not a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Are you a teacher?",
+          "You are a teacher?",
+          "Do you are a teacher?"
+        ],
+        "answers": [
+          "Are you a teacher?"
+        ],
+        "explanation": "一般疑问句把 be 动词提前，所以 'Are you a teacher?' 是正确的。",
+        "evidence": "Are you a teacher?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct short answer for 'Is he a doctor?' (negative)",
+        "options": [
+          "No, he is not.",
+          "No, he not is.",
+          "No, he isn't not."
+        ],
+        "answers": [
+          "No, he is not."
+        ],
+        "explanation": "否定简短回答用 'No, he is not.'。",
+        "evidence": "No, he is not."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct short answer for 'Are you from China?' (affirmative)",
+        "options": [
+          "Yes, I am.",
+          "Yes, I are.",
+          "Yes, I is."
+        ],
+        "answers": [
+          "Yes, I am."
+        ],
+        "explanation": "肯定简短回答用 'Yes, I am.'。",
+        "evidence": "Yes, I am."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your father a teacher?",
+        "Are you from China?",
+        "Is your mother a nurse?"
+      ],
+      "part2": "Describe a person you know. You should say:",
+      "part3": [
+        "Is your friend a student?",
+        "Who is your favorite teacher?",
+        "Are you at home now?",
+        "Is your neighbor a doctor?"
+      ]
+    },
+    "writing": "Write 5 sentences about your family. Use 'is' and 'are' and negative sentences. Example: My father is a teacher. He is not a doctor."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (A1) with integrated grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "4ce3cc8f7b454d950df4394816948fdd8f94908ce624aa080740bccbfda67a53"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

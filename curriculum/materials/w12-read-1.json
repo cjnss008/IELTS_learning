@@ -1,0 +1,309 @@
+{
+  "id": "w12-read-1",
+  "week": 12,
+  "skill": "reading",
+  "level": "A2",
+  "topic": "旅行经历与基础测评",
+  "grammarFocus": "一般过去时；规则与常用不规则过去式；then / after that / finally。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "A Weekend Trip to Hangzhou",
+  "instructions": "阅读下面的短文，然后回答问题。所有题目均为单选题或填空题。填空题答案必须与原文完全一致，且不超过字数限制。判断题请选择“正确”、“错误”或“未提及”。本材料为模拟练习，不是官方考试。",
+  "passage": "Last Friday, Li Ming and his wife, Wang Fang, took a train to Hangzhou. They left Shanghai at 7:00 a.m. and arrived at 8:30 a.m. The train was fast and clean. After they got off the train, they took a taxi to their hotel. The hotel was near West Lake. They checked in and left their bags in the room. Then they walked to West Lake. The weather was sunny and warm. They walked around the lake for two hours. After that, they had lunch at a small restaurant. They ate fish and rice. The food was delicious. In the afternoon, they visited a tea museum. They learned about Chinese tea. Finally, they went back to the hotel and rested. On Saturday, they rented bikes and rode along the lake. They took many photos. In the evening, they watched a show about the lake. The show was beautiful. On Sunday morning, they bought some tea and silk. Then they took a train back to Shanghai. They arrived home at 6:00 p.m. They were tired but happy. The trip was short but wonderful. They hope to visit Hangzhou again next year. They also want to try the local food next time. They think Hangzhou is a great place for a short holiday. Many people in Shanghai like to go there for the weekend. It is easy to travel by train. The trains are fast and comfortable. Li Ming and Wang Fang enjoyed their trip very much. They told their friends about it. Their friends want to go to Hangzhou too.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "李明和妻子什么时候离开上海？",
+      "options": [
+        "早上7:00",
+        "早上8:30",
+        "下午6:00"
+      ],
+      "answers": [
+        "早上7:00"
+      ],
+      "explanation": "原文说“They left Shanghai at 7:00 a.m.”，所以是早上7:00。",
+      "evidence": "They left Shanghai at 7:00 a.m."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "他们怎么从火车站去酒店？",
+      "options": [
+        "坐出租车",
+        "坐公交车",
+        "走路"
+      ],
+      "answers": [
+        "坐出租车"
+      ],
+      "explanation": "原文说“they took a taxi to their hotel”，所以是坐出租车。",
+      "evidence": "they took a taxi to their hotel"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "他们绕着湖走了多久？",
+      "options": [
+        "两个小时",
+        "一个小时",
+        "三个小时"
+      ],
+      "answers": [
+        "两个小时"
+      ],
+      "explanation": "原文说“They walked around the lake for two hours.”，所以是两个小时。",
+      "evidence": "They walked around the lake for two hours."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "他们在小餐馆吃了什么？",
+      "options": [
+        "鱼和米饭",
+        "面条和鸡蛋",
+        "鸡肉和蔬菜"
+      ],
+      "answers": [
+        "鱼和米饭"
+      ],
+      "explanation": "原文说“They ate fish and rice.”，所以是鱼和米饭。",
+      "evidence": "They ate fish and rice."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "下午他们参观了什么地方？",
+      "options": [
+        "茶叶博物馆",
+        "艺术博物馆",
+        "历史博物馆"
+      ],
+      "answers": [
+        "茶叶博物馆"
+      ],
+      "explanation": "原文说“they visited a tea museum”，所以是茶叶博物馆。",
+      "evidence": "they visited a tea museum"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "星期六晚上他们做了什么？",
+      "options": [
+        "看了一场关于湖的表演",
+        "在酒店休息",
+        "去购物"
+      ],
+      "answers": [
+        "看了一场关于湖的表演"
+      ],
+      "explanation": "原文说“In the evening, they watched a show about the lake.”，所以是看了一场关于湖的表演。",
+      "evidence": "In the evening, they watched a show about the lake."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "星期天早上他们买了什么？",
+      "options": [
+        "茶和丝绸",
+        "茶和衣服",
+        "丝绸和鞋子"
+      ],
+      "answers": [
+        "茶和丝绸"
+      ],
+      "explanation": "原文说“they bought some tea and silk”，所以是茶和丝绸。",
+      "evidence": "they bought some tea and silk"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "他们什么时候回到家？",
+      "options": [
+        "下午6:00",
+        "晚上8:30",
+        "早上7:00"
+      ],
+      "answers": [
+        "下午6:00"
+      ],
+      "explanation": "原文说“They arrived home at 6:00 p.m.”，所以是下午6:00。",
+      "evidence": "They arrived home at 6:00 p.m."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "他们坐火车去杭州。火车既快又______。",
+      "answers": [
+        "clean"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说“The train was fast and clean.”，所以填clean。",
+      "evidence": "The train was fast and clean."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "判断：他们星期六租了自行车。",
+      "options": [
+        "正确",
+        "错误",
+        "未提及"
+      ],
+      "answers": [
+        "正确"
+      ],
+      "explanation": "原文说“On Saturday, they rented bikes”，所以是正确的。",
+      "evidence": "On Saturday, they rented bikes"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "arrive",
+      "meaning": "到达",
+      "example": "They arrived at 8:30 a.m."
+    },
+    {
+      "word": "taxi",
+      "meaning": "出租车",
+      "example": "They took a taxi to their hotel."
+    },
+    {
+      "word": "hotel",
+      "meaning": "酒店",
+      "example": "The hotel was near West Lake."
+    },
+    {
+      "word": "delicious",
+      "meaning": "美味的",
+      "example": "The food was delicious."
+    },
+    {
+      "word": "museum",
+      "meaning": "博物馆",
+      "example": "They visited a tea museum."
+    },
+    {
+      "word": "rent",
+      "meaning": "租用",
+      "example": "They rented bikes."
+    },
+    {
+      "word": "show",
+      "meaning": "表演",
+      "example": "They watched a show about the lake."
+    },
+    {
+      "word": "tired",
+      "meaning": "疲倦的",
+      "example": "They were tired but happy."
+    }
+  ],
+  "grammar": {
+    "title": "一般过去时",
+    "explanation": "一般过去时用来描述过去发生的动作或状态。规则动词的过去式通常在词尾加-ed，例如：walk → walked, visit → visited。不规则动词的过去式需要单独记忆，例如：go → went, take → took, eat → ate, buy → bought。使用then, after that, finally等词可以使叙述更连贯。",
+    "example": "They walked around the lake for two hours. After that, they had lunch at a small restaurant.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的过去式：Yesterday, I ______ to the park.",
+        "options": [
+          "go",
+          "went",
+          "goed"
+        ],
+        "answers": [
+          "went"
+        ],
+        "explanation": "go的过去式是went，是不规则变化。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的过去式：She ______ a book last night.",
+        "options": [
+          "read",
+          "readed",
+          "reads"
+        ],
+        "answers": [
+          "read"
+        ],
+        "explanation": "read的过去式仍是read，但发音为/red/。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的过去式：We ______ dinner at 7:00.",
+        "options": [
+          "have",
+          "had",
+          "haved"
+        ],
+        "answers": [
+          "had"
+        ],
+        "explanation": "have的过去式是had，是不规则变化。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的过去式：They ______ a movie yesterday.",
+        "options": [
+          "see",
+          "saw",
+          "seed"
+        ],
+        "answers": [
+          "saw"
+        ],
+        "explanation": "see的过去式是saw，是不规则变化。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like traveling?",
+        "Where did you go last year?",
+        "How did you travel there?",
+        "What did you do there?"
+      ],
+      "part2": "Describe a short trip you took. You should say: where you went, who you went with, what you did, and how you felt.",
+      "part3": [
+        "Why do people like traveling?",
+        "What are the benefits of traveling?",
+        "Do you prefer traveling alone or with others? Why?",
+        "How has traveling changed in your country?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 50 words) about a trip you took. Use the past tense and the words 'then', 'after that', and 'finally'."
+  },
+  "rubric": {
+    "taskType": "Reading Comprehension (A2)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "0b0be9e5fc171c154cf35f2d03d4ce96dfe0f604d46dbecd8c3129cfe332b30c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

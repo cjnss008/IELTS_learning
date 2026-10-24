@@ -1,0 +1,275 @@
+{
+  "id": "w08-read-4",
+  "week": 8,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "过去、计划与入门复测",
+  "grammarFocus": "was / were；常用过去式入门；be going to；because；基础句型综合复习。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "A Busy Saturday for Li Ming",
+  "instructions": "阅读下面的短文，然后回答问题。所有题目都是单选题或填空题。填空题的答案必须从原文中直接抄写，不要改变单词形式。注意：本材料为模拟教学材料，不是官方考试。",
+  "passage": "Li Ming is a student. He was at the library on Saturday morning. He studied English there for two hours. He was with his friend, Wang Fang. They were quiet. At noon, they were hungry. They went to a small restaurant. Li Ming ate noodles. Wang Fang ate rice. The food was good. In the afternoon, Li Ming was at home. He was tired. He watched TV. He is going to visit his grandmother tomorrow. He is going to take a bus. He is happy because he likes his grandmother. Wang Fang is going to stay home tomorrow. She is going to do her homework. She is not going to watch TV.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "李明星期六上午在哪里？",
+      "options": [
+        "在图书馆",
+        "在学校",
+        "在餐馆"
+      ],
+      "answers": [
+        "在图书馆"
+      ],
+      "explanation": "原文说 'He was at the library on Saturday morning.'，所以选“在图书馆”。",
+      "evidence": "He was at the library on Saturday morning."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "李明在图书馆学习了 ______ 小时。 (请从原文抄写一个单词)",
+      "maxWords": 1,
+      "answers": [
+        "two"
+      ],
+      "explanation": "原文说 'He studied English there for two hours.'，所以填 two。",
+      "evidence": "He studied English there for two hours."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "谁和李明在一起？",
+      "options": [
+        "王芳",
+        "他的奶奶",
+        "他的老师"
+      ],
+      "answers": [
+        "王芳"
+      ],
+      "explanation": "原文说 'He was with his friend, Wang Fang.'，所以选“王芳”。",
+      "evidence": "He was with his friend, Wang Fang."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "中午李明吃了什么？",
+      "options": [
+        "面条",
+        "米饭",
+        "面包"
+      ],
+      "answers": [
+        "面条"
+      ],
+      "explanation": "原文说 'Li Ming ate noodles.'，所以选“面条”。",
+      "evidence": "Li Ming ate noodles."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "下午李明在家感觉怎么样？",
+      "options": [
+        "累",
+        "饿",
+        "高兴"
+      ],
+      "answers": [
+        "累"
+      ],
+      "explanation": "原文说 'He was tired.'，所以选“累”。",
+      "evidence": "He was tired."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "李明明天打算做什么？",
+      "options": [
+        "看望奶奶",
+        "做作业",
+        "看电视"
+      ],
+      "answers": [
+        "看望奶奶"
+      ],
+      "explanation": "原文说 'He is going to visit his grandmother tomorrow.'，所以选“看望奶奶”。",
+      "evidence": "He is going to visit his grandmother tomorrow."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "李明打算乘 ______ 去看望奶奶。 (请从原文抄写一个单词)",
+      "maxWords": 1,
+      "answers": [
+        "bus"
+      ],
+      "explanation": "原文说 'He is going to take a bus.'，所以填 bus。",
+      "evidence": "He is going to take a bus."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "王芳明天打算做什么？",
+      "options": [
+        "做作业",
+        "看电视",
+        "看望奶奶"
+      ],
+      "answers": [
+        "做作业"
+      ],
+      "explanation": "原文说 'She is going to do her homework.'，所以选“做作业”。",
+      "evidence": "She is going to do her homework."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "He was at the library on Saturday morning."
+    },
+    {
+      "word": "studied",
+      "meaning": "学习（study的过去式）",
+      "example": "He studied English there for two hours."
+    },
+    {
+      "word": "quiet",
+      "meaning": "安静的",
+      "example": "They were quiet."
+    },
+    {
+      "word": "hungry",
+      "meaning": "饥饿的",
+      "example": "At noon, they were hungry."
+    },
+    {
+      "word": "restaurant",
+      "meaning": "餐馆",
+      "example": "They went to a small restaurant."
+    },
+    {
+      "word": "tired",
+      "meaning": "疲倦的",
+      "example": "He was tired."
+    },
+    {
+      "word": "visit",
+      "meaning": "拜访",
+      "example": "He is going to visit his grandmother tomorrow."
+    },
+    {
+      "word": "homework",
+      "meaning": "家庭作业",
+      "example": "She is going to do her homework."
+    }
+  ],
+  "grammar": {
+    "title": "过去时 was/were 与 be going to 表计划",
+    "explanation": "我们用 was 和 were 来说过去的事情。I/he/she/it 用 was，you/we/they 用 were。我们用 be going to 来说将来的计划，be 动词要跟主语一致：I am going to, he/she/it is going to, you/we/they are going to。because 用来连接原因。",
+    "example": "He was at the library on Saturday morning. He is going to visit his grandmother tomorrow.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的单词填空：She ______ at home yesterday.",
+        "options": [
+          "was",
+          "were",
+          "is"
+        ],
+        "answers": [
+          "was"
+        ],
+        "explanation": "主语 She 是第三人称单数，过去时用 was。",
+        "evidence": "She was at home yesterday."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的单词填空：They ______ happy last night.",
+        "options": [
+          "was",
+          "were",
+          "are"
+        ],
+        "answers": [
+          "were"
+        ],
+        "explanation": "主语 They 是复数，过去时用 were。",
+        "evidence": "They were happy last night."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的单词填空：I ______ going to buy a book tomorrow.",
+        "options": [
+          "am",
+          "is",
+          "are"
+        ],
+        "answers": [
+          "am"
+        ],
+        "explanation": "主语 I 用 am going to 表示计划。",
+        "evidence": "I am going to buy a book tomorrow."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的单词填空：We are going to stay home ______ it is raining.",
+        "options": [
+          "because",
+          "but",
+          "so"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "because 表示原因，这里“下雨”是待在家里的原因。",
+        "evidence": "We are going to stay home because it is raining."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where were you yesterday?",
+        "What did you do last weekend?",
+        "Are you going to do anything special next week?",
+        "Why do you like or not like weekends?"
+      ],
+      "part2": "Describe a recent Saturday. You should say:",
+      "part3": [
+        "Do you often go to the library? Why or why not?",
+        "What are you going to do tomorrow?",
+        "Do you like to eat at restaurants? Why?",
+        "How do you feel when you visit your family?"
+      ]
+    },
+    "writing": "写一段话（2-8句），描述你上个星期六做了什么，以及下个星期六你打算做什么。用上 was/were 和 be going to。"
+  },
+  "rubric": {
+    "taskType": "reading comprehension (A1)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "ca6ae830dfa9c93ff60d657ec43b0a14f29a853ac193c26e004e8a894e1de5b4"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

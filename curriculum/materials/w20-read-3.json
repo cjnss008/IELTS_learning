@@ -1,0 +1,311 @@
+{
+  "id": "w20-read-3",
+  "week": 20,
+  "skill": "reading",
+  "level": "B1",
+  "topic": "基础综合复测与薄弱项整理",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "The Community Pool Training Plan",
+  "instructions": "阅读下面的短文，回答10个问题。短文和问题都是模拟教学材料，不是官方考试。请根据短文内容选择或填写答案。填空题答案必须来自原文，且不超过字数限制。",
+  "passage": "A\nLast month, the Westside Community Pool started a new training plan for adult swimmers. The plan is for people who can swim but want to swim better. There are three groups: beginners, improvers, and advanced. Each group meets twice a week. The beginners meet on Monday and Wednesday at 7 p.m. The improvers meet on Tuesday and Thursday at 7 p.m. The advanced group meets on Saturday morning at 9 a.m.\n\nB\nMaria is a beginner. She says, \"I can swim, but I am slow. I want to swim faster.\" Her teacher is Tom. Tom is also a swimmer in the advanced group. He says, \"Maria is a good student. She listens carefully and practises a lot.\" Maria asks, \"How long is each lesson?\" Tom answers, \"Each lesson is 45 minutes.\" Maria also asks, \"What do I need to bring?\" Tom says, \"Bring a swimsuit, a towel, and a water bottle.\"\n\nC\nThe pool has a shop. The shop sells swimsuits, towels, and water bottles. The shop is open from 10 a.m. to 6 p.m. every day. The pool also has a small café. The café sells drinks and snacks. Swimmers can buy food after training. The café closes at 8 p.m.\n\nD\nNext month, the pool will start a weekend workshop. The workshop is for people who want to learn about swimming safety. It is on Saturday, from 10 a.m. to 12 p.m. The workshop is free. People can sign up at the front desk. The pool manager says, \"We want more people to swim safely.\"",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "When does the beginners group meet?",
+      "options": [
+        "On Monday and Wednesday at 7 p.m.",
+        "On Tuesday and Thursday at 7 p.m.",
+        "On Saturday morning at 9 a.m."
+      ],
+      "answers": [
+        "On Monday and Wednesday at 7 p.m."
+      ],
+      "explanation": "原文A段明确说“The beginners meet on Monday and Wednesday at 7 p.m.”，所以选第一项。",
+      "evidence": "The beginners meet on Monday and Wednesday at 7 p.m."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How long is each lesson?",
+      "options": [
+        "30 minutes",
+        "45 minutes",
+        "60 minutes"
+      ],
+      "answers": [
+        "45 minutes"
+      ],
+      "explanation": "原文B段Tom回答“Each lesson is 45 minutes.”，所以每节课45分钟。",
+      "evidence": "Each lesson is 45 minutes."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What does Tom say Maria needs to bring? Write one item from the text.",
+      "maxWords": 2,
+      "answers": [
+        "swimsuit",
+        "towel",
+        "water bottle"
+      ],
+      "explanation": "原文B段Tom说“Bring a swimsuit, a towel, and a water bottle.”，所以填其中任意一个物品即可，答案必须来自原文。",
+      "evidence": "Bring a swimsuit, a towel, and a water bottle."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What time does the shop close?",
+      "options": [
+        "At 6 p.m.",
+        "At 8 p.m.",
+        "At 10 a.m."
+      ],
+      "answers": [
+        "At 6 p.m."
+      ],
+      "explanation": "原文C段说“The shop is open from 10 a.m. to 6 p.m. every day.”，所以商店下午6点关门。",
+      "evidence": "The shop is open from 10 a.m. to 6 p.m. every day."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does the café sell?",
+      "options": [
+        "Swimsuits and towels",
+        "Drinks and snacks",
+        "Water bottles and towels"
+      ],
+      "answers": [
+        "Drinks and snacks"
+      ],
+      "explanation": "原文C段说“The café sells drinks and snacks.”，所以咖啡馆卖饮料和零食。",
+      "evidence": "The café sells drinks and snacks."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is the weekend workshop about?",
+      "options": [
+        "Swimming faster",
+        "Swimming safety",
+        "Buying swimsuits"
+      ],
+      "answers": [
+        "Swimming safety"
+      ],
+      "explanation": "原文D段说“The workshop is for people who want to learn about swimming safety.”，所以工作坊是关于游泳安全的。",
+      "evidence": "The workshop is for people who want to learn about swimming safety."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How much does the workshop cost?",
+      "options": [
+        "It is free.",
+        "It costs $10.",
+        "It costs $20."
+      ],
+      "answers": [
+        "It is free."
+      ],
+      "explanation": "原文D段说“The workshop is free.”，所以工作坊是免费的。",
+      "evidence": "The workshop is free."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Where can people sign up for the workshop?",
+      "options": [
+        "At the front desk",
+        "At the café",
+        "At the shop"
+      ],
+      "answers": [
+        "At the front desk"
+      ],
+      "explanation": "原文D段说“People can sign up at the front desk.”，所以在前台报名。",
+      "evidence": "People can sign up at the front desk."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Tom is a teacher and also a swimmer in the advanced group.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文B段说“Her teacher is Tom. Tom is also a swimmer in the advanced group.”，明确说明Tom既是老师又是高级组的游泳者，所以是True。",
+      "evidence": "Her teacher is Tom. Tom is also a swimmer in the advanced group."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The café is open on Sunday.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "原文只提到咖啡馆的关门时间（“The café closes at 8 p.m.”），但没有说明周日是否开门，所以是Not Given。",
+      "evidence": "The café closes at 8 p.m."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "training",
+      "meaning": "训练",
+      "example": "The Westside Community Pool started a new training plan."
+    },
+    {
+      "word": "beginner",
+      "meaning": "初学者",
+      "example": "Maria is a beginner."
+    },
+    {
+      "word": "improver",
+      "meaning": "提高者（中级学习者）",
+      "example": "The improvers meet on Tuesday and Thursday."
+    },
+    {
+      "word": "advanced",
+      "meaning": "高级的",
+      "example": "The advanced group meets on Saturday morning."
+    },
+    {
+      "word": "practise",
+      "meaning": "练习",
+      "example": "She listens carefully and practises a lot."
+    },
+    {
+      "word": "swimsuit",
+      "meaning": "泳衣",
+      "example": "Bring a swimsuit, a towel, and a water bottle."
+    },
+    {
+      "word": "towel",
+      "meaning": "毛巾",
+      "example": "Bring a swimsuit, a towel, and a water bottle."
+    },
+    {
+      "word": "workshop",
+      "meaning": "工作坊，研讨会",
+      "example": "Next month, the pool will start a weekend workshop."
+    }
+  ],
+  "grammar": {
+    "title": "基础时态、问句、名词数量和常见从句综合复习",
+    "explanation": "英语中，一般现在时表示经常发生的事或事实，一般过去时表示过去发生的事，一般将来时表示将来会发生的事。问句常以疑问词开头，如what, when, how long等。名词有可数和不可数之分，可数名词有单复数变化。从句可以用来提供更多信息，如宾语从句（I know that...）和定语从句（people who...）。",
+    "example": "The workshop is for people who want to learn about swimming safety.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She swims every day.",
+          "She swim every day.",
+          "She swimming every day."
+        ],
+        "answers": [
+          "She swims every day."
+        ],
+        "explanation": "主语She是第三人称单数，一般现在时动词要加-s，所以选“She swims every day.”。",
+        "evidence": "She listens carefully and practises a lot."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "How long is each lesson?",
+          "How long each lesson is?",
+          "How long does each lesson?"
+        ],
+        "answers": [
+          "How long is each lesson?"
+        ],
+        "explanation": "特殊疑问句的结构是“疑问词 + be动词 + 主语”，所以选“How long is each lesson?”。",
+        "evidence": "How long is each lesson?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct plural form.",
+        "options": [
+          "three towels",
+          "three towel",
+          "three toweles"
+        ],
+        "answers": [
+          "three towels"
+        ],
+        "explanation": "towel是可数名词，复数形式是towels，所以选“three towels”。",
+        "evidence": "Bring a swimsuit, a towel, and a water bottle."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a clause.",
+        "options": [
+          "I know that he is a teacher.",
+          "I know that is he a teacher.",
+          "I know what he is a teacher."
+        ],
+        "answers": [
+          "I know that he is a teacher."
+        ],
+        "explanation": "宾语从句用that引导时，后面跟陈述句语序，所以选“I know that he is a teacher.”。",
+        "evidence": "Tom says, \"Maria is a good student.\""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like swimming?",
+        "How often do you exercise?",
+        "What do you usually do at the weekend?",
+        "Do you prefer to exercise alone or with friends?"
+      ],
+      "part2": "Describe a place where you like to exercise. You should say: where it is; what you do there; who you go with; and explain why you like it.",
+      "part3": [
+        "Why do some people not like exercise?",
+        "What can governments do to help people exercise more?",
+        "Is it better to exercise indoors or outdoors?",
+        "How can schools encourage children to be active?"
+      ]
+    },
+    "writing": "Write an email (about 100 words) to a friend inviting them to join a swimming class with you. Include the day, time, and what to bring."
+  },
+  "rubric": {
+    "taskType": "reading comprehension (single-choice, fill-in, true/false/not given)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "51c8382c88769418cc32cb25833301f1c8147dc3338a231bdef28339ac023ee7"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

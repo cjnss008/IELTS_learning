@@ -1,0 +1,275 @@
+{
+  "id": "w02-read-6",
+  "week": 2,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My Desk",
+  "instructions": "请阅读下面的短文，然后回答问题。所有题目都是单选题或填空题。填空题的答案必须来自原文，且不超过规定的词数。本材料为模拟教学材料，不是官方考试。",
+  "passage": "A\nThis is my desk. It is small. It is brown.\n\nB\nThis is a lamp. It is on the desk. That is a cup. It is white. That is a pen. It is blue.\n\nC\nThis is my friend. She is a teacher. She is kind. That is her bag. It is red.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What color is the desk?",
+      "options": [
+        "Brown",
+        "White",
+        "Blue"
+      ],
+      "answers": [
+        "Brown"
+      ],
+      "explanation": "原文说“It is brown.”，所以桌子是棕色的。",
+      "evidence": "It is brown."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Where is the lamp?",
+      "options": [
+        "On the desk",
+        "In the bag",
+        "Under the cup"
+      ],
+      "answers": [
+        "On the desk"
+      ],
+      "explanation": "原文说“It is on the desk.”，所以台灯在桌子上。",
+      "evidence": "It is on the desk."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What color is the cup?",
+      "options": [
+        "White",
+        "Brown",
+        "Red"
+      ],
+      "answers": [
+        "White"
+      ],
+      "explanation": "原文说“It is white.”，所以杯子是白色的。",
+      "evidence": "It is white."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What color is the pen?",
+      "options": [
+        "Blue",
+        "White",
+        "Brown"
+      ],
+      "answers": [
+        "Blue"
+      ],
+      "explanation": "原文说“It is blue.”，所以钢笔是蓝色的。",
+      "evidence": "It is blue."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is the friend's job?",
+      "options": [
+        "A teacher",
+        "A student",
+        "A doctor"
+      ],
+      "answers": [
+        "A teacher"
+      ],
+      "explanation": "原文说“She is a teacher.”，所以朋友是老师。",
+      "evidence": "She is a teacher."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How is the friend?",
+      "options": [
+        "Kind",
+        "Small",
+        "Red"
+      ],
+      "answers": [
+        "Kind"
+      ],
+      "explanation": "原文说“She is kind.”，所以朋友很友善。",
+      "evidence": "She is kind."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What color is the bag? 请用原文中的一个词填空。",
+      "maxWords": 1,
+      "answers": [
+        "red"
+      ],
+      "explanation": "原文说“It is red.”，所以包是红色的。",
+      "evidence": "It is red."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What is small? 请用原文中的一个词填空。",
+      "maxWords": 1,
+      "answers": [
+        "desk"
+      ],
+      "explanation": "原文说“It is small.”，这里的it指代桌子，所以桌子是小的。",
+      "evidence": "It is small."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "desk",
+      "meaning": "书桌",
+      "example": "This is my desk."
+    },
+    {
+      "word": "small",
+      "meaning": "小的",
+      "example": "It is small."
+    },
+    {
+      "word": "brown",
+      "meaning": "棕色的",
+      "example": "It is brown."
+    },
+    {
+      "word": "lamp",
+      "meaning": "台灯",
+      "example": "This is a lamp."
+    },
+    {
+      "word": "cup",
+      "meaning": "杯子",
+      "example": "That is a cup."
+    },
+    {
+      "word": "pen",
+      "meaning": "钢笔",
+      "example": "That is a pen."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is a teacher."
+    },
+    {
+      "word": "kind",
+      "meaning": "友善的",
+      "example": "She is kind."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；单数名词；this / that",
+    "explanation": "英语中，单数名词前常用a或an（元音音素前用an）。this指近处的人或物，that指远处的人或物。he指男性，she指女性，it指事物。is是be动词，用于单数主语。",
+    "example": "She is a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "___ is a boy.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "He"
+        ],
+        "explanation": "boy是男孩，用he指代。",
+        "evidence": "She is a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "This is ___ apple.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple以元音音素开头，用an。",
+        "evidence": "This is a lamp."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "___ is a cat.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "cat是动物，用it指代。",
+        "evidence": "It is small."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "___ is my book.",
+        "options": [
+          "This",
+          "These",
+          "Those"
+        ],
+        "answers": [
+          "This"
+        ],
+        "explanation": "book是单数，this指近处的单数名词。",
+        "evidence": "This is my desk."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is on your desk?",
+        "Is your bag big or small?",
+        "What color is your pen?",
+        "Who is your friend?"
+      ],
+      "part2": "Describe a thing on your desk. You should say: what it is, what color it is, where it is, and why you like it.",
+      "part3": [
+        "Do you have a lamp on your desk?",
+        "Is your desk brown?",
+        "What is in your bag?",
+        "Is your friend a teacher?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about your desk. Use this, that, he, she, it, is, a, an."
+  },
+  "rubric": {
+    "taskType": "A0 reading comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "9d6fcbce12d890ca9a203fb8dde7601f70e6ac71bbd8367bb224807a88ec277c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,275 @@
+{
+  "id": "w04-read-5",
+  "week": 4,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "A New Neighbor's Simple Questions",
+  "instructions": "阅读下面的短文，然后回答问题。所有题目都是单选题或填空题。填空题答案必须来自原文，且不超过字数限制。本材料为模拟练习，不是官方考试。",
+  "passage": "A: Hello! Are you a new student?\nB: Yes, I am. My name is Li Ming.\nA: I am Anna. Are you from China?\nB: No, I am not. I am from Singapore.\nA: Is your teacher Mr. Brown?\nB: No, he is not. My teacher is Ms. Green.\nA: Who is she?\nB: She is a nice teacher. She is not old.\nA: What is your favorite subject?\nB: It is English. I am not good at math.\nA: Are you in Class 2?\nB: Yes, I am. We are in the same class!\nA: Great! Are you free now?\nB: No, I am not. I am busy. Goodbye!\nA: Goodbye!",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Li Ming 是新生吗？",
+      "options": [
+        "是的，他是。",
+        "不，他不是。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "是的，他是。"
+      ],
+      "explanation": "原文中 A 问 'Are you a new student?'，B 回答 'Yes, I am.'，所以 Li Ming 是新生。",
+      "evidence": "Yes, I am."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Li Ming 来自中国吗？",
+      "options": [
+        "是的，他来自中国。",
+        "不，他不是来自中国。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "不，他不是来自中国。"
+      ],
+      "explanation": "原文中 A 问 'Are you from China?'，B 回答 'No, I am not. I am from Singapore.'，所以 Li Ming 不是来自中国。",
+      "evidence": "No, I am not. I am from Singapore."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Li Ming 的老师是谁？请用原文中的名字填空。",
+      "maxWords": 2,
+      "answers": [
+        "Ms. Green"
+      ],
+      "explanation": "原文中 B 说 'My teacher is Ms. Green.'，所以老师是 Ms. Green。",
+      "evidence": "My teacher is Ms. Green."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Ms. Green 是一位好老师吗？",
+      "options": [
+        "是的，她是一位好老师。",
+        "不，她不是一位好老师。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "是的，她是一位好老师。"
+      ],
+      "explanation": "原文中 B 说 'She is a nice teacher.'，nice 意思是好的，所以 Ms. Green 是一位好老师。",
+      "evidence": "She is a nice teacher."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Li Ming 最喜欢的科目是什么？",
+      "options": [
+        "英语",
+        "数学",
+        "科学"
+      ],
+      "answers": [
+        "英语"
+      ],
+      "explanation": "原文中 A 问 'What is your favorite subject?'，B 回答 'It is English.'，所以最喜欢的科目是英语。",
+      "evidence": "It is English."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Li Ming 擅长数学吗？",
+      "options": [
+        "是的，他擅长数学。",
+        "不，他不擅长数学。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "不，他不擅长数学。"
+      ],
+      "explanation": "原文中 B 说 'I am not good at math.'，意思是他不擅长数学。",
+      "evidence": "I am not good at math."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Li Ming 在二班吗？",
+      "options": [
+        "是的，他在二班。",
+        "不，他不在二班。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "是的，他在二班。"
+      ],
+      "explanation": "原文中 A 问 'Are you in Class 2?'，B 回答 'Yes, I am.'，所以 Li Ming 在二班。",
+      "evidence": "Yes, I am."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Li Ming 现在有空吗？",
+      "options": [
+        "是的，他有空。",
+        "不，他没空。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "不，他没空。"
+      ],
+      "explanation": "原文中 A 问 'Are you free now?'，B 回答 'No, I am not. I am busy.'，所以 Li Ming 现在没空。",
+      "evidence": "No, I am not. I am busy."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a new student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "My teacher is Ms. Green."
+    },
+    {
+      "word": "favorite",
+      "meaning": "最喜欢的",
+      "example": "What is your favorite subject?"
+    },
+    {
+      "word": "subject",
+      "meaning": "科目",
+      "example": "What is your favorite subject?"
+    },
+    {
+      "word": "math",
+      "meaning": "数学",
+      "example": "I am not good at math."
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "Are you in Class 2?"
+    },
+    {
+      "word": "free",
+      "meaning": "有空的",
+      "example": "Are you free now?"
+    },
+    {
+      "word": "busy",
+      "meaning": "忙碌的",
+      "example": "I am busy."
+    }
+  ],
+  "grammar": {
+    "title": "be 动词否定句与一般疑问句",
+    "explanation": "英语中，be 动词（am, is, are）的否定句是在 be 动词后加 not。例如：I am not busy. 一般疑问句是把 be 动词放到主语前面。例如：Are you free? 回答用 Yes, I am. 或 No, I am not.",
+    "example": "Are you free now? No, I am not.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：",
+        "options": [
+          "I am not happy.",
+          "I not am happy.",
+          "I am happy not."
+        ],
+        "answers": [
+          "I am not happy."
+        ],
+        "explanation": "否定句在 be 动词后加 not，所以是 I am not happy.",
+        "evidence": "I am not happy."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的一般疑问句：",
+        "options": [
+          "Are you a teacher?",
+          "You are a teacher?",
+          "Are a teacher you?"
+        ],
+        "answers": [
+          "Are you a teacher?"
+        ],
+        "explanation": "一般疑问句把 be 动词放在主语前，所以是 Are you a teacher?",
+        "evidence": "Are you a teacher?"
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "用 am, is, are 填空：She ___ a nice teacher.",
+        "maxWords": 1,
+        "answers": [
+          "is"
+        ],
+        "explanation": "主语 She 是第三人称单数，be 动词用 is。",
+        "evidence": "She is a nice teacher."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的简短回答（否定）：",
+        "options": [
+          "No, I am not.",
+          "No, I not.",
+          "No, am I not."
+        ],
+        "answers": [
+          "No, I am not."
+        ],
+        "explanation": "否定简短回答用 No, I am not.",
+        "evidence": "No, I am not."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Are you from China?",
+        "Is your teacher nice?",
+        "Are you busy now?"
+      ],
+      "part2": "Describe a new friend. You should say:",
+      "part3": [
+        "Is your friend a student?",
+        "Who is your favorite teacher?",
+        "What is your favorite subject?",
+        "Are you good at math?"
+      ]
+    },
+    "writing": "Write 2-8 simple sentences about yourself. Use 'I am', 'I am not', 'Are you...?' and answer. Example: I am a student. I am not a teacher. Are you a student? Yes, I am."
+  },
+  "rubric": {
+    "taskType": "reading comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "d236f618772bfc17f6e0f5878283e3a16c1afbb81f8c6d0b4cf582339e3f2a7a"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,279 @@
+{
+  "id": "w01-listen-2",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 2,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0初学者设计的听力练习。请先听录音（或阅读录音文字），然后回答问题。所有题目都是单选题或填空题。填空题答案必须来自原文，且不超过规定字数。注意：本材料为模拟教学材料，不是官方考试。",
+  "passage": "",
+  "transcript": "A: Hello. I am Li. Are you a student?\nB: Yes, I am. I am Wang. You are a student too?\nA: Yes, I am. You are in Class One?\nB: No, I am not. I am in Class Two. You?\nA: I am in Class One. You are a teacher?\nB: No, I am a student. I am not a teacher.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "A的名字是什么？",
+      "options": [
+        "Li",
+        "Wang",
+        "Class One",
+        "Class Two"
+      ],
+      "answers": [
+        "Li"
+      ],
+      "explanation": "A说：'I am Li.' 所以A的名字是Li。",
+      "evidence": "I am Li."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "B是学生吗？",
+      "options": [
+        "是",
+        "不是",
+        "不知道"
+      ],
+      "answers": [
+        "是"
+      ],
+      "explanation": "B说：'Yes, I am. I am Wang.' 所以B是学生。",
+      "evidence": "Yes, I am. I am Wang."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "B在几班？",
+      "options": [
+        "一班",
+        "二班",
+        "三班",
+        "不知道"
+      ],
+      "answers": [
+        "二班"
+      ],
+      "explanation": "B说：'I am in Class Two.' 所以B在二班。",
+      "evidence": "I am in Class Two."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "A在几班？",
+      "options": [
+        "一班",
+        "二班",
+        "三班",
+        "不知道"
+      ],
+      "answers": [
+        "一班"
+      ],
+      "explanation": "A说：'I am in Class One.' 所以A在一班。",
+      "evidence": "I am in Class One."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "B是老师吗？",
+      "options": [
+        "是",
+        "不是",
+        "不知道"
+      ],
+      "answers": [
+        "不是"
+      ],
+      "explanation": "B说：'No, I am a student. I am not a teacher.' 所以B不是老师。",
+      "evidence": "No, I am a student. I am not a teacher."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "A说：'I am ____.'（填一个单词）",
+      "maxWords": 1,
+      "answers": [
+        "Li"
+      ],
+      "explanation": "A说：'I am Li.' 所以填Li。",
+      "evidence": "I am Li."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "B说：'I am in ____ ____.'（填两个单词）",
+      "maxWords": 2,
+      "answers": [
+        "Class Two"
+      ],
+      "explanation": "B说：'I am in Class Two.' 所以填Class Two。",
+      "evidence": "I am in Class Two."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "A说：'I am in ____ ____.'（填两个单词）",
+      "maxWords": 2,
+      "answers": [
+        "Class One"
+      ],
+      "explanation": "A说：'I am in Class One.' 所以填Class One。",
+      "evidence": "I am in Class One."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "You are a teacher?"
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "I am in Class One."
+    },
+    {
+      "word": "one",
+      "meaning": "一",
+      "example": "I am in Class One."
+    },
+    {
+      "word": "two",
+      "meaning": "二",
+      "example": "I am in Class Two."
+    },
+    {
+      "word": "yes",
+      "meaning": "是",
+      "example": "Yes, I am."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，'I' 表示“我”，'you' 表示“你”。'I' 后面用 'am'，'you' 后面用 'are'。例如：'I am Li.'（我是李。）'You are a student.'（你是学生。）句首字母要大写，句末用句号。",
+    "example": "I am Li. You are a student.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的单词填空：____ am a student.",
+        "options": [
+          "I",
+          "You",
+          "He",
+          "She"
+        ],
+        "answers": [
+          "I"
+        ],
+        "explanation": "主语是“我”，用'I'。'I' 后面用 'am'。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的单词填空：You ____ a teacher.",
+        "options": [
+          "am",
+          "are",
+          "is",
+          "be"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是'you'，be动词用'are'。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "i am li.",
+          "I am Li.",
+          "I am li.",
+          "i am Li."
+        ],
+        "answers": [
+          "I am Li."
+        ],
+        "explanation": "句首字母'I'要大写，名字'Li'首字母也要大写，句末用句号。",
+        "evidence": "I am Li."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的单词填空：____ are in Class One.",
+        "options": [
+          "I",
+          "You",
+          "He",
+          "She"
+        ],
+        "answers": [
+          "You"
+        ],
+        "explanation": "主语是“你”，用'you'。'you' 后面用 'are'。",
+        "evidence": "You are in Class One."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you in Class One?",
+        "Are you a teacher?"
+      ],
+      "part2": "Describe yourself. You should say:\n- Your name\n- If you are a student\n- Your class\n- If you are a teacher",
+      "part3": [
+        "Is it important to say your name?",
+        "Are you a student or a teacher?",
+        "Are you in Class One or Class Two?",
+        "Do you like your class?"
+      ]
+    },
+    "writing": "Write 2-4 sentences about yourself. Use 'I am...' and 'You are...'. Example: I am Li. I am a student. You are a teacher."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "ef880cee91480ea3f719dd2e8755fc4aff8ebfa3574ff5261e967b10205d7165"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

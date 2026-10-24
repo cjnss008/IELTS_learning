@@ -1,0 +1,275 @@
+{
+  "id": "w02-read-5",
+  "week": 2,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My Desk",
+  "instructions": "阅读短文，然后回答问题。所有题目均为单选题或填空题。填空题答案必须与原文完全一致，且不超过规定字数。本材料为模拟教学材料，不是官方雅思考试。",
+  "passage": "A. This is my desk. It is a small desk. This is a book. It is a red book. That is a bag. It is a blue bag.\n\nB. This is a pen. It is a black pen. That is a ruler. It is a long ruler. This is a cup. It is a white cup.\n\nC. That is a clock. It is a big clock. This is a lamp. It is a yellow lamp. My desk is nice.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What color is the book?",
+      "options": [
+        "Red",
+        "Blue",
+        "Black"
+      ],
+      "answers": [
+        "Red"
+      ],
+      "explanation": "原文说“It is a red book.”，所以书是红色的。",
+      "evidence": "It is a red book."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What color is the bag?",
+      "options": [
+        "Red",
+        "Blue",
+        "White"
+      ],
+      "answers": [
+        "Blue"
+      ],
+      "explanation": "原文说“It is a blue bag.”，所以包是蓝色的。",
+      "evidence": "It is a blue bag."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What color is the pen?",
+      "options": [
+        "Black",
+        "Red",
+        "Yellow"
+      ],
+      "answers": [
+        "Black"
+      ],
+      "explanation": "原文说“It is a black pen.”，所以钢笔是黑色的。",
+      "evidence": "It is a black pen."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is the ruler long?",
+      "options": [
+        "Yes, it is.",
+        "No, it is not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, it is."
+      ],
+      "explanation": "原文说“It is a long ruler.”，所以尺子是长的。",
+      "evidence": "It is a long ruler."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What color is the cup?",
+      "options": [
+        "White",
+        "Blue",
+        "Black"
+      ],
+      "answers": [
+        "White"
+      ],
+      "explanation": "原文说“It is a white cup.”，所以杯子是白色的。",
+      "evidence": "It is a white cup."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is the clock big?",
+      "options": [
+        "Yes, it is.",
+        "No, it is not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, it is."
+      ],
+      "explanation": "原文说“It is a big clock.”，所以钟是大的。",
+      "evidence": "It is a big clock."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "The lamp is ______. (用原文中的颜色词填空)",
+      "answers": [
+        "yellow"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说“It is a yellow lamp.”，所以灯是黄色的。",
+      "evidence": "It is a yellow lamp."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "The desk is ______. (用原文中的形容词填空)",
+      "answers": [
+        "nice"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说“My desk is nice.”，所以书桌是好的。",
+      "evidence": "My desk is nice."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "desk",
+      "meaning": "书桌",
+      "example": "This is my desk."
+    },
+    {
+      "word": "book",
+      "meaning": "书",
+      "example": "This is a book."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "That is a bag."
+    },
+    {
+      "word": "pen",
+      "meaning": "钢笔",
+      "example": "This is a pen."
+    },
+    {
+      "word": "ruler",
+      "meaning": "尺子",
+      "example": "That is a ruler."
+    },
+    {
+      "word": "cup",
+      "meaning": "杯子",
+      "example": "This is a cup."
+    },
+    {
+      "word": "clock",
+      "meaning": "钟",
+      "example": "That is a clock."
+    },
+    {
+      "word": "lamp",
+      "meaning": "台灯",
+      "example": "This is a lamp."
+    }
+  ],
+  "grammar": {
+    "title": "This is / That is; It is",
+    "explanation": "用“This is”介绍近处的东西，用“That is”介绍远处的东西。用“It is”来指代一个物品。例如：This is a book. That is a bag. It is a red book.",
+    "example": "This is a book. It is a red book.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "______ is a pen. (近处)",
+        "options": [
+          "This",
+          "That",
+          "It"
+        ],
+        "answers": [
+          "This"
+        ],
+        "explanation": "介绍近处的东西用“This”。",
+        "evidence": "This is a pen."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "______ is a bag. (远处)",
+        "options": [
+          "This",
+          "That",
+          "It"
+        ],
+        "answers": [
+          "That"
+        ],
+        "explanation": "介绍远处的东西用“That”。",
+        "evidence": "That is a bag."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "This is ______ cup.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "a"
+        ],
+        "explanation": "cup 以辅音音素开头，用“a”。",
+        "evidence": "This is a cup."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "It ______ a clock.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "主语是 it，be 动词用 is。",
+        "evidence": "It is a clock."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is this? (point to a book)",
+        "What is that? (point to a bag)",
+        "Is this a pen?",
+        "Is that a ruler?"
+      ],
+      "part2": "Describe your desk. You should say:\n- what is on your desk\n- what color it is\n- if it is big or small\n- and explain why you like it.",
+      "part3": [
+        "What is on your desk?",
+        "Is your desk big or small?",
+        "What color is your bag?",
+        "Do you have a clock?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about your desk. Use “This is”, “That is”, and “It is”. Example: This is my desk. It is small."
+  },
+  "rubric": {
+    "taskType": "Reading Comprehension (A0)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "e797c2dd26a72ded118dbef88e5b7d4753d01f37b1d82fd582ad8a9759c62af0"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

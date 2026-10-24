@@ -1,0 +1,316 @@
+{
+  "id": "w32-listen-4",
+  "week": 32,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "数据理解与阶段复测",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。",
+  "pool": "training",
+  "type": "lecture",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 4,
+  "title": "Data Dialogue: Comparing Survey Results",
+  "instructions": "本材料为模拟练习，非官方雅思试题。听录音前先阅读题目，听第一遍时抓住大意，听第二遍时注意细节。所有答案必须来自录音原文。",
+  "passage": "",
+  "transcript": "M: Hi Lina, thanks for coming in. We need to finalize the report on the customer satisfaction survey. Did you compare the results from this quarter with the previous one?\nW: Yes, I did. The overall satisfaction score is 4.2 out of 5 this quarter, compared to 3.8 last quarter. That's a significant increase.\nM: Good. And how about the number of respondents? Was it larger than last time?\nW: Actually, it was slightly smaller. We had 480 respondents this quarter, whereas last quarter we had 520. So, fewer people took part, but the satisfaction was higher.\nM: Interesting. What about the age groups? Did younger customers respond differently?\nW: Yes, they did. The 18-30 age group gave an average score of 4.5, which is higher than the overall average. The 31-45 group gave 4.0, and the 46+ group gave 3.9. So, the younger the customers, the more satisfied they seem to be.\nM: That's a clear trend. Now, regarding the product features, which aspect received the highest rating?\nW: The ease of use got the top rating, with an average of 4.7. The next highest was customer support at 4.3. The lowest was price, at 3.5.\nM: So, price is still a concern. Did we ask about the likelihood of recommending our product?\nW: Yes, we did. The Net Promoter Score, or NPS, was 32 this quarter, up from 25 last quarter. That's a good improvement.\nM: Definitely. Now, for the report, we need to highlight the key findings. Can you summarize the main points?\nW: Sure. Satisfaction increased, especially among younger customers. Ease of use is our strongest feature, while price remains the weakest. And more people are willing to recommend us.\nM: Perfect. Let's also note that the sample size was smaller this quarter, so we should be cautious about generalizing.\nW: Agreed. I'll add a note about that in the limitations section.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the overall satisfaction score this quarter?",
+      "options": [
+        "3.8",
+        "4.2",
+        "4.5",
+        "3.5"
+      ],
+      "answers": [
+        "4.2"
+      ],
+      "explanation": "录音中女士明确说：“The overall satisfaction score is 4.2 out of 5 this quarter”。",
+      "evidence": "The overall satisfaction score is 4.2 out of 5 this quarter"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many respondents were there this quarter?",
+      "options": [
+        "520",
+        "480",
+        "500",
+        "450"
+      ],
+      "answers": [
+        "480"
+      ],
+      "explanation": "女士说：“We had 480 respondents this quarter”。",
+      "evidence": "We had 480 respondents this quarter"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which age group gave the highest average score?",
+      "options": [
+        "18-30",
+        "31-45",
+        "46+",
+        "All groups gave the same"
+      ],
+      "answers": [
+        "18-30"
+      ],
+      "explanation": "女士提到：“The 18-30 age group gave an average score of 4.5, which is higher than the overall average.”",
+      "evidence": "The 18-30 age group gave an average score of 4.5"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What was the rating for ease of use?",
+      "options": [
+        "4.3",
+        "4.7",
+        "3.5",
+        "4.0"
+      ],
+      "answers": [
+        "4.7"
+      ],
+      "explanation": "女士说：“The ease of use got the top rating, with an average of 4.7.”",
+      "evidence": "The ease of use got the top rating, with an average of 4.7"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What was the Net Promoter Score (NPS) this quarter?",
+      "options": [
+        "25",
+        "32",
+        "30",
+        "35"
+      ],
+      "answers": [
+        "32"
+      ],
+      "explanation": "女士说：“The Net Promoter Score, or NPS, was 32 this quarter”。",
+      "evidence": "The Net Promoter Score, or NPS, was 32 this quarter"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which aspect received the lowest rating?",
+      "options": [
+        "Ease of use",
+        "Customer support",
+        "Price",
+        "Recommendation"
+      ],
+      "answers": [
+        "Price"
+      ],
+      "explanation": "女士说：“The lowest was price, at 3.5.”",
+      "evidence": "The lowest was price, at 3.5"
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "The number of respondents this quarter was ______ than last quarter. (Use one word)",
+      "maxWords": 1,
+      "answers": [
+        "smaller"
+      ],
+      "explanation": "女士说：“it was slightly smaller. We had 480 respondents this quarter, whereas last quarter we had 520.”",
+      "evidence": "it was slightly smaller"
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "The NPS increased from 25 to ______ this quarter. (Use one number)",
+      "maxWords": 1,
+      "answers": [
+        "32"
+      ],
+      "explanation": "女士说：“The Net Promoter Score, or NPS, was 32 this quarter, up from 25 last quarter.”",
+      "evidence": "was 32 this quarter, up from 25 last quarter"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The report will include a note about the smaller sample size.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "男士说：“Let's also note that the sample size was smaller this quarter”，女士同意并说会加注。",
+      "evidence": "Let's also note that the sample size was smaller this quarter"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The 46+ age group gave a higher average score than the 31-45 group.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "女士说：“The 31-45 group gave 4.0, and the 46+ group gave 3.9.” 因此46+组分数更低。",
+      "evidence": "The 31-45 group gave 4.0, and the 46+ group gave 3.9"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "respondent",
+      "meaning": "回答问卷的人",
+      "example": "We had 480 respondents this quarter."
+    },
+    {
+      "word": "satisfaction",
+      "meaning": "满意度",
+      "example": "The overall satisfaction score is 4.2 out of 5 this quarter."
+    },
+    {
+      "word": "significant",
+      "meaning": "显著的",
+      "example": "That's a significant increase."
+    },
+    {
+      "word": "trend",
+      "meaning": "趋势",
+      "example": "That's a clear trend."
+    },
+    {
+      "word": "feature",
+      "meaning": "特点，功能",
+      "example": "Ease of use is our strongest feature."
+    },
+    {
+      "word": "recommend",
+      "meaning": "推荐",
+      "example": "More people are willing to recommend us."
+    },
+    {
+      "word": "generalize",
+      "meaning": "概括，推广",
+      "example": "We should be cautious about generalizing."
+    },
+    {
+      "word": "limitation",
+      "meaning": "局限性",
+      "example": "I'll add a note about that in the limitations section."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本部分复习比较结构（如higher than, the more...the more）、数量表达（如fewer, smaller, increase from...to...）以及指代（如they指代customers）。同时注意冠词（a/an/the）和主谓一致（如the number of respondents was...）。",
+    "example": "The 18-30 age group gave an average score of 4.5, which is higher than the overall average.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The number of respondents were smaller this quarter.",
+          "The number of respondents was smaller this quarter.",
+          "A number of respondents was smaller this quarter.",
+          "The number of respondents are smaller this quarter."
+        ],
+        "answers": [
+          "The number of respondents was smaller this quarter."
+        ],
+        "explanation": "“the number of”作主语时谓语用单数，且描述过去应用was。",
+        "evidence": "The number of respondents was smaller this quarter."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The more younger customers are, the more satisfied they seem to be.",
+          "The younger customers are, the more satisfied they seem to be.",
+          "The younger the customers, the more satisfied they seem to be.",
+          "Younger customers are more satisfied than they seem to be."
+        ],
+        "answers": [
+          "The younger the customers, the more satisfied they seem to be."
+        ],
+        "explanation": "“the + 比较级，the + 比较级”表示“越……越……”。",
+        "evidence": "the younger the customers, the more satisfied they seem to be"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The NPS increased from 25 to 32.",
+          "The NPS increased from 25 and 32.",
+          "The NPS increased between 25 to 32.",
+          "The NPS increased from 25 until 32."
+        ],
+        "answers": [
+          "The NPS increased from 25 to 32."
+        ],
+        "explanation": "表示从……增加到……用“from...to...”。",
+        "evidence": "The NPS increased from 25 to 32."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Ease of use is our strongest feature, while price remains the weakest.",
+          "Ease of use is our strongest feature, while price remain the weakest.",
+          "Ease of use are our strongest feature, while price remains the weakest.",
+          "Ease of use is our strongest feature, while price is remain the weakest."
+        ],
+        "answers": [
+          "Ease of use is our strongest feature, while price remains the weakest."
+        ],
+        "explanation": "主语ease of use和price均为单数，谓语用is和remains。",
+        "evidence": "Ease of use is our strongest feature, while price remains the weakest."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often read reports or surveys?",
+        "What kind of data do you find most useful in your work or studies?",
+        "Do you prefer to see information in charts or in text?",
+        "How do you usually compare results from different times?"
+      ],
+      "part2": "Describe a time when you had to compare two sets of data or information. You should say: what the data was about, how you compared them, what you found, and explain why this comparison was important.",
+      "part3": [
+        "Why is it important to compare data over time?",
+        "What are some common mistakes people make when interpreting statistics?",
+        "How can companies use customer satisfaction data to improve?",
+        "Do you think smaller sample sizes always lead to less reliable results?"
+      ]
+    },
+    "writing": "You have conducted a survey about study habits among adult learners. Write a report comparing the results of this year with last year. Include: the number of respondents, overall satisfaction, and one key trend. Write 150-200 words."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "08a3f3324d27f359e6e4107c5be9742331059f901c17a7acc688dc6adc4001c7"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

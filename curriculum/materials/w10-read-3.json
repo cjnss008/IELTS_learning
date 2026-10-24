@@ -1,0 +1,317 @@
+{
+  "id": "w10-read-3",
+  "week": 10,
+  "skill": "reading",
+  "level": "A2",
+  "topic": "住所与生活环境",
+  "grammarFocus": "there be；可数与不可数名词；some / any；地点介词复习。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "My New Apartment",
+  "instructions": "阅读短文，然后回答问题。所有题目均为单选题或填空题。填空题答案必须与原文完全一致，且不超过字数限制。本材料为模拟练习，不是官方雅思考试。",
+  "passage": "A\nMy name is Li Hua. I live in a new apartment in Shanghai. The apartment is small but clean. There is a living room, a bedroom, a kitchen, and a bathroom. There is no dining room. In the living room, there is a sofa, a TV, and a small table. There are two chairs near the table. There is a big window. The window is open. There is some fresh air in the room.\n\nB\nIn the kitchen, there is a fridge and a cooker. There are some plates and bowls in the cupboard. There is no microwave. I want to buy one. There is some milk in the fridge, but there isn't any bread. There are some apples on the table. There is a lot of rice in the bag. There isn't any coffee. I drink tea every morning.\n\nC\nMy bedroom is quiet. There is a bed, a desk, and a chair. There are some books on the desk. There is a lamp next to the bed. There isn't a clock in the bedroom. I use my phone for time. The bathroom is small. There is a shower, but there isn't a bath. There are some towels on the shelf. The apartment is on the fifth floor. There is a lift in the building. The neighbours are friendly. I like my new home.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is in the living room?",
+      "options": [
+        "A sofa, a TV, and a small table",
+        "A bed, a desk, and a chair",
+        "A fridge and a cooker",
+        "A shower and a bath"
+      ],
+      "answers": [
+        "A sofa, a TV, and a small table"
+      ],
+      "explanation": "短文A部分明确提到客厅里有沙发、电视和小桌子。",
+      "evidence": "In the living room, there is a sofa, a TV, and a small table."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many chairs are near the table?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answers": [
+        "Two"
+      ],
+      "explanation": "短文A部分说桌子附近有两把椅子。",
+      "evidence": "There are two chairs near the table."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is NOT in the kitchen?",
+      "options": [
+        "A fridge",
+        "A cooker",
+        "A microwave",
+        "Some plates"
+      ],
+      "answers": [
+        "A microwave"
+      ],
+      "explanation": "短文B部分说厨房里没有微波炉。",
+      "evidence": "There is no microwave."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is there any milk in the fridge?",
+      "options": [
+        "Yes, there is some milk.",
+        "No, there isn't any milk.",
+        "Yes, there is a lot of milk.",
+        "No, there is some juice."
+      ],
+      "answers": [
+        "Yes, there is some milk."
+      ],
+      "explanation": "短文B部分说冰箱里有一些牛奶。",
+      "evidence": "There is some milk in the fridge"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is on the desk in the bedroom?",
+      "options": [
+        "Some books",
+        "A lamp",
+        "A clock",
+        "A phone"
+      ],
+      "answers": [
+        "Some books"
+      ],
+      "explanation": "短文C部分说书桌上有一些书。",
+      "evidence": "There are some books on the desk."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is there a clock in the bedroom?",
+      "options": [
+        "Yes, there is a clock.",
+        "No, there isn't a clock.",
+        "Yes, there is a clock on the desk.",
+        "No, there is a clock in the kitchen."
+      ],
+      "answers": [
+        "No, there isn't a clock."
+      ],
+      "explanation": "短文C部分说卧室里没有钟。",
+      "evidence": "There isn't a clock in the bedroom."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is on the shelf in the bathroom?",
+      "options": [
+        "Some towels",
+        "A shower",
+        "A bath",
+        "Some soap"
+      ],
+      "answers": [
+        "Some towels"
+      ],
+      "explanation": "短文C部分说架子上有一些毛巾。",
+      "evidence": "There are some towels on the shelf."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Which floor is the apartment on?",
+      "options": [
+        "The first floor",
+        "The third floor",
+        "The fifth floor",
+        "The tenth floor"
+      ],
+      "answers": [
+        "The fifth floor"
+      ],
+      "explanation": "短文C部分说公寓在五楼。",
+      "evidence": "The apartment is on the fifth floor."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the passage: There is a lift in the ______.",
+      "maxWords": 1,
+      "answers": [
+        "building"
+      ],
+      "explanation": "短文C部分说楼里有电梯。",
+      "evidence": "There is a lift in the building."
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the passage: The neighbours are ______.",
+      "maxWords": 1,
+      "answers": [
+        "friendly"
+      ],
+      "explanation": "短文C部分说邻居很友好。",
+      "evidence": "The neighbours are friendly."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "apartment",
+      "meaning": "公寓",
+      "example": "I live in a new apartment in Shanghai."
+    },
+    {
+      "word": "living room",
+      "meaning": "客厅",
+      "example": "There is a sofa in the living room."
+    },
+    {
+      "word": "fridge",
+      "meaning": "冰箱",
+      "example": "There is some milk in the fridge."
+    },
+    {
+      "word": "cupboard",
+      "meaning": "橱柜",
+      "example": "There are some plates in the cupboard."
+    },
+    {
+      "word": "microwave",
+      "meaning": "微波炉",
+      "example": "There is no microwave in the kitchen."
+    },
+    {
+      "word": "neighbour",
+      "meaning": "邻居",
+      "example": "The neighbours are friendly."
+    },
+    {
+      "word": "lift",
+      "meaning": "电梯",
+      "example": "There is a lift in the building."
+    },
+    {
+      "word": "towel",
+      "meaning": "毛巾",
+      "example": "There are some towels on the shelf."
+    }
+  ],
+  "grammar": {
+    "title": "There be 句型与可数/不可数名词",
+    "explanation": "我们用 'There is' 表示单数或不可数名词的存在，用 'There are' 表示复数名词的存在。'some' 用于肯定句，'any' 用于否定句和疑问句。可数名词有复数形式，不可数名词没有复数形式。",
+    "example": "There is some milk in the fridge. There isn't any bread.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "There is some apples on the table.",
+          "There are some apples on the table.",
+          "There are some apple on the table.",
+          "There is any apples on the table."
+        ],
+        "answers": [
+          "There are some apples on the table."
+        ],
+        "explanation": "apples 是可数名词复数，所以用 'There are'，肯定句中用 'some'。",
+        "evidence": "There are some apples on the table."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "There isn't some coffee.",
+          "There isn't any coffee.",
+          "There aren't any coffee.",
+          "There isn't any coffees."
+        ],
+        "answers": [
+          "There isn't any coffee."
+        ],
+        "explanation": "coffee 是不可数名词，否定句中用 'any'，动词用 'isn't'。",
+        "evidence": "There isn't any coffee."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "There is a lot of rice in the bag.",
+          "There are a lot of rice in the bag.",
+          "There is a lot of rices in the bag.",
+          "There are some rice in the bag."
+        ],
+        "answers": [
+          "There is a lot of rice in the bag."
+        ],
+        "explanation": "rice 是不可数名词，所以用 'There is'。",
+        "evidence": "There is a lot of rice in the bag."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "There are some towels on the shelf.",
+          "There is some towels on the shelf.",
+          "There are any towels on the shelf.",
+          "There is any towels on the shelf."
+        ],
+        "answers": [
+          "There are some towels on the shelf."
+        ],
+        "explanation": "towels 是可数名词复数，肯定句中用 'some'，动词用 'are'。",
+        "evidence": "There are some towels on the shelf."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you live in a house or an apartment?",
+        "What is your favourite room in your home? Why?",
+        "Is there a park near your home?",
+        "What furniture is in your living room?"
+      ],
+      "part2": "Describe your home. You should say: where it is, what rooms it has, what furniture is in it, and explain why you like or dislike it.",
+      "part3": [
+        "What are the advantages of living in a city centre?",
+        "How can neighbours help each other?",
+        "Do you think it is better to live in a house or an apartment? Why?",
+        "What can people do to make their home more comfortable?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 50 words) describing your home. Use 'there is/are', 'some/any', and prepositions of place."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (A2)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "3236b6802ad421e3af8a2158b1e25793f7af721fc856c31e6f8d16ceebe6033e"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,318 @@
+{
+  "id": "w28-read-2",
+  "week": 28,
+  "skill": "reading",
+  "level": "B1–B2",
+  "topic": "流程说明与学术阶段复测",
+  "grammarFocus": "被动语态；顺序连接词；定语从句与分词短语的辨认。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "The Campus Library Orientation: A Process and Review",
+  "instructions": "阅读以下关于大学图书馆新生导览的模拟材料（非真实考试内容）。文章共约650词，包含流程说明和学术阶段复测。请仔细阅读后完成10道题目。题目类型包括单选题、填空题（答案必须来自原文，且不超过字数限制）和判断题（True/False/Not Given）。所有解释均为中文，并附原文证据。",
+  "passage": "The Campus Library Orientation: A Process and Review\n\n[A] Welcome to the campus library. This orientation is designed to help new students understand how the library works and how to use its resources effectively. The process is simple, but it is important to follow each step carefully. First, you need to register at the front desk. A student card is required, and it must be shown to the librarian. After registration, you will receive a library guide and a map. The guide, which is updated every year, explains the rules and services. Then, you should attend a short training session. These sessions are held every hour and last about twenty minutes. During the session, you will be shown how to search for books using the online catalogue. The catalogue can be accessed from any computer in the library. Finally, you are allowed to borrow books. Undergraduate students can borrow up to ten books at a time, while postgraduate students can borrow up to fifteen. Books must be returned within two weeks, but they can be renewed online if no one else has requested them. If a book is returned late, a small fine is charged. The fine is ten cents per day for each book. You can pay the fine at the front desk or online. Remember to check the due date, which is printed on a slip inside each book. This slip also shows the book's shelf number, helping you find it again easily.\n\n[B] The library also offers quiet study areas and group discussion rooms. Group rooms must be booked in advance, and they can be reserved for a maximum of two hours. The booking system, which is available on the library website, is easy to use. You simply select a time and a room, and then confirm your booking. If you need help, ask a librarian. They are always happy to assist. In addition, the library provides free Wi-Fi. The password is given during the training session. Printing and copying services are also available, but they are not free. You need to add credit to your student card before using these services. The cost is five cents per page for black and white printing and ten cents for colour printing. A printer is located on each floor, and it is connected to the library network. To print, you first send your document from a library computer, then go to the printer and swipe your card. If the printer is not working, report it to the information desk. The staff will fix it as soon as possible. Study areas are equipped with desks, lamps, and power sockets. Please keep them clean and tidy for other users.\n\n[C] At the end of your first month, you will take a short review test. This test is designed to check your understanding of the library system. It is not a formal exam, but it helps the library staff know if you need more help. The test covers the borrowing rules, the booking system, and the location of different sections. You will be asked to complete a few tasks, such as finding a book on the shelf and booking a group room. The test is marked by a librarian, and the results are used to improve the orientation programme. If you do not pass the first time, you can take it again after one week. Most students pass easily, but some need extra practice. The library staff are friendly and patient, so don't worry if you find something difficult. A feedback form, which is given after the test, allows you to share your thoughts. Your comments are read carefully by the library team. They use this information to make the library better for everyone.\n\n[D] Remember, the library is a place for learning and research. Please respect other users by keeping noise to a minimum. Food and drink are not allowed in the study areas, but you can use the café on the ground floor. Mobile phones should be set to silent mode. If you have any questions, please ask at the information desk. We hope you enjoy using the library and find it a useful resource during your studies. The library is open from 8 a.m. to 10 p.m. on weekdays and from 10 a.m. to 6 p.m. at weekends. During exam periods, the opening hours are extended. Check the library website for updates. We look forward to seeing you here!",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What must students show at the front desk to register?",
+      "options": [
+        "A library guide",
+        "A student card",
+        "A map",
+        "A password"
+      ],
+      "answers": [
+        "A student card"
+      ],
+      "explanation": "原文明确说明注册时需要出示学生卡。",
+      "evidence": "A student card is required, and it must be shown to the librarian."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How long does a training session last?",
+      "options": [
+        "About ten minutes",
+        "About twenty minutes",
+        "About thirty minutes",
+        "About one hour"
+      ],
+      "answers": [
+        "About twenty minutes"
+      ],
+      "explanation": "原文提到培训课程持续约二十分钟。",
+      "evidence": "These sessions are held every hour and last about twenty minutes."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Undergraduate students can borrow up to ______ books at a time. (Use ONE WORD from the passage.)",
+      "options": [],
+      "answers": [
+        "ten"
+      ],
+      "maxWords": 1,
+      "explanation": "原文指出本科生一次最多可借十本书。",
+      "evidence": "Undergraduate students can borrow up to ten books at a time"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Group discussion rooms can be reserved for a maximum of ______ hours. (Use ONE WORD from the passage.)",
+      "options": [],
+      "answers": [
+        "two"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说明小组讨论室最多可预订两小时。",
+      "evidence": "they can be reserved for a maximum of two hours"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How much does black and white printing cost per page?",
+      "options": [
+        "Five cents",
+        "Ten cents",
+        "Fifteen cents",
+        "Twenty cents"
+      ],
+      "answers": [
+        "Five cents"
+      ],
+      "explanation": "原文提到黑白打印每页五美分。",
+      "evidence": "The cost is five cents per page for black and white printing"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is the main purpose of the review test?",
+      "options": [
+        "To give students a grade for their course",
+        "To check students' understanding of the library system",
+        "To decide who can borrow books",
+        "To test students' computer skills"
+      ],
+      "answers": [
+        "To check students' understanding of the library system"
+      ],
+      "explanation": "原文明确指出测试的目的是检查学生对图书馆系统的理解。",
+      "evidence": "This test is designed to check your understanding of the library system."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What happens if a student does not pass the review test the first time?",
+      "options": [
+        "They cannot use the library.",
+        "They must pay a fine.",
+        "They can take it again after one week.",
+        "They have to attend a longer training session."
+      ],
+      "answers": [
+        "They can take it again after one week."
+      ],
+      "explanation": "原文说明如果第一次未通过，一周后可以重考。",
+      "evidence": "If you do not pass the first time, you can take it again after one week."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Where can students eat and drink?",
+      "options": [
+        "In the study areas",
+        "In the group discussion rooms",
+        "In the café on the ground floor",
+        "At the information desk"
+      ],
+      "answers": [
+        "In the café on the ground floor"
+      ],
+      "explanation": "原文指出学习区不允许饮食，但可以使用一楼的咖啡厅。",
+      "evidence": "Food and drink are not allowed in the study areas, but you can use the café on the ground floor."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "The library guide is updated every year.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文明确提到指南每年更新。",
+      "evidence": "The guide, which is updated every year, explains the rules and services."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The review test is a formal exam that counts towards the final grade.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文明确说明测试不是正式考试，也不计入最终成绩。",
+      "evidence": "It is not a formal exam, but it helps the library staff know if you need more help."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "orientation",
+      "meaning": "迎新介绍；方向指导",
+      "example": "This orientation is designed to help new students understand how the library works."
+    },
+    {
+      "word": "register",
+      "meaning": "登记；注册",
+      "example": "First, you need to register at the front desk."
+    },
+    {
+      "word": "catalogue",
+      "meaning": "目录；书目",
+      "example": "You will be shown how to search for books using the online catalogue."
+    },
+    {
+      "word": "renew",
+      "meaning": "续借；更新",
+      "example": "Books must be returned within two weeks, but they can be renewed online if no one else has requested them."
+    },
+    {
+      "word": "reserve",
+      "meaning": "预订；保留",
+      "example": "Group rooms must be booked in advance, and they can be reserved for a maximum of two hours."
+    },
+    {
+      "word": "maximum",
+      "meaning": "最大的；最大限制",
+      "example": "they can be reserved for a maximum of two hours"
+    },
+    {
+      "word": "credit",
+      "meaning": "信用；余额",
+      "example": "You need to add credit to your student card before using these services."
+    },
+    {
+      "word": "review",
+      "meaning": "复习；回顾",
+      "example": "At the end of your first month, you will take a short review test."
+    }
+  ],
+  "grammar": {
+    "title": "被动语态、顺序连接词、定语从句与分词短语",
+    "explanation": "被动语态表示主语是动作的承受者，结构为be+过去分词。顺序连接词如first, then, finally帮助组织步骤。定语从句用who/which/that等引导，修饰名词。分词短语用现在分词或过去分词短语提供额外信息，相当于定语或状语。",
+    "example": "The guide, which is updated every year, explains the rules and services.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct passive form: The books ______ by the librarian every day.",
+        "options": [
+          "are checked",
+          "check",
+          "checking",
+          "is checked"
+        ],
+        "answers": [
+          "are checked"
+        ],
+        "explanation": "被动语态结构为be+过去分词，主语books是复数，所以用are checked。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Which word best completes the sequence? First, register at the front desk. ______, attend a training session.",
+        "options": [
+          "Then",
+          "But",
+          "Because",
+          "Although"
+        ],
+        "answers": [
+          "Then"
+        ],
+        "explanation": "顺序连接词then表示下一步。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Identify the relative clause in: The librarian who helped me was very kind.",
+        "options": [
+          "The librarian",
+          "who helped me",
+          "was very kind",
+          "helped me was"
+        ],
+        "answers": [
+          "who helped me"
+        ],
+        "explanation": "定语从句who helped me修饰the librarian。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "What does the participle phrase modify in: Walking into the library, she saw the notice.",
+        "options": [
+          "the library",
+          "she",
+          "the notice",
+          "walking"
+        ],
+        "answers": [
+          "she"
+        ],
+        "explanation": "分词短语Walking into the library的逻辑主语是she，表示当她走进图书馆时。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often go to the library?",
+        "What do you usually do in the library?",
+        "Do you prefer studying alone or with others?",
+        "Have you ever borrowed books from a library?"
+      ],
+      "part2": "Describe a library you have visited. You should say: where it is, what it looks like, what you did there, and explain how you felt about it.",
+      "part3": [
+        "Why do people go to libraries?",
+        "How have libraries changed in recent years?",
+        "Do you think libraries are still important today?",
+        "What services should libraries offer in the future?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 100 words) describing the process of borrowing a book from your school library. Use passive voice and sequence words (first, then, finally)."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "reading comprehension with mixed question types"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "d0683142b9c55a6e4586fc8022a5ff7eb7d3269a6fee78b83ea7484874f4c68c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

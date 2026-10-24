@@ -1,0 +1,281 @@
+{
+  "id": "w05-read-3",
+  "week": 5,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "日常安排与习惯",
+  "grammarFocus": "一般现在时；I / you / we / they 的实义动词；时间表达与频率词入门。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "My Daily Routine",
+  "instructions": "阅读短文，然后回答问题。所有题目均为单选题或填空题。填空题答案必须与原文完全一致，且不超过字数限制。本材料为模拟练习，非官方考试。",
+  "passage": "A\nMy name is Li Hua. I am a student. I get up at 6:30 every morning. I have breakfast at 7:00. I go to school at 7:30. I have four classes in the morning. I have lunch at 12:00. In the afternoon, I have two classes. I go home at 4:30. I do my homework in the evening. I go to bed at 10:00.\n\nB\nMy friend is Wang Ming. He is a student too. He gets up at 7:00. He has breakfast at 7:30. He goes to school at 8:00. He has three classes in the morning. He has lunch at 12:30. In the afternoon, he has two classes. He goes home at 5:00. He plays football after school. He does his homework in the evening. He goes to bed at 10:30.\n\nC\nWe are students. We go to school from Monday to Friday. We have classes every day. We like our school. We are good friends.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "李华早上几点起床？",
+      "options": [
+        "6:30",
+        "7:00",
+        "7:30"
+      ],
+      "answers": [
+        "6:30"
+      ],
+      "explanation": "原文说：I get up at 6:30 every morning. 所以选6:30。",
+      "evidence": "I get up at 6:30 every morning."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "李华早上有几节课？",
+      "options": [
+        "两节",
+        "三节",
+        "四节"
+      ],
+      "answers": [
+        "四节"
+      ],
+      "explanation": "原文说：I have four classes in the morning. 所以选四节。",
+      "evidence": "I have four classes in the morning."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "王明早上几点吃早饭？",
+      "options": [
+        "7:00",
+        "7:30",
+        "8:00"
+      ],
+      "answers": [
+        "7:30"
+      ],
+      "explanation": "原文说：He has breakfast at 7:30. 所以选7:30。",
+      "evidence": "He has breakfast at 7:30."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "王明下午有几节课？",
+      "options": [
+        "一节",
+        "两节",
+        "三节"
+      ],
+      "answers": [
+        "两节"
+      ],
+      "explanation": "原文说：In the afternoon, he has two classes. 所以选两节。",
+      "evidence": "In the afternoon, he has two classes."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "李华晚上做什么？",
+      "options": [
+        "做作业",
+        "踢足球",
+        "看电视"
+      ],
+      "answers": [
+        "做作业"
+      ],
+      "explanation": "原文说：I do my homework in the evening. 所以选做作业。",
+      "evidence": "I do my homework in the evening."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "李华下午几点回家？请用原文中的时间回答。",
+      "answers": [
+        "4:30"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说：I go home at 4:30. 所以填4:30。",
+      "evidence": "I go home at 4:30."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "王明放学后做什么运动？请用原文中的一个词回答。",
+      "answers": [
+        "football"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说：He plays football after school. 所以填football。",
+      "evidence": "He plays football after school."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "根据短文，以下哪项是正确的？",
+      "options": [
+        "李华和王明是学生。",
+        "李华早上7点起床。",
+        "王明晚上10点睡觉。"
+      ],
+      "answers": [
+        "李华和王明是学生。"
+      ],
+      "explanation": "原文说：I am a student. 和 He is a student too. 所以李华和王明是学生。其他选项与原文不符：李华6:30起床，王明10:30睡觉。",
+      "evidence": "I am a student. He is a student too."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "get up",
+      "meaning": "起床",
+      "example": "I get up at 6:30 every morning."
+    },
+    {
+      "word": "breakfast",
+      "meaning": "早餐",
+      "example": "I have breakfast at 7:00."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "class",
+      "meaning": "课",
+      "example": "I have four classes in the morning."
+    },
+    {
+      "word": "lunch",
+      "meaning": "午餐",
+      "example": "I have lunch at 12:00."
+    },
+    {
+      "word": "homework",
+      "meaning": "作业",
+      "example": "I do my homework in the evening."
+    },
+    {
+      "word": "football",
+      "meaning": "足球",
+      "example": "He plays football after school."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "We are good friends."
+    }
+  ],
+  "grammar": {
+    "title": "一般现在时：I / you / we / they 的实义动词",
+    "explanation": "一般现在时表示经常发生的动作或习惯。当主语是 I、you、we、they 时，动词用原形。例如：I get up at 6:30. You go to school. We like our school. They play football.",
+    "example": "I get up at 6:30 every morning.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的动词形式：I ____ to school every day.",
+        "options": [
+          "go",
+          "goes",
+          "going"
+        ],
+        "answers": [
+          "go"
+        ],
+        "explanation": "主语是 I，动词用原形 go。",
+        "evidence": "I go to school at 7:30."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的动词形式：We ____ English.",
+        "options": [
+          "like",
+          "likes",
+          "liking"
+        ],
+        "answers": [
+          "like"
+        ],
+        "explanation": "主语是 We，动词用原形 like。",
+        "evidence": "We like our school."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的动词形式：They ____ football after school.",
+        "options": [
+          "play",
+          "plays",
+          "playing"
+        ],
+        "answers": [
+          "play"
+        ],
+        "explanation": "主语是 They，动词用原形 play。",
+        "evidence": "He plays football after school."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的动词形式：You ____ breakfast at 7:00.",
+        "options": [
+          "have",
+          "has",
+          "having"
+        ],
+        "answers": [
+          "have"
+        ],
+        "explanation": "主语是 You，动词用原形 have。",
+        "evidence": "I have breakfast at 7:00."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What time do you get up every day?",
+        "What do you have for breakfast?",
+        "What do you do in the evening?",
+        "Do you like sports? Why?"
+      ],
+      "part2": "Describe your daily routine. You should say:",
+      "part2_bullets": [
+        "what time you get up",
+        "what you do in the morning",
+        "what you do in the afternoon",
+        "what time you go to bed"
+      ],
+      "part3": [
+        "Do you think it is important to have a daily routine?",
+        "How do you plan your time?",
+        "What activities do you do with your friends?",
+        "Do you prefer to study in the morning or in the evening?"
+      ]
+    },
+    "writing": "Write 5 sentences about your daily routine. Use I, you, we, or they and the simple present tense. Include times and activities."
+  },
+  "rubric": {
+    "taskType": "reading comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "90cd1e106b4c212087dac850579f87845de31fc76266711c0f2d7e76724a0481"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

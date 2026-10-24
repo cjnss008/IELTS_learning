@@ -1,0 +1,279 @@
+{
+  "id": "gate-04-A-reading",
+  "week": 4,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "gate",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "assessmentGroup": "gate-04-A",
+  "form": "A",
+  "timeLimitSeconds": 1500,
+  "title": "At the School Gate",
+  "instructions": "阅读下面的短文，然后回答问题。这是一个模拟的英语学习材料，不是真实的考试题目。请仔细阅读短文，并根据短文内容选择或填写答案。选择题只有一个正确答案。填空题的答案必须来自短文，每空只填一个词。",
+  "passage": "A. This is a small school. It is not big. The gate is open. A woman is at the gate. She is a teacher. Her name is Mrs. Li. She is not a student.\n\nB. A boy is at the gate. His name is Tom. He is a student. He is not a teacher. He says, \"Good morning, Mrs. Li.\" Mrs. Li says, \"Good morning, Tom.\" Tom asks, \"Are you a teacher?\" Mrs. Li says, \"Yes, I am.\" Tom asks, \"Is the gate open?\" Mrs. Li says, \"Yes, it is.\" Tom asks, \"Is the school big?\" Mrs. Li says, \"No, it is not.\"",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "学校大吗？",
+      "options": [
+        "是的，它很大。",
+        "不，它不大。",
+        "不，它很小。"
+      ],
+      "answers": [
+        "不，它不大。"
+      ],
+      "explanation": "短文中明确说“It is not big.”，所以学校不大。选项“不，它很小。”虽然意思接近，但短文没有说 small 这个词来形容学校的大小回答，最直接的答案是“不，它不大。”",
+      "evidence": "It is not big."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "谁在学校门口？",
+      "options": [
+        "一位老师和一名学生。",
+        "两名学生。",
+        "两名老师。"
+      ],
+      "answers": [
+        "一位老师和一名学生。"
+      ],
+      "explanation": "短文中提到一位女士（老师）和一个男孩（学生）在学校门口。",
+      "evidence": "A woman is at the gate. She is a teacher. A boy is at the gate. His name is Tom. He is a student."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "李老师是学生吗？",
+      "options": [
+        "是的，她是。",
+        "不，她不是。",
+        "是的，她是老师。"
+      ],
+      "answers": [
+        "不，她不是。"
+      ],
+      "explanation": "短文中说“She is not a student.”，所以李老师不是学生。选项“是的，她是老师。”虽然李老师确实是老师，但它没有直接回答“她是学生吗”这个问题，而且“是的”与短文矛盾。",
+      "evidence": "She is not a student."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Tom 是老师吗？",
+      "options": [
+        "是的，他是。",
+        "不，他不是。",
+        "是的，他是学生。"
+      ],
+      "answers": [
+        "不，他不是。"
+      ],
+      "explanation": "短文中说“He is not a teacher.”，所以 Tom 不是老师。选项“是的，他是学生。”虽然 Tom 确实是学生，但它没有直接回答“他是老师吗”这个问题，而且“是的”与短文矛盾。",
+      "evidence": "He is not a teacher."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Tom 问李老师：“你是老师吗？”李老师怎么回答？",
+      "options": [
+        "是的，我是。",
+        "不，我不是。",
+        "是的，她是。"
+      ],
+      "answers": [
+        "是的，我是。"
+      ],
+      "explanation": "短文中李老师回答“Yes, I am.”，意思是“是的，我是。”",
+      "evidence": "Mrs. Li says, \"Yes, I am.\""
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Tom 问：“门开着吗？”李老师怎么回答？",
+      "options": [
+        "是的，它是。",
+        "不，它不是。",
+        "是的，她是。"
+      ],
+      "answers": [
+        "是的，它是。"
+      ],
+      "explanation": "短文中李老师回答“Yes, it is.”，意思是“是的，它是。”",
+      "evidence": "Mrs. Li says, \"Yes, it is.\""
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Tom 问：“学校大吗？”李老师怎么回答？请用短文中的词填空：No, it ____ not.",
+      "maxWords": 1,
+      "answers": [
+        "is"
+      ],
+      "explanation": "短文中李老师说“No, it is not.”，所以填 is。",
+      "evidence": "Mrs. Li says, \"No, it is not.\""
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "短文中李老师怎么介绍自己的职业？请用短文中的词填空：She is a ____.",
+      "maxWords": 1,
+      "answers": [
+        "teacher"
+      ],
+      "explanation": "短文中说“She is a teacher.”，所以填 teacher。",
+      "evidence": "She is a teacher."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "school",
+      "meaning": "学校",
+      "example": "This is a small school."
+    },
+    {
+      "word": "gate",
+      "meaning": "大门",
+      "example": "The gate is open."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is a teacher."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "He is a student."
+    },
+    {
+      "word": "open",
+      "meaning": "开着的",
+      "example": "The gate is open."
+    },
+    {
+      "word": "big",
+      "meaning": "大的",
+      "example": "It is not big."
+    },
+    {
+      "word": "morning",
+      "meaning": "早晨",
+      "example": "Good morning, Mrs. Li."
+    },
+    {
+      "word": "name",
+      "meaning": "名字",
+      "example": "Her name is Mrs. Li."
+    }
+  ],
+  "grammar": {
+    "title": "be 动词否定句与一般疑问句",
+    "explanation": "在英语中，be 动词（am, is, are）的否定句是在 be 动词后加 not。例如：She is not a student. 一般疑问句是把 be 动词放到主语前面。例如：Are you a teacher? 回答时用 Yes 或 No，并重复 be 动词。例如：Yes, I am. / No, it is not.",
+    "example": "She is not a student. Are you a teacher? Yes, I am.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：Tom 是老师。",
+        "options": [
+          "Tom is not a teacher.",
+          "Tom not is a teacher.",
+          "Tom is a teacher not."
+        ],
+        "answers": [
+          "Tom is not a teacher."
+        ],
+        "explanation": "否定句在 be 动词后加 not，所以是 Tom is not a teacher.",
+        "evidence": "He is not a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的一般疑问句：你是学生。",
+        "options": [
+          "Are you a student?",
+          "You are a student?",
+          "Do you are a student?"
+        ],
+        "answers": [
+          "Are you a student?"
+        ],
+        "explanation": "一般疑问句把 be 动词提前，所以是 Are you a student?",
+        "evidence": "Are you a teacher?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "回答：Is the gate open?（门开着）",
+        "options": [
+          "Yes, it is.",
+          "Yes, it does.",
+          "Yes, it are."
+        ],
+        "answers": [
+          "Yes, it is."
+        ],
+        "explanation": "用 be 动词回答，主语是 it，所以是 Yes, it is.",
+        "evidence": "Yes, it is."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "回答：Are you a teacher?（你是老师）",
+        "options": [
+          "Yes, I am.",
+          "Yes, I is.",
+          "Yes, I are."
+        ],
+        "answers": [
+          "Yes, I am."
+        ],
+        "explanation": "主语是 I，be 动词用 am，所以是 Yes, I am.",
+        "evidence": "Yes, I am."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your school big?",
+        "Are you a teacher?",
+        "Is your name Tom?"
+      ],
+      "part2": "Describe a person at a school gate. You should say:",
+      "part3": [
+        "Is the person a teacher or a student?",
+        "What is the person's name?",
+        "Is the gate open?",
+        "Is the school big or small?"
+      ]
+    },
+    "writing": "写 2-3 个简单的英语句子，介绍你自己或你的朋友。使用 be 动词的否定句或一般疑问句。例如：I am not a teacher. Are you a student?"
+  },
+  "rubric": {
+    "taskType": "reading comprehension"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "cf48b2db3f4b6c32420222a278ec1bce5f75120434468355218cbd8f90a70e24"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

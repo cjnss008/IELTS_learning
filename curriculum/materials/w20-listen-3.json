@@ -1,0 +1,310 @@
+{
+  "id": "w20-listen-3",
+  "week": 20,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "基础综合复测与薄弱项整理",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 3,
+  "title": "The Community Library's New Opening Hours",
+  "instructions": "这是一份为B1水平学习者设计的听力练习。请先听录音（或阅读录音文本），然后回答10个问题。问题类型包括单选、填空和判断正误/未提及。填空题的答案必须与原文完全一致，且不超过规定的字数。所有内容均为模拟教育材料，并非官方雅思考试。",
+  "passage": "",
+  "transcript": "M: Hi, Lucy. Are you free to talk about the library's new opening hours?\nW: Yes, sure. I heard they changed them last week. What's the new schedule?\nM: Well, from Monday to Friday, the library opens at nine in the morning and closes at eight in the evening. But on Saturdays, it opens at ten and closes at six.\nW: Wait, did you say eight in the evening on weekdays? I thought it was seven.\nM: No, it's eight. They extended it because more students are using it. And on Sundays, it's closed all day.\nW: That's a problem for me. I usually study on Sunday afternoons. Where can I go now?\nM: The city library is open on Sundays from ten to four. But it's a bit far. You need to take the number 15 bus.\nW: How long does that take?\nM: About twenty minutes. But the bus comes every half hour, so you might wait.\nW: Okay. By the way, does the community library have a quiet study room?\nM: Yes, it does. It's on the second floor. But you have to book it online. You can book up to three days in advance.\nW: That's good to know. And can I bring my own books?\nM: Of course. But you can't bring food into the study room. Drinks are allowed.\nW: I see. Thanks for the information. I'll check the website for booking.\nM: You're welcome. Don't forget your library card. You need it to enter the study room.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What time does the community library close on weekdays?",
+      "options": [
+        "At seven in the evening.",
+        "At eight in the evening.",
+        "At six in the evening."
+      ],
+      "answers": [
+        "At eight in the evening."
+      ],
+      "explanation": "男士明确说工作日晚上八点关门。",
+      "evidence": "from Monday to Friday, the library opens at nine in the morning and closes at eight in the evening."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "On Saturdays, what time does the library open?",
+      "options": [
+        "At nine in the morning.",
+        "At ten in the morning.",
+        "At six in the evening."
+      ],
+      "answers": [
+        "At ten in the morning."
+      ],
+      "explanation": "男士说周六上午十点开门。",
+      "evidence": "on Saturdays, it opens at ten and closes at six."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is the community library's schedule on Sundays?",
+      "options": [
+        "It is open from ten to four.",
+        "It is closed all day.",
+        "It is open from nine to eight."
+      ],
+      "answers": [
+        "It is closed all day."
+      ],
+      "explanation": "男士说周日全天关闭。",
+      "evidence": "And on Sundays, it's closed all day."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How long does the bus ride to the city library take? (Use one word or a number.)",
+      "options": [],
+      "answers": [
+        "twenty minutes",
+        "20 minutes"
+      ],
+      "maxWords": 2,
+      "explanation": "男士说大约二十分钟。",
+      "evidence": "About twenty minutes."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How often does the number 15 bus come?",
+      "options": [
+        "Every fifteen minutes.",
+        "Every half hour.",
+        "Every hour."
+      ],
+      "answers": [
+        "Every half hour."
+      ],
+      "explanation": "男士说公交车每半小时一班。",
+      "evidence": "But the bus comes every half hour, so you might wait."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "On which floor is the quiet study room? (Use one word.)",
+      "options": [],
+      "answers": [
+        "second"
+      ],
+      "maxWords": 1,
+      "explanation": "男士说安静的学习室在二楼。",
+      "evidence": "It's on the second floor."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How far in advance can you book the study room?",
+      "options": [
+        "Up to one day.",
+        "Up to three days.",
+        "Up to one week."
+      ],
+      "answers": [
+        "Up to three days."
+      ],
+      "explanation": "男士说最多可以提前三天预订。",
+      "evidence": "You can book up to three days in advance."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is NOT allowed in the study room?",
+      "options": [
+        "Drinks.",
+        "Food.",
+        "Your own books."
+      ],
+      "answers": [
+        "Food."
+      ],
+      "explanation": "男士说不能带食物进学习室，但饮料可以。",
+      "evidence": "But you can't bring food into the study room. Drinks are allowed."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What do you need to enter the study room?",
+      "options": [
+        "A booking confirmation only.",
+        "Your library card.",
+        "A student ID."
+      ],
+      "answers": [
+        "Your library card."
+      ],
+      "explanation": "男士提醒需要借书证才能进入学习室。",
+      "evidence": "Don't forget your library card. You need it to enter the study room."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The woman has a library card.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "对话中没有提到女士是否有借书证，因此是未提及。",
+      "evidence": "No information about whether the woman has a library card is provided."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "schedule",
+      "meaning": "时间表，日程安排",
+      "example": "What's the new schedule?"
+    },
+    {
+      "word": "extend",
+      "meaning": "延长",
+      "example": "They extended it because more students are using it."
+    },
+    {
+      "word": "in advance",
+      "meaning": "提前",
+      "example": "You can book up to three days in advance."
+    },
+    {
+      "word": "allow",
+      "meaning": "允许",
+      "example": "Drinks are allowed."
+    },
+    {
+      "word": "quiet",
+      "meaning": "安静的",
+      "example": "Does the community library have a quiet study room?"
+    },
+    {
+      "word": "book",
+      "meaning": "预订",
+      "example": "You have to book it online."
+    },
+    {
+      "word": "library card",
+      "meaning": "借书证",
+      "example": "Don't forget your library card."
+    },
+    {
+      "word": "confirmation",
+      "meaning": "确认（书）",
+      "example": "A booking confirmation only."
+    }
+  ],
+  "grammar": {
+    "title": "基础时态、问句、名词数量和常见从句综合复习",
+    "explanation": "本部分复习一般现在时、一般过去时、问句结构、名词单复数以及常见从句（如宾语从句、定语从句）。请根据句子意思选择正确的形式。",
+    "example": "They extended it because more students are using it.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "She go to the library every day.",
+          "She goes to the library every day.",
+          "She going to the library every day."
+        ],
+        "answers": [
+          "She goes to the library every day."
+        ],
+        "explanation": "一般现在时，主语是第三人称单数，动词要加-s。",
+        "evidence": "She goes to the library every day."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question:",
+        "options": [
+          "Where you did go yesterday?",
+          "Where did you go yesterday?",
+          "Where did you went yesterday?"
+        ],
+        "answers": [
+          "Where did you go yesterday?"
+        ],
+        "explanation": "一般过去时的特殊疑问句结构：疑问词+did+主语+动词原形。",
+        "evidence": "Where did you go yesterday?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct plural form:",
+        "options": [
+          "three book",
+          "three books",
+          "three bookes"
+        ],
+        "answers": [
+          "three books"
+        ],
+        "explanation": "名词book的复数是books。",
+        "evidence": "three books"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a clause:",
+        "options": [
+          "I think that he is right.",
+          "I think what he is right.",
+          "I think which he is right."
+        ],
+        "answers": [
+          "I think that he is right."
+        ],
+        "explanation": "宾语从句用that引导，that在口语中常省略。",
+        "evidence": "I think that he is right."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often go to the library?",
+        "What do you usually do there?",
+        "Do you prefer studying at home or in a library? Why?",
+        "Have you ever used a quiet study room?"
+      ],
+      "part2": "Describe a library you have visited. You should say: where it is, what it looks like, what you did there, and explain why you liked or disliked it.",
+      "part3": [
+        "Why do some people prefer libraries to other places for studying?",
+        "What changes have libraries made in recent years?",
+        "Do you think libraries will still be important in the future?",
+        "How can libraries attract more young people?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80-100 words) about the opening hours of a place you know well (e.g., a shop, a gym, or a community center). Include when it opens and closes on different days, and give one reason why these hours are good or bad."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (B1) with integrated grammar and vocabulary practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "5c7f5f0f03537a0fc0efda23be0199081d2b39038a4b4773ab2857b2404367ea"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

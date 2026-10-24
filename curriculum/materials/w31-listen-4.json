@@ -1,0 +1,323 @@
+{
+  "id": "w31-listen-4",
+  "week": 31,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "社区服务与问题解决",
+  "grammarFocus": "第一、第二条件句的常见用途；建议与可能性的表达。",
+  "pool": "training",
+  "type": "lecture",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 4,
+  "title": "Community Garden Meeting",
+  "instructions": "这是一个模拟的英语听力材料，主题为社区服务与问题解决，适合B2–C1学习者。请先听录音（或阅读录音文本），然后回答10个问题。问题类型包括单选、填空和判断正误/未提及。填空题答案必须来自录音原文，且不超过字数限制。所有解释均为中文，并附有原文证据。",
+  "passage": "",
+  "transcript": "M: Good evening, everyone. Thanks for coming to the community garden meeting. I know it's late, but we have a lot to discuss. First, the good news: the new tool shed is finally built. A big thank you to everyone who helped last weekend.\n\nW: That's great, but we still have a problem with the water supply. The tap near the greenhouse is broken, and we can't water the plants properly.\n\nM: Right. I've called the council, and they said they would send someone this week. But if they don't come by Friday, we'll need to fix it ourselves. Does anyone know how to repair a tap?\n\nW: My neighbour is a plumber. I can ask him if you like.\n\nM: That would be very helpful. Thanks, Sarah. Now, about the compost. Some people have been putting plastic in the compost bin. That's a real problem because it doesn't break down.\n\nW: Maybe we should put a sign on the bin. If we put a clear sign, people might pay more attention.\n\nM: Good idea. I'll make one. Also, we need to decide about the children's area. The wooden fence is broken, and it's not safe.\n\nW: If we don't fix it soon, the children could get hurt. We should ask the local school if they can help. They might have a woodwork teacher who could repair it.\n\nM: That's a possibility. I'll contact the school tomorrow. Finally, the harvest festival. We need volunteers to organise it. If we have enough volunteers, we can make it a really big event.\n\nW: I can help with publicity. I'll design some posters.\n\nM: Perfect. So, to summarise: we'll contact the council about the tap, put a sign on the compost bin, ask the school about the fence, and start planning the festival. Thanks, everyone. Let's meet again next month.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main purpose of the meeting?",
+      "options": [
+        "To discuss community garden issues",
+        "To plan a harvest festival only",
+        "To elect a new committee",
+        "To celebrate the new tool shed"
+      ],
+      "answers": [
+        "To discuss community garden issues"
+      ],
+      "explanation": "会议主要讨论社区花园的多个问题，如供水、堆肥、儿童区等，因此选A。",
+      "evidence": "Thanks for coming to the community garden meeting. I know it's late, but we have a lot to discuss."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the problem with the water supply?",
+      "options": [
+        "The tap near the greenhouse is broken.",
+        "There is no water at all.",
+        "The water is dirty.",
+        "The council turned off the water."
+      ],
+      "answers": [
+        "The tap near the greenhouse is broken."
+      ],
+      "explanation": "女士明确说温室附近的水龙头坏了。",
+      "evidence": "The tap near the greenhouse is broken, and we can't water the plants properly."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What will they do if the council doesn't come by Friday?",
+      "options": [
+        "They will fix the tap themselves.",
+        "They will buy a new tap.",
+        "They will ask the school for help.",
+        "They will cancel the meeting."
+      ],
+      "answers": [
+        "They will fix the tap themselves."
+      ],
+      "explanation": "男士说如果周五前没人来，他们就自己修。",
+      "evidence": "But if they don't come by Friday, we'll need to fix it ourselves."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What does Sarah offer to do about the tap? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "ask"
+      ],
+      "explanation": "Sarah说可以问问她的邻居（水管工）。填空答案来自原文“I can ask him”。",
+      "evidence": "My neighbour is a plumber. I can ask him if you like."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is the problem with the compost bin?",
+      "options": [
+        "People are putting plastic in it.",
+        "It is too small.",
+        "It is full of water.",
+        "It has no lid."
+      ],
+      "answers": [
+        "People are putting plastic in it."
+      ],
+      "explanation": "男士说有人把塑料放进堆肥箱。",
+      "evidence": "Some people have been putting plastic in the compost bin."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Sarah suggest to solve the compost problem?",
+      "options": [
+        "Putting a sign on the bin",
+        "Moving the bin to a new place",
+        "Buying a new bin",
+        "Talking to the council"
+      ],
+      "answers": [
+        "Putting a sign on the bin"
+      ],
+      "explanation": "Sarah建议在箱子上放一个标志。",
+      "evidence": "Maybe we should put a sign on the bin."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Why is the children's area unsafe?",
+      "options": [
+        "The wooden fence is broken.",
+        "There are no toys.",
+        "The ground is wet.",
+        "There are too many children."
+      ],
+      "answers": [
+        "The wooden fence is broken."
+      ],
+      "explanation": "男士说木栅栏坏了，不安全。",
+      "evidence": "The wooden fence is broken, and it's not safe."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Who might be able to repair the fence?",
+      "options": [
+        "A woodwork teacher from the local school",
+        "A plumber",
+        "The council",
+        "Sarah's neighbour"
+      ],
+      "answers": [
+        "A woodwork teacher from the local school"
+      ],
+      "explanation": "Sarah建议问当地学校，他们可能有木工老师能修。",
+      "evidence": "They might have a woodwork teacher who could repair it."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What will Sarah do for the harvest festival?",
+      "options": [
+        "Design posters",
+        "Organise volunteers",
+        "Cook food",
+        "Sell tickets"
+      ],
+      "answers": [
+        "Design posters"
+      ],
+      "explanation": "Sarah说她可以帮忙宣传，设计海报。",
+      "evidence": "I can help with publicity. I'll design some posters."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "When will they meet again?",
+      "options": [
+        "Next month",
+        "Next week",
+        "Tomorrow",
+        "Next year"
+      ],
+      "answers": [
+        "Next month"
+      ],
+      "explanation": "男士最后说下个月再开会。",
+      "evidence": "Let's meet again next month."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "council",
+      "meaning": "委员会，地方议会",
+      "example": "I've called the council, and they said they would send someone this week."
+    },
+    {
+      "word": "plumber",
+      "meaning": "水管工",
+      "example": "My neighbour is a plumber."
+    },
+    {
+      "word": "compost",
+      "meaning": "堆肥",
+      "example": "Some people have been putting plastic in the compost bin."
+    },
+    {
+      "word": "break down",
+      "meaning": "分解",
+      "example": "That's a real problem because it doesn't break down."
+    },
+    {
+      "word": "volunteer",
+      "meaning": "志愿者",
+      "example": "We need volunteers to organise it."
+    },
+    {
+      "word": "publicity",
+      "meaning": "宣传",
+      "example": "I can help with publicity."
+    },
+    {
+      "word": "harvest",
+      "meaning": "收获",
+      "example": "Finally, the harvest festival."
+    },
+    {
+      "word": "summarise",
+      "meaning": "总结",
+      "example": "So, to summarise: we'll contact the council about the tap..."
+    }
+  ],
+  "grammar": {
+    "title": "第一、第二条件句的常见用途；建议与可能性的表达",
+    "explanation": "第一条件句表示真实可能发生的情况，结构为 if + 一般现在时，主句用 will/can/may 等。第二条件句表示假设或不太可能的情况，结构为 if + 一般过去时，主句用 would/could/might。建议可以用 should, maybe we should, why don't we 等；可能性可以用 might, could, maybe 等。",
+    "example": "If we put a clear sign, people might pay more attention.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If it rains tomorrow, we ______ the event indoors.",
+        "options": [
+          "will hold",
+          "would hold",
+          "held",
+          "have held"
+        ],
+        "answers": [
+          "will hold"
+        ],
+        "explanation": "第一条件句，主句用 will + 动词原形。",
+        "evidence": "If it rains tomorrow, we will hold the event indoors."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "If I ______ more time, I would volunteer at the garden.",
+        "options": [
+          "had",
+          "have",
+          "will have",
+          "am having"
+        ],
+        "answers": [
+          "had"
+        ],
+        "explanation": "第二条件句，if 从句用一般过去时。",
+        "evidence": "If I had more time, I would volunteer at the garden."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "You ______ ask the teacher for help if you don't understand.",
+        "options": [
+          "should",
+          "would",
+          "might",
+          "could"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "表示建议用 should。",
+        "evidence": "You should ask the teacher for help if you don't understand."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Maybe we ______ put a notice on the board.",
+        "options": [
+          "should",
+          "would",
+          "will",
+          "are"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "Maybe we should 表示建议。",
+        "evidence": "Maybe we should put a notice on the board."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often help your neighbours?",
+        "What kind of community activities are common in your area?",
+        "Have you ever volunteered for a local event?",
+        "How do you usually solve problems in your community?"
+      ],
+      "part2": "Describe a time when you helped solve a problem in your community. You should say: what the problem was, who was involved, what you did, and explain how you felt about the result.",
+      "part3": [
+        "Why is it important for people to work together to solve community problems?",
+        "What can local governments do to encourage community service?",
+        "Do you think schools should teach students how to solve community problems?",
+        "How might technology help in solving community issues in the future?"
+      ]
+    },
+    "writing": "Write an email to your local council suggesting a solution to a community problem (e.g., litter, noise, or safety). Use first and second conditionals, and include suggestions and possibilities. Write 120–150 words."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a1371dcf31976fbf6b6a9c2af68f2f00e7aa0f035691c073dfcc377f0aefb4e4"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

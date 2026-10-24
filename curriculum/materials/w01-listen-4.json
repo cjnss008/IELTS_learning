@@ -1,0 +1,268 @@
+{
+  "id": "w01-listen-4",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 4,
+  "title": "First Day Greetings",
+  "instructions": "这是为A0初学者编写的模拟听力练习，不是官方雅思考试。请先听录音（或阅读转录文本），然后回答8个问题。问题包括单选题和填空题。填空题答案必须与原文完全一致，且不超过规定字数。所有解释均为中文。",
+  "passage": "",
+  "transcript": "Anna: Hello. I am Anna. Are you Li Ming?\nLi Ming: Yes, I am Li Ming. You are Anna?\nAnna: Yes, I am Anna. I am a student. You are a student too?\nLi Ming: Yes, I am a student. I am in Class Two. Are you in Class Two?\nAnna: No, I am not. I am in Class One. You are in Class Two. I am in Class One.\nLi Ming: OK. Goodbye, Anna.\nAnna: Goodbye, Li Ming.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Anna 说自己的名字是什么？",
+      "options": [
+        "Anna",
+        "Li Ming",
+        "Mei"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "Anna 在开头说“I am Anna.”，所以她的名字是 Anna。",
+      "evidence": "I am Anna."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Li Ming 是学生吗？",
+      "options": [
+        "是，他是学生。",
+        "不，他不是学生。",
+        "文中没有说明。"
+      ],
+      "answers": [
+        "是，他是学生。"
+      ],
+      "explanation": "Li Ming 说“Yes, I am a student.”，明确表示自己是学生。",
+      "evidence": "Yes, I am a student."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Anna 在哪个班？",
+      "options": [
+        "一班",
+        "二班",
+        "三班"
+      ],
+      "answers": [
+        "一班"
+      ],
+      "explanation": "Anna 说“I am in Class One.”，即一班。",
+      "evidence": "I am in Class One."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Li Ming 在哪个班？",
+      "options": [
+        "一班",
+        "二班",
+        "三班"
+      ],
+      "answers": [
+        "二班"
+      ],
+      "explanation": "Li Ming 说“I am in Class Two.”，即二班。",
+      "evidence": "I am in Class Two."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "填空：Anna 说：“I am a ______.”（填一个词）",
+      "answers": [
+        "student"
+      ],
+      "maxWords": 1,
+      "explanation": "Anna 说“I am a student.”，所以填 student。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "填空：Li Ming 说：“I am in Class ______.”（填一个词）",
+      "answers": [
+        "Two"
+      ],
+      "maxWords": 1,
+      "explanation": "Li Ming 说“I am in Class Two.”，所以填 Two。",
+      "evidence": "I am in Class Two."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Anna 和 Li Ming 在同一个班吗？",
+      "options": [
+        "是，他们在同一个班。",
+        "不，他们不在同一个班。",
+        "文中没有说明。"
+      ],
+      "answers": [
+        "不，他们不在同一个班。"
+      ],
+      "explanation": "Anna 在一班，Li Ming 在二班，所以不在同一个班。",
+      "evidence": "I am in Class One. You are in Class Two."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "对话最后，谁说了“Goodbye”？",
+      "options": [
+        "只有 Li Ming",
+        "只有 Anna",
+        "Li Ming 和 Anna 都说了"
+      ],
+      "answers": [
+        "Li Ming 和 Anna 都说了"
+      ],
+      "explanation": "Li Ming 说“Goodbye, Anna.”，Anna 也说“Goodbye, Li Ming.”，两人都说了。",
+      "evidence": "Li Ming: OK. Goodbye, Anna. Anna: Goodbye, Li Ming."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Anna."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "I am in Class Two."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am Li Ming."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not."
+    },
+    {
+      "word": "goodbye",
+      "meaning": "再见",
+      "example": "Goodbye, Anna."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "You are a student too?"
+    },
+    {
+      "word": "OK",
+      "meaning": "好的",
+      "example": "OK. Goodbye, Anna."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，主语是“我”（I）时，be 动词用 am；主语是“你”（you）时，be 动词用 are。句子开头字母要大写，句末用句号。例如：I am Anna. You are Li Ming.",
+    "example": "I am Anna. You are Li Ming.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "I am a student.",
+          "I are a student.",
+          "You am a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "主语是 I 时，be 动词用 am，所以“I am a student.”正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "You are a student.",
+          "You am a student.",
+          "I are a student."
+        ],
+        "answers": [
+          "You are a student."
+        ],
+        "explanation": "主语是 you 时，be 动词用 are，所以“You are a student.”正确。",
+        "evidence": "You are a student too?"
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：______ am in Class One.（填一个词）",
+        "answers": [
+          "I"
+        ],
+        "maxWords": 1,
+        "explanation": "根据句意“我在一班”，主语用 I，且 be 动词是 am，所以填 I。",
+        "evidence": "I am in Class One."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "填空：You ______ in Class Two.（填一个词）",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "主语是 you，be 动词用 are，所以填 are。",
+        "evidence": "You are in Class Two."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you in Class One?",
+        "Is your teacher a man or a woman?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part3": [
+        "Do you like your class?",
+        "Is your school big?",
+        "Who is your English teacher?",
+        "Are you happy today?"
+      ]
+    },
+    "writing": "写2-4个简单的英语句子介绍你自己。使用“I am ...”和“You are ...”句型。句首字母大写，句末用句号。"
+  },
+  "rubric": {
+    "taskType": "listening comprehension (A0)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "2d97dcd22d5f6bde96489b578b2ecd8b8dd7e8c94b9a67bd30c1e53f31b682b1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

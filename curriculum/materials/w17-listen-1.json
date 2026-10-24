@@ -1,0 +1,328 @@
+{
+  "id": "w17-listen-1",
+  "week": 17,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "教育与已发生的变化",
+  "grammarFocus": "现在完成时入门；already / yet / since / for；与一般过去时区分。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "A New Skill at the Community Center",
+  "instructions": "这是一份模拟听力练习，适合B1水平成人学习者。请先听录音（或阅读录音文本），然后回答10个问题。问题类型包括单选、填空和判断正误/未提及。填空题答案必须与原文完全一致，且不超过字数限制。所有解释均为中文，并附有原文证据。",
+  "passage": "",
+  "transcript": "Woman: Hi, Tom. I haven't seen you at the community center for a while. Where have you been?\nMan: Oh, hi, Lisa. I've been really busy. I started a new evening class three weeks ago.\nWoman: Really? What class is it?\nMan: It's a cooking class. I've always wanted to learn how to cook properly. I've already learned how to make three dishes.\nWoman: That's great! Have you finished the course yet?\nMan: No, not yet. It's a twelve-week course. I've been going since the beginning of March.\nWoman: So you've been in the class for about three weeks?\nMan: Yes, that's right. I've really enjoyed it so far. The teacher is very patient.\nWoman: Have you made any friends there?\nMan: Yes, I've met a few people. There's a woman named Maria. She's been cooking for years, but she says she's still learning new things.\nWoman: That's interesting. I've never taken a cooking class. I've always cooked at home, but I just follow simple recipes.\nMan: You should join! The next course starts in June. Have you decided what to do yet?\nWoman: Not yet. I've been thinking about it, but I'm not sure I have time.\nMan: Well, the classes are only once a week, on Tuesday evenings. I've found it very relaxing.\nWoman: Maybe I'll try it. I've heard good things about that teacher.\nMan: Yes, she's excellent. Oh, I have to go now. I've got a lot of homework for the class!\nWoman: OK, see you later. Let me know how it goes!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What class did Tom start?",
+      "options": [
+        "A cooking class",
+        "A painting class",
+        "A language class",
+        "A dance class"
+      ],
+      "answers": [
+        "A cooking class"
+      ],
+      "explanation": "Tom明确说‘It's a cooking class.’，所以答案是烹饪课。",
+      "evidence": "It's a cooking class."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How long has Tom been going to the class?",
+      "options": [
+        "For three weeks",
+        "For twelve weeks",
+        "Since June",
+        "For two months"
+      ],
+      "answers": [
+        "For three weeks"
+      ],
+      "explanation": "Tom说‘I've been going since the beginning of March.’，而Lisa问‘So you've been in the class for about three weeks?’ Tom回答‘Yes, that's right.’，所以是大约三周。",
+      "evidence": "So you've been in the class for about three weeks? Yes, that's right."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Has Tom finished the course yet?",
+      "options": [
+        "Yes, he has.",
+        "No, he hasn't.",
+        "He doesn't say.",
+        "He finished it last week."
+      ],
+      "answers": [
+        "No, he hasn't."
+      ],
+      "explanation": "Lisa问‘Have you finished the course yet?’ Tom回答‘No, not yet.’，说明他还没完成课程。",
+      "evidence": "Have you finished the course yet? No, not yet."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Tom has already learned how to make ______ dishes. (Use one word from the transcript.)",
+      "options": [],
+      "answers": [
+        "three"
+      ],
+      "maxWords": 1,
+      "explanation": "Tom说‘I've already learned how to make three dishes.’，所以填three。",
+      "evidence": "I've already learned how to make three dishes."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Tom say about Maria?",
+      "options": [
+        "She has been cooking for years.",
+        "She is the teacher.",
+        "She has never cooked before.",
+        "She started the class last week."
+      ],
+      "answers": [
+        "She has been cooking for years."
+      ],
+      "explanation": "Tom说‘She's been cooking for years’，所以Maria已经做饭多年。",
+      "evidence": "She's been cooking for years"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Has Lisa ever taken a cooking class?",
+      "options": [
+        "Yes, she has.",
+        "No, she hasn't.",
+        "She has taken many classes.",
+        "She doesn't say."
+      ],
+      "answers": [
+        "No, she hasn't."
+      ],
+      "explanation": "Lisa说‘I've never taken a cooking class.’，所以她没有上过烹饪课。",
+      "evidence": "I've never taken a cooking class."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When does the next course start?",
+      "options": [
+        "In March",
+        "In June",
+        "In July",
+        "Next Tuesday"
+      ],
+      "answers": [
+        "In June"
+      ],
+      "explanation": "Tom说‘The next course starts in June.’，所以下一期课程在六月开始。",
+      "evidence": "The next course starts in June."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How often are the classes?",
+      "options": [
+        "Once a week",
+        "Twice a week",
+        "Every day",
+        "Once a month"
+      ],
+      "answers": [
+        "Once a week"
+      ],
+      "explanation": "Tom说‘the classes are only once a week’，所以课程每周一次。",
+      "evidence": "the classes are only once a week"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Tom says the class is on Tuesday evenings.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Tom明确说‘on Tuesday evenings’，所以该陈述为真。",
+      "evidence": "on Tuesday evenings"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Lisa has decided to join the cooking class.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Lisa说‘Not yet. I've been thinking about it, but I'm not sure I have time.’，说明她还没决定，所以‘已经决定加入’是错误的。",
+      "evidence": "Not yet. I've been thinking about it, but I'm not sure I have time."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "community center",
+      "meaning": "社区中心",
+      "example": "I haven't seen you at the community center for a while."
+    },
+    {
+      "word": "properly",
+      "meaning": "正确地；好好地",
+      "example": "I've always wanted to learn how to cook properly."
+    },
+    {
+      "word": "patient",
+      "meaning": "有耐心的",
+      "example": "The teacher is very patient."
+    },
+    {
+      "word": "recipe",
+      "meaning": "食谱",
+      "example": "I just follow simple recipes."
+    },
+    {
+      "word": "relaxing",
+      "meaning": "令人放松的",
+      "example": "I've found it very relaxing."
+    },
+    {
+      "word": "excellent",
+      "meaning": "极好的",
+      "example": "She's excellent."
+    },
+    {
+      "word": "homework",
+      "meaning": "作业",
+      "example": "I've got a lot of homework for the class!"
+    },
+    {
+      "word": "decide",
+      "meaning": "决定",
+      "example": "Have you decided what to do yet?"
+    }
+  ],
+  "grammar": {
+    "title": "现在完成时入门：already / yet / since / for；与一般过去时区分",
+    "explanation": "现在完成时表示过去发生的动作对现在造成的影响或结果，或从过去开始持续到现在的状态。结构为 have/has + 过去分词。already 用于肯定句，表示“已经”；yet 用于否定句和疑问句，表示“还未”或“已经”；since 后接时间点，for 后接时间段。一般过去时只表示过去发生的动作，与现在无关。例如：I have already learned...（强调现在会了）；I started...（只说明过去开始）。",
+    "example": "I've already learned how to make three dishes.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "She ______ her homework already.",
+        "options": [
+          "has finished",
+          "finished",
+          "finishes",
+          "is finishing"
+        ],
+        "answers": [
+          "has finished"
+        ],
+        "explanation": "already 常与现在完成时连用，表示“已经完成”，结构为 has + 过去分词。",
+        "evidence": "I've already learned how to make three dishes."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Have you ______ your lunch yet?",
+        "options": [
+          "eaten",
+          "ate",
+          "eat",
+          "eating"
+        ],
+        "answers": [
+          "eaten"
+        ],
+        "explanation": "yet 用于疑问句，现在完成时结构 have + 过去分词，eat 的过去分词是 eaten。",
+        "evidence": "Have you finished the course yet?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "I have lived here ______ 2010.",
+        "options": [
+          "since",
+          "for",
+          "in",
+          "at"
+        ],
+        "answers": [
+          "since"
+        ],
+        "explanation": "since 后接时间点（2010），表示从那时持续到现在。",
+        "evidence": "I've been going since the beginning of March."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "He has worked in this company ______ five years.",
+        "options": [
+          "for",
+          "since",
+          "in",
+          "ago"
+        ],
+        "answers": [
+          "for"
+        ],
+        "explanation": "for 后接时间段（five years），表示持续了五年。",
+        "evidence": "I've been in the class for about three weeks?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Have you ever taken a class outside school?",
+        "What new skill would you like to learn?",
+        "Do you prefer learning alone or in a group?",
+        "How do you usually relax after work or study?"
+      ],
+      "part2": "Describe a class or course you have taken or would like to take. You should say:",
+      "part2Bullets": [
+        "what the class is about",
+        "where and when you took it or will take it",
+        "what you have learned or want to learn",
+        "and explain why you chose it"
+      ],
+      "part3": [
+        "Why do some people take evening classes?",
+        "What are the benefits of learning a practical skill like cooking?",
+        "Do you think adults should continue learning new things? Why?",
+        "How has the way people learn new skills changed in recent years?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80-100 words) about a skill you have learned recently. Use the present perfect with already, yet, since, or for. Explain what you have done and how you feel about it."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "29fbab9a3e780bc56ed56828acd134dbc5c0ecc7be7ce4b1b7feaa5ac2a3a8da"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

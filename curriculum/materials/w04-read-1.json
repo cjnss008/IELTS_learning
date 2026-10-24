@@ -1,0 +1,275 @@
+{
+  "id": "w04-read-1",
+  "week": 4,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "At the School Gate",
+  "instructions": "本材料为项目原创模拟教学材料，情境和数据均为模拟，非官方试题，未经真实考生难度标定。先阅读短文，再按原文答题。共 8 题；单选题只选一个完整选项。填空用短文中的英文原词或数字，遵守每题词数限制。",
+  "passage": "A. My name is Li Ming. I am a student. I am not a teacher. I am at the school gate. The school gate is big and blue. I am early. My bag is black.\n\nB. My friend is Wang Fang. She is a student too. She is not late. Her bag is red. We are happy. Our classroom is near the gate. It is small and clean. Our books are on the desks. We are not in the classroom now. Our teacher is Mr. Chen. He is at the gate. \"Are you ready?\" he asks. \"Yes, we are,\" we say. We are ready for class.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "李明是老师吗？",
+      "options": [
+        "是的，他是老师。",
+        "不，他不是老师。",
+        "不，她是老师。"
+      ],
+      "answers": [
+        "不，他不是老师。"
+      ],
+      "explanation": "原文明确说“I am not a teacher.”，所以李明不是老师。",
+      "evidence": "I am not a teacher."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "学校大门大吗？",
+      "options": [
+        "是的，它很大。",
+        "不，它不大。",
+        "不，它很小。"
+      ],
+      "answers": [
+        "是的，它很大。"
+      ],
+      "explanation": "原文说“The school gate is big and blue.”，所以学校大门很大。",
+      "evidence": "The school gate is big and blue."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "王芳是学生吗？",
+      "options": [
+        "是的，她是学生。",
+        "不，她不是学生。",
+        "不，他是学生。"
+      ],
+      "answers": [
+        "是的，她是学生。"
+      ],
+      "explanation": "Wang Fang 后面的 she 指王芳，原文明确说她也是学生。",
+      "evidence": "She is a student too."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "王芳迟到了吗？",
+      "options": [
+        "是的，她迟到了。",
+        "不，她没有迟到。",
+        "不，他迟到了。"
+      ],
+      "answers": [
+        "不，她没有迟到。"
+      ],
+      "explanation": "原文说“She is not late.”，所以王芳没有迟到。",
+      "evidence": "She is not late."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "他们开心吗？",
+      "options": [
+        "是的，他们开心。",
+        "不，他们不开心。",
+        "不，他们难过。"
+      ],
+      "answers": [
+        "是的，他们开心。"
+      ],
+      "explanation": "原文说“We are happy.”，所以他们是开心的。",
+      "evidence": "We are happy."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "从短文中抄写一个英文词：李明的包是黑色的。My bag is ______.",
+      "answers": [
+        "black"
+      ],
+      "maxWords": 1,
+      "explanation": "A 段是李明的自我介绍，他说包是黑色的。",
+      "evidence": "My bag is black."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "从短文中抄写一个英文姓氏：Their teacher is Mr. ______.",
+      "answers": [
+        "Chen"
+      ],
+      "maxWords": 1,
+      "explanation": "B 段说明老师是陈老师，姓氏写作 Chen。",
+      "evidence": "Our teacher is Mr. Chen."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "从短文中抄写一个英文词：学校大门是蓝色的。The school gate is big and ______.",
+      "answers": [
+        "blue"
+      ],
+      "maxWords": 1,
+      "explanation": "A 段说大门又大又蓝，所以填 blue。",
+      "evidence": "The school gate is big and blue."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am not a teacher."
+    },
+    {
+      "word": "school",
+      "meaning": "学校",
+      "example": "I am at the school gate."
+    },
+    {
+      "word": "gate",
+      "meaning": "大门",
+      "example": "The school gate is big and blue."
+    },
+    {
+      "word": "big",
+      "meaning": "大的",
+      "example": "The school gate is big and blue."
+    },
+    {
+      "word": "black",
+      "meaning": "黑色的",
+      "example": "My bag is black."
+    },
+    {
+      "word": "early",
+      "meaning": "早的",
+      "example": "I am early."
+    },
+    {
+      "word": "late",
+      "meaning": "迟的",
+      "example": "She is not late."
+    }
+  ],
+  "grammar": {
+    "title": "be动词否定句与一般疑问句",
+    "explanation": "be动词（am, is, are）的否定句是在be动词后加not，例如“I am not a teacher.”。一般疑问句是把be动词提到主语前面，例如“Are you a student?”。简短回答用Yes或No，例如“Yes, I am.”或“No, I am not.”。",
+    "example": "I am not a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的 be 动词否定句：",
+        "options": [
+          "I am not a doctor.",
+          "I not am a doctor.",
+          "I am a doctor not."
+        ],
+        "answers": [
+          "I am not a doctor."
+        ],
+        "explanation": "在 be 动词 am 后加 not。",
+        "evidence": "I am not a doctor."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "把“You are ready.”改成标准语序的一般疑问句：",
+        "options": [
+          "Are you ready?",
+          "Is you ready?",
+          "Do you are ready?"
+        ],
+        "answers": [
+          "Are you ready?"
+        ],
+        "explanation": "将 be 动词 are 放到主语 you 前面。",
+        "evidence": "Are you ready?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "你用 I 回答“Are you early?”，选择简短肯定回答：",
+        "options": [
+          "Yes, I am.",
+          "Yes, I do.",
+          "Yes, I is."
+        ],
+        "answers": [
+          "Yes, I am."
+        ],
+        "explanation": "问句使用 be 动词；主语改为 I，回答用 am。",
+        "evidence": "Yes, I am."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "你用 I 回答“Are you late?”，选择简短否定回答：",
+        "options": [
+          "No, I am not.",
+          "No, I not.",
+          "No, I do not."
+        ],
+        "answers": [
+          "No, I am not."
+        ],
+        "explanation": "be 动词问句的简短否定回答保留 am 并加 not。",
+        "evidence": "No, I am not."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Are you a teacher?",
+        "Is your school big?",
+        "Are you happy?"
+      ],
+      "part2": "Describe your school or a place where you study. Say 3–5 simple sentences.",
+      "part3": [
+        "Is your school big or small?",
+        "Are you early or late?",
+        "Is your friend a student?",
+        "Are you happy at school?"
+      ],
+      "part2Bullets": [
+        "what the place is",
+        "whether it is big or small",
+        "one person there",
+        "how you feel there"
+      ]
+    },
+    "writing": "写3-5个简单的英语句子，介绍你自己和你的朋友。使用be动词的肯定句、否定句和一般疑问句。"
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1独立逐题核对与规则校验；未经真实考生难度标定",
+    "contentHash": "81754633701a9d0fa3e21905893287b06a668e18acf0a68ec9d277941bf16f8e"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

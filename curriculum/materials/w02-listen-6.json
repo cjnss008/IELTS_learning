@@ -1,0 +1,269 @@
+{
+  "id": "w02-listen-6",
+  "week": 2,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 6,
+  "title": "At the School Gate",
+  "instructions": "这是模拟听力练习，不是官方雅思考试。请先听录音（或阅读听力原文），然后回答问题。题目中的中文说明帮助你理解。答案必须来自听力内容。",
+  "passage": "",
+  "transcript": "Anna: Hi, Ms. Li. This is Ben. He is new. Ben: Hello, Ms. Li. Ms. Li: Hi, Ben. This is a book. It is for you. Ben: Thank you. Ms. Li: That is a dog. It is small. Anna: Is that your dog? Ms. Li: No, it is not. It is Tom's dog. Ben: Is this your book? Ms. Li: Yes, it is. Anna: Is Ben a teacher? Ms. Li: No, he is not. He is a student.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Ben 是新来的吗？",
+      "options": [
+        "Yes, he is.",
+        "No, he is not."
+      ],
+      "answers": [
+        "Yes, he is."
+      ],
+      "explanation": "Anna 说“He is new.”，所以 Ben 是新来的。",
+      "evidence": "He is new."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Ms. Li 给 Ben 什么？",
+      "options": [
+        "a book",
+        "a dog",
+        "a pen"
+      ],
+      "answers": [
+        "a book"
+      ],
+      "explanation": "Ms. Li 说“This is a book. It is for you.”，所以给的是书。",
+      "evidence": "This is a book. It is for you."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "那只狗是谁的？",
+      "options": [
+        "Tom's",
+        "Ms. Li's",
+        "Ben's"
+      ],
+      "answers": [
+        "Tom's"
+      ],
+      "explanation": "Ms. Li 说“It is Tom's dog.”，所以狗是 Tom 的。",
+      "evidence": "It is Tom's dog."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Ben 是老师吗？",
+      "options": [
+        "Yes, he is.",
+        "No, he is not."
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Ms. Li 说“No, he is not. He is a student.”，所以 Ben 不是老师。",
+      "evidence": "No, he is not. He is a student."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "那本书是 Ms. Li 的吗？",
+      "options": [
+        "Yes, it is.",
+        "No, it is not."
+      ],
+      "answers": [
+        "Yes, it is."
+      ],
+      "explanation": "Ben 问“Is this your book?”，Ms. Li 回答“Yes, it is.”，所以书是她的。",
+      "evidence": "Yes, it is."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "那只狗小吗？",
+      "options": [
+        "Yes, it is.",
+        "No, it is not."
+      ],
+      "answers": [
+        "Yes, it is."
+      ],
+      "explanation": "Ms. Li 说“It is small.”，所以狗是小的。",
+      "evidence": "It is small."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Ms. Li 说 Ben 是 ______。（填一个单词）",
+      "answers": [
+        "student"
+      ],
+      "maxWords": 1,
+      "explanation": "Ms. Li 说“He is a student.”，所以 Ben 是学生。",
+      "evidence": "He is a student."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Anna 介绍 Ben 时说：“This is ______.”（填一个人名）",
+      "answers": [
+        "Ben"
+      ],
+      "maxWords": 1,
+      "explanation": "Anna 说“This is Ben.”，所以填 Ben。",
+      "evidence": "This is Ben."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "He is new."
+    },
+    {
+      "word": "book",
+      "meaning": "书",
+      "example": "This is a book."
+    },
+    {
+      "word": "dog",
+      "meaning": "狗",
+      "example": "That is a dog."
+    },
+    {
+      "word": "small",
+      "meaning": "小的",
+      "example": "It is small."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "Is Ben a teacher?"
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "He is a student."
+    },
+    {
+      "word": "this",
+      "meaning": "这个",
+      "example": "This is Ben."
+    },
+    {
+      "word": "that",
+      "meaning": "那个",
+      "example": "That is a dog."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it; is; a / an; 单数名词; this / that",
+    "explanation": "英语中，我们用 he 指男性，she 指女性，it 指事物或动物。is 是 be 动词，用于 he/she/it。a 或 an 用于单数名词前，表示“一个”。this 指近处的人或物，that 指远处的人或物。",
+    "example": "This is Ben. He is new.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的单词填空：______ is a girl. (指一个女孩)",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "指女孩用 she。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的单词填空：This is ______ apple.",
+        "options": [
+          "a",
+          "an"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple 以元音音素开头，用 an。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的单词填空：______ is a cat. (指远处的一只猫)",
+        "options": [
+          "This",
+          "That"
+        ],
+        "answers": [
+          "That"
+        ],
+        "explanation": "指远处用 that。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的单词填空：He ______ a boy.",
+        "options": [
+          "is",
+          "are"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "he 后面用 is。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Is this your book?",
+        "Is that your pen?",
+        "Are you a student?"
+      ],
+      "part2": "Describe a person or thing near you. You should say: who or what it is; where it is; what it looks like; and explain why you mention it.",
+      "part3": [
+        "Is this a pen?",
+        "Is that a dog?",
+        "Is he a teacher?",
+        "Is she a student?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about a person or thing near you. Use 'This is...', 'He/She/It is...', and 'a/an'."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "e5f195808daf872f60da5f76985bf2398c00c4e9418ffb5a95086bc9dfa3cd72"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

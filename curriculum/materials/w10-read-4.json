@@ -1,0 +1,309 @@
+{
+  "id": "w10-read-4",
+  "week": 10,
+  "skill": "reading",
+  "level": "A2",
+  "topic": "住所与生活环境",
+  "grammarFocus": "there be；可数与不可数名词；some / any；地点介词复习。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "My New Flat and Tom's House",
+  "instructions": "阅读短文，然后回答问题。请仔细阅读每个问题，并从选项中选出正确答案，或根据原文填写单词。注意：本材料为模拟练习，不是官方雅思考试。",
+  "passage": "A\nHi, I'm Lin Mei. I live in a small flat in Shanghai. There is a living room, a kitchen, and two bedrooms. The living room is not big, but it is bright. There is a sofa and a TV. There are some books on the shelf. I like my flat because it is near my work. My flat is on the third floor. There is a supermarket on my street. It is very near. There is not any restaurant near my flat, but there is a small shop behind my building. I buy milk and bread there. Now my fridge is empty. There is not any milk in it. I need to go shopping.\n\nB\nMy friend Tom lives in a house in the countryside. There is a garden behind his house. In the garden, there are some flowers and two big trees. There is not any noise because it is quiet. Tom has a dog. The dog plays in the garden every day. There is a small table in the garden. Tom likes to sit there and read. There are some birds in the trees. They sing in the morning. Tom's house is old but warm. There is a big kitchen in his house. There are some apples on the table. Tom's wife makes apple pie. It smells very good.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "根据第一段，林梅的公寓里有什么？",
+      "options": [
+        "一个客厅、一个厨房和两个卧室",
+        "两个客厅、一个厨房和一个卧室",
+        "一个客厅、两个厨房和两个卧室"
+      ],
+      "answers": [
+        "一个客厅、一个厨房和两个卧室"
+      ],
+      "explanation": "第一段明确提到：There is a living room, a kitchen, and two bedrooms. 因此选第一个选项。",
+      "evidence": "There is a living room, a kitchen, and two bedrooms."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "根据第一段，架子上有什么？",
+      "options": [
+        "一些书",
+        "一些花",
+        "一些牛奶"
+      ],
+      "answers": [
+        "一些书"
+      ],
+      "explanation": "第一段说：There are some books on the shelf. 所以架子上有一些书。",
+      "evidence": "There are some books on the shelf."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "根据第二段，汤姆的房子后面有什么？",
+      "options": [
+        "一个花园",
+        "一个超市",
+        "一个餐馆"
+      ],
+      "answers": [
+        "一个花园"
+      ],
+      "explanation": "第二段提到：There is a garden behind his house. 因此房子后面有一个花园。",
+      "evidence": "There is a garden behind his house."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "根据第二段，花园里有什么？",
+      "options": [
+        "一些花和两棵大树",
+        "一些书和一台电视",
+        "一些牛奶和面包"
+      ],
+      "answers": [
+        "一些花和两棵大树"
+      ],
+      "explanation": "第二段说：In the garden, there are some flowers and two big trees. 所以花园里有一些花和两棵大树。",
+      "evidence": "In the garden, there are some flowers and two big trees."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "根据第一段，林梅的公寓在几楼？",
+      "options": [
+        "三楼",
+        "二楼",
+        "一楼"
+      ],
+      "answers": [
+        "三楼"
+      ],
+      "explanation": "第一段说：My flat is on the third floor. 因此她的公寓在三楼。",
+      "evidence": "My flat is on the third floor."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "根据第一段，超市在哪里？",
+      "options": [
+        "在林梅的街道上",
+        "在林梅的公寓后面",
+        "在汤姆的花园里"
+      ],
+      "answers": [
+        "在林梅的街道上"
+      ],
+      "explanation": "第一段提到：There is a supermarket on my street. 这里的 my 指林梅，所以超市在她的街道上。",
+      "evidence": "There is a supermarket on my street."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "根据第一段，林梅的楼后面有什么？",
+      "options": [
+        "一个小商店",
+        "一个餐馆",
+        "一个花园"
+      ],
+      "answers": [
+        "一个小商店"
+      ],
+      "explanation": "第一段说：there is a small shop behind my building. 因此楼后面有一个小商店。",
+      "evidence": "there is a small shop behind my building."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "根据第一段，林梅现在冰箱里没有什么？请用原文中的一个词填空。",
+      "maxWords": 1,
+      "answers": [
+        "milk"
+      ],
+      "explanation": "第一段说：There is not any milk in it. 因此冰箱里没有牛奶。填空词为 milk。",
+      "evidence": "There is not any milk in it."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "根据第二段，汤姆的房子在哪里？",
+      "options": [
+        "在乡下",
+        "在上海",
+        "在超市附近"
+      ],
+      "answers": [
+        "在乡下"
+      ],
+      "explanation": "第二段第一句说：My friend Tom lives in a house in the countryside. 因此汤姆的房子在乡下。",
+      "evidence": "My friend Tom lives in a house in the countryside."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "根据第一段，林梅需要做什么？",
+      "options": [
+        "去购物",
+        "去上班",
+        "去花园"
+      ],
+      "answers": [
+        "去购物"
+      ],
+      "explanation": "第一段最后说：I need to go shopping. 因此林梅需要去购物。",
+      "evidence": "I need to go shopping."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "flat",
+      "meaning": "公寓",
+      "example": "I live in a small flat in Shanghai."
+    },
+    {
+      "word": "living room",
+      "meaning": "客厅",
+      "example": "There is a living room, a kitchen, and two bedrooms."
+    },
+    {
+      "word": "kitchen",
+      "meaning": "厨房",
+      "example": "There is a living room, a kitchen, and two bedrooms."
+    },
+    {
+      "word": "bedroom",
+      "meaning": "卧室",
+      "example": "There is a living room, a kitchen, and two bedrooms."
+    },
+    {
+      "word": "shelf",
+      "meaning": "架子",
+      "example": "There are some books on the shelf."
+    },
+    {
+      "word": "garden",
+      "meaning": "花园",
+      "example": "There is a garden behind his house."
+    },
+    {
+      "word": "supermarket",
+      "meaning": "超市",
+      "example": "There is a supermarket on my street."
+    },
+    {
+      "word": "fridge",
+      "meaning": "冰箱",
+      "example": "Now my fridge is empty."
+    }
+  ],
+  "grammar": {
+    "title": "There be 句型与可数/不可数名词",
+    "explanation": "我们用 there is 加单数名词或不可数名词，用 there are 加复数名词。some 用于肯定句，any 用于否定句和疑问句。地点介词如 on, behind, near 表示位置。",
+    "example": "There is a garden behind his house.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的选项完成句子：There ___ a book on the desk.",
+        "options": [
+          "is",
+          "are",
+          "be"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "book 是单数名词，所以用 there is。",
+        "evidence": "There is a book on the desk."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的选项完成句子：There ___ some apples in the basket.",
+        "options": [
+          "is",
+          "are",
+          "be"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "apples 是复数名词，所以用 there are。",
+        "evidence": "There are some apples in the basket."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的选项完成句子：There isn't ___ water in the bottle.",
+        "options": [
+          "some",
+          "any",
+          "a"
+        ],
+        "answers": [
+          "any"
+        ],
+        "explanation": "否定句中用 any，不用 some。water 是不可数名词，不用 a。",
+        "evidence": "There isn't any water in the bottle."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的选项完成句子：The cat is ___ the table.",
+        "options": [
+          "on",
+          "in",
+          "at"
+        ],
+        "answers": [
+          "on"
+        ],
+        "explanation": "表示在桌子上面用介词 on。",
+        "evidence": "The cat is on the table."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you live in a house or a flat?",
+        "What is your favourite room?",
+        "Is there a park near your home?",
+        "What can you see from your window?"
+      ],
+      "part2": "Describe your home. You should say: where it is, what rooms it has, what is in your favourite room, and why you like it.",
+      "part3": [
+        "Do you like living in a city or in the countryside?",
+        "What things are there in a good living room?",
+        "Is it important to have a garden?",
+        "How can we make our home nice?"
+      ]
+    },
+    "writing": "写一段话描述你的家。用 there be 句型、some/any 和地点介词。至少写 5 句话。"
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (A2)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "d090c8a2b58e80fb26e287dc53bc21f4659a38f13975012afaeaaec39902b800"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

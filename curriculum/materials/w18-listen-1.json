@@ -1,0 +1,312 @@
+{
+  "id": "w18-listen-1",
+  "week": 18,
+  "skill": "listening",
+  "level": "B1",
+  "topic": "科技与日常工具",
+  "grammarFocus": "to do 表目的；动词后接 to do / doing 的常见用法；基础被动语态入门。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "The Library Tool Corner",
+  "instructions": "本材料为项目原创模拟教学材料，情境和数据均为模拟，非官方试题，未经真实考生难度标定。先读题，再听录音；建议第一遍抓大意，第二遍核对细节。共 10 题；单选题只选一个完整选项。填空用录音中的英文原词或数字，遵守每题词数限制。判断题 True 表示原文明示支持，False 表示原文明示矛盾，Not Given 表示缺少判断所需信息。",
+  "transcript": "Mia: Hi, Ben. What are you doing at the library?\nBen: I'm waiting for the tool corner to open. I want to borrow a small drill.\nMia: Why do you need it?\nBen: To put up a shelf in my kitchen. My books are on the floor.\nMia: Do you know how to use a drill?\nBen: Not really. I watched two videos last night to learn the basics.\nMia: Be careful. My brother tried to fix a shelf last year, and he broke a window.\nBen: Was he hurt?\nMia: No, he was fine. Only the window was broken.\nBen: Does the library lend other things?\nMia: Yes. You can borrow a camera, a small sewing machine, and even a guitar.\nBen: I'd love to learn to play the guitar. What about you?\nMia: I'm learning to sew at the moment. I'm making a bag. The instructions are hard to read. They're printed in very small letters.\nBen: Can a librarian help?\nMia: One showed me how to start the machine yesterday.\nBen: It's ten o'clock. Is the tool corner open?\nMia: No. The sign says it opens at half past ten.\nBen: I read ten o'clock on the website. That must be old information. While we wait, I can send you one of my videos about drills.\nMia: Thanks. But my phone is almost dead. It needs charging.\nBen: There's a socket near the window. You can use it.\nMia: Good. Then we can watch the video together.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Ben at the library?",
+      "options": [
+        "To borrow a small drill",
+        "To return a broken shelf",
+        "To meet a librarian about a job",
+        "To buy a camera"
+      ],
+      "answers": [
+        "To borrow a small drill"
+      ],
+      "explanation": "录音开头Ben说他在等工具角开门，想借一把小电钻（borrow a small drill）。其他选项在录音中没有依据。",
+      "evidence": "I want to borrow a small drill."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Ben need the drill?",
+      "options": [
+        "To put up a shelf in his kitchen",
+        "To repair a window",
+        "To make a bag",
+        "To fix a guitar"
+      ],
+      "answers": [
+        "To put up a shelf in his kitchen"
+      ],
+      "explanation": "Ben明确说需要电钻是为了在厨房装一个架子（put up a shelf in my kitchen）。修窗户是Mia哥哥的事，做包是Mia的事。",
+      "evidence": "To put up a shelf in my kitchen."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What happened to Mia's brother last year?",
+      "options": [
+        "He broke a window.",
+        "He hurt his hand.",
+        "He lost a drill.",
+        "He bought a new shelf."
+      ],
+      "answers": [
+        "He broke a window."
+      ],
+      "explanation": "Mia说哥哥去年试着修架子，结果打破了一扇窗户。Ben问有没有受伤，Mia回答他没事，所以“伤到手”不正确。",
+      "evidence": "My brother tried to fix a shelf last year, and he broke a window."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "According to Mia, what can people borrow from the library?",
+      "options": [
+        "A camera, a sewing machine and a guitar",
+        "Only books and videos",
+        "A drill and a window",
+        "A phone and a flask"
+      ],
+      "answers": [
+        "A camera, a sewing machine and a guitar"
+      ],
+      "explanation": "Mia 明确列举了可借的相机、小型缝纫机和吉他；其他组合没有被列为图书馆可借物品。",
+      "evidence": "You can borrow a camera, a small sewing machine, and even a guitar."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is Mia learning to do at the moment?",
+      "options": [
+        "To sew",
+        "To play the guitar",
+        "To use a drill",
+        "To make coffee"
+      ],
+      "answers": [
+        "To sew"
+      ],
+      "explanation": "Mia说自己目前正在学缝纫（learning to sew），并在做一个包。学吉他的是Ben表达的兴趣，不是Mia正在做的事。",
+      "evidence": "I'm learning to sew at the moment."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What problem does Mia mention about the sewing machine instructions?",
+      "options": [
+        "They are printed in very small letters.",
+        "They are written in French.",
+        "They are missing from the box.",
+        "They are on a dead phone."
+      ],
+      "answers": [
+        "They are printed in very small letters."
+      ],
+      "explanation": "Mia说说明书很难读，因为字印得很小。录音没有提到法语、说明书丢失或手机没电与说明书有关。",
+      "evidence": "They're printed in very small letters."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What time does the sign say the tool corner opens? Write the time in words as it appears in the recording.",
+      "answers": [
+        "half past ten"
+      ],
+      "maxWords": 4,
+      "explanation": "Mia看了门上的牌子，说工具角十点半开门，原文是half past ten。Ben在网站上看到的是十点，那是旧信息。",
+      "evidence": "The sign says it opens at half past ten."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What does Mia's phone need? Write one word from the recording.",
+      "answers": [
+        "charging"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说手机快没电了，需要充电，原文用needs charging，填空只需一个词charging。",
+      "evidence": "It needs charging."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Where is the socket? Write the phrase from the recording (max. 3 words).",
+      "answers": [
+        "near the window"
+      ],
+      "maxWords": 3,
+      "explanation": "Ben告诉Mia插座在窗户附近，原文是near the window。",
+      "evidence": "There's a socket near the window."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False or Not Given: Ben has used a drill before.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "Not really 回答的是“会不会用”，不能推出“从未用过”。录音没有交代过往使用经历，因此选 Not Given。",
+      "evidence": "Ben 说自己不太会用电钻，也提到看了基础视频，但未说明以前是否实际用过电钻。"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "borrow",
+      "meaning": "借入（从别人或机构处借来）",
+      "example": "I want to borrow a small drill."
+    },
+    {
+      "word": "drill",
+      "meaning": "电钻",
+      "example": "I want to borrow a small drill."
+    },
+    {
+      "word": "shelf",
+      "meaning": "架子，搁板",
+      "example": "To put up a shelf in my kitchen."
+    },
+    {
+      "word": "basics",
+      "meaning": "基础知识，基本要领",
+      "example": "I watched two videos last night to learn the basics."
+    },
+    {
+      "word": "sew",
+      "meaning": "缝纫，做针线活",
+      "example": "I'm learning to sew at the moment."
+    },
+    {
+      "word": "instructions",
+      "meaning": "说明书，操作说明",
+      "example": "The instructions are hard to read."
+    },
+    {
+      "word": "librarian",
+      "meaning": "图书管理员",
+      "example": "Can a librarian help?"
+    },
+    {
+      "word": "socket",
+      "meaning": "插座",
+      "example": "There's a socket near the window."
+    }
+  ],
+  "grammar": {
+    "title": "to do 表目的；动词后接 to do / doing；基础被动语态入门",
+    "explanation": "表示“为了做某事”时，可用 to + 动词原形，如 to learn the basics 说明看视频的目的。有些动词常接 to do，如 want to borrow、learn to play；有些常接 doing，如 enjoy doing、finish doing。这里不要把所有 to do 都当作目的：want to borrow 中的 to borrow 是 want 后的补充内容。被动语态用 be + 过去分词，表示主语承受动作，如 They're printed in very small letters.（它们被印成很小的字）。",
+    "example": "They're printed in very small letters.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Ruth went to the workshop ______ a chair.",
+        "options": [
+          "to repair",
+          "repairing",
+          "repair"
+        ],
+        "answers": [
+          "to repair"
+        ],
+        "explanation": "这里表示去工坊的目的“为了修椅子”，用 to repair。",
+        "evidence": "Ruth went to the workshop to repair a chair."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Leo is learning ______ a bicycle.",
+        "options": [
+          "to ride",
+          "ride",
+          "rode"
+        ],
+        "answers": [
+          "to ride"
+        ],
+        "explanation": "learn 后接 to do，表示学习做某事。",
+        "evidence": "Leo is learning to ride a bicycle."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Use the passive voice: The packages ______ by a courier every morning.",
+        "options": [
+          "are delivered",
+          "deliver",
+          "is delivered"
+        ],
+        "answers": [
+          "are delivered"
+        ],
+        "explanation": "包裹承受递送动作；packages 是复数，用 are delivered。",
+        "evidence": "The packages are delivered by a courier every morning."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "I enjoy ______ small bags.",
+        "options": [
+          "making",
+          "to make",
+          "make"
+        ],
+        "answers": [
+          "making"
+        ],
+        "explanation": "enjoy 后接动词的 -ing 形式。",
+        "evidence": "I enjoy making small bags."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use tools at home?",
+        "What simple machines can you use?",
+        "Do you prefer to learn new things from videos or from books? Why?",
+        "Is there a place near your home where you can borrow things?"
+      ],
+      "part2": "Describe a simple tool or machine you know how to use.",
+      "part3": [
+        "Why do some people prefer to borrow tools instead of buying them?",
+        "What problems can happen when people use machines without instructions?",
+        "Should libraries lend things like cameras and guitars? Why or why not?",
+        "How can videos help people to learn practical skills?"
+      ],
+      "part2Bullets": [
+        "what it is",
+        "what you use it for",
+        "how you learned to use it",
+        "one difficulty or useful feature"
+      ]
+    },
+    "writing": "Write 100–120 words about a tool or simple machine in a new situation. Say what it is used for, how you learned to use it, and one problem you solved. Include two purpose phrases with to do and one passive sentence. You may invent a simulated example."
+  },
+  "rubric": {
+    "taskType": "B1 listening comprehension (simulated educational material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1独立逐题核对与规则校验；未经真实考生难度标定",
+    "contentHash": "5b720bfe458c4b43ca2a46c8da6df8399d0a7d0dc5db40a0397f7f81445c041c"
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

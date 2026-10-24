@@ -1,0 +1,309 @@
+{
+  "id": "w20-read-2",
+  "week": 20,
+  "skill": "reading",
+  "level": "B1",
+  "topic": "基础综合复测与薄弱项整理",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "The Community Library Book Sale",
+  "instructions": "阅读下面的短文，然后回答问题。短文和问题都是模拟材料，不是官方考试。请仔细阅读短文，并根据短文内容选择或填写答案。填空题的答案必须与短文中的词语完全一致，且不超过字数限制。",
+  "passage": "Last Saturday, the community library had a book sale. Many people came to buy cheap books. The sale started at 9 a.m. and finished at 4 p.m. All the money from the sale will help buy new books for children. The event was busy all day, and people of all ages came to look for books they wanted. Families with young children, students, and older people all visited the sale, and the library was full of activity from morning to afternoon.\n\nAt the sale, a visitor asked a volunteer for help.\n\nA: Excuse me, how much is this book?\nB: Which one? The blue one or the red one?\nA: The blue one. It looks interesting.\nB: That's 5 yuan. The red one is 8 yuan.\nA: OK, I'll take the blue one. And do you have any books about cooking?\nB: Yes, they are on the table near the window. They are 3 yuan each.\nA: Great. I'll take two cooking books.\n\nMany people donated books for the sale. Some books were old, but some were almost new. The library also sold coffee and cake. A cup of coffee was 2 yuan, and a piece of cake was 3 yuan. The sale raised 2,000 yuan in total. The library plans to use the money to buy 100 new children's books.\n\nThe library manager said, \"We are very happy. Many families came. Children found storybooks they liked. Next year, we will have another sale in May.\"",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "When did the book sale start?",
+      "options": [
+        "At 9 a.m.",
+        "At 4 p.m.",
+        "At 10 a.m."
+      ],
+      "answers": [
+        "At 9 a.m."
+      ],
+      "explanation": "短文第一段明确说“The sale started at 9 a.m.”，所以开始时间是上午9点。",
+      "evidence": "The sale started at 9 a.m. and finished at 4 p.m."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How much is the blue book?",
+      "options": [
+        "5 yuan",
+        "8 yuan",
+        "3 yuan"
+      ],
+      "answers": [
+        "5 yuan"
+      ],
+      "explanation": "在对话中，B说“That's 5 yuan.”指的是蓝皮书的价格。",
+      "evidence": "B: That's 5 yuan. The red one is 8 yuan."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where are the cooking books?",
+      "options": [
+        "On the table near the window",
+        "On the blue shelf",
+        "Next to the coffee machine"
+      ],
+      "answers": [
+        "On the table near the window"
+      ],
+      "explanation": "B在回答A的问题时说“they are on the table near the window”，即烹饪书在靠窗的桌子上。",
+      "evidence": "B: Yes, they are on the table near the window."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How much did the sale raise in total? Write one number and one word. (e.g., 100 yuan)",
+      "maxWords": 2,
+      "answers": [
+        "2,000 yuan"
+      ],
+      "explanation": "短文中说“The sale raised 2,000 yuan in total.”，所以总共筹集了2000元。答案写“2,000 yuan”即可。",
+      "evidence": "The sale raised 2,000 yuan in total."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What will the library do with the money?",
+      "options": [
+        "Buy new books for children",
+        "Buy coffee and cake",
+        "Pay the library manager"
+      ],
+      "answers": [
+        "Buy new books for children"
+      ],
+      "explanation": "第一段提到“All the money from the sale will help buy new books for children.”，所以钱将用来给孩子们买新书。",
+      "evidence": "All the money from the sale will help buy new books for children."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many new children's books does the library plan to buy?",
+      "options": [
+        "100",
+        "200",
+        "50"
+      ],
+      "answers": [
+        "100"
+      ],
+      "explanation": "短文中说“The library plans to use the money to buy 100 new children's books.”，所以计划买100本新儿童书。",
+      "evidence": "The library plans to use the money to buy 100 new children's books."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When will the next book sale be?",
+      "options": [
+        "In May",
+        "In June",
+        "In September"
+      ],
+      "answers": [
+        "In May"
+      ],
+      "explanation": "图书馆经理说“Next year, we will have another sale in May.”，所以下一次书展在五月。",
+      "evidence": "Next year, we will have another sale in May."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is the price of a piece of cake?",
+      "options": [
+        "3 yuan",
+        "2 yuan",
+        "5 yuan"
+      ],
+      "answers": [
+        "3 yuan"
+      ],
+      "explanation": "短文中说“a piece of cake was 3 yuan”，所以一块蛋糕3元。",
+      "evidence": "A cup of coffee was 2 yuan, and a piece of cake was 3 yuan."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The library sold more coffee than cake.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "短文中只提到了咖啡和蛋糕的价格，但没有提到卖出的数量，所以无法判断是否咖啡卖得比蛋糕多。",
+      "evidence": "A cup of coffee was 2 yuan, and a piece of cake was 3 yuan."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: All the books at the sale were old.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "短文中说“Some books were old, but some were almost new.”，所以并非所有书都是旧的，该说法错误。",
+      "evidence": "Some books were old, but some were almost new."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "community",
+      "meaning": "社区",
+      "example": "Last Saturday, the community library had a book sale."
+    },
+    {
+      "word": "sale",
+      "meaning": "销售活动；特价销售",
+      "example": "The sale started at 9 a.m. and finished at 4 p.m."
+    },
+    {
+      "word": "donate",
+      "meaning": "捐赠",
+      "example": "Many people donated books for the sale."
+    },
+    {
+      "word": "raise",
+      "meaning": "筹集（资金）",
+      "example": "The sale raised 2,000 yuan in total."
+    },
+    {
+      "word": "total",
+      "meaning": "总数；总计",
+      "example": "The sale raised 2,000 yuan in total."
+    },
+    {
+      "word": "plan",
+      "meaning": "计划",
+      "example": "The library plans to use the money to buy 100 new children's books."
+    },
+    {
+      "word": "manager",
+      "meaning": "经理",
+      "example": "The library manager said, \"We are very happy.\""
+    },
+    {
+      "word": "another",
+      "meaning": "另一个；再一次",
+      "example": "Next year, we will have another sale in May."
+    }
+  ],
+  "grammar": {
+    "title": "基础时态、问句、名词数量和常见从句综合复习",
+    "explanation": "英语中，一般过去时用来描述过去发生的动作或状态，动词用过去式，如 started, finished, donated, raised, said。一般现在时表示经常性动作或事实，如 is, are, have, plans。问句常以疑问词开头，如 how much, where, when, what，后接助动词或 be 动词。名词数量表达要注意可数与不可数，如 many people, some books, a cup of coffee, a piece of cake。常见从句包括宾语从句（如 I think that...）和定语从句（如 books they liked），但本阶段只需理解简单从句。",
+    "example": "The sale started at 9 a.m. and finished at 4 p.m.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence in the past tense.",
+        "options": [
+          "She goed to the library yesterday.",
+          "She went to the library yesterday.",
+          "She go to the library yesterday."
+        ],
+        "answers": [
+          "She went to the library yesterday."
+        ],
+        "explanation": "go 的过去式是 went，所以正确句子是“She went to the library yesterday.”。",
+        "evidence": "The sale started at 9 a.m. and finished at 4 p.m."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Which question is correct?",
+        "options": [
+          "How much the book is?",
+          "How much is the book?",
+          "How much does the book?"
+        ],
+        "answers": [
+          "How much is the book?"
+        ],
+        "explanation": "询问价格时，用“How much is + 主语?”结构，所以“How much is the book?”正确。",
+        "evidence": "A: Excuse me, how much is this book?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct phrase for a countable noun.",
+        "options": [
+          "a piece of cake",
+          "a cup of coffee",
+          "many books"
+        ],
+        "answers": [
+          "many books"
+        ],
+        "explanation": "books 是可数名词复数，用 many 修饰；a piece of cake 和 a cup of coffee 是表示不可数名词的数量短语。",
+        "evidence": "Many people came to buy cheap books."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Which sentence has a clause (从句)?",
+        "options": [
+          "The library is big.",
+          "I think that the sale is good.",
+          "She reads books."
+        ],
+        "answers": [
+          "I think that the sale is good."
+        ],
+        "explanation": "“I think that the sale is good.”中包含由 that 引导的宾语从句，其他两个句子是简单句。",
+        "evidence": "The library manager said, \"We are very happy.\""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like reading books? Why or why not?",
+        "How often do you go to a library or a bookstore?",
+        "What kind of books do you enjoy reading?",
+        "Have you ever bought a second-hand book? Tell me about it."
+      ],
+      "part2": "Describe a book sale or a similar event you have been to. You should say: where it was, what you bought or saw, who you went with, and explain how you felt about it.",
+      "part3": [
+        "Why do some people prefer to buy used books?",
+        "Do you think libraries are still important today? Why?",
+        "How can reading help children learn?",
+        "What can communities do to encourage people to read more?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80-100 words) about a school event you remember. Use past tense and answer: What was the event? When and where did it happen? What did you do? How did you feel?"
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "ad35cc399322c925f84453b03e023d6d67d6b0e1a4f8328b3ea59bc72c70f34e"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

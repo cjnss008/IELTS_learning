@@ -1,0 +1,6 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {answerWords,containsAnswer,constraints}=require('../tools/author-curriculum.cjs');
+test('source validation accepts written/numeric equivalents but not substrings of other numbers',()=>{assert.equal(containsAnswer('It costs twenty five pounds.','25 pounds'),true);assert.equal(containsAnswer('It costs fifteen pounds.','5'),false);assert.equal(containsAnswer('There is a carpet.','car'),false);});
+test('answer length keeps time, ordinals, decimal numbers, abbreviations and hyphenated compounds intact',()=>{for(const [s,n] of [['15th',1],['5-minute walk',2],['9 a.m.',2],['3,000',1],['10:15',1],['1.25',1]])assert.equal(answerWords(s),n,s);});
+test('full source authoring asks only for the assigned skill',()=>{const base={fullTest:true,level:'B2',id:'example',week:30,minWords:1500,maxWords:2400,questionCount:40};const listening=constraints({...base,skill:'listening'}),reading=constraints({...base,skill:'reading'});assert.match(listening,/full listening test ONLY/);assert.match(listening,/omit passage entirely/);assert.match(reading,/full reading test ONLY/);assert.match(reading,/omit transcript entirely/);});

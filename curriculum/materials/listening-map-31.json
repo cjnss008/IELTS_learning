@@ -1,0 +1,316 @@
+{
+  "id": "listening-map-31",
+  "version": "1",
+  "week": 31,
+  "skill": "listening",
+  "level": "B2",
+  "type": "plan-labelling",
+  "topic": "科学园区：外圈路线、地标与视角变化",
+  "title": "Willow Science Park · 沿地标寻找建筑",
+  "pool": "training",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "questionCount": 8,
+  "minWords": 250,
+  "maxWords": 450,
+  "instructions": "原创听力平面图练习，非官方 IELTS 试题。先看北向、入口与通道，再听录音并完成 8 题。第 1–6 题选择图中的 A–F；第 7–8 题根据路线或规则选择完整选项。字母区没有地点名称，请用录音中的转弯、相对方位和修正信息定位。可先完整听一遍，再在练习模式重听并复盘；查看转录或解析会记录辅助。无可用音频时可做文字路线练习，但不能作为独立听力证据。",
+  "passage": "",
+  "transcript": "Guide: Welcome to Willow Science Park. The plan shows north at the top. You enter from the west, on the left of the page. Walk east along the main path until you reach the clock. This is the first junction. There is another junction farther east, marked by a fountain. Paths connect these two junctions around both the northern and southern edges of the park.\n\nWe will begin at the local history gallery. From the clock, turn left and walk north to the corner. The gallery is immediately on your left, at the western end of the northern path. Do not continue east before entering it.\n\nNext is the greenhouse. Leave the gallery and walk east along the northern path. Halfway between the two northern corners, the greenhouse is on your left, on the north side of the path. The bird observation room is farther along: continue east to the next corner, where its doorway is straight ahead of you, on the east side. The greenhouse and the observation room are separate buildings.\n\nTo reach the water testing workshop from the observation room, return to that corner and turn south. Follow the eastern path past the fountain without turning onto the main path. At the southern corner, the workshop is on your left, to the east. This route avoids the pond, which lies north of the main path between the clock and the fountain.\n\nAfter the workshop, take the southern path west. Halfway along, the cafe is on your left, south of the path. Continue west to the next corner and you will find the equipment desk straight ahead, on the western side. Return borrowed binoculars there, not at the workshop.\n\nYou can follow the same eastern path directly from the observation room to the workshop; there is no need to return to the clock. One final rule: bicycles must be left outside the west entrance. Walking a bicycle around the park is not permitted either, because the paths are narrow. Wheelchair users are welcome on all the paths shown. Please keep these paths clear, and use the west entrance again when you leave.",
+  "figure": {
+    "type": "plan",
+    "title": "Willow Science Park — visitor plan (not to scale)",
+    "plan": {
+      "width": 700,
+      "height": 540,
+      "north": {
+        "x": 650,
+        "y": 35
+      },
+      "entrance": {
+        "x": 45,
+        "y": 260,
+        "label": "West entrance"
+      },
+      "paths": [
+        {
+          "points": [
+            {
+              "x": 45,
+              "y": 260
+            },
+            {
+              "x": 620,
+              "y": 260
+            }
+          ],
+          "label": "东西主路，依次经过 Clock 和 Fountain"
+        },
+        {
+          "points": [
+            {
+              "x": 200,
+              "y": 90
+            },
+            {
+              "x": 200,
+              "y": 430
+            }
+          ],
+          "label": "西侧南北路"
+        },
+        {
+          "points": [
+            {
+              "x": 500,
+              "y": 90
+            },
+            {
+              "x": 500,
+              "y": 430
+            }
+          ],
+          "label": "东侧南北路"
+        },
+        {
+          "points": [
+            {
+              "x": 200,
+              "y": 90
+            },
+            {
+              "x": 500,
+              "y": 90
+            }
+          ],
+          "label": "北侧东西路"
+        },
+        {
+          "points": [
+            {
+              "x": 200,
+              "y": 430
+            },
+            {
+              "x": 500,
+              "y": 430
+            }
+          ],
+          "label": "南侧东西路"
+        }
+      ],
+      "zones": [
+        {
+          "label": "A",
+          "x": 100,
+          "y": 35,
+          "w": 100,
+          "h": 70,
+          "position": "西北拐角的西侧"
+        },
+        {
+          "label": "B",
+          "x": 300,
+          "y": 20,
+          "w": 100,
+          "h": 70,
+          "position": "北侧路的中点北侧"
+        },
+        {
+          "label": "C",
+          "x": 500,
+          "y": 35,
+          "w": 100,
+          "h": 70,
+          "position": "东北拐角的东侧"
+        },
+        {
+          "label": "D",
+          "x": 100,
+          "y": 395,
+          "w": 100,
+          "h": 70,
+          "position": "西南拐角的西侧"
+        },
+        {
+          "label": "E",
+          "x": 300,
+          "y": 430,
+          "w": 100,
+          "h": 70,
+          "position": "南侧路的中点南侧"
+        },
+        {
+          "label": "F",
+          "x": 500,
+          "y": 395,
+          "w": 100,
+          "h": 70,
+          "position": "东南拐角的东侧"
+        }
+      ],
+      "landmarks": [
+        {
+          "label": "Clock",
+          "x": 200,
+          "y": 260
+        },
+        {
+          "label": "Fountain",
+          "x": 500,
+          "y": 260
+        },
+        {
+          "label": "Pond",
+          "x": 350,
+          "y": 175
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which area contains the local history gallery? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "A"
+      ],
+      "evidence": "From the clock, turn left and walk north to the corner. The gallery is immediately on your left, at the western end of the northern path.",
+      "explanation": "从西入口向东走到 Clock，左转向北；到西北拐角仍朝北，左手边为西，所以是 A。不要提前沿北路向东走到 B。"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which area contains the greenhouse? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "B"
+      ],
+      "evidence": "Halfway between the two northern corners, the greenhouse is on your left, on the north side of the path.",
+      "explanation": "沿北路向东走，halfway 是两个北侧拐角中点；朝东时左手为北。图中北路中点北侧只有 B。"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which area contains the bird observation room? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "C"
+      ],
+      "evidence": "continue east to the next corner, where its doorway is straight ahead of you, on the east side.",
+      "explanation": "沿北路继续向东，到东北拐角时 straight ahead 仍是东，不是沿东路转向南；东侧建筑为 C。"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which area contains the water testing workshop? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "F"
+      ],
+      "evidence": "At the southern corner, the workshop is on your left, to the east.",
+      "explanation": "从 C 返回东北拐角，向南沿东路经过 Fountain。到东南拐角时面朝南，左手是东，所以是 F；不能看到 Fountain 就转进主路。"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which area contains the cafe? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "E"
+      ],
+      "evidence": "Halfway along, the cafe is on your left, south of the path.",
+      "explanation": "沿南路向西走，中点的左手边为南，对应 E。左与南这两条线索互相校验，而不是机械选择图上左侧。"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which area contains the equipment desk? Choose A–F.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "answers": [
+        "D"
+      ],
+      "evidence": "Continue west to the next corner and you will find the equipment desk straight ahead, on the western side.",
+      "explanation": "从 E 继续沿南路向西，到西南拐角仍直行的方向是西，指向 D。须在那里归还望远镜，而不是回 F。"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which route goes directly from the observation room to the workshop?",
+      "options": [
+        "Follow the eastern path south past the fountain.",
+        "Return to the clock and follow the northern path.",
+        "Walk west along the northern path to the gallery."
+      ],
+      "answers": [
+        "Follow the eastern path south past the fountain."
+      ],
+      "evidence": "Follow the eastern path past the fountain without turning onto the main path.",
+      "explanation": "从 C 到 F 沿东侧南北路向南即可，中途经过 Fountain 不转入主路。directly 问直接路线，其他选项绕往西侧或北侧。"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is the rule for visitors who arrive by bicycle?",
+      "options": [
+        "Leave the bicycle outside the west entrance.",
+        "Walk the bicycle along the paths.",
+        "Park the bicycle beside the fountain."
+      ],
+      "answers": [
+        "Leave the bicycle outside the west entrance."
+      ],
+      "evidence": "bicycles must be left outside the west entrance. Walking a bicycle around the park is not permitted either",
+      "explanation": "must be left outside 是明确要求；not permitted either 进一步排除“推着自行车进入”这一看似合理的干扰项。轮椅允许通行不代表自行车也可以。"
+    }
+  ],
+  "source": {
+    "kind": "original",
+    "rights": "项目原创 AI 辅助教学材料；非官方 IELTS 试题",
+    "verification": "reviewed",
+    "method": "原创文本、路线与图形坐标逐项核对；自动检查答案证据、选项和路径连通性。未经过真人考官验证。"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "id": "w33-read-3",
+  "week": 33,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "经济选择与完整议论文",
+  "grammarFocus": "复合句与简单句搭配；条件、让步和原因表达；标点。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "The Cost of Convenience: A Town Debates Its Recycling Future",
+  "instructions": "阅读下面的文章，回答10个问题。文章是一篇模拟的教育材料，并非官方雅思试题。问题类型包括单选、填空、匹配（通过单选实现）和判断正误/未提及。填空答案必须来自原文，且不超过字数限制。所有解释均为中文，并附原文证据。",
+  "passage": "A. In the small town of Greenfield, residents have been debating whether to keep their current recycling program or switch to a cheaper alternative. The current program, run by the local council, collects paper, glass, and plastic from every household each week. It costs the town about $200,000 per year. However, a private company has offered to provide a similar service for $150,000 annually, but with a catch: residents would need to sort their waste into five categories instead of three, and collection would be every two weeks rather than weekly. The council argues that the savings could be used to improve other public services, such as road repairs and libraries. On the other hand, some residents worry that the change would lead to more confusion and lower recycling rates.\n\nB. At a recent town meeting, opinions were divided. Maria, a mother of two, said, “If we have to sort into five categories, I’m afraid many people will just give up and throw everything in the general waste. That would be worse for the environment.” John, a retired teacher, disagreed. “Although the private company’s plan requires more effort, it saves money. We could use that money to fix the potholes on Main Street, which have been a problem for years.” The council has not yet made a decision. They plan to gather more feedback from residents before the next meeting in June.\n\nC. One alternative that has been suggested is a hybrid approach: keep the weekly collection but reduce the number of categories to two. This would cost $180,000 per year, saving $20,000. However, the private company has said it cannot offer this option because its sorting facility is designed for five categories. The council is also considering a pilot project in one neighborhood to test the five-category system for six months. If the pilot is successful, they might adopt it town-wide. If not, they will stick with the current program. The decision will affect all 15,000 residents of Greenfield.\n\nD. Environmental experts point out that recycling rates in towns with five-category systems are often higher, but only if residents are well informed. Education campaigns can cost money, though. The council has budgeted $10,000 for an awareness campaign if the new system is adopted. Meanwhile, some residents have started a petition against the change, arguing that the current system works well and that the savings are not worth the inconvenience. The petition has collected 2,000 signatures so far. The council will consider the petition at the June meeting.\n\nE. Whatever the outcome, the debate highlights a common dilemma: how to balance cost savings with environmental benefits and public convenience. As Maria put it, “We all want to do the right thing for the planet, but we also need a system that people can actually follow.” The council’s final decision will be watched closely by other towns facing similar choices.\n\nF. The debate has also attracted attention from local businesses. Some shop owners worry that if the town switches to a five-category system, they will have to pay for additional bins and staff training. A local café owner, Susan, said, “We already separate our waste, but five categories would mean more work for my staff. I’m not sure we can afford the extra costs.” On the other hand, a hardware store owner, Mike, sees an opportunity: “If people need more bins, they’ll come to my store. I think the change could be good for business.” The council has promised to consult with local businesses before making any final decision.\n\nG. In addition to the financial and practical concerns, there is also the question of public awareness. A recent survey conducted by the council found that only 40% of residents currently know exactly what can be recycled. This suggests that even the current three-category system is not fully understood. Therefore, some council members argue that before introducing a more complex system, the town should focus on educating residents about the existing rules. Others believe that a new system would force people to learn. The debate continues, and the June meeting is expected to be well attended.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main topic of the passage?",
+      "options": [
+        "The benefits of a five-category recycling system",
+        "A town's debate over changing its recycling program",
+        "How to reduce waste in Greenfield",
+        "The cost of road repairs in Greenfield"
+      ],
+      "answers": [
+        "A town's debate over changing its recycling program"
+      ],
+      "explanation": "文章主要讨论Greenfield镇是否应该改变其回收项目，包括当前项目与私人公司提议的对比、居民的不同意见等。",
+      "evidence": "In the small town of Greenfield, residents have been debating whether to keep their current recycling program or switch to a cheaper alternative."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "According to the passage, what is one disadvantage of the private company's plan?",
+      "options": [
+        "It costs more than the current program.",
+        "It requires residents to sort waste into five categories.",
+        "It collects waste every week.",
+        "It does not accept plastic."
+      ],
+      "answers": [
+        "It requires residents to sort waste into five categories."
+      ],
+      "explanation": "私人公司的计划要求居民将垃圾分为五类，而不是当前的三类。",
+      "evidence": "residents would need to sort their waste into five categories instead of three"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How much would the private company charge annually? (Write ONE number with a dollar sign)",
+      "maxWords": 1,
+      "answers": [
+        "$150,000"
+      ],
+      "explanation": "文中明确提到私人公司每年收费15万美元。",
+      "evidence": "a private company has offered to provide a similar service for $150,000 annually"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Maria fear will happen if the five-category system is adopted?",
+      "options": [
+        "People will recycle more.",
+        "People will stop recycling altogether.",
+        "People will throw everything in the general waste.",
+        "The town will save money."
+      ],
+      "answers": [
+        "People will throw everything in the general waste."
+      ],
+      "explanation": "Maria担心如果分类太复杂，人们会放弃分类，把所有垃圾扔进一般垃圾。",
+      "evidence": "If we have to sort into five categories, I’m afraid many people will just give up and throw everything in the general waste."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is John's opinion about the private company's plan?",
+      "options": [
+        "He thinks it is too expensive.",
+        "He believes it requires too much effort.",
+        "He supports it because it saves money for road repairs.",
+        "He is undecided."
+      ],
+      "answers": [
+        "He supports it because it saves money for road repairs."
+      ],
+      "explanation": "John认为尽管需要更多努力，但能省钱修路，因此支持该计划。",
+      "evidence": "Although the private company’s plan requires more effort, it saves money. We could use that money to fix the potholes on Main Street"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is the hybrid approach suggested?",
+      "options": [
+        "Keep weekly collection but reduce categories to two.",
+        "Switch to five categories and collect every two weeks.",
+        "Keep the current system unchanged.",
+        "Hire a new private company."
+      ],
+      "answers": [
+        "Keep weekly collection but reduce categories to two."
+      ],
+      "explanation": "混合方案建议保持每周收集，但将类别减少到两类。",
+      "evidence": "keep the weekly collection but reduce the number of categories to two"
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "How much has the council budgeted for an awareness campaign? (Write ONE number with a dollar sign)",
+      "maxWords": 1,
+      "answers": [
+        "$10,000"
+      ],
+      "explanation": "文中提到如果采用新系统，议会已为宣传活动预算1万美元。",
+      "evidence": "The council has budgeted $10,000 for an awareness campaign if the new system is adopted."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does the petition against the change argue?",
+      "options": [
+        "The current system works well and savings are not worth the inconvenience.",
+        "The private company's plan is better for the environment.",
+        "The council should spend more on road repairs.",
+        "The five-category system is easy to follow."
+      ],
+      "answers": [
+        "The current system works well and savings are not worth the inconvenience."
+      ],
+      "explanation": "请愿书认为当前系统运行良好，节省的费用不值得带来的不便。",
+      "evidence": "arguing that the current system works well and that the savings are not worth the inconvenience"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is the purpose of the pilot project?",
+      "options": [
+        "To test the five-category system in one neighborhood for six months.",
+        "To replace the current program immediately.",
+        "To reduce the cost to $150,000.",
+        "To collect signatures for the petition."
+      ],
+      "answers": [
+        "To test the five-category system in one neighborhood for six months."
+      ],
+      "explanation": "试点项目旨在在一个社区测试五类系统六个月。",
+      "evidence": "a pilot project in one neighborhood to test the five-category system for six months"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The passage states that the council has already made a final decision.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "文中明确说议会尚未做出决定，计划在六月会议前收集更多反馈。",
+      "evidence": "The council has not yet made a decision. They plan to gather more feedback from residents before the next meeting in June."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "debating",
+      "meaning": "讨论，辩论",
+      "example": "residents have been debating whether to keep their current recycling program"
+    },
+    {
+      "word": "alternative",
+      "meaning": "替代方案",
+      "example": "switch to a cheaper alternative"
+    },
+    {
+      "word": "annually",
+      "meaning": "每年地",
+      "example": "for $150,000 annually"
+    },
+    {
+      "word": "categories",
+      "meaning": "类别",
+      "example": "sort their waste into five categories"
+    },
+    {
+      "word": "potholes",
+      "meaning": "坑洞（路面）",
+      "example": "fix the potholes on Main Street"
+    },
+    {
+      "word": "hybrid",
+      "meaning": "混合的",
+      "example": "a hybrid approach"
+    },
+    {
+      "word": "petition",
+      "meaning": "请愿书",
+      "example": "started a petition against the change"
+    },
+    {
+      "word": "dilemma",
+      "meaning": "困境，两难",
+      "example": "a common dilemma"
+    }
+  ],
+  "grammar": {
+    "title": "复合句与简单句搭配；条件、让步和原因表达；标点",
+    "explanation": "英语中，简单句只有一个主谓结构，而复合句包含两个或多个主谓结构，通过连词连接。条件句常用if引导，表示假设；让步状语从句常用although, though, even though引导，表示转折；原因状语从句常用because, since, as引导。标点方面，复合句中从句和主句之间通常用逗号隔开（如果从句在前）。",
+    "example": "Although the private company’s plan requires more effort, it saves money.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "If it rains, we will stay indoors.",
+          "If it rains we will stay indoors.",
+          "If it rains; we will stay indoors.",
+          "If it rains: we will stay indoors."
+        ],
+        "answers": [
+          "If it rains, we will stay indoors."
+        ],
+        "explanation": "条件状语从句在前时，主句前通常加逗号。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Which sentence correctly uses 'although'?",
+        "options": [
+          "Although he was tired, he finished the work.",
+          "Although he was tired he finished the work.",
+          "Although he was tired; he finished the work.",
+          "Although he was tired: he finished the work."
+        ],
+        "answers": [
+          "Although he was tired, he finished the work."
+        ],
+        "explanation": "让步状语从句在前时，主句前加逗号。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Because she studied hard, she passed the exam.",
+          "Because she studied hard she passed the exam.",
+          "Because she studied hard; she passed the exam.",
+          "Because she studied hard: she passed the exam."
+        ],
+        "answers": [
+          "Because she studied hard, she passed the exam."
+        ],
+        "explanation": "原因状语从句在前时，主句前加逗号。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Which sentence is a compound sentence?",
+        "options": [
+          "I like tea, and she likes coffee.",
+          "I like tea.",
+          "She likes coffee.",
+          "I like tea and coffee."
+        ],
+        "answers": [
+          "I like tea, and she likes coffee."
+        ],
+        "explanation": "并列句由两个独立分句通过并列连词连接，此处用and连接两个简单句。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you recycle at home? Why or why not?",
+        "What do you think about sorting waste into different categories?",
+        "Have you ever signed a petition?",
+        "How important is it for your town to save money on public services?"
+      ],
+      "part2": "Describe a time when you had to make a choice between saving money and doing something good for the environment. You should say: what the choice was, what the options were, what you decided, and explain how you felt about your decision.",
+      "part3": [
+        "Do you think governments should prioritize cost savings or environmental protection?",
+        "How can education campaigns encourage people to recycle more?",
+        "What are the advantages and disadvantages of private companies providing public services?",
+        "In what ways can small towns balance convenience and environmental responsibility?"
+      ]
+    },
+    "writing": "Some people believe that saving money is more important than protecting the environment when making decisions about public services. Others think environmental protection should always come first. Discuss both views and give your own opinion. Write at least 250 words."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Reading comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "bda3cc87743544589e29a61ba9ac65914f9d68623da7a5ec354098ef5af06aef"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

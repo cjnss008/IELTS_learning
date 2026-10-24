@@ -1,0 +1,276 @@
+{
+  "id": "w04-listen-2",
+  "week": 4,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "directions",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 65,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "title": "At the School Lost and Found Desk",
+  "instructions": "这是模拟练习材料，不是官方考试。请先听录音（或读文字稿），再完成8道题。填空题的答案必须来自原文，并且不超过字数限制。每题只有一个正确答案。",
+  "passage": "",
+  "transcript": "A: Good morning. Are you the lost and found teacher?\nB: Yes, I am. I am Ms. Li. Are you a new student?\nA: Yes, I am. My name is Tom. I am in Class Two.\nB: Is this your bag, Tom?\nA: No, it is not my bag. My bag is blue. This bag is green.\nB: Who is in Class One?\nA: Amy is in Class One. Is she here?\nB: No, she is not here. She is in the library.\nA: Is my blue bag in the library?\nB: No, it is not. Your bag is here. It is under the desk.\nA: Oh yes! Thank you, Ms. Li.\nB: You are welcome. Are you happy now?\nA: Yes, I am very happy.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Ms. Li 是什么身份？",
+      "options": [
+        "失物招领处的老师",
+        "图书馆管理员",
+        "二年级学生"
+      ],
+      "answers": [
+        "失物招领处的老师"
+      ],
+      "explanation": "录音开头 Tom 问“Are you the lost and found teacher?”，Ms. Li 回答“Yes, I am.”，所以她是失物招领处的老师。",
+      "evidence": "Are you the lost and found teacher? ... Yes, I am."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Tom 在几班？",
+      "options": [
+        "二班",
+        "一班",
+        "图书馆"
+      ],
+      "answers": [
+        "二班"
+      ],
+      "explanation": "Tom 说“I am in Class Two.”，所以他在二班。",
+      "evidence": "My name is Tom. I am in Class Two."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "绿色的包是 Tom 的吗？",
+      "options": [
+        "不是，他的包是蓝色的",
+        "是，绿色包是他的",
+        "文中没有说明"
+      ],
+      "answers": [
+        "不是，他的包是蓝色的"
+      ],
+      "explanation": "Tom 说“No, it is not my bag. My bag is blue.”，绿色包不是他的。",
+      "evidence": "No, it is not my bag. My bag is blue."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "谁在一班？",
+      "options": [
+        "Amy",
+        "Tom",
+        "Ms. Li"
+      ],
+      "answers": [
+        "Amy"
+      ],
+      "explanation": "Ms. Li 问“Who is in Class One?”，Tom 回答“Amy is in Class One.”。",
+      "evidence": "Who is in Class One? ... Amy is in Class One."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Amy 现在在失物招领处吗？",
+      "options": [
+        "不在，她在图书馆",
+        "在，她在这里",
+        "文中没有说明"
+      ],
+      "answers": [
+        "不在，她在图书馆"
+      ],
+      "explanation": "Ms. Li 说“No, she is not here. She is in the library.”，Amy 不在，她在图书馆。",
+      "evidence": "No, she is not here. She is in the library."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Tom 的蓝色包在桌子下面。请填空：Your bag is ______ the desk.（只填一个词）",
+      "answers": [
+        "under"
+      ],
+      "maxWords": 1,
+      "explanation": "Ms. Li 说“Your bag is here. It is under the desk.”，所以填 under。",
+      "evidence": "Your bag is here. It is under the desk."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Tom 现在的心情怎样？请填空：Yes, I am very ______.（只填一个词）",
+      "answers": [
+        "happy"
+      ],
+      "maxWords": 1,
+      "explanation": "Tom 最后说“Yes, I am very happy.”，所以填 happy。",
+      "evidence": "Yes, I am very happy."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "根据录音，下面哪一句是正确的？",
+      "options": [
+        "Tom 的包是蓝色的",
+        "Tom 的包是绿色的",
+        "Amy 的包是蓝色的"
+      ],
+      "answers": [
+        "Tom 的包是蓝色的"
+      ],
+      "explanation": "Tom 明确说“My bag is blue.”，所以他的包是蓝色的。",
+      "evidence": "My bag is blue."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "lost and found",
+      "meaning": "失物招领处",
+      "example": "Are you the lost and found teacher?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am Ms. Li."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a new student?"
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "Is this your bag, Tom?"
+    },
+    {
+      "word": "blue",
+      "meaning": "蓝色的",
+      "example": "My bag is blue."
+    },
+    {
+      "word": "green",
+      "meaning": "绿色的",
+      "example": "This bag is green."
+    },
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "She is in the library."
+    },
+    {
+      "word": "happy",
+      "meaning": "开心的",
+      "example": "I am very happy."
+    }
+  ],
+  "grammar": {
+    "title": "be 动词的否定句与一般疑问句",
+    "explanation": "be 动词（am / is / are）表示“是”。否定句在 be 动词后面加 not，例如 is not、are not。一般疑问句把 be 动词放到句子开头，例如“Is this your bag?”。回答时用简短形式：“Yes, I am.”或“No, it is not.”。",
+    "example": "No, it is not my bag. My bag is blue.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：This ___ my bag.",
+        "options": [
+          "is not",
+          "not is",
+          "are not"
+        ],
+        "answers": [
+          "is not"
+        ],
+        "explanation": "主语 this 是单数，be 动词用 is，否定在 is 后加 not，所以是 is not。",
+        "evidence": "No, it is not my bag."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "把“She is here.”变成一般疑问句，正确的是：",
+        "options": [
+          "Is she here?",
+          "She is here?",
+          "Is here she?"
+        ],
+        "answers": [
+          "Is she here?"
+        ],
+        "explanation": "一般疑问句把 be 动词 is 放到主语 she 前面，所以是 Is she here?",
+        "evidence": "No, she is not here."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "问“Are you a new student?”，肯定简短回答是：",
+        "options": [
+          "Yes, I am.",
+          "Yes, you are.",
+          "Yes, I is."
+        ],
+        "answers": [
+          "Yes, I am."
+        ],
+        "explanation": "问句用 Are you，回答时换成 I，be 动词用 am，所以是 Yes, I am.",
+        "evidence": "Are you a new student? ... Yes, I am."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "It is not under the desk.",
+          "It not is under the desk.",
+          "It is not under desk the."
+        ],
+        "answers": [
+          "It is not under the desk."
+        ],
+        "explanation": "否定句在 is 后面加 not，其他词序不变，所以是 It is not under the desk.",
+        "evidence": "It is under the desk."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your bag blue?",
+        "Are you happy today?",
+        "Who is your teacher?"
+      ],
+      "part2": "Talk about your bag. Say:",
+      "part3": [
+        "Is your bag big or small?",
+        "What color is your bag?",
+        "Is your bag in your room?",
+        "Who is your English teacher?"
+      ]
+    },
+    "writing": "写3到5个简单的英文句子，介绍你的一个朋友。用 be 动词的否定句和一般疑问句各一句。例如：Is she in Class One? She is not in Class Two."
+  },
+  "rubric": {
+    "taskType": "A1 listening comprehension (simulated practice, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "e5daf6ca50f142567df63e57e52e233c06d9adb839cd8d7643b2386124c7c394"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

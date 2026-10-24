@@ -1,0 +1,273 @@
+{
+  "id": "w01-read-3",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My First English Class",
+  "instructions": "这是模拟练习材料，不是官方雅思考试。请先阅读短文，然后回答8个问题。问题有单选和填空两种。填空答案必须来自短文，且不超过字数限制。所有解释用中文。",
+  "passage": "A. Hello. I am Tom. I am a student. This is my first English class. I am happy.\n\nB. This is Li Ming. He is my friend. We are in the same class. We are students. We are happy.\n\nC. Miss Wang is our teacher. She is nice. She says, \"Hello, I am Miss Wang.\" We say, \"Hello, Miss Wang.\"",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Tom?",
+      "options": [
+        "A student.",
+        "A teacher.",
+        "A friend of Miss Wang."
+      ],
+      "answers": [
+        "A student."
+      ],
+      "explanation": "短文A部分说“I am a student.”，所以Tom是学生。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What class is it?",
+      "options": [
+        "An English class.",
+        "A Chinese class.",
+        "A math class."
+      ],
+      "answers": [
+        "An English class."
+      ],
+      "explanation": "短文A部分说“This is my first English class.”，所以是英语课。",
+      "evidence": "This is my first English class."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is Li Ming?",
+      "options": [
+        "Tom's friend.",
+        "Tom's teacher.",
+        "Miss Wang's friend."
+      ],
+      "answers": [
+        "Tom's friend."
+      ],
+      "explanation": "短文B部分说“He is my friend.”，这里的“my”指Tom，所以Li Ming是Tom的朋友。",
+      "evidence": "He is my friend."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Are Tom and Li Ming in the same class?",
+      "options": [
+        "Yes, they are.",
+        "No, they are not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, they are."
+      ],
+      "explanation": "短文B部分说“We are in the same class.”，所以他们在同一个班。",
+      "evidence": "We are in the same class."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is the teacher's name?",
+      "options": [
+        "Miss Wang.",
+        "Miss Li.",
+        "Miss Tom."
+      ],
+      "answers": [
+        "Miss Wang."
+      ],
+      "explanation": "短文C部分说“Miss Wang is our teacher.”，所以老师的名字是Miss Wang。",
+      "evidence": "Miss Wang is our teacher."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Fill in the blank: Tom says, \"I ___ a student.\" (用短文中的词填空)",
+      "maxWords": 1,
+      "answers": [
+        "am"
+      ],
+      "explanation": "短文A部分说“I am a student.”，所以填am。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Fill in the blank: Li Ming and Tom ___ students. (用短文中的词填空)",
+      "maxWords": 1,
+      "answers": [
+        "are"
+      ],
+      "explanation": "短文B部分说“We are students.”，所以填are。",
+      "evidence": "We are students."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is Miss Wang a teacher?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, she is."
+      ],
+      "explanation": "短文C部分说“Miss Wang is our teacher.”，所以她是老师。",
+      "evidence": "Miss Wang is our teacher."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Tom."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "first",
+      "meaning": "第一",
+      "example": "This is my first English class."
+    },
+    {
+      "word": "English",
+      "meaning": "英语",
+      "example": "This is my first English class."
+    },
+    {
+      "word": "class",
+      "meaning": "课；班级",
+      "example": "We are in the same class."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "He is my friend."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "Miss Wang is our teacher."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，主语是“我”时用 I，搭配 am；主语是“你”或“你们”时用 you，搭配 are；主语是“我们”时用 we，搭配 are。句首字母要大写，句末用句号。",
+    "example": "I am a student. You are a student. We are students.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I am happy.",
+          "I is happy.",
+          "I are happy."
+        ],
+        "answers": [
+          "I am happy."
+        ],
+        "explanation": "主语是 I 时，be 动词用 am。",
+        "evidence": "I am happy."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You are a student.",
+          "You is a student.",
+          "You am a student."
+        ],
+        "answers": [
+          "You are a student."
+        ],
+        "explanation": "主语是 you 时，be 动词用 are。",
+        "evidence": "You are a student."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "Fill in the blank: I ___ a teacher. (用 am 或 are 填空)",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "主语是 I，所以用 am。",
+        "evidence": "I am a teacher."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Fill in the blank: You ___ my friend. (用 am 或 are 填空)",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是 you，所以用 are。",
+        "evidence": "You are my friend."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you happy?",
+        "Who is your friend?"
+      ],
+      "part2": "Describe your first English class. You should say:",
+      "part2Bullets": [
+        "where it is",
+        "who your teacher is",
+        "who your friend is",
+        "how you feel"
+      ],
+      "part3": [
+        "Is English easy for you?",
+        "Who is your English teacher?",
+        "Are you and your friend in the same class?",
+        "What do you say to your teacher?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself. Use I am, You are, and We are. Example: I am Li Hua. I am a student. You are my friend. We are happy."
+  },
+  "rubric": {
+    "taskType": "A0 reading comprehension with basic grammar and transfer tasks (simulated practice, not official IELTS)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "d56d876a1cea893c2d00196c2c3154161c5abc6f9b3df259481c5847977842d8"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

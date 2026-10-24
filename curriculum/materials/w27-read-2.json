@@ -1,0 +1,319 @@
+{
+  "id": "w27-read-2",
+  "week": 27,
+  "skill": "reading",
+  "level": "B1–B2",
+  "topic": "城市交通与图表比较",
+  "grammarFocus": "倍数与比例表达；比较结构；过去和现在数据的时态选择。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "Riverton's Transport: A Decade of Change",
+  "instructions": "阅读下面的短文，回答10个问题。题目类型包括单选、填空、匹配（用单选形式）和判断正误（True/False/Not Given）。填空答案必须来自原文，且不超过字数限制。所有数据均为模拟教学材料，不是真实统计数据。",
+  "passage": "A\nIn 2015, the city of Riverton had a small bus system. There were only 40 buses. They carried about 50,000 passengers every day. Most people used cars or bicycles. The roads were often crowded in the morning. The city centre had few bus lanes. A bus trip across the city took about 50 minutes. Many people did not like waiting at bus stops because buses came every 20 minutes. The city had no train line at that time. The bus ticket cost 1 dollar. The city had only 5 kilometres of bus lanes. The buses were old and often late. People complained about the noise and the smoke from the buses. The city government wanted to improve the situation. They made a plan to buy more buses and to build new bus lanes. The plan also included a new train line. The city hoped that more people would use public transport.\n\nB\nIn 2025, Riverton has a much bigger bus system. There are now 120 buses. That is three times as many as in 2015. The buses carry about 150,000 passengers every day. This is three times the number of 2015. The city now has 30 kilometres of bus lanes. In 2015, there were only 5 kilometres. So the bus lane network is six times longer than before. A bus trip across the city now takes about 30 minutes. Buses come every 8 minutes, so people wait less. The bus ticket now costs 2 dollars. The new buses are quieter and cleaner. They use less fuel and produce less smoke. Many people now prefer the bus to the car. The city centre is less crowded in the morning. The bus lanes help the buses move faster. The city is proud of its new bus system.\n\nC\nThe city also built a new train line in 2018. The train carries 80,000 passengers every day. The train is faster than the bus. A train trip across the city takes 20 minutes. The train is also more expensive than the bus. A bus ticket costs 2 dollars, but a train ticket costs 3 dollars. Many people take the train to work because it is quick. However, some people still take the bus because it is cheaper. The train line has 15 stations. The train runs every 10 minutes. The train is very popular, especially during rush hour. The city plans to add more train lines in the future. The train line has helped to reduce traffic on the roads. Some people now leave their cars at home and take the train to work.\n\nD\nNot everyone is happy. Some people say the buses are more crowded now than in 2015. In 2015, each bus carried about 1,250 passengers a day. Now each bus carries about 1,250 passengers a day too. The city plans to buy 30 more buses next year. The city also wants to build 10 more kilometres of bus lanes. The goal is to make bus travel faster and more comfortable. The city wants to reduce traffic and pollution. The city also plans to add more bicycle lanes in the future. The bicycle lanes will be 20 kilometres long. The city hopes that more people will ride bicycles to work. This will help to reduce the number of cars on the roads. The city also wants to plant more trees along the roads. Trees can make the streets cooler and more beautiful.\n\nE\nRiverton is a good example of how a city can change its transport. In 2015, most people used cars. Now, more people use buses and trains. The city is still growing, and the transport system must grow too. The city wants to reduce traffic and pollution. Better buses and trains can help. The city also plans to add more bicycle lanes in the future. The city government believes that a good transport system is important for the future. They want to make Riverton a green city. They also want to make sure that everyone can travel easily. The city will continue to improve its transport system in the coming years.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many buses did Riverton have in 2015?",
+      "options": [
+        "40",
+        "120",
+        "80",
+        "30"
+      ],
+      "answers": [
+        "40"
+      ],
+      "explanation": "原文A段明确说“There were only 40 buses.”，所以2015年有40辆公交车。",
+      "evidence": "There were only 40 buses."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many times more buses are there in 2025 than in 2015?",
+      "options": [
+        "Two times",
+        "Three times",
+        "Four times",
+        "Six times"
+      ],
+      "answers": [
+        "Three times"
+      ],
+      "explanation": "原文B段说“That is three times as many as in 2015.”，即2025年的公交车数量是2015年的三倍。",
+      "evidence": "That is three times as many as in 2015."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "In 2025, the bus lane network is ______ times longer than in 2015. (Fill in the number.)",
+      "maxWords": 1,
+      "answers": [
+        "six"
+      ],
+      "explanation": "原文B段说“So the bus lane network is six times longer than before.”，因此填six。",
+      "evidence": "So the bus lane network is six times longer than before."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How long does a bus trip across the city take now?",
+      "options": [
+        "About 50 minutes",
+        "About 30 minutes",
+        "About 20 minutes",
+        "About 8 minutes"
+      ],
+      "answers": [
+        "About 30 minutes"
+      ],
+      "explanation": "原文B段说“A bus trip across the city now takes about 30 minutes.”，所以现在公交车全程约30分钟。",
+      "evidence": "A bus trip across the city now takes about 30 minutes."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which is more expensive, a bus ticket or a train ticket?",
+      "options": [
+        "A bus ticket",
+        "A train ticket",
+        "They cost the same",
+        "The text does not say"
+      ],
+      "answers": [
+        "A train ticket"
+      ],
+      "explanation": "原文C段说“A bus ticket costs 2 dollars, but a train ticket costs 3 dollars.”，火车票更贵。",
+      "evidence": "A bus ticket costs 2 dollars, but a train ticket costs 3 dollars."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Match the year with the event: In which year did Riverton build a new train line?",
+      "options": [
+        "2015",
+        "2018",
+        "2025",
+        "2026"
+      ],
+      "answers": [
+        "2018"
+      ],
+      "explanation": "原文C段说“The city also built a new train line in 2018.”，所以是2018年。",
+      "evidence": "The city also built a new train line in 2018."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "True or False or Not Given: In 2015, buses came every 8 minutes.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文A段说2015年公交车每20分钟一班（“buses came every 20 minutes”），而每8分钟一班是现在的情况，因此该说法错误。",
+      "evidence": "buses came every 20 minutes"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True or False or Not Given: The train is faster than the bus.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文C段明确说“The train is faster than the bus.”，因此该说法正确。",
+      "evidence": "The train is faster than the bus."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True or False or Not Given: The city plans to buy 30 more buses next year.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文D段说“The city plans to buy 30 more buses next year.”，因此该说法正确。",
+      "evidence": "The city plans to buy 30 more buses next year."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True or False or Not Given: The number of passengers on each bus is higher in 2025 than in 2015.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文D段说2015年每辆公交车每天载客约1,250人，现在每辆公交车每天也载客约1,250人，数字相同，因此“2025年每辆车的乘客数量更高”这一说法是错误的。",
+      "evidence": "In 2015, each bus carried about 1,250 passengers a day. Now each bus carries about 1,250 passengers a day too."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "passenger",
+      "meaning": "乘客",
+      "example": "The buses carry about 150,000 passengers every day."
+    },
+    {
+      "word": "crowded",
+      "meaning": "拥挤的",
+      "example": "The roads were often crowded in the morning."
+    },
+    {
+      "word": "lane",
+      "meaning": "车道",
+      "example": "The city now has 30 kilometres of bus lanes."
+    },
+    {
+      "word": "network",
+      "meaning": "网络",
+      "example": "The bus lane network is six times longer than before."
+    },
+    {
+      "word": "expensive",
+      "meaning": "昂贵的",
+      "example": "The train is also more expensive than the bus."
+    },
+    {
+      "word": "comfortable",
+      "meaning": "舒适的",
+      "example": "The goal is to make bus travel faster and more comfortable."
+    },
+    {
+      "word": "pollution",
+      "meaning": "污染",
+      "example": "The city wants to reduce traffic and pollution."
+    },
+    {
+      "word": "reduce",
+      "meaning": "减少",
+      "example": "The city wants to reduce traffic and pollution."
+    }
+  ],
+  "grammar": {
+    "title": "倍数与比例表达；比较结构；过去和现在数据的时态选择",
+    "explanation": "英语中表示倍数常用“times as many as”或“times longer than”。比较结构常用“more + 形容词 + than”或“形容词 + -er + than”。描述过去的数据用一般过去时（如 In 2015, there were...），描述现在的数据用一般现在时（如 Now there are...）。",
+    "example": "That is three times as many as in 2015.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "In 2010, the town had 20 shops. Now it has 60 shops. That is ______ times as many as in 2010.",
+        "options": [
+          "two",
+          "three",
+          "four",
+          "six"
+        ],
+        "answers": [
+          "three"
+        ],
+        "explanation": "60是20的三倍，所以用three times as many as。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The new road is 12 kilometres long. The old road was 4 kilometres long. The new road is ______ times longer than the old road.",
+        "options": [
+          "two",
+          "three",
+          "four",
+          "six"
+        ],
+        "answers": [
+          "three"
+        ],
+        "explanation": "12是4的三倍，所以用three times longer than。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence about the past:",
+        "options": [
+          "In 2015, there are only 40 buses.",
+          "In 2015, there were only 40 buses.",
+          "In 2015, there is only 40 buses.",
+          "In 2015, there was only 40 buses."
+        ],
+        "answers": [
+          "In 2015, there were only 40 buses."
+        ],
+        "explanation": "2015年是过去时间，buses是复数，所以用there were。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence about the present:",
+        "options": [
+          "Now the city has 120 buses.",
+          "Now the city had 120 buses.",
+          "Now the city have 120 buses.",
+          "Now the city having 120 buses."
+        ],
+        "answers": [
+          "Now the city has 120 buses."
+        ],
+        "explanation": "Now表示现在，主语the city是单数，所以用has。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "How do you usually travel around your city?",
+        "Do you prefer taking the bus or the train? Why?",
+        "Is public transport in your city good? Why or why not?",
+        "How long does it take you to get to work or school?"
+      ],
+      "part2": "Describe a change in transport in your city. You should say: what changed; when it changed; how it is different now; and explain how you feel about this change.",
+      "part3": [
+        "Why do some people prefer cars to public transport?",
+        "What can governments do to make public transport better?",
+        "Do you think trains are better than buses for long trips? Why?",
+        "How might transport change in the next 20 years?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 100 words) comparing transport in your city now and 10 years ago. Use at least two comparative structures and one expression of multiples (e.g., three times as many as)."
+  },
+  "figure": "",
+  "rubric": {
+    "taskType": "Reading comprehension (B1–B2) with mixed question types"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "2d710a17da74d4fcb7f817dc4bc5c60ef2a1af353a9401eea993f963bbbc2d8d"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

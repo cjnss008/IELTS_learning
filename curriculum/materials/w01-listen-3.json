@@ -1,0 +1,282 @@
+{
+  "id": "w01-listen-3",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 3,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0初学者设计的听力练习。听录音（或阅读转录文本），然后回答问题。所有问题都是直接信息题，答案在文本中明确出现。请先阅读问题，再听录音。",
+  "passage": "",
+  "transcript": "A: Hello. I am Anna. Are you a student?\nB: No, I am not a student. I am a teacher. I am Ben.\nA: Oh, sorry. You are a teacher.\nB: Yes. And you? Are you a student?\nA: Yes, I am a student. I am new.\nB: Welcome! I am new, too. I am a new teacher.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Anna的名字是什么？",
+      "options": [
+        "Anna",
+        "Ben",
+        "Cathy",
+        "David"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "录音中Anna说：'I am Anna.'，所以她的名字是Anna。",
+      "evidence": "I am Anna."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Ben是学生吗？",
+      "options": [
+        "是的，他是学生。",
+        "不，他是老师。",
+        "不，他是医生。",
+        "是的，他是老师。"
+      ],
+      "answers": [
+        "不，他是老师。"
+      ],
+      "explanation": "Ben说：'No, I am not a student. I am a teacher.'，所以Ben不是学生，是老师。",
+      "evidence": "No, I am not a student. I am a teacher."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Anna是学生吗？",
+      "options": [
+        "是的，她是学生。",
+        "不，她是老师。",
+        "不，她是医生。",
+        "是的，她是老师。"
+      ],
+      "answers": [
+        "是的，她是学生。"
+      ],
+      "explanation": "Anna说：'Yes, I am a student.'，所以Anna是学生。",
+      "evidence": "Yes, I am a student."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Ben说：'I am a ______.' 请填空。",
+      "maxWords": 1,
+      "answers": [
+        "teacher"
+      ],
+      "explanation": "Ben说：'I am a teacher.'，所以填teacher。",
+      "evidence": "I am a teacher."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Anna说：'I am ______.' 请填空（一个词）。",
+      "maxWords": 1,
+      "answers": [
+        "new"
+      ],
+      "explanation": "Anna说：'I am new.'，所以填new。",
+      "evidence": "I am new."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Ben是新老师吗？",
+      "options": [
+        "是的，他是新老师。",
+        "不，他是老老师。",
+        "不，他是学生。",
+        "是的，他是学生。"
+      ],
+      "answers": [
+        "是的，他是新老师。"
+      ],
+      "explanation": "Ben说：'I am a new teacher.'，所以他是新老师。",
+      "evidence": "I am a new teacher."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Ben是老师吗？",
+      "options": [
+        "是的，他是老师。",
+        "不，他是学生。",
+        "不，他是医生。",
+        "是的，他是学生。"
+      ],
+      "answers": [
+        "是的，他是老师。"
+      ],
+      "explanation": "Ben说：'I am a teacher.'，所以他是老师。",
+      "evidence": "I am a teacher."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Anna是新来的吗？",
+      "options": [
+        "是的，她是新来的。",
+        "不，她是老师。",
+        "不，她是旧学生。",
+        "是的，她是老师。"
+      ],
+      "answers": [
+        "是的，她是新来的。"
+      ],
+      "explanation": "Anna说：'I am new.'，所以她是新来的。",
+      "evidence": "I am new."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Anna."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am a teacher."
+    },
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "I am new."
+    },
+    {
+      "word": "welcome",
+      "meaning": "欢迎",
+      "example": "Welcome!"
+    },
+    {
+      "word": "sorry",
+      "meaning": "对不起",
+      "example": "Oh, sorry."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am a student."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not a student."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，表示“我”用 I，表示“你”用 you。be动词在 I 后面用 am，在 you 后面用 are。例如：I am a student. You are a teacher. 句首字母要大写，句末用句号。",
+    "example": "I am Anna. You are a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student.",
+          "I be a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 后面用 am，所以 'I am a student.' 正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "You am a teacher.",
+          "You is a teacher.",
+          "You are a teacher.",
+          "You be a teacher."
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "you 后面用 are，所以 'You are a teacher.' 正确。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：I ______ a student.",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "I 后面用 am。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "填空：You ______ a teacher.",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "you 后面用 are。",
+        "evidence": "You are a teacher."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you a teacher?",
+        "Are you new?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part2Bullets": [
+        "your name",
+        "if you are a student or a teacher",
+        "if you are new",
+        "how you feel"
+      ],
+      "part3": [
+        "Is it easy to be new?",
+        "Do you like your school?",
+        "Are you happy?",
+        "Is your teacher nice?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself. Use 'I am ...' and 'You are ...'. Example: I am Li. I am a student. You are a teacher."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "70c7f0eb7a47cd0d3ab2b045fd95e5d3ee1cc4feda0a22938ec2fc99238fbef8"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,322 @@
+{
+  "id": "w32-listen-1",
+  "week": 32,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "数据理解与阶段复测",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 1,
+  "title": "Simulated Listening: A Data Review Meeting at a Language Centre",
+  "instructions": "这是一份模拟听力练习，不是官方雅思考试。请先听录音（或阅读录音稿），然后回答10个问题。问题包括单选、填空和判断正误/未提及。填空题答案必须来自录音原文，且不超过字数限制。所有解释为中文，证据为英文原文引用。",
+  "passage": "",
+  "transcript": "Mia: Thanks for coming, everyone. This is our weekly data review for the Bridge Language Centre. Let's start with the numbers from last month. Ben, can you walk us through the attendance figures?\n\nBen: Sure. Overall attendance was 82 percent, which is four points higher than the previous month. But I should mention that the evening classes were lower, at 76 percent, while the morning classes reached 88 percent.\n\nMia: That's a big gap. Do we know why?\n\nBen: Partly. The evening classes had more students who work during the day, and some of them missed classes because of overtime. Also, one teacher was sick for a week, and those classes were cancelled.\n\nMia: OK. And what about the test scores? I saw the average score for the mid-term test was 71, compared with 68 last term. That's an improvement, right?\n\nBen: Yes, but we need to be careful. The number of students who took the test was smaller this time—only 45 students, compared with 60 last term. So the average might not be very reliable.\n\nMia: Good point. So we shouldn't compare the two averages directly?\n\nBen: Exactly. It's better to look at the same group of students. For the 30 students who took both tests, their average went up from 65 to 74. That's a clearer picture.\n\nMia: That's a nine-point increase for that group. Much more useful. Now, let's talk about the survey. We asked students about their favourite class activities. The most popular was group discussion, chosen by 40 percent of students. The second most popular was watching videos, at 25 percent. And grammar exercises were the least popular, at only 10 percent.\n\nBen: That doesn't surprise me. But I think we should also look at the comments. Several students said they wanted more speaking practice, and a few mentioned that the classroom was too noisy.\n\nMia: Right. So for next term, we could add more speaking activities and maybe move the noisy classes to a quieter room. Any other data we need to discuss?\n\nBen: Yes, the homework completion rate. It was 90 percent for morning classes but only 70 percent for evening classes. That's a 20-point difference.\n\nMia: That's significant. Let's set a target: we want to raise the evening homework completion rate to 80 percent by the end of next term. And we'll check the attendance again in four weeks. Thanks, everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the overall attendance rate last month?",
+      "options": [
+        "76 percent",
+        "82 percent",
+        "88 percent",
+        "90 percent"
+      ],
+      "answers": [
+        "82 percent"
+      ],
+      "explanation": "录音中Ben明确说“Overall attendance was 82 percent”。76%是晚间课程出勤率，88%是上午课程出勤率，90%是上午课程作业完成率。",
+      "evidence": "Overall attendance was 82 percent"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why were some evening classes cancelled?",
+      "options": [
+        "Because students had overtime work.",
+        "Because one teacher was sick for a week.",
+        "Because the classroom was too noisy.",
+        "Because there were too few students."
+      ],
+      "answers": [
+        "Because one teacher was sick for a week."
+      ],
+      "explanation": "Ben提到“one teacher was sick for a week, and those classes were cancelled”。学生加班是缺课原因，不是取消课程的原因。",
+      "evidence": "one teacher was sick for a week, and those classes were cancelled"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "For the 30 students who took both tests, their average score went up from 65 to ______.",
+      "maxWords": 2,
+      "answers": [
+        "74"
+      ],
+      "explanation": "Ben说“their average went up from 65 to 74”。填空答案来自原文，且不超过2个词。",
+      "evidence": "their average went up from 65 to 74"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which class activity was the most popular in the survey?",
+      "options": [
+        "Watching videos",
+        "Grammar exercises",
+        "Group discussion",
+        "Speaking practice"
+      ],
+      "answers": [
+        "Group discussion"
+      ],
+      "explanation": "Mia说“The most popular was group discussion, chosen by 40 percent of students”。观看视频是第二受欢迎，语法练习最不受欢迎。",
+      "evidence": "The most popular was group discussion, chosen by 40 percent of students"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What percentage of students chose watching videos as their favourite activity?",
+      "options": [
+        "10 percent",
+        "25 percent",
+        "40 percent",
+        "70 percent"
+      ],
+      "answers": [
+        "25 percent"
+      ],
+      "explanation": "Mia说“The second most popular was watching videos, at 25 percent”。10%是语法练习，40%是小组讨论，70%是晚间作业完成率。",
+      "evidence": "The second most popular was watching videos, at 25 percent"
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "The homework completion rate for evening classes was ______ percent.",
+      "maxWords": 2,
+      "answers": [
+        "70"
+      ],
+      "explanation": "Ben说“It was 90 percent for morning classes but only 70 percent for evening classes”。填空答案来自原文。",
+      "evidence": "only 70 percent for evening classes"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What target did Mia set for evening homework completion?",
+      "options": [
+        "To raise it to 70 percent",
+        "To raise it to 80 percent",
+        "To raise it to 90 percent",
+        "To raise it to 100 percent"
+      ],
+      "answers": [
+        "To raise it to 80 percent"
+      ],
+      "explanation": "Mia说“we want to raise the evening homework completion rate to 80 percent by the end of next term”。",
+      "evidence": "we want to raise the evening homework completion rate to 80 percent"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The average score for the mid-term test was 71, compared with 68 last term.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Mia明确说“the average score for the mid-term test was 71, compared with 68 last term”。因此该陈述为True。",
+      "evidence": "the average score for the mid-term test was 71, compared with 68 last term"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The number of students who took the mid-term test was larger this time than last term.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Ben说“The number of students who took the test was smaller this time—only 45 students, compared with 60 last term”。因此人数更少，陈述为False。",
+      "evidence": "The number of students who took the test was smaller this time—only 45 students, compared with 60 last term"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The centre will move all classes to a quieter room next term.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "Mia只是建议“maybe move the noisy classes to a quieter room”，并未说会移动所有课程。录音中没有信息表明所有课程都会搬到更安静的房间，因此为Not Given。",
+      "evidence": "maybe move the noisy classes to a quieter room"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "attendance",
+      "meaning": "出勤率；出席人数",
+      "example": "Overall attendance was 82 percent."
+    },
+    {
+      "word": "average",
+      "meaning": "平均数；平均的",
+      "example": "The average score for the mid-term test was 71."
+    },
+    {
+      "word": "reliable",
+      "meaning": "可靠的",
+      "example": "The average might not be very reliable."
+    },
+    {
+      "word": "completion",
+      "meaning": "完成；完成率",
+      "example": "The homework completion rate was 90 percent for morning classes."
+    },
+    {
+      "word": "significant",
+      "meaning": "显著的；重要的",
+      "example": "That's a significant difference."
+    },
+    {
+      "word": "target",
+      "meaning": "目标",
+      "example": "Let's set a target: we want to raise the evening homework completion rate to 80 percent."
+    },
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "We asked students about their favourite class activities in the survey."
+    },
+    {
+      "word": "compare",
+      "meaning": "比较",
+      "example": "We shouldn't compare the two averages directly."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本课重点是比较结构（如higher than, more popular, the most popular）、数量表达（如82 percent, four points higher, only 45 students）以及指代（如those classes, their average）。同时注意冠词（a/an/the）和主谓一致（如The number of students was smaller）。",
+    "example": "Overall attendance was 82 percent, which is four points higher than the previous month.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The number of students were smaller this time.",
+          "The number of students was smaller this time.",
+          "A number of students was smaller this time.",
+          "The number of student was smaller this time."
+        ],
+        "answers": [
+          "The number of students was smaller this time."
+        ],
+        "explanation": "“The number of + 复数名词”作主语时，谓语动词用单数，所以用was。A number of表示“许多”，谓语用复数。",
+        "evidence": "The number of students who took the test was smaller this time."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Evening classes had more students who work during the day.",
+          "Evening classes had much students who work during the day.",
+          "Evening classes had many students who works during the day.",
+          "Evening classes had more student who work during the day."
+        ],
+        "answers": [
+          "Evening classes had more students who work during the day."
+        ],
+        "explanation": "“more”修饰可数名词复数students；定语从句中who指代students，谓语用复数work。",
+        "evidence": "The evening classes had more students who work during the day."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The most popular was group discussion, chosen by 40 percent of students.",
+          "Most popular was group discussion, chosen by 40 percent of students.",
+          "The most popular were group discussion, chosen by 40 percent of students.",
+          "The more popular was group discussion, chosen by 40 percent of students."
+        ],
+        "answers": [
+          "The most popular was group discussion, chosen by 40 percent of students."
+        ],
+        "explanation": "最高级前用定冠词the；主语The most popular指代单数活动，谓语用was。",
+        "evidence": "The most popular was group discussion, chosen by 40 percent of students."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Their average went up from 65 to 74.",
+          "They average went up from 65 to 74.",
+          "Their average went up from 65 to 74 percent.",
+          "Their average went up from 65 to 74 students."
+        ],
+        "answers": [
+          "Their average went up from 65 to 74."
+        ],
+        "explanation": "指代30名学生的平均分用their；分数是数值，不加percent或students。",
+        "evidence": "their average went up from 65 to 74"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often look at numbers or data in your daily life?",
+        "How do you usually check your progress in learning English?",
+        "Do you prefer morning classes or evening classes? Why?",
+        "What do you do when you miss a class?"
+      ],
+      "part2": "Describe a time when you looked at some data or results to understand your progress. You should say:",
+      "part2Bullets": [
+        "what data or results you looked at",
+        "when and where you saw them",
+        "what you learned from them",
+        "and explain how you felt about the results."
+      ],
+      "part3": [
+        "Why is it important to compare the same group of students when looking at test scores?",
+        "What can schools do to improve attendance in evening classes?",
+        "Do you think surveys are a good way to find out what students want? Why or why not?",
+        "How can teachers use data to help students learn better?"
+      ]
+    },
+    "writing": "You are a student at a language centre. The centre wants to improve evening classes. Write a short report (about 150 words) for the centre manager. Use the data from the listening: evening attendance was 76%, morning attendance was 88%, evening homework completion was 70%, and the most popular activity was group discussion (40%). Suggest two changes and explain why. Use comparison structures and quantity expressions."
+  },
+  "figure": "",
+  "rubric": {
+    "taskType": "Listening comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a23e29c629cafbcdbd2691a6e77424a0b0d0db86971e988df22ad54f22d82ab3"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

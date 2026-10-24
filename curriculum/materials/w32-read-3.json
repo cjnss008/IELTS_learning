@@ -1,0 +1,317 @@
+{
+  "id": "w32-read-3",
+  "week": 32,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "数据理解与阶段复测",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "The Campus Library Survey: Reading the Numbers",
+  "instructions": "阅读以下关于校园图书馆使用调查的短文，然后回答10个问题。文章和题目均为模拟教学材料，不是真实调查或官方考试。请仔细阅读，注意比较结构、数量表达和指代关系。答案必须来自文章。",
+  "passage": "Last month, the student council at Riverside College carried out a survey about how students use the campus library. The survey aimed to understand study habits and to see whether the library’s resources meet students’ needs. A total of 480 students completed the online questionnaire, which is about 12% of the college’s 4,000 students. The council believes this is a large enough sample to give a useful picture, although they warn that the results may not represent every student perfectly.\n\nThe questionnaire asked about three main areas: how often students visit the library, what they do there, and which services they value most. The results show some interesting patterns. First, frequency of visits: 35% of respondents said they come to the library every day, while 45% come two or three times a week. Only 20% visit once a week or less. This suggests that the library is a regular part of daily life for most students.\n\nSecond, activities: when asked what they do in the library, 60% said they mainly study alone, 25% use group study rooms, and 15% come mainly to borrow books or use the computers. The council noted that group study is more popular among first-year students than among final-year students. In fact, 40% of first-years reported using group rooms regularly, compared with only 15% of final-years. This difference may be because first-years often work on team projects, while final-years tend to focus on individual research.\n\nThird, services: students were asked to rate the importance of several services on a scale from 1 (not important) to 5 (very important). The quiet study area received the highest average rating, 4.6, followed by the Wi-Fi (4.3) and the book collection (4.1). The café was rated lower, at 3.2, but still above the middle of the scale. Interestingly, the printing service was rated 3.8, which is higher than the café but lower than the book collection. The council found that students who visit the library every day gave higher ratings to the quiet study area than those who visit less often.\n\nOpen comments revealed additional concerns. Many students said the library needs more power sockets, especially in the silent study zone. Others mentioned that the opening hours are too short during exam periods. A few suggested that the library should buy more copies of popular textbooks. The council plans to share these findings with the library management and to repeat the survey next year to see if anything changes.\n\nOverall, the survey paints a picture of a library that is well used and generally valued, but with some clear areas for improvement. The council hopes that the results will lead to practical changes, such as longer opening hours and more study spaces. The council also noted that the library’s book collection is older than that of many other colleges, and that the number of quiet study seats is smaller than the number of group study seats. These comparisons may help the library decide where to invest next year. In addition, the council compared the current results with those from a similar survey conducted two years ago. That earlier survey, which involved 300 students, found that only 25% of respondents visited the library every day, compared with 35% now. This increase suggests that the library has become more central to students’ daily routines. However, the earlier survey did not ask about power sockets or opening hours, so it is not possible to say whether students’ concerns about these issues have grown. The council also noted that the proportion of students who study alone has remained roughly the same, at around 60%, while the use of group study rooms has risen slightly from 20% to 25%. These trends will be monitored in future surveys.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What percentage of the college’s students completed the questionnaire?",
+      "options": [
+        "12%",
+        "35%",
+        "45%",
+        "20%"
+      ],
+      "answers": [
+        "12%"
+      ],
+      "explanation": "文章第一段明确提到“about 12% of the college’s 4,000 students”完成了问卷。",
+      "evidence": "A total of 480 students completed the online questionnaire, which is about 12% of the college’s 4,000 students."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "According to the passage, which group uses group study rooms more regularly?",
+      "options": [
+        "First-year students",
+        "Final-year students",
+        "Students who visit every day",
+        "Students who visit once a week"
+      ],
+      "answers": [
+        "First-year students"
+      ],
+      "explanation": "文章第三段指出“40% of first-years reported using group rooms regularly, compared with only 15% of final-years”，说明一年级学生更常使用小组学习室。",
+      "evidence": "40% of first-years reported using group rooms regularly, compared with only 15% of final-years."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which service received the highest average rating?",
+      "options": [
+        "The quiet study area",
+        "The Wi-Fi",
+        "The book collection",
+        "The printing service"
+      ],
+      "answers": [
+        "The quiet study area"
+      ],
+      "explanation": "文章第四段说“The quiet study area received the highest average rating, 4.6”，因此安静学习区得分最高。",
+      "evidence": "The quiet study area received the highest average rating, 4.6, followed by the Wi-Fi (4.3) and the book collection (4.1)."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What was the average rating for the printing service?",
+      "options": [
+        "4.6",
+        "4.3",
+        "3.8",
+        "3.2"
+      ],
+      "answers": [
+        "3.8"
+      ],
+      "explanation": "文章第四段提到“the printing service was rated 3.8”，所以打印服务的平均评分是3.8。",
+      "evidence": "Interestingly, the printing service was rated 3.8, which is higher than the café but lower than the book collection."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What do many students say the library needs more of?",
+      "options": [
+        "Power sockets",
+        "Group study rooms",
+        "Books on history",
+        "Café tables"
+      ],
+      "answers": [
+        "Power sockets"
+      ],
+      "explanation": "文章第五段指出“Many students said the library needs more power sockets”，即许多学生认为图书馆需要更多电源插座。",
+      "evidence": "Many students said the library needs more power sockets, especially in the silent study zone."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "The council plans to repeat the survey next year.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "文章第五段最后一句说“The council plans to share these findings with the library management and to repeat the survey next year”，因此该陈述为真。",
+      "evidence": "The council plans to share these findings with the library management and to repeat the survey next year to see if anything changes."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "The library has extended its opening hours during exam periods.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "文章提到学生认为考试期间开放时间太短（“the opening hours are too short during exam periods”），但并未说明图书馆是否已经延长了开放时间。因此，该信息未给出。",
+      "evidence": "Others mentioned that the opening hours are too short during exam periods."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "The café was rated lower than the printing service.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "文章第四段说咖啡厅评分为3.2，打印服务为3.8，因此咖啡厅评分低于打印服务，该陈述为真。",
+      "evidence": "The café was rated lower, at 3.2, but still above the middle of the scale. Interestingly, the printing service was rated 3.8, which is higher than the café but lower than the book collection."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The survey aimed to understand study habits and to see whether the library’s resources meet students’ ______.",
+      "options": [],
+      "answers": [
+        "needs"
+      ],
+      "maxWords": 1,
+      "explanation": "文章第一段说“to see whether the library’s resources meet students’ needs”，因此填入needs。",
+      "evidence": "The survey aimed to understand study habits and to see whether the library’s resources meet students’ needs."
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The quiet study area received the highest average ______.",
+      "options": [],
+      "answers": [
+        "rating"
+      ],
+      "maxWords": 1,
+      "explanation": "文章第四段说“The quiet study area received the highest average rating”，因此填入rating。",
+      "evidence": "The quiet study area received the highest average rating, 4.6, followed by the Wi-Fi (4.3) and the book collection (4.1)."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "The student council carried out a survey about how students use the campus library."
+    },
+    {
+      "word": "respondents",
+      "meaning": "受访者",
+      "example": "35% of respondents said they come to the library every day."
+    },
+    {
+      "word": "frequency",
+      "meaning": "频率",
+      "example": "First, frequency of visits: 35% of respondents said they come to the library every day."
+    },
+    {
+      "word": "average",
+      "meaning": "平均的；平均数",
+      "example": "The quiet study area received the highest average rating, 4.6."
+    },
+    {
+      "word": "scale",
+      "meaning": "量表；等级",
+      "example": "Students were asked to rate the importance of several services on a scale from 1 to 5."
+    },
+    {
+      "word": "revealed",
+      "meaning": "揭示；显示",
+      "example": "Open comments revealed additional concerns."
+    },
+    {
+      "word": "concerns",
+      "meaning": "担忧；关注的问题",
+      "example": "Open comments revealed additional concerns."
+    },
+    {
+      "word": "improvement",
+      "meaning": "改进；改善",
+      "example": "The survey paints a picture of a library that is well used and generally valued, but with some clear areas for improvement."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本单元重点复习比较结构（如more popular than, higher than）、数量表达（如35% of respondents, a total of 480 students）以及指代关系（如this suggests that, these findings）。同时注意冠词的使用（如a survey, the library）和主谓一致（如the results show, the council plans）。",
+    "example": "Group study is more popular among first-year students than among final-year students.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct option: The number of students who visit the library every day ______ increased this year.",
+        "options": [
+          "have",
+          "has",
+          "are",
+          "were"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "主语是“The number of students”，中心词是number，为单数，因此谓语用has。",
+        "evidence": ""
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct option: The Wi-Fi was rated ______ than the book collection.",
+        "options": [
+          "high",
+          "higher",
+          "highest",
+          "more high"
+        ],
+        "answers": [
+          "higher"
+        ],
+        "explanation": "比较两个事物的评分，用比较级higher，且后面有than。",
+        "evidence": ""
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct option: ______ survey results show that most students value the quiet study area.",
+        "options": [
+          "A",
+          "An",
+          "The",
+          "Some"
+        ],
+        "answers": [
+          "The"
+        ],
+        "explanation": "特指这次调查的结果，用定冠词The。",
+        "evidence": ""
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct option: The council plans to repeat the survey next year. ______ will help them see if anything changes.",
+        "options": [
+          "This",
+          "These",
+          "It",
+          "They"
+        ],
+        "answers": [
+          "This"
+        ],
+        "explanation": "指代前面整个句子“The council plans to repeat the survey next year”这一件事，用This。",
+        "evidence": ""
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use your school library? Why or why not?",
+        "What do you usually do in a library?",
+        "Do you prefer studying alone or in a group?",
+        "How important is Wi-Fi when you study?"
+      ],
+      "part2": "Describe a survey or questionnaire you have taken part in. You should say: what the survey was about; who organized it; what the results were; and explain how you felt about taking part in it.",
+      "part3": [
+        "Why do colleges carry out surveys of students?",
+        "What are the advantages and disadvantages of online questionnaires?",
+        "How can libraries improve their services based on student feedback?",
+        "Do you think surveys can accurately reflect students’ opinions? Why or why not?"
+      ]
+    },
+    "writing": "Write a short report (about 150 words) for your school magazine summarizing the main findings of the library survey described in the passage. Use at least three comparative structures and two quantity expressions."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Reading comprehension (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "00ba622cc4c249544a050dfe97391a1db6f3ba80623ef202bb17366a80580ee8"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

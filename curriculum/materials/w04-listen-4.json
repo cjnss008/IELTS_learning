@@ -1,0 +1,276 @@
+{
+  "id": "w04-listen-4",
+  "week": 4,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "lecture",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 65,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 4,
+  "title": "At the Library Help Desk",
+  "instructions": "这是为A1水平学习者设计的听力练习。请先听录音（或阅读听力原文），然后回答问题。题目均为单选题或填空题，填空题答案必须与原文完全一致。所有内容为模拟教学材料，并非官方雅思考试。",
+  "passage": "",
+  "transcript": "A: Good morning. Are you a student here?\nB: No, I am not. I am a new teacher. My name is Chen.\nA: Oh, welcome! I am Li. I am a librarian. Is this your first day?\nB: Yes, it is. But I am not ready. Where is the teachers' room?\nA: It is on the second floor. Is that your bag?\nB: No, it is not my bag. My bag is blue. This bag is black.\nA: Who is the man over there?\nB: He is Mr. Wang. He is not a teacher. He is a cook.\nA: Is he busy now?\nB: No, he is not. He is free. He is happy.\nA: Are you free at ten?\nB: Yes, I am. I am free at ten. Thank you!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "B 是学生吗？",
+      "options": [
+        "是的，B 是学生。",
+        "不，B 不是学生。",
+        "B 是老师也是学生。"
+      ],
+      "answers": [
+        "不，B 不是学生。"
+      ],
+      "explanation": "B 明确说“No, I am not. I am a new teacher.”，所以 B 不是学生。",
+      "evidence": "No, I am not. I am a new teacher."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "A 是谁？",
+      "options": [
+        "A 是老师。",
+        "A 是图书管理员。",
+        "A 是厨师。"
+      ],
+      "answers": [
+        "A 是图书管理员。"
+      ],
+      "explanation": "A 说“I am Li. I am a librarian.”，所以 A 是图书管理员。",
+      "evidence": "I am Li. I am a librarian."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "教师休息室在哪里？",
+      "options": [
+        "在一楼。",
+        "在二楼。",
+        "在三楼。"
+      ],
+      "answers": [
+        "在二楼。"
+      ],
+      "explanation": "A 说“It is on the second floor.”，即二楼。",
+      "evidence": "It is on the second floor."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "B 的包是什么颜色？",
+      "options": [
+        "黑色。",
+        "蓝色。",
+        "棕色。"
+      ],
+      "answers": [
+        "蓝色。"
+      ],
+      "explanation": "B 说“My bag is blue.”，所以 B 的包是蓝色。",
+      "evidence": "My bag is blue."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "王先生是做什么工作的？请用原文中的一个词填空：He is a ______.",
+      "maxWords": 1,
+      "answers": [
+        "cook"
+      ],
+      "explanation": "B 说“He is not a teacher. He is a cook.”，所以填 cook。",
+      "evidence": "He is not a teacher. He is a cook."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "王先生现在忙吗？",
+      "options": [
+        "是的，他很忙。",
+        "不，他不忙。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "不，他不忙。"
+      ],
+      "explanation": "B 回答“No, he is not. He is free.”，说明王先生不忙。",
+      "evidence": "No, he is not. He is free."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "B 十点有空吗？",
+      "options": [
+        "是的，有空。",
+        "不，没空。",
+        "文中没有说。"
+      ],
+      "answers": [
+        "是的，有空。"
+      ],
+      "explanation": "B 说“Yes, I am. I am free at ten.”，所以 B 十点有空。",
+      "evidence": "Yes, I am. I am free at ten."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "B 说王先生现在心情如何？请用原文中的一个词填空：He is ______.",
+      "maxWords": 1,
+      "answers": [
+        "happy"
+      ],
+      "explanation": "B 说“He is happy.”，所以填 happy。",
+      "evidence": "He is happy."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a student here?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am a new teacher."
+    },
+    {
+      "word": "librarian",
+      "meaning": "图书管理员",
+      "example": "I am a librarian."
+    },
+    {
+      "word": "floor",
+      "meaning": "楼层",
+      "example": "It is on the second floor."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "Is that your bag?"
+    },
+    {
+      "word": "cook",
+      "meaning": "厨师",
+      "example": "He is a cook."
+    },
+    {
+      "word": "busy",
+      "meaning": "忙碌的",
+      "example": "Is he busy now?"
+    },
+    {
+      "word": "free",
+      "meaning": "有空的",
+      "example": "I am free at ten."
+    }
+  ],
+  "grammar": {
+    "title": "be 动词否定句与一般疑问句",
+    "explanation": "英语中，be 动词（am, is, are）的否定句是在 be 动词后加 not，例如：I am not a student. 一般疑问句是把 be 动词放到主语前面，例如：Are you a student? 回答用 Yes, I am. 或 No, I am not. 注意：肯定回答不能缩写（Yes, I am. 不说 Yes, I'm.），否定回答可以缩写（No, I'm not.）。",
+    "example": "Are you a student here? No, I am not.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：",
+        "options": [
+          "I am not a teacher.",
+          "I not am a teacher.",
+          "I am a teacher not."
+        ],
+        "answers": [
+          "I am not a teacher."
+        ],
+        "explanation": "否定句在 be 动词后加 not，所以是 I am not a teacher.",
+        "evidence": "I am not a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的一般疑问句：",
+        "options": [
+          "Are you free?",
+          "You are free?",
+          "Free are you?"
+        ],
+        "answers": [
+          "Are you free?"
+        ],
+        "explanation": "一般疑问句把 be 动词提前，所以是 Are you free?",
+        "evidence": "Are you free?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "对“Is he busy?”作肯定回答，正确的是：",
+        "options": [
+          "Yes, he is.",
+          "Yes, he busy.",
+          "Yes, is he."
+        ],
+        "answers": [
+          "Yes, he is."
+        ],
+        "explanation": "肯定回答用 Yes, 主语 + be，所以是 Yes, he is.",
+        "evidence": "Yes, he is."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "对“Are you a student?”作否定回答，正确的是：",
+        "options": [
+          "No, I am not.",
+          "No, I not.",
+          "No, am I not."
+        ],
+        "answers": [
+          "No, I am not."
+        ],
+        "explanation": "否定回答用 No, 主语 + be + not，所以是 No, I am not.",
+        "evidence": "No, I am not."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your bag blue?",
+        "Are you free now?",
+        "Who is your teacher?"
+      ],
+      "part2": "Describe a person you know. You should say:",
+      "part3": [
+        "Is your friend a teacher?",
+        "Are you busy today?",
+        "Who is your favorite person?",
+        "Is your bag black?"
+      ]
+    },
+    "writing": "写 3 个简单的句子介绍你自己或你的朋友。使用 be 动词的否定句或一般疑问句。例如：I am not a teacher. Are you a student?"
+  },
+  "rubric": {
+    "taskType": "A1 Listening Comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "9bdcc4aace55828f8b2e16ba4170b4385401ef2a2a7ca967150c575ca009aa96"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

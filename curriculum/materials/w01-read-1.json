@@ -1,0 +1,271 @@
+{
+  "id": "w01-read-1",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "First Day at Sunny English Club",
+  "instructions": "阅读短文，然后回答问题。注意：本材料为模拟教学材料，不是官方雅思考试。",
+  "passage": "A. Hello. I am Li Ming. I am a student. I am in Class 1.\nB. Hi. I am Anna. I am a student too. I am in Class 1. We are classmates.\nC. This is Mr. Wang. He is a teacher. He says, \"You are students. I am your teacher.\"",
+  "transcript": "Teacher: Good morning. I am Mr. Wang.\nStudent A: Good morning, Mr. Wang. I am Li Ming.\nStudent B: Hello. I am Anna.\nTeacher: Are you a student?\nAnna: Yes, I am. I am a student.\nTeacher: Are you in Class 1?\nLi Ming: Yes, I am. Anna is in Class 1 too. We are classmates.\nTeacher: Good. You are students. I am your teacher.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Li Ming?",
+      "options": [
+        "A teacher",
+        "A student",
+        "A class"
+      ],
+      "answers": [
+        "A student"
+      ],
+      "explanation": "短文A部分说“I am a student.”，所以李明是学生。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What class is Anna in?",
+      "options": [
+        "Class 1",
+        "Class 2",
+        "Class 3"
+      ],
+      "answers": [
+        "Class 1"
+      ],
+      "explanation": "短文B部分说“I am in Class 1.”，所以安娜在1班。",
+      "evidence": "I am in Class 1."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is Mr. Wang?",
+      "options": [
+        "A student",
+        "A teacher",
+        "A classmate"
+      ],
+      "answers": [
+        "A teacher"
+      ],
+      "explanation": "短文C部分说“He is a teacher.”，所以王先生是老师。",
+      "evidence": "He is a teacher."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Mr. Wang say?",
+      "options": [
+        "You are students.",
+        "I am a student.",
+        "We are classmates."
+      ],
+      "answers": [
+        "You are students."
+      ],
+      "explanation": "短文C部分王先生说“You are students.”。",
+      "evidence": "He says, \"You are students. I am your teacher.\""
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Fill in the blank: Li Ming and Anna are ______.",
+      "answers": [
+        "classmates"
+      ],
+      "maxWords": 1,
+      "explanation": "短文B部分说“We are classmates.”，所以他们是同学。",
+      "evidence": "We are classmates."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Li Ming and Anna are in the same class.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "短文B部分说“We are classmates.”，并且两人都在1班，所以他们在同一个班。",
+      "evidence": "We are classmates."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "B 段中，Anna 说自己是什么身份？",
+      "options": [
+        "学生",
+        "老师",
+        "班级"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "Anna 在 B 段说“I am a student too.”，直接说明自己是学生。本题只核对原文给出的身份，不推断她是否还有其他身份。",
+      "evidence": "I am a student too."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Anna is in Room 6.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "短文中没有提到房间号，只提到班级，所以无法判断安娜是否在6号房间。",
+      "evidence": "The passage does not mention any room number."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li Ming."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "class",
+      "meaning": "班级",
+      "example": "I am in Class 1."
+    },
+    {
+      "word": "classmate",
+      "meaning": "同学",
+      "example": "We are classmates."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "He is a teacher."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "I am a student too."
+    },
+    {
+      "word": "same",
+      "meaning": "相同的",
+      "example": "We are in the same class."
+    },
+    {
+      "word": "say",
+      "meaning": "说",
+      "example": "He says, \"You are students.\""
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "在英语中，人称代词I（我）后面用am，you（你/你们）后面用are。句子的第一个字母要大写，句子结尾要加句号。",
+    "example": "I am a student. You are students.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I am a teacher.",
+          "I are a teacher.",
+          "I is a teacher."
+        ],
+        "answers": [
+          "I am a teacher."
+        ],
+        "explanation": "I后面用am，所以“I am a teacher.”正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You am a student.",
+          "You are a student.",
+          "You is a student."
+        ],
+        "answers": [
+          "You are a student."
+        ],
+        "explanation": "you后面用are，所以“You are a student.”正确。",
+        "evidence": "You are students."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "Fill in the blank with am or are: I ______ a student.",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "I后面用am。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Fill in the blank with am or are: You ______ a teacher.",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "you后面用are。",
+        "evidence": "You are students."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you in Class 1?",
+        "Who is your teacher?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part3": [
+        "Is your friend a student?",
+        "Are you and your friend in the same class?",
+        "Who is your English teacher?",
+        "Is your teacher a man or a woman?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself. Use I am and You are. Example: I am Li Ming. I am a student."
+  },
+  "rubric": {
+    "taskType": "A0 reading and listening practice"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；2026-10-24独立内容复核：第7题改为原文直接信息选择，避免从学生身份推断非教师；未经真人考生标定。contentHash按教学内容字段计算（不含来源、音频和排课元数据）。",
+    "model": "deepseek-flash",
+    "contentHash": "f7a77ecb7c33b00b88be1a16f7dc2d9be2e47f9d8cc192599a24928cdc8e2f12"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

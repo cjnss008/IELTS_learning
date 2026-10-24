@@ -1,0 +1,282 @@
+{
+  "id": "w06-listen-3",
+  "week": 6,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "食物、喜好与能力",
+  "grammarFocus": "第三人称单数；do / does 问答；like；can / cannot；and / but。",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 65,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 3,
+  "title": "A Family Cooking Chat",
+  "instructions": "这是模拟练习，不是官方考试。先听录音（或读文字稿），再做题。所有题目只根据录音内容回答。填空题必须用英文原文中的词，且只填一个词。",
+  "passage": "",
+  "transcript": "Mia: Hi, Leo. Do you like salad?\nLeo: No, I do not like salad. But my sister Lily likes salad. She can make salad.\nMia: Can you make salad?\nLeo: No, I cannot. I only make noodles. I can make great noodles and dumplings.\nMia: Does Lily like noodles?\nLeo: Yes, she does. She likes noodles and salad. But she cannot make noodles.\nMia: What about your brother Tom? Does he like carrots?\nLeo: No, he does not. Tom likes apples. He can make apple juice. But he cannot make noodles.\nMia: Can Tom make dumplings?\nLeo: No, he cannot. Only I can make dumplings. Lily and Tom like my dumplings.\nMia: Great! I like dumplings, too.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Leo 喜欢沙拉吗？",
+      "options": [
+        "是的，他喜欢沙拉。",
+        "不，他不喜欢沙拉。",
+        "他只喜欢苹果。"
+      ],
+      "answers": [
+        "不，他不喜欢沙拉。"
+      ],
+      "explanation": "录音中 Leo 说“No, I do not like salad.”，所以他不喜欢沙拉。",
+      "evidence": "No, I do not like salad."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Leo 会做什么食物？",
+      "options": [
+        "沙拉和苹果汁",
+        "面条和饺子",
+        "只有苹果"
+      ],
+      "answers": [
+        "面条和饺子"
+      ],
+      "explanation": "Leo 说“I can make great noodles and dumplings.”，所以他会做面条和饺子。",
+      "evidence": "I can make great noodles and dumplings."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Lily 会做面条吗？",
+      "options": [
+        "是的，她会做面条。",
+        "不，她不会做面条。",
+        "录音没有说。"
+      ],
+      "answers": [
+        "不，她不会做面条。"
+      ],
+      "explanation": "Leo 说 Lily“cannot make noodles”，所以她不会做面条。",
+      "evidence": "But she cannot make noodles."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Tom 喜欢胡萝卜吗？",
+      "options": [
+        "是的，他喜欢胡萝卜。",
+        "不，他不喜欢胡萝卜。",
+        "他只喜欢沙拉。"
+      ],
+      "answers": [
+        "不，他不喜欢胡萝卜。"
+      ],
+      "explanation": "Leo 说“No, he does not. Tom likes apples.”，所以 Tom 不喜欢胡萝卜。",
+      "evidence": "No, he does not. Tom likes apples."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Tom 会做什么？",
+      "options": [
+        "他会做苹果汁。",
+        "他会做饺子。",
+        "他会做沙拉。"
+      ],
+      "answers": [
+        "他会做苹果汁。"
+      ],
+      "explanation": "Leo 说“He can make apple juice.”，所以 Tom 会做苹果汁。",
+      "evidence": "He can make apple juice."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "谁会做饺子？",
+      "options": [
+        "只有 Leo",
+        "只有 Lily",
+        "只有 Tom"
+      ],
+      "answers": [
+        "只有 Leo"
+      ],
+      "explanation": "Leo 说“Only I can make dumplings.”，所以只有 Leo 会做饺子。",
+      "evidence": "Only I can make dumplings."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Lily 喜欢沙拉和什么？请填一个英文单词。",
+      "answers": [
+        "noodles"
+      ],
+      "maxWords": 1,
+      "explanation": "Leo 说 Lily“likes noodles and salad”，所以 Lily 喜欢沙拉和面条。填 noodles。",
+      "evidence": "She likes noodles and salad."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Tom 喜欢什么水果？请填一个英文单词。",
+      "answers": [
+        "apples"
+      ],
+      "maxWords": 1,
+      "explanation": "Leo 说“Tom likes apples.”，所以 Tom 喜欢苹果。填 apples。",
+      "evidence": "Tom likes apples."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "salad",
+      "meaning": "沙拉",
+      "example": "No, I do not like salad."
+    },
+    {
+      "word": "noodles",
+      "meaning": "面条",
+      "example": "I can make great noodles and dumplings."
+    },
+    {
+      "word": "dumplings",
+      "meaning": "饺子",
+      "example": "Only I can make dumplings."
+    },
+    {
+      "word": "carrots",
+      "meaning": "胡萝卜",
+      "example": "Does he like carrots?"
+    },
+    {
+      "word": "apples",
+      "meaning": "苹果",
+      "example": "Tom likes apples."
+    },
+    {
+      "word": "juice",
+      "meaning": "果汁",
+      "example": "He can make apple juice."
+    },
+    {
+      "word": "make",
+      "meaning": "制作",
+      "example": "She can make salad."
+    },
+    {
+      "word": "only",
+      "meaning": "只，仅仅",
+      "example": "I only make noodles."
+    }
+  ],
+  "grammar": {
+    "title": "第三人称单数；do/does 问答；like；can/cannot；and/but",
+    "explanation": "在一般现在时中，当主语是 he、she 或 it 时，动词要加 -s 或 -es，例如 likes、makes。问句用 does 开头，回答用 does 或 does not。can 表示“会、能”，cannot 表示“不会、不能”，后面直接跟动词原形。and 表示“和”，but 表示“但是”。",
+    "example": "She likes noodles and salad. But she cannot make noodles.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "She like apples.",
+          "She likes apples.",
+          "She likes apple."
+        ],
+        "answers": [
+          "She likes apples."
+        ],
+        "explanation": "主语 she 是第三人称单数，动词 like 要加 -s 变成 likes；apples 用复数表示一类事物。",
+        "evidence": "Tom likes apples."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的问句：",
+        "options": [
+          "Does he likes carrots?",
+          "Do he like carrots?",
+          "Does he like carrots?"
+        ],
+        "answers": [
+          "Does he like carrots?"
+        ],
+        "explanation": "主语 he 是第三人称单数，问句用 Does 开头，后面的动词用原形 like。",
+        "evidence": "Does he like carrots?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "He can makes juice.",
+          "He can make juice.",
+          "He can making juice."
+        ],
+        "answers": [
+          "He can make juice."
+        ],
+        "explanation": "can 后面用动词原形，所以是 can make，不是 can makes 或 can making。",
+        "evidence": "He can make apple juice."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "I like salad, but I cannot make salad.",
+          "I like salad, and I cannot make salad.",
+          "I like salad, but I can make salad."
+        ],
+        "answers": [
+          "I like salad, but I cannot make salad."
+        ],
+        "explanation": "but 表示转折，前后意思相反：喜欢沙拉但不会做沙拉。and 表示并列，不表示转折。",
+        "evidence": "No, I do not like salad. But my sister Lily likes salad."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like salad?",
+        "Can you make noodles?",
+        "Does your friend like apples?",
+        "What food can you make?"
+      ],
+      "part2": "Cue card: Talk about a family member and food. You should say:",
+      "part2Bullets": [
+        "Who the person is",
+        "What food he or she likes",
+        "What food he or she can make",
+        "What food he or she cannot make"
+      ],
+      "part3": [
+        "Does your mother like carrots?",
+        "Can your father make dumplings?",
+        "What food does your friend like?",
+        "Do you like apples or salad?"
+      ]
+    },
+    "writing": "写 2–8 个简单的英文句子，介绍你的一个家人喜欢什么食物、会做什么食物、不会做什么食物。用上 like、can、cannot、and、but。"
+  },
+  "rubric": {
+    "taskType": "A1 listening comprehension with grammar and transfer"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "ff31c28c300a9d329ac0e07951aebac5f85b55c16da283d99bdbaf7bd166b20e"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,317 @@
+{
+  "id": "w32-listen-2",
+  "week": 32,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "数据理解与阶段复测",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。",
+  "pool": "training",
+  "type": "directions",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 250,
+  "maxWords": 450,
+  "questionCount": 10,
+  "variant": 2,
+  "title": "Simulated Listening: A Pool Training Data Review",
+  "instructions": "这是一份模拟听力练习，不是官方雅思考试。请先听录音（或阅读录音稿），然后回答10个问题。问题类型包括单选、填空、匹配（以单选形式）和判断正误/未提及。填空题答案必须来自录音原文，且不超过字数限制。所有解释均为中文，并附有原文证据。",
+  "passage": "",
+  "transcript": "M: Hi everyone, thanks for coming to the pool training review. I'm Mark, the data coordinator. Today we'll look at the numbers from last month's sessions and decide what to change. First, let's check attendance. In total, we had 240 visits across all sessions. That's 20 more than the previous month. Good news, but we need to look closer.\nW: Can I ask about the morning sessions? I thought they were quieter than usual.\nM: Yes, you're right. The morning sessions had 80 visits, which is 30 fewer than the evening sessions. The evening sessions were the busiest with 110 visits. The afternoon sessions had 50 visits, so they were the least popular.\nW: So the evening is clearly the most popular. But what about the instructors? Did we have enough?\nM: We had three instructors: Lisa, Tom, and me. Lisa taught 12 sessions, Tom taught 10, and I taught 8. So Lisa taught the most sessions. But here's a correction: last time I said Tom taught 12, but that was wrong. He actually taught 10.\nW: Okay, so Lisa taught the most. What about feedback scores? I remember some comments about the water temperature.\nM: Yes, the average satisfaction score was 4.2 out of 5. That's slightly higher than last month's 4.0. But the comments about water temperature were mostly negative. 15 people mentioned it was too cold, and only 5 said it was fine. So we should adjust the heating.\nW: And what about the new swimmers? Did we have many beginners?\nM: We had 30 beginners, which is 10 more than last month. The intermediate group had 45, and the advanced group had 25. So beginners are growing, but intermediate is still the largest group.\nW: That makes sense. Now, about the schedule for next month. Should we add more evening sessions?\nM: Possibly, but we need to consider instructor availability. Lisa is on holiday for two weeks, so she can't teach as many. Tom can cover some evenings, but he prefers mornings. So we might need to hire a new instructor.\nW: Okay. And the pool will be closed for maintenance on the 15th, right?\nM: Yes, that's correct. So we need to plan around that. Any other questions?",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many visits were there in total last month?",
+      "options": [
+        "220",
+        "240",
+        "260",
+        "280"
+      ],
+      "answers": [
+        "240"
+      ],
+      "explanation": "录音中Mark说“In total, we had 240 visits across all sessions.”，因此总访问量是240次。",
+      "evidence": "In total, we had 240 visits across all sessions."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which session had the fewest visits?",
+      "options": [
+        "Morning sessions",
+        "Afternoon sessions",
+        "Evening sessions",
+        "All sessions had equal visits"
+      ],
+      "answers": [
+        "Afternoon sessions"
+      ],
+      "explanation": "录音提到下午场有50次访问，是三个时段中最少的。",
+      "evidence": "The afternoon sessions had 50 visits, so they were the least popular."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "The evening sessions had ______ visits. (Write a number.)",
+      "maxWords": 1,
+      "answers": [
+        "110"
+      ],
+      "explanation": "录音中明确说“The evening sessions were the busiest with 110 visits.”，因此填110。",
+      "evidence": "The evening sessions were the busiest with 110 visits."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Who taught the most sessions?",
+      "options": [
+        "Lisa",
+        "Tom",
+        "Mark",
+        "All taught the same number"
+      ],
+      "answers": [
+        "Lisa"
+      ],
+      "explanation": "录音中Mark说Lisa教了12节，Tom教了10节，他自己教了8节，所以Lisa教得最多。",
+      "evidence": "Lisa taught 12 sessions, Tom taught 10, and I taught 8. So Lisa taught the most sessions."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What was the average satisfaction score?",
+      "options": [
+        "4.0",
+        "4.2",
+        "4.5",
+        "5.0"
+      ],
+      "answers": [
+        "4.2"
+      ],
+      "explanation": "录音中Mark说“the average satisfaction score was 4.2 out of 5.”，因此平均分是4.2。",
+      "evidence": "the average satisfaction score was 4.2 out of 5."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many people complained that the water was too cold?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "answers": [
+        "15"
+      ],
+      "explanation": "录音中提到“15 people mentioned it was too cold”，因此有15人抱怨水太冷。",
+      "evidence": "15 people mentioned it was too cold, and only 5 said it was fine."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "The intermediate group had ______ swimmers. (Write a number.)",
+      "maxWords": 1,
+      "answers": [
+        "45"
+      ],
+      "explanation": "录音中明确说“The intermediate group had 45”，因此填45。",
+      "evidence": "The intermediate group had 45, and the advanced group had 25."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Which group was the largest?",
+      "options": [
+        "Beginners",
+        "Intermediate",
+        "Advanced",
+        "All groups were equal"
+      ],
+      "answers": [
+        "Intermediate"
+      ],
+      "explanation": "录音中Mark说“intermediate is still the largest group.”，因此中级组人数最多。",
+      "evidence": "So beginners are growing, but intermediate is still the largest group."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Why can't Lisa teach as many sessions next month?",
+      "options": [
+        "She is on holiday for two weeks.",
+        "She is leaving the pool.",
+        "She prefers mornings.",
+        "She is injured."
+      ],
+      "answers": [
+        "She is on holiday for two weeks."
+      ],
+      "explanation": "录音中Mark说“Lisa is on holiday for two weeks, so she can't teach as many.”，因此原因是她休假两周。",
+      "evidence": "Lisa is on holiday for two weeks, so she can't teach as many."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True or false: The pool will be closed for maintenance on the 15th.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "录音中Wendy问“the pool will be closed for maintenance on the 15th, right?” Mark回答“Yes, that's correct.”，因此该陈述为真。",
+      "evidence": "W: Okay. And the pool will be closed for maintenance on the 15th, right? M: Yes, that's correct."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "attendance",
+      "meaning": "出席人数；出勤",
+      "example": "In total, we had 240 visits across all sessions."
+    },
+    {
+      "word": "coordinator",
+      "meaning": "协调员",
+      "example": "I'm Mark, the data coordinator."
+    },
+    {
+      "word": "satisfaction",
+      "meaning": "满意度",
+      "example": "the average satisfaction score was 4.2 out of 5."
+    },
+    {
+      "word": "maintenance",
+      "meaning": "维护；保养",
+      "example": "the pool will be closed for maintenance on the 15th"
+    },
+    {
+      "word": "intermediate",
+      "meaning": "中级的",
+      "example": "The intermediate group had 45"
+    },
+    {
+      "word": "advanced",
+      "meaning": "高级的",
+      "example": "the advanced group had 25"
+    },
+    {
+      "word": "availability",
+      "meaning": "可用性；空闲",
+      "example": "we need to consider instructor availability"
+    },
+    {
+      "word": "adjust",
+      "meaning": "调整",
+      "example": "So we should adjust the heating."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本课重点是比较结构（如more than, fewer than, the most）、数量表达（如数字、量词）和指代（如it, they, this）。同时注意冠词（a/an/the）和主谓一致（如The number of... is...）。在听力中，这些结构常用来比较数据。",
+    "example": "The morning sessions had 80 visits, which is 30 fewer than the evening sessions.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The number of visits were higher this month.",
+          "The number of visits was higher this month.",
+          "A number of visits was higher this month.",
+          "The number of visits are higher this month."
+        ],
+        "answers": [
+          "The number of visits was higher this month."
+        ],
+        "explanation": "“the number of + 复数名词”作主语时，谓语动词用单数，因此用was。",
+        "evidence": "The number of visits was higher this month."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Lisa taught more sessions than Tom.",
+          "Lisa taught most sessions than Tom.",
+          "Lisa taught more sessions that Tom.",
+          "Lisa taught many sessions than Tom."
+        ],
+        "answers": [
+          "Lisa taught more sessions than Tom."
+        ],
+        "explanation": "比较级用more...than，表示“比……多”。",
+        "evidence": "Lisa taught more sessions than Tom."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The beginners is growing.",
+          "The beginners are growing.",
+          "A beginners are growing.",
+          "The beginner are growing."
+        ],
+        "answers": [
+          "The beginners are growing."
+        ],
+        "explanation": "主语the beginners是复数，谓语用are。",
+        "evidence": "The beginners are growing."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "We need a new instructor.",
+          "We need new instructor.",
+          "We need the new instructor.",
+          "We need an new instructor."
+        ],
+        "answers": [
+          "We need a new instructor."
+        ],
+        "explanation": "第一次提到某物时用不定冠词a，且new以辅音音素开头，用a。",
+        "evidence": "We need a new instructor."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often check numbers or data in your daily life?",
+        "How do you usually compare two things?",
+        "Have you ever taken part in a training session?",
+        "What do you think is the best way to collect feedback?"
+      ],
+      "part2": "Describe a time when you looked at some numbers or data to make a decision. You should say: what the data was about, where you got it from, what decision you made, and explain why the data was important.",
+      "part3": [
+        "Why do some people find it difficult to understand statistics?",
+        "How can schools use data to improve teaching?",
+        "Do you think too much data can be confusing? Why?",
+        "What are the advantages of using numbers in everyday decisions?"
+      ]
+    },
+    "writing": "You have been asked to write a short report for a community sports center. The center has collected data on attendance for three different sessions (morning, afternoon, evening) over the past month. Write a report comparing the attendance and suggesting one change. Include numbers and use comparative structures. Write 120-150 words."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "469f935473548ac00f3e9c8c3afed59876dc2e30d51edeee4f9ff74154453b5f"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

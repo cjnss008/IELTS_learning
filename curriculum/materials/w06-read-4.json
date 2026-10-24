@@ -1,0 +1,280 @@
+{
+  "id": "w06-read-4",
+  "week": 6,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "食物、喜好与能力",
+  "grammarFocus": "第三人称单数；do / does 问答；like；can / cannot；and / but。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 80,
+  "maxWords": 160,
+  "questionCount": 8,
+  "title": "A Family Meal",
+  "instructions": "阅读短文，回答8个问题。题目为模拟练习，不是官方考试。请根据短文内容选择或填空。",
+  "passage": "This is a small family. The father is Mr. Li. He likes noodles. He can cook noodles. The mother is Mrs. Li. She likes rice. She can cook rice. Their son is Xiao Ming. He is ten. He likes fish. He can swim, but he cannot cook. Their daughter is Xiao Hong. She is eight. She likes eggs. She can draw, but she cannot swim. On Sunday, they eat together. Mr. Li cooks noodles. Mrs. Li cooks rice. Xiao Ming eats fish. Xiao Hong eats eggs. They are happy.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who likes noodles?",
+      "options": [
+        "Mr. Li",
+        "Mrs. Li",
+        "Xiao Ming",
+        "Xiao Hong"
+      ],
+      "answers": [
+        "Mr. Li"
+      ],
+      "explanation": "短文说“The father is Mr. Li. He likes noodles.”，所以李先生喜欢面条。",
+      "evidence": "The father is Mr. Li. He likes noodles."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Mrs. Li like?",
+      "options": [
+        "noodles",
+        "rice",
+        "fish",
+        "eggs"
+      ],
+      "answers": [
+        "rice"
+      ],
+      "explanation": "短文说“The mother is Mrs. Li. She likes rice.”，所以李太太喜欢米饭。",
+      "evidence": "The mother is Mrs. Li. She likes rice."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What can Xiao Ming do?",
+      "options": [
+        "cook",
+        "swim",
+        "draw",
+        "cook rice"
+      ],
+      "answers": [
+        "swim"
+      ],
+      "explanation": "短文说“He can swim, but he cannot cook.”，所以小明会游泳。",
+      "evidence": "He can swim, but he cannot cook."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What can Xiao Hong do?",
+      "options": [
+        "swim",
+        "cook",
+        "draw",
+        "cook noodles"
+      ],
+      "answers": [
+        "draw"
+      ],
+      "explanation": "短文说“She can draw, but she cannot swim.”，所以小红会画画。",
+      "evidence": "She can draw, but she cannot swim."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Who cooks noodles on Sunday? (用短文中的词填空)",
+      "answers": [
+        "Mr. Li"
+      ],
+      "maxWords": 2,
+      "explanation": "短文说“Mr. Li cooks noodles.”，所以李先生煮面条。",
+      "evidence": "Mr. Li cooks noodles."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What does Xiao Ming eat on Sunday? (用短文中的词填空)",
+      "answers": [
+        "fish"
+      ],
+      "maxWords": 1,
+      "explanation": "短文说“Xiao Ming eats fish.”，所以小明吃鱼。",
+      "evidence": "Xiao Ming eats fish."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does Xiao Hong eat on Sunday?",
+      "options": [
+        "fish",
+        "eggs",
+        "rice",
+        "noodles"
+      ],
+      "answers": [
+        "eggs"
+      ],
+      "explanation": "短文说“Xiao Hong eats eggs.”，所以小红吃鸡蛋。",
+      "evidence": "Xiao Hong eats eggs."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How do they feel on Sunday?",
+      "options": [
+        "happy",
+        "sad",
+        "hungry",
+        "tired"
+      ],
+      "answers": [
+        "happy"
+      ],
+      "explanation": "短文最后说“They are happy.”，所以他们很开心。",
+      "evidence": "They are happy."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "family",
+      "meaning": "家庭",
+      "example": "This is a small family."
+    },
+    {
+      "word": "father",
+      "meaning": "父亲",
+      "example": "The father is Mr. Li."
+    },
+    {
+      "word": "mother",
+      "meaning": "母亲",
+      "example": "The mother is Mrs. Li."
+    },
+    {
+      "word": "noodles",
+      "meaning": "面条",
+      "example": "He likes noodles."
+    },
+    {
+      "word": "rice",
+      "meaning": "米饭",
+      "example": "She likes rice."
+    },
+    {
+      "word": "fish",
+      "meaning": "鱼",
+      "example": "He likes fish."
+    },
+    {
+      "word": "eggs",
+      "meaning": "鸡蛋",
+      "example": "She likes eggs."
+    },
+    {
+      "word": "happy",
+      "meaning": "开心的",
+      "example": "They are happy."
+    }
+  ],
+  "grammar": {
+    "title": "第三人称单数；do/does 问答；like；can/cannot；and/but",
+    "explanation": "在英语中，当主语是 he、she、it 或一个人名时，动词一般要加 -s 或 -es。例如：He likes noodles. She can swim. 问句用 does 提问，回答用 does 或 doesn't。can 表示“能、会”，cannot 表示“不能、不会”。and 表示“和”，but 表示“但是”。",
+    "example": "He likes noodles. She can cook rice. He can swim, but he cannot cook.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "He like fish.",
+          "He likes fish.",
+          "He liking fish.",
+          "He is like fish."
+        ],
+        "answers": [
+          "He likes fish."
+        ],
+        "explanation": "主语 He 是第三人称单数，动词 like 要加 -s，变成 likes。",
+        "evidence": "He likes fish."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的问句：",
+        "options": [
+          "Does she likes rice?",
+          "Do she like rice?",
+          "Does she like rice?",
+          "She does like rice?"
+        ],
+        "answers": [
+          "Does she like rice?"
+        ],
+        "explanation": "主语 she 是第三人称单数，问句用 Does 开头，后面动词用原形 like。",
+        "evidence": "Does she like rice?"
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：Xiao Ming ____ swim, but he cannot cook. (用 can 或 cannot 填空)",
+        "answers": [
+          "can"
+        ],
+        "maxWords": 1,
+        "explanation": "根据短文，小明会游泳，所以填 can。",
+        "evidence": "He can swim, but he cannot cook."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "She can draw, but she cannot swim.",
+          "She can draw, and she cannot swim.",
+          "She can draw, but she can swim.",
+          "She cannot draw, but she can swim."
+        ],
+        "answers": [
+          "She can draw, but she cannot swim."
+        ],
+        "explanation": "but 表示转折，前后意思相反。她会画画，但不会游泳。",
+        "evidence": "She can draw, but she cannot swim."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What food do you like?",
+        "Can you cook?",
+        "What can you do?",
+        "Do you like fish?"
+      ],
+      "part2": "Describe a family meal. You should say:",
+      "part3": [
+        "Who cooks in your family?",
+        "What food does your family like?",
+        "Can you swim?",
+        "What can your friend do?"
+      ]
+    },
+    "writing": "写3-5个句子，介绍你的家人喜欢什么食物，会做什么。用上 like, can, cannot, and, but。"
+  },
+  "rubric": {
+    "taskType": "Reading Comprehension (A1) - Simulated Practice"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "0401572d809f4f3128cf3cbe08ff9a1361b793851b835df54033e79035952da1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

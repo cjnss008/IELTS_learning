@@ -1,0 +1,275 @@
+{
+  "id": "w02-read-3",
+  "week": 2,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "At the Lost and Found",
+  "instructions": "这是模拟练习，不是官方考试。请先阅读短文，然后回答问题。所有题目都是单选题或填空题。填空题的答案必须来自原文，且不超过字数限制。",
+  "passage": "A. This is a small lost and found office. It is in a school. A man is at the desk. He is Mr. Li. He is a teacher.\n\nB. A girl is at the desk. She is Amy. She is a student. This is her bag. It is a blue bag. That is a red bag. It is not her bag.\n\nC. Mr. Li has a pen. It is a black pen. That is a key. It is a small key. Amy has a book. It is a green book.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where is the lost and found office?",
+      "options": [
+        "In a school",
+        "In a park",
+        "In a shop"
+      ],
+      "answers": [
+        "In a school"
+      ],
+      "explanation": "原文说“It is in a school.”，所以失物招领处在学校里。",
+      "evidence": "It is in a school."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who is Mr. Li?",
+      "options": [
+        "A teacher",
+        "A student",
+        "A doctor"
+      ],
+      "answers": [
+        "A teacher"
+      ],
+      "explanation": "原文说“He is a teacher.”，所以李先生是老师。",
+      "evidence": "He is a teacher."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is Amy?",
+      "options": [
+        "A student",
+        "A teacher",
+        "A driver"
+      ],
+      "answers": [
+        "A student"
+      ],
+      "explanation": "原文说“She is a student.”，所以艾米是学生。",
+      "evidence": "She is a student."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What color is Amy's bag?",
+      "options": [
+        "Blue",
+        "Red",
+        "Black"
+      ],
+      "answers": [
+        "Blue"
+      ],
+      "explanation": "原文说“It is a blue bag.”，所以艾米的包是蓝色的。",
+      "evidence": "It is a blue bag."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Is the red bag Amy's bag?",
+      "options": [
+        "No, it is not her bag.",
+        "Yes, it is her bag.",
+        "Yes, it is a blue bag."
+      ],
+      "answers": [
+        "No, it is not her bag."
+      ],
+      "explanation": "原文说“That is a red bag. It is not her bag.”，所以红色包不是她的。",
+      "evidence": "It is not her bag."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What color is Mr. Li's pen? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "black"
+      ],
+      "explanation": "原文说“It is a black pen.”，所以钢笔是黑色的。",
+      "evidence": "It is a black pen."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is small?",
+      "options": [
+        "The key",
+        "The book",
+        "The bag"
+      ],
+      "answers": [
+        "The key"
+      ],
+      "explanation": "原文说“It is a small key.”，所以钥匙是小的。",
+      "evidence": "It is a small key."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What color is Amy's book? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "green"
+      ],
+      "explanation": "原文说“It is a green book.”，所以书是绿色的。",
+      "evidence": "It is a green book."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "lost and found",
+      "meaning": "失物招领处",
+      "example": "This is a small lost and found office."
+    },
+    {
+      "word": "office",
+      "meaning": "办公室",
+      "example": "This is a small lost and found office."
+    },
+    {
+      "word": "school",
+      "meaning": "学校",
+      "example": "It is in a school."
+    },
+    {
+      "word": "desk",
+      "meaning": "桌子；服务台",
+      "example": "A man is at the desk."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "He is a teacher."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "She is a student."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "This is her bag."
+    },
+    {
+      "word": "key",
+      "meaning": "钥匙",
+      "example": "That is a key."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；this / that",
+    "explanation": "英语中，he 指男性，she 指女性，it 指物品或动物。is 是“是”，用于单数。a 用在辅音音素开头的单数名词前，an 用在元音音素开头的单数名词前。this 指近处的人或物，that 指远处的人或物。",
+    "example": "He is a teacher. She is a student. It is a blue bag. This is her bag. That is a red bag.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "___ is my mother. (She / He / It)",
+        "options": [
+          "She",
+          "He",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "mother 是女性，所以用 She。",
+        "evidence": "She is a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "This is ___ apple. (a / an / the)",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple 以元音音素开头，所以用 an。",
+        "evidence": "It is a blue bag."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "___ is a cat. (He / She / It)",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "cat 是动物，所以用 It。",
+        "evidence": "It is a small key."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "___ is a book. (This / These / Those)",
+        "options": [
+          "This",
+          "These",
+          "Those"
+        ],
+        "answers": [
+          "This"
+        ],
+        "explanation": "book 是单数，且指近处，所以用 This。",
+        "evidence": "This is her bag."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Is this your bag?",
+        "What color is your pen?"
+      ],
+      "part2": "Describe a lost and found office. You should say:\n- where it is\n- who is there\n- what things are there\n- what color they are",
+      "part3": [
+        "Is this a school?",
+        "Is that a key?",
+        "What is in a lost and found office?",
+        "Is your bag blue?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about a lost and found office. Use this, that, he, she, it, is, a, an. Example: This is a lost and found office. It is in a school."
+  },
+  "rubric": {
+    "taskType": "A0 reading comprehension (simulated practice)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b73c2f9ed0910c5e5ff6b5b446a40e354cbc782b70bc88d2c319fb28f3b505c3"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

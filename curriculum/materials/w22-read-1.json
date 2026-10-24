@@ -1,0 +1,318 @@
+{
+  "id": "w22-read-1",
+  "week": 22,
+  "skill": "reading",
+  "level": "B1–B2",
+  "topic": "数据比较与图表描述入门",
+  "grammarFocus": "比较结构；百分比与数量表达；there was / were；趋势动词。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 550,
+  "maxWords": 800,
+  "questionCount": 10,
+  "title": "Comparing Class Projects: A Simulated School Report",
+  "instructions": "阅读下面的短文，回答10个问题。短文和图表数据均为模拟教学材料，不是真实学校数据。问题类型包括单选、填空、判断正误/未提及。填空答案必须来自原文，且不超过字数限制。请仔细阅读，注意比较结构、百分比与数量表达、there was/were 和趋势动词。",
+  "passage": "Last term, Class A and Class B at Green Valley School took part in a project about healthy eating. The school office collected some numbers. These numbers are simulated for this lesson. They are not real school results.\n\nAt the start of the term, Class A had 30 students. Class B had 24 students. So Class A was larger than Class B. There were 14 girls in Class A and 12 girls in Class B. There were 16 boys in Class A and 12 boys in Class B. In total, there were 54 students in the two classes.\n\nFor the project, each student made a poster about healthy food. In Class A, 18 students finished their posters on time. In Class B, 15 students finished on time. The other students finished one week later. The teacher, Ms. Chen, said, “Class A had more students, but Class B had a higher percentage of students finishing on time.”\n\nLet’s compare the percentages. In Class A, 18 out of 30 students finished on time. That is 60 percent. In Class B, 15 out of 24 students finished on time. That is 62.5 percent. So Class B was slightly higher. The difference was only 2.5 percentage points. Ms. Chen said, “A small difference like this is not very important. Both classes did well.”\n\nThe students also answered a question: “How many servings of fruit do you eat each day?” The results were interesting. In Class A, 10 students said they ate two or more servings a day. In Class B, 9 students said the same. As a percentage, that was about 33 percent in Class A and 37.5 percent in Class B. Again, Class B was a little higher.\n\nNext, the classes made a simple chart. The chart showed the number of students who finished on time. The bar for Class A was taller because it had 18 students. The bar for Class B was shorter because it had 15 students. But when the chart showed percentages, the bar for Class B was slightly taller. This shows that raw numbers and percentages can tell different stories.\n\nThere was also a question about vegetables. In Class A, 20 students said they ate vegetables every day. In Class B, 18 students said they ate vegetables every day. That is about 67 percent in Class A and 75 percent in Class B. So Class B had a higher percentage again, even though Class A had more students in total.\n\nAt the end of the term, the number of students eating fruit every day increased in both classes. In Class A, it went up from 10 to 14 students. In Class B, it went up from 9 to 13 students. The number of students eating vegetables every day also increased. In Class A, it rose from 20 to 24. In Class B, it rose from 18 to 21. The trend was positive in both classes.\n\nMs. Chen summarized the results. She said, “When we compare classes, we should look at both numbers and percentages. A larger class may have more students finishing on time, but a smaller class may have a higher percentage. Both are useful. The important thing is that both classes improved.”\n\nFinally, the students wrote a short report. They used words like increase, decrease, rise, fall, and remain the same. They also used there was and there were to describe the numbers. For example, “There were 30 students in Class A” and “There was a small difference in the percentages.” The project helped them understand how to describe data clearly.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many students were there in Class A at the start of the term?",
+      "options": [
+        "24",
+        "30",
+        "54",
+        "18"
+      ],
+      "answers": [
+        "30"
+      ],
+      "explanation": "原文明确提到“At the start of the term, Class A had 30 students.”，因此答案是30。",
+      "evidence": "At the start of the term, Class A had 30 students."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which class had a higher percentage of students finishing their posters on time?",
+      "options": [
+        "Class A",
+        "Class B",
+        "Both classes had the same percentage",
+        "The text does not say"
+      ],
+      "answers": [
+        "Class B"
+      ],
+      "explanation": "原文说“In Class B, 15 out of 24 students finished on time. That is 62.5 percent.”而Class A是60%，所以Class B的百分比更高。",
+      "evidence": "In Class B, 15 out of 24 students finished on time. That is 62.5 percent."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "In Class A, what percentage of students finished their posters on time? Write the number and the word percent. (Use the exact words from the passage.)",
+      "maxWords": 3,
+      "answers": [
+        "60 percent"
+      ],
+      "explanation": "原文说“In Class A, 18 out of 30 students finished on time. That is 60 percent.”，所以答案是60 percent。",
+      "evidence": "In Class A, 18 out of 30 students finished on time. That is 60 percent."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What was the difference in percentage points between the two classes for finishing on time?",
+      "options": [
+        "2.5 percentage points",
+        "5 percentage points",
+        "10 percentage points",
+        "0.5 percentage points"
+      ],
+      "answers": [
+        "2.5 percentage points"
+      ],
+      "explanation": "原文说“The difference was only 2.5 percentage points.”，因此答案是2.5 percentage points。",
+      "evidence": "The difference was only 2.5 percentage points."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "According to the passage, which statement is true about the number of students eating two or more servings of fruit a day at the start?",
+      "options": [
+        "Class A had more students than Class B.",
+        "Class B had more students than Class A.",
+        "Both classes had the same number of students.",
+        "The passage does not give this information."
+      ],
+      "answers": [
+        "Class A had more students than Class B."
+      ],
+      "explanation": "原文说“In Class A, 10 students said they ate two or more servings a day. In Class B, 9 students said the same.”，所以Class A的人数更多。",
+      "evidence": "In Class A, 10 students said they ate two or more servings a day. In Class B, 9 students said the same."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does the passage say about the bar for Class B when the chart showed percentages?",
+      "options": [
+        "It was slightly taller than the bar for Class A.",
+        "It was shorter than the bar for Class A.",
+        "It was the same height as the bar for Class A.",
+        "The passage does not describe this bar."
+      ],
+      "answers": [
+        "It was slightly taller than the bar for Class A."
+      ],
+      "explanation": "原文说“But when the chart showed percentages, the bar for Class B was slightly taller.”，因此答案是它比Class A的柱子稍高。",
+      "evidence": "But when the chart showed percentages, the bar for Class B was slightly taller."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "In Class B, what percentage of students said they ate vegetables every day?",
+      "options": [
+        "67 percent",
+        "75 percent",
+        "62.5 percent",
+        "37.5 percent"
+      ],
+      "answers": [
+        "75 percent"
+      ],
+      "explanation": "原文说“In Class B, 18 students said they ate vegetables every day. That is about 67 percent in Class A and 75 percent in Class B.”，所以Class B是75%。",
+      "evidence": "That is about 67 percent in Class A and 75 percent in Class B."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "By the end of the term, the number of students eating fruit every day in Class A went up from 10 to how many? Write the number.",
+      "maxWords": 1,
+      "answers": [
+        "14"
+      ],
+      "explanation": "原文说“In Class A, it went up from 10 to 14 students.”，所以答案是14。",
+      "evidence": "In Class A, it went up from 10 to 14 students."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Which trend word is used in the passage to describe the change in the number of students eating vegetables every day in Class B?",
+      "options": [
+        "rose",
+        "fell",
+        "decreased",
+        "remained the same"
+      ],
+      "answers": [
+        "rose"
+      ],
+      "explanation": "原文说“In Class B, it rose from 18 to 21.”，所以趋势动词是rose。",
+      "evidence": "In Class B, it rose from 18 to 21."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "According to Ms. Chen, what should we look at when comparing classes?",
+      "options": [
+        "Only raw numbers",
+        "Only percentages",
+        "Both numbers and percentages",
+        "The number of girls in each class"
+      ],
+      "answers": [
+        "Both numbers and percentages"
+      ],
+      "explanation": "原文说“When we compare classes, we should look at both numbers and percentages.”，因此答案是两者都要看。",
+      "evidence": "When we compare classes, we should look at both numbers and percentages."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "percentage",
+      "meaning": "百分比",
+      "example": "Class B had a higher percentage of students finishing on time."
+    },
+    {
+      "word": "increase",
+      "meaning": "增加",
+      "example": "The number of students eating fruit every day increased in both classes."
+    },
+    {
+      "word": "decrease",
+      "meaning": "减少",
+      "example": "The students used words like increase, decrease, rise, fall, and remain the same."
+    },
+    {
+      "word": "rise",
+      "meaning": "上升",
+      "example": "In Class B, it rose from 18 to 21."
+    },
+    {
+      "word": "fall",
+      "meaning": "下降",
+      "example": "The students used words like increase, decrease, rise, fall, and remain the same."
+    },
+    {
+      "word": "remain the same",
+      "meaning": "保持不变",
+      "example": "The students used words like increase, decrease, rise, fall, and remain the same."
+    },
+    {
+      "word": "compare",
+      "meaning": "比较",
+      "example": "When we compare classes, we should look at both numbers and percentages."
+    },
+    {
+      "word": "trend",
+      "meaning": "趋势",
+      "example": "The trend was positive in both classes."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构；百分比与数量表达；there was / were；趋势动词",
+    "explanation": "本课重点是比较结构（如 larger than, higher percentage）、百分比与数量表达（如 60 percent, 18 out of 30）、there was/were 表示存在，以及趋势动词（increase, decrease, rise, fall, remain the same）。注意：there was 后接单数名词，there were 后接复数名词。",
+    "example": "There were 30 students in Class A. There was a small difference in the percentages.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "There was 30 students in Class A.",
+          "There were 30 students in Class A.",
+          "There are 30 students in Class A last term.",
+          "There is 30 students in Class A."
+        ],
+        "answers": [
+          "There were 30 students in Class A."
+        ],
+        "explanation": "30 students 是复数，过去时用 there were。",
+        "evidence": "There were 30 students in Class A."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Class A had 30 students. Class B had 24 students. So Class A was ______ than Class B.",
+        "options": [
+          "larger",
+          "large",
+          "largest",
+          "more large"
+        ],
+        "answers": [
+          "larger"
+        ],
+        "explanation": "比较级用 larger，表示“更大”。",
+        "evidence": "So Class A was larger than Class B."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "In Class B, 15 out of 24 students finished on time. That is ______.",
+        "options": [
+          "62.5 percent",
+          "60 percent",
+          "75 percent",
+          "37.5 percent"
+        ],
+        "answers": [
+          "62.5 percent"
+        ],
+        "explanation": "15/24 = 0.625，即62.5%。",
+        "evidence": "That is 62.5 percent."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The number of students eating fruit every day ______ in both classes.",
+        "options": [
+          "increased",
+          "increase",
+          "increasing",
+          "increases"
+        ],
+        "answers": [
+          "increased"
+        ],
+        "explanation": "描述过去的变化，用过去式 increased。",
+        "evidence": "The number of students eating fruit every day increased in both classes."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often compare prices when you buy things?",
+        "Have you ever made a chart or a graph for school or work?",
+        "Do you think percentages are easy or difficult to understand?",
+        "What kind of data do you see in your daily life?"
+      ],
+      "part2": "Describe a time when you compared two things (for example, two classes, two shops, or two products). You should say: what you compared; what the numbers or facts were; which one was better or higher; and what you learned from the comparison.",
+      "part3": [
+        "Why do people sometimes prefer percentages to raw numbers?",
+        "How can charts help us understand data better?",
+        "Do you think schools should teach students how to read charts? Why?",
+        "What are the dangers of using only raw numbers to compare groups?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80-100 words) comparing two groups (for example, two classes, two clubs, or two shops). Use at least two comparative structures, one percentage, and one trend verb. The data can be simulated."
+  },
+  "figure": "",
+  "rubric": {
+    "taskType": "reading_comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "6948f5d9c9e64866c4472e4428832832a21af409a13827bf227863a927ef8aec"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

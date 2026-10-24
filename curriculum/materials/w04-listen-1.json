@@ -1,0 +1,276 @@
+{
+  "id": "w04-listen-1",
+  "week": 4,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "基础回顾与简单问答",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。",
+  "pool": "training",
+  "type": "dialogue",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 65,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "title": "A Simple Phone Call",
+  "instructions": "听录音，完成8个问题。录音会播放两遍。第一遍听大意，第二遍注意细节。所有问题都是单选题或填空题。填空题答案必须来自录音原文，且不超过规定字数。",
+  "passage": "",
+  "transcript": "A: Hello, this is Anna. Are you Tom? B: No, I am not Tom. I am Ben. Tom is my brother. A: Oh, sorry. Is Tom at home? B: No, he is not. He is at work. A: Who is at home? B: My mother is at home. A: Is she a teacher? B: No, she is not a teacher. She is a nurse. A: What is your father? B: He is a doctor. A: Are you a student? B: Yes, I am. I am a student. A: Is your brother a student? B: No, he is not. He is a teacher. A: Thank you, Ben. B: You are welcome.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is the man?",
+      "options": [
+        "Tom",
+        "Ben",
+        "Anna's brother"
+      ],
+      "answers": [
+        "Ben"
+      ],
+      "explanation": "对话中男士说“I am Ben.”，所以他是Ben。",
+      "evidence": "I am Ben."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is Tom at home?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "Not given"
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Ben说“No, he is not. He is at work.”，所以Tom不在家。",
+      "evidence": "No, he is not. He is at work."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Who is at home? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "mother"
+      ],
+      "explanation": "Ben说“My mother is at home.”，所以在家的是他妈妈。",
+      "evidence": "My mother is at home."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is Ben's mother a teacher?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "Not given"
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Ben说“No, she is not a teacher. She is a nurse.”，所以他妈妈不是老师。",
+      "evidence": "No, she is not a teacher. She is a nurse."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What is Ben's father? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "doctor"
+      ],
+      "explanation": "Ben说“He is a doctor.”，所以他爸爸是医生。",
+      "evidence": "He is a doctor."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is Ben a student?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "Not given"
+      ],
+      "answers": [
+        "Yes, he is."
+      ],
+      "explanation": "Ben说“Yes, I am. I am a student.”，所以他是学生。",
+      "evidence": "Yes, I am. I am a student."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is Tom a student?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not.",
+        "Not given"
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Ben说“No, he is not. He is a teacher.”，所以Tom不是学生。",
+      "evidence": "No, he is not. He is a teacher."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is Tom's job?",
+      "options": [
+        "teacher",
+        "student",
+        "doctor"
+      ],
+      "answers": [
+        "teacher"
+      ],
+      "explanation": "Ben说“He is a teacher.”，所以Tom是老师。",
+      "evidence": "He is a teacher."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello, this is Anna."
+    },
+    {
+      "word": "brother",
+      "meaning": "兄弟",
+      "example": "Tom is my brother."
+    },
+    {
+      "word": "home",
+      "meaning": "家",
+      "example": "Is Tom at home?"
+    },
+    {
+      "word": "work",
+      "meaning": "工作",
+      "example": "He is at work."
+    },
+    {
+      "word": "mother",
+      "meaning": "妈妈",
+      "example": "My mother is at home."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is not a teacher."
+    },
+    {
+      "word": "nurse",
+      "meaning": "护士",
+      "example": "She is a nurse."
+    },
+    {
+      "word": "doctor",
+      "meaning": "医生",
+      "example": "He is a doctor."
+    }
+  ],
+  "grammar": {
+    "title": "be动词否定句与一般疑问句",
+    "explanation": "be动词（am, is, are）的否定句是在be动词后加not，如“I am not Tom.”。一般疑问句是把be动词提到主语前面，如“Are you Tom?”。回答用Yes或No，如“Yes, I am.”或“No, I am not.”。",
+    "example": "Are you Tom? No, I am not.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的否定句：",
+        "options": [
+          "I am not a teacher.",
+          "I not am a teacher.",
+          "I am a teacher not."
+        ],
+        "answers": [
+          "I am not a teacher."
+        ],
+        "explanation": "否定句在be动词后加not，所以是“I am not a teacher.”。",
+        "evidence": "I am not a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的一般疑问句：",
+        "options": [
+          "Are you a student?",
+          "You are a student?",
+          "Do you are a student?"
+        ],
+        "answers": [
+          "Are you a student?"
+        ],
+        "explanation": "一般疑问句把be动词提前，所以是“Are you a student?”。",
+        "evidence": "Are you a student?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的简短肯定回答：",
+        "options": [
+          "Yes, I am.",
+          "Yes, I do.",
+          "Yes, I is."
+        ],
+        "answers": [
+          "Yes, I am."
+        ],
+        "explanation": "对“Are you...?”的肯定回答是“Yes, I am.”。",
+        "evidence": "Yes, I am."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择正确的简短否定回答：",
+        "options": [
+          "No, he is not.",
+          "No, he not is.",
+          "No, he doesn't."
+        ],
+        "answers": [
+          "No, he is not."
+        ],
+        "explanation": "对“Is he...?”的否定回答是“No, he is not.”。",
+        "evidence": "No, he is not."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your mother a teacher?",
+        "Who is at home?",
+        "What is your father's job?"
+      ],
+      "part2": "Describe a phone call. You should say:",
+      "part3": [
+        "Is your brother a student?",
+        "Are you at home?",
+        "What is your job?",
+        "Who is your teacher?"
+      ]
+    },
+    "writing": "写一段简短的对话（4-6句），介绍你自己和你的家人。使用be动词的否定句和一般疑问句。"
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "aea7efffa67bda7f92657882d6b1d79d561f34cb31b0ee6349f2d9ffcf0df1e1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

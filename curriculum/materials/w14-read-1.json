@@ -1,0 +1,323 @@
+{
+  "id": "w14-read-1",
+  "week": 14,
+  "skill": "reading",
+  "level": "A2",
+  "topic": "健康习惯与休息",
+  "grammarFocus": "because / so；should；比较级与最高级入门。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 220,
+  "maxWords": 350,
+  "questionCount": 10,
+  "title": "A Better Week for Lin",
+  "instructions": "这是为A2水平学习者编写的模拟阅读练习，主题是健康习惯与休息。请先通读短文，然后完成10道题目。题目类型包括单选、填空、匹配（通过单选实现）和判断正误（True/False/Not Given）。所有答案必须来自短文。填空题答案必须与原文完全一致，且不超过字数限制。请仔细阅读每道题的说明。",
+  "passage": "A) Lin is a busy office worker in Shanghai. She often feels tired because she sleeps only five hours a night. She drinks three cups of coffee every day, so she has trouble falling asleep. Last week, her doctor said, \"You should sleep more and drink less coffee.\" Lin decided to change her habits.\n\nB) First, Lin made a simple plan. She should go to bed before 11 p.m. and get up at 7 a.m. She also should not use her phone in bed because the light makes her brain active. Now she reads a book for ten minutes before sleeping. She says, \"Reading is more relaxing than looking at my phone.\"\n\nC) Second, Lin changed her food and drink. She drinks only one cup of coffee in the morning. In the afternoon, she has green tea. Green tea is healthier than coffee because it has less caffeine. She also eats more vegetables and fruit. She says, \"My new lunch is the healthiest meal of my day.\"\n\nD) Third, Lin added short walks. After lunch, she walks for fifteen minutes. Walking is slower than running, but it is easier for her. She feels more energetic in the afternoon. On weekends, she goes to a park with her friend. The park is the quietest place in her neighborhood. They walk and talk for an hour.\n\nE) After four weeks, Lin feels better. She sleeps seven hours every night. She has more energy and fewer headaches. Her doctor is happy. Lin says, \"Small changes are the best changes because they are easy to keep.\"",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does Lin often feel tired?",
+      "options": [
+        "Because she sleeps only five hours a night.",
+        "Because she works too many hours.",
+        "Because she eats too much vegetables.",
+        "Because she walks for fifteen minutes."
+      ],
+      "answers": [
+        "Because she sleeps only five hours a night."
+      ],
+      "explanation": "短文第一段明确说“She often feels tired because she sleeps only five hours a night.”，因此选第一个选项。",
+      "evidence": "She often feels tired because she sleeps only five hours a night."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What did the doctor tell Lin to do?",
+      "options": [
+        "She should sleep more and drink less coffee.",
+        "She should drink more coffee and sleep less.",
+        "She should stop reading books.",
+        "She should run every morning."
+      ],
+      "answers": [
+        "She should sleep more and drink less coffee."
+      ],
+      "explanation": "医生的话在原文中直接引用：“You should sleep more and drink less coffee.”，所以选第一个选项。",
+      "evidence": "You should sleep more and drink less coffee."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Lin should go to bed before ______ p.m.",
+      "options": [],
+      "answers": [
+        "11"
+      ],
+      "maxWords": 1,
+      "explanation": "第二段说“She should go to bed before 11 p.m.”，所以填11。",
+      "evidence": "She should go to bed before 11 p.m."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why should Lin not use her phone in bed?",
+      "options": [
+        "Because the light makes her brain active.",
+        "Because her phone is old.",
+        "Because she has no phone.",
+        "Because reading is boring."
+      ],
+      "answers": [
+        "Because the light makes her brain active."
+      ],
+      "explanation": "第二段说“She also should not use her phone in bed because the light makes her brain active.”，因此选第一个选项。",
+      "evidence": "She also should not use her phone in bed because the light makes her brain active."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Lin drink in the afternoon now?",
+      "options": [
+        "Green tea",
+        "Coffee",
+        "Milk",
+        "Water"
+      ],
+      "answers": [
+        "Green tea"
+      ],
+      "explanation": "第三段说“In the afternoon, she has green tea.”，所以选Green tea。",
+      "evidence": "In the afternoon, she has green tea."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Green tea is healthier than coffee because it has less ______.",
+      "options": [],
+      "answers": [
+        "caffeine"
+      ],
+      "maxWords": 1,
+      "explanation": "第三段说“Green tea is healthier than coffee because it has less caffeine.”，所以填caffeine。",
+      "evidence": "Green tea is healthier than coffee because it has less caffeine."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How long does Lin walk after lunch?",
+      "options": [
+        "For fifteen minutes",
+        "For ten minutes",
+        "For an hour",
+        "For five minutes"
+      ],
+      "answers": [
+        "For fifteen minutes"
+      ],
+      "explanation": "第四段说“After lunch, she walks for fifteen minutes.”，所以选For fifteen minutes。",
+      "evidence": "After lunch, she walks for fifteen minutes."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Which place is the quietest in Lin's neighborhood?",
+      "options": [
+        "The park",
+        "The office",
+        "The coffee shop",
+        "Her home"
+      ],
+      "answers": [
+        "The park"
+      ],
+      "explanation": "第四段说“The park is the quietest place in her neighborhood.”，所以选The park。",
+      "evidence": "The park is the quietest place in her neighborhood."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Lin sleeps seven hours every night now.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "最后一段明确说“She sleeps seven hours every night.”，与题目一致，所以是True。",
+      "evidence": "She sleeps seven hours every night."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Lin's doctor visits her home every week.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "文中只提到医生给建议和医生很高兴，但没有说医生每周去她家。这个信息文中没有给出，所以是Not Given。",
+      "evidence": "文中没有提到医生去Lin家。"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "tired",
+      "meaning": "疲倦的",
+      "example": "She often feels tired because she sleeps only five hours a night."
+    },
+    {
+      "word": "habit",
+      "meaning": "习惯",
+      "example": "Lin decided to change her habits."
+    },
+    {
+      "word": "relaxing",
+      "meaning": "令人放松的",
+      "example": "Reading is more relaxing than looking at my phone."
+    },
+    {
+      "word": "caffeine",
+      "meaning": "咖啡因",
+      "example": "Green tea is healthier than coffee because it has less caffeine."
+    },
+    {
+      "word": "energetic",
+      "meaning": "精力充沛的",
+      "example": "She feels more energetic in the afternoon."
+    },
+    {
+      "word": "quietest",
+      "meaning": "最安静的",
+      "example": "The park is the quietest place in her neighborhood."
+    },
+    {
+      "word": "headache",
+      "meaning": "头痛",
+      "example": "She has more energy and fewer headaches."
+    },
+    {
+      "word": "change",
+      "meaning": "改变",
+      "example": "Small changes are the best changes because they are easy to keep."
+    }
+  ],
+  "grammar": {
+    "title": "because / so；should；比较级与最高级入门",
+    "explanation": "because 表示原因，so 表示结果。should 用来给建议，意思是“应该”。比较级用于两者比较，常加 -er 或 more；最高级用于三者或以上比较，常加 -est 或 most。",
+    "example": "She often feels tired because she sleeps only five hours a night.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "I am very tired ______ I worked late last night.",
+        "options": [
+          "because",
+          "so",
+          "but",
+          "or"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "“我累了”是结果，“工作到很晚”是原因，所以用 because 连接原因。",
+        "evidence": "She often feels tired because she sleeps only five hours a night."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "You ______ drink more water every day.",
+        "options": [
+          "should",
+          "shouldn't",
+          "are",
+          "do"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "should 表示建议“应该”，这里建议多喝水，所以用 should。",
+        "evidence": "You should sleep more and drink less coffee."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "This book is ______ than that one.",
+        "options": [
+          "more interesting",
+          "most interesting",
+          "interesting",
+          "the most interesting"
+        ],
+        "answers": [
+          "more interesting"
+        ],
+        "explanation": "两者比较用比较级，interesting 的比较级是 more interesting。",
+        "evidence": "Reading is more relaxing than looking at my phone."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The park is the ______ place in my neighborhood.",
+        "options": [
+          "quietest",
+          "quieter",
+          "quiet",
+          "more quiet"
+        ],
+        "answers": [
+          "quietest"
+        ],
+        "explanation": "在社区所有地方中比较，用最高级 the quietest。",
+        "evidence": "The park is the quietest place in her neighborhood."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you sleep well at night?",
+        "How many hours do you sleep every day?",
+        "Do you drink coffee or tea?",
+        "What do you do to relax?"
+      ],
+      "part2": "Describe a healthy habit you want to start. You should say:",
+      "part2Bullets": [
+        "what the habit is",
+        "why you want to start it",
+        "when you will do it",
+        "how you will feel after it"
+      ],
+      "part3": [
+        "Why do some people sleep badly?",
+        "Should schools teach students about healthy habits?",
+        "Is walking better than running for busy people?",
+        "How can small changes make a big difference?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 60 words) about one healthy habit you have or want to have. Use because, so, should, and one comparative or superlative."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension (A2) with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "f00ca14a5108c6d8d15e4e1b6006e26746ec3c74276210b8e83cbddfdb90370b"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

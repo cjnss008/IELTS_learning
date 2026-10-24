@@ -1,0 +1,273 @@
+{
+  "id": "w01-read-6",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My First English Class",
+  "instructions": "这是模拟练习材料，不是官方雅思考试。阅读短文，然后回答问题。注意句首大写和句号。",
+  "passage": "Hello. I am Li Ming. I am a student. This is my English class. You are my teacher. You are very kind. I am happy. We are in Room 5. I am from China. You are from Canada. I am here to learn English. You are here to help me. I am ready. You are ready too. We are a good team.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Li Ming?",
+      "options": [
+        "A student",
+        "A teacher",
+        "A doctor"
+      ],
+      "answers": [
+        "A student"
+      ],
+      "explanation": "文中说“I am a student.”，所以李明是学生。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Where is the English class?",
+      "options": [
+        "In Room 5",
+        "In Room 3",
+        "In Room 8"
+      ],
+      "answers": [
+        "In Room 5"
+      ],
+      "explanation": "文中说“We are in Room 5.”，所以教室是5号房间。",
+      "evidence": "We are in Room 5."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where is the teacher from?",
+      "options": [
+        "Canada",
+        "China",
+        "America"
+      ],
+      "answers": [
+        "Canada"
+      ],
+      "explanation": "文中说“You are from Canada.”，所以老师来自加拿大。",
+      "evidence": "You are from Canada."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Li Ming is happy.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "文中说“I am happy.”，所以李明很开心。",
+      "evidence": "I am happy."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "The teacher is from China.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "文中说“You are from Canada.”，所以老师来自加拿大，不是中国。",
+      "evidence": "You are from Canada."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Li Ming is a doctor.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "文中说“I am a student.”，所以李明是学生，不是医生。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Li Ming is from ______. (用文中的词填空)",
+      "answers": [
+        "China"
+      ],
+      "maxWords": 1,
+      "explanation": "文中说“I am from China.”，所以填China。",
+      "evidence": "I am from China."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Li Ming and the teacher are a good ______. (用文中的词填空)",
+      "answers": [
+        "team"
+      ],
+      "maxWords": 1,
+      "explanation": "文中说“We are a good team.”，所以填team。",
+      "evidence": "We are a good team."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li Ming."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "You are my teacher."
+    },
+    {
+      "word": "kind",
+      "meaning": "友好的，和蔼的",
+      "example": "You are very kind."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "We are in Room 5."
+    },
+    {
+      "word": "learn",
+      "meaning": "学习",
+      "example": "I am here to learn English."
+    },
+    {
+      "word": "team",
+      "meaning": "团队",
+      "example": "We are a good team."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "在英语中，人称代词I（我）和you（你）后面要跟be动词。I后面用am，you后面用are。句子开头字母要大写，句子结尾要加句号。",
+    "example": "I am Li Ming. You are my teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I后面用am，所以“I am a student.”正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "You are kind.",
+          "You am kind.",
+          "You is kind."
+        ],
+        "answers": [
+          "You are kind."
+        ],
+        "explanation": "you后面用are，所以“You are kind.”正确。",
+        "evidence": "You are very kind."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：I ____ happy. (用am或are)",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "I后面用am，所以填am。",
+        "evidence": "I am happy."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "填空：You ____ my teacher. (用am或are)",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "you后面用are，所以填are。",
+        "evidence": "You are my teacher."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Where are you from?",
+        "Are you a student?",
+        "Are you happy?"
+      ],
+      "part2": "Describe your English class. You should say:",
+      "part2Bullets": [
+        "where it is",
+        "who your teacher is",
+        "what you learn",
+        "how you feel"
+      ],
+      "part3": [
+        "Is English easy or difficult for you?",
+        "Do you like your English class?",
+        "What do you do in your English class?",
+        "Who helps you with English?"
+      ]
+    },
+    "writing": "Write 2-8 simple sentences about yourself. Use 'I am...' and 'You are...'. Example: I am Li Ming. I am a student. You are my teacher. You are kind."
+  },
+  "rubric": {
+    "taskType": "Reading and Listening Practice (A0 Level)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b6f34d044f04da40c6490ccba3a432a0853be35090a4adb1b95d36c0b00538fc"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}
