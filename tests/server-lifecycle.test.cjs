@@ -16,7 +16,7 @@ function statusRequest(base,agent=false){
 async function fixture(t,options={}){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ielts-server-lifecycle-')),rootDir=path.join(dir,'project');fs.mkdirSync(rootDir);
  const budgetDir=path.join(dir,'isolated'),budgetFilePath=options.explicit?path.join(dir,'preferred','custom-ledger.json'):undefined;
- const server=createServer({rootDir,budgetDir,...(budgetFilePath?{budgetFilePath}:{}),fetchImpl:async()=>{throw Error('External network forbidden in lifecycle test');}});
+ const server=createServer({materialMigration:false,dataDir:path.join(rootDir,'user-data'),rootDir,budgetDir,...(budgetFilePath?{budgetFilePath}:{}),fetchImpl:async()=>{throw Error('External network forbidden in lifecycle test');}});
  const ready=once(server,'listening');server.listen(0,'127.0.0.1');await ready;
  async function close(){if(server.listening)await new Promise(resolve=>{server.close(resolve);server.closeAllConnections();});}
  t.after(async()=>{await close();const resolved=path.resolve(dir);assert.equal(path.dirname(resolved),path.resolve(os.tmpdir()));assert.ok(path.basename(resolved).startsWith('ielts-server-lifecycle-'));fs.rmSync(resolved,{recursive:true,force:true});});

@@ -25,7 +25,7 @@ async function setup(t, mode = 'normal', apiKey = KEY) {
     if (url.includes('/stt/')) return new Response(JSON.stringify({RecognitionStatus:'Success',NBest:[{Display:'Hello.',PronunciationAssessment:{AccuracyScore:80}}]}));
     return new Response(JSON.stringify({ choices:[{message:{content:'<script>alert(1)</script> 中文解释 ' + apiKey},finish_reason:mode==='truncated'?'length':'stop'}], usage:{prompt_tokens:100,completion_tokens:20} }));
   };
-  const app = createServer({ rootDir:root, lessons:[{day:1,title:'Mock lesson',text:TEXT}], fetchImpl, coachTimeoutMs:1000 });
+  const app = createServer({materialMigration:false,dataDir:path.join(root,'user-data'), rootDir:root, lessons:[{day:1,title:'Mock lesson',text:TEXT}], fetchImpl, coachTimeoutMs:1000 });
   await new Promise(resolve=>app.listen(0,'127.0.0.1',resolve));
   const base = 'http://127.0.0.1:'+app.address().port;
   t.after(async()=>{ await new Promise(resolve=>{app.close(resolve);app.closeAllConnections();}); if(path.dirname(root)===os.tmpdir()&&path.basename(root).startsWith('ielts-selection-test-'))fs.rmSync(root,{recursive:true,force:true}); });
@@ -53,7 +53,7 @@ test('selection HTTP returns full validated plaintext, prompt version, bounded f
   const version=status.connectionVersion;await f.api('/api/ai/model',{model:'unquoted-model'});assert.notEqual((await f.api('/api/ai/status')).data.connectionVersion,version);
   assert.equal((await f.api('/api/ai/selection',{threadId:first.data.threadId,question:'Again?'})).data.error.code,'THREAD_EXPIRED');
   assert.equal((await f.api('/api/ai/selection',f.body)).status,200); // Unknown price is allowed by default.
-  const ledger=fs.readFileSync(path.join(f.root,'private','budget-ledger.json'),'utf8');
+  const ledger=fs.readFileSync(path.join(f.root,'user-data','config','budget-ledger.json'),'utf8');
   for(const value of [KEY,VOICE_KEY,TEXT,'What does My mean?','中文解释'])assert.ok(!ledger.includes(value));
 });
 test('shared budget covers all paid APIs, optional unknown prices and failures conservatively',async t=>{
@@ -96,7 +96,7 @@ test('JSON escaping cannot hide a credential in persistent budget quote fields',
   for(const key of ['fake"quoted-test-key','fake\\backslash-test-key']){
     const f=await setup(t,'normal',key);
     const budgetBefore=(await f.api('/api/budget/status')).data;
-    const ledgerPath=path.join(f.root,'private','budget-ledger.json');
+    const ledgerPath=path.join(f.root,'user-data','config','budget-ledger.json');
     const before=fs.readFileSync(ledgerPath,'utf8');
     const textPrice={baseUrl:'https://api.deepseek.com',model:'deepseek-flash',inputPerMillionCny:2,outputPerMillionCny:8,confirmed:true,source:'Mock quote '+key};
     const speechPrice={endpoint:'https://mock.cognitiveservices.azure.com',perMinuteCny:.1,billingIncrementSeconds:1,confirmed:true,source:'Mock quote '+key};

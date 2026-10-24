@@ -12,7 +12,7 @@ function normalize(data,key,duration){
 function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpeechConfig=()=>null,timeoutMs=180000}={}){
  let config=null,controller=null,verified=false;
  const active=()=>config?.useSpeechConnection?getSpeechConfig():config;
- const status=()=>({ok:true,configured:Boolean(active()),provider:active()?.provider==='qwen-asr'?'Qwen ASR':'Azure fast transcription',providerId:active()?.provider||'azure',model:active()?.model||'',endpoint:active()?.endpoint||'',useSpeechConnection:Boolean(config?.useSpeechConnection),verified,credentialStorage:'memory',maxSeconds:active()?.provider==='qwen-asr'?300:900});
+ const status=()=>({ok:true,configured:Boolean(active()),provider:active()?.provider==='qwen-asr'?'Qwen ASR':'Azure fast transcription',providerId:active()?.provider||'azure',model:active()?.model||'',endpoint:active()?.endpoint||'',useSpeechConnection:Boolean(config?.useSpeechConnection),verified,credentialStorage:handle.getCredentialStorage?.()||'memory',maxSeconds:active()?.provider==='qwen-asr'?300:900});
  const send=(res,statusCode,body)=>{res.writeHead(statusCode,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
  async function body(req){
   if((req.headers['content-type']||'').split(';')[0].trim().toLowerCase()!=='application/json')throw new TranscriptionError(415,'JSON_REQUIRED','请使用JSON提交。');
@@ -25,7 +25,7 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
   let own,ticket;
   try{
    if(pathname==='/api/transcription/status'&&req.method==='GET')send(res,200,status());
-   else if(pathname==='/api/transcription/connection'&&req.method==='DELETE'){controller?.abort();config=null;verified=false;send(res,200,status());}
+   else if(pathname==='/api/transcription/connection'&&req.method==='DELETE'){controller?.abort();config=null;verified=false;await handle.onConfigurationChanged?.();send(res,200,status());}
    else if(pathname==='/api/transcription/configure'&&req.method==='POST'){
     const b=await body(req);let next;
     if(b.provider==='qwen-asr'){let u;try{u=new URL(b.baseUrl||b.endpoint);}catch{throw new TranscriptionError(400,'INVALID_ENDPOINT','请复制千问控制台提供的兼容模式HTTPS Base URL。');}if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash||u.port||typeof b.apiKey!=='string'||b.apiKey.length<8||b.apiKey.length>4096||/[\s\x00-\x1f\x7f]/.test(b.apiKey)||typeof b.model!=='string'||!/^[a-zA-Z0-9_.:-]{1,100}$/.test(b.model)||u.href.includes(b.apiKey)||b.model.includes(b.apiKey))throw new TranscriptionError(400,'INVALID_TRANSCRIPTION_CONFIG','请填写有效HTTPS地址、独立密钥与ASR模型名。');next={provider:'qwen-asr',endpoint:u.href.replace(/\/$/,''),apiKey:b.apiKey,model:b.model};}
@@ -33,7 +33,7 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
     else if(b.useSpeechConnection===true){if(!getSpeechConfig())throw new TranscriptionError(409,'SPEECH_NOT_CONFIGURED','请先保存Azure短句服务配置，或单独填写转写资源。');next={useSpeechConnection:true};}
     else{let u;try{u=new URL(b.endpoint);}catch{throw new TranscriptionError(400,'INVALID_ENDPOINT','请填写Azure Speech资源HTTPS地址。');}
      if(u.protocol!=='https:'||!/^[a-z0-9][a-z0-9-]*\.cognitiveservices\.azure\.com$/.test(u.hostname)||u.port||u.pathname!=='/'||u.username||u.password||u.search||u.hash||typeof b.apiKey!=='string'||!/^[a-zA-Z0-9]{16,128}$/.test(b.apiKey)||u.origin.includes(b.apiKey))throw new TranscriptionError(400,'INVALID_TRANSCRIPTION_CONFIG','请填写有效的Azure资源地址和独立密钥。');next={endpoint:u.origin,apiKey:b.apiKey};}
-    controller?.abort();config=next;verified=false;send(res,200,status());
+    controller?.abort();config=next;verified=false;await handle.onConfigurationChanged?.();send(res,200,status());
    }else if(pathname==='/api/transcription/transcribe'&&req.method==='POST'){
     const connection=active();if(!connection)throw new TranscriptionError(409,'TRANSCRIPTION_NOT_CONFIGURED','请在AI设置配置长口语转写服务。');
     if(controller)throw new TranscriptionError(429,'TRANSCRIPTION_BUSY','已有转写正在进行，请等待或取消。');
@@ -51,7 +51,7 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
      let raw;try{raw=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new TranscriptionError(502,'TRANSCRIPTION_FORMAT','转写响应格式无效。');}
      if(own.signal.aborted||active()!==connection)throw new TranscriptionError(409,'TRANSCRIPTION_CANCELLED','转写已取消或配置已改变。');
      const result=qwen?{text:safe(raw?.choices?.[0]?.message?.content,connection.apiKey),segments:[],durationSeconds:seconds,disclaimer:'千问自动转写可能漏词或改写；此适配未返回真实时间戳，不编造时间对齐。请对照原录音编辑，文字不是发音分。'}:normalize(raw,connection.apiKey,seconds);if(!result.text.trim())throw new TranscriptionError(502,'EMPTY_TRANSCRIPT','服务没有识别到可用文字，请回听并重试。');verified=true;const provider=qwen?'Qwen ASR':'Azure fast transcription';
-     const evidenceId=evidenceStore?.add({kind:'transcription',provider,...result});
+     const evidenceId=evidenceStore?.add({kind:'transcription',provider,...result,sha256:require('node:crypto').createHash('sha256').update(bytes).digest('hex')});
      send(res,200,{ok:true,provider,...result,evidenceId});
     }finally{res.removeListener('close',cancel);}
    }else throw new TranscriptionError(404,'NOT_FOUND','转写接口不存在。');
@@ -59,6 +59,8 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
   finally{try{budget?.settle(ticket);}finally{if(own&&controller===own)controller=null;}}
   return true;
  }
+ handle.status=status;handle.exportConfiguration=()=>config?{...config}:null;
+ handle.restoreConfiguration=data=>{let next=null;if(data!==null){if(data.useSpeechConnection===true)next={useSpeechConnection:true};else if(data.provider==='qwen-asr'){const c=require('./saved-provider-config.cjs').compatible({baseUrl:data.endpoint,apiKey:data.apiKey,model:data.model});next={provider:'qwen-asr',endpoint:c.baseUrl,apiKey:c.apiKey,model:c.model};}else next=require('./saved-provider-config.cjs').azure(data);}controller?.abort();config=next;verified=false;};
  handle.close=()=>{controller?.abort();config=null;verified=false;};handle.containsCredential=text=>Boolean(active()?.apiKey&&text.includes(active().apiKey));return handle;
 }
 module.exports={createTranscriptionHandler,normalize,TranscriptionError};

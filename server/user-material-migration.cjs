@@ -1,0 +1,89 @@
+'use strict';
+// Copies catalogued personal textbooks. It never moves/deletes originals or follows links.
+const fs=require('node:fs'),fsp=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto'),os=require('node:os');
+const {Transform}=require('node:stream'),{pipeline}=require('node:stream/promises');
+const SHA=/^[a-f0-9]{64}$/,ID=/^imported-(?:pdf|meta)-[a-f0-9]{24}$/;
+const MAX_INDEX=16*1024*1024,MAX_SIDECAR=32*1024*1024;
+const TYPES={'.pdf':'application/pdf','.json':'application/json','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp'};
+class MaterialMigrationError extends Error{constructor(code,message){super(message);this.name='MaterialMigrationError';this.code=code;}}
+const fail=(code,message)=>{throw new MaterialMigrationError(code,message);};
+const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+const within=(base,target)=>{const rel=path.relative(base,target);return rel===''||rel!=='..'&&!rel.startsWith('..'+path.sep)&&!path.isAbsolute(rel);};
+const clone=value=>JSON.parse(JSON.stringify(value));
+function sourceRelative(value,kind){
+ if(typeof value!=='string'||value.length>500||/[\\:\x00-\x1f\x7f]/.test(value)||value.split('/').some(s=>!s||s==='.'||s==='..'))fail('MATERIAL_SOURCE_PATH','资料路径必须是目录清单内的安全相对路径。');
+ const allowed=kind==='pdf'?/^materials\/textbooks\/[^/]+\.pdf$/i:/^(?:materials\/(?:textbook-catalog|textbook-verification|textbook-training-map)\.json|assets\/textbook-covers\/[^/]+\.(?:jpe?g|png|webp))$/i;
+ if(!allowed.test(value))fail('MATERIAL_SOURCE_PATH','此路径不属于教材原件或明确列出的伴随资料。');return value;
+}
+function checked(base,target,{mustExist=false,file=false}={}){
+ const full=path.resolve(target);if(!within(base,full))fail('MATERIAL_PATH','资料路径越出了受控目录。');
+ let current=base;for(const name of [base,...path.relative(base,full).split(path.sep).filter(Boolean).map(part=>current=path.join(current,part))]){
+  let stat;try{stat=fs.lstatSync(name);}catch(e){if(e.code==='ENOENT'&&!mustExist)break;throw e;}
+  if(stat.isSymbolicLink())fail('MATERIAL_LINK','资料目录和文件不能是符号链接或目录联接。');
+  if(name!==full&&!stat.isDirectory())fail('MATERIAL_PATH','资料父路径不是普通文件夹。');
+  if(name===full&&file&&!stat.isFile())fail('MATERIAL_PATH','资料项不是普通文件。');
+ }
+ return full;
+}
+function readJson(file,base){
+ try{checked(base,file,{mustExist:true,file:true});if(fs.statSync(file).size>MAX_INDEX)fail('MATERIAL_INDEX_SIZE','资料迁移索引过大，未覆盖原文件。');return JSON.parse(fs.readFileSync(file,'utf8'));}
+ catch(e){if(e.code==='ENOENT')return null;if(e instanceof MaterialMigrationError)throw e;fail('MATERIAL_INDEX_CORRUPT','资料索引无法校验，原文件保留；不会用空索引覆盖。');}
+}
+async function digestFile(file){const h=crypto.createHash('sha256');let bytes=0;for await(const chunk of fs.createReadStream(file)){h.update(chunk);bytes+=chunk.length;}return{sha256:h.digest('hex'),bytes};}
+function stamp(file){const s=fs.lstatSync(file);if(s.isSymbolicLink()||!s.isFile())fail('MATERIAL_LINK','资料副本不是普通文件。');return{size:s.size,mtimeMs:s.mtimeMs,ctimeMs:s.ctimeMs};}
+function sameStamp(a,b){return !!a&&a.size===b.size&&a.mtimeMs===b.mtimeMs&&a.ctimeMs===b.ctimeMs;}
+function createUserMaterialMigration({rootDir,dataDir,materialsDir,catalogPath,now=()=>new Date(),onProgress=()=>{}}={}){
+ if(typeof rootDir!=='string'||!path.isAbsolute(rootDir))fail('MATERIAL_ROOT','请提供程序目录的绝对路径。');
+ const appRoot=path.resolve(rootDir),userRoot=path.resolve(dataDir||path.join(appRoot,'用户数据')),materialRoot=path.resolve(materialsDir||path.join(userRoot,'materials'));
+ if((dataDir&&!path.isAbsolute(dataDir))||(materialsDir&&!path.isAbsolute(materialsDir))||!within(userRoot,materialRoot))fail('MATERIAL_ROOT','资料目录须位于明确的用户数据目录内。');
+ const folder=path.join(materialRoot,'imported-textbooks'),indexFile=path.join(folder,'index.json'),lockFile=path.join(folder,'.copy.lock'),relativePrefix=path.relative(userRoot,folder).split(path.sep).join('/');
+ const catalogFile=path.resolve(catalogPath||path.join(appRoot,'materials','textbook-catalog.json'));
+ if(!within(appRoot,catalogFile))fail('MATERIAL_CATALOG_PATH','教材清单须来自本程序目录。');
+ let state={schemaVersion:1,state:'idle',createdAt:now().toISOString(),updatedAt:now().toISOString(),documents:[],attachments:[],routes:{}},running=null,active=null,indexStamp=null;
+ const verified=new Map();
+ function destination(item){const ext=item.kind==='pdf'?'.pdf':path.extname(item.sourceRelativePath).toLowerCase();return path.join(folder,item.kind==='pdf'?'files':'metadata',item.sha256+ext);}
+ function validateStored(value){
+  if(!value||value.schemaVersion!==1||!Array.isArray(value.documents)||!Array.isArray(value.attachments)||!value.routes||typeof value.routes!=='object'||Array.isArray(value.routes)||value.documents.length+value.attachments.length>10000)fail('MATERIAL_INDEX_CORRUPT','资料迁移索引格式无效，未覆盖。');
+  const ids=new Set();for(const item of [...value.documents,...value.attachments]){if(!item||!ID.test(item.id)||ids.has(item.id)||!['pdf','metadata'].includes(item.kind)||!SHA.test(item.sha256)||!Number.isSafeInteger(item.bytes)||item.bytes<0||typeof item.name!=='string'||item.name.length>300||!['pending','copying','ready','error'].includes(item.status))fail('MATERIAL_INDEX_CORRUPT','资料索引条目无效，未覆盖。');ids.add(item.id);sourceRelative(item.sourceRelativePath,item.kind);const expected=path.relative(userRoot,destination(item)).split(path.sep).join('/');if(item.relativePath!==expected)fail('MATERIAL_INDEX_CORRUPT','资料副本路径与指纹不一致，未覆盖。');}
+  for(const[relative,id]of Object.entries(value.routes)){sourceRelative(relative,/\.pdf$/i.test(relative)?'pdf':'metadata');if(!ids.has(id))fail('MATERIAL_INDEX_CORRUPT','资料旧路径引用缺少条目，未覆盖。');}return value;
+ }
+ function refresh(){if(running)return;let s;try{s=stamp(checked(userRoot,indexFile,{mustExist:true,file:true}));}catch(e){if(e.code==='ENOENT')return;throw e;}if(sameStamp(indexStamp,s))return;const disk=readJson(indexFile,userRoot);if(disk){state=validateStored(disk);indexStamp=s;}}
+ const disk=readJson(indexFile,userRoot);if(disk){state=validateStored(disk);indexStamp=stamp(indexFile);}
+ function add(item){const collection=item.kind==='pdf'?state.documents:state.attachments,old=collection.find(v=>v.id===item.id);if(!old)collection.push(item);else if(old.sha256!==item.sha256||old.bytes!==item.bytes)fail('MATERIAL_INDEX_CONFLICT','同一资料编号出现不同内容，未覆盖副本。');state.routes[item.sourceRelativePath]=item.id;}
+ const catalog=readJson(catalogFile,appRoot);
+ if(catalog){
+  if(!Array.isArray(catalog.documents)||catalog.documents.length>10000)fail('MATERIAL_CATALOG','教材清单缺少有效文档列表。');
+  const seenPaths=new Set();for(const doc of catalog.documents){const relative=sourceRelative(doc.path,'pdf');if(seenPaths.has(relative)||!SHA.test(doc.sha256)||!Number.isSafeInteger(doc.bytes)||doc.bytes<5)fail('MATERIAL_CATALOG','教材清单有重复路径或无效大小/指纹。');seenPaths.add(relative);const item={kind:'pdf',id:'imported-pdf-'+doc.sha256.slice(0,24),sourceId:doc.id||'pdf-'+doc.sha256.slice(0,16),name:typeof doc.filename==='string'?path.basename(doc.filename):path.basename(relative),sourceRelativePath:relative,sha256:doc.sha256,bytes:doc.bytes,mime:'application/pdf',status:'pending',verifiedAt:null,lastError:null};item.relativePath=path.relative(userRoot,destination(item)).split(path.sep).join('/');add(item);}
+  const metadata=new Set(['materials/textbook-catalog.json','materials/textbook-verification.json','materials/textbook-training-map.json']);for(const doc of catalog.documents)if(doc.coverPath)metadata.add(sourceRelative(doc.coverPath,'metadata'));
+  state.discoveryErrors=[];
+  for(const relative of metadata){const source=path.resolve(appRoot,sourceRelative(relative,'metadata'));let stat;try{checked(appRoot,source,{mustExist:true,file:true});stat=fs.statSync(source);}catch(e){if(e.code==='ENOENT'){if(state.routes[relative]||relative!=='materials/textbook-catalog.json'&&!catalog.documents.some(d=>d.coverPath===relative))continue;state.discoveryErrors.push({sourceRelativePath:relative,code:'MATERIAL_METADATA_MISSING',message:'清单列出的伴随资料尚未找到；教材原件仍会单独复制。'});continue;}throw e;}if(stat.size>MAX_SIDECAR)fail('MATERIAL_METADATA_SIZE','教材伴随资料超过安全复制范围。');const bytes=fs.readFileSync(source),digest=sha(bytes),item={kind:'metadata',id:'imported-meta-'+digest.slice(0,24),name:path.basename(relative),sourceRelativePath:relative,sha256:digest,bytes:bytes.length,mime:TYPES[path.extname(relative).toLowerCase()],status:'pending',verifiedAt:null,lastError:null};item.relativePath=path.relative(userRoot,destination(item)).split(path.sep).join('/');add(item);}
+ }
+ function ready(item){
+  if(item.status!=='ready'||!item.verifiedAt)return false;try{const file=checked(userRoot,destination(item),{mustExist:true,file:true}),current=stamp(file);if(current.size!==item.bytes)return false;const prior=verified.get(item.id)||item.verifiedStat;if(!sameStamp(prior,current))return false;verified.set(item.id,current);return true;}catch{return false;}
+ }
+ function publicItem(item){return{id:item.id,name:item.name,size:item.bytes,bytes:item.bytes,mime:item.mime,sha256:item.sha256,source:'imported-textbook',sourceId:item.sourceId||null,sourceRelativePath:item.sourceRelativePath,relativePath:item.relativePath,status:'ready',verifiedAt:item.verifiedAt,path:checked(userRoot,destination(item),{mustExist:true,file:true})};}
+ function status(){refresh();const docs=state.documents,metadata=state.attachments,valid=docs.filter(ready),validMetadata=metadata.filter(ready),errors=[...docs,...metadata].filter(item=>item.lastError).map(item=>({id:item.id,sourceRelativePath:item.sourceRelativePath,...item.lastError}));errors.push(...(state.discoveryErrors||[]));for(const item of [...docs,...metadata])if(item.status==='ready'&&!ready(item))errors.push({id:item.id,sourceRelativePath:item.sourceRelativePath,code:'MATERIAL_COPY_RECHECK',message:'已核验副本的文件状态发生变化，暂不提供，请重新核验；原文件保留。'});const effectiveState=state.state==='complete'&&(valid.length!==docs.length||validMetadata.length!==metadata.length)?'partial':state.state;return{schemaVersion:1,state:effectiveState,folder,totalFiles:docs.length,readyFiles:valid.length,pendingFiles:docs.length-valid.length,failedFiles:docs.filter(item=>item.status==='error').length,totalBytes:docs.reduce((n,item)=>n+item.bytes,0),readyBytes:valid.reduce((n,item)=>n+item.bytes,0),progress:active?{...active}:null,metadata:{totalFiles:metadata.length,readyFiles:validMetadata.length,failedFiles:metadata.filter(item=>item.status==='error').length},errors,startedAt:state.startedAt||null,finishedAt:state.finishedAt||null,updatedAt:state.updatedAt,resume:'verified-completed-files'};}
+ function list(){refresh();return state.documents.filter(ready).map(publicItem);}
+ function get(id){refresh();const item=state.documents.find(item=>item.id===id);return item&&ready(item)?publicItem(item):null;}
+ function resolveLegacy(relative){refresh();try{sourceRelative(relative,/\.pdf$/i.test(relative)?'pdf':'metadata');const id=state.routes[relative],item=[...state.documents,...state.attachments].find(item=>item.id===id);return item&&ready(item)?checked(userRoot,destination(item),{mustExist:true,file:true}):null;}catch{return null;}}
+ async function mkdir(dir){checked(userRoot,dir);await fsp.mkdir(dir,{recursive:true});checked(userRoot,dir);}
+ async function persist(){state.updatedAt=now().toISOString();await mkdir(folder);const temp=indexFile+'.'+crypto.randomUUID()+'.tmp';checked(userRoot,temp);let handle;try{handle=await fsp.open(temp,'wx',0o600);await handle.writeFile(JSON.stringify(state,null,2)+'\n');await handle.sync();await handle.close();handle=null;for(let attempt=0;;attempt++)try{checked(userRoot,indexFile);await fsp.rename(temp,indexFile);break;}catch(e){if(e.code!=='EPERM'&&e.code!=='EACCES'||attempt>=7)throw e;await new Promise(r=>setTimeout(r,Math.min(40*2**attempt,500)));}indexStamp=stamp(indexFile);}finally{if(handle)await handle.close().catch(()=>{});await fsp.unlink(checked(userRoot,temp)).catch(()=>{});}}
+ function notify(){try{onProgress(status());}catch{}}
+ async function acquire(){await mkdir(folder);const owner={pid:process.pid,hostname:os.hostname(),token:crypto.randomUUID(),createdAt:now().toISOString()};for(let attempt=0;attempt<2;attempt++){try{const handle=await fsp.open(checked(userRoot,lockFile),'wx',0o600);await handle.writeFile(JSON.stringify(owner));await handle.close();return owner;}catch(e){if(e.code!=='EEXIST')throw e;const held=readJson(lockFile,userRoot);if(held?.hostname===os.hostname()&&Number.isSafeInteger(held.pid)&&held.pid>0){try{process.kill(held.pid,0);}catch(error){if(error.code==='ESRCH'&&readJson(lockFile,userRoot)?.token===held.token){await fsp.unlink(checked(userRoot,lockFile));continue;}}}fail('MATERIAL_MIGRATION_BUSY','另一进程正在复制教材；当前文件保持不变。');}}fail('MATERIAL_MIGRATION_BUSY','教材迁移锁尚未释放。');}
+ async function release(owner){try{if(readJson(lockFile,userRoot)?.token===owner.token)await fsp.unlink(checked(userRoot,lockFile));}catch{}}
+ async function verifyTarget(item){const file=checked(userRoot,destination(item),{mustExist:true,file:true}),s=stamp(file);if(s.size!==item.bytes)fail('MATERIAL_DESTINATION_CONFLICT','已有副本大小不符，保留已有文件和原件，不自动覆盖。');const digest=await digestFile(file);if(digest.sha256!==item.sha256)fail('MATERIAL_DESTINATION_CONFLICT','已有副本SHA-256不符，保留两侧文件，不自动覆盖。');return stamp(file);}
+ async function copy(item){
+  item.lastError=null;item.status='copying';active={id:item.id,name:item.name,copiedBytes:0,totalBytes:item.bytes};await persist();notify();const target=checked(userRoot,destination(item));
+  try{const s=await verifyTarget(item);item.status='ready';item.verifiedAt=now().toISOString();item.verifiedStat=s;verified.set(item.id,s);item.reused=true;active=null;await persist();notify();return;}catch(e){if(e.code!=='ENOENT')throw e;}
+  const source=checked(appRoot,path.resolve(appRoot,item.sourceRelativePath),{mustExist:true,file:true}),stat=fs.statSync(source);if(stat.size!==item.bytes)fail('MATERIAL_SOURCE_SIZE','源文件大小与教材清单不符；原件保留，请核对完整下载。');
+  if(item.kind==='pdf'){const handle=await fsp.open(source,'r'),head=Buffer.alloc(5);try{await handle.read(head,0,5,0);}finally{await handle.close();}if(head.toString('ascii')!=='%PDF-')fail('MATERIAL_SOURCE_PDF','源文件不是完整PDF；可能尚未取得LFS原件。');}
+  await mkdir(path.dirname(target));const temp=target+'.'+crypto.randomUUID()+'.partial';checked(userRoot,temp);const incoming=crypto.createHash('sha256');let copied=0,lastNotice=0;
+  try{const meter=new Transform({transform(chunk,encoding,callback){incoming.update(chunk);copied+=chunk.length;if(active)active.copiedBytes=copied;if(Date.now()-lastNotice>1500){lastNotice=Date.now();notify();}callback(null,chunk);}});await pipeline(fs.createReadStream(source),meter,fs.createWriteStream(temp,{flags:'wx',mode:0o600}));if(copied!==item.bytes||incoming.digest('hex')!==item.sha256)fail('MATERIAL_SOURCE_HASH','源内容与清单SHA-256不符，未发布副本，原文件保留。');const handle=await fsp.open(temp,'r+');try{await handle.sync();}finally{await handle.close();}const outgoing=await digestFile(temp);if(outgoing.bytes!==item.bytes||outgoing.sha256!==item.sha256)fail('MATERIAL_COPY_HASH','写入副本核验失败，原文件保留。');checked(userRoot,target);try{await fsp.lstat(target);fail('MATERIAL_DESTINATION_CONFLICT','复制期间目标已出现，未覆盖已有文件。');}catch(e){if(e.code!=='ENOENT')throw e;}await fsp.rename(temp,target);const saved=stamp(target);item.status='ready';item.verifiedAt=now().toISOString();item.verifiedStat=saved;verified.set(item.id,saved);item.reused=false;active=null;await persist();notify();}
+  finally{await fsp.unlink(checked(userRoot,temp)).catch(()=>{});}
+ }
+ async function execute(){let owner;try{owner=await acquire();state.state='running';state.startedAt=now().toISOString();state.finishedAt=null;await persist();for(const item of [...state.documents,...state.attachments]){try{await copy(item);}catch(error){item.status='error';item.lastError={code:error.code||'MATERIAL_COPY_IO',message:error instanceof MaterialMigrationError?error.message:'复制尚未完成；原文件保留，可再次运行重试。'};active=null;await persist();notify();}}state.state=[...state.documents,...state.attachments].every(ready)&&!(state.discoveryErrors||[]).length?'complete':'partial';state.finishedAt=now().toISOString();await persist();return status();}catch(error){state.state='error';state.finishedAt=now().toISOString();state.runError={code:error.code||'MATERIAL_COPY_IO',message:error instanceof MaterialMigrationError?error.message:'教材迁移未完成，原文件保留。'};if(owner)await persist().catch(()=>{});return{...status(),errors:[...status().errors,state.runError]};}finally{if(owner)await release(owner);active=null;}}
+ function run(){if(running)return running;refresh();running=execute().finally(()=>{running=null;});return running;}
+ return{status,start:run,run,list,get,resolveLegacy,paths:{folder,indexFile},dataDir:userRoot};
+}
+module.exports={createUserMaterialMigration,MaterialMigrationError,digestFile};
+if(require.main===module){const argv=process.argv.slice(2),value=name=>{const i=argv.indexOf(name);return i<0?undefined:argv[i+1];};if(argv.some((v,i)=>i%2===0&&!['--root','--data-dir','--materials-dir'].includes(v))||argv.length%2){console.error('Usage: node server/user-material-migration.cjs --root ABSOLUTE_APP_DIR --data-dir ABSOLUTE_USER_DIR');process.exitCode=1;}else{let last='';try{const job=createUserMaterialMigration({rootDir:path.resolve(value('--root')||path.join(__dirname,'..')),dataDir:value('--data-dir'),materialsDir:value('--materials-dir'),onProgress:s=>{const key=s.readyFiles+'/'+s.totalFiles+' '+s.metadata.readyFiles+'/'+s.metadata.totalFiles;if(key!==last){last=key;console.log(JSON.stringify({state:s.state,readyFiles:s.readyFiles,totalFiles:s.totalFiles,readyBytes:s.readyBytes,metadata:s.metadata,errors:s.errors}));}}});job.run().then(result=>{console.log(JSON.stringify(result));process.exitCode=result.state==='complete'?0:1;},()=>{console.error('教材复制未完成，原文件保留。');process.exitCode=1;});}catch(e){console.error(e instanceof MaterialMigrationError?e.message:'教材迁移未能初始化，原文件保留。');process.exitCode=1;}}}

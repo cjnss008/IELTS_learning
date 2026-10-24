@@ -34,7 +34,7 @@ function normalizeResult(body) {
 function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget, evidenceStore } = {}) {
   let config = null, busy = false, controller = null;
   const send = (res, status, body) => { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(body)); };
-  const status = () => ({ ok: true, configured: Boolean(config), endpoint: config?.endpoint || '', credentialStorage: 'memory', verified: false });
+  const status = () => ({ ok: true, configured: Boolean(config), endpoint: config?.endpoint || '', credentialStorage: handle.getCredentialStorage?.()||'memory', verified: false });
   async function body(req) {
     if ((req.headers['content-type'] || '').split(';')[0].trim().toLowerCase() !== 'application/json') throw Error('请使用 JSON 提交。');
     if (Number(req.headers['content-length']) > 1400000) { req.resume(); throw Error('录音过大，请控制在 30 秒内。'); }
@@ -47,14 +47,14 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget, evi
     let ownController;
     try {
       if (pathname === '/api/speech/status' && req.method === 'GET') send(res, 200, status());
-      else if (pathname === '/api/speech/connection' && req.method === 'DELETE') { config = null; controller?.abort(); send(res, 200, status()); }
+      else if (pathname === '/api/speech/connection' && req.method === 'DELETE') { config = null; controller?.abort(); await handle.onConfigurationChanged?.(); send(res, 200, status()); }
       else if (pathname === '/api/speech/configure' && req.method === 'POST') {
         const b = await body(req); let u;
         try { u = new URL(b.endpoint); } catch { throw Error('请填写 Azure Speech 资源的 HTTPS endpoint。'); }
         if (u.protocol !== 'https:' || !/^[a-z0-9][a-z0-9-]*\.cognitiveservices\.azure\.com$/.test(u.hostname) || u.port || u.username || u.password || u.search || u.hash || u.pathname !== '/') throw Error('请使用 https://资源名.cognitiveservices.azure.com 格式的资源 endpoint。');
         if (typeof b.apiKey !== 'string' || !/^[a-zA-Z0-9]{16,128}$/.test(b.apiKey)) throw Error('请填写该 Speech 资源的密钥。');
         if (u.origin.includes(b.apiKey)) throw Error('请将语音密钥单独填写，不要写入地址。');
-        controller?.abort(); config = { endpoint: u.origin, apiKey: b.apiKey }; send(res, 200, status());
+        controller?.abort(); config = { endpoint: u.origin, apiKey: b.apiKey }; await handle.onConfigurationChanged?.(); send(res, 200, status());
       } else if (pathname === '/api/speech/assess' && req.method === 'POST') {
         if (!config) { send(res, 409, { ok:false,error:{code:'SPEECH_NOT_CONFIGURED',message:'请先配置独立的 Azure Speech 服务。DeepSeek 密钥不能用于发音评测。'} }); return true; }
         if (busy) { send(res, 429, { ok:false,error:{code:'BUSY',message:'已有发音评测正在进行，请稍后再试。'} }); return true; }
@@ -93,6 +93,8 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget, evi
   handle.close = () => { config = null; controller?.abort(); };
   handle.containsCredential = text => Boolean(config?.apiKey && text.includes(config.apiKey));
   handle.getConfig = () => config;
+  handle.exportConfiguration = () => config ? {...config} : null;
+  handle.restoreConfiguration = data => {const next=data===null?null:require('./saved-provider-config.cjs').azure(data);controller?.abort();config=next;};
   return handle;
 }
 module.exports = { checkWav, normalizeResult, createSpeechHandler };

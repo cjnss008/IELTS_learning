@@ -100,7 +100,7 @@ test('local AI service integration and credential boundaries', async t => {
     res.end();
   });
   mockBase = await listen(upstream);
-  const app = createServer({ rootDir: fixtureRoot, modelsTimeoutMs: 100, testTimeoutMs: 1000 });
+  const app = createServer({materialMigration:false,dataDir:path.join(fixtureRoot,'user-data'),defaultCredentialPersistence:false, rootDir: fixtureRoot, credentialFilePath:path.join(fixtureRoot,'private','credentials.dpapi'), modelsTimeoutMs: 100, testTimeoutMs: 1000 });
   const base = await listen(app);
   t.after(async () => {
     await close(app);
@@ -249,7 +249,7 @@ test('DeepSeek verification disables thinking without exposing the credential', 
     return new Response(JSON.stringify({ choices: [{ message: { content: 'OK' } }] }), { status: 200 });
   };
   const budgetDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ielts-ai-test-'));
-  const app = createServer({ budgetFilePath: path.join(budgetDir, 'ledger.json'), fetchImpl: mockFetch });
+  const app = createServer({materialMigration:false,dataDir:path.join(budgetDir,'user-data'), budgetFilePath: path.join(budgetDir, 'ledger.json'), fetchImpl: mockFetch });
   const base = await listen(app);
   t.after(async () => { await close(app); if (path.dirname(budgetDir) === os.tmpdir() && path.basename(budgetDir).startsWith('ielts-ai-test-')) fs.rmSync(budgetDir, { recursive: true, force: true }); });
   const jsonHeaders = { 'Content-Type': 'application/json' };
@@ -283,7 +283,7 @@ test('coach validates input, preserves privacy, and returns non-executable text'
     return new Response(JSON.stringify({ choices: [{ message: { content: '<img src=x onerror=alert(1)>改进建议 ' + FAKE_KEY } }] }));
   };
   const budgetDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ielts-ai-test-'));
-  const app = createServer({ budgetFilePath: path.join(budgetDir, 'ledger.json'), fetchImpl: mockFetch, coachTimeoutMs: 100 });
+  const app = createServer({materialMigration:false,dataDir:path.join(budgetDir,'user-data'), budgetFilePath: path.join(budgetDir, 'ledger.json'), fetchImpl: mockFetch, coachTimeoutMs: 100 });
   const base = await listen(app);
   t.after(async () => { await close(app); if (path.dirname(budgetDir) === os.tmpdir() && path.basename(budgetDir).startsWith('ielts-ai-test-')) fs.rmSync(budgetDir, { recursive: true, force: true }); });
   const headers = { 'Content-Type': 'application/json' };
