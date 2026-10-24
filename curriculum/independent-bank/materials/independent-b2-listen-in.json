@@ -1,0 +1,160 @@
+{
+  "id": "independent-b2-listen-in",
+  "version": "1",
+  "week": 32,
+  "level": "B2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A student team studies walking routes",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Supervisor: You are proposing a study of walking routes to the new campus. How will you collect the information?\nStudent: We planned to ask volunteers to upload their routes using a phone app. The map would show which streets are used most, and we thought the busiest streets should receive safety improvements first.\nSupervisor: That conclusion needs care. A street could have many walkers because it is convenient, while a dangerous street could have few because people avoid it. Recorded use and unmet need are not the same thing. What would help you see the missing journeys?\nStudent: We could ask people which routes they avoid and why. We should also include people who do not use the app. The first invitations went through the cycling society, so our sample may already favour people comfortable with digital route recording.\nSupervisor: Exactly. How will you broaden recruitment?\nStudent: We will visit the evening classes and the accessibility office, as well as advertising in the cafeteria. We will record which invitation channel each participant used. That will not make the sample statistically representative, but it will show who our recruitment reached.\nSupervisor: Are you collecting exact home addresses?\nStudent: We do not need them. We will remove the first and last sections of each uploaded route before analysis. A route beginning at a residence could reveal where a participant lives even without a name attached. We will also combine routes into street-level counts before presenting them publicly.\nSupervisor: What about comparing journey times?\nStudent: The app gives a total time, but it may include a stop at a shop. We will ask participants to flag pauses and report moving time separately from total journey time. We do not want to label someone as a slow walker because they bought groceries on the way.\nSupervisor: And the safety observations?\nStudent: A small team will audit a selection of crossings using a fixed checklist. They will record visibility, kerb access and waiting time. We will keep those observations separate from people's reports of feeling safe. Both can inform decisions, but they describe different things and may disagree.\nSupervisor: What would a disagreement mean?\nStudent: It would be a reason to investigate. For instance, a crossing could meet the checklist during daylight but feel uncomfortable after dark. We should not delete the report just because it differs from the audit. Our final map will show evidence gaps as well as current observations, so that the campus team can decide what to check next.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why might prioritising only the busiest streets be misleading?",
+      "options": [
+        "Every busy street is already unsafe.",
+        "The app records only bicycle journeys.",
+        "Danger may suppress use on a street that needs improvement."
+      ],
+      "answers": [
+        "Danger may suppress use on a street that needs improvement."
+      ],
+      "evidence": "a dangerous street could have few because people avoid it.",
+      "explanation": "避行造成未满足需求可能在实际使用计数中不可见。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "What is a limitation of the first recruitment channel?",
+      "options": [
+        "It excludes all cyclists from the study.",
+        "It may favour people comfortable with route-recording technology.",
+        "It guarantees every walker is included."
+      ],
+      "answers": [
+        "It may favour people comfortable with route-recording technology."
+      ],
+      "evidence": "our sample may already favour people comfortable with digital route recording.",
+      "explanation": "骑行社团渠道可能形成数字技术使用偏向。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Why record the invitation channel?",
+      "options": [
+        "To document which groups the recruitment reached",
+        "To guarantee a statistically representative sample",
+        "To identify exact home addresses"
+      ],
+      "answers": [
+        "To document which groups the recruitment reached"
+      ],
+      "evidence": "it will show who our recruitment reached.",
+      "explanation": "改善招募并记录覆盖，不宣称统计代表性。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Why remove the ends of uploaded routes?",
+      "options": [
+        "They always contain app errors.",
+        "They are needed only for cycling maps.",
+        "They could reveal participants’ residences."
+      ],
+      "answers": [
+        "They could reveal participants’ residences."
+      ],
+      "evidence": "A route beginning at a residence could reveal where a participant lives even without a name attached.",
+      "explanation": "去姓名仍可能由路线起点泄露住址。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "What level will public route counts use? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "street-level"
+      ],
+      "maxWords": 2,
+      "evidence": "combine routes into street-level counts",
+      "explanation": "发布街道层汇总而不是个体全路线。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why report moving time separately?",
+      "options": [
+        "A pause for shopping could inflate total journey time.",
+        "The app cannot measure any total time.",
+        "All stops indicate difficulty walking."
+      ],
+      "answers": [
+        "A pause for shopping could inflate total journey time."
+      ],
+      "evidence": "it may include a stop at a shop.",
+      "explanation": "途中活动会增加总时长，不能自动解释为行走慢。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "How should checklist audits and perceived safety be treated?",
+      "options": [
+        "As identical measurements that must always match",
+        "As mutually exclusive sources, only one of which can be kept",
+        "As distinct forms of evidence that may disagree"
+      ],
+      "answers": [
+        "As distinct forms of evidence that may disagree"
+      ],
+      "evidence": "Both can inform decisions, but they describe different things and may disagree.",
+      "explanation": "客观清单和主观体验都有用，但反映不同方面。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What should the team do with a report that conflicts with the daylight audit?",
+      "options": [
+        "Assume the checklist proves safety at all times",
+        "Investigate contextual differences",
+        "Delete it as an error"
+      ],
+      "answers": [
+        "Investigate contextual differences"
+      ],
+      "evidence": "It would be a reason to investigate.",
+      "explanation": "昼夜条件等可能不同，冲突是进一步检查的线索。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "2ad9b717cd4155717aceea87dba2517911b5f2d9795be5dc723deb665baffd31",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b2-listen-in.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-IN",
+  "audioAccent": "印度英语（合成）",
+  "audioVoice": "en-IN-NeerjaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 185.064,
+  "audioVoices": [
+    "en-IN-NeerjaNeural",
+    "en-IN-PrabhatNeural"
+  ]
+}

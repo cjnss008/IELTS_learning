@@ -1,0 +1,68 @@
+{
+  "id": "independent-task1-bar",
+  "version": "1",
+  "week": 32,
+  "level": "B2",
+  "skill": "writing",
+  "type": "academic_task1",
+  "figureType": "bar",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "How residents travelled to a sports centre",
+  "estimatedMinutes": 20,
+  "timeLimitSeconds": 1200,
+  "minWords": 150,
+  "maxWords": 300,
+  "instructions": "本题图表、地点与数据均为项目原创模拟，不是官方雅思试题。独立用20分钟完成至少150词的首稿；先不看示范或提示。提交后再进行真实AI评阅和订正，证据不足保持待评。",
+  "prompt": "The bar chart compares the percentages of visits to a town sports centre made by four modes of transport in 2015 and 2025. Each visit is assigned to one transport mode.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "questions": [],
+  "rubric": {
+    "taskType": "academic_task1"
+  },
+  "figure": {
+    "type": "bar",
+    "title": "Visits to the sports centre by mode (%)",
+    "labels": [
+      "Car",
+      "Bus",
+      "Bicycle",
+      "On foot"
+    ],
+    "series": [
+      {
+        "name": "2015",
+        "values": [
+          52,
+          24,
+          8,
+          16
+        ]
+      },
+      {
+        "name": "2025",
+        "values": [
+          38,
+          26,
+          18,
+          18
+        ]
+      }
+    ],
+    "units": "percentage of visits",
+    "yLabel": "Visits (%)"
+  },
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；全部数据、地点与流程为模拟，无外部图表复制",
+    "verification": "reviewed",
+    "method": "Codex核对图表与题意、单位、年份、数据一致性与渲染字段；无范文提前显示，未经过真实考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "prompt",
+      "figure"
+    ],
+    "contentHash": "0f6ac1d0571258710680e76097395a1c0df5f4a57d664da81a00fb7e9f236628"
+  }
+}

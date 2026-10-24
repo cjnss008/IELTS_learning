@@ -1,0 +1,151 @@
+{
+  "id": "independent-a1-listen-in",
+  "version": "1",
+  "week": 5,
+  "level": "A1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Your first visit to the computer room",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Welcome to our computer room. My name is Anil. I am here to help you. There are ten computers. Please use computer seven today. Its screen is next to the window. Your class starts at nine thirty. We learn to send an email today. You need your phone for the class, but you do not need a book. You can get paper from the cupboard by the door. The printer costs two rupees for one page. Please ask me before you print. You can drink water here, but please eat your food outside. The room closes at four. If you leave before then, please turn off your screen.",
+  "questions": [
+    {
+      "type": "fill",
+      "prompt": "帮助大家的人叫什么？写原文中的名字。",
+      "answers": [
+        "Anil"
+      ],
+      "maxWords": 1,
+      "evidence": "My name is Anil.",
+      "explanation": "这是帮助者的名字。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "今天应使用几号电脑？",
+      "options": [
+        "Four",
+        "Seven",
+        "Ten"
+      ],
+      "answers": [
+        "Seven"
+      ],
+      "evidence": "Please use computer seven today.",
+      "explanation": "ten 是电脑总数，seven 是指定电脑编号。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "指定电脑的屏幕在哪里？",
+      "options": [
+        "Next to the window",
+        "By the door",
+        "Behind the cupboard"
+      ],
+      "answers": [
+        "Next to the window"
+      ],
+      "evidence": "Its screen is next to the window.",
+      "explanation": "Its 指 computer seven。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "课程几点开始？",
+      "options": [
+        "Nine",
+        "Ten thirty",
+        "Nine thirty"
+      ],
+      "answers": [
+        "Nine thirty"
+      ],
+      "evidence": "Your class starts at nine thirty.",
+      "explanation": "听清九点半而非九点整。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "今天课程学习做什么？",
+      "options": [
+        "Make a phone",
+        "Send an email",
+        "Print a book"
+      ],
+      "answers": [
+        "Send an email"
+      ],
+      "evidence": "We learn to send an email today.",
+      "explanation": "手机是要带的工具，发送邮件才是学习任务。",
+      "id": "q5"
+    },
+    {
+      "type": "fill",
+      "prompt": "上课必须带什么？写一个英文单词。",
+      "answers": [
+        "phone"
+      ],
+      "maxWords": 1,
+      "evidence": "You need your phone for the class, but you do not need a book.",
+      "explanation": "phone 必需，book 不需要。",
+      "id": "q6"
+    },
+    {
+      "type": "fill",
+      "prompt": "打印一页要多少卢比？写一个英文单词。",
+      "answers": [
+        "two"
+      ],
+      "maxWords": 1,
+      "evidence": "The printer costs two rupees for one page.",
+      "explanation": "two 是每页打印费用。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "离开时应做什么？",
+      "options": [
+        "Leave the phone in the cupboard",
+        "Turn off the screen",
+        "Eat food in the room"
+      ],
+      "answers": [
+        "Turn off the screen"
+      ],
+      "evidence": "If you leave before then, please turn off your screen.",
+      "explanation": "离开要关屏幕；食物应到室外吃。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "128fb89796a5102c12ae2dd11a688115f9a7fe194fa400914e7977b77be15c79",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a1-listen-in.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-IN",
+  "audioAccent": "印度英语（合成）",
+  "audioVoice": "en-IN-NeerjaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 56.52,
+  "audioVoices": [
+    "en-IN-NeerjaNeural"
+  ]
+}

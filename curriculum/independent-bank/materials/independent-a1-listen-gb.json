@@ -1,0 +1,152 @@
+{
+  "id": "independent-a1-listen-gb",
+  "version": "1",
+  "week": 5,
+  "level": "A1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A ticket for the garden bus",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Clerk: Good morning. Where do you want to go?\nMara: To Hill Garden, please.\nClerk: The next bus leaves at ten. It is the number four.\nMara: Is the ticket three pounds?\nClerk: That is a child's ticket. An adult ticket is five pounds.\nMara: One adult ticket, please. Where do I wait?\nClerk: At the stop beside the bank. The journey takes twenty minutes.\nMara: Can I buy food at the garden?\nClerk: There is a café, but it is closed today. Please take a sandwich. The garden closes at six. The last bus back is at half past five.\nMara: Thank you. I have my lunch with me.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "乘客要去哪里？",
+      "options": [
+        "Hill Garden",
+        "The bank",
+        "A school"
+      ],
+      "answers": [
+        "Hill Garden"
+      ],
+      "evidence": "To Hill Garden, please.",
+      "explanation": "目的地是 Hill Garden，银行是候车点附近的地标。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "下一班车几点开？写一个英文单词。",
+      "answers": [
+        "ten"
+      ],
+      "maxWords": 1,
+      "evidence": "The next bus leaves at ten.",
+      "explanation": "ten 是发车时间。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "应乘几路车？写一个英文单词。",
+      "answers": [
+        "four"
+      ],
+      "maxWords": 1,
+      "evidence": "It is the number four.",
+      "explanation": "four 是路线编号，不是票价。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "成人票多少钱？",
+      "options": [
+        "Five pounds",
+        "Three pounds",
+        "Four pounds"
+      ],
+      "answers": [
+        "Five pounds"
+      ],
+      "evidence": "An adult ticket is five pounds.",
+      "explanation": "三镑是儿童票，成人票五镑。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "应该在哪里候车？",
+      "options": [
+        "Inside the café",
+        "At the garden gate",
+        "Beside the bank"
+      ],
+      "answers": [
+        "Beside the bank"
+      ],
+      "evidence": "At the stop beside the bank.",
+      "explanation": "银行旁的站点是起点。",
+      "id": "q5"
+    },
+    {
+      "type": "fill",
+      "prompt": "车程是多少分钟？写一个英文单词。",
+      "answers": [
+        "twenty"
+      ],
+      "maxWords": 1,
+      "evidence": "The journey takes twenty minutes.",
+      "explanation": "twenty 是车程而不是发车钟点。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "为什么要自带食物？",
+      "options": [
+        "The café is closed today.",
+        "There is no café at the garden.",
+        "All food is too expensive."
+      ],
+      "answers": [
+        "The café is closed today."
+      ],
+      "evidence": "There is a café, but it is closed today.",
+      "explanation": "有咖啡馆，但当天不营业；没有价格信息。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "最后一班返程巴士几点？",
+      "options": [
+        "Six",
+        "Half past six",
+        "Half past five"
+      ],
+      "answers": [
+        "Half past five"
+      ],
+      "evidence": "The last bus back is at half past five.",
+      "explanation": "花园六点关门，但末班车五点半。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "152e0fbdd854ba12012d98b8b495aaaab9690ca48322d425df84f6a01c1a77d5",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a1-listen-gb.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-GB",
+  "audioAccent": "英国英语（合成）",
+  "audioVoice": "en-GB-SoniaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 51.144,
+  "audioVoices": [
+    "en-GB-SoniaNeural",
+    "en-GB-RyanNeural"
+  ]
+}

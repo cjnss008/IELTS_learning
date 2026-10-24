@@ -2,7 +2,7 @@
 const {normalize,familyKey}=require('../assets/curriculum-coverage.js');
 const valid=value=>typeof value==='string'&&value.length<=100&&/^[A-Za-z][A-Za-z'’ ().-]*$/.test(value.trim());
 const escape=value=>value.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-function sourceSentence(m,word){const text=m.passage||m.transcript||'',re=new RegExp('(?:^|[^a-z])'+escape(word)+'(?:$|[^a-z])','i');if(!re.test(text))return'';return text.split(/(?<=[.!?])\s+|\n+/).find(s=>re.test(s))?.trim()||'';}
+function sourceSentence(m,word){const text=(m.lexicalContext?m.contextPassage:m.passage||m.transcript)||'',re=new RegExp('(?:^|[^a-z])'+escape(word)+'(?:$|[^a-z])','i');if(!re.test(text))return'';return text.split(/(?<=[.!?])\s+|\n+/).find(s=>re.test(s))?.trim()||'';}
 function extensions(materials){
  const known=new Set(materials.filter(m=>m.skill==='vocabulary').flatMap(m=>m.vocabulary||[]).map(v=>normalize(v.word))),out=[],audit={earlierCandidates:0,earlierAdded:0,omitted:[]};
  for(let week=1;week<=36;week++){

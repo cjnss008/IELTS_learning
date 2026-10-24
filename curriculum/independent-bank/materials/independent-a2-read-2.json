@@ -1,0 +1,143 @@
+{
+  "id": "independent-a2-read-2",
+  "version": "1",
+  "week": 12,
+  "level": "A2",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Borrowing tools from the workshop",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 18,
+  "timeLimitSeconds": 1080,
+  "passage": "A residents' group has opened a tool room in an empty shop. Members can borrow equipment instead of buying things that they may use only once. The room opens on Wednesday evenings and Saturday mornings. New members must visit on a Saturday for a short safety introduction. After that visit, they can borrow tools on either opening day.\n\nThe annual membership fee is twelve pounds. Members also leave a ten-pound deposit when they take a tool away. This deposit is returned when the tool comes back undamaged. Ordinary tools can be borrowed for four days. A ladder has a shorter limit of two days because there is only one ladder in the room. It cannot be reserved more than a week ahead.\n\nPeople can check the online list before visiting, but the list is updated only at the end of each opening session. A tool shown as available might already have been borrowed that evening. To avoid a wasted journey, members should phone the volunteer at the room before setting out. The volunteers explain how tools work, but they do not carry out repairs in members' homes. Please clean tools before returning them. If a tool stops working, tell the volunteer what happened. Do not try to repair it yourself, even if you think the problem is small.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is the main purpose of the tool room?",
+      "options": [
+        "To let residents borrow equipment",
+        "To sell used tools",
+        "To offer home repair visits"
+      ],
+      "answers": [
+        "To let residents borrow equipment"
+      ],
+      "evidence": "Members can borrow equipment instead of buying things that they may use only once.",
+      "explanation": "借用减少偶尔使用工具的购买需求。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "When must a new member make their first visit?",
+      "options": [
+        "On a Wednesday",
+        "On any weekday morning",
+        "On a Saturday"
+      ],
+      "answers": [
+        "On a Saturday"
+      ],
+      "evidence": "New members must visit on a Saturday for a short safety introduction.",
+      "explanation": "周六首次安全介绍是借用前的要求。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "How much is the annual membership fee? Write ONE WORD.",
+      "answers": [
+        "twelve"
+      ],
+      "maxWords": 1,
+      "evidence": "The annual membership fee is twelve pounds.",
+      "explanation": "ten 是押金而不是年费。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "When is the deposit returned?",
+      "options": [
+        "When an undamaged tool is returned",
+        "At the end of the year",
+        "Immediately after booking"
+      ],
+      "answers": [
+        "When an undamaged tool is returned"
+      ],
+      "evidence": "This deposit is returned when the tool comes back undamaged.",
+      "explanation": "押金能否返还取决于工具归还时没有损坏。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "The borrowing limit for the ladder is ____ days. Write ONE WORD.",
+      "answers": [
+        "two"
+      ],
+      "maxWords": 1,
+      "evidence": "A ladder has a shorter limit of two days because there is only one ladder in the room.",
+      "explanation": "普通工具是四天，梯子只有两天。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why might the online list be inaccurate during an opening session?",
+      "options": [
+        "Only new tools appear on it.",
+        "It is updated after the session ends.",
+        "Members can change it themselves."
+      ],
+      "answers": [
+        "It is updated after the session ends."
+      ],
+      "evidence": "the list is updated only at the end of each opening session.",
+      "explanation": "实时借出未即时更新，因此 displayed available 不是保证。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "What should members do before travelling to collect a tool?",
+      "options": [
+        "Telephone the volunteer",
+        "Pay for a repair visit",
+        "Reserve every tool a month ahead"
+      ],
+      "answers": [
+        "Telephone the volunteer"
+      ],
+      "evidence": "members should phone the volunteer at the room before setting out.",
+      "explanation": "打电话可确认实时可借状态，减少白跑。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What should a member do if a tool stops working?",
+      "options": [
+        "Repair it before returning it",
+        "Leave it outside the shop",
+        "Report the problem to a volunteer"
+      ],
+      "answers": [
+        "Report the problem to a volunteer"
+      ],
+      "evidence": "If a tool stops working, tell the volunteer what happened.",
+      "explanation": "必须报告；紧接着明确禁止自行维修，即使认为问题很小。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "b2525ad14dd956691c4926f02dbf67616a827fc756aca49826ac116904ea04c0",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

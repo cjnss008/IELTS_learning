@@ -1,0 +1,139 @@
+{
+  "id": "independent-b1-read-1",
+  "version": "1",
+  "week": 20,
+  "level": "B1",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A quieter bus, a different measure",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 25,
+  "timeLimitSeconds": 1500,
+  "passage": "A fictional town called Merrow tested a new evening bus service for six weeks. The transport team wanted to know whether making journeys quieter would attract passengers who usually avoided buses after work. On three routes, drivers played no radio, phone calls were discouraged, and notices asked passengers to speak softly. The service used the same vehicles and charged the same fares as the ordinary service. No tickets were sold under a special quiet-service brand.\n\nAt first, the team counted all evening passengers. Numbers rose by twelve per cent compared with the previous six weeks. A manager called this a success, but an analyst noticed that a nearby road had been closed during most of the trial. People who normally drove had fewer alternatives. Passenger growth therefore could not by itself show that quieter conditions caused a change in travel habits.\n\nThe team then examined a different record: short surveys completed by people who had travelled on the routes both before and during the trial. Of the eighty repeat passengers who answered, fifty-eight said the journey felt less tiring. This was useful information about their experience, but the survey excluded people who never tried the service. It could not explain why non-users stayed away. Nor did the team know whether the respondents were more interested in quiet travel than the passengers who ignored the survey.\n\nDrivers described another problem. A notice that sounded polite to one passenger could sound unfriendly to someone else. Parents sometimes worried that a young child would be unwelcome, although the notices did not ban children. Rather than asking drivers to judge acceptable noise, the team replaced the general request for quiet with two concrete requests: use headphones and keep phone calls brief. Drivers were asked to record complaints without arguing about personal behaviour.\n\nThe council extended the trial, but it delayed any permanent change. It planned to compare quiet and ordinary journeys on the same routes after the road reopened. The analyst argued that a modest improvement in passenger comfort could still matter, even if the total passenger count did not rise. The aim of the next comparison was to separate that experience from changes caused by the temporary road closure.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Which feature stayed the same during the first trial?",
+      "options": [
+        "The number of routes in the town",
+        "The wording of all notices",
+        "The fare"
+      ],
+      "answers": [
+        "The fare"
+      ],
+      "evidence": "The service used the same vehicles and charged the same fares as the ordinary service.",
+      "explanation": "明确保持不变的是票价与车辆；全镇路线总数未给出。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "Passenger numbers rose by ____ per cent. Write ONE WORD.",
+      "answers": [
+        "twelve"
+      ],
+      "maxWords": 1,
+      "evidence": "Numbers rose by twelve per cent compared with the previous six weeks.",
+      "explanation": "这是观察到的增长，不是安静政策的已证实效果。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Why did the analyst question the manager’s conclusion?",
+      "options": [
+        "A road closure offered another explanation for passenger growth.",
+        "Fares had fallen during the trial.",
+        "All surveys had been lost."
+      ],
+      "answers": [
+        "A road closure offered another explanation for passenger growth."
+      ],
+      "evidence": "People who normally drove had fewer alternatives.",
+      "explanation": "道路关闭使开车者替代选择减少，形成竞争解释。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "How many repeat passengers said the journey was less tiring? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "fifty-eight"
+      ],
+      "maxWords": 2,
+      "evidence": "Of the eighty repeat passengers who answered, fifty-eight said the journey felt less tiring.",
+      "explanation": "eighty 是答卷人数，fifty-eight 是认为没那么累的人数。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "Which group was excluded from the repeat-passenger survey?",
+      "options": [
+        "Passengers who found journeys tiring",
+        "People who never used the trial service",
+        "Passengers who travelled before the trial"
+      ],
+      "answers": [
+        "People who never used the trial service"
+      ],
+      "evidence": "the survey excluded people who never tried the service.",
+      "explanation": "研究对象是前后都乘车且答卷者；没有接触服务的人不在其中。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why were the general quiet notices replaced?",
+      "options": [
+        "People interpreted them in different ways.",
+        "They explicitly banned children.",
+        "They advertised a cheaper fare."
+      ],
+      "answers": [
+        "People interpreted them in different ways."
+      ],
+      "evidence": "A notice that sounded polite to one passenger could sound unfriendly to someone else.",
+      "explanation": "解释差异使笼统要求难执行；原文明确没有禁止儿童。",
+      "id": "q6"
+    },
+    {
+      "type": "fill",
+      "prompt": "The new requests tell people to use ____ and keep calls brief. Write ONE WORD.",
+      "answers": [
+        "headphones"
+      ],
+      "maxWords": 1,
+      "evidence": "use headphones and keep phone calls brief.",
+      "explanation": "新要求具体到耳机和通话长度。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What will the next comparison help the team do?",
+      "options": [
+        "Find out whether drivers can sell branded tickets",
+        "Distinguish comfort effects from the road closure’s effects",
+        "Prove that passenger numbers must rise"
+      ],
+      "answers": [
+        "Distinguish comfort effects from the road closure’s effects"
+      ],
+      "evidence": "The aim of the next comparison was to separate that experience from changes caused by the temporary road closure.",
+      "explanation": "路重开后在相同路线比较，可减少道路关闭带来的混淆。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "fb960830f1c06dc7071fe40880f226fa5a2757010360fc12462b778f6c48677b",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

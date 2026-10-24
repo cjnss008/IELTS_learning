@@ -1,0 +1,160 @@
+{
+  "id": "independent-a2-listen-in",
+  "version": "1",
+  "week": 12,
+  "level": "A2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Borrowing a recorder for fieldwork",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Student: Hello. I need to borrow a recorder for a college interview project.\nTechnician: Have you completed the equipment form?\nStudent: I filled it in online last night. My student number ends in six two one.\nTechnician: I can see it. You asked for a camera as well.\nStudent: That was a mistake. We only need sound, not video.\nTechnician: Fine. The recorder is available from Wednesday. You must return it by four on Friday. We are closed at the weekend.\nStudent: Does it need batteries?\nTechnician: It has a rechargeable battery. Charge it with this cable. A full charge lasts about eight hours, but check the battery before every interview. There is a spare memory card in the case.\nStudent: Can we record in the street?\nTechnician: You can, but traffic may hide people's voices. Try a quiet room first. Always ask people for permission before you record them.\nStudent: How can I learn to use it?\nTechnician: Watch the short training video on the college website. Then make a test recording here before you leave. Headphones are provided so you can check it. If there is a problem later, email the technical team. Do not post the college equipment number on a public forum.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What equipment does the student actually need?",
+      "options": [
+        "A video camera only",
+        "Both a camera and a projector",
+        "A sound recorder"
+      ],
+      "answers": [
+        "A sound recorder"
+      ],
+      "evidence": "We only need sound, not video.",
+      "explanation": "申请相机是误填，实际只需录音。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Which digits are at the end of the student number?",
+      "options": [
+        "621",
+        "612",
+        "216"
+      ],
+      "answers": [
+        "621"
+      ],
+      "evidence": "My student number ends in six two one.",
+      "explanation": "按 six、two、one 的顺序选择621。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "From which day is the recorder available? Write ONE WORD.",
+      "answers": [
+        "Wednesday"
+      ],
+      "maxWords": 1,
+      "evidence": "The recorder is available from Wednesday.",
+      "explanation": "Wednesday 是起借日，Friday 是截止归还日。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "By when must the recorder be returned?",
+      "options": [
+        "Friday evening after six",
+        "Monday morning",
+        "Four on Friday"
+      ],
+      "answers": [
+        "Four on Friday"
+      ],
+      "evidence": "You must return it by four on Friday.",
+      "explanation": "周末关门，因此周五四点前还。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "How is the recorder powered?",
+      "options": [
+        "By a cable that must stay plugged in while recording",
+        "By a rechargeable battery",
+        "By disposable batteries only"
+      ],
+      "answers": [
+        "By a rechargeable battery"
+      ],
+      "evidence": "It has a rechargeable battery.",
+      "explanation": "附线用于充电，未说录音时必须一直插电。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why is a quiet room suggested?",
+      "options": [
+        "Traffic could make voices hard to hear.",
+        "Street interviews are forbidden.",
+        "The memory card cannot be used outside."
+      ],
+      "answers": [
+        "Traffic could make voices hard to hear."
+      ],
+      "evidence": "traffic may hide people's voices.",
+      "explanation": "街访允许，但噪音可能掩盖人声。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "What must happen before recording another person?",
+      "options": [
+        "The equipment number must be posted online.",
+        "The person must watch the training video.",
+        "The person must give permission."
+      ],
+      "answers": [
+        "The person must give permission."
+      ],
+      "evidence": "Always ask people for permission before you record them.",
+      "explanation": "先征得被录者许可。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What should the student do before leaving the equipment room?",
+      "options": [
+        "Send an interview to a public forum",
+        "Make and listen to a test recording",
+        "Buy headphones from the technician"
+      ],
+      "answers": [
+        "Make and listen to a test recording"
+      ],
+      "evidence": "Then make a test recording here before you leave.",
+      "explanation": "提供耳机以检查试录，先当场验证设备。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "f1c3d418e6c3ef61bb40add405141fe597acfd9fbea481902f93d286f26c0a0c",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a2-listen-in.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-IN",
+  "audioAccent": "印度英语（合成）",
+  "audioVoice": "en-IN-NeerjaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 100.776,
+  "audioVoices": [
+    "en-IN-NeerjaNeural",
+    "en-IN-PrabhatNeural"
+  ]
+}

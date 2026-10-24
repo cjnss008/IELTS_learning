@@ -1,0 +1,143 @@
+{
+  "id": "independent-b1-read-2",
+  "version": "1",
+  "week": 20,
+  "level": "B1",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Who is missing from the archive?",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 25,
+  "timeLimitSeconds": 1500,
+  "passage": "When the invented Harbour Street Museum began collecting residents' memories, volunteers placed a recording booth in the entrance hall. Visitors could record a five-minute account of their first job. The project was advertised as a way to preserve ordinary working lives rather than only the careers of famous local people. In its first month, it collected sixty recordings, which was twice the organisers' original target.\n\nListening to the recordings, curator Lila noticed that many speakers had worked in the old shipyard. Their memories were detailed, and their voices would make an attractive exhibition. However, she did not want visitors to assume that shipyard work represented every local person's experience. The booth was beside a display of large model ships, and most of the volunteers who introduced the project were retired shipyard workers. This setting may have encouraged some residents to speak while making others feel that their stories were irrelevant.\n\nThe museum moved the booth to a public library for two afternoons. It also invited shop assistants, cleaners and delivery workers through local community groups. The team did not discard the first recordings. Instead, it kept a record of where and how each contribution had been collected. That record would allow future researchers to examine the collection process rather than treating every recording as if it had arrived under identical conditions.\n\nAnother issue concerned editing. A volunteer wanted to remove pauses so that the exhibition would move faster. Lila agreed to shorten long silences in the public version, but she insisted on preserving unedited files. A pause might be unimportant, or it might show that a speaker was searching for a word or deciding whether to continue. Future users should be able to make their own judgement. Speakers could withdraw permission before the exhibition opened; they could also allow museum storage while refusing public playback.\n\nThe final display included fewer recordings than planned because each voice needed context. A label explained that the collection was an evolving set of personal accounts, not a complete statistical picture of employment. The museum considered the booth a starting point. The number of recordings showed how much had been collected, while the variety of lives represented remained a separate question.",
+  "questions": [
+    {
+      "type": "fill",
+      "prompt": "Each visitor could record an account lasting ____ minutes. Write ONE WORD.",
+      "answers": [
+        "five"
+      ],
+      "maxWords": 1,
+      "evidence": "Visitors could record a five-minute account of their first job.",
+      "explanation": "five-minute 对应五分钟，不能填首月录音数量。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "What did the initial number of recordings show?",
+      "options": [
+        "The collection target had been exceeded.",
+        "Every local occupation was represented.",
+        "The public exhibition was complete."
+      ],
+      "answers": [
+        "The collection target had been exceeded."
+      ],
+      "evidence": "it collected sixty recordings, which was twice the organisers' original target.",
+      "explanation": "达到目标的两倍只说明数量超过预期，不能推定代表性。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Why might shipyard workers have been especially likely to contribute?",
+      "options": [
+        "The museum refused recordings about other jobs.",
+        "Only former shipyard workers could enter the building.",
+        "The booth’s setting and its volunteers made the project familiar to them."
+      ],
+      "answers": [
+        "The booth’s setting and its volunteers made the project familiar to them."
+      ],
+      "evidence": "The booth was beside a display of large model ships, and most of the volunteers who introduced the project were retired shipyard workers.",
+      "explanation": "场所暗示和志愿者身份可能形成选择偏差，未有职业限制。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "To reach other contributors, the booth was moved to a public ____. Write ONE WORD.",
+      "answers": [
+        "library"
+      ],
+      "maxWords": 1,
+      "evidence": "The museum moved the booth to a public library for two afternoons.",
+      "explanation": "library 是改变后的收集地点。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "Why did the team record how each contribution was collected?",
+      "options": [
+        "To make the collection process open to later examination",
+        "To give every speaker the same job title",
+        "To replace the original recordings with labels"
+      ],
+      "answers": [
+        "To make the collection process open to later examination"
+      ],
+      "evidence": "That record would allow future researchers to examine the collection process",
+      "explanation": "记录收集过程为日后的判断提供上下文。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why were unedited recordings retained?",
+      "options": [
+        "Silences were always evidence of distress.",
+        "The museum could not edit audio files.",
+        "Future users might interpret pauses differently."
+      ],
+      "answers": [
+        "Future users might interpret pauses differently."
+      ],
+      "evidence": "Future users should be able to make their own judgement.",
+      "explanation": "停顿有多种可能意义，保存原音让后人自己判断，不能断言全是痛苦。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Which permission choice was available to speakers?",
+      "options": [
+        "Withdrawal only after the exhibition opened",
+        "Storage without public playback",
+        "Public playback was compulsory after recording"
+      ],
+      "answers": [
+        "Storage without public playback"
+      ],
+      "evidence": "they could also allow museum storage while refusing public playback.",
+      "explanation": "存储和公开播放可以分别授权。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "Which statement best expresses the final label’s purpose?",
+      "options": [
+        "To prevent a partial collection being mistaken for a complete picture",
+        "To claim the collection represented all local employment",
+        "To explain why personal memories were unusable"
+      ],
+      "answers": [
+        "To prevent a partial collection being mistaken for a complete picture"
+      ],
+      "evidence": "the collection was an evolving set of personal accounts, not a complete statistical picture of employment.",
+      "explanation": "标签提醒观众，个人叙述集不是全体就业的统计图景。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "a0a2d20425b904f0c860c64ffe69be4a1cbe355f68ce9f4e43650c66b6c460aa",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

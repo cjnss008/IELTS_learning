@@ -1,0 +1,139 @@
+{
+  "id": "independent-a1-read-2",
+  "version": "1",
+  "week": 5,
+  "level": "A1",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A note for a new flatmate",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 12,
+  "timeLimitSeconds": 720,
+  "passage": "Hi Leo,\nWelcome to our flat. Your room is the small room on the left. The blue key is for the front door. The red key is for your room. We eat dinner at seven, but on Friday we eat at eight. There is milk in the fridge for everyone. Please write your name on your other food. We wash clothes on Sunday. The machine is in the bathroom. Please keep your bike in the garden. Bikes cannot stay in the hall. I work in a shop in the morning. If you need help before lunch, please send me a text. My phone is quiet at work, so do not call.\nAnna",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Leo 的房间是哪间？",
+      "options": [
+        "The large room on the right",
+        "The room next to the garden",
+        "The small room on the left"
+      ],
+      "answers": [
+        "The small room on the left"
+      ],
+      "evidence": "Your room is the small room on the left.",
+      "explanation": "small 和 on the left 都是房间信息。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "前门用什么颜色的钥匙？写一个英文单词。",
+      "answers": [
+        "blue"
+      ],
+      "maxWords": 1,
+      "evidence": "The blue key is for the front door.",
+      "explanation": "red 是房间钥匙，前门是 blue。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "星期五晚饭几点？",
+      "options": [
+        "Eight",
+        "Seven",
+        "Six"
+      ],
+      "answers": [
+        "Eight"
+      ],
+      "evidence": "We eat dinner at seven, but on Friday we eat at eight.",
+      "explanation": "Friday 是七点惯例的例外。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "哪一样食物供大家共用？",
+      "options": [
+        "All food in the fridge",
+        "Food with Anna’s name",
+        "Milk"
+      ],
+      "answers": [
+        "Milk"
+      ],
+      "evidence": "There is milk in the fridge for everyone.",
+      "explanation": "只有牛奶明确是大家共用；其他食物要署名。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "洗衣日是星期几？写原文英文。",
+      "answers": [
+        "Sunday"
+      ],
+      "maxWords": 1,
+      "evidence": "We wash clothes on Sunday.",
+      "explanation": "机器位置是 bathroom，洗衣日是 Sunday。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "洗衣机在哪里？",
+      "options": [
+        "In the bathroom",
+        "In the kitchen",
+        "In the garden"
+      ],
+      "answers": [
+        "In the bathroom"
+      ],
+      "evidence": "The machine is in the bathroom.",
+      "explanation": "machine 指前句所说洗衣服的机器。",
+      "id": "q6"
+    },
+    {
+      "type": "fill",
+      "prompt": "自行车应停在什么地方？写一个英文单词。",
+      "answers": [
+        "garden"
+      ],
+      "maxWords": 1,
+      "evidence": "Please keep your bike in the garden.",
+      "explanation": "hall 是禁止停放处，garden 才是指定位置。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "午饭前需要帮助，Leo 应怎样联系 Anna？",
+      "options": [
+        "Visit her at home",
+        "Send a text",
+        "Call her phone"
+      ],
+      "answers": [
+        "Send a text"
+      ],
+      "evidence": "If you need help before lunch, please send me a text.",
+      "explanation": "工作时手机静音，因此应发短信而不是打电话。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "d3892df2c4320b0290846c978ecce910849e2f26676920fbdf85b2de722689a4",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

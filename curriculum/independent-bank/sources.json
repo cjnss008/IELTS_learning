@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "checkedDate": "2026-10-25",
+  "content": {
+    "kind": "original",
+    "rights": "All new passages, transcripts, questions, explanations, lexical contexts and chart data are project-original AI-assisted educational materials. Scenarios, locations and numerical data are simulated. No IELTS sample task, Microsoft article or other third-party article is reproduced or adapted.",
+    "authoringSources": ["tools/independent-bank.cjs", "tools/lexical-contexts.cjs"],
+    "review": "Codex author self-review; not a human examiner review, empirical difficulty calibration or learning-outcome validation."
+  },
+  "references": [
+    {
+      "id": "microsoft-voice-locales",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+      "issuer": "Microsoft Learn",
+      "use": "Metadata check only. Standard synthetic voices: en-GB Sonia/Ryan, en-US Aria/Guy, en-AU Natasha/William, en-IN Neerja/Prabhat. Locale labels do not establish that a human speaker was recorded or that human-accent authenticity was independently audited.",
+      "reproduction": "No article text, voice samples or diagrams copied."
+    },
+    {
+      "id": "ielts-academic-task1-format",
+      "url": "https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing",
+      "issuer": "IELTS",
+      "use": "Task-format check: visual-information report, minimum 150 words and approximately 20 minutes. The seven local categories are a practice taxonomy, not a claim that IELTS publishes exactly seven official categories.",
+      "reproduction": "No official sample question, chart, answer or marking example copied; IELTS copyright is not treated as a reuse licence."
+    },
+    {
+      "id": "microsoft-service-terms",
+      "url": "https://www.microsoft.com/en-us/servicesagreement",
+      "issuer": "Microsoft",
+      "use": "Terms check for synthetic output. Microsoft does not claim ownership of AI-service input/output under these terms, while users remain responsible for their rights and use. This is not an open licence to Microsoft voices or service access and is not a legal determination about every distribution context.",
+      "reproduction": "Generated audio uses only project-original text, records its provider and remains explicitly labelled synthetic. No person is impersonated."
+    },
+    {
+      "id": "edge-tts-authoring-tool",
+      "url": "https://github.com/rany2/edge-tts",
+      "licenceUrl": "https://github.com/rany2/edge-tts/blob/master/LICENSE",
+      "issuer": "rany2/edge-tts project",
+      "use": "Optional authoring-only Python package for the existing Microsoft online speech service. Authoring dependencies are installed only in ignored work/authoring-python; the learning application needs neither Python nor pip. Version used is recorded in audio metadata.",
+      "reproduction": "The package is not vendored into the learning runtime. Current upstream licence identifies LGPLv3 for most package files; its subtitle composer has a separate MIT notice. Neither is represented as an audio-output open licence."
+    }
+  ],
+  "audioBoundary": "All sixteen new listening tracks are synthesized, not authentic human recordings. Four locale labels are verified from official voice metadata. Existing NOAA recordings remain separate and are not counted as verified multi-accent human evidence. No fabricated word-level or sentence-level timestamps are supplied.",
+  "integrityBoundary": "Independent material IDs are excluded from core days, ordinary additional practice, gate forms and final reserve forms. Catalogue previews contain metadata only. Starting, assisting and submitting use the existing course-player exposure, draft, original-work and mistake interfaces. Static local assets are not a cryptographic exam vault."
+}

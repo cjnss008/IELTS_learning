@@ -1,0 +1,156 @@
+{
+  "id": "independent-b1-listen-gb",
+  "version": "1",
+  "week": 20,
+  "level": "B1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Planning a pottery workshop",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Coordinator: Thanks for helping with next month's pottery workshop, Ben. The original plan was to use the upstairs studio, but the lift will be serviced that week. We have booked the ground-floor dining room instead. We can move the tables, and everyone will be able to get in without using stairs.\nBen: Are we keeping the original date?\nCoordinator: Yes, Saturday the fourteenth. The session starts at ten, but helpers should arrive at nine to protect the floor. Please bring old towels. Plastic sheets slide too easily on this surface.\nBen: How many people can attend?\nCoordinator: The room can hold twenty, but the tutor wants a maximum of twelve beginners so that she can check everyone's technique. We have nine bookings so far. Do not advertise twenty places just because we have twenty chairs.\nBen: What will people make?\nCoordinator: A small bowl. We considered mugs, but handles need more time than we have. The tutor will demonstrate first, and then people will work on their own pieces. They must wear closed shoes. We provide aprons.\nBen: Can they take the bowls home that day?\nCoordinator: No. They need to dry and then go into the kiln at the tutor's workshop. Participants can collect them from the library two weeks later. If a bowl cracks during firing, the tutor will explain what happened, but we cannot promise a replacement.\nBen: What about payment?\nCoordinator: The fee includes clay and firing. The café is closed, so tea is included too. We will ask people to bring lunch. If someone cancels at least three days before the session, we can return the fee. Later cancellations receive a refund only if another person takes the place.\nBen: I will put those details in the confirmation email.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why has the venue moved to the ground floor?",
+      "options": [
+        "The lift will be out of use.",
+        "The upstairs studio has fewer tables.",
+        "The tutor wants to use a kiln in the dining room."
+      ],
+      "answers": [
+        "The lift will be out of use."
+      ],
+      "evidence": "the lift will be serviced that week.",
+      "explanation": "电梯维护使楼上不便，换到无需楼梯的地点。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "What should helpers bring to protect the floor? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "old towels"
+      ],
+      "maxWords": 2,
+      "evidence": "Please bring old towels.",
+      "explanation": "塑料布容易滑，旧毛巾才是要求。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "What is the maximum number of participants?",
+      "options": [
+        "Nine",
+        "Twelve",
+        "Twenty"
+      ],
+      "answers": [
+        "Twelve"
+      ],
+      "evidence": "the tutor wants a maximum of twelve beginners",
+      "explanation": "二十是房间容量、九是当前报名，教学上限十二。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Why will participants make bowls rather than mugs?",
+      "options": [
+        "Handles would require too much time.",
+        "Bowls do not need firing.",
+        "Mugs cannot be made from the supplied clay."
+      ],
+      "answers": [
+        "Handles would require too much time."
+      ],
+      "evidence": "handles need more time than we have.",
+      "explanation": "时间不足以做杯把，未说杯子材料不适合。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "Participants must wear ____ shoes. Write ONE WORD.",
+      "answers": [
+        "closed"
+      ],
+      "maxWords": 1,
+      "evidence": "They must wear closed shoes.",
+      "explanation": "围裙由主办方提供，但鞋应为包脚款。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Where will finished pieces be collected?",
+      "options": [
+        "At the tutor’s workshop",
+        "At the library",
+        "At the dining room that afternoon"
+      ],
+      "answers": [
+        "At the library"
+      ],
+      "evidence": "Participants can collect them from the library two weeks later.",
+      "explanation": "烧制在老师工坊，领取在图书馆，二者不同。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "What does the fee include?",
+      "options": [
+        "Clay, firing and tea",
+        "Clay and a replacement for every cracked bowl",
+        "Firing and lunch"
+      ],
+      "answers": [
+        "Clay, firing and tea"
+      ],
+      "evidence": "The fee includes clay and firing. The café is closed, so tea is included too.",
+      "explanation": "包括泥、烧制和茶；午饭自备，不保证裂损替换。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "When can a late cancellation receive a refund?",
+      "options": [
+        "Whenever the bowl cracks",
+        "Only when the dining room is full",
+        "When another participant takes the place"
+      ],
+      "answers": [
+        "When another participant takes the place"
+      ],
+      "evidence": "Later cancellations receive a refund only if another person takes the place.",
+      "explanation": "不足提前三天的取消，需要有人补位才退款。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "c39dc8414a35b711d9e84219a3017959396f3824fa2f58f2e049b0e51d9b0d69",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b1-listen-gb.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-GB",
+  "audioAccent": "英国英语（合成）",
+  "audioVoice": "en-GB-SoniaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 111.36,
+  "audioVoices": [
+    "en-GB-SoniaNeural",
+    "en-GB-RyanNeural"
+  ]
+}

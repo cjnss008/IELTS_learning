@@ -1,0 +1,151 @@
+{
+  "id": "independent-a2-listen-us",
+  "version": "1",
+  "week": 12,
+  "level": "A2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Training for new library volunteers",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Hello, and thank you for volunteering at Westfield Library. This is a training session for our Saturday reading club. Children arrive at ten, but please be here at nine forty-five so that we can arrange the chairs. The club meets in the room upstairs. We used the children's area last month, but it was too noisy for reading aloud.\n\nEach volunteer will work with three children. The children choose their own story, and your job is to help them understand it. Please do not turn the session into a spelling test. If a child does not want to read aloud, you can read a page first and then invite the child to join in. Do not insist.\n\nThere is a break after forty minutes. Water is available in the room. Snacks are not allowed there because a child in the club has a serious food allergy. Parents collect the children at eleven thirty. If a parent is late, tell the librarian at the front desk. Never leave a child waiting alone. You will receive a blue volunteer badge today. Please return it to the desk when you leave; we use the same badges each week. If you cannot attend a future session, email me by Thursday evening.",
+  "questions": [
+    {
+      "type": "fill",
+      "prompt": "Volunteers should arrive at ____. Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "nine forty-five"
+      ],
+      "maxWords": 2,
+      "evidence": "please be here at nine forty-five",
+      "explanation": "十点是孩子到达时间，志愿者应提前十五分钟。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Where will the club meet?",
+      "options": [
+        "In the upstairs room",
+        "In the children’s area",
+        "At the front desk"
+      ],
+      "answers": [
+        "In the upstairs room"
+      ],
+      "evidence": "The club meets in the room upstairs.",
+      "explanation": "儿童区是上个月使用的地点，现改到楼上。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "How many children will each volunteer work with? Write ONE WORD.",
+      "answers": [
+        "three"
+      ],
+      "maxWords": 1,
+      "evidence": "Each volunteer will work with three children.",
+      "explanation": "每位志愿者三名孩子。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What should a volunteer do if a child is reluctant to read aloud?",
+      "options": [
+        "Give the child a spelling test",
+        "Read first and invite the child to join in",
+        "Insist that the child finishes a page"
+      ],
+      "answers": [
+        "Read first and invite the child to join in"
+      ],
+      "evidence": "you can read a page first and then invite the child to join in.",
+      "explanation": "引导而不强迫，且不做拼写测验。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "Why are snacks prohibited in the room?",
+      "options": [
+        "A child has a food allergy.",
+        "The break is too short.",
+        "The librarian sells food downstairs."
+      ],
+      "answers": [
+        "A child has a food allergy."
+      ],
+      "evidence": "because a child in the club has a serious food allergy.",
+      "explanation": "明确原因是食品过敏，不是卫生或付费安排。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "What should a volunteer do when a parent is late?",
+      "options": [
+        "Send the child home alone",
+        "Wait outside without telling anyone",
+        "Tell the librarian at the front desk"
+      ],
+      "answers": [
+        "Tell the librarian at the front desk"
+      ],
+      "evidence": "If a parent is late, tell the librarian at the front desk.",
+      "explanation": "通知管理员且不得让孩子独自等待。",
+      "id": "q6"
+    },
+    {
+      "type": "fill",
+      "prompt": "What colour is the volunteer badge? Write ONE WORD.",
+      "answers": [
+        "blue"
+      ],
+      "maxWords": 1,
+      "evidence": "You will receive a blue volunteer badge today.",
+      "explanation": "徽章是蓝色。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "By when should an absence be reported?",
+      "options": [
+        "Thursday evening",
+        "Saturday morning",
+        "Friday noon"
+      ],
+      "answers": [
+        "Thursday evening"
+      ],
+      "evidence": "email me by Thursday evening.",
+      "explanation": "通过电子邮件，截止周四晚。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "2a10d3201bd06f1a6459b4cdf9ef04be5c48b42ddeb1db3235839d77a51bcf36",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a2-listen-us.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-US",
+  "audioAccent": "美国英语（合成）",
+  "audioVoice": "en-US-AriaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 83.088,
+  "audioVoices": [
+    "en-US-AriaNeural"
+  ]
+}

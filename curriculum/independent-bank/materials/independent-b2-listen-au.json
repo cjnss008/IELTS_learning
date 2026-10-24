@@ -1,0 +1,159 @@
+{
+  "id": "independent-b2-listen-au",
+  "version": "1",
+  "week": 32,
+  "level": "B2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Evaluating a neighbourhood rain garden",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Lecturer: Today we will use a fictional rain-garden project to examine how performance claims depend on measurement choices. A rain garden is a planted depression designed to receive runoff from nearby hard surfaces. In our example, a council installed one beside a car park. Water enters through a lowered section of kerb, passes through the planted soil and can leave through an overflow when the system is full.\n\nThe project report first stated that the garden could hold forty cubic metres. That was a design-capacity estimate based on the proposed geometry. It was not an observation that forty cubic metres had been retained during a storm. Construction changed the final shape slightly, so the team surveyed the completed basin before using the capacity estimate in a performance calculation.\n\nFor the first three storms, staff recorded the depth of water in the garden at the end of each event. Those readings showed water level at particular moments, but not the total volume of runoff treated. Water could infiltrate while new water entered, meaning that flow over the whole event might exceed the water stored at any single moment. Conversely, a deep pool that remained for a long time could indicate slow drainage rather than successful rapid treatment. Depth alone did not answer every question.\n\nThe engineers added measurements at the inlet and overflow. These helped estimate how much water entered and how much bypassed treatment. They also recorded rainfall near the site. Using a distant airport's rainfall total had seemed convenient, but short storms could differ across the area. A site could appear unusually effective simply because it had received less rain than the reference station.\n\nMaintenance created another source of variation. Leaves sometimes blocked the kerb opening, so less runoff entered the garden. If the report counted only water reaching the inlet sensor, that blockage could disappear from the performance story. The council therefore kept a separate maintenance log and recorded when the entrance was obstructed. A system that treats incoming water well may still perform poorly for the car park if much of the runoff cannot enter.\n\nFinally, the team distinguished drainage performance from ecological value. They counted plant survival and observed insect visits, but they did not convert those observations into a claim about the health of the whole local ecosystem. The garden might provide several benefits, each requiring suitable evidence. One attractive summary score would be easier to advertise, but it could hide a failure that mattered for a particular purpose. The revised report kept separate indicators and explained which conclusions each indicator could support.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is the purpose of the overflow in the example?",
+      "options": [
+        "To measure every insect visit",
+        "To let water leave when the system is full",
+        "To prevent any water entering the soil"
+      ],
+      "answers": [
+        "To let water leave when the system is full"
+      ],
+      "evidence": "can leave through an overflow when the system is full.",
+      "explanation": "溢流口在系统满时导出水，不是入口或生物指标。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "What did forty cubic metres initially represent?",
+      "options": [
+        "Estimated capacity from the proposed design",
+        "Observed retention in every storm",
+        "The volume of rain at the airport"
+      ],
+      "answers": [
+        "Estimated capacity from the proposed design"
+      ],
+      "evidence": "a design-capacity estimate based on the proposed geometry.",
+      "explanation": "设计容量不是已测得的实际处理量。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Why can total treated flow exceed water stored at one moment?",
+      "options": [
+        "The garden creates additional rain.",
+        "Overflow water always returns to the inlet.",
+        "Water can infiltrate while further water enters."
+      ],
+      "answers": [
+        "Water can infiltrate while further water enters."
+      ],
+      "evidence": "Water could infiltrate while new water entered",
+      "explanation": "连续进出使事件累计流量不同于瞬时存量。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What might a deep pool remaining for a long time indicate?",
+      "options": [
+        "An empty overflow channel",
+        "Slow drainage",
+        "Guaranteed rapid treatment"
+      ],
+      "answers": [
+        "Slow drainage"
+      ],
+      "evidence": "could indicate slow drainage rather than successful rapid treatment.",
+      "explanation": "长时间深积水也可能是排水慢，不能只看水深判成功。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "Why was local rainfall recorded?",
+      "options": [
+        "Short storms might differ from those at the distant airport.",
+        "Airport rain always falls into the car park.",
+        "Rainfall totals cannot be measured near a garden."
+      ],
+      "answers": [
+        "Short storms might differ from those at the distant airport."
+      ],
+      "evidence": "short storms could differ across the area.",
+      "explanation": "远站数据可能不代表场地实际降雨。",
+      "id": "q5"
+    },
+    {
+      "type": "fill",
+      "prompt": "What sometimes blocked the kerb opening? Write ONE WORD.",
+      "answers": [
+        "Leaves"
+      ],
+      "maxWords": 1,
+      "evidence": "Leaves sometimes blocked the kerb opening",
+      "explanation": "落叶堵入口，使径流难以进入。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Why keep the maintenance log separate?",
+      "options": [
+        "Maintenance must never appear in a performance report.",
+        "Inlet measurements could overlook runoff prevented from entering.",
+        "Blocked entrances prove the soil is ineffective."
+      ],
+      "answers": [
+        "Inlet measurements could overlook runoff prevented from entering."
+      ],
+      "evidence": "that blockage could disappear from the performance story.",
+      "explanation": "仅计算成功入园水会漏掉入口堵塞造成的整体服务失败。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "Why did the revised report retain separate indicators?",
+      "options": [
+        "Different benefits and failures require different supporting evidence.",
+        "A single score would necessarily be mathematically wrong.",
+        "Plant survival alone measures the whole ecosystem."
+      ],
+      "answers": [
+        "Different benefits and failures require different supporting evidence."
+      ],
+      "evidence": "each requiring suitable evidence.",
+      "explanation": "没有断言所有综合分数学错误，重点在多目标证据与缺陷不被隐藏。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "d2966d03f58f6935ea2d68a92a389ae4ada09c4ee329e2d96a67706936bd0206",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b2-listen-au.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-AU",
+  "audioAccent": "澳大利亚英语（合成）",
+  "audioVoice": "en-AU-NatashaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 175.584,
+  "audioVoices": [
+    "en-AU-NatashaNeural"
+  ]
+}

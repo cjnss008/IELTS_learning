@@ -1,0 +1,156 @@
+{
+  "id": "independent-b2-listen-us",
+  "version": "1",
+  "week": 32,
+  "level": "B2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A proposal for library occupancy sensors",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Researcher: We would like to evaluate whether the library's new study area is used as intended. The building team has offered occupancy sensors for each desk. They detect whether a seat is occupied but do not record images or sound.\nEthics Adviser: What question would the data answer?\nResearcher: We could calculate the proportion of available desk time that is occupied. The team initially wanted to describe that as student engagement, but we cannot tell whether a seated person is studying, resting or waiting for a friend. I have changed the term to desk occupancy.\nEthics Adviser: Good. What about the sensors' accuracy?\nResearcher: We will compare a sample of sensor readings with brief manual counts. A bag left on a chair might be detected as a person, while someone standing beside a desk might not register. We need to estimate these errors before treating every signal as exact. The checking observers will count occupied seats, without recording names or screen content.\nEthics Adviser: How will you compare the old and new layouts?\nResearcher: We have records from the previous month, but that month included examinations. A direct comparison could confuse the layout effect with seasonal demand. We therefore plan to compare matching weeks next term and note any closures or changes in opening hours. That does not remove every difference, but it makes the comparison more interpretable.\nEthics Adviser: Are you going to publish a live display of empty desks?\nResearcher: That is a separate proposal. The research dataset will be grouped into hourly summaries, with no individual desk history released publicly. Even without names, an exact sequence at one desk might reveal someone's routine when combined with other observations. We are not claiming that removing names makes every use risk-free.\nEthics Adviser: Who can access the raw records?\nResearcher: Only the named project analysts, for a checking period of six months. After that, the raw records will be deleted and the aggregated results retained. The retention schedule will be in the information notice. Staff should not promise immediate deletion if an equipment fault delays the process; they must document the delay and notify the data manager.\nEthics Adviser: And how will students be informed?\nResearcher: Notices at the entrance and in the study area will explain what is collected, why and for how long. We will provide a contact for questions. A small link hidden on the library website would not be enough for people who enter without visiting that page.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What do the proposed sensors directly measure?",
+      "options": [
+        "How engaged each student is",
+        "What is displayed on computer screens",
+        "Whether desk seats are occupied"
+      ],
+      "answers": [
+        "Whether desk seats are occupied"
+      ],
+      "evidence": "They detect whether a seat is occupied but do not record images or sound.",
+      "explanation": "直接观察量是占座信号，不能推断学习投入。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why was “student engagement” replaced with “desk occupancy”?",
+      "options": [
+        "The sensors identify every student by name.",
+        "The signal cannot distinguish studying from other seated activities.",
+        "The library no longer allows studying."
+      ],
+      "answers": [
+        "The signal cannot distinguish studying from other seated activities."
+      ],
+      "evidence": "we cannot tell whether a seated person is studying, resting or waiting for a friend.",
+      "explanation": "命名应与测量范围一致。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "Sensor readings will be checked against brief manual ____. Write ONE WORD.",
+      "answers": [
+        "counts"
+      ],
+      "maxWords": 1,
+      "evidence": "compare a sample of sensor readings with brief manual counts.",
+      "explanation": "人工计数作为部分抽查，不记录个人屏幕内容。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What weakens a direct comparison with the previous month?",
+      "options": [
+        "The old layout had no desks.",
+        "Every manual count was wrong.",
+        "It included an examination period."
+      ],
+      "answers": [
+        "It included an examination period."
+      ],
+      "evidence": "that month included examinations.",
+      "explanation": "考试期需求可能不同，不能把全部差异归因于布局。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "What level of data will be available in the public research dataset?",
+      "options": [
+        "Names linked to sensor signals",
+        "Hourly summaries",
+        "Exact public histories of individual desks"
+      ],
+      "answers": [
+        "Hourly summaries"
+      ],
+      "evidence": "The research dataset will be grouped into hourly summaries",
+      "explanation": "只公开分时汇总，不公开单桌精确序列。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why could an unnamed desk history still pose a privacy issue?",
+      "options": [
+        "It might reveal a routine when linked with other observations.",
+        "It necessarily contains a student’s screen image.",
+        "Anonymous records can never be analysed."
+      ],
+      "answers": [
+        "It might reveal a routine when linked with other observations."
+      ],
+      "evidence": "an exact sequence at one desk might reveal someone's routine when combined with other observations.",
+      "explanation": "组合其他观察可能重新关联个体作息，去名不是完整保证。",
+      "id": "q6"
+    },
+    {
+      "type": "fill",
+      "prompt": "How long is the raw-record checking period? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "six months"
+      ],
+      "maxWords": 2,
+      "evidence": "for a checking period of six months.",
+      "explanation": "这是原始记录核对保留期，之后留汇总数据。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "Why are notices required in the building?",
+      "options": [
+        "Only staff can read the online notice.",
+        "Some users will not have seen the website.",
+        "The library wants to conceal the retention period."
+      ],
+      "answers": [
+        "Some users will not have seen the website."
+      ],
+      "evidence": "people who enter without visiting that page.",
+      "explanation": "现场通知覆盖未先浏览网页的进入者。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "fd96d5e51880a4ce404dc0f476fdbffd77f111fa31053d04ce7f545a61838c8a",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b2-listen-us.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-US",
+  "audioAccent": "美国英语（合成）",
+  "audioVoice": "en-US-AriaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 157.848,
+  "audioVoices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "id": "independent-a2-listen-au",
+  "version": "1",
+  "week": 12,
+  "level": "A2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Booking a coast walk",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Guide: Coast Walks, this is Rachel.\nOwen: I would like to book two places for the walk on Sunday. I saw that it starts at the beach café.\nGuide: We have changed the meeting point. The café is being painted, so please meet at the bus shelter opposite it. The start time is still eight thirty.\nOwen: Is it a difficult walk?\nGuide: The whole route is six kilometres. The first part is flat, but there are steps near the lighthouse. We stop for a short rest at the top. Allow three hours, including the break.\nOwen: What do we need to bring?\nGuide: Water and a hat. There is very little shade. Wear shoes with a good grip. We do not recommend sandals. I can lend you a rain jacket if the weather changes.\nOwen: How much is it?\nGuide: Eighteen dollars per adult. That includes a bus ticket back to the starting point. You can pay me on the day. Please send your mobile number by email today so I can contact you if the walk is cancelled.\nOwen: Does light rain mean it is cancelled?\nGuide: No, but we cancel for thunderstorms. We never take a group onto the exposed path when there is lightning.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is the new meeting point?",
+      "options": [
+        "Beside the lighthouse",
+        "The bus shelter opposite the café",
+        "Inside the beach café"
+      ],
+      "answers": [
+        "The bus shelter opposite the café"
+      ],
+      "evidence": "please meet at the bus shelter opposite it.",
+      "explanation": "it 指前文咖啡馆，集合点在其对面公交候车亭。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "What time does the walk start? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "eight thirty"
+      ],
+      "maxWords": 2,
+      "evidence": "The start time is still eight thirty.",
+      "explanation": "集合点变更，时间未变。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "How long is the whole route in kilometres? Write ONE WORD.",
+      "answers": [
+        "six"
+      ],
+      "maxWords": 1,
+      "evidence": "The whole route is six kilometres.",
+      "explanation": "三小时是含休息的时间，不是距离。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Which part has steps?",
+      "options": [
+        "The path inside the café",
+        "The part near the lighthouse",
+        "The entire first section"
+      ],
+      "answers": [
+        "The part near the lighthouse"
+      ],
+      "evidence": "there are steps near the lighthouse.",
+      "explanation": "开头路段平坦，灯塔附近有台阶。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "Why does the guide advise bringing a hat?",
+      "options": [
+        "There is little shade.",
+        "Rain jackets are unavailable.",
+        "All walkers must wear a uniform."
+      ],
+      "answers": [
+        "There is little shade."
+      ],
+      "evidence": "There is very little shade.",
+      "explanation": "帽子应对少树荫；雨衣另可借。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "What is included in the adult price?",
+      "options": [
+        "A pair of walking shoes",
+        "Lunch at the café",
+        "The return bus ticket"
+      ],
+      "answers": [
+        "The return bus ticket"
+      ],
+      "evidence": "That includes a bus ticket back to the starting point.",
+      "explanation": "费用包括回起点的巴士，不含其他物品。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "What must Owen email today?",
+      "options": [
+        "A weather forecast",
+        "His mobile number",
+        "Proof of payment"
+      ],
+      "answers": [
+        "His mobile number"
+      ],
+      "evidence": "Please send your mobile number by email today",
+      "explanation": "留下手机号码供取消时联系，不要求提前付款。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "Which weather causes cancellation?",
+      "options": [
+        "Thunderstorms",
+        "All light rain",
+        "Cloudy weather"
+      ],
+      "answers": [
+        "Thunderstorms"
+      ],
+      "evidence": "we cancel for thunderstorms.",
+      "explanation": "小雨不会自动取消，雷暴才会。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "09a1a72e9c731183ec44893b57860bc5bee92221186d5634306ecab83ba07c89",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a2-listen-au.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-AU",
+  "audioAccent": "澳大利亚英语（合成）",
+  "audioVoice": "en-AU-NatashaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 83.76,
+  "audioVoices": [
+    "en-AU-NatashaNeural",
+    "en-AU-WilliamNeural"
+  ]
+}

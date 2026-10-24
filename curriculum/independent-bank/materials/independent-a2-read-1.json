@@ -1,0 +1,139 @@
+{
+  "id": "independent-a2-read-1",
+  "version": "1",
+  "week": 12,
+  "level": "A2",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "The mobile library changes its route",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 18,
+  "timeLimitSeconds": 1080,
+  "passage": "The yellow library bus visits four villages. Last winter, the driver often arrived late in Brook End because the bridge was closed. The bridge is open again, but the library is keeping its new route. Most passengers said the new stop near the bakery was easier to reach than the old stop by the river.\n\nFrom next Monday, the bus will visit Brook End on Tuesday instead of Thursday. It will stay from 10.30 until 12.00. Readers can borrow six books for three weeks. Children do not need to pay for a library card. Adults pay two pounds for a first card, but replacing a lost card costs one pound for everyone.\n\nThe bus carries some large-print books. If readers want a book that is not on the bus, they should request it by telephone by Friday. The staff will bring it the following week if it is available. The bus has no printer, so printing still requires a visit to the main library. People returning books do not have to wait in the borrowing queue. They can put their books in the green box beside the driver's seat. The box is inside the bus and is only available during the visit.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why did the bus often arrive late last winter?",
+      "options": [
+        "A bridge was closed.",
+        "The driver changed every week.",
+        "The library had too few books."
+      ],
+      "answers": [
+        "A bridge was closed."
+      ],
+      "evidence": "Last winter, the driver often arrived late in Brook End because the bridge was closed.",
+      "explanation": "晚到的明确原因是桥梁关闭，不是停靠点偏好。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why is the new stop being kept?",
+      "options": [
+        "The bridge is still closed.",
+        "The bakery pays for the bus.",
+        "Most passengers find it easier to reach."
+      ],
+      "answers": [
+        "Most passengers find it easier to reach."
+      ],
+      "evidence": "Most passengers said the new stop near the bakery was easier to reach than the old stop by the river.",
+      "explanation": "桥已重开，保留新站的原因是更容易到达；没有 bakery 资助的信息。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "On which day will the bus visit Brook End? Write ONE WORD.",
+      "answers": [
+        "Tuesday"
+      ],
+      "maxWords": 1,
+      "evidence": "the bus will visit Brook End on Tuesday instead of Thursday.",
+      "explanation": "instead of 表示原来的 Thursday 被 Tuesday 取代。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "For how many weeks can readers keep books? Write ONE WORD.",
+      "answers": [
+        "three"
+      ],
+      "maxWords": 1,
+      "evidence": "Readers can borrow six books for three weeks.",
+      "explanation": "six 是可借册数，three 是借期。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "Who pays one pound for a replacement card?",
+      "options": [
+        "Only adult readers",
+        "Only children",
+        "Anyone who loses a card"
+      ],
+      "answers": [
+        "Anyone who loses a card"
+      ],
+      "evidence": "replacing a lost card costs one pound for everyone.",
+      "explanation": "首次办卡费用按年龄不同，补卡费用则适用于所有人。",
+      "id": "q5"
+    },
+    {
+      "type": "fill",
+      "prompt": "Requests for books must be made by which day? Write ONE WORD.",
+      "answers": [
+        "Friday"
+      ],
+      "maxWords": 1,
+      "evidence": "they should request it by telephone by Friday.",
+      "explanation": "by Friday 是申请截止时间，而非领书日期。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Which service is unavailable on the bus?",
+      "options": [
+        "Printing",
+        "Borrowing large-print books",
+        "Returning books"
+      ],
+      "answers": [
+        "Printing"
+      ],
+      "evidence": "The bus has no printer, so printing still requires a visit to the main library.",
+      "explanation": "车上有大字书与还书箱，但没有打印机。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "How can people return books without joining the queue?",
+      "options": [
+        "Leave books beside the bakery",
+        "Use the driver’s seat as a shelf",
+        "Use a box inside the bus"
+      ],
+      "answers": [
+        "Use a box inside the bus"
+      ],
+      "evidence": "They can put their books in the green box beside the driver's seat.",
+      "explanation": "还书箱位于车内、驾驶座旁，不能在营业时间之外把书留在外面。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "7e8b9b869f7f596361c0614ce91fd723abd98e603be475f9ae0c50f7217231c1",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

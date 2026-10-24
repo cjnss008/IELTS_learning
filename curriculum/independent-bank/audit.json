@@ -1,0 +1,1402 @@
+{
+  "schema": 1,
+  "status": "complete",
+  "materials": 31,
+  "sourceCount": 24,
+  "questions": 192,
+  "levels": {
+    "A1": {
+      "reading": 2,
+      "listening": 4
+    },
+    "A2": {
+      "reading": 2,
+      "listening": 4
+    },
+    "B1": {
+      "reading": 2,
+      "listening": 4
+    },
+    "B2": {
+      "reading": 2,
+      "listening": 4
+    }
+  },
+  "syntheticLocales": {
+    "en-GB": 4,
+    "en-US": 4,
+    "en-AU": 4,
+    "en-IN": 4
+  },
+  "figureTypes": [
+    "table",
+    "line",
+    "bar",
+    "pie",
+    "map",
+    "process",
+    "mixed"
+  ],
+  "lexical": {
+    "candidateWords": 70,
+    "groups": 32,
+    "contextQuestions": 70,
+    "originalExamples": 70
+  },
+  "sourceHashMethod": "sha256 of JSON.stringify(Object.fromEntries(contentHashFields in declared order)); transcriptHash is sha256 of exact UTF-8 transcript; audioHash is sha256 of MP3 bytes.",
+  "reviewScope": "Codex author self-review of all 192 source questions and seven chart prompts; not an independent human or psychometric review. 70 lexical application items reviewed as original sentence tasks.",
+  "semanticReviewReport": "curriculum/independent-bank/semantic-review.json",
+  "audioDecodeReport": "curriculum/independent-bank/audio-audit.json",
+  "limits": [
+    "Focused assessments are not complete IELTS papers or official score calibration.",
+    "Four locale labels describe synthetic TTS voices; no independent human-accent listening audit is claimed.",
+    "An offline local catalogue avoids previewing answers; client-side files are not a secure exam vault."
+  ],
+  "errors": [],
+  "questionReview": [
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q1",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "07a5af4b24bbb40b5ccab7bd9a7ae50ef972c0a7a606ab686551eab91745ce6e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q2",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "3867997a213d55c21c11730906409d667737154e38eefabd36f4c85c02c138fd",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q3",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "d22a391b1c6c0243a6ab2efc9f5a7ae6b5feb9095eb614424765c57d375b9be7",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q4",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "69133799ee9961c1f9b692d1e073afd429c950402e0bd2cb3b7cae95fd572c22",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q5",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "180698205d22f080c235da47dc2dfe94b6f96251523edc4b84aaa14406500ca7",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q6",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "6e2783a58a121c8aafc4d4e3440da26e91e4e41d9ee4b56498e2e785e3853f4c",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q7",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "1880824ab6b26058766e00ac67e36d11d4e898fb211c3e1ba78aecb571da1ff4",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-1",
+      "questionId": "q8",
+      "sourceHash": "8f47a6c017a18ca826eeb91ff145693b462689705d72308aaf604ffdd0a63a7d",
+      "questionHash": "5977d2e3648baf8b4398eb4a4b8f6672715ef461ecfae364ce5498a150e99d51",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q1",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "e0a87f3b0e9876e0249900438537765048d428f71671c697359df4f5b44e4cc2",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q2",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "370368f80b8ff327acb5fdbd8c24ce6dba1f7c6f4ce3d20cc0a6df5254243f9a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q3",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "ce588b844aade595f7697a3266c5e46b0ba4ec2eb822472e96de499922032937",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q4",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "a020c44a45ab6f686a9434f4d6e97b2c84cd827a6cb7b2d153b22cdaf1e46a93",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q5",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "50ee18729ce66c8b86c535204c6cc3f827247d78791480db3b89b1a1a5b7219a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q6",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "1719c8253baf6bba85a498e95ecef58995d28fe651b7ea4b4cdaa9e85742ce02",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q7",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "55fffd3940e38b9daa0d65a6fe3af9da694796acbcf9da5722354fd16a89fbbb",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-read-2",
+      "questionId": "q8",
+      "sourceHash": "69a2731e476facd5b0e945ece6d55f3cd8ab3eb11fb6332a1395ccbcc83ae1a6",
+      "questionHash": "3343d394fc0c4e3e1c07d2bc510d23fcf2d93f6d389610cb651ada33bb4c33f2",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q1",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "19af14eba0b624f62898e702572e57e1721b15070e0717705ea116c6279ed0d2",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q2",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "96a0d95df320a028aeb37b4c5ba537b02b19dae0b88db4c4d137e2c50db9aad9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q3",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "b211c067624a0cb84620a26751a9ba3c9e449ca4876512d2725614b3d8dd3796",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q4",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "fc4552e545748c06053f472fc212e14edb24d3351a743a05986cf70494cc80fd",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q5",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "cdee1f128112f5a2a889441aa7bef03b1e564d2d3c85dcef8f4cd80f8363847f",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q6",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "e3e65869191028c80b6aee3a632b74b5df0ef37ae42753a35849f22f12ca184d",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q7",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "d766a728b9b104fa79c471a303d88ef5cc8c4ec902fa2e1c1260351035207c9b",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-1",
+      "questionId": "q8",
+      "sourceHash": "e417e937ee9fe2c9e26166c8178abd7ce08f7f691910c977704408f84950b5c7",
+      "questionHash": "a40279f34755fe3a04080134e753cac1dec1d206549604a8ca8a4f8e44e37b87",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q1",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "dc56d949fe706c7b0c7f1e5eb5505306dba639dfb09edeec5cdc4100d36f1c0c",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q2",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "9694617885bfba6d15ebaa1c9d42c2d612e8a3686a4fe12bc97f9eb42355b034",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q3",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "f12782444b46d1d01b98c025fca8d96d5e23e26b484b03abe242c04365fdd21a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q4",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "6073d188ee9cbed72ad1860378ce80ea057a1712d35b753c733220a14dc00a63",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q5",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "d93f314f5623f4be0549bcf2c02c9b8b247b43ddc16cd852f9bafe81481726f6",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q6",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "dc68959d37805d88bfa62911fb5bc9d2f33a24aeb76ba004fa1661d6beea9b65",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q7",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "4e8ce1912edb25782603afabc654b406bb60367334cfa8ba889bedb5d6cb7dc0",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-read-2",
+      "questionId": "q8",
+      "sourceHash": "877e4584b14592256bc0482e834b8cd456ae7f6e870707b21d46d49bec76d0f4",
+      "questionHash": "4a1fc51420fa11c3fb64e9708ba1cb75a6256b99e182cd863c3522139406c3f8",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q1",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "5f97e824fd48d3a8b5bf0abba9a8c44dfdbc43a0ea489a957888b38eb8d16105",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q2",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "08757358bc60b6fbeead74c792f9ad67f90d4ed8f524f006645b382305528598",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q3",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "49722862e90c0f7ce04c73f41eb621555a46aec82e8cc34f0c3d6307ed865887",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q4",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "8c96e1c8cc8f178d9c8e473d49ec7f4cac7728fad10dba367d4fdcbde0e8afa0",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q5",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "60d489dc642e2067818a65d99e0071618ce2fb0275cda410b6c138785270e0ba",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q6",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "c67ad66413808abb1eef756de5ca17ea47c46fa9f73ef7c8d3fe7a3f9b5cbd38",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q7",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "e35136068d5413bf2e1c4457fd8d62d104cd875c4db24856741f90b94efcda49",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-1",
+      "questionId": "q8",
+      "sourceHash": "910b9deeb235ef9d029970e52b9ae2485dabdaf5ec1a05f56d9b4b3ea1bfa85c",
+      "questionHash": "ac3d567e4f6a24bf55bc6720a58b124dc80512ca5f68cf21b3429f783f110902",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q1",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "b6ed77ca737f064a5a5830ae1d835495872b32d4aeb79be562fd3c7ac8bd0af2",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q2",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "3503ea23be311c9ee03530812589157b2ab8d845b9d974a3460b1e101e371d78",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q3",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "c4d53220233c7b808c5a69af727e3f1eb389e8e1c8e4ec6777637a5685e14f91",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q4",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "117979e43faa4db4ea3f4e0d8fd1121b9382063fda52561f9f86afe992a72a51",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q5",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "80d11552b485d4df86ae54dfd149731a9ce50b27149c1d0e5ee95d00585dc742",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q6",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "8970297d311b34a01c3c884d7196cab824e894748b578a58f2352d92777cae1e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q7",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "93bec157eac645b812d42bec8db56f1d045e8538c13ea2b798b0f4fc28d2a743",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-read-2",
+      "questionId": "q8",
+      "sourceHash": "243b5f951cc3ebd370692327a1361fc8b4d66c03de7d23d65c1ca0756a99442e",
+      "questionHash": "c9558eb0cce1ceeaed7bfdbb49ab76873556984dae50d6a09ac750d475a51974",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q1",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "5f79fdaecc4c616c7e8af4bd1f4e04982f147ddf2effb5c1de85152662368058",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q2",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "013378264ad4834c5eea948c9e5297b3a9d7564340806fb1b5c176a28125e6ed",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q3",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "8f44523c5d5da35fc608a011b21e19fadc0f3a8b845f4a7cdebefae2e6732b6a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q4",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "d513612b2b1a1d92254a2368ae03bf39f3aee0e8eb79b65d09f7a03e7cbef92a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q5",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "c7a0dcd1374c54204847821a441163043d515f7df88c5cb2bab5150e4829af75",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q6",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "c76f05993aac9fad1a88e2e739ecad04a6f449402126bfd89e5ab83c235bfac9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q7",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "a5106e523e33aec6c6e91e4d58f646e76adb0adeded1dff1215f37be89fdbeb2",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-1",
+      "questionId": "q8",
+      "sourceHash": "11fe750b4da3021bdf2c37bffd778adb641f2fb75ff02ed149a0f9a91286ff00",
+      "questionHash": "92c6ada6f11c9e644d63d65f56770ab3f6cbb59fbbee8bbb676920d0822aac4e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q1",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "e11b38ca390275b3f4e2156afe1df96223b12d03571cbb360c8b58465085a356",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q2",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "4da83588240ef72fa1a72de860d2900c7efe59ee6ee2377b69c922e6f1266897",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q3",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "1753c6e971ddf48566a4f76f314814073a628581933197ff003e7c952b7886ef",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q4",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "973db13243293acfdbcd2fac3b40fe56c9ed6626c467aa76352730eb59ed3cef",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q5",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "2a84b58fd7a6972fd39da88fb3dc6ad059fa92217d62916094cd889c65c167b0",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q6",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "de47f3c2a3c13ed9e049720491b4ab17df2ed6f4246eedac88a9e33f117d43c0",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q7",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "4b5a7e201d34e0ac63eb48800f56c67f552fb6edb68c3e4c5a0dbdd9ef595409",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-read-2",
+      "questionId": "q8",
+      "sourceHash": "2c0d156cc7483cc4b22d09ddec07bf12b3e9d885f989ac99ad5b63431f5fb040",
+      "questionHash": "7da6019475f896ca49285b3438cfb09f1964e36987806b0ca2852706cdf3fd2a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q1",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "a0a2d92e47777ae8f18d3e4a8875a2d2713b40fd0ab510ba6accd701d8813c45",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q2",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "d448c8dfe5024c5b90c07990295a3a3673cddea83a1ddf23e85c0b196e0f9a32",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q3",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "51469dfaf6d6b5039f5ceb1155d9bd67ec90193593520f476c532c1016d3b8c7",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q4",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "3942b5eb93e953c1020f176d08b938e11ef223db9b12b8202f3ce79c69e0f1b9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q5",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "96f61aadc67372d86bc674bad2dd60fdf80342bd85f0f0b9f728488ba4fc4eba",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q6",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "cc44204a175e164d193f3cadd8c72e7f495707d196edd60f95ada3445c8e2d9a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q7",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "765a45b8418a9357a7413e9206bec080a3988452cbb8f5b2f7fb7112822ef228",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-gb",
+      "questionId": "q8",
+      "sourceHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "questionHash": "3dfaede14a8ef060504a7ca4dea58c54638434982e9f3f9056acdc990acdad34",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q1",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "c0eba41774da989204dba290e0e6bb538f5b21911260ecc273f44fb010786ba8",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q2",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "26ccb18c2685efb611e83007568d678a919094a32d5589f18ef39fe925cee575",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q3",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "d8370a21c9eb5c6706cc45c3e04bc60909081e9161edfcc454bbd399a49c5a21",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q4",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "c464bff882cf68bd1446b5731ad25eba24cfabc1026a87b8794c50ddef8a41f0",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q5",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "cc55c2d222ddd0062783dc2bca683b707e5987e35ee576e83fcd21a7a3b66d4e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q6",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "4abca6d2cef234f67251584e54bf77cefbdc03760a25ddbf36a4256f35d68b52",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q7",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "67a321c46fd08d73fd277d31d509f46b33a41a4e5eb86647c9d3a0dabf5d3116",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-us",
+      "questionId": "q8",
+      "sourceHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "questionHash": "664974b3a67cba69688d03f135e276395e9f6e805b2417f9d3c2778d9871be28",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q1",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "b8b8f3ceab5c1664e76d9d3558b4e23d0bf4e2ccaaaef2b6c122dd7f54add7f3",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q2",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "ec5c2845d57a0146594fff251a1d8bd85e5a30f44b7306d88bb54a0e61bb5478",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q3",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "9881784b6afc38256387b09893cfca69736ecd8b294def48da37b3e287346a6a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q4",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "bcc4de76007099a82f37616d145461eb2860fa75c401e6ecfb516b42db96678f",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q5",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "2cf6c09482873af5b35ddf77519377572cf1dfbd6ce5148322fb0f71b9b371cd",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q6",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "7f26c46ab8bb9ba27b080cf181ae227f97f1a26486ecba0efcc6da7e65c1802e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q7",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "bf6b0443c6d3a9a1ae81d6a001c9ba5b23a1c0bb5cd865148e948faa83dd8256",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-au",
+      "questionId": "q8",
+      "sourceHash": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "questionHash": "8186f7946ea513bd1d48c2c023a57e96a860ef399081286b30ab776f9df35d38",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q1",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "40bbc072413cc3b4c48d0a112f11fb47ba03c789effe119acbac8a72d2f79bae",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q2",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "1b5f785b661de583eec4a60fb91c87f75195f528b125dfaa8ccb298a65cedf4c",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q3",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "8c54e39cd0bf09c706e95ab02a3859e854007978f01796f25876d8f34a980b8c",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q4",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "5b34d6bd091abc347f10afcccd8869efeb8a35d4ae07dd07dc493015aa402002",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q5",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "b8e2df1727eb3bce228deb6a7bbb19fc2fb5a69f02f5d8c5a6c5fe52b660d239",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q6",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "c444058e21907fbb7a84486d4c37be88086884c0161f48d4f2f4d0359fdc404e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q7",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "150f03baa873d2d95333d1581546199782afedee0ac84c802ee1d5762ee7408f",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a1-listen-in",
+      "questionId": "q8",
+      "sourceHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "questionHash": "fd4afbaaf43adb2ee7dd531c155d73de8fc8fa82467c3ac79f660f4b0bd63edb",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q1",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "5e5579d0a2aa8c6ab3738fa1ff6ec4a2b9dd4fdb354b92706ec913fc0780016b",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q2",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "5e1899d88f6ddb2e73b1a1d2a950a9e15656ed9a5209462fb46bb0f2776bb146",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q3",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "c6ed8bb594e39a02b46f6713e147cccde08901cf0b053d1eff2d38d8e6b92f56",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q4",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "5409125e88bc27fcced47028a0f19c61197d542dd4de29d0abe1fbd36d290e13",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q5",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "6e41cab1674306c396f56f0ec3bbfc7b6383e62d92d55019146b6fa62918839c",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q6",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "f21f3b777634ea071296db391c42167caff9220c0936bd3de463d52be8d08b56",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q7",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "5f939689fbb98b2d219edaa3e5c04e8d9c07c238ab3de1bed2682c81fb80ebbc",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-gb",
+      "questionId": "q8",
+      "sourceHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "questionHash": "6b2891bf0389d09cf655e8eb3d030962c8fb7af82ee639f7a577cf55703941ce",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q1",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "7a9c882cb67dbaecbad0b411f1346f496b937ade4ecaf2d6add44a8ee91f8b6e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q2",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "4b381f052193bb9bd865f1cd838a10e6821007b37d62dc45c3571ef6c139a564",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q3",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "3ea9ddeeaaa5ba4aa1baf56caf9bc06ba27909a2ce3ad33321a29b758b0f30e5",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q4",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "cd7097d5d40ee788786e12de40f189f662d3f1a7e7fed61b9da8c9427444e1d4",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q5",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "4a20bf9dbce4f28afa5486cd6d8de0556b377bda5a81eb2818b3977a6decfff7",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q6",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "f4ba8064e78a69e7164c9fec1e6222917449aa00fecf8e202a427c63c4058ec9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q7",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "ee43b7312eb891d29b6fc743b00bdd1df7e6fd1809f89547c798f749dfe1c3b1",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-us",
+      "questionId": "q8",
+      "sourceHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "questionHash": "59bf894e1c643c705513a5433055f3aa2bc05296605398877032c1c1182bc3d1",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q1",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "5b9fcc476935fddc322c453f6af44e1ca19f926c07341aa4aabbae863a9f44e3",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q2",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "27fc9fff48e5796964ab3838ec93861f3f95fb747930493a7aee4999c13b6f50",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q3",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "7d3e850f9b82c9670905de761f8ed853e10d2042881d1fd4b9e2bcb45c6a3cdd",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q4",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "3efec7817248d04e91153bcf3b26182ce14de53e7f793c9724a1f804051fd222",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q5",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "613fa72035b265efa43f2d731061aa93f47f8fc30c1f0ab01c6b8e317504e594",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q6",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "9ae49ca9cf5ba69638a65afd3ac56a5b7506ca31bdca571a04226c2e77886044",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q7",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "31af02b6d856e775f82d2e50a21ec7e7cfd4a64ce6883dabce56d843ebcf040e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-au",
+      "questionId": "q8",
+      "sourceHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "questionHash": "0d7752c844b49a1fb21fec75146e9d939805628449d9e723506e78d1345eb2d9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q1",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "879c44ce3d9c4b8f9c20b00a00d3f6b29e61e6c40ebbe0c86e9c2b23c89f5288",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q2",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "4ce1aef207bc375a97bd1f9fb3a683ea40e547957c5bf78183567ce3f98bada9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q3",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "1567965df7f0687920e2faccfec4b6e1a9067b2536d165a680f73c0419e097fb",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q4",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "a354896b33d084ac3b83576019ad6a6f8db053fe4e9086760419953bcaead647",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q5",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "6b21e47330e702302589eae3368c5eefeccef156537b14245d09e14ac4fe55e7",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q6",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "b5e2346875e1979882cb6c9b7bc87b5357acaf7cdb465fa8845635ea9b658dde",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q7",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "cc45fb6c354b2c1793411033b42bdbc754170fe3abc9c94247445a7f92b504ad",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-a2-listen-in",
+      "questionId": "q8",
+      "sourceHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "questionHash": "eeea58d85f6cefc6a09de614e6750ae88f042bf46336685f15f8220e81193480",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q1",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "4ee82d48b285b35e99c3056d3d5b7ed540c34537c601efda3ebf3743d873d960",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q2",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "8fdc163f87aeb9428b98599bb7f1fbbc601f4da8a9bc1a0742cf0f654a1f4f01",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q3",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "16e66bfdfdd4216efea34b93489a6744f94337e97f4f0b7989dcba96040b86c5",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q4",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "e70b4e005825a23e4abd90162f086397b1a3d675996d914cec5c97820344c651",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q5",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "ec1b2c48d3a334ca8d44b1691df6bc5a157f8fa1ada3289e06b22b5bf86b56c5",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q6",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "c6b589aa5486c606f3b73647aaace5d4aa276e69f46c8fdc40eedabec294af59",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q7",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "7c60d5471a2a60270a21b4d54f8208a3e8fa0ed28e72b0e9626cd938e3bc8949",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-gb",
+      "questionId": "q8",
+      "sourceHash": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "questionHash": "841888ba1893e8ae1326f9a67736878fa9fd8d42d1df28eea914e75ca9d128c9",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q1",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "1ab315d48bc945a6c0231e216a7d670cae12cb55e5d4af40502c766e51158a87",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q2",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "abdb92216fec5f7bce94d852d83ea901f25802bb3041898a89671cba05637557",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q3",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "34e1a3d632f982896ab335458725eb6b5c6dc545aaa57c4b46b124af87d24e48",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q4",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "3deea815c65cf05a789f43d315c9c5f4dfbfbdf0cf46cbe6465a8ca77e3c17a7",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q5",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "29fba1797ac45843c11873e4eb798e35d37f2761489963a55a98fad632c699bf",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q6",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "d8b75f86245ed3a540b0c9489a2f3f7df15e3786b823286d72150a01b63a9dea",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q7",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "1c885d960a20c4250e9c5a35e19c5c0d656a2e0855c72555d14bcbfe9425871b",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-us",
+      "questionId": "q8",
+      "sourceHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "questionHash": "3102f01b4b0fc243910fe2bbb6c38b841819b924e1b7b4a3c36580ada268cf56",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q1",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "581278af158ccf08544045d6b12ed5869f25dd15774e087bfa1556ed76d1ced4",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q2",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "c14dfb1dfbf8281dd5bb754f79ac5841c5a7de068ac69b1e43e7018a3cea7fcf",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q3",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "39d49107ee94a68cd8e52c4a8ca903934793834fda72548460e299470f08ca79",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q4",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "8ba938ed316c1c2d9d8fce765dc8fc8f165e2d8d0ca907863a72c2e9381e93e5",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q5",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "3efc794fd185fc8d58f510795f648b127c93392bec10b56a7070ca5ed65201e8",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q6",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "f353c3cd55e380649ab1662464f8dfeba82722e7dfa0ffd3655c19996fa95fdf",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q7",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "75a54eff707613f0813f57f5bc58c7cb80936e46fe3177e8546c1ef8ab655790",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-au",
+      "questionId": "q8",
+      "sourceHash": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "questionHash": "771a2fd463ebe5cf0db8ed797df0d063be75cd00bc458754e81340a3203d9887",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q1",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "d525755e45955939410a9cda42c4441fb3210b9167a8b0b48382c7bb512fdd33",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q2",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "f9a579a03953cbfbc8361c335b1e5adcdc5179ad2d1dfc185e5acc34add6e8fb",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q3",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "6a7887ce8af4359c4d6149a1f37f2bc212592bb19fa533e4403d5a1f3d4d89a2",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q4",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "bd7304ea02189acb2f52240d1e3f2f64fc547b99fc78a3dde9f7627700d11c0e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q5",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "17612b8ba7df992c0aa4b2def24fd9595c0ca460aa60ebf7f9cc21e6a5929776",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q6",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "5b9d640b348945ece1b3b820b6aaa1b6d5ccdfe7f3038de067b60613900c8c6e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q7",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "8a075716238d02800a1ea81c0e31e15a31107861c514bee052787db86dcae18f",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b1-listen-in",
+      "questionId": "q8",
+      "sourceHash": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "questionHash": "73ed360a6a8b21034d58a46d7761cc922068926848548459ebb0f6963c108e7f",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q1",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "76efd3612e0f90238d564134ddf70713cf725b30eee72f8717bba9d067b65fc3",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q2",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "319009a5c12d9d3d692049639fdaf750bebe166b9a9483de625034d724429e98",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q3",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "88d990ae25de862b387017bd3cbf0dcc98af61814db054d7f683ebab9c78af7d",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q4",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "cd9a6130da6ad19d143e731e4735959539578492ad743e891498fc01586ed189",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q5",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "bb0b2cab940f3a06f6fa58afc0a03b30a780367bf6b36c37bbd9597674ae3a9e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q6",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "c4f871a33b3aa1546da0fc764016273e40da96ca053e0051eb0591b2850885f1",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q7",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "2280810c655dd38de27dc0fe2ae05fd756049c32d362b33ff7b49c9040133472",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-gb",
+      "questionId": "q8",
+      "sourceHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "questionHash": "bf17c0b0802716e9d7e88c5dbc8c956fa5c7518079253045dc7a8485bf33b8a4",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q1",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "916ace89a2c2618afc9526399e9437290ea551204b40e62d443ff1b897195e27",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q2",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "70764d6f12dae6dd5224bfcd9c2da1e44fc4a5de04a479a49baf013936dfecc8",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q3",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "3f48396c249a1f5c5c9fbd8a74ef1ebb78a0184d1fd97cc9ebc461e54facb725",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q4",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "01c3f643e012970df863e38ae07734a50f3e95394c5aa893f798eae62f348b66",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q5",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "5cc6ba3848321f18a79f0061caa0004629aba08e4f4fcbb38e8ca5e1b51b6364",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q6",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "5c081c9470f4040f80fecad8213a5e2529abf2ef38dbaf634b18698850d602f3",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q7",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "1a10f0643331fb8fd5f0d853545fc17883d8b7879a29dc780c20f8abe484d7eb",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-us",
+      "questionId": "q8",
+      "sourceHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "questionHash": "82e427d1a14cfa5df8497eebbd8326e7d0d556a7087467f8875d0d4762d9931d",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q1",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "5de8cf7c86cf5fc231702db6fc4e38b17504a554f5900ad49a7e232cfca66a9a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q2",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "b07e47c1161eb60e75b3d9acb92e3b4e55e865929f6727858f46e679a788f0e0",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q3",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "ee245db481eee799faae01d8643776ccccec32c22ed0532deee4cd765c51f7dd",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q4",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "79a49bdf1cbf8005a5fbdcfe341a442f3e6c64d822122c671806f34ae63c8a1e",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q5",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "a7ca2adbba85c117f6c62d6585bf25c12397e16a2fcc912b9a0a0c906e32575a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q6",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "35e47bf27e9357263c72ea3961ddaf38d2d086b807e4cbc81845c400f8902692",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q7",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "15081de25a4162c1a2b32611eee4b26a9bcf32eabf03e2ae7fae71867c458b46",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-au",
+      "questionId": "q8",
+      "sourceHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "questionHash": "04c6b46d8f2fcc5d56f82eba337cd626b09838d2e7137e1c5ffe4ffffcd37bec",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q1",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "203a844ce7b5506ad4eb592bd0eb9c95ac219b35d2b01036c0bfaaaa7ff9a712",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q2",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "fc6b972c3e5951027a026f32e9ee5f9f05c736e6bf51595ba5033a5eb49421fa",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q3",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "2cfbaa2fbd92a421f6076fb0f10092bedffdf0446872aa6472593aaaf87fac2b",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q4",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "f35f2f786c69c86e8d1602b98792604ccbe01ea8c8d6cc8e1e880a19f0ffc96a",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q5",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "69a6a4a59513779042992ea2d8ab65f8ab541d5128c8e19d9e96de50d3d786ce",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q6",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "a46df58810cbfc8df1ff4add567a0953249f180ed3eeee2acaa183974deb4950",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q7",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "245027b1ba4315d023919fc0caa61a8bfb178f380401048a41ea0c586f392000",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    },
+    {
+      "materialId": "independent-b2-listen-in",
+      "questionId": "q8",
+      "sourceHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "questionHash": "7d9f80b7d4001ed43d5ae5c77423d4b39f0446571aeb57c33ddae8d82a0284bc",
+      "method": "Codex author self-review against complete source; explanations identify the decisive distinction. Not a human examiner review."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "independent-a1-listen-au",
+  "version": "1",
+  "week": 5,
+  "level": "A1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Collecting a vegetable box",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Farmer: Hello. Are you here for a vegetable box?\nNina: Yes. My name is Nina Chen. I have a small box.\nFarmer: Here it is. The small box is twelve dollars. The large one is twenty.\nNina: Can I pay by card?\nFarmer: Yes. Please collect your box on Friday next week, not Saturday. We are at a market on Saturday.\nNina: What time can I come on Friday?\nFarmer: After two. Please bring a bag. We need the box here for the next person. Today you have beans, carrots and potatoes. There are no onions this week.\nNina: That is fine. Where can I put my car?\nFarmer: Behind the green shed.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Nina 预订的是哪种箱子？",
+      "options": [
+        "Two small boxes",
+        "A small box",
+        "A large box"
+      ],
+      "answers": [
+        "A small box"
+      ],
+      "evidence": "I have a small box.",
+      "explanation": "数量是一份 small box。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "小箱蔬菜多少钱？写一个英文单词。",
+      "answers": [
+        "twelve"
+      ],
+      "maxWords": 1,
+      "evidence": "The small box is twelve dollars.",
+      "explanation": "大箱 twenty，不是 Nina 所取的箱子。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "能否刷卡？",
+      "options": [
+        "No, cash only",
+        "Only on Saturday",
+        "Yes"
+      ],
+      "answers": [
+        "Yes"
+      ],
+      "evidence": "Can I pay by card?\nFarmer: Yes.",
+      "explanation": "Yes 回应刷卡付款问题。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "下周应在星期几领取？写一个英文单词。",
+      "answers": [
+        "Friday"
+      ],
+      "maxWords": 1,
+      "evidence": "Please collect your box on Friday next week, not Saturday.",
+      "explanation": "明确改成 Friday，不是 Saturday。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "下周五几点以后可以来？",
+      "options": [
+        "After two",
+        "Before two",
+        "After twelve"
+      ],
+      "answers": [
+        "After two"
+      ],
+      "evidence": "After two.",
+      "explanation": "回答针对周五领取时间。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "为什么要自带袋子？",
+      "options": [
+        "Bags are sold only at the market.",
+        "The vegetables are too hot.",
+        "The box is needed for another customer."
+      ],
+      "answers": [
+        "The box is needed for another customer."
+      ],
+      "evidence": "We need the box here for the next person.",
+      "explanation": "箱子留在农场周转，因此带袋子装菜。",
+      "id": "q6"
+    },
+    {
+      "type": "fill",
+      "prompt": "这周没有哪种蔬菜？写一个英文单词。",
+      "answers": [
+        "onions"
+      ],
+      "maxWords": 1,
+      "evidence": "There are no onions this week.",
+      "explanation": "beans、carrots 和 potatoes 有，onions 没有。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "汽车应停在哪里？",
+      "options": [
+        "Behind the green shed",
+        "In front of the market",
+        "Next to the red house"
+      ],
+      "answers": [
+        "Behind the green shed"
+      ],
+      "evidence": "Behind the green shed.",
+      "explanation": "停在绿色棚屋后方。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "06899cf964e76d3cbde4b9e640f2585d21776e75a11222863350cfa1d320c149",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a1-listen-au.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-AU",
+  "audioAccent": "澳大利亚英语（合成）",
+  "audioVoice": "en-AU-NatashaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 57.408,
+  "audioVoices": [
+    "en-AU-NatashaNeural",
+    "en-AU-WilliamNeural"
+  ]
+}

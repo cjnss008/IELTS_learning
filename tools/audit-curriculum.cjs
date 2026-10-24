@@ -15,8 +15,8 @@ function audit(data){
    if(m.fullTest){assert.equal(m.questions.length,40,m.id);if(m.skill==='reading')fullReading++;else fullListening++;}
   }
   if(m.skill==='listening'){
-   listening++;assert.ok(m.audio&&m.audio.startsWith('audio/curriculum/'),m.id+' audio');assert.ok(fs.statSync(path.join(root,m.audio)).size>1000,m.id+' audio bytes');
-   const meta=JSON.parse(fs.readFileSync(path.join(root,'curriculum','audio',m.id+'.json'),'utf8'));assert.equal(meta.transcriptHash,crypto.createHash('sha256').update(m.transcript).digest('hex'),m.id+' stale audio');assert.ok(meta.durationSeconds>1&&meta.voices.length,m.id+' audio metadata');
+   const independent=m.independentBank===true&&m.pool==='independent';listening++;assert.ok(m.audio&&m.audio.startsWith(independent?'audio/independent-bank/':'audio/curriculum/'),m.id+' audio');assert.ok(fs.statSync(path.join(root,m.audio)).size>1000,m.id+' audio bytes');
+   const meta=JSON.parse(fs.readFileSync(path.join(root,'curriculum',...(independent?['independent-bank','audio']:['audio']),m.id+'.json'),'utf8'));assert.equal(meta.transcriptHash,crypto.createHash('sha256').update(m.transcript).digest('hex'),m.id+' stale audio');assert.ok(meta.durationSeconds>1&&meta.voices.length,m.id+' audio metadata');
   }
  }
  const firstWriting=new Set();let totalMinutes=0;
@@ -28,7 +28,8 @@ function audit(data){
  assert.equal(totalMinutes,131400);assert.equal(fullReading,30);assert.equal(fullListening,30);assert.equal(writing,124);
  assert.equal(data.gates.length,12,'Weeks 4–48 use A/B; four final batteries use separate readiness evidence');
  for(const gate of data.gates){assert.notEqual(gate.A,gate.B);assert.equal(gate.minimumDelayHours,48);assert.equal(map.get(gate.A+'-reading')?.pool,'gate');assert.equal(map.get(gate.B+'-reading')?.pool,'gate');}
- return {status:'passed',days:365,hours:totalMinutes/60,sourceJobs:jobs.length,materials:data.materials.length,questions,listening,writing,fullReading,fullListening,firstDraftWritingPairs:firstWriting.size/2};
+ const independent=require('./audit-independent-bank.cjs').audit(data.materials.filter(m=>m.independentBank),{courseData:data,lexical:require('./lexical-contexts.cjs').build()});assert.deepEqual(independent.errors,[],independent.errors.join('; '));
+ return {status:'passed',days:365,hours:totalMinutes/60,sourceJobs:jobs.length,materials:data.materials.length,questions,listening,writing,fullReading,fullListening,firstDraftWritingPairs:firstWriting.size/2,independentBank:{materials:independent.materials,sourceCount:independent.sourceCount,questions:independent.questions,syntheticLocales:independent.syntheticLocales,figureTypes:independent.figureTypes},lexicalContexts:independent.lexical};
 }
 module.exports={audit};
 if(require.main===module){const result=audit(require('../assets/curriculum-data.js'));fs.writeFileSync(path.join(root,'curriculum','release-audit.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));}

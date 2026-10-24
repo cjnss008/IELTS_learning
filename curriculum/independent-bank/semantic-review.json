@@ -1,0 +1,458 @@
+{
+  "schema": 1,
+  "reviewDate": "2026-10-25",
+  "reviewer": "Independent Codex subagent /root/personalization_v50; author follow-up by /root/unseen_bank_v50",
+  "scope": {
+    "sources": 24,
+    "questions": 192,
+    "figures": 7,
+    "lexicalApplicationItems": 70,
+    "ipaAndMeanings": 70
+  },
+  "method": "Read-only complete-source comparison with question prompts, options, canonical answers, verbatim evidence and Chinese explanations. Source reviewer saw the key; not a blinded test or human examiner review. All seven figures checked for fields, units, years, totals, map orientation and rendering mapping.",
+  "findings": [
+    {
+      "words": [
+        "allow",
+        "approve"
+      ],
+      "issue": "Initial sentences did not exclude other grammatical options.",
+      "resolution": "Added explicit permission / final payment-authorisation contexts before the final build."
+    },
+    {
+      "words": [
+        "check into",
+        "move"
+      ],
+      "issue": "Arrival or residence-change cues strengthened to exclude possible checkout or visiting readings.",
+      "resolution": "Added arrival before receiving a room key / starting to live in the new home."
+    },
+    {
+      "words": [
+        "concern",
+        "subsidise",
+        "criterion",
+        "plank"
+      ],
+      "issue": "Author additional pass made the intended definition or physical property explicit.",
+      "resolution": "Clarified worried patients / operating-cost support / judging standard / a long flat solid-wood board."
+    }
+  ],
+  "outcome": "No further definite answer or single-choice exclusivity error identified by the independent review of the 24 texts and 192 questions. Seven figures consistent; 70 IPA/meaning/example entries reviewed. Suggested lexical fixes applied and rebuilt.",
+  "limits": [
+    "No human or external examiner review.",
+    "No empirical learner difficulty calibration.",
+    "Audio hashes and decoding checked separately; reviewer did not listen to audio."
+  ],
+  "materialHashes": [
+    {
+      "id": "independent-a1-read-1",
+      "contentHash": "9ebd4ddb8c061d6743b85384b15b4a2d6094c27ca8b8f2270b8f2c98f1d001d0",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a1-read-2",
+      "contentHash": "d3892df2c4320b0290846c978ecce910849e2f26676920fbdf85b2de722689a4",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a2-read-1",
+      "contentHash": "7e8b9b869f7f596361c0614ce91fd723abd98e603be475f9ae0c50f7217231c1",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a2-read-2",
+      "contentHash": "b2525ad14dd956691c4926f02dbf67616a827fc756aca49826ac116904ea04c0",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b1-read-1",
+      "contentHash": "fb960830f1c06dc7071fe40880f226fa5a2757010360fc12462b778f6c48677b",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b1-read-2",
+      "contentHash": "a0a2d20425b904f0c860c64ffe69be4a1cbe355f68ce9f4e43650c66b6c460aa",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b2-read-1",
+      "contentHash": "dde2675cfcf0b71ed60050331863fe49a411e7af1c9064d47d1edd9363dedd5d",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b2-read-2",
+      "contentHash": "36023b9c695919c35ba653bed036a1e238a718dd55b6cdc45732dac8a8b41f74",
+      "contentHashFields": [
+        "title",
+        "passage",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a1-listen-gb",
+      "contentHash": "152e0fbdd854ba12012d98b8b495aaaab9690ca48322d425df84f6a01c1a77d5",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a1-listen-us",
+      "contentHash": "cd789150b80f5bc10edd5a75b0bcb62eb914f5a8b716080298ad31397d188ae6",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a1-listen-au",
+      "contentHash": "06899cf964e76d3cbde4b9e640f2585d21776e75a11222863350cfa1d320c149",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a1-listen-in",
+      "contentHash": "128fb89796a5102c12ae2dd11a688115f9a7fe194fa400914e7977b77be15c79",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a2-listen-gb",
+      "contentHash": "0cc465cd49f01e2d66f930fdf9c1c30658a745281c51a38d1714f0c9bd12ae4b",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a2-listen-us",
+      "contentHash": "2a10d3201bd06f1a6459b4cdf9ef04be5c48b42ddeb1db3235839d77a51bcf36",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a2-listen-au",
+      "contentHash": "09a1a72e9c731183ec44893b57860bc5bee92221186d5634306ecab83ba07c89",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-a2-listen-in",
+      "contentHash": "f1c3d418e6c3ef61bb40add405141fe597acfd9fbea481902f93d286f26c0a0c",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b1-listen-gb",
+      "contentHash": "c39dc8414a35b711d9e84219a3017959396f3824fa2f58f2e049b0e51d9b0d69",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b1-listen-us",
+      "contentHash": "9f4b9361b072c7966aec29ae63e712a7430384efec3eb8e3168b149cc9d1db9f",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b1-listen-au",
+      "contentHash": "75b896359c64df92db55bbd0204d9e4371dca68af0d87162d6833408b3ef3e5f",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b1-listen-in",
+      "contentHash": "ebf478c179d486a505a6acaee4454bdca0f4bf7e77c4a0b0b7ec16d0b20eca5f",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b2-listen-gb",
+      "contentHash": "46ccb67d2d7a232e34dd11eb4c40abc1372d69de0029da91d3c844fd5b3d9bf6",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b2-listen-us",
+      "contentHash": "fd96d5e51880a4ce404dc0f476fdbffd77f111fa31053d04ce7f545a61838c8a",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b2-listen-au",
+      "contentHash": "d2966d03f58f6935ea2d68a92a389ae4ada09c4ee329e2d96a67706936bd0206",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-b2-listen-in",
+      "contentHash": "2ad9b717cd4155717aceea87dba2517911b5f2d9795be5dc723deb665baffd31",
+      "contentHashFields": [
+        "title",
+        "transcript",
+        "questions"
+      ]
+    },
+    {
+      "id": "independent-task1-table",
+      "contentHash": "25c1ba112036f142410a05ca7efc76e1e27f0e4df8f4820f3f01494f3dc130ab",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    },
+    {
+      "id": "independent-task1-line",
+      "contentHash": "aa9c352c1d4f42148f4d96ad075b8b833c639709b5fe10d3eb5f607ccd25be3f",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    },
+    {
+      "id": "independent-task1-bar",
+      "contentHash": "0f6ac1d0571258710680e76097395a1c0df5f4a57d664da81a00fb7e9f236628",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    },
+    {
+      "id": "independent-task1-pie",
+      "contentHash": "1fc2e109ee6b1914aae0a450052b948a8dd64a4f00ac8390f2e9390a9c06bc11",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    },
+    {
+      "id": "independent-task1-map",
+      "contentHash": "b022312f75a02b2f3ef96ff543227ac70b09c96e68f5b349b99d08ac4f513075",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    },
+    {
+      "id": "independent-task1-process",
+      "contentHash": "91bd85de2892825c1768464f7d30d6e2b9346d11add1dc1f27e0c9117cbd12d4",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    },
+    {
+      "id": "independent-task1-mixed",
+      "contentHash": "123a0c7ab9eee4c2c69cb2206534e69a23dfb7545b1161ff92eed1e5cc67ed41",
+      "contentHashFields": [
+        "title",
+        "prompt",
+        "figure"
+      ]
+    }
+  ],
+  "lexicalHashes": [
+    {
+      "id": "lexical-context-01",
+      "contentHash": "af3ec31e0515a68f79626f9426df77e52827e560245e93abca24642ae18c413b"
+    },
+    {
+      "id": "lexical-context-02",
+      "contentHash": "6ab3b4bf8180614507bfd988e16b488e7057b46dc467ca99ee1b862eee538153"
+    },
+    {
+      "id": "lexical-context-03",
+      "contentHash": "f0f7d41d6f01ffea3590c54098903ff82ba4dcfbcc25f0849833403038233db5"
+    },
+    {
+      "id": "lexical-context-04",
+      "contentHash": "a53bf86689587fd6b003a5060ddbf9183fdda93da4313ffaab5feaab5f9ffaec"
+    },
+    {
+      "id": "lexical-context-05",
+      "contentHash": "8a63fc12abe8669484de55f44559b7fc76ca0c97379e8efb7b778857d2f578cb"
+    },
+    {
+      "id": "lexical-context-06",
+      "contentHash": "dcddd9e483e9fb83469435b15490bb0f6d13766230fe62ecb7f8cee6e94a4f42"
+    },
+    {
+      "id": "lexical-context-07",
+      "contentHash": "ccb72a6f903fb96fe457636a8452b70eceae8b1ca6d7ef1f4e1429a85c51d4e2"
+    },
+    {
+      "id": "lexical-context-08",
+      "contentHash": "5ef4cfcb49189def5eed30f57c3a237546abcb0257bff2acba88d319c84e766a"
+    },
+    {
+      "id": "lexical-context-09",
+      "contentHash": "d8131cab30aec25315c8bac1d8c02c45958c49bf17bd2187eb30ff42e0e02a53"
+    },
+    {
+      "id": "lexical-context-10",
+      "contentHash": "7ff85a0d7a375f4da5d83efd650f861d008d0d3823818b61f09b39afae61220e"
+    },
+    {
+      "id": "lexical-context-11",
+      "contentHash": "f4ad35a523d6d3dcaa6c6c6e91d1159ffd36d8e29ce8ce4e47dedc723c81454e"
+    },
+    {
+      "id": "lexical-context-12",
+      "contentHash": "41515907d40eba73f37276385b6ca92292c001e75c0b999a5735550303eed610"
+    },
+    {
+      "id": "lexical-context-13",
+      "contentHash": "eefb6c9303caa688ce7fccd41a8bd17631e865f89168d0af5728213fd22adc28"
+    },
+    {
+      "id": "lexical-context-14",
+      "contentHash": "0480c723187502125dd6911f8ef1b44ba1d2af85d1db6d0f37bc18f67de9c178"
+    },
+    {
+      "id": "lexical-context-15",
+      "contentHash": "a2242d88887f66f110482c8b142c37fa4457ec82c7719eb669e775b6028bb6ef"
+    },
+    {
+      "id": "lexical-context-16",
+      "contentHash": "9cf2a7de123e4daa0e02e108d1ddbbc3573db1ec358f8e0be62b882d0203b9e9"
+    },
+    {
+      "id": "lexical-context-17",
+      "contentHash": "8a728c0f844de468d0e924d0c3ba135158e294a8f025bbda6f4820bf88a1d52e"
+    },
+    {
+      "id": "lexical-context-18",
+      "contentHash": "fab74d9aa2f3e6aec740fcf778576f0a672c74639627ccc48bd0a27576989360"
+    },
+    {
+      "id": "lexical-context-19",
+      "contentHash": "28e5be5e74910772864ee58f21a1f2a2943f42b498ca007434dede04e0a0d045"
+    },
+    {
+      "id": "lexical-context-20",
+      "contentHash": "3ac6f2bacd955c834897b3f3e7f8496e5eb970d667e0d83e2169e2b701388f33"
+    },
+    {
+      "id": "lexical-context-21",
+      "contentHash": "8427844cfbd3a64437f512c8c3693decd71303baa756ecdc37eff9e53cbb99cf"
+    },
+    {
+      "id": "lexical-context-22",
+      "contentHash": "6e700c420bdb2443de913f1915a82510e144cbc50745e13210a615a0e4b84bd8"
+    },
+    {
+      "id": "lexical-context-23",
+      "contentHash": "04978281584fd510c9f19d7a9aac4208ce80608acd064d2246f038e866a9e995"
+    },
+    {
+      "id": "lexical-context-24",
+      "contentHash": "5db7deb553d9b369944df291120526aacdb81e7bd85a63aa84bfacc1b62c2b7f"
+    },
+    {
+      "id": "lexical-context-25",
+      "contentHash": "cb8bd5879d7c7bc77dd73c8e2c767c4e69d173fd388265658685f3f6395b5eee"
+    },
+    {
+      "id": "lexical-context-26",
+      "contentHash": "6e4b583dcdb4f60ce61cc844bc265f3f5ff24f158522e64d1bf6ae913e68ce8a"
+    },
+    {
+      "id": "lexical-context-27",
+      "contentHash": "ca0c1e738dca2f4056a70e93f51e73b3df7ba448dd6346b54b6b7dcb8d96ee76"
+    },
+    {
+      "id": "lexical-context-28",
+      "contentHash": "8669f9ce840351795bee09fcca350f444e2bf83b1d3dc82ad435c0cf4f0243a9"
+    },
+    {
+      "id": "lexical-context-29",
+      "contentHash": "f385347b84744f02e695b52253c55aeb14b28ffcddf3e2164ae151670b75680c"
+    },
+    {
+      "id": "lexical-context-30",
+      "contentHash": "a03a4fb6a42139df8edcc7a46d3359b1e403a2a1932e74147427878b0b61e85e"
+    },
+    {
+      "id": "lexical-context-31",
+      "contentHash": "203a19c79f9563181bbef482c8fff5995537b28ec787ea30e01a992fb66de5a9"
+    },
+    {
+      "id": "lexical-context-32",
+      "contentHash": "249ae848151dceb935601407dea918a81ea1179a82ddd51152e35e0e67ca69e7"
+    }
+  ]
+}

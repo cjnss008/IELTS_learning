@@ -1,0 +1,156 @@
+{
+  "id": "independent-b1-listen-in",
+  "version": "1",
+  "week": 20,
+  "level": "B1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Reviewing a campus café trial",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Manager: We need to review the smaller-plate trial before deciding whether to continue it. What did your student group find, Rani?\nRani: We weighed food left on returned plates for five lunch services. Plate waste fell from an average of thirty kilograms a day in the previous week to twenty-two during the trial. However, fewer meals were served during the trial because a department was away on a field trip.\nManager: So the daily total is not a fair comparison?\nRani: Not on its own. We need the waste per meal as well. We have meal counts from the till, so we can calculate that. We did not weigh food left in the kitchen. Our figures concern returned plates only.\nManager: Did customers like the smaller plates?\nRani: The comment cards were mixed. Some liked being able to take a small portion first and come back for more. Others thought the change was a way to raise prices, although prices stayed the same. The sign explaining free second helpings was behind the water machine, where it was easy to miss.\nManager: We can move that sign. Did second helpings create a queue?\nRani: We observed the serving area on two days. The longest queue was at twelve fifteen, but there was only one server then because another staff member was unloading deliveries. We cannot attribute the queue entirely to plate size.\nManager: What would you recommend next?\nRani: Keep recording for two more weeks with normal attendance, display the second-helping information clearly and note staffing levels. Also ask customers a specific question about whether the portions meet their needs. A general satisfaction question might not tell us why someone is unhappy.\nManager: And what about the price rumours?\nRani: Put the unchanged prices where customers collect plates. Clear information may solve a misunderstanding, but we should still check whether people find repeated trips inconvenient.",
+  "questions": [
+    {
+      "type": "fill",
+      "prompt": "During the trial, average daily plate waste was ____ kilograms. Write ONE WORD.",
+      "answers": [
+        "twenty-two"
+      ],
+      "maxWords": 1,
+      "evidence": "to twenty-two during the trial.",
+      "explanation": "三十是前一周水平，试验周二十二。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why should waste per meal be calculated?",
+      "options": [
+        "Fewer meals were served during the trial.",
+        "Meal prices increased.",
+        "Kitchen waste was included twice."
+      ],
+      "answers": [
+        "Fewer meals were served during the trial."
+      ],
+      "evidence": "fewer meals were served during the trial because a department was away on a field trip.",
+      "explanation": "总份数下降可能解释每日垃圾减少，应使用同口径每餐指标。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "What is excluded from the waste figures?",
+      "options": [
+        "Food on returned plates",
+        "All meals recorded by the till",
+        "Food remaining in the kitchen"
+      ],
+      "answers": [
+        "Food remaining in the kitchen"
+      ],
+      "evidence": "We did not weigh food left in the kitchen.",
+      "explanation": "测量范围只含退回盘中的食物。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Why did some customers misunderstand the trial?",
+      "options": [
+        "The café refused second helpings.",
+        "Information about free second helpings was hard to see.",
+        "Prices were higher on trial days."
+      ],
+      "answers": [
+        "Information about free second helpings was hard to see."
+      ],
+      "evidence": "The sign explaining free second helpings was behind the water machine",
+      "explanation": "价格不变、允许免费添餐，但告示被遮挡。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "At what time was the longest queue observed? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "twelve fifteen"
+      ],
+      "maxWords": 2,
+      "evidence": "The longest queue was at twelve fifteen",
+      "explanation": "原文具体观察到十二点十五分队伍最长。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "What other factor could explain the long queue?",
+      "options": [
+        "A new charge for water",
+        "Customers arriving from the field trip",
+        "Reduced staffing at that time"
+      ],
+      "answers": [
+        "Reduced staffing at that time"
+      ],
+      "evidence": "there was only one server then because another staff member was unloading deliveries.",
+      "explanation": "当时只有一名服务员，排队不能全归因于小盘。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Why ask a specific question about portions?",
+      "options": [
+        "It will prove all customers prefer large plates.",
+        "General satisfaction may conceal the reason for dissatisfaction.",
+        "Customers cannot answer general questions."
+      ],
+      "answers": [
+        "General satisfaction may conceal the reason for dissatisfaction."
+      ],
+      "evidence": "A general satisfaction question might not tell us why someone is unhappy.",
+      "explanation": "更具体的问题有助区分份量与其他不满意原因。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What concern remains even after clearer information is displayed?",
+      "options": [
+        "Some customers may find repeated trips inconvenient.",
+        "Prices may secretly double.",
+        "The till cannot record meal counts."
+      ],
+      "answers": [
+        "Some customers may find repeated trips inconvenient."
+      ],
+      "evidence": "we should still check whether people find repeated trips inconvenient.",
+      "explanation": "解决误解后仍应检查真实不便，不能用宣传替代体验证据。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "ebf478c179d486a505a6acaee4454bdca0f4bf7e77c4a0b0b7ec16d0b20eca5f",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b1-listen-in.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-IN",
+  "audioAccent": "印度英语（合成）",
+  "audioVoice": "en-IN-NeerjaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 144.552,
+  "audioVoices": [
+    "en-IN-NeerjaNeural",
+    "en-IN-PrabhatNeural"
+  ]
+}

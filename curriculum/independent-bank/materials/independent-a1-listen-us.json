@@ -1,0 +1,151 @@
+{
+  "id": "independent-a1-listen-us",
+  "version": "1",
+  "week": 5,
+  "level": "A1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "An announcement at Pine Pool",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Hello, everyone. Welcome to Pine Pool. We open at eight on weekdays. On Sunday we open at ten. The small pool is for children, and the large pool is for adults. You need a yellow ticket for today's swimming lesson. Please give it to your teacher, Rosa. The lesson starts at eleven and lasts thirty minutes. You can leave your shoes in the box under the bench. Please bring your own towel. We sell water at the front desk, but we do not sell towels. Today the shower in room two is broken. Please use the shower in room three. Thank you, and enjoy your swim.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "泳池周日几点开门？",
+      "options": [
+        "Eight",
+        "Eleven",
+        "Ten"
+      ],
+      "answers": [
+        "Ten"
+      ],
+      "evidence": "On Sunday we open at ten.",
+      "explanation": "周日与平日开门时间不同。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "儿童应使用哪个池？",
+      "options": [
+        "Both pools are only for adults",
+        "The small pool",
+        "The large pool"
+      ],
+      "answers": [
+        "The small pool"
+      ],
+      "evidence": "The small pool is for children",
+      "explanation": "小池供儿童使用。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "今天游泳课需要什么颜色的票？写一个英文单词。",
+      "answers": [
+        "yellow"
+      ],
+      "maxWords": 1,
+      "evidence": "You need a yellow ticket for today's swimming lesson.",
+      "explanation": "课程票是黄色。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "老师叫什么？写原文中的名字。",
+      "answers": [
+        "Rosa"
+      ],
+      "maxWords": 1,
+      "evidence": "Please give it to your teacher, Rosa.",
+      "explanation": "票要交给老师 Rosa。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "游泳课持续多久？",
+      "options": [
+        "An hour",
+        "Thirty minutes",
+        "Eleven minutes"
+      ],
+      "answers": [
+        "Thirty minutes"
+      ],
+      "evidence": "The lesson starts at eleven and lasts thirty minutes.",
+      "explanation": "十一点是开始钟点，三十分钟是课长。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "鞋子放在哪里？",
+      "options": [
+        "In a box under the bench",
+        "On the front desk",
+        "In the large pool"
+      ],
+      "answers": [
+        "In a box under the bench"
+      ],
+      "evidence": "You can leave your shoes in the box under the bench.",
+      "explanation": "注意 box under the bench。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "必须自带什么？",
+      "options": [
+        "Water",
+        "A yellow box",
+        "A towel"
+      ],
+      "answers": [
+        "A towel"
+      ],
+      "evidence": "Please bring your own towel.",
+      "explanation": "前台卖水，不卖毛巾。",
+      "id": "q7"
+    },
+    {
+      "type": "fill",
+      "prompt": "今天应使用几号房间的淋浴？写一个英文单词。",
+      "answers": [
+        "three"
+      ],
+      "maxWords": 1,
+      "evidence": "Please use the shower in room three.",
+      "explanation": "二号房的淋浴坏了，改用三号房。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "cd789150b80f5bc10edd5a75b0bcb62eb914f5a8b716080298ad31397d188ae6",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a1-listen-us.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-US",
+  "audioAccent": "美国英语（合成）",
+  "audioVoice": "en-US-AriaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 52.224,
+  "audioVoices": [
+    "en-US-AriaNeural"
+  ]
+}

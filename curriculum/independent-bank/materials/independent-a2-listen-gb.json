@@ -1,0 +1,152 @@
+{
+  "id": "independent-a2-listen-gb",
+  "version": "1",
+  "week": 12,
+  "level": "A2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A parcel at the collection office",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Clerk: Good afternoon. Can I help?\nElliot: I have a card saying there is a parcel for me. I tried the post office on King Street, but they sent me here.\nClerk: Yes, this is the collection office. What is your surname?\nElliot: Parker. P A R K E R.\nClerk: Thank you. Do you have photo identification?\nElliot: I have my driving licence. Is that all right?\nClerk: Yes. The address matches, so that is fine. Your parcel arrived yesterday. It is quite large. Did you come by car?\nElliot: No, by bicycle. Can you keep it until tomorrow?\nClerk: Certainly. We can keep it free for seven days. After that it goes back to the sender. We close at five today, but tomorrow is Saturday, so we close at noon.\nElliot: I will come at ten with my sister's car. Is there a car park?\nClerk: Use the spaces behind this building. The front spaces belong to the dentist. Bring this card again. Your sister can collect the parcel for you, but she will need your written permission as well as the card.\nElliot: I will come myself. Thanks for explaining.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why did Elliot leave the King Street post office?",
+      "options": [
+        "He was directed to this collection office.",
+        "It had already closed.",
+        "It had lost his identity card."
+      ],
+      "answers": [
+        "He was directed to this collection office."
+      ],
+      "evidence": "they sent me here.",
+      "explanation": "另一处邮局把他转到领取中心，没有说该邮局停业。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "What is Elliot’s surname? Write ONE WORD.",
+      "answers": [
+        "Parker"
+      ],
+      "maxWords": 1,
+      "evidence": "Parker. P A R K E R.",
+      "explanation": "姓名有逐字母拼写佐证。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Which identification does he show?",
+      "options": [
+        "A student card",
+        "A driving licence",
+        "A passport"
+      ],
+      "answers": [
+        "A driving licence"
+      ],
+      "evidence": "I have my driving licence.",
+      "explanation": "所持证件是驾照；不是提问中举例的别种证件。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Why does he leave without the parcel?",
+      "options": [
+        "It is large and he has come by bicycle.",
+        "His address is incorrect.",
+        "The parcel has not arrived."
+      ],
+      "answers": [
+        "It is large and he has come by bicycle."
+      ],
+      "evidence": "It is quite large. Did you come by car?\nElliot: No, by bicycle.",
+      "explanation": "地址通过核对，包裹已到；运输不便才决定明日来取。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "How many days can the office keep the parcel free? Write ONE WORD.",
+      "answers": [
+        "seven"
+      ],
+      "maxWords": 1,
+      "evidence": "We can keep it free for seven days.",
+      "explanation": "超过七天退给寄件人，不是开始收费。",
+      "id": "q5"
+    },
+    {
+      "type": "fill",
+      "prompt": "At what time does the office close on Saturday? Write ONE WORD.",
+      "answers": [
+        "noon"
+      ],
+      "maxWords": 1,
+      "evidence": "tomorrow is Saturday, so we close at noon.",
+      "explanation": "今天五点、周六中午，应区分。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Where should Elliot park tomorrow?",
+      "options": [
+        "Behind the collection-office building",
+        "In the spaces at the front",
+        "Behind the King Street post office"
+      ],
+      "answers": [
+        "Behind the collection-office building"
+      ],
+      "evidence": "Use the spaces behind this building.",
+      "explanation": "前面车位归牙医，后面才可停车。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What additional item would his sister need to collect the parcel?",
+      "options": [
+        "Her bicycle receipt",
+        "A payment for storage",
+        "His written permission"
+      ],
+      "answers": [
+        "His written permission"
+      ],
+      "evidence": "she will need your written permission as well as the card.",
+      "explanation": "妹妹代取除卡片外还要书面授权；Elliot 最后选择本人来。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "0cc465cd49f01e2d66f930fdf9c1c30658a745281c51a38d1714f0c9bd12ae4b",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-a2-listen-gb.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-GB",
+  "audioAccent": "英国英语（合成）",
+  "audioVoice": "en-GB-SoniaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 81.336,
+  "audioVoices": [
+    "en-GB-SoniaNeural",
+    "en-GB-RyanNeural"
+  ]
+}

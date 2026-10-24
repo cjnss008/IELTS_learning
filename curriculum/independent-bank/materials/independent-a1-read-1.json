@@ -1,0 +1,139 @@
+{
+  "id": "independent-a1-read-1",
+  "version": "1",
+  "week": 5,
+  "level": "A1",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A Saturday at the community room",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 12,
+  "timeLimitSeconds": 720,
+  "passage": "My name is Mina. I help at the community room on Saturdays. The room is behind the library. We open at nine and close at one. Our first group is for children. They draw animals with Sam. The second group is for adults. They make small bags with me. A class costs five pounds. Tea is free, but food is not. Please bring your own lunch. There are twelve chairs in the room. You can leave your coat next to the door. There is no car park. The number six bus stops outside the library. On wet days, please wait inside the library before the room opens.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "活动室在哪里？",
+      "options": [
+        "Next to the station",
+        "Behind the library",
+        "Inside the school"
+      ],
+      "answers": [
+        "Behind the library"
+      ],
+      "evidence": "The room is behind the library.",
+      "explanation": "behind 表示在……后面，图书馆不是活动室内部。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "活动室几点关门？写原文中的一个英文单词。",
+      "answers": [
+        "one"
+      ],
+      "maxWords": 1,
+      "evidence": "We open at nine and close at one.",
+      "explanation": "九点是开门时间，一点才是关门时间。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "儿童在第一组做什么？",
+      "options": [
+        "Make bags",
+        "Cook lunch",
+        "Draw animals"
+      ],
+      "answers": [
+        "Draw animals"
+      ],
+      "evidence": "They draw animals with Sam.",
+      "explanation": "儿童组跟 Sam 画动物；做包是成人组的活动。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "成人组做的小物品是 small ____。",
+      "answers": [
+        "bags"
+      ],
+      "maxWords": 1,
+      "evidence": "They make small bags with me.",
+      "explanation": "保留原文复数 bags。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "哪一样免费？",
+      "options": [
+        "Tea",
+        "Food",
+        "A class"
+      ],
+      "answers": [
+        "Tea"
+      ],
+      "evidence": "Tea is free, but food is not.",
+      "explanation": "茶免费，食物和课程都不是免费项目。",
+      "id": "q5"
+    },
+    {
+      "type": "fill",
+      "prompt": "房间里有多少把椅子？写一个英文单词。",
+      "answers": [
+        "twelve"
+      ],
+      "maxWords": 1,
+      "evidence": "There are twelve chairs in the room.",
+      "explanation": "人数没有说明；这里问的是椅子数。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "外套可以放在哪里？",
+      "options": [
+        "In the car park",
+        "Next to the door",
+        "On a chair outside"
+      ],
+      "answers": [
+        "Next to the door"
+      ],
+      "evidence": "You can leave your coat next to the door.",
+      "explanation": "可把外套放在门边。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "下雨且活动室还没开门时，应在哪里等？",
+      "options": [
+        "Inside the library",
+        "At the bus stop",
+        "Outside the community room"
+      ],
+      "answers": [
+        "Inside the library"
+      ],
+      "evidence": "On wet days, please wait inside the library before the room opens.",
+      "explanation": "原文要求在图书馆里面等候。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "9ebd4ddb8c061d6743b85384b15b4a2d6094c27ca8b8f2270b8f2c98f1d001d0",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

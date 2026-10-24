@@ -1,0 +1,160 @@
+{
+  "id": "independent-b2-listen-gb",
+  "version": "1",
+  "week": 32,
+  "level": "B2",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Discussing a public-art consultation",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Chair: Our task today is to design the consultation for the station-square artwork. We have funding for a sculpture, but we have not chosen a design. The sponsor offered three proposals, and the council wants residents to comment before it selects one.\nPlanner: We could simply put the images online and count votes. That would be quick, but people who use the square without following council websites might never hear about it. I suggest an exhibition at the station as well as the online survey.\nChair: Would that solve the representation problem?\nPlanner: It would reach some additional users, especially commuters. It would not automatically include residents who avoid the station. We should record how people encountered the consultation and describe that limitation in the report. Calling every response a vote from the whole community would overstate what we know.\nChair: The sponsor prefers the tallest proposal. It says that would create the clearest landmark.\nPlanner: Height is relevant, but the artwork also has to leave a clear route through the square. The access team has asked for a turning space beside the bus entrance. A photograph from one angle may not show whether that route is blocked. We should provide a simple ground plan with dimensions for each design.\nChair: Some comments may be about the whole square rather than the sculpture. Should we exclude them?\nPlanner: Keep them, but label them separately. A complaint about poor lighting is relevant to the place, though it does not necessarily express opposition to a particular sculpture. We should not code every negative comment as a rejection of art. Also, a preference between three designs does not tell us whether someone wanted a sculpture in the first place.\nChair: The installation budget is fixed. Can we ignore costs in the survey?\nPlanner: We need not ask residents to invent prices, but maintenance should be part of the information. The metal proposal needs annual inspection, while the timber proposal has a scheduled protective treatment. We need estimates for those activities before comparing the whole-life cost. The lowest initial price may not remain the lowest over time.\nChair: When will the decision be published?\nPlanner: After the access review and cost estimates are complete. We should publish the reasons alongside the selected design, including where the council has departed from the most popular response. Consultation informs the decision; unless we promise a binding vote, popularity is one input among several.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What has already been decided before the consultation?",
+      "options": [
+        "Funding is available for a sculpture.",
+        "The tallest design will be installed.",
+        "The online survey result will be binding."
+      ],
+      "answers": [
+        "Funding is available for a sculpture."
+      ],
+      "evidence": "We have funding for a sculpture, but we have not chosen a design.",
+      "explanation": "资金已到位，具体设计未选。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why is a station exhibition proposed?",
+      "options": [
+        "To replace every other consultation method",
+        "To prove that all residents commute by train",
+        "To reach users who may miss an online-only consultation"
+      ],
+      "answers": [
+        "To reach users who may miss an online-only consultation"
+      ],
+      "evidence": "people who use the square without following council websites might never hear about it.",
+      "explanation": "现场展览补充触达人群，未声称全面代表。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "What limitation would still remain?",
+      "options": [
+        "The survey could no longer record response sources.",
+        "People who avoid the station might be underrepresented.",
+        "Commuters would be barred from responding."
+      ],
+      "answers": [
+        "People who avoid the station might be underrepresented."
+      ],
+      "evidence": "It would not automatically include residents who avoid the station.",
+      "explanation": "站内展览仍不能自动覆盖不去车站的人。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "What should accompany images to assess access? A ground plan with ____. Write ONE WORD.",
+      "answers": [
+        "dimensions"
+      ],
+      "maxWords": 1,
+      "evidence": "a simple ground plan with dimensions for each design.",
+      "explanation": "尺寸平面图帮助判断通行空间，单一角度照片可能不够。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "How should complaints about lighting be handled?",
+      "options": [
+        "Count them as opposition to every sculpture",
+        "Delete them as irrelevant to the place",
+        "Retain them in a separate category"
+      ],
+      "answers": [
+        "Retain them in a separate category"
+      ],
+      "evidence": "Keep them, but label them separately.",
+      "explanation": "保留场所意见但不混成对雕塑的反对票。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "What cannot be concluded from a choice among the three designs?",
+      "options": [
+        "That three designs were presented",
+        "That the respondent wanted a sculpture at all",
+        "That one design was preferred to another"
+      ],
+      "answers": [
+        "That the respondent wanted a sculpture at all"
+      ],
+      "evidence": "a preference between three designs does not tell us whether someone wanted a sculpture in the first place.",
+      "explanation": "限定选项中的偏好无法回答是否想要雕塑的前置问题。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Why obtain maintenance estimates?",
+      "options": [
+        "Initial price does not establish total cost over time.",
+        "Residents must calculate the sponsor’s profit.",
+        "Both materials require identical treatment."
+      ],
+      "answers": [
+        "Initial price does not establish total cost over time."
+      ],
+      "evidence": "The lowest initial price may not remain the lowest over time.",
+      "explanation": "维护不同会改变生命周期成本比较。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What is the planner’s view of the consultation result?",
+      "options": [
+        "It must override access requirements.",
+        "It can be withheld if the council disagrees.",
+        "It should inform a decision considered alongside other evidence."
+      ],
+      "answers": [
+        "It should inform a decision considered alongside other evidence."
+      ],
+      "evidence": "popularity is one input among several.",
+      "explanation": "并非承诺约束性投票，应结合可达性和成本且公开理由。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "46ccb67d2d7a232e34dd11eb4c40abc1372d69de0029da91d3c844fd5b3d9bf6",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b2-listen-gb.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-GB",
+  "audioAccent": "英国英语（合成）",
+  "audioVoice": "en-GB-SoniaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 149.736,
+  "audioVoices": [
+    "en-GB-SoniaNeural",
+    "en-GB-RyanNeural"
+  ]
+}

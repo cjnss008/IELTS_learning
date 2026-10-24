@@ -1,0 +1,147 @@
+{
+  "id": "independent-b2-read-1",
+  "version": "1",
+  "week": 32,
+  "level": "B2",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "The roof that seemed to cool a district",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 30,
+  "timeLimitSeconds": 1800,
+  "passage": "A fictional housing partnership in the city of Selborne painted the roof of one warehouse with a pale coating. The project was intended to test whether a surface that reflected more sunlight could reduce the building's cooling demand. An enthusiastic press release later described it as evidence that the entire surrounding district had become cooler. The measurements supported a narrower conclusion.\n\nBefore the coating was applied, the project team attached temperature sensors to the warehouse roof and to an untreated roof across the street. They also placed sensors in the top-floor rooms of both buildings. On sunny afternoons after treatment, the coated roof was substantially cooler than it had been before, while the reduction inside the treated warehouse was smaller. Electricity bills also fell, but during the same month the warehouse operator replaced several old lamps with more efficient lighting. The bills therefore combined at least two changes rather than isolating the roof's contribution.\n\nThe comparison building appeared to solve this problem, yet it introduced another. It was occupied mainly in the morning, whereas the treated warehouse stayed open until late evening. Staff in the latter building had also begun closing loading doors during hot weather. Differences in occupation and door use could affect indoor temperatures independently of roof colour. The untreated roof remained useful for understanding how surfaces responded to the same weather, but the two buildings were not interchangeable laboratories.\n\nThe team considered adding more instruments. A contractor proposed a sensor on the pavement outside each building. These would provide information at pedestrian height, which was absent from the original design. However, two points would still not establish a district-wide change. A cool reading in a shaded doorway could reflect the doorway's position rather than a general benefit. A district-level claim would require a broader sampling plan that included both exposed and shaded public spaces, measured under comparable conditions.\n\nResidents raised a further question: who would pay for maintaining the coating? The manufacturer expected the surface to remain reflective for several years, but the trial had lasted only one summer. Dust and leaf debris might alter its performance. The partnership therefore agreed to inspect the roof annually and to record cleaning costs rather than treating the installation price as the entire cost of the intervention. The inspection programme was a plan for collecting future evidence, not proof that maintenance would be cheap.\n\nIn its revised report, the team separated three scales of claim: the roof surface, the rooms below it and the district beyond the building. It retained the strong surface-temperature result, described the indoor result with qualifications, and withdrew the district-cooling statement. The revision did not make the experiment worthless. It made clear which questions had actually been investigated and which would need a different design. The partnership still had to decide whether the observed building benefit justified a larger trial. That decision could take account of cost, occupant comfort and uncertainty without pretending that every uncertainty had already been removed.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What was the original project designed to test?",
+      "options": [
+        "Whether a reflective roof could reduce one building’s cooling demand",
+        "Whether every street in Selborne became cooler",
+        "Whether residents preferred pale buildings"
+      ],
+      "answers": [
+        "Whether a reflective roof could reduce one building’s cooling demand"
+      ],
+      "evidence": "The project was intended to test whether a surface that reflected more sunlight could reduce the building's cooling demand.",
+      "explanation": "原定范围是一座楼的制冷需求；新闻稿扩大成全区降温。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why do the lower electricity bills not isolate the roof’s effect?",
+      "options": [
+        "The bills referred only to the untreated building.",
+        "No roof temperatures were measured.",
+        "The lighting was changed during the same period."
+      ],
+      "answers": [
+        "The lighting was changed during the same period."
+      ],
+      "evidence": "the warehouse operator replaced several old lamps with more efficient lighting.",
+      "explanation": "同期节能照明也会影响电费，因此账单无法单独分离屋顶贡献。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "For which purpose was the untreated roof still useful?",
+      "options": [
+        "Measuring all pedestrians’ thermal comfort",
+        "Comparing surface responses to shared weather conditions",
+        "Proving that the two interiors operated identically"
+      ],
+      "answers": [
+        "Comparing surface responses to shared weather conditions"
+      ],
+      "evidence": "The untreated roof remained useful for understanding how surfaces responded to the same weather",
+      "explanation": "表面在同一天气下的响应仍可比，但室内使用方式不同。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What limitation would remain with only two pavement sensors?",
+      "options": [
+        "Their locations might not represent conditions across the district.",
+        "They could measure only roof surfaces.",
+        "They would remove the need to record shade."
+      ],
+      "answers": [
+        "Their locations might not represent conditions across the district."
+      ],
+      "evidence": "two points would still not establish a district-wide change.",
+      "explanation": "局部测点可能受位置与阴影影响，不能代表全区。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "A broader sampling plan should cover exposed and ____ public spaces. Write ONE WORD.",
+      "answers": [
+        "shaded"
+      ],
+      "maxWords": 1,
+      "evidence": "included both exposed and shaded public spaces",
+      "explanation": "阴影是需要纳入的空间条件，而不是排除的误差。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Why was annual roof inspection added?",
+      "options": [
+        "The coating had been removed after a year.",
+        "Longer-term performance and maintenance costs were still uncertain.",
+        "One summer had already proved that cleaning was cheap."
+      ],
+      "answers": [
+        "Longer-term performance and maintenance costs were still uncertain."
+      ],
+      "evidence": "the trial had lasted only one summer.",
+      "explanation": "使用期限与维护成本尚无长期证据，因此要继续跟踪。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "Which claim was withdrawn from the revised report?",
+      "options": [
+        "That the surrounding district had been cooled",
+        "That the roof surface became cooler",
+        "That indoor results needed qualifications"
+      ],
+      "answers": [
+        "That the surrounding district had been cooled"
+      ],
+      "evidence": "withdrew the district-cooling statement.",
+      "explanation": "撤回的是全区效果，强的屋顶表面证据保留。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What is the writer’s main position?",
+      "options": [
+        "A trial is useless unless it removes every uncertainty.",
+        "A manufacturer’s expectation is equivalent to long-term observation.",
+        "A useful result should be stated at the scale the evidence supports."
+      ],
+      "answers": [
+        "A useful result should be stated at the scale the evidence supports."
+      ],
+      "evidence": "It made clear which questions had actually been investigated and which would need a different design.",
+      "explanation": "全文强调结论的范围应与研究设计相符，而非要求所有不确定性先消失。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "dde2675cfcf0b71ed60050331863fe49a411e7af1c9064d47d1edd9363dedd5d",
+    "contentHashFields": [
+      "title",
+      "passage",
+      "questions"
+    ]
+  }
+}

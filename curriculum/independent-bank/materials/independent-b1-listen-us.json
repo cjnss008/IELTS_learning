@@ -1,0 +1,160 @@
+{
+  "id": "independent-b1-listen-us",
+  "version": "1",
+  "week": 20,
+  "level": "B1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A student project on package instructions",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Tutor: Tell me about your study, Maya.\nMaya: We want to know whether clearer instructions help people put a flat-pack box together. We made two instruction sheets. One has paragraphs, and the other has numbered drawings. We will give everyone the same set of cardboard parts.\nTutor: Good. How will you divide participants?\nMaya: We thought people could choose the sheet they prefer.\nTutor: That would make the result difficult to interpret. People who choose drawings might already be better at this kind of task. Allocate the sheets at random instead. Record whether participants have assembled similar boxes before, too.\nMaya: Should we time how quickly they finish?\nTutor: Yes, but speed alone is not enough. A box assembled quickly may fall apart. Check whether each finished box can hold a standard weight. Use the same weight for everyone, and decide the checking procedure before you start.\nMaya: We have twenty-four volunteers. Half can come on Monday and half on Wednesday. Could we use the paragraph sheet on Monday and the drawings on Wednesday?\nTutor: Avoid that. A difference between days could become a difference between instruction types. Use both types on each day. Keep the room arrangement and the time allowed the same.\nMaya: What about helping someone who gets stuck?\nTutor: Explain the safety rules to everyone beforehand, but do not give extra assembly hints during the independent task. If someone decides to stop, record that choice. Do not invent a finishing time for them or delete them because they were slow.\nMaya: We will also ask which sheet they liked.\nTutor: That can be useful, as long as you report preference separately from successful assembly. A person might enjoy a sheet that does not help them make a stronger box. With a small volunteer sample, treat the project as an initial comparison rather than a conclusion about all consumers.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is kept identical for all participants?",
+      "options": [
+        "Their previous experience",
+        "The cardboard parts",
+        "The instruction format"
+      ],
+      "answers": [
+        "The cardboard parts"
+      ],
+      "evidence": "We will give everyone the same set of cardboard parts.",
+      "explanation": "零件一致，指引形式是要比较的变量。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why does the tutor reject letting participants choose instructions?",
+      "options": [
+        "The groups could differ in relevant ability before the task.",
+        "All participants prefer paragraphs.",
+        "Drawings are unsafe."
+      ],
+      "answers": [
+        "The groups could differ in relevant ability before the task."
+      ],
+      "evidence": "People who choose drawings might already be better at this kind of task.",
+      "explanation": "自选可能与能力相关，随机分配减少这种偏差。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "What previous experience should be recorded? Assembling similar ____. Write ONE WORD.",
+      "answers": [
+        "boxes"
+      ],
+      "maxWords": 1,
+      "evidence": "Record whether participants have assembled similar boxes before, too.",
+      "explanation": "记录相近任务经验用于解释结果。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What outcome should supplement completion speed?",
+      "options": [
+        "Whether the tutor likes the final colour",
+        "Whether the box supports the standard weight",
+        "Whether participants bring their own cardboard"
+      ],
+      "answers": [
+        "Whether the box supports the standard weight"
+      ],
+      "evidence": "Check whether each finished box can hold a standard weight.",
+      "explanation": "速度不等于组装质量，标准承重提供另一个指标。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "How should the instruction types be distributed across test days?",
+      "options": [
+        "Use both types on both days",
+        "Use paragraphs only on Monday",
+        "Use drawings only on Wednesday"
+      ],
+      "answers": [
+        "Use both types on both days"
+      ],
+      "evidence": "Use both types on each day.",
+      "explanation": "避免日期差异和指引类型混在一起。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "What assistance is permitted before the task?",
+      "options": [
+        "Showing each participant how to finish",
+        "Correcting all assembly errors",
+        "Explaining safety rules"
+      ],
+      "answers": [
+        "Explaining safety rules"
+      ],
+      "evidence": "Explain the safety rules to everyone beforehand",
+      "explanation": "事前统一安全说明允许；独立任务中额外组装提示不允许。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "How should an unfinished attempt be handled?",
+      "options": [
+        "Remove it from the record without explanation",
+        "Record that the participant stopped",
+        "Assign a very slow finishing time"
+      ],
+      "answers": [
+        "Record that the participant stopped"
+      ],
+      "evidence": "If someone decides to stop, record that choice.",
+      "explanation": "保留停止事实，不捏造完成时间、不无说明剔除。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "How should participants’ preferences be reported?",
+      "options": [
+        "Separately from assembly success",
+        "As proof that the preferred sheet makes stronger boxes",
+        "As a conclusion about every consumer"
+      ],
+      "answers": [
+        "Separately from assembly success"
+      ],
+      "evidence": "report preference separately from successful assembly.",
+      "explanation": "偏好与客观组装成功是不同结果。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "9f4b9361b072c7966aec29ae63e712a7430384efec3eb8e3168b149cc9d1db9f",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b1-listen-us.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-US",
+  "audioAccent": "美国英语（合成）",
+  "audioVoice": "en-US-AriaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 126.984,
+  "audioVoices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "id": "independent-b1-listen-au",
+  "version": "1",
+  "week": 20,
+  "level": "B1",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Preparing a dune-monitoring visit",
+  "instructions": "原创模拟情境，非官方试题；这是独立分科短测，不是40题完整试卷。开始前不看正文、原音、词表或答案。先独立完成8题并保存原始答案，提交后再核对依据。难度是编写目标，尚未经真实考生标定。",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "transcript": "Leader: Before Saturday's visit, I want to explain our dune-monitoring plan. We are not planting anything this month. We are taking photographs and recording where people leave the boardwalk. That will help us choose places for future signs.\nVolunteer: Last year we counted footprints. Are we doing that again?\nLeader: No. Footprints can remain for several days, so one busy afternoon can affect several counts. This time we will observe actual movements during fixed periods. Each pair will watch one access point for twenty minutes, followed by a ten-minute break. We will use the same periods at all three access points.\nVolunteer: Should we tell people to stay on the path?\nLeader: A ranger will deal with safety. Your job is to observe without starting conversations about the research. If we remind people while counting, their behaviour may change because we are there. Of course, tell the ranger immediately if someone is in danger.\nVolunteer: Where should we take photographs?\nLeader: Use the painted post as your starting point. Hold the camera at chest height and face north. The pictures are for comparing the visible area over time. They are not measurements of the amount of sand. Please avoid identifiable faces; wait a moment if someone is directly in front of you.\nVolunteer: Do we enter the dune to get a better view?\nLeader: No. Stay on the boardwalk. The western access point is closed because a section is damaged, so we will replace it with the central one. The weather forecast is dry, but if the wind becomes strong enough to blow loose sand into our equipment, we will stop and note the time. We will not record a stopped session as zero visitors.\nVolunteer: When do you need the forms?\nLeader: Upload them by Sunday evening, including any difficulties. A form with a clear note about missing observations is more useful than a form that looks complete but contains guesses.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is the purpose of this month’s visit?",
+      "options": [
+        "Collect information to plan future signs",
+        "Plant new vegetation",
+        "Measure the depth of the sand"
+      ],
+      "answers": [
+        "Collect information to plan future signs"
+      ],
+      "evidence": "That will help us choose places for future signs.",
+      "explanation": "拍照和观察离开栈道行为，支持标识规划；非种植或沙量测定。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why are footprints no longer being counted?",
+      "options": [
+        "They are always hidden by vegetation.",
+        "The volunteers can no longer reach the beach.",
+        "They can remain across several observation days."
+      ],
+      "answers": [
+        "They can remain across several observation days."
+      ],
+      "evidence": "Footprints can remain for several days",
+      "explanation": "旧足迹可能反复进入多次计数。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "Each observation period lasts ____ minutes. Write ONE WORD.",
+      "answers": [
+        "twenty"
+      ],
+      "maxWords": 1,
+      "evidence": "Each pair will watch one access point for twenty minutes",
+      "explanation": "十分钟是休息，二十分钟是观察段。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Why should volunteers avoid reminding visitors during the count?",
+      "options": [
+        "The reminders might alter the behaviour being observed.",
+        "The ranger has forbidden all safety reports.",
+        "Visitors must be photographed before speaking."
+      ],
+      "answers": [
+        "The reminders might alter the behaviour being observed."
+      ],
+      "evidence": "their behaviour may change because we are there.",
+      "explanation": "测量时干预会影响行为；危险仍须报告。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "In which direction should the camera face? Write ONE WORD.",
+      "answers": [
+        "north"
+      ],
+      "maxWords": 1,
+      "evidence": "Hold the camera at chest height and face north.",
+      "explanation": "相机固定方向有助跨时比较。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Which access point replaces the damaged western point?",
+      "options": [
+        "The northern point",
+        "The central point",
+        "The eastern point"
+      ],
+      "answers": [
+        "The central point"
+      ],
+      "evidence": "we will replace it with the central one.",
+      "explanation": "西侧损坏，改用中央点。",
+      "id": "q6"
+    },
+    {
+      "type": "single",
+      "prompt": "What should happen when loose sand threatens the equipment?",
+      "options": [
+        "Stop and record when observation ended",
+        "Enter the dune to shelter",
+        "Record the rest of the period as having no visitors"
+      ],
+      "answers": [
+        "Stop and record when observation ended"
+      ],
+      "evidence": "we will stop and note the time.",
+      "explanation": "中断段缺数据，不能写成零人。",
+      "id": "q7"
+    },
+    {
+      "type": "single",
+      "prompt": "What kind of form does the leader prefer?",
+      "options": [
+        "One filled with guesses to avoid blanks",
+        "One without any account of difficulties",
+        "One that explains missing observations honestly"
+      ],
+      "answers": [
+        "One that explains missing observations honestly"
+      ],
+      "evidence": "A form with a clear note about missing observations is more useful",
+      "explanation": "完整外观不能替代可靠记录。",
+      "id": "q8"
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据，无外部文章改编",
+    "verification": "reviewed",
+    "method": "Codex逐题对照完整原文并核对答案、干扰项和词数；规则检查另列；未经过真人考生难度标定。",
+    "contentHash": "75b896359c64df92db55bbd0204d9e4371dca68af0d87162d6833408b3ef3e5f",
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ]
+  },
+  "audio": "audio/independent-bank/independent-b1-listen-au.mp3",
+  "audioSynthetic": true,
+  "audioLocale": "en-AU",
+  "audioAccent": "澳大利亚英语（合成）",
+  "audioVoice": "en-AU-NatashaNeural",
+  "audioProvider": "Microsoft online TTS",
+  "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "captionFile": "",
+  "audioDurationSeconds": 130.416,
+  "audioVoices": [
+    "en-AU-NatashaNeural",
+    "en-AU-WilliamNeural"
+  ]
+}
