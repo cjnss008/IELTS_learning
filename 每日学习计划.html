@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="52周雅思学术类学习日程：每日定量任务、学习成果记录、阶段测评和补强安排。">
+  <title>每日学习计划 · IELTS 52周</title>
+  <link rel="stylesheet" href="assets/daily-plan.css">
+  <script src="assets/daily-plan-content.js" defer></script>
+  <script src="assets/daily-plan-core.js" defer></script>
+  <script src="assets/daily-plan-state.js" defer></script>
+  <script src="assets/daily-plan-app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="开始学习.html"><span class="brand-icon">52</span><span>IELTS LEARNING<small>每天有计划，每周看进步</small></span></a>
+    <nav aria-label="学习导航"><a href="开始学习.html">课文学习</a><a href="单词分组学习.html">单词学习</a></nav>
+  </header>
+  <main class="page-shell">
+    <section class="hero">
+      <div><p class="eyebrow">ACADEMIC · 52 WEEKS</p><h1>把今天的学习，做扎实。</h1><p class="hero-copy">按计划练习，留下真实成果，再用测评确认进步。<br>目标听说读写各 <strong>6.5</strong>，以各 <strong>7.0</strong> 作为训练参考，留出余量。</p></div>
+      <div class="hero-aside"><span>每天固定学习量</span><strong>6<span> 小时</span></strong><small>每周 42 小时 · 全年 2184 小时<br>建议分 3 段完成，休息另计；补强安排在 6 小时内</small></div>
+    </section>
+    <div id="storageMessage" class="notice danger" role="alert" hidden></div>
+    <section class="setup-panel" aria-label="计划设置">
+      <form id="startForm" class="inline-form"><label for="startDate">开课日期</label><input type="date" id="startDate" required><button type="submit" class="button secondary">保存日期</button></form>
+      <div class="toolbar"><button id="todayButton" class="button primary">回到今天</button><button id="exportButton" class="button secondary">导出记录</button><label class="button secondary import-button" for="importFile">导入记录<input id="importFile" type="file" accept="application/json,.json"></label></div>
+      <p id="setupStatus" class="small status" role="status"></p>
+    </section>
+    <section class="stats" aria-label="计划进度">
+      <div class="stat"><span>已提交学习日</span><strong id="completedDays">0 <small>/ 364</small></strong><small>任务量满足且已提交 · 自报记录</small></div>
+      <div class="stat"><span>已记录学习时间</span><strong id="loggedHours">0 <small>小时</small></strong><small>以实际投入分钟累计</small></div>
+      <div class="stat"><span>待补交学习日</span><strong id="overdueDays">0</strong><small>逾期任务保留，可分次补做</small></div>
+      <div class="stat"><span>下一次阶段检查</span><strong id="nextCheckpoint">第 4 周</strong><small>四项分别检查，及时调整</small></div>
+    </section>
+    <div class="workspace">
+      <aside class="week-sidebar">
+        <label for="weekSelect" class="label-heading">选择学习周</label><select id="weekSelect"></select>
+        <div id="weekOverview" class="week-overview"></div>
+        <div id="weekDays" class="week-days" aria-label="本周七天"></div>
+        <div id="materials" class="materials"></div>
+        <details class="rules"><summary>怎样算完成？</summary><p>每项记录实际分钟、完成数量和学习成果。全部达到当天要求后，点击“提交今日成果”。</p><p>这里保存的是自报学习记录。作品需要抽查，能力进步需要测评；完成日程本身不保证考试分数。</p><p>录音和长篇作文请另行备份，在成果栏记录文件名、材料出处和关键错误。</p></details>
+      </aside>
+      <section class="day-panel" aria-labelledby="dayTitle">
+        <div class="day-heading"><div><p id="dayEyebrow" class="eyebrow"></p><h2 id="dayTitle"></h2><p id="daySubtitle" class="muted"></p></div><div class="day-budget"><strong id="dayMinutes"></strong><span>分钟 · 计划量</span></div></div>
+        <div id="dayNotice" class="notice" hidden></div>
+        <div id="boostNotice" class="notice" hidden></div>
+        <div class="progress-row"><span id="taskProgress"></span><span id="saveStatus" class="small" role="status"></span></div>
+        <progress id="dayProgress" value="0" max="7" aria-label="每日任务进度"></progress>
+        <form id="tasksForm" novalidate><div id="taskList"></div><div class="submit-row"><p id="dayResult" class="small" role="status"></p><button id="submitDay" type="submit" class="button primary">提交今日成果</button></div></form>
+      </section>
+    </div>
+    <section class="assessment-panel" aria-labelledby="assessmentTitle">
+      <div class="section-intro"><div><p class="eyebrow">CHECK · ADJUST · PRACTISE</p><h2 id="assessmentTitle">用测评，决定下一步。</h2><p>每四周检查一次。基础阶段记录实际表现；完整模考和正式成绩可分别记录四项分数。</p></div><div id="readiness" class="readiness"></div></div>
+      <form id="assessmentForm">
+        <div class="assessment-grid"><label>测评对应周<select id="assessmentWeek"></select></label><label>实际测评日期<input id="assessmentDate" type="date" required></label><label>测评类型<select id="assessmentType"><option value="foundation">基础能力检查</option><option value="mock">未练过的完整模考</option><option value="official">正式雅思成绩</option></select></label><label>题目来源 / 成绩依据<input id="assessmentSource" type="text" maxlength="180" required placeholder="具体题目、试卷或成绩单编号"></label></div>
+        <div id="foundationFields"><label>基础检查结果<select id="foundationResult"><option value="pass">本阶段基础任务可独立完成</option><option value="reinforce">需要补强</option></select></label><fieldset class="weak-skills"><legend>需要补强的项目</legend><label><input type="checkbox" name="weakSkill" value="listening"> 听力</label><label><input type="checkbox" name="weakSkill" value="speaking"> 口语</label><label><input type="checkbox" name="weakSkill" value="reading"> 阅读</label><label><input type="checkbox" name="weakSkill" value="writing"> 写作</label></fieldset></div>
+        <div id="bandFields" hidden><div class="score-inputs"><label>听力<input type="number" id="scoreListening" min="0" max="9" step="0.5" placeholder="0–9"></label><label>口语<input type="number" id="scoreSpeaking" min="0" max="9" step="0.5" placeholder="0–9"></label><label>阅读<input type="number" id="scoreReading" min="0" max="9" step="0.5" placeholder="0–9"></label><label>写作<input type="number" id="scoreWriting" min="0" max="9" step="0.5" placeholder="0–9"></label></div><label class="check-label"><input id="assessmentReviewed" type="checkbox"> 四项按完整考试要求完成，写作和口语已有依据官方标准的评阅</label></div>
+        <label class="block-label">表现证据与下一步<input id="assessmentNotes" type="text" maxlength="600" required placeholder="例如：漏听数字；记录具体错题、作文/录音文件名及评阅依据"></label>
+        <p class="small muted">系统只记录你提供的结果，不把课文练习得分换算成雅思分数。低于训练参考线的项目，将在后续 6 个常规学习日中各安排 30 分钟针对性补强，包含在每天 6 小时内。</p>
+        <div class="submit-row"><p id="assessmentStatus" class="small" role="status"></p><button type="submit" class="button primary">保存测评与补强安排</button></div>
+      </form>
+      <div id="assessmentHistory" class="assessment-history"></div>
+    </section>
+    <footer><p>52 周是学习计划。正式成绩受起点、学习质量、反馈和考试发挥影响，以真实测评持续校正。</p><p><a href="每日学习计划说明.md">计划与达标规则</a> · <a href="https://ielts.org/take-a-test/your-results/ielts-scoring-in-detail" target="_blank" rel="noopener">雅思官方评分说明</a> · <span>记录保存在当前浏览器，请定期导出备份。</span></p></footer>
+  </main>
+  <noscript><p>请启用 JavaScript 后使用学习日程。原有课文和讲义仍可单独打开。</p></noscript>
+</body>
+</html>
