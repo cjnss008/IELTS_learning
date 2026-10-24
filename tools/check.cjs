@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..');
-const pages=['开始学习.html','每日学习计划.html','AI设置.html','生词复习.html','写作与AI辅导.html','口语练习.html','基础入门.html','备份中心.html','学习课程.html','本地教材.html','单词分组学习.html','30分钟能力测试.html'];
+const pages=['今日学习.html','开始学习.html','每日学习计划.html','AI设置.html','生词复习.html','写作与AI辅导.html','口语练习.html','基础入门.html','备份中心.html','学习课程.html','本地教材.html','单词分组学习.html','30分钟能力测试.html'];
 let references=0,scripts=0;
 for(const name of pages){const source=fs.readFileSync(path.join(root,name),'utf8');assert.ok(source.includes('charset="utf-8"')||source.includes('charset="UTF-8"'),name+' charset');for(const match of source.matchAll(/(?:src|href)="([^"]+)"/g)){const url=match[1];if(/^(https?:|#|data:)/.test(url)||url.includes('${')||url.includes("'+"))continue;let local=url.split(/[?#]/)[0];if(!local)continue;assert.ok(fs.existsSync(path.join(root,decodeURIComponent(local))),name+': missing '+local);references++;}for(const m of source.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)){if(m[1].trim()){new vm.Script(m[1],{filename:name});scripts++;}}}
 for(const name of fs.readdirSync(path.join(root,'assets')).filter(n=>n.endsWith('.js'))){new vm.Script(fs.readFileSync(path.join(root,'assets',name),'utf8'),{filename:name});scripts++;}

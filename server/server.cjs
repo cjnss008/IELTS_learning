@@ -8,6 +8,10 @@ const { createSpeechHandler } = require('./speech.cjs');
 const { createBudget, BudgetError } = require('./budget.cjs');
 const { createSelection, SelectionError, PROMPT_VERSION } = require('./selection.cjs');
 const review = require('./review.cjs');
+const oralCoach = require('./oral-coach.cjs');
+const dailyCoach = require('./daily-coach.cjs');
+const adaptation = require('./adaptation.cjs');
+const curriculum = require('../assets/curriculum-data.js');
 const { createEvidenceStore } = require('./evidence.cjs');
 const { createTranscriptionHandler } = require('./transcription.cjs');
 const { createOralHandler } = require('./oral.cjs');
@@ -266,6 +270,32 @@ function createServer(options = {}) {
   }
 
   async function handleApi(req, res, pathname) {
+    if (req.method === 'GET' && pathname === '/api/health') return sendJson(res,200,{ok:true,service:'ielts-learning-local',version:fs.readFileSync(path.join(rootDir,'VERSION'),'utf8').trim(),home:'/'});
+    if(req.method==='POST'&&pathname==='/api/ai/oral-coach'){
+      const input=oralCoach.prepare(await readJson(req),evidenceStore);
+      const {captured,data}=await runText(req,res,{messages:oralCoach.messages(input),max_tokens:5000,response_format:{type:'json_object'}},coachTimeoutMs);
+      if(data?.choices?.[0]?.finish_reason==='length')throw new AppError(502,'COACH_TRUNCATED','口语反馈被截断，请重试。');
+      return sendJson(res,200,{...oralCoach.parse(data?.choices?.[0]?.message?.content,input,captured.apiKey),model:captured.model});
+    }
+    if(req.method==='POST'&&['/api/ai/glossary','/api/ai/daily-recap'].includes(pathname)){
+      const kind=pathname.endsWith('glossary')?'glossary':'recap',body=await readJson(req);
+      const input=kind==='glossary'?dailyCoach.glossary(body):dailyCoach.recap(body,curriculum);
+      const messages=dailyCoach.messages(kind,input),requestRevision=revision;
+      for(let attempt=0;attempt<(kind==='recap'?2:1);attempt++){
+        if(requestRevision!==revision)throw new AppError(409,'CONNECTION_CHANGED','请求期间连接设置已改变，请重新提交。');
+        const {captured,data}=await runText(req,res,{messages,max_tokens:kind==='glossary'?1500:5000,response_format:{type:'json_object'}},coachTimeoutMs);
+        try{
+          if(data?.choices?.[0]?.finish_reason==='length')throw new AppError(502,'COACH_TRUNCATED','AI 返回被截断，请重试。');
+          const content=data?.choices?.[0]?.message?.content,parsed=dailyCoach.parse(content,kind,input,captured.apiKey);
+          if(kind==='recap')parsed.adaptation=adaptation.normalize(JSON.parse(content).adaptation,curriculum,input.dayNumber,captured.apiKey);
+          return sendJson(res,200,{...parsed,model:captured.model});
+        }catch(error){
+          if(kind!=='recap'||attempt!==0||error.status!==502){if(error instanceof adaptation.AdaptationError)throw new AppError(error.status,error.code,error.message);throw error;}
+          // One fresh structured repair, using the original evidence only; an invalid plan is never applied.
+          messages.push({role:'system',content:'上一轮结构校验未通过。请重新根据原始学习数据返回完整 JSON，不增加字段。recap 至少80字符；adaptation 仅包含 prioritySkills、reason、strategies、reinforcementMaterialIds。重点0–2项且不重复；strategies 每个skill只出现一次，每个重点均有策略。reason必填，action必填。不确定补强材料时reinforcementMaterialIds使用空数组；不得承诺考试成绩。'});
+        }
+      }
+    }
     if (req.method === 'GET' && pathname === '/api/ai/status') return sendJson(res, 200, publicStatus());
     if (req.method === 'GET' && pathname === '/api/budget/status') return sendJson(res, 200, { ok: true, budget: budget.status(connection) });
     if (req.method === 'POST' && pathname === '/api/budget/config') {
@@ -293,6 +323,7 @@ function createServer(options = {}) {
         const proof = evidenceStore.get(body.evidenceId);
         if (!proof) throw new AppError(409, 'AUDIO_EVIDENCE_REQUIRED', '音频证据已过期或未由当前服务验证，请重新转写或诊断；客户端自填分数不能作为证据。');
         if (proof.kind === 'free_speech_audio' && (proof.prompt !== input.prompt || proof.transcript !== input.text || proof.scope !== input.task)) throw new AppError(409, 'AUDIO_EVIDENCE_MISMATCH', '音频观察与当前题目、转写或任务不一致，请先按当前作品重新提交音频。');
+        if(proof.kind==='pronunciation'&&(proof.scope!=='short_reading'||proof.reference!==input.text))throw new AppError(409,'AUDIO_EVIDENCE_MISMATCH','专业评测原音与本次转写不匹配，请重新提交这份原音。');
         input.audioEvidence = proof;
       }
       let model = connection?.model || null;
@@ -312,6 +343,7 @@ function createServer(options = {}) {
       if (res.destroyed) return;
       const result = review.combine(rounds, model);result.audioAnalysisEvidence = input.audioEvidence?.kind === 'free_speech_audio' && input.audioEvidence.eligible === true;
       if(result.audioAnalysisEvidence){result.audioEvidenceId=body.evidenceId;result.disclaimer+=' 音频观察来自配置的Omni实际分段听音，两轮文字评阅共享这些观察，仍可能有共同误判。';}
+      if(input.audioEvidence?.kind==='pronunciation'&&input.task==='foundation')result.pronunciationEvidence={provider:'ali',evidenceId:body.evidenceId,reference:input.audioEvidence.reference,result:input.audioEvidence.result,durationSeconds:input.audioEvidence.durationSeconds};
       return sendJson(res, 200, result);
     }
     if (req.method === 'POST' && pathname === '/api/ai/speech-advice') {
@@ -410,7 +442,7 @@ function createServer(options = {}) {
     if (segments.some(segment => segment.startsWith('.') || PRIVATE_SEGMENTS.has(segment.toLowerCase()))) {
       throw new AppError(403, 'RESOURCE_DENIED', '无法访问此资源。');
     }
-    const relative = segments.length ? segments.join(path.sep) : '开始学习.html';
+    const relative = segments.length ? segments.join(path.sep) : '今日学习.html';
     const candidate = path.resolve(rootDir, relative);
     if (!insideRoot(rootDir, candidate)) throw new AppError(403, 'RESOURCE_DENIED', '无法访问此资源。');
     const extension = path.extname(candidate).toLowerCase();
@@ -471,6 +503,9 @@ function createServer(options = {}) {
         throw new AppError(403, 'ORIGIN_DENIED', '请在本地学习页面内执行此操作。');
       }
       const rawPath = String(req.url || '/').split('?')[0];
+      if(['GET','HEAD'].includes(req.method)&&decodeURIComponent(rawPath)==='/学习课程.html'){
+        res.writeHead(302,{'Location':'/'+(String(req.url).includes('?')?'?'+String(req.url).split('?').slice(1).join('?'):''),'Cache-Control':'no-store'});return res.end();
+      }
       if (await omniHandler(req, res, rawPath)) return;
       if (await oralHandler(req, res, rawPath)) return;
       if (await transcriptionHandler(req, res, rawPath)) return;
@@ -479,7 +514,7 @@ function createServer(options = {}) {
       else await serveStatic(req, res, rawPath);
     } catch (error) {
       if (res.headersSent || res.destroyed) return res.destroy();
-      const safeError = (error instanceof AppError || error instanceof BudgetError || error instanceof SelectionError || error instanceof review.ReviewError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
+      const safeError = (error instanceof AppError || error instanceof BudgetError || error instanceof SelectionError || error instanceof review.ReviewError || error instanceof oralCoach.OralCoachError || error instanceof dailyCoach.DailyCoachError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
       sendJson(res, safeError.status, { ok: false, error: { code: safeError.code, message: safeError.message } });
     }
   });

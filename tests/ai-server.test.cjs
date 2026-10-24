@@ -54,6 +54,8 @@ test('local AI service integration and credential boundaries', async t => {
   fs.mkdirSync(path.join(fixtureRoot, 'server'));
   fs.mkdirSync(path.join(fixtureRoot, 'tests'));
   fs.writeFileSync(path.join(fixtureRoot, '开始学习.html'), '<!doctype html><title>学习页面</title>');
+  fs.writeFileSync(path.join(fixtureRoot, '今日学习.html'), '<!doctype html><title>今日学习页面</title>');
+  fs.writeFileSync(path.join(fixtureRoot, 'VERSION'), '0.0.21\n');
   fs.writeFileSync(path.join(fixtureRoot, 'assets', 'app.js'), 'window.demo = true;');
   fs.writeFileSync(path.join(fixtureRoot, 'audio.mp3'), '0123456789');
   fs.writeFileSync(path.join(fixtureRoot, '.git', 'config'), 'private-git-data');
@@ -125,7 +127,16 @@ test('local AI service integration and credential boundaries', async t => {
     const page = await fetch(base + '/');
     assert.equal(page.status, 200);
     assert.match(page.headers.get('content-type'), /utf-8/);
-    assert.match(await page.text(), /学习页面/);
+    assert.match(await page.text(), /今日学习页面/);
+    const health = await api('/api/health');
+    assert.equal(health.status, 200);
+    assert.deepEqual(health.data, { ok: true, service: 'ielts-learning-local', version: '0.0.21', home: '/' });
+    const alias = await fetch(base + '/学习课程.html?day=12&material=reading-one', { redirect: 'manual' });
+    assert.equal(alias.status, 302);
+    assert.equal(alias.headers.get('location'), '/?day=12&material=reading-one');
+    const legacyPage = await fetch(base + '/学习课程.html');
+    assert.equal(legacyPage.status, 200);
+    assert.match(await legacyPage.text(), /今日学习页面/);
     const range = await fetch(base + '/audio.mp3', { headers: { Range: 'bytes=2-5' } });
     assert.equal(range.status, 206);
     assert.equal(range.headers.get('content-range'), 'bytes 2-5/10');
