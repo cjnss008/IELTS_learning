@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>生词复习 · IELTS 52</title>
+  <link rel="stylesheet" href="assets/review-app.css">
+  <script defer src="assets/course-data.js"></script>
+  <script defer src="assets/notebook.js"></script>
+  <script defer src="assets/review-core.js"></script>
+  <script defer src="assets/review-app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="开始学习.html"><span class="brand-mark">52</span><span>IELTS<span class="brand-sub">每天积累，及时回想</span></span></a>
+    <nav aria-label="主导航"><a href="开始学习.html">阅读课文</a><a href="每日学习计划.html">每日计划</a></nav>
+  </header>
+  <main>
+    <p id="preview-banner" class="notice" hidden>预览模式：本页使用独立的会话记录，不影响正式复习进度。</p>
+    <div class="intro"><div><p class="eyebrow">VOCABULARY · SPACED REVIEW</p><h1>让生词，成为熟悉的表达。</h1><p class="intro-copy">先回忆，再翻面。每天先处理到期词卡，新学最多 20 个；把词义放回原句，按真实回忆表现安排下一次复习。</p></div><span class="intro-tag">读 · 想 · 再见面</span></div>
+    <p class="notice">零基础的前 8 周请先学习“基础入门”，并在生词本收集简单词语。这里的 360 张原文词卡属于后续材料，无需第一天就开始全部词卡；可选择“我的生词本”练习自己当前学过的词。</p>
+    <div id="error-box" class="error-box" role="alert" hidden><strong>记录暂时无法继续保存</strong><p id="error-message"></p><div class="button-row"><button id="reload-button" type="button">重新读取记录</button><button id="raw-export" type="button" hidden>下载原始记录</button></div></div>
+    <p id="notice" class="notice" role="status" hidden></p>
+    <section class="stats" aria-label="今日复习概况">
+      <div><span class="stat-label">当前筛选到期</span><strong id="due-count">—</strong><span>张优先回忆</span></div>
+      <div><span class="stat-label">今日新学</span><strong><span id="new-used">—</span><small> / 20</small></strong><span>全部篇章共用上限</span></div>
+      <div><span class="stat-label">当前词卡</span><strong id="deck-count">—</strong><span id="deck-caption">课程词汇与个人生词</span></div>
+    </section>
+    <div class="workspace">
+      <section class="practice-panel" aria-labelledby="practice-heading">
+        <div class="panel-top"><div><p class="eyebrow">TODAY’S PRACTICE</p><h2 id="practice-heading">一次，认真回想一个词。</h2></div><label class="filter-label">按篇选择<select id="lesson-filter"><option value="all">全部词卡</option><option value="custom">我的生词本</option></select></label></div>
+        <div id="card-area" class="word-card" hidden>
+          <div class="card-meta"><span id="card-status" class="pill"></span><span id="card-lesson"></span></div>
+          <h3 id="card-word" lang="en"></h3><p id="card-ipa" class="ipa" lang="en"></p>
+          <div class="audio-row"><button id="audio-button" type="button" class="quiet">▶ 听发音</button><span id="audio-message" class="small" role="status"></span></div>
+          <p id="recall-prompt" class="recall-prompt">先说出含义，再尝试用它造一句话。</p>
+          <button id="flip-button" type="button" class="primary flip-button">翻面查看释义 <kbd>空格</kbd></button>
+          <div id="card-answer" class="card-answer" hidden><p id="card-meaning" class="meaning"></p><div id="context-box"><span class="eyebrow">放回原句</span><p id="card-context" lang="en"></p></div><a id="lesson-link" href="开始学习.html">回到课文 →</a><p class="small">按刚才翻面前的回忆表现评分。看见答案后的熟悉感不算独立想起。</p></div>
+          <div id="rating-buttons" class="rating-grid" hidden>
+            <button type="button" data-rating="again"><strong>1 · 没想起</strong><span>再次学习</span><small data-delay="again"></small></button>
+            <button type="button" data-rating="hard"><strong>2 · 很吃力</strong><span>有提示才想起</span><small data-delay="hard"></small></button>
+            <button type="button" data-rating="good"><strong>3 · 想起来了</strong><span>独立且正确</span><small data-delay="good"></small></button>
+            <button type="button" data-rating="easy"><strong>4 · 很轻松</strong><span>准确并能使用</span><small data-delay="easy"></small></button>
+          </div>
+        </div>
+        <div id="empty-state" class="empty-state"><span class="empty-icon" aria-hidden="true">✓</span><h3 id="empty-title">正在读取词卡</h3><p id="empty-message">稍后开始今天的回忆练习。</p><button id="refresh-queue" type="button">检查到期词卡</button></div>
+        <p id="queue-note" class="small queue-note"></p>
+      </section>
+      <aside>
+        <section class="side-card"><p class="eyebrow">HOW TO REVIEW</p><h2>先检索记忆，再核对。</h2><ol><li>遮住答案，说出中文含义和常用搭配。</li><li>翻面核对原句，留意自己遗漏的用法。</li><li>诚实评分；忘记的词会在 1 分钟后回来。</li></ol><p class="small">这是原创的轻量固定间隔规则。学习中采用 1、5、10 分钟重试；进入复习后随评分延长，最长 180 天。自评和完成数量不代表考试成绩。</p></section>
+        <section class="side-card backups"><p class="eyebrow">YOUR RECORDS</p><h2>把积累带走。</h2><p class="small">进度保存在当前浏览器。JSON 保存复习安排；Anki 文件导出当前筛选的词和原句，不含复习日程。</p><div class="backup-buttons"><button id="export-button" type="button">导出复习 JSON</button><label class="file-button">导入复习 JSON<input id="import-input" type="file" accept=".json,application/json"></label><button id="anki-button" type="button">导出 Anki TSV</button></div><p class="small">Anki 导入选择制表符分隔：第 1 列正面，第 2 列背面。</p><p id="history-note" class="small"></p></section>
+      </aside>
+    </div>
+    <footer>每天新学上限按首次评分计算；切换篇章不重置额度。个人生词可在课文中收集，刷新后加入队列。</footer>
+  </main>
+</body>
+</html>
