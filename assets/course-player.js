@@ -246,6 +246,15 @@
     return !result.requiresRetest&&rounds.every(r=>r.levelCheck.meetsGoal)&&assessment.countWords(text)>=(material.minWords||1)?'pass':'revise';
   }
 
+  function mapItemGeometry(item){
+    const x=20+Math.min(100,Math.max(0,item.x))*4,y=28+Math.min(100,Math.max(0,item.y))*2.8,area=Number.isFinite(item.w)&&item.w>0&&Number.isFinite(item.h)&&item.h>0;
+    const width=area?Math.min(item.w,100-Math.max(0,item.x))*4:0,height=area?Math.min(item.h,100-Math.max(0,item.y))*2.8:0;
+    return{x,y,area,width,height,labelX:area?x+width/2:x,labelY:area?y+height/2+4:y-8};
+  }
+  function independentTask(material){
+    if(!material?.independentBank||material.pool!=='independent'||!['reading','listening','writing'].includes(material.skill))throw Error('独立材料入口无效。');
+    return {id:material.skill,minutes:material.estimatedMinutes||20,mode:'assessment',materialIds:[material.id],instructions:material.instructions||'独立完成这份新材料，不使用帮助。',deliverable:material.skill==='writing'?'一份独立写作原稿和真实AI评阅':'独立作答全部题目并保留原始答案'};
+  }
   function init() {
     const doc = root.document, $ = id => doc.getElementById(id), data = root.IELTSCurriculumData, A = root.IELTSAssessment, R = root.IELTSRecords;
     if (!$('coursePlayerApp')) return;
@@ -316,9 +325,9 @@
       refreshHistory();
     }
     function showTask(value, preferredMaterial) {
-      leave(); task = value; doc.querySelectorAll('.course-task').forEach(b => b.setAttribute('aria-current',String(b.dataset.taskId === task.id)));
+      leave(); const preferred=materialMap.get(preferredMaterial); task = preferred?.independentBank===true ? independentTask(preferred) : value; doc.querySelectorAll('.course-task').forEach(b => b.setAttribute('aria-current',String(b.dataset.taskId === task.id)));
       $('courseMaterials').replaceChildren(); const materials = task.materialIds.map(id => materialMap.get(id)).filter(Boolean);
-      materials.forEach((m,index) => { const b = button('',()=>showMaterial(m)); b.className='course-material-button'; b.dataset.materialId=m.id; b.append(el('span','',m.title),el('small','',(materials.length>1?'第 '+(index+1)+' / '+materials.length+' 份 · ':'')+(m.pool==='final'?'末期保留卷':m.pool==='gate'?'关卡 '+(m.form||''):task.materialPractice?.find(p=>p.materialId===m.id)?.cycle==='scheduled-reuse'?'计划巩固同ID':task.materialPractice?.find(p=>p.materialId===m.id)?.cycle==='first-planned'?'计划首次新练':'练习')+' · 参考 '+m.estimatedMinutes+' 分钟')); $('courseMaterials').append(b); });
+      materials.forEach((m,index) => { const b = button('',()=>showMaterial(m)); b.className='course-material-button'; b.dataset.materialId=m.id; b.append(el('span','',m.title),el('small','',(materials.length>1?'第 '+(index+1)+' / '+materials.length+' 份 · ':'')+(m.independentBank?'独立短测':m.pool==='final'?'末期保留卷':m.pool==='gate'?'关卡 '+(m.form||''):task.materialPractice?.find(p=>p.materialId===m.id)?.cycle==='scheduled-reuse'?'计划巩固同ID':task.materialPractice?.find(p=>p.materialId===m.id)?.cycle==='first-planned'?'计划首次新练':'练习')+' · 参考 '+m.estimatedMinutes+' 分钟')); $('courseMaterials').append(b); });
       showMaterial(materialMap.get(preferredMaterial) || materials[0]);
     }
     function showMaterial(value) {
@@ -328,13 +337,14 @@
       doc.querySelectorAll('.course-material-button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.materialId===material.id)));
       $('courseMaterialIntro').append(el('p','course-material-meta','第 '+material.week+' 周 · '+(material.level||'')+' · '+material.source.rights),el('h2','',material.title),el('p','',task.instructions),el('p','course-small','本任务交付：'+task.deliverable+'。'+(material.source.verification==='reviewed'?'已完成内容核对；AI 辅助原创仍可能有误。':'内容待复核，仅供练习，不纳入达标判断。')));
       $('courseMode').value = task.mode === 'assessment' || material.pool !== 'training' ? 'assessment' : 'practice';
+      if(material.independentBank){$('courseMaterialIntro').append(el('p','course-small','独立材料库：这是未见能力的短测样本，不能替代完整雅思试卷或完成当天核心任务。开始后记录曝光；暂停、看提示和重复作答均保留标记。'));const back=el('a','','返回陌生材料库');back.href='陌生材料库.html'+(preview?'?preview=1':'');$('courseMaterialIntro').append(back);}
       if(material.id===extensiveMaterialId&&!pendingParent){$('courseMode').value='practice';$('courseMaterialIntro').append(el('p','course-small','泛读／泛听入口：本次默认按练习方式打开，仍登记材料曝光。只记录实际活动与交付物，不改变当天计划分钟或数量。'));}
       if(task.id==='speaking'){const level=String(material.level||'A0').match(/A[012]|B[12]|C[12]/g)?.at(-1)||'A0',scenario=['A0','A1'].includes(level)?'intro':level==='A2'?'appointment':level==='B1'?'part1':'part2',link=el('a','','补充：与AI进行适级无稿原音对话');link.href='无稿口语.html?day='+day+'&material='+encodeURIComponent(material.id)+'&task='+scenario+(preview?'&preview=1':'');$('courseMaterialIntro').append(link,el('p','course-small','对话单独保留每轮原音与反馈，可用于迁移练习；课程核心原稿与关卡仍按各自证据核对。'));}
       const plannedPractice=root.IELTSCurriculumCoverage?.practiceLabel(task);if(plannedPractice)$('courseMaterialIntro').append(el('p','course-small','排课说明：'+plannedPractice+'；开始材料时仍单独记录本人的已见／未见状态。'));
-      const guide=taskGuide[task.id];if(guide)$('courseMaterialIntro').prepend(el('p','course-step-guide',guide[0]+'：'+guide[1]));
+      const guide=taskGuide[task.id];if(guide)$('courseMaterialIntro').prepend(el('p','course-step-guide',material.independentBank?'独立短测：开始后独立作答，提交前不开放词义、AI详解或答案提示。':guide[0]+'：'+guide[1]));
       const modelTraining=task.id==='speaking'&&validateModelReading(null,material,task,data,day,{independentRetest:pendingParent?.kind==='retest'}).required;
       if (['vocabulary','reflection'].includes(task.id)||modelTraining) $('courseMode').value='practice';
-      $('courseMode').disabled = ['vocabulary','reflection'].includes(task.id)||modelTraining;announceView();
+      $('courseMode').disabled = ['vocabulary','reflection'].includes(task.id)||modelTraining||material.independentBank===true;announceView();
     }
     async function begin(options = {}) {
       try{await refreshMediaBudget();}catch(error){notice('活动预算核对失败：'+error.message+' 原始草稿保留，请重试。',true);return;}if(!mayContinue())return;
@@ -347,7 +357,7 @@
       const now = new Date().toISOString(), exposed = state.exposures[material.id] || records.some(r=>r.materialId===material.id);
       const access=protectedMaterialAccess(material,records,data.materials,{exposures:state.exposures,assessment:A});if(!access.allowed){notice(access.reason,true);return;}
       const kind = parent ? options.kind || 'correction' : 'original';
-      let mode = options.mode || $('courseMode').value;
+      let mode = material.independentBank===true&&kind!=='correction'?'assessment':options.mode || $('courseMode').value;
       if (kind==='retest' && (!A.retestAvailability(parent,[material]).due || material.id===parent.materialId)) { mode='practice'; notice('复测尚未到期或仍为同题，已按普通练习记录，不计独立迁移。'); }
       root.IELTSAdaptivePlan?.markStarted(day,dayPlan(day));
       attempt = {id:R.makeId('course'),materialId:material.id,taskId:task.id,courseDay:day,mode,kind,parentId:parent?.id||null,startedAt:now,activeSeconds:0,activityByDate:{},exposureAtStart:exposed?'seen':'unseen',answers:{},userEvidence:{},text:'',transcript:'',audioAvailable:false,audioCompleted:false,transcriptViewed:false,interrupted:false,assistance:{hint:false,answer:false,ai:false},media:[]};
@@ -376,7 +386,18 @@
         } catch(error) { box.append(el('p','course-nosource','平面图无法显示：'+error.message+' 请反馈材料编号；不要在缺图时将本题当作有效测评。')); }
       }
       else if (figure.type==='process') { const row=el('div','course-process'); (figure.steps||[]).forEach((s,i)=>{if(i)row.append(el('b','','→'));row.append(el('span','',(i+1)+'. '+(typeof s==='string'?s:JSON.stringify(s))));});box.append(row); }
-      else if (figure.type==='map') { const grid=el('div','course-map-grid'); for(const [key,title] of [['before','之前'],['after','之后']]) { const part=el('div');part.append(el('strong','',title));const items=figure.map?.[key]||[]; if(items.length&&items.every(i=>typeof i==='object'&&Number.isFinite(i.x)&&Number.isFinite(i.y))) { const svg=svgNode('svg',{viewBox:'0 0 400 280',role:'img','aria-label':title});svg.append(svgNode('rect',{x:0,y:0,width:400,height:280,fill:'#f5f8ee',stroke:'#829983'}));items.forEach(i=>{svg.append(svgNode('circle',{cx:20+Math.min(100,Math.max(0,i.x))*3.6,cy:20+Math.min(100,Math.max(0,i.y))*2.2,r:4,fill:'#315b45'}),svgNode('text',{x:20+Math.min(100,Math.max(0,i.x))*3.6,y:12+Math.min(100,Math.max(0,i.y))*2.2,'font-size':10,'text-anchor':'middle'},i.name||i.label));});part.append(svg); } else { part.append(el('p','course-small','材料未提供坐标，以下按原始描述呈现；不推测方位。'));items.forEach(i=>part.append(el('p','',typeof i==='string'?i:JSON.stringify(i)))); } grid.append(part); }box.append(grid); }
+      else if (figure.type==='map') {
+        const grid=el('div','course-map-grid');
+        for(const key of ['before','after']){
+          const title=String(figure.map?.[key+'Year']||figure[key+'Year']||(key==='before'?'之前':'之后')),part=el('div');part.append(el('strong','',title));const items=figure.map?.[key]||[];
+          if(items.length&&items.every(i=>typeof i==='object'&&Number.isFinite(i.x)&&Number.isFinite(i.y))){
+            const svg=svgNode('svg',{viewBox:'0 0 440 340',role:'img','aria-label':(figure.title||'Site map')+' — '+title});svg.append(svgNode('rect',{x:20,y:28,width:400,height:280,fill:'#f5f8ee',stroke:'#829983'}),svgNode('text',{x:408,y:18,'text-anchor':'end','font-size':12},'↑ N'));
+            for(const i of items){const g=mapItemGeometry(i),color=/road|path|entrance/i.test(i.name||i.label||'')?'#dad8cf':'#d9e8d6';if(g.area)svg.append(svgNode('rect',{x:g.x,y:g.y,width:g.width,height:g.height,rx:2,fill:color,stroke:'#66836b'}));else svg.append(svgNode('circle',{cx:g.x,cy:g.y,r:4,fill:'#315b45'}));svg.append(svgNode('text',{x:g.labelX,y:g.labelY,'font-size':11,'text-anchor':'middle',fill:'#183d2d'},i.name||i.label));}
+            part.append(svg);
+          }else{part.append(el('p','course-small','材料未提供坐标，以下按原始描述呈现；不推测方位。'));items.forEach(i=>part.append(el('p','',typeof i==='string'?i:JSON.stringify(i))));}
+          grid.append(part);
+        }box.append(grid);
+      }
       else if(figure.type==='mixed'&&Array.isArray(figure.parts)) figure.parts.forEach(p=>renderFigure(p,box));
       else if(['line','bar','pie'].includes(figure.type)&&figure.series?.length&&figure.labels?.length) {
         const svg=svgNode('svg',{viewBox:'0 0 650 330',role:'img','aria-label':figure.title||'图表'}),colors=['#3d7657','#c88c46','#718dba','#ae6b7e'];
@@ -482,8 +503,11 @@
         },
         onComplete:async({summary,recap,token})=>{
           if(attempt!==owner||submittedRecord)return;
-          if(recap.adaptation&&root.IELTSAdaptivePlan)root.IELTSAdaptivePlan.apply(day,recap.adaptation,{recapToken:token,startedDays:Object.values(state.drafts).map(d=>d.courseDay),exposures:state.exposures,records:await R.list()});
-          await saveActivity({answer:JSON.stringify({schema:1,dayNumber:day,token,recap}),token,quantity:1,unit:'份复盘',evaluation:{method:'ai',result:'pass',feedback:typeof recap.recap==='string'?recap.recap.slice(0,12000):'本日错题已全对并完成 AI 复盘。'}},'mistake-review');
+          const sourceDay=day,guard=generation,profile=profileId,stillCurrent=()=>attempt===owner&&generation===guard&&day===sourceDay&&profileId===profile&&(root.IELTSProfiles?.current().id||'legacy')===profile;
+          const saved=await saveActivity({answer:JSON.stringify({schema:1,dayNumber:sourceDay,token,recap}),token,quantity:1,unit:'份复盘',evaluation:{method:'ai',result:'pass',feedback:typeof recap.recap==='string'?recap.recap.slice(0,12000):'本日错题已全对并完成 AI 复盘。'}},'mistake-review');
+          if(!saved||!stillCurrent())return;const works=await R.list();if(!stillCurrent())return;const drafts=Object.values(state.drafts);
+          const longTerm=await root.IELTSPersonalizationIntegration?.applyAfterRecap({data,sourceDay,recapToken:token,records:works,drafts,exposures:state.exposures});
+          if(!stillCurrent())return;if(longTerm?.status==='recap-not-ready'){notice(longTerm.reason||'复盘依据已更新，请重新完成当天复盘；未修改后续安排。');return;}if(!longTerm?.applied&&recap.adaptation&&root.IELTSAdaptivePlan)root.IELTSAdaptivePlan.apply(sourceDay,recap.adaptation,{recapToken:token,startedDays:drafts.map(d=>d.courseDay),drafts,exposures:state.exposures,records:works});
         }
       });
     }
@@ -660,6 +684,6 @@
     root.addEventListener('pagehide',()=>{budgetDisposed=true;stopBudgetWatch?.();advanceTimer();if(attempt&&!submittedRecord){attempt.interrupted||=attempt.mode==='assessment';persistDraft();}stopMedia();reviewAbort?.abort();});
     let stopBudgetWatch=null;setInterval(advanceTimer,1000);load();if(root.IELTSYearPlanner?.watchMediaActivity)stopBudgetWatch=root.IELTSYearPlanner.watchMediaActivity(()=>refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true)));setInterval(()=>{if(!budgetDisposed&&!storageBroken&&!doc.hidden)refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true));},5000);const linkedMaterial=materialMap.get(params.get('material'));const mappedDay=linkedMaterial?data.days.find(d=>d.tasks.some(t=>t.materialIds.includes(linkedMaterial.id)))?.day:null;const hashDay=/^#day(\d+)$/.exec(root.location.hash||'');const initialDay=Number(params.get('day'))||Number(hashDay?.[1])||mappedDay||R.currentDay()||state.day;showDay(Math.min(365,Math.max(1,initialDay)),params.get('material'));refreshHistory().then(()=>{if(!pendingParent)return;const parent=records.find(r=>r.id===pendingParent.parentId);if(!parent){notice('关联原稿未找到，请从作品记录重新打开。',true);pendingParent=null;return;}const matching=dayPlan(day)?.tasks.find(t=>t.id===parent.skill);if(matching)showTask(matching,params.get('material'));notice('已关联原稿「'+parent.title+'」。选择同技能材料后点击开始，将保存'+(pendingParent.kind==='retest'?'复测':'订正')+'版本。'+(!materialMap.has(parent.materialId)?'原材料来自其他练习模块，请选择课程内同技能材料。':''));});
   }
-  const api={KEY,newState,parseState,mergeState,taskFor,prerequisiteStatus,protectedMaterialAccess,figureRows,figurePanels,planGeometry,reviewRequest,prepareAudio,audioSource,runReviewPipeline,feedbackForRecord,practiceReviewResult,foundationSpeaking,localHTTP,modelReadingReference,cleanModelReading,modelReadingSnapshot,validateModelReading,verifySpeakingStage,objectiveSubmissionComplete,dayReadiness,nextDestination,toRecord};root.IELTSCoursePlayer=Object.freeze(api);if(typeof module==='object'&&module.exports)module.exports=api;
+  const api={KEY,mapItemGeometry,independentTask,newState,parseState,mergeState,taskFor,prerequisiteStatus,protectedMaterialAccess,figureRows,figurePanels,planGeometry,reviewRequest,prepareAudio,audioSource,runReviewPipeline,feedbackForRecord,practiceReviewResult,foundationSpeaking,localHTTP,modelReadingReference,cleanModelReading,modelReadingSnapshot,validateModelReading,verifySpeakingStage,objectiveSubmissionComplete,dayReadiness,nextDestination,toRecord};root.IELTSCoursePlayer=Object.freeze(api);if(typeof module==='object'&&module.exports)module.exports=api;
   if(root.document?.getElementById('coursePlayerApp'))init();
 })(typeof window!=='undefined'?window:globalThis);

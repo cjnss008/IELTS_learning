@@ -36,6 +36,12 @@ async function fixture(options={}){
 test('home Start resumes the first missing material instead of going back to the first material',async()=>{
  const f=await fixture({records:[record('one','g1')]});await f.nodes.get('todayStart').fire('click');assert.deepEqual(f.calls,[['resume','grammar','g2']]);
 });
+
+test('independent material homepage keeps its title and primary action on the selected short assessment',async()=>{
+ const material={id:'independent-a1-read-1',title:'A new independent text',skill:'reading',level:'A1',estimatedMinutes:12,independentBank:true},data={days:[{day:1,week:1,title:'Core',tasks:[task]}],materials:[material]};
+ for(const active of [false,true]){const f=await fixture({data,current:{taskId:'reading',materialId:material.id,active}});assert.equal(f.nodes.get('todayTitle').textContent,material.title);assert.match(f.nodes.get('todayGoal').textContent,/不会替代今日核心/);assert.equal(f.nodes.get('todayStart').textContent,active?'继续这份独立短测':'开始这份独立短测');await f.nodes.get('todayStart').fire('click');assert.deepEqual(f.calls,[['resume','reading',material.id]]);assert.equal(f.nodes.get('todayDone').textContent,'0 / 1');}
+ const done=await fixture({data,current:{taskId:'reading',materialId:material.id,active:true,submitted:true}});assert.equal(done.nodes.get('todayStart').textContent,'查看本次短测结果');await done.nodes.get('todayStart').fire('click');assert.deepEqual(done.calls,[]);
+});
 test('home labels a draft and routes Continue through resume without invoking a fresh begin',async()=>{
  const f=await fixture({records:[record('one','g1')],drafts:[{id:'retained-draft',taskId:'grammar',materialId:'g2'}]});assert.match(f.nodes.get('todayStart').textContent,/未提交草稿/);await f.nodes.get('todayStart').fire('click');assert.deepEqual(f.calls,[['resume','grammar','g2']]);
 });
