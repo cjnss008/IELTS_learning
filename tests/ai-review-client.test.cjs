@@ -92,6 +92,11 @@ test('artifact wrapping cannot turn a blank supplementary original into a submit
  await assert.rejects(client.record(entry({originalText:'  '})),/空白原稿/);assert.equal((await records.list()).length,0);assert.equal(mistakes.summary(1).total,0);
 }));
 
+test('real supplemental activity is credited once with its date ledger and preserved on later feedback updates',()=>learningFixture(async({records})=>{
+ const work=entry({createdAt:NOW,transcript:{activity:{startedAt:'2026-10-24T11:59:00.000Z',endedAt:NOW,activeSeconds:30,activityByDate:{'2026-10-24':30}}}});
+ await client.record(work);let [saved]=await records.list();assert.equal(saved.minutes,.5);assert.equal(saved.activeSeconds,30);assert.deepEqual(JSON.parse(saved.answer).activityByDate,{'2026-10-24':30});await client.record({...work,version:2,transcript:{}},stageReview());[saved]=await records.list();assert.equal(saved.minutes,.5);assert.equal(saved.evaluation.result,'pass');assert.equal((await records.list()).length,1);
+}));
+
 test('grounded negative goals and actual quoted corrections are errors even if the other service round failed',async()=>{
  const negative=stageReview(TEXT,false),partial=stageReview();partial.status='partial';partial.rounds[0].corrections=[{original:'I am Ben',revised:'My name is Ben',reason:'A concrete correction.'}];partial.rounds[1]={ok:false,round:2,error:{code:'TIMEOUT'}};
  for(const review of [negative,partial])await learningFixture(async({records,mistakes})=>{await client.record(entry(),review);const [saved]=await records.list(),summary=mistakes.summary(1);assert.equal(saved.evaluation.result,'revise');assert.equal(summary.total,1);assert.equal(summary.items[0].originalAnswer,TEXT);assert.equal(summary.items[0].question.task,'foundation');});
