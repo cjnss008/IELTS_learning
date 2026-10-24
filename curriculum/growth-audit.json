@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "newSourceMaterials": 35,
+  "newOriginalSources": 32,
+  "authenticSources": 3,
+  "newComprehensionQuestions": 280,
+  "newSourceWords": 9682,
+  "newListeningSeconds": 1870.9784999999997,
+  "earlierExtensionWords": 446,
+  "scheduledLexemes": 1616,
+  "candidateLexemes": 1686,
+  "uncoveredLexemes": 70,
+  "captions": [
+    {
+      "id": "noaa-deep-ocean",
+      "status": "official-vtt-crosscheck",
+      "cues": 18,
+      "transcriptTokens": 219,
+      "captionTokens": 219,
+      "orderedMatchedTokens": 219,
+      "matchRatio": 1,
+      "captionHash": "d2c4a5fdfcdc9ec1ef6b0cf10e328d0af0905ea01acb0647524bae936f9b59c4",
+      "normalizations": [
+        "标点、大小写、空白",
+        "1,000与1000",
+        "110与a hundred and ten",
+        "life-forms与life forms"
+      ],
+      "independentAudioAudit": false,
+      "scope": "官方VTT与官方转录的有序文本比对及文件时长检查；未做独立ASR或逐句人工听审。"
+    },
+    {
+      "id": "noaa-water-cycle",
+      "status": "official-transcript-only",
+      "independentAudioAudit": false
+    },
+    {
+      "id": "noaa-ocean-acidification",
+      "status": "official-transcript-only",
+      "independentAudioAudit": false
+    }
+  ],
+  "limits": [
+    "词形按英文规范化精确去重，不等同词族。",
+    "不同中文释义仅作标注义项标签，未经全库语义合并。",
+    "只合并明确列出的词族关系，其余不猜词根。",
+    "排课覆盖不代表已学习或掌握；真实进度仍需作品、评阅和延迟复测。",
+    "关卡与末期保留卷不提取为提前词汇训练。",
+    "后期每周一个新的阅读与听力微训练，多日沿用同一ID属于巩固；完整训练另按日程安排。"
+  ],
+  "vocabularyAudio": {
+    "status": "passed",
+    "lexemes": 1616,
+    "mapped": 1616,
+    "bytes": 19164864,
+    "seconds": 3056.096874999941,
+    "synthetic": true,
+    "note": "本机合成词/词组示范；每文件已做ffprobe检查，哈希与索引逐一核对；不代表发音评分。"
+  }
+}

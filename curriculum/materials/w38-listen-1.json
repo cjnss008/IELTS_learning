@@ -1,0 +1,321 @@
+{
+  "id": "w38-listen-1",
+  "week": 38,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "Interpreting an unexpected water meter result",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Interpreting an unexpected water meter result",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Omar: The new shower fittings use less water per minute, but the building total hardly changed.\nLeah: Did you compare the same number of occupied rooms?\nOmar: No. Occupancy rose from sixty to seventy-two rooms. I compared totals without allowing for that.\nLeah: Calculate consumption per occupied room as well. Did shower duration change?\nOmar: We have diaries from twelve residents. A few said the warmer spray felt comfortable, so they stayed longer. But diary volunteers may differ from everyone else.\nLeah: Do not turn twelve diaries into a claim about all residents. What does maintenance say?\nOmar: They found a leak in the laundry. It was repaired on the eighteenth, halfway through the observation period. We should show that on the graph rather than draw one smooth trend.\nLeah: Was the meter checked?\nOmar: Yes. An engineer compared it with a portable instrument and found no obvious fault. That reduces one possible explanation; it does not prove our preferred explanation.\nLeah: What do you recommend?\nOmar: Keep the fittings and repeat the observation during stable occupancy. Use the same daily recording time, nine in the morning. Report comfort separately from savings.\nLeah: Put the uncertainty in the conclusion, not just in an appendix.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How did room occupancy change?",
+      "options": [
+        "It increased.",
+        "It stayed constant.",
+        "It fell throughout the project.",
+        "It was never recorded."
+      ],
+      "answers": [
+        "It increased."
+      ],
+      "explanation": "依据原文“Occupancy rose from sixty to seventy-two rooms.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Occupancy rose from sixty to seventy-two rooms."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "What denominator is recommended for an additional calculation?",
+      "maxWords": 2,
+      "answers": [
+        "occupied room"
+      ],
+      "explanation": "依据原文“consumption per occupied room”。答案按原文填写，保留限定范围。",
+      "evidence": "consumption per occupied room"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How many residents supplied diaries?",
+      "maxWords": 1,
+      "answers": [
+        "twelve",
+        "12"
+      ],
+      "explanation": "依据原文“diaries from twelve residents.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "diaries from twelve residents.",
+      "answerAliases": [
+        {
+          "value": "12",
+          "source": "twelve",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why should the repair be marked on the graph?",
+      "options": [
+        "Every volunteer moved out on that date.",
+        "Conditions changed within the observation period.",
+        "The graph would otherwise reveal residents’ names.",
+        "The meter could not be read on that date."
+      ],
+      "answers": [
+        "Conditions changed within the observation period."
+      ],
+      "explanation": "依据原文“halfway through the observation period.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "halfway through the observation period."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Where was the leak?",
+      "maxWords": 1,
+      "answers": [
+        "laundry"
+      ],
+      "explanation": "依据原文“a leak in the laundry.”。答案按原文填写，保留限定范围。",
+      "evidence": "a leak in the laundry."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did the meter check establish?",
+      "options": [
+        "The diaries represented everyone.",
+        "Longer showers explained the entire result.",
+        "The fittings produced no benefit.",
+        "One possible cause became less likely."
+      ],
+      "answers": [
+        "One possible cause became less likely."
+      ],
+      "explanation": "依据原文“That reduces one possible explanation; it does not prove our preferred explanation.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "That reduces one possible explanation; it does not prove our preferred explanation."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "At what hour will daily recording occur?",
+      "maxWords": 1,
+      "answers": [
+        "nine",
+        "9"
+      ],
+      "explanation": "依据原文“nine in the morning.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "nine in the morning.",
+      "answerAliases": [
+        {
+          "value": "9",
+          "source": "nine",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Where should the main uncertainty appear?",
+      "maxWords": 1,
+      "answers": [
+        "conclusion"
+      ],
+      "explanation": "依据原文“Put the uncertainty in the conclusion, not just in an appendix.”。答案按原文填写，保留限定范围。",
+      "evidence": "Put the uncertainty in the conclusion, not just in an appendix."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "allowing for",
+      "meaning": "计入考虑",
+      "example": "I compared totals without allowing for that.",
+      "kind": "collocation"
+    },
+    {
+      "word": "shower duration",
+      "meaning": "淋浴时长",
+      "example": "Did shower duration change?",
+      "kind": "collocation"
+    },
+    {
+      "word": "diary volunteers",
+      "meaning": "自愿记日记的参与者",
+      "example": "But diary volunteers may differ from everyone else.",
+      "kind": "collocation"
+    },
+    {
+      "word": "portable instrument",
+      "meaning": "便携仪器",
+      "example": "An engineer compared it with a portable instrument and found no obvious fault.",
+      "kind": "collocation"
+    },
+    {
+      "word": "observation period",
+      "meaning": "观察期",
+      "example": "It was repaired on the eighteenth, halfway through the observation period.",
+      "kind": "collocation"
+    },
+    {
+      "word": "smooth trend",
+      "meaning": "平滑趋势",
+      "example": "We should show that on the graph rather than draw one smooth trend.",
+      "kind": "collocation"
+    },
+    {
+      "word": "stable occupancy",
+      "meaning": "稳定入住量",
+      "example": "Keep the fittings and repeat the observation during stable occupancy.",
+      "kind": "collocation"
+    },
+    {
+      "word": "daily recording time",
+      "meaning": "每日记录时间",
+      "example": "Use the same daily recording time, nine in the morning.",
+      "kind": "collocation"
+    },
+    {
+      "word": "preferred explanation",
+      "meaning": "倾向采用的解释",
+      "example": "That reduces one possible explanation; it does not prove our preferred explanation.",
+      "kind": "collocation"
+    },
+    {
+      "word": "appendix",
+      "meaning": "附录",
+      "example": "Put the uncertainty in the conclusion, not just in an appendix.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "保留限制性关系从句",
+    "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。",
+    "example": "But diary volunteers may differ from everyone else.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The students _____ joined later received the same instructions. （只填空白，保持其余文字不变）",
+        "options": [
+          "who",
+          "which",
+          "what"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The students who joined later received the same instructions.",
+        "evidence": "The students who joined later received the same instructions."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The table _____ we checked contained two errors. （只填空白，保持其余文字不变）",
+        "options": [
+          "which",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The table which we checked contained two errors.",
+        "evidence": "The table which we checked contained two errors."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The files _____ were lost contained no personal names. （只填空白，保持其余文字不变）",
+        "options": [
+          "that",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "that"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The files that were lost contained no personal names.",
+        "evidence": "The files that were lost contained no personal names."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The researcher _____ notebook was missing repeated the test. （只填空白，保持其余文字不变）",
+        "options": [
+          "whose",
+          "who",
+          "whom"
+        ],
+        "answers": [
+          "whose"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The researcher whose notebook was missing repeated the test.",
+        "evidence": "The researcher whose notebook was missing repeated the test."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving responding to an unexpected result?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about responding to an unexpected result. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why investigate inconvenient findings?",
+        "When are diaries useful evidence?",
+        "How can a graph conceal changes?",
+        "Must every uncertainty disappear before a recommendation?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about responding to an unexpected result. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "7c614250a57fdf38c862c506391bb85db1b38ffc752dca54afca974eb2fc0095",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

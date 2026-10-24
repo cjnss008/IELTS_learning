@@ -19,6 +19,12 @@ for(let w=1;w<=36;w++){
  const l=w<=8?6:4;
  for(let i=1;i<=l;i++)add(`w${pad(w)}-listen-${i}`,w,'listening',{variant:i,type:w<=2?'sounds':i%4===0?'lecture':i%4===3?'academic-discussion':i%4===2?'directions':'dialogue'});
 }
+// Later weeks use their own focused texts. Existing IDs and reserved batteries stay intact.
+for(let w=37;w<=52;w++){
+ add(`w${pad(w)}-read-1`,w,'reading',{type:'critical-reading',minWords:280,maxWords:600,questionCount:8,lateFocused:true,lexicalTraining:true,requireAudioHash:true});
+ add(`w${pad(w)}-listen-1`,w,'listening',{type:'academic-discussion',minWords:180,maxWords:450,questionCount:8,lateFocused:true,lexicalTraining:true,requireAudioHash:true});
+}
+for(const source of require('../curriculum/sources/jobs.json'))add(source.id,source.week,source.skill,source);
 for(let i=1;i<=32;i++){
  const week=i<=16?20+i:i<=28?20+i:48+(i-28);
  add(`writing-task1-${pad(i)}`,week,'writing',{type:'academic_task1',figureType:formats[(i-1)%7],minWords:150,maxWords:210,estimatedMinutes:20});

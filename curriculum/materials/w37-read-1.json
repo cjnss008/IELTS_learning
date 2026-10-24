@@ -1,0 +1,311 @@
+{
+  "id": "w37-read-1",
+  "week": 37,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "What a shorter bus journey conceals",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "What a shorter bus journey conceals",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. The fictional town of Alderport tested a bus lane for six weeks. Its transport office compared twenty morning journeys before the change with twenty afterwards. The average journey fell from thirty minutes to twenty-four. A newspaper described this as a benefit shared by every passenger, but the underlying records supported a narrower claim. An average describes a group; it does not show how each member of that group was affected.\n\nB. At the central stop, buses became more reliable. At the outer stops, however, the timetable was reduced because two vehicles had been transferred to the busiest section. Some passengers waited longer even though their time on the bus fell. The office had measured travel time between stops, rather than the entire door-to-door journey. For someone who waited an extra fifteen minutes, a saving of six minutes on board would not represent an improvement.\n\nC. The comparison also had a seasonal limitation. The first observations took place during term time, whereas the second period included a school holiday. Less traffic might therefore explain part of the difference. Engineers proposed keeping the lane through another school term and comparing similar weekdays. They also wanted to record the median waiting time, which is the middle value when observations are ordered. This would complement the mean rather than replace every other measure.\n\nD. A separate survey reached passengers through an online questionnaire. People who had stopped using the service were unlikely to see it. The survey could describe the views of its respondents, but it could not establish the views of all former users. A more useful evaluation would combine journey records with interviews at outer stops and a check on cancelled services. The council postponed a permanent decision until these additional records were available.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What statistic fell to twenty-four minutes?",
+      "maxWords": 2,
+      "answers": [
+        "average journey"
+      ],
+      "explanation": "依据原文“The average journey fell from thirty minutes to twenty-four.”。答案按原文填写，保留限定范围。",
+      "evidence": "The average journey fell from thirty minutes to twenty-four."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why did some outer stops lose frequency?",
+      "options": [
+        "Road repairs made the stops inaccessible.",
+        "Passengers had requested fewer departures.",
+        "Drivers refused to use the new lane.",
+        "Vehicles were reassigned to the busiest section."
+      ],
+      "answers": [
+        "Vehicles were reassigned to the busiest section."
+      ],
+      "explanation": "依据原文“two vehicles had been transferred to the busiest section.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "two vehicles had been transferred to the busiest section."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which part of the experience did the original timing omit?",
+      "options": [
+        "The duration between central stops.",
+        "The speed of the moving buses.",
+        "Waiting and access within the entire journey.",
+        "All time spent on the vehicle."
+      ],
+      "answers": [
+        "Waiting and access within the entire journey."
+      ],
+      "explanation": "依据原文“rather than the entire door-to-door journey.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "rather than the entire door-to-door journey."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What calendar event complicated the second observation period?",
+      "maxWords": 2,
+      "answers": [
+        "school holiday"
+      ],
+      "explanation": "依据原文“the second period included a school holiday.”。答案按原文填写，保留限定范围。",
+      "evidence": "the second period included a school holiday."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "The middle observation is called the _____.",
+      "maxWords": 3,
+      "answers": [
+        "median waiting time",
+        "median"
+      ],
+      "explanation": "题干问排序后的中间值名称，可答median；原文中的完整指标名median waiting time也接受。",
+      "evidence": "the median waiting time, which is the middle value when observations are ordered."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Who was especially likely to be missed by the questionnaire?",
+      "options": [
+        "Passengers at the central stop.",
+        "People using buses in term time.",
+        "Residents consulting the timetable.",
+        "People who had abandoned the service."
+      ],
+      "answers": [
+        "People who had abandoned the service."
+      ],
+      "explanation": "依据原文“People who had stopped using the service were unlikely to see it.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "People who had stopped using the service were unlikely to see it."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What was postponed until more records were available?",
+      "maxWords": 2,
+      "answers": [
+        "permanent decision"
+      ],
+      "explanation": "依据原文“The council postponed a permanent decision until these additional records were available.”。答案按原文填写，保留限定范围。",
+      "evidence": "The council postponed a permanent decision until these additional records were available."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Which conclusion fits the argument?",
+      "options": [
+        "The holiday proves that the lane had no effect.",
+        "A better group average need not mean an improvement for everyone.",
+        "A median always makes a mean unnecessary.",
+        "The lane demonstrably harmed every passenger."
+      ],
+      "answers": [
+        "A better group average need not mean an improvement for everyone."
+      ],
+      "explanation": "依据原文“An average describes a group; it does not show how each member of that group was affected.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "An average describes a group; it does not show how each member of that group was affected."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "underlying records",
+      "meaning": "底层原始记录",
+      "example": "A newspaper described this as a benefit shared by every passenger, but the underlying records supported a narrower claim.",
+      "kind": "collocation"
+    },
+    {
+      "word": "narrower claim",
+      "meaning": "范围更窄的论断",
+      "example": "A newspaper described this as a benefit shared by every passenger, but the underlying records supported a narrower claim.",
+      "kind": "collocation"
+    },
+    {
+      "word": "reliable",
+      "meaning": "可靠的",
+      "example": "At the central stop, buses became more reliable.",
+      "kind": "word"
+    },
+    {
+      "word": "door-to-door journey",
+      "meaning": "完整门到门行程",
+      "example": "The office had measured travel time between stops, rather than the entire door-to-door journey.",
+      "kind": "collocation"
+    },
+    {
+      "word": "seasonal limitation",
+      "meaning": "季节性局限",
+      "example": "The comparison also had a seasonal limitation.",
+      "kind": "collocation"
+    },
+    {
+      "word": "median waiting time",
+      "meaning": "等候时长中位数",
+      "example": "They also wanted to record the median waiting time, which is the middle value when observations are ordered.",
+      "kind": "collocation"
+    },
+    {
+      "word": "complement",
+      "meaning": "补充",
+      "example": "This would complement the mean rather than replace every other measure.",
+      "kind": "word"
+    },
+    {
+      "word": "respondents",
+      "meaning": "调查答复者",
+      "example": "The survey could describe the views of its respondents, but it could not establish the views of all former users.",
+      "kind": "word"
+    },
+    {
+      "word": "evaluation",
+      "meaning": "评估",
+      "example": "A more useful evaluation would combine journey records with interviews at outer stops and a check on cancelled services.",
+      "kind": "word"
+    },
+    {
+      "word": "cancelled services",
+      "meaning": "取消的班次",
+      "example": "A more useful evaluation would combine journey records with interviews at outer stops and a check on cancelled services.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "区分让步与原因",
+    "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。",
+    "example": "An average describes a group; it does not show how each member of that group was affected.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "_____ the trial was small, its records were complete. （明确要表达让步关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Although the trial was small, its records were complete.",
+        "evidence": "Although the trial was small, its records were complete."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "_____ the bridge was unsafe, the route was closed. （明确要表达原因关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Because",
+          "Although",
+          "Despite"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Because the bridge was unsafe, the route was closed.",
+        "evidence": "Because the bridge was unsafe, the route was closed."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "_____ costs fell, demand remained low. （明确要表达让步关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Although costs fell, demand remained low.",
+        "evidence": "Although costs fell, demand remained low."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "_____ rainfall stopped, the tanks were not refilled. （明确要表达原因关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Because",
+          "Although",
+          "Despite"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Because rainfall stopped, the tanks were not refilled.",
+        "evidence": "Because rainfall stopped, the tanks were not refilled."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving improving a local transport service?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about improving a local transport service. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Should services be judged mainly by average performance?",
+        "Why can one change affect groups differently?",
+        "How can councils hear from former users?",
+        "When is a trial sufficient for a permanent decision?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about improving a local transport service. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "00842b4795e43fe108ae6d09d997f6f0f3e019317a74053a1fc53f00ffb1b47c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,318 @@
+{
+  "id": "w39-read-1",
+  "week": 39,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "What a seed map can and cannot show",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "What a seed map can and cannot show",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. At an imaginary botanical station, a seed collection was being prepared for an exhibition. Visitors would see labelled jars from thirty coastal sites. The exhibition designer wanted a map showing the distribution of each species. The botanist warned that a map of collected seeds was not automatically a map of where the plants existed.\n\nB. Collectors had travelled along roads. Plants close to a safe stopping place were easier to sample, while inaccessible slopes received fewer visits. A blank area might therefore indicate a gap in sampling, rather than an absence of plants. Labels contained locations and dates but did not record how long collectors searched. Without that information, the team could not compare collecting effort reliably.\n\nC. Storage created another uncertainty. Most packets had been dried before being placed in sealed containers, but a small group arrived in damp envelopes. Germination tests produced lower results for that group. Poor survival in storage was one possible explanation. Those seeds might also have been collected before they were mature. Because the handling history was incomplete, the team could not distinguish these causes.\n\nD. The botanist recommended two map layers. One would mark confirmed collection sites; the other would show places not yet surveyed. She proposed a separate label for an unsuccessful germination test. Such a result should not be described as proof that the species had disappeared from its original habitat. Collection, storage and survival in the wild were different questions.\n\nE. Remaining funds were spent on better records rather than additional jars. Future collectors would note search duration, habitat conditions and the route followed. Repeated visits would use the same protocol. This would improve comparisons even if the collection grew slowly. A large archive can look impressive, but its scientific value depends partly on whether users can identify what remains uncertain. The exhibition displayed a field notebook alongside the seeds to make that point visible.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "How many coastal sites supplied seeds?",
+      "maxWords": 1,
+      "answers": [
+        "thirty",
+        "30"
+      ],
+      "explanation": "依据原文“labelled jars from thirty coastal sites.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "labelled jars from thirty coastal sites.",
+      "answerAliases": [
+        {
+          "value": "30",
+          "source": "thirty",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What influenced the coverage of collecting?",
+      "options": [
+        "A proven absence of plants.",
+        "A ban on visiting roadside sites.",
+        "An identical search time everywhere.",
+        "Ease of access."
+      ],
+      "answers": [
+        "Ease of access."
+      ],
+      "explanation": "依据原文“inaccessible slopes received fewer visits.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "inaccessible slopes received fewer visits."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which missing information prevented comparison of effort?",
+      "options": [
+        "The number of expected visitors.",
+        "The colour of the containers.",
+        "The duration of each search.",
+        "The title of the exhibition."
+      ],
+      "answers": [
+        "The duration of each search."
+      ],
+      "explanation": "依据原文“did not record how long collectors searched.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "did not record how long collectors searched."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How were most packets prepared before storage?",
+      "maxWords": 1,
+      "answers": [
+        "dried"
+      ],
+      "explanation": "依据原文“Most packets had been dried before being placed in sealed containers”。答案按原文填写，保留限定范围。",
+      "evidence": "Most packets had been dried before being placed in sealed containers"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which group had lower germination results?",
+      "options": [
+        "Seeds arriving in damp envelopes.",
+        "Seeds with complete handling records.",
+        "Seeds known to have matured before collection.",
+        "Every sample collected near a road."
+      ],
+      "answers": [
+        "Seeds arriving in damp envelopes."
+      ],
+      "explanation": "依据原文“a small group arrived in damp envelopes.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "a small group arrived in damp envelopes."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What cannot be established by an unsuccessful stored-seed test?",
+      "options": [
+        "That the stored sample failed in that test.",
+        "That the handling record needs examination.",
+        "That more than one cause may need investigation.",
+        "The disappearance of the species from its habitat."
+      ],
+      "answers": [
+        "The disappearance of the species from its habitat."
+      ],
+      "explanation": "依据原文“should not be described as proof that the species had disappeared from its original habitat.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "should not be described as proof that the species had disappeared from its original habitat."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What will repeated visits share?",
+      "maxWords": 1,
+      "answers": [
+        "protocol"
+      ],
+      "explanation": "依据原文“Repeated visits would use the same protocol.”。答案按原文填写，保留限定范围。",
+      "evidence": "Repeated visits would use the same protocol."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What was displayed beside the seeds?",
+      "maxWords": 2,
+      "answers": [
+        "field notebook"
+      ],
+      "explanation": "依据原文“displayed a field notebook alongside the seeds”。答案按原文填写，保留限定范围。",
+      "evidence": "displayed a field notebook alongside the seeds"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "distribution",
+      "meaning": "分布",
+      "example": "The exhibition designer wanted a map showing the distribution of each species.",
+      "kind": "word"
+    },
+    {
+      "word": "inaccessible slopes",
+      "meaning": "难以到达的山坡",
+      "example": "Plants close to a safe stopping place were easier to sample, while inaccessible slopes received fewer visits.",
+      "kind": "collocation"
+    },
+    {
+      "word": "gap in sampling",
+      "meaning": "抽样空白",
+      "example": "A blank area might therefore indicate a gap in sampling, rather than an absence of plants.",
+      "kind": "collocation"
+    },
+    {
+      "word": "collecting effort",
+      "meaning": "采集投入",
+      "example": "Without that information, the team could not compare collecting effort reliably.",
+      "kind": "collocation"
+    },
+    {
+      "word": "sealed containers",
+      "meaning": "密封容器",
+      "example": "Most packets had been dried before being placed in sealed containers, but a small group arrived in damp envelopes.",
+      "kind": "collocation"
+    },
+    {
+      "word": "germination tests",
+      "meaning": "发芽试验",
+      "example": "Germination tests produced lower results for that group.",
+      "kind": "collocation"
+    },
+    {
+      "word": "handling history",
+      "meaning": "处理过程记录",
+      "example": "Because the handling history was incomplete, the team could not distinguish these causes.",
+      "kind": "collocation"
+    },
+    {
+      "word": "confirmed collection sites",
+      "meaning": "已确认采集点",
+      "example": "One would mark confirmed collection sites; the other would show places not yet surveyed.",
+      "kind": "collocation"
+    },
+    {
+      "word": "search duration",
+      "meaning": "搜寻时长",
+      "example": "Future collectors would note search duration, habitat conditions and the route followed.",
+      "kind": "collocation"
+    },
+    {
+      "word": "protocol",
+      "meaning": "统一操作规程",
+      "example": "Repeated visits would use the same protocol.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "报告过去的程序与当前解释",
+    "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。",
+    "example": "At an imaginary botanical station, a seed collection was being prepared for an exhibition.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The team _____ the samples yesterday. （只填空白，保持其余文字不变）",
+        "options": [
+          "collected",
+          "collect",
+          "has collected"
+        ],
+        "answers": [
+          "collected"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The team collected the samples yesterday.",
+        "evidence": "The team collected the samples yesterday."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The report _____ the current booking rules. （只填空白，保持其余文字不变）",
+        "options": [
+          "describes",
+          "describe",
+          "describing"
+        ],
+        "answers": [
+          "describes"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The report describes the current booking rules.",
+        "evidence": "The report describes the current booking rules."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Last year, the library _____ its opening hours. （只填空白，保持其余文字不变）",
+        "options": [
+          "extended",
+          "extends",
+          "has extended"
+        ],
+        "answers": [
+          "extended"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：Last year, the library extended its opening hours.",
+        "evidence": "Last year, the library extended its opening hours."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "This diagram _____ how the filter works. （只填空白，保持其余文字不变）",
+        "options": [
+          "shows",
+          "show",
+          "showing"
+        ],
+        "answers": [
+          "shows"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：This diagram shows how the filter works.",
+        "evidence": "This diagram shows how the filter works."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving maintaining a scientific collection?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about maintaining a scientific collection. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Can a larger collection provide weaker evidence?",
+        "Why display unsurveyed areas on maps?",
+        "How do common procedures improve comparison?",
+        "Should exhibitions explain uncertainty?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about maintaining a scientific collection. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "314882b491dacaf6ce1bc9a47d193026426376a07a6985e3a11c7905eed89f4c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

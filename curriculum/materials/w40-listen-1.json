@@ -1,0 +1,313 @@
+{
+  "id": "w40-listen-1",
+  "week": 40,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "Choosing what belongs in an exhibition",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Choosing what belongs in an exhibition",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Curator: We have room for eighteen sound clips in the town exhibition. How did you select them?\nEli: I chose recordings with contrasting activities: a market, a workshop, a garden and several others. It is a curated selection, not a representative sample.\nCurator: Put that on the introductory label. What information accompanies each file?\nEli: A recording date, a broad location and the microphone model. Exact home addresses are excluded.\nCurator: Have the original recordings survived the editing?\nEli: Yes. The exhibition uses shorter copies, but the original file remains in the archive. A removed pause might matter to someone studying the rhythm of an activity.\nCurator: One label says the market is always noisy. Can a single clip show that?\nEli: No. It could include an unusual delivery. I will change the label to describe what happened during this recording, rather than a typical day.\nCurator: And identifiable speech?\nEli: We obtained consent for two short interviews. A private conversation beside a cafe table has been removed. A description of that setting will appear instead.\nCurator: When do we check the final labels?\nEli: On Tuesday, before the public opening on Friday. We will compare the labels with the raw recording notes, so the exhibition does not imply that we measured more than we did.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "How many clips is there room for in the exhibition?",
+      "maxWords": 1,
+      "answers": [
+        "eighteen",
+        "18"
+      ],
+      "explanation": "原文说有容纳eighteen段录音的空间；这是容量，不把它推断为最终必定展出的数量。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "room for eighteen sound clips",
+      "answerAliases": [
+        {
+          "value": "18",
+          "source": "eighteen",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does the selection aim to illustrate?",
+      "options": [
+        "An equal sample of all streets.",
+        "The normal noise level of every area.",
+        "Only the most common activity.",
+        "A contrast between different activities."
+      ],
+      "answers": [
+        "A contrast between different activities."
+      ],
+      "explanation": "依据原文“recordings with contrasting activities”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "recordings with contrasting activities"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Which equipment detail accompanies each recording?",
+      "maxWords": 2,
+      "answers": [
+        "microphone model"
+      ],
+      "explanation": "依据原文“the microphone model.”。答案按原文填写，保留限定范围。",
+      "evidence": "the microphone model."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What has been preserved beside edited copies?",
+      "maxWords": 2,
+      "answers": [
+        "original file"
+      ],
+      "explanation": "依据原文“the original file remains in the archive.”。答案按原文填写，保留限定范围。",
+      "evidence": "the original file remains in the archive."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why is the market label being revised?",
+      "options": [
+        "One recording cannot establish a usual pattern.",
+        "The market recording contains no sound.",
+        "Every day at the market is identical.",
+        "The archive refuses to describe locations."
+      ],
+      "answers": [
+        "One recording cannot establish a usual pattern."
+      ],
+      "explanation": "依据原文“rather than a typical day.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "rather than a typical day."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What replaced the private conversation?",
+      "options": [
+        "A newly invented interview.",
+        "An exact home address.",
+        "A louder recording of the same speakers.",
+        "A written description of its setting."
+      ],
+      "answers": [
+        "A written description of its setting."
+      ],
+      "explanation": "依据原文“A description of that setting will appear instead.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "A description of that setting will appear instead."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "On what day will final labels be checked?",
+      "maxWords": 1,
+      "answers": [
+        "Tuesday"
+      ],
+      "explanation": "依据原文“On Tuesday, before the public opening on Friday.”。答案按原文填写，保留限定范围。",
+      "evidence": "On Tuesday, before the public opening on Friday."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What will labels be compared with?",
+      "maxWords": 3,
+      "answers": [
+        "raw recording notes"
+      ],
+      "explanation": "依据原文“compare the labels with the raw recording notes”。答案按原文填写，保留限定范围。",
+      "evidence": "compare the labels with the raw recording notes"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "curated selection",
+      "meaning": "策展挑选的集合",
+      "example": "It is a curated selection, not a representative sample.",
+      "kind": "collocation"
+    },
+    {
+      "word": "representative sample",
+      "meaning": "代表性样本",
+      "example": "It is a curated selection, not a representative sample.",
+      "kind": "collocation"
+    },
+    {
+      "word": "recording date",
+      "meaning": "录制日期",
+      "example": "A recording date, a broad location and the microphone model.",
+      "kind": "collocation"
+    },
+    {
+      "word": "exact home addresses",
+      "meaning": "准确家庭住址",
+      "example": "Exact home addresses are excluded.",
+      "kind": "collocation"
+    },
+    {
+      "word": "removed pause",
+      "meaning": "被删除的停顿",
+      "example": "A removed pause might matter to someone studying the rhythm of an activity.",
+      "kind": "collocation"
+    },
+    {
+      "word": "rhythm",
+      "meaning": "节奏",
+      "example": "A removed pause might matter to someone studying the rhythm of an activity.",
+      "kind": "word"
+    },
+    {
+      "word": "identifiable speech",
+      "meaning": "可识别的讲话",
+      "example": "And identifiable speech?",
+      "kind": "collocation"
+    },
+    {
+      "word": "obtained consent",
+      "meaning": "已取得同意",
+      "example": "We obtained consent for two short interviews.",
+      "kind": "collocation"
+    },
+    {
+      "word": "public opening",
+      "meaning": "公开开放",
+      "example": "On Tuesday, before the public opening on Friday.",
+      "kind": "collocation"
+    },
+    {
+      "word": "raw recording notes",
+      "meaning": "录制原始记录",
+      "example": "We will compare the labels with the raw recording notes, so the exhibition does not imply that we measured more than we did.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "结论强度与情态动词",
+    "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。",
+    "example": "It could include an unusual delivery.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The effect _____ vary; the sample is too small to be certain. （只填空白，保持其余文字不变）",
+        "options": [
+          "may",
+          "must",
+          "always will"
+        ],
+        "answers": [
+          "may"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：The effect may vary; the sample is too small to be certain.",
+        "evidence": "The effect may vary; the sample is too small to be certain."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Visitors _____ sign in; it is a compulsory safety rule. （只填空白，保持其余文字不变）",
+        "options": [
+          "must",
+          "may",
+          "might"
+        ],
+        "answers": [
+          "must"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：Visitors must sign in; it is a compulsory safety rule.",
+        "evidence": "Visitors must sign in; it is a compulsory safety rule."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The estimate _____ change because the survey is unfinished. （只填空白，保持其余文字不变）",
+        "options": [
+          "could",
+          "must",
+          "will definitely"
+        ],
+        "answers": [
+          "could"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：The estimate could change because the survey is unfinished.",
+        "evidence": "The estimate could change because the survey is unfinished."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Users _____ obtain permission; it is required by the contract. （只填空白，保持其余文字不变）",
+        "options": [
+          "must",
+          "may",
+          "might"
+        ],
+        "answers": [
+          "must"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：Users must obtain permission; it is required by the contract.",
+        "evidence": "Users must obtain permission; it is required by the contract."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving creating a public exhibition?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about creating a public exhibition. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "What everyday sounds deserve preservation?",
+        "Why retain an unedited version?",
+        "How can exhibits respect privacy?",
+        "Must every exhibition be representative?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about creating a public exhibition. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "00f209e498733ce819b32683841ae2c1f6454ef4863cabb1e6b26934665d9d2f",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,326 @@
+{
+  "id": "w48-listen-1",
+  "week": 48,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "A seminar answer can acknowledge a limitation",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A seminar answer can acknowledge a limitation",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Tutor: Your seminar answer starts with a confident claim. What will you say if someone challenges the sample size?\nSara: I should admit that twelve interviews cannot establish how common a view is. They can illustrate reasons that deserve further investigation.\nTutor: Good. Can you explain that without apologising for the whole project?\nSara: I could say the study explores possible explanations rather than estimating population proportions. A larger survey would answer a different question.\nTutor: What if the questioner asks why you did not include former users of the service?\nSara: I will say that recruitment through the current membership list excluded them. That is a genuine boundary, and future work should use another route to contact them.\nTutor: Will you claim that adding more current users would solve it?\nSara: No. A larger sample from the same list could preserve the same coverage problem.\nTutor: Finally, you have forty seconds for a response. How will you structure it?\nSara: First answer the question directly. Then state the evidence, name the limitation and suggest the next check. I will avoid repeating the entire presentation.\nTutor: Try that sequence with the next practice question. The goal is a reasoned answer, not a rehearsed sentence that ignores what was asked.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "How many interviews were conducted?",
+      "maxWords": 1,
+      "answers": [
+        "twelve",
+        "12"
+      ],
+      "explanation": "依据原文“twelve interviews”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "twelve interviews",
+      "answerAliases": [
+        {
+          "value": "12",
+          "source": "twelve",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What can those interviews reasonably illustrate?",
+      "options": [
+        "The exact population proportion holding each view.",
+        "Every former user’s experience.",
+        "A guaranteed causal effect of membership.",
+        "Reasons worth further investigation."
+      ],
+      "answers": [
+        "Reasons worth further investigation."
+      ],
+      "explanation": "依据原文“illustrate reasons that deserve further investigation.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "illustrate reasons that deserve further investigation."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What kind of quantity does the study not estimate?",
+      "maxWords": 2,
+      "answers": [
+        "population proportions"
+      ],
+      "explanation": "依据原文“rather than estimating population proportions.”。答案按原文填写，保留限定范围。",
+      "evidence": "rather than estimating population proportions."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why were former users excluded?",
+      "options": [
+        "The project had no recruitment process.",
+        "Recruitment used the current membership list.",
+        "They had all joined the interviews already.",
+        "They were not allowed to leave the service."
+      ],
+      "answers": [
+        "Recruitment used the current membership list."
+      ],
+      "explanation": "依据原文“recruitment through the current membership list excluded them.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "recruitment through the current membership list excluded them."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Would more people from the same list necessarily solve the problem?",
+      "options": [
+        "No; the coverage problem could remain.",
+        "Yes; size always removes recruitment bias.",
+        "Yes; former users automatically reappear.",
+        "No; all larger samples are unusable."
+      ],
+      "answers": [
+        "No; the coverage problem could remain."
+      ],
+      "explanation": "依据原文“could preserve the same coverage problem.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "could preserve the same coverage problem."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How many seconds are available for an answer?",
+      "maxWords": 1,
+      "answers": [
+        "forty",
+        "40"
+      ],
+      "explanation": "依据原文“forty seconds”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "forty seconds",
+      "answerAliases": [
+        {
+          "value": "40",
+          "source": "forty",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What should Sara do first?",
+      "options": [
+        "Offer an unrelated rehearsed sentence.",
+        "Deny that limitations exist.",
+        "Answer the question directly.",
+        "Repeat the entire presentation."
+      ],
+      "answers": [
+        "Answer the question directly."
+      ],
+      "explanation": "依据原文“First answer the question directly.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "First answer the question directly."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What is the intended goal of the practice?",
+      "maxWords": 2,
+      "answers": [
+        "reasoned answer"
+      ],
+      "explanation": "依据原文“The goal is a reasoned answer”。答案按原文填写，保留限定范围。",
+      "evidence": "The goal is a reasoned answer"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "sample size",
+      "meaning": "样本量",
+      "example": "What will you say if someone challenges the sample size?",
+      "kind": "collocation"
+    },
+    {
+      "word": "population proportions",
+      "meaning": "总体比例",
+      "example": "I could say the study explores possible explanations rather than estimating population proportions.",
+      "kind": "collocation"
+    },
+    {
+      "word": "membership list",
+      "meaning": "成员名单",
+      "example": "I will say that recruitment through the current membership list excluded them.",
+      "kind": "collocation"
+    },
+    {
+      "word": "recruitment",
+      "meaning": "招募",
+      "example": "I will say that recruitment through the current membership list excluded them.",
+      "kind": "word"
+    },
+    {
+      "word": "coverage problem",
+      "meaning": "覆盖范围问题",
+      "example": "A larger sample from the same list could preserve the same coverage problem.",
+      "kind": "collocation"
+    },
+    {
+      "word": "structure",
+      "meaning": "组织结构",
+      "example": "How will you structure it?",
+      "kind": "word"
+    },
+    {
+      "word": "state the evidence",
+      "meaning": "陈述证据",
+      "example": "Then state the evidence, name the limitation and suggest the next check.",
+      "kind": "collocation"
+    },
+    {
+      "word": "name the limitation",
+      "meaning": "指出局限",
+      "example": "Then state the evidence, name the limitation and suggest the next check.",
+      "kind": "collocation"
+    },
+    {
+      "word": "reasoned answer",
+      "meaning": "有推理依据的回答",
+      "example": "The goal is a reasoned answer, not a rehearsed sentence that ignores what was asked.",
+      "kind": "collocation"
+    },
+    {
+      "word": "rehearsed sentence",
+      "meaning": "预先背熟的句子",
+      "example": "The goal is a reasoned answer, not a rehearsed sentence that ignores what was asked.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "结论强度与情态动词",
+    "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。",
+    "example": "What will you say if someone challenges the sample size?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The effect _____ vary; the sample is too small to be certain. （只填空白，保持其余文字不变）",
+        "options": [
+          "may",
+          "must",
+          "always will"
+        ],
+        "answers": [
+          "may"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：The effect may vary; the sample is too small to be certain.",
+        "evidence": "The effect may vary; the sample is too small to be certain."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Visitors _____ sign in; it is a compulsory safety rule. （只填空白，保持其余文字不变）",
+        "options": [
+          "must",
+          "may",
+          "might"
+        ],
+        "answers": [
+          "must"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：Visitors must sign in; it is a compulsory safety rule.",
+        "evidence": "Visitors must sign in; it is a compulsory safety rule."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The estimate _____ change because the survey is unfinished. （只填空白，保持其余文字不变）",
+        "options": [
+          "could",
+          "must",
+          "will definitely"
+        ],
+        "answers": [
+          "could"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：The estimate could change because the survey is unfinished.",
+        "evidence": "The estimate could change because the survey is unfinished."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Users _____ obtain permission; it is required by the contract. （只填空白，保持其余文字不变）",
+        "options": [
+          "must",
+          "may",
+          "might"
+        ],
+        "answers": [
+          "must"
+        ],
+        "explanation": "may/could 表示可能；must 表示这里给出的强制规则。根据句中明确说明的证据或规则作答，不把小样本可能性改成普遍必然。 本句为：Users must obtain permission; it is required by the contract.",
+        "evidence": "Users must obtain permission; it is required by the contract."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving responding to a challenging academic question?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about responding to a challenging academic question. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "How can a speaker acknowledge limits confidently?",
+        "Why does sample size not solve every problem?",
+        "What makes a concise response useful?",
+        "When can rehearsed language reduce communication quality?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about responding to a challenging academic question. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "90022b08aa0732d840acca0f9e3a8293a94bd8243e60e244e59b668c0a0a8044",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,33 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const ROOT=path.join(__dirname,'..'),Coverage=require('../assets/curriculum-coverage.js'),Lexicon=require('./curriculum-lexicon.cjs');
+const {validate}=require('./author-curriculum.cjs'),{jobs}=require('./curriculum-manifest.cjs');
+const hash=value=>crypto.createHash('sha256').update(value).digest('hex');
+function captionTokens(text){return String(text).toLowerCase().replace(/1,000/g,'1000').replace(/110/g,'hundred ten').replace(/(?:a|one) hundred and ten/g,'hundred ten').replace(/life-forms/g,'life forms').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim().split(' ');}
+function captionAudit(material){
+ if(!material.captionFile)return{status:'official-transcript-only',independentAudioAudit:false};
+ const {parseVtt}=require('../assets/listening-lab.js'),cues=parseVtt(fs.readFileSync(path.join(ROOT,material.captionFile),'utf8'));
+ for(let i=0;i<cues.length;i++){assert.ok(cues[i].end<=material.audioDurationSeconds+.1,'Caption extends past audio');if(i)assert.ok(cues[i].start>=cues[i-1].end-.01,'Overlapping official cues');}
+ const a=captionTokens(material.transcript),b=captionTokens(cues.map(c=>c.text).join(' ')),row=Array(b.length+1).fill(0);
+ for(let i=1;i<=a.length;i++){let diagonal=0;for(let j=1;j<=b.length;j++){const prior=row[j];row[j]=a[i-1]===b[j-1]?diagonal+1:Math.max(row[j],row[j-1]);diagonal=prior;}}
+ const matched=row[b.length],ratio=matched/Math.max(a.length,b.length);assert.ok(ratio>=.98,'Official caption/transcript token alignment below 98%');
+ return{status:'official-vtt-crosscheck',cues:cues.length,transcriptTokens:a.length,captionTokens:b.length,orderedMatchedTokens:matched,matchRatio:ratio,captionHash:hash(fs.readFileSync(path.join(ROOT,material.captionFile))),normalizations:['标点、大小写、空白','1,000与1000','110与a hundred and ten','life-forms与life forms'],independentAudioAudit:false,scope:'官方VTT与官方转录的有序文本比对及文件时长检查；未做独立ASR或逐句人工听审。'};
+}
+function auditVocabularyAudio(data){
+ const index=require('../assets/vocabulary-audio.js'),words=new Map();for(const m of data.materials.filter(m=>m.skill==='vocabulary'))for(const v of m.vocabulary||[]){const key=Coverage.normalize(v.word);if(!words.has(key))words.set(key,v.word.trim());}
+ let bytes=0,seconds=0;for(const [key,word]of words){const item=index.items[key];assert.ok(item&&item.audio,'Missing word audio: '+word);assert.equal(item.textHash,hash(word),'Word audio text hash: '+word);assert.ok(item.durationSeconds>=.1&&item.durationSeconds<=30);const file=path.join(ROOT,item.audio),audio=fs.readFileSync(file);assert.ok(audio.length>500);assert.equal(item.audioHash,hash(audio),'Word audio bytes hash: '+word);bytes+=audio.length;seconds+=item.durationSeconds;}return{status:'passed',lexemes:words.size,mapped:index.count,bytes,seconds,synthetic:true,note:'本机合成词/词组示范；每文件已做ffprobe检查，哈希与索引逐一核对；不代表发音评分。'};
+}
+function audit(data){
+ const map=new Map(data.materials.map(m=>[m.id,m])),late=jobs.filter(j=>j.lateFocused),auth=data.materials.filter(m=>m.source?.kind==='public-domain-authentic'&&m.skill==='listening');
+ assert.equal(late.length,32);assert.equal(data.days.length,365);assert.equal(data.days[364].kind,'year-review');assert.deepEqual(data.days[364].tasks.flatMap(t=>t.materialIds),['reflection-365']);
+ let sourceWords=0,questions=0,seconds=0;
+ for(const job of [...late,...jobs.filter(j=>j.id.startsWith('noaa-'))]){const m=map.get(job.id);assert.ok(m);assert.deepEqual(validate(job,m),[]);const payload=Object.fromEntries(m.source.contentHashFields.map(k=>[k,m[k]]));assert.equal(m.source.contentHash,hash(JSON.stringify(payload)),m.id+' content hash');sourceWords+=(m.passage||m.transcript).match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g).length;questions+=m.questions.length;if(m.skill==='listening'){const meta=JSON.parse(fs.readFileSync(path.join(ROOT,'curriculum/audio',m.id+'.json'),'utf8'));assert.equal(meta.transcriptHash,hash(m.transcript));assert.equal(meta.audioHash,hash(fs.readFileSync(path.join(ROOT,m.audio))));assert.equal(m.audioSynthetic,meta.synthetic);seconds+=meta.durationSeconds;}}
+ const first=new Map();
+ for(const day of data.days){assert.ok(day.totalMinutes<=360);for(const task of day.tasks){assert.equal(task.materialPractice.length,task.materialIds.length);for(const item of task.materialPractice){assert.equal(item.cycle,first.has(item.materialId)?'scheduled-reuse':'first-planned');assert.equal(item.firstPlannedDay,first.get(item.materialId)||day.day);if(!first.has(item.materialId))first.set(item.materialId,day.day);}if(day.week>=37&&day.day<=364&&task.mode!=='assessment'&&['reading','listening','speaking'].includes(task.skill))for(const id of task.materialIds)assert.equal(map.get(id).week,day.week,'Later practice must use its own week');}}
+ let extensionWords=0;
+ for(const m of data.materials.filter(m=>m.skill==='vocabulary')){for(const v of m.vocabulary||[]){assert.ok(require('../assets/word-dictionary.js').validWord(v.word),m.id+' invalid training token');if(v.sourceMaterialId){const source=map.get(v.sourceMaterialId);assert.ok(source);assert.equal(source.pool,'training','Reserved assessments cannot supply early vocabulary');assert.ok(Lexicon.sourceSentence(source,v.word));assert.ok((source.vocabulary||[]).some(raw=>raw.word===v.word&&raw.meaning===v.meaning),'Meaning must inherit authored source');if(source.fullTest)assert.ok(m.week>source.week,'Whole-test words must follow their source week');}if(m.source?.kind==='derived-lexical')extensionWords++;}}
+ const coverage=Coverage.summarize(data);assert.ok(coverage.scheduledLexemes>1200);assert.ok(coverage.lateWeeks.every(w=>w.newReading>=1&&w.newListening>=1&&w.speaking>=1));assert.equal(coverage.scheduledLexemes+coverage.uncoveredCount,coverage.trainingCandidateLexemes);
+ return{status:'passed',newSourceMaterials:late.length+auth.length,newOriginalSources:late.length,authenticSources:auth.length,newComprehensionQuestions:questions,newSourceWords:sourceWords,newListeningSeconds:seconds,earlierExtensionWords:extensionWords,scheduledLexemes:coverage.scheduledLexemes,candidateLexemes:coverage.trainingCandidateLexemes,uncoveredLexemes:coverage.uncoveredCount,captions:auth.map(m=>({id:m.id,...captionAudit(m)})),limits:coverage.limits};
+}
+module.exports={audit,captionAudit,captionTokens,auditVocabularyAudio};
+if(require.main===module){const data=require('../assets/curriculum-data.js'),report={...audit(data),vocabularyAudio:auditVocabularyAudio(data)};fs.writeFileSync(path.join(ROOT,'curriculum/growth-audit.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));}

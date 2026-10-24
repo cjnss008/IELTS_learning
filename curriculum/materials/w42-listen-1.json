@@ -1,0 +1,333 @@
+{
+  "id": "w42-listen-1",
+  "week": 42,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "A drainage model with a limited purpose",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A drainage model with a limited purpose",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Tutor: What does your model of the school playground predict?\nAna: How quickly a shallow pool drains through different surfaces. I tested gravel, paving and compacted soil in identical trays.\nTutor: Were the water volumes equal?\nAna: Yes, two litres per tray. I first planned one litre, but the pool disappeared too quickly to time consistently.\nTutor: What was the main result?\nAna: The gravel tray drained fastest. That does not prove gravel is the best surface for the whole playground, because we did not test wheelchair access or maintenance.\nTutor: What other limitation should the report state?\nAna: The trays had no slope. The real site slopes towards the entrance, so water may collect differently there.\nTutor: How many times did you repeat the procedure?\nAna: Five times for each material, using the same pouring height. I kept the slowest result rather than removing it as inconvenient.\nTutor: Was that a faulty measurement?\nAna: We do not know. The video shows a brief blockage near the outlet. I will describe it and show the results with and without that trial, clearly labelled.\nTutor: What happens next?\nAna: A site visit on Friday to measure the slope. Our present recommendation is another test, not immediate construction.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What volume was used in each tray?",
+      "maxWords": 2,
+      "answers": [
+        "two litres",
+        "2 litres",
+        "2 liters",
+        "two liters"
+      ],
+      "explanation": "依据原文“two litres per tray.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "two litres per tray.",
+      "answerAliases": [
+        {
+          "value": "2 litres",
+          "source": "two litres",
+          "kind": "numeric-equivalent"
+        },
+        {
+          "value": "2 liters",
+          "source": "two litres",
+          "kind": "numeric-equivalent"
+        },
+        {
+          "value": "two liters",
+          "source": "two litres",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Which material drained fastest?",
+      "maxWords": 1,
+      "answers": [
+        "gravel"
+      ],
+      "explanation": "依据原文“The gravel tray drained fastest.”。答案按原文填写，保留限定范围。",
+      "evidence": "The gravel tray drained fastest."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does that result not determine the final surface choice?",
+      "options": [
+        "Every material had the same drainage time.",
+        "The playground is used only for laboratory tests.",
+        "Other practical requirements were not tested.",
+        "The trays contained no water."
+      ],
+      "answers": [
+        "Other practical requirements were not tested."
+      ],
+      "explanation": "依据原文“we did not test wheelchair access or maintenance.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "we did not test wheelchair access or maintenance."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What feature of the real site was absent from the trays?",
+      "maxWords": 1,
+      "answers": [
+        "slope"
+      ],
+      "explanation": "依据原文“The trays had no slope.”。答案按原文填写，保留限定范围。",
+      "evidence": "The trays had no slope."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "How many repetitions were made for each material?",
+      "maxWords": 1,
+      "answers": [
+        "Five",
+        "5"
+      ],
+      "explanation": "依据原文“Five times for each material”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "Five times for each material",
+      "answerAliases": [
+        {
+          "value": "5",
+          "source": "Five",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How will the unusual result be handled?",
+      "options": [
+        "It will be deleted without explanation.",
+        "It will automatically be treated as correct.",
+        "It will replace all the other observations.",
+        "Results including and excluding it will both be labelled."
+      ],
+      "answers": [
+        "Results including and excluding it will both be labelled."
+      ],
+      "explanation": "依据原文“show the results with and without that trial, clearly labelled.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "show the results with and without that trial, clearly labelled."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Where did the video show a blockage?",
+      "maxWords": 1,
+      "answers": [
+        "outlet"
+      ],
+      "explanation": "依据原文“a brief blockage near the outlet.”。答案按原文填写，保留限定范围。",
+      "evidence": "a brief blockage near the outlet."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does the present recommendation call for?",
+      "options": [
+        "Removal of access considerations.",
+        "Further testing before construction.",
+        "Immediate installation of gravel everywhere.",
+        "Cancellation of all site observations."
+      ],
+      "answers": [
+        "Further testing before construction."
+      ],
+      "explanation": "依据原文“another test, not immediate construction.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "another test, not immediate construction."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "compacted soil",
+      "meaning": "压实土壤",
+      "example": "I tested gravel, paving and compacted soil in identical trays.",
+      "kind": "collocation"
+    },
+    {
+      "word": "identical trays",
+      "meaning": "相同托盘",
+      "example": "I tested gravel, paving and compacted soil in identical trays.",
+      "kind": "collocation"
+    },
+    {
+      "word": "water volumes",
+      "meaning": "水量",
+      "example": "Were the water volumes equal?",
+      "kind": "collocation"
+    },
+    {
+      "word": "wheelchair access",
+      "meaning": "轮椅通行条件",
+      "example": "That does not prove gravel is the best surface for the whole playground, because we did not test wheelchair access or maintenance.",
+      "kind": "collocation"
+    },
+    {
+      "word": "pouring height",
+      "meaning": "倾倒高度",
+      "example": "Five times for each material, using the same pouring height.",
+      "kind": "collocation"
+    },
+    {
+      "word": "faulty measurement",
+      "meaning": "错误测量",
+      "example": "Was that a faulty measurement?",
+      "kind": "collocation"
+    },
+    {
+      "word": "brief blockage",
+      "meaning": "短暂堵塞",
+      "example": "The video shows a brief blockage near the outlet.",
+      "kind": "collocation"
+    },
+    {
+      "word": "outlet",
+      "meaning": "排水口",
+      "example": "The video shows a brief blockage near the outlet.",
+      "kind": "word"
+    },
+    {
+      "word": "site visit",
+      "meaning": "实地走访",
+      "example": "A site visit on Friday to measure the slope.",
+      "kind": "collocation"
+    },
+    {
+      "word": "immediate construction",
+      "meaning": "立即施工",
+      "example": "Our present recommendation is another test, not immediate construction.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "保留限制性关系从句",
+    "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。",
+    "example": "Tutor: Were the water volumes equal?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The students _____ joined later received the same instructions. （只填空白，保持其余文字不变）",
+        "options": [
+          "who",
+          "which",
+          "what"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The students who joined later received the same instructions.",
+        "evidence": "The students who joined later received the same instructions."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The table _____ we checked contained two errors. （只填空白，保持其余文字不变）",
+        "options": [
+          "which",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The table which we checked contained two errors.",
+        "evidence": "The table which we checked contained two errors."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The files _____ were lost contained no personal names. （只填空白，保持其余文字不变）",
+        "options": [
+          "that",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "that"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The files that were lost contained no personal names.",
+        "evidence": "The files that were lost contained no personal names."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The researcher _____ notebook was missing repeated the test. （只填空白，保持其余文字不变）",
+        "options": [
+          "whose",
+          "who",
+          "whom"
+        ],
+        "answers": [
+          "whose"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The researcher whose notebook was missing repeated the test.",
+        "evidence": "The researcher whose notebook was missing repeated the test."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving testing a design with a small model?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about testing a design with a small model. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "When can a model inform a real design?",
+        "Why keep unusual observations?",
+        "What practical requirements can a laboratory test omit?",
+        "How should a recommendation acknowledge limits?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about testing a design with a small model. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "83fc6b289c249e8aa6102099be38f73fd6de4acfdc20625a1e3b24585b81970e",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

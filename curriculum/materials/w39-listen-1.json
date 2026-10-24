@@ -1,0 +1,335 @@
+{
+  "id": "w39-listen-1",
+  "week": 39,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "A fieldwork plan that can be repeated",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A fieldwork plan that can be repeated",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Maya: Our pond survey is scheduled for Saturday. Should everyone choose whichever sampling point looks most interesting?\nTutor: No. That would make a second visit hard to compare with the first. Use the eight numbered points on the map.\nMaya: The original plan had ten points, but two are behind a locked gate. I have marked those as inaccessible rather than pretending they do not exist.\nTutor: Good. Record that exclusion. What will you measure?\nMaya: Water temperature and the number of visible insects during a three-minute observation. We are not claiming to count every animal in the pond.\nTutor: What about equipment?\nMaya: Teams will use the same thermometer model. We will check the readings together before separating, so a faulty instrument is easier to notice.\nTutor: Rain is forecast in the afternoon. Will the visit be cancelled?\nMaya: Only if the bank is unsafe. Otherwise we will note the rainfall and begin at ten, as planned. Weather becomes part of the record, not something we silently remove.\nTutor: And photographs?\nMaya: One photograph of each marked point, facing north. No identifiable visitors. Files will be named with the point number and date.\nTutor: Finally, who keeps the raw notes?\nMaya: The department archive. We will submit a summary, but the original sheets will remain available for checking.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "How many points can actually be visited?",
+      "maxWords": 1,
+      "answers": [
+        "eight",
+        "8"
+      ],
+      "explanation": "依据原文“Use the eight numbered points on the map.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "Use the eight numbered points on the map.",
+      "answerAliases": [
+        {
+          "value": "8",
+          "source": "eight",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How are the two unavailable points treated?",
+      "options": [
+        "They are counted as having no insects.",
+        "They are silently deleted from the map.",
+        "They are replaced by the most attractive locations.",
+        "They are recorded as inaccessible."
+      ],
+      "answers": [
+        "They are recorded as inaccessible."
+      ],
+      "explanation": "依据原文“marked those as inaccessible”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "marked those as inaccessible"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How long is each insect observation?",
+      "maxWords": 2,
+      "answers": [
+        "three-minute",
+        "3 minutes",
+        "three minutes"
+      ],
+      "explanation": "依据原文“a three-minute observation.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "a three-minute observation.",
+      "answerAliases": [
+        {
+          "value": "3 minutes",
+          "source": "three-minute",
+          "kind": "numeric-equivalent"
+        },
+        {
+          "value": "three minutes",
+          "source": "three-minute",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why are instruments checked together?",
+      "options": [
+        "To guarantee that all insects will be visible.",
+        "To make a faulty reading easier to detect.",
+        "To ensure every pond has the same temperature.",
+        "To avoid keeping a record of the equipment."
+      ],
+      "answers": [
+        "To make a faulty reading easier to detect."
+      ],
+      "explanation": "依据原文“so a faulty instrument is easier to notice.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "so a faulty instrument is easier to notice."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What condition would lead to cancellation?",
+      "options": [
+        "An unsafe bank.",
+        "Any rain in the forecast.",
+        "A difference in insect numbers.",
+        "The presence of visitors."
+      ],
+      "answers": [
+        "An unsafe bank."
+      ],
+      "explanation": "依据原文“Only if the bank is unsafe.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Only if the bank is unsafe."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "At what hour will the visit start?",
+      "maxWords": 1,
+      "answers": [
+        "ten",
+        "10"
+      ],
+      "explanation": "依据原文“begin at ten, as planned.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "begin at ten, as planned.",
+      "answerAliases": [
+        {
+          "value": "10",
+          "source": "ten",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "In which direction should photographs face?",
+      "maxWords": 1,
+      "answers": [
+        "north"
+      ],
+      "explanation": "依据原文“facing north.”。答案按原文填写，保留限定范围。",
+      "evidence": "facing north."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Where will the original sheets be kept?",
+      "maxWords": 2,
+      "answers": [
+        "department archive"
+      ],
+      "explanation": "依据原文“The department archive.”。答案按原文填写，保留限定范围。",
+      "evidence": "The department archive."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "sampling point",
+      "meaning": "采样点",
+      "example": "Should everyone choose whichever sampling point looks most interesting?",
+      "kind": "collocation"
+    },
+    {
+      "word": "inaccessible",
+      "meaning": "无法进入的",
+      "example": "I have marked those as inaccessible rather than pretending they do not exist.",
+      "kind": "word"
+    },
+    {
+      "word": "exclusion",
+      "meaning": "排除情况",
+      "example": "Record that exclusion.",
+      "kind": "word"
+    },
+    {
+      "word": "visible insects",
+      "meaning": "可见昆虫",
+      "example": "Water temperature and the number of visible insects during a three-minute observation.",
+      "kind": "collocation"
+    },
+    {
+      "word": "thermometer model",
+      "meaning": "温度计型号",
+      "example": "Teams will use the same thermometer model.",
+      "kind": "collocation"
+    },
+    {
+      "word": "faulty instrument",
+      "meaning": "故障仪器",
+      "example": "We will check the readings together before separating, so a faulty instrument is easier to notice.",
+      "kind": "collocation"
+    },
+    {
+      "word": "rainfall",
+      "meaning": "降雨",
+      "example": "Otherwise we will note the rainfall and begin at ten, as planned.",
+      "kind": "word"
+    },
+    {
+      "word": "identifiable visitors",
+      "meaning": "可被识别的访客",
+      "example": "No identifiable visitors.",
+      "kind": "collocation"
+    },
+    {
+      "word": "raw notes",
+      "meaning": "原始记录",
+      "example": "Finally, who keeps the raw notes?",
+      "kind": "collocation"
+    },
+    {
+      "word": "original sheets",
+      "meaning": "原始记录表",
+      "example": "We will submit a summary, but the original sheets will remain available for checking.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "被动句准确保留动作对象",
+    "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。",
+    "example": "Maya: Only if the bank is unsafe.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The records _____ by two assistants. （只填空白，保持其余文字不变）",
+        "options": [
+          "were checked",
+          "checked",
+          "was checked"
+        ],
+        "answers": [
+          "were checked"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The records were checked by two assistants.",
+        "evidence": "The records were checked by two assistants."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Each ticket _____ at the entrance. （只填空白，保持其余文字不变）",
+        "options": [
+          "is scanned",
+          "scanned",
+          "is scanning"
+        ],
+        "answers": [
+          "is scanned"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：Each ticket is scanned at the entrance.",
+        "evidence": "Each ticket is scanned at the entrance."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The damaged units _____ last week. （只填空白，保持其余文字不变）",
+        "options": [
+          "were replaced",
+          "replaced",
+          "was replaced"
+        ],
+        "answers": [
+          "were replaced"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The damaged units were replaced last week.",
+        "evidence": "The damaged units were replaced last week."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The mixture _____ before it is filtered. （只填空白，保持其余文字不变）",
+        "options": [
+          "is heated",
+          "heated",
+          "is heating"
+        ],
+        "answers": [
+          "is heated"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The mixture is heated before it is filtered.",
+        "evidence": "The mixture is heated before it is filtered."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving planning repeatable fieldwork?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about planning repeatable fieldwork. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why are fixed procedures valuable?",
+        "How should excluded sites be described?",
+        "Can weather be useful data?",
+        "Why preserve notes after writing a summary?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about planning repeatable fieldwork. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "3b99869a9c7c3e8bffa8c5d2e034a83b1bd2b4045905aad6eddbeded2b8e63e5",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

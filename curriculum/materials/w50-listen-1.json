@@ -1,0 +1,318 @@
+{
+  "id": "w50-listen-1",
+  "week": 50,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "A data table needs to distinguish missing from zero",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A data table needs to distinguish missing from zero",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Tutor: Your table contains several zeros. Do they all mean the same thing?\nIris: I used zero when a shop reported no customers, and also when the form was not returned.\nTutor: Those are different. One is an observed count; the other is missing information.\nIris: I will label the unreturned forms as missing and recalculate the average using the available observations. But I should not imply that those observations represent every shop equally well.\nTutor: Exactly. How many forms are missing?\nIris: Seven out of thirty. Four came from the eastern district, where some shops closed early during roadworks.\nTutor: Could that pattern matter?\nIris: Yes. Non-response may be related to trading conditions. It is not necessarily random, so deleting the missing rows could leave a misleading picture.\nTutor: Will you invent values to complete the table?\nIris: No. I can show a sensitivity check: what happens to the overall result under clearly stated low and high assumptions for the missing shops. Those are scenarios, not recovered observations.\nTutor: What will the headline say?\nIris: Average customer count among responding shops, with the response total beside it. I will also describe the concentration of missing forms in the east. The limitation belongs with the result, not hidden at the end.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What two situations had Iris initially coded alike?",
+      "options": [
+        "No customers and no returned form.",
+        "Two different shop opening times only.",
+        "A high and a low price for the same product.",
+        "Every observed customer count and its date."
+      ],
+      "answers": [
+        "No customers and no returned form."
+      ],
+      "explanation": "依据原文“when a shop reported no customers, and also when the form was not returned.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "when a shop reported no customers, and also when the form was not returned."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "How many forms are missing?",
+      "maxWords": 1,
+      "answers": [
+        "Seven",
+        "7"
+      ],
+      "explanation": "依据原文“Seven out of thirty.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "Seven out of thirty.",
+      "answerAliases": [
+        {
+          "value": "7",
+          "source": "Seven",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "In which district were four missing forms concentrated?",
+      "maxWords": 2,
+      "answers": [
+        "eastern district"
+      ],
+      "explanation": "依据原文“Four came from the eastern district”。答案按原文填写，保留限定范围。",
+      "evidence": "Four came from the eastern district"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why may the pattern of missingness matter?",
+      "options": [
+        "It makes all returned forms false.",
+        "It could be related to local trading conditions.",
+        "It proves every unreported shop had no customers.",
+        "It guarantees a perfectly random sample."
+      ],
+      "answers": [
+        "It could be related to local trading conditions."
+      ],
+      "explanation": "依据原文“Non-response may be related to trading conditions.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Non-response may be related to trading conditions."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What will be recalculated using available observations?",
+      "maxWords": 1,
+      "answers": [
+        "average"
+      ],
+      "explanation": "依据原文“recalculate the average using the available observations.”。答案按原文填写，保留限定范围。",
+      "evidence": "recalculate the average using the available observations."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is the proposed sensitivity check based on?",
+      "options": [
+        "Secretly replacing every gap with zero.",
+        "Recovering exact values without new evidence.",
+        "Removing the eastern district from the report title.",
+        "Clearly labelled assumptions about the missing shops."
+      ],
+      "answers": [
+        "Clearly labelled assumptions about the missing shops."
+      ],
+      "explanation": "依据原文“clearly stated low and high assumptions for the missing shops.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "clearly stated low and high assumptions for the missing shops."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What must the scenarios not be presented as?",
+      "maxWords": 2,
+      "answers": [
+        "recovered observations"
+      ],
+      "explanation": "依据原文“not recovered observations.”。答案按原文填写，保留限定范围。",
+      "evidence": "not recovered observations."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Who will the headline average explicitly describe?",
+      "options": [
+        "Every shop in every district equally.",
+        "Responding shops.",
+        "All shops with complete certainty.",
+        "Only shops confirmed to have no customers."
+      ],
+      "answers": [
+        "Responding shops."
+      ],
+      "explanation": "依据原文“among responding shops”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "among responding shops"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "observed count",
+      "meaning": "实测计数",
+      "example": "One is an observed count; the other is missing information.",
+      "kind": "collocation"
+    },
+    {
+      "word": "missing information",
+      "meaning": "缺失信息",
+      "example": "One is an observed count; the other is missing information.",
+      "kind": "collocation"
+    },
+    {
+      "word": "available observations",
+      "meaning": "已有观察值",
+      "example": "I will label the unreturned forms as missing and recalculate the average using the available observations.",
+      "kind": "collocation"
+    },
+    {
+      "word": "non-response",
+      "meaning": "未响应",
+      "example": "Non-response may be related to trading conditions.",
+      "kind": "word"
+    },
+    {
+      "word": "trading conditions",
+      "meaning": "经营状况",
+      "example": "Non-response may be related to trading conditions.",
+      "kind": "collocation"
+    },
+    {
+      "word": "missing rows",
+      "meaning": "缺失行",
+      "example": "It is not necessarily random, so deleting the missing rows could leave a misleading picture.",
+      "kind": "collocation"
+    },
+    {
+      "word": "sensitivity check",
+      "meaning": "敏感性检验",
+      "example": "what happens to the overall result under clearly stated low and high assumptions for the missing shops.",
+      "kind": "collocation"
+    },
+    {
+      "word": "recovered observations",
+      "meaning": "恢复的实测值",
+      "example": "Those are scenarios, not recovered observations.",
+      "kind": "collocation"
+    },
+    {
+      "word": "response total",
+      "meaning": "回复总量",
+      "example": "Average customer count among responding shops, with the response total beside it.",
+      "kind": "collocation"
+    },
+    {
+      "word": "concentration",
+      "meaning": "集中情况",
+      "example": "I will also describe the concentration of missing forms in the east.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "保留限制性关系从句",
+    "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。",
+    "example": "Iris: I used zero when a shop reported no customers, and also when the form was not returned.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The students _____ joined later received the same instructions. （只填空白，保持其余文字不变）",
+        "options": [
+          "who",
+          "which",
+          "what"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The students who joined later received the same instructions.",
+        "evidence": "The students who joined later received the same instructions."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The table _____ we checked contained two errors. （只填空白，保持其余文字不变）",
+        "options": [
+          "which",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The table which we checked contained two errors.",
+        "evidence": "The table which we checked contained two errors."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The files _____ were lost contained no personal names. （只填空白，保持其余文字不变）",
+        "options": [
+          "that",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "that"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The files that were lost contained no personal names.",
+        "evidence": "The files that were lost contained no personal names."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The researcher _____ notebook was missing repeated the test. （只填空白，保持其余文字不变）",
+        "options": [
+          "whose",
+          "who",
+          "whom"
+        ],
+        "answers": [
+          "whose"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The researcher whose notebook was missing repeated the test.",
+        "evidence": "The researcher whose notebook was missing repeated the test."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving reporting incomplete data?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about reporting incomplete data. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why distinguish zero from missing?",
+        "When can non-response create a misleading picture?",
+        "How should hypothetical values be labelled?",
+        "Where should a result’s limitation appear?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about reporting incomplete data. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "65920c8020ce4d5248dd171d5cf776ebdca829dff234660fd960fee2efbbd01b",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

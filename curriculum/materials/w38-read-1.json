@@ -1,0 +1,318 @@
+{
+  "id": "w38-read-1",
+  "week": 38,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "When efficiency does not reduce total use",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "When efficiency does not reduce total use",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A fictional housing association replaced the corridor lamps in four apartment blocks. The new lamps used less electricity per hour than the older models. Engineers calculated the savings they would expect if the lamps operated for exactly the same number of hours. Six months later, the bills showed a smaller reduction than predicted. This did not necessarily mean that the lamps had failed.\n\nB. Previously, residents could switch on corridor lighting for five minutes. Several had complained that the timer ended before they reached their doors. Alongside the replacement programme, the association extended the lighting period to ten minutes. Some residents began using a previously dark stairway. The technology had become more efficient, but the amount of useful service delivered had increased. Comparing consumption alone would miss that change.\n\nC. To separate these effects, a technician installed a usage logger in one block. It recorded operating hours without collecting information about individual residents. The records suggested that longer operating time accounted for much of the gap between expected and measured savings. However, one monitored block could not establish how the other three behaved. Differences in occupancy and daylight would also need consideration.\n\nD. The association debated restoring the shorter timer. A purely financial calculation favoured doing so. A residents' panel argued that the longer period had improved access for people who moved slowly. Its members did not claim that the change saved the maximum possible amount of electricity. They argued that a modest saving and a more usable building could be a reasonable combination.\n\nE. The final report kept two indicators: electricity per operating hour and total electricity consumption. It also described the change to the timer and the complaints that motivated it. An efficiency improvement concerns the resources required for a unit of service. The total depends on how much of that service people actually use. A useful evaluation should state which question it is answering.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What did the original calculation assume would remain unchanged?",
+      "options": [
+        "The hours of operation.",
+        "The number of complaints.",
+        "The measured bill after replacement.",
+        "The daylight in every corridor."
+      ],
+      "answers": [
+        "The hours of operation."
+      ],
+      "explanation": "依据原文“if the lamps operated for exactly the same number of hours.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "if the lamps operated for exactly the same number of hours."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "What duration replaced the old lighting period?",
+      "maxWords": 2,
+      "answers": [
+        "ten minutes",
+        "10 minutes"
+      ],
+      "explanation": "依据原文“extended the lighting period to ten minutes.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "extended the lighting period to ten minutes.",
+      "answerAliases": [
+        {
+          "value": "10 minutes",
+          "source": "ten minutes",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What instrument recorded operating time?",
+      "maxWords": 2,
+      "answers": [
+        "usage logger"
+      ],
+      "explanation": "依据原文“installed a usage logger in one block.”。答案按原文填写，保留限定范围。",
+      "evidence": "installed a usage logger in one block."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why could one monitored block not describe every block?",
+      "options": [
+        "The other blocks had restored the old lamps.",
+        "Occupancy and daylight could differ.",
+        "Every block had identical operating hours.",
+        "The logger recorded opinions rather than hours."
+      ],
+      "answers": [
+        "Occupancy and daylight could differ."
+      ],
+      "explanation": "依据原文“Differences in occupancy and daylight would also need consideration.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Differences in occupancy and daylight would also need consideration."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Which group supported the more accessible lighting period?",
+      "maxWords": 2,
+      "answers": [
+        "residents' panel"
+      ],
+      "explanation": "依据原文“A residents' panel argued that the longer period had improved access”。答案按原文填写，保留限定范围。",
+      "evidence": "A residents' panel argued that the longer period had improved access"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did the panel acknowledge?",
+      "options": [
+        "The lamps used more electricity per hour.",
+        "Everyone preferred the shorter timer.",
+        "Access could improve only by removing the lamps.",
+        "The arrangement did not maximise electricity savings."
+      ],
+      "answers": [
+        "The arrangement did not maximise electricity savings."
+      ],
+      "explanation": "依据原文“did not claim that the change saved the maximum possible amount of electricity.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "did not claim that the change saved the maximum possible amount of electricity."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "One retained indicator was total electricity _____.",
+      "maxWords": 1,
+      "answers": [
+        "consumption"
+      ],
+      "explanation": "依据原文“total electricity consumption.”。答案按原文填写，保留限定范围。",
+      "evidence": "total electricity consumption."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What distinction structures the argument?",
+      "options": [
+        "Financial outcomes are the only relevant outcomes.",
+        "Efficiency per service unit differs from total use.",
+        "A complaint is equivalent to a measured saving.",
+        "A smaller saving always proves equipment failure."
+      ],
+      "answers": [
+        "Efficiency per service unit differs from total use."
+      ],
+      "explanation": "依据原文“The total depends on how much of that service people actually use.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "The total depends on how much of that service people actually use."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "housing association",
+      "meaning": "住房管理协会",
+      "example": "A fictional housing association replaced the corridor lamps in four apartment blocks.",
+      "kind": "collocation"
+    },
+    {
+      "word": "operating hours",
+      "meaning": "运行时数",
+      "example": "It recorded operating hours without collecting information about individual residents.",
+      "kind": "collocation"
+    },
+    {
+      "word": "occupancy",
+      "meaning": "入住情况",
+      "example": "Differences in occupancy and daylight would also need consideration.",
+      "kind": "word"
+    },
+    {
+      "word": "purely financial",
+      "meaning": "纯财务角度的",
+      "example": "A purely financial calculation favoured doing so.",
+      "kind": "collocation"
+    },
+    {
+      "word": "modest saving",
+      "meaning": "幅度有限的节省",
+      "example": "They argued that a modest saving and a more usable building could be a reasonable combination.",
+      "kind": "collocation"
+    },
+    {
+      "word": "indicators",
+      "meaning": "指标",
+      "example": "electricity per operating hour and total electricity consumption.",
+      "kind": "word"
+    },
+    {
+      "word": "efficiency improvement",
+      "meaning": "效率提升",
+      "example": "An efficiency improvement concerns the resources required for a unit of service.",
+      "kind": "collocation"
+    },
+    {
+      "word": "unit of service",
+      "meaning": "单位服务",
+      "example": "An efficiency improvement concerns the resources required for a unit of service.",
+      "kind": "collocation"
+    },
+    {
+      "word": "resources required",
+      "meaning": "所需资源",
+      "example": "An efficiency improvement concerns the resources required for a unit of service.",
+      "kind": "collocation"
+    },
+    {
+      "word": "measured savings",
+      "meaning": "实测节省量",
+      "example": "The records suggested that longer operating time accounted for much of the gap between expected and measured savings.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "比较的是相同口径",
+    "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。",
+    "example": "Engineers calculated the savings they would expect if the lamps operated for exactly the same number of hours.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The revised survey contains _____ questions than the pilot. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The revised survey contains fewer questions than the pilot.",
+        "evidence": "The revised survey contains fewer questions than the pilot."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The second route requires _____ fuel than the first. （只填空白，保持其余文字不变）",
+        "options": [
+          "less",
+          "fewer",
+          "little"
+        ],
+        "answers": [
+          "less"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The second route requires less fuel than the first.",
+        "evidence": "The second route requires less fuel than the first."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The new device is _____ than the old one. （只填空白，保持其余文字不变）",
+        "options": [
+          "more reliable",
+          "most reliable",
+          "reliablest"
+        ],
+        "answers": [
+          "more reliable"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The new device is more reliable than the old one.",
+        "evidence": "The new device is more reliable than the old one."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The later group made _____ errors than the earlier group. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The later group made fewer errors than the earlier group.",
+        "evidence": "The later group made fewer errors than the earlier group."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving assessing energy efficiency?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about assessing energy efficiency. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why can improved efficiency produce smaller savings than expected?",
+        "How should accessibility affect energy decisions?",
+        "Why use several indicators?",
+        "Can a project succeed without meeting its forecast?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about assessing energy efficiency. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "4ba44be1e5b2adb6e743a1fd739dc82825ee7a85c466cf74e7e2bd9fc2056687",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

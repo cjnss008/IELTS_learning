@@ -1,0 +1,318 @@
+{
+  "id": "w46-listen-1",
+  "week": 46,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "An interview schedule should leave room for disagreement",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "An interview schedule should leave room for disagreement",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Tutor: Your interview guide seems to assume that the new study room is a success.\nMei: My first question asks what users like most about it. I see the problem: it gives them no obvious route to say they dislike it.\nTutor: Try an open question about their experience before asking for a positive or negative judgement.\nMei: I will ask them to describe their most recent visit. Then I can ask what helped or caused difficulty.\nTutor: How will you select participants?\nMei: Twelve interviews, including people who booked but did not attend. I can contact them through the booking office without receiving their private contact details myself.\nTutor: What about recording?\nMei: I will request permission first. Anyone who declines can still take part, with written notes instead.\nTutor: Will you send participants your summary?\nMei: Yes, but I will distinguish a correction to what they said from a disagreement with my interpretation. Both may need recording; they are not the same issue.\nTutor: How will you handle contradictory accounts?\nMei: Keep them. One student may value the quiet while another finds the rules too restrictive. I should describe the difference rather than make everyone sound satisfied.\nTutor: Good. Pilot the guide on Monday. The interviews can begin after we have checked that the wording does not steer the answers.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is wrong with the initial opening question?",
+      "options": [
+        "It presupposes a positive experience.",
+        "It requests too many numerical calculations.",
+        "It asks about a room that does not exist.",
+        "It guarantees an equally negative response."
+      ],
+      "answers": [
+        "It presupposes a positive experience."
+      ],
+      "explanation": "依据原文“what users like most about it.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "what users like most about it."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "What will participants first be asked to describe?",
+      "maxWords": 3,
+      "answers": [
+        "most recent visit"
+      ],
+      "explanation": "依据原文“describe their most recent visit.”。答案按原文填写，保留限定范围。",
+      "evidence": "describe their most recent visit."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How many interviews are planned?",
+      "maxWords": 1,
+      "answers": [
+        "Twelve",
+        "12"
+      ],
+      "explanation": "依据原文“Twelve interviews”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "Twelve interviews",
+      "answerAliases": [
+        {
+          "value": "12",
+          "source": "Twelve",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which additional group will be included?",
+      "options": [
+        "People required to share private addresses.",
+        "People who booked but did not attend.",
+        "Only users who praised the room.",
+        "Only members of the research team."
+      ],
+      "answers": [
+        "People who booked but did not attend."
+      ],
+      "explanation": "依据原文“people who booked but did not attend.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "people who booked but did not attend."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What alternative is offered if recording is declined?",
+      "maxWords": 2,
+      "answers": [
+        "written notes"
+      ],
+      "explanation": "依据原文“with written notes instead.”。答案按原文填写，保留限定范围。",
+      "evidence": "with written notes instead."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What distinction will Mei preserve in participant feedback?",
+      "options": [
+        "A booking request and a payment record.",
+        "Every positive answer and a fabricated negative answer.",
+        "A public address and a private address.",
+        "A factual correction and disagreement over interpretation."
+      ],
+      "answers": [
+        "A factual correction and disagreement over interpretation."
+      ],
+      "explanation": "依据原文“a correction to what they said from a disagreement with my interpretation.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "a correction to what they said from a disagreement with my interpretation."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How will contradictory accounts be handled?",
+      "options": [
+        "They will be excluded without explanation.",
+        "They will automatically cancel the interviews.",
+        "They will be retained and described.",
+        "They will all be converted into positive statements."
+      ],
+      "answers": [
+        "They will be retained and described."
+      ],
+      "explanation": "依据原文“Keep them.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Keep them."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "On which day will the guide be piloted?",
+      "maxWords": 1,
+      "answers": [
+        "Monday"
+      ],
+      "explanation": "依据原文“Pilot the guide on Monday.”。答案按原文填写，保留限定范围。",
+      "evidence": "Pilot the guide on Monday."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "interview guide",
+      "meaning": "访谈提纲",
+      "example": "Your interview guide seems to assume that the new study room is a success.",
+      "kind": "collocation"
+    },
+    {
+      "word": "open question",
+      "meaning": "开放式问题",
+      "example": "Try an open question about their experience before asking for a positive or negative judgement.",
+      "kind": "collocation"
+    },
+    {
+      "word": "positive or negative judgement",
+      "meaning": "正面或负面评价",
+      "example": "Try an open question about their experience before asking for a positive or negative judgement.",
+      "kind": "collocation"
+    },
+    {
+      "word": "booking office",
+      "meaning": "预约管理处",
+      "example": "I can contact them through the booking office without receiving their private contact details myself.",
+      "kind": "collocation"
+    },
+    {
+      "word": "private contact details",
+      "meaning": "私人联系方式",
+      "example": "I can contact them through the booking office without receiving their private contact details myself.",
+      "kind": "collocation"
+    },
+    {
+      "word": "request permission",
+      "meaning": "请求许可",
+      "example": "I will request permission first.",
+      "kind": "collocation"
+    },
+    {
+      "word": "written notes",
+      "meaning": "书面笔记",
+      "example": "Anyone who declines can still take part, with written notes instead.",
+      "kind": "collocation"
+    },
+    {
+      "word": "contradictory accounts",
+      "meaning": "相互矛盾的叙述",
+      "example": "How will you handle contradictory accounts?",
+      "kind": "collocation"
+    },
+    {
+      "word": "restrictive",
+      "meaning": "限制较多的",
+      "example": "One student may value the quiet while another finds the rules too restrictive.",
+      "kind": "word"
+    },
+    {
+      "word": "steer the answers",
+      "meaning": "引导回答",
+      "example": "The interviews can begin after we have checked that the wording does not steer the answers.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "保留限制性关系从句",
+    "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。",
+    "example": "Both may need recording; they are not the same issue.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The students _____ joined later received the same instructions. （只填空白，保持其余文字不变）",
+        "options": [
+          "who",
+          "which",
+          "what"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The students who joined later received the same instructions.",
+        "evidence": "The students who joined later received the same instructions."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The table _____ we checked contained two errors. （只填空白，保持其余文字不变）",
+        "options": [
+          "which",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The table which we checked contained two errors.",
+        "evidence": "The table which we checked contained two errors."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The files _____ were lost contained no personal names. （只填空白，保持其余文字不变）",
+        "options": [
+          "that",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "that"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The files that were lost contained no personal names.",
+        "evidence": "The files that were lost contained no personal names."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The researcher _____ notebook was missing repeated the test. （只填空白，保持其余文字不变）",
+        "options": [
+          "whose",
+          "who",
+          "whom"
+        ],
+        "answers": [
+          "whose"
+        ],
+        "explanation": "who 指人，which/that 可指物；从句里的关系代词已作宾语时不要再重复 it。以下题目限定使用给出的关系代词。 本句为：The researcher whose notebook was missing repeated the test.",
+        "evidence": "The researcher whose notebook was missing repeated the test."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving designing fair interview questions?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about designing fair interview questions. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "How can wording shape an answer?",
+        "Why include non-attenders in service research?",
+        "What should happen when people disagree with an interpretation?",
+        "Can conflicting experiences both be valid?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about designing fair interview questions. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "6e9a4db4c51e7b70c9681e6476e6e0acb9a1c11dea87b9ec29d83b98c46e807e",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

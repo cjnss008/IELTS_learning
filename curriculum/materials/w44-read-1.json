@@ -1,0 +1,323 @@
+{
+  "id": "w44-read-1",
+  "week": 44,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "Why course completion rates depend on who is counted",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Why course completion rates depend on who is counted",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. An imaginary training provider compared two online courses. In the first, seventy of one hundred registered learners submitted the final project. In the second, sixty of sixty-five learners who opened the first lesson submitted it. The provider advertised the second course as having a higher completion rate. A reviewer asked why the two denominators had been defined differently.\n\nB. Registration and starting a lesson were not equivalent events. Some registered learners might never open a course, perhaps because they changed plans or could not access the platform. If the first course excluded non-starters, its completion rate would change. The available figures did not say how many people had opened its first lesson, so a fair comparison could not yet be calculated.\n\nC. The final project also differed. The first course required an independently designed investigation; the second required a short reflection on provided examples. Submitting these tasks might involve different amounts of work. A high submission rate did not necessarily indicate stronger learning, nor did a demanding task automatically make a course better. The reviewer wanted a common assessment of what learners could do afterwards.\n\nD. Staff suggested a voluntary follow-up exercise six weeks after completion. This could reveal delayed retention among those who participated. It could not, by itself, describe everyone who registered. People willing to return might be more confident or have more free time. The report would need to show how many were invited and how many responded, together with the original entry requirements.\n\nE. The provider revised its dashboard to show registered learners, starters and submitters separately. It also described the final task and removed the simple ranking. Prospective learners could then consider the evidence alongside practical needs such as access and workload. The revised dashboard did not solve every comparison problem. It made the definitions visible, which allowed a reader to recognise which conclusions the numbers supported and which remained uncertain.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "How many registered learners were counted for the first course?",
+      "maxWords": 2,
+      "answers": [
+        "one hundred",
+        "100"
+      ],
+      "explanation": "依据原文“one hundred registered learners”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "one hundred registered learners",
+      "answerAliases": [
+        {
+          "value": "100",
+          "source": "one hundred",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the central problem with the advertised comparison?",
+      "options": [
+        "The second course had no final project.",
+        "Every registered learner had submitted work.",
+        "Both courses counted precisely the same event.",
+        "Different definitions of the denominator."
+      ],
+      "answers": [
+        "Different definitions of the denominator."
+      ],
+      "explanation": "依据原文“the two denominators had been defined differently.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "the two denominators had been defined differently."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What missing figure prevents recalculating a comparable rate?",
+      "options": [
+        "The first course’s number of registered learners.",
+        "The date of the second course’s reflection task.",
+        "The number who opened the first course’s initial lesson.",
+        "The second course’s number of submitters."
+      ],
+      "answers": [
+        "The number who opened the first course’s initial lesson."
+      ],
+      "explanation": "依据原文“did not say how many people had opened its first lesson”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "did not say how many people had opened its first lesson"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What did the first course’s final task require?",
+      "options": [
+        "Copying a provided investigation.",
+        "An independently designed investigation.",
+        "A reflection on supplied examples.",
+        "Only opening the first lesson."
+      ],
+      "answers": [
+        "An independently designed investigation."
+      ],
+      "explanation": "依据原文“an independently designed investigation”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "an independently designed investigation"
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What later learning feature could the follow-up examine?",
+      "maxWords": 2,
+      "answers": [
+        "delayed retention"
+      ],
+      "explanation": "依据原文“delayed retention”。答案按原文填写，保留限定范围。",
+      "evidence": "delayed retention"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why might follow-up volunteers not represent all registrants?",
+      "options": [
+        "They were required to join before registration.",
+        "They had all failed both original projects.",
+        "Their entry requirements had been removed.",
+        "They could have greater confidence or available time."
+      ],
+      "answers": [
+        "They could have greater confidence or available time."
+      ],
+      "explanation": "依据原文“more confident or have more free time.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "more confident or have more free time."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which three groups did the revised dashboard separate?",
+      "options": [
+        "Confident, uncertain and dissatisfied learners.",
+        "Investigators, writers and platform designers.",
+        "Registrants, starters and submitters.",
+        "Teachers, reviewers and employers."
+      ],
+      "answers": [
+        "Registrants, starters and submitters."
+      ],
+      "explanation": "依据原文“registered learners, starters and submitters separately.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "registered learners, starters and submitters separately."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What practical requirement is mentioned alongside access?",
+      "maxWords": 1,
+      "answers": [
+        "workload"
+      ],
+      "explanation": "依据原文“access and workload.”。答案按原文填写，保留限定范围。",
+      "evidence": "access and workload."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "denominators",
+      "meaning": "分母；计算基数",
+      "example": "A reviewer asked why the two denominators had been defined differently.",
+      "kind": "word"
+    },
+    {
+      "word": "non-starters",
+      "meaning": "未开始学习者",
+      "example": "If the first course excluded non-starters, its completion rate would change.",
+      "kind": "word"
+    },
+    {
+      "word": "submission rate",
+      "meaning": "提交率",
+      "example": "A high submission rate did not necessarily indicate stronger learning, nor did a demanding task automatically make a course better.",
+      "kind": "collocation"
+    },
+    {
+      "word": "common assessment",
+      "meaning": "共同标准的评估",
+      "example": "The reviewer wanted a common assessment of what learners could do afterwards.",
+      "kind": "collocation"
+    },
+    {
+      "word": "delayed retention",
+      "meaning": "延迟保持",
+      "example": "This could reveal delayed retention among those who participated.",
+      "kind": "collocation"
+    },
+    {
+      "word": "entry requirements",
+      "meaning": "入学要求",
+      "example": "The report would need to show how many were invited and how many responded, together with the original entry requirements.",
+      "kind": "collocation"
+    },
+    {
+      "word": "dashboard",
+      "meaning": "数据概览面板",
+      "example": "The provider revised its dashboard to show registered learners, starters and submitters separately.",
+      "kind": "word"
+    },
+    {
+      "word": "prospective learners",
+      "meaning": "潜在学习者",
+      "example": "Prospective learners could then consider the evidence alongside practical needs such as access and workload.",
+      "kind": "collocation"
+    },
+    {
+      "word": "workload",
+      "meaning": "学习负荷",
+      "example": "Prospective learners could then consider the evidence alongside practical needs such as access and workload.",
+      "kind": "word"
+    },
+    {
+      "word": "definitions",
+      "meaning": "定义",
+      "example": "It made the definitions visible, which allowed a reader to recognise which conclusions the numbers supported and which remained uncertain.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "不可数名词与数量表达",
+    "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。",
+    "example": "Registration and starting a lesson were not equivalent events.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The team collected _____ before deciding. （只填空白，保持其余文字不变）",
+        "options": [
+          "some evidence",
+          "an evidence",
+          "evidences"
+        ],
+        "answers": [
+          "some evidence"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The team collected some evidence before deciding.",
+        "evidence": "The team collected some evidence before deciding."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The guide provides _____ about the route. （只填空白，保持其余文字不变）",
+        "options": [
+          "useful information",
+          "a useful information",
+          "useful informations"
+        ],
+        "answers": [
+          "useful information"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The guide provides useful information about the route.",
+        "evidence": "The guide provides useful information about the route."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The laboratory bought three _____. （只填空白，保持其余文字不变）",
+        "options": [
+          "items of equipment",
+          "equipments",
+          "an equipments"
+        ],
+        "answers": [
+          "items of equipment"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The laboratory bought three items of equipment.",
+        "evidence": "The laboratory bought three items of equipment."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The tutor gave _____ about citations. （只填空白，保持其余文字不变）",
+        "options": [
+          "a piece of advice",
+          "an advice",
+          "advices"
+        ],
+        "answers": [
+          "a piece of advice"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The tutor gave a piece of advice about citations.",
+        "evidence": "The tutor gave a piece of advice about citations."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving comparing learning programmes?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about comparing learning programmes. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "What should a completion statistic include?",
+        "Is a demanding assessment always better?",
+        "Why is delayed performance useful?",
+        "What information helps adults choose a course?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about comparing learning programmes. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "5adbcfc5452f225ddf4448a7e780165249bb18425ff9b4cd6bdc2d5fa83e0fcc",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

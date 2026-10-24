@@ -1,0 +1,305 @@
+{
+  "id": "w43-read-1",
+  "week": 43,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "Searching an archive that misreads its own words",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Searching an archive that misreads its own words",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A fictional town archive scanned a set of handwritten shop ledgers. The resulting images were clear enough to read, but searching them required text produced by optical character recognition. The archive advertised a search for every mention of bicycle repairs. A local historian welcomed easier access while warning that a search could return only the words the software had recognised.\n\nB. In several ledgers, faded ink made the word bicycle resemble another sequence of letters. Those entries remained visible in the page images but were absent from a keyword search. A low result count therefore did not establish that few repairs had occurred. Nor did every returned result represent a relevant event: some entries described the sale of a bicycle rather than its repair.\n\nC. The historian checked a sample of pages selected by page number, rather than by search result. This allowed her to find relevant entries the search had missed. She classified errors as omissions or false matches. The two categories mattered because improving one could worsen the other. A looser search might recover damaged spellings but also return more irrelevant words.\n\nD. The archive considered asking volunteers to correct the transcription. It proposed preserving the original machine output beside the corrected version. Each correction would be linked to a page image and a dated record of the change. Users could then distinguish a reading supported by clear handwriting from one that remained doubtful. The aim was not to make every uncertainty disappear behind a clean-looking search screen.\n\nE. For the exhibition, the archive showed an image, the machine reading and a corrected line together. It also explained that the ledgers covered only participating shops. Even a perfect transcription would not record repairs done at home or at businesses whose books had not survived. Better retrieval could improve access to the archive without turning that archive into a complete history of the town. The historian's report kept technological accuracy separate from the completeness of the surviving evidence.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "Which technology produced searchable text?",
+      "maxWords": 3,
+      "answers": [
+        "optical character recognition"
+      ],
+      "explanation": "依据原文“text produced by optical character recognition.”。答案按原文填写，保留限定范围。",
+      "evidence": "text produced by optical character recognition."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why could a relevant entry be missing from search results?",
+      "options": [
+        "Every page image had been destroyed.",
+        "The archive banned searching for repairs.",
+        "The historian examined only new bicycles.",
+        "Faded handwriting was misread by the software."
+      ],
+      "answers": [
+        "Faded handwriting was misread by the software."
+      ],
+      "explanation": "依据原文“faded ink made the word bicycle resemble another sequence of letters.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "faded ink made the word bicycle resemble another sequence of letters."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What could make a returned entry irrelevant?",
+      "options": [
+        "It contained the word requested by the user.",
+        "It came from a participating shop.",
+        "It described a sale rather than a repair.",
+        "It appeared in a handwritten ledger."
+      ],
+      "answers": [
+        "It described a sale rather than a repair."
+      ],
+      "explanation": "依据原文“some entries described the sale of a bicycle rather than its repair.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "some entries described the sale of a bicycle rather than its repair."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How was the independent page sample selected?",
+      "maxWords": 2,
+      "answers": [
+        "page number"
+      ],
+      "explanation": "依据原文“selected by page number, rather than by search result.”。答案按原文填写，保留限定范围。",
+      "evidence": "selected by page number, rather than by search result."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What can be the cost of making a search looser?",
+      "options": [
+        "More irrelevant matches may be returned.",
+        "All missing ledgers will be recovered.",
+        "Every uncertainty in handwriting will vanish.",
+        "False matches will necessarily disappear."
+      ],
+      "answers": [
+        "More irrelevant matches may be returned."
+      ],
+      "explanation": "依据原文“also return more irrelevant words.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "also return more irrelevant words."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What will be kept beside the corrected transcription?",
+      "maxWords": 3,
+      "answers": [
+        "original machine output"
+      ],
+      "explanation": "依据原文“preserving the original machine output beside the corrected version.”。答案按原文填写，保留限定范围。",
+      "evidence": "preserving the original machine output beside the corrected version."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "To what original resource will each correction link?",
+      "maxWords": 2,
+      "answers": [
+        "page image"
+      ],
+      "explanation": "依据原文“linked to a page image”。答案按原文填写，保留限定范围。",
+      "evidence": "linked to a page image"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What limitation remains after perfect transcription?",
+      "options": [
+        "Every search result would become a false match.",
+        "The surviving ledgers do not cover every repair.",
+        "The page images would no longer be readable.",
+        "The archive could not offer any useful access."
+      ],
+      "answers": [
+        "The surviving ledgers do not cover every repair."
+      ],
+      "explanation": "依据原文“would not record repairs done at home or at businesses whose books had not survived.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "would not record repairs done at home or at businesses whose books had not survived."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "shop ledgers",
+      "meaning": "商店账簿",
+      "example": "A fictional town archive scanned a set of handwritten shop ledgers.",
+      "kind": "collocation"
+    },
+    {
+      "word": "optical character recognition",
+      "meaning": "光学字符识别",
+      "example": "The resulting images were clear enough to read, but searching them required text produced by optical character recognition.",
+      "kind": "collocation"
+    },
+    {
+      "word": "keyword search",
+      "meaning": "关键词搜索",
+      "example": "Those entries remained visible in the page images but were absent from a keyword search.",
+      "kind": "collocation"
+    },
+    {
+      "word": "omissions",
+      "meaning": "遗漏",
+      "example": "She classified errors as omissions or false matches.",
+      "kind": "word"
+    },
+    {
+      "word": "false matches",
+      "meaning": "错误匹配",
+      "example": "She classified errors as omissions or false matches.",
+      "kind": "collocation"
+    },
+    {
+      "word": "machine output",
+      "meaning": "机器输出",
+      "example": "It proposed preserving the original machine output beside the corrected version.",
+      "kind": "collocation"
+    },
+    {
+      "word": "transcription",
+      "meaning": "文字转录",
+      "example": "The archive considered asking volunteers to correct the transcription.",
+      "kind": "word"
+    },
+    {
+      "word": "dated record",
+      "meaning": "带日期记录",
+      "example": "Each correction would be linked to a page image and a dated record of the change.",
+      "kind": "collocation"
+    },
+    {
+      "word": "retrieval",
+      "meaning": "检索",
+      "example": "Better retrieval could improve access to the archive without turning that archive into a complete history of the town.",
+      "kind": "word"
+    },
+    {
+      "word": "surviving evidence",
+      "meaning": "留存证据",
+      "example": "The historian's report kept technological accuracy separate from the completeness of the surviving evidence.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "报告过去的程序与当前解释",
+    "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。",
+    "example": "The resulting images were clear enough to read, but searching them required text produced by optical character recognition.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The team _____ the samples yesterday. （只填空白，保持其余文字不变）",
+        "options": [
+          "collected",
+          "collect",
+          "has collected"
+        ],
+        "answers": [
+          "collected"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The team collected the samples yesterday.",
+        "evidence": "The team collected the samples yesterday."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The report _____ the current booking rules. （只填空白，保持其余文字不变）",
+        "options": [
+          "describes",
+          "describe",
+          "describing"
+        ],
+        "answers": [
+          "describes"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The report describes the current booking rules.",
+        "evidence": "The report describes the current booking rules."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Last year, the library _____ its opening hours. （只填空白，保持其余文字不变）",
+        "options": [
+          "extended",
+          "extends",
+          "has extended"
+        ],
+        "answers": [
+          "extended"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：Last year, the library extended its opening hours.",
+        "evidence": "Last year, the library extended its opening hours."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "This diagram _____ how the filter works. （只填空白，保持其余文字不变）",
+        "options": [
+          "shows",
+          "show",
+          "showing"
+        ],
+        "answers": [
+          "shows"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：This diagram shows how the filter works.",
+        "evidence": "This diagram shows how the filter works."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving searching historical records?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about searching historical records. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "How can search results create false confidence?",
+        "Why preserve earlier versions of a transcription?",
+        "Can better technology compensate for missing sources?",
+        "What should an archive disclose about its coverage?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about searching historical records. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "ca8b814cba134ccf165a85199bb51d230f5fb36caf23331a862dafb74346d324",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

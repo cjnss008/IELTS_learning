@@ -13,6 +13,13 @@ function normalizeNumbers(value){
 }
 const answerWords=s=>(String(s||'').match(/(?:[A-Za-z]\.){2,}|[0-9]+(?:[:,.][0-9]+)*(?:[A-Za-z]+)?(?:[’'’-][A-Za-z0-9]+)*|[A-Za-z][A-Za-z0-9]*(?:[’'’-][A-Za-z0-9]+)*/g)||[]).length;
 function containsAnswer(text,answer){const value=normalizeNumbers(answer).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return !!value&&new RegExp('(?:^|[^a-z0-9])'+value+'(?:$|[^a-z0-9])','i').test(normalizeNumbers(text));}
+function numericAnswer(value){
+ const units={meters:'meter',metres:'meter',meter:'meter',metre:'meter',litres:'litre',liters:'litre',litre:'litre',liter:'litre',minutes:'minute',minute:'minute',weeks:'week',week:'week'};
+ const parts=norm(value).replace(/-/g,' ').split(' ');let unit='';if(units[parts.at(-1)])unit=units[parts.pop()];const text=parts.join(' ');if(/^\d+$/.test(text))return {number:Number(text),unit};
+ const small=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],tens=['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];let sum=0,current=0,seen=false;
+ for(let i=0;i<parts.length;i++){const p=parts[i];if(p==='and'){if(!parts.slice(0,i).some(x=>x==='hundred'||x==='thousand'))return null;continue;}if(small.includes(p)){current+=small.indexOf(p);seen=true;}else if(tens.includes(p)){current+=(tens.indexOf(p)+2)*10;seen=true;}else if(p==='hundred'){current=(current||1)*100;seen=true;}else if(p==='thousand'){sum+=(current||1)*1000;current=0;seen=true;}else return null;}return seen?{number:sum+current,unit}:null;
+}
+function validAnswerAlias(question,answer,text){return (question.answerAliases||[]).some(alias=>{if(alias.value!==answer||!question.answers.includes(alias.source)||!containsAnswer(text,alias.source))return false;if(alias.kind==='numeric-equivalent'){const a=numericAnswer(answer),b=numericAnswer(alias.source);return !!a&&!!b&&a.number===b.number&&a.unit===b.unit;}if(alias.kind==='unit-spelling')return norm(answer).replace(/metres/g,'meters').replace(/litres/g,'liters')===norm(alias.source).replace(/metres/g,'meters').replace(/litres/g,'liters');return false;});}
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 function constraints(job){
  if(job.skill==='writing')return `Create ONE ORIGINAL IELTS Academic writing TASK PROMPT, not an answer. Unique task seed ${job.id}; theme ${job.topic}; task ${job.type}. Return strict JSON {title:string,prompt:string,instructions:string,questions:[],rubric:{taskType:'${job.type}'},figure?:object}. prompt is the COMPLETE English question visible to the student. instructions is Chinese study guidance and says all scenarios/data are simulated, not an official IELTS paper. Do NOT output transfer/vocabulary/grammar/passage/sample essay. Do not put the actual question anywhere except prompt.
@@ -35,10 +42,15 @@ function validate(job,d){
    if(!q.prompt||!q.evidence||!q.explanation||!Array.isArray(q.answers)||!q.answers.length)errors.push('Question missing prompt/answers/evidence/explanation');
    if(!['single','multi','fill','short'].includes(q.type))errors.push('Invalid question type');
    if(['single','multi'].includes(q.type)&&(!Array.isArray(q.options)||(q.answers||[]).some(a=>!q.options.includes(a))))errors.push('Correct answer must exactly match an option');
-   if(q.type==='fill'&&(q.answers||[]).some(a=>!containsAnswer(text,a)))errors.push('Fill answer not in source: '+q.answers.join('/'));
+   if(q.type==='fill'&&(q.answers||[]).some(a=>!containsAnswer(text,a)&&!validAnswerAlias(q,a,text)))errors.push('Fill answer not in source: '+q.answers.join('/'));
    if(q.type==='fill'&&(!Number.isInteger(q.maxWords)||q.maxWords<1||(q.answers||[]).some(a=>answerWords(a)>q.maxWords)))errors.push('Fill answer exceeds word limit');
   }
   if(!Array.isArray(d.vocabulary)||d.vocabulary.length<6)errors.push('Need >=6 source vocabulary items');
+  if(job.requireAudioHash){
+   if(new Set((d.questions||[]).map(q=>q.id)).size!==(d.questions||[]).length)errors.push('Duplicate question ID');
+   for(const q of d.questions||[])if(q.evidence&&!String(text).includes(q.evidence))errors.push('Evidence must be an exact source quote: '+q.id);
+   for(const v of d.vocabulary||[])if(!v.word||!v.meaning||!containsAnswer(text,v.word))errors.push('Vocabulary must occur in source: '+v.word);
+  }
   if(!d.grammar?.explanation||!d.grammar.example||!Array.isArray(d.grammar.questions)||d.grammar.questions.length<4)errors.push('Need clear grammar lesson plus 4 questions');
   if(!d.transfer?.writing||!Array.isArray(d.transfer?.speaking?.part1))errors.push('Need actionable speaking/writing transfer');
  }
@@ -123,5 +135,5 @@ async function run(config){
  console.log(JSON.stringify({done:true,completed,failed:failed.length,usage}));
  process.exitCode=failed.length?1:0;
 }
-module.exports={validate,words,norm,normalizeNumbers,answerWords,containsAnswer,constraints};
+module.exports={numericAnswer,validAnswerAlias,validate,words,norm,normalizeNumbers,answerWords,containsAnswer,constraints};
 if(require.main===module){let input='';process.stdin.setEncoding('utf8');process.stdin.on('data',s=>input+=s);process.stdin.on('end',()=>{let config;try{config=JSON.parse(input);input='';}catch{console.error('Invalid configuration JSON on stdin');process.exitCode=1;return;}run(config).catch(()=>{console.error('Authoring stopped; verify connection and configuration.');process.exitCode=1;});});}

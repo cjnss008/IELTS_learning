@@ -1,0 +1,324 @@
+{
+  "id": "w50-read-1",
+  "week": 50,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "More reports do not always mean more wildlife",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "More reports do not always mean more wildlife",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A fictional citizen-science project invited residents to record birds seen from their windows. Reports increased sharply after a local radio campaign. The organiser wanted to announce that bird numbers had grown. A volunteer statistician explained that the number of reports depended both on birds and on the effort people made to observe them.\n\nB. During the first month, forty households contributed. During the campaign month, one hundred and ten did. Some new volunteers also spent longer watching because the programme encouraged a weekend observation session. More sightings could therefore occur even if the local bird population remained unchanged. A report count was valuable evidence of participation, but not automatically of population growth.\n\nC. The project revised its form to ask for observation duration and the type of setting, such as a balcony or garden. It also asked contributors to submit a record when they watched but saw no birds. Without those zero observations, the dataset would contain sightings without showing how often an opportunity produced none. A missing record could not safely be treated as the same thing as a recorded zero.\n\nD. Identification created another problem. An unfamiliar bird might be reported under a common species name. Volunteers could attach photographs, and doubtful records were flagged for later checking. A flagged record was neither confirmed nor necessarily false. The public map used separate symbols for confirmed and unverified sightings so that uncertainty remained visible.\n\nE. The organiser's revised announcement celebrated wider participation and explained that trends in bird numbers required more comparable observations. The project still welcomed casual reports because they could highlight places worth investigating. It simply distinguished exploratory information from evidence suitable for estimating change. For the following season, volunteers were invited to repeat a fixed ten-minute session each week. Consistency would make the records more informative without requiring every participant to become a professional observer.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What event preceded the increase in reports?",
+      "maxWords": 2,
+      "answers": [
+        "radio campaign"
+      ],
+      "explanation": "依据原文“after a local radio campaign.”。答案按原文填写，保留限定范围。",
+      "evidence": "after a local radio campaign."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What increased from forty to one hundred and ten?",
+      "options": [
+        "The confirmed number of bird species.",
+        "The fixed observation duration in minutes.",
+        "The number of birds at each window.",
+        "The number of contributing households."
+      ],
+      "answers": [
+        "The number of contributing households."
+      ],
+      "explanation": "依据原文“one hundred and ten did.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "one hundred and ten did."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why might sightings rise without population growth?",
+      "options": [
+        "The area had no birds before the campaign.",
+        "All households watched for an identical time.",
+        "More people observed, sometimes for longer.",
+        "Every previous sighting had been false."
+      ],
+      "answers": [
+        "More people observed, sometimes for longer."
+      ],
+      "explanation": "依据原文“Some new volunteers also spent longer watching”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Some new volunteers also spent longer watching"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What new timing field was added?",
+      "maxWords": 2,
+      "answers": [
+        "observation duration"
+      ],
+      "explanation": "依据原文“ask for observation duration”。答案按原文填写，保留限定范围。",
+      "evidence": "ask for observation duration"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why record sessions with no birds?",
+      "options": [
+        "To show observed opportunities that produced no sighting.",
+        "To replace all actual sightings with zeros.",
+        "To prove every missing record means no birds.",
+        "To guarantee equal wildlife distribution."
+      ],
+      "answers": [
+        "To show observed opportunities that produced no sighting."
+      ],
+      "explanation": "依据原文“showing how often an opportunity produced none.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "showing how often an opportunity produced none."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does a flag mean for an identification?",
+      "options": [
+        "It has been proved deliberately fabricated.",
+        "It is automatically a confirmed rare species.",
+        "It must be removed from every internal record.",
+        "It needs checking and is not yet confirmed."
+      ],
+      "answers": [
+        "It needs checking and is not yet confirmed."
+      ],
+      "explanation": "依据原文“A flagged record was neither confirmed nor necessarily false.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "A flagged record was neither confirmed nor necessarily false."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What is used on the public map to preserve uncertainty?",
+      "maxWords": 2,
+      "answers": [
+        "separate symbols"
+      ],
+      "explanation": "依据原文“separate symbols for confirmed and unverified sightings”。答案按原文填写，保留限定范围。",
+      "evidence": "separate symbols for confirmed and unverified sightings"
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "How long is the proposed repeated weekly session?",
+      "maxWords": 2,
+      "answers": [
+        "ten-minute",
+        "10 minutes",
+        "ten minutes"
+      ],
+      "explanation": "依据原文“a fixed ten-minute session each week.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "a fixed ten-minute session each week.",
+      "answerAliases": [
+        {
+          "value": "10 minutes",
+          "source": "ten-minute",
+          "kind": "numeric-equivalent"
+        },
+        {
+          "value": "ten minutes",
+          "source": "ten-minute",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "citizen-science project",
+      "meaning": "公众参与的科学项目",
+      "example": "A fictional citizen-science project invited residents to record birds seen from their windows.",
+      "kind": "collocation"
+    },
+    {
+      "word": "observation duration",
+      "meaning": "观察时长",
+      "example": "The project revised its form to ask for observation duration and the type of setting, such as a balcony or garden.",
+      "kind": "collocation"
+    },
+    {
+      "word": "zero observations",
+      "meaning": "零结果观察",
+      "example": "Without those zero observations, the dataset would contain sightings without showing how often an opportunity produced none.",
+      "kind": "collocation"
+    },
+    {
+      "word": "dataset",
+      "meaning": "数据集",
+      "example": "Without those zero observations, the dataset would contain sightings without showing how often an opportunity produced none.",
+      "kind": "word"
+    },
+    {
+      "word": "identification",
+      "meaning": "识别",
+      "example": "Identification created another problem.",
+      "kind": "word"
+    },
+    {
+      "word": "flagged",
+      "meaning": "标记待核实",
+      "example": "Volunteers could attach photographs, and doubtful records were flagged for later checking.",
+      "kind": "word"
+    },
+    {
+      "word": "unverified sightings",
+      "meaning": "未核实目击",
+      "example": "The public map used separate symbols for confirmed and unverified sightings so that uncertainty remained visible.",
+      "kind": "collocation"
+    },
+    {
+      "word": "exploratory information",
+      "meaning": "探索性信息",
+      "example": "It simply distinguished exploratory information from evidence suitable for estimating change.",
+      "kind": "collocation"
+    },
+    {
+      "word": "estimating change",
+      "meaning": "估计变化",
+      "example": "It simply distinguished exploratory information from evidence suitable for estimating change.",
+      "kind": "collocation"
+    },
+    {
+      "word": "comparable observations",
+      "meaning": "可比较的观察",
+      "example": "The organiser's revised announcement celebrated wider participation and explained that trends in bird numbers required more comparable observations.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "比较的是相同口径",
+    "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。",
+    "example": "Some new volunteers also spent longer watching because the programme encouraged a weekend observation session.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The revised survey contains _____ questions than the pilot. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The revised survey contains fewer questions than the pilot.",
+        "evidence": "The revised survey contains fewer questions than the pilot."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The second route requires _____ fuel than the first. （只填空白，保持其余文字不变）",
+        "options": [
+          "less",
+          "fewer",
+          "little"
+        ],
+        "answers": [
+          "less"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The second route requires less fuel than the first.",
+        "evidence": "The second route requires less fuel than the first."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The new device is _____ than the old one. （只填空白，保持其余文字不变）",
+        "options": [
+          "more reliable",
+          "most reliable",
+          "reliablest"
+        ],
+        "answers": [
+          "more reliable"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The new device is more reliable than the old one.",
+        "evidence": "The new device is more reliable than the old one."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The later group made _____ errors than the earlier group. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The later group made fewer errors than the earlier group.",
+        "evidence": "The later group made fewer errors than the earlier group."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving interpreting public observation records?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about interpreting public observation records. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why does effort affect the number of reports?",
+        "How is a missing value different from zero?",
+        "Should uncertain reports remain visible?",
+        "What makes citizen contributions scientifically useful?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about interpreting public observation records. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "bdc12b281efec7552b0a8aa2cb2df0bc4b65ef9c035d99afb804a5b13343674e",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

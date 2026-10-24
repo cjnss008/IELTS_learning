@@ -1,0 +1,318 @@
+{
+  "id": "w47-listen-1",
+  "week": 47,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "Defining success before comparing alternatives",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Defining success before comparing alternatives",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Tutor: What is the primary outcome in your seedling experiment?\nBen: I was going to choose whichever measure shows the largest difference between the lamps.\nTutor: That would make the comparison difficult to interpret. Decide what matters before collecting the final results.\nBen: Then our primary measure will be survival after four weeks. Height will be secondary. A tall seedling that dies is not a success for this project.\nTutor: How will you count survival?\nBen: A plant must have at least one green leaf at the final inspection. We will write that definition in the protocol rather than change it after seeing borderline cases.\nTutor: How many trays?\nBen: Six under each lamp. We will rotate tray positions daily to reduce the effect of being nearest the window.\nTutor: And watering?\nBen: Equal volumes at the same time each morning. The original proposal said water when needed, but different students could interpret that differently.\nTutor: What will you do if a tray is accidentally knocked over?\nBen: Record the accident. We will not silently replace its result. The report will explain whether it was excluded and show how that decision affects the comparison.\nTutor: Good. Send the protocol on Friday, before you start the trial on Monday.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What will be the primary outcome?",
+      "maxWords": 1,
+      "answers": [
+        "survival"
+      ],
+      "explanation": "依据原文“survival after four weeks.”。答案按原文填写，保留限定范围。",
+      "evidence": "survival after four weeks."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "When will that outcome be inspected?",
+      "maxWords": 2,
+      "answers": [
+        "four weeks",
+        "4 weeks"
+      ],
+      "explanation": "依据原文“after four weeks.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "after four weeks.",
+      "answerAliases": [
+        {
+          "value": "4 weeks",
+          "source": "four weeks",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What role will height have?",
+      "options": [
+        "A measure chosen only after the trial ends.",
+        "A replacement for all survival records.",
+        "A secondary measure.",
+        "The sole definition of success."
+      ],
+      "answers": [
+        "A secondary measure."
+      ],
+      "explanation": "依据原文“Height will be secondary.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Height will be secondary."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What minimum feature defines survival?",
+      "maxWords": 3,
+      "answers": [
+        "one green leaf"
+      ],
+      "explanation": "依据原文“at least one green leaf”。答案按原文填写，保留限定范围。",
+      "evidence": "at least one green leaf"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why will tray positions be rotated?",
+      "options": [
+        "To reduce differences caused by window proximity.",
+        "To expose only the tallest plants to light.",
+        "To remove the need for equal watering.",
+        "To prevent any record of lamp assignment."
+      ],
+      "answers": [
+        "To reduce differences caused by window proximity."
+      ],
+      "explanation": "依据原文“reduce the effect of being nearest the window.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "reduce the effect of being nearest the window."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why was “water when needed” replaced?",
+      "options": [
+        "Every plant needs exactly the same total water in nature.",
+        "The lamps were no longer being compared.",
+        "All trays had already been removed.",
+        "Students could apply it inconsistently."
+      ],
+      "answers": [
+        "Students could apply it inconsistently."
+      ],
+      "explanation": "依据原文“different students could interpret that differently.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "different students could interpret that differently."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How will an accidental tray disturbance be treated?",
+      "options": [
+        "It will automatically prove one lamp ineffective.",
+        "It will justify deleting every result.",
+        "It will be recorded and its treatment explained.",
+        "It will be silently replaced by the best tray."
+      ],
+      "answers": [
+        "It will be recorded and its treatment explained."
+      ],
+      "explanation": "依据原文“explain whether it was excluded and show how that decision affects the comparison.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "explain whether it was excluded and show how that decision affects the comparison."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "On what day must the protocol be sent?",
+      "maxWords": 1,
+      "answers": [
+        "Friday"
+      ],
+      "explanation": "依据原文“on Friday”。答案按原文填写，保留限定范围。",
+      "evidence": "on Friday"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "primary outcome",
+      "meaning": "主要结果指标",
+      "example": "What is the primary outcome in your seedling experiment?",
+      "kind": "collocation"
+    },
+    {
+      "word": "secondary",
+      "meaning": "次要的",
+      "example": "Height will be secondary.",
+      "kind": "word"
+    },
+    {
+      "word": "final inspection",
+      "meaning": "最终检查",
+      "example": "A plant must have at least one green leaf at the final inspection.",
+      "kind": "collocation"
+    },
+    {
+      "word": "borderline cases",
+      "meaning": "边界情况",
+      "example": "We will write that definition in the protocol rather than change it after seeing borderline cases.",
+      "kind": "collocation"
+    },
+    {
+      "word": "rotate tray positions",
+      "meaning": "轮换托盘位置",
+      "example": "We will rotate tray positions daily to reduce the effect of being nearest the window.",
+      "kind": "collocation"
+    },
+    {
+      "word": "equal volumes",
+      "meaning": "等量",
+      "example": "Equal volumes at the same time each morning.",
+      "kind": "collocation"
+    },
+    {
+      "word": "original proposal",
+      "meaning": "原提案",
+      "example": "The original proposal said water when needed, but different students could interpret that differently.",
+      "kind": "collocation"
+    },
+    {
+      "word": "knocked over",
+      "meaning": "被碰翻",
+      "example": "What will you do if a tray is accidentally knocked over?",
+      "kind": "collocation"
+    },
+    {
+      "word": "silently replace",
+      "meaning": "无说明地替换",
+      "example": "We will not silently replace its result.",
+      "kind": "collocation"
+    },
+    {
+      "word": "excluded",
+      "meaning": "被排除的",
+      "example": "The report will explain whether it was excluded and show how that decision affects the comparison.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "被动句准确保留动作对象",
+    "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。",
+    "example": "Ben: I was going to choose whichever measure shows the largest difference between the lamps.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The records _____ by two assistants. （只填空白，保持其余文字不变）",
+        "options": [
+          "were checked",
+          "checked",
+          "was checked"
+        ],
+        "answers": [
+          "were checked"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The records were checked by two assistants.",
+        "evidence": "The records were checked by two assistants."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Each ticket _____ at the entrance. （只填空白，保持其余文字不变）",
+        "options": [
+          "is scanned",
+          "scanned",
+          "is scanning"
+        ],
+        "answers": [
+          "is scanned"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：Each ticket is scanned at the entrance.",
+        "evidence": "Each ticket is scanned at the entrance."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The damaged units _____ last week. （只填空白，保持其余文字不变）",
+        "options": [
+          "were replaced",
+          "replaced",
+          "was replaced"
+        ],
+        "answers": [
+          "were replaced"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The damaged units were replaced last week.",
+        "evidence": "The damaged units were replaced last week."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The mixture _____ before it is filtered. （只填空白，保持其余文字不变）",
+        "options": [
+          "is heated",
+          "heated",
+          "is heating"
+        ],
+        "answers": [
+          "is heated"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The mixture is heated before it is filtered.",
+        "evidence": "The mixture is heated before it is filtered."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving agreeing an outcome before a trial?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about agreeing an outcome before a trial. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why should a primary outcome be selected in advance?",
+        "Can a definition still leave borderline cases?",
+        "How should accidents be reported?",
+        "Why might a taller plant not meet a project goal?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about agreeing an outcome before a trial. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "fc84313766ba7e4d5fdaddce5448ff7b8784b54b2aa32a5f85aaebcd0cf37f84",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

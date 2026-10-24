@@ -1,0 +1,326 @@
+{
+  "id": "w41-listen-1",
+  "week": 41,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "A presentation needs a denominator",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A presentation needs a denominator",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Ravi: My slide says recycling increased by forty per cent. That should make a strong opening.\nTutor: Forty per cent of what? Tell me the figures before and after the change.\nRavi: The fictional residence collected five hundred kilograms in the first month and seven hundred in the second.\nTutor: So the increase in collected weight is correct. Did the number of residents stay the same?\nRavi: No. A new block opened, adding two hundred residents. I should show the population alongside the collection totals.\nTutor: And was everything in the bins recyclable?\nRavi: The contractor checked a sample and found some contamination. We cannot call the entire collected weight successfully recycled.\nTutor: Good. Your title should describe collection, not the final processing outcome. What will your revised chart show?\nRavi: Two bars for the collected weight and a separate table with resident numbers. I will explain that we do not yet have a reliable contamination rate for the whole residence.\nTutor: Are you cancelling the recommendation for extra bins?\nRavi: No. Overflow was recorded on three evenings, so there is still a reason to add capacity. But I will separate that practical observation from the claim about improved behaviour.\nTutor: Send the revised slides by Wednesday. The presentation is on Monday, so we have time to check the units.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What weight was collected in the second month?",
+      "maxWords": 2,
+      "answers": [
+        "seven hundred",
+        "700"
+      ],
+      "explanation": "依据原文“seven hundred in the second.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "seven hundred in the second.",
+      "answerAliases": [
+        {
+          "value": "700",
+          "source": "seven hundred",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What population change complicated the comparison?",
+      "options": [
+        "The existing residents all moved away.",
+        "Only half the students remained enrolled.",
+        "The whole residence population was unchanged.",
+        "An additional residence block opened."
+      ],
+      "answers": [
+        "An additional residence block opened."
+      ],
+      "explanation": "依据原文“A new block opened”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "A new block opened"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How many residents were added?",
+      "maxWords": 2,
+      "answers": [
+        "two hundred",
+        "200"
+      ],
+      "explanation": "依据原文“adding two hundred residents.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "adding two hundred residents.",
+      "answerAliases": [
+        {
+          "value": "200",
+          "source": "two hundred",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why is collected weight different from successfully recycled weight?",
+      "options": [
+        "Every kilogram was confirmed as processed.",
+        "Some collected material was contaminated.",
+        "The first collection was never weighed.",
+        "The residence had no bins."
+      ],
+      "answers": [
+        "Some collected material was contaminated."
+      ],
+      "explanation": "依据原文“found some contamination.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "found some contamination."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What will appear beside the weight chart?",
+      "options": [
+        "A table of resident numbers.",
+        "A ranking of individual residents.",
+        "A guaranteed processing success rate.",
+        "An estimate of every student’s income."
+      ],
+      "answers": [
+        "A table of resident numbers."
+      ],
+      "explanation": "依据原文“a separate table with resident numbers.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "a separate table with resident numbers."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What recorded problem supports adding capacity?",
+      "maxWords": 1,
+      "answers": [
+        "Overflow"
+      ],
+      "explanation": "依据原文“Overflow was recorded on three evenings”。答案按原文填写，保留限定范围。",
+      "evidence": "Overflow was recorded on three evenings"
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "By what day must revised slides be sent?",
+      "maxWords": 1,
+      "answers": [
+        "Wednesday"
+      ],
+      "explanation": "依据原文“by Wednesday.”。答案按原文填写，保留限定范围。",
+      "evidence": "by Wednesday."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What distinction will Ravi preserve?",
+      "options": [
+        "Every contaminated item and its owner.",
+        "Practical capacity evidence and claims about behaviour.",
+        "Residents’ names and room numbers.",
+        "Monday’s collection and Wednesday’s collection."
+      ],
+      "answers": [
+        "Practical capacity evidence and claims about behaviour."
+      ],
+      "explanation": "依据原文“separate that practical observation from the claim about improved behaviour.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "separate that practical observation from the claim about improved behaviour."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "collected weight",
+      "meaning": "收集重量",
+      "example": "So the increase in collected weight is correct.",
+      "kind": "collocation"
+    },
+    {
+      "word": "population",
+      "meaning": "总体人数",
+      "example": "I should show the population alongside the collection totals.",
+      "kind": "word"
+    },
+    {
+      "word": "contamination",
+      "meaning": "混入不合格物",
+      "example": "The contractor checked a sample and found some contamination.",
+      "kind": "word"
+    },
+    {
+      "word": "processing outcome",
+      "meaning": "处理结果",
+      "example": "Your title should describe collection, not the final processing outcome.",
+      "kind": "collocation"
+    },
+    {
+      "word": "revised chart",
+      "meaning": "修改后的图表",
+      "example": "What will your revised chart show?",
+      "kind": "collocation"
+    },
+    {
+      "word": "collection totals",
+      "meaning": "收集总量",
+      "example": "I should show the population alongside the collection totals.",
+      "kind": "collocation"
+    },
+    {
+      "word": "contamination rate",
+      "meaning": "混杂比例",
+      "example": "I will explain that we do not yet have a reliable contamination rate for the whole residence.",
+      "kind": "collocation"
+    },
+    {
+      "word": "overflow",
+      "meaning": "满溢",
+      "example": "Overflow was recorded on three evenings, so there is still a reason to add capacity.",
+      "kind": "word"
+    },
+    {
+      "word": "add capacity",
+      "meaning": "增加容量",
+      "example": "Overflow was recorded on three evenings, so there is still a reason to add capacity.",
+      "kind": "collocation"
+    },
+    {
+      "word": "units",
+      "meaning": "计量单位",
+      "example": "The presentation is on Monday, so we have time to check the units.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "用条件句限定预测",
+    "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。",
+    "example": "Tutor: And was everything in the bins recyclable?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If the sample _____, the estimate will become more stable. （只填空白，保持其余文字不变）",
+        "options": [
+          "grows",
+          "growss",
+          "grew"
+        ],
+        "answers": [
+          "grows"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If the sample grows, the estimate will become more stable.",
+        "evidence": "If the sample grows, the estimate will become more stable."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "If fuel prices _____, the council will revise its budget. （只填空白，保持其余文字不变）",
+        "options": [
+          "rise",
+          "rises",
+          "was rise"
+        ],
+        "answers": [
+          "rise"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If fuel prices rise, the council will revise its budget.",
+        "evidence": "If fuel prices rise, the council will revise its budget."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "If the sensor _____, the recorder will display a warning. （只填空白，保持其余文字不变）",
+        "options": [
+          "fails",
+          "failss",
+          "was fails"
+        ],
+        "answers": [
+          "fails"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If the sensor fails, the recorder will display a warning.",
+        "evidence": "If the sensor fails, the recorder will display a warning."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "If users _____, their comments will be stored. （只填空白，保持其余文字不变）",
+        "options": [
+          "agree",
+          "agrees",
+          "was agree"
+        ],
+        "answers": [
+          "agree"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If users agree, their comments will be stored.",
+        "evidence": "If users agree, their comments will be stored."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving presenting an environmental improvement?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about presenting an environmental improvement. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why must percentages include a clear base?",
+        "How can a title exaggerate a chart?",
+        "Can a practical recommendation survive a weaker headline result?",
+        "Why separate behaviour from service capacity?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about presenting an environmental improvement. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "ad2b26c4fc5a41c53cc7cdb4664eb70f19e723cd8283069dc330d34f1bbadee3",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

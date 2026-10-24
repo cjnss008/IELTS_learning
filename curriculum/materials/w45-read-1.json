@@ -1,0 +1,305 @@
+{
+  "id": "w45-read-1",
+  "week": 45,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "The observation that did not fit the graph",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "The observation that did not fit the graph",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. In a fictional materials laboratory, a student tested how quickly paper strips absorbed coloured water. Most strips produced similar results, but one absorbed water much more slowly. Removing it made the graph look orderly. Her supervisor asked her to preserve the observation until there was a documented reason to exclude it. An inconvenient value was not automatically an invalid one.\n\nB. The laboratory notebook showed that the slow strip came from the edge of a sheet. The student had also used a different pair of scissors for that strip. Either difference might matter, but neither had been tested. Describing one as the cause would have turned a possible explanation into a conclusion. The original experiment had not been designed to separate these factors.\n\nC. To investigate, the student cut new strips from both the edge and the centre, using each pair of scissors in turn. She assigned the strips coded labels so that the assistant timing absorption did not know their origin. The procedure reduced one source of expectation bias. It did not eliminate every possible difference in handling, so the report described what had and had not been controlled.\n\nD. In the repeat experiment, edge strips tended to absorb more slowly regardless of the scissors used. The result supported further investigation of the paper edge. It did not establish which physical property caused the difference, and the sample came from only one sheet. The student therefore restricted her conclusion to the tested material rather than making a claim about all manufactured paper.\n\nE. Her final graph showed every original result, followed by the repeat experiment in a separate panel. A note explained why the second test had been designed. Readers could see how an anomaly led to a more focused question. The supervisor argued that a transparent chain of observations and decisions was more valuable than a visually perfect first graph. The unresolved mechanism became a future research question rather than an embarrassment to hide.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What initially made the graph look more orderly?",
+      "options": [
+        "Removing the unusually slow observation.",
+        "Adding a second sheet to the experiment.",
+        "Changing every value to the mean.",
+        "Using uncoloured water for all strips."
+      ],
+      "answers": [
+        "Removing the unusually slow observation."
+      ],
+      "explanation": "依据原文“Removing it made the graph look orderly.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Removing it made the graph look orderly."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "From which part of the sheet did the slow strip come?",
+      "maxWords": 1,
+      "answers": [
+        "edge"
+      ],
+      "explanation": "依据原文“came from the edge of a sheet.”。答案按原文填写，保留限定范围。",
+      "evidence": "came from the edge of a sheet."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What second procedural difference was recorded?",
+      "options": [
+        "The strip had no label in the notebook.",
+        "The timing assistant used no clock.",
+        "A different pair of scissors was used.",
+        "All other strips were cut from plastic."
+      ],
+      "answers": [
+        "A different pair of scissors was used."
+      ],
+      "explanation": "依据原文“used a different pair of scissors”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "used a different pair of scissors"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What feature concealed the strips’ origin from the assistant?",
+      "maxWords": 2,
+      "answers": [
+        "coded labels"
+      ],
+      "explanation": "依据原文“assigned the strips coded labels”。答案按原文填写，保留限定范围。",
+      "evidence": "assigned the strips coded labels"
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Which possible influence did this concealment reduce?",
+      "maxWords": 2,
+      "answers": [
+        "expectation bias"
+      ],
+      "explanation": "依据原文“reduced one source of expectation bias.”。答案按原文填写，保留限定范围。",
+      "evidence": "reduced one source of expectation bias."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did the repeat experiment suggest?",
+      "options": [
+        "The scissors explained the entire difference.",
+        "Every manufactured paper behaves identically.",
+        "The first slow observation was necessarily false.",
+        "The edge warranted further investigation."
+      ],
+      "answers": [
+        "The edge warranted further investigation."
+      ],
+      "explanation": "依据原文“supported further investigation of the paper edge.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "supported further investigation of the paper edge."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Why was the conclusion restricted?",
+      "options": [
+        "Every procedural difference was eliminated.",
+        "The physical cause had already been established.",
+        "The material came from one sheet.",
+        "No original observations had survived."
+      ],
+      "answers": [
+        "The material came from one sheet."
+      ],
+      "explanation": "依据原文“the sample came from only one sheet.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "the sample came from only one sheet."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What unresolved issue became a future question?",
+      "maxWords": 1,
+      "answers": [
+        "mechanism"
+      ],
+      "explanation": "依据原文“The unresolved mechanism became a future research question”。答案按原文填写，保留限定范围。",
+      "evidence": "The unresolved mechanism became a future research question"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "documented reason",
+      "meaning": "有记录的理由",
+      "example": "Her supervisor asked her to preserve the observation until there was a documented reason to exclude it.",
+      "kind": "collocation"
+    },
+    {
+      "word": "invalid",
+      "meaning": "无效的",
+      "example": "An inconvenient value was not automatically an invalid one.",
+      "kind": "word"
+    },
+    {
+      "word": "absorption",
+      "meaning": "吸收",
+      "example": "She assigned the strips coded labels so that the assistant timing absorption did not know their origin.",
+      "kind": "word"
+    },
+    {
+      "word": "coded labels",
+      "meaning": "编码标签",
+      "example": "She assigned the strips coded labels so that the assistant timing absorption did not know their origin.",
+      "kind": "collocation"
+    },
+    {
+      "word": "expectation bias",
+      "meaning": "预期偏差",
+      "example": "The procedure reduced one source of expectation bias.",
+      "kind": "collocation"
+    },
+    {
+      "word": "repeat experiment",
+      "meaning": "重复实验",
+      "example": "In the repeat experiment, edge strips tended to absorb more slowly regardless of the scissors used.",
+      "kind": "collocation"
+    },
+    {
+      "word": "physical property",
+      "meaning": "物理性质",
+      "example": "It did not establish which physical property caused the difference, and the sample came from only one sheet.",
+      "kind": "collocation"
+    },
+    {
+      "word": "anomaly",
+      "meaning": "异常现象",
+      "example": "Readers could see how an anomaly led to a more focused question.",
+      "kind": "word"
+    },
+    {
+      "word": "transparent chain",
+      "meaning": "透明的推理链",
+      "example": "The supervisor argued that a transparent chain of observations and decisions was more valuable than a visually perfect first graph.",
+      "kind": "collocation"
+    },
+    {
+      "word": "unresolved mechanism",
+      "meaning": "未解释的机制",
+      "example": "The unresolved mechanism became a future research question rather than an embarrassment to hide.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "区分让步与原因",
+    "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。",
+    "example": "Her supervisor asked her to preserve the observation until there was a documented reason to exclude it.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "_____ the trial was small, its records were complete. （明确要表达让步关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Although the trial was small, its records were complete.",
+        "evidence": "Although the trial was small, its records were complete."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "_____ the bridge was unsafe, the route was closed. （明确要表达原因关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Because",
+          "Although",
+          "Despite"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Because the bridge was unsafe, the route was closed.",
+        "evidence": "Because the bridge was unsafe, the route was closed."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "_____ costs fell, demand remained low. （明确要表达让步关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Although costs fell, demand remained low.",
+        "evidence": "Although costs fell, demand remained low."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "_____ rainfall stopped, the tanks were not refilled. （明确要表达原因关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Because",
+          "Although",
+          "Despite"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Because rainfall stopped, the tanks were not refilled.",
+        "evidence": "Because rainfall stopped, the tanks were not refilled."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving investigating an unexpected observation?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about investigating an unexpected observation. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "When should an observation be excluded?",
+        "Why conceal sample identity during measurement?",
+        "How can repetition improve a question?",
+        "Should unresolved findings be published?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about investigating an unexpected observation. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "f2227074aec145393bc29762531d6ada4868ec750e9a047fb27d04d9c549850c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

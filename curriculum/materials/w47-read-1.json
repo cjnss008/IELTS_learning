@@ -1,0 +1,310 @@
+{
+  "id": "w47-read-1",
+  "week": 47,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "A productive plot is not necessarily a fair comparison",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A productive plot is not necessarily a fair comparison",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. In a fictional agricultural class, students compared two vegetable plots. One received compost and the other did not. At harvest, the compost plot produced more kilograms of vegetables. The class newsletter announced that the treatment had increased yield. The tutor asked whether the observed difference could be attributed to the treatment alone.\n\nB. The plots were not equally exposed to sunlight. A wall shaded the untreated plot during the afternoon, and water from a nearby path drained into the other plot. Because the treatment and location varied together, the comparison could not isolate the effect of compost. Measuring the harvest carefully did not compensate for an unfair experimental arrangement.\n\nC. The tutor proposed dividing the garden into smaller sections and randomly assigning treatment within several matched pairs. Each pair would contain neighbouring sections with similar exposure. Random allocation would reduce systematic selection by the students, while replication would show whether differences persisted across sections. Neither procedure guaranteed identical starting conditions, so soil characteristics would still be recorded.\n\nD. The class also reconsidered the meaning of yield. A heavier harvest might include more damaged vegetables. Weighing only the marketable portion would answer a different question from weighing everything grown. For this teaching project, the team decided to record both total mass and usable mass, with a written rule for classifying damage before seeing the final results.\n\nE. The second trial would take a full growing season, so the class could not publish a firm causal conclusion immediately. Instead, it described the first comparison as exploratory and explained the redesigned procedure. That account was less dramatic than the original headline but more useful to a reader considering a similar experiment. The important progress was a clearer question and a fairer design, rather than a stronger claim unsupported by the available observations. The newsletter kept the original result visible beside the correction.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What treatment differed between the original plots?",
+      "maxWords": 1,
+      "answers": [
+        "compost"
+      ],
+      "explanation": "依据原文“One received compost and the other did not.”。答案按原文填写，保留限定范围。",
+      "evidence": "One received compost and the other did not."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which condition disadvantaged the untreated plot?",
+      "options": [
+        "Complete absence of any measured harvest.",
+        "A requirement to grow vegetables indoors.",
+        "Deliberate removal of every damaged plant.",
+        "Afternoon shade from a wall."
+      ],
+      "answers": [
+        "Afternoon shade from a wall."
+      ],
+      "explanation": "依据原文“A wall shaded the untreated plot during the afternoon”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "A wall shaded the untreated plot during the afternoon"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why did the original comparison not isolate the treatment?",
+      "options": [
+        "Compost was used on both plots in equal quantities.",
+        "The class had randomly assigned every section.",
+        "Location and treatment changed together.",
+        "The students had measured harvest mass too carefully."
+      ],
+      "answers": [
+        "Location and treatment changed together."
+      ],
+      "explanation": "依据原文“the treatment and location varied together”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "the treatment and location varied together"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What assignment method was proposed?",
+      "options": [
+        "Using just one pair without recording soil conditions.",
+        "Randomly assigning treatment within matched pairs.",
+        "Giving treatment only to the sunniest sections.",
+        "Selecting sections after seeing the final harvest."
+      ],
+      "answers": [
+        "Randomly assigning treatment within matched pairs."
+      ],
+      "explanation": "依据原文“randomly assigning treatment within several matched pairs.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "randomly assigning treatment within several matched pairs."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What helps show whether a difference persists across sections?",
+      "maxWords": 1,
+      "answers": [
+        "replication"
+      ],
+      "explanation": "依据原文“replication would show whether differences persisted across sections.”。答案按原文填写，保留限定范围。",
+      "evidence": "replication would show whether differences persisted across sections."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which two harvest measures will be recorded?",
+      "options": [
+        "Price and colour without any weight.",
+        "Compost cost and path length only.",
+        "Only the heaviest individual vegetable.",
+        "Total mass and usable mass."
+      ],
+      "answers": [
+        "Total mass and usable mass."
+      ],
+      "explanation": "依据原文“both total mass and usable mass”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "both total mass and usable mass"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When will the damage-classification rule be written?",
+      "options": [
+        "Only if the treatment appears successful.",
+        "After the newsletter removes the first comparison.",
+        "Before the final results are seen.",
+        "After selecting the most favourable yield."
+      ],
+      "answers": [
+        "Before the final results are seen."
+      ],
+      "explanation": "依据原文“before seeing the final results.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "before seeing the final results."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "How is the first comparison now described?",
+      "maxWords": 1,
+      "answers": [
+        "exploratory"
+      ],
+      "explanation": "依据原文“the first comparison as exploratory”。答案按原文填写，保留限定范围。",
+      "evidence": "the first comparison as exploratory"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "yield",
+      "meaning": "产量",
+      "example": "The class newsletter announced that the treatment had increased yield.",
+      "kind": "word"
+    },
+    {
+      "word": "attributed",
+      "meaning": "归因",
+      "example": "The tutor asked whether the observed difference could be attributed to the treatment alone.",
+      "kind": "word"
+    },
+    {
+      "word": "experimental arrangement",
+      "meaning": "实验安排",
+      "example": "Measuring the harvest carefully did not compensate for an unfair experimental arrangement.",
+      "kind": "collocation"
+    },
+    {
+      "word": "matched pairs",
+      "meaning": "匹配对",
+      "example": "The tutor proposed dividing the garden into smaller sections and randomly assigning treatment within several matched pairs.",
+      "kind": "collocation"
+    },
+    {
+      "word": "random allocation",
+      "meaning": "随机分配",
+      "example": "Random allocation would reduce systematic selection by the students, while replication would show whether differences persisted across sections.",
+      "kind": "collocation"
+    },
+    {
+      "word": "replication",
+      "meaning": "重复设置；重复验证",
+      "example": "Random allocation would reduce systematic selection by the students, while replication would show whether differences persisted across sections.",
+      "kind": "word"
+    },
+    {
+      "word": "soil characteristics",
+      "meaning": "土壤特征",
+      "example": "Neither procedure guaranteed identical starting conditions, so soil characteristics would still be recorded.",
+      "kind": "collocation"
+    },
+    {
+      "word": "marketable portion",
+      "meaning": "可销售部分",
+      "example": "Weighing only the marketable portion would answer a different question from weighing everything grown.",
+      "kind": "collocation"
+    },
+    {
+      "word": "usable mass",
+      "meaning": "可用质量",
+      "example": "For this teaching project, the team decided to record both total mass and usable mass, with a written rule for classifying damage before seeing the final results.",
+      "kind": "collocation"
+    },
+    {
+      "word": "exploratory",
+      "meaning": "探索性的",
+      "example": "Instead, it described the first comparison as exploratory and explained the redesigned procedure.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "报告过去的程序与当前解释",
+    "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。",
+    "example": "The tutor asked whether the observed difference could be attributed to the treatment alone.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The team _____ the samples yesterday. （只填空白，保持其余文字不变）",
+        "options": [
+          "collected",
+          "collect",
+          "has collected"
+        ],
+        "answers": [
+          "collected"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The team collected the samples yesterday.",
+        "evidence": "The team collected the samples yesterday."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The report _____ the current booking rules. （只填空白，保持其余文字不变）",
+        "options": [
+          "describes",
+          "describe",
+          "describing"
+        ],
+        "answers": [
+          "describes"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The report describes the current booking rules.",
+        "evidence": "The report describes the current booking rules."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Last year, the library _____ its opening hours. （只填空白，保持其余文字不变）",
+        "options": [
+          "extended",
+          "extends",
+          "has extended"
+        ],
+        "answers": [
+          "extended"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：Last year, the library extended its opening hours.",
+        "evidence": "Last year, the library extended its opening hours."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "This diagram _____ how the filter works. （只填空白，保持其余文字不变）",
+        "options": [
+          "shows",
+          "show",
+          "showing"
+        ],
+        "answers": [
+          "shows"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：This diagram shows how the filter works.",
+        "evidence": "This diagram shows how the filter works."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving designing a fair comparison?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about designing a fair comparison. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Can precise measurement rescue an unfair design?",
+        "Why assign treatments before seeing results?",
+        "How can outcome definitions affect a conclusion?",
+        "Is explaining a redesign valuable progress?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about designing a fair comparison. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "71abbf0d1a463ecac712798cc397f6499337afa6e6707e5ca07302deae0a3aef",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

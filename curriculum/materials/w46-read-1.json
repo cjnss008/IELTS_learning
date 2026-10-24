@@ -1,0 +1,318 @@
+{
+  "id": "w46-read-1",
+  "week": 46,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "A lending service has to count the people it cannot reach",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A lending service has to count the people it cannot reach",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A fictional library began lending tools as well as books. Early publicity showed a rise in loans from forty in the first month to one hundred in the third. The project coordinator welcomed the demand but resisted calling the scheme accessible to the whole community. A transaction count showed use by borrowers; it said little about residents who could not borrow.\n\nB. Membership required proof of a local address. That rule was familiar from book lending, yet it excluded people in temporary accommodation whose documents were incomplete. Collection hours created a second barrier. Tools were available only until five in the afternoon, when many residents were still at work. The coordinator kept a record of unsuccessful requests rather than treating them as evidence of no demand.\n\nC. Equipment also differed in how easily it could be used. A compact drill could be carried on foot, while a heavy cleaning machine required transport. A list of available items did not reveal whether a household could take them home. To investigate, staff asked applicants about collection difficulties and offered a trial delivery service on two Saturdays. Requests increased, but the additional staffing cost had to be included in the evaluation.\n\nD. Some members wanted to judge success by the value of tools borrowed. That measure would favour expensive equipment even if it helped few households. Others proposed the number of first-time borrowers, which would highlight reach but ignore repeated practical benefit. Neither indicator alone described the entire purpose of the service. The coordinator recommended reporting both and explaining their different meanings.\n\nE. The review led to an evening collection session and a clearer process for applicants without standard documents. It did not remove every barrier, and the delivery trial was too short to justify a permanent expansion. By recording unmet requests alongside completed loans, the library made its next decisions more informed. Increased borrowing was a positive result, but a convincing account of access required attention to the people missing from the transaction log.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What grew to one hundred in the third month?",
+      "maxWords": 1,
+      "answers": [
+        "loans"
+      ],
+      "explanation": "依据原文“a rise in loans from forty in the first month to one hundred in the third.”。答案按原文填写，保留限定范围。",
+      "evidence": "a rise in loans from forty in the first month to one hundred in the third."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who could be excluded by the address rule?",
+      "options": [
+        "All residents with a permanent address.",
+        "Every person who had borrowed books before.",
+        "Only people who had no interest in tools.",
+        "People lacking complete documents in temporary housing."
+      ],
+      "answers": [
+        "People lacking complete documents in temporary housing."
+      ],
+      "explanation": "依据原文“people in temporary accommodation whose documents were incomplete.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "people in temporary accommodation whose documents were incomplete."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Which closing time created a barrier for some workers?",
+      "maxWords": 1,
+      "answers": [
+        "five",
+        "5"
+      ],
+      "explanation": "依据原文“only until five in the afternoon”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "only until five in the afternoon",
+      "answerAliases": [
+        {
+          "value": "5",
+          "source": "five",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What did staff retain to recognise unmet demand?",
+      "maxWords": 2,
+      "answers": [
+        "unsuccessful requests"
+      ],
+      "explanation": "依据原文“a record of unsuccessful requests”。答案按原文填写，保留限定范围。",
+      "evidence": "a record of unsuccessful requests"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why could a listed item still be inaccessible?",
+      "options": [
+        "A household might lack transport to carry it.",
+        "Every item required a paid membership.",
+        "The library lent only books.",
+        "All applications were completed online."
+      ],
+      "answers": [
+        "A household might lack transport to carry it."
+      ],
+      "explanation": "依据原文“a heavy cleaning machine required transport.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "a heavy cleaning machine required transport."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What cost had to be considered after the delivery trial?",
+      "maxWords": 3,
+      "answers": [
+        "additional staffing cost"
+      ],
+      "explanation": "依据原文“the additional staffing cost”。答案按原文填写，保留限定范围。",
+      "evidence": "the additional staffing cost"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is a limitation of judging success by equipment value?",
+      "options": [
+        "It necessarily captures every repeated benefit.",
+        "It explains why every rejected applicant was refused.",
+        "It can favour expensive items over wider benefit.",
+        "It counts all first-time borrowers exactly."
+      ],
+      "answers": [
+        "It can favour expensive items over wider benefit."
+      ],
+      "explanation": "依据原文“favour expensive equipment even if it helped few households.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "favour expensive equipment even if it helped few households."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is the main purpose of keeping unmet requests?",
+      "options": [
+        "To replace evidence about completed loans entirely.",
+        "To inform decisions about barriers that loan totals omit.",
+        "To prove that a permanent delivery service is already justified.",
+        "To guarantee that every barrier has disappeared."
+      ],
+      "answers": [
+        "To inform decisions about barriers that loan totals omit."
+      ],
+      "explanation": "依据原文“attention to the people missing from the transaction log.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "attention to the people missing from the transaction log."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "transaction count",
+      "meaning": "交易次数统计",
+      "example": "A transaction count showed use by borrowers; it said little about residents who could not borrow.",
+      "kind": "collocation"
+    },
+    {
+      "word": "temporary accommodation",
+      "meaning": "临时住所",
+      "example": "That rule was familiar from book lending, yet it excluded people in temporary accommodation whose documents were incomplete.",
+      "kind": "collocation"
+    },
+    {
+      "word": "collection hours",
+      "meaning": "领取时段",
+      "example": "Collection hours created a second barrier.",
+      "kind": "collocation"
+    },
+    {
+      "word": "unsuccessful requests",
+      "meaning": "未满足申请",
+      "example": "The coordinator kept a record of unsuccessful requests rather than treating them as evidence of no demand.",
+      "kind": "collocation"
+    },
+    {
+      "word": "collection difficulties",
+      "meaning": "领取困难",
+      "example": "To investigate, staff asked applicants about collection difficulties and offered a trial delivery service on two Saturdays.",
+      "kind": "collocation"
+    },
+    {
+      "word": "staffing cost",
+      "meaning": "人力成本",
+      "example": "Requests increased, but the additional staffing cost had to be included in the evaluation.",
+      "kind": "collocation"
+    },
+    {
+      "word": "first-time borrowers",
+      "meaning": "首次借用者",
+      "example": "Others proposed the number of first-time borrowers, which would highlight reach but ignore repeated practical benefit.",
+      "kind": "collocation"
+    },
+    {
+      "word": "unmet requests",
+      "meaning": "未满足的需求",
+      "example": "By recording unmet requests alongside completed loans, the library made its next decisions more informed.",
+      "kind": "collocation"
+    },
+    {
+      "word": "permanent expansion",
+      "meaning": "永久扩展",
+      "example": "It did not remove every barrier, and the delivery trial was too short to justify a permanent expansion.",
+      "kind": "collocation"
+    },
+    {
+      "word": "transaction log",
+      "meaning": "交易记录",
+      "example": "Increased borrowing was a positive result, but a convincing account of access required attention to the people missing from the transaction log.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "比较的是相同口径",
+    "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。",
+    "example": "A transaction count showed use by borrowers; it said little about residents who could not borrow.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The revised survey contains _____ questions than the pilot. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The revised survey contains fewer questions than the pilot.",
+        "evidence": "The revised survey contains fewer questions than the pilot."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The second route requires _____ fuel than the first. （只填空白，保持其余文字不变）",
+        "options": [
+          "less",
+          "fewer",
+          "little"
+        ],
+        "answers": [
+          "less"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The second route requires less fuel than the first.",
+        "evidence": "The second route requires less fuel than the first."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The new device is _____ than the old one. （只填空白，保持其余文字不变）",
+        "options": [
+          "more reliable",
+          "most reliable",
+          "reliablest"
+        ],
+        "answers": [
+          "more reliable"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The new device is more reliable than the old one.",
+        "evidence": "The new device is more reliable than the old one."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The later group made _____ errors than the earlier group. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The later group made fewer errors than the earlier group.",
+        "evidence": "The later group made fewer errors than the earlier group."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving improving access to a shared service?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about improving access to a shared service. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why should organisations record unsuccessful requests?",
+        "Can an expensive item produce less public benefit?",
+        "What barriers can a membership rule create?",
+        "How should a short delivery trial be evaluated?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about improving access to a shared service. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "0c07dfeaad9263e7de13a39a4d2b922f861576fefe333e4fdd1d962dc2c0793a",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

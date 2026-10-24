@@ -28,13 +28,14 @@ def split_speakers(text,pair):
 async def generate(file,semaphore):
     async with semaphore:
         m=json.loads(file.read_text(encoding='utf8'))
-        if m.get('skill')!='listening': return None
+        if m.get('skill')!='listening' or m.get('audioSynthetic') is False: return None
         text=m.get('transcript','').strip()
         if not text: return None
         digest=hashlib.sha256(text.encode()).hexdigest();target=OUT/(m['id']+'.mp3');meta=META/(m['id']+'.json')
         if target.exists() and meta.exists():
             old=json.loads(meta.read_text(encoding='utf8'))
-            if old.get('transcriptHash')==digest and target.stat().st_size>1000:return 'cached'
+            if old.get('transcriptHash')==digest and target.stat().st_size>1000:
+                if not m.get('requireAudioHash') or old.get('audioHash')==hashlib.sha256(target.read_bytes()).hexdigest():return 'cached'
         pair=PAIRS[0 if m['week']<=8 else (m['week']-9)%len(PAIRS)];rate='-15%' if m['week']<=8 else '-5%' if m['week']<=20 else '+0%'
         segments=split_speakers(text,pair);parts=[];voices=[]
         for index,(voice,content) in enumerate(segments):
@@ -55,7 +56,7 @@ async def generate(file,semaphore):
         duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=noprint_wrappers=1:nokey=1',str(temporary)],creationflags=0x08000000).decode().strip())
         if duration<1 or temporary.stat().st_size<1000:raise RuntimeError('Invalid synthesized audio')
         os.replace(temporary,target)
-        meta.write_text(json.dumps({'id':m['id'],'transcriptHash':digest,'voices':list(dict.fromkeys(voices)),'durationSeconds':duration,'synthetic':True,'provider':'Microsoft online TTS via edge-tts','rate':rate,'note':'原创学习材料合成音频；不同音色/口音，不是真人录音。'},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+        meta.write_text(json.dumps({'id':m['id'],'schema':2,'transcriptHash':digest,'audioHash':hashlib.sha256(target.read_bytes()).hexdigest(),'voices':list(dict.fromkeys(voices)),'durationSeconds':duration,'synthetic':True,'provider':'Microsoft online TTS via edge-tts','rate':rate,'note':'原创学习材料合成音频；不同音色/口音，不是真人录音。'},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
         for part in parts:part.unlink(missing_ok=True)
         listing.unlink(missing_ok=True)
         print(json.dumps({'id':m['id'],'audio':'ready','seconds':round(duration)},ensure_ascii=False),flush=True)

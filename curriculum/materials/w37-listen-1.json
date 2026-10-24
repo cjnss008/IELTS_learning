@@ -1,0 +1,326 @@
+{
+  "id": "w37-listen-1",
+  "week": 37,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "Choosing a defensible survey sample",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Choosing a defensible survey sample",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Tutor: Tell me who you want your survey results to describe.\nNina: All first-year students. I planned to recruit volunteers from the photography society because I know its organiser.\nTutor: Convenient recruitment may influence the result. What is your actual question?\nNina: Whether students find the evening library useful. I initially wrote about satisfaction with the whole university, but I have narrowed it to one service.\nTutor: How could you reach students outside the society?\nNina: I could invite students from six introductory classes, including morning and evening groups rather than a single timetable.\nTutor: How many responses are you seeking?\nNina: Eighty. I first suggested fifty, but eighty would let me compare commuters with people living on campus, provided both groups reply.\nTutor: Do not promise equal representation before recruitment. What if commuters reply less often?\nNina: I will report the response rate separately for each group. I will also offer a paper version, so participation does not depend entirely on checking an email.\nTutor: What personal details will you collect?\nNina: Only a broad travel category, not names or exact addresses. The consent statement will explain that participation is voluntary.\nTutor: When will the pilot happen?\nNina: On Thursday. The final questionnaire will wait until five pilot participants have explained what they think each question means.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "Which society was the original recruitment route?",
+      "maxWords": 2,
+      "answers": [
+        "photography society"
+      ],
+      "explanation": "依据原文“recruit volunteers from the photography society”。答案按原文填写，保留限定范围。",
+      "evidence": "recruit volunteers from the photography society"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the revised research question about?",
+      "options": [
+        "Satisfaction with the entire university.",
+        "Reasons for joining student societies.",
+        "The cost of campus accommodation.",
+        "The usefulness of the evening library."
+      ],
+      "answers": [
+        "The usefulness of the evening library."
+      ],
+      "explanation": "依据原文“Whether students find the evening library useful.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Whether students find the evening library useful."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How many introductory classes are proposed?",
+      "maxWords": 1,
+      "answers": [
+        "six",
+        "6"
+      ],
+      "explanation": "依据原文“six introductory classes”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "six introductory classes",
+      "answerAliases": [
+        {
+          "value": "6",
+          "source": "six",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What response target replaces the original proposal?",
+      "maxWords": 1,
+      "answers": [
+        "Eighty",
+        "80"
+      ],
+      "explanation": "依据原文“I first suggested fifty, but eighty would let me compare commuters”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "I first suggested fifty, but eighty would let me compare commuters",
+      "answerAliases": [
+        {
+          "value": "80",
+          "source": "Eighty",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What will be reported separately for the two residential groups?",
+      "maxWords": 2,
+      "answers": [
+        "response rate"
+      ],
+      "explanation": "依据原文“I will report the response rate separately for each group.”。答案按原文填写，保留限定范围。",
+      "evidence": "I will report the response rate separately for each group."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why is a paper version offered?",
+      "options": [
+        "To make participation compulsory.",
+        "To collect exact addresses.",
+        "To exclude the morning classes.",
+        "To reduce dependence on checking email."
+      ],
+      "answers": [
+        "To reduce dependence on checking email."
+      ],
+      "explanation": "依据原文“participation does not depend entirely on checking an email.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "participation does not depend entirely on checking an email."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which personal detail will be collected?",
+      "options": [
+        "Every society member’s name.",
+        "Each student’s complete timetable.",
+        "A broad travel category.",
+        "Every respondent’s address."
+      ],
+      "answers": [
+        "A broad travel category."
+      ],
+      "explanation": "依据原文“Only a broad travel category, not names or exact addresses.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Only a broad travel category, not names or exact addresses."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What must happen before final distribution?",
+      "options": [
+        "The university-wide question must be restored.",
+        "A small pilot checks interpretation of questions.",
+        "Equal participation must be guaranteed.",
+        "All classes must change their timetable."
+      ],
+      "answers": [
+        "A small pilot checks interpretation of questions."
+      ],
+      "explanation": "依据原文“five pilot participants have explained what they think each question means.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "five pilot participants have explained what they think each question means."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "recruit volunteers",
+      "meaning": "招募志愿参与者",
+      "example": "I planned to recruit volunteers from the photography society because I know its organiser.",
+      "kind": "collocation"
+    },
+    {
+      "word": "narrowed",
+      "meaning": "缩小范围",
+      "example": "I initially wrote about satisfaction with the whole university, but I have narrowed it to one service.",
+      "kind": "word"
+    },
+    {
+      "word": "introductory classes",
+      "meaning": "入门课程班级",
+      "example": "I could invite students from six introductory classes, including morning and evening groups rather than a single timetable.",
+      "kind": "collocation"
+    },
+    {
+      "word": "commuters",
+      "meaning": "通勤者",
+      "example": "I first suggested fifty, but eighty would let me compare commuters with people living on campus, provided both groups reply.",
+      "kind": "word"
+    },
+    {
+      "word": "representation",
+      "meaning": "代表性",
+      "example": "Do not promise equal representation before recruitment.",
+      "kind": "word"
+    },
+    {
+      "word": "response rate",
+      "meaning": "回复率",
+      "example": "I will report the response rate separately for each group.",
+      "kind": "collocation"
+    },
+    {
+      "word": "participation",
+      "meaning": "参与",
+      "example": "I will also offer a paper version, so participation does not depend entirely on checking an email.",
+      "kind": "word"
+    },
+    {
+      "word": "consent statement",
+      "meaning": "知情同意说明",
+      "example": "The consent statement will explain that participation is voluntary.",
+      "kind": "collocation"
+    },
+    {
+      "word": "voluntary",
+      "meaning": "自愿的",
+      "example": "The consent statement will explain that participation is voluntary.",
+      "kind": "word"
+    },
+    {
+      "word": "pilot participants",
+      "meaning": "试测参与者",
+      "example": "The final questionnaire will wait until five pilot participants have explained what they think each question means.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "用条件句限定预测",
+    "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。",
+    "example": "I planned to recruit volunteers from the photography society because I know its organiser.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If the sample _____, the estimate will become more stable. （只填空白，保持其余文字不变）",
+        "options": [
+          "grows",
+          "growss",
+          "grew"
+        ],
+        "answers": [
+          "grows"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If the sample grows, the estimate will become more stable.",
+        "evidence": "If the sample grows, the estimate will become more stable."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "If fuel prices _____, the council will revise its budget. （只填空白，保持其余文字不变）",
+        "options": [
+          "rise",
+          "rises",
+          "was rise"
+        ],
+        "answers": [
+          "rise"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If fuel prices rise, the council will revise its budget.",
+        "evidence": "If fuel prices rise, the council will revise its budget."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "If the sensor _____, the recorder will display a warning. （只填空白，保持其余文字不变）",
+        "options": [
+          "fails",
+          "failss",
+          "was fails"
+        ],
+        "answers": [
+          "fails"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If the sensor fails, the recorder will display a warning.",
+        "evidence": "If the sensor fails, the recorder will display a warning."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "If users _____, their comments will be stored. （只填空白，保持其余文字不变）",
+        "options": [
+          "agree",
+          "agrees",
+          "was agree"
+        ],
+        "answers": [
+          "agree"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If users agree, their comments will be stored.",
+        "evidence": "If users agree, their comments will be stored."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving planning a student survey?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about planning a student survey. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why can convenient recruitment mislead?",
+        "Should surveys minimise personal data?",
+        "What makes questions easy to misunderstand?",
+        "How should missing replies be reported?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about planning a student survey. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "2d45947b3f9eb49632badf1f528ff05d076bef73db3b7da406530e2882fe0423",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

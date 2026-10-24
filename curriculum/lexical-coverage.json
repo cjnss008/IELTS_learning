@@ -1,0 +1,926 @@
+{
+  "schema": 1,
+  "days": 365,
+  "sourceMaterials": 429,
+  "sourceWords": 147996,
+  "trainingCandidateLexemes": 1686,
+  "trainingGroupLexemes": 1616,
+  "scheduledLexemes": 1616,
+  "scheduledMeaningLabels": 1726,
+  "explicitMappedFamilies": 16,
+  "lexemesWithoutFamilyMapping": 1594,
+  "collocations": 360,
+  "trainingGroupCollocations": 360,
+  "scheduledGroups": 332,
+  "scheduledVocabularyDays": 341,
+  "uncoveredCount": 70,
+  "uncovered": [
+    {
+      "word": "do homework",
+      "senseLabels": [
+        "做作业"
+      ],
+      "sourceIds": [
+        "w05-listen-3"
+      ],
+      "earliestWeek": 5
+    },
+    {
+      "word": "cake",
+      "senseLabels": [
+        "蛋糕"
+      ],
+      "sourceIds": [
+        "w06-listen-5"
+      ],
+      "earliestWeek": 6
+    },
+    {
+      "word": "tomato",
+      "senseLabels": [
+        "西红柿"
+      ],
+      "sourceIds": [
+        "w06-listen-6"
+      ],
+      "earliestWeek": 6
+    },
+    {
+      "word": "carrot",
+      "senseLabels": [
+        "胡萝卜"
+      ],
+      "sourceIds": [
+        "w06-listen-6"
+      ],
+      "earliestWeek": 6
+    },
+    {
+      "word": "potato",
+      "senseLabels": [
+        "土豆"
+      ],
+      "sourceIds": [
+        "w06-listen-6"
+      ],
+      "earliestWeek": 6
+    },
+    {
+      "word": "toilet",
+      "senseLabels": [
+        "卫生间"
+      ],
+      "sourceIds": [
+        "w07-listen-5"
+      ],
+      "earliestWeek": 7
+    },
+    {
+      "word": "snack",
+      "senseLabels": [
+        "零食",
+        "小吃，零食"
+      ],
+      "sourceIds": [
+        "w10-listen-4",
+        "w11-listen-3"
+      ],
+      "earliestWeek": 10
+    },
+    {
+      "word": "check into",
+      "senseLabels": [
+        "登记入住"
+      ],
+      "sourceIds": [
+        "w12-listen-3"
+      ],
+      "earliestWeek": 12
+    },
+    {
+      "word": "correct",
+      "senseLabels": [
+        "改正"
+      ],
+      "sourceIds": [
+        "w13-listen-1"
+      ],
+      "earliestWeek": 13
+    },
+    {
+      "word": "move",
+      "senseLabels": [
+        "搬家"
+      ],
+      "sourceIds": [
+        "w17-listen-2"
+      ],
+      "earliestWeek": 17
+    },
+    {
+      "word": "keep in touch",
+      "senseLabels": [
+        "保持联系"
+      ],
+      "sourceIds": [
+        "w17-listen-2"
+      ],
+      "earliestWeek": 17
+    },
+    {
+      "word": "pass",
+      "senseLabels": [
+        "通过（考试）"
+      ],
+      "sourceIds": [
+        "w17-listen-4"
+      ],
+      "earliestWeek": 17
+    },
+    {
+      "word": "teach",
+      "senseLabels": [
+        "教"
+      ],
+      "sourceIds": [
+        "w17-listen-4"
+      ],
+      "earliestWeek": 17
+    },
+    {
+      "word": "plug in",
+      "senseLabels": [
+        "插上电源"
+      ],
+      "sourceIds": [
+        "w18-listen-4"
+      ],
+      "earliestWeek": 18
+    },
+    {
+      "word": "flash",
+      "senseLabels": [
+        "闪烁"
+      ],
+      "sourceIds": [
+        "w18-listen-4"
+      ],
+      "earliestWeek": 18
+    },
+    {
+      "word": "dumpling",
+      "senseLabels": [
+        "饺子"
+      ],
+      "sourceIds": [
+        "w19-listen-2"
+      ],
+      "earliestWeek": 19
+    },
+    {
+      "word": "rice cake",
+      "senseLabels": [
+        "米糕"
+      ],
+      "sourceIds": [
+        "w19-listen-2"
+      ],
+      "earliestWeek": 19
+    },
+    {
+      "word": "dragon dance",
+      "senseLabels": [
+        "舞龙"
+      ],
+      "sourceIds": [
+        "w19-listen-3"
+      ],
+      "earliestWeek": 19
+    },
+    {
+      "word": "extend",
+      "senseLabels": [
+        "延长"
+      ],
+      "sourceIds": [
+        "w20-listen-3"
+      ],
+      "earliestWeek": 20
+    },
+    {
+      "word": "allow",
+      "senseLabels": [
+        "允许"
+      ],
+      "sourceIds": [
+        "w20-listen-3"
+      ],
+      "earliestWeek": 20
+    },
+    {
+      "word": "integrate",
+      "senseLabels": [
+        "整合"
+      ],
+      "sourceIds": [
+        "w21-listen-3"
+      ],
+      "earliestWeek": 21
+    },
+    {
+      "word": "argument",
+      "senseLabels": [
+        "论点；争论"
+      ],
+      "sourceIds": [
+        "w21-listen-4"
+      ],
+      "earliestWeek": 21
+    },
+    {
+      "word": "supporting sentence",
+      "senseLabels": [
+        "支持句"
+      ],
+      "sourceIds": [
+        "w21-listen-4"
+      ],
+      "earliestWeek": 21
+    },
+    {
+      "word": "allocation",
+      "senseLabels": [
+        "分配"
+      ],
+      "sourceIds": [
+        "w24-listen-2"
+      ],
+      "earliestWeek": 24
+    },
+    {
+      "word": "plank",
+      "senseLabels": [
+        "木板"
+      ],
+      "sourceIds": [
+        "w24-listen-2"
+      ],
+      "earliestWeek": 24
+    },
+    {
+      "word": "objection",
+      "senseLabels": [
+        "反对"
+      ],
+      "sourceIds": [
+        "w24-listen-3"
+      ],
+      "earliestWeek": 24
+    },
+    {
+      "word": "process",
+      "senseLabels": [
+        "处理"
+      ],
+      "sourceIds": [
+        "w25-listen-1"
+      ],
+      "earliestWeek": 25
+    },
+    {
+      "word": "hack",
+      "senseLabels": [
+        "黑客攻击"
+      ],
+      "sourceIds": [
+        "w26-listen-3"
+      ],
+      "earliestWeek": 26
+    },
+    {
+      "word": "private car",
+      "senseLabels": [
+        "私家车"
+      ],
+      "sourceIds": [
+        "w27-listen-1"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "bike lane",
+      "senseLabels": [
+        "自行车道"
+      ],
+      "sourceIds": [
+        "w27-listen-1"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "cyclist",
+      "senseLabels": [
+        "骑自行车的人"
+      ],
+      "sourceIds": [
+        "w27-listen-1"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "accident",
+      "senseLabels": [
+        "事故"
+      ],
+      "sourceIds": [
+        "w27-listen-1"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "commuter",
+      "senseLabels": [
+        "通勤者"
+      ],
+      "sourceIds": [
+        "w27-listen-2"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "halve",
+      "senseLabels": [
+        "减半"
+      ],
+      "sourceIds": [
+        "w27-listen-2"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "triple",
+      "senseLabels": [
+        "增至三倍"
+      ],
+      "sourceIds": [
+        "w27-listen-2"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "concern",
+      "senseLabels": [
+        "担忧"
+      ],
+      "sourceIds": [
+        "w27-listen-2"
+      ],
+      "earliestWeek": 27
+    },
+    {
+      "word": "repaint",
+      "senseLabels": [
+        "重新粉刷"
+      ],
+      "sourceIds": [
+        "w28-listen-2"
+      ],
+      "earliestWeek": 28
+    },
+    {
+      "word": "compass",
+      "senseLabels": [
+        "指南针"
+      ],
+      "sourceIds": [
+        "w29-listen-1"
+      ],
+      "earliestWeek": 29
+    },
+    {
+      "word": "acquire",
+      "senseLabels": [
+        "获得"
+      ],
+      "sourceIds": [
+        "w29-listen-3"
+      ],
+      "earliestWeek": 29
+    },
+    {
+      "word": "alchemist",
+      "senseLabels": [
+        "炼金术士"
+      ],
+      "sourceIds": [
+        "w29-listen-4"
+      ],
+      "earliestWeek": 29
+    },
+    {
+      "word": "determiner",
+      "senseLabels": [
+        "限定词"
+      ],
+      "sourceIds": [
+        "w30-listen-1"
+      ],
+      "earliestWeek": 30
+    },
+    {
+      "word": "misunderstand",
+      "senseLabels": [
+        "误解"
+      ],
+      "sourceIds": [
+        "w32-listen-3"
+      ],
+      "earliestWeek": 32
+    },
+    {
+      "word": "respondent",
+      "senseLabels": [
+        "回答问卷的人"
+      ],
+      "sourceIds": [
+        "w32-listen-4"
+      ],
+      "earliestWeek": 32
+    },
+    {
+      "word": "generalize",
+      "senseLabels": [
+        "概括，推广"
+      ],
+      "sourceIds": [
+        "w32-listen-4"
+      ],
+      "earliestWeek": 32
+    },
+    {
+      "word": "limitation",
+      "senseLabels": [
+        "局限性"
+      ],
+      "sourceIds": [
+        "w32-listen-4"
+      ],
+      "earliestWeek": 32
+    },
+    {
+      "word": "fern",
+      "senseLabels": [
+        "蕨类植物"
+      ],
+      "sourceIds": [
+        "w34-listen-2"
+      ],
+      "earliestWeek": 34
+    },
+    {
+      "word": "hosta",
+      "senseLabels": [
+        "玉簪（一种植物）"
+      ],
+      "sourceIds": [
+        "w34-listen-2"
+      ],
+      "earliestWeek": 34
+    },
+    {
+      "word": "weed",
+      "senseLabels": [
+        "除草"
+      ],
+      "sourceIds": [
+        "w34-listen-2"
+      ],
+      "earliestWeek": 34
+    },
+    {
+      "word": "apply",
+      "senseLabels": [
+        "适用"
+      ],
+      "sourceIds": [
+        "w35-listen-2"
+      ],
+      "earliestWeek": 35
+    },
+    {
+      "word": "participant",
+      "senseLabels": [
+        "参与者"
+      ],
+      "sourceIds": [
+        "w36-listen-2"
+      ],
+      "earliestWeek": 36
+    },
+    {
+      "word": "quantifier",
+      "senseLabels": [
+        "量词"
+      ],
+      "sourceIds": [
+        "w36-listen-4"
+      ],
+      "earliestWeek": 36
+    },
+    {
+      "word": "self-correction",
+      "senseLabels": [
+        "自我纠正"
+      ],
+      "sourceIds": [
+        "training-37-reading"
+      ],
+      "earliestWeek": 37
+    },
+    {
+      "word": "framework",
+      "senseLabels": [
+        "框架，体系"
+      ],
+      "sourceIds": [
+        "training-37-listening"
+      ],
+      "earliestWeek": 37
+    },
+    {
+      "word": "cloakroom",
+      "senseLabels": [
+        "衣帽间"
+      ],
+      "sourceIds": [
+        "training-38-listening"
+      ],
+      "earliestWeek": 38
+    },
+    {
+      "word": "compact",
+      "senseLabels": [
+        "压实"
+      ],
+      "sourceIds": [
+        "training-38-listening"
+      ],
+      "earliestWeek": 38
+    },
+    {
+      "word": "persistent",
+      "senseLabels": [
+        "持续的；坚持不懈的"
+      ],
+      "sourceIds": [
+        "training-39-listening"
+      ],
+      "earliestWeek": 39
+    },
+    {
+      "word": "advocacy",
+      "senseLabels": [
+        "倡导；拥护"
+      ],
+      "sourceIds": [
+        "training-39-listening"
+      ],
+      "earliestWeek": 39
+    },
+    {
+      "word": "autonomy",
+      "senseLabels": [
+        "自主权；自治"
+      ],
+      "sourceIds": [
+        "training-39-listening"
+      ],
+      "earliestWeek": 39
+    },
+    {
+      "word": "presenteeism",
+      "senseLabels": [
+        "出勤主义（指人虽在岗但效率不高）"
+      ],
+      "sourceIds": [
+        "training-39-listening"
+      ],
+      "earliestWeek": 39
+    },
+    {
+      "word": "biodiversity",
+      "senseLabels": [
+        "生物多样性"
+      ],
+      "sourceIds": [
+        "training-40-listening"
+      ],
+      "earliestWeek": 40
+    },
+    {
+      "word": "forage",
+      "senseLabels": [
+        "觅食"
+      ],
+      "sourceIds": [
+        "training-40-listening"
+      ],
+      "earliestWeek": 40
+    },
+    {
+      "word": "ecosystem",
+      "senseLabels": [
+        "生态系统"
+      ],
+      "sourceIds": [
+        "training-40-listening"
+      ],
+      "earliestWeek": 40
+    },
+    {
+      "word": "sediment",
+      "senseLabels": [
+        "沉积物，沉淀物"
+      ],
+      "sourceIds": [
+        "training-41-reading"
+      ],
+      "earliestWeek": 41
+    },
+    {
+      "word": "subsidise",
+      "senseLabels": [
+        "补贴，资助"
+      ],
+      "sourceIds": [
+        "training-42-reading"
+      ],
+      "earliestWeek": 42
+    },
+    {
+      "word": "dismantle",
+      "senseLabels": [
+        "拆卸，拆除"
+      ],
+      "sourceIds": [
+        "training-44-reading"
+      ],
+      "earliestWeek": 44
+    },
+    {
+      "word": "reassemble",
+      "senseLabels": [
+        "重新组装"
+      ],
+      "sourceIds": [
+        "training-44-reading"
+      ],
+      "earliestWeek": 44
+    },
+    {
+      "word": "peer reviewer",
+      "senseLabels": [
+        "同行评审人"
+      ],
+      "sourceIds": [
+        "training-44-reading"
+      ],
+      "earliestWeek": 44
+    },
+    {
+      "word": "approve",
+      "senseLabels": [
+        "批准"
+      ],
+      "sourceIds": [
+        "training-44-listening"
+      ],
+      "earliestWeek": 44
+    },
+    {
+      "word": "criterion",
+      "senseLabels": [
+        "标准（复数criteria）"
+      ],
+      "sourceIds": [
+        "training-46-listening"
+      ],
+      "earliestWeek": 46
+    },
+    {
+      "word": "gentrification",
+      "senseLabels": [
+        "绅士化；中产阶级化"
+      ],
+      "sourceIds": [
+        "training-48-reading"
+      ],
+      "earliestWeek": 48
+    }
+  ],
+  "lateWeeks": [
+    {
+      "week": 37,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w37-read-1",
+        "w37-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 38,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w38-read-1",
+        "w38-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 39,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w39-read-1",
+        "w39-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 40,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w40-read-1",
+        "w40-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 41,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w41-read-1",
+        "w41-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 42,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w42-read-1",
+        "w42-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 43,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w43-read-1",
+        "w43-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 44,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w44-read-1",
+        "w44-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 45,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w45-read-1",
+        "w45-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 46,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w46-read-1",
+        "w46-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 47,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w47-read-1",
+        "w47-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 48,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w48-read-1",
+        "w48-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 49,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w49-read-1",
+        "w49-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 50,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w50-read-1",
+        "w50-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 51,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w51-read-1",
+        "w51-listen-1"
+      ],
+      "speaking": 1
+    },
+    {
+      "week": 52,
+      "newReading": 1,
+      "newListening": 1,
+      "sourceIds": [
+        "w52-read-1",
+        "w52-listen-1"
+      ],
+      "speaking": 1
+    }
+  ],
+  "authentic": [
+    {
+      "id": "noaa-deep-ocean",
+      "title": "The Deep Ocean · NOAA 原声",
+      "week": 20,
+      "seconds": 123.490042,
+      "captionFile": "curriculum/sources/deep-ocean.vtt",
+      "url": "https://oceantoday.noaa.gov/deepocean/",
+      "rightsUrl": "https://oceantoday.noaa.gov/aboutsite.html",
+      "accent": "未做独立口音听审，不计入已验证口音配额。",
+      "independentAudioAudit": false
+    },
+    {
+      "id": "noaa-water-cycle",
+      "title": "The Water Cycle · NOAA 原声",
+      "week": 28,
+      "seconds": 162.262125,
+      "captionFile": "",
+      "url": "https://oceantoday.noaa.gov/watercycle/",
+      "rightsUrl": "https://oceantoday.noaa.gov/aboutsite.html",
+      "accent": "未做独立口音听审，不计入已验证口音配额。",
+      "independentAudioAudit": false
+    },
+    {
+      "id": "noaa-ocean-acidification",
+      "title": "Ocean as a Lab: Ocean Acidification · NOAA 原声",
+      "week": 36,
+      "seconds": 230.330333,
+      "captionFile": "",
+      "url": "https://oceantoday.noaa.gov/oceanasalab_oceanacid/",
+      "rightsUrl": "https://oceantoday.noaa.gov/aboutsite.html",
+      "accent": "未做独立口音听审，不计入已验证口音配额。",
+      "independentAudioAudit": false
+    }
+  ],
+  "limits": [
+    "词形按英文规范化精确去重，不等同词族。",
+    "不同中文释义仅作标注义项标签，未经全库语义合并。",
+    "只合并明确列出的词族关系，其余不猜词根。",
+    "排课覆盖不代表已学习或掌握；真实进度仍需作品、评阅和延迟复测。",
+    "关卡与末期保留卷不提取为提前词汇训练。",
+    "后期每周一个新的阅读与听力微训练，多日沿用同一ID属于巩固；完整训练另按日程安排。"
+  ]
+}

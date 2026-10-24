@@ -1,0 +1,310 @@
+{
+  "id": "w41-read-1",
+  "week": 41,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "Which measure of food waste answers the question?",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Which measure of food waste answers the question?",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A fictional college cafeteria introduced smaller default portions at lunch. Students could request a second serving without an additional charge. After four weeks, the kitchen reported a reduction in food waste from ninety kilograms to seventy. The headline suggested a clear improvement, but the catering manager asked what had been weighed and how many meals had been served.\n\nB. The weighing station collected food left on returned plates. It did not include unsold meals or vegetable peelings produced during preparation. The figures therefore described plate waste, rather than every form of discarded food. Meanwhile, lunch attendance fell during an examination week. Dividing the total by the number of meals gave a smaller improvement than comparing the totals alone. Both results were arithmetically correct, but they answered different questions.\n\nC. The second-serving rule created another practical issue. A queue formed near the kitchen entrance, and some students with short breaks did not return for more. The manager was unwilling to assume that every empty plate indicated satisfaction. She asked a small group about portion size and the time needed to obtain additional food. Several liked the smaller serving; others said they had left hungry because they could not wait.\n\nD. Kitchen staff proposed putting the second-serving station beside the exit. Before making a permanent change, they ran a two-day trial and recorded the queue length. The shorter queue was encouraging, but those two days had unusually low attendance. A busier trial would be needed before estimating the space required during a normal week.\n\nE. The final evaluation combined waste per meal, total plate waste and comments about access to sufficient food. It avoided claiming that a single measure captured the whole outcome. The manager also retained a record of what the scales excluded. If another college wished to compare results, it would need the same definition of waste and a comparable counting method. A precise label could be as important as an impressive reduction.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What could students obtain without paying extra?",
+      "maxWords": 2,
+      "answers": [
+        "second serving"
+      ],
+      "explanation": "依据原文“request a second serving without an additional charge.”。答案按原文填写，保留限定范围。",
+      "evidence": "request a second serving without an additional charge."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What did the weighing station actually measure?",
+      "options": [
+        "All food discarded during preparation.",
+        "All unsold meals at closing time.",
+        "Food brought from outside the college.",
+        "Food left on returned plates."
+      ],
+      "answers": [
+        "Food left on returned plates."
+      ],
+      "explanation": "依据原文“food left on returned plates.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "food left on returned plates."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why did the per-meal comparison show a smaller improvement?",
+      "options": [
+        "Students paid extra for smaller portions.",
+        "All returned plates contained the same amount.",
+        "Fewer meals were served during part of the comparison.",
+        "The scales included more vegetable peelings."
+      ],
+      "answers": [
+        "Fewer meals were served during part of the comparison."
+      ],
+      "explanation": "依据原文“lunch attendance fell during an examination week.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "lunch attendance fell during an examination week."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Which observation could not safely be equated with satisfaction?",
+      "maxWords": 2,
+      "answers": [
+        "empty plate"
+      ],
+      "explanation": "依据原文“every empty plate indicated satisfaction.”。答案按原文填写，保留限定范围。",
+      "evidence": "every empty plate indicated satisfaction."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why did some students leave without more food?",
+      "options": [
+        "Their available time was too short for the queue.",
+        "A second serving was forbidden.",
+        "They were charged an additional fee.",
+        "The kitchen had removed every meal."
+      ],
+      "answers": [
+        "Their available time was too short for the queue."
+      ],
+      "explanation": "依据原文“they had left hungry because they could not wait.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "they had left hungry because they could not wait."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Where was a new serving station proposed?",
+      "maxWords": 1,
+      "answers": [
+        "exit"
+      ],
+      "explanation": "依据原文“putting the second-serving station beside the exit.”。答案按原文填写，保留限定范围。",
+      "evidence": "putting the second-serving station beside the exit."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What limited the evidence from the location trial?",
+      "options": [
+        "Every visitor refused to comment.",
+        "The scales were removed from use.",
+        "The trial days were unusually quiet.",
+        "No queue length was recorded."
+      ],
+      "answers": [
+        "The trial days were unusually quiet."
+      ],
+      "explanation": "依据原文“those two days had unusually low attendance.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "those two days had unusually low attendance."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is necessary for comparing two colleges’ results?",
+      "options": [
+        "A promise to achieve the same total reduction.",
+        "A common definition and comparable counting method.",
+        "An identical headline for both reports.",
+        "The exclusion of comments about hunger."
+      ],
+      "answers": [
+        "A common definition and comparable counting method."
+      ],
+      "explanation": "依据原文“the same definition of waste and a comparable counting method.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "the same definition of waste and a comparable counting method."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "default portions",
+      "meaning": "默认份量",
+      "example": "A fictional college cafeteria introduced smaller default portions at lunch.",
+      "kind": "collocation"
+    },
+    {
+      "word": "additional charge",
+      "meaning": "额外收费",
+      "example": "Students could request a second serving without an additional charge.",
+      "kind": "collocation"
+    },
+    {
+      "word": "plate waste",
+      "meaning": "餐盘剩食",
+      "example": "The figures therefore described plate waste, rather than every form of discarded food.",
+      "kind": "collocation"
+    },
+    {
+      "word": "arithmetically correct",
+      "meaning": "算术上正确的",
+      "example": "Both results were arithmetically correct, but they answered different questions.",
+      "kind": "collocation"
+    },
+    {
+      "word": "portion size",
+      "meaning": "份量大小",
+      "example": "She asked a small group about portion size and the time needed to obtain additional food.",
+      "kind": "collocation"
+    },
+    {
+      "word": "queue length",
+      "meaning": "队列长度",
+      "example": "Before making a permanent change, they ran a two-day trial and recorded the queue length.",
+      "kind": "collocation"
+    },
+    {
+      "word": "low attendance",
+      "meaning": "到场人数较少",
+      "example": "The shorter queue was encouraging, but those two days had unusually low attendance.",
+      "kind": "collocation"
+    },
+    {
+      "word": "waste per meal",
+      "meaning": "每餐浪费量",
+      "example": "The final evaluation combined waste per meal, total plate waste and comments about access to sufficient food.",
+      "kind": "collocation"
+    },
+    {
+      "word": "counting method",
+      "meaning": "计数方法",
+      "example": "If another college wished to compare results, it would need the same definition of waste and a comparable counting method.",
+      "kind": "collocation"
+    },
+    {
+      "word": "precise label",
+      "meaning": "精确标注",
+      "example": "A precise label could be as important as an impressive reduction.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "区分让步与原因",
+    "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。",
+    "example": "Students could request a second serving without an additional charge.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "_____ the trial was small, its records were complete. （明确要表达让步关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Although the trial was small, its records were complete.",
+        "evidence": "Although the trial was small, its records were complete."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "_____ the bridge was unsafe, the route was closed. （明确要表达原因关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Because",
+          "Although",
+          "Despite"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Because the bridge was unsafe, the route was closed.",
+        "evidence": "Because the bridge was unsafe, the route was closed."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "_____ costs fell, demand remained low. （明确要表达让步关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Although",
+          "Because",
+          "Despite"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Although costs fell, demand remained low.",
+        "evidence": "Although costs fell, demand remained low."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "_____ rainfall stopped, the tanks were not refilled. （明确要表达原因关系；只填空白，保持其余文字不变）",
+        "options": [
+          "Because",
+          "Although",
+          "Despite"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "although 表示“虽然”，because 表示“因为”；按两句的实际关系选词，不按相邻位置猜。 本句为：Because rainfall stopped, the tanks were not refilled.",
+        "evidence": "Because rainfall stopped, the tanks were not refilled."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving reducing waste in a food service?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about reducing waste in a food service. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Should total waste or waste per meal receive more attention?",
+        "How can a waste policy affect access to food?",
+        "Why does a definition matter in comparisons?",
+        "What can a short pilot establish?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about reducing waste in a food service. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "23aa117e41bf1fbecdbadf245c3fff54defc82861714047fea3a41619292d444",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

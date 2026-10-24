@@ -1,0 +1,310 @@
+{
+  "id": "w52-read-1",
+  "week": 52,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "A synthesis should preserve disagreements in the evidence",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A synthesis should preserve disagreements in the evidence",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. In a fictional final-year project, a student reviewed three studies of extended library opening. One study reported more visits, another reported no change in exam results, and a third described improved access for evening workers. Her first summary called the evidence contradictory. Her supervisor suggested checking whether the studies were answering the same question before treating their conclusions as incompatible.\n\nB. Visits, exam results and reported access were different outcomes. A library might attract more visits without changing examination performance. Workers could value later access even if they were not enrolled in examinations at all. Combining the results into a single average would require a defensible common measure, not merely three numbers. The student therefore built a comparison table listing each population, outcome and observation period.\n\nC. Method also mattered. The visit count covered one branch over a holiday, whereas the exam study followed students through a full term. The access interviews recruited current evening users and omitted people unable to reach the branch. These limits did not make every finding worthless. They determined how widely each could reasonably be applied and which questions remained unanswered.\n\nD. The student organised her synthesis around claims rather than around one paragraph per source. For each claim, she stated what the evidence supported, what qualified it and what further comparison would help. She kept a disagreement about staffing cost because the two reports used different definitions of overtime. Instead of choosing the more convenient figure, she explained why they could not yet be compared directly.\n\nE. Her final recommendation was conditional: retain a limited evening service while collecting comparable information on cost and access. It was neither a guarantee of educational improvement nor an argument that uncertainty required permanent inaction. The review made a justified next step possible while preserving the boundary of the evidence. The supervisor asked her to keep the comparison table with the final paper so that readers could trace how each conclusion had been reached.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What initial description did the student give to the evidence?",
+      "maxWords": 1,
+      "answers": [
+        "contradictory"
+      ],
+      "explanation": "依据原文“called the evidence contradictory.”。答案按原文填写，保留限定范围。",
+      "evidence": "called the evidence contradictory."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why need the three findings not conflict?",
+      "options": [
+        "Every study measured identical exam scores.",
+        "No study contained any observations.",
+        "A rise in visits necessarily improves exam performance.",
+        "They examine different outcomes and populations."
+      ],
+      "answers": [
+        "They examine different outcomes and populations."
+      ],
+      "explanation": "依据原文“Visits, exam results and reported access were different outcomes.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Visits, exam results and reported access were different outcomes."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What would a numerical average across findings require?",
+      "options": [
+        "The deletion of every qualitative result.",
+        "An assumption that all workers take examinations.",
+        "A defensible common measure.",
+        "Only the presence of three numbers."
+      ],
+      "answers": [
+        "A defensible common measure."
+      ],
+      "explanation": "依据原文“a defensible common measure”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "a defensible common measure"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What resource organised population, outcome and time information?",
+      "maxWords": 2,
+      "answers": [
+        "comparison table"
+      ],
+      "explanation": "依据原文“built a comparison table”。答案按原文填写，保留限定范围。",
+      "evidence": "built a comparison table"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which people were omitted from the access interviews?",
+      "options": [
+        "People unable to reach the branch.",
+        "All current evening users.",
+        "Every worker who completed an interview.",
+        "Only those already counted in an exam study."
+      ],
+      "answers": [
+        "People unable to reach the branch."
+      ],
+      "explanation": "依据原文“omitted people unable to reach the branch.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "omitted people unable to reach the branch."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Around what did the student organise the synthesis?",
+      "maxWords": 1,
+      "answers": [
+        "claims"
+      ],
+      "explanation": "依据原文“organised her synthesis around claims”。答案按原文填写，保留限定范围。",
+      "evidence": "organised her synthesis around claims"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Why were two staffing figures not directly comparable?",
+      "options": [
+        "The student had chosen the same figure twice.",
+        "Every branch employed identical staff.",
+        "They defined overtime differently.",
+        "Both reports refused to discuss cost."
+      ],
+      "answers": [
+        "They defined overtime differently."
+      ],
+      "explanation": "依据原文“different definitions of overtime.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "different definitions of overtime."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How should the final recommendation be understood?",
+      "options": [
+        "A claim that every limit had been removed.",
+        "A conditional next step supported by limited evidence.",
+        "A guarantee of improved examination performance.",
+        "A demand never to act under uncertainty."
+      ],
+      "answers": [
+        "A conditional next step supported by limited evidence."
+      ],
+      "explanation": "依据原文“Her final recommendation was conditional”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Her final recommendation was conditional"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "synthesis",
+      "meaning": "综合论证",
+      "example": "The student organised her synthesis around claims rather than around one paragraph per source.",
+      "kind": "word"
+    },
+    {
+      "word": "incompatible",
+      "meaning": "不相容的",
+      "example": "Her supervisor suggested checking whether the studies were answering the same question before treating their conclusions as incompatible.",
+      "kind": "word"
+    },
+    {
+      "word": "common measure",
+      "meaning": "共同度量标准",
+      "example": "Combining the results into a single average would require a defensible common measure, not merely three numbers.",
+      "kind": "collocation"
+    },
+    {
+      "word": "observation period",
+      "meaning": "观察期",
+      "example": "The student therefore built a comparison table listing each population, outcome and observation period.",
+      "kind": "collocation"
+    },
+    {
+      "word": "reasonably be applied",
+      "meaning": "可合理适用",
+      "example": "They determined how widely each could reasonably be applied and which questions remained unanswered.",
+      "kind": "collocation"
+    },
+    {
+      "word": "qualified",
+      "meaning": "加以限定",
+      "example": "For each claim, she stated what the evidence supported, what qualified it and what further comparison would help.",
+      "kind": "word"
+    },
+    {
+      "word": "definitions of overtime",
+      "meaning": "加班的定义",
+      "example": "She kept a disagreement about staffing cost because the two reports used different definitions of overtime.",
+      "kind": "collocation"
+    },
+    {
+      "word": "conditional",
+      "meaning": "有条件的",
+      "example": "retain a limited evening service while collecting comparable information on cost and access.",
+      "kind": "word"
+    },
+    {
+      "word": "justified next step",
+      "meaning": "有依据的下一步",
+      "example": "The review made a justified next step possible while preserving the boundary of the evidence.",
+      "kind": "collocation"
+    },
+    {
+      "word": "trace",
+      "meaning": "追溯",
+      "example": "The supervisor asked her to keep the comparison table with the final paper so that readers could trace how each conclusion had been reached.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "不可数名词与数量表达",
+    "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。",
+    "example": "Her supervisor suggested checking whether the studies were answering the same question before treating their conclusions as incompatible.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The team collected _____ before deciding. （只填空白，保持其余文字不变）",
+        "options": [
+          "some evidence",
+          "an evidence",
+          "evidences"
+        ],
+        "answers": [
+          "some evidence"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The team collected some evidence before deciding.",
+        "evidence": "The team collected some evidence before deciding."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The guide provides _____ about the route. （只填空白，保持其余文字不变）",
+        "options": [
+          "useful information",
+          "a useful information",
+          "useful informations"
+        ],
+        "answers": [
+          "useful information"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The guide provides useful information about the route.",
+        "evidence": "The guide provides useful information about the route."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The laboratory bought three _____. （只填空白，保持其余文字不变）",
+        "options": [
+          "items of equipment",
+          "equipments",
+          "an equipments"
+        ],
+        "answers": [
+          "items of equipment"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The laboratory bought three items of equipment.",
+        "evidence": "The laboratory bought three items of equipment."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The tutor gave _____ about citations. （只填空白，保持其余文字不变）",
+        "options": [
+          "a piece of advice",
+          "an advice",
+          "advices"
+        ],
+        "answers": [
+          "a piece of advice"
+        ],
+        "explanation": "evidence、information、equipment 和 advice 在这里作不可数名词，不直接加复数或 a/an。需要计数时使用 pieces/items of。 本句为：The tutor gave a piece of advice about citations.",
+        "evidence": "The tutor gave a piece of advice about citations."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving synthesising evidence for a recommendation?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about synthesising evidence for a recommendation. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "When do findings truly contradict?",
+        "Why compare definitions before numbers?",
+        "How can a recommendation remain useful under uncertainty?",
+        "What lets readers trace a conclusion?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about synthesising evidence for a recommendation. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "a984a750f971affa3d5997201f21500e647a7aee76141bff370060fd7f353e62",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

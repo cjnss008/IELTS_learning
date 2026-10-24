@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 const root=path.join(__dirname,'..'),{jobs}=require('./curriculum-manifest.cjs'),{validate}=require('./author-curriculum.cjs'),A=require('../assets/assessment-core.js');
 function audit(data){
  assert.equal(data.status,'complete-material-set','Do not release a partial curriculum');
- assert.equal(data.days.length,364);assert.equal(data.weeks.length,52);
+ assert.equal(data.days.length,365);assert.equal(data.weeks.length,52);
  const map=new Map(data.materials.map(m=>[m.id,m]));assert.equal(map.size,data.materials.length,'Duplicate material ID');
  let questions=0,listening=0,writing=0,fullReading=0,fullListening=0;const textHashes=new Map();
  for(const job of jobs){const m=map.get(job.id);assert.ok(m,'Missing '+job.id);assert.deepEqual(validate(job,m),[],job.id);assert.equal(m.source.verification,'reviewed',job.id);if(job.skill==='writing'){writing++;assert.ok(m.prompt);}}
@@ -20,14 +20,15 @@ function audit(data){
   }
  }
  const firstWriting=new Set();let totalMinutes=0;
- for(let i=0;i<364;i++){const d=data.days[i];assert.equal(d.day,i+1);assert.equal(d.totalMinutes,360);assert.equal(d.tasks.reduce((n,t)=>n+t.minutes,0),360);totalMinutes+=d.totalMinutes;
+ for(let i=0;i<365;i++){const d=data.days[i];assert.equal(d.day,i+1);assert.equal(d.totalMinutes,360);assert.equal(d.tasks.reduce((n,t)=>n+t.minutes,0),360);totalMinutes+=d.totalMinutes;
   for(const t of d.tasks){assert.ok(t.materialIds.length,d.day+'/'+t.id+' has no material');for(const id of t.materialIds){const m=map.get(id);assert.ok(m,d.day+' missing '+id);assert.equal(m.skill,t.skill,d.day+'/'+t.id);if(t.id==='writing'&&m.type?.startsWith('academic_'))firstWriting.add(id);}assert.ok(t.quantity>0);}
  }
+ const annual=data.days[364];assert.equal(annual.week,52);assert.equal(annual.weekday,8);assert.ok(annual.readinessReview);assert.ok(annual.tasks.every(t=>t.id==='reflection'),'Day365 reviews existing evidence and must not expose reserved exams');
  assert.equal(firstWriting.size,96,'48 first-draft Task1/2 pairs; checkpoints replace regular new pairs');
- assert.equal(totalMinutes,131040);assert.equal(fullReading,30);assert.equal(fullListening,30);assert.equal(writing,124);
+ assert.equal(totalMinutes,131400);assert.equal(fullReading,30);assert.equal(fullListening,30);assert.equal(writing,124);
  assert.equal(data.gates.length,12,'Weeks 4–48 use A/B; four final batteries use separate readiness evidence');
  for(const gate of data.gates){assert.notEqual(gate.A,gate.B);assert.equal(gate.minimumDelayHours,48);assert.equal(map.get(gate.A+'-reading')?.pool,'gate');assert.equal(map.get(gate.B+'-reading')?.pool,'gate');}
- return {status:'passed',days:364,hours:totalMinutes/60,sourceJobs:jobs.length,materials:data.materials.length,questions,listening,writing,fullReading,fullListening,firstDraftWritingPairs:firstWriting.size/2};
+ return {status:'passed',days:365,hours:totalMinutes/60,sourceJobs:jobs.length,materials:data.materials.length,questions,listening,writing,fullReading,fullListening,firstDraftWritingPairs:firstWriting.size/2};
 }
 module.exports={audit};
 if(require.main===module){const result=audit(require('../assets/curriculum-data.js'));fs.writeFileSync(path.join(root,'curriculum','release-audit.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));}

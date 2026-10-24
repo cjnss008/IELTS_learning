@@ -1,0 +1,310 @@
+{
+  "id": "w51-read-1",
+  "week": 51,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "An accurate ranking can still answer the wrong question",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "An accurate ranking can still answer the wrong question",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A fictional scholarship office trialled a scoring tool to help review applications. The tool ranked applicants using school results, submitted essays and records of extracurricular activity. In a retrospective test, its ranking resembled decisions made by the previous committee. Developers described this as evidence of accuracy. The office director asked whether reproducing earlier decisions was the same as selecting applicants fairly.\n\nB. Historical decisions were the comparison standard, not a direct measure of future contribution. If earlier procedures had favoured some opportunities over others, a close match could preserve that pattern. Applicants from schools with fewer clubs might have less documented activity despite taking substantial responsibilities at home. A missing certificate did not necessarily mean a missing skill or commitment.\n\nC. The trial therefore included an error review rather than reporting one overall agreement rate. Reviewers examined cases where the tool and committee differed, but also a sample where they agreed. Agreement could conceal a shared oversight. The reviewers were asked to explain their reasoning and to distinguish an absent record from evidence that a criterion was not met.\n\nD. The director rejected a proposal to let applicants receive only an unexplained score. The office would publish the main criteria and offer a route to correct factual errors in an application. This did not mean promising that every disagreement would change the outcome. It meant that an incorrect school record, for example, should not remain unchallengeable because a computer had processed it.\n\nE. The pilot ended with a narrower role for the tool: organising documents and identifying missing fields for human review. The office did not claim that this use eliminated bias or guaranteed the best selection. It required a documented decision for each award and planned to examine later outcomes. A useful tool could improve a process while still requiring scrutiny of the goal, the standard of comparison and the opportunities represented in its inputs.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What did the retrospective test compare the tool with?",
+      "options": [
+        "Previous committee decisions.",
+        "Future contributions measured years later.",
+        "Every applicant’s view of fairness.",
+        "An independent guarantee of equal opportunity."
+      ],
+      "answers": [
+        "Previous committee decisions."
+      ],
+      "explanation": "依据原文“decisions made by the previous committee.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "decisions made by the previous committee."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why might close agreement fail to demonstrate fairness?",
+      "options": [
+        "Agreement automatically removes every historical influence.",
+        "The tool used no historical comparison at all.",
+        "All extracurricular opportunities were identical.",
+        "Earlier decisions may contain patterns the tool reproduces."
+      ],
+      "answers": [
+        "Earlier decisions may contain patterns the tool reproduces."
+      ],
+      "explanation": "依据原文“a close match could preserve that pattern.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "a close match could preserve that pattern."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What alternative commitment might certificates fail to show?",
+      "options": [
+        "An already guaranteed scholarship award.",
+        "A complete absence of skill.",
+        "Responsibilities at home.",
+        "The exact number of school clubs available."
+      ],
+      "answers": [
+        "Responsibilities at home."
+      ],
+      "explanation": "依据原文“taking substantial responsibilities at home.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "taking substantial responsibilities at home."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What was added instead of reporting only overall agreement?",
+      "maxWords": 2,
+      "answers": [
+        "error review"
+      ],
+      "explanation": "依据原文“included an error review”。答案按原文填写，保留限定范围。",
+      "evidence": "included an error review"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why inspect some cases of agreement too?",
+      "options": [
+        "Both processes might overlook the same issue.",
+        "Agreement always proves an application is complete.",
+        "Only disagreement can contain any error.",
+        "A sample of agreed cases replaces all criteria."
+      ],
+      "answers": [
+        "Both processes might overlook the same issue."
+      ],
+      "explanation": "依据原文“Agreement could conceal a shared oversight.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Agreement could conceal a shared oversight."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What could applicants challenge through a new route?",
+      "maxWords": 2,
+      "answers": [
+        "factual errors"
+      ],
+      "explanation": "依据原文“correct factual errors in an application.”。答案按原文填写，保留限定范围。",
+      "evidence": "correct factual errors in an application."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What role did the tool retain?",
+      "options": [
+        "Guaranteeing an absence of bias.",
+        "Replacing every later outcome check.",
+        "Organising records and highlighting missing fields.",
+        "Making every award without a reason."
+      ],
+      "answers": [
+        "Organising records and highlighting missing fields."
+      ],
+      "explanation": "依据原文“organising documents and identifying missing fields for human review.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "organising documents and identifying missing fields for human review."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What was required for each award?",
+      "maxWords": 2,
+      "answers": [
+        "documented decision"
+      ],
+      "explanation": "依据原文“a documented decision for each award”。答案按原文填写，保留限定范围。",
+      "evidence": "a documented decision for each award"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "retrospective test",
+      "meaning": "回顾性测试",
+      "example": "In a retrospective test, its ranking resembled decisions made by the previous committee.",
+      "kind": "collocation"
+    },
+    {
+      "word": "comparison standard",
+      "meaning": "比较基准",
+      "example": "Historical decisions were the comparison standard, not a direct measure of future contribution.",
+      "kind": "collocation"
+    },
+    {
+      "word": "documented activity",
+      "meaning": "有文件记录的活动",
+      "example": "Applicants from schools with fewer clubs might have less documented activity despite taking substantial responsibilities at home.",
+      "kind": "collocation"
+    },
+    {
+      "word": "error review",
+      "meaning": "错误审查",
+      "example": "The trial therefore included an error review rather than reporting one overall agreement rate.",
+      "kind": "collocation"
+    },
+    {
+      "word": "agreement rate",
+      "meaning": "一致率",
+      "example": "The trial therefore included an error review rather than reporting one overall agreement rate.",
+      "kind": "collocation"
+    },
+    {
+      "word": "shared oversight",
+      "meaning": "共同遗漏",
+      "example": "Agreement could conceal a shared oversight.",
+      "kind": "collocation"
+    },
+    {
+      "word": "factual errors",
+      "meaning": "事实错误",
+      "example": "The office would publish the main criteria and offer a route to correct factual errors in an application.",
+      "kind": "collocation"
+    },
+    {
+      "word": "unchallengeable",
+      "meaning": "无法提出异议的",
+      "example": "It meant that an incorrect school record, for example, should not remain unchallengeable because a computer had processed it.",
+      "kind": "word"
+    },
+    {
+      "word": "missing fields",
+      "meaning": "缺失字段",
+      "example": "organising documents and identifying missing fields for human review.",
+      "kind": "collocation"
+    },
+    {
+      "word": "scrutiny",
+      "meaning": "审视",
+      "example": "A useful tool could improve a process while still requiring scrutiny of the goal, the standard of comparison and the opportunities represented in its inputs.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "报告过去的程序与当前解释",
+    "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。",
+    "example": "The office director asked whether reproducing earlier decisions was the same as selecting applicants fairly.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The team _____ the samples yesterday. （只填空白，保持其余文字不变）",
+        "options": [
+          "collected",
+          "collect",
+          "has collected"
+        ],
+        "answers": [
+          "collected"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The team collected the samples yesterday.",
+        "evidence": "The team collected the samples yesterday."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The report _____ the current booking rules. （只填空白，保持其余文字不变）",
+        "options": [
+          "describes",
+          "describe",
+          "describing"
+        ],
+        "answers": [
+          "describes"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：The report describes the current booking rules.",
+        "evidence": "The report describes the current booking rules."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Last year, the library _____ its opening hours. （只填空白，保持其余文字不变）",
+        "options": [
+          "extended",
+          "extends",
+          "has extended"
+        ],
+        "answers": [
+          "extended"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：Last year, the library extended its opening hours.",
+        "evidence": "Last year, the library extended its opening hours."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "This diagram _____ how the filter works. （只填空白，保持其余文字不变）",
+        "options": [
+          "shows",
+          "show",
+          "showing"
+        ],
+        "answers": [
+          "shows"
+        ],
+        "explanation": "有 yesterday/last year 的已结束事件通常用一般过去时；本句现在仍适用的结论用现在时。不要只看到研究主题就全部改成现在完成时。 本句为：This diagram shows how the filter works.",
+        "evidence": "This diagram shows how the filter works."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving using a scoring tool responsibly?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about using a scoring tool responsibly. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "What makes a comparison standard appropriate?",
+        "Can accurate reproduction preserve unfairness?",
+        "Why review cases where two methods agree?",
+        "What should an applicant be able to correct?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about using a scoring tool responsibly. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "75ecb487a3ecac84c2a72c3cd916d002ac8e9620b9f3dde0bcac83cec4d094ba",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

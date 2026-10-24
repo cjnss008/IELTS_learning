@@ -5,8 +5,9 @@ const {materials:foundationSounds}=require('./foundation-sounds.cjs');
 const {materials:listeningMaps}=require('./listening-maps.cjs');
 const {validate}=require('./author-curriculum.cjs');
 const crypto=require('node:crypto');
+const Coverage=require('../assets/curriculum-coverage.js'),Lexicon=require('./curriculum-lexicon.cjs');
 function build({partial=false}={}){
- const materials=[],missing=[];for(const job of [...jobs,...foundationSounds,...listeningMaps]){const file=path.join(dir,job.id+'.json');if(!fs.existsSync(file)){missing.push(job.id);continue;}const m=JSON.parse(fs.readFileSync(file,'utf8'));if(!job.id.startsWith('sounds-')&&!job.id.startsWith('listening-map-')){const errors=validate(job,m);if(errors.length){if(partial){missing.push(job.id);continue;}throw Error(job.id+': '+errors.join('; '));}}m.level=job.level;m.version='1';if(m.assessmentGroup?.startsWith('gate-'))m.assessmentGroup=m.assessmentGroup.replace(/-[AB]$/,'');if(m.skill==='writing')m.rubric={...(m.rubric||{}),taskType:m.type};const audioPath='audio/curriculum/'+m.id+'.mp3';if(m.skill==='listening'&&fs.existsSync(path.join(root,audioPath))){m.audio=audioPath;const metaPath=path.join(root,'curriculum','audio',m.id+'.json');if(fs.existsSync(metaPath)){const meta=JSON.parse(fs.readFileSync(metaPath,'utf8'));m.audioVoice=meta.voices.join(' / ');m.audioDurationSeconds=meta.durationSeconds;m.audioSynthetic=true;if(meta.transcriptHash!==crypto.createHash('sha256').update(m.transcript).digest('hex'))m.audio='';}else m.audio='';}materials.push(m);}
+ const materials=[],missing=[];for(const job of [...jobs,...foundationSounds,...listeningMaps]){const file=path.join(dir,job.id+'.json');if(!fs.existsSync(file)){missing.push(job.id);continue;}const m=JSON.parse(fs.readFileSync(file,'utf8'));if(!job.id.startsWith('sounds-')&&!job.id.startsWith('listening-map-')){const errors=validate(job,m);if(errors.length){if(partial){missing.push(job.id);continue;}throw Error(job.id+': '+errors.join('; '));}}m.level=job.level;m.version='1';if(m.assessmentGroup?.startsWith('gate-'))m.assessmentGroup=m.assessmentGroup.replace(/-[AB]$/,'');if(m.skill==='writing')m.rubric={...(m.rubric||{}),taskType:m.type};const audioPath='audio/curriculum/'+m.id+'.mp3';if(m.skill==='listening'&&fs.existsSync(path.join(root,audioPath))){m.audio=audioPath;const metaPath=path.join(root,'curriculum','audio',m.id+'.json');if(fs.existsSync(metaPath)){const meta=JSON.parse(fs.readFileSync(metaPath,'utf8'));m.audioVoice=meta.voices.join(' / ');m.audioDurationSeconds=meta.durationSeconds;m.audioSynthetic=meta.synthetic!==false;if(job.requireAudioHash&&meta.audioHash!==crypto.createHash('sha256').update(fs.readFileSync(path.join(root,audioPath))).digest('hex'))m.audio='';if(meta.transcriptHash!==crypto.createHash('sha256').update(m.transcript).digest('hex'))m.audio='';}else m.audio='';}materials.push(m);}
  if(missing.length&&!partial)throw Error('Course not complete: '+missing.length+' missing authored materials; use --partial only for development preview.');
  const derived=[];
  for(const m of materials.filter(m=>m.skill==='reading')){
@@ -15,7 +16,7 @@ function build({partial=false}={}){
    derived.push({...base,id:m.id+'-grammar',skill:'grammar',type:'grammar',title:m.grammar.title,estimatedMinutes:15,instructions:'先读懂解释，再独立完成句子。订正后换句复测。',passage:m.grammar.explanation+'\n\n'+m.grammar.example,questions:m.grammar.questions.map((q,i)=>({...q,id:'q'+(i+1)}))});
    derived.push({...base,id:m.id+'-vocabulary',skill:'vocabulary',type:'vocabulary',title:m.title+' · 语境词汇',estimatedMinutes:20,instructions:'先学习本组词义、音标与例句；每个词先输入三遍正确英文，再完成三次分别录制、保存原音并取得专业结果的真实跟读。所有词完成后，依次测试中文提示补全残缺词、全中文提示写英文、听写；每词三种模式全部作答。无声和服务失败不计跟读次数，专业低分进入统一错题本。时间为参考预算，可按掌握速度提前进入下一步。',passage:m.vocabulary.map(v=>v.word+' — '+v.meaning+'\n'+v.example).join('\n\n'),vocabulary:m.vocabulary});
   }
-  const n=Number(m.id.match(/-read-(\d)$/)?.[1]||1),includeOutput=m.assessmentGroup||m.week<=8||m.week<=20&&n<=2||m.week<=36&&n===1;
+  const n=Number(m.id.match(/-read-(\d)$/)?.[1]||1),includeOutput=m.assessmentGroup||m.week<=8||m.week<=20&&n<=2||m.week<=36&&n===1||m.week>=37&&m.lexicalTraining;
   if(includeOutput){
    const t=m.transfer.speaking,foundation=m.week<=8;
    const bullets=t.part2Bullets||t.part2_bullets;
@@ -25,7 +26,14 @@ function build({partial=false}={}){
    if(!m.fullTest&&m.week<=20)derived.push({...base,id:m.id+'-writing',skill:'writing',type:foundation?'foundation':'paragraph',title:m.title+' · 写作迁移',estimatedMinutes:30,instructions:'先独立写原稿，再取得反馈和订正；不要复制课文作为自己的作品。',prompt:m.transfer.writing,minWords:foundation?12:m.week<=14?60:100,rubric:{taskType:foundation?'foundation':'generic'}});
   }
  }
+ for(const m of materials.filter(m=>m.pool==='training'&&((m.skill==='listening'&&m.lexicalTraining)||m.fullTest&&['reading','listening'].includes(m.skill)))){
+  const week=m.fullTest?Math.min(52,m.week+1):m.week;
+  const lexicalWords=m.vocabulary.map(v=>({...v,sourceMaterialId:m.id,sourceQuote:Lexicon.sourceSentence(m,v.word),example:Lexicon.sourceSentence(m,v.word)})).filter(v=>v.example&&v.meaning);if(!lexicalWords.length)continue;
+  derived.push({id:m.id+'-vocabulary',version:'1',week,level:level(week),skill:'vocabulary',type:'vocabulary',pool:'training',fullTest:false,source:m.source,sourceMaterialId:m.id,availableAfterWeek:week,estimatedMinutes:20,title:m.title+' · 原句词汇',instructions:'按源词义与原句完成三写三读和三轮测试。训练整卷词汇安排在该卷所在周之后，不提前提取关卡或末期保留卷；同ID复用属于巩固。',passage:lexicalWords.map(v=>v.word+' — '+v.meaning+'\n'+v.example).join('\n\n'),vocabulary:lexicalWords});
+  if(m.source?.kind==='public-domain-authentic')for(let i=0;i<lexicalWords.length;i+=5){const vocabulary=lexicalWords.slice(i,i+5);derived.push({...derived.at(-1),id:m.id+'-vocabulary-pack-'+(1+i/5),title:m.title+' · 5词以内小组 '+(1+i/5),estimatedMinutes:15,vocabulary,passage:vocabulary.map(v=>v.word+' — '+v.meaning+'\n'+v.example).join('\n\n')});}
+ }
  materials.push(...derived);
+ const lexical=Lexicon.extensions(materials);materials.push(...lexical.materials);
  const map=new Map(materials.map(m=>[m.id,m]));
  const rows=weeks.map(w=>({week:w.week,title:w.title,level:level(w.week),prerequisites:w.week>1?[w.week-1]:[],checkpoint:w.week%4===0,extensive:{readingIds:[],listeningIds:[],instructions:'第一遍不查词，先理解整体；第二遍标出不懂的部分，最后口头复述或写摘要。读听材料可重复用于流畅度训练，已见材料不计独立测评。'}}));
  const pick=(w,skill)=>materials.filter(m=>m.week===w&&m.skill===skill&&m.pool==='training'&&!m.fullTest&&!m.id.startsWith('sounds-')&&!m.id.startsWith('listening-map-')).map(m=>m.id);
@@ -40,7 +48,7 @@ function build({partial=false}={}){
  };
  const days=[];
  for(let w=1;w<=52;w++){
-  const baseWeek=w<=36?w:21+(w-37)%16,rs=pick(baseWeek,'reading'),ls=pick(baseWeek,'listening');
+  const baseWeek=w,rs=pick(baseWeek,'reading'),ls=pick(baseWeek,'listening');
   rows[w-1].extensive.readingIds=rs.slice(-2);rows[w-1].extensive.listeningIds=ls.slice(-2);
   for(let d=1;d<=7;d++){
    const day=(w-1)*7+d,gate=d===7&&w%4===0,final=d===7&&w>=49,regularFull=d===6&&w>=37&&w<=48;
@@ -61,7 +69,11 @@ function build({partial=false}={}){
    }
    const review=d===7&&!group;
    const grammar=rs.length?[rs[(d-1)%rs.length]+'-grammar',rs[d%rs.length]+'-grammar',rs[(d+1)%rs.length]+'-grammar']:[];
-   const vocab=rs.length?[rs[(d-1)%rs.length]+'-vocabulary']:[];
+   const authenticLexical=materials.filter(m=>m.week===w&&m.skill==='vocabulary'&&/-vocabulary-pack-[12]$/.test(m.id));
+   const baseVocab=authenticLexical.length&&[5,6].includes(d)?[authenticLexical[d-5].id]:rs.length?[rs[(d-1)%rs.length]+'-vocabulary']:[];
+   const extensions=materials.filter(m=>m.week===w&&m.skill==='vocabulary'&&m.source?.kind==='derived-lexical');
+   const extra=extensions[d-1];const baseCount=baseVocab.reduce((n,id)=>n+(map.get(id)?.vocabulary?.length||0),0);
+   const vocab=w<=36?[...baseVocab,...(extra&&baseCount+(extra.vocabulary?.length||0)<=12?[extra.id]:[])]:one(pick(w,'vocabulary'),d-1);
    const ref='reflection-'+day;
    materials.push({id:ref,version:'1',week:w,level:level(w),skill:'reflection',type:'reflection',title:'第 '+day+' 天 · 学习复盘',pool:'training',fullTest:false,estimatedMinutes:15,questions:[],instructions:'核对今天已提交的学习原稿，将统一错题本整页作答后提交；继续重做仍错的题，直到全部通过，再由 AI 根据今日材料、原稿与订正过程生成复盘。评阅或语音证据未完成时保留待验证状态；实际进度如实记录。',prompt:'先完成今日整页错题订正，保留每轮原始输入、核对依据和仍需补强的项目；全部通过后查看 AI 每日复盘，并记录下一次新题迁移及48小时／7日复测安排。',source:{kind:'original',rights:'项目原创',verification:'reviewed',method:'人工制定的反思提示，不计客观分'}});
    map.set(ref,materials.at(-1));
@@ -83,9 +95,13 @@ function build({partial=false}={}){
    days.push({day,week:w,weekday:d,title:weeks[w-1].title,tasks,totalMinutes:tasks.reduce((n,t)=>n+t.minutes,0)});
   }
  }
+ const yearReflection={id:'reflection-365',version:'1',week:52,level:level(52),skill:'reflection',type:'year-review',pool:'training',fullTest:false,estimatedMinutes:360,title:'第365天 · 年度证据回看与下一周期',questions:[],instructions:'回看年度实际作品、准备度证据、未完成和待验证项，保存年度总结；未达标继续补强，不以一年天数认定通过。360分钟为每日可用预算上限，完成后无需等待。',prompt:'根据已保存的四科独立作品、评阅、原音和错题，指出尚缺证据、当前可用负荷与下一周期补强安排。复用材料、辅助表现与待评结果分别注明，不能代替陌生测评。',source:{kind:'original',rights:'项目原创',verification:'reviewed',method:'年度证据回看提示，不是新测卷或成绩保证。'}};materials.push(yearReflection);map.set(yearReflection.id,yearReflection);
+ days.push({day:365,week:52,weekday:8,kind:'year-review',readinessReview:true,title:'年度证据回看与下一周期',tasks:[task('reflection',360,['reflection-365'],yearReflection.instructions,'四科证据缺口、可用负荷与下一周期补强计划')],totalMinutes:360});
+ const firstScheduled=new Map();for(const day of days)for(const task of day.tasks){task.materialPractice=task.materialIds.map(id=>{const first=firstScheduled.get(id);if(!firstScheduled.has(id))firstScheduled.set(id,day.day);return{materialId:id,cycle:first===undefined?'first-planned':'scheduled-reuse',firstPlannedDay:first===undefined?day.day:first};});task.practiceCycle=task.materialPractice.every(m=>m.cycle==='first-planned')?'first-planned':task.materialPractice.every(m=>m.cycle==='scheduled-reuse')?'scheduled-reuse':'mixed';}
  const audioMissing=materials.filter(m=>m.skill==='listening'&&!m.audio).map(m=>m.id);
  if(audioMissing.length&&!partial)throw Error('Course audio not complete: '+audioMissing.length+' files missing');
- const data={version:'1.0',status:missing.length||audioMissing.length?'development-preview':'complete-material-set',createdDate:'2026-10-24',scope:'原创练习材料；含完整题量训练，难度未经真实考生标定。软件完成不代表学习结果保证。',weeks:rows,materials,days,gates:Array.from({length:12},(_,i)=>{const week=(i+1)*4;return{week,A:'gate-'+String(week).padStart(2,'0')+'-A',B:'gate-'+String(week).padStart(2,'0')+'-B',minimumDelayHours:48};}),audit:{expectedAuthoringJobs:jobs.length,approvedAuthoringJobs:jobs.length-missing.filter(id=>!id.startsWith('sounds-')&&!id.startsWith('listening-map-')).length,foundationSoundModules:foundationSounds.length,listeningMapModules:listeningMaps.length,missing,audioMissing}};
+ const data={version:'1.0',status:missing.length||audioMissing.length?'development-preview':'complete-material-set',createdDate:'2026-10-24',scope:'原创练习材料；含完整题量训练，难度未经真实考生标定。软件完成不代表学习结果保证。',weeks:rows,materials,days,gates:Array.from({length:12},(_,i)=>{const week=(i+1)*4;return{week,A:'gate-'+String(week).padStart(2,'0')+'-A',B:'gate-'+String(week).padStart(2,'0')+'-B',minimumDelayHours:48};}),audit:{expectedAuthoringJobs:jobs.length,approvedAuthoringJobs:jobs.length-missing.filter(id=>!id.startsWith('sounds-')&&!id.startsWith('listening-map-')).length,lexicalExtensions:lexical.audit,foundationSoundModules:foundationSounds.length,listeningMapModules:listeningMaps.length,missing,audioMissing}};
+ const lexicalCoverage=Coverage.summarize(data);data.audit.lexicalCoverage={...lexicalCoverage,uncovered:undefined};fs.writeFileSync(path.join(root,'curriculum','lexical-coverage.json'),JSON.stringify(lexicalCoverage,null,2)+'\n');
  const json=JSON.stringify(data).replace(/</g,'\\u003c');fs.writeFileSync(path.join(root,'assets','curriculum-data.js'),`(function(root){'use strict';const data=${json};root.IELTSCurriculumData=data;if(typeof module==='object'&&module.exports)module.exports=data;})(typeof globalThis!=='undefined'?globalThis:this);\n`);
  fs.mkdirSync(path.join(root,'curriculum'),{recursive:true});fs.writeFileSync(path.join(root,'curriculum','coverage.json'),JSON.stringify({status:data.status,days:days.length,minutes:days.reduce((n,d)=>n+d.totalMinutes,0),materials:materials.length,bySkill:materials.reduce((a,m)=>(a[m.skill]=(a[m.skill]||0)+1,a),{}),...data.audit},null,2)+'\n');
  return data;

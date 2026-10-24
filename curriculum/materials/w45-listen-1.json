@@ -1,0 +1,335 @@
+{
+  "id": "w45-listen-1",
+  "week": 45,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "A forecast should show a range",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "A forecast should show a range",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Speaker: In this simulated planning exercise, our team estimated demand for a new evening shuttle. The central forecast is one hundred and twenty passenger trips per night. That number is useful for planning, but it is not a promise.\nWe produced three scenarios. The lower scenario assumes that only current late workers use the service. The central one includes some students. The upper scenario assumes that the nearby theatre also changes its closing time. That change has not been confirmed, so the upper figure should not be presented as our most likely result.\nThe finance team asked for a single number for its spreadsheet. We supplied the central estimate and attached the assumptions. We also showed how the operating cost per trip changes if demand is lower. A budget can look affordable at the central forecast while becoming difficult under the lower scenario.\nDo not confuse a scenario range with a measured confidence interval. Our alternatives are based on different assumptions, not a statistical calculation from repeated samples. The labels must make that clear.\nThe service will run a four-week pilot. Drivers will record passenger boardings, and a separate count will estimate how many different people use it. One person making a return journey creates two trips. After the pilot, the council will compare the observations with the original assumptions before deciding on a year-long contract.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What is the central forecast per night?",
+      "maxWords": 4,
+      "answers": [
+        "one hundred and twenty",
+        "120"
+      ],
+      "explanation": "依据原文“one hundred and twenty passenger trips per night.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "one hundred and twenty passenger trips per night.",
+      "answerAliases": [
+        {
+          "value": "120",
+          "source": "one hundred and twenty",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Which group appears in the central scenario in addition to late workers?",
+      "maxWords": 1,
+      "answers": [
+        "students"
+      ],
+      "explanation": "依据原文“The central one includes some students.”。答案按原文填写，保留限定范围。",
+      "evidence": "The central one includes some students."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What unconfirmed change is assumed by the upper scenario?",
+      "options": [
+        "A guaranteed rise in the number of drivers.",
+        "The closure of every student residence.",
+        "A change to the theatre’s closing time.",
+        "A reduction in every operating cost."
+      ],
+      "answers": [
+        "A change to the theatre’s closing time."
+      ],
+      "explanation": "依据原文“the nearby theatre also changes its closing time.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "the nearby theatre also changes its closing time."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What accompanies the estimate supplied to finance?",
+      "maxWords": 1,
+      "answers": [
+        "assumptions"
+      ],
+      "explanation": "依据原文“attached the assumptions.”。答案按原文填写，保留限定范围。",
+      "evidence": "attached the assumptions."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How does the speaker distinguish these scenarios from a confidence interval?",
+      "options": [
+        "They use alternative assumptions rather than a sampling calculation.",
+        "They guarantee the exact number of future users.",
+        "They are all observations from completed journeys.",
+        "They describe three identical demand estimates."
+      ],
+      "answers": [
+        "They use alternative assumptions rather than a sampling calculation."
+      ],
+      "explanation": "依据原文“different assumptions, not a statistical calculation from repeated samples.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "different assumptions, not a statistical calculation from repeated samples."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How long will the pilot last?",
+      "maxWords": 2,
+      "answers": [
+        "four-week",
+        "4 weeks",
+        "four weeks"
+      ],
+      "explanation": "依据原文“a four-week pilot.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "a four-week pilot.",
+      "answerAliases": [
+        {
+          "value": "4 weeks",
+          "source": "four-week",
+          "kind": "numeric-equivalent"
+        },
+        {
+          "value": "four weeks",
+          "source": "four-week",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "How many trips does one person’s return journey create?",
+      "maxWords": 1,
+      "answers": [
+        "two",
+        "2"
+      ],
+      "explanation": "依据原文“creates two trips.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "creates two trips.",
+      "answerAliases": [
+        {
+          "value": "2",
+          "source": "two",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What will happen before a long contract is chosen?",
+      "options": [
+        "The distinction between people and trips will be removed.",
+        "Observations will be compared with original assumptions.",
+        "The upper estimate will automatically be accepted.",
+        "The pilot counts will be replaced by the central estimate."
+      ],
+      "answers": [
+        "Observations will be compared with original assumptions."
+      ],
+      "explanation": "依据原文“compare the observations with the original assumptions”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "compare the observations with the original assumptions"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "central forecast",
+      "meaning": "中央预测值",
+      "example": "The central forecast is one hundred and twenty passenger trips per night.",
+      "kind": "collocation"
+    },
+    {
+      "word": "passenger trips",
+      "meaning": "乘客出行次数",
+      "example": "The central forecast is one hundred and twenty passenger trips per night.",
+      "kind": "collocation"
+    },
+    {
+      "word": "lower scenario",
+      "meaning": "低需求情景",
+      "example": "The lower scenario assumes that only current late workers use the service.",
+      "kind": "collocation"
+    },
+    {
+      "word": "upper scenario",
+      "meaning": "高需求情景",
+      "example": "The upper scenario assumes that the nearby theatre also changes its closing time.",
+      "kind": "collocation"
+    },
+    {
+      "word": "operating cost per trip",
+      "meaning": "每次行程运营成本",
+      "example": "We also showed how the operating cost per trip changes if demand is lower.",
+      "kind": "collocation"
+    },
+    {
+      "word": "confidence interval",
+      "meaning": "置信区间",
+      "example": "Do not confuse a scenario range with a measured confidence interval.",
+      "kind": "collocation"
+    },
+    {
+      "word": "repeated samples",
+      "meaning": "重复抽样",
+      "example": "Our alternatives are based on different assumptions, not a statistical calculation from repeated samples.",
+      "kind": "collocation"
+    },
+    {
+      "word": "passenger boardings",
+      "meaning": "乘客上车次数",
+      "example": "Drivers will record passenger boardings, and a separate count will estimate how many different people use it.",
+      "kind": "collocation"
+    },
+    {
+      "word": "return journey",
+      "meaning": "往返行程",
+      "example": "One person making a return journey creates two trips.",
+      "kind": "collocation"
+    },
+    {
+      "word": "year-long contract",
+      "meaning": "一年期合同",
+      "example": "After the pilot, the council will compare the observations with the original assumptions before deciding on a year-long contract.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "用条件句限定预测",
+    "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。",
+    "example": "We also showed how the operating cost per trip changes if demand is lower.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If the sample _____, the estimate will become more stable. （只填空白，保持其余文字不变）",
+        "options": [
+          "grows",
+          "growss",
+          "grew"
+        ],
+        "answers": [
+          "grows"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If the sample grows, the estimate will become more stable.",
+        "evidence": "If the sample grows, the estimate will become more stable."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "If fuel prices _____, the council will revise its budget. （只填空白，保持其余文字不变）",
+        "options": [
+          "rise",
+          "rises",
+          "was rise"
+        ],
+        "answers": [
+          "rise"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If fuel prices rise, the council will revise its budget.",
+        "evidence": "If fuel prices rise, the council will revise its budget."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "If the sensor _____, the recorder will display a warning. （只填空白，保持其余文字不变）",
+        "options": [
+          "fails",
+          "failss",
+          "was fails"
+        ],
+        "answers": [
+          "fails"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If the sensor fails, the recorder will display a warning.",
+        "evidence": "If the sensor fails, the recorder will display a warning."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "If users _____, their comments will be stored. （只填空白，保持其余文字不变）",
+        "options": [
+          "agree",
+          "agrees",
+          "was agree"
+        ],
+        "answers": [
+          "agree"
+        ],
+        "explanation": "if 从句说明条件；常见真实将来条件句在 if 从句用一般现在时，主句可用 will。不要把有条件的推测改成已经发生的事实。 本句为：If users agree, their comments will be stored.",
+        "evidence": "If users agree, their comments will be stored."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving planning with uncertain demand?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about planning with uncertain demand. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why do planners need alternative scenarios?",
+        "When can a single forecast mislead?",
+        "Why distinguish users from journeys?",
+        "What makes a pilot informative?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about planning with uncertain demand. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "dfc865e356e07ea38d403100c395fb34024313833e553837d5837042cbe9fb54",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

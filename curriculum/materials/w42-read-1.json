@@ -1,0 +1,305 @@
+{
+  "id": "w42-read-1",
+  "week": 42,
+  "skill": "reading",
+  "level": "B2–C1",
+  "topic": "Setting a closure rule for a coastal path",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "critical-reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 280,
+  "maxWords": 600,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Setting a closure rule for a coastal path",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立阅读答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "passage": "A. A simulated coastal authority managed a path beneath a low cliff. After several storms, staff proposed closing the route whenever the water reached a marked post. The post was easy for walkers to recognise, and a simple rule could be communicated quickly. Yet the engineers cautioned that one visible marker would not describe every source of danger along the path.\n\nB. Water level mattered most near the harbour entrance. Further along the route, loose stones could fall even when the tide was low. A threshold designed for flooding would not automatically protect walkers from falling material. The authority therefore separated the flood warning from the cliff inspection. Closing one section did not imply that every other section was safe; each had its own conditions for reopening.\n\nC. Residents disagreed about how often the path should close. Shop owners worried that frequent closures would discourage visitors. A walking group preferred a cautious rule because alternative access was available inland. Both positions involved a judgement about acceptable risk, not merely a disagreement over measured water levels. The authority published the reasons for its provisional rule instead of presenting the marker as a scientific guarantee.\n\nD. To review the decision, staff recorded closure times, inspection findings and reports of water crossing the path. The absence of an accident during a closed period would not prove that closure was unnecessary: people had been kept away from the possible hazard. Equally, a few uneventful open days could not establish that the risk was permanently negligible.\n\nE. The first review was scheduled after the winter season. It would examine whether warning signs were visible and whether visitors understood the inland diversion. This practical information could improve the policy even if it did not resolve every uncertainty about future storms. The aim was to make a defensible decision under incomplete information, then revise it openly as evidence accumulated. The authority retained earlier versions of the rule so that later changes could be traced.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "What visible feature was proposed as a water-level signal?",
+      "maxWords": 2,
+      "answers": [
+        "marked post"
+      ],
+      "explanation": "依据原文“water reached a marked post.”。答案按原文填写，保留限定范围。",
+      "evidence": "water reached a marked post."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which hazard was not covered by the flooding threshold?",
+      "options": [
+        "Water at the harbour entrance.",
+        "A rise in the level beside the post.",
+        "Floodwater crossing the low section.",
+        "Stones falling from the cliff."
+      ],
+      "answers": [
+        "Stones falling from the cliff."
+      ],
+      "explanation": "依据原文“loose stones could fall even when the tide was low.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "loose stones could fall even when the tide was low."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What was separated from the flood warning?",
+      "maxWords": 2,
+      "answers": [
+        "cliff inspection"
+      ],
+      "explanation": "依据原文“separated the flood warning from the cliff inspection.”。答案按原文填写，保留限定范围。",
+      "evidence": "separated the flood warning from the cliff inspection."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What explains part of the disagreement between local groups?",
+      "options": [
+        "A proven disagreement about the location of the post.",
+        "Different judgements about acceptable risk.",
+        "Completely different measurement units.",
+        "A refusal to recognise an inland route."
+      ],
+      "answers": [
+        "Different judgements about acceptable risk."
+      ],
+      "explanation": "依据原文“Both positions involved a judgement about acceptable risk”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Both positions involved a judgement about acceptable risk"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why would no accident during closure not prove closure unnecessary?",
+      "options": [
+        "The restriction itself removed people from possible danger.",
+        "Staff had stopped recording the weather.",
+        "The warning signs had all disappeared.",
+        "No part of the route had ever flooded."
+      ],
+      "answers": [
+        "The restriction itself removed people from possible danger."
+      ],
+      "explanation": "依据原文“people had been kept away from the possible hazard.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "people had been kept away from the possible hazard."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "After which period was the first review planned?",
+      "maxWords": 2,
+      "answers": [
+        "winter season"
+      ],
+      "explanation": "依据原文“after the winter season.”。答案按原文填写，保留限定范围。",
+      "evidence": "after the winter season."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "What alternative route would the review examine?",
+      "maxWords": 2,
+      "answers": [
+        "inland diversion"
+      ],
+      "explanation": "依据原文“whether visitors understood the inland diversion.”。答案按原文填写，保留限定范围。",
+      "evidence": "whether visitors understood the inland diversion."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Why were earlier rule versions kept?",
+      "options": [
+        "To show that every original judgement was correct.",
+        "To make subsequent changes traceable.",
+        "To guarantee no future storm damage.",
+        "To remove the need for later inspection."
+      ],
+      "answers": [
+        "To make subsequent changes traceable."
+      ],
+      "explanation": "依据原文“so that later changes could be traced.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "so that later changes could be traced."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "coastal authority",
+      "meaning": "海岸管理机构",
+      "example": "A simulated coastal authority managed a path beneath a low cliff.",
+      "kind": "collocation"
+    },
+    {
+      "word": "threshold",
+      "meaning": "阈值",
+      "example": "A threshold designed for flooding would not automatically protect walkers from falling material.",
+      "kind": "word"
+    },
+    {
+      "word": "falling material",
+      "meaning": "坠落物",
+      "example": "A threshold designed for flooding would not automatically protect walkers from falling material.",
+      "kind": "collocation"
+    },
+    {
+      "word": "conditions for reopening",
+      "meaning": "重新开放的条件",
+      "example": "Closing one section did not imply that every other section was safe; each had its own conditions for reopening.",
+      "kind": "collocation"
+    },
+    {
+      "word": "acceptable risk",
+      "meaning": "可接受风险",
+      "example": "Both positions involved a judgement about acceptable risk, not merely a disagreement over measured water levels.",
+      "kind": "collocation"
+    },
+    {
+      "word": "provisional rule",
+      "meaning": "暂行规则",
+      "example": "The authority published the reasons for its provisional rule instead of presenting the marker as a scientific guarantee.",
+      "kind": "collocation"
+    },
+    {
+      "word": "inspection findings",
+      "meaning": "检查发现",
+      "example": "To review the decision, staff recorded closure times, inspection findings and reports of water crossing the path.",
+      "kind": "collocation"
+    },
+    {
+      "word": "negligible",
+      "meaning": "可忽略的",
+      "example": "Equally, a few uneventful open days could not establish that the risk was permanently negligible.",
+      "kind": "word"
+    },
+    {
+      "word": "inland diversion",
+      "meaning": "内陆绕行路线",
+      "example": "It would examine whether warning signs were visible and whether visitors understood the inland diversion.",
+      "kind": "collocation"
+    },
+    {
+      "word": "evidence accumulated",
+      "meaning": "证据逐渐累积",
+      "example": "The aim was to make a defensible decision under incomplete information, then revise it openly as evidence accumulated.",
+      "kind": "collocation"
+    }
+  ],
+  "grammar": {
+    "title": "比较的是相同口径",
+    "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。",
+    "example": "The post was easy for walkers to recognise, and a simple rule could be communicated quickly.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The revised survey contains _____ questions than the pilot. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The revised survey contains fewer questions than the pilot.",
+        "evidence": "The revised survey contains fewer questions than the pilot."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The second route requires _____ fuel than the first. （只填空白，保持其余文字不变）",
+        "options": [
+          "less",
+          "fewer",
+          "little"
+        ],
+        "answers": [
+          "less"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The second route requires less fuel than the first.",
+        "evidence": "The second route requires less fuel than the first."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The new device is _____ than the old one. （只填空白，保持其余文字不变）",
+        "options": [
+          "more reliable",
+          "most reliable",
+          "reliablest"
+        ],
+        "answers": [
+          "more reliable"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The new device is more reliable than the old one.",
+        "evidence": "The new device is more reliable than the old one."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The later group made _____ errors than the earlier group. （只填空白，保持其余文字不变）",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "than 后接比较对象；比较两个比例、成本或群体时保持相同时间和单位。fewer 修饰可数复数，less 修饰不可数名词。 本句为：The later group made fewer errors than the earlier group.",
+        "evidence": "The later group made fewer errors than the earlier group."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving setting a public access rule?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about setting a public access rule. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why can one warning indicator be insufficient?",
+        "How should economic costs affect closure decisions?",
+        "Why does preventing exposure complicate evaluation?",
+        "Should earlier policy versions remain available?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about setting a public access rule. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "294573577432f10762e5d18cba3749354335969a9ba3a4d82d6766a3d7d5ead4",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,318 @@
+{
+  "id": "w43-listen-1",
+  "week": 43,
+  "skill": "listening",
+  "level": "B2–C1",
+  "topic": "Checking the source behind a quotation",
+  "grammarFocus": "学术论证的限定、因果、对比与证据范围",
+  "pool": "training",
+  "type": "academic-discussion",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 450,
+  "questionCount": 8,
+  "requireAudioHash": true,
+  "lexicalTraining": true,
+  "title": "Checking the source behind a quotation",
+  "instructions": "原创学术微训练；场景、机构与数值均为虚构模拟，不是事实报道或官方试题。先独立盲听答题，再用原句核对限定、比较与因果。短篇专项不能替代完整陌生测评。",
+  "transcript": "Lena: I found a quotation in three websites. Can I use that as three sources for my essay?\nTutor: First check whether the sites are independent. Do they identify an original document?\nLena: Two copy the same magazine article. The third links to a council report from the previous year.\nTutor: Read the report itself. Repetition does not create independent confirmation.\nLena: I have now found the sentence on page fourteen. The websites shortened it. The report says the change may reduce delays on one route, not that it will improve all transport.\nTutor: That missing qualification changes the claim. What will you cite?\nLena: The council report, with the page number. I will paraphrase the limited conclusion and keep the original wording in my notes for checking.\nTutor: What about the chart you wanted to use?\nLena: It compares passenger totals, but the vertical axis starts at ninety thousand. The difference looks much larger than it would from zero.\nTutor: Does that automatically make the numbers false?\nLena: No. The values may be accurate, but the visual emphasis needs explaining. I will state the actual values and avoid treating the picture as a separate finding.\nTutor: Good. Send your source notes tomorrow. We will check that each claim remains within the scope of the document supporting it.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why are the three websites not three independent confirmations?",
+      "options": [
+        "Some repeat the same earlier article.",
+        "All three are printed documents.",
+        "None discusses transport.",
+        "The report has no page numbers."
+      ],
+      "answers": [
+        "Some repeat the same earlier article."
+      ],
+      "explanation": "依据原文“Two copy the same magazine article.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "Two copy the same magazine article."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "On which page is the sentence found?",
+      "maxWords": 1,
+      "answers": [
+        "fourteen",
+        "14"
+      ],
+      "explanation": "依据原文“on page fourteen.”。答案按原文填写，保留限定范围。 数量允许本题列出的等值数字写法；单位接受明确列出的英美拼写。",
+      "evidence": "on page fourteen.",
+      "answerAliases": [
+        {
+          "value": "14",
+          "source": "fourteen",
+          "kind": "numeric-equivalent"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What qualification was lost when websites shortened the sentence?",
+      "options": [
+        "Every form of transport had already improved.",
+        "No change to delay was considered possible.",
+        "The possible benefit applied to one route.",
+        "The council had guaranteed lower fares."
+      ],
+      "answers": [
+        "The possible benefit applied to one route."
+      ],
+      "explanation": "依据原文“may reduce delays on one route”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "may reduce delays on one route"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Which original document will be cited?",
+      "maxWords": 2,
+      "answers": [
+        "council report"
+      ],
+      "explanation": "依据原文“The council report, with the page number.”。答案按原文填写，保留限定范围。",
+      "evidence": "The council report, with the page number."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Why keep the original wording in notes?",
+      "maxWords": 2,
+      "answers": [
+        "For checking"
+      ],
+      "explanation": "依据原文“for checking.”。答案按原文填写，保留限定范围。",
+      "evidence": "for checking."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What makes the chart visually emphasise the difference?",
+      "options": [
+        "The chart omits all numeric values.",
+        "Passenger totals are represented by words only.",
+        "Every route has the same total.",
+        "The value axis begins above zero."
+      ],
+      "answers": [
+        "The value axis begins above zero."
+      ],
+      "explanation": "依据原文“the vertical axis starts at ninety thousand.”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "the vertical axis starts at ninety thousand."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does Lena say about the chart’s numbers?",
+      "options": [
+        "They prove an additional independent finding.",
+        "They make the report’s wording irrelevant.",
+        "They could be accurate despite the visual emphasis.",
+        "They must all be fabricated."
+      ],
+      "answers": [
+        "They could be accurate despite the visual emphasis."
+      ],
+      "explanation": "依据原文“The values may be accurate”。正确项保持了原文的范围和关系，其余项改动了该信息。",
+      "evidence": "The values may be accurate"
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "When will source notes be sent?",
+      "maxWords": 1,
+      "answers": [
+        "tomorrow"
+      ],
+      "explanation": "依据原文“Send your source notes tomorrow.”。答案按原文填写，保留限定范围。",
+      "evidence": "Send your source notes tomorrow."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "independent confirmation",
+      "meaning": "独立佐证",
+      "example": "Repetition does not create independent confirmation.",
+      "kind": "collocation"
+    },
+    {
+      "word": "original document",
+      "meaning": "原始文件",
+      "example": "Do they identify an original document?",
+      "kind": "collocation"
+    },
+    {
+      "word": "qualification",
+      "meaning": "限制性说明",
+      "example": "That missing qualification changes the claim.",
+      "kind": "word"
+    },
+    {
+      "word": "paraphrase",
+      "meaning": "转述",
+      "example": "I will paraphrase the limited conclusion and keep the original wording in my notes for checking.",
+      "kind": "word"
+    },
+    {
+      "word": "original wording",
+      "meaning": "原文措辞",
+      "example": "I will paraphrase the limited conclusion and keep the original wording in my notes for checking.",
+      "kind": "collocation"
+    },
+    {
+      "word": "vertical axis",
+      "meaning": "纵轴",
+      "example": "It compares passenger totals, but the vertical axis starts at ninety thousand.",
+      "kind": "collocation"
+    },
+    {
+      "word": "visual emphasis",
+      "meaning": "视觉强调",
+      "example": "The values may be accurate, but the visual emphasis needs explaining.",
+      "kind": "collocation"
+    },
+    {
+      "word": "actual values",
+      "meaning": "实际数值",
+      "example": "I will state the actual values and avoid treating the picture as a separate finding.",
+      "kind": "collocation"
+    },
+    {
+      "word": "source notes",
+      "meaning": "来源笔记",
+      "example": "Send your source notes tomorrow.",
+      "kind": "collocation"
+    },
+    {
+      "word": "scope",
+      "meaning": "适用范围",
+      "example": "We will check that each claim remains within the scope of the document supporting it.",
+      "kind": "word"
+    }
+  ],
+  "grammar": {
+    "title": "被动句准确保留动作对象",
+    "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。",
+    "example": "The report says the change may reduce delays on one route, not that it will improve all transport.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The records _____ by two assistants. （只填空白，保持其余文字不变）",
+        "options": [
+          "were checked",
+          "checked",
+          "was checked"
+        ],
+        "answers": [
+          "were checked"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The records were checked by two assistants.",
+        "evidence": "The records were checked by two assistants."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Each ticket _____ at the entrance. （只填空白，保持其余文字不变）",
+        "options": [
+          "is scanned",
+          "scanned",
+          "is scanning"
+        ],
+        "answers": [
+          "is scanned"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：Each ticket is scanned at the entrance.",
+        "evidence": "Each ticket is scanned at the entrance."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The damaged units _____ last week. （只填空白，保持其余文字不变）",
+        "options": [
+          "were replaced",
+          "replaced",
+          "was replaced"
+        ],
+        "answers": [
+          "were replaced"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The damaged units were replaced last week.",
+        "evidence": "The damaged units were replaced last week."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The mixture _____ before it is filtered. （只填空白，保持其余文字不变）",
+        "options": [
+          "is heated",
+          "heated",
+          "is heating"
+        ],
+        "answers": [
+          "is heated"
+        ],
+        "explanation": "被动结构是 be + 过去分词。使用它可把重点放在样本或处理步骤，不能省掉 be，也不要把过去分词当过去式主句。 本句为：The mixture is heated before it is filtered.",
+        "evidence": "The mixture is heated before it is filtered."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What do you usually read about this topic?",
+        "Have you ever made a choice involving using sources in an academic essay?",
+        "What information would help you make that choice?",
+        "Who would you ask for a different opinion?"
+      ],
+      "part2": "Describe a decision about using sources in an academic essay. You should say what the decision was, what alternatives were available, what evidence you used, and explain what you would check before recommending it to others.",
+      "part3": [
+        "Why is repeated information not always stronger evidence?",
+        "How can shortening a quotation alter meaning?",
+        "When is a non-zero chart axis useful?",
+        "What should a careful paraphrase preserve?"
+      ]
+    },
+    "writing": "Write an evidence-based paragraph of 120–160 words about using sources in an academic essay. State one claim, support it with a relevant example, acknowledge a limitation, and explain what further evidence would change your conclusion. Use a new example; do not copy the passage."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "original",
+    "rights": "项目原创，Codex辅助编写；模拟场景和数据",
+    "verification": "reviewed",
+    "method": "Codex逐题对照原文、同类干扰项及限定范围；规则校验和标准答案回代；未做独立AI盲解或真人难度标定。",
+    "model": "GPT-6.1",
+    "reasoningEffort": "max",
+    "reviewScope": "全部新增理解题与例句逐项核对；软件语义检查不等于官方考试等值性。",
+    "contentHash": "052aea5f1a8261f04f974ef1ea3e17367cfa0fe304b8917deb5ef316366479b0",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "independentReviewFollowup": {
+      "date": "2026-10-25",
+      "reviewer": "Codex independent sub-agent",
+      "scope": "根据独立子代理13源/104题抽查反馈，由作者扩大修复31个数量/单位变体题；不是本文件全部题目已独立盲解。原文与音频未变更。"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}
