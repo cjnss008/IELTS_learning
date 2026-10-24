@@ -1,0 +1,6 @@
+# Preserve the original learning package bytes across Windows and NAS.
+* -text
+
+# Audio is binary; the large EPUB is stored with Git LFS.
+*.mp3 -diff
+*.epub filter=lfs diff=lfs merge=lfs -text
