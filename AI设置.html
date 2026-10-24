@@ -22,9 +22,9 @@
   <main class="page-shell ai-shell" id="aiSettings" aria-busy="false">
     <div class="hero ai-hero">
       <div>
-        <p class="eyebrow">MODEL CONNECTION</p>
-        <h1>连接你的 AI 模型</h1>
-        <p class="hero-copy">填写 API 地址与密钥，确认连接后，从接口实际提供的模型中选择。</p>
+        <p class="eyebrow">AI ASSISTANT · LEARN WITH FEEDBACK</p>
+        <h1>连接 AI，让每次练习都有反馈。</h1>
+        <p class="hero-copy">连接服务、选择模型，再验证回复。AI 会帮助解释词句、检查表达和安排修改；默认不设费用上限，优先保证学习流程顺畅。</p>
       </div>
       <div class="ai-status-card" aria-live="polite">
         <span class="ai-status-label">本地服务连接状态</span>
@@ -45,6 +45,19 @@
     </section>
 
     <noscript><p class="notice danger">请启用浏览器 JavaScript，并通过本地服务打开此页后配置模型。</p></noscript>
+
+    <details class="ai-advanced"><summary>可选：查看用量与设置预算</summary>
+    <section class="ai-panel ai-budget-panel" aria-labelledby="budgetHeading">
+      <form id="budgetControlForm" class="ai-budget-control"><label class="ai-check-label" for="budgetEnabled"><input id="budgetEnabled" type="checkbox"><span>启用本站每月费用上限 <small>默认关闭，不影响 AI 学习。</small></span></label><button id="saveBudgetControlButton" class="button secondary" type="submit" disabled>保存限额开关</button></form>
+      <div class="ai-budget-heading"><div><p class="eyebrow">YOUR MONTHLY BUDGET</p><h2 id="budgetHeading">本月费用 <span id="budgetMonth" class="ai-month"></span></h2><p id="budgetLimitNote" class="ai-help">默认未启用费用上限；正在读取可选设置与本月用量。</p></div><button id="refreshBudgetButton" class="button secondary" type="button" disabled>刷新用量</button></div>
+      <div class="ai-budget-stats"><div><span>已知报价的累计估算</span><strong id="budgetSpent">—</strong><small>未估价的调用不代表免费</small></div><div><span>正在预留</span><strong id="budgetReserved">—</strong><small>已发起、尚未结算的调用</small></div><div><span>当前限额余量</span><strong id="budgetRemaining">不限额</strong><small>仅主动启用上限时生效</small></div></div>
+      <div class="ai-budget-meter" role="progressbar" aria-label="本月调用额度使用情况" aria-valuemin="0" aria-valuemax="80" aria-valuenow="0" id="budgetMeter"><span id="budgetMeterSpent"></span><span id="budgetMeterReserved"></span></div>
+      <div class="ai-budget-categories"><p><strong id="budgetTextLabel">文字 AI</strong><span id="budgetText">正在读取…</span></p><p><strong id="budgetSpeechLabel">语音服务</strong><span id="budgetSpeech">正在读取…</span></p></div>
+      <p id="budgetStatus" class="ai-budget-status" role="status">默认不设费用上限；用量记录仅供参考。</p>
+      <p id="budgetThresholdNote" class="ai-help">主动启用限额后，文字与语音共用调用额度。达到停止线时可先保留作文与录音，关闭限额或额度可用后再主动送评；不会自动补发。</p>
+      <p class="ai-help">这里约束通过本站发起的调用。其他软件的用量、汇率或服务商计价差异可能不在账本中，实际账单以服务商为准。请同时设置服务商侧可用的额度限制。</p>
+    </section>
+    </details>
 
     <div class="ai-grid">
       <section class="ai-panel" aria-labelledby="connectionHeading">
@@ -70,7 +83,7 @@
       </section>
 
       <section class="ai-panel" aria-labelledby="modelHeading">
-        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">02</span><div><h2 id="modelHeading">选择并验证模型</h2><p>选择已获取的模型，保存后可发送一次简短验证请求。</p></div></div>
+        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">02</span><div><h2 id="modelHeading">选择并验证模型</h2><p>保存模型选择后，发送一次简短请求，确认能够正常回复。</p></div></div>
         <dl class="ai-connection-details">
           <div><dt>已连接的 API</dt><dd id="activeBaseUrl">尚未连接</dd></div>
           <div><dt>当前模型</dt><dd id="activeModel">尚未选择</dd></div>
@@ -87,13 +100,46 @@
             <button id="testModelButton" class="button secondary" type="button">验证当前模型</button>
           </div>
         </fieldset>
-        <p class="ai-help ai-test-help">验证会向当前模型发送一个极短的测试请求，可能产生服务商费用。最多等待约 60 秒；本次测试不上传学习资料。</p>
+        <p class="ai-help ai-test-help" id="testBudgetHelp">验证会发送一个极短请求，可能产生服务商费用。最多等待约 60 秒；本次测试不上传学习资料。</p>
         <div id="testResult" class="ai-test-result" hidden>
           <strong id="testResultHeading">模型验证结果</strong>
           <pre id="testReply"></pre>
         </div>
       </section>
     </div>
+
+    <details class="ai-advanced"><summary>可选：补充服务报价，让费用估算更准确</summary>
+    <section class="ai-panel ai-pricing-panel" aria-labelledby="pricingHeading">
+      <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">＋</span><div><h2 id="pricingHeading">服务报价</h2><p>默认不要求填写价格，也不会因此阻止学习。只有主动启用费用上限时，才需要确认未知报价。这里不填写密钥。</p></div></div>
+      <div class="ai-pricing-grid">
+        <form id="textPriceForm" autocomplete="off">
+          <fieldset id="textPriceFields" class="ai-fields" disabled><legend>文字 AI 报价</legend>
+            <p id="textPriceTarget" class="ai-price-target">连接并选择模型后，设置对应价格。</p>
+            <p id="textPriceStatus" class="ai-help">尚未估价，不影响默认的 AI 使用。</p>
+            <div class="ai-rate-grid"><label for="textInputPrice">输入价格 <small>元 / 百万 tokens</small><input id="textInputPrice" type="number" inputmode="decimal" min="0" step="any" required placeholder="按服务商当前报价填写"></label><label for="textOutputPrice">输出价格 <small>元 / 百万 tokens</small><input id="textOutputPrice" type="number" inputmode="decimal" min="0" step="any" required placeholder="按服务商当前报价填写"></label></div>
+            <label for="textPriceSource">价格依据</label><input id="textPriceSource" type="text" maxlength="300" required placeholder="服务商报价页地址或账单说明">
+            <p class="ai-help">tokens 是服务商计算文本用量的单位。输入按非缓存价保守估算，不扣除缓存优惠。请输入人民币价格；外币报价请折算并留出余量。</p>
+            <label class="ai-check-label" for="textPriceConfirm"><input id="textPriceConfirm" type="checkbox" required><span>我已核对上方 API 地址、模型及当前价格。</span></label>
+            <button id="saveTextPriceButton" class="button primary" type="submit">确认并保存文字报价</button>
+          </fieldset>
+        </form>
+        <form id="speechPriceForm" autocomplete="off">
+          <fieldset id="speechPriceFields" class="ai-fields" disabled><legend>专业语音报价</legend>
+            <p id="speechPriceTarget" class="ai-price-target">为发音诊断设置独立报价。</p>
+            <p id="speechPriceStatus" class="ai-help">尚未估价；未启用限额时不因此阻止语音诊断。</p>
+            <label for="speechUnitPrice">语音服务总价</label><div class="ai-unit-input"><input id="speechUnitPrice" type="number" inputmode="decimal" min="0" step="any" required placeholder="包括所用评测功能的费用"><select id="speechPriceUnit" aria-label="语音报价单位"><option value="hour">元 / 小时</option><option value="minute">元 / 分钟</option></select></div>
+            <label for="speechBillingSeconds">计费时长向上取整 <span class="muted">（秒）</span></label><input id="speechBillingSeconds" type="number" inputmode="numeric" min="1" max="60" step="1" value="60" required><p class="ai-help">按服务商计费规则填写 1–60 秒；不确定时先使用保守的 60 秒。</p>
+            <label for="speechPriceSource">价格依据</label><input id="speechPriceSource" type="text" maxlength="300" required placeholder="资源地区、功能及报价页或账单说明">
+            <p class="ai-help">请核对所用发音评测功能的合计价格，不只填写普通转写价格。录音与本地回听本身不调用收费服务。</p>
+            <label class="ai-check-label" for="speechPriceConfirm"><input id="speechPriceConfirm" type="checkbox" required><span>我已核对当前语音资源与所用功能的总价。</span></label>
+            <button id="saveSpeechPriceButton" class="button primary" type="submit">确认并保存语音报价</button>
+            <p class="ai-help">语音资源与密钥在<a href="口语练习.html">口语练习页</a>配置。无语音资源时可先使用文字 AI。</p>
+          </fieldset>
+        </form>
+      </div>
+      <p class="ai-help ai-ledger-note">报价调整只影响之后的调用。刷新页面、断开模型或重新连接不会清空已记录的费用；本月记录不提供重置按钮。</p>
+    </section>
+    </details>
 
     <div class="ai-service-actions">
       <p id="actionMessage" class="ai-message" role="status" aria-live="polite" aria-atomic="true"></p>

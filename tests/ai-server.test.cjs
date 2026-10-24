@@ -5,6 +5,7 @@ const assert = require('node:assert/strict');
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const os = require('node:os');
 const { createServer, normalizeBaseUrl } = require('../server/server.cjs');
 
 const FAKE_KEY = 'test-only-not-a-real-credential';
@@ -236,9 +237,10 @@ test('DeepSeek verification disables thinking without exposing the credential', 
     verificationBody = JSON.parse(options.body);
     return new Response(JSON.stringify({ choices: [{ message: { content: 'OK' } }] }), { status: 200 });
   };
-  const app = createServer({ fetchImpl: mockFetch });
+  const budgetDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ielts-ai-test-'));
+  const app = createServer({ budgetFilePath: path.join(budgetDir, 'ledger.json'), fetchImpl: mockFetch });
   const base = await listen(app);
-  t.after(() => close(app));
+  t.after(async () => { await close(app); if (path.dirname(budgetDir) === os.tmpdir() && path.basename(budgetDir).startsWith('ielts-ai-test-')) fs.rmSync(budgetDir, { recursive: true, force: true }); });
   const jsonHeaders = { 'Content-Type': 'application/json' };
   await fetch(base + '/api/ai/connect', { method: 'POST', headers: jsonHeaders, body: JSON.stringify({
     baseUrl: 'https://api.deepseek.com', apiKey: FAKE_KEY, preferredModel: 'deepseek-flash',
@@ -269,9 +271,10 @@ test('coach validates input, preserves privacy, and returns non-executable text'
     }
     return new Response(JSON.stringify({ choices: [{ message: { content: '<img src=x onerror=alert(1)>改进建议 ' + FAKE_KEY } }] }));
   };
-  const app = createServer({ fetchImpl: mockFetch, coachTimeoutMs: 100 });
+  const budgetDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ielts-ai-test-'));
+  const app = createServer({ budgetFilePath: path.join(budgetDir, 'ledger.json'), fetchImpl: mockFetch, coachTimeoutMs: 100 });
   const base = await listen(app);
-  t.after(() => close(app));
+  t.after(async () => { await close(app); if (path.dirname(budgetDir) === os.tmpdir() && path.basename(budgetDir).startsWith('ielts-ai-test-')) fs.rmSync(budgetDir, { recursive: true, force: true }); });
   const headers = { 'Content-Type': 'application/json' };
   async function post(endpoint, body, signal) {
     const response = await fetch(base + endpoint, { method: 'POST', headers, body: JSON.stringify(body), signal });

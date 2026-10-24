@@ -1,4 +1,5 @@
 'use strict';
+const { BudgetError } = require('./budget.cjs');
 // Azure short-audio pronunciation REST: see docs/语音评测.md. No credential or audio persistence.
 function checkWav(buffer) {
   if (buffer.length < 46 || buffer.toString('ascii', 0, 4) !== 'RIFF' || buffer.toString('ascii', 8, 12) !== 'WAVE') throw Error('请选择或录制 PCM WAV 音频。');
@@ -30,7 +31,7 @@ function normalizeResult(body) {
     return { word: String(w.Word || '').slice(0, 100), accuracy: score(p.AccuracyScore), error: ['None','Omission','Insertion','Mispronunciation'].includes(p.ErrorType) ? p.ErrorType : 'Unknown', phonemes: (Array.isArray(w.Phonemes) ? w.Phonemes : []).slice(0, 40).map(p => ({ phoneme: String(p.Phoneme || '').slice(0, 40), accuracy: score((p.PronunciationAssessment || p).AccuracyScore) })) };
   }) };
 }
-function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000 } = {}) {
+function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget } = {}) {
   let config = null, busy = false, controller = null;
   const send = (res, status, body) => { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(body)); };
   const status = () => ({ ok: true, configured: Boolean(config), endpoint: config?.endpoint || '', credentialStorage: 'memory', verified: false });
@@ -63,8 +64,9 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000 } = {}) {
         if (typeof b.audio !== 'string' || !/^[A-Za-z0-9+/]+={0,2}$/.test(b.audio) || b.audio.length > 1300000) throw Error('录音格式无效或过大。');
         const audio = Buffer.from(b.audio, 'base64');
         if (audio.toString('base64') !== b.audio) throw Error('录音编码无效。');
-        checkWav(audio);
+        const seconds = checkWav(audio);
         const active = config;
+        const ticket = budget?.reserveSpeech(active, seconds);
         const timer = setTimeout(() => ownController.abort(), timeoutMs);
         const cancel = () => { if (!res.writableEnded) ownController.abort(); }; res.once('close', cancel);
         try {
@@ -81,13 +83,14 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000 } = {}) {
           // Upstream errors may contain credentials. Never forward arbitrary messages.
           const allowed = ['没有识别到清晰的英语朗读，请检查录音后重试。','服务未返回发音评测结果，请检查服务配置。','语音服务返回过大，请缩短参考句。','语音服务返回格式无效。','评测已取消，请重新连接后再试。'];
           throw Error(allowed.includes(error.message) ? error.message : '语音请求失败或超时，请检查连接后重试。');
-        } finally { clearTimeout(timer); res.removeListener('close',cancel); }
+        } finally { clearTimeout(timer); res.removeListener('close',cancel); budget?.settle(ticket); }
       } else send(res,404,{ok:false,error:{code:'NOT_FOUND',message:'语音接口不存在。'}});
-    } catch (error) { if (!res.headersSent && !res.destroyed) send(res,400,{ok:false,error:{code:'SPEECH_REQUEST',message:error.message}}); }
+    } catch (error) { if (!res.headersSent && !res.destroyed) send(res,error instanceof BudgetError ? error.status : 400,{ok:false,error:{code:error instanceof BudgetError ? error.code : 'SPEECH_REQUEST',message:error.message}}); }
     finally { if (ownController) { busy = false; if (controller === ownController) controller = null; } }
     return true;
   }
   handle.close = () => { config = null; controller?.abort(); };
+  handle.containsCredential = text => Boolean(config?.apiKey && text.includes(config.apiKey));
   return handle;
 }
 module.exports = { checkWav, normalizeResult, createSpeechHandler };

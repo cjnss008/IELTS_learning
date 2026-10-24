@@ -3,14 +3,17 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const { createSpeechHandler } = require('./speech.cjs');
+const { createBudget, BudgetError } = require('./budget.cjs');
+const { createSelection, SelectionError, PROMPT_VERSION } = require('./selection.cjs');
 
 const HOST = '127.0.0.1';
 const DEFAULT_PORT = 8765;
 const BODY_LIMIT = 64 * 1024;
 const UPSTREAM_LIMIT = 1024 * 1024;
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', 'localhost', '[::1]']);
-const PRIVATE_SEGMENTS = new Set(['server', 'tests', 'work', 'outputs', 'node_modules']);
+const PRIVATE_SEGMENTS = new Set(['server', 'tests', 'work', 'outputs', 'node_modules', 'private']);
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8',
@@ -180,20 +183,24 @@ function createServer(options = {}) {
   const rootDir = path.resolve(options.rootDir || path.join(__dirname, '..'));
   const rootRealPromise = fs.promises.realpath(rootDir);
   const fetchImpl = options.fetchImpl || globalThis.fetch;
-  const speechHandler = createSpeechHandler({ fetchImpl });
+  const budget = options.budget || createBudget({ filePath: options.budgetFilePath || path.join(rootDir, 'private', 'budget-ledger.json') });
+  const speechHandler = createSpeechHandler({ fetchImpl, budget });
+  const selection = createSelection({ lessons: options.lessons || require('../assets/course-data.js').lessons });
+  const bootId = crypto.randomUUID();
   const modelsTimeoutMs = options.modelsTimeoutMs || 20_000;
   const testTimeoutMs = options.testTimeoutMs || 60_000;
   const coachTimeoutMs = options.coachTimeoutMs || 90_000;
-  let coachBusy = false;
+  let aiBusy = false, activeController = null;
   let connection = null;
   let revision = 0;
   let connectAttempt = 0;
+  const connectionVersion = () => bootId + ':' + revision;
 
   function publicStatus() {
     return connection ? {
       connected: true, baseUrl: connection.baseUrl, model: connection.model,
-      models: connection.models.map(id => ({ id })), credentialStorage: 'memory',
-    } : { connected: false, baseUrl: '', model: null, models: [], credentialStorage: 'memory' };
+      models: connection.models.map(id => ({ id })), credentialStorage: 'memory', connectionVersion: connectionVersion(), selectionPromptVersion: PROMPT_VERSION,
+    } : { connected: false, baseUrl: '', model: null, models: [], credentialStorage: 'memory', connectionVersion: connectionVersion(), selectionPromptVersion: PROMPT_VERSION };
   }
 
   async function upstream(config, endpoint, body, timeoutMs, clientSignal) {
@@ -223,8 +230,61 @@ function createServer(options = {}) {
     }
   }
 
+  async function runText(req, res, input, timeoutMs) {
+    if (!connection) throw new AppError(409, 'NOT_CONNECTED', '请先在 AI 设置连接服务。');
+    if (!connection.model) throw new AppError(409, 'MODEL_REQUIRED', '请先在 AI 设置选择模型。');
+    if (aiBusy) throw new AppError(429, 'COACH_BUSY', '已有 AI 请求正在处理，请等待完成或先取消。');
+    aiBusy = true;
+    const captured = { ...connection }, capturedRevision = revision;
+    const controller = activeController = new AbortController();
+    const cancel = () => { if (!res.writableEnded) controller.abort(); };
+    res.once('close', cancel);
+    let ticket, data;
+    try {
+      ticket = budget.reserveText(captured, input.messages, input.max_tokens);
+      const payload = { ...input, model: captured.model, stream: false };
+      if (new URL(captured.baseUrl).hostname === 'api.deepseek.com') payload.thinking = { type: 'disabled' };
+      data = await upstream(captured, 'chat/completions', payload, timeoutMs, controller.signal);
+      if (capturedRevision !== revision) throw new AppError(409, 'CONNECTION_CHANGED', '请求期间连接设置已改变，请重新提交。');
+      return { captured, data };
+    } finally {
+      res.removeListener('close', cancel); aiBusy = false; if (activeController === controller) activeController = null;
+      budget.settle(ticket, data?.usage);
+    }
+  }
+
   async function handleApi(req, res, pathname) {
     if (req.method === 'GET' && pathname === '/api/ai/status') return sendJson(res, 200, publicStatus());
+    if (req.method === 'GET' && pathname === '/api/budget/status') return sendJson(res, 200, { ok: true, budget: budget.status(connection) });
+    if (req.method === 'POST' && pathname === '/api/budget/config') {
+      const body = await readJson(req), pending = [body];
+      // Inspect decoded strings: JSON escaping must not hide quotes or slashes
+      // in a credential accidentally pasted into a persistent quote field.
+      while (pending.length) {
+        const value = pending.pop();
+        if (typeof value === 'string') {
+          if ((connection?.apiKey && value.includes(connection.apiKey)) || speechHandler.containsCredential(value)) throw new AppError(400, 'INVALID_PRICE', '报价资料不得包含连接密钥。');
+        } else if (value && typeof value === 'object') {
+          for (const [name, child] of Object.entries(value)) pending.push(name, child);
+        }
+      }
+      budget.configure(body);
+      return sendJson(res, 200, { ok: true, budget: budget.status(connection) });
+    }
+    const lessonMatch = /^\/api\/ai\/selection\/lesson\/(\d+)$/.exec(pathname);
+    if (req.method === 'GET' && lessonMatch) return sendJson(res, 200, { ok: true, lesson: selection.lesson(Number(lessonMatch[1])), promptVersion: PROMPT_VERSION });
+    if (req.method === 'POST' && pathname === '/api/ai/selection') {
+      const request = selection.prepare(await readJson(req), connectionVersion());
+      selection.begin(request);
+      try {
+        const { captured, data } = await runText(req, res, { messages: selection.messages(request), max_tokens: 6000 }, coachTimeoutMs);
+        const raw = data?.choices?.[0]?.message?.content;
+        const feedback = plainFeedback(raw, captured.apiKey);
+        const truncated = data?.choices?.[0]?.finish_reason === 'length' || (typeof raw === 'string' && raw.length > 24000);
+        return sendJson(res, 200, { ok: true, feedback, feedbackFormat: 'text', model: captured.model, truncated,
+          ...selection.complete(request, feedback, connectionVersion()), budget: budget.status(connection) });
+      } finally { selection.release(request); }
+    }
 
     if (req.method === 'POST' && pathname === '/api/ai/connect') {
       const body = await readJson(req);
@@ -240,7 +300,7 @@ function createServer(options = {}) {
       if (!models.length) throw new AppError(502, 'NO_MODELS', '服务商没有返回可用模型，请检查地址及模型权限。');
       if (attempt !== connectAttempt) throw new AppError(409, 'CONNECTION_SUPERSEDED', '连接设置已更新，请使用最新结果。');
       connection = { baseUrl, apiKey, models, model: models.includes(preferred) ? preferred : null };
-      revision++;
+      revision++; activeController?.abort(); selection.clear();
       return sendJson(res, 200, {
         ...publicStatus(), preferredModelAvailable: preferred ? models.includes(preferred) : null,
         ...(preferred && !models.includes(preferred) ? { warning: '指定模型未出现在返回列表中，请选择一个可用模型。' } : {}),
@@ -254,27 +314,15 @@ function createServer(options = {}) {
         throw new AppError(400, 'UNKNOWN_MODEL', '请选择当前模型列表中的模型。');
       }
       connection.model = body.model;
-      revision++;
+      revision++; activeController?.abort(); selection.clear();
       return sendJson(res, 200, publicStatus());
     }
 
     if (req.method === 'POST' && pathname === '/api/ai/test') {
       await readJson(req);
-      if (!connection) throw new AppError(409, 'NOT_CONNECTED', '请先连接 API 服务。');
-      if (!connection.model) throw new AppError(409, 'MODEL_REQUIRED', '请先选择一个模型。');
-      const captured = { ...connection };
-      const capturedRevision = revision;
-      const payload = {
-        model: captured.model, messages: [{ role: 'user', content: 'Reply with exactly OK.' }],
-        max_tokens: 64, stream: false,
-      };
-      if (new URL(captured.baseUrl).hostname === 'api.deepseek.com') payload.thinking = { type: 'disabled' };
-      const data = await upstream(captured, 'chat/completions', payload, testTimeoutMs);
-      if (capturedRevision !== revision) throw new AppError(409, 'CONNECTION_CHANGED', '测试期间连接设置已改变，请重新验证。');
+      const { captured, data } = await runText(req, res, { messages: [{ role: 'user', content: 'Reply with exactly OK.' }], max_tokens: 64 }, testTimeoutMs);
       const content = data?.choices?.[0]?.message?.content;
-      if (typeof content !== 'string' || !content.trim()) {
-        throw new AppError(502, 'EMPTY_MODEL_REPLY', '模型未返回可显示的回复，请检查模型能力或稍后重试。');
-      }
+      if (typeof content !== 'string' || !content.trim()) throw new AppError(502, 'EMPTY_MODEL_REPLY', '模型未返回可显示的回复，请检查模型能力或稍后重试。');
       const reply = content.split(captured.apiKey).join('[已隐藏]').trim().slice(0, 500);
       return sendJson(res, 200, { ok: true, model: captured.model, reply });
     }
@@ -282,33 +330,16 @@ function createServer(options = {}) {
     if (req.method === 'DELETE' && pathname === '/api/ai/connection') {
       connection = null;
       revision++;
-      connectAttempt++;
+      connectAttempt++; activeController?.abort(); selection.clear();
       return sendJson(res, 200, publicStatus());
     }
     if (req.method === 'POST' && pathname === '/api/ai/coach') {
       const input = coachRequest(await readJson(req));
-      if (!connection) throw new AppError(409, 'NOT_CONNECTED', '请先在 AI 设置连接服务。');
-      if (!connection.model) throw new AppError(409, 'MODEL_REQUIRED', '请先在 AI 设置选择模型。');
-      if (coachBusy) throw new AppError(429, 'COACH_BUSY', '已有辅导请求正在处理，请等待完成或先取消。');
-      coachBusy = true;
-      const controller = new AbortController();
-      const cancel = () => { if (!res.writableEnded) controller.abort(); };
-      res.once('close', cancel);
-      try {
-        const captured = { ...connection };
-        const capturedRevision = revision;
-        const payload = { model: captured.model, messages: coachMessages(input), max_tokens: 2500, stream: false };
-        if (new URL(captured.baseUrl).hostname === 'api.deepseek.com') payload.thinking = { type: 'disabled' };
-        const data = await upstream(captured, 'chat/completions', payload, coachTimeoutMs, controller.signal);
-        if (capturedRevision !== revision) throw new AppError(409, 'CONNECTION_CHANGED', '辅导期间连接设置已改变，请重新提交。');
-        const feedback = plainFeedback(data?.choices?.[0]?.message?.content, captured.apiKey);
-        const disclaimer = input.mode === 'speaking_text' ? '仅分析口语文字，不评价发音、语音流利度或完整雅思口语分数。' :
-          'AI 意见用于练习，可能出错；分数如有仅为非官方训练估计，不保证考试成绩。';
-        return sendJson(res, 200, { ok: true, mode: input.mode, model: captured.model, feedback, feedbackFormat: 'text', disclaimer });
-      } finally {
-        res.removeListener('close', cancel);
-        coachBusy = false;
-      }
+      const { captured, data } = await runText(req, res, { messages: coachMessages(input), max_tokens: 2500 }, coachTimeoutMs);
+      const feedback = plainFeedback(data?.choices?.[0]?.message?.content, captured.apiKey);
+      const disclaimer = input.mode === 'speaking_text' ? '仅分析口语文字，不评价发音、语音流利度或完整雅思口语分数。' :
+        'AI 意见用于练习，可能出错；分数如有仅为非官方训练估计，不保证考试成绩。';
+      return sendJson(res, 200, { ok: true, mode: input.mode, model: captured.model, feedback, feedbackFormat: 'text', disclaimer });
     }
     throw new AppError(404, 'API_NOT_FOUND', '接口不存在。');
   }
@@ -331,7 +362,7 @@ function createServer(options = {}) {
     try {
       realPath = await fs.promises.realpath(candidate);
       const rootReal = await rootRealPromise;
-      if (!insideRoot(rootReal, realPath)) throw new AppError(403, 'RESOURCE_DENIED', '无法访问此资源。');
+      if (!insideRoot(rootReal, realPath) || path.relative(rootReal, realPath).split(path.sep).some(segment => segment.startsWith('.') || PRIVATE_SEGMENTS.has(segment.toLowerCase()))) throw new AppError(403, 'RESOURCE_DENIED', '无法访问此资源。');
       stat = await fs.promises.stat(realPath);
     } catch (error) {
       if (error instanceof AppError) throw error;
@@ -388,13 +419,13 @@ function createServer(options = {}) {
       else await serveStatic(req, res, rawPath);
     } catch (error) {
       if (res.headersSent || res.destroyed) return res.destroy();
-      const safeError = error instanceof AppError ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
+      const safeError = (error instanceof AppError || error instanceof BudgetError || error instanceof SelectionError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
       sendJson(res, safeError.status, { ok: false, error: { code: safeError.code, message: safeError.message } });
     }
   });
   server.headersTimeout = 10_000;
   server.requestTimeout = 75_000;
-  server.once('close', () => { connection = null; revision++; connectAttempt++; speechHandler.close(); });
+  server.once('close', () => { connection = null; revision++; connectAttempt++; activeController?.abort(); speechHandler.close(); selection.clear(); budget.close(); });
   return server;
 }
 
