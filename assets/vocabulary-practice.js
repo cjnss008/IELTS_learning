@@ -48,7 +48,7 @@
     const incoming = typeof options.draft === 'string' ? JSON.parse(options.draft) : options.draft;
     const version = incoming?.schema === 1 || options.trainingVersion === 1 ? 1 : 2, modes = version === 1 ? LEGACY_MODES : MODES;
     const material = options.material || {}, words = wordsFor(options.words ? {...material,vocabulary:options.words} : material,options);
-    if (!Number.isInteger(options.courseDay || 1) || (options.courseDay || 1) < 1 || (options.courseDay || 1) > 364) throw Error('课程日应为1至364。');
+    if (!Number.isInteger(options.courseDay || 1) || (options.courseDay || 1) < 1 || (options.courseDay || 1) > 365) throw Error('课程日应为1至365。');
     if (!words.length) throw Error('这份材料没有绑定必学词，请选择当天的词汇材料。');
     const state = {schema:version,trainingVersion:version,study:{spellings:{},speaking:{},workIds:{},inputs:{}},restoring:false,id:uniqueId(),materialId:material.id || 'vocabulary',materialVersion:String(material.version || '1'),courseDay:options.courseDay || 1,startedAt:new Date().toISOString(),phase:'learn',round:0,answers:{meaning:{},completion:{},dictation:{}},audio:{},rounds:[],testing:false};
     let restoringRounds = false;
@@ -133,7 +133,7 @@
       if (state.rounds.length !== modes.length || version === 2 && !learningProgress().complete) return null;
       const attempts = state.rounds.flatMap(round => round.attempts), mistakes = attempts.filter(item => !item.correct), correct = attempts.length-mistakes.length;
       const payload = {schema:version,trainingVersion:version,trainingComplete:learningProgress().complete,testPass:mistakes.length === 0,id:state.id,materialId:state.materialId,materialVersion:state.materialVersion,courseDay:state.courseDay,startedAt:state.startedAt,submittedAt:attempts.at(-1).submittedAt,allModesCompleted:true,pass:version === 2 && learningProgress().complete && mistakes.length === 0,correct,total:attempts.length,quantity:words.length,unit:'条',attempts:clone(attempts),mistakes:clone(mistakes)};
-      payload.answer = JSON.stringify({schema:version,trainingVersion:version,trainingComplete:learningProgress().complete,kind:'vocabulary-three-modes',words:words.map(({word,meaning,ipa,example}) => ({word,meaning,ipa,example})),allModesCompleted:true,rounds:state.rounds,...(version === 2 ? {learning:words.map((word,index)=>({word:word.word,spellings:state.study.spellings[index] || [],speaking:(state.study.speaking[index] || []).map(({workId,hash,evidenceId,recordedAt,passed,durationSeconds,result})=>({workId,hash,evidenceId,recordedAt,passed,durationSeconds,result,provider:'Alibaba oral assessment'}))}))} : {})});
+      payload.answer = JSON.stringify({schema:version,trainingVersion:version,trainingComplete:learningProgress().complete,kind:'vocabulary-three-modes',words:words.map(({word,meaning,ipa,example}) => ({word,meaning,ipa,example})),allModesCompleted:true,lexicalMetadata:'words',rounds:state.rounds.map(round=>({...round,attempts:round.attempts.map(({meaning,ipa,example,...attempt})=>attempt)})),...(version === 2 ? {learning:words.map((word,index)=>({word:word.word,spellings:state.study.spellings[index] || [],speaking:(state.study.speaking[index] || []).map(({workId,hash,evidenceId,recordedAt,passed,durationSeconds,result})=>({workId,hash,evidenceId,recordedAt,passed,durationSeconds,result,provider:'Alibaba oral assessment'}))}))} : {})});
       payload.evaluation = {method:'objective',result:version === 1 ? mistakes.length ? 'revise' : 'unverified' : payload.pass ? 'pass' : 'revise',score:correct,maxScore:attempts.length,threshold:1,feedback:(version === 1 ? '旧版练习保留原轮序和原始成绩，未完成新版三写三读训练，不作为新版通过。' : '每个必学词先完成三遍正确英文输入、三次真实跟读评测，再完成补全、中文写英文、听写三轮。')+'按标准英文逐项核对（忽略大小写及首尾空格）。本次 '+correct+'/'+attempts.length+'；同词三轮不等于独立迁移或正式IELTS成绩。'};
       return payload;
     }
@@ -295,7 +295,7 @@
       if (!payload) throw Error('请先完成每个必学词的三轮测试。');
       if (saved) return payload;
       if (savePromise) return savePromise;
-      savePromise = (async () => { await flushMistakes(); check(); if (options.onSubmit) await options.onSubmit(clone(payload)); check(); saved = true; changed(); return payload; })();
+      savePromise = (async () => { await flushMistakes(); check(); if (options.onSubmit) await options.onSubmit(clone(payload)); check(); if(root.IELTSMemory)root.IELTSMemory.capture(clone(payload)); saved = true; changed(); return payload; })();
       try { return await savePromise; } finally { savePromise = null; }
     }
     function speakingContext(index) {

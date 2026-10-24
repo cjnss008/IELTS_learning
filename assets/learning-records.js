@@ -32,7 +32,7 @@
     const result={id:id(input.id),materialId:id(input.materialId,'材料ID'),materialVersion:text(input.materialVersion??'',0,100,'材料版本'),title:text(input.title,1,240,'作品标题'),skill:input.skill,source:text(input.source,1,80,'记录来源'),answer:text(input.answer??'',0,50000,'原始作品'),minutes:number(input.minutes??0,0,1440,'有效分钟'),quantity:number(input.quantity??0,0,100000,'完成数量',true),unit:text(input.unit??'',0,80,'数量单位'),assistance:assistance(input.assistance),kind:input.kind??'original',evaluation:evaluation(input.evaluation),media:media(input.media),notes:text(input.notes??'',0,4000,'作品备注'),exposure:input.exposure??'unknown'};
     if(!SKILLS.includes(result.skill)||!['original','correction','retest'].includes(result.kind)||!['unseen','seen','unknown'].includes(result.exposure))throw Error('作品技能、阶段或曝光状态无效。');
     if(!result.answer.trim()&&!result.media.length)throw Error('作品须有原始答案、文字或录音引用；不能只保存打卡。');
-    if(input.dayNumber!==undefined&&input.dayNumber!==null)result.dayNumber=number(input.dayNumber,1,364,'学习日',true);else result.dayNumber=null;
+    if(input.dayNumber!==undefined&&input.dayNumber!==null)result.dayNumber=number(input.dayNumber,1,365,'学习日',true);else result.dayNumber=null;
     result.taskId=input.taskId??result.skill;if(!SKILLS.includes(result.taskId))throw Error('关联任务无效。');
     result.parentId=input.parentId===undefined||input.parentId===null?null:id(input.parentId,'前一作品ID');
     if(result.parentId===result.id||(result.kind==='original'&&result.parentId)||(result.kind!=='original'&&!result.parentId))throw Error('订正或复测须关联另一份已有作品。');
@@ -140,7 +140,7 @@
   }
   let store=null,connection=null,profileId=null,profileFailure=null;
   try{if(root.document&&root.IELTSProfiles)profileId=root.IELTSProfiles.current().id;}catch(e){profileFailure=e;}
-  function checkProfile(){if(profileFailure)throw profileFailure;if(root.IELTSProfiles){const active=root.IELTSProfiles.current().id;if(profileId===null)profileId=active;if(active!==profileId)throw Error('档案已切换，请刷新后保存作品。');}}
+  function checkProfile(){root.IELTSProfiles?.assertFresh?.();if(profileFailure)throw profileFailure;if(root.IELTSProfiles){const active=root.IELTSProfiles.current().id;if(profileId===null)profileId=active;if(active!==profileId)throw Error('档案已切换，请刷新后保存作品。');}}
   function channelName(){return root.IELTSProfiles?root.IELTSProfiles.scopeKey(KEY):KEY;}
   function notify(record){const detail={profileId,id:record?.id||null,dayNumber:record?.dayNumber||null};root.dispatchEvent?.(new CustomEvent(EVENT,{detail}));try{const channel=new BroadcastChannel(channelName());channel.postMessage(detail);channel.close();}catch(_){}}
   function browserStore(){
@@ -151,11 +151,12 @@
     store=createStore(adapter,{notify});return store;
   }
   function currentDay(){if(!root.IELTSProfiles)return null;const raw=root.IELTSProfiles.storage().getItem('ielts52-daily-plan-v1');if(raw===null)return null;let plan;try{plan=JSON.parse(raw);}catch{throw Error('日程记录损坏，请先恢复后再自动关联作品。');}if(typeof plan.startDate!=='string'||!/^\d{4}-\d\d-\d\d$/.test(plan.startDate))throw Error('日程开课日期无效。');const start=Date.parse(plan.startDate+'T00:00:00Z');if(!Number.isFinite(start)||new Date(start).toISOString().slice(0,10)!==plan.startDate)throw Error('日程开课日期无效。');const date=new Date(),today=Date.UTC(date.getFullYear(),date.getMonth(),date.getDate());return Math.floor((today-start)/86400000)+1;}
-  function autoLink(input){const result={...input},day=currentDay();if(result.dayNumber===undefined)result.dayNumber=day!==null&&day>=1&&day<=364?day:null;if(result.dayNumber!==null&&day!==null&&result.dayNumber>day)throw Error('未来日程仅供预览；提前练习请关联实际学习日。');return result;}
+  function autoLink(input){const result={...input},day=currentDay();if(result.dayNumber===undefined)result.dayNumber=day!==null&&day>=1&&day<=365?day:null;if(result.dayNumber!==null&&day!==null&&result.dayNumber>day)throw Error('未来日程仅供预览；提前练习请关联实际学习日。');return result;}
   if(root.addEventListener&&typeof root.BroadcastChannel==='function'){try{const channel=new root.BroadcastChannel(channelName());channel.onmessage=event=>{if(event.data?.profileId===profileId)root.dispatchEvent(new CustomEvent(EVENT,{detail:{...event.data,external:true}}));};}catch(_){}}
+  async function durable(){if(root.document&&!root.IELTSProfiles?.isPreview?.()&&root.IELTSUserData?.syncNow){try{await root.IELTSUserData.syncNow({profileId:profileId||root.IELTSProfiles?.current?.().id||'legacy'});}catch(error){error.browserCached=true;throw error;}}}
   async function captureRecord(record,context){if(root.IELTSMistakes)await root.IELTSMistakes.captureRecord(record,context);return record;}
-  async function record(input,context={}){const result=await browserStore().record(autoLink(input));await captureRecord(result.record,context);return result;}
-  async function update(recordId,patch,key,context={}){return captureRecord(await browserStore().update(recordId,patch,key),context);}
-  async function importState(value,options){const result=await browserStore().importState(value,options);if(root.IELTSMistakes)await root.IELTSMistakes.syncRecords(await browserStore().list());return result;}
+  async function record(input,context={}){const result=await browserStore().record(autoLink(input));await captureRecord(result.record,context);await durable();return result;}
+  async function update(recordId,patch,key,context={}){const record=await captureRecord(await browserStore().update(recordId,patch,key),context);await durable();return record;}
+  async function importState(value,options){const result=await browserStore().importState(value,options);if(root.IELTSMistakes)await root.IELTSMistakes.syncRecords(await browserStore().list());await durable();return result;}
   return Object.freeze({KEY,EVENT,makeId,newState,parseState,cleanInput,put,updateState,mergeStates,status,summary,summaries,createMemoryStore,createStore,currentDay,record,update,list:filter=>browserStore().list(filter),forDay:day=>browserStore().list({dayNumber:day}),exportState:()=>browserStore().exportState(),exportRawState:()=>browserStore().exportRawState(),importState});
 });

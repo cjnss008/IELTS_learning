@@ -2,7 +2,7 @@
   'use strict';const B=IELTSBackup,R=IELTSRecords,P=IELTSProfiles,$=id=>document.getElementById(id);let candidate=null,store,profile;
   P.mount($('profilePanel'));
   try{store=P.storage();profile=P.current();}catch(error){$('backupStatus').textContent='档案暂不可读取，原记录已保留：'+error.message;document.querySelectorAll('button,input').forEach(el=>el.disabled=true);return;}
-  const preview=P.isPreview();if(preview)$('backupStatus').textContent='预览模式：仅处理独立的临时练习档案。';
+  const preview=P.isPreview();if(preview){$('backupStatus').textContent='预览模式：仅处理独立的临时练习档案。';for(const a of document.querySelectorAll('a[href]')){const url=new URL(a.href,location.href);if(url.origin===location.origin&&/\.html$/.test(url.pathname)){url.searchParams.set('preview','1');a.href=url.href;}}}
   function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function assertProfile(){if(P.current().id!==profile.id)throw Error('档案已切换，请刷新后操作；本页不会写入其他人的档案。');}
   async function inventory(){

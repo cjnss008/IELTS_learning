@@ -10,7 +10,8 @@
   function makeId(){return'p-'+(root.crypto?.randomUUID?root.crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2));}
   function createManager(storage,options={}){
     if(!storage||typeof storage.getItem!=='function')throw Error('浏览器存储不可用。');
-    const preview=Boolean(options.preview),notify=options.notify||(()=>{}),idFactory=options.idFactory||makeId;
+    const preview=Boolean(options.preview),userData=options.userData||(!preview?root.IELTSUserData:null),notify=options.notify||(()=>{}),idFactory=options.idFactory||makeId;
+    if(!preview)userData?.assertReady?.();
     const registryKey=preview?'ielts52-profiles-preview-v1':KEY;
     const profilePrefix=preview?registryKey+':profile:':PREFIX;
     const legacy=()=>({id:LEGACY,name:'我的学习档案（原记录）',createdAt:'2026-01-01T00:00:00.000Z'});
@@ -21,20 +22,21 @@
       return profiles.sort((a,b)=>a.id===LEGACY?-1:b.id===LEGACY?1:a.createdAt.localeCompare(b.createdAt));
     }
     function current(){const raw=storage.getItem(registryKey),id=raw===null?LEGACY:parseRegistry(raw).activeId;const p=list().find(p=>p.id===id);if(!p)throw Error('当前档案不存在，已保留原记录。');return p;}
-    function create(label){const profiles=list();if(profiles.length>=20)throw Error('最多创建 20 个本地档案。');const p={id:idFactory(),name:name(label),createdAt:new Date().toISOString()};parseProfile(p);if(storage.getItem(profilePrefix+p.id)!==null)throw Error('档案身份重复，请重试。');storage.setItem(profilePrefix+p.id,JSON.stringify(p));notify({type:'created',profile:p});return p;}
-    function activate(id){const p=list().find(p=>p.id===id);if(!p)throw Error('请选择存在的档案。');storage.setItem(registryKey,JSON.stringify({schemaVersion:1,activeId:id}));notify({type:'activated',profile:p});return p;}
-    function rename(label){const p={...current(),name:name(label)};storage.setItem(profilePrefix+p.id,JSON.stringify(p));notify({type:'renamed',profile:p});return p;}
+    function create(label){if(!preview)userData?.assertReady?.();const profiles=list();if(profiles.length>=20)throw Error('最多创建 20 个本地档案。');const p={id:idFactory(),name:name(label),createdAt:new Date().toISOString()};parseProfile(p);if(storage.getItem(profilePrefix+p.id)!==null)throw Error('档案身份重复，请重试。');storage.setItem(profilePrefix+p.id,JSON.stringify(p));notify({type:'created',profile:p});return p;}
+    function activate(id){if(!preview)userData?.assertWritable?.(id);const p=list().find(p=>p.id===id);if(!p)throw Error('请选择存在的档案。');storage.setItem(registryKey,JSON.stringify({schemaVersion:1,activeId:id}));notify({type:'activated',profile:p});return p;}
+    function rename(label){if(!preview)userData?.assertWritable?.(current().id);const p={...current(),name:name(label)};storage.setItem(profilePrefix+p.id,JSON.stringify(p));notify({type:'renamed',profile:p});return p;}
     function scopeKey(base,id=current().id){if(typeof base!=='string'||!base||base.length>200||!validId(id))throw Error('学习记录键无效。');return(preview?'ielts52-preview:':'')+(id===LEGACY?base:'ielts52-profile:'+id+':'+base);}
     function view(){
-      const captured=current().id;const map=base=>scopeKey(base,captured);
-      function check(){if(current().id!==captured)throw Error('学习档案已在另一页切换，请刷新后继续；当前内容尚未写入其他档案。');}
+      const captured=current().id;const map=base=>scopeKey(base,captured),generation=storage.getItem(map('ielts52-data-generation-v1'));
+      function check(){if(!preview)userData?.assertWritable?.(captured);if(String(storage.getItem(map('ielts52-data-generation-v1'))||'').startsWith('busy:'))throw Error('学习档案正在清理或恢复，请到备份中心完成中断恢复后再继续。');if(current().id!==captured)throw Error('学习档案已在另一页切换，请刷新后继续；当前内容尚未写入其他档案。');if(storage.getItem(map('ielts52-data-generation-v1'))!==generation)throw Error('学习记录已重置或恢复，请刷新后继续；旧页面不会写回旧进度。');}
       function keys(){const result=[];for(let i=0;i<storage.length;i++){const k=storage.key(i);if(captured===LEGACY&&!preview){if(k?.startsWith('ielts')&&!k.startsWith('ielts52-profile:')&&!k.startsWith(KEY)&&!k.startsWith('ielts52-preview:'))result.push(k);}else{const marker=(preview?'ielts52-preview:':'')+(captured===LEGACY?'':'ielts52-profile:'+captured+':');if(k?.startsWith(marker))result.push(k.slice(marker.length));}}return result;}
       return{profileId:captured,get length(){return keys().length;},getItem:key=>storage.getItem(map(key)),setItem(key,value){check();storage.setItem(map(key),String(value));},removeItem(key){check();storage.removeItem(map(key));},key:index=>keys()[index]??null};
     }
     return{KEY:registryKey,current,list,create,activate,rename,scopeKey,storage:view,isPreview:preview,parseProfile,parseRegistry};
   }
-  let manager=null,loadedId=null;
-  function runtime(){if(!manager){const preview=Boolean(root.location&&new URLSearchParams(root.location.search).get('preview')==='1');manager=createManager(preview?root.sessionStorage:root.localStorage,{preview,notify:detail=>root.dispatchEvent?.(new CustomEvent('ielts:profile-changed',{detail}))});loadedId=manager.current().id;}return manager;}
+  let manager=null,loadedId=null,loadedGeneration;
+  function runtime(){if(!manager){const preview=Boolean(root.location&&new URLSearchParams(root.location.search).get('preview')==='1');manager=createManager(preview?root.sessionStorage:root.localStorage,{preview,notify:detail=>root.dispatchEvent?.(new CustomEvent('ielts:profile-changed',{detail}))});loadedId=manager.current().id;loadedGeneration=manager.storage().getItem('ielts52-data-generation-v1');}return manager;}
+  function assertFresh(){const m=runtime();if(String(m.storage().getItem('ielts52-data-generation-v1')||'').startsWith('busy:'))throw Error('学习档案正在清理或恢复，请到备份中心完成中断恢复后再继续。');if(m.current().id!==loadedId||m.storage().getItem('ielts52-data-generation-v1')!==loadedGeneration)throw Error('学习档案已切换、清空或恢复，请刷新后继续。');}
   function mount(host){
     if(!host||!root.document)return;
     host.replaceChildren();const doc=root.document;
@@ -46,10 +48,11 @@
     const note=doc.createElement('p');note.setAttribute('role','status');note.style.cssText='font-size:12px;color:#60736a;margin:8px 0';
     const row=doc.createElement('div');row.style.cssText='display:flex;align-items:center;flex-wrap:wrap;gap:10px';row.append(title,select,switchButton,input,createButton);host.append(row,note);
     try{const m=runtime();m.list().forEach(p=>{const option=doc.createElement('option');option.value=p.id;option.textContent=p.name;select.append(option);});select.value=m.current().id;note.textContent='原记录保留在默认档案。新档案独立保存学习记录；同一浏览器档案不等于账号级隐私保护。切换前请保存正在编辑的作品。';
-      switchButton.onclick=()=>{try{m.activate(select.value);root.location.reload();}catch(e){note.textContent=e.message;}};
-      createButton.onclick=()=>{try{const p=m.create(input.value);m.activate(p.id);root.location.reload();}catch(e){note.textContent=e.message;}};
+      switchButton.onclick=async()=>{try{m.activate(select.value);if(!m.isPreview)await root.IELTSUserData?.syncNow?.({profileId:select.value});root.location.reload();}catch(e){note.textContent=e.message;}};
+      createButton.onclick=async()=>{try{const p=m.create(input.value);m.activate(p.id);if(!m.isPreview)await root.IELTSUserData?.syncNow?.({profileId:p.id});root.location.reload();}catch(e){note.textContent=e.message;}};
     }catch(e){note.textContent='档案未能读取：'+e.message;select.disabled=true;switchButton.disabled=true;createButton.disabled=true;}
   }
   if(root.addEventListener){root.addEventListener('storage',event=>{if(event.key===KEY||event.key==='ielts52-profiles-preview-v1'){try{const p=runtime().current();root.dispatchEvent(new CustomEvent('ielts:profile-changed',{detail:{type:'external',profile:p}}));}catch(_){}}});root.addEventListener('ielts:profile-changed',event=>{if(!loadedId||event.detail?.profile?.id===loadedId||!root.document?.body||root.document.getElementById('profileChangedNotice'))return;const box=root.document.createElement('div');box.id='profileChangedNotice';box.setAttribute('role','alert');box.style.cssText='position:fixed;top:0;left:0;right:0;z-index:99999;padding:15px;background:#fff0d1;color:#6e4416;text-align:center';box.textContent='学习档案已切换。请先保留当前未保存的内容，再刷新页面继续。 ';const button=root.document.createElement('button');button.textContent='刷新到当前档案';button.onclick=()=>root.location.reload();box.append(button);root.document.body.append(box);});}
-  return Object.freeze({KEY,LEGACY,createManager,parseProfile,parseRegistry,current:()=>runtime().current(),list:()=>runtime().list(),create:n=>runtime().create(n),activate:id=>runtime().activate(id),rename:n=>runtime().rename(n),storage:()=>runtime().storage(),scopeKey:key=>runtime().scopeKey(key),isPreview:()=>runtime().isPreview,mount});
+  if(root.addEventListener)root.addEventListener('storage',event=>{try{if(manager&&event.key===manager.scopeKey('ielts52-data-generation-v1')&&root.document?.body&&!root.document.getElementById('profileGenerationNotice')){const box=root.document.createElement('div');box.id='profileGenerationNotice';box.setAttribute('role','alert');box.style.cssText='position:fixed;top:0;left:0;right:0;z-index:99999;padding:15px;background:#fff0d1;color:#6e4416;text-align:center';box.textContent='学习记录正在另一页清理或恢复。当前页暂停写入；请先保留尚未保存的内容，再刷新。 ';const button=root.document.createElement('button');button.textContent='刷新记录';button.onclick=()=>root.location.reload();box.append(button);root.document.body.append(box);}}catch(_){}});
+  return Object.freeze({KEY,LEGACY,createManager,parseProfile,parseRegistry,assertFresh,current:()=>runtime().current(),list:()=>runtime().list(),create:n=>runtime().create(n),activate:id=>runtime().activate(id),rename:n=>runtime().rename(n),storage:()=>runtime().storage(),scopeKey:key=>runtime().scopeKey(key),isPreview:()=>runtime().isPreview,mount});
 });

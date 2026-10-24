@@ -193,3 +193,12 @@ test('real course wrapper with schema 1 and trainingSchema 2 retains v2 validati
  assert.equal(wrapped.schema,1);assert.equal(wrapped.trainingVersion,2);assert.equal(V.verifyTrainingArtifact(wrapped,mat).submitted,true);assert.equal(V.verifyTrainingArtifact(wrapped,mat).mastered,true);
  assert.equal(V.verifyTrainingArtifact({...wrapped,trainingVersion:1,trainingSchema:1},mat).submitted,false);assert.equal(V.verifyTrainingArtifact({...wrapped,trainingComplete:false},mat).submitted,false);
 });
+
+
+test('compact vocabulary originals retain all answers and restore word context into the unified error book',()=>{
+ const session=V.createSession({material:mat});learnAll(session);session.begin();for(let i=0;i<3;i++){finishRound(session,['wrong','wrong','wrong']);if(i<2)session.next();}
+ const payload=session.getSubmission(),raw=JSON.parse(payload.answer),book=require('../assets/mistake-book.js');
+ const mistakes=book.captureInputs({dayNumber:1,source:'vocabulary-practice',skill:'vocabulary',materialId:mat.id,answer:payload.answer});
+ assert.equal(raw.words.length,3);assert.equal(raw.learning[0].speaking.length,3);assert.equal(mistakes.length,9);
+ for(const mistake of mistakes){const target=mat.vocabulary.find(w=>w.word===mistake.question.answers[0]);assert.equal(mistake.originalAnswer,'wrong');assert.equal(mistake.question.explanation,target.meaning);assert.equal(mistake.question.evidence,target.example);}
+});
