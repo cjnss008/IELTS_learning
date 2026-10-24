@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>写作与 AI 辅导 · IELTS 52 周学习计划</title>
+  <link rel="stylesheet" href="assets/daily-plan.css">
+  <link rel="stylesheet" href="assets/ai-coach.css">
+  <script src="assets/ai-coach.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="每日学习计划.html"><span class="brand-icon" aria-hidden="true">52</span><span>IELTS LEARNING<small>写下来，再改好一点</small></span></a>
+    <nav aria-label="主要导航"><a href="每日学习计划.html">每日计划</a><a href="开始学习.html">课文学习</a><a href="写作与AI辅导.html" aria-current="page">写作与 AI 辅导</a><a href="AI设置.html">AI 设置</a></nav>
+  </header>
+  <main class="page-shell coach-shell">
+    <div class="hero">
+      <div><p class="eyebrow">WRITE · REVIEW · REVISE</p><h1>让每次修改都有依据</h1><p class="hero-copy">先独立完成，再读反馈、做修改。用具体错误记录自己的进步。</p></div>
+      <aside class="coach-connection"><span>当前 AI 连接</span><strong id="coachConnection">正在检查…</strong><p id="coachProvider">草稿可离线保存，AI 辅导需本地服务。</p><div class="toolbar"><a href="AI设置.html">打开 AI 设置 →</a><button id="refreshCoach" class="button secondary" type="button">刷新</button></div></aside>
+    </div>
+    <noscript><p class="notice">启用 JavaScript 后可使用题库、计时和草稿保存。</p></noscript>
+    <p class="notice" id="coachPreview" hidden>预览模式：草稿仅保存在此标签页的临时存储，不改动正式学习记录。</p>
+    <p class="notice" id="coachOffline" hidden>通过学习包中的“启动学习.cmd”打开本地服务后可使用 AI。当前仍可离线写作；file:// 与本地服务是不同浏览器存储空间，请先导出需要迁移的草稿。</p>
+    <div class="coach-layout">
+      <section class="coach-panel coach-workspace" aria-labelledby="practiceHeading">
+        <div class="coach-section-title"><span class="coach-step">01</span><div><h2 id="practiceHeading">独立练习</h2><p>写作题全部为原创练习；Task 1 数据为明确列出的模拟数据。</p></div></div>
+        <div class="coach-controls">
+          <div><label for="coachMode">练习模式</label><select id="coachMode"><option value="writing">Academic 写作</option><option value="grammar">语法解释与纠错</option><option value="speaking_text">口语回答文字反馈</option></select></div>
+          <div><label for="coachLevel">当前学习阶段</label><select id="coachLevel"><option value="A0">A0 · 零基础</option><option value="A1">A1 · 入门</option><option value="A2">A2 · 基础</option><option value="B1">B1 · 进阶</option><option value="B2">B2 · 独立表达</option><option value="C1">C1 · 熟练</option><option value="C2">C2 · 精通</option></select></div>
+        </div>
+        <div id="writingOptions" class="coach-controls">
+          <div><label for="writingTask">写作类型</label><select id="writingTask"><option value="academic_task1">Task 1 · 数据描述 · 20 分钟</option><option value="academic_task2">Task 2 · 议论文 · 40 分钟</option></select></div>
+          <div><label for="questionSelect">原创题目</label><select id="questionSelect"></select></div>
+        </div>
+        <div class="coach-question" id="questionBox"><p class="eyebrow" id="questionTag">ORIGINAL PRACTICE</p><h3 id="questionTitle"></h3><p id="questionPrompt"></p><div id="questionData" class="coach-table-wrap"></div><p class="coach-help" id="questionRequirement"></p></div>
+        <div id="customContext" hidden><label for="contextPrompt">题目或希望解释的问题（可选）</label><textarea id="contextPrompt" rows="3" maxlength="3000" placeholder="例如：请解释现在完成时和一般过去时的区别。"></textarea></div>
+        <p class="notice coach-speaking-notice" id="speakingNotice" hidden>这里只分析文字中的词汇、语法和内容展开。没有音频，不能评价发音、语音流利度或完整雅思口语分数。</p>
+        <div class="coach-editor-heading"><label for="coachDraft" id="draftLabel">你的作文</label><div class="coach-timer" id="timerBox"><output id="timerClock" aria-label="剩余练习时间">20:00</output><button id="timerToggle" type="button" class="button secondary">开始计时</button><button id="timerReset" type="button" class="button secondary">重置</button></div></div>
+        <textarea id="coachDraft" class="coach-draft" rows="15" maxlength="10000" spellcheck="true" lang="en" placeholder="先独立写下你的答案。保存草稿不需要连接 AI。"></textarea>
+        <div class="coach-draft-meta"><span id="wordCount">0 词</span><span id="draftSaved" role="status">草稿保存在此浏览器</span></div>
+        <p class="coach-help" id="lengthHint">Task 1 至少 150 词；字数按英文词及数字估算。</p>
+        <div class="toolbar coach-local-actions"><button id="downloadDraft" class="button secondary" type="button">导出练习记录</button><button id="clearDraft" class="button secondary" type="button">清除此题草稿</button></div>
+      </section>
+      <aside class="coach-panel coach-feedback-panel" aria-labelledby="feedbackHeading">
+        <div class="coach-section-title"><span class="coach-step">02</span><div><h2 id="feedbackHeading">获得反馈，再做修改</h2><p>AI 可能出错；以题目数据和可靠语法规则核对建议。</p></div></div>
+        <div class="coach-consent"><strong>本次会发送什么</strong><p id="sendDisclosure">点击下方按钮，将把当前题目、学习阶段和输入内容发送到你在 AI 设置中选择的 API 服务。服务商可能收费并按其规则处理内容。</p><p>本地服务不记录或保存学习内容。此页面只在你点击时发送，不会自动上传。</p></div>
+        <button id="sendCoach" class="button primary coach-submit" type="button" disabled>发送当前内容，获取反馈</button>
+        <button id="cancelCoach" class="button secondary coach-submit" type="button" hidden>取消本次请求</button>
+        <p id="coachMessage" class="coach-message" role="status" aria-live="polite"></p>
+        <div id="feedbackEmpty" class="coach-empty"><span aria-hidden="true">✎</span><p>先完成一份独立答案。</p><small>反馈后优先修改 3 个问题，再写下一篇。</small></div>
+        <div id="feedbackResult" hidden><p class="coach-feedback-meta" id="feedbackMeta"></p><p class="notice" id="feedbackDisclaimer"></p><pre id="coachFeedback" class="coach-feedback" tabindex="0"></pre></div>
+        <div class="coach-checklist"><h3>修改检查</h3><ul><li>是否真正回答了题目？</li><li>段落是否有清晰主旨与证据？</li><li>是否理解并能独立重写改动的句子？</li><li>Task 1 比较是否忠于表中的数据？</li></ul></div>
+      </aside>
+    </div>
+    <section id="revisionSection" class="coach-panel coach-revision" hidden aria-labelledby="revisionHeading">
+      <div class="coach-section-title"><span class="coach-step">03</span><div><h2 id="revisionHeading">把修改前后放在一起</h2><p id="revisionSummary">收到反馈后，直接在上方编辑区修改。</p></div></div>
+      <div class="coach-compare"><div><h3>最近一次提交</h3><pre id="beforeDraft"></pre></div><div><h3>当前草稿</h3><pre id="afterDraft"></pre></div></div>
+    </section>
+    <footer class="coach-footnote">目标：52 周逐步提升到 Academic 四项各 6.5，训练参考 7.0。完成时长、题量或获得 AI 分数都不等于考试达标保证。定期计时模考与合格评阅同样必要。</footer>
+  </main>
+</body>
+</html>
