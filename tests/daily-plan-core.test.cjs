@@ -180,3 +180,22 @@ test('浏览器直接script加载无需Node、DOM或构建步骤', () => {
   assert.equal(context.IELTSPlanCore.COURSE_DAYS, 364);
   assert.equal(context.IELTSPlanCore.dayForDate('2026-10-24', '2026-10-25'), 2);
 });
+
+test('完整写作保留首稿与订正轮换，常规任务合计48组首稿且每日仍360分钟', () => {
+  const content = fixtureContent();
+  let totalFirstDrafts = 0;
+  for (let week = 21; week <= 52; week++) {
+    const plans = core.getWeekSchedule(week, content).slice(0, 6);
+    const writing = plans.map(plan => plan.tasks.find(task => task.id === 'writing'));
+    const firstDrafts = writing.filter(task => task.unit === '份首稿');
+    assert.equal(firstDrafts.length, week <= 36 ? 2 : 4);
+    assert.equal(firstDrafts.filter(task => task.title.includes('Task 1')).length, week <= 36 ? 1 : 2);
+    assert.equal(firstDrafts.filter(task => task.title.includes('Task 2')).length, week <= 36 ? 1 : 2);
+    assert.ok(writing.some(task => task.unit === '份订正稿'));
+    assert.ok(writing.every(task => task.minutes === 75));
+    assert.ok(plans.every(plan => plan.totalMinutes === 360));
+    totalFirstDrafts += firstDrafts.length;
+  }
+  assert.equal(totalFirstDrafts, 96);
+  assert.equal(core.buildDay(1, content).tasks.find(task => task.id === 'writing').unit, '个完整句');
+});

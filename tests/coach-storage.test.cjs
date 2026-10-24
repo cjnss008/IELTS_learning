@@ -54,6 +54,7 @@ test('preview mode only saves into isolated session storage', () => {
 });
 test('separate tabs merge different questions and stop on same-question conflicts', () => {
   const storage = area(), a = browser(storage), b = browser(storage);
+  a.select('coachMode', 'writing'); b.select('coachMode', 'writing');
   b.select('questionSelect', 'courses'); b.type('Answer for courses.');
   a.type('Answer for transport.');
   let stored = JSON.parse(storage.getItem(KEY));
@@ -72,4 +73,18 @@ test('separate tabs merge different questions and stop on same-question conflict
   d.select('questionSelect', 'courses');
   assert.equal(d.get('questionSelect').value, 'transport');
   assert.equal(d.get('coachDraft').value, 'Conflicting transport revision from tab D.');
+});
+
+test('new beginners start with grammar while existing writing choices and drafts remain accessible', () => {
+  const starter = browser();
+  assert.equal(starter.get('coachMode').value, 'grammar');
+  assert.equal(starter.get('coachLevel').value, 'A0');
+  assert.equal(starter.local.getItem(KEY), null);
+  const oldDraft = { drafts: { 'writing:academic_task1:transport': { text: 'Existing answer.' } } };
+  const legacy = browser(area({ [KEY]: JSON.stringify(oldDraft) }));
+  assert.equal(legacy.get('coachMode').value, 'writing');
+  assert.equal(legacy.get('coachDraft').value, 'Existing answer.');
+  const chosen = browser(area({ [KEY]: JSON.stringify({ mode: 'speaking_text', level: 'B1', drafts: {} }) }));
+  assert.equal(chosen.get('coachMode').value, 'speaking_text');
+  assert.equal(chosen.get('coachLevel').value, 'B1');
 });

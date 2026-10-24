@@ -218,7 +218,7 @@
       else message(error.message || '无法获取反馈，请检查连接。', 'error');
     } finally { clearTimeout(timeout); controller = null; setBusy(false); }
   }
-  $('coachMode').value = ['writing', 'grammar', 'speaking_text'].includes(stored.mode) ? stored.mode : 'writing';
+  $('coachMode').value = ['writing', 'grammar', 'speaking_text'].includes(stored.mode) ? stored.mode : (Object.keys(drafts).some(key => key.startsWith('writing:')) ? 'writing' : 'grammar');
   $('coachLevel').value = levels.includes(stored.level) ? stored.level : 'A0';
   $('writingTask').value = Object.hasOwn(questions, stored.task) ? stored.task : 'academic_task1';
   renderQuestionOptions(stored.question); loadPractice();

@@ -77,7 +77,7 @@ function browser(options = {}) {
   const context = {
     document: { getElementById: get, createElement: tag => new Element(tag, tag === 'audio') },
     IELTSCourse: { lessons: [{ day: 1, cn: '测试课', text: 'This is a short reading sentence. Another sentence follows.' }] },
-    IELTSSpeakingAudio: audio, location: { protocol: 'http:', hostname: '127.0.0.1', search: '?day=1' },
+    IELTSSpeakingAudio: audio, location: { protocol: 'http:', hostname: '127.0.0.1', search: options.search ?? '?day=1' },
     isSecureContext: true, AudioContext, OfflineAudioContext: OfflineContext, MediaRecorder: Recorder,
     navigator: { mediaDevices: { getUserMedia: async () => {
       const track = { stopped: false, stop() { this.stopped = true; } };
@@ -185,4 +185,13 @@ test('switching cancels pending microphone permission and releases imported meta
   assert.equal(page.hasTimeout(7000), false);
   assert.equal(page.get('playbackSection').hidden, true);
   page.pagehide();
+});
+
+test('opening without a course link starts with a short beginner reference, while deep links retain their lesson', () => {
+  const starter = browser({ search: '' });
+  assert.equal(starter.get('speakingLesson').value, 'foundation');
+  assert.equal(starter.get('referenceText').value, 'Hello. My name is Lin.');
+  const linked = browser({ search: '?day=1' });
+  assert.equal(linked.get('speakingLesson').value, '1');
+  assert.equal(linked.get('referenceText').value, 'This is a short reading sentence.');
 });

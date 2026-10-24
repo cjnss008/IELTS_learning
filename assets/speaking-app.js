@@ -7,7 +7,9 @@
   const AudioContextClass = window.AudioContext || window.webkitAudioContext;
   const OfflineContextClass = window.OfflineAudioContext || window.webkitOfflineAudioContext;
   const canRecord = Boolean(window.isSecureContext && navigator.mediaDevices?.getUserMedia && window.MediaRecorder && AudioContextClass && OfflineContextClass);
+  const foundationSentences = ['Hello. My name is Lin.', 'I am learning English.', 'I live in a city.', 'I work from home.', 'I study every day.', 'This is my book.', 'I have a question.', 'Please say that again.', 'I do not understand.', 'Thank you for your help.'];
   const freePrompts = {
+    foundation: '零基础：先说 2–3 句，不要求说满一分钟。\n1. Hello. My name is …（你好，我叫……）\n2. I live in …（我住在……）\n3. I am learning English.（我正在学习英语。）\n\n用自己的信息替换省略号；说完回听，再遮住示例试一次。',
     part1: '1. What do you enjoy about the place where you live?\n2. How do you usually organise your study time?\n3. Do you prefer learning alone or with other people? Why?\n\n每次选一道题，用直接回答 + 一个细节练习。',
     part2: 'Describe a skill you would like to learn.\nYou should say:\n• what the skill is\n• why you want to learn it\n• how you would practise it\nand explain how it could change your daily life.\n\n先准备 1 分钟，再连续陈述 1–2 分钟。本页支持最长 3 分钟录音，无需拆段。',
     part3: '1. Why do some adults find it difficult to continue learning?\n2. How can communities make learning more accessible?\n3. Should employers give workers time to learn new skills?\n\n每次选一道，用观点 + 理由 + 例子展开，不背整段答案。',
@@ -87,7 +89,7 @@
   }
   function renderSentences() {
     const lesson = lessons.find(item => String(item.day) === $('speakingLesson').value);
-    sentences = splitSentences(lesson?.text || '');
+    sentences = $('speakingLesson').value === 'foundation' ? foundationSentences.slice() : splitSentences(lesson?.text || '');
     $('speakingSentence').replaceChildren();
     sentences.forEach((sentence, i) => {
       const option = document.createElement('option'); option.value = String(i);
@@ -268,10 +270,11 @@
       else note('speechMessage', error.message, 'error');
     } finally { clearTimeout(timer); requestController = null; serviceBusy = false; controls(); }
   }
+  const starterOption = document.createElement('option'); starterOption.value = 'foundation'; starterOption.textContent = '零基础 · 10 个生活短句'; $('speakingLesson').append(starterOption);
   lessons.forEach(lesson => { const option = document.createElement('option'); option.value = String(lesson.day); option.textContent = '第 ' + lesson.day + ' 篇 · ' + lesson.cn; $('speakingLesson').append(option); });
-  const day = Number(new URLSearchParams(location.search).get('day') || 1);
+  const day = Number(new URLSearchParams(location.search).get('day') || 0);
   if (lessons.some(lesson => lesson.day === day)) $('speakingLesson').value = String(day);
-  renderSentences(); $('freePrompt').textContent = freePrompts.part1;
+  renderSentences(); $('freePrompt').textContent = freePrompts[$('speakingPart').value] || freePrompts.foundation;
   $('recordSupport').textContent = canRecord ? '点击开始后浏览器才会申请麦克风权限。音频格式转换在本机完成。' : '当前浏览器不支持完整录音能力，或页面不在安全环境。请用近期 Chrome / Edge 通过 localhost 打开；支持音频解码时也可导入本地短音频。';
   $('speakingMode').addEventListener('change', changeMode);
   $('speakingLesson').addEventListener('change', renderSentences);

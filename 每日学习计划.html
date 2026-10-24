@@ -18,7 +18,7 @@
   </header>
   <main class="page-shell">
     <section class="hero">
-      <div><p class="eyebrow">ACADEMIC · 52 WEEKS</p><h1>把今天的学习，做扎实。</h1><p class="hero-copy">按计划练习，留下真实成果，再用测评确认进步。<br>目标听说读写各 <strong>6.5</strong>，以各 <strong>7.0</strong> 作为训练参考，留出余量。</p></div>
+      <div><p class="eyebrow">ACADEMIC · 52 WEEKS</p><h1>把今天的学习，做扎实。</h1><p class="hero-copy">按计划练习，留下真实成果，再用测评确认进步。<br>课程对齐 Academic 听说读写各 <strong>7.0</strong>，为正式考试各 <strong>6.5</strong> 留出余量。零基础从第 1 周起步。</p></div>
       <div class="hero-aside"><span>每天固定学习量</span><strong>6<span> 小时</span></strong><small>每周 42 小时 · 全年 2184 小时<br>建议分 3 段完成，休息另计；补强安排在 6 小时内</small></div>
     </section>
     <div id="storageMessage" class="notice danger" role="alert" hidden></div>
@@ -55,7 +55,7 @@
       <form id="assessmentForm">
         <div class="assessment-grid"><label>测评对应周<select id="assessmentWeek"></select></label><label>实际测评日期<input id="assessmentDate" type="date" required></label><label>测评类型<select id="assessmentType"><option value="foundation">基础能力检查</option><option value="mock">未练过的完整模考</option><option value="official">正式雅思成绩</option></select></label><label>题目来源 / 成绩依据<input id="assessmentSource" type="text" maxlength="180" required placeholder="具体题目、试卷或成绩单编号"></label></div>
         <div id="foundationFields"><label>基础检查结果<select id="foundationResult"><option value="pass">本阶段基础任务可独立完成</option><option value="reinforce">需要补强</option></select></label><fieldset class="weak-skills"><legend>需要补强的项目</legend><label><input type="checkbox" name="weakSkill" value="listening"> 听力</label><label><input type="checkbox" name="weakSkill" value="speaking"> 口语</label><label><input type="checkbox" name="weakSkill" value="reading"> 阅读</label><label><input type="checkbox" name="weakSkill" value="writing"> 写作</label></fieldset></div>
-        <div id="bandFields" hidden><div class="score-inputs"><label>听力<input type="number" id="scoreListening" min="0" max="9" step="0.5" placeholder="0–9"></label><label>口语<input type="number" id="scoreSpeaking" min="0" max="9" step="0.5" placeholder="0–9"></label><label>阅读<input type="number" id="scoreReading" min="0" max="9" step="0.5" placeholder="0–9"></label><label>写作<input type="number" id="scoreWriting" min="0" max="9" step="0.5" placeholder="0–9"></label></div><label class="check-label"><input id="assessmentReviewed" type="checkbox"> 四项按完整考试要求完成，写作和口语已有依据官方标准的评阅</label></div>
+        <div id="bandFields" hidden><div class="score-inputs"><label>听力<input type="number" id="scoreListening" min="0" max="9" step="0.5" placeholder="0–9"></label><label>口语<input type="number" id="scoreSpeaking" min="0" max="9" step="0.5" placeholder="0–9"></label><label>阅读<input type="number" id="scoreReading" min="0" max="9" step="0.5" placeholder="0–9"></label><label>写作<input type="number" id="scoreWriting" min="0" max="9" step="0.5" placeholder="0–9"></label></div><label class="check-label"><input id="assessmentReviewed" type="checkbox"> 四项按完整考试要求完成，写作和口语有按官方维度给出的反馈及原稿／录音依据（AI 反馈属于估计）</label></div>
         <label class="block-label">表现证据与下一步<input id="assessmentNotes" type="text" maxlength="600" required placeholder="例如：漏听数字；记录具体错题、作文/录音文件名及评阅依据"></label>
         <p class="small muted">系统只记录你提供的结果，不把课文练习得分换算成雅思分数。低于训练参考线的项目，将在后续 6 个常规学习日中各安排 30 分钟针对性补强，包含在每天 6 小时内。</p>
         <div class="submit-row"><p id="assessmentStatus" class="small" role="status"></p><button type="submit" class="button primary">保存测评与补强安排</button></div>

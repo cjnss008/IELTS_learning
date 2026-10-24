@@ -77,6 +77,8 @@
     var readingUnit = isFoundation ? '个短句' : '篇材料';
     var speakingUnit = isFoundation || isBasic ? '句口头表达' : '段录音回答';
     var writingUnit = isFoundation || isBasic ? '个完整句' : '份写作';
+    var writingQuantity = stage.writing;
+    var writingTitle = '写作与订正';
     var readingVolume = isFoundation ? '读懂 8 个适合当前基础的短句，标出主语和动作，并用中文或简单英文说明意思。' :
       isBasic ? '精读 2 篇各约 200–350 词的分级短文，分别写出主旨和至少 3 条信息。' :
         stage.id === 'academic' ? '精读 2 篇适合当前程度的约 500–800 词文章，记录主旨、结构和同义替换。' :
@@ -90,29 +92,39 @@
     var writingVolume;
     if (isFoundation || isBasic) {
       writingVolume = '独立写出至少 ' + stage.writing + ' 个完整句；核对本周语法，并保留原稿和订正。';
-    } else if (stage.id === 'academic' && week <= 28) {
-      writingVolume = '完成 2 份各约 100–150 词的段落练习，包含清楚的主旨和具体支持；核对后分别重写一处表达。';
     } else {
-      writingVolume = '完成至少 150 词的 Task 1 和至少 250 词的 Task 2 各 1 份，再检查概述、关键数据、立场和论据，并记录订正。';
+      var schedule = week <= 36 ? ['task1', 'revise1', 'task2', 'revise2', 'transfer', 'retest'] : ['task1', 'task2', 'reviseBoth', 'task1', 'task2', 'reviseBoth'];
+      var writingKind = schedule[weekday - 1];
+      var writingKinds = {
+        task1: ['Task 1 首稿', 1, '份首稿', '选一份尚未作答且有明确数据的 Task 1 题，独立写至少 150 词；初学时先练概述与关键比较，逐步达到完整要求。保留未经 AI 改写的原稿。余下时间检查数据与句子并记录问题。'],
+        task2: ['Task 2 首稿', 1, '份首稿', '选一道尚未作答的 Task 2 题，独立写至少 250 词；先列立场、理由和例子，再展开。保留原稿，余下时间检查是否回答问题及论据是否具体。'],
+        revise1: ['Task 1 反馈与重写', 1, '份订正稿', '回到本周 Task 1 原稿，核对关键数据、概述和比较；结合已有反馈挑出 3 个具体问题，理解原因后重写，并保留修改前后版本。没有 AI 时按题目数据和自查清单订正。'],
+        revise2: ['Task 2 反馈与重写', 1, '份订正稿', '回到本周 Task 2 原稿，检查立场、段落主旨和例子；结合已有反馈挑出 3 个具体问题，理解原因后重写，保留修改理由。没有 AI 时先完成自查。'],
+        transfer: ['写作迁移练习', 2, '段迁移练习', '换用未做过的题目或图表，独立写一段概述和一段观点展开。重点迁移本周订正过的表达，不复制旧稿；完成后检查用法与题意。'],
+        retest: ['写作闭卷复测', 2, '项复测', '遮住原稿与反馈，针对本周两类反复错误，在新语境各完成一项改写或段落练习；提交后再核对，记录能否独立运用。'],
+        reviseBoth: ['两份作文反馈与重写', 2, '份订正稿', '分别订正本周最近的 Task 1 与 Task 2 原稿，每篇选择最重要的 2–3 个问题，核对依据并重写。保留原稿和修改理由，不额外要求两篇新作文。']
+      };
+      var writingPlan = writingKinds[writingKind];
+      writingTitle = writingPlan[0]; writingQuantity = writingPlan[1]; writingUnit = writingPlan[2]; writingVolume = writingPlan[3];
     }
     return [
       task('vocabulary', '词汇与旧词回忆', 'foundation', 45, stage.recall, '次遮挡回忆',
         '从适合程度的材料整理 ' + stage.newWords + ' 项新词或搭配，并完成 ' + oldRecall + ' 词次旧词回忆，共 ' + stage.recall + ' 次。旧词不足时，重复回忆已学词补足次数。' + action,
         '记录新词清单、旧词回忆次数，以及至少 2 个自己造的短句。'),
       task('grammar', '语法理解与运用', 'foundation', 30, stage.grammar, '题或句',
-        '本周语法：' + info.grammarFocus + '。完成 ' + stage.grammar + ' 道练习或造句，核对理由后订正。' + action,
+        '本周语法：' + info.grammarFocus.replace(/。+$/, '') + '。完成 ' + stage.grammar + ' 道练习或造句，核对理由后订正。' + action,
         '写出至少 2 个原始答案、订正及为什么这样用；可附练习名称与位置。'),
       task('listening', '听力与听写', 'listening', 75, stage.listening, isFoundation || isBasic ? '句听写' : '道听力题',
-        '本周重点：' + info.listeningFocus + '。' + listeningVolume + action,
+        '本周重点：' + info.listeningFocus.replace(/。+$/, '') + '。' + listeningVolume + action,
         '记录音频名称或位置、原始答案、重听次数及至少 1 项订正。'),
       task('reading', '阅读理解', 'reading', 60, stage.reading, readingUnit,
-        '本周重点：' + info.readingFocus + '。' + readingVolume + action,
+        '本周重点：' + info.readingFocus.replace(/。+$/, '') + '。' + readingVolume + action,
         '记录材料名称、读到的位置、主旨和具体理解依据。'),
       task('speaking', '口语表达与回听', 'speaking', 60, stage.speaking, speakingUnit,
-        '今日提示：' + selectPrompt(info.speakingPrompts, weekday) + '。' + speakingVolume,
+        '今日提示：' + selectPrompt(info.speakingPrompts, weekday).replace(/。+$/, '') + '。' + speakingVolume,
         '记录录音文件名或保存位置、说了哪些内容、回听发现和重录结果。'),
-      task('writing', '写作与订正', 'writing', 75, stage.writing, writingUnit,
-        '今日主题：' + selectPrompt(info.writingPrompts, weekday) + '。' + writingVolume,
+      task('writing', writingTitle, 'writing', 75, writingQuantity, writingUnit,
+        (isFoundation || isBasic ? '今日主题：' + selectPrompt(info.writingPrompts, weekday).replace(/。+$/, '') : '本周话题：' + info.title) + '。' + writingVolume,
         '保存原稿和订正稿，记录字数或句数，以及至少 1 项修改理由。'),
       task('reflection', '学习记录与明日安排', 'review', 15, 3, '条观察',
         '记录 3 条具体学习观察，涵盖已掌握、仍不熟或材料难度；其中至少 1 条写清明天要采取的行动。',

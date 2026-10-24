@@ -181,7 +181,7 @@
   }
   function renderAssessments() {
     const readiness = Store.readiness(state);
-    $('readiness').innerHTML = `<strong>${readiness.ready ? '近期记录达到训练参考线' : '逐步积累达标证据'}</strong><span>最近 3 次完整测评中，${readiness.qualifyingCount} 次满足四项 ≥ 7.0 及评阅条件。此处依据手动录入结果，不保证正式成绩。</span>`;
+    $('readiness').innerHTML = `<strong>${readiness.ready ? '近期录入结果达到 7.0 训练线' : '逐步积累达标证据'}</strong><span>最近 3 次完整测评中，${readiness.qualifyingCount} 次满足四项 ≥ 7.0 及评阅条件。此处依据手动录入；AI 反馈属于估计，不代表正式成绩。</span>`;
     const history = [...state.assessments].sort((a, b) => b.date.localeCompare(a.date));
     $('assessmentHistory').innerHTML = history.length ? history.slice(0, 8).map((a) => `<article class="assessment-entry"><h4>第 ${a.week} 周 · ${a.date}</h4><p>${a.type === 'foundation' ? '基础检查' : a.type === 'official' ? '正式成绩记录' : '完整模考记录'} · ${escape(a.source)}</p>${a.type === 'foundation' ? `<p class="scores">${a.result === 'pass' ? '基础任务可独立完成' : '需要补强：' + a.weakSkills.map((s) => skillNames[s]).join('、')}</p>` : `<p class="scores">听 ${a.scores.listening} · 说 ${a.scores.speaking} · 读 ${a.scores.reading} · 写 ${a.scores.writing}</p><p>${a.reviewed ? '已记录完整测评与评阅确认' : '评阅条件尚未确认'}</p>`}<p>${escape(a.notes)}</p></article>`).join('') : '<p class="empty-state">尚无测评记录。先完成入门学习，按阶段保留答题、作文与录音证据。</p>';
   }
