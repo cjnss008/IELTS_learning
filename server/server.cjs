@@ -621,11 +621,15 @@ function createServer(options = {}) {
           !LOOPBACK_HOSTS.has(requestUrl.hostname) || (requestUrl.port || '80') !== expectedPort) {
         throw new AppError(403, 'HOST_DENIED', '仅允许本机访问。');
       }
+      const rawPath = String(req.url || '/').split('?')[0];
+      let decodedEntry;try{decodedEntry=decodeURIComponent(rawPath);}catch{throw new AppError(400,'INVALID_PATH','资源路径无效。');}
+      // A top-level link to a public page is navigation, not an API request.
+      // Keep every API, subresource, frame and write behind the origin boundary.
+      const publicNavigation=req.method==='GET'&&req.headers['sec-fetch-mode']==='navigate'&&req.headers['sec-fetch-dest']==='document'&&(decodedEntry==='/'||/^\/[^/\\]+\.html$/i.test(decodedEntry));
       const origin = req.headers.origin;
-      if ((origin && origin !== requestUrl.origin) || req.headers['sec-fetch-site'] === 'cross-site') {
+      if (!publicNavigation&&((origin && origin !== requestUrl.origin) || req.headers['sec-fetch-site'] === 'cross-site')) {
         throw new AppError(403, 'ORIGIN_DENIED', '请在本地学习页面内执行此操作。');
       }
-      const rawPath = String(req.url || '/').split('?')[0];
       await ready;
       if(['GET','HEAD'].includes(req.method)&&decodeURIComponent(rawPath)==='/学习课程.html'){
         res.writeHead(302,{'Location':'/'+(String(req.url).includes('?')?'?'+String(req.url).split('?').slice(1).join('?'):''),'Cache-Control':'no-store'});return res.end();
