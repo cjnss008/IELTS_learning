@@ -6,6 +6,18 @@
   const MAX_FEEDBACK = 32000;
   const MAX_CACHE = 20;
   const TIMEOUT = 95000;
+  const PRACTICE_KEY = 'ielts52-selection-practice-v1';
+  function parsePractice(raw) {
+    const value=typeof raw==='string'?JSON.parse(raw):raw;
+    if(!value||value.schema!==1||!Array.isArray(value.items)||value.items.length>300||Object.keys(value).some(k=>!['schema','items'].includes(k)))throw Error('词句巩固记录格式无效。');
+    const ids=new Set();
+    return {schema:1,items:value.items.map(item=>{
+      if(!item||Object.keys(item).some(k=>!['id','materialId','lessonId','text','context','createdAt','dueAt','parentId','exercises'].includes(k))||typeof item.id!=='string'||!/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,159}$/.test(item.id)||ids.has(item.id)||!Number.isFinite(Date.parse(item.createdAt))||!Number.isFinite(Date.parse(item.dueAt))||Date.parse(item.dueAt)<Date.parse(item.createdAt)||typeof item.text!=='string'||!item.text.trim()||item.text.length>800||typeof item.context!=='string'||item.context.length>2000||!Array.isArray(item.exercises)||item.exercises.length<1||item.exercises.length>5)throw Error('词句巩固内容无效。');
+      if(!(typeof item.materialId==='string'&&/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,159}$/.test(item.materialId)||Number.isInteger(item.lessonId)&&item.lessonId>=1&&item.lessonId<=52)||item.parentId!==null&&(typeof item.parentId!=='string'||!/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,159}$/.test(item.parentId)))throw Error('词句巩固关联无效。');
+      ids.add(item.id);const questionIds=new Set();const exercises=item.exercises.map(q=>{if(!q||typeof q.id!=='string'||!/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,159}$/.test(q.id)||questionIds.has(q.id)||q.type!=='choice'||typeof q.prompt!=='string'||!q.prompt.trim()||q.prompt.length>1500||!Array.isArray(q.options)||q.options.length<2||q.options.length>6||q.options.some(o=>typeof o!=='string'||!o.trim()||o.length>1000)||!Array.isArray(q.answers)||q.answers.length!==1||!Number.isInteger(q.answers[0])||q.answers[0]<0||q.answers[0]>=q.options.length||typeof q.explanation!=='string'||q.explanation.length>3000)throw Error('巩固题结构无效。');questionIds.add(q.id);return{id:q.id,type:'choice',prompt:q.prompt,options:q.options.slice(),answers:q.answers.slice(),explanation:q.explanation};});
+      return{id:item.id,...(item.materialId?{materialId:item.materialId}:{lessonId:item.lessonId}),text:item.text,context:item.context,createdAt:item.createdAt,dueAt:item.dueAt,parentId:item.parentId,exercises};
+    })};
+  }
   const normalize = value => typeof value === 'string' ? value.replace(/\s+/g, ' ').trim() : '';
   const editable = element => Boolean(element && (element.isContentEditable || element.closest?.('input,textarea,select,[contenteditable="true"],[contenteditable=""]')));
 
@@ -22,6 +34,7 @@
     return ranges;
   }
   function makeSnapshot(data, paragraphIndex, from, to) {
+    if (data?.mode === 'assessment') return null;
     const paragraph = paragraphRanges(data).find(item => item.index === paragraphIndex);
     if (!paragraph || !Number.isInteger(from) || !Number.isInteger(to) || from < 0 || to > paragraph.text.length || from >= to) return null;
     const raw = paragraph.text.slice(from, to);
@@ -31,7 +44,7 @@
     const end = paragraph.start + to - trailing;
     const text = data.lesson.text.slice(start, end);
     if (!text || text.length > MAX_SELECTION || !/[A-Za-z]/.test(text)) return null;
-    return {lessonId: data.lesson.day, title: data.lesson.title, sourceText: data.lesson.text, start, end, text, context: paragraph.text};
+    return {...(data.materialId ? {materialId:data.materialId} : {lessonId:data.lesson.day}), title: data.lesson.title, sourceText: data.lesson.text, start, end, text, context: paragraph.text};
   }
   function captureSelection(selection, data) {
     if (!selection || selection.isCollapsed || selection.rangeCount !== 1) return null;
@@ -42,7 +55,7 @@
       const last = elementOf(range.endContainer);
       if (editable(first) || editable(last)) return null;
       const paragraph = first?.closest('[data-ai-reading]');
-      if (!paragraph || paragraph !== last?.closest('[data-ai-reading]') || !paragraph.closest('#lesson') || paragraph.closest('[hidden]')) return null;
+      if (!paragraph || paragraph !== last?.closest('[data-ai-reading]') || (!paragraph.closest('#lesson') && !paragraph.closest('[data-ai-course-root]')) || paragraph.closest('[hidden]')) return null;
       const index = Number(paragraph.dataset.aiParagraph);
       const known = paragraphRanges(data).find(item => item.index === index);
       if (!known || paragraph.textContent !== known.text) return null;
@@ -60,31 +73,31 @@
     } catch (_) { return null; }
   }
   function matches(snapshot, data) {
-    return Boolean(snapshot && data?.lesson && snapshot.lessonId === data.lesson.day && snapshot.sourceText === data.lesson.text &&
+    return Boolean(snapshot && data?.lesson && data.mode !== 'assessment' && (snapshot.materialId ? snapshot.materialId === data.materialId : !data.materialId && snapshot.lessonId === data.lesson.day) && snapshot.sourceText === data.lesson.text &&
       Number.isInteger(snapshot.start) && Number.isInteger(snapshot.end) && snapshot.start >= 0 && snapshot.end <= data.lesson.text.length &&
       snapshot.end > snapshot.start && snapshot.end - snapshot.start <= MAX_SELECTION && data.lesson.text.slice(snapshot.start, snapshot.end) === snapshot.text);
   }
   function cacheKey(snapshot, lessonVersion, connection) {
-    return JSON.stringify([snapshot.lessonId, lessonVersion, snapshot.start, snapshot.end, snapshot.text, connection.baseUrl, connection.model, connection.connectionVersion, connection.selectionPromptVersion, 'both', 'A0', 'detail-ui-v1']);
+    return JSON.stringify([snapshot.materialId || snapshot.lessonId, lessonVersion, snapshot.start, snapshot.end, snapshot.text, connection.baseUrl, connection.model, connection.connectionVersion, connection.selectionPromptVersion, 'both', 'A0', 'detail-ui-v2']);
   }
   function parseCache(raw) {
     const value = typeof raw === 'string' ? JSON.parse(raw) : raw;
     if (!value || value.schema !== 1 || !Array.isArray(value.entries) || value.entries.length > MAX_CACHE) throw Error('选区解释缓存格式无效。');
     const entries = value.entries.map(item => {
-      if (!item || !Number.isInteger(item.lessonId) || item.lessonId < 1 || item.lessonId > 52 || !Number.isInteger(item.start) || !Number.isInteger(item.end) || item.start < 0 || item.end <= item.start ||
+      if (!item || !(typeof item.materialId === 'string' && /^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,159}$/.test(item.materialId) || Number.isInteger(item.lessonId) && item.lessonId >= 1 && item.lessonId <= 52) || !Number.isInteger(item.start) || !Number.isInteger(item.end) || item.start < 0 || item.end <= item.start ||
           !['key', 'sourceText', 'text', 'context', 'feedback', 'model', 'version', 'promptVersion'].every(key => typeof item[key] === 'string') ||
-          item.key.length > 2500 || item.sourceText.length > 12000 || item.text.length > MAX_SELECTION || item.context.length > 2000 || item.feedback.length > MAX_FEEDBACK || !item.feedback.trim() || item.model.length > 200 || !/^[a-f0-9]{64}$/i.test(item.version) ||
+          item.key.length > 2500 || item.sourceText.length > 64000 || item.text.length > MAX_SELECTION || item.context.length > 2000 || item.feedback.length > MAX_FEEDBACK || !item.feedback.trim() || item.model.length > 200 || !/^[a-f0-9]{64}$/i.test(item.version) ||
           !item.promptVersion || item.promptVersion.length > 100 || item.sourceText.slice(item.start, item.end) !== item.text || !item.context.includes(item.text)) throw Error('选区解释缓存内容无效。');
-      return {key: item.key, lessonId: item.lessonId, sourceText: item.sourceText, start: item.start, end: item.end, text: item.text, context: item.context, feedback: item.feedback, model: item.model, version: item.version, promptVersion: item.promptVersion};
+      return {key: item.key, ...(item.materialId ? {materialId:item.materialId} : {lessonId:item.lessonId}), sourceText: item.sourceText, start: item.start, end: item.end, text: item.text, context: item.context, feedback: item.feedback, model: item.model, version: item.version, promptVersion: item.promptVersion};
     });
     return {schema: 1, entries};
   }
   function makeCache(storage, key) {
     let entries = [], writable = true;
-    try { const raw = storage?.getItem(key); if (raw) { if (raw.length > 900000) throw Error(); entries = parseCache(raw).entries; } } catch (_) { writable = false; }
+    try { const raw = storage?.getItem(key); if (raw) { if (raw.length > 2500000) throw Error(); entries = parseCache(raw).entries; } } catch (_) { writable = false; }
     return {
       exact: key => entries.find(item => item.key === key),
-      offline: snapshot => entries.slice().reverse().find(item => item.lessonId === snapshot.lessonId && item.sourceText === snapshot.sourceText && item.start === snapshot.start && item.end === snapshot.end && item.text === snapshot.text),
+      offline: snapshot => entries.slice().reverse().find(item => item.lessonId === snapshot.lessonId && item.materialId === snapshot.materialId && item.sourceText === snapshot.sourceText && item.start === snapshot.start && item.end === snapshot.end && item.text === snapshot.text),
       put(entry) {
         const valid = parseCache({schema: 1, entries: [entry]}).entries[0];
         entries = entries.filter(item => item.key !== valid.key).concat(valid).slice(-MAX_CACHE);
@@ -124,7 +137,7 @@
       const selection = result.selection;
       if (typeof result.feedback !== 'string' || !result.feedback.trim() || result.feedback.length > MAX_FEEDBACK || result.feedbackFormat !== 'text' || typeof result.model !== 'string' || result.model.length > 200 ||
           result.promptVersion !== promptVersion || (result.truncated !== undefined && typeof result.truncated !== 'boolean') || typeof result.threadId !== 'string' || !result.threadId || result.threadId.length > 200 || !Number.isInteger(result.followupsRemaining) || result.followupsRemaining < 0 || result.followupsRemaining > 2 ||
-          !selection || selection.lessonId !== snapshot.lessonId || selection.start !== snapshot.start || selection.end !== snapshot.end || selection.text !== snapshot.text || selection.version !== version ||
+          !selection || (snapshot.materialId ? selection.materialId !== snapshot.materialId : selection.lessonId !== snapshot.lessonId) || selection.start !== snapshot.start || selection.end !== snapshot.end || selection.text !== snapshot.text || selection.version !== version ||
           typeof selection.context !== 'string' || selection.context.length > 2000 || !selection.context.includes(snapshot.text)) throw apiError('INVALID_RESPONSE', '解释与所选原文不匹配，请重试。');
       return result;
     }
@@ -156,21 +169,21 @@
           if (!connection.connected || !connection.model) throw apiError('NOT_CONNECTED', '请先在“AI 设置”连接服务并保存一个可用模型。');
           if (typeof connection.baseUrl !== 'string' || typeof connection.model !== 'string' || typeof connection.connectionVersion !== 'string' || typeof connection.selectionPromptVersion !== 'string' || !connection.selectionPromptVersion || connection.selectionPromptVersion.length > 100) throw apiError('INVALID_RESPONSE', 'AI 服务版本不匹配，请重启本地服务。');
           promptVersion = connection.selectionPromptVersion;
-          const canonical = await json('/api/ai/selection/lesson/' + snapshot.lessonId, null, aborter.signal);
+          const canonical = await json('/api/ai/selection/' + (snapshot.materialId ? 'material/' + encodeURIComponent(snapshot.materialId) : 'lesson/' + snapshot.lessonId), null, aborter.signal);
           if (token !== generation) return false;
-          if (canonical.lesson?.id !== snapshot.lessonId || canonical.lesson.text !== snapshot.sourceText || typeof canonical.lesson.version !== 'string' || !/^[a-f0-9]{64}$/i.test(canonical.lesson.version)) throw apiError('COURSE_CHANGED', '课文版本已变化，请刷新页面后重新选择。');
+          if (canonical.lesson?.id !== (snapshot.materialId || snapshot.lessonId) || canonical.lesson.text !== snapshot.sourceText || typeof canonical.lesson.version !== 'string' || !/^[a-f0-9]{64}$/i.test(canonical.lesson.version)) throw apiError('COURSE_CHANGED', '课文版本已变化，请刷新页面后重新选择。');
           if (canonical.lesson.promptVersion !== promptVersion) throw apiError('PROMPT_CHANGED', '讲解配置已更新，请重新解释。');
           version = canonical.lesson.version;
           const key = cacheKey(snapshot, version, connection);
           const entry = !force && cache.exact(key);
           if (entry) { cached(entry, snapshot, false); return true; }
-          result = await json('/api/ai/selection', {lessonId: snapshot.lessonId, version, start: snapshot.start, end: snapshot.end, selectedText: snapshot.text, intent: 'both', level: 'A0'}, aborter.signal);
+          result = await json('/api/ai/selection', {...(snapshot.materialId ? {materialId:snapshot.materialId,mode:'practice'} : {lessonId:snapshot.lessonId}), version, start: snapshot.start, end: snapshot.end, selectedText: snapshot.text, intent: 'both', level: 'A0'}, aborter.signal);
         }
         if (token !== generation || !matches(snapshot, data)) return false;
         validateResponse(result, snapshot, version, promptVersion);
         const history = question ? previous.history.concat({question, feedback: result.feedback}) : [];
         patch({phase: 'done', snapshot: {...snapshot, context: result.selection.context}, feedback: question ? previous.feedback : result.feedback, model: result.model, version, promptVersion, threadId: result.threadId, remaining: result.followupsRemaining, history, cacheHit: false, offlineCache: false, truncated: result.truncated === true, error: '', code: ''});
-        if (!question && result.model === connection.model && result.truncated !== true) cache.put({key: cacheKey(snapshot, version, connection), lessonId: snapshot.lessonId, sourceText: snapshot.sourceText, start: snapshot.start, end: snapshot.end, text: snapshot.text, context: result.selection.context, feedback: result.feedback, model: result.model, version, promptVersion});
+        if (!question && result.model === connection.model && result.truncated !== true) cache.put({key: cacheKey(snapshot, version, connection), ...(snapshot.materialId ? {materialId:snapshot.materialId} : {lessonId:snapshot.lessonId}), sourceText: snapshot.sourceText, start: snapshot.start, end: snapshot.end, text: snapshot.text, context: result.selection.context, feedback: result.feedback, model: result.model, version, promptVersion});
         return true;
       } catch (error) {
         if (token !== generation) return false;
@@ -207,7 +220,7 @@
   }
   function init() {
     const doc = root.document;
-    if (!doc?.getElementById('lesson')) return;
+    if (!doc?.getElementById('lesson') && !doc?.getElementById('coursePlayerApp')) return;
     function node(tag, className, text) { const element = doc.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; }
     const trigger = node('button', 'selection-ai-trigger', 'AI 详细解释'); trigger.type = 'button'; trigger.hidden = true;
     trigger.title = '解释选中词句（Alt + Enter）';
@@ -240,26 +253,44 @@
     const contextLabel = node('label', '', '原句／上下文（可编辑，最多 1500 字符）'); const saveContext = node('textarea'); saveContext.id = 'selectionAiContext'; contextLabel.htmlFor = saveContext.id; saveContext.maxLength = 1500; saveContext.required = true; saveContext.rows = 3;
     const save = node('button', '', '保存到原句生词本'); save.type = 'submit'; const saveStatus = node('p', 'selection-ai-small'); saveStatus.setAttribute('role', 'status');
     collectForm.append(kindLabel, kind, meaningLabel, meaning, contextLabel, saveContext, save, saveStatus); collect.append(collectForm);
-    panel.append(top, hint, selected, contextDetails, status, actions, result, followupForm, collect);
+    const practiceBox=node('section','selection-ai-practice');const practiceButton=node('button','','生成 2 道巩固题');practiceButton.type='button';const practiceStatus=node('p','selection-ai-small');const practiceCancel=node('button','','取消生成');practiceCancel.type='button';practiceCancel.hidden=true;const practiceQuestions=node('div');practiceBox.append(node('h3','','解释之后，自己试一试'),practiceButton,practiceCancel,practiceStatus,practiceQuestions);
+    const report=node('details','selection-ai-collect');report.append(node('summary','','记录解释或题目问题'));const reportText=node('textarea');reportText.maxLength=1500;reportText.placeholder='指出疑似错误、原句依据与自己的理解。只保存本机，不自动对外发送。';const reportSave=node('button','','保存纠错报告');reportSave.type='button';report.append(reportText,reportSave);
+    panel.append(top, hint, selected, contextDetails, status, actions, result, followupForm, practiceBox, collect,report);
     doc.body.append(trigger, panel);
+    const savedSection=node('details','selection-ai-saved');savedSection.append(node('summary','','我的词句巩固与延迟复测'));const savedList=node('div');savedSection.append(node('p','selection-ai-small','至少间隔 48 小时再答。重做同一道题仅检验回忆，不能当作新情境独立迁移。'),savedList);(doc.querySelector('main')||doc.body).append(savedSection);
     let pending = null, lastSelectionKey = '', displayedHistory = '', contextEdited = false, storage;
     const preview = new URLSearchParams(root.location.search).get('preview') === '1';
     try { storage = root.sessionStorage; } catch (_) { storage = null; }
-    const controller = createController({fetch: root.fetch?.bind(root), origin: root.location.origin, storage, cacheKey: preview ? 'ielts52-selection-ai-cache-preview-v1' : CACHE_KEY, onChange: render});
+    let controller = createController({fetch: root.fetch?.bind(root), origin: root.location.origin, storage, cacheKey: root.IELTSProfiles?.scopeKey(preview ? 'ielts52-selection-ai-cache-preview-v1' : CACHE_KEY) || (preview ? 'ielts52-selection-ai-cache-preview-v1' : CACHE_KEY), onChange: render});
+    let practiceAbort=null,practiceGeneration=0,practiceItem=null,practiceClock=null;
+    function clearPractice(){practiceCancel.hidden=true;practiceAbort?.abort();practiceGeneration++;clearInterval(practiceClock);practiceClock=null;practiceItem=null;practiceQuestions.replaceChildren();practiceStatus.textContent='';}
+    function practiceStorage(){return root.IELTSProfiles?.storage()||(preview?root.sessionStorage:root.localStorage);}
+    function savePractice(item){const store=practiceStorage(),raw=store.getItem(PRACTICE_KEY),value=raw?parsePractice(raw):{schema:1,items:[]};const index=value.items.findIndex(i=>i.id===item.id);if(index<0)value.items.push(item);else value.items[index]=item;const clean=parsePractice(value);if(store.getItem(PRACTICE_KEY)!==raw)throw Error('另一页面更新了巩固题，请刷新后重试。');store.setItem(PRACTICE_KEY,JSON.stringify(clean));renderSaved();}
+    function renderSaved(){savedList.replaceChildren();try{const saved=parsePractice(practiceStorage().getItem(PRACTICE_KEY)||'{"schema":1,"items":[]}');if(!saved.items.length)savedList.append(node('p','selection-ai-small','生成并提交巩固题后，可保存到这里。'));saved.items.slice().reverse().forEach(item=>{const row=node('div');row.append(node('p','',item.text),node('p','selection-ai-small','复测时间：'+new Date(item.dueAt).toLocaleString()));const b=node('button','',Date.now()>=Date.parse(item.dueAt)?'打开延迟回忆题':'提前练习（不算到期复测）');b.type='button';b.onclick=()=>{panel.hidden=false;practiceItem=item;renderExercises(item,true);heading.focus({preventScroll:true});};row.append(b);savedList.append(row);});}catch(error){savedList.append(node('p','selection-ai-small','原记录无法读取，已保留：'+error.message));}}
+    function renderExercises(item,delayed){clearInterval(practiceClock);practiceBox.hidden=false;practiceQuestions.replaceChildren();const started=Date.now(),answers={},insideCourse=Boolean(doc.getElementById('coursePlayerApp'));let usedAnswers=false,recordId=root.IELTSRecords?.makeId('selection')||null,activeSeconds=0,lastActive=started;practiceItem=item;practiceClock=setInterval(()=>{const now=Date.now();if(!doc.hidden&&!panel.hidden&&practiceItem===item&&!insideCourse)activeSeconds+=Math.min(2,Math.max(0,(now-lastActive)/1000));lastActive=now;},1000);
+      item.exercises.forEach((q,i)=>{const field=node('fieldset');field.append(node('legend','',(i+1)+'. '+q.prompt));q.options.forEach((option,j)=>{const label=node('label'),input=node('input');input.type='radio';input.name='selection-'+item.id+'-'+q.id;input.value=String(j);input.onchange=()=>answers[q.id]=j;label.append(input,node('span','',option));field.append(label);});practiceQuestions.append(field);});
+      const submit=node('button','','提交巩固答案');submit.type='button';const feedback=node('p','selection-ai-small'),delayedSave=node('button','','保存到 48 小时后复测');delayedSave.type='button';delayedSave.hidden=true;practiceQuestions.append(submit,feedback,delayedSave);
+      submit.onclick=async()=>{if(item.exercises.some(q=>!Number.isInteger(answers[q.id]))){feedback.textContent='请先完成每一道题。';return;}submit.disabled=true;const correct=item.exercises.filter(q=>q.answers.includes(answers[q.id])).length,elapsed=Math.min(86400,(Date.now()-started)/1000);try{if(root.IELTSRecords){const hasParent=delayed&&item.parentId&&(await root.IELTSRecords.list()).some(r=>r.id===item.parentId);await root.IELTSRecords.record({id:recordId,materialId:'selection-'+item.id,title:'词句巩固：'+item.text.slice(0,100),skill:'grammar',source:'selection-ai-practice',answer:JSON.stringify({schema:1,selection:item.text,context:item.context,questions:item.exercises,answers}),minutes:Math.min(activeSeconds,elapsed)/60,activeSeconds:Math.min(activeSeconds,elapsed),elapsedSeconds:elapsed,quantity:item.exercises.length,unit:'题',assistance:{hint:false,answer:usedAnswers,ai:!delayed},kind:hasParent?'retest':'original',...(hasParent?{parentId:item.parentId}:{}),exposure:'seen',startedAt:new Date(started).toISOString(),submittedAt:new Date().toISOString(),evaluation:{method:'objective',result:correct===item.exercises.length?'pass':'revise',score:correct,maxScore:item.exercises.length,threshold:1,feedback:'AI 生成词句练习；同题延迟回忆不等于新情境独立迁移。'}});}clearInterval(practiceClock);feedback.textContent=(insideCourse?'本题时间由课程会话统一记录，避免重复累计。':'')+'本次 '+correct+' / '+item.exercises.length+'。答案解析默认折叠，可展开核对；已记录真实作答。';practiceQuestions.querySelectorAll('input').forEach(n=>n.disabled=true);item.exercises.forEach(q=>{const details=node('details');details.append(node('summary','','查看「'+q.prompt+'」答案与解释'),node('p','',q.options[q.answers[0]]),node('p','',q.explanation));details.addEventListener('toggle',()=>{if(details.open)usedAnswers=true;});practiceQuestions.append(details);});delayedSave.hidden=false;}catch(error){feedback.textContent='未保存作答：'+error.message;submit.disabled=false;}};
+      delayedSave.onclick=()=>{try{const next={...item,createdAt:new Date().toISOString(),dueAt:new Date(Date.now()+48*3600000).toISOString(),parentId:recordId||item.parentId};savePractice(next);feedback.textContent='已保存原题与关联作答；48 小时后可闭卷回忆。';delayedSave.disabled=true;}catch(error){feedback.textContent='未保存复测：'+error.message;}};
+      practiceStatus.textContent=delayed?'同题闭卷回忆。即使答对，也不会被标为未见新题通过。':'先作答，再展开答案解析。';
+    }
+    practiceButton.onclick=async()=>{const state=controller.getState();if(!state.threadId||state.phase==='loading')return;practiceAbort?.abort();const aborter=new AbortController();practiceAbort=aborter;const token=++practiceGeneration;practiceButton.disabled=true;practiceCancel.hidden=false;practiceStatus.textContent='正在生成与选区对应的巩固题。';const timer=setTimeout(()=>aborter.abort(),95000);try{const response=await root.fetch('/api/ai/selection/practice',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({threadId:state.threadId}),signal:aborter.signal});const result=await response.json();if(token!==practiceGeneration)return;if(!response.ok||!result.ok)throw Error(result.error?.message||'暂时无法生成巩固题。');const now=new Date().toISOString(),item=parsePractice({schema:1,items:[{id:root.IELTSRecords?.makeId('practice')||'practice-'+Date.now(),...(state.snapshot.materialId?{materialId:state.snapshot.materialId}:{lessonId:state.snapshot.lessonId}),text:state.snapshot.text,context:state.snapshot.context,createdAt:now,dueAt:new Date(Date.now()+48*3600000).toISOString(),parentId:null,exercises:result.exercises}]}).items[0];renderExercises(item,false);}catch(error){if(token===practiceGeneration)practiceStatus.textContent='巩固题未生成：'+(error.name==='AbortError'?'已取消或等待超时。':error.message);}finally{clearTimeout(timer);if(token===practiceGeneration){practiceButton.disabled=false;practiceCancel.hidden=true;}}};
+    practiceCancel.onclick=()=>{clearPractice();practiceButton.disabled=!controller.getState().threadId;practiceStatus.textContent='已取消巩固题生成。';};
+    reportSave.onclick=async()=>{const state=controller.getState();if(!state.snapshot||!reportText.value.trim())return;try{if(!root.IELTSRecords)throw Error('作品记录模块尚未加载。');await root.IELTSRecords.record({id:root.IELTSRecords.makeId('report'),materialId:state.snapshot.materialId||'lesson-'+state.snapshot.lessonId,title:'词句解释纠错报告',skill:'grammar',source:'selection-ai-report',answer:JSON.stringify({selection:state.snapshot.text,context:state.snapshot.context,report:reportText.value.trim(),model:state.model,promptVersion:state.promptVersion}),minutes:0,quantity:0,unit:'报告',assistance:{hint:false,answer:false,ai:true},kind:'original',exposure:'seen',evaluation:{method:'none',result:'unverified',feedback:'用户问题报告，仅在本机保留，不作为学习达标。'}});practiceStatus.textContent='纠错报告已保存在本档案作品记录中。';reportText.value='';}catch(error){practiceStatus.textContent='未保存报告：'+error.message;}};
     function render(state) {
       const busy = state.phase === 'loading';
       if (state.phase === 'idle') { panel.hidden = true; return; }
       panel.hidden = false;
       selected.textContent = state.snapshot?.text || '';
       context.textContent = state.snapshot?.context || '';
-      const selectionKey = state.snapshot ? JSON.stringify([state.snapshot.lessonId, state.snapshot.start, state.snapshot.end]) : '';
+      const selectionKey = state.snapshot ? JSON.stringify([state.snapshot.materialId || state.snapshot.lessonId, state.snapshot.start, state.snapshot.end]) : '';
       if (selectionKey !== lastSelectionKey) { meaning.value = ''; saveStatus.textContent = ''; collect.open = false; question.value = ''; contextEdited = false; lastSelectionKey = selectionKey; if (state.snapshot) kind.value = state.snapshot.text.length > 80 || /[.!?]$/.test(state.snapshot.text) ? 'sentence' : 'phrase'; }
       if (state.snapshot && !contextEdited) saveContext.value = state.snapshot.context;
       status.textContent = busy ? '正在生成详细解释，最长约 90 秒；可以取消。' : state.error || (state.truncated ? '本次解释未完整生成，未写入缓存。可追问“请继续补全”，或缩短选区后重新解释。' : state.cacheHit ? (state.offlineCache ? '服务暂不可用，显示本次会话中保存的历史解释。' : '已使用本次会话缓存，没有重复生成解释。') : state.phase === 'done' ? '解释完成。' : '');
       if (state.model && !busy) status.textContent += ' 模型：' + state.model + '。';
       cancel.hidden = !busy; retry.hidden = !['error', 'cancelled'].includes(state.phase); regenerate.hidden = !state.feedback || busy;
       launch.hidden = root.location.origin === LOCAL_ORIGIN;
-      launch.href = LOCAL_ORIGIN + '/开始学习.html' + (preview ? '?preview=1' : '') + '#day' + (state.snapshot?.lessonId || 1);
+      launch.href = state.snapshot?.materialId ? LOCAL_ORIGIN + '/学习课程.html?material=' + encodeURIComponent(state.snapshot.materialId) + (preview ? '&preview=1' : '') : LOCAL_ORIGIN + '/开始学习.html' + (preview ? '?preview=1' : '') + '#day' + (state.snapshot?.lessonId || 1);
       settings.href = 'AI设置.html' + (preview ? '?preview=1' : '');
       feedback.textContent = state.feedback;
       const newHistory = JSON.stringify(state.history);
@@ -269,6 +300,8 @@
       followupNote.textContent = state.threadId ? '还可追问 ' + state.remaining + ' 次。追问只围绕本次选区。' : '缓存或已过期解释不能直接追问；点击“重新解释”建立新会话。';
       save.disabled = !state.snapshot || !root.IELTSNotebook?.add;
       panel.setAttribute('aria-busy', String(busy));
+      practiceButton.disabled=busy||!state.threadId;practiceBox.hidden=!state.feedback&&!practiceItem;
+      if (state.phase === 'done' && state.snapshot) root.dispatchEvent(new CustomEvent('ielts:selection-assistance', {detail:{materialId:state.snapshot.materialId,lessonId:state.snapshot.lessonId}}));
     }
     function selectionNow() { return captureSelection(root.getSelection?.(), currentData); }
     function updateTrigger() {
@@ -282,7 +315,7 @@
     }
     function begin(snapshot) {
       if (!matches(snapshot, currentData)) return;
-      clearTimeout(readTimer); trigger.hidden = true;
+      clearTimeout(readTimer); clearPractice();trigger.hidden = true;
       doc.getElementById('wordMeaningTooltip')?.setAttribute('hidden', '');
       controller.explain(snapshot); heading.focus({preventScroll: true});
     }
@@ -290,8 +323,8 @@
     trigger.addEventListener('click', () => begin(pending));
     cancel.addEventListener('click', () => controller.cancel());
     retry.addEventListener('click', () => controller.retry());
-    regenerate.addEventListener('click', () => { const state = controller.getState(); if (state.snapshot) controller.explain(state.snapshot, true); });
-    close.addEventListener('click', () => { controller.reset(); panel.hidden = true; });
+    regenerate.addEventListener('click', () => { const state = controller.getState(); if (state.snapshot) { clearPractice();controller.explain(state.snapshot, true); } });
+    close.addEventListener('click', () => { clearPractice();controller.reset(); panel.hidden = true; });
     saveContext.addEventListener('input', () => { contextEdited = true; });
     followupForm.addEventListener('submit', event => { event.preventDefault(); const text = question.value.trim(); if (!text) { followupNote.textContent = '先写下一个与当前选区有关的问题。'; return; } if (text.length > 400) { followupNote.textContent = '追问请控制在 400 字符以内。'; return; } controller.followup(text); });
     collectForm.addEventListener('submit', event => {
@@ -299,7 +332,7 @@
       if (!matches(state.snapshot, currentData) || !root.IELTSNotebook?.add) return;
       if (!meaning.value.trim()) { saveStatus.textContent = '请先写下或修改中文释义，再保存。'; meaning.focus(); return; }
       try {
-        const saved = root.IELTSNotebook.add({day: state.snapshot.lessonId, word: state.snapshot.text, meaning: meaning.value.trim(), context: saveContext.value.trim(), kind: kind.value});
+        const saved = root.IELTSNotebook.add({day: state.snapshot.lessonId || null, materialId:state.snapshot.materialId, word: state.snapshot.text, meaning: meaning.value.trim(), context: saveContext.value.trim(), kind: kind.value});
         saveStatus.textContent = saved.added ? '已保存；到复习页刷新即可加入词卡队列。' : '本课已收藏这段文字，保留已有释义，未重复添加。';
       } catch (error) { saveStatus.textContent = '未保存：' + (error.message || '请检查生词本记录。'); }
     });
@@ -324,14 +357,18 @@
     doc.addEventListener('selectionchange', () => { if (selectionNow()) clearTimeout(readTimer); updateTrigger(); });
     doc.addEventListener('scroll', () => { trigger.hidden = true; }, true);
     root.addEventListener('resize', () => { trigger.hidden = true; });
-    function setLesson(data) { clearTimeout(readTimer); currentData = data; pending = null; trigger.hidden = true; lastSelectionKey = ''; displayedHistory = ''; conversation.replaceChildren(); controller.setLesson(data); }
+    function setLesson(data) { clearTimeout(readTimer); clearPractice();currentData = data; pending = null; trigger.hidden = true; lastSelectionKey = ''; displayedHistory = ''; conversation.replaceChildren(); controller.setLesson(data); }
     root.addEventListener('ielts:lesson', event => setLesson(event.detail));
+    root.addEventListener('ielts:material', event => setLesson(event.detail));
+    root.addEventListener('ielts:assessment-mode', event => {savedSection.hidden=event.detail?.active===true;if(savedSection.hidden){clearPractice();controller.reset();panel.hidden=true;trigger.hidden=true;}});
+    root.addEventListener('ielts:profile-changed', () => { controller.cancel(); setLesson(null); controller = createController({fetch:root.fetch?.bind(root),origin:root.location.origin,storage,cacheKey:root.IELTSProfiles?.scopeKey(CACHE_KEY)||CACHE_KEY,onChange:render});renderSaved(); });
     root.addEventListener('ielts:lesson-clear', () => setLesson(null));
     root.addEventListener('pagehide', () => { clearTimeout(readTimer); controller.cancel(); });
     setLesson(root.IELTSCurrentLesson || null);
+    renderSaved();
   }
-  const api = {LOCAL_ORIGIN, MAX_SELECTION, normalize, paragraphRanges, makeSnapshot, captureSelection, matches, cacheKey, parseCache, createController, shouldSuppressReadingClick, handleReadClick};
+  const api = {LOCAL_ORIGIN, MAX_SELECTION, PRACTICE_KEY, parsePractice, normalize, paragraphRanges, makeSnapshot, captureSelection, matches, cacheKey, parseCache, createController, shouldSuppressReadingClick, handleReadClick};
   root.IELTSSelectionAI = Object.freeze(api);
   if (typeof module === 'object' && module.exports) module.exports = root.IELTSSelectionAI;
-  if (root.document?.getElementById('lesson')) init();
+  if (root.document?.getElementById('lesson') || root.document?.getElementById('coursePlayerApp')) init();
 })(typeof window !== 'undefined' ? window : globalThis);

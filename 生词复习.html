@@ -6,6 +6,8 @@
   <meta name="color-scheme" content="light">
   <title>生词复习 · IELTS 52</title>
   <link rel="stylesheet" href="assets/review-app.css">
+  <script defer src="assets/profile-store.js"></script>
+  <script defer src="assets/learning-records.js"></script>
   <script defer src="assets/course-data.js"></script>
   <script defer src="assets/notebook.js"></script>
   <script defer src="assets/review-core.js"></script>
@@ -35,6 +37,7 @@
           <h3 id="card-word" lang="en"></h3><p id="card-ipa" class="ipa" lang="en"></p>
           <div class="audio-row"><button id="audio-button" type="button" class="quiet">▶ 听发音</button><span id="audio-message" class="small" role="status"></span></div>
           <p id="recall-prompt" class="recall-prompt">先说出含义，再尝试用它造一句话。</p>
+          <label for="recall-answer">翻面前写下你的回忆或例句（保存原始输出）</label><textarea id="recall-answer" maxlength="1500" rows="3" placeholder="先凭记忆写下，不会用自评分替代能力认证。"></textarea>
           <button id="flip-button" type="button" class="primary flip-button">翻面查看释义 <kbd>空格</kbd></button>
           <div id="card-answer" class="card-answer" hidden><p id="card-meaning" class="meaning"></p><div id="context-box"><span class="eyebrow">放回原句</span><p id="card-context" lang="en"></p></div><a id="lesson-link" href="开始学习.html">回到课文 →</a><p class="small">按刚才翻面前的回忆表现评分。看见答案后的熟悉感不算独立想起。</p></div>
           <div id="rating-buttons" class="rating-grid" hidden>

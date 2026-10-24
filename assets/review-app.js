@@ -7,6 +7,8 @@
   var MAX_IMPORT = 16 * 1024 * 1024;
   var storage = null, baseRaw = null, state = null, deck = [], cardMap = new Map();
   var currentId = null, flipped = false, locked = false, busy = false, audio = null;
+  var recallStarted = Date.now(), recallOriginal = '', recallId = null;
+  var recallActiveMs = 0, recallTickAt = recallStarted, recallAttentive = attentive();
   var $ = function (id) { return document.getElementById(id); };
   var ratingButtons = Array.from(document.querySelectorAll('[data-rating]'));
   function today() {
@@ -14,6 +16,13 @@
     return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
   }
   function now() { return new Date().toISOString(); }
+  function attentive() { return !document.hidden && (!document.hasFocus || document.hasFocus()); }
+  function trackRecall() {
+    var time = Date.now();
+    if (currentId && !locked && !busy && recallAttentive) recallActiveMs += Math.max(0, time - recallTickAt);
+    recallTickAt = time; recallAttentive = attentive();
+    return time;
+  }
   function notice(message) { $('notice').textContent = message; $('notice').hidden = !message; }
   function error(message) {
     locked = true;
@@ -62,13 +71,14 @@
   }
   function renderCard(id) {
     stopAudio(); currentId = id; flipped = false;
+    recallStarted=Date.now();recallActiveMs=0;recallTickAt=recallStarted;recallAttentive=attentive();recallOriginal='';recallId=globalThis.IELTSRecords?.makeId('vocab');$('recall-answer').value='';$('recall-answer').disabled=false;
     $('audio-message').textContent = '';
     $('card-answer').hidden = true; $('rating-buttons').hidden = true;
     $('flip-button').hidden = false; $('recall-prompt').hidden = false;
     $('card-area').hidden = false; $('empty-state').hidden = true;
     var card = cardMap.get(id), record = state.cards[id];
     $('card-status').textContent = record.status === 'new' ? '新词 · 先尝试回忆' : record.status === 'learning' ? '学习中 · 再次回想' : '到期复习';
-    $('card-lesson').textContent = (id.indexOf('custom-') === 0 ? '我的生词 · ' : '') + '第 ' + card.day + ' 篇';
+    $('card-lesson').textContent = (id.indexOf('custom-') === 0 ? '我的生词 · ' : '') + (card.materialId?'课程材料 '+card.materialId:'第 ' + card.day + ' 篇');
     $('card-word').textContent = card.word;
     $('card-ipa').textContent = card.ipa || '';
     $('audio-button').hidden = !card.audio;
@@ -76,7 +86,7 @@
     $('card-meaning').textContent = card.meaning;
     $('card-context').textContent = card.context || '';
     $('context-box').hidden = !card.context;
-    $('lesson-link').href = '开始学习.html' + (preview ? '?preview=1' : '') + '#day' + encodeURIComponent(card.day);
+    $('lesson-link').href = card.materialId?'学习课程.html?material='+encodeURIComponent(card.materialId)+(preview?'&preview=1':''):'开始学习.html' + (preview ? '?preview=1' : '') + '#day' + encodeURIComponent(card.day);
     refreshDelays(); disablePractice();
   }
   function renderQueue(keepCurrent) {
@@ -105,7 +115,7 @@
     stopAudio(); currentId = null; flipped = false; state = null; locked = false; baseRaw = null;
     $('error-box').hidden = true; notice('');
     try {
-      storage = preview ? sessionStorage : localStorage;
+      storage = globalThis.IELTSProfiles?.storage() || (preview ? sessionStorage : localStorage);
       baseRaw = storage.getItem(KEY);
       if (baseRaw !== null && baseRaw.length > MAX_IMPORT) throw new Error('已保存的复习记录超过 16 MB，请先下载原始记录。');
       readDeck();
@@ -124,19 +134,23 @@
   }
   function flip() {
     if (!currentId || locked || busy || flipped) return;
+    trackRecall();
+    recallOriginal=$('recall-answer').value.trim();$('recall-answer').disabled=true;
     flipped = true;
     $('card-answer').hidden = false; $('rating-buttons').hidden = false;
     $('flip-button').hidden = true; $('recall-prompt').hidden = true;
     refreshDelays(); disablePractice();
   }
-  function rate(rating) {
+  async function rate(rating) {
     if (!currentId || !flipped || locked || busy) return;
+    var submitted = trackRecall();
     busy = true; disablePractice();
     try {
-      var word = cardMap.get(currentId).word;
+      var card=cardMap.get(currentId),word = card.word;
+      if(recallOriginal&&globalThis.IELTSRecords){var elapsed=Math.max(0,(submitted-recallStarted)/1000),seconds=Math.min(600,elapsed,Math.max(0,recallActiveMs/1000));await IELTSRecords.record({id:recallId,materialId:card.materialId||'vocab-'+card.id,title:'词卡回忆：'+word.slice(0,180),skill:'vocabulary',source:'review-app',answer:JSON.stringify({word,context:card.context||'',recalledBeforeFlip:recallOriginal,selfRating:rating}),minutes:seconds/60,activeSeconds:seconds,elapsedSeconds:elapsed,quantity:1,unit:'条',assistance:{hint:false,answer:false,ai:false},kind:'original',exposure:state.cards[currentId].status==='new'?'unseen':'seen',startedAt:new Date(recallStarted).toISOString(),submittedAt:new Date(submitted).toISOString(),evaluation:{method:'self',result:rating==='again'?'revise':'unverified',feedback:'按翻面前的回忆自评；自评分不认证掌握或 IELTS 能力。'}});}
       var result = Core.reviewCard(state, currentId, rating, now(), today());
       save(result.state, false);
-      notice('已保存「' + word + '」的评分，下次复习：' + localDue(result.nextDueAt) + '。');
+      notice('已保存「' + word + '」的评分，下次复习：' + localDue(result.nextDueAt) + '。'+(recallOriginal?'翻面前原稿已进入作品记录。':'未写原稿，本次仅保存复习安排，不记日程完成量。'));
       renderQueue(false);
     } catch (err) { error('本次评分未保存：' + err.message); }
     finally { busy = false; disablePractice(); }
@@ -191,10 +205,14 @@
     else if (/^[1-4]$/.test(event.key) && flipped) { event.preventDefault(); rate(['again', 'hard', 'good', 'easy'][Number(event.key) - 1]); }
   });
   window.addEventListener('storage', function (event) {
-    if (event.storageArea !== storage) return;
-    if ((event.key === KEY || event.key === null) && event.newValue !== baseRaw) error('另一个页面已修改本机复习记录。请先导出本页副本，然后重新读取。');
-    if (event.key === NOTEBOOK_KEY) notice('个人生词本已更新。刷新此页面加载新词卡。');
+    var key=globalThis.IELTSProfiles?.scopeKey(KEY)||KEY,notebook=globalThis.IELTSProfiles?.scopeKey(NOTEBOOK_KEY)||NOTEBOOK_KEY;
+    if ((event.key === key || event.key === null) && event.newValue !== baseRaw) error('另一个页面已修改本机复习记录。请先导出本页副本，然后重新读取。');
+    if (event.key === notebook) notice('个人生词本已更新。刷新此页面加载新词卡。');
   });
+  window.addEventListener('ielts:profile-changed',function(){stopAudio();error('学习档案已切换，请刷新后继续；当前未保存内容不会写入其他档案。');});
+  document.addEventListener('visibilitychange', trackRecall);
+  window.addEventListener('focus', trackRecall);
+  window.addEventListener('blur', trackRecall);
   $('preview-banner').hidden = !preview;
   if (preview) document.querySelectorAll('a[href$=".html"]').forEach(function (link) { link.href += '?preview=1'; });
   load();

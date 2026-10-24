@@ -204,6 +204,18 @@ test('main page integrates selectable text without changing lesson data and all 
   assert.match(html, /基础入门\.html\?week=1/); assert.match(html, /第一篇不是零基础第一课/);
   for (const match of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)) if (match[1].trim()) new vm.Script(match[1]);
   const script = fs.readFileSync(path.join(__dirname, '..', 'assets', 'selection-ai.js'), 'utf8');
-  assert.doesNotMatch(script, /\.innerHTML\s*=/); assert.doesNotMatch(script, /localStorage/);
+  assert.doesNotMatch(script, /\.innerHTML\s*=/); assert.match(script, /storage = root\.sessionStorage/);
   const window = {}; vm.runInNewContext(script, {window}); assert.equal(window.IELTSSelectionAI.MAX_SELECTION, 800);
+});
+
+test('new curriculum selection is restricted to practice and retains material identity',()=>{
+  const data={materialId:'w9-reading-1',mode:'practice',lesson:{title:'New text',text:'This is a new sentence.'},groups:[{index:1,text:'This is a new sentence.'}]};
+  const snap=S.makeSnapshot(data,1,0,4);assert.equal(snap.materialId,'w9-reading-1');assert.equal(snap.lessonId,undefined);assert.equal(S.matches(snap,data),true);assert.equal(S.makeSnapshot({...data,mode:'assessment'},1,0,4),null);assert.equal(S.matches(snap,{...data,mode:'assessment'}),false);
+});
+
+test('saved structured consolidation questions validate answers and are not raw AI prose',()=>{
+  const item={id:'practice-one',materialId:'w9-reading-1',text:'a new sentence',context:'This is a new sentence.',createdAt:'2026-10-24T00:00:00.000Z',dueAt:'2026-10-26T00:00:00.000Z',parentId:null,exercises:[{id:'q1',type:'choice',prompt:'Choose is or are.',options:['is','are'],answers:[0],explanation:'The subject is singular.'}]};
+  assert.equal(S.parsePractice({schema:1,items:[item]}).items[0].exercises[0].answers[0],0);
+  assert.throws(()=>S.parsePractice({schema:1,items:[{...item,exercises:[{...item.exercises[0],answers:[4]}]}]}));
+  assert.throws(()=>S.parsePractice({schema:1,items:[item,item]}));
 });

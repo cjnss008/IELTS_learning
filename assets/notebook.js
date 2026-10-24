@@ -8,15 +8,17 @@
     return a.map(c=>{
       if(!c||typeof c!=='object'||!/^custom-[a-zA-Z0-9-]{8,80}$/.test(c.id)||ids.has(c.id))throw Error('生词条目标识无效。');
       ids.add(c.id);
-      if(!Number.isInteger(c.day)||c.day<1||c.day>52)throw Error('生词篇号无效。');
+      const material=typeof c.materialId==='string'&&/^[a-zA-Z0-9][a-zA-Z0-9._:-]{0,159}$/.test(c.materialId)&&!['__proto__','constructor','prototype'].includes(c.materialId);
+      if(!material&&(!Number.isInteger(c.day)||c.day<1||c.day>52)||material&&c.day!==null)throw Error('生词篇号或课程材料无效。');
       const kind=c.kind==='sentence'?'sentence':'phrase';
       for(const [k,min,max] of [['word',1,kind==='sentence'?800:80],['meaning',1,300],['context',1,1500]])if(typeof c[k]!=='string'||c[k].trim().length<min||c[k].length>max)throw Error('生词内容超出范围。');
       const card={id:c.id,day:c.day,word:c.word,meaning:c.meaning,context:c.context,audio:'',status:c.status==='known'?'known':'learning'};
+      if(material)card.materialId=c.materialId;
       if(kind==='sentence')card.kind='sentence';
       return card;
     });
   }
-  function storage(){return new URLSearchParams(location.search).get('preview')==='1'?sessionStorage:localStorage;}
+  function storage(){return root.IELTSProfiles?.storage()||(new URLSearchParams(location.search).get('preview')==='1'?sessionStorage:localStorage);}
   function key(){return new URLSearchParams(location.search).get('preview')==='1'?'ielts52-notebook-preview-v1':KEY;}
   function load(){return parse(storage().getItem(key())||'[]');}
   const normalized=s=>String(s).normalize('NFKC').trim().replace(/[’‘]/g,"'").replace(/\s+/g,' ').replace(/[.!?]+$/,'').toLowerCase();
@@ -24,8 +26,8 @@
     const store=options.storage||storage(),storeKey=options.key||key();
     const original=store.getItem(storeKey),cards=parse(original||'[]');
     const id='custom-'+(root.crypto?.randomUUID?root.crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2));
-    const card=parse([{id,day:entry.day,word:typeof entry.word==='string'?entry.word.trim():entry.word,meaning:typeof entry.meaning==='string'?entry.meaning.trim():entry.meaning,context:typeof entry.context==='string'?entry.context.trim():entry.context,kind:entry.kind,audio:'',status:'learning'}])[0];
-    const existing=cards.find(item=>item.day===card.day&&normalized(item.word)===normalized(card.word));
+    const card=parse([{id,day:entry.materialId?null:entry.day,...(entry.materialId?{materialId:entry.materialId}:{}),word:typeof entry.word==='string'?entry.word.trim():entry.word,meaning:typeof entry.meaning==='string'?entry.meaning.trim():entry.meaning,context:typeof entry.context==='string'?entry.context.trim():entry.context,kind:entry.kind,audio:'',status:'learning'}])[0];
+    const existing=cards.find(item=>item.day===card.day&&item.materialId===card.materialId&&normalized(item.word)===normalized(card.word));
     if(existing)return {added:false,card:existing};
     if(cards.length>=5000)throw Error('生词本已达到 5000 条，请先整理记录。');
     cards.push(card);
