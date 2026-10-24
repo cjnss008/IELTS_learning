@@ -4,17 +4,18 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
   <title>口语练习 · IELTS 52 周学习计划</title>
   <link rel="stylesheet" href="assets/daily-plan.css"><link rel="stylesheet" href="assets/speaking-app.css">
-  <script src="assets/course-data.js" defer></script><script src="assets/speaking-audio.js" defer></script><script src="assets/speaking-app.js" defer></script>
+  <script src="assets/profile-store.js" defer></script><script src="assets/learning-records.js" defer></script><script src="assets/speaking-library.js" defer></script><script src="assets/ai-review.js" defer></script><script src="assets/course-data.js" defer></script><script src="assets/speaking-audio.js" defer></script><script src="assets/speaking-app.js" defer></script><script src="assets/speaking-workbench.js" defer></script>
 </head>
 <body>
   <header class="site-header"><a class="brand" href="每日学习计划.html"><span class="brand-icon" aria-hidden="true">52</span><span>IELTS LEARNING<small>听清自己，再练一次</small></span></a><nav aria-label="主要导航"><a href="每日学习计划.html">每日计划</a><a href="开始学习.html">课文学习</a><a href="口语练习.html" aria-current="page">口语练习</a><a href="写作与AI辅导.html">写作与 AI</a><a href="备份中心.html">备份中心</a></nav></header>
   <main class="page-shell speaking-shell">
-    <div class="hero"><div><p class="eyebrow">SPEAK · LISTEN · PRACTISE</p><h1>把英语说出来</h1><p class="hero-copy">短句朗读练读音，自由回答练表达。录音先留在浏览器，由你决定是否发送评测。</p></div><div class="speaking-hero-note"><strong>一次只练一个重点</strong><p>先回听，再挑一个词或一句话重录。录音不会自动上传或自动保存到磁盘。</p></div></div>
+    <section id="profilePanel" class="speaking-panel" aria-label="当前学习档案"></section>
+    <div class="hero"><div><p class="eyebrow">SPEAK · LISTEN · PRACTISE</p><h1>把英语说出来</h1><p class="hero-copy">短句朗读练读音，自由回答练表达。录音先留在浏览器，由你决定是否发送评测。</p></div><div class="speaking-hero-note"><strong>一次只练一个重点</strong><p>先回听，再挑一个词或一句话重录。录音会保存到当前浏览器档案作品库，不自动上传。请定期导出备份。</p></div></div>
     <noscript><p class="notice">请启用 JavaScript 使用录音、回放及语音评测。</p></noscript>
     <div class="speaking-layout">
       <section class="speaking-panel">
         <div class="speaking-heading"><span>01</span><div><h2>选择今天要说的内容</h2><p>零基础先练生活短句，再过渡到课文和原创口语问答。</p></div></div>
-        <label for="speakingMode">练习方式</label><select id="speakingMode"><option value="reading">课程短句朗读 · 可选发音诊断</option><option value="free">自由口语 · 只录音与回听</option></select>
+        <label for="speakingMode">练习方式</label><select id="speakingMode"><option value="reading">课程短句朗读 · 可选发音诊断</option><option value="free">自由口语 · 录音、转写与表达反馈</option></select>
         <div id="readingControls"><div class="speaking-selects"><div><label for="speakingLesson">朗读材料</label><select id="speakingLesson"></select></div><div><label for="speakingSentence">参考句</label><select id="speakingSentence"></select></div></div><label for="referenceText">要朗读的准确文本（最多 80 个单词）</label><textarea id="referenceText" rows="5" maxlength="1000" lang="en" spellcheck="true"></textarea><p class="speaking-help">入门句中的 Lin 为示例姓名，可改成自己的信息；参考文本必须和录音一致。改变参考文本后需要重新录音。</p></div>
         <p class="notice" id="referenceInvalid" hidden>朗读模式需要 1–80 个英语单词的准确参考文本。请先缩短或补全参考句，再录音或导入。</p>
         <div id="freeControls" hidden><label for="speakingPart">口语练习题</label><select id="speakingPart"><option value="foundation">零基础 · 简单自我介绍</option><option value="part1">Part 1 · 熟悉的话题</option><option value="part2">Part 2 · 个人经历</option><option value="part3">Part 3 · 观点讨论</option></select><div id="freePrompt" class="speaking-prompt"></div><p class="notice">自由回答只在本机录音和回听，不送到发音评测接口。支持最长 3 分钟录音或导入，便于 Part 2 连续陈述 1–2 分钟。</p></div>
@@ -24,16 +25,32 @@
         <aside class="speaking-self-check"><h3>回听时检查</h3><ul><li>短句朗读：有没有漏词、吞掉词尾或读错重音？</li><li>自由表达：有没有直接回答问题并补充一个细节？</li><li>能否不用看稿，再自然地说一遍？</li></ul></aside>
       </section>
       <section class="speaking-panel" aria-labelledby="speechAssessmentHeading">
-        <div class="speaking-heading"><span>02</span><div><h2 id="speechAssessmentHeading">可选：短句发音诊断</h2><p>需要独立的 Azure Speech 服务。DeepSeek 文本模型不提供此项评测。</p></div></div>
-        <p class="speaking-config-status" id="speechConfigStatus">正在检查语音服务…</p>
+        <div class="speaking-heading"><span>02</span><div><h2 id="speechAssessmentHeading">可选：短句发音诊断</h2><p>默认使用阿里云专业口语评测，可选 Azure。DeepSeek 负责把诊断转成中文练习建议。</p></div></div>
+        <label for="speechProvider">专业语音服务</label><select id="speechProvider"><option value="oral">阿里云专业口语评测</option><option value="speech">Azure Speech（可选）</option></select><p><a href="AI设置.html">前往 AI 设置：AppID / AppSecret 与动态授权</a></p><p class="speaking-config-status" id="speechConfigStatus">正在检查语音服务…</p>
         <details class="speech-config"><summary>配置 Azure Speech 资源</summary><form id="speechConfigForm" autocomplete="off"><label for="speechEndpoint">资源 endpoint</label><input id="speechEndpoint" type="url" placeholder="https://资源名.cognitiveservices.azure.com" autocomplete="off" required><label for="speechKey">Speech 资源密钥</label><input id="speechKey" type="password" autocomplete="off" spellcheck="false" required><p class="speaking-help">此密钥与文本 AI 密钥分开。仅保存在本地服务内存中，提交后清空输入框；关闭服务后清除。保存配置不等于验证有效。</p><button id="saveSpeechConfig" type="submit" class="button secondary">保存语音配置（暂不验证）</button></form><div class="toolbar speech-service-actions"><button id="refreshSpeech" class="button secondary" type="button">刷新状态</button><button id="disconnectSpeech" class="button secondary" type="button">断开并清除语音密钥</button></div></details>
-        <div class="speech-consent"><strong>只有点击后才发送</strong><p id="speechDisclosure">点击“发送录音进行发音评测”，会将当前参考句和录音发送至你配置的 Azure Speech 资源，可能产生费用，服务商按其规则处理内容。</p><p>本机服务不写入录音或评测日志。未发送前，录音只在本页面内存中，关闭页面即丢失；需要保留时请主动下载。</p></div>
+        <div class="speech-consent"><strong>只有点击后才发送</strong><p id="speechDisclosure">点击“发送录音进行发音评测”，会将当前参考句和录音发送至你配置的 Azure Speech 资源，可能产生费用，服务商按其规则处理内容。</p><p>本机服务不写入录音或评测日志。录音原件保存在当前档案的浏览器作品库；请定期导出，清理浏览器数据会删除本地记录。</p></div>
         <button id="assessSpeech" type="button" class="button primary speech-wide" disabled>发送录音进行发音评测</button><button id="cancelSpeech" type="button" class="button secondary speech-wide" hidden>取消本次评测</button>
         <p id="speechMessage" class="speaking-message" role="status" aria-live="polite"></p>
         <div id="speechEmpty" class="speech-empty">录一段短句，先回听，再决定是否评测。</div>
         <div id="speechResults" hidden><p class="notice" id="speechDisclaimer"></p><div class="speech-scores" id="speechScores"></div><p class="speaking-help">分数范围 0–100，未返回的项目标为“未提供”。这些是自动诊断指标，不能换算 IELTS Band。</p><h3 class="speech-result-title">服务识别文本</h3><p id="speechRecognized" class="speech-recognized"></p><div class="speech-word-list" id="speechWords"></div></div>
       </section>
     </div>
+    <section class="speaking-panel speech-workbench" aria-labelledby="workbenchHeading">
+      <div class="speaking-heading"><span>03</span><div><h2 id="workbenchHeading">原始录音、转写与双轮反馈</h2><p>原录音不覆盖。转写可修改，订正另存一份；每次联网操作都由你点击。</p></div></div>
+      <div class="toolbar"><button id="refreshAudioLibrary" type="button" class="button secondary">刷新作品库</button><button id="exportAudioLibrary" type="button" class="button secondary">导出作品与录音</button><label class="button secondary" for="importAudioLibrary">导入备份</label><input id="importAudioLibrary" type="file" accept="application/json" hidden></div>
+      <label for="audioWorkSelect">选择原始录音</label><select id="audioWorkSelect"></select><p id="audioWorkInfo" class="speaking-help"></p><audio id="audioWorkPlayback" controls preload="metadata"></audio>
+      <p class="notice">转写：向 AI 设置中单独配置的 Azure 或千问 ASR 发送所选原录音。千问ASR单次最长5分钟；Azure适配最长15分钟。Omni独立按钮发送最长3分钟原音频，给AI听音观察而非专业评分。未配置或失败会保留作品待重试。</p>
+      <div class="toolbar"><button id="transcribeAudio" type="button" class="button primary">发送录音进行转写</button><button id="cancelAudioWork" type="button" class="button secondary" hidden>取消等待</button><button id="listenOmni" type="button" class="button secondary">发送录音给Omni获取听音观察</button><button id="speechAdvice" type="button" class="button secondary">发送发音诊断给 AI，生成中文练习</button></div>
+      <p id="audioWorkMessage" class="speaking-message" role="status" aria-live="polite"></p>
+      <details><summary>服务原始转写（保留）</summary><pre id="rawTranscript" class="speech-feedback"></pre></details>
+      <label for="editedTranscript">对照录音编辑转写（只改你实际说过的话）</label><textarea id="editedTranscript" rows="8" maxlength="10000" placeholder="没有转写服务也可以手动逐句听写。"></textarea>
+      <label for="spokenTaskPrompt">本次口语题目</label><textarea id="spokenTaskPrompt" rows="3" maxlength="3000"></textarea>
+      <div class="speaking-selects"><div><label for="spokenTaskType">任务类型</label><select id="spokenTaskType"><option value="foundation">基础表达</option><option value="part1">Part 1</option><option value="part2">Part 2</option><option value="part3">Part 3</option><option value="full_test">完整口试（11–14分钟）</option></select></div><div><label for="spokenTargetLevel">当前阶段</label><select id="spokenTargetLevel"><option>A0</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1</option></select></div></div>
+      <p class="speaking-help">点击双轮评阅会发送题目与编辑后的文字，发音诊断通过独立按钮生成中文练习，不把转写当作听到原音频。文字双轮无法证明发音与口语流利度。“完整原录音”按钮会将所有音频分段发送给Omni，再把已返回的真实听音观察与转写发送给通用AI做两轮四维训练估计；可能多次计费、最多等待约15分钟。语音片段失败或证据不足时保持待验证，不给分。两轮共享音频观察，不是独立考官认证。</p>
+      <div class="toolbar"><button id="saveSpokenTranscript" type="button" class="button secondary">保存转写原稿到待评队列</button><button id="reviewSpokenAudio" type="button" class="button primary">发送完整原录音与转写，进行四维 AI 评阅</button><button id="reviewSpokenTranscript" type="button" class="button primary">保存并发送双轮 AI 评阅</button></div>
+      <details><summary>带时间戳的分段（仅服务真实返回时显示）</summary><div id="transcriptSegments"></div></details>
+      <pre id="spokenFeedback" class="speech-feedback"></pre><div id="spokenReviewQueue"></div>
+    </section>
     <footer class="speaking-footnote">发音只是 IELTS 口语的一部分。自由表达还涉及流利与连贯、词汇、语法等能力；录音设备、噪声和口音差异也会影响自动诊断。</footer>
   </main>
 </body>

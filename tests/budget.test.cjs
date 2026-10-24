@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { createBudget } = require('../server/budget.cjs');
+const { spawnSync } = require('node:child_process');
 const config = { baseUrl: 'https://api.deepseek.com', model: 'deepseek-flash' };
 const unknown = { baseUrl: 'https://example.test/v1', model: 'unquoted-model' };
 const messages = [{ role: 'user', content: 'Mock learning text.' }];
@@ -103,4 +104,23 @@ test('a second writer respects an enabled ledger without overwriting its reserva
   second.configure({ enabled: false });
   assert.equal(second.reserveText(config, messages, 1), null);
   assert.equal(fs.readFileSync(f.filePath, 'utf8'), before);
+});
+
+test('new locks record their host and clean shutdown releases only the owned lock', t => {
+  const f=fixture(t),b=f.open();b.status();const lockPath=path.join(f.dir,'budget.lock'),lock=JSON.parse(fs.readFileSync(lockPath,'utf8'));
+  assert.equal(lock.hostname,os.hostname());assert.equal(lock.pid,process.pid);assert.ok(Number.isFinite(Date.parse(lock.createdAt)));b.close();assert.equal(fs.existsSync(lockPath),false);
+});
+
+test('legacy, remote, live and dead-process locks remain intact with specific safe guidance', t => {
+  const child=spawnSync(process.execPath,['-e','process.stdout.write(String(process.pid))'],{encoding:'utf8'});assert.equal(child.status,0);const deadPid=Number(child.stdout);
+  const cases=[
+    [{owner:'legacy-owner',pid:deadPid},/旧格式/],
+    [{owner:'remote-owner',pid:process.pid,hostname:'different-host-'+os.hostname()},/另一台主机/],
+    [{owner:'live-owner',pid:process.pid,hostname:os.hostname()},/仍持有/],
+    [{owner:'dead-owner',pid:deadPid,hostname:os.hostname()},/进程已退出/]
+  ];
+  for(const [holder,expected]of cases){
+    const f=fixture(t),initial=f.open();initial.status();initial.close();const before=fs.readFileSync(f.filePath,'utf8'),lockPath=path.join(f.dir,'budget.lock'),serialized=JSON.stringify(holder);fs.writeFileSync(lockPath,serialized);
+    const blocked=f.open(),status=blocked.status();assert.equal(status.state,'blocked');assert.match(status.blockedReason,expected);assert.equal(blocked.reserveText(unknown,messages,100),null);blocked.close();assert.equal(fs.readFileSync(lockPath,'utf8'),serialized);assert.equal(fs.readFileSync(f.filePath,'utf8'),before);
+  }
 });

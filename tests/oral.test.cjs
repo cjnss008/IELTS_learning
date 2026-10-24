@@ -1,0 +1,27 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),http=require('node:http'),crypto=require('node:crypto');
+const {createOralHandler,signature}=require('../server/oral.cjs');const {createEvidenceStore}=require('../server/evidence.cjs');
+const SECRET='fake-only-secret-not-real',TOKEN='fake-only-warrant-token';
+function wav(){const b=Buffer.alloc(32044);b.write('RIFF');b.writeUInt32LE(b.length-8,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(16000,24);b.writeUInt32LE(32000,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(32000,40);return b.toString('base64');}
+test('oral authorization signs official sorted fields, excludes AppSecret from transport, and refreshes once',async t=>{
+ let time=1800000000000,authCalls=0,assessCalls=0,expired=false;const requests=[],proofs=createEvidenceStore();
+ const handler=createOralHandler({now:()=>time,evidenceStore:proofs,fetchImpl:async(url,options)=>{requests.push({url,options});assert.equal(options.redirect,'error');if(url.endsWith('/auth/authorize')){authCalls++;const fields=new URLSearchParams(options.body);assert.equal(fields.has('app_secret'),false);assert.equal(fields.get('user_id'),'ielts-local');return new Response(JSON.stringify({code:0,data:{warrant_id:TOKEN+'-'+authCalls,expire_at:Math.floor(time/1000)+7200}}));}assessCalls++;assert.ok(options.body instanceof FormData);const config=JSON.parse(options.body.get('text'));assert.equal(config.start.param.request.attachAudioUrl,0);assert.equal(config.start.param.audio.saveAudio,0);assert.equal(config.start.param.audio.audioType,'wav');if(expired){expired=false;return new Response(JSON.stringify({errId:41030,eof:1}));}return new Response(JSON.stringify({eof:1,result:{accuracy:82,overall:80,fluency:76,integrity:90,details:[{char:'hello',score:81}]},privateEcho:SECRET+TOKEN}));}});
+ const server=http.createServer((req,res)=>handler(req,res,req.url));await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>{handler.close();server.close(r);server.closeAllConnections();}));const base='http://127.0.0.1:'+server.address().port;
+ async function api(route,body,method){const response=await fetch(base+'/api/oral/'+route,{method:method||(body?'POST':'GET'),headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});const result=await response.json();assert.ok(!JSON.stringify(result).includes(SECRET));assert.ok(!JSON.stringify(result).includes(TOKEN));return {status:response.status,data:result};}
+ const config={appid:'a-test',appSecret:SECRET,userId:'ielts-local',clientIp:'203.0.113.10'};
+ assert.equal(signature(config,1800000000),crypto.createHash('md5').update('app_secret='+SECRET+'&appid=a-test&timestamp=1800000000&user_client_ip=203.0.113.10&user_id=ielts-local').digest('hex'));
+ assert.equal((await api('configure',config)).status,200);assert.equal(authCalls,0);
+ const a=await api('assess',{reference:'Hello world.',audio:wav()});assert.equal(a.status,200);assert.equal(a.data.result.accuracy,82);assert.equal(proofs.get(a.data.evidenceId).kind,'pronunciation');assert.equal(authCalls,1);
+ await api('assess',{reference:'Hello world.',audio:wav()});assert.equal(authCalls,1);
+ time+=7100*1000;await api('assess',{reference:'Hello world.',audio:wav()});assert.equal(authCalls,2);
+ expired=true;await api('assess',{reference:'Hello world.',audio:wav()});assert.equal(authCalls,3);assert.equal(assessCalls,5);
+ assert.equal((await api('status')).data.authorized,true);await api('connection',undefined,'DELETE');assert.equal((await api('status')).data.configured,false);
+});
+
+test('oral automatic IP lookup sends no credential and reports official AppID environment error safely',async t=>{
+ let authCalls=0,ipCalls=0;const quotedSecret='fake-secret-"-\\-test';
+ const handler=createOralHandler({fetchImpl:async(url,options)=>{if(url==='https://api.ipify.org?format=json'){ipCalls++;assert.equal(options.method,'GET');assert.equal(options.body,undefined);assert.deepEqual(options.headers,{Accept:'application/json'});assert.ok(!JSON.stringify(options).includes(quotedSecret));return new Response(JSON.stringify({ip:'203.0.113.9'}));}authCalls++;assert.ok(['api.cloud.ssapi.cn','gate-01.api.cloud.ssapi.cn','gate-02.api.cloud.ssapi.cn','gate-03.api.cloud.ssapi.cn'].includes(new URL(url).hostname));const form=new URLSearchParams(options.body);assert.equal(form.get('user_client_ip'),'203.0.113.9');return new Response(JSON.stringify({code:430005,message:'private '+quotedSecret}));}});
+ const server=http.createServer((req,res)=>handler(req,res,req.url));await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>{handler.close();server.close(r);server.closeAllConnections();}));const base='http://127.0.0.1:'+server.address().port;
+ let r=await fetch(base+'/api/oral/configure',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({appid:'test-app',appSecret:quotedSecret})});assert.equal(r.status,200);assert.equal((await r.json()).clientIp,'203.0.113.9');assert.equal(ipCalls,1);assert.equal(authCalls,0);
+ r=await fetch(base+'/api/oral/refresh',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});const result=await r.json();assert.equal(r.status,401);assert.match(result.error.message,/ApplicationAccessId/);assert.match(result.error.message,/正式网关/);assert.ok(!JSON.stringify(result).includes(quotedSecret));assert.equal(authCalls,4);
+});

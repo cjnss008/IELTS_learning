@@ -30,6 +30,8 @@
   let referenceAtRecording = '';
   let modeAtRecording = '';
   let speechConfig = null;
+  let currentWork = null;
+  const speechRoute = () => $('speechProvider')?.value === 'oral' ? 'oral' : 'speech';
   let requestController = null;
   let serviceBusy = false;
   let disposed = false;
@@ -41,11 +43,11 @@
     return text.length >= 2 && text.length <= 1000 && wordCount(text) <= 80;
   }
   function controls() {
-    const locked = phase !== 'idle' || serviceBusy;
+    const locked = disposed || phase !== 'idle' || serviceBusy;
     const reading = $('speakingMode').value === 'reading';
     const invalidReference = reading && !referenceValid();
     ['speakingLesson', 'speakingSentence', 'referenceText', 'speakingPart', 'audioImport'].forEach(id => { $(id).disabled = locked; });
-    $('speakingMode').disabled = serviceBusy;
+    $('speakingMode').disabled = serviceBusy || disposed;
     $('recordStart').disabled = locked || !canRecord || invalidReference;
     $('audioImport').disabled = locked || invalidReference;
     $('referenceInvalid').hidden = !invalidReference;
@@ -64,7 +66,7 @@
   function clearAudio() {
     $('recordPlayback').pause(); $('recordPlayback').removeAttribute('src'); $('recordPlayback').load();
     if (audioUrl) URL.revokeObjectURL(audioUrl);
-    audioUrl = ''; wavBytes = null; referenceAtRecording = ''; modeAtRecording = '';
+    audioUrl = ''; wavBytes = null; referenceAtRecording = ''; modeAtRecording = ''; currentWork = null;
     $('audioDownload').removeAttribute('href'); $('playbackSection').hidden = true;
     clearResult(); controls();
   }
@@ -132,6 +134,7 @@
     $('playbackSection').hidden = false;
     $('recordStatus').textContent = '录音已就绪';
     note('recordMessage', '音频已在本地准备好。先回听；需要保留时请主动下载。');
+    if(globalThis.IELTSMediaLibrary){try{const savedWork=await IELTSMediaLibrary.create({kind:'audio',name:selectedMode==='reading'?'短句朗读':'自由口语 '+$('speakingPart').value,originalText:selectedMode==='reading'?selectedReference:'',prompt:selectedMode==='reading'?selectedReference:freePrompts[$('speakingPart').value],mode:selectedMode,task:selectedMode==='reading'?'foundation':$('speakingPart').value,level:'A0',durationSeconds:duration},blob);await globalThis.IELTSReview?.record(savedWork);if(generation===expectedGeneration){currentWork=savedWork;note('recordMessage','原始录音已保存到当前档案作品库。可以回听、导出备份，或明确点击后发送服务。');window.dispatchEvent(new CustomEvent('ielts:audio-ready',{detail:{id:currentWork.id}}));}}catch(error){note('recordMessage','音频可回听，但作品库保存失败：'+error.message+' 请立即下载保留。','error');}}
   }
   async function startRecording() {
     if (phase !== 'idle' || serviceBusy || !canRecord) return;
@@ -199,16 +202,16 @@
     finally { if (generation === thisGeneration) { phase = 'idle'; controls(); } }
   }
   async function speechRequest(path, body, method = body ? 'POST' : 'GET', signal) {
-    const response = await fetch('/api/speech/' + path, { method, headers: body ? { 'Content-Type': 'application/json' } : {}, body: body ? JSON.stringify(body) : undefined, signal });
+    const response = await fetch('/api/' + speechRoute() + '/' + path, { method, headers: body ? { 'Content-Type': 'application/json' } : {}, body: body ? JSON.stringify(body) : undefined, signal });
     let data; try { data = await response.json(); } catch { throw new Error('本地语音服务返回格式无效，请重启后重试。'); }
     if (!response.ok || !data.ok) throw new Error(typeof data.error?.message === 'string' ? data.error.message : '语音服务请求失败。');
     return data;
   }
   function showConfig(data) {
     speechConfig = data;
-    $('speechConfigStatus').textContent = data.configured ? '已保存配置，尚未验证 · ' + data.endpoint : '尚未配置独立的 Azure Speech 资源';
-    $('speechEndpoint').value = data.endpoint || '';
-    $('speechDisclosure').textContent = '点击“发送录音进行发音评测”，会将当前参考句和录音发送至 ' + (data.configured ? data.endpoint : '你配置的 Azure Speech 资源') + '，可能产生费用，服务商按其规则处理内容。';
+    $('speechConfigStatus').textContent = data.configured ? (data.authorized?'动态授权有效':'配置已保存')+' · '+(data.verified?'已有成功评测':'尚未成功评测')+' · ' + data.endpoint : '尚未配置当前专业语音服务，请前往 AI 设置';
+    if(speechRoute()==='speech')$('speechEndpoint').value = data.endpoint || '';
+    $('speechDisclosure').textContent = '点击“发送录音进行发音评测”，会将当前参考句和录音发送至 ' + (data.configured ? data.endpoint : '你配置的专业语音服务') + '，可能产生费用，服务商按其规则处理内容。';
     controls();
   }
   async function refreshSpeech() {
@@ -220,8 +223,8 @@
     event.preventDefault(); if (!localService || serviceBusy) return;
     serviceBusy = true; controls();
     try {
-      const result = await speechRequest('configure', { endpoint: $('speechEndpoint').value.trim(), apiKey: $('speechKey').value.trim() }, 'POST', AbortSignal.timeout(10000));
-      showConfig(result); note('speechMessage', '语音配置已保存在本地服务内存中；尚未向 Azure 验证。');
+      const response = await fetch('/api/speech/configure',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({endpoint: $('speechEndpoint').value.trim(), apiKey: $('speechKey').value.trim()}),signal:AbortSignal.timeout(10000)});const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error?.message||'Azure配置失败。');
+      if(speechRoute()==='speech')showConfig(result); note('speechMessage', '语音配置已保存在本地服务内存中；尚未向 Azure 验证。');
     } catch (error) { note('speechMessage', error.message, 'error'); }
     finally { $('speechKey').value = ''; serviceBusy = false; controls(); }
   }
@@ -261,10 +264,10 @@
     if (modeAtRecording !== 'reading' || referenceAtRecording !== $('referenceText').value.trim()) { note('speechMessage', '参考文本已改变，请按新文本重新录音。', 'error'); return; }
     requestController = new AbortController(); serviceBusy = true; controls();
     const timer = setTimeout(() => requestController?.abort('timeout'), 65000);
-    note('speechMessage', '已发送短句与录音，正在等待 Azure 评测（最多约 60 秒）…', 'pending');
+    note('speechMessage', '已发送短句与录音，正在等待专业语音评测（首次授权加评测最多约 150 秒）…', 'pending');
     try {
       const result = await speechRequest('assess', { reference: referenceAtRecording, audio: encodedAudio() }, 'POST', requestController.signal);
-      renderResult(result); note('speechMessage', '本次诊断已返回。选一个具体问题重练，并用回听核对。');
+      renderResult(result); if(currentWork&&globalThis.IELTSMediaLibrary){currentWork=await IELTSMediaLibrary.update(currentWork.id,{diagnosis:result,evidenceId:result.evidenceId||''});window.dispatchEvent(new CustomEvent('ielts:audio-ready',{detail:{id:currentWork.id}}));} note('speechMessage', '本次诊断已返回。选一个具体问题重练，并用回听核对。');
     } catch (error) {
       if (requestController?.signal.aborted) note('speechMessage', requestController.signal.reason === 'timeout' ? '请求超时，录音仍在本页，可回听或下载。' : '已取消等待；录音仍在本页。已发送的音频可能已被服务商处理或计费。');
       else note('speechMessage', error.message, 'error');
@@ -277,6 +280,7 @@
   renderSentences(); $('freePrompt').textContent = freePrompts[$('speakingPart').value] || freePrompts.foundation;
   $('recordSupport').textContent = canRecord ? '点击开始后浏览器才会申请麦克风权限。音频格式转换在本机完成。' : '当前浏览器不支持完整录音能力，或页面不在安全环境。请用近期 Chrome / Edge 通过 localhost 打开；支持音频解码时也可导入本地短音频。';
   $('speakingMode').addEventListener('change', changeMode);
+  $('speechProvider')?.addEventListener('change',()=>{requestController?.abort('provider');speechConfig=null;clearResult();refreshSpeech();});
   $('speakingLesson').addEventListener('change', renderSentences);
   $('speakingSentence').addEventListener('change', () => { $('referenceText').value = sentences[Number($('speakingSentence').value)] || ''; clearAudio(); });
   $('referenceText').addEventListener('input', () => { if (wavBytes) note('recordMessage', '参考文本已改变，旧录音已释放，请重新录音。'); clearAudio(); });
@@ -301,5 +305,7 @@
     disposed = false; phase = 'idle'; recorder = null; requestController = null; serviceBusy = false;
     $('recordStatus').textContent = '准备录音'; $('recordClock').textContent = '00:00'; controls(); refreshSpeech();
   });
+  window.addEventListener('ielts:profile-changed',()=>{disposed=true;cancelCapture();requestController?.abort('profile');$('recordStart').disabled=true;$('audioImport').disabled=true;note('recordMessage','档案已切换，已停止录音。现有回放可下载保留；请刷新后再录音，不会写入新档案。','error');});
+  globalThis.IELTSProfiles?.mount($('profilePanel'));
   controls(); refreshSpeech();
 })();

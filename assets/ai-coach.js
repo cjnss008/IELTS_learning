@@ -35,13 +35,14 @@
   }
   let stored;
   try {
-    storage = preview ? sessionStorage : localStorage;
+    storage = preview ? sessionStorage : (globalThis.IELTSProfiles?.storage() || localStorage);
     stored = JSON.parse(storage.getItem(STORAGE_KEY) || '{}');
     if (!validStore(stored)) throw new Error();
   } catch { stored = {}; blockedStorage = '无法读取原有记录，已停止自动保存并保留原数据。请先到备份中心导出记录，并导出当前练习。'; }
   let drafts = stored.drafts || {};
   let lastSavedEntry = 'null';
   let currentKey = '';
+  let revisionParent = '', loadedPrompt = '', loadedTask = '';
   let currentSelection = null;
   let beforeText = '';
   let feedback = '';
@@ -60,6 +61,7 @@
   function selectedQuestion() { return questions[$('writingTask').value].find(q => q.id === $('questionSelect').value) || questions[$('writingTask').value][0]; }
   function activeKey() { return $('coachMode').value === 'writing' ? 'writing:' + $('writingTask').value + ':' + selectedQuestion().id : $('coachMode').value; }
   function fullPrompt() {
+    if (loadedPrompt) return loadedPrompt;
     if ($('coachMode').value !== 'writing') return $('contextPrompt').value.trim();
     const q = selectedQuestion();
     return q.question + (q.columns ? '\n\n' + q.unit + '\n' + q.columns.join(' | ') + '\n' + q.rows.map(row => row.join(' | ')).join('\n') : '') +
@@ -175,6 +177,7 @@
     busy = value;
     ['coachMode', 'coachLevel', 'writingTask', 'questionSelect', 'coachDraft', 'contextPrompt', 'clearDraft', 'refreshCoach'].forEach(id => { $(id).disabled = value; });
     $('refreshCoach').disabled = value || !localService;
+    if ($('sendCoach')) $('sendCoach').textContent = $('coachMode').value === 'grammar' ? '发送当前内容，获取语法反馈' : '保存原作并发送，进行双轮评阅';
     $('sendCoach').disabled = value || !localService || !connection?.connected || !connection?.model;
     $('cancelCoach').hidden = !value;
     $('feedbackResult').setAttribute('aria-busy', String(value));
@@ -200,11 +203,19 @@
     if (!text) { message('请先写下练习内容。', 'error'); $('coachDraft').focus(); return; }
     if (!connection?.connected || !connection?.model) { message('请先在 AI 设置完成连接并选择模型。', 'error'); return; }
     const submittedText = $('coachDraft').value;
-    const payload = { mode: $('coachMode').value, text, task: $('coachMode').value === 'writing' ? $('writingTask').value : '', prompt: fullPrompt(), level: $('coachLevel').value };
+    const dual = $('coachMode').value !== 'grammar' && globalThis.IELTSReview;
+    const payload = { mode: $('coachMode').value, text, task: loadedTask || ($('coachMode').value === 'writing' ? $('writingTask').value : ''), prompt: fullPrompt(), level: $('coachLevel').value };
     controller = new AbortController();
-    const timeout = setTimeout(() => controller?.abort('timeout'), 95000);
-    setBusy(true); message('已发送，正在等待模型反馈（最多约 90 秒）…', 'pending');
+    const timeout = setTimeout(() => controller?.abort('timeout'), dual ? 190000 : 95000);
+    setBusy(true); message(dual ? '先保存原作，再进行两轮独立请求（最多约180秒）…' : '已发送，正在等待模型反馈（最多约90秒）…', 'pending');
     try {
+      if (dual) {
+        const entry = await globalThis.IELTSReview.save(payload, { name: $('coachMode').value === 'writing' ? selectedQuestion().title : '口语文字练习', parentId: revisionParent });
+        revisionParent = entry.id; beforeText = submittedText; persist();
+        const output = await globalThis.IELTSReview.submit(entry, controller.signal);
+        feedback = output.feedback.slice(0,24000); feedbackMeta = output.result.model + ' · 双轮盲评 · ' + new Date().toLocaleString(); disclaimer = output.result.disclaimer;
+        showFeedback(); persist(); await renderReviewQueue(); message(output.result.status === 'complete' ? '两轮反馈已保存。核对原文证据与分歧，再另存订正稿。' : '评阅未完全完成，原作已保留在待评队列。'); return;
+      }
       const response = await fetch('/api/ai/coach', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: controller.signal });
       const result = await response.json();
       if (!response.ok || !result.ok) throw new Error(typeof result.error?.message === 'string' ? result.error.message : '辅导请求失败，请重试。');
@@ -223,6 +234,7 @@
   $('writingTask').value = Object.hasOwn(questions, stored.task) ? stored.task : 'academic_task1';
   renderQuestionOptions(stored.question); loadPractice();
   function changePractice(kind) {
+    revisionParent = ''; loadedPrompt = ''; loadedTask = '';
     persist();
     if (blockedStorage && $('coachDraft').value.trim()) {
       $('coachMode').value = currentSelection.mode; $('writingTask').value = currentSelection.task;
@@ -260,6 +272,32 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
   window.addEventListener('beforeunload', () => { persist(); controller?.abort('leave'); });
+  async function renderReviewQueue() {
+    if (!globalThis.IELTSReview || !$('reviewQueue')) return;
+    return globalThis.IELTSReview.renderQueue($('reviewQueue'), { onLoad: entry => {
+      if (busy) return; persist(); if (blockedStorage) { message(blockedStorage,'error'); return; }
+      $('coachMode').value = entry.mode === 'writing' ? 'writing' : 'speaking_text';
+      if (['academic_task1','academic_task2'].includes(entry.task)) $('writingTask').value = entry.task;
+      renderQuestionOptions(); loadPractice(); loadedPrompt = entry.prompt; loadedTask = entry.task; revisionParent = entry.id;
+      $('coachDraft').value = entry.originalText; $('contextPrompt').value = entry.prompt; $('questionPrompt').textContent = entry.prompt;
+      beforeText = entry.originalText; feedback = entry.review ? globalThis.IELTSReview.format(entry.review).slice(0,24000) : ''; feedbackMeta = '已保存原作 · ' + entry.createdAt; disclaimer = entry.review?.disclaimer || '';
+      showFeedback(); updateCount(); message('已载入原作。修改后提交会另存订正稿并关联原作。');
+    }, onRetry: async entry => {
+      if (busy) return; controller = new AbortController(); const timer = setTimeout(() => controller?.abort('timeout'),190000); setBusy(true);
+      try { const output = await globalThis.IELTSReview.submit(entry,controller.signal); message(output.result.status === 'complete' ? '历史原作两轮评阅已保存。' : '仍有评阅未完成，可在稍后重试。'); }
+      catch(error){message(error.message,'error');}finally{clearTimeout(timer);controller=null;setBusy(false);await renderReviewQueue();}
+    }});
+  }
+  $('queueOriginal')?.addEventListener('click',async()=>{
+    if(busy)return; const mode=$('coachMode').value; if(mode==='grammar'){message('语法草稿已自动保存；原作队列用于写作或口语文字。');return;}if(!$('coachDraft').value.trim()){message('请先写下原作。','error');return;}
+    try{const entry=await globalThis.IELTSReview.save({mode,text:$('coachDraft').value,prompt:fullPrompt(),task:loadedTask||(mode==='writing'?$('writingTask').value:''),level:$('coachLevel').value},{name:mode==='writing'?selectedQuestion().title:'口语文字练习',parentId:revisionParent});revisionParent=entry.id;message('原作已保存在作品库，尚未发送。');await renderReviewQueue();}catch(error){message(error.message,'error');}
+  });
+  $('refreshReviewQueue')?.addEventListener('click',renderReviewQueue);
+  $('exportWorks')?.addEventListener('click',async()=>{try{globalThis.IELTSMediaLibrary.download(await globalThis.IELTSMediaLibrary.exportArchive(),'IELTS作品备份.json');}catch(error){message(error.message,'error');}});
+  $('importWorks')?.addEventListener('change',async event=>{const file=event.target.files?.[0];event.target.value='';if(!file)return;try{const result=await globalThis.IELTSMediaLibrary.importArchive(file);message('已导入'+result.added+'份，跳过重复'+result.duplicates+'份。');await renderReviewQueue();}catch(error){message(error.message,'error');}});
+  window.addEventListener('ielts:profile-changed',()=>{controller?.abort('profile');setBusy(true);message('档案已切换。当前草稿仍在页面，请先导出练习记录，再刷新继续；不会写入新档案。','error');});
+  globalThis.IELTSProfiles?.mount($('profilePanel'));
+  renderReviewQueue();
   if (preview) $('coachPreview').hidden = false;
   setInterval(updateTimer, 500);
   refreshConnection();

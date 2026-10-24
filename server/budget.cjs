@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const os = require('node:os');
 const MICRO = 1e6;
 class BudgetError extends Error {
   constructor(status, code, message) { super(message); this.status = status; this.code = code; }
@@ -30,7 +31,19 @@ function createBudget({ filePath, now = () => new Date() }) {
     source: 'https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ · 2026-10-24 高峰非缓存价', confirmedAt: '2026-10-24T00:00:00.000Z', version: 'deepseek-flash-2026-10-24-2-8' };
   function month() { return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Hong_Kong', year: 'numeric', month: '2-digit' }).format(now()); }
   function initial() { return { schema: 1, enabled: false, monthlyLimitCny: 100, textPrices: { 'https://api.deepseek.com|deepseek-flash': defaultPrice, 'https://api.deepseek.com/v1|deepseek-flash': { ...defaultPrice, baseUrl: 'https://api.deepseek.com/v1' } }, speechPrices: {}, months: {}, reservations: {} }; }
-  function failure() { return new BudgetError(503, 'BUDGET_BLOCKED', '预算记录不可用或正由另一服务进程使用；可关闭可选预算限制后继续学习。请勿直接覆盖旧账本。'); }
+  function failure() { return new BudgetError(503, 'BUDGET_BLOCKED', blockedReason || '预算记录不可用或正由另一服务进程使用；可关闭可选预算限制后继续学习。请勿直接覆盖旧账本。'); }
+  function lockReason() {
+    let holder;
+    try { if (fs.statSync(lockPath).size > 4096) throw Error(); holder = JSON.parse(fs.readFileSync(lockPath, 'utf8')); } catch { return '预算锁记录无法核实，请先关闭相关学习服务；保留账本，不会自动删除锁文件。'; }
+    if (!holder || typeof holder.hostname !== 'string' || !holder.hostname) return '预算锁为未记录主机的旧格式，无法安全判断持有者；请先确认各设备服务均已关闭，保留账本，再核实并清理旧锁。';
+    if (holder.hostname !== os.hostname()) return '预算锁由另一台主机创建；请在该主机关闭学习服务，当前服务不会自动删除共享目录中的锁。';
+    if (!Number.isSafeInteger(holder.pid) || holder.pid <= 0) return '预算锁的进程信息无效；请先核实服务状态，保留账本，不会自动删除锁。';
+    try { process.kill(holder.pid, 0); return '本机另一个学习服务进程仍持有预算锁，请先关闭重复服务；账本保持不变。'; }
+    catch (error) {
+      if (error.code === 'ESRCH') return '本机预算锁对应的进程已退出；请先关闭其他学习服务，保留 budget-ledger.json，仅清理核实后的 budget.lock，再重新启动。';
+      return '无法核实本机预算锁进程是否仍在运行；请检查进程权限，当前服务不会自动删除锁。';
+    }
+  }
   function validate(value) {
     if (!value || value.schema !== 1 || typeof value.enabled !== 'boolean' || typeof value.monthlyLimitCny !== 'number' ||
         value.monthlyLimitCny < 0 || value.monthlyLimitCny > 100000 || !Number.isFinite(value.monthlyLimitCny)) throw Error();
@@ -56,8 +69,9 @@ function createBudget({ filePath, now = () => new Date() }) {
     if (data) return;
     try {
       fs.mkdirSync(path.dirname(filePath), { recursive: true });
-      lockFd = fs.openSync(lockPath, 'wx', 0o600);
-      fs.writeFileSync(lockFd, JSON.stringify({ owner, pid: process.pid }));
+      try { lockFd = fs.openSync(lockPath, 'wx', 0o600); }
+      catch (error) { if (error.code === 'EEXIST') blockedReason = lockReason(); throw error; }
+      fs.writeFileSync(lockFd, JSON.stringify({ owner, pid: process.pid, hostname: os.hostname(), createdAt: now().toISOString() }));
       data = fs.existsSync(filePath) ? validate(JSON.parse(fs.readFileSync(filePath, 'utf8'))) : initial();
       enabled = data.enabled;
       // A request reserved before the last shutdown may have reached the provider.

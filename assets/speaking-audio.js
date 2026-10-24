@@ -11,7 +11,7 @@
     return String(Math.floor(seconds / 60)).padStart(2, '0') + ':' + String(seconds % 60).padStart(2, '0');
   }
   function encodeWav(samples) {
-    if (!samples || !Number.isInteger(samples.length) || samples.length < 1 || samples.length > 16000 * 180) throw new Error('音频采样长度无效。');
+    if (!samples || !Number.isInteger(samples.length) || samples.length < 1 || samples.length > 16000 * 900) throw new Error('音频采样长度无效。');
     const buffer = new ArrayBuffer(44 + samples.length * 2), view = new DataView(buffer);
     function chars(at, text) { for (let i = 0; i < text.length; i++) view.setUint8(at + i, text.charCodeAt(i)); }
     chars(0, 'RIFF'); view.setUint32(4, buffer.byteLength - 8, true); chars(8, 'WAVE'); chars(12, 'fmt ');

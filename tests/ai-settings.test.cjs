@@ -169,8 +169,8 @@ test('连接失败不回显测试密钥，完成请求和离开页面都清空�
   assert.doesNotMatch(source, /(?:localStorage|sessionStorage)\.setItem/);
 });
 
-test('高级用量与报价默认折叠，文件模式不请求任何API', async () => {
-  assert.equal((html.match(/<details class="ai-advanced">/g) || []).length, 2);
+test('高级用量、报价与可选语音服务默认折叠，文件模式不请求任何API', async () => {
+  assert.equal((html.match(/<details class="ai-advanced">/g) || []).length, 3);
   assert.doesNotMatch(html, /<details[^>]*\bopen\b/);
   const b = await browser({ protocol: 'file:' });
   assert.equal(b.calls.length, 0);

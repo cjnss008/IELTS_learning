@@ -1,7 +1,7 @@
 'use strict';
 const { BudgetError } = require('./budget.cjs');
 // Azure short-audio pronunciation REST: see docs/语音评测.md. No credential or audio persistence.
-function checkWav(buffer) {
+function checkWav(buffer, { maxSeconds = 30 } = {}) {
   if (buffer.length < 46 || buffer.toString('ascii', 0, 4) !== 'RIFF' || buffer.toString('ascii', 8, 12) !== 'WAVE') throw Error('请选择或录制 PCM WAV 音频。');
   if (buffer.readUInt32LE(4) + 8 !== buffer.length) throw Error('WAV 文件长度无效。');
   let format, dataSize = 0, formatCount = 0, dataCount = 0, offset = 12;
@@ -17,7 +17,7 @@ function checkWav(buffer) {
     if (name === 'data') { dataCount++; dataSize += size; }
     offset = start + size + (size % 2);
   }
-  if (offset !== buffer.length || formatCount !== 1 || dataCount !== 1 || !format || format.join() !== '1,1,16000,16' || dataSize < 3200 || dataSize > 960000 || dataSize % 2) throw Error('音频须为 0.1–30 秒、16 kHz、单声道、16-bit PCM WAV。');
+  if (offset !== buffer.length || formatCount !== 1 || dataCount !== 1 || !format || format.join() !== '1,1,16000,16' || dataSize < 3200 || dataSize > maxSeconds * 32000 || dataSize % 2) throw Error('音频须在时长限制内，且为16 kHz、单声道、16-bit PCM WAV。');
   return dataSize / 32000;
 }
 const score = n => typeof n === 'number' && Number.isFinite(n) && n >= 0 && n <= 100 ? n : null;
@@ -31,7 +31,7 @@ function normalizeResult(body) {
     return { word: String(w.Word || '').slice(0, 100), accuracy: score(p.AccuracyScore), error: ['None','Omission','Insertion','Mispronunciation'].includes(p.ErrorType) ? p.ErrorType : 'Unknown', phonemes: (Array.isArray(w.Phonemes) ? w.Phonemes : []).slice(0, 40).map(p => ({ phoneme: String(p.Phoneme || '').slice(0, 40), accuracy: score((p.PronunciationAssessment || p).AccuracyScore) })) };
   }) };
 }
-function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget } = {}) {
+function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget, evidenceStore } = {}) {
   let config = null, busy = false, controller = null;
   const send = (res, status, body) => { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(body)); };
   const status = () => ({ ok: true, configured: Boolean(config), endpoint: config?.endpoint || '', credentialStorage: 'memory', verified: false });
@@ -77,7 +77,8 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget } = 
           let parsed; try { parsed = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { throw Error('语音服务返回格式无效。'); }
           const result = JSON.parse(JSON.stringify(normalizeResult(parsed)).split(active.apiKey).join('[已隐藏]'));
           if (ownController.signal.aborted || config !== active) throw Error('评测已取消，请重新连接后再试。');
-          send(res,200,{ok:true,provider:'Azure Speech',language:'en-GB',result,disclaimer:'0–100 为自动发音诊断，不是雅思口语 Band；噪声和录音设备会影响结果。'});
+          const evidenceId = evidenceStore?.add({ kind: 'pronunciation', scope: 'short_reading', provider: 'Azure Speech', result, reference: b.reference.trim().split(active.apiKey).join('[已隐藏]'), durationSeconds: seconds });
+          send(res,200,{ok:true,provider:'Azure Speech',language:'en-GB',result,evidenceId,disclaimer:'0–100 为自动发音诊断，不是雅思口语 Band；噪声和录音设备会影响结果。'});
         } catch (error) {
           if (res.destroyed) return true;
           // Upstream errors may contain credentials. Never forward arbitrary messages.
@@ -91,6 +92,7 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget } = 
   }
   handle.close = () => { config = null; controller?.abort(); };
   handle.containsCredential = text => Boolean(config?.apiKey && text.includes(config.apiKey));
+  handle.getConfig = () => config;
   return handle;
 }
 module.exports = { checkWav, normalizeResult, createSpeechHandler };

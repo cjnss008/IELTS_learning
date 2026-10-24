@@ -29,7 +29,7 @@ test('browser WAV encoder produces valid 16kHz mono PCM and clips sample peaks',
   assert.equal(long.readUInt32LE(4) + 8, long.length);
   assert.equal(long.readUInt32LE(40) / 32000, 180);
   assert.throws(() => checkWav(long), 'the Azure short-audio endpoint must still reject long free recordings');
-  assert.throws(() => audio.encodeWav(new Float32Array(180 * 16000 + 1)));
+  assert.throws(() => audio.encodeWav(new Float32Array(900 * 16000 + 1)));
 });
 
 function browser(options = {}) {
