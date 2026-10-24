@@ -282,7 +282,7 @@
       const quiz = node('section', 'foundation-section foundation-quiz'); quiz.append(node('h3', '', '8 道基础自检：先选，再核对'));
       const quizStatus = node('p', 'foundation-quiz-status'); quizStatus.id = 'foundationQuizStatus'; quizStatus.setAttribute('role', 'status'); quiz.append(quizStatus);
       unit.questions.forEach(function (item, index) {
-        const evidence = root.IELTSLearningBridge?.create({materialId: "foundation-"+item.id,materialVersion:"1",title:unit.title+" · "+item.prompt,skill:"grammar",taskId:"grammar",source:"foundation",unit:"题",assisted:Object.hasOwn(state.answers,item.id)});
+        const evidence = root.IELTSLearningBridge?.create({materialId: "foundation-"+item.id,materialVersion:"1",title:unit.title+" · "+item.prompt,skill:"grammar",taskId:"grammar",source:"foundation",unit:"题",assisted:Object.hasOwn(state.answers,item.id),mistakeQuestion:{id:item.id,type:'single',prompt:item.prompt,options:item.options.slice(),answers:[item.answer],explanation:item.explanation,evidence:unit.reading.map(line=>line[0]).join(' ')}});
         const form = node('form'); const fieldset = node('fieldset'); fieldset.append(node('legend', '', (index + 1) + '. ' + item.prompt));
         const radios = [];
         item.options.forEach(function (option, optionIndex) {

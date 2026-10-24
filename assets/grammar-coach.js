@@ -414,7 +414,7 @@
         .forEach(function (item) { parts.append(node('dt', '', item[0]), node('dd', '', item[1])); });
       body.append(parts);
       point.exercises.forEach(function (exercise, exerciseIndex) {
-        const evidence = root.IELTSLearningBridge?.create({materialId:exercise.id,materialVersion:"1",title:point.title+" · "+exercise.prompt,skill:"grammar",taskId:"grammar",source:"lesson-grammar",unit:"题"});
+        const evidence = root.IELTSLearningBridge?.create({materialId:exercise.id,materialVersion:"1",title:point.title+" · "+exercise.prompt,skill:"grammar",taskId:"grammar",source:"lesson-grammar",unit:"题",mistakeQuestion:{id:exercise.id,type:"single",prompt:exercise.prompt,options:exercise.options.slice(),answers:exercise.answers.slice(),explanation:exercise.explanation,evidence:point.quote}});
         const form = node('form', 'grammar-coach-exercise');
         const fieldset = node('fieldset');
         fieldset.append(node('legend', '', '练习 ' + (exerciseIndex + 1) + ' · ' + exercise.prompt));

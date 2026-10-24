@@ -1,6 +1,13 @@
 (function (root) {
   'use strict';
   const LOCAL_ORIGIN = 'http://127.0.0.1:8765';
+  function isLocalOrigin(value) {
+    try {
+      const url = new URL(value);
+      return url.origin === value && url.protocol === 'http:' && ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname) && !url.username && !url.password;
+    } catch (_) { return false; }
+  }
+  const serviceOrigin = value => isLocalOrigin(value) ? value : LOCAL_ORIGIN;
   const CACHE_KEY = 'ielts52-selection-ai-cache-v1';
   const MAX_SELECTION = 800;
   const MAX_FEEDBACK = 32000;
@@ -149,11 +156,11 @@
       abort(); const token = generation; const aborter = new AbortController(); active = aborter;
       lastAttempt = {snapshot, question: question || '', force: Boolean(force)};
       patch({phase: 'loading', snapshot, error: '', code: '', ...(question ? {} : {feedback: '', model: '', threadId: '', remaining: 0, history: [], cacheHit: false, offlineCache: false, truncated: false})});
-      if (options.origin !== LOCAL_ORIGIN) {
+      if (!isLocalOrigin(options.origin)) {
         active = null;
         const entry = !question && cache.offline(snapshot);
         if (entry) { cached(entry, snapshot, true); return true; }
-        patch({phase: 'error', error: '双击“启动学习.cmd”，保持窗口打开，再从本地学习地址打开课文。AI 不会从文件页面直接发送请求。', code: 'LOCAL_SERVICE_REQUIRED'}); return false;
+        patch({phase: 'error', error: '双击“启动学习.cmd”自动打开本机学习首页，再打开课文。AI 不会从文件页面直接发送请求。', code: 'LOCAL_SERVICE_REQUIRED'}); return false;
       }
       let timedOut = false;
       const timer = setTimeout(() => { timedOut = true; aborter.abort(); }, options.timeout || TIMEOUT);
@@ -192,7 +199,7 @@
           if (entry) { cached(entry, snapshot, true); return true; }
         }
         const code = timedOut ? 'TIMEOUT' : error.code || 'SERVICE_UNAVAILABLE';
-        const message = timedOut ? '等待超过 95 秒，已停止等待。可重新解释；本地服务可能仍在结束请求。' : error.code ? error.message : '无法连接本地 AI 服务。请检查服务窗口与网络后重试。';
+        const message = timedOut ? '等待超过 95 秒，已停止等待。可重新解释；本地服务可能仍在结束请求。' : error.code ? error.message : '无法连接本地 AI 服务。请双击“启动学习.cmd”，检查网络后重试。';
         patch({phase: 'error', error: message, code, ...(code === 'THREAD_EXPIRED' || code === 'FOLLOWUP_LIMIT' ? {threadId: '', remaining: 0} : {})});
         return false;
       } finally { clearTimeout(timer); if (token === generation) active = null; }
@@ -221,6 +228,7 @@
   function init() {
     const doc = root.document;
     if (!doc?.getElementById('lesson') && !doc?.getElementById('coursePlayerApp')) return;
+    const localOrigin = serviceOrigin(root.location.origin);
     function node(tag, className, text) { const element = doc.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; }
     const trigger = node('button', 'selection-ai-trigger', 'AI 详细解释'); trigger.type = 'button'; trigger.hidden = true;
     trigger.title = '解释选中词句（Alt + Enter）';
@@ -233,7 +241,7 @@
     const context = node('p'); context.lang = 'en'; contextDetails.append(context);
     const status = node('p', 'selection-ai-status'); status.setAttribute('role', 'status');
     const settings = node('a', 'selection-ai-link', '打开 AI 设置'); settings.href = 'AI设置.html';
-    const launch = node('a', 'selection-ai-link', '从本地服务打开学习页'); launch.href = LOCAL_ORIGIN + '/开始学习.html'; launch.hidden = true;
+    const launch = node('a', 'selection-ai-link', '从本地服务打开学习页'); launch.href = localOrigin + '/开始学习.html'; launch.hidden = true;
     const actions = node('div', 'selection-ai-actions');
     const cancel = node('button', '', '取消请求'); cancel.type = 'button'; cancel.hidden = true;
     const retry = node('button', '', '重试'); retry.type = 'button'; retry.hidden = true;
@@ -289,8 +297,8 @@
       status.textContent = busy ? '正在生成详细解释，最长约 90 秒；可以取消。' : state.error || (state.truncated ? '本次解释未完整生成，未写入缓存。可追问“请继续补全”，或缩短选区后重新解释。' : state.cacheHit ? (state.offlineCache ? '服务暂不可用，显示本次会话中保存的历史解释。' : '已使用本次会话缓存，没有重复生成解释。') : state.phase === 'done' ? '解释完成。' : '');
       if (state.model && !busy) status.textContent += ' 模型：' + state.model + '。';
       cancel.hidden = !busy; retry.hidden = !['error', 'cancelled'].includes(state.phase); regenerate.hidden = !state.feedback || busy;
-      launch.hidden = root.location.origin === LOCAL_ORIGIN;
-      launch.href = state.snapshot?.materialId ? LOCAL_ORIGIN + '/学习课程.html?material=' + encodeURIComponent(state.snapshot.materialId) + (preview ? '&preview=1' : '') : LOCAL_ORIGIN + '/开始学习.html' + (preview ? '?preview=1' : '') + '#day' + (state.snapshot?.lessonId || 1);
+      launch.hidden = isLocalOrigin(root.location.origin);
+      launch.href = state.snapshot?.materialId ? localOrigin + '/学习课程.html?material=' + encodeURIComponent(state.snapshot.materialId) + (preview ? '&preview=1' : '') : localOrigin + '/开始学习.html' + (preview ? '?preview=1' : '') + '#day' + (state.snapshot?.lessonId || 1);
       settings.href = 'AI设置.html' + (preview ? '?preview=1' : '');
       feedback.textContent = state.feedback;
       const newHistory = JSON.stringify(state.history);
@@ -367,7 +375,7 @@
     setLesson(root.IELTSCurrentLesson || null);
     renderSaved();
   }
-  const api = {LOCAL_ORIGIN, MAX_SELECTION, PRACTICE_KEY, parsePractice, normalize, paragraphRanges, makeSnapshot, captureSelection, matches, cacheKey, parseCache, createController, shouldSuppressReadingClick, handleReadClick};
+  const api = {LOCAL_ORIGIN, isLocalOrigin, serviceOrigin, MAX_SELECTION, PRACTICE_KEY, parsePractice, normalize, paragraphRanges, makeSnapshot, captureSelection, matches, cacheKey, parseCache, createController, shouldSuppressReadingClick, handleReadClick};
   root.IELTSSelectionAI = Object.freeze(api);
   if (typeof module === 'object' && module.exports) module.exports = root.IELTSSelectionAI;
   if (root.document?.getElementById('lesson') || root.document?.getElementById('coursePlayerApp')) init();

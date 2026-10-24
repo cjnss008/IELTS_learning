@@ -89,6 +89,17 @@ test('first explanation validates course/status and sends only same-origin A0 se
   assert.equal(cached.entries[0].threadId, undefined); assert.equal(cached.entries[0].apiKey, undefined);
 });
 
+test('loopback service on a configured port keeps relative requests and recovery links on its own origin', async () => {
+  for (const origin of [S.LOCAL_ORIGIN, 'http://127.0.0.1:9876', 'http://localhost:8765', 'http://localhost:9876', 'http://[::1]:9876']) {
+    assert.equal(S.isLocalOrigin(origin), true, origin);
+    assert.equal(S.serviceOrigin(origin), origin);
+    const ctx = setup({origin});
+    assert.equal(await ctx.controller.explain(snapshot), true, origin);
+    assert.equal(ctx.calls.length, 3);
+    assert.ok(ctx.calls.every(call => call.url.startsWith('/api/')));
+  }
+});
+
 test('same selection uses temporary cache but changed model/connection/version keys cannot collide', async () => {
   const ctx = setup(); await ctx.controller.explain(snapshot); await ctx.controller.explain(snapshot);
   assert.equal(ctx.calls.filter(call => call.body).length, 1); assert.equal(ctx.controller.getState().cacheHit, true);
@@ -104,7 +115,9 @@ test('same selection uses temporary cache but changed model/connection/version k
 });
 
 test('unconfigured/file/foreign pages do not send provider requests, while explicit offline cache is labeled', async () => {
-  for (const origin of ['null', 'https://example.test', 'http://localhost:8765']) {
+  for (const origin of ['null', 'https://example.test', 'http://example.test:8765', 'http://localhost.example.test:8765', 'http://127.0.0.1:9876/elsewhere', 'http://user@localhost:9876', 'https://localhost:9876', 'file://']) {
+    assert.equal(S.isLocalOrigin(origin), false, origin);
+    assert.equal(S.serviceOrigin(origin), S.LOCAL_ORIGIN);
     const ctx = setup({origin}); assert.equal(await ctx.controller.explain(snapshot), false); assert.equal(ctx.calls.length, 0); assert.equal(ctx.controller.getState().code, 'LOCAL_SERVICE_REQUIRED');
   }
   const ctx = setup(); ctx.setStatus({connected: false, model: null}); await ctx.controller.explain(snapshot);
