@@ -34,20 +34,20 @@
     let raw = null;
     try { raw = storage.getItem(key); records = raw ? JSON.parse(raw) : {}; if (!records || typeof records !== 'object' || Array.isArray(records)) throw Error(); }
     catch { blocked = true; }
-    host.innerHTML = `<h2>逐句听写 · 听清再写</h2><p class="small">按现有词级时间点切分慢速音频。先盲听，再核对遗漏、拼写和多写的词；差异分仅用于本句练习。片段边界若不自然，可回到原段重听。</p><div class="toolbar"><button data-d="prev">上一句</button><span data-d="position"></span><button data-d="next">下一句</button><button data-d="weak">下一条错句</button></div><audio data-d="audio" preload="metadata" src="audio/Day${String(lesson.day).padStart(2, '0')}_slow.mp3"></audio><div class="toolbar"><button class="primary" data-d="play">播放本句</button><button data-d="stop">停止</button><label>播放速度 <select data-d="speed"><option value="1">原慢速</option><option value="0.85">更慢</option><option value="1.25">加快</option></select></label><button data-d="hint">显示首字母提示</button></div><p data-d="hintText" lang="en"></p><label>写下听到的句子<textarea data-d="answer" maxlength="4000" spellcheck="false" autocomplete="off"></textarea></label><div class="toolbar"><button data-d="check" class="primary">提交并核对</button><button data-d="reveal">查看原句</button></div><p data-d="result" role="status"></p><div data-d="diff" class="dictation-diff" lang="en"></div><p data-d="reference" lang="en" hidden></p><p class="small" data-d="save"></p>`;
+    host.innerHTML = `<h2>逐句听写 · 听清再写</h2><p class="small">按现有词级时间点切分慢速音频。先盲听，再核对遗漏、拼写和多写的词；差异分仅用于本句练习。片段边界若不自然，可回到原段重听。</p><div class="toolbar"><button data-d="prev">上一句</button><span data-d="position"></span><button data-d="next">下一句</button><button data-d="weak">下一条错句</button></div><audio data-d="audio" preload="metadata" src="audio/Day${String(lesson.day).padStart(2, '0')}_slow.mp3"></audio><div class="toolbar"><button class="primary" data-d="play">播放本句</button><button data-d="stop">停止</button><label>播放速度 <select data-d="speed"><option value="1">原慢速</option><option value="0.85">更慢</option><option value="1.25">加快</option></select></label><button data-d="hint">显示首字母提示</button></div><p data-d="hintText" lang="en"></p><label>写下听到的句子<textarea data-d="answer" maxlength="4000" spellcheck="false" autocomplete="off"></textarea></label><div class="toolbar"><button data-d="check" class="primary">提交并核对</button><button data-d="reveal">查看原句</button><button data-d="retry">重新闭卷尝试</button></div><p data-d="result" role="status"></p><div data-d="diff" class="dictation-diff" lang="en"></div><p data-d="reference" lang="en" hidden></p><p class="small" data-d="save"></p>`;
     const el = name => host.querySelector(`[data-d="${name}"]`), audio = el('audio');
     function stop() { request++; audio.pause(); }
-    function save() {
+    function save(exposed = false) {
       if (blocked) { el('save').textContent = '旧记录格式无法读取，已保留原数据；本次不会覆盖，请到备份中心导出。'; return; }
       try {
         const latest = storage.getItem(key);
         if (latest !== raw) { records = latest ? JSON.parse(latest) : {}; if (!records || typeof records !== 'object' || Array.isArray(records)) throw Error(); }
-        records[`${lesson.day}:${rows[index].id}`] = { answer: el('answer').value, assisted: revealed, at: new Date().toISOString() };
+        records[`${lesson.day}:${rows[index].id}`] = { answer: el('answer').value, assisted: revealed, exposed: exposed === true, at: new Date().toISOString() };
         raw = JSON.stringify(records); storage.setItem(key, raw); el('save').textContent = preview ? '预览记录已保存' : '听写草稿已保存到当前浏览器，可在备份中心导出。';
       } catch { el('save').textContent = '保存失败，请先复制本句答案。'; }
     }
     function render() {
-      stop(); const r = records[`${lesson.day}:${rows[index].id}`]; revealed = Boolean(r?.assisted);
+      stop(); const r = records[`${lesson.day}:${rows[index].id}`]; revealed = Boolean(r?.assisted || r?.exposed);
       el('position').textContent = `第 ${index + 1} / ${rows.length} 句 · 段落 ${rows[index].paragraph}`;
       el('answer').value = typeof r?.answer === 'string' ? r.answer.slice(0, 4000) : '';
       el('prev').disabled = index === 0; el('next').disabled = index === rows.length - 1;
@@ -68,13 +68,14 @@
     el('stop').onclick = stop;
     el('prev').onclick = () => { if (index > 0) { index--; render(); } };
     el('next').onclick = () => { if (index < rows.length - 1) { index++; render(); } };
-    el('weak').onclick = () => { const next = rows.map((_, k) => (index + k + 1) % rows.length).find(k => { const r = records[`${lesson.day}:${rows[k].id}`]; return r?.answer && (compare(rows[k].text, r.answer).score < 90 || r.assisted); }); if (next === undefined) el('result').textContent = '没有已作答的错句。先完成听写；看过提示的句子也会安排重练。'; else { index = next; render(); } };
+    el('weak').onclick = () => { const next = rows.map((_, k) => (index + k + 1) % rows.length).find(k => { const r = records[`${lesson.day}:${rows[k].id}`]; if (!r?.answer) return false; try { return compare(rows[k].text, r.answer).score < 90 || r.assisted; } catch { return true; } }); if (next === undefined) el('result').textContent = '没有已作答的错句。先完成听写；看过提示的句子也会安排重练。'; else { index = next; render(); } };
     el('answer').oninput = save;
+    el('retry').onclick = () => { stop(); revealed = false; el('answer').value = ''; el('reference').hidden = true; el('hintText').textContent = ''; el('diff').innerHTML = ''; el('result').textContent = '新的闭卷尝试已开始。建议间隔一天后再独立听写，不回看原句。'; save(); };
     el('hint').onclick = () => { revealed = true; el('hintText').textContent = normalize(rows[index].text).map(w => w[0] + '_'.repeat(Math.min(12, w.length - 1))).join(' '); save(); };
     el('reveal').onclick = () => { revealed = true; el('reference').hidden = false; save(); };
     el('check').onclick = () => {
       if (!el('answer').value.trim()) { el('result').textContent = '请先独立写下答案。'; return; }
-      try { const result = compare(rows[index].text, el('answer').value); el('result').textContent = `本句文字准确率 ${result.score}% · ${result.errors} 处词级差异${revealed ? ' · 使用过提示，请隔天闭卷重试' : ''}。忽略大小写和标点，不换算雅思听力分。`; el('diff').innerHTML = result.diff.map(d => `<span class="diff-${d.type}">${d.type === 'correct' ? esc(d.actual) : d.type === 'missing' ? '漏：' + esc(d.expected) : d.type === 'extra' ? '多：' + esc(d.actual) : esc(d.actual) + ' → ' + esc(d.expected)}</span>`).join(' '); save(); } catch (e) { el('result').textContent = e.message; }
+      try { const result = compare(rows[index].text, el('answer').value); el('result').textContent = `本句文字准确率 ${result.score}% · ${result.errors} 处词级差异${revealed ? ' · 使用过提示，请隔天闭卷重试' : ''}。忽略大小写和标点，不换算雅思听力分。`; el('diff').innerHTML = result.diff.map(d => `<span class="diff-${d.type}">${d.type === 'correct' ? esc(d.actual) : d.type === 'missing' ? '漏：' + esc(d.expected) : d.type === 'extra' ? '多：' + esc(d.actual) : esc(d.actual) + ' → ' + esc(d.expected)}</span>`).join(' '); save(true); revealed = true; } catch (e) { el('result').textContent = e.message; }
     };
     render(); return stop;
   }
