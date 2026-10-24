@@ -118,7 +118,7 @@
     {
       "id": "q8",
       "type": "fill",
-      "prompt": "Anna 介绍 Ben 时说：“This is ______.”（填一个人名）",
+      "prompt": "Anna 介绍另一位说话者时说：“This is ______.”（从录音填一个人名）",
       "answers": [
         "Ben"
       ],
@@ -259,9 +259,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "e5f195808daf872f60da5f76985bf2398c00c4e9418ffb5a95086bc9dfa3cd72"
+    "contentHash": "0f8a7d9c6f563b54603b5fb8a0c387d10cc963b01dd4ef5368ffc26180b82923",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

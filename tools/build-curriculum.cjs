@@ -13,7 +13,7 @@ function build({partial=false}={}){
   const base={week:m.week,level:m.level,version:'1',source:m.source,pool:m.pool,assessmentGroup:m.assessmentGroup,form:m.form,fullTest:m.fullTest,questions:[]};
   if(m.pool==='training'&&!m.fullTest){
    derived.push({...base,id:m.id+'-grammar',skill:'grammar',type:'grammar',title:m.grammar.title,estimatedMinutes:15,instructions:'先读懂解释，再独立完成句子。订正后换句复测。',passage:m.grammar.explanation+'\n\n'+m.grammar.example,questions:m.grammar.questions.map((q,i)=>({...q,id:'q'+(i+1)}))});
-   derived.push({...base,id:m.id+'-vocabulary',skill:'vocabulary',type:'vocabulary',title:m.title+' · 语境词汇',estimatedMinutes:20,instructions:'遮住释义回忆，再核对。每行写一个词、语境释义和自己的完整例句；旧词优先复习。',passage:m.vocabulary.map(v=>v.word+' — '+v.meaning+'\n'+v.example).join('\n\n'),vocabulary:m.vocabulary});
+   derived.push({...base,id:m.id+'-vocabulary',skill:'vocabulary',type:'vocabulary',title:m.title+' · 语境词汇',estimatedMinutes:20,instructions:'先学习本组词义、音标与例句；每个词先输入三遍正确英文，再完成三次分别录制、保存原音并取得专业结果的真实跟读。所有词完成后，依次测试中文提示补全残缺词、全中文提示写英文、听写；每词三种模式全部作答。无声和服务失败不计跟读次数，专业低分进入统一错题本。时间为参考预算，可按掌握速度提前进入下一步。',passage:m.vocabulary.map(v=>v.word+' — '+v.meaning+'\n'+v.example).join('\n\n'),vocabulary:m.vocabulary});
   }
   const n=Number(m.id.match(/-read-(\d)$/)?.[1]||1),includeOutput=m.assessmentGroup||m.week<=8||m.week<=20&&n<=2||m.week<=36&&n===1;
   if(includeOutput){
@@ -63,22 +63,22 @@ function build({partial=false}={}){
    const grammar=rs.length?[rs[(d-1)%rs.length]+'-grammar',rs[d%rs.length]+'-grammar',rs[(d+1)%rs.length]+'-grammar']:[];
    const vocab=rs.length?[rs[(d-1)%rs.length]+'-vocabulary']:[];
    const ref='reflection-'+day;
-   materials.push({id:ref,version:'1',week:w,level:level(w),skill:'reflection',type:'reflection',title:'第 '+day+' 天 · 学习复盘',pool:'training',fullTest:false,estimatedMinutes:15,questions:[],instructions:'写下今天的一处错误、支持订正的依据、48–72小时后要用什么新任务复测。列出三点；如今天没有完成，保留实际进度。',prompt:'1. 我今天独立完成了什么？\n2. 哪个错误仍需解决，原句或录音依据是什么？\n3. 下一次复测的材料和时间是什么？',source:{kind:'original',rights:'项目原创',verification:'reviewed',method:'人工制定的反思提示，不计客观分'}});
+   materials.push({id:ref,version:'1',week:w,level:level(w),skill:'reflection',type:'reflection',title:'第 '+day+' 天 · 学习复盘',pool:'training',fullTest:false,estimatedMinutes:15,questions:[],instructions:'核对今天已提交的学习原稿，将统一错题本整页作答后提交；继续重做仍错的题，直到全部通过，再由 AI 根据今日材料、原稿与订正过程生成复盘。评阅或语音证据未完成时保留待验证状态；实际进度如实记录。',prompt:'先完成今日整页错题订正，保留每轮原始输入、核对依据和仍需补强的项目；全部通过后查看 AI 每日复盘，并记录下一次新题迁移及48小时／7日复测安排。',source:{kind:'original',rights:'项目原创',verification:'reviewed',method:'人工制定的反思提示，不计客观分'}});
    map.set(ref,materials.at(-1));
    const tasks=group&&w>=24?[
     task('listening',60,l,'完整听力一次播放并独立答题；提交后定位错误并订正。','40题原始答案与错因',group.startsWith('training')?'assessment':'assessment'),
     task('reading',90,r,'限时60分钟完成三篇阅读，再用30分钟找证据与订正。','40题原始答案与文本证据','assessment'),
     task('writing',90,writing,'Task1用20分钟、Task2用40分钟完成原稿；其余30分钟反馈与订正。','Task1、Task2两份原稿','assessment'),
     task('speaking',45,speaking,'按Part1–3录音，保留原音和转写，回听定位问题。','三部分原音、转写及待改进点','assessment'),
-    task('reflection',75,[ref],'整合四项反馈、完成订正，并为薄弱项安排新题延迟复测。','四项复盘与后续补强')
+    task('reflection',75,[ref],'整合四项反馈，整页提交今日错题并重做仍错项目，全部通过后取得 AI 每日复盘，为薄弱项安排新题延迟复测。','整页错题订正原稿、全部通过记录与 AI 每日复盘及后续补强')
    ]:[
-    task('vocabulary',45,vocab,'10分钟回忆旧词；15分钟语境学习；10分钟闭卷写词义和例句；10分钟复查并排入复习。','每个词的语境释义和原创例句'),
+    task('vocabulary',45,vocab,'参考预算45分钟：先看懂必学词音标、词义和例句；每词先正确输入英文三遍，再独立录音跟读三次并保存专业结果；全词完成后依次进行补全、全中文写英文、听写三轮，错项进入统一错题本。可按掌握速度提前进入下一步。','每词三遍正确输入、三份真实跟读原音及专业结果，补全／全中文写英文／听写三轮原稿、客观核对及错题记录（按词去重计量）'),
     task('grammar',30,grammar,'8分钟理解结构，12分钟独立作答，10分钟订正并改写新句。','独立选项、订正依据与迁移句'),
     task('listening',75,l,'15分钟盲听答题；20分钟分句听写；20分钟对照定位并重听；20分钟遮住原文复述。','原始答案、错句听写及复述',group?'assessment':'practice'),
     task('reading',60,r,'10分钟整体理解；20分钟答题找证据；15分钟拆句；15分钟合上原文复述或摘要。','原始答案、原文依据和摘要',group?'assessment':'practice'),
     task('speaking',60,speaking,'10分钟准备；15分钟独立录音；15分钟回听及核对转写；20分钟针对练习并再次录音。','原音、转写、问题定位与重录',group?'assessment':'practice'),
     task('writing',75,writing,review?'闭卷重写本周作品，再核对原稿与反馈，标出仍有困难的结构。':w>=21?(w<=36&&(d===2||d===4)||w>=37&&(d===3||d===6)?'先保存订正版本：逐条处理反馈，再闭卷重写；保留首稿，不把改写当作新题。':'按当前任务先独立成稿，再进行反馈、订正和新情境迁移；不照抄范文。'):'15分钟口头组织句子，25分钟独立写作，15分钟反馈，20分钟订正与换情境改写。','原稿、反馈依据及订正稿',group?'assessment':'practice'),
-    task('reflection',15,[ref],'分别记录完成量、独立程度和需延迟复测的错误。','三点复盘')
+    task('reflection',15,[ref],'整页填写并提交今日错题，只重做仍错项目，直到全部通过；随后由 AI 根据今日材料与真实作品生成复盘及延迟复测建议。','整页错题订正原稿、全部通过记录与 AI 每日复盘')
    ];
    days.push({day,week:w,weekday:d,title:weeks[w-1].title,tasks,totalMinutes:tasks.reduce((n,t)=>n+t.minutes,0)});
   }

@@ -85,7 +85,7 @@
     {
       "id": "q5",
       "type": "fill",
-      "prompt": "What is the final submission date? (Write the day, e.g., '15th')",
+      "prompt": "What is the final submission date? Write the ordinal day number from the recording.",
       "maxWords": 1,
       "answers": [
         "15th"
@@ -313,9 +313,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "74cd1558d75185fd0761daa24af9770a459278fd4ec859f772073f63b174c4fe"
+    "contentHash": "9462aff34587533bf7ee3d52ecf6418aacd18f76b2b8d3e5e645c95f6667d50c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

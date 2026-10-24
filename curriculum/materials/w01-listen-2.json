@@ -21,113 +21,111 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "A的名字是什么？",
+      "prompt": "第一位说话者介绍自己的姓氏是什么？",
       "options": [
         "Li",
         "Wang",
-        "Class One",
-        "Class Two"
+        "Chen",
+        "Zhou"
       ],
       "answers": [
         "Li"
       ],
-      "explanation": "A说：'I am Li.' 所以A的名字是Li。",
+      "explanation": "录音开头第一位说话者说 I am Li.。所有选项均为姓氏。",
       "evidence": "I am Li."
     },
     {
       "id": "q2",
-      "type": "single",
-      "prompt": "B是学生吗？",
-      "options": [
-        "是",
-        "不是",
-        "不知道"
-      ],
+      "type": "fill",
+      "prompt": "第二位说话者介绍自己的姓氏是什么？从录音填一个词。",
       "answers": [
-        "是"
+        "Wang"
       ],
-      "explanation": "B说：'Yes, I am. I am Wang.' 所以B是学生。",
-      "evidence": "Yes, I am. I am Wang."
+      "maxWords": 1,
+      "explanation": "第二位说话者说 I am Wang.。",
+      "evidence": "I am Wang."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "B在几班？",
+      "prompt": "第一位说话者明确介绍的学习身份是什么？",
       "options": [
-        "一班",
-        "二班",
-        "三班",
-        "不知道"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "二班"
+        "学生"
       ],
-      "explanation": "B说：'I am in Class Two.' 所以B在二班。",
-      "evidence": "I am in Class Two."
+      "explanation": "第一位说话者回答自己也是学生。",
+      "evidence": "A: Yes, I am."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "A在几班？",
+      "prompt": "第二位说话者明确介绍的学习身份是什么？",
       "options": [
-        "一班",
-        "二班",
-        "三班",
-        "不知道"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "一班"
+        "学生"
       ],
-      "explanation": "A说：'I am in Class One.' 所以A在一班。",
-      "evidence": "I am in Class One."
+      "explanation": "第二位说话者最后明确说 I am a student.。",
+      "evidence": "No, I am a student. I am not a teacher."
     },
     {
       "id": "q5",
-      "type": "single",
-      "prompt": "B是老师吗？",
-      "options": [
-        "是",
-        "不是",
-        "不知道"
-      ],
+      "type": "fill",
+      "prompt": "第一位说话者在几班？请补全 Class 后面的一个英文词。",
       "answers": [
-        "不是"
+        "One"
       ],
-      "explanation": "B说：'No, I am a student. I am not a teacher.' 所以B不是老师。",
-      "evidence": "No, I am a student. I am not a teacher."
+      "maxWords": 1,
+      "explanation": "第一位说话者说自己在 Class One。",
+      "evidence": "A: I am in Class One."
     },
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "A说：'I am ____.'（填一个单词）",
+      "prompt": "第二位说话者在几班？请补全 Class 后面的一个英文词。",
+      "answers": [
+        "Two"
+      ],
       "maxWords": 1,
-      "answers": [
-        "Li"
-      ],
-      "explanation": "A说：'I am Li.' 所以填Li。",
-      "evidence": "I am Li."
-    },
-    {
-      "id": "q7",
-      "type": "fill",
-      "prompt": "B说：'I am in ____ ____.'（填两个单词）",
-      "maxWords": 2,
-      "answers": [
-        "Class Two"
-      ],
-      "explanation": "B说：'I am in Class Two.' 所以填Class Two。",
+      "explanation": "第二位说话者说自己在 Class Two。",
       "evidence": "I am in Class Two."
     },
     {
-      "id": "q8",
-      "type": "fill",
-      "prompt": "A说：'I am in ____ ____.'（填两个单词）",
-      "maxWords": 2,
-      "answers": [
-        "Class One"
+      "id": "q7",
+      "type": "single",
+      "prompt": "第二位说话者是否明确说自己不是老师？",
+      "options": [
+        "明确说了不是老师",
+        "明确说了是老师",
+        "没有谈到老师身份"
       ],
-      "explanation": "A说：'I am in Class One.' 所以填Class One。",
-      "evidence": "I am in Class One."
+      "answers": [
+        "明确说了不是老师"
+      ],
+      "explanation": "录音有 I am not a teacher.，否定信息是明说的。",
+      "evidence": "I am not a teacher."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "对话开头，第一位说话者用了哪个问候词？",
+      "options": [
+        "Hello",
+        "Goodbye",
+        "Thanks"
+      ],
+      "answers": [
+        "Hello"
+      ],
+      "explanation": "开头是 Hello.，需要核对实际录音用词。",
+      "evidence": "A: Hello."
     }
   ],
   "vocabulary": [
@@ -269,9 +267,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "ef880cee91480ea3f719dd2e8755fc4aff8ebfa3574ff5261e967b10205d7165"
+    "contentHash": "338bca7fb94ea46da588c5350f9a6e66a5e74a079f4e60ee3f1dde4888c6e4c6",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

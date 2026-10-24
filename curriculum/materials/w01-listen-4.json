@@ -21,7 +21,7 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Anna 说自己的名字是什么？",
+      "prompt": "最先开口的说话者介绍自己的名字是什么？",
       "options": [
         "Anna",
         "Li Ming",
@@ -30,7 +30,7 @@
       "answers": [
         "Anna"
       ],
-      "explanation": "Anna 在开头说“I am Anna.”，所以她的名字是 Anna。",
+      "explanation": "需听开头的自我介绍；题干不写出正确姓名。",
       "evidence": "I am Anna."
     },
     {
@@ -92,28 +92,28 @@
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "填空：Li Ming 说：“I am in Class ______.”（填一个词）",
+      "prompt": "第二位说话者介绍自己的姓名是什么？从录音填两个词。",
       "answers": [
-        "Two"
+        "Li Ming"
       ],
-      "maxWords": 1,
-      "explanation": "Li Ming 说“I am in Class Two.”，所以填 Two。",
-      "evidence": "I am in Class Two."
+      "maxWords": 2,
+      "explanation": "第二位说话者明确说 I am Li Ming.。",
+      "evidence": "Yes, I am Li Ming."
     },
     {
       "id": "q7",
       "type": "single",
-      "prompt": "Anna 和 Li Ming 在同一个班吗？",
+      "prompt": "第一位说话者被问是否在二班时，先用了哪个回答词？",
       "options": [
-        "是，他们在同一个班。",
-        "不，他们不在同一个班。",
-        "文中没有说明。"
+        "No",
+        "Yes",
+        "Hello"
       ],
       "answers": [
-        "不，他们不在同一个班。"
+        "No"
       ],
-      "explanation": "Anna 在一班，Li Ming 在二班，所以不在同一个班。",
-      "evidence": "I am in Class One. You are in Class Two."
+      "explanation": "对 Class Two 的问题，她先说 No，再说明自己在一班；不要求初学者做同班关系推断。",
+      "evidence": "Anna: No, I am not."
     },
     {
       "id": "q8",
@@ -258,9 +258,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "2d97dcd22d5f6bde96489b578b2ecd8b8dd7e8c94b9a67bd30c1e53f31b682b1"
+    "contentHash": "06a18f4dfaf758645dc31624687d598ddc433fc1b7b7c37126f34dd36d9e488b",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

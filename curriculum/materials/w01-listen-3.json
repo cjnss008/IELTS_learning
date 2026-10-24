@@ -21,7 +21,7 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Anna的名字是什么？",
+      "prompt": "最先开口的说话者介绍自己的名字是什么？",
       "options": [
         "Anna",
         "Ben",
@@ -31,110 +31,105 @@
       "answers": [
         "Anna"
       ],
-      "explanation": "录音中Anna说：'I am Anna.'，所以她的名字是Anna。",
+      "explanation": "需听开头的自我介绍，不能从题干直接读出姓名。",
       "evidence": "I am Anna."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "Ben是学生吗？",
+      "prompt": "第二位说话者 Ben 明确介绍的身份是什么？",
       "options": [
-        "是的，他是学生。",
-        "不，他是老师。",
-        "不，他是医生。",
-        "是的，他是老师。"
+        "老师",
+        "学生",
+        "医生"
       ],
       "answers": [
-        "不，他是老师。"
+        "老师"
       ],
-      "explanation": "Ben说：'No, I am not a student. I am a teacher.'，所以Ben不是学生，是老师。",
-      "evidence": "No, I am not a student. I am a teacher."
+      "explanation": "Ben 明说 I am a teacher.。",
+      "evidence": "I am a teacher."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "Anna是学生吗？",
+      "prompt": "第一位说话者 Anna 明确介绍的身份是什么？",
       "options": [
-        "是的，她是学生。",
-        "不，她是老师。",
-        "不，她是医生。",
-        "是的，她是老师。"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "是的，她是学生。"
+        "学生"
       ],
-      "explanation": "Anna说：'Yes, I am a student.'，所以Anna是学生。",
+      "explanation": "Anna 明说自己是学生。",
       "evidence": "Yes, I am a student."
     },
     {
       "id": "q4",
       "type": "fill",
-      "prompt": "Ben说：'I am a ______.' 请填空。",
-      "maxWords": 1,
+      "prompt": "第二位说话者介绍自己的名字是什么？从录音填一个词。",
       "answers": [
-        "teacher"
+        "Ben"
       ],
-      "explanation": "Ben说：'I am a teacher.'，所以填teacher。",
-      "evidence": "I am a teacher."
+      "maxWords": 1,
+      "explanation": "第二位说话者在介绍职业之后说 I am Ben.。",
+      "evidence": "I am Ben."
     },
     {
       "id": "q5",
       "type": "fill",
-      "prompt": "Anna说：'I am ______.' 请填空（一个词）。",
-      "maxWords": 1,
+      "prompt": "Anna 用哪个词说明自己是新来的？从录音填一个词。",
       "answers": [
         "new"
       ],
-      "explanation": "Anna说：'I am new.'，所以填new。",
+      "maxWords": 1,
+      "explanation": "Anna 说 I am new.。",
       "evidence": "I am new."
     },
     {
       "id": "q6",
       "type": "single",
-      "prompt": "Ben是新老师吗？",
+      "prompt": "Ben 怎样介绍自己当老师的情况？",
       "options": [
-        "是的，他是新老师。",
-        "不，他是老老师。",
-        "不，他是学生。",
-        "是的，他是学生。"
+        "是一位新老师",
+        "已经教了很多年",
+        "没有说明是否新来"
       ],
       "answers": [
-        "是的，他是新老师。"
+        "是一位新老师"
       ],
-      "explanation": "Ben说：'I am a new teacher.'，所以他是新老师。",
+      "explanation": "最后说 I am a new teacher.。",
       "evidence": "I am a new teacher."
     },
     {
       "id": "q7",
       "type": "single",
-      "prompt": "Ben是老师吗？",
+      "prompt": "Ben 第一次被问是不是学生时，先用了哪个回答词？",
       "options": [
-        "是的，他是老师。",
-        "不，他是学生。",
-        "不，他是医生。",
-        "是的，他是学生。"
+        "No",
+        "Yes",
+        "Hello"
       ],
       "answers": [
-        "是的，他是老师。"
+        "No"
       ],
-      "explanation": "Ben说：'I am a teacher.'，所以他是老师。",
-      "evidence": "I am a teacher."
+      "explanation": "第二位说话者以 No 回应学生身份的问题。",
+      "evidence": "B: No, I am not a student."
     },
     {
       "id": "q8",
       "type": "single",
-      "prompt": "Anna是新来的吗？",
+      "prompt": "Ben 用哪个英文词欢迎 Anna？",
       "options": [
-        "是的，她是新来的。",
-        "不，她是老师。",
-        "不，她是旧学生。",
-        "是的，她是老师。"
+        "Welcome",
+        "Goodbye",
+        "Thanks"
       ],
       "answers": [
-        "是的，她是新来的。"
+        "Welcome"
       ],
-      "explanation": "Anna说：'I am new.'，所以她是新来的。",
-      "evidence": "I am new."
+      "explanation": "录音最后一段先说 Welcome!。",
+      "evidence": "Welcome!"
     }
   ],
   "vocabulary": [
@@ -272,9 +267,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "70c7f0eb7a47cd0d3ab2b045fd95e5d3ee1cc4feda0a22938ec2fc99238fbef8"
+    "contentHash": "3bb1933d064b00b3066e62bacb844b1015d17159e369f2aceea7c58fa16c5e97",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

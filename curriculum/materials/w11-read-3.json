@@ -68,12 +68,12 @@
     {
       "id": "q4",
       "type": "single",
-      "prompt": "How many apples does Li Wei buy?",
+      "prompt": "According to the passage, what amount of apples does Li Wei buy?",
       "options": [
         "Many apples",
         "A few apples",
-        "A little apples",
-        "Much apples"
+        "No apples",
+        "One apple"
       ],
       "answers": [
         "Many apples"
@@ -306,9 +306,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "c076295739f1246f4f6b6633e0bdfbaaae46f8ab3a4571809f5254bd67796759"
+    "contentHash": "e3a1c7a83ffd8ad13b43eb8dd53864f3c124270550760d5d59eb9cb737ea4ee3",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

@@ -21,7 +21,7 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Who is the man?",
+      "prompt": "第一位说话者介绍自己的名字是什么？",
       "options": [
         "Tom",
         "Li",
@@ -30,105 +30,105 @@
       "answers": [
         "Li"
       ],
-      "explanation": "男士自我介绍说“I am Li.”，所以他是Li。",
+      "explanation": "用先后顺序定位说话者，不在没有文本依据时假定声音的性别。",
       "evidence": "I am Li."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "Is the woman Tom?",
+      "prompt": "第二位说话者怎样回应自己是不是 Tom 的问题？",
       "options": [
-        "Yes, she is.",
-        "No, she is not.",
-        "Not given."
+        "明确否认自己是 Tom",
+        "明确承认自己是 Tom",
+        "没有回应这个问题"
       ],
       "answers": [
-        "No, she is not."
+        "明确否认自己是 Tom"
       ],
-      "explanation": "女士说“No, I am not Tom. I am Anna.”，所以她不是Tom。",
-      "evidence": "No, I am not Tom. I am Anna."
+      "explanation": "第二位说话者说 No, I am not Tom.。",
+      "evidence": "No, I am not Tom."
     },
     {
       "id": "q3",
       "type": "fill",
-      "prompt": "The woman's name is ______.",
+      "prompt": "第二位说话者介绍自己的名字是什么？从录音填一个词。",
       "answers": [
         "Anna"
       ],
       "maxWords": 1,
-      "explanation": "女士说“I am Anna.”，所以她的名字是Anna。",
+      "explanation": "否认别人的名字后，第二位说话者给出自己的姓名。",
       "evidence": "I am Anna."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "Is the man a student?",
+      "prompt": "第一位说话者介绍自己的学习身份是什么？",
       "options": [
-        "Yes, he is.",
-        "No, he is not.",
-        "Not given."
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "Yes, he is."
+        "学生"
       ],
-      "explanation": "男士说“Yes, I am. I am a new student.”，所以他是学生。",
-      "evidence": "Yes, I am. I am a new student."
+      "explanation": "第一位说话者说 I am a new student.。",
+      "evidence": "I am a new student."
     },
     {
       "id": "q5",
       "type": "single",
-      "prompt": "Is the woman a teacher?",
+      "prompt": "第二位说话者是否明确否认自己是老师？",
       "options": [
-        "Yes, she is.",
-        "No, she is not.",
-        "Not given."
+        "明确否认了",
+        "明确承认是老师",
+        "没有提到老师身份"
       ],
       "answers": [
-        "No, she is not."
+        "明确否认了"
       ],
-      "explanation": "女士说“No, I am not a teacher. I am a student too.”，所以她不是老师。",
-      "evidence": "No, I am not a teacher. I am a student too."
+      "explanation": "第二位说话者明说 I am not a teacher.。",
+      "evidence": "No, I am not a teacher."
     },
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "They are ______.",
+      "prompt": "第一位说话者用哪个词说明自己是一名新学生？从录音填一个词。",
       "answers": [
-        "friends"
+        "new"
       ],
       "maxWords": 1,
-      "explanation": "对话最后两人都说“We are friends.”，所以他们是朋友。",
-      "evidence": "We are friends."
+      "explanation": "I am a new student. 中的修饰词给出新来的信息。",
+      "evidence": "I am a new student."
     },
     {
       "id": "q7",
       "type": "single",
-      "prompt": "What is the relationship between the man and the woman?",
+      "prompt": "对话明确用哪个词说明两人的关系？",
       "options": [
-        "Teacher and student",
         "Friends",
-        "Brother and sister"
+        "Brother and sister",
+        "Teacher and student"
       ],
       "answers": [
         "Friends"
       ],
-      "explanation": "对话结尾两人确认“We are friends.”，所以他们是朋友。",
+      "explanation": "录音两次说 We are friends.。",
       "evidence": "We are friends."
     },
     {
       "id": "q8",
       "type": "single",
-      "prompt": "Are they both students?",
+      "prompt": "对话最开头，第一位说话者用了哪个问候词？",
       "options": [
-        "Yes, they are.",
-        "No, they are not.",
-        "Not given."
+        "Hello",
+        "Goodbye",
+        "Thanks"
       ],
       "answers": [
-        "Yes, they are."
+        "Hello"
       ],
-      "explanation": "男士说“I am a new student.”，女士说“I am a student too.”，所以两人都是学生。",
-      "evidence": "I am a new student. ... I am a student too."
+      "explanation": "最先听到的问候词是 Hello。",
+      "evidence": "A: Hello."
     }
   ],
   "vocabulary": [
@@ -258,9 +258,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "3c687dd79c40182cb94d3269e018e7161d35807feffc0a025363c85082115f75"
+    "contentHash": "a69ee21d9aca53513c72315d6e3dfeaf56c945b55cb000082cb4ef4d56f74ddf",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

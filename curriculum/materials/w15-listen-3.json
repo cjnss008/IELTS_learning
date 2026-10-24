@@ -51,7 +51,7 @@
     {
       "id": "q3",
       "type": "fill",
-      "prompt": "How long does the woman's bike ride take? (Write one number and one word, e.g., '25 minutes')",
+      "prompt": "How long does the woman's bike ride take? Write ONE number and ONE time-unit word.",
       "maxWords": 2,
       "answers": [
         "25 minutes"
@@ -92,7 +92,7 @@
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "How long does the subway take to the airport? (Write one number and one word, e.g., '40 minutes')",
+      "prompt": "How long does the subway take to the airport? Write ONE number and ONE time-unit word.",
       "maxWords": 2,
       "answers": [
         "40 minutes"
@@ -302,9 +302,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "798c97cc214a4c18f7f2ab986fbc8b8c57109346d2228679b680c4d1e71cd84c"
+    "contentHash": "e5965a1d0a4789fd0e850036c986f4d5bf7f2d137227e4670b29e7b4010562cd",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

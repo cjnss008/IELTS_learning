@@ -113,7 +113,7 @@
     {
       "id": "q7",
       "type": "fill",
-      "prompt": "Mia used the incorrect phrase 'many ______' instead of 'much research'. (one word)",
+      "prompt": "Mia used 'many' with which uncountable noun? Write ONE WORD from the recording.",
       "options": [],
       "answers": [
         "research"
@@ -311,9 +311,21 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "60cf13c42989ebb150764d23f340360b5bcea3de3224f9895061758ac7089ee3"
+    "contentHash": "8f7fd5006711cc6d143fc89e2bf1de7a76554bc7efbcf3d3bff3145774f31da4",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "figure",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

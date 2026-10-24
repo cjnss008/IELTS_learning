@@ -93,7 +93,7 @@
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "Mei 的火车早上几点？请用英文单词填空（如 eight）。",
+      "prompt": "Mei 的火车早上几点？请从录音填一个表示时间的英文单词。",
       "options": [],
       "answers": [
         "eight"
@@ -274,9 +274,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "936e3b2a3e4315e1e08ee6e6a1235d82805a1470e8407a808a29bdd03fe4094f"
+    "contentHash": "311a2aeb4bc7dc103a451eca82fce85d2a5a3dcc201030ab2e59f93feddfb584",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

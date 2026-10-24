@@ -37,7 +37,7 @@
     {
       "id": "q2",
       "type": "fill",
-      "prompt": "How much did it cost to fix the water pipe? (Write ONE number and ONE word, e.g., '150 dollars')",
+      "prompt": "How much did it cost to fix the water pipe? Write ONE number and ONE currency word.",
       "maxWords": 2,
       "answers": [
         "150 dollars"
@@ -64,7 +64,7 @@
     {
       "id": "q4",
       "type": "fill",
-      "prompt": "How much does it cost to rent the tiller for a week? (Write ONE number and ONE word, e.g., '80 dollars')",
+      "prompt": "How much does it cost to rent the tiller for a week? Write ONE number and ONE currency word.",
       "maxWords": 2,
       "answers": [
         "80 dollars"
@@ -307,9 +307,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "c27ca0d16ca256ec80aaf769f68ac896e171cf88843def6c862340759746294b"
+    "contentHash": "524b5afbb3420160de4a3e424b5bd567a66cade399df0416c325c1250fbc8006",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

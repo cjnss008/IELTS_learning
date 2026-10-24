@@ -52,7 +52,7 @@
     {
       "id": "q3",
       "type": "fill",
-      "prompt": "What percentage of the library's electricity is now produced by solar panels? (Write a number and % sign, e.g., 30%)",
+      "prompt": "What percentage of the library's electricity is now produced by solar panels? Write a number followed by a percentage sign.",
       "options": [],
       "answers": [
         "30%"
@@ -306,9 +306,21 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "1e9aa62966358ecdfc9a621c9db83553504229d8d260f80707777d3cb92a4567"
+    "contentHash": "655752f1d8470000c5852784b010cebdfc8b93c563420347f089103bbbf80ee5",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "figure",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

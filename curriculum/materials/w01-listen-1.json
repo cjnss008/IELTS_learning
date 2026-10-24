@@ -21,16 +21,16 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Anna 的名字是什么？",
+      "prompt": "最先开口的说话者介绍自己的名字是什么？",
       "options": [
         "Anna",
         "Tom",
-        "Class 1"
+        "Lucy"
       ],
       "answers": [
         "Anna"
       ],
-      "explanation": "录音开头 Anna 说 'I am Anna.'，所以她的名字是 Anna。",
+      "explanation": "需听开头 I am 后的姓名；题干不提供这个姓名，三个选项都是人名。",
       "evidence": "I am Anna."
     },
     {
@@ -264,9 +264,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "37a1794de15c349a973f265b6d1a52c83eb7b1b3e7807d0261bc4f3f43116a42"
+    "contentHash": "a7853e09851194074e6a4c6ef98056eaae957e068d271d8a093bf8a4fdb3bde8",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

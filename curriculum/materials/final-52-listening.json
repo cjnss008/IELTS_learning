@@ -197,7 +197,7 @@
     {
       "id": "q13",
       "type": "fill",
-      "prompt": "What time does the review start? (Write one number and one word, e.g., '9 a.m.')",
+      "prompt": "What time does the review start? Write the time using a number and a.m. or p.m.",
       "maxWords": 2,
       "answers": [
         "9 a.m."
@@ -781,9 +781,9 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "各节经过规则校验、独立AI解题或逐题证据复核，再核对整套题号与题量；分节记录具体复核方法，未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "a04c0a5986948b10a12f1a37068c1f46789c955847fb0d39a15e08fba062cc34",
+    "contentHash": "55276cca61de2ee18f9e4d77f8b143b3559ae0eb2a783816858d53443f296322",
     "sections": [
       {
         "id": "final-52-listening-part-1",
@@ -813,6 +813,16 @@
         "verification": "reviewed",
         "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定"
       }
+    ],
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
     ]
   },
   "audio": "",

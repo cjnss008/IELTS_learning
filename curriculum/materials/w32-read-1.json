@@ -36,7 +36,7 @@
     {
       "id": "q2",
       "type": "single",
-      "prompt": "The passage says that families with children were more likely to swim regularly than people without children. Which group had a higher percentage of regular swimmers in summer?",
+      "prompt": "Which group had a higher percentage of regular swimmers in summer?",
       "options": [
         "Families with children",
         "People without children",
@@ -312,9 +312,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "4faf23a96a68b55410d2ba1ed627cdd1127cb04099dc84013b1e87c2dba40a89"
+    "contentHash": "b861435ae27326f5c890d7eaebd4774edfd7426ca759a0dae9dc83def2cc53f2",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

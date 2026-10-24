@@ -20,37 +20,37 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Who is Li Ming?",
+      "prompt": "Li Ming 介绍自己的学习身份是什么？",
       "options": [
-        "A student",
-        "A teacher",
-        "A doctor"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "A student"
+        "学生"
       ],
-      "explanation": "文中说“I am a student.”，所以李明是学生。",
+      "explanation": "原文明说学生身份，不据此推断他不可能还有其他身份。",
       "evidence": "I am a student."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "Where is the English class?",
+      "prompt": "英语课在哪一间教室？",
       "options": [
-        "In Room 5",
-        "In Room 3",
-        "In Room 8"
+        "Room 5",
+        "Room 3",
+        "Room 8"
       ],
       "answers": [
-        "In Room 5"
+        "Room 5"
       ],
-      "explanation": "文中说“We are in Room 5.”，所以教室是5号房间。",
+      "explanation": "原文直接给出 Room 5。",
       "evidence": "We are in Room 5."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "Where is the teacher from?",
+      "prompt": "老师来自哪个国家？",
       "options": [
         "Canada",
         "China",
@@ -59,74 +59,70 @@
       "answers": [
         "Canada"
       ],
-      "explanation": "文中说“You are from Canada.”，所以老师来自加拿大。",
+      "explanation": "Li Ming 对老师说 You are from Canada.。",
       "evidence": "You are from Canada."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "Li Ming is happy.",
+      "prompt": "Li Ming 说自己感觉怎样？",
       "options": [
-        "True",
-        "False",
-        "Not Given"
+        "开心",
+        "难过",
+        "疲倦"
       ],
       "answers": [
-        "True"
+        "开心"
       ],
-      "explanation": "文中说“I am happy.”，所以李明很开心。",
+      "explanation": "原文的 happy 表达开心。",
       "evidence": "I am happy."
     },
     {
       "id": "q5",
-      "type": "single",
-      "prompt": "The teacher is from China.",
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
+      "type": "fill",
+      "prompt": "原文用哪个英文词形容老师对人的态度？从原文填一个词。",
       "answers": [
-        "False"
+        "kind"
       ],
-      "explanation": "文中说“You are from Canada.”，所以老师来自加拿大，不是中国。",
-      "evidence": "You are from Canada."
+      "maxWords": 1,
+      "explanation": "You are very kind. 直接说明老师友善。",
+      "evidence": "You are very kind."
     },
     {
       "id": "q6",
       "type": "single",
-      "prompt": "Li Ming is a doctor.",
+      "prompt": "Li Ming 说自己来这里做什么？",
       "options": [
-        "True",
-        "False",
-        "Not Given"
+        "学习英语",
+        "教数学",
+        "买书"
       ],
       "answers": [
-        "False"
+        "学习英语"
       ],
-      "explanation": "文中说“I am a student.”，所以李明是学生，不是医生。",
-      "evidence": "I am a student."
+      "explanation": "原文直接说明来这里 learn English；不再用“是学生所以不是医生”的无根据排他推断。",
+      "evidence": "I am here to learn English."
     },
     {
       "id": "q7",
       "type": "fill",
-      "prompt": "Li Ming is from ______. (用文中的词填空)",
+      "prompt": "Li Ming 来自哪个国家？从原文填一个词。",
       "answers": [
         "China"
       ],
       "maxWords": 1,
-      "explanation": "文中说“I am from China.”，所以填China。",
+      "explanation": "I am from China. 给出国家信息。",
       "evidence": "I am from China."
     },
     {
       "id": "q8",
       "type": "fill",
-      "prompt": "Li Ming and the teacher are a good ______. (用文中的词填空)",
+      "prompt": "原文最后一句把两人称为一个好的什么？从原文填一个词。",
       "answers": [
         "team"
       ],
       "maxWords": 1,
-      "explanation": "文中说“We are a good team.”，所以填team。",
+      "explanation": "最后一句是 We are a good team.。",
       "evidence": "We are a good team."
     }
   ],
@@ -263,9 +259,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "b6f34d044f04da40c6490ccba3a432a0853be35090a4adb1b95d36c0b00538fc"
+    "contentHash": "ec9347736219d5773d9af68034266e8f4ba4fdbe3c02ac9e6f48118b258a4252",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

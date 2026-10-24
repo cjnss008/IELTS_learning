@@ -20,114 +20,110 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Who is Tom?",
+      "prompt": "A 段中，Tom 介绍自己的学习身份是什么？",
       "options": [
-        "A student.",
-        "A teacher.",
-        "A friend of Miss Wang."
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "A student."
+        "学生"
       ],
-      "explanation": "短文A部分说“I am a student.”，所以Tom是学生。",
+      "explanation": "A 段说 I am a student.。",
       "evidence": "I am a student."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "What class is it?",
+      "prompt": "A 段说这是哪一门课？",
       "options": [
-        "An English class.",
-        "A Chinese class.",
-        "A math class."
+        "英语课",
+        "语文课",
+        "数学课"
       ],
       "answers": [
-        "An English class."
+        "英语课"
       ],
-      "explanation": "短文A部分说“This is my first English class.”，所以是英语课。",
+      "explanation": "A 段明确说 first English class。",
       "evidence": "This is my first English class."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "Who is Li Ming?",
+      "prompt": "B 段中，Li Ming 和 Tom 是什么关系？",
       "options": [
-        "Tom's friend.",
-        "Tom's teacher.",
-        "Miss Wang's friend."
+        "朋友",
+        "师生",
+        "兄弟"
       ],
       "answers": [
-        "Tom's friend."
+        "朋友"
       ],
-      "explanation": "短文B部分说“He is my friend.”，这里的“my”指Tom，所以Li Ming是Tom的朋友。",
+      "explanation": "Tom 用 my friend 介绍 Li Ming。",
       "evidence": "He is my friend."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "Are Tom and Li Ming in the same class?",
+      "prompt": "B 段怎样说明两人所在的班级？",
       "options": [
-        "Yes, they are.",
-        "No, they are not.",
-        "Not given."
+        "在同一个班",
+        "在不同班",
+        "没有说明班级关系"
       ],
       "answers": [
-        "Yes, they are."
+        "在同一个班"
       ],
-      "explanation": "短文B部分说“We are in the same class.”，所以他们在同一个班。",
+      "explanation": "same class 表示同一个班。",
       "evidence": "We are in the same class."
     },
     {
       "id": "q5",
       "type": "single",
-      "prompt": "What is the teacher's name?",
+      "prompt": "C 段老师的称呼和姓氏是什么？",
       "options": [
-        "Miss Wang.",
-        "Miss Li.",
-        "Miss Tom."
+        "Miss Wang",
+        "Miss Li",
+        "Miss Chen"
       ],
       "answers": [
-        "Miss Wang."
+        "Miss Wang"
       ],
-      "explanation": "短文C部分说“Miss Wang is our teacher.”，所以老师的名字是Miss Wang。",
+      "explanation": "C 段以 Miss Wang 介绍老师。",
       "evidence": "Miss Wang is our teacher."
     },
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "Fill in the blank: Tom says, \"I ___ a student.\" (用短文中的词填空)",
-      "maxWords": 1,
+      "prompt": "A 段中，Tom 说自己的心情怎样？从原文填一个词。",
       "answers": [
-        "am"
+        "happy"
       ],
-      "explanation": "短文A部分说“I am a student.”，所以填am。",
-      "evidence": "I am a student."
+      "maxWords": 1,
+      "explanation": "本题提取原文的心情信息，不再用无需阅读也能做的 be 动词配对代替理解题。",
+      "evidence": "I am happy."
     },
     {
       "id": "q7",
       "type": "fill",
-      "prompt": "Fill in the blank: Li Ming and Tom ___ students. (用短文中的词填空)",
-      "maxWords": 1,
+      "prompt": "C 段用哪个英文词形容老师？从原文填一个词。",
       "answers": [
-        "are"
+        "nice"
       ],
-      "explanation": "短文B部分说“We are students.”，所以填are。",
-      "evidence": "We are students."
+      "maxWords": 1,
+      "explanation": "C 段直接说老师 nice。",
+      "evidence": "She is nice."
     },
     {
       "id": "q8",
-      "type": "single",
-      "prompt": "Is Miss Wang a teacher?",
-      "options": [
-        "Yes, she is.",
-        "No, she is not.",
-        "Not given."
-      ],
+      "type": "fill",
+      "prompt": "C 段中，大家向老师打招呼时说的第一个英文词是什么？",
       "answers": [
-        "Yes, she is."
+        "Hello"
       ],
-      "explanation": "短文C部分说“Miss Wang is our teacher.”，所以她是老师。",
-      "evidence": "Miss Wang is our teacher."
+      "maxWords": 1,
+      "explanation": "结尾大家说 Hello, Miss Wang.，第一个词是问候词。",
+      "evidence": "We say, \"Hello, Miss Wang.\""
     }
   ],
   "vocabulary": [
@@ -263,9 +259,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "d56d876a1cea893c2d00196c2c3154161c5abc6f9b3df259481c5847977842d8"
+    "contentHash": "73f2ccca812d9e9560b799e5c3306e4ff6e2e95c9eed2c01ba4b80d45b265d93",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

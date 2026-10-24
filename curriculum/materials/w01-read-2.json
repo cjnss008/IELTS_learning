@@ -20,114 +20,114 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Who is Li Ming?",
+      "prompt": "Li Ming 介绍自己的学习身份是什么？",
       "options": [
-        "a student",
-        "a teacher",
-        "a friend"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "a student"
+        "学生"
       ],
-      "explanation": "短文中明确说“I am Li Ming. I am a student.”，所以李明是学生。",
+      "explanation": "开头直接说 I am a student.；朋友关系另有说明，不把两种关系混作互斥身份。",
       "evidence": "I am Li Ming. I am a student."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "Who is Wang Fang?",
+      "prompt": "Wang Fang 的学习身份是什么？",
       "options": [
-        "a student",
-        "a teacher",
-        "a friend"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "a student"
+        "学生"
       ],
-      "explanation": "短文中说“You are Wang Fang. You are a student, too.”，所以王芳也是学生。",
+      "explanation": "原文直接说 You are a student, too.。",
       "evidence": "You are Wang Fang. You are a student, too."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "Where are Li Ming and Wang Fang?",
+      "prompt": "两人在哪一间教室？",
       "options": [
-        "in Room 5",
-        "in Room 4",
-        "in Room 6"
+        "Room 5",
+        "Room 4",
+        "Room 6"
       ],
       "answers": [
-        "in Room 5"
+        "Room 5"
       ],
-      "explanation": "短文中说“We are in Room 5.”，所以他们在5号房间。",
+      "explanation": "原文说明两人在 Room 5。",
       "evidence": "We are in Room 5."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "Are Li Ming and Wang Fang friends?",
+      "prompt": "原文明确用哪种关系称呼两人？",
       "options": [
-        "Yes, they are.",
-        "No, they are not.",
-        "Not given."
+        "朋友",
+        "家人",
+        "邻居"
       ],
       "answers": [
-        "Yes, they are."
+        "朋友"
       ],
-      "explanation": "短文中说“We are friends.”，所以他们是朋友。",
+      "explanation": "原文说 We are friends.。",
       "evidence": "We are friends."
     },
     {
       "id": "q5",
       "type": "single",
-      "prompt": "How does Li Ming feel?",
+      "prompt": "Li Ming 说自己感觉怎样？",
       "options": [
-        "happy",
-        "sad",
-        "tired"
+        "开心",
+        "伤心",
+        "疲倦"
       ],
       "answers": [
-        "happy"
+        "开心"
       ],
-      "explanation": "短文中说“I am happy.”，所以李明感到高兴。",
+      "explanation": "I am happy. 直接表达开心。",
       "evidence": "I am happy."
     },
     {
       "id": "q6",
-      "type": "single",
-      "prompt": "How does Wang Fang feel?",
-      "options": [
-        "happy",
-        "sad",
-        "tired"
-      ],
+      "type": "fill",
+      "prompt": "Wang Fang 来自哪个国家？从原文填一个英文词。",
       "answers": [
-        "happy"
+        "China"
       ],
-      "explanation": "短文中说“You are happy, too.”，所以王芳也感到高兴。",
-      "evidence": "You are happy, too."
+      "maxWords": 1,
+      "explanation": "You are from China, too. 说明对方也来自中国。",
+      "evidence": "You are from China, too."
     },
     {
       "id": "q7",
       "type": "fill",
-      "prompt": "We are a good ______.",
-      "maxWords": 1,
+      "prompt": "原文最后一句把两人称为一个好的什么？从最后一句填一个英文词。",
       "answers": [
-        "class"
+        "team"
       ],
-      "explanation": "短文中说“We are a good class.”，所以填 class。",
-      "evidence": "We are a good class."
+      "maxWords": 1,
+      "explanation": "限定最后一句，避免前文 good class 和结尾 good team 都能填入同一裸句。",
+      "evidence": "We are a good team."
     },
     {
       "id": "q8",
-      "type": "fill",
-      "prompt": "We are in Room ______.",
-      "maxWords": 1,
-      "answers": [
-        "5"
+      "type": "single",
+      "prompt": "原文怎样描述教室的状态？",
+      "options": [
+        "干净",
+        "脏乱",
+        "黑暗"
       ],
-      "explanation": "短文中说“We are in Room 5.”，所以填 5。",
-      "evidence": "We are in Room 5."
+      "answers": [
+        "干净"
+      ],
+      "explanation": "The room is clean. 明确说教室干净。",
+      "evidence": "The room is clean."
     }
   ],
   "vocabulary": [
@@ -266,9 +266,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "b6ab1ae26e01eb262c87fc2fb0303784a92afe1c4cf717dfa6d4667c81608543"
+    "contentHash": "1c3eb81f7e8c7d4e1d21a506e164f2f7dbe478466286aa02a456e231e5463b86",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

@@ -85,7 +85,7 @@
     {
       "id": "q5",
       "type": "fill",
-      "prompt": "What time is the next train to London? (Write the time as shown in the transcript, e.g., 10:15)",
+      "prompt": "What time is the next train to London? Write the time using digits and a colon.",
       "options": [],
       "answers": [
         "10:15"
@@ -282,9 +282,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "d75893eb9c7029f165d39557dd93014425546788d612c39822f57b7420f1e1d8"
+    "contentHash": "5cf3d454c97e47584a68549091fc31f487779af176ca47176cee260448774aed",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

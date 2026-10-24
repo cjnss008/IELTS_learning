@@ -66,7 +66,7 @@
     {
       "id": "q4",
       "type": "fill",
-      "prompt": "Lisa had a meeting at ______. (填写时间，如：nine o'clock)",
+      "prompt": "Lisa had a meeting at ______. Write the time in English words, including o'clock.",
       "maxWords": 2,
       "answers": [
         "nine o'clock"
@@ -302,9 +302,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "cf98b4413284d96cd2203c3f95826368785750af0ed01eef5a09600329b4cf0d"
+    "contentHash": "01c88d34542343951c48fbbefc7e4af3fc8df90b43ff9623f086005ee0029dc3",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

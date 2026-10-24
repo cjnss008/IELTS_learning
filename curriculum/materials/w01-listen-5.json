@@ -21,114 +21,110 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Anna 来自哪里？",
+      "prompt": "Anna 来自哪个城市？",
       "options": [
-        "Anna is from London.",
-        "Anna is from Shanghai.",
-        "Anna is from China."
+        "London",
+        "Shanghai",
+        "Beijing"
       ],
       "answers": [
-        "Anna is from London."
+        "London"
       ],
-      "explanation": "Anna 明确说“I am from London.”，所以选第一项。上海是中国城市，但 Anna 没有说来自上海；她也明确否认来自中国。",
+      "explanation": "录音说 I am from London.，本题只问城市。",
       "evidence": "I am from London."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "Li Wei 来自哪里？",
+      "prompt": "Li Wei 来自哪个城市？",
       "options": [
-        "Li Wei is from Shanghai.",
-        "Li Wei is from London.",
-        "Li Wei is from England."
+        "Shanghai",
+        "London",
+        "Beijing"
       ],
       "answers": [
-        "Li Wei is from Shanghai."
+        "Shanghai"
       ],
-      "explanation": "Li Wei 说“I am from Shanghai.”，所以选第一项。London 和 England 是 Anna 的来源地。",
+      "explanation": "Li Wei 直接说自己来自 Shanghai。",
       "evidence": "I am from Shanghai."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "Anna 是学生吗？",
+      "prompt": "Anna 明确介绍的身份是什么？",
       "options": [
-        "No, Anna is not a student.",
-        "Yes, Anna is a student.",
-        "Anna is a teacher and a student."
+        "老师",
+        "学生",
+        "医生"
       ],
       "answers": [
-        "No, Anna is not a student."
+        "老师"
       ],
-      "explanation": "Anna 说“No, I am not. I am a teacher.”，明确否认自己是学生，所以选第一项。",
+      "explanation": "Anna 明说自己是老师，并明确否认学生身份。",
       "evidence": "No, I am not. I am a teacher."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "Li Wei 是学生吗？",
+      "prompt": "Li Wei 明确介绍的身份是什么？",
       "options": [
-        "Yes, Li Wei is a student.",
-        "No, Li Wei is not a student.",
-        "Li Wei is a teacher."
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "Yes, Li Wei is a student."
+        "学生"
       ],
-      "explanation": "Li Wei 说“Yes, I am. I am Li Wei.”回答“Are you a student?”，后面又说“I am a student.”，所以选第一项。",
-      "evidence": "Yes, I am. I am Li Wei."
+      "explanation": "Li Wei 先肯定学生身份，后来再次说 I am a student.。",
+      "evidence": "I am a student."
     },
     {
       "id": "q5",
       "type": "single",
-      "prompt": "Anna 是老师吗？",
+      "prompt": "最先开口的说话者介绍自己的名字是什么？",
       "options": [
-        "Yes, Anna is a teacher.",
-        "No, Anna is not a teacher.",
-        "Anna is a student."
+        "Anna",
+        "Li Wei",
+        "Mei"
       ],
       "answers": [
-        "Yes, Anna is a teacher."
+        "Anna"
       ],
-      "explanation": "Anna 说“I am a teacher.”，所以选第一项。",
-      "evidence": "I am a teacher."
+      "explanation": "录音开头的 I am 后给出第一位说话者的姓名。",
+      "evidence": "Hello. I am Anna."
     },
     {
       "id": "q6",
-      "type": "single",
-      "prompt": "Anna 来自中国吗？",
-      "options": [
-        "No, Anna is not from China.",
-        "Yes, Anna is from China.",
-        "Anna is from China and England."
-      ],
+      "type": "fill",
+      "prompt": "Anna 来自哪个国家？从录音填一个英文词。",
       "answers": [
-        "No, Anna is not from China."
+        "England"
       ],
-      "explanation": "Li Wei 问“Are you from China?”，Anna 回答“No, I am not. I am from England.”，所以选第一项。",
-      "evidence": "No, I am not. I am from England."
+      "maxWords": 1,
+      "explanation": "Anna 明确说 I am from England.；城市和国家分开提取。",
+      "evidence": "I am from England."
     },
     {
       "id": "q7",
       "type": "fill",
-      "prompt": "Anna 说：“I am a ______.” 请填一个词。",
-      "maxWords": 1,
+      "prompt": "录音明确说 Li Wei 来自哪个国家？填一个英文词。",
       "answers": [
-        "teacher"
+        "China"
       ],
-      "explanation": "Anna 在录音中明确说“I am a teacher.”，所以填 teacher。",
-      "evidence": "I am a teacher."
+      "maxWords": 1,
+      "explanation": "Anna 说 You are from China.，Li Wei 接着说 Yes. 确认。",
+      "evidence": "You are from China.\nLi Wei: Yes."
     },
     {
       "id": "q8",
       "type": "fill",
-      "prompt": "Li Wei 说：“I am from ______.” 请填一个词。",
-      "maxWords": 1,
+      "prompt": "第二位说话者介绍自己的姓名是什么？从录音填两个词。",
       "answers": [
-        "Shanghai"
+        "Li Wei"
       ],
-      "explanation": "Li Wei 在录音中明确说“I am from Shanghai.”，所以填 Shanghai。",
-      "evidence": "I am from Shanghai."
+      "maxWords": 2,
+      "explanation": "第二位说话者说 I am Li Wei.；题干不包含这个姓名。",
+      "evidence": "I am Li Wei."
     }
   ],
   "vocabulary": [
@@ -258,9 +254,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "e37ae2c25d902571501805f72b3cc3b48b2b4c5403ecc212eaa8987b1460c156"
+    "contentHash": "b534c3f062d5b4b884d288a65ae5c9a3f3faf3e563c02d3855b4c282f843058a",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

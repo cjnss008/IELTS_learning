@@ -20,22 +20,22 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Who is Li Ming?",
+      "prompt": "A 段中，Li Ming 介绍自己的学习身份是什么？",
       "options": [
-        "A teacher",
-        "A student",
-        "A class"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "A student"
+        "学生"
       ],
-      "explanation": "短文A部分说“I am a student.”，所以李明是学生。",
+      "explanation": "A 段说 I am a student.，这里介绍的身份是学生。",
       "evidence": "I am a student."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "What class is Anna in?",
+      "prompt": "B 段中，Anna 在哪个班？",
       "options": [
         "Class 1",
         "Class 2",
@@ -44,28 +44,28 @@
       "answers": [
         "Class 1"
       ],
-      "explanation": "短文B部分说“I am in Class 1.”，所以安娜在1班。",
+      "explanation": "B 段明确说自己在 Class 1。",
       "evidence": "I am in Class 1."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "Who is Mr. Wang?",
+      "prompt": "C 段中，Mr. Wang 的身份是什么？",
       "options": [
-        "A student",
-        "A teacher",
-        "A classmate"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "A teacher"
+        "老师"
       ],
-      "explanation": "短文C部分说“He is a teacher.”，所以王先生是老师。",
+      "explanation": "C 段直接介绍他是老师。",
       "evidence": "He is a teacher."
     },
     {
       "id": "q4",
       "type": "single",
-      "prompt": "What does Mr. Wang say?",
+      "prompt": "C 段中，老师对学生说了下面哪一句话？",
       "options": [
         "You are students.",
         "I am a student.",
@@ -74,64 +74,56 @@
       "answers": [
         "You are students."
       ],
-      "explanation": "短文C部分王先生说“You are students.”。",
+      "explanation": "老师在原文中说 You are students.，另外两个选项不是他在这里说的话。",
       "evidence": "He says, \"You are students. I am your teacher.\""
     },
     {
       "id": "q5",
       "type": "fill",
-      "prompt": "Fill in the blank: Li Ming and Anna are ______.",
+      "prompt": "B 段用哪个英文词说明两位学生的关系？从原文填一个词。",
       "answers": [
         "classmates"
       ],
       "maxWords": 1,
-      "explanation": "短文B部分说“We are classmates.”，所以他们是同学。",
+      "explanation": "B 段说 We are classmates.，表示两人是同学。",
       "evidence": "We are classmates."
     },
     {
       "id": "q6",
-      "type": "single",
-      "prompt": "True, False, or Not Given: Li Ming and Anna are in the same class.",
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
+      "type": "fill",
+      "prompt": "A 段说话者的姓名是什么？从原文填两个英文词。",
       "answers": [
-        "True"
+        "Li Ming"
       ],
-      "explanation": "短文B部分说“We are classmates.”，并且两人都在1班，所以他们在同一个班。",
-      "evidence": "We are classmates."
+      "maxWords": 2,
+      "explanation": "A 段开头用 I am 后的姓名介绍说话者。",
+      "evidence": "I am Li Ming."
     },
     {
       "id": "q7",
       "type": "single",
-      "prompt": "B 段中，Anna 说自己是什么身份？",
+      "prompt": "B 段中，Anna 说自己的学习身份是什么？",
       "options": [
         "学生",
         "老师",
-        "班级"
+        "医生"
       ],
       "answers": [
         "学生"
       ],
-      "explanation": "Anna 在 B 段说“I am a student too.”，直接说明自己是学生。本题只核对原文给出的身份，不推断她是否还有其他身份。",
+      "explanation": "B 段说 I am a student too.；只核对她明说的学习身份。",
       "evidence": "I am a student too."
     },
     {
       "id": "q8",
-      "type": "single",
-      "prompt": "True, False, or Not Given: Anna is in Room 6.",
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
+      "type": "fill",
+      "prompt": "C 段介绍的老师叫什么？从原文填写称呼和姓氏，共两个英文词。",
       "answers": [
-        "Not Given"
+        "Mr. Wang"
       ],
-      "explanation": "短文中没有提到房间号，只提到班级，所以无法判断安娜是否在6号房间。",
-      "evidence": "The passage does not mention any room number."
+      "maxWords": 2,
+      "explanation": "C 段用 This is 后的称呼和姓氏介绍老师。",
+      "evidence": "This is Mr. Wang."
     }
   ],
   "vocabulary": [
@@ -261,9 +253,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；2026-10-24独立内容复核：第7题改为原文直接信息选择，避免从学生身份推断非教师；未经真人考生标定。contentHash按教学内容字段计算（不含来源、音频和排课元数据）。",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "f7a77ecb7c33b00b88be1a16f7dc2d9be2e47f9d8cc192599a24928cdc8e2f12"
+    "contentHash": "da35396fb093f8257f109f3610e327aba6f572470dca0a56873779d43a4ff420",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

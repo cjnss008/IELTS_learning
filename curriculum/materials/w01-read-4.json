@@ -20,114 +20,110 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Who is Li Wei?",
+      "prompt": "A 段中，Li Wei 介绍自己的学习身份是什么？",
       "options": [
-        "A student",
-        "A teacher",
-        "A doctor"
+        "学生",
+        "老师",
+        "医生"
       ],
       "answers": [
-        "A student"
+        "学生"
       ],
-      "explanation": "短文A部分明确说“I am Li Wei. I am a student.”，所以李伟是学生。",
+      "explanation": "原文明说 I am a student.。",
       "evidence": "I am Li Wei. I am a student."
     },
     {
       "id": "q2",
       "type": "single",
-      "prompt": "Where is Ms. Chen from?",
+      "prompt": "B 段中，Ms. Chen 来自哪个城市？",
       "options": [
         "Beijing",
         "Shanghai",
-        "Class A"
+        "Guangzhou"
       ],
       "answers": [
         "Beijing"
       ],
-      "explanation": "短文B部分说“She is from Beijing.”，所以陈老师来自北京。",
+      "explanation": "B 段明确说 She is from Beijing.。",
       "evidence": "She is from Beijing."
     },
     {
       "id": "q3",
       "type": "single",
-      "prompt": "What is Ms. Chen like?",
+      "prompt": "B 段怎样形容老师对人的态度？",
       "options": [
-        "Kind",
-        "Tall",
-        "Old"
+        "友善",
+        "严厉",
+        "害羞"
       ],
       "answers": [
-        "Kind"
+        "友善"
       ],
-      "explanation": "短文B部分说“She is very kind.”，所以陈老师很和善。",
+      "explanation": "kind 表示友善；不把身高和年龄当作性格题的异类干扰项。",
       "evidence": "She is very kind."
     },
     {
       "id": "q4",
       "type": "fill",
-      "prompt": "Li Wei is from ______. (用原文单词填空)",
-      "maxWords": 1,
+      "prompt": "A 段中，Li Wei 来自哪个城市？从原文填一个词。",
       "answers": [
         "Shanghai"
       ],
-      "explanation": "短文A部分说“I am from Shanghai.”，所以李伟来自上海。",
+      "maxWords": 1,
+      "explanation": "A 段说自己来自 Shanghai。",
       "evidence": "I am from Shanghai."
     },
     {
       "id": "q5",
       "type": "fill",
-      "prompt": "Ms. Chen is Li Wei's ______. (用原文单词填空)",
-      "maxWords": 1,
+      "prompt": "B 段中，Ms. Chen 是 Li Wei 的什么人？从原文填一个词。",
       "answers": [
         "teacher"
       ],
-      "explanation": "短文B部分说“She is my teacher.”，所以陈老师是李伟的老师。",
+      "maxWords": 1,
+      "explanation": "原文用 my teacher 说明师生关系。",
       "evidence": "She is my teacher."
     },
     {
       "id": "q6",
       "type": "single",
-      "prompt": "True, False, or Not Given: Li Wei is from Beijing.",
+      "prompt": "A 段说这是 Li Wei 在语言学校的第几天？",
       "options": [
-        "True",
-        "False",
-        "Not Given"
+        "第一天",
+        "第二天",
+        "第三天"
       ],
       "answers": [
-        "False"
+        "第一天"
       ],
-      "explanation": "短文A部分说李伟来自上海（“I am from Shanghai.”），B部分说陈老师来自北京（“She is from Beijing.”），所以“李伟来自北京”是错误的。",
-      "evidence": "I am from Shanghai. / She is from Beijing."
+      "explanation": "first day 表示第一天。",
+      "evidence": "This is my first day at the language school."
     },
     {
       "id": "q7",
       "type": "single",
-      "prompt": "True, False, or Not Given: Ms. Chen is from Shanghai.",
+      "prompt": "A 段中，Li Wei 在哪个班？",
       "options": [
-        "True",
-        "False",
-        "Not Given"
+        "Class A",
+        "Class B",
+        "Class C"
       ],
       "answers": [
-        "False"
+        "Class A"
       ],
-      "explanation": "短文B部分说陈老师来自北京（“She is from Beijing.”），所以“陈老师来自上海”是错误的。",
-      "evidence": "She is from Beijing."
+      "explanation": "原文明确说 Class A。",
+      "evidence": "I am in Class A."
     },
     {
       "id": "q8",
-      "type": "single",
-      "prompt": "True, False, or Not Given: Li Wei is in Class B.",
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
+      "type": "fill",
+      "prompt": "C 段最后，老师用哪个英文词告别？从原文填一个词。",
       "answers": [
-        "False"
+        "Goodbye"
       ],
-      "explanation": "短文A部分说“I am in Class A.”，所以“李伟在B班”是错误的。",
-      "evidence": "I am in Class A."
+      "maxWords": 1,
+      "explanation": "老师最后一句以 Goodbye! 告别。",
+      "evidence": "You are a good student. Goodbye!"
     }
   ],
   "vocabulary": [
@@ -271,9 +267,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "23e1aceadb17324a114cf50c4a3e6fb363675cff6df96c5d9b8a3b8e463eeb6c"
+    "contentHash": "915d52d02155bfeb6720d3aa20cec1401e0d3d460f4640defceec894acd19309",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

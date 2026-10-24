@@ -20,14 +20,14 @@
     {
       "id": "q1",
       "type": "single",
-      "prompt": "Lin 是什么身份？",
+      "prompt": "A 段中，Lin 介绍自己的学习身份是什么？",
       "options": [
-        "A new student",
-        "A teacher",
-        "A club manager"
+        "新学生",
+        "老师",
+        "俱乐部经理"
       ],
       "answers": [
-        "A new student"
+        "新学生"
       ],
       "explanation": "原文 B 段 Lin 说 \"I am a new student.\"，所以她是新学生。",
       "evidence": "I am a new student."
@@ -95,14 +95,13 @@
     {
       "id": "q6",
       "type": "fill",
-      "prompt": "请填空：Anna says, \"You are a student. I am a ______.\"（用原文一个词）",
-      "options": [],
+      "prompt": "A 段说这是一天中的哪个时段？从原文填一个英文词。",
       "answers": [
-        "teacher"
+        "morning"
       ],
       "maxWords": 1,
-      "explanation": "原文 C 段 Anna 说 \"I am a teacher.\"，所以填 teacher。",
-      "evidence": "I am a teacher."
+      "explanation": "Monday morning 同时给出星期和时段；本题只提取时段。",
+      "evidence": "It is Monday morning."
     },
     {
       "id": "q7",
@@ -261,9 +260,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "ee8b2bd96c7a6b19a0b89026322672429f54270903903accc902bb35b780299c"
+    "contentHash": "4b4ebfbfe2f2ef0fb77529d1340b99eb02b589d8415e4ca2cf1e65f65a41c5a4",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

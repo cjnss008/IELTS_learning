@@ -54,7 +54,7 @@
     {
       "id": "q3",
       "type": "fill",
-      "prompt": "How much does a water butt cost? (Write ONE number and ONE word, e.g. 'fifty pounds')",
+      "prompt": "How much does a water butt cost? Write ONE number word and ONE currency word from the recording.",
       "maxWords": 2,
       "answers": [
         "fifty pounds"
@@ -81,7 +81,7 @@
     {
       "id": "q5",
       "type": "fill",
-      "prompt": "When is the next stage check? (Write ONE word and ONE month, e.g. 'end of June')",
+      "prompt": "When is the next stage check? Write NO MORE THAN THREE WORDS from the recording.",
       "maxWords": 3,
       "answers": [
         "end of June"
@@ -763,9 +763,9 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "各节经过规则校验、独立AI解题或逐题证据复核，再核对整套题号与题量；分节记录具体复核方法，未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "9fe9589caee90545a4dadaa261c21f13b03c7a098c02afe9572b0eb25039ec91",
+    "contentHash": "75eb7ee4d8720647d829bc87ae73184efe0a72c7166d040d9f1ebc63fe5ef5fd",
     "sections": [
       {
         "id": "gate-24-A-listening-part-1",
@@ -795,6 +795,16 @@
         "verification": "reviewed",
         "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定"
       }
+    ],
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
     ]
   },
   "audio": "",

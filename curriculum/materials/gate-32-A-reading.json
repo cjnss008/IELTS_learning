@@ -70,7 +70,7 @@
     {
       "id": "q4",
       "type": "fill",
-      "prompt": "In Grade 10, what percentage of students completed homework regularly? (Write a number and a percentage sign, e.g., '70%')",
+      "prompt": "In Grade 10, what percentage of students completed homework regularly? Write a number followed by a percentage sign.",
       "options": [],
       "answers": [
         "70%"
@@ -788,9 +788,9 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "各节经过规则校验、独立AI解题或逐题证据复核，再核对整套题号与题量；分节记录具体复核方法，未经真人考生标定",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
     "model": "deepseek-flash",
-    "contentHash": "3169bed4d33d3faebcce0a311d9f3a4e694f7945f4cfd0acb08a7741e708a341",
+    "contentHash": "a50fe13b5bd9f333be89ac2bcd56edf18107bbd01232cec37576b505c1166b64",
     "sections": [
       {
         "id": "gate-32-A-reading-part-1",
@@ -813,6 +813,16 @@
         "verification": "reviewed",
         "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定"
       }
+    ],
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
     ]
   },
   "audio": "",
