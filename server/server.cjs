@@ -3,6 +3,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const { createSpeechHandler } = require('./speech.cjs');
 
 const HOST = '127.0.0.1';
 const DEFAULT_PORT = 8765;
@@ -179,6 +180,7 @@ function createServer(options = {}) {
   const rootDir = path.resolve(options.rootDir || path.join(__dirname, '..'));
   const rootRealPromise = fs.promises.realpath(rootDir);
   const fetchImpl = options.fetchImpl || globalThis.fetch;
+  const speechHandler = createSpeechHandler({ fetchImpl });
   const modelsTimeoutMs = options.modelsTimeoutMs || 20_000;
   const testTimeoutMs = options.testTimeoutMs || 60_000;
   const coachTimeoutMs = options.coachTimeoutMs || 90_000;
@@ -381,6 +383,7 @@ function createServer(options = {}) {
         throw new AppError(403, 'ORIGIN_DENIED', '请在本地学习页面内执行此操作。');
       }
       const rawPath = String(req.url || '/').split('?')[0];
+      if (await speechHandler(req, res, rawPath)) return;
       if (rawPath.startsWith('/api/')) await handleApi(req, res, rawPath);
       else await serveStatic(req, res, rawPath);
     } catch (error) {
@@ -391,7 +394,7 @@ function createServer(options = {}) {
   });
   server.headersTimeout = 10_000;
   server.requestTimeout = 75_000;
-  server.once('close', () => { connection = null; revision++; connectAttempt++; });
+  server.once('close', () => { connection = null; revision++; connectAttempt++; speechHandler.close(); });
   return server;
 }
 

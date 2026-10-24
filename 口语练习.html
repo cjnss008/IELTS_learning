@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+  <title>口语练习 · IELTS 52 周学习计划</title>
+  <link rel="stylesheet" href="assets/daily-plan.css"><link rel="stylesheet" href="assets/speaking-app.css">
+  <script src="assets/course-data.js" defer></script><script src="assets/speaking-app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="每日学习计划.html"><span class="brand-icon" aria-hidden="true">52</span><span>IELTS LEARNING<small>听清自己，再练一次</small></span></a><nav aria-label="主要导航"><a href="每日学习计划.html">每日计划</a><a href="开始学习.html">课文学习</a><a href="口语练习.html" aria-current="page">口语练习</a></nav></header>
+  <main class="page-shell speaking-shell">
+    <div class="hero"><div><p class="eyebrow">SPEAK · LISTEN · PRACTISE</p><h1>把英语说出来</h1><p class="hero-copy">短句朗读练读音，自由回答练表达。录音先留在浏览器，由你决定是否发送评测。</p></div><div class="speaking-hero-note"><strong>一次只练一个重点</strong><p>先回听，再挑一个词或一句话重录。录音不会自动上传或自动保存到磁盘。</p></div></div>
+    <noscript><p class="notice">请启用 JavaScript 使用录音、回放及语音评测。</p></noscript>
+    <div class="speaking-layout">
+      <section class="speaking-panel">
+        <div class="speaking-heading"><span>01</span><div><h2>选择今天要说的内容</h2><p>可从每篇课文挑一句，也可以做原创口语问答。</p></div></div>
+        <label for="speakingMode">练习方式</label><select id="speakingMode"><option value="reading">课程短句朗读 · 可选发音诊断</option><option value="free">自由口语 · 只录音与回听</option></select>
+        <div id="readingControls"><div class="speaking-selects"><div><label for="speakingLesson">课文</label><select id="speakingLesson"></select></div><div><label for="speakingSentence">参考句</label><select id="speakingSentence"></select></div></div><label for="referenceText">要朗读的准确文本（最多 80 个单词）</label><textarea id="referenceText" rows="5" maxlength="1000" lang="en" spellcheck="true"></textarea><p class="speaking-help">可缩短过长的句子。改变参考文本后需要重新录音，避免声音与文本不匹配。</p></div>
+        <div id="freeControls" hidden><label for="speakingPart">口语练习题</label><select id="speakingPart"><option value="part1">Part 1 · 熟悉的话题</option><option value="part2">Part 2 · 个人经历</option><option value="part3">Part 3 · 观点讨论</option></select><div id="freePrompt" class="speaking-prompt"></div><p class="notice">自由回答只在本机录音和回听，不送到发音评测接口。本页每次录音最多 25 秒，可分段练习；这不是完整的 Part 2 两分钟模拟。</p></div>
+        <div class="speaking-recorder"><div class="speaking-record-label"><span class="record-dot" id="recordDot"></span><strong id="recordStatus">准备录音</strong><output id="recordClock" aria-label="录音时长">00:00</output></div><p class="speaking-help">建议每段 10–25 秒；25 秒自动停止并关闭麦克风。也可导入不超过 30 秒的本地音频。</p><div class="toolbar"><button id="recordStart" class="button primary" type="button">开始录音</button><button id="recordStop" class="button secondary" type="button" disabled>停止录音</button><label class="button secondary speaking-file-label" for="audioImport">导入本地音频</label><input id="audioImport" type="file" accept="audio/*" class="speaking-file-input"></div><p id="recordSupport" class="speaking-help"></p></div>
+        <p id="recordMessage" class="speaking-message" role="status" aria-live="polite"></p>
+        <div id="playbackSection" hidden><label for="recordPlayback">回听自己的录音</label><audio id="recordPlayback" controls preload="metadata"></audio><div class="speaking-playback-meta"><span id="audioInfo"></span><a id="audioDownload" class="button secondary" download="IELTS口语练习.wav">下载 WAV 录音</a></div></div>
+        <aside class="speaking-self-check"><h3>回听时检查</h3><ul><li>短句朗读：有没有漏词、吞掉词尾或读错重音？</li><li>自由表达：有没有直接回答问题并补充一个细节？</li><li>能否不用看稿，再自然地说一遍？</li></ul></aside>
+      </section>
+      <section class="speaking-panel" aria-labelledby="speechAssessmentHeading">
+        <div class="speaking-heading"><span>02</span><div><h2 id="speechAssessmentHeading">可选：短句发音诊断</h2><p>需要独立的 Azure Speech 服务。DeepSeek 文本模型不提供此项评测。</p></div></div>
+        <p class="speaking-config-status" id="speechConfigStatus">正在检查语音服务…</p>
+        <details class="speech-config"><summary>配置 Azure Speech 资源</summary><form id="speechConfigForm" autocomplete="off"><label for="speechEndpoint">资源 endpoint</label><input id="speechEndpoint" type="url" placeholder="https://资源名.cognitiveservices.azure.com" autocomplete="off" required><label for="speechKey">Speech 资源密钥</label><input id="speechKey" type="password" autocomplete="off" spellcheck="false" required><p class="speaking-help">此密钥与文本 AI 密钥分开。仅保存在本地服务内存中，提交后清空输入框；关闭服务后清除。保存配置不等于验证有效。</p><button id="saveSpeechConfig" type="submit" class="button secondary">保存语音配置（暂不验证）</button></form><div class="toolbar speech-service-actions"><button id="refreshSpeech" class="button secondary" type="button">刷新状态</button><button id="disconnectSpeech" class="button secondary" type="button">断开并清除语音密钥</button></div></details>
+        <div class="speech-consent"><strong>只有点击后才发送</strong><p id="speechDisclosure">点击“发送录音进行发音评测”，会将当前参考句和录音发送至你配置的 Azure Speech 资源，可能产生费用，服务商按其规则处理内容。</p><p>本机服务不写入录音或评测日志。未发送前，录音只在本页面内存中，关闭页面即丢失；需要保留时请主动下载。</p></div>
+        <button id="assessSpeech" type="button" class="button primary speech-wide" disabled>发送录音进行发音评测</button><button id="cancelSpeech" type="button" class="button secondary speech-wide" hidden>取消本次评测</button>
+        <p id="speechMessage" class="speaking-message" role="status" aria-live="polite"></p>
+        <div id="speechEmpty" class="speech-empty">录一段短句，先回听，再决定是否评测。</div>
+        <div id="speechResults" hidden><p class="notice" id="speechDisclaimer"></p><div class="speech-scores" id="speechScores"></div><p class="speaking-help">分数范围 0–100，未返回的项目标为“未提供”。这些是自动诊断指标，不能换算 IELTS Band。</p><h3 class="speech-result-title">服务识别文本</h3><p id="speechRecognized" class="speech-recognized"></p><div class="speech-word-list" id="speechWords"></div></div>
+      </section>
+    </div>
+    <footer class="speaking-footnote">发音只是 IELTS 口语的一部分。自由表达还涉及流利与连贯、词汇、语法等能力；录音设备、噪声和口音差异也会影响自动诊断。</footer>
+  </main>
+</body>
+</html>
