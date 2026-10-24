@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>本地教材资料库 · IELTS Learning</title>
+  <link rel="stylesheet" href="assets/daily-plan.css">
+  <link rel="stylesheet" href="assets/textbook-library.css">
+  <script src="assets/profile-store.js" defer></script>
+  <script src="assets/textbook-catalog.js" defer></script>
+  <script src="assets/textbook-library-core.js" defer></script>
+  <script src="assets/textbook-library.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="开始学习.html"><span class="brand-icon">I</span><span>IELTS LEARNING<small>从句子开始，逐步走向学术英语</small></span></a>
+    <nav aria-label="主导航"><a href="学习课程.html">完整课程</a><a href="每日学习计划.html">每日计划</a><a href="开始学习.html">52 篇课文</a><a href="备份中心.html">数据备份</a></nav>
+  </header>
+  <main class="page-shell textbook-shell">
+    <section class="textbook-hero">
+      <div><p class="eyebrow">LOCAL TEXTBOOKS · ACADEMIC</p><h1>你的教材，放在手边。</h1><p class="textbook-lead">按版本找到真题、解析和同义改写。核实过的页码可直接打开；把末期测评材料留到需要它的时候。</p></div>
+      <div class="textbook-stats" id="textbookStats" aria-live="polite"></div>
+    </section>
+    <div id="textbookProfile" class="textbook-profile"></div>
+    <p id="textbookNotice" class="textbook-notice" role="status"></p>
+    <section class="textbook-guidance" aria-label="教材使用提示">
+      <div><strong>先训练，再测评</strong><p>第 1–20 周先用适级课程；第 21 周起逐步拆分真题。剑19四套建议留给第49–52周，相关解析与跨卷同义合集也先保留。</p></div>
+      <div class="textbook-audio-warning"><strong id="textbookAudioHeading">当前缺少配套听力音频</strong><p id="textbookAudio">PDF 中的二维码、听力原文和合成朗读不等于已备音频。缺音频时只安排可用的读写练习。</p><ul id="textbookAudioFiles" hidden></ul></div>
+      <div><strong>已见记录 ≠ 成绩</strong><p>打开试卷会记为已见。看过解析或同义资料也可能影响未见性。此页不会判断考试达标，也不将记录自动当作独立测评。</p></div>
+    </section>
+    <section class="textbook-filters" aria-label="筛选教材">
+      <label>版本<select id="textbookEdition" aria-label="版本"><option value="">全部版本</option></select></label>
+      <label>类型<select id="textbookType" aria-label="类型"><option value="">全部类型</option><option value="exam">真题主卷</option><option value="explanation">解析精讲</option><option value="paraphrase">同义改写</option></select></label>
+      <label>考试类别<select id="textbookAcademic" aria-label="考试类别"><option value="">全部类别</option><option value="academic">Academic 已确认</option><option value="academic-with-gt">Academic + GT 混合册</option><option value="unconfirmed">类别未确认</option></select></label>
+      <label>材料安排<select id="textbookReserve" aria-label="材料安排"><option value="">训练与保留材料</option><option value="training">常规训练资料</option><option value="reserved">末期保留 / 相关资料</option></select></label>
+      <label>曝光记录<select id="textbookExposure" aria-label="曝光记录"><option value="">全部记录</option><option value="seen">有已见历史</option><option value="fresh">未见 / 尚未登记</option></select></label>
+      <label class="textbook-search">搜索文件名<input id="textbookSearch" type="search" aria-label="搜索文件名" placeholder="如：剑16、同义词"></label>
+    </section>
+    <div class="textbook-results-heading"><h2>教材资料 <span id="textbookResultCount"></span></h2><span>页码均为 PDF 阅读器页码，从 1 开始</span></div>
+    <div id="textbookResults" class="textbook-grid"></div>
+    <p id="textbookEmpty" hidden>没有符合条件的教材，请调整筛选。</p>
+    <section class="textbook-tools" aria-label="管理教材与记录">
+      <details><summary>新增教材或音频后重新扫描</summary><p>把新增 PDF 或音频放进原教材目录，在本学习包目录运行下面命令。扫描只在本机进行：按 SHA-256 去重、复制新原件、读取页数并重建离线索引；已核实页码按文件指纹保留。</p><pre>node tools/import-textbooks.cjs --source "\\mynas\family\教材"</pre><p>也可替换为其他本机目录；用 <code>--python "Python完整路径"</code> 指定已安装 pypdf 的 Python。仅重扫已导入教材可运行 <code>node tools/import-textbooks.cjs</code>。完成后刷新本页。</p><p>新文件的考试类别、试卷页码和音频对应关系默认“未核实”，不会按文件名猜成可用完整卷。核实步骤与音频补齐说明见 <a href="materials/教材库说明.md">教材库说明</a>。</p></details>
+      <details><summary>备份本档案的已见 / 未见记录</summary><p>记录只属于当前学习档案和浏览器。下载备份后可在同一档案导入；导入合并记录，保留首次已见历史，不包含密钥或教材正文。</p><div class="textbook-record-actions"><button type="button" id="textbookExport">导出教材记录</button><label class="textbook-import-label">导入教材记录<input id="textbookImport" type="file" accept=".json,application/json"></label></div><p>“标为未见”是个人更正，不会清除已记录的曝光历史；末期测评前仍需检查自己是否看过题目、答案或相关资料。</p></details>
+      <details><summary>来源与核实范围</summary><p id="textbookProvenance"></p><p>全部 PDF 原件以 Git LFS 保存。若打开后只有几行 version / oid / size 文字，请先在有 Git LFS 的完整副本运行 <code>git lfs pull</code>。跳页取决于浏览器的 PDF 阅读器；不能跳页时在阅读器输入所列物理页码。</p><p>扫描件的印刷页码和 PDF 页码常常不同。本索引只把已实际核实的物理页做成章节链接；未逐页校勘教材正文或答案。</p><a href="materials/textbook-catalog.json">查看离线索引 JSON</a> · <a href="materials/textbook-training-map.json">查看周次建议映射</a></details>
+    </section>
+    <noscript><p class="textbook-notice">此页需启用 JavaScript 显示筛选和记录。PDF 原件保存在 materials/textbooks 文件夹。</p></noscript>
+  </main>
+</body>
+</html>
