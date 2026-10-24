@@ -300,19 +300,20 @@ function createServer(options = {}) {
     }
   }
 
-  async function runReview(req,res,input){
-    const startVersion=connectionVersion(),startReviewerVersion=reviewerRevision,second=reviewerConfig(),rounds=[];let model=connection?.model||null;
+  async function runReview(req,res,input,{modelPair}={}){
+    const startVersion=connectionVersion(),startReviewerVersion=reviewerRevision,second=reviewerConfig(),primary=connection?{...connection}:null,rounds=[];let model=modelPair?.[0]||connection?.model||null;
     for(let round=1;round<=2;round++){
       try{
         if(startVersion!==connectionVersion()||startReviewerVersion!==reviewerRevision)throw new AppError(409,'CONNECTION_CHANGED','两轮评阅期间模型设置改变，请重新评阅。');
-        const output=await runText(req,res,{messages:review.messages(input,round),max_tokens:6000,response_format:{type:'json_object'}},coachTimeoutMs,round===2?second:undefined);
+        const output=await runText(req,res,{messages:review.messages(input,round),max_tokens:6000,response_format:{type:'json_object'}},coachTimeoutMs,modelPair?.[round-1]?{...primary,model:modelPair[round-1]}:round===2?second:undefined);
         if(round===1)model=output.captured.model;
         if(output.data?.choices?.[0]?.finish_reason==='length')throw new review.ReviewError(502,'REVIEW_TRUNCATED','本轮结构化评阅被截断，请重试。');
         const parsed=review.parse(output.data?.choices?.[0]?.message?.content,input,output.captured.apiKey,round);
-        parsed.reviewer={model:output.captured.model,providerHost:new URL(output.captured.baseUrl).hostname,promptVersion:review.PROMPT_VERSION};rounds.push(parsed);
+        parsed.reviewer={model:output.captured.model,providerHost:new URL(output.captured.baseUrl).hostname,promptVersion:review.PROMPT_VERSION,promptVariant:round===1?'initial':'adversarial'};rounds.push(parsed);
       }catch(error){const known=error instanceof AppError||error instanceof BudgetError||error instanceof review.ReviewError;rounds.push({ok:false,round,error:{code:known?error.code:'REVIEW_FAILED',message:known?error.message:'评阅未完成，原稿已保留，请重试。'}});break;}
     }
-    return review.combine(rounds,model);
+    const requestedReviewers=[0,1].map(i=>{const config=modelPair?primary:i===1&&second?second:primary;return {model:modelPair?.[i]||config?.model||null,providerHost:config?.baseUrl?new URL(config.baseUrl).hostname:'',promptVersion:review.PROMPT_VERSION,promptVariant:i===0?'initial':'adversarial'};});
+    return {...review.combine(rounds,model),requestedModels:requestedReviewers.map(r=>r.model),requestedReviewers};
   }
 
   async function handleApi(req, res, pathname) {
@@ -388,11 +389,16 @@ function createServer(options = {}) {
       else{const baseUrl=normalizeBaseUrl(b.baseUrl),apiKey=validateKey(b.apiKey);if(baseUrl.includes(apiKey))throw new AppError(400,'INVALID_BASE_URL','密钥必须单独填写。');const models=await upstream({baseUrl,apiKey},'models',undefined,modelsTimeoutMs);if(typeof b.model!=='string'||!(models.data||[]).some(m=>m.id===b.model)||b.model.includes(apiKey))throw new AppError(400,'REVIEWER_MODEL','第二评阅模型不在此服务返回的模型列表中。');next={baseUrl,apiKey,model:b.model};}
       reviewerConnection=next;reviewerRevision++;activeController?.abort();await vault.saveIfEnabled();return sendJson(res,200,reviewerStatus());
     }
-    if(req.method==='GET'&&pathname==='/api/calibration/benchmarks')return sendJson(res,200,{ok:true,sources:calibration.SOURCES,benchmarks:calibration.BENCHMARKS,promptVersion:review.PROMPT_VERSION,reviewer:reviewerStatus()});
+    if(req.method==='GET'&&pathname==='/api/calibration/benchmarks')return sendJson(res,200,{ok:true,sources:calibration.SOURCES,benchmarks:calibration.BENCHMARKS,schemaVersion:calibration.SCHEMA_VERSION,catalog:calibration.CATALOG,promptVersion:review.PROMPT_VERSION,reviewer:reviewerStatus()});
+    if(req.method==='POST'&&pathname==='/api/calibration/validate'){
+      const samples=calibration.prepare(await readJson(req,160*1024));return sendJson(res,200,{ok:true,samples:samples.map(calibration.exportSample),metadata:samples.map(s=>({id:s.id,sha256:s.sha256,provenance:s.provenance,eligibility:s.eligibility}))});
+    }
     if(req.method==='POST'&&pathname==='/api/calibration/run'){
-      const samples=calibration.prepare(await readJson(req)),items=[];
-      for(const s of samples){if(res.destroyed)return;const result=await runReview(req,res,s.value);items.push({id:s.id,name:s.name,sha256:s.sha256,reference:s.reference,sourceKind:s.sourceKind,sourceUrl:s.sourceUrl,note:s.note,result});if(result.status!=='complete')break;}
-      return sendJson(res,200,{ok:true,createdAt:new Date().toISOString(),promptVersion:review.PROMPT_VERSION,sources:calibration.SOURCES,items,summary:calibration.summarize(items),requestedCount:samples.length,completedCount:items.filter(i=>i.result.status==='complete').length,benchmarkSetHash:calibration.hash(samples.map(s=>s.sha256))});
+      const body=await readJson(req,160*1024),samples=calibration.prepare(body),items=[],modelPair=body.modelPair;
+      if(modelPair!==undefined&&(!Array.isArray(modelPair)||modelPair.length!==2||!connection||modelPair.some(m=>typeof m!=='string'||!connection.models.includes(m))))throw new AppError(400,'CALIBRATION_MODELS','请选择当前连接返回列表中的两个评阅模型。');
+      const startVersion=connectionVersion(),startReviewerVersion=reviewerRevision;
+      for(const s of samples){if(res.destroyed)return;if(startVersion!==connectionVersion()||startReviewerVersion!==reviewerRevision)break;const result=await runReview(req,res,s.value,{modelPair});items.push({...calibration.itemMetadata(s),result});if(result.status!=='complete')break;}
+      return sendJson(res,200,calibration.buildReport(samples,items,{promptVersion:review.PROMPT_VERSION,modelPair}));
     }
     if(req.method==='POST'&&pathname==='/api/ai/oral-coach'){
       const input=oralCoach.prepare(await readJson(req),evidenceStore);
