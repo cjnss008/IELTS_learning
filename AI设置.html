@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>AI 设置 · IELTS 52 周学习计划</title>
+  <link rel="stylesheet" href="assets/daily-plan.css">
+  <link rel="stylesheet" href="assets/ai-settings.css">
+  <script src="assets/ai-settings.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="每日学习计划.html"><span class="brand-icon" aria-hidden="true">52</span><span>IELTS LEARNING<small>每天学习，逐项进步</small></span></a>
+    <nav aria-label="主要导航">
+      <a href="每日学习计划.html">每日学习计划</a>
+      <a href="开始学习.html">课文学习</a>
+      <a href="AI设置.html" aria-current="page">AI 设置</a>
+    </nav>
+  </header>
+
+  <main class="page-shell ai-shell" id="aiSettings" aria-busy="false">
+    <div class="hero ai-hero">
+      <div>
+        <p class="eyebrow">MODEL CONNECTION</p>
+        <h1>连接你的 AI 模型</h1>
+        <p class="hero-copy">填写 API 地址与密钥，确认连接后，从接口实际提供的模型中选择。</p>
+      </div>
+      <div class="ai-status-card" aria-live="polite">
+        <span class="ai-status-label">本地服务连接状态</span>
+        <strong id="connectionStatus" data-state="checking">正在检查…</strong>
+        <p id="connectionHint">检查本地服务是否已启动。</p>
+      </div>
+    </div>
+
+    <section class="notice ai-service-guide" id="serviceGuide" aria-labelledby="serviceGuideHeading" hidden>
+      <h2 id="serviceGuideHeading">先通过本地服务打开</h2>
+      <p id="serviceGuideReason">AI 连接由本机服务处理。</p>
+      <ol>
+        <li>在学习包根目录双击 <strong>启动学习.cmd</strong>。</li>
+        <li>保持服务窗口打开，然后使用下方链接进入设置页。</li>
+      </ol>
+      <a class="button primary" href="http://127.0.0.1:8765/AI设置.html">打开本地 AI 设置</a>
+      <p class="small muted">本地地址：<span class="ai-address">http://127.0.0.1:8765/AI设置.html</span></p>
+    </section>
+
+    <noscript><p class="notice danger">请启用浏览器 JavaScript，并通过本地服务打开此页后配置模型。</p></noscript>
+
+    <div class="ai-grid">
+      <section class="ai-panel" aria-labelledby="connectionHeading">
+        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">01</span><div><h2 id="connectionHeading">填写连接信息</h2><p>默认偏好模型为 deepseek-flash。可用模型以接口返回为准。</p></div></div>
+        <form id="connectionForm" autocomplete="off">
+          <fieldset id="connectionFields" class="ai-fields" disabled>
+            <legend class="ai-sr-only">API 连接信息</legend>
+            <label for="apiBaseUrl">API 地址</label>
+            <input id="apiBaseUrl" name="api-base-url" type="url" value="https://api.deepseek.com" placeholder="https://api.deepseek.com" autocomplete="off" spellcheck="false" required aria-describedby="apiAddressHelp">
+            <p id="apiAddressHelp" class="ai-help">填写服务商提供的 API 基础地址。</p>
+
+            <label for="apiKey">API 密钥</label>
+            <input id="apiKey" name="api-key-input" type="password" value="" autocomplete="off" spellcheck="false" autocapitalize="off" required aria-describedby="apiKeyHelp">
+            <p id="apiKeyHelp" class="ai-help">请求结束后自动清空输入框。页面不会把密钥写入浏览器存储。</p>
+
+            <label for="preferredModel">偏好模型 <span class="muted">（可选）</span></label>
+            <input id="preferredModel" name="preferred-model" type="text" value="deepseek-flash" autocomplete="off" spellcheck="false" autocapitalize="off" aria-describedby="preferredModelHelp">
+            <p id="preferredModelHelp" class="ai-help">接口提供此模型时自动选中；否则在连接后手动选择。</p>
+
+            <button id="connectButton" class="button primary ai-main-action" type="submit">确认连接并获取模型</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="ai-panel" aria-labelledby="modelHeading">
+        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">02</span><div><h2 id="modelHeading">选择并验证模型</h2><p>选择已获取的模型，保存后可发送一次简短验证请求。</p></div></div>
+        <dl class="ai-connection-details">
+          <div><dt>已连接的 API</dt><dd id="activeBaseUrl">尚未连接</dd></div>
+          <div><dt>当前模型</dt><dd id="activeModel">尚未选择</dd></div>
+          <div><dt>可用模型</dt><dd id="modelCount">0 个</dd></div>
+        </dl>
+        <p id="modelWarning" class="notice ai-model-warning" hidden></p>
+        <fieldset id="modelFields" class="ai-fields" disabled>
+          <legend class="ai-sr-only">模型选择与验证</legend>
+          <label for="modelSelect">接口返回的模型列表</label>
+          <select id="modelSelect" aria-describedby="modelSelectionHelp"><option value="">连接后加载模型列表</option></select>
+          <p id="modelSelectionHelp" class="ai-help">确认连接后，这里会显示接口返回的模型。</p>
+          <div class="toolbar ai-model-actions">
+            <button id="saveModelButton" class="button primary" type="button">保存模型选择</button>
+            <button id="testModelButton" class="button secondary" type="button">验证当前模型</button>
+          </div>
+        </fieldset>
+        <p class="ai-help ai-test-help">验证会向当前模型发送一个极短的测试请求，可能产生服务商费用。最多等待约 60 秒；本次测试不上传学习资料。</p>
+        <div id="testResult" class="ai-test-result" hidden>
+          <strong id="testResultHeading">模型验证结果</strong>
+          <pre id="testReply"></pre>
+        </div>
+      </section>
+    </div>
+
+    <div class="ai-service-actions">
+      <p id="actionMessage" class="ai-message" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div class="toolbar">
+        <button id="refreshButton" class="button secondary" type="button" disabled>刷新连接状态</button>
+        <button id="disconnectButton" class="button secondary ai-disconnect" type="button" disabled>断开连接并清除密钥</button>
+      </div>
+    </div>
+
+    <aside class="ai-privacy-note" aria-labelledby="privacyHeading">
+      <h2 id="privacyHeading">连接信息如何保存</h2>
+      <p>密钥仅保存在本地服务进程的内存中；关闭或重启服务后需要重新填写。断开连接会清除本地服务中的密钥和模型选择。</p>
+      <p>当前页面用于连接、选择和验证模型。作文批改、语音评测等学习功能后续接入。</p>
+    </aside>
+
+    <footer><p>IELTS 52 周学习计划 · 从每日学习到四项能力</p></footer>
+  </main>
+</body>
+</html>
