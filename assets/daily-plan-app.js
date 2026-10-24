@@ -27,7 +27,14 @@
   const storage = () => profileStorage || (profileStorage = IELTSProfiles.storage());
   let linkedRecords = [], linkedByDay = {}, linkedFailure = '';
   const linkedFor = (day) => linkedByDay[day] || { totalRecords: 0, minutes: 0, tasks: {}, records: [] };
-  const effectiveFor = (day, plan) => Store.combineEvidence(plan || Store.getPlan(state, day, Content), recordFor(day).tasks, linkedFor(day));
+  const effectiveFor = (day, selectedPlan) => {
+    const plan = selectedPlan || Store.getPlan(state, day, Content), linked = linkedFor(day);
+    if (!plan.tasks.some(task => task.requiresRecordedOutput)) return Store.combineEvidence(plan, recordFor(day).tasks, linked);
+    let readiness = {ready:false, states:[], reason:'核心材料状态组件尚未完整加载，请刷新后继续；已有作品保留。'};
+    try { if (globalThis.IELTSCoursePlayer?.dayReadiness) readiness = globalThis.IELTSCoursePlayer.dayReadiness({materials:Curriculum.materials, days:[{day, tasks:plan.tasks}]}, day, linked.records || [], {recordCorrectionStatus:record=>globalThis.IELTSMistakes?.recordCorrectionStatus?.(record)}); }
+    catch (error) { readiness.reason = '核心材料状态尚未核实：' + error.message; }
+    return Store.combineEvidence(plan, recordFor(day).tasks, linked, {submissionReadiness:readiness});
+  };
   let blockedStorage = false;
   let originalCorruptData = null;
   let state = Store.newState(today());
@@ -154,7 +161,7 @@
     $('taskList').innerHTML = currentPlan.tasks.map((task, i) => {
       const r = records[task.id] || {};
       const materials = task.materials ? `<div class="task-materials"><strong>本项指定材料</strong>${task.materials.length ? task.materials.map(m => `<a href="${escape(previewLink(m.url))}">${escape(m.title)} →</a>`).join('') : '<p>此项材料尚未生成，当前仅可预览日程。</p>'}</div>` : '';
-      return `<article class="task-card" data-task="${escape(task.id)}"><div class="task-top"><div class="task-title"><span class="task-number">${String(i + 1).padStart(2, '0')}</span><div><h3>${escape(task.title)}</h3><p>${task.minutes} 分钟 · 至少 ${task.quantity} ${escape(task.unit)}</p></div></div><span class="task-status">待完成</span></div><p class="task-instruction">${escape(task.instruction)}</p>${materials}<div class="task-inputs"><label for="minutes-${task.id}">实际学习分钟<input type="number" min="0" max="600" step="1" id="minutes-${task.id}" data-field="actualMinutes" value="${escape(r.actualMinutes ?? '')}" inputmode="numeric"></label><label for="quantity-${task.id}">已完成数量（${escape(task.unit)}）<input type="number" min="0" max="10000" step="1" id="quantity-${task.id}" data-field="actualQuantity" value="${escape(r.actualQuantity ?? '')}" inputmode="numeric"></label></div><label class="evidence-label" for="evidence-${task.id}">学习成果与复盘记录<textarea id="evidence-${task.id}" data-field="evidence" maxlength="1200" placeholder="${escape(task.evidenceHint)}">${escape(r.evidence || '')}</textarea></label><p class="task-issues" hidden></p></article>`;
+      return `<article class="task-card" data-task="${escape(task.id)}"><div class="task-top"><div class="task-title"><span class="task-number">${String(i + 1).padStart(2, '0')}</span><div><h3>${escape(task.title)}</h3><p>${task.timeIsBudget ? '建议预算 ' : ''}${task.minutes} 分钟 · 交付 ${task.quantity} ${escape(task.unit)}</p></div></div><span class="task-status">待完成</span></div><p class="task-instruction">${escape(task.instruction)}</p>${materials}<div class="task-inputs"><label for="minutes-${task.id}">实际学习分钟<input type="number" min="0" max="600" step="1" id="minutes-${task.id}" data-field="actualMinutes" value="${escape(r.actualMinutes ?? '')}" inputmode="numeric"></label><label for="quantity-${task.id}">补充自报数量（${escape(task.unit)}）<input type="number" min="0" max="10000" step="1" id="quantity-${task.id}" data-field="actualQuantity" value="${escape(r.actualQuantity ?? '')}" inputmode="numeric"></label></div><label class="evidence-label" for="evidence-${task.id}">学习成果与复盘记录<textarea id="evidence-${task.id}" data-field="evidence" maxlength="1200" placeholder="${escape(task.evidenceHint)}">${escape(r.evidence || '')}</textarea></label><p class="task-issues" hidden></p></article>`;
     }).join('');
     const future = selectedDay > actualDay();
     $('tasksForm').querySelectorAll('input,textarea,button').forEach((el) => { el.disabled = future || blockedStorage; });
@@ -166,20 +173,21 @@
       const card = $('taskList').querySelector(`[data-task="${task.id}"]`);
       const result = Core.validateTask(task, records[task.id]);
       card.classList.toggle('complete', result.complete);
-      card.querySelector('.task-status').textContent = result.complete ? '量已达标' : '待完成';
+      card.querySelector('.task-status').textContent = result.complete ? task.timeIsBudget ? '交付已完成' : '量已达标' : '待完成';
       const issues = card.querySelector('.task-issues');
       issues.hidden = !showValidation || result.complete;
       issues.textContent = result.issues.join('；');
       let linked = card.querySelector('.linked-task');
       if (!linked) { linked = document.createElement('p'); linked.className = 'linked-task small'; card.querySelector('.task-instruction').after(linked); }
       const work = linkedFor(selectedDay).tasks[task.id];
-      linked.textContent = work ? `自动关联 ${work.count} 份作品 · ${work.minutes.toFixed(1)} 分钟 · ${Object.entries(work.quantities).map(([unit, n]) => `${n} ${unit}`).join('、') || '未标数量'}。同单位数量已计入本项；手填值视为包含作品的总量，取较大值以避免重复。` : '此项尚无关联作品。以下可填写线下学习的自报总量；不代表独立掌握。';
+      linked.textContent = work ? `自动关联 ${work.count} 份作品 · 实际 ${work.minutes.toFixed(1)} 分钟 · ${Object.entries(work.quantities).map(([unit, n]) => `${n} ${unit}`).join('、') || '未标数量'}。${task.timeIsBudget ? '达到实际交付要求后直接继续，无需等待建议分钟；自报数量不代替作品。' : '同单位数量已计入本项；手填值视为包含作品的总量，取较大值以避免重复。'}` : task.timeIsBudget ? '此项尚无关联作品。请在课程中提交真实作答；自报数量不能代替作品和评阅。' : '此项尚无关联作品。以下可填写线下学习的自报总量；不代表独立掌握。';
+      if (records[task.id]?.submissionComplete === false) linked.textContent += ' ' + records[task.id].submissionReason;
     });
     const summary = Core.summarizeDay(currentPlan, records);
-    $('taskProgress').textContent = `${summary.completedTasks} / ${summary.totalTasks} 项达到计划量 · 已记 ${summary.minutes} 分钟`;
+    $('taskProgress').textContent = `${summary.completedTasks} / ${summary.totalTasks} 项保留所需交付 · 实际 ${summary.minutes} 分钟`;
     $('dayProgress').max = summary.totalTasks;
     $('dayProgress').value = summary.completedTasks;
-    $('dayResult').textContent = isSubmitted(selectedDay) ? '今日完成量已提交。自报记录与关联作品均不等于已掌握；请查看下方订正和复测。' : '关联作品自动计入相同单位的学习量。线下学习可补填自报总量和成果，再提交。';
+    $('dayResult').textContent = isSubmitted(selectedDay) ? '今日真实产出、错题订正和 AI 复盘已提交。剩余可用时间可继续同级练习；独立掌握仍需换题复测。' : currentPlan.planVersion===Core.CURRICULUM_PLAN_VERSION ? '每天 6 小时是总可用预算。完成当前材料就继续下一份；提交以真实作品、错题全对和 AI 复盘为准，不等待计时。' : '关联作品自动计入相同单位的学习量。线下学习可补填自报总量和成果，再提交。';
     $('submitDay').textContent = isSubmitted(selectedDay) ? '更新今日成果' : '提交今日成果';
   }
   function renderDay() {
@@ -240,9 +248,12 @@
     }).join('') : '<p class="small">课程、写作、口语或选区练习提交后，作品将自动关联到实际学习日。旧版打卡继续保留为自报；不会自动变成独立掌握证据。</p>';
     if(work.length>100)$('linkedEvidence').insertAdjacentHTML('beforeend','<p>本页显示最近 100 份作品；完整记录可到备份中心导出。</p>');
   }
+  let evidenceRefreshing=false,evidenceRefreshAgain=false;
   async function refreshEvidence() {
-    try { linkedRecords = await Records.list(); linkedByDay = Records.summaries(linkedRecords); linkedFailure = ''; }
-    catch(error) { linkedFailure = '作品库暂时无法读取，原记录保留：'+error.message; }
+    if(evidenceRefreshing){evidenceRefreshAgain=true;return;}evidenceRefreshing=true;
+    try { do {evidenceRefreshAgain=false;linkedRecords = await Records.list();if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(linkedRecords);linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain); }
+    catch(error) { linkedFailure = '作品或错题状态暂时无法核实，原记录保留：'+error.message; }
+    finally{evidenceRefreshing=false;}
     renderEvidence(); updateTaskProgress(); renderStats(); renderWeekDays();
   }
   $('weekSelect').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周 · ${escape(w.title)}</option>`).join('');
@@ -264,7 +275,7 @@
       }
       state.startDate = date;
       persist(); selectedDay = clampDay(actualDay()); renderAll();
-      $('setupStatus').textContent = `计划从 ${date} 开始，至 ${Core.dateForDay(date, 364)}。每天 360 分钟，共 2184 小时。${preview ? '（预览模式）' : ''}`;
+      $('setupStatus').textContent = `计划从 ${date} 开始，至 ${Core.dateForDay(date, 364)}。每天最多可用 360 分钟；各模块分钟为建议预算，完成后直接继续，不等计时。${preview ? '（预览模式）' : ''}`;
     } catch (error) { $('setupStatus').textContent = error.message; }
   });
   $('tasksForm').addEventListener('input', (event) => {
@@ -370,5 +381,6 @@
   renderAll();
   if (!blockedStorage && lastSavedState === null) persist();
   window.addEventListener(Records.EVENT, refreshEvidence);
+  window.addEventListener('ielts:mistakes-changed', refreshEvidence);
   refreshEvidence();
 })();

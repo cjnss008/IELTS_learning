@@ -42,7 +42,7 @@ test('全年364天直接使用课程任务、材料和单位，保持每天360�
   assert.equal(Core.getCourseSummary(content, options).hours, 2184);
 });
 
-test('课程播放器实际提交经作品汇总能直接填满同日任务，不需人工换算单位', () => {
+test('课程作品按真实单位汇总，整日完成仍须通过本日错题和 AI 复盘', () => {
   const source = curriculum.days.find(day => day.tasks.length === 7 && day.tasks.every(task => task.materialIds.length));
   assert.ok(source, '需要一套完整的常规学习日材料');
   const plan = Core.buildDay(source.day, content, options);
@@ -57,12 +57,24 @@ test('课程播放器实际提交经作品汇总能直接填满同日任务，�
     const answers = Object.fromEntries((material.questions || []).map(q => [q.id, q.type === 'multi' ? q.answers : q.answers[0]]));
     const attempt = { id: 'integration-' + (++sequence), materialId: id, taskId: task.id, courseDay: source.day, mode: task.mode, kind: 'original', parentId: null, startedAt, submittedAt, activeSeconds, exposureAtStart: 'unseen', answers, userEvidence: {}, text, transcript: text, audioAvailable: true, audioCompleted: true, transcriptViewed: false, interrupted: false, assistance: { hint: false, answer: false, ai: false }, media: [] };
     const record = Player.toRecord(attempt, material, source.day, Assessment);
+    if (['writing','speaking'].includes(task.id)) {
+      const review={ok:true,status:'complete',requiresRetest:false,rounds:[1,2].map(round=>({ok:true,round,task:'foundation',criteria:[],levelCheck:{meetsGoal:true,evidence:[{quote:text,comment:'本次已提交原稿的真实片段。'}]}}))};
+      if(task.id==='speaking'){record.media=[{id:'integration-voice',name:'本次原音引用',mime:'audio/webm',durationSeconds:35}];review.audioAnalysisEvidence=false;review.pronunciationSource={provider:'ali',recordId:record.id,evidenceId:'integration-ali-proof',mediaIds:['integration-voice'],durationSeconds:35,reference:text,completeCoverage:true,result:{accuracy:90,fluency:85,completeness:95}};}
+      record.evaluation={method:'ai',result:'pass',feedback:JSON.stringify(review)};
+    }
+    if (task.id === 'reflection') Object.assign(record, { source:'mistake-review', answer:JSON.stringify({schema:1,courseDay:source.day,token:'integration-token',recap:{ok:true,status:'complete',recap:'已按当天原稿和订正表现完成 AI 复盘。'}}), evaluation:{method:'ai',result:'pass',feedback:'本日错题和 AI 复盘已完成。'} });
     assert.equal(record.unit, task.unit, task.id);
     records = Records.put(records, record, submittedAt).state;
   }
   const linked = Records.summary(records.records, source.day, new Date(cursor).toISOString());
-  const effective = Store.combineEvidence(plan, {}, linked);
-  assert.equal(Core.summarizeDay(plan, effective).complete, true);
+  let effective = Store.combineEvidence(plan, {}, linked);
+  assert.equal(Core.summarizeDay(plan, effective).complete, false);
+  const previousMistakes = global.IELTSMistakes;
+  try {
+    global.IELTSMistakes = { forDay: day => ({ dayNumber: day, token:'integration-token', allCorrect: true, remaining: 0, completionValid: true }) };
+    effective = Store.combineEvidence(plan, {}, Records.summary(records.records, source.day, new Date(cursor).toISOString()));
+    assert.equal(Core.summarizeDay(plan, effective).complete, true);
+  } finally { global.IELTSMistakes = previousMistakes; }
   assert.equal(Core.summarizeDay(plan, effective).minutes, 360);
   for (const task of plan.tasks) assert.equal(effective[task.id].actualQuantity, task.quantity, task.id);
 });

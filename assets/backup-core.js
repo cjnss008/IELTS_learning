@@ -5,6 +5,8 @@
     'ielts-diagnostic-20261003-v1':'30分钟测试文字记录', 'ielts52-daily-plan-v1':'每日计划与测评', 'ielts52-dictation-v1':'逐句听写草稿',
     'ielts52-notebook-v1':'原句生词本', 'ielts52-review-v1':'间隔复习记录', 'ielts-ai-coach-v1':'AI辅导写作草稿', 'ielts52-foundation-v1':'基础入门练习',
     'ielts52-learning-records-v1':'原稿、反馈、订正与复测作品库', 'ielts52-course-player-v1':'课程草稿、曝光与待评关联',
+    'ielts52-mistake-book-v1':'全环节错题、原始尝试、整页订正轮次与每日 AI 复盘',
+    'ielts52-adaptive-plan-v1':'AI 复盘策略、已开始课程日与未开始日的个性化计划',
     'ielts52-selection-practice-v1':'词句巩固与延迟回忆题', 'ielts52-selection-ai-cache-v1':'已保存词句详解',
     'ielts52-textbook-exposure-v1':'本地教材与剑雅试卷曝光记录'
   };
@@ -29,6 +31,8 @@
     if(!Object.hasOwn(KEYS,key))throw Error('模块不在恢复白名单。');
     const v=JSON.parse(raw);
     if(key==='ielts52-learning-records-v1'){if(!root.IELTSRecords)throw Error('作品模块未加载。');return root.IELTSRecords.parseState(v);}
+    if(key==='ielts52-mistake-book-v1'){if(!root.IELTSMistakes)throw Error('错题模块未加载。');return root.IELTSMistakes.parseState(v);}
+    if(key==='ielts52-adaptive-plan-v1'){if(!root.IELTSAdaptivePlan)throw Error('个性化计划模块未加载。');return root.IELTSAdaptivePlan.parseState(v);}
     if(key==='ielts52-textbook-exposure-v1'){if(!root.IELTSTextbookLibrary)throw Error('教材记录模块未加载。');return root.IELTSTextbookLibrary.parseState(v);}
     plain(v);
     if(key==='ielts52-course-player-v1')return root.IELTSCoursePlayer.parseState(v);
@@ -63,6 +67,8 @@
   }
   function mergeLocal(key,old,raw){
     if(old===null)return raw;
+    if(key==='ielts52-mistake-book-v1')return JSON.stringify(root.IELTSMistakes.mergeStates(validate(key,old),validate(key,raw)));
+    if(key==='ielts52-adaptive-plan-v1')return JSON.stringify(root.IELTSAdaptivePlan.mergeStates(validate(key,old),validate(key,raw)));
     if(key==='ielts52-textbook-exposure-v1'){
       validate(key,old);validate(key,raw);
       let prepared=old;

@@ -269,11 +269,12 @@
     return cached;
   }
 
-  function buildCurriculumDay(dayNumber, content, data) {
+  function buildCurriculumDay(dayNumber, content, data, options) {
     integerInRange(dayNumber, 1, COURSE_DAYS, '学习日');
     var info = getWeekInfo(Math.ceil(dayNumber / 7), content);
     var index = curriculumIndex(data);
-    var source = data.days[dayNumber - 1];
+    var adaptive = options && OWN.call(options, 'adaptivePlan') ? options.adaptivePlan : root.document ? root.IELTSAdaptivePlan : null;
+    var source = adaptive && typeof adaptive.getDay === 'function' ? adaptive.getDay(data.days[dayNumber - 1]) : data.days[dayNumber - 1];
     var week = Math.ceil(dayNumber / 7), weekday = ((dayNumber - 1) % 7) + 1;
     if (source.week !== week || source.weekday !== weekday || !Array.isArray(source.tasks) || !source.tasks.length) {
       throw new TypeError('第 ' + dayNumber + ' 天的课程任务不完整。');
@@ -297,11 +298,15 @@
         title: TASK_NAMES[entry.id],
         skill: entry.id === 'vocabulary' || entry.id === 'grammar' ? 'foundation' : entry.id === 'reflection' ? 'review' : entry.skill,
         curriculumSkill: entry.skill,
+        dayNumber: dayNumber,
+        timeIsBudget: true,
+        requiresRecordedOutput: true,
+        requiresVerifiedEvaluation: ['writing','speaking'].includes(entry.id),
         instruction: entry.instructions,
         evidenceHint: entry.deliverable + '；保留原始作品、订正依据和下一次复测安排。',
         materialIds: entry.materialIds.slice(),
         materials: materials
-      });
+      }, entry.id === 'reflection' ? { dayNumber: dayNumber, requiresMistakeReview: true } : {});
     });
     var totalMinutes = tasks.reduce(function (sum, item) { return sum + item.minutes; }, 0);
     if (totalMinutes !== 360 || source.totalMinutes !== totalMinutes) throw new TypeError('每日课程任务必须合计 360 分钟。');
@@ -310,7 +315,8 @@
       curriculumStatus: data.status,
       dayNumber: dayNumber, week: week, weekday: weekday,
       kind: weekday < 7 ? 'study' : week % 4 === 0 ? 'checkpoint' : 'review',
-      totalMinutes: totalMinutes, tasks: tasks, weekInfo: info
+      totalMinutes: totalMinutes, tasks: tasks, weekInfo: info,
+      adaptation: source.adaptation || null
     };
   }
 
@@ -320,7 +326,7 @@
     var version = options.planVersion || (data ? CURRICULUM_PLAN_VERSION : LEGACY_PLAN_VERSION);
     if (version === LEGACY_PLAN_VERSION) return buildLegacyDay(dayNumber, content);
     if (version !== CURRICULUM_PLAN_VERSION) throw new TypeError('不支持此日程版本。');
-    return buildCurriculumDay(dayNumber, content, data);
+    return buildCurriculumDay(dayNumber, content, data, options);
   }
 
   function numericValue(value) {
@@ -349,7 +355,7 @@
     var issues = [];
     if (!Number.isInteger(minutes) || minutes < 0 || minutes > 600) {
       issues.push('请填写 0–600 之间的整数学习分钟数。');
-    } else if (minutes < taskDefinition.minutes) {
+    } else if (!taskDefinition.timeIsBudget && minutes < taskDefinition.minutes) {
       issues.push('实际学习时间尚未达到 ' + taskDefinition.minutes + ' 分钟。');
     }
     if (!Number.isInteger(quantity) || quantity < 0 || quantity > 10000) {
@@ -358,6 +364,19 @@
       issues.push('完成量尚未达到 ' + taskDefinition.quantity + ' ' + taskDefinition.unit + '。');
     }
     if (visibleCount < 12) issues.push('请填写至少 12 个非空白字符的具体成果或证据位置。');
+    if (taskDefinition.requiresRecordedOutput && (item.recordedSource !== 'learning-records' || !Number.isInteger(item.recordedCount) || item.recordedCount < 1 || !Number.isInteger(item.recordedQuantity) || item.recordedQuantity < taskDefinition.quantity)) {
+      issues.push('请在课程中提交本项真实作品；手填完成量不能代替已保存的作答与评阅。');
+    }
+    if (taskDefinition.requiresVerifiedEvaluation && item.recordedCount > 0 && item.reviewPending !== false) issues.push('本项原稿仍需真实 AI／语音评阅，或先通过与这份原稿对应的错题订正；待评和自评不能算通过。');
+    if (taskDefinition.requiresRecordedOutput && item.submissionComplete === false) issues.push(item.submissionReason || '本项核心材料尚未完整提交或仍需真实评阅。');
+    if (taskDefinition.requiresMistakeReview) {
+      try {
+        if (!root.IELTSMistakes || typeof root.IELTSMistakes.forDay !== 'function') throw Error('错题复盘组件尚未加载。');
+        var review = root.IELTSMistakes.forDay(taskDefinition.dayNumber);
+        if (!review.allCorrect || review.remaining > 0) issues.push('请先整页重做本日错题，直到全部答对且待评归零。');
+        else if (!review.completionValid) issues.push('请在错题全部通过后完成本日 AI 复盘。');
+      } catch (error) { issues.push('本日错题与 AI 复盘状态尚未核实：' + error.message); }
+    }
     return { complete: issues.length === 0, issues: issues };
   }
 

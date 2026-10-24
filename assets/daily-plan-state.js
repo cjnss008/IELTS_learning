@@ -3,10 +3,10 @@
   var core = root.IELTSPlanCore;
   if (!core && typeof module === 'object' && module.exports) core = require('./daily-plan-core.js');
   if (!core) throw new Error('请先加载 daily-plan-core.js。');
-  var api = factory(core);
+  var api = factory(core, root);
   root.IELTSPlanState = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
-})(typeof globalThis !== 'undefined' ? globalThis : this, function (core) {
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (core, root) {
   'use strict';
 
   var OWN = Object.prototype.hasOwnProperty;
@@ -366,23 +366,57 @@
     return { qualifyingCount: qualifyingCount, ready: recent.length === 3 && qualifyingCount === 3, latestScores: recent.length ? Object.assign({}, recent[0].scores) : null };
   }
 
-  function combineEvidence(plan, manual, linked) {
+  function validLinkedReview(record) {
+    if(record?.evaluation?.method!=='ai'||record.evaluation.result!=='pass')return false;
+    var review,artifact;try{review=JSON.parse(record.evaluation.feedback);artifact=JSON.parse(record.answer);}catch(_){try{review=JSON.parse(record.evaluation.feedback);}catch(_){return false;}}
+    var text=artifact&&typeof artifact==='object'?(record.skill==='speaking'?artifact.transcript:artifact.text):record.answer;
+    if(typeof text!=='string'||!text.trim()||review?.status!=='complete'||review.requiresRetest===true)return false;
+    var rounds=Array.isArray(review.rounds)?review.rounds.filter(function(r){return r?.ok===true;}):[];
+    var normalize=function(v){return typeof v==='string'?v.normalize('NFKC').replace(/[‘’]/g,"'").trim().replace(/\s+/g,' ').toLowerCase():'';},original=normalize(text);
+    if(rounds.length<2||new Set(rounds.map(function(r){return r.round;})).size<2)return false;
+    var material=root.IELTSCurriculumData?.materials?.find(function(m){return m.id===record.materialId;});
+    var count=root.IELTSAssessment?.countWords?root.IELTSAssessment.countWords(text):(text.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g)||[]).length;if(count<(material?.minWords||1))return false;
+    if(material?.fullTest||material?.pool==='final')return root.IELTSAssessment?.evaluatedCriteria?.(record,material,7)?.pass===true;
+    if(!rounds.every(function(r){return r.levelCheck?.meetsGoal===true&&Array.isArray(r.levelCheck.evidence)&&r.levelCheck.evidence.some(function(e){return normalize(e?.quote)&&original.includes(normalize(e.quote));});}))return false;
+    if(record.skill!=='speaking')return true;
+    var ids=(record.media||[]).map(function(m){return m.id;});if(!ids.length)return false;
+    var ali=review.pronunciationSource;
+    if((material?.rubric?.taskType==='foundation'||rounds.every(function(r){return r.task==='foundation';}))&&ali){return Boolean(ali.provider==='ali'&&ali.recordId===record.id&&ali.evidenceId&&ali.completeCoverage===true&&normalize(ali.reference)===original&&Number.isFinite(ali.durationSeconds)&&ali.durationSeconds>0&&ali.durationSeconds<=180&&Array.isArray(ali.mediaIds)&&ali.mediaIds.length===ids.length&&ali.mediaIds.every(function(id,i){return id===ids[i];})&&['accuracy','fluency','completeness'].every(function(k){return Number.isFinite(ali.result?.[k])&&ali.result[k]>=0&&ali.result[k]<=100;})&&ali.result.accuracy>=80&&ali.result.fluency>=75&&ali.result.completeness>=90);}
+    var source=review.audioSource;if(review.audioAnalysisEvidence!==true||source?.recordId!==record.id||source.completeCoverage!==true||!Array.isArray(source.mediaIds)||source.mediaIds.length!==ids.length||!source.mediaIds.every(function(id,i){return id===ids[i];})||!Number.isFinite(source.durationSeconds)||source.durationSeconds<=0||!Array.isArray(source.segments)||!source.segments.length)return false;
+    var cursor=0;for(var segment of source.segments){if(segment.audible!==true||!Number.isFinite(segment.startSeconds)||!Number.isFinite(segment.endSeconds)||Math.abs(segment.startSeconds-cursor)>.05||segment.endSeconds<=cursor||segment.endSeconds>source.durationSeconds+.05)return false;cursor=segment.endSeconds;}return Math.abs(cursor-source.durationSeconds)<=.05;
+  }
+  function combineEvidence(plan, manual, linked, options) {
     var result = {};
     plan.tasks.forEach(function (task) {
       var old = manual && manual[task.id] || {};
       var entry = linked && linked.tasks && linked.tasks[task.id];
-      if (!entry || !entry.count) { result[task.id] = Object.assign({}, old); return; }
+      if (!entry || !entry.count) { result[task.id] = Object.assign({}, old, task.requiresRecordedOutput ? {recordedSource:'learning-records',recordedCount:0,recordedQuantity:0} : {}); return; }
       var recordedMinutes = Math.min(600, Math.max(0, Math.floor(entry.minutes || 0)));
       var recordedQuantity = Math.min(10000, Math.max(0, Math.floor(entry.quantities && entry.quantities[task.unit] || 0)));
       var citations = entry.records.map(function (r) { return r.title + '（作品 ' + r.id + '；' + (r.kind === 'retest' ? '复测' : r.kind === 'correction' ? '订正' : '原稿') + '）'; }).join('；');
-      result[task.id] = {
+      var reviewPending = false;
+      if (task.requiresVerifiedEvaluation) {
+        var latest = new Map();entry.records.forEach(function (r) { var key=r.materialId||r.id,old=latest.get(key);if(!old||String(r.submittedAt||'')>=String(old.submittedAt||''))latest.set(key,r); });
+        reviewPending = !latest.size || Array.from(latest.values()).some(function (r) { if(validLinkedReview(r)||r.mistakeReview?.corrected===true)return false;try{return root.IELTSMistakes?.recordCorrectionStatus?.(r)?.corrected!==true;}catch(_){return true;} });
+      }
+      result[task.id] = Object.assign({
         actualMinutes: Math.max(old.actualMinutes || 0, recordedMinutes),
         actualQuantity: Math.max(old.actualQuantity || 0, recordedQuantity),
         evidence: ((old.evidence || '') + (citations ? '\n关联作品：' + citations + '。以上仅为完成量和作品索引，能力需独立验证。' : '')).slice(0, 1200)
-      };
+      }, task.requiresRecordedOutput ? {recordedSource:'learning-records',recordedCount:entry.count,recordedQuantity:recordedQuantity,...(task.requiresVerifiedEvaluation?{reviewPending:reviewPending}:{})} : {});
     });
+    if (options && options.submissionReadiness) {
+      var readiness = options.submissionReadiness;
+      var statuses = new Map((readiness.states || []).map(function (state) { return [state.taskId, state]; }));
+      plan.tasks.forEach(function (task) {
+        if (!task.requiresRecordedOutput) return;
+        var status = statuses.get(task.id), item = result[task.id];
+        item.submissionComplete = task.id === 'reflection' ? readiness.ready === true : status?.done === true;
+        item.submissionReason = item.submissionComplete ? '' : readiness.reason || '本项核心材料尚未完整提交或仍需真实评阅。';
+      });
+    }
     return result;
   }
 
-  return Object.freeze({ newState: newState, parseState: parseState, getPlan: getPlan, addAssessment: addAssessment, readiness: readiness, combineEvidence: combineEvidence });
+  return Object.freeze({ newState: newState, parseState: parseState, getPlan: getPlan, addAssessment: addAssessment, readiness: readiness, combineEvidence: combineEvidence, validLinkedReview: validLinkedReview });
 });
