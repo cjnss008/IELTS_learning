@@ -4,10 +4,13 @@ const assert = require('node:assert/strict');
 const D = require('../assets/word-dictionary.js');
 const H = require('../assets/word-hover.js');
 
-test('local lookup uses the material sense and example, and fills only known pronunciation/audio',() => {
-  const dictionary = D.create({courseData:{vocab:[{word:'bank',meaning:'银行',ipa:'/bæŋk/',audio:'audio/words/bank.mp3',context:'I work in a bank.'}]},curriculumData:{materials:[{id:'river',vocabulary:[{word:'bank',meaning:'河岸',example:'They sat on the river bank.'}]},{id:'money',vocabulary:[{word:'bank',meaning:'银行',example:'She works at the bank.'}]}]}});
+test('local lookup retains the material sense/example while preferring the verified word audio',() => {
+  const options = {courseData:{vocab:[{word:'bank',meaning:'银行',ipa:'/bæŋk/',audio:'audio/words/bank.mp3',context:'I work in a bank.'}]},curriculumData:{materials:[{id:'river',vocabulary:[{word:'bank',meaning:'河岸',example:'They sat on the river bank.'}]},{id:'money',vocabulary:[{word:'bank',meaning:'银行',example:'She works at the bank.'}]}]}};
+  const dictionary = D.create({...options,audioData:{items:{bank:{audio:'audio/vocabulary/bank-verified.mp3'}}}});
   const result = dictionary.lookup('BANK','They sat on the river bank.','river');
-  assert.equal(result.meaning,'河岸'); assert.equal(result.example,'They sat on the river bank.'); assert.equal(result.ipa,'/bæŋk/'); assert.equal(result.audio,'audio/words/bank.mp3');
+  assert.equal(result.meaning,'河岸'); assert.equal(result.example,'They sat on the river bank.'); assert.equal(result.ipa,'/bæŋk/'); assert.equal(result.audio,'audio/vocabulary/bank-verified.mp3');
+  const fallback = D.create({...options,audioData:{items:{}}}).lookup('bank','','river');
+  assert.equal(fallback.audio,'audio/words/bank.mp3'); assert.equal(fallback.meaning,'河岸'); assert.equal(fallback.example,'They sat on the river bank.');
   assert.equal(dictionary.lookup('zzunknown','').ipa,'');
   assert.equal(dictionary.lookup('zzunknown','').source,'missing');
   assert.equal(D.safeEntry({word:'bank',audio:'https://untrusted.test/bank.mp3'}).audio,'');

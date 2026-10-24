@@ -190,8 +190,12 @@
       const score = item => (materialId && item.materialId === materialId ? 1000 : 0) + (item.source === 'curriculum' ? 10 : item.source === 'course' ? 5 : 0) + (item.example && text.includes(normalize(item.example)) ? 100 : 0);
       const sorted = values.slice().sort((a,b) => score(b)-score(a));
       const result = {...sorted[0]};
-      for (const field of ['meaning','ipa','example','exampleTranslation','audio']) if (!result[field]) result[field] = sorted.find(item => item[field])?.[field] || '';
-      if (!result.audio && audioItems[key]?.audio) result.audio = safeEntry({word:result.word,audio:audioItems[key].audio})?.audio || '';
+      for (const field of ['meaning','ipa','example','exampleTranslation']) if (!result[field]) result[field] = sorted.find(item => item[field])?.[field] || '';
+      // Keep a pronunciation explicitly bound to the current material; otherwise
+      // use the verified word index before an unrelated legacy audio file.
+      const boundAudio = materialId ? values.find(item => item.materialId === materialId && item.audio)?.audio : '';
+      const indexedAudio = audioItems[key]?.audio ? safeEntry({word:result.word,audio:audioItems[key].audio})?.audio : '';
+      result.audio = boundAudio || indexedAudio || result.audio || sorted.find(item => item.audio)?.audio || '';
       result.complete = Boolean(result.meaning && result.ipa && result.example);
       return result;
     }
