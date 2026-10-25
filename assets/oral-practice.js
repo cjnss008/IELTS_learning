@@ -54,6 +54,42 @@
     if (!parts.length || parts.length > 100) throw Error('课程原文无法分段，请缩短本次材料。');
     return parts;
   }
+  function spokenParagraphs(text) {
+    if (typeof text !== 'string' || !text.trim() || text.length > 30000) throw Error('每日口语需要1–30000字符的课程原文。');
+    const paragraphs = passageFormat?.paragraphs(text) || text.split(/\r\n|\r|\n/).map(p => p.trim()).filter(Boolean);
+    const candidates = paragraphs.flatMap((paragraph, index) => {
+      const label = /^([A-Z])(?:\.[ \t]+\S|\.?$)/.exec(paragraph)?.[1];
+      return label ? [{ index, label }] : [];
+    }), sectionIndexes = new Set();
+    // An initial such as "J. Smith" is ordinary spoken text. Only an ascending
+    // section sequence beginning with A, B establishes inline paragraph labels.
+    for (let i = 0; i < candidates.length - 1; i++) {
+      if (candidates[i].label !== 'A' || candidates[i + 1].label !== 'B') continue;
+      sectionIndexes.add(candidates[i].index);
+      let expected = 'B'.charCodeAt(0);
+      for (let j = i + 1; j < candidates.length && candidates[j].label.charCodeAt(0) === expected; j++, expected++) sectionIndexes.add(candidates[j].index);
+    }
+    const out = [];
+    for (let i = 0; i < paragraphs.length; i++) {
+      const paragraph = paragraphs[i];
+      if (/^[A-Z]\.?$/.test(paragraph) && i + 1 < paragraphs.length) {
+        const following = paragraphs[++i];
+        const source = paragraph + '\n' + following, standaloneLabel = !/^I\.?$/.test(paragraph) || sectionIndexes.has(i - 1);
+        out.push({ reference: source, spoken: standaloneLabel && !/^[A-Z]\.?$/.test(following) ? following : source });
+      } else out.push({ reference: paragraph, spoken: sectionIndexes.has(i) ? paragraph.replace(/^[A-Z]\.[ \t]+/, '') : paragraph });
+    }
+    return out;
+  }
+  function spokenText(text) { return spokenParagraphs(text).map(paragraph => paragraph.spoken).join('\n\n'); }
+  function spokenReferenceParts(text, maxWords = 65) {
+    // Split the unchanged source first: removing a label must not move a word
+    // across a saved segment boundary or change its original segment index.
+    return spokenParagraphs(text).flatMap(paragraph => {
+      const parts = splitReference(paragraph.reference, maxWords);
+      if (paragraph.spoken !== paragraph.reference) parts[0] = parts[0].replace(/^[A-Z]\.?(?:[ \t]*\r?\n[ \t]*|[ \t]+)/, '');
+      return parts;
+    });
+  }
   function checkAbort(signal) {
     if (signal?.aborted) { const error = new Error('已取消等待，原音与参考原文仍保留。'); error.name = 'AbortError'; throw error; }
   }
@@ -109,27 +145,34 @@
   }
   function mistakesFor(professional, context) {
     if (professional.pass !== false) return [];
-    const result = professional.result, seen = new Set(), items = [];
-    for (const word of Array.isArray(result.words) ? result.words : []) {
-      if (typeof word.word !== 'string' || !word.word.trim() || !context.reference.toLowerCase().includes(word.word.trim().toLowerCase()) || !(word.error === 'Omission' || score(word.accuracy) && word.accuracy < professional.thresholds.accuracy)) continue;
+    const result = professional.result, seen = new Set(), items = [], wordResults = Array.isArray(result.words) ? result.words : [], dictionaryLimited = wordResults.some(word => Number.isInteger(word.providerEvidence?.fake_pron));
+    for (const word of wordResults) {
+      const explicit = ['Omission','Repetition'].includes(word.error), limited = Number.isInteger(word.providerEvidence?.fake_pron) || word.providerEvidence?.is_pause === true;
+      if (typeof word.word !== 'string' || !word.word.trim() || !context.reference.toLowerCase().includes(word.word.trim().toLowerCase()) || !(explicit || !limited && score(word.accuracy) && word.accuracy < professional.thresholds.accuracy)) continue;
       const key = word.word.trim().toLowerCase(); if (seen.has(key)) continue; seen.add(key);
       items.push({ questionId: context.questionId + ':word-' + encodeURIComponent(key), quote: word.word.trim(), word: word.word.trim(), reference: context.reference, dimension: 'accuracy', accuracy: score(word.accuracy) ? word.accuracy : null, error: word.error || 'Unknown' });
     }
     for (const dimension of professional.below) {
-      if (dimension === 'accuracy' && items.length) continue;
+      if (dimension === 'accuracy' && (items.length || dictionaryLimited)) continue;
       items.push({ questionId: context.questionId + ':' + dimension, quote: context.reference, reference: context.reference, dimension, accuracy: null, error: 'DimensionBelowThreshold' });
     }
     return items.slice(0, 30);
   }
+  function coachText(value) {
+    // Older archived coaches often repeat a no-diagnosis disclaimer per word.
+    // Hide only those clauses; keep the immutable evidence and useful advice.
+    return String(value || '').split(/(?<=[。！？；;，,\n])/).filter(part => !/(?:没有|未)(?:给出|提供|返回|标明|说明|指明).{0,24}(?:音素|phoneme)|(?:缺少|缺乏).{0,12}(?:音素|逐音).{0,12}(?:证据|信息|原因|诊断)|(?:音素|逐音).{0,18}(?:无法确定|无法定位|尚不能确定|待验证|未提供|未返回|证据不足)|无法.{0,10}(?:确定|定位).{0,10}(?:音素|哪个音)/i.test(part)).join('').trim();
+  }
   async function mount(host, options = {}) {
     if (!host || !root.document) throw Error('口语练习缺少挂载位置。');
-    const doc = root.document, reference = String(options.reference || '').trim(), parts = splitReference(reference, options.maxWords || 65), required = requiredScores(options.thresholds);
+    const doc = root.document, reference = String(options.reference || '').trim(), legacyParts = splitReference(reference, options.maxWords || 65), parts = spokenReferenceParts(reference, options.maxWords || 65), required = requiredScores(options.thresholds);
     const level = String(options.level || 'A0').match(/A[012]|B[12]|C[12]/g)?.at(-1) || 'A0';
     const profile = () => root.IELTSProfiles?.current().id || 'legacy', capturedProfile = profile();
     const library = options.library || root.IELTSMediaLibrary?.createLibrary?.() || root.IELTSMediaLibrary;
     const fetcher = options.fetch || root.fetch?.bind(root), maxSeconds = Math.min(180, Math.max(10, Number(options.maxSeconds) || 180));
     let index = 0, phase = 'idle', note = '', generation = 0, disposed = false, blocked = false, controller = null, recorder = null, stream = null, timer = null, clockTimer = null, started = 0, previewURL = '', currentBlob = null;
     const results = Array(parts.length).fill(null), works = Array(parts.length).fill(null);
+    const dictionary = root.IELTSWordDictionary?.create?.({courseData:root.IELTSCourse,curriculumData:root.IELTSCurriculumData});
     function el(tag, className, text) { const node = doc.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; }
     function button(text, handler) { const node = el('button', '', text); node.type = 'button'; node.addEventListener('click', handler); return node; }
     const box = el('section', 'oral-practice'), heading = el('h3', '', options.title || '每日口语 · 分段跟读'), intro = el('p', 'oral-practice-intro', '先听示范，再按原文朗读。结束录音后自动进行专业评测和中文说明；每段通过后完成本篇。');
@@ -148,8 +191,8 @@
     const feedback = el('div', 'oral-practice-feedback'), thresholdsNode = el('p', 'oral-practice-small', '本练习门槛：准确度≥' + required.accuracy + '，流利度≥' + required.fluency + '，完整度≥' + required.completeness + '（0–100）。缺少任何关键维度保持待评；分数不换算雅思Band。');
     box.append(heading, intro, progress, referenceRow, text, controls, disclosure, statusNode, modelPlayback, playback, download, feedback, thresholdsNode); host.replaceChildren(box);
     function valid(token) { return !disposed && !blocked && token === generation && profile() === capturedProfile; }
-    function allSegments() { return parts.map((part, i) => { const result = results[i], professional = result?.professional, coach = result?.coach; return { index: i, reference: part, workId: works[i]?.id || '', evidenceId: professional?.evidenceId || '', source: professional?.archived ? 'local-archive' : professional ? 'live-assessment' : '', status: result?.status || 'pending', pass: result?.overallPass === true, professional: professional ? { pass: professional.pass, result: professional.result, thresholds: required } : null, coach: professional && coach?.feedbackFormat === 'oral-coach-v1' && coach.evidenceId === professional.evidenceId ? { feedbackFormat: coach.feedbackFormat, evidenceId: coach.evidenceId } : null }; }); }
-    function modelDone(segments) { return segments.length === parts.length && new Set(segments.map(s => s.workId)).size === parts.length && new Set(segments.map(s => s.evidenceId)).size === parts.length && segments.every(s => s.workId && s.evidenceId && s.status === 'complete' && s.professional?.result?.text === s.reference && Object.keys(required).every(key => score(s.professional.result[key])) && s.coach?.feedbackFormat === 'oral-coach-v1' && s.coach.evidenceId === s.evidenceId); }
+    function allSegments() { return parts.map((part, i) => { const result = results[i], professional = result?.professional, coach = result?.coach, archivedReference = works[i]?.originalText, evidenceReference = archivedReference === part || archivedReference === legacyParts[i] ? archivedReference : part; return { index: i, reference: evidenceReference, workId: works[i]?.id || '', evidenceId: professional?.evidenceId || '', source: professional?.archived ? 'local-archive' : professional ? 'live-assessment' : '', status: result?.status || 'pending', pass: result?.overallPass === true, professional: professional ? { pass: professional.pass, result: professional.result, thresholds: required } : null, coach: professional && coach?.feedbackFormat === 'oral-coach-v1' && coach.evidenceId === professional.evidenceId ? { feedbackFormat: coach.feedbackFormat, evidenceId: coach.evidenceId } : null }; }); }
+    function modelDone(segments) { return segments.length === parts.length && new Set(segments.map(s => s.workId)).size === parts.length && new Set(segments.map(s => s.evidenceId)).size === parts.length && segments.every((s, i) => (s.reference === parts[i] || s.reference === legacyParts[i]) && s.workId && s.evidenceId && s.status === 'complete' && s.professional?.result?.text === s.reference && Object.keys(required).every(key => score(s.professional.result[key])) && s.coach?.feedbackFormat === 'oral-coach-v1' && s.coach.evidenceId === s.evidenceId); }
     function getState() { const segments = allSegments(), complete = segments.filter(s => s.pass).length, modelComplete = modelDone(segments); return { phase, busy: BUSY.has(phase), message: note, profileId: capturedProfile, segmentIndex: index, segmentCount: parts.length, completedSegments: complete, modelComplete, overallPass: complete === parts.length && modelComplete, workId: works[index]?.id || '', reference: parts[index], segments, blocked, disposed }; }
     function notify() { try { options.onState?.(getState()); } catch (_) {} }
     function setPhase(next, message) { if (disposed) return; phase = next; if (message !== undefined) note = message; render(); notify(); }
@@ -163,12 +206,20 @@
       if (!current?.professional) return;
       const professional = current.professional, scores = el('div', 'oral-practice-scores');
       for (const key of Object.keys(required)) { const row = el('div', 'oral-practice-score'), value = professional.result[key]; row.dataset.pass = score(value) ? String(value >= required[key]) : 'pending'; row.append(el('span', '', LABELS[key]), el('strong', '', score(value) ? value.toFixed(1) : '待提供')); scores.append(row); }
-      feedback.append(scores, el('p', 'oral-practice-verdict', professional.pass === true ? '本段专业指标已达到朗读门槛。' : professional.pass === false ? '本段需针对问题重练；未达到门槛的词句已交给错题本。' : '缺少关键专业指标，本段仍待评。'));
+      feedback.append(scores, el('p', 'oral-practice-verdict', professional.pass === true ? '本段专业指标已达到朗读门槛。' : professional.pass === false ? '本段尚未达到朗读门槛，请根据下方反馈练习；可确认的错误会记录到错题本。' : '缺少关键专业指标，本段仍待评。'));
       if (professional.archived) feedback.append(el('p', 'oral-practice-small', '这些分数和说明来自本机原音作品归档，不是当前服务新返回的评测。需要新的专业证据时，请重录或重新评测。'));
       if (current.coach) {
-        feedback.append(el('p', '', current.coach.summary));
-        for (const problem of current.coach.problems) { const card = el('article', 'oral-practice-problem'); card.append(el('blockquote', '', problem.quote), el('p', '', problem.explanation), el('p', '', problem.practice), button('听这里的正确读音', () => demonstrate(problem.demonstrationText || problem.quote))); feedback.append(card); }
-        feedback.append(el('p', '', current.coach.nextStep), el('p', 'oral-practice-small', current.coach.limitations));
+        const appendAdvice = (node, value, className = '') => { const clean = coachText(value); if (clean) node.append(el('p', className, clean)); };
+        appendAdvice(feedback, current.coach.summary);
+        for (const problem of current.coach.problems) {
+          const card = el('article', 'oral-practice-problem'), quote = String(problem.quote || '').trim(), singleWord = /^[A-Za-z]+(?:['’-][A-Za-z]+)*$/.test(quote);
+          card.append(el('blockquote', '', quote));
+          const entry = singleWord ? dictionary?.lookup(quote, parts[index], options.materialId || '') : null;
+          if (entry?.ipa) card.append(el('p', 'oral-practice-ipa', '正确读音：' + quote + '  ' + entry.ipa));
+          appendAdvice(card, problem.explanation); appendAdvice(card, problem.practice);
+          card.append(button(singleWord ? '听这个词的正确读音' : '听这句话的正确读音', () => demonstrate(quote))); feedback.append(card);
+        }
+        appendAdvice(feedback, current.coach.nextStep); appendAdvice(feedback, current.coach.limitations, 'oral-practice-small');
       } else feedback.append(el('p', 'oral-practice-pending', current.coachError || '专业证据已保留，中文说明仍待完成。'));
       if (professional.missing.length) feedback.append(el('p', 'oral-practice-pending', '未提供：' + professional.missing.map(k => LABELS[k]).join('、')));
     }
@@ -182,7 +233,7 @@
       results[segmentIndex] = { professional, coach: null, coachError: '', status: 'pending', overallPass: false };
       works[segmentIndex] = await library.update(work.id, { diagnosis: { provider: professional.provider, result: professional.result, evidenceId: professional.evidenceId, thresholds: required, verdict: professional.verdict }, evidenceId: professional.evidenceId, queueStatus: 'pending', lastError: '' });
       if (!valid(token)) return; render();
-      if (professional.pass === false) { const context = contextFor(segmentIndex, work.id, professional), items = mistakesFor(professional, context); const capture = options.onMistakes || ((items, context) => root.IELTSMistakes?.captureOral(items, context)); await capture(items, context); }
+      if (professional.pass === false) { const context = contextFor(segmentIndex, work.id, professional), items = mistakesFor(professional, context); const capture = options.onMistakes || ((items, context) => root.IELTSMistakes?.captureOral(items, context)); if(items.length)await capture(items, context); }
       if (!valid(token)) return; notify();
     }
     function outcome(segmentIndex) {
@@ -249,7 +300,7 @@
       } catch (error) { if (valid(token)) { stopTracks(); setPhase('pending', error.name === 'NotAllowedError' ? '麦克风权限未获允许，请在浏览器站点设置允许后重试。' : '无法开启麦克风，请检查设备和浏览器权限。'); } }
     }
     function stopRecording() { if (recorder?.state === 'recording') { recorder.stop(); clearTimers(); stopTracks(); setPhase('recording', '录音已结束，正在整理原音。'); } }
-    async function retry() { if (BUSY.has(phase) || disposed || blocked || !works[index]) return; const token = ++generation, current = results[index]; await evaluate(works[index], index, token, Boolean(current?.professional?.evidenceId && !current.professional.archived && !current.coach)); }
+    async function retry() { if (BUSY.has(phase) || disposed || blocked || !works[index]) return; const work = works[index];if(work.originalText === legacyParts[index] && work.originalText !== parts[index]){await submitRecording(work.blob,work.durationSeconds);return;}const token = ++generation, current = results[index]; await evaluate(work, index, token, Boolean(current?.professional?.evidenceId && !current.professional.archived && !current.coach)); }
     async function demonstrate(value) {
       if (disposed || blocked || BUSY.has(phase)) return; const token = generation;
       const exact = String(value || '').trim(); if (!exact) return;
@@ -264,24 +315,24 @@
         return typeof entry === 'string' ? { src: entry, reference: text } : entry || null;
       };
       const word = root.IELTSVocabularyAudio?.items?.[exact.toLowerCase().replace(/\s+/g, ' ')];
-      let model = resolveModel(exact) || (word?.audio ? { src: word.audio, reference: exact } : null), contextModel = false;
-      if (!model && exact !== parts[index] && parts[index].toLowerCase().includes(exact.toLowerCase())) { model = resolveModel(parts[index]); contextModel = Boolean(model); }
+      const model = resolveModel(exact) || (word?.audio ? { src: word.audio, reference: exact } : null);
+      playback.pause(); modelPlayback.pause(); root.speechSynthesis?.cancel();
       if (model) {
         // Maps contain package-relative files only. Never turn model text or a
         // supplied provider URL into an external media request.
         const src = model.src;
         if (typeof src !== 'string' || !/^audio\/[A-Za-z0-9_./-]+\.(?:mp3|wav|ogg|m4a|webm)$/i.test(src) || src.split('/').includes('..')) { setPhase(phase, '本地示范音路径无效，请更新学习包音频。'); return; }
         root.speechSynthesis?.cancel(); playback.pause(); modelPlayback.pause(); modelPlayback.src = src; modelPlayback.hidden = false;
-        try { await modelPlayback.play(); if (!valid(token)) { modelPlayback.pause(); return; } setPhase(phase, contextModel ? '正在播放包含该词的整段本地合成示范，请对照原文定位目标词。' : '正在播放本地英文合成示范。听后再录音比较。'); }
+        try { await modelPlayback.play(); if (!valid(token)) { modelPlayback.pause(); return; } setPhase(phase, '正在播放本地英文合成示范：' + exact + '。听后再录音比较。'); }
         catch (_) { if (valid(token)) setPhase(phase, '本地示范音未能播放，请检查本地文件和浏览器声音设置，再点击重试。'); }
         return;
       }
-      if (typeof options.demonstrate === 'function') { try { await options.demonstrate(value, { segmentIndex: index }); } catch (_) { if (valid(token)) setPhase(phase, '示范音未能播放，请检查声音输出后重试。'); } return; }
+      if (typeof options.demonstrate === 'function') { try { await options.demonstrate(exact, { segmentIndex: index }); } catch (_) { if (valid(token)) setPhase(phase, '示范音未能播放，请检查声音输出后重试。'); } return; }
       if (!root.speechSynthesis || !root.SpeechSynthesisUtterance) { setPhase(phase, '当前浏览器没有英文合成示范能力，请在系统安装英语声音后重试。'); return; }
       let voices = root.speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang));
       if (!voices.length) { await new Promise(resolve => { const done = () => { root.clearTimeout(wait); root.speechSynthesis.removeEventListener?.('voiceschanged', done); resolve(); }, wait = root.setTimeout(done, 1500); root.speechSynthesis.addEventListener?.('voiceschanged', done, { once: true }); }); voices = root.speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang)); }
       if (!valid(token)) return; if (!voices.length) { setPhase(phase, '系统未提供英语声音，无法播放正确读音示范。请安装英语语音后重试；本段仍可录音评测。'); return; }
-      root.speechSynthesis.cancel(); const utterance = new root.SpeechSynthesisUtterance(value); utterance.voice = voices.find(v => /^en-GB$/i.test(v.lang)) || voices[0]; utterance.lang = utterance.voice.lang; utterance.rate = 0.85;
+      root.speechSynthesis.cancel(); const utterance = new root.SpeechSynthesisUtterance(exact); utterance.voice = voices.find(v => /^en-GB$/i.test(v.lang)) || voices[0]; utterance.lang = utterance.voice.lang; utterance.rate = 0.85;
       utterance.onerror = () => { if (valid(token)) setPhase(phase, '英文合成示范未能完成，请检查声音输出后重试。'); }; root.speechSynthesis.speak(utterance);
     }
     select.addEventListener('change', () => { const next = Number(select.value); if (!Number.isInteger(next) || next < 0 || next >= parts.length || next === index) return; cancel(); index = next; currentBlob = works[index]?.blob || null; showPreview(currentBlob); setPhase('idle', '本段' + (results[index]?.overallPass ? '已通过，可回听或重录。' : '等待录音；结束后会自动评测。')); });
@@ -300,13 +351,13 @@
         if (!saved.workIds[i]) continue;
         let work; try { work = await library.get(saved.workIds[i]); } catch (_) { unavailable++; continue; }
         if (!valid(token)) return;
-        if (!work || work.id !== saved.workIds[i] || work.kind !== 'audio' || work.mode !== 'daily_reading' || work.task !== 'oral_reading' || work.materialId !== (options.materialId || '') || options.dayNumber !== undefined && work.dayNumber !== options.dayNumber || work.originalText !== parts[i] || work.prompt !== parts[i] || !(work.blob instanceof Blob) || !work.blob.size || !/^audio\//.test(work.blob.type) || !Number.isFinite(work.durationSeconds) || work.durationSeconds < 0.1 || work.durationSeconds > 180.1) { unavailable++; continue; }
+        if (!work || work.id !== saved.workIds[i] || work.kind !== 'audio' || work.mode !== 'daily_reading' || work.task !== 'oral_reading' || work.materialId !== (options.materialId || '') || options.dayNumber !== undefined && work.dayNumber !== options.dayNumber || !(work.originalText === parts[i] || work.originalText === legacyParts[i]) || work.prompt !== work.originalText || !(work.blob instanceof Blob) || !work.blob.size || !/^audio\//.test(work.blob.type) || !Number.isFinite(work.durationSeconds) || work.durationSeconds < 0.1 || work.durationSeconds > 180.1) { unavailable++; continue; }
         works[i] = work; restored++;
-        const diagnosis = work.diagnosis;
-        if (diagnosis?.provider !== 'Alibaba oral assessment' || diagnosis.result?.text !== parts[i] || !score(diagnosis.result?.accuracy) || typeof diagnosis.evidenceId !== 'string' || !diagnosis.evidenceId || diagnosis.evidenceId.length > 120 || work.evidenceId !== diagnosis.evidenceId) continue;
+        const diagnosis = work.diagnosis, archivedReference = work.originalText;
+        if (diagnosis?.provider !== 'Alibaba oral assessment' || diagnosis.result?.text !== archivedReference || !score(diagnosis.result?.accuracy) || typeof diagnosis.evidenceId !== 'string' || !diagnosis.evidenceId || diagnosis.evidenceId.length > 120 || work.evidenceId !== diagnosis.evidenceId) continue;
         const professional = { ...judge(diagnosis.result, required), result: diagnosis.result, provider: diagnosis.provider, evidenceId: diagnosis.evidenceId, archived: true, disclaimer: '来自本机原音作品归档的朗读诊断0–100分，不能换算IELTS Band。' };
         const candidate = work.audioReview, textField = (value, max) => typeof value === 'string' && value.trim() && value.length <= max;
-        const validCoach = work.queueStatus === 'reviewed' && candidate?.feedbackFormat === 'oral-coach-v1' && candidate.evidenceId === diagnosis.evidenceId && textField(candidate.summary, 1200) && textField(candidate.nextStep, 1200) && textField(candidate.limitations, 800) && Array.isArray(candidate.problems) && candidate.problems.length <= 12 && candidate.problems.every(p => p && textField(p.quote, 6000) && parts[i].toLowerCase().includes(p.quote.toLowerCase()) && p.demonstrationText === p.quote && textField(p.explanation, 1200) && textField(p.practice, 1200));
+        const validCoach = work.queueStatus === 'reviewed' && candidate?.feedbackFormat === 'oral-coach-v1' && candidate.evidenceId === diagnosis.evidenceId && textField(candidate.summary, 1200) && textField(candidate.nextStep, 1200) && textField(candidate.limitations, 800) && Array.isArray(candidate.problems) && candidate.problems.length <= 12 && candidate.problems.every(p => p && textField(p.quote, 6000) && archivedReference.toLowerCase().includes(p.quote.toLowerCase()) && p.demonstrationText === p.quote && textField(p.explanation, 1200) && textField(p.practice, 1200));
         const coach = validCoach ? candidate : null;
         results[i] = { professional, coach, coachError: coach ? '' : '本机归档缺少可核对的完整AI说明。需要继续时请重新评测原音，取得当前服务的新证据。', status: coach && professional.pass !== null ? 'complete' : 'pending', overallPass: professional.pass === true && Boolean(coach) };
       }
@@ -319,6 +370,6 @@
     // issued and no archived evidence is announced as a fresh assessment.
     return { destroy, cancel, retry, start: startRecording, stop: stopRecording, submitRecording, demonstrate, getState };
   }
-  const api = Object.freeze({ DEFAULT_THRESHOLDS, requiredScores, judge, splitReference, prepareAudio, requestCoach, assessRecording, mistakesFor, mount });
+  const api = Object.freeze({ DEFAULT_THRESHOLDS, requiredScores, judge, splitReference, spokenText, spokenReferenceParts, prepareAudio, requestCoach, assessRecording, mistakesFor, coachText, mount });
   root.IELTSOralPractice = api; if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

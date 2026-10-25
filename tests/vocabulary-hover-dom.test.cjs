@@ -18,6 +18,8 @@ class Element {
   async fire(type,extra={}) { const event={type,target:this,preventDefault() { this.prevented=true; },...extra}; for(const fn of [...(this.listeners[type]||[])]) await fn(event); return event; }
   getBoundingClientRect() { return {left:20,right:360,top:30,bottom:60,width:340,height:210}; }
   focus() { this.ownerDocument.activeElement=this; }
+  select() { this.selectionStart=0;this.selectionEnd=this.value.length; }
+  click() { if(!this.disabled)return this.fire('click'); }
   remove() { if(this.parentElement) this.parentElement.children=this.parentElement.children.filter(item=>item!==this); }
 }
 function fixture() {
@@ -93,4 +95,43 @@ test('new learning UI requires three checked spellings and three completed recor
  assert.equal(controller.getState().learning.items[0].spellings,3);assert.equal(controller.getState().learning.items[0].speaking,0);
  for(let trial=1;trial<=3;trial++){await button(box,'开始第 '+trial+' 次跟读录音').fire('click');assert.equal(controller.getState().learning.items[0].speaking,trial-1);assert.equal(button(box,'学完了，开始第 1 轮').disabled,true);await button(box,'结束本次录音并评测').fire('click');}
  assert.equal(controller.getState().learning.complete,true);assert.equal(button(box,'学完了，开始第 1 轮').disabled,false);await button(box,'学完了，开始第 1 轮').fire('click');assert.equal(controller.getState().phase,'completion');assert.match(box.textContent,/第 1 \/ 3 轮 · 补全单词/);assert.doesNotMatch(box.textContent,/hello/);controller.destroy();
+});
+
+
+test('copy confirmation keeps typing focus, supports Enter without IME/repeat submits, and hands off without starting the mic',async()=>{
+ const f=fixture(),container=f.doc.createElement('div');f.doc.body.append(container);let micStarts=0,finishMistake;const mistakes=[];
+ const controller=f.win.IELTSVocabularyPractice.mount(container,{material:{id:'focus-vocab',vocabulary:[{word:'hello',meaning:'你好'}]},speakerFactory:()=>({getState:()=>({busy:false}),start(){micStarts++;},cancel(){},destroy(){}}),player:{cancel(){}},onMistake:async value=>{mistakes.push(value);await new Promise(resolve=>{finishMistake=resolve;});}});const box=container.children[0];
+ let input=box.querySelector('input');input.value='hellp';await input.fire('input');const write=button(box,'核对本遍输入');write.focus();const saving=write.fire('click');
+ assert.equal(f.doc.activeElement,input);assert.equal(input.value,'hellp');assert.equal(input.selectionEnd,5);assert.equal(mistakes[0].userAnswer,'hellp');
+ const other=f.doc.createElement('input');f.doc.body.append(other);other.focus();finishMistake();await saving;assert.equal(f.doc.activeElement,other);
+ input.value='hello';await input.fire('input');await input.fire('compositionstart');await input.fire('keydown',{key:'Enter'});await input.fire('compositionend');await input.fire('keydown',{key:'Enter',isComposing:true});await input.fire('keydown',{key:'Enter',keyCode:229});await input.fire('keydown',{key:'Enter',repeat:true});assert.equal(controller.getState().learning.items[0].spellings,0);
+ const key=await input.fire('keydown',{key:'Enter'});assert.equal(key.prevented,true);let next=box.querySelector('input');assert.notEqual(next,input);assert.equal(f.doc.activeElement,next);assert.equal(next.value,'');
+ next.value='hello';await next.fire('input');button(box,'核对本遍输入').focus();await button(box,'核对本遍输入').fire('click');next=box.querySelector('input');assert.equal(f.doc.activeElement,next);assert.equal(controller.getState().learning.items[0].spellings,2);
+ next.value='hello';await next.fire('input');await next.fire('keydown',{key:'Enter'});assert.equal(f.doc.activeElement,button(box,'开始第 1 次跟读录音'));assert.equal(micStarts,0);assert.equal(controller.getState().learning.items[0].speaking,0);assert.equal(button(box,'学完了，开始第 1 轮').disabled,true);controller.destroy();
+});
+
+test('shuffled DOM labels, answers, audio and wrong-answer feedback stay attached to the displayed word',async()=>{
+ const f=fixture(),container=f.doc.createElement('div');f.doc.body.append(container);const material={id:'order-dom',vocabulary:[{word:'student',meaning:'学生'},{word:'teacher',meaning:'老师'},{word:'hello',meaning:'你好'}]},session=f.win.IELTSVocabularyPractice.createSession({trainingVersion:1,material});session.state.roundOrders={meaning:[1,2,0],completion:[2,0,1],dictation:[0,2,1]};const played=[];
+ const controller=f.win.IELTSVocabularyPractice.mount(container,{material,draft:session.getDraft(),player:{cancel(){},async play(word){played.push(word.word);return{kind:'browser-tts',started:true,completed:true,completedAt:new Date().toISOString()};}}}),box=container.children[0];
+ await button(box,'学完了，开始第 1 轮').fire('click');assert.deepEqual(box.querySelectorAll('.vocab-prompt').map(item=>item.textContent),['老师','你好','学生']);await answerRound(box,['techer','hello','student']);assert.match(box.textContent,/第 1 词 · 需要订正/);assert.equal(controller.getState().rounds[0].attempts[0].word,'teacher');assert.equal(controller.getState().rounds[0].attempts[0].userAnswer,'techer');
+ await button(box,'继续第 2 轮').fire('click');assert.deepEqual(box.querySelectorAll('.vocab-prompt').map(item=>item.textContent),['你好','学生','老师']);await answerRound(box,['hello','student','teacher']);await button(box,'继续第 3 轮').fire('click');
+ for(let i=1;i<=3;i++)await button(box,'播放第 '+i+' 词').fire('click');assert.deepEqual(played,['student','hello','teacher']);await answerRound(box,['student','hello','teacher']);assert.equal(controller.getSubmission().correct,8);assert.equal(controller.getSubmission().mistakes[0].word,'teacher');controller.destroy();
+});
+
+
+test('resuming saved test rounds shows recovery progress instead of an empty learning form',async()=>{
+ const f=fixture(),container=f.doc.createElement('div');f.doc.body.append(container);const material={id:'restore-screen',vocabulary:[{word:'hello',meaning:'你好'}]},session=f.win.IELTSVocabularyPractice.createSession({material});
+ const proofs=[1,2,3].map(trial=>({wordIndex:0,workId:'work-restore-screen-'+trial,reference:'hello',hash:String(trial).repeat(64),evidenceId:'restore-evidence-'+trial,provider:'Alibaba oral assessment',verified:true,nonSilent:true,durationSeconds:1,recordedAt:new Date().toISOString(),result:{accuracy:90,fluency:90,completeness:95}}));
+ for(let i=0;i<3;i++)session.recordSpelling(0,'hello');for(const proof of proofs)session.recordSpeaking(0,proof);session.begin();session.setAnswer(0,'hello');session.submitRound();session.next();session.setAnswer(0,'hello');session.submitRound();session.next();session.setAnswer(0,'hel');let release;
+ const controller=f.win.IELTSVocabularyPractice.mount(container,{material,draft:session.getDraft(),player:{cancel(){}},speakerFactory:()=>({getState:()=>({busy:false}),async restore(id){if(id===proofs[0].workId)await new Promise(resolve=>{release=resolve;});return proofs.find(proof=>proof.workId===id);},destroy(){},cancel(){}})}),box=container.children[0];
+ assert.match(box.textContent,/正在恢复第 3 轮 · 听写/);assert.match(box.textContent,/已保留 2 轮原稿/);assert.match(box.textContent,/正确输入 3\/3，已保存跟读 3\/3/);assert.equal(box.querySelectorAll('input').length,0);
+ release();await controller.ready;assert.match(box.textContent,/第 3 \/ 3 轮 · 听写/);assert.equal(box.querySelector('input').value,'hel');assert.equal(controller.getState().rounds.length,2);assert.equal(controller.getState().learning.complete,true);controller.destroy();
+});
+
+
+test('automatic missing-word lookup fills the writing prompt popup, caches results, and never leaks into a test or a later hover',async()=>{
+ const f=fixture();let finish,calls=0;const hover=f.win.IELTSWordHover.install({root:f.doc,autoEnrich:true,lookupAI:async word=>{calls++;return await new Promise(resolve=>{finish=()=>resolve({word,ipa:'/tɛst/',meaning:'写作中的测试词',example:'This is a test.'});});}}),popup=f.doc.body.querySelector('.word-hover-popup');
+ const item={word:'unknownwritingword',context:'A writing prompt.',level:'A0',rect:{left:10,top:10,bottom:30},element:f.paragraph};hover.show(item);assert.match(popup.textContent,/正在查询音标/);finish();await new Promise(resolve=>setImmediate(resolve));assert.match(popup.textContent,/写作中的测试词/);assert.match(popup.textContent,/tɛst/);hover.hide();hover.show(item);assert.equal(calls,1);
+ hover.show({...item,word:'anotherunknownword'});hover.hide();finish();await new Promise(resolve=>setImmediate(resolve));assert.equal(popup.hidden,true);
+ f.win.dispatchEvent({type:'ielts:assessment-mode',detail:{active:true}});hover.show({...item,word:'blockedword'});assert.equal(calls,2);assert.equal(popup.hidden,true);hover.destroy();
 });

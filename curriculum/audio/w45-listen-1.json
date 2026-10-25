@@ -1,14 +1,201 @@
 {
   "id": "w45-listen-1",
-  "schema": 2,
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "6cd39b3a8a316f7111cb53f3c1b70e1d8fb6ac3d36d00efc3a8159436d8e9cbd",
-  "audioHash": "4441d99719063b979de8f66840df3d164a81936a8988b166c26c957e6648183a",
+  "configurationHash": "a3d79c41274c9f391bf2c7b7feaf24cb0cfccb392b9a0f7a4d53d3af98f9beab",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "6cd39b3a8a316f7111cb53f3c1b70e1d8fb6ac3d36d00efc3a8159436d8e9cbd",
+    "rate": "+0%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "speaker": "en-GB-SoniaNeural",
+      "narrator": "en-GB-LibbyNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Speaker",
+        "role": "speaker",
+        "sourceStart": 0,
+        "sourceEnd": 9
+      }
+    ],
+    "segments": [
+      {
+        "role": "speaker",
+        "speaker": "Speaker",
+        "sourceStart": 9,
+        "sourceEnd": 233,
+        "text": "In this simulated planning exercise, our team estimated demand for a new evening shuttle. The central forecast is one hundred and twenty passenger trips per night. That number is useful for planning, but it is not a promise.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "48d262a84b42639cf27ccf3731d28baff75f4abaebeea040014695ff6dff43e2",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "speaker",
+        "speaker": "Speaker",
+        "sourceStart": 234,
+        "sourceEnd": 566,
+        "text": "We produced three scenarios. The lower scenario assumes that only current late workers use the service. The central one includes some students. The upper scenario assumes that the nearby theatre also changes its closing time. That change has not been confirmed, so the upper figure should not be presented as our most likely result.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "25571ebe0edd4ffa9afc29c5f1300ef3ab23841c774b28fae3a3a5c97cf1fabc",
+        "pauseBeforeSeconds": 0.8
+      },
+      {
+        "role": "speaker",
+        "speaker": "Speaker",
+        "sourceStart": 567,
+        "sourceEnd": 872,
+        "text": "The finance team asked for a single number for its spreadsheet. We supplied the central estimate and attached the assumptions. We also showed how the operating cost per trip changes if demand is lower. A budget can look affordable at the central forecast while becoming difficult under the lower scenario.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "fae68999278ebc4a8e399ba16f292019ac909a02978cb4ef360e86ad258db7ac",
+        "pauseBeforeSeconds": 0.8
+      },
+      {
+        "role": "speaker",
+        "speaker": "Speaker",
+        "sourceStart": 873,
+        "sourceEnd": 1080,
+        "text": "Do not confuse a scenario range with a measured confidence interval. Our alternatives are based on different assumptions, not a statistical calculation from repeated samples. The labels must make that clear.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "f8a33ae040e3765abac4b83a36b22e7925f08fe99990e76f2428e86fa7fc01de",
+        "pauseBeforeSeconds": 0.8
+      },
+      {
+        "role": "speaker",
+        "speaker": "Speaker",
+        "sourceStart": 1081,
+        "sourceEnd": 1414,
+        "text": "The service will run a four-week pilot. Drivers will record passenger boardings, and a separate count will estimate how many different people use it. One person making a return journey creates two trips. After the pilot, the council will compare the observations with the original assumptions before deciding on a year-long contract.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "2bdb89baede21166f35103900aac1de1176aa67e0606bc139bbf541e13cc0511",
+        "pauseBeforeSeconds": 0.8
+      }
+    ]
+  },
+  "audioHash": "7468a5f07836fa2cb09fd5a8f7001cac0a20facd9fb03d0a141c256d671739a9",
   "voices": [
     "en-GB-SoniaNeural"
   ],
-  "durationSeconds": 88.608,
+  "roleVoices": {
+    "speaker": "en-GB-SoniaNeural",
+    "narrator": "en-GB-LibbyNeural"
+  },
+  "durationSeconds": 90.6625,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "+0%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "speaker",
+      "speaker": "Speaker",
+      "sourceStart": 9,
+      "sourceEnd": 233,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "48d262a84b42639cf27ccf3731d28baff75f4abaebeea040014695ff6dff43e2",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "94219e4ed306fbf22d6ddd7374a7ea95bf8dc3d60786cbc5effaa13a017d2970",
+      "groupAudioHash": "287b0af694477243c8074f23554ccc1453215c9a42dd31fc141aa28474b2ced0",
+      "groupStartSeconds": 0.0775,
+      "groupEndSeconds": 14.1075,
+      "wordStartSeconds": 0.1375,
+      "wordEndSeconds": 13.9875,
+      "startSeconds": 0.0,
+      "endSeconds": 14.03,
+      "durationSeconds": 14.03
+    },
+    {
+      "role": "speaker",
+      "speaker": "Speaker",
+      "sourceStart": 234,
+      "sourceEnd": 566,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "25571ebe0edd4ffa9afc29c5f1300ef3ab23841c774b28fae3a3a5c97cf1fabc",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "94219e4ed306fbf22d6ddd7374a7ea95bf8dc3d60786cbc5effaa13a017d2970",
+      "groupAudioHash": "287b0af694477243c8074f23554ccc1453215c9a42dd31fc141aa28474b2ced0",
+      "groupStartSeconds": 14.3025,
+      "groupEndSeconds": 35.6325,
+      "wordStartSeconds": 14.3625,
+      "wordEndSeconds": 35.5125,
+      "startSeconds": 14.83,
+      "endSeconds": 36.16,
+      "durationSeconds": 21.33
+    },
+    {
+      "role": "speaker",
+      "speaker": "Speaker",
+      "sourceStart": 567,
+      "sourceEnd": 872,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "fae68999278ebc4a8e399ba16f292019ac909a02978cb4ef360e86ad258db7ac",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "94219e4ed306fbf22d6ddd7374a7ea95bf8dc3d60786cbc5effaa13a017d2970",
+      "groupAudioHash": "287b0af694477243c8074f23554ccc1453215c9a42dd31fc141aa28474b2ced0",
+      "groupStartSeconds": 35.8525,
+      "groupEndSeconds": 54.42,
+      "wordStartSeconds": 35.9125,
+      "wordEndSeconds": 54.3,
+      "startSeconds": 36.96,
+      "endSeconds": 55.5275,
+      "durationSeconds": 18.567500000000003
+    },
+    {
+      "role": "speaker",
+      "speaker": "Speaker",
+      "sourceStart": 873,
+      "sourceEnd": 1080,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "f8a33ae040e3765abac4b83a36b22e7925f08fe99990e76f2428e86fa7fc01de",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "94219e4ed306fbf22d6ddd7374a7ea95bf8dc3d60786cbc5effaa13a017d2970",
+      "groupAudioHash": "287b0af694477243c8074f23554ccc1453215c9a42dd31fc141aa28474b2ced0",
+      "groupStartSeconds": 54.6025,
+      "groupEndSeconds": 67.72,
+      "wordStartSeconds": 54.6625,
+      "wordEndSeconds": 67.6,
+      "startSeconds": 56.3275,
+      "endSeconds": 69.445,
+      "durationSeconds": 13.117499999999993
+    },
+    {
+      "role": "speaker",
+      "speaker": "Speaker",
+      "sourceStart": 1081,
+      "sourceEnd": 1414,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "2bdb89baede21166f35103900aac1de1176aa67e0606bc139bbf541e13cc0511",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "94219e4ed306fbf22d6ddd7374a7ea95bf8dc3d60786cbc5effaa13a017d2970",
+      "groupAudioHash": "287b0af694477243c8074f23554ccc1453215c9a42dd31fc141aa28474b2ced0",
+      "groupStartSeconds": 67.94,
+      "groupEndSeconds": 88.3575,
+      "wordStartSeconds": 68.0,
+      "wordEndSeconds": 88.2375,
+      "startSeconds": 70.245,
+      "endSeconds": 90.6625,
+      "durationSeconds": 20.41749999999999
+    }
+  ],
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

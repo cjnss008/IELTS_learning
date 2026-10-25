@@ -40,3 +40,19 @@ test('separate B and C display paragraphs retain canonical offsets for word and 
  const source=require('../assets/curriculum-data.js').materials.find(m=>m.id==='w01-read-1').passage,selection=require('../assets/selection-ai.js'),paragraphs=format.paragraphs(source),data={materialId:'w01-read-1',mode:'practice',lesson:{title:'First Day',text:source},groups:paragraphs.map((text,i)=>({index:i+1,text}))};
  for(const [index,value]of[[2,'Anna'],[3,'Mr. Wang']]){const from=paragraphs[index-1].indexOf(value),snapshot=selection.makeSnapshot(data,index,from,from+value.length);assert.ok(snapshot);assert.equal(source.slice(snapshot.start,snapshot.end),value);assert.equal(selection.matches(snapshot,data),true);}
 });
+
+
+test('dialogue turns separate inline and multiline speakers without treating lettered sections as people',()=>{
+ const F=require('../assets/passage-format.js');
+ assert.deepEqual(F.dialogue('A: Hello. Are you Tom? B: Yes, I am Tom. A: Good morning.'),[{speaker:'A',text:'Hello. Are you Tom?'},{speaker:'B',text:'Yes, I am Tom.'},{speaker:'A',text:'Good morning.'}]);
+ assert.deepEqual(F.dialogue('Narrator: At the desk.\nAnna: I need a book.\nTom: Here it is.').map(turn=>turn.speaker),['Narrator','Anna','Tom']);
+ for(const value of ['A. An introduction. B. A second section.','Note: This is one description.','We compare A: small and B: large.','A: B: Hello.'])assert.deepEqual(F.dialogue(value),[]);
+});
+
+test('dialogue display keeps curriculum headings as spoken text instead of inventing a speaker',()=>{
+  assert.deepEqual(format.dialogue('Listening: Arriving at the library. Include: a student.'),[]);
+  assert.deepEqual(format.dialogue('A: Listening: check the map. B: Include: the library.'),[{speaker:'A',text:'Listening: check the map.'},{speaker:'B',text:'Include: the library.'}]);
+  assert.deepEqual(format.dialogue('Student A: Hello. Mr. Wang: Good morning.').map(t=>t.speaker),['Student A','Mr. Wang']);
+});
+
+test('an in-sentence name introducing its spelling stays in the speaker body',()=>{const turns=format.dialogue('Ben: Hello. I am Ben: B, E, N.\nMia: Nice to meet you.');assert.deepEqual(turns,[{speaker:'Ben',text:'Hello. I am Ben: B, E, N.'},{speaker:'Mia',text:'Nice to meet you.'}]);});

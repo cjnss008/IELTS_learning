@@ -1,12 +1,65 @@
 {
   "id": "w12-listen-2",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "90709a3b6ec307e23ade83faaaffdf13f9bef896f16687461ab2f4a9fb0762d2",
+  "configurationHash": "d6dbc0fef2baa1226d183e75399fb7c2e1d77892ca75ee0036409e3dbc31dd8a",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "90709a3b6ec307e23ade83faaaffdf13f9bef896f16687461ab2f4a9fb0762d2",
+    "rate": "-5%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-GB-SoniaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 929,
+        "text": "Last weekend, my friend and I went to the mountains. We left home early on Saturday morning. First, we took a bus to the train station. The bus was late, so we waited for twenty minutes. After that, we took a train to a small town near the mountains. The train ride was about two hours. We arrived at the town at ten o'clock. Then we walked to a small hotel. We booked a room for one night. The room was clean but small. After that, we went to a restaurant for lunch. I had noodles and my friend had rice. The food was delicious. In the afternoon, we climbed a mountain. The weather was sunny and warm. We saw many beautiful flowers and a small river. We took a lot of photos. Finally, we went back to the hotel. We were very tired but happy. On Sunday morning, we had breakfast at the hotel. Then we took a train back home. We arrived home at six o'clock in the evening. It was a great trip. We want to go there again next year.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "90709a3b6ec307e23ade83faaaffdf13f9bef896f16687461ab2f4a9fb0762d2",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "181596bb1b368cce75c1cbd3d27926d9538df3064f89cdfc0b071e31a63f3bc6",
   "voices": [
     "en-GB-SoniaNeural"
   ],
+  "roleVoices": {
+    "narrator": "en-GB-SoniaNeural"
+  },
   "durationSeconds": 68.592,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-5%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 929,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "90709a3b6ec307e23ade83faaaffdf13f9bef896f16687461ab2f4a9fb0762d2",
+      "pauseBeforeSeconds": 0,
+      "startSeconds": 0,
+      "endSeconds": 68.592,
+      "durationSeconds": 68.592
+    }
+  ],
+  "origin": "retained-verified-single-segment",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
 }

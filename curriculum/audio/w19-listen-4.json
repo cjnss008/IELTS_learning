@@ -1,12 +1,65 @@
 {
   "id": "w19-listen-4",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "c25346451a55c86d12576f5d57d132c6f70a52b7e703763cda3185331acc4ca9",
+  "configurationHash": "d88aed82f44226e91815cfd07d3897eea34242d75b58910ed98723fbf9fe992b",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "c25346451a55c86d12576f5d57d132c6f70a52b7e703763cda3185331acc4ca9",
+    "rate": "-5%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-US-AriaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 1287,
+        "text": "Last year, I went to a small town for the Lantern Festival. My friend Mei was waiting for me at the station. While we were walking to her home, she told me about a man who makes lanterns. His name is Mr. Chen. He is a craftsman who has made lanterns for forty years. When we arrived, Mr. Chen was working in his small shop. He was cutting bamboo into thin pieces. \"I was learning this from my father when I was ten,\" he said. \"While I was cutting, I made many mistakes.\" Mei asked him, \"Who is the person that taught you the most?\" He smiled and said, \"My father, of course. He was very patient.\" Then Mr. Chen showed us a beautiful lantern that he was making. It was a rabbit lantern. \"I was making this for my granddaughter,\" he said. \"She loves rabbits.\" While we were talking, a little girl came in. She was Mr. Chen's granddaughter. She was carrying a small gift for her grandfather. It was a red envelope. \"Thank you, sweetheart,\" Mr. Chen said. He looked very happy. Then he gave me a small lantern. \"This is for you,\" he said. \"It is a gift that brings good luck.\" I was very thankful. While we were leaving, I thought about Mr. Chen. He is a man who loves his family and his work. That day, I learned that traditions are important. They connect people who care about each other.",
+        "boundary": "paragraph",
+        "voice": "en-US-AriaNeural",
+        "textHash": "c25346451a55c86d12576f5d57d132c6f70a52b7e703763cda3185331acc4ca9",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "3833bcfa0ea6d2c655ab232654f8b59e37bf5cbb74e4ab0fcdde6048db6f723d",
   "voices": [
     "en-US-AriaNeural"
   ],
+  "roleVoices": {
+    "narrator": "en-US-AriaNeural"
+  },
   "durationSeconds": 100.152,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-5%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 1287,
+      "boundary": "paragraph",
+      "voice": "en-US-AriaNeural",
+      "textHash": "c25346451a55c86d12576f5d57d132c6f70a52b7e703763cda3185331acc4ca9",
+      "pauseBeforeSeconds": 0,
+      "startSeconds": 0,
+      "endSeconds": 100.152,
+      "durationSeconds": 100.152
+    }
+  ],
+  "origin": "retained-verified-single-segment",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
 }

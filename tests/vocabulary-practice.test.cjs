@@ -202,3 +202,24 @@ test('compact vocabulary originals retain all answers and restore word context i
  assert.equal(raw.words.length,3);assert.equal(raw.learning[0].speaking.length,3);assert.equal(mistakes.length,9);
  for(const mistake of mistakes){const target=mat.vocabulary.find(w=>w.word===mistake.question.answers[0]);assert.equal(mistake.originalAnswer,'wrong');assert.equal(mistake.question.explanation,target.meaning);assert.equal(mistake.question.evidence,target.example);}
 });
+
+
+test('v2 round permutations persist while canonical word indexes and complete artifacts remain intact',()=>{
+ const session=V.createSession({material:mat});assert.deepEqual(session.words.map(word=>word.word),mat.vocabulary.map(word=>word.word));let prior=[0,1,2];
+ for(const mode of session.modes){const order=session.roundOrder(mode);assert.deepEqual([...order].sort(),[0,1,2]);assert.notDeepEqual(order,prior);prior=order;}
+ const draft=session.getDraft(),restored=V.createSession({material:mat,draft});assert.deepEqual(restored.getDraft().roundOrders,draft.roundOrders);learnAll(session);session.begin();
+ for(let round=0;round<3;round++){const mode=session.state.phase,order=session.roundOrder();const result=finishRound(session);assert.deepEqual(result.attempts.map(item=>item.word),order.map(index=>session.words[index].word));result.attempts.forEach((attempt,position)=>{assert.equal(attempt.attemptId,session.state.id+'-'+mode+'-'+order[position]);assert.equal(attempt.userAnswer,attempt.expectedAnswer);if(mode==='dictation')assert.equal(attempt.audio.completed,true);});if(round<2)session.next();}
+ assert.equal(V.verifyTrainingArtifact(session.getSubmission().answer,mat).mastered,true);
+});
+
+test('old v2 partial drafts retain current positions, spelling progress and answers while future tests shuffle',()=>{
+ const session=V.createSession({material:mat});learnAll(session);session.begin();session.setAnswer(1,'get u');const draft=session.getDraft();delete draft.roundOrders;
+ const restored=V.createSession({material:mat,draft});assert.deepEqual(restored.roundOrder('completion'),[0,1,2]);assert.notDeepEqual(restored.roundOrder('meaning'),[0,1,2]);assert.equal(restored.state.answers.completion[1],'get u');assert.equal(restored.learningProgress().items[0].spellings,3);assert.deepEqual(restored.getDraft().study.w,draft.study.w);assert.deepEqual(V.createSession({material:mat,draft:restored.getDraft()}).getDraft(),restored.getDraft());
+});
+
+test('invalid round orders cannot silently drop or duplicate a vocabulary question',()=>{
+ const draft=V.createSession({material:mat}).getDraft();
+ for(const order of [[0,0,2],[0,1],[0,1,3],['0',1,2],null])assert.throws(()=>V.createSession({material:mat,draft:{...draft,roundOrders:{...draft.roundOrders,completion:order}}}),/草稿与当前材料/);
+ const missing={...draft.roundOrders};delete missing.meaning;assert.throws(()=>V.createSession({material:mat,draft:{...draft,roundOrders:missing}}),/草稿与当前材料/);
+ const one=V.createSession({material:{id:'one-word',vocabulary:[mat.vocabulary[0]]}});assert.deepEqual(one.roundOrder('completion'),[0]);assert.deepEqual(one.roundOrder('dictation'),[0]);
+});

@@ -1,12 +1,65 @@
 {
   "id": "w08-listen-1",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "a53ac176731f680fb7a342577b74fc25340eba6de8e4e569b69d2bd54b69e848",
+  "configurationHash": "fa865f5364aa1d27bed91d85be3c6d1e4d669fad7ce283a07a897e36f604739e",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "a53ac176731f680fb7a342577b74fc25340eba6de8e4e569b69d2bd54b69e848",
+    "rate": "-15%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-GB-SoniaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 467,
+        "text": "Last Saturday, I was at the market with my friend Anna. The market was very crowded. We bought some fruit and bread. Then we were at a small shop near the market. The shop was clean and quiet. Anna was happy because the shop had cheap bags. I was tired because the market was big. Next Saturday, we are going to visit a museum. Anna is going to bring her camera because she likes photos. I am going to buy a ticket for the museum. We are going to meet at ten o'clock.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "a53ac176731f680fb7a342577b74fc25340eba6de8e4e569b69d2bd54b69e848",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "2362921b269720958a2aa6acb0c5c823f0c126611a3d2ec5b8030d436f82bb79",
   "voices": [
     "en-GB-SoniaNeural"
   ],
+  "roleVoices": {
+    "narrator": "en-GB-SoniaNeural"
+  },
   "durationSeconds": 36.576,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-15%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 467,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "a53ac176731f680fb7a342577b74fc25340eba6de8e4e569b69d2bd54b69e848",
+      "pauseBeforeSeconds": 0,
+      "startSeconds": 0,
+      "endSeconds": 36.576,
+      "durationSeconds": 36.576
+    }
+  ],
+  "origin": "retained-verified-single-segment",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
 }

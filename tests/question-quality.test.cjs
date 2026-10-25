@@ -22,3 +22,10 @@ test('revised hashes cover explicit author-content fields and exclude immutable 
 test('the published source corpus has no unresolved high-risk or newly unreviewed literal candidates',()=>{
  const report=Audit.scan(),reviewed=new Set(['training-42-reading/q4/ANSWER_LITERAL_IN_PROMPT','w27-read-2/q5/ANSWER_LITERAL_IN_PROMPT','w28-listen-4/q2/ANSWER_LITERAL_IN_PROMPT']);assert.ok(report.sourceMaterials>=508);assert.ok(report.questions>=5500);assert.equal(report.high,0,JSON.stringify(report.findings.filter(f=>f.severity==='high')));for(const finding of report.findings)assert.ok(reviewed.has([finding.materialId,finding.questionId,finding.rule].join('/')),'Needs a source-based review: '+JSON.stringify(finding));
 });
+
+test('title punctuation alias accepts Mr Wang without weakening exact source answers',()=>{
+ const fs=require('node:fs'),path=require('node:path'),{validate}=require('../tools/author-curriculum.cjs'),{jobs}=require('../tools/curriculum-manifest.cjs'),A=require('../assets/assessment-core.js');
+ const m=JSON.parse(fs.readFileSync(path.join(__dirname,'../curriculum/materials/w01-read-1.json'),'utf8')),job=jobs.find(j=>j.id===m.id),q=m.questions.find(q=>q.answers.includes('Mr Wang'));
+ assert.equal(A.gradeQuestion(q,'Mr Wang').correct,true);assert.equal(A.gradeQuestion(q,'Mr. Wang').correct,true);assert.equal(A.gradeQuestion(q,'Mr Wong').correct,false);assert.deepEqual(validate(job,m),[]);
+ q.answers.push('Mr Wong');q.answerAliases.push({value:'Mr Wong',source:'Mr. Wang',kind:'title-punctuation'});assert.ok(validate(job,m).some(e=>e.includes('Fill answer not in source')));
+});

@@ -35,6 +35,12 @@ def inventory():
     for material in data['materials']:
         if material.get('type')=='vocabulary':
             for item in material.get('vocabulary',[]):words.setdefault(key(item['word']),item['word'].strip())
+    # Cover short function words and inflections needed by early reading feedback.
+    # The text comes from the same spoken-reference cleanup as the oral UI.
+    script = "const d=require('./assets/curriculum-data.js'),o=require('./assets/oral-practice.js');process.stdout.write(JSON.stringify(d.materials.filter(m=>m.skill==='reading'&&m.pool==='training'&&m.week<=8).map(m=>o.spokenText(m.passage))))"
+    readings=json.loads(subprocess.check_output(['node','-e',script],cwd=ROOT,creationflags=FLAGS).decode('utf-8'))
+    for text in readings:
+        for word in re.findall(r"[A-Za-z]+(?:['’-][A-Za-z]+)*",text):words.setdefault(key(word),word if word=='I' else key(word))
     existing={key(item['word']):item['audio'] for item in course.get('vocab',[]) if item.get('audio')}
     day=data['days'][0];ids={mid for task in day['tasks'] if task['id']=='vocabulary' for mid in task['materialIds']}
     first={key(item['word']) for material in data['materials'] if material['id'] in ids for item in material.get('vocabulary',[])}
@@ -57,6 +63,7 @@ async def main(args):
     if MAPPING.exists():
         try:items={k:v for k,v in read_data(MAPPING).get('items',{}).items() if k in words}
         except (ValueError,KeyError):pass
+    if args.only_new:selected={k:v for k,v in selected.items() if k not in items}
     semaphore=asyncio.Semaphore(args.concurrency);started=time.time();stats={'ready':0,'cached':0,'reused':0,'failed':0};errors=[];finished=0
     async def generate(k,word):
         nonlocal finished
@@ -106,6 +113,6 @@ async def main(args):
     if errors:raise SystemExit(1)
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--first-day',action='store_true');parser.add_argument('--concurrency',type=int,default=6);parser.add_argument('--work-dir',type=Path,default=ROOT/'work'/'vocabulary_hover-tts');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--first-day',action='store_true');parser.add_argument('--only-new',action='store_true');parser.add_argument('--concurrency',type=int,default=6);parser.add_argument('--work-dir',type=Path,default=ROOT/'work'/'vocabulary_hover-tts');args=parser.parse_args()
     if not 1<=args.concurrency<=12:parser.error('--concurrency must be 1–12')
     asyncio.run(main(args))

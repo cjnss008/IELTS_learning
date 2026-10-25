@@ -1,13 +1,300 @@
 {
   "id": "w01-listen-4",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "35de001ce3b56ea68ee675f720a5d104199b7fe02a4bf0b100e361310d27d80e",
+  "configurationHash": "0961d2fcd28987b02fac4f68a3c4b65b7f13fcd48020a54b77e1c516e41a83d2",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "35de001ce3b56ea68ee675f720a5d104199b7fe02a4bf0b100e361310d27d80e",
+    "rate": "-15%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "anna": "en-GB-SoniaNeural",
+      "li ming": "en-GB-RyanNeural",
+      "narrator": "en-GB-LibbyNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Anna",
+        "role": "anna",
+        "sourceStart": 0,
+        "sourceEnd": 6
+      },
+      {
+        "label": "Li Ming",
+        "role": "li ming",
+        "sourceStart": 41,
+        "sourceEnd": 50
+      },
+      {
+        "label": "Anna",
+        "role": "anna",
+        "sourceStart": 83,
+        "sourceEnd": 89
+      },
+      {
+        "label": "Li Ming",
+        "role": "li ming",
+        "sourceStart": 144,
+        "sourceEnd": 153
+      },
+      {
+        "label": "Anna",
+        "role": "anna",
+        "sourceStart": 215,
+        "sourceEnd": 221
+      },
+      {
+        "label": "Li Ming",
+        "role": "li ming",
+        "sourceStart": 295,
+        "sourceEnd": 304
+      },
+      {
+        "label": "Anna",
+        "role": "anna",
+        "sourceStart": 323,
+        "sourceEnd": 329
+      }
+    ],
+    "segments": [
+      {
+        "role": "anna",
+        "speaker": "Anna",
+        "sourceStart": 6,
+        "sourceEnd": 40,
+        "text": "Hello. I am Anna. Are you Li Ming?",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "391b47007c25f50d3f8ed113773bb6f982a577f9fb4db56342cea423b1eee36f",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "li ming",
+        "speaker": "Li Ming",
+        "sourceStart": 50,
+        "sourceEnd": 82,
+        "text": "Yes, I am Li Ming. You are Anna?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "1ae01021fb333f760286b1467d631fbe18ee721228e52f3595ef3c4c7bb81049",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "anna",
+        "speaker": "Anna",
+        "sourceStart": 89,
+        "sourceEnd": 143,
+        "text": "Yes, I am Anna. I am a student. You are a student too?",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "fd48c44d5c421b1b518698ce348597cfafa3aa15cd55c42bff131ef1ccd254c9",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "li ming",
+        "speaker": "Li Ming",
+        "sourceStart": 153,
+        "sourceEnd": 214,
+        "text": "Yes, I am a student. I am in Class Two. Are you in Class Two?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "61c9d4759c77370f5dd3ec2cd033e32a234970ad5b4249832e72d4501a861296",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "anna",
+        "speaker": "Anna",
+        "sourceStart": 221,
+        "sourceEnd": 294,
+        "text": "No, I am not. I am in Class One. You are in Class Two. I am in Class One.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "f97bece35b3c24a0f15ae5cacd6393e1aa7729b5691e95dec9be5ec5e18dc0db",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "li ming",
+        "speaker": "Li Ming",
+        "sourceStart": 304,
+        "sourceEnd": 322,
+        "text": "OK. Goodbye, Anna.",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "c83cb76963e87e69653ff1825b7fe6d6f83397752413d0623a10991c5276f202",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "anna",
+        "speaker": "Anna",
+        "sourceStart": 329,
+        "sourceEnd": 346,
+        "text": "Goodbye, Li Ming.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "26ab7f2c78e52e64cb91636718a5a3bf72d6b9e4204356084957597dff85f717",
+        "pauseBeforeSeconds": 0.65
+      }
+    ]
+  },
+  "audioHash": "ebb3605815dc807a919f09ec73668611f8e55e99a886c32b78951c691aee8160",
   "voices": [
     "en-GB-SoniaNeural",
     "en-GB-RyanNeural"
   ],
-  "durationSeconds": 37.752,
+  "roleVoices": {
+    "anna": "en-GB-SoniaNeural",
+    "li ming": "en-GB-RyanNeural",
+    "narrator": "en-GB-LibbyNeural"
+  },
+  "durationSeconds": 37.177958,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-15%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "anna",
+      "speaker": "Anna",
+      "sourceStart": 6,
+      "sourceEnd": 40,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "391b47007c25f50d3f8ed113773bb6f982a577f9fb4db56342cea423b1eee36f",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "5181e9fb8493a9294be3ebb09e23a9b3683fa59500cc9e39d04fc34b6c6ad32c",
+      "groupAudioHash": "7447d4e6cefa3778d4d46001f58dfe6abf2a58454e7e7fc845b3c6b8c90ba8d7",
+      "groupStartSeconds": 0.07825,
+      "groupEndSeconds": 3.972916666666667,
+      "wordStartSeconds": 0.13825,
+      "wordEndSeconds": 3.852916,
+      "startSeconds": 0.0,
+      "endSeconds": 3.8946666666666667,
+      "durationSeconds": 3.8946666666666667
+    },
+    {
+      "role": "li ming",
+      "speaker": "Li Ming",
+      "sourceStart": 50,
+      "sourceEnd": 82,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "1ae01021fb333f760286b1467d631fbe18ee721228e52f3595ef3c4c7bb81049",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "f32a1018367e6c15458a1b043260b90e8bd3306fd5351c6864f18ecea4b76afa",
+      "groupAudioHash": "e8ba1a1b5ea3543472ce9d6e8be17f7af9e22535624d0ac61d4c4f4a57cbee49",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 3.8611666666666666,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 3.741166,
+      "startSeconds": 4.544666666666667,
+      "endSeconds": 8.365833333333333,
+      "durationSeconds": 3.8211666666666657
+    },
+    {
+      "role": "anna",
+      "speaker": "Anna",
+      "sourceStart": 89,
+      "sourceEnd": 143,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "fd48c44d5c421b1b518698ce348597cfafa3aa15cd55c42bff131ef1ccd254c9",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "5181e9fb8493a9294be3ebb09e23a9b3683fa59500cc9e39d04fc34b6c6ad32c",
+      "groupAudioHash": "7447d4e6cefa3778d4d46001f58dfe6abf2a58454e7e7fc845b3c6b8c90ba8d7",
+      "groupStartSeconds": 4.234125,
+      "groupEndSeconds": 9.914125,
+      "wordStartSeconds": 4.294125,
+      "wordEndSeconds": 9.794124,
+      "startSeconds": 9.015833333333333,
+      "endSeconds": 14.695833333333333,
+      "durationSeconds": 5.68
+    },
+    {
+      "role": "li ming",
+      "speaker": "Li Ming",
+      "sourceStart": 153,
+      "sourceEnd": 214,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "61c9d4759c77370f5dd3ec2cd033e32a234970ad5b4249832e72d4501a861296",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "f32a1018367e6c15458a1b043260b90e8bd3306fd5351c6864f18ecea4b76afa",
+      "groupAudioHash": "e8ba1a1b5ea3543472ce9d6e8be17f7af9e22535624d0ac61d4c4f4a57cbee49",
+      "groupStartSeconds": 4.695875,
+      "groupEndSeconds": 11.449416666666666,
+      "wordStartSeconds": 4.755875,
+      "wordEndSeconds": 11.329416,
+      "startSeconds": 15.345833333333333,
+      "endSeconds": 22.099375,
+      "durationSeconds": 6.753541666666665
+    },
+    {
+      "role": "anna",
+      "speaker": "Anna",
+      "sourceStart": 221,
+      "sourceEnd": 294,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "f97bece35b3c24a0f15ae5cacd6393e1aa7729b5691e95dec9be5ec5e18dc0db",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "5181e9fb8493a9294be3ebb09e23a9b3683fa59500cc9e39d04fc34b6c6ad32c",
+      "groupAudioHash": "7447d4e6cefa3778d4d46001f58dfe6abf2a58454e7e7fc845b3c6b8c90ba8d7",
+      "groupStartSeconds": 10.175291666666666,
+      "groupEndSeconds": 17.87,
+      "wordStartSeconds": 10.235291,
+      "wordEndSeconds": 17.75,
+      "startSeconds": 22.749375,
+      "endSeconds": 30.44408333333333,
+      "durationSeconds": 7.694708333333331
+    },
+    {
+      "role": "li ming",
+      "speaker": "Li Ming",
+      "sourceStart": 304,
+      "sourceEnd": 322,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "c83cb76963e87e69653ff1825b7fe6d6f83397752413d0623a10991c5276f202",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "f32a1018367e6c15458a1b043260b90e8bd3306fd5351c6864f18ecea4b76afa",
+      "groupAudioHash": "e8ba1a1b5ea3543472ce9d6e8be17f7af9e22535624d0ac61d4c4f4a57cbee49",
+      "groupStartSeconds": 12.284125,
+      "groupEndSeconds": 15.772916666666667,
+      "wordStartSeconds": 12.344125,
+      "wordEndSeconds": 15.652916,
+      "startSeconds": 31.094083333333334,
+      "endSeconds": 34.582875,
+      "durationSeconds": 3.4887916666666676
+    },
+    {
+      "role": "anna",
+      "speaker": "Anna",
+      "sourceStart": 329,
+      "sourceEnd": 346,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "26ab7f2c78e52e64cb91636718a5a3bf72d6b9e4204356084957597dff85f717",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "5181e9fb8493a9294be3ebb09e23a9b3683fa59500cc9e39d04fc34b6c6ad32c",
+      "groupAudioHash": "7447d4e6cefa3778d4d46001f58dfe6abf2a58454e7e7fc845b3c6b8c90ba8d7",
+      "groupStartSeconds": 18.131166666666665,
+      "groupEndSeconds": 20.075875,
+      "wordStartSeconds": 18.191166,
+      "wordEndSeconds": 19.955874,
+      "startSeconds": 35.232875,
+      "endSeconds": 37.17758333333333,
+      "durationSeconds": 1.944708333333331
+    }
+  ],
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

@@ -1,13 +1,372 @@
 {
   "id": "w03-listen-3",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "98b6bf231d95c9fc4a7d9e59e60b8d40fc0ed95f9e4ad99a093d532832c64368",
+  "configurationHash": "7acebac7856b6f48d88159dcdd9395ac4b6c040a1146402528eb4d9b3e449849",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "98b6bf231d95c9fc4a7d9e59e60b8d40fc0ed95f9e4ad99a093d532832c64368",
+    "rate": "-15%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "a": "en-GB-SoniaNeural",
+      "b": "en-GB-RyanNeural",
+      "narrator": "en-GB-LibbyNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 0,
+        "sourceEnd": 3
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 69,
+        "sourceEnd": 72
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 97,
+        "sourceEnd": 100
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 139,
+        "sourceEnd": 142
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 160,
+        "sourceEnd": 163
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 209,
+        "sourceEnd": 212
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 243,
+        "sourceEnd": 246
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 347,
+        "sourceEnd": 350
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 390,
+        "sourceEnd": 393
+      }
+    ],
+    "segments": [
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 3,
+        "sourceEnd": 68,
+        "text": "Look at this photo. This is my family. We are in the living room.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "ed306e2793d0a5cadce6cdfc1c495ec6cf7618f5d06959ed440e99b6508a6300",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 72,
+        "sourceEnd": 96,
+        "text": "Nice. Who is that woman?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "14375ef9b04a5fa5ee00ec2ff487bf7b96c970dacd9fe3e982845891da6b7469",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 100,
+        "sourceEnd": 138,
+        "text": "That is my aunt. She has two children.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "0b6f5485094bd43ef82b2aad41c87ba8353d84c700638be551fa6e7d2e1e9879",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 142,
+        "sourceEnd": 159,
+        "text": "And who are they?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "a468b92da72eb01aa40e3a414565b7aa655c2105ae7fdd543134b3a9f0425640",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 163,
+        "sourceEnd": 208,
+        "text": "They are my cousins. They are ten and twelve.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "01405f8ba667cd72cfc50cb81adec7236c99873cf2f3d783d45200115bf6cc3c",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 212,
+        "sourceEnd": 242,
+        "text": "Are your parents in the photo?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "e983861dba72f61c68bd64dc6c12a43102812eaa7c03d4678a52bbccd3bbf10c",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 246,
+        "sourceEnd": 346,
+        "text": "Yes. My father is here. My mother is there. They have three children: my brother, my sister, and me.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "c45985167735e87e8215ce35d9e63784cfee34dfc396df16ae7bf490f08df32f",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 350,
+        "sourceEnd": 389,
+        "text": "So there are six people in your family?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "69aafa32a83b253b2ad785cad6c46d4789739bf11661f710d4801ea9ace65777",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 393,
+        "sourceEnd": 509,
+        "text": "Yes, six: my parents, my brother, my sister, and me. My grandparents are not in this photo. They are in the kitchen.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "7e8ce191c42ef6d389fae6b0033f1b8ea2061d3f478e13481a6467de41d4c91c",
+        "pauseBeforeSeconds": 0.65
+      }
+    ]
+  },
+  "audioHash": "5795fcb6773a0ca4578389152130b88807803e3598c7482c08f283e3884519a1",
   "voices": [
     "en-GB-SoniaNeural",
     "en-GB-RyanNeural"
   ],
-  "durationSeconds": 47.16,
+  "roleVoices": {
+    "a": "en-GB-SoniaNeural",
+    "b": "en-GB-RyanNeural",
+    "narrator": "en-GB-LibbyNeural"
+  },
+  "durationSeconds": 46.661083,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-15%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 3,
+      "sourceEnd": 68,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "ed306e2793d0a5cadce6cdfc1c495ec6cf7618f5d06959ed440e99b6508a6300",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "9d6156a0f067fd142c1417fb633b30f924168e217f784464a146c8a14db6ba4b",
+      "groupAudioHash": "710ac77bd78c4596176cadce499cfefb807b6926f398aa724f1520afa2241833",
+      "groupStartSeconds": 0.04883333333333333,
+      "groupEndSeconds": 5.575875,
+      "wordStartSeconds": 0.108833,
+      "wordEndSeconds": 5.455874,
+      "startSeconds": 0.0,
+      "endSeconds": 5.527041666666666,
+      "durationSeconds": 5.527041666666666
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 72,
+      "sourceEnd": 96,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "14375ef9b04a5fa5ee00ec2ff487bf7b96c970dacd9fe3e982845891da6b7469",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "3f82291499a2cb115039a501b8c0e1fcb4c97843016b27fd62f0fb61a722a5f3",
+      "groupAudioHash": "aae48d7b696a1fee8ea555cbd724a8da8bbb4a62ac4b71b0fa4577da9e2ebe1e",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 3.1111666666666666,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 2.991166,
+      "startSeconds": 6.177041666666667,
+      "endSeconds": 9.248208333333332,
+      "durationSeconds": 3.0711666666666657
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 100,
+      "sourceEnd": 138,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "0b6f5485094bd43ef82b2aad41c87ba8353d84c700638be551fa6e7d2e1e9879",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "9d6156a0f067fd142c1417fb633b30f924168e217f784464a146c8a14db6ba4b",
+      "groupAudioHash": "710ac77bd78c4596176cadce499cfefb807b6926f398aa724f1520afa2241833",
+      "groupStartSeconds": 5.866458333333333,
+      "groupEndSeconds": 9.443541666666667,
+      "wordStartSeconds": 5.926458,
+      "wordEndSeconds": 9.323541,
+      "startSeconds": 9.898208333333333,
+      "endSeconds": 13.475291666666667,
+      "durationSeconds": 3.5770833333333343
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 142,
+      "sourceEnd": 159,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "a468b92da72eb01aa40e3a414565b7aa655c2105ae7fdd543134b3a9f0425640",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "3f82291499a2cb115039a501b8c0e1fcb4c97843016b27fd62f0fb61a722a5f3",
+      "groupAudioHash": "aae48d7b696a1fee8ea555cbd724a8da8bbb4a62ac4b71b0fa4577da9e2ebe1e",
+      "groupStartSeconds": 3.9502916666666668,
+      "groupEndSeconds": 5.218541666666667,
+      "wordStartSeconds": 4.010291,
+      "wordEndSeconds": 5.098541,
+      "startSeconds": 14.125291666666667,
+      "endSeconds": 15.393541666666666,
+      "durationSeconds": 1.2682499999999983
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 163,
+      "sourceEnd": 208,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "01405f8ba667cd72cfc50cb81adec7236c99873cf2f3d783d45200115bf6cc3c",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "9d6156a0f067fd142c1417fb633b30f924168e217f784464a146c8a14db6ba4b",
+      "groupAudioHash": "710ac77bd78c4596176cadce499cfefb807b6926f398aa724f1520afa2241833",
+      "groupStartSeconds": 9.734125,
+      "groupEndSeconds": 13.311166666666667,
+      "wordStartSeconds": 9.794125,
+      "wordEndSeconds": 13.191166,
+      "startSeconds": 16.043541666666666,
+      "endSeconds": 19.620583333333332,
+      "durationSeconds": 3.5770416666666662
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 212,
+      "sourceEnd": 242,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "e983861dba72f61c68bd64dc6c12a43102812eaa7c03d4678a52bbccd3bbf10c",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "3f82291499a2cb115039a501b8c0e1fcb4c97843016b27fd62f0fb61a722a5f3",
+      "groupAudioHash": "aae48d7b696a1fee8ea555cbd724a8da8bbb4a62ac4b71b0fa4577da9e2ebe1e",
+      "groupStartSeconds": 6.0488333333333335,
+      "groupEndSeconds": 7.978833333333333,
+      "wordStartSeconds": 6.108833,
+      "wordEndSeconds": 7.858833,
+      "startSeconds": 20.270583333333335,
+      "endSeconds": 22.200583333333334,
+      "durationSeconds": 1.9299999999999997
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 246,
+      "sourceEnd": 346,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "c45985167735e87e8215ce35d9e63784cfee34dfc396df16ae7bf490f08df32f",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "9d6156a0f067fd142c1417fb633b30f924168e217f784464a146c8a14db6ba4b",
+      "groupAudioHash": "710ac77bd78c4596176cadce499cfefb807b6926f398aa724f1520afa2241833",
+      "groupStartSeconds": 13.557666666666666,
+      "groupEndSeconds": 22.914083333333334,
+      "wordStartSeconds": 13.617666,
+      "wordEndSeconds": 22.794083,
+      "startSeconds": 22.850583333333333,
+      "endSeconds": 32.207,
+      "durationSeconds": 9.356416666666668
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 350,
+      "sourceEnd": 389,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "69aafa32a83b253b2ad785cad6c46d4789739bf11661f710d4801ea9ace65777",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "3f82291499a2cb115039a501b8c0e1fcb4c97843016b27fd62f0fb61a722a5f3",
+      "groupAudioHash": "aae48d7b696a1fee8ea555cbd724a8da8bbb4a62ac4b71b0fa4577da9e2ebe1e",
+      "groupStartSeconds": 8.813541666666667,
+      "groupEndSeconds": 11.125875,
+      "wordStartSeconds": 8.873541,
+      "wordEndSeconds": 11.005875,
+      "startSeconds": 32.857,
+      "endSeconds": 35.169333333333334,
+      "durationSeconds": 2.312333333333335
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 393,
+      "sourceEnd": 509,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "7e8ce191c42ef6d389fae6b0033f1b8ea2061d3f478e13481a6467de41d4c91c",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "9d6156a0f067fd142c1417fb633b30f924168e217f784464a146c8a14db6ba4b",
+      "groupAudioHash": "710ac77bd78c4596176cadce499cfefb807b6926f398aa724f1520afa2241833",
+      "groupStartSeconds": 23.204708333333333,
+      "groupEndSeconds": 34.046458333333334,
+      "wordStartSeconds": 23.264708,
+      "wordEndSeconds": 33.926457,
+      "startSeconds": 35.81933333333333,
+      "endSeconds": 46.66108333333333,
+      "durationSeconds": 10.841749999999998
+    }
+  ],
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

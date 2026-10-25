@@ -10,9 +10,32 @@ const AUTH_HOSTS=[HOST,'https://gate-01.api.cloud.ssapi.cn','https://gate-02.api
 class OralError extends Error{constructor(status,code,message){super(message);this.status=status;this.code=code;}}
 function signature(config,timestamp){const fields={app_secret:config.appSecret,appid:config.appid,timestamp:String(timestamp),user_client_ip:config.clientIp,user_id:config.userId};return crypto.createHash('md5').update(Object.keys(fields).sort().map(k=>k+'='+fields[k]).join('&')).digest('hex');}
 const score=n=>typeof n==='number'&&Number.isFinite(n)&&n>=0&&n<=100?n:null;
+const boundedText=(value,max)=>typeof value==='string'&&value.trim()&&value.length<=max&&!/[\x00-\x1f\x7f]/.test(value)?value:null;
+const milliseconds=value=>typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=180000;
+function providerEvidence(word){
+ const out={};
+ if([0,1,2].includes(word.dp_type))out.dp_type=word.dp_type;
+ if([0,1].includes(word.is_pause))out.is_pause=word.is_pause;
+ if(Number.isSafeInteger(word.fake_pron))out.fake_pron=word.fake_pron;
+ for(const key of ['start','end','dur'])if(milliseconds(word[key]))out[key]=word[key];
+ if(out.start!==undefined&&out.end!==undefined&&out.end<out.start){delete out.start;delete out.end;}
+ if(['ea','en','am'].includes(word.accent))out.accent=word.accent;
+ return out;
+}
+// Sentence API: outputPhones + phdet expose actual phone observations. The
+// symbols may be provider-internal mappings; never relabel them as IPA.
+function phonemes(word){return (Array.isArray(word.phone)?word.phone:[]).slice(0,100).flatMap(phone=>{
+ if(!phone||typeof phone!=='object'||!boundedText(phone.char,100))return [];
+ const out={phoneme:phone.char,accuracy:score(phone.score)};
+ if([0,1].includes(phone.pherr))out.pherr=phone.pherr;
+ if(typeof phone.phid==='string'&&/^[0-9_]{0,40}$/.test(phone.phid)||Number.isSafeInteger(phone.phid)&&phone.phid>=0)out.phid=phone.phid;
+ if(boundedText(phone.ph2alpha,100))out.ph2alpha=phone.ph2alpha;
+ if(milliseconds(phone.start)&&milliseconds(phone.end)&&phone.end>=phone.start){out.start=phone.start;out.end=phone.end;}
+ return [out];
+ });}
 function normalize(data,reference){const result=data?.result;if(!result||score(result.accuracy??result.pron)===null)throw new OralError(502,'ORAL_NO_SCORE','服务未返回有效发音分，请检查音频、授权题型与参考句。');
- const words=[];for(const part of Array.isArray(result.details)?result.details:[]){for(const w of Array.isArray(part.snt_details)?part.snt_details:[part]){const word=w.char||w.word;if(typeof word==='string')words.push({word:word.slice(0,100),accuracy:score(w.score),error:'Unknown',phonemes:[]});}}
- return {text:reference,accuracy:score(result.accuracy??result.pron),fluency:score(typeof result.fluency==='object'?result.fluency.overall:result.fluency),completeness:score(result.integrity),pronunciation:score(result.overall),words:words.slice(0,800),quality:{snr:Number.isFinite(result.info?.snr)?result.info.snr:null,tipId:Number.isInteger(result.info?.tipId)?result.info.tipId:null}};
+ const words=[];for(const part of (Array.isArray(result.details)?result.details:[]).slice(0,800)){if(!part||typeof part!=='object')continue;for(const w of (Array.isArray(part.snt_details)?part.snt_details:[part]).slice(0,800)){if(!w||typeof w!=='object')continue;const word=w.char||w.word;if(boundedText(word,100))words.push({word,accuracy:score(w.score),error:w.dp_type===1?'Omission':w.dp_type===2?'Repetition':'Unknown',phonemes:phonemes(w),providerEvidence:providerEvidence(w)});if(words.length>=800)break;}if(words.length>=800)break;}
+ return {text:reference,accuracy:score(result.accuracy??result.pron),fluency:score(typeof result.fluency==='object'?result.fluency?.overall:result.fluency),completeness:score(result.integrity),pronunciation:score(result.overall),words:words.slice(0,800),quality:{snr:Number.isFinite(result.info?.snr)?result.info.snr:null,tipId:Number.isInteger(result.info?.tipId)?result.info.tipId:null}};
 }
 function createOralHandler({fetchImpl=fetch,budget,evidenceStore,now=()=>Date.now(),timeoutMs=90000}={}){
  let config=null,token=null,authPending=null,activeController=null,verified=false,revision=0;
@@ -25,6 +48,8 @@ function createOralHandler({fetchImpl=fetch,budget,evidenceStore,now=()=>Date.no
  }
  async function evaluate(captured,warrant,audio,reference,coreType,signal){const connectId=crypto.randomUUID(),requestId=crypto.randomUUID(),app={applicationId:captured.appid,userId:captured.userId,connect_id:connectId,sig:'default',timestamp:String(now()),warrantId:warrant.id};
   const request={coreType,refText:reference,request_id:requestId,rank:100,precision:.5,attachAudioUrl:0,feedback:0};
+  // These optional diagnostics are documented for sentences, not paragraphs.
+  if(coreType==='en.sent.score'){request.outputPhones=1;request.phdet=1;}
   const text={connect:{cmd:'connect',param:{sdk:{version:20211102,sdk_version:'v3.0.5',arch:'x86_64',protocol:2,source:9,os:'Windows',product:'IELTS local',product_version:'1'},app}},start:{cmd:'start',param:{app,audio:{sampleRate:16000,channel:1,sampleBytes:2,audioType:'wav',saveAudio:0},request}}};
   const form=new FormData();form.append('text',JSON.stringify(text));form.append('audio',new Blob([audio],{type:'application/octet-stream'}),'practice.wav');const url=new URL(HOST+'/'+coreType);url.search=new URLSearchParams({appkey:captured.appid,connect_id:connectId,request_id:requestId,warrant_id:warrant.id}).toString();return json(url.href,{method:'POST',headers:{'Request-Index':'0',Accept:'application/json'},body:form,signal});
  }

@@ -34,6 +34,21 @@ test('reading segmentation retains all source words and caps every segment', () 
   assert.deepEqual(client.splitReference(long, 30).map(p => p.split(/\s+/).length), [30, 30, 30, 5]);
 });
 
+test('spoken references remove established section labels while preserving initials, body letters and legacy segment boundaries', () => {
+  const source='A. Hello. I am in Class A. '+Array(30).fill('We study together.').join(' ')+'\nB. J. Smith is my teacher.\nC. I like plan B.';
+  const legacy=client.splitReference(source,20),spoken=client.spokenReferenceParts(source,20);assert.equal(spoken.length,legacy.length);assert.equal(legacy[0].startsWith('A. '),true);assert.equal(spoken[0].startsWith('Hello.'),true);assert.ok(spoken.some(part=>part.startsWith('J. Smith')));assert.ok(spoken.some(part=>part.includes('Class A.')));assert.ok(spoken.some(part=>part.includes('plan B.')));assert.equal(spoken.join(' ').replace(/\s+/g,' '),client.spokenText(source).replace(/\s+/g,' '));
+  for(const ordinary of ['J. Smith is my teacher.','Class A starts now.','A. Smith is my teacher.','J. Smith teaches.\nK. Brown studies.'])assert.equal(client.spokenText(ordinary),ordinary.replace(/\n/g,'\n\n'));
+  assert.deepEqual(client.spokenReferenceParts('A\nHello there.\nB.\nGood morning.'),['Hello there.','Good morning.']);assert.equal(client.spokenText('A. First part. B. Second part.'),'First part.\n\nSecond part.');
+  assert.deepEqual(client.spokenReferenceParts('I\nam ready.'),client.splitReference('I\nam ready.'));
+  const data=require('../assets/curriculum-data.js');for(const material of data.materials.filter(m=>m.skill==='reading'&&m.pool==='training')){const original=client.splitReference(material.passage),clean=client.spokenReferenceParts(material.passage);assert.equal(clean.length,original.length,material.id);assert.equal(clean.join(' ').replace(/\s+/g,' '),client.spokenText(material.passage).replace(/\s+/g,' '),material.id);}
+});
+
+test('dictionary coverage limits and pauses do not manufacture pronunciation mistakes while omissions and repetitions remain evidence',()=>{
+ const context={reference:'This is my book.',questionId:'oral:test'},limited={result:{accuracy:40,fluency:90,completeness:95,words:[{word:'book',accuracy:0,error:'Unknown',providerEvidence:{fake_pron:1}}]},thresholds:client.DEFAULT_THRESHOLDS,pass:false,below:['accuracy']};assert.deepEqual(client.mistakesFor(limited,context),[]);
+ for(const error of ['Omission','Repetition']){const genuine={...limited,result:{...limited.result,words:[{...limited.result.words[0],error}]}};assert.equal(client.mistakesFor(genuine,context)[0].error,error);}
+ const pause={...limited,result:{...limited.result,words:[{word:'book',accuracy:95,error:'Unknown',providerEvidence:{is_pause:true}}]},below:['fluency']};assert.equal(client.mistakesFor(pause,context).length,1);assert.equal(client.mistakesFor(pause,context)[0].dimension,'fluency');
+});
+
 test('AI coach accepts only current, matching Ali audio evidence and ignores client score claims', () => {
   const store = createEvidenceStore(), result = { ...good(), accuracy: 65, words: [{ word: 'book', accuracy: 45, error: 'Unknown', phonemes: [] }, { word: 'not-in-reference', accuracy: 0, error: 'Omission' }] }, id = store.add(evidence(result));
   const body = { evidenceId: id, reference, level: 'A0', materialId: 'w01-read-1' }, input = coach.prepare(body, store);
@@ -250,7 +265,9 @@ test('local exact-reference demonstrations work without browser voices and word 
   try {
     await app.demonstrate(reference); assert.equal(page.demonstration, 'audio/oral-models/exact.mp3'); assert.match(app.getState().message, /本地英文合成示范/);
     await app.demonstrate('book'); assert.equal(page.demonstration, 'audio/vocabulary/book-exact.mp3');
-    await app.demonstrate('study'); assert.equal(page.demonstration, 'audio/oral-models/exact.mp3'); assert.match(app.getState().message, /整段/);
+    delete page.demonstration; await app.demonstrate('study'); assert.equal(page.demonstration, undefined); assert.match(app.getState().message, /没有英文合成示范能力/);
+    const spoken=[];page.root.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};page.root.speechSynthesis={getVoices:()=>[{lang:'en-GB'}],cancel(){},speak(value){spoken.push(value.text);}};
+    await app.demonstrate('study');assert.deepEqual(spoken,['study']);assert.equal(page.demonstration,undefined);
   } finally { app.destroy(); }
 });
 
@@ -266,4 +283,35 @@ test('model stage completion records full professional evidence plus matching AI
   try {assert.equal(app.getState().modelComplete,false);await app.submitRecording(raw(),3);const state=app.getState(),out=page.callbacks.at(-1);assert.equal(state.overallPass,false);assert.equal(state.modelComplete,true);assert.equal(out.modelComplete,true);assert.equal(out.recordable.modelComplete,true);assert.deepEqual(JSON.parse(JSON.stringify(state.segments[0].coach)),{feedbackFormat:'oral-coach-v1',evidenceId:state.segments[0].evidenceId});assert.equal(out.allSegments[0].professional.result.accuracy,60);
     page.result={accuracy:80,fluency:null};await app.submitRecording(raw(),3);assert.equal(app.getState().modelComplete,false);assert.equal(page.callbacks.at(-1).modelComplete,false);
   }finally{app.destroy();}
+});
+
+async function savedLabelledSegments(page,source){
+  const ids=[];for(const [index,part] of client.splitReference(source).entries()){
+    const entry=await page.library.create({kind:'audio',mode:'daily_reading',task:'oral_reading',materialId:'w01-read-1',dayNumber:1,originalText:part,prompt:part,durationSeconds:3},raw()),evidenceId='archived-section-evidence-'+index;
+    page.entries.set(entry.id,{...entry,evidenceId,diagnosis:{provider:'Alibaba oral assessment',evidenceId,result:{...good(),text:part}},audioReview:{feedbackFormat:'oral-coach-v1',evidenceId,summary:'旧原稿诊断',problems:[{quote:part,demonstrationText:part,explanation:'按旧原稿保留',practice:'回听原音'}],nextStep:'继续练习',limitations:'归档证据'},queueStatus:'reviewed'});ids.push(entry.id);
+  }return ids;
+}
+
+test('new model recordings display and assess clean references while valid labelled archives keep their original proof unchanged',async()=>{
+  const source='A. This is my book.\nB. I study every day.',page=browser(),ids=await savedLabelledSegments(page,source),before=ids.map(id=>JSON.stringify(page.entries.get(id))),app=await page.mount({reference:source,resumeState:{workIds:ids,segmentIndex:0}});
+  try{const state=app.getState();assert.equal(state.modelComplete,true);assert.equal(state.overallPass,true);assert.equal(state.reference,'This is my book.');assert.equal(page.host.children[0].children.find(n=>n.className==='oral-practice-reference').textContent,'This is my book.');assert.equal(state.segments[0].reference,'A. This is my book.');assert.equal(state.segments[0].professional.result.text,'A. This is my book.');assert.equal(state.segments[0].source,'local-archive');assert.equal(page.requests.length,0);assert.deepEqual(ids.map(id=>JSON.stringify(page.entries.get(id))),before);
+    await app.submitRecording(raw(),3);const saved=page.entries.get(app.getState().workId);assert.equal(saved.originalText,'This is my book.');assert.equal(saved.prompt,saved.originalText);assert.equal(saved.diagnosis.result.text,saved.originalText);assert.equal(page.requests.find(request=>request.url==='/api/oral/assess').body.reference,saved.originalText);assert.deepEqual(ids.map(id=>JSON.stringify(page.entries.get(id))),before);assert.equal(app.getState().modelComplete,true);
+  }finally{app.destroy();}
+});
+
+test('a labelled archived retry saves a clean-reference copy and never mixes changed text or mismatched proof',async()=>{
+  const source='A. This is my book.\nB. I study every day.',page=browser(),ids=await savedLabelledSegments(page,source),first=page.entries.get(ids[0]);page.entries.set(ids[0],{...first,audioReview:null});const old=JSON.stringify(page.entries.get(ids[0])),app=await page.mount({reference:source,resumeState:{workIds:ids,segmentIndex:0}});
+  try{assert.equal(app.getState().modelComplete,false);await app.retry();assert.notEqual(app.getState().workId,ids[0]);assert.equal(page.entries.get(app.getState().workId).blob,first.blob);assert.equal(page.requests.find(request=>request.url==='/api/oral/assess').body.reference,'This is my book.');assert.equal(JSON.stringify(page.entries.get(ids[0])),old);assert.equal(app.getState().modelComplete,true);}finally{app.destroy();}
+  for(const patch of [{originalText:'A. This is my bag.',prompt:'A. This is my bag.'},{prompt:'This is my book.'},{diagnosis:{...first.diagnosis,result:{...first.diagnosis.result,text:'This is my book.'}}}]){page.entries.set(ids[0],{...first,...patch});const invalid=await page.mount({reference:source,resumeState:{workIds:ids,segmentIndex:0}});try{assert.equal(invalid.getState().modelComplete,false);}finally{invalid.destroy();}}
+});
+
+test('archived phoneme absence boilerplate is hidden without erasing useful feedback or evidence',()=>{
+  assert.equal(client.coachText('没有给出具体的音素原因。先慢读 book，再连读。'),'先慢读 book，再连读。');
+  assert.equal(client.coachText('阿里云未返回逐个音素的诊断。重音放在第一音节。'),'重音放在第一音节。');
+  assert.equal(client.coachText('没有读出词尾 /s/ 音素。请补读词尾。'),'没有读出词尾 /s/ 音素。请补读词尾。');
+});
+
+test('removing an absent-diagnosis clause retains adjacent specific pronunciation practice',()=>{
+ assert.equal(client.coachText('没有给出具体音素原因，但请保留 book 词尾 /k/。'),'但请保留 book 词尾 /k/。');
+ assert.equal(client.coachText('未识别到 /s/ 音素，请检查词尾。'),'未识别到 /s/ 音素，请检查词尾。');
 });

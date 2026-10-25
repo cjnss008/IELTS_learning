@@ -31,7 +31,7 @@ const rows=[];
 for(const material of data.materials.filter(m=>m.skill==='speaking'&&m.pool==='training')){
  const reading=data.materials.find(m=>m.id===material.id.replace(/-speaking$/,''));
  if(!reading?.passage)continue;
- oral.splitReference(reading.passage,65).forEach((reference,index)=>rows.push({materialId:material.id,readingId:reading.id,week:material.week,segmentIndex:index,reference}));
+ oral.spokenReferenceParts(reading.passage,65).forEach((reference,index)=>rows.push({materialId:material.id,readingId:reading.id,week:material.week,segmentIndex:index,reference}));
 }
 process.stdout.write(JSON.stringify(rows));
 """

@@ -52,6 +52,22 @@
     if (!words.length) throw Error('这份材料没有绑定必学词，请选择当天的词汇材料。');
     const state = {schema:version,trainingVersion:version,study:{spellings:{},speaking:{},workIds:{},inputs:{}},restoring:false,id:uniqueId(),materialId:material.id || 'vocabulary',materialVersion:String(material.version || '1'),courseDay:options.courseDay || 1,startedAt:new Date().toISOString(),phase:'learn',round:0,answers:{meaning:{},completion:{},dictation:{}},audio:{},rounds:[],testing:false};
     let restoringRounds = false;
+    const originalOrder=words.map((_,index)=>index);
+    state.learningOrder=originalOrder.slice();
+    const validOrder=order=>Array.isArray(order)&&order.length===words.length&&new Set(order).size===words.length&&order.every(index=>Number.isInteger(index)&&index>=0&&index<words.length);
+    if(!incoming&&version===2&&options.learningOrder!==undefined){if(!validOrder(options.learningOrder))throw Error('词汇学习显示顺序无效，原稿保留。');state.learningOrder=options.learningOrder.slice();}
+    state.roundOrders=Object.fromEntries(modes.map(mode=>[mode,originalOrder.slice()]));
+    function shuffleFutureRounds(first=0) {
+      if(version!==2)return;
+      for(let round=first;round<modes.length;round++){
+        const order=originalOrder.slice();
+        for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
+        const previous=round?state.roundOrders[modes[round-1]]:originalOrder;
+        if(order.length>1&&order.every((value,index)=>value===previous[index]))order.push(order.shift());
+        state.roundOrders[modes[round]]=order;
+      }
+    }
+    function roundOrder(mode=state.phase){return (state.roundOrders[mode] || originalOrder).slice();}
     const promptFor = (mode,index) => mode === 'meaning' ? words[index].meaning || '（本词释义待查询）' : mode === 'completion' ? maskWord(words[index].word) : '听音写出完整英文';
     function learningProgress() {
       const items = words.map((word,index) => ({index,word:word.word,spellings:(state.study.spellings[index] || []).length,speaking:(state.study.speaking[index] || []).length,workIds:(state.study.workIds[index] || []).slice()}));
@@ -85,7 +101,7 @@
     }
     function finishStudyRestore() { state.restoring = false; state.testing = modes.includes(state.phase) && (version === 1 || learningProgress().complete); }
     function getDraft() {
-      return clone({schema:version,kind:'vocabulary-practice-draft',id:state.id,materialId:state.materialId,materialVersion:state.materialVersion,courseDay:state.courseDay,wordKeys:words.map(item => Dictionary.normalize(item.word)),startedAt:state.startedAt,phase:state.phase,round:state.round,answers:state.answers,audio:state.audio,roundSubmittedAt:state.rounds.map(item => item.attempts[0].submittedAt),...(version === 2 ? {study:{s:words.map((_,index)=>state.study.spellings[index] || []),w:words.map((_,index)=>state.study.workIds[index] || []),input:words.map((_,index)=>state.study.inputs[index] || '')}} : {})});
+      return clone({schema:version,kind:'vocabulary-practice-draft',id:state.id,materialId:state.materialId,materialVersion:state.materialVersion,courseDay:state.courseDay,wordKeys:words.map(item => Dictionary.normalize(item.word)),startedAt:state.startedAt,phase:state.phase,round:state.round,learningOrder:state.learningOrder,roundOrders:state.roundOrders,answers:state.answers,audio:state.audio,roundSubmittedAt:state.rounds.map(item => item.attempts[0].submittedAt),...(version === 2 ? {study:{s:words.map((_,index)=>state.study.spellings[index] || []),w:words.map((_,index)=>state.study.workIds[index] || []),input:words.map((_,index)=>state.study.inputs[index] || '')}} : {})});
     }
     function getState() { return clone({...state,words,allModesCompleted:state.rounds.length === modes.length,learning:learningProgress(),draft:getDraft()}); }
     function begin() {
@@ -108,17 +124,17 @@
       const mode = state.phase;
       if (version === 2 && !restoringRounds && !learningProgress().complete) throw Error('学习阶段三写三读尚未完成，不能提交测试。');
       if (!modes.includes(mode)) throw Error('当前没有可提交的测试轮。');
-      for (let i=0;i<words.length;i++) {
-        if (!normalizeAnswer(state.answers[mode][i])) throw Error('请完成第 '+(i+1)+' 词；不会把空白当成已练习。');
-        if (mode === 'dictation' && !state.audio[i]?.completed) throw Error('第 '+(i+1)+' 词尚未成功播放完毕，请先听音。');
+      for (const [position,index] of roundOrder(mode).entries()) {
+        if (!normalizeAnswer(state.answers[mode][index])) throw Error('请完成第 '+(position+1)+' 词；不会把空白当成已练习。');
+        if (mode === 'dictation' && !state.audio[index]?.completed) throw Error('第 '+(position+1)+' 词尚未成功播放完毕，请先听音。');
       }
       return mode;
     }
     function submitRound() {
       const mode = validateRound(), submittedAt = new Date().toISOString();
-      const attempts = words.map((word,index) => ({
+      const attempts = roundOrder(mode).map(index => { const word=words[index]; return ({
         id:state.id+'-'+mode+'-'+index,attemptId:state.id+'-'+mode+'-'+index,source:'vocabulary-practice',skill:'vocabulary',taskId:'vocabulary',courseDay:state.courseDay,dayNumber:state.courseDay,materialId:state.materialId,materialVersion:state.materialVersion,word:word.word,meaning:word.meaning,ipa:word.ipa,example:word.example,mode,prompt:promptFor(mode,index),userAnswer:state.answers[mode][index],expectedAnswer:word.word,correct:normalizeAnswer(state.answers[mode][index]) === normalizeAnswer(word.word),submittedAt,...(mode === 'dictation' ? {audio:clone(state.audio[index])} : {})
-      }));
+      }); });
       const round = {mode,correct:attempts.filter(item => item.correct).length,total:words.length,attempts};
       state.rounds.push(round); state.phase = 'feedback'; state.testing = false;
       return clone(round);
@@ -139,13 +155,22 @@
     }
     function restoreDraft(raw) {
       if (typeof raw === 'string') { if (raw.length > 15000) throw Error('词汇草稿超过15KB，已保留原稿。'); raw = JSON.parse(raw); }
-      const allowed = ['schema','kind','id','materialId','materialVersion','courseDay','wordKeys','startedAt','phase','round','answers','audio','roundSubmittedAt',...(version === 2 ? ['study'] : [])];
+      const allowed = ['schema','kind','id','materialId','materialVersion','courseDay','wordKeys','startedAt','phase','round','answers','audio','learningOrder','roundOrders','roundSubmittedAt',...(version === 2 ? ['study'] : [])];
       const bad = () => { throw Error('词汇草稿与当前材料不匹配或格式无效，已保留原稿。'); };
       if (!raw || Array.isArray(raw) || typeof raw !== 'object' || Object.keys(raw).some(key => !allowed.includes(key)) || JSON.stringify(raw).length > 15000 || raw.schema !== version || raw.kind !== 'vocabulary-practice-draft' || raw.materialId !== state.materialId || raw.materialVersion !== state.materialVersion || raw.courseDay !== state.courseDay || typeof raw.id !== 'string' || !/^vocab-[A-Za-z0-9-]{1,130}$/.test(raw.id) || !Array.isArray(raw.wordKeys) || JSON.stringify(raw.wordKeys) !== JSON.stringify(words.map(item => Dictionary.normalize(item.word)))) bad();
       const iso = value => typeof value === 'string' && Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value && Date.parse(value) <= Date.now();
       if (!iso(raw.startedAt) || !Array.isArray(raw.roundSubmittedAt) || raw.roundSubmittedAt.length > 3 || raw.roundSubmittedAt.some((value,index) => !iso(value) || value < raw.startedAt || index > 0 && value < raw.roundSubmittedAt[index-1])) bad();
       const count = raw.roundSubmittedAt.length, phase = raw.phase, expectedRound = phase === 'feedback' ? count-1 : phase === 'complete' ? 3 : phase === 'learn' ? 0 : modes.indexOf(phase);
       if (!Number.isInteger(raw.round) || raw.round !== expectedRound || !['learn',...modes,'feedback','complete'].includes(phase) || (phase === 'feedback' ? count < 1 : phase === 'complete' ? count !== 3 : phase === 'learn' ? count !== 0 : count !== modes.indexOf(phase))) bad();
+      if(Object.hasOwn(raw,'learningOrder')){if(!validOrder(raw.learningOrder))bad();state.learningOrder=raw.learningOrder.slice();}
+      if(Object.hasOwn(raw,'roundOrders')){
+        const orders=raw.roundOrders;
+        if(!orders||typeof orders!=='object'||Array.isArray(orders)||Object.keys(orders).length!==modes.length||modes.some(mode=>!Array.isArray(orders[mode])||orders[mode].length!==words.length||new Set(orders[mode]).size!==words.length||orders[mode].some(index=>!Number.isInteger(index)||index<0||index>=words.length)))bad();
+        state.roundOrders=clone(orders);
+      }else{
+        // Preserve the order of every started round in old drafts; only shuffle future rounds.
+        shuffleFutureRounds(phase==='learn'?0:modes.includes(phase)?expectedRound+1:count);
+      }
       if (!raw.answers || Array.isArray(raw.answers) || typeof raw.answers !== 'object' || Object.keys(raw.answers).length !== 3 || modes.some(mode => !raw.answers[mode] || typeof raw.answers[mode] !== 'object' || Array.isArray(raw.answers[mode]))) bad();
       for (const mode of modes) for (const [key,value] of Object.entries(raw.answers[mode])) {
         if (!/^(0|[1-9][0-9]*)$/.test(key) || !words[Number(key)] || typeof value !== 'string' || value.length > 200 || modes.indexOf(mode) > expectedRound) bad();
@@ -177,8 +202,8 @@
       }
       state.phase = phase; state.round = raw.round; state.testing = modes.includes(phase) && (version === 1 || learningProgress().complete);
     }
-    if (options.draft) restoreDraft(options.draft);
-    return {words,state,modes,version,learningProgress,recordSpelling,setStudyInput,registerStudyWork,recordSpeaking,finishStudyRestore,getState,getDraft,begin,setAnswer,markPlayed,validateRound,submitRound,next,getSubmission:submission,promptFor};
+    if (options.draft) restoreDraft(options.draft); else shuffleFutureRounds();
+    return {words,state,modes,version,roundOrder,learningProgress,recordSpelling,setStudyInput,registerStudyWork,recordSpeaking,finishStudyRestore,getState,getDraft,begin,setAnswer,markPlayed,validateRound,submitRound,next,getSubmission:submission,promptFor};
   }
 
   function verifyTrainingArtifact(input,material) {
@@ -319,9 +344,10 @@
       studyRows.clear();
       box.append(node('h3','','今日必学 '+session.words.length+' 词'),node('p','vocab-intro',session.version===2?'每个词先照词输入三遍正确英文，再听示范、分别录音跟读三次。全部词完成后，依次测试补全、中文写英文、听写。跟读专业低分计真实练习次数并进入错题本；网络失败或无声不计次数。专业指标为本次朗读的0–100分，不换算IELTS成绩。时间是参考预算，可按掌握速度提前进入下一步。':'这是旧版草稿，保留原来的中文写英文、补全、听写顺序及原稿；本轮不作为新版三写三读训练通过。'));
       const list = node('div','vocab-word-list');
-      session.words.forEach((word,index) => {
+      session.state.learningOrder.forEach((index,position) => {const word=session.words[index];
         const card = node('article','vocab-word-card'), header = node('div','vocab-word-header');
         header.append(node('strong','vocab-word',word.word),node('span','vocab-ipa',word.ipa || '音标待查询'));
+        const history=options.wordHistory?.[normalizeAnswer(word.word)];if(history==='new'||history==='review'){card.dataset.wordHistory=history;header.append(node('span','vocab-word-history',history==='new'?'本课新词':'前课巩固'));}
         const note = status(studyRestoreNotes.get(index) || ''), play = button('听读',async () => { play.disabled = true; try { check(); if(['requesting','recording'].includes(speaker?.getState?.().phase))throw Error('请先结束当前麦克风录音，再播放示范，避免把示范声音录入。'); await player.play(word,text => { note.textContent = text; }); check(); note.textContent = '已完成听读。'; } catch (error) { note.textContent = error.message; } finally { if (!destroyed) play.disabled = false; } });
         header.append(play); card.append(header,node('p','vocab-meaning',word.meaning || '词义待查询'),node('p','vocab-example',word.example || '例句待查询'));
         if (word.exampleTranslation) card.append(node('p','vocab-translation',word.exampleTranslation));
@@ -334,16 +360,18 @@
         }
         if (session.version===2) {
           const progress=session.learningProgress().items[index],practice=node('div','vocab-study'),meter=node('p','vocab-study-progress','正确输入 '+progress.spellings+'/3 · 真实跟读 '+progress.speaking+'/3');
-          const label=node('label','vocab-answer-label','第 '+Math.min(3,progress.spellings+1)+' 遍英文输入'),input=node('input','vocab-answer');input.type='text';input.maxLength=200;input.autocomplete='off';input.spellcheck=false;input.value=session.state.study.inputs[index] || '';input.disabled=progress.spellings===3;input.setAttribute('aria-label','学习第'+(index+1)+'词的英文输入');
+          const label=node('label','vocab-answer-label','第 '+Math.min(3,progress.spellings+1)+' 遍英文输入'),input=node('input','vocab-answer');input.type='text';input.maxLength=200;input.autocomplete='off';input.spellcheck=false;input.value=session.state.study.inputs[index] || '';input.disabled=progress.spellings===3;input.setAttribute('aria-label','学习第'+(position+1)+'词的英文输入');
           input.addEventListener('input',()=>{try{check();session.setStudyInput(index,input.value);changed();}catch(error){note.textContent=error.message;}});label.append(input);
-          const write=button('核对本遍输入',async()=>{if(write.disabled)return;try{check();if(session.recordSpelling(index,input.value)){render();changed();}else{note.textContent='拼写还不正确，请对照上方英文重新输入；本遍不计。';if(options.onMistake)await options.onMistake({id:studyAttemptRun+'-study-'+(++studySerial),attemptId:studyAttemptRun+'-study-'+studySerial,source:'vocabulary-practice',skill:'vocabulary',taskId:'vocabulary',courseDay:session.state.courseDay,dayNumber:session.state.courseDay,materialId:session.state.materialId,materialVersion:session.state.materialVersion,word:word.word,meaning:word.meaning,ipa:word.ipa,example:word.example,mode:'study-spelling',prompt:word.meaning,userAnswer:input.value,expectedAnswer:word.word,correct:false,submittedAt:new Date().toISOString()});}}catch(error){note.textContent=error.message;}});write.disabled=progress.spellings===3;
+          const write=button('核对本遍输入',async()=>{if(write.disabled)return;try{check();if(session.recordSpelling(index,input.value)){render();changed();check();const row=studyRows.get(index),next=row?.input.disabled?row.start:row?.input;if(next&&!next.disabled)next.focus();}else{const detail=explainSpelling(word,input.value);note.textContent=detail?[detail.title,...detail.points,detail.next].filter(Boolean).join(' '):'拼写还不正确，请对照上方英文重新输入；本遍不计。';input.focus();input.select();if(options.onMistake)await options.onMistake({id:studyAttemptRun+'-study-'+(++studySerial),attemptId:studyAttemptRun+'-study-'+studySerial,source:'vocabulary-practice',skill:'vocabulary',taskId:'vocabulary',courseDay:session.state.courseDay,dayNumber:session.state.courseDay,materialId:session.state.materialId,materialVersion:session.state.materialVersion,word:word.word,meaning:word.meaning,ipa:word.ipa,example:word.example,mode:'study-spelling',prompt:word.meaning,userAnswer:input.value,expectedAnswer:word.word,correct:false,submittedAt:new Date().toISOString()});}}catch(error){note.textContent=error.message;}});write.disabled=progress.spellings===3;
+          let composing=false;input.addEventListener('compositionstart',()=>{composing=true;});input.addEventListener('compositionend',()=>{composing=false;});
+          input.addEventListener('keydown',event=>{if(event.key!=='Enter'||composing||event.isComposing||event.keyCode===229)return;event.preventDefault();if(!event.repeat&&!write.disabled)write.click();});
           const startRead=button('开始第 '+Math.min(3,progress.speaking+1)+' 次跟读录音',async()=>{try{check();player.cancel();doc.querySelectorAll?.('audio').forEach(audio=>audio.pause?.());await speaker.start(word.word,speakingContext(index));}catch(error){note.textContent=error.message;}});
           const stopRead=button('结束本次录音并评测',async()=>{try{await speaker.stop();}catch(error){note.textContent=error.message;}});
           const retry=button('重试这份原音评测',async()=>{const id=studyRows.get(index)?.pendingId;if(!id)return;try{check();await speaker.retry(id,speakingContext(index));}catch(error){note.textContent=error.message;}});
           const controls=node('div','vocab-study-controls');controls.append(startRead,stopRead,retry);practice.append(meter,label,write,controls);
           if(progress.workIds.length){const playback=node('div','vocab-study-playbacks');progress.workIds.forEach((id,i)=>playback.append(button('回听原音 '+(i+1),async()=>{try{check();await speaker.play(id);}catch(error){note.textContent=error.message;}})));practice.append(playback);}
           for(const [trial,proof] of (session.state.study.speaking[index] || []).entries())practice.append(node('p','vocab-status','第'+(trial+1)+'次：准确度 '+proof.result.accuracy+' · 流利度 '+proof.result.fluency+' · 完整度 '+proof.result.completeness+'（0–100，'+(proof.passed?'达到本次门槛':'错项待订正')+'）'));
-          card.append(practice);studyRows.set(index,{start:startRead,stop:stopRead,retry,note,pendingId:null});
+          card.append(practice);studyRows.set(index,{input,start:startRead,stop:stopRead,retry,note,pendingId:null});
           if(!speaker)note.textContent='跟读录音组件未加载，请刷新本地学习页面后继续；按钮点击不会代替真实跟读。';
         }
         card.append(note); list.append(card);
@@ -356,21 +384,22 @@
       const mode = session.state.phase;
       box.append(node('h3','','第 '+(session.modes.indexOf(mode)+1)+' / 3 轮 · '+NAMES[mode]),node('p','vocab-intro',mode === 'completion' ? '根据中文与保留字母，输入完整的英文词或词组。下划线表示缺失字母。' : mode === 'dictation' ? '先成功听完每个词，再写完整英文。可重听；英语声音不可用时本轮保持未完成。' : '根据本材料的中文词义，写出学习阶段的英文词或词组。'));
       const inputs = [], form = node('form','vocab-questions'); form.setAttribute('autocomplete','off');
-      session.words.forEach((word,index) => {
-        const row = node('fieldset','vocab-question'), legend = node('legend','','第 '+(index+1)+' 词'); row.append(legend);
+      session.roundOrder(mode).forEach((index,position) => {
+        const word=session.words[index];
+        const row = node('fieldset','vocab-question'), legend = node('legend','','第 '+(position+1)+' 词'); row.append(legend);
         if (mode !== 'dictation') row.append(node('p','vocab-prompt',word.meaning));
         if (mode === 'completion') row.append(node('p','vocab-mask',maskWord(word.word)));
         const note = status(mode === 'dictation' && session.state.audio[index]?.completed ? '已成功听完，可作答。' : '');
         if (mode === 'dictation') {
-          const play = button(session.state.audio[index]?.completed ? '重听第 '+(index+1)+' 词' : '播放第 '+(index+1)+' 词',async () => {
+          const play = button(session.state.audio[index]?.completed ? '重听第 '+(position+1)+' 词' : '播放第 '+(position+1)+' 词',async () => {
             if (busy) return; play.disabled = true;
-            try { check(); const proof = await player.play(word,text => { note.textContent = text; }); check(); if (session.state.phase !== mode) return; session.markPlayed(index,proof); note.textContent = '已成功听完，可作答。'; play.textContent = '重听第 '+(index+1)+' 词'; changed(); }
+            try { check(); const proof = await player.play(word,text => { note.textContent = text; }); check(); if (session.state.phase !== mode) return; session.markPlayed(index,proof); note.textContent = '已成功听完，可作答。'; play.textContent = '重听第 '+(position+1)+' 词'; changed(); }
             catch (error) { note.textContent = error.message; }
             finally { if (!destroyed) play.disabled = false; }
           }); row.append(play);
         }
         const label = node('label','vocab-answer-label','完整英文'), input = node('input','vocab-answer');
-        input.type = 'text'; input.maxLength = 200; input.autocomplete = 'off'; input.spellcheck = false; input.setAttribute('autocapitalize','off'); input.setAttribute('aria-label','第 '+(index+1)+' 词的完整英文'); input.value = session.state.answers[mode][index] || '';
+        input.type = 'text'; input.maxLength = 200; input.autocomplete = 'off'; input.spellcheck = false; input.setAttribute('autocapitalize','off'); input.setAttribute('aria-label','第 '+(position+1)+' 词的完整英文'); input.value = session.state.answers[mode][index] || '';
         input.addEventListener('input',() => { if (busy) return; try { check(); session.setAnswer(index,input.value); changed(); } catch (error) { note.textContent = error.message; } });
         inputs.push(input); label.append(input); row.append(label,note); form.append(row);
       });
@@ -382,12 +411,15 @@
         finally { busy = false; if (session.state.phase === 'feedback') render(); else send.disabled = false; }
       }); box.append(form);
     }
+    function explainSpelling(word,answer) {
+      return root.IELTSObjectiveFeedback?.explain({type:'spelling',answers:[word.word],prompt:word.meaning,explanation:word.meaning,evidence:word.example||''},answer,{grade:{correct:false,answered:!!normalizeAnswer(answer),gradable:true,withinLimit:true,expected:[word.word]},normalizeAnswer,sourceKind:'vocabulary',sourceText:word.example||''});
+    }
     function renderFeedback() {
       const round = lastRound || session.state.rounds.at(-1);
       box.append(node('h3','',NAMES[round.mode]+'：'+round.correct+' / '+round.total),node('p','vocab-intro','本轮原始输入已保留。展开核对错误后，再继续下一轮。'));
       const errors = round.attempts.filter(item => !item.correct);
       if (!errors.length) box.append(node('p','vocab-success','本轮全部正确。'));
-      else errors.forEach(attempt => { const row = node('details','vocab-error'); row.append(node('summary','','第 '+(round.attempts.indexOf(attempt)+1)+' 词 · 需要订正'),node('p','','你的原稿：'+attempt.userAnswer),node('p','','标准英文：'+attempt.expectedAnswer),node('p','',attempt.meaning),node('p','',attempt.example)); box.append(row); });
+      else errors.forEach(attempt => { const row = node('details','vocab-error'); row.append(node('summary','','第 '+(round.attempts.indexOf(attempt)+1)+' 词 · 需要订正'),node('p','','你的原稿：'+attempt.userAnswer),node('p','','标准英文：'+attempt.expectedAnswer),node('p','',attempt.meaning),node('p','',attempt.example)); const detail=explainSpelling({word:attempt.expectedAnswer,meaning:attempt.meaning,example:attempt.example},attempt.userAnswer);if(detail){row.open=true;row.append(node('strong','',detail.title));for(const point of detail.points)row.append(node('p','',point));if(detail.next)row.append(node('p','',detail.next));} box.append(row); });
       const note = status(''), next = button(session.state.rounds.length === 3 ? '查看三轮总成绩' : '继续第 '+(session.state.rounds.length+1)+' 轮',async () => { if (busy) return; busy = true; next.disabled = true; try { check(); await flushMistakes(); session.next(); render(); changed(); } catch (error) { note.textContent = '错题本未能同步：'+error.message+'。请重试，原稿仍保留。'; next.disabled = false; } finally { busy = false; } });
       box.append(next,note);
     }
@@ -398,8 +430,16 @@
       const raw = node('details','vocab-original'), original = node('pre','vocab-original-text'); original.textContent = payload.attempts.map(item => NAMES[item.mode]+' · '+item.word+'\n原稿：'+item.userAnswer+'\n判定：'+(item.correct ? '正确' : '错误')+'\n标准英文：'+item.expectedAnswer).join('\n\n'); raw.append(node('summary','','查看三轮原稿'),original); box.append(raw);
       const note = status(saved ? '本次三轮原稿已提交。' : '原稿尚未提交到课程作品记录。'), send = button(saved ? '已提交原稿' : '提交三轮原稿',async () => { send.disabled = true; note.textContent = '正在保存原稿与错题……'; try { await submit(); note.textContent = '三轮原稿已提交，错项已交给统一错题本。'; send.textContent = '已提交原稿'; } catch (error) { note.textContent = '未能提交：'+error.message+'。请重试，原始输入仍在本页。'; send.disabled = false; } }); send.disabled = saved; box.append(send,note);
     }
+    function renderRestoring() {
+      const phase=session.state.phase,round=phase==='feedback'?session.state.round+1:session.modes.indexOf(phase)+1;
+      const label=round>0?'第 '+round+' 轮 · '+NAMES[session.modes[round-1]]:phase==='complete'?'三轮测试结果':'三写三读进度';
+      const items=session.learningProgress().items,stored=items.reduce((sum,item)=>sum+item.workIds.length,0),verified=items.reduce((sum,item)=>sum+item.speaking,0);
+      box.append(node('h3','','正在恢复'+label),status('已保留 '+session.state.rounds.length+' 轮原稿和全部已填答案；正在核对已保存的跟读原音 '+verified+' / '+stored+'。核对完成后接着原进度继续，无需重新开始。'));
+      const list=node('ul','vocab-restore-progress');for(const item of items)list.append(node('li','',item.word+'：正确输入 '+item.spellings+'/3，已保存跟读 '+item.workIds.length+'/3'+(studyRestoreNotes.has(item.index)?' · 原音待重试':'')));box.append(list);
+    }
     function render() {
       if (destroyed) return; box.replaceChildren();
+      if(session.state.restoring){renderRestoring();box.dataset.vocabTesting=String(session.modes.includes(session.state.phase));return;}
       if (session.state.phase === 'learn' || session.version===2&&!session.learningProgress().complete) renderLearn(); else if (session.state.phase === 'feedback') renderFeedback(); else if (session.state.phase === 'complete') renderComplete(); else renderRound();
       box.dataset.vocabTesting = String(session.state.testing);
     }
@@ -410,12 +450,13 @@
       if(session.version===2&&session.state.restoring){
         for(let index=0;index<session.words.length;index++)for(const id of session.state.study.workIds[index] || []){
           try{check();if(!speaker)throw Error('跟读组件未加载');const proof=await speaker.restore(id,speakingContext(index));check();session.recordSpeaking(index,proof);}
-          catch(error){studyRestoreNotes.set(index,'原音引用未恢复为已完成：'+error.message);if(studyRows.get(index))studyRows.get(index).note.textContent=studyRestoreNotes.get(index);}
+          catch(error){studyRestoreNotes.set(index,'已保存的测试答案和原音引用仍保留；本词原音待重新核对：'+error.message);}
+          if(!destroyed&&!stale)render();
         }
         if(!destroyed&&!stale){session.finishStudyRestore();render();changed();}
       }
     })();
-    return {ready,pause(){speaker?.cancel?.('练习已暂停，未完成的跟读不计次数。');player.cancel();},getState:session.getState,getDraft:session.getDraft,getSubmission:session.getSubmission,submit,destroy() { destroyed = true; testingEvent(false);speaker?.destroy?.(); player.cancel(); root.removeEventListener?.('ielts:profile-changed',profileChanged); }};
+    return {ready,getMediaState:()=>speaker?.getState?.() || null,pause(){speaker?.cancel?.('练习已暂停，未完成的跟读不计次数。');player.cancel();},getState:session.getState,getDraft:session.getDraft,getSubmission:session.getSubmission,submit,destroy() { destroyed = true; testingEvent(false);speaker?.destroy?.(); player.cancel(); root.removeEventListener?.('ielts:profile-changed',profileChanged); }};
   }
   return {MODES,NAMES,verifyTrainingArtifact,normalizeAnswer,maskWord,wordsFor,createSession,createAudioPlayer,mount};
 });

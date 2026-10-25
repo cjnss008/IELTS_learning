@@ -1,12 +1,336 @@
 {
   "id": "w05-listen-1",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "ae1ee07d9b052e5fb4a35528329e167d530791b9a5232bccd306013679f91369",
+  "configurationHash": "e71db07e90debfd6ab21196fbef5b7b99aee6011a6ec632e695ca76bcdeb6fc7",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "ae1ee07d9b052e5fb4a35528329e167d530791b9a5232bccd306013679f91369",
+    "rate": "-15%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "a": "en-GB-SoniaNeural",
+      "b": "en-GB-RyanNeural",
+      "narrator": "en-GB-LibbyNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 0,
+        "sourceEnd": 3
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 98,
+        "sourceEnd": 101
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 124,
+        "sourceEnd": 127
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 156,
+        "sourceEnd": 159
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 186,
+        "sourceEnd": 189
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 280,
+        "sourceEnd": 283
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 300,
+        "sourceEnd": 303
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 334,
+        "sourceEnd": 337
+      }
+    ],
+    "segments": [
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 3,
+        "sourceEnd": 97,
+        "text": "Hi, I'm Li. I'm a student. I get up at 6:30. I have breakfast at 7:00. I go to school at 7:30.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "1d4788ed512ffe0c112812cf18574f5f7e3adf40f1979404a5e2f83067b39005",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 101,
+        "sourceEnd": 123,
+        "text": "Do you walk to school?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "ce3b560cc6ce0e21ab7c5ea0cb5d3f7b9c571cf6c4bef4c96330c408b61132e9",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 127,
+        "sourceEnd": 155,
+        "text": "No, I don't. I take the bus.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "f092b0fdc0e090cd522b0975dde7da42dc91c4052f18c01dc241d7828a6381cb",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 159,
+        "sourceEnd": 185,
+        "text": "What time do you get home?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "eec5268ad6c4341f834deb72d0f628adfac0b0e02448269144c1fe21c265cede",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 189,
+        "sourceEnd": 279,
+        "text": "I get home at 5:00. I do my homework at 5:30. I have dinner at 7:00. I go to bed at 10:00.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "e9e5e4a4d69a280c10cd7b91c5b132a6f94fe71006c6b261cfc7204f6fa5c76f",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 283,
+        "sourceEnd": 299,
+        "text": "Do you watch TV?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "7fe0f48162492808255878b5e06af29381173b3f575a040e8dfa54b0c04a05eb",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 303,
+        "sourceEnd": 333,
+        "text": "Yes, I do. I watch TV at 8:00.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "bd41a182893ba2914d61fe06dfc7cb771c7b959a84f412365279388ff9f65c26",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 337,
+        "sourceEnd": 344,
+        "text": "Thanks!",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "1aa7b1c1d5fb1fd6d299eae251a665c7898baeb43d48fb6b8a5b76da6c6ef739",
+        "pauseBeforeSeconds": 0.65
+      }
+    ]
+  },
+  "audioHash": "93b03ec46765bf6432ecd0cef232d920c465483a7915cc7ec7d7e2cc44a7cfa2",
   "voices": [
-    "en-GB-SoniaNeural"
+    "en-GB-SoniaNeural",
+    "en-GB-RyanNeural"
   ],
-  "durationSeconds": 43.176,
+  "roleVoices": {
+    "a": "en-GB-SoniaNeural",
+    "b": "en-GB-RyanNeural",
+    "narrator": "en-GB-LibbyNeural"
+  },
+  "durationSeconds": 40.585958,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-15%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 3,
+      "sourceEnd": 97,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "1d4788ed512ffe0c112812cf18574f5f7e3adf40f1979404a5e2f83067b39005",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "7ee09327ac9b445d687383bb7353e0bb018913414c2b950ecaaa1c68e559eba2",
+      "groupAudioHash": "c5058d0445ccf224d918cc35b69a36a6350f5254991c9de6fef7638e445f5275",
+      "groupStartSeconds": 0.07825,
+      "groupEndSeconds": 11.760416666666666,
+      "wordStartSeconds": 0.13825,
+      "wordEndSeconds": 11.6404159,
+      "startSeconds": 0.0,
+      "endSeconds": 11.682166666666667,
+      "durationSeconds": 11.682166666666667
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 101,
+      "sourceEnd": 123,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "ce3b560cc6ce0e21ab7c5ea0cb5d3f7b9c571cf6c4bef4c96330c408b61132e9",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "bafaafee29a271e3bc99a84b6b400680cc86f9d02117d0535b0004a9d5cb3c87",
+      "groupAudioHash": "428d203cabf0c7640f2240e4aab95ecf930c4de2e07c532b23101a9beb3b2160",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 1.55825,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 1.438249,
+      "startSeconds": 12.332166666666666,
+      "endSeconds": 13.850416666666666,
+      "durationSeconds": 1.51825
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 127,
+      "sourceEnd": 155,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "f092b0fdc0e090cd522b0975dde7da42dc91c4052f18c01dc241d7828a6381cb",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "7ee09327ac9b445d687383bb7353e0bb018913414c2b950ecaaa1c68e559eba2",
+      "groupAudioHash": "c5058d0445ccf224d918cc35b69a36a6350f5254991c9de6fef7638e445f5275",
+      "groupStartSeconds": 12.02825,
+      "groupEndSeconds": 15.472958333333333,
+      "wordStartSeconds": 12.08825,
+      "wordEndSeconds": 15.352958,
+      "startSeconds": 14.500416666666666,
+      "endSeconds": 17.945125,
+      "durationSeconds": 3.4447083333333346
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 159,
+      "sourceEnd": 185,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "eec5268ad6c4341f834deb72d0f628adfac0b0e02448269144c1fe21c265cede",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "bafaafee29a271e3bc99a84b6b400680cc86f9d02117d0535b0004a9d5cb3c87",
+      "groupAudioHash": "428d203cabf0c7640f2240e4aab95ecf930c4de2e07c532b23101a9beb3b2160",
+      "groupStartSeconds": 2.40175,
+      "groupEndSeconds": 4.140583333333334,
+      "wordStartSeconds": 2.46175,
+      "wordEndSeconds": 4.020582,
+      "startSeconds": 18.595125,
+      "endSeconds": 20.33395833333333,
+      "durationSeconds": 1.7388333333333321
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 189,
+      "sourceEnd": 279,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "e9e5e4a4d69a280c10cd7b91c5b132a6f94fe71006c6b261cfc7204f6fa5c76f",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "7ee09327ac9b445d687383bb7353e0bb018913414c2b950ecaaa1c68e559eba2",
+      "groupAudioHash": "c5058d0445ccf224d918cc35b69a36a6350f5254991c9de6fef7638e445f5275",
+      "groupStartSeconds": 15.763541666666667,
+      "groupEndSeconds": 26.384708333333332,
+      "wordStartSeconds": 15.823541,
+      "wordEndSeconds": 26.264708,
+      "startSeconds": 20.983958333333334,
+      "endSeconds": 31.605125,
+      "durationSeconds": 10.621166666666667
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 283,
+      "sourceEnd": 299,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "7fe0f48162492808255878b5e06af29381173b3f575a040e8dfa54b0c04a05eb",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "bafaafee29a271e3bc99a84b6b400680cc86f9d02117d0535b0004a9d5cb3c87",
+      "groupAudioHash": "428d203cabf0c7640f2240e4aab95ecf930c4de2e07c532b23101a9beb3b2160",
+      "groupStartSeconds": 4.975291666666666,
+      "groupEndSeconds": 6.4935,
+      "wordStartSeconds": 5.035291,
+      "wordEndSeconds": 6.373499,
+      "startSeconds": 32.255125,
+      "endSeconds": 33.77333333333333,
+      "durationSeconds": 1.5182083333333338
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 303,
+      "sourceEnd": 333,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "bd41a182893ba2914d61fe06dfc7cb771c7b959a84f412365279388ff9f65c26",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "7ee09327ac9b445d687383bb7353e0bb018913414c2b950ecaaa1c68e559eba2",
+      "groupAudioHash": "c5058d0445ccf224d918cc35b69a36a6350f5254991c9de6fef7638e445f5275",
+      "groupStartSeconds": 26.62675,
+      "groupEndSeconds": 31.178791666666665,
+      "wordStartSeconds": 26.68675,
+      "wordEndSeconds": 31.058791,
+      "startSeconds": 34.42333333333333,
+      "endSeconds": 38.975375,
+      "durationSeconds": 4.552041666666668
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 337,
+      "sourceEnd": 344,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "1aa7b1c1d5fb1fd6d299eae251a665c7898baeb43d48fb6b8a5b76da6c6ef739",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "bafaafee29a271e3bc99a84b6b400680cc86f9d02117d0535b0004a9d5cb3c87",
+      "groupAudioHash": "428d203cabf0c7640f2240e4aab95ecf930c4de2e07c532b23101a9beb3b2160",
+      "groupStartSeconds": 7.32825,
+      "groupEndSeconds": 8.287666666666667,
+      "wordStartSeconds": 7.38825,
+      "wordEndSeconds": 8.167666,
+      "startSeconds": 39.625375,
+      "endSeconds": 40.58479166666667,
+      "durationSeconds": 0.9594166666666695
+    }
+  ],
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

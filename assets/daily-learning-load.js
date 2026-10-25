@@ -2,6 +2,12 @@
 'use strict';
 const NAMES={vocabulary:'词汇',grammar:'语法',listening:'听力',reading:'阅读',speaking:'口语',writing:'写作',reflection:'错题订正与每日复盘'};
 const dependency=(name,file)=>root[name]||(typeof require==='function'?require(file):null);
+function calendarSchedule(options={}){
+ const year=options.yearPlanner||dependency('IELTSYearPlanner','./year-planner.js'),today=options.today||year?.dateKey(options.now??Date.now());let startDate=options.startDate;
+ if(!startDate)try{startDate=JSON.parse(root.IELTSProfiles?.storage?.().getItem('ielts52-daily-plan-v1')||'null')?.startDate;}catch(_){}
+ if(!startDate||!year?.dateNumber)return null;const calendarDay=Math.floor((year.dateNumber(today)-year.dateNumber(startDate))/86400000)+1,placement=options.route??year.placementRoute(options.data||root.IELTSCurriculumData,options),scheduled=placement?placement.startDay+Math.max(0,Math.floor((year.dateNumber(today)-year.dateNumber(year.dateKey(placement.adoptedAt)))/86400000)):calendarDay;
+ return{today,startDate,calendarDay,scheduledDay:Math.min(365,Math.max(1,scheduled))};
+}
 function prediction(material,task,records,options={}){
  const year=options.yearPlanner||dependency('IELTSYearPlanner','./year-planner.js'),kind=m=>m?.rubric?.taskType||m?.type||m?.skill,materials=new Map((options.materials||[]).map(m=>[m.id,m])),seen=new Set(),times=[];
  const estimate=Number(material?.estimatedMinutes)||Number(task?.minutes)||15;
@@ -50,16 +56,17 @@ function build(options={}){
   const result={day,own,states,summary,errors,readiness,done};cache.set(day.day,result);return result;
  }
  const current=days.find(d=>d.day===currentDay)||days[0],currentState=current?inspect(current):null;
- const first=days.find(day=>(!placement||day.day>=placement.startDay)&&!inspect(day).done),state=first?inspect(first):null,target=state?.day;
+ const selected=days.find(day=>day.day===Number(options.selectedDay)&&currentDay>=day.day),schedule=calendarSchedule({...options,data,yearPlanner:year,route:placement}),selection=selected&&player.courseSelectionAccess?.(data,records,selected.day,{...options,scheduledDay:schedule?.scheduledDay,yearPlanner:year,assessment,placement:options.placement||{currentRoute:()=>placement}}),selectedFloor=selection?.allowed?selected.day:null,first=days.find(day=>(!placement||day.day>=placement.startDay)&&(!selectedFloor||day.day>=selectedFloor)&&!inspect(day).done),state=first?inspect(first):null,target=state?.day;
+ const historical=days.filter(day=>day.day<(target?.day||currentDay)&&(!placement||day.day>=placement.startDay||records.some(record=>record.dayNumber===day.day)||drafts.some(draft=>draft.courseDay===day.day))&&!inspect(day).done).map(day=>({day:day.day,week:day.week,remainingMistakes:inspect(day).summary.remaining||0,missingMaterials:inspect(day).states.filter(item=>item.task.id!=='reflection').reduce((sum,item)=>sum+item.missingMaterialIds.length,0)}));
  const entries=[],add=entry=>{if(entry)entries.push(entry);},started=day=>records.some(r=>r.dayNumber===day.day)||drafts.some(d=>d.courseDay===day.day),materialMap=new Map(data.materials.map(m=>[m.id,m]));
  const base=(day,taskId,materialId)=>({day:day.day,taskId,materialId});
  function materialAction(day,task,id){
-  const draft=drafts.find(d=>d.courseDay===day.day&&d.taskId===task.id&&d.materialId===id&&!records.some(r=>r.id===d.id)),material=materialMap.get(id);
+  const material=materialMap.get(id),draft=typeof player.preferredDraft==='function'?player.preferredDraft(drafts,{courseDay:day.day,taskId:task.id,materialId:id,material,records}):drafts.find(d=>d.courseDay===day.day&&d.taskId===task.id&&d.materialId===id&&!records.some(r=>r.id===d.id));
   let access;try{access=options.materialAccess?.(material)||player.protectedMaterialAccess(material,records,data.materials,{assessment,exposures:options.exposures,now:options.now,data,placement:options.placement});}catch(_){access={allowed:false,reason:'材料解锁状态暂不可核对。'};}
   return{...base(day,task.id,id),kind:access.allowed?'material':'blocked',draftId:draft?.id,label:access.allowed?(draft?'继续未提交草稿：':day.day===currentDay?'继续学习：':'继续第 '+day.day+' 课：')+NAMES[task.id]:'等待材料解锁',reason:access.allowed?'按真实作答继续；建议分钟不设最低用时。':access.reason,title:material?.title||NAMES[task.id]};
  }
  let blockedReason='',extraDay=placement?state?.day||currentState?.day||current:currentState?.day||current;
- if(placement){
+ if(placement&&!selectedFloor){
   const active=options.current,offCore=active?.day!==target?.day||!state?.states.some(s=>s.task.id===active?.taskId&&s.missingMaterialIds.includes(active?.materialId)),activeDay=active?.active&&!active.submitted&&offCore?days.find(d=>d.day===active.day):null,activeTask=activeDay&&inspect(activeDay).day.tasks.find(t=>t.id===active.taskId);
   if(activeTask&&(active.taskId!=='reflection'||inspect(activeDay).summary.remaining>0))add(materialAction(inspect(activeDay).day,activeTask,active.materialId));
   for(const day of days.filter(d=>d.day<placement.startDay)){
@@ -79,7 +86,8 @@ function build(options={}){
   if(blockedReason)add({...base(target,'reflection',null),kind:'blocked',label:'前置证据待补齐',reason:blockedReason});
   else{
    const reflection=state.states.find(s=>s.task.id==='reflection');
-   if((state.errors.length||state.summary.remaining>0)&&reflection)add({...base(target,'reflection',reflection.nextMaterialId),kind:'reflection',label:'先完成错题订正',reason:'真实错误须订正通过，原始尝试和待评状态保留。'});
+   const needsCorrection=state.errors.length||state.summary.remaining>0,missingCore=state.states.some(item=>item.task.id!=='reflection'&&item.missingMaterialIds.length),correction=needsCorrection&&reflection?{...base(target,'reflection',reflection.nextMaterialId),kind:'reflection',label:'先完成错题订正',reason:'真实错误须订正通过，原始尝试和待评状态保留。'}:null;
+   if(correction&&!missingCore)add(correction);
    const active=options.current;
    const activeState=active?.active&&!active.submitted&&active.day===target.day?state.states.find(s=>s.task.id===active.taskId&&s.missingMaterialIds.includes(active.materialId)):null;
    if(activeState)add(materialAction(target,activeState.task,active.materialId));
@@ -91,6 +99,7 @@ function build(options={}){
     for(const id of item.missingMaterialIds)if(!entries.some(e=>e.taskId===item.task.id&&e.materialId===id))add(materialAction(target,item.task,id));
     if(item.pending)add({...base(target,item.task.id,item.pendingMaterialIds?.[0]||item.nextMaterialId),kind:'view',waiting:true,label:'查看待评作品：'+NAMES[item.task.id],reason:'评阅或订正尚未完成，不会当作通过。'});
    }
+   if(correction&&missingCore)add({...correction,label:'最后完成本课错题订正',reason:'先继续本课学习与原稿，错题保留在最后一步统一订正；不会自动清除或记为通过。'});
    if(reflection&&!state.done&&!entries.some(e=>e.kind==='reflection'))add({...base(target,'reflection',reflection.nextMaterialId),kind:state.readiness.ready?'reflection':'blocked',label:state.readiness.ready?'完成本课每日复盘':'复盘等待核心任务与评阅',reason:state.readiness.reason});
   }
  }
@@ -105,7 +114,7 @@ function build(options={}){
  for(let i=0;i<entries.length;i++){const entry=entries[i];if(!entry.placementChallenge)continue;if(entry.startWindowMinutes>challengeRoom+.001){entries.splice(i--,1);continue;}entry.availableOptionalMinutes=challengeRoom;entry.fitsBudget=true;challengeRoom-=entry.startWindowMinutes;}
  const actionable=entries.find(e=>!['blocked','view'].includes(e.kind)),admitted=actionable?.fitsBudget?actionable:null,next=admitted||(!actionable?entries.find(e=>e.kind==='view')||entries[0]:null)||null;
  const deferred=actionable&&!admitted?{kind:'rest',label:'今天到此，休息后下一日继续',reason:'下一学习单元预计需要 '+actionable.startWindowMinutes.toFixed(1)+' 分钟'+(actionable.nextCourseWindow?'（新课至少预留一轮完整专注及必要休息）':'（含计划休息）')+'，今天剩余 '+Math.max(0,budget.remainingMinutes).toFixed(1)+' 分钟不足。队列和未完成草稿已保留；下一日继续。',estimate:actionable.estimate}:null;
- return{budget,entries,placement,next:budget.exhausted?{kind:'budget',label:'今日预算已用完，下一日继续',reason:'队列、草稿和作品保留；下一日恢复360分钟总预算。'}:next||deferred,currentComplete:currentState?.done===true,courseDay:target?.day||null,continuing:!!next&&next.day!==currentDay,pending:state?.states.some(s=>s.pending)||false,reason:blockedReason||(!target?'全部课程已提交，继续核对年度准备度与长期保持证据。':state?.done?'':state?.readiness.reason||'')};
+ return{budget,entries,placement,schedule,historical,next:budget.dayEnded?{kind:'day-ended',label:'今日学习已结束，可恢复今日任务',reason:'未完成任务、草稿和原音按原课程归属保留。误结束时可在番茄钟点击“恢复今日任务”后手动继续，实际已用预算不变；也可下一日续做，不会重复添加任务或记为已完成。'}:budget.exhausted?{kind:'budget',label:'今日预算已用完，下一日继续',reason:'队列、草稿和作品保留；下一日恢复360分钟总预算。'}:next||deferred,currentComplete:currentState?.done===true,courseDay:target?.day||null,continuing:!budget.exhausted&&!!next&&next.day!==currentDay,pending:state?.states.some(s=>s.pending)||false,reason:blockedReason||(!target?'全部课程已提交，继续核对年度准备度与长期保持证据。':state?.done?'':state?.readiness.reason||'')};
 }
-return Object.freeze({build,prediction,placementChallenges,NAMES});
+return Object.freeze({build,prediction,placementChallenges,calendarSchedule,NAMES});
 });

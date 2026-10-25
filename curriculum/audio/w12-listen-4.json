@@ -1,12 +1,65 @@
 {
   "id": "w12-listen-4",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "0ce5d6464271500a64cd3163d0980387958af46ffe17b731fe5e4c68362e1926",
+  "configurationHash": "95fc8b6226b6d11df5dad56164e5d03f05f718cf51ec610366218e3cba98d105",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "0ce5d6464271500a64cd3163d0980387958af46ffe17b731fe5e4c68362e1926",
+    "rate": "-5%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-GB-SoniaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 998,
+        "text": "Last month, my friend and I went to the mountains for a weekend trip. We left early on Saturday morning. The weather was sunny and warm. First, we took a bus to the small town near the mountains. The bus ride was about two hours. After that, we started to walk up the mountain. The path was easy at first, but then it became steep. We walked for three hours and finally reached the top. The view was beautiful. We took many photos. Then we had lunch at a small restaurant near the top. I ate noodles and my friend had rice. After lunch, we walked down the mountain. It started to rain, so we were wet and cold. We were tired but happy. Finally, we took a bus back home. We arrived home at 8 p.m. It was a great trip, and I want to go again next year. But next time, I will take a raincoat. Also, my friend said she wants to come too. We both agree it was a good weekend. The bus ride back was about two hours. We talked about the trip and looked at our photos. It was a long day, but we enjoyed it.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "0ce5d6464271500a64cd3163d0980387958af46ffe17b731fe5e4c68362e1926",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "aa0013ac07c994e81726a63a7e4d43fc7145321b6c62a748feda6465f2ac42f2",
   "voices": [
     "en-GB-SoniaNeural"
   ],
+  "roleVoices": {
+    "narrator": "en-GB-SoniaNeural"
+  },
   "durationSeconds": 73.296,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-5%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 998,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "0ce5d6464271500a64cd3163d0980387958af46ffe17b731fe5e4c68362e1926",
+      "pauseBeforeSeconds": 0,
+      "startSeconds": 0,
+      "endSeconds": 73.296,
+      "durationSeconds": 73.296
+    }
+  ],
+  "origin": "retained-verified-single-segment",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
 }

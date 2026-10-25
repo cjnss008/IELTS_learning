@@ -1,12 +1,65 @@
 {
   "id": "gate-12-A-listening",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "593f733ff98623af99b8d5f1e1c24dd5f6b64150fb0fea1013ac9cdb0b35e251",
+  "configurationHash": "f832a85b3823a3a8bfcb54cc19be4693f6d921ed029efb014f65e67c3ced6e00",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "593f733ff98623af99b8d5f1e1c24dd5f6b64150fb0fea1013ac9cdb0b35e251",
+    "rate": "-5%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-GB-SoniaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 1046,
+        "text": "Last weekend, I went to Suzhou with my friend, Li Ming. Suzhou is a beautiful city near Shanghai, and it is famous for its gardens and silk. We took the train from Shanghai. The trip was about thirty minutes, so it was very quick and easy. We left early in the morning and arrived in Suzhou before lunch. First, we visited the Humble Administrator's Garden. It was very beautiful. The garden was large and quiet, with trees, water, and old buildings. We walked around the garden and took many photos. We also saw many other visitors there. Then, we felt hungry, so we ate lunch at a small restaurant near the garden. The restaurant was clean and the food was good. I had noodles and Li Ming had rice. After that, we went to a silk shop. The shop had many beautiful things, and we bought a silk scarf for my mother. Finally, we went back to the train station. We were tired but very happy. On the train, Li Ming said, \"I want to go again next month.\" I said, \"Me too!\" But then I remembered I have to work next month. So I said, \"Maybe next year.\"",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "593f733ff98623af99b8d5f1e1c24dd5f6b64150fb0fea1013ac9cdb0b35e251",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "020fa9bfadc28466c3f6aae314427ddf31a55d6066f8edb921e39e4fc80acff6",
   "voices": [
     "en-GB-SoniaNeural"
   ],
+  "roleVoices": {
+    "narrator": "en-GB-SoniaNeural"
+  },
   "durationSeconds": 74.976,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-5%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 1046,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "593f733ff98623af99b8d5f1e1c24dd5f6b64150fb0fea1013ac9cdb0b35e251",
+      "pauseBeforeSeconds": 0,
+      "startSeconds": 0,
+      "endSeconds": 74.976,
+      "durationSeconds": 74.976
+    }
+  ],
+  "origin": "retained-verified-single-segment",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
 }

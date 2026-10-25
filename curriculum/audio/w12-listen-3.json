@@ -1,12 +1,65 @@
 {
   "id": "w12-listen-3",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "0391e8127f9f4e810eb0d7e128128446b656fe2be4ecc005b20ca462c4b4fcf3",
+  "configurationHash": "df1f3f5f3e5ea39dafcf39f96523bffef86f7b23bc79e219a8b9f3eb51c6e730",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "0391e8127f9f4e810eb0d7e128128446b656fe2be4ecc005b20ca462c4b4fcf3",
+    "rate": "-5%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-GB-SoniaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 1002,
+        "text": "Last weekend, my friend and I went to Hangzhou. We took the train on Friday evening. The trip was about two hours. We arrived at 8 pm. First, we checked into a small hotel near West Lake. The room was clean but small. After that, we walked to the lake. It was beautiful at night. We saw many lights on the water. Then we found a restaurant and ate dinner. I had noodles, and my friend had rice. Finally, we went back to the hotel and slept. On Saturday morning, we got up early. We rented bikes and rode around the lake. The weather was sunny and warm. We stopped at a tea house and drank Longjing tea. It was very nice. After that, we visited a museum. It was free. We learned about Hangzhou's history. Then we had lunch at a small shop. The food was delicious. Finally, we took a boat on the lake. It was relaxing. On Sunday, we went shopping. I bought a silk scarf for my mother. My friend bought some tea. Then we took the train home. We arrived at 6 pm. I was tired but happy. It was a great trip.",
+        "boundary": "paragraph",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "0391e8127f9f4e810eb0d7e128128446b656fe2be4ecc005b20ca462c4b4fcf3",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "bffc71815e6c61d8311c1bdb81c1675ce48b575820a78b36d8f2ecf643870dda",
   "voices": [
     "en-GB-SoniaNeural"
   ],
+  "roleVoices": {
+    "narrator": "en-GB-SoniaNeural"
+  },
   "durationSeconds": 78.36,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-5%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 1002,
+      "boundary": "paragraph",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "0391e8127f9f4e810eb0d7e128128446b656fe2be4ecc005b20ca462c4b4fcf3",
+      "pauseBeforeSeconds": 0,
+      "startSeconds": 0,
+      "endSeconds": 78.36,
+      "durationSeconds": 78.36
+    }
+  ],
+  "origin": "retained-verified-single-segment",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
 }

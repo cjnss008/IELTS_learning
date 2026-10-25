@@ -9,3 +9,36 @@
 .course-workspace :is(pre,table){max-width:100%}
 .course-feedback{overflow-wrap:anywhere}
 @media(max-width:520px){.course-sidebar #courseTasks{grid-template-columns:1fr}.course-option>span{min-width:0}.course-session-bar>*{min-width:0;max-width:100%}.course-start select{width:100%;margin-right:0}}
+
+
+/* A speaker turn is distinct from a question or a passage section. */
+.course-dialogue-guide{padding:12px 16px;background:#edf5f0;border-left:4px solid #698f7b;border-radius:8px;line-height:1.7}
+.course-dialogue-turn{display:grid;grid-template-columns:minmax(84px,140px) minmax(0,1fr);gap:16px;margin:16px 0;padding:16px 20px;border:1px solid #d6e3da;border-left:4px solid #67917d;border-radius:10px;background:#f4f8f5}
+.course-dialogue-turn[data-speaker="1"]{border-left-color:#7d83b4;background:#f5f5fb}
+.course-dialogue-turn[data-speaker="2"]{border-left-color:#ad8750;background:#fcf8f0}
+.course-dialogue-turn[data-speaker="3"]{border-left-color:#708d9d;background:#f1f7fa}
+.course-dialogue-turn .course-dialogue-speaker{font-size:.9em;line-height:1.8}
+.course-dialogue-turn p{margin:0;min-width:0;overflow-wrap:anywhere}
+@media(max-width:600px){.course-dialogue-turn{grid-template-columns:1fr;gap:6px;padding:12px 14px}}
+
+/* Keep the original passage and question nodes together without cloning selectable text. */
+.course-reading-workspace,.course-reading-pane{min-width:0}
+.course-reading-pane-heading{font-size:14px!important;margin:0 0 12px!important;color:var(--green)}
+.course-reading-workspace[data-reading="true"] .course-reading-pane{overflow-wrap:anywhere}
+.course-reading-workspace[data-reading="true"] .course-reading-pane:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media(min-width:1100px) and (min-height:540px){
+  .course-reading-workspace[data-reading="true"]{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;height:70vh;height:70dvh;max-height:820px;min-height:320px;margin-top:18px}
+  .course-reading-workspace[data-reading="true"]>.course-reading-pane{min-height:0;overflow-y:auto;overscroll-behavior-y:contain;scrollbar-gutter:stable;padding:16px;border:1px solid var(--line);border-radius:10px;background:#fffefa}
+  .course-reading-workspace[data-reading="true"]>#coursePassagePane{position:sticky;top:16px}
+  .course-reading-workspace[data-reading="true"] #courseQuestions{margin-top:0}
+  .course-reading-workspace[data-reading="true"] .course-question:first-child{margin-top:0}
+  .course-reading-workspace[data-reading="true"] #coursePassage>.course-reading-note{margin-top:0}
+}
+@media(max-width:1099px),(max-height:539px){
+  .course-reading-workspace[data-reading="true"]>#courseQuestionsPane{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+}
+@media print{
+  .course-reading-workspace[data-reading="true"]{display:block;height:auto;max-height:none;min-height:0}
+  .course-reading-workspace[data-reading="true"]>.course-reading-pane{position:static!important;overflow:visible;max-height:none}
+}
+.today-course-calendar:empty{display:none}.today-course-calendar{margin:16px 0;padding:12px 16px;border:1px solid #b8d0c0;border-radius:10px;background:#eef7f0}.today-course-calendar p{margin:0 0 10px;line-height:1.65}.today-course-calendar p:last-child{margin-bottom:0}.today-calendar-start{width:100%;font-size:clamp(18px,2vw,21px);font-weight:700;padding:13px 16px}.today-course-calendar details{margin-top:12px}.today-course-calendar summary{cursor:pointer;font-weight:700}.today-course-calendar details button{display:block;margin-top:8px;max-width:100%;white-space:normal}

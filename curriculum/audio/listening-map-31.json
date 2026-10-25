@@ -1,12 +1,232 @@
 {
   "id": "listening-map-31",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "eedbd31969075f14397fe3863ce0d53cdd6f8ef4212f1361864530d75426ce6d",
+  "configurationHash": "557211e1ec64aadda38b0863c54aedaaa6a0b7a5d6df2a635653315bb95d7d9c",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "eedbd31969075f14397fe3863ce0d53cdd6f8ef4212f1361864530d75426ce6d",
+    "rate": "+0%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "guide": "en-US-AriaNeural",
+      "narrator": "en-US-JennyNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 0,
+        "sourceEnd": 7
+      }
+    ],
+    "segments": [
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 7,
+        "sourceEnd": 359,
+        "text": "Welcome to Willow Science Park. The plan shows north at the top. You enter from the west, on the left of the page. Walk east along the main path until you reach the clock. This is the first junction. There is another junction farther east, marked by a fountain. Paths connect these two junctions around both the northern and southern edges of the park.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "e35636ec912ab8e14813e07af9c1ddf5c8aa9add2d2096bb28532ae9ed915738",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 361,
+        "sourceEnd": 583,
+        "text": "We will begin at the local history gallery. From the clock, turn left and walk north to the corner. The gallery is immediately on your left, at the western end of the northern path. Do not continue east before entering it.",
+        "boundary": "paragraph",
+        "voice": "en-US-JennyNeural",
+        "textHash": "475b0654702d4130dba6707c45b5477a58eb45c1f0f93f449af46ff3168c4a73",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 585,
+        "sourceEnd": 974,
+        "text": "Next is the greenhouse. Leave the gallery and walk east along the northern path. Halfway between the two northern corners, the greenhouse is on your left, on the north side of the path. The bird observation room is farther along: continue east to the next corner, where its doorway is straight ahead of you, on the east side. The greenhouse and the observation room are separate buildings.",
+        "boundary": "paragraph",
+        "voice": "en-US-JennyNeural",
+        "textHash": "c8f9ccf483b7d8b9849ae6401af04aeab77034dfaff2d0c352dfefb6d6922e8f",
+        "pauseBeforeSeconds": 0.8
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 976,
+        "sourceEnd": 1319,
+        "text": "To reach the water testing workshop from the observation room, return to that corner and turn south. Follow the eastern path past the fountain without turning onto the main path. At the southern corner, the workshop is on your left, to the east. This route avoids the pond, which lies north of the main path between the clock and the fountain.",
+        "boundary": "paragraph",
+        "voice": "en-US-JennyNeural",
+        "textHash": "23e8d17b45310565a5e9323151eda2842a9bc9b36466d078f2c3790db7c0507a",
+        "pauseBeforeSeconds": 0.8
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 1321,
+        "sourceEnd": 1591,
+        "text": "After the workshop, take the southern path west. Halfway along, the cafe is on your left, south of the path. Continue west to the next corner and you will find the equipment desk straight ahead, on the western side. Return borrowed binoculars there, not at the workshop.",
+        "boundary": "paragraph",
+        "voice": "en-US-JennyNeural",
+        "textHash": "385d95e2e8e94a997a3665d76afbd2e180e5ea52467b5d824ec0625147c512aa",
+        "pauseBeforeSeconds": 0.8
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 1593,
+        "sourceEnd": 2008,
+        "text": "You can follow the same eastern path directly from the observation room to the workshop; there is no need to return to the clock. One final rule: bicycles must be left outside the west entrance. Walking a bicycle around the park is not permitted either, because the paths are narrow. Wheelchair users are welcome on all the paths shown. Please keep these paths clear, and use the west entrance again when you leave.",
+        "boundary": "paragraph",
+        "voice": "en-US-JennyNeural",
+        "textHash": "8a2052fd2e443fdfe32f3d90d8082f382e42b972ac26aabb3df30cdedc378fdc",
+        "pauseBeforeSeconds": 0.8
+      }
+    ]
+  },
+  "audioHash": "085dcbdeb25f1922b6f00a1c4ecbc1c3c0054cd535ba71fd1ba04fe5ab614ff7",
   "voices": [
-    "en-US-AriaNeural"
+    "en-US-AriaNeural",
+    "en-US-JennyNeural"
   ],
-  "durationSeconds": 132.264,
+  "roleVoices": {
+    "guide": "en-US-AriaNeural",
+    "narrator": "en-US-JennyNeural"
+  },
+  "durationSeconds": 129.0425,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "+0%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 7,
+      "sourceEnd": 359,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
+      "textHash": "e35636ec912ab8e14813e07af9c1ddf5c8aa9add2d2096bb28532ae9ed915738",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "6dab7217a37803e2398c0ff9e855e61866914f7b4f5aac9827f3ed6837fb41b0",
+      "groupAudioHash": "345d197cde0e56553bf1f97a4ba946e80cbbf0bbd1fa9a66dcb3620dcdf203e4",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 23.895,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 23.775,
+      "startSeconds": 0.0,
+      "endSeconds": 23.855,
+      "durationSeconds": 23.855
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 361,
+      "sourceEnd": 583,
+      "boundary": "paragraph",
+      "voice": "en-US-JennyNeural",
+      "textHash": "475b0654702d4130dba6707c45b5477a58eb45c1f0f93f449af46ff3168c4a73",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "42076d484e5666e43963ffae57eeae631308ca3db064579beaab5167fe44defe",
+      "groupAudioHash": "36109e0693af0bd38b4189b7d1d846cebd24c6b0de69a51c3b3be7ef1a58d80f",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 14.3575,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 14.2375,
+      "startSeconds": 24.505,
+      "endSeconds": 38.8225,
+      "durationSeconds": 14.317499999999999
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 585,
+      "sourceEnd": 974,
+      "boundary": "paragraph",
+      "voice": "en-US-JennyNeural",
+      "textHash": "c8f9ccf483b7d8b9849ae6401af04aeab77034dfaff2d0c352dfefb6d6922e8f",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "42076d484e5666e43963ffae57eeae631308ca3db064579beaab5167fe44defe",
+      "groupAudioHash": "36109e0693af0bd38b4189b7d1d846cebd24c6b0de69a51c3b3be7ef1a58d80f",
+      "groupStartSeconds": 15.04,
+      "groupEndSeconds": 38.9575,
+      "wordStartSeconds": 15.1,
+      "wordEndSeconds": 38.8375,
+      "startSeconds": 39.6225,
+      "endSeconds": 63.54,
+      "durationSeconds": 23.917499999999997
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 976,
+      "sourceEnd": 1319,
+      "boundary": "paragraph",
+      "voice": "en-US-JennyNeural",
+      "textHash": "23e8d17b45310565a5e9323151eda2842a9bc9b36466d078f2c3790db7c0507a",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "42076d484e5666e43963ffae57eeae631308ca3db064579beaab5167fe44defe",
+      "groupAudioHash": "36109e0693af0bd38b4189b7d1d846cebd24c6b0de69a51c3b3be7ef1a58d80f",
+      "groupStartSeconds": 39.64,
+      "groupEndSeconds": 60.3075,
+      "wordStartSeconds": 39.7,
+      "wordEndSeconds": 60.1875,
+      "startSeconds": 64.34,
+      "endSeconds": 85.0075,
+      "durationSeconds": 20.66749999999999
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 1321,
+      "sourceEnd": 1591,
+      "boundary": "paragraph",
+      "voice": "en-US-JennyNeural",
+      "textHash": "385d95e2e8e94a997a3665d76afbd2e180e5ea52467b5d824ec0625147c512aa",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "42076d484e5666e43963ffae57eeae631308ca3db064579beaab5167fe44defe",
+      "groupAudioHash": "36109e0693af0bd38b4189b7d1d846cebd24c6b0de69a51c3b3be7ef1a58d80f",
+      "groupStartSeconds": 60.99,
+      "groupEndSeconds": 78.42,
+      "wordStartSeconds": 61.05,
+      "wordEndSeconds": 78.3,
+      "startSeconds": 85.8075,
+      "endSeconds": 103.2375,
+      "durationSeconds": 17.429999999999993
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 1593,
+      "sourceEnd": 2008,
+      "boundary": "paragraph",
+      "voice": "en-US-JennyNeural",
+      "textHash": "8a2052fd2e443fdfe32f3d90d8082f382e42b972ac26aabb3df30cdedc378fdc",
+      "pauseBeforeSeconds": 0.8,
+      "groupConfigurationHash": "42076d484e5666e43963ffae57eeae631308ca3db064579beaab5167fe44defe",
+      "groupAudioHash": "36109e0693af0bd38b4189b7d1d846cebd24c6b0de69a51c3b3be7ef1a58d80f",
+      "groupStartSeconds": 79.1025,
+      "groupEndSeconds": 104.1075,
+      "wordStartSeconds": 79.1625,
+      "wordEndSeconds": 103.9875,
+      "startSeconds": 104.0375,
+      "endSeconds": 129.0425,
+      "durationSeconds": 25.004999999999995
+    }
+  ],
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

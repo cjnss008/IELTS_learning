@@ -5,8 +5,8 @@ function audit(rootDir=path.resolve(__dirname,'..')){
  const expected=new Map(),problems=[],counts={sources:0,sourceSegments:0,uniqueSegments:0,readyFiles:0,bytes:0,durationSeconds:0,lostWords:0,isolatedMarkers:0,overWordLimit:0,missingIndex:0,missingSourceLinks:0,hashErrors:0,missingFiles:0,sizeErrors:0,durationErrors:0,audioHeaderErrors:0,mapErrors:0};
  for(const material of data.materials.filter(m=>m.skill==='speaking'&&m.pool==='training')){
   const reading=data.materials.find(m=>m.id===material.id.replace(/-speaking$/,''));if(!reading?.passage)continue;counts.sources++;
-  const parts=oral.splitReference(reading.passage,65);counts.sourceSegments+=parts.length;
-  if(parts.join(' ').trim().replace(/\s+/g,' ')!==reading.passage.trim().replace(/\s+/g,' ')){counts.lostWords++;problems.push('Source words differ: '+material.id);}
+  const parts=oral.spokenReferenceParts(reading.passage,65);counts.sourceSegments+=parts.length;
+  if(parts.join(' ').trim().replace(/\s+/g,' ')!==oral.spokenText(reading.passage).trim().replace(/\s+/g,' ')){counts.lostWords++;problems.push('Spoken source words differ: '+material.id);}
   parts.forEach((reference,segmentIndex)=>{if(/^[A-Z]\.?$/.test(reference))counts.isolatedMarkers++;if(reference.split(/\s+/).length>65)counts.overWordLimit++;if(!expected.has(reference))expected.set(reference,[]);expected.get(reference).push({materialId:material.id,readingId:reading.id,segmentIndex});});
  }
  counts.uniqueSegments=expected.size;const entries=new Map(index.segments.map(e=>[e.reference,e])),plannedFiles=new Set();

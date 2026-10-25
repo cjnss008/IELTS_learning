@@ -119,11 +119,19 @@
       "type": "fill",
       "prompt": "C 段介绍的老师叫什么？从原文填写称呼和姓氏，共两个英文词。",
       "answers": [
-        "Mr. Wang"
+        "Mr. Wang",
+        "Mr Wang"
       ],
       "maxWords": 2,
-      "explanation": "C 段用 This is 后的称呼和姓氏介绍老师。",
-      "evidence": "This is Mr. Wang."
+      "explanation": "C 段用 This is 后的称呼和姓氏介绍老师。Mr. Wang 和英式常用写法 Mr Wang 都接受；称呼后的缩写点不改变身份。",
+      "evidence": "This is Mr. Wang.",
+      "answerAliases": [
+        {
+          "value": "Mr Wang",
+          "source": "Mr. Wang",
+          "kind": "title-punctuation"
+        }
+      ]
     }
   ],
   "vocabulary": [
@@ -253,9 +261,9 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-25 Codex 浏览器走查补充 Mr Wang 称呼缩写点等价答案，保留原文与历史原稿。",
     "model": "deepseek-flash",
-    "contentHash": "da35396fb093f8257f109f3610e327aba6f572470dca0a56873779d43a4ff420",
+    "contentHash": "94909d1773db245c165b322ced275bac452b9bb27bfd857f6f8acec2a6db0dca",
     "contentHashFields": [
       "title",
       "instructions",

@@ -59,7 +59,7 @@
   function install(options = {}) {
     const target = options.root || root.document, doc = target?.nodeType === 9 ? target : target?.ownerDocument || root.document;
     if (!doc?.createElement || !Dictionary) return {destroy() {},hide() {},lookup:() => null};
-    const host = doc.defaultView || root, lexical = createLookup(options), listeners = [];
+    const host = doc.defaultView || root, lexical = createLookup(options), listeners = [], autoErrors = new Map();
     let open = null, candidate = null, timer = null, hideTimer = null, generation = 0, destroyed = false, assessment = false, vocabularyTesting = false;
     const popup = doc.createElement('aside'); popup.className = 'word-hover-popup'; popup.hidden = true;
     popup.setAttribute('role','dialog'); popup.setAttribute('aria-label','英文词义'); popup.setAttribute('data-word-hover-popup','true');
@@ -99,8 +99,18 @@
     function show(item) {
       if (destroyed || assessment || vocabularyTesting || !Dictionary.validWord(item.word)) return;
       clearTimers(); generation++; open = item; popup.hidden = false;
-      render(lexical.lookup(item.word,item.context,item.level,item.materialId),item);
+      const value=lexical.lookup(item.word,item.context,item.level,item.materialId),key=JSON.stringify([Dictionary.normalize(item.word),item.context,item.level,item.materialId]);
+      render(value,item,autoErrors.get(key));
       if (item.keyboard) popup.querySelector('button')?.focus?.();
+      if(options.autoEnrich===true&&!value.complete&&(options.lookupAI||options.lookup)&&!autoErrors.has(key)){
+        const token=generation,message=node('p','word-hover-status','正在查询音标、中文含义和例句……');message.setAttribute('role','status');popup.append(message);position(item.rect);
+        lexical.enrich(item.word,item.context,item.level,item.materialId).then(result=>{
+          if(destroyed||token!==generation||open!==item)return;render(result,item);if(item.keyboard)popup.querySelector('button')?.focus?.();
+        }).catch(error=>{
+          const text='暂未查询成功：'+error.message+'。可点击“AI 补全词条”重试。';if(autoErrors.size>=MAX_CACHE)autoErrors.delete(autoErrors.keys().next().value);autoErrors.set(key,text);
+          if(!destroyed&&token===generation&&open===item)message.textContent=text;
+        });
+      }
     }
     function contextualize(item) {
       const paragraph = item.element?.closest?.('[data-ai-reading],p,li,td,th,article,section') || item.element;
@@ -141,7 +151,7 @@
     listen(doc,'scroll',hide,{capture:true,passive:true});
     listen(host,'resize',hide,{passive:true});
     listen(host,'blur',hide);
-    listen(host,'ielts:profile-changed',() => { hide(); lexical.clear(); });
+    listen(host,'ielts:profile-changed',() => { hide(); lexical.clear(); autoErrors.clear(); });
     listen(host,'ielts:assessment-mode',event => { assessment = event.detail?.active === true; hide(); });
     listen(host,'ielts:vocabulary-testing',event => { vocabularyTesting = event.detail?.active === true; hide(); });
     listen(popup,'pointerenter',() => { if (hideTimer) host.clearTimeout(hideTimer); hideTimer = null; });

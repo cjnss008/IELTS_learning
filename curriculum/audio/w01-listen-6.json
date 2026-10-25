@@ -1,13 +1,264 @@
 {
   "id": "w01-listen-6",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v68-3",
   "transcriptHash": "f5c7b7a9b2dd9144b3ba197cb21a0f9a52f0c9d76049920b295d12397d4c6a12",
+  "configurationHash": "a707ca3b8bada2907968eaf19d787aec093b16d43e0375dc882622a383ae8f7e",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "transcriptHash": "f5c7b7a9b2dd9144b3ba197cb21a0f9a52f0c9d76049920b295d12397d4c6a12",
+    "rate": "-15%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "a": "en-GB-SoniaNeural",
+      "b": "en-GB-RyanNeural",
+      "narrator": "en-GB-LibbyNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 0,
+        "sourceEnd": 3
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 32,
+        "sourceEnd": 35
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 83,
+        "sourceEnd": 86
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 136,
+        "sourceEnd": 139
+      },
+      {
+        "label": "A",
+        "role": "a",
+        "sourceStart": 200,
+        "sourceEnd": 203
+      },
+      {
+        "label": "B",
+        "role": "b",
+        "sourceStart": 248,
+        "sourceEnd": 251
+      }
+    ],
+    "segments": [
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 3,
+        "sourceEnd": 31,
+        "text": "Hello. I am Li. Are you Tom?",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "d632bda92e2f017286d55c0150db7424d806b30c0cedc7ff718245d3000faaeb",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 35,
+        "sourceEnd": 82,
+        "text": "No, I am not Tom. I am Anna. Are you a student?",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "9e2c382f19b8afa1872a7fb8ffb95fd06c7ea46d027dc32800567ea153848ac2",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 86,
+        "sourceEnd": 135,
+        "text": "Yes, I am. I am a new student. You are a teacher.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "05a63d08591bfdb6ec60a215acd3bc25067750452ce982998b276438f49c63c1",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 139,
+        "sourceEnd": 199,
+        "text": "No, I am not a teacher. I am a student too. We are students.",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "f9944f56cbaca2f1c3ad716f4ad6257a0366bb886b21683dede28cad966144f4",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "a",
+        "speaker": "A",
+        "sourceStart": 203,
+        "sourceEnd": 247,
+        "text": "Good. I am Li. You are Anna. We are friends.",
+        "boundary": "turn",
+        "voice": "en-GB-SoniaNeural",
+        "textHash": "ff9bb86d7a1eef160518d536a4204d80c776d532a72252f4967b81db888cc3f3",
+        "pauseBeforeSeconds": 0.65
+      },
+      {
+        "role": "b",
+        "speaker": "B",
+        "sourceStart": 251,
+        "sourceEnd": 271,
+        "text": "Yes. We are friends.",
+        "boundary": "turn",
+        "voice": "en-GB-RyanNeural",
+        "textHash": "8413e86ee4c3f0ae1658ef17fb0ce0c0783ff63fc021b868955cf57aaa0e117b",
+        "pauseBeforeSeconds": 0.65
+      }
+    ]
+  },
+  "audioHash": "afd58b8d0b6ea96e6203ad9de5d97621f6970caadcb0a848d23017320bb9d1b0",
   "voices": [
     "en-GB-SoniaNeural",
     "en-GB-RyanNeural"
   ],
-  "durationSeconds": 33.936,
+  "roleVoices": {
+    "a": "en-GB-SoniaNeural",
+    "b": "en-GB-RyanNeural",
+    "narrator": "en-GB-LibbyNeural"
+  },
+  "durationSeconds": 33.20725,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-15%",
-  "note": "原创学习材料合成音频；不同音色/口音，不是真人录音。"
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
+  "segments": [
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 3,
+      "sourceEnd": 31,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "d632bda92e2f017286d55c0150db7424d806b30c0cedc7ff718245d3000faaeb",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "c67717a03fbe05f882e06db449140ae0bf25e9257b0d60c53cad7ac42377a3d0",
+      "groupAudioHash": "c694f808d3dcb47719f58657a98c457d2475c0b0b4f75f1504aac6af57165441",
+      "groupStartSeconds": 0.07825,
+      "groupEndSeconds": 3.722958333333333,
+      "wordStartSeconds": 0.13825,
+      "wordEndSeconds": 3.602958,
+      "startSeconds": 0.0,
+      "endSeconds": 3.6447083333333334,
+      "durationSeconds": 3.6447083333333334
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 35,
+      "sourceEnd": 82,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "9e2c382f19b8afa1872a7fb8ffb95fd06c7ea46d027dc32800567ea153848ac2",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "e8e19a7f1f55813d7ec936af1b2258d08cabac3e9690b9acbd92725551ae5722",
+      "groupAudioHash": "14ff20de0dfa291c9327a66181dc701189e39dba2fdc3e3ff13b22d3936154ff",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 6.00825,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 5.888249,
+      "startSeconds": 4.294708333333333,
+      "endSeconds": 10.262958333333334,
+      "durationSeconds": 5.96825
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 86,
+      "sourceEnd": 135,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "05a63d08591bfdb6ec60a215acd3bc25067750452ce982998b276438f49c63c1",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "c67717a03fbe05f882e06db449140ae0bf25e9257b0d60c53cad7ac42377a3d0",
+      "groupAudioHash": "c694f808d3dcb47719f58657a98c457d2475c0b0b4f75f1504aac6af57165441",
+      "groupStartSeconds": 3.9627916666666665,
+      "groupEndSeconds": 9.37,
+      "wordStartSeconds": 4.022791,
+      "wordEndSeconds": 9.249999,
+      "startSeconds": 10.912958333333334,
+      "endSeconds": 16.320166666666665,
+      "durationSeconds": 5.407208333333331
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 139,
+      "sourceEnd": 199,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "f9944f56cbaca2f1c3ad716f4ad6257a0366bb886b21683dede28cad966144f4",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "e8e19a7f1f55813d7ec936af1b2258d08cabac3e9690b9acbd92725551ae5722",
+      "groupAudioHash": "14ff20de0dfa291c9327a66181dc701189e39dba2fdc3e3ff13b22d3936154ff",
+      "groupStartSeconds": 6.842958333333334,
+      "groupEndSeconds": 13.552375,
+      "wordStartSeconds": 6.902958,
+      "wordEndSeconds": 13.432374,
+      "startSeconds": 16.970166666666668,
+      "endSeconds": 23.679583333333333,
+      "durationSeconds": 6.709416666666666
+    },
+    {
+      "role": "a",
+      "speaker": "A",
+      "sourceStart": 203,
+      "sourceEnd": 247,
+      "boundary": "turn",
+      "voice": "en-GB-SoniaNeural",
+      "textHash": "ff9bb86d7a1eef160518d536a4204d80c776d532a72252f4967b81db888cc3f3",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "c67717a03fbe05f882e06db449140ae0bf25e9257b0d60c53cad7ac42377a3d0",
+      "groupAudioHash": "c694f808d3dcb47719f58657a98c457d2475c0b0b4f75f1504aac6af57165441",
+      "groupStartSeconds": 9.631166666666667,
+      "groupEndSeconds": 14.884708333333334,
+      "wordStartSeconds": 9.691166,
+      "wordEndSeconds": 14.764707,
+      "startSeconds": 24.329583333333332,
+      "endSeconds": 29.583125,
+      "durationSeconds": 5.253541666666667
+    },
+    {
+      "role": "b",
+      "speaker": "B",
+      "sourceStart": 251,
+      "sourceEnd": 271,
+      "boundary": "turn",
+      "voice": "en-GB-RyanNeural",
+      "textHash": "8413e86ee4c3f0ae1658ef17fb0ce0c0783ff63fc021b868955cf57aaa0e117b",
+      "pauseBeforeSeconds": 0.65,
+      "groupConfigurationHash": "e8e19a7f1f55813d7ec936af1b2258d08cabac3e9690b9acbd92725551ae5722",
+      "groupAudioHash": "14ff20de0dfa291c9327a66181dc701189e39dba2fdc3e3ff13b22d3936154ff",
+      "groupStartSeconds": 14.387041666666667,
+      "groupEndSeconds": 17.361166666666666,
+      "wordStartSeconds": 14.447041,
+      "wordEndSeconds": 17.241166,
+      "startSeconds": 30.233125,
+      "endSeconds": 33.20725,
+      "durationSeconds": 2.974125000000001
+    }
+  ],
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }
