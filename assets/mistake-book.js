@@ -176,7 +176,7 @@
     const evaluationValue=record?.evaluation||{},review=decoded(evaluationValue.feedback)||artifact?.review,original=normalize(artifact?(record.skill==='speaking'?artifact.transcript:artifact.text)||record.answer:record?.answer),grounded=quote=>typeof quote==='string'&&normalize(quote)&&original.includes(normalize(quote));
     if(evaluationValue.result==='revise')return true;
     if(evaluationValue.method==='objective'&&Number.isFinite(evaluationValue.score)&&Number.isFinite(evaluationValue.maxScore)&&evaluationValue.maxScore>0&&evaluationValue.score<evaluationValue.maxScore)return true;
-    return Array.isArray(review?.rounds)&&review.rounds.some(round=>round?.ok===true&&(round.levelCheck?.meetsGoal===false&&round.levelCheck.evidence?.some(e=>grounded(e.quote))||Array.isArray(round.corrections)&&round.corrections.some(c=>grounded(c.original)&&typeof c.revised==='string'&&c.revised.trim()&&normalize(c.original)!==normalize(c.revised))));
+    return Array.isArray(review?.rounds)&&review.rounds.some(round=>round?.ok===true&&(round.levelCheck?.meetsGoal===false&&round.levelCheck.evidence?.some(e=>grounded(e.quote))||Array.isArray(round.corrections)&&round.corrections.some(c=>c&&grounded(c.original)&&typeof c.revised==='string'&&c.revised.trim()&&typeof c.reason==='string'&&c.reason.trim()&&normalize(c.original)!==normalize(c.revised))));
   }
   function captureInputs(record,options={}){
     if(!record||!Number.isInteger(record.dayNumber)||record.dayNumber<1||record.dayNumber>365||record.source==='mistake-review'||record.skill==='reflection')return[];
