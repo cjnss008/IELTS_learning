@@ -130,7 +130,8 @@ test('local AI service integration and credential boundaries', async t => {
     assert.match(await page.text(), /今日学习页面/);
     const health = await api('/api/health');
     assert.equal(health.status, 200);
-    assert.deepEqual(health.data, { ok: true, service: 'ielts-learning-local', version: '0.0.21', home: '/' });
+    assert.equal(health.data.ok, true); assert.equal(health.data.service, 'ielts-learning-local'); assert.equal(health.data.version, '0.0.21'); assert.equal(health.data.home, '/');
+    assert.equal(health.data.runtimeSchema, 1); assert.match(health.data.buildSignature, /^sha256:[a-f0-9]{64}$/); assert.match(health.data.projectId, /^sha256:[a-f0-9]{64}$/); assert.equal(health.data.pid, process.pid);
     const alias = await fetch(base + '/学习课程.html?day=12&material=reading-one', { redirect: 'manual' });
     assert.equal(alias.status, 302);
     assert.equal(alias.headers.get('location'), '/?day=12&material=reading-one');

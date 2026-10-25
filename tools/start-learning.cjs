@@ -4,6 +4,7 @@ const path = require('node:path');
 const fs = require('node:fs');
 const { spawn } = require('node:child_process');
 const { DEFAULT_PORT, createServer, closeOnSignals } = require('../server/server.cjs');
+const { readProjectRuntime, PROJECT_ROOT } = require('../server/runtime-version.cjs');
 const HOST = '127.0.0.1', SERVICE = 'ielts-learning-local';
 
 class LauncherError extends Error {
@@ -17,10 +18,20 @@ function parsePort(value) {
 function serviceURL(port) { return 'http://' + HOST + ':' + parsePort(port) + '/'; }
 function occupiedError(port) { return new LauncherError('PORT_IN_USE', '端口' + port + '已被其他服务或未响应的程序占用，不能启动本学习包。请关闭占用该端口的程序，或设置其他IELTS_PORT后重试。不会重复启动服务。'); }
 
+function classifyHealth(value, expected) {
+  if (value?.ok !== true || value.service !== SERVICE || value.home !== '/' || typeof value.version !== 'string' || !value.version || value.version.length > 80) return { state: 'occupied', reason: 'DIFFERENT_SERVICE' };
+  if (value.projectId && value.projectId !== expected.projectId) return { state: 'occupied', reason: 'OTHER_PROJECT' };
+  const runtime = Object.fromEntries(['version', 'runtimeSchema', 'buildSignature', 'projectId', 'instanceId', 'startedAt', 'pid'].filter(key => Object.hasOwn(value, key)).map(key => [key, value[key]]));
+  const complete = value.runtimeSchema === 1 && /^sha256:[a-f0-9]{64}$/.test(value.buildSignature || '') && value.projectId === expected.projectId && /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(value.instanceId || '') && typeof value.startedAt === 'string' && !Number.isNaN(Date.parse(value.startedAt)) && Number.isSafeInteger(value.pid) && value.pid > 0;
+  if (!complete) return { state: 'stale', reason: 'MISSING_RUNTIME', ...runtime };
+  return { state: value.version === expected.version && value.buildSignature === expected.buildSignature ? 'ready' : 'stale', ...runtime };
+}
+
 // A TCP connection by itself does not establish that this is our learning app.
 // A redirect, invalid JSON, old/unrelated endpoint, or hung peer is occupied.
 function probeService(port, options = {}) {
   const requestImpl = options.request || http.request, timeoutMs = options.timeoutMs || 1500;
+  const expected = options.expectedRuntime || readProjectRuntime();
   return new Promise(resolve => {
     let settled = false, request;
     const finish = value => { if (!settled) { settled = true; resolve(value); } };
@@ -33,7 +44,7 @@ function probeService(port, options = {}) {
         response.once('end', () => {
           if (settled) return;
           let value; try { value = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch (_) {}
-          if (response.statusCode === 200 && value?.ok === true && value.service === SERVICE && value.home === '/' && typeof value.version === 'string' && value.version.length > 0 && value.version.length <= 80) finish({ state: 'ready', version: value.version });
+          if (response.statusCode === 200) finish(classifyHealth(value, expected));
           else finish({ state: 'occupied', reason: 'DIFFERENT_SERVICE' });
         });
       });
@@ -41,6 +52,37 @@ function probeService(port, options = {}) {
       request.setTimeout(timeoutMs, () => { finish({ state: 'occupied', reason: 'HEALTH_TIMEOUT' }); request.destroy(); });
       request.end();
     } catch (_) { finish({ state: 'occupied', reason: 'HEALTH_FAILED' }); request?.destroy(); }
+  });
+}
+
+function restartError(port, reason = 'RESTART_UNVERIFIED') {
+  const busy = reason === 'RESTART_BUSY';
+  return new LauncherError(busy ? 'RESTART_BUSY' : 'RESTART_UNVERIFIED', busy ? '另一启动窗口正在更新端口' + port + '的服务，请稍候再双击“启动学习.cmd”。' : '检测到旧版后台服务，但无法安全确认端口' + port + '只属于这份学习包（' + reason + '）。为保护其他程序，未强制结束任何未经确认的服务。请关闭另一份学习包的启动窗口后重试；若没有启动窗口，请重新启动这台电脑，再双击“启动学习.cmd”。浏览器中的未保存输入继续保留。');
+}
+
+function restartService(port, options = {}) {
+  const platform = options.platform || process.platform;
+  if (platform !== 'win32') return Promise.reject(restartError(port, 'WINDOWS_RESTART_REQUIRED'));
+  const expected = options.expectedRuntime || readProjectRuntime(), spawnImpl = options.spawn || spawn;
+  const helper = path.join(PROJECT_ROOT, 'tools', 'restart-learning-service.ps1');
+  const executable = path.join(process.env.SystemRoot || 'C:\\Windows', 'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe');
+  const launcherPath = fs.realpathSync(options.launcherPath || __filename);
+  const args = ['-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', helper, '-Port', String(parsePort(port)), '-LauncherPath', launcherPath, '-Version', expected.version, '-BuildSignature', expected.buildSignature, '-ProjectId', expected.projectId];
+  return new Promise((resolve, reject) => {
+    let child, output = '', settled = false;
+    const finish = (error, result) => { if (settled) return; settled = true; clearTimeout(timer); error ? reject(error) : resolve(result); };
+    let timer;
+    try { child = spawnImpl(executable, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] }); }
+    catch (_) { finish(restartError(port)); return; }
+    timer = setTimeout(() => { child.kill(); finish(restartError(port, 'RESTART_TIMEOUT')); }, options.timeoutMs || 45000);
+    child.stdout.on('data', bytes => { output += bytes.toString('utf8'); if (output.length > 16384) { child.kill(); finish(restartError(port)); } });
+    child.stderr.on('data', () => {});
+    child.once('error', () => finish(restartError(port)));
+    child.once('close', code => {
+      let result; try { result = JSON.parse(output.trim()); } catch (_) {}
+      if (code === 0 && ['current', 'stopped', 'absent'].includes(result?.state)) finish(null, result);
+      else finish(restartError(port, /^[A-Z_]+$/.test(result?.code || '') ? result.code : 'RESTART_UNVERIFIED'));
+    });
   });
 }
 
@@ -94,11 +136,21 @@ function openBrowser(url, options = {}) {
 
 async function launch(options = {}) {
   const port = parsePort(options.port ?? process.env.IELTS_PORT), url = serviceURL(port);
-  const probe = options.probe || (port => probeService(port, { timeoutMs: options.probeTimeoutMs }));
+  const expectedRuntime = options.expectedRuntime || readProjectRuntime();
+  const probe = options.probe || (port => probeService(port, { timeoutMs: options.probeTimeoutMs, expectedRuntime }));
   const start = options.start || startDetached, open = options.open || openBrowser;
   const sleep = options.sleep || (ms => new Promise(resolve => setTimeout(resolve, ms)));
   const pollMs = options.pollMs || 250, maxPolls = options.maxPolls || 60;
-  let status = await probe(port), reused = status.state === 'ready';
+  let status = await probe(port), reused = status.state === 'ready', upgraded = false;
+  if (status.state === 'stale') {
+    options.report?.('检测到旧版后台服务，正在核实本机进程并安全更新，请稍候。浏览器原稿继续保留。');
+    const restarted = await (options.restart || restartService)(port, { expectedRuntime });
+    upgraded = restarted?.state === 'stopped';
+    status = await probe(port); reused = status.state === 'ready';
+    // Each double click makes at most one restart attempt. If files changed
+    // during startup, never enter a loop that could kill the new service.
+    if (status.state === 'stale') throw new LauncherError('RUNTIME_STALE', '后台仍在运行不同版本，请等待学习包文件升级完成后重新双击“启动学习.cmd”。浏览器原稿继续保留。');
+  }
   if (status.state === 'occupied') throw occupiedError(port);
   if (!reused) {
     if (status.state !== 'absent') throw new LauncherError('HEALTH_FAILED', '未能确认本机学习服务状态，请稍后重试。');
@@ -107,6 +159,7 @@ async function launch(options = {}) {
       await sleep(pollMs); status = await probe(port);
       if (status.state === 'ready') break;
       if (status.state === 'occupied') throw occupiedError(port);
+      if (status.state === 'stale') throw new LauncherError('RUNTIME_CHANGED', '服务启动期间学习包发生更新，请完成文件更新后重新双击“启动学习.cmd”。浏览器原稿继续保留。');
       // Check health first: a simultaneous double click may have started the
       // single owning service while this helper lost the listen race.
       if (processStatus.exited) throw new LauncherError('START_FAILED', '本地学习服务启动进程已退出。请检查学习包和用户数据目录。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
@@ -114,7 +167,7 @@ async function launch(options = {}) {
     if (status.state !== 'ready') throw new LauncherError('START_TIMEOUT', '本地学习服务未能按时就绪。请检查学习包和用户数据目录后重试；首页尚未打开。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
   }
   await open(url);
-  return { ok: true, reused, url, version: status.version };
+  return { ok: true, reused, upgraded, url, version: status.version };
 }
 
 function serve(options = {}) {
@@ -133,8 +186,8 @@ async function main(argv = process.argv.slice(2), options = {}) {
   let daemon = false, port = options.port ?? process.env.IELTS_PORT;
   for (let i = 0; i < argv.length; i++) { if (argv[i] === '--serve') daemon = true; else if (argv[i] === '--port' && i + 1 < argv.length) port = argv[++i]; else throw new LauncherError('INVALID_ARGUMENT', '启动参数无效。请直接双击“启动学习.cmd”。'); }
   if (daemon) return serve({ ...options, port });
-  return launch({ ...options, port });
+  return launch({ ...options, port, report: options.report || console.log });
 }
 
-if (require.main === module) main().then(result => { if (result?.url) console.log((result.reused ? '已复用正在运行的本项目服务，首页已打开：' : '本地服务已在后台启动，首页已打开：') + result.url); }).catch(error => { console.error('[' + (error.code || 'START_FAILED') + '] ' + String(error.message || '启动失败，请检查学习包和用户数据目录。').replace(/sk-[a-zA-Z0-9_-]+/g, '[REDACTED]')); process.exitCode = 1; });
-module.exports = { SERVICE, HOST, LauncherError, parsePort, serviceURL, probeService, startDetached, openBrowser, launch, serve, main };
+if (require.main === module) main().then(result => { if (result?.url) console.log((result.upgraded ? '本机后台服务已安全更新，首页已打开：' : result.reused ? '已复用正在运行的本项目服务，首页已打开：' : '本地服务已在后台启动，首页已打开：') + result.url); }).catch(error => { console.error('[' + (error.code || 'START_FAILED') + '] ' + String(error.message || '启动失败，请检查学习包和用户数据目录。').replace(/sk-[a-zA-Z0-9_-]+/g, '[REDACTED]')); process.exitCode = 1; });
+module.exports = { SERVICE, HOST, LauncherError, parsePort, serviceURL, classifyHealth, probeService, restartService, startDetached, openBrowser, launch, serve, main };

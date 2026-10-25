@@ -4,6 +4,11 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const runtimeVersion = require('./runtime-version.cjs');
+// Snapshot before loading application modules. Health describes this process,
+// even when a NAS upgrade later replaces VERSION and the source files.
+const LOADED_RUNTIME = runtimeVersion.captureRuntime();
+const LOADED_ROOT = runtimeVersion.canonicalRoot(runtimeVersion.PROJECT_ROOT);
 const { createSpeechHandler } = require('./speech.cjs');
 const { createBudget, BudgetError } = require('./budget.cjs');
 const { createSelection, SelectionError, PROMPT_VERSION } = require('./selection.cjs');
@@ -199,6 +204,7 @@ function plainFeedback(content, apiKey) {
 
 function createServer(options = {}) {
   const rootDir = path.resolve(options.rootDir || path.join(__dirname, '..'));
+  const loadedRuntime = runtimeVersion.canonicalRoot(rootDir) === LOADED_ROOT ? LOADED_RUNTIME : runtimeVersion.captureRuntime(rootDir, { strict: false });
   const rootRealPromise = fs.promises.realpath(rootDir);
   const fetchImpl = options.fetchImpl || globalThis.fetch;
   const userData=createUserData({rootDir,dataDir:options.dataDir,legacyPaths:options.legacyDataPaths,migrateLegacy:options.migrateLegacy??!(options.fetchImpl||options.budgetFilePath||options.budgetDir||options.credentialFilePath||options.rootDir&&rootDir!==path.resolve(path.join(__dirname,'..')))});
@@ -319,7 +325,13 @@ function createServer(options = {}) {
   }
 
   async function handleApi(req, res, pathname) {
-    if (req.method === 'GET' && pathname === '/api/health') return sendJson(res,200,{ok:true,service:'ielts-learning-local',version:fs.readFileSync(path.join(rootDir,'VERSION'),'utf8').trim(),home:'/'});
+    if (req.method === 'GET' && pathname === '/api/health') return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime});
+    if (req.method === 'POST' && pathname === '/api/runtime/restart') {
+      const body = await readJson(req, 1024);
+      if (body.instanceId !== loadedRuntime.instanceId || req.headers['x-ielts-project-id'] !== loadedRuntime.projectId || req.headers['x-ielts-launcher'] !== 'restart-v1') throw new AppError(409, 'RUNTIME_CHANGED', '服务已改变，请重新双击“启动学习.cmd”。');
+      res.once('finish', () => { server.close(); server.closeAllConnections(); });
+      return sendJson(res,202,{ok:true});
+    }
     if(req.method==='POST'&&pathname==='/api/memory/evaluate'){
       const body=await readJson(req),source=body.materialId?curriculum.materials.find(m=>m.id===body.materialId):null;
       if(body.mode==='assessment'||body.materialId&&(!source||source.pool!=='training'))throw new wordReview.WordReviewError(403,'MEMORY_ASSESSMENT_DENIED','独立测评、关卡和保留卷不提供语境提示或答案核对。');

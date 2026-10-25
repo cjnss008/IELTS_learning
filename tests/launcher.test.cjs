@@ -1,6 +1,8 @@
 'use strict';
 const test = require('node:test'), assert = require('node:assert/strict'), http = require('node:http'), net = require('node:net'), fs = require('node:fs'), path = require('node:path'), { EventEmitter, once } = require('node:events');
 const launcher = require('../tools/start-learning.cjs');
+const { readProjectRuntime } = require('../server/runtime-version.cjs');
+const expectedRuntime = readProjectRuntime();
 const ready = { state: 'ready', version: '0.0.21' };
 
 test('Windows double-click launcher uses ASCII commands with CRLF on every line', () => {
@@ -42,6 +44,36 @@ test('a simultaneous successful launcher can win the port without causing a seco
   assert.equal(starts, 1); assert.equal(opened, 1);
 });
 
+test('legacy or stale service is restarted once before opening the current build', async () => {
+  const responses = [{ state: 'stale', version: expectedRuntime.version }, { state: 'absent' }, ready], calls = [];
+  const result = await launcher.launch({ port: 8765, expectedRuntime, probe: async () => responses.shift(), restart: async (port, options) => { assert.equal(port, 8765); assert.equal(options.expectedRuntime, expectedRuntime); calls.push('restart'); return { state: 'stopped' }; }, start: () => { calls.push('start'); return {}; }, sleep: async () => {}, open: async () => calls.push('open') });
+  assert.deepEqual(calls, ['restart', 'start', 'open']); assert.equal(result.upgraded, true);
+});
+
+test('concurrent stale launch reuses replacement and never starts or stops it again', async () => {
+  let restarts = 0;
+  const responses = [{ state: 'stale' }, ready];
+  const result = await launcher.launch({ port: 8765, expectedRuntime, probe: async () => responses.shift(), restart: async () => { restarts++; return { state: 'current' }; }, start: () => assert.fail('replacement already ready'), open: async () => {} });
+  assert.equal(restarts, 1); assert.equal(result.reused, true); assert.equal(result.upgraded, false);
+});
+
+test('uncertain ownership and files changing during restart fail without opening or repeat killing', async () => {
+  let restarts = 0;
+  await assert.rejects(launcher.launch({ port: 8765, expectedRuntime, probe: async () => ({ state: 'stale' }), restart: async () => { restarts++; return { state: 'stopped' }; }, start: () => assert.fail('still stale'), open: () => assert.fail('still stale') }), { code: 'RUNTIME_STALE' });
+  assert.equal(restarts, 1);
+  await assert.rejects(launcher.restartService(8765, { platform: 'linux', expectedRuntime }), error => error.code === 'RESTART_UNVERIFIED' && /重新启动这台电脑/.test(error.message));
+});
+
+test('Windows restart helper stays hidden and reads its complete result after stdout closes', async () => {
+  const child = new EventEmitter(); child.stdout = new EventEmitter(); child.stderr = new EventEmitter(); child.kill = () => assert.fail('completed helper must not be killed');
+  let captured;
+  const restarting = launcher.restartService(8765, { platform: 'win32', expectedRuntime, spawn: (...args) => { captured = args; return child; } });
+  assert.match(captured[0], /WindowsPowerShell[\\/]v1\.0[\\/]powershell\.exe$/); assert.equal(captured[2].windowsHide, true);
+  assert.ok(captured[1].includes('-LauncherPath')); assert.ok(captured[1].includes('-BuildSignature'));
+  child.emit('exit', 0); child.stdout.emit('data', Buffer.from('{"state":"current"}')); child.emit('close', 0);
+  assert.deepEqual(await restarting, { state: 'current' });
+});
+
 test('startup exit and readiness timeout are reported without opening an unready page', async () => {
   for (const earlyExit of [false, true]) {
     let starts = 0, probes = 0;
@@ -50,12 +82,19 @@ test('startup exit and readiness timeout are reported without opening an unready
   }
 });
 
-test('health verification requires the exact app identity rather than accepting any listening HTTP server', async t => {
-  let response = { ok: true, service: launcher.SERVICE, version: '0.0.21', home: '/' }, status = 200;
+test('health verification requires the current loaded build and project identity', async t => {
+  const identity = { ...expectedRuntime, instanceId: '11111111-1111-4111-a111-111111111111', startedAt: '2026-10-25T00:00:00.000Z', pid: 123 };
+  let response = { ok: true, service: launcher.SERVICE, home: '/', ...identity }, status = 200;
   const server = http.createServer((req, res) => { assert.equal(req.url, '/api/health'); res.writeHead(status, { 'Content-Type': 'application/json' }); res.end(typeof response === 'string' ? response : JSON.stringify(response)); });
   server.listen(0, launcher.HOST); await once(server, 'listening'); t.after(() => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); }));
   const port = server.address().port;
-  assert.deepEqual(await launcher.probeService(port), ready);
+  assert.deepEqual(await launcher.probeService(port, { expectedRuntime }), { state: 'ready', ...identity });
+  response = { ok: true, service: launcher.SERVICE, version: expectedRuntime.version, home: '/' };
+  assert.equal((await launcher.probeService(port, { expectedRuntime })).state, 'stale', 'legacy services cannot claim readiness by rereading VERSION');
+  response = { ok: true, service: launcher.SERVICE, home: '/', ...identity, buildSignature: 'sha256:' + '0'.repeat(64) };
+  assert.equal((await launcher.probeService(port, { expectedRuntime })).state, 'stale');
+  response = { ok: true, service: launcher.SERVICE, home: '/', ...identity, projectId: 'sha256:' + '0'.repeat(64) };
+  assert.equal((await launcher.probeService(port, { expectedRuntime })).state, 'occupied');
   for (const bad of [{ ok: true, service: 'different-server', version: '1', home: '/' }, { ok: true, service: launcher.SERVICE, version: '1', home: 'https://foreign.example/' }, { ok: false, service: launcher.SERVICE, version: '1', home: '/' }, '<html>some other app</html>']) { response = bad; assert.equal((await launcher.probeService(port)).state, 'occupied'); }
   response = { ok: true, service: launcher.SERVICE, version: '1', home: '/' }; status = 302; assert.equal((await launcher.probeService(port)).state, 'occupied');
 });
