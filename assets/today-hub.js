@@ -70,7 +70,7 @@ function mount(){
  }
  function queueState(){
   if(navigation.learningQueue)return navigation.learningQueue();const load=root.IELTSDailyLearningLoad;if(!load)return null;
-  return load.build({data,getDay:planDay,records:dailyRecords,drafts:navigation.allDrafts?.()||drafts().map(d=>({...d,courseDay:d.courseDay||current.day})),currentDay:current.day,current,budget:navigation.budget?.(),hub:root.IELTSTodayHub,player:root.IELTSCoursePlayer,yearPlanner:root.IELTSYearPlanner,timerState:root.IELTSStudyTimer?.snapshot?.(),assessment:root.IELTSAssessment,summaryForDay:n=>root.IELTSMistakes?.forDay(n),recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r),exposures:navigation.exposures?.(),verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,extraPlan:(day,budget)=>day&&root.IELTSAdaptivePlan?.planRemaining?.(day,dailyRecords,undefined,{data,budgetMinutes:360,calendarBudget:budget,exposures:navigation.exposures?.()||{},startedMaterialIds:drafts().map(d=>d.materialId)})});
+  return load.build({data,placement:root.IELTSPlacement,getDay:planDay,records:dailyRecords,drafts:navigation.allDrafts?.()||drafts().map(d=>({...d,courseDay:d.courseDay||current.day})),currentDay:current.day,current,budget:navigation.budget?.(),hub:root.IELTSTodayHub,player:root.IELTSCoursePlayer,yearPlanner:root.IELTSYearPlanner,timerState:root.IELTSStudyTimer?.snapshot?.(),assessment:root.IELTSAssessment,summaryForDay:n=>root.IELTSMistakes?.forDay(n),recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r),exposures:navigation.exposures?.(),verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,extraPlan:(day,budget)=>day&&root.IELTSAdaptivePlan?.planRemaining?.(day,dailyRecords,undefined,{data,budgetMinutes:360,calendarBudget:budget,exposures:navigation.exposures?.()||{},startedMaterialIds:drafts().map(d=>d.materialId)})});
  }
  async function openQueueEntry(entry){
   if(!entry||['blocked','budget','rest'].includes(entry.kind)||entry.fitsBudget===false)return;
@@ -97,7 +97,9 @@ function mount(){
    if(!waiting){const go=node('button',primary.label);go.type='button';go.addEventListener('click',async()=>{go.disabled=true;try{await openQueueEntry(primary);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{render();}});row.append(go);}
    const why=explanation(primary);if(why)row.append(why);box.append(row);
   }
-  const remainingEntries=learningQueue.entries.filter(entry=>entry!==primary),previews=remainingEntries.slice(0,2);
+  const challenges=learningQueue.entries.filter(entry=>entry.placementChallenge&&entry!==primary);
+  for(const entry of challenges){const row=node('article',undefined,'course-record-row');row.append(node('strong',entry.label),node('p',entry.reason),node('p','先为未完核心与已有补强留出预算，本次可选练习参考 '+entry.estimate.totalMinutes.toFixed(1).replace(/\.0$/,'')+' 分钟。'));const go=node('button','开始这份适级挑战');go.type='button';go.disabled=entry.fitsBudget!==true;go.addEventListener('click',async()=>{go.disabled=true;try{await openQueueEntry(entry);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{render();}});row.append(go);box.append(row);}
+  const remainingEntries=learningQueue.entries.filter(entry=>entry!==primary&&!entry.placementChallenge),previews=remainingEntries.slice(0,2);
   for(const entry of previews)box.append(node('p','随后：第 '+entry.day+' 课 · '+(entry.title||NAMES[entry.taskId]||'后续学习')+(entry.waiting?'（待评作品）':entry.kind==='blocked'?'（等待前置任务）':'（完成当前单元后继续）')));
   if(remainingEntries.length>2){const details=node('details'),title=node('summary','查看后续队列（'+(remainingEntries.length-2)+'项）');details.append(title);for(const entry of remainingEntries.slice(2))details.append(node('p','第 '+entry.day+' 课 · '+(entry.title||NAMES[entry.taskId]||'后续学习')+'：'+entry.label));box.append(details);}
   if(!primary)box.append(node('p',learningQueue.reason||'正在核对下一步课程。'));
@@ -106,7 +108,7 @@ function mount(){
   const base=data.days.find(item=>item.day===current.day);if(!base)return;const day=planDay(base);
   const mistakes=summary(),own=dailyRecords.filter(record=>record?.dayNumber===current.day);
   states=day.tasks.map(task=>({task,...taskState(task,own,{data,dayNumber:current.day,completionValid:mistakes.completionValid,materials:data.materials,recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record)})}));next=chooseNext(states);allDone=states.length>0&&states.every(state=>state.done);
-  $('todayEyebrow').textContent='第 '+day.week+' 周 · 第 '+day.day+' / 365 天';$('todayTitle').textContent='今天，学习'+day.title+'。';
+  $('todayEyebrow').textContent='第 '+day.week+' 周 · 第 '+day.day+' / 365 天';$('todayTitle').textContent='今日主题：'+day.title;
   $('todayGoal').textContent=day.tasks.length===7&&day.day<=7?'从认识声音和简单句开始。按照下面 7 步学习，不需要先读长篇文章。':'按今天的材料，完成听说读写训练；最后把当天错题全部重做。';
   $('todayDone').textContent=states.filter(state=>state.done).length+' / '+states.length;
   $('todayMinutes').textContent=(navigation.budget?.()?.spentMinutes??own.reduce((sum,record)=>sum+(Number.isFinite(record.minutes)&&record.minutes>0?record.minutes:0),0)).toFixed(1)+' / 360 分钟';$('todayMistakes').textContent=(Number.isFinite(mistakes.remaining)?mistakes.remaining:0)+' 道';
@@ -122,7 +124,7 @@ function mount(){
   });
   learningQueue=queueState();
   if(learningQueue?.currentComplete===true)root.IELTSDailyBackups?.observeCompletion?.({currentComplete:true,courseDay:current.day,completion:mistakes.completion,token:mistakes.token,records:own})?.catch?.(()=>{});
-  const queued=learningQueue?.next;if(queued){$('todayStart').textContent=queued.label;$('todayStart').disabled=['blocked','budget','rest'].includes(queued.kind);$('todayNext').textContent=queued.reason||'';$('todayAdvice').textContent=['budget','rest'].includes(queued.kind)?queued.reason:learningQueue.currentComplete&&queued.day!==current.day?'本课核心任务与复盘已通过。下一课已自动加入今天的必学队列，点击主按钮继续；本课结果仍在下方。':queued.kind==='view'?'作品仍待真实评阅；其他可用任务会列入队列，待评不算通过。':queued.kind==='blocked'?queued.reason:'下一步已列入今日必学队列；按真实作答继续，完成速度不用于跳关。';}else $('todayStart').disabled=false;
+  const queued=learningQueue?.next;if(queued){$('todayStart').textContent=queued.label;$('todayStart').disabled=['blocked','budget','rest'].includes(queued.kind);$('todayNext').textContent=queued.reason||'';$('todayAdvice').textContent=['budget','rest'].includes(queued.kind)?queued.reason:queued.optional?'这是依据入学测评分项安排的可选挑战；共同核心任务、待评与错题仍分别保留。':learningQueue.currentComplete&&queued.day!==current.day?'本课核心任务与复盘已通过。下一课已自动加入今天的必学队列，点击主按钮继续；本课结果仍在下方。':queued.kind==='view'?'作品仍待真实评阅；其他可用任务会列入队列，待评不算通过。':queued.kind==='blocked'?queued.reason:'下一步已列入今日必学队列；按真实作答继续，完成速度不用于跳关。';}else $('todayStart').disabled=false;
   renderQueue();
   renderAdaptive(day,own);
   const independent=data.materials.find(m=>m.id===current.materialId&&m.independentBank===true);

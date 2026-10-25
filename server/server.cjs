@@ -30,6 +30,7 @@ const { createCredentialVault } = require('./credential-vault.cjs');
 const { createUserData, within: insideUserData } = require('./user-data.cjs');
 const { createDailyBackups, DailyBackupError } = require('./daily-backups.cjs');
 const { createFileCache, fileStamp } = require('./file-cache.cjs');
+const placementModule = require('./placement.cjs');
 
 const HOST = '127.0.0.1';
 const DEFAULT_PORT = 8765;
@@ -217,6 +218,7 @@ function createServer(options = {}) {
   if(materialMigration)userData.setImportedMaterials(materialMigration);
   const budget = options.budget || createBudget({ filePath: options.budgetFilePath || (options.budgetDir?path.join(options.budgetDir,'budget-ledger.json'):userData.paths.budget) });
   const evidenceStore = createEvidenceStore();
+  const placement = placementModule.createPlacement({ rootDir, userData, curriculum: options.placementCurriculum || curriculum, evidenceStore, ...(options.placementNow ? { now: options.placementNow } : {}) });
   const speechHandler = createSpeechHandler({ fetchImpl, budget, evidenceStore });
   const transcriptionHandler = createTranscriptionHandler({ fetchImpl, budget, evidenceStore, getSpeechConfig: speechHandler.getConfig, timeoutMs: options.transcriptionTimeoutMs || 180000 });
   const omniHandler = createOmniHandler({ fetchImpl, budget, evidenceStore, timeoutMs: options.omniTimeoutMs || 180000 });
@@ -389,6 +391,28 @@ function createServer(options = {}) {
 
   async function handleApi(req, res, pathname) {
     if (req.method === 'GET' && pathname === '/api/health') {const now=new Date(),serverDayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime,serviceInstanceId:bootId,serverDayKey,restoringBackup});}
+    if (req.method === 'POST' && ['/api/placement/generate', '/api/placement/evaluate'].includes(pathname)) {
+      const body = await readJson(req, 192 * 1024), startVersion = connectionVersion(), startReviewerVersion = reviewerRevision;
+      const runAI = async (messages, { round = 1, maxTokens = 6500 } = {}) => {
+        if (startVersion !== connectionVersion() || startReviewerVersion !== reviewerRevision) throw new AppError(409, 'CONNECTION_CHANGED', '测评期间AI设置改变，原始回答保留，请重试。');
+        const output = await runText(req, res, { messages, max_tokens: maxTokens, response_format: { type: 'json_object' } }, options.placementTimeoutMs || coachTimeoutMs, round === 2 ? reviewerConfig() : undefined);
+        if (output.data?.choices?.[0]?.finish_reason === 'length') throw new placementModule.PlacementError(502, 'PLACEMENT_AI_TRUNCATED', '测评AI结果被截断，原始回答保留，请重试。');
+        if (startVersion !== connectionVersion() || startReviewerVersion !== reviewerRevision) throw new AppError(409, 'CONNECTION_CHANGED', '测评期间AI设置改变，原始回答保留，请重试。');
+        let content = output.data?.choices?.[0]?.message?.content;
+        if (typeof content !== 'string') throw new placementModule.PlacementError(502, 'PLACEMENT_AI_FORMAT', '测评AI未返回结构化内容，原始回答保留，请重试。');
+        for (const secret of [output.captured.apiKey, connection?.apiKey, reviewerConfig()?.apiKey].filter(Boolean)) content = content.split(secret).join('[已隐藏]');
+        return { content, reviewer: { model: output.captured.model, providerHost: new URL(output.captured.baseUrl).hostname, promptVersion: placementModule.PROMPT_VERSION, round } };
+      };
+      const result = pathname.endsWith('/generate') ? await placement.generate(body, runAI) : await placement.evaluate(body, runAI);
+      if (!res.destroyed) sendJson(res, 200, result);
+      return;
+    }
+    const placementMatch = /^\/api\/placement\/(placement-[a-f0-9-]{36})$/.exec(pathname);
+    if (req.method === 'GET' && placementMatch) {
+      const url = new URL(req.url, 'http://127.0.0.1');
+      if ([...url.searchParams.keys()].some(key => key !== 'profileId') || url.searchParams.getAll('profileId').length !== 1) throw new placementModule.PlacementError(400, 'PLACEMENT_PROFILE', '请提供唯一的学习档案编号。');
+      return sendJson(res, 200, await placement.get(url.searchParams.get('profileId'), placementMatch[1]));
+    }
     if (req.method === 'POST' && pathname === '/api/runtime/restart') {
       const body = await readJson(req, 1024);
       if (body.instanceId !== loadedRuntime.instanceId || req.headers['x-ielts-project-id'] !== loadedRuntime.projectId || req.headers['x-ielts-launcher'] !== 'restart-v1') throw new AppError(409, 'RUNTIME_CHANGED', '服务已改变，请重新双击“启动学习.cmd”。');
@@ -747,7 +771,7 @@ function createServer(options = {}) {
       else await serveStatic(req, res, rawPath);
     } catch (error) {
       if (res.headersSent || res.destroyed) return res.destroy();
-      const safeError = (error instanceof AppError || error instanceof DailyBackupError || error instanceof BudgetError || error instanceof SelectionError || error instanceof review.ReviewError || error instanceof oralCoach.OralCoachError || error instanceof dailyCoach.DailyCoachError || error instanceof dialogueModule.DialogueError || error instanceof calibration.CalibrationError || error instanceof OmniError || error instanceof wordReview.WordReviewError || error instanceof writingPathModule.WritingPathError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
+      const safeError = (error instanceof AppError || error instanceof placementModule.PlacementError || error instanceof DailyBackupError || error instanceof BudgetError || error instanceof SelectionError || error instanceof review.ReviewError || error instanceof oralCoach.OralCoachError || error instanceof dailyCoach.DailyCoachError || error instanceof dialogueModule.DialogueError || error instanceof calibration.CalibrationError || error instanceof OmniError || error instanceof wordReview.WordReviewError || error instanceof writingPathModule.WritingPathError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
       sendJson(res, safeError.status, { ok: false, error: { code: safeError.code, message: safeError.message } });
     }
   });

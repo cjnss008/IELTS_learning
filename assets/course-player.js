@@ -44,15 +44,17 @@
     return parseState(out);
   }
   function taskFor(data, day, taskId) { return data.days.find(item => item.day === day)?.tasks.find(item => item.id === taskId); }
-  function prerequisiteStatus(materials,records,week,assessment) {
-    return assessment.gateMastery(records,materials).filter(g=>g.week<week).map(g=>({id:g.id,pass:g.pass,status:g.status,dueAt:g.dueAt,reason:g.reasons.join('；')}));
+  function placementRoute(data,options={}){const api=options.placement||root.IELTSPlacement||(typeof require==='function'?require('./placement-core.js'):null),route=api?.currentRoute?.(data)||null,status=api?.verificationStatus?.();if(!route&&status?.adopted&&status.state!=='verified')throw Error(status.reason||'已采用的入学测评起点尚待来源核验，请先重试核验；原稿与课程记录保留。');return route;}
+  function prerequisiteStatus(materials,records,week,assessment,options={}) {
+    const placement=placementRoute(options.data,options);return assessment.gateMastery(records,materials).filter(g=>g.week<week).map(g=>({id:g.id,week:g.week,pass:g.pass,status:g.status,dueAt:g.dueAt,placementCovered:!!placement&&g.week<placement.startWeek,reason:g.reasons.join('；')}));
   }
   function protectedMaterialAccess(material,records,materials,options={}){
     const seen=Boolean(options.exposures?.[material?.id])||(records||[]).some(record=>record.materialId===material?.id);if(seen)return{allowed:true,seen:true};
-    const api=options.assessment||root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),now=options.now??Date.now(),gates=api?.gateMastery(records||[],materials||[],{now})||[];
+    const api=options.assessment||root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),now=options.now??Date.now(),placement=placementRoute(options.data,options),gates=api?.gateMastery(records||[],materials||[],{now})||[];
     if(material?.pool==='gate'&&material.form==='B'){const gate=gates.find(g=>g.id===material.assessmentGroup);if(!gate?.a?.pass||!gate.dueAt||now<Date.parse(gate.dueAt))return{allowed:false,seen:false,dueAt:gate?.dueAt||null,reason:'B卷继续保留为未见复测：请先完成合格的整套A卷，并在整套提交后至少间隔48小时再开始；这次没有登记曝光。'};}
-    if(material?.pool==='gate'||material?.pool==='final'){const missing=gates.filter(g=>g.week<material.week&&!g.pass);if(missing.length)return{allowed:false,seen:false,reason:'这份关卡或末期保留卷尚未解锁：先补齐前置关卡 '+missing.map(g=>g.id).join('、')+'。本次仅保留简介，没有打开正文或登记曝光。'};}
-    return{allowed:true,seen:false};
+    const placementCovered=gates.filter(g=>!!placement&&g.week<placement.startWeek).map(g=>g.id);
+    if(material?.pool==='gate'||material?.pool==='final'){const missing=gates.filter(g=>g.week<material.week&&!g.pass&&!placementCovered.includes(g.id));if(missing.length)return{allowed:false,seen:false,placementCovered,reason:'这份关卡或末期保留卷尚未解锁：先补齐前置关卡 '+missing.map(g=>g.id).join('、')+'。本次仅保留简介，没有打开正文或登记曝光。'};}
+    return{allowed:true,seen:false,placementCovered};
   }
   function figureRows(figure) {
     if (Array.isArray(figure?.rows)) return figure.rows.map(row => Array.isArray(row) ? row.map(String) : [String(row)]);
@@ -212,7 +214,7 @@
     return{kind:state?.missingMaterialIds?.length===0?'view':'material',taskId:next.id,materialId:target,label:'继续下一项：'+NAMES[next.id]};
   }
 
-  function toRecord(attempt, material, currentDay, assessment) {
+  function toRecord(attempt, material, currentDay, assessment, options={}) {
     const elapsedSeconds = Math.min(86400, Math.max(0, (Date.parse(attempt.submittedAt) - Date.parse(attempt.startedAt))/1000));
     const activeSeconds = Math.min(attempt.activeSeconds, elapsedSeconds);
     const skill = attempt.taskId, text = skill === 'speaking' ? attempt.transcript : attempt.text;
@@ -223,7 +225,7 @@
     const evaluation = grade ? {method:'objective', result:grade.allGradable && grade.ratio >= threshold ? 'pass' : 'revise', feedback:'项目原创题内部核对；原始正确数不是 IELTS 官方换分。', score:grade.correct, ...(grade.total ? {maxScore:grade.total} : {}), threshold} : {method:'none', result:['writing','speaking'].includes(skill) ? 'pending' : 'unverified', feedback:'已保存原始输出，完成量不能替代能力判断。'};
     const quantity = grade ? grade.answered : skill === 'vocabulary' ? text.split(/\n/).filter(line => line.trim()).length : skill === 'reflection' ? (text.trim() ? 1 : 0) : assessment.countWords(text);
     const record = {id:attempt.id, materialId:material.id, materialVersion:String(material.version), title:material.title, skill, source:'course-player', taskId:skill, answer:JSON.stringify(artifact), minutes:activeSeconds/60, quantity, unit:grade ? '题' : skill === 'vocabulary' ? '条' : skill === 'reflection' ? '份复盘' : '词', assistance:{...attempt.assistance}, kind:attempt.kind, ...(attempt.parentId ? {parentId:attempt.parentId} : {}), exposure:attempt.exposureAtStart, startedAt:attempt.startedAt, submittedAt:attempt.submittedAt, activeSeconds, elapsedSeconds, media:attempt.media || [], evaluation};
-    if (Number.isInteger(currentDay) && currentDay >= attempt.courseDay && attempt.courseDay <= 365) record.dayNumber = attempt.courseDay;
+    if (Number.isInteger(attempt.courseDay)&&attempt.courseDay>=1&&attempt.courseDay<=365&&(Number.isInteger(currentDay)&&currentDay>=attempt.courseDay||placementRoute(options.data||root.IELTSCurriculumData,options))) record.dayNumber = attempt.courseDay;
     return record;
   }
 
@@ -273,7 +275,7 @@
     const extensiveMaterialId=params.get('activity')==='extensive'&&params.get('mode')==='practice'?params.get('material'):null;
     let pendingParent = params.get('parent') && ['correction','retest'].includes(params.get('kind')) ? {parentId:params.get('parent'),kind:params.get('kind'),mode:params.get('mode')==='assessment'?'assessment':'practice'} : null;
     let mediaDrafts=[],mediaBudgetSignature='',mediaBudgetPending=null,budgetDisposed=false;
-    let autoRouted=false;let recordingSaving=false;const deletedDrafts=new Map();
+    let autoRouted=false,placementReroute=false;let recordingSaving=false;const deletedDrafts=new Map();
     function load() {
       profileId = root.IELTSProfiles?.current().id || 'legacy';
       try { storage = root.IELTSProfiles?.storage() || (preview ? root.sessionStorage : root.localStorage); const raw = storage.getItem(KEY); state = raw ? parseState(raw) : newState(); storageBroken = false; }
@@ -325,7 +327,7 @@
       item.tasks.forEach(t => { const b = button('', () => showTask(t)); b.className = 'course-task'; b.dataset.taskId = t.id; b.append(el('strong','',NAMES[t.id] + ' · 参考 ' + t.minutes + ' 分钟'),el('small','',t.deliverable+(root.IELTSCurriculumCoverage?.practiceLabel(t)?' · '+root.IELTSCurriculumCoverage.practiceLabel(t):''))); $('courseTasks').append(b); });
       const preferred=materialMap.get(preferredMaterial);const selected = preferredMaterial && (item.tasks.find(t=>t.id===preferred?.skill)||item.tasks.find(t => t.materialIds.includes(preferredMaterial))); showTask(selected || item.tasks[0], preferredMaterial);
       const current = R.currentDay();
-      if (!storageBroken) notice(current && day > current ? '提前浏览材料；提交作品关联实际学习日，不自动完成未来日程。' : '当天可用学习预算 ' + item.tasks.reduce((n,t)=>n+t.minutes,0) + ' 分钟；各项时间仅供安排，掌握后可立即继续，不必等计时。');
+      if (!storageBroken){try{const placement=placementRoute(data);notice(placement?day<placement.startDay?'这是入学起点前的基础回看；已有草稿与错题保留，未开始的基础课不计新起点积压。':'已采用四项入学测评，从第 '+placement.startDay+' 课进入匹配程度的课程；作品按实际课程日保存，掌握后按预算继续。':current&&day>current?'提前浏览材料；提交作品关联实际学习日，不自动完成未来日程。':'当天可用学习预算 '+item.tasks.reduce((n,t)=>n+t.minutes,0)+' 分钟；各项时间仅供安排，掌握后可立即继续，不必等计时。');}catch(error){storageBroken=true;$('courseBegin').disabled=true;notice('入学测评起点无法核实：'+error.message+'；已有作品与草稿保留，请到备份中心处理。',true);}}
       refreshHistory();
     }
     function showTask(value, preferredMaterial) {
@@ -464,7 +466,7 @@
     function continuationRecords(){return submittedRecord?[...records.filter(record=>record.id!==submittedRecord.id),submittedRecord]:records;}
     function learningQueue(){
       const load=root.IELTSDailyLearningLoad;if(!load)return null;
-      return load.build({data,getDay:item=>dayPlan(item.day)||item,now:Date.now(),summaryForDay:n=>root.IELTSMistakes?.forDay(n),records:continuationRecords(),drafts:allDrafts(),currentDay:day,current:{day,taskId:task?.id,materialId:material?.id,active:!!attempt,submitted:!!submittedRecord},budget:calendarBudget(),hub:root.IELTSTodayHub,player:root.IELTSCoursePlayer,assessment:A,yearPlanner:root.IELTSYearPlanner,timerState:root.IELTSStudyTimer?.snapshot?.(),exposures:state.exposures,recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record),verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,extraPlan:(source,budget)=>source&&root.IELTSAdaptivePlan?.planRemaining?.(source,continuationRecords(),undefined,{data,budgetMinutes:360,calendarBudget:budget,exposures:state.exposures,startedMaterialIds:allDrafts().map(d=>d.materialId)})});
+      return load.build({data,placement:root.IELTSPlacement,getDay:item=>dayPlan(item.day)||item,now:Date.now(),summaryForDay:n=>root.IELTSMistakes?.forDay(n),records:continuationRecords(),drafts:allDrafts(),currentDay:day,current:{day,taskId:task?.id,materialId:material?.id,active:!!attempt,submitted:!!submittedRecord},budget:calendarBudget(),hub:root.IELTSTodayHub,player:root.IELTSCoursePlayer,assessment:A,yearPlanner:root.IELTSYearPlanner,timerState:root.IELTSStudyTimer?.snapshot?.(),exposures:state.exposures,recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record),verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,extraPlan:(source,budget)=>source&&root.IELTSAdaptivePlan?.planRemaining?.(source,continuationRecords(),undefined,{data,budgetMinutes:360,calendarBudget:budget,exposures:state.exposures,startedMaterialIds:allDrafts().map(d=>d.materialId)})});
     }
     function destination(){
       const queue=learningQueue();if(!queue)return nextDestination({...data,days:data.days.map(item=>item.day===day?dayPlan(day):item)},day,task?.id,continuationRecords(),{recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record)});
@@ -477,7 +479,8 @@
       if(next.kind==='overview'){$('todayOverview')?.scrollIntoView({behavior:'smooth'});return true;}
       if(next.day&&next.day!==day)showDay(next.day,next.materialId);
       if(next.kind==='view')await root.IELTSTodayNavigation.showLatestRecord(next.taskId,next.materialId);
-      else if(next.kind==='extra'&&!next.draftId)await root.IELTSTodayNavigation.openExtra(next.entry);
+      else if(next.draftId){await resumeDraft(next.draftId);await root.IELTSTodayNavigation.resumeNext(next.taskId,next.materialId);}
+      else if(next.kind==='extra')await root.IELTSTodayNavigation.openExtra(next.entry);
       else await root.IELTSTodayNavigation.resumeNext(next.taskId,next.materialId);
       $('courseSession').scrollIntoView({behavior:'smooth',block:'start'});return true;
     }
@@ -488,7 +491,7 @@
       if(!running||!mayContinue())throw Error('今日学习预算已暂停。草稿保留，下一日继续。');
       if(!attempt||submittedRecord||storageBroken)throw Error('此练习已经关闭或保存。');
       const owner=attempt,guard=generation;advanceTimer();if(!running)throw Error('今日学习预算已用完，未提交草稿保留。');attempt.submittedAt=new Date().toISOString();attempt.text='';
-      const input=toRecord(attempt,material,R.currentDay()||day,A);input.source=source;input.quantity=payload.quantity;input.unit=payload.unit;input.evaluation=payload.evaluation;input.answer=JSON.stringify({...JSON.parse(input.answer),...JSON.parse(payload.answer||'{}'),schema:1,trainingSchema:JSON.parse(payload.answer||'{}').schema});
+      const input=toRecord(attempt,material,R.currentDay()||day,A,{data});input.source=source;input.quantity=payload.quantity;input.unit=payload.unit;input.evaluation=payload.evaluation;input.answer=JSON.stringify({...JSON.parse(input.answer),...JSON.parse(payload.answer||'{}'),schema:1,trainingSchema:JSON.parse(payload.answer||'{}').schema});
       const saved=await R.record(input);if(owner!==attempt||guard!==generation)return;
       submittedRecord=saved.record;running=false;mutate(s=>{delete s.drafts[owner.id];});$('courseSubmit').hidden=true;$('courseSubmitStatus').textContent='本次结果已保存；错题会在今天最后一步统一重做。';
       const box=$('courseResult');box.hidden=false;box.replaceChildren(el('h3','',source==='year-review'?'年度总结已保存；未达标继续补强':source==='mistake-review'?'今日错题与 AI 复盘已保存':'三轮词汇测试已提交'));nextButton(box);await refreshHistory();announceView();emitCourse('submitted');return saved.record;
@@ -584,7 +587,7 @@
       advanceTimer();if(!running)return;const objective=task.id===material.skill&&['reading','listening','grammar'].includes(task.id);const grade=A.gradeMaterial(material,attempt.answers);
       if(objective&&!grade.answered||!objective&&!attempt.text.trim()&&!attempt.transcript.trim()&&!attempt.media.length){notice('请先留下真实答案、文字输出或录音。空白记录不会提交。',true);return;}
       running=false;attempt.submittedAt=new Date().toISOString();busy=true;$('courseSubmit').disabled=true;
-      try{const input=toRecord(attempt,material,R.currentDay(),A);const submittingId=attempt.id,submitGeneration=generation;const result=await R.record(input);if(generation!==submitGeneration||attempt?.id!==submittingId)return;submittedRecord=result.record;root.dispatchEvent(new CustomEvent('ielts:assessment-mode',{detail:{active:false}}));try{mutate(s=>{delete s.drafts[submittingId];if(['writing','speaking'].includes(input.skill))s.queue[result.record.id]={recordId:result.record.id,at:new Date().toISOString()};});}catch(error){notice('原稿已经进入作品记录；草稿清理／待评索引未更新：'+error.message+'。刷新后可从最近作品继续。',true);}$('courseSubmitStatus').textContent=(objective&&!objectiveSubmissionComplete(input,material,A)?'部分原稿已保存，已答 '+grade.answered+'/'+material.questions.length+' 题；请继续本份材料补全。':'原稿已保存。')+'实际 '+(input.activeSeconds/60).toFixed(1)+' 分钟；不会自动完成整项日程。';doc.querySelectorAll('#courseQuestions input,#courseQuestions textarea,#courseOutput textarea').forEach(n=>n.disabled=true);showResult(result.record);refreshHistory();announceView();emitCourse('submitted');}
+      try{const input=toRecord(attempt,material,R.currentDay(),A,{data});const submittingId=attempt.id,submitGeneration=generation;const result=await R.record(input);if(generation!==submitGeneration||attempt?.id!==submittingId)return;submittedRecord=result.record;root.dispatchEvent(new CustomEvent('ielts:assessment-mode',{detail:{active:false}}));try{mutate(s=>{delete s.drafts[submittingId];if(['writing','speaking'].includes(input.skill))s.queue[result.record.id]={recordId:result.record.id,at:new Date().toISOString()};});}catch(error){notice('原稿已经进入作品记录；草稿清理／待评索引未更新：'+error.message+'。刷新后可从最近作品继续。',true);}$('courseSubmitStatus').textContent=(objective&&!objectiveSubmissionComplete(input,material,A)?'部分原稿已保存，已答 '+grade.answered+'/'+material.questions.length+' 题；请继续本份材料补全。':'原稿已保存。')+'实际 '+(input.activeSeconds/60).toFixed(1)+' 分钟；不会自动完成整项日程。';doc.querySelectorAll('#courseQuestions input,#courseQuestions textarea,#courseOutput textarea').forEach(n=>n.disabled=true);showResult(result.record);refreshHistory();announceView();emitCourse('submitted');}
       catch(error){$('courseSubmitStatus').textContent='未完成保存：'+error.message+'。原稿保留在页面，可重试。';running=true;lastInteraction=Date.now();tickAt=Date.now();syncSessionVisibility();}
       finally{busy=false;}
       if(submittedRecord&&['writing','speaking'].includes(submittedRecord.skill))await review(submittedRecord,submittedRecord.skill==='speaking');
@@ -678,10 +681,11 @@
     }
     async function refreshHistory() {
       try{records=await R.list();await refreshMediaBudget(records);if(root.IELTSAdaptivePlan?.adoptStarted){try{root.IELTSAdaptivePlan.adoptStarted({records,drafts:Object.values(state.drafts),startedDays:Object.values(state.drafts).map(d=>d.courseDay)});}catch(error){notice('已开始课程的保护记录未更新：'+error.message+'；已有草稿与作品保留。',true);}}}catch(error){notice('作品记录无法读取：'+error.message,true);return;}
-      if(!autoRouted){autoRouted=true;if(!params.has('day')&&!params.has('material')&&!root.location.hash&&root.IELTSYearPlanner){let startDate;try{startDate=JSON.parse(storage.getItem('ielts52-daily-plan-v1')||'null')?.startDate;}catch(_){}const report=root.IELTSYearPlanner.observe({data,records,drafts:allDrafts(),startDate,verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,isDayComplete:(n,own)=>{if(n===365)return own.some(r=>r.source==='year-review'&&A.decodeArtifact(r)?.yearSummary?.text?.trim().length>=20);try{return root.IELTSMistakes?.forDay(n)?.completionValid===true&&dayReadiness(data,n,own,{recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r)}).ready;}catch(_){return false;}}});if(report.courseDay!==day){showDay(report.courseDay);return;}}}
-      const week=dayPlan(day)?.week||1,prerequisites=prerequisiteStatus(data.materials,records,week,A).filter(item=>!item.pass);
+      if(storageBroken){renderDrafts();return;}
+      if(!autoRouted){autoRouted=true;if((placementReroute||!params.has('day')&&!params.has('material')&&!root.location.hash)&&root.IELTSYearPlanner){placementReroute=false;let startDate;try{startDate=JSON.parse(storage.getItem('ielts52-daily-plan-v1')||'null')?.startDate;}catch(_){}const report=root.IELTSYearPlanner.observe({data,placement:root.IELTSPlacement,records,drafts:allDrafts(),startDate,verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,isDayComplete:(n,own)=>{if(n===365)return own.some(r=>r.source==='year-review'&&A.decodeArtifact(r)?.yearSummary?.text?.trim().length>=20);try{return root.IELTSMistakes?.forDay(n)?.completionValid===true&&dayReadiness(data,n,own,{recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r)}).ready;}catch(_){return false;}}});if(report.courseDay!==day&&(!attempt||submittedRecord)){showDay(report.courseDay);return;}}}
+      const week=dayPlan(day)?.week||1,allPrerequisites=prerequisiteStatus(data.materials,records,week,A,{data}),prerequisites=allPrerequisites.filter(item=>!item.pass&&!item.placementCovered),covered=allPrerequisites.filter(item=>item.placementCovered&&!item.pass);
       let prerequisiteBox=$('coursePrerequisites');if(!prerequisiteBox){prerequisiteBox=el('p','course-target');prerequisiteBox.id='coursePrerequisites';$('courseDayTitle').parentElement?.append(prerequisiteBox);}
-      prerequisiteBox.hidden=!prerequisites.length;prerequisiteBox.textContent=prerequisites.length?'前置关卡仍未验证：'+prerequisites.map(item=>item.id).join('、')+'。可以提前浏览，但会登记曝光；建议先完成原稿、订正和新题复测，再提高训练难度。':'';
+      prerequisiteBox.hidden=!prerequisites.length&&!covered.length;prerequisiteBox.textContent=(covered.length?'入学起点已覆盖此前关卡 '+covered.map(item=>item.id).join('、')+' 的前置要求；原关卡状态保留，不记通过。':'')+(prerequisites.length?'前置关卡仍未验证：'+prerequisites.map(item=>item.id).join('、')+'。可以提前浏览，但会登记曝光；建议先完成原稿、订正和新题复测，再提高训练难度。':'');
       const actual=records.filter(r=>r.dayNumber===day);$('courseActual').textContent='本日已提交作品实际 '+actual.reduce((n,r)=>n+r.minutes,0).toFixed(1)+' 分钟；有效作品与能力关卡分别判断。';
       renderDrafts();
       $('courseQueue').replaceChildren();Object.values(state.queue).forEach(q=>{const record=records.find(r=>r.id===q.recordId);if(record)$('courseQueue').append(button(record.title+' · 重试评阅',()=>review(record,record.skill==='speaking')));});
@@ -708,6 +712,7 @@
       },begin:()=>begin(),current:()=>({day,taskId:task?.id,materialId:material?.id,active:!!attempt,submitted:!!submittedRecord}),exposures:()=>copy(state.exposures)};
     root.addEventListener('ielts:study-rest-started',()=>{if(!attempt||submittedRecord||!running)return;advanceTimer();running=false;attempt.interrupted||=attempt.mode==='assessment';activityController?.pause?.();listeningController?.pause?.();oralController?.cancel?.();stopMedia();persistDraft();syncSessionVisibility();$('coursePause').textContent='休息后继续';notice('本轮专注已结束，正在番茄休息。草稿和原音保留；休息结束后手动继续。');announceView();});
     root.addEventListener('ielts:study-timer-changed',event=>{if(event.detail?.invalidated){running=false;generation++;storageBroken=true;activityController?.pause?.();listeningController?.pause?.();oralController?.cancel?.();stopMedia();reviewAbort?.abort();$('courseBegin').disabled=true;$('courseSubmit').disabled=true;$('coursePause').disabled=true;notice(event.detail.error||'学习档案已更新，请先保留当前输入，再刷新页面继续。',true);}updateNextButtons();});
+    root.addEventListener('ielts:placement-changed',()=>{if(attempt&&!submittedRecord){updateNextButtons();announceView();notice('课程起点已更新；当前草稿保持原课程归属，提交后继续匹配程度的课程。');return;}autoRouted=false;placementReroute=true;refreshHistory().catch(error=>notice('入学起点暂未更新：'+error.message,true));});
     if(root.IELTSMistakes?.EVENT)root.addEventListener(root.IELTSMistakes.EVENT,updateNextButtons);
     root.addEventListener('hashchange',()=>{const match=/^#day(\d+)$/.exec(root.location.hash);if(match)showDay(Number(match[1]));});
     if(root.IELTSWordHover)hoverController=root.IELTSWordHover.install({root:doc,courseData:root.IELTSCourse,curriculumData:data,level:()=>material?.level||'A0',materialId:()=>material?.id||'',lookupAI:(word,context,level)=>localJSON('/api/ai/glossary',{word,context,level})});
@@ -718,7 +723,7 @@
     root.addEventListener('ielts:selection-assistance',event=>{if(event.detail?.materialId===material?.id)assistance('ai');});
     root.addEventListener('ielts:records-changed',()=>{if((root.IELTSProfiles?.current().id||'legacy')===profileId)refreshHistory();});root.addEventListener('ielts:profile-changed',()=>{advanceTimer();running=false;stopMedia();reviewAbort?.abort();generation++;storageBroken=true;$('courseBegin').disabled=true;$('courseSubmit').disabled=true;notice('学习档案已切换。当前未保存输入仍在本页，请先复制保留，再刷新；不会写入其他档案。',true);});
     root.addEventListener('pagehide',()=>{budgetDisposed=true;stopBudgetWatch?.();advanceTimer();if(attempt&&!submittedRecord){attempt.interrupted||=attempt.mode==='assessment';persistDraft();}stopMedia();reviewAbort?.abort();});
-    let stopBudgetWatch=null;setInterval(advanceTimer,1000);load();if(root.IELTSYearPlanner?.watchMediaActivity)stopBudgetWatch=root.IELTSYearPlanner.watchMediaActivity(()=>refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true)));setInterval(()=>{if(!budgetDisposed&&!storageBroken&&!doc.hidden)refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true));},5000);const linkedMaterial=materialMap.get(params.get('material'));const mappedDay=linkedMaterial?data.days.find(d=>d.tasks.some(t=>t.materialIds.includes(linkedMaterial.id)))?.day:null;const hashDay=/^#day(\d+)$/.exec(root.location.hash||'');const initialDay=Number(params.get('day'))||Number(hashDay?.[1])||mappedDay||R.currentDay()||state.day;showDay(Math.min(365,Math.max(1,initialDay)),params.get('material'));refreshHistory().then(()=>{if(!pendingParent)return;const parent=records.find(r=>r.id===pendingParent.parentId);if(!parent){notice('关联原稿未找到，请从作品记录重新打开。',true);pendingParent=null;return;}const matching=dayPlan(day)?.tasks.find(t=>t.id===parent.skill);if(matching)showTask(matching,params.get('material'));notice('已关联原稿「'+parent.title+'」。选择同技能材料后点击开始，将保存'+(pendingParent.kind==='retest'?'复测':'订正')+'版本。'+(!materialMap.has(parent.materialId)?'原材料来自其他练习模块，请选择课程内同技能材料。':''));});
+    let stopBudgetWatch=null;setInterval(advanceTimer,1000);load();if(root.IELTSYearPlanner?.watchMediaActivity)stopBudgetWatch=root.IELTSYearPlanner.watchMediaActivity(()=>refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true)));setInterval(()=>{if(!budgetDisposed&&!storageBroken&&!doc.hidden)refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true));},5000);const linkedMaterial=materialMap.get(params.get('material'));const mappedDay=linkedMaterial?data.days.find(d=>d.tasks.some(t=>t.materialIds.includes(linkedMaterial.id)))?.day:null;const hashDay=/^#day(\d+)$/.exec(root.location.hash||'');let initialPlacement=null;try{initialPlacement=placementRoute(data);}catch(_){}const initialDay=Number(params.get('day'))||Number(hashDay?.[1])||mappedDay||initialPlacement?.startDay||R.currentDay()||state.day;showDay(Math.min(365,Math.max(1,initialDay)),params.get('material'));refreshHistory().then(()=>{if(!pendingParent)return;const parent=records.find(r=>r.id===pendingParent.parentId);if(!parent){notice('关联原稿未找到，请从作品记录重新打开。',true);pendingParent=null;return;}const matching=dayPlan(day)?.tasks.find(t=>t.id===parent.skill);if(matching)showTask(matching,params.get('material'));notice('已关联原稿「'+parent.title+'」。选择同技能材料后点击开始，将保存'+(pendingParent.kind==='retest'?'复测':'订正')+'版本。'+(!materialMap.has(parent.materialId)?'原材料来自其他练习模块，请选择课程内同技能材料。':''));});
   }
   const api={KEY,mapItemGeometry,independentTask,audioCreditLink,newState,parseState,mergeState,taskFor,prerequisiteStatus,protectedMaterialAccess,figureRows,figurePanels,planGeometry,reviewRequest,prepareAudio,audioSource,runReviewPipeline,feedbackForRecord,practiceReviewResult,foundationSpeaking,localHTTP,modelReadingReference,cleanModelReading,modelReadingSnapshot,validateModelReading,verifySpeakingStage,objectiveSubmissionComplete,dayReadiness,nextDestination,toRecord};root.IELTSCoursePlayer=Object.freeze(api);if(typeof module==='object'&&module.exports)module.exports=api;
   if(root.document?.getElementById('coursePlayerApp'))init();

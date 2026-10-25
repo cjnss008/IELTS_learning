@@ -18,8 +18,8 @@
   const skillNames = { listening: '听力', speaking: '口语', reading: '阅读', writing: '写作' };
   const kindNames = { study: '学习日', review: '复盘日', checkpoint: '阶段测评日', 'year-review':'年度总结日' };
   const escape = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  function localDate() {
-    const d = new Date();
+  function localDate(value) {
+    const d = value === undefined ? new Date() : new Date(value);
     return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
   }
   const today = () => localDate();
@@ -65,9 +65,43 @@
     showStorageError('当前浏览器不允许保存记录。可以继续填写，并用“导出记录”保存本次进度。');
   }
   const actualDay = () => Core.dayForDate(state.startDate, today());
+  let placement = null, placementFailure = '', checkpointGates = null;
+  function readPlacement() {
+    const previousFailure = placementFailure;
+    try {
+      placement = globalThis.IELTSYearPlanner?.placementRoute?.(Curriculum) || globalThis.IELTSPlacement?.currentRoute?.(Curriculum) || null;
+      placementFailure = '';
+      if (previousFailure && !blockedStorage && !savingFailed && !storageConflict) $('storageMessage').hidden = true;
+    } catch (error) {
+      placement = null;
+      placementFailure = '入学测评起点尚未核实：' + error.message + ' 请到备份中心核对原记录后继续。';
+      showStorageError(placementFailure);
+    }
+  }
+  readPlacement();
+  const scheduledDay = () => placement ? placement.startDay + Math.max(0, Core.dayForDate(localDate(placement.adoptedAt), today()) - 1) : actualDay();
+  const optionalFoundation = day => !!placement && day < placement.startDay;
+  const hasActivity = day => !!recordFor(day).completedAt || Object.keys(recordFor(day).tasks).length > 0 || linkedFor(day).totalRecords > 0;
+  const dayAvailable = day => !placementFailure && (day <= scheduledDay() || !!placement && hasActivity(day));
+  function historyDate(day) {
+    const dates = [recordFor(day).completedAt, ...(linkedFor(day).records || []).map(record => record.submittedAt)].filter(value => Number.isFinite(Date.parse(value))).sort();
+    return dates.length ? localDate(dates[0]) : '';
+  }
+  function checkpointStatus(plan) {
+    if (plan.kind !== 'checkpoint' || plan.planVersion === Core.LEGACY_PLAN_VERSION) return null;
+    const groups = [...new Set(plan.tasks.flatMap(task => task.coreMaterialIds || task.materialIds || []).map(id => curriculumMaterials.get(id)).filter(material => material?.pool === 'gate' && material.assessmentGroup).map(material => material.assessmentGroup))];
+    if (!groups.length) return null;
+    if (!checkpointGates) {
+      try { checkpointGates = globalThis.IELTSAssessment?.gateMastery?.(linkedRecords, Curriculum.materials, { now: Date.now() }) || []; }
+      catch (_) { checkpointGates = []; }
+    }
+    const gates = groups.map(id => checkpointGates.find(gate => gate.id === id));
+    const ready = gates.every(gate => gate?.pass === true);
+    return { ready, reason: ready ? 'A 卷与至少 48 小时后的未见 B 卷证据已核实。' : gates.map((gate, i) => gate ? gate.id + '：' + gate.reasons.join('；') : groups[i] + ' 的完整关卡证据尚未核实').join('；') };
+  }
   const clampDay = (day) => Math.max(1, Math.min(365, day));
   const hashDay = /^#day(\d+)$/.exec(location.hash);
-  let selectedDay = hashDay && Number(hashDay[1]) >= 1 && Number(hashDay[1]) <= 365 ? Number(hashDay[1]) : clampDay(actualDay());
+  let selectedDay = hashDay && Number(hashDay[1]) >= 1 && Number(hashDay[1]) <= 365 ? Number(hashDay[1]) : clampDay(scheduledDay());
 
   function persist() {
     clearTimeout(persistTimer);
@@ -87,7 +121,8 @@
       lastSavedState = serialized;
       savingFailed = false;
       $('saveStatus').textContent = preview ? '预览记录已保存到本次浏览器会话' : '已保存到当前浏览器';
-      $('storageMessage').hidden = true;
+      $('storageMessage').hidden = !placementFailure;
+      if (placementFailure) $('storageMessage').textContent = placementFailure;
       return true;
     } catch (error) {
       savingFailed = true;
@@ -104,35 +139,41 @@
   function recordFor(day) { return state.days[String(day)] || { tasks: {} }; }
   function isSubmitted(day) {
     const record = recordFor(day);
-    if (day > actualDay()) return false;
+    if (!dayAvailable(day)) return false;
     const plan = Store.getPlan(state, day, Content);
     if(plan.planVersion===Core.LEGACY_PLAN_VERSION&&!record.completedAt)return false;
-    if (plan.kind === 'checkpoint' && !state.assessments.some((a) => a.week === plan.week)) return false;
+    if (plan.kind === 'checkpoint' && plan.planVersion === Core.LEGACY_PLAN_VERSION && !state.assessments.some((a) => a.week === plan.week)) return false;
+    if (checkpointStatus(plan)?.ready === false) return false;
     return Core.summarizeDay(plan, effectiveFor(day, plan)).complete;
   }
   function renderStats() {
     let completed = 0, overdue = 0, minutes = 0;
-    const dayNow = actualDay();
+    const dayNow = scheduledDay();
     for (let d = 1; d <= 365; d++) {
       if (isSubmitted(d)) completed++;
-      else if (d < dayNow) overdue++;
-      if (d <= dayNow) minutes += Core.summarizeDay(Store.getPlan(state, d, Content), effectiveFor(d)).minutes;
+      else if (d < dayNow && !optionalFoundation(d)) overdue++;
+      if (dayAvailable(d)) minutes += Core.summarizeDay(Store.getPlan(state, d, Content), effectiveFor(d)).minutes;
     }
     $('completedDays').innerHTML = `${completed} <small>/ 365</small>`;
     $('loggedHours').innerHTML = `${(minutes / 60).toFixed(1)} <small>小时</small>`;
     $('overdueDays').textContent = String(overdue);
-    const missing = Array.from({ length: 13 }, (_, i) => (i + 1) * 4).find((week) => !state.assessments.some((a) => a.week === week));
-    $('nextCheckpoint').textContent = missing ? `第 ${missing} 周` : '13 次已记录';
+    const missing = Array.from({ length: 13 }, (_, i) => (i + 1) * 4).filter(week => !placement || week >= placement.startWeek).find((week) => {
+      const plan = Store.getPlan(state, week * 7, Content);
+      return plan.planVersion === Core.LEGACY_PLAN_VERSION ? !state.assessments.some((a) => a.week === week) : !isSubmitted(week * 7);
+    });
+    $('nextCheckpoint').textContent = missing ? `第 ${missing} 周` : placement ? '本起点后检查已核实' : '全部阶段检查已核实';
   }
   function renderWeekDays() {
     const week = Math.min(52,Math.ceil(selectedDay / 7));
-    const dayNow = actualDay();
+    const dayNow = scheduledDay();
     $('weekDays').innerHTML = Array.from({ length: week===52?8:7 }, (_, i) => {
       const d = (week - 1) * 7 + i + 1;
       const done = isSubmitted(d);
-      const label = done ? '✓ 已交' : d === dayNow ? '今天' : d < dayNow ? '待补' : '待学';
-      const date = Core.dateForDay(state.startDate, d);
-      return `<button type="button" class="day-button" data-day="${d}" aria-current="${d === selectedDay}"><span><strong>${d===365?'年度总结':'第 '+(i+1)+' 天'}</strong><small>${date.slice(5).replace('-', '/')}</small></span><span class="day-dot ${!done && d < dayNow ? 'overdue' : ''}">${label}</span></button>`;
+      const gate = checkpointStatus(Store.getPlan(state, d, Content));
+      const label = done ? '✓ 已交' : optionalFoundation(d) ? hasActivity(d) ? '原稿待续' : '基础回看' : gate && !gate.ready && hasActivity(d) ? '关卡待验证' : d === dayNow ? placement ? '当前排程' : '今天' : d < dayNow ? '待补' : '待学';
+      const completedDate = historyDate(d);
+      const dateLabel = placement ? completedDate ? '作品 ' + completedDate.slice(5).replace('-', '/') : d === placement.startDay ? '测评起点' : '课程第 ' + d + ' 课' : Core.dateForDay(state.startDate, d).slice(5).replace('-', '/');
+      return `<button type="button" class="day-button" data-day="${d}" aria-current="${d === selectedDay}"><span><strong>${d===365?'年度总结':'第 '+(i+1)+' 天'}</strong><small>${dateLabel}</small></span><span class="day-dot ${!done && d < dayNow && !optionalFoundation(d) ? 'overdue' : ''}">${label}</span></button>`;
     }).join('');
   }
   function renderWeek() {
@@ -154,7 +195,8 @@
     const edition = week >= 49 ? 19 : week >= 37 ? 16 + Math.floor((week - 37) / 4) : week >= 21 ? 4 + Math.floor((week - 21) / 4) : null;
     const testNumber = edition === null ? null : (week - (week >= 37 ? 37 : 21)) % 4 + 1;
     const textbook = edition === null ? '' : `<h4>第 ${week} 周教材建议</h4><a data-textbook-week="${week}" href="${escape(previewLink('本地教材.html?edition=' + edition + '&type=exam'))}">剑桥 ${edition} · Test ${testNumber}${week >= 49 ? ' · 末期保留' : ''}：先核对曝光 →</a><p>${week >= 49 ? '先在教材库检查是否已见，准备使用时再展开保留卷。' : '教材读写练习安排在原阅读、写作时段内。'}进入索引不会登记曝光；点击 PDF 才登记。当前教材缺配套真题听力音频，不作为四科完整模考。</p>`;
-    $('materials').innerHTML = `<h4>学习材料入口</h4><a href="${escape(previewLink('学习课程.html?day=' + selectedDay))}">第 ${selectedDay} 天课程与作品提交 →</a>${extensiveLinks}<p>泛读、泛听包含在原阅读、听力时段内，不另加时间；每天仍为 360 分钟。已见材料只作流畅度练习，不计陌生测评。</p>${textbook}<a href="${escape(previewLink('本地教材.html'))}">本地教材、剑雅试卷与曝光记录 →</a>${reading}<a href="生词复习.html">到期词卡与原句复习</a><a href="口语练习.html">口语录音与回听</a><a href="写作与AI辅导.html">写作与语法辅导</a><p>${currentPlan.planVersion === Core.LEGACY_PLAN_VERSION ? '此日保留旧版日程与完成量单位；课程可作为补充材料，相同单位的作品才计入旧任务。' : '各任务卡列出今日指定材料。按材料独立作答、提交原稿，再做订正与延迟复测；课程训练不等于正式成绩。'}</p>`;
+    const gateLink = checkpointStatus(currentPlan) ? `<a href="${escape(previewLink('今日学习.html?day=' + selectedDay) + '#courseGates')}">查看原关卡记录与延迟复测条件 →</a>` : '';
+    $('materials').innerHTML = `<h4>学习材料入口</h4><a href="${escape(previewLink('学习课程.html?day=' + selectedDay))}">第 ${selectedDay} 天课程与作品提交 →</a>${gateLink}${extensiveLinks}<p>泛读、泛听包含在原阅读、听力时段内，不另加时间；每天仍为 360 分钟。已见材料只作流畅度练习，不计陌生测评。</p>${textbook}<a href="${escape(previewLink('本地教材.html'))}">本地教材、剑雅试卷与曝光记录 →</a>${reading}<a href="生词复习.html">到期词卡与原句复习</a><a href="口语练习.html">口语录音与回听</a><a href="写作与AI辅导.html">写作与语法辅导</a><p>${currentPlan.planVersion === Core.LEGACY_PLAN_VERSION ? '此日保留旧版日程与完成量单位；课程可作为补充材料，相同单位的作品才计入旧任务。' : '各任务卡列出今日指定材料。按材料独立作答、提交原稿，再做订正与延迟复测；课程训练不等于正式成绩。'}</p>`;
     renderWeekDays();
   }
   function renderTasks() {
@@ -164,8 +206,6 @@
       const materials = task.materials ? `<div class="task-materials"><strong>本项指定材料</strong>${task.materials.length ? task.materials.map(m => `<a href="${escape(previewLink(m.url))}">${escape(m.title)} →</a>`).join('') : '<p>此项材料尚未生成，当前仅可预览日程。</p>'}</div>` : '';
       return `<article class="task-card" data-task="${escape(task.id)}"><div class="task-top"><div class="task-title"><span class="task-number">${String(i + 1).padStart(2, '0')}</span><div><h3>${escape(task.title)}</h3><p>${task.timeIsBudget ? '建议预算 ' : ''}${task.minutes} 分钟 · 交付 ${task.quantity} ${escape(task.unit)}</p></div></div><span class="task-status">待完成</span></div><p class="task-instruction">${escape(task.instruction)}</p>${materials}<div class="task-inputs"><label for="minutes-${task.id}">实际学习分钟<input type="number" min="0" max="600" step="1" id="minutes-${task.id}" data-field="actualMinutes" value="${escape(r.actualMinutes ?? '')}" inputmode="numeric"></label><label for="quantity-${task.id}">补充自报数量（${escape(task.unit)}）<input type="number" min="0" max="10000" step="1" id="quantity-${task.id}" data-field="actualQuantity" value="${escape(r.actualQuantity ?? '')}" inputmode="numeric"></label></div><label class="evidence-label" for="evidence-${task.id}">学习成果与复盘记录<textarea id="evidence-${task.id}" data-field="evidence" maxlength="1200" placeholder="${escape(task.evidenceHint)}">${escape(r.evidence || '')}</textarea></label><p class="task-issues" hidden></p></article>`;
     }).join('');
-    const future = selectedDay > actualDay();
-    $('tasksForm').querySelectorAll('input,textarea,button').forEach((el) => { el.disabled = future || blockedStorage; });
     updateTaskProgress();
   }
   function updateTaskProgress() {
@@ -188,8 +228,38 @@
     $('taskProgress').textContent = `${summary.completedTasks} / ${summary.totalTasks} 项保留所需交付 · 实际 ${summary.minutes} 分钟`;
     $('dayProgress').max = summary.totalTasks;
     $('dayProgress').value = summary.completedTasks;
-    $('dayResult').textContent = isSubmitted(selectedDay) ? '今日真实产出、错题订正和 AI 复盘已提交。剩余可用时间可继续同级练习；独立掌握仍需换题复测。' : currentPlan.planVersion===Core.CURRICULUM_PLAN_VERSION ? '每天 6 小时是总可用预算。完成当前材料就继续下一份；提交以真实作品、错题全对和 AI 复盘为准，不等待计时。' : '关联作品自动计入相同单位的学习量。线下学习可补填自报总量和成果，再提交。';
-    $('submitDay').textContent = isSubmitted(selectedDay) ? '更新今日成果' : '提交今日成果';
+    const gate = checkpointStatus(currentPlan);
+    $('dayResult').textContent = isSubmitted(selectedDay) ? '本课真实产出、错题订正和 AI 复盘已提交。剩余可用时间可继续同级练习；独立掌握仍需换题复测。' : gate && !gate.ready && summary.complete ? '本课核心提交与复盘已齐；阶段关卡仍待验证：' + gate.reason + ' 已完成的 A 卷原稿保留，请从下方原稿进入对应 B 卷延迟复测。' : currentPlan.planVersion===Core.CURRICULUM_PLAN_VERSION ? '每天 6 小时是总可用预算。完成当前材料就继续下一份；提交以真实作品、错题全对和 AI 复盘为准，不等待计时。' : '关联作品自动计入相同单位的学习量。线下学习可补填自报总量和成果，再提交。';
+    $('submitDay').textContent = isSubmitted(selectedDay) ? '更新本课成果' : gate && !gate.ready ? '核对阶段关卡' : '提交本课成果';
+    $('tasksForm').querySelectorAll('input,textarea,button').forEach((el) => { el.disabled = !dayAvailable(selectedDay) || blockedStorage; });
+  }
+  function renderDayContext() {
+    const completedDate = historyDate(selectedDay);
+    const courseLabel = placement ? `课程第 ${selectedDay} 课${selectedDay === placement.startDay ? ' · 测评起点' : ''}${completedDate ? ' · 作品日期 ' + completedDate : ''}` : Core.dateForDay(state.startDate, selectedDay);
+    $('daySubtitle').textContent = `${courseLabel} · ${kindNames[currentPlan.kind]} · ${currentPlan.weekInfo.title}`;
+    $('dayMinutes').textContent = currentPlan.totalMinutes;
+    const messages = [];
+    if (currentPlan.planVersion === Core.LEGACY_PLAN_VERSION) messages.push('此日已有旧版记录，继续沿用原任务、数量和单位。旧记录不会被换算为新课程的题数或词数。');
+    else if (currentPlan.curriculumStatus !== 'complete-material-set') messages.push('课程材料仍在开发预览；任务卡只链接当前已生成材料，待材料完整后再按正式日程学习。');
+    if (placementFailure) messages.push(placementFailure);
+    if (placement) messages.push(`已采用四项入学测评，从第 ${placement.startDay} 课（第 ${placement.startWeek} 周）进入课程。起点前的基础课可回看，未开始的基础课不计待补，也不记为已经完成。`);
+    if (optionalFoundation(selectedDay)) messages.push('本课属于起点前的基础回看。既有原稿、错题和实际作品日期继续保留，可按需要续做。');
+    if (!dayAvailable(selectedDay)) messages.push(placement ? '这是后续课程预览。请先从今日学习完成当前课程；已经开始的原稿可按原课次继续。' : '这是未来日程预览。到对应日期后即可填写和提交学习成果。');
+    if (actualDay() > 365) messages.push('年度日历已结束，课程与草稿仍可继续。请完成积压、补齐准备度证据；未达标继续补强。');
+    if (currentPlan.kind === 'checkpoint') messages.push(currentPlan.planVersion === Core.LEGACY_PLAN_VERSION ? '本课包含旧版阶段检查。请在下方保存本周测评记录，再提交本课成果。基础阶段使用适级任务，不强行换算雅思分数。' : '本课包含阶段检查。核心原稿、真实评阅与错题复盘分别保留；A/B 关卡须满足独立证据和至少 48 小时的复测间隔，手动分数不能代替。');
+    const gate = checkpointStatus(currentPlan);
+    if (gate && !gate.ready) messages.push('阶段关卡待验证：' + gate.reason + ' 请查看材料入口中的原关卡记录与复测条件；已完成的 A 卷无需重新提交。');
+    const previousCheckpoint = Math.floor((currentPlan.week - 1) / 4) * 4;
+    if (previousCheckpoint && (!placement || previousCheckpoint >= placement.startWeek)) {
+      const priorPlan = Store.getPlan(state, previousCheckpoint * 7, Content);
+      if (priorPlan.planVersion === Core.LEGACY_PLAN_VERSION && !state.assessments.some((a) => a.week === previousCheckpoint)) messages.push(`第 ${previousCheckpoint} 周旧版测评尚未记录，请先补齐原计划的能力证据。`);
+      else if (checkpointStatus(priorPlan)?.ready === false) messages.push(`第 ${previousCheckpoint} 周关卡仍待真实证据验证，请从原关卡记录继续补强与延迟复测。`);
+    }
+    $('dayNotice').hidden = !messages.length;
+    $('dayNotice').textContent = messages.join(' ');
+    const boost = state.boosts[String(selectedDay)];
+    $('boostNotice').hidden = !boost;
+    $('boostNotice').textContent = boost ? `本日补强重点：${skillNames[boost.skill]}。在对应任务内安排 20 分钟针对练习和 10 分钟复测，包含在每日 360 分钟内。` : '';
   }
   function renderDay() {
     currentPlan = Store.getPlan(state, selectedDay, Content);
@@ -197,21 +267,7 @@
     location.hash = `day${selectedDay}`;
     $('dayEyebrow').textContent = `WEEK ${String(currentPlan.week).padStart(2, '0')} · DAY ${String(selectedDay).padStart(3, '0')}${preview ? ' · 预览模式' : ''}`;
     $('dayTitle').textContent = `第 ${currentPlan.week} 周 · 第 ${currentPlan.weekday} 天`;
-    $('daySubtitle').textContent = `${Core.dateForDay(state.startDate, selectedDay)} · ${kindNames[currentPlan.kind]} · ${currentPlan.weekInfo.title}`;
-    $('dayMinutes').textContent = currentPlan.totalMinutes;
-    const messages = [];
-    if (currentPlan.planVersion === Core.LEGACY_PLAN_VERSION) messages.push('此日已有旧版记录，继续沿用原任务、数量和单位。旧记录不会被换算为新课程的题数或词数。');
-    else if (currentPlan.curriculumStatus !== 'complete-material-set') messages.push('课程材料仍在开发预览；任务卡只链接当前已生成材料，待材料完整后再按正式日程学习。');
-    if (selectedDay > actualDay()) messages.push('这是未来日程预览。到对应日期后即可填写和提交学习成果。');
-    if (actualDay() > 365) messages.push('年度日历已结束，课程与草稿仍可继续。请完成积压、补齐准备度证据；未达标继续补强。');
-    if (currentPlan.kind === 'checkpoint') messages.push('今天包含阶段检查。请在下方保存本周测评记录，再提交今日成果。基础阶段使用适级任务，不强行换算雅思分数。');
-    const previousCheckpoint = Math.floor((currentPlan.week - 1) / 4) * 4;
-    if (previousCheckpoint && !state.assessments.some((a) => a.week === previousCheckpoint)) messages.push(`第 ${previousCheckpoint} 周测评尚未记录，请先补齐能力证据，确定本阶段需要加强的项目。`);
-    $('dayNotice').hidden = !messages.length;
-    $('dayNotice').textContent = messages.join(' ');
-    const boost = state.boosts[String(selectedDay)];
-    $('boostNotice').hidden = !boost;
-    $('boostNotice').textContent = boost ? `本日补强重点：${skillNames[boost.skill]}。在对应任务内安排 20 分钟针对练习和 10 分钟复测，包含在每日 360 分钟内。` : '';
+    renderDayContext();
     renderWeek();
     renderTasks();
     renderEvidence();
@@ -228,6 +284,7 @@
     $('assessmentDate').value = today();
     $('assessmentDate').max = today();
     $('assessmentDate').min = state.startDate;
+    $('todayButton').textContent = placement ? '回到当前课程排程' : '回到今天';
     renderDay();
     renderStats();
     renderAssessments();
@@ -242,26 +299,28 @@
       const url = new URLSearchParams({day:String(selectedDay),material:r.materialId,parent:r.id,mode:'practice',kind:'correction'});
       if(preview)url.set('preview','1');
       const due = Date.now() >= Date.parse(s.dueAt);
-      const retest = new URLSearchParams({day:String(clampDay(actualDay())),parent:r.id,mode:'assessment',kind:'retest'});
+      const sourceMaterial = curriculumMaterials.get(r.materialId);
+      const gateB = sourceMaterial?.pool === 'gate' && sourceMaterial.form === 'A' ? Curriculum.materials.find(material => material.assessmentGroup === sourceMaterial.assessmentGroup && material.form === 'B' && material.skill === sourceMaterial.skill) : null;
+      const retest = new URLSearchParams({day:String(gateB ? selectedDay : clampDay(scheduledDay())),parent:r.id,mode:'assessment',kind:'retest',...(gateB ? {material:gateB.id} : {})});
       if(preview)retest.set('preview','1');
       const answer = r.answer.length > 12000 ? r.answer.slice(0,12000) + '\n…完整原稿保存在作品库，可到备份中心导出。' : r.answer;
-      return `<article class="evidence-card"><div><strong>${escape(r.title)}</strong><span class="evidence-state">${escape(s.label)}</span></div><p class="small">${escape(r.source)} · ${escape(r.materialId)} · ${escape(r.submittedAt.replace('T',' ').slice(0,16))} UTC · ${r.minutes.toFixed(1)} 分钟 · ${r.quantity} ${escape(r.unit)} · ${flags.length?escape(flags.join('、')):'未标记使用辅助'} · v${r.version}</p><p class="small">${r.kind==='original'?'保留原稿':r.kind==='correction'?'订正作品':'复测作品'}${r.parentId?' · 前一作品 '+escape(r.parentId):''}；复测窗口 ${escape(s.dueAt.slice(0,16).replace('T',' '))}–${escape(s.until.slice(0,16).replace('T',' '))} UTC</p><details><summary>查看原稿、反馈与修订</summary><pre>${escape(answer||'原稿为录音，请到口语页回听或到备份中心导出音频。')}</pre>${r.media.map(m=>`<p class="small">录音：${escape(m.name)} · ${Math.round(m.durationSeconds)} 秒 · ${escape(m.id)}</p>`).join('')}${r.history.map(h=>`<div class="evidence-feedback"><strong>第 ${h.version} 版 · ${escape(h.evaluation.method)} · ${escape(h.evaluation.result)}</strong><pre>${escape(h.evaluation.feedback||'尚无反馈')}</pre><p>${escape(h.notes)}</p></div>`).join('')}</details><p><a href="学习课程.html?${escape(url.toString())}">保留原稿后订正</a>${due?` · <a href="学习课程.html?${escape(retest.toString())}">选择同技能新材料复测</a>`:' · 到 48 小时后可做新题复测'}</p></article>`;
+      return `<article class="evidence-card"><div><strong>${escape(r.title)}</strong><span class="evidence-state">${escape(s.label)}</span></div><p class="small">${escape(r.source)} · ${escape(r.materialId)} · ${escape(r.submittedAt.replace('T',' ').slice(0,16))} UTC · ${r.minutes.toFixed(1)} 分钟 · ${r.quantity} ${escape(r.unit)} · ${flags.length?escape(flags.join('、')):'未标记使用辅助'} · v${r.version}</p><p class="small">${r.kind==='original'?'保留原稿':r.kind==='correction'?'订正作品':'复测作品'}${r.parentId?' · 前一作品 '+escape(r.parentId):''}；复测窗口 ${escape(s.dueAt.slice(0,16).replace('T',' '))}–${escape(s.until.slice(0,16).replace('T',' '))} UTC</p><details><summary>查看原稿、反馈与修订</summary><pre>${escape(answer||'原稿为录音，请到口语页回听或到备份中心导出音频。')}</pre>${r.media.map(m=>`<p class="small">录音：${escape(m.name)} · ${Math.round(m.durationSeconds)} 秒 · ${escape(m.id)}</p>`).join('')}${r.history.map(h=>`<div class="evidence-feedback"><strong>第 ${h.version} 版 · ${escape(h.evaluation.method)} · ${escape(h.evaluation.result)}</strong><pre>${escape(h.evaluation.feedback||'尚无反馈')}</pre><p>${escape(h.notes)}</p></div>`).join('')}</details><p><a href="学习课程.html?${escape(url.toString())}">保留原稿后订正</a>${due?` · <a href="学习课程.html?${escape(retest.toString())}">${gateB?'进入对应 B 卷延迟复测':'选择同技能新材料复测'}</a>`:' · 到 48 小时后可做新题复测'}</p></article>`;
     }).join('') : '<p class="small">课程、写作、口语或选区练习提交后，作品将自动关联到实际学习日。旧版打卡继续保留为自报；不会自动变成独立掌握证据。</p>';
     if(work.length>100)$('linkedEvidence').insertAdjacentHTML('beforeend','<p>本页显示最近 100 份作品；完整记录可到备份中心导出。</p>');
   }
   let evidenceRefreshing=false,evidenceRefreshAgain=false;
   async function refreshEvidence() {
     if(evidenceRefreshing){evidenceRefreshAgain=true;return;}evidenceRefreshing=true;
-    try { do {evidenceRefreshAgain=false;linkedRecords = await Records.list();if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(linkedRecords);linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain); }
+    try { do {evidenceRefreshAgain=false;linkedRecords = await Records.list();checkpointGates = null;if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(linkedRecords);linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain); }
     catch(error) { linkedFailure = '作品或错题状态暂时无法核实，原记录保留：'+error.message; }
     finally{evidenceRefreshing=false;}
-    renderEvidence(); updateTaskProgress(); renderStats(); renderWeekDays();
+    renderDayContext(); renderEvidence(); updateTaskProgress(); renderStats(); renderWeekDays();
   }
   $('weekSelect').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周 · ${escape(w.title)}</option>`).join('');
   $('assessmentWeek').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周${w.week % 4 === 0 ? '（阶段检查）' : ''}</option>`).join('');
   $('weekSelect').addEventListener('change', () => { persist(); selectedDay = (Number($('weekSelect').value) - 1) * 7 + 1; renderDay(); });
   $('weekDays').addEventListener('click', (event) => { const b = event.target.closest('[data-day]'); if (b) { persist(); selectedDay = Number(b.dataset.day); renderDay(); } });
-  $('todayButton').addEventListener('click', () => { persist(); selectedDay = clampDay(actualDay()); renderDay(); });
+  $('todayButton').addEventListener('click', () => { persist(); selectedDay = clampDay(scheduledDay()); renderDay(); });
   $('startForm').addEventListener('submit', (event) => {
     event.preventDefault();
     try {
@@ -275,14 +334,14 @@
         return;
       }
       state.startDate = date;
-      persist(); selectedDay = clampDay(actualDay()); renderAll();
+      persist(); selectedDay = clampDay(scheduledDay()); renderAll();
       $('setupStatus').textContent = `计划从 ${date} 开始，至 ${Core.dateForDay(date, 365)}（含第365天年度总结）。每天最多可用 360 分钟；各模块分钟为建议预算，完成后直接继续，不等计时。${preview ? '（预览模式）' : ''}`;
     } catch (error) { $('setupStatus').textContent = error.message; }
   });
   $('tasksForm').addEventListener('input', (event) => {
     const field = event.target.dataset.field;
     const card = event.target.closest('[data-task]');
-    if (!field || !card || selectedDay > actualDay() || blockedStorage) return;
+    if (!field || !card || !dayAvailable(selectedDay) || blockedStorage) return;
     const day = state.days[String(selectedDay)] || (state.days[String(selectedDay)] = { planVersion: currentPlan.planVersion, tasks: {} });
     day.planVersion = currentPlan.planVersion;
     const r = day.tasks[card.dataset.task] || (day.tasks[card.dataset.task] = { actualMinutes: null, actualQuantity: null, evidence: '' });
@@ -307,11 +366,13 @@
   });
   $('tasksForm').addEventListener('submit', (event) => {
     event.preventDefault();
-    if (selectedDay > actualDay() || blockedStorage) return;
+    if (!dayAvailable(selectedDay) || blockedStorage) return;
     showValidation = true; updateTaskProgress();
     const summary = Core.summarizeDay(currentPlan, effectiveFor(selectedDay, currentPlan));
     if (!summary.complete) { $('dayResult').textContent = '还有任务未达到要求，请按各项提示补齐真实学习成果。'; $('taskList').querySelector('.task-card:not(.complete)')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
-    if (currentPlan.kind === 'checkpoint' && !state.assessments.some((a) => a.week === currentPlan.week)) { $('dayResult').textContent = '请先在下方保存本周阶段测评记录，再提交今日成果。'; $('assessmentTitle').scrollIntoView({ behavior: 'smooth' }); return; }
+    if (currentPlan.kind === 'checkpoint' && currentPlan.planVersion === Core.LEGACY_PLAN_VERSION && !state.assessments.some((a) => a.week === currentPlan.week)) { $('dayResult').textContent = '请先在下方保存本周旧版阶段测评记录，再提交本课成果。'; $('assessmentTitle').scrollIntoView({ behavior: 'smooth' }); return; }
+    const gate = checkpointStatus(currentPlan);
+    if (gate && !gate.ready) { $('dayResult').textContent = '核心原稿与复盘已保留，阶段关卡仍待验证：' + gate.reason + ' 请查看原关卡记录，从已有 A 卷原稿进入对应 B 卷延迟复测。'; return; }
     const savedDay = state.days[String(selectedDay)] || (state.days[String(selectedDay)] = { planVersion: currentPlan.planVersion, tasks: {} });
     savedDay.planVersion = currentPlan.planVersion;
     savedDay.completedAt = new Date().toISOString();
@@ -364,14 +425,23 @@
       if (!confirm('导入会替换当前浏览器中的日程记录。请确认已经导出现有备份，继续导入？')) return;
       state = candidate; blockedStorage = false; originalCorruptData = null;
       storageConflict = false; lastStoredRaw = storage().getItem(key); lastSavedState = null;
-      selectedDay = clampDay(actualDay());
+      selectedDay = clampDay(scheduledDay());
       persist(); renderAll();
       $('setupStatus').textContent = savingFailed ? '备份已读入页面，但尚未成功保存，请再次导出以保留。' : '日程记录已恢复。原有课文学习记录不受影响。';
     } catch (error) { $('setupStatus').textContent = `导入未完成：${error.message}`; }
     finally { event.target.value = ''; }
   });
   window.addEventListener('pagehide', () => persist());
+  function placementChanged() {
+    const keepStarted = hasActivity(selectedDay);
+    readPlacement();
+    if (!keepStarted) selectedDay = clampDay(scheduledDay());
+    $('todayButton').textContent = placement ? '回到当前课程排程' : '回到今天';
+    renderDay(); renderStats();
+  }
+  window.addEventListener('ielts:placement-changed', placementChanged);
   window.addEventListener('storage', event => {
+    if (event.key === IELTSProfiles.scopeKey(globalThis.IELTSPlacement?.KEY || 'ielts52-placement-v1')) { placementChanged(); return; }
     if (!preview && event.key === IELTSProfiles.scopeKey(key) && event.newValue !== lastStoredRaw) {
       storageConflict = true;
       showStorageError('另一个标签页已更新记录。请导出本页尚未保存的草稿，再刷新读取最新版本；本页不会覆盖其他标签页。');

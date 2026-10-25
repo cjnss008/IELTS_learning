@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>入学能力测评 · IELTS Learning</title>
+ <link rel="stylesheet" href="assets/daily-plan.css"><link rel="stylesheet" href="assets/course-player.css"><link rel="stylesheet" href="assets/placement.css">
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/profile-store.js" defer></script>
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/speaking-audio.js" defer></script>
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/speaking-library.js" defer></script>
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/oral-practice.js" defer></script>
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/listening-player.js" defer></script>
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/placement-core.js" defer></script>
+ <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/placement-app.js" defer></script>
+ <script src="assets/user-data-bootstrap.js" defer></script>
+</head>
+<body>
+ <header class="site-header"><a class="brand" href="今日学习.html">IELTS LEARNING<small>从适合你的地方开始</small></a><nav aria-label="主导航"><a href="今日学习.html">今日学习</a><a href="入学测评.html" aria-current="page">能力测评</a><a href="AI设置.html">AI 与语音设置</a><a href="备份中心.html">备份</a></nav></header>
+ <main class="page-shell placement-page" id="placementApp">
+  <section class="course-hero"><p class="eyebrow">FIND YOUR STARTING POINT</p><h1>先测一测，再开始适合你的课程。</h1><p>通过听力、阅读、写作和真实口语录音，找出你已经会的内容与需要补强的基础。AI 参与出题、两轮评价和起点建议；采用后，首页从匹配的课程继续。</p></section>
+  <section id="placementWelcome" class="placement-panel">
+   <h2>独立完成，才能安排得准确</h2>
+   <ol><li>约 35–60 分钟，可随时保存后继续。听力、阅读各有四组由易到难的短题。</li><li>写作按自己能力表达；口语先独立回答，再回听并核对转写。不要先写稿照读。</li><li>遇到确实不会的题，可选“这组我不会”。播放或服务失败时请重试，不能当作能力不足。</li><li>采用结果只改变课程起点；历史作品、未交草稿、错题和后续阶段关卡保留。</li></ol>
+   <p id="placementServices" class="course-small" role="status">正在检查 AI 与语音服务…</p>
+   <button id="placementGenerate" class="button primary" type="button">让 AI 生成本次测评</button>
+   <a class="button secondary" href="今日学习.html">暂不测评，返回课程</a>
+  </section>
+  <p id="placementStatus" class="course-notice" role="status" aria-live="polite"></p>
+  <section id="placementHistory" class="placement-panel" aria-label="已保存的能力测评"></section>
+  <section id="placementSession" hidden>
+   <div class="placement-heading"><h2 id="placementSessionTitle"></h2><span id="placementSaved" class="course-small"></span></div>
+   <nav id="placementTasks" class="placement-tabs" aria-label="测评任务"></nav>
+   <div id="placementTask" class="placement-panel"></div>
+   <div class="placement-actions"><button id="placementPrevious" class="button secondary" type="button">上一组</button><button id="placementNext" class="button primary" type="button">保存并下一组</button><button id="placementEvaluate" class="button primary" type="button">提交四项作答，让 AI 评价</button><button id="placementRecover" class="button secondary" type="button">读取已保存的评价</button></div>
+  </section>
+  <section id="placementReport" class="placement-panel" hidden aria-label="AI 能力评价与课程起点"></section>
+  <footer>这是用于课程安排的能力定位，不是正式雅思成绩。不同科目分开判断，以基础薄弱项确定稳妥起点；不足的语音证据会明确标注。</footer>
+ </main>
+</body>
+</html>

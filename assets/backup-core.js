@@ -1,6 +1,7 @@
 (function(root){
   'use strict';
   const KEYS={
+    'ielts52-placement-v1':'AI 四项入学测评、原始作答、报告与课程起点',
     'ielts52-study-timer-v1':'番茄钟设置与每日休息时间（不计学习掌握）',
     'ielts52-listening-lab-v1':'精听帮助、片段循环与听音笔记',
     'ielts52-memory-v1':'FSRS分技能回忆、个人参数与调度',
@@ -33,6 +34,7 @@
   function validate(key,raw){
     if(!Object.hasOwn(KEYS,key))throw Error('模块不在恢复白名单。');
     const v=JSON.parse(raw);
+    if(key==='ielts52-placement-v1'){if(!root.IELTSPlacement)throw Error('入学测评模块未加载。');return root.IELTSPlacement.parseState(v);}
     if(key==='ielts52-study-timer-v1'){if(!root.IELTSStudyTimerCore)throw Error('番茄钟模块未加载。');return root.IELTSStudyTimerCore.parseState(v);}
     if(key==='ielts52-listening-lab-v1'){if(!root.IELTSListeningLab)throw Error('精听模块未加载。');return root.IELTSListeningLab.parseState(v);}
     if(key==='ielts52-memory-v1'){if(!root.IELTSMemory)throw Error('记忆模块未加载。');return root.IELTSMemory.parseState(v);}
@@ -72,6 +74,14 @@
     return v;
   }
   function mergeLocal(key,old,raw){
+    if(key==='ielts52-placement-v1'){
+      const incoming=validate(key,raw);if(old===null)return JSON.stringify(incoming);
+      const current=validate(key,old),sessions=new Map(current.sessions.map(session=>[session.id,session]));
+      const stable=value=>Array.isArray(value)?'['+value.map(stable).join(',')+']':value&&typeof value==='object'?'{'+Object.keys(value).sort().map(name=>JSON.stringify(name)+':'+stable(value[name])).join(',')+'}':JSON.stringify(value);
+      for(const session of incoming.sessions){const prior=sessions.get(session.id);if(prior&&stable(prior)!==stable(session))throw Error('同一入学测评存在不同作答或报告，原记录保留。');if(!prior)sessions.set(session.id,session);}
+      if(current.adopted&&incoming.adopted&&stable(current.adopted)!==stable(incoming.adopted))throw Error('入学测评的课程起点存在不同采用记录，原记录保留。');
+      return JSON.stringify(root.IELTSPlacement.parseState({version:1,sessions:[...sessions.values()],adopted:current.adopted||incoming.adopted||null}));
+    }
     if(key==='ielts52-study-timer-v1')return JSON.stringify(old===null?root.IELTSStudyTimerCore.restore(validate(key,raw)):root.IELTSStudyTimerCore.mergeStates(validate(key,old),validate(key,raw)));
     if(old===null)return raw;
     if(key==='ielts52-listening-lab-v1')return JSON.stringify(root.IELTSListeningLab.mergeStates(validate(key,old),validate(key,raw)));
