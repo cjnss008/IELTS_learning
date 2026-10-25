@@ -15,9 +15,365 @@
     "transcriptionProtocol": "手写页逐页视觉核对；省略明确划掉的词，保留最终添字、拼写、语法及抄题内容；段落换行保留。哈希识别经核对的本地转录，非官方电子原稿，转录仍可能影响模型判断。题目为完整评分要求（省略时间建议）。"
   },
   "samples": [
-    {"id":"ielts-academic-2023-2a-b","name":"IELTS Academic 2023 · 2A Script B","mode":"writing","task":"academic_task2","level":"B2","questionPages":[6],"responsePages":[19,20],"commentPages":[20],"wordCount":421,"textSha256":"951910f9d40b9dc05dd155a405c511cbe6be9bb67cd905ac6737bc4730ca9b63","promptSha256":"0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892","reference":{"overall":6.5,"bands":{}}},
-    {"id":"ielts-academic-2023-2a-c","name":"IELTS Academic 2023 · 2A Script C","mode":"writing","task":"academic_task2","level":"B2","questionPages":[6],"responsePages":[21,22],"commentPages":[22],"wordCount":270,"textSha256":"f89e60a4c22d81938eff9d2764c98fe2d318a2bdd50c216966f84c7c4ef13151","promptSha256":"0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892","reference":{"overall":8.5,"bands":{}}},
-    {"id":"ielts-academic-2023-2b-a","name":"IELTS Academic 2023 · 2B Script A","mode":"writing","task":"academic_task2","level":"B2","questionPages":[7],"responsePages":[23],"commentPages":[24],"wordCount":228,"textSha256":"b822678b09412f145a793ac64342462305b75d6c659fc7accefad3d653a16f73","promptSha256":"1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7","reference":{"overall":5.5,"bands":{}}},
-    {"id":"ielts-academic-2023-2b-b","name":"IELTS Academic 2023 · 2B Script B","mode":"writing","task":"academic_task2","level":"B2","questionPages":[7],"responsePages":[25,26],"commentPages":[26],"wordCount":374,"textSha256":"fb5d53ef71c85a6e55bec484d813d07f4c1e3f32cafdd88528ec08bb1c98f037","promptSha256":"1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7","reference":{"overall":7.5,"bands":{}}}
-  ]
+    {
+      "id": "ielts-academic-2023-2a-b",
+      "name": "IELTS Academic 2023 · 2A Script B",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "questionPages": [
+        6
+      ],
+      "responsePages": [
+        19,
+        20
+      ],
+      "commentPages": [
+        20
+      ],
+      "wordCount": 421,
+      "textSha256": "951910f9d40b9dc05dd155a405c511cbe6be9bb67cd905ac6737bc4730ca9b63",
+      "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+      "reference": {
+        "overall": 6.5,
+        "bands": {}
+      },
+      "sourceId": "ielts-academic-2023",
+      "verificationVersion": "ielts-academic-2023-local-v1",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "development"
+    },
+    {
+      "id": "ielts-academic-2023-2a-c",
+      "name": "IELTS Academic 2023 · 2A Script C",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "questionPages": [
+        6
+      ],
+      "responsePages": [
+        21,
+        22
+      ],
+      "commentPages": [
+        22
+      ],
+      "wordCount": 270,
+      "textSha256": "f89e60a4c22d81938eff9d2764c98fe2d318a2bdd50c216966f84c7c4ef13151",
+      "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+      "reference": {
+        "overall": 8.5,
+        "bands": {}
+      },
+      "sourceId": "ielts-academic-2023",
+      "verificationVersion": "ielts-academic-2023-local-v1",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "development"
+    },
+    {
+      "id": "ielts-academic-2023-2b-a",
+      "name": "IELTS Academic 2023 · 2B Script A",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "questionPages": [
+        7
+      ],
+      "responsePages": [
+        23
+      ],
+      "commentPages": [
+        24
+      ],
+      "wordCount": 228,
+      "textSha256": "b822678b09412f145a793ac64342462305b75d6c659fc7accefad3d653a16f73",
+      "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+      "reference": {
+        "overall": 5.5,
+        "bands": {}
+      },
+      "sourceId": "ielts-academic-2023",
+      "verificationVersion": "ielts-academic-2023-local-v1",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "development"
+    },
+    {
+      "id": "ielts-academic-2023-2b-b",
+      "name": "IELTS Academic 2023 · 2B Script B",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "questionPages": [
+        7
+      ],
+      "responsePages": [
+        25,
+        26
+      ],
+      "commentPages": [
+        26
+      ],
+      "wordCount": 374,
+      "textSha256": "fb5d53ef71c85a6e55bec484d813d07f4c1e3f32cafdd88528ec08bb1c98f037",
+      "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+      "reference": {
+        "overall": 7.5,
+        "bands": {}
+      },
+      "sourceId": "ielts-academic-2023",
+      "verificationVersion": "ielts-academic-2023-local-v1",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "development"
+    },
+    {
+      "id": "cambridge-ucles-2009-nuclear-a",
+      "name": "UCLES 2009 · nuclear Script A",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "sourceId": "cambridge-ucles-2009-task2",
+      "verificationVersion": "cross-publication-2026-10-25-v60",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "holdout",
+      "questionPages": [
+        15
+      ],
+      "responsePages": [
+        16,
+        17
+      ],
+      "commentPages": [
+        17
+      ],
+      "wordCount": 237,
+      "textSha256": "15d5efcca7523dcc0f7c414d445681c9c15a07a1c1cf8e7e21a32a9a8a2f6aad",
+      "promptSha256": "0139ec366c3e14c9686c4cf5d2d68239fecf2efa502afebd613cd374a0438559",
+      "promptGroup": "ucles-nuclear",
+      "reference": {
+        "overall": 5,
+        "bands": {}
+      }
+    },
+    {
+      "id": "cambridge-ucles-2009-nuclear-b",
+      "name": "UCLES 2009 · nuclear Script B",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "sourceId": "cambridge-ucles-2009-task2",
+      "verificationVersion": "cross-publication-2026-10-25-v60",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "holdout",
+      "questionPages": [
+        15
+      ],
+      "responsePages": [
+        18,
+        19
+      ],
+      "commentPages": [
+        19
+      ],
+      "wordCount": 351,
+      "textSha256": "72b84afea4d09324f8637c0df99e702d3ba369665e211fc8ec2e7c759dd10ad9",
+      "promptSha256": "0139ec366c3e14c9686c4cf5d2d68239fecf2efa502afebd613cd374a0438559",
+      "promptGroup": "ucles-nuclear",
+      "reference": {
+        "overall": 7,
+        "bands": {}
+      }
+    },
+    {
+      "id": "ielts-computer-school-1",
+      "name": "IELTS computer · school Candidate 1",
+      "mode": "writing",
+      "task": "academic_task1",
+      "level": "B2",
+      "sourceId": "ielts-computer-writing-samples",
+      "verificationVersion": "cross-publication-2026-10-25-v60",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "holdout",
+      "questionPages": [],
+      "questionSourceIds": [
+        "school"
+      ],
+      "responsePages": [
+        2
+      ],
+      "commentPages": [
+        2
+      ],
+      "wordCount": 229,
+      "textSha256": "d7e2a41a6d2e2e8de4ec5b2d64035f951c79903b67828a7b2fa147d8d35bbe8e",
+      "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+      "promptGroup": "computer-school-transport",
+      "reference": {
+        "overall": 6,
+        "bands": {}
+      }
+    },
+    {
+      "id": "ielts-computer-school-2",
+      "name": "IELTS computer · school Candidate 2",
+      "mode": "writing",
+      "task": "academic_task1",
+      "level": "B2",
+      "sourceId": "ielts-computer-writing-samples",
+      "verificationVersion": "cross-publication-2026-10-25-v60",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "holdout",
+      "questionPages": [],
+      "questionSourceIds": [
+        "school"
+      ],
+      "responsePages": [
+        3
+      ],
+      "commentPages": [
+        3
+      ],
+      "wordCount": 125,
+      "textSha256": "f758fef3f524437f4da6ce0f9bf91e97488697e7eb0ba0386d1ec370abd5217c",
+      "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+      "promptGroup": "computer-school-transport",
+      "reference": {
+        "overall": 4,
+        "bands": {}
+      }
+    },
+    {
+      "id": "ielts-computer-health-1",
+      "name": "IELTS computer · health Candidate 1",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "sourceId": "ielts-computer-writing-samples",
+      "verificationVersion": "cross-publication-2026-10-25-v60",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "holdout",
+      "questionPages": [],
+      "questionSourceIds": [
+        "health"
+      ],
+      "responsePages": [
+        4
+      ],
+      "commentPages": [
+        4
+      ],
+      "wordCount": 201,
+      "textSha256": "1138df0da4bcac9fd7bf03f5699a3750cf47cb1b154cbdef8ca524a4fbc156fe",
+      "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d",
+      "promptGroup": "computer-future-health",
+      "reference": {
+        "overall": 5.5,
+        "bands": {}
+      }
+    },
+    {
+      "id": "ielts-computer-health-2",
+      "name": "IELTS computer · health Candidate 2",
+      "mode": "writing",
+      "task": "academic_task2",
+      "level": "B2",
+      "sourceId": "ielts-computer-writing-samples",
+      "verificationVersion": "cross-publication-2026-10-25-v60",
+      "verifiedAt": "2026-10-25",
+      "evaluationSet": "holdout",
+      "questionPages": [],
+      "questionSourceIds": [
+        "health"
+      ],
+      "responsePages": [
+        5
+      ],
+      "commentPages": [
+        5
+      ],
+      "wordCount": 375,
+      "textSha256": "0d0bb528369912b87b605dba8c099220945b08cbee034ff0a7cbb6f2b4f755e6",
+      "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d",
+      "promptGroup": "computer-future-health",
+      "reference": {
+        "overall": 7.5,
+        "bands": {}
+      }
+    }
+  ],
+  "catalogRevision": "cross-publication-2026-10-25-v60",
+  "sources": {
+    "ielts-academic-2023": {
+      "id": "ielts-academic-2023",
+      "title": "IELTS Academic Writing Sample Tasks (2023)",
+      "url": "https://ielts.org/cdn/Sample-tests/ielts-academic-writing-sample-tasks-2023.pdf",
+      "sha256": "f9b5b43fbb3f070741f970ecf2adbfaaef8b2f520eb5e2d350bae39557b1c7af",
+      "bytes": 1496682,
+      "copyright": "© IELTS Partners",
+      "rightsUrl": "https://ielts.org/legal/ielts-copyright-and-trade-mark-statement",
+      "permissionScope": "个人非商业复制须署名并遵守原件限制；未授权在其他网站发布、商业使用或改写。正文不随仓库分发，个人取得原件后在本机导入。",
+      "referenceScope": "考官公布的单篇任务Band；未公布四维数字，不能将任务Band复制为四维。",
+      "transcriptionProtocol": "手写页逐页视觉核对；省略明确划掉的词，保留最终添字、拼写、语法及抄题内容；段落换行保留。哈希识别经核对的本地转录，非官方电子原稿，转录仍可能影响模型判断。题目为完整评分要求（省略时间建议）。",
+      "pageCount": 26,
+      "publicationFamily": "ielts-partners-academic-writing-sample-tasks",
+      "publisher": "IELTS Partners",
+      "duplicatePolicy": "同一题目与原稿跨 IELTS/BC/IDP 镜像或书册重复，只计一个内容身份；2023 是此下载文件名称，不据此推定原稿首次发表年份。"
+    },
+    "cambridge-ucles-2009-task2": {
+      "id": "cambridge-ucles-2009-task2",
+      "title": "IELTS Academic Writing Task 2 Activity (UCLES 2009)",
+      "url": "https://www.cambridgeenglish.org/images/ielts-academic-writing-task-2-activity.pdf",
+      "sha256": "5cd9cf39a9e893815314ddba283cd1138c5d24ad8ec1feccfcd052f9bb2451a6",
+      "bytes": 385294,
+      "pageCount": 19,
+      "publicationFamily": "ucles-2009-academic-writing-task2-activity",
+      "publisher": "University of Cambridge ESOL Examinations / UCLES",
+      "copyright": "© UCLES 2009",
+      "rightsUrl": "https://www.cambridge.org/legal/website-terms-of-use",
+      "permissionScope": "原件页脚许可不改写、免费课堂复印分发；网站列个人非商业下载复制条件并另有限制。不是开放许可或模型训练/再分发授权；全文只在个人 work 私有核对，发送自选服务前须确认相应用途权利。",
+      "referenceScope": "官方教师活动原件的两份候选原稿和 Examiner comment 明确给出单篇任务Band 5/7；未给四维数字。历史2009教学材料，不能假定是当前量表重评分、不同考官组或实时考试认证。",
+      "transcriptionProtocol": "完整手写页逐页视觉核对，保留标题、最终添字、原错及抄题，省略明确划掉内容和续页箭头；换行按可辨段落。原题与时间/字数要求完整保留。哈希是本地核对转录身份，非官方电子原稿；个别手写拼写/大小写辨认仍有局限。",
+      "originalPublicationNote": "直接取 UCLES 官方活动PDF；不将它在其他网站的转载另算来源。原稿更早出版史未确认。",
+      "duplicatePolicy": "按题目和原稿内容身份跨URL去重；与旧2023题目哈希和原稿哈希不同，但IELTS合作者重叠，出版家族数不等于独立考官数。"
+    },
+    "ielts-computer-writing-samples": {
+      "id": "ielts-computer-writing-samples",
+      "title": "IELTS Academic computer-delivered sample candidate responses and examiner comments",
+      "url": "https://ielts.org/cdn/computer-delivered-sample-tests-academic-writing/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.pdf",
+      "sha256": "cb320fda1d1eb3311900747a856c6c01520203357b1951be466dcac7f2ee9e72",
+      "bytes": 492279,
+      "pageCount": 5,
+      "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+      "publisher": "IELTS Partners",
+      "copyright": "© IELTS Partners",
+      "rightsUrl": "https://ielts.org/legal/ielts-copyright-and-trade-mark-statement",
+      "permissionScope": "个人非商业复制须署名并遵守原件限制；未授权在其他网站发布、商业使用或改写。正文不随仓库分发，个人取得原件后在本机导入。",
+      "referenceScope": "第1页明确为IELTS考官评阅的候选完整答卷，每份有任务Band和考官评语；Task1为6/4，Task2为5.5/7.5；未公布四维数字。不是完整Writing考试分。",
+      "transcriptionProtocol": "打印原稿PDF第2–5页逐页视觉核对；提取后恢复可见段落，保留原拼写、大小写、语法、标题和数字错误。完整原题另从同一官方页面链接的Inspera样题核对；Task1附完整图文等价编码，柱值为原图近似读取，不冒充精确原始数据。",
+      "landingUrl": "https://ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test",
+      "mirrors": [
+        "https://takeielts.britishcouncil.org/sites/default/files/%5Bdownloads%5D/ielts-academic-writing-example-responses-to-parts-1-and-2-with-band-scores-and-examiner-comments.pdf"
+      ],
+      "originalPublicationNote": "官方IELTS与BC练习页链接的同一电脑样题出版包；镜像不算新源。下载PDF无明确年份；不能把抓取年份说成首次发表年。原稿更早书刊出现史未确认。",
+      "duplicatePolicy": "IELTS与BC同稿只算一个出版家族；相同题+稿改名或跨URL不增加独立样本。",
+      "questionSources": {
+        "health": {
+          "url": "https://ielts.inspera.com/player/?assessmentRunId=189733431&context=exam",
+          "pageTitle": "Sample - ACW - P2",
+          "retrievedAt": "2026-10-25",
+          "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d"
+        },
+        "school": {
+          "url": "https://ielts.inspera.com/player/?assessmentRunId=205993150&context=exam",
+          "pageTitle": "Sample - ACW - P1",
+          "retrievedAt": "2026-10-25",
+          "imageUrl": "https://ielts.inspera.com/file/cil/content_item_53239007_197676222/img?cacheable=true&assessmentRunId=205993150",
+          "imageType": "image/svg+xml",
+          "imageSha256": "ba0640d7ce46f675c043defa5addfb43e41e2beefe625d9b8320972786962545",
+          "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+          "encoding": "完整原题+原图标题、坐标、单位、年龄、五类/双年/图例及全部柱高近似值的文字等价输入；原图无精确数值标签，明确保留近似性质。"
+        }
+      }
+    }
+  }
 }

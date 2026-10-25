@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "cross-publication-v60-frozen-six",
+  "frozenAt": "2026-10-25T07:26:19.544Z",
+  "status": "preregistered-before-new-model-evaluation",
+  "reviewPromptVersion": "review-2026-10-25-v4",
+  "promptFiles": [
+    {
+      "file": "server/review.cjs",
+      "sha256": "132eac6ee8b3864c5f1731cf25018d1d1a5afe9559e9868af9d2110fefabc807"
+    },
+    {
+      "file": "server/review-rubric.cjs",
+      "sha256": "956243d4c8e7e5e047c9e5da9a412cfd486e7afecc837e856bd586315450c07f"
+    }
+  ],
+  "selectionRule": "旧4份始终为唯一开发集。按预先选定的两份官方出版包，纳入全部可取得完整原题/完整原稿/明确任务Band的两份核能和四份电脑样题；未查看新稿模型输出、未按误差筛选；所有6份新稿锁定holdout。",
+  "primaryAnalysis": "冻结的current v4在新6稿一次性双轮盲评；按模型/轮角色/任务/来源报告有向偏差、MAE、绝对误差<=0.5占比、完整可比数/缺分，保留失败分母，不补0、不择高轮、不统一加减分。旧4的v3/current同数据对照属于开发结果，不当作独立验证。",
+  "reuseRule": "首次模型评阅后此holdout已被使用；若据其结果修改提示，必须另取未见独立原稿验证。再运行、反序、换名或转载不增加独立样本。",
+  "limitations": [
+    "6稿共享3道题、两个新出版家族，不能按6个独立题或独立考官组解释。",
+    "共同IELTS合作者/可能共同历史原稿来源；不同出版家族不等于统计独立、未知考官身份或模型预训练从未见过。",
+    "2009手写稿有历史量表与本地转录局限；Task1为完整图文等价输入而非模型直接看图，柱值保留近似性质。",
+    "仅任务Band，无原件四维数字；未覆盖完整Writing考试、Task1全部图型或真人口语。"
+  ],
+  "legacySourceObjectSha256": "24bb36289cf77f50f85c78d19f248d7df428163fc5b62a175a8af8fb797ef095",
+  "legacyRowsSha256": "2094c24a7a4e36e9bbb87f543f0607e4e8910fe266781c52f784947eba3d5dca",
+  "development": [
+    {
+      "id": "ielts-academic-2023-2a-b",
+      "sourceId": "ielts-academic-2023",
+      "textSha256": "951910f9d40b9dc05dd155a405c511cbe6be9bb67cd905ac6737bc4730ca9b63",
+      "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+      "referenceOverall": 6.5
+    },
+    {
+      "id": "ielts-academic-2023-2a-c",
+      "sourceId": "ielts-academic-2023",
+      "textSha256": "f89e60a4c22d81938eff9d2764c98fe2d318a2bdd50c216966f84c7c4ef13151",
+      "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+      "referenceOverall": 8.5
+    },
+    {
+      "id": "ielts-academic-2023-2b-a",
+      "sourceId": "ielts-academic-2023",
+      "textSha256": "b822678b09412f145a793ac64342462305b75d6c659fc7accefad3d653a16f73",
+      "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+      "referenceOverall": 5.5
+    },
+    {
+      "id": "ielts-academic-2023-2b-b",
+      "sourceId": "ielts-academic-2023",
+      "textSha256": "fb5d53ef71c85a6e55bec484d813d07f4c1e3f32cafdd88528ec08bb1c98f037",
+      "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+      "referenceOverall": 7.5
+    }
+  ],
+  "holdout": [
+    {
+      "id": "cambridge-ucles-2009-nuclear-a",
+      "sourceId": "cambridge-ucles-2009-task2",
+      "publicationFamily": "ucles-2009-academic-writing-task2-activity",
+      "sourceDocumentSha256": "5cd9cf39a9e893815314ddba283cd1138c5d24ad8ec1feccfcd052f9bb2451a6",
+      "textSha256": "15d5efcca7523dcc0f7c414d445681c9c15a07a1c1cf8e7e21a32a9a8a2f6aad",
+      "promptSha256": "0139ec366c3e14c9686c4cf5d2d68239fecf2efa502afebd613cd374a0438559",
+      "task": "academic_task2",
+      "promptGroup": "ucles-nuclear",
+      "referenceOverall": 5
+    },
+    {
+      "id": "cambridge-ucles-2009-nuclear-b",
+      "sourceId": "cambridge-ucles-2009-task2",
+      "publicationFamily": "ucles-2009-academic-writing-task2-activity",
+      "sourceDocumentSha256": "5cd9cf39a9e893815314ddba283cd1138c5d24ad8ec1feccfcd052f9bb2451a6",
+      "textSha256": "72b84afea4d09324f8637c0df99e702d3ba369665e211fc8ec2e7c759dd10ad9",
+      "promptSha256": "0139ec366c3e14c9686c4cf5d2d68239fecf2efa502afebd613cd374a0438559",
+      "task": "academic_task2",
+      "promptGroup": "ucles-nuclear",
+      "referenceOverall": 7
+    },
+    {
+      "id": "ielts-computer-school-1",
+      "sourceId": "ielts-computer-writing-samples",
+      "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+      "sourceDocumentSha256": "cb320fda1d1eb3311900747a856c6c01520203357b1951be466dcac7f2ee9e72",
+      "textSha256": "d7e2a41a6d2e2e8de4ec5b2d64035f951c79903b67828a7b2fa147d8d35bbe8e",
+      "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+      "task": "academic_task1",
+      "promptGroup": "computer-school-transport",
+      "referenceOverall": 6
+    },
+    {
+      "id": "ielts-computer-school-2",
+      "sourceId": "ielts-computer-writing-samples",
+      "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+      "sourceDocumentSha256": "cb320fda1d1eb3311900747a856c6c01520203357b1951be466dcac7f2ee9e72",
+      "textSha256": "f758fef3f524437f4da6ce0f9bf91e97488697e7eb0ba0386d1ec370abd5217c",
+      "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+      "task": "academic_task1",
+      "promptGroup": "computer-school-transport",
+      "referenceOverall": 4
+    },
+    {
+      "id": "ielts-computer-health-1",
+      "sourceId": "ielts-computer-writing-samples",
+      "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+      "sourceDocumentSha256": "cb320fda1d1eb3311900747a856c6c01520203357b1951be466dcac7f2ee9e72",
+      "textSha256": "1138df0da4bcac9fd7bf03f5699a3750cf47cb1b154cbdef8ca524a4fbc156fe",
+      "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d",
+      "task": "academic_task2",
+      "promptGroup": "computer-future-health",
+      "referenceOverall": 5.5
+    },
+    {
+      "id": "ielts-computer-health-2",
+      "sourceId": "ielts-computer-writing-samples",
+      "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+      "sourceDocumentSha256": "cb320fda1d1eb3311900747a856c6c01520203357b1951be466dcac7f2ee9e72",
+      "textSha256": "0d0bb528369912b87b605dba8c099220945b08cbee034ff0a7cbb6f2b4f755e6",
+      "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d",
+      "task": "academic_task2",
+      "promptGroup": "computer-future-health",
+      "referenceOverall": 7.5
+    }
+  ],
+  "expected": {
+    "developmentSamples": 4,
+    "holdoutSamples": 6,
+    "newSourceDocuments": 2,
+    "newPublicationFamilies": 2,
+    "newPromptGroups": 3,
+    "task1": 2,
+    "task2": 4
+  }
+}
