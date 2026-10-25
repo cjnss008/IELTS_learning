@@ -33,6 +33,7 @@ async function browser(options = {}) {
     env.calls.push({ url, method: init.method, body });
     let payload;
     if (url === '/api/ai/status') payload = env.connection;
+    else if (url === '/api/settings/persistence') { if (env.persistenceFailure) throw new Error('Isolated persistence lookup failed.'); payload = env.persistence || { ok: true, enabled: true, supported: true, error: '' }; }
     else if (url === '/api/budget/status') {
       if (env.budgetFailure) throw new Error('test offline');
       payload = { ok: true, budget: env.budget };
@@ -176,4 +177,33 @@ test('高级用量、报价与可选语音服务默认折叠，文件模式不�
   assert.equal(b.calls.length, 0);
   assert.equal(b.get('testModelButton').disabled, true);
   assert.equal(b.get('serviceGuide').hidden, false);
+});
+
+test('另一电脑的加密配置不可用时明确引导本电脑首次配置且不回显私有错误内容', async () => {
+  const disconnected = { ok: true, connected: false, baseUrl: '', model: null, models: [] }, persistence = { ok: true, enabled: true, supported: true, scope: 'device-windows-user', errorCode: 'LOCAL_CONFIGURATION_REQUIRED', error: 'FAKE_SECRET_TOKEN C:\\private-test\\credentials.dpapi S-1-5-FAKE' }, before = clone(persistence), b = await browser({ connection: disconnected, persistence });
+  assert.match(b.get('connectionHint').textContent, /这台电脑或当前 Windows 账户尚未配置.*本机首次填写 AI 与语音服务/);
+  assert.match(b.get('actionMessage').textContent, /其他电脑的加密配置保留/);assert.equal(b.get('connectionFields').disabled, false);assert.equal(b.get('apiKey').value, '');
+  assert.doesNotMatch(b.get('connectionHint').textContent + b.get('actionMessage').textContent, /FAKE_SECRET_TOKEN|private-test|S-1-5-FAKE/);assert.equal(b.calls.some(c => c.method !== 'GET'), false);assert.deepEqual(persistence, before);assert.deepEqual(b.connection, disconnected);
+});
+
+test('本账户解密失败与未知保存错误使用脱敏原因，仍可填写连接信息', async () => {
+  for (const [persistence,expected] of [[{errorCode:'LOCAL_CONFIGURATION_UNREADABLE',error:'FAKE_PRIVATE_DETAILS'},/已保存的连接配置未能解密/],[{errorCode:'CREDENTIAL_STORAGE_FAILED',error:'FAKE_PRIVATE_DETAILS'},/配置读取或保存未完成/],[{error:'FAKE_PRIVATE_DETAILS'},/已保存连接未能恢复/]]) {
+    const b = await browser({connection:{ok:true,connected:false,models:[]},persistence:{ok:true,...persistence}});assert.match(b.get('connectionHint').textContent,expected);assert.equal(b.get('connectionFields').disabled,false);assert.doesNotMatch(b.get('actionMessage').textContent,/FAKE_PRIVATE_DETAILS/);assert.equal(b.calls.some(c=>c.method!=='GET'),false);
+  }
+});
+
+test('本电脑连接恢复后刷新清除旧的首次配置提示，且不自动改写配置', async () => {
+  const b = await browser({connection:{ok:true,connected:false,models:[]},persistence:{ok:true,errorCode:'LOCAL_CONFIGURATION_REQUIRED',error:'Local setup needed.'}});assert.match(b.get('connectionHint').textContent,/本机首次填写/);b.connection=connection();const start=b.calls.length;await b.event('refreshButton');assert.equal(b.get('connectionStatus').textContent,'已连接');assert.doesNotMatch(b.get('connectionHint').textContent+b.get('actionMessage').textContent,/首次填写|尚未配置/);assert.equal(b.calls.slice(start).some(c=>c.url==='/api/settings/persistence'),false);assert.equal(b.calls.some(c=>c.method!=='GET'),false);
+});
+
+test('旧版服务缺少配置恢复状态时不阻断首次连接表单', async () => {
+  const b=await browser({connection:{ok:true,connected:false,models:[]},persistenceFailure:true});assert.equal(b.get('connectionStatus').textContent,'未连接');assert.equal(b.get('connectionFields').disabled,false);assert.match(b.get('actionMessage').textContent,/填写 API 地址和密钥/);assert.doesNotMatch(b.get('actionMessage').textContent,/Isolated persistence/);assert.equal(b.calls.some(c=>c.method!=='GET'),false);
+});
+
+test('模型选择说明区分加密保存开关、当前服务和未知保存模式，不把开关当作落盘成功', async () => {
+  for(const [credentialStorage,expected]of [['memory',/未启用长期保存，重启后需重新连接/],['windows-dpapi-current-user',/已开启本电脑与当前 Windows 账户的加密保存，实际保存结果见/],['unknown-mode',/是否可跨重启恢复，请查看.*实际状态/]]){const current={...connection(),credentialStorage},before=clone(current),b=await browser({connection:current});assert.match(b.get('modelSelectionHelp').textContent,expected);assert.equal(b.calls.some(c=>c.method!=='GET'),false);assert.deepEqual(current,before);}
+});
+
+test('刷新连接状态会更新模型保存模式说明，不会自动启用或关闭持久保存', async () => {
+  const b=await browser({connection:{...connection(),credentialStorage:'memory'}});assert.match(b.get('modelSelectionHelp').textContent,/未启用长期保存/);b.connection.credentialStorage='windows-dpapi-current-user';await b.event('refreshButton');assert.match(b.get('modelSelectionHelp').textContent,/当前 Windows 账户的加密保存，实际保存结果见/);assert.equal(b.calls.some(c=>c.method!=='GET'),false);
 });

@@ -44,7 +44,7 @@
     speechUnitPrice: byId('speechUnitPrice'), speechPriceUnit: byId('speechPriceUnit'), speechBillingSeconds: byId('speechBillingSeconds'),
     speechPriceSource: byId('speechPriceSource'), speechPriceConfirm: byId('speechPriceConfirm'), saveSpeechPrice: byId('saveSpeechPriceButton')
   };
-  const state = { busy: '', serviceAvailable: null, connected: false, baseUrl: '', model: null, models: [], budget: null, lastBudgetEnabled: false, budgetControlDirty: false, budgetError: '', speechEndpoint: '', speechStatusKnown: false, textPriceDirty: false, speechPriceDirty: false };
+  const state = { busy: '', serviceAvailable: null, connected: false, baseUrl: '', model: null, models: [], persistenceHint: '', credentialStorage: '', budget: null, lastBudgetEnabled: false, budgetControlDirty: false, budgetError: '', speechEndpoint: '', speechStatusKnown: false, textPriceDirty: false, speechPriceDirty: false };
 
   const money = function (value) { return '¥' + value.toFixed(2); };
   const finiteMoney = function (value) { return typeof value === 'number' && Number.isFinite(value) && value >= 0; };
@@ -114,7 +114,7 @@
     } else {
       elements.status.textContent = '未连接';
       elements.status.dataset.state = 'disconnected';
-      elements.hint.textContent = '本地服务可用，请填写连接信息。';
+      elements.hint.textContent = state.persistenceHint || '本地服务可用，请填写连接信息。';
     }
     elements.activeBaseUrl.textContent = state.connected ? state.baseUrl : '尚未连接';
     elements.activeModel.textContent = state.model || '尚未选择';
@@ -146,7 +146,7 @@
     } else if (elements.modelSelect.value && elements.modelSelect.value !== state.model) {
       elements.modelHelp.textContent = '已选择新模型，请点击“保存模型选择”后再验证。';
     } else if (state.model) {
-      elements.modelHelp.textContent = '当前选择已保存于本地服务内存中。';
+      elements.modelHelp.textContent = state.credentialStorage === 'memory' ? '当前模型选择已应用于本次服务；未启用长期保存，重启后需重新连接。' : state.credentialStorage === 'windows-dpapi-current-user' ? '当前模型选择已应用于本次服务；已开启本电脑与当前 Windows 账户的加密保存，实际保存结果见“本机配置保存”。' : '当前模型选择已应用于本次服务；是否可跨重启恢复，请查看“本机配置保存”的实际状态。';
     } else {
       elements.modelHelp.textContent = '请从接口提供的列表中选择模型，再保存选择。';
     }
@@ -160,6 +160,8 @@
     const oldModel = state.model, oldBaseUrl = state.baseUrl;
     state.serviceAvailable = true;
     state.connected = payload.connected;
+    state.persistenceHint = '';
+    state.credentialStorage = ['memory', 'windows-dpapi-current-user'].includes(payload.credentialStorage) ? payload.credentialStorage : '';
     state.baseUrl = state.connected && typeof payload.baseUrl === 'string' ? payload.baseUrl : '';
     const seen = new Set();
     state.models = state.connected && Array.isArray(payload.models) ? payload.models.filter(function (item) {
@@ -344,13 +346,27 @@
     setControls();
   }
 
+  function configurationRecoveryHint(data) {
+    const reasons = {
+      LOCAL_CONFIGURATION_REQUIRED: '这台电脑或当前 Windows 账户尚未配置，请在本机首次填写 AI 与语音服务。共享目录中其他电脑的加密配置保留。',
+      LOCAL_CONFIGURATION_UNREADABLE: '这台电脑已保存的连接配置未能解密，请在本机重新配置 AI 与语音服务。原加密配置保留。',
+      CREDENTIAL_STORAGE_FAILED: '这台电脑的配置读取或保存未完成，请检查本机保存状态后重新填写连接信息。现有加密文件保留。'
+    };
+    if (data && Object.hasOwn(reasons, data.errorCode)) return reasons[data.errorCode];
+    return typeof data?.error === 'string' && data.error.trim() ? '这台电脑的已保存连接未能恢复，请在本机重新填写连接信息。原有配置文件保留。' : '';
+  }
+
   async function refreshStatus() {
     if (!begin('status', '正在检查本地服务和模型连接…')) return;
     try {
       const payload = await request('/api/ai/status', { timeout: 10000 });
       acceptStatus(payload);
+      if (!state.connected) {
+        try { state.persistenceHint = configurationRecoveryHint(await request('/api/settings/persistence', { timeout: 10000 })); } catch (_) { state.persistenceHint = ''; }
+        renderConnection();
+      }
       await loadBudget();
-      message(state.connected ? '已读取当前连接状态。' : '本地服务已就绪，请填写 API 地址和密钥。', state.connected ? 'success' : '');
+      message(state.connected ? '已读取当前连接状态。' : state.persistenceHint || '本地服务已就绪，请填写 API 地址和密钥。', state.connected ? 'success' : '');
     } catch (error) {
       showFailure(error, '读取连接状态失败，请稍后重试。');
     } finally {

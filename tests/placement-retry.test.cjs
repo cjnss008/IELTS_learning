@@ -57,7 +57,7 @@ function grader(outcomes = {}) {
     if (action.invalidJSON) return { content: '{"skills":', reviewer: { model: 'isolated-grader', providerHost: 'fixture.invalid' } };
     const skills = ['listening', 'reading', 'writing', 'speaking'].map(skill => {
       const response = input.responses.find(r => r.taskId === skill), explicit = response?.unanswered === true, task = input.tasks.find(t => t.skill === skill);
-      const level = skill === 'writing' ? action.writingLevel === undefined ? 'A1' : action.writingLevel : skill === 'speaking' ? explicit ? 'A0' : 'A2' : action[skill + 'Null'] ? null : 'A0';
+      const level = action[skill + 'Null'] ? null : Object.hasOwn(action, skill + 'Level') ? action[skill + 'Level'] : skill === 'writing' ? 'A1' : skill === 'speaking' ? explicit ? 'A0' : 'A2' : 'A0';
       return { skill, level, confidence: 'low', evidence: [{ taskId: task.taskId, quote: explicit ? '[explicit-unanswered]' : response?.text || 'The library opens at seven.', comment: '隔离模拟逐字证据。' }],
         ...(skill === 'writing' && !explicit && !action.invalidWriting ? writing(input, response.text, level) : {}), gaps: [] };
     });
@@ -113,7 +113,7 @@ test('retry requires a latest incomplete private attempt, and normal resubmissio
 
 test('an invalid first round can be retried repeatedly without losing the valid second round when AI fails again', async t => {
   const f = await fixture(t); await f.placement.evaluate(f.request, grader({ 1: { invalidWriting: true } })); const original = f.read().attempts[0], failing = grader({ 1: { fail: true } });
-  const stillPartial = await f.placement.evaluate({ ...f.request, retry: true }, failing), middle = f.read().attempts[1]; assert.equal(stillPartial.complete, false); assert.deepEqual(failing.calls.map(c => c.round), [1]); assert.equal(middle.rounds[1].reused, true); assert.equal(middle.rounds[1].sourceAttemptId, original.id); assert.equal(middle.rounds[0].ok, false);
+  const stillPartial = await f.placement.evaluate({ ...f.request, retry: true }, failing), middle = f.read().attempts[1]; assert.equal(stillPartial.complete, false); assert.deepEqual(failing.calls.map(c => c.round), [1]); assert.equal(middle.rounds[1].reused, true); assert.equal(middle.rounds[1].sourceAttemptId, original.id); assert.equal(middle.rounds[0].ok, true); assert.equal(middle.rounds[0].pendingError.code, 'ISOLATED_UPSTREAM_FAILED'); assert.equal(middle.rounds[0].skills.writing.level, null); assert.deepEqual(middle.rounds[0].reusedSkills, ['listening', 'reading', 'speaking']);
   const good = grader(), result = await f.placement.evaluate({ ...f.request, retry: true }, good), attempts = f.read().attempts; assert.equal(result.complete, true); assert.deepEqual(good.calls.map(c => c.round), [1]); assert.equal(attempts.length, 3); assert.deepEqual(attempts[0], original); assert.deepEqual(attempts[1], middle); assert.equal(result.rounds[1].sourceAttemptId, middle.id); assert.deepEqual(result.rounds[1].skills, original.rounds[1].skills);
 });
 
@@ -161,4 +161,70 @@ test('slow retry keeps the previous partial report and reusable round durable, w
   const pending = f.placement.evaluate({ ...f.request, retry: true }, async (...args) => { entered(); await waiting; return run(...args); }); await started;
   try { const current = await f.placement.get('legacy', f.assessment.id); assert.deepEqual(current.report, old.report); assert.deepEqual(current.responses, f.request.responses); assert.equal(f.read().attempts[1].rounds[0].sourceAttemptId, old.id); await assert.rejects(f.placement.evaluate({ ...f.request, retry: true }, grader()), error => error.code === 'PLACEMENT_BUSY'); } finally { release(); result = await pending; }
   assert.equal(result.complete, true); assert.deepEqual(run.calls.map(c => c.round), [2]); assert.equal(f.read().attempts.length, 2); assert.deepEqual(f.read().attempts[0], old);
+});
+
+test('a new response only fills the missing skill and never revokes or replaces valid same-round skills', async t => {
+  const f = await fixture(t, { speech: true }); await f.placement.evaluate(f.request, grader({ 2: { invalidWriting: true } })); const original = f.read().attempts[0];
+  const run = grader({ 2: { writingLevel: 'A2', listeningNull: true, readingNull: true, speakingLevel: 'A1' } }), report = await f.placement.evaluate({ ...f.request, retry: true }, run), latest = f.read().attempts[1];
+  assert.equal(report.complete, true); assert.deepEqual(run.calls.map(c => c.round), [2]); assert.deepEqual(report.rounds[1].reusedSkills, ['listening', 'reading', 'speaking']);
+  assert.equal(report.rounds[1].skills.speaking.level, 'A2', 'A fresh lower or higher mark cannot replace an already completed slot.'); assert.equal(report.rounds[1].skills.writing.level, 'A2');
+  for (const skill of ['listening', 'reading', 'speaking']) { assert.deepEqual(report.rounds[1].skills[skill], original.rounds[1].skills[skill]); assert.equal(report.rounds[1].skillProvenance[skill].sourceAttemptId, original.id); assert.equal(report.rounds[1].skillProvenance[skill].reused, true); }
+  assert.equal(report.rounds[1].skillProvenance.writing.sourceAttemptId, latest.id); assert.equal(report.rounds[1].skillProvenance.writing.reused, false); assert.equal(report.skillProgressReused, true); assert.equal(report.reviewMode, 'preserved-skill-progress'); assert.match(report.disclaimer, /不是最新两次完整整轮盲评/); assert.match(report.rounds[1].summary, /按科保留/); assert.deepEqual(f.read().attempts[0], original);
+});
+
+test('a strictly validated writing round remains reusable after the original parser applies its sample-size ceiling', async t => {
+  const f = await fixture(t); f.request.responses.find(r => r.taskId === 'writing').text = 'I read books at home because I enjoy stories. Then I discuss them with my sister.';
+  const first = await f.placement.evaluate(f.request, grader({ 1: { writingLevel: 'B2' }, 2: { invalidWriting: true } })), old = f.read().attempts[0];
+  assert.equal(first.rounds[0].skills.writing.criteriaValid, true); assert.equal(first.rounds[0].skills.writing.level, 'A2');
+  const run = grader({ 2: { writingLevel: 'A2' } }), report = await f.placement.evaluate({ ...f.request, retry: true }, run);
+  assert.equal(report.complete, true); assert.deepEqual(run.calls.map(c => c.round), [2]); assert.deepEqual(report.rounds[0].skills.writing, old.rounds[0].skills.writing); assert.equal(report.rounds[0].skillProvenance.writing.sourceAttemptId, old.id);
+});
+
+function legacyRetry(f, { olderVersion } = {}) {
+  // An isolated pre-feature record: old retries replaced an entire parsed round.
+  // Reproduce that saved history without changing any live learner data.
+  const doc = f.read(), first = doc.attempts[0], latest = doc.attempts.at(-1);
+  latest.retry = { sourceAttemptId: doc.attempts.at(-2).id, reason: 'retry-incomplete-rounds', reusedRounds: [] };
+  for (const attempt of doc.attempts) for (const round of attempt.rounds) { delete round.skillProvenance; delete round.reusedSkills; }
+  if (olderVersion) { first.promptVersion = olderVersion; first.report.promptVersion = olderVersion; for (const round of first.rounds) round.reviewer.promptVersion = olderVersion; }
+  fs.writeFileSync(f.file, JSON.stringify(doc)); return f.read().attempts;
+}
+
+test('complementary valid skills from a legacy same-input retry chain complete with zero new AI calls', async t => {
+  const f = await fixture(t, { speech: true }); await f.placement.evaluate(f.request, grader({ 2: { invalidWriting: true } }));
+  await f.placement.evaluate(f.request, grader({ 2: { writingLevel: 'A2', listeningNull: true, readingNull: true, speakingLevel: 'A1' } }));
+  const old = legacyRetry(f, { olderVersion: 'placement-legacy-fixture-v4' }); f.evidence.clear(); f.restart(); const run = grader(), report = await f.placement.evaluate({ ...f.request, retry: true }, run), latest = f.read().attempts.at(-1);
+  assert.equal(report.complete, true); assert.equal(run.calls.length, 0); assert.equal(f.read().attempts.length, 3); assert.deepEqual(f.read().attempts.slice(0, 2), old);
+  assert.ok(report.rounds.every(round => round.completedFromSavedSkills && round.reusedSkills.length === 4)); assert.equal(report.rounds[1].skills.speaking.level, 'A1', 'Use the latest valid slot, never the highest older observation.');
+  assert.equal(report.rounds[1].skillProvenance.listening.sourceAttemptId, old[0].id); assert.equal(report.rounds[1].skillProvenance.listening.promptVersion, 'placement-legacy-fixture-v4');
+  assert.equal(report.rounds[1].skillProvenance.reading.sourceAttemptId, old[0].id); assert.equal(report.rounds[1].skillProvenance.writing.sourceAttemptId, old[1].id); assert.equal(report.rounds[1].skillProvenance.speaking.sourceAttemptId, old[1].id);
+  assert.deepEqual(latest.rawResponses, old[1].rawResponses); assert.deepEqual(latest.speechProof, old[1].speechProof); assert.equal(report.skills.writing.level, 'A1'); assert.equal(report.skills.speaking.level, 'A1'); assert.equal(report.reviewMode, 'preserved-skill-progress');
+});
+
+test('a normal same-input submission breaks older skill-progress history', async t => {
+  const f = await fixture(t); await f.placement.evaluate(f.request, grader({ 2: { invalidWriting: true } }));
+  await f.placement.evaluate(f.request, grader({ 1: { fail: true } })); const old = f.read().attempts, run = grader();
+  const report = await f.placement.evaluate({ ...f.request, retry: true }, run); assert.equal(report.complete, true); assert.deepEqual(run.calls.map(c => c.round), [1, 2]); assert.ok(report.rounds.every(r => r.reusedSkills.length === 0)); assert.deepEqual(f.read().attempts.slice(0, 2), old);
+});
+
+test('a disagreement barrier is durable before requests and prevents older conflicting slots returning after a failure', async t => {
+  const f = await fixture(t); await f.placement.evaluate(f.request, grader({ 1: { writingLevel: 'A1' }, 2: { writingLevel: 'B1' } })); const old = f.read().attempts[0], run = grader({ 1: { writingLevel: 'B1' }, 2: { fail: true } });
+  const partial = await f.placement.evaluate({ ...f.request, retry: true }, (...args) => { const active = f.read().attempts.at(-1); assert.equal(active.retry.reassessmentBarrier, true); assert.equal(active.retry.reason, 'independent-reassessment-after-disagreement'); return run(...args); });
+  const barrier = f.read().attempts.at(-1); assert.equal(partial.complete, false); assert.deepEqual(run.calls.map(c => c.round), [1, 2]); assert.equal(barrier.rounds[1].ok, false);
+  const next = grader({ 2: { writingLevel: 'B1' } }), report = await f.placement.evaluate({ ...f.request, retry: true }, next);
+  assert.equal(report.complete, true); assert.deepEqual(next.calls.map(c => c.round), [2]); assert.equal(report.rounds[0].skillProvenance.writing.sourceAttemptId, barrier.id); assert.equal(report.rounds[1].skillProvenance.writing.sourceAttemptId, f.read().attempts.at(-1).id); assert.deepEqual(f.read().attempts[0], old); assert.deepEqual(f.read().attempts[1], barrier);
+});
+
+test('a serious disagreement discovered only after combining saved skills triggers two fresh independent rounds', async t => {
+  const f = await fixture(t); await f.placement.evaluate(f.request, grader({ 2: { invalidWriting: true } }));
+  await f.placement.evaluate(f.request, grader({ 1: { invalidWriting: true }, 2: { writingLevel: 'B1' } })); const old = legacyRetry(f), run = grader({ 1: { writingLevel: 'B1' }, 2: { writingLevel: 'B1' } });
+  const report = await f.placement.evaluate({ ...f.request, retry: true }, run); assert.equal(report.complete, true); assert.deepEqual(run.calls.map(c => c.round), [1, 2]); assert.ok(report.rounds.every(r => r.reusedSkills.length === 0)); assert.equal(f.read().attempts.at(-1).retry.reassessmentBarrier, true); assert.deepEqual(f.read().attempts.slice(0, 2), old);
+});
+
+test('a malformed source pointer cannot jump history or consume model calls', async t => {
+  for (const mode of ['self', 'future', 'duplicate']) await t.test(mode, async sub => {
+    const f = await fixture(sub); await f.placement.evaluate(f.request, grader({ 2: { invalidWriting: true } })); const doc = f.read(), latest = doc.attempts[0];
+    if (mode === 'duplicate') doc.attempts.push(clone(latest)); else latest.retry = { sourceAttemptId: mode === 'self' ? latest.id : crypto.randomUUID(), reason: 'retry-incomplete-rounds', reusedRounds: [] };
+    fs.writeFileSync(f.file, JSON.stringify(doc)); const before = f.bytes(), run = grader(); await assert.rejects(f.placement.evaluate({ ...f.request, retry: true }, run), e => e.code === 'PLACEMENT_RETRY_HISTORY'); assert.equal(run.calls.length, 0); assert.deepEqual(f.bytes(), before);
+  });
 });

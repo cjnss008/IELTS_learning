@@ -210,7 +210,7 @@ function createServer(options = {}) {
   const loadedRuntime = runtimeVersion.canonicalRoot(rootDir) === LOADED_ROOT ? LOADED_RUNTIME : runtimeVersion.captureRuntime(rootDir, { strict: false });
   const rootRealPromise = fs.promises.realpath(rootDir);
   const fetchImpl = options.fetchImpl || globalThis.fetch;
-  const userData=createUserData({rootDir,dataDir:options.dataDir,legacyPaths:options.legacyDataPaths,migrateLegacy:options.migrateLegacy??!(options.fetchImpl||options.budgetFilePath||options.budgetDir||options.credentialFilePath||options.rootDir&&rootDir!==path.resolve(path.join(__dirname,'..')))});
+  const userData=createUserData({rootDir,dataDir:options.dataDir,legacyPaths:{...(options.legacyDataPaths||{}),credentials:null},migrateLegacy:options.migrateLegacy??!(options.fetchImpl||options.budgetFilePath||options.budgetDir||options.credentialFilePath||options.rootDir&&rootDir!==path.resolve(path.join(__dirname,'..')))});
   const dailyBackups=options.dailyBackups||createDailyBackups({userData});
   let restoringBackup=false;
   let materialMigration=options.materialMigration||null;
@@ -247,8 +247,16 @@ function createServer(options = {}) {
   function restoreReviewer(data){if(data===null){reviewerConnection=null;reviewerRevision++;return;}const model=require('./saved-provider-config.cjs').model(data.model);if(data.usePrimaryConnection===true)reviewerConnection={usePrimaryConnection:true,model};else{const c=savedTextConfiguration(data);if(model.includes(c.apiKey))throw Error('Invalid saved public field.');reviewerConnection={...c,model};}reviewerRevision++;}
 
   const providers={ai:{get:()=>connection?{...connection,models:[...connection.models]}:null,restore:restorePrimary},reviewer:{get:()=>reviewerConnection?{...reviewerConnection}:null,restore:restoreReviewer},...Object.fromEntries(Object.entries({oral:oralHandler,speech:speechHandler,transcription:transcriptionHandler,omni:omniHandler}).map(([name,handler])=>[name,{get:handler.exportConfiguration,restore:handler.restoreConfiguration}]))};
-  // Mock-service tests never load the user's local saved credentials unless a vault is explicitly injected.
-  const vault=options.credentialVault||createCredentialVault({providers,filePath:options.credentialFilePath||userData.paths.credentials,preferenceFilePath:options.credentialPreferenceFilePath||userData.paths.credentialPolicy,defaultEnabled:options.defaultCredentialPersistence??true,exclusive:userData.withLock,...(options.fetchImpl&&!options.credentialFilePath?{supported:false}:{})});
+  // The vault alone may read legacy credentials, and only successful local
+  // decryption can migrate them to this device/account's own file. User-data
+  // migration must never copy a local ciphertext over the shared legacy file.
+  let legacyCredentialSources=[];
+  if(Object.hasOwn(options,'legacyCredentialFilePaths'))legacyCredentialSources=options.legacyCredentialFilePaths??[];
+  else if(Object.hasOwn(options.legacyDataPaths||{},'credentials'))legacyCredentialSources=typeof options.legacyDataPaths.credentials==='string'?[path.resolve(options.legacyDataPaths.credentials)]:[];
+  else if(!options.fetchImpl&&!options.credentialFilePath&&options.migrateLegacy!==false&&rootDir===path.resolve(path.join(__dirname,'..')))legacyCredentialSources=[path.resolve(process.env.LOCALAPPDATA||process.env.TEMP||'.','IELTS Learning','credentials.dpapi')];
+  // Mock-service tests never load the user's local saved credentials unless a
+  // test supplies its own isolated credential location or vault explicitly.
+  const vault=options.credentialVault||createCredentialVault({providers,filePath:options.credentialFilePath||userData.paths.credentials,legacyFilePaths:legacyCredentialSources,preferenceFilePath:options.credentialPreferenceFilePath||userData.paths.credentialPolicy,defaultEnabled:options.defaultCredentialPersistence??true,exclusive:userData.withLock,...(options.fetchImpl&&!options.credentialFilePath?{supported:false}:{})});
   for(const handler of [oralHandler,speechHandler,transcriptionHandler,omniHandler]){handler.getCredentialStorage=()=>vault.status().storage;handler.onConfigurationChanged=()=>vault.saveIfEnabled();}
   const ready=vault.restore();
 
@@ -392,7 +400,13 @@ function createServer(options = {}) {
   async function handleApi(req, res, pathname) {
     if (req.method === 'GET' && pathname === '/api/health') {const now=new Date(),serverDayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime,serviceInstanceId:bootId,serverDayKey,restoringBackup});}
     if (req.method === 'POST' && ['/api/placement/generate', '/api/placement/evaluate'].includes(pathname)) {
-      const body = await readJson(req, 192 * 1024), startVersion = connectionVersion(), startReviewerVersion = reviewerRevision;
+      const body = await readJson(req, 192 * 1024);
+      // A restarted device may not have restored a usable local AI connection.
+      // Reject before placement allocates a candidate or consumes an attempt;
+      // failures after a real round starts still retain their original history.
+      if (!connection) throw new AppError(409, 'NOT_CONNECTED', '本机通用 AI 尚未连接。请先到 AI 设置连接服务，再继续测评；本次未开始评价，已有作答、录音和上次评价保留。');
+      if (!connection.model) throw new AppError(409, 'MODEL_REQUIRED', '本机通用 AI 尚未选择模型。请先到 AI 设置选择可用模型，再继续测评；本次未开始评价，已有作答、录音和上次评价保留。');
+      const startVersion = connectionVersion(), startReviewerVersion = reviewerRevision;
       const runAI = async (messages, { round = 1, maxTokens = 6500, timeoutMs } = {}) => {
         if (startVersion !== connectionVersion() || startReviewerVersion !== reviewerRevision) throw new AppError(409, 'CONNECTION_CHANGED', '测评期间AI设置改变，原始回答保留，请重试。');
         const output = await runText(req, res, { messages, max_tokens: maxTokens, response_format: { type: 'json_object' } }, Math.min(options.placementTimeoutMs || coachTimeoutMs, timeoutMs || Infinity), round === 2 ? reviewerConfig() : undefined);

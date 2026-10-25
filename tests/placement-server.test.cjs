@@ -98,7 +98,7 @@ async function fixture(t) {
       if (mode === 'uncertain-writing' && skill === 'writing') level = null;
       if (mode === 'one-step-writing-disagreement' && skill === 'writing') level = evaluations % 2 ? 'A1' : 'A2';
       if (mode === 'two-step-writing-disagreement' && skill === 'writing') level = evaluations % 2 ? 'A1' : 'B1';
-      if (mode === 'both-low-writing' && skill === 'writing') level = 'A1';
+      if (['both-low-writing', 'criteria-all-not-met-a1'].includes(mode) && skill === 'writing') level = 'A1';
       if (mode === 'criteria-inconsistent-lower' && skill === 'writing') level = 'A2';
       if (skill === 'speaking' && user.verifiedSpeech.verification === 'missing' && !unanswered) level = null;
       let quote = unanswered ? '[explicit-unanswered]' : skill === 'writing' || skill === 'speaking' ? r?.text.slice(0, 25) || 'missing text' : 'The library opens at seven.';
@@ -120,6 +120,7 @@ async function fixture(t) {
           const links = ['simple_linking', 'linear_progression'].includes(c.id) && status === 'met' ? [{ fromQuote: first, toQuote: last, relation: 'sequence', comment: '模拟评阅：本稿两个实际信息单位的关系。' }] : [];
           return { id: c.id, applicability, status, issueType, evidence: status === 'not_applicable' ? [] : [{ quote: first, comment: '模拟评阅本次原稿中的实际表现。' }], links, comment: status === 'not_applicable' ? '短任务未引出长文组织，不能据此降级。' : '模拟评阅针对当前稿，不代表真实能力判断。' };
         });
+        if (mode === 'criteria-all-not-met-a1') for (const c of criteria) if (c.id !== 'extended_organisation') { c.status = 'not_met'; c.issueType = user.writingScale.criteria.find(d => d.id === c.id).allowedIssueTypes[0]; c.links = []; }
         const levelBasis = { supportingCriterionIds: criteria.filter(c => c.status === 'met').map(c => c.id), limitingCriterionIds: criteria.filter(c => c.status === 'not_met').map(c => c.id), uncertainCriterionIds: [] };
         if (mode === 'criteria-invalid-quote') criteria.find(c => c.id === 'grammar_control').evidence[0].quote = 'Words that were not in the learner draft.';
         if (mode === 'criteria-invalid-link') criteria.find(c => c.id === 'linear_progression').links[0].toQuote = 'An invented second sentence.';
@@ -266,6 +267,7 @@ test('CEFR writing guidance makes adjacent disagreement explicit while keeping t
   assert.equal(adjacent.data.complete, true); assert.equal(writing.level, 'A1'); assert.deepEqual(writing.levelRange, ['A1', 'A2']); assert.equal(writing.disagreementSteps, 1); assert.equal(writing.provisional, true); assert.equal(writing.confidence, 'low'); assert.equal(writing.needsRetest, false); assert.match(writing.gaps.join(' '), /相差一档/); assert.equal(adjacent.data.recommendation.day, 8);
   assert.equal(adjacent.data.rubricSources[0].version, '2020'); assert.ok(adjacent.data.rubricSources[0].printedPages.includes(66)); assert.ok(adjacent.data.rubricSources[0].printedPages.includes(68)); assert.ok(adjacent.data.rubricSources[0].printedPages.includes(188));
   const system = f.requests.at(-1).messages[0].content;
+  assert.match(system, /A1时basic_message必须/); assert.match(system, /A2同样需要simple_linking/); assert.match(system, /B1\/B2同样需要linear_progression/); assert.match(system, /不要为了通过校验强填met或捏造依据/);
   assert.match(system, /CEFR Companion Volume 2020/); assert.match(system, /多段、多个例子/); assert.match(system, /不能只因出现because\/however\/if就升级/); assert.match(system, /线性顺序/);
   f.setMode('two-step-writing-disagreement'); const wide = await f.api('/api/placement/evaluate', request); assert.equal(wide.data.complete, false); assert.equal(wide.data.skills.writing.needsRetest, true); assert.equal(wide.data.skills.writing.disagreementSteps, 2); assert.equal(wide.data.recommendation, null);
   f.setMode('both-low-writing'); const low = await f.api('/api/placement/evaluate', request); assert.equal(low.data.skills.writing.level, 'A1'); assert.equal(low.data.skills.writing.provisional, false, 'Guidance never injects a higher mark just for connectors in the sample.'); assert.deepEqual(low.data.skills.writing.levelRange, ['A1', 'A1']);
@@ -278,9 +280,9 @@ test('structured writing checks retain real criteria but never manufacture a hig
   const valid = await f.api('/api/placement/evaluate', request); assert.equal(valid.data.complete, true);
   for (const round of valid.data.rounds) { const w = round.skills.writing; assert.equal(w.criteriaValid, true); assert.equal(w.criteria.length, 7); assert.equal(w.criteria.find(c => c.id === 'extended_organisation').status, 'not_applicable'); assert.ok(w.levelBasis.supportingCriterionIds.includes('linear_progression')); }
   const payload = JSON.parse(f.requests.at(-1).messages[1].content); assert.equal(payload.writingScale.criteria.length, 7); assert.match(payload.writingScale.anchors.status, /不是官方/); assert.equal(f.requests.at(-1).max_tokens, 9000);
-  for (const mode of ['criteria-missing', 'criteria-invalid-quote', 'criteria-invalid-link', 'criteria-advanced-gate', 'criteria-inconsistent-lower']) {
+  for (const mode of ['criteria-missing', 'criteria-invalid-quote', 'criteria-invalid-link', 'criteria-advanced-gate', 'criteria-inconsistent-lower', 'criteria-all-not-met-a1']) {
     f.setMode(mode); const result = await f.api('/api/placement/evaluate', request);
-    assert.equal(result.data.complete, false, mode); assert.equal(result.data.skills.writing.level, null, mode); assert.equal(result.data.recommendation, null, mode); assert.equal(result.data.rounds[0].skills.writing.criteriaValid, false, mode);
+    assert.equal(result.data.complete, false, mode); assert.equal(result.data.skills.writing.level, null, mode); assert.equal(result.data.recommendation, null, mode); assert.equal(result.data.rounds[0].skills.writing.criteriaValid, false, mode); assert.equal(result.data.rounds[0].formatRepair, undefined, mode);
   }
 });
 
@@ -295,11 +297,11 @@ test('a grounded elaboration relation is parsed without discarding it or changin
   assert.equal(writingChecks(raw, text, 'B1', false).valid, false, 'An accepted relation label never excuses fabricated evidence.');
 });
 
-test('malformed upstream JSON stays pending rather than being guessed into a valid grade', async t => {
+test('malformed upstream JSON receives one new strictly validated format repair', async t => {
   const f = await fixture(t), assessment = (await f.generate()).data.assessment, responses = f.answers(assessment);
   responses.at(-1).text = ''; responses.at(-1).unanswered = true;
   f.setMode('invalid-json-second-round'); const result = await f.api('/api/placement/evaluate', { profileId: 'legacy', assessmentId: assessment.id, responses });
-  assert.equal(result.status, 200); assert.equal(result.data.complete, false); assert.equal(result.data.recommendation, null); assert.equal(result.data.rounds[1].error.code, 'PLACEMENT_AI_FORMAT'); assert.equal(result.data.skills.writing.level, null);
+  assert.equal(result.status, 200); assert.equal(result.data.complete, true); assert.equal(result.data.rounds[1].formatRepair.repaired, true); assert.equal(result.data.rounds[1].skills.writing.criteriaValid, true); assert.equal(JSON.stringify(result.data).includes('modelFormatDiagnostics'), false);
 });
 
 test('explicit inability is distinct from unsubmitted answers, silence and failed AI', async t => {
