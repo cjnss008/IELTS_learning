@@ -12,7 +12,7 @@ function inspect(audio){
 }
 function audit(){
  const data=require('./build-independent-bank.cjs').build({write:false}),index=require('../assets/vocabulary-audio.js'),frozen=require('../curriculum/sources/lexical-context-candidates.json').items,items=[];
- for(const m of data.materials.filter(m=>m.skill==='listening')){const item=inspect(m.audio),meta=JSON.parse(fs.readFileSync(path.join(root,'curriculum/independent-bank/audio',m.id+'.json'),'utf8'));if(item.audioHash!==meta.audioHash)throw Error('Audio hash mismatch '+m.id);items.push({...item,id:m.id,locale:m.audioLocale,kind:'independent-listening'});}
+ for(const m of data.materials.filter(m=>m.skill==='listening'&&m.audioSynthetic===true)){const item=inspect(m.audio),meta=JSON.parse(fs.readFileSync(path.join(root,'curriculum/independent-bank/audio',m.id+'.json'),'utf8'));if(item.audioHash!==meta.audioHash)throw Error('Audio hash mismatch '+m.id);items.push({...item,id:m.id,locale:m.audioLocale,kind:'independent-listening'});}
  for(const v of frozen){const entry=index.items[v.word],item=inspect(entry.audio);if(item.audioHash!==entry.audioHash||entry.textHash!==hash(Buffer.from(v.word)))throw Error('Word proof mismatch '+v.word);items.push({...item,word:v.word,kind:'lexical-model'});}
  const compact=index.items.compact,meta=JSON.parse(fs.readFileSync(path.join(root,'audio/vocabulary/metadata',path.basename(compact.audio,'.mp3')+'.json'),'utf8')),extraction=meta.contextExtraction;
  if(!extraction||extraction.spokenContext!=='Please compact the loose soil.'||extraction.targetWord!=='compact'||extraction.startSeconds<0||extraction.endSeconds<=extraction.startSeconds||extraction.endSeconds>extraction.sourceDurationSeconds+.1)throw Error('Missing contextual verb-pronunciation extraction proof');

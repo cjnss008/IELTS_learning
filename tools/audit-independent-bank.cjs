@@ -16,17 +16,17 @@ function figureErrors(f){
  if(!f.title)out.push('Missing figure title');return out;
 }
 function audit(materials,{requireAudio=true,courseData=null,lexical=null}={}){
- const errors=[],questionReview=[],sources=new Map(),ids=new Set(),levels={},voices={};
+ const errors=[],questionReview=[],sources=new Map(),ids=new Set(),levels={},voices={},humanMaterials=materials.filter(m=>m.audioKind==='human');
  for(const m of materials){
   const fail=s=>errors.push(m.id+': '+s);if(ids.has(m.id))fail('Duplicate ID');ids.add(m.id);
   if(m.pool!=='independent'||m.independentBank!==true||m.fullTest!==false||m.assessmentGroup)fail('Pool isolation failed');
   if(!m.source?.contentHashFields||m.source.contentHash!==contentHash(m))fail('Content hash does not match declared fields');
-  if(m.source?.kind!=='original'||!m.source.rights||m.source.verification!=='reviewed')fail('Missing original provenance');
-  levels[m.level]??={reading:0,listening:0};if(['reading','listening'].includes(m.skill))levels[m.level][m.skill]++;
+  if(m.source?.kind!==(m.audioKind==='human'?'public-domain-human-reading':'original')||!m.source.rights||m.source.verification!=='reviewed')fail('Missing original or licensed provenance');
+  levels[m.level]??={reading:0,listening:0};if(['reading','listening'].includes(m.skill)&&m.audioKind!=='human')levels[m.level][m.skill]++;
   if(['reading','listening'].includes(m.skill)){
    const source=m[m.skill==='reading'?'passage':'transcript'];if(!source||words(source)<70)fail('Source too short');
    const key=hash(normalize(source));if(sources.has(key))fail('Repeated source '+sources.get(key));sources.set(key,m.id);
-   if(!Array.isArray(m.questions)||m.questions.length!==8)fail('Need exactly eight focused questions');
+   if(!Array.isArray(m.questions)||(m.audioKind==='human'?m.questions.length<4||m.questions.length>8:m.questions.length!==8))fail('Invalid focused question count');
    const qids=new Set();for(const q of m.questions||[]){
     if(qids.has(q.id))fail('Duplicate question ID '+q.id);qids.add(q.id);
     if(!q.prompt||!q.explanation||!q.evidence||!source.includes(q.evidence))fail('Question evidence not verbatim '+q.id);
@@ -41,13 +41,14 @@ function audit(materials,{requireAudio=true,courseData=null,lexical=null}={}){
    for(const error of figureErrors(m.figure))fail(error);
    if((m.title+'\n'+m.prompt+'\n'+JSON.stringify(m.figure)).length>3000)fail('Figure and prompt exceed complete-review request limit');
   }else fail('Unsupported independent skill');
-  if(m.skill==='listening'){
+  if(m.skill==='listening'&&m.audioKind!=='human'){
    if(m.audioSynthetic!==true||!m.audioLocale||!m.audioVoiceSource)fail('Synthetic provenance missing');voices[m.audioLocale]=(voices[m.audioLocale]||0)+1;
    const metaPath=path.join(root,'curriculum','independent-bank','audio',m.id+'.json'),audioPath=path.join(root,'audio','independent-bank',m.id+'.mp3');
    if(requireAudio){if(!fs.existsSync(metaPath)||!fs.existsSync(audioPath))fail('Missing authored audio');else{const meta=JSON.parse(fs.readFileSync(metaPath,'utf8'));if(meta.synthetic!==true||meta.transcriptHash!==hash(m.transcript)||meta.audioHash!==hash(fs.readFileSync(audioPath))||meta.locale!==m.audioLocale||!meta.voices?.includes(m.audioVoice)||!(meta.durationSeconds>5))fail('Audio/source proof mismatch');}}
   }
  }
- if(materials.length!==31)errors.push('Independent bank must have 31 focused materials');
+ const humanAudit=require('./audit-human-listening.cjs').audit(humanMaterials,{requireAudio});errors.push(...humanAudit.errors);
+ if(materials.filter(m=>m.audioKind!=='human').length!==31)errors.push('Original independent bank must retain its 31 focused materials');
  for(const level of ['A1','A2','B1','B2'])if(levels[level]?.reading!==2||levels[level]?.listening!==4)errors.push('Expected 2 readings and 4 listening sources at '+level);
  if(new Set(materials.filter(m=>m.skill==='writing').map(m=>m.figureType)).size!==7)errors.push('Expected all seven Task1 figure types');
  if(courseData){
@@ -64,7 +65,7 @@ function audit(materials,{requireAudio=true,courseData=null,lexical=null}={}){
   if(courseData){const used=new Set(courseData.days.flatMap(d=>d.tasks.flatMap(t=>t.materialIds))),courseMap=new Map(courseData.materials.map(m=>[m.id,m]));for(const a of lexical.assignments)if(!used.has(a.packId)||!used.has(a.contextId))errors.push('Unscheduled lexical exercise: '+a.packId);for(const m of lexical.materials)if(courseMap.get(m.id)?.source?.contentHash!==m.source.contentHash)errors.push('Course bundle does not match lexical authoring source: '+m.id);}
   lexicalAudit={candidateWords:70,groups:packs.length,contextQuestions:contexts.reduce((n,m)=>n+m.questions.length,0),originalExamples:70};
  }
- return{schema:1,status:errors.length?'failed':requireAudio?'complete':'text-review-only',materials:materials.length,sourceCount:sources.size,questions:questionReview.length,levels,syntheticLocales:voices,figureTypes:materials.filter(m=>m.skill==='writing').map(m=>m.figureType),lexical:lexicalAudit,sourceHashMethod:'sha256 of JSON.stringify(Object.fromEntries(contentHashFields in declared order)); transcriptHash is sha256 of exact UTF-8 transcript; audioHash is sha256 of MP3 bytes.',reviewScope:'Codex author self-review of all 192 source questions and seven chart prompts; not an independent human or psychometric review. 70 lexical application items reviewed as original sentence tasks.',semanticReviewReport:'curriculum/independent-bank/semantic-review.json',audioDecodeReport:'curriculum/independent-bank/audio-audit.json',limits:['Focused assessments are not complete IELTS papers or official score calibration.','Four locale labels describe synthetic TTS voices; no independent human-accent listening audit is claimed.','An offline local catalogue avoids previewing answers; client-side files are not a secure exam vault.'],errors,questionReview};
+ return{schema:2,status:errors.length?'failed':requireAudio?'complete':'text-review-only',materials:materials.length,sourceCount:sources.size,questions:questionReview.length,levels,syntheticLocales:voices,humanLocales:humanAudit.humanLocales,humanReaders:humanAudit.humanReaders,voiceKinds:{synthetic:materials.filter(m=>m.skill==='listening'&&m.audioSynthetic===true).length,human:humanMaterials.length},figureTypes:materials.filter(m=>m.skill==='writing').map(m=>m.figureType),lexical:lexicalAudit,sourceHashMethod:'sha256 of JSON.stringify(Object.fromEntries(contentHashFields in declared order)); transcriptHash is sha256 of exact UTF-8 transcript; audioHash is sha256 of MP3 bytes.',reviewScope:'Codex author self-review of all '+questionReview.length+' source questions and seven chart prompts; not an independent human or psychometric review. 70 lexical application items reviewed as original sentence tasks. Human-source printed text/local ASR comparison and rights evidence have a separate report.',semanticReviewReport:'curriculum/independent-bank/semantic-review.json',humanReviewReport:'curriculum/human-listening/audit.json',audioDecodeReport:'curriculum/independent-bank/audio-audit.json',limits:['Focused assessments are not complete IELTS papers or official score calibration.','Four locale labels describe synthetic TTS voices. Human variety labels follow explicit reader/source statements, not an acoustic certification.','An offline local catalogue avoids previewing answers; client-side files are not a secure exam vault.'],errors,questionReview};
 }
 module.exports={audit,figureErrors,contentHash,words};
 if(require.main===module){const {build}=require('./build-independent-bank.cjs'),data=require('../assets/curriculum-data.js'),lexical=require('./lexical-contexts.cjs').build(),materials=build({requireAudio:!process.argv.includes('--text-only')}).materials,report=audit(materials,{requireAudio:!process.argv.includes('--text-only'),courseData:data,lexical});fs.writeFileSync(path.join(root,'curriculum','independent-bank','audit.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,questionReview:undefined}));if(report.errors.length)process.exitCode=1;}

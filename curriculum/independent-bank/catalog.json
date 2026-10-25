@@ -1,6 +1,12 @@
 {
-  "schema": 1,
+  "schema": 2,
   "status": "complete",
+  "sourceCount": 32,
+  "voiceKinds": {
+    "synthetic": 16,
+    "human": 8
+  },
+  "humanReaders": 5,
   "scope": "分级独立分科短测；不进入普通追加队列、关卡或末期保留卷，不冒充完整40题卷。",
   "materials": [
     {
@@ -85,6 +91,7 @@
       "fullTest": false,
       "audioLocale": "en-GB",
       "audioAccent": "英国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 51.144
     },
@@ -98,6 +105,7 @@
       "fullTest": false,
       "audioLocale": "en-US",
       "audioAccent": "美国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 52.224
     },
@@ -111,6 +119,7 @@
       "fullTest": false,
       "audioLocale": "en-AU",
       "audioAccent": "澳大利亚英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 57.408
     },
@@ -124,6 +133,7 @@
       "fullTest": false,
       "audioLocale": "en-IN",
       "audioAccent": "印度英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 56.52
     },
@@ -137,6 +147,7 @@
       "fullTest": false,
       "audioLocale": "en-GB",
       "audioAccent": "英国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 81.336
     },
@@ -150,6 +161,7 @@
       "fullTest": false,
       "audioLocale": "en-US",
       "audioAccent": "美国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 83.088
     },
@@ -163,6 +175,7 @@
       "fullTest": false,
       "audioLocale": "en-AU",
       "audioAccent": "澳大利亚英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 83.76
     },
@@ -176,6 +189,7 @@
       "fullTest": false,
       "audioLocale": "en-IN",
       "audioAccent": "印度英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 100.776
     },
@@ -189,6 +203,7 @@
       "fullTest": false,
       "audioLocale": "en-GB",
       "audioAccent": "英国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 111.36
     },
@@ -202,6 +217,7 @@
       "fullTest": false,
       "audioLocale": "en-US",
       "audioAccent": "美国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 126.984
     },
@@ -215,6 +231,7 @@
       "fullTest": false,
       "audioLocale": "en-AU",
       "audioAccent": "澳大利亚英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 130.416
     },
@@ -228,6 +245,7 @@
       "fullTest": false,
       "audioLocale": "en-IN",
       "audioAccent": "印度英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 144.552
     },
@@ -241,6 +259,7 @@
       "fullTest": false,
       "audioLocale": "en-GB",
       "audioAccent": "英国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 149.736
     },
@@ -254,6 +273,7 @@
       "fullTest": false,
       "audioLocale": "en-US",
       "audioAccent": "美国英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 157.848
     },
@@ -267,6 +287,7 @@
       "fullTest": false,
       "audioLocale": "en-AU",
       "audioAccent": "澳大利亚英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 175.584
     },
@@ -280,6 +301,7 @@
       "fullTest": false,
       "audioLocale": "en-IN",
       "audioAccent": "印度英语（合成）",
+      "audioKind": "synthetic",
       "audioSynthetic": true,
       "audioDurationSeconds": 185.064
     },
@@ -352,7 +374,136 @@
       "estimatedMinutes": 20,
       "fullTest": false,
       "figureType": "mixed"
+    },
+    {
+      "id": "independent-human-gb-assumption",
+      "title": "A Rash Assumption · historical humour excerpt",
+      "level": "B2",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-GB",
+      "audioAccent": "英国英语 · RP",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 101.2,
+      "reader": "Ruth Golding",
+      "genre": "historical-humorous-prose"
+    },
+    {
+      "id": "independent-human-us-fox-crow",
+      "title": "The Fox and the Crow · complete fable",
+      "level": "B1",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-US",
+      "audioAccent": "美国英语 · 南加利福尼亚",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 96.130625,
+      "reader": "Kara Shallenberg",
+      "genre": "fable"
+    },
+    {
+      "id": "independent-human-us-crow-pitcher",
+      "title": "The Crow and the Pitcher · complete fable",
+      "level": "A2",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-US",
+      "audioAccent": "美国英语 · 南加利福尼亚",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 84.897958,
+      "reader": "Kara Shallenberg",
+      "genre": "fable"
+    },
+    {
+      "id": "independent-human-au-emigrant",
+      "title": "The Amateur Emigrant · ship-travel excerpt",
+      "level": "B2",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-AU",
+      "audioAccent": "澳大利亚英语",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 106.45,
+      "reader": "Annise",
+      "genre": "historical-travel-prose"
+    },
+    {
+      "id": "independent-human-au-tree",
+      "title": "The First Puritan Christmas Tree · story excerpt",
+      "level": "B1",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-AU",
+      "audioAccent": "澳大利亚英语",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 99.6,
+      "reader": "Annise",
+      "genre": "historical-children-story"
+    },
+    {
+      "id": "independent-human-in-letter",
+      "title": "Agnes Grey · The Letter excerpt",
+      "level": "B2",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-IN",
+      "audioAccent": "印度英语 · 南印度（读者自述）",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 87.85,
+      "reader": "Neeru Iyer",
+      "genre": "literary-first-person-narration"
+    },
+    {
+      "id": "independent-human-in-fogg",
+      "title": "Around the World in Eighty Days · the wager excerpt",
+      "level": "B2",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-IN",
+      "audioAccent": "印度英语 · 南印度（读者自述）",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 82.25,
+      "reader": "Neeru Iyer",
+      "genre": "literary-adventure-narration"
+    },
+    {
+      "id": "independent-human-nz-morning",
+      "title": "Summer Morning · complete poem",
+      "level": "B2",
+      "skill": "listening",
+      "questionCount": 6,
+      "estimatedMinutes": 15,
+      "fullTest": false,
+      "audioLocale": "en-NZ",
+      "audioAccent": "新西兰英语 · 北岛中部",
+      "audioKind": "human",
+      "audioSynthetic": false,
+      "audioDurationSeconds": 119.955375,
+      "reader": "Marianne Coleman-Hipkins",
+      "genre": "poetry-reading"
     }
   ],
-  "sourceRegistry": "curriculum/independent-bank/sources.json"
+  "sourceRegistry": "curriculum/independent-bank/sources.json",
+  "humanSourceRegistry": "curriculum/human-listening/catalog.json"
 }

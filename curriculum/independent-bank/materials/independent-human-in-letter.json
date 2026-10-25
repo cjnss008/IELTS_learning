@@ -1,0 +1,182 @@
+{
+  "id": "independent-human-in-letter",
+  "version": "1",
+  "level": "B2",
+  "stage": "independent",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Agnes Grey · The Letter excerpt",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "instructions": "真人历史作品朗读，非现代场景对话或官方试卷。先独立听音并完成6题，再提交核对；录制署名不出题。级别只是编写目标，未做真实考生难度标定。来源与署名可在开始后查看；若打开外部全文或原音，后续继续按已见材料记录。",
+  "transcript": "My father's mortal remains had been consigned to the tomb; and we, with sad faces and sombre garments, sat lingering over the frugal breakfast-table, revolving plans for our future life. My mother's strong mind had not given way beneath even this affliction: her spirit, though crushed, was not broken. Mary's wish was that I should go back to Horton Lodge, and that our mother should come and live with her and Mr. Richardson at the vicarage: she affirmed that he wished it no less than herself, and that such an arrangement could not fail to benefit all parties; for my mother's society and experience would be of inestimable value to them, and they would do all they could to make her happy. But no arguments or entreaties could prevail: my mother was determined not to go. Not that she questioned, for a moment, the kind wishes and intentions of her daughter; but she affirmed that so long as God spared her health and strength, she would make use of them to earn her own livelihood, and be chargeable to no one; whether her dependence would be felt as a burden or not. If she could afford to reside as a lodger in the vicarage, she would choose that house before all others as the place of her abode; but not being so circumstanced, she would never come under its roof, except as an occasional visitor: unless sickness or calamity should render her assistance really needful, or until age or infirmity made her incapable of maintaining herself.",
+  "transcriptScope": "完整所选正文；完整音轨中的 LibriVox 开头/结尾署名不在正文转录内。标点和大小写按印刷文本规范；不把机器识别结果当作精确逐字听写。",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What recent event explains the family’s sadness?",
+      "options": [
+        "The father’s death",
+        "The loss of their house in a fire",
+        "The daughter’s departure abroad"
+      ],
+      "answers": [
+        "The father’s death"
+      ],
+      "evidence": "My father's mortal remains had been consigned to the tomb",
+      "explanation": "mortal remains ... tomb 说明父亲已下葬，不是失火或出国。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "How does the narrator describe her mother’s spirit?",
+      "options": [
+        "Completely unable to make any decision",
+        "Untroubled by the recent loss",
+        "Deeply hurt but still resilient"
+      ],
+      "answers": [
+        "Deeply hurt but still resilient"
+      ],
+      "evidence": "her spirit, though crushed, was not broken.",
+      "explanation": "though crushed, ... not broken 同时保留悲伤与坚韧两层意思。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Where did Mary want her mother to live?",
+      "options": [
+        "In a boarding house overseas",
+        "With Mary and Mr. Richardson at the vicarage",
+        "Alone at Horton Lodge"
+      ],
+      "answers": [
+        "With Mary and Mr. Richardson at the vicarage"
+      ],
+      "evidence": "our mother should come and live with her and Mr. Richardson at the vicarage",
+      "explanation": "Horton Lodge 是给叙述者的安排，不是给母亲的住处。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What did the mother think of her daughter’s intentions?",
+      "options": [
+        "She believed they were kind.",
+        "She suspected they were selfish.",
+        "She had not heard the proposal."
+      ],
+      "answers": [
+        "She believed they were kind."
+      ],
+      "evidence": "Not that she questioned, for a moment, the kind wishes and intentions of her daughter",
+      "explanation": "Not that ... questioned 排除因怀疑女儿动机而拒绝。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "What was the main reason for the mother’s refusal?",
+      "options": [
+        "She disliked her daughter’s husband.",
+        "She wanted to avoid all future contact.",
+        "She wanted to earn her own living while able."
+      ],
+      "answers": [
+        "She wanted to earn her own living while able."
+      ],
+      "evidence": "she would make use of them to earn her own livelihood, and be chargeable to no one",
+      "explanation": "earn ... livelihood 与 be chargeable to no one 强调经济独立。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Which situation could make the mother accept living there dependently?",
+      "options": [
+        "Mary repeated the invitation the next morning.",
+        "Age or infirmity prevented her supporting herself.",
+        "The family bought more furniture."
+      ],
+      "answers": [
+        "Age or infirmity prevented her supporting herself."
+      ],
+      "evidence": "until age or infirmity made her incapable of maintaining herself.",
+      "explanation": "结尾明确老年或体弱无法自立是例外；再三恳求在前文已无效。",
+      "id": "q6"
+    }
+  ],
+  "audioKind": "human",
+  "audioSynthetic": false,
+  "audioLocale": "en-IN",
+  "audioAccent": "印度英语 · 南印度（读者自述）",
+  "audioVoice": "Neeru Iyer",
+  "audioVoices": [
+    "Neeru Iyer"
+  ],
+  "audioProvider": "LibriVox volunteer human reader",
+  "audioVoiceSource": "https://wiki.librivox.org/index.php/Accents_Table",
+  "captionFile": "",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-domain-human-reading",
+    "rights": "LibriVox volunteer public-domain dedication; official policy confirms public-domain status in the USA and permits reuse, including commercial use. The policy does not warrant identical copyright status in every other jurisdiction.",
+    "verification": "reviewed",
+    "method": "对照公有领域印刷原文逐句检查选段、逐题核对证据与干扰项；本地真实 CPU Whisper 无参考提示转录用于交叉核对。没有声称真人听审、声学口音认证或考生难度标定。",
+    "creditDetailUrl": "真人听力来源.html?id=independent-human-in-letter",
+    "registry": "curriculum/human-listening/sources/independent-human-in-letter.json",
+    "reader": "Neeru Iyer",
+    "readerUrl": "https://librivox.org/reader/3588",
+    "catalogue": "https://librivox.org/agnes-grey-by-anne-bronte/",
+    "textUrl": "https://www.gutenberg.org/ebooks/767",
+    "rightsUrl": "https://librivox.org/pages/public-domain/",
+    "accentBasis": {
+      "url": "https://wiki.librivox.org/index.php/Accents_Table",
+      "label": "South-Indian Brahmin accent, I think (if such a thing exists)",
+      "kind": "reader-self-description-with-qualification"
+    },
+    "genre": "literary-first-person-narration",
+    "transcriptNotes": [
+      "The printed edition leaves a place name blank before “vicarage”; the reading passes over that blank, represented here as “the vicarage”. Spoken contractions and punctuation are normalised against print; none affects a tested fact."
+    ],
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ],
+    "contentHash": "658d20025410dc0a07ac7e6c778936187935a51dc9635ccc50019c9cb774e716",
+    "recording": {
+      "originalUrl": "https://archive.org/download/agnes_grey_0906_librivox/agnesgrey_19_bronte_64kb.mp3",
+      "originalAudioHash": "a82d75e232713c96d2dac5f5e510d8b9c53cd82f8dfdd6208eacf5b7272c62fc",
+      "audioHash": "245ccfa4421e8ab349e43e711aadf99504559e0a1a329b23a6142e234d00fcfa",
+      "originalDurationSeconds": 420.87873,
+      "durationSeconds": 87.85,
+      "selection": {
+        "mode": "excerpt",
+        "scanSeconds": 220,
+        "startSeconds": 28.5,
+        "endSeconds": 116.35,
+        "firstWords": "My father",
+        "lastWords": "incapable of maintaining herself."
+      },
+      "changes": [
+        "Selected the stated complete work or contiguous complete-sentence excerpt from the original recording.",
+        "Re-encoded to mono 24 kHz MP3 at 64 kbit/s and removed container metadata; no speed, pitch or synthesized speech change.",
+        "Punctuation/capitalisation normalised from print; standard recording credits omitted from displayed body transcript."
+      ],
+      "author": "Anne Brontë",
+      "authorDied": 1849,
+      "translator": "",
+      "translatorDied": null,
+      "published": 1847,
+      "textEdition": {
+        "title": "Agnes Grey by Acton Bell (Anne Brontë), London: Thomas Cautley Newby, 1847; Chapter XIX",
+        "year": 1847
+      },
+      "asrProof": "curriculum/human-listening/asr/independent-human-in-letter.json",
+      "transcriptAuditStatus": "printed-source-and-real-unprompted-local-ASR-compared"
+    }
+  },
+  "audio": "audio/human-listening/independent-human-in-letter.mp3",
+  "audioDurationSeconds": 87.85
+}

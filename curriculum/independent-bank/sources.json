@@ -1,9 +1,9 @@
 {
-  "schema": 1,
+  "schema": 2,
   "checkedDate": "2026-10-25",
   "content": {
     "kind": "original",
-    "rights": "All new passages, transcripts, questions, explanations, lexical contexts and chart data are project-original AI-assisted educational materials. Scenarios, locations and numerical data are simulated. No IELTS sample task, Microsoft article or other third-party article is reproduced or adapted.",
+    "rights": "The original eight reading bodies, sixteen synthetic-listening scripts, all local questions/explanations, lexical contexts and chart data are project-original AI-assisted educational materials. Their scenarios and chart data are simulated; no IELTS sample task or Microsoft article is reproduced. The separate human-listening extension uses attributed historical public-domain texts/recordings with project-original questions, not project-original literary bodies.",
     "authoringSources": ["tools/independent-bank.cjs", "tools/lexical-contexts.cjs"],
     "review": "Codex author self-review; not a human examiner review, empirical difficulty calibration or learning-outcome validation."
   },
@@ -38,6 +38,13 @@
       "reproduction": "The package is not vendored into the learning runtime. Current upstream licence identifies LGPLv3 for most package files; its subtitle composer has a separate MIT notice. Neither is represented as an audio-output open licence."
     }
   ],
-  "audioBoundary": "All sixteen new listening tracks are synthesized, not authentic human recordings. Four locale labels are verified from official voice metadata. Existing NOAA recordings remain separate and are not counted as verified multi-accent human evidence. No fabricated word-level or sentence-level timestamps are supplied.",
+  "humanExtension": {
+    "catalogue": "curriculum/human-listening/catalog.json",
+    "rights": "curriculum/human-listening/rights-and-review.json",
+    "review": "curriculum/human-listening/semantic-review.json",
+    "audioDecode": "curriculum/human-listening/audio-audit.json",
+    "scope": "Eight different historical literary bodies read by five LibriVox volunteers, covering five explicitly self-described or source-labelled English varieties. Source files retain full original audio hashes, extraction ranges, edition/translator information, official public-domain policy and its jurisdiction caveat. No nationality inference, human auditory review, acoustic accent certification or learner difficulty calibration is claimed. Counts are built dynamically in the catalogue and audit."
+  },
+  "audioBoundary": "The sixteen original independent listening tracks remain explicitly synthetic, with four official voice locales. The separate human extension is explicitly non-synthetic and retains its own identity, rights, ASR comparison and decoding reports. Existing NOAA recordings remain separate. Actual local ASR word estimates are an authoring comparison aid, not fabricated or precision course captions.",
   "integrityBoundary": "Independent material IDs are excluded from core days, ordinary additional practice, gate forms and final reserve forms. Catalogue previews contain metadata only. Starting, assisting and submitting use the existing course-player exposure, draft, original-work and mistake interfaces. Static local assets are not a cryptographic exam vault."
 }

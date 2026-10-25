@@ -1,0 +1,175 @@
+{
+  "id": "independent-human-us-crow-pitcher",
+  "version": "1",
+  "level": "A2",
+  "stage": "independent",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "The Crow and the Pitcher · complete fable",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "instructions": "真人历史作品朗读，非现代场景对话或官方试卷。先独立听音并完成6题，再提交核对；录制署名不出题。级别只是编写目标，未做真实考生难度标定。来源与署名可在开始后查看；若打开外部全文或原音，后续继续按已见材料记录。",
+  "transcript": "A thirsty Crow found a Pitcher with some water in it, but so little was there that, try as she might, she could not reach it with her beak, and it seemed as though she would die of thirst within sight of the remedy. At last she hit upon a clever plan. She began dropping pebbles into the Pitcher, and with each pebble the water rose a little higher until at last it reached the brim, and the knowing bird was enabled to quench her thirst.\nNecessity is the mother of invention.",
+  "transcriptScope": "完整所选正文；完整音轨中的 LibriVox 开头/结尾署名不在正文转录内。标点和大小写按印刷文本规范；不把机器识别结果当作精确逐字听写。",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What did the Crow need?",
+      "options": [
+        "Water",
+        "Food",
+        "A nest"
+      ],
+      "answers": [
+        "Water"
+      ],
+      "evidence": "A thirsty Crow found a Pitcher with some water in it",
+      "explanation": "thirsty 表示口渴，因而需要水。",
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why could the Crow not drink at first?",
+      "options": [
+        "The water was too hot.",
+        "The pitcher was closed.",
+        "The water was too low."
+      ],
+      "answers": [
+        "The water was too low."
+      ],
+      "evidence": "but so little was there that, try as she might, she could not reach it with her beak",
+      "explanation": "水量少、嘴够不到；没有说水热或容器盖住。",
+      "id": "q2"
+    },
+    {
+      "type": "fill",
+      "prompt": "What did the Crow drop into the pitcher? Write ONE WORD.",
+      "answers": [
+        "pebbles"
+      ],
+      "evidence": "She began dropping pebbles into the Pitcher",
+      "explanation": "pebbles 指小石子，保留复数。",
+      "maxWords": 1,
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What changed as she carried out her plan?",
+      "options": [
+        "The water rose.",
+        "The pitcher became taller.",
+        "The water became colder."
+      ],
+      "answers": [
+        "The water rose."
+      ],
+      "evidence": "with each pebble the water rose a little higher",
+      "explanation": "rise 指水位上升；不是容器高度或水温改变。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "How did the story end?",
+      "options": [
+        "The Crow broke the pitcher.",
+        "The Crow flew away still thirsty.",
+        "The Crow was able to drink."
+      ],
+      "answers": [
+        "The Crow was able to drink."
+      ],
+      "evidence": "the knowing bird was enabled to quench her thirst.",
+      "explanation": "quench her thirst 表示喝水解渴，说明计划成功。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Which lesson best matches the final sentence?",
+      "options": [
+        "Useful ideas only come from other people.",
+        "A need can lead to a clever solution.",
+        "Every problem should be left alone."
+      ],
+      "answers": [
+        "A need can lead to a clever solution."
+      ],
+      "evidence": "Necessity is the mother of invention.",
+      "explanation": "结尾格言把需求与发明联系起来；乌鸦自己找到办法。",
+      "id": "q6"
+    }
+  ],
+  "audioKind": "human",
+  "audioSynthetic": false,
+  "audioLocale": "en-US",
+  "audioAccent": "美国英语 · 南加利福尼亚",
+  "audioVoice": "Kara Shallenberg",
+  "audioVoices": [
+    "Kara Shallenberg"
+  ],
+  "audioProvider": "LibriVox volunteer human reader",
+  "audioVoiceSource": "https://librivox.org/celebration-of-dialects-and-accents-vol-1/",
+  "captionFile": "",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-domain-human-reading",
+    "rights": "LibriVox volunteer public-domain dedication; official policy confirms public-domain status in the USA and permits reuse, including commercial use. The policy does not warrant identical copyright status in every other jurisdiction.",
+    "verification": "reviewed",
+    "method": "对照公有领域印刷原文逐句检查选段、逐题核对证据与干扰项；本地真实 CPU Whisper 无参考提示转录用于交叉核对。没有声称真人听审、声学口音认证或考生难度标定。",
+    "creditDetailUrl": "真人听力来源.html?id=independent-human-us-crow-pitcher",
+    "registry": "curriculum/human-listening/sources/independent-human-us-crow-pitcher.json",
+    "reader": "Kara Shallenberg",
+    "readerUrl": "https://librivox.org/reader/19",
+    "catalogue": "https://librivox.org/aesops-fables-volume-1-fables-1-25/",
+    "textUrl": "https://www.gutenberg.org/ebooks/11339",
+    "rightsUrl": "https://librivox.org/pages/public-domain/",
+    "accentBasis": {
+      "url": "https://librivox.org/celebration-of-dialects-and-accents-vol-1/",
+      "label": "American accent, Southern California",
+      "kind": "same-reader-source-catalogue-label"
+    },
+    "genre": "fable",
+    "transcriptNotes": [
+      "Full track retains its standard LibriVox opening and closing credits. The lexical simplicity of the fable motivates an A2 target; this has not been validated with learners."
+    ],
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ],
+    "contentHash": "4e6e2a8242d7f422a67e9d2afad6441837150053fc0a48320dc5cc691cbf50c4",
+    "recording": {
+      "originalUrl": "https://archive.org/download/aesop_fables_volume_one_librivox/fables_01_20_aesop_64kb.mp3",
+      "originalAudioHash": "abfaf5998a5939f2ab095f58d10bdaafc2b25587d572ca99bfbf8a3953b2687c",
+      "audioHash": "ae4b65d94d19497e9d118f412d49fd194a58c59dfd75f591901adb6f3f1d1d1d",
+      "originalDurationSeconds": 84.897959,
+      "durationSeconds": 84.897958,
+      "selection": {
+        "mode": "complete",
+        "startSeconds": 0,
+        "endSeconds": 84.897959
+      },
+      "changes": [
+        "Selected the stated complete work or contiguous complete-sentence excerpt from the original recording.",
+        "Re-encoded to mono 24 kHz MP3 at 64 kbit/s and removed container metadata; no speed, pitch or synthesized speech change.",
+        "Punctuation/capitalisation normalised from print; standard recording credits omitted from displayed body transcript."
+      ],
+      "author": "Aesop",
+      "authorDied": null,
+      "translator": "V. S. Vernon Jones",
+      "translatorDied": 1955,
+      "published": 1912,
+      "textEdition": {
+        "title": "Aesop’s Fables, translated by V. S. Vernon Jones, 1912 edition",
+        "year": 1912
+      },
+      "asrProof": "curriculum/human-listening/asr/independent-human-us-crow-pitcher.json",
+      "transcriptAuditStatus": "printed-source-and-real-unprompted-local-ASR-compared"
+    }
+  },
+  "audio": "audio/human-listening/independent-human-us-crow-pitcher.mp3",
+  "audioDurationSeconds": 84.897958
+}

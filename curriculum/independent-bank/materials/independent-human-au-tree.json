@@ -1,0 +1,174 @@
+{
+  "id": "independent-human-au-tree",
+  "version": "1",
+  "level": "B1",
+  "stage": "independent",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "The First Puritan Christmas Tree · story excerpt",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "instructions": "真人历史作品朗读，非现代场景对话或官方试卷。先独立听音并完成6题，再提交核对；录制署名不出题。级别只是编写目标，未做真实考生难度标定。来源与署名可在开始后查看；若打开外部全文或原音，后续继续按已见材料记录。",
+  "transcript": "Mrs. Olcott called her boys, and bade them go to the pine woods and get the finest, handsomest young hemlock tree that they could find.\n\"Get one that is straight and tall, with well-boughed branches on it, and put it where you can draw it under the wood-shed after dark,\" she added.\nThe boys went to Pine Hill, and there they picked out the finest young tree on all the hill, and said, \"We will take this one.\" So, with their hatchets they hewed it down and brought it safely home the next night when all was dark. And when Roger was quietly sleeping in the adjoining room, they dragged the tree into the kitchen. It was too tall, so they took it out again and cut it off two or three feet at the base. Then they propped it up, and the curtains being down over the windows, and blankets being fastened over the curtains to prevent any one looking in, and the door being doubly barred to prevent any one coming in, they all went to bed.\nVery early the next morning, while the stars shone on the snow-covered hills—the same stars that shone sixteen hundred years before on the hills when Christ was born in Bethlehem—the little Puritan mother in New England arose very softly. She went out and lit the kitchen fire anew from the ash-covered embers. She fastened upon the twigs of the tree the gifts she had bought in Boston for her boys and girl. Then she took as many as twenty pieces of candle and fixed them upon the branches. After that she softly called Rupert, Robert and Lucy, and told them to get up and come into the kitchen.",
+  "transcriptScope": "完整所选正文；完整音轨中的 LibriVox 开头/结尾署名不在正文转录内。标点和大小写按印刷文本规范；不把机器识别结果当作精确逐字听写。",
+  "questions": [
+    {
+      "type": "fill",
+      "prompt": "What kind of tree did Mrs. Olcott request? Write ONE WORD.",
+      "answers": [
+        "hemlock"
+      ],
+      "evidence": "get the finest, handsomest young hemlock tree that they could find.",
+      "explanation": "所要树种是 hemlock；pine woods 是寻找地点。",
+      "maxWords": 1,
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why did the boys cut the base of the tree again?",
+      "options": [
+        "Its branches were too wide for the path.",
+        "Its trunk was badly damaged.",
+        "The tree was too tall for the room."
+      ],
+      "answers": [
+        "The tree was too tall for the room."
+      ],
+      "evidence": "It was too tall, so they took it out again and cut it off two or three feet at the base.",
+      "explanation": "too tall 是二次锯短的原因，不是枝条宽或树干坏。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "Why were blankets placed over the curtains?",
+      "options": [
+        "To help the children sleep outside",
+        "To stop people seeing inside",
+        "To keep falling snow off the tree"
+      ],
+      "answers": [
+        "To stop people seeing inside"
+      ],
+      "evidence": "blankets being fastened over the curtains to prevent any one looking in",
+      "explanation": "prevent ... looking in 明确是遮挡视线。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "What shows how early the mother got up?",
+      "options": [
+        "The stars were still visible.",
+        "The midday sun was overhead.",
+        "All the children were already playing."
+      ],
+      "answers": [
+        "The stars were still visible."
+      ],
+      "evidence": "Very early the next morning, while the stars shone on the snow-covered hills",
+      "explanation": "星星仍可见，说明起床时间很早；儿童是后来被叫醒。",
+      "id": "q4"
+    },
+    {
+      "type": "fill",
+      "prompt": "Where had she bought the gifts? Write ONE WORD.",
+      "answers": [
+        "Boston"
+      ],
+      "evidence": "the gifts she had bought in Boston for her boys and girl.",
+      "explanation": "Boston 是购礼物的城市，不是故事开头找树的 Pine Hill。",
+      "maxWords": 1,
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "Where did the mother fix the pieces of candle?",
+      "options": [
+        "Beside the bedroom door",
+        "On the branches",
+        "Under the kitchen table"
+      ],
+      "answers": [
+        "On the branches"
+      ],
+      "evidence": "Then she took as many as twenty pieces of candle and fixed them upon the branches.",
+      "explanation": "candles 固定在树枝；这是历史故事的描述，不是现代操作指南。",
+      "id": "q6"
+    }
+  ],
+  "audioKind": "human",
+  "audioSynthetic": false,
+  "audioLocale": "en-AU",
+  "audioAccent": "澳大利亚英语",
+  "audioVoice": "Annise",
+  "audioVoices": [
+    "Annise"
+  ],
+  "audioProvider": "LibriVox volunteer human reader",
+  "audioVoiceSource": "https://librivox.org/celebration-of-dialects-and-accents-vol-1/",
+  "captionFile": "",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-domain-human-reading",
+    "rights": "LibriVox volunteer public-domain dedication; official policy confirms public-domain status in the USA and permits reuse, including commercial use. The policy does not warrant identical copyright status in every other jurisdiction.",
+    "verification": "reviewed",
+    "method": "对照公有领域印刷原文逐句检查选段、逐题核对证据与干扰项；本地真实 CPU Whisper 无参考提示转录用于交叉核对。没有声称真人听审、声学口音认证或考生难度标定。",
+    "creditDetailUrl": "真人听力来源.html?id=independent-human-au-tree",
+    "registry": "curriculum/human-listening/sources/independent-human-au-tree.json",
+    "reader": "Annise",
+    "readerUrl": "https://librivox.org/reader/2544",
+    "catalogue": "https://librivox.org/childrens-short-works-vol-004-by-various/",
+    "textUrl": "https://www.gutenberg.org/ebooks/28198",
+    "rightsUrl": "https://librivox.org/pages/public-domain/",
+    "accentBasis": {
+      "url": "https://librivox.org/celebration-of-dialects-and-accents-vol-1/",
+      "label": "Australian accent",
+      "kind": "same-reader-source-catalogue-label"
+    },
+    "genre": "historical-children-story",
+    "transcriptNotes": [
+      "Anonymous story in A Budget of Christmas Tales, a volume bearing copyright 1895 by Louis Klopsch. The complete selected opening ends before subsequent story events; a historical religious reference is retained rather than presented as factual chronology."
+    ],
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ],
+    "contentHash": "a789e3c5d538c99da02c6d22125b693d9f8ca5919d458d1874ba55945e52737a",
+    "recording": {
+      "originalUrl": "https://archive.org/download/childrensshortstory04_1001_librivox/kidsshortworks004_07firstpuritanchristmastree_arb_64kb.mp3",
+      "originalAudioHash": "f467b70d226a0095bea190d3fbd5f0a0463d9e9f5144e397655fd114f0e066aa",
+      "audioHash": "4fb1ec79afd91eb598fd0b766b964c850a88c7df9b3e783db9e2d83f3f7d52a2",
+      "originalDurationSeconds": 359.020771,
+      "durationSeconds": 99.6,
+      "selection": {
+        "mode": "excerpt",
+        "scanSeconds": 220,
+        "startSeconds": 19.2,
+        "endSeconds": 118.8,
+        "firstWords": "Mrs. Olcott called her boys",
+        "lastWords": "come into the kitchen."
+      },
+      "changes": [
+        "Selected the stated complete work or contiguous complete-sentence excerpt from the original recording.",
+        "Re-encoded to mono 24 kHz MP3 at 64 kbit/s and removed container metadata; no speed, pitch or synthesized speech change.",
+        "Punctuation/capitalisation normalised from print; standard recording credits omitted from displayed body transcript."
+      ],
+      "author": "Anonymous",
+      "authorDied": null,
+      "translator": "",
+      "translatorDied": null,
+      "published": 1895,
+      "textEdition": {
+        "title": "A Budget of Christmas Tales, copyright 1895 by Louis Klopsch; uncredited story The First Puritan Christmas Tree",
+        "year": 1895
+      },
+      "asrProof": "curriculum/human-listening/asr/independent-human-au-tree.json",
+      "transcriptAuditStatus": "printed-source-and-real-unprompted-local-ASR-compared"
+    }
+  },
+  "audio": "audio/human-listening/independent-human-au-tree.mp3",
+  "audioDurationSeconds": 99.6
+}
