@@ -6,3 +6,15 @@
 #todayLearningQueue button:disabled{opacity:.6;cursor:wait}
 @media(max-width:850px){.today-route{grid-template-columns:repeat(4,1fr)}.today-hero{grid-template-columns:1fr 200px;gap:20px}}
 @media(max-width:600px){.today-hero{display:block}.today-summary{border-left:0;border-top:1px solid var(--line);padding:15px 0 0;margin-top:20px}.today-summary>strong{font-size:36px}.today-summary p{display:inline-block;vertical-align:top;margin-right:22px}.today-status{padding:14px 12px;gap:10px}.today-status strong{font-size:17px}.today-route{grid-template-columns:repeat(4,1fr)}.today-step{padding:10px 8px}.today-copy h1{font-size:30px}}
+/* The learning action stays first; budget and progress stack before columns become cramped. */
+@media(max-width:760px){
+ .today-hero{display:block}
+ .today-summary{border-left:0;border-top:1px solid var(--line);padding:16px 0 0;margin-top:22px}
+ .today-summary>strong{font-size:36px}
+}
+@media(max-width:520px){
+ .today-status{grid-template-columns:1fr;gap:12px}
+ .today-status>div+div{border-top:1px solid var(--line);padding-top:12px}
+ .today-route{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .today-start{display:flex;width:100%;margin-right:0}
+}

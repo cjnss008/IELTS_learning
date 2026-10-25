@@ -4,3 +4,8 @@
 
 .course-review-cancel{display:inline-block;margin:10px 0 0 12px;padding:7px 12px;border:1px solid #7e9a83;background:#fff;border-radius:7px;color:#315b45}.course-acoustic-evidence{border-left:3px solid #6c916f;margin:10px 0;padding:8px 12px;background:#f2f6eb;font-size:13px}.course-review-round blockquote{overflow-wrap:anywhere}
 .course-figure svg.course-plan{display:block;min-width:520px;margin:0 auto}.course-plan-description{margin-top:12px;padding:10px 13px;border:1px solid var(--line);border-radius:8px;font-size:13px}.course-plan-description summary{cursor:pointer;font-weight:600}.course-plan-description p{margin:7px 0}
+/* Wide figures scroll within the exercise, never by widening the whole page. */
+.course-layout>*{min-width:0}
+.course-workspace :is(pre,table){max-width:100%}
+.course-feedback{overflow-wrap:anywhere}
+@media(max-width:520px){.course-sidebar #courseTasks{grid-template-columns:1fr}.course-option>span{min-width:0}.course-session-bar>*{min-width:0;max-width:100%}.course-start select{width:100%;margin-right:0}}

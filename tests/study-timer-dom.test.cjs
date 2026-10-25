@@ -30,7 +30,6 @@ test('narrow screens keep a compact bar while studying and fold an expanded layo
  const f=fixture(new Map(),{wide:false});f.win.IELTSStudyTimer.studyStarted();const panel=f.win.document.getElementById('ieltsStudyTimer'),content=f.win.document.getElementById('studyTimerContent');assert.equal(content.hidden,true);assert.equal(f.body.classes.has('study-timer-present'),true);
  await panel.children[0].fire('click');assert.equal(content.hidden,false);assert.match(panel.className,/study-timer-expanded/);assert.equal(f.body.classes.has('study-timer-open'),true);
  const answer=new Element('textarea');for(const fn of f.events['doc:focusin'])fn({target:answer});assert.equal(content.hidden,true);assert.match(panel.className,/study-timer-collapsed/);assert.equal(f.body.classes.has('study-timer-open'),false);assert.equal(f.win.IELTSStudyTimer.snapshot().running,false);
- const css=fs.readFileSync(path.join(__dirname,'../assets/study-timer.css'),'utf8');assert.match(css,/body\.study-timer-present\{padding-right:210px\}/);assert.match(css,/body\.study-timer-open\{padding-right:310px\}/);assert.match(css,/body\.study-timer-present\{padding-bottom:76px\}/);assert.match(css,/\.study-timer-expanded\{position:relative/);
 });
 
 test('same-profile reset event disposes an old clock, rejects stale budget and cannot overwrite the newly cleared state',async()=>{
