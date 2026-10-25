@@ -45,7 +45,7 @@ function calendarBudget(records,drafts,today=dateKey(),budget=360){
  dateNumber(today);if(!Number.isFinite(budget)||budget<0||budget>360)throw Error('每日预算必须在0–360分钟。');
  const works=latestRecords(records).filter(r=>!isCalibration(r)),ids=new Set(works.map(r=>r.id)),items=[...works,...mediaDraftsRemaining(drafts,works).filter(d=>!ids.has(d.id)&&!isCalibration(d))],seen=new Set();let used=0;
  for(const item of items){if(seen.has(item.id))continue;seen.add(item.id);used+=(activityByDate(item,!ids.has(item.id))[today]||0)/60;}
- return{date:today,budgetMinutes:budget,spentMinutes:used,remainingMinutes:Math.max(0,budget-used),exhausted:used>=budget-1e-8,includesDrafts:true};
+ const base={date:today,budgetMinutes:budget,spentMinutes:used,remainingMinutes:Math.max(0,budget-used),exhausted:used>=budget-1e-8,includesDrafts:true};return root.IELTSStudyTimer?.budget?.(base)||base;
 }
 function mastery(data,records,options={}){
  const now=options.now??Date.now(),verified=options.verifiedRecord||root.IELTSAdaptivePlan?.verifiedRecord,blocked=new Set(options.unresolvedMaterialIds||[]),materials=new Map((data.materials||[]).map(m=>[m.id,m])),latest=new Map();

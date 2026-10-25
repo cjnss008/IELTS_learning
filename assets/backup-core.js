@@ -1,6 +1,7 @@
 (function(root){
   'use strict';
   const KEYS={
+    'ielts52-study-timer-v1':'番茄钟设置与每日休息时间（不计学习掌握）',
     'ielts52-listening-lab-v1':'精听帮助、片段循环与听音笔记',
     'ielts52-memory-v1':'FSRS分技能回忆、个人参数与调度',
     'ielts40-study-v1':'原课文学习记录', 'ielts40-translation-visible':'中文显示偏好', 'ielts-word-groups-v1':'原分组词卡记录',
@@ -32,6 +33,7 @@
   function validate(key,raw){
     if(!Object.hasOwn(KEYS,key))throw Error('模块不在恢复白名单。');
     const v=JSON.parse(raw);
+    if(key==='ielts52-study-timer-v1'){if(!root.IELTSStudyTimerCore)throw Error('番茄钟模块未加载。');return root.IELTSStudyTimerCore.parseState(v);}
     if(key==='ielts52-listening-lab-v1'){if(!root.IELTSListeningLab)throw Error('精听模块未加载。');return root.IELTSListeningLab.parseState(v);}
     if(key==='ielts52-memory-v1'){if(!root.IELTSMemory)throw Error('记忆模块未加载。');return root.IELTSMemory.parseState(v);}
     if(key==='ielts52-learning-records-v1'){if(!root.IELTSRecords)throw Error('作品模块未加载。');return root.IELTSRecords.parseState(v);}
@@ -70,6 +72,7 @@
     return v;
   }
   function mergeLocal(key,old,raw){
+    if(key==='ielts52-study-timer-v1')return JSON.stringify(old===null?root.IELTSStudyTimerCore.restore(validate(key,raw)):root.IELTSStudyTimerCore.mergeStates(validate(key,old),validate(key,raw)));
     if(old===null)return raw;
     if(key==='ielts52-listening-lab-v1')return JSON.stringify(root.IELTSListeningLab.mergeStates(validate(key,old),validate(key,raw)));
     if(key==='ielts52-memory-v1')return JSON.stringify(root.IELTSMemory.mergeStates(validate(key,old),validate(key,raw)));

@@ -18,7 +18,7 @@
   async function apply(point){
    validate(point);assertCurrent();
    for(let i=0;i<databases.length;i++){assertCurrent();await databases[i].replace(point.stores[i].rows);}
-   assertCurrent();for(const key of clearKeys(keys)){if(Object.hasOwn(point.entries,key))storage.setItem(key,point.entries[key]);else storage.removeItem(key);}
+   assertCurrent();for(const key of clearKeys(keys)){if(Object.hasOwn(point.entries,key))storage.setItem(key,key==='ielts52-study-timer-v1'?JSON.stringify(root.IELTSStudyTimerCore.restore(point.entries[key])):point.entries[key]);else storage.removeItem(key);}
    const cache='ielts52-selection-ai-cache-v1';if(sessionStorage){if(point.session?.[cache]!=null)sessionStorage.setItem(cache,point.session[cache]);else sessionStorage.removeItem(cache);}
   }
   function signal(){const value=String(clock().getTime())+'-'+Math.random().toString(36).slice(2);storage.setItem(GENERATION,value);notify(value);}
