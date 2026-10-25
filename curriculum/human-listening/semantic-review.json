@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "reviewDate": "2026-10-25",
+  "authorReview": "Codex /root/unseen_bank_v50",
+  "crossReviewer": "Independent Codex subagent /root/calibration_v50",
+  "scope": {"sourceBodies": 8, "questions": 48, "canonicalAnswersAccepted": 48, "verbatimEvidenceMatches": 48, "readersWithExplicitPrimaryAccentEvidence": 5},
+  "method": "Author checked every selected body against the historical printed source and actual unprompted local ASR. A separate Codex reviewer read every question, option, canonical answer, verbatim evidence and explanation, and actually opened the two official accent-evidence pages to verify all five reader identities/labels. Reviewer saw the answer key: this is not a blinded learner trial or human examiner review.",
+  "findings": [
+    {"materialId": "independent-human-us-fox-crow", "issue": "Later option exposed the earlier fill answer cheese.", "resolution": "Later option now says The food fell; intended fact and evidence remain unchanged."},
+    {"materialId": "independent-human-us-crow-pitcher", "issue": "A later prompt repeated the earlier fill answer pebbles.", "resolution": "Later prompt refers to carrying out her plan, without naming the material."},
+    {"materialId": "independent-human-in-fogg", "issue": "Later distractor exposed Edinburgh as a possible city for an earlier fill.", "resolution": "Distractor now proposes an unsupported return to the club rather than naming a city."},
+    {"materialId": "independent-human-nz-morning", "issue": "The source cites an 1831 edition but does not establish first publication.", "resolution": "Edition and notes now explicitly avoid a first-publication claim."}
+  ],
+  "finalReadOnlyConclusion": "All three cross-question answer cues are removed; original intended answers remain unique and exactly supported. No additional mandatory text correction was found. All 48 canonical answers and verbatim evidence checks pass. The eight original course MP3 byte hashes were retained when questions changed.",
+  "regression": "human-listening.test.cjs and independent-bank.test.cjs: 14 related tests passed, including cross-question fill exposure, false human relabelling, source/audio binding, dynamic catalogue counts, source-link exposure barrier, profile switch/read failure and preview preservation.",
+  "limits": ["No new human auditory review or acoustic accent certification.", "No learner difficulty calibration or IELTS score prediction.", "Historical literary reading is distinct from spontaneous conversation.", "Local static assets are not a cryptographic examination vault."]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "independent-human-in-fogg",
+  "version": "1",
+  "level": "B2",
+  "stage": "independent",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "Around the World in Eighty Days · the wager excerpt",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "instructions": "真人历史作品朗读，非现代场景对话或官方试卷。先独立听音并完成6题，再提交核对；录制署名不出题。级别只是编写目标，未做真实考生难度标定。来源与署名可在开始后查看；若打开外部全文或原音，后续继续按已见材料记录。",
+  "transcript": "It is time to relate what a change took place in English public opinion when it transpired that the real bankrobber, a certain James Strand, had been arrested, on the 17th day of December, at Edinburgh. Three days before, Phileas Fogg had been a criminal, who was being desperately followed up by the police; now he was an honourable gentleman, mathematically pursuing his eccentric journey round the world.\nThe papers resumed their discussion about the wager; all those who had laid bets, for or against him, revived their interest, as if by magic; the \"Phileas Fogg bonds\" again became negotiable, and many new wagers were made. Phileas Fogg's name was once more at a premium on 'Change.\nHis five friends of the Reform Club passed these three days in a state of feverish suspense. Would Phileas Fogg, whom they had forgotten, reappear before their eyes! Where was he at this moment? The 17th of December, the day of James Strand's arrest, was the seventy-sixth since Phileas Fogg's departure, and no news of him had been received. Was he dead? Had he abandoned the effort, or was he continuing his journey along the route agreed upon? And would he appear on Saturday, the 21st of December, at a quarter before nine in the evening, on the threshold of the Reform Club saloon?",
+  "transcriptScope": "完整所选正文；完整音轨中的 LibriVox 开头/结尾署名不在正文转录内。标点和大小写按印刷文本规范；不把机器识别结果当作精确逐字听写。",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What caused public opinion about Fogg to change?",
+      "options": [
+        "The actual bank robber was arrested.",
+        "Fogg publicly admitted the robbery.",
+        "The police cancelled every wager."
+      ],
+      "answers": [
+        "The actual bank robber was arrested."
+      ],
+      "evidence": "the real bankrobber, a certain James Strand, had been arrested",
+      "explanation": "抓住真正罪犯使公众不再把 Fogg 当作罪犯，不能把此前怀疑当成定罪事实。",
+      "id": "q1"
+    },
+    {
+      "type": "fill",
+      "prompt": "In which city was James Strand arrested? Write ONE WORD.",
+      "answers": [
+        "Edinburgh"
+      ],
+      "evidence": "on the 17th day of December, at Edinburgh.",
+      "explanation": "Edinburgh 是逮捕地点；Reform Club 是等候 Fogg 的场所。",
+      "maxWords": 1,
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "What happened to interest in the wager?",
+      "options": [
+        "It was limited to the police.",
+        "It revived and new bets were placed.",
+        "It disappeared permanently."
+      ],
+      "answers": [
+        "It revived and new bets were placed."
+      ],
+      "evidence": "revived their interest, as if by magic",
+      "explanation": "revived 与 new wagers 表示重新活跃；并未只限警察。",
+      "id": "q3"
+    },
+    {
+      "type": "fill",
+      "prompt": "How many Reform Club friends were waiting anxiously? Write ONE WORD.",
+      "answers": [
+        "five"
+      ],
+      "evidence": "His five friends of the Reform Club passed these three days in a state of feverish suspense.",
+      "explanation": "five 是朋友人数；three 是持续天数。",
+      "maxWords": 1,
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "What was known about Fogg’s whereabouts at that point?",
+      "options": [
+        "He had sent his friends a daily message.",
+        "He had already returned to the club.",
+        "No news of him had arrived."
+      ],
+      "answers": [
+        "No news of him had arrived."
+      ],
+      "evidence": "no news of him had been received.",
+      "explanation": "后面的生死及是否继续旅行都是疑问，并非确定消息；也没有证实他已返回俱乐部。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "At what time on 21 December was Fogg expected at the club?",
+      "options": [
+        "8:15 in the morning",
+        "8:45 in the evening",
+        "9:15 in the evening"
+      ],
+      "answers": [
+        "8:45 in the evening"
+      ],
+      "evidence": "at a quarter before nine in the evening",
+      "explanation": "a quarter before nine 是晚上8:45；before 不可听成 after。",
+      "id": "q6"
+    }
+  ],
+  "audioKind": "human",
+  "audioSynthetic": false,
+  "audioLocale": "en-IN",
+  "audioAccent": "印度英语 · 南印度（读者自述）",
+  "audioVoice": "Neeru Iyer",
+  "audioVoices": [
+    "Neeru Iyer"
+  ],
+  "audioProvider": "LibriVox volunteer human reader",
+  "audioVoiceSource": "https://wiki.librivox.org/index.php/Accents_Table",
+  "captionFile": "",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-domain-human-reading",
+    "rights": "LibriVox volunteer public-domain dedication; official policy confirms public-domain status in the USA and permits reuse, including commercial use. The policy does not warrant identical copyright status in every other jurisdiction.",
+    "verification": "reviewed",
+    "method": "对照公有领域印刷原文逐句检查选段、逐题核对证据与干扰项；本地真实 CPU Whisper 无参考提示转录用于交叉核对。没有声称真人听审、声学口音认证或考生难度标定。",
+    "creditDetailUrl": "真人听力来源.html?id=independent-human-in-fogg",
+    "registry": "curriculum/human-listening/sources/independent-human-in-fogg.json",
+    "reader": "Neeru Iyer",
+    "readerUrl": "https://librivox.org/reader/3588",
+    "catalogue": "https://librivox.org/around-the-world-in-eighty-days-by-jules-verne/",
+    "textUrl": "https://www.gutenberg.org/ebooks/103",
+    "rightsUrl": "https://librivox.org/pages/public-domain/",
+    "accentBasis": {
+      "url": "https://wiki.librivox.org/index.php/Accents_Table",
+      "label": "South-Indian Brahmin accent, I think (if such a thing exists)",
+      "kind": "reader-self-description-with-qualification"
+    },
+    "genre": "literary-adventure-narration",
+    "transcriptNotes": [
+      "George Makepeace Towle’s historical English translation is retained. File sequence number 25 contains printed chapter XXXVI; the source selection is identified by actual opening/closing words, not guessed from filename."
+    ],
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ],
+    "contentHash": "f88351750f1c42abdf8ba24ba1f12723da291def819b741be6832cbcbfe05091",
+    "recording": {
+      "originalUrl": "https://archive.org/download/around_the_world_in_eighty_days_0908_librivox/80days_25_verne_64kb.mp3",
+      "originalAudioHash": "3826d6ae5174815e28f9a2f57deb33b009fd1a31f7ab6f34395514a1db13c1a9",
+      "audioHash": "ce36a7bb2b81b4b51ac87a936de96eb96b44e5321faba802c883405d3c184f74",
+      "originalDurationSeconds": 462.488889,
+      "durationSeconds": 82.25,
+      "selection": {
+        "mode": "excerpt",
+        "scanSeconds": 220,
+        "startSeconds": 28,
+        "endSeconds": 110.25,
+        "firstWords": "It is time to relate",
+        "lastWords": "the Reform Club saloon?"
+      },
+      "changes": [
+        "Selected the stated complete work or contiguous complete-sentence excerpt from the original recording.",
+        "Re-encoded to mono 24 kHz MP3 at 64 kbit/s and removed container metadata; no speed, pitch or synthesized speech change.",
+        "Punctuation/capitalisation normalised from print; standard recording credits omitted from displayed body transcript."
+      ],
+      "author": "Jules Verne",
+      "authorDied": 1905,
+      "translator": "George Makepeace Towle",
+      "translatorDied": 1893,
+      "published": 1873,
+      "textEdition": {
+        "title": "Around the World in Eighty Days, English translation by George M. Towle; Chapter XXXVI",
+        "year": 1873
+      },
+      "asrProof": "curriculum/human-listening/asr/independent-human-in-fogg.json",
+      "transcriptAuditStatus": "printed-source-and-real-unprompted-local-ASR-compared"
+    }
+  },
+  "audio": "audio/human-listening/independent-human-in-fogg.mp3",
+  "audioDurationSeconds": 82.25
+}

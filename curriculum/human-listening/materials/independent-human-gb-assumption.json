@@ -1,0 +1,178 @@
+{
+  "id": "independent-human-gb-assumption",
+  "version": "1",
+  "level": "B2",
+  "stage": "independent",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "independent",
+  "independentBank": true,
+  "fullTest": false,
+  "title": "A Rash Assumption · historical humour excerpt",
+  "estimatedMinutes": 15,
+  "timeLimitSeconds": 900,
+  "instructions": "真人历史作品朗读，非现代场景对话或官方试卷。先独立听音并完成6题，再提交核对；录制署名不出题。级别只是编写目标，未做真实考生难度标定。来源与署名可在开始后查看；若打开外部全文或原音，后续继续按已见材料记录。",
+  "transcript": "On the morning of November 27th I awoke to find my chest covered with a pretty pink pattern. It blended so well with the colour of my pyjama-jacket that for some minutes I was lost in admiration of the pleasing effect. Then it occurred to me that coming diseases cast their rashes before them, and I sprang from the bed in an agony of apprehension. I rushed to the mirror and opened my mouth to look at my tongue. There it was. I took some of it out. It looked quite healthy, so I put it back again. Then I gazed long and earnestly down my throat. It was quite hollow as usual. Next I got the clinical thermometer and sucked it for quite a long time. When I removed it I saw my temperature was about 86. Then I found I was reading it upside down and that I was only normal. I felt disappointed. After that I tried my pulse. It took me some time to locate it, but it hadn't run down; it was still going quite regularly—andante ma non troppo, two beats in the bar. I whistled \"Tipperary\" to it, and it kept perfect time.\nBut still the rash remained. It would neither get out nor get under. I felt perfectly well, and yet I knew I must be ill. I could not understand the complete absence of other symptoms.",
+  "transcriptScope": "完整所选正文；完整音轨中的 LibriVox 开头/结尾署名不在正文转录内。标点和大小写按印刷文本规范；不把机器识别结果当作精确逐字听写。",
+  "questions": [
+    {
+      "type": "fill",
+      "prompt": "What colour was the pattern on the narrator’s chest? Write ONE WORD.",
+      "answers": [
+        "pink"
+      ],
+      "evidence": "my chest covered with a pretty pink pattern",
+      "explanation": "pink 修饰胸前图案；不是让考生诊断疾病。",
+      "maxWords": 1,
+      "id": "q1"
+    },
+    {
+      "type": "single",
+      "prompt": "Why did the narrator first admire the pattern?",
+      "options": [
+        "It reminded him of a picture.",
+        "It disappeared when he moved.",
+        "It matched the colour of his nightclothes."
+      ],
+      "answers": [
+        "It matched the colour of his nightclothes."
+      ],
+      "evidence": "It blended so well with the colour of my pyjama-jacket",
+      "explanation": "blended ... colour 解释最初欣赏图案的原因；后来才担心生病。",
+      "id": "q2"
+    },
+    {
+      "type": "single",
+      "prompt": "What did he conclude when he looked at his tongue?",
+      "options": [
+        "It was swollen.",
+        "It looked healthy.",
+        "It was unusually dark."
+      ],
+      "answers": [
+        "It looked healthy."
+      ],
+      "evidence": "It looked quite healthy, so I put it back again.",
+      "explanation": "healthy 是明确判断；没有深色或肿胀的描述。",
+      "id": "q3"
+    },
+    {
+      "type": "single",
+      "prompt": "Why was the first temperature reading misleading?",
+      "options": [
+        "He held the scale the wrong way up.",
+        "He forgot to wait before reading it.",
+        "He used a broken thermometer."
+      ],
+      "answers": [
+        "He held the scale the wrong way up."
+      ],
+      "evidence": "Then I found I was reading it upside down and that I was only normal.",
+      "explanation": "upside down 说明读数方向错误，随后发现体温正常。",
+      "id": "q4"
+    },
+    {
+      "type": "single",
+      "prompt": "How did his pulse behave?",
+      "options": [
+        "It stopped for several seconds.",
+        "It grew steadily faster.",
+        "It beat regularly."
+      ],
+      "answers": [
+        "It beat regularly."
+      ],
+      "evidence": "it was still going quite regularly—andante ma non troppo, two beats in the bar.",
+      "explanation": "regularly 与后面的音乐比喻都说明节律整齐，不是停跳或不断加快。",
+      "id": "q5"
+    },
+    {
+      "type": "single",
+      "prompt": "What puzzled him at the end of the excerpt?",
+      "options": [
+        "He could not remember how to use the mirror.",
+        "He felt well despite believing he was ill.",
+        "He could no longer see the pattern."
+      ],
+      "answers": [
+        "He felt well despite believing he was ill."
+      ],
+      "evidence": "I felt perfectly well, and yet I knew I must be ill. I could not understand the complete absence of other symptoms.",
+      "explanation": "结尾的幽默来自自认生病与身体感觉良好的矛盾；此历史讽刺文本不提供医学判断。",
+      "id": "q6"
+    }
+  ],
+  "audioKind": "human",
+  "audioSynthetic": false,
+  "audioLocale": "en-GB",
+  "audioAccent": "英国英语 · RP",
+  "audioVoice": "Ruth Golding",
+  "audioVoices": [
+    "Ruth Golding"
+  ],
+  "audioProvider": "LibriVox volunteer human reader",
+  "audioVoiceSource": "https://wiki.librivox.org/index.php/Accents_Table",
+  "captionFile": "",
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-domain-human-reading",
+    "rights": "LibriVox volunteer public-domain dedication; official policy confirms public-domain status in the USA and permits reuse, including commercial use. The policy does not warrant identical copyright status in every other jurisdiction.",
+    "verification": "reviewed",
+    "method": "对照公有领域印刷原文逐句检查选段、逐题核对证据与干扰项；本地真实 CPU Whisper 无参考提示转录用于交叉核对。没有声称真人听审、声学口音认证或考生难度标定。",
+    "creditDetailUrl": "真人听力来源.html?id=independent-human-gb-assumption",
+    "registry": "curriculum/human-listening/sources/independent-human-gb-assumption.json",
+    "reader": "Ruth Golding",
+    "readerUrl": "https://librivox.org/reader/2607",
+    "catalogue": "https://librivox.org/coffee-break-collection-vol-001/",
+    "textUrl": "https://www.gutenberg.org/ebooks/29491",
+    "rightsUrl": "https://librivox.org/pages/public-domain/",
+    "accentBasis": {
+      "url": "https://wiki.librivox.org/index.php/Accents_Table",
+      "label": "RP/BBC English (no regional accent)",
+      "kind": "reader-self-description"
+    },
+    "genre": "historical-humorous-prose",
+    "transcriptNotes": [
+      "Printed text uses “awoke”; the local ASR rendered “woke”. Rare Latin/music words are retained from the printed source, not silently invented from ASR."
+    ],
+    "contentHashFields": [
+      "title",
+      "transcript",
+      "questions"
+    ],
+    "contentHash": "2efeaeff0369edcf552c2d7dab238eba58f0de9266d93bf13d06eaec192b502f",
+    "recording": {
+      "originalUrl": "https://archive.org/download/coffee_break_collection_001_0909_librivox/coffeebreak001_rashassumption_unknown_rg_64kb.mp3",
+      "originalAudioHash": "eb8b1d64859b011d66d3707c77c725892e337314457c26acfb1391465fadc3a2",
+      "audioHash": "c37462672793a4252aba231f0ab786a68c5e6e432830de67278e1c7303a27b51",
+      "originalDurationSeconds": 293.261859,
+      "durationSeconds": 101.2,
+      "selection": {
+        "mode": "excerpt",
+        "scanSeconds": 220,
+        "startSeconds": 27.65,
+        "endSeconds": 128.85,
+        "firstWords": "On the morning",
+        "lastWords": "other symptoms."
+      },
+      "changes": [
+        "Selected the stated complete work or contiguous complete-sentence excerpt from the original recording.",
+        "Re-encoded to mono 24 kHz MP3 at 64 kbit/s and removed container metadata; no speed, pitch or synthesized speech change.",
+        "Punctuation/capitalisation normalised from print; standard recording credits omitted from displayed body transcript."
+      ],
+      "author": "Anonymous",
+      "authorDied": null,
+      "translator": "",
+      "translatorDied": null,
+      "published": 1914,
+      "textEdition": {
+        "title": "Punch, or the London Charivari, Vol. 147, 9 December 1914; A Rash Assumption",
+        "year": 1914
+      },
+      "asrProof": "curriculum/human-listening/asr/independent-human-gb-assumption.json",
+      "transcriptAuditStatus": "printed-source-and-real-unprompted-local-ASR-compared"
+    }
+  },
+  "audio": "audio/human-listening/independent-human-gb-assumption.mp3",
+  "audioDurationSeconds": 101.2
+}

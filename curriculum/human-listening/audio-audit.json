@@ -1,0 +1,593 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "materials": 8,
+  "questions": 48,
+  "humanReaders": 5,
+  "humanLocales": {
+    "en-GB": 1,
+    "en-US": 2,
+    "en-AU": 2,
+    "en-IN": 2,
+    "en-NZ": 1
+  },
+  "totalSeconds": 778.333958,
+  "voiceKinds": {
+    "human": 8,
+    "synthetic": 0
+  },
+  "decoded": true,
+  "questionQualityFindings": [],
+  "rightsPolicy": "LibriVox recording public-domain dedication plus separately identified historical text edition; official USA status and jurisdiction caveat retained in each source.",
+  "reviewScope": "All selected bodies and all original questions reviewed against printed source, with actual unprompted local base.en ASR comparison. Rare literary words and names follow print where ASR is unreliable. No human auditory, acoustic accent, learner difficulty or scoring validation claimed.",
+  "limits": [
+    "Historical literary readings, not spontaneous contemporary conversations.",
+    "Locale/variety labels follow explicit reader self-description or an explicitly labelled recording by the same reader; not nationality inference or acoustic certification.",
+    "Target levels are author estimates. Public-domain status outside the USA can depend on jurisdiction."
+  ],
+  "items": [
+    {
+      "id": "independent-human-gb-assumption",
+      "reader": "Ruth Golding",
+      "locale": "en-GB",
+      "accentEvidenceKind": "reader-self-description",
+      "originalAudioHash": "eb8b1d64859b011d66d3707c77c725892e337314457c26acfb1391465fadc3a2",
+      "audioHash": "c37462672793a4252aba231f0ab786a68c5e6e432830de67278e1c7303a27b51",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "originalRangeSeconds": [
+        27.65,
+        128.85
+      ],
+      "durationSeconds": 101.2,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-gb-assumption.json",
+      "audio": "audio/human-listening/independent-human-gb-assumption.mp3",
+      "bytes": 810284,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -21.7,
+      "peakDb": -0.8
+    },
+    {
+      "id": "independent-human-us-fox-crow",
+      "reader": "Kara Shallenberg",
+      "locale": "en-US",
+      "accentEvidenceKind": "same-reader-source-catalogue-label",
+      "originalAudioHash": "6d8a5116bac634bc6383daf7765415a5bbf08e5f205119d67416ee3b9d259056",
+      "audioHash": "47c166babd8d43db6eb9f808081f3792f9162234697db612064502190fa0ba84",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "originalRangeSeconds": [
+        0,
+        96.130612
+      ],
+      "durationSeconds": 96.130625,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-us-fox-crow.json",
+      "audio": "audio/human-listening/independent-human-us-fox-crow.mp3",
+      "bytes": 769772,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -23,
+      "peakDb": -5.3
+    },
+    {
+      "id": "independent-human-us-crow-pitcher",
+      "reader": "Kara Shallenberg",
+      "locale": "en-US",
+      "accentEvidenceKind": "same-reader-source-catalogue-label",
+      "originalAudioHash": "abfaf5998a5939f2ab095f58d10bdaafc2b25587d572ca99bfbf8a3953b2687c",
+      "audioHash": "ae4b65d94d19497e9d118f412d49fd194a58c59dfd75f591901adb6f3f1d1d1d",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "originalRangeSeconds": [
+        0,
+        84.897959
+      ],
+      "durationSeconds": 84.897958,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-us-crow-pitcher.json",
+      "audio": "audio/human-listening/independent-human-us-crow-pitcher.mp3",
+      "bytes": 679916,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -22.3,
+      "peakDb": -5.2
+    },
+    {
+      "id": "independent-human-au-emigrant",
+      "reader": "Annise",
+      "locale": "en-AU",
+      "accentEvidenceKind": "same-reader-source-catalogue-label",
+      "originalAudioHash": "82ad33526796c20ce8c69af4187e91723d4dbea1e39af129e6f6cb1884551f21",
+      "audioHash": "586ab27070be42159e0425eb4415a08f4b37abb885c85735dddede32c70e41bc",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "originalRangeSeconds": [
+        24,
+        130.45
+      ],
+      "durationSeconds": 106.45,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-au-emigrant.json",
+      "audio": "audio/human-listening/independent-human-au-emigrant.mp3",
+      "bytes": 852332,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -21.3,
+      "peakDb": -0.7
+    },
+    {
+      "id": "independent-human-au-tree",
+      "reader": "Annise",
+      "locale": "en-AU",
+      "accentEvidenceKind": "same-reader-source-catalogue-label",
+      "originalAudioHash": "f467b70d226a0095bea190d3fbd5f0a0463d9e9f5144e397655fd114f0e066aa",
+      "audioHash": "4fb1ec79afd91eb598fd0b766b964c850a88c7df9b3e783db9e2d83f3f7d52a2",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "originalRangeSeconds": [
+        19.2,
+        118.8
+      ],
+      "durationSeconds": 99.6,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-au-tree.json",
+      "audio": "audio/human-listening/independent-human-au-tree.mp3",
+      "bytes": 797420,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -25.1,
+      "peakDb": -3.1
+    },
+    {
+      "id": "independent-human-in-letter",
+      "reader": "Neeru Iyer",
+      "locale": "en-IN",
+      "accentEvidenceKind": "reader-self-description-with-qualification",
+      "originalAudioHash": "a82d75e232713c96d2dac5f5e510d8b9c53cd82f8dfdd6208eacf5b7272c62fc",
+      "audioHash": "245ccfa4421e8ab349e43e711aadf99504559e0a1a329b23a6142e234d00fcfa",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "originalRangeSeconds": [
+        28.5,
+        116.35
+      ],
+      "durationSeconds": 87.85,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-in-letter.json",
+      "audio": "audio/human-listening/independent-human-in-letter.mp3",
+      "bytes": 703532,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -28.7,
+      "peakDb": -6.6
+    },
+    {
+      "id": "independent-human-in-fogg",
+      "reader": "Neeru Iyer",
+      "locale": "en-IN",
+      "accentEvidenceKind": "reader-self-description-with-qualification",
+      "originalAudioHash": "3826d6ae5174815e28f9a2f57deb33b009fd1a31f7ab6f34395514a1db13c1a9",
+      "audioHash": "ce36a7bb2b81b4b51ac87a936de96eb96b44e5321faba802c883405d3c184f74",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "originalRangeSeconds": [
+        28,
+        110.25
+      ],
+      "durationSeconds": 82.25,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-in-fogg.json",
+      "audio": "audio/human-listening/independent-human-in-fogg.mp3",
+      "bytes": 658796,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -26.5,
+      "peakDb": -4.6
+    },
+    {
+      "id": "independent-human-nz-morning",
+      "reader": "Marianne Coleman-Hipkins",
+      "locale": "en-NZ",
+      "accentEvidenceKind": "same-reader-source-catalogue-label",
+      "originalAudioHash": "05c2115dca129ac553a05b6577b26cf699aa3c58a3bf6f0481ab61682a250ea1",
+      "audioHash": "f656257b33bd576b16265af87de73ba9e024ecd82be141ba700e44a9619f12b6",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "originalRangeSeconds": [
+        0,
+        119.955374
+      ],
+      "durationSeconds": 119.955375,
+      "questionCount": 6,
+      "asrProof": "curriculum/human-listening/asr/independent-human-nz-morning.json",
+      "audio": "audio/human-listening/independent-human-nz-morning.mp3",
+      "bytes": 960428,
+      "sampleRate": 24000,
+      "channels": 1,
+      "meanDb": -26.7,
+      "peakDb": -10.5
+    }
+  ],
+  "questionReview": [
+    {
+      "materialId": "independent-human-gb-assumption",
+      "questionId": "q1",
+      "questionHash": "f5756f1285a6f67fd670e7c5402f01ce008fc65beb832eccfbe9199187faf445",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "evidence": "my chest covered with a pretty pink pattern",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-gb-assumption",
+      "questionId": "q2",
+      "questionHash": "d78926913236aeb80887b7b66d6ffc3558bf33832e9e209705100ae6f1604465",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "evidence": "It blended so well with the colour of my pyjama-jacket",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-gb-assumption",
+      "questionId": "q3",
+      "questionHash": "f7aad11512997c28eaaa7a87117e81b0eeb65246e414676598054a6473b3cfb8",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "evidence": "It looked quite healthy, so I put it back again.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-gb-assumption",
+      "questionId": "q4",
+      "questionHash": "ba2300989b20d308f686974f632f335bb3d159bc0fcb695ca3033ce3e74704e4",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "evidence": "Then I found I was reading it upside down and that I was only normal.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-gb-assumption",
+      "questionId": "q5",
+      "questionHash": "3b584d84b49920bfa56dfe25fd58d9827d034973baf8a99502f40f5c386da186",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "evidence": "it was still going quite regularly—andante ma non troppo, two beats in the bar.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-gb-assumption",
+      "questionId": "q6",
+      "questionHash": "d5e9d73a449161f4032727f9a0b071f771e4e620080992beaccdb3dcfd19cc1e",
+      "transcriptHash": "230f4c1570a9e12c0a689826d758c9ead4de700a1b3f944ba59ae8416617e358",
+      "evidence": "I felt perfectly well, and yet I knew I must be ill. I could not understand the complete absence of other symptoms.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-fox-crow",
+      "questionId": "q1",
+      "questionHash": "d72cc41b7cff8edc76cc3d6f5fc92f20f7540ddb7fd97f12d394b7d001eaa6de",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "evidence": "A Crow was sitting on a branch of a tree",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-fox-crow",
+      "questionId": "q2",
+      "questionHash": "b6447b9cc90eac00347af082b46fca789fe3670adefc521fa84953679534263e",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "evidence": "with a piece of cheese in her beak",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-fox-crow",
+      "questionId": "q3",
+      "questionHash": "03b7dd9f7a6e8ea5ddbc6d3bd957c0fa74cdfd00c55697236a43de4b43f8778f",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "evidence": "set his wits to work to discover some way of getting the cheese.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-fox-crow",
+      "questionId": "q4",
+      "questionHash": "24de036bbd41592b36fb6afb57f5e2292a53aa7fe2c981af284fd995123145f0",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "evidence": "If only her voice is as sweet as her looks are fair",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-fox-crow",
+      "questionId": "q5",
+      "questionHash": "ab133584e12964d988d26fd45d19d4e787b7242f924fce400e3925133e5b63e8",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "evidence": "just to show the Fox that she could sing she gave a loud caw.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-fox-crow",
+      "questionId": "q6",
+      "questionHash": "e69a98deac2ddd6ddb03bb752c01ba322c15fa7e8f86f72f45ce91b6e22bff3a",
+      "transcriptHash": "11a50327a8f3fe52570ab226a534c0fac93ef42fc102774710031d505341f2ed",
+      "evidence": "Down came the cheese, of course",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-crow-pitcher",
+      "questionId": "q1",
+      "questionHash": "9fa3b07fca04f9435e84e1ccd462509b9383e757761df12fe574ccfd478b4eaf",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "evidence": "A thirsty Crow found a Pitcher with some water in it",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-crow-pitcher",
+      "questionId": "q2",
+      "questionHash": "fc4984c09539a1efef4f3e32606a3b1f26b93cf79ec7fca4a53d19a47d9488ca",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "evidence": "but so little was there that, try as she might, she could not reach it with her beak",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-crow-pitcher",
+      "questionId": "q3",
+      "questionHash": "d5946c9ea1173bb98e17d5ac5c9f84dd16bee902e9e1fa6728d811947b43ca5a",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "evidence": "She began dropping pebbles into the Pitcher",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-crow-pitcher",
+      "questionId": "q4",
+      "questionHash": "524bafb3e81c214ca2c571d0f319d36127703d5c2c631da6277367dd2377ce8d",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "evidence": "with each pebble the water rose a little higher",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-crow-pitcher",
+      "questionId": "q5",
+      "questionHash": "453aa87d43c0ed787b4cc1fb8fe8afd139e97a188117ffc1ff2bbc039410ebb2",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "evidence": "the knowing bird was enabled to quench her thirst.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-us-crow-pitcher",
+      "questionId": "q6",
+      "questionHash": "919fda07c1bee7d805738816d3fb63878a3e9f2e883f0d7610578cd53ca9f35c",
+      "transcriptHash": "5d9041a929093c6ca8a5da0813ad2e67a5eb0bc3e28fc0510f619c12de1fa326",
+      "evidence": "Necessity is the mother of invention.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-emigrant",
+      "questionId": "q1",
+      "questionHash": "efce635d214cc8288e9d86a62e9abd4619587bf1a0f9e943d08c9c5733ee1ebd",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "evidence": "I first encountered my fellow-passengers on the Broomielaw in Glasgow.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-emigrant",
+      "questionId": "q2",
+      "questionHash": "d29f8497563b2df47b1769f20f1194ebaf8e821e26d316764a09dadbdd7ced3b",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "evidence": "A few Scandinavians, who had already grown acquainted on the North Sea",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-emigrant",
+      "questionId": "q3",
+      "questionHash": "ee6855204567ccebaa2eeaf7612b17bedd2011e4673b0cc6123f5ebb007f17be",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "evidence": "with the falling temperature the gloom among the passengers increased.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-emigrant",
+      "questionId": "q4",
+      "questionHash": "fd772080d9ce9d6bc6619ffd3f3a30564ea08e3ff725719be618f02d52f3ee5c",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "evidence": "Two of the women wept.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-emigrant",
+      "questionId": "q5",
+      "questionHash": "1087f123d7618b22a81d21b86707e248976132dd61df52b71af70f83e19d1ea9",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "evidence": "a pointing arm and rush to the starboard bow announced that our ocean steamer was in sight.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-emigrant",
+      "questionId": "q6",
+      "questionHash": "3548755ea0246b33424c3f22c6f826403d0b34570f037865e00350803794af3a",
+      "transcriptHash": "d83c9ac1f40d93fd9d66d97ffa1091b58c78b3f3b2c729d9ce99113ece58a7f9",
+      "evidence": "I had some work to finish on the voyage, and was advised to go by the second cabin, where at least I should have a table at command.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-tree",
+      "questionId": "q1",
+      "questionHash": "d29e6fae6c1c7a138ce2849c8b088a69ee0ada478bf77796c6ad0c6713e04e43",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "evidence": "get the finest, handsomest young hemlock tree that they could find.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-tree",
+      "questionId": "q2",
+      "questionHash": "1b4747c38f559532f072b935bf71afe59f33aaa492244a84d363494a8c81046a",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "evidence": "It was too tall, so they took it out again and cut it off two or three feet at the base.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-tree",
+      "questionId": "q3",
+      "questionHash": "e8faaf31dac9fe42f9051e57b1e7162c1106921921ab1c9df3a4c64141ded40d",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "evidence": "blankets being fastened over the curtains to prevent any one looking in",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-tree",
+      "questionId": "q4",
+      "questionHash": "eb3f4bce5e783f82fb8ed38f6783b4b2ae88a7e69c2fb41151b9d408259b8c20",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "evidence": "Very early the next morning, while the stars shone on the snow-covered hills",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-tree",
+      "questionId": "q5",
+      "questionHash": "e4b8e0d66b450f5e47dfc73ff4eea8e3919d43cb6d7d961430068c8278c6d3b6",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "evidence": "the gifts she had bought in Boston for her boys and girl.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-au-tree",
+      "questionId": "q6",
+      "questionHash": "0515c5a3ce529af9dbd10a56def222b25c18949c0019175248b555811d4ab8d0",
+      "transcriptHash": "b8c9a9f5ea4a1bcd8979e6879641fffe0124ca0eb0330238ebda562f4051392e",
+      "evidence": "Then she took as many as twenty pieces of candle and fixed them upon the branches.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-letter",
+      "questionId": "q1",
+      "questionHash": "1f3293bb8f19056db04b209d82d56ab96628d61412446eac75d2e457fea64f90",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "evidence": "My father's mortal remains had been consigned to the tomb",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-letter",
+      "questionId": "q2",
+      "questionHash": "b1b8e0ad66f6dff2fc2872a1fc7f38ca3ea1199ec564722442ab0c83b3e94364",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "evidence": "her spirit, though crushed, was not broken.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-letter",
+      "questionId": "q3",
+      "questionHash": "11d6da6b2e50130ea7c33512b998583fe3830f6defc68b32a0ad94c38f3e2362",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "evidence": "our mother should come and live with her and Mr. Richardson at the vicarage",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-letter",
+      "questionId": "q4",
+      "questionHash": "785ee838a636c0ce06626ca87329a2769f3b20a64ad412c1d8f66f643e76ad42",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "evidence": "Not that she questioned, for a moment, the kind wishes and intentions of her daughter",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-letter",
+      "questionId": "q5",
+      "questionHash": "5f1165ac6c70e8f2ee764fd958d302fe04adc7bc9897cb58df07c50bc053cc0f",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "evidence": "she would make use of them to earn her own livelihood, and be chargeable to no one",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-letter",
+      "questionId": "q6",
+      "questionHash": "d4f0dfc0abb26cc6262e8de1cabd018ff7c7fcc1d4adf2e174de67bf48a2539d",
+      "transcriptHash": "ef83bf070386aa79c03b340f90965235ad755c9064fe74da1e298946355ce710",
+      "evidence": "until age or infirmity made her incapable of maintaining herself.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-fogg",
+      "questionId": "q1",
+      "questionHash": "bdef275e32f30dc2708039e1177d6e68d5b5dc69a4c045a4e1101bb17a1252a5",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "evidence": "the real bankrobber, a certain James Strand, had been arrested",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-fogg",
+      "questionId": "q2",
+      "questionHash": "82b6eee8985806d1aab8aaafbe616419abbba9676662e470af3bd6501df98c5f",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "evidence": "on the 17th day of December, at Edinburgh.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-fogg",
+      "questionId": "q3",
+      "questionHash": "196aeea435a7bf6fc2e2e8bc00d9262e6a6c56623864602033db35edb78dc204",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "evidence": "revived their interest, as if by magic",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-fogg",
+      "questionId": "q4",
+      "questionHash": "e14ce0c40284a11001f66f3aae5f629d4bdfffdf1b14901128a201c586e31778",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "evidence": "His five friends of the Reform Club passed these three days in a state of feverish suspense.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-fogg",
+      "questionId": "q5",
+      "questionHash": "3d8417a45525a1ac48850f9a140bc8fde91e355ce420dca46326b8decffab561",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "evidence": "no news of him had been received.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-in-fogg",
+      "questionId": "q6",
+      "questionHash": "94e56d308fd485488b9177a21ce61ee72f920a4996a726cb525e8e3ee8bd1727",
+      "transcriptHash": "15d9bf998571ddbe60f407c27e8a4575688c77cd1fd2578ff5bdd464ffacacb5",
+      "evidence": "at a quarter before nine in the evening",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-nz-morning",
+      "questionId": "q1",
+      "questionHash": "020b87e3a92dcb0e70f2dab1f5a57397affd5606602d5528224f0d1f27168aba",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "evidence": "Unpens and frees the captive sheep.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-nz-morning",
+      "questionId": "q2",
+      "questionHash": "1c21c9f6d15134fe721ef38b3323e553dd89464e7b852d0bbbf70761467f8e57",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "evidence": "The dews, brushed off from grass and flowers,\nBemoistening sop his hardened shoes",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-nz-morning",
+      "questionId": "q3",
+      "questionHash": "bd61eb07a46703fbb43c4b059feaab9385428cc172d46aa7731194b53ba83c2b",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "evidence": "While every leaf that forms a shade,\nAnd every floweret's silken top,\nAnd every shivering bent and blade,\nStoops, bowing with a diamond drop.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-nz-morning",
+      "questionId": "q4",
+      "questionHash": "9807e6248bba71cfd3a240a13be61ca8907cfd5a58ef9ba78004ad1e016ab25f",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "evidence": "The red round sun advances higher,\nAnd, stretching o'er the mountain tops,\nIs gilding sweet the village-spire.",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-nz-morning",
+      "questionId": "q5",
+      "questionHash": "993fb0adbf532e56bf8ccadc41bd1acd02430ac0408f59f5a7b040250a3f3cea",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "evidence": "Or, stretched beneath the shade of trees,\nPeruse and pause on Nature's book,",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    },
+    {
+      "materialId": "independent-human-nz-morning",
+      "questionId": "q6",
+      "questionHash": "c957e7e721562ac6fd7640e601da78d96819050108032e929548238ecfbe5496",
+      "transcriptHash": "7018ff19928d3ec0e84c915a1d27295f336d93bd0b15d143f0ce3fb46694a69f",
+      "evidence": "And hear the skylark whistling nigh,",
+      "method": "Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation."
+    }
+  ],
+  "errors": []
+}

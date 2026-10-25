@@ -13,3 +13,5 @@ audio/vocabulary/*.mp3 filter=lfs diff=lfs merge=lfs -text
 audio/oral-models/*.mp3 filter=lfs diff=lfs merge=lfs -text
 *.cmd text eol=crlf
 runtime-packages/*.zip filter=lfs diff=lfs merge=lfs -text
+
+audio/human-listening/** filter=lfs diff=lfs merge=lfs -text
