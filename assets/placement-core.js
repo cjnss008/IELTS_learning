@@ -17,6 +17,10 @@ function bounded(value,depth=0){
  for(const [key,item]of Object.entries(value)){if(['__proto__','prototype','constructor'].includes(key))throw Error('测评记录含不支持的字段。');bounded(item,depth+1);}
 }
 function newState(){return{version:1,sessions:[],adopted:null};}
+// Recovery creates a local wrapper later than the original server task set.
+// Prefer its issue time for chronology without rewriting legacy saved dates.
+function sessionCreatedAt(session){return date(session?.assessment?.createdAt)?session.assessment.createdAt:session?.createdAt||'';}
+function compareSessions(left,right){return Date.parse(sessionCreatedAt(left))-Date.parse(sessionCreatedAt(right))||left.id.localeCompare(right.id);}
 function validReport(report,assessmentId){
  if(!plain(report)||report.assessmentId!==assessmentId||report.status!=='complete'||report.complete!==true||!plain(report.skills)||!plain(report.recommendation))return false;
  for(const skill of SKILLS){const s=report.skills[skill];if(!plain(s)||!LEVELS.includes(s.level)||!Array.isArray(s.evidence)||!Array.isArray(s.gaps)||typeof s.verified!=='boolean'||!(typeof s.confidence==='string'&&['low','medium','high'].includes(s.confidence)||typeof s.confidence==='number'&&s.confidence>=0&&s.confidence<=1))return false;}
@@ -102,6 +106,6 @@ function verifyAdopted(){if(!root.document)return Promise.resolve({ok:true,...ve
 function markVerified(report){if(!root.document)return null;return runtimeVerifier()?.markVerified(report)||null;}
 if(root.addEventListener){for(const name of ['ielts:profile-changed','ielts:profile-reset','ielts:user-data-invalidated','ielts:user-data-reset'])root.addEventListener(name,()=>verifier?.invalidate());root.addEventListener('storage',event=>{try{const key=root.IELTSProfiles?.scopeKey?.(KEY)||KEY,generationKey=root.IELTSProfiles?.scopeKey?.('ielts52-data-generation-v1')||'ielts52-data-generation-v1';if(event.key===generationKey)verifier?.invalidate();else if(event.key===key){verifier?.verificationStatus();root.dispatchEvent?.(new CustomEvent('ielts:placement-changed'));}}catch(_){verifier?.invalidate();}});}
 async function durable(){if(!root.IELTSProfiles?.isPreview?.())await root.IELTSUserData?.syncNow?.({profileId:root.IELTSProfiles?.current?.().id||'legacy'});}
-return{KEY,SKILLS,LEVELS,STARTS,newState,parseState,validReport,routeFromState,createStore,createVerifier,currentRoute,verificationStatus,verifyAdopted,markVerified,durable,
+return{KEY,SKILLS,LEVELS,STARTS,newState,sessionCreatedAt,compareSessions,parseState,validReport,routeFromState,createStore,createVerifier,currentRoute,verificationStatus,verifyAdopted,markVerified,durable,
  load:()=>runtime()?.load()||newState(),initialize:()=>{const s=runtime();return s.save(s.load());},add:assessment=>runtime().add(assessment),update:(...args)=>runtime().update(...args),adopt:id=>runtime().adopt(id)};
 });

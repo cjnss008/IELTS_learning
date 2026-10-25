@@ -119,16 +119,20 @@ test('new locks record their host and clean shutdown releases only the owned loc
   assert.equal(lock.hostname,os.hostname());assert.equal(lock.pid,process.pid);assert.ok(Number.isFinite(Date.parse(lock.createdAt)));b.close();assert.equal(fs.existsSync(lockPath),false);
 });
 
-test('legacy, remote, live and dead-process locks remain intact with specific safe guidance', t => {
+test('legacy, remote and live locks remain intact with specific safe guidance', t => {
   const child=spawnSync(process.execPath,['-e','process.stdout.write(String(process.pid))'],{encoding:'utf8'});assert.equal(child.status,0);const deadPid=Number(child.stdout);
   const cases=[
     [{owner:'legacy-owner',pid:deadPid},/旧格式/],
     [{owner:'remote-owner',pid:process.pid,hostname:'different-host-'+os.hostname()},/另一台主机/],
-    [{owner:'live-owner',pid:process.pid,hostname:os.hostname()},/仍持有/],
-    [{owner:'dead-owner',pid:deadPid,hostname:os.hostname()},/进程已退出/]
+    [{owner:'live-owner',pid:process.pid,hostname:os.hostname()},/仍持有/]
   ];
   for(const [holder,expected]of cases){
     const f=fixture(t),initial=f.open();initial.status();initial.close();const before=fs.readFileSync(f.filePath,'utf8'),lockPath=path.join(f.dir,'budget.lock'),serialized=JSON.stringify(holder);fs.writeFileSync(lockPath,serialized);
     const blocked=f.open(),status=blocked.status();assert.equal(status.state,'blocked');assert.match(status.blockedReason,expected);assert.equal(blocked.reserveText(unknown,messages,100),null);blocked.close();assert.equal(fs.readFileSync(lockPath,'utf8'),serialized);assert.equal(fs.readFileSync(f.filePath,'utf8'),before);
   }
+});
+
+test('a verified dead local lock is recovered without losing the ledger or its unsettled reservation',t=>{
+ const child=spawnSync(process.execPath,['-e','process.stdout.write(String(process.pid))'],{encoding:'utf8'});assert.equal(child.status,0);const f=fixture(t),initial=f.open(),ticket=initial.reserveText(config,messages,100),before=initial.status(config);assert.ok(ticket);initial.close();const lockPath=path.join(f.dir,'budget.lock');fs.writeFileSync(lockPath,JSON.stringify({owner:'verified-dead-owner',pid:Number(child.stdout),hostname:os.hostname()}));
+ const recovered=f.open(),status=recovered.status(config);assert.equal(status.state,'ok');assert.equal(status.reservedCny,0);assert.ok(status.spentCny>=before.reservedCny);assert.equal(status.uncertainCharges,1);assert.notEqual(JSON.parse(fs.readFileSync(lockPath,'utf8')).owner,'verified-dead-owner');assert.deepEqual(JSON.parse(fs.readFileSync(f.filePath,'utf8')).reservations,{});recovered.close();assert.equal(fs.existsSync(lockPath),false);
 });

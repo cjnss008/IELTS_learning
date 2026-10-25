@@ -218,7 +218,7 @@ function createServer(options = {}) {
   if(materialMigration)userData.setImportedMaterials(materialMigration);
   const budget = options.budget || createBudget({ filePath: options.budgetFilePath || (options.budgetDir?path.join(options.budgetDir,'budget-ledger.json'):userData.paths.budget) });
   const evidenceStore = createEvidenceStore();
-  const placement = placementModule.createPlacement({ rootDir, userData, curriculum: options.placementCurriculum || curriculum, evidenceStore, ...(options.placementNow ? { now: options.placementNow } : {}) });
+  const placement = placementModule.createPlacement({ rootDir, userData, curriculum: options.placementCurriculum || curriculum, evidenceStore, sourcePolicy: options.placementSourcePolicy, ...(options.placementNow ? { now: options.placementNow } : {}) });
   const speechHandler = createSpeechHandler({ fetchImpl, budget, evidenceStore });
   const transcriptionHandler = createTranscriptionHandler({ fetchImpl, budget, evidenceStore, getSpeechConfig: speechHandler.getConfig, timeoutMs: options.transcriptionTimeoutMs || 180000 });
   const omniHandler = createOmniHandler({ fetchImpl, budget, evidenceStore, timeoutMs: options.omniTimeoutMs || 180000 });
@@ -393,9 +393,9 @@ function createServer(options = {}) {
     if (req.method === 'GET' && pathname === '/api/health') {const now=new Date(),serverDayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime,serviceInstanceId:bootId,serverDayKey,restoringBackup});}
     if (req.method === 'POST' && ['/api/placement/generate', '/api/placement/evaluate'].includes(pathname)) {
       const body = await readJson(req, 192 * 1024), startVersion = connectionVersion(), startReviewerVersion = reviewerRevision;
-      const runAI = async (messages, { round = 1, maxTokens = 6500 } = {}) => {
+      const runAI = async (messages, { round = 1, maxTokens = 6500, timeoutMs } = {}) => {
         if (startVersion !== connectionVersion() || startReviewerVersion !== reviewerRevision) throw new AppError(409, 'CONNECTION_CHANGED', '测评期间AI设置改变，原始回答保留，请重试。');
-        const output = await runText(req, res, { messages, max_tokens: maxTokens, response_format: { type: 'json_object' } }, options.placementTimeoutMs || coachTimeoutMs, round === 2 ? reviewerConfig() : undefined);
+        const output = await runText(req, res, { messages, max_tokens: maxTokens, response_format: { type: 'json_object' } }, Math.min(options.placementTimeoutMs || coachTimeoutMs, timeoutMs || Infinity), round === 2 ? reviewerConfig() : undefined);
         if (output.data?.choices?.[0]?.finish_reason === 'length') throw new placementModule.PlacementError(502, 'PLACEMENT_AI_TRUNCATED', '测评AI结果被截断，原始回答保留，请重试。');
         if (startVersion !== connectionVersion() || startReviewerVersion !== reviewerRevision) throw new AppError(409, 'CONNECTION_CHANGED', '测评期间AI设置改变，原始回答保留，请重试。');
         let content = output.data?.choices?.[0]?.message?.content;
@@ -406,6 +406,11 @@ function createServer(options = {}) {
       const result = pathname.endsWith('/generate') ? await placement.generate(body, runAI) : await placement.evaluate(body, runAI);
       if (!res.destroyed) sendJson(res, 200, result);
       return;
+    }
+    if (req.method === 'GET' && pathname === '/api/placement/recoverable') {
+      const url = new URL(req.url, 'http://127.0.0.1');
+      if ([...url.searchParams.keys()].some(key => key !== 'profileId') || url.searchParams.getAll('profileId').length !== 1) throw new placementModule.PlacementError(400, 'PLACEMENT_PROFILE', '请提供唯一的学习档案编号。');
+      return sendJson(res, 200, await placement.listReady({ profileId: url.searchParams.get('profileId') }));
     }
     const placementMatch = /^\/api\/placement\/(placement-[a-f0-9-]{36})$/.exec(pathname);
     if (req.method === 'GET' && placementMatch) {

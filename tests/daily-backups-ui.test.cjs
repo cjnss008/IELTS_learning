@@ -104,6 +104,7 @@ test('viewing an unchanged completed course on another day cannot evict a meanin
 
 test('a restore validation error that requires restart reconnects and retains its original reason after reload',async t=>{
  const selected=row(),f=fixture(t,{backups:[selected]});let restarted=false;f.remote.restore=async()=>{restarted=true;f.requests.push(['restore']);throw Object.assign(Error('selected full backup changed'),{code:'DAILY_BACKUP_CONFLICT',status:409,requiresRestart:true});};f.remote.health=async()=>({ok:true,serviceInstanceId:restarted?'new-service':'old-service',restoringBackup:false});await f.api.restore(selected);assert.equal(f.reloads,1);assert.equal(f.requests.filter(v=>v[0]==='restore').length,1);assert.match(f.storage.data.get(D.NOTICE),/selected full backup changed/);const next=fixture(t,{storage:f.storage});await next.api.start();assert.match(next.api.status().restoreNotice,/selected full backup changed/);assert.equal(f.storage.data.has(D.NOTICE),false);
+ assert.ok(f.states.some(s=>s.state==='reconnecting'&&s.message.includes('selected full backup changed')));assert.ok(f.states.filter(s=>['reconnecting','restored'].includes(s.state)).every(s=>!s.message.includes('已恢复')));
 });
 
 test('opening an unchanged completed annual review for thirty idle days makes no new backup slots',async t=>{

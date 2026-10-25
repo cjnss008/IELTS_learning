@@ -2,6 +2,7 @@
 const fs=require('node:fs'),fsp=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto'),os=require('node:os');
 const {KEYS}=require('../assets/backup-core.js');
 const {fileStamp,createFileCache}=require('./file-cache.cjs');
+const {removeDeadLocalLock:reclaimDeadLocalLock}=require('./local-lock.cjs');
 const PROFILE=/^(?:legacy|p-[a-zA-Z0-9-]{8,80})$/,SHA=/^[a-f0-9]{64}$/,MATERIAL=/^material-[a-f0-9-]{36}$/,CONFLICT=/^conflict-[a-f0-9-]{36}$/,EPOCH=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/;
 const DATABASES={'ielts52-learning-records-v1':'records','ielts-media-v1':'works','ielts-diagnostic-audio-v1':'clips','ielts52-recovery-points-v1':'points'};
 const ENTRY_KEYS=new Set([...Object.keys(KEYS),'ielts52-data-generation-v1']);
@@ -70,7 +71,7 @@ function createUserData({rootDir,dataDir,legacyPaths,migrateLegacy=true,now=()=>
  // A shared-folder lock can be visible before its owner JSON is complete, or
  // disappear between EEXIST and the read. Neither state is a damaged profile.
  function readLockOwner(file){try{return safeJsonFile(checked(file,{file:true}),4096);}catch(error){if(error.code==='USER_DATA_CORRUPT')return null;throw error;}}
- function removeDeadLocalLock(file,held){if(held?.hostname!==os.hostname()||!Number.isSafeInteger(held.pid)||held.pid<1||typeof held.owner!=='string'||!held.owner)return false;try{process.kill(held.pid,0);return false;}catch(error){if(error.code!=='ESRCH')return false;}try{if(readLockOwner(file)?.owner===held.owner){fs.unlinkSync(checked(file));return true;}}catch(error){return error.code==='ENOENT';}return false;}
+ function removeDeadLocalLock(file){return reclaimDeadLocalLock(file,{checked});}
  const migrationLock=path.join(config,'migration.lock');let migrationFd,migrationOwner;
  const migrationWait=new Int32Array(new SharedArrayBuffer(4));
  try{for(let attempt=0;attempt<100;attempt++){try{migrationFd=fs.openSync(checked(migrationLock),'wx',0o600);break;}catch(error){if(error.code!=='EEXIST')throw error;const held=readLockOwner(migrationLock),removed=removeDeadLocalLock(migrationLock,held);if(attempt===99)fail('USER_DATA_MIGRATION_BUSY','另一台电脑或本机服务可能正在迁移共享用户目录，请稍后重新启动；原数据保留。',423);if(!removed)Atomics.wait(migrationWait,0,0,20);}}migrationOwner=crypto.randomUUID();fs.writeFileSync(migrationFd,JSON.stringify({pid:process.pid,hostname:os.hostname(),owner:migrationOwner}));migrate();}finally{if(migrationFd!==undefined){fs.closeSync(migrationFd);try{if(readLockOwner(migrationLock)?.owner===migrationOwner)fs.unlinkSync(checked(migrationLock));}catch{}}}
@@ -112,12 +113,33 @@ function createUserData({rootDir,dataDir,legacyPaths,migrateLegacy=true,now=()=>
  async function revalidateRestoredMaterials(stagingRoot){const stage=restoreStage(stagingRoot),materialsDir=path.join(stage,'materials'),{stat}=inspect(path.join(materialsDir,'imported-textbooks','index.json'),{file:true});if(!stat)return {checkedFiles:0};const job=require('./user-material-migration.cjs').createUserMaterialMigration({rootDir,dataDir:stage,materialsDir,discoverCatalog:false,now});return job.rebaseRestoredCopies();}
  function fenceRestoredProfiles(stagingRoot){
   const stage=restoreStage(stagingRoot),stagedFile=path.join(stage,'profiles','index.json'),staged=validateIndex(safeJsonFile(checked(stagedFile))||emptyIndex()),current=readIndex(),results=[],profileIds=new Set([...Object.keys(staged.profiles),...Object.keys(current.profiles)]);if(profileIds.size>20)fail('USER_DATA_PROFILE_LIMIT','备份与当前目录合计超过20个档案，无法同时保留恢复保护标记；当前数据和备份均未改变。',409);
+  const bindingFile=path.join(stage,'config','placement-restore-bindings.json'),bindingLimit=2*1024*1024,priorBindings=safeJsonFile(checked(bindingFile),bindingLimit),bindings=[];
+  const validEpoch=value=>value===null||typeof value==='string'&&EPOCH.test(value);
+  function placementBindings(id,snapshot,sourceResetEpoch,newResetEpoch){
+   const raw=snapshot.entries['ielts52-placement-v1'];if(typeof raw!=='string'||Buffer.byteLength(raw)>8*1024*1024)return;
+   let state;try{state=JSON.parse(raw);}catch{return;}if(!plain(state)||state.version!==1||!Array.isArray(state.sessions)||state.sessions.length>200)return;
+   const placement=require('./placement.cjs');
+   for(const session of state.sessions){
+    if(!plain(session)||typeof session.id!=='string'||!/^placement-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/.test(session.id)||!['draft','evaluating','complete'].includes(session.status)||!plain(session.assessment)||session.assessment.id!==session.id)continue;
+    const file=checked(path.join(stage,'config','placement',id,session.id+'.json'));let doc,assessmentSha256;
+    try{doc=safeJsonFile(file,4*1024*1024);if(!doc||doc.schemaVersion!==1||doc.id!==session.id||doc.profileId!==id||doc.profileCreatedAt!==snapshot.profile.createdAt)continue;assessmentSha256=placement.canonicalAssessmentHash(session.assessment);if(placement.publicAssessmentHash(doc)!==assessmentSha256)continue;}
+    catch(error){if(error.code==='USER_DATA_LINK'||error.code==='USER_DATA_PATH')throw error;continue;}
+    const docEpoch=doc.resetEpoch||null;if(!validEpoch(docEpoch))continue;
+    const inherited=priorBindings?.schemaVersion===1&&Array.isArray(priorBindings.bindings)&&priorBindings.bindings.length<=4000&&priorBindings.bindings.some(binding=>plain(binding)&&binding.profileId===id&&binding.profileCreatedAt===snapshot.profile.createdAt&&binding.assessmentId===session.id&&binding.assessmentSha256===assessmentSha256&&binding.newResetEpoch===sourceResetEpoch&&validEpoch(binding.sourceResetEpoch)&&Array.isArray(binding.sourceEpochs)&&binding.sourceEpochs.length<=200&&binding.sourceEpochs.every(validEpoch)&&binding.sourceEpochs.includes(docEpoch));
+    if(docEpoch!==sourceResetEpoch&&!inherited)continue;
+    // Keep only the source index and actual private-record epochs. This grants
+    // the exact staged assessment without growing an unbounded restore chain.
+    bindings.push({profileId:id,profileCreatedAt:snapshot.profile.createdAt,assessmentId:session.id,sourceResetEpoch,newResetEpoch,sourceEpochs:[...new Set([sourceResetEpoch,docEpoch])],assessmentSha256,sessionStatus:session.status});
+   }
+  }
   function stagedRevision(id,entry){const {file,stat}=inspect(path.join(stage,'profiles',id,entry.fileName),{file:true});cachedRevision(file,stat,entry,true);const value=verifyRevision(id,file,stat,entry,fs.readFileSync(file));for(const ref of validateSnapshot(value,id).values()){const {file:blob,stat:blobStat}=inspect(path.join(stage,'blobs',ref.sha256.slice(0,2),ref.sha256+'.bin'),{file:true});if(!blobStat||blobStat.size!==ref.size||hash(fs.readFileSync(blob))!==ref.sha256)fail('USER_DATA_BLOB_CORRUPT','备份引用的录音文件缺失或校验失败，未恢复。',503);}return value;}
   for(const id of profileIds){
    const saved=staged.profiles[id],live=current.profiles[id],resetEpoch=crypto.randomUUID(),revision=Math.max(saved?.revision||0,live?.revision||0)+1;
    let snapshot;if(saved){snapshot=stagedRevision(id,saved);for(const history of saved.history)stagedRevision(id,history);}else snapshot={schemaVersion:1,profile:profile(live.profile,id),entries:{},session:{},databases:Object.entries(DATABASES).map(([name,store])=>({name,stores:[{name:store,rows:[]}]}))};
+   if(saved)placementBindings(id,snapshot,saved.resetEpoch||null,resetEpoch);
    snapshot.entries['ielts52-data-generation-v1']='restore:'+resetEpoch;validateSnapshot(snapshot,id);const updatedAt=now().toISOString(),fileName='snapshot-'+revision+'-'+crypto.randomUUID()+'.json',bytes=Buffer.from(JSON.stringify(snapshot)),entry={profile:profile(snapshot.profile,id),revision,updatedAt,fileName,sha256:hash(bytes),resetEpoch,history:saved?[{revision:saved.revision,updatedAt:saved.updatedAt,fileName:saved.fileName,sha256:saved.sha256,resetEpoch:saved.resetEpoch||null},...saved.history].slice(0,LIMITS.historyCount):[]};atomic(path.join(stage,'profiles',id,fileName),bytes);staged.profiles[id]=entry;results.push({id,revision,resetEpoch});
   }
+  const restoreBindings={schemaVersion:1,createdAt:now().toISOString(),bindings};if(Buffer.byteLength(JSON.stringify(restoreBindings))>bindingLimit)fail('USER_DATA_TOO_LARGE','测评恢复授权超过支持上限，原备份与当前目录保留。',503);writeJson(bindingFile,restoreBindings);
   if(staged.activeProfileId&&!staged.profiles[staged.activeProfileId])staged.activeProfileId=null;validateIndex(staged);writeJson(stagedFile,staged);invalidateCaches();return {profiles:results,activeProfileId:staged.activeProfileId};
  }
 

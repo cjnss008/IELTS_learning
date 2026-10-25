@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const os = require('node:os');
+const { removeDeadLocalLock } = require('./local-lock.cjs');
 const MICRO = 1e6;
 class BudgetError extends Error {
   constructor(status, code, message) { super(message); this.status = status; this.code = code; }
@@ -41,7 +42,7 @@ function createBudget({ filePath, now = () => new Date() }) {
     if (!Number.isSafeInteger(holder.pid) || holder.pid <= 0) return '预算锁的进程信息无效；请先核实服务状态，保留账本，不会自动删除锁。';
     try { process.kill(holder.pid, 0); return '本机另一个学习服务进程仍持有预算锁，请先关闭重复服务；账本保持不变。'; }
     catch (error) {
-      if (error.code === 'ESRCH') return '本机预算锁对应的进程已退出；请先关闭其他学习服务，保留 budget-ledger.json，仅清理核实后的 budget.lock，再重新启动。';
+      if (error.code === 'ESRCH') return '本机预算锁对应的进程已退出，但锁文件可能正在变化或回收；为保护账本未强制删除，请稍后重试或核实后重新启动。';
       return '无法核实本机预算锁进程是否仍在运行；请检查进程权限，当前服务不会自动删除锁。';
     }
   }
@@ -74,7 +75,13 @@ function createBudget({ filePath, now = () => new Date() }) {
     try {
       fs.mkdirSync(path.dirname(filePath), { recursive: true });
       try { lockFd = fs.openSync(lockPath, 'wx', 0o600); }
-      catch (error) { if (error.code === 'EEXIST') blockedReason = lockReason(); throw error; }
+      catch (error) {
+        if (error.code !== 'EEXIST') throw error;
+        if (removeDeadLocalLock(lockPath)) {
+          try { lockFd = fs.openSync(lockPath, 'wx', 0o600); }
+          catch (next) { if (next.code === 'EEXIST') blockedReason = lockReason(); throw next; }
+        } else { blockedReason = lockReason(); throw error; }
+      }
       fs.writeFileSync(lockFd, JSON.stringify({ owner, pid: process.pid, hostname: os.hostname(), createdAt: now().toISOString() }));
       data = fs.existsSync(filePath) ? validate(JSON.parse(fs.readFileSync(filePath, 'utf8'))) : initial();
       enabled = data.enabled;
