@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-25T07:33:42.568Z",
+  "scope": "Real configured-service calls on fixed complete writing responses; private text excluded. No score offset is applied.",
+  "preRegistration": {
+    "id": "cross-publication-v60-frozen-six",
+    "frozenAt": "2026-10-25T07:26:19.544Z",
+    "reviewPromptVersion": "review-2026-10-25-v4",
+    "promptFiles": [
+      {
+        "file": "server/review.cjs",
+        "sha256": "132eac6ee8b3864c5f1731cf25018d1d1a5afe9559e9868af9d2110fefabc807"
+      },
+      {
+        "file": "server/review-rubric.cjs",
+        "sha256": "956243d4c8e7e5e047c9e5da9a412cfd486e7afecc837e856bd586315450c07f"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "label": "development-v3",
+      "createdAt": "2026-10-25T07:20:36.721Z",
+      "promptVersion": "review-2026-10-25-v3",
+      "benchmarkSetHash": "8cb2dedf9983f99f1a51c16034d1813aaf7e2f71e3e660b5dd6d39115068f06c",
+      "requested": 4,
+      "completed": 4,
+      "models": [
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v3",
+          "promptVariant": "initial",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -1.75,
+          "meanAbsoluteError": 1.75
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v3",
+          "promptVariant": "adversarial",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 0,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -1.5625,
+          "meanAbsoluteError": 1.5625
+        }
+      ],
+      "sources": [
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v3",
+          "promptVariant": "initial",
+          "sourceId": "ielts-academic-2023",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -1.75,
+          "meanAbsoluteError": 1.75
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v3",
+          "promptVariant": "adversarial",
+          "sourceId": "ielts-academic-2023",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 0,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -1.5625,
+          "meanAbsoluteError": 1.5625
+        }
+      ],
+      "samples": [
+        {
+          "id": "ielts-academic-2023-2b-a",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "b822678b09412f145a793ac64342462305b75d6c659fc7accefad3d653a16f73",
+          "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+          "referenceOverall": 5.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "initial",
+              "predicted": 5.125,
+              "reference": 5.5,
+              "error": -0.375,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "adversarial",
+              "predicted": 4.625,
+              "reference": 5.5,
+              "error": -0.875,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-academic-2023-2a-c",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "f89e60a4c22d81938eff9d2764c98fe2d318a2bdd50c216966f84c7c4ef13151",
+          "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+          "referenceOverall": 8.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "initial",
+              "predicted": 5.625,
+              "reference": 8.5,
+              "error": -2.875,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "adversarial",
+              "predicted": 6,
+              "reference": 8.5,
+              "error": -2.5,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-academic-2023-2a-b",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "951910f9d40b9dc05dd155a405c511cbe6be9bb67cd905ac6737bc4730ca9b63",
+          "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+          "referenceOverall": 6.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "initial",
+              "predicted": 4.75,
+              "reference": 6.5,
+              "error": -1.75,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "adversarial",
+              "predicted": 5,
+              "reference": 6.5,
+              "error": -1.5,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-academic-2023-2b-b",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "fb5d53ef71c85a6e55bec484d813d07f4c1e3f32cafdd88528ec08bb1c98f037",
+          "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+          "referenceOverall": 7.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "initial",
+              "predicted": 5.5,
+              "reference": 7.5,
+              "error": -2,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "adversarial",
+              "predicted": 6.125,
+              "reference": 7.5,
+              "error": -1.375,
+              "missing": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "development-v4",
+      "createdAt": "2026-10-25T07:22:13.739Z",
+      "promptVersion": "review-2026-10-25-v4",
+      "benchmarkSetHash": "8cb2dedf9983f99f1a51c16034d1813aaf7e2f71e3e660b5dd6d39115068f06c",
+      "requested": 4,
+      "completed": 4,
+      "models": [
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "whole-response-balanced",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -1.59375,
+          "meanAbsoluteError": 1.59375
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "criterion-evidence-balanced",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 2,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -0.9375,
+          "meanAbsoluteError": 0.9375
+        }
+      ],
+      "sources": [
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "whole-response-balanced",
+          "sourceId": "ielts-academic-2023",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -1.59375,
+          "meanAbsoluteError": 1.59375
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "criterion-evidence-balanced",
+          "sourceId": "ielts-academic-2023",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 2,
+          "below": 4,
+          "above": 0,
+          "meanSignedBias": -0.9375,
+          "meanAbsoluteError": 0.9375
+        }
+      ],
+      "samples": [
+        {
+          "id": "ielts-academic-2023-2b-a",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "b822678b09412f145a793ac64342462305b75d6c659fc7accefad3d653a16f73",
+          "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+          "referenceOverall": 5.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 5,
+              "reference": 5.5,
+              "error": -0.5,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 5,
+              "reference": 5.5,
+              "error": -0.5,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-academic-2023-2a-c",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "f89e60a4c22d81938eff9d2764c98fe2d318a2bdd50c216966f84c7c4ef13151",
+          "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+          "referenceOverall": 8.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 6,
+              "reference": 8.5,
+              "error": -2.5,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 6.5,
+              "reference": 8.5,
+              "error": -2,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-academic-2023-2a-b",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "951910f9d40b9dc05dd155a405c511cbe6be9bb67cd905ac6737bc4730ca9b63",
+          "promptSha256": "0626d0c84d626d7938b768f922caeddfb9fcb573ea998111cd20ce9a8a409892",
+          "referenceOverall": 6.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 5,
+              "reference": 6.5,
+              "error": -1.5,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 5.75,
+              "reference": 6.5,
+              "error": -0.75,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-academic-2023-2b-b",
+          "task": "academic_task2",
+          "sourceId": "ielts-academic-2023",
+          "publicationFamily": "IELTS Academic Writing Sample Tasks (2023)",
+          "referenceSet": "development",
+          "contentSha256": "fb5d53ef71c85a6e55bec484d813d07f4c1e3f32cafdd88528ec08bb1c98f037",
+          "promptSha256": "1786f464a05a374728e9daee1dc5d7185b4bb19ac44dba21c3813ae2b74adbf7",
+          "referenceOverall": 7.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 5.625,
+              "reference": 7.5,
+              "error": -1.875,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 7,
+              "reference": 7.5,
+              "error": -0.5,
+              "missing": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "holdout-v4",
+      "createdAt": "2026-10-25T07:30:05.198Z",
+      "promptVersion": "review-2026-10-25-v4",
+      "benchmarkSetHash": "a00343c13556c928beb01ceccef1fc29cfd8ed634a0ffbdfb034d87887d9bab3",
+      "requested": 6,
+      "completed": 6,
+      "models": [
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "whole-response-balanced",
+          "expected": 6,
+          "compared": 6,
+          "missing": 0,
+          "withinHalfBand": 2,
+          "below": 5,
+          "above": 1,
+          "meanSignedBias": -0.6666666666666666,
+          "meanAbsoluteError": 1
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "criterion-evidence-balanced",
+          "expected": 6,
+          "compared": 6,
+          "missing": 0,
+          "withinHalfBand": 3,
+          "below": 2,
+          "above": 3,
+          "meanSignedBias": -0.020833333333333332,
+          "meanAbsoluteError": 0.6458333333333334
+        }
+      ],
+      "sources": [
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "whole-response-balanced",
+          "sourceId": "cambridge-ucles-2009-task2",
+          "expected": 2,
+          "compared": 2,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 2,
+          "above": 0,
+          "meanSignedBias": -1.25,
+          "meanAbsoluteError": 1.25
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "criterion-evidence-balanced",
+          "sourceId": "cambridge-ucles-2009-task2",
+          "expected": 2,
+          "compared": 2,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 1,
+          "above": 1,
+          "meanSignedBias": -0.3125,
+          "meanAbsoluteError": 0.6875
+        },
+        {
+          "model": "deepseek-flash",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "whole-response-balanced",
+          "sourceId": "ielts-computer-writing-samples",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 1,
+          "below": 3,
+          "above": 1,
+          "meanSignedBias": -0.375,
+          "meanAbsoluteError": 0.875
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "promptVersion": "review-2026-10-25-v4",
+          "promptVariant": "criterion-evidence-balanced",
+          "sourceId": "ielts-computer-writing-samples",
+          "expected": 4,
+          "compared": 4,
+          "missing": 0,
+          "withinHalfBand": 2,
+          "below": 1,
+          "above": 2,
+          "meanSignedBias": 0.125,
+          "meanAbsoluteError": 0.625
+        }
+      ],
+      "samples": [
+        {
+          "id": "cambridge-ucles-2009-nuclear-a",
+          "task": "academic_task2",
+          "sourceId": "cambridge-ucles-2009-task2",
+          "publicationFamily": "ucles-2009-academic-writing-task2-activity",
+          "referenceSet": "holdout",
+          "contentSha256": "15d5efcca7523dcc0f7c414d445681c9c15a07a1c1cf8e7e21a32a9a8a2f6aad",
+          "promptSha256": "0139ec366c3e14c9686c4cf5d2d68239fecf2efa502afebd613cd374a0438559",
+          "referenceOverall": 5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 4.5,
+              "reference": 5,
+              "error": -0.5,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 5.375,
+              "reference": 5,
+              "error": 0.375,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "cambridge-ucles-2009-nuclear-b",
+          "task": "academic_task2",
+          "sourceId": "cambridge-ucles-2009-task2",
+          "publicationFamily": "ucles-2009-academic-writing-task2-activity",
+          "referenceSet": "holdout",
+          "contentSha256": "72b84afea4d09324f8637c0df99e702d3ba369665e211fc8ec2e7c759dd10ad9",
+          "promptSha256": "0139ec366c3e14c9686c4cf5d2d68239fecf2efa502afebd613cd374a0438559",
+          "referenceOverall": 7,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 5,
+              "reference": 7,
+              "error": -2,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 6,
+              "reference": 7,
+              "error": -1,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-computer-school-1",
+          "task": "academic_task1",
+          "sourceId": "ielts-computer-writing-samples",
+          "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+          "referenceSet": "holdout",
+          "contentSha256": "d7e2a41a6d2e2e8de4ec5b2d64035f951c79903b67828a7b2fa147d8d35bbe8e",
+          "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+          "referenceOverall": 6,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 5.625,
+              "reference": 6,
+              "error": -0.375,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 6,
+              "reference": 6,
+              "error": 0,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-computer-school-2",
+          "task": "academic_task1",
+          "sourceId": "ielts-computer-writing-samples",
+          "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+          "referenceSet": "holdout",
+          "contentSha256": "f758fef3f524437f4da6ce0f9bf91e97488697e7eb0ba0386d1ec370abd5217c",
+          "promptSha256": "f1491df034d87c2cb969eeea2b574832054bdab677cdf6c526f452c7ada2d17e",
+          "referenceOverall": 4,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 5,
+              "reference": 4,
+              "error": 1,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 5,
+              "reference": 4,
+              "error": 1,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-computer-health-1",
+          "task": "academic_task2",
+          "sourceId": "ielts-computer-writing-samples",
+          "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+          "referenceSet": "holdout",
+          "contentSha256": "1138df0da4bcac9fd7bf03f5699a3750cf47cb1b154cbdef8ca524a4fbc156fe",
+          "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d",
+          "referenceOverall": 5.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 4.875,
+              "reference": 5.5,
+              "error": -0.625,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 6,
+              "reference": 5.5,
+              "error": 0.5,
+              "missing": false
+            }
+          ]
+        },
+        {
+          "id": "ielts-computer-health-2",
+          "task": "academic_task2",
+          "sourceId": "ielts-computer-writing-samples",
+          "publicationFamily": "ielts-partners-computer-delivered-academic-samples",
+          "referenceSet": "holdout",
+          "contentSha256": "0d0bb528369912b87b605dba8c099220945b08cbee034ff0a7cbb6f2b4f755e6",
+          "promptSha256": "552db065faedfc29bebf713786d9817c54d61bc641fcd9b6ee100add809cd18d",
+          "referenceOverall": 7.5,
+          "observations": [
+            {
+              "model": "deepseek-flash",
+              "round": 1,
+              "promptVariant": "whole-response-balanced",
+              "predicted": 6,
+              "reference": 7.5,
+              "error": -1.5,
+              "missing": false
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "round": 2,
+              "promptVariant": "criterion-evidence-balanced",
+              "predicted": 6.5,
+              "reference": 7.5,
+              "error": -1,
+              "missing": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Development comparisons used the original four responses and are not an independent validation.",
+    "The six held-out responses share three questions and two publication families. Different publications do not establish independent examiners or unseen model pretraining data.",
+    "One run per selected model and role is not an estimate of repeated-run variance; model and round role are confounded.",
+    "Published reference scores are task totals only. No official criterion scores, complete Writing test scores or speaking scores are available.",
+    "Historical handwriting transcription and approximate chart-to-text representation can affect comparison.",
+    "Signed error near zero may hide over- and under-scoring. Retain MAE, per-item errors and missing counts.",
+    "The holdout was consumed by this evaluation. Prompt changes based on these results require fresh independent references."
+  ]
+}

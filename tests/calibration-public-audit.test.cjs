@@ -1,0 +1,7 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),{summary}=require('../tools/summarize-calibration-audit.cjs');
+test('public calibration statistics keep signed/absolute errors and missing denominators without leaking private text or review content',()=>{
+ const rows=[{sampleId:'s1',criterion:'overall',model:'m',round:1,promptVersion:'v',promptVariant:'a',sourceId:'source',predicted:5,reference:6,error:-1},{sampleId:'s2',criterion:'overall',model:'m',round:1,promptVersion:'v',promptVariant:'a',sourceId:'source',predicted:7,reference:6,error:1},{sampleId:'s3',criterion:'overall',model:'m',round:1,promptVersion:'v',promptVariant:'a',sourceId:'source',predicted:null,reference:6,error:null}];
+ const report={ok:true,promptVersion:'v',requestedCount:3,completedCount:2,summary:{rows},items:rows.map(r=>({id:r.sampleId,reference:{overall:6},value:{task:'academic_task2',text:'PRIVATE_ORIGINAL',prompt:'PRIVATE_QUESTION'},result:{key:'PRIVATE_KEY',corrections:[{original:'PRIVATE_QUOTE'}]}}))};
+ const result=summary(report,'test'),model=result.models[0];assert.equal(model.meanSignedBias,0);assert.equal(model.meanAbsoluteError,1);assert.equal(model.expected,3);assert.equal(model.missing,1);assert.equal(model.withinHalfBand,0);assert.equal(model.above,1);assert.equal(model.below,1);assert.ok(!JSON.stringify(result).includes('PRIVATE_'));assert.equal(result.samples[2].observations[0].missing,true);
+});
