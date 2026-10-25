@@ -121,6 +121,7 @@ function mount(){
    button.addEventListener('click',async()=>{if(state.pending&&!state.missingMaterialIds.length){await navigation.showLatestRecord?.(state.task.id,state.nextMaterialId);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}else{navigation.showTask(state.task.id,state.nextMaterialId);$('courseMaterialIntro')?.scrollIntoView?.({behavior:'smooth',block:'start'});}});$('todayRoute').append(button);
   });
   learningQueue=queueState();
+  if(learningQueue?.currentComplete===true)root.IELTSDailyBackups?.observeCompletion?.({currentComplete:true,courseDay:current.day,completion:mistakes.completion,token:mistakes.token,records:own})?.catch?.(()=>{});
   const queued=learningQueue?.next;if(queued){$('todayStart').textContent=queued.label;$('todayStart').disabled=['blocked','budget','rest'].includes(queued.kind);$('todayNext').textContent=queued.reason||'';$('todayAdvice').textContent=['budget','rest'].includes(queued.kind)?queued.reason:learningQueue.currentComplete&&queued.day!==current.day?'本课核心任务与复盘已通过。下一课已自动加入今天的必学队列，点击主按钮继续；本课结果仍在下方。':queued.kind==='view'?'作品仍待真实评阅；其他可用任务会列入队列，待评不算通过。':queued.kind==='blocked'?queued.reason:'下一步已列入今日必学队列；按真实作答继续，完成速度不用于跳关。';}else $('todayStart').disabled=false;
   renderQueue();
   renderAdaptive(day,own);

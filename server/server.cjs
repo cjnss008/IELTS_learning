@@ -28,6 +28,8 @@ const wordReview = require('./word-review.cjs');
 const writingPathModule = require('./writing-path.cjs');
 const { createCredentialVault } = require('./credential-vault.cjs');
 const { createUserData, within: insideUserData } = require('./user-data.cjs');
+const { createDailyBackups, DailyBackupError } = require('./daily-backups.cjs');
+const { createFileCache, fileStamp } = require('./file-cache.cjs');
 
 const HOST = '127.0.0.1';
 const DEFAULT_PORT = 8765;
@@ -208,6 +210,8 @@ function createServer(options = {}) {
   const rootRealPromise = fs.promises.realpath(rootDir);
   const fetchImpl = options.fetchImpl || globalThis.fetch;
   const userData=createUserData({rootDir,dataDir:options.dataDir,legacyPaths:options.legacyDataPaths,migrateLegacy:options.migrateLegacy??!(options.fetchImpl||options.budgetFilePath||options.budgetDir||options.credentialFilePath||options.rootDir&&rootDir!==path.resolve(path.join(__dirname,'..')))});
+  const dailyBackups=options.dailyBackups||createDailyBackups({userData});
+  let restoringBackup=false;
   let materialMigration=options.materialMigration||null;
   if(!materialMigration&&options.materialMigration!==false&&fs.existsSync(path.join(__dirname,'user-material-migration.cjs'))&&(fs.existsSync(path.join(rootDir,'materials','textbook-catalog.json'))||fs.existsSync(path.join(userData.paths.materials,'imported-textbooks','index.json')))){try{materialMigration=require('./user-material-migration.cjs').createUserMaterialMigration({rootDir,dataDir:userData.root,materialsDir:userData.paths.materials});}catch{materialMigration={status:()=>({state:'error',errors:[{code:'MATERIAL_MIGRATION_UNAVAILABLE',message:'教材迁移索引无法读取；旧资料继续使用，原文件未改变。'}]}),list:()=>[],get:()=>null,resolveLegacy:()=>null,start:()=>Promise.resolve({state:'error'})};}}
   if(materialMigration)userData.setImportedMaterials(materialMigration);
@@ -242,7 +246,7 @@ function createServer(options = {}) {
 
   const providers={ai:{get:()=>connection?{...connection,models:[...connection.models]}:null,restore:restorePrimary},reviewer:{get:()=>reviewerConnection?{...reviewerConnection}:null,restore:restoreReviewer},...Object.fromEntries(Object.entries({oral:oralHandler,speech:speechHandler,transcription:transcriptionHandler,omni:omniHandler}).map(([name,handler])=>[name,{get:handler.exportConfiguration,restore:handler.restoreConfiguration}]))};
   // Mock-service tests never load the user's local saved credentials unless a vault is explicitly injected.
-  const vault=options.credentialVault||createCredentialVault({providers,filePath:options.credentialFilePath||userData.paths.credentials,preferenceFilePath:options.credentialPreferenceFilePath||userData.paths.credentialPolicy,defaultEnabled:options.defaultCredentialPersistence??true,...(options.fetchImpl&&!options.credentialFilePath?{supported:false}:{})});
+  const vault=options.credentialVault||createCredentialVault({providers,filePath:options.credentialFilePath||userData.paths.credentials,preferenceFilePath:options.credentialPreferenceFilePath||userData.paths.credentialPolicy,defaultEnabled:options.defaultCredentialPersistence??true,exclusive:userData.withLock,...(options.fetchImpl&&!options.credentialFilePath?{supported:false}:{})});
   for(const handler of [oralHandler,speechHandler,transcriptionHandler,omniHandler]){handler.getCredentialStorage=()=>vault.status().storage;handler.onConfigurationChanged=()=>vault.saveIfEnabled();}
   const ready=vault.restore();
 
@@ -251,6 +255,65 @@ function createServer(options = {}) {
       connected: true, baseUrl: connection.baseUrl, model: connection.model,
       models: connection.models.map(id => ({ id })), credentialStorage: vault.status().storage, connectionVersion: connectionVersion(), selectionPromptVersion: PROMPT_VERSION,
     } : { connected: false, baseUrl: '', model: null, models: [], credentialStorage: vault.status().storage, connectionVersion: connectionVersion(), selectionPromptVersion: PROMPT_VERSION };
+  }
+
+  function quiesceForRestore(){
+    restoringBackup=true;connectAttempt++;activeController?.abort();
+    for(const handler of [speechHandler,transcriptionHandler,oralHandler,omniHandler])handler.close();
+    budget.close();dialogue.clear();evidenceStore.clear();selection.clear();
+  }
+  function restartAfterRestore(res){
+    if(!options.restartOnRestore)return;
+    const address=server.address();if(!address)return;
+    // Rebuild all in-memory providers, budget/signing state and user-data caches
+    // from the verified files. A restored secret is never sent to the browser.
+    res.once('finish',()=>setImmediate(()=>{
+      server.close(()=>{
+        try{
+          const next=createServer({...options,dataDir:userData.root});server.successor=next;
+          closeOnSignals(next);next.once('error',()=>console.error('[BACKUP_RESTART_FAILED] 恢复文件已保留，请重新双击启动学习.cmd。'));
+          next.listen(address.port,address.address);
+        }catch{console.error('[BACKUP_RESTART_FAILED] 恢复文件已保留，请重新双击启动学习.cmd。');}
+      });server.closeAllConnections();
+    }));
+  }
+  async function handleDailyBackups(req,res,pathname){
+    const resetMatch=/^\/api\/user-data\/profiles\/(legacy|p-[a-zA-Z0-9-]{8,80})\/reset$/.exec(pathname);
+    if(resetMatch&&req.method==='POST'){
+      const body=await readJson(req,4096),id=resetMatch[1];
+      if(!body||Object.keys(body).some(k=>k!=='expectedRevision')||!Number.isSafeInteger(body.expectedRevision)||body.expectedRevision<1)throw new AppError(400,'USER_DATA_REVISION','请先读取有效档案版本后清空。');
+      const current=await userData.getSnapshot(id,undefined,{metadata:true});
+      if(current.revision!==body.expectedRevision)throw new AppError(409,'USER_DATA_CONFLICT','档案已在其他页面更新，原记录未清空，请重新读取后再试。');
+      const now=new Date(),dayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+      // This also includes the browser candidate saved by resetProfile. A user
+      // can recover the pre-reset state through the ordinary backup selector.
+      await dailyBackups.create({dayKey,profileId:id,completionId:'before-reset:'+id+':'+current.revision});
+      sendJson(res,200,await userData.resetProfile(id,body.expectedRevision));return true;
+    }
+    if(!pathname.startsWith('/api/backups/'))return false;
+    if(pathname==='/api/backups/daily'&&req.method==='GET'){sendJson(res,200,await dailyBackups.list());return true;}
+    if(pathname==='/api/backups/daily'&&req.method==='POST'){
+      const body=await readJson(req,4096);sendJson(res,200,await dailyBackups.create(body));return true;
+    }
+    if(pathname==='/api/backups/daily/restore'&&req.method==='POST'){
+      const body=await readJson(req,4096);
+      if(!body||Object.keys(body).some(k=>!['dayKey','expectedManifestSha256'].includes(k))||!/^\d{4}-\d{2}-\d{2}$/.test(body.dayKey||'')||!/^[a-f0-9]{64}$/.test(body.expectedManifestSha256||''))throw new AppError(400,'BACKUP_RESTORE_INPUT','请选择备份列表中的有效备份。');
+      if(aiBusy)throw new AppError(409,'BACKUP_SERVICE_BUSY','AI 正在处理作品，请待本次处理完成后恢复。');
+      // Stop accepting writes, then drain accepted encrypted saves while all
+      // providers still exist. Closing them first could save an empty config.
+      restoringBackup=true;connectAttempt++;activeController?.abort();
+      await (vault.freeze?.()||vault.idle?.());quiesceForRestore();
+      try{
+        const result=await dailyBackups.restore(body.dayKey,{expectedManifestSha256:body.expectedManifestSha256});
+        restartAfterRestore(res);sendJson(res,200,{...result,serviceInstanceId:bootId,automaticRestart:Boolean(options.restartOnRestore)});
+      }catch(error){
+        restartAfterRestore(res);
+        const safe=error instanceof DailyBackupError?error:new AppError(500,'BACKUP_RESTORE_FAILED','完整备份尚未恢复，原文件和恢复事务均保留。');
+        sendJson(res,safe.status,{ok:false,error:{code:safe.code,message:safe.message},requiresRestart:true,serviceInstanceId:bootId,automaticRestart:Boolean(options.restartOnRestore)});
+      }
+      return true;
+    }
+    throw new AppError(405,'BACKUP_METHOD','备份操作或请求方式无效。');
   }
 
   async function upstream(config, endpoint, body, timeoutMs, clientSignal) {
@@ -325,7 +388,7 @@ function createServer(options = {}) {
   }
 
   async function handleApi(req, res, pathname) {
-    if (req.method === 'GET' && pathname === '/api/health') return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime});
+    if (req.method === 'GET' && pathname === '/api/health') {const now=new Date(),serverDayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime,serviceInstanceId:bootId,serverDayKey,restoringBackup});}
     if (req.method === 'POST' && pathname === '/api/runtime/restart') {
       const body = await readJson(req, 1024);
       if (body.instanceId !== loadedRuntime.instanceId || req.headers['x-ielts-project-id'] !== loadedRuntime.projectId || req.headers['x-ielts-launcher'] !== 'restart-v1') throw new AppError(409, 'RUNTIME_CHANGED', '服务已改变，请重新双击“启动学习.cmd”。');
@@ -568,6 +631,7 @@ function createServer(options = {}) {
     throw new AppError(404, 'API_NOT_FOUND', '接口不存在。');
   }
 
+  const staticCache = createFileCache({ maxFileBytes: 16 * 1024 * 1024 });
   async function serveStatic(req, res, rawPath) {
     if (req.method !== 'GET' && req.method !== 'HEAD') throw new AppError(405, 'METHOD_NOT_ALLOWED', '此资源仅支持读取。');
     let decoded;
@@ -596,10 +660,23 @@ function createServer(options = {}) {
       throw new AppError(404, 'RESOURCE_NOT_FOUND', '文件不存在。');
     }
     if (!stat.isFile()) throw new AppError(403, 'RESOURCE_DENIED', '无法访问此资源。');
+    const stamp = fileStamp(stat), etag = 'W/"' + crypto.createHash('sha256').update(stamp).digest('hex') + '"';
+    const headers = { 'Content-Type': MIME[extension], 'Cache-Control': 'no-cache', 'Accept-Ranges': 'bytes', ETag: etag, 'Last-Modified': stat.mtime.toUTCString() };
+    // Authorization and a fresh filesystem identity are checked even for a 304
+    // or memory-cache hit. A NAS upgrade/deletion/link replacement cannot keep
+    // serving an earlier page, module or private alias from memory.
+    if (typeof req.headers['if-none-match'] === 'string' && req.headers['if-none-match'].split(',').some(value => value.trim() === '*' || value.trim().replace(/^W\//, '') === etag.replace(/^W\//, ''))) {
+      res.writeHead(304, headers); return res.end();
+    }
     let start = 0, end = stat.size - 1, status = 200;
-    const headers = { 'Content-Type': MIME[extension], 'Cache-Control': 'no-cache', 'Accept-Ranges': 'bytes' };
-    if (req.headers.range) {
-      const match = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+    let range = req.headers.range;
+    if (range && req.headers['if-range']) {
+      const date = Date.parse(req.headers['if-range']);
+      // Metadata validators are weak; If-Range requires a strong validator.
+      if (!Number.isFinite(date) || stat.mtimeMs > date) range = null;
+    }
+    if (range) {
+      const match = /^bytes=(\d*)-(\d*)$/.exec(range);
       if (!match || (!match[1] && !match[2]) || !stat.size) {
         res.writeHead(416, { ...headers, 'Content-Range': 'bytes */' + stat.size });
         return res.end();
@@ -615,8 +692,20 @@ function createServer(options = {}) {
       headers['Content-Range'] = 'bytes ' + start + '-' + end + '/' + stat.size;
     }
     headers['Content-Length'] = Math.max(0, end - start + 1);
+    let content;
+    const cacheable = !authorizedImported && /^(?:\.html|\.js|\.css|\.json|\.svg|\.txt|\.md|\.vtt|\.csv|\.srt|\.png|\.jpe?g|\.webp|\.ico)$/.test(extension) && stat.size <= 16 * 1024 * 1024;
+    if (cacheable && req.method !== 'HEAD' && stat.size) {
+      const cached = staticCache.get(realPath, stamp);
+      if (cached) content = cached.bytes;
+      else {
+        const bytes = await fs.promises.readFile(realPath), after = await fs.promises.stat(realPath);
+        if (bytes.length !== stat.size || fileStamp(after) !== stamp) throw new AppError(503, 'RESOURCE_CHANGED', '学习包正在更新，请稍后重新载入。');
+        staticCache.set(realPath, stamp, bytes); content = bytes;
+      }
+    }
     res.writeHead(status, headers);
     if (req.method === 'HEAD' || stat.size === 0) return res.end();
+    if (content) return res.end(content.subarray(start, end + 1));
     const stream = fs.createReadStream(realPath, { start, end });
     stream.on('error', () => res.destroy());
     res.on('close', () => stream.destroy());
@@ -646,9 +735,11 @@ function createServer(options = {}) {
         throw new AppError(403, 'ORIGIN_DENIED', '请在本地学习页面内执行此操作。');
       }
       await ready;
+      if(restoringBackup&&rawPath!=='/api/health')throw new AppError(503,'BACKUP_RESTART_PENDING','正在完整恢复用户文件夹并重新连接，原备份已保留，请稍候。');
       if(['GET','HEAD'].includes(req.method)&&decodeURIComponent(rawPath)==='/学习课程.html'){
         res.writeHead(302,{'Location':'/'+(String(req.url).includes('?')?'?'+String(req.url).split('?').slice(1).join('?'):''),'Cache-Control':'no-store'});return res.end();
       }
+      if (await handleDailyBackups(req,res,rawPath)) return;
       if (await vault.handle(req,res,rawPath)) return;
       if (await userData.handle(req,res,rawPath)) return;
       for(const handler of [omniHandler,oralHandler,transcriptionHandler,speechHandler])if(await handler(req,res,rawPath))return;
@@ -656,7 +747,7 @@ function createServer(options = {}) {
       else await serveStatic(req, res, rawPath);
     } catch (error) {
       if (res.headersSent || res.destroyed) return res.destroy();
-      const safeError = (error instanceof AppError || error instanceof BudgetError || error instanceof SelectionError || error instanceof review.ReviewError || error instanceof oralCoach.OralCoachError || error instanceof dailyCoach.DailyCoachError || error instanceof dialogueModule.DialogueError || error instanceof calibration.CalibrationError || error instanceof OmniError || error instanceof wordReview.WordReviewError || error instanceof writingPathModule.WritingPathError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
+      const safeError = (error instanceof AppError || error instanceof DailyBackupError || error instanceof BudgetError || error instanceof SelectionError || error instanceof review.ReviewError || error instanceof oralCoach.OralCoachError || error instanceof dailyCoach.DailyCoachError || error instanceof dialogueModule.DialogueError || error instanceof calibration.CalibrationError || error instanceof OmniError || error instanceof wordReview.WordReviewError || error instanceof writingPathModule.WritingPathError) ? error : new AppError(500, 'INTERNAL_ERROR', '本地服务暂时无法处理请求。');
       sendJson(res, safeError.status, { ok: false, error: { code: safeError.code, message: safeError.message } });
     }
   });
@@ -686,7 +777,7 @@ if (require.main === module) {
     console.error('IELTS_PORT 需要为 1–65535 的整数。');
     process.exitCode = 1;
   } else {
-    const server = createServer();
+    const server = createServer({restartOnRestore:true});
     server.on('error', error => {
       console.error(error.code === 'EADDRINUSE' ? '本地端口已被占用，请关闭重复服务或设置其他 IELTS_PORT。' : '本地学习服务启动失败。');
       process.exitCode = 1;

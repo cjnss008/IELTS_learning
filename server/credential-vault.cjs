@@ -23,11 +23,11 @@ function dpapi(operation, value) {
   });
 }
 
-function createCredentialVault({providers={},filePath,preferenceFilePath,defaultEnabled=false,protect=v=>dpapi('protect',v),unprotect=v=>dpapi('unprotect',v),supported=process.platform==='win32'}={}) {
+function createCredentialVault({providers={},filePath,preferenceFilePath,defaultEnabled=false,protect=v=>dpapi('protect',v),unprotect=v=>dpapi('unprotect',v),supported=process.platform==='win32',exclusive=run=>run()}={}) {
   const location=filePath||path.join(process.env.LOCALAPPDATA||process.env.TEMP||'.','IELTS Learning','credentials.dpapi');
-  let enabled=false,savedAt=null,restored=[],error=null,queue=Promise.resolve();
+  let enabled=false,savedAt=null,restored=[],error=null,queue=Promise.resolve(),frozen=false;
   const status=()=>({ok:true,supported,enabled,savedAt,restoredProviders:restored.slice(),storage:enabled?'windows-dpapi-current-user':'memory',error});
-  function serial(action){const next=queue.then(action,action);queue=next.catch(()=>{});return next;}
+  function serial(action){if(frozen)return Promise.reject(Error('配置正在恢复，暂缓写入；当前加密文件保留。'));const run=()=>exclusive(action),next=queue.then(run,run);queue=next.catch(()=>{});return next;}
   async function rememberPreference(value){if(!preferenceFilePath)return;await fs.mkdir(path.dirname(preferenceFilePath),{recursive:true});const tmp=preferenceFilePath+'.'+require('node:crypto').randomUUID()+'.tmp';await fs.writeFile(tmp,JSON.stringify({schemaVersion:1,enabled:value,updatedAt:new Date().toISOString()}),{encoding:'utf8',mode:0o600});await fs.rename(tmp,preferenceFilePath);}
   function snapshot(){const out={};for(const [name,provider]of Object.entries(providers)){const value=provider.get();if(value)out[name]=value;}return out;}
   async function write(){
@@ -76,6 +76,6 @@ function createCredentialVault({providers={},filePath,preferenceFilePath,default
     }catch{send(400,{ok:false,error:{message:'本机配置保存设置未完成；当前 AI 与语音连接保留。'}});}
     return true;
   }
-  return {status,restore,saveIfEnabled,setEnabled,handle};
+  return {status,restore,saveIfEnabled,setEnabled,handle,idle:()=>queue,freeze:()=>{frozen=true;return queue;}};
 }
 module.exports={createCredentialVault,dpapi};

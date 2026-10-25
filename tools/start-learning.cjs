@@ -3,8 +3,10 @@ const http = require('node:http');
 const path = require('node:path');
 const fs = require('node:fs');
 const { spawn } = require('node:child_process');
-const { DEFAULT_PORT, createServer, closeOnSignals } = require('../server/server.cjs');
 const { readProjectRuntime, PROJECT_ROOT } = require('../server/runtime-version.cjs');
+// A launcher only probes/starts a service. Loading the whole server here also
+// parsed the course and hashed every asset before doing the same hash again.
+const DEFAULT_PORT = 8765;
 const HOST = '127.0.0.1', SERVICE = 'ielts-learning-local';
 
 class LauncherError extends Error {
@@ -171,11 +173,12 @@ async function launch(options = {}) {
 }
 
 function serve(options = {}) {
-  const port = parsePort(options.port ?? process.env.IELTS_PORT), server = (options.createServer || createServer)();
+  const service = options.createServer && options.closeOnSignals ? options : require('../server/server.cjs');
+  const port = parsePort(options.port ?? process.env.IELTS_PORT), server = (options.createServer || service.createServer)({restartOnRestore:true});
   return new Promise((resolve, reject) => {
     const onError = error => { server.close(); reject(error?.code === 'EADDRINUSE' ? occupiedError(port) : new LauncherError('START_FAILED', '本地学习服务启动失败，请检查学习包目录和本机端口。')); };
     server.once('error', onError);
-    (options.closeOnSignals || closeOnSignals)(server, options.runtime || process);
+    (options.closeOnSignals || service.closeOnSignals)(server, options.runtime || process);
     server.listen(port, HOST, () => { server.removeListener('error', onError); resolve(server); });
   });
 }

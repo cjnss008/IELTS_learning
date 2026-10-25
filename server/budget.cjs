@@ -25,6 +25,7 @@ function validPrice(value) { return typeof value === 'number' && Number.isFinite
 function cny(value) { return value / MICRO; }
 function createBudget({ filePath, now = () => new Date() }) {
   const lockPath = path.join(path.dirname(filePath), 'budget.lock');
+  const restoreMarker = path.basename(path.dirname(filePath)).toLowerCase() === 'config' ? path.join(path.dirname(filePath), '..', 'backups', 'daily', 'restore-in-progress.json') : null;
   const owner = crypto.randomUUID();
   let lockFd, data, blockedReason = '', enabled = false, closed = false, disabledOverride = false;
   const defaultPrice = { baseUrl: 'https://api.deepseek.com', model: 'deepseek-flash', inputPerMillionCny: 2, outputPerMillionCny: 8,
@@ -55,7 +56,9 @@ function createBudget({ filePath, now = () => new Date() }) {
     return value;
   }
   function row(key = month()) { return data.months[key] ||= { text: 0, speech: 0, uncertain: 0, unpriced: 0 }; }
+  function checkRestore() { if (restoreMarker && fs.existsSync(restoreMarker)) { blockedReason = '完整备份正在恢复，预算记录暂停写入；请待恢复完成并重新启动学习服务。'; throw failure(); } }
   function persist() {
+    checkRestore();
     const tmp = filePath + '.' + owner + '.tmp';
     try {
       const fd = fs.openSync(tmp, 'w', 0o600);
@@ -65,6 +68,7 @@ function createBudget({ filePath, now = () => new Date() }) {
   }
   function ensure() {
     if (closed) throw failure();
+    checkRestore();
     if (blockedReason) throw failure();
     if (data) return;
     try {

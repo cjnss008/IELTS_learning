@@ -26,3 +26,12 @@ test('配置变化更新密文，未知provider不能导入，非Windows不自�
 test('Windows真实DPAPI可往返且密文不包含明文', {skip:process.platform!=='win32'},async()=>{
  const text='IELTS-test-only-加密往返';const encrypted=await dpapi('protect',text);assert.ok(!encrypted.includes(text));assert.equal(await dpapi('unprotect',encrypted),text);
 });
+test('恢复前冻结配置，先写完已接受的密文再关闭服务，拒绝迟到的旧写入',async t=>{
+ const filePath=await setup(t);let provider={appid:'test-app',secret:'isolated-test'},release,waiting;
+ const vault=createCredentialVault({filePath,supported:true,protect:async v=>'encrypted:'+Buffer.from(v).toString('base64'),exclusive:async run=>{if(waiting)await waiting;return run();},providers:{oral:{get:()=>provider,restore:()=>{}}}});
+ await vault.setEnabled(true);waiting=new Promise(resolve=>{release=resolve;});
+ const accepted=vault.saveIfEnabled(),drained=vault.freeze();
+ await assert.rejects(vault.saveIfEnabled(),/正在恢复/);await assert.rejects(vault.setEnabled(false),/正在恢复/);
+ release();await accepted;await drained;provider=null;
+ const saved=JSON.parse(Buffer.from((await fs.readFile(filePath,'utf8')).slice(10),'base64').toString());assert.equal(saved.providers.oral.appid,'test-app');assert.equal(saved.providers.oral.secret,'isolated-test');
+});

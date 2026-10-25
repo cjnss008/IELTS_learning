@@ -9,6 +9,14 @@ const { spawnSync } = require('node:child_process');
 const config = { baseUrl: 'https://api.deepseek.com', model: 'deepseek-flash' };
 const unknown = { baseUrl: 'https://example.test/v1', model: 'unquoted-model' };
 const messages = [{ role: 'user', content: 'Mock learning text.' }];
+
+test('an already loaded budget cannot rewrite its ledger while a full restore marker is present', t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ielts-budget-restore-')), filePath = path.join(dir, 'config', 'budget-ledger.json'), marker = path.join(dir, 'backups', 'daily', 'restore-in-progress.json');
+  const budget = createBudget({ filePath });
+  t.after(() => { budget.close(); const target=path.resolve(dir); assert.equal(path.dirname(target),path.resolve(os.tmpdir())); assert.ok(path.basename(target).startsWith('ielts-budget-restore-')); fs.rmSync(target,{recursive:true,force:true}); });
+  assert.equal(budget.status(config).state, 'ok'); const before=fs.readFileSync(filePath); fs.mkdirSync(path.dirname(marker),{recursive:true}); fs.writeFileSync(marker,'{"schemaVersion":1,"id":"fixture"}');
+  assert.throws(()=>budget.configure({enabled:true,monthlyLimitCny:25}),error=>error.code==='BUDGET_BLOCKED'); budget.reserveText(config,messages,20); assert.deepEqual(fs.readFileSync(filePath),before); assert.equal(budget.status(config).state,'blocked');
+});
 function fixture(t) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ielts-budget-test-'));
   const filePath = path.join(dir, 'ledger.json');
