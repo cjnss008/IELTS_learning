@@ -417,7 +417,7 @@ function createPlacement({ rootDir, userData, curriculum, evidenceStore, sourceP
     }
   }
   function responses(body, doc) {
-    fields(body, ['profileId', 'assessmentId', 'responses'], '评估请求');
+    fields(body, ['profileId', 'assessmentId', 'responses', 'retry'], '评估请求');
     if (!Array.isArray(body.responses) || body.responses.length > doc.tasks.length) fail('PLACEMENT_RESPONSES', '请提交原始逐项回答。');
     const seen = new Set();
     return body.responses.map(r => {
@@ -574,32 +574,54 @@ function createPlacement({ rootDir, userData, curriculum, evidenceStore, sourceP
     const reviewers = successful.map(r => r.reviewer), distinct = reviewers.length === 2 && (reviewers[0]?.model !== reviewers[1]?.model || reviewers[0]?.providerHost !== reviewers[1]?.providerHost);
     return { ok: true, assessmentId: doc.id, complete, status, provisional: SKILLS.some(s => skills[s].provisional), skills, recommendation: complete ? { day, week: courseDay.week, level, title: courseDay.title, reason: '按听说读写四项中保守的最低阶段匹配现有课程；建议起点不把以前课程记为已完成。' + (skills.speaking.verification === 'limited' ? '口语使用有限证据，最高从A2起步并继续核验自由表达。' : ''), gaps } : null, rounds, reviewMode: distinct ? 'second-model-blind' : 'same-model-blind', promptVersion: PROMPT_VERSION, rubricVersion: WRITING_RUBRIC.version, rubricSources: clone(WRITING_RUBRIC.sources), createdAt: now().toISOString(), disclaimer: disclaimer + (distinct ? '使用不同模型/服务的两轮盲评，仍非独立考官认证。' : '同一模型的两轮独立请求，不是两个独立评阅模型。') };
   }
+  function retryRounds(previous) {
+    const reusable = new Map();
+    for (let round = 1; round <= 2; round++) {
+      const candidates = Array.isArray(previous.rounds) ? previous.rounds.filter(value => value?.round === round) : [];
+      const value = candidates.length === 1 ? candidates[0] : null;
+      if (value?.ok === true && SKILLS.every(skill => plain(value.skills?.[skill]) && LEVELS.includes(value.skills[skill].level)) && value.skills.writing.criteriaValid === true) reusable.set(round, value);
+    }
+    const disagreement = reusable.size === 2 && SKILLS.some(skill => Math.abs(LEVELS.indexOf(reusable.get(1).skills[skill].level) - LEVELS.indexOf(reusable.get(2).skills[skill].level)) >= 2);
+    if (disagreement) reusable.clear();
+    return { reusable, disagreement };
+  }
   async function evaluate(body, runAI) {
-    fields(body, ['profileId', 'assessmentId', 'responses'], '评估请求');
+    fields(body, ['profileId', 'assessmentId', 'responses', 'retry'], '评估请求');
+    if (body.retry !== undefined && typeof body.retry !== 'boolean') fail('PLACEMENT_INPUT', '仅重试AI评价标记无效。');
     if (typeof body.profileId !== 'string' || !PROFILE.test(body.profileId) || typeof body.assessmentId !== 'string' || !ID.test(body.assessmentId)) fail('PLACEMENT_ID', '测评或档案编号无效。');
     const key = body.profileId + '/' + body.assessmentId;
     if (active.has(key)) fail('PLACEMENT_BUSY', '本份测评正在保存或评估，请等待完成。', 429);
     active.add(key);
-    let doc, attempt;
+    let doc, attempt, reuse = new Map();
     try {
       await userData.withLock(async () => {
         doc = load(body.profileId, body.assessmentId); await bound(doc);
         if (doc.tasks.length !== 10 || doc.status === 'generating') fail('PLACEMENT_NOT_READY', '测评任务尚未完成生成与审题。', 409);
         if (doc.activeEvaluation && now().getTime() - Date.parse(doc.activeEvaluation.startedAt) < 5 * 60 * 1000) fail('PLACEMENT_BUSY', '另一份请求正在评估本测评，请稍后重试。', 423);
         if (doc.attempts.length >= 20) fail('PLACEMENT_ATTEMPT_LIMIT', '本份测评已保存20次尝试，请开始新的分级短测。', 409);
-        const raw = responses(body, doc), speaking = raw.find(r => r.taskId === 'speaking'), speech = speechProof(doc, speaking);
-        attempt = { id: crypto.randomUUID(), submittedAt: now().toISOString(), rawResponses: clone(body.responses), responses: raw, objective: { listening: objective(doc, raw, 'listening'), reading: objective(doc, raw, 'reading') }, speech: { kind: speech.kind, verification: speech.verification, ceiling: speech.ceiling, durationSeconds: speech.durationSeconds || null, gaps: speech.gaps, ...(speech.proof ? { proof: speech.proof } : {}) }, ...(speech.proof ? { speechEvidenceId: speaking.evidenceId, speechProof: speech.proof } : {}), status: 'evaluating', rounds: [] };
-        doc.attempts.push(attempt); doc.activeEvaluation = { id: attempt.id, startedAt: attempt.submittedAt }; doc.report = null; doc.status = 'evaluating'; doc.updatedAt = attempt.submittedAt; save(doc);
+        const raw = responses(body, doc), previous = body.retry === true ? doc.attempts.at(-1) : null;
+        let retry;
+        if (body.retry === true) {
+          if (!plain(previous) || !Array.isArray(previous.responses) || doc.report?.complete === true || doc.report?.status === 'complete' || previous.report?.complete === true || previous.report?.status === 'complete' || doc.status === 'complete') fail('PLACEMENT_RETRY_UNAVAILABLE', '没有可重试的未完成评价；已有完整报告保留。', 409);
+          if (JSON.stringify(raw) !== JSON.stringify(previous.responses)) fail('PLACEMENT_RETRY_RESPONSES_CHANGED', '本次回答、原稿或原音证据已改变；不能复用旧轮，请用正常提交重新评价。原记录保留。', 409);
+          const plan = retryRounds(previous);
+          reuse = new Map([...plan.reusable].map(([round, value]) => [round, { ...clone(value), reused: true, sourceAttemptId: previous.id, reuseReason: '原始回答及原音证据未改变；本轮四项分级与写作逐项标准均已通过核验。' }]));
+          retry = { sourceAttemptId: previous.id, reason: plan.disagreement ? 'independent-reassessment-after-disagreement' : 'retry-incomplete-rounds', reusedRounds: [...reuse.keys()] };
+        }
+        const speaking = raw.find(r => r.taskId === 'speaking'), speech = speechProof(doc, speaking);
+        attempt = { id: crypto.randomUUID(), submittedAt: now().toISOString(), rawResponses: clone(body.responses), responses: raw, objective: { listening: objective(doc, raw, 'listening'), reading: objective(doc, raw, 'reading') }, speech: { kind: speech.kind, verification: speech.verification, ceiling: speech.ceiling, durationSeconds: speech.durationSeconds || null, gaps: speech.gaps, ...(speech.proof ? { proof: speech.proof } : {}) }, ...(speech.proof ? { speechEvidenceId: speaking.evidenceId, speechProof: speech.proof } : {}), ...(retry ? { retry } : {}), status: 'evaluating', rounds: [...reuse.values()] };
+        doc.attempts.push(attempt); doc.activeEvaluation = { id: attempt.id, startedAt: attempt.submittedAt }; if (!retry) doc.report = null; doc.status = 'evaluating'; doc.updatedAt = attempt.submittedAt; save(doc);
       });
       const rounds = [];
       for (let round = 1; round <= 2; round++) {
+        if (reuse.has(round)) { rounds.push(reuse.get(round)); continue; }
         try {
           const result = await runAI(evaluationMessages(doc, attempt, round), { round, maxTokens: 9000 });
           rounds.push(parsedRound(result.content, doc, attempt, round, result.reviewer));
         } catch (error) {
           const known = typeof error.code === 'string';
           rounds.push({ ok: false, round, error: { code: known ? error.code : 'PLACEMENT_EVALUATION_FAILED', message: '本轮评估未完成，原始回答已在用户目录保存，请重试。' } });
-          break;
+          if (body.retry !== true) break;
         }
       }
       const result = report(doc, attempt, rounds);

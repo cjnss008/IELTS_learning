@@ -40,7 +40,9 @@ function browser(options = {}) {
       this.plays++; this.fire('play');
       if (env.rejected) throw env.rejected;
       if (env.withheld) await env.withheld;
-      this.paused = false; this.ended = false; this.fire('playing');
+      this.paused = false; this.ended = false;
+      if (env.beforePlaying) await env.beforePlaying(this, env);
+      this.fire('playing');
     }
     pause() { if (!this.paused) { this.paused = true; this.fire('pause'); } }
     load() { this.loads++; this.currentTime = 0; this.ended = false; this.error = null; this.nativeRanges = []; }
@@ -136,9 +138,86 @@ test('native played evidence closes a 51.144-second background tail when final t
  }
 });
 
+test('a delayed playing event settles the real native head before normal end or task disposal',async()=>{
+ for(const disposal of [false,true]){
+  const page=browser({assessment:true,nativePlayed:true,beforePlaying:(_audio,env)=>env.advance(.25,false)});await page.controller.play();
+  assert.equal(page.controller.getState().coverage.coveredSeconds,.25);page.advance(9.75,false);
+  if(disposal){page.audio.paused=true;page.audio.ended=true;page.controller.destroy();}else page.finish();
+  const state=page.controller.getState();assert.equal(state.complete,true);assert.equal(state.coverage.coveredSeconds,10);assert.equal(state.coverage.jumps,0);assert.equal(page.events.filter(e=>e.type==='complete'&&e.value).length,1);
+  if(!disposal){assert.equal(await page.controller.play(),false);assert.equal(await page.controller.reload(),false);page.controller.destroy();}
+ }
+});
+
+test('a delayed playing head requires native evidence and plausible actual elapsed playback',async()=>{
+ for(const scenario of ['no-native','too-fast']){
+  const page=browser({assessment:true,nativePlayed:scenario!=='no-native',beforePlaying:(audio,env)=>{
+   if(scenario==='no-native')env.advance(.25,false);else{audio.currentTime=1;audio.nativeRanges=[[0,1]];}
+  }});await page.controller.play();page.advance(scenario==='no-native'?9.75:9,false);page.finish();
+  assert.equal(page.controller.getState().complete,false,scenario);assert.equal(page.events.some(e=>e.type==='complete'&&e.value),false,scenario);assert.ok(page.controller.getState().coverage.coveredSeconds<=9.75,scenario);page.controller.destroy();
+ }
+});
+
+test('buffering before playing never creates coverage, and real playback after buffering can complete',async()=>{
+ const page=browser({assessment:true,nativePlayed:true,beforePlaying:(audio,env)=>{
+  audio.fire('waiting');env.now+=120000;audio.fire('timeupdate');assert.equal(env.controller.getState().coverage.coveredSeconds,0);assert.equal(env.controller.getState().available,false);env.advance(.25,false);
+ }});await page.controller.play();page.advance(9.75,false);page.finish();assert.equal(page.controller.getState().complete,true);assert.equal(page.controller.getState().coverage.coveredSeconds,10);page.controller.destroy();
+ let release;const gate=new Promise(resolve=>{release=resolve;}),pendingPage=browser({assessment:true,nativePlayed:true,beforePlaying:()=>gate}),request=pendingPage.controller.play();
+ pendingPage.now+=120000;pendingPage.audio.fire('waiting');pendingPage.audio.fire('timeupdate');assert.equal(pendingPage.controller.getState().coverage.coveredSeconds,0);pendingPage.controller.destroy();release();await request;
+ assert.equal(pendingPage.controller.getState().complete,false);assert.equal(pendingPage.events.some(e=>e.type==='available'&&e.value||e.type==='complete'&&e.value),false);
+});
+
+test('delayed playing retains mute and volume boundaries instead of crediting the native played history',async()=>{
+ for(const scenario of ['initial-muted','initial-zero-volume','muted-after-request']){
+  const page=browser({assessment:true,nativePlayed:true,beforePlaying:(audio,env)=>{
+   if(scenario==='muted-after-request'){env.advance(.25,false);audio.muted=true;audio.fire('volumechange');}
+   env.advance(.25,false);audio.muted=false;audio.volume=1;audio.fire('volumechange');
+  }});
+  if(scenario==='initial-muted')page.audio.muted=true;else if(scenario==='initial-zero-volume')page.audio.volume=0;
+  await page.controller.play();page.advance(10-page.audio.currentTime,false);page.audio.paused=true;page.audio.ended=true;
+  assert.equal(page.audio.played.length,1);assert.equal(page.audio.played.end(0),10);
+  if(scenario==='muted-after-request')page.controller.destroy();else page.finish();
+  assert.equal(page.controller.getState().complete,false,scenario);assert.equal(page.controller.getState().coverage.coveredSeconds,9.75,scenario);assert.equal(page.events.some(e=>e.type==='complete'&&e.value),false,scenario);page.controller.destroy();
+ }
+});
+
+test('disposing a partial delayed-playing attempt preserves only its actual head and audible progress',async()=>{
+ for(const ended of [false,true]){
+  const page=browser({assessment:true,nativePlayed:true,beforePlaying:(_audio,env)=>env.advance(.25,false)});await page.controller.play();page.advance(3.75,false);page.audio.paused=true;page.audio.ended=ended;page.controller.destroy();
+  assert.equal(page.controller.getState().coverage.coveredSeconds,4);assert.equal(page.controller.getState().complete,false);assert.equal(page.events.some(e=>e.type==='complete'&&e.value),false);
+ }
+});
+
+test('a seek before delayed playing cannot bridge native gaps, including when disposing at the end',async()=>{
+ for(const disposal of [false,true]){
+  const page=browser({assessment:true,nativePlayed:true,beforePlaying:(audio,env)=>{
+   env.advance(.5,false);audio.seeking=true;audio.currentTime=9;audio.fire('seeking');audio.seeking=false;audio.fire('seeked');env.advance(.5,false);
+  }});await page.controller.play();page.advance(.5,false);
+  if(disposal){page.audio.paused=true;page.audio.ended=true;page.controller.destroy();}else page.finish();
+  assert.equal(page.controller.getState().complete,false);assert.ok(page.controller.getState().coverage.coveredSeconds<=1.5);assert.ok(page.events.some(e=>e.type==='assistance'&&e.detail.reason==='seek'));assert.equal(page.events.some(e=>e.type==='complete'&&e.value),false);page.controller.destroy();
+ }
+});
+
 test('a native coverage gap cannot be bridged by enough elapsed wall time or a single late ended event',async()=>{
  const page=browser({assessment:true,nativePlayed:true});await page.controller.play();page.advance(1);page.now+=9000;page.audio.currentTime=10;page.audio.nativeRanges=[[0,1],[9,10]];page.audio.paused=true;page.audio.ended=true;page.audio.fire('timeupdate');page.audio.fire('pause');page.audio.fire('ended');
- assert.equal(page.controller.getState().complete,false);assert.equal(page.controller.getState().coverage.coveredSeconds,2);assert.ok(page.events.some(e=>e.type==='assistance'&&e.detail.reason==='seek'));assert.equal(await page.controller.reload(),false);assert.equal(await page.controller.play(),false);assert.equal(page.audio.plays,1);page.controller.destroy();
+ assert.equal(page.controller.getState().complete,false);assert.equal(page.controller.getState().coverage.coveredSeconds,2);assert.ok(page.events.some(e=>e.type==='assistance'&&e.detail.reason==='seek'));assert.equal(await page.controller.play(),false);assert.equal(page.audio.plays,1);assert.equal(page.reloadButton.hidden,false);assert.match(page.reloadButton.textContent,/重新完整听音/);
+ assert.equal(await page.controller.reload(),true);assert.equal(page.audio.plays,2);assert.equal(page.controller.getState().coverage.coveredSeconds,0);assert.ok(page.events.some(e=>e.type==='assistance'&&e.detail.reason==='retry-after-partial'));page.advance(10,false);page.finish();assert.equal(page.controller.getState().complete,true);assert.match(page.status.textContent,/重听/);page.controller.destroy();
+});
+
+test('disposing after the native file ended settles real final played coverage before removing listeners',async()=>{
+ const page=browser({assessment:true,nativePlayed:true});await page.controller.play();page.advance(10,false);page.audio.paused=true;page.audio.ended=true;
+ assert.equal(page.events.some(e=>e.type==='complete'&&e.value),false);page.controller.destroy();
+ const state=page.controller.getState();assert.equal(state.disposed,true);assert.equal(state.complete,true);assert.equal(state.coverage.coveredSeconds,10);assert.equal(page.events.filter(e=>e.type==='complete'&&e.value).length,1);assert.equal(page.events.find(e=>e.type==='complete'&&e.value).detail.reason,'complete-before-dispose');
+ page.audio.fire('ended');page.controller.destroy();assert.equal(page.events.filter(e=>e.type==='complete'&&e.value).length,1);
+});
+
+test('disposing never upgrades incomplete, muted, or not-yet-ended playback into a completed assessment',async()=>{
+ for(const scenario of ['partial','muted','not-ended']){
+  const page=browser({assessment:true,nativePlayed:true});await page.controller.play();
+  if(scenario==='partial'){page.advance(4,false);page.audio.paused=true;page.audio.ended=true;}
+  else if(scenario==='muted'){page.advance(4,false);page.audio.muted=true;page.audio.fire('volumechange');page.advance(2,false);page.audio.muted=false;page.audio.fire('volumechange');page.advance(4,false);page.audio.paused=true;page.audio.ended=true;}
+  else page.advance(10,false);
+  page.controller.destroy();assert.equal(page.controller.getState().complete,false,scenario);assert.equal(page.events.some(e=>e.type==='complete'&&e.value),false,scenario);
+ }
 });
 
 test('explicit seek boundaries remain incomplete even when a background interval would make the wall-clock heuristic permissive',async()=>{

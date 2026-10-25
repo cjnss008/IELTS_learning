@@ -81,7 +81,7 @@
   function mount(host, options = {}) {
     if (!host || !root.document) throw Error('听力播放器缺少挂载位置。');
     const doc = root.document, assessment = options.assessment === true, coverage = createCoverage({ now: options.now });
-    let source = '', disposed = false, generation = 0, reloads = 0, phase = 'ready', available = false, complete = false, successful = false, ended = false, playing = false, failed = false, stalled = false, requesting = false, lastError = null, assistance = new Set();
+    let source = '', disposed = false, disposing = false, generation = 0, reloads = 0, phase = 'ready', available = false, complete = false, successful = false, ended = false, playing = false, pendingStart = false, failed = false, stalled = false, requesting = false, lastError = null, assistance = new Set();
     function node(tag, className, text) { const element = doc.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; }
     const box = node('div', 'listening-player'), audio = node('audio', 'listening-player-audio'), controls = node('div', 'course-audio-controls'), playButton = node('button', '', '播放听力'), reloadButton = node('button', '', '重新载入并重试'), status = node('p', 'course-small');
     audio.preload = 'metadata'; audio.controls = !assessment; playButton.type = reloadButton.type = 'button'; reloadButton.hidden = true; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
@@ -93,27 +93,39 @@
     function setAvailable(value, detail = {}) { if (available === value) return; available = value; callback('onAvailable', value, detail); }
     function setComplete(value, detail = {}) { if (complete === value) return; complete = value; callback('onComplete', value, { ...detail, coverage: coverage.state(audio.duration) }); }
     function render(message) {
-      if (message !== undefined) status.textContent = message;
-      status.dataset.phase = phase; playButton.disabled = disposed || requesting || assessment && successful && !failed && (phase !== 'paused' || audio.ended); reloadButton.hidden = !failed && !stalled; reloadButton.disabled = disposed || requesting && !stalled;
+      if (message !== undefined) status.textContent = message + (assessment && assistance.has('retry-after-partial') ? ' 已记录本组重听，不作为首次独立播放。' : '');
+      const incompleteEnded = assessment && ended && !complete;
+      status.dataset.phase = phase; playButton.disabled = disposed || requesting || assessment && successful && !failed && (phase !== 'paused' || audio.ended); reloadButton.hidden = !failed && !stalled && !incompleteEnded; reloadButton.disabled = disposed || requesting && !stalled;
+      reloadButton.textContent = incompleteEnded ? '重新完整听音' : '重新载入并重试';
       playButton.textContent = failed ? '重新尝试播放' : phase === 'paused' && successful ? '继续播放听力' : assessment && successful ? '本次测评已开始播放' : '播放听力';
     }
     function audible() { return !audio.muted && audio.volume > 0; }
-    function sample(active = playing, closingInterval = false) {
+    function sample(active = playing || pendingStart, closingInterval = false) {
+      const native = playedRanges(audio);
+      // A play request is not playback. Before PLAYING, only native played
+      // ranges may establish a delayed head; never fall back to elapsed time.
+      if (pendingStart && !playing && !Array.isArray(native)) {
+        pendingStart = false; coverage.resetAnchor(audio.currentTime, false, audio.playbackRate); return { jump: false };
+      }
       // At the end (or a pause), timeupdate may observe paused=true before the
       // queued pause/ended listeners run. Close the previous audible interval
       // before replacing its anchor, rather than discarding a throttled tail.
-      const result = coverage.sample(audio.currentTime, active && (closingInterval || !audio.paused) && !audio.seeking && audible(), audio.playbackRate, { played: playedRanges(audio), closePrevious: closingInterval || playing && !audio.seeking && (audio.paused || audio.ended) });
+      const result = coverage.sample(audio.currentTime, active && (closingInterval || !audio.paused) && !audio.seeking && audible(), audio.playbackRate, { played: native, closePrevious: closingInterval || (playing || pendingStart) && !audio.seeking && (audio.paused || audio.ended) });
       if (result.jump) help('seek'); return result;
     }
     function invalidate(detail) { available = false; complete = false; callback('onAvailable', false, detail); callback('onComplete', false, { ...detail, coverage: coverage.state(audio.duration) }); }
     function fail(error, playError) {
       if (disposed) return;
-      lastError = mediaError(error, playError); failed = true; requesting = false; phase = 'error'; playing = false; coverage.resetAnchor(audio.currentTime, false, audio.playbackRate); invalidate(lastError); render(lastError.message); callback('onError', lastError);
+      lastError = mediaError(error, playError); failed = true; requesting = false; phase = 'error'; playing = false; pendingStart = false; coverage.resetAnchor(audio.currentTime, false, audio.playbackRate); invalidate(lastError); render(lastError.message); callback('onError', lastError);
     }
     function beganPlaying() {
       if (disposed || failed || audio.paused) return;
       if (assessment && ended) { audio.pause(); render('本次测评已用完一次播放。请保留题目作答；不能重放计为独立听力。'); return; }
-      if (!playing) coverage.resetAnchor(audio.currentTime, audible(), audio.playbackRate);
+      if (!playing) {
+        if (pendingStart) sample(true, true);
+        coverage.resetAnchor(audio.currentTime, audible() && !audio.seeking, audio.playbackRate);
+      }
+      pendingStart = false;
       playing = true; requesting = false; successful = true; ended = false; stalled = false; phase = 'playing'; setAvailable(true, { reason: 'playing' });
       render(audible() ? '正在播放。只有实际完整听完才会记为已听完。' : '当前音频静音或音量为零，静音时段不会记入完整听音。');
     }
@@ -128,9 +140,10 @@
     }
     function pause() { if (disposed) return; audio.pause(); requesting = false; if (!ended && !failed) { phase = 'paused'; render('已暂停，已实际播放的时段保留。请通过播放按钮从原位置继续。'); } }
     function reload(autoPlay = true) {
-      if (disposed || !source || assessment && successful && !failed && !stalled) return Promise.resolve(false);
+      const incompleteEnded = assessment && ended && !complete;
+      if (disposed || !source || assessment && successful && !failed && !stalled && !incompleteEnded) return Promise.resolve(false);
       if (successful || coverage.state(audio.duration).coveredSeconds > 0) help('retry-after-partial');
-      generation++; requesting = false; playing = false; audio.pause();
+      generation++; requesting = false; playing = false; pendingStart = false; audio.pause();
       coverage.clear(); invalidate({ reason: 'reload' }); successful = false; ended = false; failed = false; stalled = false; lastError = null; phase = 'loading';
       const url = new URL(source); url.searchParams.set('_ielts_audio_retry', String((options.now || Date.now)()) + '-' + (++reloads)); audio.src = url.href; audio.load(); render('已重新载入本地文件，正在重试；不会把失败播放记为已听。');
       return autoPlay ? play() : Promise.resolve(true);
@@ -140,34 +153,44 @@
       // Native controls bypass the custom button. PLAY records a pending start;
       // PLAYING (or a fulfilled play promise) confirms audio actually started.
       if (assessment && ended) { audio.pause(); return; }
+      if (!playing) {
+        pendingStart = Array.isArray(playedRanges(audio));
+        coverage.resetAnchor(audio.currentTime, pendingStart && audible() && !audio.seeking, audio.playbackRate);
+      }
       if (ended && !assessment) help('replay'); phase = 'loading'; render('音频已请求播放，正在等待实际开始…');
     });
     listen('playing', beganPlaying);
     listen('timeupdate', () => { if (!disposed) sample(); });
-    listen('pause', () => { if (disposed) return; sample(playing, true); playing = false; requesting = false; if (!ended && !failed) { phase = 'paused'; render('已暂停。继续听完所有时段后才会记为已听完。'); } });
+    listen('pause', () => { if (disposed) return; sample(playing, true); playing = false; pendingStart = false; requesting = false; if (!ended && !failed) { phase = 'paused'; render('已暂停。继续听完所有时段后才会记为已听完。'); } });
     listen('waiting', () => { if (!disposed && !failed) { sample(); stalled = true; render('正在缓冲本地音频，尚未完整听完。若一直无声音，可重新载入重试。'); } });
     listen('stalled', () => { if (!disposed && !failed) { stalled = true; render('音频读取暂时停顿。请等待；若仍无声音，可重新载入重试。'); } });
     listen('seeking', () => { if (disposed) return; help('seek'); coverage.resetAnchor(audio.currentTime, false, audio.playbackRate); setComplete(false, { reason: 'seek' }); });
-    listen('seeked', () => { if (!disposed) coverage.resetAnchor(audio.currentTime, playing && audible(), audio.playbackRate); });
-    listen('ratechange', () => { if (disposed) return; sample(playing, true); if (audio.playbackRate !== 1) help('rate'); coverage.resetAnchor(audio.currentTime, playing && !audio.paused && audible(), audio.playbackRate); });
-    listen('volumechange', () => { if (disposed) return; sample(playing, true); coverage.resetAnchor(audio.currentTime, playing && !audio.paused && audible(), audio.playbackRate); if (!audible() && playing) render('当前音频静音或音量为零，静音时段不会记入完整听音。'); });
+    listen('seeked', () => { if (!disposed) coverage.resetAnchor(audio.currentTime, (playing || pendingStart) && !audio.paused && audible(), audio.playbackRate); });
+    listen('ratechange', () => { if (disposed) return; sample(playing, true); if (audio.playbackRate !== 1) help('rate'); coverage.resetAnchor(audio.currentTime, (playing || pendingStart) && !audio.paused && audible(), audio.playbackRate); });
+    listen('volumechange', () => { if (disposed) return; sample(playing, true); coverage.resetAnchor(audio.currentTime, (playing || pendingStart) && !audio.paused && audible(), audio.playbackRate); if (!audible() && (playing || pendingStart)) render('当前音频静音或音量为零，静音时段不会记入完整听音。'); });
     listen('ended', () => {
       if (disposed || failed) return;
-      sample(playing, true); playing = false; requesting = false; ended = true; stalled = false; phase = 'ended';
+      sample(playing, true); playing = false; pendingStart = false; requesting = false; ended = true; stalled = false; phase = 'ended';
       const report = coverage.state(audio.duration);
       if (available && report.complete) { setComplete(true, { reason: 'complete-coverage' }); render('本次音频已实际完整播放到结尾。'); }
-      else { setComplete(false, { reason: 'incomplete-coverage' }); render('已到结尾，但仍有未实际听到的时段；本次不记为完整听完。' + (assessment ? '请保留题目完成作答，再按练习材料重听。' : '请重新从头播放。')); }
+      else { setComplete(false, { reason: 'incomplete-coverage' }); render('已到结尾，但仍有未实际听到的时段；本次不记为完整听完。' + (assessment ? '已有答案保留，请点“重新完整听音”；本次会记录为重听。' : '请重新从头播放。')); }
     });
     listen('error', () => fail(audio.error));
     playButton.addEventListener('click', play); reloadButton.addEventListener('click', () => reload(true));
     try { source = safeSource(options.src, options.baseURL || root.location?.href); audio.src = source; render(assessment ? '测评只开放一次成功播放。音频失败可明确重新载入；失败不记为已听完。' : '练习可使用音频控件播放。完整听音按实际播放时段核对，跳到结尾不算听完。'); }
     catch (error) { lastError = { code: 'INVALID_SOURCE', mediaCode: null, message: error.message, retryable: false }; failed = true; phase = 'error'; invalidate(lastError); render(error.message); playButton.disabled = true; reloadButton.hidden = true; callback('onError', lastError); }
     function destroy() {
-      if (disposed) return; disposed = true; generation++; playing = false; requesting = false;
+      if (disposed || disposing) return; disposing = true;
+      // The browser may already have reached its real end while the queued
+      // ended event has not run before a task switch. Settle that native tail
+      // before detaching listeners. Partial/muted/seeked coverage still fails.
+      sample(playing, true);
+      if (!failed && audio.ended && available && coverage.state(audio.duration).complete) setComplete(true, { reason: 'complete-before-dispose' });
+      disposed = true; generation++; playing = false; pendingStart = false; requesting = false;
       for (const [name, handler] of listeners) audio.removeEventListener(name, handler);
       audio.pause(); audio.removeAttribute('src'); audio.load(); phase = 'destroyed'; render();
     }
-    return { destroy, play, pause, reload, getState: () => ({ phase, available, complete, successful, assessment, failed, error: lastError, coverage: coverage.state(audio.duration), disposed }) };
+    return { destroy, play, pause, reload, getState: () => ({ phase, available, complete, successful, assessment, failed, error: lastError, coverage: coverage.state(audio.duration), assistance: [...assistance], reloads, disposed }) };
   }
   const api = Object.freeze({ mount, safeSource, mediaError, createCoverage, playedRanges }); root.IELTSListeningPlayer = api; if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
