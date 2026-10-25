@@ -21,6 +21,6 @@
  }
  // Large reports keep their full evidence in per-round media records. The run
  // record contains stable links, so the existing 150KB media limit is respected.
- function compact(report){return {...report,items:(report.items||[]).map(item=>{const {value,...meta}=item;return {...meta,result:{...item.result,rounds:(item.result.rounds||[]).map(round=>round.ok?{ok:true,round:round.round,...(round.reviewer?{reviewer:round.reviewer}:{}),criteria:round.criteria.map(c=>({id:c.id,label:c.label,band:c.band})),...(round.levelCheck?{levelCheck:{targetLevel:round.levelCheck.targetLevel,meetsGoal:round.levelCheck.meetsGoal}}:{})}:round)}};})};}
+ function compact(report){return {...report,items:(report.items||[]).map(item=>{const {value,...meta}=item;return {...meta,result:{...item.result,rounds:(item.result.rounds||[]).map(round=>round.ok?{ok:true,round:round.round,...(round.reviewer?{reviewer:round.reviewer}:{}),criteria:round.criteria.map(c=>({id:c.id,label:c.label,band:c.band})),...(round.levelCheck?{levelCheck:{targetLevel:round.levelCheck.targetLevel,scope:round.levelCheck.scope,meetsGoal:round.levelCheck.meetsGoal}}:{})}:round)}};})};}
  const api={parseImport,identity,riskSummary,regression,compact};if(typeof module==='object'&&module.exports)module.exports=api;root.IELTSCalibration=api;
 })(globalThis);
