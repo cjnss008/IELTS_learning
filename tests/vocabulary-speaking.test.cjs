@@ -95,3 +95,28 @@ test('a late cancelled microphone permission stops only its own stream after a n
  const starting=env.controller.start('hello',env.context);env.controller.cancel('练习已暂停');await env.controller.start('student',{...env.context,wordIndex:1});
  waiting.resolve({getTracks:()=>[oldTrack]});await assert.rejects(starting,/录音练习或学习档案已切换/);assert.equal(oldTrack.stopped,true);assert.equal(activeTrack.stopped,false);assert.equal(env.controller.getState().phase,'recording');assert.equal(env.recorder.state,'recording');env.controller.destroy();
 });
+
+test('the vocabulary controller prefers PCM, waits for final data, and preserves an earlier counted attempt',async()=>{
+ const env=environment();await env.controller.start('hello',env.context);await env.controller.stop();env.controller.destroy();const previous=env.attempts[0];
+ let local;env.host.AudioContext=function(){};env.host.MediaRecorder=class{constructor(){throw Error('Compressed recorder must not be used');}};
+ const controller=env.make({createPCMRecorder:async()=>{local={state:'inactive',mimeType:'audio/wav',start(){this.state='recording';},stop(){this.state='stopping';},abort(){this.state='inactive';}};return local;}});
+ await controller.start('hello',{...env.context,trial:2});const ending=controller.stop();assert.equal(controller.getState().phase,'saving');assert.equal(controller.getState().busy,true);assert.equal(env.attempts.length,1);local.ondataavailable({data:new Blob(['pcm-independent-original'],{type:'audio/wav'})});local.state='inactive';await local.onstop();const proof=await ending;assert.equal(proof.trial,2);assert.equal(env.attempts.length,2);assert.deepEqual(env.attempts[0],previous);assert.equal(env.entries.get(proof.workId).blob.type,'audio/wav');controller.destroy();
+});
+
+test('cancelling while PCM initialises closes only that pending recorder and does not save it',async()=>{
+ const env=environment(),pending=deferred();env.controller.destroy();env.host.AudioContext=function(){};let aborted=false;const controller=env.make({createPCMRecorder:()=>pending.promise});const starting=controller.start('hello',env.context);await settle();controller.cancel();pending.resolve({state:'inactive',abort(){aborted=true;}});await assert.rejects(starting,/档案已切换|练习/);assert.ok(aborted);assert.equal(env.saved.length,0);assert.equal(env.requests.length,0);controller.destroy();
+});
+
+test('a PCM processing error leaves prior attempts intact and allows a fresh recording',async()=>{
+ const env=environment();await env.controller.start('hello',env.context);await env.controller.stop();env.controller.destroy();env.host.AudioContext=function(){};let local;const controller=env.make({createPCMRecorder:async()=>local={state:'inactive',mimeType:'audio/wav',start(){this.state='recording';},stop(){this.state='stopping';},abort(){this.state='inactive';}}});
+ await controller.start('hello',{...env.context,trial:2});const ending=controller.stop();local.onerror({error:Error('麦克风数据未能及时收齐')});assert.equal(await ending,null);assert.equal(env.attempts.length,1);assert.equal(env.saved.length,1);assert.equal(controller.getState().busy,false);assert.match(controller.getState().message,/未能及时收齐/);await controller.start('hello',{...env.context,trial:2});assert.equal(controller.getState().phase,'recording');controller.destroy();
+});
+
+test('an unversioned historical audio proof uses its original decoder contract when PCM hashes differ',async()=>{
+ const env=environment();await env.controller.start('hello',env.context);const original=await env.controller.stop(),work=env.entries.get(original.workId),saved=JSON.stringify(work.diagnosis);let legacyCalls=0;
+ const restored=env.make({prepareAudio:async blob=>({...await env.prepare(blob),hash:'f'.repeat(64),pcmHashProtocol:'pcm16-direct-v1'}),prepareLegacyAudio:async blob=>{legacyCalls++;return env.prepare(blob);}});
+ const proof=await restored.restore(original.workId,{...env.context,word:'hello'});assert.equal(proof.hash,original.hash);assert.equal(legacyCalls,1);assert.equal(JSON.stringify(work.diagnosis),saved);assert.equal(env.requests.length,1);restored.destroy();env.controller.destroy();
+});
+test('a direct PCM proof cannot be accepted by substituting the old decoder on a hash mismatch',async()=>{
+ const env=environment();await env.controller.start('hello',env.context);const original=await env.controller.stop();env.entries.get(original.workId).diagnosis.pcmHashProtocol='pcm16-direct-v1';let legacyCalls=0;const restored=env.make({prepareAudio:async blob=>({...await env.prepare(blob),hash:'f'.repeat(64),pcmHashProtocol:'pcm16-direct-v1'}),prepareLegacyAudio:async blob=>{legacyCalls++;return env.prepare(blob);}});await assert.rejects(restored.restore(original.workId,{...env.context,word:'hello'}),/尚无可核对/);assert.equal(legacyCalls,0);assert.equal(env.attempts.length,1);restored.destroy();env.controller.destroy();
+});

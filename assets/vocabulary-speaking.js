@@ -12,20 +12,27 @@ function activity(samples,sampleRate=16000){
 async function prepareAudio(blob,options={}){
  const host=options.root||root,Context=options.AudioContext||host.AudioContext||host.webkitAudioContext,Offline=options.OfflineAudioContext||host.OfflineAudioContext||host.webkitOfflineAudioContext;
  const encode=options.encodeWav||host.IELTSSpeakingAudio?.encodeWav,base64=options.base64||host.IELTSMediaLibrary?.base64,crypto=options.crypto||host.crypto;
- if(!Context||!Offline||!encode||!base64||!crypto?.subtle)throw Error('浏览器不能整理真实原音，请用本地服务和近期Chrome/Edge打开。');
- const context=new Context();let buffer;try{buffer=await context.decodeAudioData(await blob.arrayBuffer());}finally{await context.close();}
- if(!Number.isFinite(buffer.duration)||buffer.duration<.25||buffer.duration>15.1)throw Error('每次词汇跟读请录0.25至15秒。');
- const frames=Math.floor(buffer.duration*16000),offline=new Offline(1,frames,16000),source=offline.createBufferSource();source.buffer=buffer;source.connect(offline.destination);source.start();
- const rendered=await offline.startRendering(),samples=rendered.getChannelData(0),signal=activity(samples);
+ if(!encode||!base64||!crypto?.subtle)throw Error('浏览器不能整理真实原音，请用本地服务和近期Chrome/Edge打开。');
+ const bytes=await blob.arrayBuffer(),pcm=!options.forceBrowserDecode&&(options.decodePcmWav||host.IELTSSpeakingAudio?.decodePcmWav)?.(bytes);let samples;
+ if(pcm)samples=pcm.samples;
+ else{
+  if(!Context||!Offline)throw Error('浏览器不能整理旧录音格式，请重新录制；已完成的输入与跟读次数保留。');
+  const context=new Context();let buffer;try{buffer=await context.decodeAudioData(bytes);}catch(error){const issue=Error('这次录音的音频格式未能读取，尚未提交阿里云。请重新录制；已输入内容和已完成的跟读次数保留。');issue.code='VOCAB_AUDIO_DECODE_FAILED';throw issue;}finally{await context.close();}
+  if(!Number.isFinite(buffer.duration)||buffer.duration<.25||buffer.duration>15.1)throw Error('每次词汇跟读请录0.25至15秒，等“正在录音”出现后读完再结束。');
+  const frames=Math.floor(buffer.duration*16000),offline=new Offline(1,frames,16000),source=offline.createBufferSource();source.buffer=buffer;source.connect(offline.destination);source.start();samples=(await offline.startRendering()).getChannelData(0);
+ }
+ if(samples.length<4000||samples.length>241600)throw Error('每次词汇跟读请录0.25至15秒，等“正在录音”出现后读完再结束。');
+ const signal=activity(samples);
  if(!signal.nonSilent)throw Error('没有检测到足够清晰的声音。本次无声或音量太低，不计跟读次数，请靠近麦克风重录。');
  const wav=encode(samples),hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',wav))].map(value=>value.toString(16).padStart(2,'0')).join('');
- return{audio:base64(wav),hash,...signal};
+ return{audio:base64(wav),hash,pcmHashProtocol:pcm?'pcm16-direct-v1':'browser-decode-v1',...signal};
 }
 function judge(result){const complete=Object.keys(THRESHOLDS).every(key=>validScore(result?.[key]));return{complete,passed:complete&&Object.keys(THRESHOLDS).every(key=>result[key]>=THRESHOLDS[key])};}
 function create(options={}){
  const host=options.root||root,library=options.library||host.IELTSMediaLibrary?.createLibrary?.()||host.IELTSMediaLibrary,fetcher=options.fetch||host.fetch?.bind(host),prepare=options.prepareAudio||((blob)=>prepareAudio(blob,{...options,root:host}));
+ const prepareLegacy=options.prepareLegacyAudio||options.prepareAudio||((blob)=>prepareAudio(blob,{...options,root:host,forceBrowserDecode:true}));
  const profile=()=>host.IELTSProfiles?.current?.()?.id||'legacy',owner=profile(),seenHashes=new Map();
- let phase='idle',message='',context=null,recorder=null,stream=null,timer=null,aborter=null,disposed=false,generation=0,completion=null,resolveCapture=null,preview=null;
+ let phase='idle',message='',context=null,recorder=null,stream=null,timer=null,aborter=null,captureSetup=null,disposed=false,generation=0,completion=null,resolveCapture=null,preview=null;
  const busy=()=>['requesting','recording','saving','assessing'].includes(phase);
  function current(token=generation){return !disposed&&token===generation&&profile()===owner;}
  function check(token=generation){if(!current(token))throw Error('录音练习或学习档案已切换，原音不会写入其他档案。');}
@@ -54,7 +61,7 @@ function create(options={}){
  async function assess(work,prepared,ctx,token){
   check(token);checkDuplicate(prepared.hash,work.id);announce('assessing','原音已保存，正在进行阿里专业评测；失败时可重试同一原音。');
   const requestController=new AbortController();aborter=requestController;const timeout=host.setTimeout?.(()=>requestController.abort(),95000);
-  try{const response=await json({reference:work.originalText,audio:prepared.audio,coreType:'en.sent.score'},requestController.signal);check(token);const diagnosis={provider:response.provider,evidenceId:response.evidenceId,result:response.result,pcmHash:prepared.hash,voiceActivity:{durationSeconds:prepared.durationSeconds,rms:prepared.rms,peak:prepared.peak,voicedSeconds:prepared.voicedSeconds,nonSilent:prepared.nonSilent},trainingVersion:2,captureComplete:false,completedAt:new Date().toISOString()};
+  try{const response=await json({reference:work.originalText,audio:prepared.audio,coreType:'en.sent.score'},requestController.signal);check(token);const diagnosis={provider:response.provider,evidenceId:response.evidenceId,result:response.result,pcmHash:prepared.hash,...(prepared.pcmHashProtocol?{pcmHashProtocol:prepared.pcmHashProtocol}:{}),voiceActivity:{durationSeconds:prepared.durationSeconds,rms:prepared.rms,peak:prepared.peak,voicedSeconds:prepared.voicedSeconds,nonSilent:prepared.nonSilent},trainingVersion:2,captureComplete:false,completedAt:new Date().toISOString()};
    proofFor(work,diagnosis,prepared,ctx);await library.update(work.id,{diagnosis,evidenceId:diagnosis.evidenceId,queueStatus:'reviewed',lastError:''});check(token);const proof=await publish(work,diagnosis,prepared,ctx,{token});check(token);await library.update(work.id,{diagnosis:{...diagnosis,captureComplete:true},queueStatus:'reviewed'});check(token);await options.onAttempt?.(proof);check(token);announce('idle',proof.passed?'本次跟读已计入，专业指标达到门槛。':'本次真实跟读已计入，专业未达标问题已进入统一错题本。');return proof;
   }catch(error){if(current(token)){try{await library.update(work.id,{lastError:error.message.slice(0,500),queueStatus:'pending'});}catch(_){}if(current(token))announce('pending',error.message+' 本次尚未计入三次跟读，原音已保留。');}throw error;}
   finally{if(timeout)host.clearTimeout?.(timeout);if(aborter===requestController)aborter=null;}
@@ -65,21 +72,26 @@ function create(options={}){
   const work=await library.create({kind:'audio',name:'词汇跟读 '+ctx.word+' · 第'+ctx.trial+'次',originalText:ctx.word,prompt:ctx.word,mode:'vocabulary_follow',task:'vocabulary_follow',level:ctx.level||'A0',materialId:ctx.materialId,dayNumber:ctx.dayNumber,durationSeconds:prepared.durationSeconds},blob);check(token);await options.onSaved?.(work,ctx);check(token);return assess(work,prepared,ctx,token);
  }
  async function start(word,ctx={}){
-  check();if(busy())throw Error('请先结束当前跟读录音。');if(!host.navigator?.mediaDevices?.getUserMedia||!host.MediaRecorder)throw Error('浏览器无法使用麦克风，请从本地服务打开并允许录音。');
+  check();if(busy())throw Error('请先结束当前跟读录音。');const pcmFactory=options.createPCMRecorder||host.IELTSSpeakingAudio?.createPCMRecorder,canPCM=typeof pcmFactory==='function'&&!!(host.AudioContext||host.webkitAudioContext);if(!host.navigator?.mediaDevices?.getUserMedia||!canPCM&&!host.MediaRecorder)throw Error('浏览器无法使用麦克风，请从本地服务打开并允许录音。');
   if(typeof word!=='string'||!word.trim()||word.length>100||!Number.isInteger(ctx.wordIndex)||!Number.isInteger(ctx.trial)||ctx.trial<1||ctx.trial>3||!Number.isInteger(ctx.dayNumber)||!ctx.materialId)throw Error('本词录音关联信息无效。');
   preview?.audio.pause();const captureContext={...ctx,word};context=captureContext;const token=++generation;let received;announce('requesting','请允许麦克风；每次需要独立录音。');
   try{received=await host.navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true},video:false});check(token);stream=received;
-   const mime=['audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus','audio/mp4'].find(type=>host.MediaRecorder.isTypeSupported?.(type)),local=new host.MediaRecorder(received,mime?{mimeType:mime}:{}),chunks=[];recorder=local;
-   let resolveLocal,localTimer=null;completion=new Promise(resolve=>{resolveLocal=resolve;resolveCapture=resolve;});local.ondataavailable=event=>{if(event.data?.size)chunks.push(event.data);};local.onerror=()=>{if(current(token)&&recorder===local)cancel('麦克风录音出错，本次不计次数。');};
+   const mime=canPCM?'audio/wav':['audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus','audio/mp4'].find(type=>host.MediaRecorder.isTypeSupported?.(type)),setupController=canPCM?new AbortController():null;let local;
+   if(setupController)captureSetup=setupController;
+   try{local=canPCM?await pcmFactory(received,{root:host,maximumSeconds:15,signal:setupController.signal}):new host.MediaRecorder(received,mime?{mimeType:mime}:{});}finally{if(captureSetup===setupController)captureSetup=null;}
+   const chunks=[];if(!current(token)){local.abort?.();check(token);}recorder=local;
+   let resolveLocal,localTimer=null;completion=new Promise(resolve=>{resolveLocal=resolve;resolveCapture=resolve;});local.ondataavailable=event=>{if(event.data?.size)chunks.push(event.data);};local.onerror=event=>{if(current(token)&&recorder===local)cancel(event?.error?.message||'麦克风录音出错，本次不计次数；已完成的输入和次数保留。');};
    local.onstop=async()=>{clearTimer(localTimer);received.getTracks().forEach(track=>track.stop());if(stream===received)stream=null;if(recorder===local)recorder=null;let result=null;try{check(token);result=await process(new Blob(chunks,{type:local.mimeType||mime||'audio/webm'}),captureContext,token);}catch(error){if(current(token))announce('pending',error.message);}finally{resolveLocal(result);if(resolveCapture===resolveLocal)resolveCapture=null;}};
-   local.start(250);timer=localTimer=host.setTimeout(()=>{if(current(token)&&recorder===local)stop();},15000);announce('recording','正在录音，请读出这个词；读完点击结束，最多15秒。');return state();
+   // A single complete container is the fallback; tiny MediaRecorder fragments
+   // are not independently decodable. Modern browsers use raw PCM above.
+   local.start();timer=localTimer=host.setTimeout(()=>{if(current(token)&&recorder===local)stop();},15000);announce('recording','正在录音，请读出这个词；读完稍停一下再点击结束，最多15秒。');return state();
   }catch(error){received?.getTracks().forEach(track=>track.stop());if(stream===received)stream=null;if(current(token))announce('pending',error.message);throw error;}
  }
- function stop(){if(recorder?.state==='recording')recorder.stop();clearTimer();return completion||Promise.resolve(null);}
+ function stop(){if(recorder?.state==='recording'){announce('saving','正在收齐录音数据，请稍候；已输入内容保留。');recorder.stop();}clearTimer();return completion||Promise.resolve(null);}
  async function retry(workId,ctx){check();if(busy())throw Error('当前正在录音或评测。');context={...ctx};const token=++generation;try{const work=await library.get(workId);check(token);if(!validWork(work,ctx.word,ctx))throw Error('未找到与本词和当前档案匹配的原音。');const prepared=await prepare(work.blob);check(token);return await assess(work,prepared,ctx,token);}catch(error){if(current(token))announce('pending',error.message);throw error;}}
- async function restore(workId,ctx){check();const token=generation,work=await library?.get?.(workId);check(token);if(!validWork(work,ctx.word,ctx))throw Error('跟读原音缺失或材料不匹配，请重新录音。');const prepared=await prepare(work.blob);check(token);if(!prepared.nonSilent||work.diagnosis?.pcmHash!==prepared.hash||work.diagnosis?.trainingVersion!==2||work.diagnosis?.captureComplete!==true||work.evidenceId!==work.diagnosis?.evidenceId)throw Error('该原音尚无可核对的完整专业评测，请重试评测。');return publish(work,work.diagnosis,prepared,ctx,{archived:true,token});}
+ async function restore(workId,ctx){check();const token=generation,work=await library?.get?.(workId);check(token);if(!validWork(work,ctx.word,ctx))throw Error('跟读原音缺失或材料不匹配，请重新录音。');let prepared=await prepare(work.blob);check(token);if(work.diagnosis?.pcmHash!==prepared.hash&&(!work.diagnosis?.pcmHashProtocol||work.diagnosis.pcmHashProtocol==='browser-decode-v1')){prepared=await prepareLegacy(work.blob);check(token);}if(!prepared.nonSilent||work.diagnosis?.pcmHash!==prepared.hash||work.diagnosis?.trainingVersion!==2||work.diagnosis?.captureComplete!==true||work.evidenceId!==work.diagnosis?.evidenceId)throw Error('该原音尚无可核对的完整专业评测，请重试评测。');return publish(work,work.diagnosis,prepared,ctx,{archived:true,token});}
  async function play(workId){check();if(['requesting','recording'].includes(phase))throw Error('请先结束当前麦克风录音，再回听旧原音。');const work=await library?.get?.(workId);check();if(!work?.blob||!host.Audio||!host.URL)throw Error('原音暂无法回放。');if(preview){preview.audio.pause();host.URL.revokeObjectURL(preview.url);}const url=host.URL.createObjectURL(work.blob),audio=new host.Audio(url);preview={url,audio};await audio.play();}
- function cancel(text='本次录音或等待已取消，未完成评测不计次数。'){generation++;clearTimer();preview?.audio.pause();aborter?.abort();if(recorder?.state==='recording')recorder.stop();recorder=null;stopTracks();resolveCapture?.(null);resolveCapture=null;if(!disposed)announce('idle',text);}
+ function cancel(text='本次录音或等待已取消，未完成评测不计次数。'){generation++;clearTimer();preview?.audio.pause();aborter?.abort();captureSetup?.abort();captureSetup=null;if(recorder?.abort)recorder.abort();else if(recorder?.state==='recording')recorder.stop();recorder=null;stopTracks();resolveCapture?.(null);resolveCapture=null;if(!disposed)announce('idle',text);}
  function destroy(){if(disposed)return;cancel();disposed=true;if(preview){preview.audio.pause();host.URL.revokeObjectURL(preview.url);}host.removeEventListener?.('ielts:profile-changed',profileChanged);host.removeEventListener?.('pagehide',destroy);}
  function profileChanged(){cancel();disposed=true;announce('blocked','学习档案已切换，请刷新后继续；旧原音不会写入另一档案。');}
  host.addEventListener?.('ielts:profile-changed',profileChanged);host.addEventListener?.('pagehide',destroy);
