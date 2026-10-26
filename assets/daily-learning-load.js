@@ -69,6 +69,7 @@ function build(options={}){
  const entries=[],add=entry=>{if(entry)entries.push(entry);},started=day=>records.some(r=>r.dayNumber===day.day)||drafts.some(d=>d.courseDay===day.day),materialMap=new Map(data.materials.map(m=>[m.id,m]));
  const canonicalMaterialGet=materialMap.get.bind(materialMap);materialMap.get=id=>canonicalMaterialGet(id)||contextPractice?.resolveMaterial?.(id,{data})||null;materialMap.has=id=>!!materialMap.get(id);
  const base=(day,taskId,materialId)=>({day:day.day,taskId,materialId});
+ const flow=dependency('IELTSCourseExpansion','./course-expansion.js'),orderedMissing=(task,ids,number)=>(flow?.orderedMaterialIds?.(task,number)||task.materialIds||[]).filter(id=>ids.includes(id));
  function materialAction(day,task,id){
   const material=materialMap.get(id),draft=typeof player.preferredDraft==='function'?player.preferredDraft(drafts,{courseDay:day.day,taskId:task.id,materialId:id,material,records}):drafts.find(d=>d.courseDay===day.day&&d.taskId===task.id&&d.materialId===id&&!records.some(r=>r.id===d.id));
   let access;try{access=options.materialAccess?.(material)||player.protectedMaterialAccess(material,records,data.materials,{assessment,exposures:options.exposures,now:options.now,data,placement:options.placement});}catch(_){access={allowed:false,reason:'材料解锁状态暂不可核对。'};}
@@ -115,9 +116,9 @@ function build(options={}){
    const pendingDrafts=drafts.filter(d=>d.courseDay===target.day&&!records.some(r=>r.id===d.id)).sort((a,b)=>String(a.startedAt).localeCompare(String(b.startedAt)));
    for(const draft of pendingDrafts){const item=state.states.find(s=>s.task.id===draft.taskId&&s.missingMaterialIds.includes(draft.materialId));if(item&&!entries.some(e=>e.materialId===draft.materialId&&e.taskId===draft.taskId))add(materialAction(target,item.task,draft.materialId));}
    const currentTask=options.current?.day===target.day?state.states.find(s=>s.task.id===options.current.taskId&&s.task.id!=='reflection'):null;
-   for(const id of currentTask?.missingMaterialIds||[])if(!entries.some(e=>e.materialId===id&&e.taskId===currentTask.task.id))add(materialAction(target,currentTask.task,id));
+   for(const id of currentTask?orderedMissing(currentTask.task,currentTask.missingMaterialIds,target.day):[])if(!entries.some(e=>e.materialId===id&&e.taskId===currentTask.task.id))add(materialAction(target,currentTask.task,id));
    for(const item of state.states.filter(s=>s.task.id!=='reflection')){
-    for(const id of item.missingMaterialIds)if(!entries.some(e=>e.taskId===item.task.id&&e.materialId===id))add(materialAction(target,item.task,id));
+    for(const id of orderedMissing(item.task,item.missingMaterialIds,target.day))if(!entries.some(e=>e.taskId===item.task.id&&e.materialId===id))add(materialAction(target,item.task,id));
     if(item.pending)add({...base(target,item.task.id,item.pendingMaterialIds?.[0]||item.nextMaterialId),kind:'view',waiting:true,label:'查看待评作品：'+NAMES[item.task.id],reason:'评阅或订正尚未完成，不会当作通过。'});
    }
    if(correction&&missingCore)add({...correction,label:'最后完成本课错题订正',reason:'先继续本课学习与原稿，错题保留在最后一步统一订正；不会自动清除或记为通过。'});

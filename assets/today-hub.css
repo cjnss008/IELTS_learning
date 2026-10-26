@@ -18,3 +18,17 @@
  .today-route{grid-template-columns:repeat(2,minmax(0,1fr))}
  .today-start{display:flex;width:100%;margin-right:0}
 }
+
+/* Center today's course in the space beside an expanded timer, including wide desktops. */
+#coursePlayerApp.page-shell{--course-shell-limit:1600px;max-width:var(--course-shell-limit)}
+#coursePlayerApp .course-reading{max-width:80ch}
+@media(min-width:1480px){
+ body.study-timer-open>#coursePlayerApp.page-shell{
+  --course-shell-side-gap:max(0px,calc((100% - 310px - var(--course-shell-limit))/2));
+  margin-inline:var(--course-shell-side-gap) calc(310px + var(--course-shell-side-gap));
+ }
+}
+
+.course-vocabulary-overview{margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--wash)}
+.course-vocabulary-group{padding:.65rem 0;border-top:1px solid var(--line)}
+.course-vocabulary-group p{margin:.45rem 0;line-height:1.7;overflow-wrap:anywhere}

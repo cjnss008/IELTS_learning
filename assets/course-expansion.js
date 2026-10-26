@@ -39,5 +39,60 @@
   day.contentExpansion={id:ID,fromCourseDay:2,addedMaterialIds:added,method:'append-only',note:'保留原课材料与分钟；新开课程可采用构建后的参考分配，已开始课程继续原预算。'};
   return yearOverlay(day,data);
  }
- return{ID,IDS,RECOMMENDED_MINUTES,GUIDES,overlay,yearOverlay};
+ // Display order is deliberately separate from the saved task contract. It is
+ // safe for old, frozen lessons too: no material, answer or requirement changes.
+ function orderedMaterialIds(task,number){
+  const ids=[...(task?.materialIds||[])];if(!Number.isInteger(number)||number<2||number>10||task?.mode!=='practice')return ids;
+  const expansion=IDS[task.id],rank=id=>id===expansion?0:task.materialPractice?.find(row=>row.materialId===id)?.cycle==='scheduled-reuse'?2:1;
+  return ids.map((id,index)=>({id,index,rank:rank(id)})).sort((a,b)=>a.rank-b.rank||a.index-b.index).map(row=>row.id);
+ }
+ function taskMaterialLabel(task,id,number){
+  if(!Number.isInteger(number)||number<2||number>10||task?.mode!=='practice')return'';
+  if(id===IDS[task.id])return number===2?'本课新知识':'新知识复习';
+  if(task.id==='grammar'&&/^w01-read-\d-grammar$/.test(id))return'基础复习';
+  if(task.id==='grammar'&&number===8)return'本课新知识';
+  if(task.id==='grammar'&&number>=9)return'语法应用';
+  if(task.materialPractice?.find(row=>row.materialId===id)?.cycle==='scheduled-reuse')return'复习';
+  return'本课练习';
+ }
+ // Only the runtime projection calls this, after all saved work has been loaded.
+ // The source curriculum and the append-only historical expansion stay intact.
+ function unstartedLessonFlow(baseDay,data,options={}){
+  const number=baseDay?.day;
+  if(!Number.isInteger(number)||number<2||number>10||options.contextReady!==true||baseDay.tasks?.some(task=>task.mode==='assessment')||options.protectedDays?.includes(number)||(options.records||[]).some(row=>row.dayNumber===number||row.courseDay===number)||(options.drafts||[]).some(row=>row.courseDay===number))return baseDay;
+  if(!(baseDay.tasks||[]).some(task=>(task.materialIds||[]).some(id=>id===IDS[task.id]||/^w0[12]-(?:read|listen)-[1-6](?:-|$)/.test(id))))return baseDay;
+  const day=clone(baseDay),map=new Map((data?.materials||[]).map(material=>[material.id,material])),removed=baseDay.lessonFlow?.version==='lessons-02-10-new-first-v1'?clone(baseDay.lessonFlow.removed):[];
+  function masteredRepeat(id){
+   const latest=(options.records||[]).filter(row=>row.materialId===id&&row.dayNumber<number).sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt))||(Number(b.version)||0)-(Number(a.version)||0))[0];
+   if(!latest||latest.evaluation?.result!=='pass'||!Number.isFinite(Date.parse(latest.submittedAt))||Date.parse(latest.submittedAt)>(options.now??Date.now()))return false;
+   try{return options.verifiedRecord?.(latest,map.get(id))===true;}catch(_){return false;}
+  }
+  for(const task of day.tasks||[]){
+   if(task.mode!=='practice')continue;
+   const original=[...new Set(task.materialIds||[])];let ids=original.slice();
+   // The ten-question new pack already includes I am / you are / named is.
+   // Avoid making three near-identical foundation packs its prerequisites.
+   if(task.id==='grammar'&&number===2&&ids.includes(IDS.grammar))ids=ids.filter(id=>!['w01-read-2-grammar','w01-read-3-grammar','w01-read-4-grammar'].includes(id));
+   if(task.id==='grammar'&&number===3&&ids.includes(IDS.grammar))ids=ids.filter(id=>id!=='w01-read-5-grammar');
+   if(task.id==='grammar'&&number===4&&ids.includes('w01-read-4-grammar'))ids=ids.filter(id=>id!=='w01-read-6-grammar');
+   // Repeating the exact alphabet/number exercise is useful when evidence is
+   // missing. A verified complete pass lets a fresh day focus on its main audio.
+   if(task.id==='listening'&&!task.publicCourseAssignments?.length&&ids.some(id=>!/^sounds-\d+$/.test(id)))ids=ids.filter(id=>!/^sounds-\d+$/.test(id)||!masteredRepeat(id));
+   task.materialIds=orderedMaterialIds({...task,materialIds:ids},number);
+   if(Array.isArray(task.coreMaterialIds))task.coreMaterialIds=task.materialIds.filter(id=>task.coreMaterialIds.includes(id));
+   const dropped=original.filter(id=>!ids.includes(id));if(dropped.length)removed.push({taskId:task.id,materialIds:dropped});
+   if(Array.isArray(task.materialPractice))task.materialPractice=task.materialPractice.filter(row=>ids.includes(row.materialId));
+   if(task.materialPractice?.length)task.practiceCycle=task.materialPractice.every(row=>row.cycle==='first-planned')?'first-planned':task.materialPractice.every(row=>row.cycle==='scheduled-reuse')?'scheduled-reuse':'mixed';
+   if(task.grammarLearningPlan){task.grammarLearningPlan.newMaterialIds=task.grammarLearningPlan.newMaterialIds.filter(id=>ids.includes(id));task.grammarLearningPlan.reviewMaterialIds=task.grammarLearningPlan.reviewMaterialIds.filter(id=>ids.includes(id));}
+   const materials=task.materialIds.map(id=>map.get(id)).filter(Boolean);
+   if(['grammar','listening','reading'].includes(task.id))task.quantity=materials.reduce((sum,material)=>sum+(material.questions?.length||0),0);
+   if(number===2&&task.id==='grammar')task.instructions='先理解本课新知识：be 提问、not 否定、we / they 和规则复数，再独立完成10题并订正。I am / you are 与姓名搭配 is 的基础例句已包含在本课讲解中。';
+   if(number===3&&task.id==='grammar')task.instructions='复习上一课的提问、否定与 we / they，用新人物口头改写后独立作答，再核对需要订正的地方。';
+   if(number===4&&task.id==='grammar')task.instructions='本课只做一组基础应用：区分 I am、you are 与 he / she / it is，再用自己的信息改写句子。';
+  }
+  if(JSON.stringify(day)===JSON.stringify(baseDay))return baseDay;
+  day.lessonFlow={version:'lessons-02-10-new-first-v1',removed,scope:'仅未开始课程；保留原材料、历史课表、原稿与评估。'};
+  return day;
+ }
+ return{ID,IDS,RECOMMENDED_MINUTES,GUIDES,overlay,yearOverlay,orderedMaterialIds,taskMaterialLabel,unstartedLessonFlow};
 });

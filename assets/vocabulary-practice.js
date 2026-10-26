@@ -356,7 +356,7 @@
     const speaker=session.version===2 && factory ? factory({...options,root, onState:()=>updateSpeakingUI(),onSaved:async(work,context)=>{check();session.registerStudyWork(context.wordIndex,work.id);render();changed();},onAttempt:async proof=>{check();session.recordSpeaking(proof.wordIndex,proof);studyRestoreNotes.delete(proof.wordIndex);render();changed();}}) : null;
     function renderLearn() {
       studyRows.clear();
-      box.append(node('h3','','本组必学 '+session.words.length+' 词'),node('p','vocab-intro',session.version===2?'每个词先照词输入三遍正确英文，再听示范、分别录音跟读三次。全部词完成后，依次测试补全、中文写英文、听写。跟读专业低分计真实练习次数并进入错题本；网络失败或无声不计次数。专业指标为本次朗读的0–100分，不换算IELTS成绩。时间是参考预算，可按掌握速度提前进入下一步。':'这是旧版草稿，保留原来的中文写英文、补全、听写顺序及原稿；本轮不作为新版三写三读训练通过。'));
+      const summary=options.lessonSummary,whole=summary&&Number.isInteger(summary.wordCount)&&summary.wordCount>=session.words.length&&Number.isInteger(summary.groupCount)&&summary.groupCount>0;box.append(node('h3','',whole?'本课 '+summary.wordCount+' 个词项 · 当前第 '+(summary.currentGroup||1)+' / '+summary.groupCount+' 组（'+session.words.length+' 词）':'本组必学 '+session.words.length+' 词'),node('p','vocab-intro',session.version===2?'每个词先照词输入三遍正确英文，再听示范、分别录音跟读三次。全部词完成后，依次测试补全、中文写英文、听写。跟读专业低分计真实练习次数并进入错题本；网络失败或无声不计次数。专业指标为本次朗读的0–100分，不换算IELTS成绩。时间是参考预算，可按掌握速度提前进入下一步。':'这是旧版草稿，保留原来的中文写英文、补全、听写顺序及原稿；本轮不作为新版三写三读训练通过。'));
       const list = node('div','vocab-word-list');
       session.state.learningOrder.forEach((index,position) => {const word=session.words[index];
         const card = node('article','vocab-word-card'), header = node('div','vocab-word-header');
@@ -475,4 +475,3 @@
   }
   return {MODES,NAMES,verifyTrainingArtifact,normalizeAnswer,maskWord,wordsFor,sourceContextLabel,createSession,createAudioPlayer,mount};
 });
-

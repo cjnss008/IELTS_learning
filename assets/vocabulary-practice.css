@@ -2,3 +2,12 @@
 
 .vocab-study{margin-top:.8rem;padding-top:.75rem;border-top:1px solid #d8e6dc}.vocab-study-progress{font-weight:700;color:#27634d}.vocab-study-controls,.vocab-study-playbacks{display:flex;flex-wrap:wrap;gap:.4rem;margin:.65rem 0}.vocab-study .vocab-answer-label{display:block}.vocab-study .vocab-answer{width:100%;margin:.35rem 0}.vocab-study-playbacks .vocab-button{font-size:.82rem;padding:.25rem .5rem}
 .vocab-word-history{display:inline-block;padding:3px 8px;border:1px solid #b8d0c0;border-radius:12px;color:#245a38;background:#eef7f0;font-size:12px;font-weight:700}.vocab-word-card[data-word-history="new"]{border-color:#6c9a79}
+
+/* Give audio a dedicated column so word length never moves it into the meaning row. */
+.vocab-word-card{display:flex;flex-direction:column}
+.vocab-word-header{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto 1fr;align-items:start;gap:.2rem .6rem;min-height:6.25rem}
+.vocab-word-header>.vocab-word{grid-column:1;grid-row:1;min-width:0}
+.vocab-word-header>.vocab-ipa{grid-column:1;grid-row:2;min-width:0;overflow-wrap:anywhere}
+.vocab-word-header>.vocab-word-history{grid-column:1;grid-row:3;justify-self:start;align-self:start;max-width:100%}
+.vocab-word-header>.vocab-button{grid-column:2;grid-row:1 / 4;align-self:start;margin-left:0;white-space:nowrap}
+.vocab-word-card>.vocab-study{margin-top:auto}
