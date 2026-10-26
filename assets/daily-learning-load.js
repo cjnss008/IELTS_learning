@@ -99,7 +99,7 @@ function build(options={}){
  if(state){
   if(target.week>1&&!started(target)){
    const previous=days.filter(d=>d.day<target.day).at(-1);if(previous&&previous.week<target.week){
-    let access;try{access=options.weekAccess?.(target,previous)||year?.progression(data,records,{now:options.now,currentWeek:previous.week,verifiedRecord:options.verifiedRecord,placement:options.placement});}catch(_){access={unlockedWeek:previous.week};}
+    let access;try{access=options.weekAccess?.(target,previous)||year?.progression(data,records,{...options,now:options.now,currentWeek:previous.week,verifiedRecord:options.verifiedRecord,placement:options.placement});}catch(_){access={unlockedWeek:previous.week};}
     if(!access||access.allowed===false||Number.isFinite(access.unlockedWeek)&&access.unlockedWeek<target.week){blockedReason=access?.reason||access?.next?.reasons?.join('；')||'前置关卡或延迟保持证据尚未齐全，先继续同级补强。';extraDay=previous;}
    }
   }

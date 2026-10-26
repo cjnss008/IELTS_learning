@@ -66,12 +66,17 @@ function mastery(data,records,options={}){
 }
 function progression(data,records,options={}){
  const profile=options.profile||mastery(data,records,options),now=options.now??Date.now(),placement=placementRoute(data,options),gates=(A?.gateMastery(records,data.materials,{now})||[]).map(g=>({...g,placementCovered:!!placement&&g.week<placement.startWeek})),currentWeek=Math.max(1,Math.min(52,options.currentWeek||1)),weeks=data.weeks||[],checks=[];
+ const stagePolicy=root.IELTSStageProgression||(typeof require==='function'?require('./stage-progression.js'):null);let stageContext;
  let unlockedWeek=currentWeek;
  for(let week=currentWeek+1;week<=52;week++){
+  if(stagePolicy?.supports(data,week-1)&&!(placement&&week<=placement.startWeek)){
+   stageContext||=stagePolicy.createContext(data,records,{...options,now});const decision=stagePolicy.transition(data,records,{...options,now,currentWeek:week-1,stageContext}),pass=decision.allowed;
+   checks.push({week,pass,reasons:decision.reasons,prerequisiteWeek:week-1,placementCovered:false,mode:decision.mode,stage:decision.stage,exitPassed:decision.exitPassed,retainedAccess:decision.retainedAccess,coreComplete:decision.core.complete,checkedCoreDays:decision.core.rows.length});if(!pass)break;unlockedWeek=week;continue;
+  }
   const covered=!!placement&&week<=placement.startWeek,previous=weeks.find(w=>w.week===week-1),level=rank(previous?.level||data.materials.find(m=>m.week===week-1&&m.pool==='training')?.level),unmet=covered?[]:SKILLS.filter(skill=>profile[skill].levelRank<level||profile[skill].proofs.filter(p=>p.week>=week-1).length<2),blocked=gates.filter(g=>g.week<week&&!g.pass&&!g.placementCovered),reasons=[...unmet.map(s=>NAMES[s]+'仍缺第'+(week-1)+'周及以上的两份新材料与延迟保持证据'),...blocked.map(g=>g.id+'：'+g.reasons.join('；'))],pass=!reasons.length;
   checks.push({week,pass,reasons,prerequisiteWeek:week-1,placementCovered:covered});if(!pass)break;unlockedWeek=week;
  }
- return{currentWeek,unlockedWeek,profile,gates,checks,placement,next:checks.find(c=>!c.pass)||null,rule:placement?'已采用四项入学测评，从第'+placement.startDay+'天（第'+placement.startWeek+'周）进入课程；此前关卡仅作为起点已覆盖，不记通过。起点以后仍逐周核对六项前置、48小时保持及A/B关卡。':'逐周核对六项前置、48小时保持及全部先前A/B关卡；不挪用关卡B卷和末期保留卷。'};
+ return{currentWeek,unlockedWeek,profile:stageContext?.profile||profile,gates,checks,placement,next:checks.find(c=>!c.pass)||null,rule:checks.some(check=>check.mode)?'第21周起，原任务、订正与复盘齐全后可继续同阶段练习；阶段出口另核对不同来源的首次作品与48小时保持。继续课程不提高能力级别，末期完整测评另行核验。':placement?'已采用四项入学测评，从第'+placement.startDay+'天（第'+placement.startWeek+'周）进入课程；此前关卡仅作为起点已覆盖，不记通过。起点以后仍逐周核对六项前置、48小时保持及A/B关卡。':'逐周核对六项前置、48小时保持及全部先前A/B关卡；不挪用关卡B卷和末期保留卷。'};
 }
 function loadWindow(records,today,days,options={}){
  const end=dateNumber(today),dates=Array.from({length:days},(_,i)=>new Date(end-(days-1-i)*MS).toISOString().slice(0,10)),byDate=new Map(dates.map(date=>[date,{date,minutes:0,draftMinutes:0,drafts:0,records:0,pending:0,revise:0,assisted:0,unseen:0,completed:0}]));

@@ -1,0 +1,9 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),A=require('../assets/assessment-core.js'),D=require('../assets/curriculum-data.js'),ROOT=path.resolve(__dirname,'..');
+test('each actual Year page uses its browser stage dependency without a Node require fallback',()=>{
+ const pages=fs.readdirSync(ROOT).filter(name=>name.endsWith('.html')&&fs.readFileSync(path.join(ROOT,name),'utf8').includes('assets/year-planner.js'));assert.equal(pages.length,5);
+ for(const page of pages){const text=fs.readFileSync(path.join(ROOT,page),'utf8'),scripts=[...text.matchAll(/<script\b[^>]*(?:data-src|src)="([^"]+)"[^>]*><\/script>/g)],stage=scripts.findIndex(match=>match[1]==='assets/stage-progression.js'),year=scripts.findIndex(match=>match[1]==='assets/year-planner.js');assert.ok(stage>=0&&stage<year,page);assert.match(scripts[stage][0],/type="application\/x-ielts-pending"/);
+  const context=vm.createContext({IELTSAssessment:A,console});for(const entry of scripts.filter(match=>['assets/stage-progression.js','assets/year-planner.js'].includes(match[1])))vm.runInContext(fs.readFileSync(path.join(ROOT,entry[1]),'utf8'),context,{filename:entry[1]});assert.equal(vm.runInContext('typeof require',context),'undefined');assert.equal(context.IELTSStageProgression.supports(D,21),true,page);
+  let calls=0;context.IELTSStageProgression={...context.IELTSStageProgression,supports(data,week){calls++;assert.equal(week,21);return false;}};const profile=Object.fromEntries(['vocabulary','grammar','listening','reading','speaking','writing'].map(skill=>[skill,{levelRank:0,proofs:[]}]));const result=context.IELTSYearPlanner.progression(D,[],{currentWeek:21,profile});assert.equal(calls,1,page);assert.equal(result.unlockedWeek,21);
+ }
+});
