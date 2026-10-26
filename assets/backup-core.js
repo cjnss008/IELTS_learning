@@ -1,6 +1,7 @@
 (function(root){
   'use strict';
   const KEYS={
+    'ielts52-year-first-use-v1':'全年普通练习待学队列与原材料版本（不计独立测评达标）',
     'ielts52-placement-v1':'AI 四项入学测评、原始作答、报告与课程起点',
     'ielts52-study-timer-v1':'番茄钟设置与每日休息时间（不计学习掌握）',
     'ielts52-listening-lab-v1':'精听帮助、片段循环与听音笔记',
@@ -34,6 +35,7 @@
   function validate(key,raw){
     if(!Object.hasOwn(KEYS,key))throw Error('模块不在恢复白名单。');
     const v=JSON.parse(raw);
+    if(key==='ielts52-year-first-use-v1')return yearState().parseState(v);
     if(key==='ielts52-placement-v1'){if(!root.IELTSPlacement)throw Error('入学测评模块未加载。');return root.IELTSPlacement.parseState(v);}
     if(key==='ielts52-study-timer-v1'){if(!root.IELTSStudyTimerCore)throw Error('番茄钟模块未加载。');return root.IELTSStudyTimerCore.parseState(v);}
     if(key==='ielts52-listening-lab-v1'){if(!root.IELTSListeningLab)throw Error('精听模块未加载。');return root.IELTSListeningLab.parseState(v);}
@@ -73,7 +75,12 @@
     }
     return v;
   }
-  function mergeLocal(key,old,raw){
+  function yearState(){const api=root.IELTSYearFirstUseState||(typeof module==='object'&&module.exports?require('./year-first-use-state.js'):null);if(!api)throw Error('全年练习保存模块未加载，原队列保留。');return api;}
+  function mergeLocal(key,old,raw,options={}){
+    if(key==='ielts52-year-first-use-v1'){
+      const api=yearState(),incoming=validate(key,raw),profileId=options.profileId||root.IELTSProfiles?.current?.()?.id;
+      return JSON.stringify(old===null?api.restoreState(incoming,profileId):api.mergeStates(validate(key,old),incoming,profileId?{profileId}:{}));
+    }
     if(key==='ielts52-placement-v1'){
       const incoming=validate(key,raw);if(old===null)return JSON.stringify(incoming);
       const current=validate(key,old),sessions=new Map(current.sessions.map(session=>[session.id,session]));
@@ -104,7 +111,7 @@
   }
   function restore(storage,entries,keys){
     if(keys.includes('ielts52-learning-records-v1'))throw Error('作品库须使用异步合并恢复，不能写进文字存储。');
-    const old={},prepared={};for(const key of keys){if(!Object.hasOwn(entries,key))throw Error('缺少所选模块。');validate(key,entries[key]);old[key]=storage.getItem(key);prepared[key]=mergeLocal(key,old[key],entries[key]);}
+    const old={},prepared={};for(const key of keys){if(!Object.hasOwn(entries,key))throw Error('缺少所选模块。');validate(key,entries[key]);old[key]=storage.getItem(key);prepared[key]=mergeLocal(key,old[key],entries[key],{profileId:storage.profileId});}
     try{for(const key of keys)storage.setItem(key,prepared[key]);}
     catch(error){let rollbackFailed=false;for(const key of keys){try{old[key]===null?storage.removeItem(key):storage.setItem(key,old[key]);}catch{rollbackFailed=true;}}throw Error(rollbackFailed?'恢复失败且无法完整回滚，请保留导出的原始备份，勿关闭页面。':'恢复未完成，已还原原记录。可能是存储空间不足。');}
     return keys.length;
@@ -114,7 +121,7 @@
     const recordKey='ielts52-learning-records-v1',old={},prepared={},localKeys=keys.filter(k=>k!==recordKey);
     for(const key of keys){if(!Object.hasOwn(entries,key))throw Error('缺少所选模块。');validate(key,entries[key]);}
     if(keys.includes(recordKey)){if(!records)throw Error('作品库未加载。');root.IELTSRecords.mergeStates(await records.exportState(),JSON.parse(entries[recordKey]));}
-    for(const key of localKeys){old[key]=storage.getItem(key);prepared[key]=mergeLocal(key,old[key],entries[key]);}
+    for(const key of localKeys){old[key]=storage.getItem(key);prepared[key]=mergeLocal(key,old[key],entries[key],{profileId:storage.profileId});}
     const written=[];
     try{
       for(const key of localKeys){if(storage.getItem(key)!==old[key])throw Error('恢复期间记录已改变，请关闭其他学习页再重试。');storage.setItem(key,prepared[key]);written.push(key);}
