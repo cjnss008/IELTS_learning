@@ -10,7 +10,7 @@ const SOURCES=Object.freeze([
 ]);
 const ROUND_VARIANTS=Object.freeze(['whole-response-balanced','criterion-evidence-balanced']);
 function roundVariant(round){return ROUND_VARIANTS[round===2?1:0];}
-function facts(value){const text=String(value.text||'');return {wordCount:(text.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g)||[]).length,minimumWords:value.mode==='writing'?(value.task==='academic_task1'?150:value.task==='academic_task2'?250:null):40,paragraphCount:text.split(/\n\s*\n/).filter(p=>p.trim()).length};}
+function facts(value){const text=String(value.text||'');return {wordCount:(text.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g)||[]).length,minimumWords:['foundation','generic'].includes(value.task)?null:value.mode==='writing'?(value.task==='academic_task1'?150:value.task==='academic_task2'?250:null):40,paragraphCount:text.split(/\n\s*\n/).filter(p=>p.trim()).length};}
 function paragraphs(text){const out=[];const pattern=/[^\n](?:[\s\S]*?)(?=\n\s*\n|$)/g;for(const m of text.matchAll(pattern)){if(m[0].trim())out.push({id:out.length+1,start:m.index,end:m.index+m[0].length});}return out.length?out:[{id:1,start:0,end:text.length}];}
 function writing(task){return '以下是依据公开描述编写的简短操作指南，不是完整官方描述表。分数评价当前整篇表现，不预测另一篇作品，也不按学习者级别、目标分或样例身份定分。'+
  '相邻档位要按整体质量区分：5档常见任务或发展有明显缺口、组织推进欠清楚、语言限制令读者有困难；6档通常基本回应主要要求、总体可跟随，发展或语言灵活性仍不均衡；7档通常立场和推进清楚、主要观点有发展与支持、用词有一定灵活性、复杂结构有变化且常见无误句，少量不妨碍理解的错误仍可能存在；8档通常内容发展充分、阅读容易、词汇与结构范围宽且运用灵活准确，偶发小错不等于降到6；9档需要非常充分而精确的内容与熟练自然的组织和语言，偶发细小疏漏也不能机械排除。0–4档按实际严重程度判断，不能把所有作品集中在5–6。'+
