@@ -74,7 +74,7 @@ function createBridge(options){const {local,remote,metadata,crypto=root.crypto}=
   }catch(error){if(!hasCache)for(const p of locals)if(meaningful(await readLocal(p.id))){hasCache=true;break;}if(error.code==='USER_DATA_CONFLICT'&&hasCache){started=true;return status();}const inFlight=Object.values(meta().profiles).some(m=>m.inFlight);if(hasCache&&!inFlight&&!['USER_DATA_METADATA','USER_DATA_RESTORE'].includes(error.code)){for(const p of locals)dirty.add(p.id);started=true;report({state:error.code==='USER_DATA_CONFLICT'?'conflict':'offline',error:error.message,errorCode:error.code||'USER_DATA_FAILED',message:error.code==='USER_DATA_SERVICE_UPGRADE'?UPGRADE_MESSAGE:'当前仅使用保留的浏览器缓存；尚未写入用户文件夹。请保持本浏览器数据并重试。'});return status();}report({state:'error',error:error.message,message:'用户文件夹尚未恢复，空缓存不会覆盖已有数据。请重试后开始。'});throw error;}
  }
  async function flushProfile(id,config={}){return lock(id,async()=>{
-  const m=getMeta(id),server=await remote.status(),row=server.profiles.find(p=>p.profile.id===id);report({path:server.path,activeProfileId:server.activeProfileId});
+  const m=getMeta(id),previousPath=state.path,server=await remote.status(),row=server.profiles.find(p=>p.profile.id===id);report({path:server.path,activeProfileId:server.activeProfileId});
   if(resetChanged(row,m))return acceptReset(id,await remote.getSnapshot(id),{runtime:true,backup:!m.inFlight?.backupId});
   assertSnapshotReady(id);if(knownEpochs.has(id)&&knownEpochs.get(id)!==(m.resetEpoch||null)){resetFences.add(id);reloadAfterReset(id);return{reset:true,revision:m.revision};}if((blocked.has(id)||m.conflict)&&!config.force)throw failure('该档案存在版本冲突，尚未覆盖磁盘。','USER_DATA_CONFLICT',blocked.get(id));
   if(m.path&&m.path!==server.path&&row?.revision&&!config.force){const packed=await pack(id);await conflict(id,packed,row.revision,'用户文件夹位置已改变，不能用旧目录版本覆盖新目录。');}
@@ -83,7 +83,21 @@ function createBridge(options){const {local,remote,metadata,crypto=root.crypto}=
   const hash=await fingerprint(packed.snapshot,crypto),active=await local.activeProfileId()===id;
   if(hash===m.snapshotHash&&!newLocation&&!config.force&&(!active||server.activeProfileId===id)){if((getMeta(id).localSeq||0)===seq&&(packedStamp===undefined||packedStamp!==null&&beforeStamp===packedStamp&&packedStamp===local.mutationStamp(id)))dirty.delete(id);else dirty.add(id);putMeta(id,{syncedSeq:seq});report({state:dirty.size?'pending':'ready',error:null,message:dirty.size?'当前档案已核对，其他档案仍待同步。':'已写入用户文件夹。'});return{unchanged:true,revision:m.revision};}
   report({state:'syncing',profileId:id,error:null,message:'正在把完整作品、原音与恢复点写入用户文件夹…'});await upload(packed);assertSnapshotReady(id);
-  let committed;try{committed=await remote.putSnapshot(id,{expectedRevision:config.expectedRevision??(newLocation?0:m.revision??0),...(m.resetEpoch?{expectedResetEpoch:m.resetEpoch}:{}),snapshot:packed.snapshot,activate:active});}catch(error){if(error.code==='USER_DATA_RESET_REQUIRED')return acceptReset(id,await remote.getSnapshot(id),{runtime:true});if(error.code==='USER_DATA_CONFLICT'||error.code==='USER_DATA_PROFILE_IDENTITY'){const latest=await remote.status(),currentRow=latest.profiles.find(p=>p.profile.id===id);if(resetChanged(currentRow,m))return acceptReset(id,await remote.getSnapshot(id),{runtime:true});await conflict(id,packed,error.currentRevision,error.message);}throw error;}
+  let committed;try{committed=await remote.putSnapshot(id,{expectedRevision:config.expectedRevision??(newLocation?0:m.revision??0),...(m.resetEpoch?{expectedResetEpoch:m.resetEpoch}:{}),snapshot:packed.snapshot,activate:active});}catch(error){
+   if(error.code==='USER_DATA_RESET_REQUIRED')return acceptReset(id,await remote.getSnapshot(id),{runtime:true});
+   if(error.code==='USER_DATA_CONFLICT'||error.code==='USER_DATA_PROFILE_IDENTITY'){
+    const latest=await remote.status(),currentRow=latest.profiles.find(p=>p.profile.id===id);if(resetChanged(currentRow,m))return acceptReset(id,await remote.getSnapshot(id),{runtime:true});
+    // A write may reach disk before its response is lost. A retry must not fence
+    // an identical draft as a conflict. Confirm the entire snapshot, including
+    // its generation and session fields, without issuing an overriding write.
+    if(error.code==='USER_DATA_CONFLICT'&&(m.path===server.path||!m.path&&!m.revision&&previousPath===server.path)&&latest.path===server.path){
+     const saved=await remote.getSnapshot(id);validateSnapshot(saved.snapshot);
+     if(saved.snapshot.profile.id===id&&Number.isSafeInteger(saved.revision)&&saved.revision>(m.revision||0)&&saved.revision===currentRow?.revision&&epochFrom(saved,m)===(m.resetEpoch||null)&&stable(saved.snapshot)===stable(packed.snapshot))committed=saved;
+    }
+    if(!committed)await conflict(id,packed,error.currentRevision,error.message);
+   }
+   if(!committed)throw error;
+  }
   const current=getMeta(id);putMeta(id,{revision:committed.revision,snapshotHash:hash,serverSnapshotSha256:committed.sha256||null,resetEpoch:epochFrom(committed,getMeta(id)),path:server.path,syncedSeq:seq,lastSyncedAt:committed.updatedAt,conflict:null});
   if((current.localSeq||0)!==seq)dirty.add(id);
   else if(beforeStamp!==undefined&&beforeStamp!==null&&beforeStamp===packedStamp&&packedStamp===local.mutationStamp(id))dirty.delete(id);
