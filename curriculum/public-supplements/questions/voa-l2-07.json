@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-07-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-07",
+  "sourceVersion": "1",
+  "sourceTextSha256": "0d9f9f7a80782023e233d0201b05a7f653e5b7a0e50cd072d074bf14ce931e92",
+  "sourceContentHash": "0d9f9f7a80782023e233d0201b05a7f653e5b7a0e50cd072d074bf14ce931e92",
+  "exposureGroup": "public-source:voa-l2-07",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What mistake does the boy describe at the Lincoln Memorial?",
+      "evidence": "They carved “EUTURE”!",
+      "explanation": "男孩说原应为 FUTURE，却刻成 EUTURE，差在第一个字母。题目只核对对话中的说法，不将娱乐对话的历史细节当作独立事实核验；也不是桥梁或火车命名。",
+      "answers": [
+        "A word was carved with the wrong first letter."
+      ],
+      "evidenceOffsets": {
+        "start": 429,
+        "end": 450,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "A bridge was built on the wrong side.",
+        "A train was given the wrong name.",
+        "A word was carved with the wrong first letter."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What change in the tour vehicle’s route especially excites Anna?",
+      "evidence": "A minute ago, we were riding along the river, and now we’re riding in the river!",
+      "explanation": "along the river 是沿河，in the river 是进入河里，Anna 兴奋的是同一辆车能从陆路驶入水中。飞机是从她们头顶飞过，不是旅游车飞起来。",
+      "answers": [
+        "It moves from beside the river into the water."
+      ],
+      "evidenceOffsets": {
+        "start": 755,
+        "end": 835,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "It stops permanently at the station.",
+        "It moves from beside the river into the water.",
+        "It flies above a plane."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Which building do they pass on their right? Write ONE WORD.",
+      "maxWords": 1,
+      "evidence": "we’re passing by the Pentagon on our right!",
+      "explanation": "on our right 表示在她们右边，明确对应 Pentagon。Lincoln Memorial 先前在左边，不能只因两个地标都出现就忽略方位。题目要求一个词，不加 the。",
+      "answers": [
+        "Pentagon"
+      ],
+      "evidenceOffsets": {
+        "start": 861,
+        "end": 904,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does the boy say the tunnels near the Capitol were built?",
+      "evidence": "The lawmakers did not want to walk around outside in bad weather.",
+      "explanation": "男孩给出的理由是议员不想在坏天气中走室外。Anna 猜测秘密用途，随即被 No 更正，因此不能把她的猜测当成男孩的解释。",
+      "answers": [
+        "To avoid walking outside in bad weather."
+      ],
+      "evidenceOffsets": {
+        "start": 2054,
+        "end": 2119,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "To hide secret treasure from tourists.",
+        "To connect the Capitol directly to the airport.",
+        "To avoid walking outside in bad weather."
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Where does the boy say there used to be a funeral home?",
+      "evidence": "Many years ago, inside Union Station, there was a funeral home!",
+      "explanation": "inside Union Station 是旧殡仪馆的位置。under the Capitol 属于前面隧道话题；Pentagon 是途经地标，都不能替代这里的位置。此题核对原文表述。",
+      "answers": [
+        "Inside Union Station."
+      ],
+      "evidenceOffsets": {
+        "start": 2307,
+        "end": 2370,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "On top of the Pentagon.",
+        "Inside Union Station.",
+        "Under the Capitol tunnels."
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why is Anna surprised by the captain’s reply about the young guide?",
+      "evidence": "I’ve never seen that boy in my life!",
+      "explanation": "Anna 以为男孩是船长的儿子，船长却说一辈子没见过这个孩子，构成结尾的惊讶。不能把 Anna 的 Your son 当成已经确认的亲属关系。",
+      "answers": [
+        "He says he has never seen the boy before."
+      ],
+      "evidenceOffsets": {
+        "start": 2665,
+        "end": 2701,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "He says he has never seen the boy before.",
+        "He says the boy is too young to speak.",
+        "He says the tour has not started yet."
+      ]
+    }
+  ],
+  "sourceIssues": [
+    {
+      "code": "explicit-song-cue",
+      "status": "unresolved",
+      "reason": "Script explicitly introduces a sung preposition list. Music/third-party exclusivity not established; MP3 quarantined rather than represented as dialogue-only.",
+      "quote": "Let’s sing them! Hit it, boys! Take it away singers!",
+      "start": 2921,
+      "end": 2973,
+      "offsetUnit": "UTF-16-code-unit",
+      "blocks": [
+        "listening",
+        "audio-redistribution"
+      ]
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "3c7d5a1eaa403458d42f188a914300cc7299746abf59cc4ef254c6a86ae4fa2e",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

@@ -1,0 +1,372 @@
+{
+  "id": "expand-w07-listen-1",
+  "week": 7,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "dialogue",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "地点、方向与正在发生的事 · Independent new scenario: finding places on a small campus",
+  "grammarFocus": "there is / are；地点介词；现在进行时；祈使句入门。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Finding the Art Room on a Small Campus",
+  "instructions": "这是为中文成人学习者编写的原创模拟听力材料（非官方雅思测试，不涉及真实分数）。请先听录音（或阅读文字稿），注意 there is / there are、地点介词、现在进行时和祈使句。然后完成 8 道听力题。所有题目和选项均为英文，解释为中文。建议先不看文字稿听两遍，再核对答案。",
+  "transcript": "Mia: Excuse me, Tom. Where is the art room? Tom: It is next to the library. Go straight and turn left at the café. Mia: Is there a map near the gate? Tom: Yes, there is. Look, two students are drawing on it. Mia: Are there any chairs in the art room? Tom: No, there aren't. But there are six tables. Mia: What is the teacher doing now? Tom: She is opening the window. Please don't run in the hall. Mia: Thank you. Oh, is that your bag? Tom: No, it isn't. My bag is under the desk. Mia: Sorry! Tom: That's OK. The art room is very quiet now.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where is the art room?",
+      "options": [
+        "Under the desk",
+        "Next to the library",
+        "Near the gate"
+      ],
+      "answers": [
+        "Next to the library"
+      ],
+      "explanation": "Tom 明确说 art room 在图书馆旁边。",
+      "evidence": "Mia: Excuse me, Tom. Where is the art room? Tom: It is next to the library."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What should Mia do at the café?",
+      "options": [
+        "Turn right",
+        "Run in the hall",
+        "Turn left"
+      ],
+      "answers": [
+        "Turn left"
+      ],
+      "explanation": "Tom 指路时说在咖啡馆左转。",
+      "evidence": "Go straight and turn left at the café."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Is there a map near the gate?",
+      "options": [
+        "Yes, there is.",
+        "No, there isn't."
+      ],
+      "answers": [
+        "Yes, there is."
+      ],
+      "explanation": "Tom 回答 Yes, there is，说明门口附近有地图。",
+      "evidence": "Mia: Is there a map near the gate? Tom: Yes, there is."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What are the two students doing?",
+      "options": [
+        "They are drawing.",
+        "They are running.",
+        "They are opening the window."
+      ],
+      "answers": [
+        "They are drawing."
+      ],
+      "explanation": "Tom 说两个学生正在地图上画画。",
+      "evidence": "Mia: Is there a map near the gate? Tom: Yes, there is. Look, two students are drawing on it."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Are there any chairs in the art room?",
+      "options": [
+        "No, there aren't.",
+        "Yes, there are."
+      ],
+      "answers": [
+        "No, there aren't."
+      ],
+      "explanation": "Tom 明确说没有椅子。",
+      "evidence": "Mia: Are there any chairs in the art room? Tom: No, there aren't."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How many tables are there in the art room? Use ONE WORD from the conversation.",
+      "answers": [
+        "six"
+      ],
+      "maxWords": 1,
+      "explanation": "Tom 说艺术教室里有六张桌子，原文用 six。",
+      "evidence": "there are six tables."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is the teacher doing now?",
+      "options": [
+        "She is drawing a map.",
+        "She is running in the hall.",
+        "She is opening the window."
+      ],
+      "answers": [
+        "She is opening the window."
+      ],
+      "explanation": "Tom 说老师正在开窗。",
+      "evidence": "Mia: What is the teacher doing now? Tom: She is opening the window."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Where is Tom's bag?",
+      "options": [
+        "Under the desk",
+        "Next to the library",
+        "Near the gate"
+      ],
+      "answers": [
+        "Under the desk"
+      ],
+      "explanation": "Tom 说自己的包在桌子下面。",
+      "evidence": "My bag is under the desk."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "art room",
+      "meaning": "美术教室",
+      "example": "Where is the art room?"
+    },
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "It is next to the library."
+    },
+    {
+      "word": "café",
+      "meaning": "咖啡馆",
+      "example": "Go straight and turn left at the café."
+    },
+    {
+      "word": "map",
+      "meaning": "地图",
+      "example": "Is there a map near the gate?"
+    },
+    {
+      "word": "drawing",
+      "meaning": "画画（现在分词）",
+      "example": "two students are drawing on it."
+    },
+    {
+      "word": "chairs",
+      "meaning": "椅子（复数）",
+      "example": "Are there any chairs in the art room?"
+    },
+    {
+      "word": "tables",
+      "meaning": "桌子（复数）",
+      "example": "there are six tables."
+    },
+    {
+      "word": "window",
+      "meaning": "窗户",
+      "example": "She is opening the window."
+    }
+  ],
+  "grammar": {
+    "title": "there is / there are；地点介词；现在进行时；祈使句入门",
+    "explanation": "先看意思：there is 表示“有一个（单数）”，there are 表示“有多个（复数）”。地点介词说明位置，如 next to（在旁边）、under（在下面）、near（在附近）、at（在某个点）。现在进行时表示“正在做”，结构是 am/is/are + 动词-ing，例如 is opening、are drawing。祈使句表示命令或请求，直接用动词开头，如 Go straight、Turn left、Please don't run。注意：否定 there isn't / there aren't 表示“没有”。",
+    "example": "It is next to the library. Go straight and turn left at the café. She is opening the window.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "___ a small shop near the school.",
+        "options": [
+          "There is",
+          "There are",
+          "There isn't"
+        ],
+        "answers": [
+          "There is"
+        ],
+        "explanation": "a small shop 是单数，用 There is。",
+        "evidence": "There is a small shop near the school."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "___ two bikes under the tree.",
+        "options": [
+          "There is",
+          "There are",
+          "There aren't"
+        ],
+        "answers": [
+          "There are"
+        ],
+        "explanation": "two bikes 是复数，用 There are。",
+        "evidence": "There are two bikes under the tree."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The cat is ___ the table.",
+        "options": [
+          "under",
+          "next to",
+          "near"
+        ],
+        "answers": [
+          "under"
+        ],
+        "explanation": "猫在桌子下面，用 under。",
+        "evidence": "The cat is under the table."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Look! The boys ___ football now.",
+        "options": [
+          "are playing",
+          "is playing",
+          "play"
+        ],
+        "answers": [
+          "are playing"
+        ],
+        "explanation": "now 表示正在发生，boys 是复数，用 are playing。",
+        "evidence": "Look! The boys are playing football now."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "She ___ a book now.",
+        "options": [
+          "is reading",
+          "are reading",
+          "read"
+        ],
+        "answers": [
+          "is reading"
+        ],
+        "explanation": "she 是单数，现在进行时用 is reading。",
+        "evidence": "She is reading a book now."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "___ left at the bank.",
+        "options": [
+          "Turn",
+          "Turns",
+          "Turning"
+        ],
+        "answers": [
+          "Turn"
+        ],
+        "explanation": "祈使句用动词原形开头，Turn left 表示“左转”。",
+        "evidence": "Turn left at the bank."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Please ___ run in the classroom.",
+        "options": [
+          "don't",
+          "not",
+          "no"
+        ],
+        "answers": [
+          "don't"
+        ],
+        "explanation": "否定祈使句用 don't + 动词原形。",
+        "evidence": "Please don't run in the classroom."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "___ any milk in the fridge?",
+        "options": [
+          "Is there",
+          "Are there",
+          "There is"
+        ],
+        "answers": [
+          "Is there"
+        ],
+        "explanation": "milk 不可数，视为单数，疑问句用 Is there。",
+        "evidence": "Is there any milk in the fridge?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where is your school?",
+        "Is there a library near your home?",
+        "What are you doing now?",
+        "How do you go to the art room?"
+      ],
+      "part2": "Describe a small place on your campus. You should say: where it is; what is in it; what people are doing there; and how to go there.",
+      "part3": [
+        "Are there many chairs in your classroom?",
+        "What is the teacher doing now?",
+        "Is there a map near your gate?",
+        "Please tell me how to go to the library."
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about your classroom. Use there is / there are, one place preposition, and one present continuous sentence. Example: There is a big window. The teacher is writing."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (A1) with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "本地题目修订草稿；原文与音频保持不变，等待独立盲答及解析复核；未经真实学习者难度标定",
+    "model": "deepseek-flash",
+    "contentHash": "15d12215171bf844bab6caa46c7694d287fc92db28e72aaa733d57cfd899aee4",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "blindInputSha256": "f59b77e0b5e10d7e04573202fca87981169defaf0301b0f3ed6c1e4793efad75",
+      "answerFileSha256": "c8c3d796a5f0fab2a35f14808eab38af2f5d519c87e80c2f4b77182cc9f55e0e",
+      "explanationReviewSha256": "ecdfa18b2ac44904553dd6eaf7481e6f24247e83bc75e7bc32e26e9fad050c1a",
+      "questionCount": 8,
+      "reviewMethod": "Separate author and root blind text answers frozen before reading explanations, with cross-question leak repair and exact antecedent evidence. Existing audio retained; no independent audio audition or learner difficulty calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

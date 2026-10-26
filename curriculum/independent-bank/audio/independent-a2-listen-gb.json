@@ -1,81 +1,483 @@
 {
-  "schema": 3,
   "id": "independent-a2-listen-gb",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+  "configurationHash": "2b13065d378e269a64a1dc8720455dfa9fb21ea6efe14f3b84e4e7eaa332566e",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+    "rate": "-8%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "clerk": "en-US-AriaNeural",
+      "elliot": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 0,
+        "sourceEnd": 7
+      },
+      {
+        "label": "Elliot",
+        "role": "elliot",
+        "sourceStart": 35,
+        "sourceEnd": 43
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 153,
+        "sourceEnd": 160
+      },
+      {
+        "label": "Elliot",
+        "role": "elliot",
+        "sourceStart": 218,
+        "sourceEnd": 226
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 247,
+        "sourceEnd": 254
+      },
+      {
+        "label": "Elliot",
+        "role": "elliot",
+        "sourceStart": 299,
+        "sourceEnd": 307
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 353,
+        "sourceEnd": 360
+      },
+      {
+        "label": "Elliot",
+        "role": "elliot",
+        "sourceStart": 474,
+        "sourceEnd": 482
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 530,
+        "sourceEnd": 537
+      },
+      {
+        "label": "Elliot",
+        "role": "elliot",
+        "sourceStart": 694,
+        "sourceEnd": 702
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 764,
+        "sourceEnd": 771
+      },
+      {
+        "label": "Elliot",
+        "role": "elliot",
+        "sourceStart": 978,
+        "sourceEnd": 986
+      }
+    ],
+    "segments": [
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 7,
+        "sourceEnd": 34,
+        "text": "Good afternoon. Can I help?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "ff96272c2c9c746cf4ad8b478633c310cdf6c430007abb8bab41039ca6f33d03",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "elliot",
+        "speaker": "Elliot",
+        "sourceStart": 43,
+        "sourceEnd": 152,
+        "text": "I have a card saying there is a parcel for me. I tried the post office on King Street, but they sent me here.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "ca890ab222e409ff3561a2c3df14b783cb0cd43e6f4f36f0a2cf120ee8ffc60c",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 160,
+        "sourceEnd": 217,
+        "text": "Yes, this is the collection office. What is your surname?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "e667decbac7a1933f59a65775c6b85052878bb136bf2c117a44c5310e77aa004",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "elliot",
+        "speaker": "Elliot",
+        "sourceStart": 226,
+        "sourceEnd": 246,
+        "text": "Parker. P A R K E R.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "a8205240d82c35d54c8b35fb69b065d0a21ad68458857b99bd70bbea56a44c2f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 254,
+        "sourceEnd": 298,
+        "text": "Thank you. Do you have photo identification?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "e06fdf9acc7b370974213035a27d1569919d7b4bba779a994344273248a9fa26",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "elliot",
+        "speaker": "Elliot",
+        "sourceStart": 307,
+        "sourceEnd": 352,
+        "text": "I have my driving licence. Is that all right?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "9d9125d8d1bc3fcaa377b4816ed5d09c4ce2c84b531e42537dc641708d05cffa",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 360,
+        "sourceEnd": 473,
+        "text": "Yes. The address matches, so that is fine. Your parcel arrived yesterday. It is quite large. Did you come by car?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "a556d9c0b198219a1a640499568c00eb0160388208c4af7ca7c4faf0ec76526a",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "elliot",
+        "speaker": "Elliot",
+        "sourceStart": 482,
+        "sourceEnd": 529,
+        "text": "No, by bicycle. Can you keep it until tomorrow?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "1e638ba9b2f98b02587e236286f2d21ee20d801c9b0cdb8e433b4cce46bc3f0c",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 537,
+        "sourceEnd": 693,
+        "text": "Certainly. We can keep it free for seven days. After that it goes back to the sender. We close at five today, but tomorrow is Saturday, so we close at noon.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "671851b882aa9c3aa9940d1d292b89f18d91d30f9dab5454ac15cd263ec6f2a7",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "elliot",
+        "speaker": "Elliot",
+        "sourceStart": 702,
+        "sourceEnd": 763,
+        "text": "I will come at ten with my sister's car. Is there a car park?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "b1db643a625a07e109a610b024226ab85e191437a42799b55b8175c194f465f0",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 771,
+        "sourceEnd": 977,
+        "text": "Use the spaces behind this building. The front spaces belong to the dentist. Bring this card again. Your sister can collect the parcel for you, but she will need your written permission as well as the card.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "6679fdc3623f3b84dada5e26aed7e4d6af9f42bfe46d41632931f77831b45f3a",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "elliot",
+        "speaker": "Elliot",
+        "sourceStart": 986,
+        "sourceEnd": 1028,
+        "text": "I will come myself. Thanks for explaining.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "fb4e16c707b5de2a7e57b07f9599c6c8be566b8438006e80ccc017aaf0bc530a",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "c1f1e74af405c1f5ae86e8d648963dd3e8c7cd4ea1cefc965815cfc78c5c056d",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "roleVoices": {
+    "clerk": "en-US-AriaNeural",
+    "elliot": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 82.43125,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-GB",
-  "voices": [
-    "en-GB-SoniaNeural",
-    "en-GB-RyanNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "-8%",
-  "transcriptHash": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
-  "audioHash": "7df49f80d0be76bf9890f34495ab2dbafbbe4d975ef63aaf7426d32716d5a82e",
-  "configurationHash": "d7798d113c4831eeff49931607ae9dfa08bd8bd6d64eb31f93dfa8d292d2f13f",
-  "durationSeconds": 81.336,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 7,
+      "sourceEnd": 34,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "ff96272c2c9c746cf4ad8b478633c310cdf6c430007abb8bab41039ca6f33d03",
-      "durationSeconds": 3.0
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "930339e298a481ef3ce14ae3d93944b62cdfc27648780751d6141ad38d449537",
+      "groupAudioHash": "b03513e9f5e792a2d079a532dcf2e5a79f62af519e7a75531361d70176466bdd",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 2.97325,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 2.853249,
+      "startSeconds": 0.0,
+      "endSeconds": 2.928916666666667,
+      "durationSeconds": 2.928916666666667
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "elliot",
+      "speaker": "Elliot",
+      "sourceStart": 43,
+      "sourceEnd": 152,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "ca890ab222e409ff3561a2c3df14b783cb0cd43e6f4f36f0a2cf120ee8ffc60c",
-      "durationSeconds": 7.992
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "f98a84f80cf6e8f147cbdd7e6d91f4c900423b109ae73546daeb79d1d1183cab",
+      "groupAudioHash": "2f91777526b7d9e00711ae2fcba750071b93297145dadac178b7d24246daaffc",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 7.253125,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 7.133124,
+      "startSeconds": 3.3789166666666666,
+      "endSeconds": 10.587708333333333,
+      "durationSeconds": 7.2087916666666665
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 160,
+      "sourceEnd": 217,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "e667decbac7a1933f59a65775c6b85052878bb136bf2c117a44c5310e77aa004",
-      "durationSeconds": 4.8
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "930339e298a481ef3ce14ae3d93944b62cdfc27648780751d6141ad38d449537",
+      "groupAudioHash": "b03513e9f5e792a2d079a532dcf2e5a79f62af519e7a75531361d70176466bdd",
+      "groupStartSeconds": 3.73075,
+      "groupEndSeconds": 8.340125,
+      "wordStartSeconds": 3.79075,
+      "wordEndSeconds": 8.220125,
+      "startSeconds": 11.037708333333333,
+      "endSeconds": 15.647083333333333,
+      "durationSeconds": 4.609375
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "elliot",
+      "speaker": "Elliot",
+      "sourceStart": 226,
+      "sourceEnd": 246,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "a8205240d82c35d54c8b35fb69b065d0a21ad68458857b99bd70bbea56a44c2f",
-      "durationSeconds": 4.776
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "f98a84f80cf6e8f147cbdd7e6d91f4c900423b109ae73546daeb79d1d1183cab",
+      "groupAudioHash": "2f91777526b7d9e00711ae2fcba750071b93297145dadac178b7d24246daaffc",
+      "groupStartSeconds": 8.037833333333333,
+      "groupEndSeconds": 11.573833333333333,
+      "wordStartSeconds": 8.097833,
+      "wordEndSeconds": 11.453833,
+      "startSeconds": 16.097083333333334,
+      "endSeconds": 19.63308333333333,
+      "durationSeconds": 3.535999999999998
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 254,
+      "sourceEnd": 298,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "e06fdf9acc7b370974213035a27d1569919d7b4bba779a994344273248a9fa26",
-      "durationSeconds": 4.104
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "930339e298a481ef3ce14ae3d93944b62cdfc27648780751d6141ad38d449537",
+      "groupAudioHash": "b03513e9f5e792a2d079a532dcf2e5a79f62af519e7a75531361d70176466bdd",
+      "groupStartSeconds": 9.097625,
+      "groupEndSeconds": 12.864583333333334,
+      "wordStartSeconds": 9.157625,
+      "wordEndSeconds": 12.744583,
+      "startSeconds": 20.083083333333335,
+      "endSeconds": 23.850041666666666,
+      "durationSeconds": 3.7669583333333314
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "elliot",
+      "speaker": "Elliot",
+      "sourceStart": 307,
+      "sourceEnd": 352,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "9d9125d8d1bc3fcaa377b4816ed5d09c4ce2c84b531e42537dc641708d05cffa",
-      "durationSeconds": 4.872
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "f98a84f80cf6e8f147cbdd7e6d91f4c900423b109ae73546daeb79d1d1183cab",
+      "groupAudioHash": "2f91777526b7d9e00711ae2fcba750071b93297145dadac178b7d24246daaffc",
+      "groupStartSeconds": 12.358458333333333,
+      "groupEndSeconds": 16.234125,
+      "wordStartSeconds": 12.418458,
+      "wordEndSeconds": 16.114124,
+      "startSeconds": 24.300041666666665,
+      "endSeconds": 28.175708333333333,
+      "durationSeconds": 3.8756666666666675
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 360,
+      "sourceEnd": 473,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "a556d9c0b198219a1a640499568c00eb0160388208c4af7ca7c4faf0ec76526a",
-      "durationSeconds": 10.152
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "930339e298a481ef3ce14ae3d93944b62cdfc27648780751d6141ad38d449537",
+      "groupAudioHash": "b03513e9f5e792a2d079a532dcf2e5a79f62af519e7a75531361d70176466bdd",
+      "groupStartSeconds": 13.622083333333334,
+      "groupEndSeconds": 25.174333333333333,
+      "wordStartSeconds": 13.682083,
+      "wordEndSeconds": 25.054333,
+      "startSeconds": 28.625708333333332,
+      "endSeconds": 40.177958333333336,
+      "durationSeconds": 11.552250000000004
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "elliot",
+      "speaker": "Elliot",
+      "sourceStart": 482,
+      "sourceEnd": 529,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "1e638ba9b2f98b02587e236286f2d21ee20d801c9b0cdb8e433b4cce46bc3f0c",
-      "durationSeconds": 5.184
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "f98a84f80cf6e8f147cbdd7e6d91f4c900423b109ae73546daeb79d1d1183cab",
+      "groupAudioHash": "2f91777526b7d9e00711ae2fcba750071b93297145dadac178b7d24246daaffc",
+      "groupStartSeconds": 16.991625,
+      "groupEndSeconds": 21.37,
+      "wordStartSeconds": 17.051625,
+      "wordEndSeconds": 21.249999,
+      "startSeconds": 40.62795833333333,
+      "endSeconds": 45.00633333333333,
+      "durationSeconds": 4.378374999999998
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 537,
+      "sourceEnd": 693,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "671851b882aa9c3aa9940d1d292b89f18d91d30f9dab5454ac15cd263ec6f2a7",
-      "durationSeconds": 11.976
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "930339e298a481ef3ce14ae3d93944b62cdfc27648780751d6141ad38d449537",
+      "groupAudioHash": "b03513e9f5e792a2d079a532dcf2e5a79f62af519e7a75531361d70176466bdd",
+      "groupStartSeconds": 25.931833333333334,
+      "groupEndSeconds": 38.421625,
+      "wordStartSeconds": 25.991833,
+      "wordEndSeconds": 38.301624,
+      "startSeconds": 45.45633333333333,
+      "endSeconds": 57.946125,
+      "durationSeconds": 12.489791666666669
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "elliot",
+      "speaker": "Elliot",
+      "sourceStart": 702,
+      "sourceEnd": 763,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "b1db643a625a07e109a610b024226ab85e191437a42799b55b8175c194f465f0",
-      "durationSeconds": 5.664
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "f98a84f80cf6e8f147cbdd7e6d91f4c900423b109ae73546daeb79d1d1183cab",
+      "groupAudioHash": "2f91777526b7d9e00711ae2fcba750071b93297145dadac178b7d24246daaffc",
+      "groupStartSeconds": 22.141083333333334,
+      "groupEndSeconds": 27.008583333333334,
+      "wordStartSeconds": 22.201083,
+      "wordEndSeconds": 26.888583,
+      "startSeconds": 58.396125,
+      "endSeconds": 63.263625,
+      "durationSeconds": 4.8675
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 771,
+      "sourceEnd": 977,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "6679fdc3623f3b84dada5e26aed7e4d6af9f42bfe46d41632931f77831b45f3a",
-      "durationSeconds": 14.16
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "930339e298a481ef3ce14ae3d93944b62cdfc27648780751d6141ad38d449537",
+      "groupAudioHash": "b03513e9f5e792a2d079a532dcf2e5a79f62af519e7a75531361d70176466bdd",
+      "groupStartSeconds": 39.179125,
+      "groupEndSeconds": 53.61183333333334,
+      "wordStartSeconds": 39.239125,
+      "wordEndSeconds": 53.491832,
+      "startSeconds": 63.713625,
+      "endSeconds": 78.14633333333333,
+      "durationSeconds": 14.43270833333333
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "elliot",
+      "speaker": "Elliot",
+      "sourceStart": 986,
+      "sourceEnd": 1028,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "fb4e16c707b5de2a7e57b07f9599c6c8be566b8438006e80ccc017aaf0bc530a",
-      "durationSeconds": 4.656
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "f98a84f80cf6e8f147cbdd7e6d91f4c900423b109ae73546daeb79d1d1183cab",
+      "groupAudioHash": "2f91777526b7d9e00711ae2fcba750071b93297145dadac178b7d24246daaffc",
+      "groupStartSeconds": 27.79325,
+      "groupEndSeconds": 31.628166666666665,
+      "wordStartSeconds": 27.85325,
+      "wordEndSeconds": 31.508166,
+      "startSeconds": 78.59633333333333,
+      "endSeconds": 82.43125,
+      "durationSeconds": 3.834916666666672
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a2-listen-gb.mp3"
 }

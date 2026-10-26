@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-42-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-42",
+  "sourceVersion": "1",
+  "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+  "sourceContentHash": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+  "exposureGroup": "public-source:voa-l1-42",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "When did Anna witness the crime?",
+      "options": [
+        "During a work meeting.",
+        "During her lunch break.",
+        "During an evening class."
+      ],
+      "answers": [
+        "During her lunch break."
+      ],
+      "evidence": "She saw the crime during her lunch break.",
+      "explanation": "记者开场明确说during her lunch break，Anna后来也说自己离开工作去买午饭。这两个信息相符，不能换成工作会议或晚课。题目核对的是剧中目击时间，不问她后面什么时候回办公室。",
+      "evidenceOffsets": {
+        "start": 149,
+        "end": 190,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "She saw the crime during her lunch break.",
+          "start": 149,
+          "end": 190
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What was the woman using to hit the robbers?",
+      "options": [
+        "An umbrella.",
+        "A shopping bag.",
+        "A walking stick."
+      ],
+      "answers": [
+        "An umbrella."
+      ],
+      "evidence": "She was hitting them with her umbrella.",
+      "explanation": "with her umbrella说明所用物品是雨伞。抢劫目标是女人的包，不能因此把bag当成她击打对方的工具；手杖没有出现在这句描述中。要区分被抢物与动作使用的物品。",
+      "evidenceOffsets": {
+        "start": 640,
+        "end": 679,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "She was hitting them with her umbrella.",
+          "start": 640,
+          "end": 679
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How did Anna try to follow the robbers after they took the bag?",
+      "options": [
+        "She called a taxi and stayed inside it.",
+        "She borrowed the reporter’s camera.",
+        "She took the woman’s umbrella and ran after them."
+      ],
+      "answers": [
+        "She took the woman’s umbrella and ran after them."
+      ],
+      "evidence": "They grabbed her bag and ran away! So, I grabbed her umbrella and ran after the robbers.",
+      "explanation": "原文的先后关系是抢匪拿包逃走，Anna随后拿了女人的伞追赶。她没有提到乘出租车或借记者相机。这是对虚构情节的理解，不把角色的追赶行为当现实应对建议。",
+      "evidenceOffsets": {
+        "start": 892,
+        "end": 980,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "They grabbed her bag and ran away! So, I grabbed her umbrella and ran after the robbers.",
+          "start": 892,
+          "end": 980
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why were the robbers made to leave the bus?",
+      "options": [
+        "They got on the wrong route.",
+        "They did not pay the fare.",
+        "They reached their planned stop."
+      ],
+      "answers": [
+        "They did not pay the fare."
+      ],
+      "evidence": "They didn’t pay. You've got to pay when you get on a bus.",
+      "explanation": "记者问他们为什么被赶下公交，Anna说They didn’t pay，并说明上车要付费，所以是未付车费。不能因为他们逃跑就自行为公交路线或到站原因补情节。",
+      "evidenceOffsets": {
+        "start": 1665,
+        "end": 1722,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "They didn’t pay. You've got to pay when you get on a bus.",
+          "start": 1665,
+          "end": 1722
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Anna say happened while she was lying on the ground?",
+      "options": [
+        "Someone stepped on her arm.",
+        "The reporter called her office.",
+        "The robbers returned her bag."
+      ],
+      "answers": [
+        "Someone stepped on her arm."
+      ],
+      "evidence": "While I was lying on the ground, someone stepped on my arm!",
+      "explanation": "while从句给出背景“躺在地上时”，主句说明有人踩到她手臂。这里仅核对她说过的这一事件；后面对手臂最终问题另有戏剧性说明，因此不把它改写为已确定的唯一受伤原因。",
+      "evidenceOffsets": {
+        "start": 1461,
+        "end": 1520,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "While I was lying on the ground, someone stepped on my arm!",
+          "start": 1461,
+          "end": 1520
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Where does Anna’s co-worker say Anna is stuck? Write TWO WORDS.",
+      "answers": [
+        "vending machine"
+      ],
+      "maxWords": 2,
+      "evidence": "My co-worker is stuck in a vending machine.",
+      "explanation": "同事打电话时实际说My co-worker is stuck in a vending machine，地点是自动售货机。题目只要两个词，填vending machine，不加a或in。依据来自电话中说出的内容，不依靠镜头动作或猜测她如何受伤。",
+      "evidenceOffsets": {
+        "start": 2047,
+        "end": 2090,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "My co-worker is stuck in a vending machine.",
+          "start": 2047,
+          "end": 2090
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "e2947f6eefad512e32582b6ce63473cd6a1aa1fdee44593e47c7fb6b1c95f399",
+      "reviewSha256": "969c5ac27852df73b04e5835e011f4b2383d67bfe461be47a23a7c1f8dd5f0a2",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

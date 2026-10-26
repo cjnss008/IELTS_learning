@@ -3,7 +3,8 @@
 const crypto=require('node:crypto');
 const materials=[];
 const levels={a1:{week:5,level:'A1'},a2:{week:12,level:'A2'},b1:{week:20,level:'B1'},b2:{week:32,level:'B2'}};
-const locales={gb:{locale:'en-GB',label:'英国英语（合成）',voice:'en-GB-SoniaNeural'},us:{locale:'en-US',label:'美国英语（合成）',voice:'en-US-AriaNeural'},au:{locale:'en-AU',label:'澳大利亚英语（合成）',voice:'en-AU-NatashaNeural'},in:{locale:'en-IN',label:'印度英语（合成）',voice:'en-IN-NeerjaNeural'}};
+// Historical ID suffixes remain stable; all current synthetic demonstrations use verified American voices.
+const locales=Object.fromEntries(['gb','us','au','in'].map(key=>[key,{locale:'en-US',label:'美国英语（合成）',voice:'en-US-AriaNeural'}]));
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 function single(prompt,answer,wrong,evidence,explanation){return{type:'single',prompt,options:[answer,...wrong],answers:[answer],evidence,explanation};}
 function fill(prompt,answer,evidence,explanation,maxWords=2){return{type:'fill',prompt,answers:Array.isArray(answer)?answer:[answer],maxWords,evidence,explanation};}

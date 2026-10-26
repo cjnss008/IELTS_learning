@@ -1,0 +1,314 @@
+{
+  "version": "1",
+  "week": 1,
+  "level": "A0",
+  "pool": "training",
+  "fullTest": false,
+  "courseExpansion": "day02-expansion-69",
+  "availableFromDay": 2,
+  "topic": "在新的晚间英语班交换信息",
+  "grammarFocus": "新增：be一般疑问句、not否定、we/they与规则复数；巩固：I am/you are、姓名与班级。",
+  "id": "day02-expansion-listening",
+  "skill": "listening",
+  "type": "dialogue",
+  "title": "Finding the Right Evening Class",
+  "estimatedMinutes": 25,
+  "minWords": 100,
+  "maxWords": 140,
+  "questionCount": 8,
+  "instructions": "Original practice dialogue. Listen first. Answer eight questions. Open the transcript after your first answers. In a gap, write one English word or letter.",
+  "transcript": "Maya: Hello. I am Maya. Are you new?\nLeo: Yes, I am Leo. I am in the evening class.\nMaya: Are you in Room Two?\nLeo: No, I am not. I am in Room Four.\nMaya: We are classmates.\n\nBen: I am Ben, the teacher. Are you ready?\nMaya: Yes. My book is blue.\nLeo: No. My pen is at home.\nBen: A green pen is on the desk. It is for you.\nLeo: Are the books on the chair for Class A?\nBen: No, they are not. They are for Class C. The books for Class A are in the box.\n\nMaya: Is the class at six?\nBen: No. The class is at seven.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is new?",
+      "options": [
+        "Leo",
+        "Maya",
+        "Ben"
+      ],
+      "answers": [
+        "Leo"
+      ],
+      "explanation": "Maya问对方是否新来，Leo肯定回答并介绍姓名。",
+      "evidence": "Leo: Yes, I am Leo. I am in the evening class."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which room is Leo in?",
+      "options": [
+        "Room Two",
+        "Room Four",
+        "Room Six"
+      ],
+      "answers": [
+        "Room Four"
+      ],
+      "explanation": "Leo先否认Room Two，再给出真正房间Room Four。",
+      "evidence": "Leo: No, I am not. I am in Room Four."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is the teacher?",
+      "options": [
+        "Ben",
+        "Leo",
+        "Maya"
+      ],
+      "answers": [
+        "Ben"
+      ],
+      "explanation": "Ben明确把自己介绍为the teacher。",
+      "evidence": "Ben: I am Ben, the teacher. Are you ready?"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What colour is Maya's book?",
+      "options": [
+        "Blue",
+        "Green",
+        "Red"
+      ],
+      "answers": [
+        "Blue"
+      ],
+      "explanation": "Maya说自己的书是blue；绿色描述的是笔。",
+      "evidence": "Maya: Yes. My book is blue."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Where is Leo's pen?",
+      "options": [
+        "At home",
+        "On the chair",
+        "In the box"
+      ],
+      "answers": [
+        "At home"
+      ],
+      "explanation": "Leo的原笔在家；不要与后来提供的绿色笔混淆。",
+      "evidence": "Leo: No. My pen is at home."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What colour is the pen on the desk?",
+      "answers": [
+        "green"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben说桌上有一支绿色笔，是给Leo的。",
+      "evidence": "Ben: A green pen is on the desk. It is for you."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "The books on the chair are for Class ____.",
+      "answers": [
+        "C"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben否认椅子上的书属于Class A，明确说属于Class C。",
+      "evidence": "Ben: No, they are not. They are for Class C. The books for Class A are in the box."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "When is the class?",
+      "options": [
+        "At six",
+        "At seven",
+        "At eight"
+      ],
+      "answers": [
+        "At seven"
+      ],
+      "explanation": "Ben纠正Maya的六点猜测，明确课程在七点。",
+      "evidence": "Ben: No. The class is at seven."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "new",
+      "meaning": "新来的",
+      "example": "Are you new?"
+    },
+    {
+      "word": "classmates",
+      "meaning": "同班同学（复数）",
+      "example": "We are classmates."
+    },
+    {
+      "word": "evening",
+      "meaning": "晚上；晚间",
+      "example": "I am in the evening class."
+    },
+    {
+      "word": "pen",
+      "meaning": "笔",
+      "example": "My pen is at home."
+    },
+    {
+      "word": "desk",
+      "meaning": "书桌",
+      "example": "A green pen is on the desk."
+    },
+    {
+      "word": "chair",
+      "meaning": "椅子",
+      "example": "Are the books on the chair for Class A?"
+    },
+    {
+      "word": "box",
+      "meaning": "盒子",
+      "example": "The books for Class A are in the box."
+    },
+    {
+      "word": "ready",
+      "meaning": "准备好的",
+      "example": "Are you ready?"
+    }
+  ],
+  "grammar": {
+    "title": "be questions and short answers",
+    "explanation": "本课新增：把“是／在／状态”的句子变成提问和否定，并区分“我们／他们”。\n\n先巩固：I am a student.（我是学生。）You are ready.（你准备好了。）姓名等单个人用 is：Rosa is a teacher.（Rosa是老师。）\n\n1. we 是“我们”，they 是“他们／她们／它们”。两个人或两件物品都可以用 they。we、they 后用 are：We are students. They are teachers. 这里只练 student→students、teacher→teachers、book→books；不要据此认为所有名词都直接加s。\n\n2. 否定把 not 放在 be 后：I am not a teacher. We are not teachers. They are not ready. are not 可以缩写为 aren't，I am not 不能写成 I amn't。\n\n3. 提问把 be 放在主语前，句末用问号：You are ready. → Are you ready? They are teachers. → Are they teachers? Rosa is a teacher. → Is Rosa a teacher? 不同时保留句中的第二个 are。\n\n4. 回答要跟提问对象一致：对一个人问 Are you a student? 回答 Yes, I am. / No, I am not. 对两个人问 Are you teachers? 两人一起答 No, we are not. 问 Are they ready? 回答 Yes, they are. / No, they are not. 这里先用完整的短答。",
+    "example": "Are you in Room Two?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Make a question: You are ready.",
+        "options": [
+          "Are you ready?",
+          "You are ready.",
+          "Are you are ready?"
+        ],
+        "answers": [
+          "Are you ready?"
+        ],
+        "explanation": "把are放在you前。",
+        "evidence": "You are ready. → Are you ready?"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Make a negative sentence: We are teachers.",
+        "options": [
+          "We are not teachers.",
+          "We not are teachers.",
+          "We am not teachers."
+        ],
+        "answers": [
+          "We are not teachers."
+        ],
+        "explanation": "not放在are后。",
+        "evidence": "We are not teachers."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Two people: ____ are classmates.",
+        "options": [
+          "We",
+          "I",
+          "He"
+        ],
+        "answers": [
+          "We"
+        ],
+        "explanation": "We表示包括说话人在内的两个人。",
+        "evidence": "We are classmates."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the short answer: Are they ready?",
+        "options": [
+          "Yes, they are.",
+          "Yes, they am.",
+          "Yes, they is."
+        ],
+        "answers": [
+          "Yes, they are."
+        ],
+        "explanation": "They后用are。",
+        "evidence": "Yes, they are."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you in an English class?",
+        "Are you and your classmate students?",
+        "Are the teachers ready?"
+      ],
+      "part2": "Introduce your class and two people. Use your own names and one negative sentence.",
+      "part3": [
+        "Are you ready?",
+        "Are they students?",
+        "Are you in Room Six?",
+        "Are you a teacher?"
+      ]
+    },
+    "writing": "Write a new short class message. Use we, they, one negative sentence and one be-question."
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true,
+  "audioRequirements": {
+    "schema": 1,
+    "synthetic": true,
+    "locale": "en-US",
+    "speakers": [
+      {
+        "label": "Maya",
+        "gender": "female",
+        "role": "classmate"
+      },
+      {
+        "label": "Leo",
+        "gender": "male",
+        "role": "new student"
+      },
+      {
+        "label": "Ben",
+        "gender": "male",
+        "role": "teacher"
+      }
+    ],
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "paragraphs": 3,
+    "speakLabels": false,
+    "keepTranscriptVerbatim": true,
+    "note": "段落空行保留为较长停顿，角色只读对白，不朗读姓名标签；两个男声须可区分。"
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创；情境、人物及信息均为模拟教学材料",
+    "verification": "reviewed",
+    "method": "2026-10-26由Codex编写并逐题核对本组原文事实、干扰项、唯一答案和填空字数；未称独立盲解、真人教师审题或考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "contentHash": "ec6cd3476939f58f9a4cfee76bddf851c4394899dd3de77e0b04c4cc7abcaefc"
+  }
+}

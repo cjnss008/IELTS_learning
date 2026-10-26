@@ -1,0 +1,1540 @@
+{
+  "schema": 1,
+  "version": "public-practice-runtime-v1",
+  "status": "versioned-required-ordinary-day-plan",
+  "practiceActivated": true,
+  "assessmentActivated": false,
+  "coreScheduleChanged": false,
+  "requiredDayTasksAdded": 0,
+  "sourceCatalogActivationMeaning": "The source catalog remains metadata for staged candidates. Only the explicit released source-bound variants are enabled as optional ordinary practice; no entire source catalog or required course schedule is activated.",
+  "selector": "assets/public-material-selector.js",
+  "adapter": "assets/public-material-practice.js",
+  "materials": [
+    {
+      "materialId": "public-nasa-climate-models-reading",
+      "version": "s2-q1",
+      "skill": "reading",
+      "sourceId": "nasa-climate-models",
+      "sourceVersion": "2",
+      "sourceTextSha256": "9b9cb9869b039345a67eb203131662dbf4b058667fc9c6c796770df9f3ddee39",
+      "questionContractHash": "6a8037815af824a12a928004cc44a83f1a02e1a5de6d61b0d052d2241ecbfdc0",
+      "sourceExposureGroup": "public-source:nasa-climate-models",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-greenhouse-effect-reading",
+      "version": "s2-q1",
+      "skill": "reading",
+      "sourceId": "nasa-greenhouse-effect",
+      "sourceVersion": "2",
+      "sourceTextSha256": "89dd2e308f4221b8f8cb3bb4bbd1ac4cca60d78d096a7498af4463f56e27b5d7",
+      "questionContractHash": "998c499d7184423a66dac5a471f6d1d3107e578506acabe633845b830cd98898",
+      "sourceExposureGroup": "public-source:nasa-greenhouse-effect",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-water-cycle-reading",
+      "version": "s2-q1",
+      "skill": "reading",
+      "sourceId": "nasa-water-cycle",
+      "sourceVersion": "2",
+      "sourceTextSha256": "5b10e239d57dd5c2595e1711d11c57b276a5ffb6121c26891334910c7d940c3e",
+      "questionContractHash": "ea10fd3c0877ff41dded255a90b6d928809f2d871bd94205d312d6dbb963b20d",
+      "sourceExposureGroup": "public-source:nasa-water-cycle",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-voa-l1-05-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-05",
+      "sourceVersion": "1",
+      "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+      "questionContractHash": "3893490faea641972adffbcbc7c24a86f52e7137b8878bba1cf4e692ea722b17",
+      "sourceExposureGroup": "public-source:voa-l1-05",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-05-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-05",
+      "sourceVersion": "1",
+      "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+      "questionContractHash": "3893490faea641972adffbcbc7c24a86f52e7137b8878bba1cf4e692ea722b17",
+      "sourceExposureGroup": "public-source:voa-l1-05",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-06-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-06",
+      "sourceVersion": "1",
+      "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+      "questionContractHash": "638ccd304a2899d30d287bbed003c316c16454ba24b1c3d29647f49373620406",
+      "sourceExposureGroup": "public-source:voa-l1-06",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-06-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-06",
+      "sourceVersion": "1",
+      "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+      "questionContractHash": "638ccd304a2899d30d287bbed003c316c16454ba24b1c3d29647f49373620406",
+      "sourceExposureGroup": "public-source:voa-l1-06",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-07-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-07",
+      "sourceVersion": "1",
+      "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+      "questionContractHash": "9d55477b1eb8ba0f468d473d3fb035ff302356a9583d9404c0623945acaa3b24",
+      "sourceExposureGroup": "public-source:voa-l1-07",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-07-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-07",
+      "sourceVersion": "1",
+      "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+      "questionContractHash": "9d55477b1eb8ba0f468d473d3fb035ff302356a9583d9404c0623945acaa3b24",
+      "sourceExposureGroup": "public-source:voa-l1-07",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-16-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-16",
+      "sourceVersion": "1",
+      "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+      "questionContractHash": "b400c622b34abacb698a0035f8c4de9c1c1528b892cd39eb313666b4da2d8049",
+      "sourceExposureGroup": "public-source:voa-l1-16",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-16-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-16",
+      "sourceVersion": "1",
+      "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+      "questionContractHash": "b400c622b34abacb698a0035f8c4de9c1c1528b892cd39eb313666b4da2d8049",
+      "sourceExposureGroup": "public-source:voa-l1-16",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-18-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-18",
+      "sourceVersion": "1",
+      "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+      "questionContractHash": "e49b3e58ba0e1ae8513b25616d49fe26d7fe7491fa888e2c76bba39a59636ed7",
+      "sourceExposureGroup": "public-source:voa-l1-18",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-18-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-18",
+      "sourceVersion": "1",
+      "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+      "questionContractHash": "e49b3e58ba0e1ae8513b25616d49fe26d7fe7491fa888e2c76bba39a59636ed7",
+      "sourceExposureGroup": "public-source:voa-l1-18",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-20-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-20",
+      "sourceVersion": "1",
+      "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+      "questionContractHash": "22053140d0edfc1ef3952924a28acee85012f197ef7e1aa8026b18731c8cac4c",
+      "sourceExposureGroup": "public-source:voa-l1-20",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-20-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-20",
+      "sourceVersion": "1",
+      "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+      "questionContractHash": "22053140d0edfc1ef3952924a28acee85012f197ef7e1aa8026b18731c8cac4c",
+      "sourceExposureGroup": "public-source:voa-l1-20",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-24-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-24",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a248c5974312e4a38b5f1da5b65a3e60747875d0af37bccfebba3b717a31be55",
+      "questionContractHash": "8ce93cffea3524ad4d23cc56ba78a64a370718044f67d4f6c2e1d1429e350bbe",
+      "sourceExposureGroup": "public-source:voa-l1-24",
+      "practiceOnly": true,
+      "audioReviewStatus": "independent-audio-review-pending"
+    },
+    {
+      "materialId": "public-voa-l1-28-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-28",
+      "sourceVersion": "1",
+      "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+      "questionContractHash": "19b040d5bd257e54859b5f7c7d31d1123417c6c4b9cd10e0e80e7dcd0fbcde7c",
+      "sourceExposureGroup": "public-source:voa-l1-28",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-28-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-28",
+      "sourceVersion": "1",
+      "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+      "questionContractHash": "19b040d5bd257e54859b5f7c7d31d1123417c6c4b9cd10e0e80e7dcd0fbcde7c",
+      "sourceExposureGroup": "public-source:voa-l1-28",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-34-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-34",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+      "questionContractHash": "f3de85ce548b700a5017c1029815a8af226cf07dd5fdd048fdba57c0dece1d45",
+      "sourceExposureGroup": "public-source:voa-l1-34",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-34-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-34",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+      "questionContractHash": "f3de85ce548b700a5017c1029815a8af226cf07dd5fdd048fdba57c0dece1d45",
+      "sourceExposureGroup": "public-source:voa-l1-34",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-42-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-42",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+      "questionContractHash": "d174b1dca30bc7be051c5d660d722033945cec80b6e5c5d73fce52c6404b4d99",
+      "sourceExposureGroup": "public-source:voa-l1-42",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-42-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-42",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+      "questionContractHash": "d174b1dca30bc7be051c5d660d722033945cec80b6e5c5d73fce52c6404b4d99",
+      "sourceExposureGroup": "public-source:voa-l1-42",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-48-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-48",
+      "sourceVersion": "1",
+      "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+      "questionContractHash": "67594382baec15fcafd180846ecd68e483cb97247d5058a426d1772a8b8d322d",
+      "sourceExposureGroup": "public-source:voa-l1-48",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-48-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-48",
+      "sourceVersion": "1",
+      "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+      "questionContractHash": "67594382baec15fcafd180846ecd68e483cb97247d5058a426d1772a8b8d322d",
+      "sourceExposureGroup": "public-source:voa-l1-48",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-01-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-01",
+      "sourceVersion": "1",
+      "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+      "questionContractHash": "d7502c053138bf8c0bd345e2be51e2bc9087e16f209564ab24a9db0f94a9a2f5",
+      "sourceExposureGroup": "public-source:voa-l2-01",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-01-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l2-01",
+      "sourceVersion": "1",
+      "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+      "questionContractHash": "d7502c053138bf8c0bd345e2be51e2bc9087e16f209564ab24a9db0f94a9a2f5",
+      "sourceExposureGroup": "public-source:voa-l2-01",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-03-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-03",
+      "sourceVersion": "1",
+      "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+      "questionContractHash": "0f056bc3e5be8d9d13da5f9e7957bcdc340908698ecd9c43aa338eef6f0385dd",
+      "sourceExposureGroup": "public-source:voa-l2-03",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-03-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l2-03",
+      "sourceVersion": "1",
+      "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+      "questionContractHash": "0f056bc3e5be8d9d13da5f9e7957bcdc340908698ecd9c43aa338eef6f0385dd",
+      "sourceExposureGroup": "public-source:voa-l2-03",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-06-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-06",
+      "sourceVersion": "1",
+      "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+      "questionContractHash": "f15c8ca4d854a0dbefeb15f9262c959b26e2aac57dc5a72dc5171b97e528ce7e",
+      "sourceExposureGroup": "public-source:voa-l2-06",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-06-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l2-06",
+      "sourceVersion": "1",
+      "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+      "questionContractHash": "f15c8ca4d854a0dbefeb15f9262c959b26e2aac57dc5a72dc5171b97e528ce7e",
+      "sourceExposureGroup": "public-source:voa-l2-06",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-01-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-01",
+      "sourceVersion": "1",
+      "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+      "questionContractHash": "b29f2a76b846edb38839799e698b9151b648046962d4bd5af26ab0981940a89a",
+      "sourceExposureGroup": "public-source:voa-l1-01",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-01-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-01",
+      "sourceVersion": "1",
+      "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+      "questionContractHash": "b29f2a76b846edb38839799e698b9151b648046962d4bd5af26ab0981940a89a",
+      "sourceExposureGroup": "public-source:voa-l1-01",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-02-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-02",
+      "sourceVersion": "1",
+      "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+      "questionContractHash": "069d4aa3b2da63a90240ff900feb5abed8eee856fb581b13b7e5fcfe2bd21ff2",
+      "sourceExposureGroup": "public-source:voa-l1-02",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-02-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-02",
+      "sourceVersion": "1",
+      "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+      "questionContractHash": "069d4aa3b2da63a90240ff900feb5abed8eee856fb581b13b7e5fcfe2bd21ff2",
+      "sourceExposureGroup": "public-source:voa-l1-02",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-03-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-03",
+      "sourceVersion": "1",
+      "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+      "questionContractHash": "6f14c69348015f0ea18604f0a9e7fdcea54470e5859edb41030f16602b77eaf9",
+      "sourceExposureGroup": "public-source:voa-l1-03",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-03-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-03",
+      "sourceVersion": "1",
+      "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+      "questionContractHash": "6f14c69348015f0ea18604f0a9e7fdcea54470e5859edb41030f16602b77eaf9",
+      "sourceExposureGroup": "public-source:voa-l1-03",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-04-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-04",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+      "questionContractHash": "5828335bb33a60825751255ba67c8597ca7218055fa5befe10a6cbb353bc0391",
+      "sourceExposureGroup": "public-source:voa-l1-04",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-04-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-04",
+      "sourceVersion": "1",
+      "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+      "questionContractHash": "5828335bb33a60825751255ba67c8597ca7218055fa5befe10a6cbb353bc0391",
+      "sourceExposureGroup": "public-source:voa-l1-04",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-08-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-08",
+      "sourceVersion": "1",
+      "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+      "questionContractHash": "17184e9e40c99b532cc4e313a80d6ecf275f443fc73aea013ea3c27ffe29606c",
+      "sourceExposureGroup": "public-source:voa-l1-08",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-08-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-08",
+      "sourceVersion": "1",
+      "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+      "questionContractHash": "17184e9e40c99b532cc4e313a80d6ecf275f443fc73aea013ea3c27ffe29606c",
+      "sourceExposureGroup": "public-source:voa-l1-08",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-09-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-09",
+      "sourceVersion": "1",
+      "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+      "questionContractHash": "629fb5161f04acd415922587e07c205acc65faa3a7d964ed80c3625c49de778d",
+      "sourceExposureGroup": "public-source:voa-l1-09",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-09-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-09",
+      "sourceVersion": "1",
+      "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+      "questionContractHash": "629fb5161f04acd415922587e07c205acc65faa3a7d964ed80c3625c49de778d",
+      "sourceExposureGroup": "public-source:voa-l1-09",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-10-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-10",
+      "sourceVersion": "1",
+      "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+      "questionContractHash": "ca89578bd899dfca5edb02f5803135eae612e9861d4d5428adffa719f77cecb3",
+      "sourceExposureGroup": "public-source:voa-l1-10",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-10-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-10",
+      "sourceVersion": "1",
+      "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+      "questionContractHash": "ca89578bd899dfca5edb02f5803135eae612e9861d4d5428adffa719f77cecb3",
+      "sourceExposureGroup": "public-source:voa-l1-10",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-11-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-11",
+      "sourceVersion": "1",
+      "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+      "questionContractHash": "5de95cee0f7a7fdf67786d46bb38a032dda414d669ce7d28c38c68a363919921",
+      "sourceExposureGroup": "public-source:voa-l1-11",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-11-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-11",
+      "sourceVersion": "1",
+      "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+      "questionContractHash": "5de95cee0f7a7fdf67786d46bb38a032dda414d669ce7d28c38c68a363919921",
+      "sourceExposureGroup": "public-source:voa-l1-11",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-12-reading",
+      "version": "s2-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-12",
+      "sourceVersion": "2",
+      "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+      "questionContractHash": "38f35d735e233a16bd0784831c9202bcffc03088db59347309444e0e2e823d26",
+      "sourceExposureGroup": "public-source:voa-l1-12",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-12-listening",
+      "version": "s2-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-12",
+      "sourceVersion": "2",
+      "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+      "questionContractHash": "38f35d735e233a16bd0784831c9202bcffc03088db59347309444e0e2e823d26",
+      "sourceExposureGroup": "public-source:voa-l1-12",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-14-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-14",
+      "sourceVersion": "1",
+      "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+      "questionContractHash": "bdf2e140bca5e00795bcc0a1d98cfb14e49d03169e2a45f572d1bef9575ecae6",
+      "sourceExposureGroup": "public-source:voa-l1-14",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-14-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-14",
+      "sourceVersion": "1",
+      "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+      "questionContractHash": "bdf2e140bca5e00795bcc0a1d98cfb14e49d03169e2a45f572d1bef9575ecae6",
+      "sourceExposureGroup": "public-source:voa-l1-14",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-15-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-15",
+      "sourceVersion": "1",
+      "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+      "questionContractHash": "922758389cd82c57b246ef921e828308575b7f3e550611c956ab22b00f7f1bb5",
+      "sourceExposureGroup": "public-source:voa-l1-15",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-15-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-15",
+      "sourceVersion": "1",
+      "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+      "questionContractHash": "922758389cd82c57b246ef921e828308575b7f3e550611c956ab22b00f7f1bb5",
+      "sourceExposureGroup": "public-source:voa-l1-15",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-17-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-17",
+      "sourceVersion": "1",
+      "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+      "questionContractHash": "022536c3a4c3699ec4ab4b93f176a26b51101a7f12d16ce596272f75a5378b83",
+      "sourceExposureGroup": "public-source:voa-l1-17",
+      "practiceOnly": true,
+      "audioReviewStatus": "independent-audio-review-pending"
+    },
+    {
+      "materialId": "public-voa-l1-19-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-19",
+      "sourceVersion": "1",
+      "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+      "questionContractHash": "a181b5da5fa3e2945584a0f0b317bdb8b5ec036a5b64518186a1b7006288f660",
+      "sourceExposureGroup": "public-source:voa-l1-19",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-19-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-19",
+      "sourceVersion": "1",
+      "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+      "questionContractHash": "a181b5da5fa3e2945584a0f0b317bdb8b5ec036a5b64518186a1b7006288f660",
+      "sourceExposureGroup": "public-source:voa-l1-19",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-22-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-22",
+      "sourceVersion": "1",
+      "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+      "questionContractHash": "616c8919ef7285b7feafcd9496f89245fbbc2be118f396ff5477d849cc1fe220",
+      "sourceExposureGroup": "public-source:voa-l1-22",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-22-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-22",
+      "sourceVersion": "1",
+      "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+      "questionContractHash": "616c8919ef7285b7feafcd9496f89245fbbc2be118f396ff5477d849cc1fe220",
+      "sourceExposureGroup": "public-source:voa-l1-22",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-23-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l1-23",
+      "sourceVersion": "1",
+      "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+      "questionContractHash": "974a02efaed2bc734c307b1f07c3626ad1407e77c0093d8f94f250fb5c847b25",
+      "sourceExposureGroup": "public-source:voa-l1-23",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l1-23-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l1-23",
+      "sourceVersion": "1",
+      "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+      "questionContractHash": "974a02efaed2bc734c307b1f07c3626ad1407e77c0093d8f94f250fb5c847b25",
+      "sourceExposureGroup": "public-source:voa-l1-23",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-02-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-02",
+      "sourceVersion": "1",
+      "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+      "questionContractHash": "5553cf57ddc8472e6b2428c7a05676c7701c021ad5c9677d58f9487ddfc9f298",
+      "sourceExposureGroup": "public-source:voa-l2-02",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-02-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l2-02",
+      "sourceVersion": "1",
+      "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+      "questionContractHash": "5553cf57ddc8472e6b2428c7a05676c7701c021ad5c9677d58f9487ddfc9f298",
+      "sourceExposureGroup": "public-source:voa-l2-02",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-04-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-04",
+      "sourceVersion": "1",
+      "sourceTextSha256": "b22baf528192047981bb29e83ac1b572266d3546802e4d6b8f7724469327eaf2",
+      "questionContractHash": "3fe747d91de09df13d7a3a03ac19bd72077b2919941da3224c7563a7c386d07c",
+      "sourceExposureGroup": "public-source:voa-l2-04",
+      "practiceOnly": true,
+      "audioReviewStatus": "independent-audio-review-pending"
+    },
+    {
+      "materialId": "public-voa-l2-05-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-05",
+      "sourceVersion": "1",
+      "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+      "questionContractHash": "19348291273689c487028ced90a1582bad3abe2064a3ce6407b4253fbecce2ac",
+      "sourceExposureGroup": "public-source:voa-l2-05",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-05-listening",
+      "version": "s1-q1",
+      "skill": "listening",
+      "sourceId": "voa-l2-05",
+      "sourceVersion": "1",
+      "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+      "questionContractHash": "19348291273689c487028ced90a1582bad3abe2064a3ce6407b4253fbecce2ac",
+      "sourceExposureGroup": "public-source:voa-l2-05",
+      "practiceOnly": true,
+      "audioReviewStatus": "provider-paired-not-independently-reviewed"
+    },
+    {
+      "materialId": "public-voa-l2-07-reading",
+      "version": "s1-q1",
+      "skill": "reading",
+      "sourceId": "voa-l2-07",
+      "sourceVersion": "1",
+      "sourceTextSha256": "0d9f9f7a80782023e233d0201b05a7f653e5b7a0e50cd072d074bf14ce931e92",
+      "questionContractHash": "a571e9f9d304ee163801a743a74fe4431aaa3f4e9bf4c2785a2d0ab493429091",
+      "sourceExposureGroup": "public-source:voa-l2-07",
+      "practiceOnly": true,
+      "audioReviewStatus": "independent-audio-review-pending"
+    },
+    {
+      "materialId": "public-nasa-forest-loss-radar-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "nasa-forest-loss-radar",
+      "sourceVersion": "1",
+      "sourceTextSha256": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+      "questionContractHash": "cecc6b7717535dd2d8634be1eb4ad462be112d636f0ee317d5aaddec26bded31",
+      "sourceExposureGroup": "public-source:nasa-forest-loss-radar",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-dryland-forest-mapping-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "nasa-dryland-forest-mapping",
+      "sourceVersion": "1",
+      "sourceTextSha256": "6a7341153fc1eb3e499ad8bfd3904ac52d0e92489b4edadb6f8c30266782a613",
+      "questionContractHash": "fa499a8b97ca65412ebc3322ba0175526b7ee41f4cd31264eca68806a7c9d729",
+      "sourceExposureGroup": "public-source:nasa-dryland-forest-mapping",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-citizen-kelp-mapping-reading",
+      "version": "s2-q2",
+      "skill": "reading",
+      "sourceId": "nasa-citizen-kelp-mapping",
+      "sourceVersion": "2",
+      "sourceTextSha256": "e81b94bfe1355f685a7b22a79066cdb5f103a3cd50439bb9d36b4951ddd1d6f0",
+      "questionContractHash": "d257f7edb6686349e54bf88e20485a26b2cae1d71a7d995269855a38da83b0dd",
+      "sourceExposureGroup": "public-source:nasa-citizen-kelp-mapping",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-solar-battery-storage-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "nasa-solar-battery-storage",
+      "sourceVersion": "1",
+      "sourceTextSha256": "70e9c3ee71573cf87dde21782c90b31a116780e3e2d2de89eef92ae9c1df9bc2",
+      "questionContractHash": "227ba6fca097d7a11bbd836001b78f3219075f80551ec9a1adfbaeb0160ae647",
+      "sourceExposureGroup": "public-source:nasa-solar-battery-storage",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-floating-solar-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "nasa-floating-solar",
+      "sourceVersion": "1",
+      "sourceTextSha256": "f876c33e9520879cb7eaba9b107919516f58830054ac824b73e210922efc7157",
+      "questionContractHash": "7aa69d6a015316cfffcdeb8e511c77190799610c5439570924a56ca1b7214d47",
+      "sourceExposureGroup": "public-source:nasa-floating-solar",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-nasa-phytoplankton-reading",
+      "version": "s2-q2",
+      "skill": "reading",
+      "sourceId": "nasa-phytoplankton",
+      "sourceVersion": "2",
+      "sourceTextSha256": "8d5e0d9933a04ec8ec683dbaaade843fbf15d849e9472d50a92428d7b63a67c9",
+      "questionContractHash": "da4b0a42881dfb50f0ef29c0eaea5d189f91f9156d5c177083a4b73934f666b8",
+      "sourceExposureGroup": "public-source:nasa-phytoplankton",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-usgs-hydroelectric-power-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "usgs-hydroelectric-power",
+      "sourceVersion": "1",
+      "sourceTextSha256": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+      "questionContractHash": "3800637b226af8ea818b773d8a76587b40786a0c6bb7c100738bc1fb660186a1",
+      "sourceExposureGroup": "public-source:usgs-hydroelectric-power",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-usgs-turbidity-water-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "usgs-turbidity-water",
+      "sourceVersion": "1",
+      "sourceTextSha256": "c178da625854617614dd3350dba2e4631e1a345744d13dbccceed7fcdd601c59",
+      "questionContractHash": "73c213720b1d630b6d0f7d950c6761efcddcac61156b12c0d13e6521f28c061c",
+      "sourceExposureGroup": "public-source:usgs-turbidity-water",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-noaa-ocean-acidification-reading",
+      "version": "s2-q2",
+      "skill": "reading",
+      "sourceId": "noaa-ocean-acidification",
+      "sourceVersion": "2",
+      "sourceTextSha256": "4630edc0d0ab835a5ad42baaf95d03181f72b2c7fe5134449b06530b0f0266fd",
+      "questionContractHash": "0047dc56d95ee41c99aad4a3e9f597971560b4ee2489c1bb3531b978af4af72b",
+      "sourceExposureGroup": "public-source:noaa-ocean-acidification",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    },
+    {
+      "materialId": "public-noaa-eutrophication-reading",
+      "version": "s1-q2",
+      "skill": "reading",
+      "sourceId": "noaa-eutrophication",
+      "sourceVersion": "1",
+      "sourceTextSha256": "eda0877ae50d319e897d9e8d652f82bd98935d180cfd156a7556825fe6d7ea83",
+      "questionContractHash": "5bd471626fa44c056ae8334f45cc32f5ee78db59b15ba67492c70e5cdd02e3dd",
+      "sourceExposureGroup": "public-source:noaa-eutrophication",
+      "practiceOnly": true,
+      "audioReviewStatus": "not-authenticated-listening"
+    }
+  ],
+  "uniqueSources": 46,
+  "readingMaterials": 46,
+  "listeningMaterials": 29,
+  "uniqueTextQuestions": 265,
+  "release": {
+    "id": "public-practice-2026-10-26-r3",
+    "sha256": "f558d25391c44eab55b65f50fd238fff0aedf801a24c00f41adf9a9e4a878c0e"
+  },
+  "blockedListeningSourceIds": [
+    "voa-l1-24",
+    "voa-l1-17",
+    "voa-l2-04",
+    "voa-l2-07"
+  ],
+  "independentAssessmentEligible": false,
+  "unseenTransferEvidenceEligible": false,
+  "planHash": "83cb45a545cceda24d194c3362b929c0b271ed88562e9a9ea245eeb039fc811d",
+  "startDay": 2,
+  "requiredReadingTasks": 46,
+  "requiredListeningTasks": 29,
+  "requiredTaskDays": 58,
+  "baseDaysChanged": false,
+  "protectedHistoryPolicy": "Started/frozen days, drafts and attributable records keep their bound original; new assignments reroute only after profile readiness.",
+  "contextExecution": "Word/grammar context links and review windows are author plans, not executed recall tasks or mastery.",
+  "assignments": [
+    {
+      "assignmentId": "public-course:8:public-voa-l1-01-listening",
+      "materialId": "public-voa-l1-01-listening",
+      "day": 8,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:9:public-voa-l1-02-listening",
+      "materialId": "public-voa-l1-02-listening",
+      "day": 9,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:10:public-voa-l1-03-listening",
+      "materialId": "public-voa-l1-03-listening",
+      "day": 10,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:11:public-voa-l1-04-listening",
+      "materialId": "public-voa-l1-04-listening",
+      "day": 11,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:14:public-voa-l1-05-listening",
+      "materialId": "public-voa-l1-05-listening",
+      "day": 14,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:15:public-voa-l1-06-listening",
+      "materialId": "public-voa-l1-06-listening",
+      "day": 15,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:15:public-voa-l1-01-reading",
+      "materialId": "public-voa-l1-01-reading",
+      "day": 15,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:16:public-voa-l1-02-reading",
+      "materialId": "public-voa-l1-02-reading",
+      "day": 16,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:17:public-voa-l1-03-reading",
+      "materialId": "public-voa-l1-03-reading",
+      "day": 17,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:18:public-voa-l1-04-reading",
+      "materialId": "public-voa-l1-04-reading",
+      "day": 18,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:21:public-voa-l1-05-reading",
+      "materialId": "public-voa-l1-05-reading",
+      "day": 21,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:22:public-voa-l1-06-reading",
+      "materialId": "public-voa-l1-06-reading",
+      "day": 22,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:29:public-voa-l1-09-listening",
+      "materialId": "public-voa-l1-09-listening",
+      "day": 29,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:36:public-voa-l1-09-reading",
+      "materialId": "public-voa-l1-09-reading",
+      "day": 36,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:57:public-voa-l1-07-listening",
+      "materialId": "public-voa-l1-07-listening",
+      "day": 57,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:57:public-voa-l1-17-reading",
+      "materialId": "public-voa-l1-17-reading",
+      "day": 57,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:58:public-voa-l1-08-listening",
+      "materialId": "public-voa-l1-08-listening",
+      "day": 58,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:58:public-voa-l1-24-reading",
+      "materialId": "public-voa-l1-24-reading",
+      "day": 58,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:61:public-voa-l1-10-listening",
+      "materialId": "public-voa-l1-10-listening",
+      "day": 61,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:62:public-voa-l1-11-listening",
+      "materialId": "public-voa-l1-11-listening",
+      "day": 62,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:63:public-voa-l1-12-listening",
+      "materialId": "public-voa-l1-12-listening",
+      "day": 63,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:64:public-voa-l1-14-listening",
+      "materialId": "public-voa-l1-14-listening",
+      "day": 64,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:64:public-voa-l1-07-reading",
+      "materialId": "public-voa-l1-07-reading",
+      "day": 64,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:65:public-voa-l1-15-listening",
+      "materialId": "public-voa-l1-15-listening",
+      "day": 65,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:65:public-voa-l1-08-reading",
+      "materialId": "public-voa-l1-08-reading",
+      "day": 65,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:68:public-voa-l1-16-listening",
+      "materialId": "public-voa-l1-16-listening",
+      "day": 68,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:68:public-voa-l1-10-reading",
+      "materialId": "public-voa-l1-10-reading",
+      "day": 68,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:69:public-voa-l1-18-listening",
+      "materialId": "public-voa-l1-18-listening",
+      "day": 69,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:69:public-voa-l1-11-reading",
+      "materialId": "public-voa-l1-11-reading",
+      "day": 69,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:70:public-voa-l1-19-listening",
+      "materialId": "public-voa-l1-19-listening",
+      "day": 70,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:70:public-voa-l1-12-reading",
+      "materialId": "public-voa-l1-12-reading",
+      "day": 70,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:71:public-voa-l1-20-listening",
+      "materialId": "public-voa-l1-20-listening",
+      "day": 71,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:71:public-voa-l1-14-reading",
+      "materialId": "public-voa-l1-14-reading",
+      "day": 71,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:72:public-voa-l1-22-listening",
+      "materialId": "public-voa-l1-22-listening",
+      "day": 72,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:72:public-voa-l1-15-reading",
+      "materialId": "public-voa-l1-15-reading",
+      "day": 72,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:75:public-voa-l1-23-listening",
+      "materialId": "public-voa-l1-23-listening",
+      "day": 75,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:75:public-voa-l1-16-reading",
+      "materialId": "public-voa-l1-16-reading",
+      "day": 75,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:76:public-voa-l1-28-listening",
+      "materialId": "public-voa-l1-28-listening",
+      "day": 76,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:76:public-voa-l1-18-reading",
+      "materialId": "public-voa-l1-18-reading",
+      "day": 76,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:77:public-voa-l1-19-reading",
+      "materialId": "public-voa-l1-19-reading",
+      "day": 77,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:78:public-voa-l1-20-reading",
+      "materialId": "public-voa-l1-20-reading",
+      "day": 78,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:79:public-voa-l1-22-reading",
+      "materialId": "public-voa-l1-22-reading",
+      "day": 79,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:82:public-voa-l1-23-reading",
+      "materialId": "public-voa-l1-23-reading",
+      "day": 82,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:83:public-voa-l1-28-reading",
+      "materialId": "public-voa-l1-28-reading",
+      "day": 83,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:99:public-voa-l1-34-listening",
+      "materialId": "public-voa-l1-34-listening",
+      "day": 99,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:99:public-voa-l2-04-reading",
+      "materialId": "public-voa-l2-04-reading",
+      "day": 99,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:100:public-voa-l1-42-listening",
+      "materialId": "public-voa-l1-42-listening",
+      "day": 100,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:100:public-voa-l2-07-reading",
+      "materialId": "public-voa-l2-07-reading",
+      "day": 100,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:103:public-voa-l1-48-listening",
+      "materialId": "public-voa-l1-48-listening",
+      "day": 103,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:104:public-voa-l2-01-listening",
+      "materialId": "public-voa-l2-01-listening",
+      "day": 104,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:105:public-voa-l2-02-listening",
+      "materialId": "public-voa-l2-02-listening",
+      "day": 105,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:106:public-voa-l2-03-listening",
+      "materialId": "public-voa-l2-03-listening",
+      "day": 106,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:106:public-voa-l1-34-reading",
+      "materialId": "public-voa-l1-34-reading",
+      "day": 106,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:107:public-voa-l2-05-listening",
+      "materialId": "public-voa-l2-05-listening",
+      "day": 107,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:107:public-voa-l1-42-reading",
+      "materialId": "public-voa-l1-42-reading",
+      "day": 107,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:110:public-voa-l2-06-listening",
+      "materialId": "public-voa-l2-06-listening",
+      "day": 110,
+      "skill": "listening",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:110:public-voa-l1-48-reading",
+      "materialId": "public-voa-l1-48-reading",
+      "day": 110,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:111:public-voa-l2-01-reading",
+      "materialId": "public-voa-l2-01-reading",
+      "day": 111,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:113:public-voa-l2-02-reading",
+      "materialId": "public-voa-l2-02-reading",
+      "day": 113,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:114:public-voa-l2-03-reading",
+      "materialId": "public-voa-l2-03-reading",
+      "day": 114,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:117:public-voa-l2-05-reading",
+      "materialId": "public-voa-l2-05-reading",
+      "day": 117,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:118:public-voa-l2-06-reading",
+      "materialId": "public-voa-l2-06-reading",
+      "day": 118,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:141:public-nasa-climate-models-reading",
+      "materialId": "public-nasa-climate-models-reading",
+      "day": 141,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:145:public-nasa-dryland-forest-mapping-reading",
+      "materialId": "public-nasa-dryland-forest-mapping-reading",
+      "day": 145,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:146:public-nasa-floating-solar-reading",
+      "materialId": "public-nasa-floating-solar-reading",
+      "day": 146,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:147:public-nasa-greenhouse-effect-reading",
+      "materialId": "public-nasa-greenhouse-effect-reading",
+      "day": 147,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:148:public-nasa-solar-battery-storage-reading",
+      "materialId": "public-nasa-solar-battery-storage-reading",
+      "day": 148,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:151:public-nasa-water-cycle-reading",
+      "materialId": "public-nasa-water-cycle-reading",
+      "day": 151,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:152:public-noaa-eutrophication-reading",
+      "materialId": "public-noaa-eutrophication-reading",
+      "day": 152,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:153:public-usgs-hydroelectric-power-reading",
+      "materialId": "public-usgs-hydroelectric-power-reading",
+      "day": 153,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:154:public-usgs-turbidity-water-reading",
+      "materialId": "public-usgs-turbidity-water-reading",
+      "day": 154,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:169:public-nasa-forest-loss-radar-reading",
+      "materialId": "public-nasa-forest-loss-radar-reading",
+      "day": 169,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:172:public-noaa-ocean-acidification-reading",
+      "materialId": "public-noaa-ocean-acidification-reading",
+      "day": 172,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:197:public-nasa-citizen-kelp-mapping-reading",
+      "materialId": "public-nasa-citizen-kelp-mapping-reading",
+      "day": 197,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    },
+    {
+      "assignmentId": "public-course:200:public-nasa-phytoplankton-reading",
+      "materialId": "public-nasa-phytoplankton-reading",
+      "day": 200,
+      "skill": "reading",
+      "required": true,
+      "mode": "practice"
+    }
+  ]
+}

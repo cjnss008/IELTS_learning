@@ -1,0 +1,370 @@
+{
+  "id": "expand-w08-listen-2",
+  "week": 8,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "social-announcement",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "过去、计划与入门复测 · Independent new scenario: a beginner class looking back at a problem",
+  "grammarFocus": "was / were；常用过去式入门；be going to；because；基础句型综合复习。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "A Beginner Class Looks Back: Our First Week",
+  "instructions": "这是为A1学习者设计的原创模拟听力与语法练习（非官方雅思测试）。先听/读对话，注意过去时 was/were、常用过去式、be going to 和 because 的用法。然后完成8道听力题和8道语法题。所有题目和选项均为英文，解释为中文。答案必须来自原文。",
+  "transcript": "Mia: Hi, Leo. How was your first English class?\nLeo: It was good. But I was late. I was ten minutes late.\nMia: Oh no. Why were you late?\nLeo: Because my bus was slow. The driver was very careful.\nMia: Were you nervous in class?\nLeo: Yes, I was. But the teacher was kind. She said, \"Don't worry.\"\nMia: What did you do in class?\nLeo: We listened to a short story. Then we talked in pairs. I was tired after class.\nMia: Are you going to study tonight?\nLeo: Yes, I am. I'm going to review new words because the test is on Friday.\nMia: Good plan. I'm going to help you. We were both late last week!\nLeo: Thanks, Mia. You were a big help.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How was Leo's first English class?",
+      "options": [
+        "It was bad.",
+        "It was good.",
+        "It was boring."
+      ],
+      "answers": [
+        "It was good."
+      ],
+      "explanation": "Leo 说“It was good.”，所以选“It was good.”。",
+      "evidence": "It was good."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "How many minutes was Leo late? Write ONE WORD or ONE NUMBER.",
+      "maxWords": 1,
+      "answers": [
+        "ten",
+        "10"
+      ],
+      "explanation": "Leo 说“I was ten minutes late.”，所以填 ten 或 10。",
+      "evidence": "I was ten minutes late."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why was Leo late?",
+      "options": [
+        "Because he was tired.",
+        "Because his bus was slow.",
+        "Because the teacher was kind."
+      ],
+      "answers": [
+        "Because his bus was slow."
+      ],
+      "explanation": "Leo 说“Because my bus was slow.”，所以选“Because his bus was slow.”。",
+      "evidence": "Because my bus was slow."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Was Leo nervous in class?",
+      "options": [
+        "No, he wasn't.",
+        "Yes, he was."
+      ],
+      "answers": [
+        "Yes, he was."
+      ],
+      "explanation": "Mia 问“Were you nervous in class?”，Leo 回答“Yes, I was.”，所以选“Yes, he was.”。",
+      "evidence": "Mia: Were you nervous in class?\nLeo: Yes, I was."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What did the class do first?",
+      "options": [
+        "They talked in pairs.",
+        "They took a test.",
+        "They listened to a short story."
+      ],
+      "answers": [
+        "They listened to a short story."
+      ],
+      "explanation": "Leo 说“We listened to a short story. Then we talked in pairs.”，先听故事，所以选“They listened to a short story.”。",
+      "evidence": "We listened to a short story. Then we talked in pairs."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is Leo going to do tonight?",
+      "options": [
+        "He is going to watch TV.",
+        "He is going to review new words.",
+        "He is going to sleep early."
+      ],
+      "answers": [
+        "He is going to review new words."
+      ],
+      "explanation": "Leo 说“I'm going to review new words because the test is on Friday.”，所以选“He is going to review new words.”。",
+      "evidence": "I'm going to review new words because the test is on Friday."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "When is the test? Use ONE WORD from the conversation.",
+      "maxWords": 1,
+      "answers": [
+        "Friday"
+      ],
+      "explanation": "Leo 说“the test is on Friday”，所以填 Friday。",
+      "evidence": "the test is on Friday"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Who was a big help?",
+      "options": [
+        "Leo was a big help.",
+        "Mia was a big help.",
+        "The teacher was a big help."
+      ],
+      "answers": [
+        "Mia was a big help."
+      ],
+      "explanation": "Leo 最后说“Thanks, Mia. You were a big help.”，所以是 Mia。",
+      "evidence": "Thanks, Mia. You were a big help."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "late",
+      "meaning": "迟到的",
+      "example": "But I was late."
+    },
+    {
+      "word": "slow",
+      "meaning": "慢的",
+      "example": "Because my bus was slow."
+    },
+    {
+      "word": "nervous",
+      "meaning": "紧张的",
+      "example": "Were you nervous in class?"
+    },
+    {
+      "word": "kind",
+      "meaning": "友善的",
+      "example": "But the teacher was kind."
+    },
+    {
+      "word": "tired",
+      "meaning": "疲倦的",
+      "example": "I was tired after class."
+    },
+    {
+      "word": "review",
+      "meaning": "复习",
+      "example": "I'm going to review new words because the test is on Friday."
+    },
+    {
+      "word": "test",
+      "meaning": "测试",
+      "example": "I'm going to review new words because the test is on Friday."
+    },
+    {
+      "word": "help",
+      "meaning": "帮助",
+      "example": "You were a big help."
+    }
+  ],
+  "grammar": {
+    "title": "was / were 与 be going to 入门",
+    "explanation": "英语里说“过去是/在”用 was 或 were。I / he / she / it 用 was；you / we / they 用 were。否定：was not = wasn't，were not = weren't。问句把 was/were 放前面：Were you late? 说“打算做某事”用 be going to + 动词原形，be 随主语变：I am going to study. We are going to help. 原因用 because 连接。",
+    "example": "I was ten minutes late.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence about the past.",
+        "options": [
+          "I was at home yesterday.",
+          "I were at home yesterday.",
+          "I am at home yesterday."
+        ],
+        "answers": [
+          "I was at home yesterday."
+        ],
+        "explanation": "主语 I 在过去时用 was，所以第一项正确。",
+        "evidence": "I was ten minutes late."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence about the past.",
+        "options": [
+          "They was at school.",
+          "They were at school.",
+          "They are at school yesterday."
+        ],
+        "answers": [
+          "They were at school."
+        ],
+        "explanation": "主语 they 在过去时用 were，所以第二项正确。",
+        "evidence": "We were both late last week!"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct question about the past.",
+        "options": [
+          "Was you tired?",
+          "Were you tired?",
+          "Are you tired yesterday?"
+        ],
+        "answers": [
+          "Were you tired?"
+        ],
+        "explanation": "主语 you 的过去时问句用 Were you...?，所以第二项正确。",
+        "evidence": "Were you nervous in class?"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence about the past.",
+        "options": [
+          "She wasn't at home.",
+          "She weren't at home.",
+          "She isn't at home yesterday."
+        ],
+        "answers": [
+          "She wasn't at home."
+        ],
+        "explanation": "主语 she 的过去否定用 wasn't，所以第一项正确。",
+        "evidence": "But I was late."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a plan.",
+        "options": [
+          "I am going to study tonight.",
+          "I was going to study tonight.",
+          "I going to study tonight."
+        ],
+        "answers": [
+          "I am going to study tonight."
+        ],
+        "explanation": "表示计划用 be going to + 动词原形，主语 I 用 am，所以第一项正确。",
+        "evidence": "I'm going to review new words because the test is on Friday."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a plan.",
+        "options": [
+          "We is going to help.",
+          "We are going to help.",
+          "We were going to help."
+        ],
+        "answers": [
+          "We are going to help."
+        ],
+        "explanation": "主语 we 用 are going to，所以第二项正确。",
+        "evidence": "I'm going to help you."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence with because.",
+        "options": [
+          "I was late because my bus was slow.",
+          "I was late because my bus is slow yesterday.",
+          "I was late because my bus were slow."
+        ],
+        "answers": [
+          "I was late because my bus was slow."
+        ],
+        "explanation": "because 连接原因；my bus 是单数，过去用 was，所以第一项正确。",
+        "evidence": "Because my bus was slow."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence about the past.",
+        "options": [
+          "The teacher were kind.",
+          "The teacher was kind.",
+          "The teacher is kind yesterday."
+        ],
+        "answers": [
+          "The teacher was kind."
+        ],
+        "explanation": "the teacher 是单数，过去用 was，所以第二项正确。",
+        "evidence": "But the teacher was kind."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "How was your day yesterday?",
+        "Were you busy last week?",
+        "What are you going to do this weekend?",
+        "Why are you learning English?"
+      ],
+      "part2": "Describe a time you were late. You should say: where you were going; why you were late; how you felt; and what you are going to do next time.",
+      "part3": [
+        "Are you usually on time?",
+        "What are you going to do tomorrow?",
+        "Was your last class interesting?",
+        "Why do people sometimes arrive late?"
+      ]
+    },
+    "writing": "Write 3–5 simple sentences about a time you were late. Use was/were, because, and be going to. Example: I was late because my bus was slow. I am going to leave early next time."
+  },
+  "rubric": {
+    "taskType": "A1 listening and grammar practice (simulated, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "本地题目修订草稿；原文与音频保持不变，等待独立盲答及解析复核；未经真实学习者难度标定",
+    "model": "deepseek-flash",
+    "contentHash": "d84caf3220a8873115218226212122290a64e158b3139ead07f50346a91ddfa8",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "blindInputSha256": "ca729e96af6fcf63e035cc9f5c44c763d7fec403481e974d26b741ab93478b8a",
+      "answerFileSha256": "c8c3d796a5f0fab2a35f14808eab38af2f5d519c87e80c2f4b77182cc9f55e0e",
+      "explanationReviewSha256": "ecdfa18b2ac44904553dd6eaf7481e6f24247e83bc75e7bc32e26e9fad050c1a",
+      "questionCount": 8,
+      "reviewMethod": "Separate author and root blind text answers frozen before reading explanations, with cross-question leak repair and exact antecedent evidence. Existing audio retained; no independent audio audition or learner difficulty calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

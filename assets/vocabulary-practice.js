@@ -37,7 +37,9 @@
       if (seen.has(key)) continue;
       seen.add(key);
       const fallback = lexical?.lookup(raw.word, raw.example || material?.passage || '', material?.id) || {};
-      const item = Dictionary.safeEntry({...fallback,...raw,ipa:raw.ipa || fallback.ipa,audio:raw.audio || fallback.audio,example:raw.example || raw.context || fallback.example,materialId:material?.id || ''});
+      const explicitAudio=Dictionary.safeAudioPath(raw.audio),sourceIpa=raw.ipa||raw.phonetic,sourcePronunciation=sourceIpa?Dictionary.safeEntry(raw,{audioData:options.audioData}):null;
+      let item = Dictionary.safeEntry({...fallback,...raw,ipa:sourcePronunciation?.ipa || (fallback.ipaAccent === 'en-US' ? fallback.ipa : raw.ipa || fallback.ipa),audio:explicitAudio || fallback.audio,example:raw.example || raw.context || fallback.example,materialId:material?.id || ''},{audioData:options.audioData});
+      if(item){const indexed=Dictionary.indexedAudioChoice(item.word,item.ipa,options.audioData,{meaning:item.meaning,pos:raw.pos,preferSense:!raw.ipa&&!raw.phonetic});if(indexed.ipa)item=Dictionary.safeEntry({...item,ipa:indexed.ipa,ipaAccent:'en-US'},{audioData:options.audioData});item.audio=explicitAudio || indexed.audio || (indexed.blocked?'':item.audio);}
       if (item) out.push({...item,index:out.length});
       if (out.length > 100) throw Error('单次词汇训练超过100词，请分组学习。');
     }
@@ -265,17 +267,17 @@
     async function browserTTS(word) {
       const synthesis = options.synthesis || host.speechSynthesis, Utterance = options.Utterance || host.SpeechSynthesisUtterance;
       if (!synthesis || !Utterance) throw Error('浏览器不支持英语合成语音，请安装英语声音或使用有本地词音的词。');
-      const voices = synthesis.getVoices?.() || [], voice = voices.find(item => /^en[-_]GB$/i.test(item.lang)) || voices.find(item => /^en([-_]|$)/i.test(item.lang));
-      if (!voice) throw Error('尚无可用英语声音。请在系统安装英语语音，稍后重试；本次不会记为已听。');
+      const voices = synthesis.getVoices?.() || [], voice = voices.find(item => /^en[-_]US$/i.test(item.lang));
+      if (!voice) throw Error('尚无可用英语（美式 en-US）声音。请在系统安装美国英语语音，稍后重试；本次不会换用英式或记为已听。');
       return new Promise((resolve,reject) => {
-        const utterance = new Utterance(word.word); utterance.voice = voice; utterance.lang = voice.lang; utterance.rate = .85;
+        const utterance = new Utterance(word.word); utterance.voice = voice; utterance.lang = 'en-US'; utterance.rate = .85;
         let startedAt = null, settled = false;
         const timeout = host.setTimeout?.(() => finish(Error('浏览器合成语音未完成。')),30000);
         function finish(error) {
           if (settled) return; settled = true;
           if (timeout) host.clearTimeout?.(timeout);
           cancelCurrent = null; utterance.onstart = utterance.onend = utterance.onerror = null;
-          if (error) { synthesis.cancel?.(); reject(error); } else resolve({kind:'browser-tts',source:voice.name || voice.lang,started:true,completed:true,completedAt:new Date().toISOString()});
+          if (error) { synthesis.cancel?.(); reject(error); } else resolve({kind:'browser-tts',source:voice.name || voice.lang,locale:'en-US',started:true,completed:true,completedAt:new Date().toISOString()});
         }
         utterance.onstart = () => { startedAt = Date.now(); };
         utterance.onend = event => finish(startedAt !== null && (Number(event?.elapsedTime) > 0 || Date.now()-startedAt >= 100) ? null : Error('合成语音没有成功完成可听播放。'));
@@ -286,11 +288,13 @@
     }
     async function play(word, onStatus = () => {}) {
       cancel();
-      if (word.audio) {
-        try { onStatus('正在播放本地词音……'); return await localAudio(word); }
-        catch (error) { if (/取消|中断/.test(error.message)) throw error; onStatus('本地词音未能播放，尝试浏览器英语合成语音……'); }
-      } else onStatus('使用浏览器英语合成语音……');
-      return browserTTS(word);
+      const localPath=Dictionary?.safeAudioPath(word.audio)||'',prepared={...word,audio:localPath},indexed=(options.audioData||host.IELTSVocabularyAudio||root.IELTSVocabularyAudio)?.items?.[String(word.word).trim().toLowerCase()],variants=Array.isArray(indexed?.senseVariants)?indexed.senseVariants.filter(item=>item&&Dictionary.safeAudioPath(item.audio)===localPath):[],source=localPath?(indexed?.audio===localPath?indexed:variants.length===1?variants[0]:null):null,voice=source?String(source.voice||source.locale||''):'';
+      const localLabel=/^en[-_]US/i.test(voice)?'本地美式英语合成词音':/^en[-_]GB/i.test(voice)?'本地英式英语合成词音（原文件）':'本地词音（口音按原来源）';
+      if (localPath) {
+        try { onStatus('正在播放'+localLabel+'……'); return await localAudio(prepared); }
+        catch (error) { if (/取消|中断/.test(error.message)) throw error; onStatus('本地词音未能播放，尝试浏览器美式英语合成语音……'); }
+      } else onStatus('使用浏览器美式英语合成语音……');
+      return browserTTS(prepared);
     }
     return {play,cancel};
   }
@@ -320,12 +324,12 @@
       if (!payload) throw Error('请先完成每个必学词的三轮测试。');
       if (saved) return payload;
       if (savePromise) return savePromise;
-      savePromise = (async () => { await flushMistakes(); check(); if (options.onSubmit) await options.onSubmit(clone(payload)); check(); if(root.IELTSMemory)root.IELTSMemory.capture(clone(payload)); saved = true; changed(); return payload; })();
+      savePromise = (async () => { await flushMistakes(); check(); if (options.onSubmit) { const committed=await options.onSubmit(clone(payload)); if(committed?.id)payload.recordId=committed.id; } check(); if(root.IELTSMemory)root.IELTSMemory.capture(clone(payload)); saved = true; changed(); return payload; })();
       try { return await savePromise; } finally { savePromise = null; }
     }
     function speakingContext(index) {
       const level=String(options.material?.level || 'A0').match(/A[012]|B[12]|C[12]/g)?.at(-1) || 'A0';
-      return {word:session.words[index].word,wordIndex:index,trial:(session.state.study.speaking[index] || []).length+1,materialId:session.state.materialId,dayNumber:session.state.courseDay,level,returnUrl:'学习课程.html?day='+session.state.courseDay+'&material='+encodeURIComponent(session.state.materialId)+(new URLSearchParams(root.location?.search || '').get('preview')==='1'?'&preview=1':'')};
+      return {word:session.words[index].word,wordIndex:index,trial:(session.state.study.speaking[index] || []).length+1,materialId:session.state.materialId,dayNumber:session.state.courseDay,level,returnUrl:options.returnUrl || '学习课程.html?day='+session.state.courseDay+'&material='+encodeURIComponent(session.state.materialId)+(new URLSearchParams(root.location?.search || '').get('preview')==='1'?'&preview=1':'')};
     }
     function updateSpeakingUI() {
       const active=speaker?.getState?.() || {busy:false},current=active.context?.wordIndex;
@@ -460,3 +464,4 @@
   }
   return {MODES,NAMES,verifyTrainingArtifact,normalizeAnswer,maskWord,wordsFor,createSession,createAudioPlayer,mount};
 });
+

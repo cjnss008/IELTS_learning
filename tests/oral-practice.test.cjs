@@ -263,10 +263,10 @@ test('local exact-reference demonstrations work without browser voices and word 
   page.root.IELTSVocabularyAudio = { items: { book: { audio: 'audio/vocabulary/book-exact.mp3' } } };
   const app = await page.mount();
   try {
-    await app.demonstrate(reference); assert.equal(page.demonstration, 'audio/oral-models/exact.mp3'); assert.match(app.getState().message, /本地英文合成示范/);
+    await app.demonstrate(reference); assert.equal(page.demonstration, 'audio/oral-models/exact.mp3'); assert.match(app.getState().message, /本地英文合成.*示范/);
     await app.demonstrate('book'); assert.equal(page.demonstration, 'audio/vocabulary/book-exact.mp3');
     delete page.demonstration; await app.demonstrate('study'); assert.equal(page.demonstration, undefined); assert.match(app.getState().message, /没有英文合成示范能力/);
-    const spoken=[];page.root.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};page.root.speechSynthesis={getVoices:()=>[{lang:'en-GB'}],cancel(){},speak(value){spoken.push(value.text);}};
+    const spoken=[];page.root.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};page.root.speechSynthesis={getVoices:()=>[{lang:'en-GB'},{lang:'en-US'}],cancel(){},speak(value){spoken.push(value.text);assert.equal(value.voice.lang,'en-US');assert.equal(value.lang,'en-US');}};
     await app.demonstrate('study');assert.deepEqual(spoken,['study']);assert.equal(page.demonstration,undefined);
   } finally { app.destroy(); }
 });

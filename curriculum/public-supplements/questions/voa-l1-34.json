@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-34-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-34",
+  "sourceVersion": "1",
+  "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+  "sourceContentHash": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+  "exposureGroup": "public-source:voa-l1-34",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Anna unsure about going to the Halloween party at first?",
+      "options": [
+        "She has no costume.",
+        "She does not know where the party is.",
+        "She has promised to work that night."
+      ],
+      "answers": [
+        "She has no costume."
+      ],
+      "evidence": "I might go. I might not go. I don’t have a costume. Can you help me?",
+      "explanation": "Anna在might go / might not go之后明确说明没有服装，并请求朋友帮助。缺服装是这段给出的顾虑；地点和工作安排虽然可能影响参加活动，但本文没有这样说。",
+      "evidenceOffsets": {
+        "start": 396,
+        "end": 464,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I might go. I might not go. I don’t have a costume. Can you help me?",
+          "start": 396,
+          "end": 464
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What warning does Genie give Anna?",
+      "options": [
+        "The party may begin too early.",
+        "People may refuse to wear costumes.",
+        "Things may go wrong."
+      ],
+      "answers": [
+        "Things may go wrong."
+      ],
+      "evidence": "Anna, be careful. Things might go wrong.",
+      "explanation": "Genie说be careful并提醒things might go wrong，表示事情可能出问题。might表达可能性，并没有确定宣告一定失败，也没有具体说聚会会提前或别人不肯穿服装。",
+      "evidenceOffsets": {
+        "start": 558,
+        "end": 598,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Anna, be careful. Things might go wrong.",
+          "start": 558,
+          "end": 598
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What subject does Rebecca study? Write ONE WORD.",
+      "answers": [
+        "journalism"
+      ],
+      "maxWords": 1,
+      "evidence": "I study journalism.",
+      "explanation": "Rebecca对所学专业的直接回答是journalism，意思是新闻学。后面说到找一份writing the news的工作，与这个专业相关，但题目要求的是专业词，不是未来职位或毕业时间。",
+      "evidenceOffsets": {
+        "start": 996,
+        "end": 1015,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I study journalism.",
+          "start": 996,
+          "end": 1015
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Rebecca react badly to Anna’s first job prediction?",
+      "options": [
+        "Anna says she has chosen the wrong subject.",
+        "The prediction leaves open the possibility that she will not get the job.",
+        "Anna says she has already graduated."
+      ],
+      "answers": [
+        "The prediction leaves open the possibility that she will not get the job."
+      ],
+      "evidence": "I MIGHT get a job writing the news? I MIGHT! That means I might not. And I'm studying really hard.",
+      "explanation": "Rebecca抓住might，自己解释为也可能得不到工作，觉得付出的努力没有获得确定回应。Anna并没有说她选错专业或已经毕业。题目考语气带来的反应，不把Anna后来的will保证当成实际就业结果。",
+      "understanding": "modal-meaning-in-context",
+      "evidenceOffsets": {
+        "start": 1285,
+        "end": 1383,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I MIGHT get a job writing the news? I MIGHT! That means I might not. And I'm studying really hard.",
+          "start": 1285,
+          "end": 1383
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Kaveh plan to do that day?",
+      "options": [
+        "Ask his girlfriend to marry him.",
+        "Start studying journalism.",
+        "Choose a new name for his band."
+      ],
+      "answers": [
+        "Ask his girlfriend to marry him."
+      ],
+      "evidence": "Well, today, I will ask my girlfriend to marry me.",
+      "explanation": "Kaveh用today和will说明当天的计划，是向女友求婚。能确认的是他打算提出请求，不能据此断定女友已经答应或婚礼一定举办。新闻学属于前一位Rebecca的情况，乐队名称则没有被提到。",
+      "evidenceOffsets": {
+        "start": 1611,
+        "end": 1661,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Well, today, I will ask my girlfriend to marry me.",
+          "start": 1611,
+          "end": 1661
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Genie know a rock-star costume might suit Anna?",
+      "options": [
+        "She has seen Anna perform at the party.",
+        "Anna has already bought the same costume.",
+        "Anna previously told her that she likes rock music."
+      ],
+      "answers": [
+        "Anna previously told her that she likes rock music."
+      ],
+      "evidence": "No. You told me you like rock music.",
+      "explanation": "Anna以为对方读懂心思，Genie用No否认，再说明信息来自Anna曾说喜欢摇滚乐。因此不是看过她在聚会表演，也不是Anna已经买了同一件服装。这里用明确的对话纠正区分猜测与已给出的信息。",
+      "evidenceOffsets": {
+        "start": 2209,
+        "end": 2245,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "No. You told me you like rock music.",
+          "start": 2209,
+          "end": 2245
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "3e70bcceed1e951adb19effbf6b33c2dc9472730625f2037e3e7385c0b7b3833",
+      "reviewSha256": "7b7d95354adc642e17bf897a1f899f13778c006a4c7e69abcdfb2ad9c24fb403",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

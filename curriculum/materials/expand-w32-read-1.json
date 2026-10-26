@@ -1,0 +1,391 @@
+{
+  "id": "expand-w32-read-1",
+  "week": 32,
+  "skill": "reading",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 400,
+  "maxWords": 700,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "数据理解与阶段复测 · Independent new scenario: how institutions make expertise accessible",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Open Archive: How a City Library Makes Expertise Accessible",
+  "instructions": "阅读一篇关于城市图书馆如何让专业知识更易获取的模拟文章（非官方雅思测试，非真实研究）。先阅读文章，再完成10道题。题目类型包括单选、填空、匹配（以单选形式）和判断正误/未提及。填空答案必须来自原文，且不超过字数限制。所有题目和选项均为英文，解释为中文。注意比较结构、数量表达和指代，以及冠词和主谓一致。",
+  "passage": "The Westbridge City Library is not a quiet building full of dusty books. It is a busy public space where experts share what they know with ordinary people. The library runs a programme called 'Open Archive', which invites scientists, engineers, historians, and artists to give free talks and workshops. The idea is simple: expertise should not stay hidden in universities or laboratories. It should be accessible to everyone.\n\nThe programme began three years ago with only two talks. Now it offers more than forty events each month. Some are large lectures in the main hall, while others are small hands-on sessions in the learning room. The library's director, Dr. Maya Chen, says the goal is to reach people who might never attend a formal course. 'Many adults think science is not for them,' she explains. 'But when they meet a real scientist and ask questions, they feel included.'\n\nThe Open Archive uses several methods to make expert knowledge easier to understand. First, every speaker must prepare a short summary in plain language. Second, the library provides live captions on screens for people who are hard of hearing. Third, volunteers sit at tables after each talk to answer individual questions. These volunteers are not experts themselves, but they have attended training sessions. They help visitors connect with the speakers and find further resources.\n\nNot all events are about science. Last month, a local historian gave a talk about the city's old factories. She brought photographs and maps, and she encouraged the audience to share their own family stories. More than sixty people came, and many stayed for an hour afterwards to talk. 'The best part was hearing older residents describe their childhoods,' the historian said. 'Their memories are as valuable as any academic paper.'\n\nHowever, the programme faces challenges. The library has limited space, so some popular workshops fill up quickly. There is also a waiting list for schools that want to bring students. Dr. Chen admits that the library cannot satisfy every request. 'We have fewer rooms than we need,' she says. 'But we are trying to add more sessions on weekends.' The library is also planning to record some talks and put them online, so that people who cannot visit can still watch them.\n\nWhat makes the Open Archive successful is its focus on conversation, not just information. Speakers are asked to leave plenty of time for questions. The library trains them to avoid jargon and to use examples from daily life. As a result, visitors often say they understand more than they expected. One regular visitor, a retired teacher named Mr. Patel, commented: 'I always thought I was too old to learn about technology. Now I go to two or three talks a month, and I can explain basic ideas to my grandchildren.'\n\nThe library's next step is to create a small 'expertise corner' with books, tablets, and simple experiments that visitors can try on their own. Dr. Chen hopes this will encourage more people to explore topics independently. 'We don't want people to just listen,' she says. 'We want them to become curious and confident.' The Open Archive shows that institutions can make expertise accessible when they design for real people, not just for experts.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main purpose of the Open Archive programme?",
+      "options": [
+        "To sell books to the public",
+        "To make expert knowledge accessible to everyone",
+        "To train new librarians",
+        "To build a new library building"
+      ],
+      "answers": [
+        "To make expert knowledge accessible to everyone"
+      ],
+      "explanation": "文章第一段明确说 'expertise should not stay hidden... It should be accessible to everyone'，因此主要目的是让专业知识对所有人开放。",
+      "evidence": "The idea is simple: expertise should not stay hidden in universities or laboratories. It should be accessible to everyone."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many events does the programme offer each month now?",
+      "options": [
+        "Two",
+        "Forty",
+        "More than forty",
+        "Sixty"
+      ],
+      "answers": [
+        "More than forty"
+      ],
+      "explanation": "第二段说 'Now it offers more than forty events each month'，所以是四十多场。",
+      "evidence": "Now it offers more than forty events each month."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What do volunteers do after each talk? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "answer"
+      ],
+      "explanation": "第三段提到 'volunteers sit at tables after each talk to answer individual questions'，动词是 answer。",
+      "evidence": "Third, volunteers sit at tables after each talk to answer individual questions."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which method is NOT mentioned as a way to make knowledge easier to understand?",
+      "options": [
+        "A short summary in plain language",
+        "Live captions on screens",
+        "Free printed books for every visitor",
+        "Volunteers answering questions"
+      ],
+      "answers": [
+        "Free printed books for every visitor"
+      ],
+      "explanation": "第三段列出了三种方法：plain language summary、live captions、volunteers answer questions。没有提到给每位访客免费印刷书。",
+      "evidence": "First, every speaker must prepare a short summary in plain language. Second, the library provides live captions on screens for people who are hard of hearing. Third, volunteers sit at tables after each talk to answer individual questions."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What did the historian encourage the audience to do?",
+      "options": [
+        "Write academic papers",
+        "Share their own family stories",
+        "Buy her photographs",
+        "Visit the old factories"
+      ],
+      "answers": [
+        "Share their own family stories"
+      ],
+      "explanation": "第四段说 'she encouraged the audience to share their own family stories'。",
+      "evidence": "She brought photographs and maps, and she encouraged the audience to share their own family stories."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is one challenge the programme faces?",
+      "options": [
+        "Too many speakers",
+        "Limited space",
+        "No volunteers",
+        "Lack of interest"
+      ],
+      "answers": [
+        "Limited space"
+      ],
+      "explanation": "第五段说 'The library has limited space, so some popular workshops fill up quickly'。",
+      "evidence": "The library has limited space, so some popular workshops fill up quickly."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How does the library plan to help people who cannot visit?",
+      "options": [
+        "By sending them books",
+        "By recording some talks and putting them online",
+        "By opening a new building",
+        "By offering free transport"
+      ],
+      "answers": [
+        "By recording some talks and putting them online"
+      ],
+      "explanation": "第五段最后说 'The library is also planning to record some talks and put them online, so that people who cannot visit can still watch them.'",
+      "evidence": "The library is also planning to record some talks and put them online, so that people who cannot visit can still watch them."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does Mr. Patel say he can do now?",
+      "options": [
+        "Teach a science class",
+        "Explain basic ideas to his grandchildren",
+        "Build a tablet",
+        "Write a book about technology"
+      ],
+      "answers": [
+        "Explain basic ideas to his grandchildren"
+      ],
+      "explanation": "第六段引述 Mr. Patel 的话：'I can explain basic ideas to my grandchildren.'",
+      "evidence": "Now I go to two or three talks a month, and I can explain basic ideas to my grandchildren."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "The library trains speakers to avoid jargon.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "第六段明确说 'The library trains them to avoid jargon'，因此为 True。",
+      "evidence": "The library trains them to avoid jargon and to use examples from daily life."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The Open Archive programme has received funding from the government.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "文章没有提到政府资助。文中只提到图书馆的空间和计划，但没有说明资金来源，因此是 Not Given。",
+      "evidence": "The library has limited space, so some popular workshops fill up quickly. There is also a waiting list for schools that want to bring students."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "accessible",
+      "meaning": "易接近的；可获得的",
+      "example": "It should be accessible to everyone."
+    },
+    {
+      "word": "expertise",
+      "meaning": "专业知识",
+      "example": "The idea is simple: expertise should not stay hidden in universities or laboratories."
+    },
+    {
+      "word": "captions",
+      "meaning": "字幕",
+      "example": "Second, the library provides live captions on screens for people who are hard of hearing."
+    },
+    {
+      "word": "jargon",
+      "meaning": "行话；专业术语",
+      "example": "The library trains them to avoid jargon and to use examples from daily life."
+    },
+    {
+      "word": "volunteers",
+      "meaning": "志愿者",
+      "example": "Third, volunteers sit at tables after each talk to answer individual questions."
+    },
+    {
+      "word": "residents",
+      "meaning": "居民",
+      "example": "The best part was hearing older residents describe their childhoods."
+    },
+    {
+      "word": "curious",
+      "meaning": "好奇的",
+      "example": "We want them to become curious and confident."
+    },
+    {
+      "word": "independently",
+      "meaning": "独立地",
+      "example": "Dr. Chen hopes this will encourage more people to explore topics independently."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本课重点：1) 比较结构：more than, fewer than, as...as, not as...as。例如 'more than forty events' 表示“超过四十场”。2) 数量表达：many, much, a few, a little, several, plenty of。注意 many 修饰可数名词，much 修饰不可数名词。3) 指代：it, they, them, their 要明确指代前文的名词。4) 冠词：a/an 用于泛指单数可数名词，the 用于特指或已提到的事物。5) 主谓一致：主语和谓语在人称和数上一致。例如 'The library provides'（单数），'Volunteers sit'（复数）。",
+    "example": "Now it offers more than forty events each month.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct option: The library has ______ rooms than it needs.",
+        "options": [
+          "fewer",
+          "less",
+          "few",
+          "little"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "rooms 是可数名词复数，比较级用 fewer。less 修饰不可数名词。",
+        "evidence": "We have fewer rooms than we need."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct option: ______ people came to the talk than last time.",
+        "options": [
+          "Fewer",
+          "Less",
+          "Few",
+          "Little"
+        ],
+        "answers": [
+          "Fewer"
+        ],
+        "explanation": "people 是可数名词复数，比较级用 Fewer。",
+        "evidence": "Fewer people came to the talk than last time."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct option: The programme offers ______ events every month.",
+        "options": [
+          "many",
+          "much",
+          "a little",
+          "a great deal of"
+        ],
+        "answers": [
+          "many"
+        ],
+        "explanation": "events 是可数名词复数，用 many 修饰。much 和 a little 修饰不可数名词。",
+        "evidence": "The programme offers many events every month."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct option: The library provides ______ information about each talk.",
+        "options": [
+          "much",
+          "many",
+          "few",
+          "several"
+        ],
+        "answers": [
+          "much"
+        ],
+        "explanation": "information 是不可数名词，用 much 修饰。many, few, several 修饰可数名词。",
+        "evidence": "The library provides much information about each talk."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct pronoun: The volunteers help visitors. ______ answer questions.",
+        "options": [
+          "They",
+          "It",
+          "He",
+          "She"
+        ],
+        "answers": [
+          "They"
+        ],
+        "explanation": "volunteers 是复数，指代用 They。",
+        "evidence": "The volunteers help visitors. They answer questions."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct article: Dr. Chen is ______ expert in science education.",
+        "options": [
+          "an",
+          "a",
+          "the",
+          "no article"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "expert 以元音音素开头，泛指一位专家用 an。",
+        "evidence": "Dr. Chen is an expert in science education."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct verb: The library ______ live captions on screens.",
+        "options": [
+          "provides",
+          "provide",
+          "providing",
+          "provided"
+        ],
+        "answers": [
+          "provides"
+        ],
+        "explanation": "主语 The library 是单数第三人称，一般现在时动词加 -s，用 provides。",
+        "evidence": "The library provides live captions on screens."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct verb: The volunteers ______ at tables after each talk.",
+        "options": [
+          "sit",
+          "sits",
+          "sitting",
+          "sat"
+        ],
+        "answers": [
+          "sit"
+        ],
+        "explanation": "主语 The volunteers 是复数，一般现在时用动词原形 sit。",
+        "evidence": "The volunteers sit at tables after each talk."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like going to libraries? Why or why not?",
+        "Have you ever attended a free talk or workshop?",
+        "What kind of expert would you like to listen to?",
+        "Do you prefer learning alone or with other people?"
+      ],
+      "part2": "Describe a place where you can learn something new. You should say: where it is; what you can learn there; who you go with; and explain why you think it is a good place to learn.",
+      "part3": [
+        "How can institutions make expert knowledge more accessible to the public?",
+        "Do you think online talks can replace face-to-face events? Why?",
+        "What are the advantages of learning from volunteers rather than experts?",
+        "Should libraries spend money on technology or on books? Why?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 120 words) about a time when you learned something new from an expert. Explain what you learned and how it helped you. Use at least two comparative structures (e.g., more than, fewer than, as...as) and pay attention to articles and subject-verb agreement."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension with grammar focus"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "18ee73a3e66ace0ca8f5d7682af70a135857bea4a09e1ecf7331cd1e968e0abe"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

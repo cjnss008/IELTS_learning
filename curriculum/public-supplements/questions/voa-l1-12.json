@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-12-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-12",
+  "sourceVersion": "2",
+  "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+  "sourceContentHash": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+  "exposureGroup": "public-source:voa-l1-12",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [
+    {
+      "code": "provider-original-typo",
+      "status": "resolved",
+      "reason": "Explicit editorial correction in source v2 removed the erroneous semicolon; quoted source spelling and offsets here refer to the original v1 extraction only.",
+      "quote": "That-That';s very different.",
+      "start": 551,
+      "end": 579,
+      "offsetUnit": "UTF-16-code-unit",
+      "blocks": [],
+      "originalSourceTextSha256": "fa9581abbacb02513f4f52141e49e0572e7e24d9f86b468d9dab1db2eeb6f949"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does Anna feel sad at the beginning?",
+      "options": [
+        "She has lost her family photos.",
+        "She is worried about losing her job.",
+        "She misses her family."
+      ],
+      "answers": [
+        "She misses her family."
+      ],
+      "evidence": "I'm thinking about my family. I'm feeling homesick.",
+      "evidenceOffsets": {
+        "start": 200,
+        "end": 251,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna说自己正想着家人并感到homesick，说明她想家。后面她拿出许多照片，所以不是把家庭照片丢了；这段对话没有提丢工作的担忧。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I'm thinking about my family. I'm feeling homesick.",
+          "start": 200,
+          "end": 251
+        }
+      ],
+      "understanding": "feeling-and-reason"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What do Anna’s parents do at a rodeo?",
+      "options": [
+        "Raise sheep.",
+        "Grow vegetables.",
+        "Make people laugh."
+      ],
+      "answers": [
+        "Make people laugh."
+      ],
+      "evidence": "They make jokes at a rodeo. They make people laugh.",
+      "evidenceOffsets": {
+        "start": 490,
+        "end": 541,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna解释父母作为rodeo clowns会说笑话、让人发笑。养羊属于后面堂表亲的活动，不能移到父母身上；原文没有说父母种菜。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "They make jokes at a rodeo. They make people laugh.",
+          "start": 490,
+          "end": 541
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How is Aunt Lavender related to Anna’s mother?",
+      "options": [
+        "They are cousins.",
+        "They are sisters.",
+        "They are mother and daughter."
+      ],
+      "answers": [
+        "They are sisters."
+      ],
+      "evidence": "That is my Aunt Lavender. She is my mom's sister.",
+      "evidenceOffsets": {
+        "start": 629,
+        "end": 678,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna说She is my mom’s sister，所以Lavender与Anna的母亲是姐妹。cousins是另一种亲属关系；也不能把“母亲的姐妹”误读成母女。答案考查亲属关系，而不是直接选一个人名。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "That is my Aunt Lavender. She is my mom's sister.",
+          "start": 629,
+          "end": 678
+        }
+      ],
+      "understanding": "family-relationship"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Uncle John make as well as farming?",
+      "options": [
+        "Guitars.",
+        "Sweaters.",
+        "Spoons."
+      ],
+      "answers": [
+        "Guitars."
+      ],
+      "evidence": "He's a chicken farmer. And makes guitars.",
+      "evidenceOffsets": {
+        "start": 903,
+        "end": 944,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna说Uncle John是养鸡农场主，并且做guitars。spoons属于Aunt Lavender的手艺，sweaters属于后面堂表亲的活动；三项都在家庭介绍中，但必须与正确的人对应。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "He's a chicken farmer. And makes guitars.",
+          "start": 903,
+          "end": 944
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What animals do Anna’s cousins raise?",
+      "answers": [
+        "sheep"
+      ],
+      "maxWords": 1,
+      "evidence": "They raise sheep and make sweaters.",
+      "evidenceOffsets": {
+        "start": 1114,
+        "end": 1149,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "介绍cousins时Anna明确说They raise sheep，所以填sheep。chicken与Uncle John的农场有关，不能当成堂表亲所养的动物；sweaters是他们制作的物品，不是动物。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "They raise sheep and make sweaters.",
+          "start": 1114,
+          "end": 1149
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Anna feel after talking about the photos?",
+      "options": [
+        "She feels better.",
+        "She wants to stop remembering home.",
+        "She feels more worried."
+      ],
+      "answers": [
+        "She feels better."
+      ],
+      "evidence": "I do feel better. Thanks for listening. I have many more photos!",
+      "evidenceOffsets": {
+        "start": 1277,
+        "end": 1341,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna直接说I do feel better，并感谢Marsha倾听，说明谈话后心情好转。没有说更担忧；结尾她还说喜欢回忆老家，因此不是要停止回忆。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I do feel better. Thanks for listening. I have many more photos!",
+          "start": 1277,
+          "end": 1341
+        }
+      ],
+      "understanding": "change-over-time"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "520d2141791d3a4e5a99a491dbe01ff7d3d4a087babbec02943a3ec8b9a9327f",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

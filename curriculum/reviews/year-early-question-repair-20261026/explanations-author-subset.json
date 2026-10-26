@@ -1,0 +1,324 @@
+[
+  {
+    "id": "expand-w01-listen-2",
+    "blindInputSha256": "a7589081c289bca20ddae8f865a40bf102062ffc17713f375a5d0ad01c2c138e",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "Mia开口说“Good morning.”，是早上问候语。不是Good evening（晚上好）或Good night（晚安）。原文没有直接交代Mia的职业，因此不再把help desk person当作必须听出的身份。",
+        "evidence": "Mia: Good morning. I am Mia. Are you a visitor?"
+      },
+      {
+        "id": "q2",
+        "explanation": "Ben最初说“I am here for Room 12.”，表示他是来找12号房间的；Mia随后才纠正为另一房间。题目问他最先说出的房号，不是纠正后的房号。",
+        "evidence": "Ben: Yes. I am Ben. I am here for Room 12."
+      },
+      {
+        "id": "q3",
+        "explanation": "Mia明确纠正：“Room 12? No. You are in Room 14.”。题目问Mia所说的房间，应听纠正后的信息；不是Ben最初说的Room 12，也不是Room 4。",
+        "evidence": "Mia: Room 12? No. You are in Room 14."
+      },
+      {
+        "id": "q4",
+        "explanation": "Mia问Ben是否和一位friend一起，Ben紧接着回答“Yes.”，确认了这件事。用录音原词填friend；不能只引用问句就把问题中的信息当作已经证实。",
+        "evidence": "Mia: Are you with a friend?\nBen: Yes. We are here. We are two people."
+      },
+      {
+        "id": "q5",
+        "explanation": "Ben说“We are two people.”，所以填two。题目限定Ben所说的we，不把正在与他们交谈的Mia也计入；填原词，不填people或three。",
+        "evidence": "Ben: Yes. We are here. We are two people."
+      },
+      {
+        "id": "q6",
+        "explanation": "Mia说14号房间在二楼。",
+        "evidence": "Mia: Good. You are in Room 14. It is on floor two."
+      },
+      {
+        "id": "q7",
+        "explanation": "Ben问是否靠近楼梯，Mia回答是的。",
+        "evidence": "Ben: Is it near the stairs?\nMia: Yes, it is. The stairs are there."
+      },
+      {
+        "id": "q8",
+        "explanation": "Ben说他们很高兴。",
+        "evidence": "Ben: Great. We are happy. Thank you, Mia."
+      }
+    ]
+  },
+  {
+    "id": "expand-w04-listen-2",
+    "blindInputSha256": "bfaec54936fc4896a9200199b7de341497e803de407f49d3578fc40cdafa7ed2",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "Mia问'Are you the building manager?'，Mr. Lee回答'Yes, I am.'，所以他是building manager。",
+        "evidence": "Mia: Hello. I am new here. Are you the building manager?\nMr. Lee: Yes, I am. I am Lee."
+      },
+      {
+        "id": "q2",
+        "explanation": "Mia说'I am not a student. I am a nurse.'，明确否定她是学生。",
+        "evidence": "Mia: Yes, I am. But I am not a student. I am a nurse."
+      },
+      {
+        "id": "q3",
+        "explanation": "Mia说'I am a nurse.'，所以她的职业是护士。",
+        "evidence": "Mia: Yes, I am. But I am not a student. I am a nurse."
+      },
+      {
+        "id": "q4",
+        "explanation": "Mr. Lee问'Is there a hospital near here?'，Mia回答'Yes, there is.'，所以附近有医院。",
+        "evidence": "Mr. Lee: Oh, good. Is there a hospital near here?\nMia: Yes, there is. It is not far."
+      },
+      {
+        "id": "q5",
+        "explanation": "Mia问'Who is the doctor there?'，Mr. Lee回答'Dr. Chen.'，所以医生是Dr. Chen。",
+        "evidence": "Mia: Yes, there is. It is not far. Who is the doctor there?\nMr. Lee: Dr. Chen. She is very nice."
+      },
+      {
+        "id": "q6",
+        "explanation": "Mr. Lee问'Are you tired?'，Mia回答'No, I am not.'，所以她不累。",
+        "evidence": "Mr. Lee: Dr. Chen. She is very nice. Are you tired?\nMia: No, I am not."
+      },
+      {
+        "id": "q7",
+        "explanation": "Mr. Lee说公交站“It is next to the bank.”，next to表示紧挨着，因此选The bank。医院是near（附近）的参照点，不能把near自动改成next to；原文没有说公交站紧挨学校。",
+        "evidence": "Mia: No, I am not. Is the bus stop near the hospital?\nMr. Lee: Yes, it is. It is next to the bank."
+      },
+      {
+        "id": "q8",
+        "explanation": "Mr. Lee说'The bank is not open today.'，所以银行今天不开门。",
+        "evidence": "Mr. Lee: Yes, it is. It is next to the bank. The bank is not open today."
+      }
+    ]
+  },
+  {
+    "id": "expand-w05-listen-1",
+    "blindInputSha256": "cc89598f465dda763770021f60266c706e726c98e7d10ee5d3d3e46289b46ddf",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "Leo说“I work Monday to Friday.”，所以正常一周工作周一到周五。",
+        "evidence": "I work Monday to Friday."
+      },
+      {
+        "id": "q2",
+        "explanation": "Leo说“My sister visits on Thursday. So I stay home on Thursday.”，因此这周周四留在家里是因为姐妹来访。sister本身不区分姐姐或妹妹；健身、学英语是谈话中的其他活动，不是这句话给出的原因。",
+        "evidence": "My sister visits on Thursday. So I stay home on Thursday."
+      },
+      {
+        "id": "q3",
+        "explanation": "Mia问“Do you go to the gym on Thursday?”，Leo回答“No, I don't.”，所以周四不去健身房。",
+        "evidence": "Mia: Do you go to the gym on Thursday?\nLeo: No, I don't. I go to the gym on Tuesday and Friday."
+      },
+      {
+        "id": "q4",
+        "explanation": "Leo说“I start at nine.”，所以开始工作是九点。答案填nine。",
+        "evidence": "I start at nine."
+      },
+      {
+        "id": "q5",
+        "explanation": "Leo说“I finish at five.”，所以下班是五点。答案填five。",
+        "evidence": "I finish at five."
+      },
+      {
+        "id": "q6",
+        "explanation": "Leo说“I eat lunch at a café near my office.”，所以午饭在办公室附近的咖啡馆吃。",
+        "evidence": "I eat lunch at a café near my office."
+      },
+      {
+        "id": "q7",
+        "explanation": "Leo说“I study English on Monday and Wednesday.”，所以周一和周三学英语。",
+        "evidence": "I study English on Monday and Wednesday."
+      },
+      {
+        "id": "q8",
+        "explanation": "Leo说“I don't study on Friday.”，所以周五不学英语。",
+        "evidence": "I don't study on Friday."
+      }
+    ]
+  },
+  {
+    "id": "expand-w06-listen-1",
+    "blindInputSha256": "a2ef2eb48b8dcae82efef6649cca308448ff37f1d2fb0e0a71d5b2503df2166c",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "原文中Mia说“My son likes noodles”，所以儿子喜欢面条。",
+        "evidence": "My son likes noodles"
+      },
+      {
+        "id": "q2",
+        "explanation": "原文中Mia说儿子“cannot eat eggs”，所以儿子不能吃鸡蛋。",
+        "evidence": "Mia: My son likes noodles, but he cannot eat eggs."
+      },
+      {
+        "id": "q3",
+        "explanation": "Tom问“Does she like vegetables?”，Mia回答“No, she doesn't.”，所以女儿不喜欢蔬菜。",
+        "evidence": "Tom: Rice with eggs. Does she like vegetables? Mia: No, she doesn't."
+      },
+      {
+        "id": "q4",
+        "explanation": "Mia说“I like soup”，所以Mia喜欢汤。",
+        "evidence": "I like soup"
+      },
+      {
+        "id": "q5",
+        "explanation": "Tom问“Does your husband like soup?”，Mia回答“No, he doesn't.”，所以丈夫不喜欢汤。",
+        "evidence": "Tom: Chicken soup. Does your husband like soup? Mia: No, he doesn't."
+      },
+      {
+        "id": "q6",
+        "explanation": "Mia说丈夫“likes bread and cheese”，所以丈夫喜欢面包和奶酪。",
+        "evidence": "Tom: Chicken soup. Does your husband like soup? Mia: No, he doesn't. He likes bread and cheese."
+      },
+      {
+        "id": "q7",
+        "explanation": "Tom问“does he eat fish?”，Mia回答“Yes, he does.”，所以丈夫吃鱼。",
+        "evidence": "Tom: Chicken soup. Does your husband like soup? Mia: No, he doesn't. He likes bread and cheese. Tom: Bread and cheese. One more thing: does he eat fish? Mia: Yes, he does."
+      },
+      {
+        "id": "q8",
+        "explanation": "Mia说丈夫“cannot eat nuts”，所以丈夫不能吃坚果。答案填nuts。",
+        "evidence": "Tom: Chicken soup. Does your husband like soup? Mia: No, he doesn't. He likes bread and cheese. Tom: Bread and cheese. One more thing: does he eat fish? Mia: Yes, he does. But he cannot eat nuts."
+      }
+    ]
+  },
+  {
+    "id": "expand-w07-listen-1",
+    "blindInputSha256": "f59b77e0b5e10d7e04573202fca87981169defaf0301b0f3ed6c1e4793efad75",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "Tom 明确说 art room 在图书馆旁边。",
+        "evidence": "Mia: Excuse me, Tom. Where is the art room? Tom: It is next to the library."
+      },
+      {
+        "id": "q2",
+        "explanation": "Tom 指路时说在咖啡馆左转。",
+        "evidence": "Go straight and turn left at the café."
+      },
+      {
+        "id": "q3",
+        "explanation": "Tom 回答 Yes, there is，说明门口附近有地图。",
+        "evidence": "Mia: Is there a map near the gate? Tom: Yes, there is."
+      },
+      {
+        "id": "q4",
+        "explanation": "Tom 说两个学生正在地图上画画。",
+        "evidence": "Mia: Is there a map near the gate? Tom: Yes, there is. Look, two students are drawing on it."
+      },
+      {
+        "id": "q5",
+        "explanation": "Tom 明确说没有椅子。",
+        "evidence": "Mia: Are there any chairs in the art room? Tom: No, there aren't."
+      },
+      {
+        "id": "q6",
+        "explanation": "Tom 说艺术教室里有六张桌子，原文用 six。",
+        "evidence": "there are six tables."
+      },
+      {
+        "id": "q7",
+        "explanation": "Tom 说老师正在开窗。",
+        "evidence": "Mia: What is the teacher doing now? Tom: She is opening the window."
+      },
+      {
+        "id": "q8",
+        "explanation": "Tom 说自己的包在桌子下面。",
+        "evidence": "My bag is under the desk."
+      }
+    ]
+  },
+  {
+    "id": "expand-w07-listen-2",
+    "blindInputSha256": "2d350f547914f4f514349e2bd8e259044496b70fce8271909ce2a53fdb2486c9",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "Ben说：'I'm near the big market.' 所以选“near the big market”。",
+        "evidence": "I'm near the big market."
+      },
+      {
+        "id": "q2",
+        "explanation": "Mia问：'Is there a coffee shop near you?' Ben回答：'Yes, there is.' 所以选“Yes, there is.”。",
+        "evidence": "Mia: Is there a coffee shop near you? Ben: Yes, there is."
+      },
+      {
+        "id": "q3",
+        "explanation": "Ben说：'It's next to the bank.' 所以填bank。",
+        "evidence": "Mia: Is there a coffee shop near you? Ben: Yes, there is. It's next to the bank."
+      },
+      {
+        "id": "q4",
+        "explanation": "Mia直接说“I'm at the bus stop.”，所以选at the bus stop。随后她正在走向市场；题目问她自己说出的地点，不把整段对话结束时的未知实时位置当作已知信息。",
+        "evidence": "I'm at the bus stop."
+      },
+      {
+        "id": "q5",
+        "explanation": "Ben说：'The market is between the bank and the library.' 所以选“library”。",
+        "evidence": "The market is between the bank and the library."
+      },
+      {
+        "id": "q6",
+        "explanation": "Mia问：'Is that the library?' Ben回答：'No, that's the hospital.' 所以选“No, it isn't.”。",
+        "evidence": "Mia: I see a tall building. Is that the library? Ben: No, that's the hospital."
+      },
+      {
+        "id": "q7",
+        "explanation": "Ben说：'The library is behind the market.' 所以填behind。",
+        "evidence": "The library is behind the market."
+      },
+      {
+        "id": "q8",
+        "explanation": "Ben说“I'm standing under the clock.”，因此他站在钟下面。问句只问他站在什么东西下面，避免把可能同时成立的near the bank与under the clock当作互斥地点；录音没有说他站在树或标牌下面。",
+        "evidence": "I'm standing under the clock."
+      }
+    ]
+  },
+  {
+    "id": "expand-w08-listen-2",
+    "blindInputSha256": "ca729e96af6fcf63e035cc9f5c44c763d7fec403481e974d26b741ab93478b8a",
+    "questions": [
+      {
+        "id": "q1",
+        "explanation": "Leo 说“It was good.”，所以选“It was good.”。",
+        "evidence": "It was good."
+      },
+      {
+        "id": "q2",
+        "explanation": "Leo 说“I was ten minutes late.”，所以填 ten 或 10。",
+        "evidence": "I was ten minutes late."
+      },
+      {
+        "id": "q3",
+        "explanation": "Leo 说“Because my bus was slow.”，所以选“Because his bus was slow.”。",
+        "evidence": "Because my bus was slow."
+      },
+      {
+        "id": "q4",
+        "explanation": "Mia 问“Were you nervous in class?”，Leo 回答“Yes, I was.”，所以选“Yes, he was.”。",
+        "evidence": "Mia: Were you nervous in class?\nLeo: Yes, I was."
+      },
+      {
+        "id": "q5",
+        "explanation": "Leo 说“We listened to a short story. Then we talked in pairs.”，先听故事，所以选“They listened to a short story.”。",
+        "evidence": "We listened to a short story. Then we talked in pairs."
+      },
+      {
+        "id": "q6",
+        "explanation": "Leo 说“I'm going to review new words because the test is on Friday.”，所以选“He is going to review new words.”。",
+        "evidence": "I'm going to review new words because the test is on Friday."
+      },
+      {
+        "id": "q7",
+        "explanation": "Leo 说“the test is on Friday”，所以填 Friday。",
+        "evidence": "the test is on Friday"
+      },
+      {
+        "id": "q8",
+        "explanation": "Leo 最后说“Thanks, Mia. You were a big help.”，所以是 Mia。",
+        "evidence": "Thanks, Mia. You were a big help."
+      }
+    ]
+  }
+]

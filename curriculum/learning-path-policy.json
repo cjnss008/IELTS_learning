@@ -1,0 +1,1700 @@
+{
+  "schema": 1,
+  "id": "learning-path-2026-10-26-p2-v2",
+  "status": "staged-review-required",
+  "active": false,
+  "goal": {
+    "days": 365,
+    "exam": "Academic IELTS",
+    "eachSkillBand": 7,
+    "stretchBand": 7.5,
+    "guarantee": false,
+    "dailyAvailableMinutes": 360,
+    "vocabularyTarget": 8000,
+    "vocabularyCoverageDeadline": 330,
+    "vocabularyDailyMinimum": null
+  },
+  "adoption": {
+    "completed": "keep-original-contract-and-results",
+    "inProgress": "keep-original-material-version-draft-order-media-and-grading",
+    "unstarted": "review-proposal-before-separate-versioned-adoption",
+    "runtimeActivated": false
+  },
+  "safeguards": {
+    "requireActualReferences": true,
+    "doNotImportPersonalRecords": true,
+    "reservePools": [
+      "independent",
+      "gate",
+      "final"
+    ],
+    "reserveUse": "checkpoint-only; independent and B forms remain alternatives, never routine fill",
+    "unseenRequiresExposureCheck": true,
+    "firstStudyMeaning": "首次计划接触该源/该练习，不是学习者已核实未见，也不等于知识首次出现",
+    "unknownDifficulty": "needs-review-not-calibrated",
+    "contextVocabulary": "due-first; only actual input/output context; P3 mapping and capacity still pending",
+    "inputOrder": "listening-before-reading-when-sharing-content",
+    "doNotTurnSameQuestionIntoNewMaterial": true,
+    "materialCountIsNotCapabilityEvidence": true
+  },
+  "budgets": {
+    "ordinary": {
+      "dueReview": 30,
+      "vocabulary": 40,
+      "grammar": 25,
+      "listening": 60,
+      "reading": 55,
+      "speaking": 45,
+      "writing": 60,
+      "reflection": 10,
+      "break": 35
+    },
+    "checkpoint": {
+      "listening": 45,
+      "reading": 60,
+      "writing": 60,
+      "speaking": 20,
+      "correction": 90,
+      "reflection": 20,
+      "break": 65
+    },
+    "annualReview": {
+      "evidenceReview": 180,
+      "nextCyclePlanning": 60,
+      "break": 60
+    },
+    "semantics": "均为可调整参考上限，不要求坐满；同技能多个引用/教材/52篇替换该槽，不叠加。需按真实耗时重新估计，未证明年度容量。"
+  },
+  "weeklyPattern": {
+    "selectUnseenOrdinarySourcesEveryDay": true,
+    "reviewReplacesWholeDay": false,
+    "firstStudyWeeklyLimit": null,
+    "ordinaryPriority": "current prerequisite window unused ordinary source, then earlier pending ordinary source, then supported legacy or explicit reuse",
+    "textbookPracticeWeekday": 5,
+    "grammarNewPacksPerDay": 1,
+    "grammarReviewPacksPerDay": 1,
+    "assessment": "keep existing checkpoint; no B/independent routine fill"
+  },
+  "phases": [
+    {
+      "id": "foundation",
+      "fromDay": 1,
+      "toDay": 28,
+      "label": "声音、拼读、基础句子",
+      "prerequisites": [],
+      "targets": {
+        "listening": "辨识常见音形，提取姓名、班级、数字与简短问答事实",
+        "reading": "理解短句主谓与人物/物品信息，指回原句证据",
+        "speaking": "独立交换真实个人信息，问句与完整短答，不背示范",
+        "writing": "从正确句子发展为6–8句具体信息；原稿与订正分开",
+        "grammar": "be/代词、基本问否、数量与基础句型；一天明确一个新点",
+        "vocabulary": "从实际短文/对话抽需用词；音形义首学与到期回忆分开"
+      },
+      "check": "用另一人物/信息组合检查听辨、事实理解和独立句子；不报IELTS Band",
+      "levelStatus": "教学目标窗口；不按日期自动升级，既有级别标签未经考生标定"
+    },
+    {
+      "id": "everyday",
+      "fromDay": 29,
+      "toDay": 84,
+      "label": "基础交际与连贯短段",
+      "prerequisites": [
+        "foundation:listening",
+        "foundation:reading",
+        "foundation:speaking"
+      ],
+      "targets": {
+        "listening": "理解生活多角色对话的时间、地点、安排与改变",
+        "reading": "辨识先后、原因和代词所指，理解短篇通知与经历",
+        "speaking": "讲日常、经历、计划并进行追问；保留自己的原音",
+        "writing": "写连贯短段，含具体细节和简单连接词",
+        "grammar": "现在/过去/将来、比较、数量与方位；与旧句型对比",
+        "vocabulary": "高频生活词在不同听读语境复现，输出只要求合适义项"
+      },
+      "check": "换场景的独立理解和表达加跨天回忆；同题订正不作独立测验",
+      "levelStatus": "教学目标窗口；不按日期自动升级，既有级别标签未经考生标定"
+    },
+    {
+      "id": "independent",
+      "fromDay": 85,
+      "toDay": 168,
+      "label": "独立使用、长句与段落逻辑",
+      "prerequisites": [
+        "everyday:listening",
+        "everyday:speaking",
+        "everyday:writing"
+      ],
+      "targets": {
+        "listening": "跟随较长对话/说明，区分事实、原因与说话人立场",
+        "reading": "理解常见从句与段落功能，定位同义表达和证据范围",
+        "speaking": "叙述并支持观点，复述需改变信息组织",
+        "writing": "形成有主题句、解释和例子的段落，逐步撤脚手架",
+        "grammar": "完成时、被动、关系/名词从句与非谓语的先修检查",
+        "vocabulary": "按词头/义项回忆并在新情境运用；不按词形凑数"
+      },
+      "check": "首次新题→订正→另一情境迁移；仅对适当任务逐渐限时",
+      "levelStatus": "教学目标窗口；不按日期自动升级，既有级别标签未经考生标定"
+    },
+    {
+      "id": "academic",
+      "fromDay": 169,
+      "toDay": 252,
+      "label": "Academic题型、论证与图表",
+      "prerequisites": [
+        "independent:reading",
+        "independent:grammar",
+        "independent:speaking"
+      ],
+      "targets": {
+        "listening": "在正常速度材料中追踪多人观点和学术说明结构",
+        "reading": "学术定位、判断证据/未给信息、段落主旨与推断边界",
+        "speaking": "Part1–3型任务：展开、比较、解释原因并保留完整原音",
+        "writing": "Task1概述与关键比较、Task2明确立场和充分论证",
+        "grammar": "条件、复杂从句、谨慎表达和主谓一致服务于具体任务",
+        "vocabulary": "学术与话题搭配联动输入、改写和口写；保留不确定义项"
+      },
+      "check": "先分科后整合；核对任务覆盖和四维薄弱项，未校准卷不换算Band",
+      "levelStatus": "教学目标窗口；不按日期自动升级，既有级别标签未经考生标定"
+    },
+    {
+      "id": "integration",
+      "fromDay": 253,
+      "toDay": 330,
+      "label": "完整任务、弱项与覆盖收口",
+      "prerequisites": [
+        "academic:writing",
+        "academic:speaking",
+        "academic:reading",
+        "academic:listening"
+      ],
+      "targets": {
+        "listening": "完整40题条件下独立作答，记录实际重听/提示与错因",
+        "reading": "三篇40题限时独立作答，证据定位与耐力分开看",
+        "speaking": "连续Part1–3自由表达与完整原音四维评阅",
+        "writing": "20/40分钟两任务原稿，Task2权重更高，反馈后换新题",
+        "grammar": "从作品反复错误选短专项；不机械堆高级结构",
+        "vocabulary": "核对8000语境覆盖与延迟缺口，不能以赶数挤掉四技能"
+      },
+      "check": "用不同未见材料检查稳定性；来源/音频/评分未核者明示缺口",
+      "levelStatus": "教学目标窗口；不按日期自动升级，既有级别标签未经考生标定"
+    },
+    {
+      "id": "verification",
+      "fromDay": 331,
+      "toDay": 365,
+      "label": "保持、末期复测与稳定表现",
+      "prerequisites": [
+        "integration:listening",
+        "integration:reading",
+        "integration:speaking",
+        "integration:writing"
+      ],
+      "targets": {
+        "listening": "保留卷独立完整表现与跨日稳定性",
+        "reading": "保留卷完整表现，不用重复卷分数作陌生证据",
+        "speaking": "不同未见主题的完整口试原音与四维依据",
+        "writing": "不同未见图表/论题的完整原稿与四维依据",
+        "grammar": "修复仍影响沟通与准确性的具体模式",
+        "vocabulary": "到期保持、未验证词与核心义项收口；不最后突击凑数"
+      },
+      "check": "内部检查至少3次跨日不同未见完整任务，各项分别审证据；次数属项目规则，非官方保证",
+      "levelStatus": "教学目标窗口；不按日期自动升级，既有级别标签未经考生标定"
+    }
+  ],
+  "legacyAnalysis": {
+    "status": "AI-content-estimate-not-calibrated",
+    "basis": "逐篇阅读正文和既有语法条目；结合句法、词汇领域、推理/体裁与事实风险给支持性精读级别。非CEFR认证、非实测难度。",
+    "fullTextUse": "supported-intensive-reading; not beginner extensive reading",
+    "annotations": [
+      {
+        "lessonDay": 1,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "travel",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "relative",
+          "participles"
+        ],
+        "evidenceQuote": "the distance measuring approximately 5,000 kilometers",
+        "rationale": "旅行叙事中叠加独立主格、分词与地理词；短篇仍有较高加工负荷",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 2,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "culture",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "passive",
+          "conditionals"
+        ],
+        "evidenceQuote": "as though they were never tired",
+        "rationale": "节日虚构叙事、宗教词和as though假设；不能当真实文化知识",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-cultural-fact"
+      },
+      {
+        "lessonDay": 3,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "food",
+        "preferredWeeks": [
+          23
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "relative",
+          "gerund"
+        ],
+        "evidenceQuote": "while Yong Hui’s lose weight too quickly",
+        "rationale": "两家餐馆对比、非限制从句与省略；需饮食词支持",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-nutrition-guidance"
+      },
+      {
+        "lessonDay": 4,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "culture",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "nominal",
+          "participles"
+        ],
+        "evidenceQuote": "what those gestures really mean is subjective",
+        "rationale": "跨文化抽象论述后接误会叙事，主语从句与感官宾补",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-cultural-generalisation"
+      },
+      {
+        "lessonDay": 5,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "tourism",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "nominal",
+          "participles"
+        ],
+        "evidenceQuote": "Whichever we bought in the central shop was made of wood",
+        "rationale": "景点描述含whichever/wherever与密集物品词",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 6,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "science",
+        "preferredWeeks": [
+          35
+        ],
+        "grammarPrerequisites": [
+          "passive",
+          "relative",
+          "participles"
+        ],
+        "evidenceQuote": "Exposed to radium",
+        "rationale": "科学/治疗因果不可靠，整篇不可作普通事实输入",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": false,
+        "restriction": "blocked-scientific-and-medical-review"
+      },
+      {
+        "lessonDay": 7,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "travel",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "nominal",
+          "participles"
+        ],
+        "evidenceQuote": "consistent with what they used to be",
+        "rationale": "文化历史和机构词密集，名词从句/分词组合；历史细节不作事实",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-history-reference"
+      },
+      {
+        "lessonDay": 8,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "travel",
+        "preferredWeeks": [
+          35
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "gerund",
+          "participles"
+        ],
+        "evidenceQuote": "guided by the smoke of our crashing jet",
+        "rationale": "虚构事故叙事且指代/分词逻辑主语需辨认",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 9,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "media",
+        "preferredWeeks": [
+          30
+        ],
+        "grammarPrerequisites": [
+          "nominal",
+          "relative",
+          "passive"
+        ],
+        "evidenceQuote": "whether they are deliberately hiding the truth",
+        "rationale": "工作流程可迁移，但新闻司法词与宾语/定语从句叠加",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 10,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "health",
+        "preferredWeeks": [
+          31
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "passive",
+          "purpose"
+        ],
+        "evidenceQuote": "to stop bleeding",
+        "rationale": "题为急救且含未经核实操作，整篇不进入常规计划；仅未来筛选语言句",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": false,
+        "restriction": "blocked-medical-procedure-review"
+      },
+      {
+        "lessonDay": 11,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "culture",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "participles",
+          "coordination"
+        ],
+        "evidenceQuote": "sculptures carved out of marble",
+        "rationale": "抽象艺术评价词与长名词短语，不适合靠篇幅判初级",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 12,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "culture",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "gerund",
+          "complement",
+          "participles"
+        ],
+        "evidenceQuote": "Using concrete but flexible language and the minimum of words is his style",
+        "rationale": "叙事加非标准诗体和比喻，需语言质量/体裁专项复核后再用",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": false,
+        "restriction": "blocked-verse-language-review"
+      },
+      {
+        "lessonDay": 13,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "health",
+        "preferredWeeks": [
+          31
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "conditional",
+          "gerund"
+        ],
+        "evidenceQuote": "Whether they are male or female",
+        "rationale": "健康因果与表述含过时/过度概括，整篇暂不进入普通教学",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": false,
+        "restriction": "blocked-health-claims-review"
+      },
+      {
+        "lessonDay": 14,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "environment",
+        "preferredWeeks": [
+          25
+        ],
+        "grammarPrerequisites": [
+          "emphasis",
+          "passive",
+          "subjunctive"
+        ],
+        "evidenceQuote": "It is suggested that we use energy-saving appliances",
+        "rationale": "环保论证含强调句、建议虚拟式和密集抽象因果；数据不作事实依据",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fictional-uncalibrated-data"
+      },
+      {
+        "lessonDay": 15,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "nature",
+        "preferredWeeks": [
+          34
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "participles",
+          "perception"
+        ],
+        "evidenceQuote": "I even noticed a rainbow appear",
+        "rationale": "灾害叙事包含术语、过去进行背景和感官原形宾补",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 16,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "community",
+        "preferredWeeks": [
+          31
+        ],
+        "grammarPrerequisites": [
+          "participles",
+          "result",
+          "relative"
+        ],
+        "evidenceQuote": "sending him flying outwards through the exit",
+        "rationale": "人物经历的结果分词、so-that和省略关系词；抽象社会词较多",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 17,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "work",
+        "preferredWeeks": [
+          33
+        ],
+        "grammarPrerequisites": [
+          "passive-gerund",
+          "complement"
+        ],
+        "evidenceQuote": "was tired of being left alone",
+        "rationale": "婚姻叙事与科技词混杂，动名词被动和形容词宾补",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 18,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "nature",
+        "preferredWeeks": [
+          34
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "participles",
+          "modal"
+        ],
+        "evidenceQuote": "Every time he brought it tasty fish",
+        "rationale": "海洋术语和过去习惯would；人与动物故事只作虚构语言输入",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 19,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "community",
+        "preferredWeeks": [
+          31
+        ],
+        "grammarPrerequisites": [
+          "nominal",
+          "formal-it",
+          "conditional"
+        ],
+        "evidenceQuote": "otherwise he would go",
+        "rationale": "援助叙事含大量器具/机构词及名词从句和假设结果",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 20,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "education",
+        "preferredWeeks": [
+          36
+        ],
+        "grammarPrerequisites": [
+          "perfect-participle",
+          "nominal",
+          "complement"
+        ],
+        "evidenceQuote": "What bothered her most was that",
+        "rationale": "留学主题有关联度，但完成分词、双名词从句增加负荷",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 21,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "travel",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "participles",
+          "formal-it",
+          "passive"
+        ],
+        "evidenceQuote": "It occurred to my nephew that",
+        "rationale": "移民故事名词密集且法政细节虚构，不作移民法律/历史说明",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-legal-or-history-guidance"
+      },
+      {
+        "lessonDay": 22,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "science",
+        "preferredWeeks": [
+          35
+        ],
+        "grammarPrerequisites": [
+          "subjunctive",
+          "gerund",
+          "emphasis"
+        ],
+        "evidenceQuote": "undertaking cloning does differ",
+        "rationale": "科技伦理论证、建议从句和强调do；只讨论虚构叙事中的主张",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 23,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "technology",
+        "preferredWeeks": [
+          26
+        ],
+        "grammarPrerequisites": [
+          "gerund",
+          "nominal",
+          "complement"
+        ],
+        "evidenceQuote": "set about working",
+        "rationale": "专利怪诞故事和电话语块；用whether从句与不定式补足",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 24,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "language",
+        "preferredWeeks": [
+          47
+        ],
+        "grammarPrerequisites": [
+          "passive-gerund",
+          "perfect-infinitive",
+          "participles"
+        ],
+        "evidenceQuote": "seemed to have betrayed me",
+        "rationale": "身份判断故事含不定式完成式和被动动名词；口音不代表社会价值",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-status-assessment"
+      },
+      {
+        "lessonDay": 25,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "media",
+        "preferredWeeks": [
+          30
+        ],
+        "grammarPrerequisites": [
+          "participles",
+          "inversion",
+          "purpose"
+        ],
+        "evidenceQuote": "Primitive and not ample as their alternative equipment was",
+        "rationale": "含伤害细节与不可靠毒理叙事，整篇不作普通训练",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": false,
+        "restriction": "blocked-harm-detail-and-factual-review"
+      },
+      {
+        "lessonDay": 26,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "education",
+        "preferredWeeks": [
+          17
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "present-perfect",
+          "nominal"
+        ],
+        "evidenceQuote": "he has recovered from being upset",
+        "rationale": "熟悉学习主题、线性问题解决；仍需名词从句和完成时先修",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 27,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "language",
+        "preferredWeeks": [
+          19
+        ],
+        "grammarPrerequisites": [
+          "passive",
+          "nominal",
+          "contrast"
+        ],
+        "evidenceQuote": "English is frequently spoken",
+        "rationale": "英美词汇对比清晰，嵌入问句与被动仍高于入门；概括不作口音识别规则",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "language-variety-generalisation-review"
+      },
+      {
+        "lessonDay": 28,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "travel",
+        "preferredWeeks": [
+          19
+        ],
+        "grammarPrerequisites": [
+          "past-perfect",
+          "relative",
+          "infinitive"
+        ],
+        "evidenceQuote": "a river flowing from a high altitude",
+        "rationale": "旅行顺序可跟随，但过去完成和分词定语需支持",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 29,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "nature",
+        "preferredWeeks": [
+          16
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "passive",
+          "with-participle"
+        ],
+        "evidenceQuote": "With the reporters giving an outline",
+        "rationale": "灾后事件时间线较直观，需被动和with结构；不作灾害预警知识",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-disaster-guidance"
+      },
+      {
+        "lessonDay": 30,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "people",
+        "preferredWeeks": [
+          19
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "gerund",
+          "passive"
+        ],
+        "evidenceQuote": "couldn’t escape being sentenced",
+        "rationale": "人物叙事线性，关系从句和动名词被动；史实并未核查",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-biography-reference"
+      },
+      {
+        "lessonDay": 31,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "culture",
+        "preferredWeeks": [
+          19
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "nominal",
+          "gerund"
+        ],
+        "evidenceQuote": "The evidence they found showed that",
+        "rationale": "物品故事较短，但省略关系词与宾语从句需分清；史实不作依据",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-history-reference"
+      },
+      {
+        "lessonDay": 32,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "sport",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "inversion",
+          "passive-infinitive",
+          "formal-it"
+        ],
+        "evidenceQuote": "Only when you win fairly will you",
+        "rationale": "公平主题可讨论，only倒装和被动不定式提高句法要求",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 33,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "technology",
+        "preferredWeeks": [
+          18
+        ],
+        "grammarPrerequisites": [
+          "passive",
+          "emphasis",
+          "result"
+        ],
+        "evidenceQuote": "so helpful that they do bring happiness",
+        "rationale": "技术利弊结构清楚，结果/强调结构与抽象技术词需支持",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 34,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "environment",
+        "preferredWeeks": [
+          25
+        ],
+        "grammarPrerequisites": [
+          "inversion",
+          "participles",
+          "perception"
+        ],
+        "evidenceQuote": "Not until we succeed in letting wildlife live in peace can we",
+        "rationale": "环保因果与not-until倒装，词汇密集；故事机制不作科学结论",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "fiction-not-ecology-reference"
+      },
+      {
+        "lessonDay": 35,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "culture",
+        "preferredWeeks": [
+          19
+        ],
+        "grammarPrerequisites": [
+          "past",
+          "relative",
+          "passive"
+        ],
+        "evidenceQuote": "A million or so copies were sold",
+        "rationale": "爱好成长时间线熟悉，关系从句和数量/被动支持复述",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 36,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "science",
+        "preferredWeeks": [
+          35
+        ],
+        "grammarPrerequisites": [
+          "appositive",
+          "participles",
+          "gerund"
+        ],
+        "evidenceQuote": "the theory that its gentle climate",
+        "rationale": "明确科幻设定；同位语从句与科学词不能当真实天体知识",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": "science-fiction"
+      },
+      {
+        "lessonDay": 37,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "travel",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "emphasis",
+          "comparison"
+        ],
+        "evidenceQuote": "he couldn’t think of a better one",
+        "rationale": "冒险叙事含强调句、否定比较级与大量语块",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 38,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "community",
+        "preferredWeeks": [
+          31
+        ],
+        "grammarPrerequisites": [
+          "gerund-subject",
+          "participles",
+          "relative"
+        ],
+        "evidenceQuote": "Her being outspoken and modest won respect for her",
+        "rationale": "人物故事含动名词逻辑主语、分词和抽象社会词",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 39,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "environment",
+        "preferredWeeks": [
+          25
+        ],
+        "grammarPrerequisites": [
+          "past-perfect-progressive",
+          "perfect-modal",
+          "complement"
+        ],
+        "evidenceQuote": "He would rather have chosen another job",
+        "rationale": "农业领域词和过去完成进行/过去假设叠加",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 40,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "culture",
+        "preferredWeeks": [
+          19
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "with-participle",
+          "result"
+        ],
+        "evidenceQuote": "With all the porridge eaten up",
+        "rationale": "熟悉电影情节支持理解，with被动分词及结果句仍需先修",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 41,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "education",
+        "preferredWeeks": [
+          17,
+          21
+        ],
+        "grammarPrerequisites": [
+          "present-perfect",
+          "perfect-progressive",
+          "countability"
+        ],
+        "evidenceQuote": "Mei has been helping new students",
+        "rationale": "单一成人教育情境、证据和转折清晰；完成体与不可数名词可迁移",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 42,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "housing",
+        "preferredWeeks": [
+          15,
+          24
+        ],
+        "grammarPrerequisites": [
+          "comparatives",
+          "countability",
+          "articles"
+        ],
+        "evidenceQuote": "The nearer he lived to work, the less he would spend",
+        "rationale": "租房权衡具体；关联比较级与间接问句需先修",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 43,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "work",
+        "preferredWeeks": [
+          13,
+          23
+        ],
+        "grammarPrerequisites": [
+          "conditional",
+          "concession"
+        ],
+        "evidenceQuote": "If everyone worked different hours",
+        "rationale": "工作试行情境清晰；现实/假设条件句与让步对比",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 44,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "technology",
+        "preferredWeeks": [
+          26
+        ],
+        "grammarPrerequisites": [
+          "reported-speech",
+          "passive",
+          "modal"
+        ],
+        "evidenceQuote": "how long the records would be retained",
+        "rationale": "隐私论证、间接问句与谨慎表达；抽象词和证据判断增加难度",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 45,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "process",
+        "preferredWeeks": [
+          28
+        ],
+        "grammarPrerequisites": [
+          "passive",
+          "past-perfect",
+          "gerund-subject"
+        ],
+        "evidenceQuote": "Water is collected, treated and distributed",
+        "rationale": "流程说明与方案权衡，过去完成被动与工程词较密集",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 46,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "health",
+        "preferredWeeks": [
+          14,
+          23
+        ],
+        "grammarPrerequisites": [
+          "quantifiers",
+          "modal",
+          "purpose"
+        ],
+        "evidenceQuote": "There were a few concerns about the plan",
+        "rationale": "工作休息主题具体，有相关/因果区分；量词和目的从句可迁移",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 47,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "transport",
+        "preferredWeeks": [
+          27
+        ],
+        "grammarPrerequisites": [
+          "third-conditional",
+          "inversion",
+          "past-perfect"
+        ],
+        "evidenceQuote": "Had Ella accepted the original figures without question",
+        "rationale": "交通试行中的反事实与证据比较，第三条件和倒装需先修",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 48,
+        "estimatedSupportedLevel": "B1–B2",
+        "earliestProposedDay": 113,
+        "topic": "data",
+        "preferredWeeks": [
+          22,
+          32
+        ],
+        "grammarPrerequisites": [
+          "trend-prepositions",
+          "agreement",
+          "percentages"
+        ],
+        "evidenceQuote": "a rise of five percentage points",
+        "rationale": "数字变化情境清楚；百分点/相对百分比需概念先修，不能只识词",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 49,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "media",
+        "preferredWeeks": [
+          30
+        ],
+        "grammarPrerequisites": [
+          "concession",
+          "nominal",
+          "partial-negation"
+        ],
+        "evidenceQuote": "the researchers had not compared every form of education",
+        "rationale": "证据范围、偏差与部分否定，需区分主张和结论",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 50,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "tourism",
+        "preferredWeeks": [
+          29
+        ],
+        "grammarPrerequisites": [
+          "relative",
+          "conditional"
+        ],
+        "evidenceQuote": "The residents, whose homes stood near the main square",
+        "rationale": "多方利益权衡，whose/where及provided-that增加复杂度",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 51,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "science",
+        "preferredWeeks": [
+          35
+        ],
+        "grammarPrerequisites": [
+          "nominal",
+          "agreement",
+          "gerund"
+        ],
+        "evidenceQuote": "the size of each container remained constant",
+        "rationale": "实验变量与生命周期权衡；名词从句和方法论词需要支持",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      },
+      {
+        "lessonDay": 52,
+        "estimatedSupportedLevel": "B2",
+        "earliestProposedDay": 169,
+        "topic": "community",
+        "preferredWeeks": [
+          24,
+          31,
+          33
+        ],
+        "grammarPrerequisites": [
+          "agreement",
+          "countability",
+          "gerund"
+        ],
+        "evidenceQuote": "funding one project meant delaying another",
+        "rationale": "公共预算取舍，number/amount和mean-doing服务论证",
+        "calibrated": false,
+        "estimateKind": "AI-content-analysis",
+        "routineUse": true,
+        "restriction": null
+      }
+    ]
+  },
+  "textbookPolicy": {
+    "pageConvention": "PDF physical viewer pages, 1-based",
+    "trainingEditions": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "reservedEditions": [
+      19
+    ],
+    "requireExactSkillAnchor": true,
+    "noAudioMeans": "listening unavailable, never substitute TTS and call it authentic",
+    "rights": "User possession/upload authorization recorded; no publisher redistribution license established",
+    "responseWorkflow": "local-pdf-reference; not an imported interactive question set",
+    "readingWritingOnlyUntilAudioVerified": true,
+    "indexStatusByEdition": {
+      "16": {
+        "status": "reading-start-pages-scanned-no-extractable-text",
+        "readyForLexicalCoverage": false,
+        "next": "local OCR + text/page-boundary review",
+        "basis": "Root只读pypdf探查四个已核阅读首页均chars0；未把扫描件无文字当无内容"
+      },
+      "17": {
+        "status": "local-extraction-boundaries-and-spacing-unreviewed",
+        "readyForLexicalCoverage": false,
+        "next": "review twelve passage boundaries and text against PDF",
+        "basis": "Root本机提取4 Test/12篇约10870 tokens，仅视觉核test1阅读首页；私人临时全文不打包"
+      },
+      "18": {
+        "status": "reading-start-pages-scanned-no-extractable-text",
+        "readyForLexicalCoverage": false,
+        "next": "local OCR + text/page-boundary review",
+        "basis": "Root只读pypdf探查四个已核阅读首页均chars0"
+      },
+      "19": {
+        "status": "reserved-not-read",
+        "readyForLexicalCoverage": false,
+        "next": "retain unseen; no routine indexing/exposure",
+        "basis": "本次未打开保留卷正文"
+      }
+    },
+    "leakageControls": {
+      "order": "independent-reading-first",
+      "withholdWritingUntil": "reading-original-answers-submitted",
+      "withholdExplanationsAndParaphraseBooksUntil": "reading-original-answers-submitted",
+      "existingSpeakingAndLexicalMaintenance": "separate source IDs only; no textbook passage/answer access before reading submission",
+      "runtimeEnforced": false,
+      "activationRequires": "implement conditional reveal and exposure tracking before adoption"
+    }
+  },
+  "knownGaps": [
+    {
+      "code": "8000-context-mapping-pending",
+      "scope": "P3",
+      "reason": "8000词库不等于8000词均有本矩阵语境/义项/输出与容量证明"
+    },
+    {
+      "code": "difficulty-not-calibrated",
+      "scope": "all",
+      "reason": "项目级别和52篇AI估级均未以真实考生标定；逐阶段需新情境诊断"
+    },
+    {
+      "code": "free-speaking-calibration-pending",
+      "scope": "speaking",
+      "reason": "跟读0–100不能替代完整自由口语四维原音评价与校准"
+    },
+    {
+      "code": "textbook-authentic-audio-missing",
+      "scope": "textbooks",
+      "reason": "目录0配套真实音频，不可提供对应完整听力模考"
+    },
+    {
+      "code": "proposal-not-runtime-course",
+      "scope": "integration",
+      "reason": "本文件仅P2 staged矩阵；未激活、未改变任何既有日快照、未声称学习效果已验证"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "foundation:listening",
+      "phaseId": "foundation",
+      "skill": "listening",
+      "target": "辨识常见音形，提取姓名、班级、数字与简短问答事实",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "foundation:reading",
+      "phaseId": "foundation",
+      "skill": "reading",
+      "target": "理解短句主谓与人物/物品信息，指回原句证据",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "foundation:speaking",
+      "phaseId": "foundation",
+      "skill": "speaking",
+      "target": "独立交换真实个人信息，问句与完整短答，不背示范",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "foundation:writing",
+      "phaseId": "foundation",
+      "skill": "writing",
+      "target": "从正确句子发展为6–8句具体信息；原稿与订正分开",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "foundation:grammar",
+      "phaseId": "foundation",
+      "skill": "grammar",
+      "target": "be/代词、基本问否、数量与基础句型；一天明确一个新点",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "foundation:vocabulary",
+      "phaseId": "foundation",
+      "skill": "vocabulary",
+      "target": "从实际短文/对话抽需用词；音形义首学与到期回忆分开",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "everyday:listening",
+      "phaseId": "everyday",
+      "skill": "listening",
+      "target": "理解生活多角色对话的时间、地点、安排与改变",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "everyday:reading",
+      "phaseId": "everyday",
+      "skill": "reading",
+      "target": "辨识先后、原因和代词所指，理解短篇通知与经历",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "everyday:speaking",
+      "phaseId": "everyday",
+      "skill": "speaking",
+      "target": "讲日常、经历、计划并进行追问；保留自己的原音",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "everyday:writing",
+      "phaseId": "everyday",
+      "skill": "writing",
+      "target": "写连贯短段，含具体细节和简单连接词",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "everyday:grammar",
+      "phaseId": "everyday",
+      "skill": "grammar",
+      "target": "现在/过去/将来、比较、数量与方位；与旧句型对比",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "everyday:vocabulary",
+      "phaseId": "everyday",
+      "skill": "vocabulary",
+      "target": "高频生活词在不同听读语境复现，输出只要求合适义项",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "independent:listening",
+      "phaseId": "independent",
+      "skill": "listening",
+      "target": "跟随较长对话/说明，区分事实、原因与说话人立场",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "independent:reading",
+      "phaseId": "independent",
+      "skill": "reading",
+      "target": "理解常见从句与段落功能，定位同义表达和证据范围",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "independent:speaking",
+      "phaseId": "independent",
+      "skill": "speaking",
+      "target": "叙述并支持观点，复述需改变信息组织",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "independent:writing",
+      "phaseId": "independent",
+      "skill": "writing",
+      "target": "形成有主题句、解释和例子的段落，逐步撤脚手架",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "independent:grammar",
+      "phaseId": "independent",
+      "skill": "grammar",
+      "target": "完成时、被动、关系/名词从句与非谓语的先修检查",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "independent:vocabulary",
+      "phaseId": "independent",
+      "skill": "vocabulary",
+      "target": "按词头/义项回忆并在新情境运用；不按词形凑数",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "academic:listening",
+      "phaseId": "academic",
+      "skill": "listening",
+      "target": "在正常速度材料中追踪多人观点和学术说明结构",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "academic:reading",
+      "phaseId": "academic",
+      "skill": "reading",
+      "target": "学术定位、判断证据/未给信息、段落主旨与推断边界",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "academic:speaking",
+      "phaseId": "academic",
+      "skill": "speaking",
+      "target": "Part1–3型任务：展开、比较、解释原因并保留完整原音",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "academic:writing",
+      "phaseId": "academic",
+      "skill": "writing",
+      "target": "Task1概述与关键比较、Task2明确立场和充分论证",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "academic:grammar",
+      "phaseId": "academic",
+      "skill": "grammar",
+      "target": "条件、复杂从句、谨慎表达和主谓一致服务于具体任务",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "academic:vocabulary",
+      "phaseId": "academic",
+      "skill": "vocabulary",
+      "target": "学术与话题搭配联动输入、改写和口写；保留不确定义项",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "integration:listening",
+      "phaseId": "integration",
+      "skill": "listening",
+      "target": "完整40题条件下独立作答，记录实际重听/提示与错因",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "integration:reading",
+      "phaseId": "integration",
+      "skill": "reading",
+      "target": "三篇40题限时独立作答，证据定位与耐力分开看",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "integration:speaking",
+      "phaseId": "integration",
+      "skill": "speaking",
+      "target": "连续Part1–3自由表达与完整原音四维评阅",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "integration:writing",
+      "phaseId": "integration",
+      "skill": "writing",
+      "target": "20/40分钟两任务原稿，Task2权重更高，反馈后换新题",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "integration:grammar",
+      "phaseId": "integration",
+      "skill": "grammar",
+      "target": "从作品反复错误选短专项；不机械堆高级结构",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "integration:vocabulary",
+      "phaseId": "integration",
+      "skill": "vocabulary",
+      "target": "核对8000语境覆盖与延迟缺口，不能以赶数挤掉四技能",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "verification:listening",
+      "phaseId": "verification",
+      "skill": "listening",
+      "target": "保留卷独立完整表现与跨日稳定性",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "verification:reading",
+      "phaseId": "verification",
+      "skill": "reading",
+      "target": "保留卷完整表现，不用重复卷分数作陌生证据",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "verification:speaking",
+      "phaseId": "verification",
+      "skill": "speaking",
+      "target": "不同未见主题的完整口试原音与四维依据",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "verification:writing",
+      "phaseId": "verification",
+      "skill": "writing",
+      "target": "不同未见图表/论题的完整原稿与四维依据",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "verification:grammar",
+      "phaseId": "verification",
+      "skill": "grammar",
+      "target": "修复仍影响沟通与准确性的具体模式",
+      "evidenceRequired": true,
+      "calendarPass": false
+    },
+    {
+      "id": "verification:vocabulary",
+      "phaseId": "verification",
+      "skill": "vocabulary",
+      "target": "到期保持、未验证词与核心义项收口；不最后突击凑数",
+      "evidenceRequired": true,
+      "calendarPass": false
+    }
+  ],
+  "inputLoadDesign": {
+    "status": "adjustable-design-starting-values-not-official-thresholds",
+    "purpose": "检查是否有足量可理解输入与独立输出；新源与熟悉流利度复用分开，不能把预算槽时长当音频时长或产出证据",
+    "targetsByPhase": {
+      "foundation": {
+        "newReadingWordsPerWeek": 800,
+        "totalReadingExposureWordsPerWeek": 2000,
+        "newListeningMinutesPerWeek": 20,
+        "totalOnePlayListeningMinutesPerWeek": 45,
+        "speakingIndependentMinutesPerWeek": 6,
+        "writingIndependentWordsPerWeek": 200
+      },
+      "everyday": {
+        "newReadingWordsPerWeek": 2000,
+        "totalReadingExposureWordsPerWeek": 5000,
+        "newListeningMinutesPerWeek": 45,
+        "totalOnePlayListeningMinutesPerWeek": 90,
+        "speakingIndependentMinutesPerWeek": 15,
+        "writingIndependentWordsPerWeek": 450
+      },
+      "independent": {
+        "newReadingWordsPerWeek": 5000,
+        "totalReadingExposureWordsPerWeek": 10000,
+        "newListeningMinutesPerWeek": 75,
+        "totalOnePlayListeningMinutesPerWeek": 150,
+        "speakingIndependentMinutesPerWeek": 30,
+        "writingIndependentWordsPerWeek": 1000
+      },
+      "academic": {
+        "newReadingWordsPerWeek": 8000,
+        "totalReadingExposureWordsPerWeek": 14000,
+        "newListeningMinutesPerWeek": 100,
+        "totalOnePlayListeningMinutesPerWeek": 180,
+        "speakingIndependentMinutesPerWeek": 45,
+        "writingIndependentWordsPerWeek": 1600
+      },
+      "integration": {
+        "newReadingWordsPerWeek": 10000,
+        "totalReadingExposureWordsPerWeek": 16000,
+        "newListeningMinutesPerWeek": 120,
+        "totalOnePlayListeningMinutesPerWeek": 210,
+        "speakingIndependentMinutesPerWeek": 60,
+        "writingIndependentWordsPerWeek": 2000
+      },
+      "verification": {
+        "newReadingWordsPerWeek": 6000,
+        "totalReadingExposureWordsPerWeek": 10000,
+        "newListeningMinutesPerWeek": 90,
+        "totalOnePlayListeningMinutesPerWeek": 150,
+        "speakingIndependentMinutesPerWeek": 45,
+        "writingIndependentWordsPerWeek": 1600
+      }
+    },
+    "limits": "这些初值不是学习科学已验证的最优剂量、CEFR/IELTS门槛或8000充分条件；按可理解性、速度、真实保持率与六小时总预算重新模拟。口写统计是现有任务的最低要求，不是已产出或有效评分。"
+  },
+  "cumulativeInputProtection": {
+    "baseline": "existing ordinary non-fullTest training first exposure, deduplicated across listening/reading body",
+    "requireAtEachPhaseBoundary": true,
+    "allowPostponementOnlyWithReason": [
+      "prerequisite-evidence-pending",
+      "author-estimate-exceeds-shared-slot",
+      "source-or-audio-review-blocked",
+      "same-body-already-counted-in-other-modality"
+    ],
+    "runtimeBudget": "real estimates override proposal; oversize sources remain pending rather than stack",
+    "goalSufficiencyClaim": false
+  }
+}

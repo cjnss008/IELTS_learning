@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-floating-solar-comprehension-v2",
+  "version": "2",
+  "sourceId": "nasa-floating-solar",
+  "sourceVersion": "1",
+  "sourceTextSha256": "f876c33e9520879cb7eaba9b107919516f58830054ac824b73e210922efc7157",
+  "sourceContentHash": "f876c33e9520879cb7eaba9b107919516f58830054ac824b73e210922efc7157",
+  "exposureGroup": "public-source:nasa-floating-solar",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which possible benefit is given for placing solar systems on water?",
+      "options": [
+        "They may limit evaporation and provide an option where available land is scarce.",
+        "They may replace a hydroelectric station by removing the need for its dam.",
+        "They may lower up-front costs by avoiding land-based installation equipment.",
+        "They may remove the need to investigate long-term effects on water quality."
+      ],
+      "answers": [
+        "They may limit evaporation and provide an option where available land is scarce."
+      ],
+      "evidence": "Experts have noted that floating solar installations can pose challenges, such as higher up-front costs, vulnerability to natural events, and long-term effects on water quality. However, benefits of the systems might include their ability to prevent evaporation, impede algal growth, and provide an alternative to land-based systems in areas where space is limited.",
+      "evidenceOffsets": {
+        "start": 1244,
+        "end": 1609,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文的可能优势包括减少蒸发和在土地有限处提供替代。它没有提出拆除大坝；较高前期成本和长期水质影响反而列为挑战，不能倒读成费用更低或无需调查。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How is the main reservoir related to the existing energy infrastructure?",
+      "options": [
+        "It is the location of the 100-megawatt floating project in Ramagundam.",
+        "It is the reservoir about 1,400 kilometres south at Kayamkulam.",
+        "It was newly created to house the two solar projects commissioned in 2024.",
+        "It lies east of a dam with an associated hydroelectric station."
+      ],
+      "answers": [
+        "It lies east of a dam with an associated hydroelectric station."
+      ],
+      "evidence": "The reservoir lies east of the Omkareshwar Dam and its associated hydroelectric station, completed in 2007, within the state of Madhya Pradesh. The reservoir has a total capacity of 987 million cubic meters and spans more than 90 square kilometers (35 square miles). The 2025 image shows solar panels across the reservoir’s northeast and southeast arms and includes the two floating solar projects that were commissioned in 2024: a 126-megawatt project and a 90-megawatt project.",
+      "evidenceOffsets": {
+        "start": 763,
+        "end": 1242,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文精确位置为Omkareshwar Dam以东，并说明配套水电站2007年建成。Ramagundam、Kayamkulam是后文不同地点；2024年是两个太阳能项目投运时间，不能当成水库创建年份。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which set of concerns is explicitly mentioned for floating solar installations?",
+      "options": [
+        "Insufficient reservoir volume, declining river flow and a lack of dam access.",
+        "Seasonal shutdowns due to hydropower maintenance and missing grid connections.",
+        "Higher up-front costs, vulnerability to natural events and long-term water-quality effects.",
+        "Less evaporation, slower algal growth and reduced demand for land."
+      ],
+      "answers": [
+        "Higher up-front costs, vulnerability to natural events and long-term water-quality effects."
+      ],
+      "evidence": "Experts have noted that floating solar installations can pose challenges, such as higher up-front costs, vulnerability to natural events, and long-term effects on water quality. However, benefits of the systems might include their ability to prevent evaporation, impede algal growth, and provide an alternative to land-based systems in areas where space is limited.",
+      "evidenceOffsets": {
+        "start": 1244,
+        "end": 1609,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "题目问挑战，原文明列较高前期成本、自然事件易损性与长期水质影响。第一干扰项列的是可能优势；其余项虽像工程问题，但不是本文列出的担忧。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is the purpose of comparing the reservoir at the two stated dates?",
+      "options": [
+        "To compare solar capacity before and after the dam was completed in 2007.",
+        "To track stages of one reservoir project between 2023 and 2025.",
+        "To compare separate reservoirs containing the 126- and 90-megawatt projects.",
+        "To compare Omkareshwar with the projects in Ramagundam and Kayamkulam."
+      ],
+      "answers": [
+        "To track stages of one reservoir project between 2023 and 2025."
+      ],
+      "evidence": "This pair of images shows the development of floating solar power arrays on a reservoir of the Narmada River in central India. The right image shows the reservoir on January 30, 2025. For comparison, the left image shows the same area on February 10, 2023, during an earlier stage of the project. Both images were acquired by the OLI-2 (Operational Land Imager-2) on Landsat 9.",
+      "evidenceOffsets": {
+        "start": 384,
+        "end": 761,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "两日期对应同一水库项目在2023和2025年的发展阶段；126 MW与90 MW是主水库的两个项目，不是比较图中的两个水库。另两个城市和2007年水电站日期来自其他句子，不能错接到这组对比。",
+      "understanding": "text-organization",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What is the smaller generating capacity of the two projects commissioned at the main reservoir in 2024? Write one number from the text.",
+      "maxWords": 1,
+      "answers": [
+        "90"
+      ],
+      "evidence": "The reservoir lies east of the Omkareshwar Dam and its associated hydroelectric station, completed in 2007, within the state of Madhya Pradesh. The reservoir has a total capacity of 987 million cubic meters and spans more than 90 square kilometers (35 square miles). The 2025 image shows solar panels across the reservoir’s northeast and southeast arms and includes the two floating solar projects that were commissioned in 2024: a 126-megawatt project and a 90-megawatt project.",
+      "evidenceOffsets": {
+        "start": 763,
+        "end": 1242,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "主要水库内2024年投运的两个项目分别为126 MW和90 MW，较小数值是90。100和92属于后文另两个地点，987则是水库蓄水容量，不能混用。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What kind of unwanted plant growth might the systems limit? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "algal growth"
+      ],
+      "evidence": "Experts have noted that floating solar installations can pose challenges, such as higher up-front costs, vulnerability to natural events, and long-term effects on water quality. However, benefits of the systems might include their ability to prevent evaporation, impede algal growth, and provide an alternative to land-based systems in areas where space is limited.",
+      "evidenceOffsets": {
+        "start": 1244,
+        "end": 1609,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文的impede algal growth对应抑制藻类生长。evaporation是另一个可能减少的过程，但不是本题限定的植物生长。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "070ef8870b72207032fa3576af716c7944f9e3746c6758724c8cfd03916da2bd",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

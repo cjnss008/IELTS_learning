@@ -8,8 +8,9 @@
   const normalize = value => typeof value === 'string' ? value.trim().toLowerCase().replace(/\s+/g, ' ') : '';
   const clean = (value, max) => typeof value === 'string' ? value.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').trim().slice(0, max) : '';
   const validWord = value => typeof value === 'string' && value.length <= 100 && /^[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’ ().-]*$/.test(value.trim());
-  // Small authored British-English bridge glossary. Course meanings/examples always take precedence.
-  // Missing transcriptions remain empty; no spelling-to-IPA approximation is used.
+  const American = root.IELTSAmericanPronunciations || (typeof require === 'function' ? require('./american-pronunciations.js') : null);
+  // Legacy bridge transcriptions are source hints only. Verified American source
+  // variants replace them at lookup; no spelling-to-IPA approximation is used.
   const BRIDGE = [
     ['hello','/həˈləʊ/','你好','Hello. I am a student.'],
     ['student','/ˈstjuːdənt/','学生','I am a student.'],
@@ -161,17 +162,60 @@
     ['your','/jɔː/','你的；你们的','What is your name?']
   ].map(([word, ipa, meaning, example]) => ({word, ipa, meaning, example, source:'bridge'}));
 
-  function safeEntry(value) {
-    if (!value || !validWord(value.word)) return null;
-    const audio = clean(value.audio, 200);
-    return {word:clean(value.word,100), meaning:clean(value.meaning,800), ipa:clean(value.ipa || value.phonetic,160), example:clean(value.example || value.context,1600), exampleTranslation:clean(value.exampleTranslation,1600), audio:/^audio\/(?:words|vocabulary)\/[A-Za-z0-9._-]+\.mp3$/.test(audio) && !audio.includes('..') ? audio : '', materialId:clean(value.materialId,160), source:clean(value.source,80)};
+  function isAmericanIpa(word,ipa) {
+    const choices=American?.variants(word) || [];
+    return Boolean(ipa && (choices.includes(ipa) || choices.length > 1 && choices.join(' · ') === ipa));
   }
+  function safeAudioPath(value) {
+    if (typeof value !== 'string' || value.length > 200) return '';
+    const audio=value.trim();
+    return /^audio\/(?:words|vocabulary)\/[A-Za-z0-9._-]+\.mp3$/.test(audio) && !audio.includes('..') ? audio : '';
+  }
+  function senseLabels(value) { return String(value || '').split(/[;；、\n]/).map(label=>label.replace(/^(?:v|vt|vi|adj|adv|n)\.\s*/i,'').trim()).filter(Boolean); }
+  function singlePos(value) {
+    const aliases={v:'verb',vt:'verb',vi:'verb',verb:'verb',adj:'adjective',adjective:'adjective',n:'noun',noun:'noun',adv:'adverb',adverb:'adverb'},values=new Set((String(value||'').toLowerCase().match(/[a-z]+/g)||[]).map(key=>aliases[key]).filter(Boolean));
+    return values.size===1?[...values][0]:'';
+  }
+  function indexedAudioChoice(word,ipa,supplied,hint={}) {
+    const data=supplied || root.IELTSVocabularyAudio || (typeof require==='function'?require('./vocabulary-audio.js'):{}),entry=data?.items?.[normalize(word)];
+    if(!entry || typeof entry!=='object' || Array.isArray(entry))return{audio:'',blocked:false,status:'missing'};
+    const base=safeAudioPath(entry.audio),fallback=()=>({audio:base,blocked:!base,status:base?'default':'invalid-default',source:base?entry:null});
+    if(entry.senseVariants===undefined)return fallback();
+    const variants=entry.senseVariants,verified=American?.variants(word)||[],seenIpa=new Set(),seenAudio=new Set();
+    if(!Array.isArray(variants)||variants.length>32)return{audio:'',blocked:true,status:'invalid-variant-registry'};
+    for(const item of variants){
+      const audio=safeAudioPath(item?.audio),valid=item&&typeof item==='object'&&!Array.isArray(item)&&typeof item.ipa==='string'&&verified.includes(item.ipa)&&audio&&audio!==base&&!seenIpa.has(item.ipa)&&!seenAudio.has(audio)&&(!item.locale||item.locale==='en-US')&&(!item.voice||typeof item.voice==='string'&&/^en[-_]US(?:[-_]|$)/i.test(item.voice))&&(item.senseLabels===undefined||Array.isArray(item.senseLabels)&&item.senseLabels.length<=24&&item.senseLabels.every(label=>typeof label==='string'&&label.trim()&&label.length<=800));
+      if(!valid)return{audio:'',blocked:true,status:'invalid-or-duplicate-variant'};
+      seenIpa.add(item.ipa);seenAudio.add(audio);
+    }
+    const chosen=item=>({audio:safeAudioPath(item.audio),ipa:item.ipa,blocked:false,status:'sense-variant',source:item});
+    const hints=typeof hint==='string'?{meaning:hint}:hint||{},labels=senseLabels(hints.meaning),pos=singlePos(hints.pos);
+    const matchesSense=item=>{const itemPos=singlePos(item.pos),labelsMatch=labels.some(label=>[...(item.senseLabels||[]),...senseLabels(item.meaning)].includes(label));return labelsMatch&&(!pos||!itemPos||pos===itemPos)||!labels.length&&pos&&itemPos===pos;};
+    const primary=American?.lookup(word)?.ipa,primaryIpa=verified.includes(primary)?primary:'';
+    if(hints.preferSense){const matches=variants.filter(matchesSense);if(matches.length===1)return chosen(matches[0]);if(matches.length>1)return{audio:'',blocked:true,status:'ambiguous-sense'};const result=fallback();if(primaryIpa)result.ipa=primaryIpa;return result;}
+    const matches=variants.filter(item=>ipa&&item.ipa===ipa&&isAmericanIpa(word,ipa));
+    if(matches.length===1)return chosen(matches[0]);
+    if(ipa&&verified.includes(ipa)&&primaryIpa&&ipa!==primaryIpa)return{audio:'',blocked:true,status:'unregistered-pronunciation'};
+    return fallback();
+  }
+
+  function safeEntry(value, options = {}) {
+    if (!value || !validWord(value.word)) return null;
+    const audio = safeAudioPath(value.audio);
+    const sourceIpa = clean(value.ipa || value.phonetic,160);
+    const sense=!sourceIpa?indexedAudioChoice(value.word,'',options.audioData,{meaning:value.meaning,pos:value.pos,preferSense:true}):null;
+    const pronunciation = American?.lookup(value.word,sense?.ipa || sourceIpa);
+    const labelledAmerican = value.ipaAccent === 'en-US' || value.accent === 'en-US';
+    const ipa = pronunciation?.ipa || (labelledAmerican ? sourceIpa : American ? '' : sourceIpa);
+    return {word:clean(value.word,100), meaning:clean(value.meaning,800), ipa, ipaAccent:ipa && (pronunciation || labelledAmerican) ? 'en-US' : '', ipaVariants:pronunciation?.ipaVariants || (ipa ? [ipa] : []), ipaSource:pronunciation?.ipaSource || (labelledAmerican ? 'provided-American-supplement' : ''), example:clean(value.example || value.context,1600), exampleTranslation:clean(value.exampleTranslation,1600), audio, materialId:clean(value.materialId,160), source:clean(value.source,80)};
+  }
+  function indexedAudioFor(word, ipa, supplied, hint = {}) { return indexedAudioChoice(word,ipa,supplied,hint).audio; }
   function create(options = {}) {
     const index = new Map();
     const audioData = options.audioData || root.IELTSVocabularyAudio || (typeof require === 'function' ? require('./vocabulary-audio.js') : {});
     const audioItems = audioData.items || {};
     function add(raw, metadata) {
-      const item = safeEntry({...raw,...metadata});
+      const item = safeEntry({...raw,...metadata},{audioData});
       if (!item) return;
       const key = normalize(item.word), values = index.get(key) || [];
       values.push(item); index.set(key, values);
@@ -185,7 +229,7 @@
     (options.entries || []).forEach(item => add(item));
     function lookup(word, context = '', materialId = '') {
       const key = normalize(word), values = index.get(key) || [];
-      if (!values.length) return {word:clean(word,100),meaning:'',ipa:'',example:'',exampleTranslation:'',audio:'',materialId:'',source:'missing',complete:false};
+      if (!values.length) return {...safeEntry({word:clean(word,100)}),word:clean(word,100),meaning:'',example:'',exampleTranslation:'',audio:'',materialId:'',source:'missing',complete:false};
       const text = normalize(context);
       const score = item => (materialId && item.materialId === materialId ? 1000 : 0) + (item.source === 'curriculum' ? 10 : item.source === 'course' ? 5 : 0) + (item.example && text.includes(normalize(item.example)) ? 100 : 0);
       const sorted = values.slice().sort((a,b) => score(b)-score(a));
@@ -194,8 +238,8 @@
       // Keep a pronunciation explicitly bound to the current material; otherwise
       // use the verified word index before an unrelated legacy audio file.
       const boundAudio = materialId ? values.find(item => item.materialId === materialId && item.audio)?.audio : '';
-      const indexedAudio = audioItems[key]?.audio ? safeEntry({word:result.word,audio:audioItems[key].audio})?.audio : '';
-      result.audio = boundAudio || indexedAudio || result.audio || sorted.find(item => item.audio)?.audio || '';
+      const indexed = indexedAudioChoice(result.word,result.ipa,audioData,{meaning:result.meaning});
+      result.audio = boundAudio || indexed.audio || (indexed.blocked ? '' : result.audio || sorted.find(item => item.audio)?.audio || '');
       result.complete = Boolean(result.meaning && result.ipa && result.example);
       return result;
     }
@@ -208,9 +252,10 @@
     const merged = {...local};
     // The existing course sense and its example are retained; AI only fills gaps.
     for (const field of ['meaning','ipa','example','exampleTranslation']) if (!merged[field]) merged[field] = item[field];
+    if (merged.ipa === item.ipa && item.ipaAccent) { merged.ipaAccent=item.ipaAccent; merged.ipaVariants=item.ipaVariants; merged.ipaSource=item.ipaSource; }
     merged.source = 'ai-supplement';
     merged.complete = Boolean(merged.meaning && merged.ipa && merged.example);
     return merged;
   }
-  return {normalize, validWord, safeEntry, create, mergeAI, bridge:BRIDGE};
+  return {normalize, validWord, safeEntry, isAmericanIpa, safeAudioPath, indexedAudioChoice, indexedAudioFor, create, mergeAI, bridge:BRIDGE.map(safeEntry)};
 });

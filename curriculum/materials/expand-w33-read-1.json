@@ -1,0 +1,393 @@
+{
+  "id": "expand-w33-read-1",
+  "week": 33,
+  "skill": "reading",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 400,
+  "maxWords": 700,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "经济选择与完整议论文 · Independent new scenario: an investigation into memory and testimony",
+  "grammarFocus": "复合句与简单句搭配；条件、让步和原因表达；标点。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Memory Witness: A Simulated Investigation",
+  "instructions": "阅读下面的文章，回答10个问题。文章为模拟教学材料，非真实事件。问题类型包括单选、填空、匹配和判断正误/未提及。填空题答案必须来自原文，且不超过字数限制。请先阅读全文，再作答。",
+  "passage": "A small town library in the north of England recently hosted a weekly memory workshop for older residents. The project, called 'Recall and Reason', was designed by a local psychologist, Dr. Helen Marsh, to study how people remember everyday events. Its findings offer a fascinating insight into the way human memory actually works, and they carry important lessons for both everyday life and the legal system.\n\nAs part of the study, participants were asked to describe a short film they had watched together. The film showed a man walking into a café, ordering coffee, and leaving a newspaper on a table. After a week, the participants were asked to write down what they remembered. Dr. Marsh was surprised by the results. Most people remembered the main actions correctly, but many added details that were not in the film at all. For example, one woman insisted that the man had been wearing a hat, although he had not. Another participant claimed that the café had a red door, but the door was actually blue.\n\nDr. Marsh explained that these errors are entirely normal. 'Our brains fill in gaps with what we expect to see,' she said. 'This is not lying; it is how memory works.' In other words, memory is not a perfect recording of events but an active reconstruction, shaped by our knowledge, expectations and past experience. When a detail is missing, the mind often supplies a plausible substitute without our being aware of it.\n\nThe workshop then focused on the difference between confident memories and accurate memories. Dr. Marsh showed that people who were very confident about a detail were often wrong. This finding has important implications for legal testimony. In court, witnesses are often asked to recall events months or years later, by which time their memories may have changed considerably. If confident witnesses can be mistaken, judges and juries must be careful. Dr. Marsh suggested that police interviews should be recorded and that witnesses should be asked open questions first, so that their own account is not shaped by the interviewer's suggestions. She also recommended that line-ups should be conducted fairly, with similar-looking people, to avoid unfair identification.\n\nThe project ended with a public talk. Many residents said they now understood why they sometimes misremember. One man said, 'I used to think I had a bad memory, but now I know it's just normal.' Dr. Marsh hopes to run a larger study next year, with younger participants as well. She believes that understanding memory errors can help everyone, not just witnesses. 'If we know how memory fails,' she said, 'we can design better systems for justice and for everyday life.'",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the name of the project?",
+      "options": [
+        "Recall and Reason",
+        "Memory and Justice",
+        "The Café Film Study",
+        "Witness Workshop"
+      ],
+      "answers": [
+        "Recall and Reason"
+      ],
+      "explanation": "文章第一段明确提到项目名称为 'Recall and Reason'。",
+      "evidence": "The project, called 'Recall and Reason', was designed by a local psychologist, Dr. Helen Marsh, to study how people remember everyday events."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who designed the project?",
+      "options": [
+        "Dr. Helen Marsh",
+        "A local police officer",
+        "A café owner",
+        "A newspaper editor"
+      ],
+      "answers": [
+        "Dr. Helen Marsh"
+      ],
+      "explanation": "第一段指出项目由当地心理学家 Dr. Helen Marsh 设计。",
+      "evidence": "The project, called 'Recall and Reason', was designed by a local psychologist, Dr. Helen Marsh, to study how people remember everyday events."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What did the film show the man doing?",
+      "options": [
+        "Walking into a café and ordering coffee",
+        "Buying a newspaper",
+        "Wearing a hat",
+        "Opening a red door"
+      ],
+      "answers": [
+        "Walking into a café and ordering coffee"
+      ],
+      "explanation": "第一段描述电影中男子走进咖啡馆、点咖啡并留下报纸。",
+      "evidence": "The film showed a man walking into a café, ordering coffee, and leaving a newspaper on a table."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: One woman insisted that the man had been wearing a ______.",
+      "maxWords": 1,
+      "answers": [
+        "hat"
+      ],
+      "explanation": "第一段提到一位女士坚持认为男子戴着帽子，尽管他并没有。",
+      "evidence": "For example, one woman insisted that the man had been wearing a hat, although he had not."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "According to Dr. Marsh, why do people add details that were not in the film?",
+      "options": [
+        "Because they are lying",
+        "Because their brains fill in gaps with what they expect to see",
+        "Because they have bad memories",
+        "Because the film was unclear"
+      ],
+      "answers": [
+        "Because their brains fill in gaps with what they expect to see"
+      ],
+      "explanation": "第二段引用 Dr. Marsh 的话，指出大脑会用预期填补空白。",
+      "evidence": "'Our brains fill in gaps with what we expect to see,' she said."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did Dr. Marsh show about confident memories?",
+      "options": [
+        "Confident people are always right",
+        "Confident people are often wrong about details",
+        "Confident people remember more details",
+        "Confident people are better witnesses"
+      ],
+      "answers": [
+        "Confident people are often wrong about details"
+      ],
+      "explanation": "第二段指出，对细节非常自信的人常常是错的。",
+      "evidence": "Dr. Marsh showed that people who were very confident about a detail were often wrong."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does the passage say about legal testimony?",
+      "options": [
+        "Witnesses are asked to recall events months or years later",
+        "Witnesses are always accurate",
+        "Judges ignore witness confidence",
+        "Police interviews are never recorded"
+      ],
+      "answers": [
+        "Witnesses are asked to recall events months or years later"
+      ],
+      "explanation": "第三段提到在法庭上，证人常常被要求回忆数月或数年前的事件。",
+      "evidence": "In court, witnesses are often asked to recall events months or years later, by which time their memories may have changed considerably."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What did Dr. Marsh suggest about police interviews?",
+      "options": [
+        "They should be recorded",
+        "They should be shorter",
+        "They should use closed questions",
+        "They should be conducted by psychologists"
+      ],
+      "answers": [
+        "They should be recorded"
+      ],
+      "explanation": "第三段提到 Dr. Marsh 建议警察审讯应被记录。",
+      "evidence": "Dr. Marsh suggested that police interviews should be recorded and that witnesses should be asked open questions first, so that their own account is not shaped by the interviewer's suggestions."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What did one man say at the end of the project?",
+      "options": [
+        "He had a bad memory",
+        "He now knows it's just normal",
+        "He wants to be a witness",
+        "He will join a larger study"
+      ],
+      "answers": [
+        "He now knows it's just normal"
+      ],
+      "explanation": "最后一段引用一位男士的话，说他现在知道这只是正常的。",
+      "evidence": "One man said, 'I used to think I had a bad memory, but now I know it's just normal.'"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What does Dr. Marsh hope to do next year?",
+      "options": [
+        "Run a larger study with younger participants",
+        "Write a book about memory",
+        "Open a new café",
+        "Train police officers"
+      ],
+      "answers": [
+        "Run a larger study with younger participants"
+      ],
+      "explanation": "最后一段提到 Dr. Marsh 希望明年进行更大规模的研究，并包括更年轻的参与者。",
+      "evidence": "Dr. Marsh hopes to run a larger study next year, with younger participants as well."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "psychologist",
+      "meaning": "心理学家",
+      "example": "The project, called 'Recall and Reason', was designed by a local psychologist, Dr. Helen Marsh, to study how people remember everyday events."
+    },
+    {
+      "word": "participants",
+      "meaning": "参与者",
+      "example": "Participants were asked to describe a short film they had watched together."
+    },
+    {
+      "word": "insisted",
+      "meaning": "坚持说",
+      "example": "For example, one woman insisted that the man had been wearing a hat, although he had not."
+    },
+    {
+      "word": "confident",
+      "meaning": "自信的",
+      "example": "Dr. Marsh showed that people who were very confident about a detail were often wrong."
+    },
+    {
+      "word": "accurate",
+      "meaning": "准确的",
+      "example": "The workshop then focused on the difference between confident memories and accurate memories."
+    },
+    {
+      "word": "implications",
+      "meaning": "影响，含义",
+      "example": "This finding has important implications for legal testimony."
+    },
+    {
+      "word": "witnesses",
+      "meaning": "证人",
+      "example": "In court, witnesses are often asked to recall events months or years later."
+    },
+    {
+      "word": "recommended",
+      "meaning": "建议",
+      "example": "She also recommended that line-ups should be conducted fairly, with similar-looking people."
+    }
+  ],
+  "grammar": {
+    "title": "复合句与简单句搭配；条件、让步和原因表达；标点",
+    "explanation": "英语中，简单句只有一个主谓结构，而复合句包含两个或多个主谓结构，通过连词连接。条件句常用 if 引导，表示假设；让步句常用 although, though, even though 引导，表示转折；原因句常用 because, since, as 引导，表示原因。标点方面，当从句位于主句之前时，通常用逗号隔开；位于主句之后时，一般不用逗号。例如：'If we know how memory fails, we can design better systems.' 中，if 从句在前，用逗号；'She believes that understanding memory errors can help everyone.' 中，that 从句在后，不用逗号。",
+    "example": "If we know how memory fails, we can design better systems for justice and for everyday life.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Although it was raining, we went for a walk.",
+          "Although it was raining we went for a walk.",
+          "Although it was raining, we went for a walk,",
+          "Although, it was raining, we went for a walk."
+        ],
+        "answers": [
+          "Although it was raining, we went for a walk."
+        ],
+        "explanation": "让步从句位于主句之前时，从句后应用逗号。",
+        "evidence": "Although it was raining, we went for a walk."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She stayed home because she was tired.",
+          "She stayed home, because she was tired.",
+          "Because she was tired she stayed home.",
+          "Because, she was tired, she stayed home."
+        ],
+        "answers": [
+          "She stayed home because she was tired."
+        ],
+        "explanation": "原因从句位于主句之后时，通常不用逗号。",
+        "evidence": "She stayed home because she was tired."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "If you heat ice, it melts.",
+          "If you heat ice it melts.",
+          "If you heat ice, it melts,",
+          "If, you heat ice, it melts."
+        ],
+        "answers": [
+          "If you heat ice, it melts."
+        ],
+        "explanation": "条件从句位于主句之前时，从句后应用逗号。",
+        "evidence": "If you heat ice, it melts."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "He passed the exam although he didn't study much.",
+          "He passed the exam, although he didn't study much.",
+          "Although he didn't study much he passed the exam.",
+          "Although, he didn't study much, he passed the exam."
+        ],
+        "answers": [
+          "He passed the exam although he didn't study much."
+        ],
+        "explanation": "让步从句位于主句之后时，通常不用逗号。",
+        "evidence": "He passed the exam although he didn't study much."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Since it was late, we took a taxi.",
+          "Since it was late we took a taxi.",
+          "Since it was late, we took a taxi,",
+          "Since, it was late, we took a taxi."
+        ],
+        "answers": [
+          "Since it was late, we took a taxi."
+        ],
+        "explanation": "原因从句位于主句之前时，从句后应用逗号。",
+        "evidence": "Since it was late, we took a taxi."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I'll call you when I arrive.",
+          "I'll call you, when I arrive.",
+          "When I arrive I'll call you.",
+          "When, I arrive, I'll call you."
+        ],
+        "answers": [
+          "I'll call you when I arrive."
+        ],
+        "explanation": "时间状语从句位于主句之后时，通常不用逗号。",
+        "evidence": "I'll call you when I arrive."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Even though she was tired, she finished the work.",
+          "Even though she was tired she finished the work.",
+          "Even though she was tired, she finished the work,",
+          "Even, though she was tired, she finished the work."
+        ],
+        "answers": [
+          "Even though she was tired, she finished the work."
+        ],
+        "explanation": "让步从句位于主句之前时，从句后应用逗号。",
+        "evidence": "Even though she was tired, she finished the work."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "As it was getting dark, we decided to go home.",
+          "As it was getting dark we decided to go home.",
+          "As it was getting dark, we decided to go home,",
+          "As, it was getting dark, we decided to go home."
+        ],
+        "answers": [
+          "As it was getting dark, we decided to go home."
+        ],
+        "explanation": "原因从句位于主句之前时，从句后应用逗号。",
+        "evidence": "As it was getting dark, we decided to go home."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you have a good memory?",
+        "Do you often forget things?",
+        "How do you remember important events?",
+        "Do you think memory is important for learning?"
+      ],
+      "part2": "Describe a time when you forgot something important. You should say: what you forgot, when it happened, what you did, and how you felt about it.",
+      "part3": [
+        "Why do people sometimes remember things incorrectly?",
+        "How can we improve our memory?",
+        "Should witnesses in court be trusted?",
+        "What role does memory play in everyday life?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 100 words) about a time when you or someone you know forgot something important. Use at least one conditional sentence and one reason sentence. Explain what happened and what you learned."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "87ed02ffa1599a21ec4f0e5b0ac836cc24860cb140f2e47c215fc3082d51176b"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

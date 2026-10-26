@@ -1,0 +1,352 @@
+{
+  "id": "expand-w20-listen-1",
+  "week": 20,
+  "skill": "listening",
+  "level": "B1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "基础综合复测与薄弱项整理 · Independent new scenario: a learner investigating a persistent skill gap",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Missing Skill: A Learner's Investigation",
+  "instructions": "这是一份模拟英语学习材料，不是官方雅思考试。请先听/读对话，然后完成8道听力题。之后学习语法规则并做8道语法题。所有题目答案必须来自材料原文。听力部分有8道题，题型包括单选、填空和判断正误（True/False/Not Given）。填空答案必须与原文完全一致，且不超过字数限制。语法部分先看中文讲解，再完成8道新句子练习。最后有口语和写作任务。",
+  "transcript": "Mia: Hi, Leo. You look worried. What's wrong?\nLeo: I got my speaking test result. I'm stuck at 5.5. I don't know why.\nMia: Let's find out. When did you start preparing?\nLeo: Three months ago. I practice every day.\nMia: Do you record yourself?\nLeo: No, I don't. I just speak alone.\nMia: That's the problem. You need feedback. Have you tried a language partner?\nLeo: I had one, but she moved away. Now I have no one to talk to.\nMia: I can help. We can meet twice a week. But first, tell me: what do you find difficult?\nLeo: Long answers. I give short answers. The examiner asks 'Why?' and I say 'Because I like it.'\nMia: So you need to extend your answers. Also, your grammar—do you check your tenses?\nLeo: Not really. I often mix past and present.\nMia: OK. Let's make a plan. You will record one answer daily. Then we will listen together and fix one grammar point each time.\nLeo: That sounds good. But I'm shy about recording.\nMia: Everyone is at first. After a week, it gets easier. Trust me.\nLeo: Alright. When do we start?\nMia: Tomorrow at 6 p.m. Bring your phone and a notebook.\nLeo: Deal. Thanks, Mia.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is Leo's speaking test score?",
+      "options": [
+        "5.5",
+        "6.0",
+        "5.0"
+      ],
+      "answers": [
+        "5.5"
+      ],
+      "explanation": "原文中Leo说“I'm stuck at 5.5.”，所以答案是5.5。",
+      "evidence": "I'm stuck at 5.5."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How often does Leo practice speaking?",
+      "options": [
+        "Every day",
+        "Twice a week",
+        "Once a week"
+      ],
+      "answers": [
+        "Every day"
+      ],
+      "explanation": "Leo说“I practice every day.”，因此频率是每天。",
+      "evidence": "I practice every day."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Leo does not record himself. He just speaks ______.",
+      "maxWords": 1,
+      "answers": [
+        "alone"
+      ],
+      "explanation": "Leo说“I just speak alone.”，所以填alone。",
+      "evidence": "I just speak alone."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why did Leo stop having a language partner?",
+      "options": [
+        "She moved away.",
+        "She was too busy.",
+        "She didn't like him."
+      ],
+      "answers": [
+        "She moved away."
+      ],
+      "explanation": "Leo说“she moved away”，所以语言伙伴搬走了。",
+      "evidence": "I had one, but she moved away."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Mia suggest Leo do daily?",
+      "options": [
+        "Record one answer",
+        "Write a diary",
+        "Read a book"
+      ],
+      "answers": [
+        "Record one answer"
+      ],
+      "explanation": "Mia说“You will record one answer daily.”，所以建议每天录一个回答。",
+      "evidence": "You will record one answer daily."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Leo often mixes past and present tenses.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Leo说“I often mix past and present.”，与题目一致，所以是True。",
+      "evidence": "I often mix past and present."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Mia is a professional IELTS examiner.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "原文没有提到Mia的职业，只说“I can help.”，所以无法判断她是否是考官，选Not Given。",
+      "evidence": "I can help."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Mia and Leo will meet tomorrow at ______ p.m.",
+      "maxWords": 1,
+      "answers": [
+        "6"
+      ],
+      "explanation": "Mia说“Tomorrow at 6 p.m.”，所以填6。",
+      "evidence": "Tomorrow at 6 p.m."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "stuck",
+      "meaning": "卡住的，停滞不前的",
+      "example": "I'm stuck at 5.5."
+    },
+    {
+      "word": "record",
+      "meaning": "录音",
+      "example": "You will record one answer daily."
+    },
+    {
+      "word": "feedback",
+      "meaning": "反馈",
+      "example": "You need feedback."
+    },
+    {
+      "word": "extend",
+      "meaning": "扩展，延长",
+      "example": "So you need to extend your answers."
+    },
+    {
+      "word": "tenses",
+      "meaning": "时态",
+      "example": "do you check your tenses"
+    },
+    {
+      "word": "shy",
+      "meaning": "害羞的",
+      "example": "But I'm shy about recording."
+    },
+    {
+      "word": "notebook",
+      "meaning": "笔记本",
+      "example": "Bring your phone and a notebook."
+    },
+    {
+      "word": "plan",
+      "meaning": "计划",
+      "example": "Let's make a plan."
+    }
+  ],
+  "grammar": {
+    "title": "基础时态、问句、名词数量和常见从句综合复习",
+    "explanation": "英语中，时态表示动作发生的时间。一般现在时表示经常性动作或事实，如“I practice every day.”；一般过去时表示过去发生的动作，如“She moved away.”；一般将来时表示将来，如“You will record one answer daily.”。问句需要助动词提前，如“Do you record yourself?”。名词数量要注意可数名词的复数，如“answers”。常见从句包括宾语从句（I think that...）和原因状语从句（because...）。本次重点复习这些基础点。",
+    "example": "You will record one answer daily.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She go to school every day.",
+          "She goes to school every day.",
+          "She going to school every day."
+        ],
+        "answers": [
+          "She goes to school every day."
+        ],
+        "explanation": "一般现在时，主语She是第三人称单数，动词go要加es，所以选“She goes to school every day.”。",
+        "evidence": "She goes to school every day."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Do he like apples?",
+          "Does he likes apples?",
+          "Does he like apples?"
+        ],
+        "answers": [
+          "Does he like apples?"
+        ],
+        "explanation": "一般现在时问句，主语he是第三人称单数，助动词用does，后面动词用原形like，所以选“Does he like apples?”。",
+        "evidence": "Does he like apples?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct past tense sentence.",
+        "options": [
+          "I see him yesterday.",
+          "I saw him yesterday.",
+          "I seen him yesterday."
+        ],
+        "answers": [
+          "I saw him yesterday."
+        ],
+        "explanation": "yesterday表示过去，see的过去式是saw，所以选“I saw him yesterday.”。",
+        "evidence": "I saw him yesterday."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct future sentence.",
+        "options": [
+          "They will come tomorrow.",
+          "They come tomorrow.",
+          "They coming tomorrow."
+        ],
+        "answers": [
+          "They will come tomorrow."
+        ],
+        "explanation": "tomorrow表示将来，用will + 动词原形，所以选“They will come tomorrow.”。",
+        "evidence": "They will come tomorrow."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct plural form.",
+        "options": [
+          "three box",
+          "three boxes",
+          "three boxs"
+        ],
+        "answers": [
+          "three boxes"
+        ],
+        "explanation": "box的复数是boxes，加es，所以选“three boxes”。",
+        "evidence": "three boxes"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a clause.",
+        "options": [
+          "I think that he is right.",
+          "I think what he is right.",
+          "I think that he right."
+        ],
+        "answers": [
+          "I think that he is right."
+        ],
+        "explanation": "宾语从句可以用that引导，且从句需要完整的主谓结构，所以“I think that he is right.”正确。",
+        "evidence": "I think that he is right."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct reason clause.",
+        "options": [
+          "I stay home because it rains.",
+          "I stay home because it is raining.",
+          "I stay home because rain."
+        ],
+        "answers": [
+          "I stay home because it is raining."
+        ],
+        "explanation": "because引导原因状语从句，需要完整句子，所以“because it is raining”正确。",
+        "evidence": "I stay home because it is raining."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "He don't like coffee.",
+          "He doesn't like coffee.",
+          "He not like coffee."
+        ],
+        "answers": [
+          "He doesn't like coffee."
+        ],
+        "explanation": "一般现在时否定，主语he是第三人称单数，用doesn't + 动词原形，所以选“He doesn't like coffee.”。",
+        "evidence": "He doesn't like coffee."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often practice speaking English?",
+        "How do you usually get feedback on your English?",
+        "What is difficult for you in English grammar?",
+        "Do you like recording yourself? Why or why not?"
+      ],
+      "part2": "Describe a time when you found a problem in your English learning and made a plan to fix it. You should say: what the problem was, how you found it, what plan you made, and how you felt about the plan.",
+      "part3": [
+        "Why do some learners stay at the same level for a long time?",
+        "How can teachers help students find their weak points?",
+        "Is it better to study alone or with a partner? Why?",
+        "What advice would you give to someone who is shy about speaking English?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80-100 words) about a skill you want to improve. Describe the skill, why it is important for you, and two steps you will take to improve it. Use at least three different tenses."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar review and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "5674c823cd71884a8111bb0cf60ec8457dbd056d1e8de5c6ebd2b61c17760b3a"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

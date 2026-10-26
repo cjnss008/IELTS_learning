@@ -1,0 +1,424 @@
+{
+  "id": "expand-w34-read-1",
+  "week": 34,
+  "skill": "reading",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 400,
+  "maxWords": 700,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "自然与阅读推断 · Independent new scenario: a cultural organisation adapting to change",
+  "grammarFocus": "关系从句；指代；可能性表达；复杂句主干辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Lantern Library: A Cultural Centre Adapts",
+  "instructions": "阅读下面的文章，回答10个问题。文章是模拟材料，不是真实新闻。先读文章，再做题。问题有单选、填空和判断正误/未提及。填空题答案必须来自文章原词。语法部分先看中文讲解，再做8道新题。",
+  "passage": "The Lantern Library, a small cultural centre in the city of Riverside, had served the community for over thirty years. It was known for its collection of local history books and its weekly storytelling evenings. However, by 2022, the library faced a serious problem: fewer and fewer people were visiting. The director, Maria Chen, realised that the centre needed to change if it wanted to survive.\n\nA. The Decline and the Decision\nMaria called a meeting with her small team. They looked at the numbers. Five years ago, the library welcomed about 200 visitors a week. Now, that number had fallen to fewer than 80. Most of the visitors were over sixty, and young people rarely came in. This decline was not simply a matter of bad luck; it reflected a wider shift in how people spend their free time, with many turning to online services and social media instead of traditional community spaces. \"We must find out what the community needs today,\" Maria said. The team agreed to run a survey. They asked local residents what they wanted from a cultural centre. The results were surprising. Many people said they wanted digital skills classes and a space to meet friends. They also wanted activities for children. These answers showed that the community still valued the library, but expected it to offer more than books.\n\nB. The New Plan\nBased on the survey, the team designed a new programme. They decided to offer free computer classes for older adults, a weekly coding club for teenagers, and a family reading hour on Saturdays. They also turned a quiet room into a \"digital corner\" with tablets and free Wi-Fi. Maria believed that these changes would attract new visitors. However, not everyone was happy. Some older members worried that the library would lose its traditional character. \"We love the storytelling evenings,\" one member said. \"Please don't take them away.\" Maria promised that the storytelling evenings would continue, and she explained that the new activities were meant to support the old ones, not replace them.\n\nC. The Results\nSix months later, the number of weekly visitors had risen to over 150. The computer classes were full, and the coding club had a waiting list. The family reading hour attracted many young parents with children. The storytelling evenings still took place every Friday, and they were now more popular than before. Maria was pleased, but she knew the work was not finished. \"We must keep listening to the community,\" she said. \"The library is not just a building; it is a living organisation that must adapt.\"\n\nThe Lantern Library's story shows how a cultural organisation can respond to change. By listening to the people it serves, it found a way to stay relevant without losing its identity.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many visitors did the library welcome per week five years ago?",
+      "options": [
+        "About 200",
+        "Fewer than 80",
+        "Over 150",
+        "About 100"
+      ],
+      "answers": [
+        "About 200"
+      ],
+      "explanation": "A部分“The Decline and the Decision”明确说“五年前，图书馆每周接待约200名访客”。不要把当时下降后的少于80人，或后来恢复到超过150人，混作五年前的数字。",
+      "evidence": "Five years ago, the library welcomed about 200 visitors a week."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What did many people say they wanted from the cultural centre?",
+      "options": [
+        "Digital skills classes and a space to meet friends",
+        "More history books",
+        "A larger building",
+        "Free coffee"
+      ],
+      "answers": [
+        "Digital skills classes and a space to meet friends"
+      ],
+      "explanation": "调查结果显示，许多人想要数字技能课程和交友空间。",
+      "evidence": "Many people said they wanted digital skills classes and a space to meet friends."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The team decided to offer free computer classes for ______ adults.",
+      "maxWords": 1,
+      "answers": [
+        "older"
+      ],
+      "explanation": "文章提到为老年人提供免费电脑课程，原文用词是older。",
+      "evidence": "They decided to offer free computer classes for older adults"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What did some older members worry about?",
+      "options": [
+        "The library would lose its traditional character",
+        "The library would close",
+        "The computer classes would be too expensive",
+        "The storytelling evenings would be too crowded"
+      ],
+      "answers": [
+        "The library would lose its traditional character"
+      ],
+      "explanation": "一些老年成员担心图书馆会失去传统特色。",
+      "evidence": "Some older members worried that the library would lose its traditional character."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which activity had a waiting list after six months?",
+      "options": [
+        "The coding club",
+        "The computer classes",
+        "The family reading hour",
+        "The storytelling evenings"
+      ],
+      "answers": [
+        "The coding club"
+      ],
+      "explanation": "文章明确说编程俱乐部有等候名单。",
+      "evidence": "The computer classes were full, and the coding club had a waiting list."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The storytelling evenings were cancelled after the changes.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "文章说讲故事晚会仍然每周五举行，并且更受欢迎了，因此该陈述为假。",
+      "evidence": "The storytelling evenings still took place every Friday, and they were now more popular than before."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The library received funding from the local government.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "全文没有说明图书馆的资金来自哪里，因此政府是否资助属于Not Given。这里引用的是计划与免费活动的背景，不是“没有资助”的证据；免费课程也不能用来推断政府出资，缺信息同样不能判False。",
+      "evidence": "Based on the survey, the team designed a new programme. They decided to offer free computer classes for older adults, a weekly coding club for teenagers, and a family reading hour on Saturdays.",
+      "evidenceScope": "Context quote only; absence of government-funding information checked across the entire passage."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: Maria said the library is a living ______ that must adapt.",
+      "maxWords": 1,
+      "answers": [
+        "organisation"
+      ],
+      "explanation": "原文中Maria说图书馆是一个必须适应的活组织，用词是organisation。",
+      "evidence": "it is a living organisation that must adapt"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What was the main reason the library decided to change?",
+      "options": [
+        "Visitor numbers had fallen",
+        "The building was too old",
+        "The staff wanted more money",
+        "The books were damaged"
+      ],
+      "answers": [
+        "Visitor numbers had fallen"
+      ],
+      "explanation": "文章开头指出图书馆面临访客减少的问题，这是改变的主要原因。",
+      "evidence": "fewer and fewer people were visiting"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "According to the passage, what is the key to the library's success?",
+      "options": [
+        "Listening to the community",
+        "Buying more books",
+        "Hiring more staff",
+        "Moving to a new building"
+      ],
+      "answers": [
+        "Listening to the community"
+      ],
+      "explanation": "文章结尾强调通过倾听社区需求来保持相关性。",
+      "evidence": "By listening to the people it serves, it found a way to stay relevant without losing its identity."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "collection",
+      "meaning": "收藏品；收集",
+      "example": "It was known for its collection of local history books and its weekly storytelling evenings."
+    },
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "The team agreed to run a survey."
+    },
+    {
+      "word": "digital",
+      "meaning": "数字的",
+      "example": "Many people said they wanted digital skills classes and a space to meet friends."
+    },
+    {
+      "word": "programme",
+      "meaning": "计划；项目",
+      "example": "Based on the survey, the team designed a new programme."
+    },
+    {
+      "word": "character",
+      "meaning": "特色；性格",
+      "example": "Some older members worried that the library would lose its traditional character."
+    },
+    {
+      "word": "attract",
+      "meaning": "吸引",
+      "example": "Maria believed that these changes would attract new visitors."
+    },
+    {
+      "word": "relevant",
+      "meaning": "相关的；有意义的",
+      "example": "By listening to the people it serves, it found a way to stay relevant without losing its identity."
+    },
+    {
+      "word": "adapt",
+      "meaning": "适应",
+      "example": "The library is not just a building; it is a living organisation that must adapt."
+    }
+  ],
+  "grammar": {
+    "title": "关系从句、指代、可能性表达与复杂句主干辨认",
+    "explanation": "本课重点：1) 关系从句用who/which/that连接，修饰名词。例如：The library that must adapt is a living organisation. 2) 指代：it/they/this/these指代前文名词，注意单复数。3) 可能性表达：may/might/could表示可能，must表示必须，can表示能力。4) 复杂句主干：先找主语和谓语，忽略修饰成分。例如：The team (主语) designed (谓语) a new programme (宾语)。",
+    "example": "The library is not just a building; it is a living organisation that must adapt.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct word: The woman ______ teaches computer classes is very patient.",
+        "options": [
+          "who",
+          "which",
+          "whose",
+          "where"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "先行词是the woman，指人，关系代词用who。",
+        "evidence": "The woman who teaches computer classes is very patient.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct word: The book ______ I borrowed from the library is about local history.",
+        "options": [
+          "which",
+          "who",
+          "whose",
+          "where"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "先行词是the book，指物，关系代词用which。",
+        "evidence": "The book which I borrowed from the library is about local history.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "What does 'they' refer to in: 'The visitors were happy because they enjoyed the new classes.'?",
+        "options": [
+          "The visitors",
+          "The classes",
+          "The teachers",
+          "The books"
+        ],
+        "answers": [
+          "The visitors"
+        ],
+        "explanation": "they指代前文的the visitors，因为访客们喜欢新课程。",
+        "evidence": "The visitors were happy because they enjoyed the new classes.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Which sentence expresses possibility?",
+        "options": [
+          "She might join the coding club.",
+          "She joins the coding club.",
+          "She joined the coding club.",
+          "She has joined the coding club."
+        ],
+        "answers": [
+          "She might join the coding club."
+        ],
+        "explanation": "might表示可能性，其他选项表示事实或已完成。",
+        "evidence": "She might join the coding club.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Identify the main subject and verb: 'The small team that Maria leads designed a new programme.'",
+        "options": [
+          "The small team / designed",
+          "Maria / leads",
+          "a new programme / designed",
+          "The small team / leads"
+        ],
+        "answers": [
+          "The small team / designed"
+        ],
+        "explanation": "主干是The small team designed，that Maria leads是修饰team的关系从句。",
+        "evidence": "The small team that Maria leads designed a new programme.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct word: The tablets ______ are in the digital corner are free to use.",
+        "options": [
+          "which",
+          "who",
+          "whose",
+          "where"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "先行词是the tablets，指物，关系代词用which。",
+        "evidence": "The tablets which are in the digital corner are free to use.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "What does 'this decision' refer to in: 'The library changed its opening hours. This decision made evening visits easier.'?",
+        "options": [
+          "Changing the library's opening hours",
+          "Visiting the library in the evening",
+          "The people visiting the library",
+          "The library building"
+        ],
+        "answers": [
+          "Changing the library's opening hours"
+        ],
+        "explanation": "This decision指前一句“改变开放时间”这一决定。decision这一名词明确了事件指代，不能理解为访客、建筑或参观行为。这是独立语法例句，不是给源文增加事实。",
+        "evidence": "The library changed its opening hours. This decision made evening visits easier.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Which sentence uses 'must' correctly to show obligation?",
+        "options": [
+          "We must listen to the community.",
+          "We must to listen to the community.",
+          "We must listening to the community.",
+          "We must listened to the community."
+        ],
+        "answers": [
+          "We must listen to the community."
+        ],
+        "explanation": "must后接动词原形，表示必须。",
+        "evidence": "We must listen to the community.",
+        "evidenceKind": "independent-grammar-example"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit libraries or cultural centres?",
+        "What kind of activities do you enjoy in your free time?",
+        "Do you think it is important for organisations to change? Why?",
+        "Have you ever taken a class to learn a new skill?"
+      ],
+      "part2": "Describe a cultural organisation or place in your city that has changed. You should say: what it is; how it has changed; why it changed; and how people feel about the change.",
+      "part3": [
+        "Why do some organisations find it difficult to adapt to change?",
+        "How can cultural centres attract younger people?",
+        "Do you think traditional activities should be kept? Why or why not?",
+        "What role do surveys play in understanding community needs?"
+      ]
+    },
+    "writing": "Write an article for a local magazine about a cultural organisation that successfully adapted to change. Describe the changes, the reasons, and the results. Write at least 150 words and no more than 200 words."
+  },
+  "rubric": {
+    "taskType": "Reading and Grammar"
+  },
+  "version": "1",
+  "active": false,
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创模拟教学材料；恢复未发布草稿，不是官方雅思试题或校准成绩证据",
+    "verification": "reviewed",
+    "releaseStatus": "staged-inactive",
+    "method": "本地逐题语义与结构修订；保留原文，等待未给答案的独立解题与解析复核；未调用作者API",
+    "authoringDraftSha256": "9e60494cb5502d03071ef0415caa3b24201a9b6835a2f41514f423f81077ace7",
+    "teachingRole": "Ordinary narrative reading, literal-detail practice, relative-clause/reference/modal consolidation, and new-context output.",
+    "difficultyReview": {
+      "status": "uncalibrated-content-estimate",
+      "declaredAuthoringTarget": "B2–C1",
+      "conservativeContentEstimate": "B1–B2",
+      "calibrated": false,
+      "notes": "Most questions retrieve explicit narrative facts and rehearse basic grammar. Length and the week-34/week-38 position do not establish C1 difficulty or sufficient advanced training."
+    },
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "advancedCoverageEligible": false,
+    "contentHash": "932e61cb782a4296ca67aaca063b0c400ee8f8fd182864d5e51c374c0eaedc7a",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "questionCount": 18,
+      "blindInputSha256": "6cd37588c5f2805e16362b47ce1802181395ce9d9aff9bf1941f0f9b45baf725",
+      "answerFileSha256": "29c4ea461bb60a43783dd7a4d6e6efec74f3b49042b454dcd0f9671381432ae0",
+      "explanationReviewSha256": "5c45ce5fb03b4af7d26db6c200d2ae686a3f3ac97a80c93cc1556c50f66d7e5a",
+      "reviewMethod": "Separate agent author and root independent source/grammar answers frozen before explanation review. Content-stage labels are uncalibrated; fluency/consolidation, not advanced mastery or Band evidence."
+    }
+  }
+}

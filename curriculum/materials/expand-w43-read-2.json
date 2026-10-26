@@ -1,0 +1,385 @@
+{
+  "id": "expand-w43-read-2",
+  "week": 43,
+  "skill": "reading",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 800,
+  "maxWords": 1100,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时写作：图表概述与关键比较 · Independent new scenario: a panel considering limits of algorithmic decisions",
+  "grammarFocus": "趋势、比较、比例、时态与数据句的准确性。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "When Algorithms Decide: A Panel on Limits",
+  "instructions": "阅读一篇关于算法决策边界的模拟教育材料（非官方雅思测试）。先通读文章，理解大意；再完成10道题（单选、填空、判断正误/未提及）。注意数据句的准确性、趋势与比较表达。语法部分先看中文讲解，再完成8道新句子的语法题。最后进行口语和写作迁移练习。所有答案必须依据原文。",
+  "passage": "A city council in the fictional town of Riverton formed a panel to examine how algorithms are used in public services. The panel, called the Algorithm Review Group (ARG), met for the first time in March. Its task was to consider the limits of algorithmic decisions in three areas: school admissions, traffic fines, and social housing. The group included teachers, parents, a data scientist, and a local lawyer. They agreed that algorithms can help, but they also asked when human judgment should override a machine's recommendation. The panel's discussions were detailed and practical, focusing on real cases where automated decisions had affected residents. They wanted to ensure that efficiency did not come at the cost of fairness.\n\nA. School admissions\nIn Riverton, a computer program now ranks students for oversubscribed schools. Last year, the program placed 72% of applicants in their first-choice school. This year, after the panel's review, the figure rose to 78%. The panel found that the program used distance from home as the main factor. However, it gave less weight to whether a child had a sibling at the school. Parents complained that this was unfair. The panel recommended that sibling priority should be added as a tie-breaker. The council accepted this change, and the new rule will start next September. This adjustment means that families with children already at a school will have a better chance of having siblings join them, reducing the disruption of attending different schools. The panel noted that such changes can improve equity without significantly affecting overall efficiency, as the program still processes applications quickly.\n\nB. Traffic fines\nRiverton uses cameras to detect speeding. In 2022, the system issued 12,000 fines. In 2023, the number fell to 9,500, a decrease of about 21%. The panel noted that the drop was partly because the city lowered the speed limit on two main roads. However, the cameras also made mistakes. About 3% of fines were sent to the wrong car owner. The panel said that a human should check every fine before it is sent. The council agreed to hire two more staff members to review the fines. The panel also suggested that drivers should be able to appeal online within 14 days, not 7 days as before. This extension gives drivers more time to respond, especially if they need to gather evidence or seek advice. The panel emphasized that human oversight is essential to maintain trust in the system. They argued that even a small error rate can undermine public confidence, so manual checks are a worthwhile investment.\n\nC. Social housing\nRiverton has a waiting list for social housing. The list is ordered by a points system. Points are given for factors such as income, family size, and time on the list. The panel found that the system gave more points to people who had lived in Riverton for a long time. This meant that newcomers waited longer. The panel argued that this was not fair to families who had recently moved to the city for work. They recommended that the time-on-list factor should be reduced from 40% to 25% of the total points. The council is still discussing this recommendation. No decision has been made yet. The panel noted that while rewarding long-term residency can build community stability, it can also disadvantage those who move for employment opportunities, which is a common pattern in a growing town. They suggested that other factors, such as current housing need, should be given more weight to reflect immediate circumstances.\n\nD. The panel's conclusions\nThe panel published a short report. It said that algorithms are useful for handling large amounts of data quickly. However, they can hide unfair rules inside complex calculations. The report stated: 'An algorithm is only as fair as the rules we give it.' The panel recommended three general principles. First, every algorithm used in public services should be explained in simple language. Second, people affected by a decision should have the right to ask for a human review. Third, the city should check its algorithms every year. The council will vote on these principles in June. If they are accepted, Riverton will be the first town in the region to have such rules. These principles aim to make algorithmic decision-making more transparent and accountable, ensuring that citizens can understand and challenge automated outcomes. The panel stressed that transparency builds trust and allows for continuous improvement.\n\nThe panel also compared Riverton with the nearby town of Westfield. Westfield uses a similar school admissions program, but it does not use cameras for traffic fines. Instead, Westfield employs traffic officers. The panel found that Westfield's approach was more expensive but produced fewer mistakes. However, Westfield's system was slower. The panel concluded that there is no perfect system. Each town must balance speed, cost, and fairness. The ARG will meet again in September to review progress. The comparison highlighted that while automation can improve efficiency, it may introduce errors that human officers would avoid, and that the choice of system depends on local priorities and resources. The panel recommended that Riverton continue to evaluate its systems and learn from neighboring towns.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What percentage of applicants were placed in their first-choice school this year?",
+      "options": [
+        "72%",
+        "78%",
+        "40%",
+        "25%"
+      ],
+      "answers": [
+        "78%"
+      ],
+      "explanation": "原文明确提到今年这一比例上升到78%。",
+      "evidence": "This year, after the panel's review, the figure rose to 78%."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many fines were issued in 2023?",
+      "options": [
+        "12,000",
+        "9,500",
+        "3,000",
+        "14,000"
+      ],
+      "answers": [
+        "9,500"
+      ],
+      "explanation": "原文指出2023年罚款数量降至9,500。",
+      "evidence": "In 2023, the number fell to 9,500, a decrease of about 21%."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What percentage of fines were sent to the wrong car owner?",
+      "options": [
+        "About 3%",
+        "About 21%",
+        "About 40%",
+        "About 72%"
+      ],
+      "answers": [
+        "About 3%"
+      ],
+      "explanation": "原文提到大约3%的罚款寄给了错误的车主。",
+      "evidence": "About 3% of fines were sent to the wrong car owner."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "The panel recommended that the time-on-list factor should be reduced from 40% to what percentage?",
+      "options": [
+        "25%",
+        "40%",
+        "72%",
+        "78%"
+      ],
+      "answers": [
+        "25%"
+      ],
+      "explanation": "原文建议将排队时间因素的权重从40%降至25%。",
+      "evidence": "They recommended that the time-on-list factor should be reduced from 40% to 25% of the total points."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The panel said that a ______ should check every fine before it is sent.",
+      "maxWords": 1,
+      "answers": [
+        "human"
+      ],
+      "explanation": "原文说每张罚单发出前应由人（human）检查。",
+      "evidence": "The panel said that a human should check every fine before it is sent."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The council will ______ on these principles in June.",
+      "maxWords": 1,
+      "answers": [
+        "vote"
+      ],
+      "explanation": "原文提到市议会将在六月对这些原则进行投票（vote）。",
+      "evidence": "The council will vote on these principles in June."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which town uses traffic officers instead of cameras for traffic fines?",
+      "options": [
+        "Riverton",
+        "Westfield",
+        "Both towns",
+        "Neither town"
+      ],
+      "answers": [
+        "Westfield"
+      ],
+      "explanation": "原文明确说Westfield不使用摄像头，而是雇用交通官员。",
+      "evidence": "Westfield uses a similar school admissions program, but it does not use cameras for traffic fines. Instead, Westfield employs traffic officers."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The council has already accepted the recommendation about social housing points.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文说市议会仍在讨论该建议，尚未做出决定，因此“已经接受”与原文矛盾。",
+      "evidence": "The council is still discussing this recommendation. No decision has been made yet."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The panel recommended that the city should check its algorithms every year.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文明确列出第三条原则：城市应每年检查其算法。",
+      "evidence": "Third, the city should check its algorithms every year."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The panel found that Westfield's system was cheaper than Riverton's system.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文说Westfield的方法更贵（more expensive），与“更便宜”矛盾。",
+      "evidence": "The panel found that Westfield's approach was more expensive but produced fewer mistakes."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "oversubscribed",
+      "meaning": "报名人数超过名额的",
+      "example": "In Riverton, a computer program now ranks students for oversubscribed schools."
+    },
+    {
+      "word": "tie-breaker",
+      "meaning": "平局决胜因素",
+      "example": "The panel recommended that sibling priority should be added as a tie-breaker."
+    },
+    {
+      "word": "appeal",
+      "meaning": "申诉",
+      "example": "The panel also suggested that drivers should be able to appeal online within 14 days, not 7 days as before."
+    },
+    {
+      "word": "newcomers",
+      "meaning": "新来者",
+      "example": "This meant that newcomers waited longer."
+    },
+    {
+      "word": "calculations",
+      "meaning": "计算",
+      "example": "However, they can hide unfair rules inside complex calculations."
+    },
+    {
+      "word": "principles",
+      "meaning": "原则",
+      "example": "The panel recommended three general principles."
+    },
+    {
+      "word": "employs",
+      "meaning": "雇用",
+      "example": "Instead, Westfield employs traffic officers."
+    },
+    {
+      "word": "balance",
+      "meaning": "平衡",
+      "example": "Each town must balance speed, cost, and fairness."
+    }
+  ],
+  "grammar": {
+    "title": "趋势、比较、比例与数据句的准确性",
+    "explanation": "在描述数据时，我们常用不同的动词和结构来表达趋势、比较和比例。表示上升可用 rise, increase, go up；表示下降可用 fall, decrease, drop。注意时态：过去的数据用过去时（rose, fell），预测或未来安排用将来时（will start, will vote）。比较级用于两者比较：more expensive than, fewer mistakes than。比例常用百分比：72% of applicants, a decrease of about 21%。数据句要准确：数字、百分比、时间必须与事实一致。",
+    "example": "This year, after the panel's review, the figure rose to 78%.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct option: The number of visitors ______ from 5,000 to 8,000 last year.",
+        "options": [
+          "rose",
+          "rise",
+          "risen",
+          "rising"
+        ],
+        "answers": [
+          "rose"
+        ],
+        "explanation": "last year表示过去，用过去式rose。",
+        "evidence": "This year, after the panel's review, the figure rose to 78%."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct option: The new rule ______ next September.",
+        "options": [
+          "will start",
+          "started",
+          "starts",
+          "starting"
+        ],
+        "answers": [
+          "will start"
+        ],
+        "explanation": "next September表示将来，用will start。",
+        "evidence": "The council accepted this change, and the new rule will start next September."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct option: The system issued 12,000 fines in 2022, but the number ______ to 9,500 in 2023.",
+        "options": [
+          "fell",
+          "fall",
+          "fallen",
+          "falling"
+        ],
+        "answers": [
+          "fell"
+        ],
+        "explanation": "2023是过去时间，用过去式fell。",
+        "evidence": "In 2023, the number fell to 9,500, a decrease of about 21%."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct option: Westfield's approach was ______ expensive than Riverton's.",
+        "options": [
+          "more",
+          "most",
+          "much",
+          "many"
+        ],
+        "answers": [
+          "more"
+        ],
+        "explanation": "比较级用more expensive than。",
+        "evidence": "The panel found that Westfield's approach was more expensive but produced fewer mistakes."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct option: The panel recommended reducing the factor ______ 40% to 25%.",
+        "options": [
+          "from",
+          "to",
+          "at",
+          "by"
+        ],
+        "answers": [
+          "from"
+        ],
+        "explanation": "from...to...表示从……到……的变化。",
+        "evidence": "They recommended that the time-on-list factor should be reduced from 40% to 25% of the total points."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct option: About 3% ______ fines were sent to the wrong owner.",
+        "options": [
+          "of",
+          "in",
+          "on",
+          "for"
+        ],
+        "answers": [
+          "of"
+        ],
+        "explanation": "百分比后接of表示“……的百分之……”。",
+        "evidence": "About 3% of fines were sent to the wrong car owner."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct option: The council ______ on these principles in June.",
+        "options": [
+          "will vote",
+          "voted",
+          "votes",
+          "voting"
+        ],
+        "answers": [
+          "will vote"
+        ],
+        "explanation": "in June指将来，用will vote。",
+        "evidence": "The council will vote on these principles in June."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct option: The panel found that Westfield produced ______ mistakes than Riverton.",
+        "options": [
+          "fewer",
+          "less",
+          "few",
+          "little"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "mistakes是可数名词复数，比较级用fewer。",
+        "evidence": "The panel found that Westfield's approach was more expensive but produced fewer mistakes."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you use any apps that make decisions for you?",
+        "Do you think computers can be fair?",
+        "Have you ever received a fine or a wrong bill?",
+        "What do you do when you think a decision is unfair?"
+      ],
+      "part2": "Describe a time when a machine or a computer made a decision that affected you. You should say: what the decision was; who or what made it; how you felt about it; and explain whether you think the decision was fair.",
+      "part3": [
+        "Should humans always check computer decisions?",
+        "What are the advantages and disadvantages of using algorithms in public services?",
+        "How can cities make sure that data is used fairly?",
+        "Do you think people should be able to appeal against computer decisions? Why?"
+      ]
+    },
+    "writing": "Some people believe that computers should make all decisions in public services, while others think humans should always make the final decision. Discuss both views and give your own opinion. Write about 150–200 words."
+  },
+  "rubric": {
+    "taskType": "Reading and Grammar Practice (simulated educational material, not an official IELTS test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "2a3bfbe563965df425478459d6348da7884222cad8c73c93219473c7a9c9cc01"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

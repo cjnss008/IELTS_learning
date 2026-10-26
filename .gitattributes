@@ -15,3 +15,7 @@ audio/oral-models/*.mp3 filter=lfs diff=lfs merge=lfs -text
 runtime-packages/*.zip filter=lfs diff=lfs merge=lfs -text
 
 audio/human-listening/** filter=lfs diff=lfs merge=lfs -text
+
+audio/public/** filter=lfs diff=lfs merge=lfs -text
+
+audio/independent-bank/us/** filter=lfs diff=lfs merge=lfs -text

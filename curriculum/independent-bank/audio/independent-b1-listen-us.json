@@ -1,86 +1,519 @@
 {
-  "schema": 3,
   "id": "independent-b1-listen-us",
-  "synthetic": true,
-  "provider": "Microsoft online TTS via edge-tts",
-  "authoringPackageVersion": "7.3.1",
-  "locale": "en-US",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+  "configurationHash": "7288275c44340680edbb1d8d0f4ac76910251550ac6620c030fa2fac698e8e76",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+    "rate": "-3%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "tutor": "en-US-AriaNeural",
+      "maya": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 0,
+        "sourceEnd": 7
+      },
+      {
+        "label": "Maya",
+        "role": "maya",
+        "sourceStart": 39,
+        "sourceEnd": 45
+      },
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 276,
+        "sourceEnd": 283
+      },
+      {
+        "label": "Maya",
+        "role": "maya",
+        "sourceStart": 323,
+        "sourceEnd": 329
+      },
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 383,
+        "sourceEnd": 390
+      },
+      {
+        "label": "Maya",
+        "role": "maya",
+        "sourceStart": 623,
+        "sourceEnd": 629
+      },
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 669,
+        "sourceEnd": 676
+      },
+      {
+        "label": "Maya",
+        "role": "maya",
+        "sourceStart": 898,
+        "sourceEnd": 904
+      },
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 1057,
+        "sourceEnd": 1064
+      },
+      {
+        "label": "Maya",
+        "role": "maya",
+        "sourceStart": 1240,
+        "sourceEnd": 1246
+      },
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 1289,
+        "sourceEnd": 1296
+      },
+      {
+        "label": "Maya",
+        "role": "maya",
+        "sourceStart": 1538,
+        "sourceEnd": 1544
+      },
+      {
+        "label": "Tutor",
+        "role": "tutor",
+        "sourceStart": 1585,
+        "sourceEnd": 1592
+      }
+    ],
+    "segments": [
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 7,
+        "sourceEnd": 38,
+        "text": "Tell me about your study, Maya.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "bdaf56d804bcf5916d14b015ceb61171ec9cb9cb0f58bcabebc2b3ecfd564371",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "maya",
+        "speaker": "Maya",
+        "sourceStart": 45,
+        "sourceEnd": 275,
+        "text": "We want to know whether clearer instructions help people put a flat-pack box together. We made two instruction sheets. One has paragraphs, and the other has numbered drawings. We will give everyone the same set of cardboard parts.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "7d09fb09f05dcc84f579644773c0529bbf6743d9d1066cf318bd60f150ffcfc0",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 283,
+        "sourceEnd": 322,
+        "text": "Good. How will you divide participants?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "54dabafa761ab2b234ff0db5e9368443cea12add49b3fea88d7a83eed1dadfc3",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "maya",
+        "speaker": "Maya",
+        "sourceStart": 329,
+        "sourceEnd": 382,
+        "text": "We thought people could choose the sheet they prefer.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "2efed411085bf92d5d9580f1a753413f9548da456aa4d114fe71c3e2849c7613",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 390,
+        "sourceEnd": 622,
+        "text": "That would make the result difficult to interpret. People who choose drawings might already be better at this kind of task. Allocate the sheets at random instead. Record whether participants have assembled similar boxes before, too.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "83266363dfd976eb635db83d4bc5e87b305465da6c24c95b4c70e317371c9945",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "maya",
+        "speaker": "Maya",
+        "sourceStart": 629,
+        "sourceEnd": 668,
+        "text": "Should we time how quickly they finish?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "9837545075fc09de9cca3597b7cc7939036db6793e34884bc65046a1727c6bb1",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 676,
+        "sourceEnd": 897,
+        "text": "Yes, but speed alone is not enough. A box assembled quickly may fall apart. Check whether each finished box can hold a standard weight. Use the same weight for everyone, and decide the checking procedure before you start.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "24404d7ea124412f8eaf4ca0d535b7a67e5ddf85556d7983a395dae1ab3678e3",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "maya",
+        "speaker": "Maya",
+        "sourceStart": 904,
+        "sourceEnd": 1056,
+        "text": "We have twenty-four volunteers. Half can come on Monday and half on Wednesday. Could we use the paragraph sheet on Monday and the drawings on Wednesday?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "40b27b74110feaa6e18f9d07b89cfbeb7d66105b774f50a86e4ed885b66725b1",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 1064,
+        "sourceEnd": 1239,
+        "text": "Avoid that. A difference between days could become a difference between instruction types. Use both types on each day. Keep the room arrangement and the time allowed the same.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "c5b5c89472d996312dbab4fe8ddc3f1262f8ab650dfe428eccedc29439463af1",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "maya",
+        "speaker": "Maya",
+        "sourceStart": 1246,
+        "sourceEnd": 1288,
+        "text": "What about helping someone who gets stuck?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "3a6e774b5c26deb36d3e74eb718ea9ec99fadbc189c984a607e65da7d12be539",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 1296,
+        "sourceEnd": 1537,
+        "text": "Explain the safety rules to everyone beforehand, but do not give extra assembly hints during the independent task. If someone decides to stop, record that choice. Do not invent a finishing time for them or delete them because they were slow.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "d8b2bb5f2583d53914432ae7758b3685d4fe8125e98dbfbe0e7b4b09b7a93883",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "maya",
+        "speaker": "Maya",
+        "sourceStart": 1544,
+        "sourceEnd": 1584,
+        "text": "We will also ask which sheet they liked.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "9244e40864a27968227176c7fa87608874c2f146d39e2a756c414f518b46d228",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "tutor",
+        "speaker": "Tutor",
+        "sourceStart": 1592,
+        "sourceEnd": 1875,
+        "text": "That can be useful, as long as you report preference separately from successful assembly. A person might enjoy a sheet that does not help them make a stronger box. With a small volunteer sample, treat the project as an initial comparison rather than a conclusion about all consumers.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "7fdb408270d9c8cfccc675a503d9064199b796e3c1147d0eef420f19bb9507e0",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "11e4cf8c436a0c9e3772e9085ebd72eb17d916cd7b10eb808b642c3242f207dd",
   "voices": [
     "en-US-AriaNeural",
     "en-US-GuyNeural"
   ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "roleVoices": {
+    "tutor": "en-US-AriaNeural",
+    "maya": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 121.568875,
+  "synthetic": true,
+  "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-3%",
-  "transcriptHash": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
-  "audioHash": "211148b86afd6c69c31cb6964a45fbd90e4a5d46cd454fa7fdcfa66ca03ea316",
-  "configurationHash": "9ec65af2e5b421727f24288293a414283747cb3302225c1d6abc44add60ad1af",
-  "durationSeconds": 126.984,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 7,
+      "sourceEnd": 38,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "bdaf56d804bcf5916d14b015ceb61171ec9cb9cb0f58bcabebc2b3ecfd564371",
-      "durationSeconds": 2.928
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 0.041541666666666664,
+      "groupEndSeconds": 2.1416666666666666,
+      "wordStartSeconds": 0.101541,
+      "wordEndSeconds": 2.021666,
+      "startSeconds": 0.0,
+      "endSeconds": 2.100125,
+      "durationSeconds": 2.100125
     },
     {
+      "role": "maya",
+      "speaker": "Maya",
+      "sourceStart": 45,
+      "sourceEnd": 275,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "7d09fb09f05dcc84f579644773c0529bbf6743d9d1066cf318bd60f150ffcfc0",
-      "durationSeconds": 15.864
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "a13aaa9b14ff747a91ab2ffebb1f98caba619f5fd47b2fae35ae4599d4b76888",
+      "groupAudioHash": "bc22e89ad720ba668c134c783d952235a89e19590437d84e7e480927316fe8c8",
+      "groupStartSeconds": 0.041541666666666664,
+      "groupEndSeconds": 15.081333333333333,
+      "wordStartSeconds": 0.101541,
+      "wordEndSeconds": 14.961332,
+      "startSeconds": 2.550125,
+      "endSeconds": 17.589916666666667,
+      "durationSeconds": 15.039791666666668
     },
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 283,
+      "sourceEnd": 322,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "54dabafa761ab2b234ff0db5e9368443cea12add49b3fea88d7a83eed1dadfc3",
-      "durationSeconds": 4.176
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 2.86525,
+      "groupEndSeconds": 6.22825,
+      "wordStartSeconds": 2.92525,
+      "wordEndSeconds": 6.108249,
+      "startSeconds": 18.039916666666667,
+      "endSeconds": 21.402916666666666,
+      "durationSeconds": 3.3629999999999995
     },
     {
+      "role": "maya",
+      "speaker": "Maya",
+      "sourceStart": 329,
+      "sourceEnd": 382,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "2efed411085bf92d5d9580f1a753413f9548da456aa4d114fe71c3e2849c7613",
-      "durationSeconds": 3.552
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "a13aaa9b14ff747a91ab2ffebb1f98caba619f5fd47b2fae35ae4599d4b76888",
+      "groupAudioHash": "bc22e89ad720ba668c134c783d952235a89e19590437d84e7e480927316fe8c8",
+      "groupStartSeconds": 15.803416666666667,
+      "groupEndSeconds": 18.496291666666668,
+      "wordStartSeconds": 15.863416,
+      "wordEndSeconds": 18.376291,
+      "startSeconds": 21.852916666666665,
+      "endSeconds": 24.545791666666666,
+      "durationSeconds": 2.692875000000001
     },
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 390,
+      "sourceEnd": 622,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "83266363dfd976eb635db83d4bc5e87b305465da6c24c95b4c70e317371c9945",
-      "durationSeconds": 16.296
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 6.937416666666667,
+      "groupEndSeconds": 22.41379166666667,
+      "wordStartSeconds": 6.997416,
+      "wordEndSeconds": 22.293791,
+      "startSeconds": 24.995791666666666,
+      "endSeconds": 40.472166666666666,
+      "durationSeconds": 15.476375
     },
     {
+      "role": "maya",
+      "speaker": "Maya",
+      "sourceStart": 629,
+      "sourceEnd": 668,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "9837545075fc09de9cca3597b7cc7939036db6793e34884bc65046a1727c6bb1",
-      "durationSeconds": 3.0
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "a13aaa9b14ff747a91ab2ffebb1f98caba619f5fd47b2fae35ae4599d4b76888",
+      "groupAudioHash": "bc22e89ad720ba668c134c783d952235a89e19590437d84e7e480927316fe8c8",
+      "groupStartSeconds": 19.23125,
+      "groupEndSeconds": 21.39575,
+      "wordStartSeconds": 19.29125,
+      "wordEndSeconds": 21.275749,
+      "startSeconds": 40.92216666666667,
+      "endSeconds": 43.086666666666666,
+      "durationSeconds": 2.1644999999999968
     },
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 676,
+      "sourceEnd": 897,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "24404d7ea124412f8eaf4ca0d535b7a67e5ddf85556d7983a395dae1ab3678e3",
-      "durationSeconds": 16.128
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 23.123,
+      "groupEndSeconds": 38.43183333333333,
+      "wordStartSeconds": 23.183,
+      "wordEndSeconds": 38.311833,
+      "startSeconds": 43.53666666666667,
+      "endSeconds": 58.8455,
+      "durationSeconds": 15.308833333333332
     },
     {
+      "role": "maya",
+      "speaker": "Maya",
+      "sourceStart": 904,
+      "sourceEnd": 1056,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "40b27b74110feaa6e18f9d07b89cfbeb7d66105b774f50a86e4ed885b66725b1",
-      "durationSeconds": 10.68
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "a13aaa9b14ff747a91ab2ffebb1f98caba619f5fd47b2fae35ae4599d4b76888",
+      "groupAudioHash": "bc22e89ad720ba668c134c783d952235a89e19590437d84e7e480927316fe8c8",
+      "groupStartSeconds": 22.130708333333335,
+      "groupEndSeconds": 31.962791666666668,
+      "wordStartSeconds": 22.190708,
+      "wordEndSeconds": 31.842791,
+      "startSeconds": 59.2955,
+      "endSeconds": 69.12758333333333,
+      "durationSeconds": 9.832083333333337
     },
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 1064,
+      "sourceEnd": 1239,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "c5b5c89472d996312dbab4fe8ddc3f1262f8ab650dfe428eccedc29439463af1",
-      "durationSeconds": 13.296
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 39.141041666666666,
+      "groupEndSeconds": 51.614875,
+      "wordStartSeconds": 39.201041,
+      "wordEndSeconds": 51.494874,
+      "startSeconds": 69.57758333333334,
+      "endSeconds": 82.05141666666667,
+      "durationSeconds": 12.473833333333332
     },
     {
+      "role": "maya",
+      "speaker": "Maya",
+      "sourceStart": 1246,
+      "sourceEnd": 1288,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "3a6e774b5c26deb36d3e74eb718ea9ec99fadbc189c984a607e65da7d12be539",
-      "durationSeconds": 3.168
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "a13aaa9b14ff747a91ab2ffebb1f98caba619f5fd47b2fae35ae4599d4b76888",
+      "groupAudioHash": "bc22e89ad720ba668c134c783d952235a89e19590437d84e7e480927316fe8c8",
+      "groupStartSeconds": 32.68483333333333,
+      "groupEndSeconds": 35.01691666666667,
+      "wordStartSeconds": 32.744833,
+      "wordEndSeconds": 34.896916,
+      "startSeconds": 82.50141666666667,
+      "endSeconds": 84.8335,
+      "durationSeconds": 2.3320833333333297
     },
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 1296,
+      "sourceEnd": 1537,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "d8b2bb5f2583d53914432ae7758b3685d4fe8125e98dbfbe0e7b4b09b7a93883",
-      "durationSeconds": 16.296
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 52.324,
+      "groupEndSeconds": 67.7875,
+      "wordStartSeconds": 52.384,
+      "wordEndSeconds": 67.667499,
+      "startSeconds": 85.2835,
+      "endSeconds": 100.747,
+      "durationSeconds": 15.463499999999996
     },
     {
+      "role": "maya",
+      "speaker": "Maya",
+      "sourceStart": 1544,
+      "sourceEnd": 1584,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "9244e40864a27968227176c7fa87608874c2f146d39e2a756c414f518b46d228",
-      "durationSeconds": 3.216
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "a13aaa9b14ff747a91ab2ffebb1f98caba619f5fd47b2fae35ae4599d4b76888",
+      "groupAudioHash": "bc22e89ad720ba668c134c783d952235a89e19590437d84e7e480927316fe8c8",
+      "groupStartSeconds": 35.738958333333336,
+      "groupEndSeconds": 38.09679166666667,
+      "wordStartSeconds": 35.798958,
+      "wordEndSeconds": 37.976791,
+      "startSeconds": 101.197,
+      "endSeconds": 103.55483333333333,
+      "durationSeconds": 2.357833333333332
     },
     {
+      "role": "tutor",
+      "speaker": "Tutor",
+      "sourceStart": 1592,
+      "sourceEnd": 1875,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "7fdb408270d9c8cfccc675a503d9064199b796e3c1147d0eef420f19bb9507e0",
-      "durationSeconds": 18.384
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6ed7df2460c9dddc4ccce59327cfdcc69fc5b37b3ac1d95f5a04679c24490fc",
+      "groupAudioHash": "01da6b1fba3575bf9910def425879669540d940ab7af3162d51f0683982f0e02",
+      "groupStartSeconds": 68.50958333333334,
+      "groupEndSeconds": 86.073625,
+      "wordStartSeconds": 68.569583,
+      "wordEndSeconds": 85.953624,
+      "startSeconds": 104.00483333333334,
+      "endSeconds": 121.568875,
+      "durationSeconds": 17.564041666666668
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-b1-listen-us.mp3"
 }

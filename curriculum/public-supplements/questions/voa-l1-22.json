@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-22-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-22",
+  "sourceVersion": "1",
+  "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+  "sourceContentHash": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+  "exposureGroup": "public-source:voa-l1-22",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Anna not going away this summer?",
+      "evidence": "This summer I am too busy.",
+      "explanation": "too busy 是今年夏天不能度假的直接原因。她明明喜欢夏季和海滩；原文也没有说她去过所有海滩。",
+      "answers": [
+        "She is too busy."
+      ],
+      "evidenceOffsets": {
+        "start": 623,
+        "end": 649,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She dislikes warm weather.",
+        "She has already visited every beach.",
+        "She is too busy."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "This summer I am too busy.",
+          "start": 623,
+          "end": 649
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What do Anna and Amelia plan to do first in their programme?",
+      "evidence": "First, we’re going to introduce the subject.",
+      "explanation": "First 标明第一步是介绍主题。展示图片视频在 Then 之后；读问题在 Finally 之后，所以不能仅因这些活动都在计划里就选错顺序。",
+      "answers": [
+        "Introduce the subject."
+      ],
+      "evidenceOffsets": {
+        "start": 819,
+        "end": 863,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Finish with a beach visit.",
+        "Introduce the subject.",
+        "Read the audience’s questions."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "First, we’re going to introduce the subject.",
+          "start": 819,
+          "end": 863
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How can children take part in the programme?",
+      "evidence": "Kids can ask us questions.",
+      "explanation": "Kids can ask us questions 表示儿童可以向主持人提问。游乐设施是介绍的度假活动，不是参与节目的报名条件；也没有要求孩子们一起出国。",
+      "answers": [
+        "They can ask the presenters questions."
+      ],
+      "evidenceOffsets": {
+        "start": 1008,
+        "end": 1034,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "They can ask the presenters questions.",
+        "They must buy tickets for rides.",
+        "They must travel abroad with the presenters."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Kids can ask us questions.",
+          "start": 1008,
+          "end": 1034
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which activities does Amelia enjoy when camping?",
+      "evidence": "When I go camping, Anna, I like to go hiking and fishing.",
+      "explanation": "Amelia 明确列出 hiking 和 fishing，即徒步与钓鱼。其他选项即使也是可能的休闲活动，也没有在这句中出现。",
+      "answers": [
+        "Hiking and fishing."
+      ],
+      "evidenceOffsets": {
+        "start": 1569,
+        "end": 1626,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Shopping and ice skating.",
+        "Singing and painting.",
+        "Hiking and fishing."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "When I go camping, Anna, I like to go hiking and fishing.",
+          "start": 1569,
+          "end": 1626
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Where can visitors go on rides and eat fun food? Write TWO WORDS for the type of place.",
+      "maxWords": 2,
+      "evidence": "At an amusement park, you go on rides and eat lots of fun food!",
+      "explanation": "原句把 rides 和 fun food 与 amusement park 联系起来，意思是游乐园。题目要求两个词，填 amusement park，不加 an；beach 和 camping 是另外两种活动。",
+      "answers": [
+        "amusement park"
+      ],
+      "evidenceOffsets": {
+        "start": 1844,
+        "end": 1907,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "At an amusement park, you go on rides and eat lots of fun food!",
+          "start": 1844,
+          "end": 1907
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What makes Anna want to leave the city immediately?",
+      "evidence": "When I see that blue ocean, I want to leave Washington, D.C. immediately and go to the beach!",
+      "explanation": "When 引出触发这个想法的情境：看到蓝色大海。她随后仍要回去工作，节目也没有取消，所以不能把想度假当成已经完成工作或真的出发。",
+      "answers": [
+        "Seeing the blue ocean."
+      ],
+      "evidenceOffsets": {
+        "start": 2230,
+        "end": 2323,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Seeing the blue ocean.",
+        "Finishing all of her work.",
+        "Hearing that the programme is cancelled."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "When I see that blue ocean, I want to leave Washington, D.C. immediately and go to the beach!",
+          "start": 2230,
+          "end": 2323
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "45a2df8e986c1ba4876efc9541425dc023ceb52bf03a25890cc8dbc8f717d53e",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

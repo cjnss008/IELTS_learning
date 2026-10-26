@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-05-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-05",
+  "sourceVersion": "1",
+  "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+  "sourceContentHash": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+  "exposureGroup": "public-source:voa-l2-05",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does Anna reject the mountain holiday?",
+      "evidence": "I’m afraid of high places.",
+      "explanation": "high places 指高处，直接说明她不喜欢山顶度假的理由。怕沙子的是 Professor Bot 的玩笑；Anna 后来还明确说不要骑马。",
+      "answers": [
+        "She is afraid of heights."
+      ],
+      "evidenceOffsets": {
+        "start": 1095,
+        "end": 1121,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She only wants to ride horses.",
+        "She is afraid of heights.",
+        "She cannot tolerate sand."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I’m afraid of high places.",
+          "start": 1095,
+          "end": 1121
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How does the Deep Sea Adventure compare in price with the Mountain Getaway?",
+      "evidence": "It is pricier than the Mountain Getaway.",
+      "explanation": "pricier than 是 price 的比较表达，表示比山地套餐更贵。不要把 better 的推荐话术误读成价格更低；same 和 free 都与原句不符。",
+      "answers": [
+        "It costs more."
+      ],
+      "evidenceOffsets": {
+        "start": 1200,
+        "end": 1240,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "It costs more.",
+        "It costs the same.",
+        "It is free."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It is pricier than the Mountain Getaway.",
+          "start": 1200,
+          "end": 1240
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which holiday does Dan describe as the most expensive?",
+      "evidence": "You need the Safari Camp Out! It is our priciest vacation.",
+      "explanation": "priciest 是最高级，表示几种套餐中最贵的。Deep Sea 只被说成比 Mountain 更贵，不能因此推断它是最高价。",
+      "answers": [
+        "The Safari Camp Out."
+      ],
+      "evidenceOffsets": {
+        "start": 1353,
+        "end": 1411,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "The Mountain Getaway.",
+        "The Deep Sea Adventure.",
+        "The Safari Camp Out."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "You need the Safari Camp Out! It is our priciest vacation.",
+          "start": 1353,
+          "end": 1411
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What is Anna’s favourite way to travel? Write ONE WORD for the transport.",
+      "maxWords": 1,
+      "evidence": "My favorite way of traveling is by train.",
+      "explanation": "by train 表示乘火车，是 Anna 明确说最喜欢的方式。plane、helicopter、ship 是用来比较害怕程度的其他交通方式，不能用提及次数来判断喜好。",
+      "answers": [
+        "train"
+      ],
+      "evidenceOffsets": {
+        "start": 2292,
+        "end": 2333,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "My favorite way of traveling is by train.",
+          "start": 2292,
+          "end": 2333
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why does Anna dislike bicycle tours?",
+      "evidence": "Biking is THE slowest AND least romantic way to travel.",
+      "explanation": "slowest 与 least romantic 分别表示最慢、最不浪漫。这里的 least 不能看成 most；对飞机的害怕或骑骆驼与这个理由不同。",
+      "answers": [
+        "She finds them the slowest and least romantic."
+      ],
+      "evidenceOffsets": {
+        "start": 2459,
+        "end": 2514,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She finds them the slowest and least romantic.",
+        "She believes bicycles are the most frightening aircraft.",
+        "She says every bicycle tour goes through a desert."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Biking is THE slowest AND least romantic way to travel.",
+          "start": 2459,
+          "end": 2514
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What problem does Anna notice with the Travel Max 2000?",
+      "evidence": "No, I mean it’s really on fire!",
+      "explanation": "Anna 用 really on fire 说明机器真的着火，而 Dan 先把 on fire 理解为情绪高涨、销售热情。要区分这段双关，不是票务或住宿预订出错。",
+      "answers": [
+        "It is actually burning."
+      ],
+      "evidenceOffsets": {
+        "start": 2677,
+        "end": 2708,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "It has printed the wrong ticket.",
+        "It has booked a mountain cabin.",
+        "It is actually burning."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "No, I mean it’s really on fire!",
+          "start": 2677,
+          "end": 2708
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "d1f979ae481686a4b88694196c72587586388291e422fa8bd0459c689307a606",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

@@ -85,7 +85,7 @@ test('speech REST adapter validates inputs, protects credentials, and supports c
   assert.match(captured.options.headers['Content-Type'], /samplerate=16000/);
   const header = JSON.parse(Buffer.from(captured.options.headers['Pronunciation-Assessment'], 'base64'));
   assert.equal(header.ReferenceText, assess.reference); assert.equal(header.Granularity, 'Phoneme');
-  assert.equal(header.GradingSystem, 'HundredMark'); assert.match(captured.url, /language=en-GB/);
+  assert.equal(header.GradingSystem, 'HundredMark'); assert.match(captured.url, /language=en-US/);
   for (const errorMode of ['failure', 'empty', 'missing-score', 'throw']) {
     mode = errorMode; const failed = await request('assess', assess);
     assert.notEqual(failed.status, 200); assert.ok(!JSON.stringify(failed).includes(FAKE_KEY));

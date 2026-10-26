@@ -144,17 +144,35 @@
       "questions"
     ]
   },
-  "audio": "audio/independent-bank/independent-b2-listen-gb.mp3",
+  "audio": "audio/independent-bank/us/independent-b2-listen-gb.mp3",
   "audioSynthetic": true,
-  "audioLocale": "en-GB",
-  "audioAccent": "英国英语（合成）",
-  "audioVoice": "en-GB-SoniaNeural",
-  "audioProvider": "Microsoft online TTS",
+  "audioLocale": "en-US",
+  "audioAccent": "美国英语（合成）",
+  "audioVoice": "en-US-AriaNeural",
+  "audioProvider": "Microsoft online TTS via edge-tts",
   "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "captionFile": "",
-  "audioDurationSeconds": 149.736,
+  "audioKind": "synthetic",
   "audioVoices": [
-    "en-GB-SoniaNeural",
-    "en-GB-RyanNeural"
-  ]
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "audioRoleVoices": {
+    "chair": "en-US-AriaNeural",
+    "planner": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "audioDurationSeconds": 148.06,
+  "audioProvenance": {
+    "schema": 1,
+    "metadataPath": "curriculum/independent-bank/audio/independent-b2-listen-gb.json",
+    "metadataSha256": "c6e11fff3e1cb93c85c6b635da6fd823a03fce3c09dbc52784949e93030d3bb4",
+    "transcriptHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+    "audioHash": "988609eb60fd7614eb388fd14a31b2d54a158354251a5c6a6b5356a9f03faeed",
+    "configurationHash": "3081a7840a9eb71113041ea94189ca77a2582ecdeb97678aca934b3ba1852a6b",
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "origin": "role-group-tts-with-real-boundary-cuts",
+    "verification": "exact-source-configuration-and-MP3-byte-hashes",
+    "scope": "Recorded American TTS voice identities and file/source agreement; not independent acoustic accent or listening validation."
+  }
 }

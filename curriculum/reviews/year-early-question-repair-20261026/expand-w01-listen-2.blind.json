@@ -1,0 +1,78 @@
+{
+  "id": "expand-w01-listen-2",
+  "title": "Visitor Help Desk: Room Corrections",
+  "level": "A0",
+  "text": "Mia: Good morning. I am Mia. Are you a visitor?\nBen: Yes. I am Ben. I am here for Room 12.\nMia: Room 12? No. You are in Room 14.\nBen: Oh. Room 14. Thank you.\nMia: Are you with a friend?\nBen: Yes. We are here. We are two people.\nMia: Good. You are in Room 14. It is on floor two.\nBen: Is it near the stairs?\nMia: Yes, it is. The stairs are there.\nBen: Great. We are happy. Thank you, Mia.\nMia: You are welcome. Have a good day.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Mia say first?",
+      "options": [
+        "Good morning.",
+        "Good evening.",
+        "Good night."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What room does Ben first say?",
+      "options": [
+        "Room 12.",
+        "Room 14.",
+        "Room 2."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which room does Mia say Ben is in?",
+      "options": [
+        "Room 12.",
+        "Room 4.",
+        "Room 14."
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Ben is with a ______. Use ONE WORD from the conversation.",
+      "maxWords": 1
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Complete Ben's words: \"We are ______ people.\" Use ONE WORD.",
+      "maxWords": 1
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What floor is the room on?",
+      "options": [
+        "Floor two.",
+        "Floor one.",
+        "Floor four."
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is the room near the stairs?",
+      "options": [
+        "No.",
+        "Yes."
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is Ben happy at the end?",
+      "options": [
+        "Yes.",
+        "No."
+      ]
+    }
+  ]
+}

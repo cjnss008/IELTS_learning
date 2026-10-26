@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-05-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-05",
+  "sourceVersion": "1",
+  "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+  "sourceContentHash": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+  "exposureGroup": "public-source:voa-l1-05",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Marsha say people do in the kitchen?",
+      "options": [
+        "They sleep.",
+        "They cook.",
+        "They relax."
+      ],
+      "answers": [
+        "They cook."
+      ],
+      "evidence": "We cook in the kitchen.",
+      "explanation": "Marsha明确说We cook in the kitchen，意思是“我们在厨房做饭”。Anna随后提到自己在厨房吃饭，但本题问的是Marsha说的活动。sleep和relax分别在后面的卧室、客厅语境出现，不能把房间和活动随意调换。",
+      "evidenceOffsets": {
+        "start": 226,
+        "end": 249,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "We cook in the kitchen.",
+          "start": 226,
+          "end": 249
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "In which room does Marsha say people relax?",
+      "options": [
+        "The kitchen.",
+        "The bedroom.",
+        "The living room."
+      ],
+      "answers": [
+        "The living room."
+      ],
+      "evidence": "We relax in the living room.",
+      "explanation": "relax表示休息、放松，原句把这个活动与living room联系起来，所以选客厅。kitchen在对话中与做饭、吃饭联系，bedroom与睡觉联系。题目是根据说出的信息配对，不需要根据画面猜位置。",
+      "evidenceOffsets": {
+        "start": 288,
+        "end": 316,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "We relax in the living room.",
+          "start": 288,
+          "end": 316
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Where is Anna when she says she washes? Write ONE WORD for the room.",
+      "answers": [
+        "bathroom"
+      ],
+      "maxWords": 1,
+      "evidence": "Marsha, I am in the bathroom! I wash in the bathroom.",
+      "explanation": "Anna先说自己在bathroom，又说I wash in the bathroom，两句共同确认地点。题目只要一个房间词，所以填bathroom，不加the或in。不能把bathroom与后面Marsha所在的bedroom混淆。",
+      "evidenceOffsets": {
+        "start": 416,
+        "end": 469,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Marsha, I am in the bathroom! I wash in the bathroom.",
+          "start": 416,
+          "end": 469
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Where does Marsha say she is near the end?",
+      "options": [
+        "In the bedroom.",
+        "In the kitchen.",
+        "In the bathroom."
+      ],
+      "answers": [
+        "In the bedroom."
+      ],
+      "evidence": "I am in the bedroom. We sleep in the bedroom.",
+      "explanation": "这是Marsha的台词：她说I am in the bedroom，然后补充人们在卧室睡觉。此前在浴室说话的是Anna。需要分清说话人，不能看到bathroom与bedroom词形相近就把两个地点混在一起。",
+      "evidenceOffsets": {
+        "start": 479,
+        "end": 524,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I am in the bedroom. We sleep in the bedroom.",
+          "start": 479,
+          "end": 524
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 4,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 4,
+      "blindInputSha256": "18b10ed6b2ae2903b793094f67a5a9534fddd3d4a3e03a9ace1faead4af38202",
+      "reviewSha256": "a992cd38b975ae15cd2b959374beaaec49cfea5832a3cfcf5dd6ffe02e0c9fa3",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

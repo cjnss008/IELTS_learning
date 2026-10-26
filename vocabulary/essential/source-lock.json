@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "ecdict",
+      "name": "ECDICT",
+      "repository": "https://github.com/skywind3000/ECDICT",
+      "revision": "ab22ad36302cafc6349a050e2b60894855208055",
+      "license": "MIT",
+      "licenseFile": "vocabulary/essential/LICENSE-ECDICT.txt",
+      "retrievedAt": "2026-10-25T17:25:48.291Z",
+      "files": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/ab22ad36302cafc6349a050e2b60894855208055/LICENSE",
+          "bytes": 1063,
+          "sha256": "f8552dd246f61a4e064569eae6194a01c6b3d63b03bf27c6ca863593c549ed0f"
+        },
+        {
+          "file": "README.md",
+          "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/ab22ad36302cafc6349a050e2b60894855208055/README.md",
+          "bytes": 18414,
+          "sha256": "0c3f95fc7e15f7eccf65feedb58ba3ebace1fe7b7cbdd1af60c9ace4cef9094b"
+        },
+        {
+          "file": "ecdict.csv",
+          "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/ab22ad36302cafc6349a050e2b60894855208055/ecdict.csv",
+          "bytes": 66009548,
+          "sha256": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc"
+        }
+      ],
+      "usage": [
+        "English headword",
+        "Chinese gloss",
+        "source transcription",
+        "historical frequency ranks",
+        "inflection metadata for exclusion"
+      ],
+      "rightsStatement": "Upstream repository declares MIT; see its pinned LICENSE and historical source notes. Individual upstream contributions were not independently rights-cleared by this project."
+    },
+    {
+      "id": "cmudict",
+      "name": "Carnegie Mellon University Pronouncing Dictionary",
+      "repository": "https://github.com/cmusphinx/cmudict",
+      "revision": "74790861f652b15e4ac49015a90074ad62a27690",
+      "license": "BSD-2-Clause (actual upstream two-condition notice)",
+      "licenseFile": "vocabulary/essential/LICENSE-CMUDICT.txt",
+      "retrievedAt": "2026-10-25T18:21:34.303Z",
+      "files": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/LICENSE",
+          "bytes": 1754,
+          "sha256": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a"
+        },
+        {
+          "file": "README",
+          "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/README",
+          "bytes": 1412,
+          "sha256": "00c34e7564f1f6a68de02e12c123d801471da92bc3091f7d89b605f238bf8554"
+        },
+        {
+          "file": "README.developer",
+          "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/README.developer",
+          "bytes": 2582,
+          "sha256": "a94569454d6b64d4912ce68b2293ad5ddf82f9fbf4952415996fc17053aea129"
+        },
+        {
+          "file": "cmudict.dict",
+          "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+          "bytes": 3618488,
+          "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22"
+        },
+        {
+          "file": "cmudict.phones",
+          "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.phones",
+          "bytes": 382,
+          "sha256": "ffb588a5e55684723582c7256e1d2f9fadb130011392d9e59237c76e34c2cfd6"
+        },
+        {
+          "file": "cmudict.symbols",
+          "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.symbols",
+          "bytes": 281,
+          "sha256": "408ccaae803641c6d7b626b6299949320c2dbca96b2220fd3fb17887b023b027"
+        }
+      ]
+    },
+    {
+      "id": "wiktionary-us-supplement",
+      "name": "Wiktionary contributors",
+      "license": "CC-BY-SA-4.0",
+      "records": 2,
+      "file": "vocabulary/essential/us-supplemental.json",
+      "sha256": "22ccf74e7584d5a8ae31aabe6782c4b906a37bceadb50abdacc67ee89ac5dccc",
+      "usage": "Two CMUdict gaps: alga (explicit UK/US) and destine (unlabelled shared English broad transcription)",
+      "attribution": "See per-record sourceUrls and revision identifiers",
+      "notice": "vocabulary/essential/NOTICE.txt"
+    }
+  ]
+}

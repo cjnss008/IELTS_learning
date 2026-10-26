@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-02-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-02",
+  "sourceVersion": "1",
+  "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+  "sourceContentHash": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+  "exposureGroup": "public-source:voa-l1-02",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What kind of place is Anna from?",
+      "options": [
+        "A large city.",
+        "A farm.",
+        "A small town."
+      ],
+      "answers": [
+        "A small town."
+      ],
+      "evidence": "I am from a small town.",
+      "evidenceOffsets": {
+        "start": 117,
+        "end": 140,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna直接回答I am from a small town，所以来源地类型是小镇。D.C.是她刚来到的地方，不应把当前城市当成她的家乡；原文也没有说她来自农场。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I am from a small town.",
+          "start": 117,
+          "end": 140
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Pete tell Anna to call Marsha?",
+      "options": [
+        "To ask Marsha to leave work.",
+        "To invite Marsha to visit Jonathan.",
+        "To tell Marsha that Anna has arrived."
+      ],
+      "answers": [
+        "To tell Marsha that Anna has arrived."
+      ],
+      "evidence": "Remember to call Marsha at work. Tell her you’re here.",
+      "evidenceOffsets": {
+        "start": 400,
+        "end": 454,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Pete紧接着解释Tell her you’re here，说明电话目的是告诉Marsha自己已经到了。at work只是Marsha接电话时所在的地点，不是让她离开工作；Jonathan虽在场，但没有邀请Marsha去看他的安排。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Remember to call Marsha at work. Tell her you’re here.",
+          "start": 400,
+          "end": 454
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Which apartment does Anna say she is going to at the end?",
+      "answers": [
+        "C2"
+      ],
+      "maxWords": 1,
+      "evidence": "Apartment C2, here I come!",
+      "evidenceOffsets": {
+        "start": 533,
+        "end": 559,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "结尾Anna明确说Apartment C2, here I come，因此填C2。B4是Jonathan的公寓，D7属于Pete；需要把最后的去向与其他人物的住处区分开。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Apartment C2, here I come!",
+          "start": 533,
+          "end": 559
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Jonathan say about Marsha?",
+      "options": [
+        "He is meeting her for the first time.",
+        "He does not know who she is.",
+        "He already knows her."
+      ],
+      "answers": [
+        "He already knows her."
+      ],
+      "evidence": "I know Marsha. She is nice.",
+      "evidenceOffsets": {
+        "start": 303,
+        "end": 330,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Jonathan说I know Marsha，直接表明他已经认识她，后面的She is nice也是评价已认识的人。这里不是首次见面；“不知道她是谁”与I know正好相反。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I know Marsha. She is nice.",
+          "start": 303,
+          "end": 330
+        }
+      ],
+      "understanding": "relationship"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Anna mean when she calls Marsha her roommate?",
+      "options": [
+        "They study together.",
+        "They live together.",
+        "They work together."
+      ],
+      "answers": [
+        "They live together."
+      ],
+      "evidence": "I am in apartment C2. Marsha is my roommate.",
+      "evidenceOffsets": {
+        "start": 247,
+        "end": 291,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "roommate指同住的人，且Anna在说明自己的公寓时提到Marsha，因此两人一起住。原文只说Marsha在工作，没有说她与Anna一起工作；也没有共同上学的说明。需要理解roommate，而不是只认出名字。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I am in apartment C2. Marsha is my roommate.",
+          "start": 247,
+          "end": 291
+        }
+      ],
+      "understanding": "word-in-context"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "62029485a37df78040e4a7eff68fae65ee504d492460d578c4f369a7deb339d7",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

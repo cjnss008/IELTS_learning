@@ -1,0 +1,398 @@
+{
+  "id": "expand-w42-listen-1",
+  "week": 42,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时阅读：匹配、填空与长文耐力 · Independent new scenario: the interpretation of historical evidence",
+  "grammarFocus": "指代、词性与平行结构；长句拆解。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Interpretation of Historical Evidence: A Museum Workshop",
+  "instructions": "本材料为模拟教学练习，不是官方雅思考试，也不代表任何分数等级。请先听录音（或阅读转录文本），完成10道听力题；然后阅读语法讲解，完成8道语法题；最后进行口语和写作迁移练习。听力题中，填空题答案必须来自原文，且不超过规定字数。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Maya: Welcome, everyone. Today we’re going to look at how historians interpret evidence. This is a simulated workshop, so please feel free to ask questions. Let’s start with this old letter. It was found in a box in the museum basement. What can we say about it?\n\nBen: Well, the paper looks old, and the handwriting is quite neat. It’s dated 1842. So it must be from the nineteenth century.\n\nMaya: Good start. But we need to be careful. The date on the letter is 1842, but that doesn’t prove it was written then. Someone could have written it later and put an earlier date. What else?\n\nBen: The letter mentions a ship called the Mary Rose. It says the ship arrived in Liverpool on June 3rd. So maybe it’s a record of a real voyage.\n\nMaya: Possibly. But we have to check other sources. Do we have any other documents about the Mary Rose?\n\nBen: I saw a newspaper from 1842 that mentions a ship with that name. But it says the ship arrived on June 5th, not June 3rd.\n\nMaya: Interesting. So there’s a discrepancy. That doesn’t mean the letter is false; it might be that the letter was written by someone who remembered the date wrongly, or the newspaper made a mistake. Historians have to compare sources and decide which is more reliable.\n\nBen: So the letter isn’t completely reliable?\n\nMaya: It’s not about reliable or unreliable. It’s about understanding the context. For example, who wrote the letter? We don’t know. Why was it written? We don’t know that either. So we can’t be sure about its purpose.\n\nBen: But we can still use it as evidence of something, right?\n\nMaya: Exactly. Even if it’s not accurate about the date, it can tell us about the language people used, or what kind of paper was available, or how people described ships. So it’s still valuable.\n\nBen: I see. So we shouldn’t just accept everything at face value.\n\nMaya: Right. Now, let’s look at another example. This photograph shows a street scene from 1900. What can we learn from it?\n\nBen: Well, there are horses and carriages, and people are wearing long dresses. So it’s definitely from before cars became common.\n\nMaya: Good observation. But be careful: the photo might have been taken later and show a historical reenactment. However, in this case, we have other evidence that it’s genuine. The photographer’s name is on the back, and we have a record of him working in that city in 1900.\n\nBen: So the photo is reliable because of the supporting evidence.\n\nMaya: Yes. That’s the key: we don’t judge a single source in isolation. We look at the whole picture. Now, let’s move on to the next item.\n\nBen: What’s this? A diary?\n\nMaya: Yes, a diary from a soldier in 1916. It describes conditions in the trenches. But notice: the diary was published in 1920, after the war. So it might have been edited. We need to ask: is this the original diary, or a later version?\n\nBen: The cover says “published 1920”, so it’s probably a later version.\n\nMaya: Exactly. So we can’t treat it as a direct, immediate record. It’s still useful, but we must consider the delay. Okay, any questions so far?\n\nBen: No, I think I understand. We need to ask who, when, why, and compare with other sources.\n\nMaya: Perfect summary. Let’s take a short break, and then we’ll practice with some documents ourselves.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the date written on the old letter?",
+      "options": [
+        "1842",
+        "1845",
+        "1920",
+        "1900"
+      ],
+      "answers": [
+        "1842"
+      ],
+      "explanation": "原文中Ben说“It’s dated 1842.”，因此信上的日期是1842年。",
+      "evidence": "It’s dated 1842."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "According to the newspaper, when did the ship arrive in Liverpool?",
+      "options": [
+        "June 3rd",
+        "June 5th",
+        "June 4th",
+        "June 6th"
+      ],
+      "answers": [
+        "June 5th"
+      ],
+      "explanation": "Ben提到报纸上说船到达利物浦的日期是6月5日：“it says the ship arrived on June 5th”。",
+      "evidence": "it says the ship arrived on June 5th"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does Maya say the letter might not have been written in 1842?",
+      "options": [
+        "Because the paper is new.",
+        "Because someone could have written it later and put an earlier date.",
+        "Because the handwriting is messy.",
+        "Because the letter mentions a ship."
+      ],
+      "answers": [
+        "Because someone could have written it later and put an earlier date."
+      ],
+      "explanation": "Maya说：“Someone could have written it later and put an earlier date.”，即有人可能后来写了信但标了更早的日期。",
+      "evidence": "Someone could have written it later and put an earlier date."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does the photograph from 1900 show?",
+      "options": [
+        "Cars and buses",
+        "Horses and carriages",
+        "Trains and bicycles",
+        "People in short dresses"
+      ],
+      "answers": [
+        "Horses and carriages"
+      ],
+      "explanation": "Ben描述照片时说：“there are horses and carriages”，即照片中有马和马车。",
+      "evidence": "there are horses and carriages"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why is the photograph considered reliable?",
+      "options": [
+        "Because it is old.",
+        "Because it shows horses.",
+        "Because there is supporting evidence.",
+        "Because Maya says so."
+      ],
+      "answers": [
+        "Because there is supporting evidence."
+      ],
+      "explanation": "Maya说：“So the photo is reliable because of the supporting evidence.”，即照片可靠是因为有支持性证据。",
+      "evidence": "So the photo is reliable because of the supporting evidence."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "When was the soldier’s diary published?",
+      "options": [
+        "1916",
+        "1920",
+        "1918",
+        "1900"
+      ],
+      "answers": [
+        "1920"
+      ],
+      "explanation": "Maya提到日记出版于1920年：“the diary was published in 1920”。",
+      "evidence": "the diary was published in 1920"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does Maya say we need to ask about the diary?",
+      "options": [
+        "Is it interesting?",
+        "Is it the original diary, or a later version?",
+        "Who wrote it?",
+        "Where was it found?"
+      ],
+      "answers": [
+        "Is it the original diary, or a later version?"
+      ],
+      "explanation": "Maya说：“We need to ask: is this the original diary, or a later version?”",
+      "evidence": "We need to ask: is this the original diary, or a later version?"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does Ben say we need to ask about a source?",
+      "options": [
+        "Who, when, why, and compare with other sources.",
+        "Only who wrote it.",
+        "Only when it was written.",
+        "Only why it was written."
+      ],
+      "answers": [
+        "Who, when, why, and compare with other sources."
+      ],
+      "explanation": "Ben总结说：“We need to ask who, when, why, and compare with other sources.”",
+      "evidence": "We need to ask who, when, why, and compare with other sources."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the transcript: The letter mentions a ship called the ______ Rose.",
+      "answers": [
+        "Mary"
+      ],
+      "maxWords": 1,
+      "explanation": "原文中Ben说：“The letter mentions a ship called the Mary Rose.”，船名是Mary Rose，因此填Mary。",
+      "evidence": "The letter mentions a ship called the Mary Rose."
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the transcript: The diary describes conditions in the ______.",
+      "answers": [
+        "trenches"
+      ],
+      "maxWords": 1,
+      "explanation": "原文中Maya说：“It describes conditions in the trenches.”，因此填trenches。",
+      "evidence": "It describes conditions in the trenches."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "interpret",
+      "meaning": "解释；理解",
+      "example": "Today we’re going to look at how historians interpret evidence."
+    },
+    {
+      "word": "discrepancy",
+      "meaning": "差异；不一致",
+      "example": "So there’s a discrepancy."
+    },
+    {
+      "word": "reliable",
+      "meaning": "可靠的",
+      "example": "So the letter isn’t completely reliable?"
+    },
+    {
+      "word": "context",
+      "meaning": "背景；上下文",
+      "example": "It’s about understanding the context."
+    },
+    {
+      "word": "accurate",
+      "meaning": "准确的",
+      "example": "Even if it’s not accurate about the date, it can tell us about the language people used."
+    },
+    {
+      "word": "genuine",
+      "meaning": "真正的；真实的",
+      "example": "However, in this case, we have other evidence that it’s genuine."
+    },
+    {
+      "word": "isolation",
+      "meaning": "孤立；单独考虑",
+      "example": "we don’t judge a single source in isolation."
+    },
+    {
+      "word": "version",
+      "meaning": "版本",
+      "example": "is this the original diary, or a later version?"
+    }
+  ],
+  "grammar": {
+    "title": "指代、词性与平行结构；长句拆解",
+    "explanation": "在英语中，指代（reference）是指用代词（如it, they, this, that）来指代前文提到的人或事物。例如：'The letter mentions a ship. It says the ship arrived...' 这里it指代the letter。词性（parts of speech）是指单词在句子中的功能，如名词、动词、形容词等。平行结构（parallel structure）是指用相同的语法形式连接并列的成分，例如：'who, when, why'都是疑问词，构成平行。长句拆解（sentence breakdown）是指把长句分成几个短句来理解。例如：'Even if it’s not accurate about the date, it can tell us about the language people used.' 可以拆成：'It’s not accurate about the date. But it can tell us about the language people used.' 注意：本次重点是指代和平行结构，词性和长句拆解作为辅助理解。",
+    "example": "Even if it’s not accurate about the date, it can tell us about the language people used.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct pronoun: The diary was published in 1920. ______ might have been edited.",
+        "options": [
+          "It",
+          "They",
+          "He",
+          "She"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "The diary是单数事物，用it指代。",
+        "evidence": "The diary was published in 1920. It might have been edited."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct pronoun: The photographs are old. ______ show street scenes.",
+        "options": [
+          "It",
+          "They",
+          "He",
+          "She"
+        ],
+        "answers": [
+          "They"
+        ],
+        "explanation": "The photographs是复数，用they指代。",
+        "evidence": "The photographs are old. They show street scenes."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Which word is the subject noun in this sentence? 'The letter mentions a ship.'",
+        "options": [
+          "letter",
+          "mentions",
+          "a",
+          "ship"
+        ],
+        "answers": [
+          "letter"
+        ],
+        "explanation": "letter是主语名词，表示“信”。mentions是动词，a是冠词，ship是宾语名词。题目问的是主语名词，因此选letter。",
+        "evidence": "The letter mentions a ship."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Which word is an adjective in this sentence? 'The paper looks old.'",
+        "options": [
+          "paper",
+          "looks",
+          "old",
+          "The"
+        ],
+        "answers": [
+          "old"
+        ],
+        "explanation": "old是形容词，描述paper。",
+        "evidence": "The paper looks old."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the best parallel structure: We need to ask who, when, and ______.",
+        "options": [
+          "why",
+          "because",
+          "so",
+          "then"
+        ],
+        "answers": [
+          "why"
+        ],
+        "explanation": "who, when, why都是疑问词，构成平行结构。",
+        "evidence": "We need to ask who, when, why, and compare with other sources."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the best parallel structure: The photo shows horses, carriages, and ______.",
+        "options": [
+          "people",
+          "walking",
+          "to walk",
+          "walk"
+        ],
+        "answers": [
+          "people"
+        ],
+        "explanation": "horses, carriages, people都是名词，构成平行。",
+        "evidence": "The photo shows horses, carriages, and people."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "What does 'it' refer to in this sentence? 'The letter is old, but it is still useful.'",
+        "options": [
+          "The letter",
+          "The box",
+          "The museum",
+          "The date"
+        ],
+        "answers": [
+          "The letter"
+        ],
+        "explanation": "it指代前文的the letter。",
+        "evidence": "The letter is old, but it is still useful."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Break down the long sentence: 'Even if it’s not accurate about the date, it can tell us about the language people used.' What is the main idea?",
+        "options": [
+          "The letter is not accurate.",
+          "The letter can still tell us about language.",
+          "The date is important.",
+          "People used language."
+        ],
+        "answers": [
+          "The letter can still tell us about language."
+        ],
+        "explanation": "句子主干是it can tell us about the language，即使日期不准确，信仍能告诉我们语言使用情况。",
+        "evidence": "Even if it’s not accurate about the date, it can tell us about the language people used."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like visiting museums?",
+        "Have you ever seen an old letter or diary?",
+        "What kind of historical evidence do you find interesting?",
+        "Do you think photographs are reliable evidence?"
+      ],
+      "part2": "Describe a time when you had to check whether information was true. You should say: what the information was, where you found it, how you checked it, and explain why it was important to check.",
+      "part3": [
+        "How can we decide if a historical source is reliable?",
+        "What are the advantages and disadvantages of using diaries as evidence?",
+        "Do you think digital records will be easier or harder to interpret in the future?",
+        "Why is it important to compare different sources?"
+      ]
+    },
+    "writing": "You are helping at a local museum. Write a short report (about 150 words) for the museum director about an old object found in the basement. Describe the object, explain what evidence you have about its age and origin, and suggest what the museum should do next to learn more about it."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "224a859cf795451bf9b464f7eeee107339031e9dac7318c2114973eade040158"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

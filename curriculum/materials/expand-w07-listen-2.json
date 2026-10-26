@@ -1,0 +1,368 @@
+{
+  "id": "expand-w07-listen-2",
+  "week": 7,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "social-announcement",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "地点、方向与正在发生的事 · Independent new scenario: arranging a meeting in a busy neighbourhood",
+  "grammarFocus": "there is / are；地点介词；现在进行时；祈使句入门。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Meeting at the Busy Market",
+  "instructions": "这是为A1学习者设计的原创模拟听力练习（非官方雅思测试）。请先听录音（由两个不同美式发音的说话人朗读），然后完成8道题。题目包括单选、填空和判断（True/False/Not Given）。所有题目和选项均为英文，解释为中文。听力文本中不会直接读出答案。请仔细听对话中的细节。",
+  "transcript": "Mia: Hi, Ben! Where are you? Ben: I'm near the big market. There are many people here. Mia: Is there a coffee shop near you? Ben: Yes, there is. It's next to the bank. Mia: Good. I'm at the bus stop. I'm walking to the market now. Ben: OK. The market is between the bank and the library. Mia: I see a tall building. Is that the library? Ben: No, that's the hospital. The library is behind the market. Mia: Thanks. I'm coming. Wait for me near the coffee shop. Ben: Sure. I'm standing under the clock. Mia: Great. See you in five minutes.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where is Ben?",
+      "options": [
+        "at the bus stop",
+        "in the library",
+        "near the big market"
+      ],
+      "answers": [
+        "near the big market"
+      ],
+      "explanation": "Ben说：'I'm near the big market.' 所以选“near the big market”。",
+      "evidence": "I'm near the big market."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is there a coffee shop near Ben?",
+      "options": [
+        "No, there isn't.",
+        "Yes, there is."
+      ],
+      "answers": [
+        "Yes, there is."
+      ],
+      "explanation": "Mia问：'Is there a coffee shop near you?' Ben回答：'Yes, there is.' 所以选“Yes, there is.”。",
+      "evidence": "Mia: Is there a coffee shop near you? Ben: Yes, there is."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "The coffee shop is next to the ______. Use ONE WORD from the conversation.",
+      "answers": [
+        "bank"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben说：'It's next to the bank.' 所以填bank。",
+      "evidence": "Mia: Is there a coffee shop near you? Ben: Yes, there is. It's next to the bank."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Where does Mia say she is?",
+      "options": [
+        "at the bus stop",
+        "near the market",
+        "under the clock"
+      ],
+      "answers": [
+        "at the bus stop"
+      ],
+      "explanation": "Mia直接说“I'm at the bus stop.”，所以选at the bus stop。随后她正在走向市场；题目问她自己说出的地点，不把整段对话结束时的未知实时位置当作已知信息。",
+      "evidence": "I'm at the bus stop."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "The market is between the bank and the ______.",
+      "options": [
+        "hospital",
+        "bus stop",
+        "library"
+      ],
+      "answers": [
+        "library"
+      ],
+      "explanation": "Ben说：'The market is between the bank and the library.' 所以选“library”。",
+      "evidence": "The market is between the bank and the library."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is the tall building the library?",
+      "options": [
+        "Yes, it is.",
+        "No, it isn't."
+      ],
+      "answers": [
+        "No, it isn't."
+      ],
+      "explanation": "Mia问：'Is that the library?' Ben回答：'No, that's the hospital.' 所以选“No, it isn't.”。",
+      "evidence": "Mia: I see a tall building. Is that the library? Ben: No, that's the hospital."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "The library is ______ the market. Use ONE WORD from the conversation.",
+      "answers": [
+        "behind"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben说：'The library is behind the market.' 所以填behind。",
+      "evidence": "The library is behind the market."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is Ben standing under?",
+      "options": [
+        "a tree",
+        "the clock",
+        "a sign"
+      ],
+      "answers": [
+        "the clock"
+      ],
+      "explanation": "Ben说“I'm standing under the clock.”，因此他站在钟下面。问句只问他站在什么东西下面，避免把可能同时成立的near the bank与under the clock当作互斥地点；录音没有说他站在树或标牌下面。",
+      "evidence": "I'm standing under the clock."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "market",
+      "meaning": "市场",
+      "example": "I'm near the big market."
+    },
+    {
+      "word": "coffee shop",
+      "meaning": "咖啡店",
+      "example": "Is there a coffee shop near you?"
+    },
+    {
+      "word": "bank",
+      "meaning": "银行",
+      "example": "It's next to the bank."
+    },
+    {
+      "word": "bus stop",
+      "meaning": "公交车站",
+      "example": "I'm at the bus stop."
+    },
+    {
+      "word": "between",
+      "meaning": "在……之间",
+      "example": "The market is between the bank and the library."
+    },
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "The library is behind the market."
+    },
+    {
+      "word": "hospital",
+      "meaning": "医院",
+      "example": "No, that's the hospital."
+    },
+    {
+      "word": "behind",
+      "meaning": "在……后面",
+      "example": "The library is behind the market."
+    }
+  ],
+  "grammar": {
+    "title": "There is / There are; 地点介词; 现在进行时; 祈使句入门",
+    "explanation": "英语中表示“某地有某物”用There is（单数）或There are（复数）。例如：There is a bank. There are many people. 地点介词如next to（在……旁边）、between（在……之间）、behind（在……后面）、under（在……下面）。现在进行时表示正在发生的动作，结构是be + 动词-ing，如I'm walking（我正在走）。祈使句用来发出指令或请求，动词原形开头，如Wait for me（等我）。",
+    "example": "There are many people here. I'm walking to the market now. Wait for me near the coffee shop.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "There ______ a book on the desk.",
+        "options": [
+          "is",
+          "are",
+          "be"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "单数名词book用There is。",
+        "evidence": "There is a book on the desk."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "There ______ two cats under the table.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "复数名词cats用There are。",
+        "evidence": "There are two cats under the table."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The bank is ______ the supermarket and the park.",
+        "options": [
+          "between",
+          "next",
+          "behind"
+        ],
+        "answers": [
+          "between"
+        ],
+        "explanation": "表示“在两者之间”用between。",
+        "evidence": "The bank is between the supermarket and the park."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "She is ______ TV now.",
+        "options": [
+          "watch",
+          "watching",
+          "watches"
+        ],
+        "answers": [
+          "watching"
+        ],
+        "explanation": "现在进行时结构be + 动词-ing，所以用watching。",
+        "evidence": "She is watching TV now."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "______ the door, please.",
+        "options": [
+          "Open",
+          "Opens",
+          "Opening"
+        ],
+        "answers": [
+          "Open"
+        ],
+        "explanation": "祈使句用动词原形开头，所以用Open。",
+        "evidence": "Open the door, please."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "The cat is ______ the chair.",
+        "options": [
+          "under",
+          "between",
+          "next"
+        ],
+        "answers": [
+          "under"
+        ],
+        "explanation": "表示“在……下面”用under。",
+        "evidence": "The cat is under the chair."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "They ______ playing football now.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语They是复数，现在进行时用are + 动词-ing。",
+        "evidence": "They are playing football now."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "______ me the book, please.",
+        "options": [
+          "Give",
+          "Gives",
+          "Giving"
+        ],
+        "answers": [
+          "Give"
+        ],
+        "explanation": "祈使句用动词原形，所以用Give。",
+        "evidence": "Give me the book, please."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where are you now?",
+        "Is there a shop near your home?",
+        "What are you doing now?",
+        "How do you go to the market?"
+      ],
+      "part2": "Describe a busy place you know. You should say: where it is, what you can see there, what people are doing, and why you go there.",
+      "part3": [
+        "Why do people go to busy places?",
+        "Is it good to live near a market?",
+        "What do you do when you are lost?",
+        "How do you ask for directions?"
+      ]
+    },
+    "writing": "Write 5 sentences about a busy place near your home. Use there is/are, prepositions, and the present continuous. Example: There is a park near my home. People are walking."
+  },
+  "rubric": {
+    "taskType": "listening comprehension and grammar practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "本地题目修订草稿；原文与音频保持不变，等待独立盲答及解析复核；未经真实学习者难度标定",
+    "model": "deepseek-flash",
+    "contentHash": "bccc670578325ef6fbc783c9ca6ed7e80236732c24aac1b1335a59625f114797",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "blindInputSha256": "2d350f547914f4f514349e2bd8e259044496b70fce8271909ce2a53fdb2486c9",
+      "answerFileSha256": "c8c3d796a5f0fab2a35f14808eab38af2f5d519c87e80c2f4b77182cc9f55e0e",
+      "explanationReviewSha256": "ecdfa18b2ac44904553dd6eaf7481e6f24247e83bc75e7bc32e26e9fad050c1a",
+      "questionCount": 8,
+      "reviewMethod": "Separate author and root blind text answers frozen before reading explanations, with cross-question leak repair and exact antecedent evidence. Existing audio retained; no independent audio audition or learner difficulty calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

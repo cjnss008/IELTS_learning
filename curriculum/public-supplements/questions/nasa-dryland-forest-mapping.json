@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-dryland-forest-mapping-comprehension-v2",
+  "version": "2",
+  "sourceId": "nasa-dryland-forest-mapping",
+  "sourceVersion": "1",
+  "sourceTextSha256": "6a7341153fc1eb3e499ad8bfd3904ac52d0e92489b4edadb6f8c30266782a613",
+  "sourceContentHash": "6a7341153fc1eb3e499ad8bfd3904ac52d0e92489b4edadb6f8c30266782a613",
+  "exposureGroup": "public-source:nasa-dryland-forest-mapping",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why had earlier estimates of dryland forest area differed so widely?",
+      "options": [
+        "Studies measured newly planted forest rather than existing tree cover.",
+        "Studies treated the rainfall threshold as a direct measure of tree cover.",
+        "Studies used the total area of drylands as if it were the forest estimate.",
+        "Studies used different data resolutions, mapping methods and definitions of forest."
+      ],
+      "answers": [
+        "Studies used different data resolutions, mapping methods and definitions of forest."
+      ],
+      "evidence": "For decades, scientists have struggled to quantify and map the world’s dryland forests. Estimates have varied widely because of differing data formats and resolutions, different mapping approaches, and different thresholds for the definition of “forested” area. Now a new comprehensive study finds that forests in drylands are more extensive than previously reported.",
+      "evidenceOffsets": {
+        "start": 35,
+        "end": 402,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "首段明确给出数据、方法和森林定义差异。干旱地降雨标准不是林冠覆盖量；干旱地总面积也不是森林面积；文中并未说旧研究以新增人工林代替既有树木。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why can a coarse satellite analysis mistake some dryland forests for bare ground?",
+      "options": [
+        "MODIS determines tree cover by measuring annual evaporation rather than vegetation.",
+        "The rainfall definition makes trees appear as green pixels even where the ground is bare.",
+        "Widely spaced trees and brown or yellow leaves can be missed in coarse images.",
+        "Dryland trees are too large for the pixels used in coarse MODIS images."
+      ],
+      "answers": [
+        "Widely spaced trees and brown or yellow leaves can be missed in coarse images."
+      ],
+      "evidence": "For instance, several conventional forest monitoring methods rely on data from the Moderate Resolution Imaging Spectroradiometer (MODIS) instruments on NASA’s Aqua and Terra satellites. MODIS is great for giving a broad look at the landscape, but it has trouble in places like the African drylands (image below). Unlike densely packed forests in the tropics, trees in the drylands are often spaced out, appearing here and there. To MODIS, such land can appear as bare ground or soil in coarse image analyses. Even where dry forests grow in more densely packed stands, many trees have brown or yellow leaves that can evade detection by satellites.",
+      "evidenceOffsets": {
+        "start": 1010,
+        "end": 1656,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "稀疏树木在粗尺度分析中像裸地，黄褐叶也可能漏检。不是树太大、传感器只测蒸发，或降雨定义改变像元颜色；这些把空间尺度、干旱地环境和光学识别混为一谈。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is the safest interpretation of the newly reported forest area?",
+      "options": [
+        "The ten per cent tree-cover threshold is the proportion of plots included in the sample.",
+        "The revised method identified existing forest that earlier estimates had missed.",
+        "The nine per cent change measures forest that grew during the study period.",
+        "The 467 million hectares figure is the study’s total area of dryland forest."
+      ],
+      "answers": [
+        "The revised method identified existing forest that earlier estimates had missed."
+      ],
+      "evidence": "In the new effort, led by Jean-François Bastin of the FAO, researchers used a combination of computer-aided analysis and scientific crowd-sourcing to analyze imagery and make the first comprehensive global assessment of drylands. The group found that 1.33 billion hectares (5.12 million square miles) of drylands had more than 10 percent tree cover, and 1.08 billion hectares (4.17 million mi2) comprised forest. The group claimed to find “467 million hectares of forest that have never been reported before,” more than 40 percent above previous estimates. Overall, the findings increase estimates of global forest cover by 9 percent.",
+      "evidenceOffsets": {
+        "start": 1658,
+        "end": 2292,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "新增的是被识别、被报告的既有森林，不证明研究期间新长出同等面积。9%是全球覆盖估计的修订幅度；467 million为此前漏报的部分；10%是树木覆盖判定条件，不是抽样比例。",
+      "understanding": "inference-boundary",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How did computers and people contribute to the new assessment?",
+      "options": [
+        "Algorithms analysed part of the imagery before a large team inspected the plots.",
+        "People selected a final global map before algorithms checked its published conclusions.",
+        "Coarse MODIS images supplied the analysis, while Google Earth displayed the results.",
+        "Published forest reports replaced the team’s direct examination of image plots."
+      ],
+      "answers": [
+        "Algorithms analysed part of the imagery before a large team inspected the plots."
+      ],
+      "evidence": "FAO researchers developed computer algorithms to partially analyze and interpret forest cover in satellite images—from MODIS, Landsat, and very high resolution imagery available in Google Earth—before they could be scrutinized by human eyes. The entire research team examined more than 210,000 forest plots. The results were published in an FAO report and in the journal Science.",
+      "evidenceOffsets": {
+        "start": 3042,
+        "end": 3421,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文顺序为计算机部分分析和解释影像，再由人眼审查。Google Earth高分辨率影像也用作输入，不只是展示；团队实际检查了大量地块，不是以旧报告替代影像审查。",
+      "understanding": "method-and-evidence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "The research team examined more than how many forest plots? Write one number from the text.",
+      "maxWords": 1,
+      "answers": [
+        "210,000"
+      ],
+      "evidence": "FAO researchers developed computer algorithms to partially analyze and interpret forest cover in satellite images—from MODIS, Landsat, and very high resolution imagery available in Google Earth—before they could be scrutinized by human eyes. The entire research team examined more than 210,000 forest plots. The results were published in an FAO report and in the journal Science.",
+      "evidenceOffsets": {
+        "start": 3042,
+        "end": 3421,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文是more than 210,000 forest plots，题目要求填写数值，标准填210,000。不要把200多名研究者、15家机构或467 million hectares误当成地块数量；完整含义为超过该数。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Which concern for people is threatened by the projected expansion of drylands? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "food security"
+      ],
+      "evidence": "According to FAO, “drylands are home to an estimated 2 billion people, 90 percent of whom are in developing countries...yet surprisingly little is known about such ecosystems.” Several models of global warming suggest that drylands will expand by as much as 20 percent by the end of the 21st century, putting food security for people and biodiversity for plants and animals at risk.",
+      "evidenceOffsets": {
+        "start": 3423,
+        "end": 3805,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "句末把人类的food security与动植物的biodiversity分别列出。本题限定for people，应写food security；不能只摘取相邻但指向动植物的biodiversity。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "a0996385f9a589736f12f9299be11598e2df01a357556814579fe2ec199731d3",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

@@ -1,0 +1,390 @@
+{
+  "id": "expand-w50-listen-1",
+  "week": 50,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "综合模拟二与稳定性检查 · Independent new scenario: public decisions when evidence is incomplete",
+  "grammarFocus": "根据两轮结果检查重复错误，巩固准确表达与稳定句型。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Public Decisions with Incomplete Evidence: A Simulated Listening and Grammar Lesson",
+  "instructions": "本材料为原创模拟练习，不是官方雅思试题，也不代表任何官方分数。请先听录音（或阅读文字稿），完成10道听力题；然后学习语法讲解，完成8道语法题；最后进行口语和写作迁移练习。听力题和语法题均为英文题干，解释为中文。注意：听力文字稿中不会读出答案列表。",
+  "transcript": "Maya: Hi everyone, thanks for coming. We need to decide today whether to approve the new community garden on the old parking lot. But first, I want to be clear: we don't have all the information yet. The soil test results won't be back until next week. So we're deciding with incomplete evidence. That's the reality.\n\nDaniel: Sorry, Maya, can I just check something? You said the soil test results are not back. Does that mean we have no idea about contamination? Or do we have some early indication?\n\nMaya: Good question. We have an early indication from a quick scan. It suggests low risk, but it's not a full test. So we should treat it as uncertain.\n\nPriya: I think we should postpone the decision. If we approve now and the soil is bad, we'll have to close the garden and spend more money. That seems risky.\n\nDaniel: I understand that, Priya. But if we wait, we lose the planting season. The grant money expires in June. So waiting has a cost too.\n\nMaya: Exactly. So the question is: how do we make a good decision when we can't be sure? I suggest we approve a conditional plan. We say yes to the garden, but only if the full soil test is acceptable. If it's not, we stop. That way we don't lose the season, and we don't take a big risk.\n\nPriya: Hmm. That sounds reasonable. But who pays for the full test? And what happens if the test is borderline—not clearly good, not clearly bad?\n\nMaya: The city has agreed to pay for the full test. For borderline results, we ask an independent expert to review. That's in the draft plan.\n\nDaniel: OK, I'm starting to agree. But I want to add one thing: we should tell the public exactly what we know and what we don't know. If we pretend we're certain, and then something goes wrong, people will lose trust.\n\nMaya: Yes, transparency matters. So the plan includes a public note: 'We are approving this garden with conditions because the evidence is incomplete. We will publish the full test results when they arrive.'\n\nPriya: I like that. But I'm still worried about the money. If the test fails, we've already spent money on design. Can we get that back?\n\nMaya: No, design costs are sunk. We can't get them back. But they're small compared to the cost of a bad garden. So the conditional plan still makes sense.\n\nDaniel: Wait—did you say the design costs are sunk? I thought the grant covered design. If the grant covered it, then it's not our money, right?\n\nMaya: The grant covers design only if we start construction. If we cancel, we pay back the design money. So it's not fully sunk. Sorry, I misspoke. Let me correct that: design costs are recoverable only if we cancel before construction. So they're not completely sunk.\n\nPriya: OK, that changes things a little. So if we cancel early, we don't lose the design money. That makes waiting less costly than I thought.\n\nDaniel: Right. But we still lose the season if we wait for the full test. The test takes two weeks. Planting season starts in three weeks. So if we wait, we might still make it—but it's tight.\n\nMaya: So let's summarize. Option A: approve now, no conditions. Option B: postpone until the full test. Option C: approve with conditions—start design, but no construction until the test is acceptable. And we publish what we know.\n\nPriya: I can support Option C. But I want the public note to say clearly that the early scan is not a full test. People might think 'low risk' means 'safe'. That's not the same.\n\nMaya: Agreed. We'll say: 'The early scan suggests low risk, but it is not a full test. The full test will decide.'\n\nDaniel: And one more thing: we should set a date to review the decision. If the test is delayed again, we don't want to wait forever. Let's say we review in four weeks, no matter what.\n\nMaya: Good. So the motion is: approve Option C, with a public note and a review date in four weeks. All in favor?\n\nPriya: Yes.\n\nDaniel: Yes.\n\nMaya: Then it's decided. Thank you both. And remember: we're deciding with incomplete evidence, but we're being honest about it. That's the best we can do today.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What are they deciding about?",
+      "options": [
+        "A new community garden on an old parking lot",
+        "A new parking lot on an old garden",
+        "A new school on an old parking lot"
+      ],
+      "answers": [
+        "A new community garden on an old parking lot"
+      ],
+      "explanation": "Maya 开头说 'We need to decide today whether to approve the new community garden on the old parking lot.' 所以答案是 A。",
+      "evidence": "We need to decide today whether to approve the new community garden on the old parking lot."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "When will the full soil test results be back?",
+      "options": [
+        "Next week",
+        "In two weeks",
+        "In four weeks"
+      ],
+      "answers": [
+        "Next week"
+      ],
+      "explanation": "Maya 说 'The soil test results won't be back until next week.' 所以是下周。注意 Daniel 后来说 'The test takes two weeks' 是指从开始到结束需要两周，不是结果返回的时间。",
+      "evidence": "The soil test results won't be back until next week."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does the early scan suggest?",
+      "options": [
+        "Low risk",
+        "High risk",
+        "No risk at all"
+      ],
+      "answers": [
+        "Low risk"
+      ],
+      "explanation": "Maya 说 'It suggests low risk, but it's not a full test.' 所以早期扫描显示低风险。",
+      "evidence": "It suggests low risk, but it's not a full test."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Daniel not want to wait?",
+      "options": [
+        "They will lose the planting season and the grant money expires in June.",
+        "The soil test is too expensive.",
+        "The public does not like gardens."
+      ],
+      "answers": [
+        "They will lose the planting season and the grant money expires in June."
+      ],
+      "explanation": "Daniel 说 'if we wait, we lose the planting season. The grant money expires in June.' 所以选 A。",
+      "evidence": "if we wait, we lose the planting season. The grant money expires in June."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Who will pay for the full soil test?",
+      "options": [
+        "The city",
+        "Priya",
+        "The community garden group"
+      ],
+      "answers": [
+        "The city"
+      ],
+      "explanation": "Maya 说 'The city has agreed to pay for the full test.' 所以是市政府支付。",
+      "evidence": "The city has agreed to pay for the full test."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What happens if the test results are borderline?",
+      "options": [
+        "An independent expert will review them.",
+        "They will cancel the garden immediately.",
+        "They will ask the public to vote."
+      ],
+      "answers": [
+        "An independent expert will review them."
+      ],
+      "explanation": "Maya 说 'For borderline results, we ask an independent expert to review.' 所以选 A。",
+      "evidence": "For borderline results, we ask an independent expert to review."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does Maya first say about design costs?",
+      "options": [
+        "They are sunk and cannot be recovered.",
+        "They are fully covered by the grant.",
+        "They are paid by Priya."
+      ],
+      "answers": [
+        "They are sunk and cannot be recovered."
+      ],
+      "explanation": "Maya 最初说 'design costs are sunk. We can't get them back.' 所以选 A。注意她后来纠正了这个说法。",
+      "evidence": "design costs are sunk. We can't get them back."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What correction does Maya make about design costs?",
+      "options": [
+        "They are recoverable only if they cancel before construction.",
+        "They are always sunk.",
+        "They are paid by the city."
+      ],
+      "answers": [
+        "They are recoverable only if they cancel before construction."
+      ],
+      "explanation": "Maya 纠正说 'design costs are recoverable only if we cancel before construction. So they're not completely sunk.' 所以选 A。",
+      "evidence": "design costs are recoverable only if we cancel before construction. So they're not completely sunk."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is Option C?",
+      "options": [
+        "Approve with conditions: start design, but no construction until the test is acceptable.",
+        "Approve now with no conditions.",
+        "Postpone until the full test."
+      ],
+      "answers": [
+        "Approve with conditions: start design, but no construction until the test is acceptable."
+      ],
+      "explanation": "Maya 总结说 'Option C: approve with conditions—start design, but no construction until the test is acceptable.' 所以选 A。",
+      "evidence": "Option C: approve with conditions—start design, but no construction until the test is acceptable."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "When will they review the decision?",
+      "options": [
+        "In four weeks",
+        "In two weeks",
+        "Next week"
+      ],
+      "answers": [
+        "In four weeks"
+      ],
+      "explanation": "Daniel 说 'Let's say we review in four weeks, no matter what.' 所以是四周后。",
+      "evidence": "Let's say we review in four weeks, no matter what."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "approve",
+      "meaning": "批准；同意",
+      "example": "We need to decide today whether to approve the new community garden on the old parking lot."
+    },
+    {
+      "word": "incomplete",
+      "meaning": "不完整的",
+      "example": "So we're deciding with incomplete evidence."
+    },
+    {
+      "word": "contamination",
+      "meaning": "污染",
+      "example": "Does that mean we have no idea about contamination?"
+    },
+    {
+      "word": "postpone",
+      "meaning": "推迟",
+      "example": "I think we should postpone the decision."
+    },
+    {
+      "word": "conditional",
+      "meaning": "有条件的",
+      "example": "I suggest we approve a conditional plan."
+    },
+    {
+      "word": "borderline",
+      "meaning": "临界的；不确定的",
+      "example": "And what happens if the test is borderline—not clearly good, not clearly bad?"
+    },
+    {
+      "word": "transparency",
+      "meaning": "透明度；公开",
+      "example": "Yes, transparency matters."
+    },
+    {
+      "word": "sunk",
+      "meaning": "已投入无法收回的",
+      "example": "No, design costs are sunk."
+    }
+  ],
+  "grammar": {
+    "title": "条件句与真实条件：用 if 表达条件和结果",
+    "explanation": "英语中常用 if 引导条件，主句说结果。真实条件（可能发生）用一般现在时在 if 从句，主句用 will/can/must 等。例如：If it rains, we will stay home. 如果条件是对现在的假设（不太可能），用过去时在 if 从句，主句用 would/could。例如：If I had more time, I would help. 注意：if 从句不用 will。本课重点：真实条件句的时态搭配，以及主句情态动词的选择。",
+    "example": "If we approve now and the soil is bad, we'll have to close the garden and spend more money.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If the test ___ positive, we will cancel the project.",
+        "options": [
+          "is",
+          "will be",
+          "was"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "真实条件句，if 从句用一般现在时，不用 will。所以选 is。",
+        "evidence": "If we approve now and the soil is bad, we'll have to close the garden and spend more money."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "We will publish the results when they ___.",
+        "options": [
+          "arrive",
+          "will arrive",
+          "arrived"
+        ],
+        "answers": [
+          "arrive"
+        ],
+        "explanation": "时间状语从句用一般现在时表示将来，不用 will。所以选 arrive。",
+        "evidence": "We will publish the full test results when they arrive."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "If I ___ more time, I would check every detail.",
+        "options": [
+          "had",
+          "have",
+          "will have"
+        ],
+        "answers": [
+          "had"
+        ],
+        "explanation": "这是对现在的假设（不太可能），if 从句用过去时，主句用 would。所以选 had。",
+        "evidence": "If we pretend we're certain, and then something goes wrong, people will lose trust."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "If the grant ___ in June, we must start before then.",
+        "options": [
+          "expires",
+          "will expire",
+          "expired"
+        ],
+        "answers": [
+          "expires"
+        ],
+        "explanation": "真实条件，if 从句用一般现在时。所以选 expires。",
+        "evidence": "The grant money expires in June."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "If we cancel early, we ___ the design money.",
+        "options": [
+          "don't lose",
+          "won't lose",
+          "didn't lose"
+        ],
+        "answers": [
+          "won't lose"
+        ],
+        "explanation": "真实条件，主句表示将来结果，用 will。所以选 won't lose。",
+        "evidence": "So if we cancel early, we don't lose the design money."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "If the test results ___ borderline, an expert will review them.",
+        "options": [
+          "are",
+          "will be",
+          "were"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "真实条件，if 从句用一般现在时。所以选 are。",
+        "evidence": "For borderline results, we ask an independent expert to review."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "If people ___ that we are certain, they will lose trust.",
+        "options": [
+          "think",
+          "will think",
+          "thought"
+        ],
+        "answers": [
+          "think"
+        ],
+        "explanation": "真实条件，if 从句用一般现在时。所以选 think。",
+        "evidence": "If we pretend we're certain, and then something goes wrong, people will lose trust."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "If the test is delayed again, we ___ the decision in four weeks.",
+        "options": [
+          "will review",
+          "review",
+          "reviewed"
+        ],
+        "answers": [
+          "will review"
+        ],
+        "explanation": "真实条件，主句表示将来，用 will。所以选 will review。",
+        "evidence": "Let's say we review in four weeks, no matter what."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often make decisions with incomplete information?",
+        "How do you feel when you must decide without all the facts?",
+        "Do you prefer to wait or act quickly? Why?",
+        "What helps you trust a decision?"
+      ],
+      "part2": "Describe a time when you had to make a decision with incomplete information. You should say: what the decision was; what information you had; what you did; and how you felt about the result.",
+      "part3": [
+        "Why is transparency important in public decisions?",
+        "Should governments always wait for full evidence before acting?",
+        "How can organizations communicate uncertainty to the public?",
+        "What are the risks of pretending to be certain?"
+      ]
+    },
+    "writing": "You are a member of a local community group. Your group must decide whether to support a new public project, but the evidence is incomplete. Write a short public note (120–150 words) explaining your decision, what you know, what you don't know, and what you will do next. Use conditional sentences (if...) and clear, honest language."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus and transfer tasks (simulated educational material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "4867b4f27f5b22ceaf10943afcf7ce887080d9691f2c29aa34672aa8464aa98c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

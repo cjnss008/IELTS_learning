@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-usgs-turbidity-water-comprehension-v2",
+  "version": "2",
+  "sourceId": "usgs-turbidity-water",
+  "sourceVersion": "1",
+  "sourceTextSha256": "c178da625854617614dd3350dba2e4631e1a345744d13dbccceed7fcdd601c59",
+  "sourceContentHash": "c178da625854617614dd3350dba2e4631e1a345744d13dbccceed7fcdd601c59",
+  "exposureGroup": "public-source:usgs-turbidity-water",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does a turbidity reading measure in the article?",
+      "options": [
+        "The number of pollutant-attached bacteria in suspended particles.",
+        "Relative water clarity, assessed through light scattered by material in the sample.",
+        "Dissolved salt concentration, assessed through electrical conductance.",
+        "Water temperature, measured by the gauge in a river probe."
+      ],
+      "answers": [
+        "Relative water clarity, assessed through light scattered by material in the sample."
+      ],
+      "evidence": "Turbidity is the measure of relative clarity of a liquid. It is an optical characteristic of water and is a measurement of the amount of light that is scattered by material in the water when a light is shined through the water sample. The higher the intensity of scattered light, the higher the turbidity. Materials that cause water to be turbid include clay, silt, very tiny inorganic and organic matter, algae, dissolved colored organic compounds, and plankton and other microscopic organisms.",
+      "evidenceOffsets": {
+        "start": 335,
+        "end": 830,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "浊度定义对应光学散射与清澈程度。电导率、温度可由同一设备里的其他传感器测，但不是浊度；病原体数量也不能由浊度直接计出。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why can a rainstorm raise a river’s turbidity in two ways?",
+      "options": [
+        "Particles wash in from land, and faster water can stir up the streambed.",
+        "Particles settle out faster because the river becomes clearer during high flow.",
+        "Runoff dilutes the existing particles while the river bed loses its loose sediment.",
+        "Particles remain in place, but warmer stormwater changes the conductivity reading."
+      ],
+      "answers": [
+        "Particles wash in from land, and faster water can stir up the streambed."
+      ],
+      "evidence": "Turbidity makes water cloudy or opaque. The picture to the right shows a U.S. Geological Survey (USGS) hydrologist sampling highly turbid water in the Colorado River in Arizona. The water collected in a bottle will be used to find out the turbidity, which is measured by shining a light through the water and is reported in nephelometric turbidity units (NTU). During periods of low flow (base flow), many rivers are a clear green color, and turbidities are low, usually less than 10 NTU. During a rainstorm, particles from the surrounding land are washed into the river making the water a muddy brown color, indicating water that has higher turbidity values. Also, during high flows, water velocities are faster and water volumes are higher, which can more easily stir up and suspend material from the stream bed, causing higher turbidities.",
+      "evidenceOffsets": {
+        "start": 832,
+        "end": 1674,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "雨水把陆地颗粒带入河流，较高流速流量又能搅起河床材料。其余项把沉降/清澈方向反过来，淡化颗粒输入，或用电导率与温度替代实际悬浮物机制。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which conclusion about cloudy drinking water stays within the article’s limits?",
+      "options": [
+        "A high reading can identify which protozoan caused an outbreak without further tests.",
+        "A low reading can replace disinfection because microbes lose protection in clear water.",
+        "A high reading can show that treatment will fail because particles cannot be removed.",
+        "A high reading can indicate shelter for pathogens, but it does not measure health risk directly."
+      ],
+      "answers": [
+        "A high reading can indicate shelter for pathogens, but it does not measure health risk directly."
+      ],
+      "evidence": "Excessive turbidity, or cloudiness, in drinking water is aesthetically unappealing, and may also represent a health concern. Turbidity can provide food and shelter for pathogens. If not removed, the causes of high turbidity can promote regrowth of pathogens in the water, leading to waterborne disease outbreaks, which have caused significant cases of intestinal sickness throughout the United States and the world. Although turbidity is not a direct indicator of health risk, numerous studies show a strong relationship between removal of turbidity and removal of protozoa. The particles of turbidity provide \"shelter\" for microbes by reducing their exposure to attack by disinfectants. Microbial attachment to particulate material has been considered to aid in microbe survival. Fortunately, traditional water treatment processes have the ability to effectively remove turbidity when operated properly. (Source: U.S. Environmental Protection Agency)",
+      "evidenceOffsets": {
+        "start": 2236,
+        "end": 3187,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文既提出颗粒可遮蔽病原体，也明确浊度不是直接健康风险指标；除浊与去除原生动物是相关证据。不能据此识别具体病原、取消消毒，或断言处理必败；文章反而说规范传统处理能有效除浊。",
+      "understanding": "inference-boundary",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What additional capability can the described modern monitoring devices have?",
+      "options": [
+        "The temperature gauge replaces light scattering as the turbidity measurement.",
+        "The device estimates dissolved solids from the number of suspended bacteria.",
+        "One probe may house sensors for turbidity, conductivity and temperature.",
+        "Conductivity is inferred from the turbidity number rather than measured separately."
+      ],
+      "answers": [
+        "One probe may house sensors for turbidity, conductivity and temperature."
+      ],
+      "evidence": "State-of-the-art turbidity meters are beginning to be installed in rivers to provide an instantaneous turbidity reading. A long device is lowered into the water and at the end is a turbidity sensor. It reads turbidity in the river by shining a light into the water and reading how much light is reflected back to the sensor. These devices can house multiple water-quality sensors, such as a conductivity sensor to measure electrical conductance of the water, which is strongly influenced by dissolved solids, and a temperature gauge.",
+      "evidenceOffsets": {
+        "start": 3210,
+        "end": 3743,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "该段讲的是一体装置容纳多种传感器，不是所有属性由浊度推算。温度不能替代光散射定义；电导率与溶解固体相关，也不是通过数悬浮细菌测出。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What abbreviation is used for the units of a turbidity reading? Write one abbreviation from the text.",
+      "maxWords": 1,
+      "answers": [
+        "NTU"
+      ],
+      "evidence": "Turbidity makes water cloudy or opaque. The picture to the right shows a U.S. Geological Survey (USGS) hydrologist sampling highly turbid water in the Colorado River in Arizona. The water collected in a bottle will be used to find out the turbidity, which is measured by shining a light through the water and is reported in nephelometric turbidity units (NTU). During periods of low flow (base flow), many rivers are a clear green color, and turbidities are low, usually less than 10 NTU. During a rainstorm, particles from the surrounding land are washed into the river making the water a muddy brown color, indicating water that has higher turbidity values. Also, during high flows, water velocities are faster and water volumes are higher, which can more easily stir up and suspend material from the stream bed, causing higher turbidities.",
+      "evidenceOffsets": {
+        "start": 832,
+        "end": 1674,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "正文明确写nephelometric turbidity units (NTU)。USGS是机构缩写，不是单位；题目要单位缩写而非完整测量原理。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Besides bacteria, what kind of pollutant can attach to the particles? Write one word from the text.",
+      "maxWords": 1,
+      "answers": [
+        "metals"
+      ],
+      "evidence": "High concentrations of particulate matter affect light penetration, ecological productivity, recreational values, and habitat quality, and cause lakes to fill in faster. In streams, increased sedimentation and siltation can occur, which can result in harm to habitat areas for fish and other aquatic life. Particles also provide attachment places for other pollutants, notably metals and bacteria. For this reason, turbidity readings can be used as an indicator of potential pollution in a water body.",
+      "evidenceOffsets": {
+        "start": 1705,
+        "end": 2206,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文列举notably metals and bacteria。本题已排除bacteria，应取另一个并列项metals；sediment是颗粒材料的概念，不是这里列举的另一类附着污染物。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "8d6dc597e45cc99d7de39469fac81f5502a3bc219e74db63d49f69a777dd069a",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

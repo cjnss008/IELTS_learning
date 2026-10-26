@@ -1,0 +1,356 @@
+{
+  "id": "expand-w16-listen-2",
+  "week": 16,
+  "skill": "listening",
+  "level": "B1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "环境与原因结果 · Independent new scenario: a local group explaining environmental trade-offs",
+  "grammarFocus": "第一条件句；because / therefore；情态动词建议。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Community Garden Meeting",
+  "instructions": "这是一份为B1水平成人学习者设计的英语听力与语法练习，主题为“环境与原因结果”。场景为模拟的社区花园会议，所有内容均为原创教学材料，并非官方雅思考试。请先听/读对话，然后完成8道听力理解题（单选、填空、匹配、判断正误/未提及）。之后学习“第一条件句；because / therefore；情态动词建议”的语法规则，并完成8道语法题。最后进行口语和写作迁移练习。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Mia: Thanks for coming, everyone. This is the first meeting of the Green Street Garden Group. We have a small piece of land behind the library. We can use it, but we must decide how.\nBen: I think we should grow vegetables. If we grow vegetables, we can share them with families who need food.\nMia: That's a good idea. But we need water. The tap is far away. If we don't have enough water, the plants will die.\nBen: True. Therefore, we should collect rain water. We can put a big barrel under the roof.\nMia: Good. But a barrel costs money. We have only fifty dollars.\nBen: Hmm. If we buy a barrel, we can't buy seeds. Maybe we can ask the school for help.\nMia: Yes. Let's ask the school. Also, we need volunteers. If we have more volunteers, we can work faster.\nBen: I can ask my neighbors. But some people don't like gardens. They say gardens make noise.\nMia: That's a problem. Therefore, we should talk to them first. We can invite them to join us.\nBen: OK. And we should not use chemicals. If we use chemicals, the soil will get bad.\nMia: Right. So we will use natural compost. It is cheap and good for the soil.\nBen: What about the tools? We need shovels and gloves.\nMia: We can borrow tools from the community center. They have many.\nBen: Great. So, if we get the barrel and the tools, we can start next month.\nMia: Yes. Let's meet again next week. Thank you, everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where is the garden land?",
+      "options": [
+        "Behind the library",
+        "Next to the school",
+        "In front of the community center"
+      ],
+      "answers": [
+        "Behind the library"
+      ],
+      "explanation": "Mia说：“We have a small piece of land behind the library.” 所以花园在图书馆后面。",
+      "evidence": "We have a small piece of land behind the library."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Ben want to grow?",
+      "options": [
+        "Flowers",
+        "Vegetables",
+        "Trees"
+      ],
+      "answers": [
+        "Vegetables"
+      ],
+      "explanation": "Ben说：“I think we should grow vegetables.” 因此他想种蔬菜。",
+      "evidence": "I think we should grow vegetables."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How much money does the group have? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "fifty"
+      ],
+      "explanation": "Mia说：“We have only fifty dollars.” 所以答案是fifty。",
+      "evidence": "We have only fifty dollars."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What problem do some people have with gardens?",
+      "options": [
+        "Gardens are too expensive.",
+        "Gardens make noise.",
+        "Gardens need too much water."
+      ],
+      "answers": [
+        "Gardens make noise."
+      ],
+      "explanation": "Ben说：“They say gardens make noise.” 所以有些人认为花园会吵闹。",
+      "evidence": "They say gardens make noise."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What will the group use for the soil?",
+      "options": [
+        "Chemicals",
+        "Natural compost",
+        "Sand"
+      ],
+      "answers": [
+        "Natural compost"
+      ],
+      "explanation": "Mia说：“So we will use natural compost.” 因此他们使用天然堆肥。",
+      "evidence": "So we will use natural compost."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Where can they borrow tools?",
+      "options": [
+        "From the library",
+        "From the community center",
+        "From the school"
+      ],
+      "answers": [
+        "From the community center"
+      ],
+      "explanation": "Mia说：“We can borrow tools from the community center.” 所以从社区中心借工具。",
+      "evidence": "We can borrow tools from the community center."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When will they meet again?",
+      "options": [
+        "Next month",
+        "Next week",
+        "Tomorrow"
+      ],
+      "answers": [
+        "Next week"
+      ],
+      "explanation": "Mia说：“Let's meet again next week.” 所以下周再见面。",
+      "evidence": "Let's meet again next week."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The group will buy seeds this week.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "对话中只提到如果买桶就可能不能买种子，但没有说这周会买种子。因此信息未提及。",
+      "evidence": "If we buy a barrel, we can't buy seeds."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "volunteers",
+      "meaning": "志愿者",
+      "example": "Also, we need volunteers."
+    },
+    {
+      "word": "barrel",
+      "meaning": "桶",
+      "example": "We can put a big barrel under the roof."
+    },
+    {
+      "word": "compost",
+      "meaning": "堆肥",
+      "example": "So we will use natural compost."
+    },
+    {
+      "word": "soil",
+      "meaning": "土壤",
+      "example": "If we use chemicals, the soil will get bad."
+    },
+    {
+      "word": "chemicals",
+      "meaning": "化学品",
+      "example": "And we should not use chemicals."
+    },
+    {
+      "word": "shovels",
+      "meaning": "铲子",
+      "example": "We need shovels and gloves."
+    },
+    {
+      "word": "gloves",
+      "meaning": "手套",
+      "example": "We need shovels and gloves."
+    },
+    {
+      "word": "community center",
+      "meaning": "社区中心",
+      "example": "We can borrow tools from the community center."
+    }
+  ],
+  "grammar": {
+    "title": "第一条件句；because / therefore；情态动词建议",
+    "explanation": "第一条件句表示“如果……就……”，用来谈论可能发生的事。结构：If + 一般现在时，主语 + will/can + 动词原形。例如：If we grow vegetables, we can share them. because 表示原因，therefore 表示结果（因此）。情态动词 should 表示建议，意为“应该”。例如：We should collect rain water. 注意：if 从句用现在时，不用 will。",
+    "example": "If we grow vegetables, we can share them with families who need food.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If it rains tomorrow, we ______ at home.",
+        "options": [
+          "stay",
+          "will stay",
+          "stayed"
+        ],
+        "answers": [
+          "will stay"
+        ],
+        "explanation": "第一条件句中，主句用 will + 动词原形。因此选 will stay。",
+        "evidence": "If we grow vegetables, we can share them with families who need food."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "______ you study hard, you will pass the test.",
+        "options": [
+          "If",
+          "Because",
+          "Therefore"
+        ],
+        "answers": [
+          "If"
+        ],
+        "explanation": "表示“如果”用 If。Because 表示原因，Therefore 表示结果。",
+        "evidence": "If we use chemicals, the soil will get bad."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "We should ______ water. It is good for the environment.",
+        "options": [
+          "save",
+          "saving",
+          "saved"
+        ],
+        "answers": [
+          "save"
+        ],
+        "explanation": "should 后面接动词原形，所以用 save。",
+        "evidence": "Therefore, we should collect rain water."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "He was tired. ______, he went to bed early.",
+        "options": [
+          "Because",
+          "Therefore",
+          "If"
+        ],
+        "answers": [
+          "Therefore"
+        ],
+        "explanation": "前后是因果关系，后面是结果，用 Therefore（因此）。",
+        "evidence": "Therefore, we should talk to them first."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "She is happy ______ she got a new job.",
+        "options": [
+          "because",
+          "therefore",
+          "if"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "后面是原因，用 because。",
+        "evidence": "If we buy a barrel, we can't buy seeds."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "If we ______ more volunteers, we can work faster.",
+        "options": [
+          "have",
+          "will have",
+          "had"
+        ],
+        "answers": [
+          "have"
+        ],
+        "explanation": "if 从句用一般现在时，不用 will。所以选 have。",
+        "evidence": "If we have more volunteers, we can work faster."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "You ______ talk to your teacher. She can help you.",
+        "options": [
+          "should",
+          "shouldn't",
+          "don't"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "表示建议“应该”用 should。",
+        "evidence": "Therefore, we should talk to them first."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "If we don't have enough water, the plants ______ die.",
+        "options": [
+          "will",
+          "are",
+          "do"
+        ],
+        "answers": [
+          "will"
+        ],
+        "explanation": "主句表示将来结果，用 will + 动词原形。",
+        "evidence": "If we don't have enough water, the plants will die."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like gardens?",
+        "What do you do to help the environment?",
+        "Do you have a garden at home?",
+        "Is it important to save water?"
+      ],
+      "part2": "Describe a small environmental project in your area. You should say: what the project is; who works on it; what problems it has; and how it helps the environment.",
+      "part3": [
+        "Why should people grow their own vegetables?",
+        "What can governments do to help community gardens?",
+        "If more people join a garden group, what will happen?",
+        "Should schools teach children about gardening?"
+      ]
+    },
+    "writing": "Write a short email (about 80 words) to your neighbors. Invite them to join a community garden meeting. Use because, therefore, and should. Give two reasons why the garden is good."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus (B1)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "bd02ec941f0e19533e979c9608b5dd67df59ec91b5c5228f7433cfc06a6594e0"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

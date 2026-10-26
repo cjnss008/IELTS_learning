@@ -1,0 +1,79 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),{createRequire}=require('node:module');
+const root=process.env.IELTS_PUBLIC_REVIEW_ROOT||path.join(__dirname,'..'),asset=name=>path.join(root,'assets',name),load=name=>require(asset(name)),A=load('assessment-core.js'),Year=load('year-planner.js'),Practice=load('public-material-practice.js'),Adaptive=load('adaptive-plan.js');
+// Reuse definitions from the existing isolated DOM fixture without registering
+// or duplicating that file's tests. No live browser, profile or user folder.
+const helperFile=path.join(root,'tests/course-player-dom.test.cjs'),helperSource=fs.readFileSync(helperFile,'utf8'),firstTest=helperSource.indexOf("\ntest(");assert.ok(firstTest>0,'DOM fixture definitions must precede test registrations');const helper={exports:{}};new Function('require','__dirname','module',helperSource.slice(0,firstTest)+'\nmodule.exports={fixture,Element};')(createRequire(helperFile),path.dirname(helperFile),helper);const {fixture}=helper.exports;
+const tick=()=>new Promise(resolve=>setImmediate(resolve));
+function publicMaterial(id='supplement-a',skill='reading'){
+ return{id:'public-'+id+'-'+skill,version:'1',skill,type:'practice',title:'Isolated public practice '+id,level:'A1',pool:'training',estimatedMinutes:10,passage:'Sam has a red bag in the room.',transcript:'Sam has a red bag in the room.',...(skill==='listening'?{audio:'audio/isolated.mp3',audioDurationSeconds:5}:{}),questions:[{id:'q1',type:'single',prompt:'What colour is the bag?',options:['red','blue'],answers:['red'],evidence:'a red bag',explanation:'The text says red.'}],source:{sourceTextSha256:A.sourceTextHash('Sam has a red bag in the room.'),kind:'public-domain',verification:'reviewed',rights:'Isolated fixture',publicSourceId:id,exposureGroup:'public-source:'+id,practiceOnly:true,independentAssessmentEligible:false,independentTransferEligible:false,grammarTags:['be-present'],phaseCandidates:['foundation'],prerequisiteCapabilityIds:['foundation:'+skill],audioReadiness:{eligibleForPractice:skill==='listening'},audioReviewStatus:'provider-paired-not-independently-reviewed'}};
+}
+function installRuntime(win){for(const file of['public-material-selector.js','public-material-practice.js','daily-learning-load.js'])vm.runInNewContext(fs.readFileSync(asset(file),'utf8'),{window:win,globalThis:win,require:createRequire(asset(file)),console,Date,Map,Set});}
+function domFixture(options={}){
+ let budget={remainingMinutes:160,spentMinutes:0,exhausted:false,...options.budget},due=false,f;
+ const pub=publicMaterial(),later={...pub,id:'core-next',source:{verification:'reviewed',rights:'原创',grammarTags:['be-present']}},route={sessionId:'public-safety-route',adoptedAt:'2026-10-24T00:00:00.000Z',level:'A1',startDay:1,startWeek:1,skills:{reading:{verified:true,level:'A1'}}};
+ const mistakes={forDay:n=>{const wrong=f?.records().filter(r=>r.dayNumber===n&&r.evaluation?.result==='revise')||[];return{completionValid:options.completed===true&&!wrong.length,remaining:wrong.length,items:wrong.map(r=>({id:r.id,materialId:r.materialId,status:'wrong'}))};}};
+ f=fixture({id:'core-reading',level:'A1',source:{verification:'reviewed',rights:'原创',grammarTags:['be-present']}},{queue:true,storage:options.storage,extraMaterials:[pub,later],window:{IELTSYearPlanner:{...Year,calendarBudget:()=>({...budget})},IELTSPlacement:{currentRoute:()=>route},IELTSAdaptivePlan:{verifiedRecord:Adaptive.verifiedRecord,getDay:day=>day,markStarted(){},planRemaining:()=>({tasks:[],reservedMemoryMinutes:due?30:0})},IELTSMistakes:mistakes,...options.window},setup:(data,mat)=>{data.weeks=[{week:1,level:'A1',title:'Isolated foundation'}];data.days=[1,2].map(day=>({day,week:1,tasks:[{id:'reading',skill:'reading',minutes:10,materialIds:[day===1?mat.id:later.id],mode:'practice',deliverable:'Answer independently'},{id:'reflection',skill:'reflection',minutes:10,materialIds:['reflection-'+day],mode:'practice'}]}));}});installRuntime(f.win);
+ return{...f,pub,budget(value){budget={...budget,...value};},due(value){due=value;},data:f.win.IELTSCurriculumData};
+}
+const publicEntry=f=>f.win.IELTSTodayNavigation.learningQueue().entries.find(entry=>entry.publicSupplement&&!entry.draftId);
+async function answer(f,value='red'){const inputs=f.nodes.get('courseQuestions').querySelectorAll('input'),input=inputs.find(node=>node.value===value);assert.ok(input,'actual practice must render its original answer input');for(const node of inputs)node.checked=false;input.checked=true;await input.fire('change');}
+async function submit(f){f.advance(1000);await f.nodes.get('courseSubmit').fire('click');await tick();}
+
+function savedPublicDraft(answer='red'){
+ const P=load('course-player.js'),m=publicMaterial(),state=P.newState(),id='existing-public-draft';state.drafts[id]={id,materialId:m.id,taskId:'reading',courseDay:1,mode:'practice',kind:'original',parentId:null,startedAt:'2026-10-24T10:00:00.000Z',activeSeconds:1,exposureAtStart:'seen',answers:{q1:answer},userEvidence:{},text:'',transcript:'',audioAvailable:false,audioCompleted:false,transcriptViewed:false,interrupted:false,assistance:{hint:false,answer:false,ai:false},media:[],materialBinding:P.freezeMaterialBinding(m,{assessment:A})};return new Map([[P.KEY,JSON.stringify(state)]]);
+}
+function staleCard(f){return{kind:'extra',day:1,taskId:'reading',materialId:f.pub.id,publicSupplement:true,entry:{kind:'public-practice',skill:'reading',materialId:f.pub.id,mode:'practice'},fitsBudget:true};}
+
+test('legacy optional draft restores exact ID and submits without changing old core days or discovering new cards',async()=>{
+ const f=domFixture({storage:savedPublicDraft()}),beforeDays=JSON.stringify(f.data.days);await tick();assert.equal(publicEntry(f),undefined);const entry=f.win.IELTSTodayNavigation.learningQueue().entries.find(e=>e.draftId==='existing-public-draft');assert.ok(entry);await f.win.IELTSTodayNavigation.resumeDraft(entry.draftId);await f.win.IELTSTodayNavigation.resumeNext('reading',f.pub.id);await answer(f);await submit(f);const record=f.records()[0];assert.equal(record.id,entry.draftId);assert.equal(record.dayNumber,1);assert.equal(A.decodeArtifact(record).mode,'practice');assert.equal(JSON.stringify(f.data.days),beforeDays);assert.equal(f.win.IELTSTodayNavigation.learningQueue().currentComplete,false);assert.equal(f.win.IELTSTodayNavigation.learningQueue().next.materialId,'core-reading');
+});
+
+test('stale discovery cards and direct public starts cannot bypass insufficient unit budget or a missing day assignment',async()=>{
+ const f=domFixture();await tick();assert.equal(publicEntry(f),undefined);const entry=staleCard(f),before=JSON.stringify(f.records());f.budget({remainingMinutes:5});await f.win.IELTSTodayNavigation.openQueued(entry);await f.win.IELTSTodayNavigation.openExtra(entry.entry);await tick();assert.equal(f.win.IELTSTodayNavigation.current().active,false);assert.equal(f.win.IELTSTodayNavigation.allDrafts().length,0);assert.equal(JSON.stringify(f.records()),before);
+});
+
+test('incorrect old optional original is immutable while its linked practice correction can submit separately',async()=>{
+ const f=domFixture({storage:savedPublicDraft('blue')});await tick();await f.win.IELTSTodayNavigation.resumeDraft('existing-public-draft');await f.win.IELTSTodayNavigation.resumeNext('reading',f.pub.id);await submit(f);const original=JSON.stringify(f.records()[0]);assert.equal(f.records()[0].evaluation.result,'revise');const button=f.nodes.get('courseResult').querySelectorAll('button').find(b=>b.textContent==='建立订正版本');await button.fire('click');await tick();await answer(f,'red');await submit(f);assert.equal(f.records().length,2);assert.equal(JSON.stringify(f.records()[0]),original);assert.equal(f.records()[1].parentId,f.records()[0].id);assert.equal(f.records()[1].kind,'correction');assert.equal(f.records()[1].exposure,'seen');
+});
+
+test('ended calendar budget blocks stale cards and direct starts without fabricating a submission',async()=>{
+ const f=domFixture();await tick();const entry=staleCard(f);f.budget({dayEnded:true,exhausted:true});await f.win.IELTSTodayNavigation.openQueued(entry);await f.win.IELTSTodayNavigation.openExtra(entry.entry);await tick();assert.equal(f.win.IELTSTodayNavigation.current().active,false);assert.equal(f.win.IELTSTodayNavigation.allDrafts().length,0);assert.equal(f.records().length,0);assert.equal(f.win.IELTSTodayNavigation.learningQueue().next.kind,'day-ended');
+});
+
+test('completed historical course never acquires a fresh public requirement through a stale direct request',async()=>{
+ const f=domFixture({completed:true});await tick();assert.equal(publicEntry(f),undefined);const stale=staleCard(f);await f.win.IELTSTodayNavigation.resumeNext('reading','core-reading');await answer(f);await submit(f);assert.equal(f.win.IELTSTodayNavigation.learningQueue().currentComplete,true);const beforeRecords=JSON.stringify(f.records()),beforeState=f.map.get(f.win.IELTSCoursePlayer.KEY),beforeDays=JSON.stringify(f.data.days);await f.win.IELTSTodayNavigation.openExtra(stale.entry);await f.win.IELTSTodayNavigation.openQueued(stale);await tick();assert.equal(JSON.stringify(f.records()),beforeRecords);assert.equal(f.map.get(f.win.IELTSCoursePlayer.KEY),beforeState);assert.equal(JSON.stringify(f.data.days),beforeDays);assert.equal(f.win.IELTSTodayNavigation.learningQueue().currentComplete,true);
+});
+
+test('retained public drafts do not displace active core or disappear when due-work reservations change',async()=>{
+ const f=domFixture({storage:savedPublicDraft()});await tick();await f.win.IELTSTodayNavigation.resumeNext('reading','core-reading');assert.equal(f.win.IELTSTodayNavigation.learningQueue().next.materialId,'core-reading');f.due(true);const queue=f.win.IELTSTodayNavigation.learningQueue();assert.ok(queue.entries.some(item=>item.publicSupplement&&item.draftId==='existing-public-draft'));assert.equal(queue.entries.some(item=>item.publicSupplement&&!item.draftId),false);assert.equal(f.win.IELTSTodayNavigation.allDrafts().find(item=>item.id==='existing-public-draft').answers.q1,'red');
+});
+
+
+function pureOptions(){const pub=publicMaterial(),paired=publicMaterial('supplement-a','listening'),core={...publicMaterial('core-context'),id:'core-context',source:{verification:'reviewed',grammarTags:['be-present']}},day={day:2,week:1,tasks:[{id:'reading',materialIds:[core.id]}]};return{data:{days:[day],materials:[core,pub,paired]},day,route:{skills:{reading:{verified:true,level:'A1'},listening:{verified:true,level:'A1'}}},records:[],drafts:[],budget:{remainingMinutes:120},coreReserveMinutes:15,dueReviewMinutes:20};}
+
+test('pending or correction records and frozen old snapshots prevent paired reading/listening becoming new-source practice',()=>{
+ for(const kind of['original','correction']){const options=pureOptions(),snapshot={source:{exposureGroup:'public-source:supplement-a'}};options.records.push({id:'seen-record',materialId:'removed-old-public-v1',kind,evaluation:{method:'none',result:'pending'},answer:JSON.stringify({schema:1,materialBinding:{material:snapshot}})});const before=JSON.stringify(options);assert.equal(Practice.plan(options).selected.length,0);assert.equal(JSON.stringify(options),before);assert.ok(Practice.context(options).seenSourceGroups.includes('public-source:supplement-a'));}
+ const options=pureOptions();options.drafts=[{id:'pending-public-draft',materialId:'removed-draft-v1',materialBinding:{material:{source:{exposureGroup:'public-source:supplement-a'}}}}];assert.equal(Practice.plan(options).selected.length,0);
+});
+
+test('no placement or genuine prerequisite evidence produces no compulsory or hard-level public assignment',()=>{
+ const options=pureOptions();delete options.route;assert.equal(Practice.plan(options).selected.length,0);assert.equal(Practice.plan({...options,courseComplete:true}).selected.length,0);const before=JSON.stringify(options);assert.equal(Practice.plan({...options,dueReviewMinutes:120}).selected.length,0);assert.equal(JSON.stringify(options),before);
+});
+
+function assessmentRecord(material,id,time){const start=time-60000,artifact={schema:1,mode:'assessment',courseDay:2,materialVersion:'1',exposureAtStart:'unseen',startedAt:new Date(start).toISOString(),answers:{q1:'red'},text:'',transcript:'',audioAvailable:true,audioCompleted:true,transcriptViewed:false,interrupted:false};return{id,materialId:material.id,materialVersion:'1',skill:material.skill,kind:'original',source:'course-player',exposure:'unseen',startedAt:new Date(start).toISOString(),submittedAt:new Date(time).toISOString(),activeSeconds:60,elapsedSeconds:60,assistance:{hint:false,answer:false,ai:false},evaluation:{method:'objective',result:'pass',score:1,maxScore:1},answer:JSON.stringify(artifact)};}
+
+test('practice-only public sources cannot become independent evidence even if an old artifact says assessment',()=>{
+ const material=publicMaterial(),now=Date.parse('2026-10-26T12:00:00.000Z'),record=assessmentRecord(material,'synthetic-old-assessment',now-1000);assert.equal(A.evidenceFor(record,material,{now}).pass,false);assert.equal(Adaptive.verifiedRecord(record,material,now),false);
+});
+
+test('shared mastery never counts two modalities of one practice-only source as two delayed unseen proofs',()=>{
+ const reading=publicMaterial(),listening=publicMaterial('supplement-a','listening'),now=Date.parse('2026-10-26T12:00:00.000Z'),records=[assessmentRecord(reading,'public-r',now-3*86400000),assessmentRecord(listening,'public-l',now-1000)],data={materials:[reading,listening],days:[],weeks:[]},profile=Year.mastery(data,records,{now,verifiedRecord:(record,material)=>A.evidenceFor(record,material,{now}).pass});assert.equal(profile.reading.evidenceCount,0);assert.equal(profile.listening.evidenceCount,0);assert.equal(A.gateMastery(records,data.materials,{now}).length,0);assert.equal(A.readiness(records,data.materials,{now}).ready,false);
+});
+
+test('current and frozen-source restrictions independently block certification while ordinary practice grading still works',()=>{
+ const publicSource=publicMaterial(),ordinary={...publicSource,source:{kind:'original',verification:'reviewed',rights:'原创'}},now=Date.parse('2026-10-26T12:00:00.000Z');
+ const bind=(record,snapshot)=>{const artifact=A.decodeArtifact(record);artifact.gradingPolicy='canonical-v2';artifact.objectiveGrading='canonical-v2';artifact.materialBinding={schema:1,contentHash:A.materialContentHash(snapshot),gradingPolicy:'canonical-v2',material:snapshot};return{...record,answer:JSON.stringify(artifact)};};
+ for(const [current,snapshot]of[[ordinary,publicSource],[publicSource,ordinary]]){const record=bind(assessmentRecord(current,'restricted-binding',now-1000),snapshot),before=JSON.stringify({current,snapshot,record});assert.equal(A.resolveArtifactMaterial(current,A.decodeArtifact(record),record).valid,true);assert.equal(A.gradeMaterialForArtifact(current,A.decodeArtifact(record)).correct,1,'practice correctness is still evaluated from its bound question');assert.equal(A.evidenceFor(record,current,{now}).pass,false);const profile=Year.mastery({materials:[current],days:[],weeks:[]},[record],{now,verifiedRecord:()=>true});assert.equal(profile.reading.evidenceCount,0,'a permissive caller cannot bypass either source restriction');assert.equal(JSON.stringify({current,snapshot,record}),before);}
+ const legitimate=assessmentRecord(ordinary,'ordinary-assessment',now-1000);assert.equal(A.evidenceFor(legitimate,ordinary,{now}).pass,true);const practice={...legitimate,id:'ordinary-practice',answer:JSON.stringify({...A.decodeArtifact(legitimate),mode:'practice'})};assert.equal(A.gradeMaterialForArtifact(ordinary,A.decodeArtifact(practice)).correct,1);assert.equal(A.evidenceFor(practice,ordinary,{now}).pass,false);
+});

@@ -1,0 +1,385 @@
+{
+  "id": "expand-w28-read-2",
+  "week": 28,
+  "skill": "reading",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 400,
+  "maxWords": 700,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "流程说明与学术阶段复测 · Independent new scenario: a panel comparing costs and public benefits",
+  "grammarFocus": "被动语态；顺序连接词；定语从句与分词短语的辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Riverside Community Panel: Weighing Costs and Public Benefits",
+  "instructions": "这是一份为B1–B2成人学习者设计的原创模拟阅读材料（非官方雅思测试，也不对应任何官方分数）。请先通读文章，理解一个社区小组如何比较项目成本与公共收益。然后完成10道阅读题（单选、填空、匹配、判断正误/未提及）。最后学习语法部分：本课新讲“被动语态”，并复习“顺序连接词”和“定语从句与分词短语的辨认”。所有题目和选项均为英文，解释为中文。填空答案必须与原文完全一致，并注意字数限制。",
+  "passage": "A. In the small town of Riverton, a community group called the Riverside Panel was formed last year. The panel was asked to compare three possible projects for the old riverside area. The town council wanted a clear report before any money was spent. The panel’s job was not to choose a favourite project but to show the costs and the public benefits of each one. The members met twice a month in the library, and their discussions were recorded by a volunteer. The final report was published in June and was sent to every household in Riverton.\n\nB. The first project, called the River Walk, would create a path for walking and cycling along the river. The path would be built by a local company, and the work would take about eight months. The cost was estimated at 1.2 million dollars. The panel noted that the River Walk would be used by families, runners, and older people who want a safe place to exercise. The benefits were described as “daily and free.” However, some members worried that the path might be damaged by floods in winter. The panel agreed that this risk should be studied further before construction begins.\n\nC. The second project was a small outdoor market near the bridge. The market would be opened on Saturdays and would be run by local farmers and craftspeople. The start-up cost was much lower, at 300,000 dollars. The panel found that the market would support about forty small businesses and would bring visitors into the town centre. The benefits would be economic and social: farmers would sell directly to customers, and neighbours would meet each other more often. The main problem was parking. The panel reported that the area around the bridge is already crowded on weekends, and new parking spaces would be needed. That extra cost was not included in the first estimate.\n\nD. The third project was a new community centre with a sports hall and a meeting room. The building would be designed by an architect from the city, and it would be paid for partly by the council and partly by a private donor. The total cost was 2.5 million dollars, the highest of the three. The panel said that the centre would be used all year, in all weather, and that it would offer classes for children and adults. The benefits were clear but the costs were high, and the panel warned that running costs, such as heating and staff, would continue for many years. The donor’s money would cover only the building, not the daily costs.\n\nE. After comparing the three projects, the panel wrote a short conclusion. It said that the River Walk had the lowest cost per user and the most daily benefits, but it also had the flood risk. The market had the lowest start-up cost and strong economic benefits, but it needed parking. The community centre had the widest range of benefits, but it was the most expensive to build and to run. The panel did not recommend one project. Instead, it suggested that the council should first pay for a flood study and a parking survey, and then decide. The report ended with a simple sentence: “Good decisions are made when costs and benefits are seen together.”",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the Riverside Panel asked to do?",
+      "options": [
+        "To choose the best project for the town",
+        "To compare the costs and public benefits of three projects",
+        "To build a new path along the river",
+        "To collect money from local families"
+      ],
+      "answers": [
+        "To compare the costs and public benefits of three projects"
+      ],
+      "explanation": "原文A段明确说“The panel was asked to compare three possible projects”，并且“to show the costs and the public benefits of each one”。因此选第二项。",
+      "evidence": "The panel was asked to compare three possible projects for the old riverside area."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How often did the panel members meet?",
+      "options": [
+        "Once a week",
+        "Twice a month",
+        "Every day",
+        "Once a year"
+      ],
+      "answers": [
+        "Twice a month"
+      ],
+      "explanation": "A段说“The members met twice a month in the library”，即每月两次。",
+      "evidence": "The members met twice a month in the library, and their discussions were recorded by a volunteer."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "The River Walk would cost about ______ dollars. (Write ONE number and ONE word.)",
+      "maxWords": 2,
+      "answers": [
+        "1.2 million"
+      ],
+      "explanation": "B段说“The cost was estimated at 1.2 million dollars.” 填空要求一个数字加一个词，因此填“1.2 million”。",
+      "evidence": "The cost was estimated at 1.2 million dollars."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which project had the lowest start-up cost?",
+      "options": [
+        "The River Walk",
+        "The outdoor market",
+        "The community centre",
+        "The flood study"
+      ],
+      "answers": [
+        "The outdoor market"
+      ],
+      "explanation": "C段说市场的启动成本“much lower, at 300,000 dollars”，是三个项目里最低的。",
+      "evidence": "The start-up cost was much lower, at 300,000 dollars."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What was the main problem with the outdoor market?",
+      "options": [
+        "It would be too expensive to build.",
+        "It would be damaged by floods.",
+        "It needed more parking spaces.",
+        "It would only open in winter."
+      ],
+      "answers": [
+        "It needed more parking spaces."
+      ],
+      "explanation": "C段说“The main problem was parking.” 并解释周末桥附近已经很拥挤，需要新的停车位。",
+      "evidence": "The main problem was parking."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "The community centre would be designed by an ______ from the city. (Write ONE word.)",
+      "maxWords": 1,
+      "answers": [
+        "architect"
+      ],
+      "explanation": "D段说“The building would be designed by an architect from the city”，因此填“architect”。",
+      "evidence": "The building would be designed by an architect from the city, and it would be paid for partly by the council and partly by a private donor."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which heading best describes paragraph D?",
+      "options": [
+        "A cheap market with parking problems",
+        "A wide range of benefits at a high cost",
+        "A path for walking and cycling",
+        "The panel’s final conclusion"
+      ],
+      "answers": [
+        "A wide range of benefits at a high cost"
+      ],
+      "explanation": "D段讲社区中心，成本最高（2.5 million），但收益范围最广（all year, all weather, classes for children and adults）。因此选第二项。",
+      "evidence": "The benefits were clear but the costs were high, and the panel warned that running costs, such as heating and staff, would continue for many years."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The panel recommended the River Walk as the best project.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "E段明确说“The panel did not recommend one project.” 因此“推荐River Walk为最佳项目”与原文矛盾，选False。",
+      "evidence": "The panel did not recommend one project."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The private donor agreed to pay the community centre’s daily running costs.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "D段说“The donor’s money would cover only the building, not the daily costs.” 因此捐赠者不支付日常运行成本，选False。",
+      "evidence": "The donor’s money would cover only the building, not the daily costs."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The council has already approved the flood study.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "E段只说小组建议“the council should first pay for a flood study and a parking survey”，但文章没有说议会是否已经批准或开始这项研究。所需事实（议会已批准）在文中缺失，因此选Not Given。",
+      "evidence": "it suggested that the council should first pay for a flood study and a parking survey, and then decide."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "compare",
+      "meaning": "比较",
+      "example": "The panel was asked to compare three possible projects for the old riverside area."
+    },
+    {
+      "word": "benefits",
+      "meaning": "益处，好处",
+      "example": "The panel’s job was not to choose a favourite project but to show the costs and the public benefits of each one."
+    },
+    {
+      "word": "estimate",
+      "meaning": "估计，估算",
+      "example": "That extra cost was not included in the first estimate."
+    },
+    {
+      "word": "construction",
+      "meaning": "建造，施工",
+      "example": "The panel agreed that this risk should be studied further before construction begins."
+    },
+    {
+      "word": "donor",
+      "meaning": "捐赠者",
+      "example": "The building would be designed by an architect from the city, and it would be paid for partly by the council and partly by a private donor."
+    },
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "it suggested that the council should first pay for a flood study and a parking survey, and then decide."
+    },
+    {
+      "word": "recommend",
+      "meaning": "推荐，建议",
+      "example": "The panel did not recommend one project."
+    },
+    {
+      "word": "conclusion",
+      "meaning": "结论",
+      "example": "After comparing the three projects, the panel wrote a short conclusion."
+    }
+  ],
+  "grammar": {
+    "title": "被动语态；顺序连接词；定语从句与分词短语的辨认",
+    "explanation": "本课新讲“被动语态”。当我们更关心“事情被做”而不是“谁做”时，用 be + 过去分词。例如原文“The path would be built by a local company.” 这里重点是路径会被建造，建造者用 by 引出。复习部分：顺序连接词（first, then, after, finally）帮助排列步骤；定语从句用 who/which/that 补充说明名词；分词短语用 -ing 或 -ed 开头，省略主语和 be 动词，例如“called the River Walk”等于“which is called the River Walk”。注意：被动语态是本课新规则，顺序连接词和分词短语是复习内容。",
+    "example": "The path would be built by a local company, and the work would take about eight months.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct passive sentence.",
+        "options": [
+          "The report published last week.",
+          "The report was published last week.",
+          "The report is publish last week.",
+          "The report publishing last week."
+        ],
+        "answers": [
+          "The report was published last week."
+        ],
+        "explanation": "被动语态结构为 be + 过去分词。last week 表示过去，因此用 was published。",
+        "evidence": "The final report was published in June and was sent to every household in Riverton."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct passive question.",
+        "options": [
+          "When was the new library opened?",
+          "When did the new library opened?",
+          "When the new library was opened?",
+          "When opened the new library?"
+        ],
+        "answers": [
+          "When was the new library opened?"
+        ],
+        "explanation": "被动语态疑问句把 be 动词提前：When + was + 主语 + 过去分词。",
+        "evidence": "The market would be opened on Saturdays and would be run by local farmers and craftspeople."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a relative clause.",
+        "options": [
+          "The man who fixes the bridge is my uncle.",
+          "The man who fix the bridge is my uncle.",
+          "The man which fixes the bridge is my uncle.",
+          "The man fixes the bridge who is my uncle."
+        ],
+        "answers": [
+          "The man who fixes the bridge is my uncle."
+        ],
+        "explanation": "定语从句用 who 指人，从句动词要与先行词一致，the man 是单数，用 fixes。",
+        "evidence": "The panel noted that the River Walk would be used by families, runners, and older people who want a safe place to exercise."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct participle phrase.",
+        "options": [
+          "The building designed by a local architect looks modern.",
+          "The building designing by a local architect looks modern.",
+          "The building which designed by a local architect looks modern.",
+          "The building design by a local architect looks modern."
+        ],
+        "answers": [
+          "The building designed by a local architect looks modern."
+        ],
+        "explanation": "过去分词短语 designed by... 修饰 building，表示被动关系，相当于 which was designed by...。",
+        "evidence": "The building would be designed by an architect from the city, and it would be paid for partly by the council and partly by a private donor."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct order word to complete the sentence: ______, the panel collected the costs; ______, they compared the benefits.",
+        "options": [
+          "First / then",
+          "Then / first",
+          "Finally / first",
+          "After / before"
+        ],
+        "answers": [
+          "First / then"
+        ],
+        "explanation": "顺序连接词 first 表示第一步，then 表示下一步。",
+        "evidence": "After comparing the three projects, the panel wrote a short conclusion."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct passive form: The new parking spaces ______ next year.",
+        "options": [
+          "will be built",
+          "will build",
+          "are build",
+          "will been built"
+        ],
+        "answers": [
+          "will be built"
+        ],
+        "explanation": "一般将来时被动语态为 will be + 过去分词，因此选 will be built。",
+        "evidence": "new parking spaces would be needed."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Which sentence contains a reduced relative clause (participle phrase)?",
+        "options": [
+          "The market run by local farmers opens on Saturdays.",
+          "The market runs by local farmers opens on Saturdays.",
+          "The market is run local farmers opens on Saturdays.",
+          "The market running local farmers opens on Saturdays."
+        ],
+        "answers": [
+          "The market run by local farmers opens on Saturdays."
+        ],
+        "explanation": "run by local farmers 是过去分词短语，修饰 market，相当于 which is run by local farmers。",
+        "evidence": "The market would be opened on Saturdays and would be run by local farmers and craftspeople."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct passive sentence with a modal verb.",
+        "options": [
+          "The flood risk should be studied further.",
+          "The flood risk should studied further.",
+          "The flood risk should be study further.",
+          "The flood risk should is studied further."
+        ],
+        "answers": [
+          "The flood risk should be studied further."
+        ],
+        "explanation": "情态动词被动语态为 modal + be + 过去分词，因此选 should be studied。",
+        "evidence": "The panel agreed that this risk should be studied further before construction begins."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit parks or rivers in your town?",
+        "What do you like to do outside on weekends?",
+        "Do you think new buildings are important for a town? Why?",
+        "Have you ever joined a community group or meeting?"
+      ],
+      "part2": "Describe a time when you compared two or more choices before making a decision. You should say: what the choices were; what costs and benefits you considered; who helped you decide; and explain why you chose the final option.",
+      "part3": [
+        "Why do some people prefer cheap projects to expensive ones?",
+        "How can a town balance public benefits and costs?",
+        "Should local people be asked before a new project starts? Why?",
+        "What kinds of public spaces are most useful for families?"
+      ]
+    },
+    "writing": "Write a short report (120–150 words) for a community group. Compare two possible projects for a local park: a small playground (low cost, good for families) and a sports centre (high cost, good for all ages). Use passive sentences and order words (first, then, finally). End with a short recommendation."
+  },
+  "rubric": {
+    "taskType": "Reading and Grammar Practice (B1–B2, simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "dc7c4def66cf69b7864f1de176b2f9c9e0fafa90c0fe04169399dfbac1aec62e"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

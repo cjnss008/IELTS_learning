@@ -1,0 +1,396 @@
+{
+  "id": "expand-w47-listen-2",
+  "week": 47,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "口语专项：日常问答与两分钟展开 · Independent new scenario: a panel comparing privacy and public-interest claims",
+  "grammarFocus": "叙事时态、描述从句、原因与例子；减少反复出现的基础错误。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Privacy or Public Interest? A Panel Weighs the Evidence",
+  "instructions": "这是一份模拟教学材料，不是官方雅思试题，也不代表任何分数。先听/读对话，注意说话人如何用叙事时态、描述从句和原因例子来展开观点。然后完成10道题（单选、填空、判断）。填空题答案必须与原文完全一致，且不超过字数限制。语法部分先看中文讲解，再做8道新句子的练习。口语和写作任务用英语完成。",
+  "transcript": "Host: Good evening. Tonight we ask a simple but difficult question: when does the public's right to know beat a person's right to privacy? Our panel has three guests. Dr. Lin, a media lawyer. Mr. Carter, a former newspaper editor. And Ms. Okafor, a data-protection adviser. Dr. Lin, you wrote a report last year. What did you find?\n\nDr. Lin: We looked at forty court cases. In most of them, the judge said the public interest was strong because the story showed a real risk to safety. But in twelve cases, the judge said the privacy claim was stronger. The reason was simple: the information was only embarrassing, not dangerous.\n\nHost: Mr. Carter, you edited a paper for twenty years. Did you ever publish a story that you later regretted?\n\nMr. Carter: Yes, once. We ran a story about a teacher who had a second job. The story was true, but it was not important. The teacher lost her job, and I still feel bad about it. That was a mistake. We should have asked: who does this help?\n\nMs. Okafor: I agree with that question. But I want to add a warning. A story that seems small can become big online. Last month, a hospital shared a patient's name by accident. The name was in a file that a journalist received. The journalist did not publish it, and that was the right choice. The public did not need the name. The public needed the safety report.\n\nHost: Dr. Lin, is there a clear rule?\n\nDr. Lin: There is no single rule. But courts often ask three things. First, is the person powerful or public? Second, is the fact private or already known? Third, will publishing stop harm or cause harm? If the answer to the last question is 'cause harm', the privacy claim usually wins.\n\nMr. Carter: I would add a fourth question: can we tell the story without the private detail? Often we can. When I was an editor, we sometimes changed a name or a street. The story still worked. Readers understood the point.\n\nMs. Okafor: That is a good practice. But I want to be fair to journalists. Some stories are important because of a name. If a mayor uses public money for a private trip, the name matters. The public interest is strong there. The difference is that the mayor is responsible for public money.\n\nHost: So the line is responsibility?\n\nMs. Okafor: Partly. Responsibility, power, and harm. If a person has power and the fact shows harm, publish. If the person has no power and the fact only embarrasses, do not publish.\n\nDr. Lin: I would say 'usually do not publish'. There can be exceptions. But the burden should be on the publisher to explain why the private detail is necessary.\n\nMr. Carter: And that explanation should be public. When we published the teacher story, we did not explain why. We just said it was true. True is not enough.\n\nHost: One last question. What should a young journalist do tomorrow?\n\nMs. Okafor: Ask three questions before you publish. Who is hurt? Who is helped? Is the private detail necessary? Write the answers down. If you cannot write them, do not publish.\n\nMr. Carter: And talk to your editor early. Do not wait until the story is finished.\n\nDr. Lin: And keep a record. A record protects you and the person in the story.\n\nHost: Thank you all. That is a useful place to stop.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many court cases did Dr. Lin's team look at?",
+      "options": [
+        "Twelve",
+        "Forty",
+        "Twenty",
+        "Three"
+      ],
+      "answers": [
+        "Forty"
+      ],
+      "explanation": "Dr. Lin 明确说 “We looked at forty court cases.” 十二是隐私主张更强的案件数，不是总数。",
+      "evidence": "We looked at forty court cases."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why did the judge say the privacy claim was stronger in twelve cases?",
+      "options": [
+        "The information was only embarrassing, not dangerous.",
+        "The person was a mayor.",
+        "The story was not true.",
+        "The journalist was young."
+      ],
+      "answers": [
+        "The information was only embarrassing, not dangerous."
+      ],
+      "explanation": "Dr. Lin 说这十二个案件中隐私主张更强，原因是 “the information was only embarrassing, not dangerous”。",
+      "evidence": "The reason was simple: the information was only embarrassing, not dangerous."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What was Mr. Carter's story about?",
+      "options": [
+        "A mayor's private trip",
+        "A hospital safety report",
+        "A teacher who had a second job",
+        "A journalist who changed a name"
+      ],
+      "answers": [
+        "A teacher who had a second job"
+      ],
+      "explanation": "Mr. Carter 说 “We ran a story about a teacher who had a second job.”",
+      "evidence": "We ran a story about a teacher who had a second job."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What did the journalist do with the patient's name?",
+      "options": [
+        "Published it online",
+        "Gave it to the hospital",
+        "Did not publish it",
+        "Changed it to a street name"
+      ],
+      "answers": [
+        "Did not publish it"
+      ],
+      "explanation": "Ms. Okafor 说 “The journalist did not publish it, and that was the right choice.”",
+      "evidence": "The journalist did not publish it, and that was the right choice."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE word from the transcript: The public needed the ______ report.",
+      "maxWords": 1,
+      "answers": [
+        "safety"
+      ],
+      "explanation": "原文说 “The public needed the safety report.” 空格处应填 safety。",
+      "evidence": "The public needed the safety report."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE word from the transcript: The burden should be on the ______ to explain why the private detail is necessary.",
+      "maxWords": 1,
+      "answers": [
+        "publisher"
+      ],
+      "explanation": "Dr. Lin 说 “the burden should be on the publisher to explain why the private detail is necessary.”",
+      "evidence": "But the burden should be on the publisher to explain why the private detail is necessary."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "According to Dr. Lin, courts often ask three things. Which one is NOT one of them?",
+      "options": [
+        "Is the person powerful or public?",
+        "Is the fact private or already known?",
+        "Will publishing stop harm or cause harm?",
+        "Did the journalist write a book?"
+      ],
+      "answers": [
+        "Did the journalist write a book?"
+      ],
+      "explanation": "Dr. Lin 列出的三个问题是：是否权力/公众人物、事实是否私密或已知、发表会阻止还是造成伤害。写书不在其中。",
+      "evidence": "First, is the person powerful or public? Second, is the fact private or already known? Third, will publishing stop harm or cause harm?"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What did Mr. Carter say about the teacher story?",
+      "options": [
+        "It was not true.",
+        "It was true but not important.",
+        "It helped the public a lot.",
+        "It was about a mayor."
+      ],
+      "answers": [
+        "It was true but not important."
+      ],
+      "explanation": "Mr. Carter 说 “The story was true, but it was not important.”",
+      "evidence": "The story was true, but it was not important."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Ms. Okafor says a mayor's name never matters in a story about public money.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Ms. Okafor 说 “If a mayor uses public money for a private trip, the name matters.” 这与题干相反，因此是 False。",
+      "evidence": "If a mayor uses public money for a private trip, the name matters."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: Dr. Lin says there is a single clear rule for all cases.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Dr. Lin 明确说 “There is no single rule.” 因此题干为 False。",
+      "evidence": "There is no single rule."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "privacy",
+      "meaning": "隐私",
+      "example": "Tonight we ask a simple but difficult question: when does the public's right to know beat a person's right to privacy?"
+    },
+    {
+      "word": "panel",
+      "meaning": "专家小组；讨论小组",
+      "example": "Our panel has three guests."
+    },
+    {
+      "word": "burden",
+      "meaning": "责任；负担",
+      "example": "But the burden should be on the publisher to explain why the private detail is necessary."
+    },
+    {
+      "word": "embarrassing",
+      "meaning": "令人尴尬的",
+      "example": "The reason was simple: the information was only embarrassing, not dangerous."
+    },
+    {
+      "word": "regretted",
+      "meaning": "后悔（regret 的过去式）",
+      "example": "Did you ever publish a story that you later regretted?"
+    },
+    {
+      "word": "exceptions",
+      "meaning": "例外",
+      "example": "There can be exceptions."
+    },
+    {
+      "word": "necessary",
+      "meaning": "必要的",
+      "example": "Is the private detail necessary?"
+    },
+    {
+      "word": "record",
+      "meaning": "记录",
+      "example": "And keep a record."
+    }
+  ],
+  "grammar": {
+    "title": "叙事时态、描述从句、原因与例子",
+    "explanation": "本课重点是把过去发生的事讲清楚，并用从句补充信息。第一，叙事时态：讲过去的事用一般过去时（we looked, I edited, she lost），讲更早的事可用过去完成时（had shared）。第二，描述从句：用 who/that/which 给名词加信息，如 a teacher who had a second job。第三，原因与例子：用 because / the reason was / for example 引出原因或例子，让观点有支撑。注意减少基础错误：主语和动词要一致（the public needs），可数名词单数前要有限定词（a story, the name），不要漏掉 be 动词（the story was true）。",
+    "example": "We ran a story about a teacher who had a second job. The story was true, but it was not important.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Last year, the editor publish a story about a teacher.",
+          "Last year, the editor published a story about a teacher.",
+          "Last year, the editor has published a story about a teacher.",
+          "Last year, the editor publishing a story about a teacher."
+        ],
+        "answers": [
+          "Last year, the editor published a story about a teacher."
+        ],
+        "explanation": "Last year 表示过去，谓语用一般过去时 published。has published 是现在完成时，不与明确过去时间连用；publish/publishing 形式错误。",
+        "evidence": "We ran a story about a teacher who had a second job."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The journalist who received the file did not publish the name.",
+          "The journalist which received the file did not publish the name.",
+          "The journalist whom received the file did not publish the name.",
+          "The journalist what received the file did not publish the name."
+        ],
+        "answers": [
+          "The journalist who received the file did not publish the name."
+        ],
+        "explanation": "先行词是人（the journalist），描述从句用 who 作主语。which 指物；whom 作宾语；what 不能这样引导定语从句。",
+        "evidence": "The name was in a file that a journalist received."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The judge said the privacy claim was stronger because the information was only embarrassing.",
+          "The judge said the privacy claim was stronger because the information were only embarrassing.",
+          "The judge said the privacy claim was stronger because the information is only embarrassing yesterday.",
+          "The judge said the privacy claim was stronger because of the information only embarrassing."
+        ],
+        "answers": [
+          "The judge said the privacy claim was stronger because the information was only embarrassing."
+        ],
+        "explanation": "because 引导原因从句；information 不可数，be 动词用 was。were 与不可数名词不一致；yesterday 与 is 冲突；because of 后应接名词短语，不能接完整从句。",
+        "evidence": "The reason was simple: the information was only embarrassing, not dangerous."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "If a mayor use public money for a private trip, the name matter.",
+          "If a mayor uses public money for a private trip, the name matters.",
+          "If a mayor using public money for a private trip, the name matters.",
+          "If a mayor uses public money for a private trip, the name matter."
+        ],
+        "answers": [
+          "If a mayor uses public money for a private trip, the name matters."
+        ],
+        "explanation": "主语 a mayor 是第三人称单数，动词用 uses；主句主语 the name 也是单数，动词用 matters。",
+        "evidence": "If a mayor uses public money for a private trip, the name matters."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We should asked who does this help.",
+          "We should have asked who this helps.",
+          "We should have ask who this help.",
+          "We should have asked who does this help?"
+        ],
+        "answers": [
+          "We should have asked who this helps."
+        ],
+        "explanation": "should have + 过去分词表示对过去的遗憾或批评：should have asked。宾语从句用陈述语序 who this helps，不用 does。",
+        "evidence": "We should have asked: who does this help?"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The hospital shared a patient's name by accident last month.",
+          "The hospital share a patient's name by accident last month.",
+          "The hospital has shared a patient's name by accident last month.",
+          "The hospital sharing a patient's name by accident last month."
+        ],
+        "answers": [
+          "The hospital shared a patient's name by accident last month."
+        ],
+        "explanation": "last month 是明确过去时间，用一般过去时 shared。share 形式错误；has shared 不与 last month 连用；sharing 不能单独作谓语。",
+        "evidence": "Last month, a hospital shared a patient's name by accident."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The story that we published was true, but it was not important.",
+          "The story what we published was true, but it was not important.",
+          "The story who we published was true, but it was not important.",
+          "The story which we published it was true, but it was not important."
+        ],
+        "answers": [
+          "The story that we published was true, but it was not important."
+        ],
+        "explanation": "先行词是物（the story），描述从句用 that/which；what 不能这样用；who 指人；which 从句中不能再加 it。",
+        "evidence": "The story was true, but it was not important."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The public need the safety report, not the name.",
+          "The public needs the safety report, not the name.",
+          "The public is need the safety report, not the name.",
+          "The public needing the safety report, not the name."
+        ],
+        "answers": [
+          "The public needs the safety report, not the name."
+        ],
+        "explanation": "the public 作整体时视为单数，动词用 needs。need 缺第三人称单数；is need 结构错误；needing 不能单独作谓语。",
+        "evidence": "The public needed the safety report."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often read news stories online?",
+        "What kind of news do you trust most?",
+        "Have you ever shared a story without checking it?",
+        "Is privacy important to you? Why?"
+      ],
+      "part2": "Describe a time when you had to decide whether to share someone's private information. You should say: what the information was; who was involved; why you had to decide; and explain what you did and why.",
+      "part3": [
+        "Should newspapers ever publish private details about famous people?",
+        "How can young journalists learn to balance privacy and public interest?",
+        "Do you think online sharing makes privacy harder to protect?",
+        "What rules would you suggest for schools that share student information?"
+      ]
+    },
+    "writing": "You are a student editor of a school newsletter. A classmate wants to publish a story about a teacher's second job. Write a short email (120–160 words) to the classmate. Explain why the story may be a privacy problem, give one example of a better choice, and suggest what information the newsletter should include instead."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (panel discussion) + grammar focus + speaking/writing transfer"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "78c8f6e37866f7c56d6db0e22784e9afa9087deb8363816ec563797e7fcd26ba"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

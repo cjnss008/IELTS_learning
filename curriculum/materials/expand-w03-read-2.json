@@ -1,0 +1,348 @@
+{
+  "id": "expand-w03-read-2",
+  "week": 3,
+  "skill": "reading",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "家庭、数量与拥有 · Independent new scenario: a neighbourhood club with different members",
+  "grammarFocus": "we / they；are；规则复数；my / your / his / her；have / has。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Maple Street Club",
+  "instructions": "阅读短文，完成8道题。所有题目和选项均为英文。注意：we/they 后用 are；my/your/his/her 后接名词；have 用于 I/you/we/they，has 用于 he/she。答案必须来自原文。本材料为模拟教学材料，不是官方考试。",
+  "passage": "A. This is the Maple Street Club. We are a small club. We meet on Fridays. My name is Anna. I am the club leader. Your name is on the list. His name is Ben. Her name is Cara. They are new members.\n\nB. Ben and Cara are students. They have two books. We have a big table. I have a red bag. You have a blue pen. Ben has a small dog. Cara has a white cat. The dog and the cat are friends.\n\nC. We are happy. They are happy, too. The club is fun.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the club name?",
+      "options": [
+        "The Maple Street Club",
+        "The Park Club",
+        "The Friday Club"
+      ],
+      "answers": [
+        "The Maple Street Club"
+      ],
+      "explanation": "原文第一句明确写出俱乐部名称。",
+      "evidence": "This is the Maple Street Club."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "When do they meet?",
+      "options": [
+        "On Fridays",
+        "On Mondays",
+        "On Sundays"
+      ],
+      "answers": [
+        "On Fridays"
+      ],
+      "explanation": "原文说 We meet on Fridays。",
+      "evidence": "We meet on Fridays."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Who is the club leader?",
+      "options": [
+        "Anna",
+        "Ben",
+        "Cara"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "原文说 My name is Anna. I am the club leader。",
+      "evidence": "My name is Anna. I am the club leader."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Ben and Cara are ___.",
+      "options": [
+        "new members",
+        "teachers",
+        "club leaders"
+      ],
+      "answers": [
+        "new members"
+      ],
+      "explanation": "原文说 They are new members。",
+      "evidence": "They are new members."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Ben and Cara have ___ books. (one word)",
+      "maxWords": 1,
+      "answers": [
+        "two"
+      ],
+      "explanation": "原文说 They have two books。",
+      "evidence": "They have two books."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Ben has a small ___ . (one word)",
+      "maxWords": 1,
+      "answers": [
+        "dog"
+      ],
+      "explanation": "原文说 Ben has a small dog。",
+      "evidence": "Ben has a small dog."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What colour is Cara's cat?",
+      "options": [
+        "White",
+        "Black",
+        "Brown"
+      ],
+      "answers": [
+        "White"
+      ],
+      "explanation": "原文说 Cara has a white cat。",
+      "evidence": "Cara has a white cat."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Are the dog and the cat friends?",
+      "options": [
+        "Yes, they are.",
+        "No, they are not.",
+        "We do not know."
+      ],
+      "answers": [
+        "Yes, they are."
+      ],
+      "explanation": "原文说 The dog and the cat are friends。",
+      "evidence": "The dog and the cat are friends."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "club",
+      "meaning": "俱乐部",
+      "example": "This is the Maple Street Club."
+    },
+    {
+      "word": "meet",
+      "meaning": "见面；聚会",
+      "example": "We meet on Fridays."
+    },
+    {
+      "word": "leader",
+      "meaning": "领导者；负责人",
+      "example": "I am the club leader."
+    },
+    {
+      "word": "list",
+      "meaning": "名单",
+      "example": "Your name is on the list."
+    },
+    {
+      "word": "members",
+      "meaning": "成员",
+      "example": "They are new members."
+    },
+    {
+      "word": "students",
+      "meaning": "学生",
+      "example": "Ben and Cara are students."
+    },
+    {
+      "word": "table",
+      "meaning": "桌子",
+      "example": "We have a big table."
+    },
+    {
+      "word": "friends",
+      "meaning": "朋友",
+      "example": "The dog and the cat are friends."
+    }
+  ],
+  "grammar": {
+    "title": "we / they + are；my / your / his / her；have / has",
+    "explanation": "新规则：we（我们）和 they（他们/她们/它们）后面用 are。例如：We are happy. They are happy. 否定：We are not happy. They are not happy. 一般疑问：Are they happy? 回答：Yes, they are. / No, they are not. 形容词性物主代词：my（我的）、your（你的/你们的）、his（他的）、her（她的），后面必须接名词。例如：my bag, your pen, his dog, her cat。动词 have 表示“有”：I / you / we / they 用 have；he / she 用 has。例如：We have a table. Ben has a dog. 复习：I am, you are, he/she is（已学）。",
+    "example": "We are happy. They are happy, too.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "We ___ a big table.",
+        "options": [
+          "have",
+          "has",
+          "are"
+        ],
+        "answers": [
+          "have"
+        ],
+        "explanation": "we 后用 have。",
+        "evidence": "We have a big table."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Ben ___ a small dog.",
+        "options": [
+          "have",
+          "has",
+          "are"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "Ben 是第三人称单数，用 has。",
+        "evidence": "Ben has a small dog."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "They ___ new members.",
+        "options": [
+          "are",
+          "is",
+          "am"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "they 后用 are。",
+        "evidence": "They are new members."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "___ name is Cara. (her / his / my)",
+        "options": [
+          "Her",
+          "His",
+          "My"
+        ],
+        "answers": [
+          "Her"
+        ],
+        "explanation": "Cara 是女性，用 her。",
+        "evidence": "Her name is Cara."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "We ___ happy.",
+        "options": [
+          "are",
+          "is",
+          "am"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "we 后用 are。",
+        "evidence": "We are happy."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "___ pen is blue. (your / you / yours)",
+        "options": [
+          "Your",
+          "You",
+          "Yours"
+        ],
+        "answers": [
+          "Your"
+        ],
+        "explanation": "后面有名词 pen，用形容词性物主代词 your。",
+        "evidence": "You have a blue pen."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Are they happy? — Yes, ___.",
+        "options": [
+          "they are",
+          "they is",
+          "they am"
+        ],
+        "answers": [
+          "they are"
+        ],
+        "explanation": "they 的肯定回答用 they are。",
+        "evidence": "They are happy, too."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "We ___ not sad.",
+        "options": [
+          "are",
+          "is",
+          "am"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "we 的否定用 are not。",
+        "evidence": "We are happy."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Do you have a club?",
+        "Are you a student?",
+        "What is your favourite colour?"
+      ],
+      "part2": "Describe a club you know. You should say:",
+      "part2Bullets": [
+        "what the club is",
+        "who the members are",
+        "what they have",
+        "why you like it"
+      ],
+      "part3": [
+        "Are clubs good for people?",
+        "Do you have a pet?",
+        "What do you have in your bag?",
+        "Are you happy today?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about a club. Use we/they + are, my/your/his/her, and have/has. Example: We are a small club. We have a big table."
+  },
+  "rubric": {
+    "taskType": "A1 reading and grammar practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "4df18342c720e625b9c14e03f5d0a6b4f665489277091cf999f336a9f69787f9"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

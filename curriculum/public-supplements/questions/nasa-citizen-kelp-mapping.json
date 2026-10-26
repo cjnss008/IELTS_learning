@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-citizen-kelp-mapping-comprehension-v2",
+  "version": "2",
+  "sourceId": "nasa-citizen-kelp-mapping",
+  "sourceVersion": "2",
+  "sourceTextSha256": "e81b94bfe1355f685a7b22a79066cdb5f103a3cd50439bb9d36b4951ddd1d6f0",
+  "sourceContentHash": "e81b94bfe1355f685a7b22a79066cdb5f103a3cd50439bb9d36b4951ddd1d6f0",
+  "exposureGroup": "public-source:nasa-citizen-kelp-mapping",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What observation problem made repeated satellite records useful for this research?",
+      "options": [
+        "The records remove regional seasonal differences by using one maximum forest size.",
+        "The records supply nutrient measurements missing from coastal field studies.",
+        "Kelp changes on several time scales, so consistent repeated observations are needed.",
+        "A single Californian field survey could then represent worldwide kelp changes."
+      ],
+      "answers": [
+        "Kelp changes on several time scales, so consistent repeated observations are needed."
+      ],
+      "evidence": "Kyle Cavanaugh, then a UCSB graduate student, had an idea. “These forests change so rapidly and on a variety of different time scales—months to years to decades—so we needed a long record with consistent, repeated observations,” Cavanaugh said. He devised a method to use Landsat satellite data to monitor kelp forests.",
+      "evidenceOffsets": {
+        "start": 2472,
+        "end": 2791,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "研究问题是海藻林在多时间尺度迅速改变，需要一致记录。卫星不是把一个地区的实地样本当全球，也没有抹去地区季节差异；营养物影响生长，但不是此处需要一致海藻影像记录所要补测的对象。",
+      "understanding": "research-purpose",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does near-infrared information help separate kelp from the surrounding water?",
+      "options": [
+        "Visible ocean colour makes near-infrared information unnecessary for classification.",
+        "Vegetation reflects near-infrared light differently from the surrounding water.",
+        "Water reflects near-infrared light more strongly than the floating vegetation.",
+        "The method identifies kelp from water temperature rather than reflected light."
+      ],
+      "answers": [
+        "Vegetation reflects near-infrared light differently from the surrounding water."
+      ],
+      "evidence": "“The near-infrared is key for identifying kelp from surrounding water,” Cavanaugh explained. “Like other types of photosynthesizing vegetation, giant kelp have high reflectance in the near infrared. This makes the kelp canopy really stand out from the surrounding water.”",
+      "evidenceOffsets": {
+        "start": 3884,
+        "end": 4155,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "关键是海藻与水的近红外反射/吸收差异。错误项分别倒置相对反射、把光谱方法改成测温，或抹去文中强调的近红外作用。",
+      "understanding": "method-and-evidence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why did the team seek help from citizen scientists instead of relying entirely on automated classification?",
+      "options": [
+        "The automated methods had not yet reached an acceptable level of accuracy.",
+        "The team wanted classifications that could be used before scientific verification.",
+        "Automated methods worked globally but needed more field diaries for California.",
+        "Citizen observations were intended to replace the existing satellite archive."
+      ],
+      "answers": [
+        "The automated methods had not yet reached an acceptable level of accuracy."
+      ],
+      "evidence": "“I’ve spent many, many years staring at satellite imagery trying to come up with new ways to extract the kelp signal from that imagery, and it is very time and work intensive,” said Cavanaugh, now based at the University of California–Los Angeles. “But automated classification methods just don’t produce acceptable levels of accuracy yet.”",
+      "evidenceOffsets": {
+        "start": 8502,
+        "end": 8842,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "当时自动分类的准确性不足，因此需要人参与识别，同时仍保留交叉核验。不是急于绕过验证，也没有说全球自动化已成功而只缺加州日志；公民分析的正是已有卫星影像，并非替换它。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What happens before a citizen scientist’s mapped kelp patch is used to study trends?",
+      "options": [
+        "The science team uses it to set a trend before other participants examine it.",
+        "It is accepted when its near-infrared colour matches that of the coastal water.",
+        "It is matched to one Californian field site and then applied to other coastlines.",
+        "Other participants crosscheck it, and the science team then verifies it."
+      ],
+      "answers": [
+        "Other participants crosscheck it, and the science team then verifies it."
+      ],
+      "evidence": "The Floating Forest concept is all about getting more eyeballs on Landsat imagery. Citizen scientists—recruited via the Internet—are instructed in how to hunt for giant kelp in satellite imagery. They are then given Landsat images and asked to outline any giant kelp patches that they find. Their findings are crosschecked with those from other citizen scientists and then passed to the science team for verification. The size and location of these forests are catalogued and used to study global kelp trends.",
+      "evidenceOffsets": {
+        "start": 9279,
+        "end": 9788,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "流程先跨参与者核对，再交研究团队验证。先用来定趋势是次序颠倒；海藻的光谱应与水不同；一个加州样点也不是全球分类的唯一通过标准。",
+      "understanding": "process-sequence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How could protecting rock lobsters help giant kelp off Tasmania?",
+      "options": [
+        "Protection could directly restore the cold water that once reached Tasmania.",
+        "Protection could reduce human kelp harvesting, described as the main cause of the loss.",
+        "More lobsters could reduce the sea urchins that feed on kelp.",
+        "Protection could increase urchin grazing, which the kelp needs for recovery."
+      ],
+      "answers": [
+        "More lobsters could reduce the sea urchins that feed on kelp."
+      ],
+      "evidence": "Cool, subarctic waters once bathed Tasmania’s east coast, but warmer waters (as much as 2.5ºC (4.3ºF) warmer) have brought many invasive species that feast on giant kelp. Compounding the matter, the overfishing of rock lobsters has removed a key predator of the long-spined sea urchins (which eat kelp). The ecosystem’s new protected status could help curb overfishing and restore the lobsters, which would help diminish the threat from sea urchins.",
+      "evidenceOffsets": {
+        "start": 10631,
+        "end": 11080,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文是龙虾捕食海胆、海胆吃海藻，恢复捕食者可降低啃食压力。增加海胆啃食会反向作用；保护龙虾不会直接让海水变冷；人类海藻采收的负面影响在前文被描述为很小，不能换成主要损失原因。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Which underwater feature near San Diego contained a newly mapped kelp patch? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "Cortez Bank"
+      ],
+      "evidence": "Already a discovery has been made. A citizen scientist found a large patch of giant kelp on the Cortez Bank, an underwater seamount about 160 kilometers (100 miles) off the coast of San Diego. While giant kelp on this submerged island—which comes within feet of the surface at some points—had been documented by divers and fishermen in the past, the full extent of the kelp beds was unknown.",
+      "evidenceOffsets": {
+        "start": 11663,
+        "end": 12054,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "新发现的地点为Cortez Bank，原文把它解释为离San Diego约160公里的水下海山。Tasmania是另一地区案例，不是这里新制图的地点；本题只据文字中的地名作答，不需要看地图。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "8a3a96a35ff6890817eaa1cad25738d89aa71e969b9c8af0e31489dffbe041f7",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

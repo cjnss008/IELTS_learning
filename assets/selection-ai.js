@@ -27,6 +27,85 @@
   }
   const normalize = value => typeof value === 'string' ? value.replace(/\s+/g, ' ').trim() : '';
   const editable = element => Boolean(element && (element.isContentEditable || element.closest?.('input,textarea,select,[contenteditable="true"],[contenteditable=""]')));
+  // Explicit learning surfaces only: settings, credentials, imports and backups
+  // have no selection target, even if they contain English text.
+  const TRANSLATION_SURFACES = Object.freeze({
+    '今日学习.html':'#coursePlayerApp',
+    '开始学习.html':'#lesson',
+    '基础入门.html':'#foundationApp',
+    '词汇记忆.html':'#essentialVocabularyDashboard,#essentialVocabularyPractice,#memoryPractice',
+    '写作与AI辅导.html':'#questionBox,#customContext,#coachDraft,#coachFeedback,#revisionSection',
+    '写作补强.html':'#writingPathBody',
+    '口语练习.html':'#readingControls,#freeControls,#speechResults,#rawTranscript,#editedTranscript,#spokenTaskPrompt,#transcriptSegments,#spokenFeedback,#speechAdvice',
+    '无稿口语.html':'#dialogueTask,#dialogueQuestion,#dialogueHints,#dialogueTurns,#dialogueFeedback',
+    '生词复习.html':'#card-answer',
+    '单词分组学习.html':'#cards',
+    '陌生材料库.html':'#bankMaterials',
+    '每日学习计划.html':'#weekOverview,#materials,#taskList,#linkedEvidence',
+    '本地教材.html':'#textbookResults,#textbookProvenance',
+    '真人听力来源.html':'#humanSourceApp',
+    '评分校准.html':'#calibrationTask',
+    '个性化学习.html':'#personalEffects,#personalHistory',
+    '课程目标与资源.html':'main[data-ai-learning-root="true"]'
+  });
+  const TRANSLATION_BLOCKED='[hidden],[data-vocab-testing="true"],[data-assessment="true"],[data-mode="assessment"],[data-ai-translate-off],#writingPathTransfer,.selection-ai-panel,.selection-ai-trigger,.selection-ai-saved,script,style,nav,header,footer';
+  const TRANSLATION_PARAGRAPH='p,li,label,legend,td,th,blockquote,figcaption,h1,h2,h3,h4,strong.vocab-word,[data-ai-translate]';
+  function pageName(location) { try { return decodeURIComponent(String(location?.pathname||'').split('/').pop()||''); } catch (_) { return ''; } }
+  function translationSurface(element,page) {
+    if(!element||!TRANSLATION_SURFACES[page]||element.closest?.(TRANSLATION_BLOCKED))return null;
+    return element.closest?.(TRANSLATION_SURFACES[page])||null;
+  }
+  function translationTextControl(element,page) {
+    if(!translationSurface(element,page)||element.tagName?.toLowerCase()!=='textarea'||element.disabled||element.readOnly)return false;
+    return element.lang==='en'||element.getAttribute?.('lang')==='en'||['contextPrompt','editedTranscript','spokenTaskPrompt'].includes(element.id)||Boolean(element.closest?.('#courseOutput'));
+  }
+  function translationSnapshot(text,context,meta={}) {
+    const clean=String(text||'').trim();if(!clean||clean.length>MAX_SELECTION||!/[A-Za-z]/.test(clean)||meta.mode==='assessment'||!TRANSLATION_SURFACES[meta.page])return null;
+    const raw=String(context||''),at=raw.indexOf(clean);if(at<0)return null;
+    const from=Math.max(0,Math.min(at-600,raw.length-2000)),excerpt=raw.slice(from,from+2000);
+    if(!excerpt.includes(clean))return null;
+    return {kind:'translation',text:clean,context:excerpt,page:meta.page,mode:'practice',start:at-from,end:at-from+clean.length,sourceText:excerpt,materialId:meta.materialId,skill:meta.skill,verify:meta.verify||(()=>true),rect:meta.rect||{left:8,right:8,top:8,bottom:8}};
+  }
+  function captureTranslation(selection,doc,meta={}) {
+    if(meta.mode==='assessment'||meta.assessment||meta.vocabularyTesting)return null;
+    const control=doc?.activeElement;
+    if(translationTextControl(control,meta.page)&&Number.isInteger(control.selectionStart)&&control.selectionEnd>control.selectionStart){
+      const source=control.value,start=control.selectionStart,end=control.selectionEnd;
+      return translationSnapshot(source.slice(start,end),source,{...meta,rect:control.getBoundingClientRect?.(),verify:()=>control.isConnected!==false&&control.value===source&&!control.closest?.(TRANSLATION_BLOCKED)});
+    }
+    if(!selection||selection.isCollapsed||selection.rangeCount!==1)return null;
+    try{
+      const range=selection.getRangeAt(0),elementOf=n=>n?.nodeType===1?n:n?.parentElement,first=elementOf(range.startContainer),last=elementOf(range.endContainer);
+      if(editable(first)||editable(last)||!translationSurface(first,meta.page)||translationSurface(first,meta.page)!==translationSurface(last,meta.page))return null;
+      const paragraph=first.closest?.(TRANSLATION_PARAGRAPH);if(!paragraph||paragraph!==last.closest?.(TRANSLATION_PARAGRAPH))return null;
+      const text=range.toString(),source=paragraph.textContent;if(!source?.includes(text)||paragraph.closest?.(TRANSLATION_BLOCKED))return null;
+      const box=range.getBoundingClientRect?.()||paragraph.getBoundingClientRect?.();
+      return translationSnapshot(text,source,{...meta,rect:box,verify:()=>paragraph.isConnected!==false&&paragraph.textContent===source&&!paragraph.closest?.(TRANSLATION_BLOCKED)});
+    }catch(_){return null;}
+  }
+  function createTranslationController(options={}) {
+    let generation=0,active=null,last=null,state={phase:'idle',snapshot:null,feedback:'',model:'',threadId:'',remaining:0,history:[],error:'',code:'',cacheHit:false,offlineCache:false,truncated:false};
+    const emit=()=>options.onChange?.({...state,history:[]});
+    const patch=value=>{state={...state,...value};emit();};
+    function cancel(){generation++;active?.abort();active=null;if(state.phase==='loading')patch({phase:'cancelled',error:'已取消本次翻译。',code:'CANCELLED'});}
+    async function explain(snapshot){
+      if(snapshot?.kind!=='translation'||snapshot.mode!=='practice'||!snapshot.verify?.())return false;
+      cancel();const ticket=generation;last=snapshot;patch({phase:'loading',snapshot,feedback:'',model:'',error:'',code:''});
+      if(!isLocalOrigin(options.origin)){patch({phase:'error',error:'请从“启动学习.cmd”打开本机学习页，再使用划词翻译。',code:'LOCAL_SERVICE_REQUIRED'});return false;}
+      const fetchImpl=options.fetch||(typeof root.fetch==='function'?root.fetch.bind(root):null);if(!fetchImpl){patch({phase:'error',error:'本机 AI 服务暂不可用。',code:'SERVICE_UNAVAILABLE'});return false;}
+      const aborter=new AbortController();active=aborter;let timedOut=false;const timer=setTimeout(()=>{timedOut=true;aborter.abort();},options.timeout||TIMEOUT);
+      try{
+        const response=await fetchImpl('/api/ai/translate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:snapshot.text,context:snapshot.context,page:snapshot.page,mode:'practice'}),signal:aborter.signal,credentials:'same-origin',cache:'no-store',redirect:'error'});
+        const value=await response.json();if(ticket!==generation||!snapshot.verify())return false;
+        if(!response.ok||value.ok===false)throw apiError(value.error?.code||'TRANSLATION_FAILED',value.error?.message||'翻译未完成，请重试。');
+        if(value.feedbackFormat!=='text'||typeof value.feedback!=='string'||!value.feedback.trim()||value.feedback.length>MAX_FEEDBACK||typeof value.model!=='string'||!value.model||value.model.length>200||typeof value.promptVersion!=='string'||!value.promptVersion||value.assistance!==true)throw apiError('INVALID_RESPONSE','翻译返回内容不完整，请重试。');
+        await options.onAssistance?.(snapshot,value);if(ticket!==generation||!snapshot.verify())return false;
+        patch({phase:'done',snapshot,feedback:value.feedback,model:value.model,promptVersion:value.promptVersion});return true;
+      }catch(error){if(ticket!==generation)return false;patch({phase:'error',error:timedOut?'翻译等待超时，所选原文与输入均已保留，可重试。':error.message||'无法连接本机 AI 服务，请重试。',code:timedOut?'TIMEOUT':error.code||'SERVICE_UNAVAILABLE'});return false;}
+      finally{clearTimeout(timer);if(ticket===generation)active=null;}
+    }
+    return{explain,cancel,retry:()=>last?explain(last):false,reset(){cancel();last=null;patch({phase:'idle',snapshot:null,feedback:'',error:'',code:''});},getState:()=>({...state,history:[]})};
+  }
 
   function paragraphRanges(data) {
     if (!data?.lesson || typeof data.lesson.text !== 'string' || !Array.isArray(data.groups)) return [];
@@ -227,7 +306,8 @@
   }
   function init() {
     const doc = root.document;
-    if (!doc?.getElementById('lesson') && !doc?.getElementById('coursePlayerApp')) return;
+    const page=pageName(root.location),legacyPage=Boolean(doc?.getElementById('lesson')||doc?.getElementById('coursePlayerApp'));
+    if (!doc||!legacyPage&&!TRANSLATION_SURFACES[page]) return;
     const localOrigin = serviceOrigin(root.location.origin);
     function node(tag, className, text) { const element = doc.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; }
     const trigger = node('button', 'selection-ai-trigger', 'AI 详细解释'); trigger.type = 'button'; trigger.hidden = true;
@@ -270,6 +350,16 @@
     const preview = new URLSearchParams(root.location.search).get('preview') === '1';
     try { storage = root.sessionStorage; } catch (_) { storage = null; }
     let controller = createController({fetch: root.fetch?.bind(root), origin: root.location.origin, storage, cacheKey: root.IELTSProfiles?.scopeKey(preview ? 'ielts52-selection-ai-cache-preview-v1' : CACHE_KEY) || (preview ? 'ielts52-selection-ai-cache-preview-v1' : CACHE_KEY), onChange: render});
+    let assessment=false,vocabularyTesting=false,courseContext=null,activeController=controller;
+    async function translationAssistance(snapshot,value){
+      if(assessment||vocabularyTesting||courseContext?.mode==='assessment')throw apiError('ASSESSMENT_ASSISTANCE_DENIED','独立测评期间不提供翻译。');
+      if(snapshot.materialId&&snapshot.materialId===courseContext?.material?.id)courseContext.markAssistance?.('ai');
+      const R=root.IELTSRecords;if(!R?.record||!R.makeId)throw apiError('ASSISTANCE_RECORD_REQUIRED','辅助记录模块尚未就绪，请刷新本学习页后重试。');
+      const skill=snapshot.skill||(/词|单词/.test(page)?'vocabulary':/口语/.test(page)?'speaking':/写作/.test(page)?'writing':'grammar');
+      await R.record({id:R.makeId('translation'),materialId:snapshot.materialId||'translation-page-'+Object.keys(TRANSLATION_SURFACES).indexOf(page),title:'划词翻译：'+snapshot.text.slice(0,100),skill,source:'selection-ai-translation',answer:JSON.stringify({schema:1,page,selection:snapshot.text,context:snapshot.context,model:value.model,promptVersion:value.promptVersion}),minutes:0,activeSeconds:0,quantity:0,unit:'次',assistance:{hint:true,answer:false,ai:true},kind:'original',exposure:'seen',evaluation:{method:'none',result:'unverified',feedback:'练习中使用了词句翻译；本记录不代表独立作答、掌握或能力通过。'}});
+    }
+    let translationController=createTranslationController({fetch:root.fetch?.bind(root),origin:root.location.origin,onChange:render,onAssistance:translationAssistance});
+    savedSection.hidden=!legacyPage;
     let practiceAbort=null,practiceGeneration=0,practiceItem=null,practiceClock=null;
     function clearPractice(){practiceCancel.hidden=true;practiceAbort?.abort();practiceGeneration++;clearInterval(practiceClock);practiceClock=null;practiceItem=null;practiceQuestions.replaceChildren();practiceStatus.textContent='';}
     function practiceStorage(){return root.IELTSProfiles?.storage()||(preview?root.sessionStorage:root.localStorage);}
@@ -288,6 +378,9 @@
     function render(state) {
       const busy = state.phase === 'loading';
       if (state.phase === 'idle') { panel.hidden = true; return; }
+      const translating=state.snapshot?.kind==='translation';
+      heading.textContent=translating?'词句翻译与讲解':'词句 AI 详解';
+      hint.textContent=translating?'先给中文翻译，再解释当前词义和语法。题目只翻译文字；使用后会保存辅助记录。AI 解释仍需结合原文核对。':'默认按零基础详细解释：语境中的词义与功能词、句子主干、通俗例句和练习。AI 解释可能有误，请结合原文核对。';
       panel.hidden = false;
       selected.textContent = state.snapshot?.text || '';
       context.textContent = state.snapshot?.context || '';
@@ -303,15 +396,20 @@
       feedback.textContent = state.feedback;
       const newHistory = JSON.stringify(state.history);
       if (newHistory !== displayedHistory) { conversation.replaceChildren(); state.history.forEach(turn => { conversation.append(node('p', 'selection-ai-question', '追问：' + turn.question), node('div', 'selection-ai-feedback', turn.feedback)); }); displayedHistory = newHistory; }
-      followupForm.hidden = !state.feedback;
+      followupForm.hidden = translating||!state.feedback;
       ask.disabled = busy || !state.threadId || state.remaining < 1; question.disabled = ask.disabled;
       followupNote.textContent = state.threadId ? '还可追问 ' + state.remaining + ' 次。追问只围绕本次选区。' : '缓存或已过期解释不能直接追问；点击“重新解释”建立新会话。';
-      save.disabled = !state.snapshot || !root.IELTSNotebook?.add;
+      collect.hidden=translating;report.hidden=translating;
+      save.disabled = translating||!state.snapshot || !root.IELTSNotebook?.add;
       panel.setAttribute('aria-busy', String(busy));
-      practiceButton.disabled=busy||!state.threadId;practiceBox.hidden=!state.feedback&&!practiceItem;
-      if (state.phase === 'done' && state.snapshot) root.dispatchEvent(new CustomEvent('ielts:selection-assistance', {detail:{materialId:state.snapshot.materialId,lessonId:state.snapshot.lessonId}}));
+      practiceButton.disabled=busy||!state.threadId;practiceBox.hidden=translating||!state.feedback&&!practiceItem;
+      if (state.phase === 'done' && state.snapshot) root.dispatchEvent(new CustomEvent('ielts:selection-assistance', {detail:{materialId:state.snapshot.materialId,lessonId:state.snapshot.lessonId,page,kind:translating?'translation':'explanation',assistance:true}}));
     }
-    function selectionNow() { return captureSelection(root.getSelection?.(), currentData); }
+    function selectionNow() {
+      if(assessment||vocabularyTesting||currentData?.mode==='assessment'||courseContext?.mode==='assessment')return null;
+      const selection=root.getSelection?.();
+      return captureSelection(selection,currentData)||captureTranslation(selection,doc,{page,mode:'practice',assessment,vocabularyTesting,materialId:courseContext?.material?.id||currentData?.materialId,skill:courseContext?.skill});
+    }
     function updateTrigger() {
       const value = selectionNow();
       trigger.hidden = !value;
@@ -322,17 +420,23 @@
       trigger.style.top = Math.max(8, Math.min(value.rect.bottom + 8, root.innerHeight - 52)) + 'px';
     }
     function begin(snapshot) {
+      if(snapshot?.kind==='translation'){
+        if(assessment||vocabularyTesting||!snapshot.verify?.())return;
+        controller.cancel();activeController=translationController;clearTimeout(readTimer);clearPractice();trigger.hidden=true;
+        doc.getElementById('wordMeaningTooltip')?.setAttribute('hidden','');translationController.explain(snapshot);heading.focus({preventScroll:true});return;
+      }
       if (!matches(snapshot, currentData)) return;
+      translationController.cancel();activeController=controller;
       clearTimeout(readTimer); clearPractice();trigger.hidden = true;
       doc.getElementById('wordMeaningTooltip')?.setAttribute('hidden', '');
       controller.explain(snapshot); heading.focus({preventScroll: true});
     }
     trigger.addEventListener('pointerdown', event => { if (event.pointerType !== 'touch') event.preventDefault(); });
     trigger.addEventListener('click', () => begin(pending));
-    cancel.addEventListener('click', () => controller.cancel());
-    retry.addEventListener('click', () => controller.retry());
-    regenerate.addEventListener('click', () => { const state = controller.getState(); if (state.snapshot) { clearPractice();controller.explain(state.snapshot, true); } });
-    close.addEventListener('click', () => { clearPractice();controller.reset(); panel.hidden = true; });
+    cancel.addEventListener('click', () => activeController.cancel());
+    retry.addEventListener('click', () => activeController.retry());
+    regenerate.addEventListener('click', () => { const state = activeController.getState(); if (state.snapshot) { clearPractice();activeController.explain(state.snapshot, true); } });
+    close.addEventListener('click', () => { clearPractice();activeController.reset(); panel.hidden = true; });
     saveContext.addEventListener('input', () => { contextEdited = true; });
     followupForm.addEventListener('submit', event => { event.preventDefault(); const text = question.value.trim(); if (!text) { followupNote.textContent = '先写下一个与当前选区有关的问题。'; return; } if (text.length > 400) { followupNote.textContent = '追问请控制在 400 字符以内。'; return; } controller.followup(text); });
     collectForm.addEventListener('submit', event => {
@@ -345,15 +449,15 @@
       } catch (error) { saveStatus.textContent = '未保存：' + (error.message || '请检查生词本记录。'); }
     });
     doc.addEventListener('contextmenu', event => {
-      if (editable(event.target) || !event.target.closest?.('[data-ai-reading]')) return;
+      if (editable(event.target)&&!translationTextControl(event.target,page)||!event.target.closest?.('[data-ai-reading]')&&!translationSurface(event.target,page)) return;
       const snapshot = selectionNow(); if (!snapshot) return;
       event.preventDefault(); begin(snapshot);
     }, true);
     doc.addEventListener('keydown', event => {
-      if (editable(event.target)) return;
+      if (editable(event.target)&&!translationTextControl(event.target,page)) return;
       if ((event.altKey && event.key === 'Enter') || (event.shiftKey && event.key === 'F10') || event.key === 'ContextMenu') {
         const snapshot = selectionNow(); if (snapshot) { event.preventDefault(); begin(snapshot); }
-      } else if (event.key === 'Escape' && !panel.hidden) { controller.reset(); panel.hidden = true; trigger.hidden = true; }
+      } else if (event.key === 'Escape' && !panel.hidden) { activeController.reset(); panel.hidden = true; trigger.hidden = true; }
     }, true);
     doc.addEventListener('pointerdown', event => {
       if (event.button !== 0 || !event.target.closest?.('.read-word')) return;
@@ -363,20 +467,24 @@
     doc.addEventListener('pointerup', () => { if (drag?.moved || selectionNow()) { suppressUntil = Date.now() + 400; clearTimeout(readTimer); } drag = null; updateTrigger(); }, true);
     doc.addEventListener('pointercancel', () => { drag = null; suppressUntil = Date.now() + 400; clearTimeout(readTimer); }, true);
     doc.addEventListener('selectionchange', () => { if (selectionNow()) clearTimeout(readTimer); updateTrigger(); });
+    doc.addEventListener('select',updateTrigger,true);
     doc.addEventListener('scroll', () => { trigger.hidden = true; }, true);
     root.addEventListener('resize', () => { trigger.hidden = true; });
-    function setLesson(data) { clearTimeout(readTimer); clearPractice();currentData = data; pending = null; trigger.hidden = true; lastSelectionKey = ''; displayedHistory = ''; conversation.replaceChildren(); controller.setLesson(data); }
+    function setLesson(data) { clearTimeout(readTimer); clearPractice();translationController.reset();activeController=controller;currentData = data; pending = null; trigger.hidden = true; lastSelectionKey = ''; displayedHistory = ''; conversation.replaceChildren(); controller.setLesson(data); }
     root.addEventListener('ielts:lesson', event => setLesson(event.detail));
     root.addEventListener('ielts:material', event => setLesson(event.detail));
-    root.addEventListener('ielts:assessment-mode', event => {savedSection.hidden=event.detail?.active===true;if(savedSection.hidden){clearPractice();controller.reset();panel.hidden=true;trigger.hidden=true;}});
-    root.addEventListener('ielts:profile-changed', () => { controller.cancel(); setLesson(null); controller = createController({fetch:root.fetch?.bind(root),origin:root.location.origin,storage,cacheKey:root.IELTSProfiles?.scopeKey(CACHE_KEY)||CACHE_KEY,onChange:render});renderSaved(); });
-    root.addEventListener('ielts:lesson-clear', () => setLesson(null));
-    root.addEventListener('pagehide', () => { clearTimeout(readTimer); controller.cancel(); });
+    root.addEventListener('ielts:assessment-mode', event => {assessment=event.detail?.active===true;savedSection.hidden=assessment||!legacyPage;if(assessment){clearPractice();controller.reset();translationController.reset();panel.hidden=true;trigger.hidden=true;}});
+    root.addEventListener('ielts:vocabulary-testing',event=>{vocabularyTesting=event.detail?.active===true;if(vocabularyTesting){controller.reset();translationController.reset();panel.hidden=true;trigger.hidden=true;}});
+    root.addEventListener('ielts:course-session',event=>{courseContext=event.detail||null;translationController.reset();trigger.hidden=true;});
+    root.addEventListener('ielts:course-started',event=>{courseContext=event.detail||null;});
+    root.addEventListener('ielts:profile-changed', () => { controller.cancel();translationController.cancel();courseContext=null;setLesson(null); controller = createController({fetch:root.fetch?.bind(root),origin:root.location.origin,storage,cacheKey:root.IELTSProfiles?.scopeKey(CACHE_KEY)||CACHE_KEY,onChange:render});activeController=controller;renderSaved(); });
+    root.addEventListener('ielts:lesson-clear', () => {courseContext=null;setLesson(null);});
+    root.addEventListener('pagehide', () => { clearTimeout(readTimer); controller.cancel();translationController.cancel(); });
     setLesson(root.IELTSCurrentLesson || null);
     renderSaved();
   }
-  const api = {LOCAL_ORIGIN, isLocalOrigin, serviceOrigin, MAX_SELECTION, PRACTICE_KEY, parsePractice, normalize, paragraphRanges, makeSnapshot, captureSelection, matches, cacheKey, parseCache, createController, shouldSuppressReadingClick, handleReadClick};
+  const api = {LOCAL_ORIGIN, isLocalOrigin, serviceOrigin, MAX_SELECTION, PRACTICE_KEY, parsePractice, normalize, paragraphRanges, makeSnapshot, captureSelection, matches, cacheKey, parseCache, createController, shouldSuppressReadingClick, handleReadClick,TRANSLATION_SURFACES,pageName,translationSurface,translationTextControl,translationSnapshot,captureTranslation,createTranslationController};
   root.IELTSSelectionAI = Object.freeze(api);
   if (typeof module === 'object' && module.exports) module.exports = root.IELTSSelectionAI;
-  if (root.document?.getElementById('lesson') || root.document?.getElementById('coursePlayerApp')) init();
+  if (root.document?.getElementById('lesson') || root.document?.getElementById('coursePlayerApp')||root.document&&TRANSLATION_SURFACES[pageName(root.location)]) init();
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -1,0 +1,219 @@
+{
+  "id": "expand-w49-task1",
+  "week": 49,
+  "skill": "writing",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic_task1",
+  "yearExpansion": "year-expansion-69",
+  "estimatedMinutes": 20,
+  "minWords": 150,
+  "maxWords": 220,
+  "questionCount": 0,
+  "questionLanguage": "en",
+  "figureType": "table",
+  "topic": "综合模拟一与证据整理 · new expansion writing situation, not a reserved assessment",
+  "grammarFocus": "只复查已发现的高频错误，重点处理影响理解和作答准确性的错误。",
+  "sourcePolicy": "Project-original simulated prompt/data. Do not copy a copyrighted test or reuse an existing prompt under a different ID.",
+  "title": "IELTS Academic Writing Task 1: Household Energy Expenditure and Recycling Rates",
+  "prompt": "The table below shows the average annual household expenditure on four utilities (electricity, gas, water, and internet) in three countries (Aland, Bravia, and Cerdia) in 2010 and 2020, together with the percentage of households recycling at least once a week in each country in the same years. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "instructions": "本题为综合模拟练习，所有国家名称与数据均为虚构，不代表任何官方雅思试题或真实统计数据。请先花约3分钟审题：确认表格的行列含义、单位（美元/年、百分比）和时间点（2010、2020）。写作时注意：1) 开头用一句话改写题目，不要照抄；2) 概述段（overview）指出2–3个最显著的总体趋势或差异，不要罗列所有数字；3) 主体段按类别或按国家分组比较，选择关键数据并做对比（如最高/最低、增幅最大/最小）；4) 不要加入原因分析或个人观点；5) 检查是否达到150词，并留2分钟检查语法与拼写。",
+  "questions": [],
+  "rubric": {
+    "taskType": "academic_task1"
+  },
+  "figure": {
+    "type": "table",
+    "title": "Average Annual Household Expenditure on Utilities and Weekly Recycling Rates in Three Countries, 2010 and 2020",
+    "labels": [
+      "2010",
+      "2020"
+    ],
+    "series": [
+      {
+        "name": "Aland – Electricity (USD/year)",
+        "values": [
+          1200,
+          1450
+        ]
+      },
+      {
+        "name": "Aland – Gas (USD/year)",
+        "values": [
+          800,
+          950
+        ]
+      },
+      {
+        "name": "Aland – Water (USD/year)",
+        "values": [
+          400,
+          520
+        ]
+      },
+      {
+        "name": "Aland – Internet (USD/year)",
+        "values": [
+          300,
+          420
+        ]
+      },
+      {
+        "name": "Aland – Recycling rate (%)",
+        "values": [
+          35,
+          58
+        ]
+      },
+      {
+        "name": "Bravia – Electricity (USD/year)",
+        "values": [
+          900,
+          1100
+        ]
+      },
+      {
+        "name": "Bravia – Gas (USD/year)",
+        "values": [
+          600,
+          700
+        ]
+      },
+      {
+        "name": "Bravia – Water (USD/year)",
+        "values": [
+          350,
+          410
+        ]
+      },
+      {
+        "name": "Bravia – Internet (USD/year)",
+        "values": [
+          250,
+          380
+        ]
+      },
+      {
+        "name": "Bravia – Recycling rate (%)",
+        "values": [
+          22,
+          40
+        ]
+      },
+      {
+        "name": "Cerdia – Electricity (USD/year)",
+        "values": [
+          1500,
+          1600
+        ]
+      },
+      {
+        "name": "Cerdia – Gas (USD/year)",
+        "values": [
+          1000,
+          1050
+        ]
+      },
+      {
+        "name": "Cerdia – Water (USD/year)",
+        "values": [
+          450,
+          480
+        ]
+      },
+      {
+        "name": "Cerdia – Internet (USD/year)",
+        "values": [
+          350,
+          500
+        ]
+      },
+      {
+        "name": "Cerdia – Recycling rate (%)",
+        "values": [
+          15,
+          30
+        ]
+      }
+    ],
+    "rows": [
+      [
+        "Country",
+        "Year",
+        "Electricity (USD/year)",
+        "Gas (USD/year)",
+        "Water (USD/year)",
+        "Internet (USD/year)",
+        "Recycling rate (%)"
+      ],
+      [
+        "Aland",
+        "2010",
+        "1200",
+        "800",
+        "400",
+        "300",
+        "35"
+      ],
+      [
+        "Aland",
+        "2020",
+        "1450",
+        "950",
+        "520",
+        "420",
+        "58"
+      ],
+      [
+        "Bravia",
+        "2010",
+        "900",
+        "600",
+        "350",
+        "250",
+        "22"
+      ],
+      [
+        "Bravia",
+        "2020",
+        "1100",
+        "700",
+        "410",
+        "380",
+        "40"
+      ],
+      [
+        "Cerdia",
+        "2010",
+        "1500",
+        "1000",
+        "450",
+        "350",
+        "15"
+      ],
+      [
+        "Cerdia",
+        "2020",
+        "1600",
+        "1050",
+        "480",
+        "500",
+        "30"
+      ]
+    ]
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "dbb7fa641f3fc3a39db3e8a48c36f92bd20b6eb815b0256020a1f273804d1874"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

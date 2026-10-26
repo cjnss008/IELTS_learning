@@ -1,0 +1,80 @@
+{
+  "id": "expand-w05-listen-2",
+  "title": "Volunteer Shift Timetable",
+  "level": "A1",
+  "text": "Mia: Hi, Leo. This is my volunteer shift. I help at the food bank on Saturdays.\nLeo: Nice. What time do you start?\nMia: We start at nine. We open at nine thirty.\nLeo: Do you work alone?\nMia: No, I don't. We work in a team. I sort cans. You can help too.\nLeo: Great. I have free time on Saturday mornings. Do you finish at noon?\nMia: No, we don't. We finish at one. We take a break at eleven.\nLeo: How often do you volunteer?\nMia: I volunteer every week. My sister volunteers twice a month.\nLeo: Perfect. I can come this Saturday.\nMia: Good. Please arrive at eight forty-five.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What time does the volunteer shift start?",
+      "options": [
+        "At nine thirty",
+        "At eight forty-five",
+        "At nine o'clock"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What time does the food bank open?",
+      "options": [
+        "At nine thirty",
+        "At nine o'clock",
+        "At one o'clock"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How does Mia work at the food bank?",
+      "options": [
+        "On her own",
+        "In a team",
+        "With Leo every week"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is Mia's job during the shift?",
+      "options": [
+        "Serving hot meals",
+        "Driving a van",
+        "Sorting cans"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What time do they finish?",
+      "options": [
+        "At one o'clock",
+        "At noon",
+        "At eleven o'clock"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What time do they take a break?",
+      "options": [
+        "At one o'clock",
+        "At eleven o'clock",
+        "At nine thirty"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "How often does Mia volunteer? (two words)",
+      "maxWords": 2
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What time should Leo arrive? Use NO MORE THAN TWO WORDS from the conversation.",
+      "maxWords": 2
+    }
+  ]
+}

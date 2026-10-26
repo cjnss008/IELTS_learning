@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "method": "Root independently read three source transcripts and 12 answerless prompts before seeing author keys or explanations.",
+  "answers": {
+    "speaker-identity": {
+      "s1": "The person speaking.",
+      "s2": "I am Mia.",
+      "r1": "We are Tom and Mia.",
+      "r2": "I'm"
+    },
+    "existence-question": {
+      "s1": "Whether the area has a supermarket.",
+      "s2": "Is there a pharmacy near here?",
+      "r1": "Where is the bank?",
+      "r2": "Are there any public libraries here?"
+    },
+    "too-small-suitability": {
+      "s1": "The dress is smaller than she needs to wear it comfortably.",
+      "s2": "They are too small.",
+      "r1": "It is too small.",
+      "r2": "It is small, but it is not too small for you."
+    }
+  },
+  "inputs": [
+    {
+      "id": "speaker-identity",
+      "blindInputSHA256": "0870250d9e21378645960fc0eeab2a3b13994374b1a97145b316f72bf5844881"
+    },
+    {
+      "id": "existence-question",
+      "blindInputSHA256": "87a1a682e6393f65e82f464a32dfe4b5bd8b3219fd54d527220892cd8935c10d"
+    },
+    {
+      "id": "too-small-suitability",
+      "blindInputSHA256": "0b69eac4c68e1a844680786434e986f5730c3bbbee1e7153fec02701ea7624fa"
+    }
+  ],
+  "blockingAmbiguities": [],
+  "notes": [
+    "All three sources support the taught functions. The later situations are grammar practice, not independently calibrated level evidence.",
+    "All author order options currently place the selected answer first; live option order must be shuffled once and frozen per draft.",
+    "The new pharmacy/library question contexts use a few less familiar nouns; existing contextual translation must remain available and assistance must remain recorded."
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "id": "expand-w22-listen-2",
+  "week": 22,
+  "skill": "listening",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "数据比较与图表描述入门 · Independent new scenario: a group analysing the limits of a survey",
+  "grammarFocus": "比较结构；百分比与数量表达；there was / were；趋势动词。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Survey Limits: The Weekend Market Questionnaire",
+  "instructions": "本材料为原创模拟练习，不是官方雅思考试，也不代表任何分数。请先听/读对话，再完成10道题。听力部分注意不同说话人的自然轮换与更正。语法部分先用中文理解规则，再完成8道独立新句练习。最后完成口语与写作任务。",
+  "transcript": "Mia: Okay, team, let's look at the weekend market survey. We collected 120 forms, but only 86 are complete. That's a problem because incomplete forms can affect the results.\n\nBen: Right. So the response rate is about 72 percent. But wait—most of those 86 came from the morning. The afternoon was quieter, so we have fewer responses from that period.\n\nMia: Exactly. There were more older visitors in the morning and fewer young people all day. So our sample is not balanced. This means we cannot easily generalise the findings to all visitors.\n\nBen: And there was one question about prices. Some people wrote 'cheap', some wrote 'too expensive'. The answers are not consistent, so it is hard to draw a clear conclusion about price opinions.\n\nMia: Good point. Also, the trend in the data is clear: sales went up after 11 a.m., then fell after 2 p.m. But we can't say why. We would need more detailed information to explain the reason.\n\nBen: Can we compare this with last year's survey? Last year we had 150 forms, so this year is smaller.\n\nMia: Yes, but last year's questions were different. We can't compare the two directly. That's a limit of this year's survey.\n\nBen: So what do we report? Maybe we say the survey shows a morning trend, but we need more data from the afternoon.\n\nMia: I agree. Let's write: 'There was a higher number of morning visitors, but the sample was small.' And we should mention the incomplete forms.\n\nBen: Okay. I'll make a simple chart: percentage of visitors by time of day. Morning 60 percent, afternoon 40 percent.\n\nMia: Wait, is that right? Let me check. Morning 52 forms, afternoon 34 forms. So morning is about 60 percent of the 86 complete forms. Yes.\n\nBen: Good. And we can add a note: 'There were 34 incomplete forms.' That's honest.\n\nMia: Perfect. Let's finish the report by Friday.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many forms are complete?",
+      "options": [
+        "86",
+        "120",
+        "150"
+      ],
+      "answers": [
+        "86"
+      ],
+      "explanation": "原文明确说只有86份完整表格。",
+      "evidence": "only 86 are complete"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the response rate?",
+      "options": [
+        "About 72 percent",
+        "About 60 percent",
+        "About 40 percent"
+      ],
+      "answers": [
+        "About 72 percent"
+      ],
+      "explanation": "Ben说回应率约为72%。",
+      "evidence": "the response rate is about 72 percent"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which group was larger in the morning?",
+      "options": [
+        "Older visitors",
+        "Young people",
+        "Children"
+      ],
+      "answers": [
+        "Older visitors"
+      ],
+      "explanation": "Mia说早上年长访客更多。",
+      "evidence": "There were more older visitors in the morning"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What happened to sales after 11 a.m.?",
+      "options": [
+        "They went up.",
+        "They fell.",
+        "They stayed the same."
+      ],
+      "answers": [
+        "They went up."
+      ],
+      "explanation": "原文说11点后销售上升。",
+      "evidence": "sales went up after 11 a.m."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why can't they compare this year's survey with last year's directly?",
+      "options": [
+        "The questions were different.",
+        "The market was closed.",
+        "The forms were lost."
+      ],
+      "answers": [
+        "The questions were different."
+      ],
+      "explanation": "Mia指出去年问题不同，所以不能直接比较。",
+      "evidence": "last year's questions were different"
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the transcript: There were 34 ______ forms.",
+      "maxWords": 1,
+      "answers": [
+        "incomplete"
+      ],
+      "explanation": "Ben建议注明有34份不完整表格。",
+      "evidence": "There were 34 incomplete forms."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What percentage of complete forms came from the morning?",
+      "options": [
+        "About 60 percent",
+        "About 52 percent",
+        "About 34 percent"
+      ],
+      "answers": [
+        "About 60 percent"
+      ],
+      "explanation": "Mia计算后说早上约占完整表格的60%。",
+      "evidence": "morning is about 60 percent of the 86 complete forms"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does Ben offer to make?",
+      "options": [
+        "A simple chart",
+        "A new survey",
+        "A price list"
+      ],
+      "answers": [
+        "A simple chart"
+      ],
+      "explanation": "Ben说他会做一个简单图表。",
+      "evidence": "I'll make a simple chart"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The survey included questions about visitor age.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文提到年长访客和年轻人，说明调查涉及年龄。",
+      "evidence": "There were more older visitors in the morning and fewer young people all day."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The team will finish the report by Friday.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Mia最后说周五前完成报告。",
+      "evidence": "Let's finish the report by Friday."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "response rate",
+      "meaning": "回应率",
+      "example": "the response rate is about 72 percent"
+    },
+    {
+      "word": "complete",
+      "meaning": "完整的",
+      "example": "only 86 are complete"
+    },
+    {
+      "word": "balanced",
+      "meaning": "平衡的",
+      "example": "our sample is not balanced"
+    },
+    {
+      "word": "consistent",
+      "meaning": "一致的",
+      "example": "The answers are not consistent."
+    },
+    {
+      "word": "trend",
+      "meaning": "趋势",
+      "example": "the trend in the data is clear"
+    },
+    {
+      "word": "compare",
+      "meaning": "比较",
+      "example": "Can we compare this with last year's survey?"
+    },
+    {
+      "word": "directly",
+      "meaning": "直接地",
+      "example": "We can't compare the two directly."
+    },
+    {
+      "word": "incomplete",
+      "meaning": "不完整的",
+      "example": "There were 34 incomplete forms."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、百分比与数量表达、there was/were、趋势动词",
+    "explanation": "先看意思：比较两者用 more/fewer + 名词，或 -er/more + 形容词；百分比用 about/around + 数字 + percent；数量用 a number of / the number of；there was/were 表示“有”，单数用 was，复数用 were；趋势动词如 go up, fall, rise, drop 描述变化。注意：比较结构要前后一致；百分比前常加 about；there was/were 后接名词。",
+    "example": "There were more older visitors in the morning and fewer young people all day.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "There ______ more visitors in the afternoon than in the morning.",
+        "options": [
+          "was",
+          "were",
+          "is"
+        ],
+        "answers": [
+          "were"
+        ],
+        "explanation": "visitors是复数，过去时用were。",
+        "evidence": "There were more older visitors in the morning"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The number of complete forms ______ 86.",
+        "options": [
+          "is",
+          "are",
+          "were"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "the number of 作主语视为单数，用is。",
+        "evidence": "only 86 are complete"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Sales ______ after 11 a.m. and then fell.",
+        "options": [
+          "went up",
+          "go up",
+          "going up"
+        ],
+        "answers": [
+          "went up"
+        ],
+        "explanation": "描述过去趋势，用过去式went up。",
+        "evidence": "sales went up after 11 a.m."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "About 60 ______ of the complete forms came from the morning.",
+        "options": [
+          "percent",
+          "number",
+          "many"
+        ],
+        "answers": [
+          "percent"
+        ],
+        "explanation": "百分比用percent。",
+        "evidence": "morning is about 60 percent of the 86 complete forms"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "This year's sample is ______ than last year's.",
+        "options": [
+          "smaller",
+          "small",
+          "smallest"
+        ],
+        "answers": [
+          "smaller"
+        ],
+        "explanation": "比较两者用比较级smaller。",
+        "evidence": "this year is smaller"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "There ______ one question about prices.",
+        "options": [
+          "was",
+          "were",
+          "are"
+        ],
+        "answers": [
+          "was"
+        ],
+        "explanation": "one question是单数，过去时用was。",
+        "evidence": "there was one question about prices"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "The answers are not ______.",
+        "options": [
+          "consistent",
+          "consistently",
+          "consistency"
+        ],
+        "answers": [
+          "consistent"
+        ],
+        "explanation": "be动词后接形容词consistent。",
+        "evidence": "The answers are not consistent."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "We can't compare the two surveys ______.",
+        "options": [
+          "directly",
+          "direct",
+          "directing"
+        ],
+        "answers": [
+          "directly"
+        ],
+        "explanation": "修饰动词compare用副词directly。",
+        "evidence": "We can't compare the two directly."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often answer surveys?",
+        "What kind of charts do you see in daily life?",
+        "Do you think small samples are useful? Why?",
+        "How do you compare prices when you shop?"
+      ],
+      "part2": "Describe a time you looked at a simple chart or survey result. You should say: what the chart or survey was about; who collected the information; what the numbers showed; and why it was useful or not useful.",
+      "part3": [
+        "Why can small samples be a problem?",
+        "How can we make survey questions clearer?",
+        "What trends do you notice in your local market?",
+        "Should schools teach students to read charts? Why?"
+      ]
+    },
+    "writing": "You are helping a local club understand a weekend event survey. The club collected 50 forms, but only 40 were complete. Write a short report (about 120 words). Say how many forms were complete, give one percentage, describe one trend (for example, morning vs afternoon), and mention one limit of the survey. Use there was/were and at least two trend verbs."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Listening and grammar practice (simulated, not official IELTS)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "49e253b4a765532f7098fda5cc303825c30ec73653c2b7ee57b0290736a22832"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

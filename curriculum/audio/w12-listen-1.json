@@ -1,17 +1,17 @@
 {
   "id": "w12-listen-1",
   "schema": 3,
-  "layoutVersion": "curriculum-role-pauses-v68-3",
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
   "transcriptHash": "a3bbcb0f9fe007f10c54dd89ffd63eebb1ce6f2457aec76c7bb4f01544e2331e",
-  "configurationHash": "ff645509bf8208befa6d0c9156b45fbbb9038bddcecf6880b61c7b7c459a0d91",
+  "configurationHash": "a0a7038b4ed2ecd25071d54c627dc940b151fc333897340fb6cd972d88e41c85",
   "configuration": {
-    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
     "transcriptHash": "a3bbcb0f9fe007f10c54dd89ffd63eebb1ce6f2457aec76c7bb4f01544e2331e",
     "rate": "-5%",
     "format": "mp3-24000-mono-48k",
     "authoringPackageVersion": "7.3.1",
     "roleVoices": {
-      "narrator": "en-GB-SoniaNeural"
+      "narrator": "en-US-AriaNeural"
     },
     "sourceLabels": [],
     "segments": [
@@ -22,20 +22,20 @@
         "sourceEnd": 1041,
         "text": "Last Saturday, my family and I went to the beach. We left home at eight o'clock in the morning. First, we drove to the beach. The drive took about one hour. After that, we parked the car and walked to the sand. The weather was sunny and hot. We put our things on the sand and went swimming. The water was cool and clean. Then we had a picnic lunch. I ate a sandwich and my sister ate a salad. After that, we played volleyball on the beach. My father took many photos. Finally, we watched the sunset. It was beautiful. We left the beach at six o'clock in the evening. On the way home, we stopped at a small restaurant. We ate dinner there. I had fish and my mother had chicken. The food was delicious. We arrived home at nine o'clock. We were very tired but happy. It was a great day. Next time, we want to visit a museum. My brother said, 'Let's go to the mountains next time.' But I said, 'No, I want to go to the museum.' So we will decide later. My sister wants to go to the zoo. We will see. Anyway, we had a wonderful time at the beach.",
         "boundary": "paragraph",
-        "voice": "en-GB-SoniaNeural",
+        "voice": "en-US-AriaNeural",
         "textHash": "a3bbcb0f9fe007f10c54dd89ffd63eebb1ce6f2457aec76c7bb4f01544e2331e",
         "pauseBeforeSeconds": 0
       }
     ]
   },
-  "audioHash": "a6b3944cbdf0afcf094641568a1dec30bddb2fcfdafd9cfcb1c46e92d11b71b4",
+  "audioHash": "c3584a43fe7a1b306e471bad48d1db06d4238917c9bd82790160d578311b54e4",
   "voices": [
-    "en-GB-SoniaNeural"
+    "en-US-AriaNeural"
   ],
   "roleVoices": {
-    "narrator": "en-GB-SoniaNeural"
+    "narrator": "en-US-AriaNeural"
   },
-  "durationSeconds": 77.616,
+  "durationSeconds": 86.314208,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
@@ -52,14 +52,23 @@
       "sourceStart": 0,
       "sourceEnd": 1041,
       "boundary": "paragraph",
-      "voice": "en-GB-SoniaNeural",
+      "voice": "en-US-AriaNeural",
       "textHash": "a3bbcb0f9fe007f10c54dd89ffd63eebb1ce6f2457aec76c7bb4f01544e2331e",
       "pauseBeforeSeconds": 0,
-      "startSeconds": 0,
-      "endSeconds": 77.616,
-      "durationSeconds": 77.616
+      "groupConfigurationHash": "3a6b5da318e6abaaf1a4ab3b3363885a555e471fd1c4fd9922d635ccb544c506",
+      "groupAudioHash": "60b2270e83a36660ac955fa37c22df507f215c1dc47b400824df7ea9b89c35ba",
+      "groupStartSeconds": 0.042625,
+      "groupEndSeconds": 86.35683333333333,
+      "wordStartSeconds": 0.102625,
+      "wordEndSeconds": 86.236833,
+      "startSeconds": 0.0,
+      "endSeconds": 86.31420833333334,
+      "durationSeconds": 86.31420833333334
     }
   ],
-  "origin": "retained-verified-single-segment",
-  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

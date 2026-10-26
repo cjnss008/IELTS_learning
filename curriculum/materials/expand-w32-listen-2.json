@@ -1,0 +1,404 @@
+{
+  "id": "expand-w32-listen-2",
+  "week": 32,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "数据理解与阶段复测 · Independent new scenario: a discussion of inclusion and design constraints",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Inclusive Design and Data Decisions: A Studio Meeting",
+  "instructions": "本材料为模拟练习，不是官方雅思试题，也不代表任何正式分数。请先听/读英文对话，再完成10道题。听力部分注意不同说话者的自然轮换与自我纠正。语法部分先阅读中文讲解，再完成8道新句练习题。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Maya: Okay, everyone, thanks for coming. Let's start with the community center project. The brief says the new reading room must be open to all ages and abilities. So, inclusion is not an extra; it's the starting point.\n\nLeo: Right. I looked at the entrance. The current door is 900 millimeters wide. That's too narrow for many wheelchairs. We need at least 1,000 millimeters. And the ramp—the slope is 1 in 8. That's steeper than the standard 1 in 12. So we have two clear constraints.\n\nMaya: Good. So the door and the ramp are non-negotiable. What about the signage?\n\nLeo: The signs are all text. For people with low vision, we need high contrast and maybe braille. But braille adds cost. I'm not saying we skip it—I'm saying we need to decide.\n\nPriya: Can I add something? The lighting matters as much as the signs. If the room is too bright, some people with autism find it uncomfortable. We could use dimmable lights. That's a small change with a big effect.\n\nMaya: I like that. So, to summarize: door width, ramp slope, signage, and lighting. Four design constraints. Now, the budget. We have 20,000 dollars for the whole room. The door and ramp will take about 12,000. That leaves 8,000 for everything else.\n\nLeo: Wait—I said 12,000, but that was an old quote. The new quote is 13,500. Sorry. So we have 6,500 left.\n\nMaya: Thanks for the correction. That changes things. Priya, how much for the lighting?\n\nPriya: Dimmable lights are about 2,000. Braille signs are 1,500. That's 3,500. We still have 3,000 for furniture.\n\nLeo: But we also need a hearing loop for the front desk. That's another 1,200. So furniture gets 1,800.\n\nMaya: Okay. So the final numbers: 13,500 for access, 2,000 for lighting, 1,500 for signs, 1,200 for the hearing loop, and 1,800 for furniture. That totals 20,000 exactly. Good. Now, who will check the measurements on site?\n\nLeo: I can do that on Thursday. I'll bring the laser measure.\n\nPriya: And I'll contact the braille supplier. I'll ask for a sample.\n\nMaya: Perfect. So next steps: Leo checks measurements, Priya gets a sample, and I'll update the budget sheet. Let's meet again next Monday. Thanks, everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the minimum door width Leo says they need?",
+      "options": [
+        "900 millimeters",
+        "1,000 millimeters",
+        "1,200 millimeters",
+        "1,500 millimeters"
+      ],
+      "answers": [
+        "1,000 millimeters"
+      ],
+      "explanation": "Leo 明确说“We need at least 1,000 millimeters”，所以最低要求是 1,000 毫米。",
+      "evidence": "We need at least 1,000 millimeters."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the standard ramp slope mentioned?",
+      "options": [
+        "1 in 8",
+        "1 in 10",
+        "1 in 12",
+        "1 in 15"
+      ],
+      "answers": [
+        "1 in 12"
+      ],
+      "explanation": "Leo 说当前坡度是 1 in 8，比标准 1 in 12 更陡，因此标准坡度是 1 in 12。",
+      "evidence": "That's steeper than the standard 1 in 12."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does Priya suggest dimmable lights?",
+      "options": [
+        "To save electricity",
+        "To help people with autism feel comfortable",
+        "To make the room look modern",
+        "To reduce the budget"
+      ],
+      "answers": [
+        "To help people with autism feel comfortable"
+      ],
+      "explanation": "Priya 说太亮会让一些自闭症人士不舒服，因此建议可调光。",
+      "evidence": "If the room is too bright, some people with autism find it uncomfortable."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How much is the new quote for the door and ramp? Write the number only.",
+      "maxWords": 1,
+      "answers": [
+        "13,500"
+      ],
+      "explanation": "Leo 纠正旧报价后说新报价是 13,500。原文只给出数字，因此答案只写数字。",
+      "evidence": "The new quote is 13,500."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How much money is left for furniture after all other costs?",
+      "options": [
+        "1,200 dollars",
+        "1,500 dollars",
+        "1,800 dollars",
+        "2,000 dollars"
+      ],
+      "answers": [
+        "1,800 dollars"
+      ],
+      "explanation": "Maya 最后总结：家具得到 1,800。",
+      "evidence": "So furniture gets 1,800."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Who will check the measurements on site?",
+      "options": [
+        "Maya",
+        "Leo",
+        "Priya",
+        "The supplier"
+      ],
+      "answers": [
+        "Leo"
+      ],
+      "explanation": "Leo 说“I can do that on Thursday”，指自己去现场测量。",
+      "evidence": "I can do that on Thursday."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What will Priya do next?",
+      "options": [
+        "Update the budget sheet",
+        "Contact the braille supplier",
+        "Check the door width",
+        "Buy furniture"
+      ],
+      "answers": [
+        "Contact the braille supplier"
+      ],
+      "explanation": "Priya 说她会联系盲文供应商并要样品。",
+      "evidence": "And I'll contact the braille supplier."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "When is the next meeting?",
+      "options": [
+        "Next Monday",
+        "Next Thursday",
+        "Next Friday",
+        "Next month"
+      ],
+      "answers": [
+        "Next Monday"
+      ],
+      "explanation": "Maya 说“Let's meet again next Monday”。",
+      "evidence": "Let's meet again next Monday."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is the total budget for the room?",
+      "options": [
+        "6,500 dollars",
+        "8,000 dollars",
+        "13,500 dollars",
+        "20,000 dollars"
+      ],
+      "answers": [
+        "20,000 dollars"
+      ],
+      "explanation": "Maya 说“We have 20,000 dollars for the whole room”。",
+      "evidence": "We have 20,000 dollars for the whole room."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Which item costs 1,200 dollars?",
+      "options": [
+        "Dimmable lights",
+        "Braille signs",
+        "The hearing loop",
+        "Furniture"
+      ],
+      "answers": [
+        "The hearing loop"
+      ],
+      "explanation": "Leo 说“a hearing loop for the front desk. That's another 1,200”。",
+      "evidence": "That's another 1,200."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "inclusion",
+      "meaning": "包容，纳入",
+      "example": "So, inclusion is not an extra; it's the starting point."
+    },
+    {
+      "word": "constraints",
+      "meaning": "限制条件",
+      "example": "So we have two clear constraints."
+    },
+    {
+      "word": "non-negotiable",
+      "meaning": "不可协商的，必须做到的",
+      "example": "So the door and the ramp are non-negotiable."
+    },
+    {
+      "word": "contrast",
+      "meaning": "对比度",
+      "example": "For people with low vision, we need high contrast and maybe braille."
+    },
+    {
+      "word": "dimmable",
+      "meaning": "可调光的",
+      "example": "We could use dimmable lights."
+    },
+    {
+      "word": "quote",
+      "meaning": "报价",
+      "example": "The new quote is 13,500."
+    },
+    {
+      "word": "correction",
+      "meaning": "纠正",
+      "example": "Thanks for the correction."
+    },
+    {
+      "word": "supplier",
+      "meaning": "供应商",
+      "example": "And I'll contact the braille supplier."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本课重点是把比较结构（如 wider than, steeper than, as ... as）、数量表达（如 at least, about, another, exactly, 数字+单位）和指代（it, they, that, this 指代前文内容）放在一起用对。比较时注意 than 前后结构一致；数量表达要区分“至少/大约/正好/另一个”。指代要明确：单数名词用 it，复数用 they，前文整件事用 this/that。冠词方面：特指用 the，泛指可数单数用 a/an，不可数或泛指复数常不用冠词。主谓一致：单数主语配 is/was/has，复数主语配 are/were/have；注意“数字+复数名词”作主语时谓语用复数。先理解意思，再记术语。",
+    "example": "The current door is 900 millimeters wide. That's too narrow for many wheelchairs. We need at least 1,000 millimeters.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The new ramp is more steep than the old one.",
+          "The new ramp is steeper than the old one.",
+          "The new ramp is steepest than the old one.",
+          "The new ramp is more steeper than the old one."
+        ],
+        "answers": [
+          "The new ramp is steeper than the old one."
+        ],
+        "explanation": "单音节形容词 steep 的比较级是 steeper，不用 more，也不能再加 -est 与 than 连用。",
+        "evidence": "That's steeper than the standard 1 in 12."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We need at least 1,000 millimeters.",
+          "We need at less 1,000 millimeters.",
+          "We need at last 1,000 millimeters.",
+          "We need at least of 1,000 millimeters."
+        ],
+        "answers": [
+          "We need at least 1,000 millimeters."
+        ],
+        "explanation": "“至少”是 at least，后面直接接数量，不加 of。",
+        "evidence": "We need at least 1,000 millimeters."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct pronoun: The signs are all text. ___ need high contrast.",
+        "options": [
+          "It",
+          "They",
+          "This",
+          "That"
+        ],
+        "answers": [
+          "They"
+        ],
+        "explanation": "signs 是复数，指代用 they；it 指单数，this/that 指整件事或单数概念。",
+        "evidence": "The signs are all text."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The budget for the room are 20,000 dollars.",
+          "The budget for the room is 20,000 dollars.",
+          "The budget for the room were 20,000 dollars.",
+          "The budget for the room have 20,000 dollars."
+        ],
+        "answers": [
+          "The budget for the room is 20,000 dollars."
+        ],
+        "explanation": "主语中心词 budget 是单数，谓语用 is；for the room 是修饰语，不影响主谓一致。",
+        "evidence": "We have 20,000 dollars for the whole room."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct article: We need ___ hearing loop for the front desk.",
+        "options": [
+          "a",
+          "an",
+          "the",
+          "no article"
+        ],
+        "answers": [
+          "a"
+        ],
+        "explanation": "hearing 以辅音音素 /h/ 开头，泛指一个新的非特定单数名词短语“hearing loop”用 a；不是特指，也不用 an。",
+        "evidence": "But we also need a hearing loop for the front desk."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Dimmable lights is about 2,000 dollars.",
+          "Dimmable lights are about 2,000 dollars.",
+          "Dimmable lights was about 2,000 dollars.",
+          "Dimmable lights has about 2,000 dollars."
+        ],
+        "answers": [
+          "Dimmable lights are about 2,000 dollars."
+        ],
+        "explanation": "主语 lights 是复数，谓语用 are；about 表示“大约”。",
+        "evidence": "Dimmable lights are about 2,000."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "That leaves 8,000 for everything else.",
+          "That leave 8,000 for everything else.",
+          "That leaving 8,000 for everything else.",
+          "That left 8,000 for everything else."
+        ],
+        "answers": [
+          "That leaves 8,000 for everything else."
+        ],
+        "explanation": "That 指代前文整件事，作主语视为单数，一般现在时用 leaves。",
+        "evidence": "That leaves 8,000 for everything else."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The final numbers totals 20,000 exactly.",
+          "The final numbers total 20,000 exactly.",
+          "The final numbers is totaling 20,000 exactly.",
+          "The final numbers has total 20,000 exactly."
+        ],
+        "answers": [
+          "The final numbers total 20,000 exactly."
+        ],
+        "explanation": "numbers 是复数，谓语用 total；exactly 表示“正好”。",
+        "evidence": "That totals 20,000 exactly."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often notice design problems in public buildings?",
+        "What makes a place easy or difficult for you to use?",
+        "Do you prefer bright or soft lighting in a room? Why?",
+        "Have you ever helped someone with a design or access problem?"
+      ],
+      "part2": "Describe a public space that you think is well designed for different people. You should say: where it is; what features it has; who it is good for; and explain why you think it is well designed.",
+      "part3": [
+        "How can small design changes make a big difference for users?",
+        "Should public buildings spend more money on access features? Why?",
+        "What problems can happen when a budget is very tight?",
+        "How can designers include people with different needs in the planning process?"
+      ]
+    },
+    "writing": "You are on a student design team. Your school has 5,000 dollars to make the library entrance more inclusive. Write a short proposal (120–150 words) that: describes two access problems; suggests two changes; explains the cost of each change; and states what you will check next. Use at least three comparative structures and clear number expressions."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "listening comprehension with integrated grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "f86059e11fe5a2ea533a74296167b4f04fcb0dd29d1ec50a634662f1cbf1ddb1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

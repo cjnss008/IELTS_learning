@@ -1,0 +1,398 @@
+{
+  "id": "expand-w45-listen-2",
+  "week": 45,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时写作：立场与充分论证 · Independent new scenario: a lecture examining unintended policy consequences",
+  "grammarFocus": "让步、条件、因果；复杂句和简单句的清楚组合。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Ripple Effect: When Well-Meant Rules Backfire",
+  "instructions": "本材料为模拟教学练习，并非官方雅思考试。请先听/读英文讲座，理解政策意外后果的逻辑。然后完成10道听力/阅读题（单选、填空、匹配、判断）。之后学习语法点“让步、条件、因果的清晰组合”，并完成8道新句语法题。最后进行口语和写作迁移练习。所有题目选项为英文，解释为中文。",
+  "transcript": "Professor Lin: Good morning, everyone. Today we look at unintended policy consequences. Let me start with a small example. A city council wanted to reduce traffic downtown. So they built a new ring road around the city center. The road was wide and fast. Drivers loved it. But within two years, traffic downtown increased by fifteen percent. Why? Because the new road made driving into the city easier. More people decided to drive. This is called induced demand. Although the council built the road to reduce traffic, it actually attracted more cars. \n\nStudent A: Professor, does that mean we should never build new roads? \n\nProfessor Lin: Not exactly. We need to think about conditions. If a city builds new roads but also improves public transport, then the result may be different. The key is to combine policies. \n\nStudent B: I read about a similar case with plastic bags. A government banned free plastic bags in supermarkets. Shoppers had to pay for them. At first, plastic bag use dropped by eighty percent. But then people started buying thicker, reusable bags. Those bags were made of more plastic. So total plastic production went up. The policy reduced one problem but created another. \n\nProfessor Lin: Excellent example. This shows a trade-off. When you make one behavior costly, people may switch to another behavior that is also harmful. \n\nStudent C: What about the tax on sugary drinks? Some cities tried that. \n\nProfessor Lin: Yes. A tax on sugary drinks can reduce consumption. However, if the tax is too high, people may buy cheaper, unhealthy alternatives, like energy drinks with even more sugar. So the effect depends on how people respond. \n\nStudent A: So policies always have side effects? \n\nProfessor Lin: Almost always. But we can predict some of them. We use models. A model is a simplified picture of reality. It helps us ask: if we do X, what else might happen? For example, a rent control policy sets a maximum rent. It helps current tenants pay less. But if landlords cannot earn enough, they may stop renting out apartments. Then the supply of housing falls. In the long run, rent control can make housing harder to find. \n\nStudent B: That sounds unfair. \n\nProfessor Lin: It is a dilemma. The policy helps some people now but may hurt others later. Good policy design tries to balance short-term help with long-term effects. \n\nStudent C: How do we know if a policy worked? \n\nProfessor Lin: We compare what happened with what would have happened without the policy. That is called a counterfactual. It is hard because we cannot see the alternative world. But we can use data from similar cities. \n\nStudent A: So the main lesson is to think carefully before we act? \n\nProfessor Lin: Yes. And to monitor results after we act. Policies are experiments. We must be ready to adjust them. \n\nStudent B: Thank you, Professor. This was very clear. \n\nProfessor Lin: You're welcome. Next week we will discuss how to communicate policy changes to the public.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the council's goal when they built the ring road?",
+      "options": [
+        "To reduce traffic downtown",
+        "To increase the number of cars",
+        "To make driving more difficult",
+        "To build more houses"
+      ],
+      "answers": [
+        "To reduce traffic downtown"
+      ],
+      "explanation": "教授明确说“A city council wanted to reduce traffic downtown.”，因此目标是减少市中心交通。",
+      "evidence": "A city council wanted to reduce traffic downtown."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "By what percentage did downtown traffic increase within two years? (one word or number)",
+      "maxWords": 2,
+      "answers": [
+        "fifteen percent"
+      ],
+      "explanation": "原文说“traffic downtown increased by fifteen percent”，因此填 fifteen percent。",
+      "evidence": "But within two years, traffic downtown increased by fifteen percent."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What happened to plastic bag use at first after the ban?",
+      "options": [
+        "It dropped by eighty percent",
+        "It increased by eighty percent",
+        "It stayed the same",
+        "It doubled"
+      ],
+      "answers": [
+        "It dropped by eighty percent"
+      ],
+      "explanation": "原文说“At first, plastic bag use dropped by eighty percent.”，所以最初下降了80%。",
+      "evidence": "At first, plastic bag use dropped by eighty percent."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why did total plastic production go up after the ban?",
+      "options": [
+        "People bought thicker, reusable bags made of more plastic",
+        "People stopped using bags",
+        "The government made more plastic bags",
+        "Supermarkets gave free bags"
+      ],
+      "answers": [
+        "People bought thicker, reusable bags made of more plastic"
+      ],
+      "explanation": "原文解释“people started buying thicker, reusable bags. Those bags were made of more plastic.”，因此总塑料产量上升。",
+      "evidence": "But then people started buying thicker, reusable bags. Those bags were made of more plastic."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is a possible unintended effect of a high tax on sugary drinks?",
+      "options": [
+        "People may buy cheaper, unhealthy alternatives",
+        "People may drink more water",
+        "The price of sugary drinks may fall",
+        "People may stop buying drinks completely"
+      ],
+      "answers": [
+        "People may buy cheaper, unhealthy alternatives"
+      ],
+      "explanation": "教授说“if the tax is too high, people may buy cheaper, unhealthy alternatives”，这是意外后果。",
+      "evidence": "However, if the tax is too high, people may buy cheaper, unhealthy alternatives, like energy drinks with even more sugar."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What is the term for comparing what happened with what would have happened without the policy? (one word)",
+      "maxWords": 1,
+      "answers": [
+        "counterfactual"
+      ],
+      "explanation": "原文说“That is called a counterfactual.”，因此填 counterfactual。",
+      "evidence": "That is called a counterfactual."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "According to the lecture, what can happen in the long run if landlords cannot earn enough under rent control?",
+      "options": [
+        "The supply of housing falls",
+        "Rents become lower for everyone",
+        "More apartments are built",
+        "Landlords lower the rent"
+      ],
+      "answers": [
+        "The supply of housing falls"
+      ],
+      "explanation": "教授说“if landlords cannot earn enough, they may stop renting out apartments. Then the supply of housing falls.”，因此长期房源减少。",
+      "evidence": "But if landlords cannot earn enough, they may stop renting out apartments. Then the supply of housing falls."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does the professor say policies are like?",
+      "options": [
+        "Experiments",
+        "Games",
+        "Books",
+        "Machines"
+      ],
+      "answers": [
+        "Experiments"
+      ],
+      "explanation": "教授说“Policies are experiments.”，因此政策像实验。",
+      "evidence": "Policies are experiments."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is the main lesson the professor wants students to remember?",
+      "options": [
+        "Think carefully before acting and monitor results after acting",
+        "Never build new roads",
+        "Always ban plastic bags",
+        "Taxes always work"
+      ],
+      "answers": [
+        "Think carefully before acting and monitor results after acting"
+      ],
+      "explanation": "教授总结“think carefully before we act”和“monitor results after we act”，因此选此项。",
+      "evidence": "Yes. And to monitor results after we act."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What will the class discuss next week?",
+      "options": [
+        "How to communicate policy changes to the public",
+        "How to build ring roads",
+        "How to make plastic bags",
+        "How to tax sugary drinks"
+      ],
+      "answers": [
+        "How to communicate policy changes to the public"
+      ],
+      "explanation": "教授最后说“Next week we will discuss how to communicate policy changes to the public.”，因此选此项。",
+      "evidence": "Next week we will discuss how to communicate policy changes to the public."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "unintended",
+      "meaning": "意外的，非计划中的",
+      "example": "Today we look at unintended policy consequences."
+    },
+    {
+      "word": "induced demand",
+      "meaning": "诱导需求（因供给改善而增加的需求）",
+      "example": "This is called induced demand."
+    },
+    {
+      "word": "trade-off",
+      "meaning": "权衡，取舍",
+      "example": "This shows a trade-off."
+    },
+    {
+      "word": "counterfactual",
+      "meaning": "反事实（假设未发生的情况）",
+      "example": "That is called a counterfactual."
+    },
+    {
+      "word": "monitor",
+      "meaning": "监测，监控",
+      "example": "And to monitor results after we act."
+    },
+    {
+      "word": "dilemma",
+      "meaning": "困境，两难",
+      "example": "It is a dilemma."
+    },
+    {
+      "word": "alternative",
+      "meaning": "替代品，替代方案",
+      "example": "It is hard because we cannot see the alternative world."
+    },
+    {
+      "word": "supply",
+      "meaning": "供应，供给",
+      "example": "Then the supply of housing falls."
+    }
+  ],
+  "grammar": {
+    "title": "让步、条件、因果的清晰组合",
+    "explanation": "在英语中，我们常用连词来表达逻辑关系。让步：although / even though / though，表示“虽然”，后面跟一个事实，主句给出相反或意外的结果。条件：if / unless，表示“如果/除非”，提出一个条件，主句说明结果。因果：because / so / therefore，表示原因或结果。复杂句可以组合这些关系，但要注意句子不要过长，简单句和复杂句交替使用，让意思清楚。例如：Although the council built the road to reduce traffic, it actually attracted more cars. 这里 although 引导让步，主句用 actually 强调意外结果。再如：If a city builds new roads but also improves public transport, then the result may be different. 这里 if 引导条件，then 引出结果。",
+    "example": "Although the council built the road to reduce traffic, it actually attracted more cars.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "_____ the weather was cold, many people went to the beach.",
+        "options": [
+          "Although",
+          "Because",
+          "So",
+          "If"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "前后是让步关系：虽然天气冷，但很多人去海滩。Although 表示“虽然”。",
+        "evidence": "Although the council built the road to reduce traffic, it actually attracted more cars."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "You will miss the bus _____ you leave now.",
+        "options": [
+          "unless",
+          "if",
+          "because",
+          "so"
+        ],
+        "answers": [
+          "unless"
+        ],
+        "explanation": "句意：除非你现在离开，否则你会错过公交车。unless 表示“除非”。",
+        "evidence": "If a city builds new roads but also improves public transport, then the result may be different."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The company lost money _____ the manager made poor decisions.",
+        "options": [
+          "because",
+          "although",
+          "unless",
+          "so"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "经理决策失误是公司亏损的原因，用 because 引导原因。",
+        "evidence": "Because the new road made driving into the city easier."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "She studied hard, _____ she passed the exam.",
+        "options": [
+          "so",
+          "although",
+          "unless",
+          "because"
+        ],
+        "answers": [
+          "so"
+        ],
+        "explanation": "她努力学习，因此通过了考试。so 表示结果。",
+        "evidence": "So total plastic production went up."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "_____ you heat ice, it melts.",
+        "options": [
+          "If",
+          "Although",
+          "Unless",
+          "So"
+        ],
+        "answers": [
+          "If"
+        ],
+        "explanation": "加热冰，冰会融化，这是条件关系，用 If。",
+        "evidence": "If a city builds new roads but also improves public transport, then the result may be different."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "He didn't buy the car _____ it was too expensive.",
+        "options": [
+          "because",
+          "although",
+          "so",
+          "unless"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "车太贵是他不买的原因，用 because。",
+        "evidence": "Because the new road made driving into the city easier."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "_____ it was raining, they played football outside.",
+        "options": [
+          "Even though",
+          "Because",
+          "So",
+          "If"
+        ],
+        "answers": [
+          "Even though"
+        ],
+        "explanation": "虽然下雨，他们仍在外面踢足球，让步关系用 Even though。",
+        "evidence": "Although the council built the road to reduce traffic, it actually attracted more cars."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "You won't improve _____ you practice every day.",
+        "options": [
+          "unless",
+          "if",
+          "because",
+          "so"
+        ],
+        "answers": [
+          "unless"
+        ],
+        "explanation": "除非每天练习，否则不会提高。unless 表示“除非”。",
+        "evidence": "If a city builds new roads but also improves public transport, then the result may be different."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you think governments should make new rules quickly?",
+        "Have you ever seen a rule that had a bad result?",
+        "Do you prefer simple rules or complex rules?",
+        "What is one rule in your school or workplace?"
+      ],
+      "part2": "Describe a time when a plan or rule had an unexpected result. You should say: what the plan or rule was; who made it; what happened; and explain why the result was unexpected.",
+      "part3": [
+        "Why do some policies have unintended consequences?",
+        "How can governments predict the results of new rules?",
+        "Should policies be changed if they cause problems?",
+        "What is more important: short-term help or long-term effects?"
+      ]
+    },
+    "writing": "Some people think that when a policy has unintended negative consequences, it should be cancelled immediately. Others believe it should be adjusted and monitored. Discuss both views and give your own opinion. Write at least 250 words."
+  },
+  "rubric": {
+    "taskType": "listening_and_reading_comprehension_with_grammar_and_transfer"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "0da6aadc25d64445ac813e73587329d9cfbc75752769e825704892ef589fc3cf"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,315 @@
+{
+  "scope": "Synthetic capacity audit; rotating one due skill per word, 5% words keep clean skill measurement windows and sampled production. Pinned FSRS .9 retention. No same-day error retry cost, provider latency, non-silent microphone or learning benefit validated. New-word 2min is the no-history estimate; real histories replace it after 3 initial originals.",
+  "scenarios": [
+    {
+      "minutes": 90,
+      "newWordMinutes": 2,
+      "failureEvery": 0,
+      "introduced": 7942,
+      "remaining": 58,
+      "reviews": 31194,
+      "pausedDays": 0,
+      "longestZeroRun": 0,
+      "maxDue": 110,
+      "maxMinutes": 89.9,
+      "checkpoints": [
+        {
+          "day": 30,
+          "introduced": 660,
+          "dueAtStart": 66,
+          "reviewedToday": 66,
+          "newToday": 22,
+          "estimatedMinutes": 73.4
+        },
+        {
+          "day": 60,
+          "introduced": 1320,
+          "dueAtStart": 66,
+          "reviewedToday": 66,
+          "newToday": 22,
+          "estimatedMinutes": 73.4
+        },
+        {
+          "day": 100,
+          "introduced": 2200,
+          "dueAtStart": 88,
+          "reviewedToday": 88,
+          "newToday": 22,
+          "estimatedMinutes": 80.6
+        },
+        {
+          "day": 180,
+          "introduced": 3960,
+          "dueAtStart": 88,
+          "reviewedToday": 88,
+          "newToday": 22,
+          "estimatedMinutes": 80.3
+        },
+        {
+          "day": 270,
+          "introduced": 5940,
+          "dueAtStart": 89,
+          "reviewedToday": 89,
+          "newToday": 22,
+          "estimatedMinutes": 80.7
+        },
+        {
+          "day": 364,
+          "introduced": 7942,
+          "dueAtStart": 107,
+          "reviewedToday": 107,
+          "newToday": 21,
+          "estimatedMinutes": 88.1
+        }
+      ]
+    },
+    {
+      "minutes": 90,
+      "newWordMinutes": 1.5,
+      "failureEvery": 0,
+      "introduced": 8000,
+      "remaining": 0,
+      "reviews": 31373,
+      "pausedDays": 0,
+      "longestZeroRun": 0,
+      "maxDue": 111,
+      "maxMinutes": 81.8,
+      "checkpoints": [
+        {
+          "day": 30,
+          "introduced": 660,
+          "dueAtStart": 66,
+          "reviewedToday": 66,
+          "newToday": 22,
+          "estimatedMinutes": 62.4
+        },
+        {
+          "day": 60,
+          "introduced": 1320,
+          "dueAtStart": 66,
+          "reviewedToday": 66,
+          "newToday": 22,
+          "estimatedMinutes": 62.4
+        },
+        {
+          "day": 100,
+          "introduced": 2200,
+          "dueAtStart": 88,
+          "reviewedToday": 88,
+          "newToday": 22,
+          "estimatedMinutes": 69.6
+        },
+        {
+          "day": 180,
+          "introduced": 3960,
+          "dueAtStart": 88,
+          "reviewedToday": 88,
+          "newToday": 22,
+          "estimatedMinutes": 69.3
+        },
+        {
+          "day": 270,
+          "introduced": 5940,
+          "dueAtStart": 89,
+          "reviewedToday": 89,
+          "newToday": 22,
+          "estimatedMinutes": 69.7
+        },
+        {
+          "day": 364,
+          "introduced": 8000,
+          "dueAtStart": 110,
+          "reviewedToday": 110,
+          "newToday": 14,
+          "estimatedMinutes": 68.3
+        }
+      ]
+    },
+    {
+      "minutes": 90,
+      "newWordMinutes": 2,
+      "failureEvery": 10,
+      "introduced": 6747,
+      "remaining": 1253,
+      "reviews": 40177,
+      "pausedDays": 0,
+      "longestZeroRun": 0,
+      "maxDue": 154,
+      "maxMinutes": 90,
+      "checkpoints": [
+        {
+          "day": 30,
+          "introduced": 660,
+          "dueAtStart": 77,
+          "reviewedToday": 77,
+          "newToday": 22,
+          "estimatedMinutes": 78.3
+        },
+        {
+          "day": 60,
+          "introduced": 1320,
+          "dueAtStart": 87,
+          "reviewedToday": 87,
+          "newToday": 22,
+          "estimatedMinutes": 83.4
+        },
+        {
+          "day": 100,
+          "introduced": 2189,
+          "dueAtStart": 109,
+          "reviewedToday": 109,
+          "newToday": 21,
+          "estimatedMinutes": 88.1
+        },
+        {
+          "day": 180,
+          "introduced": 3748,
+          "dueAtStart": 118,
+          "reviewedToday": 118,
+          "newToday": 19,
+          "estimatedMinutes": 88.7
+        },
+        {
+          "day": 270,
+          "introduced": 5384,
+          "dueAtStart": 108,
+          "reviewedToday": 108,
+          "newToday": 21,
+          "estimatedMinutes": 88.7
+        },
+        {
+          "day": 364,
+          "introduced": 6747,
+          "dueAtStart": 120,
+          "reviewedToday": 120,
+          "newToday": 18,
+          "estimatedMinutes": 90
+        }
+      ]
+    },
+    {
+      "minutes": 90,
+      "newWordMinutes": 2,
+      "failureEvery": 5,
+      "introduced": 4252,
+      "remaining": 3748,
+      "reviews": 50776,
+      "pausedDays": 3,
+      "longestZeroRun": 1,
+      "maxDue": 191,
+      "maxMinutes": 90,
+      "checkpoints": [
+        {
+          "day": 30,
+          "introduced": 660,
+          "dueAtStart": 84,
+          "reviewedToday": 84,
+          "newToday": 22,
+          "estimatedMinutes": 80.6
+        },
+        {
+          "day": 60,
+          "introduced": 1268,
+          "dueAtStart": 116,
+          "reviewedToday": 116,
+          "newToday": 18,
+          "estimatedMinutes": 89.7
+        },
+        {
+          "day": 100,
+          "introduced": 1944,
+          "dueAtStart": 131,
+          "reviewedToday": 131,
+          "newToday": 15,
+          "estimatedMinutes": 89.3
+        },
+        {
+          "day": 180,
+          "introduced": 2894,
+          "dueAtStart": 164,
+          "reviewedToday": 164,
+          "newToday": 8,
+          "estimatedMinutes": 89.5
+        },
+        {
+          "day": 270,
+          "introduced": 3736,
+          "dueAtStart": 143,
+          "reviewedToday": 143,
+          "newToday": 12,
+          "estimatedMinutes": 88.7
+        },
+        {
+          "day": 364,
+          "introduced": 4252,
+          "dueAtStart": 162,
+          "reviewedToday": 162,
+          "newToday": 7,
+          "estimatedMinutes": 88.7
+        }
+      ]
+    },
+    {
+      "minutes": 120,
+      "newWordMinutes": 2,
+      "failureEvery": 0,
+      "introduced": 8000,
+      "remaining": 0,
+      "reviews": 31373,
+      "pausedDays": 0,
+      "longestZeroRun": 0,
+      "maxDue": 111,
+      "maxMinutes": 92.8,
+      "checkpoints": [
+        {
+          "day": 30,
+          "introduced": 660,
+          "dueAtStart": 66,
+          "reviewedToday": 66,
+          "newToday": 22,
+          "estimatedMinutes": 73.4
+        },
+        {
+          "day": 60,
+          "introduced": 1320,
+          "dueAtStart": 66,
+          "reviewedToday": 66,
+          "newToday": 22,
+          "estimatedMinutes": 73.4
+        },
+        {
+          "day": 100,
+          "introduced": 2200,
+          "dueAtStart": 88,
+          "reviewedToday": 88,
+          "newToday": 22,
+          "estimatedMinutes": 80.6
+        },
+        {
+          "day": 180,
+          "introduced": 3960,
+          "dueAtStart": 88,
+          "reviewedToday": 88,
+          "newToday": 22,
+          "estimatedMinutes": 80.3
+        },
+        {
+          "day": 270,
+          "introduced": 5940,
+          "dueAtStart": 89,
+          "reviewedToday": 89,
+          "newToday": 22,
+          "estimatedMinutes": 80.7
+        },
+        {
+          "day": 364,
+          "introduced": 8000,
+          "dueAtStart": 110,
+          "reviewedToday": 110,
+          "newToday": 14,
+          "estimatedMinutes": 75.3
+        }
+      ]
+    }
+  ]
+}

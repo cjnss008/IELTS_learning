@@ -1,0 +1,172 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-01-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-01",
+  "sourceVersion": "1",
+  "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+  "sourceContentHash": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+  "exposureGroup": "public-source:voa-l1-01",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What are Pete and Anna doing at the beginning?",
+      "options": [
+        "Introducing themselves.",
+        "Making a phone call.",
+        "Ordering a meal."
+      ],
+      "answers": [
+        "Introducing themselves."
+      ],
+      "evidence": "I am Pete.\n\nAnna: Nice to meet you.\n\nAnna: Let's try that again. I'm Anna. Nice to meet you.",
+      "evidenceOffsets": {
+        "start": 67,
+        "end": 159,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Pete说I am Pete，Anna也说I’m Anna，并使用Nice to meet you，说明双方正在互相介绍。全文没有点餐内容，所以Ordering a meal不成立；也没有拨号或接电话的情节，不能仅凭Hi就选Making a phone call。答案依赖问候与自我介绍的含义，不是辨认某个人名。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I am Pete.",
+          "start": 67,
+          "end": 77
+        },
+        {
+          "quote": "Let's try that again. I'm Anna. Nice to meet you.",
+          "start": 110,
+          "end": 159
+        }
+      ],
+      "understanding": "interaction-purpose"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Anna correct after Pete asks about her name?",
+      "options": [
+        "The spelling of her name.",
+        "The name of the street.",
+        "The street number."
+      ],
+      "answers": [
+        "The spelling of her name."
+      ],
+      "evidence": "I'm Pete. \"Anna\" Is that A-N-A?\n\nAnna: No. A-N-N-A",
+      "evidenceOffsets": {
+        "start": 167,
+        "end": 217,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Pete试着把Anna拼成A-N-A，Anna用No并重新拼成A-N-N-A纠正，因此纠正的是姓名拼写。街道门牌号出现在后面的欢迎语中，她没有纠正它；街道名称Irving Street也没有被更正。需要理解No及随后拼字的作用。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I'm Pete. \"Anna\" Is that A-N-A?",
+          "start": 167,
+          "end": 198
+        },
+        {
+          "quote": "No. A-N-N-A",
+          "start": 206,
+          "end": 217
+        }
+      ],
+      "understanding": "correction-and-reference"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What street number does Pete mention in his welcome?",
+      "answers": [
+        "1400"
+      ],
+      "maxWords": 1,
+      "evidence": "Well, Anna with two \"n's\" ... Welcome to ... 1400 Irving Street!",
+      "evidenceOffsets": {
+        "start": 225,
+        "end": 289,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "欢迎语中明确说1400 Irving Street，题目只问街道门牌号，所以填1400。A-N-N-A属于前面的姓名拼写，不能把字母数当作门牌；也不应填街道名，因为题干问number。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Well, Anna with two \"n's\" ... Welcome to ... 1400 Irving Street!",
+          "start": 225,
+          "end": 289
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Anna describe as new in her final reply?",
+      "options": [
+        "Her office.",
+        "Her school.",
+        "Her apartment."
+      ],
+      "answers": [
+        "Her apartment."
+      ],
+      "evidence": "My new apartment! Yes!",
+      "evidenceOffsets": {
+        "start": 297,
+        "end": 319,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "最后Anna说My new apartment，new修饰apartment，因此是她的新公寓。对话没有说她的新办公室或新学校；欢迎到某个地址并不能自动推断那里是office或school。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "My new apartment! Yes!",
+          "start": 297,
+          "end": 319
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 4,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 4,
+      "blindInputSha256": "22cb44c871283a5a0c11815b0478088eaaece5f2295275f3f217f72bab9ef897",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

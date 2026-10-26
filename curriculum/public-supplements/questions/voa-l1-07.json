@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-07-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-07",
+  "sourceVersion": "1",
+  "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+  "sourceContentHash": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+  "exposureGroup": "public-source:voa-l1-07",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How does Anna’s boss prefer to be addressed?",
+      "options": [
+        "By her first name.",
+        "As Ms. Weaver.",
+        "As Madam Director."
+      ],
+      "answers": [
+        "By her first name."
+      ],
+      "evidence": "I am your boss, Caty Weaver. But, please call me Caty.",
+      "explanation": "老板先报全名Caty Weaver，再用please call me Caty要求直接称呼名字，所以选By her first name。Anna一直说Ms. Weaver，正是对方反复纠正的称呼，而不是老板的偏好。题干没有把正确姓名直接当答案提示。",
+      "evidenceOffsets": {
+        "start": 68,
+        "end": 122,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I am your boss, Caty Weaver. But, please call me Caty.",
+          "start": 68,
+          "end": 122
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does the boss remind Anna about her co-workers?",
+      "options": [
+        "They are waiting to go home.",
+        "They are busy working.",
+        "They are all having lunch."
+      ],
+      "answers": [
+        "They are busy working."
+      ],
+      "evidence": "Please meet your co-workers. But remember, they are busy working.",
+      "explanation": "老板让Anna认识同事，同时提醒they are busy working。因此Anna打招呼时需要注意别人正在工作。对话没有说大家正在吃午饭或等着下班；不能把新同事欢迎会的常见情境当成这里的事实。",
+      "evidenceOffsets": {
+        "start": 295,
+        "end": 360,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Please meet your co-workers. But remember, they are busy working.",
+          "start": 295,
+          "end": 360
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Anne say she is doing?",
+      "options": [
+        "Writing.",
+        "Recording a show.",
+        "Reading for a show."
+      ],
+      "answers": [
+        "Writing."
+      ],
+      "evidence": "Um, I’m writing.",
+      "explanation": "Anne回答I’m writing，明确说明她正在写东西。recording a show和reading for a show也出现在后面的同事交流中，分别属于Jonathan和Amelia。关键是把动作与对应的人配对，而不是只记住对话中出现过的动词。",
+      "evidenceOffsets": {
+        "start": 500,
+        "end": 516,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Um, I’m writing.",
+          "start": 500,
+          "end": 516
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Jonathan say he now has to do?",
+      "options": [
+        "Write a new report.",
+        "Finish a phone call.",
+        "Record his show again."
+      ],
+      "answers": [
+        "Record his show again."
+      ],
+      "evidence": "Yes! And, now I have to record again!",
+      "explanation": "Jonathan确认自己正在录制，并说now I have to record again，即现在必须重新录。again是判断关键，不能只答他一般从事什么工作。原音中的回答足以支持这一点，不需要使用括号里的摄影棚位置说明。",
+      "evidenceOffsets": {
+        "start": 1065,
+        "end": 1102,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Yes! And, now I have to record again!",
+          "start": 1065,
+          "end": 1102
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is Amelia reading for?",
+      "options": [
+        "A class examination.",
+        "Her show.",
+        "A private letter."
+      ],
+      "answers": [
+        "Her show."
+      ],
+      "evidence": "No, I’m reading for my show.",
+      "explanation": "Anna问她是不是在读新闻，Amelia用No纠正，再说明I’m reading for my show。所以这里只能确认她在为节目朗读，不能擅自换成考试或私人信件。for表示这项朗读的用途。",
+      "evidenceOffsets": {
+        "start": 1429,
+        "end": 1457,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "No, I’m reading for my show.",
+          "start": 1429,
+          "end": 1457
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does the boss suggest after Anna says she is bothering people?",
+      "options": [
+        "Going to the boss’s office to talk.",
+        "Leaving work for the day.",
+        "Joining Jonathan’s recording."
+      ],
+      "answers": [
+        "Going to the boss’s office to talk."
+      ],
+      "evidence": "Let’s go to my office and talk.",
+      "explanation": "老板提出Let’s go to my office and talk，是邀请Anna到自己的办公室谈谈。没有说让她当天离开工作，也没有让她继续进入Jonathan的录制。let’s是建议共同做某事，my office的所属要按当前说话人理解。",
+      "evidenceOffsets": {
+        "start": 1638,
+        "end": 1669,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Let’s go to my office and talk.",
+          "start": 1638,
+          "end": 1669
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "42d343e8171d9471eed94663f6f9e1cd6c13997a8a4275c3190a12058f3b8252",
+      "reviewSha256": "f77d2e9456459efd6679febd656be193c47dd596f066fa12cad66f283eee0921",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

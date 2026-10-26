@@ -1,0 +1,358 @@
+{
+  "id": "expand-w01-read-2",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "字母、声音与自我介绍 · Independent new scenario: a visitor help desk with corrected room details",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Visitor Help Desk",
+  "instructions": "这是为A0初学者设计的原创模拟阅读材料（非官方雅思测试）。请先阅读短文，注意句首大写和句号。然后完成8道阅读题。之后学习语法：人称代词 I / you 和 be 动词 am / are。最后完成语法练习和口语写作任务。所有题目用英语作答。",
+  "passage": "A: Hello. I am a visitor. You are at the help desk. B: Yes. I am Ben. You are a visitor. You are welcome. A: I am at Room 4. You are at Room 6. B: No. I am at Room 6. You are at Room 5. Room 5 is your room. A: Thank you. I am at Room 5. You are at Room 6. B: Yes. I am Ben. You are a visitor. Room 5 is your room. Room 6 is my room. I help visitors at the help desk. You are a visitor, so I help you. Room 5 is your room. Room 6 is my room. Thank you.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who helps visitors?",
+      "options": [
+        "Tom",
+        "Ben",
+        "Sam",
+        "Anna"
+      ],
+      "answers": [
+        "Ben"
+      ],
+      "explanation": "B明确说“I am Ben.”，同一轮说话又说“I help visitors at the help desk.”，所以帮助访客的人是Ben。选项均为人名；题目不再把“在服务台”误当作只有一人的位置。",
+      "evidence": "B: Yes. I am Ben. You are a visitor. Room 5 is your room. Room 6 is my room. I help visitors at the help desk."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the visitor's room?",
+      "options": [
+        "Room 4",
+        "Room 5",
+        "Room 6",
+        "Room 7"
+      ],
+      "answers": [
+        "Room 5"
+      ],
+      "explanation": "文中B说“Room 5 is your room.”，访客的房间是5号。",
+      "evidence": "Room 5 is your room."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is Ben's room?",
+      "options": [
+        "Room 4",
+        "Room 5",
+        "Room 6",
+        "Room 7"
+      ],
+      "answers": [
+        "Room 6"
+      ],
+      "explanation": "文中B说“Room 6 is my room.”，Ben的房间是6号。",
+      "evidence": "Room 6 is my room."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which room does the visitor mention first?",
+      "options": [
+        "Room 4",
+        "Room 5",
+        "Room 6"
+      ],
+      "answers": [
+        "Room 4"
+      ],
+      "explanation": "题目问访客最先提到哪间房。访客先说“I am at Room 4.”，后来才被纠正为Room 5；这里直接定位最先说出的房号。",
+      "evidence": "A: I am at Room 4. You are at Room 6."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the text: 'You are at the help ____.'",
+      "answers": [
+        "desk"
+      ],
+      "maxWords": 1,
+      "explanation": "原句是“You are at the help desk.”，help后缺少的一个词为desk。题干不再提供Ben这个标准答案，也不重复姓名题。",
+      "evidence": "You are at the help desk."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the text: 'You are a ____.'",
+      "answers": [
+        "visitor"
+      ],
+      "maxWords": 1,
+      "explanation": "文中B说“You are a visitor.”，所以填visitor。",
+      "evidence": "You are a visitor."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which sentence has the correct capital letters?",
+      "options": [
+        "i am ben.",
+        "I am Ben.",
+        "I Am ben.",
+        "i Am Ben."
+      ],
+      "answers": [
+        "I am Ben."
+      ],
+      "explanation": "句首字母I要大写，名字Ben也要大写，句末有句号。",
+      "evidence": "I am Ben."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does A say after B says 'No'?",
+      "options": [
+        "Thank you.",
+        "Hello.",
+        "Goodbye.",
+        "Sorry."
+      ],
+      "answers": [
+        "Thank you."
+      ],
+      "explanation": "B说“No”并纠正房号后，下一轮A先说“Thank you.”。明确限定说话顺序，不把最后由B说出的文字误标为访客结尾。",
+      "evidence": "A: Thank you. I am at Room 5. You are at Room 6."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "visitor",
+      "meaning": "访客",
+      "example": "I am a visitor."
+    },
+    {
+      "word": "help",
+      "meaning": "帮助",
+      "example": "You are at the help desk."
+    },
+    {
+      "word": "desk",
+      "meaning": "服务台；桌子",
+      "example": "You are at the help desk."
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "Room 5 is your room."
+    },
+    {
+      "word": "welcome",
+      "meaning": "欢迎",
+      "example": "You are welcome."
+    },
+    {
+      "word": "thank",
+      "meaning": "感谢",
+      "example": "Thank you."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes. I am Ben."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No. I am at Room 6."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，I 表示“我”，you 表示“你”。be 动词 am 和 I 连用，are 和 you 连用。句子开头第一个字母要大写，句子结尾要加句号。例如：I am Ben. You are a visitor.",
+    "example": "I am Ben. You are a visitor.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student.",
+          "I be a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 后面用 am。",
+        "evidence": "I am Ben."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You am a teacher.",
+          "You is a teacher.",
+          "You are a teacher.",
+          "You be a teacher."
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "you 后面用 are。",
+        "evidence": "You are a visitor."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "Fill in the blank with am or are: I ____ happy.",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "I 后面用 am。",
+        "evidence": "I am Ben."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Fill in the blank with am or are: You ____ my friend.",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "you 后面用 are。",
+        "evidence": "You are a visitor."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Which sentence has correct capital letters and period?",
+        "options": [
+          "i am a student.",
+          "I am a student.",
+          "I am a student",
+          "i am a student"
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "句首字母I要大写，句末要有句号。",
+        "evidence": "I am Ben."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I am at Room 5.",
+          "I are at Room 5.",
+          "I is at Room 5.",
+          "I be at Room 5."
+        ],
+        "answers": [
+          "I am at Room 5."
+        ],
+        "explanation": "I 后面用 am。",
+        "evidence": "I am at Room 5."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You is at Room 6.",
+          "You am at Room 6.",
+          "You are at Room 6.",
+          "You be at Room 6."
+        ],
+        "answers": [
+          "You are at Room 6."
+        ],
+        "explanation": "you 后面用 are。",
+        "evidence": "You are at Room 6."
+      },
+      {
+        "id": "g8",
+        "type": "fill",
+        "prompt": "Fill in the blank with am or are: I ____ a visitor.",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "I 后面用 am。",
+        "evidence": "I am a visitor."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Where are you from?",
+        "Are you happy?"
+      ],
+      "part2": "Describe a visitor at a help desk. You should say:",
+      "part2_bullets": [
+        "who the visitor is",
+        "where the visitor is",
+        "what room the visitor needs",
+        "what the visitor says"
+      ],
+      "part3": [
+        "Is help important?",
+        "Are you a visitor in a new place?",
+        "What do you say at a help desk?",
+        "Are you at Room 5?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself. Use 'I am' and 'You are'. Say your name and your room. Example: I am Li. I am at Room 3. You are a teacher."
+  },
+  "rubric": {
+    "taskType": "A0 reading, grammar, speaking and writing practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "Codex逐字复核全文和全部8道理解题：修正服务者身份歧义、同类别人名干扰项、题干直接泄答、说话顺序归属，并明确大小写题只检查句首及人名大写。不是独立盲解或真人考官审核；修改后的整套题仍须重新独立解题，未经过真实考生难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "dad8c2eca0858e8e751658ea24cc5696dba81a8c84b71a3e8f42326f73cfeabb",
+    "reviewStatus": "pending-independent-solve-after-codex-whole-question-set-review",
+    "priorContentHash": "858ad731731aae2819b19652949d9375693d1932f81b92b12e67e24c84b6f0bf",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-03-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-03",
+  "sourceVersion": "1",
+  "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+  "sourceContentHash": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+  "exposureGroup": "public-source:voa-l1-03",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does Anna ask about a supermarket?",
+      "options": [
+        "She wants to call her family.",
+        "She wants to find a new roommate.",
+        "She wants to cook dinner."
+      ],
+      "answers": [
+        "She wants to cook dinner."
+      ],
+      "evidence": "I want to cook dinner. Oh! Hmmm. Is there a supermarket near here?",
+      "evidenceOffsets": {
+        "start": 78,
+        "end": 144,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna先说想做晚饭，接着问附近有没有超市，做晚饭是这次询问的背景和目的。Marsha已经是她的室友，所以不是寻找新室友；她后来拨打的是Marsha的工作电话，不能改成打给家人。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I want to cook dinner. Oh! Hmmm. Is there a supermarket near here?",
+          "start": 78,
+          "end": 144
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What happens in Anna’s first phone call?",
+      "options": [
+        "She calls the wrong number.",
+        "Nobody answers the call.",
+        "Marsha answers immediately."
+      ],
+      "answers": [
+        "She calls the wrong number."
+      ],
+      "evidence": "I am sorry. You have the wrong number.",
+      "evidenceOffsets": {
+        "start": 255,
+        "end": 293,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "第一个接电话的男子明确说You have the wrong number，因此Anna拨错了号码。Marsha是在Anna重新拨号后才接听，不是第一次立刻接听；男子已经回答，所以Nobody answers也不成立。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I am sorry. You have the wrong number.",
+          "start": 255,
+          "end": 293
+        }
+      ],
+      "understanding": "sequence"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What is the supermarket’s street number?",
+      "answers": [
+        "1500"
+      ],
+      "maxWords": 1,
+      "evidence": "The supermarket is at 1500 Irving Street.",
+      "evidenceOffsets": {
+        "start": 668,
+        "end": 709,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Marsha给出的超市地址是1500 Irving Street，因此门牌号填1500。555-8986是Marsha的电话号码，555-8689是误拨号码，都不是超市的街道门牌。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The supermarket is at 1500 Irving Street.",
+          "start": 668,
+          "end": 709
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How does Marsha describe the supermarket’s location?",
+      "options": [
+        "Inside the apartment.",
+        "Far from the apartment.",
+        "Near the apartment."
+      ],
+      "answers": [
+        "Near the apartment."
+      ],
+      "evidence": "It is near the apartment.",
+      "evidenceOffsets": {
+        "start": 710,
+        "end": 735,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文It is near the apartment明确表示超市离公寓近。near不是inside，所以不能理解为超市在公寓里面；far from与near相反，也不符合原话。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It is near the apartment.",
+          "start": 710,
+          "end": 735
+        }
+      ],
+      "understanding": "location"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Marsha think of Anna as a cook?",
+      "options": [
+        "She is a good cook.",
+        "She needs someone else to cook for her.",
+        "She should stop cooking dinner."
+      ],
+      "answers": [
+        "She is a good cook."
+      ],
+      "evidence": "And Marsha says I am a good cook!",
+      "evidenceOffsets": {
+        "start": 841,
+        "end": 874,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna转述Marsha的话：I am a good cook，意思是Marsha认为她厨艺不错。原文没有让别人代为做饭的建议，也没有要求她停止做饭；后两项都把积极评价变成了原文没有的否定建议。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "And Marsha says I am a good cook!",
+          "start": 841,
+          "end": 874
+        }
+      ],
+      "understanding": "reported-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "bfecf0d520fd44f9831e6367b495ef557e182c49498d360e3b50865ef9d6776f",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

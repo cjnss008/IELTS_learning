@@ -1,0 +1,148 @@
+{
+  "schema": 2,
+  "status": "inactive-candidate-needs-fresh-independent-solve",
+  "materialId": "expand-w01-read-2",
+  "currentContentHash": "dad8c2eca0858e8e751658ea24cc5696dba81a8c84b71a3e8f42326f73cfeabb",
+  "revisions": [
+    {
+      "schema": 1,
+      "status": "inactive-candidate-needs-independent-solve",
+      "materialId": "expand-w01-read-2",
+      "questionId": "q4",
+      "sourcePath": "curriculum/materials/expand-w01-read-2.json",
+      "beforeContentHash": "4ad081b48f5a1f36252f1022aeaa6a876d28038f76a0eb74e86d4eb34e2ae081",
+      "afterContentHash": "858ad731731aae2819b19652949d9375693d1932f81b92b12e67e24c84b6f0bf",
+      "unchangedSourceTextSha256": "35b60405d6ac5e5fa55acff6b3f79f0cc5867e90f1793e837e6af0414619d5d8",
+      "beforeQuestion": {
+        "id": "q4",
+        "type": "single",
+        "prompt": "The visitor first says, 'I am at Room 4.' Is this correct?",
+        "options": [
+          "Yes",
+          "No",
+          "Not given"
+        ],
+        "answers": [
+          "No"
+        ],
+        "explanation": "文中B纠正说“You are at Room 5.”，所以访客说4号房间是不对的。",
+        "evidence": "You are at Room 5."
+      },
+      "afterQuestion": {
+        "id": "q4",
+        "type": "single",
+        "prompt": "Which room does the visitor name first?",
+        "options": [
+          "Room 4",
+          "Room 5",
+          "Room 6"
+        ],
+        "answers": [
+          "Room 4"
+        ],
+        "explanation": "题目问访客最先提到哪间房。访客先说“I am at Room 4.”，后来才被纠正为Room 5；这里直接定位最先说出的房号。",
+        "evidence": "A: I am at Room 4. You are at Room 6."
+      },
+      "reviewer": "Codex source comparison; not a human examiner",
+      "reviewReason": "A0 direct literal retrieval replaces Yes/No/Not given judgement without changing the passage or any published question.",
+      "independentSolve": "required-for-edited-content",
+      "activeYearExpansionAtReview": false,
+      "learnerDataTouched": false
+    },
+    {
+      "schema": 1,
+      "status": "inactive-candidate-needs-fresh-independent-solve",
+      "materialId": "expand-w01-read-2",
+      "reviewedQuestionCount": 8,
+      "changedQuestionIds": [
+        "q1",
+        "q4",
+        "q5",
+        "q7",
+        "q8"
+      ],
+      "beforeContentHash": "858ad731731aae2819b19652949d9375693d1932f81b92b12e67e24c84b6f0bf",
+      "afterContentHash": "dad8c2eca0858e8e751658ea24cc5696dba81a8c84b71a3e8f42326f73cfeabb",
+      "unchangedSourceTextSha256": "35b60405d6ac5e5fa55acff6b3f79f0cc5867e90f1793e837e6af0414619d5d8",
+      "reviewer": "Codex complete source comparison; author self-review, not a blind solve or a human examiner review",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "decision": "The old location question also admitted the visitor; the new question identifies the explicitly named helper. All distractors are person names.",
+          "exactEvidence": "B: Yes. I am Ben. You are a visitor. Room 5 is your room. Room 6 is my room. I help visitors at the help desk.",
+          "expectedAnswers": [
+            "Ben"
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "decision": "The final corrected visitor room is Room 5; Room 4 is the initial mistaken statement and Room 6 belongs to B. Retained.",
+          "exactEvidence": "Room 5 is your room.",
+          "expectedAnswers": [
+            "Room 5"
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "decision": "B identifies himself as Ben and says Room 6 is my room. Retained.",
+          "exactEvidence": "Room 6 is my room.",
+          "expectedAnswers": [
+            "Room 6"
+          ]
+        },
+        {
+          "id": "q4",
+          "type": "single",
+          "decision": "A first mentions Room 4; mention makes this a room-retrieval question, distinct from a proper-name question.",
+          "exactEvidence": "A: I am at Room 4. You are at Room 6.",
+          "expectedAnswers": [
+            "Room 4"
+          ]
+        },
+        {
+          "id": "q5",
+          "type": "fill",
+          "decision": "The old prompt included the correct name Ben. The new one-word source cloze retrieves desk and adds a distinct literal fact.",
+          "exactEvidence": "You are at the help desk.",
+          "expectedAnswers": [
+            "desk"
+          ]
+        },
+        {
+          "id": "q6",
+          "type": "fill",
+          "decision": "The quoted sentence You are a visitor has one source word filling the noun position. Retained.",
+          "exactEvidence": "You are a visitor.",
+          "expectedAnswers": [
+            "visitor"
+          ]
+        },
+        {
+          "id": "q7",
+          "type": "single",
+          "decision": "Only I am Ben. has the standard sentence-initial I and proper-name Ben capitalization. This is a surface-form question, not an additional comprehension fact.",
+          "exactEvidence": "I am Ben.",
+          "expectedAnswers": [
+            "I am Ben."
+          ]
+        },
+        {
+          "id": "q8",
+          "type": "single",
+          "decision": "The response is tied to the A turn after B says No. The old at the end wording did not clearly identify the final speaker.",
+          "exactEvidence": "A: Thank you. I am at Room 5. You are at Room 6.",
+          "expectedAnswers": [
+            "Thank you."
+          ]
+        }
+      ],
+      "ruleFindings": [],
+      "independentSolve": "required-on-this-entire-content-hash",
+      "yearExpansionActiveAtReview": false,
+      "learnerDataTouched": false
+    }
+  ]
+}

@@ -1,0 +1,526 @@
+{
+  "schema": 1,
+  "scope": "At most 10 explicitly selected public teaching drafts; no learner data or credentials",
+  "sampledAt": "2026-10-25T19:02:35.959Z",
+  "maximumIssues": 10,
+  "sampledIssues": 10,
+  "historicalIssueCounts": {
+    "source-word-form": 5,
+    "blind-disagreement": 1,
+    "exact-quote": 3,
+    "source-length": 1
+  },
+  "currentFlagCounts": {
+    "wrong-canonical-option-accepted": 4,
+    "unbound-plural-subject": 1,
+    "repeated-room-fact": 1,
+    "dialogue-lacks-speaker-labels": 1,
+    "unbound-article-reference": 3,
+    "unbound-animal-pronoun": 2,
+    "unbound-possessor": 1,
+    "two-valid-negative-spellings": 1,
+    "unbound-conjunction-purpose": 1,
+    "unbound-command-polarity": 2,
+    "non-exact-current-vocabulary-example": 8,
+    "adverb-position-overstatement": 2
+  },
+  "items": [
+    {
+      "id": "expand-w01-listen-1",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "source-word-form"
+      ],
+      "historicalFeedback": "Vocabulary must occur in source: classmate",
+      "inputHashes": {
+        "issue": "8ba640ed3d998b85cfe0fcabd623a05455c83833db2f09242cf3aa104347da15",
+        "draft": "ce553cb86bf4903e86a73e074f39dc6330c82e1cba05402edf5e07a63fe477ba",
+        "review": null,
+        "current": "c70d10843bfdcfab19baccc6f666bc62493e2922a18086505d1def47742bb8d6"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "student",
+        "teacher",
+        "new",
+        "classmates",
+        "Room",
+        "happy",
+        "door",
+        "meet"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "wrong-canonical-option-accepted",
+          "path": "grammar.questions[0]",
+          "questionId": "g1",
+          "reason": "The current runtime grader accepts a distractor that is not a canonical answer.",
+          "suggestion": "Use exact canonical choice values for objective single/multi answers; retain appropriate normalization for fill answers.",
+          "detail": {
+            "option": "i am a student.",
+            "answers": [
+              "I am a student."
+            ]
+          }
+        },
+        {
+          "code": "wrong-canonical-option-accepted",
+          "path": "grammar.questions[4]",
+          "questionId": "g5",
+          "reason": "The current runtime grader accepts a distractor that is not a canonical answer.",
+          "suggestion": "Use exact canonical choice values for objective single/multi answers; retain appropriate normalization for fill answers.",
+          "detail": {
+            "option": "i am happy.",
+            "answers": [
+              "I am happy."
+            ]
+          }
+        },
+        {
+          "code": "unbound-plural-subject",
+          "path": "grammar.questions[7]",
+          "questionId": "g8",
+          "reason": "We, you and they can all be subjects of are classmates.",
+          "suggestion": "Specify the pronoun for the speaker and other students, or provide fixed answer choices."
+        },
+        {
+          "code": "repeated-room-fact",
+          "path": "questions[q4,q8]",
+          "reason": "Two questions test Room 3.",
+          "suggestion": "Replace q8 with Who opens the door? Answer Anna, using the existing opening sentence."
+        },
+        {
+          "code": "dialogue-lacks-speaker-labels",
+          "path": "transcript",
+          "reason": "Quoted dialogue lacks explicit speaker turn labels for role-specific synthesis.",
+          "suggestion": "Add accurate Anna/Ben/Tom/narrator turn labels, then regenerate audio and source hashes."
+        }
+      ]
+    },
+    {
+      "id": "expand-w01-read-1",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "blind-disagreement"
+      ],
+      "historicalFeedback": "question q6 blind answer disagrees",
+      "inputHashes": {
+        "issue": "bf653d50c7108334d3fe2b2370b63b09442c574da2a976aa06f2813cd0aa497c",
+        "draft": "2d2311051f084eb1c99ff873cfb27566774b7efa734d285b427b40653543cd46",
+        "review": "93ae11b6fb6edcd5fc12da558fc1123a19b7ab46af15fe97f405b4430dd3a23a",
+        "current": "c15ab7e144fb736e6340a33589e8044d3ccce73226e314cb523ef167bad9377d"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "community",
+        "center",
+        "class",
+        "student",
+        "classmates",
+        "teacher",
+        "early",
+        "happy"
+      ],
+      "disagreements": [
+        {
+          "kind": "question",
+          "id": "q6",
+          "authoredAnswers": [
+            "happy"
+          ],
+          "blindAnswer": "new",
+          "evidence": "Anna says, \"Yes, I am. I am new."
+        }
+      ],
+      "currentFlags": [
+        {
+          "code": "wrong-canonical-option-accepted",
+          "path": "grammar.questions[0]",
+          "questionId": "g1",
+          "reason": "The current runtime grader accepts a distractor that is not a canonical answer.",
+          "suggestion": "Use exact canonical choice values for objective single/multi answers; retain appropriate normalization for fill answers.",
+          "detail": {
+            "option": "i am a student.",
+            "answers": [
+              "I am a student."
+            ]
+          }
+        },
+        {
+          "code": "wrong-canonical-option-accepted",
+          "path": "grammar.questions[1]",
+          "questionId": "g2",
+          "reason": "The current runtime grader accepts a distractor that is not a canonical answer.",
+          "suggestion": "Use exact canonical choice values for objective single/multi answers; retain appropriate normalization for fill answers.",
+          "detail": {
+            "option": "you are new.",
+            "answers": [
+              "You are new."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "expand-w02-listen-2",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "exact-quote"
+      ],
+      "historicalFeedback": "Evidence must be an exact source quote: q8",
+      "inputHashes": {
+        "issue": "b9f9fe5bb67f58d45a07dc4692fede616eb73e238b8500305e77abda9b9f9b52",
+        "draft": "8418df2f6af1346eef6c64d477c311efa957b6c1b758168b360f87ae81472250",
+        "review": null,
+        "current": "7d15f1069549ac80c8d61043e904f46ff3325963def4c46c838fdd85d64087f2"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "team",
+        "table",
+        "cup",
+        "red",
+        "blue",
+        "bag",
+        "pen",
+        "phone"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "unbound-article-reference",
+          "path": "grammar.questions[0]",
+          "questionId": "g1",
+          "reason": "Both definite and indefinite articles can complete the sentence without a discourse constraint.",
+          "suggestion": "Specify an indefinite first introduction, or remove the definite-article alternative."
+        },
+        {
+          "code": "unbound-article-reference",
+          "path": "grammar.questions[2]",
+          "questionId": "g3",
+          "reason": "Both definite and indefinite articles can complete the sentence without a discourse constraint.",
+          "suggestion": "Specify an indefinite first introduction, or remove the definite-article alternative."
+        },
+        {
+          "code": "unbound-animal-pronoun",
+          "path": "grammar.questions[3]",
+          "questionId": "g4",
+          "reason": "Animals can be referred to as he or she when their sex is known; an animal noun alone does not force it.",
+          "suggestion": "Ask explicitly for a neutral animal pronoun when the sex is unknown."
+        },
+        {
+          "code": "unbound-article-reference",
+          "path": "grammar.questions[6]",
+          "questionId": "g7",
+          "reason": "Both definite and indefinite articles can complete the sentence without a discourse constraint.",
+          "suggestion": "Specify an indefinite first introduction, or remove the definite-article alternative."
+        },
+        {
+          "code": "unbound-animal-pronoun",
+          "path": "grammar.questions[7]",
+          "questionId": "g8",
+          "reason": "Animals can be referred to as he or she when their sex is known; an animal noun alone does not force it.",
+          "suggestion": "Ask explicitly for a neutral animal pronoun when the sex is unknown."
+        }
+      ]
+    },
+    {
+      "id": "expand-w03-read-2",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "source-word-form"
+      ],
+      "historicalFeedback": "Vocabulary must occur in source: member; Vocabulary must occur in source: student; Vocabulary must occur in source: friend",
+      "inputHashes": {
+        "issue": "355d6593d37e7d73402f69a51fd852b28d21eef10824a651ea015929eccee859",
+        "draft": "0117a0eb8125f8fc51093211b5306528da57d1fc935c498c2fc0ce75e98948d6",
+        "review": null,
+        "current": "6df45db57a349b05fa46b63423e6db14f27e14e0c01951fd2d86f5a1a87831b7"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "club",
+        "meet",
+        "leader",
+        "list",
+        "members",
+        "students",
+        "table",
+        "friends"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "unbound-possessor",
+          "path": "grammar.questions[3]",
+          "questionId": "g4",
+          "reason": "The sentence does not identify whose name it is.",
+          "suggestion": "Supply a clear antecedent such as The girl is Cara. ____ name is Cara."
+        }
+      ]
+    },
+    {
+      "id": "expand-w05-listen-1",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "source-word-form"
+      ],
+      "historicalFeedback": "Vocabulary must occur in source: visit",
+      "inputHashes": {
+        "issue": "742512a43c70c393ddbe4c951c5730b68dd443c54df29cead9d481ce4e481b4e",
+        "draft": "a7aa0e2feac8b2dd8986d507bb5c0df3d5e4b4eff84b01fbeb2518c8eea117f3",
+        "review": null,
+        "current": "3ff19ea4eaa2ff9bb7750bd4ad83041c1a8ea0b07e268c8f34ce34f315790a8c"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "work",
+        "different",
+        "visits",
+        "stay",
+        "gym",
+        "start",
+        "finish",
+        "café"
+      ],
+      "disagreements": [],
+      "currentFlags": []
+    },
+    {
+      "id": "expand-w05-read-1",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "exact-quote"
+      ],
+      "historicalFeedback": "Evidence must be an exact source quote: q1",
+      "inputHashes": {
+        "issue": "7351390f95cc62c0afa41465af7a79e22939ebdaba3e13eb79c4386d6e6b39d6",
+        "draft": "9ddc2982cdc2f1a04769b8a080e8b596fb2764e910ff3d9cfa8038155271ac48",
+        "review": null,
+        "current": "d4fe8489d54787ca5476e18678afdc74f378a66d282528c5338ee1998d05b1a1"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "student",
+        "breakfast",
+        "library",
+        "piano",
+        "basketball",
+        "grandmother",
+        "weekends",
+        "sick"
+      ],
+      "disagreements": [],
+      "currentFlags": []
+    },
+    {
+      "id": "expand-w06-listen-2",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "exact-quote"
+      ],
+      "historicalFeedback": "Evidence must be an exact source quote: q3; Evidence must be an exact source quote: q7",
+      "inputHashes": {
+        "issue": "a37b1361e57506ab5d70b57a1c5e52412b62faf6713f7b3b85d581e700e72432",
+        "draft": "4571b35da4b4a75d2d90ecb60d244b87fc57ce773aa42147e025aaf8b7552bcd",
+        "review": null,
+        "current": "72b9ce0398e899d95713f6d9accf3abcd5e4be45ab83cda1afa63737c94c8430"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "community",
+        "centre",
+        "fun",
+        "art",
+        "draw",
+        "sing",
+        "cook",
+        "Fridays"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "two-valid-negative-spellings",
+          "path": "grammar.questions[4]",
+          "questionId": "g5",
+          "reason": "Cannot and can not are both possible negative spellings in English.",
+          "suggestion": "Replace can not with an ungrammatical auxiliary sequence, or explicitly request the one-word spelling."
+        },
+        {
+          "code": "unbound-conjunction-purpose",
+          "path": "grammar.questions[5]",
+          "questionId": "g6",
+          "reason": "Both addition and contrast can link these clauses; the communicative purpose is unspecified.",
+          "suggestion": "Explicitly ask for the conjunction that marks a contrast."
+        }
+      ]
+    },
+    {
+      "id": "expand-w07-read-1",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "source-word-form"
+      ],
+      "historicalFeedback": "Vocabulary must occur in source: classroom; Vocabulary must occur in source: bike",
+      "inputHashes": {
+        "issue": "b7a15edba08b4abc2052e93e1d1c6d74f529a7f00446bac1da6036bf36002bcd",
+        "draft": "a8c925ca280d3091787ac98c01238465eb67adf47f1172825ce916c5bced05e9",
+        "review": null,
+        "current": "24b20e1a26d7c1f6b3cf08389f45bfa64b26fc0baf3b36df9d77e5e71536f6c9"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "campus",
+        "library",
+        "cafe",
+        "gym",
+        "classrooms",
+        "map",
+        "wall",
+        "bikes"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "unbound-command-polarity",
+          "path": "grammar.questions[6]",
+          "questionId": "g7",
+          "reason": "A polite request and a prohibition are both grammatical but have opposite meanings.",
+          "suggestion": "State whether a positive request or a negative command is required."
+        },
+        {
+          "code": "unbound-command-polarity",
+          "path": "grammar.questions[7]",
+          "questionId": "g8",
+          "reason": "A polite request and a prohibition are both grammatical but have opposite meanings.",
+          "suggestion": "State whether a positive request or a negative command is required."
+        }
+      ]
+    },
+    {
+      "id": "expand-w09-listen-1",
+      "status": "draft-only",
+      "historicalCategories": [
+        "source-length"
+      ],
+      "historicalFeedback": "English source word count 348; required 180–320",
+      "inputHashes": {
+        "issue": "8fcfd074a3a716b59a73083d6786f3d1923a4c985b6723035ef7b6965d5647aa",
+        "draft": "21a5d886e80464b986c1eaa83372a8d4a90cc483e5cab01d88c267f49dcc1d91",
+        "review": null,
+        "current": "21a5d886e80464b986c1eaa83372a8d4a90cc483e5cab01d88c267f49dcc1d91"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "routine",
+        "library",
+        "break",
+        "focus",
+        "plan",
+        "goal",
+        "practice",
+        "grammar"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[0].example",
+          "word": "routine",
+          "value": "Mia: I usually study from nine to eleven at night."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[1].example",
+          "word": "library",
+          "value": "Mia: I study at the library."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[2].example",
+          "word": "break",
+          "value": "Leo: I take a short break every hour."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[3].example",
+          "word": "focus",
+          "value": "Leo: They help you focus."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[4].example",
+          "word": "plan",
+          "value": "Leo: I write a plan every Sunday."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[5].example",
+          "word": "goal",
+          "value": "Mia: I have a goal: I want to pass my English test next month."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[6].example",
+          "word": "practice",
+          "value": "Mia: I practice speaking on Saturdays with Anna."
+        },
+        {
+          "code": "non-exact-current-vocabulary-example",
+          "path": "vocabulary[7].example",
+          "word": "grammar",
+          "value": "Leo: I study grammar for thirty minutes every day."
+        },
+        {
+          "code": "adverb-position-overstatement",
+          "path": "grammar.questions[5]",
+          "questionId": "g6",
+          "reason": "A less usual adverb position is not necessarily ungrammatical.",
+          "suggestion": "Ask for the usual neutral adverb position rather than the only correct English sentence."
+        }
+      ]
+    },
+    {
+      "id": "expand-w09-listen-2",
+      "status": "public-source-exists",
+      "historicalCategories": [
+        "source-word-form"
+      ],
+      "historicalFeedback": "Vocabulary must occur in source: course; Vocabulary must occur in source: cost",
+      "inputHashes": {
+        "issue": "681f8d8c431f545e8a5ff4af272764a2da31c5093af59ee483c793284de8d5ba",
+        "draft": "d5c816ce3d26afaf3886d64d21bc0712ba13f4c9d49cfe9d7c597349b5d5807c",
+        "review": null,
+        "current": "6ee00b2d2796c888c89e65645ce57913ccd2c16e62428a16b1e3ac82ac780a44"
+      },
+      "draftAndCurrentSourceEqual": true,
+      "currentVocabulary": [
+        "courses",
+        "join",
+        "finish",
+        "costs",
+        "test",
+        "practise",
+        "goal",
+        "usually"
+      ],
+      "disagreements": [],
+      "currentFlags": [
+        {
+          "code": "adverb-position-overstatement",
+          "path": "grammar.questions[6]",
+          "questionId": "g7",
+          "reason": "A less usual adverb position is not necessarily ungrammatical.",
+          "suggestion": "Ask for the usual neutral adverb position rather than the only correct English sentence."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Historical .issues files can remain after a corrected public source exists; they are not a live failure counter.",
+    "Rule flags are candidates for semantic review, not a substitute for independently solving the material.",
+    "The observed old blind q6 disagreement is real ambiguity: Anna says both I am new and I am happy. Its current public prompt identifies the later conversation with Ms. Lee and resolves it.",
+    "No quality gate was relaxed, no source question was automatically released, and no new AI review or human examiner review is claimed."
+  ]
+}

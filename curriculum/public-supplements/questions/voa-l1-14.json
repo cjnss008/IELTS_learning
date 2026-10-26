@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-14-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-14",
+  "sourceVersion": "1",
+  "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+  "sourceContentHash": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+  "exposureGroup": "public-source:voa-l1-14",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Anna plan to do tonight?",
+      "options": [
+        "Go to the theater.",
+        "Listen to music.",
+        "Eat at a restaurant."
+      ],
+      "answers": [
+        "Go to the theater."
+      ],
+      "evidence": "Tonight I am going to the theater with my friends.",
+      "evidenceOffsets": {
+        "start": 157,
+        "end": 207,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna明确说今晚要和朋友去theater。开头虽然介绍人们晚上也会去餐馆或听音乐，但那些是一般活动举例，不能当成Anna这晚自己的计划。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Tonight I am going to the theater with my friends.",
+          "start": 157,
+          "end": 207
+        }
+      ],
+      "understanding": "specific-versus-general"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Genie say no to jeans and a T-shirt?",
+      "options": [
+        "They are too small.",
+        "Their colors do not match.",
+        "They are too casual."
+      ],
+      "answers": [
+        "They are too casual."
+      ],
+      "evidence": "Jeans and a t-shirt are too casual. How about something more formal?",
+      "evidenceOffsets": {
+        "start": 515,
+        "end": 583,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Genie说牛仔裤和T恤too casual，并建议更正式的衣服，因此问题是过于休闲。too small是在后面对绿色连衣裙的评价，颜色不搭也是另一套衣服的问题，都不能移到最初建议上。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Jeans and a t-shirt are too casual. How about something more formal?",
+          "start": 515,
+          "end": 583
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Anna say about the size of the green dress?",
+      "options": [
+        "It is too small.",
+        "It is the right size.",
+        "It is too large."
+      ],
+      "answers": [
+        "It is too small."
+      ],
+      "evidence": "But it’s not the right size. It’s too small.",
+      "evidenceOffsets": {
+        "start": 641,
+        "end": 685,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna明确说这条连衣裙尺码不对、too small，所以是太小。太大是后来绿色衬衫的问题；原文not the right size也排除了尺码正好的选项。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "But it’s not the right size. It’s too small.",
+          "start": 641,
+          "end": 685
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What clothing size does Genie recommend for Anna?",
+      "answers": [
+        "medium"
+      ],
+      "maxWords": 1,
+      "evidence": "Yes, the right size for you is medium.",
+      "evidenceOffsets": {
+        "start": 925,
+        "end": 963,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Genie明确说适合Anna的是medium，因此填medium。前面出现too small和too large是试穿问题，不是最后推荐的尺码；本题使用说出的尺寸，不凭人物画面判断身材。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Yes, the right size for you is medium.",
+          "start": 925,
+          "end": 963
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Near the end, what does Genie tell Anna to take off?",
+      "options": [
+        "A hat.",
+        "A tie.",
+        "A gold belt."
+      ],
+      "answers": [
+        "A hat."
+      ],
+      "evidence": "Mm, take off the hat. That’s better.",
+      "evidenceOffsets": {
+        "start": 1534,
+        "end": 1570,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Genie最后明确要求take off the hat。金色腰带是Anna要求加上的配饰，原文没有在此要求取下；领带出现在更早的不合适装扮中，不是这句take off针对的物品。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Mm, take off the hat. That’s better.",
+          "start": 1534,
+          "end": 1570
+        }
+      ],
+      "understanding": "sequence"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why does Genie not go to the theater with Anna?",
+      "options": [
+        "Genie has other friends to help.",
+        "Genie cannot find the theater.",
+        "Genie dislikes Anna’s final clothes."
+      ],
+      "answers": [
+        "Genie has other friends to help."
+      ],
+      "evidence": "Sorry, Anna. I have to help other friends.",
+      "evidenceOffsets": {
+        "start": 1653,
+        "end": 1695,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Genie说必须帮助其他朋友，因此不能和Anna一起去。此前已经赞同最终的衣服效果，所以不能选不喜欢最终装扮；对话也没有说Genie找不到剧院。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Sorry, Anna. I have to help other friends.",
+          "start": 1653,
+          "end": 1695
+        }
+      ],
+      "understanding": "reason"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "191c0d4bfaf7cc47099fbb8508f826f96014be1d441634cef541811cbc82a391",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "id": "expand-w25-listen-2",
+  "week": 25,
+  "skill": "listening",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "环境话题与学术阅读定位 · Independent new scenario: a lecturer explaining an infrastructure trade-off",
+  "grammarFocus": "被动语态；因果表达；分词作定语的基础辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Bridge That Waited: A Lecture on Infrastructure Trade-offs",
+  "instructions": "本材料为模拟教学练习，非官方雅思试题。听录音前先读题；录音中说话者会自然修正和插话，注意区分事实与干扰信息。语法部分先看中文讲解，再做8道新题。所有题目答案均来自原文，填空答案必须与原文完全一致。",
+  "transcript": "LECTURER: Good morning. Today we look at a small bridge project. It is a simulated case, not a real place. The town of Riverton wanted a new footbridge over the river. Two plans were discussed. Plan A was cheaper. Plan B was stronger. The council chose Plan B. Why? Because the river floods every spring. A weak bridge would be closed for weeks. So the stronger design was selected. The extra cost was about two million. That money came from the regional budget. Now, a trade-off means you gain one thing and lose another. Here, the town gained safety but lost some parkland. Three old trees were removed. Some residents were unhappy. They said the trees were important. The council agreed to plant ten new trees nearby. Those trees will grow slowly. So the benefit is delayed. MAYA: Excuse me, was the public consulted? LECTURER: Yes, two meetings were held. But only forty people came. MAYA: So most people were not heard. LECTURER: That is a fair point. The process was criticized for that reason. Now, look at the timeline. The design was finished in March. Construction started in June. The bridge was opened in December. It was used by 800 people on the first day. That number was higher than expected. The old ferry was closed afterwards. Some ferry workers were retrained. Others were let go. This is another trade-off. Jobs were lost, but travel time was cut. Before, the crossing took twenty minutes. Now it takes four minutes. The saved time helps local shops. Deliveries are faster. However, the bridge is not perfect. It was built for walkers and cyclists only. Cars cannot use it. So drivers still use the old road bridge. That bridge is often crowded. A wider road bridge was proposed, but it was rejected. The cost was too high. So the problem was only partly solved. Let me finish with a question. When you read about infrastructure, ask: who gains, who loses, and who decides? These three questions are useful. They are not always easy to answer. But they help you read critically. Next week we will look at a water project. Please read the short case before class. Thank you.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which plan did the council choose?",
+      "options": [
+        "Plan A",
+        "Plan B",
+        "Both plans",
+        "Neither plan"
+      ],
+      "answers": [
+        "Plan B"
+      ],
+      "explanation": "原文明确说 'The council chose Plan B.'，因此选 Plan B。",
+      "evidence": "The council chose Plan B."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why was the stronger design selected?",
+      "options": [
+        "It was cheaper.",
+        "The river floods every spring.",
+        "The parkland was too small.",
+        "The ferry was closed."
+      ],
+      "answers": [
+        "The river floods every spring."
+      ],
+      "explanation": "原文用 Because 引出原因：'Because the river floods every spring.'，所以选此项。",
+      "evidence": "Because the river floods every spring."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "The extra cost was about ______ million.",
+      "maxWords": 1,
+      "answers": [
+        "two"
+      ],
+      "explanation": "原文说 'The extra cost was about two million.'，填空词为 two。",
+      "evidence": "The extra cost was about two million."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How many old trees were removed?",
+      "options": [
+        "Three",
+        "Ten",
+        "Forty",
+        "Eight hundred"
+      ],
+      "answers": [
+        "Three"
+      ],
+      "explanation": "原文明确说 'Three old trees were removed.'，因此选 Three。",
+      "evidence": "Three old trees were removed."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What did the council agree to do about the trees?",
+      "options": [
+        "Plant ten new trees nearby",
+        "Move the old trees",
+        "Close the park",
+        "Cancel the bridge"
+      ],
+      "answers": [
+        "Plant ten new trees nearby"
+      ],
+      "explanation": "原文说 'The council agreed to plant ten new trees nearby.'，所以选此项。",
+      "evidence": "The council agreed to plant ten new trees nearby."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many people came to the public meetings?",
+      "options": [
+        "Two",
+        "Forty",
+        "Eight hundred",
+        "Ten"
+      ],
+      "answers": [
+        "Forty"
+      ],
+      "explanation": "原文说 'But only forty people came.'，因此选 Forty。",
+      "evidence": "But only forty people came."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When was the bridge opened?",
+      "options": [
+        "In March",
+        "In June",
+        "In December",
+        "In spring"
+      ],
+      "answers": [
+        "In December"
+      ],
+      "explanation": "原文说 'The bridge was opened in December.'，所以选 In December。",
+      "evidence": "The bridge was opened in December."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "The bridge was used by ______ people on the first day.",
+      "maxWords": 1,
+      "answers": [
+        "800"
+      ],
+      "explanation": "原文说 'It was used by 800 people on the first day.'，填空词为 800。",
+      "evidence": "It was used by 800 people on the first day."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "How long does the crossing take now?",
+      "options": [
+        "Twenty minutes",
+        "Four minutes",
+        "Ten minutes",
+        "Forty minutes"
+      ],
+      "answers": [
+        "Four minutes"
+      ],
+      "explanation": "原文说 'Now it takes four minutes.'，因此选 Four minutes。",
+      "evidence": "Now it takes four minutes."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Why was a wider road bridge rejected?",
+      "options": [
+        "The cost was too high.",
+        "The river was too wide.",
+        "The ferry workers agreed.",
+        "The parkland was too small."
+      ],
+      "answers": [
+        "The cost was too high."
+      ],
+      "explanation": "原文说 'A wider road bridge was proposed, but it was rejected. The cost was too high.'，所以选此项。",
+      "evidence": "The cost was too high."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "trade-off",
+      "meaning": "权衡；取舍（得到一样东西的同时失去另一样）",
+      "example": "Now, a trade-off means you gain one thing and lose another."
+    },
+    {
+      "word": "infrastructure",
+      "meaning": "基础设施（道路、桥梁、水电等公共设施）",
+      "example": "When you read about infrastructure, ask: who gains, who loses, and who decides?"
+    },
+    {
+      "word": "council",
+      "meaning": "委员会；市政会（负责决策的机构）",
+      "example": "The council chose Plan B."
+    },
+    {
+      "word": "residents",
+      "meaning": "居民",
+      "example": "Some residents were unhappy."
+    },
+    {
+      "word": "consulted",
+      "meaning": "咨询；征求意见",
+      "example": "Excuse me, was the public consulted?"
+    },
+    {
+      "word": "criticized",
+      "meaning": "批评；指责",
+      "example": "The process was criticized for that reason."
+    },
+    {
+      "word": "retrained",
+      "meaning": "再培训；接受新技能训练",
+      "example": "Some ferry workers were retrained."
+    },
+    {
+      "word": "proposed",
+      "meaning": "提议；提出（计划等）",
+      "example": "A wider road bridge was proposed, but it was rejected."
+    }
+  ],
+  "grammar": {
+    "title": "被动语态；因果表达；分词作定语的基础辨认",
+    "explanation": "本课重点是被动语态：当句子强调“动作承受者”而不是“谁做的”时，用 be + 过去分词。例如原文 'The bridge was opened in December.' 中，bridge 是“被开放”的对象，所以用 was opened。因果表达常用 because, so, for that reason 等连接原因和结果。分词作定语是用分词放在名词前或后修饰名词，如 'the saved time'（被节省的时间）中 saved 是过去分词作前置定语；'A wider road bridge was proposed' 中 proposed 是被动结构 was proposed 的一部分，不是定语。注意区分：本课新学“被动语态+因果表达+分词作定语辨认”，复习一般现在时主动句和一般过去时主动句。做题时先找主语和动词，判断主语是“做动作”还是“承受动作”。",
+    "example": "The bridge was opened in December.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The new library was built last year.",
+          "The new library built last year.",
+          "The new library is build last year.",
+          "The new library were built last year."
+        ],
+        "answers": [
+          "The new library was built last year."
+        ],
+        "explanation": "被动语态结构为 be + 过去分词；library 是单数，过去时用 was built。",
+        "evidence": "The bridge was opened in December."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The trees were removed by workers.",
+          "The trees was removed by workers.",
+          "The trees removed by workers.",
+          "The trees are remove by workers."
+        ],
+        "answers": [
+          "The trees were removed by workers."
+        ],
+        "explanation": "trees 是复数，过去被动用 were + 过去分词 removed。",
+        "evidence": "Three old trees were removed."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The report was written by Maya.",
+          "The report wrote by Maya.",
+          "The report were written by Maya.",
+          "The report is wrote by Maya."
+        ],
+        "answers": [
+          "The report was written by Maya."
+        ],
+        "explanation": "report 是单数，过去被动用 was written。",
+        "evidence": "The design was finished in March."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The workers were retrained last month.",
+          "The workers was retrained last month.",
+          "The workers retrained last month by the company.",
+          "The workers are retrain last month."
+        ],
+        "answers": [
+          "The workers were retrained last month."
+        ],
+        "explanation": "workers 是复数，过去被动用 were retrained。",
+        "evidence": "Some ferry workers were retrained."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The plan was rejected because the cost was too high.",
+          "The plan was rejected so the cost was too high.",
+          "The plan rejected because the cost was too high.",
+          "The plan was reject because the cost was too high."
+        ],
+        "answers": [
+          "The plan was rejected because the cost was too high."
+        ],
+        "explanation": "被动语态 was rejected；because 引导原因，符合因果表达。",
+        "evidence": "A wider road bridge was proposed, but it was rejected. The cost was too high."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The saved time helps local shops.",
+          "The saving time helps local shops.",
+          "The save time helps local shops.",
+          "The time saved helps local shops."
+        ],
+        "answers": [
+          "The saved time helps local shops."
+        ],
+        "explanation": "saved 是过去分词作前置定语，修饰 time，表示“被节省的时间”。",
+        "evidence": "The saved time helps local shops."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The proposed bridge was too expensive.",
+          "The proposing bridge was too expensive.",
+          "The propose bridge was too expensive.",
+          "The bridge proposed was too expensive."
+        ],
+        "answers": [
+          "The proposed bridge was too expensive."
+        ],
+        "explanation": "proposed 是过去分词作前置定语，放在名词 bridge 前，表示“被提议的桥”。",
+        "evidence": "A wider road bridge was proposed, but it was rejected."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The bridge was used by 800 people on the first day.",
+          "The bridge used by 800 people on the first day.",
+          "The bridge were used by 800 people on the first day.",
+          "The bridge is use by 800 people on the first day."
+        ],
+        "answers": [
+          "The bridge was used by 800 people on the first day."
+        ],
+        "explanation": "bridge 是单数，过去被动用 was used。",
+        "evidence": "It was used by 800 people on the first day."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use bridges or public transport in your city?",
+        "What is one new building or road in your area?",
+        "Do you think public money should be spent on parks or roads?",
+        "Have you ever been asked for your opinion about a local project?"
+      ],
+      "part2": "Describe a time when a local project caused different opinions. You should say: what the project was; who supported it and who did not; what the main trade-off was; and explain how you felt about the decision.",
+      "part3": [
+        "Why do governments sometimes choose a more expensive plan?",
+        "How can ordinary people be included in decisions about infrastructure?",
+        "What are the advantages and disadvantages of building new roads?",
+        "Should old trees ever be removed for a new project? Why or why not?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 120 words) for a local newsletter. Describe a simulated plan for a new bicycle lane in your town. Explain one benefit, one cost, and who might disagree. Use at least two passive sentences and one because or so sentence."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated academic lecture) + grammar focus + transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "027a174003aebf3d7193a8bfeec86e5aea34a8efd498f31af42666e5e2a72317"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

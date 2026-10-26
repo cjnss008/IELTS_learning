@@ -1,76 +1,447 @@
 {
-  "schema": 3,
   "id": "independent-a2-listen-au",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+  "configurationHash": "da62c1d11289be533f8dd3d1ca1545ea57ee96ac37686fedd6907a05b9ebc3a5",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+    "rate": "-8%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "guide": "en-US-AriaNeural",
+      "owen": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 0,
+        "sourceEnd": 7
+      },
+      {
+        "label": "Owen",
+        "role": "owen",
+        "sourceStart": 36,
+        "sourceEnd": 42
+      },
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 138,
+        "sourceEnd": 145
+      },
+      {
+        "label": "Owen",
+        "role": "owen",
+        "sourceStart": 292,
+        "sourceEnd": 298
+      },
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 322,
+        "sourceEnd": 329
+      },
+      {
+        "label": "Owen",
+        "role": "owen",
+        "sourceStart": 506,
+        "sourceEnd": 512
+      },
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 538,
+        "sourceEnd": 545
+      },
+      {
+        "label": "Owen",
+        "role": "owen",
+        "sourceStart": 701,
+        "sourceEnd": 707
+      },
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 723,
+        "sourceEnd": 730
+      },
+      {
+        "label": "Owen",
+        "role": "owen",
+        "sourceStart": 933,
+        "sourceEnd": 939
+      },
+      {
+        "label": "Guide",
+        "role": "guide",
+        "sourceStart": 977,
+        "sourceEnd": 984
+      }
+    ],
+    "segments": [
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 7,
+        "sourceEnd": 35,
+        "text": "Coast Walks, this is Rachel.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "0293675f28b5210bff572ba78bf8024d8562742db7afdfcb424fc2c833b96fa1",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "owen",
+        "speaker": "Owen",
+        "sourceStart": 42,
+        "sourceEnd": 137,
+        "text": "I would like to book two places for the walk on Sunday. I saw that it starts at the beach café.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "10b07c1769c23aade30f58f5d99d37b674836588265c9f544d608f23ccc4c3c4",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 145,
+        "sourceEnd": 291,
+        "text": "We have changed the meeting point. The café is being painted, so please meet at the bus shelter opposite it. The start time is still eight thirty.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "e57fab3616bf290f9aa9f988556cc4be05e0d3e6dfb32b83e4452feb4dd5b5a2",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "owen",
+        "speaker": "Owen",
+        "sourceStart": 298,
+        "sourceEnd": 321,
+        "text": "Is it a difficult walk?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "f0ec68bf610506018b22081467c7da31254f899ba645cd4fbf3263e3233d7f17",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 329,
+        "sourceEnd": 505,
+        "text": "The whole route is six kilometres. The first part is flat, but there are steps near the lighthouse. We stop for a short rest at the top. Allow three hours, including the break.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "c09c9e9990fa49d7a24c89e94200981a81fe1dd3be4091bbaf3de884f725ca77",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "owen",
+        "speaker": "Owen",
+        "sourceStart": 512,
+        "sourceEnd": 537,
+        "text": "What do we need to bring?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "dfb4fc3cc20691eddca4b765299d90447465634d9e3842f08ded147e3153b9b8",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 545,
+        "sourceEnd": 700,
+        "text": "Water and a hat. There is very little shade. Wear shoes with a good grip. We do not recommend sandals. I can lend you a rain jacket if the weather changes.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "1cba088c2c2e1b53cc5c570cca5c3e94af047f537c0e277ac6e18990b549d3a8",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "owen",
+        "speaker": "Owen",
+        "sourceStart": 707,
+        "sourceEnd": 722,
+        "text": "How much is it?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "abdfbb3951b780a174166d38d10acc3920b5e8f4712cc6014104161424c3b2f8",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 730,
+        "sourceEnd": 932,
+        "text": "Eighteen dollars per adult. That includes a bus ticket back to the starting point. You can pay me on the day. Please send your mobile number by email today so I can contact you if the walk is cancelled.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "c77835a843052ef4d7f27fb714aef8a08d928807ee120d4719637373ed5648ff",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "owen",
+        "speaker": "Owen",
+        "sourceStart": 939,
+        "sourceEnd": 976,
+        "text": "Does light rain mean it is cancelled?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "1e9f14c9a7f0d20f2418c5dd8d97765fa33af8cbd598945bc78e2cad5cb57af0",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "guide",
+        "speaker": "Guide",
+        "sourceStart": 984,
+        "sourceEnd": 1089,
+        "text": "No, but we cancel for thunderstorms. We never take a group onto the exposed path when there is lightning.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "e8e6d7efb6e3455f2ba7de69d032cd041b7fff56c4c1fed0da6251ba62cba47d",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "bd9a2276b9b40a89f8006f8ec295da32295d212b0026adefd00e1556264d54f9",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "roleVoices": {
+    "guide": "en-US-AriaNeural",
+    "owen": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 78.685417,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-AU",
-  "voices": [
-    "en-AU-NatashaNeural",
-    "en-AU-WilliamNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "-8%",
-  "transcriptHash": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
-  "audioHash": "0ab83682f52bda082c4cb4b45c2e7e5de236f9132dcb6e05a963488f3c3e7757",
-  "configurationHash": "5fb55bd9431739073cc316d807dd13c79de31cfc110070acfe4872002b14daca",
-  "durationSeconds": 83.76,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-AU-NatashaNeural",
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 7,
+      "sourceEnd": 35,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "0293675f28b5210bff572ba78bf8024d8562742db7afdfcb424fc2c833b96fa1",
-      "durationSeconds": 3.072
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "8ce70f1cb6cdf148e4cd9b004ea9afa20b3739e8705a68649cd8d6a7f83e41f7",
+      "groupAudioHash": "5f21e1e89cfa86c5e0de3de5ff8e88771ffb560ae15841dfe62cda586352c15b",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 2.221625,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 2.101624,
+      "startSeconds": 0.0,
+      "endSeconds": 2.1772916666666666,
+      "durationSeconds": 2.1772916666666666
     },
     {
-      "voice": "en-AU-WilliamNeural",
+      "role": "owen",
+      "speaker": "Owen",
+      "sourceStart": 42,
+      "sourceEnd": 137,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "10b07c1769c23aade30f58f5d99d37b674836588265c9f544d608f23ccc4c3c4",
-      "durationSeconds": 6.384
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "07cee703333cc264710473f31756effd6a2fbe9f1309765bb05f255549a53180",
+      "groupAudioHash": "032d17d4a60688b45bc56c40c58cb64ad82524220b526fb3d761eb4bbd595f11",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 6.302083333333333,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 6.182082,
+      "startSeconds": 2.627291666666667,
+      "endSeconds": 8.885041666666666,
+      "durationSeconds": 6.25775
     },
     {
-      "voice": "en-AU-NatashaNeural",
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 145,
+      "sourceEnd": 291,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "e57fab3616bf290f9aa9f988556cc4be05e0d3e6dfb32b83e4452feb4dd5b5a2",
-      "durationSeconds": 11.688
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8ce70f1cb6cdf148e4cd9b004ea9afa20b3739e8705a68649cd8d6a7f83e41f7",
+      "groupAudioHash": "5f21e1e89cfa86c5e0de3de5ff8e88771ffb560ae15841dfe62cda586352c15b",
+      "groupStartSeconds": 2.9834583333333335,
+      "groupEndSeconds": 13.462375,
+      "wordStartSeconds": 3.043458,
+      "wordEndSeconds": 13.342374,
+      "startSeconds": 9.335041666666667,
+      "endSeconds": 19.813958333333332,
+      "durationSeconds": 10.478916666666665
     },
     {
-      "voice": "en-AU-WilliamNeural",
+      "role": "owen",
+      "speaker": "Owen",
+      "sourceStart": 298,
+      "sourceEnd": 321,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "f0ec68bf610506018b22081467c7da31254f899ba645cd4fbf3263e3233d7f17",
-      "durationSeconds": 1.872
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "07cee703333cc264710473f31756effd6a2fbe9f1309765bb05f255549a53180",
+      "groupAudioHash": "032d17d4a60688b45bc56c40c58cb64ad82524220b526fb3d761eb4bbd595f11",
+      "groupStartSeconds": 7.08675,
+      "groupEndSeconds": 8.815625,
+      "wordStartSeconds": 7.14675,
+      "wordEndSeconds": 8.695624,
+      "startSeconds": 20.263958333333335,
+      "endSeconds": 21.992833333333333,
+      "durationSeconds": 1.7288749999999986
     },
     {
-      "voice": "en-AU-NatashaNeural",
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 329,
+      "sourceEnd": 505,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "c09c9e9990fa49d7a24c89e94200981a81fe1dd3be4091bbaf3de884f725ca77",
-      "durationSeconds": 14.976
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8ce70f1cb6cdf148e4cd9b004ea9afa20b3739e8705a68649cd8d6a7f83e41f7",
+      "groupAudioHash": "5f21e1e89cfa86c5e0de3de5ff8e88771ffb560ae15841dfe62cda586352c15b",
+      "groupStartSeconds": 14.233458333333333,
+      "groupEndSeconds": 28.000416666666666,
+      "wordStartSeconds": 14.293458,
+      "wordEndSeconds": 27.880416,
+      "startSeconds": 22.442833333333333,
+      "endSeconds": 36.20979166666667,
+      "durationSeconds": 13.766958333333335
     },
     {
-      "voice": "en-AU-WilliamNeural",
+      "role": "owen",
+      "speaker": "Owen",
+      "sourceStart": 512,
+      "sourceEnd": 537,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "dfb4fc3cc20691eddca4b765299d90447465634d9e3842f08ded147e3153b9b8",
-      "durationSeconds": 2.04
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "07cee703333cc264710473f31756effd6a2fbe9f1309765bb05f255549a53180",
+      "groupAudioHash": "032d17d4a60688b45bc56c40c58cb64ad82524220b526fb3d761eb4bbd595f11",
+      "groupStartSeconds": 9.600333333333333,
+      "groupEndSeconds": 11.220541666666668,
+      "wordStartSeconds": 9.660333,
+      "wordEndSeconds": 11.100541,
+      "startSeconds": 36.65979166666666,
+      "endSeconds": 38.28,
+      "durationSeconds": 1.6202083333333377
     },
     {
-      "voice": "en-AU-NatashaNeural",
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 545,
+      "sourceEnd": 700,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "1cba088c2c2e1b53cc5c570cca5c3e94af047f537c0e277ac6e18990b549d3a8",
-      "durationSeconds": 14.592
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8ce70f1cb6cdf148e4cd9b004ea9afa20b3739e8705a68649cd8d6a7f83e41f7",
+      "groupAudioHash": "5f21e1e89cfa86c5e0de3de5ff8e88771ffb560ae15841dfe62cda586352c15b",
+      "groupStartSeconds": 28.757916666666667,
+      "groupEndSeconds": 42.008583333333334,
+      "wordStartSeconds": 28.817916,
+      "wordEndSeconds": 41.888583,
+      "startSeconds": 38.73,
+      "endSeconds": 51.980666666666664,
+      "durationSeconds": 13.250666666666667
     },
     {
-      "voice": "en-AU-WilliamNeural",
+      "role": "owen",
+      "speaker": "Owen",
+      "sourceStart": 707,
+      "sourceEnd": 722,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "abdfbb3951b780a174166d38d10acc3920b5e8f4712cc6014104161424c3b2f8",
-      "durationSeconds": 1.872
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "07cee703333cc264710473f31756effd6a2fbe9f1309765bb05f255549a53180",
+      "groupAudioHash": "032d17d4a60688b45bc56c40c58cb64ad82524220b526fb3d761eb4bbd595f11",
+      "groupStartSeconds": 11.991625,
+      "groupEndSeconds": 13.027583333333334,
+      "wordStartSeconds": 12.051625,
+      "wordEndSeconds": 12.907583,
+      "startSeconds": 52.43066666666667,
+      "endSeconds": 53.466625,
+      "durationSeconds": 1.0359583333333333
     },
     {
-      "voice": "en-AU-NatashaNeural",
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 730,
+      "sourceEnd": 932,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "c77835a843052ef4d7f27fb714aef8a08d928807ee120d4719637373ed5648ff",
-      "durationSeconds": 16.104
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8ce70f1cb6cdf148e4cd9b004ea9afa20b3739e8705a68649cd8d6a7f83e41f7",
+      "groupAudioHash": "5f21e1e89cfa86c5e0de3de5ff8e88771ffb560ae15841dfe62cda586352c15b",
+      "groupStartSeconds": 42.766083333333334,
+      "groupEndSeconds": 57.185208333333335,
+      "wordStartSeconds": 42.826083,
+      "wordEndSeconds": 57.065208,
+      "startSeconds": 53.916625,
+      "endSeconds": 68.33575,
+      "durationSeconds": 14.419125000000001
     },
     {
-      "voice": "en-AU-WilliamNeural",
+      "role": "owen",
+      "speaker": "Owen",
+      "sourceStart": 939,
+      "sourceEnd": 976,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "1e9f14c9a7f0d20f2418c5dd8d97765fa33af8cbd598945bc78e2cad5cb57af0",
-      "durationSeconds": 2.544
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "07cee703333cc264710473f31756effd6a2fbe9f1309765bb05f255549a53180",
+      "groupAudioHash": "032d17d4a60688b45bc56c40c58cb64ad82524220b526fb3d761eb4bbd595f11",
+      "groupStartSeconds": 13.798708333333334,
+      "groupEndSeconds": 16.003166666666665,
+      "wordStartSeconds": 13.858708,
+      "wordEndSeconds": 15.883166,
+      "startSeconds": 68.78575,
+      "endSeconds": 70.99020833333333,
+      "durationSeconds": 2.204458333333335
     },
     {
-      "voice": "en-AU-NatashaNeural",
+      "role": "guide",
+      "speaker": "Guide",
+      "sourceStart": 984,
+      "sourceEnd": 1089,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "e8e6d7efb6e3455f2ba7de69d032cd041b7fff56c4c1fed0da6251ba62cba47d",
-      "durationSeconds": 8.616
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8ce70f1cb6cdf148e4cd9b004ea9afa20b3739e8705a68649cd8d6a7f83e41f7",
+      "groupAudioHash": "5f21e1e89cfa86c5e0de3de5ff8e88771ffb560ae15841dfe62cda586352c15b",
+      "groupStartSeconds": 57.942708333333336,
+      "groupEndSeconds": 65.18791666666667,
+      "wordStartSeconds": 58.002708,
+      "wordEndSeconds": 65.067916,
+      "startSeconds": 71.44020833333333,
+      "endSeconds": 78.68541666666667,
+      "durationSeconds": 7.245208333333338
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a2-listen-au.mp3"
 }

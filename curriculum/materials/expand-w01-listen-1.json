@@ -1,0 +1,367 @@
+{
+  "id": "expand-w01-listen-1",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "pool": "training",
+  "fullTest": false,
+  "type": "dialogue",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "字母、声音与自我介绍 · Independent new scenario: an evening community class and its new classmates",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true,
+    "roleVoices": {
+      "tom": "en-US-EricNeural"
+    }
+  },
+  "title": "New Faces at the Evening Class",
+  "instructions": "这是为A0初学者设计的原创听力与语法练习，场景为模拟的社区夜校。请先听或读对话，注意人称代词 I / you 和 be 动词 am / are 的用法，以及句首大写和句号。所有题目均为英文，解释为中文。答案必须来自原文。",
+  "transcript": "Narrator: It is 7 p.m. Anna opens the door.\nAnna: Hello. I am Anna. Are you a new student?\nBen: Yes. I am Ben. Nice to meet you.\nAnna: Nice to meet you, too. You are in Room 3.\nBen: Thank you. Are you the teacher?\nAnna: No, I am not. I am a student. I am new, too.\nBen: Oh! You are a student. I am happy.\nAnna: We are classmates. This is Tom. He is a student.\nBen: Hello, Tom. Are you new?\nTom: No, I am not. I am not new here. You are new.\nBen: Yes. I am new. We are all in Room 3.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What time is it?",
+      "options": [
+        "6 p.m.",
+        "7 p.m.",
+        "8 p.m."
+      ],
+      "answers": [
+        "7 p.m."
+      ],
+      "explanation": "旁白先说 It is 7 p.m.，即晚上七点。题目问时间，不是在问后面的房间号码。",
+      "evidence": "It is 7 p.m."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who opens the door?",
+      "options": [
+        "Ben",
+        "Anna",
+        "Tom"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "旁白说 Anna opens the door.，明确是 Anna 开门。后面 Ben 和 Tom 说话，不代表他们做了开门这个动作。",
+      "evidence": "Anna opens the door."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Use ONE NUMBER: You are in Room ______.",
+      "maxWords": 1,
+      "answers": [
+        "3"
+      ],
+      "explanation": "Anna 告诉 Ben：You are in Room 3.。题目要求一个数字，空格只填 3；Room 已经给出，不重复写入。",
+      "evidence": "You are in Room 3."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is Anna the teacher?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Ben 问 Are you the teacher?，Anna 回答 No, I am not.。问题用第三人称问 Anna，因此回答为 No, she is not；这不是仅凭她是学生推断她不能同时当老师。",
+      "evidence": "Ben: Thank you. Are you the teacher?\nAnna: No, I am not. I am a student. I am new, too."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "How does Ben feel? Use ONE WORD from the conversation: \"I am ______.\"",
+      "maxWords": 1,
+      "answers": [
+        "happy"
+      ],
+      "explanation": "题目明确问 Ben 的感受。得知 Anna 也是学生后，他说 I am happy.，所以填 happy（高兴）。new 表示是否新来，不是本题问的感受。",
+      "evidence": "Ben: Oh! You are a student. I am happy."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Anna say about Tom?",
+      "options": [
+        "He is a student.",
+        "He is the teacher.",
+        "He is the new student."
+      ],
+      "answers": [
+        "He is a student."
+      ],
+      "explanation": "Anna 介绍 Tom 时说 This is Tom. He is a student.，因此选 He is a student。Tom 随后明确说自己不是新来的，所以不能选 He is the new student。",
+      "evidence": "This is Tom. He is a student."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is Tom new here?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not."
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Ben 问 Tom 是否新来，Tom 明确回答 No, I am not. I am not new here.。不要把后面的 You are new 误当作 Tom 描述自己；you 指他正在交谈的人。",
+      "evidence": "Ben: Hello, Tom. Are you new?\nTom: No, I am not. I am not new here. You are new."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the conversation: Anna says, \"We are ______.\"",
+      "maxWords": 1,
+      "answers": [
+        "classmates"
+      ],
+      "explanation": "Anna 的原话是 We are classmates.，表示“我们是同学”。这里 we 指不止一个人，classmates 用复数。题目要求录音中的一个词，应保留原词末尾的 s。",
+      "evidence": "Anna: We are classmates."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "Are you the teacher?"
+    },
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "I am new, too."
+    },
+    {
+      "word": "classmates",
+      "meaning": "同学",
+      "example": "We are classmates."
+    },
+    {
+      "word": "Room",
+      "meaning": "房间",
+      "example": "You are in Room 3."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    },
+    {
+      "word": "door",
+      "meaning": "门",
+      "example": "Anna opens the door."
+    },
+    {
+      "word": "meet",
+      "meaning": "遇见；认识",
+      "example": "Nice to meet you."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are；句首大写与句号",
+    "explanation": "在英语中，主语是 I 时，be 动词用 am；主语是 you 时，be 动词用 are。句子第一个字母要大写，句子末尾要加句号。例如：I am Anna. You are a student. 注意：I 永远大写。",
+    "example": "I am Anna. Are you a new student?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "i am a student.",
+          "I am a student.",
+          "I am a student"
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 必须大写，句末要有句号。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You are a teacher.",
+          "You is a teacher.",
+          "You am a teacher."
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "主语 you 后面用 are。",
+        "evidence": "Are you the teacher?"
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "Complete: I ____ new.",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "主语 I 后面用 am。",
+        "evidence": "I am new."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Complete: You ____ in Room 3.",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "主语 you 后面用 are。",
+        "evidence": "You are in Room 3."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Which sentence has a capital letter and a full stop?",
+        "options": [
+          "i am happy.",
+          "I am happy.",
+          "I am happy"
+        ],
+        "answers": [
+          "I am happy."
+        ],
+        "explanation": "句首字母大写，句末有句号。",
+        "evidence": "I am happy."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Are you a student?",
+          "You are a student?",
+          "Am you a student?"
+        ],
+        "answers": [
+          "Are you a student?"
+        ],
+        "explanation": "一般疑问句把 are 放在 you 前面。",
+        "evidence": "Are you a new student?"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "I am not a teacher.",
+          "I not am a teacher.",
+          "I am no a teacher."
+        ],
+        "answers": [
+          "I am not a teacher."
+        ],
+        "explanation": "否定形式是 am not。",
+        "evidence": "No, I am not."
+      },
+      {
+        "id": "g8",
+        "type": "fill",
+        "prompt": "Complete: ____ are classmates.",
+        "answers": [
+          "We"
+        ],
+        "maxWords": 1,
+        "explanation": "主语是 we，句首大写。",
+        "evidence": "We are classmates."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you new here?",
+        "Are you happy?"
+      ],
+      "part2": "Describe yourself in a new class. You should say:",
+      "part2Bullets": [
+        "your name",
+        "your room number",
+        "if you are new",
+        "how you feel"
+      ],
+      "part3": [
+        "Are you a teacher?",
+        "Is your class in Room 3?",
+        "Are you and your classmates happy?",
+        "Are you new in the class?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself in a new evening class. Use I am, You are, and We are. End each sentence with a full stop."
+  },
+  "rubric": {
+    "taskType": "A0 listening and grammar practice"
+  },
+  "version": "2",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "941c2109aa3750256b6cbb130078b51b5b91a772b3cef4e523f407aa99f1e677",
+    "previousContentHash": "0bd1cdbedea67a9bfbe3a5a9125d78c3f8ae226922cdb8f1e7d67cbcc4a3cae0",
+    "revision": {
+      "reason": "Explicit narrator/three-speaker roles for distinct US voices; unidiomatic old here removed; unique concrete early comprehension tasks.",
+      "beforeSha256": "c70d10843bfdcfab19baccc6f666bc62493e2922a18086505d1def47742bb8d6",
+      "reviewStatus": "pending",
+      "oldAudioExisted": false
+    },
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "questionCount": 8,
+      "blindInputSha256": "3429b8a2e75e05970b9f8b4a6c52dbc89fd08a195b0698963bf736c9f1ec9b8f",
+      "answerFileSha256": "c0892fc1a323db1f95bf940b18eeed33190c52d38775cf347195784885295302",
+      "reviewMethod": "Independent agent text answers frozen before explanation review; synthesized US role voices independently decoded for source/configuration and silence gaps, not independent listening or human calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,380 @@
+{
+  "id": "expand-w04-listen-2",
+  "week": 4,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "social-announcement",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "基础回顾与简单问答 · Independent new scenario: a new arrival asking about basic services",
+  "grammarFocus": "be 动词否定句与一般疑问句；what / who；简短肯定和否定回答。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "New in Town: Asking About Basic Services",
+  "instructions": "这是为A1学习者设计的原创模拟听力练习（非官方雅思测试）。先听对话，注意be动词的否定句和一般疑问句。然后完成8道听力题。之后学习语法规则并做8道语法题。最后进行口语和写作练习。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Mia: Hello. I am new here. Are you the building manager?\nMr. Lee: Yes, I am. I am Lee. Are you from China?\nMia: Yes, I am. But I am not a student. I am a nurse.\nMr. Lee: Oh, good. Is there a hospital near here?\nMia: Yes, there is. It is not far. Who is the doctor there?\nMr. Lee: Dr. Chen. She is very nice. Are you tired?\nMia: No, I am not. Is the bus stop near the hospital?\nMr. Lee: Yes, it is. It is next to the bank. The bank is not open today.\nMia: Thank you. Are you busy now?\nMr. Lee: No, I am not. Goodbye, Mia.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Mr. Lee?",
+      "options": [
+        "A doctor",
+        "A nurse",
+        "The building manager"
+      ],
+      "answers": [
+        "The building manager"
+      ],
+      "explanation": "Mia问'Are you the building manager?'，Mr. Lee回答'Yes, I am.'，所以他是building manager。",
+      "evidence": "Mia: Hello. I am new here. Are you the building manager?\nMr. Lee: Yes, I am. I am Lee."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is Mia a student?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Mia说'I am not a student. I am a nurse.'，明确否定她是学生。",
+      "evidence": "Mia: Yes, I am. But I am not a student. I am a nurse."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is Mia's job?",
+      "options": [
+        "A doctor",
+        "A teacher",
+        "A nurse"
+      ],
+      "answers": [
+        "A nurse"
+      ],
+      "explanation": "Mia说'I am a nurse.'，所以她的职业是护士。",
+      "evidence": "Mia: Yes, I am. But I am not a student. I am a nurse."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is there a hospital near here?",
+      "options": [
+        "No, there is not.",
+        "Yes, there is."
+      ],
+      "answers": [
+        "Yes, there is."
+      ],
+      "explanation": "Mr. Lee问'Is there a hospital near here?'，Mia回答'Yes, there is.'，所以附近有医院。",
+      "evidence": "Mr. Lee: Oh, good. Is there a hospital near here?\nMia: Yes, there is. It is not far."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Who is the doctor at the hospital?",
+      "options": [
+        "Mr. Lee",
+        "Dr. Chen",
+        "Mia"
+      ],
+      "answers": [
+        "Dr. Chen"
+      ],
+      "explanation": "Mia问'Who is the doctor there?'，Mr. Lee回答'Dr. Chen.'，所以医生是Dr. Chen。",
+      "evidence": "Mia: Yes, there is. It is not far. Who is the doctor there?\nMr. Lee: Dr. Chen. She is very nice."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is Mia tired?",
+      "options": [
+        "No, she is not.",
+        "Yes, she is."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Mr. Lee问'Are you tired?'，Mia回答'No, I am not.'，所以她不累。",
+      "evidence": "Mr. Lee: Dr. Chen. She is very nice. Are you tired?\nMia: No, I am not."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which place is next to the bus stop?",
+      "options": [
+        "The bank",
+        "The hospital",
+        "The school"
+      ],
+      "answers": [
+        "The bank"
+      ],
+      "explanation": "Mr. Lee说公交站“It is next to the bank.”，next to表示紧挨着，因此选The bank。医院是near（附近）的参照点，不能把near自动改成next to；原文没有说公交站紧挨学校。",
+      "evidence": "Mia: No, I am not. Is the bus stop near the hospital?\nMr. Lee: Yes, it is. It is next to the bank."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is the bank open today?",
+      "options": [
+        "No, it is not.",
+        "Yes, it is."
+      ],
+      "answers": [
+        "No, it is not."
+      ],
+      "explanation": "Mr. Lee说'The bank is not open today.'，所以银行今天不开门。",
+      "evidence": "Mr. Lee: Yes, it is. It is next to the bank. The bank is not open today."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "Mia: Hello. I am new here."
+    },
+    {
+      "word": "manager",
+      "meaning": "经理",
+      "example": "Mia: Hello. I am new here. Are you the building manager?"
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Mia: Yes, I am. But I am not a student."
+    },
+    {
+      "word": "nurse",
+      "meaning": "护士",
+      "example": "Mia: Yes, I am. But I am not a student. I am a nurse."
+    },
+    {
+      "word": "hospital",
+      "meaning": "医院",
+      "example": "Mr. Lee: Oh, good. Is there a hospital near here?"
+    },
+    {
+      "word": "doctor",
+      "meaning": "医生",
+      "example": "Mia: Yes, there is. It is not far. Who is the doctor there?"
+    },
+    {
+      "word": "tired",
+      "meaning": "疲倦的",
+      "example": "Mr. Lee: Dr. Chen. She is very nice. Are you tired?"
+    },
+    {
+      "word": "bank",
+      "meaning": "银行",
+      "example": "Mr. Lee: Yes, it is. It is next to the bank. The bank is not open today."
+    }
+  ],
+  "grammar": {
+    "title": "be动词的否定句与一般疑问句",
+    "explanation": "英语中，be动词（am, is, are）的否定句是在be动词后加not。例如：I am not a student. 一般疑问句是把be动词提到主语前面。例如：Are you a student? 回答用Yes, I am. 或No, I am not. 注意：肯定回答不能缩写（Yes, I am. 不说Yes, I'm.），否定回答可以缩写（No, I'm not.）。",
+    "example": "Mia: Yes, I am. But I am not a student. I am a nurse.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "She is not a teacher.",
+          "She not is a teacher.",
+          "She is no a teacher."
+        ],
+        "answers": [
+          "She is not a teacher."
+        ],
+        "explanation": "否定句在be动词后加not，所以是She is not a teacher.",
+        "evidence": "She is not a teacher."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Are you from China?",
+          "You are from China?",
+          "Do you are from China?"
+        ],
+        "answers": [
+          "Are you from China?"
+        ],
+        "explanation": "一般疑问句把be动词提前，所以是Are you from China?",
+        "evidence": "Are you from China?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct short answer for 'Is he a doctor?' (Yes)",
+        "options": [
+          "Yes, he is.",
+          "Yes, he's.",
+          "Yes, he does."
+        ],
+        "answers": [
+          "Yes, he is."
+        ],
+        "explanation": "肯定回答用Yes, he is. 不能缩写为Yes, he's.",
+        "evidence": "Yes, he is."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct short answer for 'Are they students?' (No)",
+        "options": [
+          "No, they are not.",
+          "No, they not are.",
+          "No, they don't."
+        ],
+        "answers": [
+          "No, they are not."
+        ],
+        "explanation": "否定回答用No, they are not. 或No, they aren't.",
+        "evidence": "No, they are not."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "I am not tired.",
+          "I not am tired.",
+          "I am no tired."
+        ],
+        "answers": [
+          "I am not tired."
+        ],
+        "explanation": "否定句在am后加not，所以是I am not tired.",
+        "evidence": "I am not tired."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Is she a nurse?",
+          "She is a nurse?",
+          "Does she is a nurse?"
+        ],
+        "answers": [
+          "Is she a nurse?"
+        ],
+        "explanation": "一般疑问句把is提前，所以是Is she a nurse?",
+        "evidence": "Is she a nurse?"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct short answer for 'Are you busy?' (No)",
+        "options": [
+          "No, I am not.",
+          "No, I not am.",
+          "No, I don't."
+        ],
+        "answers": [
+          "No, I am not."
+        ],
+        "explanation": "否定回答用No, I am not. 或No, I'm not.",
+        "evidence": "No, I am not."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "They are not here.",
+          "They not are here.",
+          "They are no here."
+        ],
+        "answers": [
+          "They are not here."
+        ],
+        "explanation": "否定句在are后加not，所以是They are not here.",
+        "evidence": "They are not here."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a student?",
+        "Is your home near a hospital?",
+        "Are you tired now?",
+        "Who is your teacher?"
+      ],
+      "part2": "Describe a place near your home. You should say:",
+      "part2_bullets": [
+        "what place it is",
+        "where it is",
+        "who works there",
+        "why you go there"
+      ],
+      "part3": [
+        "Is there a bank near your home?",
+        "Are you busy on Monday?",
+        "Who is your doctor?",
+        "Is your school far from your home?"
+      ]
+    },
+    "writing": "Write 3–5 simple sentences about a new person in your class. Use 'is', 'is not', 'are', 'are not'. Example: She is a student. She is not a teacher. Are you a student?"
+  },
+  "rubric": {
+    "taskType": "A1 Listening and Grammar Practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "本地题目修订草稿；原文与音频保持不变，等待独立盲答及解析复核；未经真实学习者难度标定",
+    "model": "deepseek-flash",
+    "contentHash": "69af8ee387f7820d8b4669cac5324c096c59d398542b1cf36e6332e6940e6b03",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "blindInputSha256": "bfaec54936fc4896a9200199b7de341497e803de407f49d3578fc40cdafa7ed2",
+      "answerFileSha256": "c8c3d796a5f0fab2a35f14808eab38af2f5d519c87e80c2f4b77182cc9f55e0e",
+      "explanationReviewSha256": "ecdfa18b2ac44904553dd6eaf7481e6f24247e83bc75e7bc32e26e9fad050c1a",
+      "questionCount": 8,
+      "reviewMethod": "Separate author and root blind text answers frozen before reading explanations, with cross-question leak repair and exact antecedent evidence. Existing audio retained; no independent audio audition or learner difficulty calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

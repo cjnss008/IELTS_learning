@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-02-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-02",
+  "sourceVersion": "1",
+  "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+  "sourceContentHash": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+  "exposureGroup": "public-source:voa-l2-02",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which work does Ms. Weaver want Anna to return to?",
+      "evidence": "So, I want you to go back to hosting and reporting.",
+      "explanation": "go back to 表示回到原来的工作；明确提到主持和采访报道。直升机是 Anna 开头不想做的例外，写书是 Pete 的经历，都不是给 Anna 的安排。",
+      "answers": [
+        "Hosting and reporting."
+      ],
+      "evidenceOffsets": {
+        "start": 550,
+        "end": 601,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Writing a book alone.",
+        "Hosting and reporting.",
+        "Flying a traffic helicopter."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "So, I want you to go back to hosting and reporting.",
+          "start": 550,
+          "end": 601
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Anna think Pete is suitable as her partner?",
+      "evidence": "But the person must be different from me. So, I thought of you.",
+      "explanation": "different from me 是选搭档的条件，而不是要求性格相同。老板认为 Anna 开朗善交际，Pete 的反差正符合这个安排；没有说他管理摄影棚。",
+      "answers": [
+        "His personality is different from hers."
+      ],
+      "evidenceOffsets": {
+        "start": 1506,
+        "end": 1569,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "His personality is different from hers.",
+        "He has the same cheerful personality.",
+        "He already manages the whole studio."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "But the person must be different from me. So, I thought of you.",
+          "start": 1506,
+          "end": 1569
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What has Pete actually been working on when Anna tears the paper?",
+      "evidence": "Anna, I was working on that crossword puzzle.",
+      "explanation": "Anna 以为纸上只有招聘广告，于是撕掉；Pete 说明自己做的是 crossword puzzle，即填字游戏。这是两个人理解不同造成的误会。",
+      "answers": [
+        "A crossword puzzle."
+      ],
+      "evidenceOffsets": {
+        "start": 1275,
+        "end": 1320,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "A job advertisement for Anna.",
+        "A travel plan for Ms. Weaver.",
+        "A crossword puzzle."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Anna, I was working on that crossword puzzle.",
+          "start": 1275,
+          "end": 1320
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What time is Pete’s interview the following morning? Write NO MORE THAN TWO WORDS.",
+      "maxWords": 2,
+      "evidence": "Your interview is tomorrow morning at 10 am.",
+      "explanation": "tomorrow morning 表示次日上午，具体钟点是10 am。题目问时间，不是地址或职位名称；保留 am 可明确上午。",
+      "answers": [
+        "10 am"
+      ],
+      "evidenceOffsets": {
+        "start": 1694,
+        "end": 1738,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "Your interview is tomorrow morning at 10 am.",
+          "start": 1694,
+          "end": 1738
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What did Pete do while writing his book?",
+      "evidence": "I didn't speak to anybody the entire time!",
+      "explanation": "didn’t speak to anybody 是全程没有和任何人说话，结合他把自己关在小屋写书，可知他独自写作。不要把 Anna 擅长的采访主持套到 Pete 的写书经历。",
+      "answers": [
+        "He stayed alone without speaking to anyone."
+      ],
+      "evidenceOffsets": {
+        "start": 2446,
+        "end": 2488,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "He stayed alone without speaking to anyone.",
+        "He interviewed many people every day.",
+        "He hosted a cheerful talk show."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I didn't speak to anybody the entire time!",
+          "start": 2446,
+          "end": 2488
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is the result of Pete’s interview?",
+      "evidence": "And, I got the job!",
+      "explanation": "Pete 先转述老板说自己脾气不太好、不善与人相处，随后说自己得到工作；这些特征恰好形成搭档反差。不能只听到负面性格描述就推断落选。",
+      "answers": [
+        "He gets the job despite being described as grumpy."
+      ],
+      "evidenceOffsets": {
+        "start": 2719,
+        "end": 2738,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "He is rejected for not being cheerful.",
+        "He refuses to meet Ms. Weaver.",
+        "He gets the job despite being described as grumpy."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "And, I got the job!",
+          "start": 2719,
+          "end": 2738
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [
+    {
+      "code": "provider-missing-word",
+      "status": "unresolved",
+      "reason": "The official transcript appears to omit to after want you; no silent correction. Avoid grammar-answer evidence from this line.",
+      "quote": "I want you team up with someone ...",
+      "start": 672,
+      "end": 707,
+      "offsetUnit": "UTF-16-code-unit",
+      "blocks": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "c2bdf8f8d15214e3e5219a2a000ec5c58fb11ce00c137983b3e42ae7eef5b6cf",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

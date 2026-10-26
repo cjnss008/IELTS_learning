@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "questionSetId": "public-noaa-eutrophication-comprehension-v2",
+  "version": "2",
+  "sourceId": "noaa-eutrophication",
+  "sourceVersion": "1",
+  "sourceTextSha256": "eda0877ae50d319e897d9e8d652f82bd98935d180cfd156a7556825fe6d7ea83",
+  "sourceContentHash": "eda0877ae50d319e897d9e8d652f82bd98935d180cfd156a7556825fe6d7ea83",
+  "exposureGroup": "public-source:noaa-eutrophication",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What begins the process described in the article?",
+      "options": [
+        "Plant decomposition removes nutrients, and the scarcity triggers new blooms.",
+        "Filter feeding adds the nutrients that stimulate further algal blooms.",
+        "Reduced pH initiates the excess nutrient input described at the start.",
+        "Excess nutrients encourage too much plant and algal growth."
+      ],
+      "answers": [
+        "Excess nutrients encourage too much plant and algal growth."
+      ],
+      "evidence": "Eutrophication is a big word that describes a big problem in the nation's estuaries. Harmful algal blooms, dead zones, and fish kills are the results of a process called eutrophication — which occurs when the environment becomes enriched with nutrients, increasing the amount of plant and algae growth to estuaries and coastal waters.",
+      "evidenceOffsets": {
+        "start": 25,
+        "end": 359,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "起点是过量养分促进藻类和植物增长。分解产生的CO2及pH变化在因果链下游；滤食则帮助移除养分，不能倒读成藻华的养分来源。",
+      "understanding": "process-sequence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which waters does the quoted sixty-five per cent figure describe?",
+      "options": [
+        "Researchers’ measurements of rivers and lakes in the contiguous United States.",
+        "The bivalve mollusk populations in the estuaries included in the studies.",
+        "Studied estuaries and coastal waters in the contiguous United States.",
+        "Estuaries and coastal waters outside the contiguous United States."
+      ],
+      "answers": [
+        "Studied estuaries and coastal waters in the contiguous United States."
+      ],
+      "evidence": "Sixty-five percent of the estuaries and coastal waters in the contiguous U.S. that have been studied by researchers are moderately to severely degraded by excessive nutrient inputs. Excessive nutrients lead to algal blooms and low-oxygen (hypoxic) waters that can kill fish and seagrass and reduce essential fish habitats. Many of these estuaries also support bivalve mollusk populations (e.g., oysters, clams, scallops), which naturally reduce nutrients through their filter-feeding activities.",
+      "evidenceOffsets": {
+        "start": 361,
+        "end": 856,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "百分比的对象是受研究的美国本土相连各州河口与近岸水域。错误项改变地域、水体类型或把水域退化比例换成贝类种群比例；不是泛指所有生态数据。",
+      "understanding": "evidence-scope",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How can the breakdown of excess plant material harm shellfish?",
+      "options": [
+        "Breakdown reduces the food available to oysters without changing seawater chemistry.",
+        "Released carbon dioxide lowers pH and can hinder shell formation.",
+        "Decomposition consumes carbon dioxide and creates more carbonate for shells.",
+        "Released carbon dioxide raises pH and helps fish replace bivalve mollusks."
+      ],
+      "answers": [
+        "Released carbon dioxide lowers pH and can hinder shell formation."
+      ],
+      "evidence": "Eutrophication sets off a chain reaction in the ecosystem, starting with an overabundance of algae and plants. The excess algae and plant matter eventually decompose, producing large amounts of carbon dioxide. This lowers the pH of seawater, a process known as ocean acidification. Acidification slows the growth of fish and shellfish and can prevent shell formation in bivalve mollusks. This leads to a reduced catch for commercial and recreational fisheries, meaning smaller harvests and more expensive seafood.",
+      "evidenceOffsets": {
+        "start": 858,
+        "end": 1371,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文路径是分解产生CO2，降低pH，阻碍贝壳形成。其他项反转CO2或pH变化，或把化学影响换成单纯食物减少，均改变了本段机制。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What do the annual values of $8.5–$23 million refer to in the modeling project?",
+      "options": [
+        "Estimated nutrient-reduction benefits supplied by oyster aquaculture.",
+        "Annual oyster sales made by aquaculture businesses in Connecticut.",
+        "The cost of expanding oyster farms to match a $470 million treatment investment.",
+        "The annual public budget allocated to traditional treatment in Long Island Sound."
+      ],
+      "answers": [
+        "Estimated nutrient-reduction benefits supplied by oyster aquaculture."
+      ],
+      "evidence": "A groundbreaking modeling project in Long Island Sound showed that the oyster aquaculture industry in Connecticut provides $8.5 – $23 million annually in nutrient reduction benefits. The project also showed that reasonable expansion of oyster aquaculture could provide as much nutrient reduction as the comparable investment of $470 million in traditional nutrient-reduction measures, such as wastewater treatment improvements and agricultural best management practices.",
+      "evidenceOffsets": {
+        "start": 1758,
+        "end": 2228,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "该区间是营养盐削减效益的估值，不是牡蛎营业额、扩场成本或政府年度处理预算。$470 million属于用传统措施获得可比削减量的投资对照，不能与年度效益数值混同。",
+      "understanding": "quantitative-interpretation",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What feeding process lets bivalve mollusks naturally reduce nutrients? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "filter-feeding"
+      ],
+      "evidence": "Sixty-five percent of the estuaries and coastal waters in the contiguous U.S. that have been studied by researchers are moderately to severely degraded by excessive nutrient inputs. Excessive nutrients lead to algal blooms and low-oxygen (hypoxic) waters that can kill fish and seagrass and reduce essential fish habitats. Many of these estuaries also support bivalve mollusk populations (e.g., oysters, clams, scallops), which naturally reduce nutrients through their filter-feeding activities.",
+      "evidenceOffsets": {
+        "start": 361,
+        "end": 856,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文用filter-feeding activities说明双壳贝类如何自然减少养分。phytoplankton是其摄食对象之一，不是摄食方式本身；不能把对象填作过程。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What oyster material is harvested as an approved nutrient-removal method in Chesapeake Bay? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "oyster tissue",
+        "tissue"
+      ],
+      "evidence": "The NOAA scientists used aquaculture modeling tools to demonstrate that shellfish aquaculture compares favorably to existing nutrient management strategies in terms of efficiency of nutrient removal and implementation cost. Documenting the water quality benefits provided by shellfish aquaculture has increased both communities' and regulators' acceptance of shellfish farming, not only in Connecticut but across the nation. In Chesapeake Bay, for example, nutrient removal policies include the harvesting of oyster tissue as an approved method, and in Mashpee Bay, Massachusetts, cultivation and harvest of oysters and clams are part of the official nutrient management plan.",
+      "evidenceOffsets": {
+        "start": 2230,
+        "end": 2906,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "正文明确写harvesting of oyster tissue；tissue或完整短语oyster tissue都符合本题词数。不是单独收集空壳，也不是采收海草；这些材料不是文中列举的获准方法。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "392bd3d09b20a2678651fc7c90bda7d07ceb4dd7e0635fe978248853124aac87",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

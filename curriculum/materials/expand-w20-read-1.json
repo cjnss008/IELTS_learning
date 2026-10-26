@@ -1,0 +1,348 @@
+{
+  "id": "expand-w20-read-1",
+  "week": 20,
+  "skill": "reading",
+  "level": "B1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 300,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "基础综合复测与薄弱项整理 · Independent new scenario: a learner investigating a persistent skill gap",
+  "grammarFocus": "基础时态、问句、名词数量和常见从句综合复习。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Missing Skill: A Learner's Investigation",
+  "instructions": "这是为B1水平成人学习者设计的原创模拟阅读材料（非官方雅思测试）。请先阅读文章，然后完成8道阅读理解题。题目类型包括单选、填空和判断正误/未提及。所有题目和选项均为英文，解释为中文。请仔细阅读文章，答案必须基于文章内容。",
+  "passage": "A. Mei is a 28-year-old office worker in Shanghai. She has studied English for two years. She can read simple emails and write short messages. But she has a persistent problem: she cannot understand fast English speech. When she watches videos, people speak quickly and she misses many words. She feels frustrated.\n\nB. Last week, Mei decided to investigate her skill gap. She recorded a short news video and listened to it five times. The first time, she understood only three words. The second time, she caught a few more. She wrote down every word she heard. Then she compared her notes with the video transcript. She found that she often missed small words like 'a', 'the', and 'to'. She also missed the endings of words, such as '-ed' and '-s'.\n\nC. Mei made a plan. She will listen to one short video every day. She will pause after each sentence and repeat it. She will also practice listening to numbers and names, because these are common in news. Her teacher, Mr. Chen, says, 'Don't worry about every word. Focus on the main idea first.' Mei feels more confident now. She knows her gap and she has a clear plan.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is Mei's persistent problem?",
+      "options": [
+        "She cannot write emails.",
+        "She cannot understand fast English speech.",
+        "She cannot read simple messages.",
+        "She cannot speak English at all."
+      ],
+      "answers": [
+        "She cannot understand fast English speech."
+      ],
+      "explanation": "文章第一段明确提到：'she cannot understand fast English speech'。其他选项与文章内容不符。",
+      "evidence": "But she has a persistent problem: she cannot understand fast English speech."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many times did Mei listen to the news video?",
+      "options": [
+        "Three times",
+        "Four times",
+        "Five times",
+        "Six times"
+      ],
+      "answers": [
+        "Five times"
+      ],
+      "explanation": "第二段提到：'She recorded a short news video and listened to it five times.' 因此是五次。",
+      "evidence": "She recorded a short news video and listened to it five times."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Mei often missed small words like 'a', 'the', and ______.",
+      "maxWords": 1,
+      "answers": [
+        "to"
+      ],
+      "explanation": "第二段提到：'She often missed small words like 'a', 'the', and 'to'.' 因此填 'to'。",
+      "evidence": "She found that she often missed small words like 'a', 'the', and 'to'."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Mei plan to do every day?",
+      "options": [
+        "Listen to one short video",
+        "Read a long article",
+        "Write a letter to her teacher",
+        "Speak with a native speaker"
+      ],
+      "answers": [
+        "Listen to one short video"
+      ],
+      "explanation": "第三段第一句：'She will listen to one short video every day.' 因此选 'Listen to one short video'。",
+      "evidence": "She will listen to one short video every day."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Mr. Chen advise Mei to focus on first?",
+      "options": [
+        "Every word",
+        "The main idea",
+        "Grammar rules",
+        "Writing skills"
+      ],
+      "answers": [
+        "The main idea"
+      ],
+      "explanation": "第三段中老师说：'Don't worry about every word. Focus on the main idea first.' 因此选 'The main idea'。",
+      "evidence": "Don't worry about every word. Focus on the main idea first."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Mei has studied English for two years.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "第一段第二句：'She has studied English for two years.' 与题目一致，因此为 True。",
+      "evidence": "She has studied English for two years."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Mei's teacher is from Canada.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "文章只提到 'Her teacher, Mr. Chen'，但没有说明他来自哪里。因此关于他来自加拿大这一信息未提及。",
+      "evidence": "Her teacher, Mr. Chen, says, 'Don't worry about every word. Focus on the main idea first.'"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Mei feels frustrated at the end of the story.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "文章最后一段说：'Mei feels more confident now.' 与题目 'feels frustrated' 矛盾，因此为 False。",
+      "evidence": "Mei feels more confident now."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "persistent",
+      "meaning": "持续的；顽固的",
+      "example": "But she has a persistent problem: she cannot understand fast English speech."
+    },
+    {
+      "word": "investigate",
+      "meaning": "调查；研究",
+      "example": "Last week, Mei decided to investigate her skill gap."
+    },
+    {
+      "word": "transcript",
+      "meaning": "文字稿；抄本",
+      "example": "Then she compared her notes with the video transcript."
+    },
+    {
+      "word": "endings",
+      "meaning": "结尾；词尾",
+      "example": "She also missed the endings of words, such as '-ed' and '-s'."
+    },
+    {
+      "word": "pause",
+      "meaning": "暂停",
+      "example": "She will pause after each sentence and repeat it."
+    },
+    {
+      "word": "confident",
+      "meaning": "自信的",
+      "example": "Mei feels more confident now."
+    },
+    {
+      "word": "gap",
+      "meaning": "差距；缺口",
+      "example": "Last week, Mei decided to investigate her skill gap."
+    },
+    {
+      "word": "frustrated",
+      "meaning": "沮丧的",
+      "example": "She feels frustrated."
+    }
+  ],
+  "grammar": {
+    "title": "基础时态、问句、名词数量和常见从句综合复习",
+    "explanation": "本课重点复习一般现在时和一般过去时。一般现在时表示经常发生或习惯性动作，如 'She listens to a video every day.'；一般过去时表示过去发生的动作，如 'She listened to it five times.'。问句需要助动词，如 'Does she listen?' 或 'Did she listen?'。名词数量要注意可数与不可数，如 'a few words'（可数）和 'much information'（不可数）。常见从句如宾语从句 'She knows that she has a gap.' 和状语从句 'When she watches videos, she misses words.'。",
+    "example": "She will listen to one short video every day.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She listen to music every day.",
+          "She listens to music every day.",
+          "She listening to music every day.",
+          "She is listen to music every day."
+        ],
+        "answers": [
+          "She listens to music every day."
+        ],
+        "explanation": "一般现在时，主语 She 是第三人称单数，动词要加 -s，因此 'She listens' 正确。",
+        "evidence": "She will listen to one short video every day."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Does she watched the video?",
+          "Did she watch the video?",
+          "Do she watched the video?",
+          "Is she watch the video?"
+        ],
+        "answers": [
+          "Did she watch the video?"
+        ],
+        "explanation": "一般过去时的问句用助动词 Did，后接动词原形 watch。因此 'Did she watch the video?' 正确。",
+        "evidence": "She recorded a short news video and listened to it five times."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "She ______ (study) English for two years.",
+        "maxWords": 1,
+        "answers": [
+          "has studied"
+        ],
+        "explanation": "现在完成时表示从过去持续到现在的动作，结构为 have/has + 过去分词。主语 She 用 has，study 的过去分词是 studied。",
+        "evidence": "She has studied English for two years."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a noun quantity.",
+        "options": [
+          "She missed many informations.",
+          "She missed much words.",
+          "She missed a few words.",
+          "She missed a little words."
+        ],
+        "answers": [
+          "She missed a few words."
+        ],
+        "explanation": "words 是可数名词复数，用 a few 修饰；information 不可数，不能用 many 修饰。因此 'a few words' 正确。",
+        "evidence": "She wrote down every word she heard."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a clause.",
+        "options": [
+          "She knows that she has a gap.",
+          "She knows what she has a gap.",
+          "She knows that has she a gap.",
+          "She knows which she has a gap."
+        ],
+        "answers": [
+          "She knows that she has a gap."
+        ],
+        "explanation": "宾语从句用 that 引导，从句用陈述语序 'she has a gap'。因此第一句正确。",
+        "evidence": "She knows her gap and she has a clear plan."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence with a time clause.",
+        "options": [
+          "When she watches videos, she misses words.",
+          "When she watch videos, she misses words.",
+          "When she watching videos, she misses words.",
+          "When she watched videos, she misses words."
+        ],
+        "answers": [
+          "When she watches videos, she misses words."
+        ],
+        "explanation": "时间状语从句用一般现在时表示经常性动作，主语 she 后动词加 -s，因此 'watches' 正确。",
+        "evidence": "When she watches videos, people speak quickly and she misses many words."
+      },
+      {
+        "id": "g7",
+        "type": "fill",
+        "prompt": "______ she listen to the video yesterday?",
+        "maxWords": 1,
+        "answers": [
+          "Did"
+        ],
+        "explanation": "一般过去时的一般疑问句用助动词 Did 开头，后接主语和动词原形。",
+        "evidence": "She recorded a short news video and listened to it five times."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence.",
+        "options": [
+          "She doesn't understands fast speech.",
+          "She don't understand fast speech.",
+          "She doesn't understand fast speech.",
+          "She not understand fast speech."
+        ],
+        "answers": [
+          "She doesn't understand fast speech."
+        ],
+        "explanation": "一般现在时否定句用 doesn't + 动词原形，主语 She 用 doesn't，因此 'She doesn't understand' 正确。",
+        "evidence": "She cannot understand fast English speech."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like learning English?",
+        "How often do you watch English videos?",
+        "What is difficult for you in English?",
+        "Do you have a teacher?"
+      ],
+      "part2": "Describe a skill you want to improve. You should say: what the skill is; why you want to improve it; how you plan to practice; and how you feel about it.",
+      "part3": [
+        "Why do some people find listening difficult?",
+        "How can teachers help students with listening?",
+        "Is it better to listen to slow or fast English?",
+        "What advice would you give to a friend who wants to improve English?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80 words) about a skill you want to improve. Explain why it is important for you and what you will do to practice it."
+  },
+  "rubric": {
+    "taskType": "Reading comprehension with grammar review and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "3bc8d99fe45e7e9380981d758d281922bc8ecd09241cd492ac6072e1592057ee"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

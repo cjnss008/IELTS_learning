@@ -6,9 +6,9 @@ import json
 import re
 import unicodedata
 
-LAYOUT_VERSION = 'curriculum-role-pauses-v68-3'
+LAYOUT_VERSION = 'curriculum-role-pauses-v69-us-1'
 PAUSES = {'paragraph': .8, 'speaker-change': .65, 'section': 1.0}
-LABEL = re.compile(r'(?<![\w.])(?P<label>(?:(?:Dr|Mr|Mrs|Ms|Prof)\.?[ \t]+[A-Z][a-z]+(?:[ \t]+[A-Z][a-z]+)?|(?:Student|Speaker|STUDENT|SPEAKER)[ \t]+[A-Z0-9]+|[A-Z][a-z]+(?:[ \t]+[A-Z][a-z]+)?|[A-Z]{1,16})):[ \t]*')
+LABEL = re.compile(r'(?<![\w.])(?P<label>(?:(?:Dr|Mr|Mrs|Ms|Prof)\.?[ \t]+[A-Z][a-z]+(?:[ \t]+[A-Z][a-z]+)?|(?:Student|Speaker|STUDENT|SPEAKER)[ \t]*[A-Z0-9]+|[A-Z][a-z]+(?:[ \t]+[A-Z][a-z]+){0,2}|[A-Z]{1,16}(?:[ \t]+[A-Z]{1,20}){0,2})):[ \t]*')
 NARRATION = re.compile(r'^(?:narrator|narration)$', re.I)
 # Reviewed speaker labels in the fixed authored curriculum. A colon and title
 # case alone cannot distinguish a person from "Listening:" or "Include:".
@@ -16,13 +16,13 @@ NARRATION = re.compile(r'^(?:narrator|narration)$', re.I)
 ROLE_NAMES = frozenset('''Mia|Tom|Tutor|Ben|Mei|Woman|Man|Anna|Leo|Maya|Daniel|Li Wei|Sarah|Maria|Host|Guide|David|Receptionist|Caller|Lisa|Owen|Sam|Liam|James|Librarian|Reader|Nina|Mark|Li Ming|Lily|Student|Li|Rosa|Dan|Visitor|Wang|Jo|Jun|Grandma|Lecturer|Chair|Ana|Lucy|Teacher|Omar|Leah|Curator|Eli|Ravi|Lena|Jon|Alex|Iris|Noah|Adviser|Laura|John|Dad|Sara|Learner|Speaker|Leila|Marcus|Priya|Chen|Lin|Claire|Mary|Grandpa|Question|Answer|Male|Female'''.casefold().split('|'))
 
 
-def speaker_label(label):
+def speaker_label(label, inferred=frozenset()):
     key = role_key(label)
-    return bool(NARRATION.fullmatch(label) or key in ROLE_NAMES or key in {'a', 'b', 'm', 'w', 'f'} or re.fullmatch(r'(?:student|speaker)\s+[a-z0-9]+', key) or re.fullmatch(r'(?:dr|mr|mrs|ms|prof) [a-z]+(?: [a-z]+)?', key))
+    return bool(NARRATION.fullmatch(label) or key in ROLE_NAMES or key in inferred or key in {'a', 'b', 'm', 'w', 'f'} or re.fullmatch(r'(?:student|speaker)\s*[a-z0-9]+', key) or re.fullmatch(r'(?:dr|mr|mrs|ms|prof) [a-z]+(?: [a-z]+)?', key))
 
 
-def speaker_marker(match, line):
-    if not speaker_label(match['label']): return False
+def speaker_marker(match, line, inferred=frozenset()):
+    if not speaker_label(match['label'], inferred): return False
     prefix, key = line[:match.start()].rstrip(), role_key(match['label'])
     # "Ben: Hello. I am Ben: B, E, N." contains one speaker label. Named
     # inline turns need a sentence boundary; explicit A/B turns also support
@@ -42,9 +42,32 @@ def role_key(label):
     return re.sub(r'[.\s]+', ' ', label).strip().casefold()
 
 
+
+NON_SPEAKERS = frozenset('''Listening|Reading|Writing|Speaking|Vocabulary|Grammar|Section|Part|Pause|Topic|Task|Instructions|Instruction|Answer Key|Complete|Include|Note|Notes|Example|Sample Answer|Introduction|Summary|Conclusion|Total|Questions|Practice|Stage Check|Academic Listening|Listening Passage|Listening Transcript|Transcript|Narrative|Main Point|First|Second|Third|Step|Steps|Stage|Activity|Option|Form|Title|Speaker Labels|Audio|Library Orientation|Garden Project|Garden Meeting|Garden Workshop|Writing Workshop|Simple Map|Checking Progress|Peer Review|Simulated Lecture|Group Project|Simulated Listening|Fast Fashion|Phase Assessment|Silent Library|Speculation|Comparison|Quantifiers|Tense|Art Project|Timed Writing|Timed Essay|Independent Listening|Microphone|King Street|Queen Street|Up'''.casefold().split('|'))
+DIALOGUE_OPENING = re.compile(r"^(?:hello|hi|good\b|i\b|i['’]m|we\b|our\b|you\b|your\b|thank|yes\b|no\b|can\b|could\b|please|excuse|sorry|that|this|the\b|let|it\b|how|what|when|where|why|would|will|may|welcome|sure|right|exactly|okay|ok\b|well|today|my\b|there)\b", re.I)
+
+def inferred_roles(text):
+    """Infer anchored human names in dialogue without treating prose headings as roles."""
+    candidates, known = {}, 0
+    for line in text.splitlines():
+        match = LABEL.match(line.lstrip())
+        if not match: continue
+        label, key = match['label'], role_key(match['label'])
+        if speaker_label(label):
+            known += 1
+            continue
+        if key in NON_SPEAKERS or re.match(r'^(?:section|part|pause|task|track|chapter|unit|lesson|exercise|instruction|question|answer key|example)\b', key): continue
+        if not re.fullmatch(r'(?:[A-Z][a-z]+|[A-Z]{2,20})(?:[ \t]+(?:[A-Z][a-z]+|[A-Z]{2,20})){0,2}', label): continue
+        count, spoken = candidates.get(key, (0, False))
+        content = line.lstrip()[match.end():].lstrip()
+        candidates[key] = (count + 1, spoken or bool(DIALOGUE_OPENING.match(content)))
+    distinct = known + len(candidates)
+    return {key for key, (count, spoken) in candidates.items() if count >= 2 or distinct >= 2 and spoken}
+
 def layout(text, pair, narrator_voice, alternate_pair):
     if not isinstance(text, str) or not text.strip():
         raise ValueError('A nonempty original transcript is required')
+    inferred = inferred_roles(text)
     segments, roles, labels, current, offset, paragraph_break = [], {}, [], 'narrator', 0, False
 
     def append(start, end, key, label, boundary):
@@ -57,7 +80,7 @@ def layout(text, pair, narrator_voice, alternate_pair):
         line = raw.rstrip('\r\n')
         if not line.strip():
             paragraph_break = True; offset += len(raw); continue
-        matches = [match for match in LABEL.finditer(line) if speaker_marker(match, line)]
+        matches = [match for match in LABEL.finditer(line) if speaker_marker(match, line, inferred)]
         if not matches:
             if paragraph_break: current = 'narrator'
             append(offset, offset + len(line), current, roles.get(current, 'Narrator'), 'paragraph')
@@ -97,6 +120,24 @@ def layout(text, pair, narrator_voice, alternate_pair):
         for position in range(span['sourceStart'], span['sourceEnd']): covered[position] += 1
     if any(not character.isspace() and covered[position] != 1 for position, character in enumerate(text)): raise ValueError('Original transcript characters are missing or overlap')
     return {'version': LAYOUT_VERSION, 'roleVoices': assigned, 'sourceLabels': labels, 'segments': segments}
+
+
+def with_role_voices(planned, overrides=None):
+    """Apply explicit authored US voices without changing source/timing spans."""
+    if overrides is None or overrides == {}:
+        return planned
+    if not isinstance(overrides, dict):
+        raise ValueError('Role voices must be a named-role mapping')
+    roles = dict(planned['roleVoices'])
+    for role, voice in overrides.items():
+        if role not in roles:
+            raise ValueError('Unknown authored speaker role: ' + str(role))
+        if not isinstance(voice, str) or not re.fullmatch(r'en-US-[A-Za-z0-9]+Neural', voice):
+            raise ValueError('Explicit role voices must be American en-US neural voices')
+        roles[role] = voice
+    if len(set(roles.values())) != len(roles):
+        raise ValueError('Explicit role voices must keep each speaker and narrator distinct')
+    return {**planned, 'roleVoices': roles, 'segments': [{**segment, 'voice': roles[segment['role']]} for segment in planned['segments']]}
 
 
 def configuration(text, planned, rate, package_version):

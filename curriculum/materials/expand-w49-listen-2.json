@@ -1,0 +1,400 @@
+{
+  "id": "expand-w49-listen-2",
+  "week": 49,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "综合模拟一与证据整理 · Independent new scenario: a seminar integrating evidence across disciplines",
+  "grammarFocus": "只复查已发现的高频错误，重点处理影响理解和作答准确性的错误。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Seminar Evidence Integration: The Community Garden Study",
+  "instructions": "这是一份模拟英语听力与阅读练习，不是官方雅思考试，也不代表任何分数。请先听录音（或阅读文本），然后完成10道题。题目类型包括单选、填空、匹配（以单选形式）和判断正误/未提及。填空答案必须来自原文，且不超过字数限制。语法部分先学习新规则，再完成8道题。所有题目和选项均为英文，解释为中文。请仔细阅读每个问题，注意证据的准确性。",
+  "transcript": "Maya: Good morning, everyone. Thanks for coming to this cross-disciplinary seminar. Today we’re looking at the community garden project and how different departments collected evidence. Let’s start with you, Leo. You were in charge of the soil tests, right?\nLeo: Yes, that’s right. We took soil samples from three areas: the north bed, the south bed, and the new east bed. The north and south beds had good pH levels, around 6.5. But the east bed was more acidic, about 5.8. We think that’s because of the pine trees nearby.\nMaya: Interesting. So the east bed needs treatment before planting. Now, Priya, you looked at the water usage. What did you find?\nPriya: Well, we measured water consumption over eight weeks. The drip irrigation system used about 30% less water than the sprinkler system. But we also noticed that the sprinkler system lost more water to evaporation, especially on hot days. So the drip system is more efficient.\nMaya: Good. And what about the plant growth data, Sam?\nSam: I compared two types of tomatoes: cherry and beefsteak. The cherry tomatoes grew faster in the first month, but the beefsteak tomatoes produced more fruit by the end of the season. However, we had a problem with pests in the south bed, which affected the beefsteak plants. So the yield data might be lower than expected.\nMaya: Thanks, Sam. That’s an important point about pests. Now, Chen, you interviewed the volunteers. What did they say about the project?\nChen: Most volunteers said they enjoyed working in the garden, but some mentioned that the tools were often missing or broken. Also, a few volunteers felt that the training session at the beginning was too short. They wanted more guidance on planting and watering.\nMaya: So we have some operational issues to address. Let’s move on to the budget. Hana, you reviewed the finances. Can you summarize?\nHana: Sure. The total budget for the project was $5,000. We spent $2,000 on seeds and plants, $1,500 on tools and equipment, and $800 on water bills. The remaining $700 was used for unexpected repairs to the fence. So we stayed within budget, but there’s little left for next season.\nMaya: Good to know. Now, let’s think about how to integrate these findings. Leo, you mentioned the soil pH. How does that relate to the plant growth data?\nLeo: Well, the east bed’s low pH might explain why the plants there grew more slowly. But we didn’t plant tomatoes in the east bed this season, so we can’t directly compare. However, the north and south beds had similar pH, yet the south bed had pest problems, which affected yield. So soil pH alone doesn’t tell the whole story.\nMaya: Exactly. And Priya, how does water usage connect to plant growth?\nPriya: The drip system was used mainly in the north bed, and that bed had good growth. But the south bed also used drip irrigation and had pest issues. So water efficiency is important, but pests can override that benefit.\nMaya: So we need to consider multiple factors together. Chen, did the volunteers’ feedback mention anything about pests or water?\nChen: Not directly. But some volunteers said they had trouble knowing when to water, which might relate to the training. And a few mentioned seeing insects on the plants but didn’t report them because they weren’t sure who to tell.\nMaya: That’s a key gap in communication. Sam, any final thoughts from your side?\nSam: Yes, I think we should repeat the experiment next season with better pest control and maybe test different tomato varieties in the east bed after adjusting the soil. Also, we should document everything more carefully so we can compare across beds.\nMaya: Great. So to sum up, we have evidence from soil, water, plant growth, volunteer feedback, and budget. Each piece adds something, but no single piece gives the full picture. Our next step is to design a more integrated study for next year. Thank you all.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the pH level of the east bed?",
+      "options": [
+        "6.5",
+        "5.8",
+        "7.0",
+        "6.0"
+      ],
+      "answers": [
+        "5.8"
+      ],
+      "explanation": "原文中Leo说：“the east bed was more acidic, about 5.8.” 因此正确答案是5.8。",
+      "evidence": "the east bed was more acidic, about 5.8."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which irrigation system used less water?",
+      "options": [
+        "The sprinkler system",
+        "The drip irrigation system",
+        "Both used the same amount",
+        "Neither system was measured"
+      ],
+      "answers": [
+        "The drip irrigation system"
+      ],
+      "explanation": "Priya说：“The drip irrigation system used about 30% less water than the sprinkler system.” 所以滴灌系统用水更少。",
+      "evidence": "The drip irrigation system used about 30% less water than the sprinkler system."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which tomato type produced more fruit by the end of the season?",
+      "options": [
+        "Cherry tomatoes",
+        "Beefsteak tomatoes",
+        "Both produced the same",
+        "The text does not say"
+      ],
+      "answers": [
+        "Beefsteak tomatoes"
+      ],
+      "explanation": "Sam说：“the beefsteak tomatoes produced more fruit by the end of the season.” 因此正确答案是牛排番茄。",
+      "evidence": "the beefsteak tomatoes produced more fruit by the end of the season."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What problem affected the beefsteak plants in the south bed?",
+      "options": [
+        "Too much water",
+        "Pests",
+        "Low pH",
+        "Broken tools"
+      ],
+      "answers": [
+        "Pests"
+      ],
+      "explanation": "Sam提到：“we had a problem with pests in the south bed, which affected the beefsteak plants.” 所以是虫害问题。",
+      "evidence": "we had a problem with pests in the south bed, which affected the beefsteak plants."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What did some volunteers say about the tools?",
+      "options": [
+        "They were too expensive",
+        "They were often missing or broken",
+        "They were easy to use",
+        "They were not needed"
+      ],
+      "answers": [
+        "They were often missing or broken"
+      ],
+      "explanation": "Chen说：“some mentioned that the tools were often missing or broken.” 因此答案是工具经常丢失或损坏。",
+      "evidence": "some mentioned that the tools were often missing or broken."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How much money was spent on seeds and plants? Write the amount with the dollar sign.",
+      "maxWords": 2,
+      "answers": [
+        "$2,000"
+      ],
+      "explanation": "Hana说：“We spent $2,000 on seeds and plants.” 所以答案是$2,000。",
+      "evidence": "We spent $2,000 on seeds and plants"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Who was in charge of the soil tests?",
+      "options": [
+        "Leo",
+        "Priya",
+        "Sam",
+        "Chen"
+      ],
+      "answers": [
+        "Leo"
+      ],
+      "explanation": "Maya问Leo：“You were in charge of the soil tests, right?” Leo回答：“Yes, that’s right.” 所以Leo负责土壤测试。",
+      "evidence": "You were in charge of the soil tests, right?\nLeo: Yes, that’s right"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The project stayed within the total budget.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Hana说：“So we stayed within budget, but there’s little left for next season.” 因此项目没有超支，该陈述为真。",
+      "evidence": "So we stayed within budget, but there’s little left for next season."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The volunteers reported the insects they saw to the project leader.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Chen说：“a few mentioned seeing insects on the plants but didn’t report them because they weren’t sure who to tell.” 因此志愿者没有报告昆虫，该陈述为假。",
+      "evidence": "a few mentioned seeing insects on the plants but didn’t report them because they weren’t sure who to tell."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The east bed was planted with tomatoes this season.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Leo说：“But we didn’t plant tomatoes in the east bed this season, so we can’t directly compare.” 因此东边苗床没有种番茄，该陈述为假。",
+      "evidence": "But we didn’t plant tomatoes in the east bed this season, so we can’t directly compare."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "acidic",
+      "meaning": "酸性的",
+      "example": "But the east bed was more acidic, about 5.8."
+    },
+    {
+      "word": "evaporation",
+      "meaning": "蒸发",
+      "example": "But we also noticed that the sprinkler system lost more water to evaporation, especially on hot days."
+    },
+    {
+      "word": "yield",
+      "meaning": "产量",
+      "example": "So the yield data might be lower than expected."
+    },
+    {
+      "word": "operational",
+      "meaning": "运营的，操作上的",
+      "example": "So we have some operational issues to address."
+    },
+    {
+      "word": "budget",
+      "meaning": "预算",
+      "example": "The total budget for the project was $5,000."
+    },
+    {
+      "word": "integrate",
+      "meaning": "整合",
+      "example": "Now, let’s think about how to integrate these findings."
+    },
+    {
+      "word": "override",
+      "meaning": "超过，压倒",
+      "example": "So water efficiency is important, but pests can override that benefit."
+    },
+    {
+      "word": "document",
+      "meaning": "记录",
+      "example": "Also, we should document everything more carefully so we can compare across beds."
+    }
+  ],
+  "grammar": {
+    "title": "复习：主谓一致与指代清晰",
+    "explanation": "在英语中，主语和谓语动词要在人称和数上保持一致。例如，单数主语用单数动词，复数主语用复数动词。另外，代词（如it, they, them）要明确指代前面的名词，避免混淆。本次重点复习已发现的高频错误：1) 主语是单数时动词误用复数形式；2) 代词指代不明。请先理解规则，再完成8道题。",
+    "example": "The drip irrigation system used about 30% less water than the sprinkler system.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The list of items are on the desk.",
+          "The list of items is on the desk.",
+          "The list of items were on the desk.",
+          "The list of items be on the desk."
+        ],
+        "answers": [
+          "The list of items is on the desk."
+        ],
+        "explanation": "主语是“The list”（单数），所以动词用“is”。",
+        "evidence": "The list of items is on the desk."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Each of the students have a book.",
+          "Each of the students has a book.",
+          "Each of the students having a book.",
+          "Each of the students are having a book."
+        ],
+        "answers": [
+          "Each of the students has a book."
+        ],
+        "explanation": "“Each”是单数主语，所以动词用“has”。",
+        "evidence": "Each of the students has a book."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The news are good.",
+          "The news is good.",
+          "The news were good.",
+          "The news be good."
+        ],
+        "answers": [
+          "The news is good."
+        ],
+        "explanation": "“News”是不可数名词，作单数处理，动词用“is”。",
+        "evidence": "The news is good."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "My glasses is broken.",
+          "My glasses are broken.",
+          "My glasses was broken.",
+          "My glasses be broken."
+        ],
+        "answers": [
+          "My glasses are broken."
+        ],
+        "explanation": "“Glasses”（眼镜）是复数名词，动词用“are”。",
+        "evidence": "My glasses are broken."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The team is playing well, and they will win.",
+          "The team is playing well, and it will win.",
+          "The team are playing well, and they will win.",
+          "The team is playing well, and he will win."
+        ],
+        "answers": [
+          "The team is playing well, and it will win."
+        ],
+        "explanation": "“Team”作为整体是单数，代词用“it”指代。",
+        "evidence": "The team is playing well, and it will win."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Neither of the answers are correct.",
+          "Neither of the answers is correct.",
+          "Neither of the answers were correct.",
+          "Neither of the answers be correct."
+        ],
+        "answers": [
+          "Neither of the answers is correct."
+        ],
+        "explanation": "“Neither”是单数主语，动词用“is”。",
+        "evidence": "Neither of the answers is correct."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The police is investigating the case.",
+          "The police are investigating the case.",
+          "The police was investigating the case.",
+          "The police be investigating the case."
+        ],
+        "answers": [
+          "The police are investigating the case."
+        ],
+        "explanation": "“Police”是复数名词，动词用“are”。",
+        "evidence": "The police are investigating the case."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The number of students are increasing.",
+          "The number of students is increasing.",
+          "The number of students were increasing.",
+          "The number of students be increasing."
+        ],
+        "answers": [
+          "The number of students is increasing."
+        ],
+        "explanation": "主语是“The number”（单数），所以动词用“is”。",
+        "evidence": "The number of students is increasing."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you enjoy gardening? Why or why not?",
+        "Have you ever worked on a group project? What was it?",
+        "What kind of plants are common in your area?",
+        "Do you prefer to work alone or with others? Why?"
+      ],
+      "part2": "Describe a time when you had to combine information from different sources to make a decision. You should say: what the decision was; what sources of information you used; how you combined the information; and what the result was.",
+      "part3": [
+        "Why is it important to consider multiple factors when making decisions?",
+        "How can people improve their ability to integrate information?",
+        "What are the challenges of working in a team with different experts?",
+        "Do you think technology helps or hinders the integration of information? Why?"
+      ]
+    },
+    "writing": "You are a member of a community group planning a new project. You have collected data from a survey, a budget report, and a volunteer feedback form. Write a short report (about 150 words) summarizing the key findings and suggesting two recommendations for the next step. Use evidence from the sources to support your points."
+  },
+  "rubric": {
+    "taskType": "listening and reading comprehension with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "be800a635c301203e835f5a8877c19d8265990144986f8cab371f58ba6148116"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,1368 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-10-25T21:51:01.687Z",
+  "policyVersion": "placement-listening-sources-2026-10-26-v2",
+  "previousPolicyVersion": "placement-listening-sources-2026-10-25-v1",
+  "previousPolicySha256": "b1948de3b280d8afcc45110bc315a46d2efd5c684b2c5c7ebfa9711bfe2fab17",
+  "currentPolicySha256": "014a5fe92e84c77b33cc283b139e765d0ff3138de3fd86b1929a36dd03aeb4ef",
+  "method": "Compared every complete script, level, title and all 128 canonical questions/options/answers with the prior reviewed authoring payload. Only the known English presentation projection is removed for equivalence. The 32 translated A1 prompts were also checked against complete scripts by Codex. The sixteen current US files have separate exact generation and real decode evidence.",
+  "reviewer": "Codex source/code review; not a human examiner, independent blind solve or difficulty calibration",
+  "runtimeBoundary": "The source policy still accepts only explicitly registered current hashes and the original ID/level/kind/review constraints. Prior hashes and authoringContentHash are not runtime fallbacks. Backend content/transcript/MP3 integrity checks remain separate.",
+  "audioDecodeReport": {
+    "path": "curriculum/independent-bank/audio-audit.json",
+    "sha256": "0515392d205d3b5beeb5b06e59c93eae6ec9dd6bdec24847e9b2a507348f8fe9",
+    "scope": "default-full-audio-audit",
+    "listeningTracks": 16,
+    "lexicalModels": 70
+  },
+  "materialCount": 16,
+  "questionCount": 128,
+  "changedHashCount": 4,
+  "legacyPlacementDataReadOrWritten": false,
+  "materials": [
+    {
+      "id": "independent-a1-listen-gb",
+      "level": "A1",
+      "previousReviewedContentHash": "152e0fbdd854ba12012d98b8b495aaaab9690ca48322d425df84f6a01c1a77d5",
+      "reviewedCurrentContentHash": "8d0e9b87b958bfada989a8a26e614aca01cd23b4930c5d064ae4bd019ca01e66",
+      "changedContentHash": true,
+      "transcriptSha256": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+      "authoredQuestionsSha256": "435512a312118f2fb3a43f3bb6d517f4c16e9e31e796b50f6656915e8f8fbfcd",
+      "currentQuestionsSha256": "fa429ebd70e1c2a67af8bd0e2edaaf6ed6f274a5653a74e7d0d14e8880f92661",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a1-listen-gb.mp3",
+        "locale": "en-US",
+        "sha256": "38e4a74d8a47187c69e0c69c7996715d082d493210cc937cdaae4b3fed0bfad7",
+        "metadataSha256": "28961c10194e7b6c5487791b5c99f940fcb70efaf21c9b0afd4c24df2881af11",
+        "configurationHash": "e21dc80c111f9baa25dc9c84b0d18b890ffea368cd848462d56919c79e76c98e",
+        "decodedDurationSeconds": 50.418833,
+        "actualBytes": 303068,
+        "meanDb": -22.2,
+        "peakDb": -3,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a1-listen-us",
+      "level": "A1",
+      "previousReviewedContentHash": "cd789150b80f5bc10edd5a75b0bcb62eb914f5a8b716080298ad31397d188ae6",
+      "reviewedCurrentContentHash": "0ce9f4d66f6fab2b65be19b0ba4372a05a8f0e4061f1134ab7fd37674dc8e336",
+      "changedContentHash": true,
+      "transcriptSha256": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+      "authoredQuestionsSha256": "d0609fc391825bf52d61cc2d3e0de4e3c12b1e0eff8cd9d3f7565de00a0e9c43",
+      "currentQuestionsSha256": "e662761c80b90f848a4dcda198a886399ba82d0ff1534f514073c2a33216a1d0",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a1-listen-us.mp3",
+        "locale": "en-US",
+        "sha256": "230c85d47b6f2bb633d084f09235c3143ab8f53c67760ab2da44589210346b7f",
+        "metadataSha256": "efbc3c6f093b492733baef64c5ca362c0dcb19a8ffccece0991e77fc0ffb2d58",
+        "configurationHash": "2ed6ea26e261c49742560c8bee3763a5d1787083b91ff6fe9e33fa87b0b0c93c",
+        "decodedDurationSeconds": 51.242833,
+        "actualBytes": 308108,
+        "meanDb": -21.8,
+        "peakDb": -3.1,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a1-listen-au",
+      "level": "A1",
+      "previousReviewedContentHash": "06899cf964e76d3cbde4b9e640f2585d21776e75a11222863350cfa1d320c149",
+      "reviewedCurrentContentHash": "f92de53369c115c6acee0a051736b66dd0da6ac264d9fe530e4ea18de9ab0202",
+      "changedContentHash": true,
+      "transcriptSha256": "57735be3621415d8f54b8ae6b823abbf3e869bebbb03770b684339c89389993a",
+      "authoredQuestionsSha256": "5bea21008b044337baa7c1d006b08ee4897a97b7db2da4b373fb2860cfa6d65e",
+      "currentQuestionsSha256": "14521903d18524e0ffced80c0d0d53abad814993bb6a0099ba422951c68d3320",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a1-listen-au.mp3",
+        "locale": "en-US",
+        "sha256": "0a6ab666ac6c18795988b3adca4d2bfa399a42503099a6c937e0d402015b5997",
+        "metadataSha256": "1d3f293a71923946856bcfbd10cf5611264947b99d691def9dc288edfe8a05f3",
+        "configurationHash": "ba871eccfef3c29800c7682c83939d39cb52d381cdf2950faca117065c07aeba",
+        "decodedDurationSeconds": 55.897958,
+        "actualBytes": 336044,
+        "meanDb": -21.7,
+        "peakDb": -1.2,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a1-listen-in",
+      "level": "A1",
+      "previousReviewedContentHash": "128fb89796a5102c12ae2dd11a688115f9a7fe194fa400914e7977b77be15c79",
+      "reviewedCurrentContentHash": "92ba1e81b7e3f3df4a4dfd1fd09aa976577ae7293a0e09556f850528da14f888",
+      "changedContentHash": true,
+      "transcriptSha256": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+      "authoredQuestionsSha256": "a2d5013da77c5e79d06e2aae30f72bdb247713bfa6b551eaf26f895d776dfa63",
+      "currentQuestionsSha256": "01c7fb1a612e0fb0f20d6ba05cacc8aba42c3bf69b9637f9d784efe0f6ce5ae4",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": true,
+          "presentationVersion": "english-v69-1",
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a1-listen-in.mp3",
+        "locale": "en-US",
+        "sha256": "c382271f25a76292310c7cbbb1f10cb1880d4ccc37721d394402b3eb8c7d02de",
+        "metadataSha256": "d4af0cc86a43d54e44df43d85724afeda99dc145cbdd54ec908e473874c1d145",
+        "configurationHash": "81bb07af24e20ce4ee52783c11f1d9219ae87a26187e648b17a67996b0d07601",
+        "decodedDurationSeconds": 51.319042,
+        "actualBytes": 308540,
+        "meanDb": -21.8,
+        "peakDb": -3,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a2-listen-gb",
+      "level": "A2",
+      "previousReviewedContentHash": "0cc465cd49f01e2d66f930fdf9c1c30658a745281c51a38d1714f0c9bd12ae4b",
+      "reviewedCurrentContentHash": "0cc465cd49f01e2d66f930fdf9c1c30658a745281c51a38d1714f0c9bd12ae4b",
+      "changedContentHash": false,
+      "transcriptSha256": "1fcbb6624c593e014456c4774cf1538257c06b6f6487bc12468d53b65a31d17f",
+      "authoredQuestionsSha256": "7fed61cd303dc490ec626d9c74b81ec3b6db55df9275b114582bb96484d72048",
+      "currentQuestionsSha256": "7fed61cd303dc490ec626d9c74b81ec3b6db55df9275b114582bb96484d72048",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a2-listen-gb.mp3",
+        "locale": "en-US",
+        "sha256": "c1f1e74af405c1f5ae86e8d648963dd3e8c7cd4ea1cefc965815cfc78c5c056d",
+        "metadataSha256": "c6c0832941c5ce64b9b42b83b8b35e7f6ebfb80fbbe49827793c9180965214bf",
+        "configurationHash": "2b13065d378e269a64a1dc8720455dfa9fb21ea6efe14f3b84e4e7eaa332566e",
+        "decodedDurationSeconds": 82.43125,
+        "actualBytes": 495164,
+        "meanDb": -22,
+        "peakDb": -1.7,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a2-listen-us",
+      "level": "A2",
+      "previousReviewedContentHash": "2a10d3201bd06f1a6459b4cdf9ef04be5c48b42ddeb1db3235839d77a51bcf36",
+      "reviewedCurrentContentHash": "2a10d3201bd06f1a6459b4cdf9ef04be5c48b42ddeb1db3235839d77a51bcf36",
+      "changedContentHash": false,
+      "transcriptSha256": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+      "authoredQuestionsSha256": "fce3b284455e3ca76ab4cb5278857eb5143678856f08627a1f40789edacb351d",
+      "currentQuestionsSha256": "fce3b284455e3ca76ab4cb5278857eb5143678856f08627a1f40789edacb351d",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a2-listen-us.mp3",
+        "locale": "en-US",
+        "sha256": "ab52c491de8f5375511af553fff8a256f2aaf886510c8114700a8cb1ffebdbfe",
+        "metadataSha256": "6dc750d73ccb8120b45940923f6f8d27de4a6d5ce7d34321fae143c73ed31e0e",
+        "configurationHash": "814c3c7b472b78b0427e237c0f54ed2bdb091cd468887f75a99720b10a1add80",
+        "decodedDurationSeconds": 83.08025,
+        "actualBytes": 499052,
+        "meanDb": -22.1,
+        "peakDb": -3.3,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a2-listen-au",
+      "level": "A2",
+      "previousReviewedContentHash": "09a1a72e9c731183ec44893b57860bc5bee92221186d5634306ecab83ba07c89",
+      "reviewedCurrentContentHash": "09a1a72e9c731183ec44893b57860bc5bee92221186d5634306ecab83ba07c89",
+      "changedContentHash": false,
+      "transcriptSha256": "17295801bc08c2dc0c878ab039e091d6ea7e57a12dd3a6f60a8542dff86582a2",
+      "authoredQuestionsSha256": "d19639c6f62783fe01adee3f84e2aaa9e535a46a9ba0ab5f8d5b4591e3eaccbe",
+      "currentQuestionsSha256": "d19639c6f62783fe01adee3f84e2aaa9e535a46a9ba0ab5f8d5b4591e3eaccbe",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a2-listen-au.mp3",
+        "locale": "en-US",
+        "sha256": "bd9a2276b9b40a89f8006f8ec295da32295d212b0026adefd00e1556264d54f9",
+        "metadataSha256": "f0905eaef6be7c3c372687fba6f6057a2a990416f69e838056f63151abd440ec",
+        "configurationHash": "da62c1d11289be533f8dd3d1ca1545ea57ee96ac37686fedd6907a05b9ebc3a5",
+        "decodedDurationSeconds": 78.685417,
+        "actualBytes": 472700,
+        "meanDb": -21.9,
+        "peakDb": -2.7,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-a2-listen-in",
+      "level": "A2",
+      "previousReviewedContentHash": "f1c3d418e6c3ef61bb40add405141fe597acfd9fbea481902f93d286f26c0a0c",
+      "reviewedCurrentContentHash": "f1c3d418e6c3ef61bb40add405141fe597acfd9fbea481902f93d286f26c0a0c",
+      "changedContentHash": false,
+      "transcriptSha256": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+      "authoredQuestionsSha256": "d2176e25ab502ed74287c107ef485cd02a3ebe8b9eec0a7b3331045c8f6da6d8",
+      "currentQuestionsSha256": "d2176e25ab502ed74287c107ef485cd02a3ebe8b9eec0a7b3331045c8f6da6d8",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-a2-listen-in.mp3",
+        "locale": "en-US",
+        "sha256": "06cee4308c80b9523b5152ce7a4fb03e947bd833fc09aba280a5b9494a2cfa3c",
+        "metadataSha256": "5c514079f348080f9bec2fce83fde0ab1fae85168ee98e780b5de3e3c0e62c6a",
+        "configurationHash": "49c74acbc21833309d30c7bce4837568e2e886aa951e0c4778c5e86e2872a788",
+        "decodedDurationSeconds": 83.948708,
+        "actualBytes": 504236,
+        "meanDb": -21.3,
+        "peakDb": -2.7,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b1-listen-gb",
+      "level": "B1",
+      "previousReviewedContentHash": "c39dc8414a35b711d9e84219a3017959396f3824fa2f58f2e049b0e51d9b0d69",
+      "reviewedCurrentContentHash": "c39dc8414a35b711d9e84219a3017959396f3824fa2f58f2e049b0e51d9b0d69",
+      "changedContentHash": false,
+      "transcriptSha256": "133f5c0e01428939d0d77000a3dceea0e8fb92a26c732894ee012af1e422cc7a",
+      "authoredQuestionsSha256": "102473e368652761e47890d73cec38cb9a4c8981cea3b4deaa994d15454d5dfd",
+      "currentQuestionsSha256": "102473e368652761e47890d73cec38cb9a4c8981cea3b4deaa994d15454d5dfd",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b1-listen-gb.mp3",
+        "locale": "en-US",
+        "sha256": "bd4035799831a0191894a74c4cfaae1e490019cabf509f08ecc3e84e43de3cf3",
+        "metadataSha256": "bd8171533f6232bc7e5160c640d54786a3e758d82af1b4f10991dcb4bab8519d",
+        "configurationHash": "d8aceb02ab16885fcb6074f7713f3a4f154f24fdd1519d89c8c245fe32f9a513",
+        "decodedDurationSeconds": 114.289958,
+        "actualBytes": 686396,
+        "meanDb": -21.9,
+        "peakDb": -2.5,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b1-listen-us",
+      "level": "B1",
+      "previousReviewedContentHash": "9f4b9361b072c7966aec29ae63e712a7430384efec3eb8e3168b149cc9d1db9f",
+      "reviewedCurrentContentHash": "9f4b9361b072c7966aec29ae63e712a7430384efec3eb8e3168b149cc9d1db9f",
+      "changedContentHash": false,
+      "transcriptSha256": "6971394fa7a0d510bdfa22ecf7426ea38a087ab42dcda11f587434d53cf0122c",
+      "authoredQuestionsSha256": "f69082ddab46289ffdee0dc124fa16ed0eb554fd2cfff5cf927c8e9f1d3776de",
+      "currentQuestionsSha256": "f69082ddab46289ffdee0dc124fa16ed0eb554fd2cfff5cf927c8e9f1d3776de",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b1-listen-us.mp3",
+        "locale": "en-US",
+        "sha256": "11e4cf8c436a0c9e3772e9085ebd72eb17d916cd7b10eb808b642c3242f207dd",
+        "metadataSha256": "eb2266562dbe57f445ccb1225cdc395266f41e903f593f572220497e7b1eaae7",
+        "configurationHash": "7288275c44340680edbb1d8d0f4ac76910251550ac6620c030fa2fac698e8e76",
+        "decodedDurationSeconds": 121.568875,
+        "actualBytes": 730028,
+        "meanDb": -21.6,
+        "peakDb": -1.7,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b1-listen-au",
+      "level": "B1",
+      "previousReviewedContentHash": "75b896359c64df92db55bbd0204d9e4371dca68af0d87162d6833408b3ef3e5f",
+      "reviewedCurrentContentHash": "75b896359c64df92db55bbd0204d9e4371dca68af0d87162d6833408b3ef3e5f",
+      "changedContentHash": false,
+      "transcriptSha256": "9070966572430148c172913036bd151566593e7cfe230423610948a1a1babcb2",
+      "authoredQuestionsSha256": "e338a6c2837c8e33a811683ebe137cb4169388c88458153bb39e0ff0acf549ed",
+      "currentQuestionsSha256": "e338a6c2837c8e33a811683ebe137cb4169388c88458153bb39e0ff0acf549ed",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b1-listen-au.mp3",
+        "locale": "en-US",
+        "sha256": "3909286fa4f701b614e72db1b39ffaac6dfb5113aed3be372d8b376d61446abf",
+        "metadataSha256": "8bd4439e74283e5d531ad509e1477b576cf81ac771d669b8565c6f94f2aa02bb",
+        "configurationHash": "db67f737db32781df2e955c9cc6f8cffcb0047a2ad0784cac0863a2a9921a291",
+        "decodedDurationSeconds": 123.481958,
+        "actualBytes": 741548,
+        "meanDb": -21.7,
+        "peakDb": -1.5,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b1-listen-in",
+      "level": "B1",
+      "previousReviewedContentHash": "ebf478c179d486a505a6acaee4454bdca0f4bf7e77c4a0b0b7ec16d0b20eca5f",
+      "reviewedCurrentContentHash": "ebf478c179d486a505a6acaee4454bdca0f4bf7e77c4a0b0b7ec16d0b20eca5f",
+      "changedContentHash": false,
+      "transcriptSha256": "4aee3fbdcace6556aa6774008849a2bdd12393b71f29c2abf5db619967e58d4d",
+      "authoredQuestionsSha256": "88e2edc91b9f910632bd81183e926fcf0e3a2e275e937140dec52064907d5d60",
+      "currentQuestionsSha256": "88e2edc91b9f910632bd81183e926fcf0e3a2e275e937140dec52064907d5d60",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b1-listen-in.mp3",
+        "locale": "en-US",
+        "sha256": "0ad8b034b2587eb9dd9aff29db735ab1d2e4f574051234c287bf28dc6e1617a0",
+        "metadataSha256": "fe6cbf32f5585af283478f8e6ededa83c4287607049a4a3f7d0cce9ac9f1217c",
+        "configurationHash": "8daad34dae2eaaf063fdc49fc44f8efb4c0488672bdcad9088f3a68cfa364ee3",
+        "decodedDurationSeconds": 114.909542,
+        "actualBytes": 689996,
+        "meanDb": -20.8,
+        "peakDb": -2.1,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b2-listen-gb",
+      "level": "B2",
+      "previousReviewedContentHash": "46ccb67d2d7a232e34dd11eb4c40abc1372d69de0029da91d3c844fd5b3d9bf6",
+      "reviewedCurrentContentHash": "46ccb67d2d7a232e34dd11eb4c40abc1372d69de0029da91d3c844fd5b3d9bf6",
+      "changedContentHash": false,
+      "transcriptSha256": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+      "authoredQuestionsSha256": "f0b62d6c4b4bdbaa75ea31648cea9d0f1d0eacd30666fa0bd40f61317d71caa6",
+      "currentQuestionsSha256": "f0b62d6c4b4bdbaa75ea31648cea9d0f1d0eacd30666fa0bd40f61317d71caa6",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b2-listen-gb.mp3",
+        "locale": "en-US",
+        "sha256": "988609eb60fd7614eb388fd14a31b2d54a158354251a5c6a6b5356a9f03faeed",
+        "metadataSha256": "c6e11fff3e1cb93c85c6b635da6fd823a03fce3c09dbc52784949e93030d3bb4",
+        "configurationHash": "3081a7840a9eb71113041ea94189ca77a2582ecdeb97678aca934b3ba1852a6b",
+        "decodedDurationSeconds": 148.06,
+        "actualBytes": 889004,
+        "meanDb": -21,
+        "peakDb": -1.2,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b2-listen-us",
+      "level": "B2",
+      "previousReviewedContentHash": "fd96d5e51880a4ce404dc0f476fdbffd77f111fa31053d04ce7f545a61838c8a",
+      "reviewedCurrentContentHash": "fd96d5e51880a4ce404dc0f476fdbffd77f111fa31053d04ce7f545a61838c8a",
+      "changedContentHash": false,
+      "transcriptSha256": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+      "authoredQuestionsSha256": "bff2aa9f5db5cd9b8e44e3e450c33956f90d8bd22d4f0f12b48881ae699b9a59",
+      "currentQuestionsSha256": "bff2aa9f5db5cd9b8e44e3e450c33956f90d8bd22d4f0f12b48881ae699b9a59",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b2-listen-us.mp3",
+        "locale": "en-US",
+        "sha256": "7196d254a9fcccbe40b9fd45ea12063b7019a317e68261db10e9aeaabffa8e16",
+        "metadataSha256": "27c1b468dbb2eaf1e14818f27f6c5e84419b95a96e746173b39b9435e7d4bd6e",
+        "configurationHash": "969d5495d4deda83a14e54d7d897d2ae3ccf6dd45685595c7fbd9cbe296ce8e0",
+        "decodedDurationSeconds": 152.84,
+        "actualBytes": 917660,
+        "meanDb": -21.7,
+        "peakDb": -2.6,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b2-listen-au",
+      "level": "B2",
+      "previousReviewedContentHash": "d2966d03f58f6935ea2d68a92a389ae4ada09c4ee329e2d96a67706936bd0206",
+      "reviewedCurrentContentHash": "d2966d03f58f6935ea2d68a92a389ae4ada09c4ee329e2d96a67706936bd0206",
+      "changedContentHash": false,
+      "transcriptSha256": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+      "authoredQuestionsSha256": "aa65800a7f860ae37a67fb3e15fba381cc2bd78416c0015c2611565a604b13c4",
+      "currentQuestionsSha256": "aa65800a7f860ae37a67fb3e15fba381cc2bd78416c0015c2611565a604b13c4",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b2-listen-au.mp3",
+        "locale": "en-US",
+        "sha256": "3d5fa334af36d6fc74da23a0fe6c58feb59440579cf21396791cc3ae0dea985c",
+        "metadataSha256": "ee3915ce824150b013e0d7d176d3bb4b43ffb69bda6d8f04f6e9a2cd8d4126b5",
+        "configurationHash": "c1973beae33be2d51d5569822b96080ad897ed1a7fd29de934f4b7f4d4c346ee",
+        "decodedDurationSeconds": 165.6425,
+        "actualBytes": 994412,
+        "meanDb": -21.3,
+        "peakDb": -3,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    },
+    {
+      "id": "independent-b2-listen-in",
+      "level": "B2",
+      "previousReviewedContentHash": "2ad9b717cd4155717aceea87dba2517911b5f2d9795be5dc723deb665baffd31",
+      "reviewedCurrentContentHash": "2ad9b717cd4155717aceea87dba2517911b5f2d9795be5dc723deb665baffd31",
+      "changedContentHash": false,
+      "transcriptSha256": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+      "authoredQuestionsSha256": "557ee6ba2af92f2c02a84b72c664bd240a811b5937a20f730cf3936570ab7306",
+      "currentQuestionsSha256": "557ee6ba2af92f2c02a84b72c664bd240a811b5937a20f730cf3936570ab7306",
+      "titleAndLevelUnchanged": true,
+      "transcriptUnchanged": true,
+      "canonicalQuestionsEqualAfterExplicitPresentationProjection": true,
+      "questionCount": 8,
+      "questionPresentation": [
+        {
+          "id": "q1",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q2",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q3",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q4",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q5",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q6",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q7",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        },
+        {
+          "id": "q8",
+          "promptChangedFromAuthor": false,
+          "presentationVersion": null,
+          "canonicalOptionsAndAnswersUnchanged": true,
+          "exactEvidenceRetained": true
+        }
+      ],
+      "audio": {
+        "path": "audio/independent-bank/us/independent-b2-listen-in.mp3",
+        "locale": "en-US",
+        "sha256": "e187af131b6911001736d1946a9ff29a34db7f07c0fdd858146803bdcf48e286",
+        "metadataSha256": "2dd23c93fdcbb6eef82f97086551cb76a3a5b76434064f16bf31e52d6775d9a1",
+        "configurationHash": "749bc347c1179ddd18fdfaa1b2a1d0a514aa6f92384656ad73c27bd8f779bb5b",
+        "decodedDurationSeconds": 147.245,
+        "actualBytes": 884108,
+        "meanDb": -20.9,
+        "peakDb": -1.7,
+        "scope": "Recorded US synthetic voice identities, exact script/MP3/configuration hashes and actual decode; not independent auditory or phoneme certification."
+      }
+    }
+  ]
+}

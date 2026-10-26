@@ -1,0 +1,356 @@
+{
+  "id": "expand-w13-listen-1",
+  "week": 13,
+  "skill": "listening",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "工作、职责与时间管理 · Independent new scenario: a new employee learning workplace procedures",
+  "grammarFocus": "have to / must / can；一般现在时与过去时对比。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "New Job, New Rules: Lin Tao's First Week",
+  "instructions": "这是为A2学习者设计的原创模拟听力与语法练习（非官方雅思材料）。先听/读对话，注意新员工Lin Tao学习公司规定的场景。听力部分有8道题：单选题、填空题和判断题（True/False/Not Given）。所有题目和选项均为英文，解释为中文。语法部分先讲解have to / must / can的用法及一般现在时与过去时的对比，然后完成8道新句子练习。最后进行口语和写作迁移练习。",
+  "transcript": "Mia: Good morning, Lin Tao. Welcome to your first week. I'm Mia, your team leader.\nLin Tao: Good morning, Mia. Thank you. I'm a little nervous.\nMia: That's normal. Let's talk about the rules. First, you have to arrive at 9 a.m. every day.\nLin Tao: OK. Do I have to wear a uniform?\nMia: No, you don't. But you must wear your name badge. You can wear jeans on Friday.\nLin Tao: Great. What about lunch?\nMia: You can take one hour for lunch. But you must tell me if you leave the office.\nLin Tao: I see. And the phone?\nMia: You can use your phone for calls, but you must not use it in meetings.\nLin Tao: Understood. What did you do last week?\nMia: I visited a client on Monday. I wrote three reports on Tuesday. Yesterday I had a long meeting.\nLin Tao: Did you have to work late?\nMia: Yes, I did. I worked until 8 p.m. But today I can leave at 5.\nLin Tao: Good. One more question. Can I ask you for help?\nMia: Of course. You can ask me any time. But you have to send an email first.\nLin Tao: OK. I sent one this morning.\nMia: Perfect. You're doing well.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What time must Lin Tao arrive at work?",
+      "options": [
+        "8 a.m.",
+        "9 a.m.",
+        "10 a.m."
+      ],
+      "answers": [
+        "9 a.m."
+      ],
+      "explanation": "Mia说“you have to arrive at 9 a.m. every day”，所以必须9点到。",
+      "evidence": "you have to arrive at 9 a.m. every day."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Does Lin Tao have to wear a uniform?",
+      "options": [
+        "Yes, he does.",
+        "No, he doesn't.",
+        "Only on Friday."
+      ],
+      "answers": [
+        "No, he doesn't."
+      ],
+      "explanation": "Mia回答“No, you don't.”，说明不需要穿制服。",
+      "evidence": "No, you don't."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Lin Tao must wear his ______ badge.",
+      "maxWords": 1,
+      "answers": [
+        "name"
+      ],
+      "explanation": "Mia说“you must wear your name badge”，所以填name。",
+      "evidence": "you must wear your name badge."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What can Lin Tao wear on Friday?",
+      "options": [
+        "A uniform",
+        "Jeans",
+        "A hat"
+      ],
+      "answers": [
+        "Jeans"
+      ],
+      "explanation": "Mia说“You can wear jeans on Friday.”，所以周五可以穿牛仔裤。",
+      "evidence": "You can wear jeans on Friday."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How long can Lin Tao take for lunch?",
+      "options": [
+        "30 minutes",
+        "One hour",
+        "Two hours"
+      ],
+      "answers": [
+        "One hour"
+      ],
+      "explanation": "Mia说“You can take one hour for lunch.”，所以午餐时间是一小时。",
+      "evidence": "You can take one hour for lunch."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What must Lin Tao NOT do in meetings?",
+      "options": [
+        "Use his phone",
+        "Speak",
+        "Take notes"
+      ],
+      "answers": [
+        "Use his phone"
+      ],
+      "explanation": "Mia说“you must not use it in meetings”，it指手机，所以开会时不能用手机。",
+      "evidence": "you must not use it in meetings."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What did Mia do on Monday?",
+      "options": [
+        "She wrote three reports.",
+        "She visited a client.",
+        "She had a long meeting."
+      ],
+      "answers": [
+        "She visited a client."
+      ],
+      "explanation": "Mia说“I visited a client on Monday.”，所以周一她拜访了客户。",
+      "evidence": "I visited a client on Monday."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Lin Tao must send an email before he asks Mia for help.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Mia说“you have to send an email first”，所以林涛必须先发邮件再求助。",
+      "evidence": "But you have to send an email first."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "nervous",
+      "meaning": "紧张的",
+      "example": "I'm a little nervous."
+    },
+    {
+      "word": "uniform",
+      "meaning": "制服",
+      "example": "Do I have to wear a uniform?"
+    },
+    {
+      "word": "badge",
+      "meaning": "徽章；工牌",
+      "example": "But you must wear your name badge."
+    },
+    {
+      "word": "client",
+      "meaning": "客户",
+      "example": "I visited a client on Monday."
+    },
+    {
+      "word": "reports",
+      "meaning": "报告",
+      "example": "I wrote three reports on Tuesday."
+    },
+    {
+      "word": "meeting",
+      "meaning": "会议",
+      "example": "Yesterday I had a long meeting."
+    },
+    {
+      "word": "leave",
+      "meaning": "离开",
+      "example": "But today I can leave at 5."
+    },
+    {
+      "word": "email",
+      "meaning": "电子邮件",
+      "example": "But you have to send an email first."
+    }
+  ],
+  "grammar": {
+    "title": "have to / must / can 与一般现在时和过去时对比",
+    "explanation": "在英语中，have to 和 must 都表示“必须”，但 have to 更强调客观规定（如公司规定），must 更强调说话人的强烈要求。can 表示“可以、能够”。一般现在时表示经常性动作或规定，如 you have to arrive at 9 a.m.；一般过去时表示过去发生的动作，如 I visited a client on Monday。注意：have to 的第三人称单数是 has to；must 没有时态变化；can 的过去式是 could。",
+    "example": "you have to arrive at 9 a.m. every day.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Every day, Sarah ______ wear a uniform at work.",
+        "options": [
+          "have to",
+          "has to",
+          "must to"
+        ],
+        "answers": [
+          "has to"
+        ],
+        "explanation": "主语Sarah是第三人称单数，所以用has to。",
+        "evidence": "you have to arrive at 9 a.m. every day."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Yesterday, Tom ______ a report for his manager.",
+        "options": [
+          "write",
+          "wrote",
+          "writes"
+        ],
+        "answers": [
+          "wrote"
+        ],
+        "explanation": "Yesterday表示过去，所以用过去式wrote。",
+        "evidence": "I wrote three reports on Tuesday."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "You ______ use your phone in the meeting room. It is not allowed.",
+        "options": [
+          "must not",
+          "don't have to",
+          "can"
+        ],
+        "answers": [
+          "must not"
+        ],
+        "explanation": "表示禁止，用must not；don't have to表示不必。",
+        "evidence": "you must not use it in meetings."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "______ you have to work late last Friday?",
+        "options": [
+          "Do",
+          "Did",
+          "Does"
+        ],
+        "answers": [
+          "Did"
+        ],
+        "explanation": "last Friday是过去时间，所以用Did构成一般过去时疑问句。",
+        "evidence": "Did you have to work late?"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Lisa ______ speak three languages. She is very good.",
+        "options": [
+          "can",
+          "must",
+          "has to"
+        ],
+        "answers": [
+          "can"
+        ],
+        "explanation": "表示能力，用can。",
+        "evidence": "You can ask me any time."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "We ______ arrive at 8 a.m. tomorrow. It is a rule.",
+        "options": [
+          "have to",
+          "has to",
+          "can"
+        ],
+        "answers": [
+          "have to"
+        ],
+        "explanation": "主语We是复数，表示规定，用have to。",
+        "evidence": "you have to arrive at 9 a.m. every day."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Last week, Anna ______ to the office every day.",
+        "options": [
+          "go",
+          "went",
+          "goes"
+        ],
+        "answers": [
+          "went"
+        ],
+        "explanation": "Last week表示过去，所以用went。",
+        "evidence": "I visited a client on Monday."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "You ______ take a one-hour lunch break. It is allowed.",
+        "options": [
+          "can",
+          "must not",
+          "have to"
+        ],
+        "answers": [
+          "can"
+        ],
+        "explanation": "表示允许，用can。",
+        "evidence": "You can take one hour for lunch."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What time do you usually start work or study?",
+        "Do you have to wear a uniform at work or school?",
+        "Can you use your phone during work or class?",
+        "What did you do last weekend?"
+      ],
+      "part2": "Describe a time when you learned new rules at work or school.\nYou should say:\n- where it was\n- what the rules were\n- who told you the rules\n- and explain how you felt about learning them.",
+      "part3": [
+        "Why do workplaces have rules?",
+        "Do you think rules are important for new employees?",
+        "How can managers help new workers learn rules?",
+        "What rules did you have to follow when you were a student?"
+      ]
+    },
+    "writing": "Write a short email (about 50 words) to a new colleague. Tell them three rules at your workplace. Use have to, must, and can. Also say what you did last week."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice (A2)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "46a4f001cc309c33fb5cd3e3addb933c3e8c4744d2ff0f981003487ecb252456"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

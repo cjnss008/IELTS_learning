@@ -113,6 +113,7 @@ function parseQuestion(raw, passage, index) {
   if (!plain(raw) || raw.id !== 'q' + (index + 1) || !Array.isArray(raw.options) || raw.options.length < 3 || raw.options.length > 4) fail('PLACEMENT_AI_QUESTION', 'AI题目数量、编号或选项无法校验。', 502);
   const prompt = safeAIText(raw.prompt, 500, '题干');
   const options = raw.options.map(o => safeAIText(o, 300, '选项'));
+  if(/[\u3400-\u9fff]/.test(prompt)||options.some(value=>/[\u3400-\u9fff]/.test(value)))fail('PLACEMENT_QUESTION_LANGUAGE','测评题干与选项必须为英文，未发布这份题目。',502);
   const answer = safeAIText(raw.answer, 300, '答案');
   const evidence = safeAIText(raw.evidence, 600, '原文依据');
   if (new Set(options.map(o => o.toLowerCase())).size !== options.length || !options.includes(answer) || evidence.length < 5 || !passage.includes(evidence)) fail('PLACEMENT_AI_EVIDENCE', 'AI答案或原文依据无法逐字核验，未发布本套题。', 502);

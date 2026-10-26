@@ -1,71 +1,411 @@
 {
-  "schema": 3,
   "id": "independent-a1-listen-gb",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+  "configurationHash": "e21dc80c111f9baa25dc9c84b0d18b890ffea368cd848462d56919c79e76c98e",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
+    "rate": "-18%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "clerk": "en-US-AriaNeural",
+      "mara": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 0,
+        "sourceEnd": 7
+      },
+      {
+        "label": "Mara",
+        "role": "mara",
+        "sourceStart": 46,
+        "sourceEnd": 52
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 76,
+        "sourceEnd": 83
+      },
+      {
+        "label": "Mara",
+        "role": "mara",
+        "sourceStart": 134,
+        "sourceEnd": 140
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 168,
+        "sourceEnd": 175
+      },
+      {
+        "label": "Mara",
+        "role": "mara",
+        "sourceStart": 233,
+        "sourceEnd": 239
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 282,
+        "sourceEnd": 289
+      },
+      {
+        "label": "Mara",
+        "role": "mara",
+        "sourceStart": 352,
+        "sourceEnd": 358
+      },
+      {
+        "label": "Clerk",
+        "role": "clerk",
+        "sourceStart": 388,
+        "sourceEnd": 395
+      },
+      {
+        "label": "Mara",
+        "role": "mara",
+        "sourceStart": 526,
+        "sourceEnd": 532
+      }
+    ],
+    "segments": [
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 7,
+        "sourceEnd": 45,
+        "text": "Good morning. Where do you want to go?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "c7a7e66b01f16d5dfd85bfa5688ac3ff7ff934f100817bf801603b5fbffe2bce",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "mara",
+        "speaker": "Mara",
+        "sourceStart": 52,
+        "sourceEnd": 75,
+        "text": "To Hill Garden, please.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "025f57bac0520eb888002d9ca4082f8a432b52716bf86392b31fcfdf743684f2",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 83,
+        "sourceEnd": 133,
+        "text": "The next bus leaves at ten. It is the number four.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "ecbf506e48edc3db7b8c5c3198540fe88d8c22cc582b5022e7bb6a87dfaf88d2",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "mara",
+        "speaker": "Mara",
+        "sourceStart": 140,
+        "sourceEnd": 167,
+        "text": "Is the ticket three pounds?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "0e8ea6b482473d9c1366a489aa454f7eb2b6cd1e1179b4900e75eb512add5b39",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 175,
+        "sourceEnd": 232,
+        "text": "That is a child's ticket. An adult ticket is five pounds.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "7c5e0e35b6a5ed119f57fcaa71a32f1dce7bd8f820998903c36c56cc60c3f302",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "mara",
+        "speaker": "Mara",
+        "sourceStart": 239,
+        "sourceEnd": 281,
+        "text": "One adult ticket, please. Where do I wait?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "c8820f51b0e9d30932ab9ead983b9a855516c02d9e00ce0409c7b96f3809330a",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 289,
+        "sourceEnd": 351,
+        "text": "At the stop beside the bank. The journey takes twenty minutes.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "70b74df3278f5b1e2d7ccd9a69235863161e4f5f005ddf302b8b77ef037a5a79",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "mara",
+        "speaker": "Mara",
+        "sourceStart": 358,
+        "sourceEnd": 387,
+        "text": "Can I buy food at the garden?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "dbfcbdc112d46a4d1fccc29631b910fe5014a7b0d38cc626d4a18db74b5c74d1",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "clerk",
+        "speaker": "Clerk",
+        "sourceStart": 395,
+        "sourceEnd": 525,
+        "text": "There is a café, but it is closed today. Please take a sandwich. The garden closes at six. The last bus back is at half past five.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "79c8f2fe7cadfc74a9befd8644f98e8e43a6fd0a2e83971c6f935c7d8c1f7720",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "mara",
+        "speaker": "Mara",
+        "sourceStart": 532,
+        "sourceEnd": 567,
+        "text": "Thank you. I have my lunch with me.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "bcb69331a86921c8320b66122aa137bf92f690deb07572d4720c93c59b5bf81c",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "38e4a74d8a47187c69e0c69c7996715d082d493210cc937cdaae4b3fed0bfad7",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "roleVoices": {
+    "clerk": "en-US-AriaNeural",
+    "mara": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 50.418833,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-GB",
-  "voices": [
-    "en-GB-SoniaNeural",
-    "en-GB-RyanNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "-18%",
-  "transcriptHash": "99b66c753138476c0a484eae2d0e1ed39dd86a68a141189cd42644d36f7741ab",
-  "audioHash": "8959c8aec76079b136d7ad65ae4f41d95bdf76b7035ba08e2c683b0ca13dc3ac",
-  "configurationHash": "c04da23cd00ac295a633e1549f96d89265d2aab796f6da11bffaa5fbfa3e965c",
-  "durationSeconds": 51.144,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 7,
+      "sourceEnd": 45,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "c7a7e66b01f16d5dfd85bfa5688ac3ff7ff934f100817bf801603b5fbffe2bce",
-      "durationSeconds": 3.528
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "8461dfca1950cb3b6ab1bb42a8e5d4e48f95c95445aac56abfe28efe310f0ef1",
+      "groupAudioHash": "551e778cc4c3943b14fbbe3656a664e1ad1a35ed231b481cba5c3be641aa0193",
+      "groupStartSeconds": 0.050958333333333335,
+      "groupEndSeconds": 3.5955833333333334,
+      "wordStartSeconds": 0.110958,
+      "wordEndSeconds": 3.475582,
+      "startSeconds": 0.0,
+      "endSeconds": 3.544625,
+      "durationSeconds": 3.544625
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "mara",
+      "speaker": "Mara",
+      "sourceStart": 52,
+      "sourceEnd": 75,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "025f57bac0520eb888002d9ca4082f8a432b52716bf86392b31fcfdf743684f2",
-      "durationSeconds": 3.168
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "3c0f864f284d387c978dc945e3aa7977d83896872a361fb3b0826c0088c1ad75",
+      "groupAudioHash": "d1f5751048319dcf5bacea88d15a70b1bd0d2861e228f5af8af1b153ba4f8ffc",
+      "groupStartSeconds": 0.050958333333333335,
+      "groupEndSeconds": 1.9840416666666667,
+      "wordStartSeconds": 0.110958,
+      "wordEndSeconds": 1.864041,
+      "startSeconds": 3.994625,
+      "endSeconds": 5.927708333333333,
+      "durationSeconds": 1.9330833333333333
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 83,
+      "sourceEnd": 133,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "ecbf506e48edc3db7b8c5c3198540fe88d8c22cc582b5022e7bb6a87dfaf88d2",
-      "durationSeconds": 4.8
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8461dfca1950cb3b6ab1bb42a8e5d4e48f95c95445aac56abfe28efe310f0ef1",
+      "groupAudioHash": "551e778cc4c3943b14fbbe3656a664e1ad1a35ed231b481cba5c3be641aa0193",
+      "groupStartSeconds": 4.467458333333333,
+      "groupEndSeconds": 9.266375,
+      "wordStartSeconds": 4.527458,
+      "wordEndSeconds": 9.146374,
+      "startSeconds": 6.3777083333333335,
+      "endSeconds": 11.176625,
+      "durationSeconds": 4.798916666666666
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "mara",
+      "speaker": "Mara",
+      "sourceStart": 140,
+      "sourceEnd": 167,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "0e8ea6b482473d9c1366a489aa454f7eb2b6cd1e1179b4900e75eb512add5b39",
-      "durationSeconds": 2.976
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "3c0f864f284d387c978dc945e3aa7977d83896872a361fb3b0826c0088c1ad75",
+      "groupAudioHash": "d1f5751048319dcf5bacea88d15a70b1bd0d2861e228f5af8af1b153ba4f8ffc",
+      "groupStartSeconds": 2.8973333333333335,
+      "groupEndSeconds": 4.9675416666666665,
+      "wordStartSeconds": 2.957333,
+      "wordEndSeconds": 4.847541,
+      "startSeconds": 11.626625,
+      "endSeconds": 13.696833333333334,
+      "durationSeconds": 2.0702083333333334
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 175,
+      "sourceEnd": 232,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "7c5e0e35b6a5ed119f57fcaa71a32f1dce7bd8f820998903c36c56cc60c3f302",
-      "durationSeconds": 5.64
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8461dfca1950cb3b6ab1bb42a8e5d4e48f95c95445aac56abfe28efe310f0ef1",
+      "groupAudioHash": "551e778cc4c3943b14fbbe3656a664e1ad1a35ed231b481cba5c3be641aa0193",
+      "groupStartSeconds": 10.153416666666667,
+      "groupEndSeconds": 15.607791666666667,
+      "wordStartSeconds": 10.213416,
+      "wordEndSeconds": 15.487791,
+      "startSeconds": 14.146833333333333,
+      "endSeconds": 19.601208333333332,
+      "durationSeconds": 5.454374999999999
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "mara",
+      "speaker": "Mara",
+      "sourceStart": 239,
+      "sourceEnd": 281,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "c8820f51b0e9d30932ab9ead983b9a855516c02d9e00ce0409c7b96f3809330a",
-      "durationSeconds": 5.664
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "3c0f864f284d387c978dc945e3aa7977d83896872a361fb3b0826c0088c1ad75",
+      "groupAudioHash": "d1f5751048319dcf5bacea88d15a70b1bd0d2861e228f5af8af1b153ba4f8ffc",
+      "groupStartSeconds": 5.869875,
+      "groupEndSeconds": 10.196208333333333,
+      "wordStartSeconds": 5.929875,
+      "wordEndSeconds": 10.076207,
+      "startSeconds": 20.051208333333335,
+      "endSeconds": 24.377541666666666,
+      "durationSeconds": 4.326333333333331
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 289,
+      "sourceEnd": 351,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "70b74df3278f5b1e2d7ccd9a69235863161e4f5f005ddf302b8b77ef037a5a79",
-      "durationSeconds": 5.544
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8461dfca1950cb3b6ab1bb42a8e5d4e48f95c95445aac56abfe28efe310f0ef1",
+      "groupAudioHash": "551e778cc4c3943b14fbbe3656a664e1ad1a35ed231b481cba5c3be641aa0193",
+      "groupStartSeconds": 16.479625,
+      "groupEndSeconds": 21.796791666666667,
+      "wordStartSeconds": 16.539625,
+      "wordEndSeconds": 21.676791,
+      "startSeconds": 24.827541666666665,
+      "endSeconds": 30.144708333333334,
+      "durationSeconds": 5.317166666666669
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "mara",
+      "speaker": "Mara",
+      "sourceStart": 358,
+      "sourceEnd": 387,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "dbfcbdc112d46a4d1fccc29631b910fe5014a7b0d38cc626d4a18db74b5c74d1",
-      "durationSeconds": 3.072
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "3c0f864f284d387c978dc945e3aa7977d83896872a361fb3b0826c0088c1ad75",
+      "groupAudioHash": "d1f5751048319dcf5bacea88d15a70b1bd0d2861e228f5af8af1b153ba4f8ffc",
+      "groupStartSeconds": 11.068041666666666,
+      "groupEndSeconds": 13.168791666666667,
+      "wordStartSeconds": 11.128041,
+      "wordEndSeconds": 13.048791,
+      "startSeconds": 30.594708333333333,
+      "endSeconds": 32.695458333333335,
+      "durationSeconds": 2.1007500000000014
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "clerk",
+      "speaker": "Clerk",
+      "sourceStart": 395,
+      "sourceEnd": 525,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "79c8f2fe7cadfc74a9befd8644f98e8e43a6fd0a2e83971c6f935c7d8c1f7720",
-      "durationSeconds": 12.264
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8461dfca1950cb3b6ab1bb42a8e5d4e48f95c95445aac56abfe28efe310f0ef1",
+      "groupAudioHash": "551e778cc4c3943b14fbbe3656a664e1ad1a35ed231b481cba5c3be641aa0193",
+      "groupStartSeconds": 22.683916666666665,
+      "groupEndSeconds": 35.897416666666665,
+      "wordStartSeconds": 22.743916,
+      "wordEndSeconds": 35.777416,
+      "startSeconds": 33.14545833333333,
+      "endSeconds": 46.358958333333334,
+      "durationSeconds": 13.213500000000003
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "mara",
+      "speaker": "Mara",
+      "sourceStart": 532,
+      "sourceEnd": 567,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "bcb69331a86921c8320b66122aa137bf92f690deb07572d4720c93c59b5bf81c",
-      "durationSeconds": 4.488
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "3c0f864f284d387c978dc945e3aa7977d83896872a361fb3b0826c0088c1ad75",
+      "groupAudioHash": "d1f5751048319dcf5bacea88d15a70b1bd0d2861e228f5af8af1b153ba4f8ffc",
+      "groupStartSeconds": 14.071083333333334,
+      "groupEndSeconds": 17.680958333333333,
+      "wordStartSeconds": 14.131083,
+      "wordEndSeconds": 17.560958,
+      "startSeconds": 46.80895833333334,
+      "endSeconds": 50.41883333333333,
+      "durationSeconds": 3.6098749999999953
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a1-listen-gb.mp3"
 }

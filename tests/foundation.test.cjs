@@ -67,7 +67,7 @@ test('eight units align with foundation weeks and contain 64 explained questions
   });
   assert.equal(ids.size, 64);
   assert.match(Foundation.units[0].lessons[0].text, /26/);
-  assert.match(Foundation.units[0].lessons[1].text, /Z \/zed\//);
+  assert.match(Foundation.units[0].lessons[1].text, /Z \/ziː\//);
   assert.ok(Object.isFrozen(Foundation.units[0].questions[0]));
 });
 
@@ -165,9 +165,9 @@ test('external update and storage quota failures keep existing data untouched', 
 test('English TTS is opt-in, handles voices arriving later and never claims pronunciation scoring', () => {
   const context = fixture(); const first = context.app.querySelectorAll('.foundation-speak')[0];
   assert.equal(first.disabled, true); assert.equal(context.speech.spoken.length, 0);
-  context.speech.voices = [{lang: 'en-GB', name: 'English test voice'}]; context.speech.events.voiceschanged();
+  context.speech.voices = [{lang: 'en-GB', name: 'British first'}, {lang: 'en-US', name: 'American test voice'}]; context.speech.events.voiceschanged();
   assert.equal(first.disabled, false); first.dispatch('click');
-  assert.equal(context.speech.spoken.length, 1); assert.equal(context.speech.spoken[0].lang, 'en-GB');
+  assert.equal(context.speech.spoken.length, 1); assert.equal(context.speech.spoken[0].lang, 'en-US');
   assert.equal(context.speech.spoken[0].text, 'My name is Anna.');
   assert.match(context.doc.getElementById('foundationVoice').textContent, /不评测发音/);
   context.speech.spoken[0].onerror(); assert.match(context.doc.getElementById('foundationVoice').textContent, /未能播放/);
@@ -180,3 +180,5 @@ test('page links only to local assets and contains the scope and synthetic voice
   const ids = [...html.matchAll(/id="([^"]+)"/g)].map(match => match[1]);
   assert.equal(new Set(ids).size, ids.length);
 });
+
+test('British-only browser voices keep American example speech unavailable without changing answers',()=>{const context=fixture({voices:[{lang:'en-GB',name:'British only'}]}),button=context.app.querySelectorAll('.foundation-speak')[0];assert.equal(button.disabled,true);assert.match(context.doc.getElementById('foundationVoice').textContent,/美式英语/);assert.equal(context.speech.spoken.length,0);});

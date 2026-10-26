@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-01-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-01",
+  "sourceVersion": "1",
+  "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+  "sourceContentHash": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+  "exposureGroup": "public-source:voa-l2-01",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What idea about the meeting spreads among the employees?",
+      "options": [
+        "It will announce a new holiday schedule.",
+        "It concerns budget cuts and possible job losses.",
+        "It will train everyone to use new cameras."
+      ],
+      "answers": [
+        "It concerns budget cuts and possible job losses."
+      ],
+      "evidence": "That must be what the meeting is about. When there are budget cuts, people lose their jobs.",
+      "explanation": "Kaveh把budget cuts与会议内容相连，并进一步联想到失业，这是同事之间扩散的说法。它是角色当时的推测，不是会议最后确认的目的。假期安排和相机培训没有成为这条传言的内容。",
+      "evidenceOffsets": {
+        "start": 1129,
+        "end": 1220,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "That must be what the meeting is about. When there are budget cuts, people lose their jobs.",
+          "start": 1129,
+          "end": 1220
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Anna challenge Jonathan’s use of the word “people”?",
+      "options": [
+        "He has named only one person as a source.",
+        "He has spoken only to visitors outside the building.",
+        "He has confused two different departments."
+      ],
+      "answers": [
+        "He has named only one person as a source."
+      ],
+      "evidence": "Mark in Accounting? That's one person. That's not “people.”",
+      "explanation": "Jonathan说听到“人们”谈预算削减，却只举出会计Mark。Anna指出one person不等于people，质疑的是消息来源数量，不是部门名称或大楼外的访客。不能把多人转述自动当成多个独立来源。",
+      "evidenceOffsets": {
+        "start": 695,
+        "end": 754,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Mark in Accounting? That's one person. That's not “people.”",
+          "start": 695,
+          "end": 754
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Anna suggest doing instead of continuing the gossip?",
+      "options": [
+        "Sending the rumour to all departments.",
+        "Skipping the meeting.",
+        "Going to the meeting to find out what happens."
+      ],
+      "answers": [
+        "Going to the meeting to find out what happens."
+      ],
+      "evidence": "We'll just go to the meeting and see what happens.",
+      "explanation": "Anna明确说不应该继续闲谈传言，提出到会上看看究竟发生什么。她没有建议群发消息或缺席。这个选择把等待直接信息与继续放大未经确认的说法区分开来。",
+      "evidenceOffsets": {
+        "start": 917,
+        "end": 967,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "We'll just go to the meeting and see what happens.",
+          "start": 917,
+          "end": 967
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Amelia not want to return to her former work as a detective?",
+      "options": [
+        "She dislikes working with cameras.",
+        "Criminals frighten her.",
+        "She wants to teach high school instead."
+      ],
+      "answers": [
+        "Criminals frighten her."
+      ],
+      "evidence": "I can't go back to being a detective. Criminals scare me!",
+      "explanation": "Amelia直接用Criminals scare me说明不想回去当侦探的原因。害怕高中生的是Kaveh谈到教师旧职时说的话；videographer是她现在被称赞的工作，不能与害怕的对象混淆。",
+      "evidenceOffsets": {
+        "start": 1341,
+        "end": 1398,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I can't go back to being a detective. Criminals scare me!",
+          "start": 1341,
+          "end": 1398
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Kaveh advise Penelope to do?",
+      "options": [
+        "Update her résumé.",
+        "Ask for a longer holiday.",
+        "Offer to lead the meeting."
+      ],
+      "answers": [
+        "Update her résumé."
+      ],
+      "evidence": "Update your résumé. I’ve already updated mine.",
+      "explanation": "Kaveh让Penelope更新résumé，并补充自己已经更新过了。命令句主语虽省略，接收建议的人仍是Penelope。更长假期或主持会议都不是这句建议；这也不证明她真的要失业。",
+      "evidenceOffsets": {
+        "start": 1928,
+        "end": 1974,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Update your résumé. I’ve already updated mine.",
+          "start": 1928,
+          "end": 1974
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What purpose does Ms. Weaver finally give for the meeting?",
+      "options": [
+        "To announce that everyone will be fired.",
+        "To cancel all reporting work immediately.",
+        "To praise the team’s work and give new assignments."
+      ],
+      "answers": [
+        "To praise the team’s work and give new assignments."
+      ],
+      "evidence": "The reason for this meeting is to tell you what a good job you’ve been doing and give out new assignments.",
+      "explanation": "老板用The reason for this meeting is明确给出真实目的：表扬团队，并分配新任务。她同时否认要解雇在场员工。预算削减确实被提到，但不能把先前的传言当成这次会议的目的。",
+      "evidenceOffsets": {
+        "start": 2479,
+        "end": 2585,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The reason for this meeting is to tell you what a good job you’ve been doing and give out new assignments.",
+          "start": 2479,
+          "end": 2585
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "4878da86e0b0bb409ec6e34e7c3fd2bb68e5ff81e9cc8b14a6fa5add25ad2436",
+      "reviewSha256": "b0e96b6d7dd0f597fe4de0e3a5848b113ece586dfc67fe8a79cace15abcb4b79",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

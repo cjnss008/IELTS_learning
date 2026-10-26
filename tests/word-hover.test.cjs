@@ -19,10 +19,10 @@ test('local lookup retains the material sense/example while preferring the verif
 
 test('AI supplementation never overwrites an authored sense, and rejects a different word',async () => {
   let calls=0;
-  const lookup = H.createLookup({entries:[{word:'specialword',meaning:'课文的特定义',example:'This is a specialword.'}],lookupAI:async word => { calls++; return {word,ipa:'/test/',meaning:'另一词义',example:'AI example.'}; }});
-  const result = await lookup.enrich('specialword','context','A0');
-  assert.equal(result.meaning,'课文的特定义'); assert.equal(result.example,'This is a specialword.'); assert.equal(result.ipa,'/test/');
-  assert.equal((await lookup.enrich('specialword','context','A0')).ipa,'/test/'); assert.equal(calls,1);
+  const lookup = H.createLookup({entries:[{word:'hydroponics',meaning:'课文的水培义',example:'They grow tomatoes using hydroponics.'}],lookupAI:async word => { calls++; return {word,ipa:'/ˌhaɪdɹəˈpɑnɪks/',ipaAccent:'en-US',meaning:'另一词义',example:'AI example.'}; }});
+  const result = await lookup.enrich('hydroponics','context','A0');
+  assert.equal(result.meaning,'课文的水培义'); assert.equal(result.example,'They grow tomatoes using hydroponics.'); assert.equal(result.ipa,'/ˌhaɪdɹəˈpɑnɪks/');assert.equal(result.ipaAccent,'en-US');
+  assert.equal((await lookup.enrich('hydroponics','context','A0')).ipa,'/ˌhaɪdɹəˈpɑnɪks/'); assert.equal(calls,1);
   assert.throws(() => D.mergeAI(result,{word:'different',ipa:'/test/'}),/不一致/);
 });
 

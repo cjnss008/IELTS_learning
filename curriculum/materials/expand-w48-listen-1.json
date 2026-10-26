@@ -1,0 +1,403 @@
+{
+  "id": "expand-w48-listen-1",
+  "week": 48,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "口语专项：深入讨论与四项复测 · Independent new scenario: global and local responses to shared problems",
+  "grammarFocus": "概括、比较、推测、条件与让步；基于个人错误进行复查。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Shared Problems, Local Solutions: A Community Garden Meeting",
+  "instructions": "本材料为原创模拟练习，非官方雅思试题，也不代表任何官方分数。请先听/读英文材料，再完成10道题（听力与阅读混合）。听力部分注意不同说话人的自然轮换与自我更正。语法部分先用中文讲解新规则，再完成8道新句练习题。口语与写作任务请用英文完成。所有答案依据材料原文，NOT GIVEN 题请参考中文解释中“缺失事实”的说明。",
+  "transcript": "Maya: Okay, everyone, thanks for coming. This is the first meeting of the Riverside Community Garden group. We have twelve people here tonight. Let me start with the problem. Last summer, the empty lot on Mill Street was full of rubbish. People dumped old chairs and broken TVs there. It smelled bad, and children could not play outside.\n\nDaniel: Sorry, can I say something? I live on Mill Street. The rubbish was bad, yes, but the bigger problem was the rats. We saw rats every evening. My neighbour called the city three times.\n\nMaya: Right, thank you, Daniel. So the shared problem is rubbish and rats. Now, what can we do locally? I have three ideas. First, we ask the city for two large bins. Second, we start a garden club and grow vegetables. Third, we put up a sign that says “Please keep this place clean.”\n\nPriya: I like the garden idea, but I have a question. Who will water the plants in summer? Most of us work during the day.\n\nMaya: Good point. We could make a watering rota. Each person waters once a week. If we have twelve members, that is only twelve weeks of watering.\n\nDaniel: Wait, twelve members and one week each — that is twelve weeks, but summer is only about ten weeks. So we need two more weeks. Maybe families can share.\n\nMaya: You are right. Let me correct that. We need a rota of about ten weeks, and some people can water twice.\n\nPriya: Also, the city bins are not free. I checked online. Two large bins cost 80 dollars each year. That is 160 dollars. We do not have that money now.\n\nDaniel: But we could raise money. Last year the school raised 300 dollars with a cake sale. If we sell cakes and old books, we might get 200 dollars.\n\nMaya: That is a good estimate. So, condition: if we raise 200 dollars, we can pay for the bins and still have 40 dollars for seeds.\n\nPriya: Although the cake sale is a good idea, it takes a lot of time. I work on Saturdays. Could we do it on a Sunday?\n\nMaya: Yes, Sunday is better. Let us agree: the cake sale is on Sunday, the 14th of next month. Daniel, can you ask the school for the tables?\n\nDaniel: Sure. I will ask them tomorrow. But I should say — I am not sure the school will say yes. They are often busy.\n\nMaya: That is fine. Even if they say no, we can use my garage. It is small, but it works.\n\nPriya: One more thing. The sign. Who will make it? I can paint, but I am not very good at writing English.\n\nMaya: I can write the words, and you can paint the letters. That is a good team. So, to summarise: we ask the city for bins, we plan a Sunday cake sale, we make a watering rota, and we put up a sign. Any other ideas?\n\nDaniel: What about the rats? Bins help, but we also need to cut the long grass near the wall. Rats hide in tall grass.\n\nMaya: Excellent point. So we add one more job: cut the grass. We can do that next Saturday morning. I will bring tools. Priya, can you bring gloves?\n\nPriya: Yes, I have four pairs. I will bring them.\n\nMaya: Great. So our next meeting is in two weeks. Thank you, everyone. This was a very useful discussion.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main shared problem discussed at the meeting?",
+      "options": [
+        "Rubbish and rats in the empty lot on Mill Street",
+        "Too many cars on Mill Street",
+        "A lack of schools in the area",
+        "No water for the garden in winter"
+      ],
+      "answers": [
+        "Rubbish and rats in the empty lot on Mill Street"
+      ],
+      "explanation": "Maya 说空地上满是垃圾，Daniel 补充更大的问题是老鼠，因此共同问题是垃圾和老鼠。",
+      "evidence": "So the shared problem is rubbish and rats."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How much do two large bins cost each year?",
+      "options": [
+        "80 dollars",
+        "160 dollars",
+        "200 dollars",
+        "300 dollars"
+      ],
+      "answers": [
+        "160 dollars"
+      ],
+      "explanation": "Priya 明确说两个大垃圾桶每年每个80美元，共160美元。",
+      "evidence": "Two large bins cost 80 dollars each year. That is 160 dollars."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the transcript: The cake sale will be on ______.",
+      "maxWords": 1,
+      "answers": [
+        "Sunday"
+      ],
+      "explanation": "Maya 提议并确认蛋糕义卖在周日。",
+      "evidence": "Let us agree: the cake sale is on Sunday, the 14th of next month."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Daniel suggest cutting the long grass?",
+      "options": [
+        "Because rats hide in tall grass",
+        "Because the grass is too beautiful",
+        "Because the city asked them to cut it",
+        "Because children want to play football"
+      ],
+      "answers": [
+        "Because rats hide in tall grass"
+      ],
+      "explanation": "Daniel 说老鼠藏在长草里，所以需要割草。",
+      "evidence": "Rats hide in tall grass."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Priya offer to bring next Saturday?",
+      "options": [
+        "Tools",
+        "Gloves",
+        "Tables",
+        "Seeds"
+      ],
+      "answers": [
+        "Gloves"
+      ],
+      "explanation": "Maya 问 Priya 能否带手套，Priya 说有四副并会带来。",
+      "evidence": "Priya: Yes, I have four pairs. I will bring them."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "According to Maya, what will happen if they raise 200 dollars?",
+      "options": [
+        "They can pay for the bins and have 40 dollars for seeds",
+        "They can buy a new car for the garden",
+        "They can hire a gardener",
+        "They can build a small school"
+      ],
+      "answers": [
+        "They can pay for the bins and have 40 dollars for seeds"
+      ],
+      "explanation": "Maya 说如果筹到200美元，可以付垃圾桶的钱并剩40美元买种子。",
+      "evidence": "if we raise 200 dollars, we can pay for the bins and still have 40 dollars for seeds."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What is Daniel's attitude about asking the school for tables?",
+      "options": [
+        "He is sure the school will say yes.",
+        "He is not sure the school will say yes.",
+        "He thinks the school will give them money.",
+        "He does not want to ask the school."
+      ],
+      "answers": [
+        "He is not sure the school will say yes."
+      ],
+      "explanation": "Daniel 说他不确定学校会同意，因为学校经常很忙。",
+      "evidence": "I am not sure the school will say yes. They are often busy."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How many people are at the meeting?",
+      "options": [
+        "Ten",
+        "Twelve",
+        "Twenty",
+        "Two"
+      ],
+      "answers": [
+        "Twelve"
+      ],
+      "explanation": "Maya 开场说今晚有十二个人。",
+      "evidence": "We have twelve people here tonight."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Priya says she can paint but is not very good at writing English. What does Maya suggest?",
+      "options": [
+        "Maya will write the words and Priya will paint the letters.",
+        "Priya will write the words and Maya will paint.",
+        "They will buy a sign from a shop.",
+        "They will ask Daniel to write and paint."
+      ],
+      "answers": [
+        "Maya will write the words and Priya will paint the letters."
+      ],
+      "explanation": "Maya 提议自己写词，Priya 画字母，组成好团队。",
+      "evidence": "I can write the words, and you can paint the letters."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The group decides to cut the grass next Saturday morning.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Maya 明确说下周六早上割草，并说自己带工具。",
+      "evidence": "We can do that next Saturday morning. I will bring tools."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "rubbish",
+      "meaning": "垃圾",
+      "example": "Last summer, the empty lot on Mill Street was full of rubbish."
+    },
+    {
+      "word": "dumped",
+      "meaning": "丢弃，倾倒",
+      "example": "People dumped old chairs and broken TVs there."
+    },
+    {
+      "word": "rota",
+      "meaning": "轮值表，值班表",
+      "example": "We could make a watering rota."
+    },
+    {
+      "word": "estimate",
+      "meaning": "估计",
+      "example": "That is a good estimate."
+    },
+    {
+      "word": "summarise",
+      "meaning": "总结",
+      "example": "So, to summarise: we ask the city for bins, we plan a Sunday cake sale, we make a watering rota, and we put up a sign."
+    },
+    {
+      "word": "condition",
+      "meaning": "条件",
+      "example": "So, condition: if we raise 200 dollars, we can pay for the bins and still have 40 dollars for seeds."
+    },
+    {
+      "word": "Although",
+      "meaning": "虽然，尽管",
+      "example": "Although the cake sale is a good idea, it takes a lot of time."
+    },
+    {
+      "word": "Even if",
+      "meaning": "即使",
+      "example": "Even if they say no, we can use my garage."
+    }
+  ],
+  "grammar": {
+    "title": "概括、比较、推测、条件与让步（Summarising, Comparing, Guessing, Conditions and Concessions）",
+    "explanation": "本课重点：1) 概括：用 to summarise, overall, in short 引出总结。2) 比较：用 bigger, more useful, as ... as, not as ... as 比较事物。3) 推测：用 might, may, could, probably 表示不确定的猜测。4) 条件：用 if + 一般现在时，主句用 can/will/might，表示真实可能。5) 让步：用 although, even if, though 表示“虽然/即使”，注意 although 后接完整句子，even if 表示“即使”。新学形式：even if 引导的让步从句 + 主句用 can/might；复习形式：if 条件句（之前学过）。请区分：if 表示“如果”（条件），even if 表示“即使”（让步）。",
+    "example": "Even if they say no, we can use my garage.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the best word: ______ it rains tomorrow, we will still clean the park.",
+        "options": [
+          "Even if",
+          "Because",
+          "So",
+          "If"
+        ],
+        "answers": [
+          "Even if"
+        ],
+        "explanation": "“即使明天下雨，我们仍然会打扫公园”，表示让步，用 Even if。",
+        "evidence": "Even if they say no, we can use my garage."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Although the bin is small, it is very useful.",
+          "Although the bin is small, but it is very useful.",
+          "Although the bin is small, so it is very useful.",
+          "Although the bin is small, because it is very useful."
+        ],
+        "answers": [
+          "Although the bin is small, it is very useful."
+        ],
+        "explanation": "although 不能与 but/so/because 连用，直接接主句。",
+        "evidence": "Although the cake sale is a good idea, it takes a lot of time."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the best word: We ______ finish the work today, but I am not sure.",
+        "options": [
+          "might",
+          "must",
+          "should",
+          "can"
+        ],
+        "answers": [
+          "might"
+        ],
+        "explanation": "表示不确定的推测，用 might。",
+        "evidence": "If we sell cakes and old books, we might get 200 dollars."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Complete the sentence: If we ______ enough money, we will buy new tools.",
+        "options": [
+          "raise",
+          "raised",
+          "will raise",
+          "raising"
+        ],
+        "answers": [
+          "raise"
+        ],
+        "explanation": "真实条件句：if 从句用一般现在时，主句用 will。",
+        "evidence": "if we raise 200 dollars, we can pay for the bins and still have 40 dollars for seeds."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the best summary sentence.",
+        "options": [
+          "To summarise, we have four main jobs.",
+          "To summarise, we have four main jobs, but I am not sure.",
+          "To summarise, because we have four main jobs.",
+          "To summarise, although we have four main jobs."
+        ],
+        "answers": [
+          "To summarise, we have four main jobs."
+        ],
+        "explanation": "概括用 To summarise 后接完整简单句，不需要多余连词。",
+        "evidence": "So, to summarise: we ask the city for bins, we plan a Sunday cake sale, we make a watering rota, and we put up a sign."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct comparison: The new bin is ______ than the old one.",
+        "options": [
+          "bigger",
+          "big",
+          "biggest",
+          "more big"
+        ],
+        "answers": [
+          "bigger"
+        ],
+        "explanation": "比较级用 bigger，than 前用比较级。",
+        "evidence": "the bigger problem was the rats."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the best word: ______ the school says no, we can still use the garage.",
+        "options": [
+          "Even if",
+          "Because",
+          "So",
+          "If"
+        ],
+        "answers": [
+          "Even if"
+        ],
+        "explanation": "“即使学校说不，我们仍然可以用车库”，让步用 Even if。",
+        "evidence": "Even if they say no, we can use my garage."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Although it is small, the garage works.",
+          "Although it is small, but the garage works.",
+          "Although it is small, so the garage works.",
+          "Although it is small, because the garage works."
+        ],
+        "answers": [
+          "Although it is small, the garage works."
+        ],
+        "explanation": "although 后接完整句子，主句不再用 but/so/because。",
+        "evidence": "It is small, but it works."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you have a garden or a park near your home?",
+        "What do you do with rubbish in your home?",
+        "Do you like working with other people? Why?",
+        "Have you ever joined a community group?"
+      ],
+      "part2": "Describe a shared problem in your area and how people could solve it.\nYou should say:\n- what the problem is\n- who it affects\n- what local people could do\n- and explain why this solution might work.",
+      "part3": [
+        "Why do some people not want to join community activities?",
+        "What can governments do to help local groups?",
+        "Is it better to solve problems alone or with others? Why?",
+        "How might small actions change a neighbourhood?"
+      ]
+    },
+    "writing": "Write a short email (about 120–150 words) to your neighbours. Describe one shared problem in your building or street. Suggest two local actions. Use if and even if at least once. End with a polite request for a meeting."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Listening and reading comprehension with grammar focus (simulated practice, not official IELTS)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "9e102a10c9569ba980b0e4bca975f69e7818f0573214fa0a183e18a08ed43ee5"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

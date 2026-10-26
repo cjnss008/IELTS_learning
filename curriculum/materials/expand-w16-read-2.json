@@ -1,0 +1,359 @@
+{
+  "id": "expand-w16-read-2",
+  "week": 16,
+  "skill": "reading",
+  "level": "B1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 300,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "环境与原因结果 · Independent new scenario: a local group explaining environmental trade-offs",
+  "grammarFocus": "第一条件句；because / therefore；情态动词建议。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "A Greener Street: Weighing the Trade-offs",
+  "instructions": "这是为B1水平学习者设计的原创阅读材料（模拟练习，非官方雅思试题）。请先通读短文，理解社区环保方案的取舍。然后完成8道阅读题：单选题、填空题和判断题（True/False/Not Given）。之后学习“第一条件句、because/therefore、情态动词建议”的语法规则，并完成8道语法题。最后进行口语和写作迁移练习。所有题目和选项均为英文，解释为中文。答案必须来自原文。",
+  "passage": "A Greener Street: Weighing the Trade-offs\n\n[A] Last month, the Riverside Community Group met to discuss a plan for Green Street. The plan has three parts: more trees, new bike lanes, and a small garden. The group wants a cleaner and quieter street. However, some people are worried about the cost and the changes.\n\n[B] “If we plant more trees, the air will be cleaner,” said Mrs. Chen, the group leader. “Trees also make the street cooler in summer. But we must think about the cost. Each tree costs about 200 yuan, and we need 30 trees. Therefore, we need to raise 6,000 yuan.” Mr. Li, a shop owner, said, “If you take away parking spaces for bike lanes, some customers will go to other streets. Because my shop needs parking, I am worried.”\n\n[C] The group also talked about the small garden. “If we build the garden, children will have a safe place to play,” said Mrs. Chen. “But we should ask the children what they want. We could also ask a gardener for advice.” Mr. Li suggested, “Why don’t we keep some parking and add trees only? Then we can have cleaner air and no lost parking.” Another member said, “We must not forget the noise. If we plant trees near the road, the noise will be less.”\n\n[D] In the end, the group agreed on a new plan. They will plant 20 trees and build a small garden, but they will not take away parking spaces. They will ask the children for ideas about the garden. Mrs. Chen said, “We should listen to everyone. If we work together, we will find a good answer.” The group will meet again next month to check the cost.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does the plan for Green Street include?",
+      "options": [
+        "More trees, new bike lanes, and a small garden",
+        "A new school and a hospital",
+        "More parking spaces and a shop",
+        "A swimming pool and a library"
+      ],
+      "answers": [
+        "More trees, new bike lanes, and a small garden"
+      ],
+      "explanation": "原文第一段明确列出计划包括三个部分：more trees, new bike lanes, and a small garden。",
+      "evidence": "The plan has three parts: more trees, new bike lanes, and a small garden."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why is Mr. Li worried about bike lanes?",
+      "options": [
+        "Because his shop needs parking",
+        "Because trees cost too much",
+        "Because the garden is too small",
+        "Because the street is too noisy"
+      ],
+      "answers": [
+        "Because his shop needs parking"
+      ],
+      "explanation": "原文中Mr. Li说：Because my shop needs parking, I am worried. 因此他担心自行车道会占用停车位。",
+      "evidence": "Because my shop needs parking, I am worried."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How much does each tree cost? (Write one number and one word.)",
+      "maxWords": 2,
+      "answers": [
+        "200 yuan"
+      ],
+      "explanation": "原文Mrs. Chen说每棵树花费约200元：Each tree costs about 200 yuan。填空答案需与原文一致。",
+      "evidence": "Each tree costs about 200 yuan, and we need 30 trees."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Mrs. Chen say about the garden?",
+      "options": [
+        "Children will have a safe place to play",
+        "The garden will cost 6,000 yuan",
+        "The garden will take away parking",
+        "The garden will make the street noisier"
+      ],
+      "answers": [
+        "Children will have a safe place to play"
+      ],
+      "explanation": "原文Mrs. Chen说：If we build the garden, children will have a safe place to play。",
+      "evidence": "If we build the garden, children will have a safe place to play"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is Mr. Li's suggestion?",
+      "options": [
+        "Keep some parking and add trees only",
+        "Build a big garden and no trees",
+        "Take away all parking spaces",
+        "Ask a gardener for advice"
+      ],
+      "answers": [
+        "Keep some parking and add trees only"
+      ],
+      "explanation": "原文Mr. Li建议：Why don’t we keep some parking and add trees only? 即保留一些停车位，只增加树木。",
+      "evidence": "Why don’t we keep some parking and add trees only?"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did the group agree on in the end?",
+      "options": [
+        "Plant 20 trees and build a small garden, but keep parking spaces",
+        "Plant 30 trees and take away parking spaces",
+        "Build a large garden and no trees",
+        "Do nothing and meet again next year"
+      ],
+      "answers": [
+        "Plant 20 trees and build a small garden, but keep parking spaces"
+      ],
+      "explanation": "原文最后一段说：They will plant 20 trees and build a small garden, but they will not take away parking spaces。",
+      "evidence": "They will plant 20 trees and build a small garden, but they will not take away parking spaces."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The group will ask the children for ideas about the garden.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文最后一段明确说：They will ask the children for ideas about the garden。因此该陈述为True。",
+      "evidence": "They will ask the children for ideas about the garden."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The group will meet again next week.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文说：The group will meet again next month to check the cost。选项说next week，与原文next month矛盾，因此为False。",
+      "evidence": "The group will meet again next month to check the cost."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "Trade-offs",
+      "meaning": "权衡；取舍",
+      "example": "A Greener Street: Weighing the Trade-offs"
+    },
+    {
+      "word": "discuss",
+      "meaning": "讨论",
+      "example": "Last month, the Riverside Community Group met to discuss a plan for Green Street."
+    },
+    {
+      "word": "cost",
+      "meaning": "费用；成本",
+      "example": "However, some people are worried about the cost and the changes."
+    },
+    {
+      "word": "raise",
+      "meaning": "筹集",
+      "example": "Therefore, we need to raise 6,000 yuan."
+    },
+    {
+      "word": "parking",
+      "meaning": "停车；停车位",
+      "example": "If you take away parking spaces for bike lanes, some customers will go to other streets."
+    },
+    {
+      "word": "gardener",
+      "meaning": "园丁",
+      "example": "We could also ask a gardener for advice."
+    },
+    {
+      "word": "suggested",
+      "meaning": "建议（suggest的过去式）",
+      "example": "Mr. Li suggested, “Why don’t we keep some parking and add trees only?"
+    },
+    {
+      "word": "noise",
+      "meaning": "噪音",
+      "example": "We must not forget the noise."
+    }
+  ],
+  "grammar": {
+    "title": "第一条件句、because/therefore、情态动词建议",
+    "explanation": "本课学习三个语法点。第一，第一条件句表示“如果……就会……”：If + 一般现在时，主句用 will + 动词原形。例如：If we plant more trees, the air will be cleaner. 第二，because 表示原因，therefore 表示结果。because 引导原因从句，therefore 是副词，前面常用逗号。例如：Because my shop needs parking, I am worried. / We need 30 trees. Therefore, we need to raise 6,000 yuan. 第三，情态动词 should, could, must 用于提建议。should 表示“应该”，could 表示“可以（较委婉）”，must 表示“必须”。例如：We should ask the children what they want. / We could also ask a gardener for advice. / We must not forget the noise. 注意：第一条件句中，if 从句不用 will，主句才用 will。",
+    "example": "If we plant more trees, the air will be cleaner.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "If we _____ more trees, the air will be cleaner.",
+        "options": [
+          "plant",
+          "will plant",
+          "planted",
+          "are planting"
+        ],
+        "answers": [
+          "plant"
+        ],
+        "explanation": "第一条件句中，if 从句用一般现在时，主句用 will + 动词原形。因此填 plant。",
+        "evidence": "If we plant more trees, the air will be cleaner."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "If you take away parking spaces, some customers _____ to other streets.",
+        "options": [
+          "will go",
+          "go",
+          "went",
+          "are going"
+        ],
+        "answers": [
+          "will go"
+        ],
+        "explanation": "第一条件句主句表示将来结果，用 will + 动词原形。因此选 will go。",
+        "evidence": "If you take away parking spaces for bike lanes, some customers will go to other streets."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "_____ my shop needs parking, I am worried.",
+        "options": [
+          "Because",
+          "Therefore",
+          "If",
+          "So"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "这里需要表示原因，用 Because 引导原因从句。Therefore 表示结果，不能这样用。",
+        "evidence": "Because my shop needs parking, I am worried."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "We need 30 trees. _____, we need to raise 6,000 yuan.",
+        "options": [
+          "Therefore",
+          "Because",
+          "If",
+          "Although"
+        ],
+        "answers": [
+          "Therefore"
+        ],
+        "explanation": "前句是原因，后句是结果，用 Therefore 表示“因此”。",
+        "evidence": "Therefore, we need to raise 6,000 yuan."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "We _____ ask the children what they want. (建议)",
+        "options": [
+          "should",
+          "will",
+          "are",
+          "do"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "表示建议“应该”用 should。",
+        "evidence": "We should ask the children what they want."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "We _____ also ask a gardener for advice. (委婉建议)",
+        "options": [
+          "could",
+          "must",
+          "will",
+          "are"
+        ],
+        "answers": [
+          "could"
+        ],
+        "explanation": "表示“可以”的委婉建议用 could。",
+        "evidence": "We could also ask a gardener for advice."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "We _____ not forget the noise. (必须)",
+        "options": [
+          "must",
+          "could",
+          "should",
+          "will"
+        ],
+        "answers": [
+          "must"
+        ],
+        "explanation": "表示“必须”用 must。must not 表示“一定不要”。",
+        "evidence": "We must not forget the noise."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "If we work together, we _____ a good answer.",
+        "options": [
+          "will find",
+          "find",
+          "found",
+          "are finding"
+        ],
+        "answers": [
+          "will find"
+        ],
+        "explanation": "第一条件句主句用 will + 动词原形，表示将来结果。",
+        "evidence": "If we work together, we will find a good answer."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you have a garden or park near your home?",
+        "What do you do to keep your street clean?",
+        "Do you like walking or biking in your neighborhood? Why?",
+        "Is your street noisy or quiet?"
+      ],
+      "part2": "Describe a small change you would like to make in your neighborhood. You should say: what the change is; why you want it; who can help; and what the result will be.",
+      "part3": [
+        "Why do some people worry about changes in their neighborhood?",
+        "Should local groups ask children for ideas? Why?",
+        "What can we do to make our streets greener?",
+        "Is it better to keep parking or add trees? Why?"
+      ]
+    },
+    "writing": "Write a short paragraph (about 80–100 words) for your community group. Suggest one small environmental change for your street. Use first conditional (If..., ... will...), because/therefore, and should/could/must. Explain one trade-off."
+  },
+  "rubric": {
+    "taskType": "Reading and Grammar Practice (B1, Week 16)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "ccd7e66c0f2c8976daf56a5ad8be2e5ecf38e5c36bb81113c99ad7ea10dd81a7"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

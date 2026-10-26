@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-20-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-20",
+  "sourceVersion": "1",
+  "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+  "sourceContentHash": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+  "exposureGroup": "public-source:voa-l1-20",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What problem does Pete tell Anna about?",
+      "options": [
+        "He does not have a job.",
+        "He cannot find his apartment.",
+        "He has lost his driving license."
+      ],
+      "answers": [
+        "He does not have a job."
+      ],
+      "evidence": "I do not have a job!",
+      "explanation": "Pete把I don’t have a job又清楚地重复为I do not have a job，说明问题是没有工作。后面谈到开车能力，不等于他丢了驾照；开场也没有说他找不到住处。不要把后续技能讨论移作最初的问题。",
+      "evidenceOffsets": {
+        "start": 550,
+        "end": 570,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I do not have a job!",
+          "start": 550,
+          "end": 570
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How does Anna try to help Pete find a suitable job?",
+      "options": [
+        "She offers him a job at her office.",
+        "She asks questions about what he can do.",
+        "She tells him to move to another city."
+      ],
+      "answers": [
+        "She asks questions about what he can do."
+      ],
+      "evidence": "Pete, I am good at asking questions. Let me ask you some.",
+      "explanation": "Anna先说明自己擅长提问，随后逐项问Can you write code、drive、teach、cook，用问题帮助Pete发现能力。她并没有直接给他办公室职位，也没有让他换城市。帮助方式与最终建议职业要分开理解。",
+      "evidenceOffsets": {
+        "start": 728,
+        "end": 785,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Pete, I am good at asking questions. Let me ask you some.",
+          "start": 728,
+          "end": 785
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Anna mean by writing code?",
+      "options": [
+        "Spelling an unfamiliar word.",
+        "Writing a private diary.",
+        "Creating instructions for apps or websites."
+      ],
+      "answers": [
+        "Creating instructions for apps or websites."
+      ],
+      "evidence": "Code; you know, for making phone apps, or websites.",
+      "explanation": "Anna明确用making phone apps or websites解释code，指编程。Pete把code听成cold并拼字母，是对话里的误会，不是正确释义。写私人日记也不是她对这一技能的说明。",
+      "evidenceOffsets": {
+        "start": 994,
+        "end": 1045,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Code; you know, for making phone apps, or websites.",
+          "start": 994,
+          "end": 1045
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Pete reject driving a taxi or a bus as a job?",
+      "options": [
+        "He says he falls asleep when driving.",
+        "He says he cannot afford a race car.",
+        "He says he prefers to teach at school."
+      ],
+      "answers": [
+        "He says he falls asleep when driving."
+      ],
+      "evidence": "No, I always fall asleep when I drive.",
+      "explanation": "Anna澄清问的是开出租车或公交车后，Pete给出的理由是开车时会睡着。赛车是他先前误解的问题，不是这里明确的拒绝理由；他也没有说自己更喜欢当老师。题目只核对角色说法，不提供驾驶建议。",
+      "evidenceOffsets": {
+        "start": 1328,
+        "end": 1366,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "No, I always fall asleep when I drive.",
+          "start": 1328,
+          "end": 1366
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What makes Anna think Pete could earn money from writing?",
+      "options": [
+        "He has already written a best-selling book.",
+        "His blog has a large number of followers.",
+        "He has taught writing for many years."
+      ],
+      "answers": [
+        "His blog has a large number of followers."
+      ],
+      "evidence": "Pete: I don’t know … 59,538.\n\nAnna: Pete, that's a lot of followers! You can make money writing!",
+      "explanation": "Pete说自己的博客有59,538名关注者，Anna随即指出这很多，并建议靠写作挣钱。两句相连构成判断依据。文中没有畅销书或多年教写作经历，不能把职业成功的一般条件补成他已经具备的事实。",
+      "evidenceOffsets": {
+        "start": 1776,
+        "end": 1872,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I don’t know … 59,538.",
+          "start": 1782,
+          "end": 1804
+        },
+        {
+          "quote": "Pete, that's a lot of followers! You can make money writing!",
+          "start": 1812,
+          "end": 1872
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which career does Pete choose to pursue by the end?",
+      "options": [
+        "A writer.",
+        "A chef.",
+        "A software programmer."
+      ],
+      "answers": [
+        "A writer."
+      ],
+      "evidence": "I’m going to be a writer!",
+      "explanation": "结尾Pete亲口说I’m going to be a writer，确认自己打算当作家。chef和编程只是Anna探索技能时提过的工作，他已说自己不会做饭、不会编程；这些被讨论过的可能性不等于最终选择。",
+      "evidenceOffsets": {
+        "start": 2162,
+        "end": 2187,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I’m going to be a writer!",
+          "start": 2162,
+          "end": 2187
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "883272d6784cfc0187bcd7ee891fef790e76c2f54147c08ec52aeb6570456ec3",
+      "reviewSha256": "a026405d0cb384a3d62d9f582bc16d565254aaa8e242141f12b2f436aebae76b",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

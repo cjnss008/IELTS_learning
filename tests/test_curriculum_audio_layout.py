@@ -11,12 +11,27 @@ import unittest
 from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from curriculum_audio_layout import align_boundaries, configuration, layout, normalized, sha
+from curriculum_audio_layout import align_boundaries, configuration, layout, normalized, sha, with_role_voices
 
 PAIR = ('voice-a', 'voice-b')
 
 
 class LayoutTests(unittest.TestCase):
+    def test_authored_role_voice_override_keeps_source_spans_and_distinct_us_voices(self):
+        text = 'Narrator: It is seven.\nAnna: Hello.\nBen: Hi.\nTom: Good morning.'
+        original = layout(text, ('en-US-AriaNeural', 'en-US-GuyNeural'), 'en-US-AvaNeural', ('en-US-JennyNeural', 'en-US-EricNeural'))
+        before = copy.deepcopy(original)
+        revised = with_role_voices(original, {'tom': 'en-US-EricNeural'})
+        self.assertEqual(original, before)
+        self.assertEqual(revised['roleVoices']['tom'], 'en-US-EricNeural')
+        self.assertEqual(len(set(revised['roleVoices'].values())), 4)
+        for old, new in zip(original['segments'], revised['segments']):
+            self.assertEqual({k: v for k, v in old.items() if k != 'voice'}, {k: v for k, v in new.items() if k != 'voice'})
+        self.assertIs(with_role_voices(original), original)
+        for invalid in [{'unknown': 'en-US-EricNeural'}, {'tom': 'en-GB-RyanNeural'}, {'tom': 'en-US-GuyNeural'}, []]:
+            with self.assertRaises(ValueError):
+                with_role_voices(original, invalid)
+
     def planned(self, text):
         return layout(text, PAIR, 'voice-narrator', ('voice-c', 'voice-d'))
 
@@ -138,6 +153,43 @@ class PublicationTests(unittest.IsolatedAsyncioTestCase):
             with mock.patch.object(author, 'WORK', root / 'work'), mock.patch.object(author.os, 'replace', side_effect=fail_meta):
                 with self.assertRaises(OSError): author.publish(target, meta, candidate, {'audioHash': sha(candidate.read_bytes())})
             self.assertEqual(target.read_bytes(), b'old-complete-media'); self.assertEqual(meta.read_bytes(), b'old-complete-metadata')
+
+
+
+class NewSpeakerInferenceTests(unittest.TestCase):
+    def planned(self, text):
+        return layout(text, PAIR, 'voice-narrator', ('voice-c', 'voice-d'))
+
+    def test_repeated_new_names_and_two_once_only_names_are_roles(self):
+        for text in ['Carla: I need a new ticket.\nMia: Please wait.\nCarla: Thank you.', 'Zoe: Hello.\nXavier: Hi, Zoe.', 'Mary Jane Smith: Can we begin?\nAlex: Yes, please.', 'PROFESSOR MARSH: Please start.\nLIN WEI: I have one point.\nLENA ORTIZ: Thank you.']:
+            plan = self.planned(text)
+            self.assertGreaterEqual(len(set(s['voice'] for s in plan['segments'])), 2)
+            self.assertTrue(all(':' not in s['text'] for s in plan['segments']))
+            for segment in plan['segments']:
+                self.assertEqual(text[segment['sourceStart']:segment['sourceEnd']], segment['text'])
+
+    def test_numbered_speakers_and_named_job_labels_are_roles(self):
+        for text in ['Speaker1: Hello.\nSpeaker2: Hi.\nSpeaker1: Thank you.', 'Guide: Here is the clock.\nCurator Ben: Right, it is old.']:
+            plan = self.planned(text)
+            self.assertEqual(len(plan['sourceLabels']), len(text.splitlines()))
+            self.assertGreaterEqual(len(set(s['voice'] for s in plan['segments'])), 2)
+
+    def test_headings_and_ordinary_inline_colons_stay_verbatim(self):
+        text = 'Library Orientation: Please read this first.\nSection One: Check the library map.\nGarden Project: Bring paper.\nPause: Two minutes.\nA simple rule: check evidence.\nThere is a second principle: choose evidence.'
+        plan = self.planned(text)
+        self.assertEqual(plan['sourceLabels'], [])
+        self.assertTrue(all(s['role'] == 'narrator' for s in plan['segments']))
+
+    def test_source_minimum_voices_and_actual_gap_requirements(self):
+        author = importlib.import_module('curriculum_audio_authoring')
+        material = {'id': 'new-source', 'week': 2, 'transcript': 'Zoe: Hello.\nXavier: Hi.\nZoe: Thank you.', 'audioRequirements': {'minimumSpeakers': 2, 'turnGapMs': 450, 'paragraphGapMs': 1200}}
+        planned = author.settings(material)[0]
+        self.assertEqual([s['pauseBeforeSeconds'] for s in planned['segments']], [0, .45, .45])
+        self.assertTrue(all(s['voice'].startswith('en-US-') for s in planned['segments']))
+        material['transcript'] = 'This is only one narrator.'
+        with self.assertRaisesRegex(ValueError, 'at least 2'): author.settings(material)
+        material['audioRequirements']['minimumSpeakers'] = 1
+        self.assertEqual(len(author.settings(material)[0]['segments']), 1)
 
 
 if __name__ == '__main__': unittest.main()

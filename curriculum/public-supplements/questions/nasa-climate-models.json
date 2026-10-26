@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-climate-models-comprehension-v1",
+  "version": "1",
+  "sourceId": "nasa-climate-models",
+  "sourceVersion": "2",
+  "sourceTextSha256": "9b9cb9869b039345a67eb203131662dbf4b058667fc9c6c796770df9f3ddee39",
+  "sourceContentHash": "9b9cb9869b039345a67eb203131662dbf4b058667fc9c6c796770df9f3ddee39",
+  "exposureGroup": "public-source:nasa-climate-models",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading only; no authenticated matching narration supplied."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which description matches the article’s meaning of climate?",
+      "options": [
+        "A forecast for the next few hours.",
+        "A single rainstorm in one place.",
+        "The long-term average weather conditions in a place.",
+        "The temperature on one particular afternoon."
+      ],
+      "answers": [
+        "The long-term average weather conditions in a place."
+      ],
+      "evidence": "Climate, on the other hand, is the average weather conditions in a place over a long period of time—30 years or more.",
+      "explanation": "文章把climate解释为一个地方长期的平均天气状况，关键词是average和long period。几小时的预报、一次暴雨或某天下午的温度都属于短时间的weather信息，不能替代climate的长期尺度。",
+      "understanding": "explicit-information",
+      "evidenceOffsets": {
+        "start": 319,
+        "end": 436,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "The article describes climate over a period of at least how many years? Write ONE NUMBER.",
+      "answers": [
+        "30"
+      ],
+      "maxWords": 1,
+      "evidence": "Climate, on the other hand, is the average weather conditions in a place over a long period of time—30 years or more.",
+      "explanation": "原文30 years or more表示30年或更久，题干at least对应“至少”。因此只填数字30。不能把文章后面举例的10、100或1,000年误当成这里定义气候所用的时间跨度；那些数字讨论的是模型可能研究的未来影响。",
+      "understanding": "explicit-information",
+      "evidenceOffsets": {
+        "start": 319,
+        "end": 436,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does the article mention a racing video game?",
+      "options": [
+        "To show how climate averages are calculated from past weather records.",
+        "To show how a simulation can represent an experience that is hard to have directly.",
+        "To explain how observations are used to check a climate model’s accuracy.",
+        "To compare model results for different ocean temperatures."
+      ],
+      "answers": [
+        "To show how a simulation can represent an experience that is hard to have directly."
+      ],
+      "evidence": "A simulation is a way for us to understand something that would be difficult to experience in real life. For example, the average person isn’t allowed to drive a race car. However, simulations—like video games—can help you experience what it would be like to zoom around a racetrack.",
+      "explanation": "赛车游戏用于解释simulation：难以亲身体验的事情，可以通过模拟来理解。计算气候平均值、用观测检验模型、比较不同海温的结果都是文章相关话题，但不是这一赛车例子的作用。判断举例目的要回到例子前面的定义，不能把别处的论点移过来。",
+      "understanding": "example-purpose",
+      "evidenceOffsets": {
+        "start": 629,
+        "end": 912,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which factor is listed as something that can change, rather than a relatively fixed regional feature?",
+      "options": [
+        "Distance from the shore.",
+        "Elevation.",
+        "A major volcanic eruption.",
+        "Latitude."
+      ],
+      "answers": [
+        "A major volcanic eruption."
+      ],
+      "evidence": "Some of these factors are things that don’t really change, such as a region’s distance from the shore, elevation and latitude. Some of the factors are things that do change, such as the seasons, big volcanic eruptions, air pollution or—over millions of years—the shifts in the continents.",
+      "explanation": "两句用don’t really change和do change进行分类。海岸距离、海拔和纬度被列在相对固定的一组；火山喷发在变化因素的一组。这里选的是原文分类，不要求凭外部地理知识判断任何因素永远是否可能变化。",
+      "understanding": "explicit-information",
+      "evidenceOffsets": {
+        "start": 998,
+        "end": 1286,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What is one advantage of changing ocean temperatures inside a climate model?",
+      "options": [
+        "It replaces the need to collect observations about past climates.",
+        "It checks accuracy simply by comparing future model runs with one another.",
+        "It keeps all climate factors fixed instead of allowing interactions.",
+        "It lets scientists test an idea without carrying out a potentially dangerous real-world experiment."
+      ],
+      "answers": [
+        "It lets scientists test an idea without carrying out a potentially dangerous real-world experiment."
+      ],
+      "evidence": "We don’t have a spare Earth that we can use for experiments, so the model lets us test ideas that would be impossible or dangerous to actually do.",
+      "explanation": "这段强调在计算机里安全测试现实中无法或不宜实际做的变化。文章仍需要过去的观测来核对预测，因此模型不取代观测，也不是只靠未来模拟结果彼此一致就证明准确；文中还说各因素相互联系，并非把它们全部固定。",
+      "understanding": "explicit-information",
+      "evidenceOffsets": {
+        "start": 1657,
+        "end": 1803,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How can information about a past ocean-warming event help scientists?",
+      "options": [
+        "It gives them a known change and its effects for checking predictions about similar changes.",
+        "It makes agreement between future model runs sufficient evidence of accuracy.",
+        "It lets them treat a short-term weather forecast as a long-term climate record.",
+        "It means that only unchanging geographic features need to be included."
+      ],
+      "answers": [
+        "It gives them a known change and its effects for checking predictions about similar changes."
+      ],
+      "evidence": "For example, say that we know that ocean temperatures have warmed at some point in the past—and we also know what effect that change had on Earth’s climate. We can use that information to check if a model’s predictions of similar changes in the future are accurate.",
+      "explanation": "已知的过去变化与影响为核对模型预测提供观测依据。只比较未来模拟结果彼此一致，并不是本段说的检查方式；短期天气也不能直接当长期气候记录。文章同时讨论会变化与相对不变的因素，没有说只需要固定地理特征。",
+      "understanding": "explicit-information",
+      "evidenceOffsets": {
+        "start": 2767,
+        "end": 3032,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "not-applicable",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "6a09dcf5367b7ae7923f0c4b697cf9ffae86f3ffcf17e6b8cc985ddf6e7adec3",
+      "reviewSha256": "d528ee659eaa20f4ba65704b98e7f82a3c5f09ca98706450ead4f35b4357c37a",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

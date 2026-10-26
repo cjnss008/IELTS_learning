@@ -1,0 +1,360 @@
+{
+  "schema": 1,
+  "sourceId": "nasa-forest-loss-radar",
+  "version": "1",
+  "title": "Faster Detection of Forest Loss",
+  "kind": "reading",
+  "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/faster-detection-of-forest-loss/",
+  "provider": "NASA",
+  "sourcePublishedAt": "2026-04-06T00:00:00-04:00",
+  "retrievedAt": "2026-10-26",
+  "originalExtract": "Tropical forests span [1.6 billion hectares](https://wedocs.unep.org/items/d9ef1f20-b785-4498-8875-399087753f5a) (6.2 million square miles) of Earth. These ecosystems support a majority of the planet’s animal and plant species and contain plants that contribute to [over a quarter of modern medicine](https://unfoundation.org/blog/post/biodiversity-explained-facts-myths-and-the-race-to-protect-it/#:~:text=Today%2C%20one%2Dfourth%20of%20all,discovery%20and%20innovation%20are%20monumental.). But over the past two decades, an average of [10 million hectares](https://www.un.org/en/climatechange/science/climate-issues/forests) (nearly 40,000 square miles) of these forests—roughly the size of Kentucky—have been lost each year, according to the United Nations Environment Programme, affecting the ecosystems and communities that depend on them.\n\nNASA scientists recently [developed a new method](https://doi.org/10.1016/j.jag.2025.104831) for tracking tropical forest loss that delivers deforestation alerts more than three months faster than current methods. Although the technique was designed for the Amazon rainforest, data from a [recently launched](https://www.nasa.gov/news-release/nasa-isro-satellite-lifts-off-to-track-earths-changing-surfaces/) satellite are expected to expand its application globally.\n\n### **Limits of Traditional Satellite Observations**\n\nBecause tropical forests are so vast, local communities, conservationists, and policymakers rely on satellite data to manage them. Images acquired by satellites with optical sensors provide highly accurate alerts. For instance, the image above, acquired as part of the [Harmonized Landsat and Sentinel-2](https://www.earthdata.nasa.gov/data/projects/hls) (HLS) project, shows newly cleared land in southwest Brazil in July 2020. Images from NASA-USGS Landsat satellites have revolutionized land management [for over 50 years](https://landsat.gsfc.nasa.gov/landsat50/). In 1988, Brazil developed one of its first [satellite-based monitoring systems](https://infoamazonia.org/en/2022/02/15/prodes-and-deter-systems-against-deforestation-amazon/) using Landsat data, which remains in use today.\n\nThough Landsat is an invaluable tool for Earth observation, it has a critical limitation: clouds. As an optical satellite, it relies on reflected light and cannot observe the ground through cloud cover. This creates data gaps that are especially limiting in tropical regions, which are cloudy most of the year. In some areas, [months can pass without acquiring a cloud-free image](https://communities.springernature.com/posts/where-and-when-there-are-satellite-data-gaps-due-to-cloud-coverage-and-what-are-the-implications-for-forest-monitoring), hindering efforts to track and curb unregulated forest clearing.\n\n### **A Breakthrough Using Radar**\n\nTo address Landsat’s cloud challenge, researchers at NASA’s Marshall Space Flight Center tuned into a different wavelength. Led by Africa Flores-Anderson, associate program manager for NASA’s Ecosystem Conservation Program, the team [piloted a system for the Amazon](https://www.sciencedirect.com/science/article/pii/S1569843225004789?via%3Dihub) that combines existing satellite-based approaches with cutting-edge radar data. The approach builds upon a platform developed by the Cardille Lab at McGill University.\n\n[Synthetic aperture radar (SAR)](https://science.nasa.gov/mission/nisar/get-to-know-sar/) doesn’t require daylight or clear skies. To generate an image, SAR instruments beam radar signals at a surface and measure the signals that bounce back. SAR satellites use various ranges of radar wavelengths, or “bands,” to measure features on Earth’s surface. Over forests, the shorter wavelengths of the C-band scatter off treetops, but the [longer wavelengths of the L-band can make it down to the ground.](https://www.sciencedirect.com/science/article/pii/S0034425725005371)\n\nThis L-band is central to Flores-Anderson’s approach. Similar efforts favored C-band because it was more readily available than other SAR data. But when felled trees—along with their branches and leaves—are not removed right away, C-band’s shorter wavelengths are scattered by remaining debris, obscuring evidence of destruction. In contrast, L-band’s longer wavelengths can penetrate this material and reveal the damage. The new method is the first of its kind to automatically combine the user-friendly, intuitive images from Landsat and the consistent, detailed insights from L-band SAR data.\n\nThese visuals show the benefit of combining optical images and L-band SAR data. The patch of deforested land in southwest Brazil (top row) is overlaid with colors that represent the month that deforestation was detected (bottom row).\n\nThe left map shows that SAR detected two patches of forest loss in January (purple), three months earlier than optical sensors (middle map). The patches appear small because deforestation happens gradually, Flores-Anderson explained. At that point in January, only those areas had been cleared.\n\nBy April (green), optical sensors had detected forest loss across a wider area, shown in the middle map. These sensors collect images every few days, while the SAR data used in this study captured the area only once or twice a month. In this case, the optical satellites observed the change during a break in the cloud cover.\n\nThe map on the right shows how the new algorithm combines information from both types of observations. To increase accuracy, this algorithm confirms deforestation only if there are multiple, consecutive observations of forest loss. This view confirms deforestation as early as February, up to two months earlier than optical-only, and with much more certainty than the optical- or SAR-only approaches.\n\n### **Faster Detection and a Global Future**\n\nOn average, the new method for monitoring forests spots felled trees within 16 days with exceptional accuracy, nearly eliminating false alarms. These detections can identify deforestation in very cloudy regions up to 100 days sooner than optical-only systems.\n\n“In the tropics, it’s important to detect deforestation as soon as it occurs,” Flores-Anderson said. “If an image of a cleared forest isn’t available until the following year, the area may already be regrown, and deforestation will be missing from our data.”\n\nFor experts like Sylvia Wilson, the chief forest and climate scientist at Wilpa Capacity Development with nearly 20 years of global forest monitoring experience with the U.S. Geological Survey, adding L-band SAR to optical is a scientific game changer. “L-band SAR gives us the opportunity to see what optical doesn’t,” Wilson said. “But it’s not one sensor versus the other; the future is SAR _plus_ optical.\"\n\nThe [NISAR](https://science.nasa.gov/mission/nisar/) (NASA-ISRO Synthetic Aperture Radar) satellite, launched in July 2025, will drastically increase the feasibility of systems like Flores-Anderson’s by providing more frequent and comprehensive L-band SAR data. L-band data has been relatively scarce, with limited images only available in a few areas like the Brazilian Amazon. Once more NISAR data become publicly available, they will provide free, global L-band SAR every 12 days. Flores-Anderson’s system is already prepared to incorporate this data.\n\n“It doesn’t matter which sensor we get data from—whether it’s optical or SAR—it automatically adds to our model,” Flores-Anderson explained. “As more NISAR data become available, we will have more accurate, faster detection of change.”",
+  "originalExtractFormat": "Original main-article prose selected from preserved official-page Markdown; presentation markup only is removed in text.",
+  "editorialCorrections": [],
+  "rights": {
+    "status": "educational-reuse-permitted",
+    "license": "NASA educational/informational content-use guidelines",
+    "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "scope": "Original main article text only. No images, image captions, videos, logos, third-party illustrations, outside abstracts, recommended articles or sidebar content are republished.",
+    "attribution": "Original article text source: NASA. Original comprehension questions, learning targets and Chinese explanations: AI-generated project draft; not provider-reviewed or endorsed.",
+    "sourceCredit": [
+      "NASA Earth Observatory images by Michala Garrison, using MODIS data from NASA EOSDIS LANCE and GIBS/Worldview, the Harmonized Landsat and Sentinel-2 (HLS) product, and model data provided by Flores-Anderson et al. Story by Lena Pransky (EarthRISE) with Jake Ramthun (EarthRISE) and Madeleine Gregory (Landsat Project Science Support)."
+    ],
+    "policyEvidence": {
+      "path": "work/public-material-evidence-20261026/reading/evidence/rights-nasa-firecrawl.json",
+      "sha256": "80ad701f873395d2d2fd1b544b1cbc7f2df4669718599de4b913173a7e35b347",
+      "quote": "News outlets, schools, and text-book authors may use NASA content without needing explicit permission, subject to compliance with these guidelines."
+    },
+    "components": [],
+    "aiOutputAttribution": "Questions/explanations belong to the project AI draft, not to NASA; no provider approval or accuracy guarantee is implied."
+  },
+  "level": {
+    "label": "B2",
+    "calibrated": false,
+    "estimateKind": "AI-content-estimate",
+    "sourceLabel": "NASA original educational/science article",
+    "basis": "约千词的传感器比较；需追踪云、波段、采样频率与误报之间的因果。技术词有上下文解释，按B2候选保守估计。"
+  },
+  "phaseIds": [
+    "academic",
+    "integration"
+  ],
+  "prerequisiteCapabilityIds": [
+    "independent:reading"
+  ],
+  "grammarTags": [
+    "concessive-clauses",
+    "reduced-relative-clauses"
+  ],
+  "grammarEvidence": [
+    {
+      "tag": "concessive-clauses",
+      "quote": "Though Landsat is an invaluable tool for Earth observation, it has a critical limitation: clouds.",
+      "explanation": "Though引导让步从句，先肯定Landsat价值，再指出限制；不能把让步关系理解成因果。",
+      "start": 1515,
+      "end": 1612
+    },
+    {
+      "tag": "reduced-relative-clauses",
+      "quote": "Images acquired by satellites with optical sensors provide highly accurate alerts.",
+      "explanation": "acquired by...是过去分词短语，修饰Images，可展开为images that are acquired...；主句谓语是provide。",
+      "start": 1046,
+      "end": 1128
+    }
+  ],
+  "vocabularyTargets": [
+    {
+      "headword": "rely",
+      "surface": "rely",
+      "meaningInContext": "依靠某种数据或工具",
+      "essentialVocabularyId": "essential:rely",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "Because tropical forests are so vast, local communities, conservationists, and policymakers rely on satellite data to manage them. Images acquired by satellites with optical sensors provide highly accurate alerts. For instance, the image above, acquired as part of the Harmonized Landsat and Sentinel-2 (HLS) project, shows newly cleared land in southwest Brazil in July 2020. Images from NASA-USGS Landsat satellites have revolutionized land management for over 50 years. In 1988, Brazil developed one of its first satellite-based monitoring systems using Landsat data, which remains in use today.",
+      "contextOffsets": {
+        "start": 915,
+        "end": 1513,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 1007,
+        "end": 1011,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "accurate",
+      "surface": "accurate",
+      "meaningInContext": "对实际变化判断准确的",
+      "essentialVocabularyId": "essential:accurate",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "Because tropical forests are so vast, local communities, conservationists, and policymakers rely on satellite data to manage them. Images acquired by satellites with optical sensors provide highly accurate alerts. For instance, the image above, acquired as part of the Harmonized Landsat and Sentinel-2 (HLS) project, shows newly cleared land in southwest Brazil in July 2020. Images from NASA-USGS Landsat satellites have revolutionized land management for over 50 years. In 1988, Brazil developed one of its first satellite-based monitoring systems using Landsat data, which remains in use today.",
+      "contextOffsets": {
+        "start": 915,
+        "end": 1513,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 1112,
+        "end": 1120,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "limitation",
+      "surface": "limitation",
+      "meaningInContext": "工具能力的局限",
+      "essentialVocabularyId": "essential:limitation",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "Though Landsat is an invaluable tool for Earth observation, it has a critical limitation: clouds. As an optical satellite, it relies on reflected light and cannot observe the ground through cloud cover. This creates data gaps that are especially limiting in tropical regions, which are cloudy most of the year. In some areas, months can pass without acquiring a cloud-free image, hindering efforts to track and curb unregulated forest clearing.",
+      "contextOffsets": {
+        "start": 1515,
+        "end": 1959,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 1593,
+        "end": 1603,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "scatter",
+      "surface": "scatter",
+      "meaningInContext": "波被物体散射",
+      "essentialVocabularyId": "essential:scatter",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "Synthetic aperture radar (SAR) doesn’t require daylight or clear skies. To generate an image, SAR instruments beam radar signals at a surface and measure the signals that bounce back. SAR satellites use various ranges of radar wavelengths, or “bands,” to measure features on Earth’s surface. Over forests, the shorter wavelengths of the C-band scatter off treetops, but the longer wavelengths of the L-band can make it down to the ground.",
+      "contextOffsets": {
+        "start": 2423,
+        "end": 2861,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 2767,
+        "end": 2774,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "penetrate",
+      "surface": "penetrate",
+      "meaningInContext": "波穿透枝叶等材料",
+      "essentialVocabularyId": "essential:penetrate",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "This L-band is central to Flores-Anderson’s approach. Similar efforts favored C-band because it was more readily available than other SAR data. But when felled trees—along with their branches and leaves—are not removed right away, C-band’s shorter wavelengths are scattered by remaining debris, obscuring evidence of destruction. In contrast, L-band’s longer wavelengths can penetrate this material and reveal the damage. The new method is the first of its kind to automatically combine the user-friendly, intuitive images from Landsat and the consistent, detailed insights from L-band SAR data.",
+      "contextOffsets": {
+        "start": 2863,
+        "end": 3458,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 3238,
+        "end": 3247,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "consecutive",
+      "surface": "consecutive",
+      "meaningInContext": "连续发生的",
+      "essentialVocabularyId": "essential:consecutive",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "The map on the right shows how the new algorithm combines information from both types of observations. To increase accuracy, this algorithm confirms deforestation only if there are multiple, consecutive observations of forest loss. This view confirms deforestation as early as February, up to two months earlier than optical-only, and with much more certainty than the optical- or SAR-only approaches.",
+      "contextOffsets": {
+        "start": 4318,
+        "end": 4719,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 4509,
+        "end": 4520,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "incorporate",
+      "surface": "incorporate",
+      "meaningInContext": "把新数据纳入系统",
+      "essentialVocabularyId": "essential:incorporate",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "The NISAR (NASA-ISRO Synthetic Aperture Radar) satellite, launched in July 2025, will drastically increase the feasibility of systems like Flores-Anderson’s by providing more frequent and comprehensive L-band SAR data. L-band data has been relatively scarce, with limited images only available in a few areas like the Brazilian Amazon. Once more NISAR data become publicly available, they will provide free, global L-band SAR every 12 days. Flores-Anderson’s system is already prepared to incorporate this data.",
+      "contextOffsets": {
+        "start": 5690,
+        "end": 6201,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 6179,
+        "end": 6190,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "comprehensive",
+      "surface": "comprehensive",
+      "meaningInContext": "覆盖范围全面的",
+      "essentialVocabularyId": "essential:comprehensive",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "The NISAR (NASA-ISRO Synthetic Aperture Radar) satellite, launched in July 2025, will drastically increase the feasibility of systems like Flores-Anderson’s by providing more frequent and comprehensive L-band SAR data. L-band data has been relatively scarce, with limited images only available in a few areas like the Brazilian Amazon. Once more NISAR data become publicly available, they will provide free, global L-band SAR every 12 days. Flores-Anderson’s system is already prepared to incorporate this data.",
+      "contextOffsets": {
+        "start": 5690,
+        "end": 6201,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 5878,
+        "end": 5891,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    }
+  ],
+  "studyGuide": {
+    "firstReadQuestion": "What problem does the article explain, and how does the text support its explanation?",
+    "steps": [
+      "Read for the main idea before checking vocabulary.",
+      "Locate exact source evidence for each answer.",
+      "Study the marked grammar and word meanings in their original context.",
+      "Explain one idea in new words; this is practice, not independent assessment."
+    ]
+  },
+  "status": "draft-source; pending-independent-text-and-rights-review",
+  "text": {
+    "path": "materials/public/nasa-forest-loss-radar.txt",
+    "sha256": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+    "format": "plain-text",
+    "speakerLabels": [],
+    "normalization": "Markdown links, heading/emphasis syntax and nonbreaking spaces converted for plain-text display. Original prose and source spelling retained; no unrecorded word repairs."
+  },
+  "contentHash": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+  "metadataPath": "curriculum/public-supplements/nasa-forest-loss-radar.json",
+  "wordCount": 967,
+  "shortPractice": false,
+  "themes": [
+    "ecosystems",
+    "remote-sensing",
+    "data-fusion",
+    "scientific-method"
+  ],
+  "source": {
+    "exposureGroup": "public-source:nasa-forest-loss-radar"
+  },
+  "exposureGroup": "public-source:nasa-forest-loss-radar",
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "bandEvidence": false,
+  "completionCredit": false,
+  "audio": {
+    "usage": {
+      "status": "not-supplied-reading-only",
+      "eligibleForPractice": false,
+      "redistributionAllowed": false
+    }
+  },
+  "extractionEvidence": {
+    "path": "work/public-material-evidence-20261026/reading/evidence/nasa-forest-loss-firecrawl.json",
+    "sha256": "d3d41f27167ca108a67485754c51a915f7757225fb53f00c6315622a086f98b2",
+    "sourceMarkdownSha256": "036e5b0eb92f57b48ba3aab0bccf3591578888056d3da2cbc62dd3f01a3aec5a",
+    "mainArticleH1Start": 23178,
+    "selectedParagraphs": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "selectedParagraphSha256": [
+      "9c79b4254bf1db5ba5a4c872f0e57ede9cd38293fdb30710918a8c51d0a107db",
+      "1454ffd88aafdd784d55ebe9ce1c8eba3406e76186a4ee10a650386550f92092",
+      "0537370d7ac09ab6eb46f4358cf44d8c5646148dba07721f597bb7a08d79643b",
+      "920208d00abb4462db0235326c56d372d37811ae19de870dd4e449543be40e13",
+      "c3e07c1c1f11d6a6aacf70c9886d179e14e9a541f836ef4698168af1bd7a5385",
+      "a466b9eaff6eebfbeb6739b47827ca06e839e11f14d46318354d75038e675e2c",
+      "ee7cee93d2062aedc4b31d9d3898c7e71fed0f811b6bfd71845176338091fcda",
+      "c43b0fc6eea53f087a16715c6c1ec1da98b29d9f421bc6c9f19f43ceae9890e2",
+      "ba1c0e9f4b536e4b2f21c9c8f7739c9539c1f9c3d7bbc86de21d189782ffbb6e",
+      "f051c61b1c6138a54e090cf9b534e87c979a1b9a80cbe1de685901530573552a",
+      "8832e5cab9d61718b2a6fe7a0806df1a46c8388300dcf613033a36db04a02861",
+      "e699f321a95ff350cd515255665b7b251a78501da468b223fdbee0e50cceb029",
+      "f2a868340465919e22de058e939593a76cdaca13afa5b252178ad5f50517d36e",
+      "32e91772474a58604de1bed8a07ef63f601596490e41960e162348e17c879511",
+      "4743eb84fc709ac405fea34fc6124760f8481ae620a631715fe477cb37e4cca7",
+      "d3a8daf54e17f27313000d16f50fc8750de6a374b4b04ba11a020fbace6405a4",
+      "fb3a1e5ad19cfc0b65fe33e3000b70917735480baad945d4075c3a443a4c90e0",
+      "5af8a93bc3b1df3d6c873ab984d0d8b94e4dce1bce94f9454d120ddbf325be30",
+      "0d97cc7844bd23fcfdd1b0075001a5986044c13d5179d185f628caee9eeb8c95"
+    ],
+    "exclusions": "Site navigation, headings for resource widgets, media assets/credits/captions, repeated publisher teasers, related-source abstracts and non-article sidebars omitted. Explicit source prose that refers to a figure remains verbatim; all questions must be answerable from prose alone."
+  },
+  "releaseGate": {
+    "active": false,
+    "sourceEvidence": "draft-content-extraction",
+    "textEvidence": "author-draft",
+    "blindComparison": "pending",
+    "assessmentEligible": false,
+    "practiceEligibility": "pending-root-review"
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "sourceModifiedAt": null,
+  "sourceDateEvidence": {
+    "field": "metadata.publishedTime",
+    "value": "2026-04-06T00:00:00-04:00",
+    "path": "work/public-material-evidence-20261026/reading/evidence/nasa-forest-loss-firecrawl.json",
+    "sha256": "d3d41f27167ca108a67485754c51a915f7757225fb53f00c6315622a086f98b2",
+    "note": "Original publication date, not retrieval or modified date. Relative dates and future statements retain this historical context."
+  },
+  "wordCountMethod": "English orthographic tokens: /[A-Za-z]+(?:[’'-][A-Za-z]+)*/g; title included, numerals excluded; not unique known words.",
+  "developmentEvidenceScope": "Raw captures and earlier editorial versions are retained under ignored work/public-material-evidence-20261026/reading; not redistributed as learning content. Published material contains only the permitted selected article prose.",
+  "independentTextReview": {
+    "reviewer": "root-Codex",
+    "sourceTextSha256": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+    "questionComparisonSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+    "grammarEvidence": "All 20 actual quotation/structure explanations read; one explanation refined before publication.",
+    "notHumanExaminer": true,
+    "calibrated": false
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "expand-w01-listen-1",
+  "title": "New Faces at the Evening Class",
+  "level": "A0",
+  "text": "Narrator: It is 7 p.m. Anna opens the door.\nAnna: Hello. I am Anna. Are you a new student?\nBen: Yes. I am Ben. Nice to meet you.\nAnna: Nice to meet you, too. You are in Room 3.\nBen: Thank you. Are you the teacher?\nAnna: No, I am not. I am a student. I am new, too.\nBen: Oh! You are a student. I am happy.\nAnna: We are classmates. This is Tom. He is a student.\nBen: Hello, Tom. Are you new?\nTom: No, I am not. I am not new here. You are new.\nBen: Yes. I am new. We are all in Room 3.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What time is it?",
+      "options": [
+        "6 p.m.",
+        "7 p.m.",
+        "8 p.m."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who opens the door?",
+      "options": [
+        "Ben",
+        "Anna",
+        "Tom"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Use ONE NUMBER: You are in Room ______.",
+      "maxWords": 1
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is Anna the teacher?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not."
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "How does Ben feel? Use ONE WORD from the conversation: \"I am ______.\"",
+      "maxWords": 1
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Anna say about Tom?",
+      "options": [
+        "He is a student.",
+        "He is the teacher.",
+        "He is the new student."
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is Tom new here?",
+      "options": [
+        "Yes, he is.",
+        "No, he is not."
+      ]
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the conversation: Anna says, \"We are ______.\"",
+      "maxWords": 1
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 """Bounded authoring of original course audio; no learner data or credentials."""
-import argparse, asyncio, importlib.metadata, json, math, os, subprocess, sys, time, uuid, wave
+import argparse, asyncio, importlib, importlib.metadata, json, math, os, subprocess, sys, time, uuid, wave
 from array import array
 from collections import Counter
 from pathlib import Path
@@ -8,15 +8,15 @@ ROOT = Path(__file__).resolve().parent.parent
 PACKAGES = ROOT / 'work/authoring-python'
 if PACKAGES.is_dir(): sys.path.insert(0, str(PACKAGES))
 import edge_tts
-from curriculum_audio_layout import LABEL, LAYOUT_VERSION, PAUSES, align_boundaries, configuration, layout, sha
+from curriculum_audio_layout import LABEL, LAYOUT_VERSION, PAUSES, align_boundaries, configuration, layout, sha, with_role_voices
 
 MATERIALS, OUT, META = ROOT / 'curriculum/materials', ROOT / 'audio/curriculum', ROOT / 'curriculum/audio'
 WORK = ROOT / 'work/curriculum-tts-v68'
 CACHE = WORK / 'groups'
 FLAGS = 0x08000000 if os.name == 'nt' else 0
 HZ = 24000
-PAIRS = [('en-GB-SoniaNeural', 'en-GB-RyanNeural'), ('en-US-AriaNeural', 'en-US-GuyNeural'), ('en-AU-NatashaNeural', 'en-AU-WilliamNeural')]
-NARRATORS = ['en-GB-LibbyNeural', 'en-US-JennyNeural', 'en-US-JennyNeural']
+PAIRS = [('en-US-AriaNeural', 'en-US-GuyNeural'), ('en-US-JennyNeural', 'en-US-EricNeural'), ('en-US-MichelleNeural', 'en-US-ChristopherNeural')]
+NARRATORS = ['en-US-AvaNeural', 'en-US-BrianNeural', 'en-US-EmmaNeural']
 VERSION = importlib.metadata.version('edge-tts')
 GROUP_VERSION = 'curriculum-word-boundary-groups-v1'
 
@@ -43,10 +43,28 @@ def pcm(path):
     return run(['ffmpeg', '-v', 'error', '-i', str(path), '-ar', str(HZ), '-ac', '1', '-f', 's16le', '-']).stdout
 
 
+def pause_settings(material):
+    requirements = material.get('audioRequirements') or {}
+    paragraph = requirements.get('paragraphGapMs', round(PAUSES['paragraph']*1000)) / 1000
+    turn = requirements.get('turnGapMs', round(PAUSES['speaker-change']*1000)) / 1000
+    if not .2 <= paragraph <= 3 or not .2 <= turn <= 3: raise ValueError('Unsafe source pause requirement')
+    return {'paragraph': paragraph, 'speaker-change': turn, 'section': max(PAUSES['section'], paragraph)}
+
+
 def settings(material):
     index = 0 if material['week'] <= 8 else (material['week'] - 9) % len(PAIRS)
     rate = '-15%' if material['week'] <= 8 else '-5%' if material['week'] <= 20 else '+0%'
     planned = layout(material['transcript'], PAIRS[index], NARRATORS[index], PAIRS[1] if index != 1 else PAIRS[0])
+    requirements = material.get('audioRequirements') or {}
+    planned = with_role_voices(planned, requirements.get('roleVoices'))
+    minimum = requirements.get('minimumSpeakers', 0)
+    spoken_voices = {segment['voice'] for segment in planned['segments']}
+    if minimum and len(spoken_voices) < minimum: raise ValueError('Source requires at least ' + str(minimum) + ' real speaker voices, found ' + str(len(spoken_voices)))
+    pauses = pause_settings(material)
+    for index, segment in enumerate(planned['segments']):
+        if not index: continue
+        kind = 'section' if segment['boundary'] == 'section' else 'speaker-change' if planned['segments'][index-1]['role'] != segment['role'] else 'paragraph'
+        segment['pauseBeforeSeconds'] = pauses[kind]
     config, digest = configuration(material['transcript'], planned, rate, VERSION)
     return planned, config, digest, rate
 
@@ -115,7 +133,7 @@ def publish(target, meta_path, candidate, metadata):
 
 
 def metadata_for(material, planned, config, digest, rate, duration, audio_hash, segments, origin):
-    return {'id': material['id'], 'schema': 3, 'layoutVersion': LAYOUT_VERSION, 'transcriptHash': sha(material['transcript']), 'configurationHash': digest, 'configuration': config, 'audioHash': audio_hash, 'voices': list(dict.fromkeys(s['voice'] for s in planned['segments'])), 'roleVoices': planned['roleVoices'], 'durationSeconds': duration, 'synthetic': True, 'provider': 'Microsoft online TTS via edge-tts', 'authoringPackageVersion': VERSION, 'rate': rate, 'pauseConfiguration': PAUSES, 'segments': segments, 'origin': origin, 'note': '项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。'}
+    return {'id': material['id'], 'schema': 3, 'layoutVersion': LAYOUT_VERSION, 'transcriptHash': sha(material['transcript']), 'configurationHash': digest, 'configuration': config, 'audioHash': audio_hash, 'voices': list(dict.fromkeys(s['voice'] for s in planned['segments'])), 'roleVoices': planned['roleVoices'], 'durationSeconds': duration, 'synthetic': True, 'provider': 'Microsoft online TTS via edge-tts', 'authoringPackageVersion': VERSION, 'rate': rate, 'pauseConfiguration': pause_settings(material), 'segments': segments, 'origin': origin, 'locale': 'en-US', 'minimumSpeakers': (material.get('audioRequirements') or {}).get('minimumSpeakers', 0), 'note': '项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。'}
 
 
 async def generate(file, semaphore, checkpoint):
@@ -164,10 +182,15 @@ async def generate(file, semaphore, checkpoint):
         return status
 
 
-def selected_files(ids):
+def selected_files(ids, tolerant=False):
     files = []
     for file in sorted(MATERIALS.glob('*.json')):
-        material = json.loads(file.read_text(encoding='utf-8'))
+        try:
+            material = json.loads(file.read_text(encoding='utf-8'))
+        except (json.JSONDecodeError, OSError) as error:
+            if not tolerant: raise
+            print(json.dumps({'deferredSource': file.name, 'reason': type(error).__name__}), flush=True)
+            continue
         if material.get('skill') == 'listening' and material.get('audioSynthetic') is not False and material.get('transcript', '').strip() and (not ids or material['id'] in ids): files.append(file)
     if ids and len(files) != len(set(ids)): raise ValueError('Unknown ID or non-synthetic material')
     return files
@@ -204,7 +227,7 @@ def audit(files):
 
 
 async def main(args):
-    files = selected_files(args.id)
+    files = selected_files(args.id, tolerant=args.watch)
     if args.plan:
         materials = [json.loads(f.read_text(encoding='utf-8')) for f in files]
         plans = [settings(m)[0] for m in materials]
@@ -218,6 +241,12 @@ async def main(args):
     for folder in [OUT, META, WORK, CACHE]: folder.mkdir(parents=True, exist_ok=True)
     deadline = time.monotonic() + 5400
     while True:
+        if args.watch:
+            # Adopt reviewed role-parser fixes between complete batches, never
+            # while one media file/configuration is being assembled.
+            refreshed = importlib.reload(importlib.import_module('curriculum_audio_layout'))
+            for name in ['LABEL', 'LAYOUT_VERSION', 'PAUSES', 'align_boundaries', 'configuration', 'layout', 'sha', 'with_role_voices']: globals()[name] = getattr(refreshed, name)
+            files = selected_files(args.id, tolerant=True)
         checkpoint, semaphore = {}, asyncio.Semaphore(args.concurrency)
         results = await asyncio.gather(*(generate(file, semaphore, checkpoint) for file in files), return_exceptions=True)
         errors = [{'id': file.stem, 'error': type(r).__name__ + ': ' + str(r)[:160]} for file, r in zip(files, results) if isinstance(r, Exception)]
@@ -234,3 +263,4 @@ def cli():
     args = parser.parse_args()
     if not 1 <= args.concurrency <= 4: parser.error('concurrency must be 1–4')
     asyncio.run(main(args))
+

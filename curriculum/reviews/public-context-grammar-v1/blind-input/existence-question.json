@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "id": "existence-question",
+  "sourceId": "voa-l1-03",
+  "sourceText": "Anna: I am in my new apartment! Great!\n\nI live with Marsha. We’re roommates.\n\nI want to cook dinner. Oh! Hmmm. Is there a supermarket near here?\n\nMarsha knows. Marsha's work number is 555-8986.\n\nMan: Hello.\n\nAnna: Hello. Is this Marsha? It is Anna.\n\nMan: I am sorry. You have the wrong number.\n\nAnna: Oh. Is this 555-8986?\n\nMan: No. This is 555-8689.\n\nAnna: Oh. Excuse me!\n\nMan: Okay. 'Bye.\n\nAnna: One more time. 555-8986. Please be Marsha.\n\nMarsha: Hello. This is Marsha.\n\nAnna: Yes, Marsha. I want to cook dinner.\n\nMarsha: Excuse me? Anna? Is that you?\n\nAnna: Oh, yes. I am here!\n\nMarsha: Good. You are there.\n\nAnna: I want to find a supermarket.\n\nMarsha: Oh, okay. The supermarket is at 1500 Irving Street. It is near the apartment.\n\nAnna: Great! Goodbye!\n\nMarsha: Goodbye, Anna.\n\n(Later)\n\nAnna: There is a big supermarket on our street. And Marsha says I am a good cook! Until next time! Bye!",
+  "sourceQuote": "Is there a supermarket near here?",
+  "stages": {
+    "study": {
+      "instructions": "Read the source sentence and answer both questions.",
+      "questions": [
+        {
+          "id": "s1",
+          "type": "single",
+          "prompt": "What information does Anna request by asking ‘Is there a supermarket near here?’",
+          "options": [
+            "Whether the area has a supermarket.",
+            "The opening time of a supermarket.",
+            "The street address of a supermarket she already knows about."
+          ]
+        },
+        {
+          "id": "s2",
+          "type": "single",
+          "prompt": "Nora does not know whether this area has any pharmacy. Which question checks that?",
+          "options": [
+            "Is there a pharmacy near here?",
+            "Where is the pharmacy?",
+            "Is the pharmacy open now?"
+          ]
+        }
+      ]
+    },
+    "review": {
+      "instructions": "Use each new situation to answer both questions without reopening the earlier explanation.",
+      "questions": [
+        {
+          "id": "r1",
+          "type": "single",
+          "prompt": "You know a bank is nearby, but you need its address. Which question asks for the missing information?",
+          "options": [
+            "Where is the bank?",
+            "Is there a bank near here?",
+            "Is this a bank?"
+          ]
+        },
+        {
+          "id": "r2",
+          "type": "single",
+          "prompt": "You are new to a town and do not know if it has any public libraries. Which question checks whether they exist?",
+          "options": [
+            "Are there any public libraries here?",
+            "Where are the public libraries?",
+            "When do the public libraries open?"
+          ]
+        }
+      ]
+    }
+  }
+}

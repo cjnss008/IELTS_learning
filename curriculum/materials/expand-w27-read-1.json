@@ -1,0 +1,386 @@
+{
+  "id": "expand-w27-read-1",
+  "week": 27,
+  "skill": "reading",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 400,
+  "maxWords": 700,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "城市交通与图表比较 · Independent new scenario: a health campaign considering different audiences",
+  "grammarFocus": "倍数与比例表达；比较结构；过去和现在数据的时态选择。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "Comparing Audiences for a City Health Campaign",
+  "instructions": "阅读下面的短文，完成10道题。短文和题目均为原创模拟材料，不是雅思真题。先读题，再读文章。注意倍数与比例表达、比较结构以及过去和现在数据的时态选择。",
+  "passage": "A city health team wants more people to walk to work. Last year, the team tested three campaign ideas with three different groups. The results are in the table below.\n\nTable: Campaign test results (simulated data)\n\n| Group | Main message | People who saw the message | People who walked more |\n|-------|--------------|----------------------------|------------------------|\n| A: Office workers | 'Walk 20 minutes a day' | 1,000 | 250 |\n| B: Parents | 'Walk your children to school' | 800 | 320 |\n| C: Older adults | 'Walk with a friend' | 600 | 210 |\n\nGroup B had the highest proportion of people who walked more. In Group B, 40% of people walked more. In Group A, the figure was 25%. So the proportion in Group B was 1.6 times as high as the proportion in Group A. Group C's proportion was 35%, which was higher than Group A's but lower than Group B's.\n\nThe team also looked at the number of people who walked more. Group A had 250 people, Group B had 320, and Group C had 210. Group B had the largest number, but the difference between Group A and Group B was only 70 people. The team noted that Group A's message reached more people (1,000) than Group B's message (800), but fewer people in Group A changed their behaviour. This shows that reaching a large audience does not always lead to more behaviour change. The message itself and how well it fits the audience may matter more. For example, parents may find it easy to walk their children to school because it fits their daily routine, while office workers may need a different reason to walk.\n\nThis year, the team is running a new campaign. They are using the message 'Walk with a friend' for all three groups. They believe this message will work well because it was the most effective message for older adults last year. However, they are not sure if it will work for office workers. The team is now collecting new data. They will compare this year's proportions with last year's proportions. They expect the proportion of office workers who walk more to rise from 25% to about 30%. They also expect the number of parents who walk more to stay about the same.\n\nThe team says that a message can work well for one group but not for another. They advise campaign planners to test messages with different audiences before using them city-wide. Testing helps planners see which messages work best for each audience. This can save time and money and make campaigns more effective. It also helps avoid wasting resources on messages that do not connect with a particular group.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the main message for Group A?",
+      "options": [
+        "Walk 20 minutes a day",
+        "Walk your children to school",
+        "Walk with a friend"
+      ],
+      "answers": [
+        "Walk 20 minutes a day"
+      ],
+      "explanation": "表格中Group A的Main message是“Walk 20 minutes a day”。",
+      "evidence": "| A: Office workers | 'Walk 20 minutes a day' | 1,000 | 250 |"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many people in Group B walked more?",
+      "options": [
+        "250",
+        "320",
+        "210"
+      ],
+      "answers": [
+        "320"
+      ],
+      "explanation": "表格中Group B的People who walked more是320。",
+      "evidence": "| B: Parents | 'Walk your children to school' | 800 | 320 |"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which group had the highest proportion of people who walked more?",
+      "options": [
+        "Group A",
+        "Group B",
+        "Group C"
+      ],
+      "answers": [
+        "Group B"
+      ],
+      "explanation": "文中说Group B had the highest proportion of people who walked more。",
+      "evidence": "Group B had the highest proportion of people who walked more."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "In Group B, what percentage of people walked more?",
+      "options": [
+        "25%",
+        "35%",
+        "40%"
+      ],
+      "answers": [
+        "40%"
+      ],
+      "explanation": "文中说In Group B, 40% of people walked more。",
+      "evidence": "In Group B, 40% of people walked more."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "The proportion in Group B was ______ times as high as the proportion in Group A.",
+      "options": [
+        "1.6",
+        "2.5",
+        "0.6"
+      ],
+      "answers": [
+        "1.6"
+      ],
+      "explanation": "文中说the proportion in Group B was 1.6 times as high as the proportion in Group A。",
+      "evidence": "So the proportion in Group B was 1.6 times as high as the proportion in Group A."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Group C's proportion was higher than Group A's but lower than Group B's.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "文中明确说Group C's proportion was 35%, which was higher than Group A's but lower than Group B's。",
+      "evidence": "Group C's proportion was 35%, which was higher than Group A's but lower than Group B's."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Group A's message reached more people than Group B's message.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "文中说Group A's message reached more people (1,000) than Group B's message (800)。",
+      "evidence": "The team noted that Group A's message reached more people (1,000) than Group B's message (800)"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "This year, the team is using the message 'Walk with a friend' for all three groups.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "文中说They are using the message 'Walk with a friend' for all three groups。",
+      "evidence": "They are using the message 'Walk with a friend' for all three groups."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The team will compare the ______ from two different years.",
+      "maxWords": 1,
+      "answers": [
+        "proportions"
+      ],
+      "explanation": "文中说They will compare this year's proportions with last year's proportions。",
+      "evidence": "They will compare this year's proportions with last year's proportions."
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: They advise campaign planners to test messages with different ______ before using them city-wide.",
+      "maxWords": 1,
+      "answers": [
+        "audiences"
+      ],
+      "explanation": "文中说They advise campaign planners to test messages with different audiences before using them city-wide。",
+      "evidence": "They advise campaign planners to test messages with different audiences before using them city-wide."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "campaign",
+      "meaning": "运动，活动（为某目的进行的一系列行动）",
+      "example": "A city health team wants more people to walk to work."
+    },
+    {
+      "word": "proportion",
+      "meaning": "比例，部分",
+      "example": "Group B had the highest proportion of people who walked more."
+    },
+    {
+      "word": "figure",
+      "meaning": "数字，数据",
+      "example": "In Group A, the figure was 25%."
+    },
+    {
+      "word": "behaviour",
+      "meaning": "行为",
+      "example": "fewer people in Group A changed their behaviour."
+    },
+    {
+      "word": "effective",
+      "meaning": "有效的",
+      "example": "this message will work well because it was the most effective message for older adults last year."
+    },
+    {
+      "word": "audience",
+      "meaning": "受众，目标群体",
+      "example": "They advise campaign planners to test messages with different audiences before using them city-wide."
+    },
+    {
+      "word": "city-wide",
+      "meaning": "全市范围的",
+      "example": "They advise campaign planners to test messages with different audiences before using them city-wide."
+    },
+    {
+      "word": "expect",
+      "meaning": "预计，期待",
+      "example": "They expect the proportion of office workers who walk more to rise from 25% to about 30%."
+    }
+  ],
+  "grammar": {
+    "title": "倍数与比例表达；比较结构；过去和现在数据的时态选择",
+    "explanation": "英语中表达倍数常用“A is X times as high as B”或“A is X times higher than B”。比例用“the proportion of ...”。比较结构用“more/less/fewer ... than”或“the highest/lowest”。描述过去的数据用一般过去时（如was, had），描述现在正在进行的活动用现在进行时（如is running, are collecting），描述预期用一般将来时（如will compare）。",
+    "example": "So the proportion in Group B was 1.6 times as high as the proportion in Group A.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "The number of students in Class A is 30. The number in Class B is 60. So the number in Class B is ______ times as high as the number in Class A.",
+        "options": [
+          "2",
+          "3",
+          "0.5"
+        ],
+        "answers": [
+          "2"
+        ],
+        "explanation": "60是30的两倍，所以用2 times as high as。",
+        "evidence": "So the proportion in Group B was 1.6 times as high as the proportion in Group A."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Last year, 40% of women and 20% of men joined the club. The proportion of women was ______ the proportion of men.",
+        "options": [
+          "twice as high as",
+          "twice high than",
+          "two times higher"
+        ],
+        "answers": [
+          "twice as high as"
+        ],
+        "explanation": "倍数表达用twice as high as，表示“是……的两倍”。",
+        "evidence": "So the proportion in Group B was 1.6 times as high as the proportion in Group A."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "In 2020, the city had 500 buses. Now it has 750. The number of buses is now ______ than in 2020.",
+        "options": [
+          "more",
+          "fewer",
+          "less"
+        ],
+        "answers": [
+          "more"
+        ],
+        "explanation": "750比500多，用more than。",
+        "evidence": "Group A's message reached more people (1,000) than Group B's message (800)."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Group C had 210 people. Group A had 250 people. Group C had ______ people than Group A.",
+        "options": [
+          "fewer",
+          "less",
+          "more"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "210比250少，且people是可数名词，用fewer。",
+        "evidence": "fewer people in Group A changed their behaviour."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Last year, the team ______ three campaign ideas.",
+        "options": [
+          "tested",
+          "tests",
+          "is testing"
+        ],
+        "answers": [
+          "tested"
+        ],
+        "explanation": "Last year表示过去，用一般过去时tested。",
+        "evidence": "Last year, the team tested three campaign ideas with three different groups."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "This year, the team ______ a new campaign.",
+        "options": [
+          "is running",
+          "ran",
+          "runs"
+        ],
+        "answers": [
+          "is running"
+        ],
+        "explanation": "This year表示现在正在进行的活动，用现在进行时is running。",
+        "evidence": "This year, the team is running a new campaign."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "They ______ this year's proportions with last year's proportions next month.",
+        "options": [
+          "will compare",
+          "compared",
+          "are comparing"
+        ],
+        "answers": [
+          "will compare"
+        ],
+        "explanation": "next month表示将来，用一般将来时will compare。",
+        "evidence": "They will compare this year's proportions with last year's proportions."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "In Group B, 40% of people walked more. In Group A, 25% did. The proportion in Group B was ______ the proportion in Group A.",
+        "options": [
+          "higher than",
+          "lower than",
+          "the same as"
+        ],
+        "answers": [
+          "higher than"
+        ],
+        "explanation": "40%高于25%，用higher than。",
+        "evidence": "Group C's proportion was 35%, which was higher than Group A's but lower than Group B's."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often walk to work or school?",
+        "What is the best way to travel in your city?",
+        "Do you like walking with friends?",
+        "Is public transport good in your city?"
+      ],
+      "part2": "Describe a health campaign in your city. You should say: what the campaign is about; who the campaign is for; what people think of it; and explain why you think it is good or not.",
+      "part3": [
+        "Why do some health campaigns work better for one group than another?",
+        "How can we compare the results of different campaigns?",
+        "Should governments spend money on health campaigns? Why?",
+        "What messages work well for older people?"
+      ]
+    },
+    "writing": "Write a short report (about 120 words) comparing two groups in a health campaign. Use data you invent. Include at least one comparison with 'times as high as' and one with 'more/fewer than'. Say what the team will do next year."
+  },
+  "figure": "Table: Campaign test results (simulated data) with columns Group, Main message, People who saw the message, People who walked more.",
+  "rubric": {
+    "taskType": "Reading comprehension with grammar focus"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原有作者材料；本次Codex对照全文只修q9题干直接提供目标词的问题，保留标准答案、原始正文或听力原文和其余题。修改后的整个内容hash仍须重新独立解题；不是真人考官审核。",
+    "model": "deepseek-flash",
+    "contentHash": "e094cc1183adfdcdc4a4bd6369ec73e16b726ec0dd9692bd77f3791d16558f63",
+    "priorContentHash": "ccc42ec0394604bdaf2bd932fbe84f9108b8574c59af87eab9ae25447b2efcc9",
+    "reviewStatus": "pending-independent-solve-after-codex-question-repair",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "figure",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

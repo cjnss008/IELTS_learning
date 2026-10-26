@@ -1,0 +1,1398 @@
+{
+  "schema": 1,
+  "planSHA256": "9ceef6808852380bc28c1f2193b6f013d7c22640044efaaf7eeed86d248d474f",
+  "publishedMaterials": [
+    {
+      "id": "expand-w09-listen-1",
+      "sourceTextSha256": "c60172acbf87606f660a527bf78ff76fe46fd76cd60afce57be6b6eaa65a0bd7",
+      "payloadSHA256": "a3cf5a9f0b01093ce872b8cfee047914bc1360a1d5a2ea0d4a7a6c9cf8fbbb8f",
+      "candidateSHA256": "9f3c93d53e81caa83cf3d1abdb2cfd0e54b99e208f1201e61dc246ece922ba45",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/audioRequirements/turnGapMs",
+          "before": 450,
+          "after": 700,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/paragraphGapMs",
+          "before": 1200,
+          "after": 900,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/audioRegenerationRequired",
+          "before": true,
+          "after": false,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/roleVoices",
+          "before": null,
+          "after": {
+            "mia": "en-US-AriaNeural",
+            "leo": "en-US-GuyNeural",
+            "narrator": "en-US-AvaNeural"
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/verification",
+          "before": "review-pending",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地按原文逐题修复与机器合同自检；独立无答案解题尚待完成，不称真人审核",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationRequired",
+          "before": true,
+          "after": false,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+            "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+            "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationCompleted",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioReview",
+          "before": null,
+          "after": {
+            "kind": "machine-audit-only",
+            "transcriptHash": "c60172acbf87606f660a527bf78ff76fe46fd76cd60afce57be6b6eaa65a0bd7",
+            "audioHash": "79de33359f943a619aa8da9a49a0d75c3acf48fb80f7ce8dcd0fd547fbfec511",
+            "configurationHash": "15861c697f33ea76845061fa45d361486c0a006909d7155763763f9848b5d6e3",
+            "auditReportSha256": "03b37e25bd427e5ec56ca96bd0e71ccfeb8f6fc5612c90df0db79d30e7c6d5ae",
+            "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+            "independentListeningReviewed": false,
+            "humanAuditioned": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audio",
+          "before": "",
+          "after": "audio/curriculum/expand-w09-listen-1.mp3",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioVoice",
+          "before": null,
+          "after": "en-US-AriaNeural / en-US-GuyNeural",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioSynthetic",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioDurationSeconds",
+          "before": null,
+          "after": 142.35625,
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w21-listen-1",
+      "sourceTextSha256": "212ddc332c0953858532418edd08b402403ebf7f16a4b5ee8a96fcd7d1614843",
+      "payloadSHA256": "02791439a623134f1d2cf99dc079a1342be0f3c6d55b9081c8c633273f502040",
+      "candidateSHA256": "56709ae202e53615e90fc4adeb4fccfe4cc640aef61d816906648494f9983ad6",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/audioRequirements/turnGapMs",
+          "before": 450,
+          "after": 700,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/paragraphGapMs",
+          "before": 1200,
+          "after": 900,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/roleVoices",
+          "before": null,
+          "after": {
+            "mia": "en-US-AriaNeural",
+            "leo": "en-US-GuyNeural",
+            "sara": "en-US-JennyNeural",
+            "narrator": "en-US-AvaNeural"
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/verification",
+          "before": "review-pending",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地按原文逐题修复与机器合同自检；独立无答案解题尚待完成，不称真人审核",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+            "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+            "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationCompleted",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioReview",
+          "before": null,
+          "after": {
+            "kind": "machine-audit-only",
+            "transcriptHash": "212ddc332c0953858532418edd08b402403ebf7f16a4b5ee8a96fcd7d1614843",
+            "audioHash": "fb33fe4419aa027fc8e03d775358bfcf95b29cfda8822873e58a5eb4e4432490",
+            "configurationHash": "51260d460422032053401bee19db4b22cd9e35475015f7117f854e6810566ae7",
+            "auditReportSha256": "95be0b1403ba3a74845955435190739b41ebdbaaf35a34d8812e3f0c79fce941",
+            "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+            "independentListeningReviewed": false,
+            "humanAuditioned": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audio",
+          "before": "",
+          "after": "audio/curriculum/expand-w21-listen-1.mp3",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioVoice",
+          "before": null,
+          "after": "en-US-AriaNeural / en-US-GuyNeural / en-US-JennyNeural",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioSynthetic",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioDurationSeconds",
+          "before": null,
+          "after": 136.1275,
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w34-listen-1",
+      "sourceTextSha256": "4a5d86a80f76af53549d46eefc98ddeb38621a54d84b32f550d0adfbc173e0eb",
+      "payloadSHA256": "0724baf3ae078c37268bf8e7ccc19142de4286ac1eabbf442fb0bdffa02098f2",
+      "candidateSHA256": "1a769b392115cd4674132da8af7344c0009856c9a5480df3318c63fb4c35a5a8",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/audioRequirements/turnGapMs",
+          "before": 450,
+          "after": 700,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/paragraphGapMs",
+          "before": 1200,
+          "after": 900,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/roleVoices",
+          "before": null,
+          "after": {
+            "maya": "en-US-JennyNeural",
+            "owen": "en-US-EricNeural",
+            "narrator": "en-US-BrianNeural"
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/verification",
+          "before": "review-pending",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地按原文逐题修复与机器合同自检；独立无答案解题尚待完成，不称真人审核",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+            "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+            "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationCompleted",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioReview",
+          "before": null,
+          "after": {
+            "kind": "machine-audit-only",
+            "transcriptHash": "4a5d86a80f76af53549d46eefc98ddeb38621a54d84b32f550d0adfbc173e0eb",
+            "audioHash": "73135aa7cf8a79aec821200f6de622e6b27b5f42c1ec0309aaf5d09a88823057",
+            "configurationHash": "a9ef4573dc55111674911e1c92b2a99967e8d7fd799fad826e1e4ea7edd88621",
+            "auditReportSha256": "d42a900d090f1d2414d968efc465b8582db7b6939f9484acf7e8e176b713be01",
+            "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+            "independentListeningReviewed": false,
+            "humanAuditioned": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audio",
+          "before": "",
+          "after": "audio/curriculum/expand-w34-listen-1.mp3",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioVoice",
+          "before": null,
+          "after": "en-US-JennyNeural / en-US-EricNeural",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioSynthetic",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioDurationSeconds",
+          "before": null,
+          "after": 143.655,
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w34-read-2",
+      "sourceTextSha256": "fde31c7d65822256866c324b7cd991cfc45f08fc02e02f165117d847eb660eb5",
+      "payloadSHA256": "011b76c3997a8b588140face827d49a8eb19c143df943803454b3a0213b3cac3",
+      "candidateSHA256": "2b38ed81930f2ceb2a0d315aca678475d900ec6f33a45860f5f8107351802afd",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "review-pending",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地按原文逐题修复与机器合同自检；独立无答案解题尚待完成，不称真人审核",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+            "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+            "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w36-read-1",
+      "sourceTextSha256": "376c05b409d199b835ca7a0ac18d1e98e56e0c00b5129971f4cb740fa66f6c19",
+      "payloadSHA256": "d4b06a0e846c9a7f8c1ddff0aa37b8c2ed22bb638989b83c2639331ddfaa4ce5",
+      "candidateSHA256": "f69c3efaa3a62c1b47a6c5af9b6027ed6859fb69223cb301b99596d61a1893aa",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "review-pending",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地按原文逐题修复与机器合同自检；独立无答案解题尚待完成，不称真人审核",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+            "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+            "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w38-read-2",
+      "sourceTextSha256": "5524dd745e61647bfb4893fcb281096a7803a8599a9498e37413a9c003e790e5",
+      "payloadSHA256": "983a2d35fc6cbe6acbd421401978b500c518cd6b58e1919055dc47a6000acbd1",
+      "candidateSHA256": "ecd0073a20e01ab4d368b38efe352cad0a536a5d99c750e2b1f5d73e6a365c77",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "review-pending",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地按原文逐题修复与机器合同自检；独立无答案解题尚待完成，不称真人审核",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+            "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+            "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w39-listen-1",
+      "sourceTextSha256": "adf948ef34f40a81df0237cf3a3bfb50e694c118ef260604db6ecf8af949efa8",
+      "payloadSHA256": "ea76b74503ada06f975e6b10b6a7e4c6f64cf3fe7f678497637426b1516b6493",
+      "candidateSHA256": "afc83afe1837e3e9c50fbab269b70b91984f05af6f00dbbfd194c4bf806efeb6",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/audioRequirements/turnGapMs",
+          "before": 450,
+          "after": 700,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/paragraphGapMs",
+          "before": 1200,
+          "after": 900,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/roleVoices",
+          "before": null,
+          "after": {
+            "maya": "en-US-AriaNeural",
+            "daniel": "en-US-GuyNeural",
+            "priya": "en-US-JennyNeural",
+            "narrator": "en-US-AvaNeural"
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/expectedTranscriptHash",
+          "before": null,
+          "after": "adf948ef34f40a81df0237cf3a3bfb50e694c118ef260604db6ecf8af949efa8",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/audioRegenerationRequired",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/oldAudioMustNotBeUsed",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地草稿修订及纯函数规则检查；待未见答案的另一Codex独立盲解，不是人工教师或考官审核。",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationRequired",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationCompleted",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioReview",
+          "before": null,
+          "after": {
+            "kind": "machine-audit-only",
+            "transcriptHash": "adf948ef34f40a81df0237cf3a3bfb50e694c118ef260604db6ecf8af949efa8",
+            "audioHash": "c044b323021f49c9c0c23995cfa8cedd2d6627fa6633c0ab6fc61e57b0f157d8",
+            "configurationHash": "91a88e23919c07e3ddd2e08177fbf1369b0b374d86b075ca8a0ecfc0ff02c9fd",
+            "auditReportSha256": "a694794b373c2d3ed797d270bf3cd61fe6beae487389472241de7e4f023e062d",
+            "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+            "independentListeningReviewed": false,
+            "humanAuditioned": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audio",
+          "before": "",
+          "after": "audio/curriculum/expand-w39-listen-1.mp3",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioVoice",
+          "before": "",
+          "after": "en-US-AriaNeural / en-US-GuyNeural / en-US-JennyNeural",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioDurationSeconds",
+          "before": null,
+          "after": 290.595,
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w40-listen-1",
+      "sourceTextSha256": "e14089f78c022d9378f92e18a06810d3ed5c4a3d28ea312a4f117476356624b7",
+      "payloadSHA256": "7804e5a1a6c497dd4c43a41fbe8bad778967a2f466319edf129824a972bc555a",
+      "candidateSHA256": "f442c2661034a3d0d6df48f8315bcb9ede864e4ac8b7a81784d56285f32491a4",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/audioRequirements/turnGapMs",
+          "before": 450,
+          "after": 700,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/paragraphGapMs",
+          "before": 1200,
+          "after": 900,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/roleVoices",
+          "before": null,
+          "after": {
+            "daniel": "en-US-JennyNeural",
+            "leila": "en-US-EricNeural",
+            "narrator": "en-US-BrianNeural"
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/expectedTranscriptHash",
+          "before": null,
+          "after": "e14089f78c022d9378f92e18a06810d3ed5c4a3d28ea312a4f117476356624b7",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/audioRegenerationRequired",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/oldAudioMustNotBeUsed",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地草稿修订及纯函数规则检查；待未见答案的另一Codex独立盲解，不是人工教师或考官审核。",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationRequired",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationCompleted",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioReview",
+          "before": null,
+          "after": {
+            "kind": "machine-audit-only",
+            "transcriptHash": "e14089f78c022d9378f92e18a06810d3ed5c4a3d28ea312a4f117476356624b7",
+            "audioHash": "dca4eb1c46d7461dc70b7e8f59fe84c855c16650d6981824bd9e571e4e3fc643",
+            "configurationHash": "e5504a352601f7dab3e942174005f46674a7c6bde46a9c9399154971071ebf8a",
+            "auditReportSha256": "c89bc021d88e69055922b252173d4b76d9ce71d81ac22479241feaf4a51045b2",
+            "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+            "independentListeningReviewed": false,
+            "humanAuditioned": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audio",
+          "before": "",
+          "after": "audio/curriculum/expand-w40-listen-1.mp3",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioVoice",
+          "before": "",
+          "after": "en-US-JennyNeural / en-US-EricNeural",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioDurationSeconds",
+          "before": null,
+          "after": 222.765,
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w40-read-1",
+      "sourceTextSha256": "98e5a04fa02a376a71034add1ba39234d418b36b2cb35131fea9c71a8e98c53d",
+      "payloadSHA256": "dcca8e593770b6350a6f21b7e59dc4227a7db188821b65ec0998b350819aec1d",
+      "candidateSHA256": "d042b40359fecf42d9955afb608093c40eb82aba3d05ed308f65e34d71f64e08",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地草稿修订及纯函数规则检查；待未见答案的另一Codex独立盲解，不是人工教师或考官审核。",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w42-read-1",
+      "sourceTextSha256": "1f5a325943aaff566e333269ac50625c5ca36dbb9146e6be506918491b857c8b",
+      "payloadSHA256": "dcca71dd86f78d2e4fc1fdcadedbe0a44ffff30f31743c624eb5d1fb03ad88eb",
+      "candidateSHA256": "04eb3ad3a17c1752471469dff2cf1171e5711eaaffd4530cfa111ceb48476ad2",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地草稿修订及纯函数规则检查；待未见答案的另一Codex独立盲解，不是人工教师或考官审核。",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w43-listen-1",
+      "sourceTextSha256": "dc45623630e248fb6b88420bd4de23e82d0f1191d7b9c79d8b167354853745a8",
+      "payloadSHA256": "8be19dd7b3eb60812150f3cf57c5a0c143ee11e7b71780a60cbb8a382b3ad7d4",
+      "candidateSHA256": "c3bb470024c1170bcbf1d8a943254a86b37dd0540493f981ce6a0684b91b95f0",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/audioRequirements/turnGapMs",
+          "before": 450,
+          "after": 700,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/paragraphGapMs",
+          "before": 1200,
+          "after": 900,
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/roleVoices",
+          "before": null,
+          "after": {
+            "maya": "en-US-JennyNeural",
+            "ben": "en-US-EricNeural",
+            "narrator": "en-US-BrianNeural"
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/expectedTranscriptHash",
+          "before": null,
+          "after": "dc45623630e248fb6b88420bd4de23e82d0f1191d7b9c79d8b167354853745a8",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/audioRegenerationRequired",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audioRequirements/oldAudioMustNotBeUsed",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地草稿修订及纯函数规则检查；待未见答案的另一Codex独立盲解，不是人工教师或考官审核。",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationRequired",
+          "before": null,
+          "after": false,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioRegenerationCompleted",
+          "before": null,
+          "after": true,
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/audioReview",
+          "before": null,
+          "after": {
+            "kind": "machine-audit-only",
+            "transcriptHash": "dc45623630e248fb6b88420bd4de23e82d0f1191d7b9c79d8b167354853745a8",
+            "audioHash": "d80b104c971219d6ff9f2865363c5ae296eb142f4bc14361564a61c6c5704da4",
+            "configurationHash": "73c2f55aefd11dabd6b3d7d937a9d0afe314e9dfea1e00a0384d9f05c45a051d",
+            "auditReportSha256": "caaf78f3b461ccb95070e8d5bea992d598bbcc5eb59c568b5b52218ad223c8b3",
+            "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+            "independentListeningReviewed": false,
+            "humanAuditioned": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/audio",
+          "before": "",
+          "after": "audio/curriculum/expand-w43-listen-1.mp3",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioVoice",
+          "before": "",
+          "after": "en-US-JennyNeural / en-US-EricNeural",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/audioDurationSeconds",
+          "before": null,
+          "after": 255.1225,
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w43-read-1",
+      "sourceTextSha256": "6feb8ca6e7c42b9ca20ee762c1877b43f74bd66b35c615ec89b0adad6109973d",
+      "payloadSHA256": "7afd1922fa4c683cf6c02f9de2362274533e758ed67a3aa393627d0329414c9d",
+      "candidateSHA256": "7e1ec9a0f04c25ef9991697b5b6550dbf1021e4e66f7fb79e5f9e6e71362037b",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "本地草稿修订及纯函数规则检查；待未见答案的另一Codex独立盲解，不是人工教师或考官审核。",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w45-read-1",
+      "sourceTextSha256": "dc599d6ee55b6339bfab5e8e9ab297b5d9fcce84f5e2d0bc34fcd7abbf55258a",
+      "payloadSHA256": "b0c762757e165a2850f9729995395eb1eea7cc3d8a271738ca8c9299db1c834b",
+      "candidateSHA256": "2b396dee73b40dcceeadea1ff29d61277036e557aba701f4bb098277a8fbb507",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "Root source-and-question repair; source additions and substantive question changes are logged. Awaiting a separate agent blind source/grammar solution and explanation review.",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w47-read-1",
+      "sourceTextSha256": "6efaa5cc0bad7e0982031ccd57189ce796d1c4163c06ef9f0bf6ee190af146b3",
+      "payloadSHA256": "e7fc0313cb60858da52050c26024f5bad5c6a5f4057147cf23189f7640915c6c",
+      "candidateSHA256": "7116af4fd15299e6cf6ba9ec8b9c4e4a09989c0d4e977f9355c12353374085d5",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "Root source-and-question repair; source additions and substantive question changes are logged. Awaiting a separate agent blind source/grammar solution and explanation review.",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w48-read-1",
+      "sourceTextSha256": "546125ed3a14c580b001b7fe2c212d337f87a9c9faaf4cca1774415353ebd3ca",
+      "payloadSHA256": "e04019566ca23e04e1bf3821bab3d91e904097f10c9c1aff8b29da438808d06d",
+      "candidateSHA256": "f37cff4d5b4b26355fa4545077af9088252269804ecd4609e6b9dc85558d5c8c",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "Root source-and-question repair; source additions and substantive question changes are logged. Awaiting a separate agent blind source/grammar solution and explanation review.",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w50-read-1",
+      "sourceTextSha256": "1d68f181b6959d6e4999b7ff6c104cdfac2b2f06262216decfa06516992db027",
+      "payloadSHA256": "2d1da9ae30fefecd2bd9ca99a90075bb4f9bb88ba4f8404c4965cd59f0ba7313",
+      "candidateSHA256": "82eda857365bc14a9e43771ab322dab8983158b29d2ae85d35f1002b1cf55d13",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "Root source-and-question repair; source additions and substantive question changes are logged. Awaiting a separate agent blind source/grammar solution and explanation review.",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w50-read-2",
+      "sourceTextSha256": "dfb5e0783f7522410d7bc6b3dfe22000c0df7f9b0308162832c373c8fff0ddfc",
+      "payloadSHA256": "8505748f3001424045af67f3c80cea3e6e1703b5200746fe3579acab2c1340a5",
+      "candidateSHA256": "47f4b55a0a70523714d08f14a6aa35a444f6cd5267a17d4d267e843d31fb4758",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "Root source-and-question repair; source additions and substantive question changes are logged. Awaiting a separate agent blind source/grammar solution and explanation review.",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "id": "expand-w52-read-1",
+      "sourceTextSha256": "b015eb7e60132af4216ac3c76629237f7396d34d3cb0f534c9f76510e4615440",
+      "payloadSHA256": "633c669f484b04d4266509b6d0d181d8ed0b1756e8cdc2620414a8a57194e826",
+      "candidateSHA256": "651483bc3e16b2b817d59e49101bb48c948aedfcceeba81b10b6d91a6412a174",
+      "active": false,
+      "metadataChanges": [
+        {
+          "path": "/source/verification",
+          "before": "pending-independent-review",
+          "after": "reviewed",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/method",
+          "before": "Root source-and-question repair; source additions and substantive question changes are logged. Awaiting a separate agent blind source/grammar solution and explanation review.",
+          "after": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": "/source/releaseStatus",
+          "before": null,
+          "after": "staged-inactive",
+          "beforeExists": false,
+          "afterExists": true
+        },
+        {
+          "path": "/source/textReview",
+          "before": null,
+          "after": {
+            "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+            "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+            "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+            "humanReviewed": false,
+            "difficultyCalibrated": false
+          },
+          "beforeExists": false,
+          "afterExists": true
+        }
+      ]
+    }
+  ],
+  "reviewReferences": [
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch1/review/root-blind-answers.json",
+      "sha256": "ef222c01f1eee7e6642a8ddddf7ac79a5bb829754f8fb07581cc101ef530c7aa"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch1/review/answer-comparison.json",
+      "sha256": "d38c9250eaa4d7d23aca26de11a1df3146e3c2aaa00f1c39cae311df7cb9a0f5"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch1/review/blind-delta-v2.json",
+      "sha256": "12cd36f0f2742fdbef2ee36ec3453c55345224d09403376c907427c9717fc3a9"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-batch1/review-record.json",
+      "sha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-batch1/applied-revisions/delta.json",
+      "sha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-batch1/applied-revisions/final-candidate-manifest.json",
+      "sha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch2-review-vocab-ui/explanation-review-v1.json",
+      "sha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch2-review-vocab-ui/author-comparison-v1.json",
+      "sha256": "f92aa404c3e5b1ef8103bd585c4093359bcedabb8dab5c94b0c415528c5f669a"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch3/review-scheduler/answers.json",
+      "sha256": "06140140ab2815ff4fd9c4a052dca75b8f843607a8c8e52604b04d13faf2a328"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-batch3/review-scheduler/delta-v2.json",
+      "sha256": "72868d574208956d8882fa196ee65a1a16d19d7bc64e0f5ec4d705ca5d049016"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-ultra/content-review-v2.json",
+      "sha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-ultra/repair-v3/final-candidates-manifest.json",
+      "sha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-ultra/repair-v3/peer-delta-comparison-v3.json",
+      "sha256": "d78d192643217b10cfb16bc45d990abe3e788befef2457c4fc2a7e3f3718c7ef"
+    },
+    {
+      "path": "curriculum/reviews/year-final18-20261026/references/work/year-final18-review-astra-ultra/repair-v3/validation-1792995780167.json",
+      "sha256": "b9aca0673f3fbfd5f380c4e5fa51f702df6160ae89e634206b20e8b5a7195570"
+    }
+  ],
+  "audio": [
+    {
+      "id": "expand-w09-listen-1",
+      "audioHash": "79de33359f943a619aa8da9a49a0d75c3acf48fb80f7ce8dcd0fd547fbfec511",
+      "transcriptHash": "c60172acbf87606f660a527bf78ff76fe46fd76cd60afce57be6b6eaa65a0bd7",
+      "configurationHash": "15861c697f33ea76845061fa45d361486c0a006909d7155763763f9848b5d6e3",
+      "independentListeningReviewed": false
+    },
+    {
+      "id": "expand-w21-listen-1",
+      "audioHash": "fb33fe4419aa027fc8e03d775358bfcf95b29cfda8822873e58a5eb4e4432490",
+      "transcriptHash": "212ddc332c0953858532418edd08b402403ebf7f16a4b5ee8a96fcd7d1614843",
+      "configurationHash": "51260d460422032053401bee19db4b22cd9e35475015f7117f854e6810566ae7",
+      "independentListeningReviewed": false
+    },
+    {
+      "id": "expand-w34-listen-1",
+      "audioHash": "73135aa7cf8a79aec821200f6de622e6b27b5f42c1ec0309aaf5d09a88823057",
+      "transcriptHash": "4a5d86a80f76af53549d46eefc98ddeb38621a54d84b32f550d0adfbc173e0eb",
+      "configurationHash": "a9ef4573dc55111674911e1c92b2a99967e8d7fd799fad826e1e4ea7edd88621",
+      "independentListeningReviewed": false
+    },
+    {
+      "id": "expand-w39-listen-1",
+      "audioHash": "c044b323021f49c9c0c23995cfa8cedd2d6627fa6633c0ab6fc61e57b0f157d8",
+      "transcriptHash": "adf948ef34f40a81df0237cf3a3bfb50e694c118ef260604db6ecf8af949efa8",
+      "configurationHash": "91a88e23919c07e3ddd2e08177fbf1369b0b374d86b075ca8a0ecfc0ff02c9fd",
+      "independentListeningReviewed": false
+    },
+    {
+      "id": "expand-w40-listen-1",
+      "audioHash": "dca4eb1c46d7461dc70b7e8f59fe84c855c16650d6981824bd9e571e4e3fc643",
+      "transcriptHash": "e14089f78c022d9378f92e18a06810d3ed5c4a3d28ea312a4f117476356624b7",
+      "configurationHash": "e5504a352601f7dab3e942174005f46674a7c6bde46a9c9399154971071ebf8a",
+      "independentListeningReviewed": false
+    },
+    {
+      "id": "expand-w43-listen-1",
+      "audioHash": "d80b104c971219d6ff9f2865363c5ae296eb142f4bc14361564a61c6c5704da4",
+      "transcriptHash": "dc45623630e248fb6b88420bd4de23e82d0f1191d7b9c79d8b167354853745a8",
+      "configurationHash": "73c2f55aefd11dabd6b3d7d937a9d0afe314e9dfea1e00a0384d9f05c45a051d",
+      "independentListeningReviewed": false
+    }
+  ],
+  "questions": 322,
+  "ordinaryPracticeOnly": true,
+  "activationChanged": false,
+  "learnerDataRead": false,
+  "learnerDataChanged": false
+}

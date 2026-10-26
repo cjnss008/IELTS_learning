@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-15-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-15",
+  "sourceVersion": "1",
+  "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+  "sourceContentHash": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+  "exposureGroup": "public-source:voa-l1-15",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What do Anna and her friends enjoy doing outside during lunch?",
+      "evidence": "But the weather is beautiful and people-watching is fun!",
+      "explanation": "people-watching 指观察来往的人。这里明确说天气好、观察行人很有趣；没有说午休时玩桌游或买衣服，不能只凭常见午休活动来选。",
+      "answers": [
+        "Watching people."
+      ],
+      "evidenceOffsets": {
+        "start": 640,
+        "end": 696,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Watching people.",
+        "Playing board games.",
+        "Shopping for clothes."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "But the weather is beautiful and people-watching is fun!",
+          "start": 640,
+          "end": 696
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "How does Anna describe her own eyes? Write ONE WORD for the colour.",
+      "maxWords": 1,
+      "evidence": "I have blue eyes.",
+      "explanation": "Anna 的 I 指她自己，她说自己的眼睛是 blue。前面的 brown eyes 说的是 Keyana 和 Ashley；要分清同一句里不同人的指代。题目要一个颜色词，不加 eyes。",
+      "answers": [
+        "blue"
+      ],
+      "evidenceOffsets": {
+        "start": 943,
+        "end": 960,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "I have blue eyes.",
+          "start": 943,
+          "end": 960
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which two women have curly hair?",
+      "evidence": "Keyana and I have curly hair.",
+      "explanation": "这句是 Anna 说的，所以 I 指 Anna，Keyana and I 就是 Keyana 和 Anna。Ashley 的头发是 straight；Caty 后来也被描述为 straight, light hair。",
+      "answers": [
+        "Anna and Keyana."
+      ],
+      "evidenceOffsets": {
+        "start": 1055,
+        "end": 1084,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Ashley and Caty.",
+        "Anna and Keyana.",
+        "Anna and Ashley."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Keyana and I have curly hair.",
+          "start": 1055,
+          "end": 1084
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Anna stay outside after Ashley says she has to go?",
+      "evidence": "I still have time. And this sun feels so good!",
+      "explanation": "Anna 给出的理由是自己还有时间，而且阳光很舒服。对话没有说老板取消工作或她在等公交车，不能把猜测当成原文信息。",
+      "answers": [
+        "She says she still has time."
+      ],
+      "evidenceOffsets": {
+        "start": 1291,
+        "end": 1337,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She says she still has time.",
+        "Her boss has cancelled work.",
+        "She is waiting for a bus."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I still have time. And this sun feels so good!",
+          "start": 1291,
+          "end": 1337
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What object does Anna say she is looking for behind the bench? Write ONE WORD.",
+      "maxWords": 1,
+      "evidence": "stick. Here it is.",
+      "explanation": "被老板发现后，Anna 说自己在找 stick，并接着说 Here it is。题目问她说出的物品，不是她躲的位置 bench，也不是她实际在做的 people-watching。",
+      "answers": [
+        "stick"
+      ],
+      "evidenceOffsets": {
+        "start": 1833,
+        "end": 1851,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "stick. Here it is.",
+          "start": 1833,
+          "end": 1851
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Ms. Weaver suggest after finding Anna?",
+      "evidence": "No need to hurry. I love people-watching too! Let’s sit!",
+      "explanation": "No need to hurry 表示不必急着走，Let’s sit 是邀请一起坐下；她也喜欢观察行人。Anna 原先担心被催回去，但老板实际说的话与这个担心不同。",
+      "answers": [
+        "Sitting down together to watch people."
+      ],
+      "evidenceOffsets": {
+        "start": 1925,
+        "end": 1981,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Buying lunch for Ashley.",
+        "Sitting down together to watch people.",
+        "Returning to the office immediately."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "No need to hurry. I love people-watching too! Let’s sit!",
+          "start": 1925,
+          "end": 1981
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "8f281042d6d67cadd6182888a81dc61d164292798ef158c6dd4ea219aa96948e",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

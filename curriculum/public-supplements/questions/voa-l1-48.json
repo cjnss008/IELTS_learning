@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-48-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-48",
+  "sourceVersion": "1",
+  "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+  "sourceContentHash": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+  "exposureGroup": "public-source:voa-l1-48",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where has Jean just arrived from?",
+      "options": [
+        "New York.",
+        "Boston.",
+        "Chicago."
+      ],
+      "answers": [
+        "Boston."
+      ],
+      "evidence": "I’ve just flown in from Boston.",
+      "explanation": "Jean用have just flown in from说明刚乘飞机从Boston到来。题目问出发地，不是她现在所在的Washington, D.C.，也没有要求根据姓名推断家乡。其他城市虽可能是旅行地点，但不是这里说出的信息。",
+      "evidenceOffsets": {
+        "start": 306,
+        "end": 337,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I’ve just flown in from Boston.",
+          "start": 306,
+          "end": 337
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What kind of museum does Jean say she wants to see?",
+      "options": [
+        "An unusual museum.",
+        "Only a military museum.",
+        "A museum she visits every week."
+      ],
+      "answers": [
+        "An unusual museum."
+      ],
+      "evidence": "I want to see an unusual museum.",
+      "explanation": "Jean明确说想看an unusual museum，重点是不同寻常、有特色。她没有限定必须是军事博物馆；她刚到这个城市，也没有说每周都去同一家。不要用Anna随后建议的具体主题替代Jean最先给出的总体要求。",
+      "evidenceOffsets": {
+        "start": 820,
+        "end": 852,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I want to see an unusual museum.",
+          "start": 820,
+          "end": 852
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is new to Jean about the Sculpture Garden?",
+      "options": [
+        "She has never heard the word garden.",
+        "She has never visited Washington before this conversation.",
+        "She has never seen a garden containing sculptures."
+      ],
+      "answers": [
+        "She has never seen a garden containing sculptures."
+      ],
+      "evidence": "I have never seen a garden of sculptures!",
+      "explanation": "Jean说never seen a garden of sculptures，未体验的是“摆放雕塑的花园”这一组合。不能扩大为从未听过garden这个词；她是否曾来过华盛顿也不是这句现在完成时所说明的内容。",
+      "evidenceOffsets": {
+        "start": 962,
+        "end": 1003,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I have never seen a garden of sculptures!",
+          "start": 962,
+          "end": 1003
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How does Anna describe the Museum of the American Indian?",
+      "options": [
+        "Very crowded.",
+        "Very peaceful.",
+        "Very noisy."
+      ],
+      "answers": [
+        "Very peaceful."
+      ],
+      "evidence": "I’ve visited that museum many times. It is very peaceful.",
+      "explanation": "Anna先说明多次参观过that museum，再用peaceful形容它。指代承接前面提到的Museum of the American Indian。crowded和noisy不是她给出的评价；不能把城市常见印象带入具体台词。",
+      "evidenceOffsets": {
+        "start": 1091,
+        "end": 1148,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I’ve visited that museum many times. It is very peaceful.",
+          "start": 1091,
+          "end": 1148
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why is Anna familiar with farm animals but not zoo animals?",
+      "options": [
+        "She grew up on a farm and has never visited a zoo.",
+        "She works at a zoo but avoids the animal areas.",
+        "She has only lived in Washington for one day."
+      ],
+      "answers": [
+        "She grew up on a farm and has never visited a zoo."
+      ],
+      "evidence": "Anna: I've never been to D.C.’s zoo. I've never been to any zoos!\n\nJean: You have never seen zoo animals?\n\nAnna: I grew up on a farm, Jean. I've known farm animals my whole life.",
+      "explanation": "Anna一方面说从没去过任何动物园，另一方面说从小在农场长大、一直熟悉农场动物。两部分共同解释经验差异。她住在华盛顿已超过一年，不是一天，也没有说自己在动物园工作。",
+      "evidenceOffsets": {
+        "start": 1758,
+        "end": 1936,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I've never been to D.C.’s zoo. I've never been to any zoos!",
+          "start": 1764,
+          "end": 1823
+        },
+        {
+          "quote": "I grew up on a farm, Jean. I've known farm animals my whole life.",
+          "start": 1871,
+          "end": 1936
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Anna say the tourist helped her do?",
+      "options": [
+        "Move from the farm to Washington.",
+        "Find a job at a museum.",
+        "Discover more of the city where she lives."
+      ],
+      "answers": [
+        "Discover more of the city where she lives."
+      ],
+      "evidence": "Jean, the tourist, helped me see more of my city.",
+      "explanation": "结尾Anna总结，游客Jean帮助自己看到本城更多地方。她原本以为很熟悉城市，却从游客那里得知动物园；这里说的是发现与参观经验，不是搬家或获得博物馆工作。",
+      "understanding": "main-outcome",
+      "evidenceOffsets": {
+        "start": 2413,
+        "end": 2462,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Jean, the tourist, helped me see more of my city.",
+          "start": 2413,
+          "end": 2462
+        }
+      ]
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "3eee55af948a3c5217861b82136b098714802bfed968e21bfca346a1977d9bec",
+      "reviewSha256": "aec7c3029c2c496d6084b2ffce972ac6444dc4d82c6bcc28662dc58f04ab116c",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

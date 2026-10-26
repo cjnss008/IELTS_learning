@@ -1,0 +1,401 @@
+{
+  "id": "expand-w25-listen-1",
+  "week": 25,
+  "skill": "listening",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "环境话题与学术阅读定位 · Independent new scenario: a city evaluating public-space proposals",
+  "grammarFocus": "被动语态；因果表达；分词作定语的基础辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "City Council Meeting: Choosing a New Public Space",
+  "instructions": "本材料为原创模拟练习，不是官方雅思试题，也不对应任何官方分数。请先听/读英文材料，再完成10道题。听力部分有5题，阅读部分有5题。听力题请先听录音（或朗读 transcript），注意说话人之间的自然修正和干扰信息。阅读部分有A/B/C三段，请根据段落内容答题。语法部分先看中文讲解，再完成8道新句子的语法题。最后完成口语和写作任务。所有答案和解释在题目后面，请先自己做题。",
+  "transcript": "Maya: Good evening, everyone. I'm Maya Chen, and I'm chairing tonight's meeting about the old train station site. We have three proposals for the empty land. First, can the planning team tell us what was found in the public survey?\n\nDaniel: Yes. Last month, 1,200 residents were asked about the site. Most people said they wanted more green space. A smaller group asked for a sports center. Only a few people wanted shops.\n\nMaya: Thank you, Daniel. So the survey shows strong support for a park. Now, let's hear the proposals. Anna, you're first.\n\nAnna: My group proposes a community garden. The garden would be built by local volunteers. It would include raised beds, a small tool shed, and a seating area. The cost is low because the work would be done by residents. Also, fresh vegetables would be grown and shared.\n\nMaya: Thanks, Anna. Any questions for Anna?\n\nDaniel: I have one. Who would take care of the garden in winter?\n\nAnna: Good question. A volunteer group would manage it. The city would provide water and tools.\n\nMaya: OK. Next is Ben.\n\nBen: Our proposal is a sports center. It would be designed for young people. We would have a basketball court, a climbing wall, and a small café. The building would be paid for by a private company. But the company would also run the café and keep the profits.\n\nMaya: Thank you, Ben. And the third proposal?\n\nPriya: I'm Priya. My team suggests a quiet reading park. It would have trees, benches, and a small open-air library. Books would be donated by residents. The park would be maintained by the city parks department. The cost is medium, but the space would be open to everyone, all day.\n\nMaya: Thank you, Priya. Now, before we vote, I want to remind everyone that the final decision will be made by the city council next month. Public comments can be sent by email until Friday. Thank you for coming.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What did most people in the survey want?",
+      "options": [
+        "More green space",
+        "A sports center",
+        "More shops",
+        "A reading park"
+      ],
+      "answers": [
+        "More green space"
+      ],
+      "explanation": "Daniel 说“Most people said they wanted more green space.”，所以多数人想要更多绿地。",
+      "evidence": "Most people said they wanted more green space."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who would build the community garden?",
+      "options": [
+        "Local volunteers",
+        "A private company",
+        "The city parks department",
+        "The city council"
+      ],
+      "answers": [
+        "Local volunteers"
+      ],
+      "explanation": "Anna 说“The garden would be built by local volunteers.”，花园将由当地志愿者建造。",
+      "evidence": "The garden would be built by local volunteers."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is one problem with Ben's sports center proposal?",
+      "options": [
+        "The company would keep the café profits",
+        "The building would be too small",
+        "The city would pay all costs",
+        "The center would close in winter"
+      ],
+      "answers": [
+        "The company would keep the café profits"
+      ],
+      "explanation": "Ben 说“But the company would also run the café and keep the profits.”，公司会经营咖啡馆并保留利润，这是问题。",
+      "evidence": "But the company would also run the café and keep the profits."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the talk: The reading park would be ______ by the city parks department.",
+      "answers": [
+        "maintained"
+      ],
+      "maxWords": 1,
+      "explanation": "Priya 说“The park would be maintained by the city parks department.”，所以填 maintained。",
+      "evidence": "The park would be maintained by the city parks department."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "When will the final decision be made?",
+      "options": [
+        "Next month",
+        "This Friday",
+        "Last month",
+        "Tonight"
+      ],
+      "answers": [
+        "Next month"
+      ],
+      "explanation": "Maya 说“the final decision will be made by the city council next month.”，最终决定将在下个月做出。",
+      "evidence": "the final decision will be made by the city council next month."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does the survey show?",
+      "options": [
+        "Strong support for a park",
+        "Strong support for shops",
+        "No interest in the site",
+        "Support for a private company"
+      ],
+      "answers": [
+        "Strong support for a park"
+      ],
+      "explanation": "Maya 说“the survey shows strong support for a park.”，调查显示人们强烈支持建公园。",
+      "evidence": "the survey shows strong support for a park."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What would be donated by residents?",
+      "options": [
+        "Books",
+        "Tools",
+        "Water",
+        "Benches"
+      ],
+      "answers": [
+        "Books"
+      ],
+      "explanation": "Priya 说“Books would be donated by residents.”，书将由居民捐赠。",
+      "evidence": "Books would be donated by residents."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How can people send comments?",
+      "options": [
+        "By email",
+        "By phone",
+        "By letter",
+        "In person"
+      ],
+      "answers": [
+        "By email"
+      ],
+      "explanation": "Maya 说“Public comments can be sent by email until Friday.”，公众可以通过电子邮件发送意见。",
+      "evidence": "Public comments can be sent by email until Friday."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "The reading park would be open all day.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Priya 说“the space would be open to everyone, all day.”，所以阅读公园全天开放，答案为 True。",
+      "evidence": "the space would be open to everyone, all day."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "The city council has already voted.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Maya 说“the final decision will be made by the city council next month.”，决定将在下个月做出，所以市议会还没有投票，答案为 False。",
+      "evidence": "the final decision will be made by the city council next month."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "proposal",
+      "meaning": "提议，方案",
+      "example": "Ben: Our proposal is a sports center."
+    },
+    {
+      "word": "survey",
+      "meaning": "调查",
+      "example": "First, can the planning team tell us what was found in the public survey?"
+    },
+    {
+      "word": "volunteer",
+      "meaning": "志愿者",
+      "example": "A volunteer group would manage it."
+    },
+    {
+      "word": "donated",
+      "meaning": "捐赠",
+      "example": "Books would be donated by residents."
+    },
+    {
+      "word": "maintained",
+      "meaning": "维护，保养",
+      "example": "The park would be maintained by the city parks department."
+    },
+    {
+      "word": "profits",
+      "meaning": "利润",
+      "example": "But the company would also run the café and keep the profits."
+    },
+    {
+      "word": "residents",
+      "meaning": "居民",
+      "example": "Last month, 1,200 residents were asked about the site."
+    },
+    {
+      "word": "council",
+      "meaning": "委员会，议会",
+      "example": "the final decision will be made by the city council next month."
+    }
+  ],
+  "grammar": {
+    "title": "被动语态；因果表达；分词作定语的基础辨认",
+    "explanation": "被动语态表示“某物被……”，结构是 be + 过去分词。例如：The garden would be built by volunteers.（花园将被志愿者建造。）这里主语 the garden 是动作的承受者，动作的执行者用 by 引出。因果表达常用 because, so, therefore 等词连接原因和结果。例如：The cost is low because the work would be done by residents.（成本低，因为工作将由居民完成。）分词作定语是用分词修饰名词，基础辨认如 a reading park（一个阅读公园），其中 reading 说明 park 的用途；the empty land（空地）中 empty 是形容词。注意：被动语态强调动作承受者；因果表达说明原因和结果；分词作定语放在名词前或后修饰名词。",
+    "example": "The garden would be built by local volunteers.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The new library will be opened next week.",
+          "The new library will open by the mayor next week.",
+          "The new library will be open by the mayor next week.",
+          "The new library opens by the mayor next week."
+        ],
+        "answers": [
+          "The new library will be opened next week."
+        ],
+        "explanation": "被动语态结构是 will be + 过去分词，所以“The new library will be opened next week.”正确。",
+        "evidence": "The garden would be built by local volunteers."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The trees were planted by students last spring.",
+          "The trees planted by students last spring.",
+          "The trees were plant by students last spring.",
+          "The trees was planted by students last spring."
+        ],
+        "answers": [
+          "The trees were planted by students last spring."
+        ],
+        "explanation": "被动语态过去式是 were + 过去分词，主语 trees 是复数，所以用 were planted。",
+        "evidence": "The garden would be built by local volunteers."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The road is closed because there is heavy snow.",
+          "The road is closed because of there is heavy snow.",
+          "The road is closed so there is heavy snow.",
+          "The road is closed because heavy snow is."
+        ],
+        "answers": [
+          "The road is closed because there is heavy snow."
+        ],
+        "explanation": "because 后面接句子，表示原因，所以“because there is heavy snow”正确。",
+        "evidence": "The cost is low because the work would be done by residents."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The park was designed by a famous artist.",
+          "The park designed by a famous artist.",
+          "The park was design by a famous artist.",
+          "The park were designed by a famous artist."
+        ],
+        "answers": [
+          "The park was designed by a famous artist."
+        ],
+        "explanation": "被动语态单数过去式是 was + 过去分词，所以用 was designed。",
+        "evidence": "The garden would be built by local volunteers."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The meeting was cancelled because the manager was ill.",
+          "The meeting was cancelled because of the manager was ill.",
+          "The meeting was cancelled so the manager was ill.",
+          "The meeting was cancelled because the manager ill."
+        ],
+        "answers": [
+          "The meeting was cancelled because the manager was ill."
+        ],
+        "explanation": "because 后接完整句子，说明原因，所以“because the manager was ill”正确。",
+        "evidence": "The cost is low because the work would be done by residents."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The broken window was fixed by a worker.",
+          "The window broken was fixed by a worker.",
+          "The broken window fixed by a worker.",
+          "The window was broke by a worker."
+        ],
+        "answers": [
+          "The broken window was fixed by a worker."
+        ],
+        "explanation": "broken 是过去分词作定语修饰 window，被动语态是 was fixed，所以“The broken window was fixed by a worker.”正确。",
+        "evidence": "The garden would be built by local volunteers."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The swimming pool is cleaned every morning.",
+          "The swimming pool cleans every morning.",
+          "The swimming pool is clean every morning by someone.",
+          "The swimming pool cleaned every morning."
+        ],
+        "answers": [
+          "The swimming pool is cleaned every morning."
+        ],
+        "explanation": "被动语态一般现在时是 is + 过去分词，swimming 是分词作定语修饰 pool，所以“The swimming pool is cleaned every morning.”正确。",
+        "evidence": "The park would be maintained by the city parks department."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The new rules were explained by the teacher.",
+          "The new rules explained by the teacher.",
+          "The new rules were explain by the teacher.",
+          "The new rules was explained by the teacher."
+        ],
+        "answers": [
+          "The new rules were explained by the teacher."
+        ],
+        "explanation": "主语 rules 是复数，被动语态过去式用 were + 过去分词，所以“The new rules were explained by the teacher.”正确。",
+        "evidence": "The garden would be built by local volunteers."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit public parks?",
+        "What do you like about your city?",
+        "Do you prefer quiet places or busy places?",
+        "Would you like to help in a community garden?"
+      ],
+      "part2": "Describe a public space in your city that you like. You should say: where it is; what people do there; why you like it; and explain how it could be improved.",
+      "part3": [
+        "Why do some people prefer sports centers to parks?",
+        "How can a city pay for new public spaces?",
+        "Should companies run public facilities? Why or why not?",
+        "What makes a public space safe for everyone?"
+      ]
+    },
+    "writing": "Write a short email (about 120 words) to your city council. Suggest one new public space for your neighborhood. Explain why it is needed and who will use it. Use passive voice and because/so at least once."
+  },
+  "rubric": {
+    "taskType": "listening and reading comprehension with grammar focus"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "6174e4946dbee5d695e61ea57ed57eedf91c7042a1a04333ff13b8675d200976"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

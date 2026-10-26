@@ -1,0 +1,349 @@
+{
+  "schema": 1,
+  "sourceId": "usgs-hydroelectric-power",
+  "version": "1",
+  "title": "Hydroelectric Power: How it Works",
+  "kind": "reading",
+  "sourceUrl": "https://www.usgs.gov/water-science-school/science/hydroelectric-power-how-it-works",
+  "provider": "USGS",
+  "sourcePublishedAt": null,
+  "retrievedAt": "2026-10-26",
+  "originalExtract": "So just how do we get electricity from water? Actually, hydroelectric and coal-fired power plants produce electricity using similar mechanisms. In both cases a power source is used to turn a propeller-like piece called a turbine, which then turns a metal shaft in an electric generator, which is the motor that produces electricity. A coal-fired power plant burns coal to heat water and turn it into steam to turn the turbine blades; whereas a [**hydroelectric plant uses falling water**](https://www.usgs.gov/special-topic/water-science-school/science/hydroelectric-power-water-use) to turn the turbine.\n\nThe theory is to build a dam on a large [**river**](https://www.usgs.gov/special-topic/water-science-school/science/rivers-streams-and-creeks) that has a large drop in elevation (there are not many hydroelectric plants in Kansas or Florida). The dam stores lots of water behind it in the [**reservoir**](https://www.usgs.gov/special-topic/water-science-school/science/lakes-and-reservoirs). Near the bottom of the dam wall there is the water intake. Gravity causes it to fall through the penstock inside the dam. At the end of the penstock there is a turbine propellor, which is turned by the moving water. The shaft from the turbine goes up into the generator, which produces the power. Power lines are connected to the generator that carry electricity to our homes and businesses. The water continues past the propellor through the tailrace into the river past the dam. So, it is not a good idea to be playing in the water right below a dam when water is released!\n\n### A turbine and generator produce the electricity\n\nAs to how this generator works, the Corps of Engineers explains it this way:\n\n_\"A hydraulic turbine converts the energy of flowing water into mechanical energy. A hydroelectric generator converts this mechanical energy into electricity. The operation of a generator is based on the principles discovered by Faraday. He found that when a magnet is moved past a conductor, it causes electricity to flow. In a large generator, electromagnets are made by circulating direct current through loops of wire wound around stacks of magnetic steel laminations. These are called field poles, and are mounted on the perimeter of the rotor. The rotor is attached to the turbine shaft, and rotates at a fixed speed. When the rotor turns, it causes the field poles (the electromagnets) to move past the conductors mounted in the stator. This, in turn, causes electricity to flow and a voltage to develop at the generator output terminals.\"_\n\n### Pumped storage: Reusing water for peak electricity demand\n\nDemand for electricity is not \"flat\" and constant. Demand goes up and down during the day, and overnight there is less need for electricity in homes, businesses, and other facilities. For example, here in Atlanta, Georgia at 5:00 PM on a hot August weekend day, you can bet there is a huge demand for electricity to run millions of air conditioners! But, 12 hours later at 5:00 AM .... not so much. Hydroelectric plants are more efficient at providing for peak power demands during short periods than are fossil-fuel and nuclear power plants, and one way of doing that is by using \"pumped storage\", which reuses the same water more than once.\n\nPumped storage is a method of keeping water in reserve for peak period power demands by pumping water that has already flowed through the turbines back up a storage pool above the power plant at a time when customer demand for energy is low, such as during the middle of the night. The water is then allowed to flow back through the turbine-generators at times when demand is high and a heavy load is placed on the system.\n\nThe reservoir acts much like a battery, storing power in the form of water when demands are low and producing maximum power during daily and seasonal peak periods. An [**advantage**](https://www.usgs.gov/special-topic/water-science-school/science/hydroelectric-power-advantages-production-and-usage) of pumped storage is that hydroelectric generating units are able to start up quickly and make rapid adjustments in output. They operate efficiently when used for one hour or several hours. Because pumped storage reservoirs are relatively small, construction costs are generally low compared with conventional hydropower facilities.",
+  "originalExtractFormat": "Original main-article prose selected from preserved official-page Markdown; presentation markup only is removed in text.",
+  "editorialCorrections": [],
+  "rights": {
+    "status": "educational-reuse-permitted",
+    "license": "U.S. Government public-domain information; provider attribution retained",
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "scope": "Original main article text only. No images, image captions, videos, logos, third-party illustrations, outside abstracts, recommended articles or sidebar content are republished.",
+    "attribution": "Original article text source: USGS. Original comprehension questions, learning targets and Chinese explanations: AI-generated project draft; not provider-reviewed or endorsed.",
+    "sourceCredit": [],
+    "policyEvidence": {
+      "path": "work/public-material-evidence-20261026/reading/evidence/rights-usgs-firecrawl.json",
+      "sha256": "c8db7a007403da0896fb06c3169421d37d00fb6bc02ef78d3cb93d67cccb39ab",
+      "quote": "USGS-authored or produced data and information are considered to be in the U.S."
+    },
+    "components": [
+      {
+        "provider": "U.S. Army Corps of Engineers",
+        "scope": "Explicitly attributed generator explanation quoted in the USGS article; no diagrams.",
+        "rightsUrl": "https://www.copyright.gov/title17/92chap1.html#105",
+        "policyEvidence": {
+          "path": "work/public-material-evidence-20261026/reading/evidence/rights-us-government-firecrawl.json",
+          "sha256": "ec31059ea9293b41989078b4c785de34e0e0b145cb29a83506bc27dd99f50477",
+          "quote": "Copyright protection under this title is not available for any work of the United States Government, but the United States Government is not precluded from receiving and holding copyrights transferred to it by assignment, bequest, or otherwise.",
+          "section": "17 U.S.C. 105(a); scope is the explicitly attributed federal-agency text, not third-party media."
+        }
+      }
+    ],
+    "aiOutputAttribution": "Questions/explanations belong to the project AI draft, not to USGS; no provider approval or accuracy guarantee is implied."
+  },
+  "level": {
+    "label": "B2",
+    "calibrated": false,
+    "estimateKind": "AI-content-estimate",
+    "sourceLabel": "USGS original educational/science article",
+    "basis": "主流程具体，但保留完整发电机机理段的机械/电学术语与被动句，整体保守估为B2。"
+  },
+  "phaseIds": [
+    "independent",
+    "academic"
+  ],
+  "prerequisiteCapabilityIds": [
+    "independent:reading"
+  ],
+  "grammarTags": [
+    "embedded-clauses",
+    "passive-voice"
+  ],
+  "grammarEvidence": [
+    {
+      "tag": "embedded-clauses",
+      "quote": "He found that when a magnet is moved past a conductor, it causes electricity to flow.",
+      "explanation": "found 后接that宾语从句，when从句给出磁体被移过导体的条件；主句说明由此产生电流。is moved是被动结构。",
+      "start": 1683,
+      "end": 1768
+    },
+    {
+      "tag": "passive-voice",
+      "quote": "The water is then allowed to flow back through the turbine-generators at times when demand is high and a heavy load is placed on the system.",
+      "explanation": "is allowed to flow是被动许可结构；when从句限定发电的时段，is placed也为被动。注意回流发生在需求高时，抽水发生在需求低时。",
+      "start": 3278,
+      "end": 3418
+    }
+  ],
+  "vocabularyTargets": [
+    {
+      "headword": "turbine",
+      "surface": "turbine",
+      "meaningInContext": "利用水流带动旋转的涡轮机",
+      "essentialVocabularyId": "essential:turbine",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "So just how do we get electricity from water? Actually, hydroelectric and coal-fired power plants produce electricity using similar mechanisms. In both cases a power source is used to turn a propeller-like piece called a turbine, which then turns a metal shaft in an electric generator, which is the motor that produces electricity. A coal-fired power plant burns coal to heat water and turn it into steam to turn the turbine blades; whereas a hydroelectric plant uses falling water to turn the turbine.",
+      "contextOffsets": {
+        "start": 35,
+        "end": 538,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 256,
+        "end": 263,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "generator",
+      "surface": "generator",
+      "meaningInContext": "将机械能转成电能的发电机",
+      "essentialVocabularyId": "essential:generator",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "So just how do we get electricity from water? Actually, hydroelectric and coal-fired power plants produce electricity using similar mechanisms. In both cases a power source is used to turn a propeller-like piece called a turbine, which then turns a metal shaft in an electric generator, which is the motor that produces electricity. A coal-fired power plant burns coal to heat water and turn it into steam to turn the turbine blades; whereas a hydroelectric plant uses falling water to turn the turbine.",
+      "contextOffsets": {
+        "start": 35,
+        "end": 538,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 311,
+        "end": 320,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "conductor",
+      "surface": "conductor",
+      "meaningInContext": "电流可流过的导体",
+      "essentialVocabularyId": "essential:conductor",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "\"A hydraulic turbine converts the energy of flowing water into mechanical energy. A hydroelectric generator converts this mechanical energy into electricity. The operation of a generator is based on the principles discovered by Faraday. He found that when a magnet is moved past a conductor, it causes electricity to flow. In a large generator, electromagnets are made by circulating direct current through loops of wire wound around stacks of magnetic steel laminations. These are called field poles, and are mounted on the perimeter of the rotor. The rotor is attached to the turbine shaft, and rotates at a fixed speed. When the rotor turns, it causes the field poles (the electromagnets) to move past the conductors mounted in the stator. This, in turn, causes electricity to flow and a voltage to develop at the generator output terminals.\"",
+      "contextOffsets": {
+        "start": 1446,
+        "end": 2291,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 1727,
+        "end": 1736,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "reservoir",
+      "surface": "reservoir",
+      "meaningInContext": "大坝后蓄水的水库",
+      "essentialVocabularyId": "essential:reservoir",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "The theory is to build a dam on a large river that has a large drop in elevation (there are not many hydroelectric plants in Kansas or Florida). The dam stores lots of water behind it in the reservoir. Near the bottom of the dam wall there is the water intake. Gravity causes it to fall through the penstock inside the dam. At the end of the penstock there is a turbine propellor, which is turned by the moving water. The shaft from the turbine goes up into the generator, which produces the power. Power lines are connected to the generator that carry electricity to our homes and businesses. The water continues past the propellor through the tailrace into the river past the dam. So, it is not a good idea to be playing in the water right below a dam when water is released!",
+      "contextOffsets": {
+        "start": 540,
+        "end": 1317,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 731,
+        "end": 740,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "gravity",
+      "surface": "Gravity",
+      "meaningInContext": "使水沿落差向下运动的重力",
+      "essentialVocabularyId": "essential:gravity",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "The theory is to build a dam on a large river that has a large drop in elevation (there are not many hydroelectric plants in Kansas or Florida). The dam stores lots of water behind it in the reservoir. Near the bottom of the dam wall there is the water intake. Gravity causes it to fall through the penstock inside the dam. At the end of the penstock there is a turbine propellor, which is turned by the moving water. The shaft from the turbine goes up into the generator, which produces the power. Power lines are connected to the generator that carry electricity to our homes and businesses. The water continues past the propellor through the tailrace into the river past the dam. So, it is not a good idea to be playing in the water right below a dam when water is released!",
+      "contextOffsets": {
+        "start": 540,
+        "end": 1317,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 801,
+        "end": 808,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "efficient",
+      "surface": "efficient",
+      "meaningInContext": "利用设备有效提供出力的",
+      "essentialVocabularyId": "essential:efficient",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "Demand for electricity is not \"flat\" and constant. Demand goes up and down during the day, and overnight there is less need for electricity in homes, businesses, and other facilities. For example, here in Atlanta, Georgia at 5:00 PM on a hot August weekend day, you can bet there is a huge demand for electricity to run millions of air conditioners! But, 12 hours later at 5:00 AM .... not so much. Hydroelectric plants are more efficient at providing for peak power demands during short periods than are fossil-fuel and nuclear power plants, and one way of doing that is by using \"pumped storage\", which reuses the same water more than once.",
+      "contextOffsets": {
+        "start": 2352,
+        "end": 2994,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 2781,
+        "end": 2790,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "constant",
+      "surface": "constant",
+      "meaningInContext": "保持不变的",
+      "essentialVocabularyId": "essential:constant",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "Demand for electricity is not \"flat\" and constant. Demand goes up and down during the day, and overnight there is less need for electricity in homes, businesses, and other facilities. For example, here in Atlanta, Georgia at 5:00 PM on a hot August weekend day, you can bet there is a huge demand for electricity to run millions of air conditioners! But, 12 hours later at 5:00 AM .... not so much. Hydroelectric plants are more efficient at providing for peak power demands during short periods than are fossil-fuel and nuclear power plants, and one way of doing that is by using \"pumped storage\", which reuses the same water more than once.",
+      "contextOffsets": {
+        "start": 2352,
+        "end": 2994,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 2393,
+        "end": 2401,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    },
+    {
+      "headword": "conventional",
+      "surface": "conventional",
+      "meaningInContext": "常规的水电设施",
+      "essentialVocabularyId": "essential:conventional",
+      "lexicalLinkStatus": "target-id-matched; contextual-sense-draft",
+      "contextQuote": "The reservoir acts much like a battery, storing power in the form of water when demands are low and producing maximum power during daily and seasonal peak periods. An advantage of pumped storage is that hydroelectric generating units are able to start up quickly and make rapid adjustments in output. They operate efficiently when used for one hour or several hours. Because pumped storage reservoirs are relatively small, construction costs are generally low compared with conventional hydropower facilities.",
+      "contextOffsets": {
+        "start": 3420,
+        "end": 3929,
+        "unit": "UTF-16-code-unit"
+      },
+      "surfaceOffsets": {
+        "start": 3894,
+        "end": 3906,
+        "unit": "UTF-16-code-unit"
+      },
+      "coverageCredit": false,
+      "learnerKnowledge": "not-evaluated",
+      "meaningEvidence": "author-gloss-pending-independent-review"
+    }
+  ],
+  "studyGuide": {
+    "firstReadQuestion": "What problem does the article explain, and how does the text support its explanation?",
+    "steps": [
+      "Read for the main idea before checking vocabulary.",
+      "Locate exact source evidence for each answer.",
+      "Study the marked grammar and word meanings in their original context.",
+      "Explain one idea in new words; this is practice, not independent assessment."
+    ]
+  },
+  "status": "draft-source; pending-independent-text-and-rights-review",
+  "text": {
+    "path": "materials/public/usgs-hydroelectric-power.txt",
+    "sha256": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+    "format": "plain-text",
+    "speakerLabels": [],
+    "normalization": "Markdown links, heading/emphasis syntax and nonbreaking spaces converted for plain-text display. Original prose and source spelling retained; no unrecorded word repairs."
+  },
+  "contentHash": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+  "metadataPath": "curriculum/public-supplements/usgs-hydroelectric-power.json",
+  "wordCount": 663,
+  "shortPractice": false,
+  "themes": [
+    "renewable-energy",
+    "energy-conversion",
+    "storage",
+    "engineering"
+  ],
+  "source": {
+    "exposureGroup": "public-source:usgs-hydroelectric-power"
+  },
+  "exposureGroup": "public-source:usgs-hydroelectric-power",
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "bandEvidence": false,
+  "completionCredit": false,
+  "audio": {
+    "usage": {
+      "status": "not-supplied-reading-only",
+      "eligibleForPractice": false,
+      "redistributionAllowed": false
+    }
+  },
+  "extractionEvidence": {
+    "path": "work/public-material-evidence-20261026/reading/evidence/usgs-hydroelectric-firecrawl.json",
+    "sha256": "92b6cf8f3cd3143ce3491d3b74e045571aecffadb91deea13a959570e7b85009",
+    "sourceMarkdownSha256": "8679a5d0d3cbce42354dd1c13c4acc03ab66cbc17ed03ca4e3029d02adffcfca",
+    "mainArticleH1Start": 601,
+    "selectedParagraphs": [
+      35,
+      37,
+      38,
+      43,
+      44,
+      45,
+      46,
+      47,
+      51
+    ],
+    "selectedParagraphSha256": [
+      "bf7f6661f3b75b7e65621ed1afcc28193e6845699a2cf64802669c4c53663a39",
+      "749e8b003bfd660a626abaae6b236d7d3dbec21c25eba9ae55f7d2a69fc84e02",
+      "c35db18a5426d7a7703b48b99a730dd245dc6d34611f376631f838e010f4db96",
+      "78a36561ecf0b4f8c90bc20a3d7714ece0db24de0e0c3be3d7bc8007b934a39a",
+      "9f67efc04ffa25800926e5944547dbd2881ff304690e55d94a434ea39e11d9cb",
+      "48f937f2e971600bfa1c6c7b4c550f68ea3edb29c35377829a1801d2dd4daadf",
+      "60aabcae099b6ce96131bc121dee70314a2ec5ff9af949fed3d95cab71ab7924",
+      "54096664dac82af235a79661d2eb1f627927a1c0ceae50eeaab59f14f8778052",
+      "9823e0c203ca429c028112ec78129080484e6725b61b46c8b32376866d8793e9"
+    ],
+    "exclusions": "Site navigation, headings for resource widgets, media assets/credits/captions, repeated publisher teasers, related-source abstracts and non-article sidebars omitted. Explicit source prose that refers to a figure remains verbatim; all questions must be answerable from prose alone."
+  },
+  "releaseGate": {
+    "active": false,
+    "sourceEvidence": "draft-content-extraction",
+    "textEvidence": "author-draft",
+    "blindComparison": "pending",
+    "assessmentEligible": false,
+    "practiceEligibility": "pending-root-review"
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "sourceModifiedAt": null,
+  "sourceDateEvidence": {
+    "value": null,
+    "path": "work/public-material-evidence-20261026/reading/evidence/usgs-hydroelectric-firecrawl.json",
+    "sha256": "92b6cf8f3cd3143ce3491d3b74e045571aecffadb91deea13a959570e7b85009",
+    "note": "No structured publication date supplied in preserved metadata; not inferred from page wording."
+  },
+  "wordCountMethod": "English orthographic tokens: /[A-Za-z]+(?:[’'-][A-Za-z]+)*/g; title included, numerals excluded; not unique known words.",
+  "developmentEvidenceScope": "Raw captures and earlier editorial versions are retained under ignored work/public-material-evidence-20261026/reading; not redistributed as learning content. Published material contains only the permitted selected article prose.",
+  "independentTextReview": {
+    "reviewer": "root-Codex",
+    "sourceTextSha256": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+    "questionComparisonSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+    "grammarEvidence": "All 20 actual quotation/structure explanations read; one explanation refined before publication.",
+    "notHumanExaminer": true,
+    "calibrated": false
+  }
+}

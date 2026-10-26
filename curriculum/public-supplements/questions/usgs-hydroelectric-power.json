@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-usgs-hydroelectric-power-comprehension-v2",
+  "version": "2",
+  "sourceId": "usgs-hydroelectric-power",
+  "sourceVersion": "1",
+  "sourceTextSha256": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+  "sourceContentHash": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+  "exposureGroup": "public-source:usgs-hydroelectric-power",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is shared by coal-fired and hydroelectric power generation in the explanation?",
+      "options": [
+        "Both heat water into steam, but hydro plants draw heat from reservoir pressure.",
+        "Both use rotating machinery, but hydro plants use the generator to drive the turbine.",
+        "Both turn a turbine: coal plants use steam, while hydro plants use falling water.",
+        "Both turn a turbine: coal plants use falling water, while hydro plants use steam."
+      ],
+      "answers": [
+        "Both turn a turbine: coal plants use steam, while hydro plants use falling water."
+      ],
+      "evidence": "So just how do we get electricity from water? Actually, hydroelectric and coal-fired power plants produce electricity using similar mechanisms. In both cases a power source is used to turn a propeller-like piece called a turbine, which then turns a metal shaft in an electric generator, which is the motor that produces electricity. A coal-fired power plant burns coal to heat water and turn it into steam to turn the turbine blades; whereas a hydroelectric plant uses falling water to turn the turbine.",
+      "evidenceOffsets": {
+        "start": 35,
+        "end": 538,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "两者共同用动力使涡轮旋转；燃煤靠蒸汽、水电靠落水。其余项交换动力源、把水库压力当成加热源，或颠倒水轮机带动发电机的能量方向。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does a large drop in river elevation help the dam produce power?",
+      "options": [
+        "Water pressure first turns water into steam inside the dam.",
+        "Gravity moves stored water down through the penstock to the turbine.",
+        "The drop allows the generator to pump the main flow uphill during peak demand.",
+        "Falling water passes through the tailrace before entering the reservoir."
+      ],
+      "answers": [
+        "Gravity moves stored water down through the penstock to the turbine."
+      ],
+      "evidence": "The theory is to build a dam on a large river that has a large drop in elevation (there are not many hydroelectric plants in Kansas or Florida). The dam stores lots of water behind it in the reservoir. Near the bottom of the dam wall there is the water intake. Gravity causes it to fall through the penstock inside the dam. At the end of the penstock there is a turbine propellor, which is turned by the moving water. The shaft from the turbine goes up into the generator, which produces the power. Power lines are connected to the generator that carry electricity to our homes and businesses. The water continues past the propellor through the tailrace into the river past the dam. So, it is not a good idea to be playing in the water right below a dam when water is released!",
+      "evidenceOffsets": {
+        "start": 540,
+        "end": 1317,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文按水库、压力水管、涡轮、尾水渠道的顺序说明重力作用。抽水储能安排在低需求时；tailrace在涡轮之后；水压转蒸汽则混入了燃煤发电的流程。",
+      "understanding": "process-sequence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which sequence matches the energy conversions described in the quoted explanation?",
+      "options": [
+        "Flowing water drives mechanical rotation, which a generator converts into electricity.",
+        "The generator converts flowing water into mechanical energy before the turbine produces electricity.",
+        "The reservoir stores electricity directly, and the turbine transfers it to the power lines.",
+        "The turbine and generator each convert flowing water directly into electricity."
+      ],
+      "answers": [
+        "Flowing water drives mechanical rotation, which a generator converts into electricity."
+      ],
+      "evidence": "\"A hydraulic turbine converts the energy of flowing water into mechanical energy. A hydroelectric generator converts this mechanical energy into electricity. The operation of a generator is based on the principles discovered by Faraday. He found that when a magnet is moved past a conductor, it causes electricity to flow. In a large generator, electromagnets are made by circulating direct current through loops of wire wound around stacks of magnetic steel laminations. These are called field poles, and are mounted on the perimeter of the rotor. The rotor is attached to the turbine shaft, and rotates at a fixed speed. When the rotor turns, it causes the field poles (the electromagnets) to move past the conductors mounted in the stator. This, in turn, causes electricity to flow and a voltage to develop at the generator output terminals.\"",
+      "evidenceOffsets": {
+        "start": 1446,
+        "end": 2291,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "引文分工是水轮机将水流能转为机械能，发电机再将机械能转为电能。错误项分别颠倒角色、把蓄能比喻误读成直接存电，或将两个阶段都说成水能直接变电。",
+      "understanding": "process-sequence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "In what way is the pumped-storage reservoir compared to a battery?",
+      "options": [
+        "It stores water during peak demand and releases it when demand falls overnight.",
+        "It keeps water moving at a constant rate to avoid changes in output.",
+        "It stores water below the plant so the water can be raised when generation is needed.",
+        "It stores water at low demand and supports generation at peak demand."
+      ],
+      "answers": [
+        "It stores water at low demand and supports generation at peak demand."
+      ],
+      "evidence": "The reservoir acts much like a battery, storing power in the form of water when demands are low and producing maximum power during daily and seasonal peak periods. An advantage of pumped storage is that hydroelectric generating units are able to start up quickly and make rapid adjustments in output. They operate efficiently when used for one hour or several hours. Because pumped storage reservoirs are relatively small, construction costs are generally low compared with conventional hydropower facilities.",
+      "evidenceOffsets": {
+        "start": 3420,
+        "end": 3929,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "蓄水池在低需求时抽水储能，高峰时利用落差发电。错误项颠倒负荷时段、忽视可迅速调节出力，或颠倒高位蓄水和发电落差的关系。",
+      "understanding": "analogy",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What passage carries water toward the turbine inside the dam? Write one word from the text.",
+      "maxWords": 1,
+      "answers": [
+        "penstock"
+      ],
+      "evidence": "The theory is to build a dam on a large river that has a large drop in elevation (there are not many hydroelectric plants in Kansas or Florida). The dam stores lots of water behind it in the reservoir. Near the bottom of the dam wall there is the water intake. Gravity causes it to fall through the penstock inside the dam. At the end of the penstock there is a turbine propellor, which is turned by the moving water. The shaft from the turbine goes up into the generator, which produces the power. Power lines are connected to the generator that carry electricity to our homes and businesses. The water continues past the propellor through the tailrace into the river past the dam. So, it is not a good idea to be playing in the water right below a dam when water is released!",
+      "evidenceOffsets": {
+        "start": 540,
+        "end": 1317,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "水先沿penstock到涡轮。tailrace是流过涡轮后回到坝下河流的通道，reservoir是上游蓄水区，不能混作进水通道。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the phrase using no more than three words from the text: water flows back through the turbine-generators at times when ____.",
+      "maxWords": 3,
+      "answers": [
+        "demand is high"
+      ],
+      "evidence": "Pumped storage is a method of keeping water in reserve for peak period power demands by pumping water that has already flowed through the turbines back up a storage pool above the power plant at a time when customer demand for energy is low, such as during the middle of the night. The water is then allowed to flow back through the turbine-generators at times when demand is high and a heavy load is placed on the system.",
+      "evidenceOffsets": {
+        "start": 2996,
+        "end": 3418,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文短语是at times when demand is high，强调放水发电时机；需求低时进行的是把水抽回较高蓄水池，不能把抽水与发电两个时段颠倒。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "767f95701b898d2f0799d83b56c24e77cdff8c50ed74affcc70b015bd6b6d533",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-solar-battery-storage-comprehension-v2",
+  "version": "2",
+  "sourceId": "nasa-solar-battery-storage",
+  "sourceVersion": "1",
+  "sourceTextSha256": "70e9c3ee71573cf87dde21782c90b31a116780e3e2d2de89eef92ae9c1df9bc2",
+  "sourceContentHash": "70e9c3ee71573cf87dde21782c90b31a116780e3e2d2de89eef92ae9c1df9bc2",
+  "exposureGroup": "public-source:nasa-solar-battery-storage",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does the project combine solar generation with battery storage?",
+      "options": [
+        "To convert the solar rating from megawatts to megawatt-hours.",
+        "To reduce solar-output fluctuations by storing generated energy.",
+        "To combine private and federal land under a single solar lease.",
+        "To replace the wind farms when Pacific winds become weaker."
+      ],
+      "answers": [
+        "To reduce solar-output fluctuations by storing generated energy."
+      ],
+      "evidence": "Edwards Sanborn has 875 megawatts of solar capacity, the highest of any facility in the U.S. Additionally, to mitigate intermittency issues, it incorporates a battery energy storage system with 3,300 megawatt-hours of capacity, surpassing the Moss Landing Energy Storage Facility as the largest battery storage system in the world. The project supplies power to California utilities, the city of San Jose, the Clean Power Alliance, and several corporations.",
+      "evidenceOffsets": {
+        "start": 1298,
+        "end": 1755,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "电池储能用于减轻太阳能的间歇性；土地租约、附近风场和两种量纲虽都在文章中，却不是配储能的原因。MW与MWh代表不同物理量，不能当成仅靠改写数字完成的转换。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How did the project use the land at Edwards Air Force Base?",
+      "options": [
+        "A lease enabled development on underused federal land alongside private land.",
+        "Federal land held the batteries while the solar panels were on private land.",
+        "Private land was leased to expand Armstrong’s aircraft operations.",
+        "The federal lease covered the sites already occupied by the nearby wind farms."
+      ],
+      "answers": [
+        "A lease enabled development on underused federal land alongside private land."
+      ],
+      "evidence": "The plant straddles private and federal land, taking advantage of an enhanced use lease program to develop underutilized land on Edwards Air Force Base. Just over half of the panels are located on the base and the rest are on private land. The project has been described as the largest public-private collaboration in U.S. Department of Defense history.",
+      "evidenceOffsets": {
+        "start": 943,
+        "end": 1296,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "该段明示公私土地并用，且略多于半数面板在基地。不能把基地仅分配给电池；Armstrong飞行活动和风场属于文章其他信息，不能移作该太阳能项目租约的用途。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does the difference between 875 megawatts and 3,300 megawatt-hours represent in the article?",
+      "options": [
+        "The first is stored battery energy; the second is solar generating power.",
+        "The first is wind-farm capacity; the second is solar-panel capacity.",
+        "The first is the 2023 total; the second is the capacity added in 2024.",
+        "The first is solar generating power; the second is battery energy-storage capacity."
+      ],
+      "answers": [
+        "The first is solar generating power; the second is battery energy-storage capacity."
+      ],
+      "evidence": "Edwards Sanborn has 875 megawatts of solar capacity, the highest of any facility in the U.S. Additionally, to mitigate intermittency issues, it incorporates a battery energy storage system with 3,300 megawatt-hours of capacity, surpassing the Moss Landing Energy Storage Facility as the largest battery storage system in the world. The project supplies power to California utilities, the city of San Jose, the Clean Power Alliance, and several corporations.",
+      "evidenceOffsets": {
+        "start": 1298,
+        "end": 1755,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文分别标示solar capacity和battery energy storage capacity，MW与MWh的量纲不同。其余项颠倒量、误配给风电与光伏，或把两项属性误读为两个年份的增量。",
+      "understanding": "quantitative-interpretation",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which project timeline is supported by the article?",
+      "options": [
+        "The January 2024 image marks the first date when the facility came online.",
+        "It was fully operational in February 2023, before coming online in January 2024.",
+        "It came online in February 2023 and became fully operational in January 2024.",
+        "It came online in January 2023 and became fully operational in February 2024."
+      ],
+      "answers": [
+        "It came online in February 2023 and became fully operational in January 2024."
+      ],
+      "evidence": "The facility came online in February 2023 and became fully operational in January 2024. The OLI-2 (Operational Land Imager-2) on Landsat 9 captured this image of the project and its nearly 2 million solar panels on January 12, 2024. The site lies approximately 60 miles (100 kilometers) north of Los Angeles, in an area of the U.S. with some of the largest amounts of solar energy reaching the ground.",
+      "evidenceOffsets": {
+        "start": 540,
+        "end": 941,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文两个里程碑依次是2023年2月上线、2024年1月全面运营。错误项交换月份、把拍摄日期当上线，或颠倒上线与全面运行的顺序。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Which mountain pass channels the winds used by nearby wind farms? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "Tehachapi Pass"
+      ],
+      "evidence": "The wind farms are positioned to take advantage of reliable winds, which come off the Pacific Ocean and funnel through Tehachapi Pass. Winds accelerate as they flow through the mountain pass in a phenomenon known as the Venturi effect. Operating in this area, the Alta Wind Energy Center is among the largest onshore wind farms in the U.S.",
+      "evidenceOffsets": {
+        "start": 2083,
+        "end": 2422,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文说来自太平洋的风经Tehachapi Pass形成有利风资源；Mojave是沙漠名称，Los Angeles是城市，均不是问到的山口。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Which instrument captured the project on 12 January 2024? Write no more than two words and/or a number from the text.",
+      "maxWords": 2,
+      "answers": [
+        "OLI-2"
+      ],
+      "evidence": "The facility came online in February 2023 and became fully operational in January 2024. The OLI-2 (Operational Land Imager-2) on Landsat 9 captured this image of the project and its nearly 2 million solar panels on January 12, 2024. The site lies approximately 60 miles (100 kilometers) north of Los Angeles, in an area of the U.S. with some of the largest amounts of solar energy reaching the ground.",
+      "evidenceOffsets": {
+        "start": 540,
+        "end": 941,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "仪器名为OLI-2，Landsat 9是搭载它的卫星，不是仪器的名称。题目所需日期和名字都在正文，不要求观看影像或识别面板。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "5a4ed478872445f9a793a2b7a5d8bc4b932ef8091ec32f6924a646002fbbd14a",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

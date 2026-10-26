@@ -1,25 +1,235 @@
 {
-  "schema": 3,
   "id": "independent-b2-listen-au",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+  "configurationHash": "c1973beae33be2d51d5569822b96080ad897ed1a7fd29de934f4b7f4d4c346ee",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
+    "rate": "+0%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "lecturer": "en-US-AriaNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Lecturer",
+        "role": "lecturer",
+        "sourceStart": 0,
+        "sourceEnd": 10
+      }
+    ],
+    "segments": [
+      {
+        "role": "lecturer",
+        "speaker": "Lecturer",
+        "sourceStart": 10,
+        "sourceEnd": 414,
+        "text": "Today we will use a fictional rain-garden project to examine how performance claims depend on measurement choices. A rain garden is a planted depression designed to receive runoff from nearby hard surfaces. In our example, a council installed one beside a car park. Water enters through a lowered section of kerb, passes through the planted soil and can leave through an overflow when the system is full.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "46c647210291efcc4181f47267670bbd3bb5f7a04c76a664a399f499077d8329",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 416,
+        "sourceEnd": 799,
+        "text": "The project report first stated that the garden could hold forty cubic metres. That was a design-capacity estimate based on the proposed geometry. It was not an observation that forty cubic metres had been retained during a storm. Construction changed the final shape slightly, so the team surveyed the completed basin before using the capacity estimate in a performance calculation.",
+        "boundary": "paragraph",
+        "voice": "en-US-AvaNeural",
+        "textHash": "63b1e0bf3f777fc10d4f4cbd08ac5993fc07bf814e69547bd54decd4a677b5d8",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 801,
+        "sourceEnd": 1308,
+        "text": "For the first three storms, staff recorded the depth of water in the garden at the end of each event. Those readings showed water level at particular moments, but not the total volume of runoff treated. Water could infiltrate while new water entered, meaning that flow over the whole event might exceed the water stored at any single moment. Conversely, a deep pool that remained for a long time could indicate slow drainage rather than successful rapid treatment. Depth alone did not answer every question.",
+        "boundary": "paragraph",
+        "voice": "en-US-AvaNeural",
+        "textHash": "8a7f7afaef4b779464fab1b988aac9cad7179e6766c2c82fa9b1c5d1eb9b1a0e",
+        "pauseBeforeSeconds": 1.2
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 1310,
+        "sourceEnd": 1710,
+        "text": "The engineers added measurements at the inlet and overflow. These helped estimate how much water entered and how much bypassed treatment. They also recorded rainfall near the site. Using a distant airport's rainfall total had seemed convenient, but short storms could differ across the area. A site could appear unusually effective simply because it had received less rain than the reference station.",
+        "boundary": "paragraph",
+        "voice": "en-US-AvaNeural",
+        "textHash": "c025fb460ceec140ab499dd8f1723c6c1d99f303c0821ff6699750eebfd5df47",
+        "pauseBeforeSeconds": 1.2
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 1712,
+        "sourceEnd": 2176,
+        "text": "Maintenance created another source of variation. Leaves sometimes blocked the kerb opening, so less runoff entered the garden. If the report counted only water reaching the inlet sensor, that blockage could disappear from the performance story. The council therefore kept a separate maintenance log and recorded when the entrance was obstructed. A system that treats incoming water well may still perform poorly for the car park if much of the runoff cannot enter.",
+        "boundary": "paragraph",
+        "voice": "en-US-AvaNeural",
+        "textHash": "e82be69e1a5d0182434e05327d0e2e1f03a5ee0637a13120b971649a376c5f7c",
+        "pauseBeforeSeconds": 1.2
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 2178,
+        "sourceEnd": 2723,
+        "text": "Finally, the team distinguished drainage performance from ecological value. They counted plant survival and observed insect visits, but they did not convert those observations into a claim about the health of the whole local ecosystem. The garden might provide several benefits, each requiring suitable evidence. One attractive summary score would be easier to advertise, but it could hide a failure that mattered for a particular purpose. The revised report kept separate indicators and explained which conclusions each indicator could support.",
+        "boundary": "paragraph",
+        "voice": "en-US-AvaNeural",
+        "textHash": "7378221b487a0848f63a23fbceab63a9b81ba2d16a01e87ad1961cfde0741b27",
+        "pauseBeforeSeconds": 1.2
+      }
+    ]
+  },
+  "audioHash": "3d5fa334af36d6fc74da23a0fe6c58feb59440579cf21396791cc3ae0dea985c",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-AvaNeural"
+  ],
+  "roleVoices": {
+    "lecturer": "en-US-AriaNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 165.6425,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-AU",
-  "voices": [
-    "en-AU-NatashaNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "+0%",
-  "transcriptHash": "c9121cdc39a49747d57d6185084ffac5c27e1bb49400d0ca315a411dd30fbf76",
-  "audioHash": "0ef723327ddc39fb75e60c742ac82d28a36f0965f6706f9ce65080db7aff3aec",
-  "configurationHash": "17f1a56902515582cdb5e4a5397fa5ddd984e4a0072606020e94ee514ce53ce4",
-  "durationSeconds": 175.584,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-AU-NatashaNeural",
-      "textHash": "b347a7a65bf0f3352bbd4ac0e350d06c8b525e5c9ca4fc627daa16a483e8e017",
-      "durationSeconds": 175.584
+      "role": "lecturer",
+      "speaker": "Lecturer",
+      "sourceStart": 10,
+      "sourceEnd": 414,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
+      "textHash": "46c647210291efcc4181f47267670bbd3bb5f7a04c76a664a399f499077d8329",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "6e52df02ba994010a23488405c4ef5307d88e63de6d3fd6c0ff559686f49d266",
+      "groupAudioHash": "51c7719a6a3433d335801a75c3845418a4bdbd69b572902d8018523a818aa799",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 24.5075,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 24.3875,
+      "startSeconds": 0.0,
+      "endSeconds": 24.4675,
+      "durationSeconds": 24.4675
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 416,
+      "sourceEnd": 799,
+      "boundary": "paragraph",
+      "voice": "en-US-AvaNeural",
+      "textHash": "63b1e0bf3f777fc10d4f4cbd08ac5993fc07bf814e69547bd54decd4a677b5d8",
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "8514438e1840d3559403d4fd1dbcdbe66fc1fedd8cc6d17d6471fb1835dbb9c2",
+      "groupAudioHash": "8e07ef0f52ff2eb4bc45c3d0f846c3ad98ff74028bd5dcd0919ce0c06fc19036",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 22.32,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 22.2,
+      "startSeconds": 24.9175,
+      "endSeconds": 47.1975,
+      "durationSeconds": 22.279999999999998
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 801,
+      "sourceEnd": 1308,
+      "boundary": "paragraph",
+      "voice": "en-US-AvaNeural",
+      "textHash": "8a7f7afaef4b779464fab1b988aac9cad7179e6766c2c82fa9b1c5d1eb9b1a0e",
+      "pauseBeforeSeconds": 1.2,
+      "groupConfigurationHash": "8514438e1840d3559403d4fd1dbcdbe66fc1fedd8cc6d17d6471fb1835dbb9c2",
+      "groupAudioHash": "8e07ef0f52ff2eb4bc45c3d0f846c3ad98ff74028bd5dcd0919ce0c06fc19036",
+      "groupStartSeconds": 22.5025,
+      "groupEndSeconds": 54.0825,
+      "wordStartSeconds": 22.5625,
+      "wordEndSeconds": 53.9625,
+      "startSeconds": 48.3975,
+      "endSeconds": 79.9775,
+      "durationSeconds": 31.580000000000005
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 1310,
+      "sourceEnd": 1710,
+      "boundary": "paragraph",
+      "voice": "en-US-AvaNeural",
+      "textHash": "c025fb460ceec140ab499dd8f1723c6c1d99f303c0821ff6699750eebfd5df47",
+      "pauseBeforeSeconds": 1.2,
+      "groupConfigurationHash": "8514438e1840d3559403d4fd1dbcdbe66fc1fedd8cc6d17d6471fb1835dbb9c2",
+      "groupAudioHash": "8e07ef0f52ff2eb4bc45c3d0f846c3ad98ff74028bd5dcd0919ce0c06fc19036",
+      "groupStartSeconds": 54.265,
+      "groupEndSeconds": 77.0575,
+      "wordStartSeconds": 54.325,
+      "wordEndSeconds": 76.9375,
+      "startSeconds": 81.1775,
+      "endSeconds": 103.97,
+      "durationSeconds": 22.792500000000004
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 1712,
+      "sourceEnd": 2176,
+      "boundary": "paragraph",
+      "voice": "en-US-AvaNeural",
+      "textHash": "e82be69e1a5d0182434e05327d0e2e1f03a5ee0637a13120b971649a376c5f7c",
+      "pauseBeforeSeconds": 1.2,
+      "groupConfigurationHash": "8514438e1840d3559403d4fd1dbcdbe66fc1fedd8cc6d17d6471fb1835dbb9c2",
+      "groupAudioHash": "8e07ef0f52ff2eb4bc45c3d0f846c3ad98ff74028bd5dcd0919ce0c06fc19036",
+      "groupStartSeconds": 77.24,
+      "groupEndSeconds": 104.3325,
+      "wordStartSeconds": 77.3,
+      "wordEndSeconds": 104.2125,
+      "startSeconds": 105.17,
+      "endSeconds": 132.2625,
+      "durationSeconds": 27.092499999999987
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 2178,
+      "sourceEnd": 2723,
+      "boundary": "paragraph",
+      "voice": "en-US-AvaNeural",
+      "textHash": "7378221b487a0848f63a23fbceab63a9b81ba2d16a01e87ad1961cfde0741b27",
+      "pauseBeforeSeconds": 1.2,
+      "groupConfigurationHash": "8514438e1840d3559403d4fd1dbcdbe66fc1fedd8cc6d17d6471fb1835dbb9c2",
+      "groupAudioHash": "8e07ef0f52ff2eb4bc45c3d0f846c3ad98ff74028bd5dcd0919ce0c06fc19036",
+      "groupStartSeconds": 104.515,
+      "groupEndSeconds": 136.695,
+      "wordStartSeconds": 104.575,
+      "wordEndSeconds": 136.575,
+      "startSeconds": 133.4625,
+      "endSeconds": 165.6425,
+      "durationSeconds": 32.18000000000001
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-b2-listen-au.mp3"
 }

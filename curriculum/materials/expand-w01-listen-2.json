@@ -1,0 +1,352 @@
+{
+  "id": "expand-w01-listen-2",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "pool": "training",
+  "fullTest": false,
+  "type": "social-announcement",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "字母、声音与自我介绍 · Independent new scenario: a visitor help desk with corrected room details",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Visitor Help Desk: Room Corrections",
+  "instructions": "这是为A0初学者设计的模拟听力与语法练习，不是官方雅思考试。请先听/读对话，注意前台如何纠正房间信息。然后完成8道听力题（单选、填空、判断）。接着学习语法讲解（人称代词与be动词），并完成8道独立语法题。最后进行口语和写作迁移练习。所有题目答案均来自原文，填空答案必须与原文完全一致。",
+  "transcript": "Mia: Good morning. I am Mia. Are you a visitor?\nBen: Yes. I am Ben. I am here for Room 12.\nMia: Room 12? No. You are in Room 14.\nBen: Oh. Room 14. Thank you.\nMia: Are you with a friend?\nBen: Yes. We are here. We are two people.\nMia: Good. You are in Room 14. It is on floor two.\nBen: Is it near the stairs?\nMia: Yes, it is. The stairs are there.\nBen: Great. We are happy. Thank you, Mia.\nMia: You are welcome. Have a good day.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Mia say first?",
+      "options": [
+        "Good morning.",
+        "Good evening.",
+        "Good night."
+      ],
+      "answers": [
+        "Good morning."
+      ],
+      "explanation": "Mia开口说“Good morning.”，是早上问候语。不是Good evening（晚上好）或Good night（晚安）。原文没有直接交代Mia的职业，因此不再把help desk person当作必须听出的身份。",
+      "evidence": "Mia: Good morning. I am Mia. Are you a visitor?"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What room does Ben first say?",
+      "options": [
+        "Room 12.",
+        "Room 14.",
+        "Room 2."
+      ],
+      "answers": [
+        "Room 12."
+      ],
+      "explanation": "Ben最初说“I am here for Room 12.”，表示他是来找12号房间的；Mia随后才纠正为另一房间。题目问他最先说出的房号，不是纠正后的房号。",
+      "evidence": "Ben: Yes. I am Ben. I am here for Room 12."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which room does Mia say Ben is in?",
+      "options": [
+        "Room 12.",
+        "Room 4.",
+        "Room 14."
+      ],
+      "answers": [
+        "Room 14."
+      ],
+      "explanation": "Mia明确纠正：“Room 12? No. You are in Room 14.”。题目问Mia所说的房间，应听纠正后的信息；不是Ben最初说的Room 12，也不是Room 4。",
+      "evidence": "Mia: Room 12? No. You are in Room 14."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Ben is with a ______. Use ONE WORD from the conversation.",
+      "maxWords": 1,
+      "answers": [
+        "friend"
+      ],
+      "explanation": "Mia问Ben是否和一位friend一起，Ben紧接着回答“Yes.”，确认了这件事。用录音原词填friend；不能只引用问句就把问题中的信息当作已经证实。",
+      "evidence": "Mia: Are you with a friend?\nBen: Yes. We are here. We are two people."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Complete Ben's words: \"We are ______ people.\" Use ONE WORD.",
+      "answers": [
+        "two"
+      ],
+      "explanation": "Ben说“We are two people.”，所以填two。题目限定Ben所说的we，不把正在与他们交谈的Mia也计入；填原词，不填people或three。",
+      "evidence": "Ben: Yes. We are here. We are two people.",
+      "maxWords": 1
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What floor is the room on?",
+      "options": [
+        "Floor two.",
+        "Floor one.",
+        "Floor four."
+      ],
+      "answers": [
+        "Floor two."
+      ],
+      "explanation": "Mia说14号房间在二楼。",
+      "evidence": "Mia: Good. You are in Room 14. It is on floor two."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is the room near the stairs?",
+      "options": [
+        "No.",
+        "Yes."
+      ],
+      "answers": [
+        "Yes."
+      ],
+      "explanation": "Ben问是否靠近楼梯，Mia回答是的。",
+      "evidence": "Ben: Is it near the stairs?\nMia: Yes, it is. The stairs are there."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is Ben happy at the end?",
+      "options": [
+        "Yes.",
+        "No."
+      ],
+      "answers": [
+        "Yes."
+      ],
+      "explanation": "Ben说他们很高兴。",
+      "evidence": "Ben: Great. We are happy. Thank you, Mia."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "visitor",
+      "meaning": "访客",
+      "example": "Mia: Good morning. I am Mia. Are you a visitor?"
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "Ben: Yes. I am Ben. I am here for Room 12."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "Mia: Are you with a friend?"
+    },
+    {
+      "word": "people",
+      "meaning": "人（复数）",
+      "example": "Ben: Yes. We are here. We are two people."
+    },
+    {
+      "word": "floor",
+      "meaning": "楼层",
+      "example": "Mia: Good. You are in Room 14. It is on floor two."
+    },
+    {
+      "word": "stairs",
+      "meaning": "楼梯",
+      "example": "Ben: Is it near the stairs?"
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "Ben: Great. We are happy. Thank you, Mia."
+    },
+    {
+      "word": "welcome",
+      "meaning": "欢迎（用于回应感谢）",
+      "example": "Mia: You are welcome. Have a good day."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are；句首大写与句号",
+    "explanation": "在英语中，句子的第一个字母要大写，句子末尾要加句号。人称代词 I 表示“我”，you 表示“你”或“你们”。be 动词 am 只和 I 连用（I am），are 和 you 连用（you are）。例如：I am Ben. You are a visitor. 注意：I 永远大写。",
+    "example": "Mia: Good morning. I am Mia. Are you a visitor?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "i am a student.",
+          "I am a student.",
+          "I am a student"
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "句首字母 I 要大写，句末要有句号。",
+        "evidence": "Mia: Good morning. I am Mia. Are you a visitor?"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "you are a teacher.",
+          "You are a teacher.",
+          "You are a teacher"
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "句首字母 Y 要大写，句末要有句号。",
+        "evidence": "Mia: Room 12? No. You are in Room 14."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "Complete the sentence with am or are: I ______ a visitor.",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "I 后面用 am。",
+        "evidence": "Ben: Yes. I am Ben. I am here for Room 12."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Complete the sentence with am or are: You ______ a friend.",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "You 后面用 are。",
+        "evidence": "Mia: Are you with a friend?"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I are happy.",
+          "I am happy.",
+          "i am happy."
+        ],
+        "answers": [
+          "I am happy."
+        ],
+        "explanation": "I 用 am，且 I 要大写。",
+        "evidence": "Ben: Great. We are happy. Thank you, Mia."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You am a visitor.",
+          "You are a visitor.",
+          "you are a visitor."
+        ],
+        "answers": [
+          "You are a visitor."
+        ],
+        "explanation": "You 用 are，句首字母大写。",
+        "evidence": "Mia: Good morning. I am Mia. Are you a visitor?"
+      },
+      {
+        "id": "g7",
+        "type": "fill",
+        "prompt": "Write the correct pronoun: ______ am Ben. (I / You)",
+        "maxWords": 1,
+        "answers": [
+          "I"
+        ],
+        "explanation": "am 前面用 I。",
+        "evidence": "Ben: Yes. I am Ben. I am here for Room 12."
+      },
+      {
+        "id": "g8",
+        "type": "fill",
+        "prompt": "Write the correct pronoun: ______ are a visitor. (I / You)",
+        "maxWords": 1,
+        "answers": [
+          "You"
+        ],
+        "explanation": "are 前面可以用 You。",
+        "evidence": "Mia: Good morning. I am Mia. Are you a visitor?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you happy?",
+        "Are you with a friend?"
+      ],
+      "part2": "Describe yourself at a help desk. You should say: your name, your room number, if you are with a friend, and how you feel.",
+      "part3": [
+        "Is the help desk near the stairs?",
+        "Are you in Room 14?",
+        "Are you two people?",
+        "Is the room on floor two?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself at a help desk. Use I am, You are, and capital letters and periods. Example: I am Li. I am a visitor. You are a friend."
+  },
+  "rubric": {
+    "taskType": "A0 listening and grammar practice (simulated, not official IELTS)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "本地题目修订草稿；原文与音频保持不变，等待独立盲答及解析复核；未经真实学习者难度标定",
+    "model": "deepseek-flash",
+    "contentHash": "a620ab39d8a8b7974b052f5051df6fa86b7274c9f48f419ab78eec4a1092bf4e",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "blindInputSha256": "a7589081c289bca20ddae8f865a40bf102062ffc17713f375a5d0ad01c2c138e",
+      "answerFileSha256": "c8c3d796a5f0fab2a35f14808eab38af2f5d519c87e80c2f4b77182cc9f55e0e",
+      "explanationReviewSha256": "ecdfa18b2ac44904553dd6eaf7481e6f24247e83bc75e7bc32e26e9fad050c1a",
+      "questionCount": 8,
+      "reviewMethod": "Separate author and root blind text answers frozen before reading explanations, with cross-question leak repair and exact antecedent evidence. Existing audio retained; no independent audio audition or learner difficulty calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

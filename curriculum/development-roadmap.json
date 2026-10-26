@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-10-26",
+  "goal": {
+    "exam": "IELTS Academic",
+    "skillTargets": {
+      "listening": 7,
+      "reading": 7,
+      "writing": 7,
+      "speaking": 7
+    },
+    "planningDays": 365,
+    "dailyAvailableMinutes": 360,
+    "vocabularyHeadwords": 8000,
+    "fixedDailyNewWordQuota": false,
+    "historicalRecordsImmutable": true
+  },
+  "plan": "docs/365天课程重构与推进计划.md",
+  "steps": [
+    {
+      "id": "P0",
+      "status": "complete",
+      "deliverable": "现状、需求与计划"
+    },
+    {
+      "id": "P1",
+      "status": "in-progress",
+      "deliverable": "材料/评分快照已接入；旧稿保留；176专项与旧服务隔离兼容通过，最终浏览器验证待完成"
+    },
+    {
+      "id": "P2",
+      "status": "in-progress",
+      "deliverable": "75公开听读版本化任务已接统一课程；351普通源/47旧文章矩阵与其他资料完整适配仍未激活。"
+    },
+    {
+      "id": "P3",
+      "status": "in-progress",
+      "deliverable": "4098字面/明确词形候选，3902未定位；义项、真实复习与8000词负荷闭环待完成。"
+    },
+    {
+      "id": "P4",
+      "status": "in-progress",
+      "deliverable": "公开听读进入每日任务，旧稿/保护日/后台回排已隔离验证；长期档案后端十万条容量通过，前端全历史/待提交/协议切换未启用。"
+    },
+    {
+      "id": "P5",
+      "status": "in-progress",
+      "deliverable": "46公开源/75练习/265去重题，29段原声约83.9分钟；原52篇、剑桥与27章小说的完整适配及评分可靠性仍待完成。"
+    },
+    {
+      "id": "P6",
+      "status": "in-progress",
+      "deliverable": "当前完整自动回归1724/1724通过；静态、课程合同与历史保护隔离验证通过，真实浏览器和长期成效尚未验证。"
+    }
+  ],
+  "limitations": [
+    "没有证据可保证任意学习者在365天后的正式考试成绩",
+    "未实施的计划不得记为已上线",
+    "本轮尚未完成正式浏览器全流程验证",
+    "不访问或覆盖家人正式学习数据作为测试"
+  ],
+  "materialSupplementReport": "docs/公开听读材料扩充进度.md",
+  "archiveIntegrationReport": "docs/长期档案接入进度.md",
+  "courseInventoryReport": "docs/课程总量与目标差距核对.md"
+}

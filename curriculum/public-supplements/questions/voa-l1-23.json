@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-23-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-23",
+  "sourceVersion": "1",
+  "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+  "sourceContentHash": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+  "exposureGroup": "public-source:voa-l1-23",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "When are Anna and Jonathan meeting Ms. Weaver for lunch? Write ONE WORD.",
+      "maxWords": 1,
+      "evidence": "we are meeting Ms. Weaver for lunch at noon, aren’t we?",
+      "explanation": "at noon 表示中午，回答约定吃午饭的时间。11:50 是说话当下的时刻，不是约定见面时间。题目只要一个词，因此填 noon。",
+      "answers": [
+        "noon"
+      ],
+      "evidenceOffsets": {
+        "start": 267,
+        "end": 322,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "we are meeting Ms. Weaver for lunch at noon, aren’t we?",
+          "start": 267,
+          "end": 322
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Where does Ms. Weaver take Anna and Jonathan to eat?",
+      "evidence": "We are eating at ... food trucks!",
+      "explanation": "老板明确更正不是餐馆，而是 food trucks，即餐车。Anna 起初问 restaurant 只是她的猜测，不能把提问当成最终地点。",
+      "answers": [
+        "At food trucks."
+      ],
+      "evidenceOffsets": {
+        "start": 538,
+        "end": 571,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "At food trucks.",
+        "Inside a world-food restaurant.",
+        "In the office kitchen."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "We are eating at ... food trucks!",
+          "start": 538,
+          "end": 571
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does Jonathan change his order?",
+      "evidence": "Oh, you’re out of shrimp. Okay, I’ll have the beef then.",
+      "explanation": "out of shrimp 表示虾已经卖完，因此改点牛肉。这里 out of 不是“走出”，then 连接改点的决定；没有说他没钱或老板只准买甜点。",
+      "answers": [
+        "The first dish he wants is unavailable."
+      ],
+      "evidenceOffsets": {
+        "start": 1094,
+        "end": 1150,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "He is not allowed to spend any money.",
+        "Ms. Weaver tells him to buy only dessert.",
+        "The first dish he wants is unavailable."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Oh, you’re out of shrimp. Okay, I’ll have the beef then.",
+          "start": 1094,
+          "end": 1150
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How many dollars does Jonathan return as change? Write ONE NUMBER.",
+      "maxWords": 1,
+      "evidence": "The dish is $7. So, here is 1, 2, 3 dollars back from your 10.",
+      "explanation": "Jonathan 拿到10美元，菜价7美元，因此找回3美元。7是消费金额、10是原先拿到的钱，题目问 change 即找零，不能混淆。",
+      "answers": [
+        "3"
+      ],
+      "evidenceOffsets": {
+        "start": 1378,
+        "end": 1440,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "The dish is $7. So, here is 1, 2, 3 dollars back from your 10.",
+          "start": 1378,
+          "end": 1440
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Anna do after the first truck has no chicken?",
+      "evidence": "I’ll try another food truck. Thanks!",
+      "explanation": "another 表示另一辆餐车；第一家没鸡肉后，她换一家尝试。后来她确实吃到秘鲁鸡肉，所以并没有放弃午饭。",
+      "answers": [
+        "She tries another truck."
+      ],
+      "evidenceOffsets": {
+        "start": 1278,
+        "end": 1314,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She tries another truck.",
+        "She orders shrimp from Jonathan.",
+        "She decides not to eat lunch."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I’ll try another food truck. Thanks!",
+          "start": 1278,
+          "end": 1314
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What do they decide to buy with the money left over?",
+      "evidence": "We can buy dessert!",
+      "explanation": "老板说还剩8美元，Anna 提议 buy dessert，老板随即说 I’ll buy dessert。题目问剩余款项的用途，不是之前已经买的鸡肉或牛肉。",
+      "answers": [
+        "Dessert."
+      ],
+      "evidenceOffsets": {
+        "start": 1828,
+        "end": 1847,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "A train ticket.",
+        "More office equipment.",
+        "Dessert."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "We can buy dessert!",
+          "start": 1828,
+          "end": 1847
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "f9abb33258fc43bf30ab8c5aa6e88c85a24d88ec1375c0a40cdedfa6e7506481",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

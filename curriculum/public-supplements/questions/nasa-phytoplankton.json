@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-phytoplankton-comprehension-v2",
+  "version": "2",
+  "sourceId": "nasa-phytoplankton",
+  "sourceVersion": "2",
+  "sourceTextSha256": "8d5e0d9933a04ec8ec683dbaaade843fbf15d849e9472d50a92428d7b63a67c9",
+  "sourceContentHash": "8d5e0d9933a04ec8ec683dbaaade843fbf15d849e9472d50a92428d7b63a67c9",
+  "exposureGroup": "public-source:nasa-phytoplankton",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How can the breakdown of a large bloom lead to a dead zone?",
+      "options": [
+        "Biotoxins from living phytoplankton kill animals before decomposition begins.",
+        "Carbon transferred to deep water leaves animals without sunlight at the surface.",
+        "The sinking cells remove a food source for zooplankton rather than consuming oxygen.",
+        "Decomposing bacteria use oxygen in the water until animals can no longer survive."
+      ],
+      "answers": [
+        "Decomposing bacteria use oxygen in the water until animals can no longer survive."
+      ],
+      "evidence": "Phytoplankton cause mass mortality in other ways. In the aftermath of a massive bloom, dead phytoplankton sink to the ocean or lake floor. The bacteria that decompose the phytoplankton deplete the oxygen in the water, suffocating animal life; the result is a dead zone.",
+      "evidenceOffsets": {
+        "start": 2281,
+        "end": 2550,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "本题限定“大量死亡后分解”的途径，原文是分解细菌耗尽氧气。生物毒素是另一途径，碳输送是另一段的作用，食物减少也不是此处死区形成的机制。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why can satellites support global studies when individual phytoplankton are tiny?",
+      "options": [
+        "Satellite sensors identify individual cells from variations in water temperature.",
+        "Satellite sensors infer population size from winds without using ocean colour.",
+        "Large blooms change the light reflected from the ocean surface.",
+        "Satellite sensors infer abundance from oxygen transferred into deep water."
+      ],
+      "answers": [
+        "Large blooms change the light reflected from the ocean surface."
+      ],
+      "evidence": "Although samples taken from the ocean are necessary for some studies, satellites are pivotal for global-scale studies of phytoplankton and their role in climate change. Individual phytoplankton are tiny, but when they bloom by the billions, the high concentrations of chlorophyll and other light-catching pigments change the way the surface reflects light.",
+      "evidenceOffsets": {
+        "start": 3754,
+        "end": 4110,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "卫星读取色素造成的海表反射光变化，不是逐个识别微小生物。深层碳输送、温度和风虽与生态过程有关，均不是该段说明的卫星光学测量依据。",
+      "understanding": "method-and-evidence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why may phytoplankton growth decrease in subtropical seas during summer?",
+      "options": [
+        "Summer storms dilute chlorophyll signals while actual growth remains unchanged.",
+        "Warm surface water limits mixing, and the available surface nutrients are used up.",
+        "Winter mixing continues into summer and pushes plankton below the sunlit layer.",
+        "Monsoon wind reversals remove nutrients from the equatorial upwelling zone."
+      ],
+      "answers": [
+        "Warm surface water limits mixing, and the available surface nutrients are used up."
+      ],
+      "evidence": "In the subtropical oceans, by contrast, phytoplankton populations drop off in summer. As surface waters warm up through the summer, they become very buoyant. With warm, buoyant water on top and cold, dense water below, the water column doesn't mix easily. Phytoplankton use up the nutrients available, and growth falls off until winter storms kick-start mixing.",
+      "evidenceOffsets": {
+        "start": 5553,
+        "end": 5914,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "副热带夏季上暖下冷的分层限制养分补充，原文明确说生长下降。错误项把高纬冬季混合、低纬季风和观测颜色等信息移到这个机制，或把真实生长下降换成测量假象。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does the article show about phytoplankton responses to El Niño?",
+      "options": [
+        "The same event can be linked to lower productivity in one region and higher productivity in another.",
+        "Productivity falls in both the equatorial Pacific and the eastern Indian Ocean.",
+        "Productivity rises in the equatorial Pacific when easterly trade winds weaken.",
+        "Middle-latitude annual changes exceed the ENSO-related changes in the tropical Pacific."
+      ],
+      "answers": [
+        "The same event can be linked to lower productivity in one region and higher productivity in another."
+      ],
+      "evidence": "During EL Niño events, phytoplankton productivity in the equatorial Pacific declines dramatically as the easterly trade winds that normally drive upwelling grow still or even reverse direction. The transition between El Niño and its counterpart, La Niña, is sometimes accompanied by a dramatic surge in phytoplankton productivity as upwelling of nutrient-rich deep water is suddenly renewed.\n\nEl Niño events influence weather patterns beyond the Pacific; in the eastern Indian Ocean around Indonesia, for example, phytoplankton productivity increases during El Niño. Productivity in the Gulf of Mexico and the western sub-tropical Atlantic has increased during El Niño events in the past decade, probably because increased rainfall and runoff delivered more nutrients than usual.",
+      "evidenceOffsets": {
+        "start": 6640,
+        "end": 7419,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "相邻两段给出赤道太平洋下降、印度洋东部等区域增加的对照。其余项把增加地区改成下降、倒置上升流减弱后的变化，或把中高纬与热带年际差异的大小关系反过来。",
+      "understanding": "cross-paragraph-comparison",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which conclusion about long-term changes is most carefully supported?",
+      "options": [
+        "Size shifts may favour larger plankton as warmer surface waters mix more deeply.",
+        "Satellite trends may reflect a shrinking area of low-nutrient ocean gyres.",
+        "Current evidence mainly concerns predictions, with species shifts still awaiting observation.",
+        "Species-size shifts have been observed, but their effect on total productivity is still uncertain."
+      ],
+      "answers": [
+        "Species-size shifts have been observed, but their effect on total productivity is still uncertain."
+      ],
+      "evidence": "Continued warming due to the build up of carbon dioxide is predicted to reduce the amounts of larger phytoplankton such as diatoms, compared to smaller types, like cyanobacteria. Shifts in the relative abundance of larger versus smaller species of phytoplankton have been observed already in places around the world, but whether it will change overall productivity remains uncertain.",
+      "evidenceOffsets": {
+        "start": 9195,
+        "end": 9578,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "文章明示部分物种比例变化已被观察，而总体生产力后果仍不确定。升温导致分层加强而非更深混合；低养分环流区在扩张而非缩小；也不能把已观察的物种变化降格成仅有预测。",
+      "understanding": "certainty-and-qualification",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Which pigment’s concentration is estimated using changes in ocean colour? Write one word from the text.",
+      "maxWords": 1,
+      "answers": [
+        "chlorophyll"
+      ],
+      "evidence": "The water may turn greenish, reddish, or brownish. The chalky scales that cover coccolithophores color the water milky white or bright blue. Scientists use these changes in ocean color to estimate chlorophyll concentration and the biomass of phytoplankton in the ocean.",
+      "evidenceOffsets": {
+        "start": 4112,
+        "end": 4381,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "正文说科学家从海色变化估计chlorophyll concentration及浮游植物生物量。biomass是另一估计量，不是本题要的色素名称；不能填温度或盐度。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "2bd0ca305390e66affd758bea0aef08eaa6fea944d0fb70abd3e195699670ce9",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

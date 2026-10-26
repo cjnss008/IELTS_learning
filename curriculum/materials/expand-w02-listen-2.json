@@ -1,0 +1,356 @@
+{
+  "id": "expand-w02-listen-2",
+  "week": 2,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "social-announcement",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "身边的人与物 · Independent new scenario: a small workplace team and its everyday objects",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Team Table",
+  "instructions": "这是为A1学习者设计的原创模拟听力材料（非官方雅思测试）。先听录音（由两位美音说话者朗读），再完成8道题。听力中会出现自然的口语修正和干扰信息，请仔细分辨。之后学习语法规则并完成8道语法题。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Mia: Hi, Ben. This is our team table. It is small.\nBen: Yes. It is a small table. And this is a cup. It is my cup.\nMia: That is a red cup. Is it your cup?\nBen: No, it is not my cup. It is Anna's cup. My cup is blue.\nMia: Oh, sorry. And that is a bag. Is it your bag?\nBen: No. It is not my bag. It is Anna's bag. She is here.\nMia: Anna, is this your bag?\nAnna: Yes, it is. Thank you. And this is my pen. It is a black pen.\nBen: That is a phone. Is it your phone, Anna?\nAnna: No, it is not my phone. It is Mia's phone. She is at the door.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is small?",
+      "options": [
+        "The table",
+        "The bag",
+        "The phone"
+      ],
+      "answers": [
+        "The table"
+      ],
+      "explanation": "Mia说“This is our team table. It is small.”，所以小的是桌子。",
+      "evidence": "This is our team table. It is small."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What color is Ben's cup?",
+      "options": [
+        "Red",
+        "Blue",
+        "Black"
+      ],
+      "answers": [
+        "Blue"
+      ],
+      "explanation": "Ben说“My cup is blue.”，所以他的杯子是蓝色的。",
+      "evidence": "My cup is blue."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Whose cup is red?",
+      "options": [
+        "Ben's cup",
+        "Anna's cup",
+        "Mia's cup"
+      ],
+      "answers": [
+        "Anna's cup"
+      ],
+      "explanation": "Ben说“It is Anna's cup.”，红色杯子是Anna的。",
+      "evidence": "It is Anna's cup."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Whose bag is it?",
+      "options": [
+        "Ben's bag",
+        "Anna's bag",
+        "Mia's bag"
+      ],
+      "answers": [
+        "Anna's bag"
+      ],
+      "explanation": "Ben说“It is Anna's bag.”，所以包是Anna的。",
+      "evidence": "It is Anna's bag."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Anna's pen is ______.",
+      "maxWords": 2,
+      "answers": [
+        "black"
+      ],
+      "explanation": "Anna说“It is a black pen.”，所以她的钢笔是黑色的。",
+      "evidence": "And this is my pen. It is a black pen."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Whose phone is it?",
+      "options": [
+        "Anna's phone",
+        "Mia's phone",
+        "Ben's phone"
+      ],
+      "answers": [
+        "Mia's phone"
+      ],
+      "explanation": "Anna说“It is Mia's phone.”，所以手机是Mia的。",
+      "evidence": "It is Mia's phone."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Where is Mia?",
+      "options": [
+        "At the door",
+        "At the table",
+        "At the window"
+      ],
+      "answers": [
+        "At the door"
+      ],
+      "explanation": "Anna说“She is at the door.”，Mia在门口。",
+      "evidence": "She is at the door."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does Anna say about the bag?",
+      "options": [
+        "It is her bag.",
+        "It is Ben's bag.",
+        "It is Mia's bag."
+      ],
+      "answers": [
+        "It is her bag."
+      ],
+      "explanation": "Anna说“Yes, it is.”回答Mia的问题“is this your bag?”，所以她说这是她的包。",
+      "evidence": "Anna, is this your bag?\nAnna: Yes, it is"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "team",
+      "meaning": "团队",
+      "example": "This is our team table."
+    },
+    {
+      "word": "table",
+      "meaning": "桌子",
+      "example": "It is a small table."
+    },
+    {
+      "word": "cup",
+      "meaning": "杯子",
+      "example": "And this is a cup."
+    },
+    {
+      "word": "red",
+      "meaning": "红色的",
+      "example": "That is a red cup."
+    },
+    {
+      "word": "blue",
+      "meaning": "蓝色的",
+      "example": "My cup is blue."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "And that is a bag."
+    },
+    {
+      "word": "pen",
+      "meaning": "钢笔",
+      "example": "And this is my pen."
+    },
+    {
+      "word": "phone",
+      "meaning": "电话；手机",
+      "example": "That is a phone."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；单数名词；this / that",
+    "explanation": "英语中，单数名词前常用a或an表示“一个”。辅音音素开头的词前用a（如a cup），元音音素开头的词前用an（如an apple）。指近处的人或物用this，指远处用that。he指男性，she指女性，it指事物或动物。be动词is用于第三人称单数。例如：This is a cup. It is small. That is Anna's bag. She is here.",
+    "example": "This is our team table. It is small.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "This is ______ apple.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple以元音音素开头，用an。",
+        "evidence": "This is an apple."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "______ is my friend. She is a teacher.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "后句用She，说明前句指女性，用She。",
+        "evidence": "She is my friend. She is a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "That is ______ pen. It is black.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "a"
+        ],
+        "explanation": "pen以辅音音素开头，用a。",
+        "evidence": "That is a pen. It is black."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "______ is a dog. It is small.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "dog是动物，用It指代。",
+        "evidence": "It is a dog. It is small."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "This ______ a book.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "主语This是第三人称单数，be动词用is。",
+        "evidence": "This is a book."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "______ is my brother. He is tall.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "He"
+        ],
+        "explanation": "brother是男性，用He。",
+        "evidence": "He is my brother. He is tall."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "That is ______ egg.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "egg以元音音素开头，用an。",
+        "evidence": "That is an egg."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "______ is a cat. It is white.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "cat是动物，用It指代。",
+        "evidence": "It is a cat. It is white."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Do you have a bag?",
+        "What color is your phone?",
+        "Is this your pen?"
+      ],
+      "part2": "Describe a small object on your table. You should say: what it is, what color it is, whose it is, and why you use it.",
+      "part3": [
+        "Do you use a cup every day?",
+        "Is your phone new?",
+        "What is in your bag?",
+        "Do you have a small table at home?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about three objects on your desk. Use this, that, a/an, is, he/she/it. Example: This is a pen. It is blue."
+  },
+  "rubric": {
+    "taskType": "A1 listening and grammar practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "34c1136ca904bd0f55d0977fd1f67d8b6a57eaaf2925f36fea484f440e611bc0"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -70,7 +70,7 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget, evi
         const timer = setTimeout(() => ownController.abort(), timeoutMs);
         const cancel = () => { if (!res.writableEnded) ownController.abort(); }; res.once('close', cancel);
         try {
-          const upstream = await fetchImpl(active.endpoint + '/stt/speech/recognition/conversation/cognitiveservices/v1?language=en-GB&format=detailed', { method:'POST',redirect:'error',signal:ownController.signal, headers:{ 'Ocp-Apim-Subscription-Key':active.apiKey, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', Accept:'application/json', 'Pronunciation-Assessment':Buffer.from(JSON.stringify({ReferenceText:b.reference.trim(),GradingSystem:'HundredMark',Granularity:'Phoneme',Dimension:'Comprehensive',EnableMiscue:'True'})).toString('base64') },body:audio });
+          const upstream = await fetchImpl(active.endpoint + '/stt/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed', { method:'POST',redirect:'error',signal:ownController.signal, headers:{ 'Ocp-Apim-Subscription-Key':active.apiKey, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', Accept:'application/json', 'Pronunciation-Assessment':Buffer.from(JSON.stringify({ReferenceText:b.reference.trim(),GradingSystem:'HundredMark',Granularity:'Phoneme',Dimension:'Comprehensive',EnableMiscue:'True'})).toString('base64') },body:audio });
           if (!upstream.ok) { await upstream.body?.cancel(); send(res, upstream.status === 401 || upstream.status === 403 ? 401 : 502, {ok:false,error:{code:'SPEECH_UPSTREAM',message:upstream.status === 401 || upstream.status === 403 ? '语音服务认证失败，请检查资源地址、密钥和权限。' : '语音服务暂时不可用，请检查配额或稍后重试。'}}); return true; }
           let bytes = 0; const chunks = [];
           for await (const c of upstream.body) { bytes += c.length; if (bytes > 1024 * 1024) throw Error('语音服务返回过大，请缩短参考句。'); chunks.push(c); }
@@ -78,7 +78,7 @@ function createSpeechHandler({ fetchImpl = fetch, timeoutMs = 60000, budget, evi
           const result = JSON.parse(JSON.stringify(normalizeResult(parsed)).split(active.apiKey).join('[已隐藏]'));
           if (ownController.signal.aborted || config !== active) throw Error('评测已取消，请重新连接后再试。');
           const evidenceId = evidenceStore?.add({ kind: 'pronunciation', scope: 'short_reading', provider: 'Azure Speech', result, reference: b.reference.trim().split(active.apiKey).join('[已隐藏]'), durationSeconds: seconds });
-          send(res,200,{ok:true,provider:'Azure Speech',language:'en-GB',result,evidenceId,disclaimer:'0–100 为自动发音诊断，不是雅思口语 Band；噪声和录音设备会影响结果。'});
+          send(res,200,{ok:true,provider:'Azure Speech',language:'en-US',result,evidenceId,disclaimer:'0–100 为自动发音诊断，不是雅思口语 Band；噪声和录音设备会影响结果。'});
         } catch (error) {
           if (res.destroyed) return true;
           // Upstream errors may contain credentials. Never forward arbitrary messages.

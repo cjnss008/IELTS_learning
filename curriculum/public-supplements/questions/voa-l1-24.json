@@ -1,0 +1,234 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-24-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-24",
+  "sourceVersion": "1",
+  "sourceTextSha256": "a248c5974312e4a38b5f1da5b65a3e60747875d0af37bccfebba3b717a31be55",
+  "sourceContentHash": "a248c5974312e4a38b5f1da5b65a3e60747875d0af37bccfebba3b717a31be55",
+  "exposureGroup": "public-source:voa-l1-24",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [
+    {
+      "code": "festival-independent-sound-rights-and-alignment-pending",
+      "blocks": [
+        "listening"
+      ],
+      "status": "unresolved",
+      "basis": "The text identifies a live cultural festival with dancing and activities. Actual Conversation audio has not been independently reviewed for third-party music/performance/background segments; presence or clearance is not assumed.",
+      "resolution": "Keep listening blocked until segment rights and spoken alignment are reviewed, or publish a separately versioned cleared excerpt with new hashes."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Anna writing to her friend at the beginning?",
+      "options": [
+        "To ask for help with a work report.",
+        "To tell her about an enjoyable day.",
+        "To cancel a planned visit."
+      ],
+      "answers": [
+        "To tell her about an enjoyable day."
+      ],
+      "evidence": "Yesterday was the most amazing day. I want to tell my friend back home about it. So, I am writing her a letter!",
+      "explanation": "Anna开头说昨天很精彩，想把经历告诉家乡的朋友，所以写信。对话没有要求朋友帮写工作报告，也没有取消访问计划。so把写信的行为与分享昨天经历的目的联系起来。",
+      "evidenceOffsets": {
+        "start": 6,
+        "end": 117,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Yesterday was the most amazing day. I want to tell my friend back home about it. So, I am writing her a letter!",
+          "start": 6,
+          "end": 117
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why did Anna start walking before she found the festival?",
+      "options": [
+        "She wanted a break from work.",
+        "She was following a written festival map.",
+        "She was looking for a new office."
+      ],
+      "answers": [
+        "She wanted a break from work."
+      ],
+      "evidence": "I was at work. And I wanted a break. So, I walked and walked … and walked.",
+      "explanation": "Anna的回顾旁白明确说当时在工作，想休息一下，因此出去走。后来偶然发现节日，不等于一开始就按地图去找活动；原文也没有找新办公室。这里按叙事先后区分出发原因与后来发现。",
+      "evidenceOffsets": {
+        "start": 345,
+        "end": 419,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I was at work. And I wanted a break. So, I walked and walked … and walked.",
+          "start": 345,
+          "end": 419
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does the festival show each year?",
+      "options": [
+        "Only one permanent exhibition of local offices.",
+        "Only games for professional athletes.",
+        "Different cultures."
+      ],
+      "answers": [
+        "Different cultures."
+      ],
+      "evidence": "Every year the festival shows different cultures.",
+      "explanation": "旁白直接说明节日每年展示不同文化。后面介绍的是那一年所呈现的一种文化，不能把单年的内容扩大为永久不变的全部展览，也不能把游戏活动缩减为只给职业运动员参加。",
+      "evidenceOffsets": {
+        "start": 590,
+        "end": 639,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Every year the festival shows different cultures.",
+          "start": 590,
+          "end": 639
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Which culture is featured in Anna’s account of that year’s festival? Write ONE WORD.",
+      "answers": [
+        "Basque"
+      ],
+      "maxWords": 1,
+      "evidence": "This year one of the cultures was the Basque culture.",
+      "explanation": "This year one of the cultures把范围限定在Anna所回顾的那一年，具体名称是Basque。只填一个名称词，不要加culture；原句也没有说整个节日只展示这一种文化。",
+      "evidenceOffsets": {
+        "start": 640,
+        "end": 693,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "This year one of the cultures was the Basque culture.",
+          "start": 640,
+          "end": 693
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What activity does Anna say she took part in at the festival?",
+      "options": [
+        "Cooking a large meal.",
+        "Performing a traditional dance.",
+        "Building a ship herself."
+      ],
+      "answers": [
+        "Performing a traditional dance."
+      ],
+      "evidence": "At the festival, I danced a traditional Basque dance!",
+      "explanation": "Anna用I danced明确说自己参加了传统舞蹈。她也描述别人做饭、造船，但they与I指不同的动作实施者，不能把她看到的所有活动都算成她亲手完成。",
+      "evidenceOffsets": {
+        "start": 797,
+        "end": 850,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "At the festival, I danced a traditional Basque dance!",
+          "start": 797,
+          "end": 850
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What is the name of the game played with hands and a small ball? Write ONE WORD.",
+      "answers": [
+        "pilota"
+      ],
+      "maxWords": 1,
+      "evidence": "They played a game with their hands and a small ball. It’s a kind of handball. But this game is called pilota.",
+      "explanation": "旁白先说明用手和小球进行，再给出名称pilota。handball是游戏类别，pilota才是题目所要的具体名称。这个词在台词中实际说出，不依靠屏幕上的游戏标签或观看动作来回答。",
+      "evidenceOffsets": {
+        "start": 1076,
+        "end": 1186,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "They played a game with their hands and a small ball. It’s a kind of handball. But this game is called pilota.",
+          "start": 1076,
+          "end": 1186
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "d2db4af93936f76f4e7b95800ddc3def891e2bc3a12558269dd2216336614d0a",
+      "reviewSha256": "6320e35658e12eab801c4fd008d33ddcc3d53e0fc3c98fad5a558d5ec73bfbe1",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

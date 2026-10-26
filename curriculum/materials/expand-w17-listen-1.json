@@ -1,0 +1,357 @@
+{
+  "id": "expand-w17-listen-1",
+  "week": 17,
+  "skill": "listening",
+  "level": "B1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "教育与已发生的变化 · Independent new scenario: changes in adult education access",
+  "grammarFocus": "现在完成时入门；already / yet / since / for；与一般过去时区分。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "New Evening Classes at the Community Centre",
+  "instructions": "这是一份原创的成人英语听力与语法练习材料（模拟材料，非官方雅思考试）。请先听/读对话，完成8道听力理解题；然后学习现在完成时入门规则，完成8道语法题；最后进行口语和写作迁移练习。所有题目选项均为英文，解释为中文。",
+  "transcript": "Maya: Hi Tom. You look happy today.\nTom: Yes! I started a new evening class at the community centre. It's a computer class.\nMaya: Really? When did you start?\nTom: I started last Monday. I have already finished two lessons.\nMaya: Wow, that's fast. Have you done any homework yet?\nTom: No, I haven't done any homework yet. The teacher gives us homework on Friday.\nMaya: How long is the course?\nTom: It's for ten weeks. I have been in the class since last Monday.\nMaya: Is it expensive?\nTom: No, it's free for adults over eighteen. The centre has offered free classes for three years.\nMaya: That's great. I have wanted to learn computers for a long time.\nTom: You should join! The next class is on Wednesday. Have you ever used a computer before?\nMaya: Yes, I have used one at work, but only for email. I haven't used other programs yet.\nTom: That's fine. The teacher is very patient. She has taught here since 2019.\nMaya: Has she given you a book?\nTom: Yes, she has already given us a small book. It's easy to read.\nMaya: Good. I will call the centre tomorrow. I have not called them yet.\nTom: Do it soon. The class is small. Only twelve people have joined so far.\nMaya: OK. Thanks, Tom. See you on Wednesday!\nTom: See you!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What class did Tom start?",
+      "options": [
+        "A computer class",
+        "A cooking class",
+        "An English class"
+      ],
+      "answers": [
+        "A computer class"
+      ],
+      "explanation": "Tom说“I started a new evening class... It's a computer class.”，所以是电脑课。",
+      "evidence": "It's a computer class."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "When did Tom start the class?",
+      "options": [
+        "Last Monday",
+        "Last Friday",
+        "Last Wednesday"
+      ],
+      "answers": [
+        "Last Monday"
+      ],
+      "explanation": "Tom说“I started last Monday.”，开始时间是上周一。",
+      "evidence": "I started last Monday."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Has Tom done any homework yet?",
+      "options": [
+        "Yes, he has.",
+        "No, he hasn't.",
+        "Not given"
+      ],
+      "answers": [
+        "No, he hasn't."
+      ],
+      "explanation": "Tom明确说“No, I haven't done any homework yet.”，所以还没做作业。",
+      "evidence": "No, I haven't done any homework yet."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "How many weeks is the course? (Write one word or a number.)",
+      "maxWords": 2,
+      "answers": [
+        "ten",
+        "10"
+      ],
+      "explanation": "Tom说“It's for ten weeks.”，课程持续十周。",
+      "evidence": "It's for ten weeks."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Who can take the free classes?",
+      "options": [
+        "Adults over eighteen",
+        "Children under eighteen",
+        "Only students"
+      ],
+      "answers": [
+        "Adults over eighteen"
+      ],
+      "explanation": "Tom说“it's free for adults over eighteen.”，十八岁以上的成人可以免费上课。",
+      "evidence": "it's free for adults over eighteen."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How long has the centre offered free classes?",
+      "options": [
+        "For three years",
+        "Since 2019",
+        "For ten weeks"
+      ],
+      "answers": [
+        "For three years"
+      ],
+      "explanation": "Tom说“The centre has offered free classes for three years.”，中心提供免费课程已经三年了。",
+      "evidence": "The centre has offered free classes for three years."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What has Maya used a computer for at work?",
+      "options": [
+        "For email",
+        "For games",
+        "For homework"
+      ],
+      "answers": [
+        "For email"
+      ],
+      "explanation": "Maya说“I have used one at work, but only for email.”，她在工作中只用电脑发邮件。",
+      "evidence": "I have used one at work, but only for email."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How many people have joined the class so far?",
+      "options": [
+        "Twelve",
+        "Ten",
+        "Eighteen"
+      ],
+      "answers": [
+        "Twelve"
+      ],
+      "explanation": "Tom说“Only twelve people have joined so far.”，目前有十二个人加入。",
+      "evidence": "Only twelve people have joined so far."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "community centre",
+      "meaning": "社区中心",
+      "example": "I started a new evening class at the community centre."
+    },
+    {
+      "word": "already",
+      "meaning": "已经",
+      "example": "I have already finished two lessons."
+    },
+    {
+      "word": "yet",
+      "meaning": "还（用于否定和疑问）",
+      "example": "No, I haven't done any homework yet."
+    },
+    {
+      "word": "since",
+      "meaning": "自从",
+      "example": "I have been in the class since last Monday."
+    },
+    {
+      "word": "for",
+      "meaning": "持续（一段时间）",
+      "example": "It's for ten weeks."
+    },
+    {
+      "word": "patient",
+      "meaning": "有耐心的",
+      "example": "The teacher is very patient."
+    },
+    {
+      "word": "join",
+      "meaning": "加入",
+      "example": "You should join!"
+    },
+    {
+      "word": "programs",
+      "meaning": "程序",
+      "example": "I haven't used other programs yet."
+    }
+  ],
+  "grammar": {
+    "title": "现在完成时入门：already / yet / since / for 与一般过去时的区别",
+    "explanation": "现在完成时表示“到现在为止已经发生的事”或“从过去持续到现在的状态”。结构是 have/has + 过去分词。already 用于肯定句，表示“已经”；yet 用于否定句和疑问句，表示“还/已经”；since 后接时间点（如 since 2019），for 后接时间段（如 for three years）。一般过去时只说明过去某个时间发生的事，不强调与现在的联系，常与 last Monday 等具体过去时间连用。例如：I started last Monday.（一般过去时） vs. I have been in the class since last Monday.（现在完成时，持续到现在）。",
+    "example": "I have been in the class since last Monday.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "I ______ my homework. I can watch TV now.",
+        "options": [
+          "have finished",
+          "finished",
+          "finish"
+        ],
+        "answers": [
+          "have finished"
+        ],
+        "explanation": "表示“已经完成”，对现在有影响（可以看电视），用现在完成时 have finished。",
+        "evidence": "I have finished my homework."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "She ______ to London last year.",
+        "options": [
+          "went",
+          "has gone",
+          "goes"
+        ],
+        "answers": [
+          "went"
+        ],
+        "explanation": "有明确过去时间 last year，用一般过去时 went。",
+        "evidence": "She went to London last year."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Have you ______ your lunch yet?",
+        "options": [
+          "eaten",
+          "ate",
+          "eat"
+        ],
+        "answers": [
+          "eaten"
+        ],
+        "explanation": "现在完成时疑问句 Have you + 过去分词，eat 的过去分词是 eaten。",
+        "evidence": "Have you eaten your lunch yet?"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "We have lived here ______ 2015.",
+        "options": [
+          "since",
+          "for",
+          "in"
+        ],
+        "answers": [
+          "since"
+        ],
+        "explanation": "2015 是时间点，用 since。",
+        "evidence": "We have lived here since 2015."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "They have worked in this office ______ five years.",
+        "options": [
+          "for",
+          "since",
+          "from"
+        ],
+        "answers": [
+          "for"
+        ],
+        "explanation": "five years 是时间段，用 for。",
+        "evidence": "They have worked in this office for five years."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "He ______ his keys. He can't open the door.",
+        "options": [
+          "has lost",
+          "lost",
+          "loses"
+        ],
+        "answers": [
+          "has lost"
+        ],
+        "explanation": "表示过去发生的事对现在造成影响（打不开门），用现在完成时 has lost。",
+        "evidence": "He has lost his keys."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "I ______ my grandmother yesterday.",
+        "options": [
+          "visited",
+          "have visited",
+          "visit"
+        ],
+        "answers": [
+          "visited"
+        ],
+        "explanation": "yesterday 是明确过去时间，用一般过去时 visited。",
+        "evidence": "I visited my grandmother yesterday."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "She hasn't called me ______.",
+        "options": [
+          "yet",
+          "already",
+          "since"
+        ],
+        "answers": [
+          "yet"
+        ],
+        "explanation": "否定句中表示“还”，用 yet。",
+        "evidence": "She hasn't called me yet."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like learning new things?",
+        "Have you ever taken an evening class?",
+        "What do you do in your free time?",
+        "Do you use a computer every day?"
+      ],
+      "part2": "Describe a class or course you have taken. You should say: what the class was, when you took it, what you learned, and explain how you felt about it.",
+      "part3": [
+        "Why do adults take evening classes?",
+        "What are the benefits of free education for adults?",
+        "How has learning changed in recent years?",
+        "Should governments offer more free classes? Why?"
+      ]
+    },
+    "writing": "Write a short message (about 80 words) to a friend about a new class you have started. Use the present perfect with already, yet, since, and for. Say what you have done and what you haven't done yet."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice (simulated educational material, not an official IELTS test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "3d3a4c5e2cc9be143cec659e69eb928f4aa55133e40f7b42bb0d358bdd6ee713"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

@@ -1,0 +1,404 @@
+{
+  "id": "expand-w43-listen-2",
+  "week": 43,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时写作：图表概述与关键比较 · Independent new scenario: a panel considering limits of algorithmic decisions",
+  "grammarFocus": "趋势、比较、比例、时态与数据句的准确性。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Algorithmic Decisions Under Review: A Panel Discussion on Limits",
+  "instructions": "本材料为原创模拟练习，不是官方雅思试题，也不代表任何官方分数。请先听/读对话，完成10道听力题；然后学习语法规则并完成8道语法题；最后进行口语和写作迁移练习。所有题目和选项均为英文，解释为中文。答案必须来自原文，填空答案须与原文完全一致。",
+  "transcript": "Maya: Okay, everyone, thanks for coming. This is the weekly review panel for the city's new school-placement algorithm. We have three items: the data we used, the fairness checks, and the appeal process. Let's start with the data. Tomas, you looked at the numbers.\n\nTomas: Yes. The algorithm placed 12,400 students this year. That's about 8 percent more than last year, when it placed 11,500. The main reason is that the city grew. But here's the thing: the share of students who got their first-choice school fell from 71 percent to 64 percent. So more students, but fewer happy ones.\n\nMaya: That's a big drop. Why?\n\nTomas: Two reasons. First, more students applied to the same popular schools. Second, we changed the tie-breaker. Last year, distance from home was the only tie-breaker. This year, we added a sibling rule: if an older brother or sister already attends the school, the younger child gets priority. That helped some families but made competition harder for others.\n\nPriya: Can I jump in? I think the sibling rule is fair in principle, but it has an unintended effect. Families with more children get an advantage. A family with one child has no chance to use it. So the rule favors larger families. Is that what we want?\n\nTomas: That's a good point. But without the sibling rule, we had complaints from parents who wanted their children at the same school. It's a trade-off.\n\nMaya: Let's park that for a moment and look at the fairness checks. Priya, you ran the audit.\n\nPriya: Right. We checked outcomes by income group. For low-income students, the first-choice rate was 58 percent. For middle-income students, it was 66 percent. For high-income students, it was 72 percent. So there is a gap of 14 percentage points between the lowest and highest groups. Last year, the gap was 9 points. So the gap has widened.\n\nMaya: That's concerning. Do we know why?\n\nPriya: Partly because high-income families tend to live closer to popular schools, and distance still matters. Also, they have more resources to navigate the system. But I want to be careful: the algorithm itself doesn't use income. It uses distance, sibling status, and a random number. The gap comes from the inputs, not the code.\n\nTomas: That's an important distinction. The algorithm is neutral, but the data isn't.\n\nMaya: Okay. Now the appeal process. How many appeals did we receive?\n\nPriya: We received 430 appeals. Of those, 290 were about the sibling rule. The rest were about distance calculations. We resolved 380 appeals, and 50 are still open. The average resolution time was 11 days, down from 18 days last year. So we are faster, but we still have a backlog.\n\nMaya: And what about the outcomes of the appeals? Did any students get a different school?\n\nPriya: Yes. In 120 cases, we changed the placement. Most of those were due to data errors, like a wrong address. Only 15 were due to the sibling rule being applied incorrectly. So the system is mostly working, but errors happen.\n\nTomas: I'd like to add one more thing. We should compare this year's algorithm with the old paper-based system. The old system took about six weeks to produce results. The new one takes four days. That's a huge improvement in speed. But speed isn't everything. We need to make sure the faster system is also fair.\n\nMaya: Agreed. So where does that leave us? We have more students, a lower first-choice rate, a wider income gap, and a faster but still imperfect appeal process. What should we recommend?\n\nPriya: I suggest we keep the sibling rule but add a review after one year. And we should improve address data to reduce errors.\n\nTomas: I agree with the review. But I'd also like to see a simulation of what would happen if we removed the sibling rule. That would give us evidence.\n\nMaya: Good. Let's summarize: we will recommend a one-year review of the sibling rule, a data-quality project for addresses, and a simulation of alternative rules. Any objections? No? Then we're done. Thanks, everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many students did the algorithm place this year?",
+      "options": [
+        "11,500",
+        "12,400",
+        "8 percent",
+        "430"
+      ],
+      "answers": [
+        "12,400"
+      ],
+      "explanation": "Tomas 明确说今年安置了 12,400 名学生。11,500 是去年的数字；8 percent 是增长比例；430 是申诉数量。",
+      "evidence": "The algorithm placed 12,400 students this year."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What happened to the share of students who got their first-choice school?",
+      "options": [
+        "It rose from 64 percent to 71 percent.",
+        "It fell from 71 percent to 64 percent.",
+        "It stayed the same.",
+        "It fell from 72 percent to 58 percent."
+      ],
+      "answers": [
+        "It fell from 71 percent to 64 percent."
+      ],
+      "explanation": "Tomas 说第一志愿比例从 71% 下降到 64%。选项 A 方向相反；C 与原文矛盾；D 混淆了收入组数据。",
+      "evidence": "the share of students who got their first-choice school fell from 71 percent to 64 percent."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What new tie-breaker was added this year?",
+      "options": [
+        "A random number",
+        "Distance from home",
+        "A sibling rule",
+        "Income level"
+      ],
+      "answers": [
+        "A sibling rule"
+      ],
+      "explanation": "Tomas 说今年新增了兄弟姐妹规则。距离去年就是唯一决胜规则；随机数是算法使用的因素但不是新增的；收入不是算法使用的因素。",
+      "evidence": "This year, we added a sibling rule"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What was the first-choice rate for low-income students?",
+      "options": [
+        "58 percent",
+        "66 percent",
+        "72 percent",
+        "14 percentage points"
+      ],
+      "answers": [
+        "58 percent"
+      ],
+      "explanation": "Priya 报告低收入学生的第一志愿率为 58%。66% 是中等收入组；72% 是高收入组；14 个百分点是差距。",
+      "evidence": "For low-income students, the first-choice rate was 58 percent."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How did the income gap change compared with last year?",
+      "options": [
+        "It narrowed from 14 points to 9 points.",
+        "It widened from 9 points to 14 points.",
+        "It stayed at 9 points.",
+        "It disappeared."
+      ],
+      "answers": [
+        "It widened from 9 points to 14 points."
+      ],
+      "explanation": "Priya 说去年差距是 9 个百分点，今年是 14 个百分点，所以差距扩大了。A 方向相反；C 与原文矛盾；D 无依据。",
+      "evidence": "So there is a gap of 14 percentage points between the lowest and highest groups. Last year, the gap was 9 points. So the gap has widened."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How many appeals were about the sibling rule? Write the number.",
+      "maxWords": 1,
+      "answers": [
+        "290"
+      ],
+      "explanation": "Priya 说 430 份申诉中有 290 份关于兄弟姐妹规则。答案须与原文数字一致。",
+      "evidence": "Of those, 290 were about the sibling rule."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How many appeals are still open?",
+      "options": [
+        "380",
+        "50",
+        "120",
+        "15"
+      ],
+      "answers": [
+        "50"
+      ],
+      "explanation": "Priya 说已解决 380 份，仍有 50 份未解决。120 是改变安置的案例数；15 是因规则误用而改变的案例数。",
+      "evidence": "We resolved 380 appeals, and 50 are still open."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What was the average resolution time this year?",
+      "options": [
+        "18 days",
+        "11 days",
+        "6 weeks",
+        "4 days"
+      ],
+      "answers": [
+        "11 days"
+      ],
+      "explanation": "Priya 说今年平均解决时间为 11 天，去年是 18 天。6 周是旧纸质系统出结果的时间；4 天是新系统出结果的时间。",
+      "evidence": "The average resolution time was 11 days, down from 18 days last year."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "According to Priya, why is the income gap present?",
+      "options": [
+        "The algorithm uses income directly.",
+        "The inputs, such as distance, create the gap.",
+        "The appeal process is too slow.",
+        "The sibling rule was removed."
+      ],
+      "answers": [
+        "The inputs, such as distance, create the gap."
+      ],
+      "explanation": "Priya 明确说算法本身不使用收入，差距来自输入数据（如距离）。A 与原文矛盾；C 不是她给出的原因；D 与原文矛盾（规则仍在）。",
+      "evidence": "the algorithm itself doesn't use income. It uses distance, sibling status, and a random number. The gap comes from the inputs, not the code."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What does Maya recommend at the end?",
+      "options": [
+        "Remove the sibling rule immediately.",
+        "Keep the sibling rule but review it after one year.",
+        "Stop using the algorithm.",
+        "Increase the number of appeals."
+      ],
+      "answers": [
+        "Keep the sibling rule but review it after one year."
+      ],
+      "explanation": "Maya 总结建议：对兄弟姐妹规则进行一年期审查、地址数据质量项目、替代规则模拟。A 是 Tomas 想模拟的，不是 Maya 的建议；C 和 D 无依据。",
+      "evidence": "we will recommend a one-year review of the sibling rule, a data-quality project for addresses, and a simulation of alternative rules."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "algorithm",
+      "meaning": "算法",
+      "example": "This is the weekly review panel for the city's new school-placement algorithm."
+    },
+    {
+      "word": "tie-breaker",
+      "meaning": "决胜规则；平局时的判定方法",
+      "example": "Last year, distance from home was the only tie-breaker."
+    },
+    {
+      "word": "priority",
+      "meaning": "优先权",
+      "example": "if an older brother or sister already attends the school, the younger child gets priority."
+    },
+    {
+      "word": "unintended",
+      "meaning": "非故意的；意料之外的",
+      "example": "I think the sibling rule is fair in principle, but it has an unintended effect."
+    },
+    {
+      "word": "audit",
+      "meaning": "审计；审查",
+      "example": "Priya, you ran the audit."
+    },
+    {
+      "word": "backlog",
+      "meaning": "积压的工作；待办事项",
+      "example": "So we are faster, but we still have a backlog."
+    },
+    {
+      "word": "simulation",
+      "meaning": "模拟",
+      "example": "I'd also like to see a simulation of what would happen if we removed the sibling rule."
+    },
+    {
+      "word": "recommend",
+      "meaning": "建议；推荐",
+      "example": "What should we recommend?"
+    }
+  ],
+  "grammar": {
+    "title": "趋势、比较、比例、时态与数据句的准确性",
+    "explanation": "在描述数据时，先判断是“趋势变化”还是“静态比较”。趋势变化常用动词 rise/fall/increase/decrease，并搭配 from...to... 表示起点和终点；也可以用“has widened/narrowed”表示差距变化。比较两个数字时，用比较级（higher/lower/faster）或“compared with”。比例用 percent 或 percentage points：percent 表示比例本身，percentage points 表示两个百分比之间的差。时态要准确：过去的数据用一般过去时，当前状态用一般现在时，从过去到现在的变化可用现在完成时。数据句要避免歧义：数字后要说明对象，比较时要说明比较对象。",
+    "example": "the share of students who got their first-choice school fell from 71 percent to 64 percent.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a past change.",
+        "options": [
+          "The first-choice rate falls from 71 percent to 64 percent last year.",
+          "The first-choice rate fell from 71 percent to 64 percent last year.",
+          "The first-choice rate has fell from 71 percent to 64 percent last year.",
+          "The first-choice rate is falling from 71 percent to 64 percent last year."
+        ],
+        "answers": [
+          "The first-choice rate fell from 71 percent to 64 percent last year."
+        ],
+        "explanation": "last year 是明确的过去时间，应用一般过去时 fell。A 用现在时与过去时间矛盾；C 的 has fell 形式错误；D 现在进行时与过去时间不搭。",
+        "evidence": "the share of students who got their first-choice school fell from 71 percent to 64 percent."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a gap that changed.",
+        "options": [
+          "The gap has widened from 9 points to 14 points.",
+          "The gap has widen from 9 points to 14 points.",
+          "The gap have widened from 9 points to 14 points.",
+          "The gap is widened from 9 points to 14 points."
+        ],
+        "answers": [
+          "The gap has widened from 9 points to 14 points."
+        ],
+        "explanation": "现在完成时 has + 过去分词 widened 表示从过去到现在的变化。B 的 widen 不是过去分词；C 主谓不一致；D 被动语态不合适。",
+        "evidence": "So the gap has widened."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct comparison.",
+        "options": [
+          "This year's system is more fast than last year's.",
+          "This year's system is faster than last year's.",
+          "This year's system is fastest than last year's.",
+          "This year's system is more faster than last year's."
+        ],
+        "answers": [
+          "This year's system is faster than last year's."
+        ],
+        "explanation": "fast 的比较级是 faster，不是 more fast；fastest 是最高级，不能与 than 连用；more faster 重复比较。",
+        "evidence": "So we are faster, but we still have a backlog."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct use of percent and percentage points.",
+        "options": [
+          "The gap rose by 5 percent, from 9 percent to 14 percent.",
+          "The gap rose by 5 percentage points, from 9 percent to 14 percent.",
+          "The gap rose by 5 percentage, from 9 percent to 14 percent.",
+          "The gap rose by 5 percents, from 9 percent to 14 percent."
+        ],
+        "answers": [
+          "The gap rose by 5 percentage points, from 9 percent to 14 percent."
+        ],
+        "explanation": "两个百分比之间的差用 percentage points。A 用 percent 表示差值不准确；C 缺少 points；D 形式错误。",
+        "evidence": "So there is a gap of 14 percentage points between the lowest and highest groups. Last year, the gap was 9 points."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence with 'compared with'.",
+        "options": [
+          "Compared with last year, the number of students increased.",
+          "Compared with last year, the number of students increase.",
+          "Comparing with last year, the number of students increased.",
+          "Compared to last year, the number of students are increased."
+        ],
+        "answers": [
+          "Compared with last year, the number of students increased."
+        ],
+        "explanation": "Compared with 是固定分词短语，主句用过去时 increased。B 主谓不一致；C Comparing with 逻辑主语不对；D are increased 时态和语态不当。",
+        "evidence": "That's about 8 percent more than last year, when it placed 11,500."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a current fact.",
+        "options": [
+          "The algorithm uses distance, sibling status, and a random number.",
+          "The algorithm use distance, sibling status, and a random number.",
+          "The algorithm used distance, sibling status, and a random number every year.",
+          "The algorithm is use distance, sibling status, and a random number."
+        ],
+        "answers": [
+          "The algorithm uses distance, sibling status, and a random number."
+        ],
+        "explanation": "描述当前事实用一般现在时，主语 The algorithm 是第三人称单数，动词用 uses。B 主谓不一致；C 与当前事实不符；D 形式错误。",
+        "evidence": "It uses distance, sibling status, and a random number."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a proportion.",
+        "options": [
+          "The first-choice rate was 58 percent for low-income students.",
+          "The first-choice rate was 58 percentage points for low-income students.",
+          "The first-choice rate were 58 percent for low-income students.",
+          "The first-choice rate was 58 percents for low-income students."
+        ],
+        "answers": [
+          "The first-choice rate was 58 percent for low-income students."
+        ],
+        "explanation": "比例本身用 percent，不用 percentage points；rate 是单数，用 was；percent 不加 s。",
+        "evidence": "For low-income students, the first-choice rate was 58 percent."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence about a decrease.",
+        "options": [
+          "The average resolution time decreased from 18 days to 11 days.",
+          "The average resolution time decreased from 18 days to 11 days ago.",
+          "The average resolution time decrease from 18 days to 11 days.",
+          "The average resolution time is decreased from 18 days to 11 days."
+        ],
+        "answers": [
+          "The average resolution time decreased from 18 days to 11 days."
+        ],
+        "explanation": "decreased from...to... 表示从过去某值降到另一值，用一般过去时。B 多出 ago 造成歧义；C 主谓不一致；D 被动语态不自然。",
+        "evidence": "The average resolution time was 11 days, down from 18 days last year."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use apps or websites that make decisions for you?",
+        "What do you think about schools using a computer program to place students?",
+        "Is it important for a system to be fast? Why?",
+        "Have you ever appealed a decision? What happened?"
+      ],
+      "part2": "Describe a time when a rule or system affected you or someone you know. You should say: what the rule or system was; who it affected; what the result was; and explain how you felt about it.",
+      "part3": [
+        "What are the advantages and disadvantages of using algorithms to make decisions?",
+        "How can schools make placement systems fairer?",
+        "Do you think speed is more important than fairness in public services?",
+        "What role should parents play in decisions about school placement?"
+      ]
+    },
+    "writing": "You are a member of a school committee. Write a short report (about 150 words) comparing this year's school-placement results with last year's. Use the data from the panel: 12,400 students placed this year vs 11,500 last year; first-choice rate fell from 71% to 64%; income gap widened from 9 to 14 percentage points; average appeal resolution time fell from 18 to 11 days. Describe the trends, make key comparisons, and recommend one action."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a5209294df0904ddcec27937e56ef896828f9f255276695a957ec19073e44775"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

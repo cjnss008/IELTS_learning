@@ -178,7 +178,7 @@
     const box = el('section', 'oral-practice'), heading = el('h3', '', options.title || '每日口语 · 分段跟读'), intro = el('p', 'oral-practice-intro', '先听示范，再按原文朗读。结束录音后自动进行专业评测和中文说明；每段通过后完成本篇。');
     const progress = el('p', 'oral-practice-progress'), select = el('select'), text = el('p', 'oral-practice-reference'), referenceRow = el('div', 'oral-practice-reference-row');
     select.setAttribute('aria-label', '选择朗读段落'); text.lang = 'en'; parts.forEach((part, i) => { const option = el('option', '', '第' + (i + 1) + '段 / ' + parts.length); option.value = String(i); select.append(option); });
-    const modelButton = button('听本段正确读音（合成示范）', () => demonstrate(parts[index])), stopModel = button('停止示范', () => { modelPlayback.pause(); root.speechSynthesis?.cancel(); });
+    const modelButton = button('听本段正确读音（合成示范，口音见播放提示）', () => demonstrate(parts[index])), stopModel = button('停止示范', () => { modelPlayback.pause(); root.speechSynthesis?.cancel(); });
     referenceRow.append(select, modelButton, stopModel);
     const controls = el('div', 'oral-practice-controls'), startButton = button('开始录音', startRecording), stopButton = button('结束录音并自动评测', stopRecording), cancelButton = button('取消等待', () => cancel()), retryButton = button('重试未完成步骤', retry), clock = el('span', 'oral-practice-clock', '00:00');
     controls.append(startButton, stopButton, cancelButton, retryButton, clock);
@@ -315,7 +315,7 @@
         return typeof entry === 'string' ? { src: entry, reference: text } : entry || null;
       };
       const word = root.IELTSVocabularyAudio?.items?.[exact.toLowerCase().replace(/\s+/g, ' ')];
-      const model = resolveModel(exact) || (word?.audio ? { src: word.audio, reference: exact } : null);
+      const model = resolveModel(exact) || (word?.audio ? { ...word, src: word.audio, reference: exact } : null);
       playback.pause(); modelPlayback.pause(); root.speechSynthesis?.cancel();
       if (model) {
         // Maps contain package-relative files only. Never turn model text or a
@@ -323,17 +323,17 @@
         const src = model.src;
         if (typeof src !== 'string' || !/^audio\/[A-Za-z0-9_./-]+\.(?:mp3|wav|ogg|m4a|webm)$/i.test(src) || src.split('/').includes('..')) { setPhase(phase, '本地示范音路径无效，请更新学习包音频。'); return; }
         root.speechSynthesis?.cancel(); playback.pause(); modelPlayback.pause(); modelPlayback.src = src; modelPlayback.hidden = false;
-        try { await modelPlayback.play(); if (!valid(token)) { modelPlayback.pause(); return; } setPhase(phase, '正在播放本地英文合成示范：' + exact + '。听后再录音比较。'); }
+        try { await modelPlayback.play(); if (!valid(token)) { modelPlayback.pause(); return; } const accent=/^en[-_]US/i.test(model.voice||model.locale||'')?'美式英语合成':/^en[-_]GB/i.test(model.voice||model.locale||'')?'英式英语合成（原文件）':'英文合成（口音按原来源）';setPhase(phase, '正在播放本地'+accent+'示范：' + exact + '。听后再录音比较。'); }
         catch (_) { if (valid(token)) setPhase(phase, '本地示范音未能播放，请检查本地文件和浏览器声音设置，再点击重试。'); }
         return;
       }
       if (typeof options.demonstrate === 'function') { try { await options.demonstrate(exact, { segmentIndex: index }); } catch (_) { if (valid(token)) setPhase(phase, '示范音未能播放，请检查声音输出后重试。'); } return; }
       if (!root.speechSynthesis || !root.SpeechSynthesisUtterance) { setPhase(phase, '当前浏览器没有英文合成示范能力，请在系统安装英语声音后重试。'); return; }
-      let voices = root.speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang));
-      if (!voices.length) { await new Promise(resolve => { const done = () => { root.clearTimeout(wait); root.speechSynthesis.removeEventListener?.('voiceschanged', done); resolve(); }, wait = root.setTimeout(done, 1500); root.speechSynthesis.addEventListener?.('voiceschanged', done, { once: true }); }); voices = root.speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang)); }
-      if (!valid(token)) return; if (!voices.length) { setPhase(phase, '系统未提供英语声音，无法播放正确读音示范。请安装英语语音后重试；本段仍可录音评测。'); return; }
-      root.speechSynthesis.cancel(); const utterance = new root.SpeechSynthesisUtterance(exact); utterance.voice = voices.find(v => /^en-GB$/i.test(v.lang)) || voices[0]; utterance.lang = utterance.voice.lang; utterance.rate = 0.85;
-      utterance.onerror = () => { if (valid(token)) setPhase(phase, '英文合成示范未能完成，请检查声音输出后重试。'); }; root.speechSynthesis.speak(utterance);
+      let voices = root.speechSynthesis.getVoices().filter(v => /^en[-_]US$/i.test(v.lang));
+      if (!voices.length) { await new Promise(resolve => { const done = () => { root.clearTimeout(wait); root.speechSynthesis.removeEventListener?.('voiceschanged', done); resolve(); }, wait = root.setTimeout(done, 1500); root.speechSynthesis.addEventListener?.('voiceschanged', done, { once: true }); }); voices = root.speechSynthesis.getVoices().filter(v => /^en[-_]US$/i.test(v.lang)); }
+      if (!valid(token)) return; if (!voices.length) { setPhase(phase, '系统未提供美式英语（en-US）声音，无法播放美式示范。请安装美国英语语音后重试；不会自动换用英式，本段仍可录音评测。'); return; }
+      root.speechSynthesis.cancel(); const utterance = new root.SpeechSynthesisUtterance(exact); utterance.voice = voices[0]; utterance.lang = 'en-US'; utterance.rate = 0.85;
+      utterance.onerror = () => { if (valid(token)) setPhase(phase, '英文合成示范未能完成，请检查声音输出后重试。'); }; setPhase(phase,'正在播放浏览器美式英语合成示范：'+exact+'。');root.speechSynthesis.speak(utterance);
     }
     select.addEventListener('change', () => { const next = Number(select.value); if (!Number.isInteger(next) || next < 0 || next >= parts.length || next === index) return; cancel(); index = next; currentBlob = works[index]?.blob || null; showPreview(currentBlob); setPhase('idle', '本段' + (results[index]?.overallPass ? '已通过，可回听或重录。' : '等待录音；结束后会自动评测。')); });
     root.addEventListener?.('ielts:profile-changed', profileChanged); root.addEventListener?.('pagehide', destroy);

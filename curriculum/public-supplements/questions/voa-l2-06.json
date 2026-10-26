@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-06-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-06",
+  "sourceVersion": "1",
+  "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+  "sourceContentHash": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+  "exposureGroup": "public-source:voa-l2-06",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is special about the vehicle Anna chooses for the tour?",
+      "options": [
+        "It travels only underground.",
+        "It can travel on roads and on water.",
+        "It travels on water but has no wheels."
+      ],
+      "answers": [
+        "It can travel on roads and on water."
+      ],
+      "evidence": "It’s the famous DC Ducks -- the boat with wheels! We will ride on the road and then sail on the water!",
+      "explanation": "Anna把它叫作有轮子的船，并明确说先在路上行驶、再到水上航行。这个回答不依靠看车辆图像。不是地下交通，也不能只抓住boat这个词就忽略wheels和road。",
+      "evidenceOffsets": {
+        "start": 768,
+        "end": 870,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It’s the famous DC Ducks -- the boat with wheels! We will ride on the road and then sail on the water!",
+          "start": 768,
+          "end": 870
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Anna like hearing Fun Facts during the tour?",
+      "options": [
+        "They make the tour more interesting.",
+        "They make the vehicle travel faster.",
+        "They replace the need to see any landmarks."
+      ],
+      "answers": [
+        "They make the tour more interesting."
+      ],
+      "evidence": "a tour is so much more interesting with Fun Facts, like that one.",
+      "explanation": "Anna明确说有这些趣闻，游览会有趣得多。她没有说趣闻能提高交通速度或替代看地标。这里识别is more interesting这一评价与Fun Facts的关系，而不是根据知识内容自行编造效果。",
+      "evidenceOffsets": {
+        "start": 1157,
+        "end": 1222,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "a tour is so much more interesting with Fun Facts, like that one.",
+          "start": 1157,
+          "end": 1222
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How does Penelope present the idea that the boy is the Captain’s son?",
+      "options": [
+        "As something the boy has directly confirmed.",
+        "As something she already knows about his family.",
+        "As a possible explanation rather than a confirmed fact."
+      ],
+      "answers": [
+        "As a possible explanation rather than a confirmed fact."
+      ],
+      "evidence": "Maybe - maybe he’s the Captain’s son and he helps his dad on tours!",
+      "explanation": "Penelope两次说maybe，说明是在猜一种可能解释。对话没有让男孩确认父子关系，也没有说她本来就认识这家人。读听时需要保留说话人的确定程度，不能把可能性改写成事实。",
+      "understanding": "speaker-uncertainty",
+      "evidenceOffsets": {
+        "start": 1458,
+        "end": 1525,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Maybe - maybe he’s the Captain’s son and he helps his dad on tours!",
+          "start": 1458,
+          "end": 1525
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "On which side does Anna say the Washington Monument is?",
+      "options": [
+        "On the right.",
+        "On the left.",
+        "Directly behind them."
+      ],
+      "answers": [
+        "On the left."
+      ],
+      "evidence": "the Washington Monument is on the left!",
+      "explanation": "Anna亲口用on the left说明方位，所以选左侧；无需借助镜头判断。right和behind都不是她在这一句里说出的关系。题目限定Anna的说法，不根据旅游线路或地图自行推断。",
+      "evidenceOffsets": {
+        "start": 1723,
+        "end": 1762,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "the Washington Monument is on the left!",
+          "start": 1723,
+          "end": 1762
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does the boy say about the bathrooms in his own home?",
+      "options": [
+        "His large family shares only one.",
+        "Every family member has a separate one.",
+        "His home has as many as the White House."
+      ],
+      "answers": [
+        "His large family shares only one."
+      ],
+      "evidence": "I live in a house with my mom, four sisters, two aunts and only one bathroom!",
+      "explanation": "男孩列出妈妈、四个姐妹、两位姨妈后说only one bathroom，说明一大家人共用一间。32间是他说的白宫信息，不是他家的数量，也不是每人各有一间。注意比较对象，避免只记住对话里最大的数字。",
+      "evidenceOffsets": {
+        "start": 2547,
+        "end": 2624,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I live in a house with my mom, four sisters, two aunts and only one bathroom!",
+          "start": 2547,
+          "end": 2624
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What reason does Anna give for offering the boy money?",
+      "options": [
+        "He has asked them to buy a souvenir.",
+        "It is polite to tip a tour guide.",
+        "He has sold them a boat ticket."
+      ],
+      "answers": [
+        "It is polite to tip a tour guide."
+      ],
+      "evidence": "It is polite to tip your tour guide!",
+      "explanation": "Anna把给钱解释为给导游小费的礼貌做法。题目只问她给出的理由，并不替故事确认男孩究竟是不是正式导游。没有说他卖票或要求买纪念品，不能把旅游常见消费补成这里的情节。",
+      "evidenceOffsets": {
+        "start": 2703,
+        "end": 2739,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It is polite to tip your tour guide!",
+          "start": 2703,
+          "end": 2739
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "75e4f9c7276671a6d192522d1d2df0c99387c96246902f19e8f39fc2559509b5",
+      "reviewSha256": "4db7cc2f511d03ced2157d21dea4a57c28932cd6dff2b5720f8938dca660dda0",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

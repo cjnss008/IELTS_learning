@@ -31,7 +31,7 @@ test('oral recording preserves independent short source paragraphs and subdivide
 test('all training speaking references avoid empty label-only recording tasks while retaining source words',()=>{
  const data=require('../assets/curriculum-data.js');
  for(const material of data.materials.filter(m=>m.skill==='speaking'&&m.pool==='training')){
-  const source=data.materials.find(m=>m.id===material.id.replace(/-speaking$/,'')).passage,parts=oral.splitReference(source);
+  const day=data.days.find(d=>d.tasks.some(t=>(t.materialIds||[]).includes(material.id)))?.day,source=require('../assets/course-player.js').modelReadingReference(material,data,day),parts=oral.splitReference(source);assert.ok(source&&parts.length,material.id);
   assert.ok(parts.every(p=>!/^([A-Z])\.?$/.test(p)),material.id);assert.ok(parts.every(p=>p.split(/\s+/).length<=65),material.id);
   assert.equal(parts.join(' ').replace(/\s+/g,' '),source.replace(/\s+/g,' '),material.id);
  }

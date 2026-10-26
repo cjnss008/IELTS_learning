@@ -1,0 +1,386 @@
+{
+  "id": "expand-w23-listen-2",
+  "week": 23,
+  "skill": "listening",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "生活方式与观点支持 · Independent new scenario: a workplace adapting to an energy constraint",
+  "grammarFocus": "原因、结果与让步从句；may / might / can 的语气差别。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Office Energy Challenge",
+  "instructions": "这是为B1–B2成人学习者设计的原创模拟听力材料（非官方雅思测试，也不代表任何分数）。先阅读中文语法讲解，再听/读对话，完成10道题。听力部分有自然的口语修正和干扰信息，答案不会直接读出。所有题目和选项均为英文，解释为中文。建议先做题，再看解释和证据。",
+  "transcript": "Maya: Hi, everyone. Thanks for coming. As you know, the company has a new energy rule. We must cut electricity use by 20 percent this month. I know it's hard, but we can do it.\nTom: Sorry, Maya, can I ask something? Why this month? Is it because of the hot weather?\nMaya: Good question. The main reason is that our energy costs went up a lot last year. So the company wants to save money. Also, the government may give a reward to green offices.\nTom: I see. So if we use less power, we might get some money back?\nMaya: Exactly. But we don't have to do anything dangerous. We can still work comfortably.\nLisa: I have an idea. We could turn off the lights near the windows. The sun is very bright in the afternoon.\nMaya: That's a great idea, Lisa. We can do that. But please don't turn off the lights in the hallway. It's dark there, and people might fall.\nTom: What about the air conditioning? Can we turn it off?\nMaya: Hmm, we may not turn it off completely. It's very hot today. But we can set it to 26 degrees. That saves a lot of energy.\nTom: OK. And the printers? They use power when we are not using them.\nMaya: Yes, they do. So we should turn them off at night. But wait—I mean, we can turn them off at night, but not during the day. Some people need to print.\nLisa: What about the coffee machine? It's always on.\nMaya: Good point. The coffee machine can stay on during work hours. But we might turn it off after 6 p.m. Actually, let's turn it off after 6. It's not a big problem.\nTom: So, to sum up: lights off near windows, AC at 26, printers off at night, coffee machine off after 6. Is that right?\nMaya: Yes, that's right. And one more thing: if we save energy, the company may give us a small bonus. But I'm not sure yet. It's only a possibility.\nLisa: Even if we don't get a bonus, it's good for the environment.\nMaya: True. Although it's a small change, it can make a big difference. Thanks, everyone.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does the company have the new energy rule?",
+      "options": [
+        "Because energy costs went up last year.",
+        "Because the office is too cold.",
+        "Because the government ordered it."
+      ],
+      "answers": [
+        "Because energy costs went up last year."
+      ],
+      "explanation": "Maya说主要原因是去年能源成本大幅上涨，所以公司想省钱。",
+      "evidence": "The main reason is that our energy costs went up a lot last year."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Maya say about the government?",
+      "options": [
+        "The government may give a reward to green offices.",
+        "The government will close the office.",
+        "The government already gave the company money."
+      ],
+      "answers": [
+        "The government may give a reward to green offices."
+      ],
+      "explanation": "Maya用may表示可能性：政府可能给绿色办公室奖励。",
+      "evidence": "Also, the government may give a reward to green offices."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Lisa suggest?",
+      "options": [
+        "Turn off the lights near the windows.",
+        "Turn off the coffee machine.",
+        "Open all the windows."
+      ],
+      "answers": [
+        "Turn off the lights near the windows."
+      ],
+      "explanation": "Lisa建议关掉窗户附近的灯，因为下午阳光很亮。",
+      "evidence": "We could turn off the lights near the windows."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Maya say people might fall?",
+      "options": [
+        "Because the hallway is dark.",
+        "Because the floor is wet.",
+        "Because the lights are too bright."
+      ],
+      "answers": [
+        "Because the hallway is dark."
+      ],
+      "explanation": "Maya说走廊很暗，关灯可能让人摔倒。",
+      "evidence": "It's dark there, and people might fall."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What temperature should the air conditioning be set to?",
+      "options": [
+        "26 degrees",
+        "20 degrees",
+        "16 degrees"
+      ],
+      "answers": [
+        "26 degrees"
+      ],
+      "explanation": "Maya说把空调设为26度可以省很多电。",
+      "evidence": "But we can set it to 26 degrees."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "When can the printers be turned off?",
+      "options": [
+        "At night",
+        "During the day",
+        "Never"
+      ],
+      "answers": [
+        "At night"
+      ],
+      "explanation": "Maya说打印机可以在晚上关掉，但白天不行，因为有人要打印。",
+      "evidence": "So we should turn them off at night."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When might the coffee machine be turned off?",
+      "options": [
+        "After 6 p.m.",
+        "Before 9 a.m.",
+        "At lunch time"
+      ],
+      "answers": [
+        "After 6 p.m."
+      ],
+      "explanation": "Maya说咖啡机可以在下午6点后关掉。",
+      "evidence": "But we might turn it off after 6 p.m."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does Maya say about the bonus?",
+      "options": [
+        "It is only a possibility.",
+        "It is already paid.",
+        "It is impossible."
+      ],
+      "answers": [
+        "It is only a possibility."
+      ],
+      "explanation": "Maya用may表示可能，并说“I'm not sure yet. It's only a possibility.”",
+      "evidence": "But I'm not sure yet. It's only a possibility."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the talk: We must cut electricity use by ______ percent this month.",
+      "answers": [
+        "20"
+      ],
+      "maxWords": 1,
+      "explanation": "Maya说本月必须减少20%的用电。",
+      "evidence": "We must cut electricity use by 20 percent this month."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What is Lisa's opinion about the bonus?",
+      "options": [
+        "Even without a bonus, saving energy is good for the environment.",
+        "The bonus is the most important thing.",
+        "The company will never give a bonus."
+      ],
+      "answers": [
+        "Even without a bonus, saving energy is good for the environment."
+      ],
+      "explanation": "Lisa用even if表示让步：即使没有奖金，节能对环境也有好处。",
+      "evidence": "Even if we don't get a bonus, it's good for the environment."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "energy",
+      "meaning": "能源；能量",
+      "example": "We must cut electricity use by 20 percent this month."
+    },
+    {
+      "word": "reward",
+      "meaning": "奖励",
+      "example": "Also, the government may give a reward to green offices."
+    },
+    {
+      "word": "comfortably",
+      "meaning": "舒适地",
+      "example": "We can still work comfortably."
+    },
+    {
+      "word": "hallway",
+      "meaning": "走廊",
+      "example": "But please don't turn off the lights in the hallway."
+    },
+    {
+      "word": "completely",
+      "meaning": "完全地",
+      "example": "We may not turn it off completely."
+    },
+    {
+      "word": "possibility",
+      "meaning": "可能性",
+      "example": "But I'm not sure yet. It's only a possibility."
+    },
+    {
+      "word": "environment",
+      "meaning": "环境",
+      "example": "Even if we don't get a bonus, it's good for the environment."
+    },
+    {
+      "word": "difference",
+      "meaning": "差别；影响",
+      "example": "Although it's a small change, it can make a big difference."
+    }
+  ],
+  "grammar": {
+    "title": "原因、结果与让步从句；may / might / can 的语气差别",
+    "explanation": "原因从句用 because / since / as 说明理由，例如 because energy costs went up。结果从句用 so / that's why 说明结果。让步从句用 although / even if / though 表示“虽然、即使”，主句仍然成立。may 表示“可能”（较正式、可能性中等），might 表示“也许”（可能性稍低或更不确定），can 表示“能够/可以”（能力或许可），不是猜测。注意：may not 是“可能不”，can't 是“不能”。",
+    "example": "Although it's a small change, it can make a big difference.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the best word: ______ the office is small, it uses a lot of power.",
+        "options": [
+          "Although",
+          "Because",
+          "So"
+        ],
+        "answers": [
+          "Although"
+        ],
+        "explanation": "前后是让步关系：虽然办公室小，但用电多。用Although。",
+        "evidence": "Although it's a small change, it can make a big difference."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the best word: We turned off the lights ______ we wanted to save energy.",
+        "options": [
+          "because",
+          "although",
+          "even if"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "后面是原因，用because。",
+        "evidence": "The main reason is that our energy costs went up a lot last year."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the best word: It was very hot, ______ we opened the windows.",
+        "options": [
+          "so",
+          "although",
+          "because"
+        ],
+        "answers": [
+          "so"
+        ],
+        "explanation": "前面是原因，后面是结果，用so。",
+        "evidence": "So the company wants to save money."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Which sentence shows a possibility, not an ability?",
+        "options": [
+          "We might get a bonus.",
+          "We can print at night.",
+          "We can turn off the lights."
+        ],
+        "answers": [
+          "We might get a bonus."
+        ],
+        "explanation": "might表示可能性；can表示能力或许可。",
+        "evidence": "But we might turn it off after 6 p.m."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the best word: The government ______ give us a reward, but I'm not sure.",
+        "options": [
+          "may",
+          "can",
+          "must"
+        ],
+        "answers": [
+          "may"
+        ],
+        "explanation": "表示不确定的可能性，用may。",
+        "evidence": "Also, the government may give a reward to green offices."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the best word: ______ we don't get the bonus, we will still save energy.",
+        "options": [
+          "Even if",
+          "Because",
+          "So"
+        ],
+        "answers": [
+          "Even if"
+        ],
+        "explanation": "表示让步“即使”，用Even if。",
+        "evidence": "Even if we don't get a bonus, it's good for the environment."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Which sentence means 'it is possible that we will not turn it off completely'?",
+        "options": [
+          "We may not turn it off completely.",
+          "We can't turn it off completely.",
+          "We must not turn it off completely."
+        ],
+        "answers": [
+          "We may not turn it off completely."
+        ],
+        "explanation": "may not表示“可能不”；can't表示“不能”；must not表示“禁止”。",
+        "evidence": "We may not turn it off completely."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the best word: She was tired, ______ she finished the report.",
+        "options": [
+          "although",
+          "because",
+          "so"
+        ],
+        "answers": [
+          "although"
+        ],
+        "explanation": "前后是让步关系：虽然累，但还是完成了报告。",
+        "evidence": "Although it's a small change, it can make a big difference."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you turn off lights when you leave a room?",
+        "What do you do to save energy at home?",
+        "Is saving energy important to you? Why?",
+        "Do you think small changes can help the environment?"
+      ],
+      "part2": "Describe a time when your workplace or school tried to save energy. You should say: what the rule was; who suggested it; what people did; and how you felt about it.",
+      "part3": [
+        "Why do some companies try to save energy?",
+        "Do you think rewards help people change habits?",
+        "What might happen if offices use less electricity?",
+        "Should governments make energy rules for companies?"
+      ]
+    },
+    "writing": "Your office manager wants ideas to save energy. Write a short email (80–100 words). Give one reason why saving energy is good, one possible result, and one small action people can take. Use because, so, and although."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (simulated educational material, not official IELTS)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "5c5a388bf473ea71f4cfc7311082cc6fdbd36ca63bd3856cda50a1a9ef360389"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

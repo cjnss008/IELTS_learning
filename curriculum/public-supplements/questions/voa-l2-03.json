@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-03-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-03",
+  "sourceVersion": "1",
+  "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+  "sourceContentHash": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+  "exposureGroup": "public-source:voa-l2-03",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "At what morning time had Anna and Pete agreed to meet? Write the time as H:MM.",
+      "answers": [
+        "8:00"
+      ],
+      "maxWords": 1,
+      "evidence": "we decided to meet at 8:00 a.m. - 8:00 a.m. to come to work together.",
+      "explanation": "Anna明确说双方约好早上8:00碰面一起上班，Pete的讲述也沿用8:00。题目已说明morning并要求H:MM，所以填8:00，不需要再加a.m.。43分钟是到咨询师那里迟到的时长，不是约定时刻。",
+      "evidenceOffsets": {
+        "start": 1089,
+        "end": 1158,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "we decided to meet at 8:00 a.m. - 8:00 a.m. to come to work together.",
+          "start": 1089,
+          "end": 1158
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Kelly ask Anna and Pete to do when they both start explaining?",
+      "options": [
+        "Write their versions in silence.",
+        "Take turns speaking.",
+        "Leave and return the following day."
+      ],
+      "answers": [
+        "Take turns speaking."
+      ],
+      "evidence": "You can’t both talk at the same time. You have to take turns.",
+      "explanation": "Kelly说两人不能同时讲话，必须take turns，也就是轮流说。她没有要求改成默写，也没有让他们第二天再来。这个要求针对交流方式，不是在裁定谁的迟到解释一定真实。",
+      "evidenceOffsets": {
+        "start": 931,
+        "end": 992,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "You can’t both talk at the same time. You have to take turns.",
+          "start": 931,
+          "end": 992
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "According to Anna’s account, what did Pete waste time waiting for?",
+      "options": [
+        "A scooter.",
+        "A message from Kelly.",
+        "Coffee."
+      ],
+      "answers": [
+        "Coffee."
+      ],
+      "evidence": "After Pete had wasted time waiting for coffee, we were late.",
+      "explanation": "按照Anna的版本，Pete等咖啡浪费时间。题干特意限定According to Anna’s account，因为Pete接着会给出另一种解释；有这句话不等于读者已能判定真实的全部原因。",
+      "evidenceOffsets": {
+        "start": 1209,
+        "end": 1269,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "After Pete had wasted time waiting for coffee, we were late.",
+          "start": 1209,
+          "end": 1269
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "According to Pete, which way of travelling added time to their commute?",
+      "options": [
+        "Riding a scooter.",
+        "Walking his usual route.",
+        "Taking a bus."
+      ],
+      "answers": [
+        "Riding a scooter."
+      ],
+      "evidence": "I always walk to work. But she said that would take too long and that a scooter would be much faster. It was awful. I hated it. And it added too much time to our commute!",
+      "explanation": "Pete说自己平常走路，Anna却建议更快的scooter；随后他用it added too much time抱怨这次代步方式增加通勤时间。这里问Pete的叙述，不采用Anna等咖啡的版本，也不凭外部交通常识判断滑板车一定更快或更慢。",
+      "evidenceOffsets": {
+        "start": 1840,
+        "end": 2010,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I always walk to work. But she said that would take too long and that a scooter would be much faster. It was awful. I hated it. And it added too much time to our commute!",
+          "start": 1840,
+          "end": 2010
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How does Kelly respond when Anna says she left a message?",
+      "options": [
+        "She says she has already replied.",
+        "She says she did not receive it.",
+        "She says Pete read it to her."
+      ],
+      "answers": [
+        "She says she did not receive it."
+      ],
+      "evidence": "Hum. I didn’t get that message.",
+      "explanation": "Kelly说didn’t get that message，能确认的是她表示没有收到。文中没有交代发送失败的技术原因，也没有说她回过信或让Pete转读。不要把没有收到扩大解释成Anna故意没有通知。",
+      "evidenceOffsets": {
+        "start": 1300,
+        "end": 1331,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Hum. I didn’t get that message.",
+          "start": 1300,
+          "end": 1331
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Kelly want to use Anna and Pete’s differences in the new show?",
+      "options": [
+        "Let only one of them report every story.",
+        "Have them agree on a single version before speaking.",
+        "Have each present a different point of view on a story."
+      ],
+      "answers": [
+        "Have each present a different point of view on a story."
+      ],
+      "evidence": "For every story, you tell a different point of view.",
+      "explanation": "Kelly认为不同观察角度可以成为节目的特色，要求每则故事呈现不同观点。因此不是只让一个人说，也不是先消除所有差异。题目考节目安排，不问节目名称，避免把标题提示直接当答案。",
+      "evidenceOffsets": {
+        "start": 2513,
+        "end": 2565,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "For every story, you tell a different point of view.",
+          "start": 2513,
+          "end": 2565
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "1b3a9be0c2a6a30ae7bba20112c7aac01c5fc025b32676a72dbc1edf8c40e6cd",
+      "reviewSha256": "c35fe91413d068f22d22ea3d9cbb5fe9c596d392c075bad39747a4751958ccdd",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

@@ -1,19 +1,19 @@
 {
   "id": "w05-listen-3",
   "schema": 3,
-  "layoutVersion": "curriculum-role-pauses-v68-3",
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
   "transcriptHash": "a57b5fd4f72a8e74de715c29bdc19781d89c1c2a5205362b74359dc6da190bd1",
-  "configurationHash": "0d2404a2d27e8c850dadbea394cb922e17b73e9253c49cfda0101d2866750333",
+  "configurationHash": "8d95e63c3e509ee14cdf667e1efc6b026c0413208e757778c76bc553ad3697c1",
   "configuration": {
-    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
     "transcriptHash": "a57b5fd4f72a8e74de715c29bdc19781d89c1c2a5205362b74359dc6da190bd1",
     "rate": "-15%",
     "format": "mp3-24000-mono-48k",
     "authoringPackageVersion": "7.3.1",
     "roleVoices": {
-      "a": "en-GB-SoniaNeural",
-      "b": "en-GB-RyanNeural",
-      "narrator": "en-GB-LibbyNeural"
+      "a": "en-US-AriaNeural",
+      "b": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
     },
     "sourceLabels": [
       {
@@ -37,7 +37,7 @@
         "sourceEnd": 293,
         "text": "Hi, I'm Li Ming. I'm a student. I get up at six thirty every day. I have breakfast at seven. I walk to school. I have four classes in the morning. I have lunch at twelve. In the afternoon, I have two classes. I go home at five. I do my homework at seven. I go to bed at ten. What about you?",
         "boundary": "turn",
-        "voice": "en-GB-SoniaNeural",
+        "voice": "en-US-AriaNeural",
         "textHash": "de838dc064a4ef36b30f881014363a251a32be884a401065478175a3b8813c83",
         "pauseBeforeSeconds": 0
       },
@@ -48,23 +48,23 @@
         "sourceEnd": 528,
         "text": "I'm Wang Fang. I get up at seven. I have breakfast at seven thirty. I go to work by bus. I work from nine to five. I have lunch at twelve thirty. I go home at six. I have dinner at seven. I watch TV at eight. I go to bed at eleven.",
         "boundary": "turn",
-        "voice": "en-GB-RyanNeural",
+        "voice": "en-US-GuyNeural",
         "textHash": "b6ec363a9f9cf2b183577d93825ab8b13eabe9273194abad89fc844172c954fb",
         "pauseBeforeSeconds": 0.65
       }
     ]
   },
-  "audioHash": "7fe14c996d24e7e4da270e231b0ab8627609ca20119d3c168c4137ad7b4a487e",
+  "audioHash": "1db26c367deaad48d295620be7ae46fa2953392b1c0b14689941a49c90b3126a",
   "voices": [
-    "en-GB-SoniaNeural",
-    "en-GB-RyanNeural"
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
   ],
   "roleVoices": {
-    "a": "en-GB-SoniaNeural",
-    "b": "en-GB-RyanNeural",
-    "narrator": "en-GB-LibbyNeural"
+    "a": "en-US-AriaNeural",
+    "b": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
   },
-  "durationSeconds": 54.101167,
+  "durationSeconds": 57.895292,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
@@ -81,18 +81,18 @@
       "sourceStart": 3,
       "sourceEnd": 293,
       "boundary": "turn",
-      "voice": "en-GB-SoniaNeural",
+      "voice": "en-US-AriaNeural",
       "textHash": "de838dc064a4ef36b30f881014363a251a32be884a401065478175a3b8813c83",
       "pauseBeforeSeconds": 0,
-      "groupConfigurationHash": "9b3305d6a73f8246fce937d92a6bef3c16c24b1ccf8dfbae9970e58904ade7bf",
-      "groupAudioHash": "9735d0427dbc2c85d6276287edd1c9a6b1664193ffc643a36eed6b6651b5221e",
-      "groupStartSeconds": 0.09295833333333334,
-      "groupEndSeconds": 27.575875,
-      "wordStartSeconds": 0.152958,
-      "wordEndSeconds": 27.455874,
+      "groupConfigurationHash": "97d5823cf4ae19349a2ea9abea363e3156c791af7ed7e0164dd189f696476a18",
+      "groupAudioHash": "63b2c87b19fbe9fbbdf0fd8dbe913579a0234a0012e74f3696d292b0529eef22",
+      "groupStartSeconds": 0.04883333333333333,
+      "groupEndSeconds": 31.605291666666666,
+      "wordStartSeconds": 0.108833,
+      "wordEndSeconds": 31.485291,
       "startSeconds": 0.0,
-      "endSeconds": 27.482916666666668,
-      "durationSeconds": 27.482916666666668
+      "endSeconds": 31.55645833333333,
+      "durationSeconds": 31.55645833333333
     },
     {
       "role": "b",
@@ -100,21 +100,23 @@
       "sourceStart": 297,
       "sourceEnd": 528,
       "boundary": "turn",
-      "voice": "en-GB-RyanNeural",
+      "voice": "en-US-GuyNeural",
       "textHash": "b6ec363a9f9cf2b183577d93825ab8b13eabe9273194abad89fc844172c954fb",
       "pauseBeforeSeconds": 0.65,
-      "groupConfigurationHash": "d15ce9d36a73fcb5c4e918640d7781450980c3366e11877069460e7db882cee4",
-      "groupAudioHash": "a3f019959afc2291c7b530b8231ca81b8394df57c35c46023ed6244cc9b9f107",
-      "groupStartSeconds": 0.04,
-      "groupEndSeconds": 26.00825,
-      "wordStartSeconds": 0.1,
-      "wordEndSeconds": 25.88825,
-      "startSeconds": 28.132916666666667,
-      "endSeconds": 54.101166666666664,
-      "durationSeconds": 25.968249999999998
+      "groupConfigurationHash": "9bf17af298cf61e213d226e664ccd8cc0050977ac2259b5f05c19d7f936736c4",
+      "groupAudioHash": "85d7ba7ad2084864299b83c483cf9fc093261a0f7fe2870e2e37767f62b3f7cc",
+      "groupStartSeconds": 0.04883333333333333,
+      "groupEndSeconds": 25.737666666666666,
+      "wordStartSeconds": 0.108833,
+      "wordEndSeconds": 25.617666,
+      "startSeconds": 32.20645833333333,
+      "endSeconds": 57.895291666666665,
+      "durationSeconds": 25.688833333333335
     }
   ],
   "origin": "role-group-tts-with-real-boundary-cuts",
-  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
   "reusedVoiceGroups": 0
 }

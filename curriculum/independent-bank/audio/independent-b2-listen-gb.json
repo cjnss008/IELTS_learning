@@ -1,81 +1,483 @@
 {
-  "schema": 3,
   "id": "independent-b2-listen-gb",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+  "configurationHash": "3081a7840a9eb71113041ea94189ca77a2582ecdeb97678aca934b3ba1852a6b",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
+    "rate": "+0%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "chair": "en-US-AriaNeural",
+      "planner": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Chair",
+        "role": "chair",
+        "sourceStart": 0,
+        "sourceEnd": 7
+      },
+      {
+        "label": "Planner",
+        "role": "planner",
+        "sourceStart": 253,
+        "sourceEnd": 262
+      },
+      {
+        "label": "Chair",
+        "role": "chair",
+        "sourceStart": 499,
+        "sourceEnd": 506
+      },
+      {
+        "label": "Planner",
+        "role": "planner",
+        "sourceStart": 551,
+        "sourceEnd": 560
+      },
+      {
+        "label": "Chair",
+        "role": "chair",
+        "sourceStart": 874,
+        "sourceEnd": 881
+      },
+      {
+        "label": "Planner",
+        "role": "planner",
+        "sourceStart": 972,
+        "sourceEnd": 981
+      },
+      {
+        "label": "Chair",
+        "role": "chair",
+        "sourceStart": 1284,
+        "sourceEnd": 1291
+      },
+      {
+        "label": "Planner",
+        "role": "planner",
+        "sourceStart": 1386,
+        "sourceEnd": 1395
+      },
+      {
+        "label": "Chair",
+        "role": "chair",
+        "sourceStart": 1746,
+        "sourceEnd": 1753
+      },
+      {
+        "label": "Planner",
+        "role": "planner",
+        "sourceStart": 1822,
+        "sourceEnd": 1831
+      },
+      {
+        "label": "Chair",
+        "role": "chair",
+        "sourceStart": 2173,
+        "sourceEnd": 2180
+      },
+      {
+        "label": "Planner",
+        "role": "planner",
+        "sourceStart": 2217,
+        "sourceEnd": 2226
+      }
+    ],
+    "segments": [
+      {
+        "role": "chair",
+        "speaker": "Chair",
+        "sourceStart": 7,
+        "sourceEnd": 252,
+        "text": "Our task today is to design the consultation for the station-square artwork. We have funding for a sculpture, but we have not chosen a design. The sponsor offered three proposals, and the council wants residents to comment before it selects one.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "f525fd083cf33db4713ac00c418cb7cf7dd631004ec197a3fce4c1f444d95d3f",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "planner",
+        "speaker": "Planner",
+        "sourceStart": 262,
+        "sourceEnd": 498,
+        "text": "We could simply put the images online and count votes. That would be quick, but people who use the square without following council websites might never hear about it. I suggest an exhibition at the station as well as the online survey.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "dece27ef9ad0538913640b6ce8d1ef57038bd0e7f0c2a3b65332b482cad0e32f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "chair",
+        "speaker": "Chair",
+        "sourceStart": 506,
+        "sourceEnd": 550,
+        "text": "Would that solve the representation problem?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "17287eb7a8b33918250337ec5b3547e13d64585fff1e60ca5ac29df6809213d6",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "planner",
+        "speaker": "Planner",
+        "sourceStart": 560,
+        "sourceEnd": 873,
+        "text": "It would reach some additional users, especially commuters. It would not automatically include residents who avoid the station. We should record how people encountered the consultation and describe that limitation in the report. Calling every response a vote from the whole community would overstate what we know.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "2b7e3f620d5775a0b006e069334278f4f9f7476f43f81c238275d7f6030a027f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "chair",
+        "speaker": "Chair",
+        "sourceStart": 881,
+        "sourceEnd": 971,
+        "text": "The sponsor prefers the tallest proposal. It says that would create the clearest landmark.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "24b25a071463acfe7fac276be00a4e1ac051e22cecd1adcfb1dec0ba88cb9921",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "planner",
+        "speaker": "Planner",
+        "sourceStart": 981,
+        "sourceEnd": 1283,
+        "text": "Height is relevant, but the artwork also has to leave a clear route through the square. The access team has asked for a turning space beside the bus entrance. A photograph from one angle may not show whether that route is blocked. We should provide a simple ground plan with dimensions for each design.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "80075965c249c553f3463a0c5c6448408d93ef5b12a53ce998e4284e3c364f14",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "chair",
+        "speaker": "Chair",
+        "sourceStart": 1291,
+        "sourceEnd": 1385,
+        "text": "Some comments may be about the whole square rather than the sculpture. Should we exclude them?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "de3b92b0ccc62767e131ab480507671319852c73560051cfca14cac8935c90ac",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "planner",
+        "speaker": "Planner",
+        "sourceStart": 1395,
+        "sourceEnd": 1745,
+        "text": "Keep them, but label them separately. A complaint about poor lighting is relevant to the place, though it does not necessarily express opposition to a particular sculpture. We should not code every negative comment as a rejection of art. Also, a preference between three designs does not tell us whether someone wanted a sculpture in the first place.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "1ad411338e90875055fd48451979acd033e56ed741dae08e2e8724b4f5e2c71e",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "chair",
+        "speaker": "Chair",
+        "sourceStart": 1753,
+        "sourceEnd": 1821,
+        "text": "The installation budget is fixed. Can we ignore costs in the survey?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "4f9ecf736a79a690f3e9c782558f997868203594050446c2dacff94c9d2edeb3",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "planner",
+        "speaker": "Planner",
+        "sourceStart": 1831,
+        "sourceEnd": 2172,
+        "text": "We need not ask residents to invent prices, but maintenance should be part of the information. The metal proposal needs annual inspection, while the timber proposal has a scheduled protective treatment. We need estimates for those activities before comparing the whole-life cost. The lowest initial price may not remain the lowest over time.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "6ef744bdb1eec1519cb7dab0b1bcdabf0431decd84b3b8bbb7b194356feed16c",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "chair",
+        "speaker": "Chair",
+        "sourceStart": 2180,
+        "sourceEnd": 2216,
+        "text": "When will the decision be published?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "e0ae4439e0b61a14427e0a0a44314295e7d60bb7dab3e356fcd6e5ef778f6ecb",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "planner",
+        "speaker": "Planner",
+        "sourceStart": 2226,
+        "sourceEnd": 2524,
+        "text": "After the access review and cost estimates are complete. We should publish the reasons alongside the selected design, including where the council has departed from the most popular response. Consultation informs the decision; unless we promise a binding vote, popularity is one input among several.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "8ff9036a019895b842519b312b8f9101aa446fa82c3b7a2942cdfa75ce54a0f0",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "988609eb60fd7614eb388fd14a31b2d54a158354251a5c6a6b5356a9f03faeed",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "roleVoices": {
+    "chair": "en-US-AriaNeural",
+    "planner": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 148.06,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-GB",
-  "voices": [
-    "en-GB-SoniaNeural",
-    "en-GB-RyanNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "+0%",
-  "transcriptHash": "bddfade258b49a78b79ed3e648e07053e05ad51a0e23b8f4a09f1f39ce347e1f",
-  "audioHash": "162122ed132542f2f9175208c3ed952d6e2695a9cc6fc159aaa6c2db75a94f67",
-  "configurationHash": "b69ba40829e135ff6bb6cae80cb932cc2e65da64c023b14d27a5828132b5e156",
-  "durationSeconds": 149.736,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "chair",
+      "speaker": "Chair",
+      "sourceStart": 7,
+      "sourceEnd": 252,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "f525fd083cf33db4713ac00c418cb7cf7dd631004ec197a3fce4c1f444d95d3f",
-      "durationSeconds": 15.336
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "001ab29ea969d7fc44ce24ba38e92e53293a11b660808ce3a4e374c2a69b1306",
+      "groupAudioHash": "4ca33dfe82546a59a03465f342162b3743c7afd7e26552efc5d6c54c729db80c",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 15.3325,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 15.2125,
+      "startSeconds": 0.0,
+      "endSeconds": 15.2925,
+      "durationSeconds": 15.2925
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "planner",
+      "speaker": "Planner",
+      "sourceStart": 262,
+      "sourceEnd": 498,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "dece27ef9ad0538913640b6ce8d1ef57038bd0e7f0c2a3b65332b482cad0e32f",
-      "durationSeconds": 14.4
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "905a06b1a00eb8899e037d8331231419f191bec046676997e503b649bc70b1d7",
+      "groupAudioHash": "bca98adfbfbd10d66ca4f7d4aee07d183d43b4addb6f76d32a0e3e95fc2cc9a0",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 13.7575,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 13.6375,
+      "startSeconds": 15.7425,
+      "endSeconds": 29.46,
+      "durationSeconds": 13.717500000000001
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "chair",
+      "speaker": "Chair",
+      "sourceStart": 506,
+      "sourceEnd": 550,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "17287eb7a8b33918250337ec5b3547e13d64585fff1e60ca5ac29df6809213d6",
-      "durationSeconds": 2.976
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "001ab29ea969d7fc44ce24ba38e92e53293a11b660808ce3a4e374c2a69b1306",
+      "groupAudioHash": "4ca33dfe82546a59a03465f342162b3743c7afd7e26552efc5d6c54c729db80c",
+      "groupStartSeconds": 16.015,
+      "groupEndSeconds": 18.345,
+      "wordStartSeconds": 16.075,
+      "wordEndSeconds": 18.225,
+      "startSeconds": 29.91,
+      "endSeconds": 32.24,
+      "durationSeconds": 2.330000000000002
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "planner",
+      "speaker": "Planner",
+      "sourceStart": 560,
+      "sourceEnd": 873,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "2b7e3f620d5775a0b006e069334278f4f9f7476f43f81c238275d7f6030a027f",
-      "durationSeconds": 18.648
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "905a06b1a00eb8899e037d8331231419f191bec046676997e503b649bc70b1d7",
+      "groupAudioHash": "bca98adfbfbd10d66ca4f7d4aee07d183d43b4addb6f76d32a0e3e95fc2cc9a0",
+      "groupStartSeconds": 14.465,
+      "groupEndSeconds": 32.695,
+      "wordStartSeconds": 14.525,
+      "wordEndSeconds": 32.575,
+      "startSeconds": 32.69,
+      "endSeconds": 50.92,
+      "durationSeconds": 18.230000000000004
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "chair",
+      "speaker": "Chair",
+      "sourceStart": 881,
+      "sourceEnd": 971,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "24b25a071463acfe7fac276be00a4e1ac051e22cecd1adcfb1dec0ba88cb9921",
-      "durationSeconds": 6.192
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "001ab29ea969d7fc44ce24ba38e92e53293a11b660808ce3a4e374c2a69b1306",
+      "groupAudioHash": "4ca33dfe82546a59a03465f342162b3743c7afd7e26552efc5d6c54c729db80c",
+      "groupStartSeconds": 19.0275,
+      "groupEndSeconds": 24.9075,
+      "wordStartSeconds": 19.0875,
+      "wordEndSeconds": 24.7875,
+      "startSeconds": 51.37,
+      "endSeconds": 57.25,
+      "durationSeconds": 5.880000000000003
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "planner",
+      "speaker": "Planner",
+      "sourceStart": 981,
+      "sourceEnd": 1283,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "80075965c249c553f3463a0c5c6448408d93ef5b12a53ce998e4284e3c364f14",
-      "durationSeconds": 18.6
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "905a06b1a00eb8899e037d8331231419f191bec046676997e503b649bc70b1d7",
+      "groupAudioHash": "bca98adfbfbd10d66ca4f7d4aee07d183d43b4addb6f76d32a0e3e95fc2cc9a0",
+      "groupStartSeconds": 33.4025,
+      "groupEndSeconds": 50.8575,
+      "wordStartSeconds": 33.4625,
+      "wordEndSeconds": 50.7375,
+      "startSeconds": 57.7,
+      "endSeconds": 75.155,
+      "durationSeconds": 17.455
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "chair",
+      "speaker": "Chair",
+      "sourceStart": 1291,
+      "sourceEnd": 1385,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "de3b92b0ccc62767e131ab480507671319852c73560051cfca14cac8935c90ac",
-      "durationSeconds": 5.784
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "001ab29ea969d7fc44ce24ba38e92e53293a11b660808ce3a4e374c2a69b1306",
+      "groupAudioHash": "4ca33dfe82546a59a03465f342162b3743c7afd7e26552efc5d6c54c729db80c",
+      "groupStartSeconds": 25.59,
+      "groupEndSeconds": 31.1825,
+      "wordStartSeconds": 25.65,
+      "wordEndSeconds": 31.0625,
+      "startSeconds": 75.605,
+      "endSeconds": 81.1975,
+      "durationSeconds": 5.592500000000001
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "planner",
+      "speaker": "Planner",
+      "sourceStart": 1395,
+      "sourceEnd": 1745,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "1ad411338e90875055fd48451979acd033e56ed741dae08e2e8724b4f5e2c71e",
-      "durationSeconds": 20.616
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "905a06b1a00eb8899e037d8331231419f191bec046676997e503b649bc70b1d7",
+      "groupAudioHash": "bca98adfbfbd10d66ca4f7d4aee07d183d43b4addb6f76d32a0e3e95fc2cc9a0",
+      "groupStartSeconds": 51.565,
+      "groupEndSeconds": 71.845,
+      "wordStartSeconds": 51.625,
+      "wordEndSeconds": 71.725,
+      "startSeconds": 81.6475,
+      "endSeconds": 101.9275,
+      "durationSeconds": 20.28
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "chair",
+      "speaker": "Chair",
+      "sourceStart": 1753,
+      "sourceEnd": 1821,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "4f9ecf736a79a690f3e9c782558f997868203594050446c2dacff94c9d2edeb3",
-      "durationSeconds": 5.16
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "001ab29ea969d7fc44ce24ba38e92e53293a11b660808ce3a4e374c2a69b1306",
+      "groupAudioHash": "4ca33dfe82546a59a03465f342162b3743c7afd7e26552efc5d6c54c729db80c",
+      "groupStartSeconds": 31.865,
+      "groupEndSeconds": 36.72,
+      "wordStartSeconds": 31.925,
+      "wordEndSeconds": 36.6,
+      "startSeconds": 102.3775,
+      "endSeconds": 107.2325,
+      "durationSeconds": 4.855000000000004
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "planner",
+      "speaker": "Planner",
+      "sourceStart": 1831,
+      "sourceEnd": 2172,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "6ef744bdb1eec1519cb7dab0b1bcdabf0431decd84b3b8bbb7b194356feed16c",
-      "durationSeconds": 20.808
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "905a06b1a00eb8899e037d8331231419f191bec046676997e503b649bc70b1d7",
+      "groupAudioHash": "bca98adfbfbd10d66ca4f7d4aee07d183d43b4addb6f76d32a0e3e95fc2cc9a0",
+      "groupStartSeconds": 72.54,
+      "groupEndSeconds": 92.57,
+      "wordStartSeconds": 72.6,
+      "wordEndSeconds": 92.45,
+      "startSeconds": 107.6825,
+      "endSeconds": 127.7125,
+      "durationSeconds": 20.03
     },
     {
-      "voice": "en-GB-SoniaNeural",
+      "role": "chair",
+      "speaker": "Chair",
+      "sourceStart": 2180,
+      "sourceEnd": 2216,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "e0ae4439e0b61a14427e0a0a44314295e7d60bb7dab3e356fcd6e5ef778f6ecb",
-      "durationSeconds": 2.496
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "001ab29ea969d7fc44ce24ba38e92e53293a11b660808ce3a4e374c2a69b1306",
+      "groupAudioHash": "4ca33dfe82546a59a03465f342162b3743c7afd7e26552efc5d6c54c729db80c",
+      "groupStartSeconds": 37.4025,
+      "groupEndSeconds": 39.37,
+      "wordStartSeconds": 37.4625,
+      "wordEndSeconds": 39.25,
+      "startSeconds": 128.1625,
+      "endSeconds": 130.13,
+      "durationSeconds": 1.9675000000000011
     },
     {
-      "voice": "en-GB-RyanNeural",
+      "role": "planner",
+      "speaker": "Planner",
+      "sourceStart": 2226,
+      "sourceEnd": 2524,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "8ff9036a019895b842519b312b8f9101aa446fa82c3b7a2942cdfa75ce54a0f0",
-      "durationSeconds": 18.72
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "905a06b1a00eb8899e037d8331231419f191bec046676997e503b649bc70b1d7",
+      "groupAudioHash": "bca98adfbfbd10d66ca4f7d4aee07d183d43b4addb6f76d32a0e3e95fc2cc9a0",
+      "groupStartSeconds": 93.2775,
+      "groupEndSeconds": 110.7575,
+      "wordStartSeconds": 93.3375,
+      "wordEndSeconds": 110.6375,
+      "startSeconds": 130.58,
+      "endSeconds": 148.06,
+      "durationSeconds": 17.47999999999999
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-b2-listen-gb.mp3"
 }

@@ -1,0 +1,64 @@
+8000 essential vocabulary: dictionary and American pronunciation sources
+
+Headwords, Chinese dictionary glosses, historical frequency and inflection
+metadata: ECDICT, revision ab22ad36302cafc6349a050e2b60894855208055.
+Copyright (c) 2025 Linwei; upstream declares MIT. Preserve the complete notice
+in LICENSE-ECDICT.txt. The upstream README describes historical compilation
+from several sources; this package records its MIT declaration and does not
+claim independent chain-of-title clearance for every historical contribution.
+
+American pronunciations for 7998 headwords: CMUdict, revision
+74790861f652b15e4ac49015a90074ad62a27690.
+Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.
+The upstream two-condition BSD notice permits source/binary redistribution
+and modifications when its notices and disclaimer are retained. The complete
+notice is in LICENSE-CMUDICT.txt. Source URLs, sizes and SHA-256 are pinned in
+source-lock.json. All source pronunciation variants are retained in
+us-pronunciations.json; a selected primary variant follows a common or
+contextual word sense. The explicit 40 homograph choices and regional
+spelling aliases are in us-phonetics-policy.json and the pronunciation audit.
+
+The project converts the existing ARPAbet phoneme symbols to broad American
+IPA; it does not predict sounds from spelling. Stress digits are inherited;
+maximal English onset formatting places them before the following syllable
+onset, and monosyllables omit a redundant primary-stress mark. This formatting
+is not independently phonetician-calibrated for each word. Broad IPA omits
+some allophonic/regional detail. No GPL cmudict-tools implementation or table
+is included. CMUdict itself acknowledges possible errors and inconsistencies.
+
+Two CMUdict gaps (alga, destine) use transcriptions from Wiktionary
+contributors, available under CC BY-SA 4.0. Preserve attribution, source links,
+revision identifiers and the license link in us-supplemental.json:
+https://creativecommons.org/licenses/by-sa/4.0/
+Alga explicitly carries a shared UK/US label. Destine's source is unlabelled
+English; its broad transcription is used as dialect-shared, without claiming
+a separately certified American recording. Corresponding adaptations remain
+under CC BY-SA 4.0. No Wiktionary remote audio is redistributed.
+
+Project-authored examples and Chinese translations retain per-word actual AI
+generation/review provenance. The contextual meaning is the taught sense;
+dictionaryMeaning preserves the ECDICT-derived excerpt. Every entry must have
+its own non-template sentence, translation, contextual Chinese meaning and
+provenance before the release build succeeds. AI/structural checks do not
+constitute independent human review, CEFR calibration or an IELTS outcome.
+
+The count is 8000 distinct single dictionary headwords. Source inflections,
+names and abbreviations are excluded, and regional spelling variants do not
+inflate the count. Derivational words with separate meanings may both occur;
+this is not a claim of 8000 calibrated word families or full sense coverage.
+The original course words/phrases and all learner records are preserved.
+
+Reconstruct using Node.js (no third-party build dependencies):
+  node tools/fetch-essential-vocabulary-source.cjs
+  node tools/build-essential-vocabulary.cjs --seed-only --without-pronunciations
+  node tools/build-us-pronunciations.cjs
+  node tools/build-essential-vocabulary.cjs --examples-from-asset assets/essential-vocabulary-data.js
+For a new generation run, replace --examples-from-asset with:
+  --examples work/essential-vocabulary/examples-reviewed.jsonl
+The published asset contains all reviewed examples and their provenance, so
+reconstruction does not require a private API key or ignored generation cache.
+
+audio.lang=en-US prepares an American synthesis/playback request. A request,
+an audio filename or a successful MP3 generation does not independently prove
+that a synthesis engine precisely followed every IPA phoneme. No engine-to-IPA
+alignment or learner pronunciation achievement is certified by this pack.

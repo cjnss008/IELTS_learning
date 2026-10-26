@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-greenhouse-effect-comprehension-v1",
+  "version": "1",
+  "sourceId": "nasa-greenhouse-effect",
+  "sourceVersion": "2",
+  "sourceTextSha256": "89dd2e308f4221b8f8cb3bb4bbd1ac4cca60d78d096a7498af4463f56e27b5d7",
+  "sourceContentHash": "89dd2e308f4221b8f8cb3bb4bbd1ac4cca60d78d096a7498af4463f56e27b5d7",
+  "exposureGroup": "public-source:nasa-greenhouse-effect",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading only; no authenticated matching narration supplied."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How does the article explain the warming effect of greenhouse gases?",
+      "options": [
+        "They speed up the loss of heat from the surface into space.",
+        "They retain some heat near Earth’s surface.",
+        "They turn carbon dioxide into oxygen as the air cools.",
+        "They increase the amount of sunlight reflected from the surface into space."
+      ],
+      "answers": [
+        "They retain some heat near Earth’s surface."
+      ],
+      "evidence": "The greenhouse effect is a process that occurs when certain gases in Earth's atmosphere trap the heat from the sun near the surface.",
+      "explanation": "trap ... near the surface说明这些气体使一部分热量留在地表附近。更快散失热量或把更多阳光反射回太空不是这段解释的增暖机制；把二氧化碳转化的过程与植物光合作用混在一起，也不能回答气体如何滞留热量。",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 132,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which explanation does the article give for most extra greenhouse gases added over the last century?",
+      "options": [
+        "Natural volcanic additions are large enough to explain the measured total.",
+        "Carbon dioxide absorption by oceans is the main source of the extra gases.",
+        "Burning fuels for energy and transport supplies the main additional sources.",
+        "Photosynthesis produces the main additional supply of carbon dioxide."
+      ],
+      "answers": [
+        "Burning fuels for energy and transport supplies the main additional sources."
+      ],
+      "evidence": "Scientists have found that over the last 100 years extra greenhouse gases have mainly come from a few sources. These are things like burning coal and oil for energy or burning gasoline to run cars and planes.",
+      "explanation": "原文以mainly限定主要来源，随后列出煤、石油和交通燃料燃烧。火山也有贡献，但下一句明确说自然增加量不足以解释今天测到的总量；海洋吸收和植物光合作用在后面被介绍为移除二氧化碳的途径，不应反过来当主要新增来源。",
+      "evidenceOffsets": {
+        "start": 1725,
+        "end": 1933,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What process uses carbon dioxide, water and sunlight to produce food and oxygen? Write ONE WORD from the article.",
+      "answers": [
+        "photosynthesis"
+      ],
+      "maxWords": 1,
+      "evidence": "They do this in a process known as photosynthesis. This is when plants take carbon dioxide, water, and sunlight and change it into food (sugar) and oxygen.",
+      "explanation": "文章在解释植物吸收二氧化碳后，直接给出过程名称photosynthesis，接着列出水、阳光、食物与氧气。题目要的是过程名称，只填这一个词；不能用carbon dioxide或oxygen这样的原料、产物名称代替。",
+      "evidenceOffsets": {
+        "start": 2504,
+        "end": 2659,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What possible consequence of carbon dioxide absorption by oceans does the article identify?",
+      "options": [
+        "More acidic water can weaken the shells or skeletons of some marine creatures.",
+        "More acidic water necessarily strengthens coral skeletons.",
+        "Chemical reactions prevent any change in ocean acidity.",
+        "Absorption affects atmospheric gases but cannot affect ocean organisms."
+      ],
+      "answers": [
+        "More acidic water can weaken the shells or skeletons of some marine creatures."
+      ],
+      "evidence": "It can also make the soil and ocean more acidic, which can impact plants and animals. For example, ocean acidification can be harmful to many ocean creatures, such as shellfish and coral, as it weakens their shells and skeletons.",
+      "explanation": "文章并未把吸收二氧化碳说成只有单一益处，而指出可能使海洋更酸，削弱贝类和珊瑚的壳或骨骼。强化骨骼、完全不改变酸度、不能影响生物都与这段相反。can表示文中说明的可能影响，不应扩大为任何情况下每个生物都受到同样损害。",
+      "evidenceOffsets": {
+        "start": 2788,
+        "end": 3017,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which measurement does the article attribute to the CERES instruments?",
+      "options": [
+        "Changes in atmospheric carbon dioxide concentrations.",
+        "Changes in ocean ecosystems.",
+        "The balance between heat trapped on Earth and heat escaping to space.",
+        "Changes in atmospheric methane concentrations."
+      ],
+      "answers": [
+        "The balance between heat trapped on Earth and heat escaping to space."
+      ],
+      "evidence": "They collect data to show how much heat is getting trapped on Earth compared to how much is escaping to space.",
+      "explanation": "CERES在本段负责比较地球滞留与逃逸到太空的热量。后面OCO系列、EMIT和PACE才分别讨论二氧化碳、甲烷和海洋变化；这些都是本文真实提到的观测主题，但不能互换仪器与对象。",
+      "evidenceOffsets": {
+        "start": 3176,
+        "end": 3286,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which gas do OCO-2 and OCO-3 track in the article?",
+      "options": [
+        "Methane.",
+        "Carbon dioxide.",
+        "Oxygen.",
+        "Water vapor."
+      ],
+      "answers": [
+        "Carbon dioxide."
+      ],
+      "evidence": "The Orbiting Carbon Observatory-2, or OCO-2, and OCO-3 keep track of carbon dioxide in the air.",
+      "explanation": "这句把OCO-2/OCO-3与空气中的carbon dioxide明确配对。methane在下一句属于EMIT的监测对象；氧气和水蒸气虽与文中的环境过程有关，却没有被列为这两项观测在本句追踪的气体。",
+      "evidenceOffsets": {
+        "start": 3465,
+        "end": 3560,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "not-applicable",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "f5f845695db7bf6c900f071a6f1361f1fd6be12ae020fc752339a8ae915859ad",
+      "reviewSha256": "b9ebedafdc088839ac8c26852437c957a04a077c9772460fd7ce8630acf6d62f",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

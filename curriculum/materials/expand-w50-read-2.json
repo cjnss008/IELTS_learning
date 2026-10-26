@@ -1,0 +1,430 @@
+{
+  "id": "expand-w50-read-2",
+  "week": 50,
+  "skill": "reading",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 800,
+  "maxWords": 1100,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "综合模拟二与稳定性检查 · Independent new scenario: a lecture assessing the transferability of research",
+  "grammarFocus": "根据两轮结果检查重复错误，巩固准确表达与稳定句型。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "Assessing Transferability: A Simulated Lecture Scenario",
+  "instructions": "项目原创模拟场景与数据，不是官方试卷。阅读文章后独立回答10题，再检查逐题依据。题目包含信息定位、论证范围、比较及推断；遇到词汇可用划词帮助，但使用帮助不算独立测评。语法先看规则，再做新语境练习。",
+  "passage": "A. Good morning, everyone. Today's lecture is about assessing the transferability of research findings. In other words, we ask: can the results of a study conducted in one setting be applied to another setting? This is a crucial question for policymakers, educators, and business leaders who want to use research evidence to make decisions. Let me start with a simple example. Suppose a study finds that a new teaching method improves math scores in urban schools. Can we assume it will work equally well in rural schools? Not necessarily. Transferability depends on many factors, including the characteristics of the population, the context, and the implementation. In this lecture, I will discuss three key criteria for assessing transferability: similarity of context, similarity of population, and fidelity of implementation. I will also explain how to check for stability of results across different studies.\n\nB. First, similarity of context. When we consider whether findings can transfer, we need to compare the original setting with the new setting. Key contextual factors include the physical environment, the organizational culture, and the available resources. For instance, a program that requires high-speed internet may not transfer to a region with poor connectivity. Similarly, a teaching method that relies on small class sizes may not work in schools with large classes. Researchers often use a framework called 'contextual fit' to evaluate how well a program matches a new setting. If the contextual fit is low, transferability is likely to be limited. However, even if the context is similar, we must also consider the population.\n\nC. Second, similarity of population. The people in the new setting may differ from those in the original study in important ways. These differences can include age, prior knowledge, motivation, and cultural background. For example, a study on adult learners may not transfer directly to children, because adults and children learn differently. Likewise, a reading intervention designed for native speakers may not be effective for second-language learners. Researchers therefore recommend that before transferring a program, we should check whether the target population shares key characteristics with the original population. If the populations are very different, the findings may not hold. But even with similar context and population, there is a third criterion: fidelity of implementation.\n\nD. Third, fidelity of implementation. This refers to how closely the program is delivered as intended. Even a well-designed program can fail if it is not implemented correctly. For instance, if teachers do not receive adequate training, they may not use the method as the developers intended. Similarly, if resources are insufficient, the program may be adapted in ways that reduce its effectiveness. High fidelity means that the core components of the program are delivered as planned. Low fidelity can lead to weak or inconsistent results. Therefore, when assessing transferability, we must ask: can the new setting implement the program with high fidelity? If not, the expected outcomes may not be achieved.\n\nE. Now, let me turn to the second part of the lecture: stability of results. Stability refers to whether the findings are consistent across multiple studies. If a single study finds an effect, we should be cautious. But if several studies in different settings find similar effects, we can have more confidence in the results. This is where replication comes in. Replication means repeating a study to see if the results are the same. When results are stable across replications, transferability is more likely. However, we must also be aware of publication bias: studies with positive results are more likely to be published than studies with negative results. This can distort our perception of stability. To check stability, researchers use meta-analysis, which combines the results of many studies. A meta-analysis can reveal whether effects are consistent or whether they vary widely. It can also help identify factors that explain why effects differ, such as variations in context or population. Therefore, stability is not just about whether results are consistent, but also about understanding the conditions under which they hold.\n\nF. Consider a fictional district reviewing an urban pilot. The average test gain was positive, but most participating teachers had volunteered and received weekly coaching. The rural district could offer only monthly support. Treating the average as a promise would conceal two uncertainties: whether the same learners would benefit and whether the essential teaching routines could be sustained. The district proposed a small local trial, recorded which components were delivered, and defined success before examining results. It would report missing responses as well as completed tests. This would not reproduce the original study perfectly, but it would distinguish evidence of local feasibility from an assumption that the published average must recur. Importantly, a null result would also be reported; concealing it would make later reviews of the evidence less informative.\n\nG. In conclusion, assessing transferability requires careful analysis of context, population, and implementation. Stability of results across studies adds further confidence. As you go about your work, I encourage you to ask critical questions: Is the context similar? Is the population similar? Can the program be implemented with fidelity? Are the results stable across studies? By asking these questions, you can make better decisions about whether to apply research findings in new settings. Thank you for your attention. I am happy to take any questions now.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main topic of the lecture?",
+      "options": [
+        "How to conduct a meta-analysis",
+        "Assessing the transferability of research findings",
+        "The importance of publication bias",
+        "Designing a reading intervention"
+      ],
+      "answers": [
+        "Assessing the transferability of research findings"
+      ],
+      "explanation": "讲座开头明确指出主题是评估研究结果的可转移性。",
+      "evidence": "Today's lecture is about assessing the transferability of research findings."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why is matching the original context alone insufficient when deciding whether findings will transfer?",
+      "options": [
+        "The target population and delivery of core components can still differ.",
+        "A similar context makes every replication identical.",
+        "Contextual fit eliminates any risk of publication bias.",
+        "Population differences are stated to have no influence on learning."
+      ],
+      "answers": [
+        "The target population and delivery of core components can still differ."
+      ],
+      "explanation": "原文依次讨论情境、人群与实施，情境相似不自动保证后两者；不能把一个条件当成完整充分条件。",
+      "evidence": "But even with similar context and population, there is a third criterion: fidelity of implementation."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: Researchers often use a framework called '________ fit' to evaluate how well a program matches a new setting.",
+      "maxWords": 1,
+      "answers": [
+        "contextual"
+      ],
+      "explanation": "原文提到研究人员使用“contextual fit”框架来评估项目与新环境的匹配程度。",
+      "evidence": "Researchers often use a framework called 'contextual fit' to evaluate how well a program matches a new setting."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is the function of the example contrasting adult learners with children?",
+      "options": [
+        "To illustrate why characteristics of participants may limit application to a new group.",
+        "To claim that findings can never apply outside the original study.",
+        "To show that age is the only relevant population characteristic.",
+        "To establish that all adults learn more effectively than children."
+      ],
+      "answers": [
+        "To illustrate why characteristics of participants may limit application to a new group."
+      ],
+      "explanation": "这个例子支持人群特征可能影响可转移性，措辞may not不等于永不转移，也没有把年龄说成唯一因素或比较成人儿童优劣。",
+      "evidence": "For example, a study on adult learners may not transfer directly to children, because adults and children learn differently."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does 'fidelity of implementation' refer to?",
+      "options": [
+        "How closely the program is delivered as intended",
+        "How well the program matches the context",
+        "How similar the populations are",
+        "How stable the results are across studies"
+      ],
+      "answers": [
+        "How closely the program is delivered as intended"
+      ],
+      "explanation": "实施保真度指的是项目按预期实施的程度。",
+      "evidence": "This refers to how closely the program is delivered as intended."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is the purpose of meta-analysis according to the lecture?",
+      "options": [
+        "To combine results of many studies and check consistency",
+        "To replicate a single study in a new setting",
+        "To assess the contextual fit of a program",
+        "To measure fidelity of implementation"
+      ],
+      "answers": [
+        "To combine results of many studies and check consistency"
+      ],
+      "explanation": "元分析用于合并许多研究的结果，以检查效应是否一致。",
+      "evidence": "To check stability, researchers use meta-analysis, which combines the results of many studies."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What concern is raised by the difference between weekly and monthly coaching in the fictional example?",
+      "options": [
+        "The new district may be unable to sustain the programme's essential routines in the same way.",
+        "The rural teachers were proved to be less motivated.",
+        "Coaching frequency was proved irrelevant to implementation.",
+        "The original test gain was shown to have been fabricated."
+      ],
+      "answers": [
+        "The new district may be unable to sustain the programme's essential routines in the same way."
+      ],
+      "explanation": "辅导支持不同，可能影响实施保真度；这提出不确定性，没有证明教师动机较低、频率无关或原结果造假。",
+      "evidence": "Treating the average as a promise would conceal two uncertainties: whether the same learners would benefit and whether the essential teaching routines could be sustained."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Why would reporting a null result be useful according to the fictional example?",
+      "options": [
+        "It would reduce selective reporting and improve later reviews of the evidence.",
+        "It would show that no programme can ever transfer successfully.",
+        "It would make the original average apply automatically to the new district.",
+        "It would remove the need to record missing responses."
+      ],
+      "answers": [
+        "It would reduce selective reporting and improve later reviews of the evidence."
+      ],
+      "explanation": "如实报告未检出预期效应的结果（null result），可减少只报告正向结果的偏差，使后续证据综合更完整。这不能证明所有项目都无效，也不能免除其他数据的报告。",
+      "evidence": "Importantly, a null result would also be reported; concealing it would make later reviews of the evidence less informative."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Decide whether the statement agrees with the passage: The fictional district's local trial produced a larger average gain than the urban pilot.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "原文介绍了本地试验的安排、实施记录和报告原则，但没有给出本地试验的平均增益，也没有将它与城市试点作数值比较。因此无法判断本地增益是否更大，应选 Not Given。",
+      "evidence": "The district proposed a small local trial, recorded which components were delivered, and defined success before examining results."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Match the following heading to the correct paragraph: 'The role of replication and meta-analysis in stability'",
+      "options": [
+        "Paragraph A",
+        "Paragraph B",
+        "Paragraph C",
+        "Paragraph D",
+        "Paragraph E",
+        "Paragraph F"
+      ],
+      "answers": [
+        "Paragraph E"
+      ],
+      "explanation": "E段讨论了稳定性、重复研究和元分析。",
+      "evidence": "Now, let me turn to the second part of the lecture: stability of results."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "transferability",
+      "meaning": "可转移性",
+      "example": "Today's lecture is about assessing the transferability of research findings.",
+      "sourceQuote": "Today's lecture is about assessing the transferability of research findings."
+    },
+    {
+      "word": "contextual",
+      "meaning": "情境的",
+      "example": "Key contextual factors include the physical environment, the organizational culture, and the available resources.",
+      "sourceQuote": "Key contextual factors include the physical environment, the organizational culture, and the available resources."
+    },
+    {
+      "word": "fidelity",
+      "meaning": "保真度",
+      "example": "In this lecture, I will discuss three key criteria for assessing transferability: similarity of context, similarity of population, and fidelity of implementation.",
+      "sourceQuote": "In this lecture, I will discuss three key criteria for assessing transferability: similarity of context, similarity of population, and fidelity of implementation."
+    },
+    {
+      "word": "replication",
+      "meaning": "重复研究",
+      "example": "This is where replication comes in.",
+      "sourceQuote": "This is where replication comes in."
+    },
+    {
+      "word": "meta-analysis",
+      "meaning": "元分析",
+      "example": "To check stability, researchers use meta-analysis, which combines the results of many studies.",
+      "sourceQuote": "To check stability, researchers use meta-analysis, which combines the results of many studies."
+    },
+    {
+      "word": "publication bias",
+      "meaning": "发表偏倚",
+      "example": "However, we must also be aware of publication bias: studies with positive results are more likely to be published than studies with negative results.",
+      "sourceQuote": "However, we must also be aware of publication bias: studies with positive results are more likely to be published than studies with negative results."
+    },
+    {
+      "word": "stability",
+      "meaning": "稳定性",
+      "example": "I will also explain how to check for stability of results across different studies.",
+      "sourceQuote": "I will also explain how to check for stability of results across different studies."
+    },
+    {
+      "word": "implementation",
+      "meaning": "实施",
+      "example": "Transferability depends on many factors, including the characteristics of the population, the context, and the implementation.",
+      "sourceQuote": "Transferability depends on many factors, including the characteristics of the population, the context, and the implementation."
+    }
+  ],
+  "grammar": {
+    "title": "研究论证中的限定：非限定从句、分词修饰与被动推断",
+    "explanation": "whether引名词性从句，表达需要查明的两种可能，不等于断言其中一种已经成立。非限定性定语从句用逗号隔开，which可提供补充说明，不能在这种结构中直接换that。过去分词修饰被实施、被报告的内容；现在分词可表达主动产生某效果的事物。情态动词have been +过去分词用于对过去被动事件作推断。检查主谓一致和冠词属于基础巩固，高级表达仍以意义清楚为先。",
+    "example": "A meta-analysis can reveal whether effects are consistent or whether they vary widely.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Add a non-defining clause about the whole report: The report, ___ includes null results, is available online.",
+        "options": [
+          "which",
+          "that",
+          "what",
+          "whose"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "逗号划出非限定定语从句，which指物并作includes主语；that不能用于此结构，what不能接先行词，whose后应有所属名词。",
+        "evidence": "Add a non-defining clause about the whole report: The report, which includes null results, is available online."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Present an unresolved question, not a finding: The team investigated ___ the method would work in larger classes.",
+        "options": [
+          "whether",
+          "that",
+          "despite",
+          "due to"
+        ],
+        "answers": [
+          "whether"
+        ],
+        "explanation": "whether 引出需要调查的“是否可行”这一间接疑问；that 不能在这里替代 whether 来表达这两种待定可能。despite 和 due to 后也不能直接接题中的完整从句。",
+        "evidence": "Present an unresolved question, not a finding: The team investigated whether the method would work in larger classes."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "The schools received the programme; they did not deliver it to others. Choose the passive form: The programme ___ in six schools.",
+        "options": [
+          "was implemented",
+          "was implementing itself",
+          "were implemented",
+          "was implement"
+        ],
+        "answers": [
+          "was implemented"
+        ],
+        "explanation": "programme是单数且被实施，was +过去分词implemented正确；were数不一致，implement缺过去分词，主动进行形式不合指定意义。",
+        "evidence": "The schools received the programme; they did not deliver it to others. Choose the passive form: The programme was implemented in six schools."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Researchers recommends checking the context.",
+          "Researchers recommend checking the context.",
+          "Researchers recommend to checking the context.",
+          "Researchers recommending checking the context."
+        ],
+        "answers": [
+          "Researchers recommend checking the context."
+        ],
+        "explanation": "主语 Researchers 是复数，谓语用 recommend；recommend 后接动名词 checking。",
+        "evidence": "Researchers recommend checking the context."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Express an unconfirmed possibility about missing studies: Some null results ___ from the review.",
+        "options": [
+          "may have been excluded",
+          "must definitely be excluding",
+          "may have exclude",
+          "will have excluding"
+        ],
+        "answers": [
+          "may have been excluded"
+        ],
+        "explanation": "可能已经被排除，用may have been excluded；不是确定的主动进行，也不能have后用原形或-ing。",
+        "evidence": "Express an unconfirmed possibility about missing studies: Some null results may have been excluded from the review."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "The study was conducted in urban schools.",
+          "The study were conducted in urban schools.",
+          "The study was conducting in urban schools.",
+          "The study was conduct in urban schools."
+        ],
+        "answers": [
+          "The study was conducted in urban schools."
+        ],
+        "explanation": "被动语态 was + 过去分词 conducted。",
+        "evidence": "The study was conducted in urban schools."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the reduced passive clause: The findings ___ across several settings were more consistent than those from a single pilot.",
+        "options": [
+          "replicated",
+          "replicating them",
+          "were replicated",
+          "have replicating"
+        ],
+        "answers": [
+          "replicated"
+        ],
+        "explanation": "过去分词replicated后置修饰findings，相当于that were replicated；这里主句谓语已有were，不能再放另一个完整谓语或多余them。",
+        "evidence": "Choose the reduced passive clause: The findings replicated across several settings were more consistent than those from a single pilot."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "We should be aware of publication bias.",
+          "We should aware of publication bias.",
+          "We should being aware of publication bias.",
+          "We should to be aware of publication bias."
+        ],
+        "answers": [
+          "We should be aware of publication bias."
+        ],
+        "explanation": "情态动词 should 后接动词原形 be。",
+        "evidence": "We should be aware of publication bias."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often read research reports?",
+        "What do you think makes a study reliable?",
+        "Have you ever changed your mind after reading new evidence?",
+        "Do you prefer to learn from personal experience or from research?"
+      ],
+      "part2": "Describe a time when you had to decide whether to apply a solution from one situation to another. You should say: what the original situation was, what the new situation was, what factors you considered, and whether the solution worked.",
+      "part3": [
+        "How can we tell if research findings are relevant to our own context?",
+        "What are the dangers of applying a program without considering the population?",
+        "Why is it important to check whether results are stable across studies?",
+        "How might publication bias affect the decisions of policymakers?"
+      ]
+    },
+    "writing": "Research findings from successful pilot programmes are often used to guide policy elsewhere. What risks arise when this is done, and how can decision-makers reduce them? Discuss differences in context, participants and implementation using your own examples. Write at least 250 words."
+  },
+  "rubric": {
+    "taskType": "Reading Comprehension (simulated academic lecture)"
+  },
+  "version": "1",
+  "active": false,
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创、AI辅助编辑；所有人物、案例与数据均为教学模拟。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "method": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+    "sourceTextSha256": "dfb5e0783f7522410d7bc6b3dfe22000c0df7f9b0308162832c373c8fff0ddfc",
+    "levelCalibration": "Uncalibrated author estimate. Mixed advanced argument practice and targeted grammar consolidation; no learner Band equivalence.",
+    "sourceRevision": {
+      "originalDraftSHA256": "281b2b479cb1edcf98855d04c61555fac0fc11ea7e4545940a0c452d4ebb6a83",
+      "originalSourceSHA256": "fabffcb3b154540f120fa592ffe6885832d663a6df05f4dff4312dccbe7af23d",
+      "changedSource": true
+    },
+    "contentHash": "44d6734b071142166d6d8c391c89a8a111211e4b5a28c62f3b5a5dd32f135e64",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "releaseStatus": "staged-inactive",
+    "textReview": {
+      "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+      "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+      "semanticReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+      "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+      "humanReviewed": false,
+      "difficultyCalibrated": false
+    }
+  },
+  "audio": "",
+  "audioSynthetic": true
+}

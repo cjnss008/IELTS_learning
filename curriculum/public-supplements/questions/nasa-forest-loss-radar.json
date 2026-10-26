@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-forest-loss-radar-comprehension-v2",
+  "version": "2",
+  "sourceId": "nasa-forest-loss-radar",
+  "sourceVersion": "1",
+  "sourceTextSha256": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+  "sourceContentHash": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+  "exposureGroup": "public-source:nasa-forest-loss-radar",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What prevents an optical satellite from consistently observing the ground in tropical regions?",
+      "options": [
+        "Cloud cover blocks the reflected light needed to observe the ground.",
+        "Clouds reduce the number of times Landsat passes over a tropical forest.",
+        "The optical instrument records soil beneath the canopy rather than surface clearing.",
+        "Remaining branches scatter the C-band radar signal used by Landsat."
+      ],
+      "answers": [
+        "Cloud cover blocks the reflected light needed to observe the ground."
+      ],
+      "evidence": "Though Landsat is an invaluable tool for Earth observation, it has a critical limitation: clouds. As an optical satellite, it relies on reflected light and cannot observe the ground through cloud cover. This creates data gaps that are especially limiting in tropical regions, which are cloudy most of the year. In some areas, months can pass without acquiring a cloud-free image, hindering efforts to track and curb unregulated forest clearing.",
+      "evidenceOffsets": {
+        "start": 1515,
+        "end": 1959,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "正文的限制是云遮住光学地表信号，不是改变卫星重访轨道。C-band来自雷达讨论，不是Landsat光学传感器；穿过林冠到地面则是文中对较长雷达波段能力的解释，不能移给光学仪器。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why can the longer radar wavelengths reveal clearing that shorter wavelengths may miss?",
+      "options": [
+        "L-band was selected because its data were more readily available than C-band data.",
+        "Longer wavelengths scatter off the treetops while shorter ones reach the ground.",
+        "Radar observations must wait for the clear skies needed by optical sensors.",
+        "Longer wavelengths can penetrate debris that scatters shorter wavelengths."
+      ],
+      "answers": [
+        "Longer wavelengths can penetrate debris that scatters shorter wavelengths."
+      ],
+      "evidence": "This L-band is central to Flores-Anderson’s approach. Similar efforts favored C-band because it was more readily available than other SAR data. But when felled trees—along with their branches and leaves—are not removed right away, C-band’s shorter wavelengths are scattered by remaining debris, obscuring evidence of destruction. In contrast, L-band’s longer wavelengths can penetrate this material and reveal the damage. The new method is the first of its kind to automatically combine the user-friendly, intuitive images from Landsat and the consistent, detailed insights from L-band SAR data.",
+      "evidenceOffsets": {
+        "start": 2863,
+        "end": 3458,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "L-band可穿透残留枝叶，C-band较短，容易被残留材料散射。其他选项把更易获得的数据种类颠倒、把长短波作用倒置，或把光学观测的晴空限制移给雷达。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does the combined algorithm require several observations in a row?",
+      "options": [
+        "To favour the more frequent optical images over evidence from L-band radar.",
+        "To wait for several years of images before issuing a clearing alert.",
+        "To confirm forest loss using repeated evidence and reduce false alarms.",
+        "To keep radar and optical evidence separate until the annual maps are finished."
+      ],
+      "answers": [
+        "To confirm forest loss using repeated evidence and reduce false alarms."
+      ],
+      "evidence": "The map on the right shows how the new algorithm combines information from both types of observations. To increase accuracy, this algorithm confirms deforestation only if there are multiple, consecutive observations of forest loss. This view confirms deforestation as early as February, up to two months earlier than optical-only, and with much more certainty than the optical- or SAR-only approaches.",
+      "evidenceOffsets": {
+        "start": 4318,
+        "end": 4719,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "多次连续观测是为了确认变化、降低误报。算法恰好融合而非分离两类数据；光学拍得更频繁也不等于算法优先忽视雷达；方法追求较快预警，不是等多年才发警报。",
+      "understanding": "method-and-evidence",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why might an image taken a year after clearing fail to record the original event?",
+      "options": [
+        "The combined method may have confirmed some forest loss as early as February.",
+        "Vegetation may have grown back before the later image was obtained.",
+        "The study’s radar observations may have been taken once or twice a month.",
+        "Optical sensors may already have detected a wider cleared area in April."
+      ],
+      "answers": [
+        "Vegetation may have grown back before the later image was obtained."
+      ],
+      "evidence": "“In the tropics, it’s important to detect deforestation as soon as it occurs,” Flores-Anderson said. “If an image of a cleared forest isn’t available until the following year, the area may already be regrown, and deforestation will be missing from our data.”",
+      "evidenceOffsets": {
+        "start": 5020,
+        "end": 5278,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "只有植被重新长起直接解释一年后可能漏记原毁林事件。其余三项虽都与正文观测频率或案例时间有关，但不是所问的年度迟拍会漏记事件的原因。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Which radar band can penetrate the remaining debris? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "L-band"
+      ],
+      "evidence": "This L-band is central to Flores-Anderson’s approach. Similar efforts favored C-band because it was more readily available than other SAR data. But when felled trees—along with their branches and leaves—are not removed right away, C-band’s shorter wavelengths are scattered by remaining debris, obscuring evidence of destruction. In contrast, L-band’s longer wavelengths can penetrate this material and reveal the damage. The new method is the first of its kind to automatically combine the user-friendly, intuitive images from Landsat and the consistent, detailed insights from L-band SAR data.",
+      "evidenceOffsets": {
+        "start": 2863,
+        "end": 3458,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "答案是L-band。对照句把C-band的散射与L-band的穿透能力作比较；不能只写radar，也不能把较短的C-band填入。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How frequently is the new mission expected to provide free, global radar data? Write no more than three words from the text.",
+      "maxWords": 3,
+      "answers": [
+        "every 12 days"
+      ],
+      "evidence": "The NISAR (NASA-ISRO Synthetic Aperture Radar) satellite, launched in July 2025, will drastically increase the feasibility of systems like Flores-Anderson’s by providing more frequent and comprehensive L-band SAR data. L-band data has been relatively scarce, with limited images only available in a few areas like the Brazilian Amazon. Once more NISAR data become publicly available, they will provide free, global L-band SAR every 12 days. Flores-Anderson’s system is already prepared to incorporate this data.",
+      "evidenceOffsets": {
+        "start": 5690,
+        "end": 6201,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文描述预期的数据供给频率为every 12 days；once or twice a month说的是研究中此前使用的数据，不是新任务的预期频率。这是文章发布时的预期，不据此声称当前服务已经达到该频率。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "6460bcc622150d4faef75da56dd0dd4278d0f7bde150f3dc009fa55a812a8463",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

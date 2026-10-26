@@ -1,25 +1,75 @@
 {
-  "schema": 3,
   "id": "independent-a1-listen-in",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+  "configurationHash": "81bb07af24e20ce4ee52783c11f1d9219ae87a26187e648b17a67996b0d07601",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+    "rate": "-18%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-US-AriaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 555,
+        "text": "Welcome to our computer room. My name is Anil. I am here to help you. There are ten computers. Please use computer seven today. Its screen is next to the window. Your class starts at nine thirty. We learn to send an email today. You need your phone for the class, but you do not need a book. You can get paper from the cupboard by the door. The printer costs two rupees for one page. Please ask me before you print. You can drink water here, but please eat your food outside. The room closes at four. If you leave before then, please turn off your screen.",
+        "boundary": "paragraph",
+        "voice": "en-US-AriaNeural",
+        "textHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "c382271f25a76292310c7cbbb1f10cb1880d4ccc37721d394402b3eb8c7d02de",
+  "voices": [
+    "en-US-AriaNeural"
+  ],
+  "roleVoices": {
+    "narrator": "en-US-AriaNeural"
+  },
+  "durationSeconds": 51.319042,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-IN",
-  "voices": [
-    "en-IN-NeerjaNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "-18%",
-  "transcriptHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
-  "audioHash": "29294353b428f2e693f2e65a7c9d300ec5b252b18988e6b5e6aa2a7a53821365",
-  "configurationHash": "36b5218e37af485115cc2fb2a4219c31562b12362c71e2d0c9a4888e46f62020",
-  "durationSeconds": 56.52,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 555,
+      "boundary": "paragraph",
+      "voice": "en-US-AriaNeural",
       "textHash": "904344e3221d244eaa75c25d4480f094bbcbf696e14be43f3b367a75c09fd7c7",
-      "durationSeconds": 56.52
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "0944ea56ccf3d11946c068cb96d2beafa64a5d5afc08a3697ab3897095fd717a",
+      "groupAudioHash": "08b78fd3f62b47062d88fe01106e48ba040e5d9e6df2128fff23123337315d6e",
+      "groupStartSeconds": 0.050958333333333335,
+      "groupEndSeconds": 51.37,
+      "wordStartSeconds": 0.110958,
+      "wordEndSeconds": 51.25,
+      "startSeconds": 0.0,
+      "endSeconds": 51.319041666666664,
+      "durationSeconds": 51.319041666666664
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a1-listen-in.mp3"
 }

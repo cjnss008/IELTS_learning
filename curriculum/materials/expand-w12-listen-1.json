@@ -1,0 +1,356 @@
+{
+  "id": "expand-w12-listen-1",
+  "week": 12,
+  "skill": "listening",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "旅行经历与基础测评 · Independent new scenario: organising a weekend trip with constraints",
+  "grammarFocus": "一般过去时；规则与常用不规则过去式；then / after that / finally。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Weekend Trip Planning with Constraints",
+  "instructions": "本材料为模拟教学练习，不是官方雅思考试。请先听/读对话，注意说话人如何商量周末旅行、遇到限制条件时如何调整计划。然后完成8道听力/阅读题。接着学习一般过去时（规则与常用不规则动词）以及 then / after that / finally 的用法，并完成8道语法题。最后进行口语和写作练习。所有题目答案均可在原文中找到依据。",
+  "transcript": "Mia: Hi, Leo. Do you want to go to the beach this weekend?\nLeo: I do, but my car is broken. We can't drive there.\nMia: OK. We can take the train. The train leaves at eight.\nLeo: Eight is early. I work late on Friday. Can we go at ten?\nMia: Yes, the ten o'clock train is fine. We arrived at the beach at eleven last time. The train ride takes about one hour.\nLeo: Good. But I have only fifty dollars. The train ticket is fifteen dollars.\nMia: That's OK. I have thirty dollars. We can buy sandwiches and water. Together we have enough money for the tickets and food.\nLeo: Perfect. After that, we can walk on the beach. Then we can swim.\nMia: Wait, I can't swim. I forgot my swimsuit.\nLeo: No problem. We can play volleyball instead. It is fun and easy. Finally, we can take the six o'clock train home.\nMia: Great. I called my sister yesterday. She wants to come too.\nLeo: Nice. She can meet us at the station at nine thirty.\nMia: OK. See you on Saturday!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why can't Leo drive to the beach?",
+      "options": [
+        "His car is broken.",
+        "He has no money.",
+        "He works on Saturday."
+      ],
+      "answers": [
+        "His car is broken."
+      ],
+      "explanation": "Leo 说 “my car is broken”，所以不能开车去。",
+      "evidence": "my car is broken"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What time do they decide to take the train?",
+      "options": [
+        "At eight o'clock.",
+        "At ten o'clock.",
+        "At six o'clock."
+      ],
+      "answers": [
+        "At ten o'clock."
+      ],
+      "explanation": "Mia 说 “the ten o'clock train is fine”，他们决定坐十点的火车。",
+      "evidence": "the ten o'clock train is fine"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How much is the train ticket? (Write one word or a number.)",
+      "maxWords": 2,
+      "answers": [
+        "fifteen dollars",
+        "15 dollars",
+        "fifteen"
+      ],
+      "explanation": "Leo 说 “The train ticket is fifteen dollars.” 票价是十五美元。",
+      "evidence": "The train ticket is fifteen dollars."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Mia forget?",
+      "options": [
+        "Her money.",
+        "Her swimsuit.",
+        "Her ticket."
+      ],
+      "answers": [
+        "Her swimsuit."
+      ],
+      "explanation": "Mia 说 “I forgot my swimsuit.” 她忘了带泳衣。",
+      "evidence": "I forgot my swimsuit."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What do they plan to do after walking on the beach?",
+      "options": [
+        "Swim in the sea.",
+        "Play volleyball.",
+        "Take the train home."
+      ],
+      "answers": [
+        "Play volleyball."
+      ],
+      "explanation": "Mia 不能游泳后，Leo 说 “We can play volleyball instead.” 所以散步后他们计划打排球。",
+      "evidence": "We can play volleyball instead."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "What time is the train home? (Write one word or a number.)",
+      "maxWords": 2,
+      "answers": [
+        "six o'clock",
+        "6 o'clock",
+        "six"
+      ],
+      "explanation": "Leo 说 “we can take the six o'clock train home”，回家的火车是六点。",
+      "evidence": "the six o'clock train home"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Who wants to come too?",
+      "options": [
+        "Mia's sister.",
+        "Leo's brother.",
+        "Mia's friend."
+      ],
+      "answers": [
+        "Mia's sister."
+      ],
+      "explanation": "Mia 说 “I called my sister yesterday. She wants to come too.” 是 Mia 的姐姐/妹妹想来。",
+      "evidence": "I called my sister yesterday. She wants to come too."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Where will Mia's sister meet them?",
+      "options": [
+        "At the beach.",
+        "At the station.",
+        "At the train."
+      ],
+      "answers": [
+        "At the station."
+      ],
+      "explanation": "Leo 说 “She can meet us at the station at nine thirty.” 所以她们在车站见面。",
+      "evidence": "She can meet us at the station at nine thirty."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "broken",
+      "meaning": "坏了；出故障的",
+      "example": "my car is broken"
+    },
+    {
+      "word": "train",
+      "meaning": "火车",
+      "example": "We can take the train."
+    },
+    {
+      "word": "early",
+      "meaning": "早的",
+      "example": "Eight is early."
+    },
+    {
+      "word": "ticket",
+      "meaning": "票",
+      "example": "The train ticket is fifteen dollars."
+    },
+    {
+      "word": "sandwiches",
+      "meaning": "三明治（复数）",
+      "example": "We can buy sandwiches and water."
+    },
+    {
+      "word": "swimsuit",
+      "meaning": "泳衣",
+      "example": "I forgot my swimsuit."
+    },
+    {
+      "word": "volleyball",
+      "meaning": "排球",
+      "example": "We can play volleyball."
+    },
+    {
+      "word": "station",
+      "meaning": "车站",
+      "example": "She can meet us at the station at nine thirty."
+    }
+  ],
+  "grammar": {
+    "title": "一般过去时：规则与常用不规则动词；then / after that / finally",
+    "explanation": "一般过去时表示过去发生的动作或状态。规则动词在动词后加 -ed，例如 walk → walked, play → played。以 e 结尾的动词直接加 -d，例如 arrive → arrived。常用不规则动词需要单独记，例如 go → went, have → had, buy → bought, take → took, forget → forgot, swim → swam, meet → met, leave → left, call → called（规则）。否定句用 didn't + 动词原形，例如 I didn't go. 一般疑问句用 Did + 主语 + 动词原形？例如 Did you swim? 另外，then / after that / finally 用来按顺序连接过去的动作：then 表示“然后”，after that 表示“在那之后”，finally 表示“最后”。",
+    "example": "I called my sister yesterday. She wants to come too.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Yesterday I ___ to the park with my friend.",
+        "options": [
+          "go",
+          "went",
+          "goed"
+        ],
+        "answers": [
+          "went"
+        ],
+        "explanation": "yesterday 表示过去，go 的不规则过去式是 went。",
+        "evidence": "go → went"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "She ___ a new book last week.",
+        "options": [
+          "buy",
+          "buyed",
+          "bought"
+        ],
+        "answers": [
+          "bought"
+        ],
+        "explanation": "last week 表示过去，buy 的不规则过去式是 bought。",
+        "evidence": "buy → bought"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "We ___ at the hotel at nine o'clock.",
+        "options": [
+          "arrive",
+          "arrived",
+          "arrives"
+        ],
+        "answers": [
+          "arrived"
+        ],
+        "explanation": "句子描述过去，arrive 是规则动词，过去式加 -d 变成 arrived。",
+        "evidence": "arrive → arrived"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "He ___ his keys this morning.",
+        "options": [
+          "forget",
+          "forgot",
+          "forgetted"
+        ],
+        "answers": [
+          "forgot"
+        ],
+        "explanation": "this morning 表示过去，forget 的不规则过去式是 forgot。",
+        "evidence": "forget → forgot"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "___ you ___ volleyball last Sunday?",
+        "options": [
+          "Do / play",
+          "Did / play",
+          "Did / played"
+        ],
+        "answers": [
+          "Did / play"
+        ],
+        "explanation": "过去时的一般疑问句用 Did + 主语 + 动词原形，所以是 Did you play。",
+        "evidence": "Did + 主语 + 动词原形"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "I ___ swim last year. I was afraid of water.",
+        "options": [
+          "didn't",
+          "don't",
+          "not"
+        ],
+        "answers": [
+          "didn't"
+        ],
+        "explanation": "last year 表示过去，否定用 didn't + 动词原形。",
+        "evidence": "didn't + 动词原形"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "First we had lunch. ___, we walked on the beach.",
+        "options": [
+          "Then",
+          "Yesterday",
+          "Last"
+        ],
+        "answers": [
+          "Then"
+        ],
+        "explanation": "then 表示“然后”，用来连接先后发生的动作。",
+        "evidence": "then 表示“然后”"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "We took the train. After that, we ___ home.",
+        "options": [
+          "walk",
+          "walked",
+          "walking"
+        ],
+        "answers": [
+          "walked"
+        ],
+        "explanation": "after that 表示过去动作的顺序，walk 是规则动词，过去式是 walked。",
+        "evidence": "walk → walked"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like to travel by train?",
+        "What do you usually take with you on a trip?",
+        "Do you like to go to the beach?",
+        "Who do you like to travel with?"
+      ],
+      "part2": "Describe a short trip you took with a friend. You should say: where you went; how you got there; what you did; and how you felt about the trip.",
+      "part3": [
+        "Why do some people like to travel by train?",
+        "Is it good to plan a trip with friends? Why?",
+        "What can people do when they have a small budget for a trip?",
+        "Do you think short trips are good? Why or why not?"
+      ]
+    },
+    "writing": "Write 5–8 sentences about a short trip you took last month. Use the past tense and the words then, after that, and finally. Say where you went, how you traveled, what you did, and how you felt."
+  },
+  "rubric": {
+    "taskType": "Listening and Reading Comprehension with Grammar and Transfer"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "6af5ad280fb9bdd3477c9a716bc834d4bc426d805bfd57ed78f57618b19617a6"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

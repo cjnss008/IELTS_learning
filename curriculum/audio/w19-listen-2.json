@@ -1,17 +1,17 @@
 {
   "id": "w19-listen-2",
   "schema": 3,
-  "layoutVersion": "curriculum-role-pauses-v68-3",
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
   "transcriptHash": "9d13cfb17199508b9682a0a64af0322ef1da3736637b207da3eb474d8f8f7f43",
-  "configurationHash": "f2e075b5579c4a1c9a8f3094110e2f041f9b69d847211ed7cc91170e9b6a11d9",
+  "configurationHash": "36bd62ae17a8052e53bdab645e60029b31dc9aa2bc0c3c6d55826de2403ae84a",
   "configuration": {
-    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
     "transcriptHash": "9d13cfb17199508b9682a0a64af0322ef1da3736637b207da3eb474d8f8f7f43",
     "rate": "-5%",
     "format": "mp3-24000-mono-48k",
     "authoringPackageVersion": "7.3.1",
     "roleVoices": {
-      "narrator": "en-US-AriaNeural"
+      "narrator": "en-US-JennyNeural"
     },
     "sourceLabels": [],
     "segments": [
@@ -22,20 +22,20 @@
         "sourceEnd": 1138,
         "text": "Last week, I visited my friend Mei in her town. They were preparing for a small festival called the Lantern Walk. When I arrived, Mei was making paper lanterns. Her brother was hanging lights while their mother was cooking dumplings. I asked, \"Who is the man over there?\" Mei said, \"That's Mr. Chen, who teaches at the local school. He is the person that organizes the parade every year.\" Then a woman came in. Mei said, \"This is Aunt Li, who makes the best rice cakes in town.\" Aunt Li smiled and said, \"I was baking rice cakes when you called me yesterday.\" I said, \"Sorry, I was busy.\" While we were talking, a little girl ran in. She was carrying a small lantern which she made herself. Mei said, \"That's her first lantern.\" The girl said, \"I was drawing the pictures on it when my brother took it!\" Everyone laughed. Later, we walked to the square. Many people were dancing while music was playing. I saw a boy who was selling tickets. Mei said, \"He is my cousin, who is visiting from the city.\" I bought a ticket that cost five yuan. The festival was fun. I learned that when people work together, they can make something beautiful.",
         "boundary": "paragraph",
-        "voice": "en-US-AriaNeural",
+        "voice": "en-US-JennyNeural",
         "textHash": "9d13cfb17199508b9682a0a64af0322ef1da3736637b207da3eb474d8f8f7f43",
         "pauseBeforeSeconds": 0
       }
     ]
   },
-  "audioHash": "6823a9173edf9840a53a312d7da9e2b157509deab7d965163f1f7ba174f45da3",
+  "audioHash": "468ca5bfb903f35dabc50bd3aace1f7778424590912ebb0f18fd8c4ef27e3175",
   "voices": [
-    "en-US-AriaNeural"
+    "en-US-JennyNeural"
   ],
   "roleVoices": {
-    "narrator": "en-US-AriaNeural"
+    "narrator": "en-US-JennyNeural"
   },
-  "durationSeconds": 85.2,
+  "durationSeconds": 83.051083,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
@@ -52,14 +52,23 @@
       "sourceStart": 0,
       "sourceEnd": 1138,
       "boundary": "paragraph",
-      "voice": "en-US-AriaNeural",
+      "voice": "en-US-JennyNeural",
       "textHash": "9d13cfb17199508b9682a0a64af0322ef1da3736637b207da3eb474d8f8f7f43",
       "pauseBeforeSeconds": 0,
-      "startSeconds": 0,
-      "endSeconds": 85.2,
-      "durationSeconds": 85.2
+      "groupConfigurationHash": "5f1378dc3cc253d2b9a1d2272ad51697c556e27273d84fad5070f8d442062ed2",
+      "groupAudioHash": "a527b8fa32e6f7ec266e199f8610ff64dfa43190cd8bf8be5938cb2ebfb06033",
+      "groupStartSeconds": 0.042625,
+      "groupEndSeconds": 83.09370833333334,
+      "wordStartSeconds": 0.102625,
+      "wordEndSeconds": 82.973708,
+      "startSeconds": 0.0,
+      "endSeconds": 83.05108333333334,
+      "durationSeconds": 83.05108333333334
     }
   ],
-  "origin": "retained-verified-single-segment",
-  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }

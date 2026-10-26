@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "questionSetId": "public-nasa-water-cycle-comprehension-v1",
+  "version": "1",
+  "sourceId": "nasa-water-cycle",
+  "sourceVersion": "2",
+  "sourceTextSha256": "5b10e239d57dd5c2595e1711d11c57b276a5ffb6121c26891334910c7d940c3e",
+  "sourceContentHash": "5b10e239d57dd5c2595e1711d11c57b276a5ffb6121c26891334910c7d940c3e",
+  "exposureGroup": "public-source:nasa-water-cycle",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading only; no authenticated matching narration supplied."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What change takes place during evaporation as described in the article?",
+      "options": [
+        "Water vapor turns into liquid droplets as air cools.",
+        "Snow freezes into glacier ice during winter.",
+        "Liquid water becomes gaseous water vapor.",
+        "Rain moves from the soil into a river."
+      ],
+      "answers": [
+        "Liquid water becomes gaseous water vapor."
+      ],
+      "evidence": "Evaporation occurs when liquid water turns into gaseous water vapor in our atmosphere.",
+      "explanation": "evaporation的定义是液态水变成气态水蒸气。水蒸气冷却成液体属于后文的condensation；结冰和地面流动也不是这一状态变化。题目要按文中的过程定义配对，而不是只看这些现象都与水有关。",
+      "evidenceOffsets": {
+        "start": 1136,
+        "end": 1222,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "What name is given to water entering the atmosphere from plants and trees? Write ONE WORD.",
+      "answers": [
+        "transpiration"
+      ],
+      "maxWords": 1,
+      "evidence": "Water from plants and trees also evaporates into the atmosphere. This is called transpiration.",
+      "explanation": "This承接前一句植物、树木的水分进入大气，给出的名称是transpiration。虽然前句也用了evaporates，但本题问文中为植物这一路径给出的专门名称，不要把它与下一阶段形成云的condensation混淆。",
+      "evidenceOffsets": {
+        "start": 1225,
+        "end": 1319,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why does rising water vapor form clouds in the explanation?",
+      "options": [
+        "Cooler air causes vapor to turn back into liquid water.",
+        "Sunlight changes surface water from liquid into vapor.",
+        "Water evaporates from plants and trees into the atmosphere.",
+        "Liquid water returns to the ground as precipitation."
+      ],
+      "answers": [
+        "Cooler air causes vapor to turn back into liquid water."
+      ],
+      "evidence": "As the water vapor rises higher and higher, the atmosphere’s air cools down. This causes the water vapor to turn back into liquid water in a process known as condensation. When this happens, it creates clouds.",
+      "explanation": "这里解释的是升高后冷却、凝结成液体并形成云。其余选项分别对应地表蒸发、植物蒸腾和降水，都是本文相关过程，却不是“已经升起的水蒸气怎样形成云”这一环节。需要辨清相邻过程的先后与状态变化。",
+      "evidenceOffsets": {
+        "start": 1375,
+        "end": 1584,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What benefit does rain reaching the soil provide, according to the article?",
+      "options": [
+        "It moves liquid ocean water into the atmosphere.",
+        "It changes atmospheric water vapor into cloud droplets.",
+        "It measures the amount of water stored in soil.",
+        "It supplies plants and refills groundwater used for drinking."
+      ],
+      "answers": [
+        "It supplies plants and refills groundwater used for drinking."
+      ],
+      "evidence": "There, it gives water to plants and refills the groundwater we drink.",
+      "explanation": "There承接降雨到达土壤等地面环境，明确说明为植物供水并补充饮用地下水。海水进入大气是蒸发，水蒸气形成云滴是凝结，测量土壤储水是后面卫星观测的工作；这些真实相关概念不能替代降雨的补给作用。",
+      "evidenceOffsets": {
+        "start": 1765,
+        "end": 1834,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does SMAP measure that helps people prepare for droughts and floods?",
+      "options": [
+        "The height of the sea surface.",
+        "The amount of moisture in soil.",
+        "When, where and how much precipitation falls.",
+        "The movement of melting land ice and deep groundwater."
+      ],
+      "answers": [
+        "The amount of moisture in soil."
+      ],
+      "evidence": "A satellite called SMAP — short for Soil Moisture Active Passive — has been tracking Earth’s soil moisture for more than a decade. These kinds of measurements help us prepare for droughts and floods.",
+      "explanation": "SMAP与soil moisture即土壤水分相连，随后说这些测量帮助应对干旱和洪水。海面高度、降水分布、融冰与地下水都在文中由其他任务讨论，不能把相邻段落的观测对象互换。",
+      "evidenceOffsets": {
+        "start": 2447,
+        "end": 2646,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which statement best describes the scope of GRACE-FO in this article?",
+      "options": [
+        "It focuses on sea surface height rather than stored water on land.",
+        "It measures precipitation in the atmosphere rather than water stored underground.",
+        "It tracks water movement, including changes in groundwater as well as melting ice.",
+        "It tracks atmospheric water vapor rather than changes in water held on land."
+      ],
+      "answers": [
+        "It tracks water movement, including changes in groundwater as well as melting ice."
+      ],
+      "evidence": "But GRACE-FO doesn’t just track melting ice. It tracks the movement of water across the planet. It can even measure changes in groundwater hundreds of feet below Earth’s surface.",
+      "explanation": "doesn’t just与can even扩展范围：GRACE-FO不只追踪融冰，还观察全球水移动与地下水变化。海面高度、大气降水和水蒸气属于同篇其他段落的观测范围，不能据此排除它对陆地储水及地下水的能力。",
+      "evidenceOffsets": {
+        "start": 3420,
+        "end": 3598,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": [],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "not-applicable",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "0b812de207101403d0721a9f84aabd59d02a2ab1b4f3f6befa26e17aa019c60c",
+      "reviewSha256": "0e38c2e3258bb633d2bc4387a57304c78dcf00beed8bb3686a5366cd89fb76ba",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

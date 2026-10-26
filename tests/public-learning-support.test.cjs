@@ -1,0 +1,33 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),{createRequire}=require('node:module');
+const root=path.join(__dirname,'..'),Support=require('../assets/public-learning-support.js'),A=require('../assets/assessment-core.js');
+const text='Anna: We collect samples.\nBob: The samples are measured carefully.',hash=A.sourceTextHash(text),material={skill:'reading',passage:text,source:{publicSourceId:'fixture',sourceTextSha256:hash,practiceOnly:true}},entry={id:'essential:sample',word:'sample',rank:800,ipa:'/ˈsæmpəl/',dictionaryMeaning:'n. 样本'},start=text.indexOf('samples'),quote='The samples are measured carefully.',grammarStart=text.indexOf(quote),data={sources:[{sourceId:'fixture',sourceTextSha256:hash,words:[{word:'sample',surface:'samples',start,end:start+7,relation:'source-listed-inflection'}],grammar:[{tag:'passive-voice',quote,start:grammarStart,end:grammarStart+quote.length,explanation:'are + measured 是一般现在时的被动语态，关注样本被测量这一过程。'}]}]};
+test('source contexts use exact published offsets, explicit forms and target/due priorities without claiming mastery',()=>{
+ const options={data,entries:[entry],targetWords:['sample'],dueWords:['essential:sample'],grammarTags:['passive-voice']},before=JSON.stringify({material,options}),out=Support.model(material,options);
+ assert.equal(out.available,true);assert.equal(out.words[0].surface,'samples');assert.equal(out.words[0].word,'sample');assert.equal(out.words[0].review,true);assert.equal(out.words[0].target,true);assert.equal(out.grammar[0].currentTarget,true);assert.equal(out.countsAsMastery,false);assert.equal(JSON.stringify({material,options}),before);
+});
+test('changed source contracts, stale word/grammar offsets and ambiguous lemmas never become valid support',()=>{
+ assert.equal(Support.model({...material,source:{...material.source,sourceTextSha256:'b'.repeat(64)}},{data,entries:[entry]}).available,false);
+ const bad=structuredClone(data);bad.sources[0].words[0].start++;bad.sources[0].grammar[0].end--;let out=Support.model(material,{data:bad,entries:[entry]});assert.equal(out.words.length,0);assert.equal(out.grammar.length,0);
+ const ambiguous=structuredClone(data);ambiguous.sources[0].words[0].ambiguousLemma=true;assert.equal(Support.model(material,{data:ambiguous,entries:[entry]}).words.length,0);
+ assert.equal(Support.model({...material,source:{...material.source,practiceOnly:false}},{data,entries:[entry]}).available,false);
+});
+test('derived listening support requires its actual transcript and preserves the original source group',()=>{
+ const listening={...material,skill:'listening',passage:'Do not use reading text as a missing transcript.',transcript:text};assert.equal(Support.model(listening,{data,entries:[entry]}).words[0].surface,'samples');delete listening.transcript;assert.equal(Support.model(listening,{data,entries:[entry]}).available,false);
+});
+test('the actual released context index binds every grammar quotation and lexical form to the compiled source',()=>{
+ const index=require('../assets/public-context-data.js'),B=require('../tools/build-public-supplement-materials.cjs'),compiled=B.load({root,practiceOnly:true,requireComplete:true}),entries=require('../assets/essential-vocabulary-data.js').entries;
+ assert.equal(index.sources.length,compiled.audit.loadedSources);let grammar=0;
+ for(const source of index.sources){const mat=compiled.materials.find(m=>m.source.publicSourceId===source.sourceId&&m.skill==='reading');assert.ok(mat);const out=Support.model(mat,{data:index,entries});assert.equal(out.available,true);assert.equal(out.grammar.length,source.grammar.length);for(const word of source.words)assert.equal(mat.passage.slice(word.start,word.end),word.surface);grammar+=out.grammar.length;}
+ assert.ok(grammar>=34);
+});
+async function submittedSourceSupport(legacy=false){
+ const helperFile=path.join(root,'tests',legacy?'public-runtime-safety.test.cjs':'public-course-runtime.test.cjs'),source=fs.readFileSync(helperFile,'utf8'),cut=source.indexOf("\ntest("),helper={exports:{}};new Function('require','__dirname','module',source.slice(0,cut)+'\nmodule.exports={domFixture,answer,submit'+(legacy?',savedPublicDraft':'')+'};')(createRequire(helperFile),path.dirname(helperFile),helper);
+ const {domFixture,answer,submit}=helper.exports,f=domFixture(legacy?{storage:helper.exports.savedPublicDraft()}:{});await new Promise(resolve=>setImmediate(resolve));const mat=f.data.materials.find(m=>m.id===f.pub.id),body=mat.passage,at=body.indexOf('bag');assert.equal(mat.source.sourceTextSha256,A.sourceTextHash(body));
+ f.win.IELTS_ESSENTIAL_VOCABULARY={entries:[{...entry,id:'essential:bag',word:'bag',ipa:'/bæɡ/',dictionaryMeaning:'n. 包'}]};f.win.IELTSPublicContextData={sources:[{sourceId:mat.source.publicSourceId,sourceTextSha256:mat.source.sourceTextSha256,words:[{word:'bag',surface:'bag',start:at,end:at+3,relation:'exact-headword'}],grammar:[{tag:'present-simple',quote:body,start:0,end:body.length,explanation:'has 表示拥有，主语是第三人称单数。'}]}]};
+ vm.runInNewContext(fs.readFileSync(path.join(root,'assets/public-learning-support.js'),'utf8'),{globalThis:f.win});
+ if(legacy){await f.win.IELTSTodayNavigation.resumeDraft('existing-public-draft');await f.win.IELTSTodayNavigation.resumeNext('reading',mat.id);}else{const task=f.win.IELTSTodayNavigation.learningQueue().entries.find(e=>e.materialId===mat.id);assert.equal(task.kind,'material');assert.equal(task.required,true);assert.notEqual(task.publicSupplement,true);await f.win.IELTSTodayNavigation.openQueued(task);}await new Promise(resolve=>setImmediate(resolve));assert.equal(f.nodes.get('courseResult').textContent.includes('本篇词汇与语法'),false);
+ await answer(f);await submit(f);const records=f.records(),record=records.find(r=>r.materialId===mat.id);assert.ok(record);assert.equal(Boolean(A.decodeArtifact(record).courseAssignment),!legacy);const before=JSON.stringify(record);assert.ok(f.nodes.get('courseResult').textContent.includes('本篇词汇与语法'));assert.ok(f.nodes.get('courseResult').textContent.includes('n. 包'));assert.equal(JSON.stringify(f.records().find(r=>r.id===record.id)),before);
+}
+test('assigned daily reading shows exact source support after its actual submission without changing the original record',()=>submittedSourceSupport());
+test('legacy public draft retains after-submit source support without acquiring a new required-course assignment',()=>submittedSourceSupport(true));

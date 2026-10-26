@@ -1,0 +1,292 @@
+{
+  "version": "1",
+  "week": 1,
+  "level": "A0",
+  "pool": "training",
+  "fullTest": false,
+  "courseExpansion": "day02-expansion-69",
+  "availableFromDay": 2,
+  "topic": "在新的晚间英语班交换信息",
+  "grammarFocus": "新增：be一般疑问句、not否定、we/they与规则复数；巩固：I am/you are、姓名与班级。",
+  "id": "day02-expansion-reading",
+  "skill": "reading",
+  "type": "foundation-reading",
+  "title": "New People at the Evening Club",
+  "estimatedMinutes": 20,
+  "minWords": 100,
+  "maxWords": 140,
+  "questionCount": 8,
+  "instructions": "原创模拟场景。先整体阅读，再回答8题；答案都在短文中，不需要猜测常识。A—D是段落标记，不是人物姓名。新知识是we/they、not和be提问；I am/班级信息属于巩固。填空只填一个原文英文词。",
+  "passage": "A\nMy name is Mei. I am at a new English club. My friend is Dan. We are students. We are not teachers. We are in Room Six. The door is blue.\n\nB\nRosa and Ben are near the door. They are teachers. They are not new students. Rosa is from Spain. Ben is from Canada. The bags are black.\n\nC\nRosa: Are you in Class B?\nMei: No, we are not. We are in Class A.\nThe green list is for Class A. The yellow list is for Class B. Mei and Dan are on the green list.\n\nD\nThe class is at seven. Dan is ready. I am not ready. My book is at home. A spare book is on my desk.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "Mei的朋友叫什么名字？只填一个英文词。",
+      "answers": [
+        "Dan"
+      ],
+      "maxWords": 1,
+      "explanation": "第一段直接介绍朋友为Dan。",
+      "evidence": "My friend is Dan."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Mei和Dan所在房间的编号是什么？只填一个英文词。",
+      "answers": [
+        "Six"
+      ],
+      "maxWords": 1,
+      "explanation": "第一段说两人在Room Six，题目只要编号词。",
+      "evidence": "We are in Room Six."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "教室门是什么颜色？",
+      "options": [
+        "蓝色",
+        "绿色",
+        "黄色"
+      ],
+      "answers": [
+        "蓝色"
+      ],
+      "explanation": "门在第一段被明确描述为blue。",
+      "evidence": "The door is blue."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Rosa来自哪里？",
+      "options": [
+        "Spain",
+        "Canada",
+        "China"
+      ],
+      "answers": [
+        "Spain"
+      ],
+      "explanation": "第二段分别给出两人的来源；Rosa来自Spain，Canada属于Ben。",
+      "evidence": "Rosa is from Spain."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Mei和Dan实际在哪个班？",
+      "options": [
+        "Class A",
+        "Class B",
+        "Class C"
+      ],
+      "answers": [
+        "Class A"
+      ],
+      "explanation": "Mei先否认Class B，随后明确说两人在Class A。",
+      "evidence": "Mei: No, we are not. We are in Class A."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Mei和Dan的姓名在哪种颜色的名单上？",
+      "options": [
+        "绿色",
+        "黄色",
+        "黑色"
+      ],
+      "answers": [
+        "绿色"
+      ],
+      "explanation": "第三段末句直接指出两人在green list，不能只看另一班的黄色名单。",
+      "evidence": "Mei and Dan are on the green list."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "课程几点开始？只填一个英文词。",
+      "answers": [
+        "seven"
+      ],
+      "maxWords": 1,
+      "explanation": "最后一段明确给出at seven。",
+      "evidence": "The class is at seven."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Mei原来的书在哪里？只填一个英文词。",
+      "answers": [
+        "home"
+      ],
+      "maxWords": 1,
+      "explanation": "最后一段把自己的书与桌上的备用书分开：自己的书在家，备用书在桌上。",
+      "evidence": "My book is at home."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "we",
+      "meaning": "我们",
+      "example": "We are students."
+    },
+    {
+      "word": "they",
+      "meaning": "他们；她们；它们",
+      "example": "They are teachers."
+    },
+    {
+      "word": "teachers",
+      "meaning": "老师（复数）",
+      "example": "They are teachers."
+    },
+    {
+      "word": "door",
+      "meaning": "门",
+      "example": "The door is blue."
+    },
+    {
+      "word": "list",
+      "meaning": "名单；清单",
+      "example": "The green list is for Class A."
+    },
+    {
+      "word": "ready",
+      "meaning": "准备好的",
+      "example": "Dan is ready."
+    },
+    {
+      "word": "home",
+      "meaning": "家",
+      "example": "My book is at home."
+    },
+    {
+      "word": "spare",
+      "meaning": "备用的",
+      "example": "A spare book is on my desk."
+    }
+  ],
+  "grammar": {
+    "title": "第2课新增 · 提问、否定与我们／他们",
+    "explanation": "本课新增：把“是／在／状态”的句子变成提问和否定，并区分“我们／他们”。\n\n先巩固：I am a student.（我是学生。）You are ready.（你准备好了。）姓名等单个人用 is：Rosa is a teacher.（Rosa是老师。）\n\n1. we 是“我们”，they 是“他们／她们／它们”。两个人或两件物品都可以用 they。we、they 后用 are：We are students. They are teachers. 这里只练 student→students、teacher→teachers、book→books；不要据此认为所有名词都直接加s。\n\n2. 否定把 not 放在 be 后：I am not a teacher. We are not teachers. They are not ready. are not 可以缩写为 aren't，I am not 不能写成 I amn't。\n\n3. 提问把 be 放在主语前，句末用问号：You are ready. → Are you ready? They are teachers. → Are they teachers? Rosa is a teacher. → Is Rosa a teacher? 不同时保留句中的第二个 are。\n\n4. 回答要跟提问对象一致：对一个人问 Are you a student? 回答 Yes, I am. / No, I am not. 对两个人问 Are you teachers? 两人一起答 No, we are not. 问 Are they ready? 回答 Yes, they are. / No, they are not. 这里先用完整的短答。",
+    "example": "We are not teachers.",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single",
+        "prompt": "说话人和朋友一起参加课程。选择表示“我们”的主语：____ are ready.",
+        "options": [
+          "We",
+          "They",
+          "I"
+        ],
+        "answers": [
+          "We"
+        ],
+        "explanation": "说话人把自己和朋友一起算进去，用We；We后用are。",
+        "evidence": "We are students."
+      },
+      {
+        "id": "q2",
+        "type": "single",
+        "prompt": "把 You are in Room Two. 改成一般疑问句。",
+        "options": [
+          "Are you in Room Two?",
+          "You are in Room Two?",
+          "Are you are in Room Two?"
+        ],
+        "answers": [
+          "Are you in Room Two?"
+        ],
+        "explanation": "把are移到you前，句末用问号；原位置不能再留一个are。",
+        "evidence": "You are ready. → Are you ready?"
+      },
+      {
+        "id": "q3",
+        "type": "single",
+        "prompt": "把 We are teachers. 改成否定句。",
+        "options": [
+          "We are not teachers.",
+          "We not are teachers.",
+          "We am not teachers."
+        ],
+        "answers": [
+          "We are not teachers."
+        ],
+        "explanation": "not放在are后；主语We不能和am搭配。",
+        "evidence": "We are not teachers."
+      },
+      {
+        "id": "q4",
+        "type": "single",
+        "prompt": "Rosa and Ben are teachers. 用一个代词替换这两个不含说话人的人名：____ are teachers.",
+        "options": [
+          "They",
+          "He",
+          "It"
+        ],
+        "answers": [
+          "They"
+        ],
+        "explanation": "两位谈论中的人物用They，后面仍用are。",
+        "evidence": "They are teachers."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you in an English class?",
+        "Are you and your classmate students?",
+        "Are the teachers ready?"
+      ],
+      "part2": "Introduce your class and two people. Use your own names and one negative sentence.",
+      "part3": [
+        "Are you ready?",
+        "Are they students?",
+        "Are you in Room Six?",
+        "Are you a teacher?"
+      ]
+    },
+    "writing": "Write a new welcome message about your own class. Use we, they, one negative sentence and one be-question."
+  },
+  "rubric": {
+    "taskType": "reading"
+  },
+  "learningScope": {
+    "new": [
+      "be一般疑问句",
+      "be后加not",
+      "we/they + are",
+      "students/teachers/books规则复数"
+    ],
+    "review": [
+      "I am / you are",
+      "句首大写与句末标点"
+    ],
+    "notTaught": [
+      "一般现在时do/does问句",
+      "所有名词复数规则",
+      "时态系统"
+    ]
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创；情境、人物及信息均为模拟教学材料",
+    "verification": "reviewed",
+    "method": "2026-10-26由Codex编写并逐题核对本组原文事实、干扰项、唯一答案和填空字数；未称独立盲解、真人教师审题或考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "contentHash": "b0c57fda369fb3a3047e35b37d637035ee6c45b75cb4827143bdb81b2ba3c5d9"
+  }
+}

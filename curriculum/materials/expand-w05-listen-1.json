@@ -1,0 +1,368 @@
+{
+  "id": "expand-w05-listen-1",
+  "week": 5,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "dialogue",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "日常安排与习惯 · Independent new scenario: a weekly routine with changes and reasons",
+  "grammarFocus": "一般现在时；I / you / we / they 的实义动词；时间表达与频率词入门。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Week 5 Listening: A Busy Week with Changes",
+  "instructions": "这是为A1学习者设计的模拟听力练习，不是官方雅思考试。先听录音（或阅读文字稿），然后完成8道题。题目和选项都是英文，解释是中文。注意：听力中有自然对话和纠正，答案不会直接读出。",
+  "transcript": "Mia: Hi, Leo. Do you work every day?\nLeo: No, I don't. I work Monday to Friday. But this week is different.\nMia: Why?\nLeo: My sister visits on Thursday. So I stay home on Thursday.\nMia: Do you go to the gym on Thursday?\nLeo: No, I don't. I go to the gym on Tuesday and Friday.\nMia: What time do you start work?\nLeo: I start at nine. I finish at five.\nMia: Do you have lunch at home?\nLeo: No, I don't. I eat lunch at a café near my office.\nMia: Do you study English in the evening?\nLeo: Yes, I do. I study English on Monday and Wednesday. I don't study on Friday.\nMia: OK. See you on Thursday!\nLeo: See you!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "When does Leo work in a normal week?",
+      "options": [
+        "Monday to Friday",
+        "Monday to Thursday",
+        "Tuesday and Friday"
+      ],
+      "answers": [
+        "Monday to Friday"
+      ],
+      "explanation": "Leo说“I work Monday to Friday.”，所以正常一周工作周一到周五。",
+      "evidence": "I work Monday to Friday."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Leo stay home on Thursday this week?",
+      "options": [
+        "He goes to the gym.",
+        "He studies English.",
+        "His sister visits."
+      ],
+      "answers": [
+        "His sister visits."
+      ],
+      "explanation": "Leo说“My sister visits on Thursday. So I stay home on Thursday.”，因此这周周四留在家里是因为姐妹来访。sister本身不区分姐姐或妹妹；健身、学英语是谈话中的其他活动，不是这句话给出的原因。",
+      "evidence": "My sister visits on Thursday. So I stay home on Thursday."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Does Leo go to the gym on Thursday?",
+      "options": [
+        "No, he doesn't.",
+        "Yes, he does."
+      ],
+      "answers": [
+        "No, he doesn't."
+      ],
+      "explanation": "Mia问“Do you go to the gym on Thursday?”，Leo回答“No, I don't.”，所以周四不去健身房。",
+      "evidence": "Mia: Do you go to the gym on Thursday?\nLeo: No, I don't. I go to the gym on Tuesday and Friday."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What time does Leo start work? Use ONE WORD from the conversation.",
+      "answers": [
+        "nine"
+      ],
+      "maxWords": 1,
+      "explanation": "Leo说“I start at nine.”，所以开始工作是九点。答案填nine。",
+      "evidence": "I start at nine."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What time does Leo finish work? Use ONE WORD from the conversation.",
+      "answers": [
+        "five"
+      ],
+      "maxWords": 1,
+      "explanation": "Leo说“I finish at five.”，所以下班是五点。答案填five。",
+      "evidence": "I finish at five."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Where does Leo eat lunch?",
+      "options": [
+        "At home",
+        "At the gym",
+        "At a café near his office"
+      ],
+      "answers": [
+        "At a café near his office"
+      ],
+      "explanation": "Leo说“I eat lunch at a café near my office.”，所以午饭在办公室附近的咖啡馆吃。",
+      "evidence": "I eat lunch at a café near my office."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When does Leo study English?",
+      "options": [
+        "On Tuesday and Friday",
+        "On Monday and Wednesday",
+        "On Thursday"
+      ],
+      "answers": [
+        "On Monday and Wednesday"
+      ],
+      "explanation": "Leo说“I study English on Monday and Wednesday.”，所以周一和周三学英语。",
+      "evidence": "I study English on Monday and Wednesday."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Does Leo study English on Friday?",
+      "options": [
+        "Yes, he does.",
+        "No, he doesn't."
+      ],
+      "answers": [
+        "No, he doesn't."
+      ],
+      "explanation": "Leo说“I don't study on Friday.”，所以周五不学英语。",
+      "evidence": "I don't study on Friday."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "work",
+      "meaning": "工作",
+      "example": "I work Monday to Friday."
+    },
+    {
+      "word": "different",
+      "meaning": "不同的",
+      "example": "But this week is different."
+    },
+    {
+      "word": "visits",
+      "meaning": "拜访；看望",
+      "example": "My sister visits on Thursday."
+    },
+    {
+      "word": "stay",
+      "meaning": "停留；待",
+      "example": "So I stay home on Thursday."
+    },
+    {
+      "word": "gym",
+      "meaning": "健身房",
+      "example": "I go to the gym on Tuesday and Friday."
+    },
+    {
+      "word": "start",
+      "meaning": "开始",
+      "example": "I start at nine."
+    },
+    {
+      "word": "finish",
+      "meaning": "结束；完成",
+      "example": "I finish at five."
+    },
+    {
+      "word": "café",
+      "meaning": "咖啡馆",
+      "example": "I eat lunch at a café near my office."
+    }
+  ],
+  "grammar": {
+    "title": "一般现在时：I / you / we / they 的实义动词",
+    "explanation": "一般现在时表示经常发生的动作或习惯。当主语是 I、you、we、they 时，实义动词用原形，不加 -s。否定句用 don't + 动词原形。疑问句用 Do + 主语 + 动词原形？回答用 Yes, I do. 或 No, I don't. 时间表达如 on Monday, at nine, every day 常与一般现在时连用。频率词如 always, usually, often, sometimes, never 放在动词前。",
+    "example": "I work Monday to Friday. I don't study on Friday. Do you work every day?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "We ___ English every evening.",
+        "options": [
+          "study",
+          "studies",
+          "studying"
+        ],
+        "answers": [
+          "study"
+        ],
+        "explanation": "主语是 we，实义动词用原形 study。",
+        "evidence": "We study English every evening."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "They ___ work on Sunday.",
+        "options": [
+          "don't",
+          "doesn't",
+          "not"
+        ],
+        "answers": [
+          "don't"
+        ],
+        "explanation": "主语是 they，否定用 don't + 动词原形。",
+        "evidence": "They don't work on Sunday."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "___ you like coffee?",
+        "options": [
+          "Do",
+          "Does",
+          "Are"
+        ],
+        "answers": [
+          "Do"
+        ],
+        "explanation": "主语是 you，一般现在时疑问句用 Do 开头。",
+        "evidence": "Do you like coffee?"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "I ___ to the gym on Tuesday.",
+        "options": [
+          "go",
+          "goes",
+          "going"
+        ],
+        "answers": [
+          "go"
+        ],
+        "explanation": "主语是 I，动词用原形 go。",
+        "evidence": "I go to the gym on Tuesday."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "We ___ lunch at 12:30.",
+        "options": [
+          "have",
+          "has",
+          "having"
+        ],
+        "answers": [
+          "have"
+        ],
+        "explanation": "主语是 we，动词用原形 have。",
+        "evidence": "We have lunch at 12:30."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "___ they study on Friday?",
+        "options": [
+          "Do",
+          "Does",
+          "Are"
+        ],
+        "answers": [
+          "Do"
+        ],
+        "explanation": "主语是 they，疑问句用 Do。",
+        "evidence": "Do they study on Friday?"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "You ___ early every day.",
+        "options": [
+          "start",
+          "starts",
+          "starting"
+        ],
+        "answers": [
+          "start"
+        ],
+        "explanation": "主语是 you，动词用原形 start。",
+        "evidence": "You start early every day."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "I ___ understand this word.",
+        "options": [
+          "don't",
+          "doesn't",
+          "am not"
+        ],
+        "answers": [
+          "don't"
+        ],
+        "explanation": "主语是 I，实义动词 understand 的否定用 don't。",
+        "evidence": "I don't understand this word."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What time do you start work or school?",
+        "Do you study English every day?",
+        "What do you do on Sunday?",
+        "Do you go to the gym?"
+      ],
+      "part2": "Describe your weekly routine. You should say:",
+      "part3": [
+        "Do you have a busy week?",
+        "What time do you finish work or school?",
+        "Do you eat lunch at home?",
+        "Do you study on Friday?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about your weekly routine. Use I, we, or they. Use time words like on Monday, at nine, every day. Use don't for negatives. Example: I work Monday to Friday. I don't work on Sunday."
+  },
+  "rubric": {
+    "taskType": "A1 Listening and Grammar Practice (Simulated)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "本地题目修订草稿；原文与音频保持不变，等待独立盲答及解析复核；未经真实学习者难度标定",
+    "model": "deepseek-flash",
+    "contentHash": "d7f0fb7462ff07c2a0c52f4ee39c649470fa25cc9f48db07285f4767747091dc",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "blindInputSha256": "cc89598f465dda763770021f60266c706e726c98e7d10ee5d3d3e46289b46ddf",
+      "answerFileSha256": "c8c3d796a5f0fab2a35f14808eab38af2f5d519c87e80c2f4b77182cc9f55e0e",
+      "explanationReviewSha256": "ecdfa18b2ac44904553dd6eaf7481e6f24247e83bc75e7bc32e26e9fad050c1a",
+      "questionCount": 8,
+      "reviewMethod": "Separate author and root blind text answers frozen before reading explanations, with cross-question leak repair and exact antecedent evidence. Existing audio retained; no independent audio audition or learner difficulty calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

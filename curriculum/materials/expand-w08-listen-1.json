@@ -1,0 +1,358 @@
+{
+  "id": "expand-w08-listen-1",
+  "week": 8,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "dialogue",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "过去、计划与入门复测 · Independent new scenario: a short past visit and a future plan",
+  "grammarFocus": "was / were；常用过去式入门；be going to；because；基础句型综合复习。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "A Short Visit and a Weekend Plan",
+  "instructions": "这是为A1学习者设计的原创模拟练习（非官方雅思测试）。先听/读对话，注意 was/were、常用过去式和 be going to 的用法。然后完成8道听力题和8道语法题。所有题目和选项均为英文，解释为中文。答案必须来自原文。",
+  "transcript": "Mia: Hi, Leo. Was your grandma at home yesterday?\nLeo: Yes, she was. I was at her house. We were there for two hours.\nMia: Nice. Was your sister with you?\nLeo: No, she wasn't. She was at work. My grandma was happy.\nMia: What did you do?\nLeo: We talked and we ate cake. Then I walked home. It was cold.\nMia: Are you going to visit her again?\nLeo: Yes, I am. I'm going to go on Sunday because it's her birthday.\nMia: Great. Are you going to buy a gift?\nLeo: No, I'm not. I'm going to make a card. She likes cards.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where was Leo yesterday?",
+      "options": [
+        "At his grandma's house",
+        "At work",
+        "At the shop"
+      ],
+      "answers": [
+        "At his grandma's house"
+      ],
+      "explanation": "原文 Leo 说 “I was at her house.”，her 指 grandma，所以昨天他在奶奶家。",
+      "evidence": "I was at her house."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Was Leo's sister with him?",
+      "options": [
+        "Yes, she was.",
+        "No, she wasn't.",
+        "We don't know."
+      ],
+      "answers": [
+        "No, she wasn't."
+      ],
+      "explanation": "Mia 问 “Was your sister with you?”，Leo 回答 “No, she wasn't.”，说明妹妹不在。",
+      "evidence": "No, she wasn't."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "How long were they there? ______ hours.",
+      "answers": [
+        "two"
+      ],
+      "maxWords": 1,
+      "explanation": "Leo 说 “We were there for two hours.”，所以填 two。",
+      "evidence": "We were there for two hours."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What did Leo and his grandma do?",
+      "options": [
+        "They talked and ate cake.",
+        "They watched a film.",
+        "They cooked dinner."
+      ],
+      "answers": [
+        "They talked and ate cake."
+      ],
+      "explanation": "Leo 说 “We talked and we ate cake.”，他们聊天并吃了蛋糕。",
+      "evidence": "We talked and we ate cake."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How did Leo go home?",
+      "options": [
+        "He walked home.",
+        "He drove home.",
+        "He took a bus."
+      ],
+      "answers": [
+        "He walked home."
+      ],
+      "explanation": "原文说 “Then I walked home.”，他是走回家的。",
+      "evidence": "Then I walked home."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "When is Leo going to visit his grandma?",
+      "options": [
+        "On Sunday",
+        "On Monday",
+        "Today"
+      ],
+      "answers": [
+        "On Sunday"
+      ],
+      "explanation": "Leo 说 “I'm going to go on Sunday because it's her birthday.”，计划是周日去。",
+      "evidence": "I'm going to go on Sunday because it's her birthday."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Is Leo going to buy a gift?",
+      "options": [
+        "Yes, he is.",
+        "No, he isn't.",
+        "We don't know."
+      ],
+      "answers": [
+        "No, he isn't."
+      ],
+      "explanation": "Mia 问 “Are you going to buy a gift?”，Leo 回答 “No, I'm not.”，他不打算买礼物。",
+      "evidence": "No, I'm not."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What is Leo going to make? A ______.",
+      "answers": [
+        "card"
+      ],
+      "maxWords": 1,
+      "explanation": "Leo 说 “I'm going to make a card.”，他打算做一张卡片。",
+      "evidence": "I'm going to make a card."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "grandma",
+      "meaning": "奶奶；外婆",
+      "example": "Was your grandma at home yesterday?"
+    },
+    {
+      "word": "house",
+      "meaning": "房子；家",
+      "example": "I was at her house."
+    },
+    {
+      "word": "hours",
+      "meaning": "小时（复数）",
+      "example": "We were there for two hours."
+    },
+    {
+      "word": "work",
+      "meaning": "工作；上班",
+      "example": "She was at work."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的；开心的",
+      "example": "My grandma was happy."
+    },
+    {
+      "word": "talked",
+      "meaning": "交谈（过去式）",
+      "example": "We talked and we ate cake."
+    },
+    {
+      "word": "cold",
+      "meaning": "冷的；寒冷的",
+      "example": "It was cold."
+    },
+    {
+      "word": "birthday",
+      "meaning": "生日",
+      "example": "I'm going to go on Sunday because it's her birthday."
+    }
+  ],
+  "grammar": {
+    "title": "was / were、常用过去式与 be going to",
+    "explanation": "was/were 是 am/is/are 的过去式：I/he/she/it 用 was，you/we/they 用 were。否定：was not = wasn't，were not = weren't。常用过去式表示过去做的事，如 talked, walked, ate。be going to 表示计划：I am going to + 动词原形；否定 I'm not going to + 动词原形；疑问 Are you going to + 动词原形？because 表示原因。",
+    "example": "I was at her house. We were there for two hours. I'm going to make a card.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "I ______ at home yesterday.",
+        "options": [
+          "was",
+          "were",
+          "am"
+        ],
+        "answers": [
+          "was"
+        ],
+        "explanation": "主语 I 的过去式用 was。",
+        "evidence": "I was at her house."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "They ______ at the park last Sunday.",
+        "options": [
+          "was",
+          "were",
+          "are"
+        ],
+        "answers": [
+          "were"
+        ],
+        "explanation": "主语 They 的过去式用 were。",
+        "evidence": "We were there for two hours."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "She ______ at work yesterday.",
+        "options": [
+          "wasn't",
+          "weren't",
+          "isn't"
+        ],
+        "answers": [
+          "wasn't"
+        ],
+        "explanation": "主语 She 的否定过去式用 wasn't。",
+        "evidence": "She was at work."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "We ______ TV last night.",
+        "options": [
+          "watched",
+          "watch",
+          "watching"
+        ],
+        "answers": [
+          "watched"
+        ],
+        "explanation": "last night 表示过去，动词用过去式 watched。",
+        "evidence": "We talked and we ate cake."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "I ______ visit my friend tomorrow.",
+        "options": [
+          "am going to",
+          "was",
+          "were"
+        ],
+        "answers": [
+          "am going to"
+        ],
+        "explanation": "tomorrow 表示计划，用 be going to；主语 I 用 am going to。",
+        "evidence": "I'm going to go on Sunday because it's her birthday."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "______ you going to buy a gift?",
+        "options": [
+          "Are",
+          "Is",
+          "Was"
+        ],
+        "answers": [
+          "Are"
+        ],
+        "explanation": "主语 you 的 be going to 疑问句用 Are you going to...?",
+        "evidence": "Are you going to buy a gift?"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "He is going to study ______ he has a test.",
+        "options": [
+          "because",
+          "but",
+          "or"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "because 表示原因：他学习是因为有考试。",
+        "evidence": "I'm going to go on Sunday because it's her birthday."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "They ______ going to come to the party.",
+        "options": [
+          "aren't",
+          "isn't",
+          "wasn't"
+        ],
+        "answers": [
+          "aren't"
+        ],
+        "explanation": "主语 They 的 be going to 否定用 aren't going to。",
+        "evidence": "No, I'm not."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Where were you yesterday?",
+        "Were you at home last weekend?",
+        "What are you going to do tomorrow?",
+        "Are you going to visit a friend this week?"
+      ],
+      "part2": "Describe a short visit you made or a plan you have. You should say:",
+      "part2Bullets": [
+        "where you were or where you are going",
+        "who was with you or who is going with you",
+        "what you did or what you are going to do",
+        "why it was good or why you are going to do it"
+      ],
+      "part3": [
+        "Was your last weekend busy?",
+        "What did you do last Sunday?",
+        "Are you going to travel next month?",
+        "Why are you going to do that?"
+      ]
+    },
+    "writing": "Write 5–8 simple sentences about a short past visit and a future plan. Use was/were, one past verb (like talked or walked), and be going to. Say why (because)."
+  },
+  "rubric": {
+    "taskType": "A1 listening and grammar practice (simulated, not official IELTS)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "f0be46745fa3c481cf45056e0a6959ad8f3156ed601bc28a3a0e3af1e7016d98"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

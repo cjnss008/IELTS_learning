@@ -42,7 +42,7 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
     const bytes=Buffer.from(b.audio,'base64');if(bytes.toString('base64')!==b.audio)throw new TranscriptionError(400,'INVALID_AUDIO','录音编码无效。');
     let seconds;try{seconds=checkWav(bytes,{maxSeconds:connection.provider==='qwen-asr'?300:900});}catch{throw new TranscriptionError(400,'INVALID_AUDIO','转写需要16kHz单声道16-bit PCM WAV；千问ASR单次最长5分钟，Azure最长15分钟。');}
     ticket=budget?.reserveSpeech(connection,seconds);
-    const form=new FormData();form.append('audio',new Blob([bytes],{type:'audio/wav'}),'practice.wav');form.append('definition',JSON.stringify({locales:['en-GB']}));
+    const form=new FormData();form.append('audio',new Blob([bytes],{type:'audio/wav'}),'practice.wav');form.append('definition',JSON.stringify({locales:['en-US']}));
     const cancel=()=>{if(!res.writableEnded)own.abort();};res.once('close',cancel);
     try{
      const qwen=connection.provider==='qwen-asr';const response=await fetchImpl(connection.endpoint+(qwen?'/chat/completions':'/speechtotext/transcriptions:transcribe?api-version=2025-10-15'),{method:'POST',redirect:'error',signal:AbortSignal.any([own.signal,AbortSignal.timeout(timeoutMs)]),headers:qwen?{Authorization:'Bearer '+connection.apiKey,'Content-Type':'application/json',Accept:'application/json'}:{'Ocp-Apim-Subscription-Key':connection.apiKey,Accept:'application/json'},body:qwen?JSON.stringify({model:connection.model,messages:[{role:'user',content:[{type:'input_audio',input_audio:{data:'data:audio/wav;base64,'+b.audio}}]}],stream:false,asr_options:{language:'en',enable_itn:false}}):form});

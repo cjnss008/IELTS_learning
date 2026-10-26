@@ -194,7 +194,7 @@
       {
         "id": "g1",
         "type": "single",
-        "prompt": "This is a cat. ___ is small.",
+        "prompt": "This is my cat. She is on the desk. ___ is small.",
         "options": [
           "He",
           "She",
@@ -203,7 +203,7 @@
         "answers": [
           "She"
         ],
-        "explanation": "在短文中，猫用 she 指代（“She is small.”），所以这里用 She。",
+        "explanation": "前一句已经用 She 指这只猫，因此这里继续用 She。若只说 This is a cat 而没有说明性别，It 也可以，不能仅凭“猫”就判断必须用 She。",
         "evidence": "This is my cat. She is on the desk. She is small."
       },
       {
@@ -279,9 +279,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定；v69明确猫的指代上下文或移除重复干扰项，原正确答案值保留。",
     "model": "deepseek-flash",
-    "contentHash": "bd1dbe4f56f1d86763eddb9d2cf2be70c60653654c21c35fa41f6391afa8a0ba"
+    "contentHash": "118fd0511a06a0cfa561f30ffb0732eebed4a6915818933615dd172467f9549c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

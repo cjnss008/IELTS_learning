@@ -1,0 +1,3086 @@
+{
+  "schema": 1,
+  "planHash": "83cb45a545cceda24d194c3362b929c0b271ed88562e9a9ea245eeb039fc811d",
+  "status": "complete-blueprint-not-learning-outcome",
+  "input": {
+    "curriculumHash": "6218cec966b67ecace5d5a6bd45fe72c84a0eed90e67f5b59f4000e9a06b3379",
+    "baseDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
+    "expandedDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
+    "yearExpansionHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "lessonExpansionsHash": "090d059d4856d42477f11b754d4116481c1f3eb298e58bd1a43a0cb8d20547e4",
+    "gatesHash": "971c578c44100c0b1084a36bc0393ca798408aa9dcc14170b462d65cb9f53b08",
+    "sourceContextsHash": "cf11c52fe6d7cf703c0e956bc8bce2d78568a0a099bb3f7fc47dde55c6e113a7",
+    "corePlanningHash": "502d9f0450f564ea3fe6e62ff2bccb95d01fc3fd289b731fae8a2c7d4e23030f",
+    "coreMaterialContracts": [
+      {
+        "id": "w01-listen-1",
+        "version": "1",
+        "contentHash": "8c116c36ff8befd46dd1072f6dbf9266e49248b968191185769a4417658cf878"
+      },
+      {
+        "id": "sounds-01",
+        "version": "1",
+        "contentHash": "43f5eee20ff80b95385bc8dff05d5c6e0ab20d4b5f54d57dbe2dbb0e46687271"
+      },
+      {
+        "id": "w01-read-1",
+        "version": "1",
+        "contentHash": "278cf4a01c47025bfc440b44fd51aae14774c78b4fff11474946340dd975ed93"
+      },
+      {
+        "id": "w01-listen-2",
+        "version": "1",
+        "contentHash": "0ae1e30ee9d0714088fa5d89273a5f416fd607b54277120e9b744d408c019e47"
+      },
+      {
+        "id": "day02-expansion-listening",
+        "version": "1",
+        "contentHash": "7d8c48c1c8a94ba51ff7618a76e649c2020c71e5e3746029a47d5f1bbca09113"
+      },
+      {
+        "id": "w01-read-2",
+        "version": "1",
+        "contentHash": "2d526c650a61da64e2e0f49c59daba998a5d03141e7d05d0d877255194bb687a"
+      },
+      {
+        "id": "day02-expansion-reading",
+        "version": "1",
+        "contentHash": "bf9ab421ad2f24875871e6ccf4bbb558883d736695496974bcb75c0b6d690110"
+      },
+      {
+        "id": "w01-listen-3",
+        "version": "1",
+        "contentHash": "48c5d63bfb0255226b9a5973234c3b1db12994ddd78ba62b2d3dc3ff9eb46687"
+      },
+      {
+        "id": "w01-read-3",
+        "version": "1",
+        "contentHash": "ac9df6d48de9ab5aeef6102aabf768d81fb726457372817cedf7df989e51f1a3"
+      },
+      {
+        "id": "w01-listen-4",
+        "version": "1",
+        "contentHash": "06bddced68dc955108be82921f5e14fe14b1698738c8a33a38ed4159f5efbe43"
+      },
+      {
+        "id": "w01-read-4",
+        "version": "1",
+        "contentHash": "9cd16459a5888ffcdf148b7c886e63ef2dc51aa43e638b8954b95694f7e65c11"
+      },
+      {
+        "id": "w01-listen-5",
+        "version": "1",
+        "contentHash": "33d3bf15bff06c20842ba1cd4b86907d7eebff2380fd7498c16ff98c1294debc"
+      },
+      {
+        "id": "w01-read-5",
+        "version": "1",
+        "contentHash": "b232c6ddbcb0660965f18ec7d3c076061142c70b98ff9b943d894f8b5ef34051"
+      },
+      {
+        "id": "w01-listen-6",
+        "version": "1",
+        "contentHash": "d2ee0d7277b913775d4212ceabbfcbef4410381ffda88283ae9bb1ad5dce1982"
+      },
+      {
+        "id": "w01-read-6",
+        "version": "1",
+        "contentHash": "77a1afc9e2a7b34790d1716317ed0c0e5cd77e14142fe20f756d7b077e76aa23"
+      },
+      {
+        "id": "w02-listen-1",
+        "version": "1",
+        "contentHash": "a5d005247281a3bcab4ed0ce85f066677784cf25af98d66ae9067ff35fc0addf"
+      },
+      {
+        "id": "sounds-02",
+        "version": "1",
+        "contentHash": "4456d6fd7e54d3895d3d7918fd97e1f5b66c470d56ddfd83379eec0cfb5fb5ca"
+      },
+      {
+        "id": "w02-read-1",
+        "version": "1",
+        "contentHash": "f3277d718a7e613d152c563e60e7efa94b549cf214952ccd711362be5739552e"
+      },
+      {
+        "id": "w02-listen-2",
+        "version": "1",
+        "contentHash": "474fc3c5a26cba180b16d9df0af3210e5b206a5f108086b9c864cfbe65cff9dd"
+      },
+      {
+        "id": "w02-read-2",
+        "version": "1",
+        "contentHash": "46d6dc28c93031f3aa8aceeb61e036763516c0e85ca5df7bc4ee2bf496ac0ffb"
+      },
+      {
+        "id": "w02-listen-3",
+        "version": "1",
+        "contentHash": "828a3888dcd66e842155e51e6ea3b4594a0f9cb099e9cec4aa950403e3177747"
+      },
+      {
+        "id": "w02-read-3",
+        "version": "1",
+        "contentHash": "403c8b8df5daabfec84d57b2f63cc027d512fa4f8cde36dbbbd1a8342deac2d0"
+      },
+      {
+        "id": "w02-listen-4",
+        "version": "1",
+        "contentHash": "d2f52fa3c46893f6a55f83eb507b94ab84f7da440f435a493455a13d468da9a6"
+      },
+      {
+        "id": "w02-read-4",
+        "version": "1",
+        "contentHash": "97f63c447298c27cc8e178c33b40b8dcb6d3a2fa40ee386001481a8fe9abe554"
+      },
+      {
+        "id": "w02-listen-5",
+        "version": "1",
+        "contentHash": "cf206390b829c56aff60960713e063b445d5758c2f015e03662369e95d3417df"
+      },
+      {
+        "id": "w02-read-5",
+        "version": "1",
+        "contentHash": "1baba5f86bd77a889fd51eae1a6605da090b5c2ddd42e3142703b59556d7c873"
+      },
+      {
+        "id": "w02-listen-6",
+        "version": "1",
+        "contentHash": "345b71d48c5a9efa9585b12aa4d8f339c000eec712d2b9c8a81d0b1d8d5ae0ba"
+      },
+      {
+        "id": "w02-read-6",
+        "version": "1",
+        "contentHash": "eaa14faf120766034d730aecd0ebb0355948894d0b9d906ea7c3de76f780a37a"
+      },
+      {
+        "id": "w03-listen-1",
+        "version": "1",
+        "contentHash": "5b9edecf4e2714348a4e9b1dac567916f525dc1375604cdb8cd1c6fe9296d0e4"
+      },
+      {
+        "id": "sounds-03",
+        "version": "1",
+        "contentHash": "ddd6d8d28b4f9ac2ba7becdbe619ab74a101e467dfe77f2e74bb69f234a3cd89"
+      },
+      {
+        "id": "w03-read-1",
+        "version": "1",
+        "contentHash": "6fee346253c79fbf9d3a21df743ff01cacaab93537ec6c737d3379ea6d39e632"
+      },
+      {
+        "id": "w03-listen-2",
+        "version": "1",
+        "contentHash": "346b7d6ff9bafb1f0c10e13b31c253a6fa9e5522fda40bfd6298142cbd25dbf1"
+      },
+      {
+        "id": "w03-read-2",
+        "version": "1",
+        "contentHash": "398ce536036ce6dddff505470ca16492ecbb2e1947a39577d705ce33e6342c35"
+      },
+      {
+        "id": "w03-listen-3",
+        "version": "1",
+        "contentHash": "de63f05580c226f6df8052a648de585bbcd3915876a2982ac46a6c6bc5692db4"
+      },
+      {
+        "id": "w03-read-3",
+        "version": "1",
+        "contentHash": "e745e1101e21df82e9211d29880b23d4d15a2f8256078873f974eccde3f44995"
+      },
+      {
+        "id": "w03-listen-4",
+        "version": "1",
+        "contentHash": "0dfe12bc056d36384069ed7588f248c7cd78d266a1df7f7f0f0047d6b3c9d064"
+      },
+      {
+        "id": "w03-read-4",
+        "version": "1",
+        "contentHash": "6b024404eeb3034b28835a38cc3a4f60f129bd45ea098ed12dd2b7fe1f5ad3fc"
+      },
+      {
+        "id": "w03-listen-5",
+        "version": "1",
+        "contentHash": "3c04554b21edea56f8d0ec064386d5c32ce263a5c7b45cad0505c04cb75df4a7"
+      },
+      {
+        "id": "w03-read-5",
+        "version": "1",
+        "contentHash": "fbf86bfa778e556c6922402cb4ae8e1078f2798bbdbb90f15eff1b0caa4ba30a"
+      },
+      {
+        "id": "w03-listen-6",
+        "version": "1",
+        "contentHash": "59320eaf5ae965662052f8018f650e3a3e57ee6ad1c21c2c2536424aec05deb9"
+      },
+      {
+        "id": "w03-read-6",
+        "version": "1",
+        "contentHash": "4c38e7f7428bfe1be0a43d9b7c3930a7c6fc2dafc7ca59b18dca00c9ed4b29fb"
+      },
+      {
+        "id": "w04-listen-1",
+        "version": "1",
+        "contentHash": "85e63527057da6243a0d3afe3d6bc1dfe6c6609434bb3b4bc25ba026d221cc2f"
+      },
+      {
+        "id": "sounds-04",
+        "version": "1",
+        "contentHash": "99d497897722c5753aeff4a913cc013945feef3f746aea6147ee51a2694dd509"
+      },
+      {
+        "id": "w04-read-1",
+        "version": "1",
+        "contentHash": "5f4cc044d4bb7e81f27b4cc861452f316f46b303072ff2ed0ea90ad34d1feec4"
+      },
+      {
+        "id": "w04-listen-2",
+        "version": "1",
+        "contentHash": "16578d5fa1f1015501580e6e5549c0ff45f9de20991c510e2d5900e71d58bb48"
+      },
+      {
+        "id": "w04-read-2",
+        "version": "1",
+        "contentHash": "28604926c28848924c2158efa1791577dff437afa25ff4e703887a53461ea6df"
+      },
+      {
+        "id": "w04-listen-3",
+        "version": "1",
+        "contentHash": "2fa87938e0bde495afb01b6caf5023f294d4306d0b6b1f23cfa5cb84504d9a72"
+      },
+      {
+        "id": "w04-read-3",
+        "version": "1",
+        "contentHash": "40bdbd8d6d28c3e1ec5a8186ae887c42648c3e05fb405110535e822aa2e47a6d"
+      },
+      {
+        "id": "w04-listen-4",
+        "version": "1",
+        "contentHash": "ffe289e1d365f426b6c9b37d646f7bf418b94fd288a44925eac3615e6b852d24"
+      },
+      {
+        "id": "w04-read-4",
+        "version": "1",
+        "contentHash": "66a4a8cb19089f8e78a4b75b79d99e7d1f713ecb62d2116fa50770ea224bda5b"
+      },
+      {
+        "id": "w04-listen-5",
+        "version": "1",
+        "contentHash": "10f246e9f478f084dc1dd49999238d40bacb5e58ef09a3bffcdbc1f9ac0a4b11"
+      },
+      {
+        "id": "w04-read-5",
+        "version": "1",
+        "contentHash": "dc2e0e22888b935dd1204c37571e2ffc0370631686305d2e28b431bef0927af7"
+      },
+      {
+        "id": "w04-listen-6",
+        "version": "1",
+        "contentHash": "f53625a17b7fd832150060e4fee1366a18af1fcc23e83dd043c91c3a85bad0e4"
+      },
+      {
+        "id": "w04-read-6",
+        "version": "1",
+        "contentHash": "f765e77d1107920f100b8daf21f8b1eebbc2f99a4beab57df707a7889757cf4d"
+      },
+      {
+        "id": "gate-04-A-listening",
+        "version": "1",
+        "contentHash": "0fd7658b598c6b58808562534d414f64fedd8f47b9f7928fb7bf999df7005d36"
+      },
+      {
+        "id": "gate-04-A-reading",
+        "version": "1",
+        "contentHash": "d37603b0da8b97f8bbf7a6e9177f5cd038de582d80be00de59d5d439235ada79"
+      },
+      {
+        "id": "w05-listen-1",
+        "version": "1",
+        "contentHash": "833d45b295b4a8d62545e79c9a67e79596a0f5a56fdecbb8678c24bcc2271b92"
+      },
+      {
+        "id": "sounds-05",
+        "version": "1",
+        "contentHash": "c1352b2103cd8cf9586385a320313a79428cd67eaf46c3ae31b394d0e4328881"
+      },
+      {
+        "id": "w05-read-1",
+        "version": "1",
+        "contentHash": "1fd4e1d4b2709e6df671fee4411180257cb2f7b28e19e573ce1961794ac4237a"
+      },
+      {
+        "id": "w05-listen-2",
+        "version": "1",
+        "contentHash": "0459339425549486942ed5c12ff79bdec43e6c986dc589c748338865ce43c7a3"
+      },
+      {
+        "id": "w05-read-2",
+        "version": "1",
+        "contentHash": "dcffb1d61a5a22b37af4ffcb724b3db511c407c424d3fbc01dfd79ce1daa89c3"
+      },
+      {
+        "id": "w05-listen-3",
+        "version": "1",
+        "contentHash": "c2e42bd4472bdee85682129e5e26310620d7250ccdb0e961e614f323f5d7ad5b"
+      },
+      {
+        "id": "w05-read-3",
+        "version": "1",
+        "contentHash": "d1a627f527faf29fe1053f5c56ec7299065de68cb67615436b14f6d2e426eff3"
+      },
+      {
+        "id": "w05-listen-4",
+        "version": "1",
+        "contentHash": "220b6fe23fe90aa9e3da76c9c8a52d9435f3b753c7eefd5adfac52b714810706"
+      },
+      {
+        "id": "w05-read-4",
+        "version": "1",
+        "contentHash": "ca83c495511ee6c9391f1f48bb23f35e17f0e3a61f74f734c0fd65218a8e1832"
+      },
+      {
+        "id": "w05-listen-5",
+        "version": "1",
+        "contentHash": "5ecdde10b80a9ddba44a3d16c94568f47a8f7b90b62325d68ac74eb2379bcc31"
+      },
+      {
+        "id": "w05-read-5",
+        "version": "1",
+        "contentHash": "d52cecf319ee982357b918a0b64ded4da85de2d6aa726717521d29ceb0f317bb"
+      },
+      {
+        "id": "w05-listen-6",
+        "version": "1",
+        "contentHash": "844565e2a491fddc11ebe49d8a0ab6c741bf7ce04120315567c9aa7d75c10233"
+      },
+      {
+        "id": "w05-read-6",
+        "version": "1",
+        "contentHash": "0c2d6342e113f51c546c70ddff50424030f5917e02b9c7d6b1f13b5a9ffd2805"
+      },
+      {
+        "id": "w06-listen-1",
+        "version": "1",
+        "contentHash": "c9c2f104c0a89b0728855d6d488302ba38f7e36e7ec8d32ac637ed221d69b3a4"
+      },
+      {
+        "id": "sounds-06",
+        "version": "1",
+        "contentHash": "48ee520f1b6a0a1ade1914d9815f2fc9c5e3bc5821f282ac78ec5c7e8c23486b"
+      },
+      {
+        "id": "w06-read-1",
+        "version": "1",
+        "contentHash": "9a3cb226ae49b6c43d42e51a687ef49be481eb7c108dc3c6eda37aafdca87ae7"
+      },
+      {
+        "id": "w06-listen-2",
+        "version": "1",
+        "contentHash": "e96493b76406fd1792f3adcf99ae8d1bafd9f32fe09d7fe4737574feef41ceef"
+      },
+      {
+        "id": "w06-read-2",
+        "version": "1",
+        "contentHash": "82225aabff9a48ee6714d856b79c9ce96d54272ef1a755a595b25971b6640d40"
+      },
+      {
+        "id": "w06-listen-3",
+        "version": "1",
+        "contentHash": "c13c746bc26dc968fec53d23c1843a411da58eeb660a75dde59410f002287cfb"
+      },
+      {
+        "id": "w06-read-3",
+        "version": "1",
+        "contentHash": "4efd617664a53da5be6b3d1372b058d1b86b5fb92f80b746635abee4c4a1f1a3"
+      },
+      {
+        "id": "w06-listen-4",
+        "version": "1",
+        "contentHash": "683d110ad51b11dba52ddc65cde06951cc9b26e7a3209f6dba1f18c08a8aa10b"
+      },
+      {
+        "id": "w06-read-4",
+        "version": "1",
+        "contentHash": "73833710c51e1ebbabfb6b8eb098a3ed93e5368c4bc147f8c1d935090e688ac1"
+      },
+      {
+        "id": "w06-listen-5",
+        "version": "1",
+        "contentHash": "a1e5b187bd4bedd0422c6a7bd63e3a4d350c3279fa8c964c175c873382a487ea"
+      },
+      {
+        "id": "w06-read-5",
+        "version": "1",
+        "contentHash": "49d3f5ee39938bdb2d1ee71e642b7ab48c4d88c974cf79020f0f3ee8280aac3c"
+      },
+      {
+        "id": "w06-listen-6",
+        "version": "1",
+        "contentHash": "49bfab09315605d9ba9dcaddaed9a83a669de205c0edc4710b7453415c778120"
+      },
+      {
+        "id": "w06-read-6",
+        "version": "1",
+        "contentHash": "9f6201edd131edf3a8c58bf6cdcfaaf6d4fd25d912e2403e9bfd4d77e352d412"
+      },
+      {
+        "id": "w07-listen-1",
+        "version": "1",
+        "contentHash": "ee99cb94080cb9be849d8bae831b6180515872d3f9c661d5e32b76b288273842"
+      },
+      {
+        "id": "sounds-07",
+        "version": "1",
+        "contentHash": "d79aacc5cdd822d37cbe8d6d83b709a5898be92f868fbbd3dd5962b2039d87ee"
+      },
+      {
+        "id": "w07-read-1",
+        "version": "1",
+        "contentHash": "7ef10b2d1aeaba65d384aff83d55230d36bdcb8635e1e9ad227a738397c7778a"
+      },
+      {
+        "id": "w07-listen-2",
+        "version": "1",
+        "contentHash": "9b476e79d1bb18365b59d82a47a662537d3998d34bb3084c88554ed5d3ce0a64"
+      },
+      {
+        "id": "w07-read-2",
+        "version": "1",
+        "contentHash": "3cd425f5350444f7024ef9d44f8eb0fd0d8034191cb632aee52da847ed27984b"
+      },
+      {
+        "id": "w07-listen-3",
+        "version": "1",
+        "contentHash": "d5e3ba751c96d4d409391b33b79a546ee180c8aa7f5c8c01377616e3c4adf299"
+      },
+      {
+        "id": "w07-read-3",
+        "version": "1",
+        "contentHash": "5592a302d5b40140ab80a88097e669515d1e6f33a770dc50fc7cc8e6f8bf7461"
+      },
+      {
+        "id": "w07-listen-4",
+        "version": "1",
+        "contentHash": "bac369ba7a37ed66baeaede572b50348735e443b3798476dc554b6769e79fdc8"
+      },
+      {
+        "id": "w07-read-4",
+        "version": "1",
+        "contentHash": "868570eea8439b0a1dc3e50275c863873a7a49e076500cbc8a2f933f0f13ed27"
+      },
+      {
+        "id": "w07-listen-5",
+        "version": "1",
+        "contentHash": "9eaaeec537fabe7005afccb4f574a5e5e016c774548c8e8a9efc1dc2ba1c8e9a"
+      },
+      {
+        "id": "w07-read-5",
+        "version": "1",
+        "contentHash": "9365aa6ad53aa9ad835b788c084bc34335f3d7bc2751eff91550ae86c4eb4cb6"
+      },
+      {
+        "id": "w07-listen-6",
+        "version": "1",
+        "contentHash": "fa925e017230c9e9d22376477822587b62cf389747e63ebdaa5046b39199bfe3"
+      },
+      {
+        "id": "w07-read-6",
+        "version": "1",
+        "contentHash": "4aa81b04daf8b317b495e82cafbef5ce678441647bbe19a3ba43649644b8c9db"
+      },
+      {
+        "id": "w08-listen-1",
+        "version": "1",
+        "contentHash": "99e3c71a658ffc163b2028fb1dfac931d65c0c8f5e97014cdbad194ba5b4658c"
+      },
+      {
+        "id": "sounds-08",
+        "version": "1",
+        "contentHash": "cb83d7b30a4d3beb640839b148e575c55c3214485df27631f2d0478d087c1264"
+      },
+      {
+        "id": "w08-read-1",
+        "version": "1",
+        "contentHash": "5ccc4a05f604a003496c63c7f9c255d8acd5238fb8826b4262410f4864362343"
+      },
+      {
+        "id": "w08-listen-2",
+        "version": "1",
+        "contentHash": "531667f0e337bd142706ce3ecc92e818e8be2de633f6979dff7586021c7afd00"
+      },
+      {
+        "id": "w08-read-2",
+        "version": "1",
+        "contentHash": "9215a1074dfaa8816adbed760081f36d08852d42e811a8cd340e64a9c6a61d20"
+      },
+      {
+        "id": "w08-listen-3",
+        "version": "1",
+        "contentHash": "0d35d23af38897083711513757d46ff1f91d79d28b0ac27f81edf9f704ac93d9"
+      },
+      {
+        "id": "w08-read-3",
+        "version": "1",
+        "contentHash": "a65a7c2b5508fdb5bbe6c4de984c3d114291f49d740ec9ec8577e3179b45461e"
+      },
+      {
+        "id": "w08-listen-4",
+        "version": "1",
+        "contentHash": "e968dd3fcf0d26ea0757fd1c4879ef7748b193319f3070869e3b986ebf2b0c3a"
+      },
+      {
+        "id": "w08-read-4",
+        "version": "1",
+        "contentHash": "e34c5974fe53dfe46bd31244eee3ca8ee62353895b34f0f8e827568d6fcee9e9"
+      },
+      {
+        "id": "w08-listen-5",
+        "version": "1",
+        "contentHash": "de290ca83d5e394bd41b1cac05f828b9e50ba1a45a89ee7bd63caec4e8056d7f"
+      },
+      {
+        "id": "w08-read-5",
+        "version": "1",
+        "contentHash": "b12b7d2c1305b4e65681c765567b9352b96b1acc6adf521a1b62089c8b1b68c2"
+      },
+      {
+        "id": "w08-listen-6",
+        "version": "1",
+        "contentHash": "cc90e70ac764338a1b7b91885be07dc876b94fa22c7057284fe1e7789b2c1b55"
+      },
+      {
+        "id": "w08-read-6",
+        "version": "1",
+        "contentHash": "77400e48f48760e9d703b1c453735df7381387abbce26fd8e88d016026ba950b"
+      },
+      {
+        "id": "gate-08-A-listening",
+        "version": "1",
+        "contentHash": "9ada7fc06ada87cfd6ae212142e2d407f87d7ea0d60685b7f26e512d15900048"
+      },
+      {
+        "id": "gate-08-A-reading",
+        "version": "1",
+        "contentHash": "807f361b8472463a7993c591b1d981de96468bc568c5259b486f7d987463dee2"
+      },
+      {
+        "id": "w09-listen-1",
+        "version": "1",
+        "contentHash": "dec7c4236b728eed0eca583074b1be28f8fc256a8bd361330cc617430166de31"
+      },
+      {
+        "id": "w09-read-1",
+        "version": "1",
+        "contentHash": "733a1acbc561db3ec666343b9727d4fae1ab5260d51cfc763bb2e7e6c2f1e88d"
+      },
+      {
+        "id": "w09-listen-2",
+        "version": "1",
+        "contentHash": "7ec3d763c5dea104dc5af231fc12f53996b4e586d32eec3164084b32d0089a96"
+      },
+      {
+        "id": "w09-read-2",
+        "version": "1",
+        "contentHash": "849e3fdf7b45728b5d5d48c4ffba8960ea95210e13272d2e919b154c01fc70de"
+      },
+      {
+        "id": "w09-listen-3",
+        "version": "1",
+        "contentHash": "cff891a1181b04ae5ea96ddf7b881fe2d8187576fe9495925aa1520173e5e40e"
+      },
+      {
+        "id": "w09-read-3",
+        "version": "1",
+        "contentHash": "089e6782d2ef471b298c72caf23f0e2747074abdf1ab08e5a99d99ce2879c10a"
+      },
+      {
+        "id": "w09-listen-4",
+        "version": "1",
+        "contentHash": "22a6512ee054c4b0395840ee3672aa814543b1a972e99c7e328380d7f472ae59"
+      },
+      {
+        "id": "w09-read-4",
+        "version": "1",
+        "contentHash": "6ac968e673ee799d59060ad9ed87c286aef7b28344aa2b0084db0b6366b42a8c"
+      },
+      {
+        "id": "w10-listen-1",
+        "version": "1",
+        "contentHash": "74455ed42e7598475517fc17a812fa4de0095ff5543a130d97a2fdb4429e1b44"
+      },
+      {
+        "id": "w10-read-1",
+        "version": "1",
+        "contentHash": "a90a6eda05910153d3afa93ead52b9c6e1589218a981611ae206006a64b665e9"
+      },
+      {
+        "id": "w10-listen-2",
+        "version": "1",
+        "contentHash": "b07636a5e41c57ac4b070b43ebf7f1f21dccafcbc89ab267a462e836e787879d"
+      },
+      {
+        "id": "w10-read-2",
+        "version": "1",
+        "contentHash": "1e657e7c4eccfe31a181e4aed241d2f8036d4eb41befe0f8eac4a184d8f3bf1e"
+      },
+      {
+        "id": "w10-listen-3",
+        "version": "1",
+        "contentHash": "6ef3b633623e1964cd0645e58b5b232ca93b7ec8bb40477e660b72c4e28c710f"
+      },
+      {
+        "id": "w10-read-3",
+        "version": "1",
+        "contentHash": "9debb6ecb0d7f3462e5fe3382dc6933487858c24c124111e0baad1189e96980b"
+      },
+      {
+        "id": "w10-listen-4",
+        "version": "1",
+        "contentHash": "fbc3854cb0d726d8f31d9747527c0a1c49c0b59eb8c88673a62202de2296494e"
+      },
+      {
+        "id": "w10-read-4",
+        "version": "1",
+        "contentHash": "014d001d444d2cb83e5c287c7fe399475336279ef00006bf014eefcaf064ac22"
+      },
+      {
+        "id": "w11-listen-1",
+        "version": "1",
+        "contentHash": "81354ce63814e7c298c8552d4c28acb38a0222ace1a65847e478883053d8a5ba"
+      },
+      {
+        "id": "w11-read-1",
+        "version": "1",
+        "contentHash": "6e5ee69dc298a1f10ddddc8fbc1170c518a2fbc6435e49b30ef28dac12c56bbe"
+      },
+      {
+        "id": "w11-listen-2",
+        "version": "1",
+        "contentHash": "cb13785bf3237a59c13ae7384bb07fe988a7d4d7d2f9917204c863068713d07e"
+      },
+      {
+        "id": "w11-read-2",
+        "version": "1",
+        "contentHash": "e4e82d02a2dc6e8f81259808f031525eef80a9569cbabbff322c085c500ffb92"
+      },
+      {
+        "id": "w11-listen-3",
+        "version": "1",
+        "contentHash": "263946adbbcaae112d30b0e0ae84b45969878d930e69576dbebf6e6edf458ce2"
+      },
+      {
+        "id": "w11-read-3",
+        "version": "1",
+        "contentHash": "e5444f148b735a8d0fbdf9c0e2c3b08247af1fad1f2902621d479e7ffbaa8ced"
+      },
+      {
+        "id": "w11-listen-4",
+        "version": "1",
+        "contentHash": "55d343be6157ba906303da7e00e7ed73690fe575b27404314b4eb0893a8c3a7b"
+      },
+      {
+        "id": "w11-read-4",
+        "version": "1",
+        "contentHash": "4fe1ff1ee9f29768ebc47239c85d77d8591369d7edcdd390f30f70e3aed496d4"
+      },
+      {
+        "id": "w12-listen-1",
+        "version": "1",
+        "contentHash": "89afd9e87aba064013642cc9568e721ecd7926c7da22ac7978e739f3cbda8b94"
+      },
+      {
+        "id": "w12-read-1",
+        "version": "1",
+        "contentHash": "c9e826d855c32f67c66c12fcf242760be653d3e1139ea5728f538b3ff18a7154"
+      },
+      {
+        "id": "w12-listen-2",
+        "version": "1",
+        "contentHash": "738c0db633fbeed14dcaf2733d8a7e7526d050f35a32ace7060aa041f6629d75"
+      },
+      {
+        "id": "w12-read-2",
+        "version": "1",
+        "contentHash": "7c4c354a45d6785281bc7182117205c216aaeaff237d86a12a8ececdedf8292b"
+      },
+      {
+        "id": "w12-listen-3",
+        "version": "1",
+        "contentHash": "ca280052310b7ac79ddaeb82efd0e779e5392174e3e78a87dcc177bc60194489"
+      },
+      {
+        "id": "w12-read-3",
+        "version": "1",
+        "contentHash": "ce2c02555cd663ef0c9d83cecdfa99778d81c99732f0959c3d5f3f57fcfeed80"
+      },
+      {
+        "id": "w12-listen-4",
+        "version": "1",
+        "contentHash": "0325150fb65eef647a294783103a30e16938dce8ff6fe746e958902927e23227"
+      },
+      {
+        "id": "w12-read-4",
+        "version": "1",
+        "contentHash": "738c9b1645b3ef14675182d41d18174e9a7bc33ceb7383c3ddd8484be494781f"
+      },
+      {
+        "id": "gate-12-A-listening",
+        "version": "1",
+        "contentHash": "ae23db06f21ee68a804409f4fe161b8fa92c9605320e9f5cbad7ea1426ddf30c"
+      },
+      {
+        "id": "gate-12-A-reading",
+        "version": "1",
+        "contentHash": "47613d3ed2d1551a423b73d82ddad1113c44f6dc166de79e16a11327ab24323f"
+      },
+      {
+        "id": "w13-listen-1",
+        "version": "1",
+        "contentHash": "38dfd3801464de51c8514ed7deba1df677e630bc4067ea99b64fac7d9c5d62bd"
+      },
+      {
+        "id": "w13-read-1",
+        "version": "1",
+        "contentHash": "488693f684e24d4afce31f6b601974dfa8213746cc1ca2f82aecfc63d00c16f3"
+      },
+      {
+        "id": "w13-listen-2",
+        "version": "1",
+        "contentHash": "2305471b0a0c635d11bd61dffa0191be929f64a81603b6b839f25120138b732f"
+      },
+      {
+        "id": "w13-read-2",
+        "version": "1",
+        "contentHash": "1e8148d21fdaf15c25ba863a08e974ab97a1238a576784c4691434de7b56677f"
+      },
+      {
+        "id": "w13-listen-3",
+        "version": "1",
+        "contentHash": "4546e7792f1b9bef3aa39b78d763569281a1d3cc262b2a9c8241caee20fca782"
+      },
+      {
+        "id": "w13-read-3",
+        "version": "1",
+        "contentHash": "a2b2ef312d98e9de3bf00925e4bb9b588d2b569994e3b3ce2e38e17b29d647f8"
+      },
+      {
+        "id": "w13-listen-4",
+        "version": "1",
+        "contentHash": "9644f7cf229734060114f03a6d79b9353a3695b5467fff8a5f5287b66754a384"
+      },
+      {
+        "id": "w13-read-4",
+        "version": "1",
+        "contentHash": "53d1784a306b132e9a37c54ef9d219d2267bddf06527fd85b69206710e2d8bfe"
+      },
+      {
+        "id": "w14-listen-1",
+        "version": "1",
+        "contentHash": "dc77fb9a379a16c01885cfdce96e5d713ce9851d455a71082e6ef5646bac4d7c"
+      },
+      {
+        "id": "w14-read-1",
+        "version": "1",
+        "contentHash": "bd8472dd5714ad95546fd3b62bd071a8121223f47280ccd4862321db2e81806c"
+      },
+      {
+        "id": "w14-listen-2",
+        "version": "1",
+        "contentHash": "b37aab77310d67d404cb5f776ff648ca4b716a49aaf6402a9b4e662e8cd1f45a"
+      },
+      {
+        "id": "w14-read-2",
+        "version": "1",
+        "contentHash": "8a159d8b1664db751ff1c4ba5701181589bbea55a23c7487900971a3699c33b7"
+      },
+      {
+        "id": "w14-listen-3",
+        "version": "1",
+        "contentHash": "479a0ae295992350c75f8b7d521c8e2293275807c738bda1c62f49885f89efcd"
+      },
+      {
+        "id": "w14-read-3",
+        "version": "1",
+        "contentHash": "de6c1cd3005b18c000686a73a0388e12710934a48585c893d9153458f78c420e"
+      },
+      {
+        "id": "w14-listen-4",
+        "version": "1",
+        "contentHash": "962b5a749a03032804e99ad8ab3dc359585a54e40bde3fe902e243be6b218398"
+      },
+      {
+        "id": "w14-read-4",
+        "version": "1",
+        "contentHash": "04f7dd93cb241dd3de5cab648f39cb21cf1711e9c2f90a589332f21ec1a2a7d6"
+      },
+      {
+        "id": "w15-listen-1",
+        "version": "1",
+        "contentHash": "bcd348c626b3368feadc4128baef6c333720553083ac5ab32218d0052cb43ad6"
+      },
+      {
+        "id": "w15-read-1",
+        "version": "1",
+        "contentHash": "8ce00a5d31cb79ca9588db409b8337389c5e281d7d3f0bc9971bb68e8d58ab61"
+      },
+      {
+        "id": "w15-listen-2",
+        "version": "1",
+        "contentHash": "87d8126ccf0e0a67d4a817838a675b237abae1602b4a0c79649c4f993ec1962e"
+      },
+      {
+        "id": "w15-read-2",
+        "version": "1",
+        "contentHash": "f6072b34f9d52df2cffa9b65391289df87c01c1f0ce9c028f4ce81ae05c5626d"
+      },
+      {
+        "id": "w15-listen-3",
+        "version": "1",
+        "contentHash": "2a6a54b951e30d5602e3fcb2e84d414cb75250f090818afb5ae035ee583cfe65"
+      },
+      {
+        "id": "w15-read-3",
+        "version": "1",
+        "contentHash": "1f3658d98563bc699c2be4c4cee450587886a1c58a7d4bfd1f9fd0dd314e96b9"
+      },
+      {
+        "id": "w15-listen-4",
+        "version": "1",
+        "contentHash": "4e16c1279606825fdd39c7b0d4c1b3965e6bf96b80c434d542b49a0915abf2ff"
+      },
+      {
+        "id": "w15-read-4",
+        "version": "1",
+        "contentHash": "50dd2996240058aeb14a9c5b5e1857a9cf7130803e036b388ad120d9bc1a74a5"
+      },
+      {
+        "id": "w16-listen-1",
+        "version": "1",
+        "contentHash": "417892e9a6799884df6784325d598e87a8282a210d012535e6135b15fc0acc26"
+      },
+      {
+        "id": "w16-read-1",
+        "version": "1",
+        "contentHash": "b7cdb87ccb12a49d4cd0721466c40ebea9561c02f0b813ce44e4e98ce0e8d333"
+      },
+      {
+        "id": "w16-listen-2",
+        "version": "1",
+        "contentHash": "565b223c336f6ef914aa046ba588d7d25840ffa0cc9e7feb841a1e57d2d4cbbb"
+      },
+      {
+        "id": "w16-read-2",
+        "version": "1",
+        "contentHash": "77ba07fa7e694e97d349cf01fd66017e6d1df2528321e4f19e3a69369a102fd0"
+      },
+      {
+        "id": "w16-listen-3",
+        "version": "1",
+        "contentHash": "8205039a38d9316edc3ca24d85fd9f0b9a563e1e25369d4a386290f7d3b51a0d"
+      },
+      {
+        "id": "w16-read-3",
+        "version": "1",
+        "contentHash": "8ebe3746965bc66fa6b8c5cf90d40ef69faa9acbaffe727fa8c41b4d45bdb52c"
+      },
+      {
+        "id": "w16-listen-4",
+        "version": "1",
+        "contentHash": "df53702bd56d6a16723a151bf112369e63a677cf39f34c3df156e7335a4d3ac0"
+      },
+      {
+        "id": "w16-read-4",
+        "version": "1",
+        "contentHash": "7ac72aece4ccb22badc99baf509c03508a34d82eab5903684ac3f4622bfc8082"
+      },
+      {
+        "id": "gate-16-A-listening",
+        "version": "1",
+        "contentHash": "ee632ef82fae47476d57d762b53104a15509e79e62c62e19b8df61f84d36c5d4"
+      },
+      {
+        "id": "gate-16-A-reading",
+        "version": "1",
+        "contentHash": "cec320cce582031fc1230edb089b9cd20236e7373be7e568daa1608b7e315127"
+      },
+      {
+        "id": "w17-listen-1",
+        "version": "1",
+        "contentHash": "7cc5d9394467b9c4796be4f05f8a97f184c881234c7d94e9570b63177ff850c7"
+      },
+      {
+        "id": "w17-read-1",
+        "version": "1",
+        "contentHash": "13e65d2fb6ac5d7dbe8958531bb8b758f3f8295fadba6f49e2d6e6d300a4decf"
+      },
+      {
+        "id": "w17-listen-2",
+        "version": "1",
+        "contentHash": "4903315d09d9b7ed8c86629e5a6cbde48ad3f8d2e5098ae4c749f47ff205e1c3"
+      },
+      {
+        "id": "w17-read-2",
+        "version": "1",
+        "contentHash": "9cc9218a8f36b4d58c9dcfc73aa30e93d6190a310201c69df8c5b713332aa8f6"
+      },
+      {
+        "id": "w17-listen-3",
+        "version": "1",
+        "contentHash": "06a08e081ce9248b6ce45e29d2747cbfed6b7f292c1f8a629fb762c4738942ee"
+      },
+      {
+        "id": "w17-read-3",
+        "version": "1",
+        "contentHash": "88552c9c9e9745ee25c4fd085dfb46e944ac991d2a6fe81b8fe7ec2b632d7a3d"
+      },
+      {
+        "id": "w17-listen-4",
+        "version": "1",
+        "contentHash": "8f139560db2742d2ea526ef0bc29798433156fa01995f2bd542ae40846abdbb4"
+      },
+      {
+        "id": "w17-read-4",
+        "version": "1",
+        "contentHash": "c866a054bd8e1d1937c54ff665b1fd613e615ca31a88f0d908c3b83cf3d3a778"
+      },
+      {
+        "id": "w18-listen-1",
+        "version": "1",
+        "contentHash": "78e564b4ae0d666c3f88cf5b626e404c54c367f871fafc402fad146ed1d91629"
+      },
+      {
+        "id": "w18-read-1",
+        "version": "1",
+        "contentHash": "e3da2ee48a3ebd502542e121c343484ff394f59185213fcf6a23eeca23380034"
+      },
+      {
+        "id": "w18-listen-2",
+        "version": "1",
+        "contentHash": "efa994e79a8d9c8a0be9a8a69de132c315cbe273fde7ba0329b7bcb0e4d007e9"
+      },
+      {
+        "id": "w18-read-2",
+        "version": "1",
+        "contentHash": "ded0f1eda2e311345efc8ae8e0b7effb6aa9454330f87c71442d0e9ced4c7e28"
+      },
+      {
+        "id": "w18-listen-3",
+        "version": "1",
+        "contentHash": "99b17f2615050f547c03a9bb4d12209786cac25694d0650f2476ad3768ac37be"
+      },
+      {
+        "id": "w18-read-3",
+        "version": "1",
+        "contentHash": "65e6ed0605c980871b06b1e635208a757faa527d37fbd694bd91800bdec5acfa"
+      },
+      {
+        "id": "w18-listen-4",
+        "version": "1",
+        "contentHash": "6801a89051e7585363c694d8c91d3712d94ed70432290c03e364f8fde84ae8f6"
+      },
+      {
+        "id": "w18-read-4",
+        "version": "1",
+        "contentHash": "74c17fa51966e875ffbd0caddb7e85681b917212ea254d5d7d251213789c655b"
+      },
+      {
+        "id": "w19-listen-1",
+        "version": "1",
+        "contentHash": "cc0bea6ef2f4ea3c9dc2f72d0eb87ed933de5b5b6225fcbd91a2da8782eede23"
+      },
+      {
+        "id": "w19-read-1",
+        "version": "1",
+        "contentHash": "3e6a1fd314063d22429e67609b96776cf8bef4f175ef4f0f1eed379fdbb83527"
+      },
+      {
+        "id": "w19-listen-2",
+        "version": "1",
+        "contentHash": "a1025a8ea395a1dece9e33e7660d7bbe36ebcda0394087485e2f2f750ad79849"
+      },
+      {
+        "id": "w19-read-2",
+        "version": "1",
+        "contentHash": "051efa93fd6f1f6fd4ae73fc67ea9b4f3cc0caee57cf30e85b180c009ab664cb"
+      },
+      {
+        "id": "w19-listen-3",
+        "version": "1",
+        "contentHash": "35ce632e387bfe240e584eb70cfa5e93e49c6939cf1bc2860930f6fd73735c93"
+      },
+      {
+        "id": "w19-read-3",
+        "version": "1",
+        "contentHash": "af65032deae20cd4aa831f8dda2de448490bcbb6c70719cca03c6c39a0a933bc"
+      },
+      {
+        "id": "w19-listen-4",
+        "version": "1",
+        "contentHash": "282675558608be6e891a2f61b50f29bc420661a4173c9faf63a3fb80125b144f"
+      },
+      {
+        "id": "w19-read-4",
+        "version": "1",
+        "contentHash": "49ba54d338c587b9d5603eb206b297ec72b700745c36fc65dccf6fc3d1828a97"
+      },
+      {
+        "id": "w20-listen-1",
+        "version": "1",
+        "contentHash": "5aa995ee290fbb2f1331aee9451943d4ca59fe9d1269a6fb2aceb8dc7558bb46"
+      },
+      {
+        "id": "w20-read-1",
+        "version": "1",
+        "contentHash": "e6fd0127e88c301e6cefa7f4d477fc8f072c1ba04b252dcc6c013ec5f1473bd5"
+      },
+      {
+        "id": "w20-listen-2",
+        "version": "1",
+        "contentHash": "cce89b3496c8f3742b22234faa196f84dcd6204af766e598abab85d09216e035"
+      },
+      {
+        "id": "w20-read-2",
+        "version": "1",
+        "contentHash": "73875ba1cdfea54b8c22cf467af1a41a2d8369cdf4a8739ba1a45e9b445bb310"
+      },
+      {
+        "id": "w20-listen-3",
+        "version": "1",
+        "contentHash": "db460cbe6f65b5a7ee1e8eb83b985a59c33025f80fb17402adb6b2a70bf6b91c"
+      },
+      {
+        "id": "w20-read-3",
+        "version": "1",
+        "contentHash": "5ed06e3a8e341d30ef8f2789c73e14179b74c46552eb8cbb916b55b33ecfb4c1"
+      },
+      {
+        "id": "w20-listen-4",
+        "version": "1",
+        "contentHash": "ed9fed0a5c6a76e177684a991e95a1c954ec419a76f9dbd8ef449d57c6e1af71"
+      },
+      {
+        "id": "w20-read-4",
+        "version": "1",
+        "contentHash": "0e7f56f6799b8276507237a978db12dc43a53d0254ef3d833b9b5eb3ebead6ea"
+      },
+      {
+        "id": "noaa-deep-ocean",
+        "version": "1",
+        "contentHash": "6a2944a4349af093669dfb3056b4916df9b68317219f2273f73ce6ac51c7dcd6"
+      },
+      {
+        "id": "gate-20-A-listening",
+        "version": "1",
+        "contentHash": "4b42b9188f449ca90a60884320c21862bb18887ef648891dda8851d60feb3bfe"
+      },
+      {
+        "id": "gate-20-A-reading",
+        "version": "1",
+        "contentHash": "282ea5fb336d18b362e2f4f3185fb34ed4a43479c5ec7fe205db387abf0fd6c3"
+      },
+      {
+        "id": "w21-listen-1",
+        "version": "1",
+        "contentHash": "dafa8c48e61f6a6d9f855ac2d0b1a87a31d4768c0058fb44fc012c4a7975a6fa"
+      },
+      {
+        "id": "w21-read-1",
+        "version": "1",
+        "contentHash": "a3c6e0642f4379070bddbea77fd347b2e055a48a4a6fd9d8f00eb314aa154bdc"
+      },
+      {
+        "id": "w21-listen-2",
+        "version": "1",
+        "contentHash": "aa0fcda98eb0b1ef01697fb2f9f88d80b9090966cd5982cd2361381b6fce4f1f"
+      },
+      {
+        "id": "w21-read-2",
+        "version": "1",
+        "contentHash": "1164189ccb5cb8fa7c786cb5fb688e4af06468c2953af382296a55048425bd28"
+      },
+      {
+        "id": "w21-listen-3",
+        "version": "1",
+        "contentHash": "ee110f4bfdbde1b4132084fbf27511e576a446d0ef5d6d9526f358c03620931c"
+      },
+      {
+        "id": "w21-read-3",
+        "version": "1",
+        "contentHash": "e636cde2e9756595af53fb1de94343f707336926574d852d56b6ac9c517d6195"
+      },
+      {
+        "id": "w21-listen-4",
+        "version": "1",
+        "contentHash": "2a7d3e4f9184af173425836235472040e1ff3a6f22cf5dcd9b27a580ae07da44"
+      },
+      {
+        "id": "w22-listen-1",
+        "version": "1",
+        "contentHash": "8729af147ca3b13d2d9a6793574074d1ef05f31701b655f3f3c83240b9071671"
+      },
+      {
+        "id": "w22-read-1",
+        "version": "1",
+        "contentHash": "e1ee9558b5863f363bc267480fb0a065315b5adc4a1c25abd9e2e567128cb8f5"
+      },
+      {
+        "id": "w22-listen-2",
+        "version": "1",
+        "contentHash": "982b50eda64e332c0f8bd7b4e8948ba89273511ead342ec85dec2343912567c7"
+      },
+      {
+        "id": "w22-read-2",
+        "version": "1",
+        "contentHash": "7c847ddd5eab9a39ef4bdb560f7c99ffc2718d10b0411a02ee33767a75c59543"
+      },
+      {
+        "id": "w22-listen-3",
+        "version": "1",
+        "contentHash": "0b4779b34cd0c0b983bd494d15f6b2dcfe720adc47aafe74ef2b59ff8a6adc35"
+      },
+      {
+        "id": "w22-read-3",
+        "version": "1",
+        "contentHash": "838b8f5810c0576da2f49066be61b0460cd44bfc789171e41420a9e82dd51ca5"
+      },
+      {
+        "id": "w22-listen-4",
+        "version": "1",
+        "contentHash": "f213333ffa26fc9ab039ff2f555224f352c02084b320a791d6d50ab0e7918ac6"
+      },
+      {
+        "id": "w23-listen-1",
+        "version": "1",
+        "contentHash": "2293dcbec92a4fad2a8ff218e10cdb1b65774dbf704e8dca33438d51d080de24"
+      },
+      {
+        "id": "w23-read-1",
+        "version": "1",
+        "contentHash": "85fd4cebde1636bc3a9ad1b1a142b82065549f621b2633610d6a19280260bc4c"
+      },
+      {
+        "id": "w23-listen-2",
+        "version": "1",
+        "contentHash": "fff4cd8ab5174ece986573f63aaa3c635741ed9339c4b5d97d94e4ba96cb8ed8"
+      },
+      {
+        "id": "w23-read-2",
+        "version": "1",
+        "contentHash": "48c2da389d6903e3c5b5820be898a1dedececef94dc021949a9c3aa4abe2f876"
+      },
+      {
+        "id": "w23-listen-3",
+        "version": "1",
+        "contentHash": "5ce2a4abfbf2b98d883ac5562deef0ee904e47b621eed63ceacff16644246712"
+      },
+      {
+        "id": "w23-read-3",
+        "version": "1",
+        "contentHash": "22213f606d549054e63065c35af88d37b24c1aa5fbe789370cc34640d35619aa"
+      },
+      {
+        "id": "w23-listen-4",
+        "version": "1",
+        "contentHash": "d4d18715e2fef831274481f055a55f0f4ef370f2dca8fe4e558db425a6f82f56"
+      },
+      {
+        "id": "w24-listen-1",
+        "version": "1",
+        "contentHash": "1769f4d309c591b2073aedaeab0ce2e3d3347d2c25a5bc749225847b1fcfc7c3"
+      },
+      {
+        "id": "w24-read-1",
+        "version": "1",
+        "contentHash": "3f63223ff781faa57b89204a682d465efca6ee82d673b5322d9215da56c775c9"
+      },
+      {
+        "id": "w24-listen-2",
+        "version": "1",
+        "contentHash": "9a0202edab2465f87c206ac4c3aae09b3658528fd36bbd97e2f2e1a0d9cd7550"
+      },
+      {
+        "id": "w24-read-2",
+        "version": "1",
+        "contentHash": "c43a15f255146b5ff6af3be1b3c219d646dcbc63efebe27d1f81e18b7664dc3c"
+      },
+      {
+        "id": "w24-listen-3",
+        "version": "1",
+        "contentHash": "c99f758bdb72fcd0b84d4092a176d200f6e5f16d27e93b612442986215c0fc8c"
+      },
+      {
+        "id": "w24-read-3",
+        "version": "1",
+        "contentHash": "45b35949d00cefc074484ed8424ccaf016581f3455f50de5fb38f97b64bdfb22"
+      },
+      {
+        "id": "w24-listen-4",
+        "version": "1",
+        "contentHash": "9d18677de9799174d88403d50e125828e9e8e4e63d055f6cb88959cb2eef84cf"
+      },
+      {
+        "id": "gate-24-A-listening",
+        "version": "1",
+        "contentHash": "63960dc5b4a2da7fc507dcf3c95e835b7ca3870a4d60625593d64764607811fc"
+      },
+      {
+        "id": "gate-24-A-reading",
+        "version": "1",
+        "contentHash": "e9dc9beb6688c0690f01dd51d1c5459d5d042f626ebc4f6600d1bc080b9950b2"
+      },
+      {
+        "id": "w25-listen-1",
+        "version": "1",
+        "contentHash": "2e7c2afd7634f952694771ecfd93c8df839357ef26e521428c910e2fbe33ac35"
+      },
+      {
+        "id": "w25-read-1",
+        "version": "1",
+        "contentHash": "f3532aca08fde642e653c66f3cc6f72dedc3e358a15b855f45c3b6bc3693790a"
+      },
+      {
+        "id": "w25-listen-2",
+        "version": "1",
+        "contentHash": "9f68fe74accbebb1a6c9ad5ee1f499c3cbd66072efd598ea8769d12e27ea0979"
+      },
+      {
+        "id": "w25-read-2",
+        "version": "1",
+        "contentHash": "9950c64bad28153694219fb7993c6ba180dc084ecc3eca3f44cf3a6d072a0b6b"
+      },
+      {
+        "id": "listening-map-25",
+        "version": "1",
+        "contentHash": "264925ce0e3b4ed9147e1ea4c789c49c4b72c08d571d501619fde0634e4ffb6e"
+      },
+      {
+        "id": "w25-read-3",
+        "version": "1",
+        "contentHash": "2c0f6bcf5fb74d95ed08c473fad3e84b82873f0aa673cae0954654079290e460"
+      },
+      {
+        "id": "w25-listen-4",
+        "version": "1",
+        "contentHash": "c941f8fd8325d89e313cde75cb950842015307f964b75900c7d7d902e6f14094"
+      },
+      {
+        "id": "w25-listen-3",
+        "version": "1",
+        "contentHash": "54479682903e5a8af0b84bc461511552ec84f57c571973b87489219d299632ad"
+      },
+      {
+        "id": "w26-listen-1",
+        "version": "1",
+        "contentHash": "54f060e24053690338699f27079e1e71390ba9286225cb95c68db58065666bda"
+      },
+      {
+        "id": "w26-read-1",
+        "version": "1",
+        "contentHash": "02d5c31eb4d3c72573f5fb5933726a9a99968785f19df7f89c34cbfd964f62f0"
+      },
+      {
+        "id": "w26-listen-2",
+        "version": "1",
+        "contentHash": "fe91c70e661a4189899b13a2bfbcbe4f9834bc72e969d030ee5995449c8e2682"
+      },
+      {
+        "id": "w26-read-2",
+        "version": "1",
+        "contentHash": "410ad7e7525a2a29af7ba8488929cb86b1d5d5266716a3e6683051d6a842cdc4"
+      },
+      {
+        "id": "w26-listen-3",
+        "version": "1",
+        "contentHash": "a9ad7ad7d714e0c38d36938b942a0faf5cb65a1a6f1b2e5bbb3c8fc602c642ab"
+      },
+      {
+        "id": "w26-read-3",
+        "version": "1",
+        "contentHash": "d1fdb352b79e0bf8be8e65d907357197caaebf4dcd258e81c8b423a97c6e2b7d"
+      },
+      {
+        "id": "w26-listen-4",
+        "version": "1",
+        "contentHash": "044e0ba73e1e17b69f24b8e140eb066eab3a9c4f50f901ca4f7181e45c8e7e77"
+      },
+      {
+        "id": "w27-listen-1",
+        "version": "1",
+        "contentHash": "e4dd917857a8621b28b61f58f25bfef74e06c523717cb579f0da64516bce99b0"
+      },
+      {
+        "id": "w27-read-1",
+        "version": "1",
+        "contentHash": "d27f79ef11c0c5569bb19c95562b8c8fe5834cd2bc7796dd04291acd9d27272e"
+      },
+      {
+        "id": "w27-listen-2",
+        "version": "1",
+        "contentHash": "2c854ed8274e6b1d37dbe7ab40832f719e4b77de48d7667059c89a7f973f6cb5"
+      },
+      {
+        "id": "w27-read-2",
+        "version": "1",
+        "contentHash": "63946d4a05662ff0872518419d8b276414c96311060c14106e5a5b61220acef8"
+      },
+      {
+        "id": "w27-listen-3",
+        "version": "1",
+        "contentHash": "0653e8b1fbb40805497d65057b9fe9704c80b54b9e7191e4cf2d618ae03662db"
+      },
+      {
+        "id": "w27-read-3",
+        "version": "1",
+        "contentHash": "e467b42e520f956cab44701dfd57f707102bbe99dec90abe2d0b21d013144422"
+      },
+      {
+        "id": "w27-listen-4",
+        "version": "1",
+        "contentHash": "a0bc681d7e2b02d6c7fdc9ad958fe46e27065a979e5508258db05c5d346c6b82"
+      },
+      {
+        "id": "w28-listen-1",
+        "version": "1",
+        "contentHash": "5bd39b49efb7f54a497179d6b8ac066a5a8dd2797f18e516033b059ac1bec8c3"
+      },
+      {
+        "id": "w28-read-1",
+        "version": "1",
+        "contentHash": "dc135409af2f9e6470ef58781caa4e0386b1a0bf9b6b4b8dc12cf75806640e6f"
+      },
+      {
+        "id": "w28-listen-2",
+        "version": "1",
+        "contentHash": "9579c812acac40a8c508dd7d746695b678545e22ca12c7ba0441bf2cbec1b7c7"
+      },
+      {
+        "id": "w28-read-2",
+        "version": "1",
+        "contentHash": "f528e7eaf6f628984aedad5ec7a3f9022c77771ae56894883ccecf5c02462881"
+      },
+      {
+        "id": "w28-listen-3",
+        "version": "1",
+        "contentHash": "38670e4963071332f15df29f109afe02bb3e537fd650d237fbc31503c6f91390"
+      },
+      {
+        "id": "w28-read-3",
+        "version": "1",
+        "contentHash": "685f97fcdba9c140c55c1a5871475015b1550b15c2e0615bce3261c14be0d4af"
+      },
+      {
+        "id": "w28-listen-4",
+        "version": "1",
+        "contentHash": "04e5cb143f20967b932e87a805dd74d8e35a511b70975ec5d700518649667152"
+      },
+      {
+        "id": "noaa-water-cycle",
+        "version": "1",
+        "contentHash": "952c4b5330752535799614d229f589382f2eee291260063d4d72f681e2ff0e7a"
+      },
+      {
+        "id": "gate-28-A-listening",
+        "version": "1",
+        "contentHash": "a5a5c55fe284048cb50de8f7b1bd5b52d5f81f31708e2ba8337547e71c929e68"
+      },
+      {
+        "id": "gate-28-A-reading",
+        "version": "1",
+        "contentHash": "f90a381fc10a3e68d121fb15972bf7dfbb2f7e7390c9a6ad035c756e649fe0e0"
+      },
+      {
+        "id": "w29-listen-1",
+        "version": "1",
+        "contentHash": "301e7ec9dfc15f73477928bbafd941d9481f2b712e6530e97ad088635f320d1e"
+      },
+      {
+        "id": "w29-read-1",
+        "version": "1",
+        "contentHash": "edde7610410081a2abb2b93e16a1c9eec2ec4147f0a528ee93a45031df41b47f"
+      },
+      {
+        "id": "w29-listen-2",
+        "version": "1",
+        "contentHash": "a759480f113af1dd978dd362fecc77dfee11f01217ac91ac547d041eab75cc24"
+      },
+      {
+        "id": "w29-read-2",
+        "version": "1",
+        "contentHash": "61038294d6075d49de87387b3893c69f20cdc8a6d9b3e3c7573a19a610935888"
+      },
+      {
+        "id": "w29-listen-3",
+        "version": "1",
+        "contentHash": "b1443939148e310af7b91a5cd2e90512dde495b7185fbd82ab742b74c7414749"
+      },
+      {
+        "id": "w29-read-3",
+        "version": "1",
+        "contentHash": "1bfdf1bfc3b90aa434f012cd306990890eb9771e0eba9a25d6ac795ae62a3f5c"
+      },
+      {
+        "id": "w29-listen-4",
+        "version": "1",
+        "contentHash": "99887b8dafcb85f5d6c72478ec51e2d639d7974d97ba1bd2e43491cc565c5c1e"
+      },
+      {
+        "id": "w30-listen-1",
+        "version": "1",
+        "contentHash": "7c70e2037595b4b6ec925dec575bbdc1500d177176f2634cb75094bc37d4745b"
+      },
+      {
+        "id": "w30-read-1",
+        "version": "1",
+        "contentHash": "7e6f84ce0af0328e8ebdecfd4de3cf0f67d29a8e99bef8953a417d10c36caf8b"
+      },
+      {
+        "id": "w30-listen-2",
+        "version": "1",
+        "contentHash": "8394a006d734297b181a581223877bfde8875e211b037e9d443856363cba739a"
+      },
+      {
+        "id": "w30-read-2",
+        "version": "1",
+        "contentHash": "2b88e80c7958a7b36a18920d523dc4442cd544ed26dfa0ed031850f48c97378f"
+      },
+      {
+        "id": "w30-listen-3",
+        "version": "1",
+        "contentHash": "13daaf72dc83ec8322bfbbcda2cf5deef60455e86061b68934b484ba93b930c0"
+      },
+      {
+        "id": "w30-read-3",
+        "version": "1",
+        "contentHash": "8e323929350663b79cf36605786a14c3f6f8aadd39ff4c0b398e77297a0c9c3c"
+      },
+      {
+        "id": "w30-listen-4",
+        "version": "1",
+        "contentHash": "86452db98dde2807dcf11d056d0477e3131819822d779c9db2c20c5b14f52c30"
+      },
+      {
+        "id": "w31-listen-1",
+        "version": "1",
+        "contentHash": "9525949c44ec3f44fd716ec9961b6488a6f6c54c092f6929c9abd8f4a0980887"
+      },
+      {
+        "id": "w31-read-1",
+        "version": "1",
+        "contentHash": "62a3e13b0a1e6d983ef5769d16605fd97a002ef9e9c9eacf311f239719f05ade"
+      },
+      {
+        "id": "w31-listen-2",
+        "version": "1",
+        "contentHash": "9232c70fdaeeb70526b7f6afe755f76d1e9a2528c65a6769d3c52069bdeb306f"
+      },
+      {
+        "id": "w31-read-2",
+        "version": "1",
+        "contentHash": "5c6ca9bbed0a86fc4229a48fc46b6950093f6b8488e8b78bd9c8a04b862c36d0"
+      },
+      {
+        "id": "listening-map-31",
+        "version": "1",
+        "contentHash": "e1f36ca7646078b15c431df98412425b81622e0c33c1218fb493ef3e92dee8f7"
+      },
+      {
+        "id": "w31-read-3",
+        "version": "1",
+        "contentHash": "4361652e7ac2393598549870359065dd9e3e599043f9867b57f1e47e446944bd"
+      },
+      {
+        "id": "w31-listen-4",
+        "version": "1",
+        "contentHash": "359604552df0a2ee1289b3bf365f6f63172ce0b8f901a701306716a6f56b6ef5"
+      },
+      {
+        "id": "w31-listen-3",
+        "version": "1",
+        "contentHash": "35dcbf97661f8b0c2b01b78e8d99d4ec1908105bb6425a43de2001538d1ab25f"
+      },
+      {
+        "id": "w32-listen-1",
+        "version": "1",
+        "contentHash": "b196628609533b3b508d323b09948d6b7d03fc1c758cab0e2008aebb43fb244d"
+      },
+      {
+        "id": "w32-read-1",
+        "version": "1",
+        "contentHash": "15d9b163cd448f6027299160a596d0044dc5e04efa4b8b6f21ac120eb9680391"
+      },
+      {
+        "id": "w32-listen-2",
+        "version": "1",
+        "contentHash": "bf24730d39f365d5a415d3f25e9387413bd2363e9763bd5804bb5081a8ae763f"
+      },
+      {
+        "id": "w32-read-2",
+        "version": "1",
+        "contentHash": "6206b46ee81c039c1c1a8da05eb4ec4cf813cb84b8031d7862c6765b9948c805"
+      },
+      {
+        "id": "w32-listen-3",
+        "version": "1",
+        "contentHash": "c7c9f9d1b332e45ec33bb4e78bb6091f6abf43d3602203943c09c6c283abe2a8"
+      },
+      {
+        "id": "w32-read-3",
+        "version": "1",
+        "contentHash": "51cd1c8c46cf0b11c410838f5fa7f372ae866d3bb44b8337f7869294fc6d09c9"
+      },
+      {
+        "id": "w32-listen-4",
+        "version": "1",
+        "contentHash": "0776583d7b0161574d1663f72d08d1a203fc152ff89a55e22a61fa82819fbf91"
+      },
+      {
+        "id": "gate-32-A-listening",
+        "version": "1",
+        "contentHash": "eb45ca476ee145b382e4b675575eec0ec160f3d1699b67b8a05bfa68b56049ec"
+      },
+      {
+        "id": "gate-32-A-reading",
+        "version": "1",
+        "contentHash": "c7ba20bb780147a6b4c47c94721da31bd9feb72279f4db238feb00ba29330345"
+      },
+      {
+        "id": "w33-listen-1",
+        "version": "1",
+        "contentHash": "28ab0b08e2667d535c9d05c68f2f3420b5065bad5e8fcdeec90b5770deaeac76"
+      },
+      {
+        "id": "w33-read-1",
+        "version": "1",
+        "contentHash": "e48082e431231b91fa59f5559ccf0ced9dc9878d533303d67adbe349d232b1ce"
+      },
+      {
+        "id": "w33-listen-2",
+        "version": "1",
+        "contentHash": "4aa0361d21bae7131722145d10283e259c1f99b500b0711dee3987a1340bf391"
+      },
+      {
+        "id": "w33-read-2",
+        "version": "1",
+        "contentHash": "b373ba7cdca523b29574ee7258e38346c7ca547712876f5e9e252fa165f2d66a"
+      },
+      {
+        "id": "w33-listen-3",
+        "version": "1",
+        "contentHash": "19968cf6d467751b90986caeb851348188cd9ca27adf8854b3efeb48d6f703c4"
+      },
+      {
+        "id": "w33-read-3",
+        "version": "1",
+        "contentHash": "189fe16702cbadb63f04641a46b6d1a15c93824582c9232e1053dd66457789db"
+      },
+      {
+        "id": "w33-listen-4",
+        "version": "1",
+        "contentHash": "31afec8c72e62f3548f1db04838de1765b112ebe4f871403622d1f0ba74a1bf7"
+      },
+      {
+        "id": "w34-listen-1",
+        "version": "1",
+        "contentHash": "2fe43064157a354ac54cda5705e9f0920346fd3a42eed387d4078fe3d737aa47"
+      },
+      {
+        "id": "w34-read-1",
+        "version": "1",
+        "contentHash": "80aa53089e35c272e3cb83232383d7d29d085565bfd6954f381c99026b62c29d"
+      },
+      {
+        "id": "w34-listen-2",
+        "version": "1",
+        "contentHash": "4cab6d7b47f3f35a4a6fc2dcfa5de5c2cb585c13ffb0fa8b8045c40c2a081575"
+      },
+      {
+        "id": "w34-read-2",
+        "version": "1",
+        "contentHash": "2e0a42fcfe5376b6d72c28b2e8cca593169f93962c4033784f66e0c0b988e132"
+      },
+      {
+        "id": "w34-listen-3",
+        "version": "1",
+        "contentHash": "a8f60c137f5fbf89349698d75fb1a28ff57f9bc95ffe88fc5ee59240c69b3c0b"
+      },
+      {
+        "id": "w34-read-3",
+        "version": "1",
+        "contentHash": "75733329cd4a6582b4f07fa6e3945ff17d748bdef79c907b073fa4ed962f2ff7"
+      },
+      {
+        "id": "w34-listen-4",
+        "version": "1",
+        "contentHash": "f7ad5413112877a5464908b8e50666e6ccfa1179c0d7ac330874b609c0847bbd"
+      },
+      {
+        "id": "w35-listen-1",
+        "version": "1",
+        "contentHash": "fbdae1711bc39f629ed786d4e033fdee76d51e9e0754945664132ba9e226e56d"
+      },
+      {
+        "id": "w35-read-1",
+        "version": "1",
+        "contentHash": "a26ef33aa40f2ff1efff634a4f95e4fbc2427d0fbdeee3b642c7fa799147e11a"
+      },
+      {
+        "id": "w35-listen-2",
+        "version": "1",
+        "contentHash": "f59fe64bde0f6e2df9f8e1df314705994eac7f08d3dcdf6c5cac993cd13ac8d2"
+      },
+      {
+        "id": "w35-read-2",
+        "version": "1",
+        "contentHash": "13cac152002f8fd6838b681c6d194060fe9e3066ab8505ff17356d9e13dc3615"
+      },
+      {
+        "id": "w35-listen-3",
+        "version": "1",
+        "contentHash": "93f5dc14938656f1bffa59aa6b57f7990a47e0d7caca3b2c3a257a0d2006f41f"
+      },
+      {
+        "id": "w35-read-3",
+        "version": "1",
+        "contentHash": "2ddbb2465328a3cba409b4a1b872c112af99bfc6bba2eabec062bd6ee927d4a4"
+      },
+      {
+        "id": "w35-listen-4",
+        "version": "1",
+        "contentHash": "9225d543806d4353169c58c046ffb726bce8031e2fb8490638ae44406448104a"
+      },
+      {
+        "id": "w36-listen-1",
+        "version": "1",
+        "contentHash": "ec904b6abedf156714c7e6bffccb9182165e0d51107f221df46c16df6e178085"
+      },
+      {
+        "id": "w36-read-1",
+        "version": "1",
+        "contentHash": "c18468bda6742f35baa128f23b257123afdea418ea75a0298e490e0c85517de7"
+      },
+      {
+        "id": "w36-listen-2",
+        "version": "1",
+        "contentHash": "7eccc7836936f9e12ad53d216f176df5901e5f29693f9e7ae9b042b4dd738311"
+      },
+      {
+        "id": "w36-read-2",
+        "version": "1",
+        "contentHash": "c353443040f11b7a1c148aec2a40a58e2b11e6a88b94cf1564b5ea13e8bbbe52"
+      },
+      {
+        "id": "w36-listen-3",
+        "version": "1",
+        "contentHash": "9fea6cd640d452818447c07ec9dd5514c78e52863b56f6802969e02c0636c4a7"
+      },
+      {
+        "id": "w36-read-3",
+        "version": "1",
+        "contentHash": "d22c6ecbcda1b271780bddb12794a6d49e171c3fa844be1014bcf94aadce8880"
+      },
+      {
+        "id": "w36-listen-4",
+        "version": "1",
+        "contentHash": "a359920b375a328fecc936259ea7701ea3b7f2b3a36881030f74f4106df92645"
+      },
+      {
+        "id": "noaa-ocean-acidification",
+        "version": "1",
+        "contentHash": "5c672043ef12c3af1d953a7277dc4fd7e531184c67b3b94c3cb251f35a050bf0"
+      },
+      {
+        "id": "gate-36-A-listening",
+        "version": "1",
+        "contentHash": "1d3b822ec37f9f33cab60b4d8711e79949a3d4ac6cce9fbf246187fdc45f488a"
+      },
+      {
+        "id": "gate-36-A-reading",
+        "version": "1",
+        "contentHash": "7526ea450fa4105644f1a8365e3ce87233fd2a077101725cc4f487a7f4e29343"
+      },
+      {
+        "id": "w37-listen-1",
+        "version": "1",
+        "contentHash": "e340345eec4db3628f1c2399b9e74ebf08abfc33023e374cef4c48e5f9bb977a"
+      },
+      {
+        "id": "w37-read-1",
+        "version": "1",
+        "contentHash": "6a17e2ced6f31b490aa6ebdf6b3d703d854549a790ec9c992265965dcb21bded"
+      },
+      {
+        "id": "training-37-listening",
+        "version": "1",
+        "contentHash": "bbb7a59b3fd3259d95e49bdbeeaf0df5795f45696c87e6d5b2323c59ab597968"
+      },
+      {
+        "id": "training-37-reading",
+        "version": "1",
+        "contentHash": "cf061381452ca33fbcd4ee5c2aad7bf7fdaf2bbbbf5c2aa0c7c5d52e259da74f"
+      },
+      {
+        "id": "w38-listen-1",
+        "version": "1",
+        "contentHash": "1854e10556ddf3e6d40397d35429099080909873e640488c9e11ddbca5220ef0"
+      },
+      {
+        "id": "w38-read-1",
+        "version": "1",
+        "contentHash": "9d45f5ffdbcd3c61cc98c0e625f3ec438a4de9c000d110e0880e24edcb80cb45"
+      },
+      {
+        "id": "training-38-listening",
+        "version": "1",
+        "contentHash": "c0c51c9d455a9bcf8915ea371576b45ee9385cdaa0bd4a697b64c16d9efc7717"
+      },
+      {
+        "id": "training-38-reading",
+        "version": "1",
+        "contentHash": "7b46601d0ff52da7119cdb539c99700a23aea21d7b4a589fc9cd8ae4eaa70ee7"
+      },
+      {
+        "id": "w39-listen-1",
+        "version": "1",
+        "contentHash": "2811e6927a8593996f46b88d4b5d1565bc2cc58a7dcf398f81ae65cbf3241b8b"
+      },
+      {
+        "id": "w39-read-1",
+        "version": "1",
+        "contentHash": "3beb05b2d4c0b6b3b099db88e7d3e1a70478b29cf9e96760868f9e5275eb52d1"
+      },
+      {
+        "id": "training-39-listening",
+        "version": "1",
+        "contentHash": "3db77c95d18943ca1af011c7bfe921f89c147bce85089b8615d10169bf23d956"
+      },
+      {
+        "id": "training-39-reading",
+        "version": "1",
+        "contentHash": "c90af9f00007266f0d9877537faea6c6d6d93fada8306e5978f01b2a1e1597dd"
+      },
+      {
+        "id": "w40-listen-1",
+        "version": "1",
+        "contentHash": "c26f54e12c8bfb94d7da36bc2a18fe8cf0f96477ecb7b57a67a028d4a73e5452"
+      },
+      {
+        "id": "w40-read-1",
+        "version": "1",
+        "contentHash": "1af732fcdeca2352bf86dcadea90899703216633bc56dcebe0091dffb8075965"
+      },
+      {
+        "id": "training-40-listening",
+        "version": "1",
+        "contentHash": "bbceb72aa10ed67e60e676844af42f3f6fa960e757aa07a8e67802aefbac5d8a"
+      },
+      {
+        "id": "training-40-reading",
+        "version": "1",
+        "contentHash": "73268f5864962af8f9d1333b01c9c82a253445d15ee4887c81b6eac5d4c2c7e9"
+      },
+      {
+        "id": "gate-40-A-listening",
+        "version": "1",
+        "contentHash": "fec146db3ff68f237fe7064a2f1dc5ff1a0a9b9aaaa6d85c8c53fc67b88ef214"
+      },
+      {
+        "id": "gate-40-A-reading",
+        "version": "1",
+        "contentHash": "3fc6e9c4c38eb63917756774fb0fae27642a4565c240c97fbf57a116f5546f77"
+      },
+      {
+        "id": "w41-listen-1",
+        "version": "1",
+        "contentHash": "7019af7fa51332eb4343c294e78ffbd9ba31b4f8818baadeec927ffc7f673821"
+      },
+      {
+        "id": "w41-read-1",
+        "version": "1",
+        "contentHash": "a5ba547e2e51d54ea002f17533647bd6f1531e77524d87436db525de0b8e67ae"
+      },
+      {
+        "id": "training-41-listening",
+        "version": "1",
+        "contentHash": "24bc32895f223c265323ce0de079ed9466ae931e43a7d43aa8ea133bdec9d7d3"
+      },
+      {
+        "id": "training-41-reading",
+        "version": "1",
+        "contentHash": "ea1f316b45c4232f349023746da5ed0ebe3090c3f52cfb794828bf408eb62271"
+      },
+      {
+        "id": "w42-listen-1",
+        "version": "1",
+        "contentHash": "978c49c60ceba52154136ac50a5b3c47dfb1835992831419d29d327f3a65bd90"
+      },
+      {
+        "id": "w42-read-1",
+        "version": "1",
+        "contentHash": "7fb930acfe4c7f0f51c71a11242d8a5157c530499747d8a35e397bfefb11b8e9"
+      },
+      {
+        "id": "training-42-listening",
+        "version": "1",
+        "contentHash": "b292c672a7e50f0c915feb16b13ef38058031df7618cc2e414faded4ed25f16b"
+      },
+      {
+        "id": "training-42-reading",
+        "version": "1",
+        "contentHash": "785ecd560b2f7d9d16928f9ac292f6ddb7327fd3292841e9fb208c5355791e70"
+      },
+      {
+        "id": "w43-listen-1",
+        "version": "1",
+        "contentHash": "c136f70927edafebca8cd8ae3e1ba5c1d0d8c51b07838164f7f4458acc51f03c"
+      },
+      {
+        "id": "w43-read-1",
+        "version": "1",
+        "contentHash": "7799dfc25be46169b06cc71affa78a3eb7b70a293527288481c563cb0707b2fa"
+      },
+      {
+        "id": "training-43-listening",
+        "version": "1",
+        "contentHash": "bc36d02e940c4e2a7db895b161a4112f6f21bab21dc8593239b83c8ea0b2b0f4"
+      },
+      {
+        "id": "training-43-reading",
+        "version": "1",
+        "contentHash": "9bf67bd8778ba9110dcfb2fcf99eb34969f388828471420fb4124ba7c79930c9"
+      },
+      {
+        "id": "w44-listen-1",
+        "version": "1",
+        "contentHash": "0d159dd84fb253e7b96bd0e8a5264ea8402886974a3000c97c85cc91334de4b8"
+      },
+      {
+        "id": "w44-read-1",
+        "version": "1",
+        "contentHash": "689090caf698a8a7100f9cf8202bffb5dda6522d9fda6df430982e91913906f2"
+      },
+      {
+        "id": "training-44-listening",
+        "version": "1",
+        "contentHash": "fdb5c31c448884ffa7390f54861cdbe46b7c5f3321b310bdd60b75c9b18c1ff5"
+      },
+      {
+        "id": "training-44-reading",
+        "version": "1",
+        "contentHash": "4087957753d07245694f0c34493ec1a30f240a973ffd533fbef5522a6d06e579"
+      },
+      {
+        "id": "gate-44-A-listening",
+        "version": "1",
+        "contentHash": "6cc7751f66a7feda4cc1de3783d78b6e1015a6cbd3a4dd4ec0c0cf9e7e997d5a"
+      },
+      {
+        "id": "gate-44-A-reading",
+        "version": "1",
+        "contentHash": "babce7bdc6b438faf601caac6fd3a93435147885a91e87032162cbf612260071"
+      },
+      {
+        "id": "w45-listen-1",
+        "version": "1",
+        "contentHash": "3bdb1e092782edfc9805a45c4b18ee46078ab08f6959527499b33c86589d7614"
+      },
+      {
+        "id": "w45-read-1",
+        "version": "1",
+        "contentHash": "67d172cae1a07e43de094f3f15545cbd00436d7b6cbce8154e8026d3f8de8ca8"
+      },
+      {
+        "id": "training-45-listening",
+        "version": "1",
+        "contentHash": "6170c0411132c1ad79b6d5ed9b64739e65f7feac5b931d11d6677d258afb1be3"
+      },
+      {
+        "id": "training-45-reading",
+        "version": "1",
+        "contentHash": "070b5b2a8b0c20eec1178bfe92f4c4d52dc783b05ef1bee3517b88055b57362c"
+      },
+      {
+        "id": "w46-listen-1",
+        "version": "1",
+        "contentHash": "cddb6a9aa02e7241df2ccc987878087bded24f1eee37f1a129254e0401ed385e"
+      },
+      {
+        "id": "w46-read-1",
+        "version": "1",
+        "contentHash": "89bc8d8b50a656748a88f195f2e2400feac4013d006413b7cf79c586819ca3f9"
+      },
+      {
+        "id": "training-46-listening",
+        "version": "1",
+        "contentHash": "44eca3c914082731a92de6a097234112c70f3038a1fa575d69c78a123dbb2a28"
+      },
+      {
+        "id": "training-46-reading",
+        "version": "1",
+        "contentHash": "d6b3a6f58ac786386fd0e518dd9b9916d2c34fbd602cbb65f0ff02629f9d273d"
+      },
+      {
+        "id": "w47-listen-1",
+        "version": "1",
+        "contentHash": "b55c096c9c475195bf9b647aeebfdde820f5da5f216f94d90261bdfa291e68d3"
+      },
+      {
+        "id": "w47-read-1",
+        "version": "1",
+        "contentHash": "1fad5f03d0a09090931522aadabc442697cd0a48d2a896569b85b7938ef48c71"
+      },
+      {
+        "id": "training-47-listening",
+        "version": "1",
+        "contentHash": "fc417fb63090e075f4ea8d3851db73ea5dafc91afce1c23b94d3a3d94f37764f"
+      },
+      {
+        "id": "training-47-reading",
+        "version": "1",
+        "contentHash": "73b56ee6dcd34a37abda6b89dcb6057a4a13cb727a0f1bdbda40e405da7cecfc"
+      },
+      {
+        "id": "w48-listen-1",
+        "version": "1",
+        "contentHash": "e8d6afb506464b168332f2c845d366a257f0f435833f16a13307b3855868306d"
+      },
+      {
+        "id": "w48-read-1",
+        "version": "1",
+        "contentHash": "d778929ccad0c32280f8f6c1659b7924878648c1a70d2096acbc279db1f9a6a4"
+      },
+      {
+        "id": "training-48-listening",
+        "version": "1",
+        "contentHash": "8b8e4ba0a9028b8051fbe730f14401b4f38f8d61830340c2aebea7693d622a68"
+      },
+      {
+        "id": "training-48-reading",
+        "version": "1",
+        "contentHash": "01b2cfe049342e5cf72b6dd3b84296b2489c5be729c6c15296e39c2441c7a229"
+      },
+      {
+        "id": "gate-48-A-listening",
+        "version": "1",
+        "contentHash": "e248c3fe0052210ab9ff024c3edb440bd19d4fc1a7b4b4e4063fe13e3fb68d0c"
+      },
+      {
+        "id": "gate-48-A-reading",
+        "version": "1",
+        "contentHash": "2d0e39df15d5148c2283be6c12c34c7f3453435b8d5a574d035174e38d94296b"
+      },
+      {
+        "id": "w49-listen-1",
+        "version": "1",
+        "contentHash": "b8a44d6ffc075025a84797c963c8c1de1309fceaa2aa1f7342170e42bd5d9904"
+      },
+      {
+        "id": "w49-read-1",
+        "version": "1",
+        "contentHash": "a21debbdcdd3655a6dfede5df6469ab17cf996b67e002beeefdacc8122507bd3"
+      },
+      {
+        "id": "final-49-listening",
+        "version": "1",
+        "contentHash": "2498f394b647b15eae4409b0956004c82bc44790ba63bddd97896e010fa9e406"
+      },
+      {
+        "id": "final-49-reading",
+        "version": "1",
+        "contentHash": "754db3a3cbec93c8e24c5ff272debe23c83f01068d7063e62d55132387ed9fb4"
+      },
+      {
+        "id": "w50-listen-1",
+        "version": "1",
+        "contentHash": "6e4777f79bebf059b5e17632e9b085fcea733d421be57cfec686f35801d1e1c1"
+      },
+      {
+        "id": "w50-read-1",
+        "version": "1",
+        "contentHash": "2a222300b131e840e4e8cf8c348d0f4984c6f8ebfe3b07b0c479180e33e65ff6"
+      },
+      {
+        "id": "final-50-listening",
+        "version": "1",
+        "contentHash": "06db35abcd2df895945353d769930f495c0e21c7f7df0e9249cf0df9488dda32"
+      },
+      {
+        "id": "final-50-reading",
+        "version": "1",
+        "contentHash": "2e39d55525ce1cda6d45846169e87e158b2f7e9dec456e33615da79e712c0e81"
+      },
+      {
+        "id": "w51-listen-1",
+        "version": "1",
+        "contentHash": "fd1150aed75f6aef6fdab0e221735ba4003c31a98b76f07b2f53437a7c183f70"
+      },
+      {
+        "id": "w51-read-1",
+        "version": "1",
+        "contentHash": "b515c86b1c67626986355cd452a296700061c829147edf7e8a017029417b4010"
+      },
+      {
+        "id": "final-51-listening",
+        "version": "1",
+        "contentHash": "4077935f26473d609d86b133c7af090ab1d7f9ea2a17c81b28e99ffeceb681dc"
+      },
+      {
+        "id": "final-51-reading",
+        "version": "1",
+        "contentHash": "336e654ca668f691109018564a67491fc5f19b2f342803cf2a578d27c80d9907"
+      },
+      {
+        "id": "w52-listen-1",
+        "version": "1",
+        "contentHash": "567848cbe61cf465a02ada1b3f8dffc6f3a8637ca7df2467cb0921b4f5380f06"
+      },
+      {
+        "id": "w52-read-1",
+        "version": "1",
+        "contentHash": "27b3d7470fa231747d1103c25b312119bb8c1dd1ef05f5456513db300008314f"
+      },
+      {
+        "id": "final-52-listening",
+        "version": "1",
+        "contentHash": "8eb9cbf55c51e92dbe622dd4e53fbfcb2f39913fc42fdd224c787f3b137d1e85"
+      },
+      {
+        "id": "final-52-reading",
+        "version": "1",
+        "contentHash": "9e1dee8d4ea13e04c6857b8d4cf0044d3a24711bad7cf3458163f9f95f34bf54"
+      }
+    ],
+    "materials": [
+      {
+        "id": "public-nasa-citizen-kelp-mapping-reading",
+        "version": "s2-q2",
+        "contentHash": "f107b5fc2d46c8e35462646539c29b5113706a5180ccc476947bc0bf25db4858",
+        "skill": "reading",
+        "sourceId": "nasa-citizen-kelp-mapping",
+        "sourceTextSha256": "e81b94bfe1355f685a7b22a79066cdb5f103a3cd50439bb9d36b4951ddd1d6f0",
+        "exposureGroup": "public-source:nasa-citizen-kelp-mapping"
+      },
+      {
+        "id": "public-nasa-climate-models-reading",
+        "version": "s2-q1",
+        "contentHash": "a1aac78a46eacd8b0e49112459dd61ecda243127b51af165ca3693f2bcaf983e",
+        "skill": "reading",
+        "sourceId": "nasa-climate-models",
+        "sourceTextSha256": "9b9cb9869b039345a67eb203131662dbf4b058667fc9c6c796770df9f3ddee39",
+        "exposureGroup": "public-source:nasa-climate-models"
+      },
+      {
+        "id": "public-nasa-dryland-forest-mapping-reading",
+        "version": "s1-q2",
+        "contentHash": "1fdafb2948d69275b7ca95be68e1df29b8fb35e5415ca5616473387d56adb39b",
+        "skill": "reading",
+        "sourceId": "nasa-dryland-forest-mapping",
+        "sourceTextSha256": "6a7341153fc1eb3e499ad8bfd3904ac52d0e92489b4edadb6f8c30266782a613",
+        "exposureGroup": "public-source:nasa-dryland-forest-mapping"
+      },
+      {
+        "id": "public-nasa-floating-solar-reading",
+        "version": "s1-q2",
+        "contentHash": "6e8b1de69bc34f224d224a8869bfe5969a047f7f5c70bb8963432fc6b9b28246",
+        "skill": "reading",
+        "sourceId": "nasa-floating-solar",
+        "sourceTextSha256": "f876c33e9520879cb7eaba9b107919516f58830054ac824b73e210922efc7157",
+        "exposureGroup": "public-source:nasa-floating-solar"
+      },
+      {
+        "id": "public-nasa-forest-loss-radar-reading",
+        "version": "s1-q2",
+        "contentHash": "bdab9b154cd33b767f0bd477ff846ab5f769f31c92d4bcacb8a6e20f5ca5921c",
+        "skill": "reading",
+        "sourceId": "nasa-forest-loss-radar",
+        "sourceTextSha256": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+        "exposureGroup": "public-source:nasa-forest-loss-radar"
+      },
+      {
+        "id": "public-nasa-greenhouse-effect-reading",
+        "version": "s2-q1",
+        "contentHash": "a0bf206a45b3ec995b53410b5b085fb28cf306bd8edffa2f6c064146129a8007",
+        "skill": "reading",
+        "sourceId": "nasa-greenhouse-effect",
+        "sourceTextSha256": "89dd2e308f4221b8f8cb3bb4bbd1ac4cca60d78d096a7498af4463f56e27b5d7",
+        "exposureGroup": "public-source:nasa-greenhouse-effect"
+      },
+      {
+        "id": "public-nasa-phytoplankton-reading",
+        "version": "s2-q2",
+        "contentHash": "8e1d19dc0da88a952d68147a65c4c6ca6202556fbe6d88cdf4ae83589b24a3ca",
+        "skill": "reading",
+        "sourceId": "nasa-phytoplankton",
+        "sourceTextSha256": "8d5e0d9933a04ec8ec683dbaaade843fbf15d849e9472d50a92428d7b63a67c9",
+        "exposureGroup": "public-source:nasa-phytoplankton"
+      },
+      {
+        "id": "public-nasa-solar-battery-storage-reading",
+        "version": "s1-q2",
+        "contentHash": "879b1dbec89c4bde527cca19595ac36703ad0a994257916f0177cba15f4ddc1e",
+        "skill": "reading",
+        "sourceId": "nasa-solar-battery-storage",
+        "sourceTextSha256": "70e9c3ee71573cf87dde21782c90b31a116780e3e2d2de89eef92ae9c1df9bc2",
+        "exposureGroup": "public-source:nasa-solar-battery-storage"
+      },
+      {
+        "id": "public-nasa-water-cycle-reading",
+        "version": "s2-q1",
+        "contentHash": "42ea001b0fe277c20febde233aa4099dce443eadcd57ab7b517c17b631a9fc8b",
+        "skill": "reading",
+        "sourceId": "nasa-water-cycle",
+        "sourceTextSha256": "5b10e239d57dd5c2595e1711d11c57b276a5ffb6121c26891334910c7d940c3e",
+        "exposureGroup": "public-source:nasa-water-cycle"
+      },
+      {
+        "id": "public-noaa-eutrophication-reading",
+        "version": "s1-q2",
+        "contentHash": "370712b93c54b629e2399b2a8995d264519ff9d2591e47622c524490c45c7eb4",
+        "skill": "reading",
+        "sourceId": "noaa-eutrophication",
+        "sourceTextSha256": "eda0877ae50d319e897d9e8d652f82bd98935d180cfd156a7556825fe6d7ea83",
+        "exposureGroup": "public-source:noaa-eutrophication"
+      },
+      {
+        "id": "public-noaa-ocean-acidification-reading",
+        "version": "s2-q2",
+        "contentHash": "f0af116bd2dc0beb98c8a810871baeca574986d4c8cf3b9bbad2f29f9fa18d7e",
+        "skill": "reading",
+        "sourceId": "noaa-ocean-acidification",
+        "sourceTextSha256": "4630edc0d0ab835a5ad42baaf95d03181f72b2c7fe5134449b06530b0f0266fd",
+        "exposureGroup": "public-source:noaa-ocean-acidification"
+      },
+      {
+        "id": "public-usgs-hydroelectric-power-reading",
+        "version": "s1-q2",
+        "contentHash": "c5a729b23b97aba5fba9e92c62fd0896d0dc3f4ef6e7f57678db4305162f0800",
+        "skill": "reading",
+        "sourceId": "usgs-hydroelectric-power",
+        "sourceTextSha256": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+        "exposureGroup": "public-source:usgs-hydroelectric-power"
+      },
+      {
+        "id": "public-usgs-turbidity-water-reading",
+        "version": "s1-q2",
+        "contentHash": "13d4382a82c82c7ee777df018094c2fc6365701223712ec8e2f581f2cd25137b",
+        "skill": "reading",
+        "sourceId": "usgs-turbidity-water",
+        "sourceTextSha256": "c178da625854617614dd3350dba2e4631e1a345744d13dbccceed7fcdd601c59",
+        "exposureGroup": "public-source:usgs-turbidity-water"
+      },
+      {
+        "id": "public-voa-l1-01-listening",
+        "version": "s1-q1",
+        "contentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+        "skill": "listening",
+        "sourceId": "voa-l1-01",
+        "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+        "exposureGroup": "public-source:voa-l1-01"
+      },
+      {
+        "id": "public-voa-l1-01-reading",
+        "version": "s1-q1",
+        "contentHash": "32a258765f071a988dc0b0e0b2837f7b38f1dbe34f3b7bcf53894a4e4a8eb570",
+        "skill": "reading",
+        "sourceId": "voa-l1-01",
+        "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+        "exposureGroup": "public-source:voa-l1-01"
+      },
+      {
+        "id": "public-voa-l1-02-listening",
+        "version": "s1-q1",
+        "contentHash": "a1cda62db48487832b24ded686c5294fdab19138d30c2eca40036d156655e9d6",
+        "skill": "listening",
+        "sourceId": "voa-l1-02",
+        "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+        "exposureGroup": "public-source:voa-l1-02"
+      },
+      {
+        "id": "public-voa-l1-02-reading",
+        "version": "s1-q1",
+        "contentHash": "352501f4a4d0dbbf809e8d322061496028189b997b89e91ae7ccc99a3e382fc0",
+        "skill": "reading",
+        "sourceId": "voa-l1-02",
+        "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+        "exposureGroup": "public-source:voa-l1-02"
+      },
+      {
+        "id": "public-voa-l1-03-listening",
+        "version": "s1-q1",
+        "contentHash": "bf15e8bd3e76e703c793ed528b102b77b3dc892b677f6b93c74c706b511fd534",
+        "skill": "listening",
+        "sourceId": "voa-l1-03",
+        "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+        "exposureGroup": "public-source:voa-l1-03"
+      },
+      {
+        "id": "public-voa-l1-03-reading",
+        "version": "s1-q1",
+        "contentHash": "7fc113e66e4522dd31b033055351780f5fe4601e8b84eda2321a44920fc51dce",
+        "skill": "reading",
+        "sourceId": "voa-l1-03",
+        "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+        "exposureGroup": "public-source:voa-l1-03"
+      },
+      {
+        "id": "public-voa-l1-04-listening",
+        "version": "s1-q1",
+        "contentHash": "b543086127f2b703b5dbf1827f0d4b6cef7509e1ced959ae07d4375dffc0c4bb",
+        "skill": "listening",
+        "sourceId": "voa-l1-04",
+        "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+        "exposureGroup": "public-source:voa-l1-04"
+      },
+      {
+        "id": "public-voa-l1-04-reading",
+        "version": "s1-q1",
+        "contentHash": "e2525fe38608d9376d36d1cd654390a362c185264d44c9de7cbc8f0b3e9ea734",
+        "skill": "reading",
+        "sourceId": "voa-l1-04",
+        "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+        "exposureGroup": "public-source:voa-l1-04"
+      },
+      {
+        "id": "public-voa-l1-05-listening",
+        "version": "s1-q1",
+        "contentHash": "ec1bf6fb8c043a034ca8919dd6e8ce2992be3aef0cc753d9ab509816302b1cee",
+        "skill": "listening",
+        "sourceId": "voa-l1-05",
+        "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+        "exposureGroup": "public-source:voa-l1-05"
+      },
+      {
+        "id": "public-voa-l1-05-reading",
+        "version": "s1-q1",
+        "contentHash": "3ec592e85e16bf2ef365a0bc5af9e5b7717533a643e9a68290e5893f64879b66",
+        "skill": "reading",
+        "sourceId": "voa-l1-05",
+        "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+        "exposureGroup": "public-source:voa-l1-05"
+      },
+      {
+        "id": "public-voa-l1-06-listening",
+        "version": "s1-q1",
+        "contentHash": "9725e5daf66a80f7f00fb0315f6dc1e4f2eadf7a18593b9aef786d420258b1f0",
+        "skill": "listening",
+        "sourceId": "voa-l1-06",
+        "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+        "exposureGroup": "public-source:voa-l1-06"
+      },
+      {
+        "id": "public-voa-l1-06-reading",
+        "version": "s1-q1",
+        "contentHash": "3a3b3d4ea7eb0f65e1ef4f5ac60d1a6da97acce9447404a2cedba8dba82b5b17",
+        "skill": "reading",
+        "sourceId": "voa-l1-06",
+        "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+        "exposureGroup": "public-source:voa-l1-06"
+      },
+      {
+        "id": "public-voa-l1-07-listening",
+        "version": "s1-q1",
+        "contentHash": "017d891cc296c179ffa2d9a29fa8d0f40eab53de4197c510d310f119305392ec",
+        "skill": "listening",
+        "sourceId": "voa-l1-07",
+        "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+        "exposureGroup": "public-source:voa-l1-07"
+      },
+      {
+        "id": "public-voa-l1-07-reading",
+        "version": "s1-q1",
+        "contentHash": "9eae9ab18e92b4acbe8e5d065cfeb6616c41a4c6928668df61e4a0c84b0ef988",
+        "skill": "reading",
+        "sourceId": "voa-l1-07",
+        "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+        "exposureGroup": "public-source:voa-l1-07"
+      },
+      {
+        "id": "public-voa-l1-08-listening",
+        "version": "s1-q1",
+        "contentHash": "66521f038605ef70df0ee017bfd75a6d79eddd1dcd8355014da9dfe8e1971c45",
+        "skill": "listening",
+        "sourceId": "voa-l1-08",
+        "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+        "exposureGroup": "public-source:voa-l1-08"
+      },
+      {
+        "id": "public-voa-l1-08-reading",
+        "version": "s1-q1",
+        "contentHash": "141dbd087505676955ec07e4122cb5ca60dfb64f54838c11c5f4284e1f1b79ee",
+        "skill": "reading",
+        "sourceId": "voa-l1-08",
+        "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+        "exposureGroup": "public-source:voa-l1-08"
+      },
+      {
+        "id": "public-voa-l1-09-listening",
+        "version": "s1-q1",
+        "contentHash": "b6fef9a5e8d0b421dec6273916c6c704cf0d07eb57258740b78a7a1e71fbaa5d",
+        "skill": "listening",
+        "sourceId": "voa-l1-09",
+        "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+        "exposureGroup": "public-source:voa-l1-09"
+      },
+      {
+        "id": "public-voa-l1-09-reading",
+        "version": "s1-q1",
+        "contentHash": "526668bae748aa3bba4bd80745f6bba52b6fb6d813da2d3b719035cde5c68560",
+        "skill": "reading",
+        "sourceId": "voa-l1-09",
+        "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+        "exposureGroup": "public-source:voa-l1-09"
+      },
+      {
+        "id": "public-voa-l1-10-listening",
+        "version": "s1-q1",
+        "contentHash": "f6a7517dc1d79abc6ffa4c1cbee1014e4147e6958d5b4d15f8463e6ae12d09da",
+        "skill": "listening",
+        "sourceId": "voa-l1-10",
+        "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+        "exposureGroup": "public-source:voa-l1-10"
+      },
+      {
+        "id": "public-voa-l1-10-reading",
+        "version": "s1-q1",
+        "contentHash": "1095131a2c46e23a6779602e365dbeb330b3fe0a3b807b019b285b4481362ffa",
+        "skill": "reading",
+        "sourceId": "voa-l1-10",
+        "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+        "exposureGroup": "public-source:voa-l1-10"
+      },
+      {
+        "id": "public-voa-l1-11-listening",
+        "version": "s1-q1",
+        "contentHash": "a193055799197b2e518218d5578e9dbf459d881f8dac4241e5ceb89c3f25ceab",
+        "skill": "listening",
+        "sourceId": "voa-l1-11",
+        "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+        "exposureGroup": "public-source:voa-l1-11"
+      },
+      {
+        "id": "public-voa-l1-11-reading",
+        "version": "s1-q1",
+        "contentHash": "465e32522892b2f83cdb12ecbdab164b4319f6e6f0beb79a98fe9515376db4f0",
+        "skill": "reading",
+        "sourceId": "voa-l1-11",
+        "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+        "exposureGroup": "public-source:voa-l1-11"
+      },
+      {
+        "id": "public-voa-l1-12-listening",
+        "version": "s2-q1",
+        "contentHash": "9d7a594e6b8ec0f210133cb9af00e1e41e5b80b20fcc608a870039ed9252793d",
+        "skill": "listening",
+        "sourceId": "voa-l1-12",
+        "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+        "exposureGroup": "public-source:voa-l1-12"
+      },
+      {
+        "id": "public-voa-l1-12-reading",
+        "version": "s2-q1",
+        "contentHash": "a3995fc2776adec68d5bffb121c68ce880e5eb3f1b1325b547a0ff9673110a58",
+        "skill": "reading",
+        "sourceId": "voa-l1-12",
+        "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+        "exposureGroup": "public-source:voa-l1-12"
+      },
+      {
+        "id": "public-voa-l1-14-listening",
+        "version": "s1-q1",
+        "contentHash": "796f2f0cd7290736266e4d83fc06dc29424dfea6ef64ac69875e109b7f54d451",
+        "skill": "listening",
+        "sourceId": "voa-l1-14",
+        "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+        "exposureGroup": "public-source:voa-l1-14"
+      },
+      {
+        "id": "public-voa-l1-14-reading",
+        "version": "s1-q1",
+        "contentHash": "dc8b6f849647e5e3bd02e2e6827f300482b6ad8fa0ac640c1debe49160380c38",
+        "skill": "reading",
+        "sourceId": "voa-l1-14",
+        "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+        "exposureGroup": "public-source:voa-l1-14"
+      },
+      {
+        "id": "public-voa-l1-15-listening",
+        "version": "s1-q1",
+        "contentHash": "b96ce29d5a2e6ae23cb6d18032cded321b793dce0ae069eae19fd66e1ab02378",
+        "skill": "listening",
+        "sourceId": "voa-l1-15",
+        "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+        "exposureGroup": "public-source:voa-l1-15"
+      },
+      {
+        "id": "public-voa-l1-15-reading",
+        "version": "s1-q1",
+        "contentHash": "b02d55ad1bfde5b68195941ac4cc93b902c14948cd249db38437937ebc41c54b",
+        "skill": "reading",
+        "sourceId": "voa-l1-15",
+        "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+        "exposureGroup": "public-source:voa-l1-15"
+      },
+      {
+        "id": "public-voa-l1-16-listening",
+        "version": "s1-q1",
+        "contentHash": "f8f54c737d45339a747f9b0de1b323345698cfd7131c6ef14fd8e37cbe27aa7f",
+        "skill": "listening",
+        "sourceId": "voa-l1-16",
+        "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+        "exposureGroup": "public-source:voa-l1-16"
+      },
+      {
+        "id": "public-voa-l1-16-reading",
+        "version": "s1-q1",
+        "contentHash": "a3a2212c34317703a2068e24a8e9d7232e3441e90d45bff621123e928e7696cb",
+        "skill": "reading",
+        "sourceId": "voa-l1-16",
+        "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+        "exposureGroup": "public-source:voa-l1-16"
+      },
+      {
+        "id": "public-voa-l1-17-reading",
+        "version": "s1-q1",
+        "contentHash": "0ef077c8a019917ac1d9081d25566d94cf8881b5b7a475d94e9e27ce1fe0746c",
+        "skill": "reading",
+        "sourceId": "voa-l1-17",
+        "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+        "exposureGroup": "public-source:voa-l1-17"
+      },
+      {
+        "id": "public-voa-l1-18-listening",
+        "version": "s1-q1",
+        "contentHash": "355012e96029cbcd705b2bd7c8cf71d1ec77a64f4dc473c231cf206d46cfc191",
+        "skill": "listening",
+        "sourceId": "voa-l1-18",
+        "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+        "exposureGroup": "public-source:voa-l1-18"
+      },
+      {
+        "id": "public-voa-l1-18-reading",
+        "version": "s1-q1",
+        "contentHash": "627f4b8c1d11ae2b634d9dff766f224431b497009407a6c3513b439cd9d0632f",
+        "skill": "reading",
+        "sourceId": "voa-l1-18",
+        "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+        "exposureGroup": "public-source:voa-l1-18"
+      },
+      {
+        "id": "public-voa-l1-19-listening",
+        "version": "s1-q1",
+        "contentHash": "8dfa23c87c57690a3405798b51cca97b2327ce900e3b0fa2f77d94bf3af8fcf1",
+        "skill": "listening",
+        "sourceId": "voa-l1-19",
+        "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+        "exposureGroup": "public-source:voa-l1-19"
+      },
+      {
+        "id": "public-voa-l1-19-reading",
+        "version": "s1-q1",
+        "contentHash": "27503abb709b04b4b327bf4255edb6560dc486cab58f9445250691196e411110",
+        "skill": "reading",
+        "sourceId": "voa-l1-19",
+        "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+        "exposureGroup": "public-source:voa-l1-19"
+      },
+      {
+        "id": "public-voa-l1-20-listening",
+        "version": "s1-q1",
+        "contentHash": "4f604700d0cac046f400b29523b06f0d96afe7f9f4f0b25e09ca60f5a9054a0f",
+        "skill": "listening",
+        "sourceId": "voa-l1-20",
+        "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+        "exposureGroup": "public-source:voa-l1-20"
+      },
+      {
+        "id": "public-voa-l1-20-reading",
+        "version": "s1-q1",
+        "contentHash": "4a89c28685dcd27c7d529be0fb6b3dd376673b79ca779d0d813c1d7baeff20ac",
+        "skill": "reading",
+        "sourceId": "voa-l1-20",
+        "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+        "exposureGroup": "public-source:voa-l1-20"
+      },
+      {
+        "id": "public-voa-l1-22-listening",
+        "version": "s1-q1",
+        "contentHash": "25f13ad12c578e94b5e936ed2cc6bd2ea4361407f07083ce0f139fdb73167a7f",
+        "skill": "listening",
+        "sourceId": "voa-l1-22",
+        "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+        "exposureGroup": "public-source:voa-l1-22"
+      },
+      {
+        "id": "public-voa-l1-22-reading",
+        "version": "s1-q1",
+        "contentHash": "8c6d429c2b051e4cf9868e386e58c0cacca79feaef619412dc4f727062e6061f",
+        "skill": "reading",
+        "sourceId": "voa-l1-22",
+        "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+        "exposureGroup": "public-source:voa-l1-22"
+      },
+      {
+        "id": "public-voa-l1-23-listening",
+        "version": "s1-q1",
+        "contentHash": "7a58c4ef9b79cb276c24856e71e2454bbdef5b1e9ca9c8c9057dfbbba714c359",
+        "skill": "listening",
+        "sourceId": "voa-l1-23",
+        "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+        "exposureGroup": "public-source:voa-l1-23"
+      },
+      {
+        "id": "public-voa-l1-23-reading",
+        "version": "s1-q1",
+        "contentHash": "d4b4c9b80bacf2c286667a2ff9b91d20ffc188ed7d0e827ba858d6197915ab0a",
+        "skill": "reading",
+        "sourceId": "voa-l1-23",
+        "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+        "exposureGroup": "public-source:voa-l1-23"
+      },
+      {
+        "id": "public-voa-l1-24-reading",
+        "version": "s1-q1",
+        "contentHash": "98693450129969e00248c40100d3719e6d5f83f2a9fc8cc179725c2b92d5c611",
+        "skill": "reading",
+        "sourceId": "voa-l1-24",
+        "sourceTextSha256": "a248c5974312e4a38b5f1da5b65a3e60747875d0af37bccfebba3b717a31be55",
+        "exposureGroup": "public-source:voa-l1-24"
+      },
+      {
+        "id": "public-voa-l1-28-listening",
+        "version": "s1-q1",
+        "contentHash": "24fd3e45d215b75448cbb48b5c2bb864989cb554503c42af33ca74ae66ac155c",
+        "skill": "listening",
+        "sourceId": "voa-l1-28",
+        "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+        "exposureGroup": "public-source:voa-l1-28"
+      },
+      {
+        "id": "public-voa-l1-28-reading",
+        "version": "s1-q1",
+        "contentHash": "218b153515f20d27a092042d578af3e9a0f6f47426aeae67b54cd23bda84a6d2",
+        "skill": "reading",
+        "sourceId": "voa-l1-28",
+        "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+        "exposureGroup": "public-source:voa-l1-28"
+      },
+      {
+        "id": "public-voa-l1-34-listening",
+        "version": "s1-q1",
+        "contentHash": "6154b3ea53fda25ddd24565bacf0e3650d88da579039e936515a00bea01318d5",
+        "skill": "listening",
+        "sourceId": "voa-l1-34",
+        "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+        "exposureGroup": "public-source:voa-l1-34"
+      },
+      {
+        "id": "public-voa-l1-34-reading",
+        "version": "s1-q1",
+        "contentHash": "d3addf65362347c4ccacb3e0ee9676258454405eff8faf9fafbfafc53f220a41",
+        "skill": "reading",
+        "sourceId": "voa-l1-34",
+        "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+        "exposureGroup": "public-source:voa-l1-34"
+      },
+      {
+        "id": "public-voa-l1-42-listening",
+        "version": "s1-q1",
+        "contentHash": "736ae96abcece4725128b2bc015ab4ea570d44a0dcece53275228adcdac3c3f3",
+        "skill": "listening",
+        "sourceId": "voa-l1-42",
+        "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+        "exposureGroup": "public-source:voa-l1-42"
+      },
+      {
+        "id": "public-voa-l1-42-reading",
+        "version": "s1-q1",
+        "contentHash": "cb09589ef7616e682ac0af3561dcd83cddfdc2b16c412ccd504ffdbd50902f0e",
+        "skill": "reading",
+        "sourceId": "voa-l1-42",
+        "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+        "exposureGroup": "public-source:voa-l1-42"
+      },
+      {
+        "id": "public-voa-l1-48-listening",
+        "version": "s1-q1",
+        "contentHash": "7bf4205da3c37561a78d3a02519c0082dd68a5f2f0fd251535dc26ff6fb77e63",
+        "skill": "listening",
+        "sourceId": "voa-l1-48",
+        "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+        "exposureGroup": "public-source:voa-l1-48"
+      },
+      {
+        "id": "public-voa-l1-48-reading",
+        "version": "s1-q1",
+        "contentHash": "5c81b2b82cda22d2b5efcead24268287dd9aeda311a5826c7b172d2b7f2aeb15",
+        "skill": "reading",
+        "sourceId": "voa-l1-48",
+        "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+        "exposureGroup": "public-source:voa-l1-48"
+      },
+      {
+        "id": "public-voa-l2-01-listening",
+        "version": "s1-q1",
+        "contentHash": "e5caf8ee5e11fe31f0690edfe6d073c4a9488125b11aa71b0ee59fec13c92d57",
+        "skill": "listening",
+        "sourceId": "voa-l2-01",
+        "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+        "exposureGroup": "public-source:voa-l2-01"
+      },
+      {
+        "id": "public-voa-l2-01-reading",
+        "version": "s1-q1",
+        "contentHash": "31cd58087f786a1d4e27a22b57b85edf5253da74da438e15573f1e07b87a09c0",
+        "skill": "reading",
+        "sourceId": "voa-l2-01",
+        "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+        "exposureGroup": "public-source:voa-l2-01"
+      },
+      {
+        "id": "public-voa-l2-02-listening",
+        "version": "s1-q1",
+        "contentHash": "3b59c1343c8acea9b674f2494f8f0b5b31d2b290728b79991f7a2caa6e540be6",
+        "skill": "listening",
+        "sourceId": "voa-l2-02",
+        "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+        "exposureGroup": "public-source:voa-l2-02"
+      },
+      {
+        "id": "public-voa-l2-02-reading",
+        "version": "s1-q1",
+        "contentHash": "7b15b12d0f435be613ccdba9ee421c195161564dab5cd9ce52a8f6b591cfc2ad",
+        "skill": "reading",
+        "sourceId": "voa-l2-02",
+        "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+        "exposureGroup": "public-source:voa-l2-02"
+      },
+      {
+        "id": "public-voa-l2-03-listening",
+        "version": "s1-q1",
+        "contentHash": "f08c9f111063dccd3e736ec69ba02125365cd06858a50cbc72beb42718ed906c",
+        "skill": "listening",
+        "sourceId": "voa-l2-03",
+        "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+        "exposureGroup": "public-source:voa-l2-03"
+      },
+      {
+        "id": "public-voa-l2-03-reading",
+        "version": "s1-q1",
+        "contentHash": "f3c00b5413661ad19fe3f0cd87be684aa4fe0a6af1fbe56348220ee4714f48f6",
+        "skill": "reading",
+        "sourceId": "voa-l2-03",
+        "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+        "exposureGroup": "public-source:voa-l2-03"
+      },
+      {
+        "id": "public-voa-l2-04-reading",
+        "version": "s1-q1",
+        "contentHash": "0924b5e0f994da28eb7d9e530172f52d4260fe6baf104100d2e07bd54f6754a4",
+        "skill": "reading",
+        "sourceId": "voa-l2-04",
+        "sourceTextSha256": "b22baf528192047981bb29e83ac1b572266d3546802e4d6b8f7724469327eaf2",
+        "exposureGroup": "public-source:voa-l2-04"
+      },
+      {
+        "id": "public-voa-l2-05-listening",
+        "version": "s1-q1",
+        "contentHash": "86bef5a437526fbfd2bf960792e4d9c3d7ecf63f56693483260221c1468a6e4e",
+        "skill": "listening",
+        "sourceId": "voa-l2-05",
+        "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+        "exposureGroup": "public-source:voa-l2-05"
+      },
+      {
+        "id": "public-voa-l2-05-reading",
+        "version": "s1-q1",
+        "contentHash": "788a7d92cacf5a9cab449779a49bb7080d0d5f5b92776f438338457604353661",
+        "skill": "reading",
+        "sourceId": "voa-l2-05",
+        "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+        "exposureGroup": "public-source:voa-l2-05"
+      },
+      {
+        "id": "public-voa-l2-06-listening",
+        "version": "s1-q1",
+        "contentHash": "a0a9d79746b057a8325dcf7cd131d709faa22ef925d706be06bbbfd8d663c863",
+        "skill": "listening",
+        "sourceId": "voa-l2-06",
+        "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+        "exposureGroup": "public-source:voa-l2-06"
+      },
+      {
+        "id": "public-voa-l2-06-reading",
+        "version": "s1-q1",
+        "contentHash": "695630dba19481c7e7c048805eeba7a274f2883ee9ed4f882cc06e31b15e0a87",
+        "skill": "reading",
+        "sourceId": "voa-l2-06",
+        "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+        "exposureGroup": "public-source:voa-l2-06"
+      },
+      {
+        "id": "public-voa-l2-07-reading",
+        "version": "s1-q1",
+        "contentHash": "e918f401dc300765dd73a173917ea7a1c45d8b5e5e3179241172f0b132090d5b",
+        "skill": "reading",
+        "sourceId": "voa-l2-07",
+        "sourceTextSha256": "0d9f9f7a80782023e233d0201b05a7f653e5b7a0e50cd072d074bf14ce931e92",
+        "exposureGroup": "public-source:voa-l2-07"
+      }
+    ],
+    "knownStartedDays": [],
+    "knownFrozenDays": [],
+    "protectedDayNumbers": [],
+    "verifiedSkillLevels": {}
+  },
+  "policy": {
+    "startDay": 2,
+    "yearDays": 365,
+    "totalBudgetMinutes": 360,
+    "pairSpacingDays": 7,
+    "contextWordMinutes": 3,
+    "contextGrammarMinutes": 3,
+    "reviewBundleMinutes": 3,
+    "maxContextWords": 3,
+    "reviewWindows": [
+      [
+        1,
+        3
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        21,
+        28
+      ]
+    ],
+    "timer": {
+      "focusMinutes": 25,
+      "shortBreakMinutes": 5,
+      "longBreakMinutes": 15,
+      "cycles": 4
+    },
+    "maxBelowLevel": 1,
+    "durationBasis": "published-author-reference; no learner-duration or throughput calibration",
+    "ordinaryCompletion": "Exact bound original fully answered and correct, or its real errors cleared through existing correction status. Practice assistance/seen allowed; never independent capability certification.",
+    "runtimeApplication": "Only an unstarted/unfrozen owner day with no attributable records/drafts/exposure. Global seen source does not freeze a future consolidation day. Apply every change to an eligible day atomically, else retain complete base day and report blocked.",
+    "masteryEvidence": false,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "composition": "expanded-base -> required-public -> adaptive-reference-minutes; original started/frozen day bypasses new overlays",
+    "placementMode": "capacity-first",
+    "lateUpgradePolicy": {
+      "id": "late-upgrade-prerequisite-consolidation-v1",
+      "active": false,
+      "direction": "later-phase-only",
+      "requiresActualVerifiedPrerequisites": true
+    }
+  },
+  "summary": {
+    "publicVariants": 75,
+    "assignedVariants": 75,
+    "retainedVariants": 0,
+    "exemptVariants": 0,
+    "blockedVariants": 0,
+    "readingAssignments": 46,
+    "listeningAssignments": 29,
+    "replacements": 35,
+    "appends": 40,
+    "sourceGroups": 46,
+    "plannedContextReviews": 137,
+    "blockedReviewWindows": 1,
+    "changedDays": 98,
+    "maximumReferenceCalendarMinutes": 330,
+    "baselineOverBudgetDays": [
+      2,
+      365
+    ],
+    "actualLearningOrMasteryValidated": false
+  },
+  "protectedDays": [
+    {
+      "day": 1,
+      "reasons": [
+        "before-integration-start"
+      ]
+    },
+    {
+      "day": 28,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 56,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 84,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 112,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 140,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 168,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 196,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 224,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 252,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 258,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 265,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 272,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 279,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 280,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 286,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 293,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 300,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 307,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 308,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 314,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 321,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 328,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 335,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 336,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 343,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 350,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 357,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 364,
+      "reasons": [
+        "gate-final-assessment-or-independent-core-day"
+      ]
+    },
+    {
+      "day": 365,
+      "reasons": [
+        "annual-review-protected"
+      ]
+    }
+  ],
+  "invariants": {
+    "inputUnchangedByConstruction": true,
+    "coreDaysNotMutated": true,
+    "gatesNotMutated": true,
+    "noAssessmentOrAnnualDayAssignment": true,
+    "onePublicPerSkillDay": true,
+    "everyPublicVariantAccountedFor": true,
+    "allChangedDaysWithinReferenceBudget": true,
+    "protectedSourceMaterialsNeverReplaced": true,
+    "firstCoreOccurrenceNeverReplaced": true,
+    "sameSourceSharedExposure": true,
+    "noVocabularySenseOrMasteryCredit": true,
+    "noDay1Changes": true
+  },
+  "vocabularyCoverage": {
+    "status": "source-audit-reference-not-sense-teaching",
+    "targetHeadwords": 8000,
+    "scheduledLiteralCandidates": 3767,
+    "publicLiteralCandidates": 1847,
+    "incrementalLiteralCandidates": 331,
+    "unionLiteralCandidates": 4098,
+    "remainingWithoutLocatedLiteralCandidate": 3902,
+    "meaningCoverageVerified": 0,
+    "masteryCredit": 0,
+    "provenance": "curriculum/public-target-coverage.json",
+    "reportSha256": "b34a0bd1c5e0506c6c46a2db08b2214d89ad8ec8a8e387064efeb5ce8c1a5135",
+    "reportGeneratedAt": "2026-10-26T00:42:57.771Z",
+    "scope": "Located orthographic candidates from the source-acquisition audit; not a fresh mastery/semantic coverage measurement or execution of context links."
+  },
+  "limitations": [
+    "Author reference durations plus default Pomodoro rest are capacity assumptions, not measured learner throughput. Actual due reviews, errors and slower work consume the same 360 minutes and must carry unfinished required work forward.",
+    "Calendar level is a planned practice ceiling, not evidence of capability. Runtime must preserve actual placement/prerequisite guards; C1 input is not forced on an A1 learner.",
+    "Context word links are dictionary/word-form candidates. Meaning must be checked against the sentence; no claim that 8000 senses were taught or mastered.",
+    "Preserved earlier core occurrence is a static guard. Runtime replacement additionally requires reliable ordinary completion; otherwise verified append fallback or complete base-day retention with visible blocked assignment.",
+    "Fixed review windows are planning prompts. Actual memory due and valid learning evidence override them; no new cards or mastery evidence are created by this blueprint.",
+    "Source-linked R/L consolidations share exposure and ordinary question memory; they are never independent assessment or unseen-transfer evidence."
+  ],
+  "optimization": {
+    "deterministicAttempts": [
+      {
+        "mode": "capacity-first",
+        "assigned": 75,
+        "blocked": 0,
+        "reviewBlocked": 1,
+        "metric": [
+          75,
+          -1,
+          594,
+          35,
+          -6320
+        ]
+      },
+      {
+        "mode": "balanced-2",
+        "assigned": 73,
+        "blocked": 2,
+        "reviewBlocked": 0,
+        "metric": [
+          73,
+          0,
+          1104,
+          52,
+          -6411
+        ]
+      },
+      {
+        "mode": "balanced-5",
+        "assigned": 73,
+        "blocked": 2,
+        "reviewBlocked": 0,
+        "metric": [
+          73,
+          0,
+          966,
+          50,
+          -6328
+        ]
+      },
+      {
+        "mode": "context-priority",
+        "assigned": 73,
+        "blocked": 2,
+        "reviewBlocked": 1,
+        "metric": [
+          73,
+          -1,
+          1452,
+          52,
+          -6964
+        ]
+      }
+    ],
+    "objective": "First maximize actual assigned variants, then review windows, current word/grammar matches, safe repeated-core replacements and earliest delivery. No difficulty/budget/spacing constraint is relaxed."
+  },
+  "blocked": [],
+  "reviewBlocked": [
+    {
+      "sourceId": "nasa-climate-models",
+      "exposureGroup": "public-source:nasa-climate-models",
+      "stage": 1,
+      "from": 142,
+      "to": 144,
+      "reason": "review-window-has-no-unfrozen-ordinary-budget-slot"
+    }
+  ]
+}

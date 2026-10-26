@@ -3,6 +3,7 @@
   const KEY='ielts52-mistake-book-v1',EVENT='ielts:mistakes-changed',MAX_ITEMS=20000,MAX_ROUNDS=500;
   const SKILLS=['vocabulary','grammar','listening','reading','speaking','writing','reflection','review'];
   const TYPES=['single','multi','short','dictation','spelling','subjective','oral'];
+  const QUESTION_FIELDS=['id','type','prompt','options','answers','explanation','evidence','maxWords','task','level','minWords','fullTest','material','thresholds','reference','returnUrl','optionsEnglish','originalPrompt','originalPromptChinese','presentation','answerAliases','distractorReasons'];
   const own=(v,k)=>Object.prototype.hasOwnProperty.call(v,k),copy=v=>JSON.parse(JSON.stringify(v));
   function plain(v,label){if(!v||typeof v!=='object'||Array.isArray(v)||![Object.prototype,null].includes(Object.getPrototypeOf(v)))throw Error(label+'格式无效。');return v;}
   function fields(v,keys,label){plain(v,label);for(const key of Reflect.ownKeys(v)){const d=Object.getOwnPropertyDescriptor(v,key);if(typeof key!=='string'||!keys.includes(key)||d.get||d.set||['__proto__','constructor','prototype'].includes(key))throw Error(label+'含不支持的字段。');}}
@@ -23,7 +24,7 @@
   function normalize(v){return String(v??'').normalize('NFKC').replace(/[‘’]/g,"'").trim().replace(/\s+/g,' ').replace(/^["“”]+|["“”]+$/g,'').toLowerCase();}
   const words=v=>(String(v).match(/(?:[A-Za-z]\.){2,}|[0-9]+(?:[:,.][0-9]+)*(?:[A-Za-z]+)?(?:[’'’-][A-Za-z0-9]+)*|[A-Za-z][A-Za-z0-9]*(?:[’'’-][A-Za-z0-9]+)*/g)||[]).length;
   function question(v){
-    fields(v,['id','type','prompt','options','answers','explanation','evidence','maxWords','task','level','minWords','fullTest','material','thresholds','reference','returnUrl'],'错题题目');
+    fields(v,QUESTION_FIELDS,'错题题目');
     if(!TYPES.includes(v.type))throw Error('错题类型无效。');const out={id:id(v.id||'output','题目ID'),type:v.type,prompt:text(v.prompt,16000,'题目',false),options:list(v.options||[],100,'选项').map(x=>text(x,4000,'选项',false)),answers:list(v.answers||[],100,'标准答案').map(x=>text(String(x),50000,'标准答案',false)),explanation:text(v.explanation||'',16000,'解析'),evidence:text(v.evidence||'',30000,'原文依据')};
     if(v.maxWords!==undefined){if(!Number.isInteger(v.maxWords)||v.maxWords<1||v.maxWords>10000)throw Error('答案词数无效。');out.maxWords=v.maxWords;}
     if(v.minWords!==undefined){if(!Number.isInteger(v.minWords)||v.minWords<0||v.minWords>10000)throw Error('输出最低词数无效。');out.minWords=v.minWords;}
@@ -32,7 +33,22 @@
     if(v.material!==undefined)out.material=safeJSON(v.material);
     if(v.reference!==undefined)out.reference=text(v.reference,16000,'朗读原文');if(v.returnUrl!==undefined)out.returnUrl=text(v.returnUrl,2000,'原任务地址');
     if(v.thresholds!==undefined){fields(v.thresholds,['accuracy','fluency','completeness'],'朗读阈值');out.thresholds={};for(const name of ['accuracy','fluency','completeness']){const score=v.thresholds[name];if(typeof score!=='number'||!Number.isFinite(score)||score<0||score>100)throw Error('朗读阈值无效。');out.thresholds[name]=score;}}
+    if(v.distractorReasons!==undefined){const reasons=list(v.distractorReasons,100,'选项解释');if(reasons.length!==out.options.length)throw Error('选项解释须与原选项逐项对应。');out.distractorReasons=reasons.map(value=>text(value,4000,'选项解释',false));}
     if(!['subjective','oral'].includes(out.type)&&!out.answers.length)throw Error('客观错题须保留标准答案。');return out;
+  }
+  // Canonical source metadata stays in the immutable material binding. Only
+  // these known, shape-checked annotations are omitted from the mistake schema;
+  // unknown fields still fail rather than being silently discarded.
+  function capturedQuestion(value){
+    fields(value,QUESTION_FIELDS.concat(['displayOrder','lexeme','understanding','evidenceOffsets','eligibleModalities','spokenEvidence']),'原题快照');
+    const offset=(v,label,unit)=>{fields(v,unit?['start','end','unit']:['quote','start','end'],label);if(!Number.isInteger(v.start)||!Number.isInteger(v.end)||v.start<0||v.end<v.start)throw Error(label+'位置无效。');if(unit&&v.unit!=='UTF-16-code-unit')throw Error(label+'位置单位无效。');if(!unit&&text(v.quote,30000,label,false).length!==v.end-v.start)throw Error(label+'文本与位置不一致。');};
+    if(value.displayOrder!==undefined){const order=list(value.displayOrder,100,'冻结选项顺序'),length=value.options?.length||0;if(order.length!==length||new Set(order).size!==length||order.some(i=>!Number.isInteger(i)||i<0||i>=length))throw Error('冻结选项顺序无效。');}
+    if(value.lexeme!==undefined)text(value.lexeme,200,'词条',false);
+    if(value.understanding!==undefined)text(value.understanding,200,'理解题类型',false);
+    if(value.evidenceOffsets!==undefined)offset(value.evidenceOffsets,'原文依据',true);
+    if(value.eligibleModalities!==undefined){const modalities=list(value.eligibleModalities,2,'材料模态');if(!modalities.length||new Set(modalities).size!==modalities.length||modalities.some(v=>!['reading','listening'].includes(v)))throw Error('材料模态无效。');}
+    if(value.spokenEvidence!==undefined)for(const entry of list(value.spokenEvidence,100,'口语原文依据'))offset(entry,'口语原文依据',false);
+    return question(Object.fromEntries(QUESTION_FIELDS.filter(k=>own(value,k)).map(k=>[k,value[k]])));
   }
   function media(v=[]){return list(v,8,'录音引用').map(x=>{fields(x,['id','name','mime','durationSeconds'],'录音引用');if(!Number.isFinite(x.durationSeconds)||x.durationSeconds<0||x.durationSeconds>900)throw Error('录音时长无效。');return{id:id(x.id),name:text(x.name,240,'录音名称',false),mime:text(x.mime,100,'录音类型',false),durationSeconds:x.durationSeconds};});}
   function submission(v){if(typeof v==='string'||Array.isArray(v))return{answer:answer(v),media:[]};fields(v,['answer','media'],'订正提交');return{answer:answer(v.answer),media:media(v.media)};}
@@ -51,7 +67,7 @@
       const recordVersions={};dictionary(v.recordVersions||{},10000,'本日作品快照');for(const [recordId,version]of Object.entries(v.recordVersions||{})){id(recordId,'本日原作ID');fields(version,['version','signature'],'本日作品版本');if(!Number.isInteger(version.version)||version.version<1||version.version>10000)throw Error('本日作品版本无效。');recordVersions[recordId]={version:version.version,signature:text(version.signature,100,'本日作品摘要',false)};}
       out.days[d]={rounds,drafts,completion,recordVersions};
     }
-    for(const daily of Object.values(out.days))for(const round of daily.rounds)for(const result of round.results){if(result.status!=='passed')continue;const item=out.items.find(i=>i.id===result.itemId),grade=item.question.type==='oral'?oralGrade(item,result.evidence):item.question.type==='subjective'?subjectiveGrade(item,{answer:result.answer,media:result.media},result.evidence):gradeObjective(item.question,result.answer);if(grade.status!=='passed')throw Error('订正通过标记缺少正确答案或有效评阅证据。');}
+    for(const daily of Object.values(out.days))for(const round of daily.rounds)for(const result of round.results){if(result.status!=='passed')continue;const item=out.items.find(i=>i.id===result.itemId),grade=item.question.type==='oral'?oralGrade(item,result.evidence):item.question.type==='subjective'?subjectiveGrade(item,{answer:result.answer,media:result.media},result.evidence):(result.evidence?.choiceMatching==='canonical-v2'?gradeObjective:gradeObjectiveLegacy)(item.question,result.answer);if(grade.status!=='passed')throw Error('订正通过标记缺少正确答案或有效评阅证据。');}
     for(const item of out.items){if(item.lastRoundId){const round=out.days[item.dayNumber]?.rounds.find(r=>r.id===item.lastRoundId),result=round?.results.find(r=>r.itemId===item.id);if(!result||result.status!==item.status)throw Error('错题状态与最后订正轮次不一致。');}else if(item.status==='passed')throw Error('错题未经提交不能消失。');}
     return out;
   }
@@ -74,13 +90,27 @@
     let item=state.items.find(i=>i.key===key);if(item?.occurrences.some(o=>o.id===occurrence.id))return{state,item,duplicate:true};if(item&&stable(item.question)!==stable(q))throw Error('同一错题的标准答案或题目发生冲突，原记录保留。');
     if(!SKILLS.includes(input.skill))throw Error('错题技能无效。');const status=input.status==='pending'?'pending':'wrong';if(item){if(item.occurrences.length>=1000)throw Error('本题原始尝试已达到上限，请先备份。');item.occurrences.push(occurrence);item.status=status;item.lastRoundId=null;delete item.oralEvidence;}else{if(state.items.length>=MAX_ITEMS)throw Error('错题本达到本机上限，请先导出归档。');item={id:'mistake-'+hash(key),key,dayNumber:day,source,materialId:mid,recordId:rid,skill:input.skill,questionId:qid,title:text(input.title||q.prompt,400,'错题标题',false),question:q,originalAnswer:copy(occurrence.answer),createdAt:occurrence.at,occurrences:[occurrence],status,lastRoundId:null};state.items.push(item);}stateDay(state,day).completion=null;return{state:parseState(state),item:copy(item),duplicate:false};
   }
-  function gradeObjective(q,supplied){
+  function canonicalChoice(options,value,normalizer) {
+    if (typeof value !== 'string' || !value.trim()) return null;
+    if (options.includes(value)) return value;
+    const key=normalizer(value), matches=options.filter(option => normalizer(option) === key);
+    return matches.length === 1 ? matches[0] : null;
+  }
+  function gradeObjectiveLegacy(q,supplied){
     q=question(q);if(['subjective','oral'].includes(q.type))return{status:'pending',feedback:'本题需要真实 AI 或语音评阅。',evidence:null};
     const values=q.type==='multi'?(Array.isArray(supplied)?supplied:[]):[typeof supplied==='string'?supplied:''];
     const choice=['single','multi'].includes(q.type)&&q.options.length>0,normalizer=choice?v=>String(v).normalize('NFKC').trim().replace(/\s+/g,' '):q.type==='spelling'?v=>String(v).trim().toLowerCase():q.type==='dictation'?v=>normalize(v).replace(/(\d),(?=\d)/g,'$1').replace(/[^a-z0-9'\s]/g,' ').replace(/\s+/g,' ').trim():normalize;
     const expected=q.answers.map(normalizer),actual=values.map(normalizer).filter(Boolean),validOptions=!choice||values.every(v=>q.options.some(option=>normalizer(option)===normalizer(v)));
     const correct=validOptions&&actual.length>0&&(!q.maxWords||values.every(v=>words(v)<=q.maxWords))&&(q.type==='multi'?new Set(actual).size===actual.length&&actual.length===expected.length&&expected.every(v=>actual.includes(v)):expected.includes(actual[0]));
     return{status:correct?'passed':'wrong',feedback:correct?'本题已全部答对。':(q.explanation||'答案仍不完整或不正确，请再次作答。'),evidence:{method:'objective',correct,expected:q.answers}};
+  }
+  function gradeObjective(q,supplied){
+    q=question(q);
+    if(!['single','multi'].includes(q.type))return gradeObjectiveLegacy(q,supplied);
+    const values=q.type==='multi'?(Array.isArray(supplied)?supplied:[]):[typeof supplied==='string'?supplied:''];
+    const actual=values.map(value=>canonicalChoice(q.options,value,normalize)),expected=q.answers.map(value=>canonicalChoice(q.options,value,normalize));
+    const correct=actual.length>0&&expected.length>0&&actual.every(value=>value!==null)&&expected.every(value=>value!==null)&&(!q.maxWords||values.every(value=>words(value)<=q.maxWords))&&(q.type==='multi'?new Set(actual).size===actual.length&&actual.length===expected.length&&expected.every(value=>actual.includes(value)):expected.includes(actual[0]));
+    return{status:correct?'passed':'wrong',feedback:correct?'本题已全部答对。':(q.explanation||'答案仍不完整或不正确，请再次作答。'),evidence:{method:'objective',correct,expected:q.answers,choiceMatching:'canonical-v2'}};
   }
   function oralReferenceVariants(item){
     const reference=item.question.reference||item.question.prompt,fallback={reference,spoken:reference,legacy:reference,segmentIndex:null,ambiguous:false};
@@ -223,12 +253,23 @@
     if(evaluationValue.method==='objective'&&Number.isFinite(evaluationValue.score)&&Number.isFinite(evaluationValue.maxScore)&&evaluationValue.maxScore>0&&evaluationValue.score<evaluationValue.maxScore)return true;
     return Array.isArray(review?.rounds)&&review.rounds.some(round=>round?.ok===true&&(round.levelCheck?.meetsGoal===false&&round.levelCheck.evidence?.some(e=>grounded(e.quote))||Array.isArray(round.corrections)&&round.corrections.some(c=>c&&grounded(c.original)&&typeof c.revised==='string'&&c.revised.trim()&&typeof c.reason==='string'&&c.reason.trim()&&normalize(c.original)!==normalize(c.revised))));
   }
+  function recordQuestionSource(record,options={}){
+    const artifact=decoded(record?.answer),current=(options.materials||root.IELTSCurriculumData?.materials||[]).find(m=>m.id===record?.materialId);
+    let assessment=root.IELTSAssessment;if(!assessment&&typeof require==='function')try{assessment=require('./assessment-core.js');}catch(_){}
+    if(artifact?.materialBinding){const resolved=assessment?.resolveArtifactMaterial?.(current,artifact,record);return{artifact,material:resolved?.valid?resolved.material:null,verified:resolved?.valid===true,blocked:resolved?.valid!==true};}
+    if(Array.isArray(artifact?.questions)&&artifact.questions.length)return{artifact,material:current,questions:artifact.questions,verified:true,blocked:false};
+    let index=options.legacyMaterials||root.IELTSLegacyMaterialCompatibility;if(!index&&typeof require==='function')try{index=require('./legacy-material-compatibility.js');}catch(_){}
+    const entry=index?.entries?.[record?.materialId],proof=entry&&current&&assessment?.proveLegacyMaterial?.({materialId:record.materialId,materialVersion:record.materialVersion||undefined,taskId:record.skill,answers:artifact?.answers||{}},current,index);
+    const historical=options.historical===true&&['reading','listening','grammar'].includes(record?.skill),knownAmbiguous=!!entry&&!proof?.compatible&&artifact?.objectiveGrading!=='canonical-v2';
+    return{artifact,material:current,verified:proof?.compatible===true,blocked:knownAmbiguous||historical&&proof?.compatible!==true};
+  }
   function captureInputs(record,options={}){
     if(!record||!Number.isInteger(record.dayNumber)||record.dayNumber<1||record.dayNumber>365||record.source==='mistake-review'||record.skill==='reflection')return[];
-    const material=(options.materials||root.IELTSCurriculumData?.materials||[]).find(m=>m.id===record.materialId),artifact=decoded(record.answer),evaluationValue=record.evaluation||{},subjective=['writing','speaking'].includes(record.skill),questions=options.question?[options.question]:(material?.questions&&['reading','listening','grammar'].includes(record.skill)?material.questions:artifact?.questions||[]),out=[];
+    const source=recordQuestionSource(record,options);if(source.blocked&&!options.question)return[];
+    const material=source.material,artifact=source.artifact,evaluationValue=record.evaluation||{},subjective=['writing','speaking'].includes(record.skill),questions=options.question?[options.question]:(source.questions||material?.questions&&['reading','listening','grammar'].includes(record.skill)?source.questions||material.questions:artifact?.questions||[]),out=[];
     if(artifact?.kind==='vocabulary-three-modes'&&Array.isArray(artifact.rounds))return[...artifact.rounds.flatMap(round=>Array.isArray(round.attempts)?round.attempts:[]).filter(attempt=>attempt.correct===false&&answered(attempt.userAnswer)).map(attempt=>vocabularyInput({...((artifact.words||[]).find(word=>word.word===attempt.word)||{}),...attempt,dayNumber:record.dayNumber,materialId:attempt.materialId||record.materialId})),...vocabularyTrainingInputs(record,artifact)];
     const base={dayNumber:record.dayNumber,source:record.source,materialId:record.materialId,recordId:record.id,recordVersion:record.version||1,skill:record.skill,title:record.title,evaluation:evaluationValue,media:record.media||[],at:record.submittedAt||record.createdAt},hasError=explicitRecordError(record,artifact);
-    for(const original of questions){let q={...original},supplied=options.question?record.answer:artifact?.answers?.[q.id]??'';delete q.answer;if(q.type==='fill')q.type='short';if(Array.isArray(q.answers)&&q.answers.some(x=>typeof x==='number')){q.answers=q.answers.map(i=>q.options[i]);if(typeof supplied==='number')supplied=q.options[supplied]||'';else if(Array.isArray(supplied))supplied=supplied.map(i=>typeof i==='number'?q.options[i]:i);}if(!q.type)q.type=Array.isArray(q.options)&&q.options.length?'single':'short';if(['subjective','oral'].includes(q.type)&&!hasError)continue;if(!['subjective','oral'].includes(q.type)&&(!q.answers?.length||!answered(supplied)))continue;q=question(q);if(gradeObjective(q,supplied).status!=='passed')out.push({...base,questionId:q.id,question:q,originalAnswer:answer(supplied)});}
+    for(const original of questions){let q={...original},supplied=options.question?record.answer:artifact?.answers?.[q.id]??'';delete q.answer;if(q.type==='fill')q.type='short';if(Array.isArray(q.answers)&&q.answers.some(x=>typeof x==='number')){q.answers=q.answers.map(i=>q.options[i]);if(typeof supplied==='number')supplied=q.options[supplied]||'';else if(Array.isArray(supplied))supplied=supplied.map(i=>typeof i==='number'?q.options[i]:i);}if(!q.type)q.type=Array.isArray(q.options)&&q.options.length?'single':'short';if(['subjective','oral'].includes(q.type)&&!hasError)continue;if(!['subjective','oral'].includes(q.type)&&(!q.answers?.length||!answered(supplied)))continue;q=capturedQuestion(q);if((artifact?.objectiveGrading==='canonical-v2'||options.objectiveGrading==='canonical-v2'?gradeObjective:gradeObjectiveLegacy)(q,supplied).status!=='passed')out.push({...base,questionId:q.id,question:q,originalAnswer:answer(supplied)});}
     if(questions.length)return out;
     if(hasError){
       const q=question({id:'output',type:'subjective',prompt:material?.prompt||material?.instructions||record.title,answers:[],task:material?.rubric?.taskType||material?.rubric?.task||'foundation',level:(String(material?.level||'A0').match(/A[012]|B[12]|C[12]/g)||['A0']).at(-1),minWords:material?.minWords||0,fullTest:material?.fullTest===true||material?.pool==='final',...(material?{material:{id:material.id,skill:material.skill,fullTest:material.fullTest===true,pool:material.pool||'',minWords:material.minWords||0,rubric:material.rubric||{}}}:{})});
@@ -270,6 +311,9 @@
         if(!record||!Number.isInteger(record.dayNumber)||record.dayNumber<1||record.dayNumber>365||record.source==='mistake-review'||record.skill==='reflection')return{captured:0};
         const previousState=readParsed(),snapshot={version:record.version||1,signature:hash({answer:record.answer,evaluation:record.evaluation,media:record.media||[]})},previous=previousState.days[record.dayNumber]?.recordVersions[record.id];
         if(previous&&previous.version>snapshot.version)return{captured:0};
+        // An unchanged objective original is not regraded when the catalogue changes.
+        if(!['writing','speaking'].includes(record.skill)&&previous?.version===snapshot.version&&previous.signature===snapshot.signature)return{captured:0};
+        if(!context.question&&recordQuestionSource(record,context).blocked)return{captured:0,unverified:true};
         let inputs=captureInputs(record,context);
         const unjudged=!explicitRecordError(record)?previousState.items.filter(i=>i.dayNumber===record.dayNumber&&i.materialId===record.materialId&&i.question.type==='subjective'&&i.status==='wrong'&&!i.lastRoundId&&i.occurrences.some(o=>o.recordId===record.id)&&i.occurrences.every(o=>!explicitRecordError({skill:i.skill,answer:typeof o.answer==='string'?o.answer:JSON.stringify(o.answer),evaluation:o.evaluation}))):[];
         inputs=inputs.filter(input=>input.question.task!=='vocabulary_follow_restore'||!previousState.items.some(i=>i.source==='vocabulary-speaking'&&i.materialId===input.materialId&&i.occurrences.some(o=>o.recordId===input.recordId)));
@@ -291,7 +335,7 @@
   }
   let runtimeStore=null,profileId=null;
   function browserStore(){const profile=root.IELTSProfiles?.current?.().id||'legacy';if(profileId!==null&&profile!==profileId)throw Error('学习档案已切换，请刷新后继续错题订正。');if(!runtimeStore){profileId=profile;const preview=new URLSearchParams(root.location?.search||'').get('preview')==='1',storage=root.IELTSProfiles?.storage()||(preview?root.sessionStorage:root.localStorage);runtimeStore=createStore(storage,{notify:()=>root.dispatchEvent?.(new CustomEvent(EVENT,{detail:{profileId}}))});}return runtimeStore;}
-  async function syncRecords(records,options={}){const listValue=records||await root.IELTSRecords?.list?.()||[];let count=0;for(const record of listValue){const r=browserStore().captureRecord(record,options);count+=r.captured||0;}return count;}
+  async function syncRecords(records,options={}){const listValue=records||await root.IELTSRecords?.list?.()||[];let count=0;for(const record of listValue){const r=browserStore().captureRecord(record,{...options,historical:true});count+=r.captured||0;}return count;}
   if(root.addEventListener)root.addEventListener('storage',event=>{try{const scoped=root.IELTSProfiles?.scopeKey(KEY)||KEY;if(event.key===scoped)root.dispatchEvent?.(new CustomEvent(EVENT,{detail:{profileId,external:true}}));}catch(_){}});
   return Object.freeze({KEY,EVENT,newState,parseState,mergeStates,question,submission,gradeObjective,subjectiveGrade,oralGrade,oralReferenceVariants,oralArchiveCandidate,archivedOralEvidence,attachArchivedOralEvidence,explicitRecordError,recordCorrectionStatus:(record,state)=>state?recordCorrectionStatusParsed(record,parseState(state)):browserStore().recordCorrectionStatus(record),capture:(state,input,now)=>input===undefined?browserStore().capture(state):capture(state,input,now),captureInputs,vocabularyInput,oralInputs,attachOralEvidence,summary:(state,day)=>day===undefined?browserStore().summary(state):summary(state,day),saveDraft,submitRound,completeRecap,createStore,makeId,syncRecords,store:browserStore,captureRecord:(record,options)=>browserStore().captureRecord(record,options),captureAttempt:input=>browserStore().capture(input),captureVocabulary:event=>browserStore().captureVocabulary(event),captureOral:(items,context)=>browserStore().captureOral(items,context),recordOralEvidence:context=>browserStore().attachOralEvidence(context),forDay:day=>browserStore().summary(day),setDraft:(day,itemId,value)=>browserStore().saveDraft(day,itemId,value),submitPage:(day,answers,options)=>browserStore().submitRound(day,answers,options),finishRecap:(day,value)=>browserStore().completeRecap(day,value)});
 });

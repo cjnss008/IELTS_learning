@@ -21,22 +21,124 @@
     }
     return options;
   }
+  function stableMaterialJSON(value,depth=0,seen=new Set()) {
+    if(depth>40)throw Error('Material snapshot is too deeply nested');
+    if(value===null||typeof value==='string'||typeof value==='boolean')return JSON.stringify(value);
+    if(typeof value==='number'){if(!Number.isFinite(value))throw Error('Material snapshot has a non-finite number');return JSON.stringify(value);}
+    if(!value||typeof value!=='object'||seen.has(value))throw Error('Material snapshot is not JSON data');
+    seen.add(value);let result;
+    if(Array.isArray(value)){if(Object.keys(value).length!==value.length)throw Error('Material snapshot has a sparse array');result='['+value.map(item=>stableMaterialJSON(item,depth+1,seen)).join(',')+']';}
+    else{if(Object.prototype.toString.call(value)!=='[object Object]')throw Error('Material snapshot is not a plain object');result='{'+Object.keys(value).sort().map(key=>{const descriptor=Object.getOwnPropertyDescriptor(value,key);if(!descriptor||descriptor.get||descriptor.set)throw Error('Material snapshot has an accessor');return JSON.stringify(key)+':'+stableMaterialJSON(descriptor.value,depth+1,seen);}).join(',')+'}';}
+    seen.delete(value);return result;
+  }
+  function materialContentHash(material) { return sourceTextHash(stableMaterialJSON(material)); }
+  function sourceTextHash(text) {
+    if(typeof text!=='string')throw Error('Source text must be a string');
+    if(typeof require==='function')try{return require('node:crypto').createHash('sha256').update(text,'utf8').digest('hex');}catch(_){}
+    const bytes=[];for(const char of text){let cp=char.codePointAt(0);if(cp>=0xd800&&cp<=0xdfff)cp=0xfffd;if(cp<0x80)bytes.push(cp);else if(cp<0x800)bytes.push(0xc0|(cp>>6),0x80|(cp&63));else if(cp<0x10000)bytes.push(0xe0|(cp>>12),0x80|((cp>>6)&63),0x80|(cp&63));else bytes.push(0xf0|(cp>>18),0x80|((cp>>12)&63),0x80|((cp>>6)&63),0x80|(cp&63));}
+    const length=bytes.length;bytes.push(0x80);while(bytes.length%64!==56)bytes.push(0);const high=Math.floor(length/0x20000000),low=(length*8)>>>0;for(let shift=24;shift>=0;shift-=8)bytes.push((high>>>shift)&255);for(let shift=24;shift>=0;shift-=8)bytes.push((low>>>shift)&255);
+    const k=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    const h=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19],ror=(x,n)=>(x>>>n)|(x<<(32-n)),w=new Uint32Array(64);
+    for(let offset=0;offset<bytes.length;offset+=64){for(let i=0;i<16;i++)w[i]=((bytes[offset+i*4]<<24)|(bytes[offset+i*4+1]<<16)|(bytes[offset+i*4+2]<<8)|bytes[offset+i*4+3])>>>0;for(let i=16;i<64;i++){const a=w[i-15],b=w[i-2],s0=ror(a,7)^ror(a,18)^(a>>>3),s1=ror(b,17)^ror(b,19)^(b>>>10);w[i]=(w[i-16]+s0+w[i-7]+s1)>>>0;}let[a,b,c,d,e,f,g,j]=h;for(let i=0;i<64;i++){const s1=ror(e,6)^ror(e,11)^ror(e,25),ch=(e&f)^(~e&g),t1=(j+s1+ch+k[i]+w[i])>>>0,s0=ror(a,2)^ror(a,13)^ror(a,22),maj=(a&b)^(a&c)^(b&c),t2=(s0+maj)>>>0;j=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0;}for(const [i,v]of [a,b,c,d,e,f,g,j].entries())h[i]=(h[i]+v)>>>0;}
+    return h.map(value=>value.toString(16).padStart(8,'0')).join('');
+  }
+  function resolveArtifactMaterial(material,artifact,record) {
+    const binding=artifact?.materialBinding;if(binding===undefined)return{valid:true,material,bound:false};
+    const invalid=reason=>({valid:false,material:null,bound:true,reason});
+    if(!binding||binding.schema!==1||!binding.material||typeof binding.material!=='object'||Array.isArray(binding.material)||!/^[a-f0-9]{64}$/.test(binding.contentHash||''))return invalid('原稿材料快照格式无效，原稿保留。');
+    const snapshot=binding.material;
+    if(typeof snapshot.id!=='string'||!snapshot.id||snapshot.version===undefined||material&&snapshot.id!==material.id||record&&snapshot.id!==record.materialId)return invalid('原稿材料快照身份不匹配，未套用当前新题。');
+    if(artifact.materialVersion!==undefined&&String(artifact.materialVersion)!==String(snapshot.version)||record?.materialVersion&&String(record.materialVersion)!==String(snapshot.version))return invalid('原稿材料快照版本不匹配，原稿保留。');
+    const objective=['reading','listening','grammar'].includes(snapshot.skill),policy=binding.gradingPolicy;
+    if(artifact.gradingPolicy!==policy||objective&&(!['canonical-v2','legacy-normalized-v1'].includes(policy)||artifact.objectiveGrading!==policy)||!objective&&policy!=='existing-subjective-v1'||!objective&&artifact.objectiveGrading!==undefined&&artifact.objectiveGrading!==policy)return invalid('原稿材料快照的评分规则不一致。');
+    try{if(materialContentHash(snapshot)!==binding.contentHash)return invalid('原稿材料快照哈希不匹配，未套用当前新题。');}catch(_){return invalid('原稿材料快照无法核验，原稿保留。');}
+    return{valid:true,material:snapshot,bound:true};
+  }
+
+  function legacyMaterialContract(material) {
+    const copy=value=>value===undefined?null:JSON.parse(JSON.stringify(value)),prompt=value=>value?.originalPromptChinese||value?.originalPrompt||value?.prompt||'';
+    const question=q=>({id:String(q.id||''),type:q.type||'',prompt:prompt(q),options:copy(q.options||[]),answers:copy(q.answers||[]),maxWords:q.maxWords??null,answerAliases:copy(q.answerAliases||[]),caseSensitive:q.caseSensitive??null});
+    const fields=['id','skill','type','level','pool','form','assessmentGroup','fullTest','independentBank','minWords','maxWords','timeLimitSeconds','estimatedMinutes','rubric','thresholds','trainingVersion'];
+    const result=Object.fromEntries(fields.map(key=>[key,copy(material?.[key])])),skill=material?.skill;
+    result.title=material?.title||'';result.prompt=skill==='reflection'?'':prompt(material);
+    // Reflection navigation and general study hints are not answer contracts.
+    // Formal constraints live in questions, minWords/time/rubric and V schema.
+    result.instructions=['speaking','writing'].includes(skill)&&!result.prompt?material?.originalInstructions||material?.instructions||'':'';
+    if(typeof result.assessmentGroup==='string'&&result.assessmentGroup.startsWith('gate-'))result.assessmentGroup=result.assessmentGroup.replace(/-[AB]$/,'');
+    if(skill==='writing')result.rubric={...(result.rubric||{}),taskType:material.type??null};
+    result.questions=(material?.questions||[]).map(question);
+    result.verifiedForAssessment=material?.source?.verification==='reviewed';
+    if(['reading','grammar'].includes(skill))result.passage=material.passage||'';
+    if(skill==='listening')result.transcript=material.transcript||'';
+    if(!['speaking','writing','reflection'].includes(skill)&&material.figure!==undefined)result.figure=copy(material.figure);
+    for(const key of ['requirements','answerFormat','wordLimit','minSentences','maxSentences','requiredDimensions'])if(material[key]!==undefined)result[key]=copy(material[key]);
+    if(['speaking','writing','reflection'].includes(skill)){result.reference=material.reference||'';result.figure=copy(material.figure||null);}
+    if(skill==='vocabulary')result.vocabulary=(material.vocabulary||[]).map(word=>({word:String(word.word||'').trim().toLowerCase().replace(/\s+/g,' '),meaning:word.meaning||'',example:word.example||word.context||'',exampleTranslation:word.exampleTranslation||''}));
+    return result;
+  }
+  function legacyMaterialContractHash(material) { return materialContentHash(legacyMaterialContract(material)); }
+  function createLegacyMaterialCompatibilityIndex(records,options={}) {
+    const entries={},evidence=[],scope=String(options.evidenceScope||'Known public Git revisions, current public content and explicitly recovered development source candidates only; unknown uncommitted versions are not claimed.').slice(0,1000);
+    for(const record of records||[]){const evidenceId=evidence.length;evidence.push({kind:record.kind,revision:String(record.revision||''),path:String(record.path||''),assetSha256:record.assetSha256||null});for(const material of record.materials||[]){if(!material||typeof material.id!=='string')continue;const contractHash=legacyMaterialContractHash(material),entry=entries[material.id]||(entries[material.id]={variantHashes:[],versions:[],evidence:[],publishedEvidenceCount:0,developmentEvidenceCount:0,currentContractHash:null,questionIds:[],wordKeys:[]});if(!entry.variantHashes.includes(contractHash))entry.variantHashes.push(contractHash);const version=String(material.version||'1');if(!entry.versions.includes(version))entry.versions.push(version);entry.evidence.push(evidenceId);if(record.kind==='git')entry.publishedEvidenceCount++;if(record.kind==='development')entry.developmentEvidenceCount++;if(record.kind==='current'){entry.currentContractHash=contractHash;entry.questionIds=(material.questions||[]).map(q=>String(q.id));entry.wordKeys=[...new Set((material.vocabulary||[]).map(v=>String(v.word||'').trim().toLowerCase().replace(/\s+/g,' ')).filter(Boolean))];}}}
+    for(const [id,entry]of Object.entries(entries)){entry.variantHashes.sort();entry.variantCount=entry.variantHashes.length;entry.contractHash=entry.variantCount===1?entry.variantHashes[0]:null;entry.evidenceClass=entry.variantCount!==1?'known-semantic-variants':entry.publishedEvidenceCount?'published-unique':entry.developmentEvidenceCount?'development-observed-unique':'current-only';entry.proofId='legacy-'+materialContentHash({id,variantHashes:entry.variantHashes,evidence:entry.evidence.map(i=>evidence[i])});}
+    return{schema:1,contractProjectionVersion:1,method:'known-public-material-history-v1',complete:options.complete!==false,evidenceScope:scope,evidence,entries};
+  }
+  function proveLegacyMaterial(draft,currentMaterial,index) {
+    let data=index||root.IELTSLegacyMaterialCompatibility;if(!data&&typeof require==='function')try{data=require('./legacy-material-compatibility.js');}catch(_){}
+    const fail=reason=>({compatible:false,material:null,gradingPolicy:'legacy-normalized-v1',evidenceScope:String(data?.evidenceScope||'Known history index unavailable').slice(0,1000),reason});
+    if(!draft||!currentMaterial||draft.materialId!==currentMaterial.id)return fail('旧草稿与当前材料身份不一致；输入保留。');
+    if(!data||data.schema!==1||data.complete!==true||data.method!=='known-public-material-history-v1')return fail('旧材料已知历史证据未完整加载；输入保留。');
+    const entry=data.entries?.[currentMaterial.id];if(!entry||entry.variantCount!==1||!entry.contractHash||entry.contractHash!==legacyMaterialContractHash(currentMaterial)||entry.currentContractHash!==entry.contractHash)return fail('同ID存在不同正文、题目、答案或要求，暂不能确认旧草稿所用版本。');
+    if(!['published-unique','development-observed-unique'].includes(entry.evidenceClass))return fail('该材料只有当前版本，缺少可恢复的既有发布或开发版本证明。');
+    let nested=null;if(draft.taskId==='vocabulary'&&draft.text)try{const parsed=JSON.parse(draft.text);if(parsed?.kind==='vocabulary-practice-draft')nested=parsed;}catch(_){return fail('旧词汇草稿无法核对，完整输入保留。');}
+    const version=nested?.materialVersion??draft.materialVersion;
+    if(version!==undefined&&!entry.versions.includes(String(version)))return fail('草稿材料版本未出现在已知历史中；输入保留。');
+    if(nested&&(nested.materialId!==currentMaterial.id||JSON.stringify(nested.wordKeys)!==JSON.stringify(entry.wordKeys)))return fail('旧词汇草稿词头或顺序与唯一已知版本不一致。');
+    if(draft.taskId!=='vocabulary'&&draft.answers&&Object.keys(draft.answers).some(id=>!entry.questionIds.includes(id)))return fail('旧草稿含未能对应的题号；输入保留。');
+    const material=JSON.parse(JSON.stringify(currentMaterial));if(version!==undefined)material.version=String(version);
+    return{compatible:true,material,gradingPolicy:'legacy-normalized-v1',evidenceScope:String(data.evidenceScope).slice(0,1000),proofId:entry.proofId,contractHash:entry.contractHash,evidenceClass:entry.evidenceClass,reason:'在已检查的公开发布与可恢复开发候选范围内，同ID任务语义唯一；保留旧评分规则和原输入。'};
+  }
+
+  function canonicalChoice(options,value,normalizer) {
+    if (typeof value !== 'string' || !value.trim()) return null;
+    if (options.includes(value)) return value;
+    const key=normalizer(value), matches=options.filter(option => normalizer(option) === key);
+    return matches.length === 1 ? matches[0] : null;
+  }
   function gradeQuestion(question, supplied) {
     const accepted = Array.isArray(question?.answers) ? question.answers : [];
     const multi = question?.type === 'multi';
     const values = multi ? (Array.isArray(supplied) ? supplied : []) : [typeof supplied === 'string' ? supplied : ''];
-    const normalized = values.map(normalizeAnswer).filter(Boolean);
-    const expected = accepted.map(normalizeAnswer).filter(Boolean);
-    const answered = normalized.length > 0;
+    const choice=['single','multi'].includes(question?.type);
+    const options=Array.isArray(question?.options) ? question.options : [];
+    const normalized = choice ? values.map(value => canonicalChoice(options,value,normalizeAnswer)) : values.map(normalizeAnswer).filter(Boolean);
+    const expected = choice ? accepted.map(value => canonicalChoice(options,value,normalizeAnswer)) : accepted.map(normalizeAnswer).filter(Boolean);
+    const answered = values.some(value => typeof value === 'string' && Boolean(value.trim()));
+    const unambiguous = !choice || normalized.every(value => value !== null) && expected.every(value => value !== null);
     const withinLimit = !question?.maxWords || values.every(value => countWords(value) <= question.maxWords);
-    const correct = answered && withinLimit && expected.length > 0 && (multi ? new Set(normalized).size === normalized.length && normalized.length === expected.length && expected.every(answer => normalized.includes(answer)) : expected.includes(normalized[0]));
-    return {id: question?.id || '', answered, correct, gradable: expected.length > 0, withinLimit, expected: accepted.slice(), explanation: question?.explanation || '', evidence: question?.evidence || ''};
+    const correct = answered && withinLimit && unambiguous && expected.length > 0 && (multi ? new Set(normalized).size === normalized.length && normalized.length === expected.length && expected.every(answer => normalized.includes(answer)) : expected.includes(normalized[0]));
+    return {id: question?.id || '', answered, correct, gradable: expected.length > 0 && (!choice || expected.every(value => value !== null)), withinLimit, expected: accepted.slice(), explanation: question?.explanation || '', evidence: question?.evidence || ''};
   }
-  function gradeMaterial(material, answers = {}) {
-    const items = (material?.questions || []).map(question => gradeQuestion(question, answers[question.id]));
+  function gradeQuestionLegacy(question, supplied) {
+    const accepted=Array.isArray(question?.answers)?question.answers:[],multi=question?.type==='multi',values=multi?(Array.isArray(supplied)?supplied:[]):[typeof supplied==='string'?supplied:''];
+    const normalized=values.map(normalizeAnswer).filter(Boolean),expected=accepted.map(normalizeAnswer).filter(Boolean),answered=normalized.length>0,withinLimit=!question?.maxWords||values.every(value=>countWords(value)<=question.maxWords);
+    const correct=answered&&withinLimit&&expected.length>0&&(multi?new Set(normalized).size===normalized.length&&normalized.length===expected.length&&expected.every(answer=>normalized.includes(answer)):expected.includes(normalized[0]));
+    return{id:question?.id||'',answered,correct,gradable:expected.length>0,withinLimit,expected:accepted.slice(),explanation:question?.explanation||'',evidence:question?.evidence||''};
+  }
+  function gradeMaterialWith(material, answers, grader) {
+    const items = (material?.questions || []).map(question => grader(question, answers[question.id]));
     const total = items.filter(item => item.gradable).length;
     const correct = items.filter(item => item.correct).length;
     return {items, correct, total, answered: items.filter(item => item.answered).length, ratio: total ? correct / total : null, allGradable: items.length > 0 && total === items.length};
+  }
+  function gradeMaterial(material, answers = {}) { return gradeMaterialWith(material,answers,gradeQuestion); }
+  function gradeMaterialForArtifact(material, artifact) {
+    const resolved=resolveArtifactMaterial(material,artifact);
+    if(!resolved.valid)return{items:[],correct:0,total:0,answered:0,ratio:null,allGradable:false,gradingPolicy:'invalid-material-binding',reason:resolved.reason};
+    material=resolved.material;
+    const policy=artifact?.objectiveGrading;
+    if(policy!==undefined&&policy!==null&&!['legacy-normalized-v1','canonical-v2'].includes(policy))return{items:[],correct:0,total:0,answered:0,ratio:null,allGradable:false,gradingPolicy:'unsupported'};
+    return{...gradeMaterialWith(material,artifact?.answers||{},policy==='canonical-v2'?gradeQuestion:gradeQuestionLegacy),gradingPolicy:policy==='canonical-v2'?'canonical-v2':'legacy-normalized-v1'};
   }
   function decodeArtifact(record) {
     try {
@@ -85,10 +187,20 @@
     if(material.skill==='speaking'&&(material.fullTest||material.pool==='final')&&(review?.audioSource?.task!=='full_test'||review.audioSource.durationSeconds<660))reasons.push('完整口语训练需要覆盖整套任务且不少于 11 分钟的原音证据');
     return {pass: reasons.length === 0 && criteria.every(item => item.pass), criteria, reasons: [...new Set(reasons)], source: 'ai-estimate'};
   }
+  function practiceOnlyMaterial(material) {
+    const source=material?.source;
+    return Boolean(source?.publicSourceId || material?.practiceOnly === true || source?.practiceOnly === true ||
+      material?.independentAssessmentEligible === false || source?.independentAssessmentEligible === false ||
+      material?.independentTransferEligible === false || source?.independentTransferEligible === false);
+  }
   function evidenceFor(record, material, options = {}) {
     const artifact = decodeArtifact(record), reasons = [];
     const now = typeof options.now === 'number' ? options.now : Date.now();
     if (!record || !artifact) return {pass: false, pending: true, reasons: ['缺少课程原始作答记录']};
+    const resolved=resolveArtifactMaterial(material,artifact,record);
+    if(!resolved.valid)return{pass:false,pending:true,reasons:[resolved.reason],artifact};
+    if(practiceOnlyMaterial(material)||practiceOnlyMaterial(resolved.material))reasons.push('此来源仅用于普通练习，不提供独立测评或进阶迁移证据');
+    material=resolved.material;
     if (record.materialId !== material.id || String(record.materialVersion || artifact.materialVersion) !== String(material.version)) reasons.push('材料或版本不匹配');
     if (artifact.mode !== 'assessment') reasons.push('这是练习记录，不是独立测评');
     if (record.exposure !== 'unseen' || artifact.exposureAtStart !== 'unseen') reasons.push('材料在本次测评前已经曝光或曝光状态不明');
@@ -103,7 +215,7 @@
     if (material.source?.verification !== 'reviewed') reasons.push('材料尚未完成内容复核，仅供练习');
     let grade = null, ai = null;
     if (['reading', 'listening', 'grammar'].includes(material.skill)) {
-      grade = gradeMaterial(material, artifact.answers);
+      grade = gradeMaterialForArtifact(material, artifact);
       if (!grade.allGradable) reasons.push('题目答案或计分配置不完整');
       const final = options.final === true;
       if (final && (!material.fullTest || grade.total !== 40)) reasons.push('不是完整 40 题测评');
@@ -182,7 +294,7 @@
     });
   }
   function remediation(record, material) {
-    const artifact = decodeArtifact(record), grade = gradeMaterial(material, artifact?.answers || {});
+    const artifact = decodeArtifact(record), grade = gradeMaterialForArtifact(material, artifact);
     return grade.items.filter(item => !item.correct).map(item => ({questionId: item.id, skill: material.skill, action: '先定位原文依据，解释错因，再闭卷回答同类新题。', evidence: item.evidence, explanation: item.explanation}));
   }
   function retestAvailability(record, alternatives, now = Date.now()) {
@@ -190,7 +302,7 @@
     const dueAt = Number.isFinite(submitted) ? submitted + 48 * 3600000 : Infinity;
     return {due: now >= dueAt, dueAt: Number.isFinite(dueAt) ? new Date(dueAt).toISOString() : null, materials: alternatives.filter(material => material.id !== record?.materialId), message: now >= dueAt ? '可以使用未见同级材料复测' : '先订正，至少间隔 48 小时后换题复测'};
   }
-  const api = Object.freeze({SKILLS, normalizeAnswer, countWords, displayOptions, gradeQuestion, gradeMaterial, decodeArtifact, decodeReview, assistanceUsed, audioGrounded, evaluatedCriteria, evidenceFor, groupAssessments, gateMastery, readiness, remediation, retestAvailability, localDate});
+  const api = Object.freeze({SKILLS, practiceOnlyMaterial, normalizeAnswer, countWords, displayOptions, sourceTextHash, materialContentHash, resolveArtifactMaterial, legacyMaterialContract, legacyMaterialContractHash, createLegacyMaterialCompatibilityIndex, proveLegacyMaterial, gradeQuestion, gradeMaterial, gradeMaterialForArtifact, decodeArtifact, decodeReview, assistanceUsed, audioGrounded, evaluatedCriteria, evidenceFor, groupAssessments, gateMastery, readiness, remediation, retestAvailability, localDate});
   root.IELTSAssessment = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -1,0 +1,386 @@
+{
+  "id": "expand-w51-listen-1",
+  "week": 51,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "最弱项目补强与迁移复测 · Independent new scenario: competing accounts of social and technical change",
+  "grammarFocus": "针对个人错误选择练习；每次订正后用新题检查，而不只重做旧题。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Competing Accounts of a City Bike Lane",
+  "instructions": "本材料为模拟练习，不是官方雅思考试。先听录音（或读文本），再完成10道题。听力部分注意不同说话人的自然插话与更正。语法部分先读中文讲解，再做8道新题；每题订正后，请用一道全新句子自测，不要只重做旧题。所有题目答案均来自原文，填空答案必须与原文完全一致。",
+  "transcript": "Maya: So, the city says the new bike lane on Harbor Street cut car traffic by twelve percent. That's their headline.\n\nOwen: Twelve percent? I read the same report. But that number is only for weekday mornings, between seven and nine. The rest of the day, car numbers barely moved.\n\nMaya: Right, and the city's press release didn't say that. They just said 'traffic fell twelve percent.'\n\nOwen: Which is technically true for that window. But it's misleading if you think it means all day.\n\nMaya: The bike shop owner, Lena, told me her sales went up thirty percent after the lane opened. She's happy.\n\nOwen: I saw that too. But she also said her repair business dropped, because fewer people are bringing in cars. So her total income is actually about the same.\n\nMaya: Hmm. So the 'thirty percent' is only for new bike sales, not the whole shop.\n\nOwen: Exactly. And the delivery company on Fifth Street says their vans now take eight minutes longer on average during rush hour. They're not happy.\n\nMaya: But the city's traffic engineer, Dr. Patel, says overall journey times across the whole network improved by three percent. She argues that one street's delay is balanced by faster buses elsewhere.\n\nOwen: That's a fair point. But the bus company says ridership on the Harbor Street route is up only two percent, not the fifteen percent the city claimed.\n\nMaya: Where did fifteen come from?\n\nOwen: The city counted all bus routes in the district, not just Harbor Street. So the number is real, but it's for a bigger area.\n\nMaya: Okay, so we have three accounts: the city's, the businesses', and the transport companies'. They don't fully agree.\n\nOwen: And each one uses a true number to tell a different story. That's the interesting part.\n\nMaya: What about safety? The city says accidents fell by twenty percent on Harbor Street.\n\nOwen: True, but the police data shows most of that drop was in the first month, when the lane was new and drivers were extra careful. Since then, accidents have been flat.\n\nMaya: So the twenty percent is an average over the whole year, pulled up by one good month.\n\nOwen: Yes. And the hospital on King Road says they treated four cyclists in the first month, but only one since. That supports the safety claim, at least partly.\n\nMaya: So the hospital data is the strongest evidence for safety.\n\nOwen: I'd say so. But it's a small number. Four and one. You can't build a big claim on that.\n\nMaya: Fair. So what's the takeaway?\n\nOwen: I think the takeaway is: ask 'compared to what, and for how long?' Every number here is real. The argument is about which number matters.\n\nMaya: And who chose the time window. The city chose weekday mornings. The delivery company chose rush hour. The bike shop chose new bike sales.\n\nOwen: Right. Each group picked the window that made its case look best. That's not lying. It's framing.\n\nMaya: So for our class project, we should present all three accounts, not just one.\n\nOwen: Agreed. And we should show the original data next to each claim, so people can see the window.\n\nMaya: Good. I'll write the city section. You take the businesses.\n\nOwen: Deal. And let's ask Dr. Patel for the full dataset, not just the summary.\n\nMaya: Yes. If she says no, we say so in the project.\n\nOwen: Perfect. That's honest.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What did the city say about car traffic on Harbor Street?",
+      "options": [
+        "It fell by twelve percent.",
+        "It rose by twelve percent.",
+        "It did not change."
+      ],
+      "answers": [
+        "It fell by twelve percent."
+      ],
+      "explanation": "Maya 说城市声称 Harbor Street 的汽车流量下降了12%。",
+      "evidence": "the city says the new bike lane on Harbor Street cut car traffic by twelve percent."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "When was the twelve percent figure measured?",
+      "options": [
+        "On weekday mornings, seven to nine.",
+        "On weekend afternoons.",
+        "All day, every day."
+      ],
+      "answers": [
+        "On weekday mornings, seven to nine."
+      ],
+      "explanation": "Owen 指出该数字只适用于工作日早上7点到9点。",
+      "evidence": "that number is only for weekday mornings, between seven and nine."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What happened to Lena's total income?",
+      "options": [
+        "It stayed about the same.",
+        "It went up thirty percent.",
+        "It fell by half."
+      ],
+      "answers": [
+        "It stayed about the same."
+      ],
+      "explanation": "Owen 说 Lena 的修理业务下降，所以总收入大致不变。",
+      "evidence": "her total income is actually about the same."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How much longer do the delivery vans take during rush hour?",
+      "options": [
+        "Eight minutes longer.",
+        "Three minutes longer.",
+        "Fifteen minutes longer."
+      ],
+      "answers": [
+        "Eight minutes longer."
+      ],
+      "explanation": "Owen 提到 Fifth Street 的送货面包车在高峰时段平均多花8分钟。",
+      "evidence": "their vans now take eight minutes longer on average during rush hour."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Dr. Patel say about overall journey times?",
+      "options": [
+        "They improved by three percent across the network.",
+        "They got worse by eight percent.",
+        "They stayed exactly the same."
+      ],
+      "answers": [
+        "They improved by three percent across the network."
+      ],
+      "explanation": "Maya 转述 Dr. Patel 的观点：整个网络的总出行时间改善了3%。",
+      "evidence": "overall journey times across the whole network improved by three percent."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Why is the city's fifteen percent bus ridership figure misleading for Harbor Street?",
+      "options": [
+        "It counts all bus routes in the district, not just Harbor Street.",
+        "It counts only weekend riders.",
+        "It was measured before the lane opened."
+      ],
+      "answers": [
+        "It counts all bus routes in the district, not just Harbor Street."
+      ],
+      "explanation": "Owen 解释15%是整个区域所有公交线路的数据，不只是 Harbor Street。",
+      "evidence": "The city counted all bus routes in the district, not just Harbor Street."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does the police data show about the accident drop?",
+      "options": [
+        "Most of the drop was in the first month.",
+        "Accidents have fallen steadily all year.",
+        "Accidents have risen since the lane opened."
+      ],
+      "answers": [
+        "Most of the drop was in the first month."
+      ],
+      "explanation": "Owen 说事故下降主要发生在第一个月，之后持平。",
+      "evidence": "most of that drop was in the first month, when the lane was new"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How many cyclists did the hospital treat in the first month?",
+      "options": [
+        "Four.",
+        "One.",
+        "Twenty."
+      ],
+      "answers": [
+        "Four."
+      ],
+      "explanation": "Owen 说医院第一个月治疗了四名骑行者。",
+      "evidence": "the hospital on King Road says they treated four cyclists in the first month"
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the text: The city chose weekday ______ for its traffic figure.",
+      "maxWords": 1,
+      "answers": [
+        "mornings"
+      ],
+      "explanation": "原文说城市选择的是工作日早上（weekday mornings）。",
+      "evidence": "The city chose weekday mornings."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What is Owen's main point about the numbers?",
+      "options": [
+        "Each group uses a true number but chooses a different time window.",
+        "All the numbers are false.",
+        "Only the city's numbers are correct."
+      ],
+      "answers": [
+        "Each group uses a true number but chooses a different time window."
+      ],
+      "explanation": "Owen 总结说每个数字都是真的，争论在于选择哪个时间窗口。",
+      "evidence": "Each group picked the window that made its case look best."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "headline",
+      "meaning": "标题；头条新闻",
+      "example": "That's their headline."
+    },
+    {
+      "word": "misleading",
+      "meaning": "误导性的",
+      "example": "But it's misleading if you think it means all day."
+    },
+    {
+      "word": "ridership",
+      "meaning": "乘客量",
+      "example": "the bus company says ridership on the Harbor Street route is up only two percent"
+    },
+    {
+      "word": "framing",
+      "meaning": "框架设定；表述角度",
+      "example": "It's framing."
+    },
+    {
+      "word": "dataset",
+      "meaning": "数据集",
+      "example": "let's ask Dr. Patel for the full dataset, not just the summary."
+    },
+    {
+      "word": "window",
+      "meaning": "时间窗口",
+      "example": "Each group picked the window that made its case look best."
+    },
+    {
+      "word": "flat",
+      "meaning": "持平的；没有变化的",
+      "example": "Since then, accidents have been flat."
+    },
+    {
+      "word": "takeaway",
+      "meaning": "要点；结论",
+      "example": "So what's the takeaway?"
+    }
+  ],
+  "grammar": {
+    "title": "针对个人错误选择练习：每次订正后用新题检查",
+    "explanation": "先看意思：当你做错一道题，不要只把原题重做一遍。正确做法是：1）找出错因（是时态？介词？词形？）；2）用一句全新句子立刻自测同一个知识点；3）如果新句也错，再换一句更简单的。这样检查的是“规则”而不是“记忆答案”。下面8道题都是新句子，不重复听力原文。",
+    "example": "Each group picked the window that made its case look best.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct form: The report ______ by the city last week.",
+        "options": [
+          "was published",
+          "published",
+          "is publishing"
+        ],
+        "answers": [
+          "was published"
+        ],
+        "explanation": "被动语态 + 过去时间 last week，用 was published。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct word: She is interested ______ how numbers are framed.",
+        "options": [
+          "in",
+          "on",
+          "at"
+        ],
+        "answers": [
+          "in"
+        ],
+        "explanation": "固定搭配 be interested in。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct form: If the data ______ clearer, we would present it differently.",
+        "options": [
+          "were",
+          "was being",
+          "is"
+        ],
+        "answers": [
+          "were"
+        ],
+        "explanation": "虚拟条件句，与现在事实相反，用 were。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct form: By the time we arrived, the meeting ______.",
+        "options": [
+          "had ended",
+          "has ended",
+          "ends"
+        ],
+        "answers": [
+          "had ended"
+        ],
+        "explanation": "过去完成时表示在另一个过去动作之前已完成。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct word: The number of cyclists ______ increased since May.",
+        "options": [
+          "has",
+          "have",
+          "are"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "主语是 the number，单数，用 has。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct form: He suggested ______ the original data next to each claim.",
+        "options": [
+          "showing",
+          "to show",
+          "show"
+        ],
+        "answers": [
+          "showing"
+        ],
+        "explanation": "suggest 后接动名词 showing。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct word: The lane is ______ than the old road.",
+        "options": [
+          "narrower",
+          "more narrow",
+          "narrowest"
+        ],
+        "answers": [
+          "narrower"
+        ],
+        "explanation": "双音节形容词比较级用 narrower。",
+        "evidence": "新句子，不来自原文。"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct form: Neither the city nor the company ______ released the full dataset.",
+        "options": [
+          "has",
+          "have",
+          "are"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "neither...nor... 就近原则，company 单数，用 has。",
+        "evidence": "新句子，不来自原文。"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often check numbers in news reports?",
+        "When you see a statistic, what do you ask first?",
+        "Do you prefer short summaries or full data?",
+        "Have you ever changed your mind after seeing new data?"
+      ],
+      "part2": "Describe a time when two people told you different versions of the same event. You should say: what the event was; who told you the two versions; why their accounts differed; and explain which version you believed and why.",
+      "part3": [
+        "Why do organizations sometimes present only part of the data?",
+        "How can ordinary people check whether a claim is misleading?",
+        "Should schools teach students how to read statistics?",
+        "Is it ever acceptable to choose a time window that makes your case look best?"
+      ]
+    },
+    "writing": "Write a short report (about 150 words) for your class project. Present two competing accounts of a local change (for example, a new park, a road change, or a school rule). Use at least two numbers from each account, and explain which time window or group each number describes. End with one sentence saying what extra data you would ask for."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar reinforcement and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "64fa86c2a11ca24ad448bfe18660f2f6ad8b9672a2e46a46b43d849fdfca206b"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

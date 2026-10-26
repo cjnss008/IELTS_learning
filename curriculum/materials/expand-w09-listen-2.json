@@ -1,0 +1,354 @@
+{
+  "id": "expand-w09-listen-2",
+  "week": 9,
+  "skill": "listening",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "学习目标与学习习惯 · Independent new scenario: an adult learner choosing an English course",
+  "grammarFocus": "一般现在时与现在进行时；频率副词；do / does 问句。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Choosing an Evening English Course",
+  "instructions": "这是一份为A2学习者设计的英语听力与语法练习，主题是“学习目标与学习习惯”。场景为模拟教育材料：一位成年学习者在咨询晚间英语课程。请先听/读对话，再完成8道听力理解题（单选题和填空题），然后学习一般现在时与现在进行时、频率副词、do/does问句的规则，并完成8道语法题。最后进行口语和写作迁移练习。所有题目答案均可在原文中找到依据。本材料不是官方雅思考试，也不代表任何分数等级。",
+  "transcript": "Mia: Good evening. I want to join an English class. Do you have evening courses?\nDaniel: Yes, we do. We have a class on Tuesdays and Thursdays. It starts at seven.\nMia: How many students are in the class?\nDaniel: There are twelve students. The teacher is Ms. Chen.\nMia: What do you do in the class?\nDaniel: We listen to short talks. We also speak in pairs. Ms. Chen gives homework every week.\nMia: I work late on Tuesdays. Does the class finish at nine?\nDaniel: No, it doesn't. It finishes at eight thirty. But you can watch the lesson online.\nMia: Good. Do I need a book?\nDaniel: Yes, you do. The book costs twenty dollars.\nMia: How often do you have tests?\nDaniel: We have a test every month. Ms. Chen is marking the last test now.\nMia: I am not working next Thursday. Can I visit the class?\nDaniel: Sure. Please come at six fifty. The class is starting at seven.\nMia: Great. I usually study at home in the evening. But I want to speak more.\nDaniel: That is a good goal. Many students practise speaking every day.\nMia: Thank you. I am writing the class time in my notebook now.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "On which days is the evening class?",
+      "options": [
+        "Tuesdays and Thursdays",
+        "Mondays and Wednesdays",
+        "Fridays and Saturdays"
+      ],
+      "answers": [
+        "Tuesdays and Thursdays"
+      ],
+      "explanation": "Daniel说“We have a class on Tuesdays and Thursdays.”，所以上课日是周二和周四。",
+      "evidence": "We have a class on Tuesdays and Thursdays."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many students are in the class?",
+      "options": [
+        "Twelve",
+        "Twenty",
+        "Eight"
+      ],
+      "answers": [
+        "Twelve"
+      ],
+      "explanation": "Daniel回答“There are twelve students.”，班级有12名学生。",
+      "evidence": "There are twelve students."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What time does the class finish?",
+      "options": [
+        "At eight thirty",
+        "At nine",
+        "At seven"
+      ],
+      "answers": [
+        "At eight thirty"
+      ],
+      "explanation": "Daniel说“It finishes at eight thirty.”，课程在8:30结束。",
+      "evidence": "It finishes at eight thirty."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How much does the book cost?",
+      "options": [
+        "Twenty dollars",
+        "Twelve dollars",
+        "Thirty dollars"
+      ],
+      "answers": [
+        "Twenty dollars"
+      ],
+      "explanation": "Daniel说“The book costs twenty dollars.”，书的价格是20美元。",
+      "evidence": "The book costs twenty dollars."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How often does the class have a test?",
+      "options": [
+        "Every month",
+        "Every week",
+        "Every day"
+      ],
+      "answers": [
+        "Every month"
+      ],
+      "explanation": "Daniel回答“We have a test every month.”，测试频率是每月一次。",
+      "evidence": "We have a test every month."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Mia usually studies at home in the ______.",
+      "answers": [
+        "evening"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说“I usually study at home in the evening.”，她通常晚上在家学习。",
+      "evidence": "I usually study at home in the evening."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Mia is not working next ______.",
+      "answers": [
+        "Thursday"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说“I am not working next Thursday.”，她下周四不工作。",
+      "evidence": "I am not working next Thursday."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Daniel says many students practise speaking every ______.",
+      "answers": [
+        "day"
+      ],
+      "maxWords": 1,
+      "explanation": "Daniel说“Many students practise speaking every day.”，许多学生每天练习口语。",
+      "evidence": "Many students practise speaking every day."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "courses",
+      "meaning": "课程",
+      "example": "Do you have evening courses?"
+    },
+    {
+      "word": "join",
+      "meaning": "加入",
+      "example": "I want to join an English class."
+    },
+    {
+      "word": "finish",
+      "meaning": "结束",
+      "example": "Does the class finish at nine?"
+    },
+    {
+      "word": "costs",
+      "meaning": "花费；价钱为",
+      "example": "The book costs twenty dollars."
+    },
+    {
+      "word": "test",
+      "meaning": "测试；考试",
+      "example": "We have a test every month."
+    },
+    {
+      "word": "practise",
+      "meaning": "练习",
+      "example": "Many students practise speaking every day."
+    },
+    {
+      "word": "goal",
+      "meaning": "目标",
+      "example": "That is a good goal."
+    },
+    {
+      "word": "usually",
+      "meaning": "通常",
+      "example": "I usually study at home in the evening."
+    }
+  ],
+  "grammar": {
+    "title": "一般现在时与现在进行时；频率副词；do/does问句",
+    "explanation": "一般现在时表示经常性、习惯性的动作或事实。例如：I study every day. 第三人称单数主语（he/she/it）后，动词加-s，如：She works late. 现在进行时表示现在正在进行的动作，结构是 am/is/are + 动词-ing。例如：I am writing now. 频率副词（always, usually, often, sometimes, never）放在实义动词前、be动词后。例如：I usually study at home. do/does问句用于一般现在时：Do you have a book? Does the class finish at nine? 注意：does后面动词用原形。",
+    "example": "I usually study at home in the evening.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She usually walks to school.",
+          "She usually walk to school.",
+          "She walk usually to school."
+        ],
+        "answers": [
+          "She usually walks to school."
+        ],
+        "explanation": "主语She是第三人称单数，一般现在时动词walk要加-s；频率副词usually放在实义动词前。",
+        "evidence": "She usually walks to school."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Does he play football every Sunday?",
+          "Do he play football every Sunday?",
+          "Does he plays football every Sunday?"
+        ],
+        "answers": [
+          "Does he play football every Sunday?"
+        ],
+        "explanation": "主语he用does提问，后面动词用原形play。",
+        "evidence": "Does he play football every Sunday?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "They are watching TV now.",
+          "They watch TV now.",
+          "They is watching TV now."
+        ],
+        "answers": [
+          "They are watching TV now."
+        ],
+        "explanation": "now表示现在正在进行，用现在进行时；主语They用are + watching。",
+        "evidence": "They are watching TV now."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I never eat breakfast at school.",
+          "I eat never breakfast at school.",
+          "I never eats breakfast at school."
+        ],
+        "answers": [
+          "I never eat breakfast at school."
+        ],
+        "explanation": "频率副词never放在实义动词eat前；主语I用动词原形。",
+        "evidence": "I never eat breakfast at school."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Do you study English every day?",
+          "Does you study English every day?",
+          "Do you studies English every day?"
+        ],
+        "answers": [
+          "Do you study English every day?"
+        ],
+        "explanation": "主语you用do提问，后面动词用原形study。",
+        "evidence": "Do you study English every day?"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "He is reading a book now.",
+          "He reads a book now.",
+          "He reading a book now."
+        ],
+        "answers": [
+          "He is reading a book now."
+        ],
+        "explanation": "now表示正在读，用现在进行时is reading。",
+        "evidence": "He is reading a book now."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We often go to the library.",
+          "We go often to the library.",
+          "We often goes to the library."
+        ],
+        "answers": [
+          "We often go to the library."
+        ],
+        "explanation": "频率副词often放在实义动词go前；主语We用动词原形。",
+        "evidence": "We often go to the library."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Does she like music?",
+          "Do she like music?",
+          "Does she likes music?"
+        ],
+        "answers": [
+          "Does she like music?"
+        ],
+        "explanation": "主语she用does提问，后面动词用原形like。",
+        "evidence": "Does she like music?"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you study English every day?",
+        "What do you usually do in the evening?",
+        "Are you taking any classes now?",
+        "How often do you practise speaking?"
+      ],
+      "part2": "Describe your study habits. You should say:",
+      "part2Bullets": [
+        "what you study",
+        "when you usually study",
+        "what you are studying now",
+        "how often you take a break"
+      ],
+      "part3": [
+        "Do you think evening classes are good for adults?",
+        "What do people usually do to learn a new language?",
+        "Are you learning anything new these days?",
+        "How often do you review your lessons?"
+      ]
+    },
+    "writing": "Write 5–8 sentences about your English study plan. Use usually, every day, and one sentence with am/is/are + -ing. Example: I usually study at home. I am taking a class now."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice (A2)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a8b648ffaeee1b7a17d337cd743ccb501b91758c325ff81baf9288ff7e252c0f"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

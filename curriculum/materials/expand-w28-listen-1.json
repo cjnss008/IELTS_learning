@@ -1,0 +1,398 @@
+{
+  "id": "expand-w28-listen-1",
+  "week": 28,
+  "skill": "listening",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "流程说明与学术阶段复测 · Independent new scenario: transport policies and unequal effects",
+  "grammarFocus": "被动语态；顺序连接词；定语从句与分词短语的辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Bus Lanes and Unequal Effects: A Simulated Listening and Grammar Lesson",
+  "instructions": "这是一份为B1–B2成人学习者设计的模拟听力与语法练习，主题为交通政策及其不平等影响。请先听或阅读transcript（对话），然后完成10道听力理解题。之后学习被动语态、顺序连接词、定语从句与分词短语的辨认规则，并完成8道语法题。所有题目均为英文，解释为中文。本材料为模拟教育内容，并非官方雅思考试。",
+  "transcript": "Maya: Hi, Tom. Did you see the new bus lane on King Street? It opened last Monday.\nTom: Yes, I did. But I'm not sure it's fair. The lane was built very quickly, and now the shops on that street are losing customers.\nMaya: Really? I thought the bus lane would help everyone. Buses are faster now, right?\nTom: They are, but only for people who take the bus. The problem is that the lane was placed on the busiest shopping street. First, the council removed all the parking spaces. Then, they painted the lane red. After that, they banned cars from 7 a.m. to 7 p.m.\nMaya: So shop owners are angry because their customers can't park?\nTom: Exactly. The shop owners who were interviewed by the local newspaper said their sales dropped by 30 percent. One owner, Mrs. Chen, who runs a bakery, said she might close her shop.\nMaya: That's terrible. But the bus passengers are happy, aren't they?\nTom: Many are. The bus ride from the station to the market, which used to take 25 minutes, now takes only 12 minutes. People who live far from the city center save a lot of time.\nMaya: So the policy helps some people and hurts others. Is the council doing anything about it?\nTom: They are reviewing the plan. A meeting was held last night, and the council promised to listen to shop owners. But no decision has been made yet.\nMaya: I see. Maybe they could add some parking spaces on a side street.\nTom: That's a good idea. The council said they would consider it. But for now, the bus lane stays.\nMaya: It sounds like a difficult situation. The council has to balance the needs of different groups. I hope they find a solution that works for everyone.\nTom: Me too. The bus lane has clear benefits for public transport, but the shop owners' concerns are real. The review will be important. Let's see what happens at the next meeting.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "When did the new bus lane on King Street open?",
+      "options": [
+        "Last Monday",
+        "Last Friday",
+        "Last month",
+        "Yesterday"
+      ],
+      "answers": [
+        "Last Monday"
+      ],
+      "explanation": "对话开头Maya说“It opened last Monday.”，因此答案是Last Monday。",
+      "evidence": "It opened last Monday."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What happened to the parking spaces on King Street?",
+      "options": [
+        "They were removed by the council.",
+        "They were made bigger.",
+        "They were moved to a side street.",
+        "They were left unchanged."
+      ],
+      "answers": [
+        "They were removed by the council."
+      ],
+      "explanation": "Tom说“First, the council removed all the parking spaces.”，所以停车位被移除了。",
+      "evidence": "First, the council removed all the parking spaces."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How much did sales drop for some shop owners?",
+      "options": [
+        "By 30 percent",
+        "By 12 percent",
+        "By 25 percent",
+        "By 7 percent"
+      ],
+      "answers": [
+        "By 30 percent"
+      ],
+      "explanation": "Tom提到“their sales dropped by 30 percent”，因此是30%。",
+      "evidence": "their sales dropped by 30 percent"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Mrs. Chen do?",
+      "options": [
+        "She runs a bakery.",
+        "She drives a bus.",
+        "She works for the council.",
+        "She owns a parking lot."
+      ],
+      "answers": [
+        "She runs a bakery."
+      ],
+      "explanation": "Tom说“Mrs. Chen, who runs a bakery”，所以她是面包店老板。",
+      "evidence": "Mrs. Chen, who runs a bakery"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How long does the bus ride from the station to the market take now?",
+      "options": [
+        "12 minutes",
+        "25 minutes",
+        "30 minutes",
+        "7 minutes"
+      ],
+      "answers": [
+        "12 minutes"
+      ],
+      "explanation": "Tom说“now takes only 12 minutes”，因此现在需要12分钟。",
+      "evidence": "now takes only 12 minutes"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did the council promise to do?",
+      "options": [
+        "Listen to shop owners",
+        "Remove the bus lane",
+        "Add more parking spaces",
+        "Close the market"
+      ],
+      "answers": [
+        "Listen to shop owners"
+      ],
+      "explanation": "Tom说“the council promised to listen to shop owners”，所以议会承诺听取店主意见。",
+      "evidence": "the council promised to listen to shop owners"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Has the council made a final decision about the bus lane?",
+      "options": [
+        "No, no decision has been made yet.",
+        "Yes, they decided to remove it.",
+        "Yes, they decided to keep it forever.",
+        "Yes, they decided to add parking."
+      ],
+      "answers": [
+        "No, no decision has been made yet."
+      ],
+      "explanation": "Tom说“no decision has been made yet”，说明尚未做出决定。",
+      "evidence": "no decision has been made yet"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What time are cars banned from King Street?",
+      "options": [
+        "From 7 a.m. to 7 p.m.",
+        "From 7 p.m. to 7 a.m.",
+        "From 12 p.m. to 12 a.m.",
+        "All day"
+      ],
+      "answers": [
+        "From 7 a.m. to 7 p.m."
+      ],
+      "explanation": "Tom说“they banned cars from 7 a.m. to 7 p.m.”，所以是早上7点到晚上7点。",
+      "evidence": "they banned cars from 7 a.m. to 7 p.m."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the transcript: The bus lane was placed on the ______ shopping street.",
+      "maxWords": 1,
+      "answers": [
+        "busiest"
+      ],
+      "explanation": "Tom说“the lane was placed on the busiest shopping street”，因此填busiest。",
+      "evidence": "the lane was placed on the busiest shopping street"
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the transcript: A meeting was ______ last night.",
+      "maxWords": 1,
+      "answers": [
+        "held"
+      ],
+      "explanation": "Tom说“A meeting was held last night”，因此填held。",
+      "evidence": "A meeting was held last night"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "lane",
+      "meaning": "车道",
+      "example": "Did you see the new bus lane on King Street?"
+    },
+    {
+      "word": "council",
+      "meaning": "议会，市政委员会",
+      "example": "First, the council removed all the parking spaces."
+    },
+    {
+      "word": "banned",
+      "meaning": "禁止",
+      "example": "they banned cars from 7 a.m. to 7 p.m."
+    },
+    {
+      "word": "sales",
+      "meaning": "销售额",
+      "example": "their sales dropped by 30 percent"
+    },
+    {
+      "word": "bakery",
+      "meaning": "面包店",
+      "example": "Mrs. Chen, who runs a bakery"
+    },
+    {
+      "word": "review",
+      "meaning": "审查，复核",
+      "example": "The review will be important."
+    },
+    {
+      "word": "promised",
+      "meaning": "承诺",
+      "example": "the council promised to listen to shop owners"
+    },
+    {
+      "word": "consider",
+      "meaning": "考虑",
+      "example": "The council said they would consider it."
+    }
+  ],
+  "grammar": {
+    "title": "被动语态、顺序连接词、定语从句与分词短语的辨认",
+    "explanation": "本课重点：1) 被动语态：be + 过去分词，强调动作承受者，如“The lane was built.”。2) 顺序连接词：first, then, after that, finally，表示步骤顺序。3) 定语从句：who/which/that 引导，修饰名词，如“the shop owners who were interviewed”。4) 分词短语：现在分词(-ing)或过去分词(-ed)短语作定语或状语，如“People living far from the city center”或“Interviewed by the newspaper, the owners...”。注意区分被动语态与过去分词短语作定语。",
+    "example": "The lane was built very quickly, and now the shops on that street are losing customers.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct passive form: The new rules ______ by the council last week.",
+        "options": [
+          "were announced",
+          "announced",
+          "are announcing",
+          "announce"
+        ],
+        "answers": [
+          "were announced"
+        ],
+        "explanation": "被动语态结构为be + 过去分词；last week表示过去，主语rules为复数，故用were announced。",
+        "evidence": "The new rules were announced by the council last week."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sequential connector: ______, the workers repaired the road. ______, they painted new lines.",
+        "options": [
+          "First / Then",
+          "Then / First",
+          "Finally / First",
+          "After that / First"
+        ],
+        "answers": [
+          "First / Then"
+        ],
+        "explanation": "顺序连接词中，First表示第一步，Then表示下一步。",
+        "evidence": "First, the workers repaired the road. Then, they painted new lines."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct relative pronoun: The passengers ______ use the bus every day are happy with the change.",
+        "options": [
+          "who",
+          "which",
+          "whose",
+          "where"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "先行词passengers指人，在定语从句中作主语，用who。",
+        "evidence": "The passengers who use the bus every day are happy with the change."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct participle: The shop ______ on the corner has closed.",
+        "options": [
+          "located",
+          "locating",
+          "locate",
+          "to locate"
+        ],
+        "answers": [
+          "located"
+        ],
+        "explanation": "过去分词located表示“位于”，作定语修饰shop，相当于which is located。",
+        "evidence": "The shop located on the corner has closed."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Identify the passive sentence:",
+        "options": [
+          "The decision was made by the mayor.",
+          "The mayor made a decision.",
+          "The mayor is making a decision.",
+          "The mayor makes decisions."
+        ],
+        "answers": [
+          "The decision was made by the mayor."
+        ],
+        "explanation": "被动语态为be + 过去分词，且动作承受者作主语。A项符合。",
+        "evidence": "The decision was made by the mayor."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct relative clause: The bus lane, ______ was painted red, is very noticeable.",
+        "options": [
+          "which",
+          "who",
+          "where",
+          "when"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "先行词bus lane指物，在非限制性定语从句中作主语，用which。",
+        "evidence": "The bus lane, which was painted red, is very noticeable."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct participle phrase: ______ by the high rents, many small shops are closing.",
+        "options": [
+          "Affected",
+          "Affecting",
+          "Affect",
+          "To affect"
+        ],
+        "answers": [
+          "Affected"
+        ],
+        "explanation": "过去分词短语Affected by...作原因状语，表示“受到……影响”。",
+        "evidence": "Affected by the high rents, many small shops are closing."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sequential connector: ______, the council held a meeting. ______, they promised to review the plan.",
+        "options": [
+          "First / After that",
+          "After that / First",
+          "Then / First",
+          "Finally / Then"
+        ],
+        "answers": [
+          "First / After that"
+        ],
+        "explanation": "First表示首先，After that表示在那之后，符合逻辑顺序。",
+        "evidence": "First, the council held a meeting. After that, they promised to review the plan."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often take the bus in your city?",
+        "What do you think about bus lanes?",
+        "Have you ever seen a traffic policy that helped some people but hurt others?",
+        "How can cities make transport fair for everyone?"
+      ],
+      "part2": "Describe a transport policy in your city that affected different people in different ways. You should say: what the policy is; who it helps; who it hurts; and what you think should be done.",
+      "part3": [
+        "Why do some transport policies cause disagreement?",
+        "Should governments always listen to shop owners when making traffic rules?",
+        "How can public transport be improved without hurting local businesses?",
+        "Do you think bus lanes are a good idea in every city?"
+      ]
+    },
+    "writing": "Write a short paragraph (80–100 words) about a new bicycle lane in your town. Explain who benefits and who has problems. Use passive voice, sequential connectors, and at least one relative clause."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice (simulated)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b2d04512b104883152f2cf8f6983ebdb8e2bafcba0741a789d34d0caf537760f"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

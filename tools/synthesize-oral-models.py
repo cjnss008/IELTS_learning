@@ -8,9 +8,12 @@ import asyncio
 import hashlib
 import json
 import os
+import sys
 import subprocess
 from pathlib import Path
 
+AUTHOR_PACKAGES = Path(__file__).resolve().parent.parent / 'work' / 'authoring-python'
+if AUTHOR_PACKAGES.is_dir(): sys.path.insert(0, str(AUTHOR_PACKAGES))
 import edge_tts
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -18,7 +21,7 @@ OUT = ROOT / 'audio' / 'oral-models'
 INDEX = ROOT / 'curriculum' / 'oral-model-audio-index.json'
 MAP = ROOT / 'assets' / 'oral-model-audio.js'
 TEMP = ROOT / '.cache' / 'oral-model-speech_audio'
-VOICE = 'en-GB-SoniaNeural'
+VOICE = 'en-US-AriaNeural'
 FLAGS = 0x08000000 if os.name == 'nt' else 0
 
 
@@ -30,8 +33,9 @@ const oral=require(path.join(root,'assets/oral-practice.js'));
 const rows=[];
 for(const material of data.materials.filter(m=>m.skill==='speaking'&&m.pool==='training')){
  const reading=data.materials.find(m=>m.id===material.id.replace(/-speaking$/,''));
- if(!reading?.passage)continue;
- oral.spokenReferenceParts(reading.passage,65).forEach((reference,index)=>rows.push({materialId:material.id,readingId:reading.id,week:material.week,segmentIndex:index,reference}));
+ const reference=typeof material.reference==='string'&&material.reference.trim()?material.reference:reading?.passage;
+ if(!reference)continue;
+ oral.spokenReferenceParts(reference,65).forEach((reference,index)=>rows.push({materialId:material.id,readingId:reading?.id||material.id,week:material.week,segmentIndex:index,reference}));
 }
 process.stdout.write(JSON.stringify(rows));
 """
@@ -43,7 +47,7 @@ process.stdout.write(JSON.stringify(rows));
         digest = hashlib.sha256(row['reference'].encode('utf-8')).hexdigest()
         if digest not in unique:
             unique[digest] = {'id': 'oral-' + digest[:24], 'reference': row['reference'],
-                              'textHash': digest, 'src': 'audio/oral-models/' + digest[:24] + '.mp3',
+                              'textHash': digest, 'src': 'audio/oral-models/' + hashlib.sha256((VOICE + '|' + ('-15%' if row['week'] <= 8 else '-5%') + '|' + row['reference']).encode('utf-8')).hexdigest()[:24] + '.mp3',
                               'voice': VOICE, 'rate': '-15%' if row['week'] <= 8 else '-5%',
                               'synthetic': True, 'sources': [], 'ready': False}
         unique[digest]['sources'].append({key: row[key] for key in ('materialId', 'readingId', 'segmentIndex')})
@@ -59,12 +63,16 @@ def atomic_text(path, value):
 def publish(entries, total):
     ready = [entry for entry in entries if entry.get('ready')]
     metadata = {'schema': 1, 'segmentWords': 65, 'provider': 'Microsoft online TTS via edge-tts',
-                'voice': VOICE, 'synthetic': True, 'plannedSegments': total,
+                'voice': VOICE, 'locale': 'en-US', 'synthetic': True, 'plannedSegments': total,
                 'uniqueSegments': len(entries), 'readySegments': len(ready),
                 'note': 'Synthetic model readings of the exact displayed original learning text.',
                 'segments': entries}
+    # Incomplete batches stay in ignored authoring staging. Existing runtime
+    # resources remain complete until every required new MP3 passes verification.
+    atomic_text(TEMP / 'oral-model-audio-index.pending.json', json.dumps(metadata, ensure_ascii=False, indent=2) + '\n')
+    if len(ready) != len(entries): return
     atomic_text(INDEX, json.dumps(metadata, ensure_ascii=False, indent=2) + '\n')
-    data = [{key: entry[key] for key in ('id', 'reference', 'src', 'textHash', 'durationSeconds', 'voice', 'rate')}
+    data = [{key: entry[key] for key in ('id', 'reference', 'src', 'textHash', 'durationSeconds', 'audioHash', 'voice', 'rate')}
             for entry in ready]
     encoded = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     atomic_text(MAP, "(function(root){'use strict';const entries=" + encoded + ";"
@@ -87,7 +95,9 @@ async def main(args):
         folder.mkdir(parents=True, exist_ok=True)
     entries, total = plan()
     try:
-        old = {entry['textHash']: entry for entry in json.loads(INDEX.read_text(encoding='utf-8'))['segments']}
+        pending_index = TEMP / 'oral-model-audio-index.pending.json'
+        candidate_index = pending_index if pending_index.exists() else INDEX
+        old = {entry['textHash']: entry for entry in json.loads(candidate_index.read_text(encoding='utf-8'))['segments']}
     except (OSError, ValueError, KeyError, TypeError):
         old = {}
     for entry in entries:
@@ -97,7 +107,9 @@ async def main(args):
                 and previous.get('rate') == entry['rate'] and previous.get('reference') == entry['reference']
                 and isinstance(previous.get('durationSeconds'), (float, int))
                 and 0.1 <= previous['durationSeconds'] <= 180 and target.exists() and target.stat().st_size > 1000):
-            entry.update(ready=True, durationSeconds=previous['durationSeconds'], bytes=target.stat().st_size)
+            actual_hash = hashlib.sha256(target.read_bytes()).hexdigest()
+            if previous.get('audioHash') and previous['audioHash'] != actual_hash: continue
+            entry.update(ready=True, durationSeconds=previous['durationSeconds'], bytes=target.stat().st_size, audioHash=actual_hash)
     publish(entries, total)
     pending = [entry for entry in entries if not entry['ready']]
     if args.limit:
@@ -122,7 +134,7 @@ async def main(args):
                     if not 0.1 <= duration <= 180 or converted.stat().st_size < 1000:
                         raise ValueError('invalid synthesized audio duration or size')
                     os.replace(converted, ROOT / entry['src'])
-                    entry.update(ready=True, durationSeconds=duration, bytes=(ROOT / entry['src']).stat().st_size)
+                    entry.update(ready=True, durationSeconds=duration, bytes=(ROOT / entry['src']).stat().st_size, audioHash=hashlib.sha256((ROOT / entry['src']).read_bytes()).hexdigest())
                     part.unlink(missing_ok=True)
                     completed += 1
                     if completed <= 3 or completed % 10 == 0:
@@ -140,7 +152,7 @@ async def main(args):
     publish(entries, total)
     failed = sum(result is False for result in results)
     print(json.dumps({'plannedSegments': total, 'uniqueSegments': len(entries),
-                      'readySegments': sum(entry['ready'] for entry in entries), 'failedThisRun': failed}), flush=True)
+                      'readySegments': sum(entry['ready'] for entry in entries), 'published': all(entry['ready'] for entry in entries), 'failedThisRun': failed}), flush=True)
     return 1 if failed else 0
 
 

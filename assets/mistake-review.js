@@ -1,6 +1,17 @@
 (function(root){
   'use strict';
   const NAMES={vocabulary:'词汇',grammar:'语法',listening:'听力',reading:'阅读',speaking:'口语',writing:'写作',reflection:'复盘',review:'复习'};
+  function displayQuestion(item,data){
+    const stored=item.question,source=data?.materials?.find(m=>m.id===item.materialId)?.questions?.find(q=>q.id===item.questionId);
+    if(item.skill!=='listening'||!source)return stored;
+    const kind=value=>value==='fill'?'short':value,values=value=>Array.isArray(value)?value.slice().sort():[],sameValues=(a,b)=>JSON.stringify(values(a))===JSON.stringify(values(b));
+    const sameCanonical=kind(source.type)===kind(stored.type)&&sameValues(source.options,stored.options)&&sameValues(source.answers,stored.answers)&&(source.maxWords??null)===(stored.maxWords??null)&&String(source.evidence||'')===String(stored.evidence||'');
+    const originalPrompt=source.originalPromptChinese||source.originalPrompt;
+    const samePrompt=source.prompt===stored.prompt||typeof originalPrompt==='string'&&originalPrompt===stored.prompt;
+    if(!sameCanonical||!samePrompt)return stored;
+    const labels=Array.isArray(source.optionsEnglish)&&source.optionsEnglish.length===source.options?.length?(stored.options||[]).map(option=>{const index=source.options.indexOf(option);return index>=0&&typeof source.optionsEnglish[index]==='string'&&source.optionsEnglish[index].trim()?source.optionsEnglish[index]:option;}):null;
+    return{...stored,prompt:source.prompt||stored.prompt,...(labels?{optionsEnglish:labels}:{})};
+  }
   function mount(options){
     const doc=options.container?.ownerDocument||root.document,host=options.container,M=options.mistakes||root.IELTSMistakes;
     if(!host||!doc||!M)throw Error('错题复盘组件或容器尚未加载。');
@@ -63,7 +74,7 @@
       finally{if(ticket===oralGeneration)oralOpening=false;launch.disabled=busy||locked;}
     }
     function renderQuestion(item,index){
-      const q=item.question,card=el('article','mistake-card'),heading=el('h4','',(index+1)+'. '+q.prompt),meta=el('p','mistake-meta',NAMES[item.skill]+' · 来源：'+item.source+' · 第 '+item.dayNumber+' 天 · '+item.questionId),draft=liveDrafts[item.id]||current.drafts[item.id]||{answer:q.type==='multi'?[]:'',media:[]},last=lastResult(item);
+      const q=displayQuestion(item,root.IELTSCurriculumData),card=el('article','mistake-card'),heading=el('h4','',(index+1)+'. '+q.prompt),meta=el('p','mistake-meta',NAMES[item.skill]+' · 来源：'+item.source+' · 第 '+item.dayNumber+' 天 · '+item.questionId),draft=liveDrafts[item.id]||current.drafts[item.id]||{answer:q.type==='multi'?[]:'',media:[]},last=lastResult(item);
       card.dataset.mistakeId=item.id;card.append(heading,meta);
       const sourceMaterial=root.IELTSCurriculumData?.materials?.find(m=>m.id===item.materialId);
       if(item.source==='vocabulary-practice'&&q.prompt==='听音写出完整英文'){const play=button('播放本词，听完后重新拼写',async()=>{play.disabled=true;try{check();if(!audioPlayer)throw Error('请打开原词汇任务播放本词音频。');const word=(root.IELTSCourse?.vocab||[]).find(v=>String(v.word).toLowerCase()===q.answers[0].toLowerCase())||{word:q.answers[0]};await audioPlayer.play(word);message('本词已播放完毕，请重新拼写后整页提交。');}catch(error){message('本词暂未播放：'+error.message,true);}finally{play.disabled=busy||locked;}});card.append(play);}
@@ -80,7 +91,7 @@
         else card.append(el('p','mistake-small','本题尚无新录音评测，提交后会继续保持待评。'));
       }else if(['single','multi'].includes(q.type)&&q.options.length){
         const field=el('fieldset','mistake-choices');field.append(el('legend','sr-only','请选择本题答案'));
-        q.options.forEach((option,n)=>{const label=el('label','mistake-option'),input=el('input');input.type=q.type==='multi'?'checkbox':'radio';input.name='mistake-'+item.id;input.value=option;input.id='mistake-'+item.id+'-'+n;input.checked=q.type==='multi'?Array.isArray(draft.answer)&&draft.answer.includes(option):draft.answer===option;input.disabled=busy||locked;input.addEventListener('change',()=>{const values=Array.from(field.querySelectorAll('input')).filter(x=>x.checked).map(x=>x.value);save(item,{answer:q.type==='multi'?values:values[0]||'',media:draft.media||[]});});label.append(input,el('span','',option));field.append(label);});card.append(field);
+        q.options.forEach((option,n)=>{const label=el('label','mistake-option'),input=el('input');input.type=q.type==='multi'?'checkbox':'radio';input.name='mistake-'+item.id;input.value=option;input.id='mistake-'+item.id+'-'+n;input.checked=q.type==='multi'?Array.isArray(draft.answer)&&draft.answer.includes(option):draft.answer===option;input.disabled=busy||locked;input.addEventListener('change',()=>{const values=Array.from(field.querySelectorAll('input')).filter(x=>x.checked).map(x=>x.value);save(item,{answer:q.type==='multi'?values:values[0]||'',media:draft.media||[]});});const displayLabel=Array.isArray(q.optionsEnglish)&&q.optionsEnglish.length===q.options.length?q.optionsEnglish[n]:option;label.append(input,el('span','',displayLabel));field.append(label);});card.append(field);
       }else{
         const label=el('label','mistake-answer-label',q.type==='subjective'?(item.skill==='speaking'?'重新提交口语转写，并在原任务保存新录音':'按反馈重新写一份完整原稿'):'重新填写答案'),input=el(q.type==='short'||q.type==='subjective'||q.type==='dictation'?'textarea':'input','mistake-answer');input.value=typeof draft.answer==='string'?draft.answer:'';input.maxLength=q.type==='subjective'?10000:50000;input.disabled=busy||locked;input.setAttribute('aria-label',q.prompt);input.dataset.answerFor=item.id;input.addEventListener('input',()=>save(item,{answer:input.value,media:draft.media||[]}));label.append(input);card.append(label);
         if(q.maxWords)card.append(el('p','mistake-small','最多 '+q.maxWords+' 个英文词。'));if(q.minWords)card.append(el('p','mistake-small','本任务至少 '+q.minWords+' 个英文词。'));
@@ -126,5 +137,5 @@
     root.addEventListener?.(M.EVENT,changed);root.addEventListener?.('ielts:records-changed',recordsChanged);root.addEventListener?.('ielts:profile-changed',profileChanged);
     const handle={ready:null,refresh,setDay(value){check();closeOral();day=Number(value);generation++;aborter?.abort();audioPlayer?.cancel?.();busy=false;current=null;liveDrafts={};notifiedToken=null;failedRecap=false;dayReady=typeof options.readyForRecap!=='function';readinessReason='';pendingRecords=[];return refresh();},isComplete(){try{return!locked&&dayReady&&!pendingRecords.length&&store.summary(day).completionValid;}catch(_){return false;}},getMediaState:()=>({busy:oralBusy()||busy,recording:oralController?.getState?.().phase==='recording'}),getSummary:()=>store.summary(day),submitPage,generateRecap,checkArchivedOral,destroy(){disposed=true;generation++;closeOral();aborter?.abort();audioPlayer?.cancel?.();root.removeEventListener?.(M.EVENT,changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);}};handle.ready=refresh();return handle;
   }
-  const api=Object.freeze({mount});root.IELTSMistakeReview=api;if(typeof module==='object'&&module.exports)module.exports=api;
+  const api=Object.freeze({mount,displayQuestion});root.IELTSMistakeReview=api;if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

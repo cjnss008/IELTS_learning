@@ -79,7 +79,7 @@ test('selected-word keyboard access works and assessment/vocabulary tests disabl
 });
 
 test('AI response strings are rendered as text without executing HTML',async()=>{
-  const f=fixture(),hover=f.win.IELTSWordHover.install({root:f.doc,lookupAI:async word=>({word,ipa:'/test/',meaning:'<img src=x onerror=alert(1)>',example:'<script>alert(1)</script>'})});
+  const f=fixture(),hover=f.win.IELTSWordHover.install({root:f.doc,lookupAI:async word=>({word,ipa:'/test/',ipaAccent:'en-US',meaning:'<img src=x onerror=alert(1)>',example:'<script>alert(1)</script>'})});
   const popup=f.doc.body.querySelector('.word-hover-popup');hover.show({word:'unknownword',context:'A word.',level:'A0',rect:{left:10,top:10,bottom:30},element:f.paragraph});
   await button(popup,'AI 补全词条').fire('click');assert.match(popup.textContent,/<img src=x onerror=alert\(1\)>/);assert.equal(popup.querySelector('img'),null);assert.equal(popup.querySelector('script'),null);hover.destroy();
 });
@@ -130,7 +130,7 @@ test('resuming saved test rounds shows recovery progress instead of an empty lea
 
 
 test('automatic missing-word lookup fills the writing prompt popup, caches results, and never leaks into a test or a later hover',async()=>{
- const f=fixture();let finish,calls=0;const hover=f.win.IELTSWordHover.install({root:f.doc,autoEnrich:true,lookupAI:async word=>{calls++;return await new Promise(resolve=>{finish=()=>resolve({word,ipa:'/tɛst/',meaning:'写作中的测试词',example:'This is a test.'});});}}),popup=f.doc.body.querySelector('.word-hover-popup');
+ const f=fixture();let finish,calls=0;const hover=f.win.IELTSWordHover.install({root:f.doc,autoEnrich:true,lookupAI:async word=>{calls++;return await new Promise(resolve=>{finish=()=>resolve({word,ipa:'/tɛst/',ipaAccent:'en-US',meaning:'写作中的测试词',example:'This is a test.'});});}}),popup=f.doc.body.querySelector('.word-hover-popup');
  const item={word:'unknownwritingword',context:'A writing prompt.',level:'A0',rect:{left:10,top:10,bottom:30},element:f.paragraph};hover.show(item);assert.match(popup.textContent,/正在查询音标/);finish();await new Promise(resolve=>setImmediate(resolve));assert.match(popup.textContent,/写作中的测试词/);assert.match(popup.textContent,/tɛst/);hover.hide();hover.show(item);assert.equal(calls,1);
  hover.show({...item,word:'anotherunknownword'});hover.hide();finish();await new Promise(resolve=>setImmediate(resolve));assert.equal(popup.hidden,true);
  f.win.dispatchEvent({type:'ielts:assessment-mode',detail:{active:true}});hover.show({...item,word:'blockedword'});assert.equal(calls,2);assert.equal(popup.hidden,true);hover.destroy();

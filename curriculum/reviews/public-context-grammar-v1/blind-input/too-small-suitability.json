@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "id": "too-small-suitability",
+  "sourceId": "voa-l1-14",
+  "sourceText": "Anna: Hi, there! In Washington, D.C. people do many things in the evening. They go listen to music. They eat at a restaurant. They go to the theater.\n\nAnna: Tonight I am going to the theater with my friends. But I don’t know what clothes to wear. Maybe this magazine can help.\n\nAnna: Her clothes are beautiful! I really want a friend like her to help me.\n\nAnna: Who are you?\n\nGenie: I am Genie! You want help. I am here to help you find the right clothes!\n\nAnna: Awesome! How about jeans and a t-shirt?\n\nGenie: No! Jeans and a t-shirt are too casual. How about something more formal?\n\nAnna: Sure!\n\nAnna: Wow! Genie, this dress is beautiful. But it’s not the right size. It’s too small.\n\nGenie: Yes, it is too small. But green looks great on you.\n\nAnna: Thanks.\n\nGenie: Take off the green dress. Let’s try a green shirt and a skirt.\n\nAnna: Oh, Genie! This green shirt is too large and this orange skirt is too orange.\n\nGenie: Yes, the right size for you is medium. Let’s try again.\n\nAnna: Oh, I don’t like this outfit.\n\nGenie: No. That does not match.\n\nAnna: Nothing.\n\nAnna: These clothes are formal: a suit jacket, a dress shirt and a tie! They look great!\n\nGenie: Those clothes look great … for a man! Something is wrong.\n\nAnna: Let me see.\n\nAnna: There. Now try.\n\nGenie: Oh. Thanks! Now these clothes look great on you!\n\nAnna: They do! Um, Genie, can you put on a gold belt?\n\nGenie: Sure!\n\nGenie: That looks great.\n\nAnna: Can you put on a jacket?\n\nGenie: Why not?\n\nAnna: I love the jacket! How about a hat?\n\nGenie: Why not?\n\nGenie: Mm, take off the hat. That’s better.\n\nAnna: Genie, these clothes look and feel great! Let’s go to the theater!\n\nGenie: Sorry, Anna. I have to help other friends. Go to the magazine if you want me to help again.\n\nAnna: Thanks, Genie. Sure thing. Goodbye!\n\nGenie: Goodbye!\n\nAnna: There are many places in DC to go for a great evening out! And it’s nice to have a friend to help me look my best. Until next time! Bye!",
+  "sourceQuote": "It’s too small.",
+  "stages": {
+    "study": {
+      "instructions": "Read the source sentence and answer both questions.",
+      "questions": [
+        {
+          "id": "s1",
+          "type": "single",
+          "prompt": "Anna says the dress is not the right size: ‘It’s too small.’ What does she mean?",
+          "options": [
+            "The dress is smaller than she needs to wear it comfortably.",
+            "The dress is small and fits her well.",
+            "The dress is larger than she needs."
+          ]
+        },
+        {
+          "id": "s2",
+          "type": "single",
+          "prompt": "These shoes do not have enough room for your feet. Which statement explains the size problem?",
+          "options": [
+            "They are too small.",
+            "They are small and comfortable.",
+            "They are too large."
+          ]
+        }
+      ]
+    },
+    "review": {
+      "instructions": "Use each new situation to answer both questions without reopening the earlier explanation.",
+      "questions": [
+        {
+          "id": "r1",
+          "type": "single",
+          "prompt": "A jacket looks attractive, but its sleeves are so short that it cannot fit your arms comfortably. Which description explains the problem?",
+          "options": [
+            "It is too small.",
+            "It is small and fits well.",
+            "It is too large."
+          ]
+        },
+        {
+          "id": "r2",
+          "type": "single",
+          "prompt": "A backpack is smaller than the others, but it holds everything you need and fits you comfortably. Which description is supported?",
+          "options": [
+            "It is small, but it is not too small for you.",
+            "It is too small to hold what you need.",
+            "It is too large for you."
+          ]
+        }
+      ]
+    }
+  }
+}

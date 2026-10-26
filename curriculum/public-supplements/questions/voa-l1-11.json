@@ -1,0 +1,242 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-11-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-11",
+  "sourceVersion": "1",
+  "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+  "sourceContentHash": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+  "exposureGroup": "public-source:voa-l1-11",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [
+    {
+      "code": "provider-role-spelling",
+      "status": "unresolved",
+      "reason": "Official transcript labels the joint role Marsh and Anna; retained source spelling.",
+      "quote": "Marsh and Anna: Ice cream!!",
+      "start": 1098,
+      "end": 1125,
+      "offsetUnit": "UTF-16-code-unit",
+      "blocks": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Anna need to do before getting ice cream?",
+      "options": [
+        "Return three books to the library.",
+        "Buy a new book at a store.",
+        "Give some letters to her co-workers."
+      ],
+      "answers": [
+        "Return three books to the library."
+      ],
+      "evidence": "Marsha, before we get ice cream, I need to return three books to the library.",
+      "evidenceOffsets": {
+        "start": 85,
+        "end": 162,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna明确说吃冰淇淋之前要把三本书还到图书馆，return与buy不同，不是去买新书。后面信件的对象是家人和朋友，也不是本题中的同事。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Marsha, before we get ice cream, I need to return three books to the library.",
+          "start": 85,
+          "end": 162
+        }
+      ],
+      "understanding": "sequence"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many letters does Anna have to send?",
+      "options": [
+        "Three.",
+        "Two.",
+        "Four."
+      ],
+      "answers": [
+        "Four."
+      ],
+      "evidence": "Marsha, these are letters to my family and friends back home … four letters!",
+      "evidenceOffsets": {
+        "start": 360,
+        "end": 436,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna说four letters，说明有四封信。three是前面要归还的书本数量，不能移到信件上；two没有作为这批信的数量出现。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Marsha, these are letters to my family and friends back home … four letters!",
+          "start": 360,
+          "end": 436
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where can Anna mail her letters nearby?",
+      "options": [
+        "At a post office next to the library.",
+        "At a mailbox across from the store.",
+        "At a mailbox behind the bank."
+      ],
+      "answers": [
+        "At a mailbox across from the store."
+      ],
+      "evidence": "The post office is far from here. But there is a mailbox across from the store.",
+      "evidenceOffsets": {
+        "start": 488,
+        "end": 567,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Marsha先说邮局很远，再提供附近商店对面的mailbox作为选择。原文没有说图书馆旁有邮局；behind you指的是后面出现的银行位置，不是说邮筒在银行后面。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The post office is far from here. But there is a mailbox across from the store.",
+          "start": 488,
+          "end": 567
+        }
+      ],
+      "understanding": "location-and-contrast"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Anna need to get cash?",
+      "options": [
+        "To buy stamps.",
+        "To buy more library books.",
+        "To pay for a haircut."
+      ],
+      "answers": [
+        "To buy stamps."
+      ],
+      "evidence": "Marsha, now I need to buy stamps.\n\nMarsha: Do you have cash?\n\nAnna: No. Is there a bank near here?\n\nMarsha: There is a bank behind you.\n\nAnna: Thanks, Marsha. You know our neighborhood so well.\n\nAnna: Now I have cash. I can buy stamps.",
+      "evidenceOffsets": {
+        "start": 619,
+        "end": 854,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna先说需要买邮票，取到现金后又说I can buy stamps，明确说明拿现金是为了买邮票。图书馆的书是归还，不是购买；发廊只在结尾作为附近设施出现，没有剪发付款的安排。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Marsha, now I need to buy stamps.",
+          "start": 619,
+          "end": 652
+        },
+        {
+          "quote": "Now I have cash. I can buy stamps.",
+          "start": 820,
+          "end": 854
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What does Marsha say the store sells?",
+      "answers": [
+        "stamps"
+      ],
+      "maxWords": 1,
+      "evidence": "That store sells stamps.",
+      "evidenceOffsets": {
+        "start": 864,
+        "end": 888,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Marsha直接说That store sells stamps，因此填stamps。cash是Anna从银行取得的，不是商店出售的商品；books属于前面的图书馆任务。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "That store sells stamps.",
+          "start": 864,
+          "end": 888
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What do Anna and Marsha want to get at the end?",
+      "options": [
+        "Ice cream.",
+        "More books.",
+        "A haircut."
+      ],
+      "answers": [
+        "Ice cream."
+      ],
+      "evidence": "Ice cream!!",
+      "evidenceOffsets": {
+        "start": 1114,
+        "end": 1125,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "结尾两人一起喊Ice cream，呼应开头办完事后去吃冰淇淋的计划。归还图书的任务已经在前面进行，原文没有说还要拿更多书；提到附近有发廊也不等于两人计划剪发。本题使用说出的Ice cream，不把舞台提示当作证据。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Ice cream!!",
+          "start": 1114,
+          "end": 1125
+        }
+      ],
+      "understanding": "sequence"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "abce2ed2f2da839e85d6813d8ca2334fb97bae6bdc0492f11be3c4f2aa7f8fdd",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

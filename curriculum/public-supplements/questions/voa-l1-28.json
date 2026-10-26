@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-28-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-28",
+  "sourceVersion": "1",
+  "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+  "sourceContentHash": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+  "exposureGroup": "public-source:voa-l1-28",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why has Anna rented a car?",
+      "options": [
+        "To deliver farm equipment.",
+        "To drive around and see more of the city.",
+        "To take her first driving lesson."
+      ],
+      "answers": [
+        "To drive around and see more of the city."
+      ],
+      "evidence": "Today, I rented a car so I can drive around Washington, D.C. You can see more of the city this way.",
+      "explanation": "so I can说明租车目的，是开车游览华盛顿、看到更多城市景色。Anna已经通过驾照考试，不是在租车开始第一次学车；她会开农场设备是过去经验，不是这次租车运货的用途。",
+      "evidenceOffsets": {
+        "start": 89,
+        "end": 188,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Today, I rented a car so I can drive around Washington, D.C. You can see more of the city this way.",
+          "start": 89,
+          "end": 188
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "On which attempt did Anna pass her driving test?",
+      "options": [
+        "Her first attempt.",
+        "Her third attempt.",
+        "Her second attempt."
+      ],
+      "answers": [
+        "Her second attempt."
+      ],
+      "evidence": "But I did pass the second time .",
+      "explanation": "Marsha问她是否第一次就通过，Anna先否认，再明确说the second time。因此选第二次。后文还说她练习后第二次通过，形成相互核对的依据；不要只听到“通过了”就省略次数。",
+      "evidenceOffsets": {
+        "start": 499,
+        "end": 531,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "But I did pass the second time .",
+          "start": 499,
+          "end": 531
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What makes Anna nervous about driving in Washington, D.C.?",
+      "options": [
+        "The city traffic.",
+        "Using farm equipment.",
+        "Having no driving experience of any kind."
+      ],
+      "answers": [
+        "The city traffic."
+      ],
+      "evidence": "I can drive farm equipment really well. But I was really nervous driving in Washington, D.C. traffic!",
+      "explanation": "but前说她农场设备开得很好，后说在城市交通中驾驶很紧张，对比表明问题是D.C. traffic。不能选完全没有驾驶经验，也不能把她熟悉的农场设备当作紧张原因。",
+      "evidenceOffsets": {
+        "start": 334,
+        "end": 435,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I can drive farm equipment really well. But I was really nervous driving in Washington, D.C. traffic!",
+          "start": 334,
+          "end": 435
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does John say Anna should have done before turning?",
+      "options": [
+        "Talked to herself.",
+        "Looked for cars in the street.",
+        "Pushed the gas pedal harder."
+      ],
+      "answers": [
+        "Looked for cars in the street."
+      ],
+      "evidence": "Look first! There were cars in the street.",
+      "explanation": "Anna说考官让她转弯，John回应Look first，并说明街上有车，所以本题选先观察街上的车辆。talk to herself是她紧张时的习惯，加踩油门反而是John此前让她停止的动作。这里只理解对话中的纠正内容。",
+      "evidenceOffsets": {
+        "start": 1136,
+        "end": 1178,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Look first! There were cars in the street.",
+          "start": 1136,
+          "end": 1178
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "According to John, why were other drivers honking?",
+      "options": [
+        "Anna was driving too fast.",
+        "Anna was driving too slowly.",
+        "Anna had already parked at the White House."
+      ],
+      "answers": [
+        "Anna was driving too slowly."
+      ],
+      "evidence": "You were driving too slow!",
+      "explanation": "Anna问为什么大家鸣喇叭，John直接回答You were driving too slow，因此是开得太慢。需要按这段问答核对，不能受前面差点碰车的情节影响就推断一定开得太快。白宫游览是后面的另一段经历。",
+      "evidenceOffsets": {
+        "start": 1380,
+        "end": 1406,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "You were driving too slow!",
+          "start": 1380,
+          "end": 1406
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How do Anna and Marsha decide to continue toward the White House?",
+      "options": [
+        "By walking.",
+        "By driving right up to the building.",
+        "By returning the next day on a bus."
+      ],
+      "answers": [
+        "By walking."
+      ],
+      "evidence": "I guess we walk from here!",
+      "explanation": "Marsha提醒不能直接开车靠近白宫后，Anna说从这里步行。结尾也再次说想看白宫需要走路。对话没有提到第二天改乘公交；“开车能多看城市”不等于任何目的地都能直接开到门前。",
+      "evidenceOffsets": {
+        "start": 1881,
+        "end": 1907,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I guess we walk from here!",
+          "start": 1881,
+          "end": 1907
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "c7acc1b8ffbf86935fc9f23c91b5a9bf463ed4b9e12adc73fc38e23fbdbf639b",
+      "reviewSha256": "5f61da7ce7ff4e494aac3e309e5a0c014e65bee253c86ee31f98440a497ff3e7",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

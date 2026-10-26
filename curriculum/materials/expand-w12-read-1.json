@@ -1,0 +1,378 @@
+{
+  "id": "expand-w12-read-1",
+  "week": 12,
+  "skill": "reading",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 25,
+  "minWords": 180,
+  "maxWords": 300,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "旅行经历与基础测评 · Independent new scenario: organising a weekend trip with constraints",
+  "grammarFocus": "一般过去时；规则与常用不规则过去式；then / after that / finally。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "A Weekend Trip with Limits",
+  "instructions": "这是为A2水平学习者设计的原创阅读练习（模拟材料，非官方雅思测试）。请先通读短文，理解大意；然后完成8道题（单选题、填空题、匹配题、判断题）。所有题目和选项均为英文，解释为中文。注意：填空题答案必须与原文完全一致，且不超过字数限制。语法部分先学习一般过去时的规则，再完成8道新句子练习。最后进行口语和写作迁移练习。",
+  "passage": "Last Friday, Lin and her friend Tom planned a weekend trip. At first, they wanted to go to the beach, but the train tickets were expensive. So they decided to go to a small town near the mountains instead. The bus ticket was cheap. It cost only 40 yuan. They left home at 7 a.m. on Saturday. The bus ride took two hours, so they arrived in the town at about 9 a.m. and started their trip right away.\n\nFirst, they visited a famous old bridge. After that, they walked to a local market. Lin bought a red scarf for her mother. Tom bought some fresh fruit. Then they had lunch at a small restaurant. The food was delicious and not expensive. Finally, they climbed a small hill. From the top, they saw a beautiful lake. They took many photos there.\n\nTom checked the return bus time before they left the town. They returned home at 6 p.m. on Sunday. Lin was tired but happy. She said, \"This trip was short, but we saw many things.\" Tom agreed. Next time, they want to visit the lake again and stay one night.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where did Lin and Tom decide to go?",
+      "options": [
+        "To a small town near the mountains",
+        "To the beach",
+        "To a big city",
+        "To a lake far away"
+      ],
+      "answers": [
+        "To a small town near the mountains"
+      ],
+      "explanation": "他们最初想去海边，但改了计划。So they decided to go to a small town near the mountains instead. 明确给出最终决定：去山边小镇；instead 表示改选另一项。",
+      "evidence": "So they decided to go to a small town near the mountains instead."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How much was the bus ticket?",
+      "options": [
+        "70 yuan",
+        "40 yuan",
+        "60 yuan",
+        "90 yuan"
+      ],
+      "answers": [
+        "40 yuan"
+      ],
+      "explanation": "It cost only 40 yuan. 中的 It 指前句的 bus ticket。题目问票价，选 40 yuan；不要把出发时间或路程时长当成价格。",
+      "evidence": "The bus ticket was cheap. It cost only 40 yuan."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What time did they leave home on Saturday? Use the time from the passage, with no more than three words or numbers.",
+      "maxWords": 3,
+      "answers": [
+        "7 a.m."
+      ],
+      "explanation": "原文说“They left home at 7 a.m. on Saturday.”，所以出发时间是早上7点。",
+      "evidence": "They left home at 7 a.m. on Saturday."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What did Lin buy at the market?",
+      "options": [
+        "Some fresh fruit",
+        "A ticket",
+        "A photo",
+        "A red scarf"
+      ],
+      "answers": [
+        "A red scarf"
+      ],
+      "explanation": "原文说“Lin bought a red scarf for her mother.”，所以林买了一条红围巾。",
+      "evidence": "Lin bought a red scarf for her mother."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which place did they visit first?",
+      "options": [
+        "A famous old bridge",
+        "A local market",
+        "A small restaurant",
+        "A small hill"
+      ],
+      "answers": [
+        "A famous old bridge"
+      ],
+      "explanation": "原文说“First, they visited a famous old bridge.”，所以首先参观的是古桥。",
+      "evidence": "First, they visited a famous old bridge."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What did they see from the top of the hill?",
+      "options": [
+        "A big city",
+        "A beautiful lake",
+        "The beach",
+        "A train station"
+      ],
+      "answers": [
+        "A beautiful lake"
+      ],
+      "explanation": "原文说“From the top, they saw a beautiful lake.”，所以从山顶看到了美丽的湖。",
+      "evidence": "From the top, they saw a beautiful lake."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When did they return home?",
+      "options": [
+        "At 7 a.m. on Saturday",
+        "At 2 p.m. on Saturday",
+        "At 6 p.m. on Sunday",
+        "At 6 p.m. on Saturday"
+      ],
+      "answers": [
+        "At 6 p.m. on Sunday"
+      ],
+      "explanation": "原文说“They returned home at 6 p.m. on Sunday.”，所以是周日下午6点回家。",
+      "evidence": "They returned home at 6 p.m. on Sunday."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Why did they change their first travel plan?",
+      "options": [
+        "The beach was closed.",
+        "The train tickets were expensive.",
+        "Tom did not like the sea."
+      ],
+      "answers": [
+        "The train tickets were expensive."
+      ],
+      "explanation": "原文先说他们想去海边，随后用 but 指出票价贵，再用 So 引出改去小镇的决定。因此直接原因是 train tickets were expensive；没有说海滩关闭或 Tom 不喜欢大海。",
+      "evidence": "At first, they wanted to go to the beach, but the train tickets were expensive. So they decided to go to a small town near the mountains instead."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "planned",
+      "meaning": "计划（过去式）",
+      "example": "Last Friday, Lin and her friend Tom planned a weekend trip."
+    },
+    {
+      "word": "expensive",
+      "meaning": "昂贵的",
+      "example": "At first, they wanted to go to the beach, but the train tickets were expensive."
+    },
+    {
+      "word": "decided",
+      "meaning": "决定（过去式）",
+      "example": "So they decided to go to a small town near the mountains instead."
+    },
+    {
+      "word": "cheap",
+      "meaning": "便宜的",
+      "example": "The bus ticket was cheap."
+    },
+    {
+      "word": "famous",
+      "meaning": "著名的",
+      "example": "First, they visited a famous old bridge."
+    },
+    {
+      "word": "delicious",
+      "meaning": "美味的",
+      "example": "The food was delicious and not expensive."
+    },
+    {
+      "word": "climbed",
+      "meaning": "爬（过去式）",
+      "example": "Finally, they climbed a small hill."
+    },
+    {
+      "word": "returned",
+      "meaning": "返回（过去式）",
+      "example": "They returned home at 6 p.m. on Sunday."
+    }
+  ],
+  "grammar": {
+    "title": "一般过去时：规则与常用不规则过去式；then / after that / finally",
+    "explanation": "一般过去时用来描述过去发生的动作或状态。规则动词的过去式通常在词尾加-ed，例如：visit → visited, walk → walked, climb → climbed, return → returned。以e结尾的动词直接加-d，例如：decide → decided。常用不规则动词的过去式需要单独记忆，例如：go → went, buy → bought, have → had, see → saw, take → took, say → said, is → was, are → were。表示顺序时，可以用 then（然后）、after that（在那之后）、finally（最后）来连接动作。 本组还会用到 eat → ate 和 read /riːd/ → read /red/；read 的过去式拼写不变，但读音变了。",
+    "example": "First, they visited a famous old bridge. After that, they walked to a local market.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Yesterday, I ___ to the park with my sister.",
+        "options": [
+          "go",
+          "went",
+          "goed",
+          "going"
+        ],
+        "answers": [
+          "went"
+        ],
+        "explanation": "go的过去式是不规则形式went。",
+        "evidence": "go → went"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "She ___ a new book at the shop last week.",
+        "options": [
+          "buy",
+          "buyed",
+          "bought",
+          "buys"
+        ],
+        "answers": [
+          "bought"
+        ],
+        "explanation": "buy的过去式是不规则形式bought。",
+        "evidence": "buy → bought"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "We ___ a movie last night.",
+        "options": [
+          "see",
+          "saw",
+          "seen",
+          "seed"
+        ],
+        "answers": [
+          "saw"
+        ],
+        "explanation": "see的过去式是不规则形式saw。",
+        "evidence": "see → saw"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Yesterday, they ___ at a small restaurant for lunch.",
+        "options": [
+          "eat",
+          "ate",
+          "eated",
+          "eaten"
+        ],
+        "answers": [
+          "ate"
+        ],
+        "explanation": "eat的过去式是不规则形式ate。",
+        "evidence": "eat → ate"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "He ___ his homework and then watched TV.",
+        "options": [
+          "finish",
+          "finished",
+          "finishes",
+          "finishing"
+        ],
+        "answers": [
+          "finished"
+        ],
+        "explanation": "finish是规则动词，过去式加-ed变为finished。",
+        "evidence": "finish → finished"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "用表示时间顺序“然后”的词连接：First, we visited the museum. ___, we had ice cream.",
+        "options": [
+          "Then",
+          "But",
+          "Because",
+          "So"
+        ],
+        "answers": [
+          "Then"
+        ],
+        "explanation": "题目指定时间顺序“然后”，选 Then。But 表转折，Because 表原因，So 表结果；其他连接词在别的语境可能成立，但不表达本题指定的时间顺序。",
+        "evidence": "Then they had lunch at a small restaurant."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "She walked to the park. After that, she ___ a book.",
+        "options": [
+          "read",
+          "reads",
+          "reading",
+          "readed"
+        ],
+        "answers": [
+          "read"
+        ],
+        "explanation": "read的过去式与原形同形，仍为read。",
+        "evidence": "read → read"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Yesterday evening, they finally ___ home at 6 p.m.",
+        "options": [
+          "return",
+          "returned",
+          "returns",
+          "returning"
+        ],
+        "answers": [
+          "returned"
+        ],
+        "explanation": "return是规则动词，过去式加-ed变为returned。",
+        "evidence": "return → returned"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like weekend trips?",
+        "Where did you go last weekend?",
+        "Who did you go with?",
+        "What did you do there?"
+      ],
+      "part2": "Describe a short trip you took. You should say: where you went; who you went with; what you did; and explain why you liked or did not like it.",
+      "part3": [
+        "Why do people like short trips?",
+        "Is it better to travel by bus or by train?",
+        "What do you need to plan for a trip?",
+        "Do you prefer to travel alone or with friends?"
+      ]
+    },
+    "writing": "Write about a day trip you took or can imagine. Explain the first plan, where you went, what you did in order, and how you felt at the end. Use the past tense and appropriate sequence words such as then, after that, and finally. Write at least 80 words. Use your own details."
+  },
+  "rubric": {
+    "taskType": "Reading and Grammar Practice (A2)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原有未发布草稿修复；正文/问题/语法逐项核对后另行盲解，尚未正式发布。",
+    "model": "deepseek-flash draft; Codex revision",
+    "draftInputSha256": "af46663a3cd3f6d43ea05f4751f46c321ebe0554fb6621302e5cee87c9a0747e",
+    "contentHash": "ff1aa98f627b6c9b51c364d2b62ea858faf85244964e6ab5bab591596511ee2b",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "questionRevision": {
+      "reviewStatus": "independent-source-text-blind-agreement",
+      "questionCount": 16,
+      "blindInputSha256": "a0e140c33dd16b9a3a2ef63a52c96522633cf1d544827c5a524dc40eed7e8a7b",
+      "answerFileSha256": "de2d54355ca2d6b72534381cf2a42c117b48a7c312d915c26c9e75e74cae09bb",
+      "reviewMethod": "Codex author revision followed by separate agent blind source answers frozen before explanations; not human examiner calibration."
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

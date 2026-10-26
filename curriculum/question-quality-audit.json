@@ -1,226 +1,108 @@
 {
   "schema": 1,
-  "reviewedAt": "2026-10-24T15:20:05.116Z",
-  "reviewer": "Codex",
-  "scope": {
-    "ruleSourceFiles": 518,
-    "regularAuthoredSourceFiles": 508,
-    "additionalSoundsAndMaps": 10,
-    "ruleComprehensionQuestions": 5584,
-    "manualFirstWeekMaterials": 12,
-    "manualFirstWeekQuestions": 96,
-    "manualDistinctQuestionsIncludingCandidates": 120,
-    "manualScope": "Codex逐题对照首周12份阅读/听力96题；另对首轮全库规则筛出的每一项候选逐项判定。不是教师或考官真人审题，未宣称全部源题均经逐题复核。"
-  },
-  "before": {
-    "high": 11,
-    "review": 28,
-    "findings": 39
-  },
-  "after": {
-    "high": 0,
-    "review": 3,
-    "findings": [
-      {
-        "materialId": "training-42-reading",
-        "week": 42,
-        "skill": "reading",
-        "questionId": "q4",
-        "rule": "ANSWER_LITERAL_IN_PROMPT",
-        "severity": "review",
-        "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-        "prompt": "Fill in the blank: The council agreed to keep the library open for a trial period of ______ year(s). (Use ONE WORD from the passage.)",
-        "answers": [
-          "one"
-        ],
-        "options": [],
-        "evidence": "The council agreed to keep the library open for a trial period of one year, provided that the community raised a portion of the running costs."
-      },
-      {
-        "materialId": "w27-read-2",
-        "week": 27,
-        "skill": "reading",
-        "questionId": "q5",
-        "rule": "ANSWER_LITERAL_IN_PROMPT",
-        "severity": "review",
-        "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-        "prompt": "Which is more expensive, a bus ticket or a train ticket?",
-        "answers": [
-          "A train ticket"
-        ],
-        "options": [
-          "A bus ticket",
-          "A train ticket",
-          "They cost the same",
-          "The text does not say"
-        ],
-        "evidence": "A bus ticket costs 2 dollars, but a train ticket costs 3 dollars."
-      },
-      {
-        "materialId": "w28-listen-4",
-        "week": 28,
-        "skill": "listening",
-        "questionId": "q2",
-        "rule": "ANSWER_LITERAL_IN_PROMPT",
-        "severity": "review",
-        "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-        "prompt": "The main desk is staffed from 8 a.m. to ______ p.m. on weekdays.",
-        "answers": [
-          "8"
-        ],
-        "options": [],
-        "evidence": "The desk is staffed from 8 a.m. to 8 p.m. on weekdays."
-      }
-    ]
-  },
-  "changedMaterials": [
-    "w01-read-1",
-    "w01-read-2",
-    "w01-read-3",
-    "w01-read-4",
-    "w01-read-5",
-    "w01-read-6",
-    "w01-listen-1",
-    "w01-listen-2",
-    "w01-listen-3",
-    "w01-listen-4",
-    "w01-listen-5",
-    "w01-listen-6",
-    "final-52-listening",
-    "gate-24-A-listening",
-    "gate-32-A-reading",
-    "gate-32-B-reading",
-    "w02-listen-6",
-    "w07-listen-6",
-    "w08-listen-2",
-    "w13-listen-2",
-    "w15-listen-3",
-    "w24-listen-4",
-    "w25-read-2",
-    "w32-read-1",
-    "w36-listen-1",
-    "w36-listen-4",
-    "w11-read-3"
-  ],
-  "allSourceTextAndAudioUnchanged": true,
-  "allAuthorValidationPassed": true,
-  "allRevisedContentHashesReproducible": true,
-  "decisions": [
+  "generatedAt": "2026-10-25T20:51:24.123Z",
+  "scope": "全部公开源材料的理解题规则筛查；不包含派生语法题，不代表逐题人工审核或难度标定。",
+  "sourceMaterials": 806,
+  "comprehensionMaterials": 615,
+  "questions": 7568,
+  "high": 0,
+  "review": 6,
+  "reviewedCurrentContent": 6,
+  "unresolvedReview": 0,
+  "reviewRegistry": "curriculum/question-quality-reviews.json",
+  "findings": [
     {
-      "index": 1,
-      "materialId": "final-52-listening",
-      "week": 52,
-      "skill": "listening",
-      "questionId": "q13",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "What time does the review start? (Write one number and one word, e.g., '9 a.m.')",
-      "answers": [
-        "9 a.m."
-      ],
-      "options": [],
-      "evidence": "It will start at 9 a.m. and finish at 11 a.m.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 2,
-      "materialId": "gate-24-A-listening",
-      "week": 24,
-      "skill": "listening",
-      "questionId": "q3",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "How much does a water butt cost? (Write ONE number and ONE word, e.g. 'fifty pounds')",
-      "answers": [
-        "fifty pounds"
-      ],
-      "options": [],
-      "evidence": "We could buy a water butt for fifty pounds.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 3,
-      "materialId": "gate-24-A-listening",
-      "week": 24,
-      "skill": "listening",
-      "questionId": "q5",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "When is the next stage check? (Write ONE word and ONE month, e.g. 'end of June')",
-      "answers": [
-        "end of June"
-      ],
-      "options": [],
-      "evidence": "It's at the end of June.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 4,
-      "materialId": "gate-32-A-reading",
-      "week": 32,
+      "materialId": "expand-w04-read-1",
+      "week": 4,
       "skill": "reading",
-      "questionId": "q4",
+      "questionId": "q7",
       "rule": "ANSWER_LITERAL_IN_PROMPT",
       "severity": "review",
       "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "In Grade 10, what percentage of students completed homework regularly? (Write a number and a percentage sign, e.g., '70%')",
+      "prompt": "Complete the sentence with one word from the passage: The group is not ______. (happy / sad / angry)",
       "answers": [
-        "70%"
-      ],
-      "options": [],
-      "evidence": "in Grade 10, only 70% did.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 5,
-      "materialId": "gate-32-B-reading",
-      "week": 32,
-      "skill": "reading",
-      "questionId": "q4",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "According to the passage, what percentage of teachers felt confident in interpreting student performance data? (Write a number and a percentage sign, e.g., '30%')",
-      "answers": [
-        "30%"
-      ],
-      "options": [],
-      "evidence": "only 30% felt confident in interpreting it.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 6,
-      "materialId": "training-38-reading",
-      "week": 38,
-      "skill": "reading",
-      "questionId": "q16",
-      "rule": "NAME_OPTIONS_NOT_ALL_NAMES",
-      "severity": "review",
-      "reason": "姓名题出现班级、身份、颜色等选项，可能仅凭类别即可排除。",
-      "prompt": "What is the name of the largest park in Harbor Point?",
-      "answers": [
-        "Harbor Green"
+        "happy"
       ],
       "options": [
-        "Harbor Park",
-        "Green Park",
-        "Harbor Green",
-        "Central Park"
+        "happy",
+        "sad",
+        "angry"
       ],
-      "evidence": "The largest park, Harbor Green",
-      "decision": "retain",
-      "rationale": "保留：所问为公园名称，不是人名；四项均为同类公园名，Green Park 不是异类颜色选项。"
+      "evidence": "The group is not happy.",
+      "review": {
+        "status": "accepted-current-content",
+        "reviewId": "e029ecb1590d0d962d2b2847",
+        "decision": "reviewed-acceptable",
+        "rationale": "All three alternatives happy, sad and angry are supplied equally. The prompt does not select one of them. The reader must locate The group is not happy before the poster number is corrected; later the group is very happy. This is a supported choice-assisted A1 source cloze, not a self-answering format example.",
+        "reviewer": "Codex source comparison; not a human examiner or independent blind solve",
+        "reviewedAt": "2026-10-25T20:51:16.871Z",
+        "sourceContentHash": "f1fbd115cbc14934ae9f672f507587bbfd05d6d14c714120b5c42c7dda8896ae",
+        "questionHash": "22fa1984dda19c2e106e22f3e37013e20df1d2ce06b63d7e891267c86dd68ac6",
+        "sourceTextHash": "559067a8ef9decf97f786637df062b4250f897d991d78afced90ff834ecacf62"
+      }
     },
     {
-      "index": 7,
+      "materialId": "expand-w11-listen-1",
+      "week": 11,
+      "skill": "listening",
+      "questionId": "q4",
+      "rule": "ANSWER_LITERAL_IN_PROMPT",
+      "severity": "review",
+      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
+      "prompt": "How many tomatoes does Ben say he has at home?",
+      "answers": [
+        "Many"
+      ],
+      "options": [
+        "Five",
+        "Three",
+        "Many",
+        "A few"
+      ],
+      "evidence": "I have many tomatoes at home. I can bring five.",
+      "review": {
+        "status": "accepted-current-content",
+        "reviewId": "e49c648b8b52c08ac822bf8c",
+        "decision": "reviewed-acceptable",
+        "rationale": "Many occurs inside the ordinary interrogative How many, which asks for quantity without stating the answer. Ben distinguishes many tomatoes at home from the five he can bring. Selecting Many rather than Five, Three or A few requires that source distinction.",
+        "reviewer": "Codex source comparison; not a human examiner or independent blind solve",
+        "reviewedAt": "2026-10-25T20:51:16.871Z",
+        "sourceContentHash": "a8bfa38ece77fd4c0eb2a2d6c88c4db03434f9f95124311a17805c10478a5881",
+        "questionHash": "f31cc7dc652ecccf0edfe3c94cd35812104a46026417f326bb3ffb6d51897724",
+        "sourceTextHash": "b04ad4130a37d7d84b0e4394eac173da6b2a06418343f843e2ee44d08f66fcbc"
+      }
+    },
+    {
+      "materialId": "expand-w38-listen-1",
+      "week": 38,
+      "skill": "listening",
+      "questionId": "q4",
+      "rule": "ANSWER_LITERAL_IN_PROMPT",
+      "severity": "review",
+      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
+      "prompt": "What word will they use for the elevator?",
+      "answers": [
+        "Elevator"
+      ],
+      "options": [
+        "Elevator",
+        "Lift",
+        "Both words"
+      ],
+      "evidence": "Let's just use 'elevator' because this is an American library.",
+      "review": {
+        "status": "accepted-current-content",
+        "reviewId": "fee10b5ca07ea36e5065f5c3",
+        "decision": "reviewed-acceptable",
+        "rationale": "Elevator in the prompt identifies the object, not the chosen sign wording. Elevator, Lift and Both words remain live alternatives through the discussion; the manager finally keeps elevator alone. The source decision, rather than the referent noun in the prompt, resolves the option.",
+        "reviewer": "Codex source comparison; not a human examiner or independent blind solve",
+        "reviewedAt": "2026-10-25T20:51:16.871Z",
+        "sourceContentHash": "71b4088b39d1dd5d551108563323a47b691869a26202ce30698f2976f72b933e",
+        "questionHash": "578b0468f10ff062699759cdd87357baab8509fccb2c5c14e1e28497100b9887",
+        "sourceTextHash": "62718f88e2fe2c77dba41109215b2e39bfd3a16504797c6e7aa739f25cd5805d"
+      }
+    },
+    {
       "materialId": "training-42-reading",
       "week": 42,
       "skill": "reading",
@@ -234,574 +116,19 @@
       ],
       "options": [],
       "evidence": "The council agreed to keep the library open for a trial period of one year, provided that the community raised a portion of the running costs.",
-      "decision": "retain",
-      "rationale": "保留：ONE WORD 是填写长度限制，不是在空格中给出 one year；仍需查原文的试行时长。"
+      "review": {
+        "status": "accepted-current-content",
+        "reviewId": "c20e15d64ce7c08e00de4afa",
+        "decision": "reviewed-acceptable",
+        "rationale": "ONE WORD specifies the answer-length limit, not the trial duration. Paragraph C says the first trial is one year; paragraph D separately extends it by three years. The prompt does not supply the duration proposition, and the correct trial length still comes from the source.",
+        "reviewer": "Codex source comparison; not a human examiner or independent blind solve",
+        "reviewedAt": "2026-10-25T20:51:16.871Z",
+        "sourceContentHash": "6b1dbd85eae22fd448f14ac644a042337225b5f67929920bb8c0fdfc47b7c0fc",
+        "questionHash": "3bfa233cb34fad03980817bae8ed041870c319ae8d6a4dd47e637d6f487f180c",
+        "sourceTextHash": "0bef30409b1adb40db38703b2a3e4ae108ef1e3caacf3333bb462f162820b2af"
+      }
     },
     {
-      "index": 8,
-      "materialId": "w01-listen-1",
-      "week": 1,
-      "skill": "listening",
-      "questionId": "q1",
-      "rule": "NAME_ANSWER_IN_QUESTION",
-      "severity": "high",
-      "reason": "姓名题的正确姓名已经出现在题干，可能无需读取或听取材料。",
-      "prompt": "Anna 的名字是什么？",
-      "answers": [
-        "Anna"
-      ],
-      "options": [
-        "Anna",
-        "Tom",
-        "Class 1"
-      ],
-      "evidence": "I am Anna.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 9,
-      "materialId": "w01-listen-1",
-      "week": 1,
-      "skill": "listening",
-      "questionId": "q1",
-      "rule": "NAME_OPTIONS_NOT_ALL_NAMES",
-      "severity": "review",
-      "reason": "姓名题出现班级、身份、颜色等选项，可能仅凭类别即可排除。",
-      "prompt": "Anna 的名字是什么？",
-      "answers": [
-        "Anna"
-      ],
-      "options": [
-        "Anna",
-        "Tom",
-        "Class 1"
-      ],
-      "evidence": "I am Anna.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 10,
-      "materialId": "w01-listen-2",
-      "week": 1,
-      "skill": "listening",
-      "questionId": "q1",
-      "rule": "NAME_OPTIONS_NOT_ALL_NAMES",
-      "severity": "review",
-      "reason": "姓名题出现班级、身份、颜色等选项，可能仅凭类别即可排除。",
-      "prompt": "A的名字是什么？",
-      "answers": [
-        "Li"
-      ],
-      "options": [
-        "Li",
-        "Wang",
-        "Class One",
-        "Class Two"
-      ],
-      "evidence": "I am Li.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 11,
-      "materialId": "w01-listen-3",
-      "week": 1,
-      "skill": "listening",
-      "questionId": "q1",
-      "rule": "NAME_ANSWER_IN_QUESTION",
-      "severity": "high",
-      "reason": "姓名题的正确姓名已经出现在题干，可能无需读取或听取材料。",
-      "prompt": "Anna的名字是什么？",
-      "answers": [
-        "Anna"
-      ],
-      "options": [
-        "Anna",
-        "Ben",
-        "Cathy",
-        "David"
-      ],
-      "evidence": "I am Anna.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 12,
-      "materialId": "w01-listen-4",
-      "week": 1,
-      "skill": "listening",
-      "questionId": "q1",
-      "rule": "NAME_ANSWER_IN_QUESTION",
-      "severity": "high",
-      "reason": "姓名题的正确姓名已经出现在题干，可能无需读取或听取材料。",
-      "prompt": "Anna 说自己的名字是什么？",
-      "answers": [
-        "Anna"
-      ],
-      "options": [
-        "Anna",
-        "Li Ming",
-        "Mei"
-      ],
-      "evidence": "I am Anna.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 13,
-      "materialId": "w01-read-1",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q1",
-      "rule": "IDENTITY_OPTION_CATEGORY",
-      "severity": "review",
-      "reason": "人物身份题的干扰项含非人物类别，降低了必须理解原文的要求。",
-      "prompt": "Who is Li Ming?",
-      "answers": [
-        "A student"
-      ],
-      "options": [
-        "A teacher",
-        "A student",
-        "A class"
-      ],
-      "evidence": "I am a student.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 14,
-      "materialId": "w01-read-1",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q6",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "True, False, or Not Given: Li Ming and Anna are in the same class.",
-      "answers": [
-        "True"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "We are classmates.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 15,
-      "materialId": "w01-read-1",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q7",
-      "rule": "IDENTITY_OPTION_CATEGORY",
-      "severity": "review",
-      "reason": "人物身份题的干扰项含非人物类别，降低了必须理解原文的要求。",
-      "prompt": "B 段中，Anna 说自己是什么身份？",
-      "answers": [
-        "学生"
-      ],
-      "options": [
-        "学生",
-        "老师",
-        "班级"
-      ],
-      "evidence": "I am a student too.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 16,
-      "materialId": "w01-read-1",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q8",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "True, False, or Not Given: Anna is in Room 6.",
-      "answers": [
-        "Not Given"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "The passage does not mention any room number.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 17,
-      "materialId": "w01-read-4",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q6",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "True, False, or Not Given: Li Wei is from Beijing.",
-      "answers": [
-        "False"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "I am from Shanghai. / She is from Beijing.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 18,
-      "materialId": "w01-read-4",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q7",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "True, False, or Not Given: Ms. Chen is from Shanghai.",
-      "answers": [
-        "False"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "She is from Beijing.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 19,
-      "materialId": "w01-read-4",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q8",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "True, False, or Not Given: Li Wei is in Class B.",
-      "answers": [
-        "False"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "I am in Class A.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 20,
-      "materialId": "w01-read-6",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q4",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "Li Ming is happy.",
-      "answers": [
-        "True"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "I am happy.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 21,
-      "materialId": "w01-read-6",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q5",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "The teacher is from China.",
-      "answers": [
-        "False"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "You are from Canada.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 22,
-      "materialId": "w01-read-6",
-      "week": 1,
-      "skill": "reading",
-      "questionId": "q6",
-      "rule": "A0_ABSTRACT_JUDGEMENT",
-      "severity": "high",
-      "reason": "零基础首周使用 True/False/Not Given，超出直接中文题干与字面信息提取的限定。",
-      "prompt": "Li Ming is a doctor.",
-      "answers": [
-        "False"
-      ],
-      "options": [
-        "True",
-        "False",
-        "Not Given"
-      ],
-      "evidence": "I am a student.",
-      "decision": "replace_with_literal_retrieval",
-      "rationale": "改为中文直接信息提取，避免零基础首周使用TF/NG和无根据身份排他推断。"
-    },
-    {
-      "index": 23,
-      "materialId": "w02-listen-6",
-      "week": 2,
-      "skill": "listening",
-      "questionId": "q8",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "Anna 介绍 Ben 时说：“This is ______.”（填一个人名）",
-      "answers": [
-        "Ben"
-      ],
-      "options": [],
-      "evidence": "This is Ben.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 24,
-      "materialId": "w07-listen-6",
-      "week": 7,
-      "skill": "listening",
-      "questionId": "q5",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "What time is the next train to London? (Write the time as shown in the transcript, e.g., 10:15)",
-      "answers": [
-        "10:15"
-      ],
-      "options": [],
-      "evidence": "The next train is at 10:15.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 25,
-      "materialId": "w08-listen-2",
-      "week": 8,
-      "skill": "listening",
-      "questionId": "q6",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "Mei 的火车早上几点？请用英文单词填空（如 eight）。",
-      "answers": [
-        "eight"
-      ],
-      "options": [],
-      "evidence": "It's at eight in the morning.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 26,
-      "materialId": "w11-read-3",
-      "week": 11,
-      "skill": "reading",
-      "questionId": "q4",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "How many apples does Li Wei buy?",
-      "answers": [
-        "Many apples"
-      ],
-      "options": [
-        "Many apples",
-        "A few apples",
-        "A little apples",
-        "Much apples"
-      ],
-      "evidence": "He buys a few tomatoes, a little rice, and many apples.",
-      "decision": "revise_distractors",
-      "rationale": "how many与Many apples的词面匹配不是直接泄答，但原A little apples/Much apples属不合语法的干扰项；已改为合法数量表达。"
-    },
-    {
-      "index": 27,
-      "materialId": "w13-listen-2",
-      "week": 13,
-      "skill": "listening",
-      "questionId": "q4",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "Lisa had a meeting at ______. (填写时间，如：nine o'clock)",
-      "answers": [
-        "nine o'clock"
-      ],
-      "options": [],
-      "evidence": "I had a meeting at nine o'clock.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 28,
-      "materialId": "w15-listen-3",
-      "week": 15,
-      "skill": "listening",
-      "questionId": "q3",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "How long does the woman's bike ride take? (Write one number and one word, e.g., '25 minutes')",
-      "answers": [
-        "25 minutes"
-      ],
-      "options": [],
-      "evidence": "It takes about 25 minutes.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 29,
-      "materialId": "w15-listen-3",
-      "week": 15,
-      "skill": "listening",
-      "questionId": "q6",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "How long does the subway take to the airport? (Write one number and one word, e.g., '40 minutes')",
-      "answers": [
-        "40 minutes"
-      ],
-      "options": [],
-      "evidence": "About 40 minutes.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 30,
-      "materialId": "w16-read-1",
-      "week": 16,
-      "skill": "reading",
-      "questionId": "q1",
-      "rule": "NAME_OPTIONS_NOT_ALL_NAMES",
-      "severity": "review",
-      "reason": "姓名题出现班级、身份、颜色等选项，可能仅凭类别即可排除。",
-      "prompt": "What is the name of the new program?",
-      "answers": [
-        "Green Office"
-      ],
-      "options": [
-        "Green Office",
-        "Save Energy",
-        "Clean Company",
-        "Paper Less"
-      ],
-      "evidence": "The program is called “Green Office.”",
-      "decision": "retain",
-      "rationale": "保留：所问为项目名称，Green Office 等均为名称型选项，不是人名类别题。"
-    },
-    {
-      "index": 31,
-      "materialId": "w23-listen-3",
-      "week": 23,
-      "skill": "listening",
-      "questionId": "q10",
-      "rule": "NAME_OPTIONS_NOT_ALL_NAMES",
-      "severity": "review",
-      "reason": "姓名题出现班级、身份、颜色等选项，可能仅凭类别即可排除。",
-      "prompt": "What name does the woman suggest for the garden?",
-      "answers": [
-        "Green Corner"
-      ],
-      "options": [
-        "Green Corner",
-        "Green Gardens",
-        "Community Garden",
-        "Library Garden"
-      ],
-      "evidence": "How about 'Green Corner'?",
-      "decision": "retain",
-      "rationale": "保留：所问为花园名称，四项均为花园名称型干扰项，Green 不是独立颜色选项。"
-    },
-    {
-      "index": 32,
-      "materialId": "w24-listen-4",
-      "week": 24,
-      "skill": "listening",
-      "questionId": "q2",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "How much did it cost to fix the water pipe? (Write ONE number and ONE word, e.g., '150 dollars')",
-      "answers": [
-        "150 dollars"
-      ],
-      "options": [],
-      "evidence": "we had to pay 150 dollars to fix it.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 33,
-      "materialId": "w24-listen-4",
-      "week": 24,
-      "skill": "listening",
-      "questionId": "q4",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "How much does it cost to rent the tiller for a week? (Write ONE number and ONE word, e.g., '80 dollars')",
-      "answers": [
-        "80 dollars"
-      ],
-      "options": [],
-      "evidence": "The tiller rental is 80 dollars for a week.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 34,
-      "materialId": "w25-read-2",
-      "week": 25,
-      "skill": "reading",
-      "questionId": "q3",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "What percentage of the library's electricity is now produced by solar panels? (Write a number and % sign, e.g., 30%)",
-      "answers": [
-        "30%"
-      ],
-      "options": [],
-      "evidence": "Solar panels were put on the roof, and they now produce about 30% of the library's electricity.",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 35,
       "materialId": "w27-read-2",
       "week": 27,
       "skill": "reading",
@@ -820,11 +147,19 @@
         "The text does not say"
       ],
       "evidence": "A bus ticket costs 2 dollars, but a train ticket costs 3 dollars.",
-      "decision": "retain",
-      "rationale": "保留：比较问题必须列出两种票；题干同时给出两者，不指出哪一个价格更高，仍需比较原文2/3美元。"
+      "review": {
+        "status": "accepted-current-content",
+        "reviewId": "8e9ff3818533ee7c4fa69f37",
+        "decision": "reviewed-acceptable",
+        "rationale": "Both bus and train tickets are named symmetrically in the comparison question. No cost relationship is supplied. Paragraph C gives two dollars for the bus and three for the train, so the more expensive alternative requires source comparison.",
+        "reviewer": "Codex source comparison; not a human examiner or independent blind solve",
+        "reviewedAt": "2026-10-25T20:51:16.871Z",
+        "sourceContentHash": "2d710a17da74d4fcb7f817dc4bc5c60ef2a1af353a9401eea993f963bbbc2d8d",
+        "questionHash": "06de117a132ae21706eb554c99e00425269a453db32e23629a7eda86e834be50",
+        "sourceTextHash": "536392301b10ea223b00b01e41c43f461aa2a28829f53fffea6454c268a4590e"
+      }
     },
     {
-      "index": 36,
       "materialId": "w28-listen-4",
       "week": 28,
       "skill": "listening",
@@ -838,74 +173,17 @@
       ],
       "options": [],
       "evidence": "The desk is staffed from 8 a.m. to 8 p.m. on weekdays.",
-      "decision": "retain",
-      "rationale": "保留：题干的8 a.m.是开始时间；空格问结束时间8 p.m.。开始时刻不决定结束时刻，仍需听录音。"
-    },
-    {
-      "index": 37,
-      "materialId": "w32-read-1",
-      "week": 32,
-      "skill": "reading",
-      "questionId": "q2",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "The passage says that families with children were more likely to swim regularly than people without children. Which group had a higher percentage of regular swimmers in summer?",
-      "answers": [
-        "Families with children"
-      ],
-      "options": [
-        "Families with children",
-        "People without children",
-        "Both groups were the same",
-        "The passage does not say"
-      ],
-      "evidence": "families with children were more likely to swim regularly than people without children",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 38,
-      "materialId": "w36-listen-1",
-      "week": 36,
-      "skill": "listening",
-      "questionId": "q5",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "What is the final submission date? (Write the day, e.g., '15th')",
-      "answers": [
-        "15th"
-      ],
-      "options": [],
-      "evidence": "The final submission is on Friday, the 15th",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
-    },
-    {
-      "index": 39,
-      "materialId": "w36-listen-4",
-      "week": 36,
-      "skill": "listening",
-      "questionId": "q7",
-      "rule": "ANSWER_LITERAL_IN_PROMPT",
-      "severity": "review",
-      "reason": "题干含完整正确答案；需区分必要背景、选项标签和直接泄答。",
-      "prompt": "Mia used the incorrect phrase 'many ______' instead of 'much research'. (one word)",
-      "answers": [
-        "research"
-      ],
-      "options": [],
-      "evidence": "You wrote 'many research' instead of 'much research'",
-      "decision": "revise",
-      "rationale": "已移除自答姓名/标准答案示例/题干复述，或将干扰项改为同类；答案均对照既有原文核实。"
+      "review": {
+        "status": "accepted-current-content",
+        "reviewId": "aaf85398c0c7139969b61038",
+        "decision": "reviewed-acceptable",
+        "rationale": "The given 8 a.m. fills the opening-time slot. The blank asks for the different closing-time slot at p.m.; equal clock digits are not guaranteed by a morning opening time. Only the source establishes that closing is 8 p.m.",
+        "reviewer": "Codex source comparison; not a human examiner or independent blind solve",
+        "reviewedAt": "2026-10-25T20:51:16.871Z",
+        "sourceContentHash": "38425420867af264686faba8f7c90a8e20149dc771eab59e492082334b523cd7",
+        "questionHash": "6bd7a5b6b39f0be64b54496767c4c906d07b9e708009742d14afc97f83d2d732",
+        "sourceTextHash": "8bb1193a49f7c22cd6ab757cecea38cca42c55b31cd9f9d9f2e32327938082a4"
+      }
     }
-  ],
-  "limits": [
-    "规则只筛查部分可检测题干泄答和选项类别问题，不等于完整语义审题。",
-    "未重跑真实AI盲解，未使用真实凭据或付费接口。",
-    "未进行真实学习者难度、区分度或IELTS等值标定，不能据此保证52周达到6.5。",
-    "前8周中除首周和规则候选外的材料未在本次做逐题人工复核。",
-    "本次逐题对照复核由Codex完成，不是真人教师或考官审题。"
   ]
 }

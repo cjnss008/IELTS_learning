@@ -29,6 +29,8 @@ const writingPathModule = require('./writing-path.cjs');
 const { createCredentialVault } = require('./credential-vault.cjs');
 const { createUserData, within: insideUserData } = require('./user-data.cjs');
 const { createDailyBackups, DailyBackupError } = require('./daily-backups.cjs');
+const { createLearningArchive } = require('./learning-archive.cjs');
+const { createLearningRecordsService } = require('./learning-records-service.cjs');
 const { createFileCache, fileStamp } = require('./file-cache.cjs');
 const placementModule = require('./placement.cjs');
 
@@ -211,7 +213,9 @@ function createServer(options = {}) {
   const rootRealPromise = fs.promises.realpath(rootDir);
   const fetchImpl = options.fetchImpl || globalThis.fetch;
   const userData=createUserData({rootDir,dataDir:options.dataDir,legacyPaths:{...(options.legacyDataPaths||{}),credentials:null},migrateLegacy:options.migrateLegacy??!(options.fetchImpl||options.budgetFilePath||options.budgetDir||options.credentialFilePath||options.rootDir&&rootDir!==path.resolve(path.join(__dirname,'..')))});
-  const dailyBackups=options.dailyBackups||createDailyBackups({userData});
+  const learningArchive=options.learningArchive||createLearningArchive({dataDir:userData.root,...(options.archiveNow?{now:options.archiveNow}:{})});
+  const dailyBackups=options.dailyBackups||createDailyBackups({userData,learningArchive});
+  const learningRecords=options.learningRecordsService||createLearningRecordsService({userData,archive:learningArchive,dailyBackups,...(options.archiveNow?{now:options.archiveNow}:{}),timeZone:options.archiveTimeZone||'Asia/Hong_Kong'});
   let restoringBackup=false;
   let materialMigration=options.materialMigration||null;
   if(!materialMigration&&options.materialMigration!==false&&fs.existsSync(path.join(__dirname,'user-material-migration.cjs'))&&(fs.existsSync(path.join(rootDir,'materials','textbook-catalog.json'))||fs.existsSync(path.join(userData.paths.materials,'imported-textbooks','index.json')))){try{materialMigration=require('./user-material-migration.cjs').createUserMaterialMigration({rootDir,dataDir:userData.root,materialsDir:userData.paths.materials});}catch{materialMigration={status:()=>({state:'error',errors:[{code:'MATERIAL_MIGRATION_UNAVAILABLE',message:'教材迁移索引无法读取；旧资料继续使用，原文件未改变。'}]}),list:()=>[],get:()=>null,resolveLegacy:()=>null,start:()=>Promise.resolve({state:'error'})};}}
@@ -527,6 +531,12 @@ function createServer(options = {}) {
       if(data?.choices?.[0]?.finish_reason==='length')throw new AppError(502,'COACH_TRUNCATED','口语反馈被截断，请重试。');
       return sendJson(res,200,{...oralCoach.parse(data?.choices?.[0]?.message?.content,input,captured.apiKey),model:captured.model});
     }
+    if(req.method==='POST'&&pathname==='/api/ai/translate'){
+      const translation=require('./selection-translation.cjs'),input=translation.validate(await readJson(req));
+      const {captured,data}=await runText(req,res,{messages:translation.messages(input),max_tokens:3500,response_format:{type:'json_object'}},coachTimeoutMs);
+      if(data?.choices?.[0]?.finish_reason==='length')throw new AppError(502,'TRANSLATION_TRUNCATED','翻译被截断，请重试。');
+      return sendJson(res,200,{...translation.parse(data?.choices?.[0]?.message?.content,captured.apiKey),model:captured.model});
+    }
     if(req.method==='POST'&&['/api/ai/glossary','/api/ai/daily-recap'].includes(pathname)){
       const kind=pathname.endsWith('glossary')?'glossary':'recap',body=await readJson(req);
       const input=kind==='glossary'?dailyCoach.glossary(body):dailyCoach.recap(body,curriculum);
@@ -784,6 +794,7 @@ function createServer(options = {}) {
       }
       if (await handleDailyBackups(req,res,rawPath)) return;
       if (await vault.handle(req,res,rawPath)) return;
+      if (await learningRecords.handle(req,res,rawPath)) return;
       if (await userData.handle(req,res,rawPath)) return;
       for(const handler of [omniHandler,oralHandler,transcriptionHandler,speechHandler])if(await handler(req,res,rawPath))return;
       if (rawPath.startsWith('/api/')) await handleApi(req, res, rawPath);

@@ -1,0 +1,358 @@
+{
+  "id": "expand-w15-listen-1",
+  "week": 15,
+  "skill": "listening",
+  "level": "B1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "交通与城市生活 · Independent new scenario: comparing local transport proposals",
+  "grammarFocus": "比较级；最高级；方式与时间介词；how long / how often。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Comparing Local Transport Proposals",
+  "instructions": "这是一份为B1水平学习者设计的英语听力与语法练习。场景为模拟的社区交通方案讨论会，所有内容均为原创教学材料，并非雅思考试或官方评分。请先听录音（或阅读文字稿），然后完成8道听力题。之后学习比较级、最高级、方式与时间介词以及how long / how often的用法，并完成8道语法题。最后进行口语和写作练习。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Mia: Hi everyone, thanks for coming. We have three plans for the new bus route. Let's compare them.\nBen: Okay. Plan A is the cheapest. It costs two dollars. But it's slower than Plan B.\nMia: How long does Plan A take? \nBen: About forty minutes. Plan B takes thirty minutes, but it's more expensive. It costs three dollars.\nCarla: I like Plan C. It's the fastest. It takes only twenty-five minutes. But it's the most expensive—five dollars.\nMia: How often do the buses run? \nBen: Plan A runs every thirty minutes. Plan B runs every fifteen minutes. Plan C runs every ten minutes.\nCarla: That's good. But Plan C stops far from my house. I have to walk fifteen minutes to the stop.\nMia: Plan A stops near my house. I walk only two minutes. But the bus is often late.\nBen: Plan B is the most reliable. It's usually on time. And it stops at the market.\nCarla: How do you go to work now, Mia? \nMia: I go by bike. It's faster than the bus in the morning. But when it rains, I take the bus.\nBen: So, which plan is best for most people? \nCarla: Maybe Plan B. It's not the cheapest, but it's fast and frequent.\nMia: I agree. Plan B is a good balance. Let's write that down.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which plan is the cheapest?",
+      "options": [
+        "Plan A",
+        "Plan B",
+        "Plan C"
+      ],
+      "answers": [
+        "Plan A"
+      ],
+      "explanation": "Ben说“Plan A is the cheapest.”，所以A最便宜。",
+      "evidence": "Plan A is the cheapest."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How long does Plan B take?",
+      "options": [
+        "Twenty-five minutes",
+        "Thirty minutes",
+        "Forty minutes"
+      ],
+      "answers": [
+        "Thirty minutes"
+      ],
+      "explanation": "Ben说“Plan B takes thirty minutes”，所以B需要30分钟。",
+      "evidence": "Plan B takes thirty minutes"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How often does Plan C run?",
+      "options": [
+        "Every ten minutes",
+        "Every fifteen minutes",
+        "Every thirty minutes"
+      ],
+      "answers": [
+        "Every ten minutes"
+      ],
+      "explanation": "Ben说“Plan C runs every ten minutes.”，所以C每10分钟一班。",
+      "evidence": "Plan C runs every ten minutes."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which plan stops far from Carla's house?",
+      "options": [
+        "Plan A",
+        "Plan B",
+        "Plan C"
+      ],
+      "answers": [
+        "Plan C"
+      ],
+      "explanation": "Carla说“Plan C stops far from my house.”，所以C站离她家远。",
+      "evidence": "Plan C stops far from my house."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How does Mia go to work now?",
+      "options": [
+        "By bus",
+        "By bike",
+        "By car"
+      ],
+      "answers": [
+        "By bike"
+      ],
+      "explanation": "Mia说“I go by bike.”，所以她现在骑自行车上班。",
+      "evidence": "I go by bike."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which plan is the most reliable?",
+      "options": [
+        "Plan A",
+        "Plan B",
+        "Plan C"
+      ],
+      "answers": [
+        "Plan B"
+      ],
+      "explanation": "Ben说“Plan B is the most reliable.”，所以B最可靠。",
+      "evidence": "Plan B is the most reliable."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Plan A costs ______ dollars.",
+      "answers": [
+        "two"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben说“It costs two dollars.”，所以填two。",
+      "evidence": "It costs two dollars."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Plan C costs ______ dollars.",
+      "answers": [
+        "five"
+      ],
+      "maxWords": 1,
+      "explanation": "Carla说“five dollars”，所以填five。",
+      "evidence": "five dollars"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "cheapest",
+      "meaning": "最便宜的",
+      "example": "Plan A is the cheapest."
+    },
+    {
+      "word": "slower",
+      "meaning": "更慢的",
+      "example": "But it's slower than Plan B."
+    },
+    {
+      "word": "expensive",
+      "meaning": "昂贵的",
+      "example": "But it's more expensive."
+    },
+    {
+      "word": "fastest",
+      "meaning": "最快的",
+      "example": "It's the fastest."
+    },
+    {
+      "word": "reliable",
+      "meaning": "可靠的",
+      "example": "Plan B is the most reliable."
+    },
+    {
+      "word": "frequent",
+      "meaning": "频繁的",
+      "example": "It's fast and frequent."
+    },
+    {
+      "word": "balance",
+      "meaning": "平衡",
+      "example": "Plan B is a good balance."
+    },
+    {
+      "word": "agree",
+      "meaning": "同意",
+      "example": "I agree."
+    }
+  ],
+  "grammar": {
+    "title": "比较级、最高级、方式与时间介词、how long / how often",
+    "explanation": "比较级用于比较两个事物，如“slower than”（更慢）、“more expensive”（更贵）。最高级用于三个或以上事物中最突出的，如“the cheapest”（最便宜）、“the most reliable”（最可靠）。方式介词by表示交通方式，如“by bike”（骑自行车）；时间介词at用于具体时间点，如“at noon”（在中午）。how long问时间长度，如“How long does Plan A take?”；how often问频率，如“How often do the buses run?”。",
+    "example": "Plan A is the cheapest. It's slower than Plan B. How often do the buses run?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "This bag is ______ than that one.",
+        "options": [
+          "cheap",
+          "cheaper",
+          "cheapest"
+        ],
+        "answers": [
+          "cheaper"
+        ],
+        "explanation": "比较级用cheaper，因为句中有than。",
+        "evidence": "This bag is cheaper than that one."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "She is the ______ student in the class.",
+        "options": [
+          "tall",
+          "taller",
+          "tallest"
+        ],
+        "answers": [
+          "tallest"
+        ],
+        "explanation": "最高级用tallest，因为句中有the和in the class。",
+        "evidence": "She is the tallest student in the class."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "I go to school ______ bus.",
+        "options": [
+          "by",
+          "on",
+          "in"
+        ],
+        "answers": [
+          "by"
+        ],
+        "explanation": "交通方式用by bus。",
+        "evidence": "I go to school by bus."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "We have lunch ______ noon.",
+        "options": [
+          "at",
+          "on",
+          "in"
+        ],
+        "answers": [
+          "at"
+        ],
+        "explanation": "具体时间点用at noon。",
+        "evidence": "We have lunch at noon."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "______ does the train take?",
+        "options": [
+          "How long",
+          "How often",
+          "How many"
+        ],
+        "answers": [
+          "How long"
+        ],
+        "explanation": "问时间长度用How long。",
+        "evidence": "How long does the train take?"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "______ do you go to the gym?",
+        "options": [
+          "How long",
+          "How often",
+          "How much"
+        ],
+        "answers": [
+          "How often"
+        ],
+        "explanation": "问频率用How often。",
+        "evidence": "How often do you go to the gym?"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "This book is ______ interesting than that one.",
+        "options": [
+          "more",
+          "most",
+          "much"
+        ],
+        "answers": [
+          "more"
+        ],
+        "explanation": "多音节形容词比较级用more interesting。",
+        "evidence": "This book is more interesting than that one."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "He is the ______ player in the team.",
+        "options": [
+          "good",
+          "better",
+          "best"
+        ],
+        "answers": [
+          "best"
+        ],
+        "explanation": "最高级用best，因为句中有the和in the team。",
+        "evidence": "He is the best player in the team."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "How do you usually go to work or school?",
+        "How long does it take?",
+        "How often do you take the bus?",
+        "Which is faster, the bus or the bike?"
+      ],
+      "part2": "Describe a transport plan in your city. You should say:",
+      "part2_bullets": [
+        "what the plan is",
+        "how much it costs",
+        "how often it runs",
+        "why you like or dislike it"
+      ],
+      "part3": [
+        "What is the best way to travel in your city?",
+        "How can we make public transport cheaper?",
+        "Do you think more people will use bikes in the future?",
+        "How often do you use public transport?"
+      ]
+    },
+    "writing": "Write a short paragraph (80-100 words) comparing two transport options in your city. Use comparatives and superlatives, and include how long and how often."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "c489af4a62b488e44febf858182102e3ea70489d17c0ec93bdc4dea0b72f8ca7"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

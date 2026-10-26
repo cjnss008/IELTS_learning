@@ -17,10 +17,10 @@ test('daily words bind to the material, deduplicate, and reuse IPA/audio without
   const material = {...mat,passage:'Many other words must never enter the required list.',vocabulary:[...mat.vocabulary,{word:'STUDENT',meaning:'duplicate'}]};
   const words = V.wordsFor(material,{courseData:course,curriculumData:curriculum});
   assert.deepEqual(words.map(item => item.word),['student','get up','I']);
-  assert.equal(words[0].ipa,'/ˈstjuːdənt/');
+  assert.equal(words[0].ipa,'/ˈstudənt/');
   const old = V.wordsFor({id:'old-one',vocabulary:[{word:'continent',meaning:'大洲'}]},{courseData:course});
-  assert.equal(old[0].audio,'audio/words/continent.mp3');
-  assert.equal(old[0].ipa,'/ˈkɒntɪnənt/');
+  assert.equal(old[0].audio,require('../assets/vocabulary-audio.js').items.continent?.audio||'audio/words/continent.mp3');
+  assert.equal(old[0].ipa,'/ˈkɑntənənt/');
   assert.equal(V.wordsFor({id:'w01-read-1-vocabulary'},{curriculumData:curriculum}).length,8);
 });
 
@@ -96,14 +96,14 @@ test('blocked audio and failed/no-English TTS remain incomplete',async () => {
   const noEnglish = V.createAudioPlayer({root:{},synthesis:{getVoices:() => [{lang:'zh-CN'}]},Utterance:class {}});
   await assert.rejects(noEnglish.play({word:'hello'}),/尚无可用英语/);
   let utterance;
-  const failed = V.createAudioPlayer({root:{},synthesis:{getVoices:() => [{lang:'en-GB'}],speak(value) { utterance=value; },cancel() {}},Utterance:class {}});
+  const failed = V.createAudioPlayer({root:{},synthesis:{getVoices:() => [{lang:'en-US'}],speak(value) { utterance=value; },cancel() {}},Utterance:class {}});
   const promise = failed.play({word:'hello'}); utterance.onerror();
   await assert.rejects(promise,/合成语音失败/);
 });
 
 test('TTS must actually start before its end event can provide a listening proof',async () => {
   let utterance;
-  const player = V.createAudioPlayer({root:{},synthesis:{getVoices:() => [{lang:'en-GB',name:'British'}],speak(value) { utterance=value; },cancel() {}},Utterance:class {}});
+  const player = V.createAudioPlayer({root:{},synthesis:{getVoices:() => [{lang:'en-US',name:'American'}],speak(value) { utterance=value; },cancel() {}},Utterance:class {}});
   const first = player.play({word:'hello'}); utterance.onend({elapsedTime:1}); await assert.rejects(first,/没有成功完成/);
   const second = player.play({word:'hello'}); utterance.onstart(); utterance.onend({elapsedTime:.5});
   const result = await second; assert.equal(result.kind,'browser-tts'); assert.equal(result.completed,true);
@@ -223,3 +223,5 @@ test('invalid round orders cannot silently drop or duplicate a vocabulary questi
  const missing={...draft.roundOrders};delete missing.meaning;assert.throws(()=>V.createSession({material:mat,draft:{...draft,roundOrders:missing}}),/草稿与当前材料/);
  const one=V.createSession({material:{id:'one-word',vocabulary:[mat.vocabulary[0]]}});assert.deepEqual(one.roundOrder('completion'),[0]);assert.deepEqual(one.roundOrder('dictation'),[0]);
 });
+
+test('American TTS selects en-US even after a British voice and never silently falls back to en-GB',async()=>{let utterance,calls=0;const statuses=[],synthesis={getVoices:()=>[{lang:'en-GB',name:'British first'},{lang:'en-US',name:'American selected'}],speak(value){calls++;utterance=value;},cancel(){}},player=V.createAudioPlayer({root:{},synthesis,Utterance:class {}}),pending=player.play({word:'hello'},text=>statuses.push(text));assert.equal(utterance.voice.name,'American selected');assert.equal(utterance.lang,'en-US');utterance.onstart();utterance.onend({elapsedTime:.5});const proof=await pending;assert.equal(proof.locale,'en-US');assert.match(statuses.join(' '),/美式/);const britishOnly=V.createAudioPlayer({root:{},synthesis:{...synthesis,getVoices:()=>[{lang:'en-GB',name:'British only'}]},Utterance:class {}});await assert.rejects(britishOnly.play({word:'hello'}),/美式 en-US/);assert.equal(calls,1);});

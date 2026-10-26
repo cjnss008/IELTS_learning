@@ -1,0 +1,398 @@
+{
+  "id": "expand-w41-listen-2",
+  "week": 41,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时阅读：判断题与证据范围 · Independent new scenario: a research discussion comparing alternative explanations",
+  "grammarFocus": "否定、比较、数量范围和时态；限定词的含义。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Week 41 Listening: Comparing Explanations in a Research Discussion",
+  "instructions": "本材料为模拟练习，不是官方雅思试题，也不代表任何分数。先听录音（或阅读 transcript），完成 10 道听力题。注意：录音中有自然插话、修正和干扰信息，答案不会直接朗读。然后学习语法讲解，完成 8 道语法题。最后进行口语和写作迁移练习。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Maya: Okay, let's start. The question is why the community garden's volunteer numbers dropped last spring. We have three possible explanations on the table. Ben, you looked at the sign-up sheets. What did you find?\n\nBen: Right. So, I counted the names on the paper sign-up sheets from March, April, and May. In March there were forty-two names. In April, thirty-one. In May, only nineteen. That's a big fall. But I want to say one thing: the paper sheets were kept in the shed, and the shed was locked for two weeks in April because the lock broke. So some people may have signed up online instead.\n\nMaya: Good point. So the paper numbers might not show the full picture. Priya, you checked the online system. What did you see?\n\nPriya: The online sign-ups actually went up in April. There were twelve in March, twenty in April, and eighteen in May. So if we add paper and online together, the total was fifty-four in March, fifty-one in April, and thirty-seven in May. The drop is smaller than the paper numbers suggest, but it's still there, especially in May.\n\nBen: Wait, I should correct myself. I said the shed was locked for two weeks. Actually, it was locked for ten days, not two weeks. Sorry. But the point is the same: the paper record has a gap.\n\nMaya: Thanks for the correction. Now, explanation one is the weather. Sam, you had the weather data?\n\nSam: Yes. Last spring was unusually wet. In April there were eighteen rainy days, compared with nine in a normal April. In May there were fifteen rainy days. The garden is outdoors, so wet weather could reduce volunteer turnout. But I want to be careful: rainy days don't always mean fewer volunteers. Some people don't mind rain. And the garden has a small covered area.\n\nMaya: So weather is possible, but not proven. Explanation two?\n\nPriya: Explanation two is that the garden changed its opening hours. From April, the garden opened at ten in the morning instead of eight. If many volunteers used to come before work, that change could explain the drop. But when I looked at the volunteer comments, only three people mentioned the opening time. Most comments were about something else.\n\nBen: What were most comments about?\n\nPriya: Most were about the new volunteer coordinator. People said she was hard to reach by phone. But that's not one of our three explanations, so I'm not sure we should add it now.\n\nMaya: Let's keep it as a note. Explanation three is the coordinator. Sam, you looked at that?\n\nSam: I did. The previous coordinator left in March. The new coordinator started in April. In April and May, the coordinator's phone was answered on only about half the days. So volunteers who called might not have reached anyone. That could explain some of the drop. But I can't say it explains all of it. The numbers don't prove cause.\n\nMaya: Right. So where are we? The total volunteer numbers fell from fifty-four to thirty-seven between March and May. The paper record has a gap because the shed was locked for ten days. Online sign-ups rose in April but fell in May. Weather was wetter than normal, but we can't show that rain caused fewer volunteers. The opening time changed, but few volunteers mentioned it. The coordinator was harder to reach, and that is a possible factor. But none of these explanations is proven by the data alone.\n\nBen: So what do we recommend?\n\nMaya: I think we should say: the drop is real but smaller than the paper sheets suggest. The most likely factor is the coordinator's availability, because it matches the timing and the comments. Weather and opening hours are possible but less supported. And we need better records next year, with paper and online counted together every week.\n\nPriya: Agreed. And I'll add the note about the coordinator's phone.\n\nSam: One more thing. We should not say the coordinator caused the drop. We can only say she may have contributed. The data are not strong enough for more than that.\n\nMaya: Exactly. Let's write that.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What was the total number of volunteers in March when paper and online sign-ups are added together?",
+      "options": [
+        "Thirty-seven",
+        "Fifty-one",
+        "Fifty-four",
+        "Nineteen"
+      ],
+      "answers": [
+        "Fifty-four"
+      ],
+      "explanation": "Priya 把纸质和线上人数相加：三月 42+12=54。",
+      "evidence": "the total was fifty-four in March"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why might the paper sign-up numbers not show the full picture?",
+      "options": [
+        "The shed was locked for ten days in April.",
+        "The online system was closed in May.",
+        "The garden opened at eight in the morning.",
+        "The coordinator left in March."
+      ],
+      "answers": [
+        "The shed was locked for ten days in April."
+      ],
+      "explanation": "Ben 修正后说棚子锁了十天，因此纸质记录有缺口。",
+      "evidence": "Actually, it was locked for ten days, not two weeks."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Sam say about the weather explanation?",
+      "options": [
+        "It is proven by the data.",
+        "It is possible but not proven.",
+        "It is impossible because the garden is covered.",
+        "It is the only explanation."
+      ],
+      "answers": [
+        "It is possible but not proven."
+      ],
+      "explanation": "Sam 说天气可能是原因，但不能证明雨导致志愿者减少。",
+      "evidence": "So weather is possible, but not proven."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How many volunteers mentioned the opening time in their comments?",
+      "options": [
+        "Three",
+        "Twelve",
+        "Eighteen",
+        "Half"
+      ],
+      "answers": [
+        "Three"
+      ],
+      "explanation": "Priya 说只有三个人提到开放时间。",
+      "evidence": "only three people mentioned the opening time"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which explanation does Maya think is most likely?",
+      "options": [
+        "The weather",
+        "The opening hours",
+        "The coordinator's availability",
+        "The online system"
+      ],
+      "answers": [
+        "The coordinator's availability"
+      ],
+      "explanation": "Maya 说最可能的因素是协调员的可联系性。",
+      "evidence": "The most likely factor is the coordinator's availability"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Sam warn the group not to say?",
+      "options": [
+        "That the coordinator caused the drop",
+        "That the weather was wet",
+        "That the garden opened at ten",
+        "That online sign-ups rose"
+      ],
+      "answers": [
+        "That the coordinator caused the drop"
+      ],
+      "explanation": "Sam 说不能说协调员导致了下降，只能说可能有所影响。",
+      "evidence": "We should not say the coordinator caused the drop."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the recording: In April there were eighteen ______ days.",
+      "answers": [
+        "rainy"
+      ],
+      "maxWords": 1,
+      "explanation": "Sam 说四月有十八个雨天。",
+      "evidence": "In April there were eighteen rainy days"
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the recording: The previous coordinator left in ______.",
+      "answers": [
+        "March"
+      ],
+      "maxWords": 1,
+      "explanation": "Sam 说前任协调员三月离开。",
+      "evidence": "The previous coordinator left in March."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What does Priya say most volunteer comments were about?",
+      "options": [
+        "The weather",
+        "The opening hours",
+        "The new volunteer coordinator",
+        "The online system"
+      ],
+      "answers": [
+        "The new volunteer coordinator"
+      ],
+      "explanation": "Priya 说大多数评论是关于新志愿者协调员的。",
+      "evidence": "Most were about the new volunteer coordinator."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What do the speakers agree to recommend for next year?",
+      "options": [
+        "Closing the online system",
+        "Counting paper and online records together every week",
+        "Opening the garden at eight again",
+        "Hiring a new coordinator"
+      ],
+      "answers": [
+        "Counting paper and online records together every week"
+      ],
+      "explanation": "Maya 建议明年每周把纸质和线上记录一起统计。",
+      "evidence": "with paper and online counted together every week"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "volunteer",
+      "meaning": "志愿者",
+      "example": "The question is why the community garden's volunteer numbers dropped last spring."
+    },
+    {
+      "word": "sign-up",
+      "meaning": "报名；登记",
+      "example": "So, I counted the names on the paper sign-up sheets from March, April, and May."
+    },
+    {
+      "word": "turnout",
+      "meaning": "参与人数；出席人数",
+      "example": "The garden is outdoors, so wet weather could reduce volunteer turnout."
+    },
+    {
+      "word": "coordinator",
+      "meaning": "协调员",
+      "example": "Most were about the new volunteer coordinator."
+    },
+    {
+      "word": "availability",
+      "meaning": "可联系性；可用性",
+      "example": "The most likely factor is the coordinator's availability, because it matches the timing and the comments."
+    },
+    {
+      "word": "contributed",
+      "meaning": "促成；贡献",
+      "example": "We can only say she may have contributed."
+    },
+    {
+      "word": "prove",
+      "meaning": "证明",
+      "example": "The numbers don't prove cause."
+    },
+    {
+      "word": "record",
+      "meaning": "记录",
+      "example": "But the point is the same: the paper record has a gap."
+    }
+  ],
+  "grammar": {
+    "title": "否定、比较、数量范围和时态；限定词的含义",
+    "explanation": "本课重点：1) 否定词 not 的位置和含义：not 否定其后的内容，如 The numbers don't prove cause（数字不能证明因果关系）。2) 比较：smaller than, less supported, harder to reach 表示程度差异。3) 数量范围：only three, most comments, about half the days 表示数量多少或范围。4) 时态：过去时（dropped, was locked）谈过去事实；现在完成（have contributed）谈可能影响；情态动词 may/might 表示不确定。5) 限定词：the 指特定对象，a/an 指一个，some 指一些，all 指全部；限定词改变范围，如 some of the drop 与 all of the drop 不同。",
+    "example": "The drop is smaller than the paper numbers suggest, but it's still there, especially in May.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The data does not prove the cause.",
+          "The data do not prove the cause.",
+          "The data not prove the cause.",
+          "The data is not proving the cause."
+        ],
+        "answers": [
+          "The data do not prove the cause."
+        ],
+        "explanation": "data 作复数，否定用 do not；且一般现在时表示事实。",
+        "evidence": "The numbers don't prove cause."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct comparative sentence.",
+        "options": [
+          "The drop is more small than the paper numbers suggest.",
+          "The drop is smaller than the paper numbers suggest.",
+          "The drop is smallest than the paper numbers suggest.",
+          "The drop is smaller that the paper numbers suggest."
+        ],
+        "answers": [
+          "The drop is smaller than the paper numbers suggest."
+        ],
+        "explanation": "比较级 smaller than 正确；more small 错误。",
+        "evidence": "The drop is smaller than the paper numbers suggest"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct quantifier.",
+        "options": [
+          "Only three people mentioned the opening time.",
+          "Only three people mention the opening time yesterday.",
+          "Only three people mentions the opening time.",
+          "Only three people mentioning the opening time."
+        ],
+        "answers": [
+          "Only three people mentioned the opening time."
+        ],
+        "explanation": "过去时 mentioned 与 only three 数量范围搭配正确。",
+        "evidence": "only three people mentioned the opening time"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence with 'most'.",
+        "options": [
+          "Most comments was about the coordinator.",
+          "Most comments were about the coordinator.",
+          "Most comment were about the coordinator.",
+          "Most of comments was about the coordinator."
+        ],
+        "answers": [
+          "Most comments were about the coordinator."
+        ],
+        "explanation": "most + 复数名词，谓语用 were。",
+        "evidence": "Most comments were about something else."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence with 'may have'.",
+        "options": [
+          "She may have contributed to the drop.",
+          "She may contributed to the drop.",
+          "She may has contributed to the drop.",
+          "She may have contribute to the drop."
+        ],
+        "answers": [
+          "She may have contributed to the drop."
+        ],
+        "explanation": "may have + 过去分词表示对过去的推测。",
+        "evidence": "We can only say she may have contributed."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct article.",
+        "options": [
+          "The shed was locked for a ten days.",
+          "The shed was locked for ten days.",
+          "The shed was locked for the ten days.",
+          "The shed was locked for an ten days."
+        ],
+        "answers": [
+          "The shed was locked for ten days."
+        ],
+        "explanation": "ten days 前不加冠词；a/an 不与复数数量连用。",
+        "evidence": "Actually, it was locked for ten days, not two weeks."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence with 'some of'.",
+        "options": [
+          "Some of the drop may be explained by the weather.",
+          "Some of drop may be explained by the weather.",
+          "Some of the drop may explain by the weather.",
+          "Some of the drop may be explain by the weather."
+        ],
+        "answers": [
+          "Some of the drop may be explained by the weather."
+        ],
+        "explanation": "some of the + 名词；被动语态 may be explained。",
+        "evidence": "That could explain some of the drop."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence with 'harder to reach'.",
+        "options": [
+          "The coordinator was harder to reach by phone.",
+          "The coordinator was more hard to reach by phone.",
+          "The coordinator was hardest to reach by phone.",
+          "The coordinator was harder reach by phone."
+        ],
+        "answers": [
+          "The coordinator was harder to reach by phone."
+        ],
+        "explanation": "hard 的比较级是 harder；harder to reach 正确。",
+        "evidence": "People said she was hard to reach by phone."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often read short texts in English?",
+        "When you read a text, do you look for facts or opinions first?",
+        "Do you prefer paper or online reading?",
+        "How do you check if information is true?"
+      ],
+      "part2": "Describe a time when you compared two explanations for a problem. You should say: what the problem was; what the two explanations were; what evidence you used; and what you concluded.",
+      "part3": [
+        "Why is it important to compare different explanations?",
+        "How can people check whether a number is reliable?",
+        "Should schools teach students how to judge evidence?",
+        "What problems can happen when people use only one source?"
+      ]
+    },
+    "writing": "You read a short report about a local sports club. The club says fewer people came in May. Write a short paragraph (about 120 words) comparing two possible explanations and saying which one is better supported. Use at least two comparative forms and one negative sentence."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "915d31bba3f9b844c23af1bdea0ac639237333db894edeaca3c6b81b01b6c556"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

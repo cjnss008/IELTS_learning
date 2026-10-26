@@ -8,7 +8,7 @@
       week: 1, title: '字母、声音与自我介绍', goal: '认读字母名，区分字母名与单词中的声音；用 I am / You are 写出姓名和身份。',
       lessons: [
         {title: '先分清字母名字与词里的声音', text: '英语有 26 个字母，分大小写。字母 A 的名字是 /eɪ/，但在 cat 中常读 /æ/。字母名用于拼写姓名；读单词要学该词的发音，不能把字母名直接连起来。下面的音标是发音提示，不是要求本周背完的术语。', examples: [['My name is Anna.', '我的名字是 Anna。字母 A 与 a 是同一个字母的大小写。'], ['A, B, C, D, E, F, G.', '先认字母顺序，再尝试打乱顺序认读。'], ['cat, name', 'cat 中 a 常读 /æ/；name 中 a 常读 /eɪ/。同一个字母可有不同声音。']]},
-        {title: '26 个字母名与短数字', text: '英式字母名提示：A /eɪ/；B /biː/；C /siː/；D /diː/；E /iː/；F /ef/；G /dʒiː/；H /eɪtʃ/；I /aɪ/；J /dʒeɪ/；K /keɪ/；L /el/；M /em/；N /en/；O /əʊ/；P /piː/；Q /kjuː/；R /ɑː/；S /es/；T /tiː/；U /juː/；V /viː/；W /ˈdʌbəl juː/；X /eks/；Y /waɪ/；Z /zed/。先分组认读，重点比较 E / I、B / V、G / J。', examples: [['zero, one, two, three, four, five, six, seven, eight, nine, ten', '0—10：先跟读，再遮住文字按乱序辨认。'], ['eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty', '11—20：注意 fifteen 的拼写，不写 fiveteen。']]},
+        {title: '26 个字母名与短数字', text: '美式字母名提示：A /eɪ/；B /biː/；C /siː/；D /diː/；E /iː/；F /ef/；G /dʒiː/；H /eɪtʃ/；I /aɪ/；J /dʒeɪ/；K /keɪ/；L /el/；M /em/；N /en/；O /oʊ/；P /piː/；Q /kjuː/；R /ɑr/；S /es/；T /tiː/；U /juː/；V /viː/；W /ˈdʌbəl juː/；X /eks/；Y /waɪ/；Z /ziː/。先分组认读，重点比较 E / I、B / V、G / J。', examples: [['zero, one, two, three, four, five, six, seven, eight, nine, ten', '0—10：先跟读，再遮住文字按乱序辨认。'], ['eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty', '11—20：注意 fifteen 的拼写，不写 fiveteen。']]},
         {title: '谁 + 是什么：I am / You are', text: 'I 表“我”，you 表“你／你们”。am / are 是 be 动词的形式，连接身份或状态。I 用 am，you 用 are；不要在两者之间再加 is。英文 I 永远大写，句首大写，句末加句号。', examples: [['I am Anna.', '我是 Anna。I 是主语，am 连接姓名。'], ['You are a student.', '你是一名学生。a student 表一名学生。'], ["I am ready. I'm ready.", '两句都表示“我准备好了”。I’m 是 I am 的缩写。']]}
       ], readingTitle: '第一次见面', reading: [['Hello. I am Anna.', '你好。我是 Anna。'], ['Hello, Anna. I am Ben.', '你好，Anna。我是 Ben。'], ['I am a student.', '我是一名学生。'], ['You are a student. I am a student, too.', '你是学生。我也是学生。']],
       practice: ['抄写 26 个大小写字母，遮住范例后再写一次。', '拼读自己的名字；将姓名中的字母乱序认读。', '用 I am… 写两句，再用 You are… 写一句。先读懂每句，再重复跟读。'],
@@ -232,11 +232,11 @@
     function refreshVoices() {
       let voices = [];
       try { voices = speech ? speech.getVoices() : []; } catch (_) { voices = []; }
-      voice = voices.find(function (v) { return /^en-GB$/i.test(v.lang); }) || voices.find(function (v) { return /^en(?:-|$)/i.test(v.lang); }) || null;
+      voice = voices.find(function (v) { return /^en[-_]US$/i.test(v.lang); }) || null;
       const available = Boolean(voice && typeof root.SpeechSynthesisUtterance === 'function');
       app.querySelectorAll('.foundation-speak').forEach(function (button) { button.disabled = !available; });
       $('foundationStop').disabled = !available;
-      $('foundationVoice').textContent = available ? '已找到英语合成声音。朗读仅作听读辅助，不评测发音。' : '当前没有可用的英语合成声音。可继续阅读与答题；在系统安装英语声音或更换支持的浏览器后重试。';
+      $('foundationVoice').textContent = available ? '已找到美式英语合成声音。朗读仅作听读辅助，不评测发音。' : '当前没有可用的美式英语（en-US）声音。可继续阅读与答题；请在系统安装美国英语声音后重试，不会自动改用英式。';
     }
     function example(line) {
       const box = node('div', 'foundation-example');
@@ -248,7 +248,7 @@
         if (!voice || !speech || typeof root.SpeechSynthesisUtterance !== 'function') return;
         try {
           speech.cancel();
-          const utterance = new root.SpeechSynthesisUtterance(line[0]); utterance.voice = voice; utterance.lang = voice.lang; utterance.rate = 0.85;
+          const utterance = new root.SpeechSynthesisUtterance(line[0]); utterance.voice = voice; utterance.lang = 'en-US'; utterance.rate = 0.85;
           utterance.onerror = function () { $('foundationVoice').textContent = '合成朗读未能播放。文字与答题仍可使用；请检查系统声音设置。'; };
           speech.speak(utterance);
         } catch (_) { $('foundationVoice').textContent = '合成朗读不可用，文字与答题仍可使用。'; }

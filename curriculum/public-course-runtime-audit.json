@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "scope": "Native Node core+ordinary daily-load, empty isolated synthetic storage; not a live browser/HTTP acceptance or learner performance result",
+  "planHash": "83cb45a545cceda24d194c3362b929c0b271ed88562e9a9ea245eeb039fc811d",
+  "baseDayCount": 365,
+  "materialCount": 1823,
+  "blueprintReadingListeningAssignments": 75,
+  "blueprintOwnerDays": 58,
+  "currentlyAdmittedAssignments": 1,
+  "pendingProfileAdmission": 74,
+  "allAssignmentsAccountedFor": 75,
+  "day1Unchanged": true,
+  "baseDaysUnchanged": true,
+  "engineCalls": {
+    "validations": 1,
+    "replans": 0
+  },
+  "samples": {
+    "all365GetDayCold": {
+      "milliseconds": 257.127
+    },
+    "all365GetDayWarm": {
+      "milliseconds": 39.813
+    },
+    "homepageQueueBuildWithWarmStore": {
+      "milliseconds": 232.519
+    },
+    "homepageQueueBuildWarm": {
+      "milliseconds": 12.232
+    },
+    "homepageQueueBuildColdStore": {
+      "milliseconds": 4.861
+    }
+  },
+  "homepage": {
+    "nextKind": "material",
+    "nextMaterialId": "w01-read-1-vocabulary",
+    "entries": 11,
+    "publicDiscoveryRemoved": true
+  },
+  "integration": {
+    "vocabularyGrammar": "pending-real-activities",
+    "reviews": "pending-real-submissions",
+    "masteryCredit": 0
+  },
+  "sources": {
+    "adaptive-plan.js": "1bcc13da2c4eec656c1a111b9b7363b2eb5c99ac304e764f1e1a021e59d7dc99",
+    "course-player.js": "b3bbc14d4c08f1ca34a98060e5d146e651c4fc4a2a88758ee040d4e68c0d312f",
+    "today-hub.js": "ea4820c43c566c513b3b32412d378a46f061a73a693995a1c5784ba1dd8edbe9",
+    "daily-learning-load.js": "d1ed62eabe7a0a88049c039a5d7a1bc5d3932148983d5cc482951ff6997bd192",
+    "daily-plan-app.js": "f3f07aac3f2fdc23b2affceca98bba8a70a281bda474ab55fbfe5aaa7603f706",
+    "public-material-practice.js": "15c986541d7ba407a28c167f75dfbcb3dfc19e7bc504e9fbf11c0f407ee16cc0",
+    "public-course-planner.js": "5e1826e6560b9dd404f414f95e6d5d7332a7a784e82aebdd5a2aa91da9e7e07d",
+    "public-course-worker.js": "aa4f03917fdd03fb7591e75c31ba87c69d146695f22f6d532f618828ea213000",
+    "curriculum-data.js": "ad3950b72db6fed18aa44988d7793fd274581fd2d662f2e58afc708c0a4265a5"
+  },
+  "vm": {
+    "scope": "Isolated VM classic scripts with no Node require, injected TextEncoder and synthetic empty storage; not a native browser benchmark",
+    "planHash": "83cb45a545cceda24d194c3362b929c0b271ed88562e9a9ea245eeb039fc811d",
+    "calls": {
+      "validations": 1,
+      "replans": 0
+    },
+    "samples": {
+      "all365GetDayCold": 1008.633,
+      "all365GetDayWarm": 93.278,
+      "homepageQueueBuildWithWarmStore": 13.392,
+      "homepageQueueBuildWarm": 7.932,
+      "homepageQueueBuildColdStore": 8.448
+    },
+    "currentlyAdmittedAssignments": 1,
+    "pendingProfileAdmission": 74,
+    "assetEvaluationMilliseconds": 227.315
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "id": "expand-w25-read-2",
+  "week": 25,
+  "skill": "reading",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "reading",
+  "estimatedMinutes": 35,
+  "minWords": 400,
+  "maxWords": 700,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "环境话题与学术阅读定位 · Independent new scenario: a lecturer explaining an infrastructure trade-off",
+  "grammarFocus": "被动语态；因果表达；分词作定语的基础辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "title": "The Bridge, the Budget, and the Bus Lane",
+  "instructions": "阅读一篇关于城市交通基础设施取舍的模拟教学材料（非官方雅思试题，非真实研究）。先通读全文，理解大意；再完成10道阅读题（单选、填空、匹配、判断）。填空题答案必须来自原文，且不超过字数限制。之后学习语法：被动语态、因果表达、分词作定语的基础辨认。语法部分有8道独立新句练习。最后完成口语和写作迁移任务。所有题目和选项均为英文，解释为中文。",
+  "passage": "A city council in the town of Riverton met on Tuesday to discuss a major transport problem. The old North Bridge, which carries about 20,000 vehicles every day, is narrow and in poor condition. Engineers say it must be repaired or replaced within five years. The council has two main options, and each one has serious costs and benefits. This is a difficult trade-off between cost, time, and the environment.\n\nOption A is to repair the existing bridge. This would cost about £8 million and take 18 months. During the work, the bridge would be closed to cars, and traffic would be sent through the town centre. Local shop owners are worried because customers might avoid the area. However, the repair would keep the bridge in its current location, so bus routes would not change. The council's transport officer, Maria Chen, said, \"If we repair the bridge, we can keep the bus lane open. That means people who do not drive can still travel easily.\" Repairing the bridge would also mean less disruption to the existing road infrastructure, because no new roads would need to be built.\n\nOption B is to build a new bridge 500 metres downstream. This would cost £22 million and take three years. The new bridge would have four lanes, a separate bus lane, and a wide path for bicycles and pedestrians. Because it would be built away from the town centre, traffic would not pass through local streets. But the new bridge would require a new road, and some green space would be lost. A local environmental group, Green Riverton, has opposed the plan. Its chair, David Okafor, argued, \"The new road would cut through a park that is used by families every weekend. We should not destroy green space for cars.\" The group believes that building new infrastructure for cars goes against the town's environmental goals.\n\nThe council also considered a third idea: a temporary ferry service during the repair work. This was rejected because it would cost £3 million and carry only 500 people per day. The council will vote next month. Maria Chen added, \"We need to think about the long term. A repaired bridge is cheaper now, but a new bridge may serve the town better in 30 years.\" The decision is not easy, and both sides have strong arguments. Some residents support the repair because it is cheaper and faster, while others oppose it because of traffic problems in the town centre. In the end, the council must weigh the short-term costs against the long-term needs of the town.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many vehicles use the North Bridge every day?",
+      "options": [
+        "About 2,000",
+        "About 20,000",
+        "About 500",
+        "About 8,000"
+      ],
+      "answers": [
+        "About 20,000"
+      ],
+      "explanation": "原文第一段明确说“carries about 20,000 vehicles every day”。",
+      "evidence": "The old North Bridge, which carries about 20,000 vehicles every day, is narrow and in poor condition."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the cost of repairing the existing bridge?",
+      "options": [
+        "£3 million",
+        "£8 million",
+        "£22 million",
+        "£500,000"
+      ],
+      "answers": [
+        "£8 million"
+      ],
+      "explanation": "原文Option A部分说“This would cost about £8 million”。",
+      "evidence": "Option A is to repair the existing bridge. This would cost about £8 million and take 18 months."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why are local shop owners worried about Option A?",
+      "options": [
+        "Because the bridge will be closed to cars and customers might avoid the area.",
+        "Because the new bridge will be too expensive.",
+        "Because the bus lane will be removed.",
+        "Because the park will be destroyed."
+      ],
+      "answers": [
+        "Because the bridge will be closed to cars and customers might avoid the area."
+      ],
+      "explanation": "原文说“Local shop owners are worried because customers might avoid the area.”，原因是修桥时桥对汽车关闭。",
+      "evidence": "During the work, the bridge would be closed to cars, and traffic would be sent through the town centre. Local shop owners are worried because customers might avoid the area."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does David Okafor argue against?",
+      "options": [
+        "Repairing the old bridge",
+        "Building a new bridge and a new road through a park",
+        "Starting a ferry service",
+        "Keeping the bus lane open"
+      ],
+      "answers": [
+        "Building a new bridge and a new road through a park"
+      ],
+      "explanation": "David Okafor反对新桥方案，因为新路会穿过公园。原文说“The new road would cut through a park... We should not destroy green space for cars.”",
+      "evidence": "Its chair, David Okafor, argued, \"The new road would cut through a park that is used by families every weekend. We should not destroy green space for cars.\""
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which option would keep the bus lane open?",
+      "options": [
+        "Option A (repair the bridge)",
+        "Option B (build a new bridge)",
+        "The ferry service",
+        "None of the options"
+      ],
+      "answers": [
+        "Option A (repair the bridge)"
+      ],
+      "explanation": "Maria Chen说“If we repair the bridge, we can keep the bus lane open.” 因此是Option A。",
+      "evidence": "Maria Chen, said, \"If we repair the bridge, we can keep the bus lane open. That means people who do not drive can still travel easily.\""
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The temporary ferry service was rejected because it would cost £3 million and carry only ______ people per day.",
+      "maxWords": 1,
+      "answers": [
+        "500"
+      ],
+      "explanation": "原文说“carry only 500 people per day”。",
+      "evidence": "This was rejected because it would cost £3 million and carry only 500 people per day."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the passage: The new bridge would be built 500 metres ______.",
+      "maxWords": 1,
+      "answers": [
+        "downstream"
+      ],
+      "explanation": "原文说“build a new bridge 500 metres downstream”。",
+      "evidence": "Option B is to build a new bridge 500 metres downstream."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is the main idea of the passage?",
+      "options": [
+        "A town must choose between repairing an old bridge and building a new one, and each choice has costs.",
+        "A town has decided to build a new bridge immediately.",
+        "A ferry service is the best solution for the town.",
+        "The old bridge is safe and does not need work."
+      ],
+      "answers": [
+        "A town must choose between repairing an old bridge and building a new one, and each choice has costs."
+      ],
+      "explanation": "全文围绕两个主要方案及其代价展开，最后说“The decision is not easy, and both sides have strong arguments.”",
+      "evidence": "The council has two main options, and each one has serious costs and benefits."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The council has already voted on the bridge plan.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "原文说“The council will vote next month.”，说明尚未投票，因此是False。",
+      "evidence": "The council will vote next month."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The new bridge would include a separate bus lane.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文说“The new bridge would have four lanes, a separate bus lane, and a wide path for bicycles and pedestrians.”",
+      "evidence": "The new bridge would have four lanes, a separate bus lane, and a wide path for bicycles and pedestrians."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "infrastructure",
+      "meaning": "基础设施",
+      "example": "Repairing the bridge would also mean less disruption to the existing road infrastructure, because no new roads would need to be built."
+    },
+    {
+      "word": "trade-off",
+      "meaning": "权衡；取舍",
+      "example": "This is a difficult trade-off between cost, time, and the environment."
+    },
+    {
+      "word": "downstream",
+      "meaning": "下游地",
+      "example": "Option B is to build a new bridge 500 metres downstream."
+    },
+    {
+      "word": "pedestrians",
+      "meaning": "行人",
+      "example": "The new bridge would have four lanes, a separate bus lane, and a wide path for bicycles and pedestrians."
+    },
+    {
+      "word": "oppose",
+      "meaning": "反对",
+      "example": "Some residents support the repair because it is cheaper and faster, while others oppose it because of traffic problems in the town centre."
+    },
+    {
+      "word": "rejected",
+      "meaning": "拒绝；否决",
+      "example": "This was rejected because it would cost £3 million and carry only 500 people per day."
+    },
+    {
+      "word": "temporary",
+      "meaning": "临时的",
+      "example": "The council also considered a third idea: a temporary ferry service during the repair work."
+    },
+    {
+      "word": "arguments",
+      "meaning": "论点；理由",
+      "example": "The decision is not easy, and both sides have strong arguments."
+    }
+  ],
+  "grammar": {
+    "title": "被动语态、因果表达与分词作定语的基础辨认",
+    "explanation": "本课重点有三：1) 被动语态：当主语是动作的承受者时，用 be + 过去分词。例如“The bridge would be closed”表示桥被关闭。2) 因果表达：用 because, so, that means, therefore 等连接原因和结果。例如“Local shop owners are worried because customers might avoid the area.” 3) 分词作定语：单个分词放在名词前，或分词短语放在名词后，起形容词作用。例如“the existing bridge”（现有的桥），“people who do not drive”（不开车的人，这是定语从句，不是分词，但可对比理解）。注意区分新学形式与复习：被动语态和因果表达是新学重点；分词作定语只需基础辨认，不要求复杂分析。",
+    "example": "During the work, the bridge would be closed to cars, and traffic would be sent through the town centre.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct passive form: The new road ______ through the park last year.",
+        "options": [
+          "was built",
+          "built",
+          "is building",
+          "builds"
+        ],
+        "answers": [
+          "was built"
+        ],
+        "explanation": "主语road是build的承受者，且时间是last year，用一般过去时被动 was built。",
+        "evidence": "The new road would cut through a park that is used by families every weekend."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct passive form: The ferry service ______ by the council next month.",
+        "options": [
+          "will be reviewed",
+          "will review",
+          "reviews",
+          "is reviewing"
+        ],
+        "answers": [
+          "will be reviewed"
+        ],
+        "explanation": "ferry service是review的承受者，next month表示将来，用 will be reviewed。",
+        "evidence": "The council will vote next month."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct causal connector: The bridge is narrow. ______, it must be repaired.",
+        "options": [
+          "Therefore",
+          "Although",
+          "However",
+          "Unless"
+        ],
+        "answers": [
+          "Therefore"
+        ],
+        "explanation": "前后是因果关系：桥窄，因此必须修。Therefore表示结果。",
+        "evidence": "Engineers say it must be repaired or replaced within five years."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct causal connector: ______ the new road would destroy green space, the environmental group opposes it.",
+        "options": [
+          "Because",
+          "So",
+          "Therefore",
+          "But"
+        ],
+        "answers": [
+          "Because"
+        ],
+        "explanation": "前后是原因—结果关系，Because引导原因。",
+        "evidence": "We should not destroy green space for cars."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Identify the participle used as an adjective: The ______ bridge is cheaper to repair.",
+        "options": [
+          "existing",
+          "exist",
+          "exists",
+          "existed"
+        ],
+        "answers": [
+          "existing"
+        ],
+        "explanation": "existing是现在分词作定语，修饰bridge，表示“现有的”。",
+        "evidence": "Option A is to repair the existing bridge."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct passive form: Bus routes ______ if the bridge is repaired.",
+        "options": [
+          "will not be changed",
+          "will not change",
+          "do not change",
+          "are not changing"
+        ],
+        "answers": [
+          "will not be changed"
+        ],
+        "explanation": "bus routes是change的承受者，条件句主句用将来时被动 will not be changed。",
+        "evidence": "However, the repair would keep the bridge in its current location, so bus routes would not change."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct causal expression: The ferry was rejected ______ it could carry only 500 people per day.",
+        "options": [
+          "because",
+          "so",
+          "therefore",
+          "although"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "后半句是原因，用because引导。",
+        "evidence": "This was rejected because it would cost £3 million and carry only 500 people per day."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Identify the participle used as an adjective: The ______ cost is about £8 million.",
+        "options": [
+          "estimated",
+          "estimate",
+          "estimates",
+          "estimating"
+        ],
+        "answers": [
+          "estimated"
+        ],
+        "explanation": "estimated是过去分词作定语，表示“估计的”。",
+        "evidence": "This would cost about £8 million and take 18 months."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use bridges or public transport in your city?",
+        "What is the busiest road in your area?",
+        "Do you prefer travelling by car or by bus? Why?",
+        "Is there a park near your home?"
+      ],
+      "part2": "Describe a time when your town or city had to choose between two transport plans. You should say: what the two plans were; what the good and bad points of each plan were; who was affected by the decision; and explain which plan you think was better.",
+      "part3": [
+        "Why do some people oppose building new roads?",
+        "Should governments spend more money on public transport or on roads?",
+        "How can cities protect green space while improving transport?",
+        "Do you think temporary solutions like ferries are useful? Why or why not?"
+      ]
+    },
+    "writing": "Write a short letter (about 120–150 words) to your local council about a transport problem in your area. Describe the problem, give two possible solutions, and explain which solution you prefer and why. Use passive forms and causal expressions where possible."
+  },
+  "rubric": {
+    "taskType": "Reading and Grammar Practice (simulated educational material, not an official IELTS test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "818c8c73a06e16772ab8e7049f5ce85b858a642c081cb7e0ba7ad2c73bd55da7"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

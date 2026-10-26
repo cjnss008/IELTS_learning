@@ -1,25 +1,75 @@
 {
-  "schema": 3,
   "id": "independent-a1-listen-us",
-  "synthetic": true,
-  "provider": "Microsoft online TTS via edge-tts",
-  "authoringPackageVersion": "7.3.1",
-  "locale": "en-US",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+  "configurationHash": "2ed6ea26e261c49742560c8bee3763a5d1787083b91ff6fe9e33fa87b0b0c93c",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+    "rate": "-18%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-US-AriaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 557,
+        "text": "Hello, everyone. Welcome to Pine Pool. We open at eight on weekdays. On Sunday we open at ten. The small pool is for children, and the large pool is for adults. You need a yellow ticket for today's swimming lesson. Please give it to your teacher, Rosa. The lesson starts at eleven and lasts thirty minutes. You can leave your shoes in the box under the bench. Please bring your own towel. We sell water at the front desk, but we do not sell towels. Today the shower in room two is broken. Please use the shower in room three. Thank you, and enjoy your swim.",
+        "boundary": "paragraph",
+        "voice": "en-US-AriaNeural",
+        "textHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+        "pauseBeforeSeconds": 0
+      }
+    ]
+  },
+  "audioHash": "230c85d47b6f2bb633d084f09235c3143ab8f53c67760ab2da44589210346b7f",
   "voices": [
     "en-US-AriaNeural"
   ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "roleVoices": {
+    "narrator": "en-US-AriaNeural"
+  },
+  "durationSeconds": 51.242833,
+  "synthetic": true,
+  "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-18%",
-  "transcriptHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
-  "audioHash": "c032b2dbc2ee6521490ba3d42b0510b5f6bfe320dde31786d52bc2d1900a863c",
-  "configurationHash": "8425e9846f716ed3645acb590dd204a226ce3ef13944a5879f3a7c7a2eee2b96",
-  "durationSeconds": 52.224,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 557,
+      "boundary": "paragraph",
       "voice": "en-US-AriaNeural",
       "textHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
-      "durationSeconds": 52.224
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "2aa4adad80b9cee04b6f69e385284970a15e2ad7e6983162d85aeb287b0e46aa",
+      "groupAudioHash": "a48d3bd5a9bb7218eba74f775feb4f2a5b946063c30302519b7931aa30974e78",
+      "groupStartSeconds": 0.050958333333333335,
+      "groupEndSeconds": 51.293791666666664,
+      "wordStartSeconds": 0.110958,
+      "wordEndSeconds": 51.173791,
+      "startSeconds": 0.0,
+      "endSeconds": 51.24283333333333,
+      "durationSeconds": 51.24283333333333
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a1-listen-us.mp3"
 }

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "word": "compact",
+  "voice": "en-US-AriaNeural",
+  "locale": "en-US",
+  "rate": "-10%",
+  "configuration": {
+    "word": "compact",
+    "context": "Please compact the loose soil.",
+    "voice": "en-US-AriaNeural",
+    "locale": "en-US",
+    "rate": "-10%",
+    "format": "mp3-24000-mono-48k",
+    "method": "context-word-boundary-v1",
+    "ipa": "/kəmˈpækt/",
+    "pos": "verb"
+  },
+  "configurationHash": "c266b276f8d764a7d51ba2555a5a5a752d29e1872d172337d5242f053fe5e570",
+  "textHash": "b6b54201f23d00f5b719f532c30bc3362af2da4651d9a33cc0e94714d01c205c",
+  "audioHash": "4484af1e05bcc1c73a71e383b5bba32ed790a9821221ad87e33af88cc2a5f5b8",
+  "durationSeconds": 0.678333,
+  "synthetic": true,
+  "provider": "Microsoft online TTS via edge-tts",
+  "contextExtraction": {
+    "spokenContext": "Please compact the loose soil.",
+    "contextHash": "0d16ebf90492d8657960bd5153e11de05fc9d7b4ad59e2fa382d5001a781b191",
+    "targetWord": "compact",
+    "startSeconds": 0.44554099999999996,
+    "endSeconds": 1.123874,
+    "boundaryMethod": "Actual service WordBoundary metadata, then ffmpeg extraction; no estimated subtitle timeline",
+    "sourceAudio": "audio/vocabulary/compact-verb-us-c266b276f8-context-source.mp3",
+    "sourceAudioHash": "c2979e7e1d3dfac59231505b95839b307090bb4367f8ab50d817ca56088068dc",
+    "sourceDurationSeconds": 3.0
+  },
+  "note": "美式动词语境示范：服务实际词边界截取。不是人工音素听审或发音评分。"
+}

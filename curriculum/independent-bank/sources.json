@@ -4,7 +4,10 @@
   "content": {
     "kind": "original",
     "rights": "The original eight reading bodies, sixteen synthetic-listening scripts, all local questions/explanations, lexical contexts and chart data are project-original AI-assisted educational materials. Their scenarios and chart data are simulated; no IELTS sample task or Microsoft article is reproduced. The separate human-listening extension uses attributed historical public-domain texts/recordings with project-original questions, not project-original literary bodies.",
-    "authoringSources": ["tools/independent-bank.cjs", "tools/lexical-contexts.cjs"],
+    "authoringSources": [
+      "tools/independent-bank.cjs",
+      "tools/lexical-contexts.cjs"
+    ],
     "review": "Codex author self-review; not a human examiner review, empirical difficulty calibration or learning-outcome validation."
   },
   "references": [
@@ -12,7 +15,7 @@
       "id": "microsoft-voice-locales",
       "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
       "issuer": "Microsoft Learn",
-      "use": "Metadata check only. Standard synthetic voices: en-GB Sonia/Ryan, en-US Aria/Guy, en-AU Natasha/William, en-IN Neerja/Prabhat. Locale labels do not establish that a human speaker was recorded or that human-accent authenticity was independently audited.",
+      "use": "Current canonical original independent-listening demonstrations use recorded en-US synthetic voices with fixed role mappings. Exact voices/configuration/source spans and MP3 hashes are retained per segment metadata. Locale labels are provider metadata, not a human speaker recording or independent acoustic certification.",
       "reproduction": "No article text, voice samples or diagrams copied."
     },
     {
@@ -45,6 +48,7 @@
     "audioDecode": "curriculum/human-listening/audio-audit.json",
     "scope": "Eight different historical literary bodies read by five LibriVox volunteers, covering five explicitly self-described or source-labelled English varieties. Source files retain full original audio hashes, extraction ranges, edition/translator information, official public-domain policy and its jurisdiction caveat. No nationality inference, human auditory review, acoustic accent certification or learner difficulty calibration is claimed. Counts are built dynamically in the catalogue and audit."
   },
-  "audioBoundary": "The sixteen original independent listening tracks remain explicitly synthetic, with four official voice locales. The separate human extension is explicitly non-synthetic and retains its own identity, rights, ASR comparison and decoding reports. Existing NOAA recordings remain separate. Actual local ASR word estimates are an authoring comparison aid, not fabricated or precision course captions.",
-  "integrityBoundary": "Independent material IDs are excluded from core days, ordinary additional practice, gate forms and final reserve forms. Catalogue previews contain metadata only. Starting, assisting and submitting use the existing course-player exposure, draft, original-work and mistake interfaces. Static local assets are not a cryptographic exam vault."
+  "audioBoundary": "The sixteen current original independent-listening tracks use explicitly synthetic American voices, verified against exact transcript/configuration/MP3 hashes and current canonical US paths. The separate eight human recordings retain their original regional provenance. The placement source-version review and decoded-audio report describe their exact scopes; a listening-only decode does not claim vocabulary-model or compact verb-specific proof.",
+  "integrityBoundary": "Independent material IDs are excluded from core days, ordinary additional practice, gate forms and final reserve forms. Catalogue previews contain metadata only. Starting, assisting and submitting use the existing course-player exposure, draft, original-work and mistake interfaces. Static local assets are not a cryptographic exam vault.",
+  "placementVersionReview": "curriculum/independent-bank/placement-source-version-review.json"
 }

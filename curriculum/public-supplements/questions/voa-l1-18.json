@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-18-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-18",
+  "sourceVersion": "1",
+  "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+  "sourceContentHash": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+  "exposureGroup": "public-source:voa-l1-18",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Anna nervous at the beginning?",
+      "options": [
+        "She is reading the news for the first time.",
+        "She has missed an important interview.",
+        "She has lost a book for the show."
+      ],
+      "answers": [
+        "She is reading the news for the first time."
+      ],
+      "evidence": "Today at work I am reading the news for the first time. I am really nervous.",
+      "explanation": "开场把for the first time与nervous放在一起，说明她第一次播读新闻而紧张。对话没有说她错过采访或弄丢书。这里不要把后面的新闻故事内容误当作Anna自己遇到的工作问题。",
+      "evidenceOffsets": {
+        "start": 36,
+        "end": 112,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Today at work I am reading the news for the first time. I am really nervous.",
+          "start": 36,
+          "end": 112
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What rule does Caty give Anna for reading the news?",
+      "options": [
+        "Add a personal opinion after every story.",
+        "Read facts without displaying personal feelings.",
+        "Use an excited voice for every event."
+      ],
+      "answers": [
+        "Read facts without displaying personal feelings."
+      ],
+      "evidence": "When we read the news we are always reading facts. We never show our feelings.",
+      "explanation": "Caty用facts和feelings形成对比，要求播读事实，不展现个人情绪。always与never是本段教学情境中的明确要求，不能反过来选每篇都加个人意见或始终兴奋。题目问她给Anna的规则，不概括所有现实新闻工作。",
+      "evidenceOffsets": {
+        "start": 186,
+        "end": 264,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "When we read the news we are always reading facts. We never show our feelings.",
+          "start": 186,
+          "end": 264
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What happens to the duckling in the first story Anna reads?",
+      "options": [
+        "It wins a competition.",
+        "It returns to a zoo.",
+        "A family gives it a home."
+      ],
+      "answers": [
+        "A family gives it a home."
+      ],
+      "evidence": "But a family gives him a home.",
+      "explanation": "第一次故事说小鸭子迷路、母鸭找不到它，Anna重读时补充But a family gives him a home。所以后续事件是一个家庭收留它。比赛属于下一条新闻，动物园在这里没有出现。him在这一故事里指duckling。",
+      "evidenceOffsets": {
+        "start": 959,
+        "end": 989,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "But a family gives him a home.",
+          "start": 959,
+          "end": 989
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What achievement is reported in the second story?",
+      "options": [
+        "An older woman wins a car race.",
+        "An older woman publishes a children’s book.",
+        "An older woman opens a library."
+      ],
+      "answers": [
+        "An older woman wins a car race."
+      ],
+      "evidence": "In Indiana, a grandmother is the first 80-year-old woman to win The Race Car 500.",
+      "explanation": "第二条新闻报道一位80岁的祖母赢得赛车比赛。儿童书属于第一条新闻，图书馆资金属于第三条新闻；它们虽然都在同一对话里出现，却不是这位女性的成就。这里核对的是剧中读出的故事，不把它当现实新闻核验。",
+      "evidenceOffsets": {
+        "start": 1198,
+        "end": 1279,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "In Indiana, a grandmother is the first 80-year-old woman to win The Race Car 500.",
+          "start": 1198,
+          "end": 1279
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which service loses money to pay for the party in the third story?",
+      "options": [
+        "The city hospital.",
+        "The children’s library.",
+        "The school sports club."
+      ],
+      "answers": [
+        "The children’s library."
+      ],
+      "evidence": "They are taking the money for the party from the children’s library.",
+      "explanation": "taking the money ... from说明资金来源是children’s library。因此受资金转移影响的是儿童图书馆，不是医院或学校体育社团。party和cruise ship说明资金去向，不能把去向与原来的服务项目混淆。",
+      "evidenceOffsets": {
+        "start": 2162,
+        "end": 2230,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "They are taking the money for the party from the children’s library.",
+          "start": 2162,
+          "end": 2230
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Anna expect about the rest of her workday?",
+      "options": [
+        "It will finish unusually early.",
+        "It will take a long time.",
+        "It will continue without any more practice."
+      ],
+      "answers": [
+        "It will take a long time."
+      ],
+      "evidence": "This is going to be a very long day.",
+      "explanation": "经过反复尝试与纠正，Anna说this is going to be a very long day，表达她预计这一天会很漫长。这里不是指一天的自然时长改变，而是工作还会持续很久；没有依据说她能提前结束或无需再练习。",
+      "understanding": "context-supported-attitude",
+      "evidenceOffsets": {
+        "start": 2533,
+        "end": 2569,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "This is going to be a very long day.",
+          "start": 2533,
+          "end": 2569
+        }
+      ]
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "180eb1a2a25c66abfff82093233d3f27ca709666cebdfd1c72c4a52ca706ffc4",
+      "reviewSha256": "1eca60881c6319b57340153053953958228aa0f2deaa7b9db74b02a255611631",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

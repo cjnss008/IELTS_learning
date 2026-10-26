@@ -1,86 +1,519 @@
 {
-  "schema": 3,
   "id": "independent-b2-listen-us",
-  "synthetic": true,
-  "provider": "Microsoft online TTS via edge-tts",
-  "authoringPackageVersion": "7.3.1",
-  "locale": "en-US",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+  "configurationHash": "969d5495d4deda83a14e54d7d897d2ae3ccf6dd45685595c7fbd9cbe296ce8e0",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
+    "rate": "+0%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "researcher": "en-US-AriaNeural",
+      "ethics adviser": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 0,
+        "sourceEnd": 12
+      },
+      {
+        "label": "Ethics Adviser",
+        "role": "ethics adviser",
+        "sourceStart": 233,
+        "sourceEnd": 249
+      },
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 286,
+        "sourceEnd": 298
+      },
+      {
+        "label": "Ethics Adviser",
+        "role": "ethics adviser",
+        "sourceStart": 571,
+        "sourceEnd": 587
+      },
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 627,
+        "sourceEnd": 639
+      },
+      {
+        "label": "Ethics Adviser",
+        "role": "ethics adviser",
+        "sourceStart": 984,
+        "sourceEnd": 1000
+      },
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 1046,
+        "sourceEnd": 1058
+      },
+      {
+        "label": "Ethics Adviser",
+        "role": "ethics adviser",
+        "sourceStart": 1403,
+        "sourceEnd": 1419
+      },
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 1475,
+        "sourceEnd": 1487
+      },
+      {
+        "label": "Ethics Adviser",
+        "role": "ethics adviser",
+        "sourceStart": 1814,
+        "sourceEnd": 1830
+      },
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 1862,
+        "sourceEnd": 1874
+      },
+      {
+        "label": "Ethics Adviser",
+        "role": "ethics adviser",
+        "sourceStart": 2227,
+        "sourceEnd": 2243
+      },
+      {
+        "label": "Researcher",
+        "role": "researcher",
+        "sourceStart": 2278,
+        "sourceEnd": 2290
+      }
+    ],
+    "segments": [
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 12,
+        "sourceEnd": 232,
+        "text": "We would like to evaluate whether the library's new study area is used as intended. The building team has offered occupancy sensors for each desk. They detect whether a seat is occupied but do not record images or sound.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "6d94dad8a544456af513e3635321fff0873016234e156d65686445283b129ac5",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "ethics adviser",
+        "speaker": "Ethics Adviser",
+        "sourceStart": 249,
+        "sourceEnd": 285,
+        "text": "What question would the data answer?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "f37ec49b5ec81f756f65c7bf1d97998c290bc608b7efab796ef380d6f7bb223c",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 298,
+        "sourceEnd": 570,
+        "text": "We could calculate the proportion of available desk time that is occupied. The team initially wanted to describe that as student engagement, but we cannot tell whether a seated person is studying, resting or waiting for a friend. I have changed the term to desk occupancy.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "64e07706cb2369426893ff6afbbb48431dbe56149f7ff39ebbac806a726891e2",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "ethics adviser",
+        "speaker": "Ethics Adviser",
+        "sourceStart": 587,
+        "sourceEnd": 626,
+        "text": "Good. What about the sensors' accuracy?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "4e0c412c29b599485e6ae8237d05d30b59534bd15f9f788f98d1590a822d08d9",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 639,
+        "sourceEnd": 983,
+        "text": "We will compare a sample of sensor readings with brief manual counts. A bag left on a chair might be detected as a person, while someone standing beside a desk might not register. We need to estimate these errors before treating every signal as exact. The checking observers will count occupied seats, without recording names or screen content.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "15301cd0f5546e3dddb7b0f1e8f1ba5dee64b050158226fa3eb3720ac6740520",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "ethics adviser",
+        "speaker": "Ethics Adviser",
+        "sourceStart": 1000,
+        "sourceEnd": 1045,
+        "text": "How will you compare the old and new layouts?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "eae50edbf5f43720d3ed9c77ebe764c9f5bc92af2e93efa4a68f887a5119dff0",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 1058,
+        "sourceEnd": 1402,
+        "text": "We have records from the previous month, but that month included examinations. A direct comparison could confuse the layout effect with seasonal demand. We therefore plan to compare matching weeks next term and note any closures or changes in opening hours. That does not remove every difference, but it makes the comparison more interpretable.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "f62b0fa3833d17059fbd07d922505c90da6807a9198a9ca13d3e806badd8abf0",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "ethics adviser",
+        "speaker": "Ethics Adviser",
+        "sourceStart": 1419,
+        "sourceEnd": 1474,
+        "text": "Are you going to publish a live display of empty desks?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "90891e9c57afb6eed6f1976aed445660abfc1036e20e419ddac4991170f03661",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 1487,
+        "sourceEnd": 1813,
+        "text": "That is a separate proposal. The research dataset will be grouped into hourly summaries, with no individual desk history released publicly. Even without names, an exact sequence at one desk might reveal someone's routine when combined with other observations. We are not claiming that removing names makes every use risk-free.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "94b7688e5f8c7a79517deeabdda48ea03501789a694b7791d43a8ee45d96527f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "ethics adviser",
+        "speaker": "Ethics Adviser",
+        "sourceStart": 1830,
+        "sourceEnd": 1861,
+        "text": "Who can access the raw records?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "c590c7096d86552aaa076fc6291b8a598578c8e3f7706bd0d35cad6bba2d2cb6",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 1874,
+        "sourceEnd": 2226,
+        "text": "Only the named project analysts, for a checking period of six months. After that, the raw records will be deleted and the aggregated results retained. The retention schedule will be in the information notice. Staff should not promise immediate deletion if an equipment fault delays the process; they must document the delay and notify the data manager.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "53346bf567f5e6787315a4401f48c014489ae544aaf8463676ea7c89296925b0",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "ethics adviser",
+        "speaker": "Ethics Adviser",
+        "sourceStart": 2243,
+        "sourceEnd": 2277,
+        "text": "And how will students be informed?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "f71ac2861932ffc7da9333872f7d455419c53f754fe8960b7321b7cd3e36c514",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "researcher",
+        "speaker": "Researcher",
+        "sourceStart": 2290,
+        "sourceEnd": 2542,
+        "text": "Notices at the entrance and in the study area will explain what is collected, why and for how long. We will provide a contact for questions. A small link hidden on the library website would not be enough for people who enter without visiting that page.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "d58ff847cd9b2a0d28d5ad932fd20c23a124ca3d391e2253a8bff31c3c2b2959",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "7196d254a9fcccbe40b9fd45ea12063b7019a317e68261db10e9aeaabffa8e16",
   "voices": [
     "en-US-AriaNeural",
     "en-US-GuyNeural"
   ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "roleVoices": {
+    "researcher": "en-US-AriaNeural",
+    "ethics adviser": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 152.84,
+  "synthetic": true,
+  "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "+0%",
-  "transcriptHash": "9ca46a7f7e4db54d2cf05f0332a94655ed260d2ef3bdb13bb6a9a2b78232115f",
-  "audioHash": "71f364b9c647a2e9b5a328b5e0b5658aa70eca6b64e0ed3f120078c5b2bb03ba",
-  "configurationHash": "eb657ffcb3d9dbf27777ef6301c50931f8466cd05d7ace065adea6b77cf60bf9",
-  "durationSeconds": 157.848,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 12,
+      "sourceEnd": 232,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "6d94dad8a544456af513e3635321fff0873016234e156d65686445283b129ac5",
-      "durationSeconds": 15.144
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 14.395,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 14.275,
+      "startSeconds": 0.0,
+      "endSeconds": 14.355,
+      "durationSeconds": 14.355
     },
     {
+      "role": "ethics adviser",
+      "speaker": "Ethics Adviser",
+      "sourceStart": 249,
+      "sourceEnd": 285,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "f37ec49b5ec81f756f65c7bf1d97998c290bc608b7efab796ef380d6f7bb223c",
-      "durationSeconds": 2.784
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "c251f67245e99599d44f8a3eab3c92b6a749bd8285d59e99137efe5e164d5461",
+      "groupAudioHash": "748121c30c87a848bfd32aaf2cd658dfaa166eb6d1bb89d51a9e6377aba118b9",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 2.02,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 1.9,
+      "startSeconds": 14.805,
+      "endSeconds": 16.785,
+      "durationSeconds": 1.9800000000000004
     },
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 298,
+      "sourceEnd": 570,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "64e07706cb2369426893ff6afbbb48431dbe56149f7ff39ebbac806a726891e2",
-      "durationSeconds": 17.496
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 15.0775,
+      "groupEndSeconds": 31.7575,
+      "wordStartSeconds": 15.1375,
+      "wordEndSeconds": 31.6375,
+      "startSeconds": 17.235,
+      "endSeconds": 33.915,
+      "durationSeconds": 16.68
     },
     {
+      "role": "ethics adviser",
+      "speaker": "Ethics Adviser",
+      "sourceStart": 587,
+      "sourceEnd": 626,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "4e0c412c29b599485e6ae8237d05d30b59534bd15f9f788f98d1590a822d08d9",
-      "durationSeconds": 4.176
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "c251f67245e99599d44f8a3eab3c92b6a749bd8285d59e99137efe5e164d5461",
+      "groupAudioHash": "748121c30c87a848bfd32aaf2cd658dfaa166eb6d1bb89d51a9e6377aba118b9",
+      "groupStartSeconds": 2.7025,
+      "groupEndSeconds": 6.0825,
+      "wordStartSeconds": 2.7625,
+      "wordEndSeconds": 5.9625,
+      "startSeconds": 34.365,
+      "endSeconds": 37.745,
+      "durationSeconds": 3.3799999999999955
     },
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 639,
+      "sourceEnd": 983,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "15301cd0f5546e3dddb7b0f1e8f1ba5dee64b050158226fa3eb3720ac6740520",
-      "durationSeconds": 22.608
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 32.4525,
+      "groupEndSeconds": 54.27,
+      "wordStartSeconds": 32.5125,
+      "wordEndSeconds": 54.15,
+      "startSeconds": 38.195,
+      "endSeconds": 60.0125,
+      "durationSeconds": 21.817500000000003
     },
     {
+      "role": "ethics adviser",
+      "speaker": "Ethics Adviser",
+      "sourceStart": 1000,
+      "sourceEnd": 1045,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "eae50edbf5f43720d3ed9c77ebe764c9f5bc92af2e93efa4a68f887a5119dff0",
-      "durationSeconds": 3.12
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "c251f67245e99599d44f8a3eab3c92b6a749bd8285d59e99137efe5e164d5461",
+      "groupAudioHash": "748121c30c87a848bfd32aaf2cd658dfaa166eb6d1bb89d51a9e6377aba118b9",
+      "groupStartSeconds": 6.7775,
+      "groupEndSeconds": 9.1075,
+      "wordStartSeconds": 6.8375,
+      "wordEndSeconds": 8.9875,
+      "startSeconds": 60.4625,
+      "endSeconds": 62.7925,
+      "durationSeconds": 2.3299999999999983
     },
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 1058,
+      "sourceEnd": 1402,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "f62b0fa3833d17059fbd07d922505c90da6807a9198a9ca13d3e806badd8abf0",
-      "durationSeconds": 21.984
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 54.9525,
+      "groupEndSeconds": 76.12,
+      "wordStartSeconds": 55.0125,
+      "wordEndSeconds": 76.0,
+      "startSeconds": 63.2425,
+      "endSeconds": 84.41,
+      "durationSeconds": 21.167499999999997
     },
     {
+      "role": "ethics adviser",
+      "speaker": "Ethics Adviser",
+      "sourceStart": 1419,
+      "sourceEnd": 1474,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "90891e9c57afb6eed6f1976aed445660abfc1036e20e419ddac4991170f03661",
-      "durationSeconds": 3.768
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "c251f67245e99599d44f8a3eab3c92b6a749bd8285d59e99137efe5e164d5461",
+      "groupAudioHash": "748121c30c87a848bfd32aaf2cd658dfaa166eb6d1bb89d51a9e6377aba118b9",
+      "groupStartSeconds": 9.79,
+      "groupEndSeconds": 12.7575,
+      "wordStartSeconds": 9.85,
+      "wordEndSeconds": 12.6375,
+      "startSeconds": 84.86,
+      "endSeconds": 87.8275,
+      "durationSeconds": 2.967500000000001
     },
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 1487,
+      "sourceEnd": 1813,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "94b7688e5f8c7a79517deeabdda48ea03501789a694b7791d43a8ee45d96527f",
-      "durationSeconds": 21.864
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 76.815,
+      "groupEndSeconds": 97.87,
+      "wordStartSeconds": 76.875,
+      "wordEndSeconds": 97.75,
+      "startSeconds": 88.2775,
+      "endSeconds": 109.3325,
+      "durationSeconds": 21.054999999999993
     },
     {
+      "role": "ethics adviser",
+      "speaker": "Ethics Adviser",
+      "sourceStart": 1830,
+      "sourceEnd": 1861,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "c590c7096d86552aaa076fc6291b8a598578c8e3f7706bd0d35cad6bba2d2cb6",
-      "durationSeconds": 2.808
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "c251f67245e99599d44f8a3eab3c92b6a749bd8285d59e99137efe5e164d5461",
+      "groupAudioHash": "748121c30c87a848bfd32aaf2cd658dfaa166eb6d1bb89d51a9e6377aba118b9",
+      "groupStartSeconds": 13.4525,
+      "groupEndSeconds": 15.4575,
+      "wordStartSeconds": 13.5125,
+      "wordEndSeconds": 15.3375,
+      "startSeconds": 109.7825,
+      "endSeconds": 111.7875,
+      "durationSeconds": 2.0049999999999955
     },
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 1874,
+      "sourceEnd": 2226,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "53346bf567f5e6787315a4401f48c014489ae544aaf8463676ea7c89296925b0",
-      "durationSeconds": 23.208
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 98.565,
+      "groupEndSeconds": 120.97,
+      "wordStartSeconds": 98.625,
+      "wordEndSeconds": 120.85,
+      "startSeconds": 112.2375,
+      "endSeconds": 134.6425,
+      "durationSeconds": 22.405000000000015
     },
     {
+      "role": "ethics adviser",
+      "speaker": "Ethics Adviser",
+      "sourceStart": 2243,
+      "sourceEnd": 2277,
+      "boundary": "turn",
       "voice": "en-US-GuyNeural",
       "textHash": "f71ac2861932ffc7da9333872f7d455419c53f754fe8960b7321b7cd3e36c514",
-      "durationSeconds": 2.808
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "c251f67245e99599d44f8a3eab3c92b6a749bd8285d59e99137efe5e164d5461",
+      "groupAudioHash": "748121c30c87a848bfd32aaf2cd658dfaa166eb6d1bb89d51a9e6377aba118b9",
+      "groupStartSeconds": 16.14,
+      "groupEndSeconds": 18.1575,
+      "wordStartSeconds": 16.2,
+      "wordEndSeconds": 18.0375,
+      "startSeconds": 135.0925,
+      "endSeconds": 137.11,
+      "durationSeconds": 2.0175000000000125
     },
     {
+      "role": "researcher",
+      "speaker": "Researcher",
+      "sourceStart": 2290,
+      "sourceEnd": 2542,
+      "boundary": "turn",
       "voice": "en-US-AriaNeural",
       "textHash": "d58ff847cd9b2a0d28d5ad932fd20c23a124ca3d391e2253a8bff31c3c2b2959",
-      "durationSeconds": 16.08
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "31e3df4fe2d89c292146992a40e9214acf5a8d7ca5ee11c3e4f909cabe7bdf5e",
+      "groupAudioHash": "351acc551efdd955e30a514223824e7f2a1ef07bab67250e400953f8cfae0d5b",
+      "groupStartSeconds": 121.665,
+      "groupEndSeconds": 136.945,
+      "wordStartSeconds": 121.725,
+      "wordEndSeconds": 136.825,
+      "startSeconds": 137.56,
+      "endSeconds": 152.84,
+      "durationSeconds": 15.280000000000001
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-b2-listen-us.mp3"
 }

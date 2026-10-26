@@ -12,18 +12,18 @@
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/learning-records.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/daily-plan-content.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/curriculum-data.js" defer></script>
-  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/speaking-library.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/assessment-core.js" defer></script>
-  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/curriculum-legacy-plans.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/adaptive-plan.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/placement-core.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/year-planner.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/year-planner-ui.js" defer></script>
+  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/speaking-library.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/assessment-core.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/public-context-practice-data.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/public-context-practice.js" defer></script>
+  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/curriculum-legacy-plans.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/course-expansion.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/public-course-planner.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/public-course-worker.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/public-material-selector.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/public-material-practice.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/adaptive-plan.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/placement-core.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/year-planner.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/year-planner-ui.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/daily-plan-core.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/daily-plan-state.js" defer></script>
-  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/word-dictionary.js" defer></script>
+  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/american-pronunciations.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/word-dictionary.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/vocabulary-practice.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/passage-format.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/oral-practice.js" defer></script>
-  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/curriculum-coverage.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/course-player.js" defer></script>
+  <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/curriculum-coverage.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/legacy-material-compatibility.js" defer></script><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/course-player.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/today-hub.js" defer></script>
   <script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/daily-plan-app.js" defer></script>
-<script src="assets/user-data-bootstrap.js" defer></script><link rel="stylesheet" href="assets/study-timer.css"></head>
+<script src="assets/user-data-bootstrap.js" defer></script><link rel="stylesheet" href="assets/study-timer.css"><link rel="stylesheet" href="assets/selection-ai.css"><script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/selection-ai.js" defer></script></head>
 <body>
   <header class="site-header">
     <a class="brand" href="今日学习.html"><span class="brand-icon">52</span><span>IELTS LEARNING<small>每天有计划，每周看进步</small></span></a>
@@ -59,6 +59,7 @@
       <section class="day-panel" aria-labelledby="dayTitle">
         <div class="day-heading"><div><p id="dayEyebrow" class="eyebrow"></p><h2 id="dayTitle"></h2><p id="daySubtitle" class="muted"></p></div><div class="day-budget"><strong id="dayMinutes"></strong><span>分钟 · 总可用预算</span></div></div>
         <div id="dayNotice" class="notice" hidden></div>
+        <div id="publicCoursePlanStatus" class="notice" role="status" aria-live="polite" hidden></div>
         <div id="boostNotice" class="notice" hidden></div>
         <div class="progress-row"><span id="taskProgress"></span><span id="saveStatus" class="small" role="status"></span></div>
         <progress id="dayProgress" value="0" max="7" aria-label="每日任务进度"></progress>

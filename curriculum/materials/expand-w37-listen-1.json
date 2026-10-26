@@ -1,0 +1,398 @@
+{
+  "id": "expand-w37-listen-1",
+  "week": 37,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时听力：日常对话与准确记录 · Independent new scenario: the strengths and limits of predictive models",
+  "grammarFocus": "名词单复数、拼写、数字和大小写；问句结构复查。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Predictive Models in a City Bike-Share Program",
+  "instructions": "本材料为模拟练习，不是官方雅思考试，也不对应任何官方分数。请先听/读英文材料，再完成10道听力理解题；随后学习语法讲解并完成8道语法题；最后进行口语和写作迁移练习。听力部分建议先听一遍抓主旨，再听第二遍记录细节。所有题目选项均为完整英文表达，填空答案必须与原文完全一致。",
+  "transcript": "Maya: Hi, I'm Maya from the city transport office. Thanks for coming, Leo.\nLeo: No problem. I read your email about the bike-share data. You want me to look at the prediction model?\nMaya: Yes. Last month we used a model to predict how many bikes people would take from each station. It worked well on weekdays, but on weekends it was often wrong.\nLeo: How wrong? Do you have numbers?\nMaya: On a normal Tuesday, the model predicted 420 rides, and the real number was 415. That's very close. But on a sunny Saturday, it predicted 300 rides, and we actually had 610.\nLeo: So the model missed the weekend leisure trips. Did it use weather data?\nMaya: It used temperature and rain, but not sunshine hours or school holidays. Also, it only looked at the past six months.\nLeo: Six months is short. You need at least two years to see seasonal patterns. And the model probably learned mostly from commuter behaviour.\nMaya: That's what I thought. The model is good at regular patterns, but it fails when people change their habits, like on holidays or during festivals.\nLeo: Right. A prediction model is not a magic ball. It finds patterns in old data. If the future is different from the past, the model will be wrong.\nMaya: So what should we do? We can't collect two years of data quickly.\nLeo: You can add simple rules. For example, if the forecast says sunny and over 25 degrees, add 30 percent more bikes to popular parks. And check the model every week.\nMaya: That sounds practical. But our manager wants one perfect model that works every day.\nLeo: No model is perfect. Even the best model has limits. The important thing is to know when to trust it and when to use human judgement.\nMaya: OK. Can you write a short report for our manager? Maybe five pages?\nLeo: Five pages is fine. I'll include the weekday success and the weekend failure. I'll also suggest the simple rules.\nMaya: Great. One more thing: the model predicted 50 bikes for a small station near the university, but we found only 12 bikes there. The station was almost empty.\nLeo: That's a supply problem, not a prediction problem. If there are no bikes, people can't take them. The model should also check how many bikes are available.\nMaya: Good point. I'll add that to the report. So the model needs bike availability data too.\nLeo: Exactly. And remember: a model is a tool, not a boss. People still need to think.\nMaya: Thanks, Leo. I'll send you the data files today.\nLeo: Perfect. I'll start tomorrow morning.\n\n[Expanded section:]\nMaya: Before we finish, I want to make sure I understand the bigger picture. Why do you think the model failed so badly on that sunny Saturday?\nLeo: There are a few reasons. First, the model was trained mostly on weekday commuter trips, where people use bikes to get to work or school at regular times. On weekends, people ride for leisure, and their behaviour depends on things like sunshine, events, and holidays. The model didn't have those signals.\nMaya: So it's not just about adding more data?\nLeo: More data helps, but you also need the right data. If you collect two years of data but still ignore sunshine hours and school holidays, the model will still miss weekend peaks. You need to include those variables and maybe use a different model for weekends.\nMaya: That makes sense. What about the small station near the university? Could that also be a data issue?\nLeo: Partly. The model predicted 50 bikes, but only 12 were available. That's a supply problem. The model should check real-time bike availability before making predictions. Otherwise, it's predicting demand that can't be met.\nMaya: So we need to combine prediction with real-time data.\nLeo: Exactly. And that's why human judgement is still important. A model can tell you what might happen, but a person needs to check if the conditions are right.\nMaya: I'll make sure the report covers these points. Thanks for explaining.\nLeo: You're welcome. I'll get started on the report tomorrow.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What did the model predict for a normal Tuesday?",
+      "options": [
+        "420 rides",
+        "415 rides",
+        "300 rides",
+        "610 rides"
+      ],
+      "answers": [
+        "420 rides"
+      ],
+      "explanation": "Maya 说 “On a normal Tuesday, the model predicted 420 rides”，因此预测值是420。",
+      "evidence": "On a normal Tuesday, the model predicted 420 rides, and the real number was 415."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "On the sunny Saturday, how many rides actually happened?",
+      "options": [
+        "300",
+        "610",
+        "420",
+        "415"
+      ],
+      "answers": [
+        "610"
+      ],
+      "explanation": "Maya 说 “we actually had 610”，实际发生的是610次骑行。",
+      "evidence": "But on a sunny Saturday, it predicted 300 rides, and we actually had 610."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which data did the model NOT use?",
+      "options": [
+        "temperature",
+        "rain",
+        "sunshine hours",
+        "past rides"
+      ],
+      "answers": [
+        "sunshine hours"
+      ],
+      "explanation": "Maya 明确说模型用了 temperature 和 rain，但没有用 sunshine hours 或 school holidays。",
+      "evidence": "It used temperature and rain, but not sunshine hours or school holidays."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How long a history does Leo say is needed to see seasonal patterns?",
+      "options": [
+        "six months",
+        "one year",
+        "at least two years",
+        "five years"
+      ],
+      "answers": [
+        "at least two years"
+      ],
+      "explanation": "Leo 说 “You need at least two years to see seasonal patterns”，因此至少需要两年数据。",
+      "evidence": "Six months is short. You need at least two years to see seasonal patterns."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What simple rule does Leo suggest for sunny days over 25 degrees?",
+      "options": [
+        "add 30 percent more bikes to popular parks",
+        "close small stations",
+        "use only weekday data",
+        "collect two more years of data"
+      ],
+      "answers": [
+        "add 30 percent more bikes to popular parks"
+      ],
+      "explanation": "Leo 建议 “if the forecast says sunny and over 25 degrees, add 30 percent more bikes to popular parks”。",
+      "evidence": "For example, if the forecast says sunny and over 25 degrees, add 30 percent more bikes to popular parks."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Leo say about perfect models?",
+      "options": [
+        "Every model is perfect.",
+        "No model is perfect.",
+        "Only weekend models are perfect.",
+        "The manager's model is perfect."
+      ],
+      "answers": [
+        "No model is perfect."
+      ],
+      "explanation": "Leo 直接说 “No model is perfect.”，即没有完美的模型。",
+      "evidence": "No model is perfect. Even the best model has limits."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Why did the small station near the university have only 12 bikes?",
+      "options": [
+        "The model predicted too many bikes.",
+        "There were no bikes available.",
+        "The weather was rainy.",
+        "Students did not want bikes."
+      ],
+      "answers": [
+        "There were no bikes available."
+      ],
+      "explanation": "Leo 解释说 “If there are no bikes, people can't take them.”，即车站没有可用的自行车。",
+      "evidence": "That's a supply problem, not a prediction problem. If there are no bikes, people can't take them."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What will Maya send to Leo today?",
+      "options": [
+        "a five-page report",
+        "the data files",
+        "a new prediction model",
+        "a list of sunny days"
+      ],
+      "answers": [
+        "the data files"
+      ],
+      "explanation": "Maya 最后说 “I'll send you the data files today.”，因此她今天会发送数据文件。",
+      "evidence": "Thanks, Leo. I'll send you the data files today."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the transcript: The model predicted 50 bikes for a small station near the ______.",
+      "maxWords": 1,
+      "answers": [
+        "university"
+      ],
+      "explanation": "原文说 “a small station near the university”，因此填 university。",
+      "evidence": "the model predicted 50 bikes for a small station near the university, but we found only 12 bikes there."
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the transcript: Leo says a model is a tool, not a ______.",
+      "maxWords": 1,
+      "answers": [
+        "boss"
+      ],
+      "explanation": "Leo 说 “a model is a tool, not a boss”，因此填 boss。",
+      "evidence": "And remember: a model is a tool, not a boss."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "predict",
+      "meaning": "预测",
+      "example": "Last month we used a model to predict how many bikes people would take from each station."
+    },
+    {
+      "word": "seasonal",
+      "meaning": "季节性的",
+      "example": "You need at least two years to see seasonal patterns."
+    },
+    {
+      "word": "commuter",
+      "meaning": "通勤者",
+      "example": "And the model probably learned mostly from commuter behaviour."
+    },
+    {
+      "word": "judgement",
+      "meaning": "判断",
+      "example": "The important thing is to know when to trust it and when to use human judgement."
+    },
+    {
+      "word": "availability",
+      "meaning": "可用性",
+      "example": "So the model needs bike availability data too."
+    },
+    {
+      "word": "forecast",
+      "meaning": "预报",
+      "example": "For example, if the forecast says sunny and over 25 degrees, add 30 percent more bikes to popular parks."
+    },
+    {
+      "word": "patterns",
+      "meaning": "模式，规律",
+      "example": "It finds patterns in old data."
+    },
+    {
+      "word": "supply",
+      "meaning": "供应",
+      "example": "That's a supply problem, not a prediction problem."
+    }
+  ],
+  "grammar": {
+    "title": "名词单复数、拼写、数字和大小写；问句结构复查",
+    "explanation": "英语中可数名词有单数和复数形式。单数前常用 a/an 或 the；复数通常加 -s 或 -es，如 bike → bikes, station → stations。注意不规则复数，如 child → children, man → men。拼写要准确，例如 university 以辅音音素开头，用 a university，不用 an university。数字要写清楚：420 读作 four hundred and twenty；25 读作 twenty-five。句首字母和专有名词（如 Tuesday, Saturday, Leo）要大写。问句结构：一般疑问句把 be 动词或助动词提前，如 “Did it use weather data?”；特殊疑问句用 “疑问词 + 助动词 + 主语 + 动词”，如 “How wrong?” 或 “What should we do?”。复查问句时注意助动词与主语一致，动词用原形。",
+    "example": "It used temperature and rain, but not sunshine hours or school holidays.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "There are three bike at the station.",
+          "There are three bikes at the station.",
+          "There is three bikes at the station.",
+          "There are three bikes at station."
+        ],
+        "answers": [
+          "There are three bikes at the station."
+        ],
+        "explanation": "three 后接可数名词复数 bikes；station 前需要 the。",
+        "evidence": "There are three bikes at the station."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question.",
+        "options": [
+          "Did it used weather data?",
+          "Did it use weather data?",
+          "Does it used weather data?",
+          "Did it uses weather data?"
+        ],
+        "answers": [
+          "Did it use weather data?"
+        ],
+        "explanation": "助动词 Did 后动词用原形 use，不能用 used 或 uses。",
+        "evidence": "Did it use weather data?"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct spelling and article.",
+        "options": [
+          "a university",
+          "an university",
+          "a univercity",
+          "an univercity"
+        ],
+        "answers": [
+          "a university"
+        ],
+        "explanation": "university 拼写为 u-n-i-v-e-r-s-i-t-y，且以辅音音素 /j/ 开头，用 a。",
+        "evidence": "a university"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence with numbers.",
+        "options": [
+          "The model predicted four hundred and twenty rides.",
+          "The model predicted four hundreds and twenty rides.",
+          "The model predicted four hundred twenty rides.",
+          "The model predicted four hundred and twenty ride."
+        ],
+        "answers": [
+          "The model predicted four hundred and twenty rides."
+        ],
+        "explanation": "420 读作 four hundred and twenty；ride 是可数名词，需用复数 rides。",
+        "evidence": "The model predicted four hundred and twenty rides."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct capitalization.",
+        "options": [
+          "on tuesday, maya checked the data.",
+          "On Tuesday, Maya checked the data.",
+          "On tuesday, Maya checked the data.",
+          "On Tuesday, maya checked the data."
+        ],
+        "answers": [
+          "On Tuesday, Maya checked the data."
+        ],
+        "explanation": "句首字母 On 大写；星期 Tuesday 和专有名词 Maya 首字母大写。",
+        "evidence": "On Tuesday, Maya checked the data."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct question structure.",
+        "options": [
+          "What we should do?",
+          "What should we do?",
+          "What should we doing?",
+          "What do we should do?"
+        ],
+        "answers": [
+          "What should we do?"
+        ],
+        "explanation": "特殊疑问句结构为疑问词 + 助动词 should + 主语 we + 动词原形 do。",
+        "evidence": "What should we do?"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct plural form.",
+        "options": [
+          "childs",
+          "children",
+          "childes",
+          "childrens"
+        ],
+        "answers": [
+          "children"
+        ],
+        "explanation": "child 的复数是不规则形式 children，不加 -s。",
+        "evidence": "children"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The manager want one perfect model.",
+          "The manager wants one perfect model.",
+          "The manager wanting one perfect model.",
+          "The manager wants one perfect models."
+        ],
+        "answers": [
+          "The manager wants one perfect model."
+        ],
+        "explanation": "主语 The manager 是第三人称单数，动词用 wants；one 后接单数 model。",
+        "evidence": "The manager wants one perfect model."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use a bike in your city?",
+        "What kind of weather makes you stay at home?",
+        "Do you trust weather forecasts? Why or why not?",
+        "How do you plan your trips on weekends?"
+      ],
+      "part2": "Describe a time when a plan or prediction was wrong. You should say: what the plan or prediction was; who made it; what actually happened; and explain why it was wrong.",
+      "part3": [
+        "Why do some predictions fail in daily life?",
+        "Should companies rely on computer models? Why?",
+        "How can people check if a prediction is useful?",
+        "What simple rules help you make decisions when data is missing?"
+      ]
+    },
+    "writing": "Write a short report (120–150 words) to a manager about a prediction model for a small shop. Describe one success, one failure, and suggest two simple rules to improve the model."
+  },
+  "rubric": {
+    "taskType": "listening comprehension with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b796586c31ed728cfc3c32ba785bca7bd54acebfbc32be1cbdbe93a6c37db991"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

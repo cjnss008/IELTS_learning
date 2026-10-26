@@ -235,7 +235,7 @@
         "options": [
           "She stayed home because of she was sick.",
           "She stayed home because she was sick.",
-          "She stayed home because of she was sick.",
+          "She stayed home because of was sick.",
           "She stayed home because she was sickness."
         ],
         "answers": [
@@ -304,9 +304,20 @@
     "kind": "original",
     "rights": "项目原创，AI辅助编写；模拟场景与数据",
     "verification": "reviewed",
-    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定；v69明确猫的指代上下文或移除重复干扰项，原正确答案值保留。",
     "model": "deepseek-flash",
-    "contentHash": "dd641fe96001c123148e1a1b43ce05b4aa382c03bd5dc3c062a7f1e5f4333c26"
+    "contentHash": "7bb2865197b46c5342cb9e506c30752d2ecd30ab76abbc4e58bc1912a7cae954",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
   },
   "audio": "",
   "audioVoice": "",

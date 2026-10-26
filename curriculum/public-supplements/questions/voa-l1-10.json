@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-10-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-10",
+  "sourceVersion": "1",
+  "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+  "sourceContentHash": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+  "exposureGroup": "public-source:voa-l1-10",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Ashley coming to see Anna?",
+      "options": [
+        "To catch a bus with Anna.",
+        "To work at the department store.",
+        "To see Anna’s new apartment."
+      ],
+      "answers": [
+        "To see Anna’s new apartment."
+      ],
+      "evidence": "Today, my friend Ashley, is coming over. I am showing her my new apartment!",
+      "evidenceOffsets": {
+        "start": 10,
+        "end": 85,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna开头说朋友来访，自己要给她看新公寓，所以是参观公寓。百货商店和公交站是后面用来指路的地标，不是Ashley来工作的地方或两人乘车的计划。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Today, my friend Ashley, is coming over. I am showing her my new apartment!",
+          "start": 10,
+          "end": 85
+        }
+      ],
+      "understanding": "purpose"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What should Ashley do after she exits the Metro?",
+      "options": [
+        "Turn right.",
+        "Turn left.",
+        "Go straight ahead."
+      ],
+      "answers": [
+        "Turn right."
+      ],
+      "evidence": "Exit the Metro and turn right.",
+      "evidenceOffsets": {
+        "start": 320,
+        "end": 350,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna给出的第一步是离开Metro后右转。左转是在后面的公交站进行，直走又是再下一步；三项都是对话中的方向动作，必须按顺序对应。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Exit the Metro and turn right.",
+          "start": 320,
+          "end": 350
+        }
+      ],
+      "understanding": "sequence"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where should Ashley turn left?",
+      "options": [
+        "At the department store.",
+        "At the coffee shop.",
+        "At the bus station."
+      ],
+      "answers": [
+        "At the bus station."
+      ],
+      "evidence": "Then at the bus station turn left.",
+      "evidenceOffsets": {
+        "start": 351,
+        "end": 385,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原话把左转地点明确限定为bus station。咖啡店是Anna之后提供的附近地标，百货商店则用于说明公寓在它对面，都不是这一步左转的位置。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Then at the bus station turn left.",
+          "start": 351,
+          "end": 385
+        }
+      ],
+      "understanding": "location"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why does Ashley ask which coffee shop Anna means?",
+      "options": [
+        "She is already inside Anna’s apartment.",
+        "There are three coffee shops.",
+        "The coffee shop is closed."
+      ],
+      "answers": [
+        "There are three coffee shops."
+      ],
+      "evidence": "Anna, Which coffee shop? There are three coffee shops.",
+      "evidenceOffsets": {
+        "start": 591,
+        "end": 645,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Ashley紧接着说明There are three coffee shops，因此只说“靠近一家咖啡店”还不能唯一定位。原文没有说店关门；她仍在询问位置，也没有说已经进入公寓。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Anna, Which coffee shop? There are three coffee shops.",
+          "start": 591,
+          "end": 645
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What kind of store is opposite Anna’s apartment?",
+      "answers": [
+        "department store"
+      ],
+      "maxWords": 2,
+      "evidence": "Okay, my apartment is across from a big department store.",
+      "evidenceOffsets": {
+        "start": 653,
+        "end": 710,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "across from表示在对面，Anna说公寓对面是一家big department store，按两词上限填department store。coffee shop只是附近的另一种地标；bus station是指路过程中左转的位置。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Okay, my apartment is across from a big department store.",
+          "start": 653,
+          "end": 710
+        }
+      ],
+      "understanding": "location"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "ae64cfb282a20fe108f9b0cab09f0c4487f70e70184755cf1e9dff2e7ac6d346",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

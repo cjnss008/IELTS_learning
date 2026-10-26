@@ -1,0 +1,350 @@
+{
+  "id": "expand-w02-listen-1",
+  "week": 2,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "dialogue",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "身边的人与物 · Independent new scenario: a shared flat and the people who live there",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The New Flatmate",
+  "instructions": "这是为A1学习者设计的原创听力练习，场景为合租公寓。请先听录音（由不同美音朗读），注意he/she/it、is、a/an、this/that的用法。然后完成8道听力题。之后学习语法规则并做8道语法题。所有题目均为英文，解释为中文。本材料为模拟教学材料，非官方雅思考试。",
+  "transcript": "Mia: Hi, Ben. This is our flat. That is the kitchen.\nBen: Hi, Mia. It is small but nice. Who is she?\nMia: She is Lucy. She is a teacher. She is not a student.\nBen: And who is he?\nMia: He is Tom. He is a cook. He is not a doctor.\nBen: Is that your room?\nMia: No, that is Tom's room. This is my room. It is big.\nBen: Is Lucy a nurse?\nMia: No, she is not a nurse. She is a teacher.\nBen: OK. Is Tom a teacher?\nMia: No, he is a cook. He is not a teacher.\nBen: Thanks, Mia.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is Lucy?",
+      "options": [
+        "a teacher",
+        "a nurse",
+        "a cook"
+      ],
+      "answers": [
+        "a teacher"
+      ],
+      "explanation": "Mia说“She is a teacher.”，所以Lucy是老师。",
+      "evidence": "She is a teacher."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Who is Tom?",
+      "options": [
+        "a cook",
+        "a doctor",
+        "a teacher"
+      ],
+      "answers": [
+        "a cook"
+      ],
+      "explanation": "Mia说“He is a cook.”，所以Tom是厨师。",
+      "evidence": "He is a cook."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Is Lucy a nurse?",
+      "options": [
+        "No, she is not.",
+        "Yes, she is."
+      ],
+      "answers": [
+        "No, she is not."
+      ],
+      "explanation": "Mia明确说“No, she is not a nurse.”，所以Lucy不是护士。",
+      "evidence": "No, she is not a nurse."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Is Tom a teacher?",
+      "options": [
+        "No, he is not.",
+        "Yes, he is."
+      ],
+      "answers": [
+        "No, he is not."
+      ],
+      "explanation": "Mia说“No, he is a cook. He is not a teacher.”，所以Tom不是老师。",
+      "evidence": "He is not a teacher."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Whose room is big?",
+      "options": [
+        "Mia's room",
+        "Tom's room",
+        "Lucy's room"
+      ],
+      "answers": [
+        "Mia's room"
+      ],
+      "explanation": "Mia说“This is my room. It is big.”，所以她的房间大。",
+      "evidence": "This is my room. It is big."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Complete the sentence: That is the ______.",
+      "answers": [
+        "kitchen"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说“That is the kitchen.”，所以填kitchen。",
+      "evidence": "That is the kitchen."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Complete the sentence: She is a ______.",
+      "answers": [
+        "teacher"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说“She is a teacher.”，所以填teacher。",
+      "evidence": "She is a teacher."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is Tom's job?",
+      "options": [
+        "a cook",
+        "a teacher",
+        "a nurse"
+      ],
+      "answers": [
+        "a cook"
+      ],
+      "explanation": "Mia说“He is a cook.”，所以Tom是厨师。",
+      "evidence": "He is a cook."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "flat",
+      "meaning": "公寓",
+      "example": "This is our flat."
+    },
+    {
+      "word": "kitchen",
+      "meaning": "厨房",
+      "example": "That is the kitchen."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is a teacher."
+    },
+    {
+      "word": "cook",
+      "meaning": "厨师",
+      "example": "He is a cook."
+    },
+    {
+      "word": "doctor",
+      "meaning": "医生",
+      "example": "He is not a doctor."
+    },
+    {
+      "word": "nurse",
+      "meaning": "护士",
+      "example": "No, she is not a nurse."
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "This is my room."
+    },
+    {
+      "word": "big",
+      "meaning": "大的",
+      "example": "It is big."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；单数名词；this / that",
+    "explanation": "在英语中，我们用he指代男性，she指代女性，it指代事物或动物。be动词is用于第三人称单数（he/she/it）。不定冠词a用于辅音音素开头的单数名词前，an用于元音音素开头的单数名词前。this指近处的人或物，that指远处的人或物。例如：He is a cook. She is a teacher. It is a kitchen. This is my room. That is Tom's room.",
+    "example": "She is a teacher. He is a cook. It is big. This is my room. That is the kitchen.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "______ is a doctor. (Tom)",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "He"
+        ],
+        "explanation": "Tom是男性，用he指代。",
+        "evidence": "He is a cook."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "______ is a nurse. (Lucy)",
+        "options": [
+          "She",
+          "He",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "Lucy是女性，用she指代。",
+        "evidence": "She is a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "______ is a book. (this thing near you)",
+        "options": [
+          "It",
+          "He",
+          "She"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "指代事物用it。",
+        "evidence": "It is big."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "She ______ a teacher.",
+        "options": [
+          "is",
+          "are",
+          "am"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "主语she是第三人称单数，be动词用is。",
+        "evidence": "She is a teacher."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "He is ______ cook.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "a"
+        ],
+        "explanation": "cook以辅音音素开头，用a。这里指一个非特定的厨师。",
+        "evidence": "He is a cook."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "She is ______ nurse.",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answers": [
+          "a"
+        ],
+        "explanation": "nurse以辅音音素开头，用a。这里指一个非特定的护士。",
+        "evidence": "She is not a nurse."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "______ is my room. (near you)",
+        "options": [
+          "This",
+          "That",
+          "It"
+        ],
+        "answers": [
+          "This"
+        ],
+        "explanation": "指近处的事物用this。",
+        "evidence": "This is my room."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "______ is the kitchen. (far from you)",
+        "options": [
+          "That",
+          "This",
+          "It"
+        ],
+        "answers": [
+          "That"
+        ],
+        "explanation": "指远处的事物用that。",
+        "evidence": "That is the kitchen."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Where are you from?",
+        "Do you live in a flat or a house?",
+        "Who do you live with?"
+      ],
+      "part2": "Describe a person in your home. You should say: who the person is; what his or her job is; what he or she looks like; and explain why you like this person.",
+      "part3": [
+        "Is your home big or small?",
+        "Who cooks in your home?",
+        "Do you have a teacher in your family?",
+        "What is your favourite room?"
+      ]
+    },
+    "writing": "Write 5 sentences about your home. Use 'This is...', 'That is...', 'He is...', 'She is...', 'It is...'. Talk about the rooms and the people."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a4b033caf210f29796a1beea495275914f6bea5f344e4aaa25214d9ece445a8c"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

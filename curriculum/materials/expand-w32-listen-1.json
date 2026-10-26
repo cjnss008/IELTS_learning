@@ -1,0 +1,403 @@
+{
+  "id": "expand-w32-listen-1",
+  "week": 32,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "数据理解与阶段复测 · Independent new scenario: how institutions make expertise accessible",
+  "grammarFocus": "比较结构、数量表达与指代综合；冠词和主谓一致检查。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "How a City Library Makes Expert Knowledge Accessible",
+  "instructions": "本材料为模拟练习，不是官方雅思考试，也不对应任何官方分数。先听录音（或阅读文字稿），完成10道听力题；再学习语法讲解并完成8道语法题；最后进行口语和写作迁移练习。听力题中，填空题答案必须与原文完全一致，且不超过字数限制。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Maya: Hi everyone, thanks for coming to this short tour. I’m Maya, and I coordinate the public programs here at the Northside Library. Today I want to show you how we make expert knowledge accessible to ordinary residents.\n\nDaniel: Sorry to interrupt—did you say “expert knowledge”? What does that mean exactly?\n\nMaya: Good question. It means we invite specialists—doctors, engineers, lawyers—to explain their work in simple language. We don’t expect people to have university degrees. Last year we ran forty-two workshops, and more than six hundred people attended. That’s twice as many as the year before.\n\nDaniel: Wow. So who pays for these workshops?\n\nMaya: The city gives us a small grant, but most of the money comes from volunteers. We have about thirty regular volunteers, and they help with everything from setting up chairs to translating handouts into Chinese and Spanish.\n\nPriya: I’m Priya, by the way. I’m a nurse, and I came to one of your health talks last month. I found it really useful. But I noticed the room was quite full—maybe too full?\n\nMaya: You’re right. The health talk was the most popular event we’ve ever had. We had to turn away almost fifty people because the room only holds eighty. So next month we’re moving the big talks to the community hall, which seats two hundred and fifty.\n\nPriya: That’s a big improvement. Will you still keep the small workshops?\n\nMaya: Yes, definitely. The small ones are for hands-on practice—for example, a session on how to read a medical report. Those work best with fewer than twenty people. The large talks are more like lectures, with a question-and-answer session at the end.\n\nDaniel: Do you record the talks? I sometimes can’t come in the evening.\n\nMaya: We do now. Since January we’ve posted every talk online, and each video has been watched at least three hundred times. Some have been watched more than a thousand times. The online audience is actually larger than the in-person audience.\n\nPriya: That’s interesting. But not everyone has internet at home.\n\nMaya: Exactly. That’s why we also keep printed summaries at the front desk. They’re free, and they’re written in plain English. We print five hundred copies of each summary, and they usually disappear within two weeks.\n\nDaniel: So the library is becoming more like a community classroom?\n\nMaya: That’s a nice way to put it. Our goal is simple: fewer barriers, more access. Anyone with a library card can join—no fees, no tests, no prior knowledge required.\n\nPriya: I’ll definitely tell my colleagues about this.\n\nMaya: Please do. And if either of you wants to volunteer, we always need more help. The next training session is on the first Saturday of next month, at ten in the morning.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many workshops did the library run last year?",
+      "options": [
+        "Thirty",
+        "Forty-two",
+        "Six hundred",
+        "Two hundred and fifty"
+      ],
+      "answers": [
+        "Forty-two"
+      ],
+      "explanation": "Maya 明确说去年举办了四十二场工作坊：“Last year we ran forty-two workshops”。",
+      "evidence": "Last year we ran forty-two workshops, and more than six hundred people attended."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Where does most of the money for the workshops come from?",
+      "options": [
+        "The city grant",
+        "Volunteers",
+        "Ticket sales",
+        "The library card fees"
+      ],
+      "answers": [
+        "Volunteers"
+      ],
+      "explanation": "Maya 说城市给一小笔拨款，但大部分钱来自志愿者：“most of the money comes from volunteers”。",
+      "evidence": "The city gives us a small grant, but most of the money comes from volunteers."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why did the library have to turn away almost fifty people?",
+      "options": [
+        "The talk was too expensive.",
+        "The room only holds eighty people.",
+        "The speaker was ill.",
+        "The library was closed."
+      ],
+      "answers": [
+        "The room only holds eighty people."
+      ],
+      "explanation": "Maya 解释因为房间只能容纳八十人，所以不得不拒绝近五十人：“the room only holds eighty”。",
+      "evidence": "We had to turn away almost fifty people because the room only holds eighty."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is the seating capacity of the community hall?",
+      "options": [
+        "Eighty",
+        "Two hundred and fifty",
+        "Three hundred",
+        "Five hundred"
+      ],
+      "answers": [
+        "Two hundred and fifty"
+      ],
+      "explanation": "Maya 说社区大厅可容纳二百五十人：“which seats two hundred and fifty”。",
+      "evidence": "So next month we’re moving the big talks to the community hall, which seats two hundred and fifty."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "According to Maya, what is the main purpose of the small workshops?",
+      "options": [
+        "To give lectures",
+        "To offer hands-on practice",
+        "To record videos",
+        "To sell books"
+      ],
+      "answers": [
+        "To offer hands-on practice"
+      ],
+      "explanation": "Maya 说小型工作坊是为了动手实践：“The small ones are for hands-on practice”。",
+      "evidence": "The small ones are for hands-on practice—for example, a session on how to read a medical report."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Since January, every talk has been posted online, and each video has been watched at least ______ times.",
+      "maxWords": 3,
+      "answers": [
+        "three hundred"
+      ],
+      "explanation": "Maya 说每个视频至少被观看三百次：“each video has been watched at least three hundred times”。",
+      "evidence": "Since January we’ve posted every talk online, and each video has been watched at least three hundred times."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "What does the library provide for people who do not have internet at home?",
+      "options": [
+        "Free laptops",
+        "Printed summaries in plain English",
+        "Private tutoring",
+        "Free library cards"
+      ],
+      "answers": [
+        "Printed summaries in plain English"
+      ],
+      "explanation": "Maya 说前台有免费打印摘要，用简单英语写成：“printed summaries at the front desk. They’re free, and they’re written in plain English.”",
+      "evidence": "That’s why we also keep printed summaries at the front desk. They’re free, and they’re written in plain English."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How many copies of each summary does the library print?",
+      "options": [
+        "Two hundred and fifty",
+        "Three hundred",
+        "Five hundred",
+        "One thousand"
+      ],
+      "answers": [
+        "Five hundred"
+      ],
+      "explanation": "Maya 说每种摘要打印五百份：“We print five hundred copies of each summary”。",
+      "evidence": "We print five hundred copies of each summary, and they usually disappear within two weeks."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is required to join the library’s programs?",
+      "options": [
+        "A university degree",
+        "A library card",
+        "A fee",
+        "A test"
+      ],
+      "answers": [
+        "A library card"
+      ],
+      "explanation": "Maya 说任何有借书卡的人都可以参加，无需费用、测试或先备知识：“Anyone with a library card can join—no fees, no tests, no prior knowledge required.”",
+      "evidence": "Anyone with a library card can join—no fees, no tests, no prior knowledge required."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "When is the next volunteer training session?",
+      "options": [
+        "The first Saturday of next month at ten in the morning",
+        "The last Saturday of this month at ten in the morning",
+        "The first Sunday of next month at ten in the morning",
+        "Every Saturday at ten in the morning"
+      ],
+      "answers": [
+        "The first Saturday of next month at ten in the morning"
+      ],
+      "explanation": "Maya 说下一次志愿者培训在下个月第一个星期六上午十点：“The next training session is on the first Saturday of next month, at ten in the morning.”",
+      "evidence": "The next training session is on the first Saturday of next month, at ten in the morning."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "coordinate",
+      "meaning": "协调；组织",
+      "example": "I’m Maya, and I coordinate the public programs here at the Northside Library."
+    },
+    {
+      "word": "accessible",
+      "meaning": "可接近的；易理解的",
+      "example": "Today I want to show you how we make expert knowledge accessible to ordinary residents."
+    },
+    {
+      "word": "specialists",
+      "meaning": "专家",
+      "example": "It means we invite specialists—doctors, engineers, lawyers—to explain their work in simple language."
+    },
+    {
+      "word": "grant",
+      "meaning": "拨款；补助金",
+      "example": "The city gives us a small grant, but most of the money comes from volunteers."
+    },
+    {
+      "word": "handouts",
+      "meaning": "讲义；印刷材料",
+      "example": "We have about thirty regular volunteers, and they help with everything from setting up chairs to translating handouts into Chinese and Spanish."
+    },
+    {
+      "word": "session",
+      "meaning": "一场（活动）；会议",
+      "example": "The small ones are for hands-on practice—for example, a session on how to read a medical report."
+    },
+    {
+      "word": "summary",
+      "meaning": "摘要；总结",
+      "example": "We print five hundred copies of each summary, and they usually disappear within two weeks."
+    },
+    {
+      "word": "barriers",
+      "meaning": "障碍",
+      "example": "Our goal is simple: fewer barriers, more access."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构、数量表达与指代综合；冠词和主谓一致检查",
+    "explanation": "本课重点是比较结构、数量表达和指代的一致性。比较结构如“twice as many as”“more than”“fewer than”“the most popular”等，要注意比较对象和数量词搭配。数量表达如“forty-two workshops”“six hundred people”“three hundred times”等，要区分具体数字和概数。指代要明确，如“The small ones”指代前面的“small workshops”，“They”指代“printed summaries”。冠词方面，特指用the，泛指用a/an或零冠词；主谓一致要注意主语和谓语在人称和数上一致，如“The city gives”“volunteers help”“each video has been watched”。",
+    "example": "Last year we ran forty-two workshops, and more than six hundred people attended. That’s twice as many as the year before.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct option: The new hall seats ______ people than the old room.",
+        "options": [
+          "many",
+          "more",
+          "most",
+          "much"
+        ],
+        "answers": [
+          "more"
+        ],
+        "explanation": "比较级用more，表示“更多”，与than搭配。",
+        "evidence": "So next month we’re moving the big talks to the community hall, which seats two hundred and fifty."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct option: This year we have ______ volunteers than last year.",
+        "options": [
+          "fewer",
+          "less",
+          "few",
+          "little"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "volunteers是可数名词复数，比较级用fewer，不用less。",
+        "evidence": "We have about thirty regular volunteers, and they help with everything from setting up chairs to translating handouts into Chinese and Spanish."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct option: The health talk was ______ popular event we’ve ever had.",
+        "options": [
+          "the most",
+          "most",
+          "more",
+          "the more"
+        ],
+        "answers": [
+          "the most"
+        ],
+        "explanation": "最高级前加the，表示“最受欢迎的”。",
+        "evidence": "The health talk was the most popular event we’ve ever had."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct option: ______ video has been watched at least three hundred times.",
+        "options": [
+          "Each",
+          "All",
+          "Many",
+          "Few"
+        ],
+        "answers": [
+          "Each"
+        ],
+        "explanation": "each后接单数名词，谓语用has been watched，主谓一致。",
+        "evidence": "Since January we’ve posted every talk online, and each video has been watched at least three hundred times."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct option: The library ______ free printed summaries at the front desk.",
+        "options": [
+          "keep",
+          "keeps",
+          "keeping",
+          "are keeping"
+        ],
+        "answers": [
+          "keeps"
+        ],
+        "explanation": "主语The library是单数，谓语用keeps，保持主谓一致。",
+        "evidence": "That’s why we also keep printed summaries at the front desk."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct option: The volunteers ______ with setting up chairs and translating handouts.",
+        "options": [
+          "helps",
+          "help",
+          "is helping",
+          "has helped"
+        ],
+        "answers": [
+          "help"
+        ],
+        "explanation": "主语The volunteers是复数，谓语用help，保持主谓一致。",
+        "evidence": "We have about thirty regular volunteers, and they help with everything from setting up chairs to translating handouts into Chinese and Spanish."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct option: We print five hundred ______ of each summary.",
+        "options": [
+          "copy",
+          "copies",
+          "a copy",
+          "the copy"
+        ],
+        "answers": [
+          "copies"
+        ],
+        "explanation": "five hundred后接可数名词复数copies。",
+        "evidence": "We print five hundred copies of each summary, and they usually disappear within two weeks."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct option: The small workshops are for hands-on practice; ______ work best with fewer than twenty people.",
+        "options": [
+          "they",
+          "it",
+          "them",
+          "their"
+        ],
+        "answers": [
+          "they"
+        ],
+        "explanation": "指代前面的The small workshops，用they作主语。",
+        "evidence": "The small ones are for hands-on practice—for example, a session on how to read a medical report. Those work best with fewer than twenty people."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit libraries or community centers?",
+        "What kind of public events do you enjoy?",
+        "Do you prefer learning from videos or from printed materials?",
+        "Have you ever volunteered for a community activity?"
+      ],
+      "part2": "Describe a time when you learned something new from an expert in a public setting. You should say: where and when it happened; who the expert was; what you learned; and explain why it was useful to you.",
+      "part3": [
+        "How can institutions make expert knowledge more accessible to the public?",
+        "What are the advantages and disadvantages of online talks compared with in-person events?",
+        "Should governments fund free public education programs? Why or why not?",
+        "How might libraries change in the next twenty years?"
+      ]
+    },
+    "writing": "Write a short article (about 150–200 words) for a community newsletter describing a free public workshop series at a local center. Explain what the workshops offer, who they are for, and why they are useful. Use at least three comparative structures (e.g., more than, fewer than, the most) and pay attention to articles and subject-verb agreement."
+  },
+  "rubric": {
+    "taskType": "listening comprehension with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "2ada0fa71363420aa44a458cc09830af6b5dd4fc9c4b1d923f670e795f5b7cf1"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

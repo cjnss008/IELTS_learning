@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-16-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-16",
+  "sourceVersion": "1",
+  "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+  "sourceContentHash": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+  "exposureGroup": "public-source:voa-l1-16",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official Conversation MP3, current audio hash, alignment and rights checks must pass; no silent directions as evidence."
+    },
+    "independentExposure": "Same source reading and audio share one exposure group; never count either as unseen after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is Anna trying to learn from the tourists?",
+      "options": [
+        "How long their flights took.",
+        "Why they come to Washington, D.C.",
+        "Which hotels they work for."
+      ],
+      "answers": [
+        "Why they come to Washington, D.C."
+      ],
+      "evidence": "Today, my job is to interview tourists. I have to learn why they come here.",
+      "explanation": "Anna先说明工作是采访游客，紧接着说要了解why they come here。here承接开头的Washington, D.C.。航班时间和旅馆工作并不是她给出的采访目标，不能根据“游客”这个身份自行补充。",
+      "evidenceOffsets": {
+        "start": 92,
+        "end": 167,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Today, my job is to interview tourists. I have to learn why they come here.",
+          "start": 92,
+          "end": 167
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Sabrina enjoy visiting monuments and memorials?",
+      "options": [
+        "They help her experience history.",
+        "They offer free language classes.",
+        "They are places to buy paintings."
+      ],
+      "answers": [
+        "They help her experience history."
+      ],
+      "evidence": "I like history. So, I like walking around and looking at all the monuments and memorials. They make history come alive!",
+      "explanation": "Sabrina先说喜欢历史，再用so连接参观纪念建筑的活动；history come alive说明这些地方让历史变得鲜活。免费课程或购买画作不是她给出的理由。要把原因与随后活动联系，而不是只按景点名称猜。",
+      "evidenceOffsets": {
+        "start": 645,
+        "end": 764,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I like history. So, I like walking around and looking at all the monuments and memorials. They make history come alive!",
+          "start": 645,
+          "end": 764
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which place does Sabrina say she especially likes?",
+      "options": [
+        "The U.S. Capitol.",
+        "The Washington Monument.",
+        "The Lincoln Memorial."
+      ],
+      "answers": [
+        "The Lincoln Memorial."
+      ],
+      "evidence": "I really like Lincoln Memorial. It is very beautiful.",
+      "explanation": "她用really like明确说出自己特别喜欢Lincoln Memorial。Washington Monument是Anna说位于身后的建筑；U.S. Capitol是后面另一位游客想去的地方。附近出现或被别人提到，都不等于Sabrina的偏好。",
+      "evidenceOffsets": {
+        "start": 889,
+        "end": 942,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I really like Lincoln Memorial. It is very beautiful.",
+          "start": 889,
+          "end": 942
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Which two languages does Louis say he speaks?",
+      "options": [
+        "Chinese and English.",
+        "Farsi and English.",
+        "Chinese and Bengali."
+      ],
+      "answers": [
+        "Chinese and English."
+      ],
+      "evidence": "I speak Chinese and English.",
+      "explanation": "Louis直接回答I speak Chinese and English，所以这两个语言必须一起选。Farsi来自后面Mehrnoush的回答，不能移到Louis身上；题目也没有说他会Bengali。不要用受访者的国家替代实际说出的语言信息。",
+      "evidenceOffsets": {
+        "start": 1414,
+        "end": 1442,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I speak Chinese and English.",
+          "start": 1414,
+          "end": 1442
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Where does Mehrnoush want to go because of her interest in government and politics?",
+      "options": [
+        "The art museums.",
+        "The U.S. Capitol.",
+        "The Lincoln Memorial."
+      ],
+      "answers": [
+        "The U.S. Capitol."
+      ],
+      "evidence": "I want to see the U.S. Capitol.",
+      "explanation": "Mehrnoush先说自己喜欢了解政府和政治，随后明确说想参观U.S. Capitol。艺术博物馆属于Louis的偏好，Lincoln Memorial属于Sabrina的偏好。三个地点在同篇都出现，需要按说话人和兴趣分别对应。",
+      "evidenceOffsets": {
+        "start": 2216,
+        "end": 2247,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I want to see the U.S. Capitol.",
+          "start": 2216,
+          "end": 2247
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Anna want to do after finishing the interviews?",
+      "options": [
+        "Look at paintings in a museum.",
+        "Visit the U.S. Capitol.",
+        "Ride the carousel."
+      ],
+      "answers": [
+        "Ride the carousel."
+      ],
+      "evidence": "Now, I want to do my favorite thing in the city … ride the carousel!",
+      "explanation": "结尾Anna说自己现在想做最喜欢的事，随后亲口说明ride the carousel，即乘旋转木马。前面的博物馆和国会大厦是游客谈到的活动，不能因此当作Anna结束采访后的计划。",
+      "evidenceOffsets": {
+        "start": 2571,
+        "end": 2639,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Now, I want to do my favorite thing in the city … ride the carousel!",
+          "start": 2571,
+          "end": 2639
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; not human or psychometric calibration",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "c4cacb6ab887127479cfcc218b3d8b45bf97e101ef0f71bd448d620e202f12db",
+      "reviewSha256": "7eae1e9306b9129a1428c7b2542738ec5baddb34f690b7341e9f3f8130237ecb",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

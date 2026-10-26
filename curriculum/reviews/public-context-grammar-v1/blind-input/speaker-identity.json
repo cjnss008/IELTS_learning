@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "id": "speaker-identity",
+  "sourceId": "voa-l1-01",
+  "sourceText": "Pete: Hi! Are you Anna?\n\nAnna: Yes! Hi there! Are you Pete?\n\nPete: I am Pete.\n\nAnna: Nice to meet you.\n\nAnna: Let's try that again. I'm Anna. Nice to meet you.\n\nPete: I'm Pete. \"Anna\" Is that A-N-A?\n\nAnna: No. A-N-N-A\n\nPete: Well, Anna with two \"n's\" ... Welcome to ... 1400 Irving Street!\n\nAnna: My new apartment! Yes!",
+  "sourceQuote": "I am Pete.",
+  "stages": {
+    "study": {
+      "instructions": "Read the source sentence and answer both questions.",
+      "questions": [
+        {
+          "id": "s1",
+          "type": "single",
+          "prompt": "In Pete's sentence ‘I am Pete’, who does ‘I’ refer to?",
+          "options": [
+            "The person speaking.",
+            "The person listening.",
+            "A person Pete is describing who is not speaking."
+          ]
+        },
+        {
+          "id": "s2",
+          "type": "single",
+          "prompt": "Mia wants to tell a new classmate her own name. Which sentence expresses that?",
+          "options": [
+            "I am Mia.",
+            "You are Mia.",
+            "She is Mia."
+          ]
+        }
+      ]
+    },
+    "review": {
+      "instructions": "Use each new situation to answer both questions without reopening the earlier explanation.",
+      "questions": [
+        {
+          "id": "r1",
+          "type": "single",
+          "prompt": "Tom and Mia are introducing themselves together. Which sentence gives their own names?",
+          "options": [
+            "We are Tom and Mia.",
+            "They are Tom and Mia.",
+            "You are Tom and Mia."
+          ]
+        },
+        {
+          "id": "r2",
+          "type": "single",
+          "prompt": "Leo says his own name to a new neighbor. Complete his introduction: ‘___ Leo.’",
+          "options": [
+            "I'm",
+            "He's",
+            "You're"
+          ]
+        }
+      ]
+    }
+  }
+}

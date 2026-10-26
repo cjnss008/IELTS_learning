@@ -1,0 +1,396 @@
+{
+  "id": "expand-w37-listen-2",
+  "week": 37,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时听力：日常对话与准确记录 · Independent new scenario: a panel comparing adaptation strategies under uncertainty",
+  "grammarFocus": "名词单复数、拼写、数字和大小写；问句结构复查。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Panel Talk: Adapting Under Uncertainty",
+  "instructions": "本材料为原创模拟练习，非官方雅思测试，也不对应任何官方分数。请先听/读英文对话，完成10道听力理解题（单选、填空、匹配、判断）。听力部分会听到不同美式口音的说话人自然轮换、修正和干扰信息，答案不会直接朗读。之后学习语法新规则（名词单复数、拼写、数字和大小写；问句结构复查），完成8道新句语法题。最后进行口语和写作迁移练习。所有题目和选项均为英文，解释为中文。",
+  "transcript": "Maya: Welcome back to the Thursday planning panel. I'm Maya Chen, and today we're comparing how three teams adapt when plans change. With me are Daniel Ortiz from the events team, Priya Nair from logistics, and Sam Lee from customer support. Daniel, start us off. What happened last week?\n\nDaniel: Sure. We planned a two-day training for forty people. On Monday morning, the venue called and said the main room was flooded. We had only four hours to move everything. My first idea was to cancel, but the team said no. We moved to a smaller room and split the group into two sessions. It worked, but the sound was bad in the afternoon, so some people couldn't hear the speakers properly. The smaller room also meant we had to rearrange seating quickly, which added stress.\n\nMaya: Priya, how did logistics respond?\n\nPriya: We had two trucks and fifteen boxes of materials. When Daniel called, we sent one truck to the new room and kept one at the old venue. That was a mistake, actually. The second truck waited for ninety minutes and did nothing. Next time, we will send both trucks immediately and decide later. That way, we avoid delays and confusion.\n\nSam: From support, we saw a different problem. Twelve people called to ask about the room change. Our phone line had only two staff. We recorded a short message in English and Chinese, and the calls dropped to five in one hour. So clear information helped more than extra staff. It showed that a simple, multilingual message can reduce pressure on the team.\n\nMaya: Interesting. Daniel, what would you do differently?\n\nDaniel: Three things. First, we need a backup room list, not just one room. Second, we should test the sound equipment before eight in the morning. Third, we must tell speakers about changes before they arrive, not after. These steps would prevent the problems we faced.\n\nMaya: Priya, do you agree?\n\nPriya: Mostly. But I want to add one point. We should name one person as the decision maker. Last week, three people gave different instructions, and the truck drivers were confused. One driver went to the wrong building. It cost us forty minutes. Having a single decision maker would avoid such mix-ups.\n\nSam: I agree with Priya. In support, we also need one clear script. People asked, \"Is the training still on?\" and \"Where is the new room?\" We gave different answers at first. That was not good. A standard script ensures everyone gives the same information.\n\nMaya: So the panel agrees on three strategies: a backup plan, one decision maker, and one clear message. Daniel, is there a cost issue?\n\nDaniel: Yes. The new room cost two hundred dollars more. But canceling would cost more, maybe one thousand dollars in refunds. So the change was cheaper. In the end, we saved money by adapting.\n\nMaya: Priya, any final number?\n\nPriya: We lost forty minutes with the truck, but we saved the event. I think that is a good trade. The time lost was small compared to the overall success.\n\nMaya: Sam, last word?\n\nSam: Keep messages short and repeat them. That is my advice. Short messages are easier to understand and remember.\n\nMaya: Thank you, panel. Next week, we will look at weather plans.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many people did the team plan the training for?",
+      "options": [
+        "Forty people",
+        "Fifteen people",
+        "Twelve people",
+        "Two people"
+      ],
+      "answers": [
+        "Forty people"
+      ],
+      "explanation": "Daniel 说 “We planned a two-day training for forty people.” 数字 forty 对应选项。",
+      "evidence": "We planned a two-day training for forty people."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What was the first problem on Monday morning?",
+      "options": [
+        "The main room was flooded.",
+        "The trucks were late.",
+        "The speakers canceled.",
+        "The phone line was busy."
+      ],
+      "answers": [
+        "The main room was flooded."
+      ],
+      "explanation": "Daniel 明确说 “the main room was flooded”。其他选项是干扰。",
+      "evidence": "On Monday morning, the venue called and said the main room was flooded."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Priya says the second truck waited for ______ minutes and did nothing.",
+      "maxWords": 1,
+      "answers": [
+        "ninety"
+      ],
+      "explanation": "Priya 说 “The second truck waited for ninety minutes and did nothing.” 填 ninety。",
+      "evidence": "The second truck waited for ninety minutes and did nothing."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What did Sam's team do to reduce phone calls?",
+      "options": [
+        "They hired more staff.",
+        "They recorded a short message in English and Chinese.",
+        "They closed the phone line.",
+        "They sent an email to everyone."
+      ],
+      "answers": [
+        "They recorded a short message in English and Chinese."
+      ],
+      "explanation": "Sam 说 “We recorded a short message in English and Chinese, and the calls dropped to five in one hour.”",
+      "evidence": "We recorded a short message in English and Chinese, and the calls dropped to five in one hour."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which strategy does Priya add to the panel's list?",
+      "options": [
+        "A backup room list",
+        "One decision maker",
+        "A sound test",
+        "A weather plan"
+      ],
+      "answers": [
+        "One decision maker"
+      ],
+      "explanation": "Priya 说 “We should name one person as the decision maker.” 这是她补充的策略。",
+      "evidence": "We should name one person as the decision maker."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "The new room cost two hundred dollars more, but canceling would cost about one ______ dollars in refunds.",
+      "maxWords": 1,
+      "answers": [
+        "thousand"
+      ],
+      "explanation": "Daniel 说 “canceling would cost more, maybe one thousand dollars in refunds.” 填 thousand。",
+      "evidence": "But canceling would cost more, maybe one thousand dollars in refunds."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Match the speaker to their main point. Daniel's main point is:",
+      "options": [
+        "We need a backup room list and early sound tests.",
+        "We should send both trucks immediately.",
+        "We need one clear script for support.",
+        "We should cancel the event."
+      ],
+      "answers": [
+        "We need a backup room list and early sound tests."
+      ],
+      "explanation": "Daniel 提出三点：backup room list、test sound before eight、tell speakers before they arrive。选项A最符合。",
+      "evidence": "First, we need a backup room list, not just one room. Second, we should test the sound equipment before eight in the morning."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The panel agrees that canceling the event was the best choice.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Daniel 说 canceling 会更贵，且团队说 no，所以“取消是最好的选择”与原文矛盾。",
+      "evidence": "My first idea was to cancel, but the team said no."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The truck driver who went to the wrong building was new to the company.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "Not Given"
+      ],
+      "explanation": "原文只说 “One driver went to the wrong building. It cost us forty minutes.” 没有提到司机是否新来，因此是 Not Given。",
+      "evidence": "One driver went to the wrong building. It cost us forty minutes."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "What will the panel discuss next week?",
+      "options": [
+        "Weather plans",
+        "Room costs",
+        "Phone scripts",
+        "Truck routes"
+      ],
+      "answers": [
+        "Weather plans"
+      ],
+      "explanation": "Maya 最后说 “Next week, we will look at weather plans.”",
+      "evidence": "Next week, we will look at weather plans."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "panel",
+      "meaning": "专家小组；讨论小组",
+      "example": "Welcome back to the Thursday planning panel."
+    },
+    {
+      "word": "venue",
+      "meaning": "场地",
+      "example": "On Monday morning, the venue called and said the main room was flooded."
+    },
+    {
+      "word": "flooded",
+      "meaning": "被水淹的",
+      "example": "On Monday morning, the venue called and said the main room was flooded."
+    },
+    {
+      "word": "backup",
+      "meaning": "备用的；后备",
+      "example": "First, we need a backup room list, not just one room."
+    },
+    {
+      "word": "refunds",
+      "meaning": "退款",
+      "example": "But canceling would cost more, maybe one thousand dollars in refunds."
+    },
+    {
+      "word": "confused",
+      "meaning": "困惑的",
+      "example": "Last week, three people gave different instructions, and the truck drivers were confused."
+    },
+    {
+      "word": "script",
+      "meaning": "脚本；固定话术",
+      "example": "In support, we also need one clear script."
+    },
+    {
+      "word": "trade",
+      "meaning": "交换；权衡",
+      "example": "I think that is a good trade."
+    }
+  ],
+  "grammar": {
+    "title": "名词单复数、拼写、数字和大小写；问句结构复查",
+    "explanation": "英语名词要注意单复数：可数名词复数一般加 -s 或 -es，如 box→boxes；不规则复数如 person→people。拼写要准确，如 forty 不是 fourty，ninety 不是 ninty。数字在听力中常考 fifteen/fifty、forty/fourteen 等，注意重音和尾音。大小写规则：句首、专有名词（人名、地名、星期、月份）首字母大写。问句结构复查：一般疑问句把 be 动词或助动词放句首，如 “Is the training still on?”；特殊疑问句用 “疑问词 + 助动词 + 主语 + 动词”，如 “Where is the new room?”。注意不要漏掉助动词或主语。",
+    "example": "People asked, \"Is the training still on?\" and \"Where is the new room?\"",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct plural: There are three ______ in the new room.",
+        "options": [
+          "boxes",
+          "boxs",
+          "boxies",
+          "box"
+        ],
+        "answers": [
+          "boxes"
+        ],
+        "explanation": "box 以 x 结尾，复数加 -es，变为 boxes。",
+        "evidence": "名词复数规则：以 x 结尾加 -es。"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct spelling: We planned for ______ people.",
+        "options": [
+          "forty",
+          "fourty",
+          "fourtty",
+          "forthy"
+        ],
+        "answers": [
+          "forty"
+        ],
+        "explanation": "40 的正确拼写是 forty，不是 fourty。",
+        "evidence": "数字拼写规则：forty 无 u。"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence with capital letters.",
+        "options": [
+          "On monday, we met sam.",
+          "On Monday, we met Sam.",
+          "on Monday, we met sam.",
+          "On Monday, we Met Sam."
+        ],
+        "answers": [
+          "On Monday, we met Sam."
+        ],
+        "explanation": "句首 On 大写，星期 Monday 大写，人名 Sam 大写。",
+        "evidence": "大小写规则：句首、星期、人名首字母大写。"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct question form: ______ the training still on?",
+        "options": [
+          "Is",
+          "Are",
+          "Do",
+          "Does"
+        ],
+        "answers": [
+          "Is"
+        ],
+        "explanation": "主语 the training 是单数，be 动词用 Is，构成一般疑问句。",
+        "evidence": "问句结构：be 动词提前，单数主语用 Is。"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct question: ______ is the new room?",
+        "options": [
+          "Where",
+          "What",
+          "Who",
+          "When"
+        ],
+        "answers": [
+          "Where"
+        ],
+        "explanation": "问地点用 Where，构成 “Where is the new room?”。",
+        "evidence": "特殊疑问句：Where + is + 主语。"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct plural: Three ______ gave different instructions.",
+        "options": [
+          "people",
+          "peoples",
+          "person",
+          "persons"
+        ],
+        "answers": [
+          "people"
+        ],
+        "explanation": "person 的复数常用 people，表示“人们”。",
+        "evidence": "不规则复数：person → people。"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct number word: The truck waited for ______ minutes.",
+        "options": [
+          "ninety",
+          "ninty",
+          "ninetty",
+          "ninty"
+        ],
+        "answers": [
+          "ninety"
+        ],
+        "explanation": "90 的正确拼写是 ninety，不是 ninty。",
+        "evidence": "数字拼写规则：ninety 保留 e。"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct question: ______ did the calls drop?",
+        "options": [
+          "Why",
+          "What",
+          "Who",
+          "Which"
+        ],
+        "answers": [
+          "Why"
+        ],
+        "explanation": "问原因用 Why，构成 “Why did the calls drop?”。",
+        "evidence": "特殊疑问句：Why + did + 主语 + 动词。"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often make plans for your week?",
+        "What do you do when a plan changes?",
+        "Do you prefer to decide alone or with other people?",
+        "How do you tell people about a change?"
+      ],
+      "part2": "Describe a time when a plan changed suddenly. You should say: what the plan was; what changed; what you did; and how you felt about the result.",
+      "part3": [
+        "Why do some people find change difficult?",
+        "Is it better to have one decision maker or many?",
+        "How can clear messages help in a busy workplace?",
+        "Should teams always have a backup plan?"
+      ]
+    },
+    "writing": "Write a short message (about 120 words) to your team about a room change for a training event. Include the new room, the time, one phone number, and one clear instruction. Use correct plurals, spelling, numbers, and capital letters."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus (simulated educational material)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "bb4cc3da9b02ec6efc1d3cc68fe135cfba5aa04b82ebba41983f9674480007ef"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

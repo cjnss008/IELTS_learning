@@ -1,11 +1,11 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
-const root=path.join(__dirname,'..'),folder=path.join(root,'curriculum','independent-bank');
+const root=path.join(__dirname,'..'),folder=path.join(root,'curriculum','independent-bank'),Audio=require('./independent-audio-provenance.cjs');
 function build({requireAudio=true,write=true}={}){
  const materials=JSON.parse(JSON.stringify(require('./independent-bank.cjs').materials));
  for(const m of materials.filter(m=>m.skill==='listening')){
-  const metaPath=path.join(folder,'audio',m.id+'.json'),audio='audio/independent-bank/'+m.id+'.mp3';
-  if(fs.existsSync(metaPath)&&fs.existsSync(path.join(root,audio))){const meta=JSON.parse(fs.readFileSync(metaPath,'utf8'));Object.assign(m,{audio,audioDurationSeconds:meta.durationSeconds,audioVoices:meta.voices});}
+  const metaPath=path.join(folder,'audio',m.id+'.json');
+  if(fs.existsSync(metaPath))Object.assign(m,Audio.fields(Audio.read(m,root)));
  }
  const human=require('./build-human-listening.cjs').build({requireAudio,write});materials.push(...human.materials);
  const {audit}=require('./audit-independent-bank.cjs'),report=audit(materials,{requireAudio});if(report.errors.length)throw Error(report.errors.join('\n'));

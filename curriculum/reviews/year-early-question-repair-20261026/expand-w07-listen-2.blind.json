@@ -1,0 +1,78 @@
+{
+  "id": "expand-w07-listen-2",
+  "title": "Meeting at the Busy Market",
+  "level": "A1",
+  "text": "Mia: Hi, Ben! Where are you? Ben: I'm near the big market. There are many people here. Mia: Is there a coffee shop near you? Ben: Yes, there is. It's next to the bank. Mia: Good. I'm at the bus stop. I'm walking to the market now. Ben: OK. The market is between the bank and the library. Mia: I see a tall building. Is that the library? Ben: No, that's the hospital. The library is behind the market. Mia: Thanks. I'm coming. Wait for me near the coffee shop. Ben: Sure. I'm standing under the clock. Mia: Great. See you in five minutes.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Where is Ben?",
+      "options": [
+        "at the bus stop",
+        "in the library",
+        "near the big market"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Is there a coffee shop near Ben?",
+      "options": [
+        "No, there isn't.",
+        "Yes, there is."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "The coffee shop is next to the ______. Use ONE WORD from the conversation.",
+      "maxWords": 1
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Where does Mia say she is?",
+      "options": [
+        "at the bus stop",
+        "near the market",
+        "under the clock"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "The market is between the bank and the ______.",
+      "options": [
+        "hospital",
+        "bus stop",
+        "library"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is the tall building the library?",
+      "options": [
+        "Yes, it is.",
+        "No, it isn't."
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "The library is ______ the market. Use ONE WORD from the conversation.",
+      "maxWords": 1
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is Ben standing under?",
+      "options": [
+        "a tree",
+        "the clock",
+        "a sign"
+      ]
+    }
+  ]
+}

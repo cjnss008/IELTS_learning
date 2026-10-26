@@ -2,7 +2,7 @@
 
 // This is an authoring/provenance policy, not a CEFR score computed from words.
 // Eligibility never replaces placement.cjs's local-audio, content-hash and audit checks.
-const POLICY_VERSION = 'placement-listening-sources-2026-10-25-v1';
+const POLICY_VERSION = 'placement-listening-sources-2026-10-26-v2';
 const ORIGINAL_REGISTRY = 'curriculum/independent-bank/sources.json';
 const AUTHORING_SOURCE = 'tools/independent-bank.cjs';
 const LEVELS = new Set(['A1', 'A2', 'B1', 'B2']);
@@ -12,10 +12,10 @@ const LITERARY_GENRES = new Set(['fable', 'historical-humorous-prose', 'historic
 // Each entry identifies a reviewed authored scenario and its exact content version.
 // A changed body/question set or a new source requires a deliberate policy review.
 const SCENARIOS = new Map([
-  ['independent-a1-listen-gb', ['A1', 'everyday-dialogue', '购买公交车票与返程安排', '152e0fbdd854ba12012d98b8b495aaaab9690ca48322d425df84f6a01c1a77d5']],
-  ['independent-a1-listen-us', ['A1', 'everyday-announcement', '泳池开放、课程与设施公告', 'cd789150b80f5bc10edd5a75b0bcb62eb914f5a8b716080298ad31397d188ae6']],
-  ['independent-a1-listen-au', ['A1', 'everyday-dialogue', '蔬菜箱领取、付款与停车', '06899cf964e76d3cbde4b9e640f2585d21776e75a11222863350cfa1d320c149']],
-  ['independent-a1-listen-in', ['A1', 'practical-instructions', '首次使用电脑室的操作说明', '128fb89796a5102c12ae2dd11a688115f9a7fe194fa400914e7977b77be15c79']],
+  ['independent-a1-listen-gb', ['A1', 'everyday-dialogue', '购买公交车票与返程安排', '8d0e9b87b958bfada989a8a26e614aca01cd23b4930c5d064ae4bd019ca01e66']],
+  ['independent-a1-listen-us', ['A1', 'everyday-announcement', '泳池开放、课程与设施公告', '0ce9f4d66f6fab2b65be19b0ba4372a05a8f0e4061f1134ab7fd37674dc8e336']],
+  ['independent-a1-listen-au', ['A1', 'everyday-dialogue', '蔬菜箱领取、付款与停车', 'f92de53369c115c6acee0a051736b66dd0da6ac264d9fe530e4ea18de9ab0202']],
+  ['independent-a1-listen-in', ['A1', 'practical-instructions', '首次使用电脑室的操作说明', '92ba1e81b7e3f3df4a4dfd1fd09aa976577ae7293a0e09556f850528da14f888']],
   ['independent-a2-listen-gb', ['A2', 'everyday-dialogue', '领取包裹、身份证明与代领条件', '0cc465cd49f01e2d66f930fdf9c1c30658a745281c51a38d1714f0c9bd12ae4b']],
   ['independent-a2-listen-us', ['A2', 'practical-instructions', '图书馆新志愿者培训安排', '2a10d3201bd06f1a6459b4cdf9ef04be5c48b42ddeb1db3235839d77a51bcf36']],
   ['independent-a2-listen-au', ['A2', 'everyday-dialogue', '预订海岸步行活动与集合要求', '09a1a72e9c731183ec44893b57860bc5bee92221186d5634306ecab83ba07c89']],

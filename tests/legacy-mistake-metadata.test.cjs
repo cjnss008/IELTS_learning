@@ -56,7 +56,7 @@ test('52-lesson page installs one shared tooltip with original local meanings, I
   const root={IELTSWordDictionary:Dictionary,IELTSWordHover:{install(options){installed=options;return{hide(){}};}},document:{addEventListener:(name,fn)=>{events[name]=fn;}},addEventListener:(name,fn)=>{browserEvents[name]=fn;}};
   const context={...root,globalThis:root,window:root,document:root.document,day:1,VOCAB:parse('VOCAB'),LESSONS:parse('LESSONS'),HOVER_LEXICON:parse('HOVER_LEXICON'),HOVER_CONTEXT:parse('HOVER_CONTEXT')};
   vm.runInNewContext(html.slice(html.indexOf('// Shared lookup'),html.indexOf('function clickableParagraph')),context);events.DOMContentLoaded();
-  assert.ok(installed);assert.equal(installed.materialId(),'lesson-1');const result=installed.dictionary.lookup('continent','',installed.materialId());assert.equal(result.ipa,'/ˈkɒntɪnənt/');assert.match(result.meaning,/大洲/);assert.match(result.example,/Kuang/);
+  assert.ok(installed);assert.equal(installed.materialId(),'lesson-1');const result=installed.dictionary.lookup('continent','',installed.materialId());assert.equal(result.ipa,'/ˈkɑntənənt/');assert.equal(result.ipaAccent,'en-US');assert.match(result.meaning,/大洲/);assert.match(result.example,/Kuang/);
   const local=installed.dictionary.lookup('quiz','After a quiz last autumn.','lesson-1');assert.ok(local.meaning.length>0);assert.ok(local.example.length>0);
   assert.ok(html.includes('assets/word-hover.css'));assert.equal((html.match(/src="assets\/word-hover.js"/g)||[]).length,1);assert.doesNotMatch(html,/tip\.id='wordMeaningTooltip'/);
 });

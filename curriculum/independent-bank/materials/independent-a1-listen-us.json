@@ -136,16 +136,32 @@
       "questions"
     ]
   },
-  "audio": "audio/independent-bank/independent-a1-listen-us.mp3",
+  "audio": "audio/independent-bank/us/independent-a1-listen-us.mp3",
   "audioSynthetic": true,
   "audioLocale": "en-US",
   "audioAccent": "美国英语（合成）",
   "audioVoice": "en-US-AriaNeural",
-  "audioProvider": "Microsoft online TTS",
+  "audioProvider": "Microsoft online TTS via edge-tts",
   "audioVoiceSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "captionFile": "",
-  "audioDurationSeconds": 52.224,
+  "audioKind": "synthetic",
   "audioVoices": [
     "en-US-AriaNeural"
-  ]
+  ],
+  "audioRoleVoices": {
+    "narrator": "en-US-AriaNeural"
+  },
+  "audioDurationSeconds": 51.242833,
+  "audioProvenance": {
+    "schema": 1,
+    "metadataPath": "curriculum/independent-bank/audio/independent-a1-listen-us.json",
+    "metadataSha256": "efbc3c6f093b492733baef64c5ca362c0dcb19a8ffccece0991e77fc0ffb2d58",
+    "transcriptHash": "cf133f72a4bf73ceef7c65b87796065e5f6da989d944b453e76306f0953e06fe",
+    "audioHash": "230c85d47b6f2bb633d084f09235c3143ab8f53c67760ab2da44589210346b7f",
+    "configurationHash": "2ed6ea26e261c49742560c8bee3763a5d1787083b91ff6fe9e33fa87b0b0c93c",
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "origin": "role-group-tts-with-real-boundary-cuts",
+    "verification": "exact-source-configuration-and-MP3-byte-hashes",
+    "scope": "Recorded American TTS voice identities and file/source agreement; not independent acoustic accent or listening validation."
+  }
 }

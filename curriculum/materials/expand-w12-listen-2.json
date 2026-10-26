@@ -1,0 +1,371 @@
+{
+  "id": "expand-w12-listen-2",
+  "week": 12,
+  "skill": "listening",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "lecture",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "旅行经历与基础测评 · Independent new scenario: recovering from a travel booking mistake",
+  "grammarFocus": "一般过去时；规则与常用不规则过去式；then / after that / finally。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Wrong Hotel Booking",
+  "instructions": "这是一份原创模拟教学材料，不是官方雅思试题。请先听录音（或阅读文本），然后完成8道听力/阅读题。题目均为英文，解释为中文。注意：听力中有自然的对话和纠正，答案不会直接读出。语法部分先学习一般过去时的规则，再完成8道新句子练习题。",
+  "transcript": "Mia: Hi, I'm Mia. I have a booking for tonight. My reservation number is 4472.\nReceptionist: Let me check. Ah, I see a problem. Your booking is for the City Hotel, not here. This is the River Hotel.\nMia: What? I booked the River Hotel. I'm sure. I checked the website last week.\nReceptionist: The website says City Hotel. Maybe you clicked the wrong link when you booked online.\nMia: Oh no. I paid 120 dollars for two nights. Can I stay here?\nReceptionist: We have one room free tonight. It's 80 dollars a night. But tomorrow we are full, so you cannot stay a second night.\nMia: OK. I'll take it for tonight. Then tomorrow I'll go to the City Hotel.\nReceptionist: Good plan. After that, you can call the City Hotel to confirm your booking with them.\nMia: Yes. Finally, I'll check my email for the booking confirmation. That will show which hotel I really booked.\nReceptionist: Here is your key. Room 305. The lift is on the left.\nMia: Thank you. I'm tired. I travelled for six hours by train.\nReceptionist: You're welcome. Breakfast is from 7 to 10 in the morning.\nMia: Great. I'll see you tomorrow.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is Mia's reservation number?",
+      "options": [
+        "4472",
+        "305",
+        "120",
+        "80"
+      ],
+      "answers": [
+        "4472"
+      ],
+      "explanation": "Mia说：My reservation number is 4472。所以答案是4472。",
+      "evidence": "My reservation number is 4472."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which hotel is Mia's booking for?",
+      "options": [
+        "The City Hotel",
+        "The River Hotel",
+        "The Train Hotel",
+        "The Breakfast Hotel"
+      ],
+      "answers": [
+        "The City Hotel"
+      ],
+      "explanation": "接待员说：Your booking is for the City Hotel, not here. 所以预订的是City Hotel。",
+      "evidence": "Your booking is for the City Hotel, not here."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "How much did Mia pay for two nights?",
+      "options": [
+        "80 dollars",
+        "120 dollars",
+        "305 dollars",
+        "4472 dollars"
+      ],
+      "answers": [
+        "120 dollars"
+      ],
+      "explanation": "Mia说：I paid 120 dollars for two nights. 所以是120美元。",
+      "evidence": "I paid 120 dollars for two nights."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How much is the room at the River Hotel for tonight?",
+      "options": [
+        "80 dollars a night",
+        "120 dollars a night",
+        "305 dollars a night",
+        "10 dollars a night"
+      ],
+      "answers": [
+        "80 dollars a night"
+      ],
+      "explanation": "接待员说：It's 80 dollars a night. 所以今晚的房间是80美元一晚。",
+      "evidence": "It's 80 dollars a night."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What will Mia do tomorrow?",
+      "options": [
+        "Go to the City Hotel",
+        "Go home by train",
+        "Call the River Hotel",
+        "Have breakfast at 10"
+      ],
+      "answers": [
+        "Go to the City Hotel"
+      ],
+      "explanation": "Mia说：Then tomorrow I'll go to the City Hotel. 所以明天她会去City Hotel。",
+      "evidence": "Then tomorrow I'll go to the City Hotel."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is Mia's room number?",
+      "options": [
+        "305",
+        "4472",
+        "120",
+        "80"
+      ],
+      "answers": [
+        "305"
+      ],
+      "explanation": "接待员说：Room 305. 所以房间号是305。",
+      "evidence": "Room 305."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Mia travelled for ______ hours by train. (one word)",
+      "maxWords": 1,
+      "answers": [
+        "six"
+      ],
+      "explanation": "Mia说：I travelled for six hours by train. 所以填six。",
+      "evidence": "I travelled for six hours by train."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What time is breakfast?",
+      "options": [
+        "From 7 to 10",
+        "From 6 to 9",
+        "From 8 to 11",
+        "From 10 to 12"
+      ],
+      "answers": [
+        "From 7 to 10"
+      ],
+      "explanation": "接待员说：Breakfast is from 7 to 10 in the morning. 所以早餐时间是7点到10点。",
+      "evidence": "Breakfast is from 7 to 10 in the morning."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "booking",
+      "meaning": "预订",
+      "example": "I have a booking for tonight."
+    },
+    {
+      "word": "reservation",
+      "meaning": "预约；预订",
+      "example": "My reservation number is 4472."
+    },
+    {
+      "word": "receptionist",
+      "meaning": "接待员",
+      "example": "Receptionist: Let me check."
+    },
+    {
+      "word": "website",
+      "meaning": "网站",
+      "example": "I checked the website last week."
+    },
+    {
+      "word": "confirm",
+      "meaning": "确认",
+      "example": "After that, you can call the City Hotel to confirm."
+    },
+    {
+      "word": "lift",
+      "meaning": "电梯",
+      "example": "The lift is on the left."
+    },
+    {
+      "word": "travelled",
+      "meaning": "旅行了（travel的过去式）",
+      "example": "I travelled for six hours by train."
+    },
+    {
+      "word": "breakfast",
+      "meaning": "早餐",
+      "example": "Breakfast is from 7 to 10 in the morning."
+    }
+  ],
+  "grammar": {
+    "title": "一般过去时：规则与常用不规则过去式；then / after that / finally",
+    "explanation": "一般过去时用来描述过去发生的动作或状态。规则动词的过去式通常在词尾加 -ed，例如：check → checked, book → booked。以 e 结尾的动词直接加 -d，例如：like → liked。辅音字母 + y 结尾的动词，变 y 为 i 再加 -ed，例如：study → studied。重读闭音节且末尾只有一个辅音字母的动词，双写该辅音字母再加 -ed，例如：stop → stopped。travel 在英式英语中常双写 l 变为 travelled，在美式英语中常写作 traveled。常用不规则动词的过去式需要单独记忆，例如：go → went, have → had, pay → paid, see → saw, take → took, is → was, are → were。表示顺序时，可以用 then（然后）、after that（在那之后）、finally（最后）来连接句子，使叙述更连贯。注意：本课新学的是 then / after that / finally 的用法，以及规则动词过去式的拼写规则；不规则动词过去式是复习内容。",
+    "example": "I checked the website last week. Then tomorrow I'll go to the City Hotel. After that, you can call the City Hotel to confirm. Finally, I'll check my email for the booking confirmation.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Yesterday I ______ my email for the booking confirmation.",
+        "options": [
+          "check",
+          "checked",
+          "checking",
+          "checks"
+        ],
+        "answers": [
+          "checked"
+        ],
+        "explanation": "Yesterday表示过去，动词用过去式。check是规则动词，加-ed变成checked。",
+        "evidence": "规则动词过去式加-ed。"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Last week she ______ to the City Hotel by bus.",
+        "options": [
+          "go",
+          "went",
+          "goes",
+          "going"
+        ],
+        "answers": [
+          "went"
+        ],
+        "explanation": "Last week表示过去，go的过去式是不规则形式went。",
+        "evidence": "go → went 是不规则过去式。"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "They ______ 80 dollars for the room last night.",
+        "options": [
+          "pay",
+          "paid",
+          "pays",
+          "paying"
+        ],
+        "answers": [
+          "paid"
+        ],
+        "explanation": "Last night表示过去，pay的过去式是不规则形式paid。",
+        "evidence": "pay → paid 是不规则过去式。"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "We ______ a problem with the booking yesterday.",
+        "options": [
+          "have",
+          "had",
+          "has",
+          "having"
+        ],
+        "answers": [
+          "had"
+        ],
+        "explanation": "Yesterday表示过去，have的过去式是不规则形式had。",
+        "evidence": "have → had 是不规则过去式。"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "He ______ the website two days ago.",
+        "options": [
+          "visit",
+          "visited",
+          "visiting",
+          "visits"
+        ],
+        "answers": [
+          "visited"
+        ],
+        "explanation": "Two days ago表示过去，visit是规则动词，加-ed变成visited。",
+        "evidence": "规则动词过去式加-ed。"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "First, I booked the room. ______, I checked my email.",
+        "options": [
+          "Then",
+          "But",
+          "Because",
+          "So"
+        ],
+        "answers": [
+          "Then"
+        ],
+        "explanation": "表示顺序“然后”用Then。",
+        "evidence": "then 表示“然后”。"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "She called the hotel. ______, she went to the room.",
+        "options": [
+          "After that",
+          "Before",
+          "However",
+          "Although"
+        ],
+        "answers": [
+          "After that"
+        ],
+        "explanation": "表示“在那之后”用After that。",
+        "evidence": "after that 表示“在那之后”。"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "We checked the booking. ______, we paid for the room.",
+        "options": [
+          "Finally",
+          "First",
+          "Then",
+          "After"
+        ],
+        "answers": [
+          "Finally"
+        ],
+        "explanation": "表示“最后”用Finally。",
+        "evidence": "finally 表示“最后”。"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you like travelling?",
+        "How do you usually book a hotel?",
+        "What do you do when you have a problem with a booking?",
+        "Do you prefer to travel by train or by bus?"
+      ],
+      "part2": "Describe a time when you had a problem with a booking. You should say: what the booking was for; what the problem was; what you did to solve it; and how you felt about it.",
+      "part3": [
+        "Why do people sometimes make booking mistakes?",
+        "How can hotels help guests with booking problems?",
+        "Do you think online booking is easy or difficult? Why?",
+        "What should a person do first when a booking is wrong?"
+      ]
+    },
+    "writing": "Write a short story (6–8 sentences) about a time you had a travel booking mistake. Use the past simple tense and the words 'then', 'after that', and 'finally'. Write about what happened and how you solved the problem."
+  },
+  "rubric": {
+    "taskType": "Listening and Reading Comprehension (A2) with Grammar Focus"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "12c8dd953753a46a1c0127ffb003e1a3cbbc91b05f8f66f53e1f1edef1647769"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

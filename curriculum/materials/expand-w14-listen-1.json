@@ -1,0 +1,356 @@
+{
+  "id": "expand-w14-listen-1",
+  "week": 14,
+  "skill": "listening",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "健康习惯与休息 · Independent new scenario: changes to sleep and exercise routines",
+  "grammarFocus": "because / so；should；比较级与最高级入门。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "A New Morning Routine",
+  "instructions": "这是为A2水平学习者设计的原创模拟听力练习（非官方雅思测试）。先听录音，再完成8道题。听力中有两位说话人：Mia和Ben，他们会自然对话并纠正信息。题目包括单选、填空和判断正误（True/False/Not Given）。所有题目和选项均为英文，解释为中文。请先阅读题目，再听录音。",
+  "transcript": "Mia: Hi Ben. You look tired today. Are you OK?\nBen: Hi Mia. Yes, I'm fine. But I go to bed very late these days. I sleep only five hours.\nMia: Five hours? That's not good. Why do you sleep so late?\nBen: Because I watch videos on my phone. I start at ten, and I stop at one in the morning.\nMia: Oh no. You should stop at ten. Your phone is bad for your sleep.\nBen: I know. But I like the videos. They are fun.\nMia: Fun, yes, but sleep is more important. You should put your phone in the kitchen.\nBen: In the kitchen? Hmm. Maybe. And I don't exercise now. I'm too busy.\nMia: You should walk every day. Walking is easy and good for you.\nBen: How long? Twenty minutes?\nMia: Thirty minutes is better. It's the best exercise for busy people.\nBen: OK. I can walk to work. It's only fifteen minutes.\nMia: Good. And you should eat breakfast. Do you eat breakfast?\nBen: No, I don't. I only drink coffee.\nMia: Coffee is OK, but breakfast is better. You should eat an egg and some bread.\nBen: An egg and bread. OK. I can do that.\nMia: So, what is your new plan?\nBen: I stop my phone at ten, and I walk to work. I eat breakfast, too.\nMia: That's a good plan. You will feel better.\nBen: I hope so. Thank you, Mia.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many hours does Ben sleep now?",
+      "options": [
+        "Three hours",
+        "Five hours",
+        "Eight hours"
+      ],
+      "answers": [
+        "Five hours"
+      ],
+      "explanation": "Ben说“I sleep only five hours.”，所以他现在睡5小时。",
+      "evidence": "I sleep only five hours."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does Ben go to bed late?",
+      "options": [
+        "Because he watches videos on his phone.",
+        "Because he works at night.",
+        "Because he exercises late."
+      ],
+      "answers": [
+        "Because he watches videos on his phone."
+      ],
+      "explanation": "Ben说“Because I watch videos on my phone.”，原因是在手机上看视频。",
+      "evidence": "Because I watch videos on my phone."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Mia says Ben should put his phone in the ______.",
+      "maxWords": 1,
+      "answers": [
+        "kitchen"
+      ],
+      "explanation": "Mia说“You should put your phone in the kitchen.”，填kitchen。",
+      "evidence": "You should put your phone in the kitchen."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How long does Mia say Ben should walk?",
+      "options": [
+        "Fifteen minutes",
+        "Twenty minutes",
+        "Thirty minutes"
+      ],
+      "answers": [
+        "Thirty minutes"
+      ],
+      "explanation": "Mia说“Thirty minutes is better.”，她建议走30分钟。",
+      "evidence": "Thirty minutes is better."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Ben drink for breakfast now?",
+      "options": [
+        "Only coffee",
+        "Milk and bread",
+        "An egg and coffee"
+      ],
+      "answers": [
+        "Only coffee"
+      ],
+      "explanation": "Ben说“I only drink coffee.”，他现在早餐只喝咖啡。",
+      "evidence": "I only drink coffee."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What is Ben's new plan?",
+      "options": [
+        "Stop phone at ten, walk to work, eat breakfast",
+        "Sleep five hours, watch videos, drink coffee",
+        "Walk thirty minutes, eat lunch, stop coffee"
+      ],
+      "answers": [
+        "Stop phone at ten, walk to work, eat breakfast"
+      ],
+      "explanation": "Ben说“I stop my phone at ten, and I walk to work. I eat breakfast, too.”，这是他的新计划。",
+      "evidence": "I stop my phone at ten, and I walk to work. I eat breakfast, too."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Ben walks to work in fifteen minutes.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Ben说“It's only fifteen minutes.”，指走路到公司只需15分钟，与题干一致。",
+      "evidence": "It's only fifteen minutes."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Mia says coffee is the best drink for breakfast.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "False"
+      ],
+      "explanation": "Mia说“Coffee is OK, but breakfast is better.”，她没说咖啡是最好的，反而说早餐更好。",
+      "evidence": "Coffee is OK, but breakfast is better."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "tired",
+      "meaning": "疲倦的",
+      "example": "You look tired today."
+    },
+    {
+      "word": "late",
+      "meaning": "晚的；迟的",
+      "example": "But I go to bed very late these days."
+    },
+    {
+      "word": "important",
+      "meaning": "重要的",
+      "example": "Fun, yes, but sleep is more important."
+    },
+    {
+      "word": "exercise",
+      "meaning": "锻炼；运动",
+      "example": "And I don't exercise now."
+    },
+    {
+      "word": "busy",
+      "meaning": "忙碌的",
+      "example": "I'm too busy."
+    },
+    {
+      "word": "breakfast",
+      "meaning": "早餐",
+      "example": "And you should eat breakfast."
+    },
+    {
+      "word": "plan",
+      "meaning": "计划",
+      "example": "So, what is your new plan?"
+    },
+    {
+      "word": "hope",
+      "meaning": "希望",
+      "example": "I hope so."
+    }
+  ],
+  "grammar": {
+    "title": "because / so；should；比较级与最高级入门",
+    "explanation": "1) because 表示原因，so 表示结果。例如：I sleep late because I watch videos. / I watch videos, so I sleep late. 2) should 表示“应该”，后接动词原形，用于给建议。例如：You should walk every day. 3) 比较级用于两者比较，最高级用于三者及以上比较。短形容词一般加 -er / -est；good 的比较级是 better，最高级是 best。例如：Walking is easy. Thirty minutes is better. It's the best exercise.",
+    "example": "Thirty minutes is better. It's the best exercise for busy people.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "I am tired ______ I go to bed late.",
+        "options": [
+          "because",
+          "so",
+          "should"
+        ],
+        "answers": [
+          "because"
+        ],
+        "explanation": "后半句是原因，用 because 连接。",
+        "evidence": "because I watch videos on my phone."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "I watch TV late, ______ I sleep only five hours.",
+        "options": [
+          "because",
+          "so",
+          "should"
+        ],
+        "answers": [
+          "so"
+        ],
+        "explanation": "后半句是结果，用 so 连接。",
+        "evidence": "I start at ten, and I stop at one in the morning."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "You ______ drink more water every day.",
+        "options": [
+          "should",
+          "because",
+          "best"
+        ],
+        "answers": [
+          "should"
+        ],
+        "explanation": "should 表示建议，后接动词原形 drink。",
+        "evidence": "You should walk every day."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Walking is good, but running is ______ for your heart.",
+        "options": [
+          "better",
+          "best",
+          "gooder"
+        ],
+        "answers": [
+          "better"
+        ],
+        "explanation": "两者比较用比较级 better。",
+        "evidence": "Thirty minutes is better."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Of all the sports, swimming is the ______ exercise for me.",
+        "options": [
+          "best",
+          "better",
+          "good"
+        ],
+        "answers": [
+          "best"
+        ],
+        "explanation": "三者及以上比较用最高级 best。",
+        "evidence": "It's the best exercise for busy people."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "My phone is old. Your phone is ______ than my phone.",
+        "options": [
+          "newer",
+          "newest",
+          "new"
+        ],
+        "answers": [
+          "newer"
+        ],
+        "explanation": "两者比较，new 的比较级是 newer。",
+        "evidence": "Your phone is bad for your sleep."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "This is the ______ book in the library.",
+        "options": [
+          "biggest",
+          "bigger",
+          "big"
+        ],
+        "answers": [
+          "biggest"
+        ],
+        "explanation": "三者及以上比较，big 的最高级是 biggest。",
+        "evidence": "It's the best exercise for busy people."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "I don't eat breakfast, ______ I am hungry at ten.",
+        "options": [
+          "so",
+          "because",
+          "should"
+        ],
+        "answers": [
+          "so"
+        ],
+        "explanation": "不吃早餐导致十点饿，是结果，用 so。",
+        "evidence": "I only drink coffee."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you sleep well?",
+        "What time do you go to bed?",
+        "Do you exercise every day?",
+        "What do you eat for breakfast?"
+      ],
+      "part2": "Describe a healthy morning. You should say: what time you get up; what you eat; what exercise you do; and why this morning is good for you.",
+      "part3": [
+        "Why is sleep important?",
+        "Should people exercise every day?",
+        "Is walking better than running?",
+        "What is the best time to sleep?"
+      ]
+    },
+    "writing": "Write 5–8 sentences about your new healthy plan. Use because, so, should, and one comparative (better) or superlative (best)."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (A2) with grammar and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "893d3123445fefa57992e687a4f8cfec7b9ff7b687e045972170f8b53ae069bf"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

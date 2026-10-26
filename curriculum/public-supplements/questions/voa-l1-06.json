@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-06-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-06",
+  "sourceVersion": "1",
+  "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+  "sourceContentHash": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+  "exposureGroup": "public-source:voa-l1-06",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Exact source text hash and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Official matching Conversation MP3, audio hash, text/audio alignment and rights review must pass; spokenEvidence excludes silent directions."
+    },
+    "independentExposure": "Reading and audio of this same source share one exposure group; neither is a new unseen parallel test after the other."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "At the start, what does Anna want to do?",
+      "options": [
+        "To collect a letter.",
+        "To exercise.",
+        "To meet a teacher."
+      ],
+      "answers": [
+        "To exercise."
+      ],
+      "evidence": "Pete, I want to work out. Where is the gym?",
+      "explanation": "Anna明确说 I want to work out，然后询问健身房在哪里。work out在这里是“锻炼”，所以选To exercise。mailroom只是后面走错的地点，不能反推她最初要取信；原音也没有说她要见老师。",
+      "evidenceOffsets": {
+        "start": 258,
+        "end": 301,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Pete, I want to work out. Where is the gym?",
+          "start": 258,
+          "end": 301
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which room is opposite the gym?",
+      "options": [
+        "The mailroom.",
+        "The lounge.",
+        "The garage."
+      ],
+      "answers": [
+        "The lounge."
+      ],
+      "evidence": "The gym is across from the lounge.",
+      "explanation": "across from表示“在……对面”，因此健身房对面是lounge。mailroom在前面的描述中是next to，也就是紧挨着；garage是Anna走错的地方。不能把“对面”“旁边”和“误入地点”混为一谈。",
+      "evidenceOffsets": {
+        "start": 309,
+        "end": 343,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The gym is across from the lounge.",
+          "start": 309,
+          "end": 343
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Pete says the gym is behind which area? Write ONE WORD from the conversation.",
+      "answers": [
+        "lobby"
+      ],
+      "maxWords": 1,
+      "evidence": "The gym is across from the lounge. It is behind the lobby.",
+      "explanation": "第二句的It承接前一句的the gym，behind the lobby说明健身房在大厅后面。题目要填一个地点词，因此只填lobby，不加the。lounge对应的是across from，不能用上一题的方位关系代替本句。",
+      "evidenceOffsets": {
+        "start": 758,
+        "end": 816,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The gym is across from the lounge. It is behind the lobby.",
+          "start": 758,
+          "end": 816
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Complete Anna’s sentence with ONE WORD: “This is not a gym. This is a ____.”",
+      "answers": [
+        "rooftop"
+      ],
+      "maxWords": 1,
+      "evidence": "This is not a gym. This is a rooftop.",
+      "explanation": "Anna在这句实际台词里亲口说This is a rooftop，所以空格填rooftop。这里不依靠括号中的镜头地点说明；即使看不到画面，也能从说出的词完成。rooftop表示屋顶平台，与此前说到的parking garage不同。",
+      "evidenceOffsets": {
+        "start": 1023,
+        "end": 1060,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "This is not a gym. This is a rooftop.",
+          "start": 1023,
+          "end": 1060
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Pete invite Anna to do at the end?",
+      "options": [
+        "Relax in the lounge.",
+        "Leave the building.",
+        "Work out with him."
+      ],
+      "answers": [
+        "Work out with him."
+      ],
+      "evidence": "I want to work out too! Join me!",
+      "explanation": "Pete先说自己也想锻炼，再说Join me，意思是邀请Anna一起参加刚提到的活动。因此是一起锻炼，而不是去休息室或离开大楼。判断Join me的具体活动要联系前一句，不能只把它机械译为“加入我”。",
+      "evidenceOffsets": {
+        "start": 1101,
+        "end": 1133,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I want to work out too! Join me!",
+          "start": 1101,
+          "end": 1133
+        }
+      ],
+      "understanding": "explicit-information"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item source comparison; no human/psychometric calibration claim",
+    "independentBlindReview": "separate-Codex-agent-text-only",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "16ffbd92ef4e01f0aef781eb0af410d556f880618a92c6c05060d9283fd0655d",
+      "reviewSha256": "b173647a9d00a075e3c0cd201af5e0085e643ef6678866b9460525ea83be61ee",
+      "scope": "Source text only; not an actual listening check, human examiner review or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

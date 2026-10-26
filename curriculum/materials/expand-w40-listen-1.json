@@ -1,0 +1,432 @@
+{
+  "id": "expand-w40-listen-1",
+  "week": 40,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 500,
+  "maxWords": 750,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "限时听力：学术独白与阶段测评 · Independent new scenario: cities balancing preservation and development",
+  "grammarFocus": "学术句子的主干、修饰关系与名词短语；被动表达。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 700,
+    "paragraphGapMs": 900,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true,
+    "roleVoices": {
+      "daniel": "en-US-JennyNeural",
+      "leila": "en-US-EricNeural",
+      "narrator": "en-US-BrianNeural"
+    },
+    "expectedTranscriptHash": "e14089f78c022d9378f92e18a06810d3ed5c4a3d28ea312a4f117476356624b7",
+    "audioRegenerationRequired": false,
+    "oldAudioMustNotBeUsed": false
+  },
+  "title": "The Old Market and the New Plan",
+  "instructions": "本材料为项目原创模拟场景、人物与数据，不是官方雅思试题，也未经考生难度标定。先听分角色美式合成录音，再答10题；留意说话人的更正、条件和立场。录音未重做前不可把旧音频配给本稿。所有题干与选项为英文，解析为中文。填空按题目词数和原文词形作答。语法先学习规则，再完成8项独立新句或新数据练习。口语与写作迁移另用自己的新细节；完成本练习不等于独立能力已达标。",
+  "transcript": "Daniel: Good evening. My name is Daniel Cho, and I work for the city planning office. Tonight I want to explain a new plan for the old market area. Some people support this plan, while others have concerns. I will describe both perspectives so that everyone understands the situation clearly.\n\nLeila: Why is the work urgent rather than something we can leave until later?\n\nDaniel: The old market is located in the center of our city and is more than one hundred years old. Many small shops sell fruit, bread, and fish there. The buildings are beautiful but also old and weak. Last year, engineers inspected the roofs and found serious problems. Water comes through the roofs when it rains. The city must repair the market soon. The preservation of this historic area is important, but safety must come first. If we wait too long, the damage will only get worse and repairs will cost more.\n\nLeila: What exactly would change under this plan?\n\nDaniel: Our plan has three parts. First, we will repair the old roofs using the same materials as before. This is essential for preservation, as the original look of the market will be maintained. Second, we will build a new covered walkway between the market and the bus station. This walkway will protect people from rain and sun. Third, we will add a small information center near the main entrance. The center will show the history of the market.\n\nLeila: Do the people who use the market agree about the benefits?\n\nDaniel: Now, some people say the plan is too big. A shop owner named Maria said, \"I like the repairs, but the new walkway will bring too many people. The market will become noisy.\" Another person, a teacher named Mr. Lee, said, \"I disagree. The walkway is good. More people will visit the market, and the shops will earn more money.\" These are both reasonable views, and we take them seriously. We understand that change can be difficult, but we believe the plan balances preservation with practical improvements. The walkway, for example, will be wide enough for people to pass comfortably, and it will be designed to fit the style of the old market. We have also considered Maria's concern about noise. The information center will help manage visitor numbers, and the city will monitor the situation after the work is finished.\n\nLeila: And who will pay? Traders also need to know whether they can keep working.\n\nDaniel: The city will pay for the repairs. The new walkway will be paid for by a private company. The information center will be paid for by the city and the private company together. The work will start in March and finish in December. During the work, the market will stay open. However, some shops will move to a temporary area outside. The city engineer will supervise the work to ensure that the old structures are not damaged. The materials used for the repairs will match the original as closely as possible.\n\nLeila: An information desk alone cannot control how many people arrive. How will you know whether the approach has worked?\n\nDaniel: Before construction, staff will count visitors and record noise at the same locations on market days. They will repeat those checks after the work is finished. Comparing equivalent days should help us separate changes linked to the walkway from a busy holiday, although it will not remove every other influence.\n\nLeila: Where can residents question these plans?\n\nDaniel: We will hold a public meeting next week. At the meeting, you can ask questions. You can also write to our office. Thank you for listening.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What makes repairs urgent?",
+      "options": [
+        "All traders have asked to leave the market.",
+        "The city wants to replace every old building.",
+        "The bus station is about to close.",
+        "Delay would worsen the damage and increase the cost."
+      ],
+      "answers": [
+        "Delay would worsen the damage and increase the cost."
+      ],
+      "explanation": "Daniel明确说明继续等待会使损坏加重、修理更贵。保留旧外观与安全修复并不互相排斥。",
+      "evidence": "If we wait too long, the damage will only get worse and repairs will cost more."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is the purpose of the covered walkway?",
+      "options": [
+        "To shelter people travelling between the market and the bus station",
+        "To replace the shops that sell fresh food",
+        "To provide a permanent exhibition inside the bus station",
+        "To prevent all visitors from entering the market"
+      ],
+      "answers": [
+        "To shelter people travelling between the market and the bus station"
+      ],
+      "explanation": "步道连接市场与公交站，遮雨遮阳；展示历史是信息中心的功能。",
+      "evidence": "Second, we will build a new covered walkway between the market and the bus station. This walkway will protect people from rain and sun."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete with ONE WORD from the transcript: The information center will explain the market's ______.",
+      "answers": [
+        "history"
+      ],
+      "maxWords": 1,
+      "explanation": "信息中心展示市场的history。原文未把它的主要展示主题说成预算或商店利润。",
+      "evidence": "The center will show the history of the market."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How do Maria and Mr. Lee differ?",
+      "options": [
+        "They expect different effects from an increase in visitors.",
+        "Maria opposes repairs while Mr. Lee opposes all new buildings.",
+        "They disagree about which company should pay for the walkway.",
+        "Maria wants the whole market closed while Mr. Lee wants it moved."
+      ],
+      "answers": [
+        "They expect different effects from an increase in visitors."
+      ],
+      "explanation": "两人都谈到更多访客：Maria担忧噪声，Mr. Lee期待商店收入增加。不能把Maria支持修复误读为反对全部计划。",
+      "evidence": "A shop owner named Maria said, \"I like the repairs, but the new walkway will bring too many people. The market will become noisy.\" Another person, a teacher named Mr. Lee, said, \"I disagree. The walkway is good. More people will visit the market, and the shops will earn more money.\""
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Who will pay for the walkway?",
+      "options": [
+        "A private company alone",
+        "The city alone",
+        "The city and the private company together",
+        "The shop owners alone"
+      ],
+      "answers": [
+        "A private company alone"
+      ],
+      "explanation": "步道由私人公司支付；共同支付的是信息中心，城市单独支付的是修理。alone在本题资金分工语境中指这笔费用的指定承担方，不代表后续任何成本都不存在。",
+      "evidence": "The city will pay for the repairs. The new walkway will be paid for by a private company. The information center will be paid for by the city and the private company together."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "In which month should the work finish? Write ONE WORD from the transcript.",
+      "answers": [
+        "December"
+      ],
+      "maxWords": 1,
+      "explanation": "March是开工，December是完工；next week指公众会议。",
+      "evidence": "The work will start in March and finish in December."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How will trading continue during construction?",
+      "options": [
+        "All shops will move permanently to the bus station.",
+        "Only the new information center will sell food.",
+        "The market will remain open, with some shops temporarily outside.",
+        "The whole market will close until the following year."
+      ],
+      "answers": [
+        "The market will remain open, with some shops temporarily outside."
+      ],
+      "explanation": "市场总体保持营业，部分商店暂移到外面的临时区域；不能把部分临时搬迁扩大为整个市场关闭。",
+      "evidence": "During the work, the market will stay open. However, some shops will move to a temporary area outside."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Complete with ONE WORD from the transcript: As well as counting visitors, staff will record ______.",
+      "answers": [
+        "noise"
+      ],
+      "maxWords": 1,
+      "explanation": "新增评估方法同时记录访客数量与noise，并在相同地点重复。",
+      "evidence": "Before construction, staff will count visitors and record noise at the same locations on market days."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Why compare equivalent market days?",
+      "options": [
+        "To reduce the risk of confusing a holiday effect with a walkway effect",
+        "To prove that no other factor can influence visitor numbers",
+        "To ensure that every market day has exactly the same visitors",
+        "To avoid collecting any measurements before construction"
+      ],
+      "answers": [
+        "To reduce the risk of confusing a holiday effect with a walkway effect"
+      ],
+      "explanation": "可比日期能减少把节假日繁忙误归因于步道的风险，但Daniel明确说仍不能排除所有其他影响，所以不是完全证明因果。",
+      "evidence": "Comparing equivalent days should help us separate changes linked to the walkway from a busy holiday, although it will not remove every other influence."
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Complete with ONE WORD from the transcript: The public meeting will take place next ______.",
+      "answers": [
+        "week"
+      ],
+      "maxWords": 1,
+      "explanation": "原文明确是next week；不是工程完成后才举行。",
+      "evidence": "We will hold a public meeting next week."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "preservation",
+      "meaning": "保护；保存",
+      "example": "The preservation of this historic area is important, but safety must come first."
+    },
+    {
+      "word": "repair",
+      "meaning": "修理；修复",
+      "example": "The city must repair the market soon."
+    },
+    {
+      "word": "walkway",
+      "meaning": "人行通道；步道",
+      "example": "Second, we will build a new covered walkway between the market and the bus station."
+    },
+    {
+      "word": "temporary",
+      "meaning": "临时的",
+      "example": "However, some shops will move to a temporary area outside."
+    },
+    {
+      "word": "private",
+      "meaning": "私人的；私营的",
+      "example": "The new walkway will be paid for by a private company."
+    },
+    {
+      "word": "engineer",
+      "meaning": "工程师",
+      "example": "The city engineer will supervise the work to ensure that the old structures are not damaged."
+    },
+    {
+      "word": "entrance",
+      "meaning": "入口",
+      "example": "Third, we will add a small information center near the main entrance."
+    },
+    {
+      "word": "materials",
+      "meaning": "材料（material的复数）",
+      "example": "First, we will repair the old roofs using the same materials as before.",
+      "lemma": "material"
+    }
+  ],
+  "grammar": {
+    "title": "长句的中心词、主句与修饰关系；保留时态的被动表达",
+    "explanation": "复习主语、谓语和宾语。本课新增：先找名词短语的中心词，再看后置修饰，不能用最近的名词决定主句动词。关系从句有自己的限定动词，但主句另有谓语。被动通常由be加过去分词构成；情态动词后用be + 过去分词，完成时被动用has/have been + 过去分词。account for等带介词的动词短语变被动时要保留介词。过去分词可缩减表示被动的关系从句，如documents that were collected变为documents collected。that还可引导believe等动词后的内容从句，不能一见that就判定为关系代词。下面八题是独立的新情境句。",
+    "example": "The new walkway will be paid for by a private company.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "What is the head noun of the subject in 'Several unexpected delays in the approval process have increased costs'?",
+        "options": [
+          "costs",
+          "approval",
+          "delays",
+          "process"
+        ],
+        "answers": [
+          "delays"
+        ],
+        "explanation": "主语的中心名词是delays；in the approval process补充延误发生在哪个过程，costs则是宾语。",
+        "evidence": "Several unexpected delays in the approval process have increased costs."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "What is the main clause's finite verb phrase? 'The proposal, which three engineers had revised, was rejected yesterday.'",
+        "options": [
+          "yesterday",
+          "was rejected",
+          "had revised",
+          "three engineers"
+        ],
+        "answers": [
+          "was rejected"
+        ],
+        "explanation": "was rejected是主句谓语；had revised属于which引导的关系从句。",
+        "evidence": "The proposal, which three engineers had revised, was rejected yesterday."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "In 'A report on the buildings that were damaged by flooding was circulated,' what does 'that were damaged by flooding' describe?",
+        "options": [
+          "the buildings",
+          "the flooding",
+          "the circulation",
+          "the report"
+        ],
+        "answers": [
+          "the buildings"
+        ],
+        "explanation": "that引导的关系从句紧接buildings，说明哪些建筑；报告是被传阅的对象。",
+        "evidence": "A report on the buildings that were damaged by flooding was circulated."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the modal passive form: Every cost must ______ before Friday.",
+        "options": [
+          "be accounting for",
+          "account for",
+          "be account for",
+          "be accounted for"
+        ],
+        "answers": [
+          "be accounted for"
+        ],
+        "explanation": "cost是需要被说明的对象；must后用be accounted for，并保留account for中的for。",
+        "evidence": "Every cost must be accounted for before Friday."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Keep the same tense and meaning in the passive: The committee has approved two designs.",
+        "options": [
+          "Two designs have been approved by the committee.",
+          "Two designs are being approved by the committee.",
+          "Two designs had been approved by the committee.",
+          "Two designs have approved the committee."
+        ],
+        "answers": [
+          "Two designs have been approved by the committee."
+        ],
+        "explanation": "原句为现在完成时；复数主语two designs对应have been approved。had been改变时间关系，are being改变体。",
+        "evidence": "Two designs have been approved by the committee."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "In 'Inspectors believe that the tower is safe,' what does the that-clause express?",
+        "options": [
+          "The person who inspected the tower",
+          "The time when the tower was built",
+          "The content of the inspectors' belief",
+          "A description identifying which inspectors"
+        ],
+        "answers": [
+          "The content of the inspectors' belief"
+        ],
+        "explanation": "that the tower is safe给出believe的内容，属于内容从句；并非修饰inspectors或tower的关系从句。",
+        "evidence": "Inspectors believe that the tower is safe."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct auxiliary: The number of objections raised by residents ______ fallen.",
+        "options": [
+          "have",
+          "has",
+          "to have",
+          "having"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "中心主语是单数the number；objections与residents都在其后的修饰结构中，不决定has/have。",
+        "evidence": "The number of objections raised by residents has fallen."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Shorten the relative clause without changing its meaning: Documents that were collected during the inspection are stored securely. Documents ______ during the inspection are stored securely.",
+        "options": [
+          "collect",
+          "collecting",
+          "to collect",
+          "collected"
+        ],
+        "answers": [
+          "collected"
+        ],
+        "explanation": "documents是collect的承受者，关系从句可缩为过去分词collected短语。collecting会表达文件主动收集。",
+        "evidence": "Documents collected during the inspection are stored securely."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit markets in your city?",
+        "What do you like about old buildings?",
+        "Is it important to keep old places? Why?",
+        "Do you prefer new shopping centers or old markets?"
+      ],
+      "part2": "Describe a place in your city that is both old and important. You should say: where it is; what people do there; why it is important; and explain how it could be improved.",
+      "part3": [
+        "How can cities balance old buildings and new development?",
+        "What are the benefits of repairing old buildings instead of building new ones?",
+        "Should private companies pay for public projects? Why or why not?",
+        "How can city planners listen to local people?"
+      ]
+    },
+    "writing": "Some people think cities should preserve old markets, while others think new development is more important. Discuss both views and give your own opinion. Write at least 150 words."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus and transfer tasks"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助草稿与Codex修订；场景、人物及数字均为教学模拟",
+    "verification": "reviewed",
+    "method": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+    "model": "original draft; Codex revision",
+    "draftInputSha256": "58103ad2088eff67c88b9457c1806c7bf10124455c89f9dd6325cfbb6ee3124f",
+    "contentHash": "1657d802da763b089ee091d59367c17cdefba835f29230ffbe933f6956db62be",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "releaseStatus": "staged-inactive",
+    "textReview": {
+      "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+      "candidateManifestSha256": "45fdccdcfb2a899f1f76b61c32af13a6fc10e17d06f9b3a24db355e48fccf950",
+      "semanticReviewSha256": "d54d91a233bd28de638c409b43a96164191a1de20cfacc3209da474fb44d5f68",
+      "revisionReviewSha256": "e396775994f5e51da4bce7ea194aea0b470957b412d374e51d666f207c527054",
+      "humanReviewed": false,
+      "difficultyCalibrated": false
+    },
+    "audioRegenerationRequired": false,
+    "audioRegenerationCompleted": true,
+    "audioReview": {
+      "kind": "machine-audit-only",
+      "transcriptHash": "e14089f78c022d9378f92e18a06810d3ed5c4a3d28ea312a4f117476356624b7",
+      "audioHash": "dca4eb1c46d7461dc70b7e8f59fe84c855c16650d6981824bd9e571e4e3fc643",
+      "configurationHash": "e5504a352601f7dab3e942174005f46674a7c6bde46a9c9399154971071ebf8a",
+      "auditReportSha256": "c89bc021d88e69055922b252173d4b76d9ce71d81ac22479241feaf4a51045b2",
+      "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+      "independentListeningReviewed": false,
+      "humanAuditioned": false
+    }
+  },
+  "audio": "audio/curriculum/expand-w40-listen-1.mp3",
+  "audioVoice": "en-US-JennyNeural / en-US-EricNeural",
+  "audioSynthetic": true,
+  "audioRegenerationRequired": true,
+  "active": false,
+  "audioDurationSeconds": 222.765
+}

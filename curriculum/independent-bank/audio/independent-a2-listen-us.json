@@ -1,25 +1,135 @@
 {
-  "schema": 3,
   "id": "independent-a2-listen-us",
-  "synthetic": true,
-  "provider": "Microsoft online TTS via edge-tts",
-  "authoringPackageVersion": "7.3.1",
-  "locale": "en-US",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+  "configurationHash": "814c3c7b472b78b0427e237c0f54ed2bdb091cd468887f75a99720b10a1add80",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
+    "rate": "-8%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "narrator": "en-US-AriaNeural"
+    },
+    "sourceLabels": [],
+    "segments": [
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 0,
+        "sourceEnd": 331,
+        "text": "Hello, and thank you for volunteering at Westfield Library. This is a training session for our Saturday reading club. Children arrive at ten, but please be here at nine forty-five so that we can arrange the chairs. The club meets in the room upstairs. We used the children's area last month, but it was too noisy for reading aloud.",
+        "boundary": "paragraph",
+        "voice": "en-US-AriaNeural",
+        "textHash": "fe45f8951dfb1c0eadb63003223e6006ab90455afd62b1c4760a1b74339b587f",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 333,
+        "sourceEnd": 631,
+        "text": "Each volunteer will work with three children. The children choose their own story, and your job is to help them understand it. Please do not turn the session into a spelling test. If a child does not want to read aloud, you can read a page first and then invite the child to join in. Do not insist.",
+        "boundary": "paragraph",
+        "voice": "en-US-AriaNeural",
+        "textHash": "b95bf911115233f35deced3da74983c58a2558321e4a20059a69369a2e52128b",
+        "pauseBeforeSeconds": 1.2
+      },
+      {
+        "role": "narrator",
+        "speaker": "Narrator",
+        "sourceStart": 633,
+        "sourceEnd": 1123,
+        "text": "There is a break after forty minutes. Water is available in the room. Snacks are not allowed there because a child in the club has a serious food allergy. Parents collect the children at eleven thirty. If a parent is late, tell the librarian at the front desk. Never leave a child waiting alone. You will receive a blue volunteer badge today. Please return it to the desk when you leave; we use the same badges each week. If you cannot attend a future session, email me by Thursday evening.",
+        "boundary": "paragraph",
+        "voice": "en-US-AriaNeural",
+        "textHash": "35da810444fb6c8cdf53d632e38e8d855bd4bbf34733de69a664d94f3aec0391",
+        "pauseBeforeSeconds": 1.2
+      }
+    ]
+  },
+  "audioHash": "ab52c491de8f5375511af553fff8a256f2aaf886510c8114700a8cb1ffebdbfe",
   "voices": [
     "en-US-AriaNeural"
   ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
+  "roleVoices": {
+    "narrator": "en-US-AriaNeural"
+  },
+  "durationSeconds": 83.08025,
+  "synthetic": true,
+  "provider": "Microsoft online TTS via edge-tts",
+  "authoringPackageVersion": "7.3.1",
   "rate": "-8%",
-  "transcriptHash": "3e26aadd06a9bd2a9175369cbe257d2a6ff5a36c14a2346516a1364e7a721ae3",
-  "audioHash": "8cf59c571845e058cfc5fb3f035516b214822cd647da0fca5045f0d8462367ad",
-  "configurationHash": "cc58d72f581462561a072fbc7068b1b17ab84973c4c684170f0f12d503208ef2",
-  "durationSeconds": 83.088,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 0,
+      "sourceEnd": 331,
+      "boundary": "paragraph",
       "voice": "en-US-AriaNeural",
-      "textHash": "99f05d109de21a4a2d4e617a71957dcf099240f617278e9bdea9f2ea77db3d2b",
-      "durationSeconds": 83.088
+      "textHash": "fe45f8951dfb1c0eadb63003223e6006ab90455afd62b1c4760a1b74339b587f",
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "dc319271044f9244aa6f7b3c6bb2e78264ce7454afea907ee79a05250bdfdc89",
+      "groupAudioHash": "b569b063962216fe8c95273a9a8e9884cf112867ff546cdb0a0a96ffb3a1c738",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 23.408041666666666,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 23.288041,
+      "startSeconds": 0.0,
+      "endSeconds": 23.363708333333335,
+      "durationSeconds": 23.363708333333335
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 333,
+      "sourceEnd": 631,
+      "boundary": "paragraph",
+      "voice": "en-US-AriaNeural",
+      "textHash": "b95bf911115233f35deced3da74983c58a2558321e4a20059a69369a2e52128b",
+      "pauseBeforeSeconds": 1.2,
+      "groupConfigurationHash": "dc319271044f9244aa6f7b3c6bb2e78264ce7454afea907ee79a05250bdfdc89",
+      "groupAudioHash": "b569b063962216fe8c95273a9a8e9884cf112867ff546cdb0a0a96ffb3a1c738",
+      "groupStartSeconds": 24.179125,
+      "groupEndSeconds": 45.47329166666667,
+      "wordStartSeconds": 24.239125,
+      "wordEndSeconds": 45.353291,
+      "startSeconds": 24.563708333333334,
+      "endSeconds": 45.857875,
+      "durationSeconds": 21.294166666666666
+    },
+    {
+      "role": "narrator",
+      "speaker": "Narrator",
+      "sourceStart": 633,
+      "sourceEnd": 1123,
+      "boundary": "paragraph",
+      "voice": "en-US-AriaNeural",
+      "textHash": "35da810444fb6c8cdf53d632e38e8d855bd4bbf34733de69a664d94f3aec0391",
+      "pauseBeforeSeconds": 1.2,
+      "groupConfigurationHash": "dc319271044f9244aa6f7b3c6bb2e78264ce7454afea907ee79a05250bdfdc89",
+      "groupAudioHash": "b569b063962216fe8c95273a9a8e9884cf112867ff546cdb0a0a96ffb3a1c738",
+      "groupStartSeconds": 46.23075,
+      "groupEndSeconds": 82.253125,
+      "wordStartSeconds": 46.29075,
+      "wordEndSeconds": 82.133124,
+      "startSeconds": 47.057875,
+      "endSeconds": 83.08025,
+      "durationSeconds": 36.022375000000004
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a2-listen-us.mp3"
 }

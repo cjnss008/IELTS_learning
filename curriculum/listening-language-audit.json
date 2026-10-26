@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "source": "assets/curriculum-data.js",
+  "sha256": "79e3e231150f8676cab58de7b413652081134f79d02a3331ed3801ec0500d9df",
+  "scope": "Public listening question prompts and displayed option strings only (optionsEnglish when present); stored legacy values, explanatory Chinese and learner/private placement records are excluded.",
+  "counts": {
+    "materials": 254,
+    "questions": 3248,
+    "questionPromptsChinese": 0,
+    "optionStrings": 9446,
+    "optionStringsChinese": 0,
+    "materialsWithChineseQuestionFields": 0
+  },
+  "bySource": [],
+  "findings": [],
+  "invalidDisplayLabels": [],
+  "staticShort": {
+    "sourcePath": "30分钟能力测试.html",
+    "questions": 8,
+    "questionPromptsChinese": 0,
+    "optionStrings": 12,
+    "optionStringsChinese": 0
+  },
+  "placement": {
+    "scope": "Public generator code only; no private generated placement tests or learner responses were read.",
+    "source": "server/placement.cjs",
+    "requiresGeneratorRule": true
+  },
+  "otherStaticListeningSources": [
+    "assets/foundation.js (knowledge/grammar questions, not listening test items)",
+    "assets/assessment-core.js (scoring rules only, no listening questions)",
+    "tools/foundation-sounds.cjs (generator for sounds-01 to sounds-08)"
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "id": "expand-w36-listen-1",
+  "week": 36,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "学术综合任务与转段检查 · Independent new scenario: how evidence changes a public recommendation",
+  "grammarFocus": "根据个人错题复查时态、从句、冠词、数量和主谓一致。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "How Evidence Changes a Public Recommendation: The Riverside Library Late-Hours Pilot",
+  "instructions": "本材料为原创模拟练习，不是官方雅思试题，也不对应任何官方分数。请先听/读英文材料，再完成10道题。听力部分有两位说话人（Maya 和 Daniel），注意他们自然改口和修正的地方。所有题目和选项均为英文；解释为中文。语法部分先看中文讲解，再完成8道新句子的题目。最后完成口语和写作迁移任务。",
+  "transcript": "Maya: Okay, Daniel, thanks for coming in early. The library board meets on Thursday, and we still have to decide whether to recommend keeping the late-hours pilot at Riverside branch.\nDaniel: Right. So just to recap for the recording — the pilot ran for twelve weeks, from January to March. The branch stayed open until ten p.m. on weekdays instead of eight.\nMaya: Yes. And the first report said use went up by about forty percent. That number was in the local paper.\nDaniel: It was. But then I looked at the raw counts, and, um — actually the forty percent was only for the first four weeks. After that, attendance dropped. By the last month, evening visits were only about fifteen percent higher than before the pilot.\nMaya: So the headline number was real but it didn't last.\nDaniel: Exactly. Also, most of the new evening visitors were students from the college across the street. They came for the quiet study room, not for borrowing books.\nMaya: Hmm. That matters, because the board's original goal was to help local families who work during the day.\nDaniel: Right. And we surveyed those families. Only nine percent said they would use the library after eight p.m. Most said they were too tired or worried about transport home.\nMaya: Okay, so the evidence points in a different direction from the first report. What about cost?\nDaniel: The extra staff hours cost about 4,200 dollars for the twelve weeks. That's not huge, but it's not nothing.\nMaya: And safety? I remember there was an incident.\nDaniel: There was one small incident in February — a broken window, probably not related. But the security guard said late evenings were generally calm.\nMaya: Good. So my suggestion is this: we don't recommend full late hours for families. Instead, we recommend keeping the study room open until nine for students, and we ask the college to share the cost.\nDaniel: I like that. Should we mention the forty percent figure at all?\nMaya: We should mention it, but we must explain that it was short-term. If we hide it, people will think we're being selective.\nDaniel: Agreed. I'll rewrite the recommendation tonight and send it to you before noon tomorrow.\nMaya: Perfect. And let's add one line saying we'll review the numbers again in six months.\nDaniel: Done.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How long did the late-hours pilot run?",
+      "options": [
+        "Four weeks",
+        "Twelve weeks",
+        "Six months",
+        "One year"
+      ],
+      "answers": [
+        "Twelve weeks"
+      ],
+      "explanation": "Daniel 明确说 pilot 持续了十二周：from January to March, twelve weeks。",
+      "evidence": "the pilot ran for twelve weeks, from January to March."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What was the original headline figure about evening use?",
+      "options": [
+        "It went up by about forty percent",
+        "It went down by fifteen percent",
+        "It stayed the same",
+        "It doubled"
+      ],
+      "answers": [
+        "It went up by about forty percent"
+      ],
+      "explanation": "Maya 说 first report 说 use went up by about forty percent。",
+      "evidence": "the first report said use went up by about forty percent."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What did Daniel discover about the forty percent figure?",
+      "options": [
+        "It was only for the first four weeks",
+        "It was completely false",
+        "It was about book borrowing",
+        "It was for the whole year"
+      ],
+      "answers": [
+        "It was only for the first four weeks"
+      ],
+      "explanation": "Daniel 修正说 forty percent 只适用于前四周，之后 attendance dropped。",
+      "evidence": "actually the forty percent was only for the first four weeks."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "By the last month, how much higher were evening visits than before the pilot?",
+      "options": [
+        "About forty percent",
+        "About fifteen percent",
+        "About nine percent",
+        "About fifty percent"
+      ],
+      "answers": [
+        "About fifteen percent"
+      ],
+      "explanation": "Daniel 说最后一个月 evening visits 只比试点前高约15%。",
+      "evidence": "By the last month, evening visits were only about fifteen percent higher than before the pilot."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Who were most of the new evening visitors?",
+      "options": [
+        "Local families with children",
+        "Students from the college across the street",
+        "Older people living nearby",
+        "Library staff"
+      ],
+      "answers": [
+        "Students from the college across the street"
+      ],
+      "explanation": "Daniel 说大多数新的晚间访客是街对面大学的学生。",
+      "evidence": "most of the new evening visitors were students from the college across the street."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What percentage of local families said they would use the library after eight p.m.?",
+      "options": [
+        "Forty percent",
+        "Fifteen percent",
+        "Nine percent",
+        "Ninety percent"
+      ],
+      "answers": [
+        "Nine percent"
+      ],
+      "explanation": "Daniel 说只有9%的家庭表示会在晚上8点后使用图书馆。",
+      "evidence": "Only nine percent said they would use the library after eight p.m."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "How much did the extra staff hours cost for the twelve weeks?",
+      "options": [
+        "About 420 dollars",
+        "About 4,200 dollars",
+        "About 42,000 dollars",
+        "Nothing"
+      ],
+      "answers": [
+        "About 4,200 dollars"
+      ],
+      "explanation": "Daniel 说额外员工工时成本约为4,200美元。",
+      "evidence": "The extra staff hours cost about 4,200 dollars for the twelve weeks."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What does Maya suggest they recommend instead of full late hours for families?",
+      "options": [
+        "Closing the library earlier",
+        "Keeping the study room open until nine for students",
+        "Opening only on weekends",
+        "Raising the library fine"
+      ],
+      "answers": [
+        "Keeping the study room open until nine for students"
+      ],
+      "explanation": "Maya 建议不推荐为家庭提供完整晚间开放，而是建议为学生保留学习室到9点，并请大学分担费用。",
+      "evidence": "we recommend keeping the study room open until nine for students, and we ask the college to share the cost."
+    },
+    {
+      "id": "q9",
+      "type": "fill",
+      "prompt": "Complete the sentence with ONE WORD from the recording: Daniel will rewrite the recommendation ______.",
+      "maxWords": 1,
+      "answers": [
+        "tonight"
+      ],
+      "explanation": "Daniel 说 I'll rewrite the recommendation tonight。",
+      "evidence": "I'll rewrite the recommendation tonight"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "True, False, or Not Given: The security guard said late evenings were generally calm.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "Daniel 明确说 the security guard said late evenings were generally calm。",
+      "evidence": "the security guard said late evenings were generally calm."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "pilot",
+      "meaning": "试点（项目）",
+      "example": "the pilot ran for twelve weeks, from January to March."
+    },
+    {
+      "word": "recap",
+      "meaning": "简要回顾",
+      "example": "So just to recap for the recording — the pilot ran for twelve weeks, from January to March."
+    },
+    {
+      "word": "attendance",
+      "meaning": "出席人数；到场人数",
+      "example": "After that, attendance dropped."
+    },
+    {
+      "word": "headline",
+      "meaning": "标题上的；引人注目的（数字）",
+      "example": "So the headline number was real but it didn't last."
+    },
+    {
+      "word": "surveyed",
+      "meaning": "调查（动词）",
+      "example": "And we surveyed those families."
+    },
+    {
+      "word": "incident",
+      "meaning": "事件；小事故",
+      "example": "There was one small incident in February — a broken window, probably not related."
+    },
+    {
+      "word": "selective",
+      "meaning": "有选择性的；挑拣的",
+      "example": "If we hide it, people will think we're being selective."
+    },
+    {
+      "word": "recommendation",
+      "meaning": "建议；推荐",
+      "example": "I'll rewrite the recommendation tonight and send it to you before noon tomorrow."
+    }
+  ],
+  "grammar": {
+    "title": "时态、从句、冠词、数量和主谓一致：根据错题复查",
+    "explanation": "先看意思，再看术语。1) 时态：过去发生且已结束用一般过去时（the pilot ran for twelve weeks）；过去某时之前已完成用过去完成时（By the last month, visits had dropped）。2) 从句：宾语从句用陈述语序（I know that the number was real），不要用疑问语序。3) 冠词：特指用 the（the first report），泛指可数名词单数用 a/an（a small incident）。4) 数量：percent 前面用具体数字（forty percent），不可数用 amount of，可数用 number of。5) 主谓一致：主语是单数第三人称，动词加 -s（the report says）；主语是复数，动词用原形（families said）。",
+    "example": "the first report said use went up by about forty percent.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The pilot run for twelve weeks last year.",
+          "The pilot ran for twelve weeks last year.",
+          "The pilot is running for twelve weeks last year.",
+          "The pilot runs for twelve weeks last year."
+        ],
+        "answers": [
+          "The pilot ran for twelve weeks last year."
+        ],
+        "explanation": "last year 表示过去，run 的过去式是 ran。",
+        "evidence": "the pilot ran for twelve weeks, from January to March."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "She asked me where was the study room.",
+          "She asked me where the study room was.",
+          "She asked me where is the study room.",
+          "She asked me where the study room is."
+        ],
+        "answers": [
+          "She asked me where the study room was."
+        ],
+        "explanation": "宾语从句用陈述语序，且主句是过去时，从句用 was。",
+        "evidence": "we recommend keeping the study room open until nine for students"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "There was a small incident in February.",
+          "There was small incident in February.",
+          "There was the small incident in February.",
+          "There were a small incident in February."
+        ],
+        "answers": [
+          "There was a small incident in February."
+        ],
+        "explanation": "泛指一个事件用 a small incident；there be 结构主语单数用 was。",
+        "evidence": "There was one small incident in February — a broken window, probably not related."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "Only nine percent of families says they would use it.",
+          "Only nine percent of families said they would use it.",
+          "Only nine percent of families say they would used it.",
+          "Only nine percent of families saying they would use it."
+        ],
+        "answers": [
+          "Only nine percent of families said they would use it."
+        ],
+        "explanation": "主句用过去时 said；families 是复数，不用 says。",
+        "evidence": "Only nine percent said they would use the library after eight p.m."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "The report say use went up.",
+          "The report says use went up.",
+          "The report saying use went up.",
+          "The report are saying use went up."
+        ],
+        "answers": [
+          "The report says use went up."
+        ],
+        "explanation": "主语 the report 是单数第三人称，动词用 says。",
+        "evidence": "the first report said use went up by about forty percent."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "By the last month, evening visits had dropped.",
+          "By the last month, evening visits have dropped.",
+          "By the last month, evening visits drops.",
+          "By the last month, evening visits dropping."
+        ],
+        "answers": [
+          "By the last month, evening visits had dropped."
+        ],
+        "explanation": "过去某时之前已完成，用过去完成时 had dropped。",
+        "evidence": "By the last month, evening visits were only about fifteen percent higher than before the pilot."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "We need a amount of money for the extra hours.",
+          "We need an amount of money for the extra hours.",
+          "We need the number of money for the extra hours.",
+          "We need amount of money for the extra hours."
+        ],
+        "answers": [
+          "We need an amount of money for the extra hours."
+        ],
+        "explanation": "money 不可数，用 an amount of；number of 用于可数名词。",
+        "evidence": "The extra staff hours cost about 4,200 dollars for the twelve weeks."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "If we hide the number, people will think we are selective.",
+          "If we hide the number, people will think we is selective.",
+          "If we hide the number, people will think we was selective.",
+          "If we hide the number, people will think we be selective."
+        ],
+        "answers": [
+          "If we hide the number, people will think we are selective."
+        ],
+        "explanation": "we 后 be 动词用 are；if 条件句主将从现。",
+        "evidence": "If we hide it, people will think we're being selective."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often use a library? Why or why not?",
+        "What time of day do you usually study or read?",
+        "Do you prefer to study alone or with other people?",
+        "Have you ever changed your mind because of new information?"
+      ],
+      "part2": "Describe a time when new evidence changed a decision you or someone you know made. You should say: what the original decision was; what new evidence appeared; how the decision changed; and how you felt about the change.",
+      "part3": [
+        "Why do people sometimes ignore evidence that does not support their first idea?",
+        "How can organizations make better decisions when the first numbers look good?",
+        "Should public institutions always explain the numbers behind their recommendations?",
+        "What kinds of evidence are most convincing to ordinary people?"
+      ]
+    },
+    "writing": "You are a student helper at a community center. The center started a free evening class for adults. After six weeks, the first report says attendance is high, but a closer look shows most people came only in the first two weeks. Write a short recommendation (about 150 words) to the center manager. Say what the first report showed, what the closer look showed, and what you recommend now. Use clear paragraphs."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar review and transfer tasks (simulated educational material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "a247dc9a414f90ef0b8faa8e23516b95cf6e92ed9b91e9ec2acd2c1b9ba719dd"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

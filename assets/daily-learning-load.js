@@ -27,7 +27,7 @@ function placementChallenges(options={}){
  const {data,route,day}=options;if(!route||!data?.materials||!day?.tasks)return[];const rank=value=>Math.max(-1,...(String(value||'').match(/A[012]|B[12]|C[12]/g)||[]).map(v=>['A0','A1','A2','B1','B2','C1','C2'].indexOf(v))),common=rank(route.level),used=new Set([...(options.records||[]).map(r=>r.materialId),...(options.drafts||[]).map(d=>d.materialId),...Object.keys(options.exposures||{}),...(options.excludedMaterialIds||[])]),entries=[];
  for(const skill of ['listening','reading','speaking','writing']){
   const result=route.skills?.[skill],level=rank(result?.level),task=day.tasks.find(t=>t.id===skill);if(result?.verified!==true||level<=common||!task||task.mode==='assessment')continue;
-  const candidates=data.materials.filter(m=>m.skill===skill&&m.pool==='training'&&!m.independentBank&&!m.assessmentGroup&&!m.form&&!m.fullTest&&m.source?.verification==='reviewed'&&rank(m.level)===level&&!used.has(m.id)&&Number.isFinite(m.estimatedMinutes)&&m.estimatedMinutes>0).sort((a,b)=>(a.week||0)-(b.week||0)||a.id.localeCompare(b.id)),material=candidates[0];if(!material)continue;used.add(material.id);
+  const candidates=data.materials.filter(m=>m.skill===skill&&!m.source?.publicSourceId&&m.pool==='training'&&!m.independentBank&&!m.assessmentGroup&&!m.form&&!m.fullTest&&m.source?.verification==='reviewed'&&rank(m.level)===level&&!used.has(m.id)&&Number.isFinite(m.estimatedMinutes)&&m.estimatedMinutes>0).sort((a,b)=>(a.week||0)-(b.week||0)||a.id.localeCompare(b.id)),material=candidates[0];if(!material)continue;used.add(material.id);
   entries.push({kind:'placement-challenge',materialId:material.id,skill,level:result.level,sessionId:route.sessionId,estimatedMinutes:material.estimatedMinutes,unseen:true,reason:'入学测评的'+NAMES[skill]+'为 '+result.level+'，高于共同起点 '+route.level+'；提供适级常规新材料，保留弱项核心课程与关卡要求。',strategy:'按入学测评的'+result.level+'分项程度独立练习；完成后保留原稿与真实核对，挑战不替代共同核心任务。'});
  }
  return entries;
@@ -35,6 +35,11 @@ function placementChallenges(options={}){
 function build(options={}){
  const data=options.data||root.IELTSCurriculumData,records=Array.isArray(options.records)?options.records:[],drafts=Array.isArray(options.drafts)?options.drafts:[],days=[...(data?.days||[])].sort((a,b)=>a.day-b.day);
  const hub=options.hub||dependency('IELTSTodayHub','./today-hub.js'),player=options.player||dependency('IELTSCoursePlayer','./course-player.js'),year=options.yearPlanner||dependency('IELTSYearPlanner','./year-planner.js'),assessment=options.assessment||dependency('IELTSAssessment','./assessment-core.js');
+ // Pure planners inject a store explicitly; requiring an adapter must not
+ // initialize browser storage. Live browser storage failures still propagate.
+ const adaptivePlan=Object.prototype.hasOwnProperty.call(options,'adaptivePlan')?options.adaptivePlan:root.document?root.IELTSAdaptivePlan:null;
+ const contextPractice=options.contextPractice||(root.document?root.IELTSPublicContextPractice:null),resolveMaterial=id=>data?.materials.find(m=>m.id===id)||contextPractice?.resolveMaterial?.(id,{data})||null;
+ let publicStateRead=false,publicStateValue;const publicState=()=>{if(!publicStateRead){publicStateValue=adaptivePlan?.publicCourseState?.();publicStateRead=true;}return publicStateValue;};
  const currentDay=Number(options.currentDay)||days[0]?.day||1,today=options.today||year?.dateKey(options.now??Date.now()),budget=options.budget||year?.calendarBudget(records,drafts,today)||{remainingMinutes:360,spentMinutes:0,exhausted:false};
  if(budget.budgetError)return{budget,entries:[],next:{kind:'blocked',label:'档案已更新，请刷新继续',reason:budget.budgetError},reason:budget.budgetError};
  if(!data||!hub||!player)return{budget,entries:[],next:null,reason:'课程状态组件未准备好。'};
@@ -48,22 +53,36 @@ function build(options={}){
   // A cached result or an old recap token must not turn an incorrect answer into completion.
   const errors=[];
   for(const state of states.filter(s=>s.task.id!=='reflection'))for(const record of hub.latestForMaterial(state.task,own,day.day,data.materials,data).values()){
-   if(corrected(record))continue;const material=data.materials.find(m=>m.id===record.materialId);
-   if(['reading','listening','grammar'].includes(material?.skill)){try{const artifact=hub.artifact(record.answer),grade=assessment.gradeMaterial(material,artifact?.answers||{});if(grade.allGradable&&grade.answered===grade.total&&grade.correct<grade.total)errors.push(record);}catch(_){}}
+   if(corrected(record))continue;const material=resolveMaterial(record.materialId);
+   if(['reading','listening','grammar'].includes(material?.skill)){try{const artifact=hub.artifact(record.answer),grade=assessment.gradeMaterialForArtifact?assessment.gradeMaterialForArtifact(material,artifact):assessment.gradeMaterial(material,artifact?.answers||{});if(grade.allGradable&&grade.answered===grade.total&&grade.correct<grade.total)errors.push(record);}catch(_){}}
    else if(material?.skill==='vocabulary'){try{const vocabulary=options.vocabulary||dependency('IELTSVocabularyPractice','./vocabulary-practice.js'),verified=vocabulary?.verifyTrainingArtifact(hub.artifact(record.answer),material);if(verified?.submitted&&!verified.mastered)errors.push(record);}catch(_){}}
   }
+  const essential=day.day===currentDay?root.IELTSEssentialCourse?.state?.({day:day.day,data,records,drafts,budget,now:options.now,dayPlan:day,completionValid:summary.completionValid}):null;
+  const essentialRequired=day.requirements?.essential===true;
+  if(essentialRequired&&essential?.applicable&&!essential.done){readiness.ready=false;readiness.reason='请先完成今天安排的8000词训练份额；原稿保留，未完成部分按预算顺延。';const vocabulary=states.find(s=>s.task.id==='vocabulary');if(vocabulary){vocabulary.done=false;vocabulary.essential=essential;}}
   const reflection=states.find(s=>s.task.id==='reflection'),done=readiness.ready&&errors.length===0&&!summary.remaining&&!summary.unreadable&&(reflection?reflection.done:summary.completionValid===true);
-  const result={day,own,states,summary,errors,readiness,done};cache.set(day.day,result);return result;
+  const result={day,own,states,summary,errors,readiness,done,essential,essentialRequired};cache.set(day.day,result);return result;
  }
  const current=days.find(d=>d.day===currentDay)||days[0],currentState=current?inspect(current):null;
  const selected=days.find(day=>day.day===Number(options.selectedDay)&&currentDay>=day.day),schedule=calendarSchedule({...options,data,yearPlanner:year,route:placement}),selection=selected&&player.courseSelectionAccess?.(data,records,selected.day,{...options,scheduledDay:schedule?.scheduledDay,yearPlanner:year,assessment,placement:options.placement||{currentRoute:()=>placement}}),selectedFloor=selection?.allowed?selected.day:null,first=days.find(day=>(!placement||day.day>=placement.startDay)&&(!selectedFloor||day.day>=selectedFloor)&&!inspect(day).done),state=first?inspect(first):null,target=state?.day;
  const historical=days.filter(day=>day.day<(target?.day||currentDay)&&(!placement||day.day>=placement.startDay||records.some(record=>record.dayNumber===day.day)||drafts.some(draft=>draft.courseDay===day.day))&&!inspect(day).done).map(day=>({day:day.day,week:day.week,remainingMistakes:inspect(day).summary.remaining||0,missingMaterials:inspect(day).states.filter(item=>item.task.id!=='reflection').reduce((sum,item)=>sum+item.missingMaterialIds.length,0)}));
  const entries=[],add=entry=>{if(entry)entries.push(entry);},started=day=>records.some(r=>r.dayNumber===day.day)||drafts.some(d=>d.courseDay===day.day),materialMap=new Map(data.materials.map(m=>[m.id,m]));
+ const canonicalMaterialGet=materialMap.get.bind(materialMap);materialMap.get=id=>canonicalMaterialGet(id)||contextPractice?.resolveMaterial?.(id,{data})||null;materialMap.has=id=>!!materialMap.get(id);
  const base=(day,taskId,materialId)=>({day:day.day,taskId,materialId});
  function materialAction(day,task,id){
   const material=materialMap.get(id),draft=typeof player.preferredDraft==='function'?player.preferredDraft(drafts,{courseDay:day.day,taskId:task.id,materialId:id,material,records}):drafts.find(d=>d.courseDay===day.day&&d.taskId===task.id&&d.materialId===id&&!records.some(r=>r.id===d.id));
   let access;try{access=options.materialAccess?.(material)||player.protectedMaterialAccess(material,records,data.materials,{assessment,exposures:options.exposures,now:options.now,data,placement:options.placement});}catch(_){access={allowed:false,reason:'材料解锁状态暂不可核对。'};}
-  return{...base(day,task.id,id),kind:access.allowed?'material':'blocked',draftId:draft?.id,label:access.allowed?(draft?'继续未提交草稿：':day.day===currentDay?'继续学习：':'继续第 '+day.day+' 课：')+NAMES[task.id]:'等待材料解锁',reason:access.allowed?'按真实作答继续；建议分钟不设最低用时。':access.reason,title:material?.title||NAMES[task.id]};
+  const assignment=task.publicCourseAssignments?.find(a=>a.materialId===id);
+  if(assignment&&!draft){const contract=adaptivePlan?.publicMaterialStatus?.(material,assignment,day.day);if(contract?.allowed===false)access=contract;else{const ownerAssignment=day.publicCourse?.assignments.find(a=>a.materialId===id)||assignment,admitted=player.publicPracticeAccess(material,day,data,records,{...options,route:placement,assignment:ownerAssignment,ownerDayFrozen:started(day),assessment});if(!admitted.allowed)access=admitted;}}
+  const grammarAssignment=task.contextPracticeAssignments?.find(a=>a.materialId===id);if(grammarAssignment&&!draft){const ready=contextPractice?.beginAccess?.(material,grammarAssignment,{...options,data,records,assessment});if(!ready?.allowed)access={allowed:false,reason:ready?.reason||'语境语法组件或关联原稿尚未就绪，原任务保留。'};}
+  if(day.day>=2&&!started(day)&&!draft){const state=publicState();if(state?.available&&!state.ready)access={allowed:false,reason:state.pending[0]?.reason||'正在更新后续听读课程，请稍后重试。'};}
+  return{...base(day,task.id,id),kind:access.allowed?'material':'blocked',draftId:draft?.id,...(assignment?{publicCourseRequired:true,required:true,courseAssignment:assignment}:{}),...(grammarAssignment?{contextPracticeRequired:true,required:true,contextPracticeAssignment:grammarAssignment}:{}),label:access.allowed?(draft?'继续未提交草稿：':day.day===currentDay?'继续学习：':'继续第 '+day.day+' 课：')+NAMES[task.id]:'等待材料核对',reason:access.allowed?'按真实作答继续；建议分钟不设最低用时。':access.reason,title:material?.title||NAMES[task.id]};
+ }
+ // Preserve optional public-source drafts outside frozen core materialIds.
+ // Resuming a real draft takes priority over opening a new supplemental item.
+ for(const draft of drafts.filter(d=>materialMap.get(d.materialId)?.source?.publicSourceId&&!contextPractice?.isContextMaterial?.(materialMap.get(d.materialId))&&!records.some(r=>r.id===d.id)).sort((a,b)=>(a.materialId===options.current?.materialId?-1:0)-(b.materialId===options.current?.materialId?-1:0)||String(a.startedAt).localeCompare(String(b.startedAt)))){
+  const rawOwner=days.find(d=>d.day===draft.courseDay),owner=rawOwner&&inspect(rawOwner).day;if(!owner||!owner.tasks.some(t=>t.id===draft.taskId))continue;const m=materialMap.get(draft.materialId),core=owner.tasks.some(t=>t.id===draft.taskId&&(t.coreMaterialIds||t.materialIds).includes(draft.materialId));if(core&&owner.day===target?.day)continue;
+  add({...base(owner,draft.taskId,draft.materialId),kind:core?'material':'extra',entry:{kind:'public-practice',materialId:m.id,skill:m.skill,mode:'practice'},draftId:draft.id,publicSupplement:true,retained:true,optional:!core,required:core,title:m.title,label:'继续公开素材草稿：'+NAMES[m.skill],reason:'原始答案、音频进度与课程归属保留；旧草稿不会增加原课程完成门槛。'});
  }
  let blockedReason='',extraDay=placement?state?.day||currentState?.day||current:currentState?.day||current;
  if(placement&&!selectedFloor){
@@ -85,6 +104,8 @@ function build(options={}){
   }
   if(blockedReason)add({...base(target,'reflection',null),kind:'blocked',label:'前置证据待补齐',reason:blockedReason});
   else{
+   const essential=state.essential;
+   if(state.essentialRequired&&essential?.applicable&&!essential.done)add({...base(target,'vocabulary','essential-daily'),kind:'essential-vocabulary',required:true,label:essential.label,reason:essential.message,href:essential.href,estimatedMinutes:essential.estimatedMinutes});
    const reflection=state.states.find(s=>s.task.id==='reflection');
    const needsCorrection=state.errors.length||state.summary.remaining>0,missingCore=state.states.some(item=>item.task.id!=='reflection'&&item.missingMaterialIds.length),correction=needsCorrection&&reflection?{...base(target,'reflection',reflection.nextMaterialId),kind:'reflection',label:'先完成错题订正',reason:'真实错误须订正通过，原始尝试和待评状态保留。'}:null;
    if(correction&&!missingCore)add(correction);
@@ -103,18 +124,32 @@ function build(options={}){
    if(reflection&&!state.done&&!entries.some(e=>e.kind==='reflection'))add({...base(target,'reflection',reflection.nextMaterialId),kind:state.readiness.ready?'reflection':'blocked',label:state.readiness.ready?'完成本课每日复盘':'复盘等待核心任务与评阅',reason:state.readiness.reason});
   }
  }
+ const optionalEssential=currentState?.essential;
+ if(optionalEssential?.applicable&&!optionalEssential.done&&!currentState.essentialRequired){
+  const review=optionalEssential.plan?.due?.length>0,entry={...base(currentState.day,'vocabulary','essential-daily'),kind:'essential-vocabulary',optional:true,required:false,label:'可选：'+optionalEssential.label,reason:'本日保留原计划完成状态。'+optionalEssential.message,href:optionalEssential.href,estimatedMinutes:optionalEssential.estimatedMinutes};
+  if(review)entries.unshift(entry);else add(entry);
+ }
+ // An already-active core draft and due review retain priority. Saved public
+ // drafts precede only unstarted units, never an active core or due review.
+ const activeCore=options.current?.active&&!options.current.submitted?entries.find(e=>!e.publicSupplement&&e.materialId===options.current.materialId):null;
+ if(activeCore&&entries.some(e=>e.publicSupplement&&e.draftId)){entries.splice(entries.indexOf(activeCore),1);entries.unshift(activeCore);}
+ const dueEssential=entries.find(e=>e.kind==='essential-vocabulary'&&currentState?.essential?.plan?.due?.length);
+ if(dueEssential&&entries.some(e=>e.publicSupplement&&e.draftId)){entries.splice(entries.indexOf(dueEssential),1);entries.unshift(dueEssential);}
  // Extra work remains separate from core completion. Reuse planner eligibility,
  // then admit each actual learning unit with its own completion-time prediction.
  let plan;try{plan=options.extraPlan?.(extraDay,{...budget,remainingMinutes:360,spentMinutes:0});}catch(_){}
  for(const entry of plan?.retained||[]){const draft=drafts.find(d=>d.materialId===entry.materialId);if(!draft||entries.some(e=>e.materialId===entry.materialId))continue;add({...base(days.find(d=>d.day===draft.courseDay)||extraDay,entry.skill,entry.materialId),kind:'extra',entry,draftId:draft.id,label:'继续已有补强草稿：'+NAMES[entry.skill],reason:'原始输入与课程归属保留。'});}
- for(const entry of plan?.tasks||[]){const material=materialMap.get(entry.materialId);if(!['new-practice','reinforcement','progression'].includes(entry.kind)||material?.pool!=='training'||entries.some(e=>e.materialId===entry.materialId)||entry.kind==='progression'&&blockedReason)continue;add({...base(extraDay,entry.skill,entry.materialId),kind:'extra',entry,label:'继续同级新材料：'+NAMES[entry.skill],reason:entry.reason||'根据真实表现补充独立练习，不替代核心课程。'});}
+ for(const entry of plan?.tasks||[]){const material=materialMap.get(entry.materialId);if(!['new-practice','reinforcement','progression'].includes(entry.kind)||material?.pool!=='training'||material.source?.publicSourceId||entries.some(e=>e.materialId===entry.materialId)||entry.kind==='progression'&&blockedReason)continue;add({...base(extraDay,entry.skill,entry.materialId),kind:'extra',entry,label:'继续同级新材料：'+NAMES[entry.skill],reason:entry.reason||'根据真实表现补充独立练习，不替代核心课程。'});}
  for(const entry of placementChallenges({data,route:placement,day:extraDay,records,drafts,exposures:options.exposures,excludedMaterialIds:entries.map(e=>e.materialId)})){const material=materialMap.get(entry.materialId);let access;try{access=options.materialAccess?.(material)||player.protectedMaterialAccess(material,records,data.materials,{assessment,exposures:options.exposures,now:options.now,data,placement:options.placement});}catch(_){access={allowed:false};}if(!access.allowed)continue;add({...base(extraDay,entry.skill,entry.materialId),kind:'extra',entry,placementChallenge:true,optional:true,title:material.title,label:'可选：'+entry.level+' '+NAMES[entry.skill]+'适级挑战',reason:entry.reason});}
- for(const entry of entries){if(['blocked','view'].includes(entry.kind))continue;const day=days.find(d=>d.day===entry.day),task=day?.tasks.find(t=>t.id===entry.taskId),material=materialMap.get(entry.materialId);entry.estimate=prediction(material,task,records,{...options,yearPlanner:year,materials:data.materials});const nextCourse=currentState?.done&&entry.day>currentDay&&!started(day)&&!entry.draftId,focusMinutes=options.timerState?.settings?.focusMinutes||25,windowStudy=nextCourse?Math.max(entry.estimate.studyMinutes,focusMinutes):entry.estimate.studyMinutes,timer=options.timerCore||dependency('IELTSStudyTimerCore','./study-timer-core.js'),window=timer?.forecast(windowStudy,options.timerState);entry.startWindowMinutes=nextCourse?(window?.totalMinutes||windowStudy):entry.estimate.totalMinutes;entry.nextCourseWindow=nextCourse;entry.fitsBudget=entry.startWindowMinutes<=budget.remainingMinutes+.001;}
+ for(const entry of entries){if(['blocked','view'].includes(entry.kind))continue;const day=days.find(d=>d.day===entry.day),task=day?.tasks.find(t=>t.id===entry.taskId),material=materialMap.get(entry.materialId);entry.estimate=prediction(entry.kind==='essential-vocabulary'?{skill:'vocabulary',estimatedMinutes:entry.estimatedMinutes}:material,task,records,{...options,yearPlanner:year,materials:data.materials});const nextCourse=currentState?.done&&entry.day>currentDay&&!started(day)&&!entry.draftId,focusMinutes=options.timerState?.settings?.focusMinutes||25,windowStudy=nextCourse?Math.max(entry.estimate.studyMinutes,focusMinutes):entry.estimate.studyMinutes,timer=options.timerCore||dependency('IELTSStudyTimerCore','./study-timer-core.js'),window=timer?.forecast(windowStudy,options.timerState);entry.startWindowMinutes=nextCourse?(window?.totalMinutes||windowStudy):entry.estimate.totalMinutes;entry.nextCourseWindow=nextCourse;entry.fitsBudget=entry.startWindowMinutes<=budget.remainingMinutes+.001;}
+ // Fresh public materials enter only through their required day task.
+ // Previously saved drafts above remain recoverable with their owner contract.
+ const publicPractice={status:'scheduled-course-tasks-only',selected:[],optional:false,discoveryRemoved:true};
  let challengeRoom=Math.max(0,budget.remainingMinutes-entries.filter(e=>!e.placementChallenge).reduce((sum,e)=>sum+(e.estimate?.totalMinutes||(['view','blocked'].includes(e.kind)?Number(days.find(d=>d.day===e.day)?.tasks.find(t=>t.id===e.taskId)?.minutes)||15:0)),0)-(plan?.reservedMemoryMinutes||0));
  for(let i=0;i<entries.length;i++){const entry=entries[i];if(!entry.placementChallenge)continue;if(entry.startWindowMinutes>challengeRoom+.001){entries.splice(i--,1);continue;}entry.availableOptionalMinutes=challengeRoom;entry.fitsBudget=true;challengeRoom-=entry.startWindowMinutes;}
  const actionable=entries.find(e=>!['blocked','view'].includes(e.kind)),admitted=actionable?.fitsBudget?actionable:null,next=admitted||(!actionable?entries.find(e=>e.kind==='view')||entries[0]:null)||null;
  const deferred=actionable&&!admitted?{kind:'rest',label:'今天到此，休息后下一日继续',reason:'下一学习单元预计需要 '+actionable.startWindowMinutes.toFixed(1)+' 分钟'+(actionable.nextCourseWindow?'（新课至少预留一轮完整专注及必要休息）':'（含计划休息）')+'，今天剩余 '+Math.max(0,budget.remainingMinutes).toFixed(1)+' 分钟不足。队列和未完成草稿已保留；下一日继续。',estimate:actionable.estimate}:null;
- return{budget,entries,placement,schedule,historical,next:budget.dayEnded?{kind:'day-ended',label:'今日学习已结束，可恢复今日任务',reason:'未完成任务、草稿和原音按原课程归属保留。误结束时可在番茄钟点击“恢复今日任务”后手动继续，实际已用预算不变；也可下一日续做，不会重复添加任务或记为已完成。'}:budget.exhausted?{kind:'budget',label:'今日预算已用完，下一日继续',reason:'队列、草稿和作品保留；下一日恢复360分钟总预算。'}:next||deferred,currentComplete:currentState?.done===true,courseDay:target?.day||null,continuing:!budget.exhausted&&!!next&&next.day!==currentDay,pending:state?.states.some(s=>s.pending)||false,reason:blockedReason||(!target?'全部课程已提交，继续核对年度准备度与长期保持证据。':state?.done?'':state?.readiness.reason||'')};
+ return{budget,entries,placement,schedule,historical,publicPractice,next:budget.dayEnded?{kind:'day-ended',label:'今日学习已结束，可恢复今日任务',reason:'未完成任务、草稿和原音按原课程归属保留。误结束时可在番茄钟点击“恢复今日任务”后手动继续，实际已用预算不变；也可下一日续做，不会重复添加任务或记为已完成。'}:budget.exhausted?{kind:'budget',label:'今日预算已用完，下一日继续',reason:'队列、草稿和作品保留；下一日恢复360分钟总预算。'}:next||deferred,currentComplete:currentState?.done===true,courseDay:target?.day||null,continuing:!budget.exhausted&&!!next&&next.day!==currentDay,pending:state?.states.some(s=>s.pending)||false,reason:blockedReason||(!target?'全部课程已提交，继续核对年度准备度与长期保持证据。':state?.done?'':state?.readiness.reason||'')};
 }
 return Object.freeze({build,prediction,placementChallenges,calendarSchedule,NAMES});
 });

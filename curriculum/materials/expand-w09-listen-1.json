@@ -1,0 +1,446 @@
+{
+  "id": "expand-w09-listen-1",
+  "week": 9,
+  "skill": "listening",
+  "level": "A2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 180,
+  "maxWords": 320,
+  "questionCount": 8,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "学习目标与学习习惯 · Independent new scenario: comparing two study routines",
+  "grammarFocus": "一般现在时与现在进行时；频率副词；do / does 问句。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 700,
+    "paragraphGapMs": 900,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true,
+    "expectedTranscriptHash": "c60172acbf87606f660a527bf78ff76fe46fd76cd60afce57be6b6eaa65a0bd7",
+    "audioRegenerationRequired": false,
+    "oldAudioMustNotBeUsed": true,
+    "roleVoices": {
+      "mia": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    }
+  },
+  "title": "Two Study Routines: A Library Conversation",
+  "instructions": "本材料是原创模拟的英语听力与语法练习，不是官方雅思考试。先听完整对话，再完成8题。录音呈现自然对话中的信息，不播读题目或答案列表。语法部分区分习惯与正在发生的动作，复习频率副词的常见位置和do/does问句，再完成独立练习。",
+  "transcript": "Mia: Hi, Leo. Do you study every evening?\nLeo: No, I don't. My main study days are Mondays, Wednesdays, and Fridays. On Tuesdays and Thursdays, I work at the café.\nMia: I see. I study every day, but not in the morning. I study at night.\nLeo: Really? I study in the morning. I get up at six and read for an hour. That is my routine.\nMia: I usually study from nine to eleven at night.\nLeo: Do you study at home?\nMia: No, I study at the library. It's quiet there. Where do you study?\nLeo: At home. But my sister is studying at the library today. She has a big test on Friday.\nMia: My brother is also studying for a test. He is at the library now.\nLeo: Do you always study alone?\nMia: No. On Saturdays, I study with my friend Anna. We review vocabulary together.\nLeo: I sometimes study with my sister.\nMia: Do you take breaks?\nLeo: Yes. I take a short break every hour. Breaks help me focus.\nMia: I don't take breaks. I study for two hours and then stop.\nLeo: Breaks help you focus.\nMia: Maybe you're right. Do you use a study plan?\nLeo: Yes. I write a plan every Sunday. It helps me remember my goals.\nMia: I don't use a plan. But I have a goal: I want to pass my English test next month.\nLeo: Good luck! Do you practice speaking every day?\nMia: No. I practice speaking on Saturdays with Anna. But I listen to English every day.\nLeo: I listen to English podcasts in the morning. I also read the news.\nMia: Do you study grammar?\nLeo: Yes. I study grammar for thirty minutes every day. It's boring, but it's important.\nMia: I agree. I need to go. My brother is waiting for me. See you!\nLeo: See you, Mia.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "At the start, which days does Leo call his main study days?",
+      "options": [
+        "On Mondays, Wednesdays, and Fridays",
+        "Every day",
+        "On Tuesdays and Thursdays",
+        "On Saturdays and Sundays"
+      ],
+      "answers": [
+        "On Mondays, Wednesdays, and Fridays"
+      ],
+      "explanation": "Leo开头明确把周一、周三、周五称为main study days（主要学习日）。这不排除他另外每天做较短的语法练习；周二、周四是他在咖啡馆工作的日子。",
+      "evidence": "Leo: No, I don't. My main study days are Mondays, Wednesdays, and Fridays. On Tuesdays and Thursdays, I work at the café.",
+      "originalQuestionId": "q1"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What time does Leo get up?",
+      "options": [
+        "At six",
+        "At nine",
+        "At eleven",
+        "At seven"
+      ],
+      "answers": [
+        "At six"
+      ],
+      "explanation": "Leo说：'I get up at six.' 所以选这个。",
+      "evidence": "Leo: Really? I study in the morning. I get up at six and read for an hour. That is my routine.",
+      "originalQuestionId": "q3"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Where does Mia study?",
+      "options": [
+        "At home",
+        "At the library",
+        "At the café",
+        "At school"
+      ],
+      "answers": [
+        "At the library"
+      ],
+      "explanation": "Mia说：'I study at the library.' 所以选这个。",
+      "evidence": "Mia: No, I study at the library. It's quiet there. Where do you study?",
+      "originalQuestionId": "q2"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Who does Leo say is studying at the library today?",
+      "options": [
+        "Leo's sister",
+        "Mia's brother",
+        "Anna",
+        "Leo"
+      ],
+      "answers": [
+        "Leo's sister"
+      ],
+      "explanation": "题目限定Leo所说的人，他说my sister今天在图书馆学习。Mia随后也说自己的brother在那里，但那是Mia提供的另一条信息，不能混作Leo的回答。",
+      "evidence": "Leo: At home. But my sister is studying at the library today. She has a big test on Friday.",
+      "originalQuestionId": "q4"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Does Mia take breaks when she studies?",
+      "options": [
+        "Yes, she does.",
+        "No, she doesn't.",
+        "Only on Saturdays."
+      ],
+      "answers": [
+        "No, she doesn't."
+      ],
+      "explanation": "Mia明确说自己不休息，连续学两小时后停止。因此选No；不能把她周六与Anna一起学习的安排当作休息频率。",
+      "evidence": "Mia: I don't take breaks. I study for two hours and then stop.",
+      "originalQuestionId": "q5"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which activity does Leo explicitly connect with Sunday?",
+      "options": [
+        "He writes a study plan.",
+        "He studies with his sister.",
+        "He listens to podcasts.",
+        "He takes a test."
+      ],
+      "answers": [
+        "He writes a study plan."
+      ],
+      "explanation": "Leo说：'I write a plan every Sunday.' 所以选这个。",
+      "evidence": "Leo: Yes. I write a plan every Sunday. It helps me remember my goals.",
+      "originalQuestionId": "q6"
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When does Mia practice speaking?",
+      "options": [
+        "Every day",
+        "On Saturdays",
+        "On Mondays",
+        "In the morning"
+      ],
+      "answers": [
+        "On Saturdays"
+      ],
+      "explanation": "Mia说：'I practice speaking on Saturdays with Anna.' 所以选这个。",
+      "evidence": "Mia: No. I practice speaking on Saturdays with Anna. But I listen to English every day.",
+      "originalQuestionId": "q7"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "How long does Leo study grammar every day?",
+      "options": [
+        "For thirty minutes",
+        "For one hour",
+        "For two hours",
+        "For ten minutes"
+      ],
+      "answers": [
+        "For thirty minutes"
+      ],
+      "explanation": "Leo说：'I study grammar for thirty minutes every day.' 所以选这个。",
+      "evidence": "Leo: Yes. I study grammar for thirty minutes every day. It's boring, but it's important.",
+      "originalQuestionId": "q8"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "routine",
+      "meaning": "常规，惯例",
+      "example": "Leo: Really? I study in the morning. I get up at six and read for an hour. That is my routine."
+    },
+    {
+      "word": "library",
+      "meaning": "图书馆",
+      "example": "Mia: No, I study at the library. It's quiet there. Where do you study?"
+    },
+    {
+      "word": "break",
+      "meaning": "休息",
+      "example": "Leo: Yes. I take a short break every hour. Breaks help me focus."
+    },
+    {
+      "word": "focus",
+      "meaning": "集中注意力",
+      "example": "Leo: Breaks help you focus."
+    },
+    {
+      "word": "plan",
+      "meaning": "计划",
+      "example": "Leo: Yes. I write a plan every Sunday. It helps me remember my goals."
+    },
+    {
+      "word": "goal",
+      "meaning": "目标",
+      "example": "Mia: I don't use a plan. But I have a goal: I want to pass my English test next month."
+    },
+    {
+      "word": "practice",
+      "meaning": "练习",
+      "example": "Mia: No. I practice speaking on Saturdays with Anna. But I listen to English every day."
+    },
+    {
+      "word": "grammar",
+      "meaning": "语法",
+      "example": "Leo: Yes. I study grammar for thirty minutes every day. It's boring, but it's important."
+    }
+  ],
+  "grammar": {
+    "title": "一般现在时与现在进行时；频率副词；do/does 问句",
+    "explanation": "一般现在时表示经常发生的动作或习惯，常与频率副词（always, usually, often, sometimes, never）连用。现在进行时表示现在正在发生的动作，结构是 be (am/is/are) + 动词-ing。例如：'I study every day.'（一般现在时） vs 'I am studying now.'（现在进行时）。频率副词放在实义动词前，be动词后。do/does 问句用于一般现在时，第三人称单数用 does。 频率副词的位置并非只有一种合法安排；本组有些题明确练习中性常见位置（be之后或实义动词之前），不把强调语序和其他合法位置一律判错。现在进行时题明确要求be + -ing。",
+    "example": "Leo: At home. But my sister is studying at the library today. She has a big test on Friday.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "She study every evening.",
+          "She studies every evening.",
+          "She studying every evening.",
+          "She is study every evening."
+        ],
+        "answers": [
+          "She studies every evening."
+        ],
+        "explanation": "一般现在时中，she是第三人称单数。study以辅音字母+y结尾，变第三人称单数时将y改为ies，因此用studies。",
+        "evidence": "She studies every evening.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct question:",
+        "options": [
+          "Does he studies at night?",
+          "Do he study at night?",
+          "Does he study at night?",
+          "Is he study at night?"
+        ],
+        "answers": [
+          "Does he study at night?"
+        ],
+        "explanation": "一般现在时疑问句，第三人称单数用 does，动词用原形。",
+        "evidence": "Does he study at night?",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "按中性、常见语序把频率副词放在be之后，选出符合该要求的句子。",
+        "options": [
+          "I always am tired in the morning.",
+          "I am always tired in the morning.",
+          "I always tired in the morning.",
+          "I am tired always in the morning."
+        ],
+        "answers": [
+          "I am always tired in the morning."
+        ],
+        "explanation": "本题指定be之后的常见中性位置，因此选I am always tired in the morning。I always am也可能用于强调，但不符合这里指定的位置要求。",
+        "evidence": "I am always tired in the morning.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "Choose the present continuous form for an action happening right now.",
+        "options": [
+          "They is studying now.",
+          "They are studying now.",
+          "They studying now.",
+          "They study now."
+        ],
+        "answers": [
+          "They are studying now."
+        ],
+        "explanation": "题目指定现在进行时，they搭配are studying。They study now在特定对比语境中可能成立，但它不是本题要求的be + -ing形式。",
+        "evidence": "They are studying now.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Choose the correct negative sentence:",
+        "options": [
+          "He don't like coffee.",
+          "He doesn't likes coffee.",
+          "He doesn't like coffee.",
+          "He not like coffee."
+        ],
+        "answers": [
+          "He doesn't like coffee."
+        ],
+        "explanation": "第三人称单数否定用 doesn't + 动词原形。",
+        "evidence": "He doesn't like coffee.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "按常见中性语序，把usually放在实义动词go之前，选出符合该要求的句子。",
+        "options": [
+          "We usually go to the park on Sundays.",
+          "We usually going to the park on Sundays.",
+          "We are usually go to the park on Sundays.",
+          "We go usually to the park on Sundays."
+        ],
+        "answers": [
+          "We usually go to the park on Sundays."
+        ],
+        "explanation": "指定位置是usually + go，故选We usually go to the park on Sundays。这里练习一种明确的常见位置，而不是宣称所有其他副词位置永远不合法。",
+        "evidence": "We usually go to the park on Sundays.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Choose the correct question:",
+        "options": [
+          "Do she study every day?",
+          "Does she studies every day?",
+          "Does she study every day?",
+          "Is she study every day?"
+        ],
+        "answers": [
+          "Does she study every day?"
+        ],
+        "explanation": "一般现在时疑问句，第三人称单数用 does，动词用原形。",
+        "evidence": "Does she study every day?",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "把sometimes紧放在实义动词study之前，选出符合该位置要求的句子。",
+        "options": [
+          "I am sometimes study at the library.",
+          "I sometimes study at the library.",
+          "I study sometimes at the library.",
+          "I am study sometimes at the library."
+        ],
+        "answers": [
+          "I sometimes study at the library."
+        ],
+        "explanation": "题目明确要求sometimes在study之前，因此选I sometimes study at the library。I study sometimes at the library也可以成立，只是不符合本题指定位置。",
+        "evidence": "I sometimes study at the library.",
+        "evidenceKind": "independent-grammar-example"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you study every day?",
+        "Where do you usually study?",
+        "Do you take breaks when you study?",
+        "What time do you get up in the morning?"
+      ],
+      "part2": "Describe your study routine. You should say:\n- when you study\n- where you study\n- what you do to focus\n- and explain why you study at these times",
+      "part3": [
+        "Do you think it is good to study with friends?",
+        "How often do you take breaks?",
+        "Do you use a study plan?",
+        "What is your goal for this year?"
+      ]
+    },
+    "writing": "Write at least 80 words about your own study habits in 6–8 complete sentences. Explain when and where you study and how you take breaks. Use the simple present and suitable frequency adverbs. Include one do/does question you could ask a study partner."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension and grammar practice"
+  },
+  "version": "1",
+  "active": false,
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创模拟教学材料；不是官方试题、真实研究或校准分数",
+    "verification": "reviewed",
+    "releaseStatus": "staged-inactive",
+    "method": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+    "beforeSha256": "21a5d886e80464b986c1eaa83372a8d4a90cc483e5cab01d88c267f49dcc1d91",
+    "sourceTextSha256": "c60172acbf87606f660a527bf78ff76fe46fd76cd60afce57be6b6eaa65a0bd7",
+    "sourceTextChanged": true,
+    "audioRegenerationRequired": false,
+    "oldAudioMustNotBeUsed": true,
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "advancedCoverageEligible": false,
+    "difficultyReview": {
+      "status": "uncalibrated-content-estimate",
+      "declaredAuthoringTarget": "A2",
+      "role": "A2 habit/tense listening and grammar consolidation",
+      "calibrated": false,
+      "limits": "Week position, length, literal questions and machine checks do not establish C1 sufficiency, independent transfer or Band performance."
+    },
+    "contentHash": "568d1738d7db0aa9c428422870dae7a22427dca32babc2a15182215b7a0b9ce6",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "textReview": {
+      "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+      "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+      "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+      "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+      "humanReviewed": false,
+      "difficultyCalibrated": false
+    },
+    "audioRegenerationCompleted": true,
+    "audioReview": {
+      "kind": "machine-audit-only",
+      "transcriptHash": "c60172acbf87606f660a527bf78ff76fe46fd76cd60afce57be6b6eaa65a0bd7",
+      "audioHash": "79de33359f943a619aa8da9a49a0d75c3acf48fb80f7ce8dcd0fd547fbfec511",
+      "configurationHash": "15861c697f33ea76845061fa45d361486c0a006909d7155763763f9848b5d6e3",
+      "auditReportSha256": "03b37e25bd427e5ec56ca96bd0e71ccfeb8f6fc5612c90df0db79d30e7c6d5ae",
+      "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+      "independentListeningReviewed": false,
+      "humanAuditioned": false
+    }
+  },
+  "audio": "audio/curriculum/expand-w09-listen-1.mp3",
+  "audioVoice": "en-US-AriaNeural / en-US-GuyNeural",
+  "audioSynthetic": true,
+  "audioDurationSeconds": 142.35625
+}

@@ -1,0 +1,383 @@
+{
+  "id": "expand-w22-listen-1",
+  "week": 22,
+  "skill": "listening",
+  "level": "B1–B2",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "数据比较与图表描述入门 · Independent new scenario: a library redesigning access to information",
+  "grammarFocus": "比较结构；百分比与数量表达；there was / were；趋势动词。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "Library Redesign: Comparing Access to Information",
+  "instructions": "本材料为模拟练习，不是官方雅思考试，也不代表任何分数。先听/读对话，注意比较结构、百分比与数量表达、there was/were 和趋势动词。然后完成10道听力/阅读题，再学习语法规则并做8道语法题，最后进行口语和写作迁移练习。所有题目答案必须来自原文。",
+  "transcript": "Mia: Hi, Ben. You look busy. What are you doing?\nBen: I’m looking at the library’s new plan. They want to change how people find information.\nMia: Really? What’s different?\nBen: Last year, there were only two computers near the entrance. Now there are eight. That means more people can use the internet and search for books online.\nMia: That’s a big change. What about books?\nBen: The number of printed books fell by 15 percent. But the number of e-books rose by 40 percent. So the library has fewer physical books but many more digital ones.\nMia: So more people read online?\nBen: Yes. In 2022, 30 percent of visitors used e-books. Last month, 55 percent did. That’s a big increase in digital reading.\nMia: And the quiet study area?\nBen: It’s smaller now. There were 40 desks before. Now there are 25. That’s a decrease of 15 desks.\nMia: Why?\nBen: Because more students study in groups. The group room is bigger. It went from 10 seats to 18 seats. So there’s more space for group work.\nMia: I see. Did the library buy more chairs?\nBen: Yes, but fewer than before. They bought 20 chairs last year and 12 this year.\nMia: Wait, that’s fewer? I thought they bought more.\nBen: No, fewer. Sorry, I said that wrong. They bought 12 chairs this year, not 20.\nMia: OK. So the library is changing. Is it better?\nBen: Maybe. The number of visitors increased by 8 percent. But some older people miss the printed newspapers.\nMia: Did they remove the newspapers?\nBen: Not all. There were 12 newspapers before. Now there are 5. That’s a big drop.\nMia: What about the help desk?\nBen: It’s still there, but it’s smaller. There was one large desk. Now there are two small desks.\nMia: Two small desks? That’s interesting.\nBen: Yes. And the library now has a map near the door. It shows where everything is. So it’s easier to find things.\nMia: Good. I think I’ll visit this weekend.\nBen: Me too. Let’s go together.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How many computers are near the entrance now?",
+      "options": [
+        "Two",
+        "Eight",
+        "Ten"
+      ],
+      "answers": [
+        "Eight"
+      ],
+      "explanation": "原文说“Now there are eight.”，所以现在有八台电脑。",
+      "evidence": "Now there are eight."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "The number of printed books fell by 15 percent.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文明确说“The number of printed books fell by 15 percent.”，与题目一致。",
+      "evidence": "The number of printed books fell by 15 percent."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What percentage of visitors used e-books last month?",
+      "options": [
+        "30 percent",
+        "40 percent",
+        "55 percent"
+      ],
+      "answers": [
+        "55 percent"
+      ],
+      "explanation": "原文说“Last month, 55 percent did.”，所以上个月是55%。",
+      "evidence": "Last month, 55 percent did."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "There were ______ desks before in the quiet study area.",
+      "maxWords": 1,
+      "answers": [
+        "40"
+      ],
+      "explanation": "原文说“There were 40 desks before.”，所以填40。",
+      "evidence": "There were 40 desks before."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "The group room went from 10 seats to 18 seats.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文说“It went from 10 seats to 18 seats.”，与题目一致。",
+      "evidence": "It went from 10 seats to 18 seats."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many chairs did the library buy this year?",
+      "options": [
+        "20",
+        "12",
+        "8"
+      ],
+      "answers": [
+        "12"
+      ],
+      "explanation": "Ben 纠正后说“They bought 12 chairs this year, not 20.”，所以今年买了12把椅子。",
+      "evidence": "They bought 12 chairs this year, not 20."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "The number of visitors increased by 8 percent.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文说“The number of visitors increased by 8 percent.”，与题目一致。",
+      "evidence": "The number of visitors increased by 8 percent."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Now there are ______ newspapers.",
+      "maxWords": 1,
+      "answers": [
+        "5"
+      ],
+      "explanation": "原文说“Now there are 5.”，所以填5。",
+      "evidence": "Now there are 5."
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What is near the door now?",
+      "options": [
+        "A map",
+        "A large desk",
+        "A computer"
+      ],
+      "answers": [
+        "A map"
+      ],
+      "explanation": "原文说“the library now has a map near the door.”，所以门附近现在有地图。",
+      "evidence": "And the library now has a map near the door."
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Some older people miss the printed newspapers.",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "answers": [
+        "True"
+      ],
+      "explanation": "原文说“some older people miss the printed newspapers.”，与题目一致。",
+      "evidence": "But some older people miss the printed newspapers."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "entrance",
+      "meaning": "入口",
+      "example": "Last year, there were only two computers near the entrance."
+    },
+    {
+      "word": "printed",
+      "meaning": "印刷的",
+      "example": "The number of printed books fell by 15 percent."
+    },
+    {
+      "word": "e-books",
+      "meaning": "电子书",
+      "example": "But the number of e-books rose by 40 percent."
+    },
+    {
+      "word": "visitors",
+      "meaning": "访客",
+      "example": "In 2022, 30 percent of visitors used e-books."
+    },
+    {
+      "word": "decrease",
+      "meaning": "减少",
+      "example": "That’s a decrease of 15 desks."
+    },
+    {
+      "word": "increased",
+      "meaning": "增加",
+      "example": "The number of visitors increased by 8 percent."
+    },
+    {
+      "word": "remove",
+      "meaning": "移除",
+      "example": "Did they remove the newspapers?"
+    },
+    {
+      "word": "drop",
+      "meaning": "下降",
+      "example": "That’s a big drop."
+    }
+  ],
+  "grammar": {
+    "title": "比较结构；百分比与数量表达；there was / were；趋势动词",
+    "explanation": "英语中比较数量变化时，常用“动词 + by + 百分比/数量”，如 rose by 40 percent（上升了40%）。表示“有”的过去式：单数用 there was，复数用 there were。趋势动词如 rise（上升）、fall（下降）、increase（增加）、decrease（减少）描述变化。比较结构常用 more/fewer + 名词，如 more chairs（更多椅子）、fewer desks（更少桌子）。注意：fewer 用于可数名词，less 用于不可数名词。",
+    "example": "The number of printed books fell by 15 percent.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "There ______ two small desks in the office last year.",
+        "options": [
+          "was",
+          "were",
+          "is"
+        ],
+        "answers": [
+          "were"
+        ],
+        "explanation": "主语 two small desks 是复数，过去时用 there were。",
+        "evidence": "Now there are two small desks."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "The number of students ______ by 10 percent last year.",
+        "options": [
+          "rise",
+          "rose",
+          "risen"
+        ],
+        "answers": [
+          "rose"
+        ],
+        "explanation": "last year 表示过去，rise 的过去式是 rose。",
+        "evidence": "But the number of e-books rose by 40 percent."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "There ______ one large desk before.",
+        "options": [
+          "was",
+          "were",
+          "are"
+        ],
+        "answers": [
+          "was"
+        ],
+        "explanation": "主语 one large desk 是单数，过去时用 there was。",
+        "evidence": "There was one large desk."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "The library bought ______ chairs this year than last year.",
+        "options": [
+          "fewer",
+          "less",
+          "few"
+        ],
+        "answers": [
+          "fewer"
+        ],
+        "explanation": "chairs 是可数名词复数，比较级用 fewer。",
+        "evidence": "They bought 12 chairs this year, not 20."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "The number of newspapers ______ by 7.",
+        "options": [
+          "decreased",
+          "decrease",
+          "decreasing"
+        ],
+        "answers": [
+          "decreased"
+        ],
+        "explanation": "描述过去的变化，用过去式 decreased。",
+        "evidence": "That’s a big drop."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "There ______ more computers now than before.",
+        "options": [
+          "are",
+          "is",
+          "was"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "now 表示现在，computers 是复数，用 there are。",
+        "evidence": "Now there are eight."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "The group room is ______ than the quiet study area.",
+        "options": [
+          "bigger",
+          "big",
+          "biggest"
+        ],
+        "answers": [
+          "bigger"
+        ],
+        "explanation": "比较两个区域，用比较级 bigger。",
+        "evidence": "The group room is bigger."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "The number of e-books ______ by 40 percent.",
+        "options": [
+          "rose",
+          "rise",
+          "rising"
+        ],
+        "answers": [
+          "rose"
+        ],
+        "explanation": "描述过去的变化，用过去式 rose。",
+        "evidence": "But the number of e-books rose by 40 percent."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit libraries?",
+        "What do you use libraries for?",
+        "Do you prefer printed books or e-books?",
+        "Is there a library near your home?"
+      ],
+      "part2": "Describe a library you know. You should say: where it is; what it looks like; what people do there; and explain why you like or dislike it.",
+      "part3": [
+        "How have libraries changed in recent years?",
+        "Do you think libraries will still be important in the future?",
+        "What can libraries do to attract more young people?",
+        "Is it better to read on paper or on a screen?"
+      ]
+    },
+    "writing": "Write a short paragraph (80–100 words) comparing two places you know, for example two cafés or two parks. Use there was/were, percentages, and trend verbs (rise, fall, increase, decrease)."
+  },
+  "figure": null,
+  "rubric": {
+    "taskType": "Listening and Reading Comprehension (simulated)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "6c422ca16996d21bc76467abf8a5ddfe915594cc7aef808647683b4a071c6e08"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

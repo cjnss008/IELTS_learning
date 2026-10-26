@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l2-04-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l2-04",
+  "sourceVersion": "1",
+  "sourceTextSha256": "b22baf528192047981bb29e83ac1b572266d3546802e4d6b8f7724469327eaf2",
+  "sourceContentHash": "b22baf528192047981bb29e83ac1b572266d3546802e4d6b8f7724469327eaf2",
+  "exposureGroup": "public-source:voa-l2-04",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How does Pete initially describe circus performers?",
+      "evidence": "I think they’re athletes with interesting skills … and costumes.",
+      "explanation": "Pete 的初始观点是他们是有特殊技能和服装的运动型表演者；他没有否认体能，也没有把表演说成赛跑。此时他尚不同意 Anna 的艺术家观点。",
+      "answers": [
+        "As athletes with special skills and costumes."
+      ],
+      "evidenceOffsets": {
+        "start": 919,
+        "end": 983,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "As artists who never exercise.",
+        "As competitors in a running race.",
+        "As athletes with special skills and costumes."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which point do Anna and Pete agree on before resolving their main disagreement?",
+      "evidence": "But, still, they are very athletic – flipping and throwing each other around.",
+      "explanation": "Pete 说表演者体能很好，Anna 随即表示 I agree with you on that point。局部同意的是 athletic，不能扩大成两人已同意所有观点。",
+      "answers": [
+        "The performers are athletic."
+      ],
+      "evidenceOffsets": {
+        "start": 1932,
+        "end": 2009,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Costumes are unnecessary.",
+        "The performers are athletic.",
+        "All performers compete for medals."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What distinction does Kate make between circus performance and many sports?",
+      "evidence": "This is simply performing and having fun.",
+      "explanation": "Kate 前面说明其他体育项目在竞争，而这里是在表演和享受过程。她不是说马戏不需体能，也没有把它描述为有胜负队伍的比赛。",
+      "answers": [
+        "Circus is about performing rather than competing."
+      ],
+      "evidenceOffsets": {
+        "start": 3011,
+        "end": 3052,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Circus is about performing rather than competing.",
+        "Circus requires no physical ability.",
+        "Every circus act has a winning team."
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Piper say performers learn to do?",
+      "evidence": "we learn to embody characters, and to move fluidly and gracefully … in artistic ways.",
+      "explanation": "embody characters 是塑造、呈现角色，fluidly and gracefully 是流畅优雅地移动。这些是艺术表达的依据，与避免空中表演或统一运动服无关。",
+      "answers": [
+        "Portray characters and move gracefully."
+      ],
+      "evidenceOffsets": {
+        "start": 3319,
+        "end": 3404,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Avoid performing while in the air.",
+        "Replace all costumes with sports uniforms.",
+        "Portray characters and move gracefully."
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "How did Anna conduct the interview with Kate and Piper?",
+      "evidence": "I interviewed them right side up, Pete.",
+      "explanation": "Pete 误以为采访也倒挂着进行，Anna 用 right side up 更正为正常朝上的姿势。表演能倒挂不等于采访也倒挂，更没有说只用书信。",
+      "answers": [
+        "With them the right way up."
+      ],
+      "evidenceOffsets": {
+        "start": 2804,
+        "end": 2843,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Only through written messages.",
+        "With them the right way up.",
+        "While all three were hanging upside down."
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Pete’s opinion change by the end?",
+      "evidence": "You’re right, Anna. Oh, you’re right. It’s just so beautiful.",
+      "explanation": "听过表演者的解释后，Pete 说 You’re right 并赞美表演美，说明接受了 Anna 的观点。这是观点变化，不是最初的反对意见。",
+      "answers": [
+        "He accepts Anna’s view that the performance is art."
+      ],
+      "evidenceOffsets": {
+        "start": 3454,
+        "end": 3515,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "He accepts Anna’s view that the performance is art.",
+        "He stops watching before hearing the performers.",
+        "He decides circus is only a competitive sport."
+      ]
+    }
+  ],
+  "sourceIssues": [
+    {
+      "code": "external-performance-footage-context",
+      "status": "unresolved",
+      "reason": "Circus performer interviews are presented as VOA reporting. No third-party audio clearance or absence of background music has been independently listened to; keep audio on hold.",
+      "quote": "Recently, I went to a circus festival.",
+      "start": 697,
+      "end": 735,
+      "offsetUnit": "UTF-16-code-unit",
+      "blocks": [
+        "listening",
+        "audio-redistribution"
+      ]
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "b94f22fa064cf72acc703686d9b7233fbd1a95931cb80bc8d8e7fd6b42388d1c",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

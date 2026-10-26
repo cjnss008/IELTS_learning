@@ -231,7 +231,7 @@
     const gate = checkpointStatus(currentPlan);
     $('dayResult').textContent = isSubmitted(selectedDay) ? '本课真实产出、错题订正和 AI 复盘已提交。剩余可用时间可继续同级练习；独立掌握仍需换题复测。' : gate && !gate.ready && summary.complete ? '本课核心提交与复盘已齐；阶段关卡仍待验证：' + gate.reason + ' 已完成的 A 卷原稿保留，请从下方原稿进入对应 B 卷延迟复测。' : currentPlan.planVersion===Core.CURRICULUM_PLAN_VERSION ? '每天 6 小时是总可用预算。完成当前材料就继续下一份；提交以真实作品、错题全对和 AI 复盘为准，不等待计时。' : '关联作品自动计入相同单位的学习量。线下学习可补填自报总量和成果，再提交。';
     $('submitDay').textContent = isSubmitted(selectedDay) ? '更新本课成果' : gate && !gate.ready ? '核对阶段关卡' : '提交本课成果';
-    $('tasksForm').querySelectorAll('input,textarea,button').forEach((el) => { el.disabled = !dayAvailable(selectedDay) || blockedStorage; });
+    $('tasksForm').querySelectorAll('input,textarea,button').forEach((el) => { el.disabled = !dayAvailable(selectedDay) || blockedStorage || publicPreparationPending(); });
   }
   function renderDayContext() {
     const completedDate = historyDate(selectedDay);
@@ -260,6 +260,7 @@
     const boost = state.boosts[String(selectedDay)];
     $('boostNotice').hidden = !boost;
     $('boostNotice').textContent = boost ? `本日补强重点：${skillNames[boost.skill]}。在对应任务内安排 20 分钟针对练习和 10 分钟复测，包含在每日 360 分钟内。` : '';
+    renderPublicCourseStatus();
   }
   function renderDay() {
     currentPlan = Store.getPlan(state, selectedDay, Content);
@@ -308,14 +309,30 @@
     }).join('') : '<p class="small">课程、写作、口语或选区练习提交后，作品将自动关联到实际学习日。旧版打卡继续保留为自报；不会自动变成独立掌握证据。</p>';
     if(work.length>100)$('linkedEvidence').insertAdjacentHTML('beforeend','<p>本页显示最近 100 份作品；完整记录可到备份中心导出。</p>');
   }
-  let evidenceRefreshing=false,evidenceRefreshAgain=false;
+  let evidenceRefreshing=false,evidenceRefreshAgain=false,publicRenderQueued=false,publicDisposed=false;
+  const ownerProfile=()=>{const p=IELTSProfiles.current?.();return String(p?.id||'legacy')+':'+String(p?.createdAt||'');},initialProfile=ownerProfile(),initialGeneration=storage().getItem('ielts52-data-generation-v1');
+  function currentPublicView(){try{IELTSProfiles.assertFresh?.();return !publicDisposed&&ownerProfile()===initialProfile&&storage().getItem('ielts52-data-generation-v1')===initialGeneration&&globalThis.IELTSCurriculumData===Curriculum;}catch(_){return false;}}
+  function publicPreparationPending(){const a=globalThis.IELTSAdaptivePlan,s=a?.publicCourseState?.();return Boolean(selectedDay>=2&&s?.available&&!s.ready&&!a.read?.().startedDays?.includes(selectedDay)&&!hasActivity(selectedDay));}
+  function renderPublicCourseStatus(){
+    const box=$('publicCoursePlanStatus'),a=globalThis.IELTSAdaptivePlan;if(!box)return;let status;try{status=a?.publicCourseState?.();}catch(error){box.hidden=false;box.textContent='后续听读安排暂未读取：'+error.message;return;}box.hidden=!status?.available;if(!status?.available)return;
+    const message=!status.ready?(status.pending?.[0]?.reason||'正在更新后续听读课程；更新完成前不会固定临时课表。'):status.pending.length?status.pending.length+' 项公开听读仍待适级或先修核对，原课程与已有原稿保留。':'公开听读已按课程任务安排；词汇、语法关联及间隔复习仍待真实活动，不按展示记完成。';
+    box.innerHTML='<p>'+escape(message)+'</p>'+(!status.ready&&status.status==='public-course-prepare-failed'?'<button type="button" data-public-course-retry="true">重试更新后续课程</button>':'');
+    if(!status.ready&&status.status==='public-course-prepare-failed')box.querySelector('[data-public-course-retry]')?.addEventListener('click',async()=>{if(!currentPublicView())return;await a.preparePublicCourse?.({retry:true});if(currentPublicView())renderDay();});
+  }
+  function readCourseContext(){const P=globalThis.IELTSCoursePlayer,raw=P&&storage().getItem(P.KEY),course=raw?P.parseState(raw):{drafts:{},exposures:{}};return{drafts:Object.values(course.drafts),exposures:course.exposures,startedDays:Object.keys(state.days).map(Number).filter(n=>recordFor(n).completedAt||Object.keys(recordFor(n).tasks||{}).length)};}
   async function refreshEvidence() {
+    if(!currentPublicView())return;
     if(evidenceRefreshing){evidenceRefreshAgain=true;return;}evidenceRefreshing=true;
-    try { do {evidenceRefreshAgain=false;linkedRecords = await Records.list();checkpointGates = null;if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(linkedRecords);linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain); }
+    try { do {evidenceRefreshAgain=false;const rows=await Records.list();if(!currentPublicView())return;checkpointGates = null;if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(rows);if(!currentPublicView())return;linkedRecords=rows;globalThis.IELTSAdaptivePlan?.adoptStarted?.({records:linkedRecords,...readCourseContext()});linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain&&currentPublicView()); }
     catch(error) { linkedFailure = '作品或错题状态暂时无法核实，原记录保留：'+error.message; }
     finally{evidenceRefreshing=false;}
-    renderDayContext(); renderEvidence(); updateTaskProgress(); renderStats(); renderWeekDays();
+    if(!currentPublicView())return;publicRenderQueued=false;renderDay();updateTaskProgress();renderStats();renderWeekDays();
   }
+  function publicCourseChanged(){if(!currentPublicView())return;if(evidenceRefreshing){publicRenderQueued=true;return;}renderDay();updateTaskProgress();renderStats();renderWeekDays();}
+  function disposePublicCourse(){publicDisposed=true;evidenceRefreshAgain=false;clearTimeout(persistTimer);window.removeEventListener?.('ielts:public-course-plan-changed',publicCourseChanged);window.removeEventListener?.('ielts:profile-changed',publicProfileChanged);window.removeEventListener?.('storage',publicStorageChanged);}
+  function publicProfileChanged(){if(currentPublicView())return;blockedStorage=true;storageConflict=true;disposePublicCourse();showStorageError('学习档案已切换或重置，请刷新后读取；本页原稿和日程不会写入其他档案。');}
+  function publicStorageChanged(event){if(event.key===IELTSProfiles.scopeKey('ielts52-data-generation-v1'))publicProfileChanged();}
+  window.addEventListener('ielts:public-course-plan-changed',publicCourseChanged);window.addEventListener('ielts:profile-changed',publicProfileChanged);window.addEventListener('storage',publicStorageChanged);window.addEventListener('pagehide',disposePublicCourse);
   $('weekSelect').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周 · ${escape(w.title)}</option>`).join('');
   $('assessmentWeek').innerHTML = Content.weeks.map((w) => `<option value="${w.week}">第 ${w.week} 周${w.week % 4 === 0 ? '（阶段检查）' : ''}</option>`).join('');
   $('weekSelect').addEventListener('change', () => { persist(); selectedDay = (Number($('weekSelect').value) - 1) * 7 + 1; renderDay(); });
@@ -341,7 +358,7 @@
   $('tasksForm').addEventListener('input', (event) => {
     const field = event.target.dataset.field;
     const card = event.target.closest('[data-task]');
-    if (!field || !card || !dayAvailable(selectedDay) || blockedStorage) return;
+    if (!field || !card || !dayAvailable(selectedDay) || blockedStorage || publicPreparationPending()) return;
     const day = state.days[String(selectedDay)] || (state.days[String(selectedDay)] = { planVersion: currentPlan.planVersion, tasks: {} });
     day.planVersion = currentPlan.planVersion;
     const r = day.tasks[card.dataset.task] || (day.tasks[card.dataset.task] = { actualMinutes: null, actualQuantity: null, evidence: '' });
@@ -366,7 +383,7 @@
   });
   $('tasksForm').addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!dayAvailable(selectedDay) || blockedStorage) return;
+    if (!dayAvailable(selectedDay) || blockedStorage || publicPreparationPending()) return;
     showValidation = true; updateTaskProgress();
     const summary = Core.summarizeDay(currentPlan, effectiveFor(selectedDay, currentPlan));
     if (!summary.complete) { $('dayResult').textContent = '还有任务未达到要求，请按各项提示补齐真实学习成果。'; $('taskList').querySelector('.task-card:not(.complete)')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }

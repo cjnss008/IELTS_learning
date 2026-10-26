@@ -1,0 +1,190 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-09-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-09",
+  "sourceVersion": "1",
+  "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+  "sourceContentHash": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+  "exposureGroup": "public-source:voa-l1-09",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does Anna check the forecast every day?",
+      "options": [
+        "The weather is always the same.",
+        "She is planning a trip to Mexico.",
+        "The weather often changes."
+      ],
+      "answers": [
+        "The weather often changes."
+      ],
+      "evidence": "Here in Washington, DC, the weather changes often. One day is cold and windy. But the next day is warm and sunny! So, every day I check the forecast.",
+      "evidenceOffsets": {
+        "start": 24,
+        "end": 173,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna先说明天气经常变化，再用So引出每天查预报，原因是天气多变。always the same与原文相反；Mexico在后面是手机查错城市的线索，没有说Anna计划去那里旅行。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Here in Washington, DC, the weather changes often. One day is cold and windy. But the next day is warm and sunny! So, every day I check the forecast.",
+          "start": 24,
+          "end": 173
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "What unit does the phone use for temperature?",
+      "answers": [
+        "Celsius"
+      ],
+      "maxWords": 1,
+      "evidence": "… eighteen degrees Celsius.",
+      "evidenceOffsets": {
+        "start": 299,
+        "end": 326,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "手机补充说eighteen degrees Celsius，明确使用摄氏温标，因此填Celsius。Fahrenheit是Anna随后换算时提到的温标，不能把她的换算单位当成手机最初采用的单位。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "… eighteen degrees Celsius.",
+          "start": 299,
+          "end": 326
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What Fahrenheit temperature does Anna give?",
+      "answers": [
+        "65"
+      ],
+      "maxWords": 1,
+      "evidence": "That is 65 degrees Fahrenheit. That’s warm.",
+      "evidenceOffsets": {
+        "start": 347,
+        "end": 390,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna原话是65 degrees Fahrenheit，所以填65。18是手机给出的摄氏读数，不能把两个温标中的数字混在一起；本题只读取原话，不要求自己进行换算。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "That is 65 degrees Fahrenheit. That’s warm.",
+          "start": 347,
+          "end": 390
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What weather does Anna report after the phone’s forecast?",
+      "options": [
+        "Warm, sunny and calm.",
+        "Cold, windy and snowy.",
+        "Cold, sunny and dry."
+      ],
+      "answers": [
+        "Cold, windy and snowy."
+      ],
+      "evidence": "It is not warm and sunny! It is cold and windy and snowy!",
+      "evidenceOffsets": {
+        "start": 783,
+        "end": 840,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna指出实际并非warm and sunny，而是cold、windy、snowy三个特点。温暖晴朗来自手机先前的预报；第三项虽然包含cold，但sunny和dry与她说的windy、snowy不一致。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It is not warm and sunny! It is cold and windy and snowy!",
+          "start": 783,
+          "end": 840
+        }
+      ],
+      "understanding": "contrast"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which city is the phone’s warm and sunny forecast for?",
+      "options": [
+        "Mexico City, Mexico.",
+        "New York City.",
+        "Washington, D.C."
+      ],
+      "answers": [
+        "Mexico City, Mexico."
+      ],
+      "evidence": "It is warm and sunny … in Mexico City, Mexico.",
+      "evidenceOffsets": {
+        "start": 888,
+        "end": 934,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "手机最后补充in Mexico City, Mexico，说明温暖晴朗的预报查的是墨西哥城。Washington是Anna当前所在的城市，并不是手机这次报出的地点；New York City没有出现在这次预报里。这一地点差异解释了前后天气不符。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It is warm and sunny … in Mexico City, Mexico.",
+          "start": 888,
+          "end": 934
+        }
+      ],
+      "understanding": "location-and-correction"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "27b0c56c797324e0f37c3ac10de5cd854d37c88fbb9ec7e7c81539c48c6213f3",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

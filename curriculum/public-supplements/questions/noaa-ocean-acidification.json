@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "questionSetId": "public-noaa-ocean-acidification-comprehension-v2",
+  "version": "2",
+  "sourceId": "noaa-ocean-acidification",
+  "sourceVersion": "2",
+  "sourceTextSha256": "4630edc0d0ab835a5ad42baaf95d03181f72b2c7fe5134449b06530b0f0266fd",
+  "sourceContentHash": "4630edc0d0ab835a5ad42baaf95d03181f72b2c7fe5134449b06530b0f0266fd",
+  "exposureGroup": "public-source:noaa-ocean-acidification",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": false,
+      "requirement": "Author draft only; source extraction, rights and independent blind solve pending root review."
+    },
+    "listening": {
+      "eligible": false,
+      "requirement": "Reading-only text. No source-linked, authenticated narration is supplied."
+    },
+    "independentExposure": "Public source practice only. Never use for independent assessment, unseen-transfer evidence, progression or Band inference."
+  },
+  "sourceIssues": [
+    {
+      "code": "historical-article-context",
+      "severity": "information",
+      "detail": "Relative present/future, technology rankings and project status remain those of the original dated article; the exercise does not certify current rankings or project status."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "How can the ocean become more acidic while its average pH remains above 7?",
+      "options": [
+        "Falling pH can make the ocean less alkaline without its pH yet being below neutral.",
+        "A rise from 7.8 to 8.1 would indicate greater acidity as hydrogen ions increase.",
+        "The reported pH of 8.1 places the ocean on the acidic side of neutral.",
+        "A fall in pH indicates fewer hydrogen ions while the water stays alkaline."
+      ],
+      "answers": [
+        "Falling pH can make the ocean less alkaline without its pH yet being below neutral."
+      ],
+      "evidence": "Because of human-driven increased levels of carbon dioxide in the atmosphere, there is more CO2 dissolving into the ocean. The ocean’s average pH is now around 8.1, which is basic (or alkaline), but as the ocean continues to absorb more CO2, the pH decreases and the ocean becomes more acidic.",
+      "evidenceOffsets": {
+        "start": 1109,
+        "end": 1402,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "酸化是方向：pH从碱性起点下降，未必已经低于7。其他选项分别倒置pH与酸性关系、把8.1放到中性以下，或把pH下降误配成氢离子减少。",
+      "understanding": "conceptual-interpretation",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why can excess hydrogen ions make shell building harder?",
+      "options": [
+        "They release extra carbonate ions and accelerate the building of shells.",
+        "Organisms use excess hydrogen in place of carbonate to maintain their skeletons.",
+        "They remove seawater calcium while leaving the supply of carbonate unchanged.",
+        "They bind carbonate ions, leaving fewer for organisms to build shells."
+      ],
+      "answers": [
+        "They bind carbonate ions, leaving fewer for organisms to build shells."
+      ],
+      "evidence": "Ocean acidification is already impacting many ocean species, especially organisms like oysters and corals that make hard shells and skeletons by combining calcium and carbonate from seawater. However, as ocean acidification increases, available carbonate ions (CO32-) bond with excess hydrogen, resulting in fewer carbonate ions available for calcifying organisms to build and maintain their shells, skeletons, and other calcium carbonate structures. If the pH gets too low, shells and skeletons can even begin to dissolve.",
+      "evidenceOffsets": {
+        "start": 1454,
+        "end": 1977,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "文中关键是氢离子与碳酸根结合，减少可用于建壳的碳酸根。错误项反转供应变化、虚构氢离子替代建壳材料，或把减少的对象换成钙而否认碳酸根变化。",
+      "understanding": "cause-and-effect",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which relationship between hydrogen ions and pH is described?",
+      "options": [
+        "More hydrogen ions, lower pH and lower acidity.",
+        "More hydrogen ions, higher pH and lower acidity.",
+        "More hydrogen ions, lower pH and higher acidity.",
+        "More hydrogen ions, higher pH and higher acidity."
+      ],
+      "answers": [
+        "More hydrogen ions, lower pH and higher acidity."
+      ],
+      "evidence": "The pH scale",
+      "evidenceOffsets": {
+        "start": 557,
+        "end": 569,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "定义是氢离子浓度与pH反向、与酸性正向。三项干扰分别保留其中一部分词却配错一个或两个方向，须同时核对两种关系。",
+      "understanding": "explicit-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does the article suggest about responses among different marine species?",
+      "options": [
+        "Higher CO2 may change fish behaviour while leaving hard shells and skeletons unaffected.",
+        "Higher CO2 may hinder shell builders while benefiting some photosynthesizing plants.",
+        "Higher CO2 may help shell builders through carbonate competition while hindering seaweed growth.",
+        "Higher CO2 may help marine plants but leave non-calcifying fish behaviour unaffected."
+      ],
+      "answers": [
+        "Higher CO2 may hinder shell builders while benefiting some photosynthesizing plants."
+      ],
+      "evidence": "While some species will be harmed by ocean acidification, algae and seagrasses may benefit from higher CO2 conditions in the ocean, as they require CO2 for photosynthesis just like plants on land. There are some ongoing studies examining if growing seaweed can help slow ocean acidification.",
+      "evidenceOffsets": {
+        "start": 2887,
+        "end": 3178,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "原文对比钙化生物受损和藻类、海草可能从更多CO2中受益，并另谈非钙化鱼类行为变化。干扰项颠倒受益对象，或把某类生物的影响从综合论述中错误排除。",
+      "understanding": "comparison",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "What weak acid forms when carbon dioxide combines with water? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "carbonic acid"
+      ],
+      "evidence": "Carbon dioxide, which is naturally in the atmosphere, dissolves into seawater. Water and carbon dioxide combine to form carbonic acid (H2CO3), a weak acid that breaks (or “dissociates”) into hydrogen ions (H+) and bicarbonate ions (HCO3-).",
+      "evidenceOffsets": {
+        "start": 868,
+        "end": 1107,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "正文写water and carbon dioxide combine to form carbonic acid。carbonate ions和bicarbonate ions是后面相关的离子名称，不是本题所问的弱酸。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "How long were the shells in the projected conditions when dissolution was observed? Write no more than two words from the text.",
+      "maxWords": 2,
+      "answers": [
+        "45 days"
+      ],
+      "evidence": "The pteropod, or \"sea butterfly,\" is a tiny sea snail about the size of a small pea. Pteropods are an important part of many food webs and eaten by organisms ranging in size from tiny krill to whales. When pteropod shells were placed in sea water with pH and carbonate levels projected for the year 2100, the shells slowly dissolved after 45 days. Researchers have already discovered severe levels of pteropod shell dissolution in the Southern Ocean, which encircles Antarctica.",
+      "evidenceOffsets": {
+        "start": 1979,
+        "end": 2457,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "答案为45 days。2100是实验所模拟的海水条件对应年份，而不是实验持续时间；不能把未来情境年份与观察天数混淆。",
+      "understanding": "precise-information",
+      "eligibleModalities": [
+        "reading"
+      ],
+      "spokenEvidence": []
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex exact source/question/grammar comparison and revised distractor review",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "not-applicable-no-authentic-audio-supplied",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "4d158e5e4c631a3eb3df7927cdfef91383623be6b64e6b97f3f21a1ad21fc69c",
+      "reviewSha256": "450f3b1a63dfb24385b11dd0f74b40ee7a1595122f98d4f6c27c376c7f6876b3",
+      "scope": "Read ten source bodies without keys; froze v1 answers; independently rechecked all 42 revised MC presentations against those bodies and the exact limited editorial corrections. Reused 18 unchanged fill prompts only after checking the current blind files. Author answer key not opened. Text only; not a human examiner or difficulty calibration."
+    }
+  },
+  "practiceOnly": true,
+  "independentTransferEligible": false,
+  "independentAssessmentEligible": false,
+  "completionCredit": false,
+  "bandEvidence": false
+}

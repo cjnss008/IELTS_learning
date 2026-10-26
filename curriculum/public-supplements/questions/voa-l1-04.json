@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-04-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-04",
+  "sourceVersion": "1",
+  "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+  "sourceContentHash": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+  "exposureGroup": "public-source:voa-l1-04",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Anna say about her new apartment?",
+      "options": [
+        "It is great.",
+        "It is too small.",
+        "It is too expensive."
+      ],
+      "answers": [
+        "It is great."
+      ],
+      "evidence": "The new apartment is great! Let's get coffee!",
+      "evidenceOffsets": {
+        "start": 259,
+        "end": 304,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna直接评价新公寓great，表示她觉得很好。对话没有谈公寓面积，所以不能选too small；也没有提房租或价格，因此too expensive没有依据。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The new apartment is great! Let's get coffee!",
+          "start": 259,
+          "end": 304
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "What item does Marsha ask Anna for?",
+      "answers": [
+        "pen"
+      ],
+      "maxWords": 1,
+      "evidence": "Anna, do you have a pen?",
+      "evidenceOffsets": {
+        "start": 314,
+        "end": 338,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Marsha问Anna是否有pen，题目问她要的物品，因此填pen。book、pillow、map和lamp是Anna翻找时拿出的其他物件，不能因为它们在对话中出现就当成Marsha要的东西。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Anna, do you have a pen?",
+          "start": 314,
+          "end": 338
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does Pete first say is in Anna’s bag?",
+      "options": [
+        "A pillow.",
+        "A map of the world.",
+        "A big book."
+      ],
+      "answers": [
+        "A big book."
+      ],
+      "evidence": "It is not a pen. It is a book. It is a big book.",
+      "evidenceOffsets": {
+        "start": 400,
+        "end": 448,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "第一次翻找时Pete连续说not a pen、a book、a big book，所以首先认出的物品是大书。世界地图和枕头确实在后面出现，但不属于这个最先发生的识别情节。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It is not a pen. It is a book. It is a big book.",
+          "start": 400,
+          "end": 448
+        }
+      ],
+      "understanding": "sequence"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Anna’s map show?",
+      "options": [
+        "Only the apartment building.",
+        "Only Washington, D.C.",
+        "The world."
+      ],
+      "answers": [
+        "The world."
+      ],
+      "evidence": "Why do you have a map of the world?",
+      "evidenceOffsets": {
+        "start": 695,
+        "end": 730,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Pete问为什么Anna带着a map of the world，说明地图范围是世界。Anna刚来D.C.不能证明这张地图只画D.C.；原文也没有说它是公寓楼平面图。答案取自实际说出的world，不依赖画面。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Why do you have a map of the world?",
+          "start": 695,
+          "end": 730
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What does Anna suggest after she finds the item Marsha needs?",
+      "options": [
+        "Buy a new bag.",
+        "Get coffee.",
+        "Go to work."
+      ],
+      "answers": [
+        "Get coffee."
+      ],
+      "evidence": "I have a pen! Let’s get coffee!",
+      "evidenceOffsets": {
+        "start": 831,
+        "end": 862,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna在说终于找到pen之后立即提议Let’s get coffee，因此下一步建议是喝咖啡。原文没有接着提出去工作或买新包；包里物件多也不能自动推导出换包的计划。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I have a pen! Let’s get coffee!",
+          "start": 831,
+          "end": 862
+        }
+      ],
+      "understanding": "sequence"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "ece56a37389712f8b947ab07d237f6cdf071ea84a14b1f7165250eee5a7378e8",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

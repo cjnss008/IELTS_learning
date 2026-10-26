@@ -1,91 +1,555 @@
 {
-  "schema": 3,
   "id": "independent-b2-listen-in",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+  "configurationHash": "749bc347c1179ddd18fdfaa1b2a1d0a514aa6f92384656ad73c27bd8f779bb5b",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
+    "rate": "+0%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "supervisor": "en-US-AriaNeural",
+      "student": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 0,
+        "sourceEnd": 12
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 113,
+        "sourceEnd": 122
+      },
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 318,
+        "sourceEnd": 330
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 580,
+        "sourceEnd": 589
+      },
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 834,
+        "sourceEnd": 846
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 889,
+        "sourceEnd": 898
+      },
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 1172,
+        "sourceEnd": 1184
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 1225,
+        "sourceEnd": 1234
+      },
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 1526,
+        "sourceEnd": 1538
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 1574,
+        "sourceEnd": 1583
+      },
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 1838,
+        "sourceEnd": 1850
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 1879,
+        "sourceEnd": 1888
+      },
+      {
+        "label": "Supervisor",
+        "role": "supervisor",
+        "sourceStart": 2181,
+        "sourceEnd": 2193
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 2225,
+        "sourceEnd": 2234
+      }
+    ],
+    "segments": [
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 12,
+        "sourceEnd": 112,
+        "text": "You are proposing a study of walking routes to the new campus. How will you collect the information?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "a60b8070ceab0c073b8b297c66dcb0c6ede9ce614650f261ed5ab37c6faa506e",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 122,
+        "sourceEnd": 317,
+        "text": "We planned to ask volunteers to upload their routes using a phone app. The map would show which streets are used most, and we thought the busiest streets should receive safety improvements first.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "6540b638dd606f87d357b3ec382b1d60056f499d2358fbf2b90c4c663ee0f80e",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 330,
+        "sourceEnd": 579,
+        "text": "That conclusion needs care. A street could have many walkers because it is convenient, while a dangerous street could have few because people avoid it. Recorded use and unmet need are not the same thing. What would help you see the missing journeys?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "3ebd37957b2a57782a8a2e5551d3f014eb203f217b66187de7ee8dcd9b158024",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 589,
+        "sourceEnd": 833,
+        "text": "We could ask people which routes they avoid and why. We should also include people who do not use the app. The first invitations went through the cycling society, so our sample may already favour people comfortable with digital route recording.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "d25c92bcd882b9f3fd67ac90252da7d10b982a9a1363acec11da0618e7f28637",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 846,
+        "sourceEnd": 888,
+        "text": "Exactly. How will you broaden recruitment?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "95da8ead26ccfb81c9700fbc20b6029f783dfc489f3934529c4fbd351dbfb200",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 898,
+        "sourceEnd": 1171,
+        "text": "We will visit the evening classes and the accessibility office, as well as advertising in the cafeteria. We will record which invitation channel each participant used. That will not make the sample statistically representative, but it will show who our recruitment reached.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "fd9755c3838fab655e86ccfded0ed77c6d9c5b1a7e540de67f63133ce9c60e1f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 1184,
+        "sourceEnd": 1224,
+        "text": "Are you collecting exact home addresses?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "1a3518b052fe8b4014769988cbddf4c2c6a978e0048fada80b07504adca59679",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 1234,
+        "sourceEnd": 1525,
+        "text": "We do not need them. We will remove the first and last sections of each uploaded route before analysis. A route beginning at a residence could reveal where a participant lives even without a name attached. We will also combine routes into street-level counts before presenting them publicly.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "9cd9f96237423ef5760fb4d53d6db8af8e15a38d74ca48380b6469c545539900",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 1538,
+        "sourceEnd": 1573,
+        "text": "What about comparing journey times?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "0adbeb035968cef2dca6cc369529d04d0fa033ee7d93d0dc45b6cfaeac5dca85",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 1583,
+        "sourceEnd": 1837,
+        "text": "The app gives a total time, but it may include a stop at a shop. We will ask participants to flag pauses and report moving time separately from total journey time. We do not want to label someone as a slow walker because they bought groceries on the way.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "7ab236e040c6c30ef0bb6a654e909eb9a296749d0a523196ca14994bb80b32cc",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 1850,
+        "sourceEnd": 1878,
+        "text": "And the safety observations?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "27a05c23988c9d3e6e1e9d2c59ad7f629eb991fe8c8ca0a725a03d68ff0e564b",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 1888,
+        "sourceEnd": 2180,
+        "text": "A small team will audit a selection of crossings using a fixed checklist. They will record visibility, kerb access and waiting time. We will keep those observations separate from people's reports of feeling safe. Both can inform decisions, but they describe different things and may disagree.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "a1f08dd495bf5295785d0d710ecf5725a7adb342a9f882b609873379fca5d67f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "supervisor",
+        "speaker": "Supervisor",
+        "sourceStart": 2193,
+        "sourceEnd": 2224,
+        "text": "What would a disagreement mean?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "ffb7ce8a419bcae9ffd140097076d42f52b79d9db962067e5b8d08c5ee211f39",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 2234,
+        "sourceEnd": 2569,
+        "text": "It would be a reason to investigate. For instance, a crossing could meet the checklist during daylight but feel uncomfortable after dark. We should not delete the report just because it differs from the audit. Our final map will show evidence gaps as well as current observations, so that the campus team can decide what to check next.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "552fe00290e05cd9b93e05fd31e0bcbcac5a72ddb5c0389dd06199f28b0a1843",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "e187af131b6911001736d1946a9ff29a34db7f07c0fdd858146803bdcf48e286",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "roleVoices": {
+    "supervisor": "en-US-AriaNeural",
+    "student": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 147.245,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-IN",
-  "voices": [
-    "en-IN-NeerjaNeural",
-    "en-IN-PrabhatNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "+0%",
-  "transcriptHash": "dadc840c70b081ca6632566de1518acf3ac934699994cf4cac3fc4748b86f3d8",
-  "audioHash": "8b1a9d0d2298328fd1c36039318bd402eecfbfa205f96d0cd94786def62f3297",
-  "configurationHash": "2e2b188e21de29a79bbfbd738035a66679b10b821019ab91222d67687ee34842",
-  "durationSeconds": 185.064,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 12,
+      "sourceEnd": 112,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "a60b8070ceab0c073b8b297c66dcb0c6ede9ce614650f261ed5ab37c6faa506e",
-      "durationSeconds": 7.296
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 6.0575,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 5.9375,
+      "startSeconds": 0.0,
+      "endSeconds": 6.0175,
+      "durationSeconds": 6.0175
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 122,
+      "sourceEnd": 317,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "6540b638dd606f87d357b3ec382b1d60056f499d2358fbf2b90c4c663ee0f80e",
-      "durationSeconds": 14.304
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 0.04,
+      "groupEndSeconds": 10.145,
+      "wordStartSeconds": 0.1,
+      "wordEndSeconds": 10.025,
+      "startSeconds": 6.4675,
+      "endSeconds": 16.5725,
+      "durationSeconds": 10.105
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 330,
+      "sourceEnd": 579,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "3ebd37957b2a57782a8a2e5551d3f014eb203f217b66187de7ee8dcd9b158024",
-      "durationSeconds": 18.096
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 6.74,
+      "groupEndSeconds": 22.32,
+      "wordStartSeconds": 6.8,
+      "wordEndSeconds": 22.2,
+      "startSeconds": 17.0225,
+      "endSeconds": 32.6025,
+      "durationSeconds": 15.579999999999998
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 589,
+      "sourceEnd": 833,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "d25c92bcd882b9f3fd67ac90252da7d10b982a9a1363acec11da0618e7f28637",
-      "durationSeconds": 18.24
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 10.8525,
+      "groupEndSeconds": 24.8825,
+      "wordStartSeconds": 10.9125,
+      "wordEndSeconds": 24.7625,
+      "startSeconds": 33.0525,
+      "endSeconds": 47.0825,
+      "durationSeconds": 14.030000000000001
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 846,
+      "sourceEnd": 888,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "95da8ead26ccfb81c9700fbc20b6029f783dfc489f3934529c4fbd351dbfb200",
-      "durationSeconds": 4.584
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 23.0025,
+      "groupEndSeconds": 26.4825,
+      "wordStartSeconds": 23.0625,
+      "wordEndSeconds": 26.3625,
+      "startSeconds": 47.5325,
+      "endSeconds": 51.0125,
+      "durationSeconds": 3.480000000000004
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 898,
+      "sourceEnd": 1171,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "fd9755c3838fab655e86ccfded0ed77c6d9c5b1a7e540de67f63133ce9c60e1f",
-      "durationSeconds": 19.896
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 25.59,
+      "groupEndSeconds": 41.395,
+      "wordStartSeconds": 25.65,
+      "wordEndSeconds": 41.275,
+      "startSeconds": 51.4625,
+      "endSeconds": 67.2675,
+      "durationSeconds": 15.805
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 1184,
+      "sourceEnd": 1224,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "1a3518b052fe8b4014769988cbddf4c2c6a978e0048fada80b07504adca59679",
-      "durationSeconds": 3.432
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 27.1775,
+      "groupEndSeconds": 29.4325,
+      "wordStartSeconds": 27.2375,
+      "wordEndSeconds": 29.3125,
+      "startSeconds": 67.7175,
+      "endSeconds": 69.9725,
+      "durationSeconds": 2.2549999999999955
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 1234,
+      "sourceEnd": 1525,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "9cd9f96237423ef5760fb4d53d6db8af8e15a38d74ca48380b6469c545539900",
-      "durationSeconds": 22.152
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 42.1025,
+      "groupEndSeconds": 59.22,
+      "wordStartSeconds": 42.1625,
+      "wordEndSeconds": 59.1,
+      "startSeconds": 70.4225,
+      "endSeconds": 87.54,
+      "durationSeconds": 17.117500000000007
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 1538,
+      "sourceEnd": 1573,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "0adbeb035968cef2dca6cc369529d04d0fa033ee7d93d0dc45b6cfaeac5dca85",
-      "durationSeconds": 3.12
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 30.115,
+      "groupEndSeconds": 32.17,
+      "wordStartSeconds": 30.175,
+      "wordEndSeconds": 32.05,
+      "startSeconds": 87.99,
+      "endSeconds": 90.045,
+      "durationSeconds": 2.055000000000007
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 1583,
+      "sourceEnd": 1837,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "7ab236e040c6c30ef0bb6a654e909eb9a296749d0a523196ca14994bb80b32cc",
-      "durationSeconds": 19.632
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 59.9275,
+      "groupEndSeconds": 74.5325,
+      "wordStartSeconds": 59.9875,
+      "wordEndSeconds": 74.4125,
+      "startSeconds": 90.495,
+      "endSeconds": 105.1,
+      "durationSeconds": 14.60499999999999
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 1850,
+      "sourceEnd": 1878,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "27a05c23988c9d3e6e1e9d2c59ad7f629eb991fe8c8ca0a725a03d68ff0e564b",
-      "durationSeconds": 2.688
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 32.8525,
+      "groupEndSeconds": 34.72,
+      "wordStartSeconds": 32.9125,
+      "wordEndSeconds": 34.6,
+      "startSeconds": 105.55,
+      "endSeconds": 107.4175,
+      "durationSeconds": 1.8675000000000068
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 1888,
+      "sourceEnd": 2180,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "a1f08dd495bf5295785d0d710ecf5725a7adb342a9f882b609873379fca5d67f",
-      "durationSeconds": 23.376
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 75.24,
+      "groupEndSeconds": 93.07,
+      "wordStartSeconds": 75.3,
+      "wordEndSeconds": 92.95,
+      "startSeconds": 107.8675,
+      "endSeconds": 125.6975,
+      "durationSeconds": 17.83
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "supervisor",
+      "speaker": "Supervisor",
+      "sourceStart": 2193,
+      "sourceEnd": 2224,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "ffb7ce8a419bcae9ffd140097076d42f52b79d9db962067e5b8d08c5ee211f39",
-      "durationSeconds": 2.784
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "b6c3d67ce97b7c64cabb99c6df5ca32b5d9fd587aef947e720b6587f2eaf79e7",
+      "groupAudioHash": "2a46276a7fef162ca034de3026003fcb6dcafc84e38fb606e89169d80c6cc97e",
+      "groupStartSeconds": 35.4025,
+      "groupEndSeconds": 37.045,
+      "wordStartSeconds": 35.4625,
+      "wordEndSeconds": 36.925,
+      "startSeconds": 126.1475,
+      "endSeconds": 127.79,
+      "durationSeconds": 1.6425000000000125
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 2234,
+      "sourceEnd": 2569,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "552fe00290e05cd9b93e05fd31e0bcbcac5a72ddb5c0389dd06199f28b0a1843",
-      "durationSeconds": 25.464
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "59c1b4cca6b6e24b6ba6a3105c4cf5f39aa85b6a7b2b7a1f8fbde387e4c3c218",
+      "groupAudioHash": "38db8b01f7dff5b7d8a0bf95b012cee608d4ee85efaf1cb2c1a0dbbc979a22e2",
+      "groupStartSeconds": 93.7775,
+      "groupEndSeconds": 112.7825,
+      "wordStartSeconds": 93.8375,
+      "wordEndSeconds": 112.6625,
+      "startSeconds": 128.24,
+      "endSeconds": 147.245,
+      "durationSeconds": 19.004999999999995
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-b2-listen-in.mp3"
 }

@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-08-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-08",
+  "sourceVersion": "1",
+  "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+  "sourceContentHash": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+  "exposureGroup": "public-source:voa-l1-08",
+  "releaseStatus": "text-evidence-reviewed",
+  "modalityPolicy": {
+    "reading": {
+      "eligible": true,
+      "requirement": "Current exact source SHA and evidence offsets must match."
+    },
+    "listening": {
+      "eligible": true,
+      "requirement": "Question evidence uses spoken transcript spans only. Canonical source usage, official paired Conversation audio, rights and alignment gates remain required. No actual independent audio listen was performed during question authoring."
+    },
+    "independentExposure": "Same-source text/audio share one group. These public practice candidates are not independent assessment or unseen-transfer evidence."
+  },
+  "sourceIssues": [],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does Anna want to speak to her co-workers today?",
+      "options": [
+        "To apologize for the previous day.",
+        "To invite them to her apartment.",
+        "To ask them to change jobs."
+      ],
+      "answers": [
+        "To apologize for the previous day."
+      ],
+      "evidence": "Today I want to apologize to my co-workers.",
+      "evidenceOffsets": {
+        "start": 142,
+        "end": 185,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Anna开头直接说今天想向同事apologize，即为昨天的事情道歉。文中没有邀请同事到公寓；结尾提到自己仍保住工作，也不是要求同事换工作。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Today I want to apologize to my co-workers.",
+          "start": 142,
+          "end": 185
+        }
+      ],
+      "understanding": "reason"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Jonathan say the studio light means?",
+      "options": [
+        "He is recording his evening show.",
+        "His evening show has finished.",
+        "The studio is free for a visit."
+      ],
+      "answers": [
+        "He is recording his evening show."
+      ],
+      "evidence": "When the studio light is on, I am recording my evening show.",
+      "evidenceOffsets": {
+        "start": 432,
+        "end": 492,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Jonathan明确把灯亮与正在录制晚间节目联系起来。录制进行中不同于节目已经结束；他随后还说忙、让Anna改日参观，所以灯亮也不是可以自由参观的信号。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "When the studio light is on, I am recording my evening show.",
+          "start": 432,
+          "end": 492
+        }
+      ],
+      "understanding": "signal-and-reference"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "When does Amelia suggest Anna should come back?",
+      "answers": [
+        "this afternoon"
+      ],
+      "maxWords": 2,
+      "evidence": "It’s okay, Anna. Come by this afternoon.",
+      "evidenceOffsets": {
+        "start": 847,
+        "end": 887,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Amelia说Come by this afternoon，建议Anna今天下午再来，因此填this afternoon。其他同事提到的时间不能替换这句具体邀请；也不是第二天。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "It’s okay, Anna. Come by this afternoon.",
+          "start": 847,
+          "end": 887
+        }
+      ],
+      "understanding": "explicit-information"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "When does Caty ask Anna to come to her office?",
+      "options": [
+        "At 12:00 p.m.",
+        "At 5:00 p.m.",
+        "At 10:00 a.m."
+      ],
+      "answers": [
+        "At 5:00 p.m."
+      ],
+      "evidence": "My office. 5:00 p.m.",
+      "evidenceOffsets": {
+        "start": 1001,
+        "end": 1021,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Caty用My office. 5:00 p.m.简短给出地点和时间，要求下午五点到办公室。上午十点属于Anne之前的工作说明，不能移给Caty；中午十二点未被提及。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "My office. 5:00 p.m.",
+          "start": 1001,
+          "end": 1021
+        }
+      ],
+      "understanding": "time"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What happens when Anna goes into the office?",
+      "options": [
+        "She is asked to record Jonathan’s show.",
+        "She is told to leave her job.",
+        "Her co-workers surprise her with a party."
+      ],
+      "answers": [
+        "Her co-workers surprise her with a party."
+      ],
+      "evidence": "Surprise!\n\nAnna: A party! Awesome!",
+      "evidenceOffsets": {
+        "start": 1068,
+        "end": 1102,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "同事喊Surprise，Anna随即说A party，说明这里准备的是惊喜聚会。她接着庆幸自己仍有工作，不能选被要求离职；录制节目是前面Jonathan忙碌的原因，不是这次办公室聚会的任务。",
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Surprise!",
+          "start": 1068,
+          "end": 1077
+        },
+        {
+          "quote": "A party! Awesome!",
+          "start": 1085,
+          "end": 1102
+        }
+      ],
+      "understanding": "event-and-sequence"
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "root-Codex",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 5,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 5,
+      "blindInputSha256": "502780a67fd246e16f5cdb1de2f5b5a0cde7096786f99dacbf419bcffe33cc20",
+      "reviewSha256": "76be29f753b805fd4d7aa66a8be35a835859d2941ff508f7dc7782857499dff2",
+      "scope": "Independent source-text blind solve before seeing keys. VOA12 then received an explicitly recorded punctuation-only source correction; all question facts and answers were rechecked unchanged."
+    }
+  }
+}

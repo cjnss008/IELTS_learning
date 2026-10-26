@@ -274,6 +274,7 @@
     var info = getWeekInfo(Math.min(52,Math.ceil(dayNumber / 7)), content);
     var index = curriculumIndex(data);
     var adaptive = options && OWN.call(options, 'adaptivePlan') ? options.adaptivePlan : root.document ? root.IELTSAdaptivePlan : null;
+    var contextPractice = options && OWN.call(options, 'contextPractice') ? options.contextPractice : root.document ? root.IELTSPublicContextPractice : null;
     var baseSource = data.days[dayNumber - 1];
     if(!baseSource && dayNumber === 365) return buildLegacyDay(dayNumber,content);
     var source = adaptive && typeof adaptive.getDay === 'function' ? adaptive.getDay(baseSource) : baseSource;
@@ -293,7 +294,8 @@
       seen.add(entry.id);
       var materials = entry.materialIds.map(function (id) {
         var material = index.materials.get(id);
-        if (!material) throw new TypeError('课程任务引用的材料不存在：' + id);
+        if (!material && contextPractice && typeof contextPractice.resolveMaterial === 'function') material = contextPractice.resolveMaterial(id, { data: data });
+        if (!material || material.id !== id) throw new TypeError('课程任务引用的材料不存在：' + id);
         return { id: id, title: material.title || id, url: '学习课程.html?day=' + dayNumber + '&material=' + encodeURIComponent(id) + '&mode=' + entry.mode };
       });
       return Object.assign({}, entry, {

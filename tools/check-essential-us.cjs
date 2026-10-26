@@ -1,0 +1,11 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+function validate(data){
+ assert.equal(data.status,'complete');assert.equal(data.entries.length,8000);assert.equal(data.pronunciation.accent,'en-US');assert.equal(new Set(data.entries.map(e=>e.word.toLowerCase())).size,8000);
+ const sources={};for(const entry of data.entries){assert.equal(entry.ipaAccent,'en-US',entry.word);assert.equal(entry.audio.lang,'en-US',entry.word);assert.match(entry.ipa,/^\/.+\/$/);assert.doesNotMatch(entry.ipa,/[ɒ]|əʊ|[\^?@\\єә]/,entry.word);assert.ok(entry.ipaVariants?.includes(entry.ipa),entry.word);assert.equal(entry.meaning,entry.contextMeaning);assert.ok(entry.example&&entry.exampleTranslation&&entry.dictionaryMeaning&&entry.source.example?.provider,entry.word);const source=entry.source.pronunciation;assert.ok(source?.dictionary,entry.word);sources[source.dictionary]=(sources[source.dictionary]||0)+1;if(source.dictionary==='cmudict'){assert.ok(source.arpabet&&source.variants?.length&&source.revision,entry.word);assert.equal(source.license,'BSD-2-Clause');}else assert.ok(source.sourceUrls?.length&&source.license?.name==='CC BY-SA 4.0',entry.word);}
+ assert.deepEqual(data.stages.map(s=>data.entries.filter(e=>e.stage===s.id).length),[1000,2000,3000,2000]);
+ const word=w=>data.entries.find(e=>e.word===w);assert.equal(word('car').ipa,'/kɑɹ/');assert.equal(word('work').ipa,'/wɝk/');assert.equal(word('class').ipa,'/klæs/');assert.equal(word('read').ipa,'/ɹid/');assert.equal(word('record').ipa,'/ˈɹɛkɚd/');assert.equal(word('classmate').ipa,'/ˈklæsˌmeɪt/');assert.equal(word('bedroom').ipa,'/ˈbɛdˌɹum/');assert.ok(word('read').ipaVariants.includes('/ɹɛd/'));
+ return{count:8000,sources,stages:[1000,2000,3000,2000],verifiedPronunciationSamples:['car','work','class','read','record','classmate','bedroom']};
+}
+function main(file=path.join(__dirname,'..','assets','essential-vocabulary-data.js')){const absolute=path.resolve(file);delete require.cache[require.resolve(absolute)];const data=require(absolute),result=validate(data);result.assetSha256=crypto.createHash('sha256').update(fs.readFileSync(absolute)).digest('hex');console.log(JSON.stringify(result));return result;}
+module.exports={validate,main};if(require.main===module)main(process.argv[2]);

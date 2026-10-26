@@ -1,0 +1,372 @@
+{
+  "id": "expand-w03-listen-2",
+  "week": 3,
+  "skill": "listening",
+  "level": "A1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "social-announcement",
+  "estimatedMinutes": 20,
+  "minWords": 80,
+  "maxWords": 140,
+  "questionCount": 8,
+  "variant": 2,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "家庭、数量与拥有 · Independent new scenario: a neighbourhood club with different members",
+  "grammarFocus": "we / they；are；规则复数；my / your / his / her；have / has。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 450,
+    "paragraphGapMs": 1200,
+    "minimumSpeakers": 1,
+    "transcriptImmutableAfterAudio": true
+  },
+  "title": "The Maple Street Neighbourhood Club",
+  "instructions": "这是为A1学习者设计的原创模拟听力与语法练习（非官方雅思测试，不涉及真实分数）。先听/读对话，注意 we / they + are、规则复数、my / your / his / her、have / has 的用法。然后完成8道听力题和8道语法题。听力题答案都能在原文中找到；填空题答案必须与原文完全一致，且不超过字数限制。中文解释帮助你理解，但题目和选项都是英文。",
+  "transcript": "Mia: Hello, Ben. This is our club room. We are new members.\nBen: Hi, Mia. Welcome! I am Ben. I have two keys. They are for you.\nMia: Thank you. Are they your keys?\nBen: No, they are not my keys. They are her keys. Her name is Lily. She has a big bag.\nMia: And who are they? Are they members too?\nBen: Yes, they are. They are Tom and Anna. They have three maps. Their maps are on the table.\nMia: My map is small. Your map is big.\nBen: Yes. We are a happy club. We have eight members.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who is new in the club?",
+      "options": [
+        "Mia and Ben",
+        "Mia",
+        "Tom and Anna",
+        "Lily"
+      ],
+      "answers": [
+        "Mia"
+      ],
+      "explanation": "Mia说“We are new members”，Ben回答“Welcome!”，说明Mia是新成员。Ben是俱乐部原有成员。",
+      "evidence": "Mia: Hello, Ben. This is our club room. We are new members."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How many keys does Ben have?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Eight"
+      ],
+      "answers": [
+        "Two"
+      ],
+      "explanation": "Ben说“I have two keys.”，明确数量是两把。",
+      "evidence": "Ben: Hi, Mia. Welcome! I am Ben. I have two keys."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Whose keys are they?",
+      "options": [
+        "Ben's keys",
+        "Mia's keys",
+        "Lily's keys",
+        "Tom's keys"
+      ],
+      "answers": [
+        "Lily's keys"
+      ],
+      "explanation": "Ben说“They are not my keys. They are her keys. Her name is Lily.”，her指Lily，所以钥匙是Lily的。",
+      "evidence": "Ben: No, they are not my keys. They are her keys. Her name is Lily."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Lily have?",
+      "options": [
+        "A small map",
+        "A big bag",
+        "Two keys",
+        "Three maps"
+      ],
+      "answers": [
+        "A big bag"
+      ],
+      "explanation": "Ben说“She has a big bag.”，She指Lily。",
+      "evidence": "Ben: No, they are not my keys. They are her keys. Her name is Lily. She has a big bag."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Are Tom and Anna members?",
+      "options": [
+        "Yes, they are.",
+        "No, they are not.",
+        "Yes, she is.",
+        "No, he is not."
+      ],
+      "answers": [
+        "Yes, they are."
+      ],
+      "explanation": "Mia问“Are they members too?”，Ben回答“Yes, they are.”，确认Tom和Anna是成员。",
+      "evidence": "Ben: Yes, they are. They are Tom and Anna."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How many maps do Tom and Anna have?",
+      "options": [
+        "Two",
+        "Three",
+        "Eight",
+        "One"
+      ],
+      "answers": [
+        "Three"
+      ],
+      "explanation": "Ben说“They have three maps.”，They指Tom和Anna。",
+      "evidence": "Ben: Yes, they are. They are Tom and Anna. They have three maps."
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the text: Mia's map is ______.",
+      "answers": [
+        "small"
+      ],
+      "maxWords": 1,
+      "explanation": "Mia说“My map is small.”，填空词是small。",
+      "evidence": "Mia: My map is small. Your map is big."
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Complete the sentence with one word from the text: We have ______ members.",
+      "answers": [
+        "eight"
+      ],
+      "maxWords": 1,
+      "explanation": "Ben最后说“We have eight members.”，填空词是eight。",
+      "evidence": "Ben: Yes. We are a happy club. We have eight members."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "club",
+      "meaning": "俱乐部",
+      "example": "This is our club room."
+    },
+    {
+      "word": "members",
+      "meaning": "成员（复数）",
+      "example": "We are new members."
+    },
+    {
+      "word": "keys",
+      "meaning": "钥匙（复数）",
+      "example": "I have two keys."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "She has a big bag."
+    },
+    {
+      "word": "maps",
+      "meaning": "地图（复数）",
+      "example": "They have three maps."
+    },
+    {
+      "word": "table",
+      "meaning": "桌子",
+      "example": "Their maps are on the table."
+    },
+    {
+      "word": "small",
+      "meaning": "小的",
+      "example": "My map is small."
+    },
+    {
+      "word": "happy",
+      "meaning": "快乐的",
+      "example": "We are a happy club."
+    }
+  ],
+  "grammar": {
+    "title": "we / they + are；规则复数；my / your / his / her；have / has",
+    "explanation": "先看意思：we是“我们”，they是“他们/她们/它们”。we和they后面用are，不用am或is。例如：We are new members. They are members too. 否定在are后加not：They are not my keys. 一般疑问把are放句首：Are they members? 回答：Yes, they are. / No, they are not.\n规则复数：多数名词加-s，如key→keys, map→maps, member→members。\nmy / your / his / her 表示“我的/你的/他的/她的”，后面接名词：my keys, your map, his bag, her name。\nhave / has 表示“有”。I / you / we / they 用have；he / she / it 用has。例如：I have two keys. She has a big bag. They have three maps.",
+    "example": "We are new members. They have three maps. She has a big bag.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "We ______ in the club room.",
+        "options": [
+          "am",
+          "is",
+          "are",
+          "be"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语we后面用are。",
+        "evidence": "We are new members."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "They ______ my keys.",
+        "options": [
+          "is not",
+          "are not",
+          "am not",
+          "not are"
+        ],
+        "answers": [
+          "are not"
+        ],
+        "explanation": "主语they的否定用are not。",
+        "evidence": "They are not my keys."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "______ they members?",
+        "options": [
+          "Is",
+          "Am",
+          "Are",
+          "Be"
+        ],
+        "answers": [
+          "Are"
+        ],
+        "explanation": "主语they的一般疑问句把Are放句首。",
+        "evidence": "Are they members too?"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "She ______ a big bag.",
+        "options": [
+          "have",
+          "has",
+          "are",
+          "is have"
+        ],
+        "answers": [
+          "has"
+        ],
+        "explanation": "主语she是第三人称单数，用has。",
+        "evidence": "She has a big bag."
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "They ______ three maps.",
+        "options": [
+          "has",
+          "have",
+          "is",
+          "are"
+        ],
+        "answers": [
+          "have"
+        ],
+        "explanation": "主语they用have。",
+        "evidence": "They have three maps."
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "This is ______ map. (I)",
+        "options": [
+          "my",
+          "your",
+          "his",
+          "her"
+        ],
+        "answers": [
+          "my"
+        ],
+        "explanation": "括号里是I，所以用my表示“我的”。",
+        "evidence": "My map is small."
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Lily has a bag. ______ bag is big.",
+        "options": [
+          "My",
+          "Your",
+          "His",
+          "Her"
+        ],
+        "answers": [
+          "Her"
+        ],
+        "explanation": "Lily是女性，她的包用her bag。",
+        "evidence": "She has a big bag."
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "One key, two ______.",
+        "options": [
+          "key",
+          "keys",
+          "keyes",
+          "keies"
+        ],
+        "answers": [
+          "keys"
+        ],
+        "explanation": "key的规则复数是加-s，变成keys。",
+        "evidence": "I have two keys."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Are you a club member?",
+        "How many keys do you have?",
+        "Is your bag big or small?",
+        "Are your friends in a club?"
+      ],
+      "part2": "Describe a club or group you know. You should say:",
+      "part2Bullets": [
+        "what the club is",
+        "who the members are",
+        "what they have",
+        "why you like it"
+      ],
+      "part3": [
+        "Are clubs good for people? Why?",
+        "Do you have a map in your bag?",
+        "Are your friends members of a club?",
+        "What do you have in your room?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about your family or friends. Use we / they + are, my / your / his / her, and have / has. Example: We are a happy family. My sister has a small bag."
+  },
+  "rubric": {
+    "taskType": "A1 listening comprehension and grammar practice (simulated educational material, not an official test)"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "835d1f382d59979d8b38c27d789955458886d9cd78bf9f674f5fb0002ff0dcbe"
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

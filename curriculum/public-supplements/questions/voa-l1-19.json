@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-19-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-19",
+  "sourceVersion": "1",
+  "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+  "sourceContentHash": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+  "exposureGroup": "public-source:voa-l1-19",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why is Anna late for work?",
+      "evidence": "The Metro is closed. So, I am walking to work.",
+      "explanation": "closed 是地铁关闭，so 引出因此步行上班的结果。天气热是背景，不是她给出的主要迟到原因；也没有买午饭或忘记会议时间的情节。",
+      "answers": [
+        "The Metro is closed, so she is walking."
+      ],
+      "evidenceOffsets": {
+        "start": 230,
+        "end": 276,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She has stopped to buy lunch.",
+        "She has forgotten the time of a meeting.",
+        "The Metro is closed, so she is walking."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "The Metro is closed. So, I am walking to work.",
+          "start": 230,
+          "end": 276
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which task will Anna stop doing next month?",
+      "evidence": "So, starting next month you will not read the news.",
+      "explanation": "will not read the news 明确说不再播读新闻。问问题是她擅长的能力，儿童节目则是新的工作，不能把停止的任务和新任务调换。",
+      "answers": [
+        "Reading the news."
+      ],
+      "evidenceOffsets": {
+        "start": 802,
+        "end": 853,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Presenting a children’s programme.",
+        "Reading the news.",
+        "Asking people questions."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "So, starting next month you will not read the news.",
+          "start": 802,
+          "end": 853
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What new assignment does Ms. Weaver give Anna?",
+      "evidence": "Your skills are perfect for a new show … a children’s show.",
+      "explanation": "children’s show 指面向儿童的节目。之后提到太空、海洋和珠峰只是 Anna 想出的节目点子；对话没有把新工作定为交通播报或办公室规则。",
+      "answers": [
+        "A show for children."
+      ],
+      "evidenceOffsets": {
+        "start": 1341,
+        "end": 1400,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "A show for children.",
+        "A daily traffic report.",
+        "A programme only about office rules."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Your skills are perfect for a new show … a children’s show.",
+          "start": 1341,
+          "end": 1400
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "In which month will the new assignment start? Write ONE WORD.",
+      "maxWords": 1,
+      "evidence": "Next month is July.",
+      "explanation": "Anna 先确认 next month 是 July，后来老板说 You start next month，因此开工月份仍是 July。老板提到 August、September 是说明也不会在这些月解雇她，不是开工月份。",
+      "answers": [
+        "July"
+      ],
+      "evidenceOffsets": {
+        "start": 861,
+        "end": 880,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "spokenEvidence": [
+        {
+          "quote": "Next month is July.",
+          "start": 861,
+          "end": 880
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which ability does Ms. Weaver mention as a strength?",
+      "evidence": "Well, you are good at asking questions. You are good at talking to people.",
+      "explanation": "good at 后面的两项是提问和与人交流。老板前面恰恰说她不擅长播读新闻；她也没有说 Anna 会驾驶直升机。",
+      "answers": [
+        "Asking questions and talking to people."
+      ],
+      "evidenceOffsets": {
+        "start": 1094,
+        "end": 1168,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Flying a helicopter.",
+        "Asking questions and talking to people.",
+        "Reading the news accurately."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "Well, you are good at asking questions. You are good at talking to people.",
+          "start": 1094,
+          "end": 1168
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Anna react when she learns about the new show?",
+      "evidence": "I have tons of ideas!",
+      "explanation": "tons of ideas 是“有很多想法”，结合 That is awesome 可知她很兴奋。不能把她刚听到坏消息时的担心，套到她获知新任务后的反应上。",
+      "answers": [
+        "She is excited and has many ideas."
+      ],
+      "evidenceOffsets": {
+        "start": 1538,
+        "end": 1559,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading",
+        "listening"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She is excited and has many ideas.",
+        "She refuses to change her job.",
+        "She says she cannot think of any topics."
+      ],
+      "spokenEvidence": [
+        {
+          "quote": "I have tons of ideas!",
+          "start": 1538,
+          "end": 1559
+        }
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "8cd56bf3c7be99aa6965d003ad5d3ba4184f34d1906461906a74c9f3457c7f8f",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

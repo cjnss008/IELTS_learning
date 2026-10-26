@@ -1,81 +1,483 @@
 {
-  "schema": 3,
   "id": "independent-a2-listen-in",
+  "schema": 3,
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
+  "transcriptHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+  "configurationHash": "49c74acbc21833309d30c7bce4837568e2e886aa951e0c4778c5e86e2872a788",
+  "configuration": {
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
+    "transcriptHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
+    "rate": "-8%",
+    "format": "mp3-24000-mono-48k",
+    "authoringPackageVersion": "7.3.1",
+    "roleVoices": {
+      "student": "en-US-AriaNeural",
+      "technician": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    },
+    "sourceLabels": [
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 0,
+        "sourceEnd": 9
+      },
+      {
+        "label": "Technician",
+        "role": "technician",
+        "sourceStart": 77,
+        "sourceEnd": 89
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 128,
+        "sourceEnd": 137
+      },
+      {
+        "label": "Technician",
+        "role": "technician",
+        "sourceStart": 210,
+        "sourceEnd": 222
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 268,
+        "sourceEnd": 277
+      },
+      {
+        "label": "Technician",
+        "role": "technician",
+        "sourceStart": 328,
+        "sourceEnd": 340
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 456,
+        "sourceEnd": 465
+      },
+      {
+        "label": "Technician",
+        "role": "technician",
+        "sourceStart": 489,
+        "sourceEnd": 501
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 686,
+        "sourceEnd": 695
+      },
+      {
+        "label": "Technician",
+        "role": "technician",
+        "sourceStart": 724,
+        "sourceEnd": 736
+      },
+      {
+        "label": "Student",
+        "role": "student",
+        "sourceStart": 864,
+        "sourceEnd": 873
+      },
+      {
+        "label": "Technician",
+        "role": "technician",
+        "sourceStart": 900,
+        "sourceEnd": 912
+      }
+    ],
+    "segments": [
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 9,
+        "sourceEnd": 76,
+        "text": "Hello. I need to borrow a recorder for a college interview project.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "6799bd7412cb4b806145871dc8c75a53ccacb0d7f861bed7b9a573ca7eec2491",
+        "pauseBeforeSeconds": 0
+      },
+      {
+        "role": "technician",
+        "speaker": "Technician",
+        "sourceStart": 89,
+        "sourceEnd": 127,
+        "text": "Have you completed the equipment form?",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "35c0e18776d64eaf0d8fd7a85f9ad27695f04a41ac7ea080c38837d72bdec473",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 137,
+        "sourceEnd": 209,
+        "text": "I filled it in online last night. My student number ends in six two one.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "ab3ad0d86762ad9afd1ff1b77281e2f540b60673eb2dead64bb56caf824ae9e8",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "technician",
+        "speaker": "Technician",
+        "sourceStart": 222,
+        "sourceEnd": 267,
+        "text": "I can see it. You asked for a camera as well.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "44083c76957eee03fbcea52e423a4e25a0061bb12ecf5207d5ce7c6027f7f98d",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 277,
+        "sourceEnd": 327,
+        "text": "That was a mistake. We only need sound, not video.",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "be0b9c0d609be67c98ede8ab71619d8750127636fed68ddf0db3803cdef73c29",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "technician",
+        "speaker": "Technician",
+        "sourceStart": 340,
+        "sourceEnd": 455,
+        "text": "Fine. The recorder is available from Wednesday. You must return it by four on Friday. We are closed at the weekend.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "185e84c501f3a57d3e04d10f955404d80035c5dbfb55395e068f08cc1330f69a",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 465,
+        "sourceEnd": 488,
+        "text": "Does it need batteries?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "3175401b36e2aac46f2f30bd3fa742880e25429bebe1a86358e0bbc2444f998b",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "technician",
+        "speaker": "Technician",
+        "sourceStart": 501,
+        "sourceEnd": 685,
+        "text": "It has a rechargeable battery. Charge it with this cable. A full charge lasts about eight hours, but check the battery before every interview. There is a spare memory card in the case.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "c05c93b8c8809913cc7973f01df276567eda0c9d8ac48e2fcca739f8cb92da96",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 695,
+        "sourceEnd": 723,
+        "text": "Can we record in the street?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "270e4f063e3dcef97978176b63f203748793209944843e322320627d46cb9617",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "technician",
+        "speaker": "Technician",
+        "sourceStart": 736,
+        "sourceEnd": 863,
+        "text": "You can, but traffic may hide people's voices. Try a quiet room first. Always ask people for permission before you record them.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "72e6bf005c181a4b6c6ce55a7473e7dda3cfc8889b29faae44f45c5fc36da14f",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "student",
+        "speaker": "Student",
+        "sourceStart": 873,
+        "sourceEnd": 899,
+        "text": "How can I learn to use it?",
+        "boundary": "turn",
+        "voice": "en-US-AriaNeural",
+        "textHash": "eaa8c29146fb85c04dd9dad44aadebe3f6ef57b051ff3127712e74797f1d88aa",
+        "pauseBeforeSeconds": 0.45
+      },
+      {
+        "role": "technician",
+        "speaker": "Technician",
+        "sourceStart": 912,
+        "sourceEnd": 1176,
+        "text": "Watch the short training video on the college website. Then make a test recording here before you leave. Headphones are provided so you can check it. If there is a problem later, email the technical team. Do not post the college equipment number on a public forum.",
+        "boundary": "turn",
+        "voice": "en-US-GuyNeural",
+        "textHash": "995cf305412dd208a19ec8885aaeb8180d63b99f7473f05e1ae614a9fd4a7822",
+        "pauseBeforeSeconds": 0.45
+      }
+    ]
+  },
+  "audioHash": "06cee4308c80b9523b5152ce7a4fb03e947bd833fc09aba280a5b9494a2cfa3c",
+  "voices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "roleVoices": {
+    "student": "en-US-AriaNeural",
+    "technician": "en-US-GuyNeural",
+    "narrator": "en-US-AvaNeural"
+  },
+  "durationSeconds": 83.948708,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
-  "locale": "en-IN",
-  "voices": [
-    "en-IN-NeerjaNeural",
-    "en-IN-PrabhatNeural"
-  ],
-  "voiceMetadataSource": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts",
   "rate": "-8%",
-  "transcriptHash": "e53b22aa85f3fea59a3bca17a5edbff0bfeaf72c9d5c81b0f791e4f386e6e1da",
-  "audioHash": "28e7b2696f884c8ba49dbb776b8a1f5b21713fc65561bb3fbca0bca62b727e6c",
-  "configurationHash": "4b47ebd8a8846d245727534857de3c75d9aaf891ba43ccc84c7ff34731685d09",
-  "durationSeconds": 100.776,
+  "pauseConfiguration": {
+    "paragraph": 0.8,
+    "speaker-change": 0.65,
+    "section": 1.0
+  },
   "segments": [
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 9,
+      "sourceEnd": 76,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "6799bd7412cb4b806145871dc8c75a53ccacb0d7f861bed7b9a573ca7eec2491",
-      "durationSeconds": 6.408
+      "pauseBeforeSeconds": 0,
+      "groupConfigurationHash": "28b67395b53421fc753ca29051642b878ce790722dc6b342b0bf7007be4c2c28",
+      "groupAudioHash": "8bf1793c8f4c186efc1bdc29e5f07eac9612fe6c09fd6a20b18166d0e54dfaff",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 5.351,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 5.230999,
+      "startSeconds": 0.0,
+      "endSeconds": 5.306666666666667,
+      "durationSeconds": 5.306666666666667
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "technician",
+      "speaker": "Technician",
+      "sourceStart": 89,
+      "sourceEnd": 127,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "35c0e18776d64eaf0d8fd7a85f9ad27695f04a41ac7ea080c38837d72bdec473",
-      "durationSeconds": 3.48
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "260f704da66357cb230b6b6a85d7111cb6f7a0b4e4e3ef4a5b3eb0e8aabe5413",
+      "groupAudioHash": "687275d9c918db728c32e3b51bda0752ec98a0decffb580c6013884c5c8e5ec4",
+      "groupStartSeconds": 0.044333333333333336,
+      "groupEndSeconds": 2.411875,
+      "wordStartSeconds": 0.104333,
+      "wordEndSeconds": 2.291874,
+      "startSeconds": 5.756666666666667,
+      "endSeconds": 8.124208333333334,
+      "durationSeconds": 2.367541666666667
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 137,
+      "sourceEnd": 209,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "ab3ad0d86762ad9afd1ff1b77281e2f540b60673eb2dead64bb56caf824ae9e8",
-      "durationSeconds": 7.128
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "28b67395b53421fc753ca29051642b878ce790722dc6b342b0bf7007be4c2c28",
+      "groupAudioHash": "8bf1793c8f4c186efc1bdc29e5f07eac9612fe6c09fd6a20b18166d0e54dfaff",
+      "groupStartSeconds": 6.108458333333333,
+      "groupEndSeconds": 11.886333333333333,
+      "wordStartSeconds": 6.168458,
+      "wordEndSeconds": 11.766333,
+      "startSeconds": 8.574208333333333,
+      "endSeconds": 14.352083333333333,
+      "durationSeconds": 5.777875
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "technician",
+      "speaker": "Technician",
+      "sourceStart": 222,
+      "sourceEnd": 267,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "44083c76957eee03fbcea52e423a4e25a0061bb12ecf5207d5ce7c6027f7f98d",
-      "durationSeconds": 5.304
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "260f704da66357cb230b6b6a85d7111cb6f7a0b4e4e3ef4a5b3eb0e8aabe5413",
+      "groupAudioHash": "687275d9c918db728c32e3b51bda0752ec98a0decffb580c6013884c5c8e5ec4",
+      "groupStartSeconds": 3.200875,
+      "groupEndSeconds": 7.226,
+      "wordStartSeconds": 3.260875,
+      "wordEndSeconds": 7.106,
+      "startSeconds": 14.802083333333334,
+      "endSeconds": 18.827208333333335,
+      "durationSeconds": 4.025125000000001
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 277,
+      "sourceEnd": 327,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "be0b9c0d609be67c98ede8ab71619d8750127636fed68ddf0db3803cdef73c29",
-      "durationSeconds": 6.0
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "28b67395b53421fc753ca29051642b878ce790722dc6b342b0bf7007be4c2c28",
+      "groupAudioHash": "8bf1793c8f4c186efc1bdc29e5f07eac9612fe6c09fd6a20b18166d0e54dfaff",
+      "groupStartSeconds": 12.643791666666667,
+      "groupEndSeconds": 17.511291666666665,
+      "wordStartSeconds": 12.703791,
+      "wordEndSeconds": 17.391291,
+      "startSeconds": 19.277208333333334,
+      "endSeconds": 24.144708333333334,
+      "durationSeconds": 4.8675
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "technician",
+      "speaker": "Technician",
+      "sourceStart": 340,
+      "sourceEnd": 455,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "185e84c501f3a57d3e04d10f955404d80035c5dbfb55395e068f08cc1330f69a",
-      "durationSeconds": 12.024
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "260f704da66357cb230b6b6a85d7111cb6f7a0b4e4e3ef4a5b3eb0e8aabe5413",
+      "groupAudioHash": "687275d9c918db728c32e3b51bda0752ec98a0decffb580c6013884c5c8e5ec4",
+      "groupStartSeconds": 7.997083333333333,
+      "groupEndSeconds": 18.054791666666667,
+      "wordStartSeconds": 8.057083,
+      "wordEndSeconds": 17.934791,
+      "startSeconds": 24.594708333333333,
+      "endSeconds": 34.65241666666667,
+      "durationSeconds": 10.057708333333334
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 465,
+      "sourceEnd": 488,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "3175401b36e2aac46f2f30bd3fa742880e25429bebe1a86358e0bbc2444f998b",
-      "durationSeconds": 2.616
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "28b67395b53421fc753ca29051642b878ce790722dc6b342b0bf7007be4c2c28",
+      "groupAudioHash": "8bf1793c8f4c186efc1bdc29e5f07eac9612fe6c09fd6a20b18166d0e54dfaff",
+      "groupStartSeconds": 18.268791666666665,
+      "groupEndSeconds": 19.8075,
+      "wordStartSeconds": 18.328791,
+      "wordEndSeconds": 19.687499,
+      "startSeconds": 35.10241666666667,
+      "endSeconds": 36.641125,
+      "durationSeconds": 1.5387083333333322
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "technician",
+      "speaker": "Technician",
+      "sourceStart": 501,
+      "sourceEnd": 685,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "c05c93b8c8809913cc7973f01df276567eda0c9d8ac48e2fcca739f8cb92da96",
-      "durationSeconds": 16.752
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "260f704da66357cb230b6b6a85d7111cb6f7a0b4e4e3ef4a5b3eb0e8aabe5413",
+      "groupAudioHash": "687275d9c918db728c32e3b51bda0752ec98a0decffb580c6013884c5c8e5ec4",
+      "groupStartSeconds": 18.825875,
+      "groupEndSeconds": 32.171625,
+      "wordStartSeconds": 18.885875,
+      "wordEndSeconds": 32.051625,
+      "startSeconds": 37.091125,
+      "endSeconds": 50.436875,
+      "durationSeconds": 13.345750000000002
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 695,
+      "sourceEnd": 723,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "270e4f063e3dcef97978176b63f203748793209944843e322320627d46cb9617",
-      "durationSeconds": 2.856
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "28b67395b53421fc753ca29051642b878ce790722dc6b342b0bf7007be4c2c28",
+      "groupAudioHash": "8bf1793c8f4c186efc1bdc29e5f07eac9612fe6c09fd6a20b18166d0e54dfaff",
+      "groupStartSeconds": 20.565,
+      "groupEndSeconds": 22.321083333333334,
+      "wordStartSeconds": 20.625,
+      "wordEndSeconds": 22.201083,
+      "startSeconds": 50.886875,
+      "endSeconds": 52.64295833333333,
+      "durationSeconds": 1.7560833333333292
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "technician",
+      "speaker": "Technician",
+      "sourceStart": 736,
+      "sourceEnd": 863,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "72e6bf005c181a4b6c6ce55a7473e7dda3cfc8889b29faae44f45c5fc36da14f",
-      "durationSeconds": 12.144
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "260f704da66357cb230b6b6a85d7111cb6f7a0b4e4e3ef4a5b3eb0e8aabe5413",
+      "groupAudioHash": "687275d9c918db728c32e3b51bda0752ec98a0decffb580c6013884c5c8e5ec4",
+      "groupStartSeconds": 32.956291666666665,
+      "groupEndSeconds": 42.687916666666666,
+      "wordStartSeconds": 33.016291,
+      "wordEndSeconds": 42.567916,
+      "startSeconds": 53.092958333333335,
+      "endSeconds": 62.82458333333334,
+      "durationSeconds": 9.731625000000001
     },
     {
-      "voice": "en-IN-NeerjaNeural",
+      "role": "student",
+      "speaker": "Student",
+      "sourceStart": 873,
+      "sourceEnd": 899,
+      "boundary": "turn",
+      "voice": "en-US-AriaNeural",
       "textHash": "eaa8c29146fb85c04dd9dad44aadebe3f6ef57b051ff3127712e74797f1d88aa",
-      "durationSeconds": 2.904
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "28b67395b53421fc753ca29051642b878ce790722dc6b342b0bf7007be4c2c28",
+      "groupAudioHash": "8bf1793c8f4c186efc1bdc29e5f07eac9612fe6c09fd6a20b18166d0e54dfaff",
+      "groupStartSeconds": 23.078583333333334,
+      "groupEndSeconds": 24.793916666666668,
+      "wordStartSeconds": 23.138583,
+      "wordEndSeconds": 24.673916,
+      "startSeconds": 63.27458333333333,
+      "endSeconds": 64.98991666666667,
+      "durationSeconds": 1.7153333333333407
     },
     {
-      "voice": "en-IN-PrabhatNeural",
+      "role": "technician",
+      "speaker": "Technician",
+      "sourceStart": 912,
+      "sourceEnd": 1176,
+      "boundary": "turn",
+      "voice": "en-US-GuyNeural",
       "textHash": "995cf305412dd208a19ec8885aaeb8180d63b99f7473f05e1ae614a9fd4a7822",
-      "durationSeconds": 23.16
+      "pauseBeforeSeconds": 0.45,
+      "groupConfigurationHash": "260f704da66357cb230b6b6a85d7111cb6f7a0b4e4e3ef4a5b3eb0e8aabe5413",
+      "groupAudioHash": "687275d9c918db728c32e3b51bda0752ec98a0decffb580c6013884c5c8e5ec4",
+      "groupStartSeconds": 43.472625,
+      "groupEndSeconds": 61.98141666666667,
+      "wordStartSeconds": 43.532625,
+      "wordEndSeconds": 61.861416,
+      "startSeconds": 65.43991666666666,
+      "endSeconds": 83.94870833333333,
+      "durationSeconds": 18.508791666666667
     }
   ],
-  "note": "原创情境的合成声音；地域按官方voice元数据标注，非真人录音、未做独立真人口音听审。段时长来自实际媒体，仅审计使用，不伪造字幕时间轴。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0,
+  "audio": "audio/independent-bank/us/independent-a2-listen-in.mp3"
 }

@@ -1,0 +1,474 @@
+{
+  "id": "expand-w34-listen-1",
+  "week": 34,
+  "skill": "listening",
+  "level": "B2–C1",
+  "pool": "training",
+  "fullTest": false,
+  "type": "academic-discussion",
+  "estimatedMinutes": 30,
+  "minWords": 300,
+  "maxWords": 500,
+  "questionCount": 10,
+  "variant": 1,
+  "requireAudioHash": true,
+  "yearExpansion": "year-expansion-69",
+  "topic": "自然与阅读推断 · Independent new scenario: a cultural organisation adapting to change",
+  "grammarFocus": "关系从句；指代；可能性表达；复杂句主干辨认。 Teach the new rule in Chinese, then provide at least 8 distinct grammar questions in new sentences. Distinguish a newly taught form from revision. All main reading/listening question prompts and options must be English, with short A0/A1 English prompts. Chinese explanations are allowed. Preserve a coherent new scenario; do not rename an earlier text, reuse its facts or reveal answers in question stems.",
+  "grammarQuestionCount": 8,
+  "questionLanguage": "en",
+  "explanationLanguage": "zh-CN",
+  "sourcePolicy": "Project-original scenario; simulated figures and people; no copied official test, textbook, GitHub PDF or third-party audio.",
+  "audioRequirements": {
+    "locale": "en-US",
+    "synthetic": true,
+    "speakLabels": false,
+    "distinctSpeakerVoices": true,
+    "turnGapMs": 700,
+    "paragraphGapMs": 900,
+    "minimumSpeakers": 2,
+    "transcriptImmutableAfterAudio": true,
+    "expectedTranscriptHash": "4a5d86a80f76af53549d46eefc98ddeb38621a54d84b32f550d0adfbc173e0eb",
+    "audioRegenerationRequired": false,
+    "oldAudioMustNotBeUsed": false,
+    "roleVoices": {
+      "maya": "en-US-JennyNeural",
+      "owen": "en-US-EricNeural",
+      "narrator": "en-US-BrianNeural"
+    }
+  },
+  "title": "The Library That Learned to Listen",
+  "instructions": "本材料为原创模拟听力练习，不是官方雅思试题，也不对应官方分数。先听完整对话，再完成10题。留意不同说话人的回应、指代、决策状态和表达保留的语气。完成题目后再核对词汇和原文；语法题包括新语境中的结构辨认与已学规则巩固。",
+  "transcript": "Maya: So, this is the room where the old card catalogue used to stand. Now it's our 'Listening Corner'. \nOwen: It looks completely different. I remember when this place was just shelves and silence. Who decided to change it? \nMaya: The board did, about two years ago. They realised that people weren't coming in to borrow books as much as they used to. The numbers had been falling for a decade. \nOwen: So the change wasn't your idea? \nMaya: No, but I supported it. The board asked me to run a small project. We interviewed forty local residents. The main thing they told us was that they wanted a place to meet, not just a place to borrow. \nOwen: And the books? \nMaya: We kept most of them. Only about ten per cent were removed, mostly old reference books that nobody had touched in years. The rest are still here, but they're arranged differently now. \nOwen: I see. And what happens in this corner? \nMaya: On Tuesdays we have a reading group for adults. On Thursdays, a story hour for children. The children's sessions are the most popular — we often have to turn people away because the room is too small. \nOwen: That sounds like a problem. Could you move to a bigger space? \nMaya: We could, but the rent would be much higher. The board is considering it. They might decide next month. \nOwen: What about the people who just want quiet? \nMaya: That's a fair point. We've kept the back room as a silent study area. It's the only part of the building that hasn't changed. \nOwen: And has borrowing gone up? \nMaya: Actually, yes. Not dramatically, but it's stopped falling. Last year we lent about eight thousand items, which is slightly more than the year before. \nOwen: So the change is working? \nMaya: Partly. The board says the library is busier, but they're still worried about money. The project costs more than the old system did. \nOwen: Do you think it will survive? \nMaya: I hope so. The people who use it now are very loyal. But nothing is certain. If the funding stops, we'll have to close the Listening Corner. \nOwen: That would be a shame. \nMaya: It would. But at least we tried something new. That's more than most places do.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Who made the decision to change the library?",
+      "options": [
+        "Maya",
+        "The board",
+        "Owen",
+        "The local residents"
+      ],
+      "answers": [
+        "The board"
+      ],
+      "explanation": "Maya明确说“The board did, about two years ago.”，决定是董事会做出的。",
+      "evidence": "Owen: It looks completely different. I remember when this place was just shelves and silence. Who decided to change it? \nMaya: The board did, about two years ago. They realised that people weren't coming in to borrow books as much as they used to. The numbers had been falling for a decade.",
+      "originalQuestionId": "q1"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What was the main thing residents wanted?",
+      "options": [
+        "More books",
+        "A quiet place",
+        "A place to meet",
+        "Longer opening hours"
+      ],
+      "answers": [
+        "A place to meet"
+      ],
+      "explanation": "Maya说居民的主要诉求是“they wanted a place to meet, not just a place to borrow”。",
+      "evidence": "The main thing they told us was that they wanted a place to meet, not just a place to borrow.",
+      "originalQuestionId": "q2"
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete the sentence with THREE WORDS from the conversation: Only about ______ of the books were removed.",
+      "maxWords": 3,
+      "answers": [
+        "ten per cent"
+      ],
+      "explanation": "Maya说Only about ten per cent were removed，故填ten per cent，共三词。这里问移除书籍的比例，而不是移除十本书；其余大多数书仍然保留。",
+      "evidence": "Maya: We kept most of them. Only about ten per cent were removed, mostly old reference books that nobody had touched in years. The rest are still here, but they're arranged differently now. ",
+      "originalQuestionId": "q3"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why do they sometimes have to turn people away from children's sessions?",
+      "options": [
+        "The sessions are too expensive",
+        "The room is too small",
+        "There are not enough books",
+        "The children are too noisy"
+      ],
+      "answers": [
+        "The room is too small"
+      ],
+      "explanation": "Maya说“we often have to turn people away because the room is too small”。",
+      "evidence": "we often have to turn people away because the room is too small.",
+      "originalQuestionId": "q4"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why has a move to a larger space not been settled?",
+      "options": [
+        "Higher rent is a concern, and the board has not yet decided.",
+        "The board has approved the move and is only choosing where the books will go.",
+        "The silent study room has already been replaced, so the board cannot consider other rooms.",
+        "The old borrowing system must be restored before the board can discuss rental costs."
+      ],
+      "answers": [
+        "Higher rent is a concern, and the board has not yet decided."
+      ],
+      "explanation": "Maya承认可以搬，但租金会高得多；董事会还在考虑，可能下月决定。因此是成本与待决状态。不能把“考虑中/可能决定”理解为已经批准，也没有先恢复旧系统的条件。",
+      "evidence": "Owen: That sounds like a problem. Could you move to a bigger space? \nMaya: We could, but the rent would be much higher. The board is considering it. They might decide next month.",
+      "originalQuestionId": "q5"
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which part of the building has not changed?",
+      "options": [
+        "The Listening Corner",
+        "The children's area",
+        "The back room",
+        "The entrance"
+      ],
+      "answers": [
+        "The back room"
+      ],
+      "explanation": "Maya说“We've kept the back room as a silent study area. It's the only part of the building that hasn't changed.”",
+      "evidence": "Maya: That's a fair point. We've kept the back room as a silent study area. It's the only part of the building that hasn't changed. ",
+      "originalQuestionId": "q6"
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "How many items did the library lend last year? Use TWO WORDS from the conversation.",
+      "maxWords": 2,
+      "answers": [
+        "eight thousand"
+      ],
+      "explanation": "原话是about eight thousand items；题目已问物品数量，按两个原词填eight thousand，不把items重复写入。eight thousand表示八千，而不是八百。",
+      "evidence": "Maya: Actually, yes. Not dramatically, but it's stopped falling. Last year we lent about eight thousand items, which is slightly more than the year before. ",
+      "originalQuestionId": "q7"
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is the board still worried about?",
+      "options": [
+        "Noise",
+        "Money",
+        "Staff",
+        "Space"
+      ],
+      "answers": [
+        "Money"
+      ],
+      "explanation": "Maya说“they're still worried about money”。",
+      "evidence": "Maya: Partly. The board says the library is busier, but they're still worried about money. The project costs more than the old system did. ",
+      "originalQuestionId": "q8"
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "What will happen if the funding stops?",
+      "options": [
+        "The library will close completely",
+        "The Listening Corner will close",
+        "They will move to a bigger space",
+        "They will buy more books"
+      ],
+      "answers": [
+        "The Listening Corner will close"
+      ],
+      "explanation": "Maya说“If the funding stops, we'll have to close the Listening Corner.”",
+      "evidence": "If the funding stops, we'll have to close the Listening Corner.",
+      "originalQuestionId": "q9"
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Which description best matches Maya's overall position near the end?",
+      "options": [
+        "She supports the experiment but sees continued funding as a risk.",
+        "She is confident that higher borrowing guarantees sufficient funding.",
+        "She wants to restore the old system before the board reviews rental costs.",
+        "She thinks loyal users have removed the need for financial support."
+      ],
+      "answers": [
+        "She supports the experiment but sees continued funding as a risk."
+      ],
+      "explanation": "她说I hope so、nothing is certain，并说明资金中断就得关闭该区域，表现为支持尝试但承认风险。忠实用户和借阅略增不等于资金得到保证；也没有表态要恢复旧系统。",
+      "evidence": "Maya: I hope so. The people who use it now are very loyal. But nothing is certain. If the funding stops, we'll have to close the Listening Corner. ",
+      "originalQuestionId": "q10"
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "catalogue",
+      "meaning": "目录",
+      "example": "So, this is the room where the old card catalogue used to stand."
+    },
+    {
+      "word": "residents",
+      "meaning": "居民",
+      "example": "We interviewed forty local residents.",
+      "lemma": "resident"
+    },
+    {
+      "word": "removed",
+      "meaning": "移除，去掉",
+      "example": "Only about ten per cent were removed, mostly old reference books that nobody had touched in years.",
+      "lemma": "remove"
+    },
+    {
+      "word": "arranged",
+      "meaning": "排列，布置",
+      "example": "The rest are still here, but they're arranged differently now.",
+      "lemma": "arrange"
+    },
+    {
+      "word": "dramatically",
+      "meaning": "显著地，大幅度地",
+      "example": "Not dramatically, but it's stopped falling."
+    },
+    {
+      "word": "funding",
+      "meaning": "资金，拨款",
+      "example": "If the funding stops, we'll have to close the Listening Corner."
+    },
+    {
+      "word": "loyal",
+      "meaning": "忠诚的，忠实的",
+      "example": "The people who use it now are very loyal."
+    },
+    {
+      "word": "survive",
+      "meaning": "存活，继续存在",
+      "example": "Do you think it will survive?"
+    }
+  ],
+  "grammar": {
+    "title": "关系从句、指代、可能性表达与复杂句主干辨认",
+    "explanation": "本课重点：1) 关系从句用who/which/that连接，修饰前面的名词，如“the room where the old card catalogue used to stand”中where指代地点；2) 指代要明确，如“It's the only part... that hasn't changed”中It指back room；3) 可能性表达用may/might/could/perhaps，如“They might decide next month”；4) 复杂句先找主干（主语+谓语），再看从句。注意：关系从句中where指地点，which指物，who指人。",
+    "example": "So, this is the room where the old card catalogue used to stand.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct word: The café ___ we met last week has closed.",
+        "options": [
+          "which",
+          "where",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "where"
+        ],
+        "explanation": "先行词是地点café，在从句中作地点状语，用where。",
+        "evidence": "So, this is the room where the old card catalogue used to stand.",
+        "evidenceKind": "source-context-quote"
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct word: The woman ___ answered the phone was very helpful.",
+        "options": [
+          "which",
+          "where",
+          "who",
+          "what"
+        ],
+        "answers": [
+          "who"
+        ],
+        "explanation": "先行词是人woman，在从句中作主语，用who。",
+        "evidence": "The people who use it now are very loyal.",
+        "evidenceKind": "source-context-quote"
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "Choose the correct word: This is the book ___ changed my life.",
+        "options": [
+          "who",
+          "where",
+          "which",
+          "what"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "先行词是物book，在从句中作主语，用which（或that）。",
+        "evidence": "It's the only part of the building that hasn't changed.",
+        "evidenceKind": "source-context-quote"
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "What does 'It' refer to in: 'We moved the old printer into the storage room. It no longer needs a desk in the main office.'?",
+        "options": [
+          "The old printer",
+          "The storage room",
+          "The main office",
+          "The staff"
+        ],
+        "answers": [
+          "The old printer"
+        ],
+        "explanation": "It指需要占用桌面空间的old printer。storage room和main office都是地点，不是需要一张桌子来放置的设备；staff也不是该单数代词的先行词。此题用独立新语境区分指代。",
+        "evidence": "We moved the old printer into the storage room. It no longer needs a desk in the main office.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g5",
+        "type": "single",
+        "prompt": "Which sentence explicitly marks the decision as uncertain, rather than asserting it or requiring it?",
+        "options": [
+          "They might decide next month.",
+          "They decided last month.",
+          "They will decide next month.",
+          "They must decide next month."
+        ],
+        "answers": [
+          "They might decide next month."
+        ],
+        "explanation": "might明确标记不确定的可能性。decided陈述过去，will在该选项中作将来断言，must表示要求；题目问显式表达不确定性的句子。",
+        "evidence": "They might decide next month.",
+        "evidenceKind": "source-context-quote"
+      },
+      {
+        "id": "g6",
+        "type": "single",
+        "prompt": "Choose the simple-present form in this future condition: If the ticket office ___ early, we will book online.",
+        "options": [
+          "close",
+          "closes",
+          "closed",
+          "closing"
+        ],
+        "answers": [
+          "closes"
+        ],
+        "explanation": "题目指定将来真实条件中的一般现在时；ticket office为单数，故closes。主句用will book，不能把will的形式规则套到if从句。",
+        "evidence": "If the ticket office closes early, we will book online.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g7",
+        "type": "single",
+        "prompt": "Which option gives the main subject–predicate structure after omitting the relative clause in: 'The students who attended the workshop are ready for the task.'?",
+        "options": [
+          "The students are ready for the task",
+          "who attended the workshop",
+          "are ready for the task",
+          "The students who attended the workshop"
+        ],
+        "answers": [
+          "The students are ready for the task"
+        ],
+        "explanation": "去掉修饰students的who attended the workshop后，句子主干含主语和完整谓语：The students are ready for the task。只保留谓语或关系从句都不构成完整主干。",
+        "evidence": "The students who attended the workshop are ready for the task.",
+        "evidenceKind": "independent-grammar-example"
+      },
+      {
+        "id": "g8",
+        "type": "single",
+        "prompt": "Choose the relative pronoun that is the direct object of visited: The library ___ we visited yesterday was busy.",
+        "options": [
+          "who",
+          "where",
+          "which",
+          "what"
+        ],
+        "answers": [
+          "which"
+        ],
+        "explanation": "先行词library是物，在从句中作visited的宾语，用which（或that）。",
+        "evidence": "The library which we visited yesterday was busy.",
+        "evidenceKind": "independent-grammar-example"
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Do you often visit libraries?",
+        "What kind of books do you like to read?",
+        "Do you prefer quiet places or busy places?",
+        "Have you ever joined a reading group?"
+      ],
+      "part2": "Describe a place in your town that has changed recently. You should say: what the place is; what it was like before; how it has changed; and explain whether you think the change is good.",
+      "part3": [
+        "Why do some public places need to change?",
+        "What are the advantages and disadvantages of change?",
+        "How can organisations find out what people want?",
+        "Do you think libraries will still exist in the future?"
+      ]
+    },
+    "writing": "Write an article of at least 150 words for a local magazine about a different community centre that changed to attract visitors. Explain a benefit, a remaining problem and what evidence would help judge success. Use your own details rather than retelling the library conversation."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension with grammar focus"
+  },
+  "version": "1",
+  "active": false,
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创模拟教学材料；不是官方试题、真实研究或校准分数",
+    "verification": "reviewed",
+    "releaseStatus": "staged-inactive",
+    "method": "已记录独立AI文字解题、逐题解释核对及后续差异复核；音频仅机器文件、原稿哈希与解码审计，未进行独立听审或真人难度校准。",
+    "beforeSha256": "128cbf26e4b253253aa74277cfc85f8523ba49d05be1ca4fe2b156520c184b0d",
+    "sourceTextSha256": "4a5d86a80f76af53549d46eefc98ddeb38621a54d84b32f550d0adfbc173e0eb",
+    "sourceTextChanged": false,
+    "audioRegenerationRequired": false,
+    "oldAudioMustNotBeUsed": false,
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "advancedCoverageEligible": false,
+    "difficultyReview": {
+      "status": "uncalibrated-content-estimate",
+      "declaredAuthoringTarget": "B2–C1",
+      "role": "B1–B2 listening for decision status, trade-offs and attitude; foundational grammar consolidation",
+      "calibrated": false,
+      "limits": "Week position, length, literal questions and machine checks do not establish C1 sufficiency, independent transfer or Band performance."
+    },
+    "contentHash": "1dbae52d3fe74b2cf418b080be645254e5fa161952395170abbdab8aaf35f916",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ],
+    "textReview": {
+      "kind": "independent-ai-text-review-with-recorded-revision-deltas",
+      "candidateManifestSha256": "f2c79a545b24ef6ed5d6e2f563eb9ad40bb4b9a6b32cca7a99df0b58163d1839",
+      "semanticReviewSha256": "619a9110769636fafeaa86b2da0dcd1e0cf92bc5c64ea4e2c01029e46e32e892",
+      "revisionReviewSha256": "1a273a779a43b7950b50fc20d05b274bc6a37ed3fc5c14f7120113a2cce9e424",
+      "humanReviewed": false,
+      "difficultyCalibrated": false
+    },
+    "audioRegenerationCompleted": true,
+    "audioReview": {
+      "kind": "machine-audit-only",
+      "transcriptHash": "4a5d86a80f76af53549d46eefc98ddeb38621a54d84b32f550d0adfbc173e0eb",
+      "audioHash": "73135aa7cf8a79aec821200f6de622e6b27b5f42c1ec0309aaf5d09a88823057",
+      "configurationHash": "a9ef4573dc55111674911e1c92b2a99967e8d7fd799fad826e1e4ea7edd88621",
+      "auditReportSha256": "d42a900d090f1d2414d968efc465b8582db7b6939f9484acf7e8e176b713be01",
+      "scope": "Recomputed source spans/configuration/audio hashes, decoded mono MP3 and encoded silence gaps; not ASR or independent listening review.",
+      "independentListeningReviewed": false,
+      "humanAuditioned": false
+    }
+  },
+  "audio": "audio/curriculum/expand-w34-listen-1.mp3",
+  "audioVoice": "en-US-JennyNeural / en-US-EricNeural",
+  "audioSynthetic": true,
+  "audioDurationSeconds": 143.655
+}

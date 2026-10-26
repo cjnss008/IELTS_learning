@@ -1,0 +1,79 @@
+{
+  "id": "expand-w04-listen-1",
+  "title": "The Missing Poster Mix-Up",
+  "level": "A1",
+  "text": "Mia: Leo, look at this poster. Is this your poster?\nLeo: No, it is not my poster. My poster is blue. This poster is green.\nMia: Are you sure? Your name is on it.\nLeo: Wait. Yes, my name is there. But my poster is not green. It is blue.\nMia: Who is the teacher for the green poster?\nLeo: I am not the teacher. I am a student. The green poster is for Mr. Chen's class.\nMia: Is Mr. Chen here?\nLeo: No, he is not here today. But we are in the same group. We can fix it.\nMia: Good. Are we in the same group?\nLeo: Yes, we are. Let's put the green poster in Mr. Chen's room.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What color is Leo's poster?",
+      "options": [
+        "Green",
+        "Blue",
+        "Red"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Leo say about the green poster?",
+      "options": [
+        "It is his new poster.",
+        "It is his only poster.",
+        "It is not his poster."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Whose class is the green poster for?",
+      "options": [
+        "Mr. Chen's class",
+        "Mia's class",
+        "Leo's class"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What does Leo say about Mr. Chen today?",
+      "options": [
+        "He is in his room.",
+        "He is not here.",
+        "He is with the group."
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Are Mia and Leo in the same group?",
+      "options": [
+        "No, they are not.",
+        "Yes, they are."
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the conversation: Leo says, \"I am a ______.\"",
+      "maxWords": 1
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the conversation: Leo says, \"Yes, my ______ is there.\"",
+      "maxWords": 1
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What do they want to do with the green poster?",
+      "options": [
+        "Put it in Leo's room.",
+        "Put it in Mia's room.",
+        "Put it in Mr. Chen's room."
+      ]
+    }
+  ]
+}

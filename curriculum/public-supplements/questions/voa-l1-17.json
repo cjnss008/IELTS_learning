@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "questionSetId": "public-voa-l1-17-comprehension-v1",
+  "version": "1",
+  "sourceId": "voa-l1-17",
+  "sourceVersion": "1",
+  "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+  "sourceContentHash": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+  "exposureGroup": "public-source:voa-l1-17",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why can Anna not go to the cinema on Thursday evening?",
+      "evidence": "I am going to tap dance with my friends Thursday night.",
+      "explanation": "Anna 说周四晚上要和朋友跳踢踏舞。看望父母是 Marsha 周五的安排，公园慢跑是 Marsha 周一的安排；三个活动不能互换。",
+      "answers": [
+        "She is going tap dancing."
+      ],
+      "evidenceOffsets": {
+        "start": 396,
+        "end": 451,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "She is jogging in the park.",
+        "She is going tap dancing.",
+        "She is visiting her parents."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What does Marsha usually do on Friday nights?",
+      "evidence": "Friday nights are when I visit my parents.",
+      "explanation": "Friday nights 指每逢周五晚上，visit my parents 是看望父母。教孩子音乐是 Anna 的周三安排，电影约会是最后另外找到的时间。",
+      "answers": [
+        "Visit her parents."
+      ],
+      "evidenceOffsets": {
+        "start": 584,
+        "end": 626,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Visit her parents.",
+        "Teach children music.",
+        "Watch a film with Anna."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which activity does Marsha plan with a friend on Monday night?",
+      "evidence": "I’m going to jog in the park with my friend.",
+      "explanation": "这句直接说明 Marsha 周一晚要和朋友在公园慢跑。她提到喜欢桌游不等于周一要玩桌游；踢踏舞是 Anna 的安排。",
+      "answers": [
+        "Jogging in the park."
+      ],
+      "evidenceOffsets": {
+        "start": 937,
+        "end": 981,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Playing a word game.",
+        "Going tap dancing.",
+        "Jogging in the park."
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What instrument will Anna teach children to play? Write ONE WORD.",
+      "maxWords": 1,
+      "evidence": "I’m going to teach children how to play the ukulele.",
+      "explanation": "teach children how to play the ukulele 表示教孩子弹尤克里里。题目只要乐器名称，因此填 ukulele，不加 play 或 the。",
+      "answers": [
+        "ukulele"
+      ],
+      "evidenceOffsets": {
+        "start": 1310,
+        "end": 1362,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations"
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "When do they finally decide to see the new film?",
+      "evidence": "It’s Saturday afternoon. This is always when I do my errands.",
+      "explanation": "交谈当时是 Saturday afternoon；随后 Anna 提议半小时后开场的新电影，Marsha 决定把 errands 改到周日并说 Let’s go。周一和周三已经分别有其他安排。",
+      "answers": [
+        "Saturday afternoon."
+      ],
+      "evidenceOffsets": {
+        "start": 1585,
+        "end": 1646,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations",
+      "options": [
+        "Saturday afternoon.",
+        "Monday night.",
+        "Wednesday night."
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "On which day will Marsha do her errands instead? Write ONE WORD.",
+      "maxWords": 1,
+      "evidence": "I’ll do my errands on Sunday. Let’s go!",
+      "explanation": "instead 问的是调整后的日期。Marsha 原本周六下午办事，最后说 I’ll do my errands on Sunday，所以填 Sunday，不能仍填 Saturday。",
+      "answers": [
+        "Sunday"
+      ],
+      "evidenceOffsets": {
+        "start": 1727,
+        "end": 1766,
+        "unit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "source-information-and-relations"
+    }
+  ],
+  "sourceIssues": [
+    {
+      "code": "instrument-performance-cue",
+      "status": "unresolved",
+      "reason": "Transcript explicitly includes ukulele playing. Original MP3 quarantined for music/background-rights listening review; no distribution or practice clearance yet.",
+      "quote": "Now, children, play “C.” Good. I like your “C.”",
+      "start": 1370,
+      "end": 1417,
+      "offsetUnit": "UTF-16-code-unit",
+      "blocks": [
+        "listening",
+        "audio-redistribution"
+      ]
+    }
+  ],
+  "review": {
+    "textEvidence": "Codex item-by-item exact source evidence and language comparison",
+    "independentBlindReview": "separate-Codex-agent-vocab_scheduler_8000",
+    "audioAlignment": "pending-actual-audio-review",
+    "questionCount": 6,
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "2c0925ec5182c2bd37cd2b89634c45854127974e7f519fff8be72cf4b9acb784",
+      "reviewSha256": "4aa9905a612fcf1b9db057c627d87cdf4ae781419ae00e818b3831d2be215bfc",
+      "scope": "Independent source-text solve; reviewer did not open the author key. No actual listening audition or difficulty calibration."
+    }
+  },
+  "completionCredit": false,
+  "bandEvidence": false
+}

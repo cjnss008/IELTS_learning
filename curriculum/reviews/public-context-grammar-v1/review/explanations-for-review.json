@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "scope": "Six representative semantic explanations and all their distractor reasons, for independent review after blind answers",
+  "packs": [
+    {
+      "id": "speaker-identity",
+      "sourceQuote": "I am Pete.",
+      "teachingExplanation": "I 指说话人自己；I am + 姓名用于自我介绍。You are 是对听者说，He is 是介绍第三者。",
+      "questions": [
+        {
+          "id": "s1",
+          "type": "single",
+          "prompt": "In Pete's sentence ‘I am Pete’, who does ‘I’ refer to?",
+          "options": [
+            "The person speaking.",
+            "The person listening.",
+            "A person Pete is describing who is not speaking."
+          ],
+          "answers": [
+            "The person speaking."
+          ],
+          "explanation": "原句中 Pete 是说话人，I 指说话人自己；句子是在介绍自己的姓名。",
+          "distractorReasons": [
+            "正确：I 指当前说话人。",
+            "You 才用于指听者；这里不是把对方叫作 Pete。",
+            "He 或 she 可指被介绍的第三者，I 不表示这个意思。"
+          ],
+          "evidence": "I am Pete."
+        },
+        {
+          "id": "r2",
+          "type": "single",
+          "prompt": "Leo says his own name to a new neighbor. Complete his introduction: ‘___ Leo.’",
+          "options": [
+            "I'm",
+            "He's",
+            "You're"
+          ],
+          "answers": [
+            "I'm"
+          ],
+          "explanation": "I’m 是 I am 的缩写。Leo 说自己的名字，应使用第一人称；其他选项改变了指向的人。",
+          "distractorReasons": [
+            "正确：I’m 表示说话人“我是”。",
+            "He’s 表示“他是”，指第三者。",
+            "You’re 表示“你是”，指听者。"
+          ],
+          "evidence": "Author-created situation in this question; apply the same reviewed semantic distinction."
+        }
+      ]
+    },
+    {
+      "id": "existence-question",
+      "sourceQuote": "Is there a supermarket near here?",
+      "teachingExplanation": "Is there ...? 先询问某处是否有某物；Where is ...? 询问已知事物在哪里。两种问题要的信息不同。",
+      "questions": [
+        {
+          "id": "s1",
+          "type": "single",
+          "prompt": "What information does Anna request by asking ‘Is there a supermarket near here?’",
+          "options": [
+            "Whether the area has a supermarket.",
+            "The opening time of a supermarket.",
+            "The street address of a supermarket she already knows about."
+          ],
+          "answers": [
+            "Whether the area has a supermarket."
+          ],
+          "explanation": "there be 的疑问形式先确认“这里有没有超市”。它没有直接询问营业时间或已知超市的街道地址。",
+          "distractorReasons": [
+            "正确：先检查附近是否存在超市。",
+            "询问营业时间会问 When does it open? 等。",
+            "询问已知超市的地址会用 Where is ...? 等。"
+          ],
+          "evidence": "Is there a supermarket near here?"
+        },
+        {
+          "id": "r2",
+          "type": "single",
+          "prompt": "You are new to a town and do not know if it has any public libraries. Which question checks whether they exist?",
+          "options": [
+            "Are there any public libraries here?",
+            "Where are the public libraries?",
+            "When do the public libraries open?"
+          ],
+          "answers": [
+            "Are there any public libraries here?"
+          ],
+          "explanation": "libraries 是复数，there be 的存在疑问句使用 Are there ...?。情境缺少的是“有没有”，不是位置或营业时间。",
+          "distractorReasons": [
+            "正确：复数存在疑问句，检查有没有公共图书馆。",
+            "这问图书馆在哪里，不是检查是否有图书馆。",
+            "这问营业时间，不是是否存在。"
+          ],
+          "evidence": "Author-created situation in this question; apply the same reviewed semantic distinction."
+        }
+      ]
+    },
+    {
+      "id": "too-small-suitability",
+      "sourceQuote": "It’s too small.",
+      "teachingExplanation": "too small 不只是尺寸小，还表示对当前用途或穿着而言小过头、不合适；small 本身不必意味着不合适。",
+      "questions": [
+        {
+          "id": "s1",
+          "type": "single",
+          "prompt": "Anna says the dress is not the right size: ‘It’s too small.’ What does she mean?",
+          "options": [
+            "The dress is smaller than she needs to wear it comfortably.",
+            "The dress is small and fits her well.",
+            "The dress is larger than she needs."
+          ],
+          "answers": [
+            "The dress is smaller than she needs to wear it comfortably."
+          ],
+          "explanation": "原文先说不是合适的尺寸，再说 too small，说明连衣裙小到不合穿；too 强调超过合适程度。",
+          "distractorReasons": [
+            "正确：尺寸偏小，已影响合适程度。",
+            "仅仅 small 可以描述小尺寸；too small 在此与 fits well 不一致。",
+            "larger 表示更大，和 small 的方向相反。"
+          ],
+          "evidence": "It’s too small."
+        },
+        {
+          "id": "r2",
+          "type": "single",
+          "prompt": "A backpack is smaller than the others, but it holds everything you need and fits you comfortably. Which description is supported?",
+          "options": [
+            "It is small, but it is not too small for you.",
+            "It is too small to hold what you need.",
+            "It is too large for you."
+          ],
+          "answers": [
+            "It is small, but it is not too small for you."
+          ],
+          "explanation": "小于其他背包不等于小过头；它能装所需物品并且背着舒适，所以不能断言 too small。",
+          "distractorReasons": [
+            "正确：尺寸小，但仍适合使用。",
+            "这与能装下所有所需物品的条件矛盾。",
+            "情境没有说它过大，而且它比其他背包小。"
+          ],
+          "evidence": "Author-created situation in this question; apply the same reviewed semantic distinction."
+        }
+      ]
+    }
+  ]
+}

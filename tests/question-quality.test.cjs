@@ -19,8 +19,8 @@ test('A0 judgement questions are blocked while enum labels do not become answer-
 test('revised hashes cover explicit author-content fields and exclude immutable audio metadata',()=>{
  const value={...material({}),title:'Sample',instructions:'Listen.',transcript:'I am Anna.',source:{contentHash:'old'},audio:'audio/sample.mp3',audioSynthetic:true,version:'1'};Audit.updateContentHash(value);const {value:payload,keys}=Audit.contentPayload(value);assert.deepEqual(value.source.contentHashFields,keys);assert.equal(value.source.contentHash,crypto.createHash('sha256').update(JSON.stringify(payload)).digest('hex'));assert.ok(!keys.includes('audio'));assert.ok(!keys.includes('source'));
 });
-test('the published source corpus has no unresolved high-risk or newly unreviewed literal candidates',()=>{
- const report=Audit.scan(),reviewed=new Set(['training-42-reading/q4/ANSWER_LITERAL_IN_PROMPT','w27-read-2/q5/ANSWER_LITERAL_IN_PROMPT','w28-listen-4/q2/ANSWER_LITERAL_IN_PROMPT']);assert.ok(report.sourceMaterials>=508);assert.ok(report.questions>=5500);assert.equal(report.high,0,JSON.stringify(report.findings.filter(f=>f.severity==='high')));for(const finding of report.findings)assert.ok(reviewed.has([finding.materialId,finding.questionId,finding.rule].join('/')),'Needs a source-based review: '+JSON.stringify(finding));
+test('the public source corpus has no unresolved high-risk or unmatched current-content review candidates',()=>{
+ const report=Audit.scan();assert.ok(report.sourceMaterials>=508);assert.ok(report.questions>=5500);assert.equal(report.high,0,JSON.stringify(report.findings.filter(f=>f.severity==='high')));assert.equal(report.unresolvedReview,0,JSON.stringify(report.findings.filter(f=>f.severity==='review'&&f.review?.status!=='accepted-current-content')));for(const finding of report.findings)assert.equal(finding.review?.status,'accepted-current-content','Needs a current-content source review: '+JSON.stringify(finding));
 });
 
 test('title punctuation alias accepts Mr Wang without weakening exact source answers',()=>{

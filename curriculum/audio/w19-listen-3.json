@@ -1,17 +1,17 @@
 {
   "id": "w19-listen-3",
   "schema": 3,
-  "layoutVersion": "curriculum-role-pauses-v68-3",
+  "layoutVersion": "curriculum-role-pauses-v69-us-1",
   "transcriptHash": "f09964e221c87b6abbd5c09c05c9e5ee4ae7300b254d164372a83683385114b9",
-  "configurationHash": "6c21ac98ef3bc5a7fd6f88b1c80a5f03ee683ba79c8cd15f31dc7c6acdbbfccc",
+  "configurationHash": "c477bd2cbd3f6ff32bc1d3ba4d7141ca9c13a59859f87e647272671052ed5304",
   "configuration": {
-    "layoutVersion": "curriculum-role-pauses-v68-3",
+    "layoutVersion": "curriculum-role-pauses-v69-us-1",
     "transcriptHash": "f09964e221c87b6abbd5c09c05c9e5ee4ae7300b254d164372a83683385114b9",
     "rate": "-5%",
     "format": "mp3-24000-mono-48k",
     "authoringPackageVersion": "7.3.1",
     "roleVoices": {
-      "narrator": "en-US-AriaNeural"
+      "narrator": "en-US-JennyNeural"
     },
     "sourceLabels": [],
     "segments": [
@@ -22,20 +22,20 @@
         "sourceEnd": 989,
         "text": "Last year, I went to a small town in China for the Lantern Festival. I was walking along the river when I saw a crowd around an old man. He was telling stories about the festival. While he was speaking, people were listening quietly. The old man, who was wearing a red coat, said, \"The Lantern Festival is on the 15th day of the first lunar month.\" He told a story about a clever girl who saved her village with lanterns. The story was one that everyone loved. While he was telling it, a little boy was holding a rabbit lantern. The boy's mother, who was standing next to me, smiled. I asked her, \"Is this your first time here?\" She said, \"No, we come every year. My son loves the stories.\" Then the old man said, \"Now, who can answer my question?\" A girl raised her hand and said, \"The festival ends with dragon dances.\" The old man laughed and gave her a small lantern. After the storytelling, I walked to the river and saw people putting lanterns on the water. It was a beautiful night.",
         "boundary": "paragraph",
-        "voice": "en-US-AriaNeural",
+        "voice": "en-US-JennyNeural",
         "textHash": "f09964e221c87b6abbd5c09c05c9e5ee4ae7300b254d164372a83683385114b9",
         "pauseBeforeSeconds": 0
       }
     ]
   },
-  "audioHash": "c42f3193f1bc8eb4a5c6eb43741fa0475a55d0f2158e4aa80ceabd925059d978",
+  "audioHash": "16aef4f620ac6631579048081978122512f7747a32fb4ae56ec3130302a530ec",
   "voices": [
-    "en-US-AriaNeural"
+    "en-US-JennyNeural"
   ],
   "roleVoices": {
-    "narrator": "en-US-AriaNeural"
+    "narrator": "en-US-JennyNeural"
   },
-  "durationSeconds": 72.144,
+  "durationSeconds": 69.458958,
   "synthetic": true,
   "provider": "Microsoft online TTS via edge-tts",
   "authoringPackageVersion": "7.3.1",
@@ -52,14 +52,23 @@
       "sourceStart": 0,
       "sourceEnd": 989,
       "boundary": "paragraph",
-      "voice": "en-US-AriaNeural",
+      "voice": "en-US-JennyNeural",
       "textHash": "f09964e221c87b6abbd5c09c05c9e5ee4ae7300b254d164372a83683385114b9",
       "pauseBeforeSeconds": 0,
-      "startSeconds": 0,
-      "endSeconds": 72.144,
-      "durationSeconds": 72.144
+      "groupConfigurationHash": "eadc57952d64bb1181af270c45159085d70ed50782ab20b95e1ea02f5953df20",
+      "groupAudioHash": "763259a1eb9a508a1706039d0a708412262e50ff4a50f035fc86f9939ee4ea64",
+      "groupStartSeconds": 0.042625,
+      "groupEndSeconds": 69.50158333333333,
+      "wordStartSeconds": 0.102625,
+      "wordEndSeconds": 69.381582,
+      "startSeconds": 0.0,
+      "endSeconds": 69.45895833333333,
+      "durationSeconds": 69.45895833333333
     }
   ],
-  "origin": "retained-verified-single-segment",
-  "note": "项目原创合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。"
+  "origin": "role-group-tts-with-real-boundary-cuts",
+  "locale": "en-US",
+  "minimumSpeakers": 0,
+  "note": "项目原创美式英语合成音频。角色固定分配音色，旁白独立。段位置来自实际PCM拼接，分词时间来自服务真实WordBoundary。未改变原文；不是原声真人或独立听审。保留单段原音时没有虚称新增停顿。",
+  "reusedVoiceGroups": 0
 }
