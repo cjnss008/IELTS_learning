@@ -5,6 +5,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const RUNTIME_SOURCE = (() => { const bytes = fs.readFileSync(__filename); return Object.freeze({ path: 'server/year-material-catalog.cjs', sha256: crypto.createHash('sha256').update(bytes).digest('hex'), bytes: bytes.length }); })();
+const RuntimePolicy = require('./year-runtime-contract-policy.cjs');
 
 const PROTOCOL = 1;
 const QUEUE_KEY = 'ielts52-year-first-use-v1';
@@ -13,7 +15,7 @@ const ID = /^expand-[a-z0-9-]{1,100}$/;
 const CONTRACT_KEYS = ['inputHash', 'coreHash', 'publicPlanHash', 'contextCatalogHash'];
 const CORE_FIELDS = ['version', 'status', 'createdDate', 'scope', 'weeks', 'materials', 'days', 'gates', 'lessonExpansions'];
 const CONTENT_FIELDS = new Set(['title', 'instructions', 'transcript', 'questions', 'vocabulary', 'grammar', 'transfer', 'rubric', 'passage', 'prompt', 'figure']);
-const ROLES = ['frontend-adapter', 'server-catalog', 'backup-keys', 'entrypoint'];
+const ROLES = RuntimePolicy.REQUIRED_ROLES;
 const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const clone = value => structuredClone(value);
 const object = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -45,7 +47,8 @@ function createCatalog(options = {}) {
   const getContextCatalog = options.getContextCatalog || (() => options.contextCatalog);
   const cache = new Map();
   const maxCached = Math.min(64, Math.max(1, Number.isInteger(options.maxCachedMaterials) ? options.maxCachedMaterials : 16));
-  let rootReal, preparedKey = null, prepared = null;
+  let rootReal, preparedKey = null, preparedStamp = null, prepared = null, runtimePathState = null;
+  const loaded = { 'server-routes': options.loadedRuntimeComponents?.['server-routes'], 'user-data-server': options.loadedRuntimeComponents?.['user-data-server'], 'server-catalog': RUNTIME_SOURCE, 'runtime-contract-policy': RuntimePolicy.RUNTIME_SOURCE };
 
   function read(relative, maximum, ref) {
     check(typeof relative === 'string' && relative && !relative.includes('\\') && !relative.split('/').some(part => !part || part === '.' || part === '..') && !path.isAbsolute(relative), 'YEAR_CONTENT_PATH');
@@ -85,19 +88,66 @@ function createCatalog(options = {}) {
   }
   const getManifest = options.getManifest || (Object.hasOwn(options, 'manifest') ? () => options.manifest : defaultManifest);
 
+  function runtimeFileStamp(manifest) {
+    const metadata = manifest.runtimeContract, ref = metadata?.contract;
+    check(metadata?.protocol === PROTOCOL && metadata.runtimeConnected === true && equal(metadata, data.yearFirstUse.runtimeContract), 'YEAR_RUNTIME_CONTRACT');
+    check(ref?.path === 'curriculum/year-first-use-runtime-contract.json' && HASH.test(ref.sha256) && Number.isInteger(ref.bytes) && ref.bytes > 0 && ref.bytes <= 262144, 'YEAR_RUNTIME_CONTRACT');
+    check(RuntimePolicy.componentListProblem(metadata?.components) === null, 'YEAR_RUNTIME_COMPONENT');
+    // An injected byte reader is deliberately rechecked on every call. Native
+    // files reuse hashes only while real path, file identity and timestamps agree.
+    if (options.readFile) return null;
+    const refs = [metadata.contract, ...metadata.components, manifest.index];
+    rootReal ||= fs.realpathSync(root);
+    const files = refs.map(ref => {
+      check(ref && typeof ref.path === 'string' && !ref.path.includes('\\') && !ref.path.split('/').some(part => !part || part === '.' || part === '..') && !path.isAbsolute(ref.path), 'YEAR_CONTENT_PATH');
+      const file = path.resolve(root, ...ref.path.split('/')); check(inside(root, file), 'YEAR_CONTENT_PATH'); return { ref, file };
+    });
+    const identity = stat => [stat.dev, stat.ino, stat.mode, stat.size, stat.mtimeNs ?? stat.mtimeMs, stat.ctimeNs ?? stat.ctimeMs, stat.birthtimeNs ?? stat.birthtimeMs].map(String);
+    const canonical = () => files.map(({ ref, file }) => {
+      const real = fs.realpathSync(file); check(inside(rootReal, real), 'YEAR_CONTENT_PATH');
+      const stat = fs.statSync(real, { bigint: true }); check(stat.isFile() && stat.size === BigInt(ref.bytes), 'YEAR_CONTENT_SIZE'); return [real, ...identity(stat)];
+    });
+    // Every lexical directory in the reference paths is checked once, including
+    // the root itself. A reparse point must take the complete realpath/hash path
+    // on every request: stamps of a link cannot certify its target's containment.
+    const directories = new Set([root]);
+    for (const { file } of files) for (let parent = path.dirname(file); parent !== root; parent = path.dirname(parent)) { check(inside(root, parent), 'YEAR_CONTENT_PATH'); directories.add(parent); }
+    const ordered = [...directories].sort((a, b) => a.length - b.length || a.localeCompare(b)), observed = [];
+    for (const directory of ordered) {
+      const stat = fs.lstatSync(directory, { bigint: true });
+      if (stat.isSymbolicLink()) { runtimePathState = null; canonical(); return null; }
+      check(stat.isDirectory(), 'YEAR_CONTENT_PATH'); observed.push([directory, ...identity(stat)]);
+    }
+    for (const { ref, file } of files) {
+      const stat = fs.lstatSync(file, { bigint: true });
+      if (stat.isSymbolicLink()) { runtimePathState = null; canonical(); return null; }
+      check(stat.isFile() && stat.size === BigInt(ref.bytes), 'YEAR_CONTENT_SIZE'); observed.push([file, ...identity(stat)]);
+    }
+    const key = JSON.stringify(refs.map(ref => [ref.path, ref.bytes, ref.sha256])), stamp = JSON.stringify(observed);
+    if (runtimePathState?.key === key && runtimePathState.observed === stamp) return runtimePathState.validated;
+    // Cold, replaced, or edited paths require canonical containment, all hashes,
+    // and the index again. ctime is retained even when size and mtime are restored.
+    const validated = JSON.stringify([stamp, canonical()]); runtimePathState = { key, observed: stamp, validated }; return validated;
+  }
   function runtimeContract(manifest) {
     const metadata = manifest.runtimeContract, ref = metadata?.contract;
     check(metadata?.protocol === PROTOCOL && metadata.runtimeConnected === true && equal(metadata, data.yearFirstUse.runtimeContract), 'YEAR_RUNTIME_CONTRACT');
     check(ref?.path === 'curriculum/year-first-use-runtime-contract.json' && HASH.test(ref.sha256) && Number.isInteger(ref.bytes) && ref.bytes > 0 && ref.bytes <= 262144, 'YEAR_RUNTIME_CONTRACT');
     const contract = json(read(ref.path, 262144, ref));
-    check(contract.schema === 1 && contract.kind === 'year-first-use-runtime-contract' && contract.protocol === PROTOCOL && contract.runtimeConnected === true && contract.activationReviewed === true && Array.isArray(contract.components) && Array.isArray(metadata.components) && contract.components.length === metadata.components.length && contract.components.length >= ROLES.length && contract.components.length <= 24, 'YEAR_RUNTIME_CONTRACT');
+    check(contract.schema === 1 && contract.kind === 'year-first-use-runtime-contract' && contract.protocol === PROTOCOL && contract.runtimeConnected === true && contract.activationReviewed === true && Array.isArray(contract.components) && Array.isArray(metadata.components) && contract.components.length === metadata.components.length && contract.components.length >= ROLES.length && contract.components.length <= RuntimePolicy.MAX_COMPONENTS, 'YEAR_RUNTIME_CONTRACT');
+    check(RuntimePolicy.componentListProblem(contract.components) === null && RuntimePolicy.componentListProblem(metadata.components) === null, 'YEAR_RUNTIME_COMPONENT');
     const roles = new Set();
     for (const component of metadata.components) {
       check(component && typeof component.role === 'string' && !roles.has(component.role), 'YEAR_RUNTIME_COMPONENT'); roles.add(component.role);
-      check(typeof component.path === 'string' && /^(?:assets\/[^\\]+\.(?:js|mjs)|server\/[^\\]+\.(?:cjs|js|mjs)|[^/\\]+\.html)$/.test(component.path) && HASH.test(component.sha256) && Number.isInteger(component.bytes) && component.bytes > 0 && component.bytes <= 16 * 1024 * 1024, 'YEAR_RUNTIME_COMPONENT');
+      check(typeof component.path === 'string' && /^(?:assets\/[^\\]+\.(?:js|mjs)|server\/[^\\]+\.(?:cjs|js|mjs)|tools\/year-runtime-activation\.cjs|[^/\\]+\.html)$/.test(component.path) && HASH.test(component.sha256) && Number.isInteger(component.bytes) && component.bytes > 0 && component.bytes <= 16 * 1024 * 1024, 'YEAR_RUNTIME_COMPONENT');
+      if (Object.hasOwn(loaded, component.role)) {
+        const actual = loaded[component.role];
+        check(actual?.path === component.path && actual.sha256 === component.sha256 && actual.bytes === component.bytes, 'YEAR_RUNTIME_RESTART_REQUIRED');
+      }
       const declared = contract.components.find(row => row?.role === component.role);
       check(declared?.path === component.path && declared.sha256 === component.sha256 && (declared.bytes === undefined || declared.bytes === component.bytes), 'YEAR_RUNTIME_COMPONENT');
-      read(component.path, 16 * 1024 * 1024, component);
+      const content = read(component.path, 16 * 1024 * 1024, component);
+      check(RuntimePolicy.pageDependencyProblem(component.path, content.toString('utf8')) === null, 'YEAR_RUNTIME_PAGE_DEPENDENCY');
     }
     check(ROLES.every(role => roles.has(role)), 'YEAR_RUNTIME_COMPONENT');
     return { protocol: PROTOCOL, runtimeConnected: true, contract: publicRef(ref), components: metadata.components.map(component => ({ role: component.role, ...publicRef(component) })) };
@@ -119,10 +169,10 @@ function createCatalog(options = {}) {
   function prepare() {
     // Check the already-loaded course first: 0.0.81 has no yearFirstUse and must
     // not even read a bootstrap, much less the index or 688 material bodies.
-    if (data.yearFirstUse?.active !== true) { prepared = null; preparedKey = null; cache.clear(); return null; }
+    if (data.yearFirstUse?.active !== true) { prepared = null; preparedKey = null; preparedStamp = null; runtimePathState = null; cache.clear(); return null; }
     try {
       const manifest = getManifest();
-      if (manifest?.active !== true) { prepared = null; preparedKey = null; cache.clear(); return null; }
+      if (manifest?.active !== true) { prepared = null; preparedKey = null; preparedStamp = null; runtimePathState = null; cache.clear(); return null; }
       const contract = data.yearFirstUse;
       check(manifest.schema === 1 && manifest.protocol === PROTOCOL && manifest.kind === 'year-first-use-manifest' && manifest.runtimeConnected === true && contract.protocol === PROTOCOL && contract.runtimeConnected === true && typeof manifest.version === 'string' && manifest.version === contract.version && HASH.test(manifest.planSha256) && contract.plan?.sha256 === manifest.planSha256 && sameContract(manifest, contract) && validRef(manifest.index, 'index') && equal(manifest.index, contract.materialIndex), 'YEAR_BUILD_CONTRACT');
       check(manifest.coreHash === sha(JSON.stringify(coreContract(data))), 'YEAR_CORE_HASH');
@@ -130,14 +180,15 @@ function createCatalog(options = {}) {
       check(manifest.publicPlanHash === data.publicCoursePlan?.planHash && manifest.publicPlanHash === sha(JSON.stringify(stable(publicPlan))), 'YEAR_PUBLIC_PLAN_HASH');
       check(manifest.contextCatalogHash === sha(JSON.stringify(getContextCatalog())), 'YEAR_CONTEXT_CATALOG_HASH');
       const key = sha(JSON.stringify(manifest));
-      if (key !== preparedKey) {
+      const stamp = runtimeFileStamp(manifest), changedIndex = key !== preparedKey;
+      if (changedIndex || stamp === null || stamp !== preparedStamp) {
         const runtime = runtimeContract(manifest), index = bound(manifest.index, 'index').value, jobs = validateIndex(index, manifest);
         // Only public, validated contract fields leave this module.
         const publicManifest = { schema: 1, protocol: PROTOCOL, kind: 'year-first-use-manifest', version: manifest.version, active: true, runtimeConnected: true, runtimeContract: runtime, ...Object.fromEntries(CONTRACT_KEYS.map(name => [name, manifest[name]])), planSha256: manifest.planSha256, index: publicRef(manifest.index), counts: { total: manifest.counts.total, assigned: manifest.counts.assigned, pending: manifest.counts.pending } };
-        prepared = { manifest: publicManifest, jobs }; preparedKey = key; cache.clear();
+        prepared = { manifest: publicManifest, jobs }; preparedKey = key; preparedStamp = stamp; if (changedIndex) cache.clear();
       }
       return prepared;
-    } catch (error) { prepared = null; preparedKey = null; cache.clear(); if (error instanceof YearCatalogError) throw error; throw new YearCatalogError('YEAR_CATALOG_UNAVAILABLE'); }
+    } catch (error) { prepared = null; preparedKey = null; preparedStamp = null; runtimePathState = null; cache.clear(); if (error instanceof YearCatalogError) throw error; throw new YearCatalogError('YEAR_CATALOG_UNAVAILABLE'); }
   }
   function hydrate(meta, ready) {
     const key = meta.materialId + '@' + meta.materialHash;
@@ -170,4 +221,4 @@ function createCatalog(options = {}) {
   });
 }
 
-module.exports = { PROTOCOL, QUEUE_KEY, CONTRACT_KEYS, YearCatalogError, coreContract, validRef, createCatalog };
+module.exports = { RUNTIME_SOURCE, PROTOCOL, QUEUE_KEY, CONTRACT_KEYS, YearCatalogError, coreContract, validRef, createCatalog };

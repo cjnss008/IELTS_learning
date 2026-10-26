@@ -4,6 +4,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const RUNTIME_SOURCE = (() => { const bytes = fs.readFileSync(__filename); return Object.freeze({ path: 'server/server.cjs', sha256: crypto.createHash('sha256').update(bytes).digest('hex'), bytes: bytes.length }); })();
 const runtimeVersion = require('./runtime-version.cjs');
 // Snapshot before loading application modules. Health describes this process,
 // even when a NAS upgrade later replaces VERSION and the source files.
@@ -27,7 +28,7 @@ const reviewPolicies = require('./review-policies.cjs');
 const wordReview = require('./word-review.cjs');
 const writingPathModule = require('./writing-path.cjs');
 const { createCredentialVault } = require('./credential-vault.cjs');
-const { createUserData, within: insideUserData } = require('./user-data.cjs');
+const { createUserData, within: insideUserData, RUNTIME_SOURCE: USER_DATA_RUNTIME_SOURCE } = require('./user-data.cjs');
 const { createDailyBackups, DailyBackupError } = require('./daily-backups.cjs');
 const { createLearningArchive } = require('./learning-archive.cjs');
 const { createLearningRecordsService } = require('./learning-records-service.cjs');
@@ -210,7 +211,7 @@ function plainFeedback(content, apiKey) {
 
 function createServer(options = {}) {
   const rootDir = path.resolve(options.rootDir || path.join(__dirname, '..'));
-  const yearCatalog = yearMaterials.createCatalog({ rootDir, data: curriculum, getContextCatalog: () => require('../assets/public-context-practice-data.js'), ...(options.yearFirstUseCatalog || {}) });
+  const yearCatalog = yearMaterials.createCatalog({ rootDir, data: curriculum, getContextCatalog: () => require('../assets/public-context-practice-data.js'), ...(options.yearFirstUseCatalog || {}), loadedRuntimeComponents: { 'server-routes': RUNTIME_SOURCE, 'user-data-server': USER_DATA_RUNTIME_SOURCE } });
   const findMaterial = id => typeof id === 'string' ? curriculum.materials.find(material => material.id === id) || yearCatalog.get(id) : null;
   const ordinaryHelp = material => Boolean(material && material.pool === 'training' && material.fullTest !== true && !material.independentBank && !material.assessmentGroup && !material.form && !material.holdout);
   // Inspect the modules this process actually loaded. A newer browser must never
@@ -422,9 +423,11 @@ function createServer(options = {}) {
       const query = new URL(req.url, 'http://127.0.0.1').searchParams, id = query.get('id'), hash = query.get('hash');
       if ([...query.keys()].some(key => !['id', 'hash'].includes(key)) || query.getAll('id').length !== 1 || query.getAll('hash').length !== 1 || !/^expand-[a-z0-9-]{1,100}$/.test(id || '') || !/^[a-f0-9]{64}$/.test(hash || '')) throw new AppError(400, 'YEAR_MATERIAL_QUERY', '请提供唯一的全年普通练习编号与完整内容哈希。');
       res.setHeader('X-IELTS-Year-Protocol', String(yearMaterials.PROTOCOL));
-      if (!yearCatalog.status().active) throw new AppError(409, 'YEAR_FIRST_USE_INACTIVE', '全年扩展练习尚未启用；已有课程和原稿保留。');
       const entry = yearCatalog.readMaterial(id, hash);
-      if (!entry) throw new AppError(404, 'YEAR_MATERIAL_NOT_FOUND', '未找到这份全年普通练习；请重新读取当前材料目录。');
+      if (!entry) {
+        if (!yearCatalog.status().active) throw new AppError(409, 'YEAR_FIRST_USE_INACTIVE', '全年扩展练习尚未启用；已有课程和原稿保留。');
+        throw new AppError(404, 'YEAR_MATERIAL_NOT_FOUND', '未找到这份全年普通练习；请重新读取当前材料目录。');
+      }
       // Preserve the exact reviewed JSON bytes, including their whitespace, so
       // the browser can verify the same SHA-256 as the immutable public ref.
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': entry.bytes.length, 'Cache-Control': 'no-store' });
@@ -874,4 +877,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { createServer, normalizeBaseUrl, DEFAULT_PORT, closeOnSignals };
+module.exports = { RUNTIME_SOURCE, createServer, normalizeBaseUrl, DEFAULT_PORT, closeOnSignals };

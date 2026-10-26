@@ -13,9 +13,8 @@ function fixture(options = {}) {
   const contextCatalog = { schema: 1, activities: [{ id: 'synthetic-context', practiceOnly: true }] };
   const publicPlan = { schema: 1, assignments: [] }; publicPlan.planHash = hash(stable(publicPlan));
   const data = { version: 'synthetic', status: 'synthetic-only', materials: [], days: [], weeks: [], gates: [], publicCoursePlan: publicPlan };
-  const roles = ['frontend-adapter', 'server-catalog', 'backup-keys', 'entrypoint'];
-  const componentPaths = ['assets/year-adapter.js', 'server/year-material-catalog.cjs', 'assets/backup-core.js', '今日学习.html'];
-  const components = roles.map((role, index) => ({ role, ...put(componentPaths[index], 'Synthetic reviewed component ' + role + '\n') }));
+  const policy = require('../server/year-runtime-contract-policy.cjs');
+  const components = Object.entries(policy.REQUIRED_COMPONENTS).map(([role, relative]) => ({ role, ...put(relative, fs.readFileSync(path.join(__dirname, '..', relative))) }));
   const contractFile = { schema: 1, kind: 'year-first-use-runtime-contract', protocol: 1, runtimeConnected: true, activationReviewed: true, components };
   const runtimeContract = { protocol: 1, runtimeConnected: true, contract: put('curriculum/year-first-use-runtime-contract.json', JSON.stringify(contractFile)), components };
   const materials = [];
@@ -43,7 +42,7 @@ function fixture(options = {}) {
   data.yearFirstUse.firstUseManifest = put('assets/year-first-use-manifest.js', wrap(manifest));
   const readFile = file => { reads.push(file); const value = files.get(file); if (!value) throw Error('synthetic fixture missing private-secret-diagnostic'); return value; };
   function writeFiles() { for (const [file, bytes] of files) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, bytes); } }
-  const catalogOptions = { rootDir: root, data, contextCatalog, getContextCatalog: () => contextCatalog, manifest, readFile };
+  const catalogOptions = { rootDir: root, data, contextCatalog, getContextCatalog: () => contextCatalog, manifest, readFile, loadedRuntimeComponents: { 'server-routes': require('../server/server.cjs').RUNTIME_SOURCE, 'user-data-server': require('../server/user-data.cjs').RUNTIME_SOURCE } };
   return { root, files, reads, data, contextCatalog, manifest, index, indexRef, jobs, reading, listening, derived, runtimeContract, catalogOptions, writeFiles, put, content, materialReads: () => reads.filter(file => file.includes(path.sep + 'materials' + path.sep)) };
 }
 module.exports = { fixture, sha, hash, wrap };

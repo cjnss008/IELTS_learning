@@ -127,7 +127,7 @@ function build(options={}){
  }
  const optionalEssential=currentState?.essential;
  if(optionalEssential?.applicable&&!optionalEssential.done&&!currentState.essentialRequired){
-  const review=optionalEssential.plan?.due?.length>0,entry={...base(currentState.day,'vocabulary','essential-daily'),kind:'essential-vocabulary',optional:true,required:false,label:'可选：'+optionalEssential.label,reason:'本日保留原计划完成状态。'+optionalEssential.message,href:optionalEssential.historical&&target?'词汇记忆.html?day='+target.day+'&reviewFrom='+currentState.day.day+(root.IELTSProfiles?.isPreview?.()?'&preview=1':''):optionalEssential.href,estimatedMinutes:optionalEssential.estimatedMinutes};
+  const review=optionalEssential.plan?.due?.length>0,entry={dueReview:review,...base(currentState.day,'vocabulary','essential-daily'),kind:'essential-vocabulary',optional:true,required:false,label:'可选：'+optionalEssential.label,reason:'本日保留原计划完成状态。'+optionalEssential.message,href:optionalEssential.historical&&target?'词汇记忆.html?day='+target.day+'&reviewFrom='+currentState.day.day+(root.IELTSProfiles?.isPreview?.()?'&preview=1':''):optionalEssential.href,estimatedMinutes:optionalEssential.estimatedMinutes};
   if(review)entries.unshift(entry);else add(entry);
  }
  // An already-active core draft and due review retain priority. Saved public
@@ -156,7 +156,8 @@ function build(options={}){
  for(let i=0;i<entries.length;i++){const entry=entries[i];if(!entry.placementChallenge)continue;if(entry.startWindowMinutes>challengeRoom+.001){entries.splice(i--,1);continue;}entry.availableOptionalMinutes=challengeRoom;entry.fitsBudget=true;challengeRoom-=entry.startWindowMinutes;}
  const actionable=entries.find(e=>!['blocked','view'].includes(e.kind)),admitted=actionable?.fitsBudget?actionable:null,next=admitted||(!actionable?entries.find(e=>e.kind==='view')||entries[0]:null)||null;
  const deferred=actionable&&!admitted?{kind:'rest',label:'今天到此，休息后下一日继续',reason:'下一学习单元预计需要 '+actionable.startWindowMinutes.toFixed(1)+' 分钟'+(actionable.nextCourseWindow?'（新课至少预留一轮完整专注及必要休息）':'（含计划休息）')+'，今天剩余 '+Math.max(0,budget.remainingMinutes).toFixed(1)+' 分钟不足。队列和未完成草稿已保留；下一日继续。',estimate:actionable.estimate}:null;
- return{budget,entries,placement,schedule,historical,publicPractice,next:budget.dayEnded?{kind:'day-ended',label:'今日学习已结束，可恢复今日任务',reason:'未完成任务、草稿和原音按原课程归属保留。误结束时可在番茄钟点击“恢复今日任务”后手动继续，实际已用预算不变；也可下一日续做，不会重复添加任务或记为已完成。'}:budget.exhausted?{kind:'budget',label:'今日预算已用完，下一日继续',reason:'队列、草稿和作品保留；下一日恢复360分钟总预算。'}:next||deferred,currentComplete:currentState?.done===true,courseDay:target?.day||null,continuing:!budget.exhausted&&!!next&&next.day!==currentDay,pending:state?.states.some(s=>s.pending)||false,reason:blockedReason||(!target?'全部课程已提交，继续核对年度准备度与长期保持证据。':state?.done?'':state?.readiness.reason||'')};
+ const result={budget,entries,placement,schedule,historical,publicPractice,reservedDueStudyMinutes:Math.max(0,Number(plan?.reservedMemoryMinutes)||0),next:budget.dayEnded?{kind:'day-ended',label:'今日学习已结束，可恢复今日任务',reason:'未完成任务、草稿和原音按原课程归属保留。误结束时可在番茄钟点击“恢复今日任务”后手动继续，实际已用预算不变；也可下一日续做，不会重复添加任务或记为已完成。'}:budget.exhausted?{kind:'budget',label:'今日预算已用完，下一日继续',reason:'队列、草稿和作品保留；下一日恢复360分钟总预算。'}:next||deferred,currentComplete:currentState?.done===true,courseDay:target?.day||null,continuing:!budget.exhausted&&!!next&&next.day!==currentDay,pending:state?.states.some(s=>s.pending)||false,reason:blockedReason||(!target?'全部课程已提交，继续核对年度准备度与长期保持证据。':state?.done?'':state?.readiness.reason||'')};
+ const yearCourse=options.yearCourse||(root.document?root.IELTSYearFirstUseCourse:null);return options.yearFirstUse===false||!yearCourse?.appendToLoad?result:yearCourse.appendToLoad(result,options);
 }
 return Object.freeze({build,prediction,placementChallenges,calendarSchedule,NAMES});
 });

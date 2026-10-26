@@ -3,6 +3,7 @@
   "days": 365,
   "minutes": 131400,
   "materials": 1823,
+  "compiledMaterialCount": 2511,
   "bySkill": {
     "reading": 255,
     "listening": 283,
@@ -12,8 +13,8 @@
     "speaking": 145,
     "reflection": 365
   },
-  "expectedAuthoringJobs": 543,
-  "approvedAuthoringJobs": 543,
+  "expectedAuthoringJobs": 815,
+  "approvedAuthoringJobs": 815,
   "lexicalExtensions": {
     "earlierCandidates": 446,
     "earlierAdded": 446,
@@ -543,7 +544,7 @@
     "expectedNewSources": 208,
     "newSources": 208,
     "additionalWritingPrompts": 64,
-    "derivedMaterials": 0,
+    "derivedMaterials": 416,
     "missing": [],
     "audioMissing": [],
     "errors": [],
@@ -603,7 +604,50 @@
     ],
     "rights": "Project-original sources by default; linked third-party resources and unlicensed GitHub PDFs/audio are not bundled.",
     "limits": "Two new readings and two new listenings weekly, rotated with explicit revision; not seven unique new texts each week. Source generation, hashes and service success do not prove learner Band 7.",
-    "active": false
+    "active": true,
+    "scheduleSchema": "year-budget-first-use-v1",
+    "planningStatus": "reviewed-runtime-first-use-with-explicit-pending",
+    "firstUse": {
+      "sources": {
+        "total": 272,
+        "assigned": 272,
+        "pending": 0
+      },
+      "derived": {
+        "total": 416,
+        "assigned": 189,
+        "pending": 227
+      },
+      "all": {
+        "total": 688,
+        "assigned": 461,
+        "pending": 227
+      },
+      "sameMaterialForcedRepeats": 0,
+      "newAssignmentOccurrences": 461,
+      "addedDays": 297,
+      "maximumAdmittedCalendarMinutes": 360,
+      "baselineOverBudgetDays": [
+        2,
+        365
+      ],
+      "requiredPublicVariantsRetained": 75,
+      "publicVariantsOnBaselineOverBudgetDays": 0,
+      "existingPublicReviewReservations": 137,
+      "existingPublicBlockedReviewWindows": 1,
+      "semanticContextReservations": 6,
+      "semanticContextPending": 0,
+      "yearSpacedReviewsAwaitingEvidence": 688,
+      "actualLearningOrMasteryValidated": false
+    },
+    "authoredSourceMaterialsValidated": 272,
+    "derivedMaterialsValidated": 416,
+    "compiledYearMaterialsValidated": 688,
+    "runtimeSelectableYearMaterials": 0,
+    "onDemandCatalogMaterials": 688,
+    "pendingCount": 227,
+    "pendingManifest": "curriculum/year-expansion-pending.json",
+    "runtimeConnected": true
   },
   "publicSupplements": {
     "schema": 1,
@@ -775,11 +819,9 @@
         "reading": "text-evidence-and-blind-review-passed",
         "listening": "blocked-pending-audio-review",
         "canonicalAudio": {
-          "status": "hash-verified-but-usage-blocked",
+          "status": "blocked-audio-absent-as-required-in-public-clone",
           "required": false,
-          "usable": false,
-          "audioSha256": "540e100de05a012bbe9f0dc0b849d5a84da6c0fa5fb2efbb95c57911d41cab6f",
-          "durationSeconds": 157.635918
+          "usable": false
         },
         "sourceExposureGroup": "public-source:voa-l1-24"
       },

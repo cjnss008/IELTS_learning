@@ -34,6 +34,9 @@ function load(options={}){
    // over the documented public content fields.
    const authorHash=material.source?.contentHash;Quality.updateContentHash(material);if(authorHash&&authorHash!==material.source.contentHash)material.source.authoringContentHash=authorHash;
    material.version=String(material.version||'1');material.questionLanguage='en';
+   // Persist ordinary-practice scope inside the bound source snapshot as well
+   // as the schedule. A later hydration must not turn these into gate evidence.
+   material.source={...material.source,yearExpansion:Manifest.VERSION,practiceOnly:true,independentAssessmentEligible:false,independentTransferEligible:false};
    if(material.skill==='listening'){
     const relative='audio/curriculum/'+job.id+'.mp3',audio=path.join(project,relative),metaFile=path.join(project,'curriculum/audio',job.id+'.json');material.audio='';material.audioRequirements={...job.audioRequirements,...material.audioRequirements,locale:'en-US',speakLabels:false};
     if(fs.existsSync(audio)&&fs.existsSync(metaFile)){const meta=JSON.parse(fs.readFileSync(metaFile,'utf8'));if(meta.transcriptHash!==hash(material.transcript)||meta.audioHash!==hash(fs.readFileSync(audio)))throw Error('Audio/transcript hash mismatch');const us=meta.locale==='en-US'||meta.audioLocale==='en-US'||(meta.voices||[]).length&&(meta.voices||[]).every(voice=>/^en-US[-_]/i.test(voice));if(!us)throw Error('US demonstration voice provenance required');material.audio=relative;material.audioVoice=(meta.voices||[]).join(' / ');material.audioSynthetic=meta.synthetic!==false;material.audioDurationSeconds=meta.durationSeconds;}
@@ -58,5 +61,18 @@ function assignments(days,materials){
  }
  return out;
 }
-function applySchedule(days,data){return days.map(source=>{let day=source;if(source.day>=2&&source.day<=364&&!data.yearExpansion.assignments[source.day]?.afterCore){day=JSON.parse(JSON.stringify(source));for(const task of day.tasks)if(Shared.RECOMMENDED_MINUTES[task.id]!==undefined)task.minutes=Shared.RECOMMENDED_MINUTES[task.id];}return Shared.overlay(day,data);});}
-module.exports={...Manifest,spokenReference,derived,load,assignments,applySchedule};
+function budgetPlan(data,materials,options={}){
+ const Planner=require('./year-budget-planner.cjs'),catalog=options.catalog||require('../assets/public-context-practice-data.js'),ids=new Set(materials.map(m=>m.id));
+ const base={...data,materials:data.materials.filter(m=>!ids.has(m.id))};delete base.yearExpansion;
+ const inputHash=hash(JSON.stringify({days:base.days,materials:base.materials,yearMaterials:materials,publicPlanHash:base.publicCoursePlan?.planHash,catalog}));
+ const plan=Planner.build({base,yearMaterials:materials,catalog,inputHash},options);
+ plan.version=Manifest.VERSION;plan.active=false;plan.status='validated-first-use-candidate-with-explicit-pending';
+ return plan;
+}
+function applySchedule(days,data){
+ // New plans are composed after required public planning and admitted by the
+ // owner/runtime queue. Never feed this schema to the old unconditional append.
+ if(data.yearExpansion?.schema==='year-budget-first-use-v1')return days;
+ return days.map(source=>{let day=source;if(source.day>=2&&source.day<=364&&!data.yearExpansion.assignments[source.day]?.afterCore){day=JSON.parse(JSON.stringify(source));for(const task of day.tasks)if(Shared.RECOMMENDED_MINUTES[task.id]!==undefined)task.minutes=Shared.RECOMMENDED_MINUTES[task.id];}return Shared.overlay(day,data);});
+}
+module.exports={...Manifest,spokenReference,derived,load,assignments,applySchedule,budgetPlan};

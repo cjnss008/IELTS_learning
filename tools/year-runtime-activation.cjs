@@ -1,0 +1,29 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const Policy=require('../server/year-runtime-contract-policy.cjs');
+const REQUIRED_ROLES=Policy.REQUIRED_ROLES;
+const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+function inside(root,relative){
+ assert(typeof relative==='string'&&relative&&!path.isAbsolute(relative)&&!/^[A-Za-z]:|^\\\\|\0/.test(relative),'runtime contract paths must be relative');
+ const parts=relative.replace(/\\/g,'/').split('/');assert(!parts.includes('..'),'runtime contract path traversal is forbidden');
+ const target=path.resolve(root,...parts),check=path.relative(root,target);assert(check&&!check.startsWith('..')&&!path.isAbsolute(check),'runtime contract paths must stay within root');
+ const real=fs.realpathSync(target),realCheck=path.relative(fs.realpathSync(root),real);assert(realCheck&&!realCheck.startsWith('..')&&!path.isAbsolute(realCheck),'runtime contract symlinks must stay within root');
+ return {target,relative:parts.join('/')};
+}
+function validateRuntimeContract({root,contractPath='curriculum/year-first-use-runtime-contract.json'}={}){
+ assert(typeof root==='string'&&root,'runtime root is required');root=path.resolve(root);
+ const input=inside(root,contractPath),bytes=fs.readFileSync(input.target);assert(bytes.length>0&&bytes.length<=262144,'runtime contract size is invalid');
+ const text=bytes.toString('utf8');assert(Buffer.from(text,'utf8').equals(bytes),'runtime contract must be valid UTF-8');
+ const contract=JSON.parse(text);assert.equal(contract.schema,1,'runtime contract schema');assert.equal(contract.kind,'year-first-use-runtime-contract','runtime contract kind');assert.equal(contract.protocol,1,'runtime contract protocol');
+ assert.equal(contract.runtimeConnected,true,'runtime contract must declare connected components');assert.equal(contract.activationReviewed,true,'runtime contract must be explicitly reviewed');
+ const problem=Policy.componentListProblem(contract.components);assert.equal(problem,null,problem||'runtime components');
+ const components=[];
+ for(const row of contract.components){
+  const file=inside(root,row.path),content=fs.readFileSync(file.target);assert.equal(sha(content),row.sha256,'runtime component hash mismatch: '+file.relative);assert.equal(content.length,row.bytes,'runtime component byte size mismatch');
+  const pageProblem=Policy.pageDependencyProblem(file.relative,content.toString('utf8'));assert.equal(pageProblem,null,pageProblem||'runtime page dependencies');
+  components.push({role:row.role,path:file.relative,sha256:row.sha256,bytes:content.length});
+ }
+ const ref={path:'curriculum/year-first-use-runtime-contract.json',sha256:sha(bytes),bytes:bytes.length};
+ return {text:bytes.toString('utf8'),metadata:{protocol:1,runtimeConnected:true,contract:ref,components},sourcePath:input.relative};
+}
+module.exports={REQUIRED_ROLES,MAX_COMPONENTS:Policy.MAX_COMPONENTS,REQUIRED_COMPONENTS:Policy.REQUIRED_COMPONENTS,validateRuntimeContract};

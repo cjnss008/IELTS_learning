@@ -12,7 +12,7 @@ function latestForMaterial(task,records,dayNumber,materials=[],data){
   if(!record||record.taskId!==task.id||record.kind==='retest'||!required.has(record.materialId)||dayNumber!==undefined&&record.dayNumber!==dayNumber||record.skill&&record.skill!==task.id)continue;
   if(!['pass','revise','pending','unverified'].includes(record.evaluation?.result)||recordTime(record)===null)continue;
   if(!(typeof record.answer==='string'&&record.answer.trim())&&!record.media?.length)continue;
-  const contextPractice=root.IELTSPublicContextPractice||(typeof require==='function'?require('./public-context-practice.js'):null),material=materials.find(item=>item.id===record.materialId)||contextPractice?.resolveMaterial?.(record.materialId,{data:context});
+  const contextPractice=root.IELTSPublicContextPractice||(typeof require==='function'?require('./public-context-practice.js'):null),material=materials.find(item=>item.id===record.materialId)||contextPractice?.resolveMaterial?.(record.materialId,{data:context})||root.IELTSYearFirstUseCourse?.resolveMaterial?.(record.materialId);
   const assignment=task.publicCourseAssignments?.find(a=>a.materialId===record.materialId);if(assignment&&!player?.submissionSatisfied?.(record,material,{assignment}))continue;
   const grammarAssignment=task.contextPracticeAssignments?.find(a=>a.materialId===record.materialId);if(grammarAssignment&&!contextPractice?.submissionSatisfied?.(record,grammarAssignment))continue;
   if(['reading','listening','grammar'].includes(task.id)&&!player?.objectiveSubmissionComplete?.(record,material))continue;
@@ -112,9 +112,11 @@ function mount(){
    if(!waiting){const go=node('button',primary.label);go.type='button';go.addEventListener('click',async()=>{go.disabled=true;try{await openQueueEntry(primary);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{render();}});row.append(go);}
    const why=explanation(primary);if(why)row.append(why);box.append(row);
   }
+  // Year entries use the same primary queue action after actual core completion.
+  const yearEntries=learningQueue.entries.filter(entry=>entry.yearFirstUse);
   const challenges=learningQueue.entries.filter(entry=>entry.placementChallenge&&entry!==primary);
   for(const entry of challenges){const row=node('article',undefined,'course-record-row');row.append(node('strong',entry.label),node('p',entry.reason),node('p','先为未完核心与已有补强留出预算，本次可选练习参考 '+entry.estimate.totalMinutes.toFixed(1).replace(/\.0$/,'')+' 分钟。'));const go=node('button',entry.publicSupplement?(entry.draftId?'继续公开素材草稿':'开始这份补充练习'):'开始这份适级挑战');go.type='button';go.disabled=entry.fitsBudget!==true;go.addEventListener('click',async()=>{go.disabled=true;try{await openQueueEntry(entry);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{render();}});row.append(go);box.append(row);}
-  const remainingEntries=learningQueue.entries.filter(entry=>entry!==primary&&!entry.placementChallenge),previews=remainingEntries.slice(0,2);
+  const remainingEntries=learningQueue.entries.filter(entry=>entry!==primary&&!entry.placementChallenge&&!entry.yearFirstUse),previews=remainingEntries.slice(0,2);
   for(const entry of previews)box.append(node('p','随后：第 '+entry.day+' 课 · '+(entry.title||NAMES[entry.taskId]||'后续学习')+(entry.waiting?'（待评作品）':entry.kind==='blocked'?'（等待前置任务）':'（完成当前单元后继续）')));
   if(remainingEntries.length>2){const details=node('details'),title=node('summary','查看后续队列（'+(remainingEntries.length-2)+'项）');details.append(title);for(const entry of remainingEntries.slice(2))details.append(node('p','第 '+entry.day+' 课 · '+(entry.title||NAMES[entry.taskId]||'后续学习')+'：'+entry.label));box.append(details);}
   if(!primary)box.append(node('p',learningQueue.reason||'正在核对下一步课程。'));
@@ -158,7 +160,7 @@ function mount(){
  $('todayStart').addEventListener('click',start);
  root.addEventListener('ielts:course-view',event=>{const changed=current.day!==event.detail.day;current={...event.detail};if(changed){dailyRecords=[];refreshRecords();}render();});
  root.addEventListener('ielts:memory-changed',render);root.addEventListener('ielts:study-timer-changed',render);root.addEventListener('ielts:course-budget-paused',render);root.addEventListener('focus',refreshRecords);doc.addEventListener?.('visibilitychange',()=>{if(!doc.hidden)refreshRecords();});
- root.addEventListener('ielts:public-course-plan-changed',render);
+ root.addEventListener('ielts:public-course-plan-changed',render);root.addEventListener('ielts:year-first-use-changed',render);
  root.addEventListener('ielts:budget-changed',event=>{if(Array.isArray(event.detail?.records))dailyRecords=event.detail.records;render();});
  root.addEventListener('ielts:course-progress',event=>{if(event.detail.day!==current.day)return;loading++;dailyRecords=Array.isArray(event.detail.allRecords)?event.detail.allRecords:Array.isArray(event.detail.records)?event.detail.records:[];render();});
  if(root.IELTSMistakes?.EVENT)root.addEventListener(root.IELTSMistakes.EVENT,render);

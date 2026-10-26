@@ -1,5 +1,6 @@
 'use strict';
 const fs=require('node:fs'),fsp=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto'),os=require('node:os');
+const RUNTIME_SOURCE=(()=>{const bytes=fs.readFileSync(__filename);return Object.freeze({path:'server/user-data.cjs',sha256:crypto.createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length});})();
 const {KEYS}=require('../assets/backup-core.js');
 const {fileStamp,createFileCache}=require('./file-cache.cjs');
 const {removeDeadLocalLock:reclaimDeadLocalLock}=require('./local-lock.cjs');
@@ -199,4 +200,4 @@ function createUserData({rootDir,dataDir,legacyPaths,migrateLegacy=true,now=()=>
  }catch(error){if(res.headersSent||res.destroyed)return true;const known=error instanceof UserDataError;send(res,known?error.status:503,{ok:false,error:{code:known?error.code:'USER_DATA_IO',message:known?error.message:'用户目录读写失败，原数据已保留；请检查磁盘或NAS连接。'},...(known&&error.currentRevision!==undefined?{currentRevision:error.currentRevision}:{}),...(known&&error.currentResetEpoch?{currentResetEpoch:error.currentResetEpoch}:{}),...(known&&error.missingSha256?{missingSha256:error.missingSha256}:{})});}return true;}
  return {paths,root,realRoot,within,checked,status,handle,getSnapshot,getProfileState,adoptRecordsArchive,putSnapshot,resetProfile,withLock:lock,fenceRestoredProfiles,revalidateRestoredMaterials,invalidateCaches,beginRestore:()=>{restoreBarrier=true;invalidateCaches();},cancelRestore:()=>{restoreBarrier=false;invalidateCaches();},validateSnapshot,putBlob,getBlob,conflicts,addMaterial,getMaterial,signingKeyIssue:()=>migration.items.some(i=>i.kind==='writing-signing'&&i.status==='failed-kept-source')&&!fs.existsSync(checked(paths.signingKey))?'旧写作签名尚未成功迁入用户目录，不能生成新key替代；原链与旧文件保留，请先完成迁移。':null,signingKeyPaths:()=>fs.readdirSync(config).filter(n=>/^legacy-writing-signing-[a-f0-9]{64}\.key$/.test(n)).map(n=>checked(path.join(config,n),{file:true})).filter(file=>{const b=fs.readFileSync(file);return b.length===32&&path.basename(file)==='legacy-writing-signing-'+hash(b)+'.key';}),setImportedMaterials:value=>{importedMaterials=value;}};
 }
-module.exports={createUserData,UserDataError,LIMITS,DATABASES,ENTRY_KEYS,within};
+module.exports={RUNTIME_SOURCE,createUserData,UserDataError,LIMITS,DATABASES,ENTRY_KEYS,within};
