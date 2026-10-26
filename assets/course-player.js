@@ -82,8 +82,13 @@
     const value=copy(day);return cleanDayPlanBinding({schema:1,contentHash:api.materialContentHash(value),day:value},day.day);
   }
 
-  function taskDisplayText(value,skill){
-    if(skill!=='speaking'||typeof value!=='string')return value;
+  function taskDisplayText(value,skill,minutes){
+    if(typeof value!=='string')return value;
+    if(Number.isFinite(minutes)&&minutes>0){
+      const steps=value.replace(/^参考预算\s*\d+(?:\.\d+)?\s*分钟[：:]?\s*/, '').replace(/(^|[；;，,]\s*)\d+(?:\.\d+)?\s*分钟/g,'$1');
+      value='本模块参考预算 '+minutes+' 分钟；各步骤共用此预算，可按实际进度调整。\n'+steps;
+    }
+    if(skill!=='speaking')return value;
     return value.replace(/回听(?:及|并|和)核对转写/g,'回听原音并查看反馈').replace(/原音[、，,]\s*转写[、，,]\s*问题定位[与和及]重录/g,'原音、专业评测、问题定位与重录').replace(/保留原音和转写，回听定位问题/g,'保留原音并查看反馈，回听定位问题').replace(/三部分原音、转写及待改进点/g,'三部分原音、听音反馈及待改进点').replace(/转写与音频诊断分别复核/g,'回听原音并查看反馈，自动听音证据不足时保持待评');
   }
   async function prepareStudyDayEnd({isCurrent=()=>true,busy=false,recording=false,recordingSaving=false,mediaStates=[],checkpoint=()=>true}={}) {
@@ -291,6 +296,19 @@
     return {mode,text:text.trim(),prompt:prompt.trim(),task,level:levels.at(-1)};
   }
   function checkAbort(signal){if(signal?.aborted){const error=new Error('请求已取消，原稿与录音保留。');error.name='AbortError';throw error;}}
+  async function transcribeCourseAudio(record,prepared,options={}){
+    const api=options.assessment||assessmentAPI(),fetcher=options.fetch||root.fetch?.bind(root),signal=options.signal,crypto=options.crypto||root.crypto;
+    if(!prepared?.audio||!fetcher||!crypto?.subtle)throw Error('自动转写组件尚未准备好，原音已保存待评。');
+    checkAbort(signal);const statusResponse=await fetcher('/api/transcription/status',{method:'GET',signal,credentials:'same-origin',redirect:'error',cache:'no-store'});let status;try{status=await statusResponse.json();}catch(_){}
+    checkAbort(signal);if(!statusResponse.ok||status?.courseTranscriptionProtocol!==1){const error=Error('共享学习包已更新，请重新双击“启动学习.cmd”载入本机新服务，再重试本次原音。原稿与录音保持待评。');error.code='COURSE_TRANSCRIPTION_SERVICE_UPDATE';throw error;}
+    if(status.configured!==true)throw Error('本机尚无可用自动转写服务。原稿与录音保留待评；请检查本地识别依赖状态或已配置的转写服务。');
+    checkAbort(signal);const binary=(options.atob||root.atob)(prepared.audio),bytes=Uint8Array.from(binary,c=>c.charCodeAt(0)),digest=await crypto.subtle.digest('SHA-256',bytes),hash=[...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join('');
+    const response=await fetcher('/api/transcription/transcribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({audio:prepared.audio}),signal,credentials:'same-origin',redirect:'error',cache:'no-store'});let value;try{value=await response.json();}catch(_){throw Error('转写服务未返回有效结果，原音保留待评。');}checkAbort(signal);
+    if(!response.ok||value.ok===false)throw Error(value.error?.message||'自动转写暂未完成，原音保留待评。');
+    if(typeof value.text!=='string'||!value.text.trim()||value.text.length>10000||value.audioSha256!==hash||value.textSha256!==api.sourceTextHash(value.text)||!Number.isFinite(value.durationSeconds)||Math.abs(value.durationSeconds-prepared.durationSeconds)>.1)throw Error('转写与本次原音的哈希、文字或完整时长不匹配，保留待评。');
+    const artifact=api.decodeArtifact(record),source={schema:1,evidenceId:value.evidenceId,provider:value.provider,text:value.text,textSha256:value.textSha256,audioSha256:value.audioSha256,durationSeconds:value.durationSeconds,verifiedAt:value.verifiedAt,recordId:record.id,materialId:record.materialId,materialVersion:String(record.materialVersion),bindingContentHash:artifact?.materialBinding?.contentHash,mediaIds:(record.media||[]).map(m=>m.id),mediaRanges:prepared.mediaRanges};
+    if(!api.transcriptionForRecord(record,source))throw Error('转写来源与这份冻结原稿不一致，原音保留待评。');return source;
+  }
   async function prepareAudio(record,options={}) {
     const library=options.library||root.IELTSMediaLibrary,Context=options.AudioContext||root.AudioContext||root.webkitAudioContext,Offline=options.OfflineAudioContext||root.OfflineAudioContext||root.webkitOfflineAudioContext,encode=options.encodeWav||root.IELTSSpeakingAudio?.encodeWav;
     if(!library||!Context||!Offline||!encode)throw Error('当前浏览器无法转换原始录音，请从本地服务用近期 Chrome 或 Edge 打开。');
@@ -306,25 +324,25 @@
     return{recordId:record.id,evidenceId:proof.evidenceId,mediaIds:record.media.map(m=>m.id),durationSeconds:proof.durationSeconds,completeCoverage:Math.abs(cursor-proof.durationSeconds)<=.05,segments};
   }
   async function runReviewPipeline(options) {
-    const {request,record,signal}=options,fetcher=options.fetch||root.fetch.bind(root);
+    const {request,record,signal}=options,fetcher=options.fetch||root.fetch.bind(root),transcription=options.transcriptionSource;
     async function json(path,body){checkAbort(signal);const response=await fetcher(path,{method:body?'POST':'GET',...(body?{headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{}),signal,credentials:'same-origin',redirect:'error',cache:'no-store'});let result;try{result=await response.json();}catch(_){throw Error('本地服务返回的评阅数据无法读取。');}checkAbort(signal);if(!response.ok||result.ok===false){const error=new Error(typeof result.error?.message==='string'?result.error.message.slice(0,500):'本地评阅服务暂不可用。');error.code=result.error?.code;throw error;}return result;}
-    let proof=null,payload={...request},source=null;
+    let proof=null,payload={...request},source=null;function retainTranscription(result){if(!transcription)return;const received=result.transcriptionEvidence;if(!received||!['evidenceId','provider','text','textSha256','audioSha256'].every(k=>received[k]===transcription[k])||!Number.isFinite(received.durationSeconds)||Math.abs(received.durationSeconds-transcription.durationSeconds)>.1)throw Error('评阅服务未核验同一份真实转写与原音，保持待评。');const bound={...transcription,verifiedAt:received.verifiedAt};if(!assessmentAPI().transcriptionForRecord(record,bound))throw Error('评阅转写与冻结原稿不一致。');result.transcriptionSource=bound;if(result.audioSource)result.audioSource.audioSha256=received.audioSha256;}
     if(options.audio&&request.task==='foundation'){
       const status=await json('/api/oral/status');if(!status.configured)throw Error('请先在 AI 与语音设置中连接阿里语音评测。');
       options.onProgress?.('正在核对本次自由回答的原音与转写；基础阶段用阿里专业诊断配合两轮表达反馈，不提供完整口语 Band。');
-      const encoded=await options.prepare(record,signal);if(encoded.durationSeconds>180)throw Error('基础回答请控制在 3 分钟以内；更长自由口语请使用完整听音评阅。');
+      const encoded=options.prepared||await options.prepare(record,signal);if(encoded.durationSeconds>180)throw Error('基础回答请控制在 3 分钟以内；更长自由口语请使用完整听音评阅。');
       proof=await json('/api/oral/assess',{audio:encoded.audio,reference:request.text,coreType:'en.pred.score'});
-      const result=await json('/api/ai/review',{...request,mode:'speaking_audio',evidenceId:proof.evidenceId});
+      const result=await json('/api/ai/review',{...request,mode:'speaking_audio',evidenceId:proof.evidenceId,...(transcription?{transcriptionEvidenceId:transcription.evidenceId}:{})});
       const verified=result.pronunciationEvidence;
       if(!verified||verified.evidenceId!==proof.evidenceId||verified.reference!==request.text||!Number.isFinite(verified.durationSeconds)||verified.durationSeconds<=0||verified.durationSeconds>180||['accuracy','fluency','completeness'].some(k=>!Number.isFinite(verified.result?.[k])||verified.result[k]<0||verified.result[k]>100)||(verified.result.text&&verified.result.text!==request.text)||Math.abs(verified.durationSeconds-encoded.durationSeconds)>.1)throw Error('基础原音评阅的来源或完整时长不匹配；保持待评。');
-      result.pronunciationSource={...verified,provider:'ali',recordId:record.id,mediaIds:record.media.map(m=>m.id),completeCoverage:true};
+      result.pronunciationSource={...verified,provider:'ali',recordId:record.id,mediaIds:record.media.map(m=>m.id),completeCoverage:true};retainTranscription(result);
       result.audioAnalysisEvidence=false;
       return{result,proof,request:{...request,mode:'speaking_audio'}};
     }
-    if(options.audio){const status=await json('/api/omni/status');if(status.configured!==true){const error=new Error('尚未配置 Omni 听音服务。请到 AI 设置的语音高级设置配置；当前发音和流利度保持待验证，也可先做文字复核。');error.code='OMNI_NOT_CONFIGURED';throw error;}options.onProgress?.('正在读取并转换这份原稿关联的全部原始录音…');const encoded=await options.prepare(record,signal);checkAbort(signal);options.onProgress?.('正在逐段发送完整原音给 '+(status.model||'Omni')+'。长录音加两轮复核可能需约 18 分钟，可随时取消。');proof=await json('/api/omni/evidence',{audio:encoded.audio,prompt:request.prompt,transcript:request.text,task:request.task,level:request.level});source=audioSource(proof,record);source.task=request.task;source.omniModel=status.model||'';source.mediaRanges=encoded.mediaRanges||[];if(Math.abs(source.durationSeconds-encoded.durationSeconds)>.1)throw Error('返回音频时长与本次发送的原音不匹配。');payload={...request,mode:'speaking_audio',evidenceId:proof.evidenceId};options.onProgress?.(proof.audioAnalysisEvidence===true?'已收到覆盖全部原音的时点观察，正在进行两轮四维 AI 训练评阅…':'听音证据尚不足，继续保留文字反馈；发音和流利度不出分。');}
+    if(options.audio){const status=await json('/api/omni/status');if(status.configured!==true){const error=new Error('尚未配置 Omni 听音服务。请到 AI 设置的语音高级设置配置；当前发音和流利度保持待验证，也可先做文字复核。');error.code='OMNI_NOT_CONFIGURED';throw error;}options.onProgress?.('正在读取并转换这份原稿关联的全部原始录音…');const encoded=options.prepared||await options.prepare(record,signal);checkAbort(signal);options.onProgress?.('正在逐段发送完整原音给 '+(status.model||'Omni')+'。长录音加两轮复核可能需约 18 分钟，可随时取消。');proof=await json('/api/omni/evidence',{audio:encoded.audio,prompt:request.prompt,transcript:request.text,task:request.task,level:request.level});source=audioSource(proof,record);source.task=request.task;source.omniModel=status.model||'';source.mediaRanges=encoded.mediaRanges||[];if(Math.abs(source.durationSeconds-encoded.durationSeconds)>.1)throw Error('返回音频时长与本次发送的原音不匹配。');payload={...request,mode:'speaking_audio',evidenceId:proof.evidenceId,...(transcription?{transcriptionEvidenceId:transcription.evidenceId}:{})};options.onProgress?.(proof.audioAnalysisEvidence===true?'已收到覆盖全部原音的时点观察，正在进行两轮四维 AI 训练评阅…':'听音证据尚不足，继续保留文字反馈；发音和流利度不出分。');}
     const result=await json('/api/ai/review',payload);if(!['complete','partial','pending'].includes(result.status)||!Array.isArray(result.rounds))throw Error('评阅返回结构不完整，原稿已保留。');
     if(options.audio){if(result.audioAnalysisEvidence===true&&result.audioEvidenceId!==proof.evidenceId)throw Error('音频评阅与本次声学证据 ID 不匹配。');result.audioAnalysisEvidence=result.audioAnalysisEvidence===true&&proof.audioAnalysisEvidence===true&&source.completeCoverage;result.audioSource=source;}else result.audioAnalysisEvidence=false;
-    return{result,proof,request:payload};
+    retainTranscription(result);return{result,proof,request:payload};
   }
   function feedbackForRecord(result,archiveId) {
     const saved={...copy(result),...(archiveId?{fullReviewArchiveId:archiveId}:{})};
@@ -463,7 +481,7 @@
     if(material.fullTest||material.pool==='final'){const judged=assessment.evaluatedCriteria({...record,evaluation:{method:'ai',result:'pending',feedback:JSON.stringify(result)}},material,7);return judged.criteria.some(c=>!c.complete)?'pending':judged.reasons.length?'revise':'pass';}
     const rounds=result.rounds?.filter(r=>r.ok===true)||[];
     if(rounds.length<2||new Set(rounds.map(r=>r.round)).size<2)return'pending';
-    const artifact=assessment.decodeArtifact(record),text=record.skill==='speaking'?artifact?.transcript:artifact?.text;
+    const artifact=assessment.decodeArtifact(record),text=record.skill==='speaking'?assessment.effectiveSpeakingTranscript(record):artifact?.text;
     if(!text||rounds.some(r=>typeof r.levelCheck?.meetsGoal!=='boolean'||!r.levelCheck?.evidence?.some(e=>e.quote&&text.includes(e.quote))))return'pending';
     if(record.skill==='speaking'&&!record.media?.length)return'pending';
     if(record.skill==='speaking'){
@@ -582,7 +600,7 @@
       if (!material) { $('courseMaterialIntro').append(el('p','','此任务未映射到有效材料。请反馈课程日和任务名称；不会自动记完成。')); $('courseBegin').disabled = true; return; }
       $('courseBegin').disabled = storageBroken;
       doc.querySelectorAll('.course-material-button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.materialId===material.id)));
-      $('courseMaterialIntro').append(el('p','course-material-meta',material.independentBank?'独立材料 · '+(material.level||'')+' · '+(material.skill==='listening'?(material.audioKind==='human'&&material.audioSynthetic===false?'真人朗读':'合成示范'):material.skill==='reading'?'原创阅读':material.skill==='writing'?'独立写作':'独立练习'):material.source?.publicSourceId?'公开补充 · '+(material.level||'')+' · '+(material.source.provider||'公开来源'):'第 '+material.week+' 周 · '+(material.level||'')+' · '+material.source.rights),el('h2','',material.title),el('p','',taskDisplayText(task.instructions,task.id)),el('p','course-small','本任务交付：'+taskDisplayText(task.deliverable,task.id)+'。'+(material.source.verification==='reviewed'?'已完成内容核对；AI 辅助原创仍可能有误。':'内容待复核，仅供练习，不纳入达标判断。')));
+      $('courseMaterialIntro').append(el('p','course-material-meta',material.independentBank?'独立材料 · '+(material.level||'')+' · '+(material.skill==='listening'?(material.audioKind==='human'&&material.audioSynthetic===false?'真人朗读':'合成示范'):material.skill==='reading'?'原创阅读':material.skill==='writing'?'独立写作':'独立练习'):material.source?.publicSourceId?'公开补充 · '+(material.level||'')+' · '+(material.source.provider||'公开来源'):'第 '+material.week+' 周 · '+(material.level||'')+' · '+material.source.rights),el('h2','',material.title),el('p','',taskDisplayText(task.instructions,task.id,day>=2&&day<=10?task.minutes:undefined)),el('p','course-small','本任务交付：'+taskDisplayText(task.deliverable,task.id)+'。'+(material.source.verification==='reviewed'?'已完成内容核对；AI 辅助原创仍可能有误。':'内容待复核，仅供练习，不纳入达标判断。')));
       const difference=vocabularyPlanDifference(material,day,data,{vocabulary:root.IELTSVocabularyPractice,getDay:item=>dayPlan(item.day)});if(difference)$('courseMaterialIntro').append(el('p','course-feedback','第 '+day+' 课本组 '+difference.total+' 词；与第 '+difference.previousDay+' 课相比，'+difference.newCount+' 个新词、'+difference.reviewCount+' 个巩固词。新练习先显示本课新词；已保存草稿保持原顺序与原始作答。'));
       const vocabularySummary=vocabularyTaskSummary(task,data,{currentMaterial:material});if(vocabularySummary){const index=vocabularySummary.groups.findIndex(group=>group.materialId===material.id);$('courseMaterialIntro').prepend(el('p','course-step-guide','本课词汇共 '+vocabularySummary.wordCount+' 个词项，分 '+vocabularySummary.groupCount+' 组。当前第 '+(index+1)+' 组：'+(vocabularySummary.groups[index]?.wordCount||0)+' 个词项。完成本组后，按下方按钮继续下一组；到期复习另行计入今日预算。'));}
       $('courseMode').value = task.mode === 'assessment' || material.pool !== 'training' ? 'assessment' : 'practice';
@@ -781,7 +799,7 @@
     }
     async function nextTask(){try{await openQueued();}catch(error){notice('暂未继续：'+error.message+'。已提交原稿和草稿仍保留。',true);}}
     function updateNextButtons(){const completion=currentModuleCompletion();for(const status of doc.querySelectorAll('.course-module-completion')){status.textContent=completion.message;status.dataset.complete=String(completion.done);status.className='course-module-completion '+(completion.done?'course-feedback':'course-small');}for(const go of doc.querySelectorAll('.course-continue-queue')){const next=destination();go.textContent=nextModuleLabel(next,completion);go.disabled=nextModuleDisabled(next);go.title=next?.reason||'';}}
-    function nextButton(box){const next=destination(),completion=currentModuleCompletion(),status=el('p','course-module-completion '+(completion.done?'course-feedback':'course-small'),completion.message),go=button(nextModuleLabel(next,completion),async()=>{go.disabled=true;try{await nextTask();}finally{updateNextButtons();}},'button primary course-continue-queue');status.dataset.complete=String(completion.done);go.disabled=nextModuleDisabled(next);box.append(status,go);}
+    function nextButton(box){if(submittedRecord&&/^今日360分钟(?:学习)?预算已用完/.test($('courseNotice').textContent))notice('本次原稿已进入作品记录；今日预算已用完，其余任务保留。');const next=destination(),completion=currentModuleCompletion(),status=el('p','course-module-completion '+(completion.done?'course-feedback':'course-small'),completion.message),go=button(nextModuleLabel(next,completion),async()=>{go.disabled=true;try{await nextTask();}finally{updateNextButtons();}},'button primary course-continue-queue');status.dataset.complete=String(completion.done);go.disabled=nextModuleDisabled(next);box.append(status,go);}
     async function persistCourseRecord(input){
       try{return await R.record(input);}catch(error){
         // IndexedDB and error capture committed before a NAS sync failed.
@@ -817,7 +835,7 @@
     async function evaluateMistake(item,value,{signal}){
       const m=materialMap.get(item.materialId)||(item.question.material?{...item.question.material,prompt:item.question.prompt,level:item.question.level}:null);
       if(item.skill==='speaking'){
-        const fresh=(await R.list({dayNumber:day})).filter(r=>r.materialId===item.materialId&&r.id!==item.recordId&&r.media?.length&&A.decodeArtifact(r)?.transcript?.trim()===value.answer.trim()).sort((a,b)=>b.submittedAt.localeCompare(a.submittedAt))[0];
+        const fresh=(await R.list({dayNumber:day})).filter(r=>r.materialId===item.materialId&&r.id!==item.recordId&&r.media?.length&&A.effectiveSpeakingTranscript(r)?.trim()===value.answer.trim()).sort((a,b)=>b.submittedAt.localeCompare(a.submittedAt))[0];
         const review=fresh&&A.decodeReview(fresh);if(review?.status==='complete')return{review,record:fresh,submission:{answer:value.answer,media:fresh.media}};
         throw Error('请在原口语任务提交新录音并完成原音评阅，再回到这里整页核对。');
       }
@@ -935,7 +953,8 @@
       if(artifact.mode==='assessment'){const evidence=A.evidenceFor(record,m,{final:m.pool==='final'});box.append(el('p','course-small',evidence.pass?'本份符合内部独立测评条件。':'当前不计独立通过：'+evidence.reasons.join('；')));}
       renderReview(A.decodeReview(record),box);const reviewData=A.decodeReview(record);if(reviewData?.fullReviewArchiveId){box.append(button('导出完整原稿与本次评阅归档',async()=>{try{const entry=await root.IELTSMediaLibrary.get(reviewData.fullReviewArchiveId);if(!entry)throw Error('本机未找到完整归档，请恢复音频／作品备份。');root.IELTSMediaLibrary.download(new Blob([JSON.stringify(entry,null,2)],{type:'application/json'}),'IELTS-完整评阅-'+record.id+'.json');}catch(error){notice(error.message,true);}}));}
       if(record.skill==='speaking'&&!artifact.transcript?.trim()){
-        const settings=el('a','','配置自动识别／听音服务');settings.href='AI设置.html'+(preview?'?preview=1':'');box.append(el('p','course-feedback','自由表达原音已保存，当前待评。无需手工转写；请配置自动识别／听音服务后继续核验内容与完整原音。例文的阿里朗读诊断不能替代本次自由回答评价。'),settings);
+        const source=A.transcriptionForRecord(record);if(source)box.append(el('p','course-small','自动转写来源：'+source.provider+'。原回答与原音保持不变。'),el('pre','course-asr-transcript',source.text));
+        box.append(el('p','course-feedback',record.evaluation.result==='pass'?'本次自动转写与原音反馈已保存，可回听核对识别内容。':'自由表达原音已保存待评。将自动识别实际说出的英文，再用同一份原音核验；无需手工填写，例文不会替代本次回答。'),button(source?'重新转写并核验本次原音':'自动转写并核验本次原音',()=>review(record,true)));
       }else if(record.skill==='speaking'){
         const foundation=foundationSpeaking(m),service=foundation?'阿里专业语音评测':'Omni完整听音',path=foundation?'/api/oral/status':'/api/omni/status';
         const config=el('p','course-small',service+'配置状态：正在读取本地服务…'),settings=el('a','','打开AI与语音设置');settings.href='AI设置.html'+(preview?'?preview=1':'');box.append(config,settings);
@@ -951,27 +970,37 @@
     }
     async function review(record,withAudio=false) {
       if(busy||storageBroken)return;const m=materialForRecord(record,materialMap.get(record.materialId),A),artifact=A.decodeArtifact(record);if(!m||!artifact){notice('原稿材料版本暂不可核验，原文和原音保留；未套用当前新题。',true);return;}
-      let body;try{body=reviewRequest(m,artifact);}catch(error){notice(error.message,true);return;}
+      const needsTranscription=record.skill==='speaking'&&!artifact.transcript?.trim();if(needsTranscription&&!withAudio){notice('这份原音尚无学习者文字原稿，请使用自动转写并核验原音入口。',true);return;}let body;try{if(!needsTranscription)body=reviewRequest(m,artifact);}catch(error){notice(error.message,true);return;}
       if(!localHTTP(root.location)){notice('AI 复核需要双击“启动学习.cmd”并从本地学习地址打开。原稿已留在待评队列。',true);return;}
       if(withAudio&&record.skill!=='speaking')return;
-      const aborter=new AbortController();reviewAbort=aborter;busy=true;const currentGeneration=generation,profile=profileId;
+      const retainedReview=needsTranscription&&record.evaluation.result==='pass'&&practiceReviewResult(A.decodeReview(record),record,m,A)==='pass'?A.decodeReview(record):null;
+      const aborter=new AbortController();reviewAbort=aborter;busy=true;const currentGeneration=generation,profile=profileId;const current=()=>profile===profileId&&currentGeneration===generation&&!storageBroken&&(root.IELTSProfiles?.current().id||'legacy')===profile;
       const cancelButton=button('取消本次评阅',()=>aborter.abort(),'course-review-cancel'),progressNode=el('p','course-review-progress'),progress=createSubmissionProgress({node:progressNode,isCurrent:()=>currentGeneration===generation&&profile===profileId&&!storageBroken&&(root.IELTSProfiles?.current().id||'legacy')===profile});notice('AI复核已开始，等待期间原稿和原始录音保留。');$('courseNotice').append(progressNode,cancelButton);progress.start('正在准备本次评阅');
       const showProgress=message=>{progress.update(message);};
       const timer=setTimeout(()=>aborter.abort(),withAudio?1100000:190000);
-      showProgress(withAudio?(body.task==='foundation'?'正在检查阿里专业语音评测配置；只发送本次自由表达原音和确认转写，不使用例文样音。':'正在检查Omni完整听音配置，只发送本次自由表达原音与确认转写。'):'正在分别复核同一已提交原稿，两轮互不读取对方意见。');
+      showProgress(needsTranscription?'正在读取已保存的自由回答原音，自动识别实际说出的英文。转写失败仍保留待评。':withAudio?(body.task==='foundation'?'正在检查阿里专业语音评测配置；只发送本次自由表达原音和确认转写，不使用例文样音。':'正在检查Omni完整听音配置，只发送本次自由表达原音与确认转写。'):'正在分别复核同一已提交原稿，两轮互不读取对方意见。');
       try{
-        const reviewData=await runReviewPipeline({request:body,record,audio:withAudio,signal:aborter.signal,fetch:root.fetch.bind(root),prepare:(record,signal)=>prepareAudio(record,{signal}),onProgress:showProgress});
-        if(profile!==profileId||currentGeneration!==generation||storageBroken)return;
+        let prepared,transcriptionSource;
+        if(needsTranscription){
+          prepared=await prepareAudio(record,{signal:aborter.signal});if(!current())return;
+          transcriptionSource=await transcribeCourseAudio(record,prepared,{signal:aborter.signal,fetch:root.fetch.bind(root)});checkAbort(aborter.signal);if(!current())return;
+          const feedback=retainedReview?feedbackForRecord({...retainedReview,transcriptionAttempt:{status:'pending',source:transcriptionSource}}):JSON.stringify({status:'pending',rounds:[],transcriptionSource,disclaimer:'ASR 自动识别本次自由原音；尚待同音频专业诊断及两轮反馈。原回答字段未改写。'});
+          record=await R.update(record.id,{evaluation:{method:retainedReview?'ai':'none',result:retainedReview?'pass':'pending',feedback}},R.makeId('transcription'));if(!current())return;checkAbort(aborter.signal);
+          if(submittedRecord?.id===record.id)submittedRecord=record;
+          body=reviewRequest(m,{...artifact,transcript:transcriptionSource.text});
+        }
+        const reviewData=await runReviewPipeline({request:body,record,audio:withAudio,prepared,transcriptionSource,signal:aborter.signal,fetch:root.fetch.bind(root),prepare:(record,signal)=>prepareAudio(record,{signal}),onProgress:showProgress});
+        if(!current())return;
         const {result,proof}=reviewData;let archiveId=null;
         if(root.IELTSMediaLibrary){const entry=await root.IELTSMediaLibrary.create({kind:record.skill==='writing'?'writing':'speaking_text',name:m.title+' · 评阅原稿',originalText:body.text,prompt:body.prompt,mode:reviewData.request.mode,task:body.task,level:body.level,materialId:m.id});archiveId=entry.id;await root.IELTSMediaLibrary.update(entry.id,{review:result,...(proof?{audioReview:proof}:{}),recordsId:record.id,queueStatus:result.status==='complete'?'reviewed':'pending',notes:record.media.length?'原始录音引用：'+record.media.map(v=>v.id).join('、'):''});}
-        if(profile!==profileId||currentGeneration!==generation||storageBroken)return;
+        if(!current())return;
         const feedback=feedbackForRecord(result,archiveId),candidate={...record,evaluation:{method:'ai',result:'pending',feedback}},evidence=A.evidenceFor(candidate,m,{final:m.pool==='final'});
-        const evaluationResult=practiceReviewResult(result,record,m,A);const output=await R.update(record.id,{evaluation:{method:'ai',result:evaluationResult,feedback}},R.makeId('review'));
-        if(profile!==profileId||currentGeneration!==generation||storageBroken)return;
-        try{mutate(state=>{if(result.status==='complete'&&evaluationResult!=='pending')delete state.queue[record.id];else state.queue[record.id]={recordId:record.id,at:new Date().toISOString()};});}catch(error){notice('原稿及评阅已保存，待评索引更新失败：'+error.message,true);}
+        const retainPrevious=!!retainedReview&&result.status!=='complete',evaluationResult=retainPrevious?'pass':practiceReviewResult(result,candidate,m,A),storedFeedback=retainPrevious?feedbackForRecord({...retainedReview,reviewAttempt:JSON.parse(feedback)}):feedback;const output=await R.update(record.id,{evaluation:{method:'ai',result:evaluationResult,feedback:storedFeedback}},R.makeId('review'));
+        if(!current())return;
+        try{mutate(state=>{if(retainPrevious||result.status==='complete'&&evaluationResult!=='pending')delete state.queue[record.id];else state.queue[record.id]={recordId:record.id,at:new Date().toISOString()};});}catch(error){notice('原稿及评阅已保存，待评索引更新失败：'+error.message,true);}
         if(submittedRecord?.id===record.id){submittedRecord=output;showResult(output);}
         progress.finish('本次评阅处理已结束。');notice(result.status==='complete'?(withAudio&&body.task==='foundation'?'阿里三维专业诊断与两轮阶段目标反馈已保存；0–100分不换算IELTS Band。':withAudio&&result.audioAnalysisEvidence?(body.task==='foundation'?'原音观察与两轮阶段表达目标反馈已保存；基础任务不提供可比 Band。':'完整原音观察与两轮四维 AI 估计已保存。请回听时点核对；同一听音观察被两轮共享，仍可能共同误判。'):body.mode==='writing'?'两轮写作反馈已保存。请查看下方建议改法与原因，再建立订正版本。':'两轮反馈已保存；未完成声学验证的发音与流利度仍待验证。'):'评阅未全部完成，原稿、已返回意见及原音证据均已保留，可重试。');refreshHistory();
-      }catch(error){if(currentGeneration!==generation||profile!==profileId)return;notice('评阅未完成：'+(error.name==='AbortError'?'已取消或等待超时。':error.message)+' 原稿和原始录音保留。',true);}
+      }catch(error){if(!current())return;notice('评阅未完成：'+(error.name==='AbortError'?'已取消或等待超时。':error.message)+' 原稿和原始录音保留。',true);}
       finally{progress.cancel();clearTimeout(timer);cancelButton.remove?.();busy=false;if(reviewAbort===aborter)reviewAbort=null;}
     }
     function showPreservedRecord(record){
@@ -1110,6 +1139,6 @@
     root.addEventListener('pagehide',()=>{budgetDisposed=true;stopBudgetWatch?.();advanceTimer();if(attempt&&!submittedRecord){attempt.interrupted||=attempt.mode==='assessment';persistDraft();}stopMedia();reviewAbort?.abort();});
     let stopBudgetWatch=null;setInterval(advanceTimer,1000);load();if(root.IELTSYearPlanner?.watchMediaActivity)stopBudgetWatch=root.IELTSYearPlanner.watchMediaActivity(()=>refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true)));setInterval(()=>{if(!budgetDisposed&&!storageBroken&&!doc.hidden)refreshMediaBudget().catch(error=>notice('活动预算暂未刷新：'+error.message,true));},5000);const linkedMaterial=materialMap.get(params.get('material'));const mappedDay=linkedMaterial?data.days.find(d=>d.tasks.some(t=>t.materialIds.includes(linkedMaterial.id)))?.day:null;const hashDay=/^#day(\d+)$/.exec(root.location.hash||'');let initialPlacement=null;try{initialPlacement=placementRoute(data);}catch(_){}const initialDay=Number(params.get('day'))||Number(hashDay?.[1])||mappedDay||initialPlacement?.startDay||R.currentDay()||state.day;showDay(Math.min(365,Math.max(1,initialDay)),params.get('material'));refreshHistory().then(()=>{if(!pendingParent)return;const parent=records.find(r=>r.id===pendingParent.parentId);if(!parent){notice('关联原稿未找到，请从作品记录重新打开。',true);pendingParent=null;return;}const matching=dayPlan(day)?.tasks.find(t=>t.id===parent.skill);if(matching)showTask(matching,params.get('material'));notice('已关联原稿「'+parent.title+'」。选择同技能材料后点击开始，将保存'+(pendingParent.kind==='retest'?'复测':'订正')+'版本。'+(!materialMap.has(parent.materialId)?'原材料来自其他练习模块，请选择课程内同技能材料。':''));});
   }
-  const api={KEY,materialPreviouslySeen,MATERIAL_SNAPSHOT_LIMIT,freezeMaterialBinding,cleanMaterialBinding,resolveDraftMaterial,bindDraftMaterial,materialForRecord,mapItemGeometry,independentTask,audioCreditLink,newState,parseState,mergeState,draftProgress,preferredDraft,vocabularyPlanDifference,vocabularyTaskSummary,createSubmissionProgress,courseSelectionAccess,queueCourseDay,taskFor,prerequisiteStatus,protectedMaterialAccess,figureRows,figurePanels,planGeometry,reviewRequest,prepareAudio,audioSource,runReviewPipeline,feedbackForRecord,practiceReviewResult,foundationSpeaking,localHTTP,modelReadingReference,cleanModelReading,modelReadingSnapshot,validateModelReading,verifySpeakingStage,objectiveSubmissionComplete,submissionSatisfied,bindingMatchesMaterial,resolveCourseMaterial,freezeDayPlanBinding,cleanDayPlanBinding,publicPracticeAccess,resolvedCourseDay,dayReadiness,nextDestination,toRecord,prepareStudyDayEnd};root.IELTSCoursePlayer=Object.freeze(api);if(typeof module==='object'&&module.exports)module.exports=api;
+  const api={KEY,materialPreviouslySeen,MATERIAL_SNAPSHOT_LIMIT,freezeMaterialBinding,cleanMaterialBinding,resolveDraftMaterial,bindDraftMaterial,materialForRecord,mapItemGeometry,independentTask,audioCreditLink,newState,parseState,mergeState,draftProgress,preferredDraft,vocabularyPlanDifference,vocabularyTaskSummary,createSubmissionProgress,courseSelectionAccess,queueCourseDay,taskFor,prerequisiteStatus,protectedMaterialAccess,figureRows,figurePanels,planGeometry,reviewRequest,prepareAudio,audioSource,runReviewPipeline,feedbackForRecord,practiceReviewResult,foundationSpeaking,localHTTP,transcribeCourseAudio,modelReadingReference,cleanModelReading,modelReadingSnapshot,validateModelReading,verifySpeakingStage,objectiveSubmissionComplete,submissionSatisfied,bindingMatchesMaterial,resolveCourseMaterial,freezeDayPlanBinding,cleanDayPlanBinding,publicPracticeAccess,resolvedCourseDay,dayReadiness,nextDestination,toRecord,prepareStudyDayEnd};root.IELTSCoursePlayer=Object.freeze(api);if(typeof module==='object'&&module.exports)module.exports=api;
   if(root.document?.getElementById('coursePlayerApp'))init();
 })(typeof window!=='undefined'?window:globalThis);

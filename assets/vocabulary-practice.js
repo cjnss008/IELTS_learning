@@ -45,6 +45,16 @@
     }
     return out;
   }
+  function sourceContextLabel(word,material,options={}) {
+    const day=Number(options.courseDay),curriculum=options.curriculumData||root.IELTSCurriculumData;
+    if(!Number.isInteger(day)||day<2||day>10||material?.source?.kind!=='derived-lexical')return '';
+    const quote=String(word?.example||'').trim(),raw=(material.vocabulary||[]).find(item=>normalizeAnswer(item.word)===normalizeAnswer(word.word)&&String(item.example||'').trim()===quote),ids=raw?.sourceMaterialId?[raw.sourceMaterialId]:material.source.sourceIds||[];
+    const sources=(curriculum?.materials||[]).filter(item=>ids.includes(item.id)&&quote&&(item.skill==='listening'?item.transcript:item.passage||'')?.includes(quote));
+    if(!sources.length)return '其他课原句 · 原来源待核验；保留这份原词义和例句，不据此判断同源听力完全陌生。';
+    const days=[...new Set((curriculum.days||[]).filter(item=>item.tasks?.some(task=>task.materialIds?.some(id=>sources.some(source=>source.id===id)))).map(item=>item.day))].sort((a,b)=>a-b),first=days[0];
+    const label=Number.isInteger(first)?first>day?'本周其他课原句预习':first===day?'本课听力原句':'其他课原句':'其他课原句';
+    return label+' · 来源：'+(Number.isInteger(first)?'第 '+first+' 课，':'')+sources.map(item=>item.title||item.id).join(' / ')+'。同源听力不应当作完全陌生检测。';
+  }
   function createSession(options = {}) {
     if (typeof options.draft === 'string' && options.draft.length > 15000) throw Error('词汇草稿超过15KB，已保留原稿。');
     const incoming = typeof options.draft === 'string' ? JSON.parse(options.draft) : options.draft;
@@ -354,6 +364,7 @@
         const history=options.wordHistory?.[normalizeAnswer(word.word)];if(history==='new'||history==='review'){card.dataset.wordHistory=history;header.append(node('span','vocab-word-history',history==='new'?'本课新词':'前课巩固'));}
         const note = status(studyRestoreNotes.get(index) || ''), play = button('听读',async () => { play.disabled = true; try { check(); if(['requesting','recording'].includes(speaker?.getState?.().phase))throw Error('请先结束当前麦克风录音，再播放示范，避免把示范声音录入。'); await player.play(word,text => { note.textContent = text; }); check(); note.textContent = '已完成听读。'; } catch (error) { note.textContent = error.message; } finally { if (!destroyed) play.disabled = false; } });
         header.append(play); card.append(header,node('p','vocab-meaning',word.meaning || '词义待查询'),node('p','vocab-example',word.example || '例句待查询'));
+        const sourceLabel=sourceContextLabel(word,options.material,options);if(sourceLabel)card.append(node('p','vocab-source-context',sourceLabel));
         if (word.exampleTranslation) card.append(node('p','vocab-translation',word.exampleTranslation));
         if (options.lookup && (!word.ipa || !word.meaning || !word.example)) {
           const query = button('AI 补全词条',async () => {
@@ -462,6 +473,6 @@
     })();
     return {ready,getMediaState:()=>speaker?.getState?.() || null,pause(){speaker?.cancel?.('练习已暂停，未完成的跟读不计次数。');player.cancel();},getState:session.getState,getDraft:session.getDraft,getSubmission:session.getSubmission,submit,destroy() { destroyed = true; testingEvent(false);speaker?.destroy?.(); player.cancel(); root.removeEventListener?.('ielts:profile-changed',profileChanged); }};
   }
-  return {MODES,NAMES,verifyTrainingArtifact,normalizeAnswer,maskWord,wordsFor,createSession,createAudioPlayer,mount};
+  return {MODES,NAMES,verifyTrainingArtifact,normalizeAnswer,maskWord,wordsFor,sourceContextLabel,createSession,createAudioPlayer,mount};
 });
 

@@ -19,3 +19,7 @@ audio/human-listening/** filter=lfs diff=lfs merge=lfs -text
 audio/public/** filter=lfs diff=lfs merge=lfs -text
 
 audio/independent-bank/us/** filter=lfs diff=lfs merge=lfs -text
+
+# Portable local English recognizer and model; no learner audio.
+runtime-packages/local-asr/*.zip filter=lfs diff=lfs merge=lfs -text
+runtime-packages/local-asr/*.bin filter=lfs diff=lfs merge=lfs -text

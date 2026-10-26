@@ -224,7 +224,7 @@ function createServer(options = {}) {
   const evidenceStore = createEvidenceStore();
   const placement = placementModule.createPlacement({ rootDir, userData, curriculum: options.placementCurriculum || curriculum, evidenceStore, sourcePolicy: options.placementSourcePolicy, ...(options.placementNow ? { now: options.placementNow } : {}) });
   const speechHandler = createSpeechHandler({ fetchImpl, budget, evidenceStore });
-  const transcriptionHandler = createTranscriptionHandler({ fetchImpl, budget, evidenceStore, getSpeechConfig: speechHandler.getConfig, timeoutMs: options.transcriptionTimeoutMs || 180000 });
+  const transcriptionHandler = createTranscriptionHandler({ fetchImpl, budget, evidenceStore, localASR: options.localASR || require('./local-asr.cjs').createLocalASR({ cacheDir: path.join(userData.root, 'runtime', 'local-asr-v1'), bundleDir: path.join(rootDir, 'runtime-packages', 'local-asr') }), getSpeechConfig: speechHandler.getConfig, timeoutMs: options.transcriptionTimeoutMs || 180000 });
   const omniHandler = createOmniHandler({ fetchImpl, budget, evidenceStore, timeoutMs: options.omniTimeoutMs || 180000 });
   const dialogue = dialogueModule.createDialogueStore();
   const writingPath=writingPathModule.createWritingPath({keyPath:options.writingPathKeyPath||userData.paths.signingKey,verificationKeyPaths:userData.signingKeyPaths,keyMigrationIssue:options.writingPathKeyPath?()=>null:userData.signingKeyIssue,...(options.writingPathNow?{now:options.writingPathNow}:{})});
@@ -585,13 +585,15 @@ function createServer(options = {}) {
         if (proof.kind === 'free_speech_audio' && (proof.prompt !== input.prompt || proof.transcript !== input.text || proof.scope !== input.task)) throw new AppError(409, 'AUDIO_EVIDENCE_MISMATCH', '音频观察与当前题目、转写或任务不一致，请先按当前作品重新提交音频。');
         if(proof.kind==='pronunciation'&&(proof.scope!=='short_reading'||proof.reference!==input.text))throw new AppError(409,'AUDIO_EVIDENCE_MISMATCH','专业评测原音与本次转写不匹配，请重新提交这份原音。');
         input.audioEvidence = proof;
+        if(body.transcriptionEvidenceId!==undefined){try{input.transcriptionEvidence=require('./transcription-proof.cjs').checkedTranscription(evidenceStore,body.transcriptionEvidenceId,proof,input.text);}catch(error){throw new AppError(409,'TRANSCRIPTION_EVIDENCE_MISMATCH',error.message);}}
       }
       const result=await runReview(req,res,input);
       if (res.destroyed) return;
       if(input.mode==='writing'&&result.status==='complete')result.reviewEvidenceId=evidenceStore.add({kind:'writing_review',text:input.text,prompt:input.prompt,task:input.task,level:input.level,result:structuredClone(result)});
       result.audioAnalysisEvidence = input.audioEvidence?.kind === 'free_speech_audio' && input.audioEvidence.eligible === true;
       if(result.audioAnalysisEvidence){result.audioEvidenceId=body.evidenceId;result.disclaimer+=' 音频观察来自配置的Omni实际分段听音，两轮文字评阅共享这些观察，仍可能有共同误判。';}
-      if(input.audioEvidence?.kind==='pronunciation'&&input.task==='foundation')result.pronunciationEvidence={provider:'ali',evidenceId:body.evidenceId,reference:input.audioEvidence.reference,result:input.audioEvidence.result,durationSeconds:input.audioEvidence.durationSeconds};
+      if(input.audioEvidence?.kind==='pronunciation'&&input.task==='foundation')result.pronunciationEvidence={provider:'ali',evidenceId:body.evidenceId,reference:input.audioEvidence.reference,result:input.audioEvidence.result,durationSeconds:input.audioEvidence.durationSeconds,audioSha256:input.audioEvidence.audioSha256};
+      if(input.transcriptionEvidence)result.transcriptionEvidence=input.transcriptionEvidence;
       return sendJson(res, 200, result);
     }
     if (req.method === 'POST' && pathname === '/api/ai/speech-advice') {

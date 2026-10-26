@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "version": "1.8.2-static-baseline-1",
+  "platform": "win32",
+  "arch": "x64",
+  "release": {
+    "url": "https://bundled.invalid/ielts-whisper-1.8.2-windows-x64-static-baseline.zip",
+    "bundleOnly": true,
+    "bytes": 9129374,
+    "sha256": "7e8e18f5836d9dbfeb15445375c240f904acc29fd4f3f62094f3bc17d9b4d69c"
+  },
+  "model": {
+    "name": "base.en",
+    "file": "ggml-base.en.bin",
+    "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+    "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/5359861c739e955e79d9a303bcbc70fb988958b1/ggml-base.en.bin",
+    "bytes": 147964211,
+    "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+  },
+  "files": [
+    {
+      "name": "whisper-cli.exe",
+      "bytes": 3895296,
+      "sha256": "cad354cd9d8e1f242ee438809a9d3a55bd957f1a689019480ce0bedf0078c8f8"
+    }
+  ],
+  "runtime": {
+    "type": "static-cpp-windows-ucrt",
+    "windowsMinimum": "10 x64",
+    "requiresMsvcRedistributable": false,
+    "openmp": false,
+    "baselineCpu": true
+  },
+  "build": {
+    "sourceVersion": "1.8.2",
+    "sourceCommit": "4979e04f5dcaccb36057e059bbaed8a2f5288315",
+    "sourceSha256": "ec8e33f4c838ed459ad0a23da255c0262f150a6f54839a17e504ddf1495305d5",
+    "toolchain": "LLVM-MinGW 20261020 UCRT x86_64",
+    "patch": "0001-common-include-algorithm.patch"
+  }
+}

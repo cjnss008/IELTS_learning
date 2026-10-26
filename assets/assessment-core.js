@@ -152,6 +152,31 @@
       return value && Array.isArray(value.rounds) ? value : null;
     } catch (_) { return null; }
   }
+  // ASR is an append-only interpretation of the original audio. It never replaces
+  // record.answer, the learner's old transcript, timestamps, quantity or media.
+  function transcriptionForRecord(record,source) {
+    try{
+      const artifact=decodeArtifact(record);if(record?.skill!=='speaking'||!artifact)return null;
+      const explicit=source!==undefined;let review={};if(!explicit){review=JSON.parse(record.evaluation?.feedback||'{}');source=review.transcriptionSource;}
+      const keys=['schema','evidenceId','provider','text','textSha256','audioSha256','durationSeconds','verifiedAt','recordId','materialId','materialVersion','bindingContentHash','mediaIds','mediaRanges'];
+      if(!source||typeof source!=='object'||Array.isArray(source)||Object.keys(source).some(k=>!keys.includes(k))||source.schema!==1||source.recordId!==record.id||source.materialId!==record.materialId||String(source.materialVersion)!==String(record.materialVersion)||typeof source.evidenceId!=='string'||!source.evidenceId||source.evidenceId.length>160||typeof source.provider!=='string'||!source.provider.trim()||source.provider.length>100)return null;
+      if(typeof source.text!=='string'||!source.text.trim()||source.text.length>10000||sourceTextHash(source.text)!==source.textSha256||!/^[a-f0-9]{64}$/.test(source.audioSha256||'')||!Number.isFinite(source.durationSeconds)||source.durationSeconds<=0||source.durationSeconds>900||typeof source.verifiedAt!=='string'||!Number.isFinite(Date.parse(source.verifiedAt)))return null;
+      const binding=artifact.materialBinding,ids=(record.media||[]).map(m=>m.id);if(!binding||!resolveArtifactMaterial(null,artifact,record).valid||source.bindingContentHash!==binding.contentHash||!ids.length||new Set(ids).size!==ids.length||!Array.isArray(source.mediaIds)||source.mediaIds.length!==ids.length||!source.mediaIds.every((id,i)=>id===ids[i]))return null;
+      let cursor=0;if(!Array.isArray(source.mediaRanges)||source.mediaRanges.length!==ids.length||!source.mediaRanges.every((range,i)=>{const valid=range&&Object.keys(range).every(k=>['id','startSeconds','endSeconds'].includes(k))&&range.id===ids[i]&&Number.isFinite(range.startSeconds)&&Number.isFinite(range.endSeconds)&&Math.abs(range.startSeconds-cursor)<.001&&range.endSeconds>range.startSeconds&&range.endSeconds<=source.durationSeconds+.05;cursor=range.endSeconds;return valid;})||Math.abs(cursor-source.durationSeconds)>.05)return null;
+      // Existing local records are not cryptographic certificates. For completed
+      // reviews, nevertheless require exact agreement with both server-returned
+      // ASR evidence and the acoustic evidence rather than trusting an appendix alone.
+      if(!explicit&&(record.evaluation?.method==='ai'||review.status==='complete')){
+        const proof=review.transcriptionEvidence;if(!proof||proof.schema!==1||!['evidenceId','provider','text','textSha256','audioSha256','durationSeconds','verifiedAt'].every(k=>proof[k]===source[k]))return null;
+        const acoustic=review.pronunciationSource||review.audioSource;if(!acoustic||acoustic.audioSha256!==source.audioSha256||!Number.isFinite(acoustic.durationSeconds)||Math.abs(acoustic.durationSeconds-source.durationSeconds)>.1||review.pronunciationSource&&acoustic.reference!==source.text)return null;
+      }
+      return JSON.parse(JSON.stringify(source));
+    }catch(_){return null;}
+  }
+  function effectiveSpeakingTranscript(record){
+    const artifact=decodeArtifact(record);if(typeof artifact?.transcript==='string'&&artifact.transcript.trim())return artifact.transcript;
+    return transcriptionForRecord(record)?.text||'';
+  }
   function assistanceUsed(record) { return Boolean(record?.assistance && ['hint', 'answer', 'ai'].some(key => record.assistance[key] === true)); }
   function audioGrounded(item,dimension,review,record) {
     const source=review?.audioSource,duration=source?.durationSeconds,mediaIds=(record.media||[]).map(m=>m.id);
@@ -163,7 +188,7 @@
     const review = decodeReview(record);
     const required = material.skill === 'writing' ? ['task', 'coherence', 'lexical', 'grammar'] : ['fluency', 'lexical', 'grammar', 'pronunciation'];
     const artifact = decodeArtifact(record);
-    const text = normalizeAnswer(artifact?.text || artifact?.transcript || '');
+    const text = normalizeAnswer(material.skill==='speaking'?effectiveSpeakingTranscript(record):artifact?.text||'');
     const rounds = review?.rounds?.filter(round => round.ok === true) || [];
     const reasons = [];
     if (review?.status !== 'complete') reasons.push('两轮评阅尚未完整完成');
@@ -197,10 +222,10 @@
     const artifact = decodeArtifact(record), reasons = [];
     const now = typeof options.now === 'number' ? options.now : Date.now();
     if (!record || !artifact) return {pass: false, pending: true, reasons: ['缺少课程原始作答记录']};
+    if(Object.hasOwn(artifact,'lessonSupplement'))reasons.push('本次属于普通课程补充，不提供独立测评或进阶新材料证据');
     const resolved=resolveArtifactMaterial(material,artifact,record);
     if(!resolved.valid)return{pass:false,pending:true,reasons:[resolved.reason],artifact};
     if(practiceOnlyMaterial(material)||practiceOnlyMaterial(resolved.material))reasons.push('此来源仅用于普通练习，不提供独立测评或进阶迁移证据');
-    if(Object.hasOwn(artifact,'lessonSupplement'))reasons.push('本次属于普通课程补充，不提供独立测评或进阶新材料证据');
     material=resolved.material;
     if (record.materialId !== material.id || String(record.materialVersion || artifact.materialVersion) !== String(material.version)) reasons.push('材料或版本不匹配');
     if (artifact.mode !== 'assessment') reasons.push('这是练习记录，不是独立测评');
@@ -224,7 +249,7 @@
       if (grade.ratio === null || grade.ratio < threshold) reasons.push('客观题尚未达到本阶段训练线');
       if (material.skill === 'listening' && (!artifact.audioCompleted || !artifact.audioAvailable || artifact.transcriptViewed)) reasons.push('缺少完整听音证据，或作答时已查看听力原文');
     } else if (['writing', 'speaking'].includes(material.skill)) {
-      const text = material.skill === 'writing' ? artifact.text : artifact.transcript;
+      const text = material.skill === 'writing' ? artifact.text : effectiveSpeakingTranscript(record);
       if (material.minWords && countWords(text) < material.minWords) reasons.push('原始输出未满足该任务最低词数');
       if (options.final || material.fullTest) {
         ai = evaluatedCriteria(record, material, options.target || 7);
@@ -303,7 +328,7 @@
     const dueAt = Number.isFinite(submitted) ? submitted + 48 * 3600000 : Infinity;
     return {due: now >= dueAt, dueAt: Number.isFinite(dueAt) ? new Date(dueAt).toISOString() : null, materials: alternatives.filter(material => material.id !== record?.materialId), message: now >= dueAt ? '可以使用未见同级材料复测' : '先订正，至少间隔 48 小时后换题复测'};
   }
-  const api = Object.freeze({SKILLS, practiceOnlyMaterial, normalizeAnswer, countWords, displayOptions, sourceTextHash, materialContentHash, resolveArtifactMaterial, legacyMaterialContract, legacyMaterialContractHash, createLegacyMaterialCompatibilityIndex, proveLegacyMaterial, gradeQuestion, gradeMaterial, gradeMaterialForArtifact, decodeArtifact, decodeReview, assistanceUsed, audioGrounded, evaluatedCriteria, evidenceFor, groupAssessments, gateMastery, readiness, remediation, retestAvailability, localDate});
+  const api = Object.freeze({SKILLS, practiceOnlyMaterial, normalizeAnswer, countWords, displayOptions, sourceTextHash, materialContentHash, resolveArtifactMaterial, legacyMaterialContract, legacyMaterialContractHash, createLegacyMaterialCompatibilityIndex, proveLegacyMaterial, gradeQuestion, gradeMaterial, gradeMaterialForArtifact, decodeArtifact, decodeReview, transcriptionForRecord, effectiveSpeakingTranscript, assistanceUsed, audioGrounded, evaluatedCriteria, evidenceFor, groupAssessments, gateMastery, readiness, remediation, retestAvailability, localDate});
   root.IELTSAssessment = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -14,7 +14,7 @@
   function list(v,max,label){if(!Array.isArray(v)||Object.getPrototypeOf(v)!==Array.prototype||v.length>max||Object.keys(v).length!==v.length)throw Error(label+'无效。');for(let n=0;n<v.length;n++){const d=Object.getOwnPropertyDescriptor(v,String(n));if(!d||d.get||d.set)throw Error(label+'含空项或访问器。');}return v;}
   function at(v){if(typeof v!=='string'||!Number.isFinite(Date.parse(v))||new Date(v).toISOString()!==v)throw Error('错题时间无效。');return v;}
   function safeJSON(v,depth=0){if(depth>18)throw Error('错题证据嵌套过深。');if(v===null||typeof v==='boolean')return v;if(typeof v==='number'){if(!Number.isFinite(v))throw Error('错题证据数字无效。');return v;}if(typeof v==='string')return text(v,60000,'证据文本');if(Array.isArray(v))return list(v,2000,'证据列表').map(x=>safeJSON(x,depth+1));plain(v,'证据');const out={};for(const k of Object.keys(v)){if(['__proto__','constructor','prototype'].includes(k))throw Error('错题证据键无效。');const d=Object.getOwnPropertyDescriptor(v,k);if(d.get||d.set)throw Error('错题证据不得包含访问器。');out[k]=safeJSON(v[k],depth+1);}return out;}
-  function reviewEvidence(value){const result=safeJSON(value??null);if(result?.record&&typeof result.record==='object'){const record=result.record;result.record=Object.fromEntries(['id','materialId','skill','answer','media','version'].filter(k=>own(record,k)).map(k=>[k,record[k]]));}return result;}
+  function reviewEvidence(value){const result=safeJSON(value??null);if(result?.record&&typeof result.record==='object'){const record=result.record;result.record=Object.fromEntries(['id','materialId','materialVersion','skill','answer','media','version','submittedAt'].filter(k=>own(record,k)).map(k=>[k,record[k]]));}return result;}
   function stable(v){if(Array.isArray(v))return'['+v.map(stable).join(',')+']';if(v&&typeof v==='object')return'{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+stable(v[k])).join(',')+'}';return JSON.stringify(v);}
   function hash(v){const str=typeof v==='string'?v:stable(v);let a=2166136261,b=5381;for(let n=0;n<str.length;n++){a=Math.imul(a^str.charCodeAt(n),16777619);b=Math.imul(b,33)^str.charCodeAt(n);}return(a>>>0).toString(36)+(b>>>0).toString(36);}
   const makeId=prefix=>prefix+'-'+(root.crypto?.randomUUID?root.crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2));
@@ -67,7 +67,7 @@
       const recordVersions={};dictionary(v.recordVersions||{},10000,'本日作品快照');for(const [recordId,version]of Object.entries(v.recordVersions||{})){id(recordId,'本日原作ID');fields(version,['version','signature'],'本日作品版本');if(!Number.isInteger(version.version)||version.version<1||version.version>10000)throw Error('本日作品版本无效。');recordVersions[recordId]={version:version.version,signature:text(version.signature,100,'本日作品摘要',false)};}
       out.days[d]={rounds,drafts,completion,recordVersions};
     }
-    for(const daily of Object.values(out.days))for(const round of daily.rounds)for(const result of round.results){if(result.status!=='passed')continue;const item=out.items.find(i=>i.id===result.itemId),grade=item.question.type==='oral'?oralGrade(item,result.evidence):item.question.type==='subjective'?subjectiveGrade(item,{answer:result.answer,media:result.media},result.evidence):(result.evidence?.choiceMatching==='canonical-v2'?gradeObjective:gradeObjectiveLegacy)(item.question,result.answer);if(grade.status!=='passed')throw Error('订正通过标记缺少正确答案或有效评阅证据。');}
+    for(const daily of Object.values(out.days))for(const round of daily.rounds)for(const result of round.results){if(result.status!=='passed')continue;const item=out.items.find(i=>i.id===result.itemId),grade=item.question.type==='oral'?oralGrade(item,result.evidence):item.question.type==='subjective'?subjectiveGrade(item,{answer:result.answer,media:result.media},result.evidence,{historical:true}):(result.evidence?.choiceMatching==='canonical-v2'?gradeObjective:gradeObjectiveLegacy)(item.question,result.answer);if(grade.status!=='passed')throw Error('订正通过标记缺少正确答案或有效评阅证据。');}
     for(const item of out.items){if(item.lastRoundId){const round=out.days[item.dayNumber]?.rounds.find(r=>r.id===item.lastRoundId),result=round?.results.find(r=>r.itemId===item.id);if(!result||result.status!==item.status)throw Error('错题状态与最后订正轮次不一致。');}else if(item.status==='passed')throw Error('错题未经提交不能消失。');}
     return out;
   }
@@ -163,9 +163,34 @@
     }
     const pass=Object.keys(thresholds).every(k=>scores[k]>=thresholds[k]);return{status:pass?'passed':'wrong',feedback:pass?(proof.validationVersion===2&&targetWord?'目标词 '+targetWord+' 的真实词级准确度及本次三维指标均达到训练线。':archive?'已核验的本机归档录音达到准确度、流利度和完整度训练线；不是本次新调用。':'本次新录音达到准确度、流利度和完整度训练线。'):'本次录音仍有维度未达训练线，请继续跟读并重新录音。',evidence:safeJSON(proof)};
   }
-  function subjectiveGrade(item,value,result){
+  // New spoken corrections must follow the errors they correct. Older saved
+  // rounds retain their existing contract; versioned rounds retain their own
+  // occurrence cutoff so later errors do not invalidate the historical round.
+  function speakingCorrectionTiming(item,result,options={}){
+    if(item?.skill!=='speaking'||item.question?.type!=='subjective')return{valid:true,result};
+    try{
+      const saved=result?.speakingCorrectionTiming;
+      if(options.historical===true&&saved===undefined)return{valid:true,result};
+      let occurrences=item.occurrences;
+      if(!Array.isArray(occurrences)||!occurrences.length)return{valid:false,result};
+      if(options.historical===true){
+        if(!saved||saved.schema!==1||Object.keys(saved).some(k=>!['schema','errorOccurrenceIds','errorCutoffAt'].includes(k))||!Array.isArray(saved.errorOccurrenceIds)||!saved.errorOccurrenceIds.length||new Set(saved.errorOccurrenceIds).size!==saved.errorOccurrenceIds.length)return{valid:false,result};
+        occurrences=saved.errorOccurrenceIds.map(id=>item.occurrences.find(o=>o.id===id));if(occurrences.some(o=>!o))return{valid:false,result};
+      }
+      const times=occurrences.map(o=>typeof o.at==='string'?Date.parse(o.at):NaN),submitted=typeof result?.record?.submittedAt==='string'?Date.parse(result.record.submittedAt):NaN;
+      if(times.some(t=>!Number.isFinite(t))||!Number.isFinite(submitted))return{valid:false,result};
+      const cutoff=Math.max(...times),marker={schema:1,errorOccurrenceIds:occurrences.map(o=>o.id),errorCutoffAt:new Date(cutoff).toISOString()};
+      if(options.historical===true&&saved.errorCutoffAt!==marker.errorCutoffAt)return{valid:false,result};
+      const priorIds=new Set(occurrences.map(o=>o.recordId)),priorMedia=new Set(occurrences.flatMap(o=>o.media||[]).map(m=>m.id)),record=result?.record;
+      const valid=submitted>=cutoff&&typeof record?.id==='string'&&!priorIds.has(record.id)&&Array.isArray(record.media)&&record.media.length>0&&record.media.every(m=>!priorMedia.has(m.id));
+      return{valid,result:{...result,speakingCorrectionTiming:marker}};
+    }catch(_){return{valid:false,result};}
+  }
+  function subjectiveGrade(item,value,result,options={}){
+    const timing=speakingCorrectionTiming(item,result,options);result=timing.result;
+    if(!timing.valid)return{status:'pending',feedback:'请在本题最近一次错误之后保存不同原稿与新录音，再取得完整评阅；早于错误或时间无效的历史作品不能代替本次订正。',evidence:reviewEvidence(result)};
     const supplied=submissionWithRecord(item,value,result),q=item.question,review=result?.review||result?.result||result,raw=result?.record;let feedback=typeof result?.feedback==='string'?result.feedback:'';
-    if(raw){const artifact=decoded(raw.answer),actual=artifact?(item.skill==='speaking'?artifact.transcript:artifact.text):raw.answer;if(normalize(actual)!==normalize(supplied.answer)||raw.skill&&raw.skill!==item.skill||raw.materialId&&raw.materialId!==item.materialId)return{status:'pending',feedback:'评阅来源与这次提交的原稿不匹配，请重新评阅本次原稿。',evidence:reviewEvidence(result)};}
+    if(raw){const artifact=decoded(raw.answer),actual=artifact?(item.skill==='speaking'?effectiveSpeech(raw,review):artifact.text):raw.answer;if(normalize(actual)!==normalize(supplied.answer)||raw.skill&&raw.skill!==item.skill||raw.materialId&&raw.materialId!==item.materialId)return{status:'pending',feedback:'评阅来源与这次提交的原稿不匹配，请重新评阅本次原稿。',evidence:reviewEvidence(result)};}
     if(!review||review.status!=='complete'||!Array.isArray(review.rounds)){const errors=(Array.isArray(review?.rounds)?review.rounds:[]).filter(r=>r?.ok!==true).map(r=>[r.error?.code,r.error?.message].filter(v=>typeof v==='string').join('：').slice(0,400)).filter(Boolean).join('；').replace(/\bBearer\s+[^\s；]+/gi,'Bearer [已隐藏]').replace(/\bsk-[A-Za-z0-9_-]{8,}\b/g,'[已隐藏]').slice(0,1000);return{status:'pending',feedback:(feedback||'评阅未完成，已保留本次原稿，请重试。')+(errors?' 原因：'+errors:''),evidence:reviewEvidence(result)};}
     const rounds=review.rounds.filter(r=>r?.ok===true),original=normalize(supplied.answer),grounded=e=>typeof e?.quote==='string'&&normalize(e.quote)&&original.includes(normalize(e.quote));
     if(rounds.length<2||new Set(rounds.map(r=>r.round)).size<2)return{status:'pending',feedback:'两轮 AI 评阅尚未完整返回，本题保持待评。',evidence:reviewEvidence(result)};
@@ -195,7 +220,7 @@
   }
   function submissionWithRecord(item,value,result){
     const supplied=submission(value),record=result?.record;if(!record)return supplied;
-    const artifact=decoded(record.answer),raw=artifact?(item.skill==='speaking'?artifact.transcript:artifact.text):record.answer;
+    const artifact=decoded(record.answer),raw=artifact?(item.skill==='speaking'?effectiveSpeech(record,result?.review||result?.result||result):artifact.text):record.answer;
     if(normalize(raw)!==normalize(supplied.answer))return supplied;
     if(item.skill==='speaking'&&!supplied.media.length&&Array.isArray(record.media)){
       const originalIds=new Set((item.occurrences[0].media||[]).map(m=>m.id)),fresh=media(record.media);
@@ -204,7 +229,7 @@
     return supplied;
   }
   function fullReviewCheck(record,material,review){
-    const acoustic=material.skill==='speaking',required=acoustic?['fluency','lexical','grammar','pronunciation']:['task','coherence','lexical','grammar'],rounds=review.rounds.filter(r=>r.ok===true),artifact=decoded(record.answer),original=normalize(artifact?.text||artifact?.transcript||''),reasons=[];
+    const acoustic=material.skill==='speaking',required=acoustic?['fluency','lexical','grammar','pronunciation']:['task','coherence','lexical','grammar'],rounds=review.rounds.filter(r=>r.ok===true),artifact=decoded(record.answer),original=normalize(acoustic?effectiveSpeech(record,review):artifact?.text||''),reasons=[];
     function audioGrounded(criterion,dimension){
       const source=review.audioSource,duration=source?.durationSeconds,ids=(record.media||[]).map(m=>m.id);if(review.audioAnalysisEvidence!==true||!source||source.recordId!==record.id||source.completeCoverage!==true||!ids.length||!Array.isArray(source.mediaIds)||source.mediaIds.length!==ids.length||!source.mediaIds.every((id,i)=>id===ids[i])||!Number.isFinite(duration)||duration<=0||duration>900||!Array.isArray(source.segments)||!source.segments.length)return false;
       let cursor=0;for(const segment of source.segments){if(!Number.isFinite(segment.startSeconds)||!Number.isFinite(segment.endSeconds)||Math.abs(segment.startSeconds-cursor)>.03||segment.endSeconds<=segment.startSeconds||segment.endSeconds>duration+.03||segment.audible!==true||!Array.isArray(segment.fluencyIds)||!segment.fluencyIds.length||!Array.isArray(segment.pronunciationIds)||!segment.pronunciationIds.length)return false;cursor=segment.endSeconds;}if(Math.abs(cursor-duration)>.05)return false;
@@ -247,8 +272,9 @@
     for(const [d,day]of Object.entries(out.days)){const token=tokenFor(out,Number(d));const valid=[a.days[d]?.completion,b.days[d]?.completion].filter(c=>c?.token===token).sort((x,y)=>y.at.localeCompare(x.at));day.completion=valid[0]||null;}return parseState(out);
   }
   function decoded(v){try{return JSON.parse(v);}catch(_){return null;}}
+  function effectiveSpeech(record,review){const api=root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),view=review?{...record,evaluation:{method:'ai',result:'pending',feedback:JSON.stringify(review)}}:record;return api?.effectiveSpeakingTranscript(view)||'';}
   function explicitRecordError(record,artifact=decoded(record?.answer)){
-    const evaluationValue=record?.evaluation||{},review=decoded(evaluationValue.feedback)||artifact?.review,original=normalize(artifact?(record.skill==='speaking'?artifact.transcript:artifact.text)||record.answer:record?.answer),grounded=quote=>typeof quote==='string'&&normalize(quote)&&original.includes(normalize(quote));
+    const evaluationValue=record?.evaluation||{},review=decoded(evaluationValue.feedback)||artifact?.review,original=normalize(artifact?(record.skill==='speaking'?effectiveSpeech(record):artifact.text)||record.answer:record?.answer),grounded=quote=>typeof quote==='string'&&normalize(quote)&&original.includes(normalize(quote));
     if(evaluationValue.result==='revise')return true;
     if(evaluationValue.method==='objective'&&Number.isFinite(evaluationValue.score)&&Number.isFinite(evaluationValue.maxScore)&&evaluationValue.maxScore>0&&evaluationValue.score<evaluationValue.maxScore)return true;
     return Array.isArray(review?.rounds)&&review.rounds.some(round=>round?.ok===true&&(round.levelCheck?.meetsGoal===false&&round.levelCheck.evidence?.some(e=>grounded(e.quote))||Array.isArray(round.corrections)&&round.corrections.some(c=>c&&grounded(c.original)&&typeof c.revised==='string'&&c.revised.trim()&&typeof c.reason==='string'&&c.reason.trim()&&normalize(c.original)!==normalize(c.revised))));
@@ -274,7 +300,7 @@
     if(hasError){
       const q=question({id:'output',type:'subjective',prompt:material?.prompt||material?.instructions||record.title,answers:[],task:material?.rubric?.taskType||material?.rubric?.task||'foundation',level:(String(material?.level||'A0').match(/A[012]|B[12]|C[12]/g)||['A0']).at(-1),minWords:material?.minWords||0,fullTest:material?.fullTest===true||material?.pool==='final',...(material?{material:{id:material.id,skill:material.skill,fullTest:material.fullTest===true,pool:material.pool||'',minWords:material.minWords||0,rubric:material.rubric||{}}}:{})});
       // Once a real error was captured, a later review never erases the original error or its required redo.
-      const raw=artifact?(record.skill==='speaking'?artifact.transcript:artifact.text)||record.answer:record.answer;out.push({...base,questionId:'output',question:q,originalAnswer:raw,status:'wrong'});
+      const raw=artifact?(record.skill==='speaking'?effectiveSpeech(record):artifact.text)||record.answer:record.answer;out.push({...base,questionId:'output',question:q,originalAnswer:raw,status:'wrong'});
     }
     return out;
   }

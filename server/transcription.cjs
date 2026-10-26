@@ -1,6 +1,7 @@
 'use strict';
 const {checkWav}=require('./speech.cjs');
 const {BudgetError}=require('./budget.cjs');
+const {LocalASRError}=require('./local-asr.cjs');
 class TranscriptionError extends Error{constructor(status,code,message){super(message);this.status=status;this.code=code;}}
 const safe=(text,key,max=20000)=>typeof text==='string'?text.split(key).join('[已隐藏]').replace(/</g,'＜').replace(/>/g,'＞').slice(0,max):'';
 function normalize(data,key,duration){
@@ -9,10 +10,11 @@ function normalize(data,key,duration){
  const segments=(Array.isArray(data.phrases)?data.phrases:[]).slice(0,1000).filter(p=>p&&typeof p.text==='string'&&Number.isFinite(p.offsetMilliseconds)&&Number.isFinite(p.durationMilliseconds)&&p.offsetMilliseconds>=0&&p.durationMilliseconds>=0&&p.offsetMilliseconds+p.durationMilliseconds<=(duration+2)*1000).map((p,index)=>({id:'segment-'+index,startSeconds:p.offsetMilliseconds/1000,endSeconds:(p.offsetMilliseconds+p.durationMilliseconds)/1000,text:safe(p.text,key,2000),confidence:typeof p.confidence==='number'&&p.confidence>=0&&p.confidence<=1?p.confidence:null}));
  return {text,segments,durationSeconds:duration,disclaimer:'自动转写可能漏词或改写。请逐段对照原音频编辑；转写置信度与时间戳不是发音分或IELTS成绩。'};
 }
-function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpeechConfig=()=>null,timeoutMs=180000}={}){
+function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpeechConfig=()=>null,timeoutMs=180000,localASR=null}={}){
  let config=null,controller=null,verified=false;
- const active=()=>config?.useSpeechConnection?getSpeechConfig():config;
- const status=()=>({ok:true,configured:Boolean(active()),provider:active()?.provider==='qwen-asr'?'Qwen ASR':'Azure fast transcription',providerId:active()?.provider||'azure',model:active()?.model||'',endpoint:active()?.endpoint||'',useSpeechConnection:Boolean(config?.useSpeechConnection),verified,credentialStorage:handle.getCredentialStorage?.()||'memory',maxSeconds:active()?.provider==='qwen-asr'?300:900});
+ const localConnection=localASR?.available?Object.freeze({provider:'whisper-cpp-local',model:'base.en'}):null;
+ const active=()=>(config?.useSpeechConnection?getSpeechConfig():config)||localConnection;
+ const status=()=>({ok:true,courseTranscriptionProtocol:1,configured:Boolean(active()),provider:active()?.provider==='whisper-cpp-local'?'Local Whisper.cpp':active()?.provider==='qwen-asr'?'Qwen ASR':'Azure fast transcription',providerId:active()?.provider||'azure',model:active()?.model||'',endpoint:active()?.endpoint||'',useSpeechConnection:Boolean(config?.useSpeechConnection),verified,credentialStorage:handle.getCredentialStorage?.()||'memory',maxSeconds:active()?.provider==='whisper-cpp-local'?180:active()?.provider==='qwen-asr'?300:900,local:active()?.provider==='whisper-cpp-local',localStatus:localASR?.status?.()||null});
  const send=(res,statusCode,body)=>{res.writeHead(statusCode,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
  async function body(req){
   if((req.headers['content-type']||'').split(';')[0].trim().toLowerCase()!=='application/json')throw new TranscriptionError(415,'JSON_REQUIRED','请使用JSON提交。');
@@ -40,7 +42,11 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
     own=controller=new AbortController();const b=await body(req);
     if(typeof b.audio!=='string'||b.audio.length>40*1024*1024||!/^[A-Za-z0-9+/]+={0,2}$/.test(b.audio))throw new TranscriptionError(400,'INVALID_AUDIO','请选择有效的PCM WAV录音。');
     const bytes=Buffer.from(b.audio,'base64');if(bytes.toString('base64')!==b.audio)throw new TranscriptionError(400,'INVALID_AUDIO','录音编码无效。');
-    let seconds;try{seconds=checkWav(bytes,{maxSeconds:connection.provider==='qwen-asr'?300:900});}catch{throw new TranscriptionError(400,'INVALID_AUDIO','转写需要16kHz单声道16-bit PCM WAV；千问ASR单次最长5分钟，Azure最长15分钟。');}
+    let seconds;try{seconds=checkWav(bytes,{maxSeconds:connection.provider==='whisper-cpp-local'?180:connection.provider==='qwen-asr'?300:900});}catch{throw new TranscriptionError(400,'INVALID_AUDIO','转写需要16kHz单声道16-bit PCM WAV；本地英文转写单次最长3分钟，千问ASR最长5分钟，Azure最长15分钟。');}
+    if(connection.provider==='whisper-cpp-local'){
+     const cancel=()=>{if(!res.writableEnded)own.abort();};res.once('close',cancel);
+     try{const result=await localASR.transcribe(bytes,{signal:own.signal,timeoutMs});if(own.signal.aborted||active()!==connection)throw new TranscriptionError(409,'TRANSCRIPTION_CANCELLED','转写已取消或配置已改变。');const audioSha256=require('node:crypto').createHash('sha256').update(bytes).digest('hex');if(result.audioSha256!==audioSha256||result.durationSeconds!==seconds||!result.text?.trim())throw new TranscriptionError(502,'LOCAL_ASR_PROOF_MISMATCH','本地转写与原音不匹配；原音保留。');verified=true;const textSha256=require('node:crypto').createHash('sha256').update(result.text,'utf8').digest('hex'),verifiedAt=new Date().toISOString();const evidenceId=evidenceStore?.add({kind:'transcription',...result,sha256:audioSha256,textSha256,verifiedAt});send(res,200,{ok:true,...result,audioSha256,textSha256,verifiedAt,evidenceId});}finally{res.removeListener('close',cancel);}return true;
+    }
     ticket=budget?.reserveSpeech(connection,seconds);
     const form=new FormData();form.append('audio',new Blob([bytes],{type:'audio/wav'}),'practice.wav');form.append('definition',JSON.stringify({locales:['en-US']}));
     const cancel=()=>{if(!res.writableEnded)own.abort();};res.once('close',cancel);
@@ -50,12 +56,12 @@ function createTranscriptionHandler({fetchImpl=fetch,budget,evidenceStore,getSpe
      let length=0;const chunks=[];for await(const c of response.body){length+=c.length;if(length>2*1024*1024)throw new TranscriptionError(502,'TRANSCRIPTION_TOO_LARGE','转写响应过大，请缩短音频。');chunks.push(c);}
      let raw;try{raw=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new TranscriptionError(502,'TRANSCRIPTION_FORMAT','转写响应格式无效。');}
      if(own.signal.aborted||active()!==connection)throw new TranscriptionError(409,'TRANSCRIPTION_CANCELLED','转写已取消或配置已改变。');
-     const result=qwen?{text:safe(raw?.choices?.[0]?.message?.content,connection.apiKey),segments:[],durationSeconds:seconds,disclaimer:'千问自动转写可能漏词或改写；此适配未返回真实时间戳，不编造时间对齐。请对照原录音编辑，文字不是发音分。'}:normalize(raw,connection.apiKey,seconds);if(!result.text.trim())throw new TranscriptionError(502,'EMPTY_TRANSCRIPT','服务没有识别到可用文字，请回听并重试。');verified=true;const provider=qwen?'Qwen ASR':'Azure fast transcription';
-     const evidenceId=evidenceStore?.add({kind:'transcription',provider,...result,sha256:require('node:crypto').createHash('sha256').update(bytes).digest('hex')});
-     send(res,200,{ok:true,provider,...result,evidenceId});
+     const result=qwen?{text:safe(raw?.choices?.[0]?.message?.content,connection.apiKey),segments:[],durationSeconds:seconds,disclaimer:'千问自动转写可能漏词或改写；此适配未返回真实时间戳，不编造时间对齐。请对照原录音编辑，文字不是发音分。'}:normalize(raw,connection.apiKey,seconds);result.text=result.text.trim();if(!result.text)throw new TranscriptionError(502,'EMPTY_TRANSCRIPT','服务没有识别到可用文字，请回听并重试。');verified=true;const provider=qwen?'Qwen ASR':'Azure fast transcription';
+     const audioSha256=require('node:crypto').createHash('sha256').update(bytes).digest('hex'),textSha256=require('node:crypto').createHash('sha256').update(result.text,'utf8').digest('hex'),verifiedAt=new Date().toISOString(),evidenceId=evidenceStore?.add({kind:'transcription',provider,...result,sha256:audioSha256,textSha256,verifiedAt});
+     send(res,200,{ok:true,provider,...result,audioSha256,textSha256,verifiedAt,evidenceId});
     }finally{res.removeListener('close',cancel);}
    }else throw new TranscriptionError(404,'NOT_FOUND','转写接口不存在。');
-  }catch(error){if(!res.destroyed&&!res.headersSent){const known=error instanceof TranscriptionError||error instanceof BudgetError;send(res,known?error.status:502,{ok:false,error:{code:known?error.code:'TRANSCRIPTION_FAILED',message:known?error.message:'转写失败、超时或已取消，原音频已保留。'}});}}
+  }catch(error){if(!res.destroyed&&!res.headersSent){const known=error instanceof TranscriptionError||error instanceof BudgetError||error instanceof LocalASRError;send(res,known?error.status:502,{ok:false,error:{code:known?error.code:'TRANSCRIPTION_FAILED',message:known?error.message:'转写失败、超时或已取消，原音频已保留。'}});}}
   finally{try{budget?.settle(ticket);}finally{if(own&&controller===own)controller=null;}}
   return true;
  }

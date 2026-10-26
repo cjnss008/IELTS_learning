@@ -369,7 +369,7 @@
   function validLinkedReview(record) {
     if(record?.evaluation?.method!=='ai'||record.evaluation.result!=='pass')return false;
     var review,artifact;try{review=JSON.parse(record.evaluation.feedback);artifact=JSON.parse(record.answer);}catch(_){try{review=JSON.parse(record.evaluation.feedback);}catch(_){return false;}}
-    var text=artifact&&typeof artifact==='object'?(record.skill==='speaking'?artifact.transcript:artifact.text):record.answer;
+    var text=artifact&&typeof artifact==='object'?(record.skill==='speaking'?(root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null))?.effectiveSpeakingTranscript(record):artifact.text):record.answer;
     if(typeof text!=='string'||!text.trim()||review?.status!=='complete'||review.requiresRetest===true)return false;
     var rounds=Array.isArray(review.rounds)?review.rounds.filter(function(r){return r?.ok===true;}):[];
     var normalize=function(v){return typeof v==='string'?v.normalize('NFKC').replace(/[‘’]/g,"'").trim().replace(/\s+/g,' ').toLowerCase():'';},original=normalize(text);
