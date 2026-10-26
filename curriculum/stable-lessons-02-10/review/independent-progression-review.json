@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "reviewedAt": "2026-10-26T10:44:11.438Z",
+  "supersedes": "review-record.json (unregistered version1 review only)",
+  "conclusion": "pass",
+  "scope": "normal first-use progression and exact approved v1-to-v2 frozen-material evidence compatibility",
+  "reviewedFiles": [
+    {
+      "path": "../stable-family-p0-progression/source/assets/year-planner.js",
+      "sha256": "4df165189b3e1fcb3be2c47e47b9df074db2715cb805e0dd71091fc05ed8712c",
+      "bytes": 24634
+    },
+    {
+      "path": "../stable-family-p0-progression/source/assets/legacy-material-compatibility.js",
+      "sha256": "e020a3f2fbafa44b9b5af56aa1fc8cc741a6950e40321c03c15c1d66903268ee",
+      "bytes": 1358441
+    },
+    {
+      "path": "../stable-family-p0-progression/source/curriculum/reviewed-material-revisions.json",
+      "sha256": "37978d433d063b08b50001fa061a2d14d218fd516e1627c753e3ebf91886b70a",
+      "bytes": 12966
+    },
+    {
+      "path": "../stable-family-p0-progression/source/tools/build-legacy-material-compatibility.cjs",
+      "sha256": "89f774741c2c4d8404b4c7f3610c6a51ce0d1064411fc10399d844483e544ebe",
+      "bytes": 14556
+    }
+  ],
+  "curriculum": {
+    "path": "current/curriculum-data.js",
+    "sha256": "c2e211d0346071e7178393ef073d81d00e76c540c7bf259d1f82bcaa529b13ca",
+    "bytes": 12684380
+  },
+  "tests": {
+    "coreInvariants": {
+      "passed": 5,
+      "failed": 0,
+      "evidence": {
+        "path": "candidate-v2-base-tests.tap",
+        "sha256": "149f1b88633ec08fd6f3e5bb40e1d22e997cfe4005763b0376f653911bbcbc2c",
+        "bytes": 1524
+      }
+    },
+    "upgrade": {
+      "passed": 7,
+      "failed": 0,
+      "evidence": {
+        "path": "upgrade-registered.tap",
+        "sha256": "e92e5902f6e22db08d30c8b31d37bfb4565ffa9b3991952cd376faee763bde6c",
+        "bytes": 2163
+      }
+    },
+    "approvedRevisions": 25,
+    "fullMaterialAndActualFrozenContractHashesIndependentlyRecomputed": true,
+    "existingLegacyIndexUnchanged": true,
+    "embeddedRegistryEqualsSource": true,
+    "pureGeneratorPreservesExistingEntries": true,
+    "pureGeneratorRejectsAlteredHashAndUnknownFields": true
+  },
+  "claims": [
+    "Actual old bound first-week records enter day8 using current published curriculum without a weekAccess override.",
+    "Approved mixed-version successful review retains the original unseen proof id/date; it adds no proof and does not extend the original 48-hour span.",
+    "Missing binding, inconsistent or invented versions, corrupted or rehashed changed answers/level, missing registration, changed current bytes and unregistered version3 remain rejected.",
+    "Latest wrong/pending/assisted/interrupted/correction/unresolved evidence remains blocked; same-day speed and all-seen records do not create mastery; gate B stays protected.",
+    "No duplicate day/task/material queue entries and no input-record mutation."
+  ],
+  "limitations": [
+    "Only the reviewed 25 exact v1-to-v2 relationships are authorized; future version transitions require additional reviewed registration support.",
+    "No new unseen remedial pool is introduced for histories that have seen/assisted all original first-week material.",
+    "Tests use actual material contracts with synthetic answers/review evidence, not real family records or live AI/human assessment."
+  ],
+  "noRuntimeEdits": true,
+  "noNasWrites": true,
+  "noRealUserData": true,
+  "noBrowser": true
+}

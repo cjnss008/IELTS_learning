@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-26T10:43:38.170Z",
+  "frozen": true,
+  "nasWritten": false,
+  "userDataRead": false,
+  "userDataWritten": false,
+  "browserUsed": false,
+  "productionFilesToPublish": [
+    {
+      "file": "assets/year-planner.js",
+      "beforeSHA256": "2a501aa0b7504afac9c074cf35bda77d6b99de52487531247face3dae24dd372",
+      "afterSHA256": "4df165189b3e1fcb3be2c47e47b9df074db2715cb805e0dd71091fc05ed8712c",
+      "bytes": 24634
+    },
+    {
+      "file": "assets/legacy-material-compatibility.js",
+      "beforeSHA256": "e2b08117dcc020c72315d9bf11472f63ec835277f55cf3f8f0b84673c6c353e7",
+      "afterSHA256": "e020a3f2fbafa44b9b5af56aa1fc8cc741a6950e40321c03c15c1d66903268ee",
+      "bytes": 1358441
+    },
+    {
+      "file": "curriculum/reviewed-material-revisions.json",
+      "beforeSHA256": null,
+      "afterSHA256": "37978d433d063b08b50001fa061a2d14d218fd516e1627c753e3ebf91886b70a",
+      "bytes": 12966
+    },
+    {
+      "file": "tools/build-legacy-material-compatibility.cjs",
+      "beforeSHA256": "6e2a55a0f5a190def8e878a12a18975cdaec16b86267d2b3b5b8acbe224ecbd9",
+      "afterSHA256": "89f774741c2c4d8404b4c7f3610c6a51ce0d1064411fc10399d844483e544ebe",
+      "bytes": 14556
+    },
+    {
+      "file": "tests/year-planner.test.cjs",
+      "beforeSHA256": "98968c367cae915de3ed3cd6573ef675aedcf31d02ad8a7378a297c6d6891b70",
+      "afterSHA256": "022fa254f38af6d140bab7c5d39cdd84994941eea07ea5ff7818729cc3c64465",
+      "bytes": 14012
+    },
+    {
+      "file": "tests/reviewed-material-revisions.test.cjs",
+      "beforeSHA256": null,
+      "afterSHA256": "a22ff8fe7d26ac525ff0ffa940b34eb67bb775ca06065e4b956726a1dbc0c0a8",
+      "bytes": 2314
+    }
+  ],
+  "baselineCopyManifestSHA256": "74292f80c3e3f34d2bfcb20b161a41de4c3b8753745826c64074e207c022a89e",
+  "protectedCurriculumSHA256": "c6e041bc0ca864cad5bf098d8daf25d22d1979258ef1e13a28e6a22ad7d6e50a",
+  "changes": [
+    "Preserve one original same-version unseen proof when the latest material attempt is independently verified and successful.",
+    "Keep the original record ID and submission date; successful seen review does not create a new-material proof or extend the 48-hour interval.",
+    "Latest failed, pending, interrupted, assisted, correction, unresolved or mismatched-version evidence still blocks the material."
+  ],
+  "validation": {
+    "method": "Actual course materials with synthetic answers, reviews, audio-proof fixtures and isolated in-memory storage; no family submissions or live browser were used.",
+    "tests": 238,
+    "pass": 238,
+    "fail": 0,
+    "suites": 18,
+    "tap": {
+      "file": "p0-final-regression.tap",
+      "sha256": "4475b4b1a5dc5e0db7c4e7a4cbd2d5d590ec69dae8fe008de5be5a58a267ce18"
+    },
+    "auditTest": {
+      "file": "tests/p0-real-day-progression.test.cjs",
+      "sha256": "a1d21d47e0f09d7f3b1a081211f32f2280c700dbb657780d0171505231b55ee8",
+      "publish": false
+    },
+    "checks": [
+      "Default cumulative day 1–7 natural-date history reaches actual day 8 vocabulary without injected week access.",
+      "Default cumulative day 2–10 progression chooses the next course.",
+      "Homepage DOM primary button routes from day 7 to w02-read-1-vocabulary.",
+      "All-submitted pending reviews stay pending and never auto-pass.",
+      "End/resume preserves the shared 360-minute study-plus-rest budget and draft identity.",
+      "Reviewed curriculum v4 preserves old completed records and exact bound drafts; next-date DOM resume retains old answers and bindings.",
+      "Latest incorrect/pending/assisted/interrupted/correction/unresolved/version/exposure mismatch does not borrow old success.",
+      "Same-day acceleration and seen-only attempts do not invent 48-hour retention; existing gate A/B requirements remain unchanged.",
+      "Old v1 bound history and the exact 25 registered mixed v1-to-v2 seen reviews retain original proof IDs and dates against the newly published v2 dataset.",
+      "All 25 complete material and frozen semantic-contract hashes were independently recomputed; unknown 999, rehashed changed answers/level, absent registry and changed current material are rejected.",
+      "The public builder reads and validates the separate static JSON registry, preserving ordinary compatibility entries. Its pure registration function was tested; no Git collector or full repository rebuild was run."
+    ]
+  },
+  "limitations": [
+    "Independent readiness is deliberately not granted for an all-seen or assisted first week, or for completing seven courses in one day.",
+    "Cross-version retention is limited to the exact 25 reviewed revisions registered by old/new complete material hashes and semantic-contract hashes. Unknown or modified versions remain rejected.",
+    "This fix does not implement a new alternative validation curriculum or change progression policy."
+  ],
+  "unchanged": "Core curriculum data, Player, Daily Load, gate thresholds, storage schemas, user records and frozen contextual-vocabulary candidates remain unchanged. The separate static public revision registry and its generator admission are new.",
+  "publishedUpgradeFixtureSHA256": "c2e211d0346071e7178393ef073d81d00e76c540c7bf259d1f82bcaa529b13ca"
+}
