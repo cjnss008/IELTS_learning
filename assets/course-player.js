@@ -194,16 +194,17 @@
     const group=material?.source?.exposureGroup;
     return material?.pool==='training'&&!material.assessmentGroup&&!material.form&&!material.fullTest&&!material.independentBank&&typeof group==='string'&&/^public-source:[a-z0-9][a-z0-9-]{0,119}$/.test(group)?group:null;
   }
-  function materialPreviouslySeen(material,records,materials,exposures={},drafts=[]){
+  function materialPreviouslySeen(material,records,materials,exposures={},drafts=[],options={}){
     if(!material?.id)return false;
     if(exposures?.[material.id]||[...(records||[]),...(drafts||[])].some(record=>record.materialId===material.id))return true;
     const group=publicSourceGroup(material);if(!group)return false;
+    const vocabulary=options.vocabularyExposure||root.IELTSContextualVocabularyExposure||(typeof require==='function'?require('./contextual-vocabulary-exposure.js'):null),possible=vocabulary?.read?.({...options,materials,records})||{unavailable:true};if(possible?.unavailable||possible?.sourceGroups?.includes(group))return true;
     const peers=new Set((materials||[]).filter(item=>publicSourceGroup(item)===group).map(item=>item.id));
     if([...peers].some(id=>Boolean(exposures?.[id])))return true;
     return[...(records||[]),...(drafts||[])].some(record=>{if(peers.has(record.materialId))return true;try{const m=record.materialBinding?.material||assessmentAPI()?.decodeArtifact(record)?.materialBinding?.material;return publicSourceGroup(m)===group;}catch(_){return false;}});
   }
   function protectedMaterialAccess(material,records,materials,options={}){
-    const seen=materialPreviouslySeen(material,records,materials,options.exposures,options.drafts);if(seen)return{allowed:true,seen:true};
+    const seen=materialPreviouslySeen(material,records,materials,options.exposures,options.drafts,options);if(seen)return{allowed:true,seen:true};
     const api=options.assessment||root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),now=options.now??Date.now(),placement=placementRoute(options.data,options),gates=api?.gateMastery(records||[],materials||[],{now})||[];
     if(material?.pool==='gate'&&material.form==='B'){const gate=gates.find(g=>g.id===material.assessmentGroup);if(!gate?.a?.pass||!gate.dueAt||now<Date.parse(gate.dueAt))return{allowed:false,seen:false,dueAt:gate?.dueAt||null,reason:'B卷继续保留为未见复测：请先完成合格的整套A卷，并在整套提交后至少间隔48小时再开始；这次没有登记曝光。'};}
     const placementCovered=gates.filter(g=>!!placement&&g.week<placement.startWeek).map(g=>g.id);
@@ -580,7 +581,7 @@
       const kind = parent ? options.kind || 'correction' : 'original';
       let mode = material.independentBank===true&&kind!=='correction'?'assessment':options.mode || $('courseMode').value;
       if (kind==='retest' && (!A.retestAvailability(parent,[material]).due || material.id===parent.materialId)) { mode='practice'; notice('复测尚未到期或仍为同题，已按普通练习记录，不计独立迁移。'); }
-      const newAttemptId=R.makeId('course');let binding,dayBinding;try{binding=freezeMaterialBinding(material,{assessment:A,task,data,courseData:root.IELTSCourse,courseDay:day,attemptId:newAttemptId});dayBinding=freezeDayPlanBinding(resolvedDay,A);root.IELTSAdaptivePlan?.markStarted(day,resolvedDay);}catch(error){notice('未开始：'+error.message,true);return;}
+      const newAttemptId=R.makeId('course');let binding,dayBinding;try{resolvedDay=root.IELTSContextualVocabulary?.attachBeforeStart?.(resolvedDay,{data,records,drafts:allDrafts(),adaptive:root.IELTSAdaptivePlan,budget:calendarBudget(),now:Date.now()})||resolvedDay;binding=freezeMaterialBinding(material,{assessment:A,task,data,courseData:root.IELTSCourse,courseDay:day,attemptId:newAttemptId});dayBinding=freezeDayPlanBinding(resolvedDay,A);root.IELTSAdaptivePlan?.markStarted(day,resolvedDay);}catch(error){notice('未开始：'+error.message,true);return;}
       attempt = {id:newAttemptId,materialBinding:binding,...(dayBinding?{dayPlanBinding:dayBinding}:{}),...(courseAssignment?{courseAssignment:{...root.IELTSAdaptivePlan.publicContract(courseAssignment),bindingContentHash:binding.contentHash}}:{}),...(contextPracticeAssignment?{contextPracticeAssignment:{...copy(contextPracticeAssignment),bindingContentHash:binding.contentHash}}:{}),materialId:material.id,taskId:task.id,courseDay:day,mode,kind,parentId:parent?.id||null,startedAt:now,activeSeconds:0,activityByDate:{},exposureAtStart:exposed?'seen':'unseen',answers:{},userEvidence:{},text:'',transcript:'',audioAvailable:false,audioCompleted:false,transcriptViewed:false,interrupted:false,assistance:{hint:false,answer:false,ai:false},media:[]};
       material=copy(binding.material);
       if (kind==='correction') { const original=A.decodeArtifact(parent); attempt.text=original?.text||''; attempt.transcript=task.id==='speaking'?'':original?.transcript||''; attempt.answers=copy(original?.answers||{}); attempt.assistance.answer=true; attempt.assistance.ai=parent.evaluation.method==='ai'; }

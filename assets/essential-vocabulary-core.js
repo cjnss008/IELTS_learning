@@ -235,7 +235,9 @@
     const adaptiveReference = Math.floor(pace * factor);
     const contextNewCount = [...contextual.keys()].filter(key => !acquired.has(key) && !reservedKeys.has(key) && !courseWordKeys.has(key) && !pendingKeys.has(key) && !started.has(key)).length;
     const target = Math.min(adaptiveReference, startedToday + courseKeys.size + contextNewCount), dailyRemaining = Math.max(0, adaptiveReference - startedToday - courseKeys.size);
-    const budgetRemaining = Math.max(0, remainingMinutes - reviewMinutes), budgetCapacity = Math.floor(budgetRemaining / newWordMinutes);
+    const reservedVocabularyMinutes = Math.max(0, Number(options.reservedVocabularyMinutes) || 0);
+    const sharedStudyHeadroomMinutes = Number.isFinite(options.sharedStudyHeadroomMinutes) ? Math.max(0, options.sharedStudyHeadroomMinutes - reviewMinutes) : Infinity;
+    const budgetRemaining = Math.min(Math.max(0, remainingMinutes - reviewMinutes - reservedVocabularyMinutes), sharedStudyHeadroomMinutes), budgetCapacity = Math.floor(budgetRemaining / newWordMinutes);
     let count = Math.min(dailyRemaining, budgetCapacity);
     if (!eligibleDay) { count = 0; reasons.push('8000词新增训练从第' + startCourseDay + '课开始，第1课原有词汇与进度保留'); }
     if (activeBatches.length) { count = 0; reasons.push('继续已开始的新词组，保留原始输入'); }
@@ -246,7 +248,7 @@
     // A legacy exposure is preserved as exposure. A missing v2 initial artifact
     // still needs its real training, rather than being silently called learned.
     eligible.sort((a, b) => Number(started.has(norm(b.word))) - Number(started.has(norm(a.word))));
-    const newWords = eligible.slice(0, count).map(word => ({...word, learningKind: started.has(norm(word.word)) ? 'complete-initial' : 'new'}));
+    const newWords = eligible.filter(word=>word.heldForVerification!==true).slice(0, count).map(word => ({...word, learningKind: started.has(norm(word.word)) ? 'complete-initial' : 'new'}));
     if (!contextual.size) reasons.push('新增词随本课听读说写语境选择；没有明确语境候选时不从词库排名补齐');
     const acquiredKeys = new Set([...acquired.keys()].filter(key => knownKeys.has(key) && Date.parse(acquired.get(key).at) <= now));
     const dueKeys = new Set(queue.allDue.map(word => norm(word.word)).filter(key => knownKeys.has(key)));
@@ -277,7 +279,7 @@
     for (const batch of activeBatches) if (dateKey(batch.startedAt) < today) for (let n = 0; n < batch.wordKeys.length; n++) {
       const key = batch.wordKeys[n]; if (!acquired.has(key)) carryKeys.set(key, {...catalog.get(key), ...batch.words[n], batchId: batch.id, state: 'started', status: 'started', learningKind: 'carry'});
     }
-    return {date: today, stats, quota: {baseline, target, adaptiveReference, eligible: eligibleDay, startCourseDay, annualDays, startedToday, completedToday, completed: completedToday, courseReservedToday: courseKeys.size, contextCandidates: contextual.size, remaining: newWords.length, dailyRemaining: eligibleDay ? Math.min(dailyRemaining, eligible.length) : 0, newStartAllowed: newWords.length > 0, newWordMinutes, estimateSamples: vocabulary.estimateSamples, reason: reasons.join('；') || '先安排到期复习，再按当前语境、实际表现与剩余预算选择新词；8000为长期词库覆盖目标。'}, due, todayDue: due, allDue: queue.allDue, held: queue.held, newWords, todayNewWords: eligibleDay ? todayNewWords : [], dayNewWords: eligibleDay ? todayNewWords : [], carryWords: [...carryKeys.values()], dailyPlanPersisted: false, activeBatches, reviewBudget: {limit: reviewLimit, completed: reviewedToday.length, remaining: reviewRemaining, estimatedMinutes: Math.round(reviewMinutes * 100) / 100, availableMinutes: remainingMinutes, globalRemainingMinutes, vocabularyMinutes: vocabulary.budgetMinutes, vocabularySpentMinutes: vocabulary.spentMinutes, reservedNewMinutes: 0, availableForDueMinutes: remainingMinutes}, nextRetryAt: queue.futureRetries.map(item => item.retryAt).sort()[0] || null, dayProgress: {reviewed: reviewedToday.length, initialStarted: startedToday, initialCompleted: completedToday}};
+    return {date: today, stats, quota: {baseline, target, adaptiveReference, eligible: eligibleDay, startCourseDay, annualDays, startedToday, completedToday, completed: completedToday, courseReservedToday: courseKeys.size, contextCandidates: contextual.size, remaining: newWords.length, dailyRemaining: eligibleDay ? Math.min(dailyRemaining, eligible.length) : 0, newStartAllowed: newWords.length > 0, newWordMinutes, estimateSamples: vocabulary.estimateSamples, reason: reasons.join('；') || '先安排到期复习，再按当前语境、实际表现与剩余预算选择新词；8000为长期词库覆盖目标。'}, pendingContextWords:eligible.map(word=>({...word})), due, todayDue: due, allDue: queue.allDue, held: queue.held, newWords, todayNewWords: eligibleDay ? todayNewWords : [], dayNewWords: eligibleDay ? todayNewWords : [], carryWords: [...carryKeys.values()], dailyPlanPersisted: false, activeBatches, reviewBudget: {limit: reviewLimit, completed: reviewedToday.length, remaining: reviewRemaining, estimatedMinutes: Math.round(reviewMinutes * 100) / 100, availableMinutes: remainingMinutes, globalRemainingMinutes, vocabularyMinutes: vocabulary.budgetMinutes, vocabularySpentMinutes: vocabulary.spentMinutes, reservedNewMinutes: 0, availableForDueMinutes: remainingMinutes}, nextRetryAt: queue.futureRetries.map(item => item.retryAt).sort()[0] || null, dayProgress: {reviewed: reviewedToday.length, initialStarted: startedToday, initialCompleted: completedToday}};
   }
   function ensureDailyPlan(memory) {
     // Compatibility with already-loaded pages. Historical day manifests remain
@@ -291,7 +293,7 @@
     const words = options.words.map(wordSnapshot), wordKeys = words.map(word => norm(word.word));
     if (new Set(wordKeys).size !== words.length) throw Error('同一新词不能在一组里重复安排。');
     if (state.essential.batches[id]) {
-      if (JSON.stringify(state.essential.batches[id].wordKeys) !== JSON.stringify(wordKeys)) throw Error('同一新词组存在不同单词，原稿保留。');
+      if (JSON.stringify(state.essential.batches[id].contextSource) !== JSON.stringify(options.contextSource) || JSON.stringify(state.essential.batches[id].wordKeys) !== JSON.stringify(wordKeys)) throw Error('同一新词组存在不同单词，原稿保留。');
       return state;
     }
     const reserved = new Set(Object.values(state.essential.batches).filter(batch => batch.status === 'learning').flatMap(batch => batch.wordKeys));
@@ -300,7 +302,7 @@
     if (!Number.isInteger(courseDay) || courseDay < START_COURSE_DAY || courseDay > 365) throw Error('8000词新增训练从第2课开始，第1课原进度保留。');
     const at = iso(now), materialId = 'essential-vocabulary-' + id.slice('essential-batch-'.length);
     if (!state.essential.startDate) state.essential.startDate = options.startDate || dateKey(now);
-    state.essential.batches[id] = {id, materialId, courseDay, words, wordKeys, startedAt: at, updatedAt: at, status: 'learning', draft: null, activeSeconds: 0, activityByDate: {}, recordId: null, submittedAt: null};
+    state.essential.batches[id] = {id, materialId, courseDay, words, wordKeys, startedAt: at, updatedAt: at, status: 'learning', draft: null, activeSeconds: 0, activityByDate: {}, recordId: null, submittedAt: null,...(options.contextSource?{contextSource:clone(options.contextSource)}:{})};
     return M.parseState(state);
   }
   function saveBatchDraft(memory, id, value, now = Date.now(), options = {}) {
@@ -318,7 +320,7 @@
     const V = root.IELTSVocabularyPractice || (typeof require === 'function' ? require('./vocabulary-practice.js') : null);
     if (!batch || !record || record.id !== payload?.id || record.materialId !== batch.materialId || record.skill !== 'vocabulary' || record.kind !== 'original' || record.source !== 'essential-vocabulary' || record.startedAt !== payload.startedAt || !stamp(record.submittedAt)) throw Error('新词训练须先完整保存匹配的真实原稿，草稿保留。');
     let artifact, source; try { artifact = JSON.parse(record.answer); source = JSON.parse(payload.answer); } catch (_) { throw Error('新词训练原稿无法读取。'); }
-    if (!V?.verifyTrainingArtifact(artifact, {vocabulary: batch.words}).valid || !V.verifyTrainingArtifact(source, {vocabulary: batch.words}).valid || JSON.stringify(artifact.rounds) !== JSON.stringify(source.rounds) || JSON.stringify(artifact.learning) !== JSON.stringify(source.learning) || artifact.activityByDate && Object.values(artifact.activityByDate).reduce((n, seconds) => n + seconds, 0) > record.activeSeconds + .01) throw Error('新词原稿缺少一致的三写三读、三轮作答或完整听音证据。');
+    if (JSON.stringify(artifact.contextSource)!==JSON.stringify(batch.contextSource) || !V?.verifyTrainingArtifact(artifact, {vocabulary: batch.words}).valid || !V.verifyTrainingArtifact(source, {vocabulary: batch.words}).valid || JSON.stringify(artifact.rounds) !== JSON.stringify(source.rounds) || JSON.stringify(artifact.learning) !== JSON.stringify(source.learning) || artifact.activityByDate && Object.values(artifact.activityByDate).reduce((n, seconds) => n + seconds, 0) > record.activeSeconds + .01) throw Error('新词原稿缺少一致的三写三读、三轮作答或完整听音证据。');
     if (batch.recordId && batch.recordId !== record.id) throw Error('同一新词组已有另一份已存原稿，停止覆盖。');
     state = M.captureTraining(state, payload, {recordId: record.id});
     const next = state.essential.batches[id]; next.status = 'submitted'; next.recordId = record.id; next.submittedAt = record.submittedAt; next.updatedAt = record.submittedAt;

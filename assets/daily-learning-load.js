@@ -58,7 +58,7 @@ function build(options={}){
    else if(material?.skill==='vocabulary'){try{const vocabulary=options.vocabulary||dependency('IELTSVocabularyPractice','./vocabulary-practice.js'),verified=vocabulary?.verifyTrainingArtifact(hub.artifact(record.answer),material);if(verified?.submitted&&!verified.mastered)errors.push(record);}catch(_){}}
   }
   const essential=day.day===currentDay?root.IELTSEssentialCourse?.state?.({day:day.day,data,records,drafts,budget,now:options.now,dayPlan:day,completionValid:summary.completionValid}):null;
-  const essentialRequired=day.requirements?.essential===true;
+  const essentialRequired=day.requirements?.essential===true||essential?.required===true;
   if(essentialRequired&&essential?.applicable&&!essential.done){readiness.ready=false;readiness.reason='请先完成今天安排的8000词训练份额；原稿保留，未完成部分按预算顺延。';const vocabulary=states.find(s=>s.task.id==='vocabulary');if(vocabulary){vocabulary.done=false;vocabulary.essential=essential;}}
   const reflection=states.find(s=>s.task.id==='reflection'),done=readiness.ready&&errors.length===0&&!summary.remaining&&!summary.unreadable&&(reflection?reflection.done:summary.completionValid===true);
   const result={day,own,states,summary,errors,readiness,done,essential,essentialRequired};cache.set(day.day,result);return result;

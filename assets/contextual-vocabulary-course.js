@@ -1,0 +1,92 @@
+(function(root,factory){'use strict';const api=factory(root);root.IELTSContextualVocabulary=api;if(typeof module==='object'&&module.exports)module.exports=api;})(typeof globalThis!=='undefined'?globalThis:this,function(root){
+'use strict';
+const ROLE='scheduled-context-vocabulary',copy=value=>JSON.parse(JSON.stringify(value)),norm=value=>String(value||'').normalize('NFKC').toLowerCase().replace(/[’‘]/g,"'").trim(),array=value=>Array.isArray(value)?value:[];
+const dep=(name,file)=>root[name]||(typeof require==='function'?require(file):null);
+function hash(value,options){return(options.assessment||dep('IELTSAssessment','./assessment-core.js')).materialContentHash(value);}
+function courseContext(options={}){
+ const storage=options.storage||root.IELTSProfiles?.storage?.();if(!storage)return{drafts:[],exposures:{}};
+ const raw=storage.getItem('ielts52-course-player-v1');if(!raw)return{drafts:[],exposures:{}};
+ const player=options.player||dep('IELTSCoursePlayer','./course-player.js');if(!player?.parseState)throw Error('课程草稿组件未加载，已有词组保留。');
+ const state=player.parseState(raw);return{drafts:Object.values(state.drafts),exposures:state.exposures};
+}
+function sentence(text,start,end){
+ let left=start,right=end;while(left>0&&!/[\n\r]/.test(text[left-1]))left--;while(right<text.length&&!/[\n\r]/.test(text[right]))right++;
+ const quote=text.slice(left,right).trim();return quote.length<=2000?quote:null;
+}
+function timerSnapshot(options={}){
+ const timer=options.timerCore||dep('IELTSStudyTimerCore','./study-timer-core.js');if(!timer?.parseState||!timer?.forecast)throw Error('休息计时组件未加载，暂不增加新词。');
+ if(Object.hasOwn(options,'timerState')){if(!options.timerState)throw Error('休息状态暂未读取，暂不增加新词。');return timer.parseState(options.timerState);}
+ if(root.IELTSStudyTimer?.snapshot){const state=root.IELTSStudyTimer.snapshot();if(!state)throw Error('休息状态暂未读取，暂不增加新词。');return timer.parseState(state);}
+ const storage=options.storage||root.IELTSProfiles?.storage?.(),raw=storage?.getItem(timer.KEY);return raw?timer.advance(timer.parseState(raw),options.now??Date.now()).state:timer.newState();
+}
+function projectedRest(study,state,options={}){
+ if(!Number.isFinite(study)||study<0||!state)return Infinity;try{const timer=options.timerCore||dep('IELTSStudyTimerCore','./study-timer-core.js');return timer.forecast(study,timer.parseState(state)).totalMinutes;}catch(_){return Infinity;}
+}
+function remainingCore(day,data,options){
+ const player=options.player||dep('IELTSCoursePlayer','./course-player.js'),assessment=options.assessment||dep('IELTSAssessment','./assessment-core.js'),vocabularyEngine=options.vocabulary||dep('IELTSVocabularyPractice','./vocabulary-practice.js'),correction=options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus,map=new Map(data.materials.map(m=>[m.id,m])),records=array(options.records),drafts=array(options.drafts),latest=new Map();let all=0,vocabulary=0;
+ for(const record of records.filter(r=>r.dayNumber===day.day&&r.kind==='original'&&Number.isFinite(Date.parse(r.submittedAt)))){const old=latest.get(record.materialId);if(!old||String(record.submittedAt)>String(old.submittedAt)||record.submittedAt===old.submittedAt&&(Number(record.version)||0)>(Number(old.version)||0))latest.set(record.materialId,record);}
+ for(const task of day.tasks)for(const id of task.materialIds){const material=map.get(id)||root.IELTSPublicContextPractice?.resolveMaterial?.(id,{data});if(!material)return{all:Infinity,vocabulary:Infinity};
+  let complete=false;const record=latest.get(id),activeDraft=drafts.some(d=>d.courseDay===day.day&&d.materialId===id&&!records.some(r=>r.id===d.id));try{if(!activeDraft&&record&&(record.taskId||record.skill)===task.id){const artifact=assessment.decodeArtifact(record),resolved=assessment.resolveArtifactMaterial(material,artifact,record);if(resolved.valid&&artifact){const submitted=['reading','listening','grammar','vocabulary'].includes(task.id)?player?.submissionSatisfied?.(record,material,{assessment,assignment:task.publicCourseAssignments?.find(a=>a.materialId===id)}):task.id==='speaking'?player.verifySpeakingStage(record,material,task,data,day.day)?.submitted===true:task.id==='writing'&&assessment.countWords(artifact.text)>=(resolved.material.minWords||1);if(submitted&&correction?.(record)?.corrected===true)complete=true;else if(submitted&&record.evaluation?.result==='pass'){if(['reading','listening','grammar'].includes(task.id)){const grade=assessment.gradeMaterialForArtifact(material,artifact);complete=grade.allGradable&&grade.answered===grade.total&&grade.correct===grade.total;}else if(task.id==='vocabulary')complete=vocabularyEngine?.verifyTrainingArtifact?.(artifact,resolved.material)?.mastered===true;else complete=player.submissionSatisfied(record,material,{assessment})===true;}}}}catch(_){}
+  if(complete)continue;const estimate=Number(material.estimatedMinutes);if(!Number.isFinite(estimate)||estimate<0)return{all:Infinity,vocabulary:Infinity};
+  // Elapsed study is charged to the daily ledger, but is never proof that unfinished work is complete.
+  all+=estimate;if(task.id==='vocabulary')vocabulary+=estimate;
+ }return{all,vocabulary};
+}
+function budgetFor(day,data,options){
+ const task=day.tasks.find(t=>t.id==='vocabulary'),timer=options.timerCore||dep('IELTSStudyTimerCore','./study-timer-core.js'),timerState=(()=>{try{return timerSnapshot(options);}catch(_){return null;}})(),supplied=options.budget||{remainingMinutes:360},budget=timerState&&supplied.date&&Number.isFinite(supplied.spentMinutes)&&!Number.isFinite(supplied.breakMinutes)?timer.budget(supplied,timerState):supplied,closed=timerState&&timer.dayStatus(timerState,options.now??Date.now()).ended,remaining=closed||budget.exhausted||budget.dayEnded||budget.budgetError?0:Math.max(0,Math.min(360,Number(budget.remainingMinutes)||0)),core=remainingCore(day,data,options);
+ let low=0,high=remaining;for(let i=0;i<24;i++){const middle=(low+high)/2;if(projectedRest(core.all+middle,timerState,options)<=remaining)low=middle;else high=middle;}
+ return{vocabularyMinutes:Math.min(180,task.minutes),reservedVocabularyMinutes:core.vocabulary,sharedStudyHeadroomMinutes:Math.floor(low*1000)/1000,remainingCoreStudyMinutes:core.all,remainingTotalMinutes:remaining,restIncluded:true,estimateOnly:true,actualOverrunMustCarry:true};
+}
+function validatedWords(day,data,options){
+ const adaptive=options.adaptive||root.IELTSAdaptivePlan||dep('IELTSAdaptivePlan','./adaptive-plan.js'),selector=options.selector||dep('IELTSPublicMaterialSelector','./public-material-selector.js'),contexts=options.sourceContexts||root.IELTSPublicContextData,senses=options.semanticCatalog||root.IELTSContextualVocabularySenses,entries=options.entries||options.vocabularyData?.entries||root.IELTS_ESSENTIAL_VOCABULARY?.entries||[],catalog=options.entryCatalog||new Map(entries.map(w=>[norm(w.word),w])),materials=new Map(data.materials.map(m=>[m.id,m])),words=[],sources=[],pending=[],seen=new Set();
+ for(const a of array(day.publicCourse?.assignments)){
+  const task=day.tasks.find(t=>t.id===a.taskId),m=materials.get(a.materialId),status=adaptive?.publicMaterialStatus?.(m,a,day.day);if(!task||task.mode!=='practice'||!task.materialIds.includes(a.materialId)||!task.publicCourseAssignments?.some(c=>c.assignmentId===a.assignmentId&&c.materialContentHash===a.materialContentHash)||!status?.allowed){pending.push({materialId:a.materialId,reason:'source-task-contract-unverified'});continue;}
+  const text=m.skill==='listening'?m.transcript:m.passage,lexical=selector?.lexicalText?.(m,text),source=contexts?.sources?.find(s=>s.sourceId===a.sourceId&&s.sourceTextSha256===a.sourceTextSha256);if(!source||typeof lexical!=='string'||!selector.validSourceText(m,text)){pending.push({materialId:a.materialId,reason:'source-word-index-unverified'});continue;}
+  for(const link of array(a.contextLinks?.words)){
+   const key=norm(link.word),entry=catalog.get(key),proof=source.words?.find(w=>norm(w.word)===key&&w.start===link.start&&w.end===link.end&&w.surface===link.surface&&w.relation===link.relation);
+   if(!entry||!proof||proof.ambiguousLemma===true||!['exact-headword','source-listed-inflection'].includes(proof.relation)||link.sourceId!==a.sourceId||link.sourceTextSha256!==a.sourceTextSha256||!Number.isInteger(proof.start)||!Number.isInteger(proof.end)||proof.start<0||proof.end<=proof.start||lexical.slice(proof.start,proof.end)!==proof.surface||seen.has(key))continue;
+   const example=sentence(text,proof.start,proof.end),matches=senses?.schema===1?array(senses.entries).filter(s=>s.sourceId===a.sourceId&&s.sourceTextSha256===a.sourceTextSha256&&norm(s.word)===key&&s.surface===proof.surface&&s.start===proof.start&&s.end===proof.end&&s.quote===example):[],sense=matches.length===1?matches[0]:null;
+   if(!example||sense?.status!=='approved'||sense.semanticUnit==='multiword-expression'||typeof sense.meaning!=='string'||!sense.meaning.trim()||sense.meaning.length>500||typeof sense.partOfSpeech!=='string'||!sense.partOfSpeech.trim()||sense.partOfSpeech.length>120){pending.push({materialId:a.materialId,word:key,reason:'source-sense-not-approved'});continue;}const meaning=sense.meaning;seen.add(key);
+   words.push({word:entry.word,meaning,partOfSpeech:sense.partOfSpeech,ipa:entry.ipa||'',example,audio:typeof entry.audio==='string'?entry.audio:'',source:{assignmentId:a.assignmentId,materialId:m.id,materialVersion:String(m.version),materialContentHash:a.materialContentHash,sourceId:a.sourceId,sourceTextSha256:a.sourceTextSha256,surface:proof.surface,start:proof.start,end:proof.end,relation:proof.relation,meaningBasis:'reviewed-source-sense',partOfSpeech:sense.partOfSpeech},countsAsMastery:false,independentEvidence:false});
+  }
+  sources.push(adaptive.publicContract(a));
+ }return{words,sources,pending};
+}
+function resolve(options={}){
+ const data=options.data||root.IELTSCurriculumData,number=Number(options.day),adaptive=options.adaptive||(root.document?root.IELTSAdaptivePlan:null),empty=reason=>({available:false,required:false,words:[],reason,pending:[],independentEvidence:false,masteryCredit:0});
+ if(!data||number<2||number>364)return empty('protected-course-day');
+ const base=data.days.find(d=>d.day===number),day=options.dayPlan||(base&&adaptive?.getDay?.(base))||base;if(!day||!day.tasks.some(t=>t.id==='vocabulary'))return empty('vocabulary-task-unavailable');
+ const memory=options.memory||{essential:{batches:{}}},existing=day.contextualVocabulary,adaptiveState=options.adaptiveState||adaptive?.read?.()||{},started=array(adaptiveState.startedDays).includes(number)||!!adaptiveState.frozenDays?.[number]||array(options.records).some(r=>r.dayNumber===number)||array(options.drafts).some(d=>d.courseDay===number)||Object.values(memory.essential?.batches||{}).some(b=>b.courseDay===number);
+ if(started&&!existing)return empty('existing-day-contract-preserved');
+ const sourceDay=copy(day);delete sourceDay.contextualVocabulary;const budget=budgetFor(sourceDay,data,options);
+ if(existing){const assessment=options.assessment||dep('IELTSAssessment','./assessment-core.js'),exposure=options.vocabularyExposure||dep('IELTSContextualVocabularyExposure','./contextual-vocabulary-exposure.js'),contract=exposure?.historicalContract?.(day,assessment);if(!contract)return{...empty('frozen-word-contract-unverified'),heldContexts:[{originCourseDay:number,reason:'frozen-word-contract-unverified'}]};
+  const snapshots=[];for(const record of [...array(options.drafts),...array(options.records)]){let binding=record.materialBinding;try{binding||=assessment.decodeArtifact(record)?.materialBinding;}catch(_){}if(binding?.material&&assessment.materialContentHash(binding.material)===binding.contentHash)snapshots.push(binding.material);}
+  const words=[],heldWords=[];for(const word of contract.words){const source=word.source,candidates=[...data.materials.filter(m=>m.id===source.materialId),...snapshots],matched=candidates.some(m=>{const text=m.transcript||m.passage;return m.source?.publicSourceId===source.sourceId&&typeof text==='string'&&assessment.sourceTextHash(text)===source.sourceTextSha256&&text.slice(source.start,source.end)===source.surface&&text.includes(word.example);});if(matched)words.push(copy(word));else heldWords.push({...copy(word),originCourseDay:number,reason:'original-source-text-awaits-verification'});}
+  return{available:words.length>0,required:true,words,heldWords,contract,dayPlan:day,budget,pending:heldWords.map(w=>({originCourseDay:number,word:w.word,reason:w.reason})),frozen:true,independentEvidence:false,masteryCredit:0};}
+ const found=validatedWords(day,data,options);if(!found.words.length)return{...empty('no-verified-assigned-target-words'),pending:found.pending};
+ const coreIds=new Set(day.tasks.find(t=>t.id==='vocabulary').materialIds),coreWordKeys=[...new Set(data.materials.filter(m=>coreIds.has(m.id)).flatMap(m=>array(m.vocabulary)).map(w=>norm(typeof w==='string'?w:w.word)).filter(Boolean))].sort();
+ const contract={schema:1,role:ROLE,day:number,baseDayContentHash:hash(sourceDay,options),words:found.words,sources:found.sources,coreWordKeys,independentEvidence:false,masteryCredit:0};contract.contentHash=hash(contract,options);
+ return{available:true,required:true,words:found.words,contract,dayPlan:day,budget,pending:found.pending,frozen:false,independentEvidence:false,masteryCredit:0};
+}
+function attachBeforeStart(day,options={}){
+ if(!day?.publicCourse?.assignments?.length||day.contextualVocabulary)return day;const memory=options.memory||root.IELTSMemory?.read?.()||{essential:{batches:{}}},value=resolve({...options,day:day.day,dayPlan:day,memory});return value.available&&!value.frozen?{...copy(day),contextualVocabulary:copy(value.contract)}:day;
+}
+function daily(options={}){
+ const data=options.data||root.IELTSCurriculumData,adaptive=options.adaptive||root.IELTSAdaptivePlan,number=Number(options.day),entries=options.entries||options.vocabularyData?.entries||root.IELTS_ESSENTIAL_VOCABULARY?.entries||[],shared={...options,entryCatalog:new Map(entries.map(w=>[norm(w.word),w]))},current=resolve(shared),base=data?.days.find(d=>d.day===number),dayPlan=current.dayPlan||options.dayPlan||(base&&adaptive?.getDay?.(base))||base;if(!dayPlan?.tasks.some(t=>t.id==='vocabulary'))return{...current,contexts:[]};
+ const state=options.adaptiveState||adaptive?.read?.()||{},contexts=[],heldContexts=[];for(const fixed of Object.values(state.frozenDays||{}).filter(d=>d.day<number&&d.contextualVocabulary).sort((a,b)=>a.day-b.day)){const value=resolve({...shared,day:fixed.day,dayPlan:fixed,adaptiveState:state});if(value.contract)contexts.push(value);else heldContexts.push(...(value.heldContexts||[]));}if(current.contract)contexts.push(current);heldContexts.push(...(current.heldContexts||[]));
+ // The current edition of an old core word list cannot discharge its frozen source-word obligations.
+ const seen=new Set(),words=[];for(const context of contexts){const core=new Set(array(context.contract.coreWordKeys));for(const word of [...context.words,...(context.heldWords||[]).map(w=>({...w,heldForVerification:true}))]){const key=norm(word.word);if(core.has(key)||seen.has(key))continue;seen.add(key);words.push({...copy(word),originCourseDay:context.contract.day,contextContractHash:context.contract.contentHash});}}
+ const ids=new Set(dayPlan.tasks.find(t=>t.id==='vocabulary')?.materialIds||[]),coreEntries=new Map(data.materials.filter(m=>ids.has(m.id)).flatMap(m=>array(m.vocabulary)).map(w=>[norm(typeof w==='string'?w:w.word),w])),currentCoreWords=current.contract?array(current.contract.coreWordKeys).map(key=>coreEntries.get(key)||key):null;
+ const protectedCurrent=current.reason==='existing-day-contract-preserved',startedContext=Object.values(options.memory?.essential?.batches||{}).some(b=>b.courseDay===number&&b.contextSource&&contexts.some(c=>c.contract.day===b.contextSource.originCourseDay&&c.contract.contentHash===b.contextSource.contractHash));return{...current,available:contexts.length>0,required:current.required||startedContext||contexts.some(c=>c.contract.day<number)&&!protectedCurrent,words,contexts,currentCoreWords,heldWords:contexts.flatMap(c=>c.heldWords||[]),heldContexts,dayPlan,budget:budgetFor(dayPlan,data,shared),pending:contexts.flatMap(c=>c.pending||[])};
+}
+function beginDay(value,options={}){
+ const adaptive=options.adaptive||root.IELTSAdaptivePlan;if(!adaptive?.markStarted||!value.dayPlan)throw Error('词汇课程合同暂未就绪，原稿保留。');const day=attachBeforeStart(value.dayPlan,options);adaptive.markStarted(day.day,day);return day;
+}
+function freeze(value,options={}){
+ const adaptive=options.adaptive||root.IELTSAdaptivePlan;if(!value?.available||!value.words?.length||!adaptive?.markStarted)throw Error('本课词汇来源合同未就绪，已有原稿保留。');
+ if(value.frozen)return value.dayPlan;
+ const current=resolve({...options,day:value.contract.day});if(!current.available||current.contract.contentHash!==value.contract.contentHash)throw Error('本课听读安排已变化，请刷新词汇清单后继续。');
+ const day={...copy(current.dayPlan),contextualVocabulary:copy(current.contract)};adaptive.markStarted(day.day,day);return day;
+}
+return Object.freeze({ROLE,courseContext,sentence,timerSnapshot,projectedRest,remainingCore,budgetFor,validatedWords,resolve,attachBeforeStart,daily,beginDay,freeze});
+});

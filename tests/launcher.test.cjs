@@ -4,6 +4,14 @@ const launcher = require('../tools/start-learning.cjs');
 const { readProjectRuntime } = require('../server/runtime-version.cjs');
 const expectedRuntime = readProjectRuntime();
 const ready = { state: 'ready', version: '0.0.21' };
+// Exercise the ordinary launcher policy independently of this checkout's name.
+// The actual development-name rejection is covered by development-worktree tests.
+function ordinaryLauncher() {
+  const filename=path.join(__dirname,'../tools/start-learning.cjs'),load=require('node:module').createRequire(filename),output={exports:{}};
+  const unitRequire=name=>name==='../server/runtime-version.cjs'?{...load(name),PROJECT_ROOT:path.join(require('node:os').tmpdir(),'ielts-launcher-unit')}:load(name);
+  new Function('require','module','__filename','__dirname',fs.readFileSync(filename,'utf8'))(unitRequire,output,filename,path.dirname(filename));
+  return output.exports;
+}
 
 test('Windows double-click launcher uses ASCII commands with CRLF on every line', () => {
   const bytes = fs.readFileSync(path.join(__dirname, '../启动学习.cmd'));
@@ -126,6 +134,7 @@ test('Windows browser launch hides its shell helper while invoking the normal de
 });
 
 test('invalid ports and unsupported Node are rejected before any service or browser side effects', async () => {
+  const launcher=ordinaryLauncher();
   for (const port of ['abc', '-1', '0', '65536', '8765 & echo bad', 1.5]) assert.throws(() => launcher.parsePort(port), { code: 'INVALID_PORT' });
   assert.equal(launcher.parsePort(undefined), 8765); assert.equal(launcher.parsePort('9876'), 9876);
   await assert.rejects(launcher.main([], { nodeVersion: '20.19.0', start: () => assert.fail('old Node') }), { code: 'NODE_VERSION' });
@@ -133,6 +142,7 @@ test('invalid ports and unsupported Node are rejected before any service or brow
 });
 
 test('serve mode uses existing server creation and signal cleanup without launching a browser', async () => {
+  const launcher=ordinaryLauncher();
   const runtime = new EventEmitter(), server = new EventEmitter(); let created = 0, signalHooks = 0, listened;
   server.listen = (port, host, callback) => { listened = { port, host }; queueMicrotask(callback); };
   server.close = () => server.emit('close');

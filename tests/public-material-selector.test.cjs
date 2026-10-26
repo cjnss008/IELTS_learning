@@ -48,5 +48,5 @@ test('mislabelled assessmentGroup or form cannot enter the ordinary public pract
 });
 test('selection is immutable, deterministic and available as a browser UMD with cross-realm Sets',()=>{
  const pool=clone(compiled.materials),opts=clone(base),before=JSON.stringify({pool,opts}),one=S.plan(pool,opts);assert.deepEqual(S.plan(pool,opts),one);assert.equal(JSON.stringify({pool,opts}),before);assert.equal(one.persistentChanges,false);
- const context=vm.createContext({});vm.runInContext(fs.readFileSync(path.join(root,'assets','assessment-core.js'),'utf8'),context);vm.runInContext(fs.readFileSync(path.join(root,'assets','public-material-selector.js'),'utf8'),context);const browser=context.IELTSPublicMaterialSelector;assert.equal(browser.plan(pool,{...base,verifiedCapabilities:new Set(['foundation:reading'])}).selected.length,1);
+ const context=vm.createContext({});vm.runInContext(fs.readFileSync(path.join(root,'assets','assessment-core.js'),'utf8'),context);vm.runInContext(fs.readFileSync(path.join(root,'assets','contextual-vocabulary-exposure.js'),'utf8'),context);vm.runInContext(fs.readFileSync(path.join(root,'assets','public-material-selector.js'),'utf8'),context);const browser=context.IELTSPublicMaterialSelector;assert.equal(browser.plan(pool,{...base,verifiedCapabilities:new Set(['foundation:reading'])}).selected.length,1);
 });

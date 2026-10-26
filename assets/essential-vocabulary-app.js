@@ -52,7 +52,7 @@
     const activityByDate={};let remaining=activeSeconds;
     for(const [date,seconds]of Object.entries(batch.activityByDate||{}).sort(([a],[b])=>a.localeCompare(b))){const credited=Math.min(remaining,seconds);if(credited>0)activityByDate[date]=credited;remaining-=credited;}
     const answer = JSON.stringify({...artifact, schema:1, trainingSchema:2, mode:'practice', courseDay:batch.courseDay,
-      activityByDate, startedAt, activeSeconds, elapsedSeconds, essentialBatchId:batch.id});
+      activityByDate, startedAt, activeSeconds, elapsedSeconds, essentialBatchId:batch.id,...(batch.contextSource?{contextSource:clone(batch.contextSource)}:{})});
     if (answer.length > 50000) throw Error('这份原稿较大，已保留草稿和原音，请先重试保存或备份。');
     return {id:payload.id, materialId:batch.materialId, materialVersion:String(batch.materialVersion || '1'),
       title:'8000必学词 · 本组 '+payload.quantity+' 词', skill:'vocabulary', taskId:'vocabulary', source:SOURCE,
@@ -65,7 +65,7 @@
     let stored, current;
     try { stored = JSON.parse(record.answer); current = JSON.parse(payload.answer); } catch (_) { throw Error('已存新词原稿无法读取，原记录保留。'); }
     if (record.id !== payload.id || record.source !== SOURCE || record.materialId !== batch.materialId ||
-        String(record.materialVersion) !== String(batch.materialVersion || '1') || stored.essentialBatchId !== batch.id ||
+        String(record.materialVersion) !== String(batch.materialVersion || '1') || stored.essentialBatchId !== batch.id || JSON.stringify(stored.contextSource)!==JSON.stringify(batch.contextSource) ||
         stored.kind !== 'vocabulary-three-modes' || stored.trainingVersion !== 2 || stored.trainingComplete !== true ||
         ['words','rounds','learning'].some(key => JSON.stringify(stored[key]) !== JSON.stringify(current[key]))) {
       throw Error('已存作品与当前新词答案不一致，请保留当前输入，从原稿核对。');
@@ -91,7 +91,8 @@
     let records = options.initialRecords || [], tickAt = now(), lastInteraction = now(), statusText = '', savingDraft = false, unsaved = false;
     const entryById = new Map(data.entries.map(entry => [entry.id, entry]));
     const day = options.courseDay || courseDay({storage:P.storage(),currentDay:R?.currentDay?.()});
-    const dailyWords = options.courseWords || courseWords(day, options.curriculum || root.IELTSCurriculumData);
+    const contextual = options.contextual || root.IELTSContextualVocabulary;
+    let currentContext = null, contextSignature = null;
 
     function check() {
       P?.assertFresh?.();
@@ -123,7 +124,17 @@
     function currentPlan() {
       check();
       const budget = options.getBudget?.() || {remainingMinutes:360,exhausted:false};
-      const planOptions={data,now:now(),remainingMinutes:budget.exhausted || budget.dayEnded ? 0 : budget.remainingMinutes,courseDay:day,courseWords:dailyWords,contextWords:options.contextWords||options.getContextWords?.()||[],pendingWords:pendingCourseWords(P.storage()),vocabularyDrafts:options.getVocabularyDrafts?.()||[],records};return E.plan(M.read(),planOptions);
+      const memory=M.read(),explicitContext=Object.hasOwn(options,'contextWords')||typeof options.getContextWords==='function',curriculum=options.curriculum||root.IELTSCurriculumData;
+      let contextWords=options.contextWords||options.getContextWords?.()||[];
+      currentContext=null;
+      if(!explicitContext&&contextual&&curriculum){
+        const course=contextual.courseContext({storage:P.storage()}),drafts=[...course.drafts,...E.activityDrafts(memory)],adaptive=options.adaptive||root.IELTSAdaptivePlan;
+        const nextSignature=JSON.stringify([records.map(r=>[r.id,r.version,r.dayNumber,r.submittedAt]),drafts.map(d=>[d.id,d.courseDay,d.materialId,d.dayPlanBinding?.contentHash])]);
+        if(nextSignature!==contextSignature){adaptive?.adoptStarted?.({records,drafts,exposures:course.exposures});contextSignature=nextSignature;}
+        currentContext=(contextual.daily||contextual.resolve)({day,data:curriculum,memory,records,drafts,budget,adaptive,vocabularyData:data,sourceContexts:options.sourceContexts,semanticCatalog:options.semanticCatalog,now:now()});contextWords=currentContext.words;
+      }
+      const dailyWords=options.courseWords||currentContext?.currentCoreWords||courseWords(day,curriculum);
+      const planOptions={data,now:now(),remainingMinutes:budget.exhausted || budget.dayEnded ? 0 : budget.remainingMinutes,courseDay:day,courseWords:dailyWords,contextWords,pendingWords:pendingCourseWords(P.storage()),vocabularyDrafts:options.getVocabularyDrafts?.()||[],records,...(currentContext?.available?currentContext.budget:{})};return E.plan(memory,planOptions);
     }
     function notice(text) { statusText = text; render(); }
     function saveDraft(change) {
@@ -230,7 +241,7 @@
       }
       const material = {id:batch.materialId,version:String(batch.materialVersion || '1'),title:'8000必学词',skill:'vocabulary',type:'vocabulary',level:'A0',vocabulary:words};
       const heading = node('div', null, 'essential-session-heading');
-      heading.append(node('h2','继续本组 '+words.length+' 词'),node('p','每词三次正确输入和三次独立原音，再完成三轮测试。','memory-subtle'));
+      heading.append(node('h2',(batch.contextSource?.originCourseDay<batch.courseDay?'第 '+batch.contextSource.originCourseDay+' 课待补语境 · ':'')+'继续本组 '+words.length+' 词'),node('p','每词三次正确输入和三次独立原音，再完成三轮测试。','memory-subtle'));
       const close = button('保存并收起', () => {
         if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作，再收起。');
         activity(); saveDraft(); controller.destroy(); controller = null; batch = null; practice.replaceChildren();options.onActiveChange?.(false,{kind:'paused'}); render();
@@ -257,17 +268,20 @@
       practice.scrollIntoView?.({block:'start',behavior:'smooth'});
       render();
     }
-    async function start() {
+    async function start(requestedOrigin) {
       if(day<2){notice('8000必学词与新增循环复习从第2课开始。本课先完成原有词汇训练。');return;}
       await options.refreshBudget?.();
       check();
       const plan = currentPlan();
       const existing = plan.activeBatches?.[0];
       if (existing) return openBatch(existing);
-      const words = (plan.newWords || []).slice(0,BATCH_SIZE);
+      if(plan.due?.length){notice('先完成本轮到期回忆，再开始新的词组。');await options.openReview?.();return;}
+      const availableWords=plan.newWords||[],origin=Number.isInteger(requestedOrigin)?requestedOrigin:availableWords[0]?.originCourseDay,words=(origin?(plan.pendingContextWords||availableWords).filter(word=>word.originCourseDay===origin&&word.heldForVerification!==true):availableWords).slice(0,Math.min(BATCH_SIZE,availableWords.length));
       if (!words.length) { render(); return; }
+      if(currentContext?.available)(contextual.beginDay||contextual.freeze)(currentContext,{day,data:options.curriculum||root.IELTSCurriculumData,memory:M.read(),records,drafts:contextual.courseContext({storage:P.storage()}).drafts,budget:options.getBudget?.()||{remainingMinutes:360},adaptive:options.adaptive||root.IELTSAdaptivePlan,vocabularyData:data,sourceContexts:options.sourceContexts,semanticCatalog:options.semanticCatalog,now:now()});
       const id = 'essential-batch-'+(root.crypto?.randomUUID?.() || now().toString(36)+'-'+Math.random().toString(36).slice(2));
-      const state = store.read(), next = E.startBatch(state, {id,words,now:now(),courseDay:day});
+      const source=currentContext?.contexts?.find(c=>c.contract.day===origin)||currentContext,contextSource=source?.contract?{originCourseDay:source.contract.day,contractHash:source.contract.contentHash}:undefined;
+      const state = store.read(), next = E.startBatch(state, {id,words,now:now(),courseDay:day,...(contextSource?{contextSource}:{})});
       store.save(next);
       return openBatch(allBatches(next).find(item => item.id === id));
     }
@@ -302,12 +316,12 @@
       const fresh = node('article',null,'essential-step');
       const available = day<2?0:plan.newWords?.length || 0;
       const pendingCount=(plan.newWords||[]).filter(word=>word.learningKind==='complete-initial').length,newCount=available-pendingCount;
-      const groupSize = Math.min(BATCH_SIZE,available);
+      const firstOrigin=plan.newWords?.[0]?.originCourseDay,groupSize = Math.min(BATCH_SIZE,firstOrigin?plan.newWords.filter(w=>w.originCourseDay===firstOrigin).length:available);
       fresh.append(node('span',options.preferNewWords?'01':'02','essential-step-number'),node('h3',active ? '继续已开始的词组' : options.preferNewWords?'今日新词':'再学新词与待补词'),
         node('p',day<2?'8000必学词从第2课开始；第1课先完成原有词汇训练。':active ? '未完成组已保留，继续原来的词与作答顺序。' : available ? '今日安排 '+newCount+' 个新词'+(pendingCount?'、'+pendingCount+' 个待补词':'')+'，先完成一组 '+groupSize+' 词。' : '今天先巩固已有词；新词量会随复习积压与剩余预算调整。'));
       const startButton = button(active ? '继续未完成词组' : available ? '开始本组 '+groupSize+' 词' : '暂不增加新词', active ? () => openBatch(active) : start, !!options.preferNewWords || !!active || !reviewCount);
-      startButton.disabled = day<2 || !active && !available || !!batch && !finished;
-      fresh.append(startButton);if(options.preferNewWords)route.append(fresh,review);else route.append(review,fresh);
+      startButton.disabled = day<2 || !active && (!available || reviewCount>0) || !!batch && !finished;
+      fresh.append(startButton);const held=(plan.pendingContextWords||[]).filter(w=>w.heldForVerification===true);if(held.length)fresh.append(node('p','有 '+held.length+' 个原课语境词的原文版本待核验，原词义与来源已保留；核验后继续，不用新版原文替代。','memory-subtle'));if(currentContext?.heldContexts?.length)fresh.append(node('p','有旧语境来源合同待核对，原任务保留，暂不新增该组。','memory-subtle'));const carryGroups=new Map();for(const word of plan.pendingContextWords||[])if(word.originCourseDay<day&&word.heldForVerification!==true)carryGroups.set(word.originCourseDay,(carryGroups.get(word.originCourseDay)||0)+1);if(carryGroups.size){fresh.append(node('p','前课待补内容仍保留；补学原稿与用时计入当前课次和实际日期，旧课结果不重开。','memory-subtle'));for(const [originDay,count]of carryGroups){fresh.append(node('p','第 '+originDay+' 课：'+count+' 个语境词待补'));const resume=button('补第 '+originDay+' 课语境词',()=>start(originDay));resume.disabled=!!active||!!batch&&!finished||reviewCount>0||!available;fresh.append(resume);}}if(options.preferNewWords)route.append(fresh,review);else route.append(review,fresh);
       if(!options.inline&&(plan.quota?.courseReservedToday||pendingCourseWords(P.storage()).length)){const line=node('p',plan.quota?.courseReservedToday?'本课另有 '+plan.quota.courseReservedToday+' 个必学新词，沿用课程训练，不重复初学。':'课程中的未提交词汇已保留，继续原稿即可。','memory-subtle'),link=node('a','继续本课词汇');link.href='今日学习.html?day='+day+(P.isPreview?.()?'&preview=1':'');line.append(doc.createTextNode(' '),link);fresh.append(line);}
       const feedback = node('p',statusText,'essential-status'); feedback.setAttribute('role','status');
       const note = node('p','以365天累计覆盖8000词为长期目标。先做到期回忆，再按本课语境、实际表现和剩余预算安排新词；不设固定日词数门槛。技能轮换，语境表达结合听读说写；同日正确和旧自评保留为练习记录。','memory-subtle');

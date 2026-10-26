@@ -59,6 +59,7 @@
   const learner=levelRange(options.skillLevels?.[skill]);if(!learner)return finish('no-match','verified-skill-level-unavailable');
   const capabilities=set(options.verifiedCapabilities),weak=grammarTags(options.weakGrammarTags),currentGrammar=grammarTags(options.currentGrammarTags),wordGaps=set(options.currentWordGaps),annualGaps=set(options.targetHeadwordGaps),seen=set(options.seenSourceGroups);
   if(options.currentSourceGroup)seen.add(norm(options.currentSourceGroup));
+  const vocabulary=options.vocabularyExposure||root.IELTSContextualVocabularyExposure||(typeof require==='function'?require('./contextual-vocabulary-exposure.js'):null),possible=vocabulary?.read?.({...options,materials})||{unavailable:true};for(const group of possible?.unavailable?materials.map(m=>m.source?.exposureGroup).filter(Boolean):possible?.sourceGroups||[])seen.add(norm(group));
   const ranked=[];
   for(const material of materials){
    const source=material.source||{},id=material.id,group=source.exposureGroup,sourceId=source.publicSourceId;
