@@ -1,7 +1,8 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const root=path.join(__dirname,'..'),B=require('../tools/build-learning-path.cjs');
-const inputs=B.loadInputs(root),plan=B.buildLearningPath(inputs),copy=x=>JSON.parse(JSON.stringify(x));
+const Artifact=require('./public-artifact-modes-fixture.cjs'),artifactRoot=path.resolve(process.env.PUBLIC_ARTIFACT_OUTPUT_ROOT||process.env.YEAR_BUDGET_OUTPUT_ROOT||path.join(__dirname,'..')),modes=Artifact.load({data:require(path.join(artifactRoot,'assets/curriculum-data.js')),sourceContexts:require(path.join(artifactRoot,'assets/public-context-data.js')),projectRoot:path.join(__dirname,'..')});
+const loaded=B.loadInputs(root),inputs={...loaded,course:modes.actual},plan=B.buildLearningPath(inputs),copy=x=>JSON.parse(JSON.stringify(x));
 const refs=d=>d.proposedAssignment.activities.flatMap(a=>a.references);
 test('365 separate current/proposed rows remain inactive and never mutate current day snapshots',()=>{
  const before=B.hash(inputs.course.days),again=B.buildLearningPath(inputs);
@@ -104,7 +105,7 @@ test('all ordinary sources are checked before reuse and phase cumulative input n
  const publicIds=new Set(inputs.course.materials.filter(m=>m.source?.publicSourceId).map(m=>m.id)),expected=351+publicIds.size;
  assert.equal(plan.ordinarySourceLedger.length,expected);assert.equal(new Set(plan.ordinarySourceLedger.map(s=>s.materialId)).size,expected);
  const supplemental=plan.ordinarySourceLedger.filter(s=>publicIds.has(s.materialId));
- assert.equal(publicIds.size,inputs.course.audit.publicSupplements.readingMaterials+inputs.course.audit.publicSupplements.listeningMaterials);assert.equal(supplemental.length,publicIds.size);
+ assert.equal(modes.legacyMaterialIds.length,75);assert.equal(modes.legacyMaterialIds.length,inputs.course.audit.publicSupplements.readingMaterials+inputs.course.audit.publicSupplements.listeningMaterials);assert.equal(publicIds.size,modes.legacyMaterialIds.length+modes.newMaterialIds.length);assert.deepEqual(supplemental.filter(s=>!modes.newMaterialIds.includes(s.materialId)).map(s=>s.materialId).sort(),modes.legacyMaterialIds.slice().sort());assert.deepEqual(supplemental.filter(s=>modes.newMaterialIds.includes(s.materialId)).map(s=>s.materialId).sort(),modes.newMaterialIds.slice().sort());assert.equal(supplemental.length,publicIds.size);
  assert.ok(supplemental.every(s=>!s.firstCurrentDay&&!s.firstProposedDay&&s.deferReason&&s.createsLearnerDebt===false),'optional sources are tracked without silently assigning them to old core days');
  assert.equal(plan.summary.ordinarySources.assigned,351);assert.equal(plan.summary.ordinarySources.pending,publicIds.size);
  assert.ok(plan.ordinarySourceLedger.every(s=>s.firstProposedDay||s.deferReason));
@@ -129,4 +130,9 @@ test('public source catalog is optional and maps only explicit candidate level/p
  const pool=B.normalizePublicSupplementPool(raw,inputs.policy);assert.equal(pool.sources[0].level.label,'A1–A2');assert.equal(pool.automaticScheduling,false);assert.equal(pool.sources[0].headwordCoverageCredit,0);assert.equal(pool.sources[0].countedInInputAudit,false);
  const bad=copy(raw);bad.sources[0].prerequisiteCapabilityIds=['fictional:level'];assert.throws(()=>B.normalizePublicSupplementPool(bad,inputs.policy),/Unknown public prerequisite/);
  const hashless=copy(raw);hashless.sources[0].contentHash='';assert.throws(()=>B.normalizePublicSupplementPool(hashless,inputs.policy),/version\/contentHash/);
+});
+
+
+test('the pinned default75 learning-path ledger stays separate from actual signed additions',()=>{
+ const legacy=B.buildLearningPath({...inputs,course:modes.legacy}),publicRows=legacy.ordinarySourceLedger.filter(s=>modes.legacyMaterialIds.includes(s.materialId));assert.equal(modes.legacy.materials.length,1823);assert.equal(legacy.ordinarySourceLedger.length,351+75);assert.equal(publicRows.length,75);assert.equal(legacy.summary.ordinarySources.assigned,351);assert.equal(legacy.summary.ordinarySources.pending,75);assert.ok(publicRows.every(s=>s.deferReason&&s.createsLearnerDebt===false));assert.equal(plan.ordinarySourceLedger.length,351+modes.expected.publicVariants);for(const id of modes.newMaterialIds){const row=plan.ordinarySourceLedger.find(s=>s.materialId===id);assert.ok(row);assert.equal(row.firstCurrentDay,null);assert.equal(row.firstProposedDay,null);assert.ok(row.deferReason);assert.equal(row.createsLearnerDebt,false);}
 });

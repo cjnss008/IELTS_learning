@@ -1,7 +1,7 @@
 'use strict';
 // Read-only fixture: a default core build may omit runtime year metadata.
 // Its test-only view is reconstructed only from committed, hash-bound sidecars.
-const path=require('node:path'),fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const path=require('node:path'),fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict'),Artifact=require('./public-artifact-modes-fixture.cjs');
 const root=path.resolve(__dirname,'..'),output=path.resolve(process.env.YEAR_BUDGET_OUTPUT_ROOT||root),P=require('../tools/year-budget-planner.cjs');
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function bootstrapValue(bytes){
@@ -33,6 +33,7 @@ function load(options={}){
  if(active){assert.deepEqual(index.runtimeContract,bootstrap.runtimeContract);assert.deepEqual(frozenPlan.runtimeContract,bootstrap.runtimeContract);const contract=bound(bootstrap.runtimeContract.contract,from);assert.equal(contract.protocol,1);assert.equal(contract.runtimeConnected,true);assert.equal(contract.activationReviewed,true);assert.deepEqual(contract.components,bootstrap.runtimeContract.components,'committed runtime components');committed.runtimeContract=bootstrap.runtimeContract;}else{for(const value of [bootstrap,index,frozenPlan])assert.equal(value.runtimeContract,undefined,'inactive artifact must not claim runtime activation');}
  if(data.yearFirstUse)for(const key of Object.keys(committed))assert.deepEqual(data.yearFirstUse[key],committed[key],'runtime year metadata '+key);
  const meta=data.yearFirstUse||committed,base=P.clone(data);delete base.yearFirstUse;assert.equal(P.hash(data),before,'fixture must not mutate actual D');
- return{active,base,yearMaterials,catalog,inputHash:frozenPlan.inputHash,Year:require('../tools/year-expansion.cjs'),frozenPlan,data,meta,testOnlyMetadataView:data.yearFirstUse?null:{...P.clone(data),yearFirstUse:P.clone(committed)},metadataSource:data.yearFirstUse?'runtime-bundle':'committed-sidecars-test-only',outputRoot:from};
+ const artifactModes=Artifact.load({data,sourceContexts:require(path.join(from,'assets/public-context-data.js')),projectRoot:options.projectRoot||root});assert.equal(Artifact.sha(yearMaterials),Artifact.PIN.yearMaterialsSha256,'reviewed688 year material objects drifted');const legacyInput={base:artifactModes.legacy,yearMaterials,catalog,Year:require('../tools/year-expansion.cjs')};legacyInput.inputHash=P.hash({days:legacyInput.base.days,materials:legacyInput.base.materials,yearMaterials,publicPlanHash:legacyInput.base.publicCoursePlan.planHash,catalog});
+ return{artifactModes,legacyInput,active,base,yearMaterials,catalog,inputHash:frozenPlan.inputHash,Year:require('../tools/year-expansion.cjs'),frozenPlan,data,meta,testOnlyMetadataView:data.yearFirstUse?null:{...P.clone(data),yearFirstUse:P.clone(committed)},metadataSource:data.yearFirstUse?'runtime-bundle':'committed-sidecars-test-only',outputRoot:from};
 }
 module.exports={root,output,sha,bound,load};

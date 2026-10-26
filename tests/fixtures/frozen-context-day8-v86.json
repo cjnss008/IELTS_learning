@@ -1,0 +1,504 @@
+{
+  "schema": 1,
+  "baselineCommit": "288a7c648df0fbc87148080dde579a2c21650937",
+  "day": 8,
+  "now": 1767240000000,
+  "state": {
+    "schema": 1,
+    "revision": 1,
+    "history": [],
+    "activePlanId": null,
+    "assignments": {},
+    "startedDays": [
+      8
+    ],
+    "frozenDays": {
+      "8": {
+        "day": 8,
+        "week": 2,
+        "weekday": 1,
+        "title": "身边的人与物",
+        "tasks": [
+          {
+            "id": "vocabulary",
+            "skill": "vocabulary",
+            "minutes": 45,
+            "materialIds": [
+              "w02-read-1-vocabulary",
+              "lexical-w02-1"
+            ],
+            "mode": "practice",
+            "instructions": "参考预算45分钟：先看懂必学词音标、词义和例句；每词先正确输入英文三遍，再独立录音跟读三次并保存专业结果；全词完成后依次进行补全、全中文写英文、听写三轮，错项进入统一错题本。可按掌握速度提前进入下一步。",
+            "deliverable": "每词三遍正确输入、三份真实跟读原音及专业结果，补全／全中文写英文／听写三轮原稿、客观核对及错题记录（按词去重计量）",
+            "quantity": 12,
+            "unit": "条",
+            "materialPractice": [
+              {
+                "materialId": "w02-read-1-vocabulary",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              },
+              {
+                "materialId": "lexical-w02-1",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "grammar",
+            "skill": "grammar",
+            "minutes": 30,
+            "materialIds": [
+              "w02-read-1-grammar"
+            ],
+            "mode": "practice",
+            "instructions": "先完成本日首次安排的语法练习，再做一份明确的旧材料巩固；对照解释，用新人物或地点口头改写。首次安排的材料不代表规则从未学过。",
+            "deliverable": "本日语法原始答案、具体订正与新情境改写；首次安排和巩固材料分别标明",
+            "quantity": 4,
+            "unit": "题",
+            "grammarLearningPlan": {
+              "newMaterialIds": [
+                "w02-read-1-grammar"
+              ],
+              "reviewMaterialIds": [],
+              "scope": "新包指本日首次安排的材料，不据此宣称新概念或个人掌握。"
+            },
+            "materialPractice": [
+              {
+                "materialId": "w02-read-1-grammar",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "listening",
+            "skill": "listening",
+            "minutes": 75,
+            "materialIds": [
+              "w02-listen-1",
+              "sounds-02",
+              "public-voa-l1-01-listening"
+            ],
+            "mode": "practice",
+            "instructions": "15分钟盲听答题；20分钟分句听写；20分钟对照定位并重听；20分钟遮住原文复述。\n\n本日听读任务：完成“Lesson 1: Welcome!”的原始作答与订正；公开来源仅计普通练习，同文听读共享曝光，不作为独立晋级证据。",
+            "deliverable": "原始答案、错句听写及复述",
+            "quantity": 20,
+            "unit": "题",
+            "materialPractice": [
+              {
+                "materialId": "w02-listen-1",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              },
+              {
+                "materialId": "sounds-02",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              },
+              {
+                "materialId": "public-voa-l1-01-listening",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8,
+                "publicPracticeOnly": true
+              }
+            ],
+            "practiceCycle": "first-planned",
+            "coreMaterialIds": [
+              "w02-listen-1",
+              "sounds-02",
+              "public-voa-l1-01-listening"
+            ],
+            "publicCourseAssignments": [
+              {
+                "assignmentId": "public-course:8:public-voa-l1-01-listening",
+                "day": 8,
+                "taskId": "listening",
+                "skill": "listening",
+                "materialId": "public-voa-l1-01-listening",
+                "materialVersion": "s1-q1",
+                "materialContentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+                "sourceId": "voa-l1-01",
+                "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                "exposureGroup": "public-source:voa-l1-01",
+                "mode": "practice",
+                "required": true,
+                "role": "contextual-public-course"
+              }
+            ]
+          },
+          {
+            "id": "reading",
+            "skill": "reading",
+            "minutes": 60,
+            "materialIds": [
+              "w02-read-1"
+            ],
+            "mode": "practice",
+            "instructions": "10分钟整体理解；20分钟答题找证据；15分钟拆句；15分钟合上原文复述或摘要。",
+            "deliverable": "原始答案、原文依据和摘要",
+            "quantity": 8,
+            "unit": "题",
+            "materialPractice": [
+              {
+                "materialId": "w02-read-1",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "speaking",
+            "skill": "speaking",
+            "minutes": 60,
+            "materialIds": [
+              "w02-read-1-speaking"
+            ],
+            "mode": "practice",
+            "instructions": "10分钟准备；15分钟独立录音；15分钟回听及核对转写；20分钟针对练习并再次录音。",
+            "deliverable": "原音、转写、问题定位与重录",
+            "quantity": 12,
+            "unit": "词",
+            "materialPractice": [
+              {
+                "materialId": "w02-read-1-speaking",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "writing",
+            "skill": "writing",
+            "minutes": 75,
+            "materialIds": [
+              "w02-read-1-writing"
+            ],
+            "mode": "practice",
+            "instructions": "15分钟口头组织句子，25分钟独立写作，15分钟反馈，20分钟订正与换情境改写。",
+            "deliverable": "原稿、反馈依据及订正稿",
+            "quantity": 12,
+            "unit": "词",
+            "materialPractice": [
+              {
+                "materialId": "w02-read-1-writing",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "reflection",
+            "skill": "reflection",
+            "minutes": 15,
+            "materialIds": [
+              "reflection-8"
+            ],
+            "mode": "practice",
+            "instructions": "整页填写并提交今日错题，只重做仍错项目，直到全部通过；随后由 AI 根据今日材料与真实作品生成复盘及延迟复测建议。",
+            "deliverable": "整页错题订正原稿、全部通过记录与 AI 每日复盘",
+            "quantity": 1,
+            "unit": "份复盘",
+            "materialPractice": [
+              {
+                "materialId": "reflection-8",
+                "cycle": "first-planned",
+                "firstPlannedDay": 8
+              }
+            ],
+            "practiceCycle": "first-planned"
+          }
+        ],
+        "totalMinutes": 360,
+        "publicCourse": {
+          "schema": 1,
+          "planId": "public-course-integration-v1",
+          "version": "1",
+          "basePlanHash": "efc10fa4c9e8373e7e896432c7056d1a3cfe72dd73448ab7583b92dc1767d677",
+          "planHash": "efc10fa4c9e8373e7e896432c7056d1a3cfe72dd73448ab7583b92dc1767d677",
+          "assignments": [
+            {
+              "assignmentId": "public-course:8:public-voa-l1-01-listening",
+              "day": 8,
+              "taskId": "listening",
+              "skill": "listening",
+              "materialId": "public-voa-l1-01-listening",
+              "materialIds": [
+                "public-voa-l1-01-listening"
+              ],
+              "materialVersion": "s1-q1",
+              "materialContentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+              "sourceId": "voa-l1-01",
+              "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+              "exposureGroup": "public-source:voa-l1-01",
+              "mode": "practice",
+              "required": true,
+              "role": "contextual-public-course",
+              "strategy": "append-within-task-budget",
+              "replaceMaterialIds": [],
+              "estimatedStudyMinutes": 30,
+              "requiredMinutes": 30,
+              "taskMaterialIdsBefore": [
+                "w02-listen-1",
+                "sounds-02"
+              ],
+              "taskMinutesBefore": 75,
+              "taskMinutesAfter": 75,
+              "ordinaryCompletionOnly": true,
+              "independentAssessmentEligible": false,
+              "independentTransferEligible": false,
+              "levelEligibility": {
+                "source": "A1",
+                "dayLow": "A1",
+                "dayHigh": "A1",
+                "minimumPracticeLevel": "A1",
+                "notVerifiedByCalendar": true
+              },
+              "prerequisiteCapabilityIds": [],
+              "contextMatches": {
+                "wordHeadwords": [],
+                "grammarTags": []
+              },
+              "contextLinks": {
+                "words": [
+                  {
+                    "word": "again",
+                    "surface": "again",
+                    "start": 125,
+                    "end": 130,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-01",
+                    "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  },
+                  {
+                    "word": "yes",
+                    "surface": "Yes",
+                    "start": 31,
+                    "end": 34,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-01",
+                    "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  },
+                  {
+                    "word": "meet",
+                    "surface": "meet",
+                    "start": 93,
+                    "end": 97,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-01",
+                    "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  }
+                ],
+                "grammar": [
+                  {
+                    "tag": "yes-no-questions",
+                    "quote": "Are you Anna?",
+                    "explanation": "be 疑问句把 are 放在主语 you 前。",
+                    "start": 10,
+                    "end": 23,
+                    "offsetUnit": "UTF-16-code-unit",
+                    "status": "source-location-and-structure-reviewed; not-examiner-calibrated",
+                    "sourceId": "voa-l1-01",
+                    "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716"
+                  },
+                  {
+                    "tag": "be-present",
+                    "quote": "I am Pete.",
+                    "explanation": "am 是 be 的第一人称单数形式，后接姓名进行自我介绍。",
+                    "start": 67,
+                    "end": 77,
+                    "offsetUnit": "UTF-16-code-unit",
+                    "status": "source-location-and-structure-reviewed; not-examiner-calibrated",
+                    "sourceId": "voa-l1-01",
+                    "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716"
+                  }
+                ],
+                "minutesByTask": {
+                  "vocabulary": 3,
+                  "grammar": 3
+                },
+                "requiredActivities": [
+                  "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+                  "Explain the two source grammar examples and produce one new sentence."
+                ],
+                "initialAcquisitionNotCompletedByDisplay": true,
+                "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+                "executionStatus": "pending-not-runtime-connected-v1"
+              },
+              "replacementGuard": null,
+              "appendFallback": null,
+              "exposureIntent": "first-source-practice",
+              "plannedPriorExposure": false,
+              "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+              "dayBudget": {
+                "totalBudgetMinutes": 360,
+                "before": {
+                  "studyMinutes": 187,
+                  "breakMinutes": 45,
+                  "totalMinutes": 232
+                },
+                "after": {
+                  "studyMinutes": 223,
+                  "breakMinutes": 60,
+                  "totalMinutes": 283
+                },
+                "taskSlotMinutesBefore": 360,
+                "taskSlotMinutesAfter": 360,
+                "referenceOnly": true,
+                "actualOverrunMustCarryAndRemainIncomplete": true
+              },
+              "effectiveStrategy": "append-within-task-budget",
+              "admission": {
+                "schema": 1,
+                "scope": "ordinary-practice-only",
+                "skillLevel": "A1",
+                "levelBasis": "verified-placement-skill; lower bound of any range",
+                "verifiedCapabilities": [
+                  "foundation:listening",
+                  "everyday:listening",
+                  "foundation:reading",
+                  "everyday:reading"
+                ]
+              }
+            }
+          ],
+          "integration": {
+            "readingListening": "required-ordinary-tasks",
+            "vocabularyGrammar": "pending-real-activities",
+            "reviews": "pending-real-submissions",
+            "masteryCredit": 0
+          }
+        },
+        "contextualVocabulary": {
+          "schema": 1,
+          "role": "scheduled-context-vocabulary",
+          "day": 8,
+          "baseDayContentHash": "af4d54317c13207dddc208715319f977b34d3fcb8f499a07a0cc3bc897dc3b96",
+          "words": [
+            {
+              "word": "again",
+              "meaning": "再一次；重新",
+              "partOfSpeech": "副词",
+              "ipa": "/əˈɡɛn/",
+              "example": "Anna: Let's try that again. I'm Anna. Nice to meet you.",
+              "audio": "",
+              "source": {
+                "assignmentId": "public-course:8:public-voa-l1-01-listening",
+                "materialId": "public-voa-l1-01-listening",
+                "materialVersion": "s1-q1",
+                "materialContentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+                "sourceId": "voa-l1-01",
+                "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                "surface": "again",
+                "start": 125,
+                "end": 130,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-source-sense",
+                "partOfSpeech": "副词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            },
+            {
+              "word": "yes",
+              "meaning": "是的",
+              "partOfSpeech": "应答词",
+              "ipa": "/jɛs/",
+              "example": "Anna: Yes! Hi there! Are you Pete?",
+              "audio": "",
+              "source": {
+                "assignmentId": "public-course:8:public-voa-l1-01-listening",
+                "materialId": "public-voa-l1-01-listening",
+                "materialVersion": "s1-q1",
+                "materialContentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+                "sourceId": "voa-l1-01",
+                "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                "surface": "Yes",
+                "start": 31,
+                "end": 34,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-source-sense",
+                "partOfSpeech": "应答词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            },
+            {
+              "word": "meet",
+              "meaning": "初次见到；认识",
+              "partOfSpeech": "动词",
+              "ipa": "/mit/",
+              "example": "Anna: Nice to meet you.",
+              "audio": "",
+              "source": {
+                "assignmentId": "public-course:8:public-voa-l1-01-listening",
+                "materialId": "public-voa-l1-01-listening",
+                "materialVersion": "s1-q1",
+                "materialContentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+                "sourceId": "voa-l1-01",
+                "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+                "surface": "meet",
+                "start": 93,
+                "end": 97,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-source-sense",
+                "partOfSpeech": "动词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            }
+          ],
+          "sources": [
+            {
+              "assignmentId": "public-course:8:public-voa-l1-01-listening",
+              "day": 8,
+              "taskId": "listening",
+              "skill": "listening",
+              "materialId": "public-voa-l1-01-listening",
+              "materialVersion": "s1-q1",
+              "materialContentHash": "a1f662859dde2bb2cb4b615f0a4ed4eee97a232663d92887969471be8101f3e8",
+              "sourceId": "voa-l1-01",
+              "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+              "exposureGroup": "public-source:voa-l1-01",
+              "mode": "practice",
+              "required": true,
+              "role": "contextual-public-course"
+            }
+          ],
+          "coreWordKeys": [
+            "bag",
+            "blue",
+            "book",
+            "cat",
+            "desk",
+            "friend",
+            "hat",
+            "on",
+            "pen",
+            "red",
+            "small",
+            "umbrella"
+          ],
+          "independentEvidence": false,
+          "masteryCredit": 0,
+          "contentHash": "5d10d9c94e27834532597d3062686c229a0a53d64638c2fb07bb6c6e220e8726"
+        }
+      }
+    }
+  }
+}

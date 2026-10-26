@@ -1,0 +1,405 @@
+{
+  "schema": 1,
+  "status": "answer-hidden-independent-solve-request",
+  "scope": "Five CC0 ordinary reading sources; six English comprehension questions each. No answer key, explanation or source grammar/word teaching preview.",
+  "protocol": {
+    "answers": "Return each sourceId/qId -> exact selected option text or text fill. Fill answers must obey the source word limit.",
+    "reviewer": "Root independent Codex; not human/examiner/CEFR calibration",
+    "sourceDifficulty": "B1/B2 target training; verified B2 upper source-stage admission; no official level claim"
+  },
+  "sources": [
+    {
+      "schema": 1,
+      "sourceId": "gsa-plain-language-02",
+      "title": "Paraphrase testing",
+      "kind": "reading",
+      "text": "Ask the participant to read to a specific stopping point, known as a cue. Each time the participant reaches a cue, ask the participant to tell you in his or her own words what that section means. Take notes, writing down the participant's explanation in the participant's words. Do not correct the participant. When you review your notes later, wherever participants misunderstood the message, the document has a problem that you should fix.\n\nWith only 6 to 9 participants, paraphrase testing will not take a lot of time, and the time invested is worth it. Taking the time to test your document and change it based on what you learn may save you hundreds of hours later answering questions from your users or producing a second document clarifying the first one.\n\nFor longer documents where finding information is also important do usability testing. Usability testing is the best technique for booklets, regulations, and web sites. With usability testing, you test the document as a whole, not just individual paragraphs.\n\nVeterans Benefits Administration tested a letter in which users appeared to understand every word. However, when asked what they would do if they got this letter, most people said they would call VBA's toll-free number.\n\nThe letter was about a replacement check sent because the original check was out of date. The letter said, \"You will receive the new check shortly.\" Readers indicated that they would call if they didn't receive the check at the same time as the letter. Changing the sentence to show an approximate date they would receive the check eliminated countless phone calls.\n\nWhen testing a multi-use letter, some readers were confused by the term \"service-connected disability.\" To VBA it means that a veteran has a disability that can be traced back to time in military service.\" Protocol tests showed that one veteran thought it meant a disability that happened at work. Another thought it meant you had to be injured while in the military, but not necessarily while on duty. Another thought you had to have gotten the disability during combat for it to be considered service-connected.\n\nWhen each reader was asked a general question about understanding the letter, they all said that it was clear. Yet several would have done something other than what VBA wanted because they had a different definition of \"service-connected.\" To solve this problem, VBA explained the phrase so that everyone was working from the same definition.\n\nA team working on a form wanted to use the question, \"When were you last (gainfully) employed?\" They felt that the term \"gainfully employed\" would gather more legally sufficient and accurate information than just the word \"employed.\"\n\nIn fact, research showed that different government agencies may have different definitions of \"gainful.\" But, more importantly, because each reader had a different definition of the word, the agency would have gotten less accurate information if the word had been in the document.\n\nRemember, the goal of testing is to ensure that your audience understands your document, and therefore, won't have to call you for an explanation. Although this technique is very valuable, it probably isn't worth the time to test documents that go to a small number of people.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "What should a participant do after reaching each marked stopping point?",
+          "options": [
+            "Explain that section in their own words.",
+            "Repeat the section word for word.",
+            "Ask the tester to explain the section."
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "prompt": "Which participant range is mentioned for this testing method?",
+          "options": [
+            "20 to 30 people",
+            "6 to 9 people",
+            "12 to 15 people"
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "prompt": "For which task does the writer prefer usability testing?",
+          "options": [
+            "Checking whether a single unfamiliar word can be pronounced.",
+            "Checking only the length of each isolated paragraph.",
+            "Checking how readers find information in a longer document."
+          ]
+        },
+        {
+          "id": "q4",
+          "type": "fill",
+          "prompt": "Use TWO WORDS from the text: To reduce calls about the replacement check, the letter gave an ______ for its arrival.",
+          "maxWords": 2
+        },
+        {
+          "id": "q5",
+          "type": "single",
+          "prompt": "Why did the disability letter still need revision after readers said it was clear?",
+          "options": [
+            "Readers interpreted a key phrase differently and would act differently.",
+            "Readers could not identify any of the words in the letter.",
+            "The letter had already told every reader to telephone the agency."
+          ]
+        },
+        {
+          "id": "q6",
+          "type": "fill",
+          "prompt": "Use TWO WORDS from the text: The writer says this testing may not be worthwhile for a document sent to a ______ of people.",
+          "maxWords": 2
+        }
+      ],
+      "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+      "originalFrozenSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+      "normalization": {
+        "schema": 1,
+        "originalFrozenSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+        "displaySha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+        "transformations": [],
+        "originalRepositoryPath": "_pages/guidelines/test/paraphrase-testing.md",
+        "originalRepositorySha256": "a0fa141e16d84d7ba1a4418e23a64810109c7dfd25d74d15cf8de8f5d599f394"
+      },
+      "blindInputSha256": "16b875cbcaea49010792fee040b1426d8786106b2d0fb5c7232502a9ff7fdfea"
+    },
+    {
+      "schema": 1,
+      "sourceId": "gsa-plain-language-03",
+      "title": "Use “must” to indicate requirements",
+      "kind": "reading",
+      "text": "The word \"must\" is the clearest way to convey to your audience that they have to do something. \"Shall\" is one of those officious words that has encumbered legal style writing for many years. The message that \"shall\" sends to the audience is, \"this is deadly material.\" \"Shall\" is also obsolete. When was the last time you heard it used in everyday speech?\n\nDropping \"shall\" is a major step in making your writing more user-friendly. Don't be intimidated by the argument that using \"must\" will lead to a lawsuit. Many agencies already use the word \"must\" to convey obligations. The U.S. Courts eliminated \"shall\" in favor of \"must\" in their Rules of Procedure.\n\n- You must notify any settler, by registered mail, that you have applied to use timber from your lease. Include in your notice the amount and the kind of timber you intend to use as fuel.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "Why does the writer favour the recommended wording for a required action?",
+          "options": [
+            "It makes every sentence sound more ceremonial.",
+            "It avoids saying that any action is required.",
+            "It makes the requirement clearer to the audience."
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "prompt": "How does the writer describe the older wording in this kind of document?",
+          "options": [
+            "Overly official and out of date.",
+            "Typical of relaxed everyday conversation.",
+            "Always easier for readers to understand."
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "fill",
+          "prompt": "Use ONE WORD from the text: What feared legal outcome does the writer say should not intimidate the reader into keeping the old wording?",
+          "maxWords": 1
+        },
+        {
+          "id": "q4",
+          "type": "fill",
+          "prompt": "Use NO MORE THAN FOUR WORDS from the text: Which institution changed the relevant wording in its Rules of Procedure?",
+          "maxWords": 4
+        },
+        {
+          "id": "q5",
+          "type": "fill",
+          "prompt": "Use NO MORE THAN TWO WORDS from the text: In the final example, who has to receive the written notification?",
+          "maxWords": 2
+        },
+        {
+          "id": "q6",
+          "type": "single",
+          "prompt": "What information must the notice in the example include?",
+          "options": [
+            "The total rent and the date on which the lease expires.",
+            "The names of everyone working at the postal office.",
+            "The amount and kind of timber planned for use as fuel."
+          ]
+        }
+      ],
+      "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+      "originalFrozenSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+      "normalization": {
+        "schema": 1,
+        "originalFrozenSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+        "displaySha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+        "transformations": [
+          {
+            "kind": "remove-Jekyll-display-attribute",
+            "originalStart": 848,
+            "originalEnd": 874,
+            "removed": " {: .example-side-by-side}",
+            "replacement": ""
+          }
+        ],
+        "originalRepositoryPath": "_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+        "originalRepositorySha256": "2954a1c4e581aa45d188351d9c61fa948cc17a7dc58968250a3ef7aeb748598b"
+      },
+      "blindInputSha256": "3cd26ae665c27f3d376162901437fbdb4efa06872b6b11f87eef731061468507"
+    },
+    {
+      "schema": 1,
+      "sourceId": "gsa-plain-language-08",
+      "title": "Minimize abbreviations",
+      "kind": "reading",
+      "text": "The best solution is to find a simplified name for the entity you want to abbreviate. This gives readers meaningful content that helps them remember what you're talking about. It may be a bit longer, but the gain in clarity and ease of reading is worth it.\n\nIn most cases, you don't need to define this nickname the first time you use it, unless you're using lots of different nicknames. When you're using a nickname for the main topic you're writing about, don't insult your users and waste their time. For example, in a paper about Resource Advisory Councils, don't tell them that when you say \"Council\" you mean the \"Resource Advisory Council.\"\n\nThere's a short list of abbreviations that have entered common usage. When you use them, don't define them—you're just taking up space and annoying your user. Make sure the abbreviation you're using is on the list. Examples include IBM, ATM, BMW, PhD, CIA, and FBI.\n\nA closely related guideline is, \"don't define something that's obvious to the user.\" Most federal agencies, when writing a letter responding to an inquiry, insist on defining the agency name, as in, \"Thank you for writing to the Federal Aviation Administration (FAA) about your concerns.\" The letterhead says the name of the agency. The person wrote to the agency, and now the agency is writing back. The user is not going to be confused about what FAA means!\n\nLimit the number of abbreviations you use in one document to no more than three, and preferably two. Spell out everything else. If you've used abbreviations for the two or three most common items, it's unlikely that the other items occur so frequently you can't spell them out every time.\n\nWhen you're considering whether to use an abbreviation, or how many you can get away with in a document, remember that they should make it easier for your users. If they make it harder, you've failed to write for your audience.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "What does the writer suggest instead of an unhelpful abbreviation?",
+          "options": [
+            "A simplified, meaningful name for the thing or organization.",
+            "A different unexplained letter code for every paragraph.",
+            "A nickname that has no connection to the main topic."
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "prompt": "When might explaining a nickname at first use be useful?",
+          "options": [
+            "When many different nicknames are used in the same document.",
+            "Whenever the reader already knows the organization from its letterhead.",
+            "Whenever a familiar abbreviation has become common usage."
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "prompt": "Why is the agency abbreviation unnecessary to explain in the reply-letter example?",
+          "options": [
+            "The letter deliberately avoids naming the organization that replies.",
+            "The recipient has already contacted that agency and its name appears on the letterhead.",
+            "The recipient is required to know every federal abbreviation in advance."
+          ]
+        },
+        {
+          "id": "q4",
+          "type": "single",
+          "prompt": "What is the recommended maximum number of abbreviations in one document?",
+          "options": [
+            "Ten",
+            "Three",
+            "Five"
+          ]
+        },
+        {
+          "id": "q5",
+          "type": "fill",
+          "prompt": "Use TWO WORDS from the text: After shortening the most common items, the writer should ______ the other terms.",
+          "maxWords": 2
+        },
+        {
+          "id": "q6",
+          "type": "single",
+          "prompt": "What conclusion does the writer draw if abbreviations make the document harder for its readers?",
+          "options": [
+            "The readers must memorize every shortened form before continuing.",
+            "The extra difficulty proves that the document is more professional.",
+            "The writer has failed to meet the audience's needs."
+          ]
+        }
+      ],
+      "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+      "originalFrozenSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+      "normalization": {
+        "schema": 1,
+        "originalFrozenSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+        "displaySha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+        "transformations": [],
+        "originalRepositoryPath": "_pages/guidelines/words/minimize-abbreviations.md",
+        "originalRepositorySha256": "0d07b00c2fb3453fc0db33eafab1dc601b5a0310e7ff1d53c239e0232232e5a3"
+      },
+      "blindInputSha256": "c04fc85522373de35bee36a2d133c8a7073eddcbe9e259ff76d52dafae6dddbb"
+    },
+    {
+      "schema": 1,
+      "sourceId": "gsa-plain-language-07",
+      "title": "Avoid jargon",
+      "kind": "reading",
+      "text": "When we say not to use jargon, we're not advocating leaving out necessary technical terms, but we are saying to make sure your language is as clear as possible. For example, there may not be another correct way to refer to a \"brinulator valve control ring.\" But that doesn't prevent you from saying \"tighten the brinulator valve control ring securely\" instead of \"Apply sufficient torque to the brinulator valve control ring to ensure that the control ring assembly is securely attached to the terminal such that loosening cannot occur under normal conditions.\" The first is a necessary use of a technical term. The second is jargon.\n\nSpecial terms can be useful shorthand within a particular audience and may be the clearest way to communicate with that group. However, going beyond necessary technical terms to write in jargon can cause misunderstanding or alienation, even if your only readers are specialists.\n\nReaders complain about jargon more than any other writing fault, because writers often fail to realize that terms they know well may be difficult or meaningless to their audience. Try to substitute everyday language for jargon as often as possible. Consider the following pairs. The plainer version conveys technical information just as accurately as and more clearly than the jargon-laden version.\n\nWhen you have no way to express an idea except to use technical language, make sure to define your terms. However, it's best to keep definitions to a minimum. Remember to write to communicate, not to impress. If you do that, you should naturally use less jargon. For more on definitions, see Dealing with definitions.\n\n\"Shall\" is also losing its popularity in legal circles. Obviously, it's especially important in regulations to use words of authority clearly, and many legal writing experts recommend avoiding the archaic and ambiguous \"shall\" in favor of another word, depending on your meaning. Read more about \"shall\" in Use \"must\" to convey requirements.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "What does the writer allow when an instruction needs a specialized technical name?",
+          "options": [
+            "Invent a new general name even if it is inaccurate.",
+            "Remove the action that the reader needs to perform.",
+            "Keep the necessary term while making the instruction as clear as possible."
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "fill",
+          "prompt": "Use ONE WORD from the text: In the shorter equipment instruction, what action is the reader told to perform?",
+          "maxWords": 1
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "prompt": "What can needless jargon cause even when all readers are specialists?",
+          "options": [
+            "The removal of any need for precise technical terms.",
+            "Misunderstanding or a feeling of exclusion.",
+            "Automatic agreement about every detail."
+          ]
+        },
+        {
+          "id": "q4",
+          "type": "single",
+          "prompt": "Why can terms familiar to a writer still be a problem?",
+          "options": [
+            "A familiar term always becomes more accurate when the sentence is longer.",
+            "The writer may not notice that the audience finds them difficult or meaningless.",
+            "Every reader has studied the same specialist vocabulary as the writer."
+          ]
+        },
+        {
+          "id": "q5",
+          "type": "fill",
+          "prompt": "Use ONE WORD from the text: The writer says the purpose of writing is to ______ rather than impress.",
+          "maxWords": 1
+        },
+        {
+          "id": "q6",
+          "type": "single",
+          "prompt": "What should writers do when no alternative to a technical term is available?",
+          "options": [
+            "Explain the meaning of the term.",
+            "Assume that the term is obvious to everyone.",
+            "Add more unexplained specialist words around it."
+          ]
+        }
+      ],
+      "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+      "originalFrozenSourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+      "normalization": {
+        "schema": 1,
+        "originalFrozenSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+        "displaySha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+        "transformations": [],
+        "originalRepositoryPath": "_pages/guidelines/words/avoid-jargon.md",
+        "originalRepositorySha256": "c899e55bdc2f7dbe31b5f6f266a4205d1809c5595ae567361f26bfd0d1839568"
+      },
+      "blindInputSha256": "ab372a703824b9502b7a8021ded08ff66591fe3db2b97d720bbf73955f747a2a"
+    },
+    {
+      "schema": 1,
+      "sourceId": "gsa-plain-language-06",
+      "title": "Repurpose print material for the web",
+      "kind": "reading",
+      "text": "Don't cut and paste the text of print documents to create web content. People are more likely to leave your webpage, potentially costing you time and money, because they will not take the time to find what they are looking for.\n\nPrint writing is different from web writing. Print is very linear and narrative driven. In print, you can go into great detail about mundane things like eating breakfast. If you are a great writer, that can be an interesting story. But those interesting stories don't work on the web. Instead they slow down web users who are trying to accomplish a task.\n\n- Keep the most important and clear message at the top of the web page.\n- Chunk your content into logical sections.\n- Use headings to help users navigate the content.\n- Highlight key facts in a bulleted list.\n- Explain complex instructions in a visually appealing table.",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "What risk does the writer associate with directly copying print text onto a website?",
+          "options": [
+            "The print document will no longer exist after it is copied.",
+            "Visitors may leave before finding the information they need.",
+            "Readers will automatically understand the online version better."
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "prompt": "Why may a detailed everyday story be unsuitable for this kind of web page?",
+          "options": [
+            "It can delay users who are trying to complete a task.",
+            "Every story about an ordinary activity is impossible to make interesting.",
+            "Online users are never able to read a complete sentence."
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "fill",
+          "prompt": "Use TWO WORDS from the text: The content should be divided into ______.",
+          "maxWords": 2
+        },
+        {
+          "id": "q4",
+          "type": "fill",
+          "prompt": "Use NO MORE THAN THREE WORDS from the text: Where should the main message appear on the page?",
+          "maxWords": 3
+        },
+        {
+          "id": "q5",
+          "type": "single",
+          "prompt": "Which feature is recommended to help visitors navigate the information?",
+          "options": [
+            "A long introductory story",
+            "Headings",
+            "An uninterrupted block of small print"
+          ]
+        },
+        {
+          "id": "q6",
+          "type": "single",
+          "prompt": "Which format does the writer recommend for explaining complicated instructions?",
+          "options": [
+            "A visually appealing table",
+            "A personal story with many extra details",
+            "A list containing only unexplained abbreviations"
+          ]
+        }
+      ],
+      "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+      "originalFrozenSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+      "normalization": {
+        "schema": 1,
+        "originalFrozenSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+        "displaySha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+        "transformations": [
+          {
+            "kind": "restore-list-newline",
+            "displayIntermediateStart": 656,
+            "removed": " - ",
+            "replacement": "\n- "
+          },
+          {
+            "kind": "restore-list-newline",
+            "displayIntermediateStart": 700,
+            "removed": " - ",
+            "replacement": "\n- "
+          },
+          {
+            "kind": "restore-list-newline",
+            "displayIntermediateStart": 751,
+            "removed": " - ",
+            "replacement": "\n- "
+          },
+          {
+            "kind": "restore-list-newline",
+            "displayIntermediateStart": 793,
+            "removed": " - ",
+            "replacement": "\n- "
+          }
+        ],
+        "originalRepositoryPath": "_pages/guidelines/web/repurpose-print-material.md",
+        "originalRepositorySha256": "78d5377fbd1dc201a113fcd4e09498f3e6bdd2ca0ca5e25de1e2a6241e214cc6"
+      },
+      "blindInputSha256": "5598009eedbc13b24aefa3a2da4898e8af1ddeb1be2984b475f30e4b80bd4e6e"
+    }
+  ]
+}

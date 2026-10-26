@@ -1,0 +1,786 @@
+{
+  "schema": 1,
+  "baselineCommit": "288a7c648df0fbc87148080dde579a2c21650937",
+  "day": 57,
+  "now": 1793059200000,
+  "state": {
+    "schema": 1,
+    "revision": 1,
+    "history": [],
+    "activePlanId": null,
+    "assignments": {},
+    "startedDays": [
+      57
+    ],
+    "frozenDays": {
+      "57": {
+        "day": 57,
+        "week": 9,
+        "weekday": 1,
+        "title": "学习目标与学习习惯",
+        "tasks": [
+          {
+            "id": "vocabulary",
+            "skill": "vocabulary",
+            "minutes": 45,
+            "materialIds": [
+              "w09-read-1-vocabulary",
+              "lexical-w09-1"
+            ],
+            "mode": "practice",
+            "instructions": "参考预算45分钟：先看懂必学词音标、词义和例句；每词先正确输入英文三遍，再独立录音跟读三次并保存专业结果；全词完成后依次进行补全、全中文写英文、听写三轮，错项进入统一错题本。可按掌握速度提前进入下一步。",
+            "deliverable": "每词三遍正确输入、三份真实跟读原音及专业结果，补全／全中文写英文／听写三轮原稿、客观核对及错题记录（按词去重计量）",
+            "quantity": 12,
+            "unit": "条",
+            "materialPractice": [
+              {
+                "materialId": "w09-read-1-vocabulary",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              },
+              {
+                "materialId": "lexical-w09-1",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "grammar",
+            "skill": "grammar",
+            "minutes": 30,
+            "materialIds": [
+              "w09-read-1-grammar"
+            ],
+            "mode": "practice",
+            "instructions": "先完成本日首次安排的语法练习，再做一份明确的旧材料巩固；对照解释，用新人物或地点口头改写。首次安排的材料不代表规则从未学过。",
+            "deliverable": "本日语法原始答案、具体订正与新情境改写；首次安排和巩固材料分别标明",
+            "quantity": 4,
+            "unit": "题",
+            "grammarLearningPlan": {
+              "newMaterialIds": [
+                "w09-read-1-grammar"
+              ],
+              "reviewMaterialIds": [],
+              "scope": "新包指本日首次安排的材料，不据此宣称新概念或个人掌握。"
+            },
+            "materialPractice": [
+              {
+                "materialId": "w09-read-1-grammar",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "listening",
+            "skill": "listening",
+            "minutes": 75,
+            "materialIds": [
+              "w09-listen-1",
+              "public-voa-l1-07-listening"
+            ],
+            "mode": "practice",
+            "instructions": "15分钟盲听答题；20分钟分句听写；20分钟对照定位并重听；20分钟遮住原文复述。\n\n本日听读任务：完成“Lesson 7: What Are You Doing?”的原始作答与订正；公开来源仅计普通练习，同文听读共享曝光，不作为独立晋级证据。",
+            "deliverable": "原始答案、错句听写及复述",
+            "quantity": 16,
+            "unit": "题",
+            "materialPractice": [
+              {
+                "materialId": "w09-listen-1",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              },
+              {
+                "materialId": "public-voa-l1-07-listening",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57,
+                "publicPracticeOnly": true
+              }
+            ],
+            "practiceCycle": "first-planned",
+            "coreMaterialIds": [
+              "w09-listen-1",
+              "public-voa-l1-07-listening"
+            ],
+            "publicCourseAssignments": [
+              {
+                "assignmentId": "public-course:57:public-voa-l1-07-listening",
+                "day": 57,
+                "taskId": "listening",
+                "skill": "listening",
+                "materialId": "public-voa-l1-07-listening",
+                "materialVersion": "s1-q1",
+                "materialContentHash": "017d891cc296c179ffa2d9a29fa8d0f40eab53de4197c510d310f119305392ec",
+                "sourceId": "voa-l1-07",
+                "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+                "exposureGroup": "public-source:voa-l1-07",
+                "mode": "practice",
+                "required": true,
+                "role": "contextual-public-course"
+              }
+            ]
+          },
+          {
+            "id": "reading",
+            "skill": "reading",
+            "minutes": 60,
+            "materialIds": [
+              "w09-read-1",
+              "public-voa-l1-17-reading"
+            ],
+            "mode": "practice",
+            "instructions": "10分钟整体理解；20分钟答题找证据；15分钟拆句；15分钟合上原文复述或摘要。\n\n本日听读任务：完成“Lesson 17: Are You Free on Friday?”的原始作答与订正；公开来源仅计普通练习，同文听读共享曝光，不作为独立晋级证据。",
+            "deliverable": "原始答案、原文依据和摘要",
+            "quantity": 16,
+            "unit": "题",
+            "materialPractice": [
+              {
+                "materialId": "w09-read-1",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              },
+              {
+                "materialId": "public-voa-l1-17-reading",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57,
+                "publicPracticeOnly": true
+              }
+            ],
+            "practiceCycle": "first-planned",
+            "coreMaterialIds": [
+              "w09-read-1",
+              "public-voa-l1-17-reading"
+            ],
+            "publicCourseAssignments": [
+              {
+                "assignmentId": "public-course:57:public-voa-l1-17-reading",
+                "day": 57,
+                "taskId": "reading",
+                "skill": "reading",
+                "materialId": "public-voa-l1-17-reading",
+                "materialVersion": "s1-q1",
+                "materialContentHash": "0ef077c8a019917ac1d9081d25566d94cf8881b5b7a475d94e9e27ce1fe0746c",
+                "sourceId": "voa-l1-17",
+                "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+                "exposureGroup": "public-source:voa-l1-17",
+                "mode": "practice",
+                "required": true,
+                "role": "contextual-public-course"
+              }
+            ]
+          },
+          {
+            "id": "speaking",
+            "skill": "speaking",
+            "minutes": 60,
+            "materialIds": [
+              "w09-read-1-speaking"
+            ],
+            "mode": "practice",
+            "instructions": "10分钟准备；15分钟独立录音；15分钟回听及核对转写；20分钟针对练习并再次录音。",
+            "deliverable": "原音、转写、问题定位与重录",
+            "quantity": 60,
+            "unit": "词",
+            "materialPractice": [
+              {
+                "materialId": "w09-read-1-speaking",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "writing",
+            "skill": "writing",
+            "minutes": 75,
+            "materialIds": [
+              "w09-read-1-writing"
+            ],
+            "mode": "practice",
+            "instructions": "15分钟口头组织句子，25分钟独立写作，15分钟反馈，20分钟订正与换情境改写。",
+            "deliverable": "原稿、反馈依据及订正稿",
+            "quantity": 60,
+            "unit": "词",
+            "materialPractice": [
+              {
+                "materialId": "w09-read-1-writing",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              }
+            ],
+            "practiceCycle": "first-planned"
+          },
+          {
+            "id": "reflection",
+            "skill": "reflection",
+            "minutes": 15,
+            "materialIds": [
+              "reflection-57"
+            ],
+            "mode": "practice",
+            "instructions": "整页填写并提交今日错题，只重做仍错项目，直到全部通过；随后由 AI 根据今日材料与真实作品生成复盘及延迟复测建议。",
+            "deliverable": "整页错题订正原稿、全部通过记录与 AI 每日复盘",
+            "quantity": 1,
+            "unit": "份复盘",
+            "materialPractice": [
+              {
+                "materialId": "reflection-57",
+                "cycle": "first-planned",
+                "firstPlannedDay": 57
+              }
+            ],
+            "practiceCycle": "first-planned"
+          }
+        ],
+        "totalMinutes": 360,
+        "publicCourse": {
+          "schema": 1,
+          "planId": "public-course-integration-v1",
+          "version": "1",
+          "basePlanHash": "efc10fa4c9e8373e7e896432c7056d1a3cfe72dd73448ab7583b92dc1767d677",
+          "planHash": "3e90c0d30d26ed5a649263ce5c55262d49ad06a85d70273996e42806dc1c29e5",
+          "assignments": [
+            {
+              "assignmentId": "public-course:57:public-voa-l1-07-listening",
+              "day": 57,
+              "taskId": "listening",
+              "skill": "listening",
+              "materialId": "public-voa-l1-07-listening",
+              "materialIds": [
+                "public-voa-l1-07-listening"
+              ],
+              "materialVersion": "s1-q1",
+              "materialContentHash": "017d891cc296c179ffa2d9a29fa8d0f40eab53de4197c510d310f119305392ec",
+              "sourceId": "voa-l1-07",
+              "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+              "exposureGroup": "public-source:voa-l1-07",
+              "mode": "practice",
+              "required": true,
+              "role": "contextual-public-course",
+              "strategy": "append-within-task-budget",
+              "replaceMaterialIds": [],
+              "estimatedStudyMinutes": 30,
+              "requiredMinutes": 30,
+              "taskMaterialIdsBefore": [
+                "w09-listen-1"
+              ],
+              "taskMinutesBefore": 75,
+              "taskMinutesAfter": 75,
+              "ordinaryCompletionOnly": true,
+              "independentAssessmentEligible": false,
+              "independentTransferEligible": false,
+              "levelEligibility": {
+                "source": "A1–A2",
+                "dayLow": "A2",
+                "dayHigh": "A2",
+                "minimumPracticeLevel": "A2",
+                "notVerifiedByCalendar": true
+              },
+              "prerequisiteCapabilityIds": [
+                "foundation:listening"
+              ],
+              "contextMatches": {
+                "wordHeadwords": [],
+                "grammarTags": [
+                  "present-continuous"
+                ]
+              },
+              "contextLinks": {
+                "words": [
+                  {
+                    "word": "show",
+                    "surface": "show",
+                    "start": 1011,
+                    "end": 1015,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-07",
+                    "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  },
+                  {
+                    "word": "again",
+                    "surface": "again",
+                    "start": 1096,
+                    "end": 1101,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-07",
+                    "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  },
+                  {
+                    "word": "yes",
+                    "surface": "Yes",
+                    "start": 244,
+                    "end": 247,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-07",
+                    "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  }
+                ],
+                "grammar": [
+                  {
+                    "tag": "present-continuous",
+                    "quote": "I am doing my show!",
+                    "explanation": "be + 动词-ing 表示此刻正在进行的动作。",
+                    "start": 997,
+                    "end": 1016,
+                    "sourceId": "voa-l1-07",
+                    "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2"
+                  },
+                  {
+                    "tag": "questions",
+                    "quote": "What are you doing?",
+                    "explanation": "现在进行时疑问句把 are 放到主语 you 前。",
+                    "start": 473,
+                    "end": 492,
+                    "sourceId": "voa-l1-07",
+                    "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2"
+                  }
+                ],
+                "minutesByTask": {
+                  "vocabulary": 3,
+                  "grammar": 3
+                },
+                "requiredActivities": [
+                  "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+                  "Explain the two source grammar examples and produce one new sentence."
+                ],
+                "initialAcquisitionNotCompletedByDisplay": true,
+                "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+                "executionStatus": "pending-not-runtime-connected-v1"
+              },
+              "replacementGuard": null,
+              "appendFallback": null,
+              "exposureIntent": "first-source-practice",
+              "plannedPriorExposure": false,
+              "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+              "dayBudget": {
+                "totalBudgetMinutes": 360,
+                "before": {
+                  "studyMinutes": 177,
+                  "breakMinutes": 45,
+                  "totalMinutes": 222
+                },
+                "after": {
+                  "studyMinutes": 244,
+                  "breakMinutes": 65,
+                  "totalMinutes": 309
+                },
+                "taskSlotMinutesBefore": 360,
+                "taskSlotMinutesAfter": 360,
+                "referenceOnly": true,
+                "actualOverrunMustCarryAndRemainIncomplete": true
+              },
+              "effectiveStrategy": "append-within-task-budget",
+              "admission": {
+                "schema": 1,
+                "scope": "ordinary-practice-only",
+                "skillLevel": "A2",
+                "levelBasis": "verified-placement-skill; lower bound of any range",
+                "verifiedCapabilities": [
+                  "foundation:listening",
+                  "everyday:listening",
+                  "foundation:reading",
+                  "everyday:reading"
+                ]
+              }
+            },
+            {
+              "assignmentId": "public-course:57:public-voa-l1-17-reading",
+              "day": 57,
+              "taskId": "reading",
+              "skill": "reading",
+              "materialId": "public-voa-l1-17-reading",
+              "materialIds": [
+                "public-voa-l1-17-reading"
+              ],
+              "materialVersion": "s1-q1",
+              "materialContentHash": "0ef077c8a019917ac1d9081d25566d94cf8881b5b7a475d94e9e27ce1fe0746c",
+              "sourceId": "voa-l1-17",
+              "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+              "exposureGroup": "public-source:voa-l1-17",
+              "mode": "practice",
+              "required": true,
+              "role": "contextual-public-course",
+              "strategy": "append-within-task-budget",
+              "replaceMaterialIds": [],
+              "estimatedStudyMinutes": 25,
+              "requiredMinutes": 25,
+              "taskMaterialIdsBefore": [
+                "w09-read-1"
+              ],
+              "taskMinutesBefore": 60,
+              "taskMinutesAfter": 60,
+              "ordinaryCompletionOnly": true,
+              "independentAssessmentEligible": false,
+              "independentTransferEligible": false,
+              "levelEligibility": {
+                "source": "A2",
+                "dayLow": "A2",
+                "dayHigh": "A2",
+                "minimumPracticeLevel": "A2",
+                "notVerifiedByCalendar": true
+              },
+              "prerequisiteCapabilityIds": [
+                "everyday:reading"
+              ],
+              "contextMatches": {
+                "wordHeadwords": [],
+                "grammarTags": [
+                  "frequency-adverbs"
+                ]
+              },
+              "contextLinks": {
+                "words": [
+                  {
+                    "word": "family",
+                    "surface": "family",
+                    "start": 655,
+                    "end": 661,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-17",
+                    "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  },
+                  {
+                    "word": "week",
+                    "surface": "week",
+                    "start": 1791,
+                    "end": 1795,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-17",
+                    "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  },
+                  {
+                    "word": "start",
+                    "surface": "start",
+                    "start": 1697,
+                    "end": 1702,
+                    "relation": "exact-headword",
+                    "ambiguousLemma": false,
+                    "sourceId": "voa-l1-17",
+                    "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+                    "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+                    "countsAsMastery": false
+                  }
+                ],
+                "grammar": [
+                  {
+                    "tag": "frequency-adverbs",
+                    "quote": "We always eat dinner together and sometimes we play board games.",
+                    "explanation": "always 与 sometimes 表示不同频率；均与一般现在时连用。",
+                    "start": 684,
+                    "end": 748,
+                    "offsetUnit": "UTF-16-code-unit",
+                    "status": "source-location-and-structure-reviewed; not-examiner-calibrated",
+                    "sourceId": "voa-l1-17",
+                    "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d"
+                  },
+                  {
+                    "tag": "going-to-future",
+                    "quote": "I’m going to teach children how to play the ukulele.",
+                    "explanation": "be going to + 动词原形表达已安排的未来活动。",
+                    "start": 1310,
+                    "end": 1362,
+                    "offsetUnit": "UTF-16-code-unit",
+                    "status": "source-location-and-structure-reviewed; not-examiner-calibrated",
+                    "sourceId": "voa-l1-17",
+                    "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d"
+                  }
+                ],
+                "minutesByTask": {
+                  "vocabulary": 3,
+                  "grammar": 3
+                },
+                "requiredActivities": [
+                  "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+                  "Explain the two source grammar examples and produce one new sentence."
+                ],
+                "initialAcquisitionNotCompletedByDisplay": true,
+                "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+                "executionStatus": "pending-not-runtime-connected-v1"
+              },
+              "replacementGuard": null,
+              "appendFallback": null,
+              "exposureIntent": "first-source-practice",
+              "plannedPriorExposure": false,
+              "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+              "dayBudget": {
+                "totalBudgetMinutes": 360,
+                "before": {
+                  "studyMinutes": 177,
+                  "breakMinutes": 45,
+                  "totalMinutes": 222
+                },
+                "after": {
+                  "studyMinutes": 244,
+                  "breakMinutes": 65,
+                  "totalMinutes": 309
+                },
+                "taskSlotMinutesBefore": 360,
+                "taskSlotMinutesAfter": 360,
+                "referenceOnly": true,
+                "actualOverrunMustCarryAndRemainIncomplete": true
+              },
+              "effectiveStrategy": "append-within-task-budget",
+              "admission": {
+                "schema": 1,
+                "scope": "ordinary-practice-only",
+                "skillLevel": "A2",
+                "levelBasis": "verified-placement-skill; lower bound of any range",
+                "verifiedCapabilities": [
+                  "foundation:listening",
+                  "everyday:listening",
+                  "foundation:reading",
+                  "everyday:reading"
+                ]
+              }
+            }
+          ],
+          "integration": {
+            "readingListening": "required-ordinary-tasks",
+            "vocabularyGrammar": "pending-real-activities",
+            "reviews": "pending-real-submissions",
+            "masteryCredit": 0
+          }
+        },
+        "contextualVocabulary": {
+          "schema": 2,
+          "role": "scheduled-context-vocabulary",
+          "day": 57,
+          "baseDayContentHash": "4ca3012500a75568251ee5b7dd4ac3d8959bffc2c4f8a0466930c0a690459aec",
+          "words": [
+            {
+              "word": "term",
+              "meaning": "学期",
+              "partOfSpeech": "名词",
+              "ipa": "/tɝm/",
+              "audio": {
+                "text": "term",
+                "lang": "en-US"
+              },
+              "example": "Mia: Hi, Ben. Do you have a study plan for this term?",
+              "source": {
+                "role": "owned-source-context-v82",
+                "candidateId": "owned-w09-listen-1:term:48:52",
+                "catalogVersion": "owned-source-context-batch-v82-1",
+                "senseBindingSha256": "30754a50a6ce99fe0fc9722caf166417f69aa9b91648748b7b0d48a731b8bd56",
+                "materialId": "w09-listen-1",
+                "materialVersion": "1",
+                "materialContentHash": "dec7c4236b728eed0eca583074b1be28f8fc256a8bd361330cc617430166de31",
+                "sourceId": "owned-w09-listen-1",
+                "sourceTextSha256": "68bea677897192e198e2857b72a50800d485218e972ecea6bd10593764ff13c8",
+                "surface": "term",
+                "start": 48,
+                "end": 52,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-owned-source-sense",
+                "partOfSpeech": "名词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            },
+            {
+              "word": "silence",
+              "meaning": "安静；无声的状态",
+              "partOfSpeech": "名词",
+              "ipa": "/ˈsaɪləns/",
+              "audio": {
+                "text": "silence",
+                "lang": "en-US"
+              },
+              "example": "Mia: No, I don't. I need silence. I usually study in my bedroom. It is very quiet.",
+              "source": {
+                "role": "owned-source-context-v82",
+                "candidateId": "owned-w09-listen-1:silence:1082:1089",
+                "catalogVersion": "owned-source-context-batch-v82-1",
+                "senseBindingSha256": "090201a5e8dac3373ee3c5e85b97ffd7a320c4b29ef0faad3b130285f064d902",
+                "materialId": "w09-listen-1",
+                "materialVersion": "1",
+                "materialContentHash": "dec7c4236b728eed0eca583074b1be28f8fc256a8bd361330cc617430166de31",
+                "sourceId": "owned-w09-listen-1",
+                "sourceTextSha256": "68bea677897192e198e2857b72a50800d485218e972ecea6bd10593764ff13c8",
+                "surface": "silence",
+                "start": 1082,
+                "end": 1089,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-owned-source-sense",
+                "partOfSpeech": "名词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            },
+            {
+              "word": "diary",
+              "meaning": "日记",
+              "partOfSpeech": "名词",
+              "ipa": "/ˈdaɪɚi/",
+              "audio": {
+                "text": "diary",
+                "lang": "en-US"
+              },
+              "example": "Mia: Yes, I do. I want to improve my English. I am reading one short book every week. I also write a diary in English. I do it every night before bed.",
+              "source": {
+                "role": "owned-source-context-v82",
+                "candidateId": "owned-w09-listen-1:diary:1298:1303",
+                "catalogVersion": "owned-source-context-batch-v82-1",
+                "senseBindingSha256": "93ffc37345a04ea45a86ecfabe67af218a5626b79e2e0059c30c065d3c216c6d",
+                "materialId": "w09-listen-1",
+                "materialVersion": "1",
+                "materialContentHash": "dec7c4236b728eed0eca583074b1be28f8fc256a8bd361330cc617430166de31",
+                "sourceId": "owned-w09-listen-1",
+                "sourceTextSha256": "68bea677897192e198e2857b72a50800d485218e972ecea6bd10593764ff13c8",
+                "surface": "diary",
+                "start": 1298,
+                "end": 1303,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-owned-source-sense",
+                "partOfSpeech": "名词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            },
+            {
+              "word": "aloud",
+              "meaning": "出声地",
+              "partOfSpeech": "副词",
+              "ipa": "/əˈlaʊd/",
+              "audio": {
+                "text": "aloud",
+                "lang": "en-US"
+              },
+              "example": "A. Lin Tao has a study plan. He studies English for one hour every morning. He usually reads aloud for twenty minutes. Then he listens to short dialogues on his phone. He often writes new words in a notebook. He reviews the words before bed. He does not study late at night. He says, \"I need to sleep well. Sleep helps my memory.\"",
+              "source": {
+                "role": "owned-source-context-v82",
+                "candidateId": "owned-w09-read-1:aloud:256:261",
+                "catalogVersion": "owned-source-context-batch-v82-1",
+                "senseBindingSha256": "97ddd2891820502f5e2425ce4992406b22ba94a0d7756cbde62840c95fd69bcd",
+                "materialId": "w09-read-1",
+                "materialVersion": "1",
+                "materialContentHash": "733a1acbc561db3ec666343b9727d4fae1ab5260d51cfc763bb2e7e6c2f1e88d",
+                "sourceId": "owned-w09-read-1",
+                "sourceTextSha256": "32edf22cffdb3059f9bbd5620dd228a78e963a007499f3e439d14896af68eb82",
+                "surface": "aloud",
+                "start": 256,
+                "end": 261,
+                "relation": "exact-headword",
+                "meaningBasis": "reviewed-owned-source-sense",
+                "partOfSpeech": "副词"
+              },
+              "countsAsMastery": false,
+              "independentEvidence": false
+            }
+          ],
+          "sources": [
+            {
+              "role": "owned-source-context-v82",
+              "sourceId": "owned-w09-listen-1",
+              "taskId": "listening",
+              "materialId": "w09-listen-1",
+              "materialVersion": "1",
+              "materialContentHash": "dec7c4236b728eed0eca583074b1be28f8fc256a8bd361330cc617430166de31",
+              "materialSnapshotHash": "3992e5f3f68133f5b5cc469d167fe3873c2d176697f6d7df98da8ecc05c265fa",
+              "sourceTextSha256": "68bea677897192e198e2857b72a50800d485218e972ecea6bd10593764ff13c8",
+              "sourceLevel": "A2",
+              "admission": {
+                "verifiedSkillLevel": "A2",
+                "prerequisites": [
+                  {
+                    "id": "gate-04",
+                    "pass": false,
+                    "placementCovered": true
+                  },
+                  {
+                    "id": "gate-08",
+                    "pass": false,
+                    "placementCovered": true
+                  }
+                ]
+              },
+              "acceptedEntries": [
+                {
+                  "id": "owned-w09-listen-1:term:48:52",
+                  "bindingSha256": "30754a50a6ce99fe0fc9722caf166417f69aa9b91648748b7b0d48a731b8bd56"
+                },
+                {
+                  "id": "owned-w09-listen-1:silence:1082:1089",
+                  "bindingSha256": "090201a5e8dac3373ee3c5e85b97ffd7a320c4b29ef0faad3b130285f064d902"
+                },
+                {
+                  "id": "owned-w09-listen-1:diary:1298:1303",
+                  "bindingSha256": "93ffc37345a04ea45a86ecfabe67af218a5626b79e2e0059c30c065d3c216c6d"
+                }
+              ]
+            },
+            {
+              "role": "owned-source-context-v82",
+              "sourceId": "owned-w09-read-1",
+              "taskId": "reading",
+              "materialId": "w09-read-1",
+              "materialVersion": "1",
+              "materialContentHash": "733a1acbc561db3ec666343b9727d4fae1ab5260d51cfc763bb2e7e6c2f1e88d",
+              "materialSnapshotHash": "94850d749d33db0e723fd0ec31d9b29ce9786a408cc0f96bfd7cdd07d83b2aa8",
+              "sourceTextSha256": "32edf22cffdb3059f9bbd5620dd228a78e963a007499f3e439d14896af68eb82",
+              "sourceLevel": "A2",
+              "admission": {
+                "verifiedSkillLevel": "A2",
+                "prerequisites": [
+                  {
+                    "id": "gate-04",
+                    "pass": false,
+                    "placementCovered": true
+                  },
+                  {
+                    "id": "gate-08",
+                    "pass": false,
+                    "placementCovered": true
+                  }
+                ]
+              },
+              "acceptedEntries": [
+                {
+                  "id": "owned-w09-read-1:aloud:256:261",
+                  "bindingSha256": "97ddd2891820502f5e2425ce4992406b22ba94a0d7756cbde62840c95fd69bcd"
+                }
+              ]
+            }
+          ],
+          "coreWordKeys": [
+            "closed",
+            "conversation",
+            "feedback",
+            "goal",
+            "improve",
+            "memory",
+            "progress",
+            "regularly",
+            "schedule",
+            "study plan",
+            "weekdays",
+            "weekends"
+          ],
+          "required": false,
+          "independentEvidence": false,
+          "masteryCredit": 0,
+          "contentHash": "735fd6bccf154d9170ed3c8edd21775106d5cfaaf9c4ca6b940d5c5f2885ef38"
+        }
+      }
+    }
+  }
+}

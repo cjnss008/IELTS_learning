@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "reviewer": "root independent Codex AI; not a human examiner or CEFR calibration",
+  "input": "blind-review-packet.json",
+  "inputSha256": "4677c9181995b4cf811c497bb57beea10a4c5724d1366989a2c7a34824cb447e",
+  "method": "Read all five full passages and solve each question before opening the author key or explanations.",
+  "answers": {
+    "gsa-plain-language-02": {
+      "q1": "Explain that section in their own words.",
+      "q2": "6 to 9 people",
+      "q3": "Checking how readers find information in a longer document.",
+      "q4": "approximate date",
+      "q5": "Readers interpreted a key phrase differently and would act differently.",
+      "q6": "small number"
+    },
+    "gsa-plain-language-03": {
+      "q1": "It makes the requirement clearer to the audience.",
+      "q2": "Overly official and out of date.",
+      "q3": "lawsuit",
+      "q4": "The U.S. Courts",
+      "q5": "any settler",
+      "q6": "The amount and kind of timber planned for use as fuel."
+    },
+    "gsa-plain-language-08": {
+      "q1": "A simplified, meaningful name for the thing or organization.",
+      "q2": "When many different nicknames are used in the same document.",
+      "q3": "The recipient has already contacted that agency and its name appears on the letterhead.",
+      "q4": "Three",
+      "q5": "spell out",
+      "q6": "The writer has failed to meet the audience's needs."
+    },
+    "gsa-plain-language-07": {
+      "q1": "Keep the necessary term while making the instruction as clear as possible.",
+      "q2": "tighten",
+      "q3": "Misunderstanding or a feeling of exclusion.",
+      "q4": "The writer may not notice that the audience finds them difficult or meaningless.",
+      "q5": "communicate",
+      "q6": "Explain the meaning of the term."
+    },
+    "gsa-plain-language-06": {
+      "q1": "Visitors may leave before finding the information they need.",
+      "q2": "It can delay users who are trying to complete a task.",
+      "q3": "logical sections",
+      "q4": "at the top",
+      "q5": "Headings",
+      "q6": "A visually appealing table"
+    }
+  },
+  "observations": [
+    "All thirty selected answers are supported by the supplied passages; none needs personal knowledge or information absent from the text.",
+    "For the must passage q4, accept U.S. Courts and the U.S. Courts under the source word limit; q5 should accept settler as well as any settler.",
+    "For repurpose q4, at the top is three words; the top and top also convey the stated location and fit the stated NO MORE THAN limit.",
+    "These are ordinary comprehension and vocabulary-source exercises. Mostly explicit detail, paraphrase and argument questions do not constitute a calibrated IELTS 7.0 reading test.",
+    "The paraphrase passage is substantially longer than the must and repurpose passages. Use separate conservative time/level estimates rather than one shared per-source duration.",
+    "No obvious answer is given by the wording of a question itself. Shortening a passage later would require re-review of both evidence and distractors."
+  ],
+  "status": "blind-answers-recorded-await-author-key-and-explanation-review"
+}

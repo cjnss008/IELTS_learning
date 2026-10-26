@@ -4,13 +4,13 @@
   "version": "1",
   "status": "complete-blueprint-not-learning-outcome",
   "input": {
-    "curriculumHash": "016b9adb73200f9122d86338af1b6e3b331d97dd5f91edf9892d1d4f0e0d2d2a",
+    "curriculumHash": "88e8373363081f6400337d0d4c4e19f5544cb09451d8be710de0c3bffa7154cf",
     "baseDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
     "expandedDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
     "yearExpansionHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
     "lessonExpansionsHash": "090d059d4856d42477f11b754d4116481c1f3eb298e58bd1a43a0cb8d20547e4",
     "gatesHash": "971c578c44100c0b1084a36bc0393ca798408aa9dcc14170b462d65cb9f53b08",
-    "sourceContextsHash": "cf11c52fe6d7cf703c0e956bc8bce2d78568a0a099bb3f7fc47dde55c6e113a7",
+    "sourceContextsHash": "889528af5eddf83de42ba5753a73bcf7b6d3150a0e0480309cd2a676d6600f0d",
     "corePlanningHash": "9a8fe906556b46401ee74a5402515fa8653fa829ed99ba30e806d6fcb4ed8ca8",
     "coreMaterialContracts": [
       {
@@ -2050,6 +2050,51 @@
       }
     ],
     "materials": [
+      {
+        "id": "public-gsa-plain-language-02-reading",
+        "version": "s1-q1",
+        "contentHash": "f556e706b7cb66ee2d88efea569f83729e37df48617cbd95811c02056136f216",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-02",
+        "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+        "exposureGroup": "public-source:gsa-plain-language-02"
+      },
+      {
+        "id": "public-gsa-plain-language-03-reading",
+        "version": "s1-q1",
+        "contentHash": "0c6fd658923d71ba7bb9ccaba61c78ec0ab101c566c11f3a12fe4915a155cf14",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-03",
+        "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+        "exposureGroup": "public-source:gsa-plain-language-03"
+      },
+      {
+        "id": "public-gsa-plain-language-06-reading",
+        "version": "s1-q1",
+        "contentHash": "1378e3591f4a75bb0491f9f6ddad22b6053bd75b15f5c3832ed973831576c784",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-06",
+        "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+        "exposureGroup": "public-source:gsa-plain-language-06"
+      },
+      {
+        "id": "public-gsa-plain-language-07-reading",
+        "version": "s1-q1",
+        "contentHash": "cacbcd58eaffe83f8af82fb7864b96e4bced69277cfbe904d391573e347758e3",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-07",
+        "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+        "exposureGroup": "public-source:gsa-plain-language-07"
+      },
+      {
+        "id": "public-gsa-plain-language-08-reading",
+        "version": "s1-q1",
+        "contentHash": "85853b43078b647ded6aa313bc82d8c3be29ba329aa8c186797e5f191306bf37",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-08",
+        "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+        "exposureGroup": "public-source:gsa-plain-language-08"
+      },
       {
         "id": "public-nasa-citizen-kelp-mapping-reading",
         "version": "s2-q2",
@@ -13887,6 +13932,797 @@
       }
     },
     {
+      "assignmentId": "public-course:173:public-gsa-plain-language-02-reading",
+      "day": 173,
+      "taskId": "reading",
+      "skill": "reading",
+      "materialId": "public-gsa-plain-language-02-reading",
+      "materialIds": [
+        "public-gsa-plain-language-02-reading"
+      ],
+      "materialVersion": "s1-q1",
+      "materialContentHash": "f556e706b7cb66ee2d88efea569f83729e37df48617cbd95811c02056136f216",
+      "sourceId": "gsa-plain-language-02",
+      "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+      "exposureGroup": "public-source:gsa-plain-language-02",
+      "mode": "practice",
+      "required": true,
+      "role": "contextual-public-course",
+      "strategy": "append-within-task-budget",
+      "replaceMaterialIds": [],
+      "estimatedStudyMinutes": 28,
+      "requiredMinutes": 28,
+      "taskMaterialIdsBefore": [
+        "w25-read-2"
+      ],
+      "taskMinutesBefore": 60,
+      "taskMinutesAfter": 60,
+      "ordinaryCompletionOnly": true,
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "levelEligibility": {
+        "source": "B1–B2",
+        "dayLow": "B1",
+        "dayHigh": "B2",
+        "minimumPracticeLevel": "B2",
+        "notVerifiedByCalendar": true
+      },
+      "prerequisiteCapabilityIds": [
+        "everyday:reading"
+      ],
+      "contextMatches": {
+        "wordHeadwords": [],
+        "grammarTags": []
+      },
+      "contextLinks": {
+        "words": [
+          {
+            "word": "cue",
+            "surface": "cue",
+            "start": 69,
+            "end": 72,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-02:cue:69",
+              "bindingSha256": "537a730bf3e2bb94e5163ecc71bcc23e72a36d7d2ea758eae005a5844e3952ec",
+              "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+              "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+            },
+            "sourceId": "gsa-plain-language-02",
+            "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "countless",
+            "surface": "countless",
+            "start": 1588,
+            "end": 1597,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-02:countless:1588",
+              "bindingSha256": "1bf2b4c8a9603b5f8d5ce9298b0f2f4d57fe22d77d5735a131a29f697a2a9139",
+              "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+              "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+            },
+            "sourceId": "gsa-plain-language-02",
+            "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "booklet",
+            "surface": "booklets",
+            "start": 895,
+            "end": 903,
+            "relation": "source-listed-unambiguous-inflection",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-02:booklet:895",
+              "bindingSha256": "86fc8e998267e6854f34819b202a409ed7a30dab5640311e54219e6ffec4b3db",
+              "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+              "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+            },
+            "sourceId": "gsa-plain-language-02",
+            "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          }
+        ],
+        "grammar": [
+          {
+            "tag": "imperatives",
+            "quote": "Do not correct the participant.",
+            "explanation": "Do not + 动词原形表示否定祈使句；这里要求测试者不要当场纠正参与者。",
+            "start": 279,
+            "end": 310,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-02",
+            "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+          },
+          {
+            "tag": "concessive-clauses",
+            "quote": "Although this technique is very valuable, it probably isn't worth the time to test documents that go to a small number of people.",
+            "explanation": "Although引出让步：承认方法有价值，同时说明对小范围文档可能不划算。",
+            "start": 3135,
+            "end": 3264,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-02",
+            "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+          }
+        ],
+        "minutesByTask": {
+          "vocabulary": 3,
+          "grammar": 3
+        },
+        "requiredActivities": [
+          "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+          "Explain the two source grammar examples and produce one new sentence."
+        ],
+        "initialAcquisitionNotCompletedByDisplay": true,
+        "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+        "executionStatus": "pending-not-runtime-connected-v1"
+      },
+      "replacementGuard": null,
+      "appendFallback": null,
+      "exposureIntent": "first-source-practice",
+      "plannedPriorExposure": false,
+      "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 235,
+          "breakMinutes": 65,
+          "totalMinutes": 300
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      }
+    },
+    {
+      "assignmentId": "public-course:174:public-gsa-plain-language-03-reading",
+      "day": 174,
+      "taskId": "reading",
+      "skill": "reading",
+      "materialId": "public-gsa-plain-language-03-reading",
+      "materialIds": [
+        "public-gsa-plain-language-03-reading"
+      ],
+      "materialVersion": "s1-q1",
+      "materialContentHash": "0c6fd658923d71ba7bb9ccaba61c78ec0ab101c566c11f3a12fe4915a155cf14",
+      "sourceId": "gsa-plain-language-03",
+      "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+      "exposureGroup": "public-source:gsa-plain-language-03",
+      "mode": "practice",
+      "required": true,
+      "role": "contextual-public-course",
+      "strategy": "append-within-task-budget",
+      "replaceMaterialIds": [],
+      "estimatedStudyMinutes": 20,
+      "requiredMinutes": 20,
+      "taskMaterialIdsBefore": [
+        "w25-read-3"
+      ],
+      "taskMinutesBefore": 60,
+      "taskMinutesAfter": 60,
+      "ordinaryCompletionOnly": true,
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "levelEligibility": {
+        "source": "B1–B2",
+        "dayLow": "B1",
+        "dayHigh": "B2",
+        "minimumPracticeLevel": "B2",
+        "notVerifiedByCalendar": true
+      },
+      "prerequisiteCapabilityIds": [
+        "everyday:reading"
+      ],
+      "contextMatches": {
+        "wordHeadwords": [],
+        "grammarTags": []
+      },
+      "contextLinks": {
+        "words": [
+          {
+            "word": "obligation",
+            "surface": "obligations",
+            "start": 564,
+            "end": 575,
+            "relation": "source-listed-unambiguous-inflection",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-03:obligation:564",
+              "bindingSha256": "6f3490817e68ea2e22664b0f85d46f637a48e59e0458a34cd411c42b674ca176",
+              "originalSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+              "displaySourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+            },
+            "sourceId": "gsa-plain-language-03",
+            "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "intimidate",
+            "surface": "intimidated",
+            "start": 442,
+            "end": 453,
+            "relation": "source-listed-unambiguous-inflection",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-03:intimidate:442",
+              "bindingSha256": "4c23d5dcd15c7f726c8886cca08993521c62ef82517ab01504d2d74bb1188e2f",
+              "originalSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+              "displaySourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+            },
+            "sourceId": "gsa-plain-language-03",
+            "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "obsolete",
+            "surface": "obsolete",
+            "start": 285,
+            "end": 293,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-03:obsolete:285",
+              "bindingSha256": "a2e88641a9ba6af5720fb432b3c6210a1eac9604415d7dde35b6e8c715812d64",
+              "originalSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+              "displaySourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+            },
+            "sourceId": "gsa-plain-language-03",
+            "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          }
+        ],
+        "grammar": [
+          {
+            "tag": "modal-obligation",
+            "quote": "You must notify any settler, by registered mail, that you have applied to use timber from your lease.",
+            "explanation": "must + 动词原形表达要求；notify的对象是settler，by registered mail说明方式。",
+            "start": 663,
+            "end": 764,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-03",
+            "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+          },
+          {
+            "tag": "imperatives",
+            "quote": "Include in your notice the amount and the kind of timber you intend to use as fuel.",
+            "explanation": "句首动词原形Include构成祈使句，要求在通知中写明相应信息。",
+            "start": 765,
+            "end": 848,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-03",
+            "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+          }
+        ],
+        "minutesByTask": {
+          "vocabulary": 3,
+          "grammar": 3
+        },
+        "requiredActivities": [
+          "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+          "Explain the two source grammar examples and produce one new sentence."
+        ],
+        "initialAcquisitionNotCompletedByDisplay": true,
+        "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+        "executionStatus": "pending-not-runtime-connected-v1"
+      },
+      "replacementGuard": null,
+      "appendFallback": null,
+      "exposureIntent": "first-source-practice",
+      "plannedPriorExposure": false,
+      "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 227,
+          "breakMinutes": 65,
+          "totalMinutes": 292
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      }
+    },
+    {
+      "assignmentId": "public-course:175:public-gsa-plain-language-06-reading",
+      "day": 175,
+      "taskId": "reading",
+      "skill": "reading",
+      "materialId": "public-gsa-plain-language-06-reading",
+      "materialIds": [
+        "public-gsa-plain-language-06-reading"
+      ],
+      "materialVersion": "s1-q1",
+      "materialContentHash": "1378e3591f4a75bb0491f9f6ddad22b6053bd75b15f5c3832ed973831576c784",
+      "sourceId": "gsa-plain-language-06",
+      "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+      "exposureGroup": "public-source:gsa-plain-language-06",
+      "mode": "practice",
+      "required": true,
+      "role": "contextual-public-course",
+      "strategy": "append-within-task-budget",
+      "replaceMaterialIds": [],
+      "estimatedStudyMinutes": 20,
+      "requiredMinutes": 20,
+      "taskMaterialIdsBefore": [
+        "w25-read-1"
+      ],
+      "taskMinutesBefore": 60,
+      "taskMinutesAfter": 60,
+      "ordinaryCompletionOnly": true,
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "levelEligibility": {
+        "source": "B1–B2",
+        "dayLow": "B1",
+        "dayHigh": "B2",
+        "minimumPracticeLevel": "B2",
+        "notVerifiedByCalendar": true
+      },
+      "prerequisiteCapabilityIds": [
+        "everyday:reading"
+      ],
+      "contextMatches": {
+        "wordHeadwords": [],
+        "grammarTags": []
+      },
+      "contextLinks": {
+        "words": [
+          {
+            "word": "narrative",
+            "surface": "narrative",
+            "start": 299,
+            "end": 308,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-06:narrative:299",
+              "bindingSha256": "890f917f7f77b35537b47bdc77390338fdac6377156920fc6cb3d92c658ea98d",
+              "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+              "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+            },
+            "sourceId": "gsa-plain-language-06",
+            "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "chunk",
+            "surface": "Chunk",
+            "start": 659,
+            "end": 664,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-06:chunk:659",
+              "bindingSha256": "b9ccf695a87693e72a59200d65bd694f58a984e586c0bcdd1450122c21712774",
+              "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+              "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+            },
+            "sourceId": "gsa-plain-language-06",
+            "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "linear",
+            "surface": "linear",
+            "start": 288,
+            "end": 294,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-06:linear:288",
+              "bindingSha256": "ac39e501b32e56bf01e3a66462d88348e286b5e23b519d3ec9d69341f7c612ae",
+              "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+              "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+            },
+            "sourceId": "gsa-plain-language-06",
+            "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          }
+        ],
+        "grammar": [
+          {
+            "tag": "relative-clauses",
+            "quote": "web users who are trying to accomplish a task",
+            "explanation": "who引出关系从句，限定正在完成任务的网页用户。",
+            "start": 537,
+            "end": 582,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-06",
+            "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+          },
+          {
+            "tag": "imperatives",
+            "quote": "Keep the most important and clear message at the top of the web page.",
+            "explanation": "Keep为祈使句动词；at the top说明信息应放置的位置。",
+            "start": 587,
+            "end": 656,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-06",
+            "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+          }
+        ],
+        "minutesByTask": {
+          "vocabulary": 3,
+          "grammar": 3
+        },
+        "requiredActivities": [
+          "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+          "Explain the two source grammar examples and produce one new sentence."
+        ],
+        "initialAcquisitionNotCompletedByDisplay": true,
+        "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+        "executionStatus": "pending-not-runtime-connected-v1"
+      },
+      "replacementGuard": null,
+      "appendFallback": null,
+      "exposureIntent": "first-source-practice",
+      "plannedPriorExposure": false,
+      "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 227,
+          "breakMinutes": 65,
+          "totalMinutes": 292
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      }
+    },
+    {
+      "assignmentId": "public-course:176:public-gsa-plain-language-07-reading",
+      "day": 176,
+      "taskId": "reading",
+      "skill": "reading",
+      "materialId": "public-gsa-plain-language-07-reading",
+      "materialIds": [
+        "public-gsa-plain-language-07-reading"
+      ],
+      "materialVersion": "s1-q1",
+      "materialContentHash": "cacbcd58eaffe83f8af82fb7864b96e4bced69277cfbe904d391573e347758e3",
+      "sourceId": "gsa-plain-language-07",
+      "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+      "exposureGroup": "public-source:gsa-plain-language-07",
+      "mode": "practice",
+      "required": true,
+      "role": "contextual-public-course",
+      "strategy": "append-within-task-budget",
+      "replaceMaterialIds": [],
+      "estimatedStudyMinutes": 24,
+      "requiredMinutes": 24,
+      "taskMaterialIdsBefore": [
+        "w26-read-1"
+      ],
+      "taskMinutesBefore": 60,
+      "taskMinutesAfter": 60,
+      "ordinaryCompletionOnly": true,
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "levelEligibility": {
+        "source": "B1–B2",
+        "dayLow": "B1",
+        "dayHigh": "B2",
+        "minimumPracticeLevel": "B2",
+        "notVerifiedByCalendar": true
+      },
+      "prerequisiteCapabilityIds": [
+        "everyday:reading"
+      ],
+      "contextMatches": {
+        "wordHeadwords": [],
+        "grammarTags": []
+      },
+      "contextLinks": {
+        "words": [
+          {
+            "word": "meaningless",
+            "surface": "meaningless",
+            "start": 1064,
+            "end": 1075,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-07:meaningless:1064",
+              "bindingSha256": "7b8132300974003a51e560dd837ec830cc94f1aded6209270efddfe08248374a",
+              "originalSourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+              "displaySourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c"
+            },
+            "sourceId": "gsa-plain-language-07",
+            "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "alienation",
+            "surface": "alienation",
+            "start": 859,
+            "end": 869,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-07:alienation:859",
+              "bindingSha256": "63164978acfc14124f35c8a06bde2e1616339c1098ab850caa6f53d0cd3540af",
+              "originalSourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+              "displaySourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c"
+            },
+            "sourceId": "gsa-plain-language-07",
+            "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          }
+        ],
+        "grammar": [
+          {
+            "tag": "relative-clauses",
+            "quote": "terms they know well may be difficult or meaningless to their audience",
+            "explanation": "they know well省略了关系代词，修饰terms；主句说明这些术语对受众仍可能难懂。",
+            "start": 1023,
+            "end": 1093,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-07",
+            "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c"
+          },
+          {
+            "tag": "imperatives",
+            "quote": "Remember to write to communicate, not to impress.",
+            "explanation": "Remember引出祈使句；to communicate和to impress对照说明写作目的。",
+            "start": 1474,
+            "end": 1523,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-07",
+            "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c"
+          }
+        ],
+        "minutesByTask": {
+          "vocabulary": 3,
+          "grammar": 3
+        },
+        "requiredActivities": [
+          "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+          "Explain the two source grammar examples and produce one new sentence."
+        ],
+        "initialAcquisitionNotCompletedByDisplay": true,
+        "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+        "executionStatus": "pending-not-runtime-connected-v1"
+      },
+      "replacementGuard": null,
+      "appendFallback": null,
+      "exposureIntent": "first-source-practice",
+      "plannedPriorExposure": false,
+      "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 167,
+          "breakMinutes": 40,
+          "totalMinutes": 207
+        },
+        "after": {
+          "studyMinutes": 203,
+          "breakMinutes": 60,
+          "totalMinutes": 263
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      }
+    },
+    {
+      "assignmentId": "public-course:180:public-gsa-plain-language-08-reading",
+      "day": 180,
+      "taskId": "reading",
+      "skill": "reading",
+      "materialId": "public-gsa-plain-language-08-reading",
+      "materialIds": [
+        "public-gsa-plain-language-08-reading"
+      ],
+      "materialVersion": "s1-q1",
+      "materialContentHash": "85853b43078b647ded6aa313bc82d8c3be29ba329aa8c186797e5f191306bf37",
+      "sourceId": "gsa-plain-language-08",
+      "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+      "exposureGroup": "public-source:gsa-plain-language-08",
+      "mode": "practice",
+      "required": true,
+      "role": "contextual-public-course",
+      "strategy": "append-within-task-budget",
+      "replaceMaterialIds": [],
+      "estimatedStudyMinutes": 24,
+      "requiredMinutes": 24,
+      "taskMaterialIdsBefore": [
+        "w26-read-2"
+      ],
+      "taskMinutesBefore": 60,
+      "taskMinutesAfter": 60,
+      "ordinaryCompletionOnly": true,
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "levelEligibility": {
+        "source": "B1–B2",
+        "dayLow": "B1",
+        "dayHigh": "B2",
+        "minimumPracticeLevel": "B2",
+        "notVerifiedByCalendar": true
+      },
+      "prerequisiteCapabilityIds": [
+        "everyday:reading"
+      ],
+      "contextMatches": {
+        "wordHeadwords": [],
+        "grammarTags": []
+      },
+      "contextLinks": {
+        "words": [
+          {
+            "word": "inquiry",
+            "surface": "inquiry",
+            "start": 1063,
+            "end": 1070,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-08:inquiry:1063",
+              "bindingSha256": "805ee53f7cc1ac268ea3eea92c4217771df98e4b0cd429ae559a71bb23d72430",
+              "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+              "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+            },
+            "sourceId": "gsa-plain-language-08",
+            "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "guideline",
+            "surface": "guideline",
+            "start": 934,
+            "end": 943,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-08:guideline:934",
+              "bindingSha256": "1182906a385a2fd6e50c9238a7968b198d9fccc06c425d215666869fc3741147",
+              "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+              "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+            },
+            "sourceId": "gsa-plain-language-08",
+            "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          },
+          {
+            "word": "entity",
+            "surface": "entity",
+            "start": 55,
+            "end": 61,
+            "relation": "exact-headword",
+            "ambiguousLemma": false,
+            "semanticApprovalReference": {
+              "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+              "entryId": "v83-reviewed:gsa-plain-language-08:entity:55",
+              "bindingSha256": "b588c7989154649606a4cb7eeda70305585827326c20a638893ec1f759a508a0",
+              "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+              "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+            },
+            "sourceId": "gsa-plain-language-08",
+            "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+            "meaningStatus": "dictionary-headword-candidate-not-context-sense-certified",
+            "countsAsMastery": false
+          }
+        ],
+        "grammar": [
+          {
+            "tag": "imperatives",
+            "quote": "Spell out everything else.",
+            "explanation": "句首动词短语Spell out构成祈使句，要求把其余词语完整写出。",
+            "start": 1478,
+            "end": 1504,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-08",
+            "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+          },
+          {
+            "tag": "conditional-clauses",
+            "quote": "If they make it harder, you've failed to write for your audience.",
+            "explanation": "If引出条件，后半句说明不便读者时的评价；they在这里指缩写。",
+            "start": 1829,
+            "end": 1894,
+            "offsetUnit": "UTF-16-code-unit",
+            "status": "author-source-location-and-structure-reviewed-root-review-pending",
+            "sourceId": "gsa-plain-language-08",
+            "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+          }
+        ],
+        "minutesByTask": {
+          "vocabulary": 3,
+          "grammar": 3
+        },
+        "requiredActivities": [
+          "Check the candidate word sense against the exact source sentence; use the existing vocabulary workflow for any actual new acquisition.",
+          "Explain the two source grammar examples and produce one new sentence."
+        ],
+        "initialAcquisitionNotCompletedByDisplay": true,
+        "doNotCreateMemoryCardsOrMasteryByPlanning": true,
+        "executionStatus": "pending-not-runtime-connected-v1"
+      },
+      "replacementGuard": null,
+      "appendFallback": null,
+      "exposureIntent": "first-source-practice",
+      "plannedPriorExposure": false,
+      "exposureClaim": "Actual profile exposure must be checked; scheduled first does not certify unseen.",
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 231,
+          "breakMinutes": 65,
+          "totalMinutes": 296
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      }
+    },
+    {
       "assignmentId": "public-course:197:public-nasa-citizen-kelp-mapping-reading",
       "day": 197,
       "taskId": "reading",
@@ -14013,9 +14849,9 @@
           "totalMinutes": 207
         },
         "after": {
-          "studyMinutes": 198,
-          "breakMinutes": 45,
-          "totalMinutes": 243
+          "studyMinutes": 204,
+          "breakMinutes": 60,
+          "totalMinutes": 264
         },
         "taskSlotMinutesBefore": 360,
         "taskSlotMinutesAfter": 360,
@@ -18441,6 +19277,40 @@
       "executionStatus": "pending-not-runtime-connected-v1"
     },
     {
+      "reviewId": "public-context-review:gsa-plain-language-02:1",
+      "day": 174,
+      "stage": 1,
+      "sourceId": "gsa-plain-language-02",
+      "exposureGroup": "public-source:gsa-plain-language-02",
+      "anchorAssignmentId": "public-course:173:public-gsa-plain-language-02-reading",
+      "plannedDelayDays": 1,
+      "window": {
+        "from": 174,
+        "to": 176
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "cue",
+        "countless",
+        "booklet"
+      ],
+      "grammarTags": [
+        "imperatives",
+        "concessive-clauses"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
       "reviewId": "public-context-review:usgs-hydroelectric-power:3",
       "day": 174,
       "stage": 3,
@@ -18465,6 +19335,40 @@
       "grammarTags": [
         "embedded-clauses",
         "passive-voice"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-03:1",
+      "day": 175,
+      "stage": 1,
+      "sourceId": "gsa-plain-language-03",
+      "exposureGroup": "public-source:gsa-plain-language-03",
+      "anchorAssignmentId": "public-course:174:public-gsa-plain-language-03-reading",
+      "plannedDelayDays": 1,
+      "window": {
+        "from": 175,
+        "to": 177
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "obligation",
+        "intimidate",
+        "obsolete"
+      ],
+      "grammarTags": [
+        "modal-obligation",
+        "imperatives"
       ],
       "mode": "independent-recall-ordinary-practice",
       "requiresActualInitialLearningEvidence": true,
@@ -18509,6 +19413,40 @@
       "executionStatus": "pending-not-runtime-connected-v1"
     },
     {
+      "reviewId": "public-context-review:gsa-plain-language-06:1",
+      "day": 176,
+      "stage": 1,
+      "sourceId": "gsa-plain-language-06",
+      "exposureGroup": "public-source:gsa-plain-language-06",
+      "anchorAssignmentId": "public-course:175:public-gsa-plain-language-06-reading",
+      "plannedDelayDays": 1,
+      "window": {
+        "from": 176,
+        "to": 178
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "narrative",
+        "chunk",
+        "linear"
+      ],
+      "grammarTags": [
+        "relative-clauses",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
       "reviewId": "public-context-review:nasa-forest-loss-radar:2",
       "day": 176,
       "stage": 2,
@@ -18532,6 +19470,40 @@
       ],
       "grammarTags": [
         "reduced-relative-clauses",
+        "concessive-clauses"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-02:2",
+      "day": 180,
+      "stage": 2,
+      "sourceId": "gsa-plain-language-02",
+      "exposureGroup": "public-source:gsa-plain-language-02",
+      "anchorAssignmentId": "public-course:173:public-gsa-plain-language-02-reading",
+      "plannedDelayDays": 7,
+      "window": {
+        "from": 180,
+        "to": 183
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "cue",
+        "countless",
+        "booklet"
+      ],
+      "grammarTags": [
+        "imperatives",
         "concessive-clauses"
       ],
       "mode": "independent-recall-ordinary-practice",
@@ -18567,6 +19539,175 @@
       "grammarTags": [
         "contrast-and-modals",
         "embedded-questions"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-03:2",
+      "day": 181,
+      "stage": 2,
+      "sourceId": "gsa-plain-language-03",
+      "exposureGroup": "public-source:gsa-plain-language-03",
+      "anchorAssignmentId": "public-course:174:public-gsa-plain-language-03-reading",
+      "plannedDelayDays": 7,
+      "window": {
+        "from": 181,
+        "to": 184
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "obligation",
+        "intimidate",
+        "obsolete"
+      ],
+      "grammarTags": [
+        "modal-obligation",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-08:1",
+      "day": 181,
+      "stage": 1,
+      "sourceId": "gsa-plain-language-08",
+      "exposureGroup": "public-source:gsa-plain-language-08",
+      "anchorAssignmentId": "public-course:180:public-gsa-plain-language-08-reading",
+      "plannedDelayDays": 1,
+      "window": {
+        "from": 181,
+        "to": 183
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "inquiry",
+        "guideline",
+        "entity"
+      ],
+      "grammarTags": [
+        "imperatives",
+        "conditional-clauses"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-06:2",
+      "day": 182,
+      "stage": 2,
+      "sourceId": "gsa-plain-language-06",
+      "exposureGroup": "public-source:gsa-plain-language-06",
+      "anchorAssignmentId": "public-course:175:public-gsa-plain-language-06-reading",
+      "plannedDelayDays": 7,
+      "window": {
+        "from": 182,
+        "to": 185
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "narrative",
+        "chunk",
+        "linear"
+      ],
+      "grammarTags": [
+        "relative-clauses",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-07:2",
+      "day": 183,
+      "stage": 2,
+      "sourceId": "gsa-plain-language-07",
+      "exposureGroup": "public-source:gsa-plain-language-07",
+      "anchorAssignmentId": "public-course:176:public-gsa-plain-language-07-reading",
+      "plannedDelayDays": 7,
+      "window": {
+        "from": 183,
+        "to": 186
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "meaningless",
+        "alienation"
+      ],
+      "grammarTags": [
+        "relative-clauses",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-08:2",
+      "day": 187,
+      "stage": 2,
+      "sourceId": "gsa-plain-language-08",
+      "exposureGroup": "public-source:gsa-plain-language-08",
+      "anchorAssignmentId": "public-course:180:public-gsa-plain-language-08-reading",
+      "plannedDelayDays": 7,
+      "window": {
+        "from": 187,
+        "to": 190
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "inquiry",
+        "guideline",
+        "entity"
+      ],
+      "grammarTags": [
+        "imperatives",
+        "conditional-clauses"
       ],
       "mode": "independent-recall-ordinary-practice",
       "requiresActualInitialLearningEvidence": true,
@@ -18645,6 +19786,141 @@
       "executionStatus": "pending-not-runtime-connected-v1"
     },
     {
+      "reviewId": "public-context-review:gsa-plain-language-02:3",
+      "day": 194,
+      "stage": 3,
+      "sourceId": "gsa-plain-language-02",
+      "exposureGroup": "public-source:gsa-plain-language-02",
+      "anchorAssignmentId": "public-course:173:public-gsa-plain-language-02-reading",
+      "plannedDelayDays": 21,
+      "window": {
+        "from": 194,
+        "to": 201
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "cue",
+        "countless",
+        "booklet"
+      ],
+      "grammarTags": [
+        "imperatives",
+        "concessive-clauses"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-03:3",
+      "day": 195,
+      "stage": 3,
+      "sourceId": "gsa-plain-language-03",
+      "exposureGroup": "public-source:gsa-plain-language-03",
+      "anchorAssignmentId": "public-course:174:public-gsa-plain-language-03-reading",
+      "plannedDelayDays": 21,
+      "window": {
+        "from": 195,
+        "to": 202
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "obligation",
+        "intimidate",
+        "obsolete"
+      ],
+      "grammarTags": [
+        "modal-obligation",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-06:3",
+      "day": 197,
+      "stage": 3,
+      "sourceId": "gsa-plain-language-06",
+      "exposureGroup": "public-source:gsa-plain-language-06",
+      "anchorAssignmentId": "public-course:175:public-gsa-plain-language-06-reading",
+      "plannedDelayDays": 22,
+      "window": {
+        "from": 196,
+        "to": 203
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "narrative",
+        "chunk",
+        "linear"
+      ],
+      "grammarTags": [
+        "relative-clauses",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-07:3",
+      "day": 197,
+      "stage": 3,
+      "sourceId": "gsa-plain-language-07",
+      "exposureGroup": "public-source:gsa-plain-language-07",
+      "anchorAssignmentId": "public-course:176:public-gsa-plain-language-07-reading",
+      "plannedDelayDays": 21,
+      "window": {
+        "from": 197,
+        "to": 204
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "meaningless",
+        "alienation"
+      ],
+      "grammarTags": [
+        "relative-clauses",
+        "imperatives"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
       "reviewId": "public-context-review:nasa-citizen-kelp-mapping:1",
       "day": 200,
       "stage": 1,
@@ -18669,6 +19945,40 @@
       "grammarTags": [
         "relative-clauses",
         "passive-voice"
+      ],
+      "mode": "independent-recall-ordinary-practice",
+      "requiresActualInitialLearningEvidence": true,
+      "preferExistingMemoryDueAndDeduplicate": true,
+      "actualFSRSDueAndEvidenceOverrideFixedWindow": true,
+      "doNotCreateCardsOrMasteryByPlanning": true,
+      "completionRequiresOriginalArtifact": true,
+      "executionStatus": "pending-not-runtime-connected-v1"
+    },
+    {
+      "reviewId": "public-context-review:gsa-plain-language-08:3",
+      "day": 201,
+      "stage": 3,
+      "sourceId": "gsa-plain-language-08",
+      "exposureGroup": "public-source:gsa-plain-language-08",
+      "anchorAssignmentId": "public-course:180:public-gsa-plain-language-08-reading",
+      "plannedDelayDays": 21,
+      "window": {
+        "from": 201,
+        "to": 208
+      },
+      "estimatedStudyMinutes": 3,
+      "minutesByTask": {
+        "vocabulary": 2,
+        "grammar": 1
+      },
+      "wordHeadwords": [
+        "inquiry",
+        "guideline",
+        "entity"
+      ],
+      "grammarTags": [
+        "imperatives",
+        "conditional-clauses"
       ],
       "mode": "independent-recall-ordinary-practice",
       "requiresActualInitialLearningEvidence": true,
@@ -24561,10 +25871,362 @@
     {
       "day": 173,
       "baseDayHash": "51f50389bf6574ecf5314d78b1442050221be058e2e454d668d6075993bc6ea0",
-      "assignmentIds": [],
+      "assignmentIds": [
+        "public-course:173:public-gsa-plain-language-02-reading"
+      ],
       "reviewIds": [
         "public-context-review:noaa-eutrophication:3",
         "public-context-review:noaa-ocean-acidification:1"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 235,
+          "breakMinutes": 65,
+          "totalMinutes": 300
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "w25-read-2-vocabulary"
+          ],
+          "materialIdsAfter": [
+            "w25-read-2-vocabulary"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 20,
+          "predictedStudyAfter": 27
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "w25-read-1-grammar"
+          ],
+          "materialIdsAfter": [
+            "w25-read-1-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 15,
+          "predictedStudyAfter": 20
+        },
+        {
+          "taskId": "reading",
+          "materialIdsBefore": [
+            "w25-read-2"
+          ],
+          "materialIdsAfter": [
+            "w25-read-2",
+            "public-gsa-plain-language-02-reading"
+          ],
+          "taskMinutesBefore": 60,
+          "taskMinutesAfter": 60,
+          "predictedStudyBefore": 30,
+          "predictedStudyAfter": 58
+        }
+      ]
+    },
+    {
+      "day": 174,
+      "baseDayHash": "c467175c58791946774051babdabfbeb88d54dc9bbb9e4cf3ec6ad76bfe467b1",
+      "assignmentIds": [
+        "public-course:174:public-gsa-plain-language-03-reading"
+      ],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-02:1",
+        "public-context-review:usgs-hydroelectric-power:3"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 227,
+          "breakMinutes": 65,
+          "totalMinutes": 292
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "w25-read-3-vocabulary"
+          ],
+          "materialIdsAfter": [
+            "w25-read-3-vocabulary"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 20,
+          "predictedStudyAfter": 27
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "w25-read-3-grammar"
+          ],
+          "materialIdsAfter": [
+            "w25-read-3-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 15,
+          "predictedStudyAfter": 20
+        },
+        {
+          "taskId": "reading",
+          "materialIdsBefore": [
+            "w25-read-3"
+          ],
+          "materialIdsAfter": [
+            "w25-read-3",
+            "public-gsa-plain-language-03-reading"
+          ],
+          "taskMinutesBefore": 60,
+          "taskMinutesAfter": 60,
+          "predictedStudyBefore": 30,
+          "predictedStudyAfter": 50
+        }
+      ]
+    },
+    {
+      "day": 175,
+      "baseDayHash": "abcb46bfbe0e8e66e31f701a65af54fbc0e48d1dabcfc3f1cd85ac21fd1fa559",
+      "assignmentIds": [
+        "public-course:175:public-gsa-plain-language-06-reading"
+      ],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-03:1",
+        "public-context-review:usgs-turbidity-water:3"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 227,
+          "breakMinutes": 65,
+          "totalMinutes": 292
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "w25-read-1-vocabulary"
+          ],
+          "materialIdsAfter": [
+            "w25-read-1-vocabulary"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 20,
+          "predictedStudyAfter": 27
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "w25-read-2-grammar"
+          ],
+          "materialIdsAfter": [
+            "w25-read-2-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 15,
+          "predictedStudyAfter": 20
+        },
+        {
+          "taskId": "reading",
+          "materialIdsBefore": [
+            "w25-read-1"
+          ],
+          "materialIdsAfter": [
+            "w25-read-1",
+            "public-gsa-plain-language-06-reading"
+          ],
+          "taskMinutesBefore": 60,
+          "taskMinutesAfter": 60,
+          "predictedStudyBefore": 30,
+          "predictedStudyAfter": 50
+        }
+      ]
+    },
+    {
+      "day": 176,
+      "baseDayHash": "9e7ee59eae02f4b6e0d5c14a46d764d730b2cf3dfcaa108804359634a0a64e14",
+      "assignmentIds": [
+        "public-course:176:public-gsa-plain-language-07-reading"
+      ],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-06:1",
+        "public-context-review:nasa-forest-loss-radar:2"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 167,
+          "breakMinutes": 40,
+          "totalMinutes": 207
+        },
+        "after": {
+          "studyMinutes": 203,
+          "breakMinutes": 60,
+          "totalMinutes": 263
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "w26-read-1-vocabulary",
+            "lexical-w26-1"
+          ],
+          "materialIdsAfter": [
+            "w26-read-1-vocabulary",
+            "lexical-w26-1"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 32,
+          "predictedStudyAfter": 39
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "w26-read-1-grammar"
+          ],
+          "materialIdsAfter": [
+            "w26-read-1-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 15,
+          "predictedStudyAfter": 20
+        },
+        {
+          "taskId": "reading",
+          "materialIdsBefore": [
+            "w26-read-1"
+          ],
+          "materialIdsAfter": [
+            "w26-read-1",
+            "public-gsa-plain-language-07-reading"
+          ],
+          "taskMinutesBefore": 60,
+          "taskMinutesAfter": 60,
+          "predictedStudyBefore": 30,
+          "predictedStudyAfter": 54
+        }
+      ]
+    },
+    {
+      "day": 180,
+      "baseDayHash": "23d5d3f563665e7437faf55d493f6e0c0aa9d59e105a0371979941e53d55f9df",
+      "assignmentIds": [
+        "public-course:180:public-gsa-plain-language-08-reading"
+      ],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-02:2",
+        "public-context-review:noaa-ocean-acidification:2"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 195,
+          "breakMinutes": 45,
+          "totalMinutes": 240
+        },
+        "after": {
+          "studyMinutes": 231,
+          "breakMinutes": 65,
+          "totalMinutes": 296
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "w26-read-2-vocabulary"
+          ],
+          "materialIdsAfter": [
+            "w26-read-2-vocabulary"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 20,
+          "predictedStudyAfter": 27
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "w26-read-1-grammar"
+          ],
+          "materialIdsAfter": [
+            "w26-read-1-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 15,
+          "predictedStudyAfter": 20
+        },
+        {
+          "taskId": "reading",
+          "materialIdsBefore": [
+            "w26-read-2"
+          ],
+          "materialIdsAfter": [
+            "w26-read-2",
+            "public-gsa-plain-language-08-reading"
+          ],
+          "taskMinutesBefore": 60,
+          "taskMinutesAfter": 60,
+          "predictedStudyBefore": 30,
+          "predictedStudyAfter": 54
+        }
+      ]
+    },
+    {
+      "day": 181,
+      "baseDayHash": "d9e015ac45fe3ed6afcae9a1aad64f200ca0346de6f9f6357349f6b3be8e273e",
+      "assignmentIds": [],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-03:2",
+        "public-context-review:gsa-plain-language-08:1"
       ],
       "dayBudget": {
         "totalBudgetMinutes": 360,
@@ -24587,10 +26249,10 @@
         {
           "taskId": "vocabulary",
           "materialIdsBefore": [
-            "w25-read-2-vocabulary"
+            "w26-read-3-vocabulary"
           ],
           "materialIdsAfter": [
-            "w25-read-2-vocabulary"
+            "w26-read-3-vocabulary"
           ],
           "taskMinutesBefore": 45,
           "taskMinutesAfter": 45,
@@ -24600,10 +26262,10 @@
         {
           "taskId": "grammar",
           "materialIdsBefore": [
-            "w25-read-1-grammar"
+            "w26-read-3-grammar"
           ],
           "materialIdsAfter": [
-            "w25-read-1-grammar"
+            "w26-read-3-grammar"
           ],
           "taskMinutesBefore": 30,
           "taskMinutesAfter": 30,
@@ -24613,11 +26275,11 @@
       ]
     },
     {
-      "day": 174,
-      "baseDayHash": "c467175c58791946774051babdabfbeb88d54dc9bbb9e4cf3ec6ad76bfe467b1",
+      "day": 182,
+      "baseDayHash": "285151a0ca976f645727268f04f8f4eefd364a40815d70fc10b49d1169ef90e7",
       "assignmentIds": [],
       "reviewIds": [
-        "public-context-review:usgs-hydroelectric-power:3"
+        "public-context-review:gsa-plain-language-06:2"
       ],
       "dayBudget": {
         "totalBudgetMinutes": 360,
@@ -24640,10 +26302,10 @@
         {
           "taskId": "vocabulary",
           "materialIdsBefore": [
-            "w25-read-3-vocabulary"
+            "w26-read-1-vocabulary"
           ],
           "materialIdsAfter": [
-            "w25-read-3-vocabulary"
+            "w26-read-1-vocabulary"
           ],
           "taskMinutesBefore": 45,
           "taskMinutesAfter": 45,
@@ -24653,10 +26315,10 @@
         {
           "taskId": "grammar",
           "materialIdsBefore": [
-            "w25-read-3-grammar"
+            "w26-read-2-grammar"
           ],
           "materialIdsAfter": [
-            "w25-read-3-grammar"
+            "w26-read-2-grammar"
           ],
           "taskMinutesBefore": 30,
           "taskMinutesAfter": 30,
@@ -24666,64 +26328,11 @@
       ]
     },
     {
-      "day": 175,
-      "baseDayHash": "abcb46bfbe0e8e66e31f701a65af54fbc0e48d1dabcfc3f1cd85ac21fd1fa559",
+      "day": 183,
+      "baseDayHash": "339a927229eb27d7b0718190d9fe4110a5482b134022082fd76df5f5524c6729",
       "assignmentIds": [],
       "reviewIds": [
-        "public-context-review:usgs-turbidity-water:3"
-      ],
-      "dayBudget": {
-        "totalBudgetMinutes": 360,
-        "before": {
-          "studyMinutes": 195,
-          "breakMinutes": 45,
-          "totalMinutes": 240
-        },
-        "after": {
-          "studyMinutes": 198,
-          "breakMinutes": 45,
-          "totalMinutes": 243
-        },
-        "taskSlotMinutesBefore": 360,
-        "taskSlotMinutesAfter": 360,
-        "referenceOnly": true,
-        "actualOverrunMustCarryAndRemainIncomplete": true
-      },
-      "tasks": [
-        {
-          "taskId": "vocabulary",
-          "materialIdsBefore": [
-            "w25-read-1-vocabulary"
-          ],
-          "materialIdsAfter": [
-            "w25-read-1-vocabulary"
-          ],
-          "taskMinutesBefore": 45,
-          "taskMinutesAfter": 45,
-          "predictedStudyBefore": 20,
-          "predictedStudyAfter": 22
-        },
-        {
-          "taskId": "grammar",
-          "materialIdsBefore": [
-            "w25-read-2-grammar"
-          ],
-          "materialIdsAfter": [
-            "w25-read-2-grammar"
-          ],
-          "taskMinutesBefore": 30,
-          "taskMinutesAfter": 30,
-          "predictedStudyBefore": 15,
-          "predictedStudyAfter": 16
-        }
-      ]
-    },
-    {
-      "day": 176,
-      "baseDayHash": "9e7ee59eae02f4b6e0d5c14a46d764d730b2cf3dfcaa108804359634a0a64e14",
-      "assignmentIds": [],
-      "reviewIds": [
-        "public-context-review:nasa-forest-loss-radar:2"
+        "public-context-review:gsa-plain-language-07:2"
       ],
       "dayBudget": {
         "totalBudgetMinutes": 360,
@@ -24746,12 +26355,12 @@
         {
           "taskId": "vocabulary",
           "materialIdsBefore": [
-            "w26-read-1-vocabulary",
-            "lexical-w26-1"
+            "w27-read-1-vocabulary",
+            "lexical-w27-1"
           ],
           "materialIdsAfter": [
-            "w26-read-1-vocabulary",
-            "lexical-w26-1"
+            "w27-read-1-vocabulary",
+            "lexical-w27-1"
           ],
           "taskMinutesBefore": 45,
           "taskMinutesAfter": 45,
@@ -24761,10 +26370,10 @@
         {
           "taskId": "grammar",
           "materialIdsBefore": [
-            "w26-read-1-grammar"
+            "w27-read-1-grammar"
           ],
           "materialIdsAfter": [
-            "w26-read-1-grammar"
+            "w27-read-1-grammar"
           ],
           "taskMinutesBefore": 30,
           "taskMinutesAfter": 30,
@@ -24774,11 +26383,11 @@
       ]
     },
     {
-      "day": 180,
-      "baseDayHash": "23d5d3f563665e7437faf55d493f6e0c0aa9d59e105a0371979941e53d55f9df",
+      "day": 187,
+      "baseDayHash": "25114a42045db6af1573ecdb9601c56d6a4b5ac34611875d1ce3ddbb7db85943",
       "assignmentIds": [],
       "reviewIds": [
-        "public-context-review:noaa-ocean-acidification:2"
+        "public-context-review:gsa-plain-language-08:2"
       ],
       "dayBudget": {
         "totalBudgetMinutes": 360,
@@ -24801,10 +26410,10 @@
         {
           "taskId": "vocabulary",
           "materialIdsBefore": [
-            "w26-read-2-vocabulary"
+            "w27-read-2-vocabulary"
           ],
           "materialIdsAfter": [
-            "w26-read-2-vocabulary"
+            "w27-read-2-vocabulary"
           ],
           "taskMinutesBefore": 45,
           "taskMinutesAfter": 45,
@@ -24814,10 +26423,10 @@
         {
           "taskId": "grammar",
           "materialIdsBefore": [
-            "w26-read-1-grammar"
+            "w27-read-1-grammar"
           ],
           "materialIdsAfter": [
-            "w26-read-1-grammar"
+            "w27-read-1-grammar"
           ],
           "taskMinutesBefore": 30,
           "taskMinutesAfter": 30,
@@ -24937,12 +26546,131 @@
       ]
     },
     {
+      "day": 194,
+      "baseDayHash": "8fd0073876113372991f0e91f957a221a26ddb817a8fc7377cca7020c6b3aefa",
+      "assignmentIds": [],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-02:3"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 227,
+          "breakMinutes": 65,
+          "totalMinutes": 292
+        },
+        "after": {
+          "studyMinutes": 230,
+          "breakMinutes": 65,
+          "totalMinutes": 295
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "noaa-water-cycle-vocabulary-pack-1",
+            "lexical-w28-5",
+            "lexical-context-15-vocabulary"
+          ],
+          "materialIdsAfter": [
+            "noaa-water-cycle-vocabulary-pack-1",
+            "lexical-w28-5",
+            "lexical-context-15-vocabulary"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 42,
+          "predictedStudyAfter": 44
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "lexical-context-15",
+            "w28-read-3-grammar"
+          ],
+          "materialIdsAfter": [
+            "lexical-context-15",
+            "w28-read-3-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 25,
+          "predictedStudyAfter": 26
+        }
+      ]
+    },
+    {
+      "day": 195,
+      "baseDayHash": "530724ebd28242c76ce97f6453c65a1033899f851939380eb86e407c05d1d40b",
+      "assignmentIds": [],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-03:3"
+      ],
+      "dayBudget": {
+        "totalBudgetMinutes": 360,
+        "before": {
+          "studyMinutes": 215,
+          "breakMinutes": 60,
+          "totalMinutes": 275
+        },
+        "after": {
+          "studyMinutes": 218,
+          "breakMinutes": 60,
+          "totalMinutes": 278
+        },
+        "taskSlotMinutesBefore": 360,
+        "taskSlotMinutesAfter": 360,
+        "referenceOnly": true,
+        "actualOverrunMustCarryAndRemainIncomplete": true
+      },
+      "tasks": [
+        {
+          "taskId": "vocabulary",
+          "materialIdsBefore": [
+            "noaa-water-cycle-vocabulary-pack-2",
+            "lexical-context-16-vocabulary"
+          ],
+          "materialIdsAfter": [
+            "noaa-water-cycle-vocabulary-pack-2",
+            "lexical-context-16-vocabulary"
+          ],
+          "taskMinutesBefore": 45,
+          "taskMinutesAfter": 45,
+          "predictedStudyBefore": 30,
+          "predictedStudyAfter": 32
+        },
+        {
+          "taskId": "grammar",
+          "materialIdsBefore": [
+            "lexical-context-16",
+            "w28-read-1-grammar"
+          ],
+          "materialIdsAfter": [
+            "lexical-context-16",
+            "w28-read-1-grammar"
+          ],
+          "taskMinutesBefore": 30,
+          "taskMinutesAfter": 30,
+          "predictedStudyBefore": 25,
+          "predictedStudyAfter": 26
+        }
+      ]
+    },
+    {
       "day": 197,
       "baseDayHash": "b00a434cf4d0ce9afbce72d04c9a80c1ee4a749cbf466c65ef58fff495342c99",
       "assignmentIds": [
         "public-course:197:public-nasa-citizen-kelp-mapping-reading"
       ],
-      "reviewIds": [],
+      "reviewIds": [
+        "public-context-review:gsa-plain-language-06:3",
+        "public-context-review:gsa-plain-language-07:3"
+      ],
       "dayBudget": {
         "totalBudgetMinutes": 360,
         "before": {
@@ -24951,9 +26679,9 @@
           "totalMinutes": 207
         },
         "after": {
-          "studyMinutes": 198,
-          "breakMinutes": 45,
-          "totalMinutes": 243
+          "studyMinutes": 204,
+          "breakMinutes": 60,
+          "totalMinutes": 264
         },
         "taskSlotMinutesBefore": 360,
         "taskSlotMinutesAfter": 360,
@@ -24974,7 +26702,7 @@
           "taskMinutesBefore": 45,
           "taskMinutesAfter": 45,
           "predictedStudyBefore": 32,
-          "predictedStudyAfter": 35
+          "predictedStudyAfter": 39
         },
         {
           "taskId": "grammar",
@@ -24987,7 +26715,7 @@
           "taskMinutesBefore": 30,
           "taskMinutesAfter": 30,
           "predictedStudyBefore": 15,
-          "predictedStudyAfter": 18
+          "predictedStudyAfter": 20
         },
         {
           "taskId": "reading",
@@ -25080,6 +26808,7 @@
       "baseDayHash": "370548843dc6e775bb0bd0ec64d6b568e44ac402f5ce464f704767a428d0efff",
       "assignmentIds": [],
       "reviewIds": [
+        "public-context-review:gsa-plain-language-08:3",
         "public-context-review:nasa-phytoplankton:1"
       ],
       "dayBudget": {
@@ -25090,9 +26819,9 @@
           "totalMinutes": 267
         },
         "after": {
-          "studyMinutes": 210,
+          "studyMinutes": 213,
           "breakMinutes": 60,
-          "totalMinutes": 270
+          "totalMinutes": 273
         },
         "taskSlotMinutesBefore": 360,
         "taskSlotMinutesAfter": 360,
@@ -25113,7 +26842,7 @@
           "taskMinutesBefore": 45,
           "taskMinutesAfter": 45,
           "predictedStudyBefore": 32,
-          "predictedStudyAfter": 34
+          "predictedStudyAfter": 36
         },
         {
           "taskId": "grammar",
@@ -25126,7 +26855,7 @@
           "taskMinutesBefore": 30,
           "taskMinutesAfter": 30,
           "predictedStudyBefore": 15,
-          "predictedStudyAfter": 16
+          "predictedStudyAfter": 17
         }
       ]
     },
@@ -25352,6 +27081,14 @@
   "blocked": [],
   "reviewBlocked": [
     {
+      "sourceId": "gsa-plain-language-07",
+      "exposureGroup": "public-source:gsa-plain-language-07",
+      "stage": 1,
+      "from": 177,
+      "to": 179,
+      "reason": "review-window-has-no-unfrozen-ordinary-budget-slot"
+    },
+    {
       "sourceId": "nasa-climate-models",
       "exposureGroup": "public-source:nasa-climate-models",
       "stage": 1,
@@ -25362,19 +27099,19 @@
   ],
   "audit": {
     "summary": {
-      "publicVariants": 75,
-      "assignedVariants": 75,
+      "publicVariants": 80,
+      "assignedVariants": 80,
       "retainedVariants": 0,
       "exemptVariants": 0,
       "blockedVariants": 0,
-      "readingAssignments": 46,
+      "readingAssignments": 51,
       "listeningAssignments": 29,
       "replacements": 35,
-      "appends": 40,
-      "sourceGroups": 46,
-      "plannedContextReviews": 137,
-      "blockedReviewWindows": 1,
-      "changedDays": 98,
+      "appends": 45,
+      "sourceGroups": 51,
+      "plannedContextReviews": 151,
+      "blockedReviewWindows": 2,
+      "changedDays": 104,
       "maximumReferenceCalendarMinutes": 330,
       "baselineOverBudgetDays": [
         2,
@@ -25591,7 +27328,16 @@
       "provenance": "curriculum/public-target-coverage.json",
       "reportSha256": "b34a0bd1c5e0506c6c46a2db08b2214d89ad8ec8a8e387064efeb5ce8c1a5135",
       "reportGeneratedAt": "2026-10-26T00:42:57.771Z",
-      "scope": "Located orthographic candidates from the source-acquisition audit; not a fresh mastery/semantic coverage measurement or execution of context links."
+      "scope": "Located orthographic candidates from the source-acquisition audit; not a fresh mastery/semantic coverage measurement or execution of context links.",
+      "supplementalSourceAudit": {
+        "releaseId": "gsa-graded-reading-v87",
+        "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f",
+        "sourceCount": 5,
+        "signedSemanticAnchors": 18,
+        "newlyTaught": 0,
+        "masteryCredit": 0,
+        "scope": "New GSA anchors are not added to the older orthographic audit counts. Signed sense approval is not enrollment or learner evidence."
+      }
     },
     "limitations": [
       "Author reference durations plus default Pomodoro rest are capacity assumptions, not measured learner throughput. Actual due reviews, errors and slower work consume the same 360 minutes and must carry unfinished required work forward.",
@@ -25605,54 +27351,54 @@
       "deterministicAttempts": [
         {
           "mode": "capacity-first",
-          "assigned": 75,
+          "assigned": 80,
           "blocked": 0,
-          "reviewBlocked": 1,
+          "reviewBlocked": 2,
           "metric": [
-            75,
-            -1,
+            80,
+            -2,
             594,
             35,
-            -6320
-          ]
-        },
-        {
-          "mode": "balanced-2",
-          "assigned": 73,
-          "blocked": 2,
-          "reviewBlocked": 0,
-          "metric": [
-            73,
-            0,
-            1104,
-            52,
-            -6411
-          ]
-        },
-        {
-          "mode": "balanced-5",
-          "assigned": 73,
-          "blocked": 2,
-          "reviewBlocked": 0,
-          "metric": [
-            73,
-            0,
-            966,
-            50,
-            -6328
+            -7198
           ]
         },
         {
           "mode": "context-priority",
-          "assigned": 73,
+          "assigned": 78,
           "blocked": 2,
           "reviewBlocked": 1,
           "metric": [
-            73,
+            78,
             -1,
-            1452,
+            1470,
             52,
-            -6964
+            -7844
+          ]
+        },
+        {
+          "mode": "balanced-2",
+          "assigned": 78,
+          "blocked": 2,
+          "reviewBlocked": 1,
+          "metric": [
+            78,
+            -1,
+            1104,
+            52,
+            -7277
+          ]
+        },
+        {
+          "mode": "balanced-5",
+          "assigned": 78,
+          "blocked": 2,
+          "reviewBlocked": 1,
+          "metric": [
+            78,
+            -1,
+            966,
+            50,
+            -7202
           ]
         }
       ],
@@ -81249,6 +82995,451 @@
               "end": 2654
             }
           ]
+        },
+        {
+          "sourceId": "gsa-plain-language-02",
+          "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+          "level": {
+            "label": "B1–B2",
+            "calibrated": false,
+            "estimateKind": "AI-content-estimate",
+            "basis": "Short expository writing guidance and six source-grounded questions; requires verified B2 for this mixed-range source. This is target training, not a CEFR or IELTS equivalence."
+          },
+          "words": [
+            {
+              "word": "cue",
+              "surface": "cue",
+              "start": 69,
+              "end": 72,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-02:cue:69",
+                "bindingSha256": "537a730bf3e2bb94e5163ecc71bcc23e72a36d7d2ea758eae005a5844e3952ec",
+                "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+                "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+              }
+            },
+            {
+              "word": "booklet",
+              "surface": "booklets",
+              "start": 895,
+              "end": 903,
+              "relation": "source-listed-unambiguous-inflection",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-02:booklet:895",
+                "bindingSha256": "86fc8e998267e6854f34819b202a409ed7a30dab5640311e54219e6ffec4b3db",
+                "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+                "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+              }
+            },
+            {
+              "word": "approximate",
+              "surface": "approximate",
+              "start": 1531,
+              "end": 1542,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-02:approximate:1531",
+                "bindingSha256": "17840f4d0e5e282e539f1efb12e398d62cb8b979fe0b68531d70d2d210140833",
+                "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+                "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+              }
+            },
+            {
+              "word": "countless",
+              "surface": "countless",
+              "start": 1588,
+              "end": 1597,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-02:countless:1588",
+                "bindingSha256": "1bf2b4c8a9603b5f8d5ce9298b0f2f4d57fe22d77d5735a131a29f697a2a9139",
+                "originalSourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+                "displaySourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302"
+              }
+            }
+          ],
+          "grammar": [
+            {
+              "tag": "imperatives",
+              "quote": "Do not correct the participant.",
+              "explanation": "Do not + 动词原形表示否定祈使句；这里要求测试者不要当场纠正参与者。",
+              "start": 279,
+              "end": 310,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            },
+            {
+              "tag": "concessive-clauses",
+              "quote": "Although this technique is very valuable, it probably isn't worth the time to test documents that go to a small number of people.",
+              "explanation": "Although引出让步：承认方法有价值，同时说明对小范围文档可能不划算。",
+              "start": 3135,
+              "end": 3264,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            }
+          ]
+        },
+        {
+          "sourceId": "gsa-plain-language-03",
+          "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+          "level": {
+            "label": "B1–B2",
+            "calibrated": false,
+            "estimateKind": "AI-content-estimate",
+            "basis": "Short expository writing guidance and six source-grounded questions; requires verified B2 for this mixed-range source. This is target training, not a CEFR or IELTS equivalence."
+          },
+          "words": [
+            {
+              "word": "obsolete",
+              "surface": "obsolete",
+              "start": 285,
+              "end": 293,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-03:obsolete:285",
+                "bindingSha256": "a2e88641a9ba6af5720fb432b3c6210a1eac9604415d7dde35b6e8c715812d64",
+                "originalSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+                "displaySourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+              }
+            },
+            {
+              "word": "intimidate",
+              "surface": "intimidated",
+              "start": 442,
+              "end": 453,
+              "relation": "source-listed-unambiguous-inflection",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-03:intimidate:442",
+                "bindingSha256": "4c23d5dcd15c7f726c8886cca08993521c62ef82517ab01504d2d74bb1188e2f",
+                "originalSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+                "displaySourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+              }
+            },
+            {
+              "word": "obligation",
+              "surface": "obligations",
+              "start": 564,
+              "end": 575,
+              "relation": "source-listed-unambiguous-inflection",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-03:obligation:564",
+                "bindingSha256": "6f3490817e68ea2e22664b0f85d46f637a48e59e0458a34cd411c42b674ca176",
+                "originalSourceTextSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+                "displaySourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5"
+              }
+            }
+          ],
+          "grammar": [
+            {
+              "tag": "modal-obligation",
+              "quote": "You must notify any settler, by registered mail, that you have applied to use timber from your lease.",
+              "explanation": "must + 动词原形表达要求；notify的对象是settler，by registered mail说明方式。",
+              "start": 663,
+              "end": 764,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            },
+            {
+              "tag": "imperatives",
+              "quote": "Include in your notice the amount and the kind of timber you intend to use as fuel.",
+              "explanation": "句首动词原形Include构成祈使句，要求在通知中写明相应信息。",
+              "start": 765,
+              "end": 848,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            }
+          ]
+        },
+        {
+          "sourceId": "gsa-plain-language-08",
+          "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+          "level": {
+            "label": "B1–B2",
+            "calibrated": false,
+            "estimateKind": "AI-content-estimate",
+            "basis": "Short expository writing guidance and six source-grounded questions; requires verified B2 for this mixed-range source. This is target training, not a CEFR or IELTS equivalence."
+          },
+          "words": [
+            {
+              "word": "entity",
+              "surface": "entity",
+              "start": 55,
+              "end": 61,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-08:entity:55",
+                "bindingSha256": "b588c7989154649606a4cb7eeda70305585827326c20a638893ec1f759a508a0",
+                "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+                "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+              }
+            },
+            {
+              "word": "guideline",
+              "surface": "guideline",
+              "start": 934,
+              "end": 943,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-08:guideline:934",
+                "bindingSha256": "1182906a385a2fd6e50c9238a7968b198d9fccc06c425d215666869fc3741147",
+                "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+                "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+              }
+            },
+            {
+              "word": "inquiry",
+              "surface": "inquiry",
+              "start": 1063,
+              "end": 1070,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-08:inquiry:1063",
+                "bindingSha256": "805ee53f7cc1ac268ea3eea92c4217771df98e4b0cd429ae559a71bb23d72430",
+                "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+                "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+              }
+            },
+            {
+              "word": "preferably",
+              "surface": "preferably",
+              "start": 1462,
+              "end": 1472,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-08:preferably:1462",
+                "bindingSha256": "de29b226864a9c41c1588d135db3b63e28d8e76876d2381c812679ff6cfa8ccf",
+                "originalSourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+                "displaySourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3"
+              }
+            }
+          ],
+          "grammar": [
+            {
+              "tag": "imperatives",
+              "quote": "Spell out everything else.",
+              "explanation": "句首动词短语Spell out构成祈使句，要求把其余词语完整写出。",
+              "start": 1478,
+              "end": 1504,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            },
+            {
+              "tag": "conditional-clauses",
+              "quote": "If they make it harder, you've failed to write for your audience.",
+              "explanation": "If引出条件，后半句说明不便读者时的评价；they在这里指缩写。",
+              "start": 1829,
+              "end": 1894,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            }
+          ]
+        },
+        {
+          "sourceId": "gsa-plain-language-07",
+          "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+          "level": {
+            "label": "B1–B2",
+            "calibrated": false,
+            "estimateKind": "AI-content-estimate",
+            "basis": "Short expository writing guidance and six source-grounded questions; requires verified B2 for this mixed-range source. This is target training, not a CEFR or IELTS equivalence."
+          },
+          "words": [
+            {
+              "word": "alienation",
+              "surface": "alienation",
+              "start": 859,
+              "end": 869,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-07:alienation:859",
+                "bindingSha256": "63164978acfc14124f35c8a06bde2e1616339c1098ab850caa6f53d0cd3540af",
+                "originalSourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+                "displaySourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c"
+              }
+            },
+            {
+              "word": "meaningless",
+              "surface": "meaningless",
+              "start": 1064,
+              "end": 1075,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-07:meaningless:1064",
+                "bindingSha256": "7b8132300974003a51e560dd837ec830cc94f1aded6209270efddfe08248374a",
+                "originalSourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+                "displaySourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c"
+              }
+            }
+          ],
+          "grammar": [
+            {
+              "tag": "imperatives",
+              "quote": "Remember to write to communicate, not to impress.",
+              "explanation": "Remember引出祈使句；to communicate和to impress对照说明写作目的。",
+              "start": 1474,
+              "end": 1523,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            },
+            {
+              "tag": "relative-clauses",
+              "quote": "terms they know well may be difficult or meaningless to their audience",
+              "explanation": "they know well省略了关系代词，修饰terms；主句说明这些术语对受众仍可能难懂。",
+              "start": 1023,
+              "end": 1093,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            }
+          ]
+        },
+        {
+          "sourceId": "gsa-plain-language-06",
+          "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+          "level": {
+            "label": "B1–B2",
+            "calibrated": false,
+            "estimateKind": "AI-content-estimate",
+            "basis": "Short expository writing guidance and six source-grounded questions; requires verified B2 for this mixed-range source. This is target training, not a CEFR or IELTS equivalence."
+          },
+          "words": [
+            {
+              "word": "paste",
+              "surface": "paste",
+              "start": 14,
+              "end": 19,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-06:paste:14",
+                "bindingSha256": "27a80e7dad954838aa8f7094ee853cf9dcd918a65b710624268d2afe7cfa2fc8",
+                "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+                "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+              }
+            },
+            {
+              "word": "linear",
+              "surface": "linear",
+              "start": 288,
+              "end": 294,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-06:linear:288",
+                "bindingSha256": "ac39e501b32e56bf01e3a66462d88348e286b5e23b519d3ec9d69341f7c612ae",
+                "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+                "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+              }
+            },
+            {
+              "word": "narrative",
+              "surface": "narrative",
+              "start": 299,
+              "end": 308,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-06:narrative:299",
+                "bindingSha256": "890f917f7f77b35537b47bdc77390338fdac6377156920fc6cb3d92c658ea98d",
+                "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+                "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+              }
+            },
+            {
+              "word": "mundane",
+              "surface": "mundane",
+              "start": 362,
+              "end": 369,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-06:mundane:362",
+                "bindingSha256": "e380d76b786ac345226ebf946a4dc1ef1bc85b55d7b981e2d8c6c78094ff7ec8",
+                "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+                "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+              }
+            },
+            {
+              "word": "chunk",
+              "surface": "Chunk",
+              "start": 659,
+              "end": 664,
+              "relation": "exact-headword",
+              "ambiguousLemma": false,
+              "semanticApprovalReference": {
+                "rootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+                "entryId": "v83-reviewed:gsa-plain-language-06:chunk:659",
+                "bindingSha256": "b9ccf695a87693e72a59200d65bd694f58a984e586c0bcdd1450122c21712774",
+                "originalSourceTextSha256": "77457179def5dafc53c6df5c2af5e9188e5cc6d561653398076fa8bdd3b811dc",
+                "displaySourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5"
+              }
+            }
+          ],
+          "grammar": [
+            {
+              "tag": "imperatives",
+              "quote": "Keep the most important and clear message at the top of the web page.",
+              "explanation": "Keep为祈使句动词；at the top说明信息应放置的位置。",
+              "start": 587,
+              "end": 656,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            },
+            {
+              "tag": "relative-clauses",
+              "quote": "web users who are trying to accomplish a task",
+              "explanation": "who引出关系从句，限定正在完成任务的网页用户。",
+              "start": 537,
+              "end": 582,
+              "offsetUnit": "UTF-16-code-unit",
+              "status": "author-source-location-and-structure-reviewed-root-review-pending"
+            }
+          ]
+        }
+      ],
+      "supplementalReleases": [
+        {
+          "id": "gsa-graded-reading-v87",
+          "sha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f",
+          "sourceIds": [
+            "gsa-plain-language-02",
+            "gsa-plain-language-03",
+            "gsa-plain-language-08",
+            "gsa-plain-language-07",
+            "gsa-plain-language-06"
+          ],
+          "semanticReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+          "lexicalActivation": false
         }
       ]
     },
@@ -81486,6 +83677,10 @@
         "rank": 5972
       },
       {
+        "word": "alienation",
+        "rank": 7532
+      },
+      {
         "word": "alive",
         "rank": 1477
       },
@@ -81640,6 +83835,10 @@
       {
         "word": "approve",
         "rank": 1632
+      },
+      {
+        "word": "approximate",
+        "rank": 6805
       },
       {
         "word": "approximately",
@@ -82046,6 +84245,10 @@
         "rank": 220
       },
       {
+        "word": "booklet",
+        "rank": 6212
+      },
+      {
         "word": "boss",
         "rank": 1884
       },
@@ -82364,6 +84567,10 @@
       {
         "word": "chip",
         "rank": 1862
+      },
+      {
+        "word": "chunk",
+        "rank": 4461
       },
       {
         "word": "circulate",
@@ -82750,6 +84957,10 @@
         "rank": 3379
       },
       {
+        "word": "countless",
+        "rank": 4872
+      },
+      {
         "word": "country",
         "rank": 157
       },
@@ -82812,6 +85023,10 @@
       {
         "word": "cubic",
         "rank": 6726
+      },
+      {
+        "word": "cue",
+        "rank": 4528
       },
       {
         "word": "cultivation",
@@ -83452,6 +85667,10 @@
       {
         "word": "entire",
         "rank": 1034
+      },
+      {
+        "word": "entity",
+        "rank": 3382
       },
       {
         "word": "environment",
@@ -84178,6 +86397,10 @@
         "rank": 1475
       },
       {
+        "word": "guideline",
+        "rank": 2778
+      },
+      {
         "word": "guitar",
         "rank": 2848
       },
@@ -84594,6 +86817,10 @@
         "rank": 2910
       },
       {
+        "word": "inquiry",
+        "rank": 2190
+      },
+      {
         "word": "inside",
         "rank": 940
       },
@@ -84668,6 +86895,10 @@
       {
         "word": "interview",
         "rank": 963
+      },
+      {
+        "word": "intimidate",
+        "rank": 6006
       },
       {
         "word": "into",
@@ -84962,6 +87193,10 @@
         "rank": 248
       },
       {
+        "word": "linear",
+        "rank": 4497
+      },
+      {
         "word": "link",
         "rank": 1327
       },
@@ -85210,6 +87445,10 @@
         "rank": 126
       },
       {
+        "word": "meaningless",
+        "rank": 5899
+      },
+      {
         "word": "measure",
         "rank": 801
       },
@@ -85446,6 +87685,10 @@
         "rank": 2317
       },
       {
+        "word": "mundane",
+        "rank": 7047
+      },
+      {
         "word": "museum",
         "rank": 1288
       },
@@ -85472,6 +87715,10 @@
       {
         "word": "namely",
         "rank": 3831
+      },
+      {
+        "word": "narrative",
+        "rank": 3309
       },
       {
         "word": "nation",
@@ -85642,6 +87889,10 @@
         "rank": 4737
       },
       {
+        "word": "obligation",
+        "rank": 2487
+      },
+      {
         "word": "obscure",
         "rank": 4726
       },
@@ -85656,6 +87907,10 @@
       {
         "word": "observe",
         "rank": 1122
+      },
+      {
+        "word": "obsolete",
+        "rank": 7481
       },
       {
         "word": "obvious",
@@ -85946,6 +88201,10 @@
         "rank": 4314
       },
       {
+        "word": "paste",
+        "rank": 6326
+      },
+      {
         "word": "patch",
         "rank": 2878
       },
@@ -86232,6 +88491,10 @@
       {
         "word": "prediction",
         "rank": 3328
+      },
+      {
+        "word": "preferably",
+        "rank": 6238
       },
       {
         "word": "prepare",
@@ -88644,5 +90907,5 @@
     ],
     "use": "Immutable source-offset and rank replay inputs, not learner memory or dictionary-sense evidence."
   },
-  "planHash": "efc10fa4c9e8373e7e896432c7056d1a3cfe72dd73448ab7583b92dc1767d677"
+  "planHash": "dc54cddac9bc02cd234a65dd9ac2527c161aa09d05090879e283a3cf02561914"
 }

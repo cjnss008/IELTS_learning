@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "sourceId": "gsa-plain-language-02",
+  "sourceVersion": "1",
+  "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+  "sourceContentHash": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+  "version": "1",
+  "questionSetId": "gsa-plain-language-02-reading-q1",
+  "exposureGroup": "public-source:gsa-plain-language-02",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What should a participant do after reaching each marked stopping point?",
+      "explanation": "测试要求参与者用自己的话说明刚读内容的意思，检查理解，而不是背读。\n\n选项“Explain that section in their own words.”：正确：in his or her own words 明确要求自行转述。\n选项“Repeat the section word for word.”：原文没有要求逐字重复；这样不能显示是否理解。\n选项“Ask the tester to explain the section.”：这里由参与者解释，测试者不得代为讲解。",
+      "distractorReasons": [
+        "正确：in his or her own words 明确要求自行转述。",
+        "原文没有要求逐字重复；这样不能显示是否理解。",
+        "这里由参与者解释，测试者不得代为讲解。"
+      ],
+      "evidence": "Each time the participant reaches a cue, ask the participant to tell you in his or her own words what that section means.",
+      "evidenceOffsets": {
+        "start": 74,
+        "end": 195,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Explain that section in their own words.",
+        "Repeat the section word for word.",
+        "Ask the tester to explain the section."
+      ],
+      "answers": [
+        "Explain that section in their own words."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which participant range is mentioned for this testing method?",
+      "explanation": "文章举出的范围为6至9人；这是文中描述，不是对所有研究都有效的最低样本量。\n\n选项“20 to 30 people”：20至30不在文中给出的范围内。\n选项“6 to 9 people”：正确：原句直接给出6 to 9 participants。\n选项“12 to 15 people”：12至15不在文中给出的范围内。",
+      "distractorReasons": [
+        "20至30不在文中给出的范围内。",
+        "正确：原句直接给出6 to 9 participants。",
+        "12至15不在文中给出的范围内。"
+      ],
+      "evidence": "With only 6 to 9 participants, paraphrase testing will not take a lot of time, and the time invested is worth it.",
+      "evidenceOffsets": {
+        "start": 443,
+        "end": 556,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "20 to 30 people",
+        "6 to 9 people",
+        "12 to 15 people"
+      ],
+      "answers": [
+        "6 to 9 people"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "For which task does the writer prefer usability testing?",
+      "explanation": "当较长文档还需要检查读者能否找到信息时，作者建议做可用性测试；它检查整份文档的使用。\n\n选项“Checking whether a single unfamiliar word can be pronounced.”：文章没有把这种测试定义成发音测试。\n选项“Checking only the length of each isolated paragraph.”：原文强调as a whole，不是仅逐段检查篇幅。\n选项“Checking how readers find information in a longer document.”：正确：首句把较长文档与寻找信息直接联系起来。",
+      "distractorReasons": [
+        "文章没有把这种测试定义成发音测试。",
+        "原文强调as a whole，不是仅逐段检查篇幅。",
+        "正确：首句把较长文档与寻找信息直接联系起来。"
+      ],
+      "evidence": "For longer documents where finding information is also important do usability testing. Usability testing is the best technique for booklets, regulations, and web sites. With usability testing, you test the document as a whole, not just individual paragraphs.",
+      "evidenceOffsets": {
+        "start": 764,
+        "end": 1022,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Checking whether a single unfamiliar word can be pronounced.",
+        "Checking only the length of each isolated paragraph.",
+        "Checking how readers find information in a longer document."
+      ],
+      "answers": [
+        "Checking how readers find information in a longer document."
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Use TWO WORDS from the text: To reduce calls about the replacement check, the letter gave an ______ for its arrival.",
+      "explanation": "修改后的信给出支票大致到达日期，让读者不会以为支票必须与信同时到达。题目要求原文两词。\n\n可接受approximate date，大小写按现有答案核对规则处理。\n只填date缺少题目要求的两词；原文强调大致日期。\nshortly是原先引起误解的说法，不是修改后补充的信息。\n字数与形式：必须填原文两词approximate date。题干已给an，不再重复冠词；date保留原文单数。",
+      "distractorReasons": [
+        "可接受approximate date，大小写按现有答案核对规则处理。",
+        "只填date缺少题目要求的两词；原文强调大致日期。",
+        "shortly是原先引起误解的说法，不是修改后补充的信息。"
+      ],
+      "evidence": "Changing the sentence to show an approximate date they would receive the check eliminated countless phone calls.",
+      "evidenceOffsets": {
+        "start": 1498,
+        "end": 1610,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "approximate date"
+      ],
+      "maxWords": 2,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Why did the disability letter still need revision after readers said it was clear?",
+      "explanation": "口头说清楚不等于行动理解一致。读者对关键短语有不同解释，可能采取与机构期望不同的行动，因此需要说明这个短语。\n\n选项“Readers interpreted a key phrase differently and would act differently.”：正确：原文给出不同definition导致不同行动的因果关系。\n选项“Readers could not identify any of the words in the letter.”：文中并非说读者每个词都不认识；关键是解释不一致。\n选项“The letter had already told every reader to telephone the agency.”：原文说若按各自理解会做不同事情，不能推成信已要求每个人打电话。",
+      "distractorReasons": [
+        "正确：原文给出不同definition导致不同行动的因果关系。",
+        "文中并非说读者每个词都不认识；关键是解释不一致。",
+        "原文说若按各自理解会做不同事情，不能推成信已要求每个人打电话。"
+      ],
+      "evidence": "When each reader was asked a general question about understanding the letter, they all said that it was clear. Yet several would have done something other than what VBA wanted because they had a different definition of \"service-connected.\" To solve this problem, VBA explained the phrase so that everyone was working from the same definition.",
+      "evidenceOffsets": {
+        "start": 2127,
+        "end": 2469,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Readers interpreted a key phrase differently and would act differently.",
+        "Readers could not identify any of the words in the letter.",
+        "The letter had already told every reader to telephone the agency."
+      ],
+      "answers": [
+        "Readers interpreted a key phrase differently and would act differently."
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Use TWO WORDS from the text: The writer says this testing may not be worthwhile for a document sent to a ______ of people.",
+      "explanation": "最后一段把测试投入与受众规模联系起来；对只发给少量人的文档，投入这类测试时间可能不划算。\n\n可接受small number；它与题干of people连接成原文表达。\nall users不是原文所说的有限受众。\nlarge number与原句small number相反。\n字数与形式：必须填原文两词small number。题干已给a和of people，填空不重复它们；number保留原文单数。",
+      "distractorReasons": [
+        "可接受small number；它与题干of people连接成原文表达。",
+        "all users不是原文所说的有限受众。",
+        "large number与原句small number相反。"
+      ],
+      "evidence": "Although this technique is very valuable, it probably isn't worth the time to test documents that go to a small number of people.",
+      "evidenceOffsets": {
+        "start": 3135,
+        "end": 3264,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "small number"
+      ],
+      "maxWords": 2,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "author": {
+      "name": "Codex /root/year_server_v82",
+      "method": "Every answer, evidence span, wrong-option reason, word limit and source normalization checked against the exact frozen/declared display text. No separate reviewer is claimed."
+    },
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "16b875cbcaea49010792fee040b1426d8786106b2d0fb5c7232502a9ff7fdfea",
+      "authorQuestionPackSha256": "54fce6d03788debceb66857cda5371812d671b05c637e9ad7918f4a2f24b3f2a",
+      "rootReviewSha256": "4a15b33c890ce5f23d24b7d8d3641ff0dc640866b40eeafa35a571954d8027b5",
+      "reviewer": "root-independent",
+      "method": "root-ai-blind-and-explanation-reviewed-not-human"
+    }
+  },
+  "estimatedStudyMinutes": 28
+}

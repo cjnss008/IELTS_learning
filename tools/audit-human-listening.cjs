@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.join(__dirname,'..'),{sources}=require('./human-listening-sources.cjs'),hash=x=>crypto.createHash('sha256').update(x).digest('hex');
-function audit(materials,{requireAudio=true,decode=false}={}){
+function audit(materials,{requireAudio=true,decode=false,projectRoot=root}={}){
  const errors=[],items=[],review=[],qualityFindings=materials.flatMap(require('./audit-question-quality.cjs').auditMaterial);const sourceMap=new Map(sources.map(s=>[s.id,s]));
  for(const finding of qualityFindings.filter(f=>f.severity==='high'))errors.push(finding.materialId+'/'+finding.questionId+': '+finding.rule);
  for(const m of materials){const s=sourceMap.get(m.id),fail=text=>errors.push(m.id+': '+text);if(!s){fail('Unregistered human reader source');continue;}
@@ -13,17 +13,17 @@ function audit(materials,{requireAudio=true,decode=false}={}){
   for(const q of m.questions.filter(q=>q.type==='fill'))for(const other of m.questions.filter(other=>other.id!==q.id))for(const answer of q.answers){if(require('./audit-question-quality.cjs').containsLiteral([other.prompt,...(other.options||[])].join(' '),answer)){fail('Fill answer visible in another question: '+q.id+' / '+other.id);qualityFindings.push({materialId:m.id,questionId:q.id,otherQuestionId:other.id,rule:'FILL_ANSWER_VISIBLE_ELSEWHERE',severity:'high'});}}
   const contentHash=hash(JSON.stringify(Object.fromEntries(m.source.contentHashFields.map(k=>[k,m[k]]))));if(contentHash!==m.source.contentHash)fail('Content hash mismatch');
   for(const q of m.questions){if(!m.transcript.includes(q.evidence))fail('Non-verbatim evidence '+q.id);if(!q.explanation||!q.prompt||q.type==='single'&&(!q.options?.includes(q.answers[0])||new Set(q.options).size!==3))fail('Invalid original question '+q.id);review.push({materialId:m.id,questionId:q.id,questionHash:hash(JSON.stringify(q)),transcriptHash:hash(m.transcript),evidence:q.evidence,method:'Codex author self-review: decisive source clause, one intended correct answer, same-type distractors; not examiner or learner validation.'});}
-  const metaFile=path.join(root,'curriculum/human-listening/sources',m.id+'.json');if(requireAudio&&!fs.existsSync(metaFile)){fail('Missing imported source metadata');continue;}if(!fs.existsSync(metaFile))continue;
+  const metaFile=path.join(projectRoot,'curriculum/human-listening/sources',m.id+'.json');if(requireAudio&&!fs.existsSync(metaFile)){fail('Missing imported source metadata');continue;}if(!fs.existsSync(metaFile))continue;
   const meta=JSON.parse(fs.readFileSync(metaFile,'utf8'));if(meta.transcriptHash!==hash(m.transcript)||meta.contentHash!==contentHash)fail('Stale transcript/question association');
   if(m.audio&&m.audio!==meta.audio||m.audioDurationSeconds&&Math.abs(m.audioDurationSeconds-meta.durationSeconds)>.01||meta.reader!==s.reader||meta.locale!==s.locale||meta.audioUrl!==s.audioUrl||m.source.rightsUrl!==s.rights.url||m.source.textUrl!==s.textUrl)fail('Playback or source licence binding mismatch');
   if(meta.human!==true||meta.synthetic!==false||meta.humanListeningReview!==false||meta.difficultyValidated!==false||meta.accentAcousticallyValidated!==false)fail('Unjustified verification claim');
   if(!(meta.selection.startSeconds>=0&&meta.selection.endSeconds>meta.selection.startSeconds&&meta.selection.endSeconds<=meta.originalDurationSeconds+.05))fail('Invalid original extraction range');
   if(Math.abs(meta.durationSeconds-(meta.selection.endSeconds-meta.selection.startSeconds))>.15||meta.durationSeconds<60||meta.durationSeconds>180)fail('Clip duration/range mismatch');
-  if(requireAudio){for(const [key,file] of [['originalAudioHash',meta.originalAudio],['audioHash',meta.audio]])if(!file?.startsWith('audio/human-listening/')||!fs.existsSync(path.join(root,file))||hash(fs.readFileSync(path.join(root,file)))!==meta[key])fail('Audio byte hash mismatch '+key);
-   const asrText=fs.readFileSync(path.join(root,meta.asrProof),'utf8'),asr=JSON.parse(asrText);if(hash(asrText)!==meta.asrProofHash||asr.referencePromptProvided!==false||asr.sourceOriginalAudioHash!==meta.originalAudioHash||!asr.modelHash||!asr.segments?.length)fail('Missing real unprompted ASR proof');
+  if(requireAudio){for(const [key,file] of [['originalAudioHash',meta.originalAudio],['audioHash',meta.audio]])if(!file?.startsWith('audio/human-listening/')||!fs.existsSync(path.join(projectRoot,file))||hash(fs.readFileSync(path.join(projectRoot,file)))!==meta[key])fail('Audio byte hash mismatch '+key);
+   const asrText=fs.readFileSync(path.join(projectRoot,meta.asrProof),'utf8'),asr=JSON.parse(asrText);if(hash(asrText)!==meta.asrProofHash||asr.referencePromptProvided!==false||asr.sourceOriginalAudioHash!==meta.originalAudioHash||!asr.modelHash||!asr.segments?.length)fail('Missing real unprompted ASR proof');
   }
   const item={id:m.id,reader:s.reader,locale:s.locale,accentEvidenceKind:s.accentBasis.kind,originalAudioHash:meta.originalAudioHash,audioHash:meta.audioHash,transcriptHash:meta.transcriptHash,originalRangeSeconds:[meta.selection.startSeconds,meta.selection.endSeconds],durationSeconds:meta.durationSeconds,questionCount:m.questions.length,asrProof:meta.asrProof};
-  if(decode){try{Object.assign(item,require('./audit-independent-audio.cjs').inspect(meta.audio));}catch(error){fail(error.message);}}
+  if(decode){try{Object.assign(item,require('./audit-independent-audio.cjs').inspect(meta.audio,{projectRoot}));}catch(error){fail(error.message);}}
   items.push(item);
  }
  if(materials.length!==sources.length)errors.push('Missing or duplicate registered human materials');

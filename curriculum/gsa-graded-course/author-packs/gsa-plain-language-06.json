@@ -1,0 +1,190 @@
+{
+  "schema": 1,
+  "sourceId": "gsa-plain-language-06",
+  "sourceVersion": "1",
+  "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+  "sourceContentHash": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+  "version": "1",
+  "questionSetId": "gsa-plain-language-06-reading-q1",
+  "exposureGroup": "public-source:gsa-plain-language-06",
+  "releaseStatus": "author-text-evidence-checked-blind-review-pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What risk does the writer associate with directly copying print text onto a website?",
+      "explanation": "作者担心读者不愿花时间寻找所需信息而离开页面，造成时间与金钱损失；不是电脑复制会删除纸本文档。\n\n选项“The print document will no longer exist after it is copied.”：文中没有说复制会令纸本文档消失。\n选项“Visitors may leave before finding the information they need.”：正确：leave与find what they are looking for共同支持。\n选项“Readers will automatically understand the online version better.”：原文是在提醒这种直接复制的风险，不是保证理解更好。",
+      "distractorReasons": [
+        "文中没有说复制会令纸本文档消失。",
+        "正确：leave与find what they are looking for共同支持。",
+        "原文是在提醒这种直接复制的风险，不是保证理解更好。"
+      ],
+      "evidence": "Don't cut and paste the text of print documents to create web content. People are more likely to leave your webpage, potentially costing you time and money, because they will not take the time to find what they are looking for.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 227,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "The print document will no longer exist after it is copied.",
+        "Visitors may leave before finding the information they need.",
+        "Readers will automatically understand the online version better."
+      ],
+      "answers": [
+        "Visitors may leave before finding the information they need."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why may a detailed everyday story be unsuitable for this kind of web page?",
+      "explanation": "作者承认日常故事也能写得有趣，但这里讨论的是完成任务的网页，长篇叙述可能拖慢这些用户。\n\n选项“It can delay users who are trying to complete a task.”：正确：最后一句直接给出任务用户被拖慢的原因。\n选项“Every story about an ordinary activity is impossible to make interesting.”：原文明说优秀作者能把日常故事写得有趣。\n选项“Online users are never able to read a complete sentence.”：文章没有把网络用户描述成完全不能阅读句子。",
+      "distractorReasons": [
+        "正确：最后一句直接给出任务用户被拖慢的原因。",
+        "原文明说优秀作者能把日常故事写得有趣。",
+        "文章没有把网络用户描述成完全不能阅读句子。"
+      ],
+      "evidence": "In print, you can go into great detail about mundane things like eating breakfast. If you are a great writer, that can be an interesting story. But those interesting stories don't work on the web. Instead they slow down web users who are trying to accomplish a task.",
+      "evidenceOffsets": {
+        "start": 317,
+        "end": 583,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "It can delay users who are trying to complete a task.",
+        "Every story about an ordinary activity is impossible to make interesting.",
+        "Online users are never able to read a complete sentence."
+      ],
+      "answers": [
+        "It can delay users who are trying to complete a task."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Use TWO WORDS from the text: The content should be divided into ______.",
+      "explanation": "把内容按逻辑分块，所填两词为logical sections；不是任意切成相同长度。\n\n可接受logical sections。\nheadings是帮助导航的标题，不是这里所问的分块对象。\nrandom pieces与logical的含义相反。\n字数与形式：必须填原文两词logical sections；sections是原文复数，表示分成多个部分，不改为单数section或添加冠词。",
+      "distractorReasons": [
+        "可接受logical sections。",
+        "headings是帮助导航的标题，不是这里所问的分块对象。",
+        "random pieces与logical的含义相反。"
+      ],
+      "evidence": "Chunk your content into logical sections.",
+      "evidenceOffsets": {
+        "start": 659,
+        "end": 700,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "logical sections"
+      ],
+      "maxWords": 2,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Use NO MORE THAN THREE WORDS from the text: Where should the main message appear on the page?",
+      "explanation": "最重要、最清楚的信息放在网页顶部。允许完整地点短语或保留同一位置含义的短答。\n\n可接受at the top、the top或top。\nat the bottom与原文位置相反。\nin a table是复杂指令的展示形式，不是本题所问的页内位置。\n字数与形式：上限三词。at the top、the top、top都能回答位置并保留原文核心信息；所列变体允许省略介词或冠词，不接受与原文相反的bottom。",
+      "distractorReasons": [
+        "可接受at the top、the top或top。",
+        "at the bottom与原文位置相反。",
+        "in a table是复杂指令的展示形式，不是本题所问的页内位置。"
+      ],
+      "evidence": "Keep the most important and clear message at the top of the web page.",
+      "evidenceOffsets": {
+        "start": 587,
+        "end": 656,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "at the top",
+        "the top",
+        "top"
+      ],
+      "maxWords": 3,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Which feature is recommended to help visitors navigate the information?",
+      "explanation": "原句直接把headings与帮助用户导航联系起来，标题让信息结构更容易寻找。\n\n选项“A long introductory story”：文章提醒长故事可能拖慢任务用户，而不是推荐用它导航。\n选项“Headings”：正确：headings就是原文给出的导航手段。\n选项“An uninterrupted block of small print”：一整块小字不会提供原文所说的标题结构。",
+      "distractorReasons": [
+        "文章提醒长故事可能拖慢任务用户，而不是推荐用它导航。",
+        "正确：headings就是原文给出的导航手段。",
+        "一整块小字不会提供原文所说的标题结构。"
+      ],
+      "evidence": "Use headings to help users navigate the content.",
+      "evidenceOffsets": {
+        "start": 703,
+        "end": 751,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "A long introductory story",
+        "Headings",
+        "An uninterrupted block of small print"
+      ],
+      "answers": [
+        "Headings"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Which format does the writer recommend for explaining complicated instructions?",
+      "explanation": "最后一项建议用清楚、视觉上易读的表格解释复杂指令；不是加入无关故事或未解释缩写。\n\n选项“A visually appealing table”：正确：complex instructions与visually appealing table直接对应。\n选项“A personal story with many extra details”：多加故事细节不是文中给出的指令展示方式。\n选项“A list containing only unexplained abbreviations”：原文没有建议用只有未解释缩写的列表。",
+      "distractorReasons": [
+        "正确：complex instructions与visually appealing table直接对应。",
+        "多加故事细节不是文中给出的指令展示方式。",
+        "原文没有建议用只有未解释缩写的列表。"
+      ],
+      "evidence": "Explain complex instructions in a visually appealing table.",
+      "evidenceOffsets": {
+        "start": 796,
+        "end": 855,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "A visually appealing table",
+        "A personal story with many extra details",
+        "A list containing only unexplained abbreviations"
+      ],
+      "answers": [
+        "A visually appealing table"
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "author": {
+      "name": "Codex /root/year_server_v82",
+      "method": "Every answer, evidence span, wrong-option reason, word limit and source normalization checked against the exact frozen/declared display text. No separate reviewer is claimed."
+    },
+    "blindComparison": {
+      "status": "pending-independent-review",
+      "questionCount": 6,
+      "blindInputSha256": "5598009eedbc13b24aefa3a2da4898e8af1ddeb1be2984b475f30e4b80bd4e6e"
+    }
+  },
+  "estimatedStudyMinutes": 20
+}

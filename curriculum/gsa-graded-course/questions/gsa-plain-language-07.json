@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "sourceId": "gsa-plain-language-07",
+  "sourceVersion": "1",
+  "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+  "sourceContentHash": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+  "version": "1",
+  "questionSetId": "gsa-plain-language-07-reading-q1",
+  "exposureGroup": "public-source:gsa-plain-language-07",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does the writer allow when an instruction needs a specialized technical name?",
+      "explanation": "作者反对不必要的行话，但不要求删去准确指称所必需的术语。保留术语和写清楚可以同时做到。\n\n选项“Invent a new general name even if it is inaccurate.”：原文没有授权用不准确的新称呼替换必要术语。\n选项“Remove the action that the reader needs to perform.”：删去需要执行的动作不符合清楚说明的目标。\n选项“Keep the necessary term while making the instruction as clear as possible.”：正确：句子先否定删必要术语，再强调清楚。",
+      "distractorReasons": [
+        "原文没有授权用不准确的新称呼替换必要术语。",
+        "删去需要执行的动作不符合清楚说明的目标。",
+        "正确：句子先否定删必要术语，再强调清楚。"
+      ],
+      "evidence": "When we say not to use jargon, we're not advocating leaving out necessary technical terms, but we are saying to make sure your language is as clear as possible.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 160,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Invent a new general name even if it is inaccurate.",
+        "Remove the action that the reader needs to perform.",
+        "Keep the necessary term while making the instruction as clear as possible."
+      ],
+      "answers": [
+        "Keep the necessary term while making the instruction as clear as possible."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the text: In the shorter equipment instruction, what action is the reader told to perform?",
+      "explanation": "较短的指令以tighten直接说明要拧紧这个部件；本题只问动作，不要求掌握示例设备名称。\n\n可接受tighten，它是短指令的动作词。\nsecurely说明动作应达到的状态，不是动作本身。\nvalve是设备名称的一部分，不是动作。\n字数与形式：只填原文动词原形tighten，不添加to，也不改为tightened或tightening。",
+      "distractorReasons": [
+        "可接受tighten，它是短指令的动作词。",
+        "securely说明动作应达到的状态，不是动作本身。",
+        "valve是设备名称的一部分，不是动作。"
+      ],
+      "evidence": "tighten the brinulator valve control ring securely",
+      "evidenceOffsets": {
+        "start": 300,
+        "end": 350,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "tighten"
+      ],
+      "maxWords": 1,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What can needless jargon cause even when all readers are specialists?",
+      "explanation": "即使受众是专家，超出必要术语的行话仍可能引起误解或疏离感；专业身份不自动保证沟通清楚。\n\n选项“The removal of any need for precise technical terms.”：必要术语仍可能需要，不能由本句推成完全不需要准确术语。\n选项“Misunderstanding or a feeling of exclusion.”：正确：misunderstanding or alienation直接列出两种风险。\n选项“Automatic agreement about every detail.”：原文没有说会自动达成一致。",
+      "distractorReasons": [
+        "必要术语仍可能需要，不能由本句推成完全不需要准确术语。",
+        "正确：misunderstanding or alienation直接列出两种风险。",
+        "原文没有说会自动达成一致。"
+      ],
+      "evidence": "However, going beyond necessary technical terms to write in jargon can cause misunderstanding or alienation, even if your only readers are specialists.",
+      "evidenceOffsets": {
+        "start": 762,
+        "end": 913,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "The removal of any need for precise technical terms.",
+        "Misunderstanding or a feeling of exclusion.",
+        "Automatic agreement about every detail."
+      ],
+      "answers": [
+        "Misunderstanding or a feeling of exclusion."
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Why can terms familiar to a writer still be a problem?",
+      "explanation": "问题在于作者与受众的知识不相同：作者熟悉的词，读者仍可能难懂或无法理解。\n\n选项“A familiar term always becomes more accurate when the sentence is longer.”：文章没有声称加长句子会使术语更准确。\n选项“The writer may not notice that the audience finds them difficult or meaningless.”：正确：because后明确说明作者未意识到读者的困难。\n选项“Every reader has studied the same specialist vocabulary as the writer.”：这与原文指出的作者和受众知识差异相反。",
+      "distractorReasons": [
+        "文章没有声称加长句子会使术语更准确。",
+        "正确：because后明确说明作者未意识到读者的困难。",
+        "这与原文指出的作者和受众知识差异相反。"
+      ],
+      "evidence": "Readers complain about jargon more than any other writing fault, because writers often fail to realize that terms they know well may be difficult or meaningless to their audience.",
+      "evidenceOffsets": {
+        "start": 915,
+        "end": 1094,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "A familiar term always becomes more accurate when the sentence is longer.",
+        "The writer may not notice that the audience finds them difficult or meaningless.",
+        "Every reader has studied the same specialist vocabulary as the writer."
+      ],
+      "answers": [
+        "The writer may not notice that the audience finds them difficult or meaningless."
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the text: The writer says the purpose of writing is to ______ rather than impress.",
+      "explanation": "原句以communicate与impress对比，说明写作目的是传达信息，而不是炫耀。\n\n可接受communicate。\nimpress是作者否定为主要目的的一项，不能填入前半句。\ndefine是处理术语的动作，不是本句概括的写作目的。\n字数与形式：只填原文动词原形communicate，不添加to，也不改成名词communication。",
+      "distractorReasons": [
+        "可接受communicate。",
+        "impress是作者否定为主要目的的一项，不能填入前半句。",
+        "define是处理术语的动作，不是本句概括的写作目的。"
+      ],
+      "evidence": "Remember to write to communicate, not to impress.",
+      "evidenceOffsets": {
+        "start": 1474,
+        "end": 1523,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "communicate"
+      ],
+      "maxWords": 1,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What should writers do when no alternative to a technical term is available?",
+      "explanation": "必须使用术语时应说明其含义；紧接着又提醒定义不要过多，因此不是靠堆砌更多术语来解释。\n\n选项“Explain the meaning of the term.”：正确：define your terms就是给出含义。\n选项“Assume that the term is obvious to everyone.”：原文要求定义，不能假设人人都懂。\n选项“Add more unexplained specialist words around it.”：添加未解释行话会增加理解负担，与原文方向相反。",
+      "distractorReasons": [
+        "正确：define your terms就是给出含义。",
+        "原文要求定义，不能假设人人都懂。",
+        "添加未解释行话会增加理解负担，与原文方向相反。"
+      ],
+      "evidence": "When you have no way to express an idea except to use technical language, make sure to define your terms. However, it's best to keep definitions to a minimum.",
+      "evidenceOffsets": {
+        "start": 1315,
+        "end": 1473,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Explain the meaning of the term.",
+        "Assume that the term is obvious to everyone.",
+        "Add more unexplained specialist words around it."
+      ],
+      "answers": [
+        "Explain the meaning of the term."
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "author": {
+      "name": "Codex /root/year_server_v82",
+      "method": "Every answer, evidence span, wrong-option reason, word limit and source normalization checked against the exact frozen/declared display text. No separate reviewer is claimed."
+    },
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "ab372a703824b9502b7a8021ded08ff66591fe3db2b97d720bbf73955f747a2a",
+      "authorQuestionPackSha256": "dc76b7a2caa89a9ea1417e0dfdcb1a8f751c32733d4125111ac84d6764047773",
+      "rootReviewSha256": "4a15b33c890ce5f23d24b7d8d3641ff0dc640866b40eeafa35a571954d8027b5",
+      "reviewer": "root-independent",
+      "method": "root-ai-blind-and-explanation-reviewed-not-human"
+    }
+  },
+  "estimatedStudyMinutes": 24
+}

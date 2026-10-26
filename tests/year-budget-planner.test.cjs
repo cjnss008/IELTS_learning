@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
 const {load}=require('./year-budget-fixture.cjs'),P=require('../tools/year-budget-planner.cjs'),B=require('../tools/year-budget-estimates.cjs'),R=require('../tools/year-budget-candidate.cjs');
-const input=load(),plan=P.build(input),map=new Map([...input.base.materials,...input.yearMaterials].map(m=>[m.id,m])),composed=P.composeBaseline(input.base,plan.policy);
+const actualInput=load(),input=actualInput.legacyInput,plan=P.build(input),map=new Map([...input.base.materials,...input.yearMaterials].map(m=>[m.id,m])),composed=P.composeBaseline(input.base,plan.policy);
 function fixture(slot){
  const day=composed.days.find(d=>d.day===slot.day).composedDay;
  return{day,data:{materials:[...map.values()],yearExpansion:{...plan,active:true}},runtime:{started:false,frozen:false,clock:{elapsedCalendarMinutes:0,focusMinutesUsed:0,completedFocusCycles:0},contextCatalogHash:plan.contextCatalogHash,publicPlanHash:plan.publicPlanHash,verifyPublicComposition:()=>true,verifyPlacement:()=>true,verifyParentCompletion:()=>true,hasOrdinaryCompletion:()=>false}};

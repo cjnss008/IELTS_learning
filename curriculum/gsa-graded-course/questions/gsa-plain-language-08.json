@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "sourceId": "gsa-plain-language-08",
+  "sourceVersion": "1",
+  "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+  "sourceContentHash": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+  "version": "1",
+  "questionSetId": "gsa-plain-language-08-reading-q1",
+  "exposureGroup": "public-source:gsa-plain-language-08",
+  "releaseStatus": "text-evidence-reviewed",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does the writer suggest instead of an unhelpful abbreviation?",
+      "explanation": "建议是使用有意义的简化名称，帮助读者记住所谈对象；不是把一个难懂代码换成另一个。\n\n选项“A simplified, meaningful name for the thing or organization.”：正确：simplified name与meaningful content直接支持。\n选项“A different unexplained letter code for every paragraph.”：不断换不解释的代码会增加记忆负担，原文没有这样建议。\n选项“A nickname that has no connection to the main topic.”：昵称应帮助读者理解讨论对象，不能与主题毫无关联。",
+      "distractorReasons": [
+        "正确：simplified name与meaningful content直接支持。",
+        "不断换不解释的代码会增加记忆负担，原文没有这样建议。",
+        "昵称应帮助读者理解讨论对象，不能与主题毫无关联。"
+      ],
+      "evidence": "The best solution is to find a simplified name for the entity you want to abbreviate. This gives readers meaningful content that helps them remember what you're talking about.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 175,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "A simplified, meaningful name for the thing or organization.",
+        "A different unexplained letter code for every paragraph.",
+        "A nickname that has no connection to the main topic."
+      ],
+      "answers": [
+        "A simplified, meaningful name for the thing or organization."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "When might explaining a nickname at first use be useful?",
+      "explanation": "unless引出例外：用了很多不同昵称时，首次解释可能有帮助；并不是每个熟悉简称都要定义。\n\n选项“When many different nicknames are used in the same document.”：正确：lots of different nicknames就是原文例外条件。\n选项“Whenever the reader already knows the organization from its letterhead.”：信头已说明机构身份的例子恰是避免重复解释。\n选项“Whenever a familiar abbreviation has become common usage.”：对常见缩写，作者随后明确说不要再定义。",
+      "distractorReasons": [
+        "正确：lots of different nicknames就是原文例外条件。",
+        "信头已说明机构身份的例子恰是避免重复解释。",
+        "对常见缩写，作者随后明确说不要再定义。"
+      ],
+      "evidence": "In most cases, you don't need to define this nickname the first time you use it, unless you're using lots of different nicknames.",
+      "evidenceOffsets": {
+        "start": 258,
+        "end": 387,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "When many different nicknames are used in the same document.",
+        "Whenever the reader already knows the organization from its letterhead.",
+        "Whenever a familiar abbreviation has become common usage."
+      ],
+      "answers": [
+        "When many different nicknames are used in the same document."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Why is the agency abbreviation unnecessary to explain in the reply-letter example?",
+      "explanation": "该来信者已向这家机构写信，回复信头也写着机构名称，因此此处重复展开缩写没有必要。结论只针对这个情境。\n\n选项“The letter deliberately avoids naming the organization that replies.”：信头实际写着名称，不能说回复故意不写机构身份。\n选项“The recipient has already contacted that agency and its name appears on the letterhead.”：正确：信头身份和此前联系两项线索共同支持。\n选项“The recipient is required to know every federal abbreviation in advance.”：文章没有要求所有读者预先记住全部机构缩写。",
+      "distractorReasons": [
+        "信头实际写着名称，不能说回复故意不写机构身份。",
+        "正确：信头身份和此前联系两项线索共同支持。",
+        "文章没有要求所有读者预先记住全部机构缩写。"
+      ],
+      "evidence": "The letterhead says the name of the agency. The person wrote to the agency, and now the agency is writing back. The user is not going to be confused about what FAA means!",
+      "evidenceOffsets": {
+        "start": 1205,
+        "end": 1375,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "The letter deliberately avoids naming the organization that replies.",
+        "The recipient has already contacted that agency and its name appears on the letterhead.",
+        "The recipient is required to know every federal abbreviation in advance."
+      ],
+      "answers": [
+        "The recipient has already contacted that agency and its name appears on the letterhead."
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is the recommended maximum number of abbreviations in one document?",
+      "explanation": "no more than three给出上限；preferably two只是更理想的数量，不能把偏好误当上限。\n\n选项“Ten”：ten超过文中建议上限。\n选项“Three”：正确：上限是three。\n选项“Five”：five超过文中建议上限。",
+      "distractorReasons": [
+        "ten超过文中建议上限。",
+        "正确：上限是three。",
+        "five超过文中建议上限。"
+      ],
+      "evidence": "Limit the number of abbreviations you use in one document to no more than three, and preferably two.",
+      "evidenceOffsets": {
+        "start": 1377,
+        "end": 1477,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Ten",
+        "Three",
+        "Five"
+      ],
+      "answers": [
+        "Three"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Use TWO WORDS from the text: After shortening the most common items, the writer should ______ the other terms.",
+      "explanation": "其他较少出现的项目应完整写出。题目要求从原文取两词，spell out恰好表达完整拼写或写出。\n\n可接受spell out，大小写不影响本题语义。\ndefine只写一词，而且原文此处强调把词完整写出。\ndelete并非作者建议的处理方式。\n字数与形式：必须填原文两词spell out；out是这个短语的一部分，不能只填spell，也不自行改为spells或spelled。",
+      "distractorReasons": [
+        "可接受spell out，大小写不影响本题语义。",
+        "define只写一词，而且原文此处强调把词完整写出。",
+        "delete并非作者建议的处理方式。"
+      ],
+      "evidence": "Spell out everything else. If you've used abbreviations for the two or three most common items, it's unlikely that the other items occur so frequently you can't spell them out every time.",
+      "evidenceOffsets": {
+        "start": 1478,
+        "end": 1665,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "spell out"
+      ],
+      "maxWords": 2,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What conclusion does the writer draw if abbreviations make the document harder for its readers?",
+      "explanation": "使用缩写应帮助用户。若使阅读更困难，就是没有面向受众写好，而非证明专业。\n\n选项“The readers must memorize every shortened form before continuing.”：作者要求作者照顾受众，没有把负担转给读者。\n选项“The extra difficulty proves that the document is more professional.”：更难不等于更专业；与文章主张相反。\n选项“The writer has failed to meet the audience's needs.”：正确：最后一句明确评价为failed to write for your audience。",
+      "distractorReasons": [
+        "作者要求作者照顾受众，没有把负担转给读者。",
+        "更难不等于更专业；与文章主张相反。",
+        "正确：最后一句明确评价为failed to write for your audience。"
+      ],
+      "evidence": "When you're considering whether to use an abbreviation, or how many you can get away with in a document, remember that they should make it easier for your users. If they make it harder, you've failed to write for your audience.",
+      "evidenceOffsets": {
+        "start": 1667,
+        "end": 1894,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "The readers must memorize every shortened form before continuing.",
+        "The extra difficulty proves that the document is more professional.",
+        "The writer has failed to meet the audience's needs."
+      ],
+      "answers": [
+        "The writer has failed to meet the audience's needs."
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "author": {
+      "name": "Codex /root/year_server_v82",
+      "method": "Every answer, evidence span, wrong-option reason, word limit and source normalization checked against the exact frozen/declared display text. No separate reviewer is claimed."
+    },
+    "blindComparison": {
+      "status": "all-agreed",
+      "questionCount": 6,
+      "blindInputSha256": "c04fc85522373de35bee36a2d133c8a7073eddcbe9e259ff76d52dafae6dddbb",
+      "authorQuestionPackSha256": "060f955f942b6e093412f98b0ba9ab6b991be09afcd785a8029cbe83b8a428dc",
+      "rootReviewSha256": "4a15b33c890ce5f23d24b7d8d3641ff0dc640866b40eeafa35a571954d8027b5",
+      "reviewer": "root-independent",
+      "method": "root-ai-blind-and-explanation-reviewed-not-human"
+    }
+  },
+  "estimatedStudyMinutes": 24
+}

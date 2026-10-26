@@ -1,8 +1,22 @@
 # IELTS Learning · 52 周 Academic 自学
 
-当前开发版本：**0.0.86**；家人稳定版：**0.0.81**（见 [VERSION](VERSION)）。
+当前开发版本：**0.0.87**；家人稳定版：**0.0.81**（见 [VERSION](VERSION)）。
 
 面向成人近零基础学习者的本机自学软件。课程覆盖 **52 周核心课程与第 365 天年度复盘**，以 Academic IELTS 听、说、读、写每一项 7.0 为课程设计与分项验证目标；完成课程和能力达标分别记录。每天 6 小时是学习与番茄休息共用的总可用预算，完成后按预计耗时和剩余时间继续；时间、重复题正确率和 AI 估计都不是考试成绩保证。
+
+## 0.0.87 开发版：已复核公开阅读入课与升级兼容
+
+新增5篇GSA/PLAIN的CC0指导阅读，共30道英文题、116分钟参考量，以已验证B2能力为准入下限。材料按原文、题目、许可及独立AI盲解/解析复核清单校验，加入未开始的未来课程。公开任务由75到80份（51阅读、29听力）；新增只在预算内追加，原1823份材料、365课表和旧75份任务的归属日、题目保持；未来未开始日的排课版本及预计预算会重新核算，已冻结日继续原合同。它们属于普通训练，不计首次独立测评或Band证明。18条已复核词义映射仍是编排资料，未据此自动记为学会。
+
+修复新阅读答错时无法进入错题本的问题：严格识别原文位置单位，完整保留错因解析和答案；仅已审的U.S. Courts题保留四个标点写法，仍拒绝单数Court、额外答案和超过词数限制的表达。实际Records保存链核对30道错题先收录再同步，重复提交不重复建档。旧公开草稿、六类年度合同、原回答、订正版本及备份恢复均通过合成档案回归，不改写原稿。
+
+全年688份正文及题目合同未变；新增阅读占用统一预算后，静态安排为457份、231份待学，其中4份派生任务暂缓，未删除或假记完成。运行时继续核对实际能力、核心任务、复习与番茄休息预算。审计现在逐份检查公开来源，唯一正文也不能跳过注册；GSA必须显式校验签署清单，改答案、解析、标记或缺材料会拒绝。默认75份兼容构建与已启用80份产物分别验证。
+
+完整默认回归2262项：**2260通过、0失败、2项可选或环境条件测试跳过**。正式组合构建365课次/1828份基础课程集合、文件及音频缺失0；688份实际NAS材料通过隔离本机HTTP核验，首次仅读1份、缓存上限16。原来源规则扫描830份/7800题通过，另核对全部80份公开任务的458个题目实例；同源听读不重复算独立素材。
+
+本轮没有读取家人档案、凭据或录音。家人稳定版仍0.0.81；真实浏览器走查仍受工具保存权限/管理策略拒绝，真人麦克风和长期学习效果未验收。开发版保留独立提交，常规0.0.90检查点通过验收后再准备合并；8000词完整语境教学、延迟迁移与长期性能继续开发。
+
+已知开发边界：后台评阅与档案异步刷新交错时，年度追加队列可能沿用旧完成状态误开新稿。此问题在原86与缓存候选中均已复现，正在独立修复，修复前不合入main；家人81未启用该年度追加流程。完整回归通过只说明已有检查范围，不表示软件没有其他缺陷。
 
 ## 0.0.86 开发版：全年普通练习主队列与来源后词汇
 
@@ -405,8 +419,8 @@ NOAA三份材料保留官方来源、适用许可说明和原音文件哈希。D
 ```powershell
 node tools/test.cjs
 node tools/check.cjs
-node tools/build-curriculum.cjs
-node tools/audit-curriculum.cjs
+node tools/build-curriculum.cjs --require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract.json --gsa-graded-release curriculum/gsa-graded-course/release.json --output-root C:\IELTS-build-review
+node tools/audit-curriculum.cjs --gsa-graded-release curriculum/gsa-graded-course/release.json
 node tools/audit-question-quality.cjs
 node tools/audit-oral-models.cjs
 node tools/audit-curriculum-growth.cjs
@@ -414,6 +428,8 @@ node tools/audit-independent-bank.cjs
 node tools/audit-human-listening.cjs --decode
 node tools/validate-calibration-references.cjs
 ```
+
+开发版正式构建必须保留上面的年度激活与GSA显式参数，并使用新建的独立输出目录；核对产物与冻结合同后再发布。无GSA参数的75份默认构建只作兼容对照，不得覆盖现有80份课程产物。
 
 发布前由三个独立子智能体交叉走查，再做浏览器与回归检查，发现及修复范围见 [产品走查报告](产品走查报告.md)。构建拒绝缺源材料或课程听力音频；`--partial` 仅供开发预览。题目规则审计是复核入口，不等于全面语义正确或考试等值性证明。
 

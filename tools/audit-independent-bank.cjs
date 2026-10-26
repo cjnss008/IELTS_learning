@@ -15,7 +15,7 @@ function figureErrors(f){
  else{if(!f.labels?.length||!f.series?.length||f.series.some(s=>!s.name||s.values?.length!==f.labels.length||s.values.some(v=>!Number.isFinite(v)||v<0)))out.push('Invalid chart series');if(f.type==='pie'&&f.series?.some(s=>Math.abs(s.values.reduce((a,b)=>a+b,0)-100)>.001))out.push('Pie total must be 100');}
  if(!f.title)out.push('Missing figure title');return out;
 }
-function audit(materials,{requireAudio=true,courseData=null,lexical=null}={}){
+function audit(materials,{requireAudio=true,courseData=null,lexical=null,projectRoot=root}={}){
  const errors=[],questionReview=[],sources=new Map(),ids=new Set(),levels={},voices={},humanMaterials=materials.filter(m=>m.audioKind==='human');
  for(const m of materials){
   const fail=s=>errors.push(m.id+': '+s);if(ids.has(m.id))fail('Duplicate ID');ids.add(m.id);
@@ -43,10 +43,10 @@ function audit(materials,{requireAudio=true,courseData=null,lexical=null}={}){
   }else fail('Unsupported independent skill');
   if(m.skill==='listening'&&m.audioKind!=='human'){
    if(m.audioSynthetic!==true||!m.audioLocale||!m.audioVoiceSource)fail('Synthetic provenance missing');voices[m.audioLocale]=(voices[m.audioLocale]||0)+1;
-   if(requireAudio){try{const proof=require('./independent-audio-provenance.cjs').read(m,root);for(const error of require('./independent-audio-provenance.cjs').materialErrors(m,proof))fail(error);}catch(error){fail('Audio/source proof mismatch: '+error.message);}}
+   if(requireAudio){try{const proof=require('./independent-audio-provenance.cjs').read(m,projectRoot);for(const error of require('./independent-audio-provenance.cjs').materialErrors(m,proof))fail(error);}catch(error){fail('Audio/source proof mismatch: '+error.message);}}
   }
  }
- const humanAudit=require('./audit-human-listening.cjs').audit(humanMaterials,{requireAudio});errors.push(...humanAudit.errors);
+ const humanAudit=require('./audit-human-listening.cjs').audit(humanMaterials,{requireAudio,projectRoot});errors.push(...humanAudit.errors);
  if(materials.filter(m=>m.audioKind!=='human').length!==31)errors.push('Original independent bank must retain its 31 focused materials');
  for(const level of ['A1','A2','B1','B2'])if(levels[level]?.reading!==2||levels[level]?.listening!==4)errors.push('Expected 2 readings and 4 listening sources at '+level);
  if(new Set(materials.filter(m=>m.skill==='writing').map(m=>m.figureType)).size!==7)errors.push('Expected all seven Task1 figure types');

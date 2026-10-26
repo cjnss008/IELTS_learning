@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "sourceId": "gsa-plain-language-03",
+  "sourceVersion": "1",
+  "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+  "sourceContentHash": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+  "version": "1",
+  "questionSetId": "gsa-plain-language-03-reading-q1",
+  "exposureGroup": "public-source:gsa-plain-language-03",
+  "releaseStatus": "author-text-evidence-checked-blind-review-pending",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Why does the writer favour the recommended wording for a required action?",
+      "explanation": "作者选择该用词的理由是读者更容易看出必须做某事，而不是追求官样语气。\n\n选项“It makes every sentence sound more ceremonial.”：ceremonial强调仪式化，和作者追求清楚易懂的方向相反。\n选项“It avoids saying that any action is required.”：原文明确要传达必须做事，并非回避要求。\n选项“It makes the requirement clearer to the audience.”：正确：clearest way和have to do something直接支持。",
+      "distractorReasons": [
+        "ceremonial强调仪式化，和作者追求清楚易懂的方向相反。",
+        "原文明确要传达必须做事，并非回避要求。",
+        "正确：clearest way和have to do something直接支持。"
+      ],
+      "evidence": "The word \"must\" is the clearest way to convey to your audience that they have to do something.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 94,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "It makes every sentence sound more ceremonial.",
+        "It avoids saying that any action is required.",
+        "It makes the requirement clearer to the audience."
+      ],
+      "answers": [
+        "It makes the requirement clearer to the audience."
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How does the writer describe the older wording in this kind of document?",
+      "explanation": "作者在这种公文写作情境下批评旧用词官样、过时；不能把作者的情境评价扩大成所有英语语境都错误。\n\n选项“Overly official and out of date.”：正确：officious与obsolete分别支持官样和过时。\n选项“Typical of relaxed everyday conversation.”：作者的反问恰恰质疑它在日常口语中的使用。\n选项“Always easier for readers to understand.”：原文主张改用更清楚的词，不能说旧词总是更易懂。",
+      "distractorReasons": [
+        "正确：officious与obsolete分别支持官样和过时。",
+        "作者的反问恰恰质疑它在日常口语中的使用。",
+        "原文主张改用更清楚的词，不能说旧词总是更易懂。"
+      ],
+      "evidence": "\"Shall\" is one of those officious words that has encumbered legal style writing for many years. The message that \"shall\" sends to the audience is, \"this is deadly material.\" \"Shall\" is also obsolete. When was the last time you heard it used in everyday speech?",
+      "evidenceOffsets": {
+        "start": 95,
+        "end": 355,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "Overly official and out of date.",
+        "Typical of relaxed everyday conversation.",
+        "Always easier for readers to understand."
+      ],
+      "answers": [
+        "Overly official and out of date."
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Use ONE WORD from the text: What feared legal outcome does the writer say should not intimidate the reader into keeping the old wording?",
+      "explanation": "作者说不要被会引来诉讼的说法吓倒。这里填写所担心的法律后果这个名词；不是让读者采取法律行动。\n\n可接受lawsuit，原文中直接出现。\nmust是讨论的用词，不是担心的后果。\nargument是这种说法本身，不是说法中声称会发生的后果。\n字数与形式：只填一个词lawsuit，保留原文单数；加a会超过本题一词上限。",
+      "distractorReasons": [
+        "可接受lawsuit，原文中直接出现。",
+        "must是讨论的用词，不是担心的后果。",
+        "argument是这种说法本身，不是说法中声称会发生的后果。"
+      ],
+      "evidence": "Don't be intimidated by the argument that using \"must\" will lead to a lawsuit.",
+      "evidenceOffsets": {
+        "start": 433,
+        "end": 511,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "lawsuit"
+      ],
+      "maxWords": 1,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Use NO MORE THAN FOUR WORDS from the text: Which institution changed the relevant wording in its Rules of Procedure?",
+      "explanation": "文章明确以美国法院修改程序规则的用词作例子。是否带The均能指向同一机构。\n\n可接受The U.S. Courts或U.S. Courts，保留该机构身份。\nMany agencies只是一般描述，不是题目问的具体机构。\nRules of Procedure是规则名称，不是机构名称。\n字数与形式：上限四词。The U.S. Courts与U.S. Courts均指同一原文机构，允许省略句首冠词；U.S.与US仅有缩写标点差别，The US Courts和US Courts也接受。Courts的复数是机构名称的一部分，不能改为Court。",
+      "distractorReasons": [
+        "可接受The U.S. Courts或U.S. Courts，保留该机构身份。",
+        "Many agencies只是一般描述，不是题目问的具体机构。",
+        "Rules of Procedure是规则名称，不是机构名称。"
+      ],
+      "evidence": "The U.S. Courts eliminated \"shall\" in favor of \"must\" in their Rules of Procedure.",
+      "evidenceOffsets": {
+        "start": 577,
+        "end": 659,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "The U.S. Courts",
+        "U.S. Courts",
+        "The US Courts",
+        "US Courts"
+      ],
+      "maxWords": 4,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer.",
+      "sourceCanonicalAnswers": [
+        "The U.S. Courts",
+        "U.S. Courts"
+      ],
+      "answerAliases": [
+        "The US Courts",
+        "US Courts"
+      ],
+      "answerAliasPolicy": "punctuation-only-reviewed"
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Use NO MORE THAN TWO WORDS from the text: In the final example, who has to receive the written notification?",
+      "explanation": "notify的对象是any settler。registered mail说明通知方式，不能用它回答通知对象。\n\n可接受any settler或settler；二者都保留被通知者身份。\nregistered mail是方式，不是人。\ntimber是木材，不是通知对象。\n字数与形式：上限两词。any settler与settler均指向被通知者；保留原文单数settler，不把答案自行改写成settlers。",
+      "distractorReasons": [
+        "可接受any settler或settler；二者都保留被通知者身份。",
+        "registered mail是方式，不是人。",
+        "timber是木材，不是通知对象。"
+      ],
+      "evidence": "You must notify any settler, by registered mail, that you have applied to use timber from your lease.",
+      "evidenceOffsets": {
+        "start": 663,
+        "end": 764,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "answers": [
+        "any settler",
+        "settler"
+      ],
+      "maxWords": 2,
+      "acceptableAnswerScope": "Only the listed source-bound forms, ignoring case and the normal saved-answer punctuation policy; no invented synonym accepted as an exact-text answer."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What information must the notice in the example include?",
+      "explanation": "最后一句要求交代作为燃料使用的木材数量和种类；不是租金、租期或邮局人员。\n\n选项“The total rent and the date on which the lease expires.”：文章没有要求在通知中列租金和租期。\n选项“The names of everyone working at the postal office.”：文章没有提到填写邮局工作人员姓名。\n选项“The amount and kind of timber planned for use as fuel.”：正确：amount、kind、use as fuel三个信息均来自原句。",
+      "distractorReasons": [
+        "文章没有要求在通知中列租金和租期。",
+        "文章没有提到填写邮局工作人员姓名。",
+        "正确：amount、kind、use as fuel三个信息均来自原句。"
+      ],
+      "evidence": "Include in your notice the amount and the kind of timber you intend to use as fuel.",
+      "evidenceOffsets": {
+        "start": 765,
+        "end": 848,
+        "offsetUnit": "UTF-16-code-unit"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "options": [
+        "The total rent and the date on which the lease expires.",
+        "The names of everyone working at the postal office.",
+        "The amount and kind of timber planned for use as fuel."
+      ],
+      "answers": [
+        "The amount and kind of timber planned for use as fuel."
+      ]
+    }
+  ],
+  "sourceIssues": [],
+  "review": {
+    "author": {
+      "name": "Codex /root/year_server_v82",
+      "method": "Every answer, evidence span, wrong-option reason, word limit and source normalization checked against the exact frozen/declared display text. No separate reviewer is claimed."
+    },
+    "blindComparison": {
+      "status": "pending-independent-review",
+      "questionCount": 6,
+      "blindInputSha256": "3cd26ae665c27f3d376162901437fbdb4efa06872b6b11f87eef731061468507"
+    }
+  },
+  "estimatedStudyMinutes": 20
+}

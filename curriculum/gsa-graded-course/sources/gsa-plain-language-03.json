@@ -1,0 +1,103 @@
+{
+  "sourceId": "gsa-plain-language-03",
+  "version": "1",
+  "title": "Use “must” to indicate requirements",
+  "kind": "reading",
+  "alsoUsableFor": [],
+  "sourceUrl": "https://github.com/GSA/plainlanguage.gov/blob/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+  "provider": "U.S. General Services Administration / PLAIN",
+  "sourcePublishedAt": null,
+  "rights": {
+    "status": "CC0-repository-prose",
+    "license": "CC0-1.0",
+    "url": "https://github.com/GSA/plainlanguage.gov/blob/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/LICENSE.md",
+    "attribution": "Source: U.S. General Services Administration / PLAIN, Use “must” to indicate requirements. Repository commit fd7694740f19c0ed20ed71c2dd1dc92699e920fa. Text adapted only for display formatting; no endorsement implied.",
+    "licenseEvidencePath": "curriculum/gsa-graded-course/LICENSE-GSA.md",
+    "licenseSha256": "a894ad254537e8261a101d73608b794ef26c3ce36ea08d283a7cddc98a6266ea",
+    "scope": "Repository guidelines prose only; no linked external media, images, quoted resource collections, instructor tests or exam papers.",
+    "thirdPartyImagesIncluded": false,
+    "externalAudioIncluded": false
+  },
+  "level": {
+    "label": "B1–B2",
+    "calibrated": false,
+    "estimateKind": "AI-content-estimate",
+    "basis": "Short expository writing guidance and six source-grounded questions; requires verified B2 for this mixed-range source. This is target training, not a CEFR or IELTS equivalence."
+  },
+  "phaseIds": [
+    "academic",
+    "integration",
+    "verification"
+  ],
+  "prerequisiteCapabilityIds": [
+    "everyday:reading"
+  ],
+  "prerequisiteNote": "Source stage and actual course/gate readiness must be verified at runtime; course position alone gives no capability credit.",
+  "grammarTags": [
+    "modal-obligation",
+    "imperatives"
+  ],
+  "grammarEvidence": [
+    {
+      "tag": "modal-obligation",
+      "quote": "You must notify any settler, by registered mail, that you have applied to use timber from your lease.",
+      "explanation": "must + 动词原形表达要求；notify的对象是settler，by registered mail说明方式。",
+      "start": 663,
+      "end": 764,
+      "offsetUnit": "UTF-16-code-unit",
+      "status": "author-source-location-and-structure-reviewed-root-review-pending"
+    },
+    {
+      "tag": "imperatives",
+      "quote": "Include in your notice the amount and the kind of timber you intend to use as fuel.",
+      "explanation": "句首动词原形Include构成祈使句，要求在通知中写明相应信息。",
+      "start": 765,
+      "end": 848,
+      "offsetUnit": "UTF-16-code-unit",
+      "status": "author-source-location-and-structure-reviewed-root-review-pending"
+    }
+  ],
+  "text": {
+    "path": "materials/public/gsa-graded-course/gsa-plain-language-03.txt",
+    "sha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+    "format": "plain-text",
+    "offsetUnit": "UTF-16-code-unit",
+    "normalization": "Frozen-v83 body; only explicit Jekyll display attribute removal and restoration of list line breaks. English words and sentences are unchanged."
+  },
+  "contentHash": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+  "originalFrozenText": {
+    "path": "materials/public/gsa-graded-course/gsa-plain-language-03.frozen-v83.txt",
+    "sha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99"
+  },
+  "normalization": {
+    "schema": 1,
+    "originalFrozenSha256": "3f4269737e45163c29b52a0ea6399815b77186a18bf734e36043d9b4591fcf99",
+    "displaySha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+    "transformations": [
+      {
+        "kind": "remove-Jekyll-display-attribute",
+        "originalStart": 848,
+        "originalEnd": 874,
+        "removed": " {: .example-side-by-side}",
+        "replacement": ""
+      }
+    ],
+    "originalRepositoryPath": "_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+    "originalRepositorySha256": "2954a1c4e581aa45d188351d9c61fa948cc17a7dc58968250a3ef7aeb748598b"
+  },
+  "coursePolicy": {
+    "appendOnly": true,
+    "requiredDailyOnly": true
+  },
+  "usage": {
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "exposureGroup": "public-source:gsa-plain-language-03",
+    "readingCandidate": true,
+    "listeningCandidate": false,
+    "sameSourceReadingListeningCountAsOne": true
+  },
+  "estimatedStudyMinutes": 20,
+  "status": "author-source-and-question-review-complete-independent-blind-review-pending"
+}

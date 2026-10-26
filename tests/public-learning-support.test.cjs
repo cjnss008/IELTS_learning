@@ -1,6 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),{createRequire}=require('node:module');
 const root=path.join(__dirname,'..'),Support=require('../assets/public-learning-support.js'),A=require('../assets/assessment-core.js');
+const Artifact=require('./public-artifact-modes-fixture.cjs'),artifactRoot=path.resolve(process.env.PUBLIC_ARTIFACT_OUTPUT_ROOT||process.env.YEAR_BUDGET_OUTPUT_ROOT||path.join(__dirname,'..')),modes=Artifact.load({data:require(path.join(artifactRoot,'assets/curriculum-data.js')),sourceContexts:require(path.join(artifactRoot,'assets/public-context-data.js')),projectRoot:path.join(__dirname,'..')});
 const text='Anna: We collect samples.\nBob: The samples are measured carefully.',hash=A.sourceTextHash(text),material={skill:'reading',passage:text,source:{publicSourceId:'fixture',sourceTextSha256:hash,practiceOnly:true}},entry={id:'essential:sample',word:'sample',rank:800,ipa:'/ˈsæmpəl/',dictionaryMeaning:'n. 样本'},start=text.indexOf('samples'),quote='The samples are measured carefully.',grammarStart=text.indexOf(quote),data={sources:[{sourceId:'fixture',sourceTextSha256:hash,words:[{word:'sample',surface:'samples',start,end:start+7,relation:'source-listed-inflection'}],grammar:[{tag:'passive-voice',quote,start:grammarStart,end:grammarStart+quote.length,explanation:'are + measured 是一般现在时的被动语态，关注样本被测量这一过程。'}]}]};
 test('source contexts use exact published offsets, explicit forms and target/due priorities without claiming mastery',()=>{
  const options={data,entries:[entry],targetWords:['sample'],dueWords:['essential:sample'],grammarTags:['passive-voice']},before=JSON.stringify({material,options}),out=Support.model(material,options);
@@ -16,7 +17,7 @@ test('derived listening support requires its actual transcript and preserves the
  const listening={...material,skill:'listening',passage:'Do not use reading text as a missing transcript.',transcript:text};assert.equal(Support.model(listening,{data,entries:[entry]}).words[0].surface,'samples');delete listening.transcript;assert.equal(Support.model(listening,{data,entries:[entry]}).available,false);
 });
 test('the actual released context index binds every grammar quotation and lexical form to the compiled source',()=>{
- const index=require('../assets/public-context-data.js'),B=require('../tools/build-public-supplement-materials.cjs'),compiled=B.load({root,practiceOnly:true,requireComplete:true}),entries=require('../assets/essential-vocabulary-data.js').entries;
+ const index=modes.legacySourceContexts,B=require('../tools/build-public-supplement-materials.cjs'),compiled=B.load({root,practiceOnly:true,requireComplete:true}),entries=require('../assets/essential-vocabulary-data.js').entries;
  assert.equal(index.sources.length,compiled.audit.loadedSources);let grammar=0;
  for(const source of index.sources){const mat=compiled.materials.find(m=>m.source.publicSourceId===source.sourceId&&m.skill==='reading');assert.ok(mat);const out=Support.model(mat,{data:index,entries});assert.equal(out.available,true);assert.equal(out.grammar.length,source.grammar.length);for(const word of source.words)assert.equal(mat.passage.slice(word.start,word.end),word.surface);grammar+=out.grammar.length;}
  assert.ok(grammar>=34);
@@ -31,3 +32,10 @@ async function submittedSourceSupport(legacy=false){
 }
 test('assigned daily reading shows exact source support after its actual submission without changing the original record',()=>submittedSourceSupport());
 test('legacy public draft retains after-submit source support without acquiring a new required-course assignment',()=>submittedSourceSupport(true));
+
+
+test('the actual context index contains only the verified old46 source objects plus the exact signed five additions',()=>{
+ const actual=modes.actual,index=modes.actualSourceContexts,entries=require('../assets/essential-vocabulary-data.js').entries,legacyIds=new Set(modes.legacySourceContexts.sources.map(s=>s.sourceId));assert.equal(modes.legacySourceContexts.sources.length,46);assert.equal(index.sources.length,46+(modes.release?5:0));assert.deepEqual(index.sources.filter(s=>legacyIds.has(s.sourceId)),modes.legacySourceContexts.sources);let additions=0;
+ for(const source of index.sources){const material=actual.materials.find(m=>m.source?.publicSourceId===source.sourceId&&m.skill==='reading');assert.ok(material,source.sourceId);const out=Support.model(material,{data:index,entries});assert.equal(out.available,true);assert.equal(out.grammar.length,source.grammar.length);assert.equal(out.independentEvidence,false);assert.equal(out.countsAsMastery,false);assert.equal(out.optional,true);for(const word of source.words)assert.equal(material.passage.slice(word.start,word.end),word.surface);for(const grammar of out.grammar)assert.equal(material.passage.slice(grammar.start,grammar.end),grammar.quote);if(!legacyIds.has(source.sourceId)){additions++;assert.ok(modes.release);assert.deepEqual(JSON.parse(JSON.stringify(source)),JSON.parse(JSON.stringify(modes.release.sourceContexts.sources.find(s=>s.sourceId===source.sourceId))));assert.ok(out.words.every(w=>w.meaningBasis==='dictionary-gloss-to-check-in-source-context'),'dictionary support must not claim that a GSA mapping has entered runtime sense training');}}
+ assert.equal(additions,modes.newMaterialIds.length);
+});

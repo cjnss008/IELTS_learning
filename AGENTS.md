@@ -47,3 +47,5 @@
 - 验证结论区分模拟回归、真实服务链路、真人麦克风与长期成效。合成示范音频成功送到 Ali 和 DeepSeek，只证明该链路成功，不能写成已验证真人录音评分或 52 周教学效果。Codex 逐题复核不得称作真人教师／考官审题。
 
 - 启动器须兼容 NAS UNC 与含空格路径，缺少 Node 时校验并安装随包运行环境；成功关闭 CMD、失败保留诊断。用户目录、历史版本与资料原件不能在升级时清空。所有服务器测试使用独立临时 dataDir，禁止读取或改写真实配置。
+
+- 0.0.87开发版的正式重建须同时保留 `--require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract.json --gsa-graded-release curriculum/gsa-graded-course/release.json --output-root 本机独立目录`；课程审计也须显式传GSA release。默认75份构建仅用于旧版兼容验证，不得用它覆盖已启用的80份课程产物。

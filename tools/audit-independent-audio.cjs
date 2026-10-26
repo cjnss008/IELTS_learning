@@ -3,8 +3,8 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
 const root=path.join(__dirname,'..'),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function run(command,args){const result=spawnSync(command,args,{encoding:'utf8',windowsHide:true,maxBuffer:4*1024*1024});if(result.status!==0)throw Error(command+' failed: '+String(result.stderr||result.error?.message||'').slice(-300));return result;}
-function inspect(audio){
- const file=path.join(root,audio),bytes=fs.readFileSync(file),info=JSON.parse(run('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_name,sample_rate,channels','-of','json',file]).stdout);
+function inspect(audio,{projectRoot=root}={}){
+ const file=path.join(projectRoot,audio),bytes=fs.readFileSync(file),info=JSON.parse(run('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_name,sample_rate,channels','-of','json',file]).stdout);
  const stream=info.streams.find(s=>s.codec_name==='mp3');if(!stream||stream.channels!==1||Number(stream.sample_rate)!==24000)throw Error(audio+': unexpected audio format');
  const decoded=run('ffmpeg',['-hide_banner','-nostats','-i',file,'-af','volumedetect','-f','null','-']).stderr,mean=Number(decoded.match(/mean_volume:\s*([-\d.]+) dB/)?.[1]),peak=Number(decoded.match(/max_volume:\s*([-\d.]+) dB/)?.[1]);
  if(!Number.isFinite(mean)||!Number.isFinite(peak)||mean<-55||peak<-40)throw Error(audio+': silent or too faint after real decoding');

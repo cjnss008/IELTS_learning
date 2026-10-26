@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),path=require('node:path'),{spawnSync}=require('node:child_process');
-const B=require('../tools/year-budget-estimates.cjs'),P=require('../tools/year-budget-planner.cjs'),input=require('./year-budget-fixture.cjs').load();
+const B=require('../tools/year-budget-estimates.cjs'),P=require('../tools/year-budget-planner.cjs'),input=require('./year-budget-fixture.cjs').load().legacyInput;
 test('invalid/infinite forecast inputs terminate promptly rather than loop',()=>{
  const modulePath=path.resolve(__dirname,'../tools/year-budget-estimates.cjs');
  for(const expression of ['B.forecast(Infinity)','B.forecast(NaN)','B.forecast(-1)','B.forecast(20,{...B.DEFAULT,focusMinutes:0})','B.forecast(20,{...B.DEFAULT,focusMinutes:Infinity})','B.forecast(20,{...B.DEFAULT,cycles:1.5})','B.forecast(20,{...B.DEFAULT,longBreakMinutes:Infinity})']){

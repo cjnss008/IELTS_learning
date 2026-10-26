@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "planHash": "efc10fa4c9e8373e7e896432c7056d1a3cfe72dd73448ab7583b92dc1767d677",
+  "planHash": "dc54cddac9bc02cd234a65dd9ac2527c161aa09d05090879e283a3cf02561914",
   "status": "complete-blueprint-not-learning-outcome",
   "input": {
-    "curriculumHash": "016b9adb73200f9122d86338af1b6e3b331d97dd5f91edf9892d1d4f0e0d2d2a",
+    "curriculumHash": "88e8373363081f6400337d0d4c4e19f5544cb09451d8be710de0c3bffa7154cf",
     "baseDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
     "expandedDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
     "yearExpansionHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
     "lessonExpansionsHash": "090d059d4856d42477f11b754d4116481c1f3eb298e58bd1a43a0cb8d20547e4",
     "gatesHash": "971c578c44100c0b1084a36bc0393ca798408aa9dcc14170b462d65cb9f53b08",
-    "sourceContextsHash": "cf11c52fe6d7cf703c0e956bc8bce2d78568a0a099bb3f7fc47dde55c6e113a7",
+    "sourceContextsHash": "889528af5eddf83de42ba5753a73bcf7b6d3150a0e0480309cd2a676d6600f0d",
     "corePlanningHash": "9a8fe906556b46401ee74a5402515fa8653fa829ed99ba30e806d6fcb4ed8ca8",
     "coreMaterialContracts": [
       {
@@ -2050,6 +2050,51 @@
     ],
     "materials": [
       {
+        "id": "public-gsa-plain-language-02-reading",
+        "version": "s1-q1",
+        "contentHash": "f556e706b7cb66ee2d88efea569f83729e37df48617cbd95811c02056136f216",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-02",
+        "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+        "exposureGroup": "public-source:gsa-plain-language-02"
+      },
+      {
+        "id": "public-gsa-plain-language-03-reading",
+        "version": "s1-q1",
+        "contentHash": "0c6fd658923d71ba7bb9ccaba61c78ec0ab101c566c11f3a12fe4915a155cf14",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-03",
+        "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+        "exposureGroup": "public-source:gsa-plain-language-03"
+      },
+      {
+        "id": "public-gsa-plain-language-06-reading",
+        "version": "s1-q1",
+        "contentHash": "1378e3591f4a75bb0491f9f6ddad22b6053bd75b15f5c3832ed973831576c784",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-06",
+        "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+        "exposureGroup": "public-source:gsa-plain-language-06"
+      },
+      {
+        "id": "public-gsa-plain-language-07-reading",
+        "version": "s1-q1",
+        "contentHash": "cacbcd58eaffe83f8af82fb7864b96e4bced69277cfbe904d391573e347758e3",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-07",
+        "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+        "exposureGroup": "public-source:gsa-plain-language-07"
+      },
+      {
+        "id": "public-gsa-plain-language-08-reading",
+        "version": "s1-q1",
+        "contentHash": "85853b43078b647ded6aa313bc82d8c3be29ba329aa8c186797e5f191306bf37",
+        "skill": "reading",
+        "sourceId": "gsa-plain-language-08",
+        "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+        "exposureGroup": "public-source:gsa-plain-language-08"
+      },
+      {
         "id": "public-nasa-citizen-kelp-mapping-reading",
         "version": "s2-q2",
         "contentHash": "f107b5fc2d46c8e35462646539c29b5113706a5180ccc476947bc0bf25db4858",
@@ -2776,19 +2821,19 @@
     }
   },
   "summary": {
-    "publicVariants": 75,
-    "assignedVariants": 75,
+    "publicVariants": 80,
+    "assignedVariants": 80,
     "retainedVariants": 0,
     "exemptVariants": 0,
     "blockedVariants": 0,
-    "readingAssignments": 46,
+    "readingAssignments": 51,
     "listeningAssignments": 29,
     "replacements": 35,
-    "appends": 40,
-    "sourceGroups": 46,
-    "plannedContextReviews": 137,
-    "blockedReviewWindows": 1,
-    "changedDays": 98,
+    "appends": 45,
+    "sourceGroups": 51,
+    "plannedContextReviews": 151,
+    "blockedReviewWindows": 2,
+    "changedDays": 104,
     "maximumReferenceCalendarMinutes": 330,
     "baselineOverBudgetDays": [
       2,
@@ -3005,7 +3050,16 @@
     "provenance": "curriculum/public-target-coverage.json",
     "reportSha256": "b34a0bd1c5e0506c6c46a2db08b2214d89ad8ec8a8e387064efeb5ce8c1a5135",
     "reportGeneratedAt": "2026-10-26T00:42:57.771Z",
-    "scope": "Located orthographic candidates from the source-acquisition audit; not a fresh mastery/semantic coverage measurement or execution of context links."
+    "scope": "Located orthographic candidates from the source-acquisition audit; not a fresh mastery/semantic coverage measurement or execution of context links.",
+    "supplementalSourceAudit": {
+      "releaseId": "gsa-graded-reading-v87",
+      "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f",
+      "sourceCount": 5,
+      "signedSemanticAnchors": 18,
+      "newlyTaught": 0,
+      "masteryCredit": 0,
+      "scope": "New GSA anchors are not added to the older orthographic audit counts. Signed sense approval is not enrollment or learner evidence."
+    }
   },
   "limitations": [
     "Author reference durations plus default Pomodoro rest are capacity assumptions, not measured learner throughput. Actual due reviews, errors and slower work consume the same 360 minutes and must carry unfinished required work forward.",
@@ -3019,54 +3073,54 @@
     "deterministicAttempts": [
       {
         "mode": "capacity-first",
-        "assigned": 75,
+        "assigned": 80,
         "blocked": 0,
-        "reviewBlocked": 1,
+        "reviewBlocked": 2,
         "metric": [
-          75,
-          -1,
+          80,
+          -2,
           594,
           35,
-          -6320
-        ]
-      },
-      {
-        "mode": "balanced-2",
-        "assigned": 73,
-        "blocked": 2,
-        "reviewBlocked": 0,
-        "metric": [
-          73,
-          0,
-          1104,
-          52,
-          -6411
-        ]
-      },
-      {
-        "mode": "balanced-5",
-        "assigned": 73,
-        "blocked": 2,
-        "reviewBlocked": 0,
-        "metric": [
-          73,
-          0,
-          966,
-          50,
-          -6328
+          -7198
         ]
       },
       {
         "mode": "context-priority",
-        "assigned": 73,
+        "assigned": 78,
         "blocked": 2,
         "reviewBlocked": 1,
         "metric": [
-          73,
+          78,
           -1,
-          1452,
+          1470,
           52,
-          -6964
+          -7844
+        ]
+      },
+      {
+        "mode": "balanced-2",
+        "assigned": 78,
+        "blocked": 2,
+        "reviewBlocked": 1,
+        "metric": [
+          78,
+          -1,
+          1104,
+          52,
+          -7277
+        ]
+      },
+      {
+        "mode": "balanced-5",
+        "assigned": 78,
+        "blocked": 2,
+        "reviewBlocked": 1,
+        "metric": [
+          78,
+          -1,
+          966,
+          50,
+          -7202
         ]
       }
     ],
@@ -3074,6 +3128,14 @@
   },
   "blocked": [],
   "reviewBlocked": [
+    {
+      "sourceId": "gsa-plain-language-07",
+      "exposureGroup": "public-source:gsa-plain-language-07",
+      "stage": 1,
+      "from": 177,
+      "to": 179,
+      "reason": "review-window-has-no-unfrozen-ordinary-budget-slot"
+    },
     {
       "sourceId": "nasa-climate-models",
       "exposureGroup": "public-source:nasa-climate-models",
