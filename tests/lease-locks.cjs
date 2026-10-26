@@ -1,0 +1,4 @@
+'use strict';
+// The Web Locks subset used by the real code; supports shared in-memory clients.
+function manager(){const held=new Set(),queues=new Map();function next(name){if(held.has(name))return;const q=queues.get(name);if(!q?.length)return;const job=q.shift();held.add(name);Promise.resolve().then(()=>job.run({name,mode:'exclusive'})).then(job.resolve,job.reject).finally(()=>{held.delete(name);next(name);});}return{request(name,options,run){if(typeof options==='function'){run=options;options={};}if(options?.ifAvailable){if(held.has(name)||(queues.get(name)?.length||0))return Promise.resolve().then(()=>run(null));held.add(name);return Promise.resolve().then(()=>run({name,mode:'exclusive'})).finally(()=>{held.delete(name);next(name);});}return new Promise((resolve,reject)=>{const q=queues.get(name)||[];q.push({run,resolve,reject});queues.set(name,q);next(name);});},held:()=>[...held]};}
+module.exports={manager};

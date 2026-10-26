@@ -6,7 +6,7 @@ function placementRoute(data,options={}){const api=options.placement||root.IELTS
 function dateKey(value=Date.now()){const d=new Date(value);return Number.isFinite(d.getTime())?d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'):'';}
 function dateNumber(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(String(value)))throw Error('学习日期格式无效。');const n=Date.parse(value+'T00:00:00Z');if(!Number.isFinite(n)||new Date(n).toISOString().slice(0,10)!==value)throw Error('学习日期无效。');return n;}
 function rank(value){return Math.max(-1,...(String(value||'').match(/A[012]|B[12]|C[12]/g)||[]).map(v=>['A0','A1','A2','B1','B2','C1','C2'].indexOf(v)));}
-function artifact(record){try{return typeof record?.answer==='string'?JSON.parse(record.answer):record?.answer||null;}catch(_){return null;}}
+function artifact(record){try{const cached=root.IELTSRecordSnapshotIndex?.parsedAnswer?.(record);return cached?.available?cached.value:typeof record?.answer==='string'?JSON.parse(record.answer):record?.answer||null;}catch(_){return null;}}
 function isCalibration(value){return[String(value?.mode||''),String(value?.source||''),String(artifact(value)?.mode||'')].some(v=>v.startsWith('calibration'));}
 function courseDay(record){const n=artifact(record)?.courseDay??record?.courseDay??record?.dayNumber;return Number.isInteger(n)&&n>=1&&n<=DAYS?n:null;}
 function seconds(record){return Number.isFinite(record?.activeSeconds)&&record.activeSeconds>=0?record.activeSeconds:Number.isFinite(record?.minutes)&&record.minutes>=0?record.minutes*60:0;}
@@ -42,10 +42,14 @@ async function readBudget(options={}){
  const mediaDrafts=collectMediaDrafts(media,r,{courseDay:options.courseDay}),drafts=mediaDraftsRemaining([...(local||[]).filter(d=>d.source!=='media-draft'),...mediaDrafts],r),budget=calendarBudget(r,drafts,options.today||dateKey(),options.budgetMinutes??360);assert();return{...budget,profileId,records:r,drafts,mediaDrafts};
 }
 function watchMediaActivity(listener){if(!root.document)return()=>{};const profile=root.IELTSProfiles?.current?.().id,receive=event=>{if(!event.detail?.profileId||event.detail.profileId===profile)listener();};root.addEventListener?.('ielts:media-activity-changed',receive);let channel;try{if(root.BroadcastChannel){channel=new root.BroadcastChannel(root.IELTSProfiles?.scopeKey('ielts52-media-activity-v1')||'ielts52-media-activity-v1');channel.onmessage=event=>receive({detail:event.data});}}catch(_){}return()=>{root.removeEventListener?.('ielts:media-activity-changed',receive);channel?.close();};}
+let immutableActivityProjection=null,immutableActivityIndex=null;
+function recordsActivity(records){const works=latestRecords(records).filter(r=>!isCalibration(r)),byDate={},recordIds=works.map(r=>r.id);for(const record of works)for(const [date,n]of Object.entries(activityByDate(record)))byDate[date]=(byDate[date]||0)+n;return{works,byDate,recordIds};}
 function calendarBudget(records,drafts,today=dateKey(),budget=360){
  dateNumber(today);if(!Number.isFinite(budget)||budget<0||budget>360)throw Error('每日预算必须在0–360分钟。');
- const works=latestRecords(records).filter(r=>!isCalibration(r)),ids=new Set(works.map(r=>r.id)),items=[...works,...mediaDraftsRemaining(drafts,works).filter(d=>!ids.has(d.id)&&!isCalibration(d))],seen=new Set();let used=0;
- for(const item of items){if(seen.has(item.id))continue;seen.add(item.id);used+=(activityByDate(item,!ids.has(item.id))[today]||0)/60;}
+ const index=root.IELTSRecordSnapshotIndex;if(index?.memoizeRecordsProjection&&index!==immutableActivityIndex){immutableActivityIndex=index;immutableActivityProjection=index.memoizeRecordsProjection(recordsActivity);}const projection=immutableActivityProjection?.(records)?.value;
+ let used=0;if(projection){const ids=new Set(projection.recordIds);used=(projection.byDate[today]||0)/60;for(const draft of mediaDraftsRemaining(drafts,projection.works)){if(ids.has(draft.id)||isCalibration(draft))continue;ids.add(draft.id);used+=(activityByDate(draft,true)[today]||0)/60;}}
+ else{const works=latestRecords(records).filter(r=>!isCalibration(r)),ids=new Set(works.map(r=>r.id)),items=[...works,...mediaDraftsRemaining(drafts,works).filter(d=>!ids.has(d.id)&&!isCalibration(d))],seen=new Set();
+ for(const item of items){if(seen.has(item.id))continue;seen.add(item.id);used+=(activityByDate(item,!ids.has(item.id))[today]||0)/60;}}
  const base={date:today,budgetMinutes:budget,spentMinutes:used,remainingMinutes:Math.max(0,budget-used),exhausted:used>=budget-1e-8,includesDrafts:true};return root.IELTSStudyTimer?.budget?.(base)||base;
 }
 function mastery(data,records,options={}){

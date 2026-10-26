@@ -1,0 +1,9 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),H=require('./record-snapshot-index-fixture.cjs'),{mounted}=require('./record-snapshot-controller-fixture.cjs');
+test('actual Controller, Timer, Load and Hub keep live input and end/resume budgets with validated records',async t=>{
+ const f=await mounted([H.record()]);t.after(()=>f.close());const win=f.f.win,nav=win.IELTSTodayNavigation,index=win.IELTSRecordSnapshotIndex,context=nav.yearContext(),Y=win.IELTSYearPlanner;assert.ok(context.current.active);assert.equal(index.receipt(context.records).count,1);assert.ok(Object.isFrozen(context.records));
+ const check=()=>{const options=nav.yearContext(),plain=Y.calendarBudget(H.copy(options.records),H.copy(options.drafts),Y.dateKey());assert.deepEqual(H.copy(nav.budget()),H.copy(plain));const q=nav.learningQueue();assert.equal(q.budget.spentMinutes,plain.spentMinutes);assert.equal(q.budget.dayEnded,plain.dayEnded);assert.ok(q.next);};check();
+ const inputs=f.f.nodes.get('courseQuestions').querySelectorAll('input, textarea');assert.ok(inputs.length);inputs[0].value='synthetic live input';if(inputs[0].type==='radio'||inputs[0].type==='checkbox'){inputs[0].checked=true;await inputs[0].fire('change');}else await inputs[0].fire('input');f.tick();await f.flush();check();assert.ok(Object.keys(nav.allDrafts()[0].answers).length);
+ await win.document.getElementById('studyTimerEndDay').fire('click');await win.document.getElementById('studyTimerConfirmEnd').fire('click');await f.flush();assert.equal(nav.budget().dayEnded,true);assert.equal(nav.learningQueue().next.kind,'day-ended');check();assert.ok(nav.allDrafts().length);
+ await win.document.getElementById('studyTimerResumeDay').fire('click');await f.flush();assert.equal(nav.budget().dayEnded,false);check();const before=nav.budget().date;f.tick(86400000);await f.flush();assert.notEqual(nav.budget().date,before);check();assert.ok(nav.allDrafts().length);
+});

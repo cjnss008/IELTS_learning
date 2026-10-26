@@ -48,4 +48,4 @@
 
 - 启动器须兼容 NAS UNC 与含空格路径，缺少 Node 时校验并安装随包运行环境；成功关闭 CMD、失败保留诊断。用户目录、历史版本与资料原件不能在升级时清空。所有服务器测试使用独立临时 dataDir，禁止读取或改写真实配置。
 
-- 0.0.87开发版的正式重建须同时保留 `--require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract.json --gsa-graded-release curriculum/gsa-graded-course/release.json --output-root 本机独立目录`；课程审计也须显式传GSA release。默认75份构建仅用于旧版兼容验证，不得用它覆盖已启用的80份课程产物。
+- 0.0.88开发版的正式重建须同时保留 `--require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract.json --gsa-graded-release curriculum/gsa-graded-course/release.json --output-root 本机独立目录`；课程审计也须显式传GSA release。默认75份构建仅用于旧版兼容验证，不得用它覆盖已启用的80份课程产物。

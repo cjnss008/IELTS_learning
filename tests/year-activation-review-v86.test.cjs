@@ -31,7 +31,7 @@ function rebind(f,components){
 function scriptOrder(text){const entries=[];for(const match of text.matchAll(/<script\b([^>]*)>/gi)){const attrs=new Map();for(const a of match[1].matchAll(/([^\s=]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g))attrs.set(a[1].toLowerCase(),a[2]??a[3]??a[4]??'');if(attrs.get('data-ielts-script')==='1')entries.push({file:attrs.get('data-src'),deferred:attrs.has('defer')||attrs.get('data-ielts-type')==='module'});}return[...entries.filter(e=>!e.deferred),...entries.filter(e=>e.deferred)].map(e=>e.file);}
 
 test('reviewed activation binds every actual production consumer, with a bounded component count',t=>{
- const f=productionContract(t);assert.equal(Policy.PLAYER_PAGES.length,10);assert.equal(Policy.REQUIRED_ROLES.length,36);assert.equal(Policy.MAX_COMPONENTS,40);assert.equal(Policy.componentListProblem(f.value.components),null);assert.equal(f.check().metadata.components.length,36);
+ const f=productionContract(t);assert.equal(Policy.PLAYER_PAGES.length,10);assert.equal(Policy.REQUIRED_ROLES.length,37);assert.equal(Policy.MAX_COMPONENTS,44);assert.equal(Policy.componentListProblem(f.value.components),null);assert.equal(f.check().metadata.components.length,37);
 });
 test('four generic role labels cannot activate a curriculum or substitute another path for a consumer',t=>{
  const f=productionContract(t),roles=new Set(['frontend-adapter','server-catalog','backup-keys','entrypoint']);f.value.components=f.value.components.filter(c=>roles.has(c.role));f.write();assert.throws(f.check);
@@ -40,16 +40,16 @@ test('four generic role labels cannot activate a curriculum or substitute anothe
 test('no required State, Runtime, ownership, budget, persistence, evidence or Player page pin may be omitted',t=>{
  const f=productionContract(t),original=copy(f.value.components);for(const role of Policy.REQUIRED_ROLES){f.value.components=original.filter(c=>c.role!==role);f.write();assert.throws(f.check,undefined,role);}
 });
-test('build rejects duplicate paths, missing byte sizes and more than forty components',t=>{
+test('build rejects duplicate paths, missing byte sizes and more than the bounded component cap',t=>{
  const f=productionContract(t),original=copy(f.value.components),first=original[0];
  for(const bad of [[...original,{...first,role:'extra-alias'}],original.map((r,i)=>i===0?{role:r.role,path:r.path,sha256:r.sha256}:r)]){f.value.components=bad;f.write();assert.throws(f.check);}
- f.value.components=original;for(let i=0;i<5;i++){const relative='assets/optional-'+i+'.js',bytes=Buffer.from('// explicit optional component '+i+'\n');fs.writeFileSync(path.join(f.directory,relative),bytes);f.value.components.push({role:'optional-'+i,path:relative,sha256:sha(bytes),bytes:bytes.length});}f.write();assert.throws(f.check);
+ f.value.components=original;for(let i=0;i<=Policy.MAX_COMPONENTS-Policy.REQUIRED_ROLES.length;i++){const relative='assets/optional-'+i+'.js',bytes=Buffer.from('// explicit optional component '+i+'\n');fs.writeFileSync(path.join(f.directory,relative),bytes);f.value.components.push({role:'optional-'+i,path:relative,sha256:sha(bytes),bytes:bytes.length});}f.write();assert.throws(f.check);
 });
 test('server applies the same role/path, duplicate-file and cap rules before exposing the index',()=>{
  for(const edit of [rows=>rows.filter(r=>['frontend-adapter','server-catalog','backup-keys','entrypoint'].includes(r.role)),rows=>[...rows,{...rows[0],role:'extra-alias'}],rows=>rows.map((row,index)=>index===0?{...row,path:rows[1].path,sha256:rows[1].sha256,bytes:rows[1].bytes}:row)]){
   const f=Fixture.fixture();rebind(f,edit(copy(f.runtimeContract.components)));assert.throws(()=>Catalog.createCatalog(f.catalogOptions).status());assert.equal(f.materialReads().length,0);
  }
- const f=Fixture.fixture(),rows=copy(f.runtimeContract.components);while(rows.length<=40){const index=rows.length;rows.push({role:'optional-'+index,...f.put('assets/optional-'+index+'.js','// bounded optional component\n')});}rebind(f,rows);assert.throws(()=>Catalog.createCatalog(f.catalogOptions).status());assert.equal(f.materialReads().length,0);
+ const f=Fixture.fixture(),rows=copy(f.runtimeContract.components);while(rows.length<=Policy.MAX_COMPONENTS){const index=rows.length;rows.push({role:'optional-'+index,...f.put('assets/optional-'+index+'.js','// bounded optional component\n')});}rebind(f,rows);assert.throws(()=>Catalog.createCatalog(f.catalogOptions).status());assert.equal(f.materialReads().length,0);
 });
 test('warm catalog rechecks changed source bytes instead of trusting an unchanged manifest cache key',()=>{
  const f=Fixture.fixture(),catalog=Catalog.createCatalog(f.catalogOptions);assert.equal(catalog.status().active,true);const row=f.runtimeContract.components.find(c=>c.role==='frontend-adapter');f.files.set(path.resolve(f.root,row.path),Buffer.from('changed consumer after activation'));assert.throws(()=>catalog.status());assert.equal(f.materialReads().length,0);

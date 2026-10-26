@@ -4,24 +4,12 @@
   "protocol": 1,
   "runtimeConnected": true,
   "activationReviewed": true,
-  "review": {
-    "scope": "Root-reviewed GSA append-only ordinary course plus active year integration; runtime public planner is explicitly bound",
-    "realBrowserAccepted": false,
-    "realMicrophoneOrUpstreamAIValidatedThisTurn": false,
-    "independentIELTSAttainmentEvidence": false,
-    "familyReleaseApproved": false,
-    "engineeringNasPerformanceChangeReviewed": true,
-    "gsaReleaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f",
-    "unchangedOwnedLexicalAdapterHeldAtPriorReviewedSource": true,
-    "gsaMistakeCodecReviewed": true,
-    "gsaAliasAnnotationRemovalBoundaryReviewed": true
-  },
   "components": [
     {
       "role": "frontend-adapter",
       "path": "assets/year-first-use-course.js",
-      "sha256": "6185984a887d14208147c89d55675a892c065f42f5df1e0f0fa6c84901ab6801",
-      "bytes": 34856
+      "sha256": "5fbda9c75c41c328c6d0ecbee0b7bc62b5420ecc562dd1fd3a81d50f6b475101",
+      "bytes": 46216
     },
     {
       "role": "queue-state",
@@ -32,8 +20,8 @@
     {
       "role": "queue-runtime",
       "path": "assets/year-first-use-runtime.js",
-      "sha256": "5473e8eb0c64c38a6ad4490fc6d01776f0ac06395d882b162d35036201b5373f",
-      "bytes": 24253
+      "sha256": "66499072a7236f81eb919e4f9130c037ea6267948e3d7236fcadb87db1c4b1f6",
+      "bytes": 27284
     },
     {
       "role": "daily-load",
@@ -44,8 +32,8 @@
     {
       "role": "course-player",
       "path": "assets/course-player.js",
-      "sha256": "4278edb390d563d4026fb17f42f7622c0e494530859ee7a5a0f546c3728a0cdf",
-      "bytes": 230151
+      "sha256": "4b9500824a26f9a7f162b82c052955278b4d72f461d76254bc97cbd81a1a258d",
+      "bytes": 230910
     },
     {
       "role": "today-hub",
@@ -98,14 +86,20 @@
     {
       "role": "learning-records",
       "path": "assets/learning-records.js",
-      "sha256": "a013d95d8866aa8956b6f542063c83c37f6605382995f8a90e22f826e294937e",
-      "bytes": 31435
+      "sha256": "cc59087b4a9e4839bc61c7f242fba908380b304c78d601fdff123eb798552fe6",
+      "bytes": 31691
+    },
+    {
+      "role": "record-snapshot-index",
+      "path": "assets/record-snapshot-index.js",
+      "sha256": "77d6db1e3538d4151eac3505155980077c7cf07dee4d0708f26e22b6a822f63d",
+      "bytes": 6430
     },
     {
       "role": "assessment",
       "path": "assets/assessment-core.js",
-      "sha256": "be4deb8e88ccfece2e2c077edcd5751a22c3947c0c6b32764617d3e0b28dea00",
-      "bytes": 39797
+      "sha256": "1213fd82e082cc0979c07c9cd2084c73b08b3194524c05d44ed2232514c6e8d4",
+      "bytes": 40335
     },
     {
       "role": "adaptive-plan",
@@ -116,8 +110,8 @@
     {
       "role": "year-planner",
       "path": "assets/year-planner.js",
-      "sha256": "2323dfb2b6b4a3fb394870fed7e978f509e99c1e7c178e7f351eea02a4993dfd",
-      "bytes": 25664
+      "sha256": "3a5f732b1f92935fb6ffb3bff53c0735590e253b0768acef56e2ef30e2668e59",
+      "bytes": 26685
     },
     {
       "role": "stage-progression",
@@ -158,8 +152,8 @@
     {
       "role": "runtime-contract-policy",
       "path": "server/year-runtime-contract-policy.cjs",
-      "sha256": "f35e2f26de019eac79e701a6dc4f2c2d2b58bda246dece919d7466945b59cfe5",
-      "bytes": 5685
+      "sha256": "76b5ebefc17f2e97c0e3b285f2f7b9d70af453c5ef6d550ceabeb5d88fe33ea5",
+      "bytes": 5891
     },
     {
       "role": "runtime-contract-validator",
@@ -170,68 +164,68 @@
     {
       "role": "entrypoint",
       "path": "今日学习.html",
-      "sha256": "5cff22003dd3d56c0570a32577f6ca07488f9b119d11d455b8e353debc561887",
-      "bytes": 17003
+      "sha256": "8b485652a04ec80164e75bd8ba06ba7edd50cf3470449098fa7715a4d5a39596",
+      "bytes": 17126
     },
     {
       "role": "player-page-daily-plan",
       "path": "每日学习计划.html",
-      "sha256": "5f721383b9c713bd5695d1b0133fe41b47a1b01222c18a7ab007fa9e3a9a2e4d",
-      "bytes": 15797
+      "sha256": "7c10af5cbd1e8daf649f687bbcebbe734b8c861236a4edcb00993d30da21180b",
+      "bytes": 15920
     },
     {
       "role": "player-page-backup",
       "path": "备份中心.html",
-      "sha256": "51af66acc72a62331b515c3e2f4f2a2e641d4ea68fc0140c5ba5d89186ae900f",
-      "bytes": 8156
+      "sha256": "6e13b133bd0d034ff353a3a497e8045a29c7bd1ad265b946fc2c72f33fd9d694",
+      "bytes": 8279
     },
     {
       "role": "player-page-writing-coach",
       "path": "写作与AI辅导.html",
-      "sha256": "2c20d6ec297d19319150bf22e5f8ff43fffdc2a8b9583d8e0a4887e3cd9c4d2d",
-      "bytes": 11362
+      "sha256": "bc7973be96bdf9a468b1bc9213b631650111f0160b9c19327c104f192a837329",
+      "bytes": 11485
     },
     {
       "role": "player-page-writing-path",
       "path": "写作补强.html",
-      "sha256": "76c96bbfff7b4d1b14b8fcff211a64140a63bad9fc536f13e9ec393f9cc2f271",
-      "bytes": 7994
+      "sha256": "53ac2f5b46b257405d804400f09649e28f1b1bcfe70024f22c7de0dd0c886310",
+      "bytes": 8117
     },
     {
       "role": "player-page-speaking",
       "path": "口语练习.html",
-      "sha256": "4adb8a2b4a0fea1a964b78aa144addf2112932a19b8ab71804b3d8423635a170",
-      "bytes": 14955
+      "sha256": "a079cb25f14b0f8cb139b10485cb52595714bfe306bb09f02526e8a1970a5df0",
+      "bytes": 15078
     },
     {
       "role": "player-page-dialogue",
       "path": "无稿口语.html",
-      "sha256": "234d95776ff72de32bb85e275c70b589c4b5e9579fa9f541a7833796a0bb058a",
-      "bytes": 8795
+      "sha256": "b3f9d235f5ec0b3f6a37dfe184c6442f8b324110bdbe21e89ae68e270d61bafc",
+      "bytes": 8918
     },
     {
       "role": "player-page-memory",
       "path": "词汇记忆.html",
-      "sha256": "a24d3787e218ef1eb42f26ff8374cedddac7f0afa8ed9024df329215e0c91f66",
-      "bytes": 9143
+      "sha256": "f705caf38f1a89fcad836844a4237ec09a43c00b9b17c781b875986e141f9ccb",
+      "bytes": 9266
     },
     {
       "role": "player-page-independent-bank",
       "path": "陌生材料库.html",
-      "sha256": "995e046061bdb9a7419f8a47d9073c2c17a34bdcbcba8645a097a86954221f7e",
-      "bytes": 7263
+      "sha256": "5f0c19c0864957a7ad21fe86045c7a418f4b14e0f92d93a5cc8609747faf5bd7",
+      "bytes": 7380
     },
     {
       "role": "player-page-human-sources",
       "path": "真人听力来源.html",
-      "sha256": "4cc2f2bf500d2d58f98baf13b4c371c7584603f9108a042c73500983a04785f6",
-      "bytes": 2984
+      "sha256": "0d0b2ac0bfbc4be84eb0431edce9d1a7e70be08bffa98c0adc610d9cd18ae63a",
+      "bytes": 3101
     },
     {
       "role": "backup-page-calibration",
       "path": "评分校准.html",
-      "sha256": "166f65efcbc6a2ca3566cee3b119f0fbf6b10dc9003ca2067c806add1e1465af",
-      "bytes": 12154
+      "sha256": "3ae166b56f6f7caa1b077cf5a4278fa230623ae40680e289691c97b6257c03fd",
+      "bytes": 12277
     },
     {
       "role": "context-vocabulary-course",

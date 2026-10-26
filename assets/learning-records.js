@@ -131,8 +131,8 @@
     let value=parseState(initial),chain=Promise.resolve();return{read:async()=>copy(value),transaction(fn){const operation=chain.then(()=>{const result=fn(copy(value));value=copy(result.state);return copy(result.value);});chain=operation.catch(()=>{});return operation;}};
   }
   function createStore(adapter,options={}){
-    const notify=options.notify||(()=>{}),clock=options.now||(()=>new Date().toISOString());
-    return{async list(filter={}){const state=parseState(await adapter.read(),clock());return state.records.filter(r=>Object.keys(filter).every(k=>['dayNumber','taskId','skill'].includes(k)&&r[k]===filter[k]));},
+    const notify=options.notify||(()=>{}),clock=options.now||(()=>new Date().toISOString());let snapshotBoundary=null;
+    return{async list(filter={}){const index=root.IELTSRecordSnapshotIndex;if(index?.available?.()){snapshotBoundary||=index.createStoreBoundary();const records=await snapshotBoundary.read(()=>adapter.read(),clock);return snapshotBoundary.select(records,filter);}const state=parseState(await adapter.read(),clock());return state.records.filter(r=>Object.keys(filter).every(k=>['dayNumber','taskId','skill'].includes(k)&&r[k]===filter[k]));},
       async record(input){const result=await adapter.transaction(state=>{const r=put(state,input,clock());return{state:r.state,value:{record:r.record,duplicate:r.duplicate}};});if(!result.duplicate)notify(result.record);return result;},
       async update(recordId,patch,changeId){const result=await adapter.transaction(state=>{const r=updateState(state,recordId,patch,changeId,clock());return{state:r.state,value:{record:r.record,duplicate:r.duplicate}};});if(!result.duplicate)notify(result.record);return result.record;},
       async exportState(){return parseState(await adapter.read(),clock());},async exportRawState(){return adapter.read();},

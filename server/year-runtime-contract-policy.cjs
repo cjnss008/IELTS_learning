@@ -4,7 +4,7 @@ const RUNTIME_SOURCE=(()=>{const fs=require('node:fs'),crypto=require('node:cryp
 
 // Shared by the explicit build validator and the running catalog. Roles identify
 // reviewed consumers, so arbitrary files cannot impersonate a required consumer.
-const MAX_COMPONENTS=40;
+const MAX_COMPONENTS=44;
 const REQUIRED_COMPONENTS=Object.freeze({
  'frontend-adapter':'assets/year-first-use-course.js',
  'queue-state':'assets/year-first-use-state.js',
@@ -20,6 +20,7 @@ const REQUIRED_COMPONENTS=Object.freeze({
  'profile-bootstrap':'assets/user-data-bootstrap.js',
  'profile-store':'assets/profile-store.js',
  'learning-records':'assets/learning-records.js',
+ 'record-snapshot-index':'assets/record-snapshot-index.js',
  'assessment':'assets/assessment-core.js',
  'adaptive-plan':'assets/adaptive-plan.js',
  'year-planner':'assets/year-planner.js',
@@ -72,6 +73,7 @@ function pageDependencyProblem(file,text){
  if(!bootstrap)return 'profile bootstrap must guard '+file;
  const ordered=[...entries.filter(e=>!e.deferred),...entries.filter(e=>e.deferred)].map(e=>e.file);
  const before=(first,last)=>ordered.filter(v=>v===first).length===1&&ordered.filter(v=>v===last).length===1&&ordered.indexOf(first)<ordered.indexOf(last);
+ if(!before('assets/record-snapshot-index.js','assets/learning-records.js'))return 'immutable record index must execute before Records on '+file;
  if(PLAYER_PAGES.includes(file)&&!before('assets/year-first-use-course.js','assets/course-player.js'))return 'year adapter must execute before Player on '+file;
  if(file==='今日学习.html'&&(!before('assets/year-first-use-state.js','assets/year-first-use-runtime.js')||!before('assets/year-first-use-runtime.js','assets/year-first-use-course.js')))return 'State, Runtime and Course must execute in order on '+file;
  if(BACKUP_PAGES.includes(file)&&!before('assets/year-first-use-state.js','assets/backup-core.js'))return 'year State must execute before Backup on '+file;

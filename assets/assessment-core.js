@@ -31,7 +31,8 @@
     else{if(Object.prototype.toString.call(value)!=='[object Object]')throw Error('Material snapshot is not a plain object');result='{'+Object.keys(value).sort().map(key=>{const descriptor=Object.getOwnPropertyDescriptor(value,key);if(!descriptor||descriptor.get||descriptor.set)throw Error('Material snapshot has an accessor');return JSON.stringify(key)+':'+stableMaterialJSON(descriptor.value,depth+1,seen);}).join(',')+'}';}
     seen.delete(value);return result;
   }
-  function materialContentHash(material) { return sourceTextHash(stableMaterialJSON(material)); }
+  let immutableMaterialHash=null,immutableMaterialIndex=null;
+  function materialContentHash(material) { const index=root.IELTSRecordSnapshotIndex;if(index?.memoizeTrustedObject){if(index!==immutableMaterialIndex){immutableMaterialIndex=index;immutableMaterialHash=index.memoizeTrustedObject(value=>sourceTextHash(stableMaterialJSON(value)));}return immutableMaterialHash(material);}return sourceTextHash(stableMaterialJSON(material)); }
   function sourceTextHash(text) {
     if(typeof text!=='string')throw Error('Source text must be a string');
     if(typeof require==='function')try{return require('node:crypto').createHash('sha256').update(text,'utf8').digest('hex');}catch(_){}
@@ -142,13 +143,13 @@
   }
   function decodeArtifact(record) {
     try {
-      const value = JSON.parse(record?.answer || '{}');
+      const cached = root.IELTSRecordSnapshotIndex?.parsedAnswer?.(record), value = cached?.available ? cached.value : JSON.parse(record?.answer || '{}');
       return value && value.schema === 1 && typeof value === 'object' && !Array.isArray(value) ? value : null;
     } catch (_) { return null; }
   }
   function decodeReview(record) {
     try {
-      const value = JSON.parse(record?.evaluation?.feedback || '{}');
+      const cached = root.IELTSRecordSnapshotIndex?.parsedReview?.(record), value = cached?.available ? cached.value : JSON.parse(record?.evaluation?.feedback || '{}');
       return value && Array.isArray(value.rounds) ? value : null;
     } catch (_) { return null; }
   }
