@@ -1,8 +1,14 @@
 # IELTS Learning · 52 周 Academic 自学
 
-当前版本：**0.0.72**（见 [VERSION](VERSION)）。
+当前版本：**0.0.73**（见 [VERSION](VERSION)）。
 
 面向成人近零基础学习者的本机自学软件。课程覆盖 **52 周核心课程与第 365 天年度复盘**，以 Academic IELTS 听、说、读、写每一项 7.0 为课程设计与分项验证目标；完成课程和能力达标分别记录。每天 6 小时是学习与番茄休息共用的总可用预算，完成后按预计耗时和剩余时间继续；时间、重复题正确率和 AI 估计都不是考试成绩保证。
+
+## 0.0.73 稳定学习与后续开发分离
+
+家人继续使用原目录 `\\mynas\family\IELTS_52篇学习包` 的 `main` 稳定版。后续课程在 `\\mynas\family\IELTS_learning开发` 的 `develop` 开发，按 `0.0.80`、`0.0.90` 等每10个补丁检查点验收合并。详见[开发与发布流程](docs/development-workflow.md)。
+
+开发服务使用独立端口和显式本地测试数据目录，不导入正式学习档案或已有密钥；误点开发目录中的普通启动器会在创建用户目录前停止。家人的启动方式保持不变。38项启动与隔离专项检查通过。
 
 ## 0.0.72 基础口语评价要求对齐
 
@@ -336,7 +342,7 @@ v4 同一原稿的完整报告为听 A2、读 A2、写 B1、说 A2，共同起�
 
 0.0.50正式Edge已完成旧缓存迁入用户文件夹、清空、恢复与再次清空；旧课程、错题和媒体恢复一致，清空时保留DeepSeek／Ali配置和写作签名，真实语音授权刷新成功。新独立库、七种图表、听力后台完整播放与草稿恢复／删除已做真实浏览器操作；个人拟合启用、回滚和拒用用明确标为SIMULATED的预览档案验证，未作为真实用户成绩。0.0.60 轮增加两个真实模型的新旧规则对照和六份跨来源Task 1/2留出盲评，以及番茄钟跨页计时／实际休息结束暂停和新真人音频浏览器检查。这些属于此前版本的历史结果。真人麦克风、Omni／ASR自由表达和真实长期成效仍有独立验证缺口。
 
-固定开发目录为 `\\mynas\family\IELTS_52篇学习包`，远端为 [cjnss008/IELTS_learning](https://github.com/cjnss008/IELTS_learning)。版本和本地提交／每十版推送规则见 [AGENTS.md](AGENTS.md)；实现状态见 [开发规划](开发规划与资料清单.md)。
+正式学习目录为 `\\mynas\family\IELTS_52篇学习包`（main）；独立开发目录为 `\\mynas\family\IELTS_learning开发`（develop）。远端为 [cjnss008/IELTS_learning](https://github.com/cjnss008/IELTS_learning)。版本和本地提交／每十版推送规则见 [AGENTS.md](AGENTS.md)；实现状态见 [开发规划](开发规划与资料清单.md)。
 
 ```powershell
 git lfs install

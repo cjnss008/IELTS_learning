@@ -52,6 +52,10 @@ $lockStream = $null
 $stage = $null
 try {
   $ProjectRoot = [IO.Path]::GetFullPath($ProjectRoot)
+  $developmentName = 'IELTS_learning' + [char]0x5f00 + [char]0x53d1
+  if ([IO.Path]::GetFileName($ProjectRoot.TrimEnd('\', '/')) -ieq $developmentName) {
+    throw 'This development worktree must use tools/start-development.cjs with an explicitly initialized isolated local data directory. The normal launcher has not read or created user data.'
+  }
   if (-not $DataDir) { $DataDir = Join-Path $ProjectRoot '用户数据' }
   if ($DataDir -notmatch '^(?:[A-Za-z]:[\\/]|\\\\[^\\/]+[\\/][^\\/]+(?:[\\/]|$))') { throw 'IELTS_DATA_DIR must be an absolute drive or UNC share path.' }
   $DataDir = [IO.Path]::GetFullPath($DataDir)

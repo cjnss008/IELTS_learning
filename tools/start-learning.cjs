@@ -184,6 +184,7 @@ function serve(options = {}) {
 }
 
 async function main(argv = process.argv.slice(2), options = {}) {
+  if (path.basename(PROJECT_ROOT).toLowerCase() === 'ielts_learning开发') throw new LauncherError('DEVELOPMENT_WORKTREE', '开发工作树请使用 node tools/start-development.cjs --data-dir "本地专用绝对路径" --init；普通启动器不会启动正式端口或读取用户数据。');
   const nodeMajor = Number(String(options.nodeVersion || process.versions.node).split('.')[0]);
   if (nodeMajor < 22) throw new LauncherError('NODE_VERSION', '请先安装Node.js 22或更新的LTS版本，然后重新打开“启动学习.cmd”。');
   let daemon = false, port = options.port ?? process.env.IELTS_PORT;
