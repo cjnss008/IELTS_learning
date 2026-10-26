@@ -200,6 +200,7 @@
     const resolved=resolveArtifactMaterial(material,artifact,record);
     if(!resolved.valid)return{pass:false,pending:true,reasons:[resolved.reason],artifact};
     if(practiceOnlyMaterial(material)||practiceOnlyMaterial(resolved.material))reasons.push('此来源仅用于普通练习，不提供独立测评或进阶迁移证据');
+    if(Object.hasOwn(artifact,'lessonSupplement'))reasons.push('本次属于普通课程补充，不提供独立测评或进阶新材料证据');
     material=resolved.material;
     if (record.materialId !== material.id || String(record.materialVersion || artifact.materialVersion) !== String(material.version)) reasons.push('材料或版本不匹配');
     if (artifact.mode !== 'assessment') reasons.push('这是练习记录，不是独立测评');

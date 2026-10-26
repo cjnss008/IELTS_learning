@@ -58,7 +58,7 @@ function build(options={}){
    else if(material?.skill==='vocabulary'){try{const vocabulary=options.vocabulary||dependency('IELTSVocabularyPractice','./vocabulary-practice.js'),verified=vocabulary?.verifyTrainingArtifact(hub.artifact(record.answer),material);if(verified?.submitted&&!verified.mastered)errors.push(record);}catch(_){}}
   }
   const essential=day.day===currentDay?root.IELTSEssentialCourse?.state?.({day:day.day,data,records,drafts,budget,now:options.now,dayPlan:day,completionValid:summary.completionValid}):null;
-  const essentialRequired=day.requirements?.essential===true||essential?.required===true;
+  const essentialRequired=essential?.historical?false:day.requirements?.essential===true||essential?.required===true;
   if(essentialRequired&&essential?.applicable&&!essential.done){readiness.ready=false;readiness.reason='请先完成今天安排的8000词训练份额；原稿保留，未完成部分按预算顺延。';const vocabulary=states.find(s=>s.task.id==='vocabulary');if(vocabulary){vocabulary.done=false;vocabulary.essential=essential;}}
   const reflection=states.find(s=>s.task.id==='reflection'),done=readiness.ready&&errors.length===0&&!summary.remaining&&!summary.unreadable&&(reflection?reflection.done:summary.completionValid===true);
   const result={day,own,states,summary,errors,readiness,done,essential,essentialRequired};cache.set(day.day,result);return result;
@@ -126,7 +126,7 @@ function build(options={}){
  }
  const optionalEssential=currentState?.essential;
  if(optionalEssential?.applicable&&!optionalEssential.done&&!currentState.essentialRequired){
-  const review=optionalEssential.plan?.due?.length>0,entry={...base(currentState.day,'vocabulary','essential-daily'),kind:'essential-vocabulary',optional:true,required:false,label:'可选：'+optionalEssential.label,reason:'本日保留原计划完成状态。'+optionalEssential.message,href:optionalEssential.href,estimatedMinutes:optionalEssential.estimatedMinutes};
+  const review=optionalEssential.plan?.due?.length>0,entry={...base(currentState.day,'vocabulary','essential-daily'),kind:'essential-vocabulary',optional:true,required:false,label:'可选：'+optionalEssential.label,reason:'本日保留原计划完成状态。'+optionalEssential.message,href:optionalEssential.historical&&target?'词汇记忆.html?day='+target.day+'&reviewFrom='+currentState.day.day+(root.IELTSProfiles?.isPreview?.()?'&preview=1':''):optionalEssential.href,estimatedMinutes:optionalEssential.estimatedMinutes};
   if(review)entries.unshift(entry);else add(entry);
  }
  // An already-active core draft and due review retain priority. Saved public
@@ -135,6 +135,12 @@ function build(options={}){
  if(activeCore&&entries.some(e=>e.publicSupplement&&e.draftId)){entries.splice(entries.indexOf(activeCore),1);entries.unshift(activeCore);}
  const dueEssential=entries.find(e=>e.kind==='essential-vocabulary'&&currentState?.essential?.plan?.due?.length);
  if(dueEssential&&entries.some(e=>e.publicSupplement&&e.draftId)){entries.splice(entries.indexOf(dueEssential),1);entries.unshift(dueEssential);}
+ const supplement=options.lessonVocabularySupplement||(root.document?root.IELTSLessonVocabularySupplement:null),supplementDay=target||currentState?.day;
+ if(supplement&&supplementDay){
+  let offered;try{offered=supplement.plan({...options,data,day:supplementDay,ownerComplete:!!blockedReason||!target||state?.done,adaptive:adaptivePlan,records,drafts,budget});}catch(_){offered={pending:true,reason:'补充词汇状态待核验，原课程保留。'};}
+  if(offered?.available){const owner=offered.day||supplementDay.day;add({day:owner,taskId:'vocabulary',materialId:offered.material.id,kind:'extra',entry:{kind:'lesson-vocabulary-supplement',skill:'vocabulary',materialId:offered.material.id,lessonSupplement:offered.contract,strategy:'第2课新增7个原句词；三写三读与三轮测试按完整7词进行，原稿归当前课次。'},lessonSupplement:true,optional:true,required:false,draftId:offered.draftId,title:'第2课新增7词',label:offered.draftId?'继续第2课新增词草稿':'可选：补学第2课新增7词',reason:'使用已审核原句；本次原稿、错题与用时归第 '+owner+' 课，不改变旧课完成状态。'});}
+  else if(offered?.pending)add({day:supplementDay.day,taskId:'vocabulary',materialId:supplement.ID,kind:'blocked',lessonSupplement:true,optional:true,required:false,title:'第2课新增7词待补',label:'第2课新增7词待补',reason:offered.reason});
+ }
  // Extra work remains separate from core completion. Reuse planner eligibility,
  // then admit each actual learning unit with its own completion-time prediction.
  let plan;try{plan=options.extraPlan?.(extraDay,{...budget,remainingMinutes:360,spentMinutes:0});}catch(_){}
