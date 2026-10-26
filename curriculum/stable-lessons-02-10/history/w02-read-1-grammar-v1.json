@@ -1,0 +1,95 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定；v69明确猫的指代上下文或移除重复干扰项，原正确答案值保留。",
+    "model": "deepseek-flash",
+    "contentHash": "118fd0511a06a0cfa561f30ffb0732eebed4a6915818933615dd172467f9549c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "This is my cat. She is on the desk. ___ is small.",
+      "options": [
+        "He",
+        "She",
+        "It"
+      ],
+      "answers": [
+        "She"
+      ],
+      "explanation": "前一句已经用 She 指这只猫，因此这里继续用 She。若只说 This is a cat 而没有说明性别，It 也可以，不能仅凭“猫”就判断必须用 She。",
+      "evidence": "This is my cat. She is on the desk. She is small."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "This is a boy. ___ is my friend.",
+      "options": [
+        "He",
+        "She",
+        "It"
+      ],
+      "answers": [
+        "He"
+      ],
+      "explanation": "boy 是男性，用 he 指代。",
+      "evidence": "He is my friend."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "This is a girl. ___ is my friend.",
+      "options": [
+        "He",
+        "She",
+        "It"
+      ],
+      "answers": [
+        "She"
+      ],
+      "explanation": "girl 是女性，用 she 指代。",
+      "evidence": "She is small."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "This is ___ apple.",
+      "options": [
+        "a",
+        "an"
+      ],
+      "answers": [
+        "an"
+      ],
+      "explanation": "apple 以元音音素开头，用 an。",
+      "evidence": "A pen is on the desk."
+    }
+  ],
+  "id": "w02-read-1-grammar",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "he / she / it；is；a / an；单数名词；this / that",
+  "estimatedMinutes": 15,
+  "instructions": "先读懂解释，再独立完成句子。订正后换句复测。",
+  "passage": "英语中，我们用 he 指代男性，she 指代女性或雌性动物（如猫、狗等），it 指代物品或不知道性别的动物。is 是 be 动词，用于单数主语。a 和 an 表示“一个”，a 用在辅音音素开头的单词前，an 用在元音音素开头的单词前。单数名词表示一个人或物。this 指近处的人或物，that 指远处的人或物。\n\nThis is my desk. It is small. She is small. That is my bag."
+}

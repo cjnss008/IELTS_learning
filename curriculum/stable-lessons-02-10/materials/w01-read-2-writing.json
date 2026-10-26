@@ -1,0 +1,41 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "46937c6fa519a1b191c373343e016c00f01da3b8928ea2b13cc903fc4718982d",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "69472b475b2490b75cfe59cee3c924f30e19962840b556320be562e3a3c76aa4"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-2-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "My First English Class · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "给一位新同学写2—8个简单句、至少12词。I 指你自己，You 指收到留言的同学；可以用真实或自编的信息。先独立写原稿，再按反馈订正，不照抄课文或完整示例。",
+  "prompt": "Write 2–8 simple sentences to a new classmate. Introduce yourself with I am, then say one thing about the classmate with You are. Use your own information or an invented situation. Write at least 12 words. Do not copy the lesson example.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

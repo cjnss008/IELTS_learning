@@ -1,0 +1,360 @@
+{
+  "id": "w01-read-3",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My First English Class",
+  "instructions": "这是模拟练习材料，不是官方雅思考试。请先阅读短文，然后回答8个问题。问题有单选和填空两种。填空答案必须来自短文，且不超过字数限制。所有解释用中文。",
+  "passage": "A. Hello. I am Tom. I am a student. This is my first English class. I am happy.\n\nB. This is Li Ming. He is my friend. We are in the same class. We are students. We are happy.\n\nC. Miss Wang is our teacher. She is nice. She says, \"Hello, I am Miss Wang.\" We say, \"Hello, Miss Wang.\"",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "In paragraph A, what does Tom say his role as a learner is?",
+      "options": [
+        "学生",
+        "老师",
+        "医生"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "A 段说 I am a student.。",
+      "evidence": "I am a student.",
+      "originalPrompt": "A 段中，Tom 介绍自己的学习身份是什么？",
+      "optionsEnglish": [
+        "Student",
+        "Teacher",
+        "Doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "e97b2f8ed241bf08dfe43f7a33e43ac1260a8f0f5c3d4f7e8c6d26188b2f6a20",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "In paragraph A, which class is this?",
+      "options": [
+        "英语课",
+        "语文课",
+        "数学课"
+      ],
+      "answers": [
+        "英语课"
+      ],
+      "explanation": "A 段明确说 first English class。",
+      "evidence": "This is my first English class.",
+      "originalPrompt": "A 段说这是哪一门课？",
+      "optionsEnglish": [
+        "English class",
+        "Chinese class",
+        "Math class"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "607af78fe652113fa3f74469bcef500fcfe2faae25ee9d7c315cf621d17f47b7",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "In paragraph B, what is the relationship between Li Ming and Tom?",
+      "options": [
+        "朋友",
+        "师生",
+        "兄弟"
+      ],
+      "answers": [
+        "朋友"
+      ],
+      "explanation": "Tom 用 my friend 介绍 Li Ming。",
+      "evidence": "He is my friend.",
+      "originalPrompt": "B 段中，Li Ming 和 Tom 是什么关系？",
+      "optionsEnglish": [
+        "Friends",
+        "Teacher and student",
+        "Brothers"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "b8677e3f2d93a42df56b08f1a3fa5efe5094081af93e4ef7f76edf5fd32e0705",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How does paragraph B describe the class the two are in?",
+      "options": [
+        "在同一个班",
+        "在不同班",
+        "没有说明班级关系"
+      ],
+      "answers": [
+        "在同一个班"
+      ],
+      "explanation": "same class 表示同一个班。",
+      "evidence": "We are in the same class.",
+      "originalPrompt": "B 段怎样说明两人所在的班级？",
+      "optionsEnglish": [
+        "In the same class",
+        "In different classes",
+        "It does not say what class they are in"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "d15e9f25572273038ea09c296252a0ee2be78c8fd927c35035acaea13c2be76f",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "In paragraph C, what are the teacher's title and family name?",
+      "options": [
+        "Miss Wang",
+        "Miss Li",
+        "Miss Chen"
+      ],
+      "answers": [
+        "Miss Wang"
+      ],
+      "explanation": "C 段以 Miss Wang 介绍老师。",
+      "evidence": "Miss Wang is our teacher.",
+      "originalPrompt": "C 段老师的称呼和姓氏是什么？",
+      "optionsEnglish": [
+        "Miss Wang",
+        "Miss Li",
+        "Miss Chen"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "d63b482845cbaee96f92229d5f43eae3ea0dd26a470770d81aa04446f4d5c8e9",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "In paragraph A, how does Tom say he feels? Fill in one word from the text.",
+      "answers": [
+        "happy"
+      ],
+      "maxWords": 1,
+      "explanation": "本题提取原文的心情信息，不再用无需阅读也能做的 be 动词配对代替理解题。",
+      "evidence": "I am happy.",
+      "originalPrompt": "A 段中，Tom 说自己的心情怎样？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "4670fda8c04d84f343caa40c2b0a9075e154e5cfc92b38af943c1881cc7cede9",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "In paragraph C, which English word is used to describe the teacher? Fill in one word from the text.",
+      "answers": [
+        "nice"
+      ],
+      "maxWords": 1,
+      "explanation": "C 段直接说老师 nice。",
+      "evidence": "She is nice.",
+      "originalPrompt": "C 段用哪个英文词形容老师？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "25227fc0a5a6047eefddc496194617400e96b3d6fcec188b9c72bbb28dda893c",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "In paragraph C, what is the first English word everyone says when greeting the teacher?",
+      "answers": [
+        "Hello"
+      ],
+      "maxWords": 1,
+      "explanation": "结尾大家说 Hello, Miss Wang.，第一个词是问候词。",
+      "evidence": "We say, \"Hello, Miss Wang.\"",
+      "originalPrompt": "C 段中，大家向老师打招呼时说的第一个英文词是什么？",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "41f9bde2577424059b303b1269f5da3e9b26adeafddbe655e87f2f525e8981e4",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Tom."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "first",
+      "meaning": "第一",
+      "example": "This is my first English class."
+    },
+    {
+      "word": "English",
+      "meaning": "英语",
+      "example": "This is my first English class."
+    },
+    {
+      "word": "class",
+      "meaning": "课；班级",
+      "example": "We are in the same class."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "He is my friend."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "Miss Wang is our teacher."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，主语是“我”时用 I，搭配 am；主语是“你”或“你们”时用 you，搭配 are；主语是“我们”时用 we，搭配 are。句首字母要大写，句末用句号。",
+    "example": "I am a student. You are a student. We are students.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "I am happy.",
+          "I is happy.",
+          "I are happy."
+        ],
+        "answers": [
+          "I am happy."
+        ],
+        "explanation": "主语是 I 时，be 动词用 am。",
+        "evidence": "I am happy."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "You are a student.",
+          "You is a student.",
+          "You am a student."
+        ],
+        "answers": [
+          "You are a student."
+        ],
+        "explanation": "主语是 you 时，be 动词用 are。",
+        "evidence": "You are a student."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "Fill in the blank: I ___ a teacher. (用 am 或 are 填空)",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "主语是 I，所以用 am。",
+        "evidence": "I am a teacher."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "Fill in the blank: You ___ my friend. (用 am 或 are 填空)",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是 you，所以用 are。",
+        "evidence": "You are my friend."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you happy?",
+        "Who is your friend?"
+      ],
+      "part2": "Describe your first English class. You should say:",
+      "part2Bullets": [
+        "where it is",
+        "who your teacher is",
+        "who your friend is",
+        "how you feel"
+      ],
+      "part3": [
+        "Is English easy for you?",
+        "Who is your English teacher?",
+        "Are you and your friend in the same class?",
+        "What do you say to your teacher?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences to a friend in your English class. Introduce yourself with I am. Say one thing to your friend with You are. Use We are for yourself and that friend together. Use your own or invented names and class details. Write at least 12 words. Do not copy a lesson example."
+  },
+  "rubric": {
+    "taskType": "A0 reading comprehension with basic grammar and transfer tasks (simulated practice, not official IELTS)"
+  },
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "21a23bfed700ec0b6022fbaf2c70300d8a1e2cce2c9e89e4b9578b26f3ba64b8",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric",
+      "minWords",
+      "maxWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "ac9df6d48de9ab5aeef6102aabf768d81fb726457372817cedf7df989e51f1a3"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

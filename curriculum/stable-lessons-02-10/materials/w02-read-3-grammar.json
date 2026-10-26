@@ -1,0 +1,95 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "444baab58750abf4d41cdecb60c42015b2fa186383de051172b8a3be5c33e377",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "45ae7c190214b1e5d6f2e7402c612aa906060c561120438d2fbdbc430fc12a75"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "___ is my mother. (She / He / It)",
+      "options": [
+        "She",
+        "He",
+        "It"
+      ],
+      "answers": [
+        "She"
+      ],
+      "explanation": "mother 是女性，所以用 She。",
+      "evidence": "she 通常指女性"
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "第一次介绍一个未特指的苹果。请用不定冠词 a 或 an 填空：This is ___ apple.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "answers": [
+        "an"
+      ],
+      "explanation": "apple 以元音音素开头，所以用 an。",
+      "evidence": "紧接着的读音以辅音音素开头用 a，以元音音素开头用 an"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "不知道这只猫的性别，也不把它拟人化。用本课表示这种情况的代词填空：___ is a cat.",
+      "options": [
+        "He",
+        "She",
+        "It"
+      ],
+      "answers": [
+        "It"
+      ],
+      "explanation": "没有说明动物性别、也不作拟人化表达时，通常用 It；不能仅凭“cat 是动物”就断言所有语境都必须用 It。",
+      "evidence": "没有说明动物性别、也不作拟人化表达时，通常用 it。"
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "用指示代词指近处的一本书：___ is a book. (This / These / Those)",
+      "options": [
+        "This",
+        "These",
+        "Those"
+      ],
+      "answers": [
+        "This"
+      ],
+      "explanation": "指近处的一本书用单数 This；These 和 Those 指复数，不能与这里的 is a book 搭配。",
+      "evidence": "this 指近处的单个人或物"
+    }
+  ],
+  "id": "w02-read-3-grammar",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "he / she / it；is；a / an；this / that",
+  "estimatedMinutes": 15,
+  "instructions": "先读懂解释，再独立完成句子。订正后换句复测。",
+  "passage": "he 通常指男性，she 通常指女性；已知动物性别时也可以用 he 或 she。没有说明动物性别、也不作拟人化表达时，通常用 it。\n\nhe、she、it 或表示单个人／物的第三人称名词作主语时，be 动词用 is；I 用 am，you 用 are。is 可以连接身份、状态或位置，不能一律翻译成“是”。\n\n第一次介绍一个未特指的单数可数名词时，常用 a 或 an：紧接着的读音以辅音音素开头用 a，以元音音素开头用 an。this 指近处的单个人或物，that 指较远处的单个人或物。\n\nHe is a teacher. She is a student. It is a blue bag. This is her bag. That is a red bag."
+}

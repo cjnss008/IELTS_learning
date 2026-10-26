@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "status": "accepted-final-content-and-formal-build",
+  "reviewer": "root independent AI review, not human examiner",
+  "invalidated": "Reading entries from candidate-v1/blind-review.json selected an unused transcript; they are not accepted as reading evidence.",
+  "readingSource": "reading-correct-source-blind-v2.json",
+  "readingSourceSHA256": "1cdf0db909ce01b2128a1a8366ed45b3cf6b8ca9daacafbd09b53b517c4e508f",
+  "derivedAnswers": {
+    "w01-read-4": {
+      "q8": "Goodbye"
+    },
+    "w01-read-5": {
+      "q1": "A new student",
+      "q5": "Hello. I am Lin."
+    },
+    "w02-read-1": {
+      "q1": "A pen",
+      "q2": "A book",
+      "q3": "A cat",
+      "q4": "A bag",
+      "q8": "A desk"
+    },
+    "w01-listen-3": {
+      "q3": "Student",
+      "q5": "new",
+      "q8": "Welcome"
+    },
+    "w01-listen-5": {
+      "q4": "student"
+    },
+    "w01-listen-6": {
+      "q6": "new"
+    },
+    "w02-listen-1": {
+      "q2": "a pen",
+      "q5": "a table",
+      "q7": "small",
+      "q8": "old"
+    },
+    "w02-listen-3": {
+      "q3": "new",
+      "q7": "small"
+    },
+    "w02-read-1-grammar": {
+      "q1": "She",
+      "q3": "She",
+      "q4": "an"
+    },
+    "w02-read-3-grammar": {
+      "q1": "She",
+      "q2": "an",
+      "q3": "It",
+      "q4": "This"
+    }
+  },
+  "provisionalFindings": [
+    "Revised farewell wording selects Goodbye; the discarded final-word phrasing was not reliable against the incorrectly exported transcript.",
+    "Reading desk questions identify sequential explicitly mentioned items; useful early locating practice, not four independent comprehension skills.",
+    "Grammar revisions distinguish I/am and you/are from third-person singular/is, condition pronoun choice on known reference, and choose a/an by following sound.",
+    "All 18 grammar/speaking/writing candidate-v2 material deltas were read. Recipient and pronoun scope clarifications are appropriate; local word requirements and reference audio remain unchanged.",
+    "Lesson 3–6 apply and review established structures; lesson 7 is review, not an unseen assessment. No claim of 8000 contextual words or 365-day outcome validation.",
+    "Final check still required for cross-question answer leakage, explanations, immutable day1 materials and formal reproducible build."
+  ],
+  "finalContentManifestSHA256": "7258ed0405db5ebd5791c9b254491b0937e1c98d1096e7bec4d8c610f6d85f91",
+  "finalBlindSHA256": "8ad74eed9ded7f4e5f10db1e92b0e1bbd1f31061d05c11a732a0bf0577c57af0",
+  "formalRuntimeSHA256": "c2e211d0346071e7178393ef073d81d00e76c540c7bf259d1f82bcaa529b13ca",
+  "finalChecks": [
+    "Final five revised explanations and contiguous evidence reviewed against exact text.",
+    "All 25 materials equal the reviewed candidate; only formal planner fingerprints and material references were recomputed.",
+    "Every course day unchanged; all 11 day-1 materials unchanged.",
+    "Nine portable legacy binding and build contract tests passed."
+  ]
+}

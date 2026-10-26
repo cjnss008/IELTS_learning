@@ -1,0 +1,349 @@
+{
+  "id": "w01-listen-5",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 5,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0初学者编写的模拟听力练习，不是官方考试。请先听录音（或阅读录音文字），然后回答8个问题。问题只有中文说明，选项为完整英文句子。填空题答案必须与录音原文完全一致，且不超过规定字数。",
+  "passage": "",
+  "transcript": "Anna: Hello. I am Anna. Are you a student?\nLi Wei: Yes, I am. I am Li Wei. Are you a student too?\nAnna: No, I am not. I am a teacher. I am from London.\nLi Wei: I am from Shanghai. Are you from China?\nAnna: No, I am not. I am from England. You are from China.\nLi Wei: Yes. You are a teacher. I am a student. Goodbye!\nAnna: Goodbye!",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which city is Anna from?",
+      "options": [
+        "London",
+        "Shanghai",
+        "Beijing"
+      ],
+      "answers": [
+        "London"
+      ],
+      "explanation": "录音说 I am from London.，本题只问城市。",
+      "evidence": "I am from London.",
+      "originalPrompt": "Anna 来自哪个城市？",
+      "optionsEnglish": [
+        "London",
+        "Shanghai",
+        "Beijing"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "363c6d33b57a20945463df0e49e20bf55c8e341c61af215ace09e245f0396ad7",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which city is Li Wei from?",
+      "options": [
+        "Shanghai",
+        "London",
+        "Beijing"
+      ],
+      "answers": [
+        "Shanghai"
+      ],
+      "explanation": "Li Wei 直接说自己来自 Shanghai。",
+      "evidence": "I am from Shanghai.",
+      "originalPrompt": "Li Wei 来自哪个城市？",
+      "optionsEnglish": [
+        "Shanghai",
+        "London",
+        "Beijing"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "0d27968b7b33d3d35f1f4782ae919bb806e33a62747cd2a270174c2bbc0b72ed",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What job does Anna clearly say she has?",
+      "options": [
+        "老师",
+        "学生",
+        "医生"
+      ],
+      "answers": [
+        "老师"
+      ],
+      "explanation": "Anna 明说自己是老师，并明确否认学生身份。",
+      "evidence": "No, I am not. I am a teacher.",
+      "originalPrompt": "Anna 明确介绍的身份是什么？",
+      "optionsEnglish": [
+        "teacher",
+        "student",
+        "doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "93c9c0b0870414a2d02792c8a792b0032ff459c1172c4fda684c892b15647a2f",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What job does Li Wei clearly say he has?",
+      "options": [
+        "学生",
+        "老师",
+        "医生"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "Li Wei 先肯定学生身份，后来再次说 I am a student.。",
+      "evidence": "I am a student.",
+      "originalPrompt": "Li Wei 明确介绍的身份是什么？",
+      "optionsEnglish": [
+        "student",
+        "teacher",
+        "doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "eb0ac7bdff6ac65d63998f85bf1eabcab92dea173e3d80123dd59ee854e8332c",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "What name does the first speaker give?",
+      "options": [
+        "Anna",
+        "Li Wei",
+        "Mei"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "录音开头的 I am 后给出第一位说话者的姓名。",
+      "evidence": "Hello. I am Anna.",
+      "originalPrompt": "最先开口的说话者介绍自己的名字是什么？",
+      "optionsEnglish": [
+        "Anna",
+        "Li Wei",
+        "Mei"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "973952f200199b63abe9f865be2dd628d61ace7d803dd3647603a89d900f1c2f",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Which country is Anna from? Fill in one English word from the recording.",
+      "answers": [
+        "England"
+      ],
+      "maxWords": 1,
+      "explanation": "Anna 明确说 I am from England.；城市和国家分开提取。",
+      "evidence": "I am from England.",
+      "originalPrompt": "Anna 来自哪个国家？从录音填一个英文词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "69c903686566952a1a0a45d22b652eb08349a2952f7fb69f5f1873cf96eefc56",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Which country does the recording clearly say Li Wei is from? Fill in one English word.",
+      "answers": [
+        "China"
+      ],
+      "maxWords": 1,
+      "explanation": "Anna 说 You are from China.，Li Wei 接着说 Yes. 确认。",
+      "evidence": "You are from China.\nLi Wei: Yes.",
+      "originalPrompt": "录音明确说 Li Wei 来自哪个国家？填一个英文词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "b1f8970c5c43137bf6faa642d44a68105a50ab9381855cc8934d9df76dcd5bb1",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "What name does the second speaker give? Fill in two words from the recording.",
+      "answers": [
+        "Li Wei"
+      ],
+      "maxWords": 2,
+      "explanation": "第二位说话者说 I am Li Wei.；题干不包含这个姓名。",
+      "evidence": "I am Li Wei.",
+      "originalPrompt": "第二位说话者介绍自己的姓名是什么？从录音填两个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "8a7928f2108c75a1011b00d58055f833e0a894e6de32d16a7a26ba1cd82faaea",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Anna."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am a teacher."
+    },
+    {
+      "word": "from",
+      "meaning": "来自",
+      "example": "I am from London."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "Are you a student too?"
+    },
+    {
+      "word": "goodbye",
+      "meaning": "再见",
+      "example": "Goodbye!"
+    }
+  ],
+  "grammar": {
+    "title": "I / you 与 am / are；句首大写与句号",
+    "explanation": "英语里，说“我”用 I，说“你”用 you。I 后面用 am，you 后面用 are。句子第一个字母要大写，句子结束要写句号。例如：I am Anna. You are a student.",
+    "example": "I am Anna. Are you a student?",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "I am a student.",
+          "I are a student.",
+          "i am a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 后面用 am；句首字母 I 要大写，句末要有句号。所以第一句正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "You are a teacher.",
+          "You am a teacher.",
+          "you are a teacher"
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "you 后面用 are；句首字母 Y 要大写，句末要有句号。所以第一句正确。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "补全句子：I ______ from China. 请填一个词。",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "主语是 I，be 动词用 am。",
+        "evidence": "I am from China."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "补全句子：You ______ a student. 请填一个词。",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是 you，be 动词用 are。",
+        "evidence": "You are a student."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you from China?",
+        "Are you a teacher?"
+      ],
+      "part2": "Describe yourself. You should say: your name; if you are a student; where you are from; and say goodbye.",
+      "part3": [
+        "Is Anna a teacher?",
+        "Is Li Wei a student?",
+        "Is Anna from China?",
+        "Are you from Shanghai?"
+      ]
+    },
+    "writing": "写2–4个简单句介绍自己。用 I am ... 和 You are ...。句首字母大写，句末写句号。"
+  },
+  "rubric": {
+    "taskType": "A0 listening comprehension and basic self-introduction"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "b534c3f062d5b4b884d288a65ae5c9a3f3faf3e563c02d3855b4c282f843058a",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "audio/curriculum/w01-listen-5.mp3",
+  "audioVoice": "en-US-AriaNeural / en-US-GuyNeural",
+  "audioSynthetic": true,
+  "audioDurationSeconds": 39.677542
+}

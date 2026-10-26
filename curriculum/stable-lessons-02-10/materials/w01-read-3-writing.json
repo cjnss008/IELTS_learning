@@ -1,0 +1,40 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "0f8d494ea7f2c3ce34fc2533940d5e6a89a89a27a237f2f632bd4d0e25d69a81",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "93af8a56e65490bca7f8df52101a6fffda805d798c62e629aa51ef09eac034ca"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-3-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "My First English Class · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "给同班朋友写2—8个简单句、至少12词。先介绍自己，再对朋友说一句话，最后用We are介绍你和朋友共同的身份或状态。We必须包含你自己；信息可真实或自编。先独立写，再订正。",
+  "prompt": "Write 2–8 simple sentences to a friend in your English class. Introduce yourself with I am. Say one thing to your friend with You are. Use We are for yourself and that friend together. Use your own or invented names and class details. Write at least 12 words. Do not copy a lesson example.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

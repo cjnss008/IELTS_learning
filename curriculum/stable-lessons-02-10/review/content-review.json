@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "status": "content-ready-for-parent-formal-build-and-publication-review",
+  "reviewer": {
+    "agent": "/root/astra_curriculum_review",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "ultra",
+    "kind": "AI substantive review; not a human examiner or ability calibration"
+  },
+  "contentManifest": {
+    "path": "candidate-v5/manifest.json",
+    "sha256": "7258ed0405db5ebd5791c9b254491b0937e1c98d1096e7bec4d8c610f6d85f91"
+  },
+  "publicationManifest": {
+    "path": "publication-v5-manifest.json",
+    "sha256": "022e19f3023720e69da936d02935a9089e45baa08cb54a056945e86597d27336",
+    "files": 54
+  },
+  "validation": {
+    "file": "validation-v5.json",
+    "sha256": "cf1115b4557188efb0f4239db2b27e286515fdbae7e3e5f35630fc4e3c231bb5",
+    "tests": 9,
+    "pass": true,
+    "scope": "Exact material source/answer checks, whole day-1 protection, real Player/Assessment/Records binding and grading paths, idempotent source overlay and atomic rejection on source drift. A full formal build and full application suite belong to parent."
+  },
+  "independentRootReview": {
+    "artifact": "review/root-semantic-review-draft.json",
+    "artifactSHA256": "927854602285dfe681499775733b148cccdc8305ec7c490b25f43db878af7dd4",
+    "validReadingBlind": "review/reading-correct-source-blind-v2.json",
+    "validReadingBlindSHA256": "1cdf0db909ce01b2128a1a8366ed45b3cf6b8ca9daacafbd09b53b517c4e508f",
+    "finalBlind": "candidate-v5/blind-review.json",
+    "finalBlindSHA256": "8ad74eed9ded7f4e5f10db1e92b0e1bbd1f31061d05c11a732a0bf0577c57af0",
+    "reportedReview": "Parent independently answered corrected reading blind and listening/grammar blind, then read all v4 changed question keys/explanations and all 18 grammar/speaking/writing deltas. Parent requested exactly five final explanation/evidence corrections. v5 contains only those five corrections plus their source hashes relative to v4; the blind hash is unchanged.",
+    "finalFiveDelta": "review/v5-from-reviewed-v4-delta.json",
+    "discarded": "Reading entries in candidate-v1/blind-review.json selected unused transcript text and are invalid as reading review evidence. Superseded by source-field-bound exports and a regression test."
+  },
+  "protectedDay1": {
+    "dayContentHash": "0aa98b02481f61c5cad35641d3b6c9b7f675eb64d71ae7008bacdfc15a0bf771",
+    "materials": [
+      {
+        "id": "w01-read-1-vocabulary",
+        "contentHash": "55647672239512b122a7b938cda1947c969b2a4e58d7feb258e72bc56a691ef2"
+      },
+      {
+        "id": "lexical-w01-1",
+        "contentHash": "f36cd394c21e7129713c406bbfdb4181b30e6a405714c6ebb695e8c7a94930e6"
+      },
+      {
+        "id": "w01-read-1-grammar",
+        "contentHash": "5eed3ef572f36244145fda35868e1e100331027e90eec79449d1af02bd51eacc"
+      },
+      {
+        "id": "w01-read-2-grammar",
+        "contentHash": "642ea5126ac58d6a4d477b51ccac0711239078cba74371763503da1b83425dd6"
+      },
+      {
+        "id": "w01-read-3-grammar",
+        "contentHash": "0f994cd903f51346f428f3e3c5f056252182ad87cd02ecbac53122f135116f1e"
+      },
+      {
+        "id": "w01-listen-1",
+        "contentHash": "8c116c36ff8befd46dd1072f6dbf9266e49248b968191185769a4417658cf878"
+      },
+      {
+        "id": "sounds-01",
+        "contentHash": "43f5eee20ff80b95385bc8dff05d5c6e0ab20d4b5f54d57dbe2dbb0e46687271"
+      },
+      {
+        "id": "w01-read-1",
+        "contentHash": "278cf4a01c47025bfc440b44fd51aae14774c78b4fff11474946340dd975ed93"
+      },
+      {
+        "id": "w01-read-1-speaking",
+        "contentHash": "927a7a2735376f63e58a30d88fdd510594ea634bfb959fd1d1cfce1ab54bb6c9"
+      },
+      {
+        "id": "w01-read-1-writing",
+        "contentHash": "5efbbc5f10d43a5e4a198c0a9db1ecf4ef52c24e394578c1017543531d2b3119"
+      },
+      {
+        "id": "reflection-1",
+        "contentHash": "296842d5d8786ccea68f8f4e629dd4414d7d5d023f336f04993ad257c4871245"
+      }
+    ]
+  },
+  "sharedDay1Materials": [
+    {
+      "id": "w01-read-1-vocabulary",
+      "days2to10": [
+        7
+      ]
+    },
+    {
+      "id": "w01-read-1-grammar",
+      "days2to10": [
+        5
+      ]
+    },
+    {
+      "id": "w01-read-2-grammar",
+      "days2to10": [
+        2,
+        6
+      ]
+    },
+    {
+      "id": "w01-read-3-grammar",
+      "days2to10": [
+        2,
+        7
+      ]
+    },
+    {
+      "id": "w01-listen-1",
+      "days2to10": [
+        7
+      ]
+    },
+    {
+      "id": "sounds-01",
+      "days2to10": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "w01-read-1",
+      "days2to10": [
+        7
+      ]
+    },
+    {
+      "id": "w01-read-1-speaking",
+      "days2to10": [
+        7
+      ]
+    },
+    {
+      "id": "w01-read-1-writing",
+      "days2to10": [
+        7
+      ]
+    }
+  ],
+  "progression": {
+    "file": "lesson-review-v2.json",
+    "sha256": "745608911a4d968f374d1b7d47d2873c78425db0bec8cbf7b4223fad27ce8922",
+    "statement": "Day 2 contains substantive added plural-subject, question and negative practice; days 3–6 mainly apply and consolidate established structures with new contextual vocabulary; day 7 is review; days 8–10 add/transfer object reference, articles, attributes and ownership. No claim of strict new grammar every day."
+  },
+  "audio": {
+    "file": "candidate-v5/audio-provenance.json",
+    "sha256": "67fa7caf809f5dd3b64a490a8af9e4ec315ba75fccc39e6cb3249473824bd20e",
+    "files": 5,
+    "transcriptsChanged": false,
+    "audioWritten": false
+  },
+  "remainingKnownLimits": [
+    "The shared sounds-01 q8 positional explanation remains unchanged to protect day 1; it is not claimed fixed.",
+    "Day 2 task-instruction segment minutes still differ from the task budget; the parent has the separate scheduling wording fix.",
+    "Same-fact repetition and first-week basic-structure consolidation are explicitly documented; question counts do not demonstrate mastery.",
+    "No live user records, settings, browser or NAS writes were used by this reviewer."
+  ],
+  "active": false,
+  "published": false
+}

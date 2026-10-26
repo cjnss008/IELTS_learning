@@ -1,0 +1,38 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "73f2ccca812d9e9560b799e5c3306e4ff6e2e95c9eed2c01ba4b80d45b265d93",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-3-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "My First English Class · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "先独立写原稿，再取得反馈和订正；不要复制课文作为自己的作品。",
+  "prompt": "Write 2–8 simple sentences about yourself. Use I am, You are, and We are. Example: I am Li Hua. I am a student. You are my friend. We are happy.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

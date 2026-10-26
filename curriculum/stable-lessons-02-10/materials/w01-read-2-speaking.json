@@ -1,0 +1,63 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "f81bbf36fd9bcfaad88f944664dbc2113ef3cb576b2bf938008bfd871b0ddccf",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "parts",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "281f4330746d338c6ce17c30263c08775663790642ad067aacf85e2dc23ceca1"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-2-speaking",
+  "skill": "speaking",
+  "type": "foundation",
+  "title": "My First English Class · 口语迁移",
+  "estimatedMinutes": 20,
+  "instructions": "先自己回答简单问题，再录音回听；示例人名可替换为自己的信息。",
+  "prompt": "What is your name?\nAre you a student?\nAre you happy?\nAre you in Room 5?",
+  "parts": {
+    "part1": [
+      "What is your name?",
+      "Are you a student?",
+      "Are you happy?",
+      "Are you in Room 5?"
+    ],
+    "part2": "Describe yourself. You should say:",
+    "part3": [
+      "Are you a student?",
+      "Are you happy?",
+      "Are you in Room 5?",
+      "Are you a friend?"
+    ],
+    "part2Bullets": [
+      "your name",
+      "whether you are a student",
+      "your room",
+      "how you feel"
+    ]
+  },
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

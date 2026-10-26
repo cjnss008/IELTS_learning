@@ -1,0 +1,87 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "3a767080a1649a5ecb5567b7ac226120cdc83f72a01041238c0c5c01d2d2b62f",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "7fdb9be87430eefe7fa73bd7f09ac957b7c29ac610d35a63dd91898f7a96bf0d"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "选择正确的句子。",
+      "options": [
+        "I am a student.",
+        "I is a student.",
+        "I are a student."
+      ],
+      "answers": [
+        "I am a student."
+      ],
+      "explanation": "I后面用am，所以“I am a student.”正确。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "选择正确的句子。",
+      "options": [
+        "You are kind.",
+        "You am kind.",
+        "You is kind."
+      ],
+      "answers": [
+        "You are kind."
+      ],
+      "explanation": "you后面用are，所以“You are kind.”正确。",
+      "evidence": "You are kind."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "填空：I ____ happy. (用am或are)",
+      "answers": [
+        "am"
+      ],
+      "maxWords": 1,
+      "explanation": "I后面用am，所以填am。",
+      "evidence": "I am happy."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "填空：You ____ my teacher. (用am或are)",
+      "answers": [
+        "are"
+      ],
+      "maxWords": 1,
+      "explanation": "you后面用are，所以填are。",
+      "evidence": "You are my teacher."
+    }
+  ],
+  "id": "w01-read-6-grammar",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "人称代词与be动词",
+  "estimatedMinutes": 15,
+  "instructions": "先读懂解释，再独立完成句子。订正后换句复测。",
+  "passage": "本课练习用 be 动词表达身份或状态的简单句。主语 I（我）搭配 am，主语 you（你／你们）搭配 are。例如：I am a student. You are kind. 这不表示 I 或 you 后总要加 be；有其他动词的句子要按自己的结构表达，不能机械加 am 或 are。代词 I 无论在句中什么位置都大写；句首字母大写，陈述句末用句号。\n\nI am Li Ming. You are my teacher."
+}

@@ -1,0 +1,365 @@
+{
+  "id": "w01-listen-6",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 6,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0水平学习者设计的听力练习。请先听录音（或阅读转录文本），然后回答问题。注意：本材料为模拟教学用途，并非官方雅思考试。",
+  "passage": "",
+  "transcript": "A: Hello. I am Li. Are you Tom?\nB: No, I am not Tom. I am Anna. Are you a student?\nA: Yes, I am. I am a new student. You are a teacher.\nB: No, I am not a teacher. I am a student too. We are students.\nA: Good. I am Li. You are Anna. We are friends.\nB: Yes. We are friends.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the name of the first speaker?",
+      "options": [
+        "Tom",
+        "Li",
+        "Anna"
+      ],
+      "answers": [
+        "Li"
+      ],
+      "explanation": "用先后顺序定位说话者，不在没有文本依据时假定声音的性别。",
+      "evidence": "I am Li.",
+      "originalPrompt": "第一位说话者介绍自己的名字是什么？",
+      "optionsEnglish": [
+        "Tom",
+        "Li",
+        "Anna"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "82d6838aa5c22f92a327d4e2ae9c2dedf46524b22d0ea7184c88dab4c30c7a6e",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "How does the second speaker answer the question about whether they are Tom?",
+      "options": [
+        "明确否认自己是 Tom",
+        "明确承认自己是 Tom",
+        "没有回应这个问题"
+      ],
+      "answers": [
+        "明确否认自己是 Tom"
+      ],
+      "explanation": "第二位说话者说 No, I am not Tom.。",
+      "evidence": "No, I am not Tom.",
+      "originalPrompt": "第二位说话者怎样回应自己是不是 Tom 的问题？",
+      "optionsEnglish": [
+        "Clearly says no, they are not Tom",
+        "Clearly says yes, they are Tom",
+        "Does not answer this question"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "1296b105a53e34c9507c9cab422232b65c61418b7034de98525307c3a63b2c3f",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "What is the second speaker's name? Fill in one word from the recording.",
+      "answers": [
+        "Anna"
+      ],
+      "maxWords": 1,
+      "explanation": "否认别人的名字后，第二位说话者给出自己的姓名。",
+      "evidence": "I am Anna.",
+      "originalPrompt": "第二位说话者介绍自己的名字是什么？从录音填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "318cdbf51a908979388b90430d0943faa59c01971e498f1ed8116a5a27f0f2ff",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What study role does the first speaker say they have?",
+      "options": [
+        "学生",
+        "老师",
+        "医生"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "第一位说话者说 I am a new student.。",
+      "evidence": "I am a new student.",
+      "originalPrompt": "第一位说话者介绍自己的学习身份是什么？",
+      "optionsEnglish": [
+        "Student",
+        "Teacher",
+        "Doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "618931a2ae0debdfc92ef7bae8f6d1b47578dfad3fe7f80a0dcbbcf1d5076e7b",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Does the second speaker clearly say that they are not a teacher?",
+      "options": [
+        "明确否认了",
+        "明确承认是老师",
+        "没有提到老师身份"
+      ],
+      "answers": [
+        "明确否认了"
+      ],
+      "explanation": "第二位说话者明说 I am not a teacher.。",
+      "evidence": "No, I am not a teacher.",
+      "originalPrompt": "第二位说话者是否明确否认自己是老师？",
+      "optionsEnglish": [
+        "Clearly says no, they are not a teacher",
+        "Clearly says yes, they are a teacher",
+        "Does not mention being a teacher"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "6d54b39a36160b77fe5a7beb0d0ea0e36d38b30d0d3a40c65e1bcb38fbbb8227",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Which word comes immediately before student when the first speaker describes their situation? Write one word from the recording.",
+      "answers": [
+        "new"
+      ],
+      "maxWords": 1,
+      "explanation": "I am a new student. 中的修饰词给出新来的信息。",
+      "evidence": "I am a new student.",
+      "originalPrompt": "第一位说话者用哪个词说明自己是一名新学生？从录音填一个词。",
+      "presentation": {
+        "version": "english-stable0210-v3",
+        "sourceHash": "2f9efa95381a4c9fbe979e22c76ccdb852ebbc56468a831e872328a605f2b30d",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Which word does the conversation clearly use to describe the relationship between the two people?",
+      "options": [
+        "Friends",
+        "Brother and sister",
+        "Teacher and student"
+      ],
+      "answers": [
+        "Friends"
+      ],
+      "explanation": "录音两次说 We are friends.。",
+      "evidence": "We are friends.",
+      "originalPrompt": "对话明确用哪个词说明两人的关系？",
+      "optionsEnglish": [
+        "Friends",
+        "Brother and sister",
+        "Teacher and student"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "95a548dea9649d64846e8112ab675c5808ee270da928f962fe54cbe75336fde3",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "At the very start of the conversation, which greeting word does the first speaker use?",
+      "options": [
+        "Hello",
+        "Goodbye",
+        "Thanks"
+      ],
+      "answers": [
+        "Hello"
+      ],
+      "explanation": "最先听到的问候词是 Hello。",
+      "evidence": "A: Hello.",
+      "originalPrompt": "对话最开头，第一位说话者用了哪个问候词？",
+      "optionsEnglish": [
+        "Hello",
+        "Goodbye",
+        "Thanks"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "68ef2ac91ccbf8f5e9e1dfcb0469928156bf56ede7cc6b7282ae971db0dd27e1",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a new student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am not a teacher."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "We are friends."
+    },
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "I am a new student."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not Tom."
+    },
+    {
+      "word": "too",
+      "meaning": "也",
+      "example": "I am a student too."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "英语中，人称代词I（我）搭配am，you（你）搭配are。句首字母要大写，句末用句号。例如：I am Li. You are Anna.",
+    "example": "I am Li. You are Anna.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "主语I后面用am。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "You am a teacher.",
+          "You is a teacher.",
+          "You are a teacher."
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "主语you后面用are。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "补全句子：I ____ a new student.",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "主语I后面用am。",
+        "evidence": "I am a new student."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "补全句子：You ____ my friend.",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "主语you后面用are。",
+        "evidence": "You are my friend."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you a teacher?",
+        "Is your friend a student?"
+      ],
+      "part2": "Describe yourself. You should say:\n- your name\n- your job (student or teacher)\n- your friend's name\n- if your friend is a student",
+      "part3": [
+        "Are you a new student?",
+        "Is your friend a teacher?",
+        "Are you and your friend students?",
+        "What is your friend's name?"
+      ]
+    },
+    "writing": "Write 2-4 simple sentences about yourself. Use 'I am...' and 'You are...'. Example: I am Li. I am a student. You are Anna. You are my friend."
+  },
+  "rubric": {
+    "taskType": "Listening comprehension (A0)"
+  },
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "52e2506a8bc0bb0198d299432559f2e178b8925644d6cfd1d11700f17b94330f",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric",
+      "minWords",
+      "maxWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "d2ee0d7277b913775d4212ceabbfcbef4410381ffda88283ae9bb1ad5dce1982"
+    }
+  },
+  "audio": "audio/curriculum/w01-listen-6.mp3",
+  "audioVoice": "en-US-AriaNeural / en-US-GuyNeural",
+  "audioSynthetic": true,
+  "audioDurationSeconds": 37.465958
+}

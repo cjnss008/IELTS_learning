@@ -1,0 +1,118 @@
+{
+  "schema": 2,
+  "supersedes": "candidate-v1/blind-review.json reading entries only",
+  "reason": "v1 incorrectly preferred a reading object's unused transcript; this export selects passage explicitly by skill, matching Player rendering.",
+  "entries": [
+    {
+      "id": "w01-read-4",
+      "skill": "reading",
+      "sourceField": "passage",
+      "sourceText": "A. I am Li Wei. I am a student. This is my first day at the language school. I am from Shanghai. I am in Class A.\n\nB. This is Ms. Chen. She is my teacher. She is from Beijing. She is very kind. She says, \"Hello, Li Wei. You are in my class. I am your teacher.\"\n\nC. I say, \"Hello, Ms. Chen. I am happy. You are a good teacher.\" Ms. Chen says, \"Thank you. You are a good student. Goodbye!\"",
+      "sourceTextSHA256": "91595a229902524eee2b97054485a7385a9add1cab6d3d740585809b151809f9",
+      "unusedTranscriptSHA256": "216d5f3b8014777828183951e15a4e9b5924f6ed7778243ed8d72f0a305422b1",
+      "questions": [
+        {
+          "id": "q8",
+          "type": "fill",
+          "prompt": "Which word does Ms. Chen use to say farewell to Li Wei? Write one word from the text.",
+          "maxWords": 1
+        }
+      ]
+    },
+    {
+      "id": "w01-read-5",
+      "skill": "reading",
+      "sourceField": "passage",
+      "sourceText": "A. I am Lin. I am a new student. I am at the Green Leaf English Club. It is Monday morning.\n\nB. I see a woman. I say, \"Hello. I am Lin.\" She says, \"Hello, Lin. I am Anna. I am a teacher here.\" I say, \"You are my teacher. Thank you.\"\n\nC. Anna says, \"You are a student. I am a teacher. We are a team.\" I am happy. I say, \"You are very kind.\" Anna says, \"You are ready. Good luck!\"",
+      "sourceTextSHA256": "d762a09a2ac511863b090b8ac920853cc9667c14e36a8360b3de7f2768bb0705",
+      "unusedTranscriptSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "In Part A, what does Lin say about being a learner?",
+          "options": [
+            "A new student",
+            "A teacher",
+            "A club manager"
+          ]
+        },
+        {
+          "id": "q5",
+          "type": "single",
+          "prompt": "What does Lin say when first speaking to Anna in Part B?",
+          "options": [
+            "Hello. I am Lin.",
+            "You are very kind.",
+            "Good luck!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w02-read-1",
+      "skill": "reading",
+      "sourceField": "passage",
+      "sourceText": "This is my desk. It is small. A pen is on the desk. A book is on the desk. This is my cat. She is on the desk. She is small. That is my bag. It is on the desk. He is my friend. He is at the desk.",
+      "sourceTextSHA256": "d1c94be33e91b44ec7b8d0bf65c9b36dbb5201447ba0995003a0038caaeef85e",
+      "unusedTranscriptSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "prompt": "Which item is mentioned first as being on the desk?",
+          "options": [
+            "A pen",
+            "A book",
+            "A cat",
+            "A bag"
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "prompt": "Which item is mentioned immediately after the pen as being on the desk?",
+          "options": [
+            "A pen",
+            "A book",
+            "A cat",
+            "A bag"
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "prompt": "After the book, what is next described as being on the desk?",
+          "options": [
+            "A pen",
+            "A book",
+            "A cat",
+            "A bag"
+          ]
+        },
+        {
+          "id": "q4",
+          "type": "single",
+          "prompt": "Which item is described as being on the desk just after the cat?",
+          "options": [
+            "A pen",
+            "A book",
+            "A cat",
+            "A bag"
+          ]
+        },
+        {
+          "id": "q8",
+          "type": "single",
+          "prompt": "What does This refer to in the first sentence?",
+          "options": [
+            "A desk",
+            "A pen",
+            "A book",
+            "A cat"
+          ]
+        }
+      ]
+    }
+  ]
+}

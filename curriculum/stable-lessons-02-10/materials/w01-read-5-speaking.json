@@ -1,0 +1,62 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "e21cafd4af3ac518ad70c85fd6a8ed436bba169dfe89e6d3ad1564bc85ab5244",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "parts",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "cfd9525e8d248712f9548be6f235bda7eda348cf1ea60ed4bde37b7fe4109c78"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-5-speaking",
+  "skill": "speaking",
+  "type": "foundation",
+  "title": "First Day at the Language Club · 口语迁移",
+  "estimatedMinutes": 20,
+  "instructions": "先自己回答简单问题，再录音回听；示例人名可替换为自己的信息。",
+  "prompt": "What is your name?\nAre you a student?\nAre you happy today?\nIs it Monday today?",
+  "parts": {
+    "part1": [
+      "What is your name?",
+      "Are you a student?",
+      "Are you happy today?",
+      "Is it Monday today?"
+    ],
+    "part2": "Talk about your first day at a club. Say:",
+    "part3": [
+      "Who is your teacher?",
+      "Are you ready?",
+      "Is your teacher kind?",
+      "Are you a student or a teacher?"
+    ],
+    "part2Bullets": [
+      "your name",
+      "the club and the day",
+      "whether you are a student or a teacher",
+      "how you feel"
+    ]
+  },
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

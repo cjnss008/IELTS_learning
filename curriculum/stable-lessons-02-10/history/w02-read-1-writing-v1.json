@@ -1,0 +1,39 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定；v69明确猫的指代上下文或移除重复干扰项，原正确答案值保留。",
+    "model": "deepseek-flash",
+    "contentHash": "118fd0511a06a0cfa561f30ffb0732eebed4a6915818933615dd172467f9549c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w02-read-1-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "My Desk and My Cat · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "先独立写原稿，再取得反馈和订正；不要复制课文作为自己的作品。",
+  "prompt": "Write 2-8 simple sentences about your desk. Use 'This is', 'It is', 'He/She is', and 'a/an'.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

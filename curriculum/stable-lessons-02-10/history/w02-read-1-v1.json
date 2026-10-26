@@ -1,0 +1,300 @@
+{
+  "id": "w02-read-1",
+  "week": 2,
+  "skill": "reading",
+  "level": "A1",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My Desk and My Cat",
+  "instructions": "阅读短文，然后回答问题。注意：这是模拟练习，不是官方考试。请根据短文内容选择正确答案。",
+  "passage": "This is my desk. It is small. A pen is on the desk. A book is on the desk. This is my cat. She is on the desk. She is small. That is my bag. It is on the desk. He is my friend. He is at the desk.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is on the desk? (First item)",
+      "options": [
+        "A pen",
+        "A book",
+        "A cat",
+        "A bag"
+      ],
+      "answers": [
+        "A pen"
+      ],
+      "explanation": "短文提到“A pen is on the desk.”，所以钢笔在桌子上。其他选项也在桌子上，但问题问的是第一个提到的物品，根据短文顺序，第一个是钢笔。",
+      "evidence": "A pen is on the desk."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What is on the desk? (Second item)",
+      "options": [
+        "A pen",
+        "A book",
+        "A cat",
+        "A bag"
+      ],
+      "answers": [
+        "A book"
+      ],
+      "explanation": "短文提到“A book is on the desk.”，所以书在桌子上。",
+      "evidence": "A book is on the desk."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What is on the desk? (Third item)",
+      "options": [
+        "A pen",
+        "A book",
+        "A cat",
+        "A bag"
+      ],
+      "answers": [
+        "A cat"
+      ],
+      "explanation": "短文提到“She is on the desk.”，这里的she指代猫，所以猫在桌子上。",
+      "evidence": "She is on the desk."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What is on the desk? (Fourth item)",
+      "options": [
+        "A pen",
+        "A book",
+        "A cat",
+        "A bag"
+      ],
+      "answers": [
+        "A bag"
+      ],
+      "explanation": "短文提到“It is on the desk.”，这里的it指代包，所以包在桌子上。",
+      "evidence": "It is on the desk."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Is the desk small?",
+      "options": [
+        "Yes, it is.",
+        "No, it is not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, it is."
+      ],
+      "explanation": "短文提到“It is small.”，所以桌子是小的。",
+      "evidence": "It is small."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is the cat small?",
+      "options": [
+        "Yes, she is.",
+        "No, she is not.",
+        "Not given."
+      ],
+      "answers": [
+        "Yes, she is."
+      ],
+      "explanation": "短文提到“She is small.”，所以猫是小的。",
+      "evidence": "She is small."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Who is at the desk?",
+      "options": [
+        "My friend",
+        "My cat",
+        "My bag",
+        "My pen"
+      ],
+      "answers": [
+        "My friend"
+      ],
+      "explanation": "短文提到“He is my friend. He is at the desk.”，所以朋友在桌子旁。",
+      "evidence": "He is at the desk."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "What is this? (First sentence)",
+      "options": [
+        "A desk",
+        "A pen",
+        "A book",
+        "A cat"
+      ],
+      "answers": [
+        "A desk"
+      ],
+      "explanation": "短文开头说“This is my desk.”，所以“This”指的是桌子。",
+      "evidence": "This is my desk."
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "desk",
+      "meaning": "书桌",
+      "example": "This is my desk."
+    },
+    {
+      "word": "small",
+      "meaning": "小的",
+      "example": "It is small."
+    },
+    {
+      "word": "pen",
+      "meaning": "钢笔",
+      "example": "A pen is on the desk."
+    },
+    {
+      "word": "book",
+      "meaning": "书",
+      "example": "A book is on the desk."
+    },
+    {
+      "word": "cat",
+      "meaning": "猫",
+      "example": "This is my cat."
+    },
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "That is my bag."
+    },
+    {
+      "word": "friend",
+      "meaning": "朋友",
+      "example": "He is my friend."
+    },
+    {
+      "word": "on",
+      "meaning": "在……上面",
+      "example": "It is on the desk."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；单数名词；this / that",
+    "explanation": "英语中，我们用 he 指代男性，she 指代女性或雌性动物（如猫、狗等），it 指代物品或不知道性别的动物。is 是 be 动词，用于单数主语。a 和 an 表示“一个”，a 用在辅音音素开头的单词前，an 用在元音音素开头的单词前。单数名词表示一个人或物。this 指近处的人或物，that 指远处的人或物。",
+    "example": "This is my desk. It is small. She is small. That is my bag.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "This is my cat. She is on the desk. ___ is small.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "前一句已经用 She 指这只猫，因此这里继续用 She。若只说 This is a cat 而没有说明性别，It 也可以，不能仅凭“猫”就判断必须用 She。",
+        "evidence": "This is my cat. She is on the desk. She is small."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "This is a boy. ___ is my friend.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "He"
+        ],
+        "explanation": "boy 是男性，用 he 指代。",
+        "evidence": "He is my friend."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "This is a girl. ___ is my friend.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "girl 是女性，用 she 指代。",
+        "evidence": "She is small."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "This is ___ apple.",
+        "options": [
+          "a",
+          "an"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple 以元音音素开头，用 an。",
+        "evidence": "A pen is on the desk."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is on your desk?",
+        "Is your bag small?",
+        "Who is your friend?",
+        "Is your cat small?"
+      ],
+      "part2": "Describe your desk. You should say: what is on it, who is at it, if it is small, and what you have.",
+      "part3": [
+        "Is your desk big or small?",
+        "What is on your desk?",
+        "Who is your friend?",
+        "Is your bag on the desk?"
+      ]
+    },
+    "writing": "Write 2-8 simple sentences about your desk. Use 'This is', 'It is', 'He/She is', and 'a/an'."
+  },
+  "rubric": {
+    "taskType": "A0 reading comprehension"
+  },
+  "version": "1",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定；v69明确猫的指代上下文或移除重复干扰项，原正确答案值保留。",
+    "model": "deepseek-flash",
+    "contentHash": "118fd0511a06a0cfa561f30ffb0732eebed4a6915818933615dd172467f9549c",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

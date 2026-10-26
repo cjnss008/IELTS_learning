@@ -1,0 +1,368 @@
+{
+  "id": "w01-read-4",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "First Day at the Language School",
+  "instructions": "阅读下面的短文，然后回答问题。注意：本材料为模拟教学材料，不是官方雅思考试。所有题目基于短文内容。填空题答案必须来自原文，且不超过字数限制。判断题选择 True、False 或 Not Given。",
+  "passage": "A. I am Li Wei. I am a student. This is my first day at the language school. I am from Shanghai. I am in Class A.\n\nB. This is Ms. Chen. She is my teacher. She is from Beijing. She is very kind. She says, \"Hello, Li Wei. You are in my class. I am your teacher.\"\n\nC. I say, \"Hello, Ms. Chen. I am happy. You are a good teacher.\" Ms. Chen says, \"Thank you. You are a good student. Goodbye!\"",
+  "transcript": "Li Wei: Good morning. I am Li Wei. Are you Ms. Chen?\nMs. Chen: Yes, I am. Hello, Li Wei. You are in my class. I am your teacher.\nLi Wei: Nice to meet you. I am from Shanghai. Are you from Beijing?\nMs. Chen: Yes, I am. But I am not from Shanghai. I am from Beijing.\nLi Wei: Oh, I see. You are from Beijing. I am from Shanghai. We are in the same school.\nMs. Chen: Yes, we are. You are a student. I am a teacher. Goodbye, Li Wei.\nLi Wei: Goodbye, Ms. Chen.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "In paragraph A, what does Li Wei say he is?",
+      "options": [
+        "学生",
+        "老师",
+        "医生"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "原文明说 I am a student.。",
+      "evidence": "I am Li Wei. I am a student.",
+      "originalPrompt": "A 段中，Li Wei 介绍自己的学习身份是什么？",
+      "optionsEnglish": [
+        "Student",
+        "Teacher",
+        "Doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "055a588b6500e0217eb14cf30821f87001ac312a8689d7555ffe3153cb6ad7f2",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "In paragraph B, which city is Ms. Chen from?",
+      "options": [
+        "Beijing",
+        "Shanghai",
+        "Guangzhou"
+      ],
+      "answers": [
+        "Beijing"
+      ],
+      "explanation": "B 段明确说 She is from Beijing.。",
+      "evidence": "She is from Beijing.",
+      "originalPrompt": "B 段中，Ms. Chen 来自哪个城市？",
+      "optionsEnglish": [
+        "Beijing",
+        "Shanghai",
+        "Guangzhou"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "a0fab0434116bc2e5b7707a4371585eb2b9d5c09b8396b74cbcfeba977338192",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "In paragraph B, what is the teacher like with people?",
+      "options": [
+        "友善",
+        "严厉",
+        "害羞"
+      ],
+      "answers": [
+        "友善"
+      ],
+      "explanation": "kind 表示友善；不把身高和年龄当作性格题的异类干扰项。",
+      "evidence": "She is very kind.",
+      "originalPrompt": "B 段怎样形容老师对人的态度？",
+      "optionsEnglish": [
+        "Friendly",
+        "Strict",
+        "Shy"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "79c1dd311b9f1e00788de1dba40f24225cf4753387b8f29d9c79fe22e9f6df5a",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "In paragraph A, which city is Li Wei from? Write one word from the text.",
+      "answers": [
+        "Shanghai"
+      ],
+      "maxWords": 1,
+      "explanation": "A 段说自己来自 Shanghai。",
+      "evidence": "I am from Shanghai.",
+      "originalPrompt": "A 段中，Li Wei 来自哪个城市？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "a03808684da5aba47e9784de827d3b6fff2d5276750c9a7c182f07f6d9154b1e",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "In paragraph B, who is Ms. Chen to Li Wei? Write one word from the text.",
+      "answers": [
+        "teacher"
+      ],
+      "maxWords": 1,
+      "explanation": "原文用 my teacher 说明师生关系。",
+      "evidence": "She is my teacher.",
+      "originalPrompt": "B 段中，Ms. Chen 是 Li Wei 的什么人？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "cd0f212516a95077ee6a94e6a155b3063c8db3347d9a260a593afeec51a0956a",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "In paragraph A, what day is this for Li Wei at the language school?",
+      "options": [
+        "第一天",
+        "第二天",
+        "第三天"
+      ],
+      "answers": [
+        "第一天"
+      ],
+      "explanation": "first day 表示第一天。",
+      "evidence": "This is my first day at the language school.",
+      "originalPrompt": "A 段说这是 Li Wei 在语言学校的第几天？",
+      "optionsEnglish": [
+        "The first day",
+        "The second day",
+        "The third day"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "4c4ac3cf271227ecaed81160e2755ab74294f49289b2f534611ef883dab13e2d",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "In paragraph A, which class is Li Wei in?",
+      "options": [
+        "Class A",
+        "Class B",
+        "Class C"
+      ],
+      "answers": [
+        "Class A"
+      ],
+      "explanation": "原文明确说 Class A。",
+      "evidence": "I am in Class A.",
+      "originalPrompt": "A 段中，Li Wei 在哪个班？",
+      "optionsEnglish": [
+        "Class A",
+        "Class B",
+        "Class C"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "2b3de456923ce9fd0e194811afb6db92e7f1a4efc0e80f4b161b1c2c87956f3b",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "Which word does Ms. Chen use to say farewell to Li Wei? Write one word from the text.",
+      "answers": [
+        "Goodbye"
+      ],
+      "maxWords": 1,
+      "explanation": "老师最后一句以 Goodbye! 告别。",
+      "evidence": "You are a good student. Goodbye!",
+      "originalPrompt": "C 段最后，老师用哪个英文词告别？从原文填一个词。",
+      "presentation": {
+        "version": "english-stable0210-v3",
+        "sourceHash": "0a1af55a23a94e9a46f3b999f5237ae7cdd5286c48ffe1216ce7136f125273ee",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "She is my teacher."
+    },
+    {
+      "word": "first",
+      "meaning": "第一",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "day",
+      "meaning": "天",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "language",
+      "meaning": "语言",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "school",
+      "meaning": "学校",
+      "example": "This is my first day at the language school."
+    },
+    {
+      "word": "kind",
+      "meaning": "和善的",
+      "example": "She is very kind."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "英语中，人称代词I（我）搭配am，you（你）搭配are，he/she/it（他/她/它）搭配is。句首字母要大写，句末用句号。例如：I am Li Wei. You are a student. She is a teacher.",
+    "example": "I am Li Wei. You are a student. She is a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的单词填空：______ am a student.",
+        "options": [
+          "I",
+          "You",
+          "He"
+        ],
+        "answers": [
+          "I"
+        ],
+        "explanation": "主语是I，be动词用am，所以填I。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的单词填空：You ______ my teacher.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answers": [
+          "are"
+        ],
+        "explanation": "主语是you，be动词用are，所以填are。",
+        "evidence": "You are my teacher."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "选择正确的单词填空：She ______ from Beijing.",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answers": [
+          "is"
+        ],
+        "explanation": "主语是she，be动词用is，所以填is。",
+        "evidence": "She is from Beijing."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "哪个句子正确？",
+        "options": [
+          "i am li wei.",
+          "I am Li Wei.",
+          "I am li wei."
+        ],
+        "answers": [
+          "I am Li Wei."
+        ],
+        "explanation": "句首字母I要大写，人名Li Wei的首字母也要大写，句末用句号。所以“I am Li Wei.”正确。",
+        "evidence": "I am Li Wei."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Where are you from?",
+        "Are you a student?",
+        "Are you happy today?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part2Bullets": [
+        "your name",
+        "where you are from",
+        "your job or school",
+        "how you feel today"
+      ],
+      "part3": [
+        "Is your teacher kind?",
+        "Are you in Class A?",
+        "Is your school big?",
+        "Are you from Shanghai?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences as a short introduction to your new teacher. Include your name, where you are from, your job or school, and how you feel today. Use I am for yourself and You are for the teacher you are addressing. Use real or invented details. Write at least 12 words."
+  },
+  "rubric": {
+    "taskType": "Reading and Listening Comprehension"
+  },
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "7cdafca85e8dfec79a934e908b16f1e45d39f9da0071d816dded624a969297a3",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric",
+      "minWords",
+      "maxWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "9cd16459a5888ffcdf148b7c886e63ef2dc51aa43e638b8954b95694f7e65c11"
+    }
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

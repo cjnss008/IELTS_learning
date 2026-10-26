@@ -1,0 +1,27 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b73c2f9ed0910c5e5ff6b5b446a40e354cbc782b70bc88d2c319fb28f3b505c3"
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w02-read-3-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "At the Lost and Found · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "先独立写原稿，再取得反馈和订正；不要复制课文作为自己的作品。",
+  "prompt": "Write 2–8 simple sentences about a lost and found office. Use this, that, he, she, it, is, a, an. Example: This is a lost and found office. It is in a school.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

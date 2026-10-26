@@ -1,0 +1,40 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "b3fd197b5b22dae7beaa1031ff6bf9b38811eaa44348f529d1d319e67d4dc8b8",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "70e8cfec25090d3f29dd4d3a5e0d1b82211155fe30ee4267514aeb7ddf19ff84"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w02-read-3-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "At the Lost and Found · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "写2—8个简单句、至少12词，介绍真实或自编的失物招领处：地点、一位人物和一两件物品。this/that按远近选，he/she按人物选，it指物品，a/an按读音选；不要为了凑词把全部形式硬塞在一起。先独立写，再订正。",
+  "prompt": "Write 2–8 simple sentences about a real or invented lost and found office. Describe its location, one person there, and one or two objects. Use this or that to identify an object, he or she for the person, and it for an object. Use is and choose a or an where appropriate. Write at least 12 words. Do not copy the reading passage.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

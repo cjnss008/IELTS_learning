@@ -1,0 +1,39 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "4b4ebfbfe2f2ef0fb77529d1340b99eb02b589d8415e4ca2cf1e65f65a41c5a4",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-5-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "First Day at the Language Club · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "先独立写原稿，再取得反馈和订正；不要复制课文作为自己的作品。",
+  "prompt": "Write 2–4 simple sentences to introduce yourself. Write one sentence with \"I am...\" and one sentence with \"You are...\". Start each sentence with a capital letter and end with a period.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  },
+  "originalPrompt": "写 2–4 个简单句介绍你自己。用 I am... 和 You are... 各写一句。句首大写，句末加句号。"
+}

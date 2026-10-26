@@ -1,0 +1,84 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定",
+    "model": "deepseek-flash",
+    "contentHash": "b73c2f9ed0910c5e5ff6b5b446a40e354cbc782b70bc88d2c319fb28f3b505c3"
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "___ is my mother. (She / He / It)",
+      "options": [
+        "She",
+        "He",
+        "It"
+      ],
+      "answers": [
+        "She"
+      ],
+      "explanation": "mother 是女性，所以用 She。",
+      "evidence": "She is a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "This is ___ apple. (a / an / the)",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "answers": [
+        "an"
+      ],
+      "explanation": "apple 以元音音素开头，所以用 an。",
+      "evidence": "It is a blue bag."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "___ is a cat. (He / She / It)",
+      "options": [
+        "He",
+        "She",
+        "It"
+      ],
+      "answers": [
+        "It"
+      ],
+      "explanation": "cat 是动物，所以用 It。",
+      "evidence": "It is a small key."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "___ is a book. (This / These / Those)",
+      "options": [
+        "This",
+        "These",
+        "Those"
+      ],
+      "answers": [
+        "This"
+      ],
+      "explanation": "book 是单数，且指近处，所以用 This。",
+      "evidence": "This is her bag."
+    }
+  ],
+  "id": "w02-read-3-grammar",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "he / she / it；is；a / an；this / that",
+  "estimatedMinutes": 15,
+  "instructions": "先读懂解释，再独立完成句子。订正后换句复测。",
+  "passage": "英语中，he 指男性，she 指女性，it 指物品或动物。is 是“是”，用于单数。a 用在辅音音素开头的单数名词前，an 用在元音音素开头的单数名词前。this 指近处的人或物，that 指远处的人或物。\n\nHe is a teacher. She is a student. It is a blue bag. This is her bag. That is a red bag."
+}

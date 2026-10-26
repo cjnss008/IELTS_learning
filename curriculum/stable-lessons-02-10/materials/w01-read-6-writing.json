@@ -1,0 +1,40 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "05b05e124691e8c490c7072e0e63a1bdd23bb3d77caae2129e97a0ad798c9c42",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "db20f54aecc3325455169dc63401bf2f03c8475f52a09ab38737d3bfd0567c7c"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-6-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "My First English Class · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "下课后给英语老师写2—8个简单句、至少12词。用I am说明自己的身份和感受，用You are对老师说一句符合情境的话；可自编信息。独立写原稿，不把整段示例换一个姓名当作新作品。",
+  "prompt": "Write 2–8 simple sentences to your English teacher after class. Use I am to say who you are and how you feel. Use You are to say something about the teacher you are addressing. Use your own or invented details and write at least 12 words. Do not copy a complete example.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

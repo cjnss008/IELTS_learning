@@ -1,0 +1,87 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "ec9347736219d5773d9af68034266e8f4ba4fdbe3c02ac9e6f48118b258a4252",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "选择正确的句子。",
+      "options": [
+        "I am a student.",
+        "I is a student.",
+        "I are a student."
+      ],
+      "answers": [
+        "I am a student."
+      ],
+      "explanation": "I后面用am，所以“I am a student.”正确。",
+      "evidence": "I am a student."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "选择正确的句子。",
+      "options": [
+        "You are kind.",
+        "You am kind.",
+        "You is kind."
+      ],
+      "answers": [
+        "You are kind."
+      ],
+      "explanation": "you后面用are，所以“You are kind.”正确。",
+      "evidence": "You are very kind."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "填空：I ____ happy. (用am或are)",
+      "answers": [
+        "am"
+      ],
+      "maxWords": 1,
+      "explanation": "I后面用am，所以填am。",
+      "evidence": "I am happy."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "填空：You ____ my teacher. (用am或are)",
+      "answers": [
+        "are"
+      ],
+      "maxWords": 1,
+      "explanation": "you后面用are，所以填are。",
+      "evidence": "You are my teacher."
+    }
+  ],
+  "id": "w01-read-6-grammar",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "人称代词与be动词",
+  "estimatedMinutes": 15,
+  "instructions": "先读懂解释，再独立完成句子。订正后换句复测。",
+  "passage": "在英语中，人称代词I（我）和you（你）后面要跟be动词。I后面用am，you后面用are。句子开头字母要大写，句子结尾要加句号。\n\nI am Li Ming. You are my teacher."
+}

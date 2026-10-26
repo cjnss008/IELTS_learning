@@ -1,0 +1,42 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "74bd486f317a6b29e6b89fd16fb73ecf7f765e80154dfc8c399353b08b126def",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "originalPrompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "4fb35d97d68c0d4de36dcf1150139cce6f161070fba778e591f882131b2d414a"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-4-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "First Day at the Language School · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "写一段给新老师的自我介绍：2—8个简单句、至少12词，包含姓名、来自哪里、职业或学校以及今天的感受。I指自己，You指你正在对话的老师。可用真实或自编信息；原稿和订正稿分开保留。",
+  "prompt": "Write 2–8 simple sentences as a short introduction to your new teacher. Include your name, where you are from, your job or school, and how you feel today. Use I am for yourself and You are for the teacher you are addressing. Use real or invented details. Write at least 12 words.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  },
+  "originalPrompt": "给新老师写2—8个简单句、至少12词介绍自己，包括姓名、来自哪里、职业或学校及今天的感受。I am用于自己，You are用于正在对话的老师。可以使用真实或自编信息。"
+}

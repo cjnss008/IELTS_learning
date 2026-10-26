@@ -1,0 +1,2599 @@
+{
+  "schema": 1,
+  "status": "substantive-content-review-complete-ready-for-formal-build",
+  "scope": "Static current NAS D.days 2–10 and their three public plan entries; no user profile read",
+  "sourceDataSHA256": "c6e041bc0ca864cad5bf098d8daf25d22d1979258ef1e13a28e6a22ad7d6e50a",
+  "reviewer": "AI substantive review, not human examiner or difficulty calibration",
+  "reviewed": {
+    "distinctMaterials": 79,
+    "objectiveQuestions": 236,
+    "grammarPackages": 10,
+    "speakingPackages": 10,
+    "writingPackages": 10
+  },
+  "globalFindings": [
+    {
+      "priority": "P0",
+      "issue": "English prompt answer leaks in core listening/reading",
+      "resolution": "candidate-v1 changes prompts only; all original answer values, passage/transcript bytes and audio references retained."
+    },
+    {
+      "priority": "P0",
+      "issue": "Overgeneralized be rules and under-specified article/animal-pronoun items",
+      "resolution": "candidate-v1 clarifies rules and contexts; grammar agent independently confirmed the ambiguity."
+    },
+    {
+      "priority": "P1",
+      "issue": "Most days 3–7 grammar content is consolidation, not new concepts",
+      "resolution": "Report explicitly distinguishes a first-scheduled package from new knowledge; day7 remains a review day."
+    },
+    {
+      "priority": "P1",
+      "issue": "Position-dependent explanation in sounds-01 q8",
+      "resolution": "The issue remains in shared sounds-01. This change deliberately excludes that material to preserve day 1 in full; do not describe its explanation as corrected in this release."
+    },
+    {
+      "priority": "P1",
+      "issue": "Speaking and writing prompts sometimes lack the addressee or person needed for mandatory You/He/She",
+      "resolution": "The independently reviewed grammar/speaking/writing delta is integrated in candidate-v5. Original minimum word requirements and primary speaking prompts are retained."
+    },
+    {
+      "priority": "P1",
+      "issue": "Word pen is translated narrowly as 钢笔 although the source only establishes a pen",
+      "resolution": "No wrong headword or opposite meaning found; prefer general 笔 when next revising the exact word contract, retaining old word snapshots."
+    }
+  ],
+  "notClaimed": [
+    "No browser walk-through was performed by this reviewer. Tests use synthetic DOM/VM and exact runtime contracts.",
+    "No new audio has been generated; no source audio transcript was changed.",
+    "No per-material title or source auto-level is treated as learner ability calibration.",
+    "Question counts and first target-form counts are inventory, not evidence of teaching quality or mastery."
+  ],
+  "lessons": [
+    {
+      "day": 2,
+      "title": "字母、声音与自我介绍",
+      "newKnowledge": "在 I am / you are 基础上，引入 he/she/is；we/they、be 问句、not 否定及已列规则名词复数。用新教室、名单、上课时间练信息区分。",
+      "reading": "Li Ming 与 Wang Fang 的班级、状态和位置；新增 Mei 与 Dan 的 Class A、绿色名单、原书在家的情境。",
+      "listening": "Li/Wang 的 Class One/Two；新增 Maya/Leo 的房间纠正、物品位置和六点改七点。字母名称 A/E/I/G/J 与序列听辨。",
+      "speaking": "自我介绍，并在新情境用 we、they、否定和 be 问句介绍班级；基础表达，不是 IELTS Part 2 评分。",
+      "writing": "自我介绍及给新同学的欢迎留言；新增任务要求 we、they、否定和 be 问句。",
+      "review": "旧 I am/you are 及部分词汇为巩固；新增内容主要在 day02-expansion 六模块，不能把所有材料都称新知识。",
+      "risks": [
+        "核心与新增两份说写同时安排，须以实际剩余预算承接；第2课旧说写 task.instructions 的分段分钟合计分别60/75，但task.minutes是50/60。此处属时间文案矛盾，交排课端窄修，不靠加题数解决。"
+      ],
+      "firstScheduledTargetForms": [
+        "friend",
+        "happy",
+        "room",
+        "good",
+        "one",
+        "two",
+        "no",
+        "sorry",
+        "we",
+        "they",
+        "teachers",
+        "list",
+        "spare",
+        "classmates",
+        "evening"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 90,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-2-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "lexical-w01-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "day02-expansion-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-2-vocabulary",
+              "version": "1",
+              "title": "My First English Class · 语境词汇",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "hello",
+                "student",
+                "friend",
+                "happy",
+                "class",
+                "room",
+                "good",
+                "too"
+              ],
+              "textSHA256": "a91a4793c588e339e01029304b40e408d8d85805172fe463d95d15b109fa9152",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "lexical-w01-2",
+              "version": "1",
+              "title": "第1周 · 听力原句词汇补组 2",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "one",
+                "two",
+                "no",
+                "sorry"
+              ],
+              "textSHA256": "7b01b1f1e8ba0dab620e36a699946c3d5709baf4b57e2b278aca75b5e3afb1b0",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "day02-expansion-vocabulary",
+              "version": "1",
+              "title": "第2课新增 · 我们、他们与新班级原句词",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "we",
+                "they",
+                "teachers",
+                "list",
+                "spare",
+                "classmates",
+                "evening"
+              ],
+              "textSHA256": "db987b91fb41c4e71f12f577df0a44c6b2d9dacc0e5b0d6b74736ab49711acb7",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 35,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-2-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            },
+            {
+              "materialId": "w01-read-3-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            },
+            {
+              "materialId": "w01-read-4-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "day02-expansion-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-2-grammar",
+              "version": "1",
+              "title": "人称代词与be动词",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "ea69e9250873bd9d32af4f1ee3c3d703bdb45f0702a2e6c9c8faae4e70fc8192",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "w01-read-3-grammar",
+              "version": "1",
+              "title": "人称代词 I / you 与 be 动词 am / are",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "e0804db05925144af38695af1aa219c87bfa906c741bd3c224d7d88922f23c12",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "w01-read-4-grammar",
+              "version": "1",
+              "title": "人称代词与be动词",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "705395c23ecea5eecb0b95d8149a29178cc017793998d04560afb08c0fc41792",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "day02-expansion-grammar",
+              "version": "1",
+              "title": "第2课新增 · 提问、否定与我们／他们",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 10,
+              "targetForms": [],
+              "textSHA256": "44136b4eea3154d7d9a49ab1f45f5f48631658150ed3127efa55db2da8366087",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 55,
+          "materialPractice": [
+            {
+              "materialId": "w01-listen-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "sounds-01",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            },
+            {
+              "materialId": "day02-expansion-listening",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-listen-2",
+              "version": "1",
+              "title": "First Day at the Language School",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "teacher",
+                "class",
+                "one",
+                "two",
+                "yes",
+                "no"
+              ],
+              "textSHA256": "3fb7bd5632defe9de5c6b2bfd5afba58c38627fae37ea892072133cde3b941d1",
+              "audio": "audio/curriculum/w01-listen-2.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-01",
+              "version": "1",
+              "title": "Letter Names: A, E, I, G and J",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e70b2063618086e4620e73b9e7d432513ab4de7f6c1e345dc0278c76852417f5",
+              "audio": "audio/curriculum/sounds-01.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "day02-expansion-listening",
+              "version": "1",
+              "title": "Finding the Right Evening Class",
+              "level": "A0",
+              "type": "dialogue",
+              "questions": 8,
+              "targetForms": [
+                "new",
+                "classmates",
+                "evening",
+                "pen",
+                "desk",
+                "chair",
+                "box",
+                "ready"
+              ],
+              "textSHA256": "e5f1bf358a1c12c1908e16da6263346153e864ae48f02c49d146c78ced608ead",
+              "audio": "audio/curriculum/day02-expansion-listening.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 50,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "day02-expansion-reading",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-2",
+              "version": "2",
+              "title": "My First English Class",
+              "level": "A0",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "friend",
+                "happy",
+                "class",
+                "room",
+                "good",
+                "too"
+              ],
+              "textSHA256": "71ce306d2eb18518dcd604b41e6dc7c2465a189f591d66a8de082f0f50e90a70",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "day02-expansion-reading",
+              "version": "1",
+              "title": "New People at the Evening Club",
+              "level": "A0",
+              "type": "foundation-reading",
+              "questions": 8,
+              "targetForms": [
+                "we",
+                "they",
+                "teachers",
+                "door",
+                "list",
+                "ready",
+                "home",
+                "spare"
+              ],
+              "textSHA256": "bae51cc6014aab62676b2a63ef8988d1ae43ef72d71fc5269cd023b8dd93bd7d",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 50,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-2-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "day02-expansion-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-2-speaking",
+              "version": "2",
+              "title": "My First English Class · 口语迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "271ac62c0d2478d8d901c5ae03f2555bf0493f77e6cae3ec195d777fd750e933",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            },
+            {
+              "id": "day02-expansion-speaking",
+              "version": "1",
+              "title": "第2课新增 · 向新同学介绍我们与他们",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "c9c510eb12ba1ea50ca18572a9cfb6d315e656e38ce00d1e71fbb6f2616eb0c5",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-2-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            },
+            {
+              "materialId": "day02-expansion-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-2-writing",
+              "version": "2",
+              "title": "My First English Class · 写作迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "fbe10eb8ab676558bf0aafbcf23417ce9d114c5930e2dd5cdccbdaf253cae55d",
+              "audio": null,
+              "sourceField": "prompt"
+            },
+            {
+              "id": "day02-expansion-writing",
+              "version": "2",
+              "title": "第2课新增 · 写一则欢迎新同学的留言",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "69221f040587b9fd5c9956303b23a61471b8877fb9c67851e668606381b2db64",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 20,
+          "materialPractice": [
+            {
+              "materialId": "reflection-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-2",
+              "version": "1",
+              "title": "第 2 天 · 学习复盘",
+              "level": "A0",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": []
+    },
+    {
+      "day": 3,
+      "title": "字母、声音与自我介绍",
+      "newKnowledge": "新的明确目标词形为 first、English、goodbye、OK；听读重点转为新学生与新老师、同班关系和对话接应。没有新的语法概念。",
+      "reading": "Tom 与 Li Ming 同班；Miss Wang 是老师，提取称呼、心情与问候。",
+      "listening": "Anna 是新学生、Ben 是新老师，理解否定纠正和最后的欢迎语；字母听辨重复第2课。",
+      "speaking": "介绍自己、朋友、第一堂英语课；保持基础表达。",
+      "writing": "用 I/you/we 说明自己与新同学的关系，规则本身已在第2课出现。",
+      "review": "day02-expansion-grammar 的10题完整重复，属于已学规则巩固，不能称10道新题或独立新情境。",
+      "risks": [
+        "原 w01-listen-3 q5/q8 在英文题干给出 new/welcome，已在候选修正。"
+      ],
+      "firstScheduledTargetForms": [
+        "first",
+        "English",
+        "goodbye",
+        "OK"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-3-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            },
+            {
+              "materialId": "lexical-w01-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-3-vocabulary",
+              "version": "1",
+              "title": "My First English Class · 语境词汇",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "hello",
+                "student",
+                "first",
+                "English",
+                "class",
+                "happy",
+                "friend",
+                "teacher"
+              ],
+              "textSHA256": "a0d8da68cf6fcd3232d29ad4d185af94e4e8b7c7d8dcae8f40e1d25d60a9dab3",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "lexical-w01-3",
+              "version": "1",
+              "title": "第1周 · 听力原句词汇补组 3",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "goodbye",
+                "OK"
+              ],
+              "textSHA256": "e7002b04463e7f2ee7366944e7bf78976ea7ebdaa2838b4e51d0b51398fe6c4b",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-5-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            },
+            {
+              "materialId": "day02-expansion-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-5-grammar",
+              "version": "1",
+              "title": "人称代词 I / you 与 be 动词 am / are",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "0779cd88cff18545255af56b3966b860d5ae513b49a9469b2c98780291e4b22b",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "day02-expansion-grammar",
+              "version": "1",
+              "title": "第2课新增 · 提问、否定与我们／他们",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 10,
+              "targetForms": [],
+              "textSHA256": "44136b4eea3154d7d9a49ab1f45f5f48631658150ed3127efa55db2da8366087",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-listen-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            },
+            {
+              "materialId": "sounds-01",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-listen-3",
+              "version": "2",
+              "title": "First Day at the Language School",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "teacher",
+                "new",
+                "welcome",
+                "sorry",
+                "yes",
+                "no"
+              ],
+              "textSHA256": "36ba1e20d0762747234fdcc9b4e2133aa07339e08f29b6eff38662c03ec6e88d",
+              "audio": "audio/curriculum/w01-listen-3.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-01",
+              "version": "1",
+              "title": "Letter Names: A, E, I, G and J",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e70b2063618086e4620e73b9e7d432513ab4de7f6c1e345dc0278c76852417f5",
+              "audio": "audio/curriculum/sounds-01.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-3",
+              "version": "2",
+              "title": "My First English Class",
+              "level": "A0",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "first",
+                "English",
+                "class",
+                "happy",
+                "friend",
+                "teacher"
+              ],
+              "textSHA256": "12ceab83d29052b55011351cce1deb8a1730627b1a05e542efc2a91486e18996",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-3-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-3-speaking",
+              "version": "1",
+              "title": "My First English Class · 口语迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "2e0f487ab982369ad84c3941e42a98dec8a22b9a059921e853367a404f9d10ba",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-3-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-3-writing",
+              "version": "2",
+              "title": "My First English Class · 写作迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "7ac6dcb5eb6dfb235a4dfaa71bed803fcb2096766c0276c7cb42e7f9984bb00f",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 3
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-3",
+              "version": "1",
+              "title": "第 3 天 · 学习复盘",
+              "level": "A0",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": []
+    },
+    {
+      "day": 4,
+      "title": "字母、声音与自我介绍",
+      "newKnowledge": "新的明确目标词形为 day、language、school、kind；听读区分人物、来自的城市和班级。语法仍巩固 I/you/she 与 be、大小写。",
+      "reading": "Li Wei 来自 Shanghai，Ms. Chen 来自 Beijing，识别老师身份和结尾告别。",
+      "listening": "Anna 与 Li Ming 分在 Class One/Two，分别识别两人的介绍与告别；字母组是重复听辨。",
+      "speaking": "介绍姓名、来源、学习身份与感受。",
+      "writing": "给明确对象的简短信介绍自己，避免无听者的 You。",
+      "review": "w01-read-4-grammar 第2课已用；另一个首次安排的 grammar 包仍是旧概念，不等于新规则。",
+      "risks": [
+        "原阅读 q8 在题干直接写 goodbye，候选已去除。"
+      ],
+      "firstScheduledTargetForms": [
+        "day",
+        "language",
+        "school",
+        "kind"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-4-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-4-vocabulary",
+              "version": "1",
+              "title": "First Day at the Language School · 语境词汇",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "student",
+                "teacher",
+                "first",
+                "day",
+                "language",
+                "school",
+                "kind",
+                "happy"
+              ],
+              "textSHA256": "f2b824b2a103fbbb589a2bff30d74df8ae250873ff131b2d339761263eaf343e",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-6-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            },
+            {
+              "materialId": "w01-read-4-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 2
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-6-grammar",
+              "version": "2",
+              "title": "人称代词与be动词",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "dec4f213ab6e944869e8adda3228984b698de3c91bb9bf038f8e0580053b933a",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "w01-read-4-grammar",
+              "version": "1",
+              "title": "人称代词与be动词",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "705395c23ecea5eecb0b95d8149a29178cc017793998d04560afb08c0fc41792",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-listen-4",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            },
+            {
+              "materialId": "sounds-01",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-listen-4",
+              "version": "1",
+              "title": "First Day Greetings",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "class",
+                "yes",
+                "no",
+                "goodbye",
+                "too",
+                "OK"
+              ],
+              "textSHA256": "35de001ce3b56ea68ee675f720a5d104199b7fe02a4bf0b100e361310d27d80e",
+              "audio": "audio/curriculum/w01-listen-4.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-01",
+              "version": "1",
+              "title": "Letter Names: A, E, I, G and J",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e70b2063618086e4620e73b9e7d432513ab4de7f6c1e345dc0278c76852417f5",
+              "audio": "audio/curriculum/sounds-01.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-4",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-4",
+              "version": "2",
+              "title": "First Day at the Language School",
+              "level": "A0",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "student",
+                "teacher",
+                "first",
+                "day",
+                "language",
+                "school",
+                "kind",
+                "happy"
+              ],
+              "textSHA256": "91595a229902524eee2b97054485a7385a9add1cab6d3d740585809b151809f9",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-4-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-4-speaking",
+              "version": "1",
+              "title": "First Day at the Language School · 口语迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "e5b307b0208ffaae332a57fb61433d13d61c09bd08d38fafba9bdb4a0b992f0b",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-4-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-4-writing",
+              "version": "2",
+              "title": "First Day at the Language School · 写作迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "f43c1f7eefbbe7728b7833c8318dda4bdfe05618956a44bd5826b63f15c60c5e",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-4",
+              "cycle": "first-planned",
+              "firstPlannedDay": 4
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-4",
+              "version": "1",
+              "title": "第 4 天 · 学习复盘",
+              "level": "A0",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": []
+    },
+    {
+      "day": 5,
+      "title": "字母、声音与自我介绍",
+      "newKnowledge": "新的明确目标词形为 club、Monday、morning、team、ready；理解星期与时段，以及 London/England 与 Shanghai/China 的城市国家层级。",
+      "reading": "Lin 初到俱乐部，Anna 是老师，读出 Monday morning 与 team。",
+      "listening": "Anna 是来自 London/England 的老师，Li Wei 来自 Shanghai/China；城市与国家分开提取。",
+      "speaking": "描述第一次到俱乐部以及当日状态。",
+      "writing": "给英语俱乐部成员写简短留言，以 I am 介绍自己、以 You are 对收信人说一句话；保留2—4句和12词最低要求。",
+      "review": "I am/you are 语法和字母组为合理基础回忆；没有新的语法概念。",
+      "risks": [
+        "原阅读 q1 解析错指 B 段，应 A；原 q5 把两句引语称为一句；均已修。听力说明“题目只有中文”已过时，已修英文说明。"
+      ],
+      "firstScheduledTargetForms": [
+        "club",
+        "Monday",
+        "morning",
+        "team",
+        "ready"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-5-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 5
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-5-vocabulary",
+              "version": "1",
+              "title": "First Day at the Language Club · 语境词汇",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "student",
+                "teacher",
+                "club",
+                "Monday",
+                "morning",
+                "team",
+                "kind",
+                "ready"
+              ],
+              "textSHA256": "4ec7493104c731f3fe477ed6a9e4c40ff0cf98f3fd7f060e5ffda92d57ed7f05",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-1-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-1-grammar",
+              "version": "1",
+              "title": "人称代词与be动词",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "17d646fcacc67e9af8f8f99ca9a2a7abb076de07db4665b9353395e6978271b0",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-listen-5",
+              "cycle": "first-planned",
+              "firstPlannedDay": 5
+            },
+            {
+              "materialId": "sounds-01",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-listen-5",
+              "version": "2",
+              "title": "First Day at the Language School",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "teacher",
+                "from",
+                "yes",
+                "no",
+                "too",
+                "goodbye"
+              ],
+              "textSHA256": "2acc6db580d5e9b45f133c31f84622bc01fb357a680c532752c27cd1be5181f0",
+              "audio": "audio/curriculum/w01-listen-5.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-01",
+              "version": "1",
+              "title": "Letter Names: A, E, I, G and J",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e70b2063618086e4620e73b9e7d432513ab4de7f6c1e345dc0278c76852417f5",
+              "audio": "audio/curriculum/sounds-01.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-5",
+              "cycle": "first-planned",
+              "firstPlannedDay": 5
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-5",
+              "version": "2",
+              "title": "First Day at the Language Club",
+              "level": "A0",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "student",
+                "teacher",
+                "club",
+                "Monday",
+                "morning",
+                "team",
+                "kind",
+                "ready"
+              ],
+              "textSHA256": "d762a09a2ac511863b090b8ac920853cc9667c14e36a8360b3de7f2768bb0705",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-5-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 5
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-5-speaking",
+              "version": "2",
+              "title": "First Day at the Language Club · 口语迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "e42e49d4788e9178d654d708bc04721d7cdf5d933faaba895a9dbd9f1411673f",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-5-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 5
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-5-writing",
+              "version": "2",
+              "title": "First Day at the Language Club · 写作迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "390c17d77ebec790b24e4278f4a86ae32c25548f63236de887ac19dccaf11fda",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-5",
+              "cycle": "first-planned",
+              "firstPlannedDay": 5
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-5",
+              "version": "1",
+              "title": "第 5 天 · 学习复盘",
+              "level": "A0",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": []
+    },
+    {
+      "day": 6,
+      "title": "字母、声音与自我介绍",
+      "newKnowledge": "目标词形层面仅 learn 首次安排；文本新增的练习重点是学习者与老师的目的、身份纠正与双方关系。没有新的语法概念。",
+      "reading": "Li Ming 来学英语，老师来帮助；区分 China/Canada、教室、心情。",
+      "listening": "Li 与 Anna 都是学生，先纠正 Tom/teacher 的错误猜测；字母组继续重复。",
+      "speaking": "用自己的信息介绍英语课与感受；保持基础表达。",
+      "writing": "给明确的听者写关于英语学习和帮助的简短信。",
+      "review": "本课学习量以应用巩固为主，不能称又学了一套新语法。",
+      "risks": [
+        "原听力 q6 直接含答案 new，候选已修。原语法“I/you后面要跟be”过度概括，已限定为本课身份/状态的be句；保留有其他动词时不机械加be的说明。"
+      ],
+      "firstScheduledTargetForms": [
+        "learn"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-6-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 6
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-6-vocabulary",
+              "version": "1",
+              "title": "My First English Class · 语境词汇",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "hello",
+                "student",
+                "teacher",
+                "kind",
+                "happy",
+                "room",
+                "learn",
+                "team"
+              ],
+              "textSHA256": "b270fb7e4c6dac48b7d81c81a99bdef275a21df47165249866eb71c1ab37fb5d",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-2-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-2-grammar",
+              "version": "1",
+              "title": "人称代词与be动词",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "ea69e9250873bd9d32af4f1ee3c3d703bdb45f0702a2e6c9c8faae4e70fc8192",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-listen-6",
+              "cycle": "first-planned",
+              "firstPlannedDay": 6
+            },
+            {
+              "materialId": "sounds-01",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-listen-6",
+              "version": "2",
+              "title": "First Day at the Language School",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "teacher",
+                "friend",
+                "new",
+                "yes",
+                "no",
+                "too"
+              ],
+              "textSHA256": "f5c7b7a9b2dd9144b3ba197cb21a0f9a52f0c9d76049920b295d12397d4c6a12",
+              "audio": "audio/curriculum/w01-listen-6.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-01",
+              "version": "1",
+              "title": "Letter Names: A, E, I, G and J",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e70b2063618086e4620e73b9e7d432513ab4de7f6c1e345dc0278c76852417f5",
+              "audio": "audio/curriculum/sounds-01.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-6",
+              "cycle": "first-planned",
+              "firstPlannedDay": 6
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-6",
+              "version": "2",
+              "title": "My First English Class",
+              "level": "A0",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "teacher",
+                "kind",
+                "happy",
+                "room",
+                "learn",
+                "team"
+              ],
+              "textSHA256": "6833f8588739baf7ac78c28f3088bd8fe35398cbcb4b38d34d117972410c9242",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-6-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 6
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-6-speaking",
+              "version": "1",
+              "title": "My First English Class · 口语迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "ab9c96610f41907471f72edd154b390c1462f6e01f0a8366fab4b67887571a19",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-6-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 6
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-6-writing",
+              "version": "2",
+              "title": "My First English Class · 写作迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "d4a7d5b90c0cdbc263770921d9657fa2f49c84e8c2da2e7fa8d6c22ab9695abf",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-6",
+              "cycle": "first-planned",
+              "firstPlannedDay": 6
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-6",
+              "version": "1",
+              "title": "第 6 天 · 学习复盘",
+              "level": "A0",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": []
+    },
+    {
+      "day": 7,
+      "title": "字母、声音与自我介绍",
+      "newKnowledge": "本日是明确的复习日。相对第1–6课计划，没有新增目标词形或语法规则。",
+      "reading": "重复第1课 Sunny English Club 原文与题目，闭卷回忆学生、班级和称呼。",
+      "listening": "重复第1课 Anna/Tom 对话与字母组，核对班级、国家和心情。",
+      "speaking": "重复基础自我介绍与同班关系，换个人信息作迁移。",
+      "writing": "闭卷重写本周短文，并与原稿和反馈比较。",
+      "review": "重复原材料可以用于巩固，但不能计为全新题、未见材料测试或新知识。",
+      "risks": [
+        "本轮不强行给复习日增加新题或重录音频；真实不足应由错题与延迟复测决定。"
+      ],
+      "firstScheduledTargetForms": [],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-1-vocabulary",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-1-vocabulary",
+              "version": "1",
+              "title": "First Day at Sunny English Club · 语境词汇",
+              "level": "A0",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "hello",
+                "student",
+                "class",
+                "classmate",
+                "teacher",
+                "too",
+                "same",
+                "say"
+              ],
+              "textSHA256": "cf1a0daff5796b4e9990c15c518d574e2423e8c5f9c3275e3fbdcb9aa4a33984",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-3-grammar",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-3-grammar",
+              "version": "1",
+              "title": "人称代词 I / you 与 be 动词 am / are",
+              "level": "A0",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "e0804db05925144af38695af1aa219c87bfa906c741bd3c224d7d88922f23c12",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-listen-1",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            },
+            {
+              "materialId": "sounds-01",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-listen-1",
+              "version": "1",
+              "title": "First Day Greetings",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "class",
+                "from",
+                "China",
+                "UK",
+                "happy",
+                "yes"
+              ],
+              "textSHA256": "e5a9bddd4e49262976cbcd0f37aad90066ca621af20a6cde521d1aaa1e00c513",
+              "audio": "audio/curriculum/w01-listen-1.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-01",
+              "version": "1",
+              "title": "Letter Names: A, E, I, G and J",
+              "level": "A0",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e70b2063618086e4620e73b9e7d432513ab4de7f6c1e345dc0278c76852417f5",
+              "audio": "audio/curriculum/sounds-01.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-1",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-1",
+              "version": "1",
+              "title": "First Day at Sunny English Club",
+              "level": "A0",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "hello",
+                "student",
+                "class",
+                "classmate",
+                "teacher",
+                "too",
+                "same",
+                "say"
+              ],
+              "textSHA256": "7872f2635443f7af62750c4f218bd7c94a655c0a147c26da6a03fd7d19c66ec7",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-1-speaking",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-1-speaking",
+              "version": "1",
+              "title": "First Day at Sunny English Club · 口语迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "1f3a4b4a109c8814bfd5244576eb83c255d238fa58605a2525052665a4cce605",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w01-read-1-writing",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 1
+            }
+          ],
+          "materials": [
+            {
+              "id": "w01-read-1-writing",
+              "version": "1",
+              "title": "First Day at Sunny English Club · 写作迁移",
+              "level": "A0",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "99d300421cd254ef9afdbf812dddf86fc845d154c778e37ecf6f05541c22f2ab",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-7",
+              "cycle": "first-planned",
+              "firstPlannedDay": 7
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-7",
+              "version": "1",
+              "title": "第 7 天 · 学习复盘",
+              "level": "A0",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": []
+    },
+    {
+      "day": 8,
+      "title": "身边的人与物",
+      "newKnowledge": "扩展物品/人物指代、this/that、a/an 按音素选用、单数可数名词，以及 on 的位置关系；he/she 已出现，it 的物品/动物语境为扩展。",
+      "reading": "书桌、笔、书、猫、包和朋友，按源文顺序及代词关系定位。",
+      "listening": "Mia/Ben 的邻居、蓝笔、猫和旧桌；新增 15/50 等 -teen/-ty 数字对比。计划中可追加 VOA 1 自我介绍、姓名拼写纠正与住址。",
+      "speaking": "描述桌上物品及桌边的一人，给 He/She 明确人物。",
+      "writing": "用 this/it 描述桌面，并用 he/she 介绍相关人物；不是强迫用动物性别造句。",
+      "review": "原字母组结束，数字组为新听辨；be 的部分规则仍是复习。",
+      "risks": [
+        "原核心听力 q2/q5/q7/q8 直接给出答案，已修。原 is 单数规则及猫的唯一代词条件已修。阅读前4题同一桌面顺序反复提取，作为定位练习可以保留，不能称4种不同理解能力。"
+      ],
+      "firstScheduledTargetForms": [
+        "desk",
+        "small",
+        "pen",
+        "book",
+        "cat",
+        "bag",
+        "on",
+        "red",
+        "blue",
+        "hat",
+        "umbrella"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-1-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            },
+            {
+              "materialId": "lexical-w02-1",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-1-vocabulary",
+              "version": "1",
+              "title": "My Desk and My Cat · 语境词汇",
+              "level": "A1",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "desk",
+                "small",
+                "pen",
+                "book",
+                "cat",
+                "bag",
+                "friend",
+                "on"
+              ],
+              "textSHA256": "1cab03f72cd400249298e5196faf0b5b5e3e666e5a2dd14830b2e10ac6e9567d",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "lexical-w02-1",
+              "version": "1",
+              "title": "第2周 · 听力原句词汇补组 1",
+              "level": "A1",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "red",
+                "blue",
+                "hat",
+                "umbrella"
+              ],
+              "textSHA256": "2f8cb966560b72b616103755c325db09bbfde489641443a765faa83e637f59c3",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-1-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-1-grammar",
+              "version": "2",
+              "title": "he / she / it；is；a / an；单数名词；this / that",
+              "level": "A1",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "9a0bc10134e809a19e99fe9d7afd4002979034cce831b858d8f40fec971ee478",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w02-listen-1",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            },
+            {
+              "materialId": "sounds-02",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-listen-1",
+              "version": "2",
+              "title": "At the Park with Mia and Ben",
+              "level": "A1",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "neighbor",
+                "teacher",
+                "pen",
+                "dog",
+                "cat",
+                "table",
+                "student",
+                "small"
+              ],
+              "textSHA256": "068df7cf391408c39188880bc5ca53f34bb38e0e9242d69e630ba9cf32992b1e",
+              "audio": "audio/curriculum/w02-listen-1.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-02",
+              "version": "1",
+              "title": "Numbers: Fifteen or Fifty?",
+              "level": "A1",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e6db51dcbfb030ab82a27a572f54b01211706193ad5623915a7eb05c8dd01e39",
+              "audio": "audio/curriculum/sounds-02.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-1",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-1",
+              "version": "2",
+              "title": "My Desk and My Cat",
+              "level": "A1",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "desk",
+                "small",
+                "pen",
+                "book",
+                "cat",
+                "bag",
+                "friend",
+                "on"
+              ],
+              "textSHA256": "d1c94be33e91b44ec7b8d0bf65c9b36dbb5201447ba0995003a0038caaeef85e",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-1-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-1-speaking",
+              "version": "1",
+              "title": "My Desk and My Cat · 口语迁移",
+              "level": "A1",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "d25c32cd35cae42f4cb80206930e18b09322a412300fec6373e763032c8cec60",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-1-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-1-writing",
+              "version": "2",
+              "title": "My Desk and My Cat · 写作迁移",
+              "level": "A1",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "13ef46820c11a12781fab6af14d20a22b692687f59befb6342cfa82e3e575266",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-8",
+              "cycle": "first-planned",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-8",
+              "version": "1",
+              "title": "第 8 天 · 学习复盘",
+              "level": "A1",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": [
+        {
+          "assignmentId": "public-course:8:public-voa-l1-01-listening",
+          "materialId": "public-voa-l1-01-listening",
+          "sourceId": "voa-l1-01",
+          "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+          "targetForms": [
+            "again",
+            "yes",
+            "meet"
+          ],
+          "scope": "Runtime admission and frozen-day protection still apply. This is the public plan entry, not a claim about a live family profile."
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "title": "身边的人与物",
+      "newKnowledge": "目标词形 chair、lamp、phone、new、lost、found、watch、this 首次进入词汇组；核心应用区分 this/that、颜色、归属及人称，语法概念大多第8课已教。",
+      "reading": "新桌、椅、灯、书、笔、包和手机的颜色/位置/新旧。",
+      "listening": "红包非本人、蓝包属于本人，第三人 teacher/doctor，书和学校；数字组复习。计划中可追加 VOA 2 公寓、室友、打电话告知到达。",
+      "speaking": "指近处/远处物品并描述颜色和位置。",
+      "writing": "描述自己房间中的物品，明确所指对象。",
+      "review": "a/an/this/that 是应用复习；新 material ID 不等于新规则。",
+      "risks": [
+        "核心听力 q7/q8 都考学校 big，同一事实有重复；不属于错答，列为后续可精简 P1。lexical 中 lost/found 来自 lost and found office 固定搭配，应显示构式背景，不能把 found 当成“创立”。公共 right 的回应义已由独立语义catalog核验为好的/明白了。"
+      ],
+      "firstScheduledTargetForms": [
+        "chair",
+        "lamp",
+        "phone",
+        "new",
+        "lost",
+        "found",
+        "watch",
+        "this"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-2-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            },
+            {
+              "materialId": "lexical-w02-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-2-vocabulary",
+              "version": "1",
+              "title": "My New Desk · 语境词汇",
+              "level": "A1",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "desk",
+                "chair",
+                "lamp",
+                "book",
+                "pen",
+                "bag",
+                "phone",
+                "new"
+              ],
+              "textSHA256": "ec435ecec8c45159d62bbd274144474e4e92893e6700ae6d82b3cc3d6b163c31",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "lexical-w02-2",
+              "version": "1",
+              "title": "第2周 · 听力原句词汇补组 2",
+              "level": "A1",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "lost",
+                "found",
+                "watch",
+                "this"
+              ],
+              "textSHA256": "efd19b8195a4a0837cff74ebd5ca81ae0339d2f1cf54920be45f1681133d52fc",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-2-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-2-grammar",
+              "version": "1",
+              "title": "This / That; a / an; is",
+              "level": "A1",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "ff0ee76bfadc66c024cec173e7605392b4e23ab2916b5c6466956a75c8e30a9d",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w02-listen-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            },
+            {
+              "materialId": "sounds-02",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-listen-2",
+              "version": "1",
+              "title": "At the School Gate",
+              "level": "A1",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "bag",
+                "red",
+                "blue",
+                "teacher",
+                "doctor",
+                "pen",
+                "book",
+                "school"
+              ],
+              "textSHA256": "a20de31a1bf84474a923ed5385a9fe8dd618be60db87f0c2f05cca221758fdc0",
+              "audio": "audio/curriculum/w02-listen-2.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-02",
+              "version": "1",
+              "title": "Numbers: Fifteen or Fifty?",
+              "level": "A1",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e6db51dcbfb030ab82a27a572f54b01211706193ad5623915a7eb05c8dd01e39",
+              "audio": "audio/curriculum/sounds-02.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-2",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-2",
+              "version": "1",
+              "title": "My New Desk",
+              "level": "A1",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "desk",
+                "chair",
+                "lamp",
+                "book",
+                "pen",
+                "bag",
+                "phone",
+                "new"
+              ],
+              "textSHA256": "1205140f06cb743948477b49c2f4b7e5624bf777522fbcc7a2290c860ebca1f5",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-2-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-2-speaking",
+              "version": "1",
+              "title": "My New Desk · 口语迁移",
+              "level": "A1",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "8f5a29c4287b9c58e4e55c2e23e1d298d662167f76c9b740631b78f23183d3db",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-2-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-2-writing",
+              "version": "1",
+              "title": "My New Desk · 写作迁移",
+              "level": "A1",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "38796a60be0c277ada2d57d296321a600836fa657aa95410632ab82d7df2a342",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-9",
+              "cycle": "first-planned",
+              "firstPlannedDay": 9
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-9",
+              "version": "1",
+              "title": "第 9 天 · 学习复盘",
+              "level": "A1",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": [
+        {
+          "assignmentId": "public-course:9:public-voa-l1-02-listening",
+          "materialId": "public-voa-l1-02-listening",
+          "sourceId": "voa-l1-02",
+          "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+          "targetForms": [
+            "new",
+            "small",
+            "right"
+          ],
+          "scope": "Runtime admission and frozen-day protection still apply. This is the public plan entry, not a claim about a live family profile."
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "title": "身边的人与物",
+      "newKnowledge": "新的明确目标包括 lost and found 整体、office、key、that；任务把指代、冠词、颜色、否定归属应用到失物招领，未新增语法规则。",
+      "reading": "Mr. Li、Amy、蓝包与非本人红包，笔/钥匙/书的特征。",
+      "listening": "Jo 依次核对包、手机、钥匙、书、帽子和伞；数字组为复习。计划中可追加 VOA 3 错号、再次拨号、超市位置与做饭目的。",
+      "speaking": "介绍真实或自编的失物招领情境，保持基础表达。",
+      "writing": "说明场所、人物和物品；允许自编人物以给 he/she 明确指代。",
+      "review": "结构是第8–9课的迁移巩固，旧材料和旧作品不被改造成新测评。",
+      "risks": [
+        "原听力填空给 not old/not big，绕过听音猜反义词，已去除。原 grammar 的 the、he/she/it 多解已加明确语境，答案值保留。"
+      ],
+      "firstScheduledTargetForms": [
+        "lost and found",
+        "office",
+        "key",
+        "that"
+      ],
+      "wordCountingScope": "Only first appearance as an explicit vocabulary target in static planned days 1–10; not first exposure in all text, not independent lemmas, not mastery.",
+      "modules": [
+        {
+          "skill": "vocabulary",
+          "minutes": 45,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-3-vocabulary",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            },
+            {
+              "materialId": "lexical-w02-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-3-vocabulary",
+              "version": "1",
+              "title": "At the Lost and Found · 语境词汇",
+              "level": "A1",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "lost and found",
+                "office",
+                "school",
+                "desk",
+                "teacher",
+                "student",
+                "bag",
+                "key"
+              ],
+              "textSHA256": "a3284483b0545d060818e5591bc63fac2863860e0018bbf880b1ff08bba7908a",
+              "audio": null,
+              "sourceField": "passage"
+            },
+            {
+              "id": "lexical-w02-3",
+              "version": "1",
+              "title": "第2周 · 听力原句词汇补组 3",
+              "level": "A1",
+              "type": "vocabulary",
+              "questions": 0,
+              "targetForms": [
+                "that"
+              ],
+              "textSHA256": "bdd7190252aaaefed7fe619669254b3d4fbac5bf480f05a140aa243a2cba7b4f",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "grammar",
+          "minutes": 30,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-3-grammar",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-3-grammar",
+              "version": "2",
+              "title": "he / she / it；is；a / an；this / that",
+              "level": "A1",
+              "type": "grammar",
+              "questions": 4,
+              "targetForms": [],
+              "textSHA256": "7ebe23d57fb1f66d15f2aa39732bf41f9ac5859d309a37837f7423191f13f7e3",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w02-listen-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            },
+            {
+              "materialId": "sounds-02",
+              "cycle": "scheduled-reuse",
+              "firstPlannedDay": 8
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-listen-3",
+              "version": "2",
+              "title": "At the Lost and Found",
+              "level": "A1",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [
+                "bag",
+                "phone",
+                "key",
+                "book",
+                "black",
+                "hat",
+                "umbrella",
+                "small"
+              ],
+              "textSHA256": "a2c1a1d8dec612ff4d02e7b442a467be1f1f07905395ef90a9dbaeb074f143d0",
+              "audio": "audio/curriculum/w02-listen-3.mp3",
+              "sourceField": "transcript"
+            },
+            {
+              "id": "sounds-02",
+              "version": "1",
+              "title": "Numbers: Fifteen or Fifty?",
+              "level": "A1",
+              "type": "sounds",
+              "questions": 8,
+              "targetForms": [],
+              "textSHA256": "e6db51dcbfb030ab82a27a572f54b01211706193ad5623915a7eb05c8dd01e39",
+              "audio": "audio/curriculum/sounds-02.mp3",
+              "sourceField": "transcript"
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-3",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-3",
+              "version": "2",
+              "title": "At the Lost and Found",
+              "level": "A1",
+              "type": "reading",
+              "questions": 8,
+              "targetForms": [
+                "lost and found",
+                "office",
+                "school",
+                "desk",
+                "teacher",
+                "student",
+                "bag",
+                "key"
+              ],
+              "textSHA256": "19d8063ec6ff37953da8af1bde11e6a62474f23f048d468631830cab83aecf0c",
+              "audio": null,
+              "sourceField": "passage"
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "minutes": 60,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-3-speaking",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-3-speaking",
+              "version": "1",
+              "title": "At the Lost and Found · 口语迁移",
+              "level": "A1",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "e07de27a0cdc7cd7f1f9e41c2e7bfbebbd514ceef04c03794b798608c14c5d1b",
+              "audio": null,
+              "foundation": true,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "minutes": 75,
+          "materialPractice": [
+            {
+              "materialId": "w02-read-3-writing",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            }
+          ],
+          "materials": [
+            {
+              "id": "w02-read-3-writing",
+              "version": "2",
+              "title": "At the Lost and Found · 写作迁移",
+              "level": "A1",
+              "type": "foundation",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "b22e5c7c0a6ceb57edc17efd2e133423274d4326033082bc650666c5dea282b6",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        },
+        {
+          "skill": "reflection",
+          "minutes": 15,
+          "materialPractice": [
+            {
+              "materialId": "reflection-10",
+              "cycle": "first-planned",
+              "firstPlannedDay": 10
+            }
+          ],
+          "materials": [
+            {
+              "id": "reflection-10",
+              "version": "1",
+              "title": "第 10 天 · 学习复盘",
+              "level": "A1",
+              "type": "reflection",
+              "questions": 0,
+              "targetForms": [],
+              "textSHA256": "5e697d153986cf240fea06090511157ed2a0949af62e76ce470305c1e6919725",
+              "audio": null,
+              "sourceField": "prompt"
+            }
+          ]
+        }
+      ],
+      "publicPlanCandidates": [
+        {
+          "assignmentId": "public-course:10:public-voa-l1-03-listening",
+          "materialId": "public-voa-l1-03-listening",
+          "sourceId": "voa-l1-03",
+          "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+          "targetForms": [
+            "that",
+            "big",
+            "yes"
+          ],
+          "scope": "Runtime admission and frozen-day protection still apply. This is the public plan entry, not a claim about a live family profile."
+        }
+      ]
+    }
+  ],
+  "contentManifestSHA256": "7258ed0405db5ebd5791c9b254491b0937e1c98d1096e7bec4d8c610f6d85f91",
+  "publicationManifestSHA256": "022e19f3023720e69da936d02935a9089e45baa08cb54a056945e86597d27336"
+}

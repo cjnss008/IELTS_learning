@@ -1,0 +1,41 @@
+{
+  "week": 2,
+  "level": "A1",
+  "version": "2",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "规则校验＋未提供答案的第二轮AI解题一致性检查；未经真人考生标定；v69明确猫的指代上下文或移除重复干扰项，原正确答案值保留。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "e41029cfe92cb38f405055b55d3eeca4e63d51ead00182935116a2419f91f7f7",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "d796e759fb460cb6de4b407d99d39bc1bfcc5ea496abd3ffb996ac0d41e1cdcc"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w02-read-1-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "My Desk and My Cat · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "写2—8个简单句、至少12词，介绍一张桌子、桌上的一件物品以及桌边的一位人物；可以自编场景。He/She指人物，It指物品；a/an按紧接着的读音选择，不要求把两种冠词硬塞进每句话。",
+  "prompt": "Write 2–8 simple sentences about a desk, an object on it, and one person beside it. The scene may be real or invented. Use This is to introduce something, It is for an object, and He is or She is for the person. Use a or an where appropriate. Write at least 12 words.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  }
+}

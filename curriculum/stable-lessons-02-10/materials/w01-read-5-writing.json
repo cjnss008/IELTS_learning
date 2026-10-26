@@ -1,0 +1,42 @@
+{
+  "week": 1,
+  "level": "A0",
+  "version": "2",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "model": "deepseek-flash",
+    "contentHash": "2466c725514386caeb96e940c8f15b790e6d654a6caafe00193efb61ec8613c6",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "questions",
+      "rubric",
+      "prompt",
+      "originalPrompt",
+      "minWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "35430624ab857b2c22c63ed7e02b0b53d278ae19c75ab737c04b8b25ba9e04f5"
+    }
+  },
+  "pool": "training",
+  "fullTest": false,
+  "questions": [],
+  "id": "w01-read-5-writing",
+  "skill": "writing",
+  "type": "foundation",
+  "title": "First Day at the Language Club · 写作迁移",
+  "estimatedMinutes": 30,
+  "instructions": "给英语俱乐部的一位成员写2—4个简单句、至少12词。用I am介绍自己，用You are对收信人说一句话。信息可以自编；检查句首大写和陈述句末句号。",
+  "prompt": "Write a short message to a member of your English club. Write 2–4 simple sentences and at least 12 words. Introduce yourself with I am, and address the other member with You are. You may invent the details. Start each sentence with a capital letter and end each statement with a period.",
+  "minWords": 12,
+  "rubric": {
+    "taskType": "foundation"
+  },
+  "originalPrompt": "给英语俱乐部的一位成员写2—4个简单句、至少12词。用I am介绍自己，用You are对收信人说一句话。可以自编信息，句首大写，陈述句末用句号。"
+}

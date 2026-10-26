@@ -1,0 +1,353 @@
+{
+  "id": "w01-read-6",
+  "week": 1,
+  "skill": "reading",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "reading",
+  "fullTest": false,
+  "estimatedMinutes": 30,
+  "minWords": 45,
+  "maxWords": 90,
+  "questionCount": 8,
+  "title": "My First English Class",
+  "instructions": "这是模拟练习材料，不是官方雅思考试。阅读短文，然后回答问题。注意句首大写和句号。",
+  "passage": "Hello. I am Li Ming. I am a student. This is my English class. You are my teacher. You are very kind. I am happy. We are in Room 5. I am from China. You are from Canada. I am here to learn English. You are here to help me. I am ready. You are ready too. We are a good team.",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What does Li Ming say he is?",
+      "options": [
+        "学生",
+        "老师",
+        "医生"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "原文明说学生身份，不据此推断他不可能还有其他身份。",
+      "evidence": "I am a student.",
+      "originalPrompt": "Li Ming 介绍自己的学习身份是什么？",
+      "optionsEnglish": [
+        "Student",
+        "Teacher",
+        "Doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "85b11707754fae0d3a67b47b5b3a2b3cdd1e8a2bbb5b4be0994bfffd407b9394",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Which room is the English class in?",
+      "options": [
+        "Room 5",
+        "Room 3",
+        "Room 8"
+      ],
+      "answers": [
+        "Room 5"
+      ],
+      "explanation": "原文直接给出 Room 5。",
+      "evidence": "We are in Room 5.",
+      "originalPrompt": "英语课在哪一间教室？",
+      "optionsEnglish": [
+        "Room 5",
+        "Room 3",
+        "Room 8"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "f7e8740667f6e82f591b519631563bca22959077a76322ca9d293ee0bd7ba38b",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Which country is the teacher from?",
+      "options": [
+        "Canada",
+        "China",
+        "America"
+      ],
+      "answers": [
+        "Canada"
+      ],
+      "explanation": "Li Ming 对老师说 You are from Canada.。",
+      "evidence": "You are from Canada.",
+      "originalPrompt": "老师来自哪个国家？",
+      "optionsEnglish": [
+        "Canada",
+        "China",
+        "America"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "642012da4a3970b3891288bcd675aee8048214b59062234402e03f42d0412fce",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "How does Li Ming feel?",
+      "options": [
+        "开心",
+        "难过",
+        "疲倦"
+      ],
+      "answers": [
+        "开心"
+      ],
+      "explanation": "原文的 happy 表达开心。",
+      "evidence": "I am happy.",
+      "originalPrompt": "Li Ming 说自己感觉怎样？",
+      "optionsEnglish": [
+        "Happy",
+        "Sad",
+        "Tired"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "3e5731564dd321e214c8574f85f4e94a43879146b737232492278da4d6f9eef9",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Which English word in the text describes the teacher's attitude toward people? Write one word from the text.",
+      "answers": [
+        "kind"
+      ],
+      "maxWords": 1,
+      "explanation": "You are very kind. 直接说明老师友善。",
+      "evidence": "You are very kind.",
+      "originalPrompt": "原文用哪个英文词形容老师对人的态度？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "fcc2b65675d18b622391fa278cf4bdaad9d1bd4b1c97fff1672bd6d82dbf96bb",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "What does Li Ming say he is here to do?",
+      "options": [
+        "学习英语",
+        "教数学",
+        "买书"
+      ],
+      "answers": [
+        "学习英语"
+      ],
+      "explanation": "原文直接说明来这里 learn English；不再用“是学生所以不是医生”的无根据排他推断。",
+      "evidence": "I am here to learn English.",
+      "originalPrompt": "Li Ming 说自己来这里做什么？",
+      "optionsEnglish": [
+        "Learn English",
+        "Teach math",
+        "Buy books"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "3c1b85acf3bab515bfe59e8f0124a75a6d358dac43fa9a2a3a07f1791efdae70",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Which country is Li Ming from? Write one word from the text.",
+      "answers": [
+        "China"
+      ],
+      "maxWords": 1,
+      "explanation": "I am from China. 给出国家信息。",
+      "evidence": "I am from China.",
+      "originalPrompt": "Li Ming 来自哪个国家？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "684b6607eaf9750139a23eee29069e3f328979359874c780f3ee76d1a45c0be4",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "fill",
+      "prompt": "The last sentence calls the two people a good ____. Write one word from the text.",
+      "answers": [
+        "team"
+      ],
+      "maxWords": 1,
+      "explanation": "最后一句是 We are a good team.。",
+      "evidence": "We are a good team.",
+      "originalPrompt": "原文最后一句把两人称为一个好的什么？从原文填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "d64627ca48ab40f98faa949283782b363756f5e79f0f539ead30d5895a527723",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Li Ming."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "I am a student."
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "You are my teacher."
+    },
+    {
+      "word": "kind",
+      "meaning": "友好的，和蔼的",
+      "example": "You are very kind."
+    },
+    {
+      "word": "happy",
+      "meaning": "高兴的",
+      "example": "I am happy."
+    },
+    {
+      "word": "room",
+      "meaning": "房间",
+      "example": "We are in Room 5."
+    },
+    {
+      "word": "learn",
+      "meaning": "学习",
+      "example": "I am here to learn English."
+    },
+    {
+      "word": "team",
+      "meaning": "团队",
+      "example": "We are a good team."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词与be动词",
+    "explanation": "在英语中，人称代词I（我）和you（你）后面要跟be动词。I后面用am，you后面用are。句子开头字母要大写，句子结尾要加句号。",
+    "example": "I am Li Ming. You are my teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I后面用am，所以“I am a student.”正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子。",
+        "options": [
+          "You are kind.",
+          "You am kind.",
+          "You is kind."
+        ],
+        "answers": [
+          "You are kind."
+        ],
+        "explanation": "you后面用are，所以“You are kind.”正确。",
+        "evidence": "You are very kind."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：I ____ happy. (用am或are)",
+        "answers": [
+          "am"
+        ],
+        "maxWords": 1,
+        "explanation": "I后面用am，所以填am。",
+        "evidence": "I am happy."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "填空：You ____ my teacher. (用am或are)",
+        "answers": [
+          "are"
+        ],
+        "maxWords": 1,
+        "explanation": "you后面用are，所以填are。",
+        "evidence": "You are my teacher."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Where are you from?",
+        "Are you a student?",
+        "Are you happy?"
+      ],
+      "part2": "Describe your English class. You should say:",
+      "part2Bullets": [
+        "where it is",
+        "who your teacher is",
+        "what you learn",
+        "how you feel"
+      ],
+      "part3": [
+        "Is English easy or difficult for you?",
+        "Do you like your English class?",
+        "What do you do in your English class?",
+        "Who helps you with English?"
+      ]
+    },
+    "writing": "Write 2-8 simple sentences about yourself. Use 'I am...' and 'You are...'. Example: I am Li Ming. I am a student. You are my teacher. You are kind."
+  },
+  "rubric": {
+    "taskType": "Reading and Listening Practice (A0 Level)"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "ec9347736219d5773d9af68034266e8f4ba4fdbe3c02ac9e6f48118b258a4252",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "",
+  "audioVoice": "",
+  "audioSynthetic": true
+}

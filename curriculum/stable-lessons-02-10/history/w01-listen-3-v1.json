@@ -1,0 +1,368 @@
+{
+  "id": "w01-listen-3",
+  "week": 1,
+  "skill": "listening",
+  "level": "A0",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": "人称代词 I / you；be 动词 am / are；句首大写与句号。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 3,
+  "title": "First Day at the Language School",
+  "instructions": "这是为A0初学者设计的听力练习。听录音（或阅读转录文本），然后回答问题。所有问题都是直接信息题，答案在文本中明确出现。请先阅读问题，再听录音。",
+  "passage": "",
+  "transcript": "A: Hello. I am Anna. Are you a student?\nB: No, I am not a student. I am a teacher. I am Ben.\nA: Oh, sorry. You are a teacher.\nB: Yes. And you? Are you a student?\nA: Yes, I am a student. I am new.\nB: Welcome! I am new, too. I am a new teacher.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the name that the first speaker says?",
+      "options": [
+        "Anna",
+        "Ben",
+        "Cathy",
+        "David"
+      ],
+      "answers": [
+        "Anna"
+      ],
+      "explanation": "需听开头的自我介绍，不能从题干直接读出姓名。",
+      "evidence": "I am Anna.",
+      "originalPrompt": "最先开口的说话者介绍自己的名字是什么？",
+      "optionsEnglish": [
+        "Anna",
+        "Ben",
+        "Cathy",
+        "David"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "eab4cd3295626e67387fcda0d67e7e342e64ff0879644bccd6cd134c9b4e6854",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What job does the second speaker, Ben, clearly say he has?",
+      "options": [
+        "老师",
+        "学生",
+        "医生"
+      ],
+      "answers": [
+        "老师"
+      ],
+      "explanation": "Ben 明说 I am a teacher.。",
+      "evidence": "I am a teacher.",
+      "originalPrompt": "第二位说话者 Ben 明确介绍的身份是什么？",
+      "optionsEnglish": [
+        "Teacher",
+        "Student",
+        "Doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "3cfb73ba522c00c1b003888bbc3f5cb51f025dd3be315b5943ec57bb2fe525f9",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What job does the first speaker, Anna, clearly say she has?",
+      "options": [
+        "学生",
+        "老师",
+        "医生"
+      ],
+      "answers": [
+        "学生"
+      ],
+      "explanation": "Anna 明说自己是学生。",
+      "evidence": "Yes, I am a student.",
+      "originalPrompt": "第一位说话者 Anna 明确介绍的身份是什么？",
+      "optionsEnglish": [
+        "Student",
+        "Teacher",
+        "Doctor"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "2c63e32e3b19f996238ffac42e0bbd345431a8c00a2b58dd58189164266caff0",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "What name does the second speaker say? Fill in one word from the recording.",
+      "answers": [
+        "Ben"
+      ],
+      "maxWords": 1,
+      "explanation": "第二位说话者在介绍职业之后说 I am Ben.。",
+      "evidence": "I am Ben.",
+      "originalPrompt": "第二位说话者介绍自己的名字是什么？从录音填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "79df903fa0544c449e73fcb77b7a79de97e8c502c2e344c6d7dee56d890d0528",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Which word does Anna use to say she is new? Fill in one word from the recording.",
+      "answers": [
+        "new"
+      ],
+      "maxWords": 1,
+      "explanation": "Anna 说 I am new.。",
+      "evidence": "I am new.",
+      "originalPrompt": "Anna 用哪个词说明自己是新来的？从录音填一个词。",
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "e4405f428abdfb8d1975443711093f76b64668e5e3d5211e5ebe6c3ef249004c",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "How does Ben describe his teaching situation?",
+      "options": [
+        "是一位新老师",
+        "已经教了很多年",
+        "没有说明是否新来"
+      ],
+      "answers": [
+        "是一位新老师"
+      ],
+      "explanation": "最后说 I am a new teacher.。",
+      "evidence": "I am a new teacher.",
+      "originalPrompt": "Ben 怎样介绍自己当老师的情况？",
+      "optionsEnglish": [
+        "He is a new teacher",
+        "He has taught for many years",
+        "He does not say if he is new"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "84b4ac0e6da6c13c916395bf1e1b19881214520852cfaf8b6a4ab09193362998",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "When Ben is first asked if he is a student, which answer word does he use first?",
+      "options": [
+        "No",
+        "Yes",
+        "Hello"
+      ],
+      "answers": [
+        "No"
+      ],
+      "explanation": "第二位说话者以 No 回应学生身份的问题。",
+      "evidence": "B: No, I am not a student.",
+      "originalPrompt": "Ben 第一次被问是不是学生时，先用了哪个回答词？",
+      "optionsEnglish": [
+        "No",
+        "Yes",
+        "Hello"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "acb508d1c20799f54f7d433e68890c7ec315dc4038940915d407d2d75e79f1d2",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Which English word does Ben use to welcome Anna?",
+      "options": [
+        "Welcome",
+        "Goodbye",
+        "Thanks"
+      ],
+      "answers": [
+        "Welcome"
+      ],
+      "explanation": "录音最后一段先说 Welcome!。",
+      "evidence": "Welcome!",
+      "originalPrompt": "Ben 用哪个英文词欢迎 Anna？",
+      "optionsEnglish": [
+        "Welcome",
+        "Goodbye",
+        "Thanks"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "28d6b42ee2bb051c880dc2b46d441557ce3428273d5d1e4f5474c354d4776db2",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "hello",
+      "meaning": "你好",
+      "example": "Hello. I am Anna."
+    },
+    {
+      "word": "student",
+      "meaning": "学生",
+      "example": "Are you a student?"
+    },
+    {
+      "word": "teacher",
+      "meaning": "老师",
+      "example": "I am a teacher."
+    },
+    {
+      "word": "new",
+      "meaning": "新的",
+      "example": "I am new."
+    },
+    {
+      "word": "welcome",
+      "meaning": "欢迎",
+      "example": "Welcome!"
+    },
+    {
+      "word": "sorry",
+      "meaning": "对不起",
+      "example": "Oh, sorry."
+    },
+    {
+      "word": "yes",
+      "meaning": "是的",
+      "example": "Yes, I am a student."
+    },
+    {
+      "word": "no",
+      "meaning": "不",
+      "example": "No, I am not a student."
+    }
+  ],
+  "grammar": {
+    "title": "人称代词 I / you 与 be 动词 am / are",
+    "explanation": "在英语中，表示“我”用 I，表示“你”用 you。be动词在 I 后面用 am，在 you 后面用 are。例如：I am a student. You are a teacher. 句首字母要大写，句末用句号。",
+    "example": "I am Anna. You are a teacher.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "I am a student.",
+          "I is a student.",
+          "I are a student.",
+          "I be a student."
+        ],
+        "answers": [
+          "I am a student."
+        ],
+        "explanation": "I 后面用 am，所以 'I am a student.' 正确。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "选择正确的句子：",
+        "options": [
+          "You am a teacher.",
+          "You is a teacher.",
+          "You are a teacher.",
+          "You be a teacher."
+        ],
+        "answers": [
+          "You are a teacher."
+        ],
+        "explanation": "you 后面用 are，所以 'You are a teacher.' 正确。",
+        "evidence": "You are a teacher."
+      },
+      {
+        "id": "g3",
+        "type": "fill",
+        "prompt": "填空：I ______ a student.",
+        "maxWords": 1,
+        "answers": [
+          "am"
+        ],
+        "explanation": "I 后面用 am。",
+        "evidence": "I am a student."
+      },
+      {
+        "id": "g4",
+        "type": "fill",
+        "prompt": "填空：You ______ a teacher.",
+        "maxWords": 1,
+        "answers": [
+          "are"
+        ],
+        "explanation": "you 后面用 are。",
+        "evidence": "You are a teacher."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "What is your name?",
+        "Are you a student?",
+        "Are you a teacher?",
+        "Are you new?"
+      ],
+      "part2": "Describe yourself. You should say:",
+      "part2Bullets": [
+        "your name",
+        "if you are a student or a teacher",
+        "if you are new",
+        "how you feel"
+      ],
+      "part3": [
+        "Is it easy to be new?",
+        "Do you like your school?",
+        "Are you happy?",
+        "Is your teacher nice?"
+      ]
+    },
+    "writing": "Write 2–8 simple sentences about yourself. Use 'I am ...' and 'You are ...'. Example: I am Li. I am a student. You are a teacher."
+  },
+  "rubric": {
+    "taskType": "listening comprehension"
+  },
+  "version": "1",
+  "source": {
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；模拟场景与数据",
+    "verification": "reviewed",
+    "method": "原材料曾做规则校验与AI解题核对；2026-10-24由Codex逐题对照本次改动的原文证据、题干泄答与选项同类性；未重跑独立AI盲解、未真人审题或难度标定。",
+    "model": "deepseek-flash",
+    "contentHash": "3bb1933d064b00b3066e62bacb844b1015d17159e369f2aceea7c58fa16c5e97",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric"
+    ]
+  },
+  "audio": "audio/curriculum/w01-listen-3.mp3",
+  "audioVoice": "en-US-AriaNeural / en-US-GuyNeural",
+  "audioSynthetic": true,
+  "audioDurationSeconds": 33.141708
+}

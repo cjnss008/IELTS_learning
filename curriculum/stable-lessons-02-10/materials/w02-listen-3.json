@@ -1,0 +1,376 @@
+{
+  "id": "w02-listen-3",
+  "week": 2,
+  "skill": "listening",
+  "level": "A1",
+  "topic": "身边的人与物",
+  "grammarFocus": "he / she / it；is；a / an；单数名词；this / that。",
+  "pool": "training",
+  "type": "sounds",
+  "fullTest": false,
+  "estimatedMinutes": 25,
+  "minWords": 35,
+  "maxWords": 90,
+  "questionCount": 8,
+  "variant": 3,
+  "title": "At the Lost and Found",
+  "instructions": "本材料为项目原创模拟教学材料，情境和数据均为模拟，非官方试题，未经真实考生难度标定。先读题，再听录音；建议第一遍抓大意，第二遍核对细节。共 8 题；单选题只选一个完整选项。填空用录音中的英文原词或数字，遵守每题词数限制。",
+  "transcript": "Sam: Your name, please?\nJo: Jo. J, O.\nSam: Is this your bag?\nJo: No. My bag is small.\nSam: Is that your bag?\nJo: Yes, it is.\nSam: Is this your phone?\nJo: No. My phone is black.\nSam: Is this your key?\nJo: Yes, it is.\nSam: Is that your book?\nJo: No. My book is new.\nSam: Is that your hat?\nJo: No. My hat is red.\nSam: Is this your umbrella?\nJo: Yes. Thank you.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Is the first bag that Sam takes out Jo's?",
+      "options": [
+        "是，是 Jo 的。",
+        "不，不是 Jo 的。",
+        "Jo 没有回答。"
+      ],
+      "answers": [
+        "不，不是 Jo 的。"
+      ],
+      "explanation": "第一次问包时 Jo 回答 No，并说自己的包小。",
+      "evidence": "Sam: Is this your bag?\nJo: No. My bag is small.",
+      "originalPrompt": "Sam 第一次拿出的包是 Jo 的吗？",
+      "optionsEnglish": [
+        "Yes, it is Jo's.",
+        "No, it is not Jo's.",
+        "Jo does not answer."
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "3ab23647dc7a195ddbbd0c271a7efa8ccdbefac228cde746eb4f9919c3031867",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "What color is Jo's phone?",
+      "options": [
+        "黑色",
+        "红色",
+        "白色"
+      ],
+      "answers": [
+        "黑色"
+      ],
+      "explanation": "Jo 说自己的手机是黑色的。",
+      "evidence": "My phone is black.",
+      "originalPrompt": "Jo 的手机是什么颜色的？",
+      "optionsEnglish": [
+        "Black",
+        "Red",
+        "White"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "4ae6078a9d03403cd8ced8ae5959b4048a14e5a8fcba49894c2e61276a820cd9",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Complete Jo's words with one word from the recording: My book is ____.",
+      "answers": [
+        "new"
+      ],
+      "maxWords": 1,
+      "explanation": "原句 My book is new. 中表示“新的”的词是 new。",
+      "evidence": "My book is new.",
+      "originalPrompt": "从录音中抄写一个英文词：Jo 的书是新的。My book is ______.",
+      "presentation": {
+        "version": "english-stable0210-v3",
+        "sourceHash": "f56465f8fc4db45f076464a93c260c127234947b76e9d38257782dcdee372e32",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "What color is Jo's hat?",
+      "options": [
+        "红色",
+        "黑色",
+        "蓝色"
+      ],
+      "answers": [
+        "红色"
+      ],
+      "explanation": "Jo 说自己的帽子是红色的。",
+      "evidence": "My hat is red.",
+      "originalPrompt": "Jo 的帽子是什么颜色的？",
+      "optionsEnglish": [
+        "Red",
+        "Black",
+        "Blue"
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "46c905dce7148a49d7be5165cc0b7a1c46f0fa5c277b5cf5fe1c2e98a63c1e39",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Sam asks if the key is Jo's. How does Jo answer?",
+      "options": [
+        "是，是 Jo 的。",
+        "不，不是 Jo 的。",
+        "Jo 没有回答。"
+      ],
+      "answers": [
+        "是，是 Jo 的。"
+      ],
+      "explanation": "问到钥匙时，Jo 明确回答 Yes, it is.。",
+      "evidence": "Sam: Is this your key?\nJo: Yes, it is.",
+      "originalPrompt": "Sam 问钥匙是不是 Jo 的，Jo 怎样回答？",
+      "optionsEnglish": [
+        "Yes, it is Jo's.",
+        "No, it is not Jo's.",
+        "Jo does not answer."
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "6fac4a2d38146b5224f0b253fb4ef19dd24c1f250048ec07d69330922a311f74",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Is the book that Sam takes out Jo's?",
+      "options": [
+        "是，是 Jo 的。",
+        "不，不是 Jo 的。",
+        "Jo 没有回答。"
+      ],
+      "answers": [
+        "不，不是 Jo 的。"
+      ],
+      "explanation": "问到那本书时，Jo 回答 No。",
+      "evidence": "Sam: Is that your book?\nJo: No. My book is new.",
+      "originalPrompt": "Sam 拿出的那本书是 Jo 的吗？",
+      "optionsEnglish": [
+        "Yes, it is Jo's.",
+        "No, it is not Jo's.",
+        "Jo does not answer."
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "a0f4ac6133e55ec8c96266aba16c5043ccf14ed30510b5e40d07b2fe6c3434cf",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q7",
+      "type": "fill",
+      "prompt": "Complete Jo's words with one word from the recording: My bag is ____.",
+      "answers": [
+        "small"
+      ],
+      "maxWords": 1,
+      "explanation": "Jo 用 small 描述自己的包。",
+      "evidence": "My bag is small.",
+      "originalPrompt": "从录音中抄写一个英文词：Jo 的包很小。My bag is ______.",
+      "presentation": {
+        "version": "english-stable0210-v3",
+        "sourceHash": "1532bd7b0f07f48c8e197bd301ef51a37c6af877ff8ccf92e7a74cf3a1b65ef9",
+        "internalAnswerValuesUnchanged": true
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Is the umbrella that is taken out at the end Jo's?",
+      "options": [
+        "是，是 Jo 的。",
+        "不，不是 Jo 的。",
+        "Jo 没有回答。"
+      ],
+      "answers": [
+        "是，是 Jo 的。"
+      ],
+      "explanation": "问到雨伞时，Jo 回答 Yes，并表示感谢。",
+      "evidence": "Sam: Is this your umbrella?\nJo: Yes. Thank you.",
+      "originalPrompt": "最后拿出的雨伞是 Jo 的吗？",
+      "optionsEnglish": [
+        "Yes, it is Jo's.",
+        "No, it is not Jo's.",
+        "Jo does not answer."
+      ],
+      "presentation": {
+        "version": "english-v69-1",
+        "sourceHash": "e48bbeba99a90f4b1475b820888251a0cc4d4ee894247bc21b3944eb32791108",
+        "internalAnswerValuesUnchanged": true
+      }
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "bag",
+      "meaning": "包",
+      "example": "Is this your bag?"
+    },
+    {
+      "word": "phone",
+      "meaning": "手机",
+      "example": "My phone is black."
+    },
+    {
+      "word": "key",
+      "meaning": "钥匙",
+      "example": "Is this your key?"
+    },
+    {
+      "word": "book",
+      "meaning": "书",
+      "example": "My book is new."
+    },
+    {
+      "word": "black",
+      "meaning": "黑色的",
+      "example": "My phone is black."
+    },
+    {
+      "word": "hat",
+      "meaning": "帽子",
+      "example": "My hat is red."
+    },
+    {
+      "word": "umbrella",
+      "meaning": "雨伞",
+      "example": "Is this your umbrella?"
+    },
+    {
+      "word": "small",
+      "meaning": "小的",
+      "example": "My bag is small."
+    }
+  ],
+  "grammar": {
+    "title": "he / she / it；is；a / an；单数名词；this / that",
+    "explanation": "he 指男性，she 指女性，it 可指事物或动物。I 配 am，you 配 are，第三人称单数主语配 is。第一次泛指“一个”时可用 a 或 an：紧跟的读音以辅音音素开头用 a，以元音音素开头用 an。this 是指近处单个人或物的指示词，that 指远处；it 是代词，通常承接已经提到的事物，不等于“远处”。",
+    "example": "My bag is small.",
+    "questions": [
+      {
+        "id": "g1",
+        "type": "single",
+        "prompt": "第一次泛指“一个苹果”，选 a 或 an：This is ______ apple.",
+        "options": [
+          "a",
+          "an"
+        ],
+        "answers": [
+          "an"
+        ],
+        "explanation": "apple 的开头是元音音素，用 an。",
+        "evidence": "This is an apple."
+      },
+      {
+        "id": "g2",
+        "type": "single",
+        "prompt": "用人称代词指代自己的母亲：______ is my mother.",
+        "options": [
+          "She",
+          "He",
+          "It"
+        ],
+        "answers": [
+          "She"
+        ],
+        "explanation": "母亲是女性，用 she。",
+        "evidence": "She is my mother."
+      },
+      {
+        "id": "g3",
+        "type": "single",
+        "prompt": "用人称代词承接这辆车：Look at that car. ______ is new.",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answers": [
+          "It"
+        ],
+        "explanation": "承接前面提到的车，用 it。",
+        "evidence": "Look at that car. It is new."
+      },
+      {
+        "id": "g4",
+        "type": "single",
+        "prompt": "选择指近处单个人的指示词：______ is my brother.",
+        "options": [
+          "This",
+          "That",
+          "Those"
+        ],
+        "answers": [
+          "This"
+        ],
+        "explanation": "this 指近处单个人，that 指远处，those 是复数。",
+        "evidence": "This is my brother."
+      }
+    ]
+  },
+  "transfer": {
+    "speaking": {
+      "part1": [
+        "Is this your pen?",
+        "Is that your bag?",
+        "What color is your phone?",
+        "Is your book new?"
+      ],
+      "part2": "Describe an object you have. Say 3–5 simple sentences, at least 12 words in total.",
+      "part3": [
+        "Is this your key?",
+        "Is that your hat?",
+        "What is in your bag?",
+        "Is your umbrella small?"
+      ],
+      "part2Bullets": [
+        "what it is",
+        "its colour",
+        "whether it is big or small",
+        "whether it is new or old"
+      ]
+    },
+    "writing": "写 3–5 个简单英文句子（至少 12 个英文词），介绍一件对话中没有出现的物品。使用 this/that、a/an 和 is，并说明颜色或大小。"
+  },
+  "rubric": {
+    "taskType": "listening"
+  },
+  "version": "2",
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创",
+    "verification": "reviewed",
+    "method": "GPT-6.1独立逐题核对与规则校验；未经真实考生难度标定 2026-10-26 独立 AI 内容复核后修订题干或说明；正确答案值及听读正文保留。不是真人审题或能力标定。",
+    "contentHash": "6ce2a106cffbe086319b26c951d2a7afe559043f280f178ad438a70fbc37ee0a",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "transcript",
+      "questions",
+      "vocabulary",
+      "grammar",
+      "transfer",
+      "rubric",
+      "minWords",
+      "maxWords"
+    ],
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "revisionOf": {
+      "version": "1",
+      "materialContentHash": "828a3888dcd66e842155e51e6ea3b4594a0f9cb099e9cec4aa950403e3177747"
+    }
+  },
+  "audio": "audio/curriculum/w02-listen-3.mp3",
+  "audioSynthetic": true,
+  "audioVoice": "en-US-AriaNeural / en-US-GuyNeural",
+  "audioDurationSeconds": 42.329833
+}
