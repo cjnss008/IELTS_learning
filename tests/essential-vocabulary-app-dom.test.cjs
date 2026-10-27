@@ -79,7 +79,7 @@ test('the memory page boots the 8000 route, saves real due recall first, and ret
  f.win.IELTSMemorySession=require('../assets/memory-session.js');f.win.window=f.win;
  vm.runInNewContext(fs.readFileSync(path.join(assets,'memory-app.js'),'utf8'),f.win);await tick();await tick();
  const host=f.doc.getElementById('memoryPractice');assert.match(f.dashboard.textContent,/先复习/);assert.match(host.textContent,/到期回忆/);let input=host.querySelector('input');input.value='stud';await input.fire('input');await input.fire('compositionstart');await host.querySelector('form').fire('submit',{isComposing:true});assert.equal((await f.records.list()).length,0);assert.equal(Object.values(f.memory.read().drafts)[0].answer,'stud');
- await input.fire('compositionend');input.value='student';await input.fire('input');await host.querySelector('form').fire('submit');assert.equal((await f.records.list()).length,1);assert.equal((await f.records.list())[0].source,'memory-review');assert.equal(Object.keys(f.memory.read().drafts).length,0);await button(host,'继续本轮复习').click();assert.match(host.textContent,/本轮复习已完成/);
+ await input.fire('compositionend');input.value='student';await input.fire('input');await host.querySelector('form').fire('submit');assert.equal((await f.records.list()).length,1);assert.equal((await f.records.list())[0].source,'memory-review');assert.equal(Object.keys(f.memory.read().drafts).length,0);await button(host,'继续本轮复习').click();assert.match(host.textContent,/当前已到期复习已处理/);
 });
 
 test('a failed draft save keeps the current input and asks the browser to stay until the same draft can be saved',async()=>{

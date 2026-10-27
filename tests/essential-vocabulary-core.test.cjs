@@ -74,7 +74,9 @@ test('old course originals deduplicate into 8000 without changing their IDs or u
 });
 
 test('old exposure can be repaired in current context without becoming a new word or changing its history',()=>{
-  const memory=M.captureTraining(M.newState(),{attempts:[{id:'old-spelling',word:'student',meaning:'学生',mode:'meaning',submittedAt:new Date(BASE-DAY).toISOString(),correct:true}]}),before=structuredClone(memory),plan=E.plan(memory,opts({reviewLimit:0,contextWords:[entries[0],entries[6]]}));
+  const original=M.captureTraining(M.newState(),{attempts:[{id:'old-spelling',word:'student',meaning:'学生',mode:'meaning',submittedAt:new Date(BASE-DAY).toISOString(),correct:true}]}),records=[];
+  const blocked=E.plan(original,opts({reviewLimit:0,contextWords:[entries[0],entries[6]]}));assert.equal(blocked.due.length,1);assert.equal(blocked.newWords.length,0,'old reviewLimit=0 cannot bypass required reviews');
+  const memory=recall(original,records,entries[0],'spelling',BASE),before=structuredClone(memory),plan=E.plan(memory,opts({now:BASE+1,records,contextWords:[entries[0],entries[6]]}));
   assert.deepEqual(plan.newWords.map(w=>[w.word,w.learningKind]),[['student','complete-initial'],['book','new']]);assert.ok(!plan.todayNewWords.some(w=>w.word==='student'));assert.equal(plan.stats.initialCompleted,0);
   const opened=E.startBatch(memory,{id:'essential-batch-old-completion',words:[entries[0]],now:BASE});assert.deepEqual(opened.items,before.items);assert.equal(E.plan(opened,opts({reviewLimit:0})).quota.startedToday,0);assert.deepEqual(memory,before);
 });
@@ -137,14 +139,16 @@ test('four skills need separate linked, unaided delayed answers; exposure, self-
   assert.equal(E.plan(legacy, opts({now: BASE + 3 * DAY + 1})).stats.delayedVerifiedWords, 0);
 });
 
-test('daily review quota consumes actual submissions and reserves time for due words before contextual new work', () => {
+test('daily reviews retain every due word and consume actual submissions before contextual new work, without a count quota', () => {
   let memory = M.captureTraining(M.newState(), {attempts: entries.slice(0, 8).map((word, index) => ({id: 'training-' + index, word: word.word, meaning: word.meaning, submittedAt: new Date(BASE).toISOString(), correct: true}))});
   const records = [], now = BASE + 3 * DAY;
-  let plan = E.plan(memory, opts({now, remainingMinutes: 2.2, reviewLimit: 2,contextWords:[entries[8]]})); assert.equal(plan.due.length, 2); assert.equal(plan.newWords.length, 0);
+  let plan = E.plan(memory, opts({now, remainingMinutes: 2.2, reviewLimit: 2,contextWords:[entries[8]]})); assert.equal(plan.due.length, 8); assert.equal(plan.reviewBudget.sessionCount,7); assert.equal(plan.newWords.length, 0);
   memory = recall(memory, records, entries[0], plan.due[0].skill, now);
-  plan = E.plan(memory, opts({now: now + 1, remainingMinutes: 120, records, reviewLimit: 2,entries:entries.slice(0,8)})); assert.equal(plan.reviewBudget.completed, 1); assert.equal(plan.due.length, 1);
+  plan = E.plan(memory, opts({now: now + 1, remainingMinutes: 120, records, reviewLimit: 2,entries:entries.slice(0,8)})); assert.equal(plan.reviewBudget.completed, 1); assert.equal(plan.due.length, 7);
   memory = recall(memory, records, entries[1], plan.due[0].skill, now + 1000);
-  plan = E.plan(memory, opts({now: now + 1001, remainingMinutes: 120, records, reviewLimit: 2,entries:entries.slice(0,8)})); assert.equal(plan.reviewBudget.remaining, 0); assert.equal(plan.due.length, 0); assert.ok(plan.allDue.length > 0);
+  plan = E.plan(memory, opts({now: now + 1001, remainingMinutes: 120, records, reviewLimit: 2,contextWords:[entries[8]]})); assert.equal(plan.reviewBudget.remaining, 6); assert.equal(plan.due.length, 6); assert.equal(plan.newWords.length,0);
+  for(let n=2;n<8;n++){const item=plan.due[0],word=entries.find(word=>word.word===item.word);memory=recall(memory,records,word,item.skill,now+n*1000);plan=E.plan(memory,opts({now:now+n*1000+1,records,reviewLimit:0,contextWords:[entries[8]]}));}
+  assert.equal(plan.due.length,0);assert.equal(plan.reviewBudget.completed,8);assert.equal(plan.reviewDebt.required,false);assert.deepEqual(plan.newWords.map(word=>word.word),[entries[8].word]);
   assert.equal(E.plan(M.newState(), opts({courseDay: 365})).stats.started, 0);
 });
 

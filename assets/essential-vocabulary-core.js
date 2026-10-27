@@ -7,7 +7,7 @@
   if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function (root, M, F) {
   'use strict';
-  const TARGET = 8000, DAY = 86400000, RETRY_MINUTES = 10, START_COURSE_DAY = 2, DAILY_NEW = Math.ceil(TARGET / (366 - START_COURSE_DAY));
+  const TARGET = 8000, DAY = 86400000, RETRY_MINUTES = 10, START_COURSE_DAY = 2, DAILY_NEW = 40;
   const COST = {recognition: .3, spelling: .45, listening: .6, production: 1.5};
   const clone = value => JSON.parse(JSON.stringify(value));
   const norm = value => String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
@@ -198,15 +198,25 @@
     const remainingMinutes = Math.min(globalRemainingMinutes, vocabulary.remainingMinutes);
     const startCourseDay = Number.isInteger(options.startCourseDay) ? Math.min(365, Math.max(2, options.startCourseDay)) : START_COURSE_DAY;
     const courseDay = Number.isInteger(options.courseDay) ? options.courseDay : START_COURSE_DAY, eligibleDay = courseDay >= startCourseDay;
-    const annualDays = 366 - startCourseDay, baseline = Math.ceil(TARGET / annualDays);
-    const reviewLimit = Math.min(480, Math.max(0, Number.isInteger(options.reviewLimit) ? options.reviewLimit : 360));
-    const reviewRemaining = Math.max(0, reviewLimit - reviewedToday.length), due = [];
-    let reviewMinutes = 0;
-    for (const item of queue.allDue) {
-      const cost = COST[item.skill];
-      if (due.length >= reviewRemaining || reviewMinutes + cost > remainingMinutes) break;
-      due.push(item); reviewMinutes += cost;
-    }
+    const completedBeforeToday = [...acquired].filter(([key, value]) => knownKeys.has(key) && Date.parse(value.at) <= now && dateKey(value.at) < today).length;
+    const dailyTarget = eligibleDay ? Math.min(DAILY_NEW, Math.max(0, entries.length - completedBeforeToday)) : 0;
+    const annualDays = 366 - startCourseDay, baseline = DAILY_NEW;
+    // Required work is independent of a display batch, a daily count and the
+    // new-word reference allowance. A finite session uses the shared calendar
+    // budget, including the currently configured Pomodoro rest, without hiding
+    // the remainder or writing any completion into Memory.
+    const due = queue.allDue.slice(), unfinishedReviewDrafts = Object.values(state.drafts || {});
+    const waitingRetryKeys = new Set(queue.futureRetries.map(item => norm(item.word)));
+    const debtKeys = new Set([...due.map(item => norm(item.word)), ...waitingRetryKeys, ...unfinishedReviewDrafts.map(item => norm(item.word))]);
+    const reviewDebt = {required: debtKeys.size > 0, requiredWords: debtKeys.size, due: due.length, waitingRetries: waitingRetryKeys.size, unfinishedDrafts: unfinishedReviewDrafts.length, heldCards: queue.held.length};
+    const timer = options.timerCore || root.IELTSStudyTimerCore || (typeof require === 'function' ? require('./study-timer-core.js') : null), timerState = options.timerState === undefined ? root.IELTSStudyTimer?.snapshot?.() : options.timerState;
+    let timerProblem = timerState === null ? '番茄钟状态尚未读取，原任务保留。' : null;
+    const forecast = minutes => { if(timerProblem)return Infinity;try{const value=timer?.forecast ? timer.forecast(minutes,timerState).totalMinutes : minutes;if(!Number.isFinite(value)||value<0)throw Error('番茄钟预算尚未核验。');return value;}catch(error){timerProblem=error.message;return Infinity;} };
+    forecast(0);
+    let reviewMinutes = 0, sessionMinutes = 0, sessionCount = 0, sessionFull = false;
+    for (const item of due) { const cost = COST[item.skill]; reviewMinutes += cost; if (!sessionFull && forecast(sessionMinutes + cost) <= globalRemainingMinutes + .0001) { sessionMinutes += cost; sessionCount++; } else sessionFull = true; }
+    const nextUnitStudyMinutes = due.length ? COST[due[0].skill] : unfinishedReviewDrafts.length ? COST[unfinishedReviewDrafts[0].skill] : 0;
+    const canStartNext = nextUnitStudyMinutes > 0 && forecast(nextUnitStudyMinutes) <= globalRemainingMinutes + .0001;
     const reservedKeys = new Set(activeBatches.flatMap(batch => batch.wordKeys));
     const courseWordKeys = new Set((options.courseWords || []).map(word => norm(typeof word === 'string' ? word : word?.word)).filter(key => knownKeys.has(key)));
     const courseKeys = new Set([...courseWordKeys].filter(key => !acquired.has(key) && !reservedKeys.has(key) && !started.has(key)));
@@ -221,19 +231,15 @@
     const pendingKeys = new Set((options.pendingWords || []).map(word => norm(typeof word === 'string' ? word : word?.word)));
     const startDate = state.essential.startDate || options.startDate || today;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(startDate) || !Number.isFinite(Date.parse(startDate + 'T00:00:00Z'))) throw Error('词汇年度起始日期无效。');
-    const elapsedDays = calendarDays(startDate, today), priorCount = started.size - introducedToday;
-    const behind = Math.max(0, Math.ceil(Math.min(annualDays, elapsedDays) * TARGET / annualDays) - priorCount);
-    const pace = Math.min(Math.max(30, baseline), baseline + Math.min(8, Math.ceil(behind / 14)));
+    const elapsedDays = calendarDays(startDate, today);
+    const pace = dailyTarget;
     const recent = proof.events.filter(h => h.at >= now - 14 * DAY).slice(-120);
     const accuracy = recent.length >= 8 ? recent.filter(h => h.correct).length / recent.length : null;
-    let factor = accuracy !== null && accuracy < .7 ? .5 : accuracy !== null && accuracy < .85 ? .75 : 1;
     const reasons = [];
-    if (factor < 1) reasons.push('近期无辅助跨天回忆尚不稳定，减少新词');
-    const backlog = queue.allDue.length;
-    if (backlog > Math.max(60, reviewRemaining * 2)) { factor = 0; reasons.push('到期积压较多，先处理本日复习'); }
-    else if (backlog > Math.max(20, reviewRemaining)) { factor *= .5; reasons.push('到期量超过本日复习份额，降低新词'); }
+    if (accuracy !== null && accuracy < .85) reasons.push('近期回忆仍需巩固；保留每日40个真正新词的目标，先完成必做复习与订正');
+    if (reviewDebt.required) reasons.push('必做复习、错词间隔或未提交原稿尚未处理完，保留全部积压，先复习后新词');
     const newWordMinutes = vocabulary.newWordMinutes;
-    const adaptiveReference = Math.floor(pace * factor);
+    const adaptiveReference = pace;
     const contextNewCount = [...contextual.keys()].filter(key => !acquired.has(key) && !reservedKeys.has(key) && !courseWordKeys.has(key) && !pendingKeys.has(key) && !started.has(key)).length;
     const target = Math.min(adaptiveReference, startedToday + courseKeys.size + contextNewCount), dailyRemaining = Math.max(0, adaptiveReference - startedToday - courseKeys.size);
     const reservedVocabularyMinutes = Math.max(0, Number(options.reservedVocabularyMinutes) || 0);
@@ -242,8 +248,10 @@
     let count = Math.min(dailyRemaining, budgetCapacity);
     if (!eligibleDay) { count = 0; reasons.push('8000词新增训练从第' + startCourseDay + '课开始，第1课原有词汇与进度保留'); }
     if (activeBatches.length) { count = 0; reasons.push('继续已开始的新词组，保留原始输入'); }
+    if (reviewDebt.required) count = 0;
+    if (timerProblem) { count = 0; reasons.push(timerProblem); }
     if (budgetCapacity < dailyRemaining) reasons.push('按真实剩余预算保留复习与完整新词训练时间');
-    if (vocabulary.remainingMinutes <= 0) reasons.push('今日词汇参考份额已用完，保留听读说写时间，到期词与未交稿顺延');
+    if (vocabulary.remainingMinutes <= 0) reasons.push('新词参考份额已用完；到期复习仍为必做，按今日共享总预算逐题继续，超时保留积压');
     if (courseKeys.size) reasons.push('本课 ' + courseKeys.size + ' 个必学新词复用课程训练，不另做一遍');
     const eligible = [...contextual.values()].filter(word => !acquired.has(norm(word.word)) && !reservedKeys.has(norm(word.word)) && !courseWordKeys.has(norm(word.word)) && !pendingKeys.has(norm(word.word)));
     // A legacy exposure is preserved as exposure. A missing v2 initial artifact
@@ -259,7 +267,7 @@
       if (M.SKILLS.every(skill => proof.verified.has(M.idFor(word.word, skill)))) verifiedWords.push(norm(word.word));
       if (M.SKILLS.some(skill => proof.reviewed.has(M.idFor(word.word, skill)))) delayedWords.push(norm(word.word));
     }
-    const stats = {target: TARGET, total: entries.length, started: started.size, notStarted: Math.max(0, entries.length - started.size), initialCompleted: acquiredKeys.size, needLearning: Math.max(0, entries.length - acquiredKeys.size), pendingLearning: [...started.keys()].filter(key => !acquiredKeys.has(key)).length, dueWords: dueKeys.size, dueCards: queue.due.filter(item => knownKeys.has(norm(item.word))).length, retryWords: queue.allDue.filter(item => item.reviewKind === 'retry' && knownKeys.has(norm(item.word))).length, delayedRecallWords: delayedWords.length, delayedVerifiedWords: verifiedWords.length, verifiedBySkill, legacyStarted: [...started.keys()].filter(key => !acquiredKeys.has(key)).length, startDate, startCourseDay, annualDays, elapsedDays, expectedIntroduced: eligibleDay ? Math.min(TARGET, Math.ceil((elapsedDays + 1) * TARGET / annualDays)) : 0, recentAccuracy: accuracy, evidenceNote: '初学提交、到期复习和延迟已验证分别统计；全词验证需要四项技能各自两次有原稿关联的无辅助延迟正确回忆，间隔至少48小时。到期后仍需复习，后续明确错误会撤回相应验证。'};
+    const stats = {target: TARGET, total: entries.length, started: started.size, notStarted: Math.max(0, entries.length - started.size), initialCompleted: acquiredKeys.size, needLearning: Math.max(0, entries.length - acquiredKeys.size), pendingLearning: [...started.keys()].filter(key => !acquiredKeys.has(key)).length, dueWords: dueKeys.size, dueCards: queue.due.filter(item => knownKeys.has(norm(item.word))).length, retryWords: queue.allDue.filter(item => item.reviewKind === 'retry' && knownKeys.has(norm(item.word))).length, delayedRecallWords: delayedWords.length, delayedVerifiedWords: verifiedWords.length, verifiedBySkill, legacyStarted: [...started.keys()].filter(key => !acquiredKeys.has(key)).length, startDate, startCourseDay, annualDays, elapsedDays, expectedIntroduced: eligibleDay ? Math.min(entries.length, (elapsedDays + 1) * DAILY_NEW) : 0, recentAccuracy: accuracy, evidenceNote: '初学提交、到期复习和延迟已验证分别统计；全词验证需要四项技能各自两次有原稿关联的无辅助延迟正确回忆，间隔至少48小时。到期后仍需复习，后续明确错误会撤回相应验证。'};
     const displayWords = new Map();
     for (const word of options.courseWords || []) {
       const key = norm(typeof word === 'string' ? word : word?.word);
@@ -280,7 +288,7 @@
     for (const batch of activeBatches) if (dateKey(batch.startedAt) < today) for (let n = 0; n < batch.wordKeys.length; n++) {
       const key = batch.wordKeys[n]; if (!acquired.has(key)) carryKeys.set(key, {...catalog.get(key), ...batch.words[n], batchId: batch.id, state: 'started', status: 'started', learningKind: 'carry'});
     }
-    return {date: today, stats, quota: {baseline, target, adaptiveReference, eligible: eligibleDay, startCourseDay, annualDays, startedToday, completedToday, completed: completedToday, courseReservedToday: courseKeys.size, contextCandidates: contextual.size, remaining: newWords.length, dailyRemaining: eligibleDay ? Math.min(dailyRemaining, eligible.length) : 0, newStartAllowed: newWords.length > 0, newWordMinutes, estimateSamples: vocabulary.estimateSamples, reason: reasons.join('；') || '先安排到期复习，再按当前语境、实际表现与剩余预算选择新词；8000为长期词库覆盖目标。'}, pendingContextWords:eligible.map(word=>({...word})), due, todayDue: due, allDue: queue.allDue, held: queue.held, newWords, todayNewWords: eligibleDay ? todayNewWords : [], dayNewWords: eligibleDay ? todayNewWords : [], carryWords: [...carryKeys.values()], dailyPlanPersisted: false, activeBatches, reviewBudget: {limit: reviewLimit, completed: reviewedToday.length, remaining: reviewRemaining, estimatedMinutes: Math.round(reviewMinutes * 100) / 100, availableMinutes: remainingMinutes, globalRemainingMinutes, vocabularyMinutes: vocabulary.budgetMinutes, vocabularySpentMinutes: vocabulary.spentMinutes, reservedNewMinutes: 0, availableForDueMinutes: remainingMinutes}, nextRetryAt: queue.futureRetries.map(item => item.retryAt).sort()[0] || null, dayProgress: {reviewed: reviewedToday.length, initialStarted: startedToday, initialCompleted: completedToday}};
+    return {date: today, stats, quota: {baseline, dailyTarget, goalRemaining: Math.max(0, dailyTarget - completedToday), target, adaptiveReference, eligible: eligibleDay, startCourseDay, annualDays, startedToday, completedToday, completed: completedToday, courseReservedToday: courseKeys.size, contextCandidates: contextual.size, remaining: newWords.length, dailyRemaining: eligibleDay ? Math.min(dailyRemaining, eligible.length) : 0, newStartAllowed: newWords.length > 0, newWordMinutes, estimateSamples: vocabulary.estimateSamples, reason: reasons.join('；') || '先完成全部必做复习，再从真实语境安排每日40个真正新词；来源或预算不足时保留缺口，不从词表凑数。'}, pendingContextWords:eligible.map(word=>({...word})), due, todayDue: due, allDue: queue.allDue, held: queue.held, reviewDebt, unfinishedReviewDrafts, newWords, todayNewWords: eligibleDay ? todayNewWords : [], dayNewWords: eligibleDay ? todayNewWords : [], carryWords: [...carryKeys.values()], dailyPlanPersisted: false, activeBatches, reviewBudget: {limit: null, completed: reviewedToday.length, remaining: due.length, requiredCount: due.length, pendingCount: debtKeys.size, estimatedMinutes: Math.round(reviewMinutes * 100) / 100, requiredEstimatedMinutes: Math.round(reviewMinutes * 100) / 100, sessionCount, sessionEstimatedMinutes: Math.round(sessionMinutes * 100) / 100, nextUnitStudyMinutes, canStartNext, nextUnitMinutes: timerProblem ? null : forecast(nextUnitStudyMinutes), budgetError: timerProblem, deferredCount: due.length - sessionCount, availableMinutes: reviewDebt.required ? globalRemainingMinutes : remainingMinutes, globalRemainingMinutes, vocabularyMinutes: vocabulary.budgetMinutes, vocabularySpentMinutes: vocabulary.spentMinutes, newVocabularyAvailableMinutes: remainingMinutes, reservedNewMinutes: 0, availableForDueMinutes: globalRemainingMinutes}, nextRetryAt: queue.futureRetries.map(item => item.retryAt).sort()[0] || null, dayProgress: {reviewed: reviewedToday.length, initialStarted: startedToday, initialCompleted: completedToday}};
   }
   function ensureDailyPlan(memory) {
     // Compatibility with already-loaded pages. Historical day manifests remain

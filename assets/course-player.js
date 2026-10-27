@@ -596,6 +596,14 @@
     }
     function pauseForBudget(){if(!attempt||submittedRecord)return;const budget=calendarBudget(),preserveCapture=budget.dayEnded&&captureInProgress();running=false;attempt.interrupted||=attempt.mode==='assessment';if(!preserveCapture)activityController?.pause?.();listeningController?.pause?.();if(!preserveCapture)oralController?.cancel?.();stopMedia();persistDraft();syncSessionVisibility();$('coursePause').textContent='下一日继续';notice((budget.dayEnded?'今日学习已主动结束。可在番茄钟点击“恢复今日任务”后手动继续，实际已用预算不变。':'今日360分钟预算已用完。')+'原始输入与录音保留为未提交草稿，下一日也可继续；本日课程保持未完成。'+(preserveCapture?' 请结束并保存仍在进行的原音，不再开启新任务。':''));emitCourse('budget-paused',{budget});}
     function mayContinue(){const timer=root.IELTSStudyTimer?.snapshot?.();if(timer?.running&&timer.phase!=='focus'){notice('番茄钟正在休息。当前草稿保留，休息结束后手动继续；可在右下角查看或调整。');return false;}const budget=calendarBudget();if(budget.budgetError){notice(budget.budgetError,true);return false;}if(budget.exhausted){notice(budget.dayEnded?'今日学习已主动结束。可在番茄钟点击“恢复今日任务”后手动继续；已有草稿、作品和原音保留，实际已用预算不会重置。':'今日360分钟学习预算已用完。已有草稿和作品保留，下一日可继续；今天不会标记完成。');return false;}return true;}
+    function vocabularyReviewReady(options,resolvedDay){
+      if(day<2||task?.id!=='vocabulary'||options.parentId||options.relearn||!root.IELTSEssentialCourse?.state||!root.IELTSMemory)return true;
+      try{
+        const review=root.IELTSEssentialCourse.state({day,data,records,drafts:allDrafts(),memory:root.IELTSMemory.read(),budget:calendarBudget(),dayPlan:resolvedDay,now:Date.now()});
+        if(!review.dailyReviewRequired)return true;
+        notice('先完成今日必做词汇复习，再开始新的词汇原稿。到期词、错词间隔及未提交的复习输入均保留。');const link=el('a','','去复习');link.href='词汇记忆.html?day='+day+(preview?'&preview=1':'');$('courseNotice').append(' ',link);return false;
+      }catch(error){notice('词汇复习顺序暂未核对：'+error.message+' 已有作答保留，请重试。',true);return false;}
+    }
     function advanceTimer() {
       const now = Date.now(), delta = Math.max(0, (now - tickAt)/1000); tickAt = now;
       if (attempt && running && !doc.hidden && !submittedRecord && !busy && !pendingNetwork && (!doc.hasFocus || doc.hasFocus()) && now-lastInteraction<120000){const remaining=calendarBudget().remainingMinutes*60,added=Math.round(Math.min(delta,5,Math.max(0,remaining))*1000)/1000;if(added>0){if(!attempt.activityByDate)attempt.activityByDate=root.IELTSYearPlanner?.activityByDate(attempt,true)||{};const date=root.IELTSYearPlanner?.dateKey(Date.now())||new Date().toISOString().slice(0,10);attempt.activeSeconds=Math.min(86400,attempt.activeSeconds+added);attempt.activityByDate[date]=(attempt.activityByDate[date]||0)+added;}if(remaining<=added+.001)pauseForBudget();}
@@ -701,6 +709,10 @@
       if (!options.parentId && pendingParent) options={...pendingParent,mode:pendingParent.kind==='retest'?'assessment':'practice'};
       if (!material || storageBroken || busy) return;
       let resolvedDay=dayPlan(day),courseAssignment=null,contextPracticeAssignment=null,lessonSupplement=null,yearStart=options.yearStart||null,yearParent=null;
+      // Sidebar navigation must obey the same review order as the daily queue.
+      // Saved answers, existing drafts and explicit corrections/relearning keep
+      // their original entry points; only a new vocabulary original waits.
+      if(!vocabularyReviewReady(options,resolvedDay))return false;
       if(material.source?.yearExpansion&&!options.relearn){if(options.kind==='retest'){notice('全年材料只作普通练习，不创建独立复测。',true);return false;}const parent=options.parentId&&records.find(r=>r.id===options.parentId);if(parent){const original=A.decodeArtifact(parent);try{yearParent=yearCourseAPI().cleanAssignment(original?.yearAssignment,original?.materialBinding,day,{assessment:A,player:root.IELTSCoursePlayer,data});}catch(error){notice(error.message,true);return false;}}else if(!yearStart){notice('请从全年普通练习队列显式开始，已有草稿请从原稿列表恢复。',true);return false;}options={...options,mode:'practice'};}
       if(root.IELTSAdaptivePlan?.adoptStarted){const owner=profileId,view=generation,mid=material.id,ownerDay=day;try{const fresh=await R.list();if(owner!==profileId||view!==generation||mid!==material?.id||ownerDay!==day)return;records=fresh;root.IELTSAdaptivePlan.adoptStarted({records,drafts:allDrafts(),exposures:state.exposures});resolvedDay=dayPlan(day);}catch(error){notice('开课前历史核对失败：'+error.message+' 原始稿件保留，请重试。',true);return;}if(owner!==profileId||view!==generation||mid!==material?.id||ownerDay!==day||!mayContinue())return;}
       if(yearStart){try{await yearCourseAPI().confirmStart(yearStart);}catch(error){notice(error.message,true);return false;}}
@@ -724,6 +736,9 @@
         if(!correction){const candidate=learningQueue()?.entries.find(e=>e.kind==='material'&&e.day===day&&e.materialId===material.id&&e.taskId==='grammar'&&!e.draftId&&e.fitsBudget===true),canonical=materialMap.get(material.id),access=api.beginAccess(canonical,contextPracticeAssignment,{data,records,assessment:A,now:Date.now(),recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r)});if(!candidate||!access.allowed){notice(access.reason||'语境语法尚未列入本日可开始任务或剩余预算不足；保留原任务。',true);return;}material=canonical;task=resolvedDay.tasks.find(t=>t.id==='grammar');}
         options={...options,mode:'practice'};
       }
+      // Recheck after all asynchronous admission work. Another page can create
+      // a due obligation while Records or source verification is in flight.
+      if(!mayContinue()||!vocabularyReviewReady(options,resolvedDay))return false;
       if(root.IELTSPlanState&&storage.getItem('ielts52-daily-plan-v1')===null){const now=new Date(),date=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');storage.setItem('ielts52-daily-plan-v1',JSON.stringify(root.IELTSPlanState.newState(date)));}
       const parent = options.parentId ? records.find(r=>r.id===options.parentId) : null;
       if (options.parentId && !parent) { notice('关联原稿不存在，不能创建伪造的订正或复测。',true); return; }

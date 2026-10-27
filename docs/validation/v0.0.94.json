@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "version": "0.0.94",
+  "status": "validated-development-not-deployed-to-family",
+  "familyStableVersion": "0.0.93",
+  "automated": {
+    "tests": 2524,
+    "pass": 2522,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "todo": 0,
+    "tapSha256": "6036b108a029572607c8639aae0af50d839dc9c3d8d394c0c1d26d41ae67b8ae"
+  },
+  "formalBuild": {
+    "materials": 1842,
+    "days": 365,
+    "activeYearBodies": 688,
+    "publicAssignments": 86,
+    "requiredRoles": 51,
+    "actualComponents": 52,
+    "maxComponents": 52,
+    "contract": {
+      "path": "curriculum/year-first-use-runtime-contract-v94-daily-review.json",
+      "sha256": "3b0af180f481f7b665f375a339f80144ac75d8d6b8a5147ac0ce2dc1e18f842c",
+      "bytes": 10509
+    }
+  },
+  "nativeHTTP": {
+    "materials": 688,
+    "files": 88,
+    "components": 52,
+    "maximumCache": 16,
+    "wrongHashRejected": true,
+    "upstreamCalls": 0,
+    "closed": true,
+    "reportSha256": "28338fcdc85b4d3a0ca84a8c2f46350c85c8aa186ff88095077e2b92b83a73bd"
+  },
+  "static": {
+    "pages": 27,
+    "references": 847,
+    "scripts": 128
+  },
+  "questionAudit": {
+    "sourceMaterials": 830,
+    "questionInstances": 7800,
+    "high": 0,
+    "unresolved": 0
+  },
+  "independentReview": {
+    "manifestSha256": "5ca0a05b940d861328fb5aa0375ad0e131f52560fed88163f78eaf89840d0af2",
+    "finalScopePassed": 10,
+    "earlierRaceObservedAndFixed": true,
+    "scope": "Synthetic native JavaScript/DOM/Records/IDB/Mistakes. Not a browser, microphone or model-service acceptance."
+  },
+  "dataProtection": {
+    "realLearnerDataReadOrChanged": false,
+    "credentialsAccessed": false,
+    "existingMaterialAndDayObjectsUnchanged": true,
+    "newStorageKeys": [],
+    "newDatabases": [],
+    "profileSchemaChanged": false,
+    "previousContractSha256": "b6c25de6b6ada3ae69866f0f568146c74298fd8e70e79e0be84e9e0aae40e50a"
+  },
+  "content": {
+    "dailyNewTarget": 40,
+    "dueReviewCountLimit": null,
+    "full8000TeachingDelivered": false,
+    "allModulesIntensivePackDelivered": false
+  },
+  "browser": {
+    "accepted": false,
+    "reason": "The previously saved permission/managed-policy denial remains; not retried or bypassed."
+  },
+  "followUp": {
+    "familyReportedMultipleModuleReplayIssue": "Investigating separately for the next patch; this development validation does not establish that family replay complaint is resolved."
+  }
+}

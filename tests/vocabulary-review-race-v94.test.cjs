@@ -1,0 +1,19 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),file=path.join(root,'tests/vocabulary-review-order.test.cjs'),raw=fs.readFileSync(file,'utf8'),mod=new Module(file);mod.filename=file;mod.paths=Module._nodeModulePaths(path.dirname(file));mod._compile(raw.slice(0,raw.indexOf('\ntest('))+'\nmodule.exports={mounted,dueMemory,settle,word};',file);const{mounted,dueMemory,settle,word}=mod.exports;
+const Memory=require(path.join(root,'assets/memory-core.js')),Adaptive=require(path.join(root,'assets/adaptive-plan.js'));
+const sha=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+function realAdaptive(f){const data=f.win.IELTSCurriculumData;data.days[0].totalMinutes=360;data.days[0].tasks[0].minutes=360;const store=Adaptive.createStore({data,storage:f.win.IELTSProfiles.storage(),contextReady:true,profileId:'legacy',getProfile:()=>f.win.IELTSProfiles.current().id,now:()=>Date.parse('2026-10-24T12:00:00Z')});f.win.IELTSAdaptivePlan=store;return store;}
+function deferNextRead(f){const original=f.win.IELTSRecords.list,oldReview=f.win.IELTSEssentialCourse.state;let resolve,entered,checked=false,armed=true;const held=new Promise(r=>resolve=r),reached=new Promise(r=>entered=r);f.win.IELTSEssentialCourse.state=options=>{const result=oldReview(options);checked=true;return result;};f.win.IELTSRecords.list=async(...args)=>{if(checked&&armed){armed=false;entered();await held;}return original(...args);};return{reached,release:()=>resolve()};}
+
+test('new due work appearing during the actual pre-start R await must prevent a new core vocabulary original',async()=>{
+ const f=mounted(Memory.newState());await settle();realAdaptive(f);const deferred=deferNextRead(f),starting=f.nodes.get('courseBegin').fire('click');await deferred.reached;f.setMemory(dueMemory());deferred.release();await starting;await settle();
+ const observation={playerSha256:sha(path.join(root,'assets/course-player.js')),memoryHasDue:Memory.reviewQueue(f.memory(),new Date('2026-10-24T12:00:00Z')).due.length>0,active:f.win.IELTSTodayNavigation.current().active,drafts:f.win.IELTSTodayNavigation.allDrafts().map(d=>({id:d.id,materialId:d.materialId,taskId:d.taskId,startedAt:d.startedAt})),notice:f.nodes.get('courseNotice').textContent};if(process.env.IELTS_DAILY_REVIEW_AUDIT_DIR)fs.writeFileSync(path.join(process.env.IELTS_DAILY_REVIEW_AUDIT_DIR,'late-due-observation.json'),JSON.stringify(observation,null,2)+'\n');
+ assert.equal(observation.memoryHasDue,true);assert.equal(observation.active,false);assert.equal(observation.drafts.length,0);
+});
+
+test('profile change during the same actual R await is rejected without an original or draft in the new profile',async()=>{
+ const f=mounted(Memory.newState());await settle();let profile='legacy';f.win.IELTSProfiles.current=()=>({id:profile});realAdaptive(f);const deferred=deferNextRead(f),starting=f.nodes.get('courseBegin').fire('click');await deferred.reached;profile='other';f.win.dispatchEvent({type:'ielts:profile-changed',detail:{profileId:'other'}});deferred.release();await starting;await settle();assert.equal(f.win.IELTSTodayNavigation.current().active,false);assert.equal(f.win.IELTSTodayNavigation.allDrafts().length,0);assert.equal(f.records().length,0);
+});
+
+test('control: real isolated Adaptive contract allows a new vocabulary original when no review is pending',async()=>{const f=mounted(Memory.newState());await settle();realAdaptive(f);await f.nodes.get('courseBegin').fire('click');await settle();assert.equal(f.win.IELTSTodayNavigation.current().active,true,f.nodes.get('courseNotice').textContent);assert.equal(f.win.IELTSTodayNavigation.allDrafts().length,1);});

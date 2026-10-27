@@ -61,3 +61,5 @@
 - 0.0.92新增六篇已签审普通阅读；正式重建须额外保留 `--ordinary-reading-release curriculum/ordinary-reading-v92/release.json`，同时保留GSA及active年度完整条件。新86组合保留旧80安排/复习/日程补丁和1836旧对象、365原课表、688年度正文；年度未来参考位置允许按预算重排，pending不能当完成。源/题/原件/坐标/哈希均由独立release校验；建议课位仅static reference，运行仍用真实level/prerequisite/history/budget保护。角色51 required/52 actual/MAX52保持，未接通紧凑词库或新语音。
 
 - 0.0.93 家人学习体验版保留所有旧运行合同，当前明确构建使用 `--year-runtime-contract curriculum/year-first-use-runtime-contract-v93-family.json`，并继续传GSA、ordinary-reading-v92及active年度完整条件；51 required/52 actual/MAX52和原52角色路径保持。悬停8000通用参考不等于8000词义教学/掌握已完成。历史错题只读查询仅用于已完成标签；不得拿它清当前错题、复盘或授能力信用。新KEY/归档写/长期词库原型未在本版激活。
+
+- 0.0.94 每日复习不以数量或词汇参考分钟截断；E.due/allDue为完整必做队列，sessionCount仅表示共享360分钟及实际番茄休息预算能容纳的部分。短间隔错词和未交复习稿保留为债务，预算耗尽不等于完成；历史课程完成与当日复习分开。新词目标40，按有效初学原稿去重及剩余核心词数处理末尾，缺来源不随机补数。正式重建使用 `--year-runtime-contract curriculum/year-first-use-runtime-contract-v94-daily-review.json` 并保留GSA、ordinary-reading-v92、active年度条件；旧v88/v93合同字节及51 required/52 actual/MAX52路径保持。复习不限不解除记录/备份存储保护、不清旧数据。
