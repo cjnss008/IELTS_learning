@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "kind": "lexical-bank-release",
+  "releaseId": "legacy-reviewed-v88-1",
+  "status": "legacy-delegate",
+  "codecId": "reviewed-retention-v88-1",
+  "identityFields": [
+    "wordId",
+    "senseId",
+    "sourceRef",
+    "releaseId",
+    "pronunciationVariantId"
+  ],
+  "scope": {
+    "entries": 24,
+    "scenes": 48,
+    "questions": 144,
+    "ordinaryOnly": true,
+    "newSemanticApproval": false,
+    "newRuntimeActivation": false
+  },
+  "legacy": {
+    "role": "reviewed-context-retention-v88",
+    "source": "reviewed-context-retention-v88",
+    "field": "reviewedRetention",
+    "policyVersion": "reviewed-retention-v88-1",
+    "policySha256": "b72cf5ed535a5b8c2cb0e40763f9e4f942fd3137daac903cbdec4db4452d31e1",
+    "responsePolicySha256": "f6e3ff1bce990d1b7cf4cc6122d7600c3c68341451267b1ba9b9a94701b3c32f",
+    "inputPins": {
+      "catalog": "d1e1d7f5d7a57d93738a17dac95d9060d31eaa62baed2432c6e2efa86f2c1feb",
+      "policy": "22aa224313481bcd545ecddccfd8821f49f612b8103cf3aa7da7c67c6cf7a3ab",
+      "receipt": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+      "feedback": "7db47e8efaadc533389eb533e69959c228166a4743bd5b6cf4f974796785c21d",
+      "derivedReceiptFile": "a18af96b1a62fea168208e9d5a088e225d9ff7b9502d955c4b2537988e5d169c",
+      "derivedReceipt": "dde654ad0772129be1f388764ac0fb20f62a4fd38c5a32f74a6644c72fbe78da",
+      "derivedPacket": "c7704a65a77f61168f8216aa01a504e3f9a6ca5b37c3317b51db98d40971bc85"
+    }
+  },
+  "approval": {
+    "initial": {
+      "kind": "existing-v88-pins-and-catalog-embedded-acceptance",
+      "declaredRootReceiptSha256": "3d19dda10f781721ab9468ad48f3c621e5d12c5b9cb007c70fc0dc3d7bfea611",
+      "standaloneReceiptPath": null,
+      "embeddedAcceptanceSha256": "1a591a2fbf386fb9e9b16981c8057aa732b8ad6446c0c580e711e789dfabf0b1",
+      "validation": "delegate unchanged catalog/approvedEntry/cleanContract; no missing receipt file invented"
+    },
+    "derived": {
+      "path": "curriculum/lexical-retention-v88/root-derived-review.json",
+      "bytes": 55079,
+      "sha256": "a18af96b1a62fea168208e9d5a088e225d9ff7b9502d955c4b2537988e5d169c",
+      "canonicalSha256": "dde654ad0772129be1f388764ac0fb20f62a4fd38c5a32f74a6644c72fbe78da",
+      "packetSha256": "c7704a65a77f61168f8216aa01a504e3f9a6ca5b37c3317b51db98d40971bc85",
+      "validation": "delegate unchanged derivedApproved and recordProof"
+    }
+  },
+  "resources": [
+    {
+      "path": "assets/lexical-retention-v88.js",
+      "bytes": 110526,
+      "sha256": "21e3ececc78f5c6680f5d3471463cb9aa61f6e38413b32a68b14bf1967e52c47"
+    },
+    {
+      "path": "assets/lexical-retention-v88-feedback.js",
+      "bytes": 30316,
+      "sha256": "a8ab6062a85af88061971f406bbab34b4d10b29806ac5d39bba683632e181a80"
+    },
+    {
+      "path": "assets/lexical-reviewed-v88-data.js",
+      "bytes": 136183,
+      "sha256": "165160278572ad43afd917528ffc64d743c367def71e6e81e5f22ce8e2bca4a5"
+    },
+    {
+      "path": "assets/lexical-reviewed-v88-policy.js",
+      "bytes": 574,
+      "sha256": "d274744e37a03eeb610a9ad6c213849d8ebe9bec3fb5a6c79ea4d4fcb8808f19"
+    },
+    {
+      "path": "assets/lexical-reviewed-context-v88.js",
+      "bytes": 5969,
+      "sha256": "69db7f7e50c529419c50e37bcdce2ac9f1ad82c1bf10ca7df8a77750dd6549da"
+    }
+  ]
+}

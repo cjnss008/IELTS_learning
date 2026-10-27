@@ -31,7 +31,7 @@ function rebind(f,components){
 function scriptOrder(text){const entries=[];for(const match of text.matchAll(/<script\b([^>]*)>/gi)){const attrs=new Map();for(const a of match[1].matchAll(/([^\s=]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g))attrs.set(a[1].toLowerCase(),a[2]??a[3]??a[4]??'');if(attrs.get('data-ielts-script')==='1')entries.push({file:attrs.get('data-src'),deferred:attrs.has('defer')||attrs.get('data-ielts-type')==='module'});}return[...entries.filter(e=>!e.deferred),...entries.filter(e=>e.deferred)].map(e=>e.file);}
 
 test('reviewed activation binds every actual production consumer, with a bounded component count',t=>{
- const f=productionContract(t);assert.equal(Policy.PLAYER_PAGES.length,10);assert.equal(Policy.REQUIRED_ROLES.length,50);assert.equal(Policy.MAX_COMPONENTS,52);assert.equal(Policy.componentListProblem(f.value.components),null);assert.equal(f.check().metadata.components.length,50);
+ const f=productionContract(t);assert.equal(Policy.PLAYER_PAGES.length,10);assert.equal(Policy.REQUIRED_ROLES.length,51);assert.equal(Policy.MAX_COMPONENTS,52);assert.equal(Policy.componentListProblem(f.value.components),null);assert.equal(f.check().metadata.components.length,51);
 });
 test('four generic role labels cannot activate a curriculum or substitute another path for a consumer',t=>{
  const f=productionContract(t),roles=new Set(['frontend-adapter','server-catalog','backup-keys','entrypoint']);f.value.components=f.value.components.filter(c=>roles.has(c.role));f.write();assert.throws(f.check);

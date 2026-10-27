@@ -33,6 +33,7 @@ const REQUIRED_COMPONENTS=Object.freeze({
  'memory-page-personalization':'个性化学习.html',
  'lexical-retention-feedback':'assets/lexical-retention-v88-feedback.js',
  'lexical-retention-helper':'assets/lexical-retention-v88.js',
+ 'lexical-bank-runtime':'assets/lexical-bank-runtime.js',
  'lexical-reviewed-context-policy':'assets/lexical-reviewed-v88-policy.js',
  'lexical-reviewed-context-data':'assets/lexical-reviewed-v88-data.js',
  'lexical-reviewed-context-helper':'assets/lexical-reviewed-context-v88.js',
@@ -90,6 +91,9 @@ function pageDependencyProblem(file,text){
  const before=(first,last)=>ordered.filter(v=>v===first).length===1&&ordered.filter(v=>v===last).length===1&&ordered.indexOf(first)<ordered.indexOf(last);
  if(!before('assets/record-snapshot-index.js','assets/learning-records.js'))return 'immutable record index must execute before Records on '+file;
  if((RETENTION_MEMORY_PAGES.includes(file)||RETENTION_BUDGET_PAGES.includes(file))&&(!before('assets/assessment-core.js','assets/lexical-retention-v88-feedback.js')||!before('assets/lexical-retention-v88-feedback.js','assets/lexical-retention-v88.js')))return 'Assessment, Feedback and retention Helper must execute in order on '+file;
+ if((RETENTION_MEMORY_PAGES.includes(file)||RETENTION_BUDGET_PAGES.includes(file))&&!before('assets/lexical-retention-v88.js','assets/lexical-bank-runtime.js'))return 'immutable lexical Bank must execute after its legacy codec on '+file;
+ if(RETENTION_MEMORY_PAGES.includes(file)&&!before('assets/lexical-bank-runtime.js','assets/memory-core.js'))return 'immutable lexical Bank must execute before Memory on '+file;
+ if(RETENTION_BUDGET_PAGES.includes(file)&&!before('assets/lexical-bank-runtime.js','assets/year-planner.js'))return 'immutable lexical Bank must execute before Year budget on '+file;
  if(RETENTION_MEMORY_PAGES.includes(file)&&!before('assets/lexical-retention-v88.js','assets/memory-core.js'))return 'retention Helper must execute before Memory on '+file;
  if(RETENTION_BUDGET_PAGES.includes(file)&&!before('assets/lexical-retention-v88.js','assets/year-planner.js'))return 'retention Helper must execute before Year budget on '+file;
  if(['今日学习.html','词汇记忆.html'].includes(file)&&(!before('assets/lexical-reviewed-v88-data.js','assets/lexical-reviewed-v88-policy.js')||!before('assets/lexical-reviewed-v88-policy.js','assets/lexical-reviewed-context-v88.js')||!before('assets/lexical-reviewed-context-v88.js','assets/contextual-vocabulary-course.js')||!before('assets/contextual-vocabulary-course.js',file==='今日学习.html'?'assets/essential-vocabulary-course.js':'assets/essential-vocabulary-app.js')||!before('assets/memory-core.js','assets/memory-session.js')||!before('assets/essential-vocabulary-core.js',file==='今日学习.html'?'assets/essential-vocabulary-course.js':'assets/essential-vocabulary-app.js')||file==='词汇记忆.html'&&(!before('assets/memory-session.js','assets/essential-vocabulary-app.js')||!before('assets/vocabulary-practice.js','assets/essential-vocabulary-app.js'))))return 'reviewed vocabulary dependencies must execute before their actual consumer on '+file;

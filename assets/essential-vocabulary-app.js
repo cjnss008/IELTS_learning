@@ -73,6 +73,30 @@
     return record;
   }
 
+  function legacyReleaseMapping(memory, options = {}) {
+    const retention = options.retention || root.IELTSLexicalRetentionV88;
+    const field = retention?.FIELD || 'reviewedRetention';
+    if (!Object.hasOwn(memory, field)) return {status:'ready',kind:'legacy-not-started',rewritten:false};
+    try {
+      const bank = options.bankRuntime || root.IELTSLexicalBankRuntime;
+      if (!bank) {
+        // Older standalone pages retain their existing v88 validation path.
+        // This fallback neither understands nor enables a future release.
+        if (!retention?.parseState || !retention?.cleanContract) throw Error('旧词汇版本组件未加载');
+        const state = retention.parseState(memory[field]);
+        for (const contract of Object.values(state.contracts)) retention.cleanContract(contract);
+        return {status:'ready',kind:'direct-legacy-delegate',contractsVerified:Object.keys(state.contracts).length,rewritten:false};
+      }
+      if (typeof bank.createRuntime !== 'function') throw Error('词库版本核验组件不完整');
+      const result = bank.createRuntime({legacyCodec:retention}).restoreLegacyState(memory[field]);
+      if (result.status !== 'ready') return {status:'pending',reason:result.reason,rewritten:false,learningFailure:false};
+      return {status:'ready',kind:'immutable-legacy-release',releaseId:bank.LEGACY_RELEASE_ID,
+        descriptorSha256:bank.LEGACY_DESCRIPTOR_SHA256,contractsVerified:Object.keys(result.state.contracts).length,rewritten:false};
+    } catch (error) {
+      return {status:'pending',reason:error.code || 'BANK_LEGACY_MAPPING_PENDING',message:error.message,rewritten:false,learningFailure:false};
+    }
+  }
+
   function mount(options = {}) {
     const doc = options.document || root.document;
     const dashboard = options.dashboard || doc?.getElementById('essentialVocabularyDashboard');
@@ -350,6 +374,8 @@
       retention?.render?.(dashboard);
     }
     const retentionAPI=root.IELTSLexicalRetentionV88;
+    const releaseMapping=legacyReleaseMapping(M.read(),{retention:retentionAPI,bankRuntime:options.bankRuntime});
+    if(releaseMapping.status!=='ready')throw Error('已保存词汇的版本待核验，原答案和原音保留，请重试加载完整学习包。');
     retention=retentionAPI?.mount?.({document:doc,practice,memory:M,store,records:R,profiles:P,storage:P.storage(),day,now,check,durable,initialRecords:records,sourceOptions,getRecords:()=>records,getNormalPlan:currentPlan,getContext:()=>currentContext,getBudget:options.getBudget,refreshBudget:options.refreshBudget,setRecords:values=>{records=values;},render,canStart:()=>!controller?.getMediaState?.()?.busy&&(!batch||finished),onActiveChange:async(active,detail)=>{if(active){await options.onNewWordsOpened?.();check();controller?.destroy?.();controller=null;batch=null;finished=false;}await options.onActiveChange?.(active,detail);}})||null;
     const interact = () => { lastInteraction = now();retention?.interact?.(); };
     const changed = () => { if (!savingDraft && !saving && !retention?.isBusy?.()) render(); };
@@ -370,6 +396,6 @@
         ['pointerdown','keydown','input'].forEach(type => doc.removeEventListener?.(type,interact));
         root.removeEventListener?.('ielts:memory-changed',changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);root.removeEventListener?.('pagehide',pagehide);root.removeEventListener?.('beforeunload',beforeunload);}};
   }
-  return {BATCH_SIZE,SOURCE,courseDay,courseWords,pendingCourseWords,recordForBatch,committedRecord,mount};
+  return {BATCH_SIZE,SOURCE,courseDay,courseWords,pendingCourseWords,recordForBatch,committedRecord,legacyReleaseMapping,mount};
 });
 

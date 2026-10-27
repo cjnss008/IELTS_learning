@@ -11,3 +11,12 @@ test('the precise transforms are idempotent on actual consumers and refuse a mis
   const text=read(file).replace(/\r\n/g,'\n');assert.equal(transform(text),text,file);
  }assert.throws(()=>T.year('unrelated source'),/Missing retention anchor/);assert.throws(()=>T.records(read('assets/learning-records.js')+'\n'+read('assets/learning-records.js')),/Ambiguous applied retention anchor/);
 });
+
+test('the legacy transform preserves the exact new Bank hook and rejects a missing or duplicated Bank guard',()=>{
+ const text=read('assets/essential-vocabulary-app.js').replace(/\r\n/g,'\n');
+ assert.equal(T.app(text),text);
+ const guard="    if(releaseMapping.status!=='ready')throw Error('已保存词汇的版本待核验，原答案和原音保留，请重试加载完整学习包。');\n";
+ assert.ok(text.includes(guard));
+ assert.throws(()=>T.app(text.replace(guard,'')),/exact Bank mapping anchor/);
+ assert.throws(()=>T.app(text.replace(guard,guard+guard)),/exact Bank mapping anchor/);
+});

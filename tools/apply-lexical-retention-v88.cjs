@@ -21,6 +21,14 @@ function core(source){
 }
 function year(source){return replace(source,"local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1')","local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1'&&value?.reviewedRetention!==undefined){const retention=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);if(!retention?.activityDrafts)throw Error('新语境保持活动组件未加载，预算核验暂停，原输入保留。');local.push(...retention.activityDrafts(value));}if(key==='ielts52-memory-v1')",'Year raw optional activity');}
 function app(source){
+ // Preserve the exact later Bank mapping while still verifying every original v88 anchor.
+ const bankHook="    const releaseMapping=legacyReleaseMapping(M.read(),{retention:retentionAPI,bankRuntime:options.bankRuntime});\n    if(releaseMapping.status!=='ready')throw Error('已保存词汇的版本待核验，原答案和原音保留，请重试加载完整学习包。');\n";
+ if(source.includes('    const releaseMapping=legacyReleaseMapping(')){
+  if(source.split(bankHook).length!==2||source.split(bankHook.split('\n')[1]+'\n').length!==2)throw Error('Missing or ambiguous exact Bank mapping anchor');
+  const withoutBank=source.replace(bankHook,'');
+  if(app(withoutBank)!==withoutBank)throw Error('Bank mapping requires an already complete legacy retention consumer');
+  return source;
+ }
  source=replace(source,"let currentContext = null, contextSignature = null;","let currentContext = null, contextSignature = null, retention = null;",'App retention owner');
  source=replace(source,"async function openBatch(value) {\n      check();","async function openBatch(value) {\n      check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}",'App one active draft');
  source=replace(source,"async function start(requestedOrigin) {","async function start(requestedOrigin) {\n      if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return;}",'App start guard');
