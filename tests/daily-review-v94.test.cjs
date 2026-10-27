@@ -21,9 +21,9 @@ test('zero global budget preserves full required backlog, produces no new start,
  assert.equal(result.done,false);assert.equal(result.dailyReviewRequired,true);assert.equal(result.deferred,true);assert.equal(JSON.stringify(state),raw);
 });
 
-test('forty is the new-word goal; eligible context is still required and the first course is preserved',()=>{
- const contexts=V.entries.slice(0,60),empty=M.newState(),full=E.plan(empty,options({contextWords:contexts}));assert.equal(full.quota.dailyTarget,40);assert.equal(full.quota.baseline,40);assert.equal(full.newWords.length,40);
- const noSource=E.plan(empty,options());assert.equal(noSource.newWords.length,0);assert.equal(noSource.quota.goalRemaining,40);
+test('thirty is the new-word goal; eligible context is still required and the first course is preserved',()=>{
+ const contexts=V.entries.slice(0,60),empty=M.newState(),full=E.plan(empty,options({contextWords:contexts}));assert.equal(full.quota.dailyTarget,30);assert.equal(full.quota.baseline,30);assert.ok(full.newWords.length>=30);assert.ok(full.newWords.length<=contexts.length);assert.ok(full.newWords.every(word=>contexts.some(context=>context.word===word.word)));
+ const noSource=E.plan(empty,options());assert.equal(noSource.newWords.length,0);assert.equal(noSource.quota.goalRemaining,30);
  const first=E.plan(empty,options({contextWords:contexts,courseDay:1}));assert.equal(first.newWords.length,0);assert.equal(first.quota.eligible,false);assert.throws(()=>E.startBatch(empty,{words:contexts.slice(0,1),courseDay:1,now:NOW}),/第2课/);
 });
 

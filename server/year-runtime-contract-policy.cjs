@@ -64,21 +64,25 @@ const BACKUP_PAGES=Object.freeze(['今日学习.html','备份中心.html','写�
 const RETENTION_MEMORY_PAGES=Object.freeze(['个性化学习.html','今日学习.html','备份中心.html','每日学习计划.html','词汇记忆.html']);
 const RETENTION_BUDGET_PAGES=Object.freeze(['今日学习.html','每日学习计划.html','词汇记忆.html','写作补强.html','无稿口语.html']);
 const HASH=/^[a-f0-9]{64}$/;
-function componentListProblem(rows){
- if(!Array.isArray(rows)||rows.length<REQUIRED_ROLES.length||rows.length>MAX_COMPONENTS)return 'runtime component count must include every required consumer and stay within '+MAX_COMPONENTS;
+const FAMILY_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v97-family-lessons.json',FAMILY_COMPONENTS=Object.freeze({...REQUIRED_COMPONENTS,'public-course-planner':'assets/public-course-planner.js','family-lesson-expansion-v95':'assets/family-lesson-expansion-v95.js','course-expansion':'assets/course-expansion.js','daily-plan-app':'assets/daily-plan-app.js'});
+function componentLimit(contractPath){return contractPath===FAMILY_CONTRACT_PATH?55:MAX_COMPONENTS;}
+function componentListProblem(rows,contractPath){
+ const requiredComponents=contractPath===FAMILY_CONTRACT_PATH?FAMILY_COMPONENTS:REQUIRED_COMPONENTS,requiredRoles=Object.keys(requiredComponents),max=componentLimit(contractPath);
+ if(!Array.isArray(rows)||rows.length<requiredRoles.length||rows.length>max)return 'runtime component count must include every required consumer and stay within '+max;
  const roles=new Set(),paths=new Set();
  for(const row of rows){
   if(!row||typeof row!=='object'||Array.isArray(row)||!/^[a-z][a-z0-9-]{0,79}$/.test(row.role||'')||roles.has(row.role))return 'unique runtime component roles are required';
-  const required=REQUIRED_COMPONENTS[row.role];
+  if(contractPath!==FAMILY_CONTRACT_PATH&&(row.role==='family-lesson-expansion-v95'||row.path==='assets/family-lesson-expansion-v95.js'))return 'family role/path requires its exact versioned contract';
+  const required=requiredComponents[row.role];
   if(typeof row.path!=='string'||!row.path||row.path.includes('\\')||row.path.split('/').some(part=>!part||part==='.'||part==='..')||!(required?row.path===required:/^(?:assets\/[^\\]+\.(?:js|mjs)|server\/[^\\]+\.(?:cjs|js|mjs)|[^/\\]+\.html)$/.test(row.path)))return 'runtime component role must use its exact production path: '+row.role;
   if(paths.has(row.path))return 'one file cannot impersonate multiple runtime components';
   if(!HASH.test(row.sha256||'')||!Number.isInteger(row.bytes)||row.bytes<1||row.bytes>16*1024*1024)return 'runtime component hash and byte size are required';
   roles.add(row.role);paths.add(row.path);
  }
- for(const role of REQUIRED_ROLES)if(!roles.has(role))return 'missing runtime component role: '+role;
+ for(const role of requiredRoles)if(!roles.has(role))return 'missing runtime component role: '+role;
  return null;
 }
-function pageDependencyProblem(file,text){
+function pageDependencyProblem(file,text,contractPath){
  if(!PLAYER_PAGES.includes(file)&&!BACKUP_PAGES.includes(file)&&!RETENTION_MEMORY_PAGES.includes(file)&&!RETENTION_BUDGET_PAGES.includes(file))return null;
  const entries=[];let bootstrap=false;
  for(const match of String(text).matchAll(/<script\b([^>]*)>/gi)){
@@ -89,6 +93,13 @@ function pageDependencyProblem(file,text){
  if(!bootstrap)return 'profile bootstrap must guard '+file;
  const ordered=[...entries.filter(e=>!e.deferred),...entries.filter(e=>e.deferred)].map(e=>e.file);
  const before=(first,last)=>ordered.filter(v=>v===first).length===1&&ordered.filter(v=>v===last).length===1&&ordered.indexOf(first)<ordered.indexOf(last);
+ if(contractPath!==FAMILY_CONTRACT_PATH&&ordered.includes('assets/family-lesson-expansion-v95.js'))return 'family helper execution requires its exact versioned contract';
+ if(contractPath===FAMILY_CONTRACT_PATH)for(const consumer of ['assets/learning-records.js','assets/memory-core.js','assets/essential-vocabulary-core.js','assets/contextual-vocabulary-exposure.js','assets/course-expansion.js','assets/adaptive-plan.js','assets/daily-learning-load.js','assets/course-player.js','assets/daily-plan-app.js'])if(ordered.includes(consumer)&&!before('assets/family-lesson-expansion-v95.js',consumer))return 'family lesson helper must execute exactly once before '+consumer+' on '+file;
+ if(contractPath===FAMILY_CONTRACT_PATH&&['今日学习.html','词汇记忆.html','每日学习计划.html','个性化学习.html'].includes(file)){
+  const api='assets/essential-vocabulary-core.js',consumer=file==='今日学习.html'?'assets/today-hub.js':file==='词汇记忆.html'?'assets/essential-vocabulary-app.js':file==='每日学习计划.html'?'assets/daily-plan-app.js':'assets/personalization-app.js';
+  for(const prerequisite of ['assets/assessment-core.js','assets/vendor/ts-fsrs.js','assets/memory-core.js','assets/vocabulary-practice.js','assets/essential-vocabulary-data.js'])if(!before(prerequisite,api))return 'family vocabulary evidence dependency must execute before its core on '+file+': '+prerequisite;
+  if(!before(api,consumer)||!before('assets/course-player.js',consumer))return 'family vocabulary evidence and Player must execute before their page consumer on '+file;
+ }
  if(!before('assets/record-snapshot-index.js','assets/learning-records.js'))return 'immutable record index must execute before Records on '+file;
  if((RETENTION_MEMORY_PAGES.includes(file)||RETENTION_BUDGET_PAGES.includes(file))&&(!before('assets/assessment-core.js','assets/lexical-retention-v88-feedback.js')||!before('assets/lexical-retention-v88-feedback.js','assets/lexical-retention-v88.js')))return 'Assessment, Feedback and retention Helper must execute in order on '+file;
  if((RETENTION_MEMORY_PAGES.includes(file)||RETENTION_BUDGET_PAGES.includes(file))&&!before('assets/lexical-retention-v88.js','assets/lexical-bank-runtime.js'))return 'immutable lexical Bank must execute after its legacy codec on '+file;
@@ -102,4 +113,4 @@ function pageDependencyProblem(file,text){
  if(BACKUP_PAGES.includes(file)&&!before('assets/year-first-use-state.js','assets/backup-core.js'))return 'year State must execute before Backup on '+file;
  return null;
 }
-module.exports=Object.freeze({RUNTIME_SOURCE,MAX_COMPONENTS,REQUIRED_COMPONENTS,REQUIRED_ROLES,PLAYER_PAGES,BACKUP_PAGES,componentListProblem,pageDependencyProblem});
+module.exports=Object.freeze({RUNTIME_SOURCE,FAMILY_CONTRACT_PATH,FAMILY_COMPONENTS,componentLimit,MAX_COMPONENTS,REQUIRED_COMPONENTS,REQUIRED_ROLES,PLAYER_PAGES,BACKUP_PAGES,componentListProblem,pageDependencyProblem});

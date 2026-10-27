@@ -577,7 +577,7 @@ function createServer(options = {}) {
         try{
           if(data?.choices?.[0]?.finish_reason==='length')throw new AppError(502,'COACH_TRUNCATED','AI 返回被截断，请重试。');
           const content=data?.choices?.[0]?.message?.content,parsed=dailyCoach.parse(content,kind,input,captured.apiKey);
-          if(kind==='recap')parsed.adaptation=adaptation.normalize(JSON.parse(content).adaptation,curriculum,input.dayNumber,captured.apiKey);
+          if(kind==='recap')parsed.adaptation=adaptation.normalize(JSON.parse(content).adaptation,curriculum,input.dayNumber,captured.apiKey,input.reinforcementCandidates);
           return sendJson(res,200,{...parsed,model:captured.model});
         }catch(error){
           if(kind!=='recap'||attempt!==0||error.status!==502){if(error instanceof adaptation.AdaptationError)throw new AppError(error.status,error.code,error.message);throw error;}

@@ -13,7 +13,7 @@ const QUEUE_KEY = 'ielts52-year-first-use-v1';
 const HASH = /^[a-f0-9]{64}$/;
 const ID = /^expand-[a-z0-9-]{1,100}$/;
 const CONTRACT_KEYS = ['inputHash', 'coreHash', 'publicPlanHash', 'contextCatalogHash'];
-const CORE_FIELDS = ['version', 'status', 'createdDate', 'scope', 'weeks', 'materials', 'days', 'gates', 'lessonExpansions'];
+const CORE_FIELDS = ['version', 'status', 'createdDate', 'scope', 'weeks', 'materials', 'days', 'gates', 'lessonExpansions','familyLessonRelease'];
 const CONTENT_FIELDS = new Set(['title', 'instructions', 'transcript', 'questions', 'vocabulary', 'grammar', 'transfer', 'rubric', 'passage', 'prompt', 'figure']);
 const ROLES = RuntimePolicy.REQUIRED_ROLES;
 const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
@@ -91,8 +91,8 @@ function createCatalog(options = {}) {
   function runtimeFileStamp(manifest) {
     const metadata = manifest.runtimeContract, ref = metadata?.contract;
     check(metadata?.protocol === PROTOCOL && metadata.runtimeConnected === true && equal(metadata, data.yearFirstUse.runtimeContract), 'YEAR_RUNTIME_CONTRACT');
-    check(['curriculum/year-first-use-runtime-contract.json', 'curriculum/year-first-use-runtime-contract-v93-family.json', 'curriculum/year-first-use-runtime-contract-v94-daily-review.json', 'curriculum/year-first-use-runtime-contract-v95-replay.json', 'curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json', 'curriculum/year-first-use-runtime-contract-v97-compact-queue.json'].includes(ref?.path) && HASH.test(ref.sha256) && Number.isInteger(ref.bytes) && ref.bytes > 0 && ref.bytes <= 262144, 'YEAR_RUNTIME_CONTRACT');
-    check(RuntimePolicy.componentListProblem(metadata?.components) === null, 'YEAR_RUNTIME_COMPONENT');
+    check(['curriculum/year-first-use-runtime-contract.json', 'curriculum/year-first-use-runtime-contract-v93-family.json', 'curriculum/year-first-use-runtime-contract-v94-daily-review.json','curriculum/year-first-use-runtime-contract-v95-replay.json','curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json','curriculum/year-first-use-runtime-contract-v97-compact-queue.json','curriculum/year-first-use-runtime-contract-v97-family-lessons.json'].includes(ref?.path) && HASH.test(ref.sha256) && Number.isInteger(ref.bytes) && ref.bytes > 0 && ref.bytes <= 262144, 'YEAR_RUNTIME_CONTRACT');
+    check(RuntimePolicy.componentListProblem(metadata?.components,ref.path) === null, 'YEAR_RUNTIME_COMPONENT');
     // An injected byte reader is deliberately rechecked on every call. Native
     // files reuse hashes only while real path, file identity and timestamps agree.
     if (options.readFile) return null;
@@ -132,10 +132,10 @@ function createCatalog(options = {}) {
   function runtimeContract(manifest) {
     const metadata = manifest.runtimeContract, ref = metadata?.contract;
     check(metadata?.protocol === PROTOCOL && metadata.runtimeConnected === true && equal(metadata, data.yearFirstUse.runtimeContract), 'YEAR_RUNTIME_CONTRACT');
-    check(['curriculum/year-first-use-runtime-contract.json', 'curriculum/year-first-use-runtime-contract-v93-family.json', 'curriculum/year-first-use-runtime-contract-v94-daily-review.json', 'curriculum/year-first-use-runtime-contract-v95-replay.json', 'curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json', 'curriculum/year-first-use-runtime-contract-v97-compact-queue.json'].includes(ref?.path) && HASH.test(ref.sha256) && Number.isInteger(ref.bytes) && ref.bytes > 0 && ref.bytes <= 262144, 'YEAR_RUNTIME_CONTRACT');
+    check(['curriculum/year-first-use-runtime-contract.json', 'curriculum/year-first-use-runtime-contract-v93-family.json', 'curriculum/year-first-use-runtime-contract-v94-daily-review.json','curriculum/year-first-use-runtime-contract-v95-replay.json','curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json','curriculum/year-first-use-runtime-contract-v97-compact-queue.json','curriculum/year-first-use-runtime-contract-v97-family-lessons.json'].includes(ref?.path) && HASH.test(ref.sha256) && Number.isInteger(ref.bytes) && ref.bytes > 0 && ref.bytes <= 262144, 'YEAR_RUNTIME_CONTRACT');
     const contract = json(read(ref.path, 262144, ref));
-    check(contract.schema === 1 && contract.kind === 'year-first-use-runtime-contract' && contract.protocol === PROTOCOL && contract.runtimeConnected === true && contract.activationReviewed === true && Array.isArray(contract.components) && Array.isArray(metadata.components) && contract.components.length === metadata.components.length && contract.components.length >= ROLES.length && contract.components.length <= RuntimePolicy.MAX_COMPONENTS, 'YEAR_RUNTIME_CONTRACT');
-    check(RuntimePolicy.componentListProblem(contract.components) === null && RuntimePolicy.componentListProblem(metadata.components) === null, 'YEAR_RUNTIME_COMPONENT');
+    check(contract.schema === 1 && contract.kind === 'year-first-use-runtime-contract' && contract.protocol === PROTOCOL && contract.runtimeConnected === true && contract.activationReviewed === true && Array.isArray(contract.components) && Array.isArray(metadata.components) && contract.components.length === metadata.components.length && contract.components.length >= ROLES.length && contract.components.length <= RuntimePolicy.componentLimit(ref.path), 'YEAR_RUNTIME_CONTRACT');
+    check(RuntimePolicy.componentListProblem(contract.components,ref.path) === null && RuntimePolicy.componentListProblem(metadata.components,ref.path) === null, 'YEAR_RUNTIME_COMPONENT');
     const roles = new Set();
     for (const component of metadata.components) {
       check(component && typeof component.role === 'string' && !roles.has(component.role), 'YEAR_RUNTIME_COMPONENT'); roles.add(component.role);
@@ -147,7 +147,7 @@ function createCatalog(options = {}) {
       const declared = contract.components.find(row => row?.role === component.role);
       check(declared?.path === component.path && declared.sha256 === component.sha256 && (declared.bytes === undefined || declared.bytes === component.bytes), 'YEAR_RUNTIME_COMPONENT');
       const content = read(component.path, 16 * 1024 * 1024, component);
-      check(RuntimePolicy.pageDependencyProblem(component.path, content.toString('utf8')) === null, 'YEAR_RUNTIME_PAGE_DEPENDENCY');
+      check(RuntimePolicy.pageDependencyProblem(component.path, content.toString('utf8'),ref.path) === null, 'YEAR_RUNTIME_PAGE_DEPENDENCY');
     }
     check(ROLES.every(role => roles.has(role)), 'YEAR_RUNTIME_COMPONENT');
     return { protocol: PROTOCOL, runtimeConnected: true, contract: publicRef(ref), components: metadata.components.map(component => ({ role: component.role, ...publicRef(component) })) };
@@ -184,7 +184,7 @@ function createCatalog(options = {}) {
       if (changedIndex || stamp === null || stamp !== preparedStamp) {
         const runtime = runtimeContract(manifest), index = bound(manifest.index, 'index').value, jobs = validateIndex(index, manifest);
         // Only public, validated contract fields leave this module.
-        const publicManifest = { schema: 1, protocol: PROTOCOL, kind: 'year-first-use-manifest', version: manifest.version, active: true, runtimeConnected: true, runtimeContract: runtime, ...Object.fromEntries(CONTRACT_KEYS.map(name => [name, manifest[name]])), planSha256: manifest.planSha256, index: publicRef(manifest.index), counts: { total: manifest.counts.total, assigned: manifest.counts.assigned, pending: manifest.counts.pending } };
+        const publicManifest = { schema: 1, protocol: PROTOCOL, kind: 'year-first-use-manifest', version: manifest.version, active: true, runtimeConnected: true, runtimeContract: runtime, ...(data.familyLessonRelease!==undefined?{familyLessonReleaseSha256:sha(Buffer.from(JSON.stringify(stable(data.familyLessonRelease))))}:{}), ...Object.fromEntries(CONTRACT_KEYS.map(name => [name, manifest[name]])), planSha256: manifest.planSha256, index: publicRef(manifest.index), counts: { total: manifest.counts.total, assigned: manifest.counts.assigned, pending: manifest.counts.pending } };
         prepared = { manifest: publicManifest, jobs }; preparedKey = key; preparedStamp = stamp; if (changedIndex) cache.clear();
       }
       return prepared;

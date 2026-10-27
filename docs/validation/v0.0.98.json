@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "version": "0.0.98",
+  "status": "automated-validation-passed-browser-unverified-development-only",
+  "automated": {
+    "tests": 2645,
+    "pass": 2643,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "todo": 0,
+    "logSha256": "100e7c325e1e61535e6d0041f58f0476198cb2273cbcd1afb7041d83b1340fae",
+    "processClosed": true
+  },
+  "initialRun": {
+    "tests": 2640,
+    "pass": 2612,
+    "fail": 26,
+    "skipped": 2,
+    "logSha256": "8e0aa46a2e74c1e69c00dafbc245d5129e539a0c7d375006685891194e048a47",
+    "notes": "Initial failures included an old transformer rejecting newer transaction anchors, a changed hover dependency order, and tests assuming the old contract and forty-word target. The transformer and page order were fixed; historical-contract fixtures and goal tests were updated without removing their rejection checks."
+  },
+  "formalBuild": {
+    "materials": 1842,
+    "days": 365,
+    "activeYearBodies": 688,
+    "actualComponents": 55,
+    "contract": {
+      "path": "curriculum/year-first-use-runtime-contract-v97-family-lessons.json",
+      "sha256": "5d2997e64cad8a9536c20e157ca80ec1ac1c34abc1f7f685312c8fa2a9137c2a",
+      "bytes": 11117
+    },
+    "command": "node tools/build-curriculum.cjs --require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract-v97-family-lessons.json --gsa-graded-release curriculum/gsa-graded-course/release.json --ordinary-reading-release curriculum/ordinary-reading-v92/release.json --output-root <isolated-output>",
+    "result": "complete-material-set; 1842 materials, 365 original days, zero missing or missing audio; family release absent/inactive"
+  },
+  "nativeHTTP": {
+    "indexJobs": 688,
+    "materialBodiesSampled": 7,
+    "files": 91,
+    "components": 55,
+    "wrongHashRejected": true,
+    "upstreamCalls": 0,
+    "closed": true,
+    "reportSha256": "969eb31cd5067bf7c8888993f3aaa9e6b0eb5779b7fefe5d73818c0b299dcc9b"
+  },
+  "static": {"pages": 27, "references": 865, "scripts": 129},
+  "audits": {
+    "curriculum": "Passed with explicit GSA and ordinary-reading releases; 365 existing days, 1842 material variants, 7426 question instances. Variant instances are not all unseen questions.",
+    "questionQuality": "830 source materials, 7800 question instances, high=0, review=5, current-hash reviewed=5, unresolved=0; automated triage is not human grading or learner calibration.",
+    "firstAuditFailure": "An initial audit invocation omitted the ordinary-reading release and was rejected; rerun with both explicit release arguments passed."
+  },
+  "personalization": {
+    "scope": "A saved recap can combine model-selected priorities with evidence-based longitudinal advice for future unstarted ordinary lessons; stale data or unsupported candidates preserve the plan.",
+    "modelTesting": "Synthetic records and a mocked DeepSeek HTTP response; no new real-service result or family profile verification is asserted."
+  },
+  "privacy": {
+    "realLearnerDataReadOrChanged": false,
+    "credentialsAccessed": false,
+    "existingMaterialAndDayObjectsUnchanged": true,
+    "oldRuntimeContractsByteIdentical": true
+  },
+  "unactivatedAndLimitations": [
+    "The new family lesson source, 30-word contextual units and their release are not active. Draft units do not constitute completed teaching or vocabulary mastery.",
+    "The day-365 family entry remains held until its annual prerequisite is designed and reviewed; original annual reflection is retained.",
+    "Old 95/96/97 Memory readers cannot safely continue new family marker data; full version-aware backup, rollback and shared-server migration remain release gates.",
+    "The current 2000 vocabulary batches, 10000 records, 12000 acquisitions, 60000 cards and 200-event per-card history need a tested long-term archive; existing history truncation must not be presented as lossless.",
+    "An isolated archive prototype and 30 synthetic restore points are not integrated into daily automatic backups, the family transaction or all Player recovery paths.",
+    "The 24 original days missing either vocabulary or grammar still need an append-only curriculum contract."
+  ],
+  "browser": {"accepted": false, "reason": "Real browser access was rejected by saved permissions or managed policy. No browser, microphone or real learner acceptance is claimed."},
+  "deployment": {"familyDataOrConfigurationChanges": false, "familyMainUpdated": false, "published": false}
+}

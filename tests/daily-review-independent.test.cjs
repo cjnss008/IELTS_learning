@@ -35,9 +35,12 @@ test('ending a calendar day preserves the full queue and does not declare its re
   assert.equal(JSON.stringify(memory), before);
 });
 
-test('forty genuinely unstarted contextual words are proposed without relabeling old exposures as new words', () => {
+test('the thirty-word target does not cap additional context-backed words or relabel old exposures', () => {
   const empty = M.newState(), value = E.plan(empty, options({contextWords: entries.slice(600)}));
-  assert.equal(value.newWords.filter(word => word.learningKind === 'new').length, 40);
+  assert.equal(value.quota.dailyTarget, 30);
+  assert.ok(value.newWords.filter(word => word.learningKind === 'new').length >= 30);
+  assert.equal(new Set(value.newWords.map(word => word.word)).size, value.newWords.length);
+  assert.ok(value.newWords.every(word => entries.slice(600).some(entry => entry.word === word.word)));
   const firstDay = E.plan(empty, options({courseDay: 1, contextWords: entries.slice(600)}));
   assert.equal(firstDay.newWords.length, 0);
   assert.equal(firstDay.todayNewWords.length, 0);

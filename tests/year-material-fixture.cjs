@@ -14,9 +14,9 @@ function fixture(options = {}) {
   const publicPlan = { schema: 1, assignments: [] }; publicPlan.planHash = hash(stable(publicPlan));
   const data = { version: 'synthetic', status: 'synthetic-only', materials: [], days: [], weeks: [], gates: [], publicCoursePlan: publicPlan };
   const policy = require('../server/year-runtime-contract-policy.cjs');
-  const components = Object.entries(policy.REQUIRED_COMPONENTS).map(([role, relative]) => ({ role, ...put(relative, fs.readFileSync(path.join(__dirname, '..', relative))) }));
+  const components = Object.entries(options.familyLessons?policy.FAMILY_COMPONENTS:policy.REQUIRED_COMPONENTS).map(([role, relative]) => { let bytes=fs.readFileSync(path.join(__dirname,'..',relative)); if(!options.familyLessons&&relative.endsWith('.html'))bytes=Buffer.from(bytes.toString('utf8').replace(/<script\b[^>]*data-src="assets\/family-lesson-expansion-v95\.js"[^>]*><\/script>\r?\n?/g,'')); return {role,...put(relative,bytes)}; });
   const contractFile = { schema: 1, kind: 'year-first-use-runtime-contract', protocol: 1, runtimeConnected: true, activationReviewed: true, components };
-  const runtimeContract = { protocol: 1, runtimeConnected: true, contract: put('curriculum/year-first-use-runtime-contract.json', JSON.stringify(contractFile)), components };
+  const runtimeContract = { protocol: 1, runtimeConnected: true, contract: put(options.familyLessons?policy.FAMILY_CONTRACT_PATH:'curriculum/year-first-use-runtime-contract.json', JSON.stringify(contractFile)), components };
   const materials = [];
   function material(id, skill, parent) {
     const value = { id, version: '1', skill, level: 'A1', pool: 'training', fullTest: false, title: 'Synthetic ordinary ' + skill, instructions: 'Synthetic fixture only.', [skill === 'listening' ? 'transcript' : 'passage']: 'I learn English at a new evening class.', questions: [], source: { schemaVersion: 2, kind: parent ? 'derived-original' : 'original', verification: 'reviewed', yearExpansion: version, practiceOnly: true, independentAssessmentEligible: false, independentTransferEligible: false } };

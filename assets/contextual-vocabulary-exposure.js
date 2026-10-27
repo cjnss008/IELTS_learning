@@ -31,7 +31,13 @@ function match(words,day,contracts,groups,ownedGroups,contextSource){
 function derive(options={}){
  const A=options.assessment||dependency('IELTSAssessment','./assessment-core.js'),M=options.memoryCore||dependency('IELTSMemory','./memory-core.js'),P=options.adaptiveCore||dependency('IELTSAdaptivePlan','./adaptive-plan.js');
  const memory=M.parseState(options.memory||M.newState()),state=P.parseState(options.adaptiveState||P.newState()),bound=bindings(state,options.materials,A),contracts=bound.contracts,groups=new Set(),ownedGroups=new Set();
- let unavailable=bound.invalid,ownedUnavailable=bound.ownedInvalid;const inspect=(words,day,source)=>{const result=match(words,day,contracts,groups,ownedGroups,source);unavailable||=result.public;ownedUnavailable||=result.owned;};for(const batch of Object.values(memory.essential.batches))inspect(batch.words,batch.courseDay,batch.contextSource);
+ let unavailable=bound.invalid,ownedUnavailable=bound.ownedInvalid;const inspect=(words,day,source)=>{
+  if(source?.type==='family-lesson-v95-context'){
+   try{const api=root.IELTSFamilyLessonExpansionV95,ids=api?.runtime?.()?.vocabularyExposureSources?.(source.binding,words);if(!Array.isArray(ids)||!ids.length)throw Error('family source unavailable');for(const id of ids){const material=array(options.materials).find(item=>item.id===id);if(!material)throw Error('family source material unavailable');const group=material.source?.exposureGroup;if(typeof group==='string'&&/^public-source:[a-z0-9][a-z0-9-]{0,119}$/.test(group))groups.add(group);else ownedGroups.add('owned-source:'+id);}}catch(_){unavailable=true;ownedUnavailable=true;}
+   return;
+  }
+  const result=match(words,day,contracts,groups,ownedGroups,source);unavailable||=result.public;ownedUnavailable||=result.owned;
+ };for(const batch of Object.values(memory.essential.batches))inspect(batch.words,batch.courseDay,batch.contextSource);
  for(const record of array(options.records)){if(record.source!=='essential-vocabulary'||record.skill!=='vocabulary')continue;let artifact;try{const raw=record.answer;artifact=typeof raw==='string'?JSON.parse(raw):null;}catch(_){continue;}if(artifact?.kind!=='vocabulary-three-modes'||typeof artifact.essentialBatchId!=='string'||!artifact.essentialBatchId.startsWith('essential-batch-'))continue;inspect(artifact.words,record.dayNumber||record.courseDay,artifact.contextSource);}
  return{sourceGroups:[...groups].sort(),ownedSourceGroups:[...ownedGroups].sort(),unavailable,ownedUnavailable,basis:'started-word-snapshot-may-have-shown-source',actualDisplayConfirmed:false,completionCredit:0,masteryCredit:0};
 }

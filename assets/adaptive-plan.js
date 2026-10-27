@@ -205,7 +205,7 @@
         for(const key of Object.keys(state.assignments))if(!locked.has(Number(key)))delete state.assignments[key];state.history.push(plan);state.activePlanId=plan.id;for(const target of targets)state.assignments[target]=plan.id;return{applied:true,plan:clone(plan),targetDays:targets};});
     }
     function adoptStarted(context={}){
-      contextRecords=Array.isArray(context.records)?context.records.slice():[];contextDrafts=Array.isArray(context.drafts)?context.drafts.slice():[];contextReady=true;
+      contextRecords=Array.isArray(context.records)?(root.IELTSFamilyLessonExpansionV95?.runtime?.()?.isCurrentFullRecords?.(context.records)===true?context.records:context.records.slice()):[];contextDrafts=Array.isArray(context.drafts)?context.drafts.slice():[];contextReady=true;
       const replacements=new Set((publicPlan()?.assignments||[]).flatMap(a=>(a.replacementGuard?.preservedOccurrences||[]).map(o=>o.materialId)));
       const semanticSources=new Set((options.contextPracticeCatalog||root.IELTSPublicContextPracticeData)?.packs?.map(p=>p.sourceId)||[]),semanticMaterials=new Set(data.materials.filter(m=>semanticSources.has(m.source?.publicSourceId)).map(m=>m.id)),correctionRelevant=r=>replacements.has(r.materialId)||semanticMaterials.has(r.materialId)||String(r.materialId||'').startsWith('context-grammar:');
       const correctionComplete=r=>{try{return Boolean((options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus)?.(r)?.corrected);}catch(_){return false;}};
@@ -260,7 +260,7 @@
     function reusableSoundEvidence(record,material){const player=options.player||root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null);return verifiedRecord(record,material,now())&&player?.bindingMatchesMaterial?.(record,material,assessment)===true;}
     function familyGrammarOptions(){return{contextReady,records:contextRecords,drafts:contextDrafts,assessment,player:options.player||root.IELTSCoursePlayer,hub:options.hub||root.IELTSTodayHub,recordCorrectionStatus:options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus};}
     function getDay(baseDay){
-      const state=readInternal(),day=withoutGrammarContext(baseDay,state),flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),family=value=>flow?.familyGrammarProjection?.(value,data,familyGrammarOptions())||value;
+      const state=readInternal(),day=withoutGrammarContext(baseDay,state),flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),family=value=>{const prior=flow?.familyGrammarProjection?.(value,data,familyGrammarOptions())||value;return root.IELTSFamilyLessonExpansionV95?.runtime?.().planDay(prior,data,{contextReady,records:contextRecords,drafts:contextDrafts,adaptiveState:state}).day||prior;};
       if(state.startedDays.includes(baseDay.day)||state.frozenDays[baseDay.day])return family(day);
       const api=grammarContextApi(),projected=api?.overlay?api.overlay(day,grammarContextProjection(state),{data,catalog:options.contextPracticeCatalog||root.IELTSPublicContextPracticeData,assessment,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts}):day;
       return family(flow?.unstartedLessonFlow?.(projected,data,{contextReady,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts,now:now(),verifiedRecord:reusableSoundEvidence})||projected);

@@ -5,7 +5,7 @@ const SCHEMA='year-budget-first-use-v1';
 const clone=x=>JSON.parse(JSON.stringify(x));
 const hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
 // Exported core content only: stable across build audit updates and sidecar metadata.
-const coreContract=data=>Object.fromEntries(['version','status','createdDate','scope','weeks','materials','days','gates','lessonExpansions'].filter(k=>data[k]!==undefined).map(k=>[k,data[k]]));
+const coreContract=data=>Object.fromEntries(['version','status','createdDate','scope','weeks','materials','days','gates','lessonExpansions','familyLessonRelease'].filter(k=>data[k]!==undefined).map(k=>[k,data[k]]));
 const sum=(xs,f=x=>x)=>xs.reduce((s,x)=>s+f(x),0);
 const SKILLS=['reading','listening','writing','grammar','vocabulary','speaking'];
 function protectedReason(day,map){

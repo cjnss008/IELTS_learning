@@ -323,7 +323,7 @@
   async function refreshEvidence() {
     if(!currentPublicView())return;
     if(evidenceRefreshing){evidenceRefreshAgain=true;return;}evidenceRefreshing=true;
-    try { do {evidenceRefreshAgain=false;const rows=await Records.list();if(!currentPublicView())return;checkpointGates = null;if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(rows);if(!currentPublicView())return;linkedRecords=rows;globalThis.IELTSAdaptivePlan?.adoptStarted?.({records:linkedRecords,...readCourseContext()});linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain&&currentPublicView()); }
+    try { do {evidenceRefreshAgain=false;let rows;if(Curriculum.familyLessonRelease?.active){try{rows=await globalThis.IELTSFamilyLessonExpansionV95.runtime().prepareCourseRecords();}catch(_){rows=await Records.list();}}else rows=await Records.list();if(!currentPublicView())return;checkpointGates = null;if(globalThis.IELTSMistakes)await IELTSMistakes.syncRecords(rows);if(!currentPublicView())return;linkedRecords=rows;globalThis.IELTSAdaptivePlan?.adoptStarted?.({records:linkedRecords,...readCourseContext()});linkedByDay = Records.summaries(linkedRecords);linkedFailure = '';} while(evidenceRefreshAgain&&currentPublicView()); }
     catch(error) { linkedFailure = '作品或错题状态暂时无法核实，原记录保留：'+error.message; }
     finally{evidenceRefreshing=false;}
     if(!currentPublicView())return;publicRenderQueued=false;renderDay();updateTaskProgress();renderStats();renderWeekDays();

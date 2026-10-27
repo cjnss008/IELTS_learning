@@ -133,7 +133,7 @@
   function createStore(adapter,options={}){
     const notify=options.notify||(()=>{}),clock=options.now||(()=>new Date().toISOString());let snapshotBoundary=null;
     return{async list(filter={}){const index=root.IELTSRecordSnapshotIndex;if(index?.available?.()){snapshotBoundary||=index.createStoreBoundary();const records=await snapshotBoundary.read(()=>adapter.read(),clock);return snapshotBoundary.select(records,filter);}const state=parseState(await adapter.read(),clock());return state.records.filter(r=>Object.keys(filter).every(k=>['dayNumber','taskId','skill'].includes(k)&&r[k]===filter[k]));},
-      async record(input){const result=await adapter.transaction(state=>{options.validateRecordInput?.(input,state.records);const r=put(state,input,clock());return{state:r.state,value:{record:r.record,duplicate:r.duplicate}};});if(!result.duplicate)notify(result.record);return result;},
+      async record(input,context){const result=await adapter.transaction(state=>{options.validateRecordInput?.(input,state.records,context);const r=put(state,input,clock());return{state:r.state,value:{record:r.record,duplicate:r.duplicate}};});if(!result.duplicate)notify(result.record);return result;},
       async update(recordId,patch,changeId){const result=await adapter.transaction(state=>{const r=updateState(state,recordId,patch,changeId,clock());return{state:r.state,value:{record:r.record,duplicate:r.duplicate}};});if(!result.duplicate)notify(result.record);return result.record;},
       async exportState(){return parseState(await adapter.read(),clock());},async exportRawState(){return adapter.read();},
       async importState(value,options={}){const incoming=parseState(value,clock());const result=await adapter.transaction(state=>{const next=options.mode==='replace'?incoming:mergeStates(state,incoming,clock());return{state:next,value:{added:next.records.length-state.records.length,total:next.records.length}};});notify(null);return result;}};
@@ -143,12 +143,69 @@
   function checkProfile(){root.IELTSProfiles?.assertFresh?.();if(profileFailure)throw profileFailure;if(root.IELTSProfiles){const active=root.IELTSProfiles.current().id;if(profileId===null)profileId=active;if(active!==profileId)throw Error('档案已切换，请刷新后保存作品。');}}
   function channelName(){return root.IELTSProfiles?root.IELTSProfiles.scopeKey(KEY):KEY;}
   function notify(record){const detail={profileId,id:record?.id||null,dayNumber:record?.dayNumber||null};root.dispatchEvent?.(new CustomEvent(EVENT,{detail}));try{const channel=new BroadcastChannel(channelName());channel.postMessage(detail);channel.close();}catch(_){}}
+  function validateFamilyVocabulary(input,records,context){
+    let artifact;try{artifact=JSON.parse(input.answer||'null');}catch(_){}const marked=artifact?.contextSource?.type==='family-lesson-v95-context';
+    if(input.source!=='essential-vocabulary'&&!marked)return;
+    const M=root.IELTSMemory,storage=root.IELTSProfiles?.storage?.();let memoryRaw,state,batch;
+    try{memoryRaw=storage?.getItem(M?.KEY||'ielts52-memory-v1');state=M?.parseState?.(memoryRaw);batch=state?.essential?.batches?.[artifact?.essentialBatchId];}catch(error){if(marked)throw error;return;}
+    const family=batch?.contextSource?.type==='family-lesson-v95-context';if(!marked&&!family)return;
+    const fail=()=>{throw Error('家人课程词组的原稿、来源或当日复习与预算在保存前发生变化；原输入保留。');};
+    if(!marked||!family||input.source!=='essential-vocabulary'||!storage||!M||!batch||stable(artifact.contextSource)!==stable(batch.contextSource)||batch.words.length<1||batch.words.length>6||batch.status!=='learning'||!batch.draft)fail();
+    const draft=batch.draft,words=batch.words,keys=batch.wordKeys,V=root.IELTSVocabularyPractice,api=root.IELTSFamilyLessonExpansionV95;
+    if(input.id!==draft.id||input.kind!=='original'||input.skill!=='vocabulary'||input.taskId!=='vocabulary'||input.materialId!==batch.materialId||String(input.materialVersion)!=='1'||input.dayNumber!==batch.courseDay||artifact.courseDay!==batch.courseDay||artifact.startedAt!==draft.startedAt||input.startedAt!==draft.startedAt||draft.schema!==2||draft.phase!=='complete'||draft.round!==3||stable(draft.wordKeys)!==stable(keys)||input.quantity!==words.length||!Number.isFinite(input.activeSeconds)||input.activeSeconds<0||input.activeSeconds>batch.activeSeconds+.01||artifact.activeSeconds!==input.activeSeconds||!artifact.activityByDate||Object.entries(artifact.activityByDate).some(([date,n])=>!Number.isFinite(n)||n<0||n>(batch.activityByDate[date]||0)+.01)||Object.values(artifact.activityByDate).reduce((n,v)=>n+v,0)>input.activeSeconds+.01||!V?.verifyTrainingArtifact?.(artifact,{vocabulary:words})?.valid)fail();
+    if(!Array.isArray(artifact.words)||!Array.isArray(artifact.learning)||!draft.study||!Array.isArray(draft.study.s)||!Array.isArray(draft.study.w)||!Array.isArray(draft.roundSubmittedAt)||draft.roundSubmittedAt.length!==3)fail();
+    for(let i=0;i<words.length;i++){const word=words[i],a=artifact.words[i],l=artifact.learning[i];if(!a||a.word!==word.word||a.meaning!==word.meaning||a.ipa!==word.ipa||a.example!==word.example||l?.word!==word.word||stable(l.spellings)!==stable(draft.study.s[i])||stable(l.speaking?.map(p=>p.workId))!==stable(draft.study.w[i]))fail();}
+    const modes=['completion','meaning','dictation'];let correct=0;
+    for(let n=0;n<3;n++){const mode=modes[n],round=artifact.rounds?.[n],order=draft.roundOrders?.[mode];if(round?.mode!==mode||!Array.isArray(order)||order.length!==words.length||new Set(order).size!==words.length||order.some(i=>!Number.isInteger(i)||i<0||i>=words.length)||round.total!==words.length||round.attempts?.length!==words.length)fail();let roundCorrect=0;for(let j=0;j<order.length;j++){const i=order[j],a=round.attempts[j],answer=draft.answers?.[mode]?.[i],isCorrect=String(answer||'').trim().toLowerCase()===String(words[i].word).trim().toLowerCase();if(!a||a.id!==draft.id+'-'+mode+'-'+i||a.attemptId!==a.id||a.word!==words[i].word||a.userAnswer!==answer||a.correct!==isCorrect||a.submittedAt!==draft.roundSubmittedAt[n]||a.courseDay!==batch.courseDay||a.dayNumber!==batch.courseDay||a.materialId!==batch.materialId||String(a.materialVersion)!=='1'||mode==='dictation'&&stable(a.audio)!==stable(draft.audio?.[i]))fail();if(isCorrect)roundCorrect++;}if(round.correct!==roundCorrect)fail();correct+=roundCorrect;}
+    if(input.evaluation?.method!=='objective'||input.evaluation?.score!==correct||input.evaluation?.maxScore!==3*words.length||input.evaluation?.result!==(correct===3*words.length?'pass':'revise'))fail();
+    // A prior initial artifact is not a new headword. Preserve it and leave a gap.
+    for(const key of keys){const prior=state.essential.acquisitions[key];if(prior&&prior.recordId!==input.id)fail();if(Object.values(state.essential.batches).some(other=>other.id!==batch.id&&other.status==='learning'&&other.wordKeys.includes(key)))fail();}
+    for(const record of records){if(record.id===input.id||record.skill!=='vocabulary'||record.kind!=='original')continue;let old;try{old=JSON.parse(record.answer);}catch(_){continue;}if(old?.words?.some(word=>keys.includes(String(word.word||'').trim().toLowerCase()))&&V.verifyTrainingArtifact(old,{vocabulary:old.words}).valid)fail();}
+    const E=root.IELTSEssentialVocabulary,Y=root.IELTSYearPlanner,C=root.IELTSContextualVocabulary,data=root.IELTS_ESSENTIAL_VOCABULARY;
+    if(!E?.plan||!E.activityDrafts||!Y?.calendarBudget||!C?.courseContext||!data?.entries)fail();
+    const course=C.courseContext({storage}),drafts=[...(course?.drafts||[]),...Object.values(state.drafts||{}),...E.activityDrafts(state)],budget=Y.calendarBudget(records,drafts,Y.dateKey());
+    if(!Number.isFinite(budget?.remainingMinutes)||budget.remainingMinutes<=0||budget.exhausted||budget.dayEnded)fail();
+    const plan=E.plan(state,{data,records,courseDay:batch.courseDay,familyDrafts:course?.drafts||[],remainingMinutes:budget.remainingMinutes,timerState:root.IELTSStudyTimer?.snapshot?.()});
+    const forms=plan.formSafety,catalog=new Map(data.entries.map(entry=>[String(entry.word||'').trim().toLowerCase(),entry]));
+    if(plan.reviewDebt?.required||plan.allDue?.length||plan.reviewBudget?.budgetError||!forms?.indexReady||forms.unindexedPending||keys.some(key=>forms.blockedKeys.includes(key)||forms.hasPendingForms&&catalog.get(key)?.id!=='essential:'+key))fail();
+    let verified;try{verified=api?.runtime?.()?.verifyVocabularyReceipt?.(context?.familyVocabularyReceipt,{records,memoryRaw,courseDay:batch.courseDay,draftId:draft.id,words,wordKeys:keys});}catch(_){fail();}if(verified!==true)fail();
+  }
+  function validateFamilyLessonRecord(input,records){
+    // put() checks the immutable contents of an existing ID. Allow an exact
+    // retry of historical records without demanding a newly issued permit.
+    if(records.some(record=>record.id===input.id))return;
+    const fail=()=>{throw Error('supplement-private-submit-permit-pending：家人课程作品的来源、档案或完整记录在保存前尚未核验，原输入保留。');};
+    let artifact;try{artifact=JSON.parse(input.answer||'null');}catch(_){}
+    const marked=!!artifact&&typeof artifact==='object'&&Object.prototype.hasOwnProperty.call(artifact,'familyLessonAssignment');
+    const data=root.IELTSCurriculumData,release=data?.familyLessonRelease;let declared=false,refs=[];
+    if(release?.active===true){
+      if(!Array.isArray(release.units)||release.units.some(unit=>!Array.isArray(unit?.tasks)||unit.tasks.some(task=>!Array.isArray(task?.materialRefs))))fail();
+      refs=release.units.flatMap(unit=>unit.tasks.flatMap(task=>task.materialRefs.filter(ref=>ref?.materialId===input.materialId).map(ref=>({unit,ref}))));declared=refs.length>0;
+    }
+    const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();
+    if(typeof runtime?.claimsMaterial==='function'){
+      const claimed=runtime.claimsMaterial(input.materialId);
+      if(claimed!==true&&claimed!==false)fail();
+      declared=declared||claimed;
+    }
+    const matches=Array.isArray(data?.materials)?data.materials.filter(material=>material?.id===input.materialId):[],material=matches.length===1?matches[0]:null;
+    // A signed unit may refer to an existing ordinary source. It remains an
+    // ordinary course original, provided every matching reference and unit is
+    // still pinned to that exact unmodified material. Loader marks all new
+    // derived materials; that marker always requires the private permit.
+    if(declared&&refs.length&&material&&!marked&&input.source!=='family-lesson-supplement-v95'&&!material.source?.familyLessonV95&&material.pool==='training'&&!material.fullTest&&!material.independentBank&&!material.assessmentGroup&&!material.form&&!material.source?.holdout&&material.source?.verification==='reviewed'){
+      const A=root.IELTSAssessment;
+      if(typeof A?.materialContentHash==='function'&&refs.every(({unit,ref})=>{const body={...unit};delete body.unitSha256;return A.materialContentHash(body)===unit.unitSha256&&A.materialContentHash(material)===ref.contentHash;}))return;
+    }
+    if(!marked&&!declared&&!material?.source?.familyLessonV95&&input.source!=='family-lesson-supplement-v95')return;
+    if(input.source!=='family-lesson-supplement-v95'||runtime?.validateRecordInput?.(input,records)!==true)fail();
+  }
   function browserStore(){
     checkProfile();if(store)return store;if(!root.indexedDB)throw Error('当前浏览器不支持作品存储，请先复制作品并换用支持IndexedDB的浏览器。');
     const dbName=root.IELTSProfiles?root.IELTSProfiles.scopeKey(KEY):KEY;
     async function db(){if(connection)return connection;connection=await new Promise((resolve,reject)=>{const request=root.indexedDB.open(dbName,1);request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains('records'))request.result.createObjectStore('records',{keyPath:'id'});};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(Error('作品库无法打开，原记录未清空。'));request.onblocked=()=>reject(Error('作品库被旧页面占用，请关闭旧学习页后重试。'));});connection.onversionchange=()=>{connection.close();connection=null;};return connection;}
     const adapter={async read(){checkProfile();const database=await db();return new Promise((resolve,reject)=>{const transaction=database.transaction('records','readonly'),request=transaction.objectStore('records').getAll();request.onsuccess=()=>resolve({schemaVersion:1,records:request.result});request.onerror=()=>reject(Error('作品库未能读取，原记录已保留。'));});},async transaction(fn){checkProfile();const database=await db();return new Promise((resolve,reject)=>{const transaction=database.transaction('records','readwrite'),objectStore=transaction.objectStore('records'),request=objectStore.getAll();let result,failure;request.onsuccess=()=>{try{checkProfile();const next=fn({schemaVersion:1,records:request.result});result=next.value;const retained=new Set(next.state.records.map(r=>r.id));for(const r of request.result)if(!retained.has(r.id))objectStore.delete(r.id);for(const r of next.state.records)objectStore.put(r);}catch(e){failure=e;transaction.abort();}};transaction.oncomplete=()=>resolve(result);transaction.onabort=transaction.onerror=()=>reject(failure||Error('作品未保存，可能空间不足；原记录保留，请导出备份。'));});}};
-    store=createStore(adapter,{notify,validateRecordInput(input,records){if(input.source==='reviewed-context-retention-v88'&&placedCourseDay(input,{records})!==input.dayNumber)throw Error('保持练习的来源、档案或恢复代际在保存前发生变化，原输入保留。');}});return store;
+    store=createStore(adapter,{notify,validateRecordInput(input,records,context){if(input.source==='reviewed-context-retention-v88'&&placedCourseDay(input,{records})!==input.dayNumber)throw Error('保持练习的来源、档案或恢复代际在保存前发生变化，原输入保留。');validateFamilyLessonRecord(input,records);validateFamilyVocabulary(input,records,context);}});return store;
   }
   function currentDay(){if(!root.IELTSProfiles)return null;const raw=root.IELTSProfiles.storage().getItem('ielts52-daily-plan-v1');if(raw===null)return null;let plan;try{plan=JSON.parse(raw);}catch{throw Error('日程记录损坏，请先恢复后再自动关联作品。');}if(typeof plan.startDate!=='string'||!/^\d{4}-\d\d-\d\d$/.test(plan.startDate))throw Error('日程开课日期无效。');const start=Date.parse(plan.startDate+'T00:00:00Z');if(!Number.isFinite(start)||new Date(start).toISOString().slice(0,10)!==plan.startDate)throw Error('日程开课日期无效。');const date=new Date(),today=Date.UTC(date.getFullYear(),date.getMonth(),date.getDate());return Math.floor((today-start)/86400000)+1;}
   function placedCourseDay(input,options={}){
@@ -163,7 +220,7 @@
   if(root.addEventListener&&typeof root.BroadcastChannel==='function'){try{const channel=new root.BroadcastChannel(channelName());channel.onmessage=event=>{if(event.data?.profileId===profileId)root.dispatchEvent(new CustomEvent(EVENT,{detail:{...event.data,external:true}}));};}catch(_){}}
   async function durable(){if(root.document&&!root.IELTSProfiles?.isPreview?.()&&root.IELTSUserData?.syncNow){try{await root.IELTSUserData.syncNow({profileId:profileId||root.IELTSProfiles?.current?.().id||'legacy'});}catch(error){error.browserCached=true;throw error;}}}
   async function captureRecord(record,context){if(root.IELTSMistakes)await root.IELTSMistakes.captureRecord(record,context);return record;}
-  async function record(input,context={}){const target=browserStore(),records=input.source==='reviewed-context-retention-v88'||['course-player','vocabulary-practice','mistake-review','year-review'].includes(input.source)||input.kind==='retest'&&input.parentId?await target.list():undefined,result=await target.record(autoLink(input,{records}));await captureRecord(result.record,context);try{await durable();}catch(error){error.committedResult=result;throw error;}return result;}
+  async function record(input,context={}){const target=browserStore(),records=input.source==='reviewed-context-retention-v88'||['course-player','vocabulary-practice','mistake-review','year-review'].includes(input.source)||input.kind==='retest'&&input.parentId?await target.list():undefined,result=await target.record(autoLink(input,{records}),context);await captureRecord(result.record,context);try{await durable();}catch(error){error.committedResult=result;throw error;}return result;}
   async function update(recordId,patch,key,context={}){const record=await captureRecord(await browserStore().update(recordId,patch,key),context);await durable();return record;}
   async function importState(value,options){const result=await browserStore().importState(value,options);if(root.IELTSMistakes)await root.IELTSMistakes.syncRecords(await browserStore().list());await durable();return result;}
   return Object.freeze({KEY,EVENT,makeId,newState,parseState,cleanInput,put,updateState,mergeStates,status,summary,summaries,createMemoryStore,createStore,currentDay,placedCourseDay,autoLink,record,update,list:filter=>browserStore().list(filter),forDay:day=>browserStore().list({dayNumber:day}),exportState:()=>browserStore().exportState(),exportRawState:()=>browserStore().exportRawState(),importState});

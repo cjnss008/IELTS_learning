@@ -1,8 +1,8 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),Coach=require('../server/daily-coach.cjs'),Adaptation=require('../server/adaptation.cjs');
 const SKILLS=['vocabulary','grammar','listening','reading','speaking','writing'];
-function material(id,extra={}){return{id,title:id,skill:'reading',week:10,level:'A1',pool:'training',source:{verification:'reviewed'},...extra};}
-function data(materials,week=10){return{days:[{day:1,week,tasks:[{materialIds:[materials[0]?.id||'none']}]}],materials};}
+function material(id,extra={}){return{id,title:id,skill:'reading',week:10,level:'A1',pool:'training',estimatedMinutes:15,source:{verification:'reviewed'},...extra};}
+function data(materials,week=10){return{days:[{day:1,week,tasks:[{materialIds:materials.map(m=>m.id)}]}],materials};}
 function request(){return{dayNumber:1,summary:{total:0,passed:0,rounds:0},records:[{id:'record-daily-original',skill:'reading',answer:'red',evaluation:{result:'pass'}}],mistakes:[]};}
 function proposal(candidate){return{prioritySkills:[candidate.skill],reason:'根据真实原稿在同级材料中继续练习。',strategies:[{skill:candidate.skill,action:'先独立完成，再核对原文证据。'}],reinforcementMaterialIds:[candidate.id]};}
 

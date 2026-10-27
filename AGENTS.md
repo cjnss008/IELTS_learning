@@ -69,3 +69,5 @@
 - 0.0.96 词汇模块按真实保存的每组原稿区分已提交、待订正和已完成；重复练习不覆盖原学习结果。确认按钮只导航已核验的日程队列，不创建虚假提交。正式重建使用 `curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json`，保留所有旧合同及52组件路径。
 
 - 0.0.97 从第2课起精简同一队列任务的重复按钮；当独立测评占用主按钮时保留返回日常队列入口。正式构建使用 `curriculum/year-first-use-runtime-contract-v97-compact-queue.json`，旧运行合同与52组件路径不变。
+
+- 0.0.98 是开发候选；使用 `curriculum/year-first-use-runtime-contract-v97-family-lessons.json` 的55个精确组件，保留旧52角色和所有旧合同字节。新 family 素材未激活；真实日课须先完成来源/题目与音频审核、档案容量与跨版本备份恢复及真实浏览器验收。第365课 family 事务保持关闭，原年度复盘不受影响。DeepSeek 与长期建议只在完整来源核验后修改未开始课；待评、历史作品、到期复习和测评不得被清除。不要将合成测试、词表或材料候选表述为已掌握或 IELTS 成绩证明。

@@ -29,6 +29,22 @@ function app(source){
   if(app(withoutBank)!==withoutBank)throw Error('Bank mapping requires an already complete legacy retention consumer');
   return source;
  }
+ // The family consumer refreshes source evidence after records change.  Check
+ // both exact variants together, then run the whole legacy validator against a
+ // temporary normalized string.  The returned source is never rewritten.
+ const familyMarker='const familySnapshots=new Map(),familyEpoch=new Map();';
+ if(source.includes('familySnapshots')){
+  if(source.split(familyMarker).length!==2)throw Error('Missing or ambiguous exact family retention marker');
+  const pairs=[
+   ["const recordsChanged = () => { R?.list?.().then(async values => { if (!disposed) { records = values; retention?.setRecords?.(values);if(!saving&&root.IELTSFamilyLessonExpansionV95?.runtime)await refreshFamily(day);if(!retention?.isBusy?.()&&!disposed)render(); } }).catch(error => notice(error.message)); };","const recordsChanged = () => { R?.list?.().then(values => { if (!disposed) { records = values; retention?.setRecords?.(values);if(!retention?.isBusy?.())render(); } }).catch(error => notice(error.message)); };",'records = values; render();','App record events'],
+   ["setRecords(values){records=values;retention?.setRecords?.(values);familySnapshots.clear();render();if(root.IELTSFamilyLessonExpansionV95?.runtime)refreshFamily(day).then(()=>{if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});}","setRecords(values){records=values;retention?.setRecords?.(values);render();}","setRecords(values){records=values;render();}",'App public records']
+  ];
+  let legacy=source;
+  for(const [later,prior,unapplied,label] of pairs){const count=legacy.split(later).length-1;if(count!==1||legacy.includes(prior)||legacy.includes(unapplied))throw Error((count>1||legacy.includes(prior)||legacy.includes(unapplied)?'Ambiguous':'Missing')+' exact family retention anchor: '+label);legacy=legacy.replace(later,prior);}
+  legacy=legacy.replaceAll('familySnapshots','normalizedFamilySnapshots');
+  if(app(legacy)!==legacy)throw Error('Family mapping requires an already complete legacy retention consumer');
+  return source;
+ }
  // v95 inserts a read-only saved-batch branch ahead of the existing v88 guard.
  // Verify this exact later shape through the complete legacy validator; never
  // install an incomplete old consumer or skip an absent/duplicate guard.
@@ -68,6 +84,24 @@ function app(source){
  source=replace(source,"if (batch && !finished) { activity(); saveDraft(); }\n        controller?.destroy?.();","if (batch && !finished) { activity(); saveDraft(); }\n        if(retention?.isActive?.())await retention.close();\n        controller?.destroy?.();",'App reverse review handoff');return source;
 }
 function records(source){
+ // Context is passed into the real transaction for both family guards; their
+ // presence does not replace the retention owner check.  Validate all three
+ // exact hooks together, without producing a downgraded consumer.
+ if(source.includes('validateFamilyVocabulary(')||source.includes('validateFamilyLessonRecord(')){
+  for(const marker of ['function validateFamilyVocabulary(input,records,context){','function validateFamilyLessonRecord(input,records){']){const count=source.split(marker).length-1;if(count!==1)throw Error((count?'Ambiguous applied retention anchor: ':'Missing exact ')+'family records marker');}
+  const pairs=[
+   ['async record(input,context){const result=await adapter.transaction(state=>{options.validateRecordInput?.(input,state.records,context);const r=put(state,input,clock());','async record(input){const result=await adapter.transaction(state=>{options.validateRecordInput?.(input,state.records);const r=put(state,input,clock());','async record(input){const result=await adapter.transaction(state=>{const r=put(state,input,clock());','Records transaction validation hook'],
+   ["store=createStore(adapter,{notify,validateRecordInput(input,records,context){if(input.source==='reviewed-context-retention-v88'&&placedCourseDay(input,{records})!==input.dayNumber)throw Error('保持练习的来源、档案或恢复代际在保存前发生变化，原输入保留。');validateFamilyLessonRecord(input,records);validateFamilyVocabulary(input,records,context);}});return store;","store=createStore(adapter,{notify,validateRecordInput(input,records){if(input.source==='reviewed-context-retention-v88'&&placedCourseDay(input,{records})!==input.dayNumber)throw Error('保持练习的来源、档案或恢复代际在保存前发生变化，原输入保留。');}});return store;","store=createStore(adapter,{notify});return store;",'Records retention owner inside actual transaction'],
+   ['result=await target.record(autoLink(input,{records}),context);','result=await target.record(autoLink(input,{records}));',null,'Records context reaches transaction']
+  ];
+  let legacy=source;
+  for(const [later,prior,unapplied,label] of pairs){const count=legacy.split(later).length-1;if(count!==1||legacy.includes(prior)||(unapplied&&legacy.includes(unapplied)))throw Error((count>1||legacy.includes(prior)||(unapplied&&legacy.includes(unapplied))?'Ambiguous':'Missing')+' exact family retention anchor: '+label);legacy=legacy.replace(later,prior);}
+  // Remove the family markers only in the temporary validation copy; this
+  // prevents recursive detection while leaving every old retention check on.
+  legacy=legacy.replace('function validateFamilyVocabulary(input,records,context){','function normalizedFamilyVocabulary(input,records,context){').replace('function validateFamilyLessonRecord(input,records){','function normalizedFamilyLessonRecord(input,records){');
+  if(records(legacy)!==legacy)throw Error('Family records mapping requires an already complete legacy retention consumer');
+  return source;
+ }
  source=replace(source,"async record(input){const result=await adapter.transaction(state=>{const r=put(state,input,clock());","async record(input){const result=await adapter.transaction(state=>{options.validateRecordInput?.(input,state.records);const r=put(state,input,clock());",'Records transaction validation hook');
  source=replace(source,"store=createStore(adapter,{notify});return store;","store=createStore(adapter,{notify,validateRecordInput(input,records){if(input.source==='reviewed-context-retention-v88'&&placedCourseDay(input,{records})!==input.dayNumber)throw Error('保持练习的来源、档案或恢复代际在保存前发生变化，原输入保留。');}});return store;",'Records retention owner inside actual transaction');
  source=replace(source,"const data=options.data||root.IELTSCurriculumData;if(!data)return null;","if(input.source==='reviewed-context-retention-v88'){const api=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);return api?.queueCourseDay?.(input,options)??null;}const data=options.data||root.IELTSCurriculumData;if(!data)return null;",'Records source-specific owner');

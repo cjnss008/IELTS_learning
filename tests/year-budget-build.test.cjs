@@ -61,7 +61,7 @@ function activationFixture(t){
  const directory=scratch(t),components=[];
  const policy=require('../server/year-runtime-contract-policy.cjs');
  for(const [role,file]of Object.entries(policy.REQUIRED_COMPONENTS)){
-  const bytes=fs.readFileSync(path.join(__dirname,'..',file)),target=path.join(directory,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,bytes);components.push({role,path:file,sha256:F.sha(bytes),bytes:bytes.length});
+  const source=fs.readFileSync(path.join(__dirname,'..',file)),bytes=file.endsWith('.html')?Buffer.from(source.toString('utf8').replace(/<script\b[^>]*data-src="assets\/family-lesson-expansion-v95\.js"[^>]*><\/script>\r?\n?/g,'')):source,target=path.join(directory,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,bytes);components.push({role,path:file,sha256:F.sha(bytes),bytes:bytes.length});
  }
  const contract={schema:1,kind:'year-first-use-runtime-contract',protocol:1,runtimeConnected:true,activationReviewed:true,components},file=path.join(directory,'curriculum/year-first-use-runtime-contract.json');fs.mkdirSync(path.dirname(file),{recursive:true});
  fs.writeFileSync(file,JSON.stringify(contract));return{directory,contract,file,check:()=>require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root:directory,contractPath:'curriculum/year-first-use-runtime-contract.json'})};

@@ -15,7 +15,7 @@ function copyPublicTree(from,to){
  function walk(current,destination){assert.ok(current===source||current.startsWith(source+path.sep));assert.ok(destination===target||destination.startsWith(target+path.sep));fs.mkdirSync(destination,{recursive:true});for(const item of fs.readdirSync(current,{withFileTypes:true})){assert.equal(item.isSymbolicLink(),false,'public source links are not followed');const file=path.join(current,item.name),output=path.join(destination,item.name);if(item.isDirectory())walk(file,output);else{assert.ok(item.isFile(),'copy only public files and directories');fs.copyFileSync(file,output);}}}
  walk(source,target);
 }
-function componentBytes(relative){const file=path.join(root,relative);return fs.readFileSync(fs.existsSync(file)?file:path.join(review,'source',relative));}
+function componentBytes(relative){const file=path.join(root,relative),bytes=fs.readFileSync(fs.existsSync(file)?file:path.join(review,'source',relative));return relative.endsWith('.html')?Buffer.from(bytes.toString('utf8').replace(/<script\b[^>]*data-src="assets\/family-lesson-expansion-v95\.js"[^>]*><\/script>\r?\n?/g,'')):bytes;}
 function productionContract(t){
  const directory=scratch(t),components=[];
  for(const [role,relative]of Object.entries(Policy.REQUIRED_COMPONENTS)){const bytes=componentBytes(relative),target=path.join(directory,relative);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,bytes);components.push({role,path:relative,sha256:sha(bytes),bytes:bytes.length});}
@@ -84,9 +84,9 @@ async function actualFrozenDraft(){
 for(const page of Policy.PLAYER_PAGES)test('actual Load-started year draft survives browser-no-require parsing on '+page,async()=>{
  const raw=await actualFrozenDraft(),text=fs.readFileSync(path.join(root,page),'utf8'),order=scriptOrder(text),selected=new Set(['assets/assessment-core.js','assets/legacy-material-compatibility.js','assets/lesson-vocabulary-supplement.js','assets/year-first-use-course.js','assets/course-player.js']);
  const context={console,TextEncoder,TextDecoder,URL,URLSearchParams,structuredClone,crypto:crypto.webcrypto};context.window=context;context.globalThis=context;vm.createContext(context);for(const file of order.filter(file=>selected.has(file)))vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:page+':'+file});
- const parsed=context.IELTSCoursePlayer.parseState(raw);assert.ok(Object.values(parsed.drafts).some(d=>d.yearAssignment));assert.equal(JSON.stringify(parsed),raw);assert.equal(Policy.pageDependencyProblem(page,text),null);
+ const parsed=context.IELTSCoursePlayer.parseState(raw);assert.ok(Object.values(parsed.drafts).some(d=>d.yearAssignment));assert.equal(JSON.stringify(parsed),raw);assert.equal(Policy.pageDependencyProblem(page,text,Policy.FAMILY_CONTRACT_PATH),null);
 });
 test('page contract uses bootstrap effective defer order and protects all six Backup consumers',()=>{
- for(const page of Policy.BACKUP_PAGES)assert.equal(Policy.pageDependencyProblem(page,fs.readFileSync(path.join(root,page),'utf8')),null,page);
- const page='陌生材料库.html',text=fs.readFileSync(path.join(root,page),'utf8'),tag='<script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/year-first-use-course.js"></script>';assert.ok(text.includes(tag));assert.match(Policy.pageDependencyProblem(page,text.replace(tag,tag.replace('></script>',' defer></script>'))),/execute before Player/);
+ for(const page of Policy.BACKUP_PAGES)assert.equal(Policy.pageDependencyProblem(page,fs.readFileSync(path.join(root,page),'utf8'),Policy.FAMILY_CONTRACT_PATH),null,page);
+ const page='陌生材料库.html',text=fs.readFileSync(path.join(root,page),'utf8'),tag='<script type="application/x-ielts-pending" data-ielts-script="1" data-src="assets/year-first-use-course.js"></script>';assert.ok(text.includes(tag));assert.match(Policy.pageDependencyProblem(page,text.replace(tag,tag.replace('></script>',' defer></script>')),Policy.FAMILY_CONTRACT_PATH),/execute before Player/);
 });

@@ -18,6 +18,7 @@
   day.totalMinutes=(day.tasks||[]).reduce((sum,task)=>sum+task.minutes,0);day.yearExpansion={version:year.version,week:plan.week,variant:plan.variant,afterCore:false};return day;
  }
  function overlay(baseDay,data){
+  if(root.IELTSFamilyLessonExpansionV95?.runtime?.().validProjection(baseDay,data))return baseDay;
   if(baseDay?.familyGrammar&&validFamilyGrammarProjection(baseDay,data))return baseDay;
   if(baseDay?.day!==2)return yearOverlay(baseDay,data);
   const map=new Map((data?.materials||[]).map(material=>[material.id,material]));
@@ -59,6 +60,7 @@
  // Only the runtime projection calls this, after all saved work has been loaded.
  // The source curriculum and the append-only historical expansion stay intact.
  function unstartedLessonFlow(baseDay,data,options={}){
+  if(root.IELTSFamilyLessonExpansionV95?.runtime?.().validProjection(baseDay,data))return baseDay;
   const number=baseDay?.day;
   if(baseDay?.familyGrammar&&validFamilyGrammarProjection(baseDay,data,options))return baseDay;
   if(!Number.isInteger(number)||number<2||number>10||options.contextReady!==true||baseDay.tasks?.some(task=>task.mode==='assessment')||options.protectedDays?.includes(number)||(options.records||[]).some(row=>row.dayNumber===number||row.courseDay===number)||(options.drafts||[]).some(row=>row.courseDay===number))return baseDay;
@@ -178,6 +180,7 @@
  }
  // This is an effective-day view, never a migration of a saved day or draft.
  function familyGrammarProjection(baseDay,data,options={}){
+  if(root.IELTSFamilyLessonExpansionV95?.runtime?.().validProjection(baseDay,data))return baseDay;
   try{
    if(options.contextReady!==true||!Number.isInteger(baseDay?.day)||baseDay.day<2||baseDay.day>10||baseDay.familyGrammar||!Array.isArray(baseDay.tasks)||baseDay.tasks.some(t=>t.mode==='assessment')||baseDay.tasks.filter(t=>t.id==='grammar'&&t.mode==='practice').length!==1)return baseDay;
    const api=options.assessment||dependency('IELTSAssessment','./assessment-core.js'),entry=familyGrammarUnit(baseDay.day,data,api);if(!entry)return baseDay;
