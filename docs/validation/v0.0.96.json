@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "version": "0.0.96",
+  "status": "automated-validation-passed-browser-unverified",
+  "automated": {
+    "tests": 2595,
+    "pass": 2593,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "todo": 0,
+    "logSha256": "79a3711fd89ae7671857fb5b428678e800a70e84ccb55d22c84c3daf06bb33c1",
+    "processClosed": true
+  },
+  "previousRun": {
+    "failures": 8,
+    "reason": "Two separate regressions in browser-side record refresh and vocabulary material fallback were fixed; original assertions retained.",
+    "logSha256": "638820d72283de53a77fe8f2e92e0d54fc88d454bdb39a7a7fea7e93005d7065"
+  },
+  "formalBuild": {
+    "materials": 1842,
+    "days": 365,
+    "activeYearBodies": 688,
+    "requiredRoles": 51,
+    "actualComponents": 52,
+    "maxComponents": 52,
+    "contract": {
+      "path": "curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json",
+      "sha256": "9b59a25cf523fe55435d7a13ab5cd900d7c49b449b7bd0fbaa8e1cd0da100b9a",
+      "bytes": 10509
+    }
+  },
+  "nativeHTTP": {
+    "materials": 688,
+    "files": 88,
+    "components": 52,
+    "maximumCache": 16,
+    "wrongHashRejected": true,
+    "upstreamCalls": 0,
+    "closed": true,
+    "reportSha256": "212c87f630312db1bdf998fee49a4d1195aeae4c26a2f9c503abe349cc3c6692"
+  },
+  "static": {
+    "pages": 27,
+    "references": 847,
+    "scripts": 128
+  },
+  "questionAudit": {
+    "sourceMaterials": 830,
+    "questionInstances": 7800,
+    "high": 0,
+    "unresolved": 0
+  },
+  "vocabulary": {
+    "coreGroups": 3,
+    "groupSizes": [
+      7,
+      8,
+      4
+    ],
+    "submittedAndMasteredAreDifferent": true,
+    "aggregateFromExistingSubmissions": true,
+    "noNewStorageKey": true,
+    "tests": "Actual production vocabulary, player, records, IndexedDB adapter and mistake-book code with synthetic DOM and synthetic recordings."
+  },
+  "privacy": {
+    "realLearnerDataReadOrChanged": false,
+    "credentialsAccessed": false,
+    "existingMaterialAndDayObjectsUnchanged": true,
+    "protectedFiles": [
+      "assets/learning-records.js",
+      "assets/user-data-store.js",
+      "assets/large-text-store.js",
+      "assets/backup-core.js",
+      "assets/record-snapshot-index.js",
+      "assets/records-archive-store.js",
+      "assets/memory-core.js",
+      "curriculum/year-first-use-runtime-contract.json",
+      "curriculum/year-first-use-runtime-contract-v93-family.json",
+      "curriculum/year-first-use-runtime-contract-v94-daily-review.json",
+      "curriculum/year-first-use-runtime-contract-v95-replay.json"
+    ],
+    "oldRuntimeContractsPreserved": [
+      "v88",
+      "v93",
+      "v94",
+      "v95"
+    ]
+  },
+  "dailyThirtyTarget": {
+    "activated": false,
+    "note": "The released core still targets 40; 30-word source-connected curriculum is in isolated development."
+  },
+  "browser": {
+    "accepted": false,
+    "reason": "Real browser access was blocked by saved permission or managed policy; it was not bypassed. No real browser, actual family profile or microphone acceptance is claimed."
+  },
+  "deployment": {
+    "familyDataOrConfigurationChanges": false,
+    "publication": "Not asserted by this report; deployment receipt records actual outcome."
+  }
+}

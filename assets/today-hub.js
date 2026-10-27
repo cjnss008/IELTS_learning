@@ -16,6 +16,21 @@ function relearningRecord(record,records,index){
   current=current.kind==='correction'?parent:null;
  }return false;
 }
+ function currentVocabularyMaterial(current,data){
+  if(Array.isArray(current?.vocabulary)&&current.vocabulary.length)return current;
+  let words;try{words=vocabulary?.wordsFor?.(current,{curriculumData:data||root.IELTSCurriculumData});}catch(_){}
+  if(words?.length)return{...current,vocabulary:words};
+  // Match the existing wordsFor parent contract even when its dictionary has
+  // not loaded: only the exact -vocabulary parent supplies the raw word list.
+  const id=typeof current?.id==='string'&&current.id.endsWith('-vocabulary')?current.id.slice(0,-'-vocabulary'.length):null,parent=id&&(data||root.IELTSCurriculumData)?.materials?.find(m=>m.id===id);
+  return Array.isArray(parent?.vocabulary)&&parent.vocabulary.length?{...current,vocabulary:parent.vocabulary}:null;
+ }
+ function vocabularySubmissionValid(record,a,current,data){
+  if(!a||!current||a.courseDay!==undefined&&a.courseDay!==record.dayNumber)return false;
+  const target=currentVocabularyMaterial(current,data),player=root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null),assessment=root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),bound=a.materialBinding===undefined?target:player?.materialForRecord?.(record,current,assessment);
+  if(!bound||a.materialBinding!==undefined&&bound.skill!=='vocabulary')return false;
+  return !!target&&vocabulary?.verifyTrainingArtifact?.(a,bound)?.submitted===true&&vocabulary?.verifyTrainingArtifact?.(a,target)?.submitted===true;
+ }
 function learningCount(task,records,options={}){
  const required=[...new Set(task.materialIds||[])],byId=new Map((records||[]).map(r=>[r.id,r]));
  const player=root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null),materials=options.materials||options.data?.materials||[];
@@ -24,13 +39,55 @@ function learningCount(task,records,options={}){
   const a=artifact(r.answer);if(!a)continue;const m=materials.find(m=>m.id===materialId);
   if(['grammar','listening','reading'].includes(task.id)&&!player?.objectiveSubmissionComplete?.(r,m))continue;
   if(task.id==='listening'&&a.audioCompleted!==true)continue;
-  if(task.id==='vocabulary'&&!vocabulary?.verifyTrainingArtifact?.(a,m)?.submitted)continue;
+   if(task.id==='vocabulary'&&!vocabularySubmissionValid(r,a,m,options.data||{materials}))continue;
   if(task.id==='speaking'&&!player?.verifySpeakingStage?.(r,m,task,options.data||{materials,days:[]},options.dayNumber??r.dayNumber)?.submitted)continue;
   if(task.id==='writing'&&!a.text?.trim())continue;
   if(task.id==='reflection'&&!a.recap&&!a.yearSummary)continue;
   let first=r;const seen=new Set();while(first.kind==='correction'&&byId.has(first.parentId)&&!seen.has(first.id)){seen.add(first.id);const parent=byId.get(first.parentId);if(parent.materialId!==materialId)break;first=parent;}roots.add(first.id);
  }return roots.size;});return counts.length?Math.min(...counts):0;
 }
+ // Count only saved, fully submitted v2 vocabulary work. A correction belongs
+ // to its original/relearning cycle; it does not create another cycle.
+ function vocabularyModuleProgress(task,records,options={}){
+  if(task?.id!=='vocabulary')return null;
+  const flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),required=[...new Set(flow?.orderedMaterialIds?.(task,options.dayNumber)||task.materialIds||[])];
+  const materials=options.materials||options.data?.materials||root.IELTSCurriculumData?.materials||[],list=Array.isArray(records)?records:[],byId=new Map(list.filter(r=>r&&typeof r.id==='string').map(r=>[r.id,r]));
+  const player=root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null),assessment=root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null);
+  const matching=(r,id)=>r?.materialId===id&&r.taskId==='vocabulary'&&r.skill==='vocabulary';
+  const cycleRoot=r=>{let current=r;const seen=new Set();while(current?.kind==='correction'){
+   if(seen.has(current.id))return null;seen.add(current.id);const parent=byId.get(current.parentId);if(!matching(parent,r.materialId))return null;current=parent;
+  }
+   if(current?.kind==='original'&&!current.parentId)return current;
+   if(current?.kind==='retest'&&artifact(current.answer)?.mode==='practice'&&matching(byId.get(current.parentId),r.materialId))return current;
+   return null;
+  };
+  const groups=new Map(required.map(id=>[id,new Map()])),historical=new Map(required.map(id=>[id,new Map()])),unverified=new Set();
+  for(const r of list){
+   if(!groups.has(r?.materialId)||!matching(r,r.materialId)||options.dayNumber!==undefined&&r.dayNumber!==options.dayNumber||!['original','correction','retest'].includes(r.kind)||typeof r.id!=='string'||!r.id||!Number.isInteger(r.version)||r.version<1||typeof r.source!=='string'||!r.source||!Number.isFinite(Date.parse(r.submittedAt))||!['pass','revise','pending','unverified'].includes(r.evaluation?.result))continue;
+   const a=artifact(r.answer);if(!a||a.courseDay!==undefined&&a.courseDay!==r.dayNumber)continue;
+   const current=materials.find(m=>m.id===r.materialId),bound=a.materialBinding!==undefined,target=current?.skill==='vocabulary'?currentVocabularyMaterial(current,options.data||{materials}):null,m=bound?player?.materialForRecord?.(r,current,assessment):target;
+   if(!m||m.skill!=='vocabulary')continue;const proof=vocabulary?.verifyTrainingArtifact?.(a,m);
+   if(proof?.submitted!==true){if(!bound&&vocabulary?.verifyTrainingArtifact?.(a)?.submitted===true)unverified.add(r.materialId);continue;}
+   const first=cycleRoot(r);if(!first)continue;
+   const currentProof=target?vocabulary?.verifyTrainingArtifact?.(a,target):null;
+   if(!target)unverified.add(r.materialId);
+   const isCurrent=currentProof?.submitted===true,group=(isCurrent?groups:historical).get(r.materialId),old=group.get(first.id),rank=value=>[Date.parse(value.submittedAt),Number(value.version)||0,String(value.id)];
+   const verified=bound||!!player?.materialForRecord?.(r,current,assessment);if(isCurrent&&!verified)unverified.add(r.materialId);
+   const left=rank(r),right=old&&rank(old.record);if(!right||left[0]>right[0]||left[0]===right[0]&&(left[1]>right[1]||left[1]===right[1]&&left[2]>right[2]))group.set(first.id,{record:r,proof,root:first,verified});
+  }
+  const counts=required.map(id=>groups.get(id).size),missingMaterialIds=required.filter(id=>!groups.get(id).size),pendingMaterialIds=[],correctionMaterialIds=[],historicalCyclesByMaterial=Object.create(null);let baseComplete=true;
+  const corrected=record=>{let current;try{current=options.recordCorrectionStatus?.(record);}catch(_){}if(current?.corrected===true)return true;try{return options.historicalRecordCorrectionStatus?.(record)?.corrected===true;}catch(_){return false;}};
+  for(const id of required){const cycles=[...groups.get(id).values()],originals=cycles.filter(c=>c.root.kind==='original').sort((a,b)=>Date.parse(b.record.submittedAt)-Date.parse(a.record.submittedAt)||(Number(b.record.version)||0)-(Number(a.record.version)||0)||String(b.record.id).localeCompare(String(a.record.id))),original=originals[0];
+   if(cycles.length&&!original)unverified.add(id);if(!original||!original.verified||!corrected(original.record)&&(original.record.evaluation.result==='pending'||original.record.evaluation.result==='unverified'||original.record.evaluation.result==='revise'&&original.proof.mastered===true||original.proof.mastered!==true))baseComplete=false;
+   if(historical.get(id).size)historicalCyclesByMaterial[id]=historical.get(id).size;
+   for(const cycle of cycles){const clear=corrected(cycle.record),result=cycle.record.evaluation.result;
+    if(!clear&&(result==='pending'||result==='unverified'||result==='revise'&&cycle.proof.mastered===true))pendingMaterialIds.push(id);
+    if(!clear&&cycle.proof.mastered!==true)correctionMaterialIds.push(id);
+   }
+  }
+  const submittedGroups=required.length-missingMaterialIds.length,allSubmitted=required.length>0&&!missingMaterialIds.length,pending=[...new Set(pendingMaterialIds)],correction=[...new Set(correctionMaterialIds)],verificationPendingMaterialIds=required.filter(id=>unverified.has(id)),updatedMaterialIds=required.filter(id=>historical.get(id).size&&!groups.get(id).size&&!unverified.has(id)),historicalSubmittedGroups=required.filter(id=>historical.get(id).size).length,completed=allSubmitted&&baseComplete;
+  return{totalGroups:required.length,submittedGroups,completedCycles:counts.length?Math.min(...counts):0,missingMaterialIds,allSubmitted,pending:pending.length>0,pendingMaterialIds:pending,correctionPending:correction.length>0,correctionMaterialIds:correction,verificationPending:verificationPendingMaterialIds.length>0,verificationPendingMaterialIds,updatedMaterialIds,historicalSubmittedGroups,historicalCyclesByMaterial,completed,historicalCompleted:completed};
+ }
 function learningStatus(task,records,options={}){
  const correctionStatus=record=>{let current;try{current=options.recordCorrectionStatus?.(record);}catch(_){}if(current?.corrected===true)return current;try{return options.historicalRecordCorrectionStatus?.(record)||current;}catch(_){return current;}};
  const status=taskState(task,records,{...options,recordCorrectionStatus:correctionStatus});if(!status.done||task.id==='reflection')return status;
@@ -58,7 +115,7 @@ function latestForMaterial(task,records,dayNumber,materials=[],data){
   if(['reading','listening','grammar'].includes(task.id)&&!player?.objectiveSubmissionComplete?.(record,material))continue;
   if(task.id==='listening'&&artifact(record.answer)?.audioCompleted!==true)continue;
   if(task.id==='speaking'&&!player?.verifySpeakingStage?.(record,material,task,context,dayNumber??record.dayNumber)?.submitted)continue;
-  if(task.id==='vocabulary'&&!vocabulary?.verifyTrainingArtifact?.(artifact(record.answer),materials.find(item=>item.id===record.materialId))?.submitted)continue;
+   if(task.id==='vocabulary'&&!vocabularySubmissionValid(record,artifact(record.answer),materials.find(item=>item.id===record.materialId),context))continue;
   const previous=byMaterial.get(record.materialId);
   const rank=value=>[recordTime(value),Number(value.version)||0,String(value.id||'')];
   const a=rank(record),b=previous?rank(previous):null;
@@ -175,9 +232,11 @@ function mount(){
   $('todayAdvice').textContent=allDone?'今天的学习产出与复盘已提交。请检查实际学习时间和阶段关卡；提交齐全不等于能力已达标。':next?.task.id==='reflection'?'今天最后一步：完成整页错题重做，直到全部正确，再查看 AI 每日复盘。':waiting?'最新作品等待服务评阅，可从下面选择其他任务。':'现在从「'+NAMES[next?.task.id]+'」继续。每项按“学习 → 作答 → 看反馈”完成，然后进入下一项。';
   const vocabularySummary=root.IELTSCoursePlayer?.vocabularyTaskSummary?.(day.tasks.find(task=>task.id==='vocabulary'),data);if(vocabularySummary&&next?.task.id==='vocabulary'&&!waiting)$('todayNext').textContent='本课词汇 '+vocabularySummary.wordCount+' 个词项，分 '+vocabularySummary.groupCount+' 组；每组完成三写、三读与三轮测试，再继续下一组。';
   $('todayRoute').replaceChildren();states.forEach((state,index)=>{
-   const completed=learningStatus(state.task,dailyRecords,{data,dayNumber:current.day,materials:data.materials,completionValid:mistakes.completionValid,recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r),historicalRecordCorrectionStatus:r=>root.IELTSMistakes?.historicalRecordCorrectionStatus?.(r)}).done;
+   const progressOptions={data,dayNumber:current.day,materials:data.materials,completionValid:mistakes.completionValid,recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r),historicalRecordCorrectionStatus:r=>root.IELTSMistakes?.historicalRecordCorrectionStatus?.(r)},vocabularyProgress=state.task.id==='vocabulary'?vocabularyModuleProgress(state.task,dailyRecords,progressOptions):null;
+   const completed=vocabularyProgress?vocabularyProgress.completed:learningStatus(state.task,dailyRecords,progressOptions).done;
    const button=doc.createElement('button');button.type='button';button.className='today-step'+(completed?' is-done':'');button.setAttribute('aria-current',String(state.task.id===current.taskId));
-   const draft=hasDraft(state.task.id,state.nextMaterialId,drafts(),current),learned=learningCount(state.task,dailyRecords,{data,dayNumber:current.day}),status=completed?'已完成 · 已学习 '+learned+' 次':state.done?'已提交 · 待订正':state.pending&&!state.missingMaterialIds.length?'待评阅':state.legacyTraining?'旧稿保留，可重做新版':draft?'有未提交草稿':state.count?'已提交 '+state.count+'/'+state.total:'待学习';
+   const draft=hasDraft(state.task.id,state.nextMaterialId,drafts(),current),learned=learningCount(state.task,dailyRecords,{data,dayNumber:current.day});let status=completed?'已完成 · 已学习 '+learned+' 次':state.done?'已提交 · 待订正':state.pending&&!state.missingMaterialIds.length?'待评阅':state.legacyTraining?'旧稿保留，可重做新版':draft?'有未提交草稿':state.count?'已提交 '+state.count+'/'+state.total:'待学习';
+   if(vocabularyProgress){status=vocabularyProgress.submittedGroups||vocabularyProgress.updatedMaterialIds.length?(vocabularyProgress.completed?'已完成 · ':'')+'已提交 '+vocabularyProgress.submittedGroups+'/'+vocabularyProgress.totalGroups+' 组'+(vocabularyProgress.allSubmitted?' · 已学习 '+vocabularyProgress.completedCycles+' 次':'')+(vocabularyProgress.pending?' · 待评阅':'')+(vocabularyProgress.correctionPending?(vocabularyProgress.completed?' · 新增错题待订正':' · 错题待订正'):'')+vocabularyProgress.updatedMaterialIds.map(id=>' · 原版已提交 '+vocabularyProgress.historicalCyclesByMaterial[id]+' 次，新版待学').join('')+(vocabularyProgress.verificationPending?' · 原稿待核验':''):vocabularyProgress.verificationPending?'旧原稿待核验':state.legacyTraining?'旧稿保留，可重做新版':draft?'有未提交草稿':'待学习';}
    for(const [tag,value]of[['b',String(index+1).padStart(2,'0')+' / '+state.task.minutes+' MIN'],['strong',NAMES[state.task.id]],['small',state.task.id==='vocabulary'&&vocabularySummary?status+' · '+vocabularySummary.groupCount+'组 / '+vocabularySummary.wordCount+'个词项':status]]){const el=doc.createElement(tag);el.textContent=value;button.append(el);}
    button.addEventListener('click',async()=>{if(state.done||state.pending&&!state.missingMaterialIds.length){await navigation.showLatestRecord?.(state.task.id,state.nextMaterialId);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}else{navigation.showTask(state.task.id,state.nextMaterialId);$('courseMaterialIntro')?.scrollIntoView?.({behavior:'smooth',block:'start'});}});$('todayRoute').append(button);
   });
@@ -209,5 +268,5 @@ function mount(){
  if(new URLSearchParams(root.location.search).get('preview')==='1')doc.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href');if(href&&!/^(https?:|#)/.test(href)&&/\.html(?:[?#]|$)/.test(href)){const url=new URL(href,root.location.href);url.searchParams.set('preview','1');link.href=url.href;}});
  return{render,start,refreshRecords};
 }
-return{artifact,relearningRecord,learningCount,learningStatus,latestForMaterial,taskState,chooseNext,hasDraft,lessonTheme,mount};
+return{artifact,relearningRecord,learningCount,vocabularyModuleProgress,learningStatus,latestForMaterial,taskState,chooseNext,hasDraft,lessonTheme,mount};
 });
