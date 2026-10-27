@@ -3,15 +3,15 @@
   "days": 365,
   "hours": 2190,
   "sourceJobs": 543,
-  "materials": 1823,
-  "questions": 7268,
+  "materials": 1842,
+  "questions": 7426,
   "questionCountBasis": "material variant instances; paired same-source questions are not additional unseen coverage",
-  "uniqueQuestionInstancesAfterPublicPairReuse": 7105,
+  "uniqueQuestionInstancesAfterPublicPairReuse": 7263,
   "sourceInputs": {
-    "bodyVariants": 538,
-    "uniqueSourceCount": 509,
+    "bodyVariants": 549,
+    "uniqueSourceCount": 520,
     "pairedReuseCount": 29,
-    "uniqueTextWords": 259151,
+    "uniqueTextWords": 265213,
     "excludedReuseWords": 10055,
     "reusedQuestionInstances": 163,
     "pairedReuse": [
@@ -333,6 +333,536 @@
         "textWordsCountedOnce": 589,
         "reusedQuestionInstances": 6,
         "independentUnseenSourcesAdded": 0
+      }
+    ],
+    "registeredOrdinaryPublicVariants": 86,
+    "publicSourceBindings": [
+      {
+        "materialId": "public-nasa-climate-models-reading",
+        "sourceId": "nasa-climate-models",
+        "sourceTextSha256": "9b9cb9869b039345a67eb203131662dbf4b058667fc9c6c796770df9f3ddee39",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-greenhouse-effect-reading",
+        "sourceId": "nasa-greenhouse-effect",
+        "sourceTextSha256": "89dd2e308f4221b8f8cb3bb4bbd1ac4cca60d78d096a7498af4463f56e27b5d7",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-water-cycle-reading",
+        "sourceId": "nasa-water-cycle",
+        "sourceTextSha256": "5b10e239d57dd5c2595e1711d11c57b276a5ffb6121c26891334910c7d940c3e",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-05-reading",
+        "sourceId": "voa-l1-05",
+        "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-05-listening",
+        "sourceId": "voa-l1-05",
+        "sourceTextSha256": "19047ca46fbfd919431bc860daf97e0e315de6a36d0cccac2b549138743c7e37",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-06-reading",
+        "sourceId": "voa-l1-06",
+        "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-06-listening",
+        "sourceId": "voa-l1-06",
+        "sourceTextSha256": "8cad6f216fb13c4ab40b41e0979d31921d2740a5fce3335dac3a03f8e853c667",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-07-reading",
+        "sourceId": "voa-l1-07",
+        "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-07-listening",
+        "sourceId": "voa-l1-07",
+        "sourceTextSha256": "bd6cc3fef046ab63837c2e80e15906692414e054adedbeadff3e8a7bbb067bf2",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-16-reading",
+        "sourceId": "voa-l1-16",
+        "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-16-listening",
+        "sourceId": "voa-l1-16",
+        "sourceTextSha256": "e44405334274d48f6887eb58b0f82298f542b4cd7f0cb74c673e0b18a3704631",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-18-reading",
+        "sourceId": "voa-l1-18",
+        "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-18-listening",
+        "sourceId": "voa-l1-18",
+        "sourceTextSha256": "5a85e27f6ce74522f3d4cf844d7b531033168f857f27bd30edcb1eec5e112507",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-20-reading",
+        "sourceId": "voa-l1-20",
+        "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-20-listening",
+        "sourceId": "voa-l1-20",
+        "sourceTextSha256": "04147d2090afcd40d8ff8e8660d47631119d9987d8c7438d6837d519d1235444",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-24-reading",
+        "sourceId": "voa-l1-24",
+        "sourceTextSha256": "a248c5974312e4a38b5f1da5b65a3e60747875d0af37bccfebba3b717a31be55",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-28-reading",
+        "sourceId": "voa-l1-28",
+        "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-28-listening",
+        "sourceId": "voa-l1-28",
+        "sourceTextSha256": "cdef49bbead8337bb46e80c41af22f715655187cc05b816b0f9a283666ac1575",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-34-reading",
+        "sourceId": "voa-l1-34",
+        "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-34-listening",
+        "sourceId": "voa-l1-34",
+        "sourceTextSha256": "a4b55269df849eef8790013ae18800e9ae7e45cdff371a5ede9675ed67cc95e3",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-42-reading",
+        "sourceId": "voa-l1-42",
+        "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-42-listening",
+        "sourceId": "voa-l1-42",
+        "sourceTextSha256": "a34104a9df05075cd2a99684dfaa11e97575c5a7af93cb0d2ea330ab83cf13e2",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-48-reading",
+        "sourceId": "voa-l1-48",
+        "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-48-listening",
+        "sourceId": "voa-l1-48",
+        "sourceTextSha256": "8b9e30fba3f7dfe519893e44300b83305103bc1fa8c0eafbbaae6f2248502143",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-01-reading",
+        "sourceId": "voa-l2-01",
+        "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-01-listening",
+        "sourceId": "voa-l2-01",
+        "sourceTextSha256": "243b2da918544f5eb8b81a44e5bc5889cd3ffa38037fe7d82c4d18174d3f40d8",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-03-reading",
+        "sourceId": "voa-l2-03",
+        "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-03-listening",
+        "sourceId": "voa-l2-03",
+        "sourceTextSha256": "d529634d63d14b0c247ffc4b3e6c71dc85ef0b69d550cf750fd0002298d9fd11",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-06-reading",
+        "sourceId": "voa-l2-06",
+        "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-06-listening",
+        "sourceId": "voa-l2-06",
+        "sourceTextSha256": "2a02690034fe1f4b847de315ab020e9ad32c5e8e54b43f14c9a0141c538f4aa4",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-01-reading",
+        "sourceId": "voa-l1-01",
+        "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-01-listening",
+        "sourceId": "voa-l1-01",
+        "sourceTextSha256": "075bfecd81678344908e61c019e1bbaff1ca7c9e69fbf87ae181402d8fe18716",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-02-reading",
+        "sourceId": "voa-l1-02",
+        "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-02-listening",
+        "sourceId": "voa-l1-02",
+        "sourceTextSha256": "189070dda3462a1f1cfbb3547ceb84a4cb89a5f6ad19e1d3225e21d1361ef658",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-03-reading",
+        "sourceId": "voa-l1-03",
+        "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-03-listening",
+        "sourceId": "voa-l1-03",
+        "sourceTextSha256": "3b0afcb1855fa2b1dbbb2d66b1fce3406f5c542be6722488cf67fd0e33681767",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-04-reading",
+        "sourceId": "voa-l1-04",
+        "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-04-listening",
+        "sourceId": "voa-l1-04",
+        "sourceTextSha256": "a5e36137e79dd11b8ffdbf9f29a2d334503386d0b7c4d87ed1d7ec1e45cf0280",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-08-reading",
+        "sourceId": "voa-l1-08",
+        "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-08-listening",
+        "sourceId": "voa-l1-08",
+        "sourceTextSha256": "bffb64885340fe8b6db52cb29456c621da087c28203fd24299c33c63ef108fd3",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-09-reading",
+        "sourceId": "voa-l1-09",
+        "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-09-listening",
+        "sourceId": "voa-l1-09",
+        "sourceTextSha256": "ed7d2eb7ebb570e5a7e4d00de55aac825e6e6218db360c9f5edb9b305ae5f69a",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-10-reading",
+        "sourceId": "voa-l1-10",
+        "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-10-listening",
+        "sourceId": "voa-l1-10",
+        "sourceTextSha256": "28344c277f5153990811fcb717cd84567e1b67c881c51081b740526814a80f8f",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-11-reading",
+        "sourceId": "voa-l1-11",
+        "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-11-listening",
+        "sourceId": "voa-l1-11",
+        "sourceTextSha256": "6ccf66ab215b94a500cbdf996c4902951113e640a8b99abba8171f70ff71dd76",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-12-reading",
+        "sourceId": "voa-l1-12",
+        "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-12-listening",
+        "sourceId": "voa-l1-12",
+        "sourceTextSha256": "27f7381c809e2c40b21fb5ff459584924ae2ee0133ff49f404902a1d51217801",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-14-reading",
+        "sourceId": "voa-l1-14",
+        "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-14-listening",
+        "sourceId": "voa-l1-14",
+        "sourceTextSha256": "6407cf77a9eed731e76fc0cbf62fb8edf477099d83da38816e227e63ecdedac8",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-15-reading",
+        "sourceId": "voa-l1-15",
+        "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-15-listening",
+        "sourceId": "voa-l1-15",
+        "sourceTextSha256": "90436ece8c85e903528af70472e8acfe92d21a34870be379936917be1f240271",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-17-reading",
+        "sourceId": "voa-l1-17",
+        "sourceTextSha256": "6099e812125c0b363e49132d90f2c69813c8555aa68f47f60573ae5efcad944d",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-19-reading",
+        "sourceId": "voa-l1-19",
+        "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-19-listening",
+        "sourceId": "voa-l1-19",
+        "sourceTextSha256": "54325702b862e8de148abc472c90b5d69605a070335b705222cca8646935da2f",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-22-reading",
+        "sourceId": "voa-l1-22",
+        "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-22-listening",
+        "sourceId": "voa-l1-22",
+        "sourceTextSha256": "9e4bdff5a88c5a8febee0a0c1813e1d437470cb75a92b4f904ec708063523d81",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-23-reading",
+        "sourceId": "voa-l1-23",
+        "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l1-23-listening",
+        "sourceId": "voa-l1-23",
+        "sourceTextSha256": "d77ae0c0b79d61d41d32b2206d75fc3835f4ad417f8b0504707fd8e0bdd295e4",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-02-reading",
+        "sourceId": "voa-l2-02",
+        "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-02-listening",
+        "sourceId": "voa-l2-02",
+        "sourceTextSha256": "7499ebbe6171639bf3274e7a710c6e96b3bb13c97f4a5706e2ba6d9ecea5a2ea",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-04-reading",
+        "sourceId": "voa-l2-04",
+        "sourceTextSha256": "b22baf528192047981bb29e83ac1b572266d3546802e4d6b8f7724469327eaf2",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-05-reading",
+        "sourceId": "voa-l2-05",
+        "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-05-listening",
+        "sourceId": "voa-l2-05",
+        "sourceTextSha256": "c9683b01a34ab8e8c0ea9d80c400202ccb3d1fcae55bdf83bd95b23fd2a597a1",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-voa-l2-07-reading",
+        "sourceId": "voa-l2-07",
+        "sourceTextSha256": "0d9f9f7a80782023e233d0201b05a7f653e5b7a0e50cd072d074bf14ce931e92",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-forest-loss-radar-reading",
+        "sourceId": "nasa-forest-loss-radar",
+        "sourceTextSha256": "fdd23974f51acb8ed3c5e0f0b17a6a85d7389541238c8dc229c21eb19266cdf3",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-dryland-forest-mapping-reading",
+        "sourceId": "nasa-dryland-forest-mapping",
+        "sourceTextSha256": "6a7341153fc1eb3e499ad8bfd3904ac52d0e92489b4edadb6f8c30266782a613",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-citizen-kelp-mapping-reading",
+        "sourceId": "nasa-citizen-kelp-mapping",
+        "sourceTextSha256": "e81b94bfe1355f685a7b22a79066cdb5f103a3cd50439bb9d36b4951ddd1d6f0",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-solar-battery-storage-reading",
+        "sourceId": "nasa-solar-battery-storage",
+        "sourceTextSha256": "70e9c3ee71573cf87dde21782c90b31a116780e3e2d2de89eef92ae9c1df9bc2",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-floating-solar-reading",
+        "sourceId": "nasa-floating-solar",
+        "sourceTextSha256": "f876c33e9520879cb7eaba9b107919516f58830054ac824b73e210922efc7157",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-nasa-phytoplankton-reading",
+        "sourceId": "nasa-phytoplankton",
+        "sourceTextSha256": "8d5e0d9933a04ec8ec683dbaaade843fbf15d849e9472d50a92428d7b63a67c9",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-usgs-hydroelectric-power-reading",
+        "sourceId": "usgs-hydroelectric-power",
+        "sourceTextSha256": "ef48f47c7e693c06847c1315db2ac03f28931661427b3152628c4a24c16e6c97",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-usgs-turbidity-water-reading",
+        "sourceId": "usgs-turbidity-water",
+        "sourceTextSha256": "c178da625854617614dd3350dba2e4631e1a345744d13dbccceed7fcdd601c59",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-noaa-ocean-acidification-reading",
+        "sourceId": "noaa-ocean-acidification",
+        "sourceTextSha256": "4630edc0d0ab835a5ad42baaf95d03181f72b2c7fe5134449b06530b0f0266fd",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-noaa-eutrophication-reading",
+        "sourceId": "noaa-eutrophication",
+        "sourceTextSha256": "eda0877ae50d319e897d9e8d652f82bd98935d180cfd156a7556825fe6d7ea83",
+        "registration": "legacy-public-source-catalog"
+      },
+      {
+        "materialId": "public-gsa-plain-language-02-reading",
+        "sourceId": "gsa-plain-language-02",
+        "sourceTextSha256": "aed8c313a76bcd0fdb78af2c9abad876cc836ecb2339e41748d9f64f2ca47302",
+        "registration": "independently-reviewed-gsa-release",
+        "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f"
+      },
+      {
+        "materialId": "public-gsa-plain-language-03-reading",
+        "sourceId": "gsa-plain-language-03",
+        "sourceTextSha256": "e7176b3429887f664af5f2ab34395f844d125d9fc29047ee668a255a18c5c4d5",
+        "registration": "independently-reviewed-gsa-release",
+        "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f"
+      },
+      {
+        "materialId": "public-gsa-plain-language-08-reading",
+        "sourceId": "gsa-plain-language-08",
+        "sourceTextSha256": "4d8939c759065c838221a0f6d9010be6e950b443330e7c184e0049f5bfb6ddb3",
+        "registration": "independently-reviewed-gsa-release",
+        "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f"
+      },
+      {
+        "materialId": "public-gsa-plain-language-07-reading",
+        "sourceId": "gsa-plain-language-07",
+        "sourceTextSha256": "fa04920cc273d575f761dd61cfe616e3d61a8c42cb2b7d349d91b1272fc80b7c",
+        "registration": "independently-reviewed-gsa-release",
+        "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f"
+      },
+      {
+        "materialId": "public-gsa-plain-language-06-reading",
+        "sourceId": "gsa-plain-language-06",
+        "sourceTextSha256": "20240a75c2cd17ee1865fe8b83333abc6ee57d8b6b8436bc8a52bf24e977b7b5",
+        "registration": "independently-reviewed-gsa-release",
+        "releaseSha256": "3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f"
+      },
+      {
+        "materialId": "public-ordinary-v92-bls-athletes-reading",
+        "sourceId": "bls-athletes",
+        "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+        "registration": "independently-reviewed-ordinary-reading-release",
+        "releaseSha256": "aebd6c6b66a570ab38675655b2c1d41b7c2fd9e7c453f48ce7812253c3d65692"
+      },
+      {
+        "materialId": "public-ordinary-v92-bls-musicians-reading",
+        "sourceId": "bls-musicians",
+        "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+        "registration": "independently-reviewed-ordinary-reading-release",
+        "releaseSha256": "aebd6c6b66a570ab38675655b2c1d41b7c2fd9e7c453f48ce7812253c3d65692"
+      },
+      {
+        "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+        "sourceId": "nimh-psychotherapies",
+        "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+        "registration": "independently-reviewed-ordinary-reading-release",
+        "releaseSha256": "aebd6c6b66a570ab38675655b2c1d41b7c2fd9e7c453f48ce7812253c3d65692"
+      },
+      {
+        "materialId": "public-ordinary-v92-nhgri-dna-reading",
+        "sourceId": "nhgri-dna",
+        "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+        "registration": "independently-reviewed-ordinary-reading-release",
+        "releaseSha256": "aebd6c6b66a570ab38675655b2c1d41b7c2fd9e7c453f48ce7812253c3d65692"
+      },
+      {
+        "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+        "sourceId": "nist-atomic-television",
+        "sourceTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+        "registration": "independently-reviewed-ordinary-reading-release",
+        "releaseSha256": "aebd6c6b66a570ab38675655b2c1d41b7c2fd9e7c453f48ce7812253c3d65692"
+      },
+      {
+        "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+        "sourceId": "cbo-budget-2025",
+        "sourceTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+        "registration": "independently-reviewed-ordinary-reading-release",
+        "releaseSha256": "aebd6c6b66a570ab38675655b2c1d41b7c2fd9e7c453f48ce7812253c3d65692"
       }
     ],
     "wordCountBasis": "Assessment.countWords of each distinct normalized source body; role labels retained. Surface words are not headword coverage or learner unseen evidence.",

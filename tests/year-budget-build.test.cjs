@@ -63,8 +63,8 @@ function activationFixture(t){
  for(const [role,file]of Object.entries(policy.REQUIRED_COMPONENTS)){
   const bytes=fs.readFileSync(path.join(__dirname,'..',file)),target=path.join(directory,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,bytes);components.push({role,path:file,sha256:F.sha(bytes),bytes:bytes.length});
  }
- const contract={schema:1,kind:'year-first-use-runtime-contract',protocol:1,runtimeConnected:true,activationReviewed:true,components},file=path.join(directory,'contract.json');
- fs.writeFileSync(file,JSON.stringify(contract));return{directory,contract,file,check:()=>require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root:directory,contractPath:'contract.json'})};
+ const contract={schema:1,kind:'year-first-use-runtime-contract',protocol:1,runtimeConnected:true,activationReviewed:true,components},file=path.join(directory,'curriculum/year-first-use-runtime-contract.json');fs.mkdirSync(path.dirname(file),{recursive:true});
+ fs.writeFileSync(file,JSON.stringify(contract));return{directory,contract,file,check:()=>require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root:directory,contractPath:'curriculum/year-first-use-runtime-contract.json'})};
 }
 
 test('explicit activation rejects missing expansion, partial/in-place builds and absent runtime contract before writing',t=>{
@@ -72,7 +72,8 @@ test('explicit activation rejects missing expansion, partial/in-place builds and
  assert.throws(()=>build({activateYearFirstUse:true,outputRoot:target}),/requires --require-year-expansion/);
  assert.throws(()=>build({requireYearExpansion:true,activateYearFirstUse:true,partial:true,outputRoot:target}),/without --partial/);
  assert.throws(()=>build({requireYearExpansion:true,activateYearFirstUse:true,outputRoot:F.root}),/staging --output-root/);
- assert.throws(()=>build({requireYearExpansion:true,activateYearFirstUse:true,yearRuntimeContract:'work/no-such-year-runtime-contract.json',outputRoot:target}),/ENOENT/);
+ assert.throws(()=>build({requireYearExpansion:true,activateYearFirstUse:true,yearRuntimeContract:'work/no-such-year-runtime-contract.json',outputRoot:target}),/Unsupported exact runtime contract path/);
+ assert.throws(()=>require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root:target,contractPath:'curriculum/year-first-use-runtime-contract.json'}),/ENOENT/);
  assert.deepEqual(fs.readdirSync(target),[]);
 });
 

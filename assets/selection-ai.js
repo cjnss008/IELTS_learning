@@ -48,7 +48,7 @@
     '个性化学习.html':'#personalEffects,#personalHistory',
     '课程目标与资源.html':'main[data-ai-learning-root="true"]'
   });
-  const TRANSLATION_BLOCKED='[hidden],[data-vocab-testing="true"],[data-assessment="true"],[data-mode="assessment"],[data-ai-translate-off],#writingPathTransfer,.selection-ai-panel,.selection-ai-trigger,.selection-ai-saved,script,style,nav,header,footer';
+  const TRANSLATION_BLOCKED='[hidden],[data-vocab-testing="true"],[data-assessment="true"],[data-mode="assessment"],[data-ai-translate-off],#writingPathTransfer,#writingPathTransferBody,.selection-ai-panel,.selection-ai-trigger,.selection-ai-saved,script,style,nav,header,footer';
   const TRANSLATION_PARAGRAPH='p,li,label,legend,td,th,blockquote,figcaption,h1,h2,h3,h4,strong.vocab-word,[data-ai-translate]';
   function pageName(location) { try { return decodeURIComponent(String(location?.pathname||'').split('/').pop()||''); } catch (_) { return ''; } }
   function translationSurface(element,page) {

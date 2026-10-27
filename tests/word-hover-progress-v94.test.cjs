@@ -1,0 +1,16 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{createRequire}=require('node:module');
+const root=path.resolve(process.env.WORD_HOVER_BASE_ROOT||path.join(__dirname,'..')),helper=path.resolve(process.env.WORD_HOVER_FROZEN_TEST||path.join(root,'tests/word-hover-delivery-v94.test.cjs')),source=fs.readFileSync(helper,'utf8'),box={exports:{}};
+new Function('require','__dirname','module',source.slice(0,source.indexOf('\ntest('))+'\nmodule.exports={fixture,until,turn};')(createRequire(helper),path.dirname(helper),box);const H=box.exports;
+function fixture(options){const read=fs.readFileSync,target=path.resolve(path.dirname(helper),'../assets/word-hover.js'),replacement=path.resolve(process.env.WORD_HOVER_PROGRESS_FILE||path.join(__dirname,'../assets/word-hover.js'));fs.readFileSync=function(file,...args){return read.call(this,typeof file==='string'&&path.resolve(file)===target?replacement:file,...args);};try{return H.fixture(options);}finally{fs.readFileSync=read;}}
+test('actual show displays verified local general meaning while contextual AI is still unresolved',async()=>{
+  let resolve,requested=false;const f=fixture({ai:()=>{requested=true;return new Promise(done=>{resolve=done;});}});
+  try{await f.hover(f.add('A mortgage can last for many years.'),'mortgage');await H.until(()=>requested);assert.match(f.popup().textContent,/本地通用参考/);assert.match(f.popup().textContent,/本地参考已就绪/);assert.doesNotMatch(f.popup().textContent,/本句AI释义/);assert.equal(f.events.length,1);resolve({ok:true,word:'mortgage',meaning:'本句抵押贷款',example:'A contextual mortgage example.'});await H.until(()=>f.popup().textContent.includes('本句AI释义'));assert.equal(f.events.length,1);}finally{resolve?.({ok:true,word:'mortgage',meaning:'本句抵押贷款',example:'Example.'});f.controller.destroy();}
+});
+test('local progress and late AI may not repaint a restored owner',async()=>{
+  let resolve,requested=false;const f=fixture({ai:()=>{requested=true;return new Promise(done=>{resolve=done;});}});
+  try{await f.hover(f.add('A mortgage is involved.'),'mortgage');await H.until(()=>requested);assert.match(f.popup().textContent,/本地通用参考/);f.restore();resolve({ok:true,word:'mortgage',meaning:'迟到抵押贷款',example:'Late example.'});await H.turn();await H.turn();assert.equal(f.popup().hidden,true);assert.doesNotMatch(f.popup().textContent,/迟到抵押贷款/);}finally{resolve?.({ok:true,word:'mortgage',meaning:'迟到抵押贷款',example:'Late example.'});f.controller.destroy();}
+});
+test('a previous word AI result cannot replace the new visible word after local progress',async()=>{
+  let resolve,requested=false;const f=fixture({ai:input=>input.word==='mortgage'?(requested=true,new Promise(done=>{resolve=done;})):({ok:true,word:input.word,meaning:'新词语境义',example:'A student reads.'})});try{await f.hover(f.add('A mortgage is involved.'),'mortgage');await H.until(()=>requested);f.controller.hide();await f.hover(f.add('A student is here.'),'student');await H.until(()=>f.popup().textContent.includes('新词语境义'));resolve({ok:true,word:'mortgage',meaning:'迟到旧词',example:'Late old word.'});await H.turn();await H.turn();assert.match(f.popup().textContent,/student/);assert.doesNotMatch(f.popup().textContent,/迟到旧词/);}finally{resolve?.({ok:true,word:'mortgage',meaning:'迟到旧词',example:'Late old word.'});f.controller.destroy();}
+});

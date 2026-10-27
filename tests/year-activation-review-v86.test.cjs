@@ -19,8 +19,8 @@ function componentBytes(relative){const file=path.join(root,relative);return fs.
 function productionContract(t){
  const directory=scratch(t),components=[];
  for(const [role,relative]of Object.entries(Policy.REQUIRED_COMPONENTS)){const bytes=componentBytes(relative),target=path.join(directory,relative);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,bytes);components.push({role,path:relative,sha256:sha(bytes),bytes:bytes.length});}
- const value={schema:1,kind:'year-first-use-runtime-contract',protocol:1,runtimeConnected:true,activationReviewed:true,components},file=path.join(directory,'contract.json');
- const write=()=>fs.writeFileSync(file,JSON.stringify(value)),check=()=>Activation.validateRuntimeContract({root:directory,contractPath:'contract.json'});write();return{directory,value,file,write,check};
+ const value={schema:1,kind:'year-first-use-runtime-contract',protocol:1,runtimeConnected:true,activationReviewed:true,components},file=path.join(directory,'curriculum/year-first-use-runtime-contract.json');fs.mkdirSync(path.dirname(file),{recursive:true});
+ const write=()=>fs.writeFileSync(file,JSON.stringify(value)),check=()=>Activation.validateRuntimeContract({root:directory,contractPath:'curriculum/year-first-use-runtime-contract.json'});write();return{directory,value,file,write,check};
 }
 function rebind(f,components){
  const contract={schema:1,kind:'year-first-use-runtime-contract',protocol:1,runtimeConnected:true,activationReviewed:true,components};

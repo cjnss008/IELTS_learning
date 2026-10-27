@@ -10,8 +10,10 @@ function inside(root,relative){
  const real=fs.realpathSync(target),realCheck=path.relative(fs.realpathSync(root),real);assert(realCheck&&!realCheck.startsWith('..')&&!path.isAbsolute(realCheck),'runtime contract symlinks must stay within root');
  return {target,relative:parts.join('/')};
 }
-function validateRuntimeContract({root,contractPath='curriculum/year-first-use-runtime-contract.json'}={}){
+function validateRuntimeContract({root,contractPath}={}){
  assert(typeof root==='string'&&root,'runtime root is required');root=path.resolve(root);
+ if(contractPath===undefined)contractPath=fs.existsSync(path.join(root,'curriculum/year-first-use-runtime-contract-v93-family.json'))?'curriculum/year-first-use-runtime-contract-v93-family.json':'curriculum/year-first-use-runtime-contract.json';
+ assert(['curriculum/year-first-use-runtime-contract.json','curriculum/year-first-use-runtime-contract-v93-family.json'].includes(contractPath),'Unsupported exact runtime contract path');
  const input=inside(root,contractPath),bytes=fs.readFileSync(input.target);assert(bytes.length>0&&bytes.length<=262144,'runtime contract size is invalid');
  const text=bytes.toString('utf8');assert(Buffer.from(text,'utf8').equals(bytes),'runtime contract must be valid UTF-8');
  const contract=JSON.parse(text);assert.equal(contract.schema,1,'runtime contract schema');assert.equal(contract.kind,'year-first-use-runtime-contract','runtime contract kind');assert.equal(contract.protocol,1,'runtime contract protocol');
@@ -23,7 +25,7 @@ function validateRuntimeContract({root,contractPath='curriculum/year-first-use-r
   const pageProblem=Policy.pageDependencyProblem(file.relative,content.toString('utf8'));assert.equal(pageProblem,null,pageProblem||'runtime page dependencies');
   components.push({role:row.role,path:file.relative,sha256:row.sha256,bytes:content.length});
  }
- const ref={path:'curriculum/year-first-use-runtime-contract.json',sha256:sha(bytes),bytes:bytes.length};
+ const ref={path:input.relative,sha256:sha(bytes),bytes:bytes.length};
  return {text:bytes.toString('utf8'),metadata:{protocol:1,runtimeConnected:true,contract:ref,components},sourcePath:input.relative};
 }
 module.exports={REQUIRED_ROLES,MAX_COMPONENTS:Policy.MAX_COMPONENTS,REQUIRED_COMPONENTS:Policy.REQUIRED_COMPONENTS,validateRuntimeContract};

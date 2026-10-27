@@ -9,7 +9,7 @@ const Coverage=require('../assets/curriculum-coverage.js'),Lexicon=require('./cu
 const LexicalContexts=require('./lexical-contexts.cjs'),IndependentBank=require('./build-independent-bank.cjs');
 const CourseExpansion=require('./course-expansion69.cjs');
 const YearExpansion=require('./year-expansion.cjs');
-function build({partial=false,requireYearExpansion=false,activateYearFirstUse=false,yearRuntimeContract='curriculum/year-first-use-runtime-contract.json',gsaGradedRelease=null,ordinaryReadingRelease=null,outputRoot=root}={}){
+function build({partial=false,requireYearExpansion=false,activateYearFirstUse=false,yearRuntimeContract=undefined,gsaGradedRelease=null,ordinaryReadingRelease=null,outputRoot=root}={}){
  if(typeof activateYearFirstUse!=='boolean')throw Error('activateYearFirstUse must be a boolean');
  if(activateYearFirstUse&&!requireYearExpansion)throw Error('--activate-year-first-use requires --require-year-expansion');
  const outRoot=path.resolve(root,outputRoot);if(requireYearExpansion&&(partial||outRoot===path.resolve(root)))throw Error('Full year expansion must be validated without --partial in a staging --output-root before atomic publication.');

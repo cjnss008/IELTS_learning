@@ -217,6 +217,7 @@
     function add(raw, metadata) {
       const item = safeEntry({...raw,...metadata},{audioData});
       if (!item) return;
+      if(raw.pos||raw.partOfSpeech)item.pos=clean(raw.pos||raw.partOfSpeech,120);
       const key = normalize(item.word), values = index.get(key) || [];
       values.push(item); index.set(key, values);
     }
@@ -234,6 +235,8 @@
       const score = item => (materialId && item.materialId === materialId ? 1000 : 0) + (item.source === 'curriculum' ? 10 : item.source === 'course' ? 5 : 0) + (item.example && text.includes(normalize(item.example)) ? 100 : 0);
       const sorted = values.slice().sort((a,b) => score(b)-score(a));
       const result = {...sorted[0]};
+      result.contextBound=Boolean(materialId&&result.materialId===materialId);
+      result.meaningScope=result.contextBound?'material-context':'general-reference';
       for (const field of ['meaning','ipa','example','exampleTranslation']) if (!result[field]) result[field] = sorted.find(item => item[field])?.[field] || '';
       // Keep a pronunciation explicitly bound to the current material; otherwise
       // use the verified word index before an unrelated legacy audio file.
@@ -254,8 +257,19 @@
     for (const field of ['meaning','ipa','example','exampleTranslation']) if (!merged[field]) merged[field] = item[field];
     if (merged.ipa === item.ipa && item.ipaAccent) { merged.ipaAccent=item.ipaAccent; merged.ipaVariants=item.ipaVariants; merged.ipaSource=item.ipaSource; }
     merged.source = 'ai-supplement';
+    merged.aiChecked=true;
+    merged.contextualAI={meaning:item.meaning,example:item.example,exampleTranslation:item.exampleTranslation,ipa:item.ipa,ipaSource:item.ipaSource,pos:clean((result?.entry||result?.glossary||result)?.pos,120)};
     merged.complete = Boolean(merged.meaning && merged.ipa && merged.example);
     return merged;
   }
-  return {normalize, validWord, safeEntry, isAmericanIpa, safeAudioPath, indexedAudioChoice, indexedAudioFor, create, mergeAI, bridge:BRIDGE.map(safeEntry)};
+  function mergeReference(local,reference){
+    const item=safeEntry(reference);if(!item||normalize(item.word)!==normalize(local.word))throw Error('本地参考词条与当前单词不一致。');
+    const merged={...local};for(const field of ['meaning','ipa','example','exampleTranslation'])if(!merged[field])merged[field]=item[field];
+    if(!merged.pos&&reference.pos)merged.pos=clean(reference.pos,120);
+    if(local.source==='missing')merged.source='essential-reference';
+    if(!merged.ipaSource&&item.ipaSource)merged.ipaSource=item.ipaSource;
+    if(!merged.ipaAccent&&item.ipaAccent)merged.ipaAccent=item.ipaAccent;
+    merged.referenceSource='existing-8000-wordlist';if(!local.example)merged.exampleSource=reference.exampleSource||'existing-wordlist-example';merged.meaningScope=merged.contextBound?'material-context':'general-reference';merged.complete=Boolean(merged.meaning&&merged.ipa&&merged.example);return merged;
+  }
+  return {normalize, validWord, safeEntry, isAmericanIpa, safeAudioPath, indexedAudioChoice, indexedAudioFor, create, mergeAI, mergeReference, bridge:BRIDGE.map(safeEntry)};
 });

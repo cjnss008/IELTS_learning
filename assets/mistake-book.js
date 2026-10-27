@@ -100,6 +100,71 @@
     const latest=results.sort((a,b)=>b.round.number-a.round.number)[0],subjective=results.filter(x=>x.item.question.type==='subjective'&&x.item.skill===record.skill).sort((a,b)=>b.round.number-a.round.number)[0];
     return{corrected:true,submitted:true,recordId:record.id,recordVersion:record.version||1,materialId:record.materialId,skill:record.skill,quantity:subjective?words(subjective.result.answer):record.quantity||0,answer:subjective?copy(subjective.result.answer):copy(latest.result.answer),feedback:subjective?.result.feedback||latest.result.feedback,itemId:subjective?.item.id||latest.item.id,roundId:subjective?.round.id||latest.round.id,roundNumber:subjective?.round.number||latest.round.number,at:subjective?.round.at||latest.round.at,roundIds:[...new Set(results.map(x=>x.round.id))]};
   }
+  // A historical UI label may retain a real correction of this exact original
+  // after a different practice attempt reopens its shared current mistake item.
+  // This query never clears the current queue or grants mastery/completionValid.
+  function historicalRecordCorrectionStatusParsed(record,state){
+    const empty={corrected:false,submitted:false,quantity:0,roundIds:[]};
+    try{
+      if(!record||!Number.isInteger(record.dayNumber)||record.dayNumber<1||record.dayNumber>365||!record.materialId||!record.id||!SKILLS.includes(record.skill)||typeof record.answer!=='string')return empty;
+      const version=record.version===undefined?1:record.version;if(!Number.isInteger(version)||version<1||version>10000)return empty;
+      const daily=state.days[record.dayNumber],snapshot=daily?.recordVersions?.[record.id];
+      if(!snapshot||snapshot.version!==version||snapshot.signature!==hash({answer:record.answer,evaluation:record.evaluation,media:record.media||[]}))return empty;
+      const identities=new Map([[record.id,version]]),artifact=decoded(record.answer);
+      if(record.taskId!==undefined&&record.taskId!==record.skill)return empty;
+      if(artifact?.materialBinding){const material=artifact.materialBinding.material;if(material?.skill!==record.skill||record.materialVersion!==undefined&&String(record.materialVersion)!==String(material?.version))return empty;}
+      if(artifact?.kind==='vocabulary-three-modes'){
+        for(const round of artifact.rounds||[])for(const attempt of round.attempts||[]){const rid=attempt.attemptId||attempt.id;if(rid)identities.set(rid,1);}
+        for(const word of artifact.learning||[])for(const attempt of word.speaking||[])if(attempt.workId)identities.set(attempt.workId,1);
+      }
+      const all=state.items.filter(i=>i.dayNumber===record.dayNumber&&i.materialId===record.materialId),matching=[];
+      for(const item of all){
+        if(item.occurrences.some(o=>identities.has(o.recordId)&&o.recordVersion>identities.get(o.recordId)))return empty;
+        const occurrences=item.occurrences.filter(o=>identities.get(o.recordId)===o.recordVersion);if(!occurrences.length)continue;
+        const cutoff=Math.max(...occurrences.map(o=>Date.parse(o.at)));if(!Number.isFinite(cutoff))return empty;
+        matching.push({item,cutoff});
+      }
+      if(!matching.length)return empty;
+      // A valid smaller mistake table is not evidence that every error in the
+      // unchanged original artifact was corrected. Reconstruct that full set
+      // from its immutable question snapshot and exact vocabulary subworks.
+      const expected=captureInputs(record,{historical:true}),expectedKeys=new Set();
+      // Some schema-1 books already contain an unjudged output captured before
+      // pending outputs stopped being created as mistakes. Keep that original
+      // pending evaluation: only reconstruct its verified source-bound output,
+      // then require an exact saved occurrence and an actual passing review.
+      if(!expected.length&&['writing','speaking'].includes(record.skill)&&['pending','unverified'].includes(record.evaluation?.result)&&!explicitRecordError(record)){
+        const source=recordQuestionSource(record,{historical:true}),material=source.material,artifact=source.artifact;
+        if(source.blocked||source.verified!==true||!material||material.id!==record.materialId||material.skill!==record.skill||source.questions?.length||artifact?.questions?.length)return empty;
+        const original=artifact?(record.skill==='speaking'?effectiveSpeech(record):artifact.text):record.answer;if(typeof original!=='string'||!original.trim())return empty;
+        const q=question({id:'output',type:'subjective',prompt:material.prompt||material.instructions||record.title,answers:[],task:material.rubric?.taskType||material.rubric?.task||'foundation',level:(String(material.level||'A0').match(/A[012]|B[12]|C[12]/g)||['A0']).at(-1),minWords:material.minWords||0,fullTest:material.fullTest===true||material.pool==='final',material:{id:material.id,skill:material.skill,fullTest:material.fullTest===true,pool:material.pool||'',minWords:material.minWords||0,rubric:material.rubric||{}}});
+        expected.push({dayNumber:record.dayNumber,source:record.source,materialId:record.materialId,recordId:record.id,recordVersion:record.version||1,skill:record.skill,title:record.title,evaluation:record.evaluation||{},media:record.media||[],at:record.submittedAt||record.createdAt,questionId:'output',question:q,originalAnswer:original});
+      }
+      if(!expected.length)return empty;
+      for(const input of expected){
+        const version=input.recordVersion||1,key=[input.dayNumber,input.source,input.materialId,input.questionId||input.question.id].join('|'),item=all.find(value=>value.key===key);
+        if(!item||item.skill!==input.skill||identities.get(input.recordId)!==version||stable(item.question)!==stable(question(input.question)))return empty;
+        const occurrences=item.occurrences.filter(o=>o.recordId===input.recordId&&o.recordVersion===version);
+        if(!occurrences.some(o=>stable(o.answer)===stable(answer(input.originalAnswer??''))&&o.at===input.at&&stable(o.evaluation)===stable(evaluation(input.evaluation||{}))&&stable(o.media)===stable(media(input.media||[]))))return empty;
+        expectedKeys.add(key);
+      }
+      if(matching.some(entry=>!expectedKeys.has(entry.item.key))||expectedKeys.size!==matching.length)return empty;
+      const byItem=new Map(matching.map(entry=>[entry.item.id,entry])),passed=new Map();
+      for(const round of daily.rounds){
+        const time=Date.parse(round.at);if(!Number.isFinite(time))return empty;
+        for(const result of round.results){
+          const target=byItem.get(result.itemId);if(!target||result.status!=='passed'||time<=target.cutoff)continue;
+          const item=target.item,grade=item.question.type==='oral'?oralGrade(item,result.evidence):item.question.type==='subjective'?subjectiveGrade(item,{answer:result.answer,media:result.media},result.evidence,{historical:true}):(result.evidence?.choiceMatching==='canonical-v2'?gradeObjective:gradeObjectiveLegacy)(item.question,result.answer);
+          if(grade.status!=='passed')return empty;
+          passed.set(item.id,{item,round,result});
+        }
+      }
+      if(matching.some(entry=>!passed.has(entry.item.id)))return empty;
+      const results=[...passed.values()],latest=results.slice().sort((a,b)=>b.round.number-a.round.number)[0],subjective=results.filter(x=>x.item.question.type==='subjective'&&x.item.skill===record.skill).sort((a,b)=>b.round.number-a.round.number)[0],selected=subjective||latest;
+      return{corrected:true,submitted:true,historical:true,recordId:record.id,recordVersion:version,materialId:record.materialId,skill:record.skill,quantity:subjective?words(subjective.result.answer):record.quantity||0,answer:copy(selected.result.answer),feedback:selected.result.feedback,itemId:selected.item.id,roundId:selected.round.id,roundNumber:selected.round.number,at:selected.round.at,roundIds:[...new Set(results.map(x=>x.round.id))]};
+    }catch(_){return empty;}
+  }
+  function historicalRecordCorrectionStatus(record,state){try{return historicalRecordCorrectionStatusParsed(record,parseState(state));}catch(_){return{corrected:false,submitted:false,quantity:0,roundIds:[]};}}
   function capture(state,input,now=new Date().toISOString()){
     state=parseState(state);fields(input,['id','dayNumber','source','materialId','recordId','recordVersion','skill','questionId','title','question','originalAnswer','evaluation','media','at','status'],'错题捕获');const day=dayNumber(input.dayNumber),q=question(input.question),qid=id(input.questionId||q.id,'题目ID'),source=text(input.source,100,'错题来源',false),mid=id(input.materialId,'材料ID'),rid=id(input.recordId,'原作ID'),key=[day,source,mid,qid].join('|'),occurrence=cleanOccurrence({id:input.id||'capture-'+hash([rid,input.recordVersion||1,qid]),recordId:rid,recordVersion:input.recordVersion||1,at:input.at||now,answer:input.originalAnswer??'',evaluation:input.evaluation||{},media:input.media||[]});
     let item=state.items.find(i=>i.key===key);if(item?.occurrences.some(o=>o.id===occurrence.id))return{state,item,duplicate:true};if(item&&stable(item.question)!==stable(q))throw Error('同一错题的标准答案或题目发生冲突，原记录保留。');
@@ -347,7 +412,7 @@
     function read(){return copy(readParsed());}
     function mutate(fn){const raw=storage.getItem(KEY),state=raw===null?newState():parseState(raw),result=fn(state),next=parseState(result.state||result),encoded=JSON.stringify(next);if(storage.getItem(KEY)!==raw)throw Error('另一页面刚更新错题本，请保留答案后刷新。');if(raw!==encoded){storage.setItem(KEY,encoded);cachedState=null;notify();}return result.state?{...result,state:next}:next;}
     const api={
-      read,summary:day=>summaryParsed(readParsed(),day),recordCorrectionStatus:record=>recordCorrectionStatusParsed(record,readParsed()),capture:input=>mutate(s=>capture(s,input,clock())),
+      read,summary:day=>summaryParsed(readParsed(),day),recordCorrectionStatus:record=>recordCorrectionStatusParsed(record,readParsed()),historicalRecordCorrectionStatus:record=>{try{return historicalRecordCorrectionStatusParsed(record,readParsed());}catch(_){return{corrected:false,submitted:false,quantity:0,roundIds:[]};}},capture:input=>mutate(s=>capture(s,input,clock())),
       captureRecord(record,context={}){
         if(!record||!Number.isInteger(record.dayNumber)||record.dayNumber<1||record.dayNumber>365||record.source==='mistake-review'||record.skill==='reflection')return{captured:0};
         const previousState=readParsed(),snapshot={version:record.version||1,signature:hash({answer:record.answer,evaluation:record.evaluation,media:record.media||[]})},previous=previousState.days[record.dayNumber]?.recordVersions[record.id];
@@ -378,5 +443,5 @@
   function browserStore(){const profile=root.IELTSProfiles?.current?.().id||'legacy';if(profileId!==null&&profile!==profileId)throw Error('学习档案已切换，请刷新后继续错题订正。');if(!runtimeStore){profileId=profile;const preview=new URLSearchParams(root.location?.search||'').get('preview')==='1',storage=root.IELTSProfiles?.storage()||(preview?root.sessionStorage:root.localStorage);runtimeStore=createStore(storage,{notify:()=>root.dispatchEvent?.(new CustomEvent(EVENT,{detail:{profileId}}))});}return runtimeStore;}
   async function syncRecords(records,options={}){const listValue=records||await root.IELTSRecords?.list?.()||[];let count=0;for(const record of listValue){const r=browserStore().captureRecord(record,{...options,historical:true});count+=r.captured||0;}return count;}
   if(root.addEventListener)root.addEventListener('storage',event=>{try{const scoped=root.IELTSProfiles?.scopeKey(KEY)||KEY;if(event.key===scoped)root.dispatchEvent?.(new CustomEvent(EVENT,{detail:{profileId,external:true}}));}catch(_){}});
-  return Object.freeze({KEY,EVENT,newState,parseState,mergeStates,question,submission,gradeObjective,subjectiveGrade,oralGrade,oralReferenceVariants,oralArchiveCandidate,archivedOralEvidence,attachArchivedOralEvidence,explicitRecordError,recordCorrectionStatus:(record,state)=>state?recordCorrectionStatusParsed(record,parseState(state)):browserStore().recordCorrectionStatus(record),capture:(state,input,now)=>input===undefined?browserStore().capture(state):capture(state,input,now),captureInputs,vocabularyInput,oralInputs,attachOralEvidence,summary:(state,day)=>day===undefined?browserStore().summary(state):summary(state,day),saveDraft,submitRound,completeRecap,createStore,makeId,syncRecords,store:browserStore,captureRecord:(record,options)=>browserStore().captureRecord(record,options),captureAttempt:input=>browserStore().capture(input),captureVocabulary:event=>browserStore().captureVocabulary(event),captureOral:(items,context)=>browserStore().captureOral(items,context),recordOralEvidence:context=>browserStore().attachOralEvidence(context),forDay:day=>browserStore().summary(day),setDraft:(day,itemId,value)=>browserStore().saveDraft(day,itemId,value),submitPage:(day,answers,options)=>browserStore().submitRound(day,answers,options),finishRecap:(day,value)=>browserStore().completeRecap(day,value)});
+  return Object.freeze({KEY,EVENT,newState,parseState,mergeStates,question,submission,gradeObjective,subjectiveGrade,oralGrade,oralReferenceVariants,oralArchiveCandidate,archivedOralEvidence,attachArchivedOralEvidence,explicitRecordError,recordCorrectionStatus:(record,state)=>state?recordCorrectionStatusParsed(record,parseState(state)):browserStore().recordCorrectionStatus(record),historicalRecordCorrectionStatus:(record,state)=>state===undefined?browserStore().historicalRecordCorrectionStatus(record):historicalRecordCorrectionStatus(record,state),capture:(state,input,now)=>input===undefined?browserStore().capture(state):capture(state,input,now),captureInputs,vocabularyInput,oralInputs,attachOralEvidence,summary:(state,day)=>day===undefined?browserStore().summary(state):summary(state,day),saveDraft,submitRound,completeRecap,createStore,makeId,syncRecords,store:browserStore,captureRecord:(record,options)=>browserStore().captureRecord(record,options),captureAttempt:input=>browserStore().capture(input),captureVocabulary:event=>browserStore().captureVocabulary(event),captureOral:(items,context)=>browserStore().captureOral(items,context),recordOralEvidence:context=>browserStore().attachOralEvidence(context),forDay:day=>browserStore().summary(day),setDraft:(day,itemId,value)=>browserStore().saveDraft(day,itemId,value),submitPage:(day,answers,options)=>browserStore().submitRound(day,answers,options),finishRecap:(day,value)=>browserStore().completeRecap(day,value)});
 });

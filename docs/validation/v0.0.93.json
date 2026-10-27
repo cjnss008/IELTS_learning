@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "version": "0.0.93",
+  "status": "validated-for-family-release",
+  "automated": {
+    "tests": 2496,
+    "passed": 2494,
+    "failed": 0,
+    "skipped": 2,
+    "tapSha256": "3681a83f66d9ffbbbb3cfeb912c69c7904fc3d6ee601f1d81a8d34afb774961c"
+  },
+  "formalBuild": {
+    "materials": 1842,
+    "days": 365,
+    "activeYearBodies": 688,
+    "publicAssignments": 86,
+    "requiredRoles": 51,
+    "actualComponents": 52,
+    "maxComponents": 52,
+    "runtimeContract": {
+      "path": "curriculum/year-first-use-runtime-contract-v93-family.json",
+      "sha256": "b6c25de6b6ada3ae69866f0f568146c74298fd8e70e79e0be84e9e0aae40e50a",
+      "bytes": 10509
+    }
+  },
+  "static": {
+    "pages": 27,
+    "localReferences": 847,
+    "scripts": 128
+  },
+  "questionAudit": {
+    "sources": 830,
+    "questions": 7800,
+    "high": 0,
+    "currentHashReviewed": 5,
+    "unresolved": 0
+  },
+  "nativeHTTP": {
+    "materialBodies": 688,
+    "components": 52,
+    "files": 87,
+    "legacyRedirects": 1,
+    "wrongHashRejected": true,
+    "maximumCache": 16,
+    "upstreamCalls": 0,
+    "closed": true,
+    "reportSha256": "29d825e9ada10ad3d0911b8105c4a168ee2a35f1e62f68ced8981aedaaa4c6ca"
+  },
+  "dataProtection": {
+    "existingMaterialsAndDaysUnchanged": true,
+    "newStorageKeys": 0,
+    "newDatabases": 0,
+    "profileSchemaChanged": false,
+    "realLearnerFilesReadOrWritten": false,
+    "credentialsTouched": false,
+    "oldContractSha256": "06272530120956c9ce01fab7288afb3037147be824f63c58ab3cce3ade9baf7d"
+  },
+  "browser": {
+    "accepted": false,
+    "reason": "Local browser automation remains denied by saved permissions or managed policy.",
+    "ordinaryProjectRule": "AGENTS.md requires affected-page real-browser acceptance before an ordinary release.",
+    "releaseDecision": "User explicitly requested prompt deployment. Maintainer is releasing this bounded family update after independent synthetic review, complete automated regression and isolated Node HTTP checks, with the browser gap disclosed; this is not browser, microphone, model-service or teaching-effect certification."
+  },
+  "independentPackets": {
+    "courseReview": "31b1ff31c936503c300122470cff8ace7cf87afecc296310cd160d1bb3f2bef9",
+    "historicalReader": "69c3b5c5cd16b3daf3a8ceb577a3b905f3adfa8428f885d386747ffed26db3e3",
+    "pendingCompatibility": "8bf0bcefa7a884a4b392f001f8deba2900cea6dbae74b58489dcfe1253878ca2",
+    "readerIndependent": "5d3a9f8445e78fce7ff4f9b3f06d2c5c10eace6a43ed67a595e1ab6f29124e7f"
+  }
+}

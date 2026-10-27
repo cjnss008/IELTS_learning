@@ -5,11 +5,51 @@ const NAMES={vocabulary:'词汇',grammar:'语法',listening:'听力',reading:'�
 function lessonTheme(day,data){const materials=new Map((data.materials||[]).map(item=>[item.id,item])),reading=day.tasks.find(task=>task.id==='reading'),listening=day.tasks.find(task=>task.id==='listening'),source=(reading?.materialIds||day.tasks[0]?.materialIds||[]).map(id=>materials.get(id)).find(item=>item?.title),listenIds=listening?.materialIds||[],fresh=listenIds.find(id=>listening.materialPractice?.find(entry=>entry.materialId===id)?.cycle!=='scheduled-reuse'),audio=materials.get(fresh||listenIds[0]);return{title:source?.title||day.title,listening:audio?.title||'',newMaterials:day.tasks.flatMap(task=>(task.materialPractice||[]).filter(entry=>entry.cycle==='first-planned').map(entry=>entry.materialId)).length,reusedMaterials:day.tasks.flatMap(task=>(task.materialPractice||[]).filter(entry=>entry.cycle==='scheduled-reuse').map(entry=>entry.materialId)).length};}
 function artifact(answer){if(typeof answer!=='string'||answer.length>1048576)return null;try{const value=JSON.parse(answer);return value&&typeof value==='object'&&!Array.isArray(value)?value:null;}catch(_){return null;}}
 function recordTime(record){const value=Date.parse(record.submittedAt||record.createdAt);return Number.isFinite(value)?value:null;}
+
+// Repeated study uses a separate seen, assisted practice record. It never
+// replaces the original course submission or creates an independent retest.
+function relearningRecord(record,records,index){
+ if(!record||!['correction','retest'].includes(record.kind))return false;
+ const byId=index||new Map((records||[]).map(r=>[r.id,r])),seen=new Set();let current=record;
+ while(current&&!seen.has(current.id)){seen.add(current.id);const parent=byId.get(current.parentId);
+  if(current.kind==='retest'&&parent?.materialId===current.materialId&&artifact(current.answer)?.mode==='practice')return true;
+  current=current.kind==='correction'?parent:null;
+ }return false;
+}
+function learningCount(task,records,options={}){
+ const required=[...new Set(task.materialIds||[])],byId=new Map((records||[]).map(r=>[r.id,r]));
+ const player=root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null),materials=options.materials||options.data?.materials||[];
+ const counts=required.map(materialId=>{const roots=new Set();for(const r of records||[]){
+  if(r?.materialId!==materialId||r.taskId!==task.id||r.skill!==task.id||options.dayNumber!==undefined&&r.dayNumber!==options.dayNumber||recordTime(r)===null)continue;
+  const a=artifact(r.answer);if(!a)continue;const m=materials.find(m=>m.id===materialId);
+  if(['grammar','listening','reading'].includes(task.id)&&!player?.objectiveSubmissionComplete?.(r,m))continue;
+  if(task.id==='listening'&&a.audioCompleted!==true)continue;
+  if(task.id==='vocabulary'&&!vocabulary?.verifyTrainingArtifact?.(a,m)?.submitted)continue;
+  if(task.id==='speaking'&&!player?.verifySpeakingStage?.(r,m,task,options.data||{materials,days:[]},options.dayNumber??r.dayNumber)?.submitted)continue;
+  if(task.id==='writing'&&!a.text?.trim())continue;
+  if(task.id==='reflection'&&!a.recap&&!a.yearSummary)continue;
+  let first=r;const seen=new Set();while(first.kind==='correction'&&byId.has(first.parentId)&&!seen.has(first.id)){seen.add(first.id);const parent=byId.get(first.parentId);if(parent.materialId!==materialId)break;first=parent;}roots.add(first.id);
+ }return roots.size;});return counts.length?Math.min(...counts):0;
+}
+function learningStatus(task,records,options={}){
+ const correctionStatus=record=>{let current;try{current=options.recordCorrectionStatus?.(record);}catch(_){}if(current?.corrected===true)return current;try{return options.historicalRecordCorrectionStatus?.(record)||current;}catch(_){return current;}};
+ const status=taskState(task,records,{...options,recordCorrectionStatus:correctionStatus});if(!status.done||task.id==='reflection')return status;
+ const player=root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null),assessment=root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),materials=options.materials||options.data?.materials||[],latest=latestForMaterial(task,records,options.dayNumber,materials,options.data);
+ for(const record of latest.values()){
+  if(correctionStatus(record)?.corrected===true)continue;
+  const a=artifact(record.answer),current=materials.find(m=>m.id===record.materialId),m=player?.materialForRecord?.(record,current,assessment);
+  if(!a||!m)return{...status,done:false,verificationPending:true};
+  if(['grammar','listening','reading'].includes(task.id)){const g=assessment?.gradeMaterialForArtifact?.(m,a);if(!g?.allGradable||g.answered!==g.total||g.correct!==g.total)return{...status,done:false,correctionPending:true};}
+  if(task.id==='vocabulary'&&vocabulary?.verifyTrainingArtifact?.(a,m)?.mastered!==true)return{...status,done:false,correctionPending:true};
+  if(['writing','speaking'].includes(task.id)&&record.evaluation?.result!=='pass')return{...status,done:false,correctionPending:true};
+ }return status;
+}
 function latestForMaterial(task,records,dayNumber,materials=[],data){
  const player=root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null),context=data||root.IELTSCurriculumData||{materials,days:[]};
- const required=new Set(task.materialIds||[]),byMaterial=new Map();
+ const required=new Set(task.materialIds||[]),byMaterial=new Map();let relearningIndex;
  for(const record of Array.isArray(records)?records:[]){
   if(!record||record.taskId!==task.id||record.kind==='retest'||!required.has(record.materialId)||dayNumber!==undefined&&record.dayNumber!==dayNumber||record.skill&&record.skill!==task.id)continue;
+  if(record.kind==='correction'&&relearningRecord(record,records,relearningIndex||(relearningIndex=new Map(records.map(r=>[r.id,r])))))continue;
   if(!['pass','revise','pending','unverified'].includes(record.evaluation?.result)||recordTime(record)===null)continue;
   if(!(typeof record.answer==='string'&&record.answer.trim())&&!record.media?.length)continue;
   const contextPractice=root.IELTSPublicContextPractice||(typeof require==='function'?require('./public-context-practice.js'):null),material=materials.find(item=>item.id===record.materialId)||contextPractice?.resolveMaterial?.(record.materialId,{data:context})||root.IELTSYearFirstUseCourse?.resolveMaterial?.(record.materialId);
@@ -135,10 +175,11 @@ function mount(){
   $('todayAdvice').textContent=allDone?'今天的学习产出与复盘已提交。请检查实际学习时间和阶段关卡；提交齐全不等于能力已达标。':next?.task.id==='reflection'?'今天最后一步：完成整页错题重做，直到全部正确，再查看 AI 每日复盘。':waiting?'最新作品等待服务评阅，可从下面选择其他任务。':'现在从「'+NAMES[next?.task.id]+'」继续。每项按“学习 → 作答 → 看反馈”完成，然后进入下一项。';
   const vocabularySummary=root.IELTSCoursePlayer?.vocabularyTaskSummary?.(day.tasks.find(task=>task.id==='vocabulary'),data);if(vocabularySummary&&next?.task.id==='vocabulary'&&!waiting)$('todayNext').textContent='本课词汇 '+vocabularySummary.wordCount+' 个词项，分 '+vocabularySummary.groupCount+' 组；每组完成三写、三读与三轮测试，再继续下一组。';
   $('todayRoute').replaceChildren();states.forEach((state,index)=>{
-   const button=doc.createElement('button');button.type='button';button.className='today-step'+(state.done?' is-done':'');button.setAttribute('aria-current',String(state.task.id===current.taskId));
-   const draft=hasDraft(state.task.id,state.nextMaterialId,drafts(),current),status=state.done?'已提交':state.pending&&!state.missingMaterialIds.length?'待评阅':state.legacyTraining?'旧稿保留，可重做新版':draft?'有未提交草稿':state.count?'已提交 '+state.count+'/'+state.total:'待学习';
+   const completed=learningStatus(state.task,dailyRecords,{data,dayNumber:current.day,materials:data.materials,completionValid:mistakes.completionValid,recordCorrectionStatus:r=>root.IELTSMistakes?.recordCorrectionStatus?.(r),historicalRecordCorrectionStatus:r=>root.IELTSMistakes?.historicalRecordCorrectionStatus?.(r)}).done;
+   const button=doc.createElement('button');button.type='button';button.className='today-step'+(completed?' is-done':'');button.setAttribute('aria-current',String(state.task.id===current.taskId));
+   const draft=hasDraft(state.task.id,state.nextMaterialId,drafts(),current),learned=learningCount(state.task,dailyRecords,{data,dayNumber:current.day}),status=completed?'已完成 · 已学习 '+learned+' 次':state.done?'已提交 · 待订正':state.pending&&!state.missingMaterialIds.length?'待评阅':state.legacyTraining?'旧稿保留，可重做新版':draft?'有未提交草稿':state.count?'已提交 '+state.count+'/'+state.total:'待学习';
    for(const [tag,value]of[['b',String(index+1).padStart(2,'0')+' / '+state.task.minutes+' MIN'],['strong',NAMES[state.task.id]],['small',state.task.id==='vocabulary'&&vocabularySummary?status+' · '+vocabularySummary.groupCount+'组 / '+vocabularySummary.wordCount+'个词项':status]]){const el=doc.createElement(tag);el.textContent=value;button.append(el);}
-   button.addEventListener('click',async()=>{if(state.pending&&!state.missingMaterialIds.length){await navigation.showLatestRecord?.(state.task.id,state.nextMaterialId);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}else{navigation.showTask(state.task.id,state.nextMaterialId);$('courseMaterialIntro')?.scrollIntoView?.({behavior:'smooth',block:'start'});}});$('todayRoute').append(button);
+   button.addEventListener('click',async()=>{if(state.done||state.pending&&!state.missingMaterialIds.length){await navigation.showLatestRecord?.(state.task.id,state.nextMaterialId);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}else{navigation.showTask(state.task.id,state.nextMaterialId);$('courseMaterialIntro')?.scrollIntoView?.({behavior:'smooth',block:'start'});}});$('todayRoute').append(button);
   });
   learningQueue=queueState();
   if(learningQueue?.currentComplete===true)root.IELTSDailyBackups?.observeCompletion?.({currentComplete:true,courseDay:current.day,completion:mistakes.completion,token:mistakes.token,records:own})?.catch?.(()=>{});
@@ -168,5 +209,5 @@ function mount(){
  if(new URLSearchParams(root.location.search).get('preview')==='1')doc.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href');if(href&&!/^(https?:|#)/.test(href)&&/\.html(?:[?#]|$)/.test(href)){const url=new URL(href,root.location.href);url.searchParams.set('preview','1');link.href=url.href;}});
  return{render,start,refreshRecords};
 }
-return{artifact,latestForMaterial,taskState,chooseNext,hasDraft,lessonTheme,mount};
+return{artifact,relearningRecord,learningCount,learningStatus,latestForMaterial,taskState,chooseNext,hasDraft,lessonTheme,mount};
 });
