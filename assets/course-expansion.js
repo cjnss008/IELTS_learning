@@ -1,4 +1,4 @@
-(function(root,factory){'use strict';const api=factory();root.IELTSCourseExpansion=api;if(typeof module==='object'&&module.exports)module.exports=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+(function(root,factory){'use strict';const api=factory(root);root.IELTSCourseExpansion=api;if(typeof module==='object'&&module.exports)module.exports=api;})(typeof globalThis!=='undefined'?globalThis:this,function(root){
  'use strict';
  const ID='day02-expansion-69';
  const IDS={vocabulary:'day02-expansion-vocabulary',grammar:'day02-expansion-grammar',listening:'day02-expansion-listening',reading:'day02-expansion-reading',speaking:'day02-expansion-speaking',writing:'day02-expansion-writing'};
@@ -18,6 +18,7 @@
   day.totalMinutes=(day.tasks||[]).reduce((sum,task)=>sum+task.minutes,0);day.yearExpansion={version:year.version,week:plan.week,variant:plan.variant,afterCore:false};return day;
  }
  function overlay(baseDay,data){
+  if(baseDay?.familyGrammar&&validFamilyGrammarProjection(baseDay,data))return baseDay;
   if(baseDay?.day!==2)return yearOverlay(baseDay,data);
   const map=new Map((data?.materials||[]).map(material=>[material.id,material]));
   if(Object.values(IDS).some(id=>!map.has(id)))return yearOverlay(baseDay,data);
@@ -59,6 +60,7 @@
  // The source curriculum and the append-only historical expansion stay intact.
  function unstartedLessonFlow(baseDay,data,options={}){
   const number=baseDay?.day;
+  if(baseDay?.familyGrammar&&validFamilyGrammarProjection(baseDay,data,options))return baseDay;
   if(!Number.isInteger(number)||number<2||number>10||options.contextReady!==true||baseDay.tasks?.some(task=>task.mode==='assessment')||options.protectedDays?.includes(number)||(options.records||[]).some(row=>row.dayNumber===number||row.courseDay===number)||(options.drafts||[]).some(row=>row.courseDay===number))return baseDay;
   if(!(baseDay.tasks||[]).some(task=>(task.materialIds||[]).some(id=>id===IDS[task.id]||/^w0[12]-(?:read|listen)-[1-6](?:-|$)/.test(id))))return baseDay;
   const day=clone(baseDay),map=new Map((data?.materials||[]).map(material=>[material.id,material])),removed=baseDay.lessonFlow?.version==='lessons-02-10-new-first-v1'?clone(baseDay.lessonFlow.removed):[];
@@ -94,5 +96,96 @@
   day.lessonFlow={version:'lessons-02-10-new-first-v1',removed,scope:'仅未开始课程；保留原材料、历史课表、原稿与评估。'};
   return day;
  }
- return{ID,IDS,RECOMMENDED_MINUTES,GUIDES,overlay,yearOverlay,orderedMaterialIds,taskMaterialLabel,unstartedLessonFlow};
+ const FAMILY_GRAMMAR_VERSION='family-grammar-projection-v1';
+ const familyGrammarFoundation=id=>id===IDS.grammar||/^w0[12]-read-[1-6]-grammar$/.test(id);
+ const dependency=(name,file)=>root[name]||(typeof require==='function'?require(file):null);
+ function familyGrammarUnit(number,data,api){
+  const release=data?.familyGrammarRelease;
+  if(!api?.materialContentHash||release?.schema!==1||release.active!==true||typeof release.id!=='string'||!/^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$/.test(release.id)||!Array.isArray(release.units)||release.units.length!==9)return null;
+  const days=new Set(),ids=new Set(),map=new Map((data.materials||[]).map(m=>[m.id,m]));let selected=null;
+  for(const unit of release.units){
+   if(!Number.isInteger(unit?.day)||unit.day<2||unit.day>10||days.has(unit.day)||typeof unit.materialId!=='string'||ids.has(unit.materialId)||!/^[a-f0-9]{64}$/.test(unit.materialContentHash||''))return null;
+   const material=map.get(unit.materialId);
+   if(!material||material.skill!=='grammar'||material.pool!=='training'||material.fullTest||material.independentBank||material.assessmentGroup||material.form||material.source?.verification!=='reviewed'||!Array.isArray(material.questions)||!material.questions.length||api.materialContentHash(material)!==unit.materialContentHash)return null;
+   days.add(unit.day);ids.add(unit.materialId);if(unit.day===number)selected={release,unit,material,map};
+  }
+  return selected;
+ }
+ function restoreFamilyGrammarBase(day){
+  const marker=day?.familyGrammar,original=marker?.originalTask;
+  if(marker?.schema!==1||marker.version!==FAMILY_GRAMMAR_VERSION||marker.day!==day.day||day.day<2||day.day>10||original?.id!=='grammar'||original.mode!=='practice'||!Array.isArray(day.tasks)||day.tasks.filter(t=>t.id==='grammar').length!==1)return day;
+  try{const base=clone(day);base.tasks[base.tasks.findIndex(t=>t.id==='grammar')]=clone(original);delete base.familyGrammar;return base;}catch(_){return day;}
+ }
+ function projectedFamilyGrammar(base,entry,api){
+  const day=clone(base),index=day.tasks.findIndex(t=>t.id==='grammar'),original=day.tasks[index],task=clone(original),{release,unit,material,map}=entry;
+  const previous=[...new Set(original.materialIds||[])],retained=previous.filter(id=>id!==material.id&&!familyGrammarFoundation(id)),keep=new Set(retained);
+  task.materialIds=[material.id,...retained];if(Array.isArray(task.coreMaterialIds))task.coreMaterialIds=[material.id,...retained.filter(id=>original.coreMaterialIds.includes(id))];
+  for(const key of ['publicCourseAssignments','contextPracticeAssignments'])if(Array.isArray(task[key]))task[key]=task[key].filter(row=>keep.has(row.materialId));
+  if(Array.isArray(task.reinforcementMaterialIds))task.reinforcementMaterialIds=task.reinforcementMaterialIds.filter(id=>keep.has(id));
+  for(const key of ['contentExpansion','yearExpansion'])if(task[key]){
+   for(const field of ['originalMaterialIds','addedMaterialIds'])if(Array.isArray(task[key][field]))task[key][field]=task[key][field].filter(id=>task.materialIds.includes(id));
+   if(['originalMaterialIds','addedMaterialIds'].every(field=>!task[key][field]?.length))delete task[key];
+  }
+  if(task.grammarLearningPlan){task.grammarLearningPlan.newMaterialIds=[material.id,...(task.grammarLearningPlan.newMaterialIds||[]).filter(id=>keep.has(id))];task.grammarLearningPlan.reviewMaterialIds=(task.grammarLearningPlan.reviewMaterialIds||[]).filter(id=>keep.has(id));}
+  task.materialPractice=[{materialId:material.id,cycle:'first-planned',firstPlannedDay:day.day},...(task.materialPractice||[]).filter(row=>keep.has(row.materialId))];
+  task.practiceCycle=task.materialPractice.length===task.materialIds.length&&task.materialPractice.every(row=>row.cycle==='first-planned')?'first-planned':'mixed';
+  const knownRetained=retained.reduce((n,id)=>n+(map.get(id)?.questions?.length||0),0),removedQuantity=previous.filter(id=>!keep.has(id)).reduce((n,id)=>n+(map.get(id)?.questions?.length||0),0);
+  // An unknown retained material keeps its existing quantity allocation; it is
+  // never removed or treated as zero work to create room for the new unit.
+  task.quantity=material.questions.length+(retained.every(id=>Array.isArray(map.get(id)?.questions))?knownRetained:Math.max(knownRetained,(Number(original.quantity)||0)-removedQuantity));
+  const focus=Array.isArray(material.grammarFocus)?material.grammarFocus.filter(value=>typeof value==='string').join('；'):typeof material.grammarFocus==='string'?material.grammarFocus:'';
+  task.instructions=material.title+'\n本课重点：'+(day.day===2?'be 提问、not 否定、we / they 和规则复数；':'')+(focus||material.title)+'\n'+(material.instructions||'先理解规则和例句，再独立完成'+material.questions.length+'题，按解析订正并改写。')+(retained.length?'\n已安排的语境练习与补强继续按各自任务完成。':'');
+  day.tasks[index]=task;
+  day.familyGrammar={schema:1,version:FAMILY_GRAMMAR_VERSION,releaseId:release.id,day:day.day,materialId:material.id,materialVersion:String(material.version??'1'),materialContentHash:unit.materialContentHash,baseDayContentHash:api.materialContentHash(base),originalTask:original};
+  return day;
+ }
+ function validFamilyGrammarProjection(day,data,options={}){
+  try{
+   const api=options.assessment||dependency('IELTSAssessment','./assessment-core.js'),entry=familyGrammarUnit(day?.day,data,api),base=restoreFamilyGrammarBase(day);
+   if(!entry||base===day||day.familyGrammar.baseDayContentHash!==api.materialContentHash(base))return false;
+   return api.materialContentHash(projectedFamilyGrammar(base,entry,api))===api.materialContentHash(day);
+  }catch(_){return false;}
+ }
+ function oldGrammarComplete(day,data,options,api){
+  const player=options.player||dependency('IELTSCoursePlayer','./course-player.js'),hub=options.hub||dependency('IELTSTodayHub','./today-hub.js'),original=day.tasks.find(t=>t.id==='grammar');
+  if(!player?.objectiveSubmissionComplete||!hub?.latestForMaterial||!api?.decodeArtifact||!api?.gradeMaterialForArtifact)return null;
+  const task={...original,materialIds:[...new Set(original.coreMaterialIds||original.materialIds||[])]},latest=hub.latestForMaterial(task,options.records||[],day.day,data.materials,data);
+  return task.materialIds.length>0&&task.materialIds.every(id=>{
+   const record=latest.get(id),material=data.materials.find(m=>m.id===id);if(!record||!material||!['pass','revise'].includes(record.evaluation?.result)||!player.objectiveSubmissionComplete(record,material,api))return false;
+   const grade=api.gradeMaterialForArtifact(material,api.decodeArtifact(record));if(!grade.allGradable||grade.answered!==grade.total)return false;
+   if(grade.correct===grade.total)return true;
+   try{return(options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus)?.(record)?.corrected===true;}catch(_){return false;}
+  });
+ }
+ function startedFamilyGrammar(base,data,entry,options,api){
+  const player=options.player||dependency('IELTSCoursePlayer','./course-player.js');
+  if(!player?.bindingMatchesMaterial||!player?.cleanDayPlanBinding||!player?.freezeMaterialBinding)return false;
+  function owns(item,isRecord){
+   try{
+    if(!item||item.materialId!==entry.material.id||item.taskId!=='grammar'||(isRecord?item.dayNumber:item.courseDay)!==base.day||isRecord&&item.skill!=='grammar'||isRecord&&item.kind==='retest')return false;
+    const body=isRecord?api.decodeArtifact(item):item;if(!body||body.courseDay!==base.day||body.mode!=='practice'||body.materialBinding?.gradingPolicy!=='canonical-v2')return false;
+    const binding=player.cleanDayPlanBinding(body.dayPlanBinding,base.day),day=binding.day;
+    if(!validFamilyGrammarProjection(day,data,{assessment:api})||api.materialContentHash(restoreFamilyGrammarBase(day))!==api.materialContentHash(base))return false;
+    if(isRecord){const codec=dependency('IELTSRecords','./learning-records.js');if(!codec?.parseState)return false;codec.parseState({schemaVersion:1,records:[item]});}
+    else{if(!player.parseState||!player.newState||item.submitted===true)return false;const state=player.newState();state.day=base.day;state.drafts[item.id]=item;player.parseState(state);}
+    const artifact=isRecord?body:{schema:1,materialBinding:body.materialBinding,materialVersion:String(entry.material.version??'1'),gradingPolicy:'canonical-v2',objectiveGrading:'canonical-v2'},record=isRecord?item:{id:item.id,skill:'grammar',taskId:'grammar',dayNumber:base.day,materialId:item.materialId,materialVersion:String(entry.material.version??'1'),answer:JSON.stringify(artifact)};
+    if(!player.bindingMatchesMaterial(record,entry.material,api))return false;
+    const task=day.tasks.find(t=>t.id==='grammar'),expected=player.freezeMaterialBinding(entry.material,{assessment:api,task,courseDay:base.day}).material.taskContract;
+    return api.materialContentHash(body.materialBinding.material.taskContract)===api.materialContentHash(expected);
+   }catch(_){return false;}
+  }
+  return(options.drafts||[]).some(item=>owns(item,false))||(options.records||[]).some(item=>owns(item,true));
+ }
+ // This is an effective-day view, never a migration of a saved day or draft.
+ function familyGrammarProjection(baseDay,data,options={}){
+  try{
+   if(options.contextReady!==true||!Number.isInteger(baseDay?.day)||baseDay.day<2||baseDay.day>10||baseDay.familyGrammar||!Array.isArray(baseDay.tasks)||baseDay.tasks.some(t=>t.mode==='assessment')||baseDay.tasks.filter(t=>t.id==='grammar'&&t.mode==='practice').length!==1)return baseDay;
+   const api=options.assessment||dependency('IELTSAssessment','./assessment-core.js'),entry=familyGrammarUnit(baseDay.day,data,api);if(!entry)return baseDay;
+   if(!baseDay.tasks.find(t=>t.id==='grammar').materialIds?.some(familyGrammarFoundation)&&!startedFamilyGrammar(baseDay,data,entry,options,api))return baseDay;
+   const complete=oldGrammarComplete(baseDay,data,options,api);
+   if(complete!==false&&(complete!==true||!startedFamilyGrammar(baseDay,data,entry,options,api)))return baseDay;
+   return projectedFamilyGrammar(baseDay,entry,api);
+  }catch(_){return baseDay;}
+ }
+ return{ID,IDS,RECOMMENDED_MINUTES,GUIDES,overlay,yearOverlay,orderedMaterialIds,taskMaterialLabel,unstartedLessonFlow,FAMILY_GRAMMAR_VERSION,familyGrammarProjection,restoreFamilyGrammarBase,validFamilyGrammarProjection};
 });

@@ -128,6 +128,7 @@ function build({partial=false,requireYearExpansion=false,outputRoot=root}={}){
  require('./apply-listening-english.cjs').apply(materials,root);
  // Keep reviewed 2–10 source revisions after derivation/translation; protects the complete day-1 contract.
  require('./apply-stable-lessons-02-10.cjs').apply(data,{root});
+ require('./apply-family-grammar-v89.cjs').apply(data,{root});
  // Append only after all original rows, day selection and derived packs exist.
  // Keep original base days immutable. A separate, hash-bound required plan is
  // applied only to eligible unstarted days after the learner archive is ready.

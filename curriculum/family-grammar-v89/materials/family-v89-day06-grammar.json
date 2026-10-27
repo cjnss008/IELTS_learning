@@ -1,0 +1,341 @@
+{
+  "id": "family-v89-day06-grammar",
+  "version": "1",
+  "week": 1,
+  "skill": "grammar",
+  "type": "grammar",
+  "level": "A1",
+  "levelStatus": "authoring-target-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "practiceOnly": true,
+  "availableFromDay": 6,
+  "title": "第6课新语法 · 一般现在时肯定句",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": [
+    "日常习惯的原形与第三人称单数",
+    "helps / teaches / goes / studies / plays",
+    "实义动词与be"
+  ],
+  "estimatedMinutes": 30,
+  "instructions": "先读懂规则和英文例句，再独立完成10题。遇到错误，先比较具体错因，保留原答案，再完成订正并用自己的信息改写一句。参考30分钟，可按理解情况调整。",
+  "passage": "当天听读连接：阅读《My First English Class》、听力《First Day at the Language School》的英语班／学校与物品情境。\n\n当天阅读原句（仅作回顾，不把后面的新增句子冒称原文）：\nHello. I am Li Ming. I am a student. This is my English class. You are my teacher. You are very kind. I am happy. We are in Room 5. I am from China. You are from Canada. I am here to learn English. You are here to help me. I am ready. You are ready too. We are a good team.\n\n下面的新规则、作息、物品位置和练习句由本课原创，用熟悉场景练新结构；它们不改写原听读事实。\n\n1. 说每天常做、通常发生的事，用一般现在时。I study English every day.（我每天学英语。）We read in Room 5.（我们在5号房间读书。）这些日常安排是原创延伸，原听读仅提供英语班情境。read 读，study 学习，help 帮助，teach 教，go 去。\n\n2. I / you / we / they 后面，本课用动词原形：I read. You read. We read. They read. he / she / it 或一个人的第三人称姓名后，肯定句的动词通常加 -s：She reads. Li Ming helps a friend. 不在实义动词前额外加 is：She reads，不是 She is reads。\n\n3. 先掌握几个常见变化：help → helps，read → reads；teach → teaches，go → goes；study → studies（辅音字母+y，改 y 为 i 再加 -es）。play → plays，不把元音字母+y 的 play 改成 plaies。have → has 已在第4课学过。\n\n4. 看整个主语：Anna reads every day. 一个人用 reads；Anna and Li Ming read every day. 两个人用 read。be 有自己的一套 am / is / are：She is kind. 不把 kind 当动作词加 -s。本课先练肯定句，下一课再学 do / does 提问与否定。",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill",
+      "prompt": "Use read or reads: I ___ English books every day.",
+      "answers": [
+        "read"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：I read English books every day.\n主语 I 的一般现在时肯定句用动词原形 read。 本空只填一个英文单词。\n“reads”：reads 与第三人称单数 he / she 等配合，不与 I 配合。\n“reading”：本题说每天的习惯且没有 be，不能只填 -ing 形式。",
+      "evidence": "I read. You read. We read. They read.",
+      "correctExpression": "I read English books every day.",
+      "commonErrorReasons": {
+        "reads": "reads 与第三人称单数 he / she 等配合，不与 I 配合。",
+        "reading": "本题说每天的习惯且没有 be，不能只填 -ing 形式。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 620,
+        "end": 657,
+        "textSha256": "3b985a258470d41178e12d2f349e52d61e03610e70e4ef722269fbf78adcae68"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Use help or helps: Li Ming ___ a friend every day.",
+      "answers": [
+        "helps"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Li Ming helps a friend every day.\nLi Ming 是一个人的第三人称姓名，动词 help 加 -s。 本空只填一个英文单词。\n“help”：第三人称单数的肯定句不能用本题未变化的 help。\n“is”：is a friend 会改变句子意思，也没有表达帮助这一动作。",
+      "evidence": "Li Ming helps a friend.",
+      "correctExpression": "Li Ming helps a friend every day.",
+      "commonErrorReasons": {
+        "help": "第三人称单数的肯定句不能用本题未变化的 help。",
+        "is": "is a friend 会改变句子意思，也没有表达帮助这一动作。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 709,
+        "end": 732,
+        "textSha256": "70980c7c5e4e82a6b2f5e2ed1b26709c273bac91d14bbbd43c3d2ee7218d52bd"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "Choose the correct sentence about a daily habit.",
+      "options": [
+        "She reads English every day.",
+        "She is reads English every day.",
+        "She read English every day."
+      ],
+      "answers": [
+        "She reads English every day."
+      ],
+      "explanation": "正确表达：She reads English every day.\nshe 后的日常动作 read 加 -s，不另加 is。\n“She is reads English every day.”：is 和 reads 不能这样叠在一起当本课的一般现在时谓语。\n“She read English every day.”：she 是第三人称单数，本题肯定习惯句要用 reads。",
+      "evidence": "She reads，不是 She is reads。",
+      "correctExpression": "She reads English every day.",
+      "distractorReasons": {
+        "She is reads English every day.": "is 和 reads 不能这样叠在一起当本课的一般现在时谓语。",
+        "She read English every day.": "she 是第三人称单数，本题肯定习惯句要用 reads。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 747,
+        "end": 773,
+        "textSha256": "e28c559cbb229cd0e9738d0badc72a56fc221df9bbac7541079673365b752dfc"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Use the correct form of teach: Our teacher ___ English every day.",
+      "answers": [
+        "teaches"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Our teacher teaches English every day.\nOur teacher 表示一位老师；teach 的第三人称单数加 -es，写 teaches。 本空只填一个英文单词。\n“teach”：主语为第三人称单数，需要变化。\n“teachs”：teach 末尾 ch，正确拼法是 teaches。",
+      "evidence": "teach → teaches",
+      "correctExpression": "Our teacher teaches English every day.",
+      "commonErrorReasons": {
+        "teach": "主语为第三人称单数，需要变化。",
+        "teachs": "teach 末尾 ch，正确拼法是 teaches。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 814,
+        "end": 829,
+        "textSha256": "709bda7a4abaa6c1000e058c6eb95a941e97f97dd22654fb61466a64f7ad1e06"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Use the correct form of go: Anna ___ to class every morning.",
+      "answers": [
+        "goes"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Anna goes to class every morning.\nAnna 是一个人的姓名；go 的第三人称单数为 goes。 本空只填一个英文单词。\n“go”：本题第三人称单数肯定句需要 goes。\n“gos”：go 的本课形式是 goes，不是 gos。",
+      "evidence": "go → goes",
+      "correctExpression": "Anna goes to class every morning.",
+      "commonErrorReasons": {
+        "go": "本题第三人称单数肯定句需要 goes。",
+        "gos": "go 的本课形式是 goes，不是 gos。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 830,
+        "end": 839,
+        "textSha256": "f4ca152c5183e42a02916be0ceafe8d8196f05d083b06a51f4cd8c8a70fdeb53"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Use the correct form of study: He ___ English every day.",
+      "answers": [
+        "studies"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：He studies English every day.\nstudy 末尾是辅音字母+y，第三人称单数改 y 为 i，再加 -es。 本空只填一个英文单词。\n“studys”：不能直接保留 y 加 -s，应写 studies。\n“study”：He 后的本题肯定句需要第三人称单数形式。",
+      "evidence": "study → studies（辅音字母+y，改 y 为 i 再加 -es）",
+      "correctExpression": "He studies English every day.",
+      "commonErrorReasons": {
+        "studys": "不能直接保留 y 加 -s，应写 studies。",
+        "study": "He 后的本题肯定句需要第三人称单数形式。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 840,
+        "end": 878,
+        "textSha256": "4e2475e99f1bb926edf1217f4d73c2e6cbda322f4e622db66720017045d422e9"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Choose the correct verb: Anna and Li Ming ___ in Room 5 every day.",
+      "options": [
+        "reads",
+        "read",
+        "is read"
+      ],
+      "answers": [
+        "read"
+      ],
+      "explanation": "正确表达：Anna and Li Ming read in Room 5 every day.\nAnna and Li Ming 是两个人，相当于 they，动词用原形 read。\n“reads”：不能只看紧挨着的 Li Ming；整个主语有两个人。\n“is read”：本题为两个人读书的日常动作，不用 is 加 read。",
+      "evidence": "Anna and Li Ming read every day.",
+      "correctExpression": "Anna and Li Ming read in Room 5 every day.",
+      "distractorReasons": {
+        "reads": "不能只看紧挨着的 Li Ming；整个主语有两个人。",
+        "is read": "本题为两个人读书的日常动作，不用 is 加 read。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 981,
+        "end": 1013,
+        "textSha256": "bff75d24169561781ca20668d3ced147d7eda3d7068e67f768617295a8890287"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Choose the correct sentence.",
+      "options": [
+        "He plaies after class.",
+        "He play after class.",
+        "He plays after class."
+      ],
+      "answers": [
+        "He plays after class."
+      ],
+      "explanation": "正确表达：He plays after class.\nplay 末尾 y 前是元音字母 a，第三人称单数直接加 -s。\n“He plaies after class.”：play 不按 study 的辅音+y 规则变化，应写 plays。\n“He play after class.”：He 是第三人称单数，肯定句需要 plays。",
+      "evidence": "play → plays",
+      "correctExpression": "He plays after class.",
+      "distractorReasons": {
+        "He plaies after class.": "play 不按 study 的辅音+y 规则变化，应写 plays。",
+        "He play after class.": "He 是第三人称单数，肯定句需要 plays。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 879,
+        "end": 891,
+        "textSha256": "4db5edc797ca70447dbe0ec4034b3d63496248e001a399955d142ebfe8723fda"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Choose the correct pair: She ___ kind. She ___ her classmates every day.",
+      "options": [
+        "is / helps",
+        "has / helps",
+        "is / help"
+      ],
+      "answers": [
+        "is / helps"
+      ],
+      "explanation": "正确表达：She is kind. She helps her classmates every day.\nkind 是形容词“友善的”，前面用 is；help 是帮助这一动作，She 后用 helps。\n“has / helps”：has 表示拥有，不接 kind 表达友善。\n“is / help”：第一空正确；第二空 She 后需 helps。",
+      "evidence": "She is kind.",
+      "correctExpression": "She is kind. She helps her classmates every day.",
+      "distractorReasons": {
+        "has / helps": "has 表示拥有，不接 kind 表达友善。",
+        "is / help": "第一空正确；第二空 She 后需 helps。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1048,
+        "end": 1060,
+        "textSha256": "2cdee54d9626ff956c761e6adbbc2c3a5f0bed0180453136e73b34de821a07e1"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Choose the correct verb: We ___ English every day.",
+      "options": [
+        "studies",
+        "study",
+        "are study"
+      ],
+      "answers": [
+        "study"
+      ],
+      "explanation": "正确表达：We study English every day.\nWe 的日常动作句用原形 study。\n“studies”：studies 对应第三人称单数，不对应 we。\n“are study”：本题一般现在时动作不在 study 前加 are。",
+      "evidence": "I / you / we / they 后面，本课用动词原形",
+      "correctExpression": "We study English every day.",
+      "distractorReasons": {
+        "studies": "studies 对应第三人称单数，不对应 we。",
+        "are study": "本题一般现在时动作不在 study 前加 are。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 589,
+        "end": 619,
+        "textSha256": "57a7b3edc7dbb9bbb71a37dcf746a359d8dda73304319e9bb05377360c381fff"
+      }
+    }
+  ],
+  "learningScope": {
+    "new": [
+      "日常习惯的原形与第三人称单数",
+      "helps / teaches / goes / studies / plays",
+      "实义动词与be"
+    ],
+    "prerequisites": [
+      "第4课have / has和人称",
+      "第3课名词单复数"
+    ],
+    "review": [
+      "have / has、人物与教室词汇"
+    ],
+    "notTaught": [
+      "过去时",
+      "被动语态",
+      "现在进行时",
+      "do / does提问否定"
+    ]
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；新增例句和题目为模拟教学情境。原课文引用属于同一项目公开源码，仅作当天衔接。",
+    "verification": "reviewed",
+    "method": "独立AI无答案作答80/80；逐题核对规则、正确表达和具体错因。非真人教师或考官审题，未作考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHash": "0488e0f9252f45d85e372ab45e7952926d54e50b779876ad75102afed6843291",
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "reviewReceiptId": "family-grammar-root-review-v89"
+  },
+  "sourceConnections": [
+    {
+      "materialId": "w01-read-6",
+      "materialVersion": "2",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "6833f8588739baf7ac78c28f3088bd8fe35398cbcb4b38d34d117972410c9242",
+      "quote": "Hello. I am Li Ming. I am a student. This is my English class. You are my teacher. You are very kind. I am happy. We are in Room 5. I am from China. You are from Canada. I am here to learn English. You are here to help me. I am ready. You are ready too. We are a good team.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 273
+      }
+    },
+    {
+      "materialId": "w01-listen-6",
+      "materialVersion": "2",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "f5c7b7a9b2dd9144b3ba197cb21a0f9a52f0c9d76049920b295d12397d4c6a12",
+      "quote": "A: Hello. I am Li. Are you Tom?\nB: No, I am not Tom. I am Anna. Are you a student?\nA: Yes, I am. I am a new student. You are a teacher.\nB: No, I am not a teacher. I am a student too. We are students.\nA: Good. I am Li. You are Anna. We are friends.\nB: Yes. We are friends.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 271
+      }
+    }
+  ],
+  "admission": {
+    "status": "candidate-not-installed",
+    "recommendedCourseDay": 6,
+    "onlyFutureUnstartedUnfrozen": true,
+    "oldMaterialAndDraftPolicy": "retain-original-ids-and-bound-contracts",
+    "independentAssessmentEligible": false,
+    "vocabularyMasteryCredit": false,
+    "audioActivation": false
+  }
+}

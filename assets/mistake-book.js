@@ -40,7 +40,7 @@
   // these known, shape-checked annotations are omitted from the mistake schema;
   // unknown fields still fail rather than being silently discarded.
   function capturedQuestion(value){
-    fields(value,QUESTION_FIELDS.concat(['displayOrder','lexeme','understanding','evidenceOffsets','eligibleModalities','spokenEvidence']),'原题快照');
+    fields(value,QUESTION_FIELDS.concat(['displayOrder','lexeme','understanding','evidenceOffsets','eligibleModalities','spokenEvidence','correctExpression','evidenceSpan','commonErrorReasons','wordLimit','instructions']),'原题快照');
     const offset=(v,label,unit)=>{fields(v,unit?['start','end','unit']:['quote','start','end'],label);if(!Number.isInteger(v.start)||!Number.isInteger(v.end)||v.start<0||v.end<v.start)throw Error(label+'位置无效。');if(unit&&v.unit!=='UTF-16-code-unit')throw Error(label+'位置单位无效。');if(!unit&&text(v.quote,30000,label,false).length!==v.end-v.start)throw Error(label+'文本与位置不一致。');};
     if(value.displayOrder!==undefined){const order=list(value.displayOrder,100,'冻结选项顺序'),length=value.options?.length||0;if(order.length!==length||new Set(order).size!==length||order.some(i=>!Number.isInteger(i)||i<0||i>=length))throw Error('冻结选项顺序无效。');}
     if(value.lexeme!==undefined)text(value.lexeme,200,'词条',false);
@@ -48,7 +48,14 @@
     if(value.evidenceOffsets!==undefined)offset(value.evidenceOffsets,'原文依据',true);
     if(value.eligibleModalities!==undefined){const modalities=list(value.eligibleModalities,2,'材料模态');if(!modalities.length||new Set(modalities).size!==modalities.length||modalities.some(v=>!['reading','listening'].includes(v)))throw Error('材料模态无效。');}
     if(value.spokenEvidence!==undefined)for(const entry of list(value.spokenEvidence,100,'口语原文依据'))offset(entry,'口语原文依据',false);
-    return question(Object.fromEntries(QUESTION_FIELDS.filter(k=>own(value,k)).map(k=>[k,value[k]])));
+    if(value.correctExpression!==undefined)text(value.correctExpression,16000,'正确表达',false);
+    if(value.instructions!==undefined)text(value.instructions,4000,'原题答题要求',false);
+    if(value.commonErrorReasons!==undefined){dictionary(value.commonErrorReasons,100,'常见错因');for(const [wrong,reason]of Object.entries(value.commonErrorReasons)){text(wrong,2000,'错误写法',false);text(reason,4000,'常见错因',false);}}
+    if(value.evidenceSpan!==undefined){const span=value.evidenceSpan;fields(span,['unit','start','end','textSha256'],'原文引句位置');if(span.unit!=='utf16'||!Number.isInteger(span.start)||!Number.isInteger(span.end)||span.start<0||span.end<span.start||span.end>20000000||span.end-span.start!==text(value.evidence,30000,'原文依据',false).length||!/^[a-f0-9]{64}$/.test(span.textSha256||''))throw Error('原文引句位置或哈希格式无效。');}
+    const clean=Object.fromEntries(QUESTION_FIELDS.filter(k=>own(value,k)).map(k=>[k,value[k]]));
+    if(value.wordLimit!==undefined){if(!Number.isInteger(value.wordLimit)||value.wordLimit<1||value.wordLimit>10000||value.maxWords!==undefined&&value.maxWords!==value.wordLimit)throw Error('原题词数要求不一致。');clean.maxWords=value.wordLimit;}
+    if(value.distractorReasons!==undefined&&!Array.isArray(value.distractorReasons)){const reasons=dictionary(value.distractorReasons,100,'原选项错因'),options=list(value.options||[],100,'原选项'),answers=list(value.answers||[],100,'原答案');if(Object.keys(reasons).some(key=>!options.includes(key)))throw Error('原选项错因包含题目之外的选项。');clean.distractorReasons=options.map(option=>own(reasons,option)?text(reasons[option],4000,'原选项错因',false):answers.includes(option)?text(value.correctExpression||value.explanation||'此选项与原题标准答案一致。',4000,'正确选项说明',false):(()=>{throw Error('原选项错因缺少对应解释。');})());}
+    return question(clean);
   }
   function media(v=[]){return list(v,8,'录音引用').map(x=>{fields(x,['id','name','mime','durationSeconds'],'录音引用');if(!Number.isFinite(x.durationSeconds)||x.durationSeconds<0||x.durationSeconds>900)throw Error('录音时长无效。');return{id:id(x.id),name:text(x.name,240,'录音名称',false),mime:text(x.mime,100,'录音类型',false),durationSeconds:x.durationSeconds};});}
   function submission(v){if(typeof v==='string'||Array.isArray(v))return{answer:answer(v),media:[]};fields(v,['answer','media'],'订正提交');return{answer:answer(v.answer),media:media(v.media)};}

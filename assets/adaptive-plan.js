@@ -227,7 +227,10 @@
       return write(state=>{
         if(dayNumber>=2&&!state.startedDays.includes(dayNumber)&&publicPlan()){const publicStatus=runtimePublic(state);if(publicStatus&&!publicStatus.planHash)throw Error(publicStatus.blocked?.[0]?.reason||'后续听读课程正在更新，请稍后重试。');}
         const prior=state.frozenDays[dayNumber];
-        if(prior&&fixed&&assessment?.materialContentHash(prior)!==assessment?.materialContentHash(fixed))throw Error('本日任务已由另一页面固定，请刷新课程后继续；已有原稿与草稿保留。');
+        if(prior&&fixed&&assessment?.materialContentHash(prior)!==assessment?.materialContentHash(fixed)){
+          const flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),restored=flow?.restoreFamilyGrammarBase?.(fixed),projected=flow?.familyGrammarProjection?.(prior,data,familyGrammarOptions());
+          if(!flow?.validFamilyGrammarProjection?.(fixed,data,{assessment})||assessment.materialContentHash(restored)!==assessment.materialContentHash(prior)||!projected||assessment.materialContentHash(projected)!==assessment.materialContentHash(fixed))throw Error('本日任务已由另一页面固定，请刷新课程后继续；已有原稿与草稿保留。');
+        }
         if(!state.startedDays.includes(dayNumber)){state.startedDays.push(dayNumber);state.startedDays.sort((a,b)=>a-b);state.revision++;}
         if(fixed&&!prior)state.frozenDays[dayNumber]=frozenDay(fixed,dayNumber);
         return dayNumber;
@@ -255,7 +258,13 @@
       const future=value.pending.map(p=>Date.parse(p.dueAt)).filter(t=>Number.isFinite(t)&&t>now());grammarContextCache={catalog,key,value,nextAt:future.length?Math.min(...future):null};return value;
     }
     function reusableSoundEvidence(record,material){const player=options.player||root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null);return verifiedRecord(record,material,now())&&player?.bindingMatchesMaterial?.(record,material,assessment)===true;}
-    function getDay(baseDay){const state=readInternal(),day=withoutGrammarContext(baseDay,state);if(state.startedDays.includes(baseDay.day)||state.frozenDays[baseDay.day])return day;const api=grammarContextApi(),projected=api?.overlay?api.overlay(day,grammarContextProjection(state),{data,catalog:options.contextPracticeCatalog||root.IELTSPublicContextPracticeData,assessment,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts}):day,flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null);return flow?.unstartedLessonFlow?.(projected,data,{contextReady,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts,now:now(),verifiedRecord:reusableSoundEvidence})||projected;}
+    function familyGrammarOptions(){return{contextReady,records:contextRecords,drafts:contextDrafts,assessment,player:options.player||root.IELTSCoursePlayer,hub:options.hub||root.IELTSTodayHub,recordCorrectionStatus:options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus};}
+    function getDay(baseDay){
+      const state=readInternal(),day=withoutGrammarContext(baseDay,state),flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),family=value=>flow?.familyGrammarProjection?.(value,data,familyGrammarOptions())||value;
+      if(state.startedDays.includes(baseDay.day)||state.frozenDays[baseDay.day])return family(day);
+      const api=grammarContextApi(),projected=api?.overlay?api.overlay(day,grammarContextProjection(state),{data,catalog:options.contextPracticeCatalog||root.IELTSPublicContextPracticeData,assessment,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts}):day;
+      return family(flow?.unstartedLessonFlow?.(projected,data,{contextReady,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts,now:now(),verifiedRecord:reusableSoundEvidence})||projected);
+    }
     function publicContextState(){return clone(grammarContextProjection(readInternal()));}
     function publicCourseState(){const state=readInternal(),plan=runtimePublic(state);return{available:!!publicPlan(),ready:!!plan?.planHash,status:plan?.status||'not-installed',planHash:plan?.planHash||null,assignedCount:plan?.assignments?.length||0,retainedCount:plan?.retainedAssignments?.length||0,pending:[...(plan?.blocked||[]),...projectionPending.values()].map(clone),exemptions:clone(plan?.exemptions||[]),integration:{readingListening:'ordinary-task-flow',vocabularyGrammar:'pending-real-activities',reviews:'pending-real-submissions',masteryCredit:0}};}
     function preparePublicCourse(config={}){if(config.retry===true&&preparation?.status==='public-course-prepare-failed')preparation=null;const current=runtimePublic(readInternal());return preparation?.status==='preparing-public-course'?preparation.promise:Promise.resolve(current);}

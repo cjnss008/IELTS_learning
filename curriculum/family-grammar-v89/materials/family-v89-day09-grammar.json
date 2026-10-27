@@ -1,0 +1,347 @@
+{
+  "id": "family-v89-day09-grammar",
+  "version": "1",
+  "week": 2,
+  "skill": "grammar",
+  "type": "grammar",
+  "level": "A1",
+  "levelStatus": "authoring-target-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "practiceOnly": true,
+  "availableFromDay": 9,
+  "title": "第9课新语法 · 正在发生与日常习惯",
+  "topic": "身边的人与物",
+  "grammarFocus": [
+    "am / is / are + -ing",
+    "进行时否定和提问",
+    "usually与now的时态对比"
+  ],
+  "estimatedMinutes": 30,
+  "instructions": "先读懂规则和英文例句，再独立完成10题。遇到错误，先比较具体错因，保留原答案，再完成订正并用自己的信息改写一句。参考30分钟，可按理解情况调整。",
+  "passage": "当天听读连接：阅读《My New Desk》、听力《At the School Gate》的英语班／学校与物品情境。\n\n当天阅读原句（仅作回顾，不把后面的新增句子冒称原文）：\nThis is my new desk. It is big and brown. That is a chair. It is small and black. This is a lamp. It is on the desk. That is a book. It is red. This is a pen. It is blue. That is a bag. It is on the chair. This is my phone. It is new.\n\n下面的新规则、作息、物品位置和练习句由本课原创，用熟悉场景练新结构；它们不改写原听读事实。\n\n1. 表示“现在正在做”的动作，用 am / is / are + 动词-ing：I am reading now. She is reading now. They are reading now. 不省略 be，也不把第三人称的 -s 和 -ing 叠加：She is reading，不是 She reading 或 She is reads。\n\n2. 先练几组形式：read → reading，help → helping；write → writing（去掉末尾不发音的 e 再加 -ing）。本课不总结所有 -ing 拼写规则。现在进行时的否定在 be 后加 not：He is not reading now. 提问把 be 前移：Is he reading now? Are they reading now?\n\n3. 对比习惯与眼前动作：She usually reads in the evening. 说通常的习惯；She is reading now. 说眼下的动作。Ben usually helps at the desk, but he is writing now. 说平时帮助、现在写字；不要只看到 he 就把现在进行时改成 writes。\n\n4. 本课只用 read、write、help 这几类动作来练“正在”。拥有和身份仍用熟悉表达：She has a bag. She is a teacher. 本课不把“拥有”写成 She is having a bag，也不把职业写成 She is being a teacher。书包、书桌与老师来自当天情境；下面正在做的动作是原创设定。",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Choose the sentence about an action happening NOW.",
+      "options": [
+        "She reads every day.",
+        "She is reading now.",
+        "She read now."
+      ],
+      "answers": [
+        "She is reading now."
+      ],
+      "explanation": "正确表达：She is reading now.\n题目明确现在正在发生，用 is + reading。\n“She reads every day.”：这句话说每天习惯，不是在描述现在正在读。\n“She read now.”：本课描述现在正在读需要 is reading，这里没有 be + -ing。",
+      "evidence": "She is reading now.",
+      "correctExpression": "She is reading now.",
+      "distractorReasons": {
+        "She reads every day.": "这句话说每天习惯，不是在描述现在正在读。",
+        "She read now.": "本课描述现在正在读需要 is reading，这里没有 be + -ing。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 430,
+        "end": 449,
+        "textSha256": "865143c74e7fe0f983da852b4f48b26ccd2e7d3f8f8c0d3b4995bede892302ea"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Write am, is, or are: I ___ writing now.",
+      "answers": [
+        "am"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：I am writing now.\nI 的现在进行时用 am + writing。 本空只填一个英文单词。\n“is”：is 不与 I 配合。\n“are”：are 不与 I 配合。",
+      "evidence": "I am reading now.",
+      "correctExpression": "I am writing now.",
+      "commonErrorReasons": {
+        "is": "is 不与 I 配合。",
+        "are": "are 不与 I 配合。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 412,
+        "end": 429,
+        "textSha256": "e65727019fde90e83eea7f535759723964324e7c46298ef56c7a80fffef627e8"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Write am, is, or are: Two students ___ reading now.",
+      "answers": [
+        "are"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Two students are reading now.\nTwo students 是复数，用 are reading。 本空只填一个英文单词。\n“is”：is 对应单数主语，不对应 two students。\n“am”：am 只与 I 配合。",
+      "evidence": "They are reading now.",
+      "correctExpression": "Two students are reading now.",
+      "commonErrorReasons": {
+        "is": "is 对应单数主语，不对应 two students。",
+        "am": "am 只与 I 配合。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 450,
+        "end": 471,
+        "textSha256": "899008f331f8073459ea34a4002d114bfc4ad4d3a159d09d5cfd18564e1ba716"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Write the -ing form of write: Ben is ___ now.",
+      "answers": [
+        "writing"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Ben is writing now.\nwrite 末尾不发音的 e 去掉，再加 -ing，成为 writing。 本空只填一个英文单词。\n“writeing”：write 不能保留末尾 e 直接加 ing。\n“writes”：is 后本题需要 -ing，不是第三人称单数 writes。",
+      "evidence": "write → writing（去掉末尾不发音的 e 再加 -ing）",
+      "correctExpression": "Ben is writing now.",
+      "commonErrorReasons": {
+        "writeing": "write 不能保留末尾 e 直接加 ing。",
+        "writes": "is 后本题需要 -ing，不是第三人称单数 writes。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 588,
+        "end": 623,
+        "textSha256": "0e48217b22f62058ce578b5d28b40680d52fe4bafa15a14088c845f90d4994b7"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose the complete sentence about NOW.",
+      "options": [
+        "She reading now.",
+        "She is reads now.",
+        "She is reading now."
+      ],
+      "answers": [
+        "She is reading now."
+      ],
+      "explanation": "正确表达：She is reading now.\n现在进行时需要 be + -ing；She 对应 is，read 对应 reading。\n“She reading now.”：缺少必要的 be 动词 is。\n“She is reads now.”：is 后应接 reading，不是 reads。",
+      "evidence": "不省略 be，也不把第三人称的 -s 和 -ing 叠加",
+      "correctExpression": "She is reading now.",
+      "distractorReasons": {
+        "She reading now.": "缺少必要的 be 动词 is。",
+        "She is reads now.": "is 后应接 reading，不是 reads。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 472,
+        "end": 500,
+        "textSha256": "c0de927d9d9147b168961d2b87b2f8be18119ec9d8e5a64f1f3defe8955f3fee"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose the question about NOW.",
+      "options": [
+        "Does he reading now?",
+        "Is he reading now?",
+        "Is he read now?"
+      ],
+      "answers": [
+        "Is he reading now?"
+      ],
+      "explanation": "正确表达：Is he reading now?\n进行时问句把 is 放到 he 前，reading 保持不变。\n“Does he reading now?”：这不是习惯的 do / does 问句；本题进行时使用 Is。\n“Is he read now?”：需要 -ing 形式 reading，不能把原形 read 放在 is 后。",
+      "evidence": "Is he reading now?",
+      "correctExpression": "Is he reading now?",
+      "distractorReasons": {
+        "Does he reading now?": "这不是习惯的 do / does 问句；本题进行时使用 Is。",
+        "Is he read now?": "需要 -ing 形式 reading，不能把原形 read 放在 is 后。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 695,
+        "end": 713,
+        "textSha256": "043ca4c3b179276ec81b107ecfa86755c0f19d961345fb59e1143b10509d0e80"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Choose the negative sentence about NOW.",
+      "options": [
+        "He not reading now.",
+        "He does not reading now.",
+        "He is not reading now."
+      ],
+      "answers": [
+        "He is not reading now."
+      ],
+      "explanation": "正确表达：He is not reading now.\n进行时否定用 is not reading。\n“He not reading now.”：not 前缺少 be 动词 is。\n“He does not reading now.”：does not 要接原形表达习惯否定，本题现在进行时需要 is not reading。",
+      "evidence": "He is not reading now.",
+      "correctExpression": "He is not reading now.",
+      "distractorReasons": {
+        "He not reading now.": "not 前缺少 be 动词 is。",
+        "He does not reading now.": "does not 要接原形表达习惯否定，本题现在进行时需要 is not reading。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 662,
+        "end": 684,
+        "textSha256": "343a38842fb109f931a716c17090411ac8e5d7bd8ca9b70376c60500710f5be1"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Choose the pair: She usually ___ in the evening, but she ___ now.",
+      "options": [
+        "reads / is writing",
+        "is reading / writes",
+        "read / is writing"
+      ],
+      "answers": [
+        "reads / is writing"
+      ],
+      "explanation": "正确表达：She usually reads in the evening, but she is writing now.\nusually 的日常习惯用 reads；now 的正在动作用 is writing。\n“is reading / writes”：把本题通常习惯与眼前正在动作的表达颠倒了。\n“read / is writing”：第二空正确，但第一空 She 的习惯肯定句需要 reads。",
+      "evidence": "She usually reads in the evening. 说通常的习惯；She is reading now. 说眼下的动作。",
+      "correctExpression": "She usually reads in the evening, but she is writing now.",
+      "distractorReasons": {
+        "is reading / writes": "把本题通常习惯与眼前正在动作的表达颠倒了。",
+        "read / is writing": "第二空正确，但第一空 She 的习惯肯定句需要 reads。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 750,
+        "end": 818,
+        "textSha256": "54b109a83269dfcbde2980dd560b4cc3396739eaaadc9cb1a94ec8dd397c10a3"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Choose the sentence that says 她有一个书包 (ownership).",
+      "options": [
+        "She is having a bag.",
+        "She has a bag.",
+        "She is a bag."
+      ],
+      "answers": [
+        "She has a bag."
+      ],
+      "explanation": "正确表达：She has a bag.\n这里说拥有，用已经学过的 has；不是此刻做一个动作。\n“She is having a bag.”：本题明确是“拥有”，本课不用进行时 having 表达这一所属状态。\n“She is a bag.”：is a bag 说她是一个包，意思错误。",
+      "evidence": "She has a bag.",
+      "correctExpression": "She has a bag.",
+      "distractorReasons": {
+        "She is having a bag.": "本题明确是“拥有”，本课不用进行时 having 表达这一所属状态。",
+        "She is a bag.": "is a bag 说她是一个包，意思错误。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 959,
+        "end": 973,
+        "textSha256": "c90dbd2645e719a3abffff0c49e989d38791b03a46249b6f741aa318a75b5397"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "They usually read after class. Right now they are helping Anna. Choose the statement about RIGHT NOW.",
+      "options": [
+        "They are helping Anna.",
+        "They read after class.",
+        "They are read after class."
+      ],
+      "answers": [
+        "They are helping Anna."
+      ],
+      "explanation": "正确表达：They are helping Anna.\nRight now 对应题目给出的正在帮助，are helping。\n“They read after class.”：这是通常课后的习惯，不是题目问的眼下动作。\n“They are read after class.”：are 后不能这样接原形 read 构成本课进行时。",
+      "evidence": "Ben usually helps at the desk, but he is writing now.",
+      "correctExpression": "They are helping Anna.",
+      "distractorReasons": {
+        "They read after class.": "这是通常课后的习惯，不是题目问的眼下动作。",
+        "They are read after class.": "are 后不能这样接原形 read 构成本课进行时。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 818,
+        "end": 871,
+        "textSha256": "c8477dd435be3c0fd0cdde4955f64f830be023f3aed0fe9bd24fe2d1acc8dd2b"
+      }
+    }
+  ],
+  "learningScope": {
+    "new": [
+      "am / is / are + -ing",
+      "进行时否定和提问",
+      "usually与now的时态对比"
+    ],
+    "prerequisites": [
+      "第6–8课日常习惯、频率",
+      "第2课be配合"
+    ],
+    "review": [
+      "have拥有、be身份、习惯第三人称-s"
+    ],
+    "notTaught": [
+      "全部状态动词限制",
+      "所有-ing拼写规则",
+      "将来安排用法",
+      "过去进行时"
+    ]
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；新增例句和题目为模拟教学情境。原课文引用属于同一项目公开源码，仅作当天衔接。",
+    "verification": "reviewed",
+    "method": "独立AI无答案作答80/80；逐题核对规则、正确表达和具体错因。非真人教师或考官审题，未作考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHash": "9ab347ff6a3a790f6881ded37a01c7a30939e842609d4885484ceda7af8c6b41",
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "reviewReceiptId": "family-grammar-root-review-v89"
+  },
+  "sourceConnections": [
+    {
+      "materialId": "w02-read-2",
+      "materialVersion": "1",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "1205140f06cb743948477b49c2f4b7e5624bf777522fbcc7a2290c860ebca1f5",
+      "quote": "This is my new desk. It is big and brown. That is a chair. It is small and black. This is a lamp. It is on the desk. That is a book. It is red. This is a pen. It is blue. That is a bag. It is on the chair. This is my phone. It is new.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 234
+      }
+    },
+    {
+      "materialId": "w02-listen-2",
+      "materialVersion": "1",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "a20de31a1bf84474a923ed5385a9fe8dd618be60db87f0c2f05cca221758fdc0",
+      "quote": "Woman: Hello. Is this your bag? Man: No, it is not. It is a red bag. Woman: Is that your bag? Man: Yes, it is. It is a blue bag. Woman: Is she your teacher? Man: Yes, she is. Her name is Ms. Li. Woman: Is he your teacher? Man: No, he is not. He is a doctor. Woman: Is it a pen? Man: No, it is not. It is a book. Woman: Is this a school? Man: Yes, it is. It is a big school.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 373
+      }
+    }
+  ],
+  "admission": {
+    "status": "candidate-not-installed",
+    "recommendedCourseDay": 9,
+    "onlyFutureUnstartedUnfrozen": true,
+    "oldMaterialAndDraftPolicy": "retain-original-ids-and-bound-contracts",
+    "independentAssessmentEligible": false,
+    "vocabularyMasteryCredit": false,
+    "audioActivation": false
+  }
+}

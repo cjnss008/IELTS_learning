@@ -2,12 +2,12 @@
   "status": "complete-material-set",
   "days": 365,
   "minutes": 131400,
-  "materials": 1823,
+  "materials": 1831,
   "bySkill": {
     "reading": 255,
     "listening": 283,
     "writing": 214,
-    "grammar": 193,
+    "grammar": 201,
     "vocabulary": 368,
     "speaking": 145,
     "reflection": 365
@@ -605,6 +605,18 @@
     "limits": "Two new readings and two new listenings weekly, rotated with explicit revision; not seven unique new texts each week. Source generation, hashes and service success do not prove learner Band 7.",
     "active": false
   },
+  "familyGrammar": {
+    "id": "family-grammar-v89",
+    "catalogSha256": "41a30f04c3cf78d0acb1a2c85308858f2efb0359ef0b25b64379410747db1ddb",
+    "rootReviewSha256": "e5131ecb786a7e1a157b222ddd6e4efcf5e533c06ffab52fb53a9fc8d8a9cd7d",
+    "units": 9,
+    "addedMaterials": 8,
+    "addedQuestions": 80,
+    "existingDay2Questions": 10,
+    "baseDaysChanged": false,
+    "completedOriginalsPreserved": true,
+    "ordinaryPracticeOnly": true
+  },
   "publicSupplements": {
     "schema": 1,
     "status": "versioned-required-ordinary-day-plan",
@@ -775,11 +787,9 @@
         "reading": "text-evidence-and-blind-review-passed",
         "listening": "blocked-pending-audio-review",
         "canonicalAudio": {
-          "status": "hash-verified-but-usage-blocked",
+          "status": "blocked-audio-absent-as-required-in-public-clone",
           "required": false,
-          "usable": false,
-          "audioSha256": "540e100de05a012bbe9f0dc0b849d5a84da6c0fa5fb2efbb95c57911d41cab6f",
-          "durationSeconds": 157.635918
+          "usable": false
         },
         "sourceExposureGroup": "public-source:voa-l1-24"
       },
@@ -1381,7 +1391,7 @@
       "voa-l2-04",
       "voa-l2-07"
     ],
-    "planHash": "efc10fa4c9e8373e7e896432c7056d1a3cfe72dd73448ab7583b92dc1767d677",
+    "planHash": "f0a75e1a2bf7de27e8ed3b081475ae7fff177e49f9b9034c14023e655c9e22fd",
     "startDay": 2,
     "requiredReadingTasks": 46,
     "requiredListeningTasks": 29,
