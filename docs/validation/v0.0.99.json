@@ -1,0 +1,67 @@
+{
+  "version": "0.0.99",
+  "status": "development-candidate-not-released",
+  "scope": "只读的全年素材梳理工具；不激活课件、不改变课程运行代码或学习档案。",
+  "base": {
+    "developmentCommit": "f68a1f8988d173022cb50a86af759bf934fe8593",
+    "familyMainCommitBefore": "7dca8b7c66542386357470b3535310ab380174d5",
+    "runtimeContract": "curriculum/year-first-use-runtime-contract-v97-family-lessons.json",
+    "runtimeContractSha256": "5d2997e64cad8a9536c20e157ca80ec1ac1c34abc1f7f685312c8fa2a9137c2a"
+  },
+  "artifacts": {
+    "tools/build-annual-linked-supply.cjs": "c3a72fc111625b1c21e05a6535a89116314bac09e909802d1d80872f69faf2b4",
+    "tests/annual-linked-supply.test.cjs": "5113a1d0bf269da17e52642185d1f4b8e77b2191b713b915eef6827d4b3e756f",
+    "tests/annual-linked-supply-public.test.cjs": "4098e3baf101aba8a1b7d2e349e11de1be21185f69cd4d2a77cf766259d24ad2",
+    "isolatedReportSha256": "75d6d36eac1c725532884cc927a78344665c2f7669dd3d0044f22962a92b1a8e"
+  },
+  "checks": [
+    {
+      "name": "作者测试与全部公开候选原文绑定",
+      "command": "node --test tests/annual-linked-supply.test.cjs tests/annual-linked-supply-public.test.cjs",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "logSha256": "5b95592b3d8ce32761e275d1ea1ba5cbd479ebe7f306bc0d298bc0400cf72f86"
+    },
+    {
+      "name": "独立边界、竞态与公开来源复验",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "reviewSha256": "038b58fc650cbb51c099204e84d42c1bb3ff3b823a015978fcb469f262950829",
+      "scope": "合成目录覆盖已复现的 junction、硬链接和身份变化；两种 CLI 模式禁用文件写入 API 后只读运行。不能视作所有文件系统或恶意并发情形的安全证明。"
+    },
+    {
+      "name": "NAS 开发工作树安装后验证",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "新增工具的作者与公开来源测试均通过；静态检查通过 27 页、865 个链接/资源、129 个脚本。只访问公开资料，不读取家人档案。"
+    },
+    {
+      "name": "0.0.98 既有完整自动回归",
+      "passed": 2643,
+      "failed": 0,
+      "skipped": 2,
+      "scope": "上一候选版本的结果；本次仅增加开发工具，未重复整包回归。",
+      "logSha256": "100e7c325e1e61535e6d0041f58f0476198cb2273cbcd1afb7041d83b1340fae"
+    }
+  ],
+  "candidateTriage": {
+    "days": 364,
+    "referenceHeadwords": 8000,
+    "literalInputCandidates": 3755,
+    "greedyUniqueCandidates": 3556,
+    "daysWithThirtyCandidates": 35,
+    "greedyCandidateShortfall": 7364,
+    "unresolvedReferences": 0,
+    "meaning": "候选仅是字面匹配，缺口受贪心排序影响；不等于已学词、真实新词、掌握度或课程交付。"
+  },
+  "limitations": [
+    "第 2–11 课材料是隔离候选，未签审、未启用；真实旧档案的新旧词判断没有执行。",
+    "全年课件、长期记录归档与跨版本恢复仍未完成，不能宣称保证 Academic 四项 7.0。",
+    "本轮未通过正式真实浏览器验收，也未完成人耳试听、真实麦克风和教学成效验收。",
+    "固定输入仅支持指定的 0.0.98 公开快照；其他版本须另行审核并明确更新输入合同。",
+    "工具使用可信、独占开发快照；外部将标准输出重定向到文件的操作由调用方负责。"
+  ]
+}
