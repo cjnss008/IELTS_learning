@@ -151,6 +151,24 @@ test('the thirty-word count in a forty-word run is not an independent thirty-wor
   assert.equal(forty.daysMeetingTarget, 1);
 });
 
+test('cross-module counts describe exact selected-word matches, not mastery or missing exam content', () => {
+  const input = fixture();
+  input.materials.find(item => item.id === 'write-2').prompt = 'Write about a map and park.';
+  const report = buildInventory(input, { dailyTarget: 40 }), links = report.literalLinkage;
+  assert.equal(links.selectedWithMultipleSkillFields, 3);
+  assert.equal(links.selectedInReadingAndListening, 2);
+  assert.equal(links.selectedInAllFiveSkillFields, 1);
+  assert.equal(links.daysWithAnyReadingListeningMatch, 1);
+  assert.equal(links.daysWithAnyAllFiveMatch, 1);
+  assert.equal(links.daysWithSixTaskEntries, 1);
+  assert.equal(links.daysWithoutEligiblePracticeField.grammar, 363);
+  assert.match(report.limitations.join(' '), /independent assessment and annual-review days/);
+  const map = report.dailyCandidates[0].selectedCandidates.find(item => item.headword === 'map');
+  assert.equal(Object.keys(map.links).length, 5);
+  assert.equal(map.actualLearnerNewness, 'unknown');
+  assert.equal(map.mastery, false);
+});
+
 test('missing planned references stay visible rather than becoming completed content', () => {
   const input = fixture();
   input.publicAssignments = [{ day: 3, materialId: 'does-not-exist' }];

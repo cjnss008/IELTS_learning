@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "version": "0.0.103",
+  "status": "development-candidate-authoring-tool-only",
+  "purpose": "summarize-literal-cross-skill-source-links-for-annual-candidates",
+  "scope": "pinned-public-course-snapshot-and-synthetic-fixtures-only",
+  "tests": {
+    "focusedNodeTests": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "scope": "synthetic aggregation and exact source/offset checks for 30 and 40 target runs"
+    },
+    "publicSnapshotTriage": {
+      "dailyTarget": 40,
+      "days": 364,
+      "selectedCandidates": 3646,
+      "selectedWithMultipleSkillFields": 286,
+      "selectedInReadingAndListening": 119,
+      "selectedInAllFiveSkillFields": 10,
+      "daysWithAnyReadingListeningMatch": 53,
+      "daysWithAnyAllFiveMatch": 1,
+      "scope": "greedy exact text matches only; neither shared sense nor instructional quality verified"
+    },
+    "staticSite": {
+      "pages": 27,
+      "references": 865,
+      "scripts": 129,
+      "legacyLessons": 52,
+      "legacyVocabularyAudio": 360
+    },
+    "gitDiffCheck": "passed",
+    "fullRegression": "not repeated for an authoring-tool-only change"
+  },
+  "familyRelease": "not-deployed",
+  "runtimeCodeAndContracts": "unchanged",
+  "realLearnerRecords": "not accessed",
+  "realBrowser": "not run; earlier automation rejected by saved permissions or management policy",
+  "realAudio": "not reviewed",
+  "limitations": [
+    "word-form matches may reflect different senses, parts of speech or incidental mentions",
+    "inflections and semantic connections may not be detected",
+    "static task fields include independent assessment and annual-review days",
+    "the tool does not activate or create a learning course",
+    "personal learning, release compatibility, long-term storage and browser behavior are not established",
+    "candidate totals do not establish an IELTS score"
+  ]
+}

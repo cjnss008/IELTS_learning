@@ -91,6 +91,22 @@ function fields(material) {
   return result;
 }
 
+function summarizeLiteralLinks(days) {
+  const targets = days.flatMap(day => day.selectedCandidates);
+  const inBoth = item => Boolean(item.links.reading && item.links.listening);
+  const inAll = item => SKILLS.every(skill => Boolean(item.links[skill]));
+  return {
+    selectedWithMultipleSkillFields: targets.filter(item => item.literalSkillCount >= 2).length,
+    selectedInReadingAndListening: targets.filter(inBoth).length,
+    selectedInAllFiveSkillFields: targets.filter(inAll).length,
+    daysWithAnyReadingListeningMatch: days.filter(day => day.selectedCandidates.some(inBoth)).length,
+    daysWithAnyAllFiveMatch: days.filter(day => day.selectedCandidates.some(inAll)).length,
+    daysWithSixTaskEntries: days.filter(day => day.sixSkillTasksPresent).length,
+    daysWithoutEligiblePracticeField: Object.fromEntries(SKILLS.map(skill => [skill,
+      days.filter(day => day.missingEligiblePracticeSkills.includes(skill)).length]))
+  };
+}
+
 function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignments, assessment, inputPins }, options = {}) {
   const dailyTarget = options.dailyTarget === undefined ? 30 : options.dailyTarget;
   assert.ok(dailyTarget === 30 || dailyTarget === 40, 'daily target must be 30 or 40');
@@ -206,6 +222,7 @@ function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignme
     ordinaryDaysWithThirtyCandidates: ordinary.filter(day => day.selectedCandidateCount >= 30).length,
     ordinaryDaysMeetingTarget: ordinary.filter(day => day.candidateShortfall === 0).length,
     ordinaryCandidateShortfall: ordinary.reduce((sum, day) => sum + day.candidateShortfall, 0), missingReferences,
+    literalLinkage: summarizeLiteralLinks(outputDays),
     limitations: [
       'Candidate links are exact textual matches, not verified word senses, appropriate level, grammar, learner newness or mastery.',
       'A greedy shortfall is an authoring triage result, not proof of the best possible allocation; the calculation of additional headwords assumes none were previously learned.',
@@ -213,7 +230,8 @@ function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignme
       'Generated candidates do not create course materials, learner records, a release or independent assessment credit.',
       'This tool only reads the public snapshot; day 365 has an annual-reflection entry but runtime prerequisites and learner completion are not checked.',
       'The daily target is an authoring target, not a promise of truly new words or a cutoff on due reviews.',
-      'A 40-target greedy run changes allocation for later days, so its thirty-candidate count is not comparable to a separate 30-target run.'
+      'A 40-target greedy run changes allocation for later days, so its thirty-candidate count is not comparable to a separate 30-target run.',
+      'Literal linkage does not verify a shared sense or teaching relationship; missing ordinary fields also include independent assessment and annual-review days.'
     ],
     dailyCandidates: outputDays
   };
@@ -335,6 +353,7 @@ function main(argv) {
     daysWithThirtyCandidates: report.daysWithThirtyCandidates,
     daysMeetingTarget: report.daysMeetingTarget,
     minimumAdditionalHeadwordsForTarget: report.minimumAdditionalHeadwordsForTarget,
+    literalLinkage: report.literalLinkage,
     totalCandidateShortfall: report.totalCandidateShortfall,
     missingReferences: report.missingReferences }));
 }
@@ -343,4 +362,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { tokens, indexWords, matchText, eligible, fields, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
+module.exports = { tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
