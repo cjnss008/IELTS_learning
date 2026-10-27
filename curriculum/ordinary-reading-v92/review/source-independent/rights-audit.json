@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "id": "ordinary-v92-independent-rights-review",
+  "sourceRightsReviewSha256": "71ba2ebd7cc514086408e194c22a2d8eaef3937c43dddb7107d0c309578b9532",
+  "policies": [
+    {
+      "id": "voa-policy",
+      "url": "https://learningenglish.voanews.com/p/6861.html",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-voa-policy.json",
+      "evidenceBytes": 11123,
+      "evidenceSha256": "16766fd2aaa0faf99c30f61ebef2d9e25defd59a1443aabdbc68391d4a5e3682",
+      "markdownSha256": "d7d821382097b2277e3aa1d3f150fe3862cf42bf605b57b02f3ec0ca9d309e0f",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 1700,
+        "endUtf16": 2078,
+        "quote": "Learning English texts, MP3s, photos and videos are in the public domain. You are allowed to reprint them for educational and commercial purposes, with credit to [learningenglish.voanews.com](https://learningenglish.voanews.com/). However, stories, photos and video images from news agencies such as AP, Reuters and AFP are copyrighted, so you are not allowed to republish them.",
+        "sha256": "f68df9e3e95cfacb6141c83616f65df9dc86540d78e4e7e75b59f8af58cab9bf"
+      },
+      "judgement": "明确包含 Learning English 原作文本/MP3，可教育及商业再用并署名。AP/Reuters/AFP 等另有版权内容排除；原始文件不靠公开可下载这一点单独获得许可。"
+    },
+    {
+      "id": "noaa-faq",
+      "url": "https://oceanservice.noaa.gov/about/faq.html",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-noaa-faq.json",
+      "evidenceBytes": 28232,
+      "evidenceSha256": "23fe1600ac41be04e6f167df1d059d302e6a1a632d865041ec2907789f21327b",
+      "markdownSha256": "4ece4d92d91784e4738ca4baf5bb9dbd5c20e6d7b7310dd13b0ad1397f9cb471",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 428,
+        "endUtf16": 1251,
+        "quote": "Most of NOAA's information is in the ‘public domain’ and CANNOT be copyrighted. **Unless otherwise noted in the credit or caption of the item** of interest, you may use it without express permission. The one exception are our videos, as they often use third-party copyrighted footage. Video, in other words, will be assessed on a case-by-case basis. However, for most other content (e.g., our images, infographics, articles) you may use this material, but may not:\n\n- Claim it as your own (i.e., claiming copyright for federal information);\n- Use it in a manner that implies an endorsement or affiliation with the U.S. Government; or\n- Modify the content or misrepresent the content, and then present it as official government material.\n\nCredit should be given to the National Oceanic and Atmospheric Administration (NOAA).",
+        "sha256": "d3935e7f0989f4cb02328c863e281f67f4b58a7fde8cad9fb3fe10764a17beae"
+      },
+      "judgement": "官方默认许可并保留具体credit/caption例外；视频第三方镜头按件处理。署名、无政府背书、不把修改内容冒称官方原文。不能从视频例外直接推出所有原作播客音频都被禁用。"
+    },
+    {
+      "id": "noaa-library",
+      "url": "https://library.noaa.gov/blogs/news-research-highlights/question-of-the-quarter-noaacopyright",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-noaa-library.json",
+      "evidenceBytes": 21643,
+      "evidenceSha256": "f45673bdeb2ee519d14cc81efa277bed7371563b7ef7fa24157fc5de144c760a",
+      "markdownSha256": "c4adec7efe365747857b4b44b097f6574808e6dc8eb223fed1560d8372c47be1",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 3587,
+        "endUtf16": 4430,
+        "quote": "Works of the U.S. federal government are generally not protected by copyright in the United States and are automatically in the public domain (17 USC§ 105). No permission is required to reuse, reprint, or distribute this material, however, proper attribution and citation should be applied.\n\nThis also applies to photographs and videos that NOAA or any federal agency would be considered the owner of.\n\nThat is to say if the image, video, or article in question appears to be a NOAA-only (or Federal agency-only) published item, it's safe to assume it's public domain. You do not need to ask permission to use it, but you do need to attribute and cite it.\n\nIf any other authorship appears (such as a Cooperative Institute, university, etc.), you cannot assume it's public domain and you will need to check with all potential copyright holders.",
+        "sha256": "2d60bdffc8d29a7c7352b9327121d09690be698d6844a7982132ddb653fcc282"
+      },
+      "judgement": "官方明示美国联邦原作可再用/再印/分发，并允许根据NOAA-only公开作品判断；出现大学/合作机构等其他作者时另核。此为实际政策支持，不增设未披露私人guest release/cue sheet要求。"
+    },
+    {
+      "id": "bls-policy",
+      "url": "https://www.bls.gov/opub/copyright-information.htm",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-bls-policy.json",
+      "evidenceBytes": 6070,
+      "evidenceSha256": "4df79b42bf4452b8ddce9fc209f89f39f4c9d3913ec876a5dc1291532861665b",
+      "markdownSha256": "08334135b3e891d4b2d872a21d55df847638de43f60316183485bb84921d8f8a",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 199,
+        "endUtf16": 581,
+        "quote": "The Bureau of Labor Statistics (BLS) is a Federal government agency and everything that we publish, both in hard copy and electronically, is in the public domain, except for previously copyrighted photographs and illustrations. You are free to use our public domain material without specific permission, although we do ask that you cite the Bureau of Labor Statistics as the source.",
+        "sha256": "892a9bb0f625cb7ed14a4c5955526a3d0d6f0f5b9bdfdb5ed90f0c86d8082df5"
+      },
+      "judgement": "BLS原作可自由再用并要求署名；另有版权的照片/插图排除，标志商标不获准。两篇选文不含图片资产。"
+    },
+    {
+      "id": "nimh-policy",
+      "url": "https://www.nimh.nih.gov/site-info/policies",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-nimh-policy.json",
+      "evidenceBytes": 24734,
+      "evidenceSha256": "7f05ebde5b9a626cc7ba8e54aa5a3202c0a78ef935989268cd4cb59f41fa29ec",
+      "markdownSha256": "e09f511565663022ee7d4bef4f51fe282b88b12a27fa1a8fdada3c893e617b9d",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 4155,
+        "endUtf16": 6745,
+        "quote": "## Copyright Policy\n\n### Can I copy and reuse information on the NIMH website?\n\nYes, unless otherwise indicated, text on the NIMH website and in NIMH materials may be copied and reused.\n\n- **Permission to copy**: The information on our website and in our materials is in the public domain. You may copy and reuse it without permission.\n- **Modifications**: You can edit or reformat the copied text, but you cannot change it in a way that is misleading or inaccurate.\n- **Attribution**: If you use our information or publications, please [cite the National Institute of Mental Health](https://www.nimh.nih.gov/site-info/citing-nimh-publications-and-webpages) as the source.\n- **Linking**: We update our information regularly. We encourage you to link to our content rather than copy it to ensure users always have the most up-to-date information.\n\n### Can I copy and reuse images on the NIMH website?\n\nNo, you may not copy or reuse images on the NIMH website or in our materials, even if you cite them.\n\nMost of the images on our website are stock photos of professional models. We use these photos to add visual interest to the website, and you cannot reuse these images for any purpose.\n\n### Can I reuse the information and images in NIMH publications?\n\n[Esta información también está disponible en español](https://www.nimh.nih.gov/health/publications/espanol/reproduccion-y-reutilizacion-de-las-publicaciones-del-nimh)\n\nLike the website, the information in [NIMH publications](https://www.nimh.nih.gov/health/publications) is in the public domain and may be reused or copied without permission. We encourage you to use our fact sheets, brochures, and infographics to improve public health. Please [cite the National Institute of Mental Health](https://www.nimh.nih.gov/site-info/citing-nimh-publications-and-webpages) as the source.\n\nPlease note: You may not reuse or copy any of the publication images.\n\nSince it is unlawful to misuse government materials, we ask that you follow these guidelines when using our publications:\n\n- Do not change the content of our publications in a way that is misleading or inaccurate.\n- Do not add logos to our publications.\n- Do not copy or reuse images in our publications, even if you cite them.\n- Do not use our publications to advertise or endorse products, processes, or services.\n- Do not use our publications to give the appearance of providing specific medical advice, treatment recommendations, or referrals.\n- Whenever possible, link to our publications instead of downloading them to ensure users always have the most up-to-date information.",
+        "sha256": "c635637679b451a1c821feb781b72f702bbab3257d337132acd1bcf4905a37ff"
+      },
+      "judgement": "NIMH文字除另注外可复制再用，可编辑但不误导，署名；图片不可再用，不作医疗建议/治疗推荐或商业背书。该候选只作语言理解，不要求个人诊断/披露。"
+    },
+    {
+      "id": "nhgri-policy",
+      "url": "https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-nhgri-policy.json",
+      "evidenceBytes": 15913,
+      "evidenceSha256": "1f0ae9e5df67ba0b4aa440db8a6b84feac3b3c858ba5f6d6891b762d88a4f350",
+      "markdownSha256": "2c3f5ba3f164cb99317d786ca34e48ac8c8f695e30be29cfa7a6a22572a32f11",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 687,
+        "endUtf16": 1730,
+        "quote": "Text, graphics, videos, illustrations and other information on National Human Genome Research Institute (NHGRI) websites are in the public domain, unless otherwise indicated. You may freely use and distribute this information; however, we request acknowledgement, such as: \"Courtesy: National Human Genome Research Institute\" with a link back to genome.gov.\n\n## Disclaimers\n\n**Copyrighted text**\n\nPreviously copyrighted text is published on genome.gov from time to time with the permission of the copyright holder. Unless otherwise noted, website users are free to view and print these documents. If copyrighted, material will carry a credit line indicating that it did not originate at NHGRI. In this case, please be sure to cite the correct copyright owner. For information about these copyright owners, how they can be contacted, and what, if any, use those owners allow of their material beyond that which is stated here, please contact us through our [Questions and Feedback page](https://www.genome.gov/10005049/questions-and-feedback/).",
+        "sha256": "54655748cd3c89bbf30c595279f7e6dd936d96a15951fbab902ca2e14273b29e"
+      },
+      "judgement": "NHGRI原作默认可使用/分发并署名回链；另署名版权文本需按实际权利处理，外链不继承许可。选文为官方科普文字，未纳入图像/外链全文。"
+    },
+    {
+      "id": "nist-policy",
+      "url": "https://www.nist.gov/copyrights-disclaimers",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-nist-policy.json",
+      "evidenceBytes": 20868,
+      "evidenceSha256": "ba56c9187bbce6c41c05cf47497590f1675d86447e4a6d8251225031eee60487",
+      "markdownSha256": "1810188bbd1730289185b99e7fbbacde23091cbdca4d944543cd43a8809ca152",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 1715,
+        "endUtf16": 2042,
+        "quote": "NIST web pages are provided as a public service by the National Institute of Standards and Technology (NIST). With the exception of material marked as copyrighted, information presented on NIST sites are considered public information and may be distributed or copied. Use of appropriate byline/photo/image credits is requested.",
+        "sha256": "489807315afbb9e5f7b554bd668e64d5c1910952e000f80369efe8ebba578d8f"
+      },
+      "judgement": "NIST未标版权公共网页信息可复制/分发并保留署名。本篇为原新闻稿，不借用软件/SRD/Technical Series条款，也未复制外链期刊正文。"
+    },
+    {
+      "id": "cbo-policy",
+      "url": "https://www.cbo.gov/about/privacy",
+      "reviewedAccessDate": "2026-10-27",
+      "request": {
+        "tool": "Firecrawl scrape",
+        "maxAge": 0,
+        "onlyMainContent": true,
+        "profile": null,
+        "browserInteraction": false
+      },
+      "evidenceFile": "evidence/live-cbo-policy.json",
+      "evidenceBytes": 13203,
+      "evidenceSha256": "49318f099f1e5a0d4fe5656197ec767a024166a134f309d312cce39580dcf83e",
+      "markdownSha256": "2858b057f452a390a282557735eb5c52f4aa22b521ae2a7b63a43d5e151558f5",
+      "statusCode": 200,
+      "clause": {
+        "offsetUnit": "UTF-16-code-unit",
+        "startUtf16": 2805,
+        "endUtf16": 3558,
+        "quote": "#### Copyright\n\nThe information and documents on our website are not copyrighted. CBO's products are created by our employees in the course of their employment at CBO and are therefore works of the government. Government documents are in the public domain and are not protected by copyright law. CBO's information and documents may be copied and distributed in their entirety without CBO permission, though we request that CBO be acknowledged as the source of the information. CBO's products and this website may contain copyrighted images or other material, however, and permission from the copyright holder may be necessary if you wish to reproduce this material separately. Also, the use of CBO's logo is protected and requires advance authorization.",
+        "sha256": "e1fa1566ecb65e1754892eb50e1c33271c1ba5c27ff71f51a63ae7d73e38f62f"
+      },
+      "judgement": "CBO雇员职务原作与网站文档明示公共领域、可复制分发并署名；另有版权图片/其他材料与logo排除。这里只使用2025摘要文字。"
+    }
+  ],
+  "programmes": [
+    {
+      "sourceId": "voa-air-travel",
+      "sourceUrl": "https://learningenglish.voanews.com/a/the-language-of-air-travel/4871734.html",
+      "officialRawPage": {
+        "path": "evidence/raw/voa-air-travel.json",
+        "sha256": "b9808083f99b35b99f853782f53d26e63684de247afb4a1cfce8b5b5beb4aca1",
+        "bytes": 17416
+      },
+      "pairing": {
+        "audioUrl": "https://voa-audio.voanews.eu/vle/2019/05/03/4679e045-d60a-4b1a-8c35-0021294d3cdb_hq.mp3?download=1",
+        "rawReference": "https://voa-audio.voanews.eu/vle/2019/05/03/4679e045-d60a-4b1a-8c35-0021294d3cdb_hq.mp3?download=1",
+        "indexUtf16InRawPage": 2725,
+        "exactLocalAudioSha256": "ce160220d00a2d9ce5b191e0c9064de75d3131467a1d8986219511b6f0e2fcb7"
+      },
+      "authorshipEvidence": {
+        "path": "evidence/raw/voa-air-travel.json",
+        "contentField": "markdown",
+        "quote": "Alice Bryant wrote this story for VOA Learning English. George Grow was the editor.",
+        "startUtf16": 10049,
+        "endUtf16": 10132,
+        "sha256": "58296e64043a837633d121729648a298161d8653aed585aa78fe9befd314ea21"
+      },
+      "policyIds": [
+        "voa-policy"
+      ],
+      "reviewedScope": "Retained official item source, available item credit, source package full-page judgement, exact download association and saved MP3 container metadata; no waveform listening.",
+      "actualThirdPartyAudioRestrictionFound": false,
+      "eligibility": "policy-supported-original-programme-reuse",
+      "requiresHypotheticalGuestRelease": false,
+      "imagesOrLinkedThirdPartyWorksApproved": false,
+      "rootReleaseApproved": false,
+      "hearingOrTokenAlignmentApproved": false
+    },
+    {
+      "sourceId": "noaa-corals",
+      "sourceUrl": "https://oceanservice.noaa.gov/podcast/dec15/dd64-hawaii-corals.html",
+      "officialRawPage": {
+        "path": "evidence/raw/noaa-corals.json",
+        "sha256": "53cedddb5a9244dde4b55e2042474b99f5415560a01b9e2098e1429e9ffb811b",
+        "bytes": 30830
+      },
+      "pairing": {
+        "audioUrl": "https://oceanservice.noaa.gov/podcast/dec15/dd120315.mp3",
+        "rawReference": "https://oceanservice.noaa.gov/podcast/dec15/dd120315.mp3",
+        "indexUtf16InRawPage": 697,
+        "exactLocalAudioSha256": "2372373131a96be8eace501e99e8ba774bf714114269b53279b4a2b28ed9a0b6"
+      },
+      "authorshipEvidence": {
+        "path": "inputs/pool-bodies/noaa-corals.txt",
+        "contentField": "exact publisher body text",
+        "quote": "HOST: Welcome to Diving Deeper!",
+        "startUtf16": 0,
+        "endUtf16": 31,
+        "sha256": "0db09dd85d3b2903f158ae33431732a290f296e435b2063cc648fbf4299026dc"
+      },
+      "policyIds": [
+        "noaa-faq",
+        "noaa-library"
+      ],
+      "reviewedScope": "Retained official item source, available item credit, source package full-page judgement, exact download association and saved MP3 container metadata; no waveform listening.",
+      "actualThirdPartyAudioRestrictionFound": false,
+      "eligibility": "policy-supported-original-programme-reuse",
+      "requiresHypotheticalGuestRelease": false,
+      "imagesOrLinkedThirdPartyWorksApproved": false,
+      "rootReleaseApproved": false,
+      "hearingOrTokenAlignmentApproved": false
+    },
+    {
+      "sourceId": "noaa-invasive-species-dd59",
+      "sourceUrl": "https://oceanservice.noaa.gov/podcast/feb15/dd59-invasivespecies.html",
+      "officialRawPage": {
+        "path": "evidence/raw/noaa-invasive-species-dd59.html",
+        "sha256": "ad3a7735b0ca8d8cbfeadebc4ceeabdd73b9759bcfe86f223751e61fad6b3777",
+        "bytes": 47738
+      },
+      "pairing": {
+        "audioUrl": "https://oceanservice.noaa.gov/podcast/feb15/dd022615-3.mp3",
+        "rawReference": "/podcast/feb15/dd022615-3.mp3",
+        "indexUtf16InRawPage": 18811,
+        "exactLocalAudioSha256": "52edbab5b3b072457e86790196b422a15d5b2ea4dd05c98ce77009417847b913"
+      },
+      "authorshipEvidence": {
+        "path": "inputs/pool-bodies/noaa-invasive-species-dd59.txt",
+        "contentField": "exact publisher body text",
+        "quote": "HOST: Today on Diving Deeper",
+        "startUtf16": 0,
+        "endUtf16": 28,
+        "sha256": "64b758bc3b47765700cc054fbdb0f3d8b62de5cd40dd0a0806ae7cd22e4d1b34"
+      },
+      "policyIds": [
+        "noaa-faq",
+        "noaa-library"
+      ],
+      "reviewedScope": "Retained official item source, available item credit, source package full-page judgement, exact download association and saved MP3 container metadata; no waveform listening.",
+      "actualThirdPartyAudioRestrictionFound": false,
+      "eligibility": "policy-supported-original-programme-reuse",
+      "requiresHypotheticalGuestRelease": false,
+      "imagesOrLinkedThirdPartyWorksApproved": false,
+      "rootReleaseApproved": false,
+      "hearingOrTokenAlignmentApproved": false
+    },
+    {
+      "sourceId": "noaa-microplastics-dd66",
+      "sourceUrl": "https://oceanservice.noaa.gov/podcast/june16/dd66-microplastics.html",
+      "officialRawPage": {
+        "path": "evidence/raw/noaa-microplastics-dd66.html",
+        "sha256": "51b5d6a9ae1e9b52259d41d35c537b700aa78aed2deb95d5394d53cdedc6f639",
+        "bytes": 45329
+      },
+      "pairing": {
+        "audioUrl": "https://oceanservice.noaa.gov/podcast/june16/dd063016.mp3",
+        "rawReference": "/podcast/june16/dd063016.mp3",
+        "indexUtf16InRawPage": 19364,
+        "exactLocalAudioSha256": "28a24dfe45da906bd10ea7a4bc9473bcb8682593a062626bead59b2f6e0856bb"
+      },
+      "authorshipEvidence": {
+        "path": "inputs/pool-bodies/noaa-microplastics-dd66.txt",
+        "contentField": "exact publisher body text",
+        "quote": "Welcome to Diving Deeper!",
+        "startUtf16": 0,
+        "endUtf16": 25,
+        "sha256": "2ddc9bf9e6e756bd9de9328565d206ba03b9074d1503fba69c3ed7f07d17ab6f"
+      },
+      "policyIds": [
+        "noaa-faq",
+        "noaa-library"
+      ],
+      "reviewedScope": "Retained official item source, available item credit, source package full-page judgement, exact download association and saved MP3 container metadata; no waveform listening.",
+      "actualThirdPartyAudioRestrictionFound": false,
+      "eligibility": "policy-supported-original-programme-reuse",
+      "requiresHypotheticalGuestRelease": false,
+      "imagesOrLinkedThirdPartyWorksApproved": false,
+      "rootReleaseApproved": false,
+      "hearingOrTokenAlignmentApproved": false
+    }
+  ],
+  "conclusion": "The official declarations support attributed reuse of these selected agency-original text/programme candidates within their stated scope. No actual item-specific audio copyright blocker was identified in reviewed evidence. This is not a new worldwide legal clearance, acoustic QA, product release or permission for excluded/linked third-party assets.",
+  "scope": {
+    "newPrivateReleaseRequirementInvented": false,
+    "sourceOrPolicyBrowserRetry": false,
+    "newLargeAudioDownload": false,
+    "ASR": false,
+    "actualListening": false,
+    "productOrGitMediaRelease": false,
+    "activation": 0,
+    "mastery": 0
+  }
+}

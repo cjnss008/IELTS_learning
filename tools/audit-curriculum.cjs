@@ -7,7 +7,7 @@ function ordinaryPublicVariant(material,source,text){
  const binding=material.source||{};
  return Boolean(source&&binding.publicSourceId===source.sourceId&&binding.kind==='public-adaptation'&&String(binding.sourceVersion)===String(source.version)&&binding.sourceTextSha256===source.text?.sha256&&source.contentHash===source.text.sha256&&hash(text)===source.text.sha256&&binding.exposureGroup==='public-source:'+source.sourceId&&binding.practiceOnly===true&&binding.independentAssessmentEligible===false&&binding.independentTransferEligible===false&&binding.independentUnseenParallel===false&&material.pool==='training'&&!material.fullTest&&!material.independentBank&&!material.assessmentGroup&&!material.form);
 }
-function auditSourceInputs(materials,{catalog,projectRoot=root,gsaGradedRelease,requireCompleteRelease=false}={}){
+function auditSourceInputs(materials,{catalog,projectRoot=root,gsaGradedRelease,ordinaryReadingRelease,requireCompleteRelease=false}={}){
  const registered=new Map(),released=new Map(),releaseIds=new Set(),seenReleased=new Set(),publicSourceBindings=[];
  for(const source of catalog?.sources||[]){assert.ok(source?.sourceId&&!registered.has(source.sourceId),'Duplicate or missing registered public source ID');registered.set(source.sourceId,source);}
  const isGsa=m=>/^public-gsa-plain-language-/.test(m.id||'')||m.source?.gradedCourseRelease||String(m.source?.publicSourceId||'').startsWith('gsa-plain-language-'),gsa=materials.filter(isGsa);
@@ -21,12 +21,19 @@ function auditSourceInputs(materials,{catalog,projectRoot=root,gsaGradedRelease,
   for(const material of value.materials)released.set(material.id,material);
  }
  for(const material of materials)if(released.has(material.id)||isGsa(material)){const expected=released.get(material.id);assert.ok(expected,material.id+' is absent from the explicit signed GSA material roster');assert.deepEqual(JSON.parse(JSON.stringify(material)),JSON.parse(JSON.stringify(expected)),material.id+' compiled GSA material/questions differ from the independently signed release');seenReleased.add(material.id);}
+ const ordinaryReleased=new Map(),ordinarySources=new Set(),ordinarySeen=new Set();let ordinaryReleaseSha256=null;
+ if(materials.some(m=>/^public-ordinary-v92-/.test(m.id||'')))assert.ok(typeof ordinaryReadingRelease==='string'&&ordinaryReadingRelease,'Ordinary reading artifact requires an explicit reviewed release');
+ if(ordinaryReadingRelease!==undefined&&ordinaryReadingRelease!==null){
+  const value=require('./build-ordinary-reading-course.cjs').load({root:projectRoot,releasePath:ordinaryReadingRelease});ordinaryReleaseSha256=value.releaseSha256;
+  for(const m of value.materials){const id=m.source.publicSourceId;assert.ok(!registered.has(id),'Ordinary reading source collides with a prior source');registered.set(id,{sourceId:id,version:m.source.sourceVersion,text:{sha256:m.source.sourceTextSha256},contentHash:m.source.sourceTextSha256});ordinarySources.add(id);ordinaryReleased.set(m.id,m);}
+ }
+ for(const m of materials)if(/^public-ordinary-v92-/.test(m.id||'')||ordinarySources.has(m.source?.publicSourceId)){const expected=ordinaryReleased.get(m.id);assert.ok(expected,m.id+' is absent from the explicit reviewed ordinary roster');assert.deepEqual(JSON.parse(JSON.stringify(m)),JSON.parse(JSON.stringify(expected)),m.id+' compiled ordinary reading differs from its reviewed contract');ordinarySeen.add(m.id);}
  const bodies=new Map(),pairedReuse=[];let bodyVariants=0,uniqueTextWords=0,excludedReuseWords=0,reusedQuestionInstances=0;
  for(const material of materials.filter(m=>['reading','listening'].includes(m.skill))){
   const text=material.skill==='reading'?material.passage:material.transcript;assert.ok(text?.trim(),material.id+' source');bodyVariants++;
   if(/^public-/.test(material.id||'')||material.source?.kind==='public-adaptation'||material.source?.publicSourceId!==undefined){
    const source=registered.get(material.source?.publicSourceId);assert.ok(ordinaryPublicVariant(material,source,text),material.id+' public source/body/practice-only binding is not registered');
-   publicSourceBindings.push({materialId:material.id,sourceId:source.sourceId,sourceTextSha256:source.text.sha256,registration:releaseIds.has(source.sourceId)?'independently-reviewed-gsa-release':'legacy-public-source-catalog',...(releaseIds.has(source.sourceId)?{releaseSha256}:{})});
+   publicSourceBindings.push({materialId:material.id,sourceId:source.sourceId,sourceTextSha256:source.text.sha256,registration:ordinarySources.has(source.sourceId)?'independently-reviewed-ordinary-reading-release':releaseIds.has(source.sourceId)?'independently-reviewed-gsa-release':'legacy-public-source-catalog',...(ordinarySources.has(source.sourceId)?{releaseSha256:ordinaryReleaseSha256}:releaseIds.has(source.sourceId)?{releaseSha256}:{})});
   }
   const digest=hash(text.trim().replace(/\s+/g,' ')),existing=bodies.get(digest);
   if(!existing){bodies.set(digest,{material,text,paired:false});uniqueTextWords+=A.countWords(text);continue;}
@@ -38,6 +45,7 @@ function auditSourceInputs(materials,{catalog,projectRoot=root,gsaGradedRelease,
   pairedReuse.push({sourceId:source.sourceId,sourceVersion:String(source.version),sourceTextSha256:source.text.sha256,exposureGroup:material.source.exposureGroup,readingMaterialId:reading.id,listeningMaterialId:listening.id,textWordsCountedOnce:words,reusedQuestionInstances:reused,independentUnseenSourcesAdded:0});
  }
  if(requireCompleteRelease&&released.size)assert.deepEqual([...seenReleased].sort(),[...released.keys()].sort(),'Complete explicit artifact must contain all five exact signed GSA materials');
+ if(requireCompleteRelease&&ordinaryReleased.size)assert.deepEqual([...ordinarySeen].sort(),[...ordinaryReleased.keys()].sort(),'Complete explicit artifact must contain all six exact reviewed ordinary readings');
  return {bodyVariants,uniqueSourceCount:bodies.size,pairedReuseCount:pairedReuse.length,uniqueTextWords,excludedReuseWords,reusedQuestionInstances,pairedReuse,registeredOrdinaryPublicVariants:publicSourceBindings.length,publicSourceBindings,wordCountBasis:'Assessment.countWords of each distinct normalized source body; role labels retained. Surface words are not headword coverage or learner unseen evidence.',unseenLearnerInputsClaimed:false};
 }
 function auditPublicAudio(material,{catalog,projectRoot=root}={}){
@@ -51,12 +59,12 @@ function auditPublicAudio(material,{catalog,projectRoot=root}={}){
  const integrity=require('./build-public-supplement-materials.cjs').canonicalAudioIntegrity(source,projectRoot);assert.ok(integrity.required&&fs.statSync(path.join(projectRoot,audio.path)).size>1000,material.id+' required public audio bytes');
  return{sourceId:source.sourceId,audioPath:audio.path,audioSha256:audio.sha256,durationSeconds:audio.durationSeconds,downloadHashVerified:true,independentListeningReview:false,practiceOnly:true};
 }
-function audit(data,{projectRoot=root,gsaGradedRelease}={}){
+function audit(data,{projectRoot=root,gsaGradedRelease,ordinaryReadingRelease}={}){
  if(data.audit?.gsaGradedCourse)assert.ok(typeof gsaGradedRelease==='string'&&gsaGradedRelease,'GSA artifact metadata requires an explicit independently reviewed release');
  assert.equal(data.status,'complete-material-set','Do not release a partial curriculum');
  assert.equal(data.days.length,365);assert.equal(data.weeks.length,52);
  const map=new Map(data.materials.map(m=>[m.id,m]));assert.equal(map.size,data.materials.length,'Duplicate material ID');
- const catalog=JSON.parse(fs.readFileSync(path.join(projectRoot,'curriculum','public-supplement-catalog.json'),'utf8')),sourceInputs=auditSourceInputs(data.materials,{catalog,projectRoot,gsaGradedRelease,requireCompleteRelease:true});
+ const catalog=JSON.parse(fs.readFileSync(path.join(projectRoot,'curriculum','public-supplement-catalog.json'),'utf8')),sourceInputs=auditSourceInputs(data.materials,{catalog,projectRoot,gsaGradedRelease,ordinaryReadingRelease,requireCompleteRelease:true});
  let questions=0,listening=0,writing=0,fullReading=0,fullListening=0;const publicAudio=[];
  for(const job of jobs){const m=map.get(job.id);assert.ok(m,'Missing '+job.id);assert.deepEqual(validate(job,m),[],job.id);assert.equal(m.source.verification,'reviewed',job.id);if(job.skill==='writing'){writing++;assert.ok(m.prompt);}}
  for(const m of data.materials){
@@ -84,4 +92,4 @@ function audit(data,{projectRoot=root,gsaGradedRelease}={}){
  return {status:'passed',days:365,hours:totalMinutes/60,sourceJobs:jobs.length,materials:data.materials.length,questions,questionCountBasis:'material variant instances; paired same-source questions are not additional unseen coverage',uniqueQuestionInstancesAfterPublicPairReuse:questions-sourceInputs.reusedQuestionInstances,sourceInputs,publicAudio:{providerPairedPracticeFiles:publicAudio.length,independentListeningCertification:false,sources:publicAudio},listening,writing,fullReading,fullListening,firstDraftWritingPairs:firstWriting.size/2,independentBank:{materials:independent.materials,sourceCount:independent.sourceCount,questions:independent.questions,syntheticLocales:independent.syntheticLocales,humanLocales:independent.humanLocales,humanReaders:independent.humanReaders,voiceKinds:independent.voiceKinds,figureTypes:independent.figureTypes},lexicalContexts:independent.lexical};
 }
 module.exports={audit,auditSourceInputs,ordinaryPublicVariant,auditPublicAudio};
-if(require.main===module){const args=process.argv.slice(2),options={};for(let i=0;i<args.length;i++){const key=args[i];assert.ok(['--project-root','--gsa-graded-release'].includes(key)&&args[i+1]&&!args[i+1].startsWith('--'),'Expected --project-root ROOT or --gsa-graded-release PATH');options[key==='--project-root'?'projectRoot':'gsaGradedRelease']=args[++i];}const result=audit(require('../assets/curriculum-data.js'),options);fs.writeFileSync(path.join(root,'curriculum','release-audit.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));}
+if(require.main===module){const args=process.argv.slice(2),options={};for(let i=0;i<args.length;i++){const key=args[i];assert.ok(['--project-root','--gsa-graded-release','--ordinary-reading-release'].includes(key)&&args[i+1]&&!args[i+1].startsWith('--'),'Expected --project-root ROOT or --gsa-graded-release PATH');options[key==='--project-root'?'projectRoot':key==='--gsa-graded-release'?'gsaGradedRelease':'ordinaryReadingRelease']=args[++i];}const result=audit(require('../assets/curriculum-data.js'),options);fs.writeFileSync(path.join(root,'curriculum','release-audit.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));}

@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "status": "source-package-verified-reading-authoring-not-course-release",
+  "manifestSha256": "326c470151e2440bd002680d63e53ea9288f5ec12010057b8e8c2642acb53233",
+  "files": 128,
+  "bytes": 153000294,
+  "policyClausesVerified": 3,
+  "programmeEvidenceVerified": 4,
+  "readingWords": 4609,
+  "sources": [
+    {
+      "sourceId": "bls-athletes",
+      "text": "candidates/text/bls-athletes.txt",
+      "sha256": "2aaf6b86c63bafab35ff3f2689b4851f153bfcf39583cff2163d14c6f80ff380",
+      "words": 1100,
+      "rootReadFullText": true
+    },
+    {
+      "sourceId": "bls-musicians",
+      "text": "candidates/text/bls-musicians.txt",
+      "sha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a",
+      "words": 1114,
+      "rootReadFullText": true
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "text": "candidates/text/nimh-psychotherapies.txt",
+      "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "words": 676,
+      "rootReadFullText": true
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "text": "candidates/text/nhgri-dna.txt",
+      "sha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251",
+      "words": 870,
+      "rootReadFullText": true
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "text": "candidates/text/nist-atomic-television.txt",
+      "sha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c",
+      "words": 485,
+      "rootReadFullText": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "text": "candidates/text/cbo-budget-2025.txt",
+      "sha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "words": 364,
+      "rootReadFullText": true
+    }
+  ],
+  "rootTextReview": {
+    "reviewer": "root-ai",
+    "humanReview": false,
+    "findings": [
+      "BLS two missing employer tables: omit the dangling lead-ins in labelled teaching adaptations; no employer-share questions.",
+      "DNA source typo Scientist use may be changed to Scientists use with an explicit edit record. Omit the eye-colour example rather than presenting a simplified six-base claim as scientific fact.",
+      "All other selected prose read; reading questions and teaching level/budgets need separate review before activation."
+    ]
+  },
+  "audio": {
+    "programmes": 4,
+    "rightsDecision": "Official publisher policies and actual cited page/metadata evidence support attributed original programme reuse; no specific third-party audio restriction identified. This is a scoped reading of official declarations, not a new worldwide legal opinion.",
+    "acousticListeningPerformed": false,
+    "alignmentVerified": false,
+    "courseActivation": false
+  },
+  "candidateWordLocationsNotSenseOrMastery": true,
+  "currentVocabularyCoverageUnchanged": true,
+  "realLearnerDataAccessed": false
+}

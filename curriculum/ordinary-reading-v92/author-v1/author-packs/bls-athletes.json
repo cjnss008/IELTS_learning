@@ -1,0 +1,744 @@
+{
+  "schema": 1,
+  "sourceId": "bls-athletes",
+  "materialId": "public-ordinary-v92-bls-athletes-reading",
+  "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+  "status": "author-v1-before-independent-question-review",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which statement best summarizes the passage?",
+      "options": [
+        "Professional athletic work combines sustained preparation with uncertain career prospects.",
+        "A university qualification is the main requirement for every professional sporting career.",
+        "Professional athletes spend nearly all their working time taking part in competitions.",
+        "Licensing systems allow athletes to avoid the physical risks associated with sport."
+      ],
+      "answers": [
+        "Professional athletic work combines sustained preparation with uncertain career prospects."
+      ],
+      "explanation": "文章同时介绍训练、比赛、伤病、工作安排与职业发展；反复强调训练持续、伤病风险和工作保障不足。概括应覆盖这些方面，而不是只抓学历或比赛。\n\n选项“Professional athletic work combines sustained preparation with uncertain career prospects.”：正确：概括了长期准备及不稳定的职业前景。\n选项“A university qualification is the main requirement for every professional sporting career.”：原文说通常没有正式学历要求，不能改成人人须有大学学历。\n选项“Professional athletes spend nearly all their working time taking part in competitions.”：原文明确说运动员多数日子在训练和改进技能，不是几乎全在比赛。\n选项“Licensing systems allow athletes to avoid the physical risks associated with sport.”：执照规定不消除伤病；原文说即使职业选手也始终有伤病风险。",
+      "evidence": "Many people dream of becoming a professional athlete. Few people, however, make a full-time living from professional athletics—and when they do, professional athletes often have short careers with little job security.",
+      "evidenceOffsets": {
+        "start": 750,
+        "end": 967,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 750,
+        "end": 967,
+        "textSha256": "ea7962d1ba8a95ebf78f6ccfea1a33b6ed2f8a6d202d70b15da145a0dcfee895"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "正确：概括了长期准备及不稳定的职业前景。",
+        "原文说通常没有正式学历要求，不能改成人人须有大学学历。",
+        "原文明确说运动员多数日子在训练和改进技能，不是几乎全在比赛。",
+        "执照规定不消除伤病；原文说即使职业选手也始终有伤病风险。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why do athletes study their opponents’ tendencies and weaknesses?",
+      "options": [
+        "To decide which educational credential the opponents should obtain.",
+        "To gain an advantage when they compete against those opponents.",
+        "To replace the need to practise their own physical skills.",
+        "To determine which organization should issue a racing licence."
+      ],
+      "answers": [
+        "To gain an advantage when they compete against those opponents."
+      ],
+      "explanation": "To gain a competitive advantage直接说明研究对手的目的。它补充自身训练，不是替代训练，也与颁发执照和对方学历无关。\n\n选项“To decide which educational credential the opponents should obtain.”：原文没有把研究对手与替对手选择学历联系起来。\n选项“To gain an advantage when they compete against those opponents.”：正确：对应competitive advantage，即在竞争中争取优势。\n选项“To replace the need to practise their own physical skills.”：原文同时强调多数日子用于训练；研究对手没有取消训练。\n选项“To determine which organization should issue a racing licence.”：赛车执照在另一部分讨论，不是本句研究对手的目的。",
+      "evidence": "Being an athlete involves more than competing in athletic events. Athletes spend most days practicing and improving their skills under the guidance of a coach or a sports instructor. They review videos to critique and improve their performance and technique. To gain a competitive advantage, athletes also study their opponents' tendencies and weaknesses.",
+      "evidenceOffsets": {
+        "start": 1408,
+        "end": 1763,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1408,
+        "end": 1763,
+        "textSha256": "47561a3e979948913285b45170ab4006c071800b1de6041f0d1df9c902a46c83"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause-purpose",
+      "distractorReasons": [
+        "原文没有把研究对手与替对手选择学历联系起来。",
+        "正确：对应competitive advantage，即在竞争中争取优势。",
+        "原文同时强调多数日子用于训练；研究对手没有取消训练。",
+        "赛车执照在另一部分讨论，不是本句研究对手的目的。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "In the words “and when they do”, what does “do” refer to?",
+      "options": [
+        "Begin watching a professional sporting event.",
+        "Earn a university degree before they start training.",
+        "Make a full-time living from professional athletics.",
+        "Finish a sporting career without being injured."
+      ],
+      "answers": [
+        "Make a full-time living from professional athletics."
+      ],
+      "explanation": "do替代前面的make a full-time living from professional athletics，避免重复。句子说即使确实靠职业体育维持全职生计，职业生涯仍可能短且缺乏保障。\n\n选项“Begin watching a professional sporting event.”：前面没有说观看比赛，do不能跨到这个新动作。\n选项“Earn a university degree before they start training.”：前一句没有大学学历这一动作。\n选项“Make a full-time living from professional athletics.”：正确：do承接同一句前半部分的make a full-time living。\n选项“Finish a sporting career without being injured.”：原句此处没有说无伤退役；后文另讲伤病风险。",
+      "evidence": "Many people dream of becoming a professional athlete. Few people, however, make a full-time living from professional athletics—and when they do, professional athletes often have short careers with little job security.",
+      "evidenceOffsets": {
+        "start": 750,
+        "end": 967,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 750,
+        "end": 967,
+        "textSha256": "ea7962d1ba8a95ebf78f6ccfea1a33b6ed2f8a6d202d70b15da145a0dcfee895"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "前面没有说观看比赛，do不能跨到这个新动作。",
+        "前一句没有大学学历这一动作。",
+        "正确：do承接同一句前半部分的make a full-time living。",
+        "原句此处没有说无伤退役；后文另讲伤病风险。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Some professional athletes may have to travel internationally for competitions.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "原文把国际旅行列为运动员出行的一种可能，不是人人或每次都出国。题干的Some和may与原文范围相符。\n\n选项“TRUE”：正确：in some cases, international travel直接支持。\n选项“FALSE”：FALSE需要原文否定这种可能；原文恰好列出了它。\n选项“NOT GIVEN”：这不是未提及，国际旅行在工作环境段明确出现。",
+      "evidence": "Athletes and sports competitors who participate in outdoor competitions may be exposed to weather conditions of the season in which they play their sport. In addition, many athletes must travel to sporting events. Such travel may include long bus rides or plane trips, and, in some cases, international travel.",
+      "evidenceOffsets": {
+        "start": 2514,
+        "end": 2824,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2514,
+        "end": 2824,
+        "textSha256": "4f750da98e64adf9b0da060faee052ed8b35a3bdd225b185758e21ec3a5fa632"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：in some cases, international travel直接支持。",
+        "FALSE需要原文否定这种可能；原文恰好列出了它。",
+        "这不是未提及，国际旅行在工作环境段明确出现。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Every athlete must obtain a university degree before entering this occupation.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "原文说通常不要求正式学历，后面也只说有些人在大学参加运动。把some/typically改成every和must，与原文冲突。\n\n选项“TRUE”：TRUE不成立：原文没有人人必须取得大学学位的门槛。\n选项“FALSE”：正确：No formal educational credential is typically required否定这种普遍要求。\n选项“NOT GIVEN”：不是NOT GIVEN，因为文中明确讨论并否定了普遍学历要求。",
+      "evidence": "No formal educational credential is typically required to become an athlete or sports competitor. Athletes must have athletic talent and extensive knowledge of their sport. They typically get such knowledge through years of experience at lower levels of competition.",
+      "evidenceOffsets": {
+        "start": 3502,
+        "end": 3768,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3502,
+        "end": 3768,
+        "textSha256": "1e9cfe3b59765c44eda06d30538cc77400b3be568bcc24f0544a61fca0751c73"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE不成立：原文没有人人必须取得大学学位的门槛。",
+        "正确：No formal educational credential is typically required否定这种普遍要求。",
+        "不是NOT GIVEN，因为文中明确讨论并否定了普遍学历要求。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: High-school athletes usually spend ten hours a week training.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "全文没有给高中运动员的每周训练时数。文中的more than 40 hours谈体育赛季的职业工作安排，不能移作高中运动员数据；这里也没有相反的高中时数可判FALSE。\n\n选项“TRUE”：没有高中每周十小时这一数据，不能判TRUE。\n选项“FALSE”：没有相反的高中训练时数，不能仅因文中出现其他时数就判FALSE。\n选项“NOT GIVEN”：正确：高中训练周时数未提供；相邻职业赛季时数不足以推出它。",
+      "evidence": "Athletes and sports competitors may work irregular schedules, including evenings, weekends, and holidays; part-time work is also common. During the sports season, they typically work more than 40 hours per week for several months as they practice, train, travel, and compete.",
+      "evidenceOffsets": {
+        "start": 3076,
+        "end": 3351,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3076,
+        "end": 3351,
+        "textSha256": "5d2efcb8f9eb202925e1a1c0d1048c486f5e5c554d5d9b0f0703ae9fe964ca41"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "没有高中每周十小时这一数据，不能判TRUE。",
+        "没有相反的高中训练时数，不能仅因文中出现其他时数就判FALSE。",
+        "正确：高中训练周时数未提供；相邻职业赛季时数不足以推出它。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "What may professional athletes receive from companies and brands? Write ONE WORD from the passage.",
+      "answers": [
+        "endorsements"
+      ],
+      "maxWords": 1,
+      "explanation": "职业发展段说他们也可能获得公司和品牌的endorsements。用原文复数endorsements；salary来自同段另一句，却不是本题指定的公司与品牌所提供的这项内容。\n\n可接受答案：endorsements；最多1个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“endorsement”：是单数改写，不是题目要求提取的原文复数形式。\n写法“salary”：本题问公司与品牌提供的这项内容，对应后一句endorsements。\n写法“company endorsements”：多写company超过一词上限。",
+      "evidence": "Turning professional is often the biggest advancement that aspiring athletes make in their careers. They may begin to compete immediately, although some also may spend more time on the bench (as a reserve) to gain experience. In some sports, such as baseball, athletes may begin their professional career on a minor league team before moving up to the major leagues. Professional athletes generally advance in their sport by displaying superior performance and receiving accolades; in turn, they typically earn a higher salary. They also may receive endorsements from companies and brands.",
+      "evidenceOffsets": {
+        "start": 5289,
+        "end": 5878,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 5289,
+        "end": 5878,
+        "textSha256": "1622564e87967d0d870bb48a5e3146e53efcf2d0b7c4a6d324d0b1d2b462ed04"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "endorsement": "是单数改写，不是题目要求提取的原文复数形式。",
+        "salary": "本题问公司与品牌提供的这项内容，对应后一句endorsements。",
+        "company endorsements": "多写company超过一词上限。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with TWO WORDS from the passage: Teamwork involves working toward a _______ with other people.",
+      "answers": [
+        "shared goal"
+      ],
+      "maxWords": 2,
+      "explanation": "Teamwork小节的原句是work toward a shared goal with others。空前已有a，只取shared goal两个词，保留“共同目标”的整体意思。\n\n可接受答案：shared goal；最多2个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“goal”：缺shared，未保留共同这一关键限定，也不符合本题两词要求。\n写法“a shared goal”：空前已有a，重复冠词且超过两词上限。\n写法“shared goals”：原文为单数goal，本题句中的a也要求单数。",
+      "evidence": "Teamwork. The ability to work toward a shared goal with others, including teammates and coaches, is essential for athletes’ and sports competitors’ success.",
+      "evidenceOffsets": {
+        "start": 7017,
+        "end": 7173,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 7017,
+        "end": 7173,
+        "textSha256": "1c356b004c70ef143566116e257d122945bd02bd208c3a125b10a745a95a2be5"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "goal": "缺shared，未保留共同这一关键限定，也不符合本题两词要求。",
+        "a shared goal": "空前已有a，重复冠词且超过两词上限。",
+        "shared goals": "原文为单数goal，本题句中的a也要求单数。"
+      }
+    }
+  ],
+  "questionReviewNotes": [
+    {
+      "questionId": "q1",
+      "cognitiveTask": "main-idea",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 750,
+          "teachingEndUtf16": 967,
+          "selectedStartUtf16": 769,
+          "selectedEndUtf16": 986,
+          "originalStartUtf16": 769,
+          "originalEndUtf16": 986,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q2",
+      "cognitiveTask": "cause-purpose",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1408,
+          "teachingEndUtf16": 1763,
+          "selectedStartUtf16": 1427,
+          "selectedEndUtf16": 1782,
+          "originalStartUtf16": 1427,
+          "originalEndUtf16": 1782,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q3",
+      "cognitiveTask": "reference",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 750,
+          "teachingEndUtf16": 967,
+          "selectedStartUtf16": 769,
+          "selectedEndUtf16": 986,
+          "originalStartUtf16": 769,
+          "originalEndUtf16": 986,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q4",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2514,
+          "teachingEndUtf16": 2824,
+          "selectedStartUtf16": 2699,
+          "selectedEndUtf16": 3009,
+          "originalStartUtf16": 2699,
+          "originalEndUtf16": 3009,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q5",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3502,
+          "teachingEndUtf16": 3768,
+          "selectedStartUtf16": 3706,
+          "selectedEndUtf16": 3972,
+          "originalStartUtf16": 3706,
+          "originalEndUtf16": 3972,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q6",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3076,
+          "teachingEndUtf16": 3351,
+          "selectedStartUtf16": 3261,
+          "selectedEndUtf16": 3536,
+          "originalStartUtf16": 3261,
+          "originalEndUtf16": 3536,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": "Whole teaching passage checked for absence; quoted paragraph is a topic anchor, not proof that the statement is false."
+    },
+    {
+      "questionId": "q7",
+      "cognitiveTask": "short-answer",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 5289,
+          "teachingEndUtf16": 5878,
+          "selectedStartUtf16": 5493,
+          "selectedEndUtf16": 6082,
+          "originalStartUtf16": 5493,
+          "originalEndUtf16": 6082,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q8",
+      "cognitiveTask": "completion",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 7017,
+          "teachingEndUtf16": 7026,
+          "selectedStartUtf16": 7234,
+          "selectedEndUtf16": 7243,
+          "originalStartUtf16": 7234,
+          "originalEndUtf16": 7243,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        },
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 7026,
+          "teachingEndUtf16": 7173,
+          "selectedStartUtf16": 7244,
+          "selectedEndUtf16": 7391,
+          "originalStartUtf16": 7244,
+          "originalEndUtf16": 7391,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    }
+  ],
+  "grammarEvidence": [
+    {
+      "id": "bls-athletes-grammar-1",
+      "tag": "concessive-clauses",
+      "sentence": "Although no formal educational credential is typically required to enter the occupation, most athletes and sports competitors have at least a high school diploma or equivalent.",
+      "explanation": "Although引导让步从句：通常没有正式学历门槛，但多数从业者实际上至少有高中学历。这两个信息可以同时成立；不能把most改读成all，也不能把have a diploma误读成职业强制要求。",
+      "evidenceOffsets": {
+        "start": 3781,
+        "end": 3957,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "6cd49ecd7b7605d271f83bc0cbffffc4bf29f32452e18e24dad5b2e260734c44",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3781,
+          "teachingEndUtf16": 3957,
+          "selectedStartUtf16": 3985,
+          "selectedEndUtf16": 4161,
+          "originalStartUtf16": 3985,
+          "originalEndUtf16": 4161,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    },
+    {
+      "id": "bls-athletes-grammar-2",
+      "tag": "have-object-past-participle",
+      "sentence": "In addition, athletes may have their licenses or certification suspended for inappropriate activity.",
+      "explanation": "may have +宾语+过去分词说明可能遭遇某种处置：licenses/certification是被暂停，而不是运动员自己暂停别人的执照。这里have不表示拥有新执照，may也不是必然会发生。",
+      "evidenceOffsets": {
+        "start": 5174,
+        "end": 5274,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "45c870f2d01fe3f83e71bc176dbcd07dc07be7e3e90814f467ca7883781e6e62",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 5174,
+          "teachingEndUtf16": 5274,
+          "selectedStartUtf16": 5378,
+          "selectedEndUtf16": 5478,
+          "originalStartUtf16": 5378,
+          "originalEndUtf16": 5478,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    }
+  ],
+  "wordCandidates": [
+    {
+      "id": "bls-athletes-word-1",
+      "word": "competitor",
+      "canonicalTargetId": "essential:competitor",
+      "surface": "competitors",
+      "startUtf16": 61,
+      "endUtf16": 72,
+      "quote": "Athletes and sports competitors practice under the direction of coaches and sports instructors.",
+      "quoteStartUtf16": 41,
+      "quoteEndUtf16": 136,
+      "quoteSha256": "d2fc50c4f5ee05117691c844deb15244b01a1c88175f7303d9e80d6af8da7ea1",
+      "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "competitor",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "competitor",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 61,
+          "teachingEndUtf16": 72,
+          "selectedStartUtf16": 80,
+          "selectedEndUtf16": 91,
+          "originalStartUtf16": 80,
+          "originalEndUtf16": 91,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-2",
+      "word": "injury",
+      "canonicalTargetId": "essential:injury",
+      "surface": "injuries",
+      "startUtf16": 1836,
+      "endUtf16": 1844,
+      "quote": "Because of the physical demands required by many sports, career-ending injuries are always a risk. Some athletes work regularly with fitness trainers and instructors to gain muscle and stamina and to prevent injury. They also may work with athletic trainers or exercise physiologists to recover and rebuild from injuries, even minor ones.",
+      "quoteStartUtf16": 1765,
+      "quoteEndUtf16": 2103,
+      "quoteSha256": "d77eb5ff0be0a85d3142d7eacf7fc481880560b31e5773ab41fa6927968a4230",
+      "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "injury",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "injury",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1836,
+          "teachingEndUtf16": 1844,
+          "selectedStartUtf16": 1855,
+          "selectedEndUtf16": 1863,
+          "originalStartUtf16": 1855,
+          "originalEndUtf16": 1863,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-3",
+      "word": "helmet",
+      "canonicalTargetId": "essential:helmet",
+      "surface": "helmets",
+      "startUtf16": 2993,
+      "endUtf16": 3000,
+      "quote": "Athletes and sports competitors have one of the highest rates of injuries and illnesses of all occupations. Many of these workers wear gloves, helmets, pads, and other protective gear to guard against injury.",
+      "quoteStartUtf16": 2850,
+      "quoteEndUtf16": 3058,
+      "quoteSha256": "3cbd04c736f71ee2bf305a7599f988571f4dedc7e461b3e681040106c654cf8b",
+      "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "helmet",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "helmet",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2993,
+          "teachingEndUtf16": 3000,
+          "selectedStartUtf16": 3178,
+          "selectedEndUtf16": 3185,
+          "originalStartUtf16": 3178,
+          "originalEndUtf16": 3185,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-4",
+      "word": "endorsement",
+      "canonicalTargetId": "essential:endorsement",
+      "surface": "endorsements",
+      "startUtf16": 5839,
+      "endUtf16": 5851,
+      "quote": "Turning professional is often the biggest advancement that aspiring athletes make in their careers. They may begin to compete immediately, although some also may spend more time on the bench (as a reserve) to gain experience. In some sports, such as baseball, athletes may begin their professional career on a minor league team before moving up to the major leagues. Professional athletes generally advance in their sport by displaying superior performance and receiving accolades; in turn, they typically earn a higher salary. They also may receive endorsements from companies and brands.",
+      "quoteStartUtf16": 5289,
+      "quoteEndUtf16": 5878,
+      "quoteSha256": "1622564e87967d0d870bb48a5e3146e53efcf2d0b7c4a6d324d0b1d2b462ed04",
+      "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "endorsement",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "endorsement",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 5839,
+          "teachingEndUtf16": 5851,
+          "selectedStartUtf16": 6043,
+          "selectedEndUtf16": 6055,
+          "originalStartUtf16": 6043,
+          "originalEndUtf16": 6055,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-5",
+      "word": "trainer",
+      "canonicalTargetId": "essential:trainer",
+      "surface": "trainers",
+      "startUtf16": 1906,
+      "endUtf16": 1914,
+      "quote": "Because of the physical demands required by many sports, career-ending injuries are always a risk. Some athletes work regularly with fitness trainers and instructors to gain muscle and stamina and to prevent injury. They also may work with athletic trainers or exercise physiologists to recover and rebuild from injuries, even minor ones.",
+      "quoteStartUtf16": 1765,
+      "quoteEndUtf16": 2103,
+      "quoteSha256": "d77eb5ff0be0a85d3142d7eacf7fc481880560b31e5773ab41fa6927968a4230",
+      "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "trainer",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "trainer",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1906,
+          "teachingEndUtf16": 1914,
+          "selectedStartUtf16": 1925,
+          "selectedEndUtf16": 1933,
+          "originalStartUtf16": 1925,
+          "originalEndUtf16": 1933,
+          "originalBodySha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    }
+  ],
+  "active": false
+}

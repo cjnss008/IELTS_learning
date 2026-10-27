@@ -1,0 +1,1669 @@
+{
+  "schema": 1,
+  "id": "ordinary-v92-independent-blind-answers-v1",
+  "blindInputSha256": "a76e3113e1901d5fa1e1b6812e57172120f7d6ccb3a48c5930247ca4f9dd4be7",
+  "earlierBlindReadingNotesSha256": "d3ca8c809850c493802ea6b1a8b2aed36a1abf4884115b34482801aa810a566d",
+  "independence": {
+    "authorAnswersRead": false,
+    "authorExplanationsRead": false,
+    "authorMaterialFilesRead": false,
+    "authorQuestionScriptsRead": false,
+    "rootReleaseDraftRead": false,
+    "priorSourceNotesRead": true,
+    "disclosure": "The original sources and independently frozen content notes were already known. Root reported that three main-idea distractors had been revised before question freeze, without revealing keys. This is a question/key-blind engineering content review, not a blinded human trial."
+  },
+  "editingReplay": [
+    {
+      "sourceId": "bls-athletes",
+      "sourceSelectedTextSha256": "2aaf6b86c63bafab35ff3f2689b4851f153bfcf39583cff2163d14c6f80ff380",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "editCount": 18,
+      "editCoordinates": "original selected body UTF-16, applied in descending order",
+      "allEditsExactAndDisclosed": true
+    },
+    {
+      "sourceId": "bls-musicians",
+      "sourceSelectedTextSha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "editCount": 4,
+      "editCoordinates": "original selected body UTF-16, applied in descending order",
+      "allEditsExactAndDisclosed": true
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "sourceSelectedTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "editCount": 0,
+      "editCoordinates": "original selected body UTF-16, applied in descending order",
+      "allEditsExactAndDisclosed": true
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "sourceSelectedTextSha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "editCount": 2,
+      "editCoordinates": "original selected body UTF-16, applied in descending order",
+      "allEditsExactAndDisclosed": true
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "sourceSelectedTextSha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "editCount": 2,
+      "editCoordinates": "original selected body UTF-16, applied in descending order",
+      "allEditsExactAndDisclosed": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "sourceSelectedTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "editCount": 0,
+      "editCoordinates": "original selected body UTF-16, applied in descending order",
+      "allEditsExactAndDisclosed": true
+    }
+  ],
+  "answers": [
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q1",
+      "questionType": "single",
+      "prompt": "Which statement best summarizes the passage?",
+      "questionSha256": "541be9f95c6957823196d79dd8bf98e227b2eea2cd6b474b545136b03c3a69a0",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "Professional athletic work combines sustained preparation with uncertain career prospects.",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "全文同时写训练/准备、工况与职业不稳定；其他选项把局部要求或不存在的保证当全文中心。",
+      "evidence": [
+        {
+          "quote": "Being an athlete involves more than competing in athletic events.",
+          "startUtf16": 1408,
+          "endUtf16": 1473,
+          "sha256": "e990dc4c16f2729c4df2f7bc80b6b415461ab7d13b1767db45d730243caf192c",
+          "paragraph": 14
+        },
+        {
+          "quote": "Few people, however, make a full-time living from professional athletics—and when they do, professional athletes often have short careers with little job security.",
+          "startUtf16": 804,
+          "endUtf16": 967,
+          "sha256": "be91e2d7fb395087708942c5bd16785826a8e3d31c3a93c9ee5d95b6ed04f9da",
+          "paragraph": 12
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q2",
+      "questionType": "single",
+      "prompt": "Why do athletes study their opponents’ tendencies and weaknesses?",
+      "questionSha256": "2cddd8745cc9b7589b56ecd0318125cdc0c182ea9d7575fae185fd03318a17c4",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "To gain an advantage when they compete against those opponents.",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "目的状语直接说明研究对手弱点是为了竞争优势。",
+      "evidence": [
+        {
+          "quote": "To gain a competitive advantage, athletes also study their opponents' tendencies and weaknesses.",
+          "startUtf16": 1667,
+          "endUtf16": 1763,
+          "sha256": "4bec7ddcd9a626b81bc2945649f7556819fbedcb0d105bdb3599deb6adaf5d14",
+          "paragraph": 14
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q3",
+      "questionType": "single",
+      "prompt": "In the words “and when they do”, what does “do” refer to?",
+      "questionSha256": "db8fa314ce5568f53c519437062a7c2d6611e5f386f87b4564b901793f65f218",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "Make a full-time living from professional athletics.",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "do 省略前面的 make a full-time living from professional athletics。",
+      "evidence": [
+        {
+          "quote": "Few people, however, make a full-time living from professional athletics—and when they do, professional athletes often have short careers with little job security.",
+          "startUtf16": 804,
+          "endUtf16": 967,
+          "sha256": "be91e2d7fb395087708942c5bd16785826a8e3d31c3a93c9ee5d95b6ed04f9da",
+          "paragraph": 12
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q4",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Some professional athletes may have to travel internationally for competitions.",
+      "questionSha256": "24b3423652e93cf824f480288bb6beeb40014bba0064eb4276fd36e93b041f1a",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "TRUE",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "工作环境段明确说有时包括国际旅行；职业语境下这是预期读法，但 professional 的范围比该证据句的 athletes 更窄，见歧义标记。",
+      "evidence": [
+        {
+          "quote": "In addition, many athletes must travel to sporting events.",
+          "startUtf16": 2669,
+          "endUtf16": 2727,
+          "sha256": "7c57feb3c46b7e4317180ca7a625d028e7a2705cb26df67ec3efc6116774df3a",
+          "paragraph": 19
+        },
+        {
+          "quote": "Such travel may include long bus rides or plane trips, and, in some cases, international travel.",
+          "startUtf16": 2728,
+          "endUtf16": 2824,
+          "sha256": "565d607dc3ce3a5311b25603a8bede4a6a2262113fb3a03344af866618132ddb",
+          "paragraph": 19
+        }
+      ],
+      "confidence": 0.9,
+      "ambiguity": {
+        "severity": "minor-scope-clarification-requested",
+        "description": "旅行句指 athletes 总体，没有在此直接限定professional；若机械采用严格集合逻辑，可争辩职业子集未被单独证实。",
+        "alternativeDefensibleReading": "NOT GIVEN under an unusually strict subset reading",
+        "suggestedMinimumEdit": "Remove professional: Some athletes may have to travel internationally for competitions."
+      },
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q5",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Every athlete must obtain a university degree before entering this occupation.",
+      "questionSha256": "d7ecbb25a630419ea93bbf39e5af9ee7ef78b424a9a4268f4e8fff86d5fcda5e",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "FALSE",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "usually不要求正式学历，直接反驳every athlete must have university degree。",
+      "evidence": [
+        {
+          "quote": "No formal educational credential is typically required to become an athlete or sports competitor.",
+          "startUtf16": 3502,
+          "endUtf16": 3599,
+          "sha256": "dd693208e8f20ffb50bd0fa781f0bfa1ef615dc1fe9900e440af9d9373e312b9",
+          "paragraph": 26
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q6",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: High-school athletes usually spend ten hours a week training.",
+      "questionSha256": "1f4254a6e604ede7d2f85731d16a7f074853662106a0e541c4a7ff6335fa0216",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "NOT GIVEN",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "全文只说高中过往经验/训练和职业赛季工时，没有高中运动员每周十小时训练的数量。",
+      "evidence": [
+        {
+          "quote": "Athletes typically learn the rules of the game and develop their skills by playing the sport at lower levels of competition.",
+          "startUtf16": 4179,
+          "endUtf16": 4303,
+          "sha256": "32522479083709f2c7556d7267648ecfe75d9aac7c11177f61d120cbb6734d2a",
+          "paragraph": 30
+        },
+        {
+          "quote": "During the sports season, they typically work more than 40 hours per week for several months as they practice, train, travel, and compete.",
+          "startUtf16": 3213,
+          "endUtf16": 3351,
+          "sha256": "004a1b0b199be49a89bf038d225a23256dc5663f547d1ebf9623c307799cde84",
+          "paragraph": 23
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": "Read entire pinned teaching passage; training hours for high-school athletes are not quantified. Professional seasonal work hours do not answer this different population/activity.",
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q7",
+      "questionType": "short",
+      "prompt": "What may professional athletes receive from companies and brands? Write ONE WORD from the passage.",
+      "questionSha256": "3bef6a912b73f2dc0f0c69a4e3af7177b3fcb424ecb09c66bc9510ac4660ab51",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "endorsements",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 1,
+      "maximumWords": 1,
+      "rationale": "companies and brands 后直接指向商业代言，一词复数。",
+      "evidence": [
+        {
+          "quote": "They also may receive endorsements from companies and brands.",
+          "startUtf16": 5817,
+          "endUtf16": 5878,
+          "sha256": "73155baa565d2b1e54b2da086631bd48fa94d14d5bc57e0bfd1e9cb81e77ef68",
+          "paragraph": 36
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-athletes",
+      "materialId": "public-ordinary-v92-bls-athletes-reading",
+      "questionId": "q8",
+      "questionType": "short",
+      "prompt": "Complete the sentence with TWO WORDS from the passage: Teamwork involves working toward a _______ with other people.",
+      "questionSha256": "3d0048a9851c98712c7cbf8df2eea3c98e53535b728242ad3c4a93ba5cd937fc",
+      "teachingTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+      "answer": "shared goal",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 2,
+      "maximumWords": 2,
+      "rationale": "a后空格填shared goal，两词；shared goal符合原文与句法。",
+      "evidence": [
+        {
+          "quote": "The ability to work toward a shared goal with others, including teammates and coaches, is essential for athletes’ and sports competitors’ success.",
+          "startUtf16": 7027,
+          "endUtf16": 7173,
+          "sha256": "ea49da37973019acff45cf452839ede5f4ba21241beed3e67336d8f3fe0615a3",
+          "paragraph": 45
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q1",
+      "questionType": "single",
+      "prompt": "What is the main purpose of the passage?",
+      "questionSha256": "a8413d3835fd9348d0369c2dbbabb2742e8a962db068a04e894f4557d9927434",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "To describe musical work, preparation and employment conditions.",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "全文覆盖工作、准备与就业条件，不是票价/学位排名或建议人人古典。",
+      "evidence": [
+        {
+          "quote": "Musicians and singers play instruments or sing for live audiences and in recording studios.",
+          "startUtf16": 170,
+          "endUtf16": 261,
+          "sha256": "ac40d80d0e3255cb1c6167c74132cee9c18cc717b59df05c8b7011ae649f815b",
+          "paragraph": 3
+        },
+        {
+          "quote": "Musicians and singers need extensive training and regular practice to acquire their skills.",
+          "startUtf16": 3900,
+          "endUtf16": 3991,
+          "sha256": "abab945ef7984727683f7b6b567a8a8b35013510a31f5cc5e73cf781487cd792",
+          "paragraph": 26
+        },
+        {
+          "quote": "Many musicians and singers find only part-time or intermittent work and may have long periods of unemployment between jobs.",
+          "startUtf16": 3251,
+          "endUtf16": 3374,
+          "sha256": "fcd1e6c0a90c702bfdfc099b66b90ed8b9391c768477e0fbbe83cae232380b27",
+          "paragraph": 23
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q2",
+      "questionType": "single",
+      "prompt": "Why do some musicians become skilled in several instruments or styles?",
+      "questionSha256": "e09b4333677312860ee43ad6dbeb49d6664863a52d2c938e61f631d3574b5563",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "To make themselves more attractive to potential employers or clients.",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "more marketable 指让自己更有市场竞争力，可吸引雇主/客户。",
+      "evidence": [
+        {
+          "quote": "To make themselves more marketable, many become proficient in multiple musical instruments or styles.",
+          "startUtf16": 860,
+          "endUtf16": 961,
+          "sha256": "3147fb6c759dba7678ec066d1b9a0b469f90315b89cd76472d9a5ce1121d14fc",
+          "paragraph": 12
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q3",
+      "questionType": "single",
+      "prompt": "What does “This” refer to in “This includes rehearsing and performing during the day or night on weekdays and weekends”?",
+      "questionSha256": "d6170b15d9396cecdf5a5881f324891bd3920ab8c78e5db0868e43595e413d6f",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "The irregular working schedules of musicians and singers.",
+      "optionIndexZeroBased": 3,
+      "optionLetter": "D",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "This承接前一句不规律工作时间，并列出日夜/平日周末作为实例。",
+      "evidence": [
+        {
+          "quote": "Musicians and singers often have irregular work schedules. This includes rehearsing and performing during the day or night on weekdays and weekends.",
+          "startUtf16": 3101,
+          "endUtf16": 3249,
+          "sha256": "6cf89ff711fd586217a620a35d319e7339363842f21191cafb6551b3bb216b0c",
+          "paragraph": 22
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q4",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: All musicians and singers need formal postsecondary education to enter the occupation.",
+      "questionSha256": "56f503d3ea802095bb2b87ba057dd438bb6f66fb83115915da21c08faf014123",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "FALSE",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "typically do not need formal postsecondary education直接反驳all need。",
+      "evidence": [
+        {
+          "quote": "Musicians and singers typically do not need formal postsecondary education to enter the occupation.",
+          "startUtf16": 3674,
+          "endUtf16": 3773,
+          "sha256": "0ec217f749c87fdfe6302a49e8c934902471c28ca279598546d8bb442196b273",
+          "paragraph": 26
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q5",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: An undergraduate music degree costs more than a degree in business.",
+      "questionSha256": "3de98507883c8441916f3159b4843b382ed287bfcc2cdf37fdfb299603ae624b",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "NOT GIVEN",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "本文谈音乐课程和某些商科课程用途，没有两专业学费对比。",
+      "evidence": [
+        {
+          "quote": "Some business courses, such as marketing, may be helpful for learning about the self-promotion often required for professional musicians and singers.",
+          "startUtf16": 4757,
+          "endUtf16": 4906,
+          "sha256": "e99c83390c9dd9c9b5769f3dc249bc1441646d44c5bcbfd1636a2aa1e8043274",
+          "paragraph": 29
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": "Read entire pinned teaching passage; no tuition amounts, relative degree prices or business-degree cost comparison is supplied.",
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q6",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Some people may work full time in another occupation while continuing to work part time in music.",
+      "questionSha256": "185c8863c70116716209bc656b27c87f1659c1e38888eda93fb0acb1642a424b",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "TRUE",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "可在其他职业全职工作，同时兼职从事音乐，原文明说。",
+      "evidence": [
+        {
+          "quote": "The stress of constantly looking for work may require them to accept full-time jobs in other occupations while working part time as a musician or singer.",
+          "startUtf16": 3375,
+          "endUtf16": 3528,
+          "sha256": "d48396a5ccfcbe6e5392a4fea5f9b078c08d4f326ae872b35becbd298837cde7",
+          "paragraph": 23
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q7",
+      "questionType": "short",
+      "prompt": "What is the TWO-WORD name for musicians who play backup during recording sessions and live performances? Use words from the passage.",
+      "questionSha256": "72d39a0f396a9942cbecb8040cbf525f8eb247bfdb77629e98ca416fcf9aeb25",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "session musicians",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 2,
+      "maximumWords": 2,
+      "rationale": "描述专业伴奏工作者的双词名称，直接定义。",
+      "evidence": [
+        {
+          "quote": "Musicians who specialize in playing backup for a singer or band leader during recording sessions and live performances are known as session musicians.",
+          "startUtf16": 1919,
+          "endUtf16": 2069,
+          "sha256": "145a16a6311e832a5ea1b35f0d4b0daf84475655764e103c717e1dcc7f090e98",
+          "paragraph": 15
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "questionId": "q8",
+      "questionType": "short",
+      "prompt": "Complete the sentence with ONE HYPHENATED WORD from the passage: Business courses may help performers learn about the _______ required in their careers.",
+      "questionSha256": "2da7ee6572d01d21a7e0964e9d1c84f5888580768a0100cbf9588ae6f6eb145c",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "answer": "self-promotion",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 1,
+      "maximumWords": 1,
+      "rationale": "商科可帮助学习职业所需自我推广；原文一个连字符词。",
+      "evidence": [
+        {
+          "quote": "Some business courses, such as marketing, may be helpful for learning about the self-promotion often required for professional musicians and singers.",
+          "startUtf16": 4757,
+          "endUtf16": 4906,
+          "sha256": "e99c83390c9dd9c9b5769f3dc249bc1441646d44c5bcbfd1636a2aa1e8043274",
+          "paragraph": 29
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q1",
+      "questionType": "single",
+      "prompt": "What is the main purpose of this excerpt?",
+      "questionSha256": "2066dd5f501d6a4b91c1773a50bc4142b62d52a0a956b59ea41487f815bc1d83",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "To explain the aims of psychotherapy and illustrate some of its approaches.",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "定义/目标及多种方法例子贯穿选段，无人人同治疗/完整目录/药物排名。",
+      "evidence": [
+        {
+          "quote": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors.",
+          "startUtf16": 41,
+          "endUtf16": 206,
+          "sha256": "8c06869f0992f847278f8441c35007482684082283ceb61c9aac8765435005cf",
+          "paragraph": 3
+        },
+        {
+          "quote": "Elements of psychotherapy can include the following:",
+          "startUtf16": 2667,
+          "endUtf16": 2719,
+          "sha256": "790fee038d95244cd219be7b171f5af2859e262cb0f624460ffb1f870a3db987",
+          "paragraph": 17
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q2",
+      "questionType": "single",
+      "prompt": "Why does the passage mention being examined by a health care provider before treatment?",
+      "questionSha256": "cbdbeaa96b6702ef9a4d73c792b4a1311d507bd352303faaa7ee997f931d6acc",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "To check whether a physical health issue could be causing the symptoms.",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "检查是为了排除可能的身体病因，sometimes不能改all。",
+      "evidence": [
+        {
+          "quote": "First being examined by a health care provider can help rule out a physical health issue.",
+          "startUtf16": 1323,
+          "endUtf16": 1412,
+          "sha256": "a076d38ff5cea8cc7af67171fd108b96fd33d63ab8741d39f150d5401c718503",
+          "paragraph": 11
+        },
+        {
+          "quote": "This step is important because sometimes symptoms, like a change in mood or trouble concentrating, are due to a medical condition.",
+          "startUtf16": 1413,
+          "endUtf16": 1543,
+          "sha256": "6b1577e9e1720172571a09ad8d7958442174e1567e26c77fc0d3aaf7f44a4e29",
+          "paragraph": 11
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q3",
+      "questionType": "single",
+      "prompt": "In the description of exposure therapy, what does “This” refer to in “This is continued until, over time, the fear associated with those things goes down”?",
+      "questionSha256": "35436d1161e7b986e12288553b1516a103e71908c4b0dcd018104e84c47c1bdf",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "Repeatedly learning to tolerate distress in a supportive environment.",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "This是承接前句的暴露治疗耐受练习持续进行，不是避免一切焦虑或固定服药。",
+      "evidence": [
+        {
+          "quote": "Use exposure therapy (a type of CBT) for anxiety disorders, in which a person spends brief periods in a supportive environment learning to tolerate the distress caused by certain items, ideas, or imagined scenes.",
+          "startUtf16": 3317,
+          "endUtf16": 3529,
+          "sha256": "58f3ab3c1495c690fc0a5a47812f5cccef94ce521665ed51716e0c65ef8aaf50",
+          "paragraph": 22
+        },
+        {
+          "quote": "This is continued until, over time, the fear associated with those things goes down.",
+          "startUtf16": 3530,
+          "endUtf16": 3614,
+          "sha256": "4f1d50b3d49cc642cb88b9c5062c9084d9f0c86c0ed0e721fa2c4b7ad089bbfb",
+          "paragraph": 22
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q4",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Most psychotherapy sessions last exactly fifty minutes.",
+      "questionSha256": "19c541c27caab91f2e5fa9e11472b38b36406c150d90d26d3666a5fdfc7d6a39",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "NOT GIVEN",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "没有会谈50分钟的时长信息；brief periods只说暴露练习不等于完整session。",
+      "evidence": [
+        {
+          "quote": "Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+          "startUtf16": 207,
+          "endUtf16": 334,
+          "sha256": "4ba4adfb2c029e86436098a75c1c79ac66d032fe0be4700a6e52aec8cccd7dcb",
+          "paragraph": 3
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": "Read entire pinned teaching passage; no session duration is supplied. The exposure-treatment paragraph mentions brief periods without a number and cannot establish fifty-minute sessions.",
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q5",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Psychotherapy may be used alongside medication.",
+      "questionSha256": "0d687687ad43f9d4791e31195ef08b29bc8efa0b7d8faf2ec4262fe57d185756",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "TRUE",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "alternative to or alongside明确包括与药物并用。",
+      "evidence": [
+        {
+          "quote": "Psychotherapy can be used as an alternative to or alongside medication and other treatment options.",
+          "startUtf16": 1588,
+          "endUtf16": 1687,
+          "sha256": "157082ecba6bd12513aa1c6b2f84c0046697cc60299e1f72704e820fa0ab7809",
+          "paragraph": 13
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q6",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The passage says that every patient should receive the same psychotherapy approach, regardless of the disorder.",
+      "questionSha256": "72c5f766816e8e1e5dbfcf6b8ad2ad9ad65303cc54189d212fe3f9fa8b27be85",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "FALSE",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "按病症和个人需要调整，且举不同病症方法不同，反驳every/same/regardless。",
+      "evidence": [
+        {
+          "quote": "Often, the type of treatment is tailored to the specific disorder.",
+          "startUtf16": 2249,
+          "endUtf16": 2315,
+          "sha256": "107c17fb8074735f62b67fdcfe1e8d3e7ba63c1af95b508eea21f223fbffce9d",
+          "paragraph": 16
+        },
+        {
+          "quote": "Therapists may use one primary approach or incorporate elements from multiple approaches depending on their training, the disorder being treated, and the needs of the person receiving treatment.",
+          "startUtf16": 2471,
+          "endUtf16": 2665,
+          "sha256": "ce30d62b4d23f86f7bd1450d338f6bc9c0bd4870ccb9c2eb547367b0fc02e2ae",
+          "paragraph": 16
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q7",
+      "questionType": "short",
+      "prompt": "Which therapy is described as helping people question inaccurate or harmful automatic thoughts? Write NO MORE THAN THREE WORDS from the passage.",
+      "questionSha256": "993a8508935c23de93ce564db4b251b1cfb2c50db36209f4fd2a810c8d9dbab9",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "cognitive behavioral therapy",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [
+        "CBT"
+      ],
+      "answerWordCount": 3,
+      "maximumWords": 3,
+      "rationale": "所述质疑有害自动思维的方法直接名为CBT；全称三词，原文缩写也是可接受短答。",
+      "evidence": [
+        {
+          "quote": "Help a person become aware of automatic ways of thinking that are inaccurate or harmful (for example, having a low opinion of their abilities) and then question those thoughts, understand how the thoughts affect their emotions and behavior, and change self-defeating behavior patterns.",
+          "startUtf16": 2721,
+          "endUtf16": 3006,
+          "sha256": "52e0b78717e140671e5794bcdbcd0ff7274d477b29b670dbcc90d87ede599f55",
+          "paragraph": 18
+        },
+        {
+          "quote": "This approach is known as cognitive behavioral therapy (CBT) .",
+          "startUtf16": 3007,
+          "endUtf16": 3069,
+          "sha256": "c74e5ba2badfd00baaa61e9c567f61c60efe2075be68c6bec04611e21f1b649c",
+          "paragraph": 18
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": "NO MORE THAN THREE WORDS permits the explicitly given one-word abbreviation as well as the three-word full term.",
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "questionId": "q8",
+      "questionType": "short",
+      "prompt": "Complete the sentence with ONE HYPHENATED WORD from the passage: Therapies supported by patient research are described as _______ therapies.",
+      "questionSha256": "50fc233f5fcfa39f74c4d4a61a717e0c41b69c06e563de251359980d41f79292",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "answer": "evidence-based",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 1,
+      "maximumWords": 1,
+      "rationale": "研究支持的方法称evidence-based，原文一个连字符词。",
+      "evidence": [
+        {
+          "quote": "These evidence-based therapies have been shown to reduce symptoms of depression, anxiety, and other mental disorders.",
+          "startUtf16": 4335,
+          "endUtf16": 4452,
+          "sha256": "0c5e2edcb80d6f8dfaf18f9549f334dd59ba71ad28ad12d393d2f500a9403738",
+          "paragraph": 27
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q1",
+      "questionType": "single",
+      "prompt": "Which description best captures the purpose of the teaching text?",
+      "questionSha256": "f813cebbe8a1ac68e701fd6d50e9ad9675448a486b79bf459a53f96f3d3fc472",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "It explains DNA’s information, structure and roles in biological processes.",
+      "optionIndexZeroBased": 3,
+      "optionLetter": "D",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "全文含位置/组成/功能/蛋白生成及双螺旋复制，只有D概括整体。",
+      "evidence": [
+        {
+          "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique.",
+          "startUtf16": 40,
+          "endUtf16": 154,
+          "sha256": "64e3c4fc2410916ed678e722fad84a83e36a1f79e2499ede90af5574da695be1",
+          "paragraph": 2
+        },
+        {
+          "quote": "DNA's instructions are used to make proteins in a two-step process.",
+          "startUtf16": 2909,
+          "endUtf16": 2976,
+          "sha256": "85badbddd5a38ae175e14d0f4fcd0d886fb4c5b1a0e338bff42cef7672f77953",
+          "paragraph": 17
+        },
+        {
+          "quote": "DNA's unique structure enables the molecule to copy itself during cell division.",
+          "startUtf16": 4390,
+          "endUtf16": 4470,
+          "sha256": "6841c1925caed0a4df446f27167dd4c0f0641489b7f5755b2c89308bbc0a38cc",
+          "paragraph": 22
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q2",
+      "questionType": "single",
+      "prompt": "Why must each DNA molecule be tightly packaged in a eukaryotic cell?",
+      "questionSha256": "04fcf486f2871c13930cfdba282c38e08fe442c0d1ebdcf2e3de0a9be14925e6",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "Cells are small and contain many DNA molecules.",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "because句直接给出细胞小且每细胞DNA分子多。",
+      "evidence": [
+        {
+          "quote": "Because the cell is very small, and because organisms have many DNA molecules per cell, each DNA molecule must be tightly packaged.",
+          "startUtf16": 393,
+          "endUtf16": 524,
+          "sha256": "3a16d4dfeefee3f9315857dd1906dd7f6ad36afb8e1066b54ff505cd22f3d769",
+          "paragraph": 4
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q3",
+      "questionType": "single",
+      "prompt": "What does “These single strands” refer to in the paragraph about DNA copying?",
+      "questionSha256": "ead7a3c1abe5174b96fb3300802fe324290301029832154e00cbef075f96d77b",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "The two individual DNA strands formed when the double helix separates.",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "These single strands回指双螺旋从中间分开所得的两条单链。",
+      "evidence": [
+        {
+          "quote": "When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands.",
+          "startUtf16": 4471,
+          "endUtf16": 4571,
+          "sha256": "87686fe601d17c9efd8614d2382ce3bcc625fa5e39ff04dfca5ddf27206e5414",
+          "paragraph": 22
+        },
+        {
+          "quote": "These single strands serve as templates for building two new, double-stranded DNA molecules - each a replica of the original DNA molecule.",
+          "startUtf16": 4572,
+          "endUtf16": 4710,
+          "sha256": "35b2ffdbd3a886973bdb1af88761210f48d644a515ad606ba82fdf6a3e51dc0c",
+          "paragraph": 22
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q4",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Humans inherit their mitochondrial DNA from the male parent.",
+      "questionSha256": "6bc6833c9aaed4602b976c2dfdfb349053eef05a2d3cb652c1b304912df6d186",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "FALSE",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "按文中说法线粒体DNA来自female而非male；只按本文判断，不声称新的生物学绝对命题。",
+      "evidence": [
+        {
+          "quote": "However, organisms inherit all of their mitochondrial DNA from the female parent.",
+          "startUtf16": 1352,
+          "endUtf16": 1433,
+          "sha256": "20b9f691ed7d82128f467fd2fcb7950d7b8de3d417049553fe456273f1c7cffb",
+          "paragraph": 8
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q5",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: According to the passage, nitrogen base A pairs with T in the DNA double helix.",
+      "questionSha256": "5e34043cf5337919534fe7116c698acf48c060b8e5f6fed626ffe2f0d95adf21",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "TRUE",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "A与T、C与G互补直接写明。",
+      "evidence": [
+        {
+          "quote": "Because of the highly specific nature of this type of chemical pairing, base A always pairs with base T, and likewise C with G.",
+          "startUtf16": 4103,
+          "endUtf16": 4230,
+          "sha256": "5af6a25be682aa7c02b4ec071c8f433395c57deba0fefa5c11b504519060f386",
+          "paragraph": 21
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q6",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: A cell copies all of its DNA exactly three times each hour.",
+      "questionSha256": "12ffc5da0209bae197ed22ba44113275ebafcf9bf3282ca852e1b6f460b5d795",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "NOT GIVEN",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "文中解释复制时机/机制，没有每小时三次的固定频率。",
+      "evidence": [
+        {
+          "quote": "DNA's unique structure enables the molecule to copy itself during cell division.",
+          "startUtf16": 4390,
+          "endUtf16": 4470,
+          "sha256": "6841c1925caed0a4df446f27167dd4c0f0641489b7f5755b2c89308bbc0a38cc",
+          "paragraph": 22
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": "Read entire pinned teaching passage; cell division is discussed, but no hourly replication rate or exactly three repetitions is provided.",
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q7",
+      "questionType": "short",
+      "prompt": "What do researchers call DNA located in the cell’s nucleus? Write TWO WORDS from the passage.",
+      "questionSha256": "7cb2bbcbdaefcc67b1fbb243b1e8549798134e1a90615de00b00dc40791614f2",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "nuclear DNA",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 2,
+      "maximumWords": 2,
+      "rationale": "核中的DNA被研究者称nuclear DNA，两词。",
+      "evidence": [
+        {
+          "quote": "Researchers refer to DNA found in the cell's nucleus as nuclear DNA.",
+          "startUtf16": 876,
+          "endUtf16": 944,
+          "sha256": "565d5584cb782de40b902a1100798ea74eafdf593ffd39b1907f219d2038bb64",
+          "paragraph": 6
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "questionId": "q8",
+      "questionType": "short",
+      "prompt": "Complete the sentence with NO MORE THAN THREE WORDS from the passage: Enzymes transcribe DNA information into an intermediary molecule called _______.",
+      "questionSha256": "1c0ec20a7c3a234f747eef19f26aba10ff97d585b8e09f21cb5f29c97130aa82",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "answer": "messenger ribonucleic acid",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [
+        "mRNA"
+      ],
+      "answerWordCount": 3,
+      "maximumWords": 3,
+      "rationale": "中间分子的全称三词；同句提供mRNA缩写，在不超过三词规则下也成立。",
+      "evidence": [
+        {
+          "quote": "First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA.",
+          "startUtf16": 2977,
+          "endUtf16": 3122,
+          "sha256": "f9028f00b80db499441d78e87c93da61485265234b091a725a99b426065029ff",
+          "paragraph": 17
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": "The sentence explicitly equates mRNA with messenger ribonucleic acid. A one-word answer remains inside NO MORE THAN THREE WORDS.",
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q1",
+      "questionType": "single",
+      "prompt": "What development is the article mainly reporting?",
+      "questionSha256": "0f2207a3e25d2af83e39b8d60d0be41757929203bbfef2238f72443d9828f862",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "A demonstration of video reception using an atom-based receiver.",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "当前主要新发展是原子接收器的视频接收演示，B只是影响参数的局部。",
+      "evidence": [
+        {
+          "quote": "Researchers at the National Institute of Standards and Technology (NIST) have adapted their atom-based radio receiver to detect and display live color television and video games.",
+          "startUtf16": 0,
+          "endUtf16": 178,
+          "sha256": "fc3b4c60b6d1fd0bbcbfd3ea4f2ae9027b52b723a06247ebde01919f589eaed3",
+          "paragraph": 1
+        },
+        {
+          "quote": "The latest work, described in AVS Quantum Science, is the first to demonstrate video reception.",
+          "startUtf16": 717,
+          "endUtf16": 812,
+          "sha256": "45685fe43a2193695f2fdd4c69ddacb926dbc8b98e49829499307d85d1a9b645",
+          "paragraph": 3
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q2",
+      "questionType": "single",
+      "prompt": "Why could atom-based communications systems be useful in remote locations or emergencies?",
+      "questionSha256": "c955d99c51c37158278cdc269a7ad272af6a140a9fc282abb87a1b01d05407ba",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "They may be smaller and more tolerant of noisy environments.",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "可能体积小、耐噪是文中潜在用途理由，不能变成现有免费网络保证。",
+      "evidence": [
+        {
+          "quote": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics.",
+          "startUtf16": 180,
+          "endUtf16": 351,
+          "sha256": "877287ade2124bc6eb443fab5fa67f6863195e3b90741cdf07acbcf2612db25a",
+          "paragraph": 2
+        },
+        {
+          "quote": "Adding video capability could enhance radio systems in, for example, remote locations or emergency situations.",
+          "startUtf16": 352,
+          "endUtf16": 462,
+          "sha256": "4391c28a3223d1072f7ebc7d1c2ac48e7778aaaf69c642a36f122ba40ce5671b",
+          "paragraph": 2
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q3",
+      "questionType": "single",
+      "prompt": "What does “This time” refer to in the paragraph about the laser interaction zone?",
+      "questionSha256": "7cbed1294c1eaccde537aacc9997934b77d7a27c677428ac5c057cdc6b123d5c",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "The average time that atoms stay in the laser interaction zone.",
+      "optionIndexZeroBased": 3,
+      "optionLetter": "D",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "This time 指前一句在激光相互作用区平均停留时间。",
+      "evidence": [
+        {
+          "quote": "The beam size affects the average time the atoms remain in the laser interaction zone.",
+          "startUtf16": 2275,
+          "endUtf16": 2361,
+          "sha256": "e5c0bee9fe18ac9dab693a58cfb65e8473cbd158f4986a19a9f7f8023cde8700",
+          "paragraph": 8
+        },
+        {
+          "quote": "This time is inversely related to the bandwidth of the receiver; that is, a shorter time and smaller beam produce more data.",
+          "startUtf16": 2362,
+          "endUtf16": 2486,
+          "sha256": "8a1c49a63c4e5299e7379db7f114ee84bdc85932e84bf457f61c8702fbe066b0",
+          "paragraph": 8
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q4",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The completed receiver weighed less than one kilogram.",
+      "questionSha256": "bc8f247e7e4c1b5de5d8687fcc8b479afa42b03384e267a590d1e5d6108d8dd3",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "NOT GIVEN",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "文中只说可能更小，没有装置重量或一公斤数量。",
+      "evidence": [
+        {
+          "quote": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics.",
+          "startUtf16": 180,
+          "endUtf16": 351,
+          "sha256": "877287ade2124bc6eb443fab5fa67f6863195e3b90741cdf07acbcf2612db25a",
+          "paragraph": 2
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": "Read entire pinned teaching passage; no mass/weight or kilogram measure is supplied. Potential smaller size does not establish a sub-kilogram finished receiver.",
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q5",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The original carrier signal was discarded before the system was evaluated.",
+      "questionSha256": "6ee838471e328e32af480d691fbcc511c260b89a6af1d6ecd5140148172ce5bd",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "FALSE",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "原始载波仍作为参考参与系统评估，与丢弃相矛盾。",
+      "evidence": [
+        {
+          "quote": "Researchers use the original carrier signal as a reference and compare it to the final video output detected through the atoms to evaluate the system.",
+          "startUtf16": 1977,
+          "endUtf16": 2127,
+          "sha256": "2a55a9ac17df2cd9b571abe589d5e3b088f4a9894cf62b5e7cad4ac192c2ee5a",
+          "paragraph": 7
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q6",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The researchers used rubidium atoms in the video-reception setup.",
+      "questionSha256": "7dac8e20dc58e9a8d7b2d2960461860877445640303db70259e16afcaf11d6a5",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "TRUE",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "本次装置为气态rubidium；cesium属于先前实验。",
+      "evidence": [
+        {
+          "quote": "Researchers use two different color lasers to prepare gaseous rubidium atoms in Rydberg states in a glass container.",
+          "startUtf16": 1153,
+          "endUtf16": 1269,
+          "sha256": "8f8d621860c2ef6fed56f7169c8b175f9c639b5467835229418eab43603567a2",
+          "paragraph": 5
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q7",
+      "questionType": "short",
+      "prompt": "Which device transforms the signal into a video graphics array format? Write NO MORE THAN THREE WORDS from the passage.",
+      "questionSha256": "bcdea0db077be6b7e1c6a3254f6d65126b2109a6169f10d26bacf71a1c6ab29e",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "analog-to-digital converter",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [
+        "An analog-to-digital converter"
+      ],
+      "answerWordCount": 2,
+      "maximumWords": 3,
+      "rationale": "明确命名转换成VGA格式的装置。连字符词算一个；加原文冠词仍不超三词。",
+      "evidence": [
+        {
+          "quote": "An analog-to-digital converter transforms the signal into a video graphics array format for display.",
+          "startUtf16": 1672,
+          "endUtf16": 1772,
+          "sha256": "222fdeea40d84684b66d7df6f0e436222271d105d0d5fa85bcb1c73868d9f1ea",
+          "paragraph": 6
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": "Canonical answer is two space-delimited words; the copied phrase with An is three. Both identify the same named device and satisfy NO MORE THAN THREE WORDS.",
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "questionId": "q8",
+      "questionType": "short",
+      "prompt": "Complete the sentence with TWO WORDS from the passage: Smaller interaction areas produce a higher signal _______ and better resolution.",
+      "questionSha256": "b78933d0a57cafe697631c3d9179ba43534ccb6c4837b9cdfec19f6217e69a7f",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "answer": "refresh rate",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 2,
+      "maximumWords": 2,
+      "rationale": "higher signal 后的两个词，原句直接连接better resolution。",
+      "evidence": [
+        {
+          "quote": "That’s because atoms move in and out of the interaction zone, so smaller areas result in a higher signal “refresh rate” and better resolution.",
+          "startUtf16": 2487,
+          "endUtf16": 2629,
+          "sha256": "80a25ae1982ca64a87e87acffc8e2dd1439bda3c109f81a49422bda2af3a2b4b",
+          "paragraph": 8
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q1",
+      "questionType": "single",
+      "prompt": "What is the main purpose of this fixed fiscal-year report excerpt?",
+      "questionSha256": "798a20da03bf9061a721c15b5a98c6289e8d41f3be50d1bb7e1808e203f3e726",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "To summarize fiscal-year budget changes and explain limits to the comparisons.",
+      "optionIndexZeroBased": 3,
+      "optionLetter": "D",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "全文总结年度财政变化，同时解释支付时点、数据修订/缺项等比较限制。",
+      "evidence": [
+        {
+          "quote": "Revenues and outlays alike increased from 2024 totals.",
+          "startUtf16": 190,
+          "endUtf16": 244,
+          "sha256": "05f466fb009c0a67ac3454ceb3ba48566574ec7d49f67ed64a86776c5ce969fd",
+          "paragraph": 1
+        },
+        {
+          "quote": "If not for those shifts, the deficit in 2025 would have been 6 percent smaller—instead of 2 percent smaller—than it was in 2024.",
+          "startUtf16": 1728,
+          "endUtf16": 1856,
+          "sha256": "40fe67982e7d281a2e79b3234e95f8e1035e4c71e3a367950db732baa8529f30",
+          "paragraph": 3
+        },
+        {
+          "quote": "Because of the lapse in funding, some data that CBO typically would use for its analysis were unavailable.",
+          "startUtf16": 2395,
+          "endUtf16": 2501,
+          "sha256": "3829a2582970cf5ecc03dd7e16d123414c4e5ea9a3a475989a2d64515a9da770",
+          "paragraph": 5
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q2",
+      "questionType": "single",
+      "prompt": "Why were some outlays shifted from fiscal year 2024 into 2023?",
+      "questionSha256": "feed6466692819f64f623514d3b8623fcb8cb3c3c82c8a7f6ed3eaf5d7afda05",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "The first day of fiscal year 2024 fell on a weekend.",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "10月1日周末是支付跨财年移动的明示原因。",
+      "evidence": [
+        {
+          "quote": "Outlays in fiscal year 2024 were reduced because October 1 (the first day of the fiscal year) fell on a weekend.",
+          "startUtf16": 1530,
+          "endUtf16": 1642,
+          "sha256": "ef19c4ef2911c092934abc7ae221d95f7d0bb6867f6163be53475b6aa015d398",
+          "paragraph": 3
+        },
+        {
+          "quote": "As a result, certain payments totaling $72 billion were shifted from 2024 into 2023.",
+          "startUtf16": 1643,
+          "endUtf16": 1727,
+          "sha256": "6ff19e820f2ceb6cf8ab78ca3e1445c1e8d6c99296a86af37ad91ef6ebaa93d0",
+          "paragraph": 3
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q3",
+      "questionType": "single",
+      "prompt": "What does “Those increases” refer to in the first paragraph?",
+      "questionSha256": "546c752b74323376671ea03f192e850442e70d9f3067fd2580eabed374d6e066",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "The spending increases in areas including major benefit programmes and debt interest.",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "最近先行词为福利等和利息的支出增长，而非收入或下一句支出减少。",
+      "evidence": [
+        {
+          "quote": "Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion).",
+          "startUtf16": 423,
+          "endUtf16": 636,
+          "sha256": "86264a7b19a3c924940c032885d2c7057d7a66ecd7392ccacfa40e4c59f1d5e9",
+          "paragraph": 1
+        },
+        {
+          "quote": "Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration.",
+          "startUtf16": 637,
+          "endUtf16": 786,
+          "sha256": "e8bd0a3b75840168f1ee1f1fd7bd796e3ac37817806f5e5b9190e6baffb3c45d",
+          "paragraph": 1
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q4",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The deficit was a smaller percentage of GDP in 2025 than in 2024.",
+      "questionSha256": "68c50b08a87df68bc840e07f0c632a4c569742e846d0d36cb2e02e1b049a1274",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "TRUE",
+      "optionIndexZeroBased": 0,
+      "optionLetter": "A",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "5.9小于6.3，都是赤字/GDP，不是债务/GDP。",
+      "evidence": [
+        {
+          "quote": "The federal deficit in 2025 was equal to 5.9 percent of the nation’s gross domestic product (GDP), a decrease from 6.3 percent of GDP in 2024.",
+          "startUtf16": 1009,
+          "endUtf16": 1151,
+          "sha256": "205c14378b8f1d46aa87cf63bad33500c1e7c39505fca0409d23f50240d4aa37",
+          "paragraph": 2
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q5",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The average household paid more tax in 2025 than in 2024.",
+      "questionSha256": "ef318b8eea555389a6cf2ee035ae1d3ce049a835dbf0ca5edf18dda95d57355e",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "NOT GIVEN",
+      "optionIndexZeroBased": 2,
+      "optionLetter": "C",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "个人税收入总量增加不等于平均家庭纳税增加；无家庭分布或平均额。",
+      "evidence": [
+        {
+          "quote": "Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts.",
+          "startUtf16": 245,
+          "endUtf16": 422,
+          "sha256": "c63756a7c4c30d1a05e267e6296b2356421c31ca03bddd5a71b30d0e7f0ee830",
+          "paragraph": 1
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": "Read entire pinned teaching passage; no average household payment, number of households or distributional comparison is supplied. Aggregate receipts cannot settle this per-household claim.",
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q6",
+      "questionType": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Both revenues and outlays fell in 2025 compared with their 2024 totals.",
+      "questionSha256": "081d32f327aca7abc933d2116fd1d4bbb26695e0bbba6fc4b5904e0338820f90",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "FALSE",
+      "optionIndexZeroBased": 1,
+      "optionLetter": "B",
+      "acceptableAlternatives": [],
+      "answerWordCount": null,
+      "maximumWords": null,
+      "rationale": "收入支出都增加，直接反驳both fell。",
+      "evidence": [
+        {
+          "quote": "Revenues and outlays alike increased from 2024 totals.",
+          "startUtf16": 190,
+          "endUtf16": 244,
+          "sha256": "05f466fb009c0a67ac3454ceb3ba48566574ec7d49f67ed64a86776c5ce969fd",
+          "paragraph": 1
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q7",
+      "questionType": "short",
+      "prompt": "Which statement supplied the subsequently reported September 2025 data? Give its THREE-WORD title from the passage.",
+      "questionSha256": "de655c6d5d9c48079e7117825b25ef4c360213e8b1bd25634a5cdd78228b29f8",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "Monthly Treasury Statement",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 3,
+      "maximumWords": 3,
+      "rationale": "随后报告的数据来源为这份三词标题，不是此前的Monthly Budget Review。",
+      "evidence": [
+        {
+          "quote": "The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+          "startUtf16": 787,
+          "endUtf16": 1007,
+          "sha256": "7041c81643c60b4a5c326102701d39824220bf35e26947023e29a9ec924ce4ca",
+          "paragraph": 1
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "materialId": "public-ordinary-v92-cbo-budget-2025-reading",
+      "questionId": "q8",
+      "questionType": "short",
+      "prompt": "Complete the sentence with ONE NUMBER from the passage: Public debt rose to _______ percent of GDP at the end of fiscal year 2025.",
+      "questionSha256": "25a652d447668b7ada48ffc4236f81d12bd790a5af6eb773308be83c75bb088e",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "answer": "99.8",
+      "optionIndexZeroBased": null,
+      "optionLetter": null,
+      "acceptableAlternatives": [],
+      "answerWordCount": 1,
+      "maximumWords": 1,
+      "rationale": "空后已有percent of GDP，所以只填99.8，不加百分号/单位。",
+      "evidence": [
+        {
+          "quote": "Federal debt held by the public increased in 2025 relative to the size of the economy—rising to 99.8 percent from 97.4 percent of GDP at the end of fiscal year 2024.",
+          "startUtf16": 1363,
+          "endUtf16": 1528,
+          "sha256": "538452b7074365cb95d94951223d89910e11c0a691d0a5461209e9e9ad3bbea4",
+          "paragraph": 2
+        }
+      ],
+      "confidence": 0.99,
+      "ambiguity": null,
+      "absenceReview": null,
+      "answerFormNote": null,
+      "approval": "blind-reviewer-proposed-answer-not-author-key-or-learner-score"
+    }
+  ],
+  "summary": {
+    "materials": 6,
+    "questions": 48,
+    "shortAnswers": 12,
+    "judgementItems": 18,
+    "minorScopeClarifications": 1,
+    "sourceOriginalsChanged": 0,
+    "authorComparisonPerformed": false,
+    "activation": 0,
+    "mastery": 0
+  }
+}

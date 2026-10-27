@@ -2,8 +2,10 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),{createRequire}=require('node:module');
 const repo=path.resolve(__dirname,'..'),C=require('../tools/build-gsa-graded-course.cjs'),A=require('../assets/assessment-core.js'),P=require('../assets/public-course-planner.js'),Player=require('../assets/course-player.js'),Adaptive=require('../assets/adaptive-plan.js'),Expansion=require('../assets/course-expansion.js'),Year=require('../assets/year-planner.js'),Hub=require('../assets/today-hub.js');
 const copy=value=>JSON.parse(JSON.stringify(value)),sourceD=require('../assets/curriculum-data.js'),sourceContexts=require('../assets/public-context-data.js'),entries=require('../assets/essential-vocabulary-data.js').entries,releasePath='curriculum/gsa-graded-course/release.json';
-const gsaId=id=>/^public-gsa-plain-language-/.test(id),base=copy(sourceD);base.materials=base.materials.filter(m=>!gsaId(m.id));delete base.publicCoursePlan;delete base.audit.gsaGradedCourse;
-const baseContexts=copy(sourceContexts);baseContexts.sources=baseContexts.sources.filter(s=>!s.sourceId.startsWith('gsa-plain-language-'));delete baseContexts.supplementalReleases;
+// This regression rebuilds the historical75→80 composition; ordinary86 is tested separately.
+const partition=require('./public-artifact-modes-fixture.cjs').load({data:sourceD,sourceContexts,projectRoot:repo});
+const gsaId=id=>/^public-gsa-plain-language-/.test(id),base=copy(partition.base80||partition.actual);base.materials=base.materials.filter(m=>!gsaId(m.id));delete base.publicCoursePlan;delete base.audit.gsaGradedCourse;
+const baseContexts=copy(partition.legacySourceContexts);
 const candidate=copy(base),composition=C.appendToCurriculum(candidate,{root:repo,releasePath,sourceContexts:baseContexts}),options={sourceContexts:composition.sourceContexts,entries,materialContentHash:A.materialContentHash,expandDay:Expansion.overlay};candidate.publicCoursePlan=P.build(candidate,options);
 const gsaAssignments=candidate.publicCoursePlan.assignments.filter(a=>gsaId(a.materialId));
 function tempPackage(t){const Native=require('./native-public-fixtures.cjs'),dir=Native.tempDirectory(t,'ielts-gsa-package-');for(const folder of['curriculum/gsa-graded-course','materials/public/gsa-graded-course','assets/assessment-core.js'])Native.copyTree(path.join(repo,folder),path.join(dir,folder),{sourceRoot:repo,destinationRoot:dir});return dir;}

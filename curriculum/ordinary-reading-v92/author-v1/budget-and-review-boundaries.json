@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "author-reference-only-not-learner-placement-or-course-admission",
+  "budgets": [
+    {"sourceId":"bls-athletes","reading":10,"independentQuestions":12,"correction":6,"summary":2,"total":30},
+    {"sourceId":"bls-musicians","reading":10,"independentQuestions":12,"correction":6,"summary":2,"total":30},
+    {"sourceId":"nimh-psychotherapies","reading":7,"independentQuestions":10,"correction":6,"summary":2,"total":25},
+    {"sourceId":"nhgri-dna","reading":10,"independentQuestions":12,"correction":6,"summary":2,"total":30},
+    {"sourceId":"nist-atomic-television","reading":7,"independentQuestions":10,"correction":6,"summary":2,"total":25},
+    {"sourceId":"cbo-budget-2025","reading":5,"independentQuestions":8,"correction":5,"summary":2,"total":20}
+  ],
+  "readingStudyTotalAcrossSixFutureUnits": 160,
+  "separateContextActivities": "Two grammar examples per source are available to the existing grammar/context consumer; their real practice must fit its existing task budget. Word anchors are dictionary/context candidates, not mandatory new-word acquisition quotas or time-free teaching.",
+  "dailyBudget": {"limitMinutes":360,"timer":{"focusMinutes":25,"shortBreakMinutes":5,"longBreakMinutes":15,"cycles":4},"boundaryStudyMinutes":285,"boundaryBreakMinutes":75,"reserveStudyMinutesInside285":15,"maximumOtherStudyFormula":"270 - admitted reading study - any additional context/review study; actual day guard may allow less"},
+  "guards": ["Actual suitable reading level and required prior learning must be established; author B2 or B2–C1 labels are uncalibrated.","Only eligible future unstarted/unfrozen ordinary days; preserve old required tasks, historical drafts and the current80 public assignments/reviews.","If actual due work, errors or learner speed exceed the budget, keep unfinished work and carry it forward; do not mark it complete or shorten required learning.","No independent assessment, gate/final, listening, pronunciation, new lexical mastery or Band claim is released."],
+  "independence": {
+    "authorDidNotReadFrontendBlindNotesBeforeV1":true,
+    "frontendBlindNotesSha256ProvidedByRoot":"d3ca8c809850c493802ea6b1a8b2aed36a1abf4884115b34482801aa810a566d",
+    "rootReadAuthor48DefinitionsBeforeV1Freeze":true,
+    "rootRequestedPrefreezeChange":"Replace implausible main-idea distractors in DNA/NIST/CBO with real subsection, earlier-experiment or future-report misunderstandings.",
+    "rootReviewIsNotBlindAnswerTest":true,
+    "frontendQuestionBlindAnswers":"pending; do not send keys before reviewer freezes them",
+    "reviewerHuman":false
+  },
+  "active": false,
+  "newCanonicalTargets": 0,
+  "masteryEvidence": 0
+}

@@ -11,25 +11,25 @@
     },
     "derived": {
       "total": 416,
-      "assigned": 185,
-      "pending": 231
+      "assigned": 179,
+      "pending": 237
     },
     "all": {
       "total": 688,
-      "assigned": 457,
-      "pending": 231
+      "assigned": 451,
+      "pending": 237
     },
     "sameMaterialForcedRepeats": 0,
-    "newAssignmentOccurrences": 457,
-    "addedDays": 293,
+    "newAssignmentOccurrences": 451,
+    "addedDays": 290,
     "maximumAdmittedCalendarMinutes": 360,
     "baselineOverBudgetDays": [
       2,
       365
     ],
-    "requiredPublicVariantsRetained": 80,
+    "requiredPublicVariantsRetained": 86,
     "publicVariantsOnBaselineOverBudgetDays": 0,
-    "existingPublicReviewReservations": 151,
+    "existingPublicReviewReservations": 169,
     "existingPublicBlockedReviewWindows": 2,
     "semanticContextReservations": 6,
     "semanticContextPending": 0,
@@ -37,6 +37,39 @@
     "actualLearningOrMasteryValidated": false
   },
   "pending": [
+    {
+      "materialId": "expand-w20-read-1-vocabulary",
+      "materialHash": "04a7cbae84c2e7c7dcceaa1d94b2c8c1255f3cb34b2b45a3897f80c5ee174044",
+      "skill": "vocabulary",
+      "level": "B1",
+      "sourceWeek": 20,
+      "kind": "derived",
+      "parentMaterialId": "expand-w20-read-1",
+      "releaseDay": 134,
+      "estimate": {
+        "known": true,
+        "minutes": 34,
+        "declaredMinutes": 20,
+        "unitFloorMinutes": 34,
+        "basis": "word count × 4 minutes for three typed entries, three separately recorded attempts, three test modes and setup; service/error delay remains uncertain",
+        "calibrated": false
+      },
+      "mode": "practice",
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "status": "pending",
+      "reason": "no-safe-slot",
+      "rejectedDaysByReason": {
+        "protected": 24,
+        "startedOrFrozen": 0,
+        "level": 0,
+        "parentOrder": 1,
+        "unknownBudget": 0,
+        "dailyCount": 2,
+        "sameSkill": 7,
+        "budget": 197
+      }
+    },
     {
       "materialId": "expand-w20-read-2-vocabulary",
       "materialHash": "77198cc755504341f93a0d5503ff94b2f09859bb25b73c545f9eb222dc798fb0",
@@ -66,8 +99,8 @@
         "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 8,
-        "budget": 195
+        "sameSkill": 7,
+        "budget": 196
       }
     },
     {
@@ -164,8 +197,8 @@
         "level": 0,
         "parentOrder": 2,
         "unknownBudget": 0,
-        "dailyCount": 1,
-        "sameSkill": 7,
+        "dailyCount": 2,
+        "sameSkill": 6,
         "budget": 191
       }
     },
@@ -197,8 +230,8 @@
         "level": 0,
         "parentOrder": 3,
         "unknownBudget": 0,
-        "dailyCount": 1,
-        "sameSkill": 7,
+        "dailyCount": 2,
+        "sameSkill": 6,
         "budget": 190
       }
     },
@@ -230,9 +263,9 @@
         "level": 0,
         "parentOrder": 4,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 70,
-        "budget": 118
+        "dailyCount": 3,
+        "sameSkill": 68,
+        "budget": 119
       }
     },
     {
@@ -263,9 +296,9 @@
         "level": 0,
         "parentOrder": 9,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 69,
-        "budget": 114
+        "dailyCount": 3,
+        "sameSkill": 67,
+        "budget": 115
       }
     },
     {
@@ -296,8 +329,8 @@
         "level": 0,
         "parentOrder": 4,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 7,
+        "dailyCount": 3,
+        "sameSkill": 6,
         "budget": 181
       }
     },
@@ -329,8 +362,8 @@
         "level": 0,
         "parentOrder": 9,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 7,
+        "dailyCount": 3,
+        "sameSkill": 6,
         "budget": 176
       }
     },
@@ -362,9 +395,9 @@
         "level": 0,
         "parentOrder": 9,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 68,
-        "budget": 108
+        "dailyCount": 3,
+        "sameSkill": 66,
+        "budget": 109
       }
     },
     {
@@ -395,9 +428,9 @@
         "level": 0,
         "parentOrder": 11,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 67,
-        "budget": 107
+        "dailyCount": 3,
+        "sameSkill": 65,
+        "budget": 108
       }
     },
     {
@@ -428,8 +461,8 @@
         "level": 0,
         "parentOrder": 9,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 7,
+        "dailyCount": 3,
+        "sameSkill": 6,
         "budget": 169
       }
     },
@@ -461,8 +494,8 @@
         "level": 0,
         "parentOrder": 11,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 7,
+        "dailyCount": 3,
+        "sameSkill": 6,
         "budget": 167
       }
     },
@@ -494,8 +527,8 @@
         "level": 0,
         "parentOrder": 9,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 66,
+        "dailyCount": 4,
+        "sameSkill": 64,
         "budget": 103
       }
     },
@@ -527,8 +560,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 66,
+        "dailyCount": 4,
+        "sameSkill": 64,
         "budget": 97
       }
     },
@@ -560,8 +593,8 @@
         "level": 0,
         "parentOrder": 9,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 161
       }
     },
@@ -593,8 +626,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 155
       }
     },
@@ -626,8 +659,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 62,
+        "dailyCount": 4,
+        "sameSkill": 61,
         "budget": 92
       }
     },
@@ -659,8 +692,8 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 62,
+        "dailyCount": 4,
+        "sameSkill": 61,
         "budget": 91
       }
     },
@@ -692,8 +725,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 147
       }
     },
@@ -725,8 +758,8 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 146
       }
     },
@@ -758,8 +791,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 61,
+        "dailyCount": 4,
+        "sameSkill": 60,
         "budget": 87
       }
     },
@@ -791,9 +824,42 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 61,
+        "dailyCount": 4,
+        "sameSkill": 60,
         "budget": 86
+      }
+    },
+    {
+      "materialId": "expand-w26-read-2-grammar",
+      "materialHash": "4f17fcbb5b2a766b9e3f588fd0ce8ca48496dbd07889a0da692cbc6702011772",
+      "skill": "grammar",
+      "level": "B1–B2",
+      "sourceWeek": 26,
+      "kind": "derived",
+      "parentMaterialId": "expand-w26-read-2",
+      "releaseDay": 176,
+      "estimate": {
+        "known": true,
+        "minutes": 21,
+        "declaredMinutes": 20,
+        "unitFloorMinutes": 21,
+        "basis": "question count × 1.5 + 6 rule/source minutes + 3 independent transfer minutes",
+        "calibrated": false
+      },
+      "mode": "practice",
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "status": "pending",
+      "reason": "no-safe-slot",
+      "rejectedDaysByReason": {
+        "protected": 22,
+        "startedOrFrozen": 0,
+        "level": 0,
+        "parentOrder": 17,
+        "unknownBudget": 0,
+        "dailyCount": 4,
+        "sameSkill": 11,
+        "budget": 135
       }
     },
     {
@@ -824,8 +890,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 141
       }
     },
@@ -857,9 +923,75 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 140
+      }
+    },
+    {
+      "materialId": "expand-w26-read-1-speaking",
+      "materialHash": "d2e901038015a1f4df92f1f00a8da898bac57f2f03ecc591f0fb47d653bad479",
+      "skill": "speaking",
+      "level": "B1–B2",
+      "sourceWeek": 26,
+      "kind": "derived",
+      "parentMaterialId": "expand-w26-read-1",
+      "releaseDay": 176,
+      "estimate": {
+        "known": true,
+        "minutes": 25,
+        "declaredMinutes": 25,
+        "unitFloorMinutes": 23,
+        "basis": "two output takes + preparation, replay and feedback; API waiting not measured",
+        "calibrated": false
+      },
+      "mode": "practice",
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "status": "pending",
+      "reason": "no-safe-slot",
+      "rejectedDaysByReason": {
+        "protected": 22,
+        "startedOrFrozen": 0,
+        "level": 0,
+        "parentOrder": 16,
+        "unknownBudget": 0,
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 135
+      }
+    },
+    {
+      "materialId": "expand-w26-read-2-speaking",
+      "materialHash": "860b2bbbab4b8b5d67a8771f0670f210f49def7224457c780106d8e54dcf91a3",
+      "skill": "speaking",
+      "level": "B1–B2",
+      "sourceWeek": 26,
+      "kind": "derived",
+      "parentMaterialId": "expand-w26-read-2",
+      "releaseDay": 176,
+      "estimate": {
+        "known": true,
+        "minutes": 25,
+        "declaredMinutes": 25,
+        "unitFloorMinutes": 23,
+        "basis": "two output takes + preparation, replay and feedback; API waiting not measured",
+        "calibrated": false
+      },
+      "mode": "practice",
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "status": "pending",
+      "reason": "no-safe-slot",
+      "rejectedDaysByReason": {
+        "protected": 22,
+        "startedOrFrozen": 0,
+        "level": 0,
+        "parentOrder": 17,
+        "unknownBudget": 0,
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 134
       }
     },
     {
@@ -890,8 +1022,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 59,
+        "dailyCount": 4,
+        "sameSkill": 58,
         "budget": 82
       }
     },
@@ -923,9 +1055,75 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 59,
+        "dailyCount": 4,
+        "sameSkill": 58,
         "budget": 78
+      }
+    },
+    {
+      "materialId": "expand-w27-read-1-grammar",
+      "materialHash": "18f70f2c61b20cea065c5d10141fb1a910cc074674ecda45a924923ffa541b58",
+      "skill": "grammar",
+      "level": "B1–B2",
+      "sourceWeek": 27,
+      "kind": "derived",
+      "parentMaterialId": "expand-w27-read-1",
+      "releaseDay": 183,
+      "estimate": {
+        "known": true,
+        "minutes": 21,
+        "declaredMinutes": 20,
+        "unitFloorMinutes": 21,
+        "basis": "question count × 1.5 + 6 rule/source minutes + 3 independent transfer minutes",
+        "calibrated": false
+      },
+      "mode": "practice",
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "status": "pending",
+      "reason": "no-safe-slot",
+      "rejectedDaysByReason": {
+        "protected": 22,
+        "startedOrFrozen": 0,
+        "level": 0,
+        "parentOrder": 16,
+        "unknownBudget": 0,
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 130
+      }
+    },
+    {
+      "materialId": "expand-w27-read-2-grammar",
+      "materialHash": "08f748bcce75c8c923fdff2ae5e2dd5861d225cf33c0861da9876b3950c30c1e",
+      "skill": "grammar",
+      "level": "B1–B2",
+      "sourceWeek": 27,
+      "kind": "derived",
+      "parentMaterialId": "expand-w27-read-2",
+      "releaseDay": 183,
+      "estimate": {
+        "known": true,
+        "minutes": 21,
+        "declaredMinutes": 20,
+        "unitFloorMinutes": 21,
+        "basis": "question count × 1.5 + 6 rule/source minutes + 3 independent transfer minutes",
+        "calibrated": false
+      },
+      "mode": "practice",
+      "independentAssessmentEligible": false,
+      "independentTransferEligible": false,
+      "status": "pending",
+      "reason": "no-safe-slot",
+      "rejectedDaysByReason": {
+        "protected": 22,
+        "startedOrFrozen": 0,
+        "level": 0,
+        "parentOrder": 20,
+        "unknownBudget": 0,
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 126
       }
     },
     {
@@ -956,8 +1154,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 134
       }
     },
@@ -989,8 +1187,8 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 130
       }
     },
@@ -1022,9 +1220,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 126
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 128
       }
     },
     {
@@ -1055,9 +1253,9 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 122
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 124
       }
     },
     {
@@ -1088,8 +1286,8 @@
         "level": 0,
         "parentOrder": 19,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 56,
+        "dailyCount": 4,
+        "sameSkill": 55,
         "budget": 75
       }
     },
@@ -1121,8 +1319,8 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 56,
+        "dailyCount": 4,
+        "sameSkill": 55,
         "budget": 74
       }
     },
@@ -1154,9 +1352,9 @@
         "level": 0,
         "parentOrder": 19,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 118
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 120
       }
     },
     {
@@ -1187,9 +1385,9 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 117
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 119
       }
     },
     {
@@ -1220,8 +1418,8 @@
         "level": 0,
         "parentOrder": 19,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 124
       }
     },
@@ -1253,8 +1451,8 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 123
       }
     },
@@ -1286,9 +1484,9 @@
         "level": 0,
         "parentOrder": 19,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 116
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 118
       }
     },
     {
@@ -1319,9 +1517,9 @@
         "level": 0,
         "parentOrder": 20,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 115
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 117
       }
     },
     {
@@ -1352,8 +1550,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 55,
+        "dailyCount": 4,
+        "sameSkill": 54,
         "budget": 72
       }
     },
@@ -1385,8 +1583,8 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 54,
+        "dailyCount": 4,
+        "sameSkill": 53,
         "budget": 72
       }
     },
@@ -1418,9 +1616,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 114
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 116
       }
     },
     {
@@ -1451,9 +1649,9 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 113
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 115
       }
     },
     {
@@ -1484,8 +1682,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 120
       }
     },
@@ -1517,8 +1715,8 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 119
       }
     },
@@ -1550,9 +1748,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 112
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 114
       }
     },
     {
@@ -1583,9 +1781,9 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 111
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 113
       }
     },
     {
@@ -1616,8 +1814,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 51,
+        "dailyCount": 4,
+        "sameSkill": 50,
         "budget": 69
       }
     },
@@ -1649,8 +1847,8 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 51,
+        "dailyCount": 4,
+        "sameSkill": 50,
         "budget": 68
       }
     },
@@ -1682,9 +1880,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 107
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 109
       }
     },
     {
@@ -1715,9 +1913,9 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 106
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 108
       }
     },
     {
@@ -1748,8 +1946,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 113
       }
     },
@@ -1781,8 +1979,8 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 112
       }
     },
@@ -1814,9 +2012,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 105
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 107
       }
     },
     {
@@ -1847,9 +2045,9 @@
         "level": 0,
         "parentOrder": 18,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 104
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 106
       }
     },
     {
@@ -1880,8 +2078,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 49,
+        "dailyCount": 4,
+        "sameSkill": 48,
         "budget": 66
       }
     },
@@ -1913,8 +2111,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 49,
+        "dailyCount": 4,
+        "sameSkill": 48,
         "budget": 65
       }
     },
@@ -1946,9 +2144,9 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 102
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 104
       }
     },
     {
@@ -1979,9 +2177,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 101
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 103
       }
     },
     {
@@ -2012,8 +2210,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 108
       }
     },
@@ -2045,8 +2243,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 107
       }
     },
@@ -2078,9 +2276,9 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 100
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 102
       }
     },
     {
@@ -2111,9 +2309,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 99
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 101
       }
     },
     {
@@ -2144,8 +2342,8 @@
         "level": 0,
         "parentOrder": 13,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 48,
+        "dailyCount": 4,
+        "sameSkill": 47,
         "budget": 62
       }
     },
@@ -2177,8 +2375,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 47,
+        "dailyCount": 4,
+        "sameSkill": 46,
         "budget": 61
       }
     },
@@ -2210,9 +2408,9 @@
         "level": 0,
         "parentOrder": 13,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 97
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 99
       }
     },
     {
@@ -2243,9 +2441,9 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 95
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 97
       }
     },
     {
@@ -2276,8 +2474,8 @@
         "level": 0,
         "parentOrder": 13,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 103
       }
     },
@@ -2309,8 +2507,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 101
       }
     },
@@ -2342,9 +2540,9 @@
         "level": 0,
         "parentOrder": 13,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 95
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 97
       }
     },
     {
@@ -2375,9 +2573,9 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 15,
-        "budget": 93
+        "dailyCount": 4,
+        "sameSkill": 12,
+        "budget": 95
       }
     },
     {
@@ -2408,8 +2606,8 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 46,
+        "dailyCount": 4,
+        "sameSkill": 45,
         "budget": 57
       }
     },
@@ -2441,8 +2639,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 45,
+        "dailyCount": 4,
+        "sameSkill": 44,
         "budget": 56
       }
     },
@@ -2474,9 +2672,9 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 90
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 92
       }
     },
     {
@@ -2507,9 +2705,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 88
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 90
       }
     },
     {
@@ -2540,8 +2738,8 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 96
       }
     },
@@ -2573,8 +2771,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 94
       }
     },
@@ -2606,9 +2804,9 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 90
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 92
       }
     },
     {
@@ -2639,9 +2837,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 88
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 90
       }
     },
     {
@@ -2672,8 +2870,8 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 44,
+        "dailyCount": 4,
+        "sameSkill": 43,
         "budget": 52
       }
     },
@@ -2705,8 +2903,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 43,
+        "dailyCount": 4,
+        "sameSkill": 42,
         "budget": 51
       }
     },
@@ -2738,9 +2936,9 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 84
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 86
       }
     },
     {
@@ -2771,9 +2969,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 82
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 84
       }
     },
     {
@@ -2804,8 +3002,8 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 89
       }
     },
@@ -2837,8 +3035,8 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 87
       }
     },
@@ -2870,9 +3068,9 @@
         "level": 0,
         "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 83
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 85
       }
     },
     {
@@ -2903,9 +3101,9 @@
         "level": 0,
         "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 13,
-        "budget": 81
+        "dailyCount": 4,
+        "sameSkill": 10,
+        "budget": 83
       }
     },
     {
@@ -2936,8 +3134,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 41,
+        "dailyCount": 4,
+        "sameSkill": 40,
         "budget": 47
       }
     },
@@ -2969,9 +3167,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
+        "dailyCount": 4,
         "sameSkill": 40,
-        "budget": 46
+        "budget": 45
       }
     },
     {
@@ -3002,9 +3200,9 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 76
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 78
       }
     },
     {
@@ -3035,9 +3233,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 74
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 76
       }
     },
     {
@@ -3068,8 +3266,8 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 81
       }
     },
@@ -3101,8 +3299,8 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
+        "dailyCount": 4,
+        "sameSkill": 6,
         "budget": 79
       }
     },
@@ -3134,9 +3332,9 @@
         "level": 0,
         "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 76
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 78
       }
     },
     {
@@ -3167,9 +3365,9 @@
         "level": 0,
         "parentOrder": 17,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 74
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 76
       }
     },
     {
@@ -3198,11 +3396,11 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 13,
+        "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 39,
-        "budget": 44
+        "dailyCount": 4,
+        "sameSkill": 40,
+        "budget": 41
       }
     },
     {
@@ -3231,11 +3429,11 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 14,
+        "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 39,
-        "budget": 43
+        "dailyCount": 4,
+        "sameSkill": 38,
+        "budget": 41
       }
     },
     {
@@ -3264,11 +3462,11 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 13,
+        "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 71
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 72
       }
     },
     {
@@ -3297,10 +3495,10 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 14,
+        "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
+        "dailyCount": 4,
+        "sameSkill": 9,
         "budget": 70
       }
     },
@@ -3330,11 +3528,11 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 13,
+        "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
-        "budget": 76
+        "dailyCount": 4,
+        "sameSkill": 6,
+        "budget": 75
       }
     },
     {
@@ -3363,11 +3561,11 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 14,
+        "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
-        "budget": 75
+        "dailyCount": 4,
+        "sameSkill": 6,
+        "budget": 73
       }
     },
     {
@@ -3396,10 +3594,10 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 13,
+        "parentOrder": 14,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 11,
+        "dailyCount": 4,
+        "sameSkill": 9,
         "budget": 72
       }
     },
@@ -3429,11 +3627,11 @@
         "protected": 20,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 14,
+        "parentOrder": 16,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 11,
-        "budget": 71
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 70
       }
     },
     {
@@ -3462,11 +3660,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 3,
+        "dailyCount": 4,
         "sameSkill": 37,
-        "budget": 43
+        "budget": 40
       }
     },
     {
@@ -3495,11 +3693,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 11,
+        "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 37,
-        "budget": 42
+        "dailyCount": 4,
+        "sameSkill": 36,
+        "budget": 38
       }
     },
     {
@@ -3528,10 +3726,10 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
+        "dailyCount": 4,
+        "sameSkill": 9,
         "budget": 68
       }
     },
@@ -3561,11 +3759,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 11,
+        "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 12,
-        "budget": 67
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 65
       }
     },
     {
@@ -3594,11 +3792,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
-        "budget": 73
+        "dailyCount": 4,
+        "sameSkill": 6,
+        "budget": 71
       }
     },
     {
@@ -3627,11 +3825,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 11,
+        "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 7,
-        "budget": 72
+        "dailyCount": 4,
+        "sameSkill": 6,
+        "budget": 68
       }
     },
     {
@@ -3660,11 +3858,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 11,
-        "budget": 69
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 68
       }
     },
     {
@@ -3693,11 +3891,11 @@
         "protected": 19,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 11,
+        "parentOrder": 15,
         "unknownBudget": 0,
-        "dailyCount": 3,
-        "sameSkill": 11,
-        "budget": 68
+        "dailyCount": 4,
+        "sameSkill": 9,
+        "budget": 65
       }
     },
     {
@@ -3726,11 +3924,11 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 9,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 3,
-        "sameSkill": 35,
-        "budget": 40
+        "sameSkill": 36,
+        "budget": 37
       }
     },
     {
@@ -3759,11 +3957,11 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 35,
-        "budget": 40
+        "dailyCount": 3,
+        "sameSkill": 36,
+        "budget": 36
       }
     },
     {
@@ -3792,10 +3990,10 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 9,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 3,
-        "sameSkill": 11,
+        "sameSkill": 9,
         "budget": 64
       }
     },
@@ -3825,11 +4023,11 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 11,
-        "budget": 64
+        "dailyCount": 3,
+        "sameSkill": 9,
+        "budget": 63
       }
     },
     {
@@ -3858,11 +4056,11 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 9,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 3,
-        "sameSkill": 7,
-        "budget": 68
+        "sameSkill": 6,
+        "budget": 67
       }
     },
     {
@@ -3891,11 +4089,11 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 7,
-        "budget": 68
+        "dailyCount": 3,
+        "sameSkill": 6,
+        "budget": 66
       }
     },
     {
@@ -3924,10 +4122,10 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 9,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 3,
-        "sameSkill": 11,
+        "sameSkill": 9,
         "budget": 64
       }
     },
@@ -3957,11 +4155,11 @@
         "protected": 18,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 10,
+        "parentOrder": 12,
         "unknownBudget": 0,
-        "dailyCount": 2,
-        "sameSkill": 11,
-        "budget": 64
+        "dailyCount": 3,
+        "sameSkill": 9,
+        "budget": 63
       }
     },
     {
@@ -3990,11 +4188,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 2,
         "sameSkill": 34,
-        "budget": 39
+        "budget": 34
       }
     },
     {
@@ -4023,11 +4221,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 8,
+        "parentOrder": 12,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 33,
-        "budget": 38
+        "sameSkill": 34,
+        "budget": 33
       }
     },
     {
@@ -4056,11 +4254,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 11,
-        "budget": 62
+        "sameSkill": 9,
+        "budget": 59
       }
     },
     {
@@ -4089,11 +4287,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 8,
+        "parentOrder": 12,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 11,
-        "budget": 60
+        "sameSkill": 9,
+        "budget": 58
       }
     },
     {
@@ -4122,11 +4320,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 7,
-        "budget": 66
+        "sameSkill": 6,
+        "budget": 62
       }
     },
     {
@@ -4155,11 +4353,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 8,
+        "parentOrder": 12,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 7,
-        "budget": 64
+        "sameSkill": 6,
+        "budget": 61
       }
     },
     {
@@ -4188,11 +4386,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 11,
-        "budget": 62
+        "sameSkill": 8,
+        "budget": 60
       }
     },
     {
@@ -4221,11 +4419,11 @@
         "protected": 17,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 8,
+        "parentOrder": 12,
         "unknownBudget": 0,
         "dailyCount": 2,
-        "sameSkill": 11,
-        "budget": 60
+        "sameSkill": 8,
+        "budget": 59
       }
     },
     {
@@ -4254,11 +4452,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 33,
-        "budget": 37
+        "budget": 32
       }
     },
     {
@@ -4287,11 +4485,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 32,
-        "budget": 36
+        "budget": 31
       }
     },
     {
@@ -4320,11 +4518,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 11,
-        "budget": 59
+        "sameSkill": 9,
+        "budget": 56
       }
     },
     {
@@ -4353,11 +4551,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 11,
-        "budget": 57
+        "sameSkill": 9,
+        "budget": 54
       }
     },
     {
@@ -4386,11 +4584,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 63
+        "sameSkill": 6,
+        "budget": 59
       }
     },
     {
@@ -4419,11 +4617,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 61
+        "sameSkill": 6,
+        "budget": 57
       }
     },
     {
@@ -4452,11 +4650,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 11,
-        "budget": 59
+        "sameSkill": 8,
+        "budget": 57
       }
     },
     {
@@ -4485,11 +4683,11 @@
         "protected": 16,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 6,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 58
+        "sameSkill": 7,
+        "budget": 56
       }
     },
     {
@@ -4518,11 +4716,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 10,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 30,
-        "budget": 35
+        "budget": 29
       }
     },
     {
@@ -4551,11 +4749,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 5,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 30,
-        "budget": 34
+        "budget": 28
       }
     },
     {
@@ -4584,11 +4782,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 10,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 11,
-        "budget": 54
+        "sameSkill": 9,
+        "budget": 50
       }
     },
     {
@@ -4617,11 +4815,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 5,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 11,
-        "budget": 53
+        "sameSkill": 9,
+        "budget": 49
       }
     },
     {
@@ -4650,11 +4848,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 10,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 58
+        "sameSkill": 6,
+        "budget": 53
       }
     },
     {
@@ -4683,11 +4881,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 5,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 57
+        "sameSkill": 6,
+        "budget": 52
       }
     },
     {
@@ -4716,11 +4914,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 10,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 55
+        "sameSkill": 7,
+        "budget": 52
       }
     },
     {
@@ -4749,11 +4947,11 @@
         "protected": 14,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 5,
+        "parentOrder": 11,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 54
+        "sameSkill": 7,
+        "budget": 51
       }
     },
     {
@@ -4782,11 +4980,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 3,
+        "parentOrder": 8,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 28,
-        "budget": 32
+        "budget": 27
       }
     },
     {
@@ -4815,11 +5013,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 28,
-        "budget": 31
+        "budget": 26
       }
     },
     {
@@ -4848,11 +5046,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 3,
+        "parentOrder": 8,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 50
+        "sameSkill": 9,
+        "budget": 46
       }
     },
     {
@@ -4881,11 +5079,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 49
+        "sameSkill": 9,
+        "budget": 45
       }
     },
     {
@@ -4914,11 +5112,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 3,
+        "parentOrder": 8,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 53
+        "sameSkill": 6,
+        "budget": 49
       }
     },
     {
@@ -4947,11 +5145,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 52
+        "sameSkill": 6,
+        "budget": 48
       }
     },
     {
@@ -4980,11 +5178,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 3,
+        "parentOrder": 8,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 50
+        "sameSkill": 7,
+        "budget": 48
       }
     },
     {
@@ -5013,11 +5211,11 @@
         "protected": 13,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 4,
+        "parentOrder": 9,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 49
+        "sameSkill": 7,
+        "budget": 47
       }
     },
     {
@@ -5046,11 +5244,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 6,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 26,
-        "budget": 30
+        "budget": 25
       }
     },
     {
@@ -5079,11 +5277,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 7,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 26,
-        "budget": 29
+        "budget": 24
       }
     },
     {
@@ -5112,11 +5310,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 6,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 46
+        "sameSkill": 8,
+        "budget": 43
       }
     },
     {
@@ -5145,11 +5343,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 7,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 45
+        "sameSkill": 8,
+        "budget": 42
       }
     },
     {
@@ -5178,11 +5376,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 6,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 49
+        "sameSkill": 6,
+        "budget": 45
       }
     },
     {
@@ -5211,11 +5409,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 7,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 48
+        "sameSkill": 6,
+        "budget": 44
       }
     },
     {
@@ -5244,11 +5442,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 6,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 46
+        "sameSkill": 7,
+        "budget": 44
       }
     },
     {
@@ -5277,11 +5475,11 @@
         "protected": 12,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 7,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 10,
-        "budget": 45
+        "sameSkill": 7,
+        "budget": 43
       }
     },
     {
@@ -5310,11 +5508,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 23,
-        "budget": 27
+        "sameSkill": 25,
+        "budget": 23
       }
     },
     {
@@ -5343,11 +5541,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 5,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 23,
-        "budget": 26
+        "sameSkill": 24,
+        "budget": 22
       }
     },
     {
@@ -5376,11 +5574,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 9,
-        "budget": 41
+        "sameSkill": 8,
+        "budget": 40
       }
     },
     {
@@ -5409,11 +5607,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 5,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 9,
-        "budget": 40
+        "sameSkill": 7,
+        "budget": 39
       }
     },
     {
@@ -5442,11 +5640,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 43
+        "sameSkill": 6,
+        "budget": 42
       }
     },
     {
@@ -5475,11 +5673,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 5,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 7,
-        "budget": 42
+        "sameSkill": 6,
+        "budget": 40
       }
     },
     {
@@ -5508,10 +5706,10 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 9,
+        "sameSkill": 7,
         "budget": 41
       }
     },
@@ -5541,11 +5739,11 @@
         "protected": 11,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 5,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 9,
-        "budget": 40
+        "sameSkill": 7,
+        "budget": 39
       }
     },
     {
@@ -5577,8 +5775,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 20,
-        "budget": 25
+        "sameSkill": 23,
+        "budget": 22
       }
     },
     {
@@ -5607,11 +5805,11 @@
         "protected": 9,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 20,
-        "budget": 24
+        "sameSkill": 22,
+        "budget": 21
       }
     },
     {
@@ -5643,8 +5841,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 9,
-        "budget": 36
+        "sameSkill": 7,
+        "budget": 38
       }
     },
     {
@@ -5673,11 +5871,11 @@
         "protected": 9,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 9,
-        "budget": 35
+        "sameSkill": 7,
+        "budget": 36
       }
     },
     {
@@ -5739,11 +5937,11 @@
         "protected": 9,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 6,
-        "budget": 38
+        "budget": 37
       }
     },
     {
@@ -5775,8 +5973,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 8,
-        "budget": 37
+        "sameSkill": 7,
+        "budget": 38
       }
     },
     {
@@ -5805,11 +6003,11 @@
         "protected": 9,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 8,
-        "budget": 36
+        "sameSkill": 6,
+        "budget": 37
       }
     },
     {
@@ -5838,11 +6036,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 17,
-        "budget": 22
+        "sameSkill": 20,
+        "budget": 18
       }
     },
     {
@@ -5871,11 +6069,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 17,
-        "budget": 21
+        "sameSkill": 19,
+        "budget": 17
       }
     },
     {
@@ -5904,10 +6102,10 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 8,
+        "sameSkill": 7,
         "budget": 31
       }
     },
@@ -5937,11 +6135,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 8,
-        "budget": 30
+        "sameSkill": 7,
+        "budget": 29
       }
     },
     {
@@ -5970,11 +6168,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 4,
-        "budget": 35
+        "budget": 34
       }
     },
     {
@@ -6003,11 +6201,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 4,
-        "budget": 34
+        "budget": 32
       }
     },
     {
@@ -6036,11 +6234,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 8,
-        "budget": 31
+        "sameSkill": 6,
+        "budget": 32
       }
     },
     {
@@ -6069,11 +6267,11 @@
         "protected": 8,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 8,
-        "budget": 30
+        "sameSkill": 5,
+        "budget": 31
       }
     },
     {
@@ -6102,11 +6300,11 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 15,
-        "budget": 18
+        "sameSkill": 17,
+        "budget": 15
       }
     },
     {
@@ -6135,11 +6333,11 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
-        "dailyCount": 1,
-        "sameSkill": 15,
-        "budget": 17
+        "dailyCount": 0,
+        "sameSkill": 17,
+        "budget": 14
       }
     },
     {
@@ -6168,10 +6366,10 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 6,
+        "sameSkill": 5,
         "budget": 27
       }
     },
@@ -6201,10 +6399,10 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
-        "dailyCount": 1,
-        "sameSkill": 6,
+        "dailyCount": 0,
+        "sameSkill": 5,
         "budget": 26
       }
     },
@@ -6234,11 +6432,11 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
         "sameSkill": 4,
-        "budget": 29
+        "budget": 28
       }
     },
     {
@@ -6267,11 +6465,11 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
-        "dailyCount": 1,
+        "dailyCount": 0,
         "sameSkill": 4,
-        "budget": 28
+        "budget": 27
       }
     },
     {
@@ -6300,10 +6498,10 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 1,
-        "sameSkill": 6,
+        "sameSkill": 5,
         "budget": 27
       }
     },
@@ -6333,10 +6531,10 @@
         "protected": 7,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
-        "dailyCount": 1,
-        "sameSkill": 6,
+        "dailyCount": 0,
+        "sameSkill": 5,
         "budget": 26
       }
     },
@@ -6366,11 +6564,11 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 14,
-        "budget": 14
+        "budget": 13
       }
     },
     {
@@ -6399,11 +6597,11 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 14,
-        "budget": 13
+        "budget": 11
       }
     },
     {
@@ -6432,10 +6630,10 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 6,
+        "sameSkill": 5,
         "budget": 22
       }
     },
@@ -6465,10 +6663,10 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 6,
+        "sameSkill": 4,
         "budget": 21
       }
     },
@@ -6498,11 +6696,11 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 3,
-        "budget": 25
+        "sameSkill": 4,
+        "budget": 23
       }
     },
     {
@@ -6531,11 +6729,11 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 3,
-        "budget": 24
+        "budget": 22
       }
     },
     {
@@ -6564,10 +6762,10 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 5,
+        "sameSkill": 4,
         "budget": 23
       }
     },
@@ -6597,11 +6795,11 @@
         "protected": 6,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 4,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 5,
-        "budget": 22
+        "sameSkill": 4,
+        "budget": 21
       }
     },
     {
@@ -6630,11 +6828,11 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 12,
-        "budget": 11
+        "budget": 10
       }
     },
     {
@@ -6663,11 +6861,11 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 12,
-        "budget": 10
+        "budget": 9
       }
     },
     {
@@ -6696,10 +6894,10 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 4,
+        "sameSkill": 3,
         "budget": 19
       }
     },
@@ -6729,10 +6927,10 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 4,
+        "sameSkill": 3,
         "budget": 18
       }
     },
@@ -6762,11 +6960,11 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 3,
-        "budget": 20
+        "budget": 19
       }
     },
     {
@@ -6795,11 +6993,11 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 3,
-        "budget": 19
+        "budget": 18
       }
     },
     {
@@ -6828,11 +7026,11 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 1,
+        "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 4,
-        "budget": 19
+        "budget": 18
       }
     },
     {
@@ -6861,11 +7059,11 @@
         "protected": 4,
         "startedOrFrozen": 0,
         "level": 0,
-        "parentOrder": 2,
+        "parentOrder": 3,
         "unknownBudget": 0,
         "dailyCount": 0,
         "sameSkill": 4,
-        "budget": 18
+        "budget": 17
       }
     },
     {
@@ -6963,8 +7161,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 4,
-        "budget": 13
+        "sameSkill": 3,
+        "budget": 14
       }
     },
     {
@@ -6996,8 +7194,8 @@
         "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 4,
-        "budget": 12
+        "sameSkill": 3,
+        "budget": 13
       }
     },
     {
@@ -7095,8 +7293,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 2,
-        "budget": 15
+        "sameSkill": 3,
+        "budget": 14
       }
     },
     {
@@ -7128,8 +7326,8 @@
         "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 2,
-        "budget": 14
+        "sameSkill": 3,
+        "budget": 13
       }
     },
     {
@@ -7491,8 +7689,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 2,
-        "budget": 3
+        "sameSkill": 1,
+        "budget": 4
       }
     },
     {
@@ -7524,8 +7722,8 @@
         "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 2,
-        "budget": 2
+        "sameSkill": 1,
+        "budget": 3
       }
     },
     {
@@ -7623,8 +7821,8 @@
         "parentOrder": 1,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 1,
-        "budget": 4
+        "sameSkill": 2,
+        "budget": 3
       }
     },
     {
@@ -7656,8 +7854,8 @@
         "parentOrder": 2,
         "unknownBudget": 0,
         "dailyCount": 0,
-        "sameSkill": 1,
-        "budget": 3
+        "sameSkill": 2,
+        "budget": 2
       }
     }
   ],
@@ -12369,7 +12567,7 @@
     {
       "materialId": "expand-w35-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 256,
+      "firstPlannedDay": 262,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12397,7 +12595,7 @@
     {
       "materialId": "expand-w35-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 257,
+      "firstPlannedDay": 263,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12425,7 +12623,7 @@
     {
       "materialId": "expand-w36-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 260,
+      "firstPlannedDay": 261,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12453,7 +12651,7 @@
     {
       "materialId": "expand-w36-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 261,
+      "firstPlannedDay": 263,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12481,7 +12679,7 @@
     {
       "materialId": "expand-w36-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 259,
+      "firstPlannedDay": 257,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12509,7 +12707,7 @@
     {
       "materialId": "expand-w36-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 261,
+      "firstPlannedDay": 264,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12537,7 +12735,7 @@
     {
       "materialId": "expand-w36-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 262,
+      "firstPlannedDay": 264,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12565,7 +12763,7 @@
     {
       "materialId": "expand-w36-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 263,
+      "firstPlannedDay": 268,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12593,7 +12791,7 @@
     {
       "materialId": "expand-w37-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 263,
+      "firstPlannedDay": 266,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12621,7 +12819,7 @@
     {
       "materialId": "expand-w37-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 264,
+      "firstPlannedDay": 269,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12649,7 +12847,7 @@
     {
       "materialId": "expand-w37-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 264,
+      "firstPlannedDay": 270,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12677,7 +12875,7 @@
     {
       "materialId": "expand-w37-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 266,
+      "firstPlannedDay": 271,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12705,7 +12903,7 @@
     {
       "materialId": "expand-w37-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 267,
+      "firstPlannedDay": 270,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12733,7 +12931,7 @@
     {
       "materialId": "expand-w37-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 268,
+      "firstPlannedDay": 274,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12761,7 +12959,7 @@
     {
       "materialId": "expand-w38-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 269,
+      "firstPlannedDay": 271,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12789,7 +12987,7 @@
     {
       "materialId": "expand-w38-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 270,
+      "firstPlannedDay": 273,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12817,7 +13015,7 @@
     {
       "materialId": "expand-w38-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 270,
+      "firstPlannedDay": 275,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12845,7 +13043,7 @@
     {
       "materialId": "expand-w38-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 271,
+      "firstPlannedDay": 277,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12873,7 +13071,7 @@
     {
       "materialId": "expand-w38-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 271,
+      "firstPlannedDay": 275,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12901,7 +13099,7 @@
     {
       "materialId": "expand-w38-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 274,
+      "firstPlannedDay": 277,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12929,7 +13127,7 @@
     {
       "materialId": "expand-w39-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 273,
+      "firstPlannedDay": 278,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12957,7 +13155,7 @@
     {
       "materialId": "expand-w39-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 275,
+      "firstPlannedDay": 281,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -12985,7 +13183,7 @@
     {
       "materialId": "expand-w39-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 274,
+      "firstPlannedDay": 281,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13013,7 +13211,7 @@
     {
       "materialId": "expand-w39-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 275,
+      "firstPlannedDay": 282,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13041,7 +13239,7 @@
     {
       "materialId": "expand-w39-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 277,
+      "firstPlannedDay": 284,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13069,7 +13267,7 @@
     {
       "materialId": "expand-w39-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 278,
+      "firstPlannedDay": 285,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13097,7 +13295,7 @@
     {
       "materialId": "expand-w40-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 277,
+      "firstPlannedDay": 284,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13125,7 +13323,7 @@
     {
       "materialId": "expand-w40-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 281,
+      "firstPlannedDay": 287,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13153,7 +13351,7 @@
     {
       "materialId": "expand-w40-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 281,
+      "firstPlannedDay": 278,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13181,7 +13379,7 @@
     {
       "materialId": "expand-w40-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 282,
+      "firstPlannedDay": 288,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13209,7 +13407,7 @@
     {
       "materialId": "expand-w40-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 282,
+      "firstPlannedDay": 289,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13237,7 +13435,7 @@
     {
       "materialId": "expand-w40-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 284,
+      "firstPlannedDay": 290,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13265,7 +13463,7 @@
     {
       "materialId": "expand-w41-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 284,
+      "firstPlannedDay": 291,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13293,7 +13491,7 @@
     {
       "materialId": "expand-w41-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 285,
+      "firstPlannedDay": 292,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13321,7 +13519,7 @@
     {
       "materialId": "expand-w41-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 285,
+      "firstPlannedDay": 289,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13349,7 +13547,7 @@
     {
       "materialId": "expand-w41-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 287,
+      "firstPlannedDay": 291,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13377,7 +13575,7 @@
     {
       "materialId": "expand-w41-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 288,
+      "firstPlannedDay": 294,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13405,7 +13603,7 @@
     {
       "materialId": "expand-w41-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 289,
+      "firstPlannedDay": 295,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13433,7 +13631,7 @@
     {
       "materialId": "expand-w42-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 290,
+      "firstPlannedDay": 296,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13461,7 +13659,7 @@
     {
       "materialId": "expand-w42-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 291,
+      "firstPlannedDay": 297,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13489,7 +13687,7 @@
     {
       "materialId": "expand-w42-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 291,
+      "firstPlannedDay": 292,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13517,7 +13715,7 @@
     {
       "materialId": "expand-w42-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 292,
+      "firstPlannedDay": 296,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13545,7 +13743,7 @@
     {
       "materialId": "expand-w42-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 292,
+      "firstPlannedDay": 298,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13573,7 +13771,7 @@
     {
       "materialId": "expand-w42-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 294,
+      "firstPlannedDay": 299,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13601,7 +13799,7 @@
     {
       "materialId": "expand-w43-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 295,
+      "firstPlannedDay": 301,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13629,7 +13827,7 @@
     {
       "materialId": "expand-w43-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 296,
+      "firstPlannedDay": 302,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13657,7 +13855,7 @@
     {
       "materialId": "expand-w43-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 296,
+      "firstPlannedDay": 298,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13685,7 +13883,7 @@
     {
       "materialId": "expand-w43-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 297,
+      "firstPlannedDay": 302,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13713,7 +13911,7 @@
     {
       "materialId": "expand-w43-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 298,
+      "firstPlannedDay": 303,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13741,7 +13939,7 @@
     {
       "materialId": "expand-w43-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 299,
+      "firstPlannedDay": 305,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13769,7 +13967,7 @@
     {
       "materialId": "expand-w44-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 302,
+      "firstPlannedDay": 304,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13797,7 +13995,7 @@
     {
       "materialId": "expand-w44-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 303,
+      "firstPlannedDay": 306,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13825,7 +14023,7 @@
     {
       "materialId": "expand-w44-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 302,
+      "firstPlannedDay": 306,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13881,7 +14079,7 @@
     {
       "materialId": "expand-w44-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 304,
+      "firstPlannedDay": 309,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13909,7 +14107,7 @@
     {
       "materialId": "expand-w44-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 305,
+      "firstPlannedDay": 310,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13965,7 +14163,7 @@
     {
       "materialId": "expand-w45-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 310,
+      "firstPlannedDay": 311,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -13993,7 +14191,7 @@
     {
       "materialId": "expand-w45-listen-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 309,
+      "firstPlannedDay": 312,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14021,7 +14219,7 @@
     {
       "materialId": "expand-w45-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 310,
+      "firstPlannedDay": 313,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14049,7 +14247,7 @@
     {
       "materialId": "expand-w45-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 311,
+      "firstPlannedDay": 312,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14077,7 +14275,7 @@
     {
       "materialId": "expand-w45-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 312,
+      "firstPlannedDay": 316,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14105,7 +14303,7 @@
     {
       "materialId": "expand-w46-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 316,
+      "firstPlannedDay": 317,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14133,7 +14331,7 @@
     {
       "materialId": "expand-w46-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 317,
+      "firstPlannedDay": 319,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14217,7 +14415,7 @@
     {
       "materialId": "expand-w46-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 319,
+      "firstPlannedDay": 320,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14245,7 +14443,7 @@
     {
       "materialId": "expand-w46-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 320,
+      "firstPlannedDay": 323,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14273,7 +14471,7 @@
     {
       "materialId": "expand-w47-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 323,
+      "firstPlannedDay": 324,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14301,7 +14499,7 @@
     {
       "materialId": "expand-w47-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 324,
+      "firstPlannedDay": 326,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14385,7 +14583,7 @@
     {
       "materialId": "expand-w47-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 326,
+      "firstPlannedDay": 327,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14413,7 +14611,7 @@
     {
       "materialId": "expand-w47-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 327,
+      "firstPlannedDay": 330,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14441,7 +14639,7 @@
     {
       "materialId": "expand-w48-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 330,
+      "firstPlannedDay": 331,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14469,7 +14667,7 @@
     {
       "materialId": "expand-w48-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 331,
+      "firstPlannedDay": 333,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14553,7 +14751,7 @@
     {
       "materialId": "expand-w48-task1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 333,
+      "firstPlannedDay": 334,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14581,7 +14779,7 @@
     {
       "materialId": "expand-w48-task2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 334,
+      "firstPlannedDay": 337,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14609,7 +14807,7 @@
     {
       "materialId": "expand-w49-read-1",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 337,
+      "firstPlannedDay": 338,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14637,7 +14835,7 @@
     {
       "materialId": "expand-w49-read-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 338,
+      "firstPlannedDay": 339,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -14693,7 +14891,7 @@
     {
       "materialId": "expand-w49-listen-2",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 339,
+      "firstPlannedDay": 340,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -18893,7 +19091,7 @@
     {
       "materialId": "expand-w17-read-2-writing",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 301,
+      "firstPlannedDay": 282,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -18977,7 +19175,7 @@
     {
       "materialId": "expand-w17-read-1-vocabulary",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 306,
+      "firstPlannedDay": 313,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19005,7 +19203,7 @@
     {
       "materialId": "expand-w17-read-2-vocabulary",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 313,
+      "firstPlannedDay": 315,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19089,7 +19287,7 @@
     {
       "materialId": "expand-w18-read-1-writing",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 306,
+      "firstPlannedDay": 319,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19117,7 +19315,7 @@
     {
       "materialId": "expand-w18-read-2-writing",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 313,
+      "firstPlannedDay": 329,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19201,7 +19399,7 @@
     {
       "materialId": "expand-w18-read-1-vocabulary",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 315,
+      "firstPlannedDay": 333,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19229,7 +19427,7 @@
     {
       "materialId": "expand-w18-read-2-vocabulary",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 329,
+      "firstPlannedDay": 347,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19425,7 +19623,7 @@
     {
       "materialId": "expand-w19-read-1-vocabulary",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 347,
+      "firstPlannedDay": 354,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19453,7 +19651,7 @@
     {
       "materialId": "expand-w19-read-2-vocabulary",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 354,
+      "firstPlannedDay": 361,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19648,8 +19846,8 @@
     },
     {
       "materialId": "expand-w20-read-1-vocabulary",
-      "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 361,
+      "status": "awaiting-first-use-slot",
+      "firstPlannedDay": null,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19733,7 +19931,7 @@
     {
       "materialId": "expand-w20-read-2-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 257,
+      "firstPlannedDay": 274,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19817,7 +20015,7 @@
     {
       "materialId": "expand-w21-read-1-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 268,
+      "firstPlannedDay": 270,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19845,7 +20043,7 @@
     {
       "materialId": "expand-w21-read-2-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 270,
+      "firstPlannedDay": 277,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19929,7 +20127,7 @@
     {
       "materialId": "expand-w21-read-1-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 277,
+      "firstPlannedDay": 284,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -19957,7 +20155,7 @@
     {
       "materialId": "expand-w21-read-2-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 278,
+      "firstPlannedDay": 285,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20041,7 +20239,7 @@
     {
       "materialId": "expand-w22-read-1-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 289,
+      "firstPlannedDay": 299,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20069,7 +20267,7 @@
     {
       "materialId": "expand-w22-read-2-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 298,
+      "firstPlannedDay": 305,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20153,7 +20351,7 @@
     {
       "materialId": "expand-w22-read-1-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 299,
+      "firstPlannedDay": 310,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20181,7 +20379,7 @@
     {
       "materialId": "expand-w22-read-2-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 305,
+      "firstPlannedDay": 318,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20265,7 +20463,7 @@
     {
       "materialId": "expand-w23-read-1-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 312,
+      "firstPlannedDay": 320,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20293,7 +20491,7 @@
     {
       "materialId": "expand-w23-read-2-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 318,
+      "firstPlannedDay": 322,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20377,7 +20575,7 @@
     {
       "materialId": "expand-w23-read-1-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 319,
+      "firstPlannedDay": 326,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20405,7 +20603,7 @@
     {
       "materialId": "expand-w23-read-2-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 320,
+      "firstPlannedDay": 327,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20489,7 +20687,7 @@
     {
       "materialId": "expand-w24-read-1-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 322,
+      "firstPlannedDay": 332,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20517,7 +20715,7 @@
     {
       "materialId": "expand-w24-read-2-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 326,
+      "firstPlannedDay": 334,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20601,7 +20799,7 @@
     {
       "materialId": "expand-w24-read-1-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 327,
+      "firstPlannedDay": 341,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20629,7 +20827,7 @@
     {
       "materialId": "expand-w24-read-2-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 332,
+      "firstPlannedDay": 348,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20713,7 +20911,7 @@
     {
       "materialId": "expand-w25-read-1-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 333,
+      "firstPlannedDay": 355,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20741,7 +20939,7 @@
     {
       "materialId": "expand-w25-read-2-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 334,
+      "firstPlannedDay": 356,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20825,7 +21023,7 @@
     {
       "materialId": "expand-w25-read-1-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 340,
+      "firstPlannedDay": 360,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20853,7 +21051,7 @@
     {
       "materialId": "expand-w25-read-2-speaking",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 341,
+      "firstPlannedDay": 362,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20937,7 +21135,7 @@
     {
       "materialId": "expand-w26-read-1-grammar",
       "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 348,
+      "firstPlannedDay": 363,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -20964,8 +21162,8 @@
     },
     {
       "materialId": "expand-w26-read-2-grammar",
-      "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 355,
+      "status": "awaiting-first-use-slot",
+      "firstPlannedDay": null,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -21048,8 +21246,8 @@
     },
     {
       "materialId": "expand-w26-read-1-speaking",
-      "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 356,
+      "status": "awaiting-first-use-slot",
+      "firstPlannedDay": null,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -21076,8 +21274,8 @@
     },
     {
       "materialId": "expand-w26-read-2-speaking",
-      "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 360,
+      "status": "awaiting-first-use-slot",
+      "firstPlannedDay": null,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -21160,8 +21358,8 @@
     },
     {
       "materialId": "expand-w27-read-1-grammar",
-      "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 362,
+      "status": "awaiting-first-use-slot",
+      "firstPlannedDay": null,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [
@@ -21188,8 +21386,8 @@
     },
     {
       "materialId": "expand-w27-read-2-grammar",
-      "status": "awaiting-actual-learning-evidence",
-      "firstPlannedDay": 363,
+      "status": "awaiting-first-use-slot",
+      "firstPlannedDay": null,
       "notBeforeActualCompletion": true,
       "proposedWindowsDays": [
         [

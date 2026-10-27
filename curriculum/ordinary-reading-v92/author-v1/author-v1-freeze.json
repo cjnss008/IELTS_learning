@@ -1,0 +1,358 @@
+{
+  "schema": 1,
+  "id": "ordinary-reading-v92-author-v1",
+  "status": "frozen-before-independent-question-review",
+  "files": [
+    {
+      "path": "prepare.cjs",
+      "bytes": 6387,
+      "sha256": "205fea9490dfe8da44eae18216a02ac052a73dae99bb5aa02d36369f24b13c12"
+    },
+    {
+      "path": "build-author-v1.cjs",
+      "bytes": 14507,
+      "sha256": "bb018c3db899b291619231261db21152f03a98a0ed8602b9d924406b6ba8fabb"
+    },
+    {
+      "path": "questions-bls.cjs",
+      "bytes": 14379,
+      "sha256": "2e846692d07ef5c56d58bb2f35219db64ed76b7cf9c24685568fccfdf6418712"
+    },
+    {
+      "path": "questions-health-science.cjs",
+      "bytes": 14108,
+      "sha256": "e63fd203a13e83f4063a5329ade9cbb677d1f5dd391634d0e2412fcbd3ebc344"
+    },
+    {
+      "path": "questions-technology-budget.cjs",
+      "bytes": 13983,
+      "sha256": "7ccc3d0242ef6410565b1eb0915cbc2cc28ddaafc6c96b3cd7df4aa48fdedb6e"
+    },
+    {
+      "path": "blind-input-v1.json",
+      "bytes": 59351,
+      "sha256": "a76e3113e1901d5fa1e1b6812e57172120f7d6ccb3a48c5930247ca4f9dd4be7"
+    },
+    {
+      "path": "author-v1-index.json",
+      "bytes": 5691,
+      "sha256": "5e2f52ebde356921eb34673f33d64fbfd91464dec7e8c6c0179584ec1b80d015"
+    },
+    {
+      "path": "release-draft.json",
+      "bytes": 6166,
+      "sha256": "1905eb6f956f8eb01cf795ee907456e0ad04f95a23eb06a52d0436217f01c1ad"
+    },
+    {
+      "path": "source-index.json",
+      "bytes": 36698,
+      "sha256": "02e922959439fc287ca769dace496bf436fb1ca58cb7a777d06924647d66d974"
+    },
+    {
+      "path": "baseline-pins.json",
+      "bytes": 9277,
+      "sha256": "934a1649a6bbfe8dd47d7ef9f10a7c98ea31cd3bc6ce059d26edc081980bcdd5"
+    },
+    {
+      "path": "context-catalog.json",
+      "bytes": 80212,
+      "sha256": "927c2eb43bde02cdb63573c01acb5277ad86738a40be68f664e08a22fdc49411"
+    },
+    {
+      "path": "lexical-location-survival.json",
+      "bytes": 123908,
+      "sha256": "b14e0828ce39f8c380ae52ae9ab0cd78e76c1e9cc5a37d7d465415440530d50f"
+    },
+    {
+      "path": "budget-and-review-boundaries.json",
+      "bytes": 2688,
+      "sha256": "ff8d7acf6cb9731ca76d5dfb104d7c325915b97079a976c315869235f5c200d7"
+    },
+    {
+      "path": "materials/bls-athletes-reading.json",
+      "bytes": 27863,
+      "sha256": "72fc820f5601b2be20dbfb36be92af3911f6a397bd86586313d7697d8aa814b3"
+    },
+    {
+      "path": "materials/bls-musicians-reading.json",
+      "bytes": 27354,
+      "sha256": "6db1f2c2620cf4ca076724ef1cd2984374c3e632c4853b8258240181078cfd24"
+    },
+    {
+      "path": "materials/cbo-budget-2025-reading.json",
+      "bytes": 26787,
+      "sha256": "5dd7bd9614803e8df0ee29de1a41c0dfc43d5c67102ec8dd073709997d6e5d47"
+    },
+    {
+      "path": "materials/nhgri-dna-reading.json",
+      "bytes": 25775,
+      "sha256": "fa536753f8e60eac185d4bed4451e6b0eb79cc12f208586c999592263103590e"
+    },
+    {
+      "path": "materials/nimh-psychotherapies-reading.json",
+      "bytes": 25289,
+      "sha256": "549cb24fd3f2fa104e967c62082de48f6ccacae84e38bbb0b579a57402fb99b7"
+    },
+    {
+      "path": "materials/nist-atomic-television-reading.json",
+      "bytes": 23816,
+      "sha256": "3f9d7ccb0fc8e6e63d60a2a4fad0de18058c243c68d087b6d37e9a954cd9c3e3"
+    },
+    {
+      "path": "contexts/bls-athletes.json",
+      "bytes": 13113,
+      "sha256": "5988deb38c527a61a82d48aa21379375b9360efcbc002d489567e06ad6d73d17"
+    },
+    {
+      "path": "contexts/bls-musicians.json",
+      "bytes": 12495,
+      "sha256": "7b49a38bf40c889d79093e75f807e9f9bc373f9eb898feeb606a7a56f3083614"
+    },
+    {
+      "path": "contexts/cbo-budget-2025.json",
+      "bytes": 13368,
+      "sha256": "e8e06f07655afa0d5d910af332c33fbc6839411a4f94945e8fe1c69a54919387"
+    },
+    {
+      "path": "contexts/nhgri-dna.json",
+      "bytes": 12699,
+      "sha256": "a1b68193c44a0946e667de394b147fede47ec5dbfc9f44720dbbdafb357cb9af"
+    },
+    {
+      "path": "contexts/nimh-psychotherapies.json",
+      "bytes": 12638,
+      "sha256": "bdef1d8dec1fef7d1542e1e9c7918e920d21dfd0ddb319c09aaf7b08d9ebc0fc"
+    },
+    {
+      "path": "contexts/nist-atomic-television.json",
+      "bytes": 8961,
+      "sha256": "f1cb1dd1a58b752eb33342adbee7c4cba8bb585405b41f2e1c4f7324ba2cddb9"
+    },
+    {
+      "path": "author-packs/bls-athletes.json",
+      "bytes": 36109,
+      "sha256": "e2375b8591cf6f0934e60543eab3cb09c200cf8112c39853b76592f89e531476"
+    },
+    {
+      "path": "author-packs/bls-musicians.json",
+      "bytes": 34819,
+      "sha256": "da6d03347c01b7b608e0e4c9dbb39c1d10341adfe9755e6d47baf2ee2ca9a9a9"
+    },
+    {
+      "path": "author-packs/cbo-budget-2025.json",
+      "bytes": 39800,
+      "sha256": "3853d80d318ff63bedfdfbff46e198cc2a3bcc2cd870f509989e02a438a2ada1"
+    },
+    {
+      "path": "author-packs/nhgri-dna.json",
+      "bytes": 35444,
+      "sha256": "e3c9de0391a23c4e1e3fce67605ed97b0ba25f6ee2157c97c3e4c26eec3d87ef"
+    },
+    {
+      "path": "author-packs/nimh-psychotherapies.json",
+      "bytes": 35581,
+      "sha256": "e63f9a17a5b315a7a2a5a27b5f783704483d7a5fa043fa120ece66b08566c5d0"
+    },
+    {
+      "path": "author-packs/nist-atomic-television.json",
+      "bytes": 31703,
+      "sha256": "612690c153fc78a532b98dd7795f62f8de232728f5ee68ba77e73ac2e9f4b683"
+    },
+    {
+      "path": "sources/bls-athletes.json",
+      "bytes": 13746,
+      "sha256": "e8dcbfeb7e736b8a4f15650dfc53580e4ae602215ad615b4881999fee490eedc"
+    },
+    {
+      "path": "sources/bls-musicians.json",
+      "bytes": 5138,
+      "sha256": "91116859f2d0a7671de2fdc6600fa8d35aeeb2259e1741b133877a28354e6bad"
+    },
+    {
+      "path": "sources/cbo-budget-2025.json",
+      "bytes": 2262,
+      "sha256": "2340ca16f7b9282d791a0b9bc8270d40855f6e97063fbb04fcf8d55c8436332b"
+    },
+    {
+      "path": "sources/nhgri-dna.json",
+      "bytes": 4898,
+      "sha256": "8631a5dc1cdd3f178b4a28c9487857bf12ddef7b0611cf5ec034dfc0d99308a2"
+    },
+    {
+      "path": "sources/nimh-psychotherapies.json",
+      "bytes": 2298,
+      "sha256": "8f31f8e076785fe113e06a72f4864dba7d2dbc00ff00d887bd765b2108057355"
+    },
+    {
+      "path": "sources/nist-atomic-television.json",
+      "bytes": 3889,
+      "sha256": "a477995181b8f9eaa1a0670b79629371c04126df1ede06e0c56bf13a05c1f81f"
+    },
+    {
+      "path": "teaching-texts/bls-athletes.txt",
+      "bytes": 7255,
+      "sha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d"
+    },
+    {
+      "path": "teaching-texts/bls-musicians.txt",
+      "bytes": 7149,
+      "sha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7"
+    },
+    {
+      "path": "teaching-texts/cbo-budget-2025.txt",
+      "bytes": 2514,
+      "sha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5"
+    },
+    {
+      "path": "teaching-texts/nhgri-dna.txt",
+      "bytes": 5122,
+      "sha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74"
+    },
+    {
+      "path": "teaching-texts/nimh-psychotherapies.txt",
+      "bytes": 4559,
+      "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076"
+    },
+    {
+      "path": "teaching-texts/nist-atomic-television.txt",
+      "bytes": 3123,
+      "sha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a"
+    },
+    {
+      "path": "source-originals/bls-athletes.full.txt",
+      "bytes": 7472,
+      "sha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792"
+    },
+    {
+      "path": "source-originals/bls-athletes.v92-selection.txt",
+      "bytes": 7473,
+      "sha256": "2aaf6b86c63bafab35ff3f2689b4851f153bfcf39583cff2163d14c6f80ff380"
+    },
+    {
+      "path": "source-originals/bls-musicians.full.txt",
+      "bytes": 7333,
+      "sha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56"
+    },
+    {
+      "path": "source-originals/bls-musicians.v92-selection.txt",
+      "bytes": 7334,
+      "sha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a"
+    },
+    {
+      "path": "source-originals/cbo-budget-2025.full.txt",
+      "bytes": 2513,
+      "sha256": "8d409e119928bd96badb18609ce27e57367d059c34b8f3382aa16ac4203342de"
+    },
+    {
+      "path": "source-originals/cbo-budget-2025.v92-selection.txt",
+      "bytes": 2514,
+      "sha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5"
+    },
+    {
+      "path": "source-originals/nhgri-dna.full.txt",
+      "bytes": 12933,
+      "sha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f"
+    },
+    {
+      "path": "source-originals/nhgri-dna.v92-selection.txt",
+      "bytes": 5223,
+      "sha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251"
+    },
+    {
+      "path": "source-originals/nimh-psychotherapies.full.txt",
+      "bytes": 9767,
+      "sha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246"
+    },
+    {
+      "path": "source-originals/nimh-psychotherapies.v92-selection.txt",
+      "bytes": 4559,
+      "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076"
+    },
+    {
+      "path": "source-originals/nist-atomic-television.full.txt",
+      "bytes": 3124,
+      "sha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090"
+    },
+    {
+      "path": "source-originals/nist-atomic-television.v92-selection.txt",
+      "bytes": 3125,
+      "sha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c"
+    },
+    {
+      "path": "evidence/raw/bls-athletes.json",
+      "bytes": 30145,
+      "sha256": "ddd3ef733b27c8fe4c9a1f2613e4d569b417a2983e83a713bd276d025c12b817"
+    },
+    {
+      "path": "evidence/raw/bls-musicians.json",
+      "bytes": 36239,
+      "sha256": "142b7ffc36327f375f3c6e56ea994e18399650624faca2d3b9209aa6613cb01a"
+    },
+    {
+      "path": "evidence/raw/cbo-budget-2025.json",
+      "bytes": 3951,
+      "sha256": "1442eed840dae739377767b20795966bc657ee3bac76d387edd3f4a33b8de03d"
+    },
+    {
+      "path": "evidence/raw/nhgri-dna.json",
+      "bytes": 18088,
+      "sha256": "ff32e191a0d5972a776f30e36a2d332ea4493bc67f4412f58fbd45fe2dabd2b3"
+    },
+    {
+      "path": "evidence/raw/nimh-psychotherapies.json",
+      "bytes": 18781,
+      "sha256": "2d9249e56d97c84a3545f7aa7244ceba566c76f87babe84ae15123b2d8fdf013"
+    },
+    {
+      "path": "evidence/raw/nist-atomic-television.json",
+      "bytes": 8412,
+      "sha256": "5d28c3ef96a74b7b4fdb2a2492b87a26c61ab2a4dd7e9b25908c8965859f931f"
+    },
+    {
+      "path": "evidence/rights/bls-athletes/agency-rights-0.json",
+      "bytes": 1780,
+      "sha256": "671addc89a91e61932a77f01e1d87a3f3d4c668959cfd81fe218ec72d4f814d9"
+    },
+    {
+      "path": "evidence/rights/bls-musicians/bls-reuse-policy.json",
+      "bytes": 1780,
+      "sha256": "671addc89a91e61932a77f01e1d87a3f3d4c668959cfd81fe218ec72d4f814d9"
+    },
+    {
+      "path": "evidence/rights/cbo-budget-2025/cbo-reuse-policy.json",
+      "bytes": 5247,
+      "sha256": "4c275580ca7f005246604a9cca21f192eea684bb120da628e396eed5ba52bed4"
+    },
+    {
+      "path": "evidence/rights/nhgri-dna/agency-rights-3.json",
+      "bytes": 6203,
+      "sha256": "0494602e0b21769c42c79ab370778666d41129629fd346047af271587e68d9f2"
+    },
+    {
+      "path": "evidence/rights/nimh-psychotherapies/agency-rights-1.json",
+      "bytes": 10691,
+      "sha256": "5489e2557302ab8e4dbc03f86aeddb0d31fc6048f2eb456081beb5706f650fff"
+    },
+    {
+      "path": "evidence/rights/nist-atomic-television/agency-rights-4.json",
+      "bytes": 7832,
+      "sha256": "e8f4e9785e1c808387e959399b970b9d9903fdca6bba06894c79d1d4c3326447"
+    },
+    {
+      "path": "evidence/rights/nist-atomic-television/nist-federal-work-rights.json",
+      "bytes": 21079,
+      "sha256": "857e2a59425191b1d96ff09bebed6ce1c44c1a07a39c1d124cf09f9e99ac2ec2"
+    }
+  ],
+  "fileCount": 68,
+  "totalBytes": 1136520,
+  "blindInputSha256": "a76e3113e1901d5fa1e1b6812e57172120f7d6ccb3a48c5930247ca4f9dd4be7",
+  "authorIndexSha256": "5e2f52ebde356921eb34673f33d64fbfd91464dec7e8c6c0179584ec1b80d015",
+  "questions": 48,
+  "grammarExamples": 12,
+  "wordPositionCandidates": 27,
+  "rootReview": null,
+  "independentQuestionReview": null,
+  "active": false,
+  "rootInputOwnership": "Root alone handles product/build/plan admission; this pack remains inactive."
+}

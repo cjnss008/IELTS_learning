@@ -1,0 +1,733 @@
+{
+  "schema": 1,
+  "sourceId": "bls-musicians",
+  "materialId": "public-ordinary-v92-bls-musicians-reading",
+  "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+  "status": "author-v1-before-independent-question-review",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main purpose of the passage?",
+      "options": [
+        "To explain why all musicians should specialize in classical performance.",
+        "To compare the prices charged for different types of concert ticket.",
+        "To describe musical work, preparation and employment conditions.",
+        "To rank music degrees according to their value to employers."
+      ],
+      "answers": [
+        "To describe musical work, preparation and employment conditions."
+      ],
+      "explanation": "全文围绕音乐工作内容、演出和录音环境、工作安排、教育训练及职业发展展开。它没有排名学位、票价，也没有要求所有人学古典音乐。\n\n选项“To explain why all musicians should specialize in classical performance.”：文中列出多种风格，古典只是其中一类，并非人人的唯一方向。\n选项“To compare the prices charged for different types of concert ticket.”：文中不比较票价。\n选项“To describe musical work, preparation and employment conditions.”：正确：覆盖全文的工作、准备与就业三个方面。\n选项“To rank music degrees according to their value to employers.”：文中讨论教育选择，但没有对学位或院校进行排名。",
+      "evidence": "Musicians and singers play instruments or sing for live audiences and in recording studios. They perform a variety of genres, such as classical, jazz, and rock.",
+      "evidenceOffsets": {
+        "start": 170,
+        "end": 330,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 170,
+        "end": 330,
+        "textSha256": "2de126aba34a35d7d47b2d659e4a221e664206f14cb7b55f9e49485c811f1b77"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "文中列出多种风格，古典只是其中一类，并非人人的唯一方向。",
+        "文中不比较票价。",
+        "正确：覆盖全文的工作、准备与就业三个方面。",
+        "文中讨论教育选择，但没有对学位或院校进行排名。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why do some musicians become skilled in several instruments or styles?",
+      "options": [
+        "To make themselves more attractive to potential employers or clients.",
+        "To avoid practising regularly after they have learned one instrument.",
+        "To meet a rule that requires every performer to join an orchestra.",
+        "To remove the need to work with agents or other performers."
+      ],
+      "answers": [
+        "To make themselves more attractive to potential employers or clients."
+      ],
+      "explanation": "To make themselves more marketable说明提高市场竞争力的目的。学习多种技能并不免除练习，也没有人人必须加入乐团的规则。\n\n选项“To make themselves more attractive to potential employers or clients.”：正确：more marketable在这里指更容易获得演出或工作机会。\n选项“To avoid practising regularly after they have learned one instrument.”：原文反复要求持续练习，不能由多才多艺推出免练习。\n选项“To meet a rule that requires every performer to join an orchestra.”：文中既有独奏也有乐团，没有普遍强制入团规定。\n选项“To remove the need to work with agents or other performers.”：多技能与不再合作、完全不用经纪人没有这种因果关系。",
+      "evidence": "Musicians play one or more instruments. To make themselves more marketable, many become proficient in multiple musical instruments or styles. Some diversify by both singing and playing instruments.",
+      "evidenceOffsets": {
+        "start": 820,
+        "end": 1017,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 820,
+        "end": 1017,
+        "textSha256": "8bae770930aa49cc2b4d2ac33cc2d4c4f0934e1c7f4ab0d7a33502e1b70f7376"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause-purpose",
+      "distractorReasons": [
+        "正确：more marketable在这里指更容易获得演出或工作机会。",
+        "原文反复要求持续练习，不能由多才多艺推出免练习。",
+        "文中既有独奏也有乐团，没有普遍强制入团规定。",
+        "多技能与不再合作、完全不用经纪人没有这种因果关系。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does “This” refer to in “This includes rehearsing and performing during the day or night on weekdays and weekends”?",
+      "options": [
+        "The requirement to earn a postgraduate degree.",
+        "The process of building instruments for an orchestra.",
+        "The restriction of all performances to recording studios.",
+        "The irregular working schedules of musicians and singers."
+      ],
+      "answers": [
+        "The irregular working schedules of musicians and singers."
+      ],
+      "explanation": "This承接紧接在前面的irregular work schedules；后一句用工作日、周末、白天和夜间的排练演出来展开说明。\n\n选项“The requirement to earn a postgraduate degree.”：上一句没有研究生学位要求。\n选项“The process of building instruments for an orchestra.”：这一段讲工作安排，不讲制造乐器。\n选项“The restriction of all performances to recording studios.”：文中列有多种演出地点，没有全部限制在录音室。\n选项“The irregular working schedules of musicians and singers.”：正确：这些时间例子具体说明不固定的工作安排。",
+      "evidence": "Musicians and singers often have irregular work schedules. This includes rehearsing and performing during the day or night on weekdays and weekends.",
+      "evidenceOffsets": {
+        "start": 3101,
+        "end": 3249,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3101,
+        "end": 3249,
+        "textSha256": "6cf89ff711fd586217a620a35d319e7339363842f21191cafb6551b3bb216b0c"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "上一句没有研究生学位要求。",
+        "这一段讲工作安排，不讲制造乐器。",
+        "文中列有多种演出地点，没有全部限制在录音室。",
+        "正确：这些时间例子具体说明不固定的工作安排。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: All musicians and singers need formal postsecondary education to enter the occupation.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "原文说typically do not need formal postsecondary education；古典或歌剧等类型可能选择学位。选择性路径不能变成所有人的入行要求。\n\n选项“TRUE”：TRUE把可选的教育路径误读成全体必要条件。\n选项“FALSE”：正确：typically do not need与All...need相冲突。\n选项“NOT GIVEN”：不是NOT GIVEN，正式高等教育是否必需在文中被明确讨论。",
+      "evidence": "Musicians and singers typically do not need formal postsecondary education to enter the occupation. However, those pursuing careers in some genres, such as classical or opera, may choose to earn a bachelor’s or higher degree. Musicians and singers need extensive training and regular practice to acquire their skills.",
+      "evidenceOffsets": {
+        "start": 3674,
+        "end": 3991,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3674,
+        "end": 3991,
+        "textSha256": "9686f24eec6df2cdfe945146ce1620e96f0f3738f9cfc1580a1f4611587379f0"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE把可选的教育路径误读成全体必要条件。",
+        "正确：typically do not need与All...need相冲突。",
+        "不是NOT GIVEN，正式高等教育是否必需在文中被明确讨论。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: An undergraduate music degree costs more than a degree in business.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "文章提到音乐本科课程和可能有帮助的商业课程，但没有任何学费比较。列出两类课程不等于给出费用关系。\n\n选项“TRUE”：没有两类学位的费用数据，不能判TRUE。\n选项“FALSE”：也没有相反的学费关系，不能判FALSE。\n选项“NOT GIVEN”：正确：文中谈学习内容和用途，没有比较学费。",
+      "evidence": "Undergraduate music programs teach students about music history and styles. In addition, they teach methods for improving instrumental and vocal techniques and musical expression. Undergraduate voice programs also may include courses in diction. Courses in a foreign language may benefit students who intend to perform in that language. Some business courses, such as marketing, may be helpful for learning about the self-promotion often required for professional musicians and singers.",
+      "evidenceOffsets": {
+        "start": 4420,
+        "end": 4906,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 4420,
+        "end": 4906,
+        "textSha256": "9428ebe6a15a5a2f5e1dd2260015994dfec508b6dd77bc011b0bbcfc4bebeabe"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "没有两类学位的费用数据，不能判TRUE。",
+        "也没有相反的学费关系，不能判FALSE。",
+        "正确：文中谈学习内容和用途，没有比较学费。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Some people may work full time in another occupation while continuing to work part time in music.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "原文说找工作的压力可能使音乐工作者接受其他职业的全职工作，同时仍兼职做音乐。may和some没有把这种情况说成人人必然如此。\n\n选项“TRUE”：正确：原文明确写到full-time jobs in other occupations与part time as a musician or singer并存。\n选项“FALSE”：FALSE与原文明示的这种可能情况相反。\n选项“NOT GIVEN”：这不是未提及，兼职和其他全职工作的组合有完整说明。",
+      "evidence": "Many musicians and singers find only part-time or intermittent work and may have long periods of unemployment between jobs. The stress of constantly looking for work may require them to accept full-time jobs in other occupations while working part time as a musician or singer.",
+      "evidenceOffsets": {
+        "start": 3251,
+        "end": 3528,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3251,
+        "end": 3528,
+        "textSha256": "a46f304a2864a399e916cc1c202f3675b9f3489a363ef8c9f60554f67a6c7770"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：原文明确写到full-time jobs in other occupations与part time as a musician or singer并存。",
+        "FALSE与原文明示的这种可能情况相反。",
+        "这不是未提及，兼职和其他全职工作的组合有完整说明。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "What is the TWO-WORD name for musicians who play backup during recording sessions and live performances? Use words from the passage.",
+      "answers": [
+        "session musicians"
+      ],
+      "maxWords": 2,
+      "explanation": "对应are known as session musicians。这里问演奏伴奏的音乐工作者；后面的backup singers/backing vocalists指提供背景人声的歌者，角色不同。\n\n可接受答案：session musicians；最多2个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“backup singers”：原文将它用于提供背景人声的歌者，而非本题所问演奏伴奏的musicians。\n写法“a session musician”：改成单数并增加冠词，超过两词；题目要求原文两词名称。\n写法“musicians”：缺session，无法指出这一特定角色。",
+      "evidence": "Musicians who specialize in playing backup for a singer or band leader during recording sessions and live performances are known as session musicians. Singers who provide background vocals to harmonize with or support a lead singer are known as backup singers or backing vocalists.",
+      "evidenceOffsets": {
+        "start": 1919,
+        "end": 2200,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1919,
+        "end": 2200,
+        "textSha256": "01bed9c27ee960358bc3f2c52b580d0fdf7e5e766f1ac0ffad16c5d935dfa815"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "backup singers": "原文将它用于提供背景人声的歌者，而非本题所问演奏伴奏的musicians。",
+        "a session musician": "改成单数并增加冠词，超过两词；题目要求原文两词名称。",
+        "musicians": "缺session，无法指出这一特定角色。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with ONE HYPHENATED WORD from the passage: Business courses may help performers learn about the _______ required in their careers.",
+      "answers": [
+        "self-promotion"
+      ],
+      "maxWords": 1,
+      "explanation": "原文说商业课程可能帮助学习职业中所需的self-promotion。连字符把它连成一个词；不需要抄空前已经给出的the。\n\n可接受答案：self-promotion；最多1个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“promotion”：少了self-，没有完整提取原文词。\n写法“self promotion”：题目要求一个带连字符的原文词，拆写不符合要求。\n写法“the self-promotion”：空前已有the，而且多抄后为两词，超过上限。",
+      "evidence": "Undergraduate music programs teach students about music history and styles. In addition, they teach methods for improving instrumental and vocal techniques and musical expression. Undergraduate voice programs also may include courses in diction. Courses in a foreign language may benefit students who intend to perform in that language. Some business courses, such as marketing, may be helpful for learning about the self-promotion often required for professional musicians and singers.",
+      "evidenceOffsets": {
+        "start": 4420,
+        "end": 4906,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 4420,
+        "end": 4906,
+        "textSha256": "9428ebe6a15a5a2f5e1dd2260015994dfec508b6dd77bc011b0bbcfc4bebeabe"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "promotion": "少了self-，没有完整提取原文词。",
+        "self promotion": "题目要求一个带连字符的原文词，拆写不符合要求。",
+        "the self-promotion": "空前已有the，而且多抄后为两词，超过上限。"
+      }
+    }
+  ],
+  "questionReviewNotes": [
+    {
+      "questionId": "q1",
+      "cognitiveTask": "main-idea",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 170,
+          "teachingEndUtf16": 330,
+          "selectedStartUtf16": 189,
+          "selectedEndUtf16": 349,
+          "originalStartUtf16": 189,
+          "originalEndUtf16": 349,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q2",
+      "cognitiveTask": "cause-purpose",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 820,
+          "teachingEndUtf16": 1017,
+          "selectedStartUtf16": 839,
+          "selectedEndUtf16": 1036,
+          "originalStartUtf16": 839,
+          "originalEndUtf16": 1036,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q3",
+      "cognitiveTask": "reference",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3101,
+          "teachingEndUtf16": 3249,
+          "selectedStartUtf16": 3267,
+          "selectedEndUtf16": 3415,
+          "originalStartUtf16": 3267,
+          "originalEndUtf16": 3415,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q4",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3674,
+          "teachingEndUtf16": 3991,
+          "selectedStartUtf16": 3859,
+          "selectedEndUtf16": 4176,
+          "originalStartUtf16": 3859,
+          "originalEndUtf16": 4176,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q5",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4420,
+          "teachingEndUtf16": 4906,
+          "selectedStartUtf16": 4605,
+          "selectedEndUtf16": 5091,
+          "originalStartUtf16": 4605,
+          "originalEndUtf16": 5091,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": "Whole teaching passage checked for absence; quoted paragraph is a topic anchor, not proof that the statement is false."
+    },
+    {
+      "questionId": "q6",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3251,
+          "teachingEndUtf16": 3528,
+          "selectedStartUtf16": 3417,
+          "selectedEndUtf16": 3694,
+          "originalStartUtf16": 3417,
+          "originalEndUtf16": 3694,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q7",
+      "cognitiveTask": "short-answer",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1919,
+          "teachingEndUtf16": 2200,
+          "selectedStartUtf16": 1938,
+          "selectedEndUtf16": 2219,
+          "originalStartUtf16": 1938,
+          "originalEndUtf16": 2219,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q8",
+      "cognitiveTask": "completion",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4420,
+          "teachingEndUtf16": 4906,
+          "selectedStartUtf16": 4605,
+          "selectedEndUtf16": 5091,
+          "originalStartUtf16": 4605,
+          "originalEndUtf16": 5091,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    }
+  ],
+  "grammarEvidence": [
+    {
+      "id": "bls-musicians-grammar-1",
+      "tag": "purpose-infinitives",
+      "sentence": "To make themselves more marketable, many become proficient in multiple musical instruments or styles.",
+      "explanation": "句首To make...说明目的：为了提高自己的就业竞争力，许多人熟练掌握多种乐器或风格。themselves指这些音乐工作者，more marketable是宾语补足语；不是“把市场做大”。",
+      "evidenceOffsets": {
+        "start": 860,
+        "end": 961,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "3147fb6c759dba7678ec066d1b9a0b469f90315b89cd76472d9a5ce1121d14fc",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 860,
+          "teachingEndUtf16": 961,
+          "selectedStartUtf16": 879,
+          "selectedEndUtf16": 980,
+          "originalStartUtf16": 879,
+          "originalEndUtf16": 980,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    },
+    {
+      "id": "bls-musicians-grammar-2",
+      "tag": "gerund-subject-and-cause",
+      "sentence": "Auditioning for jobs can be a frustrating process because it may take many different auditions to get hired.",
+      "explanation": "Auditioning for jobs这个动名词短语作主语。because后解释可能令人沮丧的原因：获聘前可能要多次试演。it是形式主语，to get hired中的被动表达被聘用；may保留可能性，不是保证试几次必定录取。",
+      "evidenceOffsets": {
+        "start": 6102,
+        "end": 6210,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "cbdcac71882b8b0e45658bbb9e8fad9f70992f4c5cc190a27cc953b69c8d6386",
+      "teachingTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 6102,
+          "teachingEndUtf16": 6210,
+          "selectedStartUtf16": 6287,
+          "selectedEndUtf16": 6395,
+          "originalStartUtf16": 6287,
+          "originalEndUtf16": 6395,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    }
+  ],
+  "wordCandidates": [
+    {
+      "id": "bls-musicians-word-1",
+      "word": "musician",
+      "canonicalTargetId": "essential:musician",
+      "surface": "musicians",
+      "startUtf16": 1386,
+      "endUtf16": 1395,
+      "quote": "Musicians play solo or in orchestras, bands, or limited-size groups, such as trios. Those in bands or groups may play at small venues, such as private parties or bars, sometimes building enough of a fan base to get a recording contract or representation by an agent. Musicians who work in orchestras perform in venues with a stage large enough to accommodate all the musicians and their instruments. A few orchestra musicians become section leaders, who may be responsible for assigning parts to other musicians or for leading rehearsals.",
+      "quoteStartUtf16": 1019,
+      "quoteEndUtf16": 1557,
+      "quoteSha256": "80f2766c920889d1269f2928d9b7cb4a438b325933c69b474d7a4aaeda74296c",
+      "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "musician",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "musician",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1386,
+          "teachingEndUtf16": 1395,
+          "selectedStartUtf16": 1405,
+          "selectedEndUtf16": 1414,
+          "originalStartUtf16": 1405,
+          "originalEndUtf16": 1414,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-2",
+      "word": "genre",
+      "canonicalTargetId": "essential:genre",
+      "surface": "genres",
+      "startUtf16": 288,
+      "endUtf16": 294,
+      "quote": "Musicians and singers play instruments or sing for live audiences and in recording studios. They perform a variety of genres, such as classical, jazz, and rock.",
+      "quoteStartUtf16": 170,
+      "quoteEndUtf16": 330,
+      "quoteSha256": "2de126aba34a35d7d47b2d659e4a221e664206f14cb7b55f9e49485c811f1b77",
+      "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "genre",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "genre",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 288,
+          "teachingEndUtf16": 294,
+          "selectedStartUtf16": 307,
+          "selectedEndUtf16": 313,
+          "originalStartUtf16": 307,
+          "originalEndUtf16": 313,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-3",
+      "word": "orchestra",
+      "canonicalTargetId": "essential:orchestra",
+      "surface": "orchestras",
+      "startUtf16": 467,
+      "endUtf16": 477,
+      "quote": "Audition for positions in orchestras, choirs, bands, and other types of music groups",
+      "quoteStartUtf16": 441,
+      "quoteEndUtf16": 525,
+      "quoteSha256": "6adadbf77fa8c119363d2a93798601a50f1da251604cb27afc5fdb3208eb8f42",
+      "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "orchestra",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "orchestra",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 467,
+          "teachingEndUtf16": 477,
+          "selectedStartUtf16": 486,
+          "selectedEndUtf16": 496,
+          "originalStartUtf16": 486,
+          "originalEndUtf16": 496,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-4",
+      "word": "singer",
+      "canonicalTargetId": "essential:singer",
+      "surface": "singers",
+      "startUtf16": 184,
+      "endUtf16": 191,
+      "quote": "Musicians and singers play instruments or sing for live audiences and in recording studios. They perform a variety of genres, such as classical, jazz, and rock.",
+      "quoteStartUtf16": 170,
+      "quoteEndUtf16": 330,
+      "quoteSha256": "2de126aba34a35d7d47b2d659e4a221e664206f14cb7b55f9e49485c811f1b77",
+      "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "singer",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "singer",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 184,
+          "teachingEndUtf16": 191,
+          "selectedStartUtf16": 203,
+          "selectedEndUtf16": 210,
+          "originalStartUtf16": 203,
+          "originalEndUtf16": 210,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-5",
+      "word": "rehearse",
+      "canonicalTargetId": "essential:rehearse",
+      "surface": "rehearsing",
+      "startUtf16": 3174,
+      "endUtf16": 3184,
+      "quote": "Musicians and singers often have irregular work schedules. This includes rehearsing and performing during the day or night on weekdays and weekends.",
+      "quoteStartUtf16": 3101,
+      "quoteEndUtf16": 3249,
+      "quoteSha256": "6cf89ff711fd586217a620a35d319e7339363842f21191cafb6551b3bb216b0c",
+      "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+      "sourceId": "bls-musicians",
+      "materialId": "public-ordinary-v92-bls-musicians-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "rehearse",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "rehearse",
+            "exchangeKind": "i"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3174,
+          "teachingEndUtf16": 3184,
+          "selectedStartUtf16": 3340,
+          "selectedEndUtf16": 3350,
+          "originalStartUtf16": 3340,
+          "originalEndUtf16": 3350,
+          "originalBodySha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    }
+  ],
+  "active": false
+}

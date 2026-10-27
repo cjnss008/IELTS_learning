@@ -57,3 +57,5 @@
 - 0.0.90开发候选维持80公开/688年度active组合，50 required/51 actual/MAX52，三个原额外角色提升为必要角色、另增10个精确文件，旧41角色/路径全部保留。词汇保持当前仅签审24原文词头/48场景/144题，不能称8000词全覆盖；未来扩展须先审多release历史兼容、状态/记录容量与加载，不机械抬上限。常规发布仍遵循真实页面验收要求。
 
 - 0.0.91仅新增实际Bank角色，51 required/52 actual/MAX52；原51角色路径全部保留。旧v88 helper/data/policy/feedback/root-derived-review字节固定，已有Memory/Record/草稿不增加新releaseId或迁移。新增archive readSet/proofReader为未来模式准备，不在页面自动加载/采用归档，不把局部集合当完整R.list。后续小批次/归档写模式须另验完整备份与恢复，不抬旧上限或删旧记录。
+
+- 0.0.92新增六篇已签审普通阅读；正式重建须额外保留 `--ordinary-reading-release curriculum/ordinary-reading-v92/release.json`，同时保留GSA及active年度完整条件。新86组合保留旧80安排/复习/日程补丁和1836旧对象、365原课表、688年度正文；年度未来参考位置允许按预算重排，pending不能当完成。源/题/原件/坐标/哈希均由独立release校验；建议课位仅static reference，运行仍用真实level/prerequisite/history/budget保护。角色51 required/52 actual/MAX52保持，未接通紧凑词库或新语音。

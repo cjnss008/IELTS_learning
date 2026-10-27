@@ -7,7 +7,7 @@ function grammarPartition(data,projectRoot){
  assert(data.familyGrammarRelease,'New grammar must retain its signed release');const bytes=fs.readFileSync(path.join(projectRoot,'curriculum/family-grammar-v89/manifest.json'));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),'41a30f04c3cf78d0acb1a2c85308858f2efb0359ef0b25b64379410747db1ddb');const catalog=JSON.parse(bytes),ids=catalog.materials.map(m=>m.materialId);assert.equal(ids.length,8);assert.deepEqual(present.map(m=>m.id).sort(),ids.slice().sort(),'Exactly eight signed grammar additions');
  const checked=copy(data),result=require('../tools/apply-family-grammar-v89.cjs').apply(checked,{root:projectRoot});assert.equal(result.added,0,'A missing signed grammar body must not be filled by a fixture');assert.deepEqual(checked,data,'Grammar release, audit and material bodies must already match the signed build');return ids;
 }
-function load({data=require('../assets/curriculum-data.js'),sourceContexts=require('../assets/public-context-data.js'),projectRoot=repo}={}){
+function loadLegacy({data=require('../assets/curriculum-data.js'),sourceContexts=require('../assets/public-context-data.js'),projectRoot=repo}={}){
  const additionalGrammarMaterialIds=grammarPartition(data,projectRoot),grammarIds=new Set(additionalGrammarMaterialIds);
  const signature=sha({materials:data.materials,days:data.days,plan:data.publicCoursePlan,sourceContexts,grammarRelease:data.familyGrammarRelease,grammarAudit:data.audit?.familyGrammar,gsaAudit:data.audit?.gsaGradedCourse}),cached=cache.get(data);if(cached?.signature===signature&&cached.projectRoot===projectRoot)return cached.value;
  const legacyIds=new Set(PIN.publicMaterialIds),published=data.materials.filter(m=>m.source?.publicSourceId),extra=published.filter(m=>!legacyIds.has(m.id)),explicit=extra.length>0||!!data.audit?.gsaGradedCourse;let release=null,expected=PIN,newIds=new Set();
@@ -24,5 +24,25 @@ function load({data=require('../assets/curriculum-data.js'),sourceContexts=requi
  assert.deepEqual(P.validatePlan(data.publicCoursePlan,data,{materialContentHash:A.materialContentHash,expandDay:Expansion.overlay}),{valid:true,reasons:[]});assert.equal(data.publicCoursePlan.blocked.length,0);assert.deepEqual(data.publicCoursePlan.assignments.map(a=>a.materialId).sort(),published.map(m=>m.id).sort(),'actual required plan covers its exact reviewed roster');
  const additions=data.publicCoursePlan.assignments.filter(a=>newIds.has(a.materialId));for(const a of additions){assert.equal(a.strategy,'append-within-task-budget');assert.deepEqual(a.replaceMaterialIds,[]);assert.equal(a.required,true);assert.equal(a.mode,'practice');assert.equal(a.levelEligibility.minimumPracticeLevel,'B2');assert.ok(a.day>=169&&a.day<365&&a.dayBudget.after.totalMinutes<=360);}
  const value={mode:explicit?'explicit-gsa80':'default75',actual:data,actualSourceContexts:sourceContexts,legacy,legacySourceContexts,release,newMaterialIds:[...newIds],additionalGrammarMaterialIds,legacyMaterialIds:PIN.publicMaterialIds.slice(),expected,defaultPin:PIN,auditOptions:{projectRoot,...(explicit?{gsaGradedRelease:PIN.explicit.releasePath}:{})}};cache.set(data,{signature,projectRoot,value});return value;
+}
+function load(options={}){
+ const data=options.data||require('../assets/curriculum-data.js'),sourceContexts=options.sourceContexts||require('../assets/public-context-data.js'),projectRoot=options.projectRoot||repo;
+ if(!data.audit?.ordinaryReading&&!data.materials.some(m=>/^public-ordinary-v92-/.test(m.id)))return{...loadLegacy({...options,data,sourceContexts,projectRoot}),newReadingMaterialIds:[]};
+ const relative='curriculum/ordinary-reading-v92/release.json',ordinary=require('../tools/build-ordinary-reading-course.cjs').load({root:projectRoot,releasePath:relative}),ids=new Set(ordinary.materials.map(m=>m.id)),sourceIds=new Set(ordinary.release.sourceIds);
+ assert.deepEqual(data.materials.filter(m=>/^public-ordinary-v92-/.test(m.id)),ordinary.materials,'exact reviewed six reading additions');
+ for(const context of ordinary.sourceContexts.sources)assert.deepEqual(sourceContexts.sources.find(s=>s.sourceId===context.sourceId),context,'reviewed ordinary context: '+context.sourceId);
+ const base=copy(data),baseContexts=copy(sourceContexts);base.materials=base.materials.filter(m=>!ids.has(m.id));delete base.audit.ordinaryReading;
+ baseContexts.sources=baseContexts.sources.filter(s=>!sourceIds.has(s.sourceId));baseContexts.supplementalReleases=baseContexts.supplementalReleases.filter(r=>r.sha256!==ordinary.releaseSha256);
+ base.publicCoursePlan=P.build(base,{sourceContexts:baseContexts,entries:V.entries,materialContentHash:A.materialContentHash,expandDay:Expansion.overlay,vocabularyCoverage:copy(data.publicCoursePlan.audit.vocabularyCoverage)});
+ assert.equal(data.publicCoursePlan.audit.appendOnlyComposition?.basePlanHash,base.publicCoursePlan.planHash,'old80 blueprint exact reproduction');
+ for(const a of base.publicCoursePlan.assignments)assert.deepEqual(data.publicCoursePlan.assignments.find(v=>v.assignmentId===a.assignmentId),a,'old80 assignment unchanged');
+ for(const d of base.publicCoursePlan.dailyChanges)assert.deepEqual(data.publicCoursePlan.dailyChanges.find(v=>v.day===d.day),d,'old80 owner patch unchanged');
+ for(const r of base.publicCoursePlan.reviews)assert.deepEqual(data.publicCoursePlan.reviews.find(v=>v.reviewId===r.reviewId),r,'old80 review unchanged');
+ const old=loadLegacy({data:base,sourceContexts:baseContexts,projectRoot}),expected={...old.expected,materialCount:old.expected.materialCount+6,publicVariants:old.expected.publicVariants+6,reading:old.expected.reading+6};
+ assert.equal(data.materials.length,expected.materialCount);assert.equal(data.publicCoursePlan.assignments.length,expected.publicVariants);assert.equal(data.publicCoursePlan.blocked.length,0);
+ assert.deepEqual(P.validatePlan(data.publicCoursePlan,data,{sourceContexts,materialContentHash:A.materialContentHash,expandDay:Expansion.overlay}),{valid:true,reasons:[]});
+ assert.deepEqual(data.publicCoursePlan.assignments.map(a=>a.materialId).sort(),data.materials.filter(m=>m.source?.publicSourceId).map(m=>m.id).sort());
+ const receipt=require('../tools/build-ordinary-reading-course.cjs').planReceipt(ordinary,data.publicCoursePlan);assert.deepEqual(data.audit.ordinaryReading,receipt);
+ return{...old,mode:'explicit-ordinary86',actual:data,actualSourceContexts:sourceContexts,expected,ordinaryReadingRelease:ordinary,newReadingMaterialIds:[...ids],base80:base,base80SourceContexts:baseContexts,auditOptions:{...old.auditOptions,ordinaryReadingRelease:relative}};
 }
 module.exports={load,PIN,sha};

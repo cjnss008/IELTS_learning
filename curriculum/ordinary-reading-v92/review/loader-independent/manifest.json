@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "id": "ordinary-loader-independent-v92",
+  "mode": "read-only-review",
+  "productionDeltas": [],
+  "auditedSources": [
+    {
+      "path": "tools/build-ordinary-reading-course.cjs",
+      "before": "735d79ecc352c26bceb2fe5da5dcdaabf62a93e76cc3ccea6226039f95c8c793",
+      "after": "696e7005bc10f8a640233061ae095577107010222f824210bf8ad213358ca5ed"
+    },
+    {
+      "path": "tools/append-ordinary-reading-plan.cjs",
+      "before": "17d6a1c5d060344eb11c3ceb55cc002d1c309650779cd9c358723265edb440cf",
+      "after": "17d6a1c5d060344eb11c3ceb55cc002d1c309650779cd9c358723265edb440cf"
+    },
+    {
+      "path": "tools/build-curriculum.cjs",
+      "before": "70196610e623bffc4d5869e630f116eeb1955e9510f825b8c0a14a7ac8d169ff",
+      "after": "70196610e623bffc4d5869e630f116eeb1955e9510f825b8c0a14a7ac8d169ff"
+    },
+    {
+      "path": "assets/public-course-planner.js",
+      "before": "3876630638a8f1c6563a8cdb34f3138c7e97e1d5a667bd34cf8685fdc17bd6c2",
+      "after": "3876630638a8f1c6563a8cdb34f3138c7e97e1d5a667bd34cf8685fdc17bd6c2"
+    }
+  ],
+  "files": [
+    {
+      "path": "probe.cjs",
+      "bytes": 6937,
+      "sha256": "533433662c7fdaede56f513ac7289ead3f649c673346a4d1d8a3a4cbf16c6d8b"
+    },
+    {
+      "path": "guards.test.cjs",
+      "bytes": 6941,
+      "sha256": "f7184d7f8881a46179fff3d43a29d81bfab965b5376c16b3fb6e31797b1bb79e"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 3603,
+      "sha256": "d3db425528a0e06b42144a1a736834fe27ead203c987cdd8d66cee36e6180597"
+    },
+    {
+      "path": "observation.json",
+      "bytes": 2510,
+      "sha256": "9ba668f1e0d11172842da899b7104fba4b1128c5a96263d90eac2c480164e86c"
+    },
+    {
+      "path": "runtime-window-violations.json",
+      "bytes": 509,
+      "sha256": "6ff019f50e1cd1cdfc796f09a070ceb708a6f85101a3d7117ef992157570b70c"
+    },
+    {
+      "path": "guards.initial.tap",
+      "bytes": 2320,
+      "sha256": "fa1e8964f2f0ee54aacb27e370b944e570c73daa1762ce00921822079132fd1c"
+    },
+    {
+      "path": "guards.pre-fix.tap",
+      "bytes": 2031,
+      "sha256": "14e9f1a87c4a3594ce56ce363af81840c6d3a8abaf8dcbb42b9a4df2b739d824"
+    },
+    {
+      "path": "guards.final.tap",
+      "bytes": 2030,
+      "sha256": "1215f9d888020333fdfb65a8c5c1dc1c42d3eb6524f2025458034cc3312bc64d"
+    }
+  ],
+  "validation": {
+    "initial": {
+      "pass": 5,
+      "fail": 1,
+      "scope": "negative grammar/word offset refusal failed"
+    },
+    "final": {
+      "pass": 8,
+      "fail": 0,
+      "scope": "native synthetic release with actual6 author objects, not approval or browser"
+    },
+    "intermediateLogNote": "guards.pre-fix.tap was named before discovering Root had already installed the fix; it actually records the first post-fix 8/8 pass, not a pre-fix result."
+  },
+  "remaining": {
+    "rootIndependentContentReview": true,
+    "formalApprovedRelease": true,
+    "runtimeWindows": "static references only; not eligibility prerequisites"
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "id": "public-ordinary-v92-cbo-budget-2025-reading",
+  "version": "t1-q1",
+  "skill": "reading",
+  "type": "reading",
+  "level": "B2–C1",
+  "title": "Monthly Budget Review: Summary for Fiscal Year2025",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "estimatedMinutes": 20,
+  "questionCount": 8,
+  "instructions": "Read the teaching text and answer all eight questions using only this text. For judgement questions, TRUE means the statement agrees with the text; FALSE means the text contradicts it; NOT GIVEN means the text does not provide enough information. For short answers, copy words or numbers from the text and follow each stated limit. Check your answers before viewing the explanations.",
+  "passage": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.\n\nThe federal deficit in 2025 was equal to 5.9 percent of the nation’s gross domestic product (GDP), a decrease from 6.3 percent of GDP in 2024. The 2025 deficit expressed as a percentage of GDP is greater than the 50 year average of 3.8 percent and has been exceeded only eight times since 1946 (from 2009 through 2012 and in 2020, 2021, 2023, and 2024). Federal debt held by the public increased in 2025 relative to the size of the economy—rising to 99.8 percent from 97.4 percent of GDP at the end of fiscal year 2024.\n\nOutlays in fiscal year 2024 were reduced because October 1 (the first day of the fiscal year) fell on a weekend. As a result, certain payments totaling $72 billion were shifted from 2024 into 2023. If not for those shifts, the deficit in 2025 would have been 6 percent smaller—instead of 2 percent smaller—than it was in 2024.\n\nEarly in the next calendar year, CBO will publish The Budget and Economic Outlook: 2026 to 2036. That report will provide CBO’s economic and budgetary projections for the 2026-2036 period, covering topic areas including the 2025 reconciliation act, tariffs, and immigration.\n\nThe House and Senate Committees on the Budget have instructed CBO to publish the Monthly Budget Review during the current lapse in federal appropriations because the report provides information that the Congress needs to carry out its Constitutional functions. Because of the lapse in funding, some data that CBO typically would use for its analysis were unavailable.\n",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main purpose of this fixed fiscal-year report excerpt?",
+      "options": [
+        "To explain how payment timing affects the comparison between two fiscal years.",
+        "To present CBO’s forthcoming economic projections for the 2026–2036 period.",
+        "To explain why budget committees requested a report during a funding lapse.",
+        "To summarize fiscal-year budget changes and explain limits to the comparisons."
+      ],
+      "answers": [
+        "To summarize fiscal-year budget changes and explain limits to the comparisons."
+      ],
+      "explanation": "报告概括2025财年赤字、收入、支出和公共债务变化，并说明付款时间挪移、数据更新及缺失对比较的影响。其他选项各抓住一个局部说明或未来报告，不能代替全文主旨。\n\n选项“To explain how payment timing affects the comparison between two fiscal years.”：付款时间确实影响比较，但只是一个解释段，没有覆盖收入、支出、债务和其他数据限制。\n选项“To present CBO’s forthcoming economic projections for the 2026–2036 period.”：文中只是预告未来报告，没有在本节选中展示2026–2036完整预测。\n选项“To explain why budget committees requested a report during a funding lapse.”：这是末段的发布背景，不是全文对财年数据变化的主要说明。\n选项“To summarize fiscal-year budget changes and explain limits to the comparisons.”：正确：既有年度变动，也有时间、更新数据和数据缺失等解释。",
+      "evidence": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 1007,
+        "textSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "付款时间确实影响比较，但只是一个解释段，没有覆盖收入、支出、债务和其他数据限制。",
+        "文中只是预告未来报告，没有在本节选中展示2026–2036完整预测。",
+        "这是末段的发布背景，不是全文对财年数据变化的主要说明。",
+        "正确：既有年度变动，也有时间、更新数据和数据缺失等解释。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why were some outlays shifted from fiscal year 2024 into 2023?",
+      "options": [
+        "The first day of fiscal year 2024 fell on a weekend.",
+        "All federal benefit programmes were permanently cancelled.",
+        "Corporate tax receipts had increased by exactly $72 billion.",
+        "The public debt had already fallen to zero."
+      ],
+      "answers": [
+        "The first day of fiscal year 2024 fell on a weekend."
+      ],
+      "explanation": "原文先说October 1（财年首日）适逢周末，再说因此某些付款提前到前一财年。它是付款时间的变化，不是取消项目或债务归零。\n\n选项“The first day of fiscal year 2024 fell on a weekend.”：正确：As a result把周末日期与付款挪移直接连接。\n选项“All federal benefit programmes were permanently cancelled.”：原文没有全部永久取消福利项目。\n选项“Corporate tax receipts had increased by exactly $72 billion.”：72 billion是挪移的付款总额，不是公司税收入增长。\n选项“The public debt had already fallen to zero.”：原文没有债务归零，反而说明公共债务占经济比重上升。",
+      "evidence": "Outlays in fiscal year 2024 were reduced because October 1 (the first day of the fiscal year) fell on a weekend. As a result, certain payments totaling $72 billion were shifted from 2024 into 2023. If not for those shifts, the deficit in 2025 would have been 6 percent smaller—instead of 2 percent smaller—than it was in 2024.",
+      "evidenceOffsets": {
+        "start": 1530,
+        "end": 1856,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1530,
+        "end": 1856,
+        "textSha256": "b7f40bd5be0cb1b3f24b2909431f8343d76178e595519b966f91b5795d5983c3"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause",
+      "distractorReasons": [
+        "正确：As a result把周末日期与付款挪移直接连接。",
+        "原文没有全部永久取消福利项目。",
+        "72 billion是挪移的付款总额，不是公司税收入增长。",
+        "原文没有债务归零，反而说明公共债务占经济比重上升。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does “Those increases” refer to in the first paragraph?",
+      "options": [
+        "The rises in individual income tax collections and customs duties.",
+        "The increases in the two years’ gross domestic product.",
+        "The spending increases in areas including major benefit programmes and debt interest.",
+        "The reductions for student loan programmes and deposit insurance."
+      ],
+      "answers": [
+        "The spending increases in areas including major benefit programmes and debt interest."
+      ],
+      "explanation": "Those increases紧接支出上升及其领域的描述，指重大福利项目、债务净利息等方面的支出增加。不要跳回收入句，也不能把随后说的decreases当成increases。\n\n选项“The rises in individual income tax collections and customs duties.”：这是更前面的收入部分，最近的先行内容已转为outlays。\n选项“The increases in the two years’ gross domestic product.”：该句没有把两个年度GDP增长列为These的先行内容。\n选项“The spending increases in areas including major benefit programmes and debt interest.”：正确：回指前一句支出及其增加领域。\n选项“The reductions for student loan programmes and deposit insurance.”：reductions/decreases与increases方向相反，是部分抵消增加的项目。",
+      "evidence": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 1007,
+        "textSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "这是更前面的收入部分，最近的先行内容已转为outlays。",
+        "该句没有把两个年度GDP增长列为These的先行内容。",
+        "正确：回指前一句支出及其增加领域。",
+        "reductions/decreases与increases方向相反，是部分抵消增加的项目。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The deficit was a smaller percentage of GDP in 2025 than in 2024.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "原文给2025为5.9%，2024为6.3%；5.9小于6.3。这里比较赤字占GDP比例，不是赤字总额与全部公共债务混为一个指标。\n\n选项“TRUE”：正确：5.9%低于6.3%。\n选项“FALSE”：FALSE与所列比例直接相反。\n选项“NOT GIVEN”：不是NOT GIVEN，两个年度比例都列出。",
+      "evidence": "The federal deficit in 2025 was equal to 5.9 percent of the nation’s gross domestic product (GDP), a decrease from 6.3 percent of GDP in 2024. The 2025 deficit expressed as a percentage of GDP is greater than the 50 year average of 3.8 percent and has been exceeded only eight times since 1946 (from 2009 through 2012 and in 2020, 2021, 2023, and 2024). Federal debt held by the public increased in 2025 relative to the size of the economy—rising to 99.8 percent from 97.4 percent of GDP at the end of fiscal year 2024.",
+      "evidenceOffsets": {
+        "start": 1009,
+        "end": 1528,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1009,
+        "end": 1528,
+        "textSha256": "be62612c3e7e280ac7e8105971a22de9d4c9d4b3533cb954faa602fc12d221b0"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：5.9%低于6.3%。",
+        "FALSE与所列比例直接相反。",
+        "不是NOT GIVEN，两个年度比例都列出。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The average household paid more tax in 2025 than in 2024.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "文中只有总体收入和税种收款变化，没有家庭数量、家庭税额或平均家庭负担。总体增加不能直接推出平均家庭税额增加；也不能推出一定减少。\n\n选项“TRUE”：总体税收增加不足以推出平均每户增加。\n选项“FALSE”：没有每户税额或相反的平均值，不能判FALSE。\n选项“NOT GIVEN”：正确：平均家庭税额未提供。",
+      "evidence": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 1007,
+        "textSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "总体税收增加不足以推出平均每户增加。",
+        "没有每户税额或相反的平均值，不能判FALSE。",
+        "正确：平均家庭税额未提供。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Both revenues and outlays fell in 2025 compared with their 2024 totals.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "原文明说两者都增加，收入增6%、支出增4%。赤字总额下降不代表收入和支出总额都下降；比较对象不同。\n\n选项“TRUE”：TRUE把赤字下降误套到收入和支出两个总额。\n选项“FALSE”：正确：both increased、rose和grew都与fell相冲突。\n选项“NOT GIVEN”：不是NOT GIVEN，两个变化方向和幅度都明确。",
+      "evidence": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 1007,
+        "textSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE把赤字下降误套到收入和支出两个总额。",
+        "正确：both increased、rose和grew都与fell相冲突。",
+        "不是NOT GIVEN，两个变化方向和幅度都明确。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "Which statement supplied the subsequently reported September 2025 data? Give its THREE-WORD title from the passage.",
+      "answers": [
+        "Monthly Treasury Statement"
+      ],
+      "maxWords": 3,
+      "explanation": "首段末尾明确指向Monthly Treasury Statement for September 2025。本题只取三词文件名，月份和年份是日期限定；不要抄另一个较早的Monthly Budget Review。\n\n可接受答案：Monthly Treasury Statement；最多3个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“Monthly Budget Review”：这是被新数据更新的另一份报告，不是所问后报数据的文件。\n写法“the Monthly Treasury Statement”：本题要求三词title；再加the为四词。\n写法“Monthly Treasury Statement for September 2025”：日期也一起抄入超过三词，题目只问文件名。",
+      "evidence": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 1007,
+        "textSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "Monthly Budget Review": "这是被新数据更新的另一份报告，不是所问后报数据的文件。",
+        "the Monthly Treasury Statement": "本题要求三词title；再加the为四词。",
+        "Monthly Treasury Statement for September 2025": "日期也一起抄入超过三词，题目只问文件名。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with ONE NUMBER from the passage: Public debt rose to _______ percent of GDP at the end of fiscal year 2025.",
+      "answers": [
+        "99.8"
+      ],
+      "maxWords": 1,
+      "explanation": "第二段把2025财年末公共债务占GDP比例写为99.8%，2024为97.4%。空后已给percent of GDP，因此只填数值99.8；5.9是赤字比例，不能混用存量债务与年度赤字。\n\n可接受答案：99.8；最多1个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“97.4”：这是2024财年末比例，年份不符。\n写法“5.9”：这是2025年度赤字占GDP比例，不是公共债务比例。\n写法“99.8 percent”：空后已有percent，题目要求一个数字，不能重复单位。",
+      "evidence": "The federal deficit in 2025 was equal to 5.9 percent of the nation’s gross domestic product (GDP), a decrease from 6.3 percent of GDP in 2024. The 2025 deficit expressed as a percentage of GDP is greater than the 50 year average of 3.8 percent and has been exceeded only eight times since 1946 (from 2009 through 2012 and in 2020, 2021, 2023, and 2024). Federal debt held by the public increased in 2025 relative to the size of the economy—rising to 99.8 percent from 97.4 percent of GDP at the end of fiscal year 2024.",
+      "evidenceOffsets": {
+        "start": 1009,
+        "end": 1528,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1009,
+        "end": 1528,
+        "textSha256": "be62612c3e7e280ac7e8105971a22de9d4c9d4b3533cb954faa602fc12d221b0"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "97.4": "这是2024财年末比例，年份不符。",
+        "5.9": "这是2025年度赤字占GDP比例，不是公共债务比例。",
+        "99.8 percent": "空后已有percent，题目要求一个数字，不能重复单位。"
+      }
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-adaptation",
+    "publicSourceId": "cbo-budget-2025",
+    "sourceVersion": "teaching-1",
+    "sourceTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+    "questionSetId": "cbo-budget-2025-ordinary-reading-v92-q1",
+    "questionSetVersion": "1",
+    "url": "https://www.cbo.gov/publication/61307",
+    "provider": "Congressional Budget Office",
+    "rights": "Agency-original public information under the pinned official reuse declaration; text only.",
+    "rightsUrl": "https://www.cbo.gov/about/privacy",
+    "attribution": "Source: CBO, Monthly Budget Review: Summary for Fiscal Year2025; https://www.cbo.gov/publication/61307 Teaching adaptation: website navigation/table lead-ins omitted; any additional corrections/omissions are explicitly recorded in the source edit map. No agency endorsement.",
+    "verification": "author-v1-review-pending",
+    "exposureGroup": "public-source:cbo-budget-2025",
+    "linkedMaterialIds": [
+      "public-ordinary-v92-cbo-budget-2025-reading"
+    ],
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "independentUnseenParallel": false,
+    "phaseCandidates": [
+      "academic",
+      "integration",
+      "verification"
+    ],
+    "prerequisiteCapabilityIds": [
+      "independent:reading"
+    ],
+    "grammarTags": [
+      "passive-voice-and-change",
+      "counterfactual-past"
+    ],
+    "placement": "unassigned-candidate; actual level/prerequisites, unstarted/unfrozen protection and remaining-day budget required",
+    "levelBasis": "Author register estimate only; no calibrated CEFR/Band claim or learner placement evidence",
+    "originalFrozenTextSha256": "8d409e119928bd96badb18609ce27e57367d059c34b8f3382aa16ac4203342de",
+    "previousSelectedTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+    "normalization": {
+      "sourceMetadataPath": "curriculum/ordinary-reading-v92/sources/cbo-budget-2025.json",
+      "teachingTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+      "explicitEditCount": 0,
+      "officialVerbatim": true
+    },
+    "audioReadiness": {
+      "eligibleForPractice": false,
+      "status": "reading-only-no-audio-release",
+      "reasons": [
+        "Reading-only candidate; no listening or speech release."
+      ]
+    },
+    "coursePolicy": {
+      "appendOnly": true,
+      "requiredDailyOnly": true
+    },
+    "contentHashFields": [
+      "instructions",
+      "passage",
+      "transcript",
+      "questions"
+    ],
+    "questionContractHash": "40f9c3b77ee02cf0048eccb79b3c9d230874242733b185f7e324ee03d9099dd2",
+    "contentHash": "80cadfdc97c6efef09713b18589966de0cbee736b71b89626c8385c48552f7ed"
+  },
+  "rubric": {
+    "taskType": "ordinary reading comprehension practice",
+    "calibratedIELTS": false
+  },
+  "audio": "",
+  "audioSynthetic": false,
+  "audioDurationSeconds": null
+}

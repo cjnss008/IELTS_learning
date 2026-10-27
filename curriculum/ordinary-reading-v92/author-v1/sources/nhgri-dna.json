@@ -1,0 +1,154 @@
+{
+  "id": "nhgri-dna",
+  "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+  "sourceUrl": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+  "original": {
+    "path": "source-originals/nhgri-dna.full.txt",
+    "sha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+    "bytes": 12933
+  },
+  "selected": {
+    "path": "source-originals/nhgri-dna.v92-selection.txt",
+    "sha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251",
+    "bytes": 5223
+  },
+  "raw": {
+    "path": "evidence/raw/nhgri-dna.json",
+    "sha256": "ff32e191a0d5972a776f30e36a2d332ea4493bc67f4412f58fbd45fe2dabd2b3",
+    "bytes": 18088
+  },
+  "rights": [
+    {
+      "path": "evidence/rights/nhgri-dna/agency-rights-3.json",
+      "sha256": "0494602e0b21769c42c79ab370778666d41129629fd346047af271587e68d9f2",
+      "bytes": 6203,
+      "url": "https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright"
+    }
+  ],
+  "attribution": "Source: GENOME, Deoxyribonucleic Acid (DNA) Fact Sheet; original source URL retained. https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+  "priorSourceSegments": [
+    {
+      "sourceStartUtf16": 0,
+      "sourceEndUtf16": 1536,
+      "selectedStartUtf16": 0,
+      "selectedEndUtf16": 1536,
+      "sha256": "39cf689530be3e7a71475f56ddf0ade535988ae76157e40871cac1d07bf67551",
+      "wordCount": 248
+    },
+    {
+      "sourceStartUtf16": 2803,
+      "sourceEndUtf16": 3587,
+      "selectedStartUtf16": 1538,
+      "selectedEndUtf16": 2322,
+      "sha256": "15be2d609ac5fb5d8ecb854fb779a6ce36385004639e6b062c9996af17b7ab22",
+      "wordCount": 128
+    },
+    {
+      "sourceStartUtf16": 4375,
+      "sourceEndUtf16": 5014,
+      "selectedStartUtf16": 2324,
+      "selectedEndUtf16": 2963,
+      "sha256": "532a131c6102bc620811e21e529fbb7555dc0e1c51f3604de8ebc94656b7f713",
+      "wordCount": 111
+    },
+    {
+      "sourceStartUtf16": 5657,
+      "sourceEndUtf16": 6346,
+      "selectedStartUtf16": 2965,
+      "selectedEndUtf16": 3654,
+      "sha256": "d43f577fa977c2dc6965b2977d123dbf78748143d21ed49f84a7fb509eb80fe0",
+      "wordCount": 113
+    },
+    {
+      "sourceStartUtf16": 9791,
+      "sourceEndUtf16": 11357,
+      "selectedStartUtf16": 3656,
+      "selectedEndUtf16": 5222,
+      "sha256": "05970f58d4eee899ac44f67501ef26083dbe09ac29ab27aa4b6b7540e1f94dac",
+      "wordCount": 270
+    }
+  ],
+  "level": "B2–C1",
+  "levelCalibrated": false,
+  "estimatedMinutes": 30,
+  "phaseCandidates": [
+    "academic",
+    "integration",
+    "verification"
+  ],
+  "suggestedWindow": [
+    250,
+    350
+  ],
+  "teaching": {
+    "path": "teaching-texts/nhgri-dna.txt",
+    "sha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+    "bytes": 5122,
+    "utf16Length": 5122,
+    "wordCount": 854
+  },
+  "adaptation": {
+    "status": "explicit-teaching-adaptation-not-official-verbatim",
+    "inputSha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251",
+    "outputSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+    "offsetUnit": "UTF-16-code-unit",
+    "edits": [
+      {
+        "startUtf16": 2079,
+        "endUtf16": 2181,
+        "before": " For example, the sequence ATCGTT might instruct for blue eyes, while ATCGCT might instruct for brown.",
+        "after": "",
+        "reason": "Omit the simplified eye-colour sequence illustration; no question or vocabulary coverage may rely on this omitted sentence.",
+        "teachingStartUtf16": 2079,
+        "teachingEndUtf16": 2079
+      },
+      {
+        "startUtf16": 3687,
+        "endUtf16": 3709,
+        "before": "Scientist use the term",
+        "after": "Scientists use the term",
+        "reason": "Correct the source singular/plural printing error. This sentence is a marked teaching correction, not official original bytes.",
+        "teachingStartUtf16": 3585,
+        "teachingEndUtf16": 3608
+      }
+    ],
+    "map": [
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 0,
+        "inputEndUtf16": 2079,
+        "teachingStartUtf16": 0,
+        "teachingEndUtf16": 2079
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 2079,
+        "inputEndUtf16": 2181,
+        "teachingStartUtf16": 2079,
+        "teachingEndUtf16": 2079
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 2181,
+        "inputEndUtf16": 3687,
+        "teachingStartUtf16": 2079,
+        "teachingEndUtf16": 3585
+      },
+      {
+        "kind": "replacement",
+        "inputStartUtf16": 3687,
+        "inputEndUtf16": 3709,
+        "teachingStartUtf16": 3585,
+        "teachingEndUtf16": 3608
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 3709,
+        "inputEndUtf16": 5223,
+        "teachingStartUtf16": 3608,
+        "teachingEndUtf16": 5122
+      }
+    ]
+  },
+  "active": false
+}

@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "status": "root-derived-v2-content-hash-repaired-awaiting-final-independent-review-no-release",
+  "sources": [
+    {
+      "sourceId": "bls-athletes",
+      "authorMaterial": {
+        "path": "author-v1/materials/bls-athletes-reading.json",
+        "sha256": "72fc820f5601b2be20dbfb36be92af3911f6a397bd86586313d7697d8aa814b3"
+      },
+      "derivedMaterial": {
+        "path": "materials/bls-athletes-reading.json",
+        "sha256": "ae61c417928a0a58841278c91d8df674caf77af798904ef1982c48528c24ff53",
+        "bytes": 27834
+      },
+      "materialContentHash": "841b2a5df0f4a02bef4acca5018522ce5029306c3cfe9af000e741017b63e7ec",
+      "questionsSha256": "3178bbeda25e102dd50fd98351aa0c4c82ac01468e2e903f4801b5703aeb636b",
+      "questionVersion": "t1-q2"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "authorMaterial": {
+        "path": "author-v1/materials/bls-musicians-reading.json",
+        "sha256": "6db1f2c2620cf4ca076724ef1cd2984374c3e632c4853b8258240181078cfd24"
+      },
+      "derivedMaterial": {
+        "path": "materials/bls-musicians-reading.json",
+        "sha256": "429218dba000d56e4e18741bc206087257698c239659fbee836affe52946cc12",
+        "bytes": 27338
+      },
+      "materialContentHash": "f8fbf04090e5c5fe88925aaa76b019df181977735612c1751c179ebc46948883",
+      "questionsSha256": "6f0c3b55268e5e84beae3b412ec6a613e7e02639aa78bc7673d89ec7c8fec4d6",
+      "questionVersion": "t1-q1"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "authorMaterial": {
+        "path": "author-v1/materials/nimh-psychotherapies-reading.json",
+        "sha256": "549cb24fd3f2fa104e967c62082de48f6ccacae84e38bbb0b579a57402fb99b7"
+      },
+      "derivedMaterial": {
+        "path": "materials/nimh-psychotherapies-reading.json",
+        "sha256": "28a0f82a8ca3e78aa99c563e120ea16d3cd0543fdb26c725b440385ece0ded50",
+        "bytes": 25274
+      },
+      "materialContentHash": "39ab32387c58f37966a7c6231908aaae4120655272488f7bc4b5e997be05efde",
+      "questionsSha256": "be11a39aabc57dcacd9a2508ff99711ab5d24784ca3a50586ca70ee2f3359e71",
+      "questionVersion": "t1-q1"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "authorMaterial": {
+        "path": "author-v1/materials/nhgri-dna-reading.json",
+        "sha256": "fa536753f8e60eac185d4bed4451e6b0eb79cc12f208586c999592263103590e"
+      },
+      "derivedMaterial": {
+        "path": "materials/nhgri-dna-reading.json",
+        "sha256": "31fc7ce24941ed5effc165c1e5bf189742e8ea0d82456e49211ab4d331044261",
+        "bytes": 25759
+      },
+      "materialContentHash": "8feb33ee48af669ad1c4d7e77b126ab81b659f0212638ba738c0c7c0da381b04",
+      "questionsSha256": "599b019cce430cee5da88feda9ddb3cb5e796f644a92c3f9b08332d328a70d20",
+      "questionVersion": "t1-q1"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "authorMaterial": {
+        "path": "author-v1/materials/nist-atomic-television-reading.json",
+        "sha256": "3f9d7ccb0fc8e6e63d60a2a4fad0de18058c243c68d087b6d37e9a954cd9c3e3"
+      },
+      "derivedMaterial": {
+        "path": "materials/nist-atomic-television-reading.json",
+        "sha256": "9da1bc5ba48453325e0c51ed4d3def0368b1728dbe6de0784b2d3c23a9ab93ba",
+        "bytes": 23800
+      },
+      "materialContentHash": "c639d6bfafeab563b66f1a429bfb53b644b2f22e10a530935ce4ed6790456e72",
+      "questionsSha256": "1d146a8fc24f637100486d3563c17f8470b2b8ff7a0525e1e455c73963f9b061",
+      "questionVersion": "t1-q1"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "authorMaterial": {
+        "path": "author-v1/materials/cbo-budget-2025-reading.json",
+        "sha256": "5dd7bd9614803e8df0ee29de1a41c0dfc43d5c67102ec8dd073709997d6e5d47"
+      },
+      "derivedMaterial": {
+        "path": "materials/cbo-budget-2025-reading.json",
+        "sha256": "35051aeeaa965d97d3ba29f26f10272c953767335ea6785b58ae07857905aaa6",
+        "bytes": 26792
+      },
+      "materialContentHash": "47fc70cc1013d877dea4c7ed6810d0849e87c8873e2ec85d778ce0d50fd679cd",
+      "questionsSha256": "88cb762d5163114a2517c44c4908262915e98b77087ca8e97b4b38c828224549",
+      "questionVersion": "t1-q2"
+    }
+  ],
+  "sourceQuestionsChanged": [
+    "bls-athletes/q4 prompt removes unsupported professional subset",
+    "cbo-budget-2025/q3 explanation and distractor reason These -> Those increases"
+  ],
+  "allSourceTextsUnchanged": true,
+  "authorV1Unchanged": true,
+  "admissionFlagAndExcerptScopeExplicit": true,
+  "activation": false,
+  "sourceHashClosure": {
+    "method": "sha256(JSON.stringify(payload in declared contentHashFields order))",
+    "repairedFourPreviouslyDeepSortedHashes": true,
+    "allSixCompilerClosed": true
+  },
+  "loaderSha256": "696e7005bc10f8a640233061ae095577107010222f824210bf8ad213358ca5ed"
+}

@@ -1,0 +1,734 @@
+{
+  "schema": 1,
+  "sourceId": "nhgri-dna",
+  "materialId": "public-ordinary-v92-nhgri-dna-reading",
+  "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+  "status": "author-v1-before-independent-question-review",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Which description best captures the purpose of the teaching text?",
+      "options": [
+        "It focuses only on how mRNA information is translated during protein production.",
+        "It compares where nuclear and mitochondrial DNA are found and how they are inherited.",
+        "It focuses on how two complementary strands act as templates when DNA is copied.",
+        "It explains DNA’s information, structure and roles in biological processes."
+      ],
+      "answers": [
+        "It explains DNA’s information, structure and roles in biological processes."
+      ],
+      "explanation": "教学文围绕DNA的信息、位置、结构、蛋白质形成与复制展开。前三项各取了文中一个真实部分，但都不足以概括整份教学文。\n\n选项“It focuses only on how mRNA information is translated during protein production.”：翻译是蛋白质形成部分中的一步，不能覆盖DNA位置、继承、结构和复制等内容。\n选项“It compares where nuclear and mitochondrial DNA are found and how they are inherited.”：细胞核与线粒体的比较确实出现，但只是前半部分的一个主题。\n选项“It focuses on how two complementary strands act as templates when DNA is copied.”：模板复制是后面的一个过程，不能概括整篇对结构、位置及信息用途的说明。\n选项“It explains DNA’s information, structure and roles in biological processes.”：正确：覆盖信息、结构、转录/翻译与复制等内容。",
+      "evidence": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction.",
+      "evidenceOffsets": {
+        "start": 40,
+        "end": 271,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 40,
+        "end": 271,
+        "textSha256": "0215cec38b4684c94119dbab1f5c3d258abd44d9da8d161aa4cf8ccf4ac169b7"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "翻译是蛋白质形成部分中的一步，不能覆盖DNA位置、继承、结构和复制等内容。",
+        "细胞核与线粒体的比较确实出现，但只是前半部分的一个主题。",
+        "模板复制是后面的一个过程，不能概括整篇对结构、位置及信息用途的说明。",
+        "正确：覆盖信息、结构、转录/翻译与复制等内容。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why must each DNA molecule be tightly packaged in a eukaryotic cell?",
+      "options": [
+        "Cells are small and contain many DNA molecules.",
+        "The organism must remove every gene before making proteins.",
+        "All the DNA in the organism has to move into its mitochondria.",
+        "Packaging changes the four nitrogen bases into amino acids."
+      ],
+      "answers": [
+        "Cells are small and contain many DNA molecules."
+      ],
+      "explanation": "because从句直接给出细胞很小、每个细胞中DNA分子多这两个原因。其余选项把删除基因、改变位置或蛋白质形成过程混进来，文中都没有这种因果关系。\n\n选项“Cells are small and contain many DNA molecules.”：正确：对应Because the cell is very small...many DNA molecules per cell。\n选项“The organism must remove every gene before making proteins.”：原文没有说制造蛋白质前删除全部基因。\n选项“All the DNA in the organism has to move into its mitochondria.”：文中分别介绍细胞核和线粒体DNA，不是全部DNA搬入线粒体。\n选项“Packaging changes the four nitrogen bases into amino acids.”：包装与碱基变成氨基酸不是一回事，文中也未这样说。",
+      "evidence": "In organisms called eukaryotes, DNA is found inside a special area of the cell called the nucleus. Because the cell is very small, and because organisms have many DNA molecules per cell, each DNA molecule must be tightly packaged. This packaged form of the DNA is called a chromosome.",
+      "evidenceOffsets": {
+        "start": 294,
+        "end": 578,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 294,
+        "end": 578,
+        "textSha256": "f597ce4702a6aaba02d8ec0080627b54bdbad121dc41c8e0835b6c6603160032"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause",
+      "distractorReasons": [
+        "正确：对应Because the cell is very small...many DNA molecules per cell。",
+        "原文没有说制造蛋白质前删除全部基因。",
+        "文中分别介绍细胞核和线粒体DNA，不是全部DNA搬入线粒体。",
+        "包装与碱基变成氨基酸不是一回事，文中也未这样说。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does “These single strands” refer to in the paragraph about DNA copying?",
+      "options": [
+        "The proteins that leave the cell after they have been made.",
+        "The two individual DNA strands formed when the double helix separates.",
+        "The amino acids arranged during protein production.",
+        "The chromosome pairs received from both parents."
+      ],
+      "answers": [
+        "The two individual DNA strands formed when the double helix separates."
+      ],
+      "explanation": "前一句说DNA螺旋从中间分开成为two single strands；These single strands回指这两条DNA链。它们随后作模板，不是蛋白质或氨基酸。\n\n选项“The proteins that leave the cell after they have been made.”：前面被分开的不是已制成的蛋白质。\n选项“The two individual DNA strands formed when the double helix separates.”：正确：指双螺旋分开后得到的两条DNA单链。\n选项“The amino acids arranged during protein production.”：氨基酸属于另一过程，不是本段These的先行词。\n选项“The chromosome pairs received from both parents.”：这里指一条双螺旋分开的链，不是从父母来的染色体配对。",
+      "evidence": "DNA's unique structure enables the molecule to copy itself during cell division. When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands. These single strands serve as templates for building two new, double-stranded DNA molecules - each a replica of the original DNA molecule. In this process, an A base is added wherever there is a T, a C where there is a G, and so on until all of the bases once again have partners.",
+      "evidenceOffsets": {
+        "start": 4390,
+        "end": 4852,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 4390,
+        "end": 4852,
+        "textSha256": "b12d4c4725676a2cb0d6c1d976b2f70189984c3086751723c46cb20a0fbfb704"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "前面被分开的不是已制成的蛋白质。",
+        "正确：指双螺旋分开后得到的两条DNA单链。",
+        "氨基酸属于另一过程，不是本段These的先行词。",
+        "这里指一条双螺旋分开的链，不是从父母来的染色体配对。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Humans inherit their mitochondrial DNA from the male parent.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "原文说线粒体DNA都来自female parent，并解释只有卵细胞保留线粒体。不要把核DNA各来自一半的说明移用到线粒体DNA。\n\n选项“TRUE”：TRUE混淆了核DNA与线粒体DNA两种继承关系。\n选项“FALSE”：正确：female parent与题干male parent构成直接冲突。\n选项“NOT GIVEN”：不是NOT GIVEN，父母来源在文中明确区分。",
+      "evidence": "In sexual reproduction, organisms inherit half of their nuclear DNA from the male parent and half from the female parent. However, organisms inherit all of their mitochondrial DNA from the female parent. This occurs because only egg cells, and not sperm cells, keep their mitochondria during fertilization.",
+      "evidenceOffsets": {
+        "start": 1230,
+        "end": 1536,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1230,
+        "end": 1536,
+        "textSha256": "391eb8c0e4bfb3d76ab915af1548f1bc6d40186375fa135ffe0d80a1e2237a68"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE混淆了核DNA与线粒体DNA两种继承关系。",
+        "正确：female parent与题干male parent构成直接冲突。",
+        "不是NOT GIVEN，父母来源在文中明确区分。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: According to the passage, nitrogen base A pairs with T in the DNA double helix.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "双螺旋说明段明确写base A always pairs with base T。这里是按本文描述判断，没有要求从被删眼色示例推导。\n\n选项“TRUE”：正确：原文直接说明A与T配对。\n选项“FALSE”：FALSE会否定文中明确给出的配对关系。\n选项“NOT GIVEN”：不是NOT GIVEN，配对关系有明文。",
+      "evidence": "To understand DNA's double helix from a chemical standpoint, picture the sides of the ladder as strands of alternating sugar and phosphate groups - strands that run in opposite directions. Each \"rung\" of the ladder is made up of two nitrogen bases, paired together by hydrogen bonds. Because of the highly specific nature of this type of chemical pairing, base A always pairs with base T, and likewise C with G. So, if you know the sequence of the bases on one strand of a DNA double helix, it is a simple matter to figure out the sequence of bases on the other strand.",
+      "evidenceOffsets": {
+        "start": 3819,
+        "end": 4388,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3819,
+        "end": 4388,
+        "textSha256": "210ca31b7de4038c35f57a60e9777e383334e97fb9f026cfc1a3ef9c78b6fb83"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：原文直接说明A与T配对。",
+        "FALSE会否定文中明确给出的配对关系。",
+        "不是NOT GIVEN，配对关系有明文。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: A cell copies all of its DNA exactly three times each hour.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "本文解释复制怎样发生，没有给每小时次数。prepares to divide也不能换算成固定的小时频率；文章没有提供另一个相反频率可判FALSE。\n\n选项“TRUE”：文中没有每小时三次的频率，不能判TRUE。\n选项“FALSE”：文中也没有其他每小时次数，因此不能仅凭常识或猜测判FALSE。\n选项“NOT GIVEN”：正确：过程有描述，小时频率没有给出。",
+      "evidence": "DNA's unique structure enables the molecule to copy itself during cell division. When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands. These single strands serve as templates for building two new, double-stranded DNA molecules - each a replica of the original DNA molecule. In this process, an A base is added wherever there is a T, a C where there is a G, and so on until all of the bases once again have partners.",
+      "evidenceOffsets": {
+        "start": 4390,
+        "end": 4852,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 4390,
+        "end": 4852,
+        "textSha256": "b12d4c4725676a2cb0d6c1d976b2f70189984c3086751723c46cb20a0fbfb704"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "文中没有每小时三次的频率，不能判TRUE。",
+        "文中也没有其他每小时次数，因此不能仅凭常识或猜测判FALSE。",
+        "正确：过程有描述，小时频率没有给出。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "What do researchers call DNA located in the cell’s nucleus? Write TWO WORDS from the passage.",
+      "answers": [
+        "nuclear DNA"
+      ],
+      "maxWords": 2,
+      "explanation": "原句把细胞核里的DNA称为nuclear DNA。两个词共同构成名称；只写DNA不能区分文中同时讨论的线粒体DNA。\n\n可接受答案：nuclear DNA；最多2个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“DNA”：少了nuclear，不能区分所问位置。\n写法“mitochondrial DNA”：这是线粒体中的DNA，不在本题指定的细胞核里。\n写法“the nuclear DNA”：多抄冠词后为三词，超过本题两词限制。",
+      "evidence": "Researchers refer to DNA found in the cell's nucleus as nuclear DNA. An organism's complete set of nuclear DNA is called its genome.",
+      "evidenceOffsets": {
+        "start": 876,
+        "end": 1008,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 876,
+        "end": 1008,
+        "textSha256": "1545763509be51c7579d158d8d743d1c05b0989f12b477a5924349db6963f8df"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "DNA": "少了nuclear，不能区分所问位置。",
+        "mitochondrial DNA": "这是线粒体中的DNA，不在本题指定的细胞核里。",
+        "the nuclear DNA": "多抄冠词后为三词，超过本题两词限制。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with NO MORE THAN THREE WORDS from the passage: Enzymes transcribe DNA information into an intermediary molecule called _______.",
+      "answers": [
+        "messenger ribonucleic acid",
+        "mRNA"
+      ],
+      "maxWords": 3,
+      "explanation": "第一步产生messenger ribonucleic acid，原文也给缩写mRNA，二者均接受。下一步才把mRNA中的信息翻译成氨基酸顺序，因此不能把protein填在第一步空格。\n\n可接受答案：messenger ribonucleic acid / mRNA；最多3个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“protein”：蛋白质是后续过程形成的对象，不是本题所问第一步的中介分子。\n写法“ribonucleic acid”：遗漏messenger，不能完整给出文中指定的中介名称。\n写法“messenger ribonucleic acid or mRNA”：把全称与缩写连接词一起抄入超过三词；选全称或缩写之一。",
+      "evidence": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA.",
+      "evidenceOffsets": {
+        "start": 2909,
+        "end": 3122,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2909,
+        "end": 3122,
+        "textSha256": "8951504621b2b20080e12385470b40bcd74409e066da66f8c8b6414629baa7b1"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "protein": "蛋白质是后续过程形成的对象，不是本题所问第一步的中介分子。",
+        "ribonucleic acid": "遗漏messenger，不能完整给出文中指定的中介名称。",
+        "messenger ribonucleic acid or mRNA": "把全称与缩写连接词一起抄入超过三词；选全称或缩写之一。"
+      }
+    }
+  ],
+  "questionReviewNotes": [
+    {
+      "questionId": "q1",
+      "cognitiveTask": "main-idea",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 40,
+          "teachingEndUtf16": 271,
+          "selectedStartUtf16": 40,
+          "selectedEndUtf16": 271,
+          "originalStartUtf16": 40,
+          "originalEndUtf16": 271,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q2",
+      "cognitiveTask": "cause",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 294,
+          "teachingEndUtf16": 578,
+          "selectedStartUtf16": 294,
+          "selectedEndUtf16": 578,
+          "originalStartUtf16": 294,
+          "originalEndUtf16": 578,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q3",
+      "cognitiveTask": "reference",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4390,
+          "teachingEndUtf16": 4852,
+          "selectedStartUtf16": 4491,
+          "selectedEndUtf16": 4953,
+          "originalStartUtf16": 10626,
+          "originalEndUtf16": 11088,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q4",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1230,
+          "teachingEndUtf16": 1536,
+          "selectedStartUtf16": 1230,
+          "selectedEndUtf16": 1536,
+          "originalStartUtf16": 1230,
+          "originalEndUtf16": 1536,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q5",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3819,
+          "teachingEndUtf16": 4388,
+          "selectedStartUtf16": 3920,
+          "selectedEndUtf16": 4489,
+          "originalStartUtf16": 10055,
+          "originalEndUtf16": 10624,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q6",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4390,
+          "teachingEndUtf16": 4852,
+          "selectedStartUtf16": 4491,
+          "selectedEndUtf16": 4953,
+          "originalStartUtf16": 10626,
+          "originalEndUtf16": 11088,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": "Whole teaching passage checked for absence; quoted paragraph is a topic anchor, not proof that the statement is false."
+    },
+    {
+      "questionId": "q7",
+      "cognitiveTask": "short-answer",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 876,
+          "teachingEndUtf16": 1008,
+          "selectedStartUtf16": 876,
+          "selectedEndUtf16": 1008,
+          "originalStartUtf16": 876,
+          "originalEndUtf16": 1008,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q8",
+      "cognitiveTask": "completion",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2909,
+          "teachingEndUtf16": 3122,
+          "selectedStartUtf16": 3011,
+          "selectedEndUtf16": 3224,
+          "originalStartUtf16": 5703,
+          "originalEndUtf16": 5916,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    }
+  ],
+  "grammarEvidence": [
+    {
+      "id": "nhgri-dna-grammar-1",
+      "tag": "cause-and-passive",
+      "sentence": "Because the cell is very small, and because organisms have many DNA molecules per cell, each DNA molecule must be tightly packaged.",
+      "explanation": "两个because并列给出原因：细胞很小，而且每个细胞有许多DNA分子。must be packaged是情态动词加被动，说明DNA必须被紧密包装，不是DNA主动包装别的东西。",
+      "evidenceOffsets": {
+        "start": 393,
+        "end": 524,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "3a16d4dfeefee3f9315857dd1906dd7f6ad36afb8e1066b54ff505cd22f3d769",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 393,
+          "teachingEndUtf16": 524,
+          "selectedStartUtf16": 393,
+          "selectedEndUtf16": 524,
+          "originalStartUtf16": 393,
+          "originalEndUtf16": 524,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    },
+    {
+      "id": "nhgri-dna-grammar-2",
+      "tag": "time-clauses",
+      "sentence": "When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands.",
+      "explanation": "When从句说明过程发生的时间条件，主句用一般现在时描述通常过程。prepares to divide中的to divide补充准备做的事；splits与becomes共用主语the DNA helix，不能把单数splits改读成两个细胞先合并。",
+      "evidenceOffsets": {
+        "start": 4471,
+        "end": 4571,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "87686fe601d17c9efd8614d2382ce3bcc625fa5e39ff04dfca5ddf27206e5414",
+      "teachingTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4471,
+          "teachingEndUtf16": 4571,
+          "selectedStartUtf16": 4572,
+          "selectedEndUtf16": 4672,
+          "originalStartUtf16": 10707,
+          "originalEndUtf16": 10807,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    }
+  ],
+  "wordCandidates": [
+    {
+      "id": "nhgri-dna-word-1",
+      "word": "molecule",
+      "canonicalTargetId": "essential:molecule",
+      "surface": "molecules",
+      "startUtf16": 461,
+      "endUtf16": 470,
+      "quote": "In organisms called eukaryotes, DNA is found inside a special area of the cell called the nucleus. Because the cell is very small, and because organisms have many DNA molecules per cell, each DNA molecule must be tightly packaged. This packaged form of the DNA is called a chromosome.",
+      "quoteStartUtf16": 294,
+      "quoteEndUtf16": 578,
+      "quoteSha256": "f597ce4702a6aaba02d8ec0080627b54bdbad121dc41c8e0835b6c6603160032",
+      "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "molecule",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "molecule",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 461,
+          "teachingEndUtf16": 470,
+          "selectedStartUtf16": 461,
+          "selectedEndUtf16": 470,
+          "originalStartUtf16": 461,
+          "originalEndUtf16": 470,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-2",
+      "word": "chromosome",
+      "canonicalTargetId": "essential:chromosome",
+      "surface": "chromosomes",
+      "startUtf16": 2208,
+      "endUtf16": 2219,
+      "quote": "The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.",
+      "quoteStartUtf16": 2081,
+      "quoteEndUtf16": 2220,
+      "quoteSha256": "8efb0606efbf4aaa372ed2a8ecc13de9d8adf9b2ce3bd8bc11d1f91195be8597",
+      "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "chromosome",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "chromosome",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2208,
+          "teachingEndUtf16": 2219,
+          "selectedStartUtf16": 2310,
+          "selectedEndUtf16": 2321,
+          "originalStartUtf16": 3575,
+          "originalEndUtf16": 3586,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-3",
+      "word": "enzyme",
+      "canonicalTargetId": "essential:enzyme",
+      "surface": "enzymes",
+      "startUtf16": 2984,
+      "endUtf16": 2991,
+      "quote": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA.",
+      "quoteStartUtf16": 2909,
+      "quoteEndUtf16": 3122,
+      "quoteSha256": "8951504621b2b20080e12385470b40bcd74409e066da66f8c8b6414629baa7b1",
+      "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "enzyme",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "enzyme",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2984,
+          "teachingEndUtf16": 2991,
+          "selectedStartUtf16": 3086,
+          "selectedEndUtf16": 3093,
+          "originalStartUtf16": 5778,
+          "originalEndUtf16": 5785,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-4",
+      "word": "strand",
+      "canonicalTargetId": "essential:strand",
+      "surface": "strands",
+      "startUtf16": 3915,
+      "endUtf16": 3922,
+      "quote": "To understand DNA's double helix from a chemical standpoint, picture the sides of the ladder as strands of alternating sugar and phosphate groups - strands that run in opposite directions. Each \"rung\" of the ladder is made up of two nitrogen bases, paired together by hydrogen bonds. Because of the highly specific nature of this type of chemical pairing, base A always pairs with base T, and likewise C with G. So, if you know the sequence of the bases on one strand of a DNA double helix, it is a simple matter to figure out the sequence of bases on the other strand.",
+      "quoteStartUtf16": 3819,
+      "quoteEndUtf16": 4388,
+      "quoteSha256": "210ca31b7de4038c35f57a60e9777e383334e97fb9f026cfc1a3ef9c78b6fb83",
+      "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "strand",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "strand",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3915,
+          "teachingEndUtf16": 3922,
+          "selectedStartUtf16": 4016,
+          "selectedEndUtf16": 4023,
+          "originalStartUtf16": 10151,
+          "originalEndUtf16": 10158,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-5",
+      "word": "gene",
+      "canonicalTargetId": "essential:gene",
+      "surface": "genes",
+      "startUtf16": 2187,
+      "endUtf16": 2192,
+      "quote": "The complete DNA instruction book, or genome, for a human contains about 3 billion bases and about 20,000 genes on 23 pairs of chromosomes.",
+      "quoteStartUtf16": 2081,
+      "quoteEndUtf16": 2220,
+      "quoteSha256": "8efb0606efbf4aaa372ed2a8ecc13de9d8adf9b2ce3bd8bc11d1f91195be8597",
+      "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+      "sourceId": "nhgri-dna",
+      "materialId": "public-ordinary-v92-nhgri-dna-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "gene",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "gene",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2187,
+          "teachingEndUtf16": 2192,
+          "selectedStartUtf16": 2289,
+          "selectedEndUtf16": 2294,
+          "originalStartUtf16": 3554,
+          "originalEndUtf16": 3559,
+          "originalBodySha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    }
+  ],
+  "active": false
+}

@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "id": "ordinary-reading-question-review-v92-phase2-v1",
+  "status": "v1-key-agreement-two-minor-revisions-required-awaiting-derived-v2",
+  "blindManifestSha256": "7fdc4c27fec24ab959bea68b4565adec5201c8442c961b11b552afb63f0d96ca",
+  "authorFreezeSha256": "481410315f1822a40cabf5dded07efcad2a42fbb9eb2f5c2279c253db76ebde4",
+  "comparisonSha256": "baab0c38ba4be73bbb297775d0da8c5d4617c2f3197fc3c4884deb906af9ad10",
+  "summary": {
+    "questions": 48,
+    "blindMainAgreement": 48,
+    "answerKeyErrorsFound": 0,
+    "acceptedPriorBlindAlternatives": 3,
+    "missingPriorBlindAlternatives": 0,
+    "scopeWordingClarifications": 1,
+    "minorExplanationTypos": 1,
+    "grammarExamplesReviewed": 12,
+    "wordPositionCandidatesValidated": 27,
+    "actualGradeCasesAccepted": 51,
+    "overLimitCasesRejected": 7,
+    "semanticWordAdmission": 0,
+    "activation": 0,
+    "mastery": 0
+  },
+  "files": [
+    {
+      "path": "build-blind-answers.cjs",
+      "bytes": 21756,
+      "sha256": "b38d0c230994c62d9fbaf23c250f28fcdda2e676198b37269b9bc2e70c59a357"
+    },
+    {
+      "path": "blind-input-v1.json",
+      "bytes": 59351,
+      "sha256": "a76e3113e1901d5fa1e1b6812e57172120f7d6ccb3a48c5930247ca4f9dd4be7"
+    },
+    {
+      "path": "blind-answers-v1.json",
+      "bytes": 76942,
+      "sha256": "3bed6cab04ce27eed4f9dc2254b23a611c353b4748f5b5df4a69ddd10276a55a"
+    },
+    {
+      "path": "blind-answers-v1.md",
+      "bytes": 4207,
+      "sha256": "a31df40ca50fc5bdbd7c385e008e31d9507921d081626c343735dc3bf13ea266"
+    },
+    {
+      "path": "blind-answer-manifest-v1.json",
+      "bytes": 1093,
+      "sha256": "7fdc4c27fec24ab959bea68b4565adec5201c8442c961b11b552afb63f0d96ca"
+    },
+    {
+      "path": "compare-author-v1.cjs",
+      "bytes": 10251,
+      "sha256": "bec8fcdd6a855c83cc7203fad978edf4948651cad1750cd33d72eda28e6646ea"
+    },
+    {
+      "path": "author-v1-comparison.json",
+      "bytes": 97667,
+      "sha256": "baab0c38ba4be73bbb297775d0da8c5d4617c2f3197fc3c4884deb906af9ad10"
+    },
+    {
+      "path": "PHASE2-V1-REPORT.md",
+      "bytes": 4286,
+      "sha256": "72f46d5674658138dc656b05abade597210eecac6e9a2e5963e6e69c0b168111"
+    },
+    {
+      "path": "freeze-phase2-v1.cjs",
+      "bytes": 1550,
+      "sha256": "b5c196a1b1c1e41df6bc7f39f8d9ecae48602bde99c424add7072a6518f19519"
+    },
+    {
+      "path": "verify-review.cjs",
+      "bytes": 1793,
+      "sha256": "3b6ca1c9585179c68ebdb545bf37f1efc3b5bf41d2cf8219cead1c22bc263252"
+    }
+  ],
+  "authorV1Modified": false,
+  "sourceV92Modified": false,
+  "rootCandidateWrites": 0,
+  "nasWrites": 0,
+  "realLearnerDataRead": false
+}

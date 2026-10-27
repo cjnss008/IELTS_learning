@@ -16,6 +16,7 @@ function artifactCopy(t){
  }
  if(input.artifactModes.release){for(const relative of ['curriculum/gsa-graded-course','materials/public/gsa-graded-course','assets/assessment-core.js']){const target=path.join(directory,relative);if(fs.existsSync(target)){assert.equal(F.sha(fs.readFileSync(target)),F.sha(fs.readFileSync(path.join(F.root,relative))));continue;}Native.copyTree(path.join(F.root,relative),target,{sourceRoot:F.root,destinationRoot:directory});}}
  if(input.artifactModes.additionalGrammarMaterialIds.length){for(const relative of ['curriculum/family-grammar-v89','assets/assessment-core.js']){const target=path.join(directory,relative);if(fs.existsSync(target)){assert.equal(F.sha(fs.readFileSync(target)),F.sha(fs.readFileSync(path.join(F.root,relative))));continue;}Native.copyTree(path.join(F.root,relative),target,{sourceRoot:F.root,destinationRoot:directory});}}
+ if(input.artifactModes.ordinaryReadingRelease)Native.copyTree(path.join(F.root,'curriculum/ordinary-reading-v92'),path.join(directory,'curriculum/ordinary-reading-v92'),{sourceRoot:F.root,destinationRoot:directory});
  return directory;
 }
 test('a byte-exact committed artifact copy retains its real active or inactive mode and all 688 material bindings',t=>{

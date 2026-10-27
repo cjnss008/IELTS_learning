@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "planHash": "7d2b3632a51839c305ac429d72d6d402f57a5e55667053136e3ae6c09a10fa59",
+  "planHash": "58ed4123517b79d688642843c1e8fb72c80114d5ea9c3fcabd7781335a16c251",
   "status": "complete-blueprint-not-learning-outcome",
   "input": {
-    "curriculumHash": "cffe383a08c1589452f33cf61c54f588b1259bc1abf2d2302c2830dae7120e0c",
+    "curriculumHash": "f1ae5601c3ed7c75ba9da0b8078a4cf0fe6e81ab2823089d580f1021aa973d6b",
     "baseDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
     "expandedDaysHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3",
     "yearExpansionHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
     "lessonExpansionsHash": "090d059d4856d42477f11b754d4116481c1f3eb298e58bd1a43a0cb8d20547e4",
     "gatesHash": "971c578c44100c0b1084a36bc0393ca798408aa9dcc14170b462d65cb9f53b08",
-    "sourceContextsHash": "889528af5eddf83de42ba5753a73bcf7b6d3150a0e0480309cd2a676d6600f0d",
+    "sourceContextsHash": "dd0a450117c1bf133bc7631a060f03927032f6629bf204c8fabde3a591320f25",
     "corePlanningHash": "771ebfad3318e81ce6e06b32e0c5c5c493dcd4116b49d149361009576b0e01cd",
     "coreMaterialContracts": [
       {
@@ -2194,6 +2194,60 @@
         "exposureGroup": "public-source:noaa-ocean-acidification"
       },
       {
+        "id": "public-ordinary-v92-bls-athletes-reading",
+        "version": "t1-q2",
+        "contentHash": "841b2a5df0f4a02bef4acca5018522ce5029306c3cfe9af000e741017b63e7ec",
+        "skill": "reading",
+        "sourceId": "bls-athletes",
+        "sourceTextSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+        "exposureGroup": "public-source:bls-athletes"
+      },
+      {
+        "id": "public-ordinary-v92-bls-musicians-reading",
+        "version": "t1-q1",
+        "contentHash": "f8fbf04090e5c5fe88925aaa76b019df181977735612c1751c179ebc46948883",
+        "skill": "reading",
+        "sourceId": "bls-musicians",
+        "sourceTextSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+        "exposureGroup": "public-source:bls-musicians"
+      },
+      {
+        "id": "public-ordinary-v92-cbo-budget-2025-reading",
+        "version": "t1-q2",
+        "contentHash": "47fc70cc1013d877dea4c7ed6810d0849e87c8873e2ec85d778ce0d50fd679cd",
+        "skill": "reading",
+        "sourceId": "cbo-budget-2025",
+        "sourceTextSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+        "exposureGroup": "public-source:cbo-budget-2025"
+      },
+      {
+        "id": "public-ordinary-v92-nhgri-dna-reading",
+        "version": "t1-q1",
+        "contentHash": "8feb33ee48af669ad1c4d7e77b126ab81b659f0212638ba738c0c7c0da381b04",
+        "skill": "reading",
+        "sourceId": "nhgri-dna",
+        "sourceTextSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+        "exposureGroup": "public-source:nhgri-dna"
+      },
+      {
+        "id": "public-ordinary-v92-nimh-psychotherapies-reading",
+        "version": "t1-q1",
+        "contentHash": "39ab32387c58f37966a7c6231908aaae4120655272488f7bc4b5e997be05efde",
+        "skill": "reading",
+        "sourceId": "nimh-psychotherapies",
+        "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+        "exposureGroup": "public-source:nimh-psychotherapies"
+      },
+      {
+        "id": "public-ordinary-v92-nist-atomic-television-reading",
+        "version": "t1-q1",
+        "contentHash": "c639d6bfafeab563b66f1a429bfb53b644b2f22e10a530935ce4ed6790456e72",
+        "skill": "reading",
+        "sourceId": "nist-atomic-television",
+        "sourceTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+        "exposureGroup": "public-source:nist-atomic-television"
+      },
+      {
         "id": "public-usgs-hydroelectric-power-reading",
         "version": "s1-q2",
         "contentHash": "c5a729b23b97aba5fba9e92c62fd0896d0dc3f4ef6e7f57678db4305162f0800",
@@ -2821,19 +2875,19 @@
     }
   },
   "summary": {
-    "publicVariants": 80,
-    "assignedVariants": 80,
+    "publicVariants": 86,
+    "assignedVariants": 86,
     "retainedVariants": 0,
     "exemptVariants": 0,
     "blockedVariants": 0,
-    "readingAssignments": 51,
+    "readingAssignments": 57,
     "listeningAssignments": 29,
     "replacements": 35,
-    "appends": 45,
-    "sourceGroups": 51,
-    "plannedContextReviews": 151,
+    "appends": 51,
+    "sourceGroups": 57,
+    "plannedContextReviews": 169,
     "blockedReviewWindows": 2,
-    "changedDays": 104,
+    "changedDays": 121,
     "maximumReferenceCalendarMinutes": 330,
     "baselineOverBudgetDays": [
       2,
@@ -3069,62 +3123,188 @@
     "Fixed review windows are planning prompts. Actual memory due and valid learning evidence override them; no new cards or mastery evidence are created by this blueprint.",
     "Source-linked R/L consolidations share exposure and ordinary question memory; they are never independent assessment or unseen-transfer evidence."
   ],
-  "optimization": {
-    "deterministicAttempts": [
-      {
-        "mode": "capacity-first",
-        "assigned": 80,
-        "blocked": 0,
-        "reviewBlocked": 2,
-        "metric": [
-          80,
-          -2,
-          594,
-          35,
-          -7198
-        ]
-      },
-      {
-        "mode": "context-priority",
-        "assigned": 78,
-        "blocked": 2,
-        "reviewBlocked": 1,
-        "metric": [
-          78,
-          -1,
-          1470,
-          52,
-          -7844
-        ]
-      },
-      {
-        "mode": "balanced-2",
-        "assigned": 78,
-        "blocked": 2,
-        "reviewBlocked": 1,
-        "metric": [
-          78,
-          -1,
-          1104,
-          52,
-          -7277
-        ]
-      },
-      {
-        "mode": "balanced-5",
-        "assigned": 78,
-        "blocked": 2,
-        "reviewBlocked": 1,
-        "metric": [
-          78,
-          -1,
-          966,
-          50,
-          -7202
-        ]
-      }
+  "appendOnlyComposition": {
+    "schema": 1,
+    "basePlanHash": "7d2b3632a51839c305ac429d72d6d402f57a5e55667053136e3ae6c09a10fa59",
+    "newReadingStartDay": 256,
+    "preservedAssignments": 80,
+    "preservedOwnerDayPatches": 104,
+    "preservedReviewWindows": 151,
+    "addedMaterialIds": [
+      "public-ordinary-v92-bls-athletes-reading",
+      "public-ordinary-v92-bls-musicians-reading",
+      "public-ordinary-v92-nimh-psychotherapies-reading",
+      "public-ordinary-v92-nhgri-dna-reading",
+      "public-ordinary-v92-nist-atomic-television-reading",
+      "public-ordinary-v92-cbo-budget-2025-reading"
     ],
-    "objective": "First maximize actual assigned variants, then review windows, current word/grammar matches, safe repeated-core replacements and earliest delivery. No difficulty/budget/spacing constraint is relaxed."
+    "reservedDayNumbers": [
+      8,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18,
+      21,
+      22,
+      29,
+      30,
+      31,
+      32,
+      35,
+      36,
+      50,
+      57,
+      58,
+      61,
+      62,
+      63,
+      64,
+      65,
+      68,
+      69,
+      70,
+      71,
+      72,
+      75,
+      76,
+      77,
+      78,
+      79,
+      82,
+      83,
+      85,
+      89,
+      90,
+      91,
+      92,
+      96,
+      97,
+      99,
+      100,
+      103,
+      104,
+      105,
+      106,
+      107,
+      110,
+      111,
+      113,
+      114,
+      117,
+      118,
+      120,
+      121,
+      124,
+      125,
+      126,
+      127,
+      128,
+      131,
+      141,
+      145,
+      146,
+      147,
+      148,
+      151,
+      152,
+      153,
+      154,
+      155,
+      158,
+      159,
+      160,
+      161,
+      162,
+      166,
+      167,
+      169,
+      172,
+      173,
+      174,
+      175,
+      176,
+      180,
+      181,
+      182,
+      183,
+      187,
+      190,
+      193,
+      194,
+      195,
+      197,
+      200,
+      201,
+      204,
+      207,
+      218,
+      221
+    ],
+    "previousAssignmentsHash": "86514148f2d173d8ec4888dae7c8d5ff82493ed8623fa7dd96280032e8471fec",
+    "previousOwnerPatchesHash": "f08866e0c7d89f9b603a6f721842b4bb0eca40e60869dca345cb09c7bac2559b",
+    "previousReviewsHash": "03aec5788f9663c17ce63ea0889cef884c1d564d60daca00c1d8a1431a9fa7fc",
+    "deltaOptimization": {
+      "deterministicAttempts": [
+        {
+          "mode": "balanced-2",
+          "assigned": 6,
+          "blocked": 0,
+          "reviewBlocked": 0,
+          "metric": [
+            6,
+            0,
+            18,
+            0,
+            -1560
+          ]
+        },
+        {
+          "mode": "context-priority",
+          "assigned": 6,
+          "blocked": 0,
+          "reviewBlocked": 0,
+          "metric": [
+            6,
+            0,
+            18,
+            0,
+            -1560
+          ]
+        },
+        {
+          "mode": "balanced-5",
+          "assigned": 6,
+          "blocked": 0,
+          "reviewBlocked": 0,
+          "metric": [
+            6,
+            0,
+            0,
+            0,
+            -1555
+          ]
+        },
+        {
+          "mode": "capacity-first",
+          "assigned": 6,
+          "blocked": 0,
+          "reviewBlocked": 0,
+          "metric": [
+            6,
+            0,
+            0,
+            0,
+            -1555
+          ]
+        }
+      ],
+      "objective": "First maximize actual assigned variants, then review windows, current word/grammar matches, safe repeated-core replacements and earliest delivery. No difficulty/budget/spacing constraint is relaxed."
+    },
+    "historyPolicy": "Static existing assignments, reviews and owner-day patches are retained exactly. Later profile replanning may move only eligible unstarted work using the unchanged runtime history and prerequisite guards."
   },
   "blocked": [],
   "reviewBlocked": [

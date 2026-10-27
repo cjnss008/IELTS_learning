@@ -1,0 +1,168 @@
+{
+  "id": "bls-musicians",
+  "title": "Musicians and Singers: Work and Preparation",
+  "sourceUrl": "https://www.bls.gov/ooh/entertainment-and-sports/musicians-and-singers.htm",
+  "original": {
+    "path": "source-originals/bls-musicians.full.txt",
+    "sha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+    "bytes": 7333
+  },
+  "selected": {
+    "path": "source-originals/bls-musicians.v92-selection.txt",
+    "sha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a",
+    "bytes": 7334
+  },
+  "raw": {
+    "path": "evidence/raw/bls-musicians.json",
+    "sha256": "142b7ffc36327f375f3c6e56ea994e18399650624faca2d3b9209aa6613cb01a",
+    "bytes": 36239
+  },
+  "rights": [
+    {
+      "path": "evidence/rights/bls-musicians/bls-reuse-policy.json",
+      "sha256": "671addc89a91e61932a77f01e1d87a3f3d4c668959cfd81fe218ec72d4f814d9",
+      "bytes": 1780,
+      "url": "https://www.bls.gov/opub/copyright-information.htm"
+    }
+  ],
+  "attribution": "Source: BLS, Musicians and Singers: Work and Preparation; https://www.bls.gov/ooh/entertainment-and-sports/musicians-and-singers.htm",
+  "priorSourceSegments": [
+    {
+      "sourceStartUtf16": 0,
+      "sourceEndUtf16": 7324,
+      "selectedStartUtf16": 0,
+      "selectedEndUtf16": 7324,
+      "sha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+      "wordCount": 1114
+    }
+  ],
+  "level": "B2",
+  "levelCalibrated": false,
+  "estimatedMinutes": 30,
+  "phaseCandidates": [
+    "academic",
+    "integration",
+    "verification"
+  ],
+  "suggestedWindow": [
+    169,
+    280
+  ],
+  "teaching": {
+    "path": "teaching-texts/bls-musicians.txt",
+    "sha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+    "bytes": 7149,
+    "utf16Length": 7140,
+    "wordCount": 1086
+  },
+  "adaptation": {
+    "status": "explicit-teaching-adaptation-not-official-verbatim",
+    "inputSha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a",
+    "outputSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+    "offsetUnit": "UTF-16-code-unit",
+    "edits": [
+      {
+        "startUtf16": 29,
+        "endUtf16": 48,
+        "before": " About this section",
+        "after": "",
+        "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+        "teachingStartUtf16": 29,
+        "teachingEndUtf16": 29
+      },
+      {
+        "startUtf16": 2793,
+        "endUtf16": 2812,
+        "before": " About this section",
+        "after": "",
+        "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+        "teachingStartUtf16": 2774,
+        "teachingEndUtf16": 2774
+      },
+      {
+        "startUtf16": 2875,
+        "endUtf16": 3003,
+        "before": "Musicians and singers held about 170,400 jobs in 2025. Some of the largest employers of musicians and singers were as follows:\n\n",
+        "after": "",
+        "reason": "Omit the employment-count/table lead-in paragraph because the source selection contains no corresponding employer table.",
+        "teachingStartUtf16": 2837,
+        "teachingEndUtf16": 2837
+      },
+      {
+        "startUtf16": 3730,
+        "endUtf16": 3749,
+        "before": " About this section",
+        "after": "",
+        "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+        "teachingStartUtf16": 3564,
+        "teachingEndUtf16": 3564
+      }
+    ],
+    "map": [
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 0,
+        "inputEndUtf16": 29,
+        "teachingStartUtf16": 0,
+        "teachingEndUtf16": 29
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 29,
+        "inputEndUtf16": 48,
+        "teachingStartUtf16": 29,
+        "teachingEndUtf16": 29
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 48,
+        "inputEndUtf16": 2793,
+        "teachingStartUtf16": 29,
+        "teachingEndUtf16": 2774
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 2793,
+        "inputEndUtf16": 2812,
+        "teachingStartUtf16": 2774,
+        "teachingEndUtf16": 2774
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 2812,
+        "inputEndUtf16": 2875,
+        "teachingStartUtf16": 2774,
+        "teachingEndUtf16": 2837
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 2875,
+        "inputEndUtf16": 3003,
+        "teachingStartUtf16": 2837,
+        "teachingEndUtf16": 2837
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 3003,
+        "inputEndUtf16": 3730,
+        "teachingStartUtf16": 2837,
+        "teachingEndUtf16": 3564
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 3730,
+        "inputEndUtf16": 3749,
+        "teachingStartUtf16": 3564,
+        "teachingEndUtf16": 3564
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 3749,
+        "inputEndUtf16": 7325,
+        "teachingStartUtf16": 3564,
+        "teachingEndUtf16": 7140
+      }
+    ]
+  },
+  "active": false
+}

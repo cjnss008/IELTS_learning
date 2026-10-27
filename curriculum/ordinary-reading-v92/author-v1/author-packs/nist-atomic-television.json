@@ -1,0 +1,641 @@
+{
+  "schema": 1,
+  "sourceId": "nist-atomic-television",
+  "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+  "sourceTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+  "status": "author-v1-before-independent-question-review",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What development is the article mainly reporting?",
+      "options": [
+        "An earlier demonstration of a basic radio receiver and a headphone appliance.",
+        "The effect of laser beam sizes on one part of an atom-based video system.",
+        "A demonstration of video reception using an atom-based receiver.",
+        "A change from cesium to rubidium to improve a basic radio receiver’s sensitivity."
+      ],
+      "answers": [
+        "A demonstration of video reception using an atom-based receiver."
+      ],
+      "explanation": "首段说研究者将原子式无线电接收器扩展到接收和显示视频，后文说明装置、转换与测试。较早的无线电实验和光束尺寸只是背景或当前工作中的局部内容。\n\n选项“An earlier demonstration of a basic radio receiver and a headphone appliance.”：这是文中previously使用铯原子的先前工作，不是本次报道的主要新进展。\n选项“The effect of laser beam sizes on one part of an atom-based video system.”：光束尺寸确实被研究，但只概括性能测试的一部分，遗漏视频接收演示和装置信号流程。\n选项“A demonstration of video reception using an atom-based receiver.”：正确：概括原子式接收器演示视频接收的进展。\n选项“A change from cesium to rubidium to improve a basic radio receiver’s sensitivity.”：此项把新装置的铷与先前装置灵敏度提升混为一个主要结论，且没有概括本次视频接收目标。",
+      "evidence": "Researchers at the National Institute of Standards and Technology (NIST) have adapted their atom-based radio receiver to detect and display live color television and video games.",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 178,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 178,
+        "textSha256": "fc3b4c60b6d1fd0bbcbfd3ea4f2ae9027b52b723a06247ebde01919f589eaed3"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "这是文中previously使用铯原子的先前工作，不是本次报道的主要新进展。",
+        "光束尺寸确实被研究，但只概括性能测试的一部分，遗漏视频接收演示和装置信号流程。",
+        "正确：概括原子式接收器演示视频接收的进展。",
+        "此项把新装置的铷与先前装置灵敏度提升混为一个主要结论，且没有概括本次视频接收目标。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why could atom-based communications systems be useful in remote locations or emergencies?",
+      "options": [
+        "They make signal comparison unnecessary.",
+        "They may be smaller and more tolerant of noisy environments.",
+        "They remove the need to prepare atoms with lasers.",
+        "They already provide free household internet in those locations."
+      ],
+      "answers": [
+        "They may be smaller and more tolerant of noisy environments."
+      ],
+      "explanation": "第二段将实际用途与尺寸可能更小、对噪声更耐受联系起来。这里是could的潜力描述；没有免费网络已部署的事实，也没有取消激光或比较步骤。\n\n选项“They make signal comparison unnecessary.”：后文仍需比较参考与输出信号来评估系统。\n选项“They may be smaller and more tolerant of noisy environments.”：正确：smaller与more tolerant of noisy environments是文中明确理由。\n选项“They remove the need to prepare atoms with lasers.”：装置仍要用激光准备原子。\n选项“They already provide free household internet in those locations.”：文中没有已经提供免费家用网络的部署或收费信息。",
+      "evidence": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics. Adding video capability could enhance radio systems in, for example, remote locations or emergency situations.",
+      "evidenceOffsets": {
+        "start": 180,
+        "end": 462,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 180,
+        "end": 462,
+        "textSha256": "f2c084844f5a19f66ebede71a3ef217dc7def0d4d9a47646a98cd2a5f036c410"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause-purpose",
+      "distractorReasons": [
+        "后文仍需比较参考与输出信号来评估系统。",
+        "正确：smaller与more tolerant of noisy environments是文中明确理由。",
+        "装置仍要用激光准备原子。",
+        "文中没有已经提供免费家用网络的部署或收费信息。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "What does “This time” refer to in the paragraph about the laser interaction zone?",
+      "options": [
+        "The number of years spent developing a conventional television.",
+        "The delay between buying a receiver and installing it at home.",
+        "The length of a video game played during the demonstration.",
+        "The average time that atoms stay in the laser interaction zone."
+      ],
+      "answers": [
+        "The average time that atoms stay in the laser interaction zone."
+      ],
+      "explanation": "前句说beam size影响原子停留在激光相互作用区的平均时间，This time紧接着回指这一时间。下文再解释时间短、区域小与数据量的关系。\n\n选项“The number of years spent developing a conventional television.”：这段没有提供传统电视开发年数。\n选项“The delay between buying a receiver and installing it at home.”：文中没有家用购买或安装的等待时间。\n选项“The length of a video game played during the demonstration.”：这段没有讨论游戏时长。\n选项“The average time that atoms stay in the laser interaction zone.”：正确：回指上一句的average time the atoms remain in the laser interaction zone。",
+      "evidence": "The researchers studied the laser beam sizes, powers and detection methods required for the atoms to receive video in standard definition format. The beam size affects the average time the atoms remain in the laser interaction zone. This time is inversely related to the bandwidth of the receiver; that is, a shorter time and smaller beam produce more data. That’s because atoms move in and out of the interaction zone, so smaller areas result in a higher signal “refresh rate” and better resolution.",
+      "evidenceOffsets": {
+        "start": 2129,
+        "end": 2629,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2129,
+        "end": 2629,
+        "textSha256": "616dd0503d262e0b0c06caa97825ad7f224756592f1bfe7042310991e47caaa1"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "这段没有提供传统电视开发年数。",
+        "文中没有家用购买或安装的等待时间。",
+        "这段没有讨论游戏时长。",
+        "正确：回指上一句的average time the atoms remain in the laser interaction zone。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The completed receiver weighed less than one kilogram.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "文章说尺寸可能较小，并描述光束直径等，但没有接收器重量。物理尺寸或微米数不能换算成一千克以下。\n\n选项“TRUE”：没有实际重量数据，不能判TRUE。\n选项“FALSE”：也没有高于一千克的相反数据，不能判FALSE。\n选项“NOT GIVEN”：正确：文章未给设备重量。",
+      "evidence": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics. Adding video capability could enhance radio systems in, for example, remote locations or emergency situations.",
+      "evidenceOffsets": {
+        "start": 180,
+        "end": 462,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 180,
+        "end": 462,
+        "textSha256": "f2c084844f5a19f66ebede71a3ef217dc7def0d4d9a47646a98cd2a5f036c410"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "没有实际重量数据，不能判TRUE。",
+        "也没有高于一千克的相反数据，不能判FALSE。",
+        "正确：文章未给设备重量。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The original carrier signal was discarded before the system was evaluated.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "研究者保留原载波信号作reference，并与最终视频输出比较。discarded与use...as a reference相反。\n\n选项“TRUE”：TRUE不成立，原信号没有在评估前被丢弃。\n选项“FALSE”：正确：原信号明确用于评估中的比较。\n选项“NOT GIVEN”：不是NOT GIVEN，原信号在评估中做什么有明文。",
+      "evidence": "To display a live video signal or video game, this input is sent from a video camera to modulate the original carrier signal, which is then fed to a horn antenna directing the transmission to the atoms. Researchers use the original carrier signal as a reference and compare it to the final video output detected through the atoms to evaluate the system.",
+      "evidenceOffsets": {
+        "start": 1774,
+        "end": 2127,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1774,
+        "end": 2127,
+        "textSha256": "3affc93c86d43f662ad874f0cf4f9754c67503a17c846825c4a06083e64efba8"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE不成立，原信号没有在评估前被丢弃。",
+        "正确：原信号明确用于评估中的比较。",
+        "不是NOT GIVEN，原信号在评估中做什么有明文。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The researchers used rubidium atoms in the video-reception setup.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "当前装置的说明写gaseous rubidium atoms；cesium则属于previously使用的装置。要分清本次与先前实验。\n\n选项“TRUE”：正确：当前装置明确使用rubidium atoms。\n选项“FALSE”：FALSE会把previously的cesium误当成本次唯一材料。\n选项“NOT GIVEN”：不是NOT GIVEN，原子种类在装置段明确写出。",
+      "evidence": "Researchers use two different color lasers to prepare gaseous rubidium atoms in Rydberg states in a glass container. The team previously used the setup with cesium atoms to demonstrate the basic radio receiver and a “headphone” appliance to boost sensitivity a hundredfold.",
+      "evidenceOffsets": {
+        "start": 1153,
+        "end": 1426,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1153,
+        "end": 1426,
+        "textSha256": "e58e4dd474e7ce94d51cd7deacfd8bd00ba69b2d384fdaa32d365b680fa277f2"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：当前装置明确使用rubidium atoms。",
+        "FALSE会把previously的cesium误当成本次唯一材料。",
+        "不是NOT GIVEN，原子种类在装置段明确写出。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "Which device transforms the signal into a video graphics array format? Write NO MORE THAN THREE WORDS from the passage.",
+      "answers": [
+        "analog-to-digital converter",
+        "An analog-to-digital converter"
+      ],
+      "maxWords": 3,
+      "explanation": "原句主语是An analog-to-digital converter。带或不带原文冠词均在三词内；连字符连接的analog-to-digital算一个词，converter是第二词。只写宽泛converter不足以完整给出文中设备名称。\n\n可接受答案：analog-to-digital converter / An analog-to-digital converter；最多3个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“television”：电视用于显示输出，不是文中执行这种格式转换的设备。\n写法“converter”：未完整提取文中的设备名称。\n写法“analog to digital converter”：拆掉连字符后为四词，超三词，也不符合原文取词形式。",
+      "evidence": "To prepare to receive video, a stable radio signal is applied to the glass container filled with atoms. The team can detect energy shifts in the Rydberg atoms that modulate this carrier signal. The modulated output is then fed to a television. An analog-to-digital converter transforms the signal into a video graphics array format for display.",
+      "evidenceOffsets": {
+        "start": 1428,
+        "end": 1772,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1428,
+        "end": 1772,
+        "textSha256": "6591806e5ee0bf437c6051dc4f90d8820a265c5974b1483eb894e11c28883e1f"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "television": "电视用于显示输出，不是文中执行这种格式转换的设备。",
+        "converter": "未完整提取文中的设备名称。",
+        "analog to digital converter": "拆掉连字符后为四词，超三词，也不符合原文取词形式。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with TWO WORDS from the passage: Smaller interaction areas produce a higher signal _______ and better resolution.",
+      "answers": [
+        "refresh rate"
+      ],
+      "maxWords": 2,
+      "explanation": "文中直接说smaller areas result in a higher signal “refresh rate” and better resolution。只提取refresh rate，空前已有signal；这里不是把两个词拆成无关联的刷新和速度。\n\n可接受答案：refresh rate；最多2个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“bandwidth”：虽然同段讨论带宽，但本题对应higher signal后原文的两词短语。\n写法“signal refresh rate”：空前已有signal，重复且超过两词。\n写法“refresh”：缺rate，未完整表达刷新率。",
+      "evidence": "The researchers studied the laser beam sizes, powers and detection methods required for the atoms to receive video in standard definition format. The beam size affects the average time the atoms remain in the laser interaction zone. This time is inversely related to the bandwidth of the receiver; that is, a shorter time and smaller beam produce more data. That’s because atoms move in and out of the interaction zone, so smaller areas result in a higher signal “refresh rate” and better resolution.",
+      "evidenceOffsets": {
+        "start": 2129,
+        "end": 2629,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2129,
+        "end": 2629,
+        "textSha256": "616dd0503d262e0b0c06caa97825ad7f224756592f1bfe7042310991e47caaa1"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "bandwidth": "虽然同段讨论带宽，但本题对应higher signal后原文的两词短语。",
+        "signal refresh rate": "空前已有signal，重复且超过两词。",
+        "refresh": "缺rate，未完整表达刷新率。"
+      }
+    }
+  ],
+  "questionReviewNotes": [
+    {
+      "questionId": "q1",
+      "cognitiveTask": "main-idea",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 0,
+          "teachingEndUtf16": 178,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 178,
+          "originalStartUtf16": 0,
+          "originalEndUtf16": 178,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q2",
+      "cognitiveTask": "cause-purpose",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 180,
+          "teachingEndUtf16": 462,
+          "selectedStartUtf16": 180,
+          "selectedEndUtf16": 462,
+          "originalStartUtf16": 180,
+          "originalEndUtf16": 462,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q3",
+      "cognitiveTask": "reference",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2129,
+          "teachingEndUtf16": 2629,
+          "selectedStartUtf16": 2131,
+          "selectedEndUtf16": 2631,
+          "originalStartUtf16": 2131,
+          "originalEndUtf16": 2631,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q4",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 180,
+          "teachingEndUtf16": 462,
+          "selectedStartUtf16": 180,
+          "selectedEndUtf16": 462,
+          "originalStartUtf16": 180,
+          "originalEndUtf16": 462,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": "Whole teaching passage checked for absence; quoted paragraph is a topic anchor, not proof that the statement is false."
+    },
+    {
+      "questionId": "q5",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1774,
+          "teachingEndUtf16": 2127,
+          "selectedStartUtf16": 1776,
+          "selectedEndUtf16": 2129,
+          "originalStartUtf16": 1776,
+          "originalEndUtf16": 2129,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q6",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1153,
+          "teachingEndUtf16": 1426,
+          "selectedStartUtf16": 1155,
+          "selectedEndUtf16": 1428,
+          "originalStartUtf16": 1155,
+          "originalEndUtf16": 1428,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q7",
+      "cognitiveTask": "short-answer",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1428,
+          "teachingEndUtf16": 1772,
+          "selectedStartUtf16": 1430,
+          "selectedEndUtf16": 1774,
+          "originalStartUtf16": 1430,
+          "originalEndUtf16": 1774,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q8",
+      "cognitiveTask": "completion",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2129,
+          "teachingEndUtf16": 2629,
+          "selectedStartUtf16": 2131,
+          "selectedEndUtf16": 2631,
+          "originalStartUtf16": 2131,
+          "originalEndUtf16": 2631,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    }
+  ],
+  "grammarEvidence": [
+    {
+      "id": "nist-atomic-television-grammar-1",
+      "tag": "comparatives-and-cause",
+      "sentence": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics.",
+      "explanation": "because给出实际意义的原因；smaller和more tolerant...than作并列比较，比较对象是传统电子设备。could保留潜力和可能性，不能改写成所有产品现在都更小、更耐噪。",
+      "evidenceOffsets": {
+        "start": 180,
+        "end": 351,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "877287ade2124bc6eb443fab5fa67f6863195e3b90741cdf07acbcf2612db25a",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 180,
+          "teachingEndUtf16": 351,
+          "selectedStartUtf16": 180,
+          "selectedEndUtf16": 351,
+          "originalStartUtf16": 180,
+          "originalEndUtf16": 351,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    },
+    {
+      "id": "nist-atomic-television-grammar-2",
+      "tag": "transformation-pattern",
+      "sentence": "An analog-to-digital converter transforms the signal into a video graphics array format for display.",
+      "explanation": "transform X into Y说明把X转成Y：转换器把信号转换成用于显示的VGA格式。into引出转换结果，不是地点；transforms与单数主语converter一致。",
+      "evidenceOffsets": {
+        "start": 1672,
+        "end": 1772,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "222fdeea40d84684b66d7df6f0e436222271d105d0d5fa85bcb1c73868d9f1ea",
+      "teachingTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1672,
+          "teachingEndUtf16": 1772,
+          "selectedStartUtf16": 1674,
+          "selectedEndUtf16": 1774,
+          "originalStartUtf16": 1674,
+          "originalEndUtf16": 1774,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    }
+  ],
+  "wordCandidates": [
+    {
+      "id": "nist-atomic-television-word-1",
+      "word": "sensor",
+      "canonicalTargetId": "essential:sensor",
+      "surface": "sensors",
+      "startUtf16": 621,
+      "endUtf16": 628,
+      "quote": "NIST’s receiver uses atoms prepared in high-energy “Rydberg” states, which are unusually sensitive to electromagnetic fields, including radio signals. These sensors also enable signal power measurements linked to the international system of units (SI). The latest work, described in AVS Quantum Science, is the first to demonstrate video reception.",
+      "quoteStartUtf16": 464,
+      "quoteEndUtf16": 812,
+      "quoteSha256": "c81968097d06c350074966d230f7dc5d8b35e76c50d002041cfa3f7ef6b8aa37",
+      "sourceTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "sensor",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "sensor",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 621,
+          "teachingEndUtf16": 628,
+          "selectedStartUtf16": 621,
+          "selectedEndUtf16": 628,
+          "originalStartUtf16": 621,
+          "originalEndUtf16": 628,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nist-atomic-television-word-2",
+      "word": "receiver",
+      "canonicalTargetId": "essential:receiver",
+      "surface": "receiver",
+      "startUtf16": 109,
+      "endUtf16": 117,
+      "quote": "Researchers at the National Institute of Standards and Technology (NIST) have adapted their atom-based radio receiver to detect and display live color television and video games.",
+      "quoteStartUtf16": 0,
+      "quoteEndUtf16": 178,
+      "quoteSha256": "fc3b4c60b6d1fd0bbcbfd3ea4f2ae9027b52b723a06247ebde01919f589eaed3",
+      "sourceTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "receiver",
+            "relation": "exact-headword"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "literal-identity-only",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 109,
+          "teachingEndUtf16": 117,
+          "selectedStartUtf16": 109,
+          "selectedEndUtf16": 117,
+          "originalStartUtf16": 109,
+          "originalEndUtf16": 117,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nist-atomic-television-word-3",
+      "word": "laser",
+      "canonicalTargetId": "essential:laser",
+      "surface": "lasers",
+      "startUtf16": 1189,
+      "endUtf16": 1195,
+      "quote": "Researchers use two different color lasers to prepare gaseous rubidium atoms in Rydberg states in a glass container. The team previously used the setup with cesium atoms to demonstrate the basic radio receiver and a “headphone” appliance to boost sensitivity a hundredfold.",
+      "quoteStartUtf16": 1153,
+      "quoteEndUtf16": 1426,
+      "quoteSha256": "e58e4dd474e7ce94d51cd7deacfd8bd00ba69b2d384fdaa32d365b680fa277f2",
+      "sourceTextSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+      "sourceId": "nist-atomic-television",
+      "materialId": "public-ordinary-v92-nist-atomic-television-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "laser",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "laser",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1189,
+          "teachingEndUtf16": 1195,
+          "selectedStartUtf16": 1191,
+          "selectedEndUtf16": 1197,
+          "originalStartUtf16": 1191,
+          "originalEndUtf16": 1197,
+          "originalBodySha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    }
+  ],
+  "active": false
+}

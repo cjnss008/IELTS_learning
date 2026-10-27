@@ -1,0 +1,2192 @@
+{
+  "schema": 1,
+  "id": "ordinary-v92-author-v1-independent-comparison",
+  "authorFreezeSha256": "481410315f1822a40cabf5dded07efcad2a42fbb9eb2f5c2279c253db76ebde4",
+  "authorFreezeFiles": 68,
+  "authorIndexSha256": "5e2f52ebde356921eb34673f33d64fbfd91464dec7e8c6c0179584ec1b80d015",
+  "blindAnswerSha256": "3bed6cab04ce27eed4f9dc2254b23a611c353b4748f5b5df4a69ddd10276a55a",
+  "assessment": {
+    "path": "C:/Users/yinya/Documents/Codex/2026-10-24/du-q/work/ordinary-reading-admission-v92/candidate/assets/assessment-core.js",
+    "sha256": "1213fd82e082cc0979c07c9cd2084c73b08b3194524c05d44ed2232514c6e8d4"
+  },
+  "summary": {
+    "questions": 48,
+    "blindMainAgreement": 48,
+    "answerKeyErrorsFound": 0,
+    "acceptedPriorBlindAlternatives": 3,
+    "missingPriorBlindAlternatives": 0,
+    "scopeWordingClarifications": 1,
+    "minorExplanationTypos": 1,
+    "grammarExamplesReviewed": 12,
+    "wordPositionCandidatesValidated": 27,
+    "actualGradeCasesAccepted": 51,
+    "overLimitCasesRejected": 7,
+    "semanticWordAdmission": 0,
+    "activation": 0,
+    "mastery": 0
+  },
+  "materialPins": [
+    {
+      "sourceId": "bls-athletes",
+      "path": "materials/bls-athletes-reading.json",
+      "sha256": "72fc820f5601b2be20dbfb36be92af3911f6a397bd86586313d7697d8aa814b3",
+      "contentHash": "8f129f5b9b206c34bd80132b0c292e2988a62ac7aefff9410f782b7d21bd5065",
+      "questionsSha256": "2369fd6909e8cf6105bc354d4d86c3534e833d072a0072d12fa1318c33398a21",
+      "contextPath": "contexts/bls-athletes.json",
+      "contextSha256": "5988deb38c527a61a82d48aa21379375b9360efcbc002d489567e06ad6d73d17"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "path": "materials/bls-musicians-reading.json",
+      "sha256": "6db1f2c2620cf4ca076724ef1cd2984374c3e632c4853b8258240181078cfd24",
+      "contentHash": "cdc745be513044462ec13d4f7fc22b754b10f7fee655159378c890c6a9c98bb7",
+      "questionsSha256": "6f0c3b55268e5e84beae3b412ec6a613e7e02639aa78bc7673d89ec7c8fec4d6",
+      "contextPath": "contexts/bls-musicians.json",
+      "contextSha256": "7b49a38bf40c889d79093e75f807e9f9bc373f9eb898feeb606a7a56f3083614"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "path": "materials/nimh-psychotherapies-reading.json",
+      "sha256": "549cb24fd3f2fa104e967c62082de48f6ccacae84e38bbb0b579a57402fb99b7",
+      "contentHash": "e86c6a68555a15e334bf12abacb0dd4b7c8a09def67a24179148d2acb127dc63",
+      "questionsSha256": "be11a39aabc57dcacd9a2508ff99711ab5d24784ca3a50586ca70ee2f3359e71",
+      "contextPath": "contexts/nimh-psychotherapies.json",
+      "contextSha256": "bdef1d8dec1fef7d1542e1e9c7918e920d21dfd0ddb319c09aaf7b08d9ebc0fc"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "path": "materials/nhgri-dna-reading.json",
+      "sha256": "fa536753f8e60eac185d4bed4451e6b0eb79cc12f208586c999592263103590e",
+      "contentHash": "2dd86f4128a4e0d6f6b84aed8936b3b0ca7194146d669ef7cee70deba2c382be",
+      "questionsSha256": "599b019cce430cee5da88feda9ddb3cb5e796f644a92c3f9b08332d328a70d20",
+      "contextPath": "contexts/nhgri-dna.json",
+      "contextSha256": "a1b68193c44a0946e667de394b147fede47ec5dbfc9f44720dbbdafb357cb9af"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "path": "materials/nist-atomic-television-reading.json",
+      "sha256": "3f9d7ccb0fc8e6e63d60a2a4fad0de18058c243c68d087b6d37e9a954cd9c3e3",
+      "contentHash": "ae0c07c831693b56f86a50486cf0dd76b01c5cf87f4016cbdc866fa5cba62a8e",
+      "questionsSha256": "1d146a8fc24f637100486d3563c17f8470b2b8ff7a0525e1e455c73963f9b061",
+      "contextPath": "contexts/nist-atomic-television.json",
+      "contextSha256": "f1cb1dd1a58b752eb33342adbee7c4cba8bb585405b41f2e1c4f7324ba2cddb9"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "path": "materials/cbo-budget-2025-reading.json",
+      "sha256": "5dd7bd9614803e8df0ee29de1a41c0dfc43d5c67102ec8dd073709997d6e5d47",
+      "contentHash": "0f3371b68da86378a04401315c98b6c45ce1afb9f623858c366a22cef9ec64cf",
+      "questionsSha256": "40f9c3b77ee02cf0048eccb79b3c9d230874242733b185f7e324ee03d9099dd2",
+      "contextPath": "contexts/cbo-budget-2025.json",
+      "contextSha256": "e8e06f07655afa0d5d910af332c33fbc6839411a4f94945e8fe1c69a54919387"
+    }
+  ],
+  "questions": [
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q1",
+      "questionSha256": "ece8e33568d87a109f1ddfda56e146e87de345bfd3de3c087d4491a394a385ca",
+      "blindAnswer": "Professional athletic work combines sustained preparation with uncertain career prospects.",
+      "authorAnswers": [
+        "Professional athletic work combines sustained preparation with uncertain career prospects."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 750,
+        "endUtf16": 967,
+        "quote": "Many people dream of becoming a professional athlete. Few people, however, make a full-time living from professional athletics—and when they do, professional athletes often have short careers with little job security.",
+        "sha256": "ea7962d1ba8a95ebf78f6ccfea1a33b6ed2f8a6d202d70b15da145a0dcfee895"
+      },
+      "contentJudgement": "全文同时写训练/准备、工况与职业不稳定；其他选项把局部要求或不存在的保证当全文中心。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q2",
+      "questionSha256": "45922cbe67ad53c881ae17320893dcbecc3ca986dccb108ea492587015ccfe45",
+      "blindAnswer": "To gain an advantage when they compete against those opponents.",
+      "authorAnswers": [
+        "To gain an advantage when they compete against those opponents."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1408,
+        "endUtf16": 1763,
+        "quote": "Being an athlete involves more than competing in athletic events. Athletes spend most days practicing and improving their skills under the guidance of a coach or a sports instructor. They review videos to critique and improve their performance and technique. To gain a competitive advantage, athletes also study their opponents' tendencies and weaknesses.",
+        "sha256": "47561a3e979948913285b45170ab4006c071800b1de6041f0d1df9c902a46c83"
+      },
+      "contentJudgement": "目的状语直接说明研究对手弱点是为了竞争优势。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q3",
+      "questionSha256": "25c83af9fb6c3d22224e5c84f360ba427e7fcd4e9734dc9bb699affe522f54c1",
+      "blindAnswer": "Make a full-time living from professional athletics.",
+      "authorAnswers": [
+        "Make a full-time living from professional athletics."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 750,
+        "endUtf16": 967,
+        "quote": "Many people dream of becoming a professional athlete. Few people, however, make a full-time living from professional athletics—and when they do, professional athletes often have short careers with little job security.",
+        "sha256": "ea7962d1ba8a95ebf78f6ccfea1a33b6ed2f8a6d202d70b15da145a0dcfee895"
+      },
+      "contentJudgement": "do 省略前面的 make a full-time living from professional athletics。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q4",
+      "questionSha256": "519acc66f50c69e6c4f3a0c55c490766b7c14b383d48f620e6af7c3525a9e959",
+      "blindAnswer": "TRUE",
+      "authorAnswers": [
+        "TRUE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 2514,
+        "endUtf16": 2824,
+        "quote": "Athletes and sports competitors who participate in outdoor competitions may be exposed to weather conditions of the season in which they play their sport. In addition, many athletes must travel to sporting events. Such travel may include long bus rides or plane trips, and, in some cases, international travel.",
+        "sha256": "4f750da98e64adf9b0da060faee052ed8b35a3bdd225b185758e21ec3a5fa632"
+      },
+      "contentJudgement": "工作环境段明确说有时包括国际旅行；职业语境下这是预期读法，但 professional 的范围比该证据句的 athletes 更窄，见歧义标记。",
+      "scopeClarification": {
+        "severity": "minor-scope-clarification-requested",
+        "description": "旅行句指 athletes 总体，没有在此直接限定professional；若机械采用严格集合逻辑，可争辩职业子集未被单独证实。",
+        "alternativeDefensibleReading": "NOT GIVEN under an unusually strict subset reading",
+        "suggestedMinimumEdit": "Remove professional: Some athletes may have to travel internationally for competitions."
+      },
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q5",
+      "questionSha256": "70000b27c66b744ebc1e546d1bfc25d3b2f78829d1042ea889104bbd11e24926",
+      "blindAnswer": "FALSE",
+      "authorAnswers": [
+        "FALSE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3502,
+        "endUtf16": 3768,
+        "quote": "No formal educational credential is typically required to become an athlete or sports competitor. Athletes must have athletic talent and extensive knowledge of their sport. They typically get such knowledge through years of experience at lower levels of competition.",
+        "sha256": "1e9cfe3b59765c44eda06d30538cc77400b3be568bcc24f0544a61fca0751c73"
+      },
+      "contentJudgement": "usually不要求正式学历，直接反驳every athlete must have university degree。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q6",
+      "questionSha256": "288918284bbdbe81695d27cbb4f16088123f32a8888034702af19c1ced27a65e",
+      "blindAnswer": "NOT GIVEN",
+      "authorAnswers": [
+        "NOT GIVEN"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3076,
+        "endUtf16": 3351,
+        "quote": "Athletes and sports competitors may work irregular schedules, including evenings, weekends, and holidays; part-time work is also common. During the sports season, they typically work more than 40 hours per week for several months as they practice, train, travel, and compete.",
+        "sha256": "5d2efcb8f9eb202925e1a1c0d1048c486f5e5c554d5d9b0f0703ae9fe964ca41"
+      },
+      "contentJudgement": "全文只说高中过往经验/训练和职业赛季工时，没有高中运动员每周十小时训练的数量。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q7",
+      "questionSha256": "ccf24d8db09a77fafdc4133d23d7e58c6593a653dcf635a123ab45a50bd6456d",
+      "blindAnswer": "endorsements",
+      "authorAnswers": [
+        "endorsements"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 5289,
+        "endUtf16": 5878,
+        "quote": "Turning professional is often the biggest advancement that aspiring athletes make in their careers. They may begin to compete immediately, although some also may spend more time on the bench (as a reserve) to gain experience. In some sports, such as baseball, athletes may begin their professional career on a minor league team before moving up to the major leagues. Professional athletes generally advance in their sport by displaying superior performance and receiving accolades; in turn, they typically earn a higher salary. They also may receive endorsements from companies and brands.",
+        "sha256": "1622564e87967d0d870bb48a5e3146e53efcf2d0b7c4a6d324d0b1d2b462ed04"
+      },
+      "contentJudgement": "companies and brands 后直接指向商业代言，一词复数。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q8",
+      "questionSha256": "b5a02ecb48299b2d39c5a12409f1a117106ccdaa005cd2ecf55997a0eb2dd913",
+      "blindAnswer": "shared goal",
+      "authorAnswers": [
+        "shared goal"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 7017,
+        "endUtf16": 7173,
+        "quote": "Teamwork. The ability to work toward a shared goal with others, including teammates and coaches, is essential for athletes’ and sports competitors’ success.",
+        "sha256": "1c356b004c70ef143566116e257d122945bd02bd208c3a125b10a745a95a2be5"
+      },
+      "contentJudgement": "a后空格填shared goal，两词；shared goal符合原文与句法。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q1",
+      "questionSha256": "d042d01e1ddf6d1f681ed5ba467018c4dcb8cc2d34f9ffb79c08b56af9e64853",
+      "blindAnswer": "To describe musical work, preparation and employment conditions.",
+      "authorAnswers": [
+        "To describe musical work, preparation and employment conditions."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 170,
+        "endUtf16": 330,
+        "quote": "Musicians and singers play instruments or sing for live audiences and in recording studios. They perform a variety of genres, such as classical, jazz, and rock.",
+        "sha256": "2de126aba34a35d7d47b2d659e4a221e664206f14cb7b55f9e49485c811f1b77"
+      },
+      "contentJudgement": "全文覆盖工作、准备与就业条件，不是票价/学位排名或建议人人古典。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q2",
+      "questionSha256": "d592ec128389871108742365059da7f1cd12f4c4428e3c1dcaafbd8d20c038cc",
+      "blindAnswer": "To make themselves more attractive to potential employers or clients.",
+      "authorAnswers": [
+        "To make themselves more attractive to potential employers or clients."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 820,
+        "endUtf16": 1017,
+        "quote": "Musicians play one or more instruments. To make themselves more marketable, many become proficient in multiple musical instruments or styles. Some diversify by both singing and playing instruments.",
+        "sha256": "8bae770930aa49cc2b4d2ac33cc2d4c4f0934e1c7f4ab0d7a33502e1b70f7376"
+      },
+      "contentJudgement": "more marketable 指让自己更有市场竞争力，可吸引雇主/客户。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q3",
+      "questionSha256": "6d06267bbc22db948484e0e2925f7398460977d97ea5bbde74075e2337493ba1",
+      "blindAnswer": "The irregular working schedules of musicians and singers.",
+      "authorAnswers": [
+        "The irregular working schedules of musicians and singers."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3101,
+        "endUtf16": 3249,
+        "quote": "Musicians and singers often have irregular work schedules. This includes rehearsing and performing during the day or night on weekdays and weekends.",
+        "sha256": "6cf89ff711fd586217a620a35d319e7339363842f21191cafb6551b3bb216b0c"
+      },
+      "contentJudgement": "This承接前一句不规律工作时间，并列出日夜/平日周末作为实例。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q4",
+      "questionSha256": "8fa9d004d0e48f37f27d28b665dc7cece688a488aca41cd11c7ffc7efddf3b8e",
+      "blindAnswer": "FALSE",
+      "authorAnswers": [
+        "FALSE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3674,
+        "endUtf16": 3991,
+        "quote": "Musicians and singers typically do not need formal postsecondary education to enter the occupation. However, those pursuing careers in some genres, such as classical or opera, may choose to earn a bachelor’s or higher degree. Musicians and singers need extensive training and regular practice to acquire their skills.",
+        "sha256": "9686f24eec6df2cdfe945146ce1620e96f0f3738f9cfc1580a1f4611587379f0"
+      },
+      "contentJudgement": "typically do not need formal postsecondary education直接反驳all need。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q5",
+      "questionSha256": "6eeb479ad0bf2f50b7a5cae68db0924da0da03382b6fed45064ccd986762c201",
+      "blindAnswer": "NOT GIVEN",
+      "authorAnswers": [
+        "NOT GIVEN"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 4420,
+        "endUtf16": 4906,
+        "quote": "Undergraduate music programs teach students about music history and styles. In addition, they teach methods for improving instrumental and vocal techniques and musical expression. Undergraduate voice programs also may include courses in diction. Courses in a foreign language may benefit students who intend to perform in that language. Some business courses, such as marketing, may be helpful for learning about the self-promotion often required for professional musicians and singers.",
+        "sha256": "9428ebe6a15a5a2f5e1dd2260015994dfec508b6dd77bc011b0bbcfc4bebeabe"
+      },
+      "contentJudgement": "本文谈音乐课程和某些商科课程用途，没有两专业学费对比。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q6",
+      "questionSha256": "f255d9a5fc99adcd5e651dedba4478ffdad80a9b1531e90ed2c6cb134fa1fba3",
+      "blindAnswer": "TRUE",
+      "authorAnswers": [
+        "TRUE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3251,
+        "endUtf16": 3528,
+        "quote": "Many musicians and singers find only part-time or intermittent work and may have long periods of unemployment between jobs. The stress of constantly looking for work may require them to accept full-time jobs in other occupations while working part time as a musician or singer.",
+        "sha256": "a46f304a2864a399e916cc1c202f3675b9f3489a363ef8c9f60554f67a6c7770"
+      },
+      "contentJudgement": "可在其他职业全职工作，同时兼职从事音乐，原文明说。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q7",
+      "questionSha256": "13a948d5ae02f45bec8f528bf71f7aa98defb3b2efa38d278112eab34d23bd66",
+      "blindAnswer": "session musicians",
+      "authorAnswers": [
+        "session musicians"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1919,
+        "endUtf16": 2200,
+        "quote": "Musicians who specialize in playing backup for a singer or band leader during recording sessions and live performances are known as session musicians. Singers who provide background vocals to harmonize with or support a lead singer are known as backup singers or backing vocalists.",
+        "sha256": "01bed9c27ee960358bc3f2c52b580d0fdf7e5e766f1ac0ffad16c5d935dfa815"
+      },
+      "contentJudgement": "描述专业伴奏工作者的双词名称，直接定义。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "bls-musicians",
+      "questionId": "q8",
+      "questionSha256": "3f3b5dbf9923ce4735994fa9dabb847cee22e8fcfa49e4940730a42de1167370",
+      "blindAnswer": "self-promotion",
+      "authorAnswers": [
+        "self-promotion"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 4420,
+        "endUtf16": 4906,
+        "quote": "Undergraduate music programs teach students about music history and styles. In addition, they teach methods for improving instrumental and vocal techniques and musical expression. Undergraduate voice programs also may include courses in diction. Courses in a foreign language may benefit students who intend to perform in that language. Some business courses, such as marketing, may be helpful for learning about the self-promotion often required for professional musicians and singers.",
+        "sha256": "9428ebe6a15a5a2f5e1dd2260015994dfec508b6dd77bc011b0bbcfc4bebeabe"
+      },
+      "contentJudgement": "商科可帮助学习职业所需自我推广；原文一个连字符词。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q1",
+      "questionSha256": "eaa98ad9aad468d27af1794db1268a4af30f06b6f287ee4282743320b7460e74",
+      "blindAnswer": "To explain the aims of psychotherapy and illustrate some of its approaches.",
+      "authorAnswers": [
+        "To explain the aims of psychotherapy and illustrate some of its approaches."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 41,
+        "endUtf16": 334,
+        "quote": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+        "sha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc"
+      },
+      "contentJudgement": "定义/目标及多种方法例子贯穿选段，无人人同治疗/完整目录/药物排名。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q2",
+      "questionSha256": "754c0ee8448a063fa672cbc1c6acf1f1de9c39e2f800518c2fbb9d1f0d06b80b",
+      "blindAnswer": "To check whether a physical health issue could be causing the symptoms.",
+      "authorAnswers": [
+        "To check whether a physical health issue could be causing the symptoms."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1323,
+        "endUtf16": 1543,
+        "quote": "First being examined by a health care provider can help rule out a physical health issue. This step is important because sometimes symptoms, like a change in mood or trouble concentrating, are due to a medical condition.",
+        "sha256": "846b1ccdda46c9ee280007a0425befe8d5be341b31f9c9832d35149e459fd5c6"
+      },
+      "contentJudgement": "检查是为了排除可能的身体病因，sometimes不能改all。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q3",
+      "questionSha256": "0219ef72c8eb1dafdea6d6b2738805685f079593cf1eb552e424c9f9c7fce999",
+      "blindAnswer": "Repeatedly learning to tolerate distress in a supportive environment.",
+      "authorAnswers": [
+        "Repeatedly learning to tolerate distress in a supportive environment."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3317,
+        "endUtf16": 3614,
+        "quote": "Use exposure therapy (a type of CBT) for anxiety disorders, in which a person spends brief periods in a supportive environment learning to tolerate the distress caused by certain items, ideas, or imagined scenes. This is continued until, over time, the fear associated with those things goes down.",
+        "sha256": "46b1ffde0242f7363faafd9186d1cb2d17a66f788dbac1977e4097619e628aad"
+      },
+      "contentJudgement": "This是承接前句的暴露治疗耐受练习持续进行，不是避免一切焦虑或固定服药。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q4",
+      "questionSha256": "d2ccc18ce26940337b1ef2eb116669b8a83b547c6a63c4c47ca9c10ef78bdf6e",
+      "blindAnswer": "NOT GIVEN",
+      "authorAnswers": [
+        "NOT GIVEN"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 41,
+        "endUtf16": 334,
+        "quote": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+        "sha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc"
+      },
+      "contentJudgement": "没有会谈50分钟的时长信息；brief periods只说暴露练习不等于完整session。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q5",
+      "questionSha256": "fbd665830a8948bf57210d16591602f70bd15fabd2eb82f9910765eb41cd9351",
+      "blindAnswer": "TRUE",
+      "authorAnswers": [
+        "TRUE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1588,
+        "endUtf16": 1852,
+        "quote": "Psychotherapy can be used as an alternative to or alongside medication and other treatment options. Choosing the right treatment plan is based on a person's individual needs and medical situation and should occur under the guidance of a mental health professional.",
+        "sha256": "4590d1deed888b96427cb142deb026da45aafea2985190b64e32c88f9c342bdf"
+      },
+      "contentJudgement": "alternative to or alongside明确包括与药物并用。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q6",
+      "questionSha256": "6a21965aef8bf4ee17cab730d4d2194cf9f8b63fe3aaf6e84b3efa68571742df",
+      "blindAnswer": "FALSE",
+      "authorAnswers": [
+        "FALSE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 2158,
+        "endUtf16": 2665,
+        "quote": "A variety of psychotherapies have been shown to effectively treat mental health disorders. Often, the type of treatment is tailored to the specific disorder. For example, the treatment approach for someone who has obsessive-compulsive disorder is different than the approach for someone who has bipolar disorder. Therapists may use one primary approach or incorporate elements from multiple approaches depending on their training, the disorder being treated, and the needs of the person receiving treatment.",
+        "sha256": "8daf58d9fef2cd27ea921e42d8284d9248d247d53cbf703720b36f367810e713"
+      },
+      "contentJudgement": "按病症和个人需要调整，且举不同病症方法不同，反驳every/same/regardless。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q7",
+      "questionSha256": "f665ad9c5473c48f470f8169290bec81677e48372574a90beee1aee828ab6887",
+      "blindAnswer": "cognitive behavioral therapy",
+      "authorAnswers": [
+        "cognitive behavioral therapy",
+        "CBT"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 2721,
+        "endUtf16": 3069,
+        "quote": "Help a person become aware of automatic ways of thinking that are inaccurate or harmful (for example, having a low opinion of their abilities) and then question those thoughts, understand how the thoughts affect their emotions and behavior, and change self-defeating behavior patterns. This approach is known as cognitive behavioral therapy (CBT) .",
+        "sha256": "efc3ca6a42b114763cfb50e522249ce22b2806411a847be6cf9d98f492199616"
+      },
+      "contentJudgement": "所述质疑有害自动思维的方法直接名为CBT；全称三词，原文缩写也是可接受短答。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "questionId": "q8",
+      "questionSha256": "a3620d5ad5f2f312acbab3a2cfa4d4c7d1c408b88b89611b881b098e34ac08e9",
+      "blindAnswer": "evidence-based",
+      "authorAnswers": [
+        "evidence-based"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 4206,
+        "endUtf16": 4554,
+        "quote": "However, for many therapies, research involving large numbers of patients has provided evidence that the treatment is effective. These evidence-based therapies have been shown to reduce symptoms of depression, anxiety, and other mental disorders. NIMH's health topic pages list some of the evidence-based therapies used to treat specific disorders.",
+        "sha256": "06c6dc7eddfd60ca0ecd10a35387f9fa41aa9b95635cea65912024134524bcaf"
+      },
+      "contentJudgement": "研究支持的方法称evidence-based，原文一个连字符词。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q1",
+      "questionSha256": "09cd2f1ba6023174ae1e15c0c480c6f3f44cfb3b73ca48b0024e9f9a0237784e",
+      "blindAnswer": "It explains DNA’s information, structure and roles in biological processes.",
+      "authorAnswers": [
+        "It explains DNA’s information, structure and roles in biological processes."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 40,
+        "endUtf16": 271,
+        "quote": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction.",
+        "sha256": "0215cec38b4684c94119dbab1f5c3d258abd44d9da8d161aa4cf8ccf4ac169b7"
+      },
+      "contentJudgement": "全文含位置/组成/功能/蛋白生成及双螺旋复制，只有D概括整体。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q2",
+      "questionSha256": "fa5f8cfb98fe4d7866eac05c07a043c961e03b2e0101b0f17bc89be19456ea1c",
+      "blindAnswer": "Cells are small and contain many DNA molecules.",
+      "authorAnswers": [
+        "Cells are small and contain many DNA molecules."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 294,
+        "endUtf16": 578,
+        "quote": "In organisms called eukaryotes, DNA is found inside a special area of the cell called the nucleus. Because the cell is very small, and because organisms have many DNA molecules per cell, each DNA molecule must be tightly packaged. This packaged form of the DNA is called a chromosome.",
+        "sha256": "f597ce4702a6aaba02d8ec0080627b54bdbad121dc41c8e0835b6c6603160032"
+      },
+      "contentJudgement": "because句直接给出细胞小且每细胞DNA分子多。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q3",
+      "questionSha256": "711d5afa511e28063ea200edde486a3b1d924d4e6a4b720cc540d4d376ca7381",
+      "blindAnswer": "The two individual DNA strands formed when the double helix separates.",
+      "authorAnswers": [
+        "The two individual DNA strands formed when the double helix separates."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 4390,
+        "endUtf16": 4852,
+        "quote": "DNA's unique structure enables the molecule to copy itself during cell division. When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands. These single strands serve as templates for building two new, double-stranded DNA molecules - each a replica of the original DNA molecule. In this process, an A base is added wherever there is a T, a C where there is a G, and so on until all of the bases once again have partners.",
+        "sha256": "b12d4c4725676a2cb0d6c1d976b2f70189984c3086751723c46cb20a0fbfb704"
+      },
+      "contentJudgement": "These single strands回指双螺旋从中间分开所得的两条单链。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q4",
+      "questionSha256": "d04fa00dd605264f08333d1c3606452a30d3d25420389da4b9731125499dbf4f",
+      "blindAnswer": "FALSE",
+      "authorAnswers": [
+        "FALSE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1230,
+        "endUtf16": 1536,
+        "quote": "In sexual reproduction, organisms inherit half of their nuclear DNA from the male parent and half from the female parent. However, organisms inherit all of their mitochondrial DNA from the female parent. This occurs because only egg cells, and not sperm cells, keep their mitochondria during fertilization.",
+        "sha256": "391eb8c0e4bfb3d76ab915af1548f1bc6d40186375fa135ffe0d80a1e2237a68"
+      },
+      "contentJudgement": "按文中说法线粒体DNA来自female而非male；只按本文判断，不声称新的生物学绝对命题。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q5",
+      "questionSha256": "7a764bcf417550e312a13c45001bfa2ee7bc092f7678b1eb0f86b181a04a661f",
+      "blindAnswer": "TRUE",
+      "authorAnswers": [
+        "TRUE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 3819,
+        "endUtf16": 4388,
+        "quote": "To understand DNA's double helix from a chemical standpoint, picture the sides of the ladder as strands of alternating sugar and phosphate groups - strands that run in opposite directions. Each \"rung\" of the ladder is made up of two nitrogen bases, paired together by hydrogen bonds. Because of the highly specific nature of this type of chemical pairing, base A always pairs with base T, and likewise C with G. So, if you know the sequence of the bases on one strand of a DNA double helix, it is a simple matter to figure out the sequence of bases on the other strand.",
+        "sha256": "210ca31b7de4038c35f57a60e9777e383334e97fb9f026cfc1a3ef9c78b6fb83"
+      },
+      "contentJudgement": "A与T、C与G互补直接写明。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q6",
+      "questionSha256": "3e90df9ad62ef2b8dbc12f0fac6f27dd275de3d2a22cecaa0e614b0601dae0e8",
+      "blindAnswer": "NOT GIVEN",
+      "authorAnswers": [
+        "NOT GIVEN"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 4390,
+        "endUtf16": 4852,
+        "quote": "DNA's unique structure enables the molecule to copy itself during cell division. When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands. These single strands serve as templates for building two new, double-stranded DNA molecules - each a replica of the original DNA molecule. In this process, an A base is added wherever there is a T, a C where there is a G, and so on until all of the bases once again have partners.",
+        "sha256": "b12d4c4725676a2cb0d6c1d976b2f70189984c3086751723c46cb20a0fbfb704"
+      },
+      "contentJudgement": "文中解释复制时机/机制，没有每小时三次的固定频率。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q7",
+      "questionSha256": "6b396261ba244645b36304dbbcd90332c5132cfe6cab3b57b9ba429b7f2725dc",
+      "blindAnswer": "nuclear DNA",
+      "authorAnswers": [
+        "nuclear DNA"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 876,
+        "endUtf16": 1008,
+        "quote": "Researchers refer to DNA found in the cell's nucleus as nuclear DNA. An organism's complete set of nuclear DNA is called its genome.",
+        "sha256": "1545763509be51c7579d158d8d743d1c05b0989f12b477a5924349db6963f8df"
+      },
+      "contentJudgement": "核中的DNA被研究者称nuclear DNA，两词。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "questionId": "q8",
+      "questionSha256": "517f89c3af4a56bc8506bd1aac768a350f2598818167e3a4e1f9d4613b7a205c",
+      "blindAnswer": "messenger ribonucleic acid",
+      "authorAnswers": [
+        "messenger ribonucleic acid",
+        "mRNA"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 2909,
+        "endUtf16": 3122,
+        "quote": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA.",
+        "sha256": "8951504621b2b20080e12385470b40bcd74409e066da66f8c8b6414629baa7b1"
+      },
+      "contentJudgement": "中间分子的全称三词；同句提供mRNA缩写，在不超过三词规则下也成立。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q1",
+      "questionSha256": "304512025597b8fb593fc4dc0f6dc463fafd43f3c62c77f5452c9cf466439128",
+      "blindAnswer": "A demonstration of video reception using an atom-based receiver.",
+      "authorAnswers": [
+        "A demonstration of video reception using an atom-based receiver."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 0,
+        "endUtf16": 178,
+        "quote": "Researchers at the National Institute of Standards and Technology (NIST) have adapted their atom-based radio receiver to detect and display live color television and video games.",
+        "sha256": "fc3b4c60b6d1fd0bbcbfd3ea4f2ae9027b52b723a06247ebde01919f589eaed3"
+      },
+      "contentJudgement": "当前主要新发展是原子接收器的视频接收演示，B只是影响参数的局部。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q2",
+      "questionSha256": "9de61565f1ead6521a9ecca0746b823475d5eafc2d954b780757b974b806233a",
+      "blindAnswer": "They may be smaller and more tolerant of noisy environments.",
+      "authorAnswers": [
+        "They may be smaller and more tolerant of noisy environments."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 180,
+        "endUtf16": 462,
+        "quote": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics. Adding video capability could enhance radio systems in, for example, remote locations or emergency situations.",
+        "sha256": "f2c084844f5a19f66ebede71a3ef217dc7def0d4d9a47646a98cd2a5f036c410"
+      },
+      "contentJudgement": "可能体积小、耐噪是文中潜在用途理由，不能变成现有免费网络保证。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q3",
+      "questionSha256": "45cb257af02e682c0520e01d3200374422e506718b0e89e95cc7c34b9419373d",
+      "blindAnswer": "The average time that atoms stay in the laser interaction zone.",
+      "authorAnswers": [
+        "The average time that atoms stay in the laser interaction zone."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 2129,
+        "endUtf16": 2629,
+        "quote": "The researchers studied the laser beam sizes, powers and detection methods required for the atoms to receive video in standard definition format. The beam size affects the average time the atoms remain in the laser interaction zone. This time is inversely related to the bandwidth of the receiver; that is, a shorter time and smaller beam produce more data. That’s because atoms move in and out of the interaction zone, so smaller areas result in a higher signal “refresh rate” and better resolution.",
+        "sha256": "616dd0503d262e0b0c06caa97825ad7f224756592f1bfe7042310991e47caaa1"
+      },
+      "contentJudgement": "This time 指前一句在激光相互作用区平均停留时间。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q4",
+      "questionSha256": "ceabdf0eb5c7423f7f75584279302373f3503504dbfd13291235c4cc88fe4b5e",
+      "blindAnswer": "NOT GIVEN",
+      "authorAnswers": [
+        "NOT GIVEN"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 180,
+        "endUtf16": 462,
+        "quote": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics. Adding video capability could enhance radio systems in, for example, remote locations or emergency situations.",
+        "sha256": "f2c084844f5a19f66ebede71a3ef217dc7def0d4d9a47646a98cd2a5f036c410"
+      },
+      "contentJudgement": "文中只说可能更小，没有装置重量或一公斤数量。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q5",
+      "questionSha256": "fa992bfe88ea1d119ed9f4b53e6dca3e64f2f0da5e14374fdb04903818695c01",
+      "blindAnswer": "FALSE",
+      "authorAnswers": [
+        "FALSE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1774,
+        "endUtf16": 2127,
+        "quote": "To display a live video signal or video game, this input is sent from a video camera to modulate the original carrier signal, which is then fed to a horn antenna directing the transmission to the atoms. Researchers use the original carrier signal as a reference and compare it to the final video output detected through the atoms to evaluate the system.",
+        "sha256": "3affc93c86d43f662ad874f0cf4f9754c67503a17c846825c4a06083e64efba8"
+      },
+      "contentJudgement": "原始载波仍作为参考参与系统评估，与丢弃相矛盾。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q6",
+      "questionSha256": "6052b3420cdd93e515bea24a20ac100c1a191071692e877cf358c33bbaaa93cf",
+      "blindAnswer": "TRUE",
+      "authorAnswers": [
+        "TRUE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1153,
+        "endUtf16": 1426,
+        "quote": "Researchers use two different color lasers to prepare gaseous rubidium atoms in Rydberg states in a glass container. The team previously used the setup with cesium atoms to demonstrate the basic radio receiver and a “headphone” appliance to boost sensitivity a hundredfold.",
+        "sha256": "e58e4dd474e7ce94d51cd7deacfd8bd00ba69b2d384fdaa32d365b680fa277f2"
+      },
+      "contentJudgement": "本次装置为气态rubidium；cesium属于先前实验。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q7",
+      "questionSha256": "819d5d4682bfad783ad2e1f3eacd63d0eb790458c64115db1135be6d18fe69e0",
+      "blindAnswer": "analog-to-digital converter",
+      "authorAnswers": [
+        "analog-to-digital converter",
+        "An analog-to-digital converter"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1428,
+        "endUtf16": 1772,
+        "quote": "To prepare to receive video, a stable radio signal is applied to the glass container filled with atoms. The team can detect energy shifts in the Rydberg atoms that modulate this carrier signal. The modulated output is then fed to a television. An analog-to-digital converter transforms the signal into a video graphics array format for display.",
+        "sha256": "6591806e5ee0bf437c6051dc4f90d8820a265c5974b1483eb894e11c28883e1f"
+      },
+      "contentJudgement": "明确命名转换成VGA格式的装置。连字符词算一个；加原文冠词仍不超三词。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "questionId": "q8",
+      "questionSha256": "af6a26ad2bcf9eb058a8cb77b3a5d1af33fa4cc3d805006c9b7c8813489e8c76",
+      "blindAnswer": "refresh rate",
+      "authorAnswers": [
+        "refresh rate"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 2129,
+        "endUtf16": 2629,
+        "quote": "The researchers studied the laser beam sizes, powers and detection methods required for the atoms to receive video in standard definition format. The beam size affects the average time the atoms remain in the laser interaction zone. This time is inversely related to the bandwidth of the receiver; that is, a shorter time and smaller beam produce more data. That’s because atoms move in and out of the interaction zone, so smaller areas result in a higher signal “refresh rate” and better resolution.",
+        "sha256": "616dd0503d262e0b0c06caa97825ad7f224756592f1bfe7042310991e47caaa1"
+      },
+      "contentJudgement": "higher signal 后的两个词，原句直接连接better resolution。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q1",
+      "questionSha256": "b87d53d887c620d53f9927971d22cba63cf88b5363ac8af5844ffcc780bd16bd",
+      "blindAnswer": "To summarize fiscal-year budget changes and explain limits to the comparisons.",
+      "authorAnswers": [
+        "To summarize fiscal-year budget changes and explain limits to the comparisons."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 0,
+        "endUtf16": 1007,
+        "quote": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+        "sha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "contentJudgement": "全文总结年度财政变化，同时解释支付时点、数据修订/缺项等比较限制。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q2",
+      "questionSha256": "4068f74fa4957eed63866198597b09a7e48d34b8ff8e1c50775a6381a6429404",
+      "blindAnswer": "The first day of fiscal year 2024 fell on a weekend.",
+      "authorAnswers": [
+        "The first day of fiscal year 2024 fell on a weekend."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1530,
+        "endUtf16": 1856,
+        "quote": "Outlays in fiscal year 2024 were reduced because October 1 (the first day of the fiscal year) fell on a weekend. As a result, certain payments totaling $72 billion were shifted from 2024 into 2023. If not for those shifts, the deficit in 2025 would have been 6 percent smaller—instead of 2 percent smaller—than it was in 2024.",
+        "sha256": "b7f40bd5be0cb1b3f24b2909431f8343d76178e595519b966f91b5795d5983c3"
+      },
+      "contentJudgement": "10月1日周末是支付跨财年移动的明示原因。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q3",
+      "questionSha256": "b074f071dff3f5c0e493e907a360d159276a538caf23c6ba20c18cb0cc491146",
+      "blindAnswer": "The spending increases in areas including major benefit programmes and debt interest.",
+      "authorAnswers": [
+        "The spending increases in areas including major benefit programmes and debt interest."
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 0,
+        "endUtf16": 1007,
+        "quote": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+        "sha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "contentJudgement": "最近先行词为福利等和利息的支出增长，而非收入或下一句支出减少。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": "Option 2 reason uses These, while the actual demonstrative is Those. Replace These with Those; key unchanged."
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q4",
+      "questionSha256": "f4d208a89b3d57246df95c2c82b4ba2259107676d2b711decf1a33a5e14b1ec0",
+      "blindAnswer": "TRUE",
+      "authorAnswers": [
+        "TRUE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1009,
+        "endUtf16": 1528,
+        "quote": "The federal deficit in 2025 was equal to 5.9 percent of the nation’s gross domestic product (GDP), a decrease from 6.3 percent of GDP in 2024. The 2025 deficit expressed as a percentage of GDP is greater than the 50 year average of 3.8 percent and has been exceeded only eight times since 1946 (from 2009 through 2012 and in 2020, 2021, 2023, and 2024). Federal debt held by the public increased in 2025 relative to the size of the economy—rising to 99.8 percent from 97.4 percent of GDP at the end of fiscal year 2024.",
+        "sha256": "be62612c3e7e280ac7e8105971a22de9d4c9d4b3533cb954faa602fc12d221b0"
+      },
+      "contentJudgement": "5.9小于6.3，都是赤字/GDP，不是债务/GDP。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q5",
+      "questionSha256": "e2ee91c681f4ef3694d56ee92cba5cadd4ae6d32ec0bcbc5ef17f58f78ac5b18",
+      "blindAnswer": "NOT GIVEN",
+      "authorAnswers": [
+        "NOT GIVEN"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 0,
+        "endUtf16": 1007,
+        "quote": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+        "sha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "contentJudgement": "个人税收入总量增加不等于平均家庭纳税增加；无家庭分布或平均额。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q6",
+      "questionSha256": "2817ebc2b6a307c5ff033789e25002d08f4dfa87d858a6868d1aca7dcd519230",
+      "blindAnswer": "FALSE",
+      "authorAnswers": [
+        "FALSE"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 0,
+        "endUtf16": 1007,
+        "quote": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+        "sha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "contentJudgement": "收入支出都增加，直接反驳both fell。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q7",
+      "questionSha256": "36a054cb620be9f4cfe5621090141c1298e21ed0f7075c76e42db7d7282d3d6c",
+      "blindAnswer": "Monthly Treasury Statement",
+      "authorAnswers": [
+        "Monthly Treasury Statement"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 0,
+        "endUtf16": 1007,
+        "quote": "In fiscal year 2025, which ended on September 30, the federal budget deficit totaled $1.8 trillion—a decrease of $41 billion (or 2 percent) from the shortfall recorded in the previous year. Revenues and outlays alike increased from 2024 totals. Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts. Outlays grew by 4 percent, or $275 billion, with increases occurring in several areas, including the largest benefit programs and net interest on the public debt (which, for the first time, surpassed $1 trillion). Those increases were partly offset by decreases recorded for federal student loan programs, deposit insurance, and the Small Business Administration. The 2025 amounts reported here differ somewhat from amounts described in the Monthly Budget Review: September 2025 because they reflect the subsequently reported data in the Monthly Treasury Statement for September 2025.",
+        "sha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda"
+      },
+      "contentJudgement": "随后报告的数据来源为这份三词标题，不是此前的Monthly Budget Review。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q8",
+      "questionSha256": "4993ccc76b74734be576fc23ef4135cbdedfd19c59b6256b29a6ccb8691858ad",
+      "blindAnswer": "99.8",
+      "authorAnswers": [
+        "99.8"
+      ],
+      "answerAgreement": true,
+      "reviewedFullPromptOptionsAndChineseExplanation": true,
+      "evidence": {
+        "startUtf16": 1009,
+        "endUtf16": 1528,
+        "quote": "The federal deficit in 2025 was equal to 5.9 percent of the nation’s gross domestic product (GDP), a decrease from 6.3 percent of GDP in 2024. The 2025 deficit expressed as a percentage of GDP is greater than the 50 year average of 3.8 percent and has been exceeded only eight times since 1946 (from 2009 through 2012 and in 2020, 2021, 2023, and 2024). Federal debt held by the public increased in 2025 relative to the size of the economy—rising to 99.8 percent from 97.4 percent of GDP at the end of fiscal year 2024.",
+        "sha256": "be62612c3e7e280ac7e8105971a22de9d4c9d4b3533cb954faa602fc12d221b0"
+      },
+      "contentJudgement": "空后已有percent of GDP，所以只填99.8，不加百分号/单位。",
+      "scopeClarification": null,
+      "knownMinorExplanationTypo": null
+    }
+  ],
+  "grammar": [
+    {
+      "id": "bls-athletes-grammar-1",
+      "sourceId": "bls-athletes",
+      "tag": "concessive-clauses",
+      "quote": "Although no formal educational credential is typically required to enter the occupation, most athletes and sports competitors have at least a high school diploma or equivalent.",
+      "explanation": "Although引导让步从句：通常没有正式学历门槛，但多数从业者实际上至少有高中学历。这两个信息可以同时成立；不能把most改读成all，也不能把have a diploma误读成职业强制要求。",
+      "judgement": "Although让步结构、typically/most范围与形式学历门槛区别均准确。",
+      "teachingRange": [
+        3781,
+        3957
+      ],
+      "evidenceSha256": "6cd49ecd7b7605d271f83bc0cbffffc4bf29f32452e18e24dad5b2e260734c44",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "bls-athletes-grammar-2",
+      "sourceId": "bls-athletes",
+      "tag": "have-object-past-participle",
+      "quote": "In addition, athletes may have their licenses or certification suspended for inappropriate activity.",
+      "explanation": "may have +宾语+过去分词说明可能遭遇某种处置：licenses/certification是被暂停，而不是运动员自己暂停别人的执照。这里have不表示拥有新执照，may也不是必然会发生。",
+      "judgement": "have+宾语+过去分词的遭遇义、情态may和执照被暂停的受事关系准确；没有当作主动请人服务的必然使役。",
+      "teachingRange": [
+        5174,
+        5274
+      ],
+      "evidenceSha256": "45c870f2d01fe3f83e71bc176dbcd07dc07be7e3e90814f467ca7883781e6e62",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "bls-musicians-grammar-1",
+      "sourceId": "bls-musicians",
+      "tag": "purpose-infinitives",
+      "quote": "To make themselves more marketable, many become proficient in multiple musical instruments or styles.",
+      "explanation": "句首To make...说明目的：为了提高自己的就业竞争力，许多人熟练掌握多种乐器或风格。themselves指这些音乐工作者，more marketable是宾语补足语；不是“把市场做大”。",
+      "judgement": "句首目的不定式、themselves宾语、more marketable宾补及marketable语境均准确。",
+      "teachingRange": [
+        860,
+        961
+      ],
+      "evidenceSha256": "3147fb6c759dba7678ec066d1b9a0b469f90315b89cd76472d9a5ce1121d14fc",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "bls-musicians-grammar-2",
+      "sourceId": "bls-musicians",
+      "tag": "gerund-subject-and-cause",
+      "quote": "Auditioning for jobs can be a frustrating process because it may take many different auditions to get hired.",
+      "explanation": "Auditioning for jobs这个动名词短语作主语。because后解释可能令人沮丧的原因：获聘前可能要多次试演。it是形式主语，to get hired中的被动表达被聘用；may保留可能性，不是保证试几次必定录取。",
+      "judgement": "动名词短语主语、because原因、形式it、get hired被动和may可能性均可成立。",
+      "teachingRange": [
+        6102,
+        6210
+      ],
+      "evidenceSha256": "cbdcac71882b8b0e45658bbb9e8fad9f70992f4c5cc190a27cc953b69c8d6386",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "nimh-psychotherapies-grammar-1",
+      "sourceId": "nimh-psychotherapies",
+      "tag": "concessive-clauses",
+      "quote": "Even when medication relieves symptoms, psychotherapy can help address specific issues.",
+      "explanation": "Even when表示“即使在……的时候也……”。句子承认药物可能缓解症状，同时说明心理治疗仍可能处理某些具体问题。can表示可能的作用，不是保证每个人有效，也不是说药物必然无效。",
+      "judgement": "Even when的让步时间关系及can非保证说明准确，不导出临床建议。",
+      "teachingRange": [
+        1854,
+        1941
+      ],
+      "evidenceSha256": "e13c8d71add4172e17ac456e971310fa40c6a2539293e155f7aa19c8277af0d0",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "nimh-psychotherapies-grammar-2",
+      "sourceId": "nimh-psychotherapies",
+      "tag": "passive-voice",
+      "quote": "Often, the type of treatment is tailored to the specific disorder.",
+      "explanation": "is tailored是被动形式，说明治疗方式会按具体障碍作调整。主语the type of treatment是接受调整的对象；to引出调整所针对的情况。often不是always，因此不能从本句推出所有患者的流程完全相同。",
+      "judgement": "is tailored被动、to的针对关系、often非always说明准确。",
+      "teachingRange": [
+        2249,
+        2315
+      ],
+      "evidenceSha256": "107c17fb8074735f62b67fdcfe1e8d3e7ba63c1af95b508eea21f223fbffce9d",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "nhgri-dna-grammar-1",
+      "sourceId": "nhgri-dna",
+      "tag": "cause-and-passive",
+      "quote": "Because the cell is very small, and because organisms have many DNA molecules per cell, each DNA molecule must be tightly packaged.",
+      "explanation": "两个because并列给出原因：细胞很小，而且每个细胞有许多DNA分子。must be packaged是情态动词加被动，说明DNA必须被紧密包装，不是DNA主动包装别的东西。",
+      "judgement": "并列because原因与must be packaged情态被动说明准确。",
+      "teachingRange": [
+        393,
+        524
+      ],
+      "evidenceSha256": "3a16d4dfeefee3f9315857dd1906dd7f6ad36afb8e1066b54ff505cd22f3d769",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "nhgri-dna-grammar-2",
+      "sourceId": "nhgri-dna",
+      "tag": "time-clauses",
+      "quote": "When a cell prepares to divide, the DNA helix splits down the middle and becomes two single strands.",
+      "explanation": "When从句说明过程发生的时间条件，主句用一般现在时描述通常过程。prepares to divide中的to divide补充准备做的事；splits与becomes共用主语the DNA helix，不能把单数splits改读成两个细胞先合并。",
+      "judgement": "When过程时间从句、一般现在、prepare to与共用单数主语说明准确。",
+      "teachingRange": [
+        4471,
+        4571
+      ],
+      "evidenceSha256": "87686fe601d17c9efd8614d2382ce3bcc625fa5e39ff04dfca5ddf27206e5414",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "nist-atomic-television-grammar-1",
+      "sourceId": "nist-atomic-television",
+      "tag": "comparatives-and-cause",
+      "quote": "Atom-based communications systems are of practical interest because they could be physically smaller and more tolerant of noisy environments than conventional electronics.",
+      "explanation": "because给出实际意义的原因；smaller和more tolerant...than作并列比较，比较对象是传统电子设备。could保留潜力和可能性，不能改写成所有产品现在都更小、更耐噪。",
+      "judgement": "because、并列比较与could潜力限制准确；未把原型潜力当已商用优越性。",
+      "teachingRange": [
+        180,
+        351
+      ],
+      "evidenceSha256": "877287ade2124bc6eb443fab5fa67f6863195e3b90741cdf07acbcf2612db25a",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "nist-atomic-television-grammar-2",
+      "sourceId": "nist-atomic-television",
+      "tag": "transformation-pattern",
+      "quote": "An analog-to-digital converter transforms the signal into a video graphics array format for display.",
+      "explanation": "transform X into Y说明把X转成Y：转换器把信号转换成用于显示的VGA格式。into引出转换结果，不是地点；transforms与单数主语converter一致。",
+      "judgement": "transform X into Y、结果into及第三人称单数transforms准确。",
+      "teachingRange": [
+        1672,
+        1772
+      ],
+      "evidenceSha256": "222fdeea40d84684b66d7df6f0e436222271d105d0d5fa85bcb1c73868d9f1ea",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "cbo-budget-2025-grammar-1",
+      "sourceId": "cbo-budget-2025",
+      "tag": "passive-voice-and-change",
+      "quote": "Revenues rose by 6 percent, or $317 billion; increases in collections of individual income taxes and customs duties were partially offset by a decline in corporate tax receipts.",
+      "explanation": "rose by说明增长幅度，不是增长后的总额；were partially offset by是被动结构，指一部分增长被公司税收入下降抵消。partially不能改成全部抵消，revenues也不等同某个家庭的税额。",
+      "judgement": "rose by增幅/非总量、were partially offset by被动与部分抵消准确。",
+      "teachingRange": [
+        245,
+        422
+      ],
+      "evidenceSha256": "c63756a7c4c30d1a05e267e6296b2356421c31ca03bddd5a71b30d0e7f0ee830",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    },
+    {
+      "id": "cbo-budget-2025-grammar-2",
+      "sourceId": "cbo-budget-2025",
+      "tag": "counterfactual-past",
+      "quote": "If not for those shifts, the deficit in 2025 would have been 6 percent smaller—instead of 2 percent smaller—than it was in 2024.",
+      "explanation": "If not for...省略形式表达与过去实际情况不同的假设，主句would have been说明若没有那些时间挪移，比较结果会怎样。文中实际同比少2%，6%是这一反事实调整后的比较，不是两个同时发生的实际降幅。",
+      "judgement": "If not for与would have been的过去反事实读法准确，实际2%与调整后6%没有混淆。",
+      "teachingRange": [
+        1728,
+        1856
+      ],
+      "evidenceSha256": "40fe67982e7d281a2e79b3234e95f8e1035e4c71e3a367950db732baa8529f30",
+      "status": "grammar-explanation-acceptable-for-this-passage-not-CEFR-calibration"
+    }
+  ],
+  "wordPositionCandidates": [
+    {
+      "id": "bls-athletes-word-1",
+      "sourceId": "bls-athletes",
+      "headword": "competitor",
+      "surface": "competitors",
+      "range": [
+        61,
+        72
+      ],
+      "quoteSha256": "d2fc50c4f5ee05117691c844deb15244b01a1c88175f7303d9e80d6af8da7ea1",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-2",
+      "sourceId": "bls-athletes",
+      "headword": "injury",
+      "surface": "injuries",
+      "range": [
+        1836,
+        1844
+      ],
+      "quoteSha256": "d77eb5ff0be0a85d3142d7eacf7fc481880560b31e5773ab41fa6927968a4230",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-3",
+      "sourceId": "bls-athletes",
+      "headword": "helmet",
+      "surface": "helmets",
+      "range": [
+        2993,
+        3000
+      ],
+      "quoteSha256": "3cbd04c736f71ee2bf305a7599f988571f4dedc7e461b3e681040106c654cf8b",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-4",
+      "sourceId": "bls-athletes",
+      "headword": "endorsement",
+      "surface": "endorsements",
+      "range": [
+        5839,
+        5851
+      ],
+      "quoteSha256": "1622564e87967d0d870bb48a5e3146e53efcf2d0b7c4a6d324d0b1d2b462ed04",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-athletes-word-5",
+      "sourceId": "bls-athletes",
+      "headword": "trainer",
+      "surface": "trainers",
+      "range": [
+        1906,
+        1914
+      ],
+      "quoteSha256": "d77eb5ff0be0a85d3142d7eacf7fc481880560b31e5773ab41fa6927968a4230",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-1",
+      "sourceId": "bls-musicians",
+      "headword": "musician",
+      "surface": "musicians",
+      "range": [
+        1386,
+        1395
+      ],
+      "quoteSha256": "80f2766c920889d1269f2928d9b7cb4a438b325933c69b474d7a4aaeda74296c",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-2",
+      "sourceId": "bls-musicians",
+      "headword": "genre",
+      "surface": "genres",
+      "range": [
+        288,
+        294
+      ],
+      "quoteSha256": "2de126aba34a35d7d47b2d659e4a221e664206f14cb7b55f9e49485c811f1b77",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-3",
+      "sourceId": "bls-musicians",
+      "headword": "orchestra",
+      "surface": "orchestras",
+      "range": [
+        467,
+        477
+      ],
+      "quoteSha256": "6adadbf77fa8c119363d2a93798601a50f1da251604cb27afc5fdb3208eb8f42",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-4",
+      "sourceId": "bls-musicians",
+      "headword": "singer",
+      "surface": "singers",
+      "range": [
+        184,
+        191
+      ],
+      "quoteSha256": "2de126aba34a35d7d47b2d659e4a221e664206f14cb7b55f9e49485c811f1b77",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "bls-musicians-word-5",
+      "sourceId": "bls-musicians",
+      "headword": "rehearse",
+      "surface": "rehearsing",
+      "range": [
+        3174,
+        3184
+      ],
+      "quoteSha256": "6cf89ff711fd586217a620a35d319e7339363842f21191cafb6551b3bb216b0c",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-1",
+      "sourceId": "nimh-psychotherapies",
+      "headword": "therapy",
+      "surface": "therapies",
+      "range": [
+        4224,
+        4233
+      ],
+      "quoteSha256": "06c6dc7eddfd60ca0ecd10a35387f9fa41aa9b95635cea65912024134524bcaf",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-2",
+      "sourceId": "nimh-psychotherapies",
+      "headword": "symptom",
+      "surface": "symptoms",
+      "range": [
+        534,
+        542
+      ],
+      "quoteSha256": "380841b25caf56fce3f0a1844eed64e985a3e6876aa74ba404bcf5542e550cec",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-3",
+      "sourceId": "nimh-psychotherapies",
+      "headword": "emotion",
+      "surface": "emotions",
+      "range": [
+        172,
+        180
+      ],
+      "quoteSha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-4",
+      "sourceId": "nimh-psychotherapies",
+      "headword": "cope",
+      "surface": "coping",
+      "range": [
+        2067,
+        2073
+      ],
+      "quoteSha256": "48f75900097b1ce391d7f81f41e6738c7315e8692c57a4a480b86e3aac26c8dd",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-5",
+      "sourceId": "nimh-psychotherapies",
+      "headword": "distress",
+      "surface": "distress",
+      "range": [
+        3469,
+        3477
+      ],
+      "quoteSha256": "46b1ffde0242f7363faafd9186d1cb2d17a66f788dbac1977e4097619e628aad",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-1",
+      "sourceId": "nhgri-dna",
+      "headword": "molecule",
+      "surface": "molecules",
+      "range": [
+        461,
+        470
+      ],
+      "quoteSha256": "f597ce4702a6aaba02d8ec0080627b54bdbad121dc41c8e0835b6c6603160032",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-2",
+      "sourceId": "nhgri-dna",
+      "headword": "chromosome",
+      "surface": "chromosomes",
+      "range": [
+        2208,
+        2219
+      ],
+      "quoteSha256": "8efb0606efbf4aaa372ed2a8ecc13de9d8adf9b2ce3bd8bc11d1f91195be8597",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-3",
+      "sourceId": "nhgri-dna",
+      "headword": "enzyme",
+      "surface": "enzymes",
+      "range": [
+        2984,
+        2991
+      ],
+      "quoteSha256": "8951504621b2b20080e12385470b40bcd74409e066da66f8c8b6414629baa7b1",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-4",
+      "sourceId": "nhgri-dna",
+      "headword": "strand",
+      "surface": "strands",
+      "range": [
+        3915,
+        3922
+      ],
+      "quoteSha256": "210ca31b7de4038c35f57a60e9777e383334e97fb9f026cfc1a3ef9c78b6fb83",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nhgri-dna-word-5",
+      "sourceId": "nhgri-dna",
+      "headword": "gene",
+      "surface": "genes",
+      "range": [
+        2187,
+        2192
+      ],
+      "quoteSha256": "8efb0606efbf4aaa372ed2a8ecc13de9d8adf9b2ce3bd8bc11d1f91195be8597",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nist-atomic-television-word-1",
+      "sourceId": "nist-atomic-television",
+      "headword": "sensor",
+      "surface": "sensors",
+      "range": [
+        621,
+        628
+      ],
+      "quoteSha256": "c81968097d06c350074966d230f7dc5d8b35e76c50d002041cfa3f7ef6b8aa37",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nist-atomic-television-word-2",
+      "sourceId": "nist-atomic-television",
+      "headword": "receiver",
+      "surface": "receiver",
+      "range": [
+        109,
+        117
+      ],
+      "quoteSha256": "fc3b4c60b6d1fd0bbcbfd3ea4f2ae9027b52b723a06247ebde01919f589eaed3",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nist-atomic-television-word-3",
+      "sourceId": "nist-atomic-television",
+      "headword": "laser",
+      "surface": "lasers",
+      "range": [
+        1189,
+        1195
+      ],
+      "quoteSha256": "e58e4dd474e7ce94d51cd7deacfd8bd00ba69b2d384fdaa32d365b680fa277f2",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "cbo-budget-2025-word-1",
+      "sourceId": "cbo-budget-2025",
+      "headword": "revenue",
+      "surface": "Revenues",
+      "range": [
+        190,
+        198
+      ],
+      "quoteSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "cbo-budget-2025-word-2",
+      "sourceId": "cbo-budget-2025",
+      "headword": "receipt",
+      "surface": "receipts",
+      "range": [
+        413,
+        421
+      ],
+      "quoteSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "cbo-budget-2025-word-3",
+      "sourceId": "cbo-budget-2025",
+      "headword": "shift",
+      "surface": "shifted",
+      "range": [
+        1699,
+        1706
+      ],
+      "quoteSha256": "b7f40bd5be0cb1b3f24b2909431f8343d76178e595519b966f91b5795d5983c3",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "cbo-budget-2025-word-4",
+      "sourceId": "cbo-budget-2025",
+      "headword": "surpass",
+      "surface": "surpassed",
+      "range": [
+        613,
+        622
+      ],
+      "quoteSha256": "add3df8926a93f2a7482eb41e779fb0497a78b29f9817d487b8a730a4ee6acda",
+      "positionAndRegisteredFormValid": true,
+      "selectedMeaning": null,
+      "semanticAdmissionApproved": false,
+      "activation": false,
+      "mastery": false
+    }
+  ],
+  "actualGraderCases": [
+    {
+      "sourceId": "bls-athletes",
+      "q": "q1",
+      "input": "Professional athletic work combines sustained preparation with uncertain career prospects.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 10
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q2",
+      "input": "To gain an advantage when they compete against those opponents.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 10
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q3",
+      "input": "Make a full-time living from professional athletics.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 7
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q4",
+      "input": "TRUE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q5",
+      "input": "FALSE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q6",
+      "input": "NOT GIVEN",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q7",
+      "input": "endorsements",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "bls-athletes",
+      "q": "q8",
+      "input": "shared goal",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q1",
+      "input": "To describe musical work, preparation and employment conditions.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 8
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q2",
+      "input": "To make themselves more attractive to potential employers or clients.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 10
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q3",
+      "input": "The irregular working schedules of musicians and singers.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 8
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q4",
+      "input": "FALSE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q5",
+      "input": "NOT GIVEN",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q6",
+      "input": "TRUE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q7",
+      "input": "session musicians",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "bls-musicians",
+      "q": "q8",
+      "input": "self-promotion",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q1",
+      "input": "To explain the aims of psychotherapy and illustrate some of its approaches.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 12
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q2",
+      "input": "To check whether a physical health issue could be causing the symptoms.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 12
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q3",
+      "input": "Repeatedly learning to tolerate distress in a supportive environment.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 9
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q4",
+      "input": "NOT GIVEN",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q5",
+      "input": "TRUE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q6",
+      "input": "FALSE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q7",
+      "input": "cognitive behavioral therapy",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 3
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q7",
+      "input": "CBT",
+      "kind": "frozen-blind-acceptable-alternative",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q8",
+      "input": "evidence-based",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q1",
+      "input": "It explains DNA’s information, structure and roles in biological processes.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 10
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q2",
+      "input": "Cells are small and contain many DNA molecules.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 8
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q3",
+      "input": "The two individual DNA strands formed when the double helix separates.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 11
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q4",
+      "input": "FALSE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q5",
+      "input": "TRUE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q6",
+      "input": "NOT GIVEN",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q7",
+      "input": "nuclear DNA",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q8",
+      "input": "messenger ribonucleic acid",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 3
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q8",
+      "input": "mRNA",
+      "kind": "frozen-blind-acceptable-alternative",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q1",
+      "input": "A demonstration of video reception using an atom-based receiver.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 9
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q2",
+      "input": "They may be smaller and more tolerant of noisy environments.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 10
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q3",
+      "input": "The average time that atoms stay in the laser interaction zone.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 11
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q4",
+      "input": "NOT GIVEN",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q5",
+      "input": "FALSE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q6",
+      "input": "TRUE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q7",
+      "input": "analog-to-digital converter",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q7",
+      "input": "An analog-to-digital converter",
+      "kind": "frozen-blind-acceptable-alternative",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 3
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q8",
+      "input": "refresh rate",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q1",
+      "input": "To summarize fiscal-year budget changes and explain limits to the comparisons.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 11
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q2",
+      "input": "The first day of fiscal year 2024 fell on a weekend.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 11
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q3",
+      "input": "The spending increases in areas including major benefit programmes and debt interest.",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 12
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q4",
+      "input": "TRUE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q5",
+      "input": "NOT GIVEN",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 2
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q6",
+      "input": "FALSE",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q7",
+      "input": "Monthly Treasury Statement",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 3
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q8",
+      "input": "99.8",
+      "kind": "frozen-blind-main-answer",
+      "correct": true,
+      "withinLimit": true,
+      "countWords": 1
+    }
+  ],
+  "actualOverLimitRejections": [
+    {
+      "sourceId": "bls-athletes",
+      "q": "q8",
+      "input": "a shared goal",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 3
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q7",
+      "input": "cognitive behavioral therapy or CBT",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 5
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "q": "q8",
+      "input": "the evidence-based",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 2
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "q": "q8",
+      "input": "messenger ribonucleic acid or mRNA",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 5
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "q": "q7",
+      "input": "analog to digital converter",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 4
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q7",
+      "input": "the Monthly Treasury Statement",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 4
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "q": "q8",
+      "input": "99.8 percent",
+      "correct": false,
+      "withinLimit": false,
+      "countWords": 2
+    }
+  ],
+  "rootKnownDerivation": {
+    "allSourceNormalizationOfficialVerbatimFalse": "Root announced this correction; not applied to frozen author v1 here. Per-span original-substring equality may remain true while the overall teaching adaptation is not official verbatim.",
+    "verification": "Root derived release will use reviewed; original author v1 retained."
+  },
+  "requiredNext": "Clarify athlete q4 population by removing professional; correct CBO q3 These typo to Those. Preserve v1 and verify a separate v2 exact delta before final approval. No answer-key change needed.",
+  "scope": {
+    "authorPackageModified": false,
+    "sourcePackageModified": false,
+    "productOrNASWrites": 0,
+    "learnerDataRead": false,
+    "browserUsed": false,
+    "actualListening": false,
+    "fullCurriculumIntegrationTest": false,
+    "teachingOrBandCalibration": false
+  }
+}

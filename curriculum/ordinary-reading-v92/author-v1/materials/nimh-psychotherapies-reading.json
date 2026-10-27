@@ -1,0 +1,368 @@
+{
+  "id": "public-ordinary-v92-nimh-psychotherapies-reading",
+  "version": "t1-q1",
+  "skill": "reading",
+  "type": "reading",
+  "level": "B2–C1",
+  "title": "Psychotherapies",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "estimatedMinutes": 25,
+  "questionCount": 8,
+  "instructions": "Read the teaching text and answer all eight questions using only this text. For judgement questions, TRUE means the statement agrees with the text; FALSE means the text contradicts it; NOT GIVEN means the text does not provide enough information. For short answers, copy words or numbers from the text and follow each stated limit. Check your answers before viewing the explanations.",
+  "passage": "Psychotherapies\n\nWhat is psychotherapy?\n\nPsychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.\n\nPsychotherapy and medication are the most common forms of mental health treatment. NIMH has information on mental health medications.\n\nIn general, the goals of psychotherapy are to gain relief from symptoms, maintain or enhance daily functioning, and improve quality of life.\n\nYou or someone you know might seek out psychotherapy for many reasons, including:\n\nDealing with severe or long-term stress from a job or family situation, the loss of a loved one, or relationship or family problems\n\n\nHaving symptoms with no physical explanation, such as changes in sleep or appetite, low energy, lack of interest or pleasure in activities you once enjoyed, persistent irritability, excessive worry, or a sense of discouragement or hopelessness that won’t go away\n\n\nA health care provider suspecting you have or diagnosing you with a mental disorder that is interfering with your life\n\n\nSupporting a child or family member who has been diagnosed with a condition affecting their mental health\n\nFirst being examined by a health care provider can help rule out a physical health issue. This step is important because sometimes symptoms, like a change in mood or trouble concentrating, are due to a medical condition.\n\nPsychotherapy and other treatment options\n\nPsychotherapy can be used as an alternative to or alongside medication and other treatment options. Choosing the right treatment plan is based on a person's individual needs and medical situation and should occur under the guidance of a mental health professional.\n\nEven when medication relieves symptoms, psychotherapy can help address specific issues. These might include self-defeating ways of thinking; irrational fears; problems interacting with other people; or difficulty coping with situations at home, school, or work.\n\nWhat are the elements of psychotherapy?\n\nA variety of psychotherapies have been shown to effectively treat mental health disorders. Often, the type of treatment is tailored to the specific disorder. For example, the treatment approach for someone who has obsessive-compulsive disorder is different than the approach for someone who has bipolar disorder. Therapists may use one primary approach or incorporate elements from multiple approaches depending on their training, the disorder being treated, and the needs of the person receiving treatment.\n\nElements of psychotherapy can include the following:\n\nHelp a person become aware of automatic ways of thinking that are inaccurate or harmful (for example, having a low opinion of their abilities) and then question those thoughts, understand how the thoughts affect their emotions and behavior, and change self-defeating behavior patterns. This approach is known as cognitive behavioral therapy (CBT) .\n\n\nIdentify ways to cope with stress and develop problem-solving strategies.\n\n\nExamine interactions with others and teach social and communication skills.\n\n\nApply mindfulness and relaxation techniques, such as meditation and breathing exercises.\n\n\nUse exposure therapy (a type of CBT) for anxiety disorders, in which a person spends brief periods in a supportive environment learning to tolerate the distress caused by certain items, ideas, or imagined scenes. This is continued until, over time, the fear associated with those things goes down.\n\n\nTrack emotions and behaviors to raise awareness of their impact on each other.\n\n\nUse supportive counseling to explore troubling issues and receive emotional support.\n\n\nCreate a safety plan to help with thoughts of self-harm or suicide, recognize warning signs, and use coping strategies, such as contacting friends, family, or emergency personnel.\n\nThere are many types of psychotherapy. Therapies are often variations of an established approach, such as CBT. There is no formal approval process for psychotherapies like there is for medications by the U.S. Food and Drug Administration.\n\nHowever, for many therapies, research involving large numbers of patients has provided evidence that the treatment is effective. These evidence-based therapies have been shown to reduce symptoms of depression, anxiety, and other mental disorders. NIMH's health topic pages list some of the evidence-based therapies used to treat specific disorders.\n",
+  "transcript": "",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main purpose of this excerpt?",
+      "options": [
+        "To recommend one treatment plan for every reader.",
+        "To explain the aims of psychotherapy and illustrate some of its approaches.",
+        "To rank all medicines used for mental health conditions.",
+        "To give a complete directory of local health professionals."
+      ],
+      "answers": [
+        "To explain the aims of psychotherapy and illustrate some of its approaches."
+      ],
+      "explanation": "节选先解释心理治疗是什么、通常的目标和与其他治疗的关系，再举不同方法。它没有为个别读者开治疗方案，也没有药物排名或完整地方名录。\n\n选项“To recommend one treatment plan for every reader.”：原文强调individual needs、medical situation和专业指导，不提供人人相同的方案。\n选项“To explain the aims of psychotherapy and illustrate some of its approaches.”：正确：概括了定义、目标与方法示例。\n选项“To rank all medicines used for mental health conditions.”：文中不是药物比较或排名文章。\n选项“To give a complete directory of local health professionals.”：本节选不含完整地方从业者名录，主旨也不是找地址。",
+      "evidence": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+      "evidenceOffsets": {
+        "start": 41,
+        "end": 334,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 41,
+        "end": 334,
+        "textSha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "原文强调individual needs、medical situation和专业指导，不提供人人相同的方案。",
+        "正确：概括了定义、目标与方法示例。",
+        "文中不是药物比较或排名文章。",
+        "本节选不含完整地方从业者名录，主旨也不是找地址。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does the passage mention being examined by a health care provider before treatment?",
+      "options": [
+        "To prove that all emotional symptoms have a physical cause.",
+        "To remove the need to consider a person’s medical situation.",
+        "To check whether a physical health issue could be causing the symptoms.",
+        "To guarantee that medication will never be needed."
+      ],
+      "answers": [
+        "To check whether a physical health issue could be causing the symptoms."
+      ],
+      "explanation": "rule out a physical health issue表示先排查身体健康问题，因为某些情绪或注意力表现可能来自身体疾病。sometimes与may都不能改成all或never。\n\n选项“To prove that all emotional symptoms have a physical cause.”：原文说sometimes，不是所有情绪症状都一定有身体病因。\n选项“To remove the need to consider a person’s medical situation.”：专业检查正是考虑个人医疗情况，不是取消这一考虑。\n选项“To check whether a physical health issue could be causing the symptoms.”：正确：对应排查身体病因的目的。\n选项“To guarantee that medication will never be needed.”：检查不能推出永远不用药，原文允许不同治疗配合。",
+      "evidence": "First being examined by a health care provider can help rule out a physical health issue. This step is important because sometimes symptoms, like a change in mood or trouble concentrating, are due to a medical condition.",
+      "evidenceOffsets": {
+        "start": 1323,
+        "end": 1543,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1323,
+        "end": 1543,
+        "textSha256": "846b1ccdda46c9ee280007a0425befe8d5be341b31f9c9832d35149e459fd5c6"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause",
+      "distractorReasons": [
+        "原文说sometimes，不是所有情绪症状都一定有身体病因。",
+        "专业检查正是考虑个人医疗情况，不是取消这一考虑。",
+        "正确：对应排查身体病因的目的。",
+        "检查不能推出永远不用药，原文允许不同治疗配合。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "In the description of exposure therapy, what does “This” refer to in “This is continued until, over time, the fear associated with those things goes down”?",
+      "options": [
+        "Repeatedly learning to tolerate distress in a supportive environment.",
+        "Avoiding every situation that might cause any anxiety.",
+        "Taking a medication for a fixed number of days.",
+        "Receiving a new formal approval for each therapy session."
+      ],
+      "answers": [
+        "Repeatedly learning to tolerate distress in a supportive environment."
+      ],
+      "explanation": "This回指前一句描述的暴露治疗过程：在支持性环境中短时间面对并学习容忍相关痛苦。文中没有规定固定用药天数，也没有每次疗程审批。\n\n选项“Repeatedly learning to tolerate distress in a supportive environment.”：正确：承接前句spends brief periods...learning to tolerate the distress。\n选项“Avoiding every situation that might cause any anxiety.”：原文是面对并学习容忍，不是彻底回避全部相关情境。\n选项“Taking a medication for a fixed number of days.”：这段没有固定用药天数。\n选项“Receiving a new formal approval for each therapy session.”：正式审批在后面的另一讨论中出现，不是This所指的活动。",
+      "evidence": "Use exposure therapy (a type of CBT) for anxiety disorders, in which a person spends brief periods in a supportive environment learning to tolerate the distress caused by certain items, ideas, or imagined scenes. This is continued until, over time, the fear associated with those things goes down.",
+      "evidenceOffsets": {
+        "start": 3317,
+        "end": 3614,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3317,
+        "end": 3614,
+        "textSha256": "46b1ffde0242f7363faafd9186d1cb2d17a66f788dbac1977e4097619e628aad"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "正确：承接前句spends brief periods...learning to tolerate the distress。",
+        "原文是面对并学习容忍，不是彻底回避全部相关情境。",
+        "这段没有固定用药天数。",
+        "正式审批在后面的另一讨论中出现，不是This所指的活动。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Most psychotherapy sessions last exactly fifty minutes.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "全文没有给一般疗程或一次会面的固定分钟数。暴露治疗中的brief periods只说短时间，不能推出多数会面正好五十分钟，也没有相反的确切时长。\n\n选项“TRUE”：没有五十分钟或most sessions的统计，不能判TRUE。\n选项“FALSE”：没有相反的普遍时长，不能仅凭未见数字判FALSE。\n选项“NOT GIVEN”：正确：具体会面时长未提供。",
+      "evidence": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+      "evidenceOffsets": {
+        "start": 41,
+        "end": 334,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 41,
+        "end": 334,
+        "textSha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "没有五十分钟或most sessions的统计，不能判TRUE。",
+        "没有相反的普遍时长，不能仅凭未见数字判FALSE。",
+        "正确：具体会面时长未提供。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Psychotherapy may be used alongside medication.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "原句明确说as an alternative to or alongside medication；alongside表示可以配合使用，may没有把它写成人人必须的组合。\n\n选项“TRUE”：正确：alongside medication直接支持。\n选项“FALSE”：FALSE会否定原文明示的配合使用可能。\n选项“NOT GIVEN”：不是NOT GIVEN，这种关系在原文中明确说明。",
+      "evidence": "Psychotherapy can be used as an alternative to or alongside medication and other treatment options. Choosing the right treatment plan is based on a person's individual needs and medical situation and should occur under the guidance of a mental health professional.",
+      "evidenceOffsets": {
+        "start": 1588,
+        "end": 1852,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1588,
+        "end": 1852,
+        "textSha256": "4590d1deed888b96427cb142deb026da45aafea2985190b64e32c88f9c342bdf"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：alongside medication直接支持。",
+        "FALSE会否定原文明示的配合使用可能。",
+        "不是NOT GIVEN，这种关系在原文中明确说明。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The passage says that every patient should receive the same psychotherapy approach, regardless of the disorder.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "原文说明治疗通常针对具体障碍调整，还举了两种障碍的治疗方式不同。题干把这些区别抹掉，并加上every/same/regardless，形成直接冲突。\n\n选项“TRUE”：TRUE与tailored to the specific disorder及different than相冲突。\n选项“FALSE”：正确：原文明确反对把不同情况当成完全相同处理。\n选项“NOT GIVEN”：不是NOT GIVEN，因为不同障碍对应不同处理的关系已说明。",
+      "evidence": "A variety of psychotherapies have been shown to effectively treat mental health disorders. Often, the type of treatment is tailored to the specific disorder. For example, the treatment approach for someone who has obsessive-compulsive disorder is different than the approach for someone who has bipolar disorder. Therapists may use one primary approach or incorporate elements from multiple approaches depending on their training, the disorder being treated, and the needs of the person receiving treatment.",
+      "evidenceOffsets": {
+        "start": 2158,
+        "end": 2665,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2158,
+        "end": 2665,
+        "textSha256": "8daf58d9fef2cd27ea921e42d8284d9248d247d53cbf703720b36f367810e713"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE与tailored to the specific disorder及different than相冲突。",
+        "正确：原文明确反对把不同情况当成完全相同处理。",
+        "不是NOT GIVEN，因为不同障碍对应不同处理的关系已说明。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "Which therapy is described as helping people question inaccurate or harmful automatic thoughts? Write NO MORE THAN THREE WORDS from the passage.",
+      "answers": [
+        "cognitive behavioral therapy",
+        "CBT"
+      ],
+      "maxWords": 3,
+      "explanation": "列举方法的第一项先讲识别和质疑有害自动想法，接着将其命名为cognitive behavioral therapy (CBT)。完整三词名称或原文缩写CBT都能明确指向该方法。\n\n可接受答案：cognitive behavioral therapy / CBT；最多3个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“therapy”：只写therapy不能区分具体方法。\n写法“exposure therapy”：是后面另一项具体方法，不是本题所问自动想法段的命名。\n写法“cognitive behavioural therapy”：这是另一种英语拼写，但题目要求从本篇美式原文取词，原文为behavioral；本条不把英式拼写说成英语语法错误。",
+      "evidence": "Help a person become aware of automatic ways of thinking that are inaccurate or harmful (for example, having a low opinion of their abilities) and then question those thoughts, understand how the thoughts affect their emotions and behavior, and change self-defeating behavior patterns. This approach is known as cognitive behavioral therapy (CBT) .",
+      "evidenceOffsets": {
+        "start": 2721,
+        "end": 3069,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2721,
+        "end": 3069,
+        "textSha256": "efc3ca6a42b114763cfb50e522249ce22b2806411a847be6cf9d98f492199616"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "therapy": "只写therapy不能区分具体方法。",
+        "exposure therapy": "是后面另一项具体方法，不是本题所问自动想法段的命名。",
+        "cognitive behavioural therapy": "这是另一种英语拼写，但题目要求从本篇美式原文取词，原文为behavioral；本条不把英式拼写说成英语语法错误。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with ONE HYPHENATED WORD from the passage: Therapies supported by patient research are described as _______ therapies.",
+      "answers": [
+        "evidence-based"
+      ],
+      "maxWords": 1,
+      "explanation": "末段先说大量患者研究提供疗效证据，下一句用These evidence-based therapies指这些治疗。提取带连字符的evidence-based，不要把名词evidence单独放进修饰位置。\n\n可接受答案：evidence-based；最多1个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“evidence”：缺少-based，未完整表达“有证据支持的”。\n写法“evidence based”：题目要求原文的一个带连字符词；拆写不符合本题形式。\n写法“effective evidence-based”：多加effective超过一词上限，也不是此处要求提取的单个修饰语。",
+      "evidence": "However, for many therapies, research involving large numbers of patients has provided evidence that the treatment is effective. These evidence-based therapies have been shown to reduce symptoms of depression, anxiety, and other mental disorders. NIMH's health topic pages list some of the evidence-based therapies used to treat specific disorders.",
+      "evidenceOffsets": {
+        "start": 4206,
+        "end": 4554,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 4206,
+        "end": 4554,
+        "textSha256": "06c6dc7eddfd60ca0ecd10a35387f9fa41aa9b95635cea65912024134524bcaf"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "evidence": "缺少-based，未完整表达“有证据支持的”。",
+        "evidence based": "题目要求原文的一个带连字符词；拆写不符合本题形式。",
+        "effective evidence-based": "多加effective超过一词上限，也不是此处要求提取的单个修饰语。"
+      }
+    }
+  ],
+  "source": {
+    "schemaVersion": 3,
+    "kind": "public-adaptation",
+    "publicSourceId": "nimh-psychotherapies",
+    "sourceVersion": "teaching-1",
+    "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+    "questionSetId": "nimh-psychotherapies-ordinary-reading-v92-q1",
+    "questionSetVersion": "1",
+    "url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
+    "provider": "National Institute of Mental Health",
+    "rights": "Agency-original public information under the pinned official reuse declaration; text only.",
+    "rightsUrl": "https://www.nimh.nih.gov/site-info/policies",
+    "attribution": "Source: NIMH, Psychotherapies; original source URL retained. https://www.nimh.nih.gov/health/topics/psychotherapies Teaching adaptation: website navigation/table lead-ins omitted; any additional corrections/omissions are explicitly recorded in the source edit map. No agency endorsement.",
+    "verification": "author-v1-review-pending",
+    "exposureGroup": "public-source:nimh-psychotherapies",
+    "linkedMaterialIds": [
+      "public-ordinary-v92-nimh-psychotherapies-reading"
+    ],
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "independentUnseenParallel": false,
+    "phaseCandidates": [
+      "academic",
+      "integration",
+      "verification"
+    ],
+    "prerequisiteCapabilityIds": [
+      "independent:reading"
+    ],
+    "grammarTags": [
+      "concessive-clauses",
+      "passive-voice"
+    ],
+    "placement": "unassigned-candidate; actual level/prerequisites, unstarted/unfrozen protection and remaining-day budget required",
+    "levelBasis": "Author register estimate only; no calibrated CEFR/Band claim or learner placement evidence",
+    "originalFrozenTextSha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+    "previousSelectedTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+    "normalization": {
+      "sourceMetadataPath": "curriculum/ordinary-reading-v92/sources/nimh-psychotherapies.json",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "explicitEditCount": 0,
+      "officialVerbatim": true
+    },
+    "audioReadiness": {
+      "eligibleForPractice": false,
+      "status": "reading-only-no-audio-release",
+      "reasons": [
+        "Reading-only candidate; no listening or speech release."
+      ]
+    },
+    "coursePolicy": {
+      "appendOnly": true,
+      "requiredDailyOnly": true
+    },
+    "contentHashFields": [
+      "instructions",
+      "passage",
+      "transcript",
+      "questions"
+    ],
+    "questionContractHash": "be11a39aabc57dcacd9a2508ff99711ab5d24784ca3a50586ca70ee2f3359e71",
+    "contentHash": "e2fddfd2d030ff3ee1a8f8e9f94cd412dcb8ded34c2f22779105ac878cc002e8"
+  },
+  "rubric": {
+    "taskType": "ordinary reading comprehension practice",
+    "calibratedIELTS": false
+  },
+  "audio": "",
+  "audioSynthetic": false,
+  "audioDurationSeconds": null
+}

@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "id": "ordinary-reading-v92",
+  "version": "2",
+  "status": "reviewed-ordinary-reading-only",
+  "readingApproved": true,
+  "use": "ordinary-required-reading-only",
+  "sourceIds": [
+    "bls-athletes",
+    "bls-musicians",
+    "nimh-psychotherapies",
+    "nhgri-dna",
+    "nist-atomic-television",
+    "cbo-budget-2025"
+  ],
+  "independentAssessmentEligible": false,
+  "independentTransferEligible": false,
+  "lexicalActivation": false,
+  "audioActivation": false,
+  "contexts": {
+    "path": "context-catalog.json",
+    "sha256": "19adc269f09ac81631be28b56aff3b66f3e34ebe849953da00c5fdcbaaa05332",
+    "bytes": 80251
+  },
+  "rootReview": {
+    "path": "root-review.json",
+    "sha256": "cced0d3d369be3cdcb6704be5b54dd998e4f2b9183316a70e9b292d315bbbb2a",
+    "bytes": 7653
+  },
+  "sources": [
+    {
+      "sourceId": "bls-athletes",
+      "source": {
+        "path": "sources/bls-athletes.json",
+        "sha256": "e8dcbfeb7e736b8a4f15650dfc53580e4ae602215ad615b4881999fee490eedc",
+        "bytes": 13746
+      },
+      "material": {
+        "path": "materials/bls-athletes-reading.json",
+        "sha256": "ae61c417928a0a58841278c91d8df674caf77af798904ef1982c48528c24ff53",
+        "bytes": 27834
+      },
+      "authorMaterial": {
+        "path": "author-v1/materials/bls-athletes-reading.json",
+        "sha256": "72fc820f5601b2be20dbfb36be92af3911f6a397bd86586313d7697d8aa814b3",
+        "bytes": 27863
+      }
+    },
+    {
+      "sourceId": "bls-musicians",
+      "source": {
+        "path": "sources/bls-musicians.json",
+        "sha256": "91116859f2d0a7671de2fdc6600fa8d35aeeb2259e1741b133877a28354e6bad",
+        "bytes": 5138
+      },
+      "material": {
+        "path": "materials/bls-musicians-reading.json",
+        "sha256": "429218dba000d56e4e18741bc206087257698c239659fbee836affe52946cc12",
+        "bytes": 27338
+      },
+      "authorMaterial": {
+        "path": "author-v1/materials/bls-musicians-reading.json",
+        "sha256": "6db1f2c2620cf4ca076724ef1cd2984374c3e632c4853b8258240181078cfd24",
+        "bytes": 27354
+      }
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "source": {
+        "path": "sources/nimh-psychotherapies.json",
+        "sha256": "8f31f8e076785fe113e06a72f4864dba7d2dbc00ff00d887bd765b2108057355",
+        "bytes": 2298
+      },
+      "material": {
+        "path": "materials/nimh-psychotherapies-reading.json",
+        "sha256": "28a0f82a8ca3e78aa99c563e120ea16d3cd0543fdb26c725b440385ece0ded50",
+        "bytes": 25274
+      },
+      "authorMaterial": {
+        "path": "author-v1/materials/nimh-psychotherapies-reading.json",
+        "sha256": "549cb24fd3f2fa104e967c62082de48f6ccacae84e38bbb0b579a57402fb99b7",
+        "bytes": 25289
+      }
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "source": {
+        "path": "sources/nhgri-dna.json",
+        "sha256": "8631a5dc1cdd3f178b4a28c9487857bf12ddef7b0611cf5ec034dfc0d99308a2",
+        "bytes": 4898
+      },
+      "material": {
+        "path": "materials/nhgri-dna-reading.json",
+        "sha256": "31fc7ce24941ed5effc165c1e5bf189742e8ea0d82456e49211ab4d331044261",
+        "bytes": 25759
+      },
+      "authorMaterial": {
+        "path": "author-v1/materials/nhgri-dna-reading.json",
+        "sha256": "fa536753f8e60eac185d4bed4451e6b0eb79cc12f208586c999592263103590e",
+        "bytes": 25775
+      }
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "source": {
+        "path": "sources/nist-atomic-television.json",
+        "sha256": "a477995181b8f9eaa1a0670b79629371c04126df1ede06e0c56bf13a05c1f81f",
+        "bytes": 3889
+      },
+      "material": {
+        "path": "materials/nist-atomic-television-reading.json",
+        "sha256": "9da1bc5ba48453325e0c51ed4d3def0368b1728dbe6de0784b2d3c23a9ab93ba",
+        "bytes": 23800
+      },
+      "authorMaterial": {
+        "path": "author-v1/materials/nist-atomic-television-reading.json",
+        "sha256": "3f9d7ccb0fc8e6e63d60a2a4fad0de18058c243c68d087b6d37e9a954cd9c3e3",
+        "bytes": 23816
+      }
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "source": {
+        "path": "sources/cbo-budget-2025.json",
+        "sha256": "2340ca16f7b9282d791a0b9bc8270d40855f6e97063fbb04fcf8d55c8436332b",
+        "bytes": 2262
+      },
+      "material": {
+        "path": "materials/cbo-budget-2025-reading.json",
+        "sha256": "35051aeeaa965d97d3ba29f26f10272c953767335ea6785b58ae07857905aaa6",
+        "bytes": 26792
+      },
+      "authorMaterial": {
+        "path": "author-v1/materials/cbo-budget-2025-reading.json",
+        "sha256": "5dd7bd9614803e8df0ee29de1a41c0dfc43d5c67102ec8dd073709997d6e5d47",
+        "bytes": 26787
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "id": "ordinary-v92-source-hash-closure-repro",
+  "phase": "before-root-fix",
+  "derivedIndexSha256": "e24e95daf732f39ff6f2d131ceeabecf83e9ab45c5b589777b9e2edc72f2ed4a",
+  "compilerRule": "Existing build-public-supplement-materials.cjs sourceMaterial hashes JSON.stringify(payload) using contentHashFields order, not Assessment deep stable JSON.",
+  "rows": [
+    {
+      "sourceId": "bls-athletes",
+      "fileSha256": "ae61c417928a0a58841278c91d8df674caf77af798904ef1982c48528c24ff53",
+      "declaredContentHash": "e202da210acdff710d8c9fa0deb0c18f8de12f37a9507e2e6024cef8824daa1d",
+      "expectedCompilerOrderedJSONHash": "e202da210acdff710d8c9fa0deb0c18f8de12f37a9507e2e6024cef8824daa1d",
+      "deepStableAssessmentHashOfPayload": "b8d267448308f8cf8cee62d003a04e78e051157eefda35c768ef13e724caa888",
+      "matchesDeclaredFieldsProtocol": true,
+      "declaredFields": [
+        "instructions",
+        "passage",
+        "transcript",
+        "questions"
+      ],
+      "questionContractMatches": true
+    },
+    {
+      "sourceId": "bls-musicians",
+      "fileSha256": "7c4bd195a409f813c71ea778d457afab810eccd4befea4dc81e2fa34639544e1",
+      "declaredContentHash": "62aac4398380f2d11e514458eedb229f4534f0d65ea11c8e0ab6fa4c31ba598d",
+      "expectedCompilerOrderedJSONHash": "44a4c2d9c237230840500972b1225cc1ecc1985e67249aacc180588cec21278a",
+      "deepStableAssessmentHashOfPayload": "62aac4398380f2d11e514458eedb229f4534f0d65ea11c8e0ab6fa4c31ba598d",
+      "matchesDeclaredFieldsProtocol": false,
+      "declaredFields": [
+        "instructions",
+        "passage",
+        "transcript",
+        "questions"
+      ],
+      "questionContractMatches": true
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "fileSha256": "cfc8bae0b91ea56ad7c2f8cf7e11ea81917e3ba3f45e7949fe67b1e96a7c1d36",
+      "declaredContentHash": "e2fddfd2d030ff3ee1a8f8e9f94cd412dcb8ded34c2f22779105ac878cc002e8",
+      "expectedCompilerOrderedJSONHash": "df84c91e673129ab1b93c2403ff802361c9a3535dbc059ac01f87acf187aab8a",
+      "deepStableAssessmentHashOfPayload": "e2fddfd2d030ff3ee1a8f8e9f94cd412dcb8ded34c2f22779105ac878cc002e8",
+      "matchesDeclaredFieldsProtocol": false,
+      "declaredFields": [
+        "instructions",
+        "passage",
+        "transcript",
+        "questions"
+      ],
+      "questionContractMatches": true
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "fileSha256": "df6e6304bdc4652f073609c27f784cb694be143c1337e5d5cfe52708b2a70cd8",
+      "declaredContentHash": "7edd86af388037534a31af0f643d5a183d78b6638996e814898d2c5acad2f83d",
+      "expectedCompilerOrderedJSONHash": "e9b4e501be2c438222425db198a9efde400bffec9f84d508d72c464dab7c1e6c",
+      "deepStableAssessmentHashOfPayload": "7edd86af388037534a31af0f643d5a183d78b6638996e814898d2c5acad2f83d",
+      "matchesDeclaredFieldsProtocol": false,
+      "declaredFields": [
+        "instructions",
+        "passage",
+        "transcript",
+        "questions"
+      ],
+      "questionContractMatches": true
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "fileSha256": "b3bf375acd46fb11684b5d709ba09fb8e2bd5309045fe39d54d6ebea29242987",
+      "declaredContentHash": "f854f662bc30791811742484988bcc77e992e89efa36ebec449c4cf68afce0b8",
+      "expectedCompilerOrderedJSONHash": "c9615381ccd019521ad975f2bb548284276ddd7aa8d525f23abc21d10380b7a0",
+      "deepStableAssessmentHashOfPayload": "f854f662bc30791811742484988bcc77e992e89efa36ebec449c4cf68afce0b8",
+      "matchesDeclaredFieldsProtocol": false,
+      "declaredFields": [
+        "instructions",
+        "passage",
+        "transcript",
+        "questions"
+      ],
+      "questionContractMatches": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "fileSha256": "35051aeeaa965d97d3ba29f26f10272c953767335ea6785b58ae07857905aaa6",
+      "declaredContentHash": "00fa158e1aa37fde75ec6762775365e507afe955c899e4cbca8171bbbbc999cc",
+      "expectedCompilerOrderedJSONHash": "00fa158e1aa37fde75ec6762775365e507afe955c899e4cbca8171bbbbc999cc",
+      "deepStableAssessmentHashOfPayload": "04cace6aeb21d16b9b434e55b6411a04eac5c23ca790a34278a52b2ca9db4872",
+      "matchesDeclaredFieldsProtocol": true,
+      "declaredFields": [
+        "instructions",
+        "passage",
+        "transcript",
+        "questions"
+      ],
+      "questionContractMatches": true
+    }
+  ],
+  "mismatches": 4,
+  "actualLearnerDataRead": false,
+  "rootOrNASWrites": 0
+}

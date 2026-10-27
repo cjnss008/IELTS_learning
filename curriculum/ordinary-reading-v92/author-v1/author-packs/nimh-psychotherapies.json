@@ -1,0 +1,731 @@
+{
+  "schema": 1,
+  "sourceId": "nimh-psychotherapies",
+  "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+  "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+  "status": "author-v1-before-independent-question-review",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "What is the main purpose of this excerpt?",
+      "options": [
+        "To recommend one treatment plan for every reader.",
+        "To explain the aims of psychotherapy and illustrate some of its approaches.",
+        "To rank all medicines used for mental health conditions.",
+        "To give a complete directory of local health professionals."
+      ],
+      "answers": [
+        "To explain the aims of psychotherapy and illustrate some of its approaches."
+      ],
+      "explanation": "节选先解释心理治疗是什么、通常的目标和与其他治疗的关系，再举不同方法。它没有为个别读者开治疗方案，也没有药物排名或完整地方名录。\n\n选项“To recommend one treatment plan for every reader.”：原文强调individual needs、medical situation和专业指导，不提供人人相同的方案。\n选项“To explain the aims of psychotherapy and illustrate some of its approaches.”：正确：概括了定义、目标与方法示例。\n选项“To rank all medicines used for mental health conditions.”：文中不是药物比较或排名文章。\n选项“To give a complete directory of local health professionals.”：本节选不含完整地方从业者名录，主旨也不是找地址。",
+      "evidence": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+      "evidenceOffsets": {
+        "start": 41,
+        "end": 334,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 41,
+        "end": 334,
+        "textSha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "main-idea",
+      "distractorReasons": [
+        "原文强调individual needs、medical situation和专业指导，不提供人人相同的方案。",
+        "正确：概括了定义、目标与方法示例。",
+        "文中不是药物比较或排名文章。",
+        "本节选不含完整地方从业者名录，主旨也不是找地址。"
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Why does the passage mention being examined by a health care provider before treatment?",
+      "options": [
+        "To prove that all emotional symptoms have a physical cause.",
+        "To remove the need to consider a person’s medical situation.",
+        "To check whether a physical health issue could be causing the symptoms.",
+        "To guarantee that medication will never be needed."
+      ],
+      "answers": [
+        "To check whether a physical health issue could be causing the symptoms."
+      ],
+      "explanation": "rule out a physical health issue表示先排查身体健康问题，因为某些情绪或注意力表现可能来自身体疾病。sometimes与may都不能改成all或never。\n\n选项“To prove that all emotional symptoms have a physical cause.”：原文说sometimes，不是所有情绪症状都一定有身体病因。\n选项“To remove the need to consider a person’s medical situation.”：专业检查正是考虑个人医疗情况，不是取消这一考虑。\n选项“To check whether a physical health issue could be causing the symptoms.”：正确：对应排查身体病因的目的。\n选项“To guarantee that medication will never be needed.”：检查不能推出永远不用药，原文允许不同治疗配合。",
+      "evidence": "First being examined by a health care provider can help rule out a physical health issue. This step is important because sometimes symptoms, like a change in mood or trouble concentrating, are due to a medical condition.",
+      "evidenceOffsets": {
+        "start": 1323,
+        "end": 1543,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1323,
+        "end": 1543,
+        "textSha256": "846b1ccdda46c9ee280007a0425befe8d5be341b31f9c9832d35149e459fd5c6"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "cause",
+      "distractorReasons": [
+        "原文说sometimes，不是所有情绪症状都一定有身体病因。",
+        "专业检查正是考虑个人医疗情况，不是取消这一考虑。",
+        "正确：对应排查身体病因的目的。",
+        "检查不能推出永远不用药，原文允许不同治疗配合。"
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "prompt": "In the description of exposure therapy, what does “This” refer to in “This is continued until, over time, the fear associated with those things goes down”?",
+      "options": [
+        "Repeatedly learning to tolerate distress in a supportive environment.",
+        "Avoiding every situation that might cause any anxiety.",
+        "Taking a medication for a fixed number of days.",
+        "Receiving a new formal approval for each therapy session."
+      ],
+      "answers": [
+        "Repeatedly learning to tolerate distress in a supportive environment."
+      ],
+      "explanation": "This回指前一句描述的暴露治疗过程：在支持性环境中短时间面对并学习容忍相关痛苦。文中没有规定固定用药天数，也没有每次疗程审批。\n\n选项“Repeatedly learning to tolerate distress in a supportive environment.”：正确：承接前句spends brief periods...learning to tolerate the distress。\n选项“Avoiding every situation that might cause any anxiety.”：原文是面对并学习容忍，不是彻底回避全部相关情境。\n选项“Taking a medication for a fixed number of days.”：这段没有固定用药天数。\n选项“Receiving a new formal approval for each therapy session.”：正式审批在后面的另一讨论中出现，不是This所指的活动。",
+      "evidence": "Use exposure therapy (a type of CBT) for anxiety disorders, in which a person spends brief periods in a supportive environment learning to tolerate the distress caused by certain items, ideas, or imagined scenes. This is continued until, over time, the fear associated with those things goes down.",
+      "evidenceOffsets": {
+        "start": 3317,
+        "end": 3614,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 3317,
+        "end": 3614,
+        "textSha256": "46b1ffde0242f7363faafd9186d1cb2d17a66f788dbac1977e4097619e628aad"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "reference",
+      "distractorReasons": [
+        "正确：承接前句spends brief periods...learning to tolerate the distress。",
+        "原文是面对并学习容忍，不是彻底回避全部相关情境。",
+        "这段没有固定用药天数。",
+        "正式审批在后面的另一讨论中出现，不是This所指的活动。"
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Most psychotherapy sessions last exactly fifty minutes.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "NOT GIVEN"
+      ],
+      "explanation": "全文没有给一般疗程或一次会面的固定分钟数。暴露治疗中的brief periods只说短时间，不能推出多数会面正好五十分钟，也没有相反的确切时长。\n\n选项“TRUE”：没有五十分钟或most sessions的统计，不能判TRUE。\n选项“FALSE”：没有相反的普遍时长，不能仅凭未见数字判FALSE。\n选项“NOT GIVEN”：正确：具体会面时长未提供。",
+      "evidence": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+      "evidenceOffsets": {
+        "start": 41,
+        "end": 334,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 41,
+        "end": 334,
+        "textSha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "没有五十分钟或most sessions的统计，不能判TRUE。",
+        "没有相反的普遍时长，不能仅凭未见数字判FALSE。",
+        "正确：具体会面时长未提供。"
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: Psychotherapy may be used alongside medication.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "TRUE"
+      ],
+      "explanation": "原句明确说as an alternative to or alongside medication；alongside表示可以配合使用，may没有把它写成人人必须的组合。\n\n选项“TRUE”：正确：alongside medication直接支持。\n选项“FALSE”：FALSE会否定原文明示的配合使用可能。\n选项“NOT GIVEN”：不是NOT GIVEN，这种关系在原文中明确说明。",
+      "evidence": "Psychotherapy can be used as an alternative to or alongside medication and other treatment options. Choosing the right treatment plan is based on a person's individual needs and medical situation and should occur under the guidance of a mental health professional.",
+      "evidenceOffsets": {
+        "start": 1588,
+        "end": 1852,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1588,
+        "end": 1852,
+        "textSha256": "4590d1deed888b96427cb142deb026da45aafea2985190b64e32c88f9c342bdf"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "正确：alongside medication直接支持。",
+        "FALSE会否定原文明示的配合使用可能。",
+        "不是NOT GIVEN，这种关系在原文中明确说明。"
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose TRUE, FALSE or NOT GIVEN: The passage says that every patient should receive the same psychotherapy approach, regardless of the disorder.",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ],
+      "answers": [
+        "FALSE"
+      ],
+      "explanation": "原文说明治疗通常针对具体障碍调整，还举了两种障碍的治疗方式不同。题干把这些区别抹掉，并加上every/same/regardless，形成直接冲突。\n\n选项“TRUE”：TRUE与tailored to the specific disorder及different than相冲突。\n选项“FALSE”：正确：原文明确反对把不同情况当成完全相同处理。\n选项“NOT GIVEN”：不是NOT GIVEN，因为不同障碍对应不同处理的关系已说明。",
+      "evidence": "A variety of psychotherapies have been shown to effectively treat mental health disorders. Often, the type of treatment is tailored to the specific disorder. For example, the treatment approach for someone who has obsessive-compulsive disorder is different than the approach for someone who has bipolar disorder. Therapists may use one primary approach or incorporate elements from multiple approaches depending on their training, the disorder being treated, and the needs of the person receiving treatment.",
+      "evidenceOffsets": {
+        "start": 2158,
+        "end": 2665,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2158,
+        "end": 2665,
+        "textSha256": "8daf58d9fef2cd27ea921e42d8284d9248d247d53cbf703720b36f367810e713"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "true-false-not-given",
+      "distractorReasons": [
+        "TRUE与tailored to the specific disorder及different than相冲突。",
+        "正确：原文明确反对把不同情况当成完全相同处理。",
+        "不是NOT GIVEN，因为不同障碍对应不同处理的关系已说明。"
+      ]
+    },
+    {
+      "id": "q7",
+      "type": "short",
+      "prompt": "Which therapy is described as helping people question inaccurate or harmful automatic thoughts? Write NO MORE THAN THREE WORDS from the passage.",
+      "answers": [
+        "cognitive behavioral therapy",
+        "CBT"
+      ],
+      "maxWords": 3,
+      "explanation": "列举方法的第一项先讲识别和质疑有害自动想法，接着将其命名为cognitive behavioral therapy (CBT)。完整三词名称或原文缩写CBT都能明确指向该方法。\n\n可接受答案：cognitive behavioral therapy / CBT；最多3个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“therapy”：只写therapy不能区分具体方法。\n写法“exposure therapy”：是后面另一项具体方法，不是本题所问自动想法段的命名。\n写法“cognitive behavioural therapy”：这是另一种英语拼写，但题目要求从本篇美式原文取词，原文为behavioral；本条不把英式拼写说成英语语法错误。",
+      "evidence": "Help a person become aware of automatic ways of thinking that are inaccurate or harmful (for example, having a low opinion of their abilities) and then question those thoughts, understand how the thoughts affect their emotions and behavior, and change self-defeating behavior patterns. This approach is known as cognitive behavioral therapy (CBT) .",
+      "evidenceOffsets": {
+        "start": 2721,
+        "end": 3069,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 2721,
+        "end": 3069,
+        "textSha256": "efc3ca6a42b114763cfb50e522249ce22b2806411a847be6cf9d98f492199616"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "short-answer",
+      "commonErrorReasons": {
+        "therapy": "只写therapy不能区分具体方法。",
+        "exposure therapy": "是后面另一项具体方法，不是本题所问自动想法段的命名。",
+        "cognitive behavioural therapy": "这是另一种英语拼写，但题目要求从本篇美式原文取词，原文为behavioral；本条不把英式拼写说成英语语法错误。"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "short",
+      "prompt": "Complete the sentence with ONE HYPHENATED WORD from the passage: Therapies supported by patient research are described as _______ therapies.",
+      "answers": [
+        "evidence-based"
+      ],
+      "maxWords": 1,
+      "explanation": "末段先说大量患者研究提供疗效证据，下一句用These evidence-based therapies指这些治疗。提取带连字符的evidence-based，不要把名词evidence单独放进修饰位置。\n\n可接受答案：evidence-based；最多1个英文词；题干若明确写ONE/TWO/THREE WORDS，仍须遵守其精确形式。\n写法“evidence”：缺少-based，未完整表达“有证据支持的”。\n写法“evidence based”：题目要求原文的一个带连字符词；拆写不符合本题形式。\n写法“effective evidence-based”：多加effective超过一词上限，也不是此处要求提取的单个修饰语。",
+      "evidence": "However, for many therapies, research involving large numbers of patients has provided evidence that the treatment is effective. These evidence-based therapies have been shown to reduce symptoms of depression, anxiety, and other mental disorders. NIMH's health topic pages list some of the evidence-based therapies used to treat specific disorders.",
+      "evidenceOffsets": {
+        "start": 4206,
+        "end": 4554,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 4206,
+        "end": 4554,
+        "textSha256": "06c6dc7eddfd60ca0ecd10a35387f9fa41aa9b95635cea65912024134524bcaf"
+      },
+      "eligibleModalities": [
+        "reading"
+      ],
+      "understanding": "completion",
+      "commonErrorReasons": {
+        "evidence": "缺少-based，未完整表达“有证据支持的”。",
+        "evidence based": "题目要求原文的一个带连字符词；拆写不符合本题形式。",
+        "effective evidence-based": "多加effective超过一词上限，也不是此处要求提取的单个修饰语。"
+      }
+    }
+  ],
+  "questionReviewNotes": [
+    {
+      "questionId": "q1",
+      "cognitiveTask": "main-idea",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 41,
+          "teachingEndUtf16": 334,
+          "selectedStartUtf16": 41,
+          "selectedEndUtf16": 334,
+          "originalStartUtf16": 41,
+          "originalEndUtf16": 334,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q2",
+      "cognitiveTask": "cause",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1323,
+          "teachingEndUtf16": 1543,
+          "selectedStartUtf16": 1323,
+          "selectedEndUtf16": 1543,
+          "originalStartUtf16": 1323,
+          "originalEndUtf16": 1543,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q3",
+      "cognitiveTask": "reference",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3317,
+          "teachingEndUtf16": 3614,
+          "selectedStartUtf16": 3317,
+          "selectedEndUtf16": 3614,
+          "originalStartUtf16": 3317,
+          "originalEndUtf16": 3614,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q4",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 41,
+          "teachingEndUtf16": 334,
+          "selectedStartUtf16": 41,
+          "selectedEndUtf16": 334,
+          "originalStartUtf16": 41,
+          "originalEndUtf16": 334,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": "Whole teaching passage checked for absence; quoted paragraph is a topic anchor, not proof that the statement is false."
+    },
+    {
+      "questionId": "q5",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1588,
+          "teachingEndUtf16": 1852,
+          "selectedStartUtf16": 1588,
+          "selectedEndUtf16": 1852,
+          "originalStartUtf16": 1588,
+          "originalEndUtf16": 1852,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q6",
+      "cognitiveTask": "true-false-not-given",
+      "acceptedAnswerScope": "Select one complete option. Explanation refers to option text, not shuffled letters.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2158,
+          "teachingEndUtf16": 2665,
+          "selectedStartUtf16": 2158,
+          "selectedEndUtf16": 2665,
+          "originalStartUtf16": 2158,
+          "originalEndUtf16": 2665,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q7",
+      "cognitiveTask": "short-answer",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2721,
+          "teachingEndUtf16": 3069,
+          "selectedStartUtf16": 2721,
+          "selectedEndUtf16": 3069,
+          "originalStartUtf16": 2721,
+          "originalEndUtf16": 3069,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    },
+    {
+      "questionId": "q8",
+      "cognitiveTask": "completion",
+      "acceptedAnswerScope": "Only listed exact source forms after existing case/space/quotation normalization; obey specified word count. No global grading change.",
+      "evidenceTeachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "evidenceOriginalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4206,
+          "teachingEndUtf16": 4554,
+          "selectedStartUtf16": 4206,
+          "selectedEndUtf16": 4554,
+          "originalStartUtf16": 4206,
+          "originalEndUtf16": 4554,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "notGivenReviewScope": null
+    }
+  ],
+  "grammarEvidence": [
+    {
+      "id": "nimh-psychotherapies-grammar-1",
+      "tag": "concessive-clauses",
+      "sentence": "Even when medication relieves symptoms, psychotherapy can help address specific issues.",
+      "explanation": "Even when表示“即使在……的时候也……”。句子承认药物可能缓解症状，同时说明心理治疗仍可能处理某些具体问题。can表示可能的作用，不是保证每个人有效，也不是说药物必然无效。",
+      "evidenceOffsets": {
+        "start": 1854,
+        "end": 1941,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "e13c8d71add4172e17ac456e971310fa40c6a2539293e155f7aa19c8277af0d0",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 1854,
+          "teachingEndUtf16": 1941,
+          "selectedStartUtf16": 1854,
+          "selectedEndUtf16": 1941,
+          "originalStartUtf16": 1854,
+          "originalEndUtf16": 1941,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    },
+    {
+      "id": "nimh-psychotherapies-grammar-2",
+      "tag": "passive-voice",
+      "sentence": "Often, the type of treatment is tailored to the specific disorder.",
+      "explanation": "is tailored是被动形式，说明治疗方式会按具体障碍作调整。主语the type of treatment是接受调整的对象；to引出调整所针对的情况。often不是always，因此不能从本句推出所有患者的流程完全相同。",
+      "evidenceOffsets": {
+        "start": 2249,
+        "end": 2315,
+        "unit": "UTF-16-code-unit"
+      },
+      "evidenceSha256": "107c17fb8074735f62b67fdcfe1e8d3e7ba63c1af95b508eea21f223fbffce9d",
+      "teachingTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2249,
+          "teachingEndUtf16": 2315,
+          "selectedStartUtf16": 2249,
+          "selectedEndUtf16": 2315,
+          "originalStartUtf16": 2249,
+          "originalEndUtf16": 2315,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "reviewStatus": "author-v1-pending-independent-review"
+    }
+  ],
+  "wordCandidates": [
+    {
+      "id": "nimh-psychotherapies-word-1",
+      "word": "therapy",
+      "canonicalTargetId": "essential:therapy",
+      "surface": "therapies",
+      "startUtf16": 4224,
+      "endUtf16": 4233,
+      "quote": "However, for many therapies, research involving large numbers of patients has provided evidence that the treatment is effective. These evidence-based therapies have been shown to reduce symptoms of depression, anxiety, and other mental disorders. NIMH's health topic pages list some of the evidence-based therapies used to treat specific disorders.",
+      "quoteStartUtf16": 4206,
+      "quoteEndUtf16": 4554,
+      "quoteSha256": "06c6dc7eddfd60ca0ecd10a35387f9fa41aa9b95635cea65912024134524bcaf",
+      "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "therapy",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "therapy",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 4224,
+          "teachingEndUtf16": 4233,
+          "selectedStartUtf16": 4224,
+          "selectedEndUtf16": 4233,
+          "originalStartUtf16": 4224,
+          "originalEndUtf16": 4233,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-2",
+      "word": "symptom",
+      "canonicalTargetId": "essential:symptom",
+      "surface": "symptoms",
+      "startUtf16": 534,
+      "endUtf16": 542,
+      "quote": "In general, the goals of psychotherapy are to gain relief from symptoms, maintain or enhance daily functioning, and improve quality of life.",
+      "quoteStartUtf16": 471,
+      "quoteEndUtf16": 611,
+      "quoteSha256": "380841b25caf56fce3f0a1844eed64e985a3e6876aa74ba404bcf5542e550cec",
+      "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "symptom",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "symptom",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 534,
+          "teachingEndUtf16": 542,
+          "selectedStartUtf16": 534,
+          "selectedEndUtf16": 542,
+          "originalStartUtf16": 534,
+          "originalEndUtf16": 542,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-3",
+      "word": "emotion",
+      "canonicalTargetId": "essential:emotion",
+      "surface": "emotions",
+      "startUtf16": 172,
+      "endUtf16": 180,
+      "quote": "Psychotherapy (also called talk therapy) refers to a variety of treatments that aim to help a person identify and change troubling emotions, thoughts, and behaviors. Most psychotherapy takes place one-on-one with a licensed mental health professional or with other patients in a group setting.",
+      "quoteStartUtf16": 41,
+      "quoteEndUtf16": 334,
+      "quoteSha256": "98008034e4c2d27a533d47b43b0d513c3624dfa1b6e9bed94e537df9397c88cc",
+      "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "emotion",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "emotion",
+            "exchangeKind": "s"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 172,
+          "teachingEndUtf16": 180,
+          "selectedStartUtf16": 172,
+          "selectedEndUtf16": 180,
+          "originalStartUtf16": 172,
+          "originalEndUtf16": 180,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-4",
+      "word": "cope",
+      "canonicalTargetId": "essential:cope",
+      "surface": "coping",
+      "startUtf16": 2067,
+      "endUtf16": 2073,
+      "quote": "Even when medication relieves symptoms, psychotherapy can help address specific issues. These might include self-defeating ways of thinking; irrational fears; problems interacting with other people; or difficulty coping with situations at home, school, or work.",
+      "quoteStartUtf16": 1854,
+      "quoteEndUtf16": 2115,
+      "quoteSha256": "48f75900097b1ce391d7f81f41e6738c7315e8692c57a4a480b86e3aac26c8dd",
+      "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "cope",
+            "relation": "source-listed-inflection",
+            "dictionary": "ECDICT",
+            "rowWord": "cope",
+            "exchangeKind": "i"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "dictionary-relation-candidate-not-POS-or-sense-approved",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 2067,
+          "teachingEndUtf16": 2073,
+          "selectedStartUtf16": 2067,
+          "selectedEndUtf16": 2073,
+          "originalStartUtf16": 2067,
+          "originalEndUtf16": 2073,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    },
+    {
+      "id": "nimh-psychotherapies-word-5",
+      "word": "distress",
+      "canonicalTargetId": "essential:distress",
+      "surface": "distress",
+      "startUtf16": 3469,
+      "endUtf16": 3477,
+      "quote": "Use exposure therapy (a type of CBT) for anxiety disorders, in which a person spends brief periods in a supportive environment learning to tolerate the distress caused by certain items, ideas, or imagined scenes. This is continued until, over time, the fear associated with those things goes down.",
+      "quoteStartUtf16": 3317,
+      "quoteEndUtf16": 3614,
+      "quoteSha256": "46b1ffde0242f7363faafd9186d1cb2d17a66f788dbac1977e4097619e628aad",
+      "sourceTextSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+      "sourceId": "nimh-psychotherapies",
+      "materialId": "public-ordinary-v92-nimh-psychotherapies-reading",
+      "formEvidence": {
+        "indexSha256": "ddc3cfcaf9dbf1899840d386c54eb70058c362b1e2dd0367293315c0bff23990",
+        "links": [
+          {
+            "word": "distress",
+            "relation": "exact-headword"
+          }
+        ]
+      },
+      "baseSurfaceRelationStatus": "literal-identity-only",
+      "selectedMeaning": null,
+      "originalMapping": [
+        {
+          "kind": "original-substring",
+          "teachingStartUtf16": 3469,
+          "teachingEndUtf16": 3477,
+          "selectedStartUtf16": 3469,
+          "selectedEndUtf16": 3477,
+          "originalStartUtf16": 3469,
+          "originalEndUtf16": 3477,
+          "originalBodySha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+          "officialVerbatim": true
+        }
+      ],
+      "newCanonicalTarget": false,
+      "activation": false,
+      "mastery": false
+    }
+  ],
+  "active": false
+}

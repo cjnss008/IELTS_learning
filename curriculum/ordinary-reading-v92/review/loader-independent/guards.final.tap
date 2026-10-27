@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: actual six author objects derive only explicit v2 fixes and remain ordinary reading
+ok 1 - actual six author objects derive only explicit v2 fixes and remain ordinary reading
+  ---
+  duration_ms: 129.1479
+  type: 'test'
+  ...
+# Subtest: absent approval is rejected without mutating author input
+ok 2 - absent approval is rejected without mutating author input
+  ---
+  duration_ms: 74.1254
+  type: 'test'
+  ...
+# Subtest: traversal, absolute path and package escape junction are rejected
+ok 3 - traversal, absolute path and package escape junction are rejected
+  ---
+  duration_ms: 76.9686
+  type: 'test'
+  ...
+# Subtest: changed source bytes and mismatching exact adaptation edits are rejected
+ok 4 - changed source bytes and mismatching exact adaptation edits are rejected
+  ---
+  duration_ms: 84.0151
+  type: 'test'
+  ...
+# Subtest: exact references must reject negative grammar/word offsets even when slice aliases the valid span
+ok 5 - exact references must reject negative grammar/word offsets even when slice aliases the valid span
+  ---
+  duration_ms: 83.977
+  type: 'test'
+  ...
+# Subtest: question evidence must reject negative offsets even when slice aliases the exact evidence
+ok 6 - question evidence must reject negative offsets even when slice aliases the exact evidence
+  ---
+  duration_ms: 88.0732
+  type: 'test'
+  ...
+# Subtest: word quote envelope must reject negative quote offsets without changing the valid target span
+ok 7 - word quote envelope must reject negative quote offsets without changing the valid target span
+  ---
+  duration_ms: 83.1121
+  type: 'test'
+  ...
+# Subtest: actual static composition preserves old80, all owner patches/reviews, raw days and budgets
+ok 8 - actual static composition preserves old80, all owner patches/reviews, raw days and budgets
+  ---
+  duration_ms: 6180.9637
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6961.7016

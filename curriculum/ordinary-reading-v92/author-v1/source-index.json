@@ -1,0 +1,1096 @@
+{
+  "schema": 1,
+  "status": "six-teaching-texts-candidate-not-review-approved",
+  "sources": [
+    {
+      "id": "bls-athletes",
+      "title": "Athletes and Sports Competitors: Work and Preparation",
+      "sourceUrl": "https://www.bls.gov/ooh/entertainment-and-sports/athletes-and-sports-competitors.htm",
+      "original": {
+        "path": "source-originals/bls-athletes.full.txt",
+        "sha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+        "bytes": 7472
+      },
+      "selected": {
+        "path": "source-originals/bls-athletes.v92-selection.txt",
+        "sha256": "2aaf6b86c63bafab35ff3f2689b4851f153bfcf39583cff2163d14c6f80ff380",
+        "bytes": 7473
+      },
+      "raw": {
+        "path": "evidence/raw/bls-athletes.json",
+        "sha256": "ddd3ef733b27c8fe4c9a1f2613e4d569b417a2983e83a713bd276d025c12b817",
+        "bytes": 30145
+      },
+      "rights": [
+        {
+          "path": "evidence/rights/bls-athletes/agency-rights-0.json",
+          "sha256": "671addc89a91e61932a77f01e1d87a3f3d4c668959cfd81fe218ec72d4f814d9",
+          "bytes": 1780,
+          "url": "https://www.bls.gov/opub/copyright-information.htm"
+        }
+      ],
+      "attribution": "Source: BLS, Athletes and Sports Competitors: Work and Preparation; original source URL retained. https://www.bls.gov/ooh/entertainment-and-sports/athletes-and-sports-competitors.htm",
+      "priorSourceSegments": [
+        {
+          "sourceStartUtf16": 0,
+          "sourceEndUtf16": 7455,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 7455,
+          "sha256": "0461d515b5b4f248bdb4282770d7ecc5e87e67c6bdebdcf043b1e9367237d792",
+          "wordCount": 1100
+        }
+      ],
+      "level": "B2",
+      "levelCalibrated": false,
+      "estimatedMinutes": 30,
+      "phaseCandidates": [
+        "academic",
+        "integration",
+        "verification"
+      ],
+      "suggestedWindow": [
+        169,
+        280
+      ],
+      "teaching": {
+        "path": "teaching-texts/bls-athletes.txt",
+        "sha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+        "bytes": 7255,
+        "utf16Length": 7238,
+        "wordCount": 1070
+      },
+      "adaptation": {
+        "status": "explicit-teaching-adaptation-not-official-verbatim",
+        "inputSha256": "2aaf6b86c63bafab35ff3f2689b4851f153bfcf39583cff2163d14c6f80ff380",
+        "outputSha256": "7527c6bea0b26afc7b94db10a95bd9b79770216289151a5edcf5cd6fcb5d596d",
+        "offsetUnit": "UTF-16-code-unit",
+        "edits": [
+          {
+            "startUtf16": 39,
+            "endUtf16": 58,
+            "before": " About this section",
+            "after": "",
+            "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+            "teachingStartUtf16": 39,
+            "teachingEndUtf16": 39
+          },
+          {
+            "startUtf16": 2444,
+            "endUtf16": 2463,
+            "before": " About this section",
+            "after": "",
+            "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+            "teachingStartUtf16": 2425,
+            "teachingEndUtf16": 2425
+          },
+          {
+            "startUtf16": 2552,
+            "endUtf16": 2699,
+            "before": "Athletes and sports competitors held about 22,900 jobs in 2025. Some of the largest employers of athletes and sports competitors were as follows:\n\n",
+            "after": "",
+            "reason": "Omit the employment-count/table lead-in paragraph because the source selection contains no corresponding employer table.",
+            "teachingStartUtf16": 2514,
+            "teachingEndUtf16": 2514
+          },
+          {
+            "startUtf16": 3583,
+            "endUtf16": 3602,
+            "before": " About this section",
+            "after": "",
+            "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+            "teachingStartUtf16": 3398,
+            "teachingEndUtf16": 3398
+          },
+          {
+            "startUtf16": 6286,
+            "endUtf16": 6287,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6082,
+            "teachingEndUtf16": 6082
+          },
+          {
+            "startUtf16": 6298,
+            "endUtf16": 6299,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6093,
+            "teachingEndUtf16": 6093
+          },
+          {
+            "startUtf16": 6386,
+            "endUtf16": 6387,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6180,
+            "teachingEndUtf16": 6180
+          },
+          {
+            "startUtf16": 6400,
+            "endUtf16": 6401,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6193,
+            "teachingEndUtf16": 6193
+          },
+          {
+            "startUtf16": 6540,
+            "endUtf16": 6541,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6332,
+            "teachingEndUtf16": 6332
+          },
+          {
+            "startUtf16": 6564,
+            "endUtf16": 6565,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6355,
+            "teachingEndUtf16": 6355
+          },
+          {
+            "startUtf16": 6699,
+            "endUtf16": 6700,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6489,
+            "teachingEndUtf16": 6489
+          },
+          {
+            "startUtf16": 6711,
+            "endUtf16": 6712,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6500,
+            "teachingEndUtf16": 6500
+          },
+          {
+            "startUtf16": 6847,
+            "endUtf16": 6848,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6635,
+            "teachingEndUtf16": 6635
+          },
+          {
+            "startUtf16": 6869,
+            "endUtf16": 6870,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6656,
+            "teachingEndUtf16": 6656
+          },
+          {
+            "startUtf16": 7059,
+            "endUtf16": 7060,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6845,
+            "teachingEndUtf16": 6845
+          },
+          {
+            "startUtf16": 7067,
+            "endUtf16": 7068,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 6852,
+            "teachingEndUtf16": 6852
+          },
+          {
+            "startUtf16": 7233,
+            "endUtf16": 7234,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 7017,
+            "teachingEndUtf16": 7017
+          },
+          {
+            "startUtf16": 7243,
+            "endUtf16": 7244,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 7026,
+            "teachingEndUtf16": 7026
+          }
+        ],
+        "map": [
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 0,
+            "inputEndUtf16": 39,
+            "teachingStartUtf16": 0,
+            "teachingEndUtf16": 39
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 39,
+            "inputEndUtf16": 58,
+            "teachingStartUtf16": 39,
+            "teachingEndUtf16": 39
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 58,
+            "inputEndUtf16": 2444,
+            "teachingStartUtf16": 39,
+            "teachingEndUtf16": 2425
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 2444,
+            "inputEndUtf16": 2463,
+            "teachingStartUtf16": 2425,
+            "teachingEndUtf16": 2425
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 2463,
+            "inputEndUtf16": 2552,
+            "teachingStartUtf16": 2425,
+            "teachingEndUtf16": 2514
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 2552,
+            "inputEndUtf16": 2699,
+            "teachingStartUtf16": 2514,
+            "teachingEndUtf16": 2514
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 2699,
+            "inputEndUtf16": 3583,
+            "teachingStartUtf16": 2514,
+            "teachingEndUtf16": 3398
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 3583,
+            "inputEndUtf16": 3602,
+            "teachingStartUtf16": 3398,
+            "teachingEndUtf16": 3398
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 3602,
+            "inputEndUtf16": 6286,
+            "teachingStartUtf16": 3398,
+            "teachingEndUtf16": 6082
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6286,
+            "inputEndUtf16": 6287,
+            "teachingStartUtf16": 6082,
+            "teachingEndUtf16": 6082
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6287,
+            "inputEndUtf16": 6298,
+            "teachingStartUtf16": 6082,
+            "teachingEndUtf16": 6093
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6298,
+            "inputEndUtf16": 6299,
+            "teachingStartUtf16": 6093,
+            "teachingEndUtf16": 6093
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6299,
+            "inputEndUtf16": 6386,
+            "teachingStartUtf16": 6093,
+            "teachingEndUtf16": 6180
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6386,
+            "inputEndUtf16": 6387,
+            "teachingStartUtf16": 6180,
+            "teachingEndUtf16": 6180
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6387,
+            "inputEndUtf16": 6400,
+            "teachingStartUtf16": 6180,
+            "teachingEndUtf16": 6193
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6400,
+            "inputEndUtf16": 6401,
+            "teachingStartUtf16": 6193,
+            "teachingEndUtf16": 6193
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6401,
+            "inputEndUtf16": 6540,
+            "teachingStartUtf16": 6193,
+            "teachingEndUtf16": 6332
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6540,
+            "inputEndUtf16": 6541,
+            "teachingStartUtf16": 6332,
+            "teachingEndUtf16": 6332
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6541,
+            "inputEndUtf16": 6564,
+            "teachingStartUtf16": 6332,
+            "teachingEndUtf16": 6355
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6564,
+            "inputEndUtf16": 6565,
+            "teachingStartUtf16": 6355,
+            "teachingEndUtf16": 6355
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6565,
+            "inputEndUtf16": 6699,
+            "teachingStartUtf16": 6355,
+            "teachingEndUtf16": 6489
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6699,
+            "inputEndUtf16": 6700,
+            "teachingStartUtf16": 6489,
+            "teachingEndUtf16": 6489
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6700,
+            "inputEndUtf16": 6711,
+            "teachingStartUtf16": 6489,
+            "teachingEndUtf16": 6500
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6711,
+            "inputEndUtf16": 6712,
+            "teachingStartUtf16": 6500,
+            "teachingEndUtf16": 6500
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6712,
+            "inputEndUtf16": 6847,
+            "teachingStartUtf16": 6500,
+            "teachingEndUtf16": 6635
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6847,
+            "inputEndUtf16": 6848,
+            "teachingStartUtf16": 6635,
+            "teachingEndUtf16": 6635
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6848,
+            "inputEndUtf16": 6869,
+            "teachingStartUtf16": 6635,
+            "teachingEndUtf16": 6656
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 6869,
+            "inputEndUtf16": 6870,
+            "teachingStartUtf16": 6656,
+            "teachingEndUtf16": 6656
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 6870,
+            "inputEndUtf16": 7059,
+            "teachingStartUtf16": 6656,
+            "teachingEndUtf16": 6845
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 7059,
+            "inputEndUtf16": 7060,
+            "teachingStartUtf16": 6845,
+            "teachingEndUtf16": 6845
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 7060,
+            "inputEndUtf16": 7067,
+            "teachingStartUtf16": 6845,
+            "teachingEndUtf16": 6852
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 7067,
+            "inputEndUtf16": 7068,
+            "teachingStartUtf16": 6852,
+            "teachingEndUtf16": 6852
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 7068,
+            "inputEndUtf16": 7233,
+            "teachingStartUtf16": 6852,
+            "teachingEndUtf16": 7017
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 7233,
+            "inputEndUtf16": 7234,
+            "teachingStartUtf16": 7017,
+            "teachingEndUtf16": 7017
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 7234,
+            "inputEndUtf16": 7243,
+            "teachingStartUtf16": 7017,
+            "teachingEndUtf16": 7026
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 7243,
+            "inputEndUtf16": 7244,
+            "teachingStartUtf16": 7026,
+            "teachingEndUtf16": 7026
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 7244,
+            "inputEndUtf16": 7456,
+            "teachingStartUtf16": 7026,
+            "teachingEndUtf16": 7238
+          }
+        ]
+      },
+      "active": false
+    },
+    {
+      "id": "bls-musicians",
+      "title": "Musicians and Singers: Work and Preparation",
+      "sourceUrl": "https://www.bls.gov/ooh/entertainment-and-sports/musicians-and-singers.htm",
+      "original": {
+        "path": "source-originals/bls-musicians.full.txt",
+        "sha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+        "bytes": 7333
+      },
+      "selected": {
+        "path": "source-originals/bls-musicians.v92-selection.txt",
+        "sha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a",
+        "bytes": 7334
+      },
+      "raw": {
+        "path": "evidence/raw/bls-musicians.json",
+        "sha256": "142b7ffc36327f375f3c6e56ea994e18399650624faca2d3b9209aa6613cb01a",
+        "bytes": 36239
+      },
+      "rights": [
+        {
+          "path": "evidence/rights/bls-musicians/bls-reuse-policy.json",
+          "sha256": "671addc89a91e61932a77f01e1d87a3f3d4c668959cfd81fe218ec72d4f814d9",
+          "bytes": 1780,
+          "url": "https://www.bls.gov/opub/copyright-information.htm"
+        }
+      ],
+      "attribution": "Source: BLS, Musicians and Singers: Work and Preparation; https://www.bls.gov/ooh/entertainment-and-sports/musicians-and-singers.htm",
+      "priorSourceSegments": [
+        {
+          "sourceStartUtf16": 0,
+          "sourceEndUtf16": 7324,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 7324,
+          "sha256": "8e824d12dbcda4bfe83163f793f161336f0537ac6a24870c0573fbfea680fb56",
+          "wordCount": 1114
+        }
+      ],
+      "level": "B2",
+      "levelCalibrated": false,
+      "estimatedMinutes": 30,
+      "phaseCandidates": [
+        "academic",
+        "integration",
+        "verification"
+      ],
+      "suggestedWindow": [
+        169,
+        280
+      ],
+      "teaching": {
+        "path": "teaching-texts/bls-musicians.txt",
+        "sha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+        "bytes": 7149,
+        "utf16Length": 7140,
+        "wordCount": 1086
+      },
+      "adaptation": {
+        "status": "explicit-teaching-adaptation-not-official-verbatim",
+        "inputSha256": "47b0335b4681092c5fa86a01191a49625796abe331b7b50fd4e66982b1a5823a",
+        "outputSha256": "1a2884912b9603327cfe7d852bec1ae9df63c83eedc9ba02b53c708e0591a3e7",
+        "offsetUnit": "UTF-16-code-unit",
+        "edits": [
+          {
+            "startUtf16": 29,
+            "endUtf16": 48,
+            "before": " About this section",
+            "after": "",
+            "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+            "teachingStartUtf16": 29,
+            "teachingEndUtf16": 29
+          },
+          {
+            "startUtf16": 2793,
+            "endUtf16": 2812,
+            "before": " About this section",
+            "after": "",
+            "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+            "teachingStartUtf16": 2774,
+            "teachingEndUtf16": 2774
+          },
+          {
+            "startUtf16": 2875,
+            "endUtf16": 3003,
+            "before": "Musicians and singers held about 170,400 jobs in 2025. Some of the largest employers of musicians and singers were as follows:\n\n",
+            "after": "",
+            "reason": "Omit the employment-count/table lead-in paragraph because the source selection contains no corresponding employer table.",
+            "teachingStartUtf16": 2837,
+            "teachingEndUtf16": 2837
+          },
+          {
+            "startUtf16": 3730,
+            "endUtf16": 3749,
+            "before": " About this section",
+            "after": "",
+            "reason": "Remove website navigation phrase from the heading; preserve the actual heading words.",
+            "teachingStartUtf16": 3564,
+            "teachingEndUtf16": 3564
+          }
+        ],
+        "map": [
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 0,
+            "inputEndUtf16": 29,
+            "teachingStartUtf16": 0,
+            "teachingEndUtf16": 29
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 29,
+            "inputEndUtf16": 48,
+            "teachingStartUtf16": 29,
+            "teachingEndUtf16": 29
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 48,
+            "inputEndUtf16": 2793,
+            "teachingStartUtf16": 29,
+            "teachingEndUtf16": 2774
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 2793,
+            "inputEndUtf16": 2812,
+            "teachingStartUtf16": 2774,
+            "teachingEndUtf16": 2774
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 2812,
+            "inputEndUtf16": 2875,
+            "teachingStartUtf16": 2774,
+            "teachingEndUtf16": 2837
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 2875,
+            "inputEndUtf16": 3003,
+            "teachingStartUtf16": 2837,
+            "teachingEndUtf16": 2837
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 3003,
+            "inputEndUtf16": 3730,
+            "teachingStartUtf16": 2837,
+            "teachingEndUtf16": 3564
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 3730,
+            "inputEndUtf16": 3749,
+            "teachingStartUtf16": 3564,
+            "teachingEndUtf16": 3564
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 3749,
+            "inputEndUtf16": 7325,
+            "teachingStartUtf16": 3564,
+            "teachingEndUtf16": 7140
+          }
+        ]
+      },
+      "active": false
+    },
+    {
+      "id": "nimh-psychotherapies",
+      "title": "Psychotherapies",
+      "sourceUrl": "https://www.nimh.nih.gov/health/topics/psychotherapies",
+      "original": {
+        "path": "source-originals/nimh-psychotherapies.full.txt",
+        "sha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+        "bytes": 9767
+      },
+      "selected": {
+        "path": "source-originals/nimh-psychotherapies.v92-selection.txt",
+        "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+        "bytes": 4559
+      },
+      "raw": {
+        "path": "evidence/raw/nimh-psychotherapies.json",
+        "sha256": "2d9249e56d97c84a3545f7aa7244ceba566c76f87babe84ae15123b2d8fdf013",
+        "bytes": 18781
+      },
+      "rights": [
+        {
+          "path": "evidence/rights/nimh-psychotherapies/agency-rights-1.json",
+          "sha256": "5489e2557302ab8e4dbc03f86aeddb0d31fc6048f2eb456081beb5706f650fff",
+          "bytes": 10691,
+          "url": "https://www.nimh.nih.gov/site-info/policies"
+        }
+      ],
+      "attribution": "Source: NIMH, Psychotherapies; original source URL retained. https://www.nimh.nih.gov/health/topics/psychotherapies",
+      "priorSourceSegments": [
+        {
+          "sourceStartUtf16": 0,
+          "sourceEndUtf16": 4554,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 4554,
+          "sha256": "fb7f338bc036731cf621a37c356f6217de3380b959600082154ab48ecd9028f2",
+          "wordCount": 676
+        }
+      ],
+      "level": "B2–C1",
+      "levelCalibrated": false,
+      "estimatedMinutes": 25,
+      "phaseCandidates": [
+        "academic",
+        "integration",
+        "verification"
+      ],
+      "suggestedWindow": [
+        220,
+        330
+      ],
+      "teaching": {
+        "path": "teaching-texts/nimh-psychotherapies.txt",
+        "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+        "bytes": 4559,
+        "utf16Length": 4555,
+        "wordCount": 676
+      },
+      "adaptation": {
+        "status": "unchanged-v92-selected-body",
+        "inputSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+        "outputSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+        "offsetUnit": "UTF-16-code-unit",
+        "edits": [],
+        "map": [
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 0,
+            "inputEndUtf16": 4555,
+            "teachingStartUtf16": 0,
+            "teachingEndUtf16": 4555
+          }
+        ]
+      },
+      "active": false
+    },
+    {
+      "id": "nhgri-dna",
+      "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+      "sourceUrl": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+      "original": {
+        "path": "source-originals/nhgri-dna.full.txt",
+        "sha256": "65e1d2613ba23a12c348747c5eb47228825b255266f01d793ef67dc10e067c2f",
+        "bytes": 12933
+      },
+      "selected": {
+        "path": "source-originals/nhgri-dna.v92-selection.txt",
+        "sha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251",
+        "bytes": 5223
+      },
+      "raw": {
+        "path": "evidence/raw/nhgri-dna.json",
+        "sha256": "ff32e191a0d5972a776f30e36a2d332ea4493bc67f4412f58fbd45fe2dabd2b3",
+        "bytes": 18088
+      },
+      "rights": [
+        {
+          "path": "evidence/rights/nhgri-dna/agency-rights-3.json",
+          "sha256": "0494602e0b21769c42c79ab370778666d41129629fd346047af271587e68d9f2",
+          "bytes": 6203,
+          "url": "https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright"
+        }
+      ],
+      "attribution": "Source: GENOME, Deoxyribonucleic Acid (DNA) Fact Sheet; original source URL retained. https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+      "priorSourceSegments": [
+        {
+          "sourceStartUtf16": 0,
+          "sourceEndUtf16": 1536,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 1536,
+          "sha256": "39cf689530be3e7a71475f56ddf0ade535988ae76157e40871cac1d07bf67551",
+          "wordCount": 248
+        },
+        {
+          "sourceStartUtf16": 2803,
+          "sourceEndUtf16": 3587,
+          "selectedStartUtf16": 1538,
+          "selectedEndUtf16": 2322,
+          "sha256": "15be2d609ac5fb5d8ecb854fb779a6ce36385004639e6b062c9996af17b7ab22",
+          "wordCount": 128
+        },
+        {
+          "sourceStartUtf16": 4375,
+          "sourceEndUtf16": 5014,
+          "selectedStartUtf16": 2324,
+          "selectedEndUtf16": 2963,
+          "sha256": "532a131c6102bc620811e21e529fbb7555dc0e1c51f3604de8ebc94656b7f713",
+          "wordCount": 111
+        },
+        {
+          "sourceStartUtf16": 5657,
+          "sourceEndUtf16": 6346,
+          "selectedStartUtf16": 2965,
+          "selectedEndUtf16": 3654,
+          "sha256": "d43f577fa977c2dc6965b2977d123dbf78748143d21ed49f84a7fb509eb80fe0",
+          "wordCount": 113
+        },
+        {
+          "sourceStartUtf16": 9791,
+          "sourceEndUtf16": 11357,
+          "selectedStartUtf16": 3656,
+          "selectedEndUtf16": 5222,
+          "sha256": "05970f58d4eee899ac44f67501ef26083dbe09ac29ab27aa4b6b7540e1f94dac",
+          "wordCount": 270
+        }
+      ],
+      "level": "B2–C1",
+      "levelCalibrated": false,
+      "estimatedMinutes": 30,
+      "phaseCandidates": [
+        "academic",
+        "integration",
+        "verification"
+      ],
+      "suggestedWindow": [
+        250,
+        350
+      ],
+      "teaching": {
+        "path": "teaching-texts/nhgri-dna.txt",
+        "sha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+        "bytes": 5122,
+        "utf16Length": 5122,
+        "wordCount": 854
+      },
+      "adaptation": {
+        "status": "explicit-teaching-adaptation-not-official-verbatim",
+        "inputSha256": "acd98d8d06c252f1fe94a44d67993ff569cc30df602d9e2787296fdc51ec3251",
+        "outputSha256": "ff01a870885a836b67ac31d50a033a8369c9cb840b816acc5e647ef416e65b74",
+        "offsetUnit": "UTF-16-code-unit",
+        "edits": [
+          {
+            "startUtf16": 2079,
+            "endUtf16": 2181,
+            "before": " For example, the sequence ATCGTT might instruct for blue eyes, while ATCGCT might instruct for brown.",
+            "after": "",
+            "reason": "Omit the simplified eye-colour sequence illustration; no question or vocabulary coverage may rely on this omitted sentence.",
+            "teachingStartUtf16": 2079,
+            "teachingEndUtf16": 2079
+          },
+          {
+            "startUtf16": 3687,
+            "endUtf16": 3709,
+            "before": "Scientist use the term",
+            "after": "Scientists use the term",
+            "reason": "Correct the source singular/plural printing error. This sentence is a marked teaching correction, not official original bytes.",
+            "teachingStartUtf16": 3585,
+            "teachingEndUtf16": 3608
+          }
+        ],
+        "map": [
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 0,
+            "inputEndUtf16": 2079,
+            "teachingStartUtf16": 0,
+            "teachingEndUtf16": 2079
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 2079,
+            "inputEndUtf16": 2181,
+            "teachingStartUtf16": 2079,
+            "teachingEndUtf16": 2079
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 2181,
+            "inputEndUtf16": 3687,
+            "teachingStartUtf16": 2079,
+            "teachingEndUtf16": 3585
+          },
+          {
+            "kind": "replacement",
+            "inputStartUtf16": 3687,
+            "inputEndUtf16": 3709,
+            "teachingStartUtf16": 3585,
+            "teachingEndUtf16": 3608
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 3709,
+            "inputEndUtf16": 5223,
+            "teachingStartUtf16": 3608,
+            "teachingEndUtf16": 5122
+          }
+        ]
+      },
+      "active": false
+    },
+    {
+      "id": "nist-atomic-television",
+      "title": "Watch NIST’s Atomic Television Live and in Color",
+      "sourceUrl": "https://www.nist.gov/news-events/news/2022/08/watch-nists-atomic-television-live-and-color",
+      "original": {
+        "path": "source-originals/nist-atomic-television.full.txt",
+        "sha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+        "bytes": 3124
+      },
+      "selected": {
+        "path": "source-originals/nist-atomic-television.v92-selection.txt",
+        "sha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c",
+        "bytes": 3125
+      },
+      "raw": {
+        "path": "evidence/raw/nist-atomic-television.json",
+        "sha256": "5d28c3ef96a74b7b4fdb2a2492b87a26c61ab2a4dd7e9b25908c8965859f931f",
+        "bytes": 8412
+      },
+      "rights": [
+        {
+          "path": "evidence/rights/nist-atomic-television/agency-rights-4.json",
+          "sha256": "e8f4e9785e1c808387e959399b970b9d9903fdca6bba06894c79d1d4c3326447",
+          "bytes": 7832,
+          "url": "https://www.nist.gov/copyrights-disclaimers"
+        },
+        {
+          "path": "evidence/rights/nist-atomic-television/nist-federal-work-rights.json",
+          "sha256": "857e2a59425191b1d96ff09bebed6ce1c44c1a07a39c1d124cf09f9e99ac2ec2",
+          "bytes": 21079,
+          "url": null
+        }
+      ],
+      "attribution": "Source: NIST, Watch NIST’s Atomic Television Live and in Color; original source URL retained. https://www.nist.gov/news-events/news/2022/08/watch-nists-atomic-television-live-and-color",
+      "priorSourceSegments": [
+        {
+          "sourceStartUtf16": 0,
+          "sourceEndUtf16": 3098,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 3098,
+          "sha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+          "wordCount": 485
+        }
+      ],
+      "level": "C1",
+      "levelCalibrated": false,
+      "estimatedMinutes": 25,
+      "phaseCandidates": [
+        "academic",
+        "integration",
+        "verification"
+      ],
+      "suggestedWindow": [
+        256,
+        350
+      ],
+      "teaching": {
+        "path": "teaching-texts/nist-atomic-television.txt",
+        "sha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+        "bytes": 3123,
+        "utf16Length": 3097,
+        "wordCount": 485
+      },
+      "adaptation": {
+        "status": "explicit-teaching-adaptation-not-official-verbatim",
+        "inputSha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c",
+        "outputSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+        "offsetUnit": "UTF-16-code-unit",
+        "edits": [
+          {
+            "startUtf16": 747,
+            "endUtf16": 748,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 747,
+            "teachingEndUtf16": 747
+          },
+          {
+            "startUtf16": 768,
+            "endUtf16": 769,
+            "before": "_",
+            "after": "",
+            "reason": "Remove visible Markdown italic delimiter only.",
+            "teachingStartUtf16": 767,
+            "teachingEndUtf16": 767
+          }
+        ],
+        "map": [
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 0,
+            "inputEndUtf16": 747,
+            "teachingStartUtf16": 0,
+            "teachingEndUtf16": 747
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 747,
+            "inputEndUtf16": 748,
+            "teachingStartUtf16": 747,
+            "teachingEndUtf16": 747
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 748,
+            "inputEndUtf16": 768,
+            "teachingStartUtf16": 747,
+            "teachingEndUtf16": 767
+          },
+          {
+            "kind": "omission",
+            "inputStartUtf16": 768,
+            "inputEndUtf16": 769,
+            "teachingStartUtf16": 767,
+            "teachingEndUtf16": 767
+          },
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 769,
+            "inputEndUtf16": 3099,
+            "teachingStartUtf16": 767,
+            "teachingEndUtf16": 3097
+          }
+        ]
+      },
+      "active": false
+    },
+    {
+      "id": "cbo-budget-2025",
+      "title": "Monthly Budget Review: Summary for Fiscal Year2025",
+      "sourceUrl": "https://www.cbo.gov/publication/61307",
+      "original": {
+        "path": "source-originals/cbo-budget-2025.full.txt",
+        "sha256": "8d409e119928bd96badb18609ce27e57367d059c34b8f3382aa16ac4203342de",
+        "bytes": 2513
+      },
+      "selected": {
+        "path": "source-originals/cbo-budget-2025.v92-selection.txt",
+        "sha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+        "bytes": 2514
+      },
+      "raw": {
+        "path": "evidence/raw/cbo-budget-2025.json",
+        "sha256": "1442eed840dae739377767b20795966bc657ee3bac76d387edd3f4a33b8de03d",
+        "bytes": 3951
+      },
+      "rights": [
+        {
+          "path": "evidence/rights/cbo-budget-2025/cbo-reuse-policy.json",
+          "sha256": "4c275580ca7f005246604a9cca21f192eea684bb120da628e396eed5ba52bed4",
+          "bytes": 5247,
+          "url": "https://www.cbo.gov/about/privacy"
+        }
+      ],
+      "attribution": "Source: CBO, Monthly Budget Review: Summary for Fiscal Year2025; https://www.cbo.gov/publication/61307",
+      "priorSourceSegments": [
+        {
+          "sourceStartUtf16": 0,
+          "sourceEndUtf16": 2501,
+          "selectedStartUtf16": 0,
+          "selectedEndUtf16": 2501,
+          "sha256": "8d409e119928bd96badb18609ce27e57367d059c34b8f3382aa16ac4203342de",
+          "wordCount": 364
+        }
+      ],
+      "level": "B2–C1",
+      "levelCalibrated": false,
+      "estimatedMinutes": 20,
+      "phaseCandidates": [
+        "academic",
+        "integration",
+        "verification"
+      ],
+      "suggestedWindow": [
+        240,
+        350
+      ],
+      "teaching": {
+        "path": "teaching-texts/cbo-budget-2025.txt",
+        "sha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+        "bytes": 2514,
+        "utf16Length": 2502,
+        "wordCount": 364
+      },
+      "adaptation": {
+        "status": "unchanged-v92-selected-body",
+        "inputSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+        "outputSha256": "06d39ffc99f82ae5171f2e2c7244f43296f820a4715627457d04b92d2576a2a5",
+        "offsetUnit": "UTF-16-code-unit",
+        "edits": [],
+        "map": [
+          {
+            "kind": "unchanged",
+            "inputStartUtf16": 0,
+            "inputEndUtf16": 2502,
+            "teachingStartUtf16": 0,
+            "teachingEndUtf16": 2502
+          }
+        ]
+      },
+      "active": false
+    }
+  ]
+}

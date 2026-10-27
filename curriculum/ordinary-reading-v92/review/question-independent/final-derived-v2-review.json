@@ -1,0 +1,399 @@
+{
+  "schema": 1,
+  "id": "ordinary-v92-independent-derived-v2-final-review",
+  "phase2V1ManifestSha256": "18a6ac6dbb93236bed7daa110fcc75a680ecc908eab96cc5500fd1f39de0f8f0",
+  "authorFreezeSha256": "481410315f1822a40cabf5dded07efcad2a42fbb9eb2f5c2279c253db76ebde4",
+  "authorOriginalFilesVerified": 68,
+  "authorCopiedFilesVerified": 68,
+  "derivedIndexSha256": "fd6800ea2e8f72e91a6edb460c30996ba29211f2bb3176d174b4d312e9b45eab",
+  "loader": {
+    "path": "tools/build-ordinary-reading-course.cjs",
+    "sha256": "696e7005bc10f8a640233061ae095577107010222f824210bf8ad213358ca5ed",
+    "reviewedFunction": "deriveAuthorMaterial",
+    "pureFunctionOnlyCalled": true,
+    "loadOrAppendOrBuildCalled": false
+  },
+  "assessmentSha256": "1213fd82e082cc0979c07c9cd2084c73b08b3194524c05d44ed2232514c6e8d4",
+  "materials": [
+    {
+      "sourceId": "bls-athletes",
+      "authorMaterial": {
+        "path": "author-v1/materials/bls-athletes-reading.json",
+        "sha256": "72fc820f5601b2be20dbfb36be92af3911f6a397bd86586313d7697d8aa814b3"
+      },
+      "derivedMaterial": {
+        "path": "materials/bls-athletes-reading.json",
+        "sha256": "ae61c417928a0a58841278c91d8df674caf77af798904ef1982c48528c24ff53",
+        "bytes": 27834
+      },
+      "materialContentHash": "841b2a5df0f4a02bef4acca5018522ce5029306c3cfe9af000e741017b63e7ec",
+      "questionsSha256": "3178bbeda25e102dd50fd98351aa0c4c82ac01468e2e903f4801b5703aeb636b",
+      "questionVersion": "t1-q2",
+      "exactDiff": [
+        {
+          "path": "version",
+          "before": "t1-q1",
+          "after": "t1-q2"
+        },
+        {
+          "path": "questions.3.prompt",
+          "before": "Choose TRUE, FALSE or NOT GIVEN: Some professional athletes may have to travel internationally for competitions.",
+          "after": "Choose TRUE, FALSE or NOT GIVEN: Some athletes may have to travel internationally for competitions."
+        },
+        {
+          "path": "source.questionSetId",
+          "before": "bls-athletes-ordinary-reading-v92-q1",
+          "after": "bls-athletes-ordinary-reading-v92-q2"
+        },
+        {
+          "path": "source.questionSetVersion",
+          "before": "1",
+          "after": "2"
+        },
+        {
+          "path": "source.verification",
+          "before": "author-v1-review-pending",
+          "after": "reviewed"
+        },
+        {
+          "path": "source.questionContractHash",
+          "before": "2369fd6909e8cf6105bc354d4d86c3534e833d072a0072d12fa1318c33398a21",
+          "after": "3178bbeda25e102dd50fd98351aa0c4c82ac01468e2e903f4801b5703aeb636b"
+        },
+        {
+          "path": "source.contentHash",
+          "before": "ad90f4877b0d593c5c3f761c04c92a1add82561ebf1aef39203ab1f2f19c5e39",
+          "after": "e202da210acdff710d8c9fa0deb0c18f8de12f37a9507e2e6024cef8824daa1d"
+        }
+      ],
+      "allAnswersUnchanged": true,
+      "allTextUnchanged": true,
+      "preservedAuthorContextPath": "author-v1/contexts/bls-athletes.json",
+      "preservedAuthorContextSha256": "5988deb38c527a61a82d48aa21379375b9360efcbc002d489567e06ad6d73d17",
+      "separateRootContextCatalogReviewed": false,
+      "loaderExactMatch": true,
+      "snapshotPath": "derived-v2-snapshot/bls-athletes-reading.json"
+    },
+    {
+      "sourceId": "bls-musicians",
+      "authorMaterial": {
+        "path": "author-v1/materials/bls-musicians-reading.json",
+        "sha256": "6db1f2c2620cf4ca076724ef1cd2984374c3e632c4853b8258240181078cfd24"
+      },
+      "derivedMaterial": {
+        "path": "materials/bls-musicians-reading.json",
+        "sha256": "429218dba000d56e4e18741bc206087257698c239659fbee836affe52946cc12",
+        "bytes": 27338
+      },
+      "materialContentHash": "f8fbf04090e5c5fe88925aaa76b019df181977735612c1751c179ebc46948883",
+      "questionsSha256": "6f0c3b55268e5e84beae3b412ec6a613e7e02639aa78bc7673d89ec7c8fec4d6",
+      "questionVersion": "t1-q1",
+      "exactDiff": [
+        {
+          "path": "source.verification",
+          "before": "author-v1-review-pending",
+          "after": "reviewed"
+        },
+        {
+          "path": "source.contentHash",
+          "before": "62aac4398380f2d11e514458eedb229f4534f0d65ea11c8e0ab6fa4c31ba598d",
+          "after": "44a4c2d9c237230840500972b1225cc1ecc1985e67249aacc180588cec21278a"
+        }
+      ],
+      "allAnswersUnchanged": true,
+      "allTextUnchanged": true,
+      "preservedAuthorContextPath": "author-v1/contexts/bls-musicians.json",
+      "preservedAuthorContextSha256": "7b49a38bf40c889d79093e75f807e9f9bc373f9eb898feeb606a7a56f3083614",
+      "separateRootContextCatalogReviewed": false,
+      "loaderExactMatch": true,
+      "snapshotPath": "derived-v2-snapshot/bls-musicians-reading.json"
+    },
+    {
+      "sourceId": "nimh-psychotherapies",
+      "authorMaterial": {
+        "path": "author-v1/materials/nimh-psychotherapies-reading.json",
+        "sha256": "549cb24fd3f2fa104e967c62082de48f6ccacae84e38bbb0b579a57402fb99b7"
+      },
+      "derivedMaterial": {
+        "path": "materials/nimh-psychotherapies-reading.json",
+        "sha256": "28a0f82a8ca3e78aa99c563e120ea16d3cd0543fdb26c725b440385ece0ded50",
+        "bytes": 25274
+      },
+      "materialContentHash": "39ab32387c58f37966a7c6231908aaae4120655272488f7bc4b5e997be05efde",
+      "questionsSha256": "be11a39aabc57dcacd9a2508ff99711ab5d24784ca3a50586ca70ee2f3359e71",
+      "questionVersion": "t1-q1",
+      "exactDiff": [
+        {
+          "path": "source.verification",
+          "before": "author-v1-review-pending",
+          "after": "reviewed"
+        },
+        {
+          "path": "source.normalization.officialVerbatim",
+          "before": true,
+          "after": false
+        },
+        {
+          "path": "source.contentHash",
+          "before": "e2fddfd2d030ff3ee1a8f8e9f94cd412dcb8ded34c2f22779105ac878cc002e8",
+          "after": "df84c91e673129ab1b93c2403ff802361c9a3535dbc059ac01f87acf187aab8a"
+        }
+      ],
+      "allAnswersUnchanged": true,
+      "allTextUnchanged": true,
+      "preservedAuthorContextPath": "author-v1/contexts/nimh-psychotherapies.json",
+      "preservedAuthorContextSha256": "bdef1d8dec1fef7d1542e1e9c7918e920d21dfd0ddb319c09aaf7b08d9ebc0fc",
+      "separateRootContextCatalogReviewed": false,
+      "loaderExactMatch": true,
+      "snapshotPath": "derived-v2-snapshot/nimh-psychotherapies-reading.json"
+    },
+    {
+      "sourceId": "nhgri-dna",
+      "authorMaterial": {
+        "path": "author-v1/materials/nhgri-dna-reading.json",
+        "sha256": "fa536753f8e60eac185d4bed4451e6b0eb79cc12f208586c999592263103590e"
+      },
+      "derivedMaterial": {
+        "path": "materials/nhgri-dna-reading.json",
+        "sha256": "31fc7ce24941ed5effc165c1e5bf189742e8ea0d82456e49211ab4d331044261",
+        "bytes": 25759
+      },
+      "materialContentHash": "8feb33ee48af669ad1c4d7e77b126ab81b659f0212638ba738c0c7c0da381b04",
+      "questionsSha256": "599b019cce430cee5da88feda9ddb3cb5e796f644a92c3f9b08332d328a70d20",
+      "questionVersion": "t1-q1",
+      "exactDiff": [
+        {
+          "path": "source.verification",
+          "before": "author-v1-review-pending",
+          "after": "reviewed"
+        },
+        {
+          "path": "source.contentHash",
+          "before": "7edd86af388037534a31af0f643d5a183d78b6638996e814898d2c5acad2f83d",
+          "after": "e9b4e501be2c438222425db198a9efde400bffec9f84d508d72c464dab7c1e6c"
+        }
+      ],
+      "allAnswersUnchanged": true,
+      "allTextUnchanged": true,
+      "preservedAuthorContextPath": "author-v1/contexts/nhgri-dna.json",
+      "preservedAuthorContextSha256": "a1b68193c44a0946e667de394b147fede47ec5dbfc9f44720dbbdafb357cb9af",
+      "separateRootContextCatalogReviewed": false,
+      "loaderExactMatch": true,
+      "snapshotPath": "derived-v2-snapshot/nhgri-dna-reading.json"
+    },
+    {
+      "sourceId": "nist-atomic-television",
+      "authorMaterial": {
+        "path": "author-v1/materials/nist-atomic-television-reading.json",
+        "sha256": "3f9d7ccb0fc8e6e63d60a2a4fad0de18058c243c68d087b6d37e9a954cd9c3e3"
+      },
+      "derivedMaterial": {
+        "path": "materials/nist-atomic-television-reading.json",
+        "sha256": "9da1bc5ba48453325e0c51ed4d3def0368b1728dbe6de0784b2d3c23a9ab93ba",
+        "bytes": 23800
+      },
+      "materialContentHash": "c639d6bfafeab563b66f1a429bfb53b644b2f22e10a530935ce4ed6790456e72",
+      "questionsSha256": "1d146a8fc24f637100486d3563c17f8470b2b8ff7a0525e1e455c73963f9b061",
+      "questionVersion": "t1-q1",
+      "exactDiff": [
+        {
+          "path": "source.verification",
+          "before": "author-v1-review-pending",
+          "after": "reviewed"
+        },
+        {
+          "path": "source.contentHash",
+          "before": "f854f662bc30791811742484988bcc77e992e89efa36ebec449c4cf68afce0b8",
+          "after": "c9615381ccd019521ad975f2bb548284276ddd7aa8d525f23abc21d10380b7a0"
+        }
+      ],
+      "allAnswersUnchanged": true,
+      "allTextUnchanged": true,
+      "preservedAuthorContextPath": "author-v1/contexts/nist-atomic-television.json",
+      "preservedAuthorContextSha256": "f1cb1dd1a58b752eb33342adbee7c4cba8bb585405b41f2e1c4f7324ba2cddb9",
+      "separateRootContextCatalogReviewed": false,
+      "loaderExactMatch": true,
+      "snapshotPath": "derived-v2-snapshot/nist-atomic-television-reading.json"
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "authorMaterial": {
+        "path": "author-v1/materials/cbo-budget-2025-reading.json",
+        "sha256": "5dd7bd9614803e8df0ee29de1a41c0dfc43d5c67102ec8dd073709997d6e5d47"
+      },
+      "derivedMaterial": {
+        "path": "materials/cbo-budget-2025-reading.json",
+        "sha256": "35051aeeaa965d97d3ba29f26f10272c953767335ea6785b58ae07857905aaa6",
+        "bytes": 26792
+      },
+      "materialContentHash": "47fc70cc1013d877dea4c7ed6810d0849e87c8873e2ec85d778ce0d50fd679cd",
+      "questionsSha256": "88cb762d5163114a2517c44c4908262915e98b77087ca8e97b4b38c828224549",
+      "questionVersion": "t1-q2",
+      "exactDiff": [
+        {
+          "path": "version",
+          "before": "t1-q1",
+          "after": "t1-q2"
+        },
+        {
+          "path": "questions.2.explanation",
+          "before": "Those increases紧接支出上升及其领域的描述，指重大福利项目、债务净利息等方面的支出增加。不要跳回收入句，也不能把随后说的decreases当成increases。\n\n选项“The rises in individual income tax collections and customs duties.”：这是更前面的收入部分，最近的先行内容已转为outlays。\n选项“The increases in the two years’ gross domestic product.”：该句没有把两个年度GDP增长列为These的先行内容。\n选项“The spending increases in areas including major benefit programmes and debt interest.”：正确：回指前一句支出及其增加领域。\n选项“The reductions for student loan programmes and deposit insurance.”：reductions/decreases与increases方向相反，是部分抵消增加的项目。",
+          "after": "Those increases紧接支出上升及其领域的描述，指重大福利项目、债务净利息等方面的支出增加。不要跳回收入句，也不能把随后说的decreases当成increases。\n\n选项“The rises in individual income tax collections and customs duties.”：这是更前面的收入部分，最近的先行内容已转为outlays。\n选项“The increases in the two years’ gross domestic product.”：该句没有把两个年度GDP增长列为Those increases的先行内容。\n选项“The spending increases in areas including major benefit programmes and debt interest.”：正确：回指前一句支出及其增加领域。\n选项“The reductions for student loan programmes and deposit insurance.”：reductions/decreases与increases方向相反，是部分抵消增加的项目。"
+        },
+        {
+          "path": "questions.2.distractorReasons.1",
+          "before": "该句没有把两个年度GDP增长列为These的先行内容。",
+          "after": "该句没有把两个年度GDP增长列为Those increases的先行内容。"
+        },
+        {
+          "path": "source.questionSetId",
+          "before": "cbo-budget-2025-ordinary-reading-v92-q1",
+          "after": "cbo-budget-2025-ordinary-reading-v92-q2"
+        },
+        {
+          "path": "source.questionSetVersion",
+          "before": "1",
+          "after": "2"
+        },
+        {
+          "path": "source.verification",
+          "before": "author-v1-review-pending",
+          "after": "reviewed"
+        },
+        {
+          "path": "source.normalization.officialVerbatim",
+          "before": true,
+          "after": false
+        },
+        {
+          "path": "source.questionContractHash",
+          "before": "40f9c3b77ee02cf0048eccb79b3c9d230874242733b185f7e324ee03d9099dd2",
+          "after": "88cb762d5163114a2517c44c4908262915e98b77087ca8e97b4b38c828224549"
+        },
+        {
+          "path": "source.contentHash",
+          "before": "80cadfdc97c6efef09713b18589966de0cbee736b71b89626c8385c48552f7ed",
+          "after": "00fa158e1aa37fde75ec6762775365e507afe955c899e4cbca8171bbbbc999cc"
+        }
+      ],
+      "allAnswersUnchanged": true,
+      "allTextUnchanged": true,
+      "preservedAuthorContextPath": "author-v1/contexts/cbo-budget-2025.json",
+      "preservedAuthorContextSha256": "e8e06f07655afa0d5d910af332c33fbc6839411a4f94945e8fe1c69a54919387",
+      "separateRootContextCatalogReviewed": false,
+      "loaderExactMatch": true,
+      "snapshotPath": "derived-v2-snapshot/cbo-budget-2025-reading.json"
+    }
+  ],
+  "changedQuestionGraderCases": [
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q4",
+      "supplied": "TRUE",
+      "correct": true,
+      "expectedCorrect": true,
+      "withinLimit": true
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q4",
+      "supplied": "FALSE",
+      "correct": false,
+      "expectedCorrect": false,
+      "withinLimit": true
+    },
+    {
+      "sourceId": "bls-athletes",
+      "questionId": "q4",
+      "supplied": "NOT GIVEN",
+      "correct": false,
+      "expectedCorrect": false,
+      "withinLimit": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q3",
+      "supplied": "The rises in individual income tax collections and customs duties.",
+      "correct": false,
+      "expectedCorrect": false,
+      "withinLimit": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q3",
+      "supplied": "The increases in the two years’ gross domestic product.",
+      "correct": false,
+      "expectedCorrect": false,
+      "withinLimit": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q3",
+      "supplied": "The spending increases in areas including major benefit programmes and debt interest.",
+      "correct": true,
+      "expectedCorrect": true,
+      "withinLimit": true
+    },
+    {
+      "sourceId": "cbo-budget-2025",
+      "questionId": "q3",
+      "supplied": "The reductions for student loan programmes and deposit insurance.",
+      "correct": false,
+      "expectedCorrect": false,
+      "withinLimit": true
+    }
+  ],
+  "derivedGuardRejections": 2,
+  "sourceHashClosure": {
+    "beforeMismatches": 4,
+    "afterMismatches": 0,
+    "redObservationSha256": "8c9a94e008221b2bc151d11a51fdeafca6f643eb136887adae3af86f78be92d9",
+    "greenObservationSha256": "28fa593ee5a7e9d0b0713ea668393bb5965af813c39289a3f0a10e291e63a5a6"
+  },
+  "issues": [
+    {
+      "id": "ATHLETES-Q4-SCOPE",
+      "status": "resolved",
+      "change": "Removed professional; subject athletes now matches quoted scope; TRUE preserved."
+    },
+    {
+      "id": "CBO-Q3-DEMONSTRATIVE-TYPO",
+      "status": "resolved",
+      "change": "Both explanation and matching distractor reason now use Those increases; key preserved."
+    },
+    {
+      "id": "DECLARED-SOURCE-HASH-CLOSURE",
+      "status": "resolved",
+      "change": "All six derived sources use the existing compiler JSON payload hash, while original author bytes remain. Four previously mismatched derived source hashes now close; load explicitly checks fields and question/content closure."
+    }
+  ],
+  "summary": {
+    "ordinaryReadingMaterialsReviewed": 6,
+    "originalBlindAnswers": 48,
+    "originalBlindAgreement": 48,
+    "newQuestionPromptsChanged": 1,
+    "newExplanationQuestionChanged": 1,
+    "answerKeysChanged": 0,
+    "textsChanged": 0,
+    "preservedReviewedAuthorContextCopiesChanged": 0,
+    "priorGrammarReviewed": 12,
+    "priorWordPositionsReviewed": 27,
+    "allSixExactDerivedHashesVerified": true,
+    "remainingQuestionReviewFindings": 0,
+    "remainingKnownSourceHashClosureFindings": 0,
+    "approvedScope": "ordinary-reading-content-and-explanations-only",
+    "separateRootReleaseOrContextCatalogAdmissionPerformed": false,
+    "buildAdmissionPerformed": false,
+    "activation": 0,
+    "mastery": 0
+  },
+  "scope": {
+    "sourceOrAuthorPackageWrites": 0,
+    "rootCandidateOrNASWrites": 0,
+    "realLearnerDataRead": false,
+    "browserUsed": false,
+    "audioListening": false,
+    "humanCalibration": false,
+    "finalOrFreshEvidenceReleased": false
+  }
+}

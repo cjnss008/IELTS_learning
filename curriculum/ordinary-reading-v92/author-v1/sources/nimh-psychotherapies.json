@@ -1,0 +1,75 @@
+{
+  "id": "nimh-psychotherapies",
+  "title": "Psychotherapies",
+  "sourceUrl": "https://www.nimh.nih.gov/health/topics/psychotherapies",
+  "original": {
+    "path": "source-originals/nimh-psychotherapies.full.txt",
+    "sha256": "8d4c2b03ccdd2845bae4f2782b268e1968bcbb44ad6064fc073db314a7fb0246",
+    "bytes": 9767
+  },
+  "selected": {
+    "path": "source-originals/nimh-psychotherapies.v92-selection.txt",
+    "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+    "bytes": 4559
+  },
+  "raw": {
+    "path": "evidence/raw/nimh-psychotherapies.json",
+    "sha256": "2d9249e56d97c84a3545f7aa7244ceba566c76f87babe84ae15123b2d8fdf013",
+    "bytes": 18781
+  },
+  "rights": [
+    {
+      "path": "evidence/rights/nimh-psychotherapies/agency-rights-1.json",
+      "sha256": "5489e2557302ab8e4dbc03f86aeddb0d31fc6048f2eb456081beb5706f650fff",
+      "bytes": 10691,
+      "url": "https://www.nimh.nih.gov/site-info/policies"
+    }
+  ],
+  "attribution": "Source: NIMH, Psychotherapies; original source URL retained. https://www.nimh.nih.gov/health/topics/psychotherapies",
+  "priorSourceSegments": [
+    {
+      "sourceStartUtf16": 0,
+      "sourceEndUtf16": 4554,
+      "selectedStartUtf16": 0,
+      "selectedEndUtf16": 4554,
+      "sha256": "fb7f338bc036731cf621a37c356f6217de3380b959600082154ab48ecd9028f2",
+      "wordCount": 676
+    }
+  ],
+  "level": "B2–C1",
+  "levelCalibrated": false,
+  "estimatedMinutes": 25,
+  "phaseCandidates": [
+    "academic",
+    "integration",
+    "verification"
+  ],
+  "suggestedWindow": [
+    220,
+    330
+  ],
+  "teaching": {
+    "path": "teaching-texts/nimh-psychotherapies.txt",
+    "sha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+    "bytes": 4559,
+    "utf16Length": 4555,
+    "wordCount": 676
+  },
+  "adaptation": {
+    "status": "unchanged-v92-selected-body",
+    "inputSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+    "outputSha256": "87ec99c797cd2615dca651b5382abf13845d8d8b91a1292a327d0c83777e9076",
+    "offsetUnit": "UTF-16-code-unit",
+    "edits": [],
+    "map": [
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 0,
+        "inputEndUtf16": 4555,
+        "teachingStartUtf16": 0,
+        "teachingEndUtf16": 4555
+      }
+    ]
+  },
+  "active": false
+}

@@ -1,0 +1,105 @@
+{
+  "scope": "read-only candidate; synthetic receipts are not approval",
+  "pins": {
+    "tools/build-ordinary-reading-course.cjs": "735d79ecc352c26bceb2fe5da5dcdaabf62a93e76cc3ccea6226039f95c8c793",
+    "tools/append-ordinary-reading-plan.cjs": "17d6a1c5d060344eb11c3ceb55cc002d1c309650779cd9c358723265edb440cf",
+    "tools/build-curriculum.cjs": "70196610e623bffc4d5869e630f116eeb1955e9510f825b8c0a14a7ac8d169ff",
+    "assets/public-course-planner.js": "3876630638a8f1c6563a8cdb34f3138c7e97e1d5a667bd34cf8685fdc17bd6c2"
+  },
+  "control": {
+    "materials": 6,
+    "questions": 48
+  },
+  "negativeOffsets": {
+    "accepted": true,
+    "grammar": -3457,
+    "word": -7177
+  },
+  "composition": {
+    "oldAssignments": 80,
+    "newAssignments": [
+      {
+        "id": "public-ordinary-v92-bls-athletes-reading",
+        "day": 256,
+        "minutes": 236
+      },
+      {
+        "id": "public-ordinary-v92-bls-musicians-reading",
+        "day": 257,
+        "minutes": 274
+      },
+      {
+        "id": "public-ordinary-v92-cbo-budget-2025-reading",
+        "day": 259,
+        "minutes": 284
+      },
+      {
+        "id": "public-ordinary-v92-nhgri-dna-reading",
+        "day": 260,
+        "minutes": 279
+      },
+      {
+        "id": "public-ordinary-v92-nist-atomic-television-reading",
+        "day": 261,
+        "minutes": 269
+      },
+      {
+        "id": "public-ordinary-v92-nimh-psychotherapies-reading",
+        "day": 267,
+        "minutes": 274
+      }
+    ],
+    "oldAssignmentsExact": true,
+    "replanValid": true,
+    "replanned": [
+      {
+        "id": "public-ordinary-v92-bls-athletes-reading",
+        "day": 173,
+        "window": [
+          169,
+          280
+        ]
+      },
+      {
+        "id": "public-ordinary-v92-bls-musicians-reading",
+        "day": 174,
+        "window": [
+          169,
+          280
+        ]
+      },
+      {
+        "id": "public-ordinary-v92-cbo-budget-2025-reading",
+        "day": 201,
+        "window": [
+          240,
+          350
+        ]
+      },
+      {
+        "id": "public-ordinary-v92-nhgri-dna-reading",
+        "day": 203,
+        "window": [
+          250,
+          350
+        ]
+      },
+      {
+        "id": "public-ordinary-v92-nimh-psychotherapies-reading",
+        "day": 204,
+        "window": [
+          220,
+          330
+        ]
+      },
+      {
+        "id": "public-ordinary-v92-nist-atomic-television-reading",
+        "day": 207,
+        "window": [
+          256,
+          350
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "nist-atomic-television",
+  "title": "Watch NIST’s Atomic Television Live and in Color",
+  "sourceUrl": "https://www.nist.gov/news-events/news/2022/08/watch-nists-atomic-television-live-and-color",
+  "original": {
+    "path": "source-originals/nist-atomic-television.full.txt",
+    "sha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+    "bytes": 3124
+  },
+  "selected": {
+    "path": "source-originals/nist-atomic-television.v92-selection.txt",
+    "sha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c",
+    "bytes": 3125
+  },
+  "raw": {
+    "path": "evidence/raw/nist-atomic-television.json",
+    "sha256": "5d28c3ef96a74b7b4fdb2a2492b87a26c61ab2a4dd7e9b25908c8965859f931f",
+    "bytes": 8412
+  },
+  "rights": [
+    {
+      "path": "evidence/rights/nist-atomic-television/agency-rights-4.json",
+      "sha256": "e8f4e9785e1c808387e959399b970b9d9903fdca6bba06894c79d1d4c3326447",
+      "bytes": 7832,
+      "url": "https://www.nist.gov/copyrights-disclaimers"
+    },
+    {
+      "path": "evidence/rights/nist-atomic-television/nist-federal-work-rights.json",
+      "sha256": "857e2a59425191b1d96ff09bebed6ce1c44c1a07a39c1d124cf09f9e99ac2ec2",
+      "bytes": 21079,
+      "url": null
+    }
+  ],
+  "attribution": "Source: NIST, Watch NIST’s Atomic Television Live and in Color; original source URL retained. https://www.nist.gov/news-events/news/2022/08/watch-nists-atomic-television-live-and-color",
+  "priorSourceSegments": [
+    {
+      "sourceStartUtf16": 0,
+      "sourceEndUtf16": 3098,
+      "selectedStartUtf16": 0,
+      "selectedEndUtf16": 3098,
+      "sha256": "f8e19e3ab5cbbae6422c2a7e4ac5848437f95886009bcc156ab0597c97d44090",
+      "wordCount": 485
+    }
+  ],
+  "level": "C1",
+  "levelCalibrated": false,
+  "estimatedMinutes": 25,
+  "phaseCandidates": [
+    "academic",
+    "integration",
+    "verification"
+  ],
+  "suggestedWindow": [
+    256,
+    350
+  ],
+  "teaching": {
+    "path": "teaching-texts/nist-atomic-television.txt",
+    "sha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+    "bytes": 3123,
+    "utf16Length": 3097,
+    "wordCount": 485
+  },
+  "adaptation": {
+    "status": "explicit-teaching-adaptation-not-official-verbatim",
+    "inputSha256": "9110d4f65dd79720af057b61fbc6098facfb6d47e080fe55b6088c5fcdd4315c",
+    "outputSha256": "8a63eae75e62b0ac70e470e9c927b0bb8e9c804cda584e176c4a7ac0334cbe4a",
+    "offsetUnit": "UTF-16-code-unit",
+    "edits": [
+      {
+        "startUtf16": 747,
+        "endUtf16": 748,
+        "before": "_",
+        "after": "",
+        "reason": "Remove visible Markdown italic delimiter only.",
+        "teachingStartUtf16": 747,
+        "teachingEndUtf16": 747
+      },
+      {
+        "startUtf16": 768,
+        "endUtf16": 769,
+        "before": "_",
+        "after": "",
+        "reason": "Remove visible Markdown italic delimiter only.",
+        "teachingStartUtf16": 767,
+        "teachingEndUtf16": 767
+      }
+    ],
+    "map": [
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 0,
+        "inputEndUtf16": 747,
+        "teachingStartUtf16": 0,
+        "teachingEndUtf16": 747
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 747,
+        "inputEndUtf16": 748,
+        "teachingStartUtf16": 747,
+        "teachingEndUtf16": 747
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 748,
+        "inputEndUtf16": 768,
+        "teachingStartUtf16": 747,
+        "teachingEndUtf16": 767
+      },
+      {
+        "kind": "omission",
+        "inputStartUtf16": 768,
+        "inputEndUtf16": 769,
+        "teachingStartUtf16": 767,
+        "teachingEndUtf16": 767
+      },
+      {
+        "kind": "unchanged",
+        "inputStartUtf16": 769,
+        "inputEndUtf16": 3099,
+        "teachingStartUtf16": 767,
+        "teachingEndUtf16": 3097
+      }
+    ]
+  },
+  "active": false
+}
