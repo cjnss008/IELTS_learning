@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "version": "0.0.100",
+  "status": "development-candidate",
+  "purpose": "read-only-lexical-clue-triage",
+  "scope": "inactive-public-proposal-only",
+  "tests": {
+    "targeted": {
+      "total": 17,
+      "passed": 17,
+      "failed": 0
+    },
+    "independentStructuralVariants": {
+      "total": 5,
+      "passed": 5,
+      "scope": "pinned source and trusted public snapshots"
+    },
+    "installedNasPublicCandidate": {
+      "days": 3,
+      "proposalSha256": "035d48b64d5bb55dbe3edc86630db80d3fed5eeb3d4a6a1eb2ba8eb53764400b"
+    },
+    "static": {
+      "pages": 27,
+      "references": 865,
+      "scripts": 129,
+      "lessons": 52,
+      "legacyVocabularyAudio": 360
+    },
+    "gitDiffCheck": "passed",
+    "fullRegression": "not repeated for developer-only read-only tool"
+  },
+  "familyRelease": "not-deployed",
+  "realBrowser": "not run; earlier automation rejected by saved permissions or management policy",
+  "realLearnerRecords": "not accessed",
+  "realAudio": "not reviewed",
+  "limitations": [
+    "self-declared hashes check consistency, not authenticity",
+    "trusted exclusive public snapshot required",
+    "heuristic warnings require contextual review",
+    "365-day course and long-term storage are not complete"
+  ],
+  "runtimeContract": "unchanged"
+}
