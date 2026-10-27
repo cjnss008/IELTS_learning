@@ -91,7 +91,9 @@ function fields(material) {
   return result;
 }
 
-function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignments, assessment, inputPins }) {
+function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignments, assessment, inputPins }, options = {}) {
+  const dailyTarget = options.dailyTarget === undefined ? 30 : options.dailyTarget;
+  assert.ok(dailyTarget === 30 || dailyTarget === 40, 'daily target must be 30 or 40');
   assert.equal(days.length, 365, '365 course days required');
   const numberedDays = new Set(days.map(day => day?.day));
   assert.equal(numberedDays.size, 365, 'course day numbers must be unique');
@@ -171,7 +173,7 @@ function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignme
     // The final day can have authoring candidates, but the existing annual
     // prerequisite must still be checked before any future runtime adoption.
     const available = candidates.filter(row => !alreadySelected.has(row.id));
-    const selected = available.slice(0, 30);
+    const selected = available.slice(0, dailyTarget);
     selected.forEach(row => alreadySelected.add(row.id));
     const present = new Set(refs.filter(row => row.status === 'candidate-only' && describe(byId.get(row.materialId)).fields.length)
       .map(row => byId.get(row.materialId).skill));
@@ -180,8 +182,8 @@ function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignme
       sixSkillTasksPresent: ['vocabulary', ...SKILLS].every(skill => day.tasks.some(task => task.id === skill)),
       missingEligiblePracticeSkills: SKILLS.filter(skill => !present.has(skill)),
       plannedSources: refs, literalInputCandidates: candidates.length, availableCandidatesBeforeSelection: available.length,
-      targetCount: 30, selectedCandidateCount: selected.length,
-      candidateShortfall: 30 - selected.length,
+      targetCount: dailyTarget, selectedCandidateCount: selected.length,
+      candidateShortfall: dailyTarget - selected.length,
       selectedCandidates: selected.map(row => ({
         canonicalId: row.id, headword: row.word, rank: row.rank, literalSkillCount: Object.keys(row.links).length,
         links: row.links, meaningStatus: 'unreviewed-context-sense', actualLearnerNewness: 'unknown', mastery: false
@@ -193,13 +195,16 @@ function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignme
   return {
     schema: 1, status: 'authoring-triage-only-inactive', inputPins,
     selectionHeuristic: 'greedy literal cross-skill overlap then reference rank; not an optimal allocation or learner history',
-    referenceHeadwords: wordEntries.length, indexedReferenceHeadwords: index.indexed,
+    dailyTarget, referenceHeadwords: wordEntries.length, indexedReferenceHeadwords: index.indexed,
     unsupportedHeadwords: index.unsupported, days: outputDays.length,
     minimumAdditionalHeadwordsForThirtyDaily: Math.max(0, outputDays.length * 30 - wordEntries.length),
+    minimumAdditionalHeadwordsForTarget: Math.max(0, outputDays.length * dailyTarget - wordEntries.length),
     uniqueLiteralInputCandidates: allCandidateIds.size, uniqueSelectedCandidates: alreadySelected.size,
-    daysWithThirtyCandidates: outputDays.filter(day => day.candidateShortfall === 0).length,
+    daysWithThirtyCandidates: outputDays.filter(day => day.selectedCandidateCount >= 30).length,
+    daysMeetingTarget: outputDays.filter(day => day.candidateShortfall === 0).length,
     totalCandidateShortfall: outputDays.reduce((sum, day) => sum + day.candidateShortfall, 0),
-    ordinaryDaysWithThirtyCandidates: ordinary.filter(day => day.candidateShortfall === 0).length,
+    ordinaryDaysWithThirtyCandidates: ordinary.filter(day => day.selectedCandidateCount >= 30).length,
+    ordinaryDaysMeetingTarget: ordinary.filter(day => day.candidateShortfall === 0).length,
     ordinaryCandidateShortfall: ordinary.reduce((sum, day) => sum + day.candidateShortfall, 0), missingReferences,
     limitations: [
       'Candidate links are exact textual matches, not verified word senses, appropriate level, grammar, learner newness or mastery.',
@@ -207,7 +212,8 @@ function buildInventory({ days, materials, wordEntries, yearJobs, publicAssignme
       'Static references are proposals: access, budget, due reviews, material exposure, rights and completed work require runtime verification.',
       'Generated candidates do not create course materials, learner records, a release or independent assessment credit.',
       'This tool only reads the public snapshot; day 365 has an annual-reflection entry but runtime prerequisites and learner completion are not checked.',
-      'Thirty is an authoring target, not a promise of thirty truly new words or a cutoff on due reviews.'
+      'The daily target is an authoring target, not a promise of truly new words or a cutoff on due reviews.',
+      'A 40-target greedy run changes allocation for later days, so its thirty-candidate count is not comparable to a separate 30-target run.'
     ],
     dailyCandidates: outputDays
   };
@@ -302,19 +308,33 @@ function loadPublicInputs(root, profile = PUBLIC_V98) {
   };
 }
 
+function parseArguments(argv) {
+  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40]';
+  assert.ok(argv.length >= 2 && argv[0] === '--root' && typeof argv[1] === 'string' && argv[1], usage);
+  let full = false, dailyTarget = 30, hasTarget = false;
+  for (let i = 2; i < argv.length; i++) {
+    if (argv[i] === '--full' && !full) full = true;
+    else if (argv[i] === '--daily-target' && !hasTarget && ['30', '40'].includes(argv[i + 1])) {
+      dailyTarget = Number(argv[++i]); hasTarget = true;
+    } else throw Error(usage);
+  }
+  return { root: argv[1], full, dailyTarget };
+}
+
 function main(argv) {
-  assert.ok(argv.length === 2 || argv.length === 3 && argv[2] === '--full', 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full]');
-  assert.equal(argv[0], '--root');
-  const root = path.resolve(argv[1]);
-  const report = buildInventory(loadPublicInputs(root));
-  if (argv[2] === '--full') {
+  const args = parseArguments(argv);
+  const root = path.resolve(args.root);
+  const report = buildInventory(loadPublicInputs(root), { dailyTarget: args.dailyTarget });
+  if (args.full) {
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     return;
   }
-  console.log(JSON.stringify({ status: report.status, days: report.days,
+  console.log(JSON.stringify({ status: report.status, days: report.days, dailyTarget: report.dailyTarget,
     uniqueLiteralInputCandidates: report.uniqueLiteralInputCandidates,
     uniqueSelectedCandidates: report.uniqueSelectedCandidates,
     daysWithThirtyCandidates: report.daysWithThirtyCandidates,
+    daysMeetingTarget: report.daysMeetingTarget,
+    minimumAdditionalHeadwordsForTarget: report.minimumAdditionalHeadwordsForTarget,
     totalCandidateShortfall: report.totalCandidateShortfall,
     missingReferences: report.missingReferences }));
 }
@@ -323,4 +343,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { tokens, indexWords, matchText, eligible, fields, buildInventory, safePublicRead, loadPublicInputs, main };
+module.exports = { tokens, indexWords, matchText, eligible, fields, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };

@@ -6,7 +6,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const os = require('node:os');
-const { indexWords, matchText, eligible, fields, buildInventory, safePublicRead, loadPublicInputs, main } = require('../tools/build-annual-linked-supply.cjs');
+const { indexWords, matchText, eligible, fields, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main } = require('../tools/build-annual-linked-supply.cjs');
 
 const sha = text => crypto.createHash('sha256').update(text).digest('hex');
 const assessment = { sourceTextHash: sha, materialContentHash: material => sha(JSON.stringify(material)) };
@@ -97,6 +97,58 @@ test('a reference list can expand beyond 8000 entries without falsely claiming c
   assert.equal(report.referenceHeadwords, 8001);
   assert.equal(report.minimumAdditionalHeadwordsForThirtyDaily, 2919);
   assert.equal(report.status, 'authoring-triage-only-inactive');
+});
+
+test('40-word triage changes only the requested target and retains source and unknown learner status', () => {
+  const input = fixture();
+  input.materials.find(material => material.id === 'read-2').passage += ' ' +
+    Array.from({ length: 50 }, (_, index) => fillerWord(index)).join(' ') + '.';
+  const thirty = buildInventory(input), forty = buildInventory(input, { dailyTarget: 40 });
+  assert.equal(thirty.dailyTarget, 30);
+  assert.equal(forty.dailyTarget, 40);
+  assert.equal(thirty.dailyCandidates[0].selectedCandidateCount, 30);
+  assert.equal(forty.dailyCandidates[0].selectedCandidateCount, 40);
+  assert.equal(forty.dailyCandidates[0].candidateShortfall, 0);
+  assert.equal(forty.dailyCandidates.at(-1).targetCount, 40);
+  assert.equal(forty.minimumAdditionalHeadwordsForThirtyDaily, 2920);
+  assert.equal(forty.minimumAdditionalHeadwordsForTarget, 6560);
+  assert.equal(forty.daysMeetingTarget, forty.dailyCandidates.filter(day => day.candidateShortfall === 0).length);
+  assert.equal(forty.totalCandidateShortfall, forty.dailyCandidates.reduce((sum, day) => sum + day.candidateShortfall, 0));
+  const ids = forty.dailyCandidates.flatMap(day => day.selectedCandidates.map(item => item.canonicalId));
+  assert.equal(new Set(ids).size, ids.length);
+  for (const day of forty.dailyCandidates) for (const item of day.selectedCandidates) {
+    assert.equal(item.actualLearnerNewness, 'unknown');
+    assert.equal(item.mastery, false);
+    assert.ok(item.links.reading || item.links.listening);
+  }
+  assert.match(forty.limitations.join(' '), /not comparable to a separate 30-target run/);
+  assert.throws(() => buildInventory(input, { dailyTarget: 39 }), /30 or 40/);
+});
+
+test('daily target parsing is explicit and retains the read-only output boundary', () => {
+  assert.deepEqual(parseArguments(['--root', 'snapshot']), { root: 'snapshot', full: false, dailyTarget: 30 });
+  assert.deepEqual(parseArguments(['--root', 'snapshot', '--daily-target', '40', '--full']),
+    { root: 'snapshot', full: true, dailyTarget: 40 });
+  for (const tail of [['--daily-target', '39'], ['--daily-target', '040'], ['--daily-target'],
+    ['--daily-target', '40', '--daily-target', '30'], ['--full', '--full'], ['--output', 'profile.json']]) {
+    assert.throws(() => parseArguments(['--root', 'snapshot', ...tail]), /Use --root/);
+  }
+});
+
+test('the thirty-word count in a forty-word run is not an independent thirty-word allocation', () => {
+  const input = fixture();
+  input.days[1].tasks = [{ id: 'reading', materialIds: ['read-2'] }];
+  input.days[2].tasks = [{ id: 'reading', materialIds: ['read-3'] }];
+  input.materials.find(item => item.id === 'read-2').passage =
+    Array.from({ length: 40 }, (_, index) => fillerWord(index)).join(' ');
+  input.materials.find(item => item.id === 'read-3').passage =
+    Array.from({ length: 30 }, (_, index) => fillerWord(index + 30)).join(' ');
+  const thirty = buildInventory(input), forty = buildInventory(input, { dailyTarget: 40 });
+  assert.deepEqual(thirty.dailyCandidates.slice(0, 2).map(day => day.selectedCandidateCount), [30, 30]);
+  assert.deepEqual(forty.dailyCandidates.slice(0, 2).map(day => day.selectedCandidateCount), [40, 20]);
+  assert.equal(thirty.daysWithThirtyCandidates, 2);
+  assert.equal(forty.daysWithThirtyCandidates, 1);
+  assert.equal(forty.daysMeetingTarget, 1);
 });
 
 test('missing planned references stay visible rather than becoming completed content', () => {

@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "version": "0.0.102",
+  "status": "development-candidate-authoring-tool-only",
+  "purpose": "calculate-annual-candidate-shortfall-for-40-daily-word-target",
+  "scope": "pinned-public-course-snapshot-and-synthetic-records-only",
+  "tests": {
+    "focusedNodeTests": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "scope": "synthetic fixtures plus exact source and offset verification on the pinned public snapshot for both 30 and 40 targets"
+    },
+    "publicSnapshotTriage": {
+      "days": 364,
+      "target30": { "selectedCandidates": 3556, "daysMeetingTarget": 35, "candidateShortfall": 7364 },
+      "target40": { "selectedCandidates": 3646, "daysMeetingTarget": 19, "candidateShortfall": 10914 },
+      "uniqueLiteralInputCandidates": 3755,
+      "minimumAdditionalHeadwordsFor40AssumingNoPriorLearning": 6560,
+      "missingReferences": 0,
+      "scope": "greedy literal matches only; independent runs use different allocations"
+    },
+    "staticSite": {
+      "pages": 27,
+      "references": 865,
+      "scripts": 129,
+      "legacyLessons": 52,
+      "legacyVocabularyAudio": 360
+    },
+    "gitDiffCheck": "passed",
+    "fullRegression": "not repeated for an authoring-tool-only change"
+  },
+  "familyRelease": "not-deployed",
+  "runtimeCodeAndContracts": "unchanged",
+  "realLearnerRecords": "not accessed",
+  "realBrowser": "not run; earlier automation rejected by saved permissions or management policy",
+  "realAudio": "not reviewed",
+  "limitations": [
+    "the tool does not activate or create a learning course",
+    "personal novelty, source-sense review and mastery are unknown",
+    "the static day-365 reflection prerequisite and learner completion have not been verified",
+    "the 40-word run uses a different greedy allocation from the 30-word run",
+    "cross-store durability, long-term capacity, restoration, real audio and browser verification remain incomplete",
+    "candidate totals and course completion do not establish an IELTS score"
+  ]
+}
