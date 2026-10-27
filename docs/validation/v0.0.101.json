@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "version": "0.0.101",
+  "status": "development-candidate-documentation-only",
+  "purpose": "record-daily-40-goal-and-version-compatibility-gap",
+  "scope": "public-code-and-synthetic-records-only",
+  "tests": {
+    "publicQuotaInspection": {
+      "familyMainVersion": "0.0.95",
+      "familyDailyNew": 40,
+      "developmentBaseline": "0.0.100",
+      "developmentDailyNew": 30
+    },
+    "isolatedDueAndLegacyReview": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "scope": "synthetic inputs and isolated development artifacts, not family data"
+    },
+    "staticSite": {
+      "pages": 27,
+      "references": 865,
+      "scripts": 129,
+      "legacyLessons": 52,
+      "legacyVocabularyAudio": 360
+    },
+    "gitDiffCheck": "passed",
+    "fullRegression": "not repeated for documentation-only changes"
+  },
+  "familyRelease": "not-deployed",
+  "runtimeCodeAndContracts": "unchanged",
+  "realLearnerRecords": "not accessed",
+  "realBrowser": "not run; earlier automation rejected by saved permissions or management policy",
+  "realAudio": "not reviewed",
+  "limitations": [
+    "no 40-word family unit or full-year curriculum is implemented by this documentation",
+    "old review and memory sources have not been unified in production",
+    "cross-store durability and restoration need further testing",
+    "candidates and static headword counts do not establish mastery or an IELTS score"
+  ]
+}
