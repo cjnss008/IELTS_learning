@@ -41,6 +41,23 @@
     } catch (_) { return []; }
   }
 
+  function hasUnsubmittedReviews(memory, records = [], session = root.IELTSMemorySession) {
+    const byId = new Map(records.map(record => [record.id,record]));
+    for (const draft of Object.values(memory?.drafts || {})) {
+      const item = Object.values(memory.items || {}).find(value => value.word === draft.word && value.skill === draft.skill);
+      const record = byId.get(draft.id);
+      if (!item || !record || !session?.committedEvidence || !session?.recordFor) return true;
+      try {
+        const saved = session.committedEvidence(record,draft,item), artifact = saved.artifact;
+        const expected = JSON.parse(session.recordFor(draft,item,saved.result,{now:Date.parse(record.submittedAt)}).answer);
+        if (record.dayNumber !== draft.courseDay || record.startedAt !== draft.startedAt ||
+            ['schema','mode','kind','courseDay','memorySkill','word','originalMaterialId','text','answers','questions','assisted','audioCompleted','result']
+              .some(key => JSON.stringify(artifact[key]) !== JSON.stringify(expected[key]))) return true;
+      } catch (_) { return true; }
+    }
+    return false;
+  }
+
   function recordForBatch(batch, payload, options = {}) {
     let artifact;
     try { artifact = JSON.parse(payload.answer); } catch (_) { throw Error('新词原稿无法读取，输入与录音已保留。'); }
@@ -117,6 +134,7 @@
     const day = options.courseDay || courseDay({storage:P.storage(),currentDay:R?.currentDay?.()});
     const contextual = options.contextual || root.IELTSContextualVocabulary;
     let currentContext = null, contextSignature = null, retention = null;
+    let historyFilter = 'all', historyLimit = 10, historyBox = null, historyNote = null, historyView = null, historyReading = false;
     const ownedOptions=()=>({ownedSemanticCatalog:options.ownedSemanticCatalog,ownedSourceAcceptance:options.ownedSourceAcceptance,verifiedSkillLevels:options.verifiedSkillLevels,placement:options.placement,player:options.player||root.IELTSCoursePlayer,assessment:options.assessment||root.IELTSAssessment,recordCorrectionStatus:options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus,mistakeState:options.mistakeState});
     const sourceOptions=()=>({day,data:options.curriculum||root.IELTSCurriculumData,memory:M.read(),records,adaptive:options.adaptive||root.IELTSAdaptivePlan,...ownedOptions(),now:now()});
     function sourceAccess(value){const marker=value?.contextSource;if(marker?.schema!==2||!['owned-source-context-v82','mixed-context-v82'].includes(marker.role))return{allowed:true};return contextual?.batchTrainingAccess?.(value,sourceOptions())||{allowed:false};}
@@ -149,6 +167,126 @@
     function wordsForBatch(value) {
       const words = value.words || value.wordIds || [];
       return words.map(word => typeof word === 'string' ? entryById.get(word) || data.entries.find(entry => normalize(entry.word) === normalize(word)) : word).filter(Boolean);
+    }
+    function historyBlocked() {
+      const state = controller?.getState?.();
+      return retention?.isActive?.() === true || options.isReviewActive?.() === true || hasUnsubmittedReviews(M.read(),records) ||
+        state?.restoring === true || !!state && state.phase !== 'learn' && state.phase !== 'complete';
+    }
+    function savedRows(state = M.read()) {
+      const byBatch = new Map();
+      for (const record of records) {
+        if (record.source !== SOURCE) continue;
+        let artifact; try { artifact = JSON.parse(record.answer); } catch (_) { continue; }
+        if (artifact?.essentialBatchId) {
+          if (!byBatch.has(artifact.essentialBatchId)) byBatch.set(artifact.essentialBatchId, []);
+          byBatch.get(artifact.essentialBatchId).push(record);
+        }
+      }
+      return allBatches(state).filter(value => Number.isInteger(value.courseDay) && value.courseDay >= 2 && value.courseDay <= day &&
+        (value.status === 'submitted' || value.recordId || byBatch.has(value.id))).sort((a,b) => b.courseDay-a.courseDay ||
+          String(b.submittedAt || b.startedAt).localeCompare(String(a.submittedAt || a.startedAt)) || a.id.localeCompare(b.id));
+    }
+    function savedArtifact(value, listed) {
+      const expectedId = value.recordId || value.draft?.id;
+      const matching = listed.filter(record => record.source === SOURCE && record.materialId === value.materialId &&
+        String(record.materialVersion) === String(value.materialVersion || '1') && record.kind === 'original' &&
+        record.dayNumber === value.courseDay && (!expectedId || record.id === expectedId)).filter(record => {
+          try { const artifact = JSON.parse(record.answer); return artifact.essentialBatchId === value.id && artifact.courseDay === value.courseDay; }
+          catch (_) { return false; }
+        });
+      if (!expectedId || matching.length !== 1) throw Error('本组已存原稿的编号或课次待核对，原记录和待提交草稿保留，请重新读取后重试。');
+      const record = matching[0], artifact = JSON.parse(record.answer), words = wordsForBatch(value);
+      if (JSON.stringify(artifact.contextSource) !== JSON.stringify(value.contextSource) ||
+          !V.verifyTrainingArtifact(artifact, {vocabulary:words}).valid) throw Error('本组原版本或三写三读证据待核对，原记录与草稿保留。');
+      return {record, artifact};
+    }
+    async function refreshSavedBatches() {
+      check();
+      if (!R?.list) throw Error('作品记录组件未加载，已保存词组和原输入保留。');
+      const listed = await R.list(); check();
+      records = listed; retention?.setRecords?.(listed); render();
+      return savedRows().map(value => ({id:value.id,courseDay:value.courseDay,recordId:value.recordId || null}));
+    }
+    async function openSavedBatch(id) {
+      check();
+      if (historyReading || saving) return false;
+      if (historyBlocked()) { notice('正在作答或有未交复习稿，先完成本次复习或测试，再查看已保存词组。原输入保留。'); return false; }
+      if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
+      if (!R?.list) throw Error('作品记录组件未加载，已保存原稿和原输入保留。');
+      historyReading = true;
+      try {
+        const before = allBatches().find(value => value.id === id);
+        if (!before || before.courseDay > day) throw Error('这份已保存词组不属于当前可查看的课次，原记录保留。');
+        const binding = JSON.stringify(before), listed = await R.list(); check();
+        if (historyBlocked()) throw Error('当前已进入复习或测试，原输入保留，完成后再查看历史。');
+        if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
+        const latest = allBatches().find(value => value.id === id);
+        if (!latest || JSON.stringify(latest) !== binding) throw Error('另一页面更新了本组，原输入保留，请重新读取已保存词组。');
+        const {record,artifact} = savedArtifact(latest, listed);
+        records = listed;
+        if (!sourceAccess(latest).allowed) throw Error('本组来源版本或同源原稿待核对，原答案和原音保留，暂不展示。');
+        if (batch && !finished) {
+          const current = batch.id === latest.id && controller?.getSubmission?.();
+          if (current) committedRecord(record,latest,current);
+          else { activity(); saveDraft(); }
+        }
+        await options.onNewWordsOpened?.(); check();
+        if (historyBlocked()) throw Error('当前有未交复习稿，原输入保留，完成后再查看历史。');
+        await options.onActiveChange?.(true,{kind:'saved-vocabulary',batchId:latest.id,recordId:record.id,courseDay:latest.courseDay}); check();
+        if (historyBlocked()) throw Error('当前已进入复习或测试，原输入保留，完成后再查看历史。');
+        if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
+        controller?.pause?.(); controller?.destroy?.(); controller = null; batch = null; finished = false;
+        historyView = {batchId:latest.id,recordId:record.id};
+        const result = node('div',null,'memory-panel essential-saved-original');
+        result.style.overflowWrap = 'anywhere';
+        result.append(node('h2','本组初学原稿已提交'),node('p','第 '+latest.courseDay+' 课 · 原提交：'+record.submittedAt,'memory-subtle'),
+          node('p','只读查看原三写三读、三轮答案与原音引用；不会重新训练或改变原成绩。原错误仍按今日错题安排订正。','memory-subtle'));
+        const learning = node('details'); learning.append(node('summary','三写三读原始证据'),node('p','原稿编号：'+record.id,'memory-subtle'));
+        for (const item of artifact.learning) {
+          const detail = node('div'); detail.append(node('h3',item.word));
+          item.spellings.forEach((answer,index) => detail.append(node('p','第 '+(index+1)+' 次原输入：'+answer)));
+          item.speaking.forEach((proof,index) => detail.append(node('p','第 '+(index+1)+' 份原音：'+proof.workId+'\nSHA-256：'+proof.hash+
+            '\n原专业结果：准确度 '+proof.result.accuracy+'，流利度 '+proof.result.fluency+'，完整度 '+proof.result.completeness+'\n'+proof.recordedAt,'memory-subtle')));
+          learning.append(detail);
+        }
+        result.append(learning);
+        const meanings = new Map(artifact.words.map(word => [normalize(word.word),word.meaning]));
+        for (const round of artifact.rounds) {
+          const detail = node('details',null,'vocab-original'); detail.append(node('summary',V.NAMES[round.mode]+' · '+round.correct+' / '+round.total));
+          for (const attempt of round.attempts) detail.append(node('p',attempt.word+'：'+(meanings.get(normalize(attempt.word)) || '')+'\n你的原稿：'+attempt.userAnswer+'\n'+
+            (attempt.correct?'本次正确。':'参考英文：'+attempt.expectedAnswer),'memory-feedback'));
+          result.append(detail);
+        }
+        result.append(button('收起已保存原稿',async () => { historyView = null; practice.replaceChildren(); await options.onActiveChange?.(false,{kind:'saved-vocabulary-closed'}); render(); }));
+        const link = node('a','返回今日学习，继续错题或下一模块','button secondary'); link.href = '今日学习.html?day='+day+(P.isPreview?.()?'&preview=1':''); result.append(link);
+        practice.replaceChildren(result); statusText = latest.draft ? '已存原稿只读展示；原待同步草稿仍保留，可从“继续未完成词组”重试原提交。' : '';
+        render(); practice.scrollIntoView?.({block:'start',behavior:'smooth'}); return true;
+      } finally { historyReading = false; }
+    }
+    function renderSavedBatches() {
+      const rows = savedRows(), box = node('details',null,'essential-saved-history');
+      box.open = historyBox?.open === true;
+      box.append(node('summary','已保存词汇组 · '+rows.length+' 组'));
+      const filter = node('select'); filter.setAttribute('aria-label','按课次筛选已保存词汇组');
+      const choices = [['all','当前课及前课'],['current','只看本课（第 '+day+' 课）'],['previous','只看前课'],
+        ...[...new Set(rows.map(value=>value.courseDay))].map(value=>[String(value),'第 '+value+' 课'])];
+      for (const [value,label] of choices) { const option = node('option',label); option.value = value; filter.append(option); }
+      filter.value = historyFilter; filter.addEventListener('change',() => { check(); historyFilter = filter.value; historyLimit = 10; render(); });
+      box.append(filter,button('重新读取已保存词汇组',refreshSavedBatches));
+      const filtered = rows.filter(value => historyFilter === 'all' || historyFilter === 'current' && value.courseDay === day || historyFilter === 'previous' && value.courseDay < day || String(value.courseDay) === historyFilter);
+      if (!filtered.length) box.append(node('p','此课次筛选下暂无已保存词组；未交草稿继续从上方恢复。','memory-subtle'));
+      for (const value of filtered.slice(0,historyLimit)) {
+        const line = node('p'),label = '第 '+value.courseDay+' 课 · '+(value.wordKeys?.length || value.words?.length || 0)+' 词 · '+(value.submittedAt || value.startedAt);
+        line.append(node('span',label+' '),button('查看第 '+value.courseDay+' 课已保存词组',() => openSavedBatch(value.id)));
+        if (value.draft) line.append(node('span',' · 待同步草稿也保留','memory-subtle'));
+        box.append(line);
+      }
+      if (filtered.length > historyLimit) box.append(button('展开更多已保存词组（余 '+(filtered.length-historyLimit)+' 组）',() => { historyLimit += 10; render(); }));
+      historyBox = box; box.hidden = historyBlocked();
+      historyNote = node('p','已保存词汇组 · '+rows.length+' 组仍保留；完成当前复习或测试后可展开查看原答案。','memory-subtle');
+      historyNote.hidden = !box.hidden || !rows.length;
+      const wrapper = node('div'); wrapper.append(box,historyNote); return wrapper;
     }
     function currentPlan() {
       check();
@@ -250,6 +388,8 @@
       finally { saving = null; }
     }
     async function openBatch(value) {
+      const saved = allBatches().find(item => item.id === (typeof value === 'string' ? value : value.id));
+      if (saved?.status === 'submitted' && !saved.draft) return openSavedBatch(saved.id);
       check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}
       if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
       if (batch && !finished) { activity(); saveDraft(); }
@@ -257,22 +397,12 @@
       controller?.destroy?.();
       const state = M.read();
       batch = clone(allBatches(state).find(item => item.id === (typeof value==='string'?value:value.id)) || value);
-      finished = false;paused=false;
+      finished = false;paused=false;historyView=null;
       signature = batch.draft ? JSON.stringify(batch.draft) : null;
       tickAt = now(); lastInteraction = now();
       const words = wordsForBatch(batch);
       if (!words.length) throw Error('这份新词组的词条未加载，原稿保留。');
       await options.onActiveChange?.(true,{kind:'new',batchId:batch.id});tickAt=now();
-      if(batch.status==='submitted'&&!batch.draft){
-        const stored=(await R.list()).find(record=>record.id===batch.recordId);check();
-        let artifact;try{artifact=JSON.parse(stored?.answer);}catch(_){throw Error('本组原稿暂未读取成功，原记录保留，请重试。');}
-        if(stored.source!==SOURCE||stored.materialId!==batch.materialId||artifact.essentialBatchId!==batch.id||!V.verifyTrainingArtifact(artifact,{vocabulary:words}).valid)throw Error('本组原稿待核对，原记录保留。');
-        const heading=node('h2','本组初学原稿已提交'),note=node('p','已保留三写三读与三轮原始答案。错词和专业低分仍在今日错题中；延迟回忆到期后继续。','memory-subtle'),result=node('div',null,'memory-panel');
-        result.append(heading,note);
-        const meanings=new Map(artifact.words.map(word=>[normalize(word.word),word.meaning]));
-        for(const round of artifact.rounds){const detail=node('details',null,'vocab-original');detail.append(node('summary',V.NAMES[round.mode]+' · '+round.correct+' / '+round.total));for(const attempt of round.attempts)detail.append(node('p',attempt.word+'：'+(meanings.get(normalize(attempt.word))||'')+'\n你的原稿：'+attempt.userAnswer+'\n'+(attempt.correct?'本次正确。':'参考英文：'+attempt.expectedAnswer),'memory-feedback'));result.append(detail);}
-        const link=node('a','返回今日学习，继续错题或下一模块','button secondary');link.href='今日学习.html?day='+day+(P.isPreview?.()?'&preview=1':'');result.append(link);practice.replaceChildren(result);batch=null;controller=null;options.onNewWordsOpened?.();render();practice.scrollIntoView?.({block:'start',behavior:'smooth'});return;
-      }
       const material = {id:batch.materialId,version:String(batch.materialVersion || '1'),title:'8000必学词',skill:'vocabulary',type:'vocabulary',level:'A0',vocabulary:words};
       const heading = node('div', null, 'essential-session-heading');
       heading.append(node('h2',(batch.contextSource?.originCourseDay<batch.courseDay?'第 '+batch.contextSource.originCourseDay+' 课待补语境 · ':'')+'继续本组 '+words.length+' 词'),node('p','每词三次正确输入和三次独立原音，再完成三轮测试。','memory-subtle'));
@@ -286,7 +416,7 @@
       options.onNewWordsOpened?.();
       controller = V.mount(host, {material,courseDay:batch.courseDay,draft:batch.draft || undefined,
         returnUrl:options.returnUrlForBatch?.(batch)||'词汇记忆.html?day='+day+'&batch='+encodeURIComponent(batch.id)+(P.isPreview?.() ? '&preview=1' : ''),
-        onChange:change => { try { if (!finished) saveDraft(change); } catch (error) { statusText = error.message; } const status=dashboard.querySelector('.essential-status');if(status)status.textContent=statusText;const list=dashboard.querySelector('.essential-new-list');if(list)list.hidden=change.testing===true||['completion','meaning','dictation'].includes(change.phase)||options.isReviewActive?.()===true; },
+        onChange:change => { try { if (!finished) saveDraft(change); } catch (error) { statusText = error.message; } const status=dashboard.querySelector('.essential-status');if(status)status.textContent=statusText;const list=dashboard.querySelector('.essential-new-list');if(list)list.hidden=change.testing===true||['completion','meaning','dictation'].includes(change.phase)||options.isReviewActive?.()===true;if(historyBox){historyBox.hidden=historyBlocked();if(historyNote)historyNote.hidden=!historyBox.hidden||!savedRows().length;} },
         onMistake:event => { check(); if (!root.IELTSMistakes?.captureVocabulary) throw Error('错题本组件未加载，原答案保留。'); return root.IELTSMistakes.captureVocabulary(event); },
         lookup:async (word,context,level) => {
           check();
@@ -323,6 +453,7 @@
     }
     function render() {
       if (disposed) return;
+      if (historyView && historyBlocked()) { historyView=null;if(practice.querySelector('.essential-saved-original'))practice.replaceChildren(); }
       let plan;
       try { plan = currentPlan(); } catch (error) { dashboard.replaceChildren(node('p',error.message,'memory-feedback')); return; }
       const s = plan.stats || {}, active = plan.activeBatches?.[0];
@@ -346,7 +477,7 @@
         if (batch && !finished) { activity(); saveDraft(); }
         if(retention?.isActive?.())await retention.close();
         controller?.destroy?.(); controller = null; batch = null; practice.replaceChildren();
-        options.onActiveChange?.(false,{kind:'review-switch'});
+        historyView=null;options.onActiveChange?.(false,{kind:'review-switch'});
         await options.openReview?.();
       }, !options.preferNewWords && reviewCount > 0 && !active);
       review.append(reviewButton);
@@ -364,6 +495,7 @@
       const note = node('p','以8000个核心词为目标，每日新词目标40，来源不足时保留缺口并继续听读；先完成全部必做复习与错词，不用次数上限隐藏积压。学习与番茄休息共用360分钟，超时继续保留待办。技能轮换，语境表达结合听读说写；同日正确和旧自评保留为练习记录。','memory-subtle');
       dashboard.replaceChildren(top,grid,progress,route,feedback,note);
       if(options.inline){const supplied=plan.todayNewWords||plan.dayNewWords||options.getTodayWords?.(plan)||[],fallback=supplied.length?supplied:[...(plan.activeBatches||[]).flatMap(value=>wordsForBatch(value).map(word=>({...word,state:'started'}))),...(plan.newWords||[])],seen=new Set(),today=fallback.map(value=>value.entry?{...value.entry,state:value.state}:value).filter(word=>{const key=normalize(word.word);if(!key||seen.has(key))return false;seen.add(key);return true;});const list=node('div',null,'essential-new-list');list.append(node('h3','本课语境候选与已开始词组 · '+today.length+' 词'));const words=node('div',null,'essential-word-chips');for(const word of today){const chip=node('span',word.word+(word.state==='submitted'?' · 原稿已交':word.state==='started'?' · 续做':''),'essential-word-chip');chip.setAttribute('data-ai-word',word.word);chip.setAttribute('data-state',word.state||'not-started');words.append(chip);}list.append(words,node('p','先复习到期词，再选择有材料语境的新词。已开始组可续作；独立词库候选不自动算作本课必学。没有明确材料关联时，回到原课语境练习。','memory-subtle'));const current=controller?.getState?.();list.hidden=retention?.isActive?.()===true||!!options.isReviewActive?.()||current?.testing===true||['completion','meaning','dictation'].includes(current?.phase);const stats=node('details');stats.append(node('summary','查看8000词总进度与证据'),grid,progress);dashboard.replaceChildren(top,route,list,feedback,stats,note);}
+      dashboard.append(renderSavedBatches());
       if (finished) {
         const next = button(available ? '继续下一组必学词' : '查看今日下一步', async () => {
           controller?.destroy?.(); controller = null; batch = null; practice.replaceChildren();
@@ -391,11 +523,12 @@
     root.addEventListener?.('beforeunload',beforeunload);
     const timer = root.setInterval?.(() => { try { activity(); } catch (error) { notice(error.message); } },1000);
     render();
-    return {render,openBatch,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){retention?.pause?.();activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){records=values;retention?.setRecords?.(values);render();},
-      isBusy:()=>!!saving || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy,save:pagehide,destroy(){pagehide();disposed=true;retention?.destroy?.();controller?.destroy?.();root.clearInterval?.(timer);
+    if(!Object.hasOwn(options,'initialRecords'))recordsChanged();
+    return {render,openBatch,openSavedBatch,refreshSavedBatches,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){retention?.pause?.();activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){records=values;retention?.setRecords?.(values);render();},
+      isBusy:()=>!!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy,save:pagehide,destroy(){pagehide();disposed=true;retention?.destroy?.();controller?.destroy?.();root.clearInterval?.(timer);
         ['pointerdown','keydown','input'].forEach(type => doc.removeEventListener?.(type,interact));
         root.removeEventListener?.('ielts:memory-changed',changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);root.removeEventListener?.('pagehide',pagehide);root.removeEventListener?.('beforeunload',beforeunload);}};
   }
-  return {BATCH_SIZE,SOURCE,courseDay,courseWords,pendingCourseWords,recordForBatch,committedRecord,legacyReleaseMapping,mount};
+  return {BATCH_SIZE,SOURCE,courseDay,courseWords,pendingCourseWords,hasUnsubmittedReviews,recordForBatch,committedRecord,legacyReleaseMapping,mount};
 });
 

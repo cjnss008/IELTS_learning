@@ -63,3 +63,5 @@
 - 0.0.93 家人学习体验版保留所有旧运行合同，当前明确构建使用 `--year-runtime-contract curriculum/year-first-use-runtime-contract-v93-family.json`，并继续传GSA、ordinary-reading-v92及active年度完整条件；51 required/52 actual/MAX52和原52角色路径保持。悬停8000通用参考不等于8000词义教学/掌握已完成。历史错题只读查询仅用于已完成标签；不得拿它清当前错题、复盘或授能力信用。新KEY/归档写/长期词库原型未在本版激活。
 
 - 0.0.94 每日复习不以数量或词汇参考分钟截断；E.due/allDue为完整必做队列，sessionCount仅表示共享360分钟及实际番茄休息预算能容纳的部分。短间隔错词和未交复习稿保留为债务，预算耗尽不等于完成；历史课程完成与当日复习分开。新词目标40，按有效初学原稿去重及剩余核心词数处理末尾，缺来源不随机补数。正式重建使用 `--year-runtime-contract curriculum/year-first-use-runtime-contract-v94-daily-review.json` 并保留GSA、ordinary-reading-v92、active年度条件；旧v88/v93合同字节及51 required/52 actual/MAX52路径保持。复习不限不解除记录/备份存储保护、不清旧数据。
+
+- 0.0.95 原作答回显不得在resumeNext后又无条件创建新original。真实有输入的草稿、显式parent订正/retest保持原ID；旧普通空稿与已提交R并存时默认显示R，不删除空稿或改写R。口语自动空scaffold不算用户输入。重新学须显式操作，旧材料按原binding回看，待评/部分回答亦保留。正式重建采用 `curriculum/year-first-use-runtime-contract-v95-replay.json`，保留v88/v93/v94原合同及51 required/52 actual/MAX52路径和完整GSA/ordinary/active年度条件；发布前实际模块/归档原稿的恢复与跨页owner均须验证。

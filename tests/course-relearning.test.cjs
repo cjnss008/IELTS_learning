@@ -21,7 +21,7 @@ test('submitted selections reopen read-only, reload from Records, and three rele
 });
 
 test('an unfinished relearning resumes the same draft and does not increment the submitted count',async()=>{
- const f=fixture();await open(f);await f.nodes.get('courseBegin').fire('click');await answer(f);await f.nodes.get('courseResult').querySelector('.course-relearn').fire('click');const draft=f.win.IELTSTodayNavigation.allDrafts()[0];assert.ok(draft);await open(f);assert.match(f.nodes.get('courseResult').textContent,/已学习 1 次/);await f.nodes.get('courseResult').querySelector('.course-relearn').fire('click');assert.equal(f.win.IELTSTodayNavigation.allDrafts()[0].id,draft.id);assert.equal(f.records().length,1);
+ const f=fixture();await open(f);await f.nodes.get('courseBegin').fire('click');await answer(f);const original=JSON.stringify(f.records()[0]);await f.nodes.get('courseResult').querySelector('.course-relearn').fire('click');const draft=f.win.IELTSTodayNavigation.allDrafts()[0];assert.ok(draft);await open(f);assert.match(f.nodes.get('courseMaterialIntro').textContent,/已学习 1 次/);assert.match(f.nodes.get('courseBegin').textContent,/继续未提交原稿/);await f.nodes.get('courseBegin').fire('click');assert.equal(f.win.IELTSTodayNavigation.allDrafts()[0].id,draft.id);assert.equal(f.records().length,1);assert.equal(JSON.stringify(f.records()[0]),original);
 });
 
 test('a saved answer displays its original question after the current curriculum changed',async()=>{
@@ -62,7 +62,7 @@ test('writing reentry retains the exact original text, without a new draft or re
 test('a more advanced draft for another reading never displaces this material unfinished relearning',async()=>{
  const second={id:'reading-two',skill:'reading',title:'Another reading',version:'1',week:1,level:'A0',pool:'training',source:{rights:'原创',verification:'reviewed'},questions:[{id:'q1',type:'single',prompt:'Choose red.',options:['red','blue'],answers:['red']}]};
  const f=fixture({}, {extraMaterials:[second],setup(data,mat,tasks){tasks.find(t=>t.id==='reading').materialIds=[mat.id,second.id];}});await open(f);await f.nodes.get('courseBegin').fire('click');await answer(f);await f.nodes.get('courseResult').querySelector('.course-relearn').fire('click');const saved=f.win.IELTSTodayNavigation.allDrafts().find(d=>d.materialId===f.mat.id);assert.ok(saved);
- await f.nodes.get('courseMaterials').children.find(n=>n.dataset.materialId===second.id).fire('click');await f.nodes.get('courseBegin').fire('click');const input=f.nodes.get('courseQuestions').querySelectorAll('input')[0];input.checked=true;await input.fire('change');await f.nodes.get('courseMaterials').children.find(n=>n.dataset.materialId===f.mat.id).fire('click');await f.nodes.get('courseResult').querySelector('.course-relearn').fire('click');
+ await f.nodes.get('courseMaterials').children.find(n=>n.dataset.materialId===second.id).fire('click');await f.nodes.get('courseBegin').fire('click');const input=f.nodes.get('courseQuestions').querySelectorAll('input')[0];input.checked=true;await input.fire('change');await f.nodes.get('courseMaterials').children.find(n=>n.dataset.materialId===f.mat.id).fire('click');assert.match(f.nodes.get('courseBegin').textContent,/继续未提交原稿/);await f.nodes.get('courseBegin').fire('click');
  const drafts=f.win.IELTSTodayNavigation.allDrafts().filter(d=>d.materialId===f.mat.id);assert.equal(drafts.length,1);assert.equal(drafts[0].id,saved.id);
 });
 

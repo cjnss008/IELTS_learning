@@ -4,7 +4,9 @@ const H=require('./daily-review-fixture.cjs'),{M,S,R,Timer,base}=H,tick=()=>new 
 async function page({state,spentMinutes=0,timerState}={}){
  const dom=H.helper('essential-vocabulary-app-dom.test.cjs','fixture,button').fixture({words:['student','teacher','apple']}),{win,doc}=dom,now=Date.now();
  const seed=typeof state==='function'?state(dom.entries,now):state;if(seed)dom.storage.setItem(M.KEY,JSON.stringify(seed));
- if(spentMinutes){const item={...dom.entries[2],skill:'spelling'},draft={...S.makeDraft(item,{id:'memory-page-earlier-spent',courseDay:2,now:now-spentMinutes*60000-1000}),answer:item.word,activeSeconds:spentMinutes*60,activityByDate:{[new Date(now).toISOString().slice(0,10)]:spentMinutes*60}};await dom.records.record(S.recordFor(draft,item,{correct:true},{now}));}
+ // Match the real local-day ledger, including Hong Kong midnight while UTC is
+ // still the previous date. Seeding UTC dates can incorrectly grant a new budget.
+ if(spentMinutes){const item={...dom.entries[2],skill:'spelling'},draft={...S.makeDraft(item,{id:'memory-page-earlier-spent',courseDay:2,now:now-spentMinutes*60000-1000}),answer:item.word,activeSeconds:spentMinutes*60,activityByDate:{[H.load('year-planner.js').dateKey(now)]:spentMinutes*60}};await dom.records.record(S.recordFor(draft,item,{correct:true},{now}));}
  win.window=win;win.location.search='?day=2';win.IELTSProfiles.isPreview=()=>false;win.IELTSMemorySession=S;win.IELTSStudyTimerCore=Timer;win.structuredClone=structuredClone;
  if(timerState)win.IELTSStudyTimer={snapshot:()=>timerState,budget:base=>Timer.budget(base,timerState)};
  for(const[id,tag]of [['memoryPractice','section'],['memoryDashboard','section'],['memoryRetention','input'],['saveMemoryRetention','button'],['memorySettingsStatus','p'],['memoryModelState','p']]){const node=doc.createElement(tag);node.id=id;doc.body.append(node);}

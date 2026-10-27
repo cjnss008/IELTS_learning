@@ -29,6 +29,25 @@ function app(source){
   if(app(withoutBank)!==withoutBank)throw Error('Bank mapping requires an already complete legacy retention consumer');
   return source;
  }
+ // v95 inserts a read-only saved-batch branch ahead of the existing v88 guard.
+ // Verify this exact later shape through the complete legacy validator; never
+ // install an incomplete old consumer or skip an absent/duplicate guard.
+ const active="async function openBatch(value) {\n      check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}",
+  savedActive="async function openBatch(value) {\n      const saved = allBatches().find(item => item.id === (typeof value === 'string' ? value : value.id));\n      if (saved?.status === 'submitted' && !saved.draft) return openSavedBatch(saved.id);\n      check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}",
+  api="return {render,openBatch,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());",
+  savedApi=api.replace('render,openBatch,start','render,openBatch,openSavedBatch,refreshSavedBatches,start'),
+  busy="isBusy:()=>!!saving || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy",
+  savedBusy="isBusy:()=>!!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy";
+ if([savedActive,savedApi,savedBusy].some(anchor=>source.includes(anchor))){
+  let legacy=source;
+  for(const [later,prior,label]of [[savedActive,active,'App one active draft'],[savedApi,api,'App public retention consumer API'],[savedBusy,busy,'App busy']]){
+   const count=legacy.split(later).length-1;
+   if(count!==1||legacy.includes(prior))throw Error((count>1||legacy.includes(prior)?'Ambiguous':'Missing')+' exact saved-history retention anchor: '+label);
+   legacy=legacy.replace(later,prior);
+  }
+  if(app(legacy)!==legacy)throw Error('Saved-history mapping requires an already complete legacy retention consumer');
+  return source;
+ }
  source=replace(source,"let currentContext = null, contextSignature = null;","let currentContext = null, contextSignature = null, retention = null;",'App retention owner');
  source=replace(source,"async function openBatch(value) {\n      check();","async function openBatch(value) {\n      check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}",'App one active draft');
  source=replace(source,"async function start(requestedOrigin) {","async function start(requestedOrigin) {\n      if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return;}",'App start guard');

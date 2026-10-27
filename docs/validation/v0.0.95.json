@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "version": "0.0.95",
+  "status": "validated-for-urgent-family-release",
+  "familyPreviously": "0.0.93",
+  "automated": {
+    "tests": 2569,
+    "pass": 2567,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "todo": 0,
+    "logSha256": "627afe7afd887ef0b838c4d550f6dd955cd124ebd26064a791d6ad4f85f4d32b",
+    "processClosed": true
+  },
+  "formalBuild": {
+    "materials": 1842,
+    "days": 365,
+    "activeYearBodies": 688,
+    "publicAssignments": 86,
+    "requiredRoles": 51,
+    "actualComponents": 52,
+    "maxComponents": 52,
+    "contract": {
+      "path": "curriculum/year-first-use-runtime-contract-v95-replay.json",
+      "sha256": "10ac58336be04522aaf6e36baf2fdfc11652ec1dc98d6225e973cd7734dc0b0c",
+      "bytes": 10509
+    }
+  },
+  "nativeHTTP": {
+    "materials": 688,
+    "files": 88,
+    "components": 52,
+    "maximumCache": 16,
+    "wrongHashRejected": true,
+    "upstreamCalls": 0,
+    "closed": true,
+    "reportSha256": "2b7915af6e65b7ba4621f6a5fa81ce40f73334d868eae13ed43eec0234f6003f"
+  },
+  "static": {
+    "pages": 27,
+    "references": 847,
+    "scripts": 128
+  },
+  "questionAudit": {
+    "sourceMaterials": 830,
+    "questionInstances": 7800,
+    "high": 0,
+    "unresolved": 0
+  },
+  "replay": {
+    "playerManifestSha256": "23bab3d5afece3ea0f3bbc0e9a23cda44beb04d5bbec9f6ae98ca669726f5932",
+    "essentialInstallManifestSha256": "7bcf6f2588a313e8e4e141aaf231a6f139c2422d631fdfbaf347f58c44dafdaa",
+    "portablePlayerCases": 20,
+    "independentCoreCases": 4,
+    "originalSourceBaselineFails": 18,
+    "scope": "Actual production JavaScript with synthetic DOM, Records/IDB and Memory stores. No real learner profile, browser or microphone used.",
+    "defaultPriority": [
+      "real-unsubmitted-draft",
+      "saved-submission",
+      "explicitly-new-practice"
+    ],
+    "explicitRelearningRequired": true,
+    "emptyDraftsRetained": true,
+    "crossCourseVocabularyHistory": true,
+    "unfinishedGlobalRecallBlocksAnswerHistory": true,
+    "essentialHistoryCases": 15,
+    "independentInlineCases": 2,
+    "independentInlineManifestSha256": "c51f07963a91a4ce988df025b2b546efc007dcdba05976a0b15dd6a01ce55db2"
+  },
+  "dataProtection": {
+    "realLearnerDataReadOrChanged": false,
+    "credentialsAccessed": false,
+    "existingMaterialAndDayObjectsUnchanged": true,
+    "newStorageKeys": [],
+    "newDatabases": [],
+    "profileSchemaChanged": false,
+    "oldRuntimeContractsPreserved": [
+      "v88",
+      "v93",
+      "v94"
+    ]
+  },
+  "content": {
+    "dailyNewTarget": 40,
+    "dueReviewCountLimit": null,
+    "full8000TeachingDelivered": false,
+    "allModulesIntensivePackDelivered": false
+  },
+  "browser": {
+    "accepted": false,
+    "reason": "Previously saved permission or managed-policy denial remains; not retried or bypassed. DOM and native HTTP are engineering checks."
+  },
+  "deployment": {
+    "familyDataOrConfigurationChanges": false,
+    "publication": "Release manifest and deployment receipt are recorded after this validation."
+  },
+  "earlierRegression": {
+    "tests": 2565,
+    "pass": 2559,
+    "fail": 4,
+    "skipped": 2,
+    "logSha256": "29d4aadac30f713cc11352efddbf98be145539a34e1b4faea8f4c50264ed18f0",
+    "processClosed": true,
+    "fixes": [
+      "Preserve exact legacy transform guards while recognizing the three precise saved-history consumer extensions.",
+      "Seed the budget regression ledger using the real local dateKey so Hong Kong midnight does not count the previous UTC day."
+    ],
+    "productionBudgetChanged": false
+  }
+}
