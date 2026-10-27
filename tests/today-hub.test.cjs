@@ -86,9 +86,20 @@ test('pending outputs leave the daily queue incomplete while the homepage offers
  const writing={id:'writing',minutes:40,materialIds:['w1']},data={days:[{day:1,week:1,title:'First',tasks:[writing,task,{id:'reflection',minutes:20,materialIds:['reflection-1']}]}],materials:[{id:'w1',skill:'writing',estimatedMinutes:20}]},f=await fixture({queue:true,data,records:[record('w','w1','pending',undefined,{taskId:'writing',skill:'writing',answer:'{"schema":1,"text":"My draft."}'})]});assert.match(f.nodes.get('todayStart').textContent,/语法/);assert.match(content(f.nodes.get('todayLearningQueue')),/待评作品/);assert.equal(f.nodes.get('todayDone').textContent,'0 / 3');await f.nodes.get('todayStart').fire('click');assert.deepEqual(f.calls,[['resume','grammar','g1']]);
 });
 
-test('daily queue foregrounds one action with two brief previews and folds the remaining route and statistical explanation',async()=>{
- const ids=['g1','g2','g3','g4','g5','g6','g7'],data={days:[{day:1,week:1,title:'Long route',tasks:[{...task,materialIds:ids},{id:'reflection',minutes:20,materialIds:['reflection-1']}]}],materials:ids.slice(2).map(id=>({...materials[0],id,title:id,estimatedMinutes:15}))},f=await fixture({queue:true,data});
- const box=f.nodes.get('todayLearningQueue'),cards=box.children.filter(n=>n.tagName==='ARTICLE'),previews=box.children.filter(n=>n.tagName==='P');assert.equal(cards.length,1);assert.equal(previews.length,2);assert.equal(cards[0].children.filter(n=>n.tagName==='BUTTON').length,1);assert.equal(cards[0].children.filter(n=>n.tagName==='DETAILS').length,1);assert.equal(box.children.filter(n=>n.tagName==='DETAILS').length,1);assert.match(content(box),/为什么这样安排/);assert.match(content(box),/查看后续队列/);assert.ok(cards[0].children.filter(n=>n.tagName==='P').every(n=>!n.textContent.includes('样本')&&!n.textContent.includes('百分位')));assert.match(f.nodes.get('todayQueueSummary').textContent,/学习与番茄休息共用六小时/);
+test('daily queue uses the hero action without duplicating it and folds the remaining route and explanation',async()=>{
+ const ids=['g1','g2','g3','g4','g5','g6','g7'],data={days:[{day:2,week:1,title:'Long route',tasks:[{...task,materialIds:ids},{id:'reflection',minutes:20,materialIds:['reflection-2']}]}],materials:ids.slice(2).map(id=>({...materials[0],id,title:id,estimatedMinutes:15}))},f=await fixture({queue:true,data,current:{day:2}});
+ const box=f.nodes.get('todayLearningQueue'),cards=box.children.filter(n=>n.tagName==='ARTICLE'),previews=box.children.filter(n=>n.tagName==='P');assert.equal(cards.length,1);assert.equal(previews.length,2);assert.equal(cards[0].children.filter(n=>n.tagName==='BUTTON').length,0);assert.equal(cards[0].children.filter(n=>n.tagName==='DETAILS').length,1);assert.equal(box.children.filter(n=>n.tagName==='DETAILS').length,1);assert.match(content(box),/为什么这样安排/);assert.match(content(box),/查看后续队列/);assert.ok(cards[0].children.filter(n=>n.tagName==='P').every(n=>!n.textContent.includes('样本')&&!n.textContent.includes('百分位')));assert.match(f.nodes.get('todayQueueSummary').textContent,/学习与番茄休息共用六小时/);await f.nodes.get('todayStart').fire('click');assert.deepEqual(f.calls,[['resume','grammar','g1']]);
+});
+
+test('while an independent test owns the hero action the distinct daily queue action stays usable',async()=>{
+ const material={id:'independent-a1-read-1',title:'Independent',skill:'reading',level:'A1',estimatedMinutes:12,independentBank:true},data={days:[{day:2,week:1,title:'Core',tasks:[task]}],materials:[material]};
+ const f=await fixture({queue:true,data,current:{day:2,taskId:'reading',materialId:material.id,active:true}}),cards=f.nodes.get('todayLearningQueue').children.filter(n=>n.tagName==='ARTICLE'),go=cards.flatMap(n=>n.children).find(n=>n.tagName==='BUTTON');
+ assert.ok(go);assert.match(f.nodes.get('todayStart').textContent,/独立短测/);await go.fire('click');assert.deepEqual(f.calls,[['resume','grammar','g1']]);
+});
+
+test('the completed first lesson keeps its previous queue action',async()=>{
+ const f=await fixture({queue:true}),cards=f.nodes.get('todayLearningQueue').children.filter(n=>n.tagName==='ARTICLE');
+ assert.equal(cards[0].children.filter(n=>n.tagName==='BUTTON').length,1);
 });
 
 test('an ended day renders a recovery explanation without a fabricated course or action and resumes the original queue after recovery',async()=>{
@@ -110,6 +121,11 @@ test('adaptive section shows overlay reasons, reserves core work and opens an ac
  const adaptive={getDay:base=>({...base,adaptation:{reason:'根据昨日原稿调整策略。',strategies:[{skill:'reading',action:'先定位原句再回答。'}]}}),planRemaining:(day,records,proposal,options)=>{calls.push({day,records,proposal,options});return{remainingBudget:350,reservedCoreMinutes:30,tasks:[{kind:'new-practice',materialId:'extra',skill:'reading',estimatedMinutes:10,reason:'已有真实核对证据，进行同级迁移。'}],retained:[]};}};
  const f=await fixture({records:[record('one','g1')],data,adaptive,exposures});const box=f.nodes.get('todayAdaptiveContent'),text=content(box);assert.match(text,/昨日原稿调整/);assert.match(text,/先定位原句/);assert.match(text,/剩余可用预算 350/);assert.ok(text.indexOf('下一份核心任务')<text.indexOf('剩余预算内的适级练习'));assert.equal(f.calls.length,0);assert.equal(calls.at(-1).options.budgetMinutes,360);assert.deepEqual(calls.at(-1).options.exposures,exposures);
  const open=walk(box).find(node=>node.textContent==='开始同级新练习');await open.fire('click');assert.equal(f.calls[0][0],'extra');assert.equal(f.calls[0][1].materialId,'extra');assert.equal(f.nodes.get('todayDone').textContent,'0 / 1');
+});
+test('adaptive section omits an exact duplicate of the current queue action but keeps its strategies',async()=>{
+ const data={days:[{day:2,week:1,title:'Next',tasks:[task]}],materials:[]},adaptive={getDay:day=>({...day,adaptation:{reason:'根据已有表现安排。',strategies:[{skill:'grammar',action:'先查看例句。'}]}}),planRemaining:()=>({remainingBudget:300,reservedCoreMinutes:30,tasks:[],retained:[],reason:'继续本课。'})};
+ const f=await fixture({queue:true,data,adaptive,current:{day:2,taskId:'grammar',materialId:'g1'}}),box=f.nodes.get('todayAdaptiveContent');
+ assert.match(content(box),/先查看例句/);assert.equal(walk(box).some(n=>n.textContent==='继续核心任务'),false);await f.nodes.get('todayStart').fire('click');assert.deepEqual(f.calls,[['resume','grammar','g1']]);
 });
 test('adaptive retained work continues its draft and lack of extra recommendations never invents completion',async()=>{
  const data={days:[{day:1,week:1,title:'Test',tasks:[task]}],materials:[{id:'extra-draft',title:'A retained draft',skill:'reading'}]},adaptive={getDay:day=>day,planRemaining:()=>({remainingBudget:20,reservedCoreMinutes:30,tasks:[],retained:[{kind:'in-progress',materialId:'extra-draft',skill:'reading'}],reason:'先完成核心任务。'})};

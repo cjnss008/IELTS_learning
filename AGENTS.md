@@ -67,3 +67,5 @@
 - 0.0.95 原作答回显不得在resumeNext后又无条件创建新original。真实有输入的草稿、显式parent订正/retest保持原ID；旧普通空稿与已提交R并存时默认显示R，不删除空稿或改写R。口语自动空scaffold不算用户输入。重新学须显式操作，旧材料按原binding回看，待评/部分回答亦保留。正式重建采用 `curriculum/year-first-use-runtime-contract-v95-replay.json`，保留v88/v93/v94原合同及51 required/52 actual/MAX52路径和完整GSA/ordinary/active年度条件；发布前实际模块/归档原稿的恢复与跨页owner均须验证。
 
 - 0.0.96 词汇模块按真实保存的每组原稿区分已提交、待订正和已完成；重复练习不覆盖原学习结果。确认按钮只导航已核验的日程队列，不创建虚假提交。正式重建使用 `curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json`，保留所有旧合同及52组件路径。
+
+- 0.0.97 从第2课起精简同一队列任务的重复按钮；当独立测评占用主按钮时保留返回日常队列入口。正式构建使用 `curriculum/year-first-use-runtime-contract-v97-compact-queue.json`，旧运行合同与52组件路径不变。

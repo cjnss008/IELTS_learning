@@ -159,7 +159,11 @@ function mount(){
   const retained=(Array.isArray(plan.retained)?plan.retained:[]).filter(entry=>!coreIds.has(entry.materialId)).slice(0,1);
   const entries=(Array.isArray(plan.tasks)?plan.tasks:[]).filter(entry=>!(entry.kind==='verification'&&coreIds.has(entry.materialId))).slice(0,Math.max(0,2-retained.length));
   const quietFirstDay=day.day===1&&!day.adaptation&&!entries.length&&!retained.length;
-  const target=chooseNext(states),unfinished=quietFirstDay?[]:target&&!target.done?[target]:[];
+  const target=chooseNext(states),primary=learningQueue?.next;
+  // The top or queue action already opens this exact core material. Keep the
+  // adaptive action when it opens a different item or no primary exists.
+  const samePrimary=day.day>=2&&target&&['material','view'].includes(primary?.kind)&&primary.day===day.day&&primary.taskId===target.task.id&&primary.materialId===target.nextMaterialId;
+  const unfinished=quietFirstDay||samePrimary?[]:target&&!target.done?[target]:[];
   if(unfinished.length){box.append(node('h3','下一份核心任务'));const core=node('div');for(const state of unfinished){const card=node('article',undefined,'course-record-row');card.append(node('strong',NAMES[state.task.id]),node('p',state.pending&&!state.missingMaterialIds.length?'最新作品待评阅，先查看结果。':state.legacyTraining?'旧版词汇原稿已保留，请完成新版三写三读与三轮测试。':'先完成本任务尚未提交的材料。'));const go=node('button',state.pending&&!state.missingMaterialIds.length?'查看待评作品':'继续核心任务');go.type='button';go.addEventListener('click',async()=>{go.disabled=true;try{if(state.pending&&!state.missingMaterialIds.length)await navigation.showLatestRecord?.(state.task.id,state.nextMaterialId);else await navigation.resumeNext(state.task.id,state.nextMaterialId);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{go.disabled=false;}});card.append(go);core.append(card);}box.append(core);}
   if(retained.length)box.append(node('h3','保留的未提交练习'));
   for(const entry of retained){const material=data.materials?.find(item=>item.id===entry.materialId),card=node('article',undefined,'course-record-row');card.append(node('strong',material?.title||'未提交练习'),node('p','继续已有草稿，原始输入和曝光记录保留。'));const go=node('button','继续这份草稿');go.type='button';go.addEventListener('click',async()=>{try{const saved=(navigation.allDrafts?.()||drafts()).filter(d=>d.materialId===entry.materialId&&d.taskId===entry.skill&&d.submitted!==true).sort((a,b)=>String(b.startedAt||'').localeCompare(String(a.startedAt||'')))[0];if(!saved?.id)throw Error('未找到这份未提交草稿，请刷新后从草稿列表继续；不会新建练习。');if(typeof navigation.resumeDraft!=='function')throw Error('草稿恢复组件尚未就绪，请刷新页面后继续。');await navigation.resumeDraft(saved.id);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}});card.append(go);box.append(card);}
@@ -206,7 +210,10 @@ function mount(){
    row.append(node('strong',waiting?primary.label:'现在：第 '+primary.day+' 课 · '+(primary.title||NAMES[primary.taskId]||'继续学习')));
    if(primary.estimate){const e=primary.estimate;row.append(node('p','预计学习 '+e.studyMinutes.toFixed(1).replace(/\.0$/,'')+' 分钟'+(e.breakMinutes?'，建议休息 '+e.breakMinutes.toFixed(1).replace(/\.0$/,'')+' 分钟。':'；按右下角番茄钟安排休息。')));}
    if(waiting||primary.kind==='view')row.append(node('p',primary.reason));
-   if(!waiting){const go=node('button',primary.label);go.type='button';go.addEventListener('click',async()=>{go.disabled=true;try{await openQueueEntry(primary);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{render();}});row.append(go);}
+   // The hero already runs this same queue entry. An independent assessment has
+   // its own hero action, so its separate route back to the daily queue remains.
+   const independentOpen=data.materials?.some(m=>m.id===current.materialId&&m.independentBank===true&&!current.submitted);
+   if(!waiting&&(current.day<2||independentOpen)){const go=node('button',primary.label);go.type='button';go.addEventListener('click',async()=>{go.disabled=true;try{await openQueueEntry(primary);$('courseSession')?.scrollIntoView?.({behavior:'smooth',block:'start'});}catch(error){$('todayAdvice').textContent=error.message;}finally{render();}});row.append(go);}
    const why=explanation(primary);if(why)row.append(why);box.append(row);
   }
   // Year entries use the same primary queue action after actual core completion.

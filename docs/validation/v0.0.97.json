@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "version": "0.0.97",
+  "status": "automated-validation-passed-browser-unverified",
+  "automated": {
+    "tests": 2598,
+    "pass": 2596,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "todo": 0,
+    "logSha256": "28af88b7d6cd2108d9f45ce11d7259ccc06d3aa02442fe99736b5d657d6467b5",
+    "processClosed": true
+  },
+  "previousRun": {
+    "failure": "One local dictionary HTTP fetch failed; the same isolated test passed separately before the full rerun.",
+    "logSha256": "8ed80052e242fc493c601b6c52d38960c5f973cc0923bdc066cf8a4680cfcd98"
+  },
+  "formalBuild": {
+    "materials": 1842,
+    "days": 365,
+    "activeYearBodies": 688,
+    "requiredRoles": 51,
+    "actualComponents": 52,
+    "maxComponents": 52,
+    "contract": {
+      "path": "curriculum/year-first-use-runtime-contract-v97-compact-queue.json",
+      "sha256": "e7acdb24eb46728a985cafba286835e928722ef08abba00061dd03a8ba86210f",
+      "bytes": 10509
+    },
+    "command": "node tools/build-curriculum.cjs --require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract-v97-compact-queue.json --gsa-graded-release curriculum/gsa-graded-course/release.json --ordinary-reading-release curriculum/ordinary-reading-v92/release.json --output-root <isolated-output>",
+    "result": "complete-material-set; 1842 materials, 365 days, zero missing or missing audio"
+  },
+  "nativeHTTP": {
+    "indexJobs": 688,
+    "materialBodiesSampled": 7,
+    "files": 88,
+    "components": 52,
+    "maximumCache": 7,
+    "wrongHashRejected": true,
+    "upstreamCalls": 0,
+    "closed": true,
+    "reportSha256": "9a5f78496fcee127bdabf4ca9064ea2409a0d81b43ac57604eacde03ec1ff616"
+  },
+  "static": {
+    "pages": 27,
+    "references": 847,
+    "scripts": 128
+  },
+  "questionAudit": {
+    "sourceMaterials": 830,
+    "questionInstances": 7800,
+    "high": 0,
+    "unresolved": 0
+  },
+  "interface": {
+    "scope": "Day 2 onward; one hero action for the same queued task, while independent test return and distinct tasks remain usable. Day 1 unchanged.",
+    "tests": "Synthetic DOM and isolated local HTTP; the learner profile and browser were not used."
+  },
+  "privacy": {
+    "realLearnerDataReadOrChanged": false,
+    "credentialsAccessed": false,
+    "existingMaterialAndDayObjectsUnchanged": true,
+    "protectedFiles": [
+      "assets/course-player.js",
+      "assets/learning-records.js",
+      "assets/user-data-store.js",
+      "assets/large-text-store.js",
+      "assets/backup-core.js",
+      "assets/record-snapshot-index.js",
+      "assets/records-archive-store.js",
+      "assets/memory-core.js",
+      "curriculum/year-first-use-runtime-contract.json",
+      "curriculum/year-first-use-runtime-contract-v93-family.json",
+      "curriculum/year-first-use-runtime-contract-v94-daily-review.json",
+      "curriculum/year-first-use-runtime-contract-v95-replay.json",
+      "curriculum/year-first-use-runtime-contract-v96-vocabulary-completion.json"
+    ]
+  },
+  "dailyThirtyTarget": {
+    "activated": false,
+    "note": "The released core still targets 40; 30-word source-connected curriculum is in isolated development."
+  },
+  "browser": {
+    "accepted": false,
+    "reason": "Real browser access was blocked by saved permission or managed policy; it was not bypassed. No real browser, actual family profile or microphone acceptance is claimed."
+  },
+  "deployment": {
+    "familyDataOrConfigurationChanges": false,
+    "publication": "Not asserted by this report; development install receipt records actual outcome."
+  }
+}
