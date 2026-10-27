@@ -1,0 +1,341 @@
+{
+  "id": "family-v89-day08-grammar",
+  "version": "1",
+  "week": 2,
+  "skill": "grammar",
+  "type": "grammar",
+  "level": "A1",
+  "levelStatus": "authoring-target-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "practiceOnly": true,
+  "availableFromDay": 8,
+  "title": "第8课新语法 · 频率词与时间介词",
+  "topic": "身边的人与物",
+  "grammarFocus": [
+    "频率词的常用位置",
+    "at钟点 / on星期 / in时段",
+    "every day前不加介词"
+  ],
+  "estimatedMinutes": 30,
+  "instructions": "先读懂规则和英文例句，再独立完成10题。遇到错误，先比较具体错因，保留原答案，再完成订正并用自己的信息改写一句。参考30分钟，可按理解情况调整。",
+  "passage": "当天听读连接：阅读《My Desk and My Cat》、听力《At the Park with Mia and Ben》的英语班／学校与物品情境。\n\n当天阅读原句（仅作回顾，不把后面的新增句子冒称原文）：\nThis is my desk. It is small. A pen is on the desk. A book is on the desk. This is my cat. She is on the desk. She is small. That is my bag. It is on the desk. He is my friend. He is at the desk.\n\n下面的新规则、作息、物品位置和练习句由本课原创，用熟悉场景练新结构；它们不改写原听读事实。\n\n1. 频率词说明“多久做一次”：always 总是，usually 通常，often 经常，sometimes 有时，never 从不。本课不把它们强行换算成固定百分比。They often read after class. 表示他们课后经常读书；They never read at night. 表示他们从不在晚上读书。never 已有否定意思，本课不用 don't never 叠加否定。\n\n2. 本课练常见中间位置：频率词放在 read / study 等实义动词前：She usually reads in the morning. 放在 be 后：She is usually at her desk. 提问有 do / does 时，把频率词放在主语后、实义动词前：Does she usually read here? sometimes 也可放句首；本课遇到指定位置时按题意选，不说其他自然位置一概错误。\n\n3. 时间介词：at + 具体钟点，如 at seven；on + 星期或具体某天，如 on Monday、on Monday morning；in + 通常的早晨／下午／晚上，如 in the morning、in the afternoon、in the evening。at night 是本课单独记住的搭配。\n\n4. every day / every morning 前面不再加时间介词：I read every day. 不是 I read on every day。把“某个星期一早晨”与“通常在早晨”分清：on Monday morning；in the morning。今天沿用 desk、pen、book、cat 的物品情境，下面作息均为原创，不是原文规定的安排。",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Choose the usual middle position for usually.",
+      "options": [
+        "She reads usually English in the morning.",
+        "She usually reads English in the morning.",
+        "She reads English usually in the morning."
+      ],
+      "answers": [
+        "She usually reads English in the morning."
+      ],
+      "explanation": "正确表达：She usually reads English in the morning.\n题目指定常见中间位置，usually 放在实义动词 reads 前。\n“She reads usually English in the morning.”：usually 插在 reads 与它的宾语 English 中间，不是本课的中间位置。\n“She reads English usually in the morning.”：题目要求中间位置；这里把 usually 放在了宾语之后。",
+      "evidence": "She usually reads in the morning.",
+      "correctExpression": "She usually reads English in the morning.",
+      "distractorReasons": {
+        "She reads usually English in the morning.": "usually 插在 reads 与它的宾语 English 中间，不是本课的中间位置。",
+        "She reads English usually in the morning.": "题目要求中间位置；这里把 usually 放在了宾语之后。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 588,
+        "end": 621,
+        "textSha256": "dc633f56e8f0f31730960f022a3d2acc9a826bd7bcc167cd7a7af40278b5bd57"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Choose the usual middle position for always.",
+      "options": [
+        "He is always at his desk.",
+        "He always is at his desk.",
+        "He is at always his desk."
+      ],
+      "answers": [
+        "He is always at his desk."
+      ],
+      "explanation": "正确表达：He is always at his desk.\n本题指定常见中间位置；频率词放在 be 的 is 后。\n“He always is at his desk.”：强调等语境下可能出现其他位置，但本题指定的常见中间位置是 is always。\n“He is at always his desk.”：always 不能这样插进 at his desk 这个位置短语。",
+      "evidence": "放在 be 后：She is usually at her desk.",
+      "correctExpression": "He is always at his desk.",
+      "distractorReasons": {
+        "He always is at his desk.": "强调等语境下可能出现其他位置，但本题指定的常见中间位置是 is always。",
+        "He is at always his desk.": "always 不能这样插进 at his desk 这个位置短语。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 622,
+        "end": 657,
+        "textSha256": "6d5fbaabc6cfd61b1cd89ccd81592e97b4739e84bd754f748cafe9a843d93156"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Write at, on, or in: Class starts ___ seven.",
+      "answers": [
+        "at"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Class starts at seven.\nseven 在这里指具体七点，钟点前用 at。 本空只填一个英文单词。\n“on”：on 用于本课星期或具体日子，不用于这个钟点。\n“in”：in 用于本课通常时段，不用于具体七点。",
+      "evidence": "at + 具体钟点，如 at seven",
+      "correctExpression": "Class starts at seven.",
+      "commonErrorReasons": {
+        "on": "on 用于本课星期或具体日子，不用于这个钟点。",
+        "in": "in 用于本课通常时段，不用于具体七点。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 771,
+        "end": 791,
+        "textSha256": "b636d50dd9d1be55fb93beb1f3041ee2f852f03718eab5571a9c0a81f5ee1b3c"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "Write at, on, or in: We study ___ Monday.",
+      "answers": [
+        "on"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：We study on Monday.\nMonday 是星期一，星期前用 on。 本空只填一个英文单词。\n“at”：at 不用于本题单个星期名称。\n“in”：in 不用于本题 Monday。",
+      "evidence": "on + 星期或具体某天，如 on Monday",
+      "correctExpression": "We study on Monday.",
+      "commonErrorReasons": {
+        "at": "at 不用于本题单个星期名称。",
+        "in": "in 不用于本题 Monday。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 792,
+        "end": 816,
+        "textSha256": "880d60ee70806854a7deff0cc32ab8b15100e4d11e4efa7266504c59419ba7bc"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "prompt": "Write at, on, or in: She reads ___ the morning.",
+      "answers": [
+        "in"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：She reads in the morning.\nthe morning 表示通常的早晨时段，用 in。 本空只填一个英文单词。\n“on”：on the morning 这里缺少限定的具体日子；本题只是通常早晨。\n“at”：本课这一时段搭配为 in the morning，不是 at the morning。",
+      "evidence": "in the morning",
+      "correctExpression": "She reads in the morning.",
+      "commonErrorReasons": {
+        "on": "on the morning 这里缺少限定的具体日子；本题只是通常早晨。",
+        "at": "本课这一时段搭配为 in the morning，不是 at the morning。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 606,
+        "end": 620,
+        "textSha256": "da632548ed26a6a6b9dd00b3c88165b2e2ee840ac49f9930e5ee4a79557b9a24"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "prompt": "Write at, on, or in: We meet ___ Monday morning.",
+      "answers": [
+        "on"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：We meet on Monday morning.\nMonday morning 已指具体星期一的早晨，使用 on。 本空只填一个英文单词。\n“in”：不能只看到 morning 就套 in；前面的 Monday 把它变成具体一天的早晨。\n“at”：不是钟点，也不是 at night，故不用 at。",
+      "evidence": "on Monday morning",
+      "correctExpression": "We meet on Monday morning.",
+      "commonErrorReasons": {
+        "in": "不能只看到 morning 就套 in；前面的 Monday 把它变成具体一天的早晨。",
+        "at": "不是钟点，也不是 at night，故不用 at。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 817,
+        "end": 834,
+        "textSha256": "167fd18845b3618bd487cf6731bea5ff221a1005aff24f4c5dd393e093ea7dd0"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Choose the sentence about a daily habit.",
+      "options": [
+        "I read on every day.",
+        "I read in every day.",
+        "I read every day."
+      ],
+      "answers": [
+        "I read every day."
+      ],
+      "explanation": "正确表达：I read every day.\nevery day 本身已经能作时间表达，前面不加 on 或 in。\n“I read on every day.”：every day 前不需要 on。\n“I read in every day.”：every day 前不需要 in。",
+      "evidence": "I read every day.",
+      "correctExpression": "I read every day.",
+      "distractorReasons": {
+        "I read on every day.": "every day 前不需要 on。",
+        "I read in every day.": "every day 前不需要 in。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 962,
+        "end": 979,
+        "textSha256": "ae12e4f0e7d28c5f321d4c44d41153e7226629a9e30165596e13910ae87cc781"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Anna does not read at night, on any night. Choose the matching sentence.",
+      "options": [
+        "Anna never reads at night.",
+        "Anna always reads at night.",
+        "Anna sometimes reads at night."
+      ],
+      "answers": [
+        "Anna never reads at night."
+      ],
+      "explanation": "正确表达：Anna never reads at night.\non any night 都不读表示“从不”，用 never；Anna 后仍用 reads。\n“Anna always reads at night.”：always 是总是，与完全不读相反。\n“Anna sometimes reads at night.”：sometimes 表示有时读，与任何夜晚都不读不同。",
+      "evidence": "They never read at night.",
+      "correctExpression": "Anna never reads at night.",
+      "distractorReasons": {
+        "Anna always reads at night.": "always 是总是，与完全不读相反。",
+        "Anna sometimes reads at night.": "sometimes 表示有时读，与任何夜晚都不读不同。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 474,
+        "end": 499,
+        "textSha256": "8f87e606d7fd5446c033ba6b795dcc56321b65f11e13c373b192f04b0d48e264"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Choose the correct question using the usual middle position.",
+      "options": [
+        "Does she reads usually here?",
+        "Does she usually read here?",
+        "Is she usually read here?"
+      ],
+      "answers": [
+        "Does she usually read here?"
+      ],
+      "explanation": "正确表达：Does she usually read here?\nDoes 提问后用 read 原形；usually 放在主语 she 后、动词前。\n“Does she reads usually here?”：Does 后 reads 没回到原形，频率词位置也不是题目指定形式。\n“Is she usually read here?”：read 是本题习惯动作，用 Does 提问；Is 加原形 read 不是这个结构。",
+      "evidence": "Does she usually read here?",
+      "correctExpression": "Does she usually read here?",
+      "distractorReasons": {
+        "Does she reads usually here?": "Does 后 reads 没回到原形，频率词位置也不是题目指定形式。",
+        "Is she usually read here?": "read 是本题习惯动作，用 Does 提问；Is 加原形 read 不是这个结构。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 690,
+        "end": 717,
+        "textSha256": "c73a386a73465e688b3bcaa444de7d90f422fd58550a45e5d23c04d57d714716"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Write at, on, or in: They do not study ___ night.",
+      "answers": [
+        "at"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：They do not study at night.\nnight 在本课固定搭配中用 at night。 本空只填一个英文单词。\n“in”：本题不说 in night；常规搭配是 at night。\n“on”：没有指定某一个夜晚或日期，本题用 at night。",
+      "evidence": "at night 是本课单独记住的搭配。",
+      "correctExpression": "They do not study at night.",
+      "commonErrorReasons": {
+        "in": "本题不说 in night；常规搭配是 at night。",
+        "on": "没有指定某一个夜晚或日期，本题用 at night。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 901,
+        "end": 921,
+        "textSha256": "edceed3a94e0aa40412f089ec55fb72c12cac41613282948c09c0a07a956e189"
+      }
+    }
+  ],
+  "learningScope": {
+    "new": [
+      "频率词的常用位置",
+      "at钟点 / on星期 / in时段",
+      "every day前不加介词"
+    ],
+    "prerequisites": [
+      "第6–7课一般现在时",
+      "第5课位置",
+      "第4课所属"
+    ],
+    "review": [
+      "does + 原形、第三人称-s、be位置句"
+    ],
+    "notTaught": [
+      "频率百分比测量",
+      "所有副词位置规则",
+      "英美周末介词差异"
+    ]
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；新增例句和题目为模拟教学情境。原课文引用属于同一项目公开源码，仅作当天衔接。",
+    "verification": "reviewed",
+    "method": "独立AI无答案作答80/80；逐题核对规则、正确表达和具体错因。非真人教师或考官审题，未作考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHash": "70f3716c2e682f5af1445977c676f7b8fca4b10a900e594072ed40027df74169",
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "reviewReceiptId": "family-grammar-root-review-v89"
+  },
+  "sourceConnections": [
+    {
+      "materialId": "w02-read-1",
+      "materialVersion": "2",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "d1c94be33e91b44ec7b8d0bf65c9b36dbb5201447ba0995003a0038caaeef85e",
+      "quote": "This is my desk. It is small. A pen is on the desk. A book is on the desk. This is my cat. She is on the desk. She is small. That is my bag. It is on the desk. He is my friend. He is at the desk.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 195
+      }
+    },
+    {
+      "materialId": "w02-listen-1",
+      "materialVersion": "2",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "068df7cf391408c39188880bc5ca53f34bb38e0e9242d69e630ba9cf32992b1e",
+      "quote": "Mia: Ben, this is my neighbor. She is a teacher.\nBen: Hello. I am Ben: B, E, N.\nMia: This is a pen. It is blue.\nBen: Is that a dog?\nMia: No. That is a cat. It is my cat.\nBen: Is it big?\nMia: No, it is a small cat. This is a table. It is old.\nBen: I am a student. I am not a teacher.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 282
+      }
+    }
+  ],
+  "admission": {
+    "status": "candidate-not-installed",
+    "recommendedCourseDay": 8,
+    "onlyFutureUnstartedUnfrozen": true,
+    "oldMaterialAndDraftPolicy": "retain-original-ids-and-bound-contracts",
+    "independentAssessmentEligible": false,
+    "vocabularyMasteryCredit": false,
+    "audioActivation": false
+  }
+}

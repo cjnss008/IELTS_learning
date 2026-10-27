@@ -49,3 +49,7 @@
 - 启动器须兼容 NAS UNC 与含空格路径，缺少 Node 时校验并安装随包运行环境；成功关闭 CMD、失败保留诊断。用户目录、历史版本与资料原件不能在升级时清空。所有服务器测试使用独立临时 dataDir，禁止读取或改写真实配置。
 
 - 0.0.88开发版的正式重建须同时保留 `--require-year-expansion --activate-year-first-use --year-runtime-contract curriculum/year-first-use-runtime-contract.json --gsa-graded-release curriculum/gsa-graded-course/release.json --output-root 本机独立目录`；课程审计也须显式传GSA release。默认75份构建仅用于旧版兼容验证，不得用它覆盖已启用的80份课程产物。
+
+- 0.0.89为依据家人实际语法反馈制作的独立紧急补丁，新增源码在 `curriculum/family-grammar-v89`；正式构建须保留 `tools/apply-family-grammar-v89.cjs` 及其签审清单。只有未完成的语法任务采用可逆视图，旧固定课表、原作答和升级前真实完成状态保持；已开始的新稿归属不能因补完旧题退回。本次main修复已合回develop；后续先验证组合版本，再准备0.0.90；不得以本次工程检查代替真实浏览器或教学效果验收。
+
+- 0.0.89开发合回保留0.0.88的80份公开/688份年度active产物，当前1836份材料；固定37/41/MAX44原有精确路径。0.0.90以后再按审签变更组件，不得为了新教材或修复覆盖旧合同/索引文件。

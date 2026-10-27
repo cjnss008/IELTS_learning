@@ -1,0 +1,348 @@
+{
+  "id": "family-v89-day07-grammar",
+  "version": "1",
+  "week": 1,
+  "skill": "grammar",
+  "type": "grammar",
+  "level": "A1",
+  "levelStatus": "authoring-target-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "practiceOnly": true,
+  "availableFromDay": 7,
+  "title": "第7课新语法 · do / does提问与否定",
+  "topic": "字母、声音与自我介绍",
+  "grammarFocus": [
+    "Do / Does + 主语 + 原形",
+    "do not / does not + 原形",
+    "do / does与be问句区分"
+  ],
+  "estimatedMinutes": 30,
+  "instructions": "先读懂规则和英文例句，再独立完成10题。遇到错误，先比较具体错因，保留原答案，再完成订正并用自己的信息改写一句。参考30分钟，可按理解情况调整。",
+  "passage": "当天听读连接：阅读《First Day at Sunny English Club》、听力《First Day Greetings》的英语班／学校与物品情境。\n\n当天阅读原句（仅作回顾，不把后面的新增句子冒称原文）：\nA. Hello. I am Li Ming. I am a student. I am in Class 1.\nB. Hi. I am Anna. I am a student too. I am in Class 1. We are classmates.\nC. This is Mr. Wang. He is a teacher. He says, \"You are students. I am your teacher.\"\n\n下面的新规则、作息、物品位置和练习句由本课原创，用熟悉场景练新结构；它们不改写原听读事实。\n\n1. 前一课的日常动作句，提问时加 do / does：You study English. → Do you study English? They read every day. → Do they read every day? She studies English. → Does she study English? I / you / we / they 用 do；he / she / it 或一人的第三人称姓名用 does。\n\n2. does 已承担第三人称单数的变化，后面动词回到原形：Does Anna study English? 不是 Does Anna studies English? Does he have a book? 不是 Does he has a book? 这里的 have 表示“拥有”，也按本课 do / does 方式提问。\n\n3. 否定用 do not / does not，后接动词原形：I do not read at night. She does not read at night. We do not study here. He does not have a red bag. do not 可缩写为 don't，does not 可缩写为 doesn't。doesn't 后不再保留 reads / has。\n\n4. 回答跟着问句的助动词走：Do you study English? — Yes, I do. / No, I do not. Does she study English? — Yes, she does. / No, she does not. 但是 be 句直接把 be 前移：Are you a student? 不是 Do you are a student? 先判断是身份状态句，还是含 read / study / have 的动作或拥有句。",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Choose the question about a daily habit.",
+      "options": [
+        "Does she studies English?",
+        "Does she study English?",
+        "Is she study English?"
+      ],
+      "answers": [
+        "Does she study English?"
+      ],
+      "explanation": "正确表达：Does she study English?\nShe 用 does 提问，后面 study 回到原形。\n“Does she studies English?”：does 已带第三人称变化，后面不能再加 -s。\n“Is she study English?”：study 是本题日常动作，用 does 提问，不用 is 加原形。",
+      "evidence": "Does she study English?",
+      "correctExpression": "Does she study English?",
+      "distractorReasons": {
+        "Does she studies English?": "does 已带第三人称变化，后面不能再加 -s。",
+        "Is she study English?": "study 是本题日常动作，用 does 提问，不用 is 加原形。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 515,
+        "end": 538,
+        "textSha256": "2f441558e081aaf6306ba0cc2a2bfd87de27d6f849ba3cb17995f1aee66ee914"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "prompt": "Use Do or Does: ___ you read every day?",
+      "answers": [
+        "Do"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Do you read every day?\nyou 的一般现在时动作问句以 Do 开头。 本空只填一个英文单词。\n“Does”：Does 对应 he / she 等第三人称单数，不对应 you。\n“Are”：本题动词 read 是原形动作词，不用 Are read。",
+      "evidence": "Do you study English?",
+      "correctExpression": "Do you read every day?",
+      "commonErrorReasons": {
+        "Does": "Does 对应 he / she 等第三人称单数，不对应 you。",
+        "Are": "本题动词 read 是原形动作词，不用 Are read。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 423,
+        "end": 444,
+        "textSha256": "6311697342b463b1e1c47931d17e70c1f00caf90953647f702a24944e61ab48b"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Use Do or Does: ___ Anna study English every day?",
+      "answers": [
+        "Does"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：Does Anna study English every day?\nAnna 是一个人的姓名，日常动作提问用 Does，后面 study 用原形。 本空只填一个英文单词。\n“Do”：第三人称单数 Anna 要用 Does。\n“Is”：Is Anna study 不是本课一般现在时的动作问句结构。",
+      "evidence": "Does Anna study English?",
+      "correctExpression": "Does Anna study English every day?",
+      "commonErrorReasons": {
+        "Do": "第三人称单数 Anna 要用 Does。",
+        "Is": "Is Anna study 不是本课一般现在时的动作问句结构。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 627,
+        "end": 651,
+        "textSha256": "a583f4c1e71e32b7a0b2c4082ba98d1200fdbf022355c83c8eea9628eb2024cf"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Choose the correct negative sentence.",
+      "options": [
+        "She does not reads at night.",
+        "She not read at night.",
+        "She does not read at night."
+      ],
+      "answers": [
+        "She does not read at night."
+      ],
+      "explanation": "正确表达：She does not read at night.\n否定用 does not，后接动词原形 read。\n“She does not reads at night.”：does 后不能仍用第三人称单数 reads。\n“She not read at night.”：not 不能独自承担本题动作句的否定，需要 does。",
+      "evidence": "She does not read at night.",
+      "correctExpression": "She does not read at night.",
+      "distractorReasons": {
+        "She does not reads at night.": "does 后不能仍用第三人称单数 reads。",
+        "She not read at night.": "not 不能独自承担本题动作句的否定，需要 does。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 820,
+        "end": 847,
+        "textSha256": "436ce247415f6802f6db35e24471258b67a20d4e8b2e380df69bb8bd3df890fa"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Choose the question about owning a book.",
+      "options": [
+        "Does he have a book?",
+        "Does he has a book?",
+        "Is he have a book?"
+      ],
+      "answers": [
+        "Does he have a book?"
+      ],
+      "explanation": "正确表达：Does he have a book?\nhave 表示拥有，He 的问句用 Does，后面 has 回到 have。\n“Does he has a book?”：Does 后应为原形 have。\n“Is he have a book?”：本课拥有句使用 Does he have，不把 is 加在 have 前。",
+      "evidence": "Does he have a book?",
+      "correctExpression": "Does he have a book?",
+      "distractorReasons": {
+        "Does he has a book?": "Does 后应为原形 have。",
+        "Is he have a book?": "本课拥有句使用 Does he have，不把 is 加在 have 前。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 682,
+        "end": 702,
+        "textSha256": "d1c0a90565a706d53f3cca94b80e18d65cad10f00bd97a0bcfbf8b6915edb53b"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Choose the correct negative sentence.",
+      "options": [
+        "He do not have a red bag.",
+        "He does not have a red bag.",
+        "He does not has a red bag."
+      ],
+      "answers": [
+        "He does not have a red bag."
+      ],
+      "explanation": "正确表达：He does not have a red bag.\nHe 用 does not，后面用 have。\n“He do not have a red bag.”：第三人称单数 He 需要 does，不用 do。\n“He does not has a red bag.”：does 后面回到原形 have，不再用 has。",
+      "evidence": "He does not have a red bag.",
+      "correctExpression": "He does not have a red bag.",
+      "distractorReasons": {
+        "He do not have a red bag.": "第三人称单数 He 需要 does，不用 do。",
+        "He does not has a red bag.": "does 后面回到原形 have，不再用 has。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 870,
+        "end": 897,
+        "textSha256": "bb406a1c5219ca80de76925bc40f3d0a4d7f829f1e7dba59cde16af9e252311f"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "You read English every day. Answer: Do you read English every day?",
+      "options": [
+        "Yes, I am.",
+        "Yes, I does.",
+        "Yes, I do."
+      ],
+      "answers": [
+        "Yes, I do."
+      ],
+      "explanation": "正确表达：Yes, I do.\n问句 Do you read 对应回答 I do；不是 be 问句。\n“Yes, I am.”：am 回答 be 问句，本题需要助动词 do。\n“Yes, I does.”：I 与 do 配合，不与 does 配合。",
+      "evidence": "Do you study English? — Yes, I do.",
+      "correctExpression": "Yes, I do.",
+      "distractorReasons": {
+        "Yes, I am.": "am 回答 be 问句，本题需要助动词 do。",
+        "Yes, I does.": "I 与 do 配合，不与 does 配合。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 981,
+        "end": 1015,
+        "textSha256": "247c30e82e0f028b5622d55148fd30321c5181c64b56531cb1a63b44b236f631"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "She studies English every day. Answer: Does she study English every day?",
+      "options": [
+        "Yes, she does.",
+        "Yes, she do.",
+        "Yes, she is."
+      ],
+      "answers": [
+        "Yes, she does."
+      ],
+      "explanation": "正确表达：Yes, she does.\nDoes she study 的简答保留 does。\n“Yes, she do.”：she 的助动词要用 does。\n“Yes, she is.”：is 回答 be 问句，不能代替本题的 does。",
+      "evidence": "Does she study English? — Yes, she does.",
+      "correctExpression": "Yes, she does.",
+      "distractorReasons": {
+        "Yes, she do.": "she 的助动词要用 does。",
+        "Yes, she is.": "is 回答 be 问句，不能代替本题的 does。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1032,
+        "end": 1072,
+        "textSha256": "4a32eb14ac2ca492d05b0176143756d03e0cb2c384d74fbc1cd9ed4d233f56ac"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Ask about identity: You are a student.",
+      "options": [
+        "Do you are a student?",
+        "Are you a student?",
+        "Does you a student?"
+      ],
+      "answers": [
+        "Are you a student?"
+      ],
+      "explanation": "正确表达：Are you a student?\n身份句 You are a student 已有 be，把 are 前移，不另加 do。\n“Do you are a student?”：be 问句不再加 do；直接写 Are you。\n“Does you a student?”：does 不与 you 配合，且句子缺少必需的 be。",
+      "evidence": "Are you a student? 不是 Do you are a student?",
+      "correctExpression": "Are you a student?",
+      "distractorReasons": {
+        "Do you are a student?": "be 问句不再加 do；直接写 Are you。",
+        "Does you a student?": "does 不与 you 配合，且句子缺少必需的 be。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1110,
+        "end": 1153,
+        "textSha256": "6a7862e80b57cdf1db552d665f34a309ef9266d7a5d5db9322f77a7daf1ffad6"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "fill",
+      "prompt": "Write do or does: They ___ not study here.",
+      "answers": [
+        "do"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：They do not study here.\nThey 的否定用 do not，study 保持原形。 本空只填一个英文单词。\n“does”：They 不是第三人称单数，用 do。\n“are”：They are not study 不能表达本课的一般现在时动作否定。",
+      "evidence": "We do not study here.",
+      "correctExpression": "They do not study here.",
+      "commonErrorReasons": {
+        "does": "They 不是第三人称单数，用 do。",
+        "are": "They are not study 不能表达本课的一般现在时动作否定。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 848,
+        "end": 869,
+        "textSha256": "f3ad4bef019629f6d7f4126f0e146941ede36bbafd9eb68a115040463988dd03"
+      }
+    }
+  ],
+  "learningScope": {
+    "new": [
+      "Do / Does + 主语 + 原形",
+      "do not / does not + 原形",
+      "do / does与be问句区分"
+    ],
+    "prerequisites": [
+      "第6课一般现在时肯定句",
+      "第4课have / has",
+      "第2课be提问否定"
+    ],
+    "review": [
+      "be问句、study / studies、have / has"
+    ],
+    "notTaught": [
+      "过去时did",
+      "have got结构",
+      "复杂特殊疑问句",
+      "现在进行时"
+    ]
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；新增例句和题目为模拟教学情境。原课文引用属于同一项目公开源码，仅作当天衔接。",
+    "verification": "reviewed",
+    "method": "独立AI无答案作答80/80；逐题核对规则、正确表达和具体错因。非真人教师或考官审题，未作考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHash": "d6021fc08fd4c3f52a11ca828f5be0943f85a4d70f49a8aab1408bb99637f0e0",
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "reviewReceiptId": "family-grammar-root-review-v89"
+  },
+  "sourceConnections": [
+    {
+      "materialId": "w01-read-1",
+      "materialVersion": "1",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "7872f2635443f7af62750c4f218bd7c94a655c0a147c26da6a03fd7d19c66ec7",
+      "quote": "A. Hello. I am Li Ming. I am a student. I am in Class 1.\nB. Hi. I am Anna. I am a student too. I am in Class 1. We are classmates.\nC. This is Mr. Wang. He is a teacher. He says, \"You are students. I am your teacher.\"",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 216
+      }
+    },
+    {
+      "materialId": "w01-listen-1",
+      "materialVersion": "1",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "e5a9bddd4e49262976cbcd0f37aad90066ca621af20a6cde521d1aaa1e00c513",
+      "quote": "A: Hello. I am Anna. Are you Tom? B: Yes, I am Tom. I am a student. Are you a student? A: Yes, I am a student. I am in Class 1. Are you in Class 1? B: No, I am in Class 2. A: I am from China. Are you from China? B: No, I am from the UK. A: I am happy. Are you happy? B: Yes, I am happy.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 286
+      }
+    }
+  ],
+  "admission": {
+    "status": "candidate-not-installed",
+    "recommendedCourseDay": 7,
+    "onlyFutureUnstartedUnfrozen": true,
+    "oldMaterialAndDraftPolicy": "retain-original-ids-and-bound-contracts",
+    "independentAssessmentEligible": false,
+    "vocabularyMasteryCredit": false,
+    "audioActivation": false
+  }
+}

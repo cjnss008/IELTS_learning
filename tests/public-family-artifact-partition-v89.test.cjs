@@ -1,0 +1,12 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),D=require('../assets/curriculum-data.js'),C=require('../assets/public-context-data.js'),Artifact=require('./public-artifact-modes-fixture.cjs'),copy=v=>JSON.parse(JSON.stringify(v));
+test('actual signed grammar and GSA additions retain exact frozen1823/365/default75 contracts',()=>{
+ const before=JSON.stringify(D),m=Artifact.load({data:D,sourceContexts:C});assert.equal(m.additionalGrammarMaterialIds.length,8);assert.equal(m.actual.materials.length,1823+m.newMaterialIds.length+8);assert.equal(m.expected.materialCount,m.actual.materials.length);assert.equal(m.legacy.materials.length,1823);assert.equal(Artifact.sha(m.legacy.materials),Artifact.PIN.materialsSha256);assert.equal(Artifact.sha(m.legacy.days),Artifact.PIN.daysSha256);assert.equal(m.legacy.publicCoursePlan.planHash,Artifact.PIN.publicPlanHash);assert.equal(JSON.stringify(D),before);
+ const old=Artifact.load({data:copy(m.legacy),sourceContexts:copy(m.legacySourceContexts)});assert.equal(old.actual.materials.length,1823);assert.equal(old.additionalGrammarMaterialIds.length,0);assert.equal(old.newMaterialIds.length,0);assert.equal(old.mode,'default75');
+});
+test('grammar partition never strips changed, missing, unsigned or additional bodies to force a legacy match',()=>{
+ const modes=Artifact.load({data:D,sourceContexts:C}),id=modes.additionalGrammarMaterialIds[0];for(const mutate of [d=>{d.materials.find(m=>m.id===id).questions[0].answers=['unreviewed'];},d=>{d.materials=d.materials.filter(m=>m.id!==id);},d=>{delete d.familyGrammarRelease;},d=>{d.materials.push({...copy(d.materials.find(m=>m.id===id)),id:'family-v89-day11-grammar'});},d=>{d.audit.familyGrammar.newQuestions=81;},d=>{d.materials.find(m=>m.id===modes.legacy.materials[100].id).title+=' changed';}]){const changed=copy(D);mutate(changed);assert.throws(()=>Artifact.load({data:changed,sourceContexts:C}));}
+});
+test('cached artifact validation includes family release and audit rather than only material count',()=>{
+ const data=copy(D),initial=Artifact.load({data,sourceContexts:C});assert.equal(initial.additionalGrammarMaterialIds.length,8);const original=data.familyGrammarRelease.catalogSha256;data.familyGrammarRelease.catalogSha256='0'.repeat(64);assert.throws(()=>Artifact.load({data,sourceContexts:C}));data.familyGrammarRelease.catalogSha256=original;assert.equal(Artifact.load({data,sourceContexts:C}).actual,data);data.audit.familyGrammar.newQuestions=81;assert.throws(()=>Artifact.load({data,sourceContexts:C}));
+});

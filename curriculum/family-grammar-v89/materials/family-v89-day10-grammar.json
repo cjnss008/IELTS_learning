@@ -1,0 +1,352 @@
+{
+  "id": "family-v89-day10-grammar",
+  "version": "1",
+  "week": 2,
+  "skill": "grammar",
+  "type": "grammar",
+  "level": "A1",
+  "levelStatus": "authoring-target-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "practiceOnly": true,
+  "availableFromDay": 10,
+  "title": "第10课新语法 · be / have / do与短段应用",
+  "topic": "身边的人与物",
+  "grammarFocus": [
+    "身份位置 / 拥有 / 习惯 / 正在的区分",
+    "be问句与does问句",
+    "短段中的指代、数量与时态"
+  ],
+  "estimatedMinutes": 30,
+  "instructions": "先读懂规则和英文例句，再独立完成10题。遇到错误，先比较具体错因，保留原答案，再完成订正并用自己的信息改写一句。参考30分钟，可按理解情况调整。",
+  "passage": "当天听读连接：阅读《At the Lost and Found》、听力《At the Lost and Found》的英语班／学校与物品情境。\n\n当天阅读原句（仅作回顾，不把后面的新增句子冒称原文）：\nA. This is a small lost and found office. It is in a school. A man is at the desk. He is Mr. Li. He is a teacher.\n\n下面的新规则、作息、物品位置和练习句由本课原创，用熟悉场景练新结构；它们不改写原听读事实。\n\n1. 先问自己要表达什么，再选动词。身份、状态、位置用 be：She is a student. The bag is blue. The book is on the desk. 拥有用 have / has：She has a blue bag. I have a key. 日常动作用 read / help / study 等：She helps at the desk every day. 不把 is、has、does 当成可以互换的“填空万能词”。\n\n2. be 提问把 be 前移：Is this your bag? Are you a student? be 否定在后面加 not：This is not my bag. 日常动作或本课的拥有句用 do / does：Does she have a key? She does not have a red bag. Does he help here? does 后用 have / help 原形。\n\n3. 说正在发生的动作，用 be + -ing：They are reading now. 说每天习惯，用一般现在时：They read every day. 位置和数量继续分别表达：The bag is under the desk. There are two bags. 这两句一个说明已知包的位置，一个介绍存在的数量。\n\n4. 原创小情境（沿用当天失物招领词汇，不替换原听读人物事实）：\nMia is a student. She has a blue bag and two books. She usually studies English in the evening. Today she is at the lost and found office. Her key is in her bag. Two other students are at the desk. There are two red bags under the desk. The students are reading now.\n\n理解时分清：is a student 是身份，has a blue bag 是拥有，usually studies 是习惯，are reading now 是正在发生。先看句意、主语和时间，不能看到 she 就把每一种动词都加 -s。",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "prompt": "Read the short situation. Choose the verb: Mia ___ a student.",
+      "options": [
+        "has",
+        "is",
+        "does"
+      ],
+      "answers": [
+        "is"
+      ],
+      "explanation": "正确表达：Mia is a student.\na student 说 Mia 的身份，用 be 的 is。\n“has”：has a student 会说她拥有一名学生，改变原段身份意思。\n“does”：does 不能直接连接名词 a student 表示身份。",
+      "evidence": "Mia is a student.",
+      "correctExpression": "Mia is a student.",
+      "distractorReasons": {
+        "has": "has a student 会说她拥有一名学生，改变原段身份意思。",
+        "does": "does 不能直接连接名词 a student 表示身份。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 898,
+        "end": 915,
+        "textSha256": "c7c5350316f479bcea1dfa47b69839e738c7d8d30dad03b05b7ab39ed7453ed1"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "prompt": "Read the short situation. Choose the verb: She ___ a blue bag and two books.",
+      "options": [
+        "is",
+        "have",
+        "has"
+      ],
+      "answers": [
+        "has"
+      ],
+      "explanation": "正确表达：She has a blue bag and two books.\n段落说她拥有书包和书；She 的肯定拥有句用 has。\n“is”：is 会把她等同于包和书，不能表示拥有。\n“have”：She 是第三人称单数，这个肯定句用 has。",
+      "evidence": "She has a blue bag and two books.",
+      "correctExpression": "She has a blue bag and two books.",
+      "distractorReasons": {
+        "is": "is 会把她等同于包和书，不能表示拥有。",
+        "have": "She 是第三人称单数，这个肯定句用 has。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 916,
+        "end": 949,
+        "textSha256": "88de109abcfe1fd03593f838afb044ec6b04a0e56842902770bc679ad43e222d"
+      }
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "Use the paragraph. Write the correct form of study: She usually ___ English in the evening.",
+      "answers": [
+        "studies"
+      ],
+      "wordLimit": 1,
+      "instructions": "Write ONE word.",
+      "explanation": "正确表达：She usually studies English in the evening.\nusually 表示习惯，She 后 study 变为 studies。 本空只填一个英文单词。\n“study”：本题第三人称单数的肯定习惯句需要 studies。\n“studying”：这里没有 be，而且要表达 usually 的习惯，不能只填 studying。",
+      "evidence": "She usually studies English in the evening.",
+      "correctExpression": "She usually studies English in the evening.",
+      "commonErrorReasons": {
+        "study": "本题第三人称单数的肯定习惯句需要 studies。",
+        "studying": "这里没有 be，而且要表达 usually 的习惯，不能只填 studying。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 950,
+        "end": 993,
+        "textSha256": "a10cadda4f5ec16517ad65d26ca3083538c829e067e26336f6356ac67c2639f3"
+      }
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "prompt": "Use the paragraph. Choose the matching sentence about the key.",
+      "options": [
+        "Her key is in her bag.",
+        "Her key has her bag.",
+        "Her key does in her bag."
+      ],
+      "answers": [
+        "Her key is in her bag."
+      ],
+      "explanation": "正确表达：Her key is in her bag.\nkey 的位置用 is in；her 对应 Mia 的物品。\n“Her key has her bag.”：has 会把钥匙说成拥有书包，不再表示钥匙的位置。\n“Her key does in her bag.”：does 不能代替本句表示位置的 is。",
+      "evidence": "Her key is in her bag.",
+      "correctExpression": "Her key is in her bag.",
+      "distractorReasons": {
+        "Her key has her bag.": "has 会把钥匙说成拥有书包，不再表示钥匙的位置。",
+        "Her key does in her bag.": "does 不能代替本句表示位置的 is。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1037,
+        "end": 1059,
+        "textSha256": "918a5464b35d9b9b3110da36e57002f8a675af3c9573a59cf5e0d4339d7fc415"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "prompt": "Use the paragraph. Complete: There ___ two red bags under the desk.",
+      "options": [
+        "is",
+        "are",
+        "has"
+      ],
+      "answers": [
+        "are"
+      ],
+      "explanation": "正确表达：There are two red bags under the desk.\ntwo red bags 为复数，介绍存在用 there are。\n“is”：two red bags 是复数，不能用本题的 is。\n“has”：there has 不是本课介绍“有”的结构。",
+      "evidence": "There are two red bags under the desk.",
+      "correctExpression": "There are two red bags under the desk.",
+      "distractorReasons": {
+        "is": "two red bags 是复数，不能用本题的 is。",
+        "has": "there has 不是本课介绍“有”的结构。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1096,
+        "end": 1134,
+        "textSha256": "4dcd1322b9279bc09d265aca24c2af41cff6e62c09266eb4afdd3f14ad75a643"
+      }
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "prompt": "Use the paragraph. Choose the sentence about what the students are doing NOW.",
+      "options": [
+        "The students read every day.",
+        "The students are reading now.",
+        "The students are read now."
+      ],
+      "answers": [
+        "The students are reading now."
+      ],
+      "explanation": "正确表达：The students are reading now.\n原小段明确说正在读，用 are + reading。\n“The students read every day.”：这说每天习惯，段落没有给出这个每天安排，也不是眼下动作。\n“The students are read now.”：are 后应为 reading，不能接本题的原形 read。",
+      "evidence": "The students are reading now.",
+      "correctExpression": "The students are reading now.",
+      "distractorReasons": {
+        "The students read every day.": "这说每天习惯，段落没有给出这个每天安排，也不是眼下动作。",
+        "The students are read now.": "are 后应为 reading，不能接本题的原形 read。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 1135,
+        "end": 1164,
+        "textSha256": "943a2e1737a4f22c299f8eae247aa71edbd88249a7a0d5290af4be41fc9f4b79"
+      }
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "prompt": "Ask whether Mia owns a key.",
+      "options": [
+        "Is Mia have a key?",
+        "Does Mia has a key?",
+        "Does Mia have a key?"
+      ],
+      "answers": [
+        "Does Mia have a key?"
+      ],
+      "explanation": "正确表达：Does Mia have a key?\n拥有用 have；Mia 是第三人称单数，提问用 Does，后面 have 原形。\n“Is Mia have a key?”：不能用 Is 加 have 原形构成这个拥有问句。\n“Does Mia has a key?”：Does 后不保留 has，要用 have。",
+      "evidence": "Does she have a key?",
+      "correctExpression": "Does Mia have a key?",
+      "distractorReasons": {
+        "Is Mia have a key?": "不能用 Is 加 have 原形构成这个拥有问句。",
+        "Does Mia has a key?": "Does 后不保留 has，要用 have。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 606,
+        "end": 626,
+        "textSha256": "ba0537cfee826eb5130061996d7645313ffb738a6965250b4e58a5e2b0eac3ae"
+      }
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "prompt": "Ask about a bag: This is your bag.",
+      "options": [
+        "Does this your bag?",
+        "Is this your bag?",
+        "Is this have your bag?"
+      ],
+      "answers": [
+        "Is this your bag?"
+      ],
+      "explanation": "正确表达：Is this your bag?\n原句已有 is，把 is 前移构成辨认物品的问句。\n“Does this your bag?”：this 后没有实义动词，does 不能代替 is 连接 your bag。\n“Is this have your bag?”：这里不是拥有结构，不要在 is 后多加 have。",
+      "evidence": "Is this your bag?",
+      "correctExpression": "Is this your bag?",
+      "distractorReasons": {
+        "Does this your bag?": "this 后没有实义动词，does 不能代替 is 连接 your bag。",
+        "Is this have your bag?": "这里不是拥有结构，不要在 is 后多加 have。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 512,
+        "end": 529,
+        "textSha256": "c5e4a06cce438583ba1229be2c51ff906123b8862effc38dcc59acb4b302e3db"
+      }
+    },
+    {
+      "id": "q9",
+      "type": "single",
+      "prompt": "Choose the correct negative sentence about ownership.",
+      "options": [
+        "She does not have a red bag.",
+        "She is not have a red bag.",
+        "She does not has a red bag."
+      ],
+      "answers": [
+        "She does not have a red bag."
+      ],
+      "explanation": "正确表达：She does not have a red bag.\nShe 的拥有否定用 does not have。\n“She is not have a red bag.”：is not 不能直接加 have 原形表达本题拥有否定。\n“She does not has a red bag.”：does 后用 have 原形，不用 has。",
+      "evidence": "She does not have a red bag.",
+      "correctExpression": "She does not have a red bag.",
+      "distractorReasons": {
+        "She is not have a red bag.": "is not 不能直接加 have 原形表达本题拥有否定。",
+        "She does not has a red bag.": "does 后用 have 原形，不用 has。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 627,
+        "end": 655,
+        "textSha256": "dc6ec6b1f02b2bb833f958db0b3a6b6f09dc4faf5364bcc852d2fe0642b626ed"
+      }
+    },
+    {
+      "id": "q10",
+      "type": "single",
+      "prompt": "Choose the correct pair: Ben ___ at the desk now. He ___ students there every day.",
+      "options": [
+        "has / help",
+        "is / helps",
+        "does / is helps"
+      ],
+      "answers": [
+        "is / helps"
+      ],
+      "explanation": "正确表达：Ben is at the desk now. He helps students there every day.\n第一空说明 Ben 现在的位置，单用 is at；第二空说明每天帮助别人，He 后用 helps。\n“has / help”：has 不表达 at the desk 的位置；He 的习惯肯定句也需要 helps。\n“does / is helps”：does 不能单独连接位置；is helps 也不是本课的习惯动作结构。",
+      "evidence": "The book is on the desk. 拥有用 have / has",
+      "correctExpression": "Ben is at the desk now. He helps students there every day.",
+      "distractorReasons": {
+        "has / help": "has 不表达 at the desk 的位置；He 的习惯肯定句也需要 helps。",
+        "does / is helps": "does 不能单独连接位置；is helps 也不是本课的习惯动作结构。"
+      },
+      "evidenceSpan": {
+        "unit": "utf16",
+        "start": 329,
+        "end": 368,
+        "textSha256": "a515803ce615959dfd642f022e437a73c2ed2e5db3a33f9bb383c73a29d05832"
+      }
+    }
+  ],
+  "learningScope": {
+    "new": [
+      "身份位置 / 拥有 / 习惯 / 正在的区分",
+      "be问句与does问句",
+      "短段中的指代、数量与时态"
+    ],
+    "prerequisites": [
+      "第2–9课本组规则"
+    ],
+    "review": [
+      "冠词、复数、物主词、位置、时间介词"
+    ],
+    "notTaught": [
+      "B2结构",
+      "完成时",
+      "被动语态",
+      "正式独立测评"
+    ]
+  },
+  "source": {
+    "schemaVersion": 2,
+    "kind": "original",
+    "rights": "项目原创，AI辅助编写；新增例句和题目为模拟教学情境。原课文引用属于同一项目公开源码，仅作当天衔接。",
+    "verification": "reviewed",
+    "method": "独立AI无答案作答80/80；逐题核对规则、正确表达和具体错因。非真人教师或考官审题，未作考生难度标定。",
+    "contentHashFields": [
+      "title",
+      "instructions",
+      "passage",
+      "questions"
+    ],
+    "contentHash": "ba1204b2442f2c5a6328c6ab376fbcbb5a6778f556cea1db1f86c5a57b750c52",
+    "contentHashAlgorithm": "sha256-stable-json-selected-fields-v1",
+    "reviewReceiptId": "family-grammar-root-review-v89"
+  },
+  "sourceConnections": [
+    {
+      "materialId": "w02-read-3",
+      "materialVersion": "2",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "19d8063ec6ff37953da8af1bde11e6a62474f23f048d468631830cab83aecf0c",
+      "quote": "A. This is a small lost and found office. It is in a school. A man is at the desk. He is Mr. Li. He is a teacher.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 113
+      }
+    },
+    {
+      "materialId": "w02-listen-3",
+      "materialVersion": "2",
+      "role": "same-day-scenario-reference-not-new-grammar-evidence",
+      "bodySha256": "a2c1a1d8dec612ff4d02e7b442a467be1f1f07905395ef90a9dbaeb074f143d0",
+      "quote": "Sam: Your name, please?\nJo: Jo. J, O.\nSam: Is this your bag?\nJo: No. My bag is small.\nSam: Is that your bag?\nJo: Yes, it is.\nSam: Is this your phone?\nJo: No. My phone is black.\nSam: Is this your key?\nJo: Yes, it is.\nSam: Is that your book?\nJo: No. My book is new.\nSam: Is that your hat?\nJo: No. My hat is red.\nSam: Is this your umbrella?\nJo: Yes. Thank you.",
+      "quoteSpan": {
+        "unit": "utf16",
+        "start": 0,
+        "end": 357
+      }
+    }
+  ],
+  "admission": {
+    "status": "candidate-not-installed",
+    "recommendedCourseDay": 10,
+    "onlyFutureUnstartedUnfrozen": true,
+    "oldMaterialAndDraftPolicy": "retain-original-ids-and-bound-contracts",
+    "independentAssessmentEligible": false,
+    "vocabularyMasteryCredit": false,
+    "audioActivation": false
+  }
+}

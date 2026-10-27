@@ -5,9 +5,9 @@
   "version": "year-expansion-69",
   "status": "reviewed-runtime-first-use-with-explicit-pending",
   "scheduleAxis": "Existing day numbers are course/lesson indices, not measured natural-calendar days. Static 360-minute buckets are conservative admission scenarios; runtime carries unfinished work and may advance early across lessons within one shared calendar budget.",
-  "inputHash": "dbd4e897e18c815280413221b0e8e3921d77632c5f49e93c9ccd0f172e4e21ff",
-  "baseHash": "ff29dc0d9a6bfd3f5f91c8af72d81c2d056bfe048cebbde2820dba6ab7a87b69",
-  "publicPlanHash": "dc54cddac9bc02cd234a65dd9ac2527c161aa09d05090879e283a3cf02561914",
+  "inputHash": "b573628c3f05a10d11df431a3ee3afc94d0b06678d39413928f5437dc4a4de23",
+  "baseHash": "8a6341817307d791c3fc41ec89bf88670471603d60dc34a9bf12d8eef20018cc",
+  "publicPlanHash": "7d2b3632a51839c305ac429d72d6d402f57a5e55667053136e3ae6c09a10fa59",
   "contextCatalogHash": "bc9f9deffc46a2badb12da2cc8bb70377aac62a29d1a010748e90ac3aad1d141",
   "policy": {
     "totalMinutes": 360,
@@ -120375,7 +120375,7 @@
     "runtimeConnected": true,
     "contract": {
       "path": "curriculum/year-first-use-runtime-contract.json",
-      "sha256": "32a4c0865a18757da89471a4f2a474354b20d80ab604717c4b817352bc95cdf6",
+      "sha256": "8d1197e54ee0e5ffa0925cfb75c5a96db5cae7e6ba0387f9deed45b62b32e92f",
       "bytes": 8220
     },
     "components": [
@@ -120406,14 +120406,14 @@
       {
         "role": "course-player",
         "path": "assets/course-player.js",
-        "sha256": "4b9500824a26f9a7f162b82c052955278b4d72f461d76254bc97cbd81a1a258d",
-        "bytes": 230910
+        "sha256": "d8f7091a0e6e7a167258f4a80cf7adb9a45f5bec4a9668fbc5611539ebbe2dea",
+        "bytes": 233523
       },
       {
         "role": "today-hub",
         "path": "assets/today-hub.js",
-        "sha256": "b1b72daf7221a8e2f884d7e6e512740b616d204ddf05e314d15e57b199f0a941",
-        "bytes": 34448
+        "sha256": "f29d149bc74b92c9be9fcd33b58e02fd81bcb8453e61bcbb314c0bd6c6f6acb7",
+        "bytes": 34600
       },
       {
         "role": "backup-keys",
@@ -120478,8 +120478,8 @@
       {
         "role": "adaptive-plan",
         "path": "assets/adaptive-plan.js",
-        "sha256": "984635fe7d9364a628c66b69f3d9d6cce7498cf223bd914c74df85dad49cc3f7",
-        "bytes": 57654
+        "sha256": "8f7c1d368e02d0671e9fae9e990aad7e7612d393aba25fde88c37ad39e592b82",
+        "bytes": 58593
       },
       {
         "role": "year-planner",
@@ -120508,8 +120508,8 @@
       {
         "role": "mistake-book",
         "path": "assets/mistake-book.js",
-        "sha256": "98b16a6a2deebef80cdbf3cb19391bceea50677247c2ae1314b08736494970df",
-        "bytes": 72526
+        "sha256": "0e80bac2ed6e8ad33d94338b92eda8c305ad312c76ee7ae70955c6aea6965055",
+        "bytes": 74497
       },
       {
         "role": "daily-plan-state",
@@ -120550,8 +120550,8 @@
       {
         "role": "player-page-backup",
         "path": "备份中心.html",
-        "sha256": "6e13b133bd0d034ff353a3a497e8045a29c7bd1ad265b946fc2c72f33fd9d694",
-        "bytes": 8279
+        "sha256": "9eed56c0f2b14c9d17e2c8dfea1ff4aaec45875dba8687c4a0ccf2fe8b1bb70a",
+        "bytes": 8397
       },
       {
         "role": "player-page-writing-coach",
