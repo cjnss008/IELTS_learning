@@ -159,12 +159,13 @@
   }
   function activityDrafts(memory) {
     const state = M.parseState(memory);
-    return Object.values(state.essential.batches).filter(batch => batch.draft || batch.status === 'learning').map(batch => ({id: batch.draft?.id || batch.id, materialId: batch.materialId, courseDay: batch.courseDay, taskId: 'vocabulary', skill: 'vocabulary', startedAt: batch.draft?.startedAt || batch.startedAt, activeSeconds: batch.activeSeconds, activityByDate: {...batch.activityByDate}}));
+    let retentionDrafts=[];if(state.reviewedRetention!==undefined){const api=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);if(!api?.activityDrafts)throw Error('新语境保持活动组件未加载，预算核验暂停，原输入保留。');retentionDrafts=api.activityDrafts(state);}
+    return [...Object.values(state.essential.batches).filter(batch => batch.draft || batch.status === 'learning').map(batch => ({id: batch.draft?.id || batch.id, materialId: batch.materialId, courseDay: batch.courseDay, taskId: 'vocabulary', skill: 'vocabulary', startedAt: batch.draft?.startedAt || batch.startedAt, activeSeconds: batch.activeSeconds, activityByDate: {...batch.activityByDate}})),...retentionDrafts];
   }
   function vocabularyBudget(state, records, today, options, acquired) {
     const P = root.IELTSYearPlanner || (typeof require === 'function' ? require('./year-planner.js') : null);
     const works = (records || []).filter(record => record.skill === 'vocabulary'), ids = new Set(works.map(record => record.id)), seen = new Set();
-    const batches = Object.values(state.essential.batches).filter(batch => batch.draft || batch.status === 'learning').map(batch => ({...batch, id: batch.draft?.id || batch.id, startedAt: batch.draft?.startedAt || batch.startedAt}));
+    const batches = activityDrafts(state);
     const drafts = [...Object.values(state.drafts), ...batches, ...(options.vocabularyDrafts || [])];
     let seconds = 0;
     for (const record of [...works, ...drafts.filter(value => !ids.has(value.id))]) {

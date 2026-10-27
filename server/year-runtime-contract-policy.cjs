@@ -4,7 +4,7 @@ const RUNTIME_SOURCE=(()=>{const fs=require('node:fs'),crypto=require('node:cryp
 
 // Shared by the explicit build validator and the running catalog. Roles identify
 // reviewed consumers, so arbitrary files cannot impersonate a required consumer.
-const MAX_COMPONENTS=44;
+const MAX_COMPONENTS=52;
 const REQUIRED_COMPONENTS=Object.freeze({
  'frontend-adapter':'assets/year-first-use-course.js',
  'queue-state':'assets/year-first-use-state.js',
@@ -30,6 +30,19 @@ const REQUIRED_COMPONENTS=Object.freeze({
  'mistake-book':'assets/mistake-book.js',
  'daily-plan-state':'assets/daily-plan-state.js',
  'vocabulary-exposure':'assets/contextual-vocabulary-exposure.js',
+ 'memory-page-personalization':'个性化学习.html',
+ 'lexical-retention-feedback':'assets/lexical-retention-v88-feedback.js',
+ 'lexical-retention-helper':'assets/lexical-retention-v88.js',
+ 'lexical-reviewed-context-policy':'assets/lexical-reviewed-v88-policy.js',
+ 'lexical-reviewed-context-data':'assets/lexical-reviewed-v88-data.js',
+ 'lexical-reviewed-context-helper':'assets/lexical-reviewed-context-v88.js',
+ 'vocabulary-practice':'assets/vocabulary-practice.js',
+ 'essential-vocabulary-core':'assets/essential-vocabulary-core.js',
+ 'memory-session':'assets/memory-session.js',
+ 'memory-core':'assets/memory-core.js',
+ 'essential-vocabulary-app':'assets/essential-vocabulary-app.js',
+ 'essential-vocabulary-course':'assets/essential-vocabulary-course.js',
+ 'context-vocabulary-course':'assets/contextual-vocabulary-course.js',
  'runtime-contract-policy':'server/year-runtime-contract-policy.cjs',
  'runtime-contract-validator':'tools/year-runtime-activation.cjs',
  'entrypoint':'今日学习.html',
@@ -47,6 +60,8 @@ const REQUIRED_COMPONENTS=Object.freeze({
 const REQUIRED_ROLES=Object.freeze(Object.keys(REQUIRED_COMPONENTS));
 const PLAYER_PAGES=Object.freeze(Object.entries(REQUIRED_COMPONENTS).filter(([role])=>role==='entrypoint'||role.startsWith('player-page-')).map(([,file])=>file));
 const BACKUP_PAGES=Object.freeze(['今日学习.html','备份中心.html','写作补强.html','无稿口语.html','词汇记忆.html','评分校准.html']);
+const RETENTION_MEMORY_PAGES=Object.freeze(['个性化学习.html','今日学习.html','备份中心.html','每日学习计划.html','词汇记忆.html']);
+const RETENTION_BUDGET_PAGES=Object.freeze(['今日学习.html','每日学习计划.html','词汇记忆.html','写作补强.html','无稿口语.html']);
 const HASH=/^[a-f0-9]{64}$/;
 function componentListProblem(rows){
  if(!Array.isArray(rows)||rows.length<REQUIRED_ROLES.length||rows.length>MAX_COMPONENTS)return 'runtime component count must include every required consumer and stay within '+MAX_COMPONENTS;
@@ -63,7 +78,7 @@ function componentListProblem(rows){
  return null;
 }
 function pageDependencyProblem(file,text){
- if(!PLAYER_PAGES.includes(file)&&!BACKUP_PAGES.includes(file))return null;
+ if(!PLAYER_PAGES.includes(file)&&!BACKUP_PAGES.includes(file)&&!RETENTION_MEMORY_PAGES.includes(file)&&!RETENTION_BUDGET_PAGES.includes(file))return null;
  const entries=[];let bootstrap=false;
  for(const match of String(text).matchAll(/<script\b([^>]*)>/gi)){
   const attrs=new Map();for(const item of match[1].matchAll(/([^\s=]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g))attrs.set(item[1].toLowerCase(),item[2]??item[3]??item[4]??'');
@@ -74,6 +89,10 @@ function pageDependencyProblem(file,text){
  const ordered=[...entries.filter(e=>!e.deferred),...entries.filter(e=>e.deferred)].map(e=>e.file);
  const before=(first,last)=>ordered.filter(v=>v===first).length===1&&ordered.filter(v=>v===last).length===1&&ordered.indexOf(first)<ordered.indexOf(last);
  if(!before('assets/record-snapshot-index.js','assets/learning-records.js'))return 'immutable record index must execute before Records on '+file;
+ if((RETENTION_MEMORY_PAGES.includes(file)||RETENTION_BUDGET_PAGES.includes(file))&&(!before('assets/assessment-core.js','assets/lexical-retention-v88-feedback.js')||!before('assets/lexical-retention-v88-feedback.js','assets/lexical-retention-v88.js')))return 'Assessment, Feedback and retention Helper must execute in order on '+file;
+ if(RETENTION_MEMORY_PAGES.includes(file)&&!before('assets/lexical-retention-v88.js','assets/memory-core.js'))return 'retention Helper must execute before Memory on '+file;
+ if(RETENTION_BUDGET_PAGES.includes(file)&&!before('assets/lexical-retention-v88.js','assets/year-planner.js'))return 'retention Helper must execute before Year budget on '+file;
+ if(['今日学习.html','词汇记忆.html'].includes(file)&&(!before('assets/lexical-reviewed-v88-data.js','assets/lexical-reviewed-v88-policy.js')||!before('assets/lexical-reviewed-v88-policy.js','assets/lexical-reviewed-context-v88.js')||!before('assets/lexical-reviewed-context-v88.js','assets/contextual-vocabulary-course.js')||!before('assets/contextual-vocabulary-course.js',file==='今日学习.html'?'assets/essential-vocabulary-course.js':'assets/essential-vocabulary-app.js')||!before('assets/memory-core.js','assets/memory-session.js')||!before('assets/essential-vocabulary-core.js',file==='今日学习.html'?'assets/essential-vocabulary-course.js':'assets/essential-vocabulary-app.js')||file==='词汇记忆.html'&&(!before('assets/memory-session.js','assets/essential-vocabulary-app.js')||!before('assets/vocabulary-practice.js','assets/essential-vocabulary-app.js'))))return 'reviewed vocabulary dependencies must execute before their actual consumer on '+file;
  if(PLAYER_PAGES.includes(file)&&!before('assets/year-first-use-course.js','assets/course-player.js'))return 'year adapter must execute before Player on '+file;
  if(file==='今日学习.html'&&(!before('assets/year-first-use-state.js','assets/year-first-use-runtime.js')||!before('assets/year-first-use-runtime.js','assets/year-first-use-course.js')))return 'State, Runtime and Course must execute in order on '+file;
  if(BACKUP_PAGES.includes(file)&&!before('assets/year-first-use-state.js','assets/backup-core.js'))return 'year State must execute before Backup on '+file;

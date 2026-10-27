@@ -92,7 +92,7 @@
     const entryById = new Map(data.entries.map(entry => [entry.id, entry]));
     const day = options.courseDay || courseDay({storage:P.storage(),currentDay:R?.currentDay?.()});
     const contextual = options.contextual || root.IELTSContextualVocabulary;
-    let currentContext = null, contextSignature = null;
+    let currentContext = null, contextSignature = null, retention = null;
     const ownedOptions=()=>({ownedSemanticCatalog:options.ownedSemanticCatalog,ownedSourceAcceptance:options.ownedSourceAcceptance,verifiedSkillLevels:options.verifiedSkillLevels,placement:options.placement,player:options.player||root.IELTSCoursePlayer,assessment:options.assessment||root.IELTSAssessment,recordCorrectionStatus:options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus,mistakeState:options.mistakeState});
     const sourceOptions=()=>({day,data:options.curriculum||root.IELTSCurriculumData,memory:M.read(),records,adaptive:options.adaptive||root.IELTSAdaptivePlan,...ownedOptions(),now:now()});
     function sourceAccess(value){const marker=value?.contextSource;if(marker?.schema!==2||!['owned-source-context-v82','mixed-context-v82'].includes(marker.role))return{allowed:true};return contextual?.batchTrainingAccess?.(value,sourceOptions())||{allowed:false};}
@@ -164,6 +164,7 @@
       } finally { savingDraft = false; }
     }
     function activity() {
+      if(retention?.isActive?.()){retention.tick?.();return;}
       const time = now(), delta = Math.min(5, Math.max(0, (time - tickAt) / 1000));
       tickAt = time;
       if (!batch || finished || paused || saving || disposed || doc.hidden || doc.hasFocus && !doc.hasFocus() || time - lastInteraction > 120000 || controller?.getMediaState?.()?.busy) return;
@@ -225,7 +226,7 @@
       finally { saving = null; }
     }
     async function openBatch(value) {
-      check();
+      check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}
       if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
       if (batch && !finished) { activity(); saveDraft(); }
       const savedValue=allBatches(M.read()).find(item=>item.id===(typeof value==='string'?value:value.id))||value;if(ownedBatch(savedValue)&&R?.list)records=await R.list();check();if(!sourceAccess(savedValue).allowed){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;statusText='这份词组等待同源听读原稿、完整听音和订正；原输入与原音保留，原句暂不展示。';practice.replaceChildren(node('p',statusText,'memory-feedback'));render();return false;}
@@ -278,6 +279,7 @@
       render();
     }
     async function start(requestedOrigin) {
+      if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return;}
       if(day<2){notice('8000必学词与新增循环复习从第2课开始。本课先完成原有词汇训练。');return;}
       await options.refreshBudget?.();
       check();
@@ -318,6 +320,7 @@
       const reviewButton = button(reviewCount ? '开始本轮复习（'+reviewCount+'项）' : '查看复习安排', async () => {
         if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
         if (batch && !finished) { activity(); saveDraft(); }
+        if(retention?.isActive?.())await retention.close();
         controller?.destroy?.(); controller = null; batch = null; practice.replaceChildren();
         options.onActiveChange?.(false,{kind:'review-switch'});
         await options.openReview?.();
@@ -331,12 +334,12 @@
         node('p',day<2?'8000必学词从第2课开始；第1课先完成原有词汇训练。':active ? '未完成组已保留，继续原来的词与作答顺序。' : available ? '今日安排 '+newCount+' 个新词'+(pendingCount?'、'+pendingCount+' 个待补词':'')+'，先完成一组 '+groupSize+' 词。' : '今天先巩固已有词；新词量会随复习积压与剩余预算调整。'));
       const startButton = button(active ? '继续未完成词组' : available ? '开始本组 '+groupSize+' 词' : '暂不增加新词', active ? () => openBatch(active) : start, !!options.preferNewWords || !!active || !reviewCount);
       startButton.disabled = day<2 || !active && (!available || reviewCount>0) || !!batch && !finished;
-      fresh.append(startButton);const sourceWaiting=currentContext?.awaitingSourceWords?.length||0;if(sourceWaiting)fresh.append(node('p','有 '+sourceWaiting+' 个语境词已保留来源，先完成对应听读原稿、完整听音和订正，再展示原句并开启训练。','memory-subtle'));if(plan.heldSourceBatches?.length)fresh.append(node('p','有旧词组等待同源原稿核验，原输入与原音保留，暂不开训练。','memory-subtle'));const heldSenses=(currentContext?.pending||[]).filter(p=>p.reason==='owned-source-existing-word-snapshot-preserved');if(heldSenses.length)fresh.append(node('p','有 '+heldSenses.length+' 个新语境义项与旧词卡不同，旧义与原稿保留；新义项待单独安排。','memory-subtle'));const held=(plan.pendingContextWords||[]).filter(w=>w.heldForVerification===true);if(held.length)fresh.append(node('p','有 '+held.length+' 个原课语境词的原文版本待核验，原词义与来源已保留；核验后继续，不用新版原文替代。','memory-subtle'));if(currentContext?.heldContexts?.length)fresh.append(node('p','有旧语境来源合同待核对，原任务保留，暂不新增该组。','memory-subtle'));const carryGroups=new Map();for(const word of plan.pendingContextWords||[])if(word.originCourseDay<day&&word.heldForVerification!==true)carryGroups.set(word.originCourseDay,(carryGroups.get(word.originCourseDay)||0)+1);if(carryGroups.size){fresh.append(node('p','前课待补内容仍保留；补学原稿与用时计入当前课次和实际日期，旧课结果不重开。','memory-subtle'));for(const [originDay,count]of carryGroups){fresh.append(node('p','第 '+originDay+' 课：'+count+' 个语境词待补'));const resume=button('补第 '+originDay+' 课语境词',()=>start(originDay));resume.disabled=!!active||!!batch&&!finished||reviewCount>0||!available;fresh.append(resume);}}if(options.preferNewWords)route.append(fresh,review);else route.append(review,fresh);
+      fresh.append(startButton);const sourceWaiting=currentContext?.awaitingSourceWords?.length||0;if(sourceWaiting)fresh.append(node('p',contextual?.waitingMessage?.(currentContext.awaitingSourceWords)||'对应来源资格待核验，原输入保留。','memory-subtle'));if(plan.heldSourceBatches?.length)fresh.append(node('p','有旧词组等待同源原稿核验，原输入与原音保留，暂不开训练。','memory-subtle'));const heldSenses=(currentContext?.pending||[]).filter(p=>p.reason==='owned-source-existing-word-snapshot-preserved');if(heldSenses.length)fresh.append(node('p','有 '+heldSenses.length+' 个新语境义项与旧词卡不同，旧义与原稿保留；新义项待单独安排。','memory-subtle'));const held=(plan.pendingContextWords||[]).filter(w=>w.heldForVerification===true);if(held.length)fresh.append(node('p','有 '+held.length+' 个原课语境词的原文版本待核验，原词义与来源已保留；核验后继续，不用新版原文替代。','memory-subtle'));if(currentContext?.heldContexts?.length)fresh.append(node('p','有旧语境来源合同待核对，原任务保留，暂不新增该组。','memory-subtle'));const carryGroups=new Map();for(const word of plan.pendingContextWords||[])if(word.originCourseDay<day&&word.heldForVerification!==true)carryGroups.set(word.originCourseDay,(carryGroups.get(word.originCourseDay)||0)+1);if(carryGroups.size){fresh.append(node('p','前课待补内容仍保留；补学原稿与用时计入当前课次和实际日期，旧课结果不重开。','memory-subtle'));for(const [originDay,count]of carryGroups){fresh.append(node('p','第 '+originDay+' 课：'+count+' 个语境词待补'));const resume=button('补第 '+originDay+' 课语境词',()=>start(originDay));resume.disabled=!!active||!!batch&&!finished||reviewCount>0||!available;fresh.append(resume);}}if(options.preferNewWords)route.append(fresh,review);else route.append(review,fresh);
       if(!options.inline&&(plan.quota?.courseReservedToday||pendingCourseWords(P.storage()).length)){const line=node('p',plan.quota?.courseReservedToday?'本课另有 '+plan.quota.courseReservedToday+' 个必学新词，沿用课程训练，不重复初学。':'课程中的未提交词汇已保留，继续原稿即可。','memory-subtle'),link=node('a','继续本课词汇');link.href='今日学习.html?day='+day+(P.isPreview?.()?'&preview=1':'');line.append(doc.createTextNode(' '),link);fresh.append(line);}
       const feedback = node('p',statusText,'essential-status'); feedback.setAttribute('role','status');
       const note = node('p','以365天累计覆盖8000词为长期目标。先做到期回忆，再按本课语境、实际表现和剩余预算安排新词；不设固定日词数门槛。技能轮换，语境表达结合听读说写；同日正确和旧自评保留为练习记录。','memory-subtle');
       dashboard.replaceChildren(top,grid,progress,route,feedback,note);
-      if(options.inline){const supplied=plan.todayNewWords||plan.dayNewWords||options.getTodayWords?.(plan)||[],fallback=supplied.length?supplied:[...(plan.activeBatches||[]).flatMap(value=>wordsForBatch(value).map(word=>({...word,state:'started'}))),...(plan.newWords||[])],seen=new Set(),today=fallback.map(value=>value.entry?{...value.entry,state:value.state}:value).filter(word=>{const key=normalize(word.word);if(!key||seen.has(key))return false;seen.add(key);return true;});const list=node('div',null,'essential-new-list');list.append(node('h3','本课语境候选与已开始词组 · '+today.length+' 词'));const words=node('div',null,'essential-word-chips');for(const word of today){const chip=node('span',word.word+(word.state==='submitted'?' · 原稿已交':word.state==='started'?' · 续做':''),'essential-word-chip');chip.setAttribute('data-ai-word',word.word);chip.setAttribute('data-state',word.state||'not-started');words.append(chip);}list.append(words,node('p','先复习到期词，再选择有材料语境的新词。已开始组可续作；独立词库候选不自动算作本课必学。没有明确材料关联时，回到原课语境练习。','memory-subtle'));const current=controller?.getState?.();list.hidden=!!options.isReviewActive?.()||current?.testing===true||['completion','meaning','dictation'].includes(current?.phase);const stats=node('details');stats.append(node('summary','查看8000词总进度与证据'),grid,progress);dashboard.replaceChildren(top,route,list,feedback,stats,note);}
+      if(options.inline){const supplied=plan.todayNewWords||plan.dayNewWords||options.getTodayWords?.(plan)||[],fallback=supplied.length?supplied:[...(plan.activeBatches||[]).flatMap(value=>wordsForBatch(value).map(word=>({...word,state:'started'}))),...(plan.newWords||[])],seen=new Set(),today=fallback.map(value=>value.entry?{...value.entry,state:value.state}:value).filter(word=>{const key=normalize(word.word);if(!key||seen.has(key))return false;seen.add(key);return true;});const list=node('div',null,'essential-new-list');list.append(node('h3','本课语境候选与已开始词组 · '+today.length+' 词'));const words=node('div',null,'essential-word-chips');for(const word of today){const chip=node('span',word.word+(word.state==='submitted'?' · 原稿已交':word.state==='started'?' · 续做':''),'essential-word-chip');chip.setAttribute('data-ai-word',word.word);chip.setAttribute('data-state',word.state||'not-started');words.append(chip);}list.append(words,node('p','先复习到期词，再选择有材料语境的新词。已开始组可续作；独立词库候选不自动算作本课必学。没有明确材料关联时，回到原课语境练习。','memory-subtle'));const current=controller?.getState?.();list.hidden=retention?.isActive?.()===true||!!options.isReviewActive?.()||current?.testing===true||['completion','meaning','dictation'].includes(current?.phase);const stats=node('details');stats.append(node('summary','查看8000词总进度与证据'),grid,progress);dashboard.replaceChildren(top,route,list,feedback,stats,note);}
       if (finished) {
         const next = button(available ? '继续下一组必学词' : '查看今日下一步', async () => {
           controller?.destroy?.(); controller = null; batch = null; practice.replaceChildren();
@@ -344,12 +347,15 @@
         },true);
         dashboard.append(next);
       }
+      retention?.render?.(dashboard);
     }
-    const interact = () => { lastInteraction = now(); };
-    const changed = () => { if (!savingDraft && !saving) render(); };
-    const recordsChanged = () => { R?.list?.().then(values => { if (!disposed) { records = values; render(); } }).catch(error => notice(error.message)); };
-    const profileChanged = () => { disposed = true; controller?.destroy?.();practice.querySelectorAll('input,textarea,button').forEach(el=>{el.disabled=true;});dashboard.replaceChildren(node('p','学习档案已切换，请刷新后继续。')); };
-    const pagehide = () => { try { activity(); saveDraft(); } catch (_) {} controller?.pause?.(); };
+    const retentionAPI=root.IELTSLexicalRetentionV88;
+    retention=retentionAPI?.mount?.({document:doc,practice,memory:M,store,records:R,profiles:P,storage:P.storage(),day,now,check,durable,initialRecords:records,sourceOptions,getRecords:()=>records,getNormalPlan:currentPlan,getContext:()=>currentContext,getBudget:options.getBudget,refreshBudget:options.refreshBudget,setRecords:values=>{records=values;},render,canStart:()=>!controller?.getMediaState?.()?.busy&&(!batch||finished),onActiveChange:async(active,detail)=>{if(active){await options.onNewWordsOpened?.();check();controller?.destroy?.();controller=null;batch=null;finished=false;}await options.onActiveChange?.(active,detail);}})||null;
+    const interact = () => { lastInteraction = now();retention?.interact?.(); };
+    const changed = () => { if (!savingDraft && !saving && !retention?.isBusy?.()) render(); };
+    const recordsChanged = () => { R?.list?.().then(values => { if (!disposed) { records = values; retention?.setRecords?.(values);if(!retention?.isBusy?.())render(); } }).catch(error => notice(error.message)); };
+    const profileChanged = () => { disposed = true; retention?.destroy?.();controller?.destroy?.();practice.querySelectorAll('input,textarea,button').forEach(el=>{el.disabled=true;});dashboard.replaceChildren(node('p','学习档案已切换，请刷新后继续。')); };
+    const pagehide = () => { try { retention?.save?.();activity(); saveDraft(); } catch (_) {} controller?.pause?.(); };
     const beforeunload=event=>{if(!disposed&&(unsaved||saving||controller?.getMediaState?.()?.busy)){event.preventDefault();event.returnValue='';}};
     ['pointerdown','keydown','input'].forEach(type => doc.addEventListener(type,interact,{passive:true}));
     root.addEventListener?.('ielts:memory-changed',changed);
@@ -359,8 +365,8 @@
     root.addEventListener?.('beforeunload',beforeunload);
     const timer = root.setInterval?.(() => { try { activity(); } catch (error) { notice(error.message); } },1000);
     render();
-    return {render,openBatch,start,getPlan:currentPlan,getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){records=values;render();},
-      isBusy:()=>!!saving || !!controller?.getMediaState?.()?.busy,save:pagehide,destroy(){pagehide();disposed=true;controller?.destroy?.();root.clearInterval?.(timer);
+    return {render,openBatch,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){retention?.pause?.();activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){records=values;retention?.setRecords?.(values);render();},
+      isBusy:()=>!!saving || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy,save:pagehide,destroy(){pagehide();disposed=true;retention?.destroy?.();controller?.destroy?.();root.clearInterval?.(timer);
         ['pointerdown','keydown','input'].forEach(type => doc.removeEventListener?.(type,interact));
         root.removeEventListener?.('ielts:memory-changed',changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);root.removeEventListener?.('pagehide',pagehide);root.removeEventListener?.('beforeunload',beforeunload);}};
   }
