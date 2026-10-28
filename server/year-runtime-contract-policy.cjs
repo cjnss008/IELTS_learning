@@ -69,7 +69,8 @@ const FAMILY_BROADCAST_CONTRACT_PATH='curriculum/year-first-use-runtime-contract
 const FAMILY_LINKED_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v109-linked-lessons.json';
 const FAMILY_AUDIT_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v111-course-audit.json';
 const FAMILY_NAS_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v112-nas-startup.json';
-const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH,FAMILY_AUDIT_CONTRACT_PATH,FAMILY_NAS_CONTRACT_PATH].includes(contractPath);
+const FAMILY_MULTIBATCH_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v113-multibatch.json';
+const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH,FAMILY_AUDIT_CONTRACT_PATH,FAMILY_NAS_CONTRACT_PATH,FAMILY_MULTIBATCH_CONTRACT_PATH].includes(contractPath);
 function componentLimit(contractPath){return isFamilyContract(contractPath)?55:MAX_COMPONENTS;}
 
 function componentListProblem(rows,contractPath){

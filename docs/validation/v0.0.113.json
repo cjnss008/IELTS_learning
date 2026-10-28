@@ -1,0 +1,76 @@
+{
+  "version": "0.0.113",
+  "date": "2026-10-29",
+  "status": "development-validated-not-published",
+  "fullSuite": {
+    "total": 2787,
+    "pass": 2785,
+    "fail": 0,
+    "skip": 2,
+    "durationMs": 769755.7278,
+    "logSha256": "060e640836ce4a50160da23e636f1b1e2df886c2af9a0ff2989909dddbb6a35f"
+  },
+  "build": {
+    "days": 365,
+    "materials": 1912,
+    "conditionalYearMaterials": 688,
+    "components": 55,
+    "index": "curriculum/year-first-use/index.b0d52e3ac43265ff.json"
+  },
+  "unchanged": {
+    "publishedVersion": "0.0.112",
+    "rawDays": 365,
+    "materials": 1912,
+    "publicPlan": true,
+    "firstFamilyRelease": true,
+    "historicalRuntimeContracts": [
+      "year-first-use-runtime-contract-v107-broadcast.json",
+      "year-first-use-runtime-contract-v108-linked-continuation.json",
+      "year-first-use-runtime-contract-v109-linked-lessons.json",
+      "year-first-use-runtime-contract-v111-course-audit.json",
+      "year-first-use-runtime-contract-v112-nas-startup.json",
+      "year-first-use-runtime-contract-v93-family.json",
+      "year-first-use-runtime-contract-v94-daily-review.json",
+      "year-first-use-runtime-contract-v95-replay.json",
+      "year-first-use-runtime-contract-v96-vocabulary-completion.json",
+      "year-first-use-runtime-contract-v97-compact-queue.json",
+      "year-first-use-runtime-contract-v97-family-lessons.json",
+      "year-first-use-runtime-contract.json"
+    ]
+  },
+  "targeted": {
+    "catalogTests": 7,
+    "multiBatchIntegrationTests": 5
+  },
+  "browser": {
+    "environment": "127.0.0.1:18765 isolated synthetic profile only",
+    "checks": [
+      "Third-lesson homepage continuation navigates to the next pending vocabulary group",
+      "Current v113 source validation enables resume",
+      "Six-word group restores library study input 1/3",
+      "Save-and-collapse restores the continue button"
+    ],
+    "originalRecordsExactlyPreserved": 88,
+    "limitations": [
+      "Actual browser uses the existing v109 batch; multiple batches use component integration with synthetic backend",
+      "No new real AI service, microphone or phoneme assessment",
+      "Family PC has not been accessed remotely",
+      "Initial source/audio verification still has visible delay"
+    ]
+  },
+  "notActivated": [
+    "linked-course-next day11–20 candidates",
+    "linked-course-days21-25 authoring drafts"
+  ],
+  "realLearnerDataTouched": false,
+  "formalCheckoutModified": false,
+  "aiAutoCourseAdjustmentEnabled": false,
+  "initialTestRun": {
+    "status": "interrupted-during-source-finalization-not-acceptance",
+    "findings": [
+      "Public inventory profile needed explicit v113 content pins",
+      "Development browser server occupied launcher test port",
+      "Contract re-signing during test invalidated an isolated snapshot; final run uses frozen sources and free port"
+    ]
+  }
+}

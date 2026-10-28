@@ -1,0 +1,1151 @@
+{
+  "schema": 1,
+  "scope": "11–20未启用草稿，24个extension词头及liter/已有litre拼写变体；未读取学习者数据、已发布数据不改写。",
+  "checkedOn": "2026-10-29",
+  "status": "dictionary-reference-and-context-checked-audio-listening-pending",
+  "inputSha256": {
+    "vocabulary/essential/source-lock.json": "648adca4d02365cfeb7498a0e36fc7447a140b90a3fab5992f033f9489c04e16",
+    "work/essential-vocabulary/ecdict.csv": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc",
+    "work/essential-vocabulary/cmudict/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+    "curriculum/linked-course-next/audio-pending-inputs.json": "6584d245e1a95285d26b6cd43e9cf81b26738f895d2337e7b01c851a23cc7375",
+    "curriculum/linked-course-next/authoring-plan.json": "b413f791889fd8ce5ff2be7d2754c2755831b5456cba58352eb92a20bf840e5f",
+    "curriculum/linked-course-next/day11.json": "a24964b768a3f2c920892c27e3ebc96e487d1bf924fbd9642a9b4b6090cacf94",
+    "curriculum/linked-course-next/day12.json": "92defeb52c1587aaed5dd478666fa933b9be0e8c2df55068c04e2f67a31d1132",
+    "curriculum/linked-course-next/day13.json": "bf3f9401e918398fa823d1f0a98cf04f907afe1e881ecfed7faca955fd111e91",
+    "curriculum/linked-course-next/day14.json": "b7d5cc762aad53ddd9daedf29258f1f55fbdb97f63e0fcb5a4ae936d40a59fb2",
+    "curriculum/linked-course-next/day15.json": "18acee306e18c85dcb77c9c92e8823ae213c6314923844087e35904844624b68",
+    "curriculum/linked-course-next/day16.json": "6eea84d36d223fd773febe6a1ba0e25207cc2fac6ca9ed2431c183bcfb35f715",
+    "curriculum/linked-course-next/day17.json": "9f5e53ba311ccb1086ce2002e097066d355524ec380abab493546f6f057c2ca9",
+    "curriculum/linked-course-next/day18.json": "3f3a11d22aafa20191e791463f641c4aed4953e3cc9b4f346b86f665c879a2c1",
+    "curriculum/linked-course-next/day19.json": "66a27821a1e657905d38ded05e3e46edf5f4e1a32cb6ab4835383299f44fbd74",
+    "curriculum/linked-course-next/day20.json": "9168d863057885db3d59c509cd187ac3dbe4586d9878cf032c86a0057ad8fb26"
+  },
+  "sources": {
+    "ecdict": {
+      "url": "https://github.com/skywind3000/ECDICT/tree/ab22ad36302cafc6349a050e2b60894855208055",
+      "license": "MIT",
+      "sha256": "d1ecbdf9ee2b920afb6f430ca6b6bb9f559588cf0dff86e04bd255f9390843cc"
+    },
+    "cmudict": {
+      "url": "https://github.com/cmusphinx/cmudict/tree/74790861f652b15e4ac49015a90074ad62a27690",
+      "license": "BSD-2-Clause",
+      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22"
+    },
+    "cambridge": "每词dictionaryReview.sourceUrl；词义为项目自己的简短释义，未复制词典长文。"
+  },
+  "counts": {
+    "extensionTargets": 24,
+    "existingCoreSpellingVariantTargets": 1,
+    "reviewed": 25
+  },
+  "items": [
+    {
+      "day": 13,
+      "word": "kilogram",
+      "canonicalId": "extension:kilogram",
+      "canonicalWord": "kilogram",
+      "pos": "n.",
+      "meaning": "千克",
+      "ipa": "/ˈkɪləˌɡræm/",
+      "context": "The label says that the bag contains one kilogram.",
+      "contextRangeUtf16": [
+        556,
+        606
+      ],
+      "localCmuArpabetVariants": [
+        "K IH1 L AH0 G R AE2 M"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:kilograms"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/kilogram",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/kilogram",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 13,
+      "word": "liter",
+      "canonicalId": "essential:litre",
+      "canonicalWord": "litre",
+      "pos": "n.",
+      "meaning": "升",
+      "ipa": "/ˈlitɚ/",
+      "context": "The last item is one liter of oil for three pounds.",
+      "contextRangeUtf16": [
+        761,
+        812
+      ],
+      "localCmuArpabetVariants": [
+        "L IY1 T ER0"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/liter",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/liter",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "美式拼写 liter 对应已有核心词头 essential:litre，不作为两个不同词头；保持字面读音 liter。"
+    },
+    {
+      "day": 14,
+      "word": "rent",
+      "canonicalId": "extension:rent",
+      "canonicalWord": "rent",
+      "pos": "n.",
+      "meaning": "租金",
+      "ipa": "/rɛnt/",
+      "context": "The Oak apartment has a monthly rent of 720 pounds.",
+      "contextRangeUtf16": [
+        337,
+        388
+      ],
+      "localCmuArpabetVariants": [
+        "R EH1 N T"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:rents/i:renting/d:rented/p:rented/3:rents/0:rent/1:d"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/rent",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/rent",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句为租金名词，不是rend的过去式。"
+    },
+    {
+      "day": 14,
+      "word": "heating",
+      "canonicalId": "extension:heating",
+      "canonicalWord": "heating",
+      "pos": "n.",
+      "meaning": "供暖系统；供暖",
+      "ipa": "/ˈhiːtɪŋ/",
+      "context": "Ben asks how the heating works and whether electricity and gas are included.",
+      "contextRangeUtf16": [
+        1220,
+        1296
+      ],
+      "localCmuArpabetVariants": [
+        "HH IY1 T IH0 NG"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "0:heat/1:i/i:heating"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/heating",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/heating",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句是名词“供暖系统”，非进行时；ECDICT标注与heat相关，既有heat/加热词形需要查已学状态，不能只凭-ing自动加新。该名词词义在美式教材中heat亦常见。"
+    },
+    {
+      "day": 16,
+      "word": "cloudy",
+      "canonicalId": "extension:cloudy",
+      "canonicalWord": "cloudy",
+      "pos": "adj.",
+      "meaning": "多云的",
+      "ipa": "/ˈklaʊdi/",
+      "context": "It says the morning will be cloudy, but there may be sunshine after lunch.",
+      "contextRangeUtf16": [
+        175,
+        249
+      ],
+      "localCmuArpabetVariants": [
+        "K L AW1 D IY0"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "r:cloudier"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/cloudy",
+        "partOfSpeech": "adj.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/cloudy",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "天气形容词；与本课cloud名词有关联但不是其复数或时态屈折形式。"
+    },
+    {
+      "day": 16,
+      "word": "snowy",
+      "canonicalId": "extension:snowy",
+      "canonicalWord": "snowy",
+      "pos": "adj.",
+      "meaning": "下雪的",
+      "ipa": "/ˈsnoʊi/",
+      "context": "Winter is the cold season; a snowy morning is exciting for children, but snow can cover the small plants.",
+      "contextRangeUtf16": [
+        1445,
+        1550
+      ],
+      "localCmuArpabetVariants": [
+        "S N OW1 IY0"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:snowys/t:snowiest"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/snowy",
+        "partOfSpeech": "adj.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/snowy",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "天气形容词；与本课snow名词有关联但不是其复数或时态屈折形式。"
+    },
+    {
+      "day": 16,
+      "word": "freezing",
+      "canonicalId": "extension:freezing",
+      "canonicalWord": "freezing",
+      "pos": "adj.",
+      "meaning": "极冷的",
+      "ipa": "/ˈfrizɪŋ/",
+      "context": "On a freezing night, volunteers sometimes move young plants into a sheltered room.",
+      "contextRangeUtf16": [
+        1551,
+        1633
+      ],
+      "localCmuArpabetVariants": [
+        "F R IY1 Z IH0 NG"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "0:freeze/1:i/i:freezing"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/freezing",
+        "partOfSpeech": "adj.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/freezing",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句为修饰night、意为极冷的形容词，词典有独立形容词词义；ECDICT标注与freeze相关，普通现在分词不能计新，是否此前已学相关形态需查实际记录。"
+    },
+    {
+      "day": 16,
+      "word": "Celsius",
+      "canonicalId": "extension:celsius",
+      "canonicalWord": "celsius",
+      "pos": "adj.",
+      "meaning": "摄氏的（温标）",
+      "ipa": "/ˈsɛlsiəs/",
+      "context": "The temperature is likely to reach 14 degrees Celsius.",
+      "contextRangeUtf16": [
+        250,
+        304
+      ],
+      "localCmuArpabetVariants": [
+        "S EH1 L S IY0 AH0 S"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/celsius",
+        "partOfSpeech": "adj.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/celsius",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词典标准显示首字母大写；显示和朗读输入Celsius，规范身份extension:celsius/canonicalWord celsius。"
+    },
+    {
+      "day": 17,
+      "word": "volleyball",
+      "canonicalId": "extension:volleyball",
+      "canonicalWord": "volleyball",
+      "pos": "n.",
+      "meaning": "排球",
+      "ipa": "/ˈvɑliˌbɔl/",
+      "context": "The center also has a volleyball group, and a teacher invites visitors to join a simple practice.",
+      "contextRangeUtf16": [
+        789,
+        886
+      ],
+      "localCmuArpabetVariants": [
+        "V AA1 L IY0 B AO2 L"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/volleyball",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/volleyball",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "当前元音与次重音对应固定CMU来源；剑桥展示其他美式记音，差异需在听审中确认。"
+    },
+    {
+      "day": 17,
+      "word": "aerobics",
+      "canonicalId": "extension:aerobics",
+      "canonicalWord": "aerobics",
+      "pos": "n.",
+      "meaning": "有氧健身操",
+      "ipa": "/ɛˈroʊbɪks/",
+      "context": "Sol, however, prefers the music in an aerobics class.",
+      "contextRangeUtf16": [
+        937,
+        990
+      ],
+      "localCmuArpabetVariants": [
+        "ER0 OW1 B IH0 K S"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "0:aerobic/1:s"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/aerobics",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/aerobics",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "不可数名词指有氧健身操，末尾-s不是aerobic这一形容词的普通复数。"
+    },
+    {
+      "day": 17,
+      "word": "yoga",
+      "canonicalId": "extension:yoga",
+      "canonicalWord": "yoga",
+      "pos": "n.",
+      "meaning": "瑜伽",
+      "ipa": "/ˈjoʊɡə/",
+      "context": "For a quieter choice, yoga is offered in a small room after lunch.",
+      "contextRangeUtf16": [
+        1356,
+        1422
+      ],
+      "localCmuArpabetVariants": [
+        "Y OW1 G AH0"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/yoga",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/yoga",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 18,
+      "word": "website",
+      "canonicalId": "extension:website",
+      "canonicalWord": "website",
+      "pos": "n.",
+      "meaning": "网站",
+      "ipa": "/ˈwɛbˌsaɪt/",
+      "context": "She knows that technology can make the work easier, but she has never used the club's shared website.",
+      "contextRangeUtf16": [
+        67,
+        168
+      ],
+      "localCmuArpabetVariants": [
+        "W EH1 B S AY2 T"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/website",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/website",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 18,
+      "word": "email",
+      "canonicalId": "extension:email",
+      "canonicalWord": "email",
+      "pos": "n.",
+      "meaning": "电子邮件",
+      "ipa": "/ˈiˌmeɪl/",
+      "context": "Leo adds that no one should send a real password in an email.",
+      "contextRangeUtf16": [
+        992,
+        1053
+      ],
+      "localCmuArpabetVariants": [
+        "IY0 M EY1 L"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/email",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/email",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "剑桥美式记首音节主重音；CMU词条另记末音节主重音，按本参考选择保留，生成音频须听审。"
+    },
+    {
+      "day": 18,
+      "word": "password",
+      "canonicalId": "extension:password",
+      "canonicalWord": "password",
+      "pos": "n.",
+      "meaning": "密码",
+      "ipa": "/ˈpæsˌwɝd/",
+      "context": "At the login screen, Marta enters the practice username and password.",
+      "contextRangeUtf16": [
+        768,
+        837
+      ],
+      "localCmuArpabetVariants": [
+        "P AE1 S W ER2 D"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:passwords"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/password",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/password",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 18,
+      "word": "username",
+      "canonicalId": "extension:username",
+      "canonicalWord": "username",
+      "pos": "n.",
+      "meaning": "用户名",
+      "ipa": "/ˈjuzɚˌneɪm/",
+      "context": "At the login screen, Marta enters the practice username and password.",
+      "contextRangeUtf16": [
+        768,
+        837
+      ],
+      "localCmuArpabetVariants": [
+        "Y UW1 Z ER0 N EY2 M"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/username",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/username",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 18,
+      "word": "login",
+      "canonicalId": "extension:login",
+      "canonicalWord": "login",
+      "pos": "n.",
+      "meaning": "登录",
+      "ipa": "/ˈlɔɡˌɪn/",
+      "context": "At the login screen, Marta enters the practice username and password.",
+      "contextRangeUtf16": [
+        768,
+        837
+      ],
+      "localCmuArpabetVariants": [
+        "L AO1 G IH2 N"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:logins"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/login",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/login",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句为名词作定语；/ɔ/元音及次重音基于固定CMU来源，剑桥展示/ɑ/属来源记音差异；需听审当前合成发音。"
+    },
+    {
+      "day": 18,
+      "word": "logout",
+      "canonicalId": "extension:logout",
+      "canonicalWord": "logout",
+      "pos": "n.",
+      "meaning": "退出登录",
+      "ipa": "/ˈlɔɡˌaʊt/",
+      "context": "When she finishes, she uses the logout button and closes the browser.",
+      "contextRangeUtf16": [
+        2143,
+        2212
+      ],
+      "localCmuArpabetVariants": [
+        "L AO1 G AW2 T"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/logout",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/logout",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句为名词作定语；/ɔ/元音及次重音基于固定CMU来源，剑桥展示/ɑ/属来源记音差异；需听审当前合成发音。"
+    },
+    {
+      "day": 18,
+      "word": "download",
+      "canonicalId": "extension:download",
+      "canonicalWord": "download",
+      "pos": "v.",
+      "meaning": "下载",
+      "ipa": "/ˈdaʊnˌloʊd/",
+      "context": "Next, Marta learns how to download a blank notes form for the next meeting.",
+      "contextRangeUtf16": [
+        1546,
+        1621
+      ],
+      "localCmuArpabetVariants": [
+        "D AW1 N L OW2 D"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "d:downloaded/i:downloading/p:downloaded/s:downloads/3:downloads"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/download",
+        "partOfSpeech": "v.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/download",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句是动词；按剑桥美式和CMU标记首音节主重音。孤立合成词音是否采用此重音仍需听审。"
+    },
+    {
+      "day": 18,
+      "word": "upload",
+      "canonicalId": "extension:upload",
+      "canonicalWord": "upload",
+      "pos": "v.",
+      "meaning": "上传",
+      "ipa": "/ˌʌpˈloʊd/",
+      "context": "After that, she uses the button to upload her copy to the shared area.",
+      "contextRangeUtf16": [
+        1389,
+        1459
+      ],
+      "localCmuArpabetVariants": [
+        "AH1 P L OW2 D"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "i:uploading/p:uploaded/3:uploads/d:uploaded"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/upload",
+        "partOfSpeech": "v.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/upload",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句是动词，保留剑桥美式动词末音节重音；CMU词条未区分词性，孤立音频仍需听审。"
+    },
+    {
+      "day": 18,
+      "word": "browser",
+      "canonicalId": "extension:browser",
+      "canonicalWord": "browser",
+      "pos": "n.",
+      "meaning": "浏览器",
+      "ipa": "/ˈbraʊzɚ/",
+      "context": "He asks her to open the browser and connect to the center's wireless network.",
+      "contextRangeUtf16": [
+        498,
+        575
+      ],
+      "localCmuArpabetVariants": [
+        "B R AW1 Z ER0"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:browsers"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/browser",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/browser",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 18,
+      "word": "online",
+      "canonicalId": "extension:online",
+      "canonicalWord": "online",
+      "pos": "adj.",
+      "meaning": "在线的",
+      "ipa": "/ˈɑnˌlaɪn/",
+      "context": "Leo explains that the website has an online area for shared notes and an offline guide saved on the computer.",
+      "contextRangeUtf16": [
+        657,
+        766
+      ],
+      "localCmuArpabetVariants": [
+        "AO1 N L AY2 N"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": ""
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/online",
+        "partOfSpeech": "adj.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/online",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句修饰area为形容词，剑桥美式形容词首音节主重音；副词另有末音节主重音。"
+    },
+    {
+      "day": 18,
+      "word": "offline",
+      "canonicalId": "extension:offline",
+      "canonicalWord": "offline",
+      "pos": "adj.",
+      "meaning": "离线的",
+      "ipa": "/ˌɔfˈlaɪn/",
+      "context": "Leo explains that the website has an online area for shared notes and an offline guide saved on the computer.",
+      "contextRangeUtf16": [
+        657,
+        766
+      ],
+      "localCmuArpabetVariants": [
+        "AO1 F L AY2 N"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "d:offlined/i:offlining/s:offlines"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/offline",
+        "partOfSpeech": "adj.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/offline",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句为形容词；当前/ɔ/元音可见CMU来源，剑桥列/ɑ/并标末音节重音，存在记音/方言差异，需听审。"
+    },
+    {
+      "day": 19,
+      "word": "tutorial",
+      "canonicalId": "extension:tutorial",
+      "canonicalWord": "tutorial",
+      "pos": "n.",
+      "meaning": "辅导课",
+      "ipa": "/tuˈtɔriəl/",
+      "context": "The teacher offers a tutorial for anyone who wants individual help after the group discussion.",
+      "contextRangeUtf16": [
+        850,
+        944
+      ],
+      "localCmuArpabetVariants": [
+        "T UW0 T AO1 R IY0 AH0 L"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:tutorials"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/tutorial",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/tutorial",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 19,
+      "word": "algebra",
+      "canonicalId": "extension:algebra",
+      "canonicalWord": "algebra",
+      "pos": "n.",
+      "meaning": "代数",
+      "ipa": "/ˈældʒəbrə/",
+      "context": "The curriculum also includes basic algebra for students who want to work with numbers.",
+      "contextRangeUtf16": [
+        2032,
+        2118
+      ],
+      "localCmuArpabetVariants": [
+        "AE1 L JH AH0 B R AH0"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "s:algebras"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/algebra",
+        "partOfSpeech": "n.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/algebra",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "词性、当前语境词义与已保存词典条目相符；美式读音参照固定CMU词条和剑桥词条，声学听审仍待完成。"
+    },
+    {
+      "day": 20,
+      "word": "reuse",
+      "canonicalId": "extension:reuse",
+      "canonicalWord": "reuse",
+      "pos": "v.",
+      "meaning": "重复使用",
+      "ipa": "/ˌriˈjuz/",
+      "context": "Volunteers also reuse pieces of wood to make signs, so useful material does not have to be thrown away.",
+      "contextRangeUtf16": [
+        1425,
+        1528
+      ],
+      "localCmuArpabetVariants": [
+        "R IY0 Y UW1 S",
+        "R IY0 Y UW1 Z"
+      ],
+      "localEcdictMetadata": {
+        "present": true,
+        "exchange": "d:reused/p:reused/i:reusing/3:reuses"
+      },
+      "dictionaryReview": {
+        "status": "dictionary-reference-checked",
+        "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/reuse",
+        "partOfSpeech": "v.",
+        "checkedOn": "2026-10-29",
+        "ipaReferenceSourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/reuse",
+          "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+        ],
+        "audioListeningReview": "pending"
+      },
+      "interpretation": "本句为动词，结尾/z/；CMU也有以/s/结尾的读法，不能混淆本句动词。"
+    }
+  ],
+  "changes": [
+    {
+      "day": 14,
+      "word": "heating",
+      "field": "meaning",
+      "before": "供暖",
+      "after": "供暖系统；供暖"
+    },
+    {
+      "day": 16,
+      "word": "freezing",
+      "field": "meaning",
+      "before": "冰冻的；极冷的",
+      "after": "极冷的"
+    },
+    {
+      "day": 16,
+      "word": "Celsius",
+      "field": "display and spoken input",
+      "before": "celsius",
+      "after": "Celsius",
+      "canonicalId": "extension:celsius",
+      "canonicalWord": "celsius"
+    },
+    {
+      "day": 18,
+      "word": "download",
+      "field": "US verb IPA",
+      "before": "/ˌdaʊnˈloʊd/",
+      "after": "/ˈdaʊnˌloʊd/"
+    },
+    {
+      "day": 18,
+      "word": "online",
+      "field": "US adjective IPA",
+      "before": "/ˌɑnˈlaɪn/",
+      "after": "/ˈɑnˌlaɪn/"
+    }
+  ],
+  "overlapLimit": "原始课表可能与关联版为不同视图；因有潜在已见风险先保守替换四个目标，不能推断个人已学。原词保留原文供复习；替换后的首次学习仍需查实际历史。全量旧日程与词形风险见 day02-20-vocabulary-overlap-v113.json。",
+  "limitations": [
+    "逐词的词典/语境复核不是母语者或考官验收。",
+    "词典标注和CMU音位不证明现有TTS音频实际重音及音质；25词均待逐词实际听审。",
+    "实际是否首次学习及词族处理须依学习者真实记录、原稿和课程规则；本审计不读取个人档案。",
+    "本结果不表示未发布草稿已接入或正式放行。"
+  ],
+  "implementedConservativeReplacements": [
+    {
+      "day": 13,
+      "removedTarget": "bag",
+      "replacement": "reduction",
+      "replacementCanonicalId": "essential:reduction",
+      "replacementMeaning": "减额；降价",
+      "pos": "n.",
+      "ipa": "/ɹəˈdʌkʃən/",
+      "firstPriorLiteralBaseDay": 8,
+      "readingMaterialId": "family-linked-d13-reading-next-v1",
+      "readingSourceTextSha256": "6cf1c63326fb8d5df57d42bb6aa356caa5560540b0734da0a0b51c0b65b3002b",
+      "quoteStart": 923,
+      "quoteEnd": 974,
+      "context": "The total before any reduction is seventeen pounds.",
+      "audioListeningReview": "pending",
+      "originalWordRemainsInReading": true,
+      "additionalListeningContext": {
+        "skill": "listening",
+        "sourceMaterialId": "family-linked-d13-listening-next-v1",
+        "sourceTextSha256": "f64831ed7e8c6a771931ce3f3a5a41681a077a3981ef7f1d4edf8646734be8b3",
+        "surface": "reduction",
+        "start": 642,
+        "end": 651,
+        "quoteStart": 616,
+        "quoteEnd": 671,
+        "quote": "Then our total before the reduction is nineteen pounds.",
+        "questionIds": [
+          "l05"
+        ],
+        "role": "same-unit-context-not-independent-new-source"
+      },
+      "priorLiteralBaseMaterialId": "w02-read-1-vocabulary"
+    },
+    {
+      "day": 15,
+      "removedTarget": "team",
+      "replacement": "former",
+      "replacementCanonicalId": "essential:former",
+      "replacementMeaning": "从前的；以前的",
+      "pos": "adj.",
+      "ipa": "/ˈfɔɹmɚ/",
+      "firstPriorLiteralBaseDay": 5,
+      "readingMaterialId": "family-linked-d15-reading-next-v1",
+      "readingSourceTextSha256": "e98b24ca322a375634acf1e88605fdc01404a2091c0973cfd83a29628e7a4676",
+      "quoteStart": 325,
+      "quoteEnd": 388,
+      "context": "Maya spoke to her former colleague, Lina, about her experience.",
+      "audioListeningReview": "pending",
+      "originalWordRemainsInReading": true,
+      "priorLiteralBaseMaterialId": "w01-read-5-vocabulary"
+    },
+    {
+      "day": 16,
+      "removedTarget": "umbrella",
+      "replacement": "soil",
+      "replacementCanonicalId": "essential:soil",
+      "replacementMeaning": "土壤",
+      "pos": "n.",
+      "ipa": "/sɔɪl/",
+      "firstPriorLiteralBaseDay": 8,
+      "readingMaterialId": "family-linked-d16-reading-next-v1",
+      "readingSourceTextSha256": "196252b4bcd1cab70c7e53177958a4e19973c2d14638d9c8a7a2b4789decc20e",
+      "quoteStart": 1006,
+      "quoteEnd": 1103,
+      "context": "The indoor activity uses small pots, soil and seeds, so the children can still take a plant home.",
+      "audioListeningReview": "pending",
+      "originalWordRemainsInReading": true,
+      "priorLiteralBaseMaterialId": "lexical-w02-1"
+    },
+    {
+      "day": 17,
+      "removedTarget": "lose",
+      "replacement": "partner",
+      "replacementCanonicalId": "essential:partner",
+      "replacementMeaning": "搭档；伙伴",
+      "pos": "n.",
+      "ipa": "/ˈpɑɹtnɚ/",
+      "firstPriorLiteralBaseDay": 9,
+      "readingMaterialId": "family-linked-d17-reading-next-v1",
+      "readingSourceTextSha256": "5619c760a54d52ab8e55446e8b32c5df01aad3c9a56756c795c961059b7d0347",
+      "quoteStart": 640,
+      "quoteEnd": 728,
+      "context": "Sol tries basketball nearby and finds that passing to a partner is harder than it looks.",
+      "audioListeningReview": "pending",
+      "originalWordRemainsInReading": true,
+      "earlierSurface": "lost",
+      "baseContext": "This is the lost and found office.",
+      "risk": "lost is a past form of lose; the earlier context is an adjectival sense, and learner history is unknown.",
+      "priorLiteralBaseMaterialId": "lexical-w02-2"
+    }
+  ],
+  "skillEvidenceForReplacements": [
+    {
+      "day": 13,
+      "word": "reduction",
+      "sourceFieldsChecked": [
+        "passage",
+        "transcript",
+        "reference",
+        "instructions"
+      ],
+      "skills": {
+        "grammar": {
+          "materialId": "family-linked-d13-grammar-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "reading": {
+          "materialId": "family-linked-d13-reading-next-v1",
+          "literalMatchesInListedFields": [
+            "passage"
+          ]
+        },
+        "listening": {
+          "materialId": "family-linked-d13-listening-next-v1",
+          "literalMatchesInListedFields": [
+            "transcript"
+          ]
+        },
+        "speaking": {
+          "materialId": "family-linked-d13-speaking-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "writing": {
+          "materialId": "family-linked-d13-writing-next-v1",
+          "literalMatchesInListedFields": []
+        }
+      },
+      "caveat": "空列表仅表示指定文本字段未发现词面；不代表全部题目、作品或语义内容已审。"
+    },
+    {
+      "day": 15,
+      "word": "former",
+      "sourceFieldsChecked": [
+        "passage",
+        "transcript",
+        "reference",
+        "instructions"
+      ],
+      "skills": {
+        "grammar": {
+          "materialId": "family-linked-d15-grammar-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "reading": {
+          "materialId": "family-linked-d15-reading-next-v1",
+          "literalMatchesInListedFields": [
+            "passage"
+          ]
+        },
+        "listening": {
+          "materialId": "family-linked-d15-listening-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "speaking": {
+          "materialId": "family-linked-d15-speaking-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "writing": {
+          "materialId": "family-linked-d15-writing-next-v1",
+          "literalMatchesInListedFields": []
+        }
+      },
+      "caveat": "空列表仅表示指定文本字段未发现词面；不代表全部题目、作品或语义内容已审。"
+    },
+    {
+      "day": 16,
+      "word": "soil",
+      "sourceFieldsChecked": [
+        "passage",
+        "transcript",
+        "reference",
+        "instructions"
+      ],
+      "skills": {
+        "grammar": {
+          "materialId": "family-linked-d16-grammar-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "reading": {
+          "materialId": "family-linked-d16-reading-next-v1",
+          "literalMatchesInListedFields": [
+            "passage"
+          ]
+        },
+        "listening": {
+          "materialId": "family-linked-d16-listening-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "speaking": {
+          "materialId": "family-linked-d16-speaking-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "writing": {
+          "materialId": "family-linked-d16-writing-next-v1",
+          "literalMatchesInListedFields": []
+        }
+      },
+      "caveat": "空列表仅表示指定文本字段未发现词面；不代表全部题目、作品或语义内容已审。"
+    },
+    {
+      "day": 17,
+      "word": "partner",
+      "sourceFieldsChecked": [
+        "passage",
+        "transcript",
+        "reference",
+        "instructions"
+      ],
+      "skills": {
+        "grammar": {
+          "materialId": "family-linked-d17-grammar-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "reading": {
+          "materialId": "family-linked-d17-reading-next-v1",
+          "literalMatchesInListedFields": [
+            "passage"
+          ]
+        },
+        "listening": {
+          "materialId": "family-linked-d17-listening-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "speaking": {
+          "materialId": "family-linked-d17-speaking-next-v1",
+          "literalMatchesInListedFields": []
+        },
+        "writing": {
+          "materialId": "family-linked-d17-writing-next-v1",
+          "literalMatchesInListedFields": []
+        }
+      },
+      "caveat": "空列表仅表示指定文本字段未发现词面；不代表全部题目、作品或语义内容已审。"
+    }
+  ]
+}

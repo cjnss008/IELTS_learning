@@ -4,11 +4,11 @@ const Catalog=require('../tools/family-release-catalog.cjs'),F=require('./family
 const A=F.A,clone=F.copy,sha=F.sha,root=path.resolve(__dirname,'..');
 
 function base(pack){const value=clone(pack.data);delete value.familyLessonRelease;delete value.yearFirstUse;value.materials=value.materials.filter(m=>m.id.startsWith('base-'));value.days.push({...clone(value.days[0]),day:3});return value;}
-function second(pack,{repeatWords=false}={}){
+function second(pack,{repeatWords=false,exclude=new Set(),unitId='synthetic-family-lesson3'}={}){
  const directory='next',dir=path.join(pack.root,directory);fs.mkdirSync(dir);
  const release=clone(pack.release);release.id='synthetic-reviewed-batch3';
- const unit=release.units[0];unit.id='synthetic-family-lesson3';unit.day=3;
- const entries=require('../assets/essential-vocabulary-data.js').entries.filter(e=>/^[a-z]{5,}$/.test(e.word)).slice(repeatWords?0:30,repeatWords?30:60);
+ const unit=release.units[0];unit.id=unitId;unit.day=3;
+ const entries=require('../assets/essential-vocabulary-data.js').entries.filter(e=>/^[a-z]{5,}$/.test(e.word)&&!exclude.has(e.id)).slice(repeatWords?0:30,repeatWords?30:60);
  const text=entries.map(e=>e.word).join(' ')+'. A red bag is on the table.';
  const newIds=new Map(release.materials.map(row=>[row.id,row.id+'-batch3']));
  for(const row of release.materials){
@@ -58,10 +58,42 @@ test('repeated targets cannot silently count as another thirty new words',()=>{
  assert.throws(()=>Catalog.compile({baseData:source,releases:[first,next]}),/repeated target/);
 });
 
+test('different course days cannot reuse a historical unit identity',()=>{
+ const pack=F.packageData(),source=base(pack),first={root:pack.root,releasePath:'fixtures/release.json'},next=second(pack,{unitId:pack.release.units[0].id});
+ assert.throws(()=>Catalog.compile({baseData:source,releases:[first,next]}),/Unit identity reused/);
+});
+
 test('changed reviewed source or audio rejects the whole catalog without mutating the base',()=>{
  const pack=F.packageData(),source=base(pack),before=JSON.stringify(source),first={root:pack.root,releasePath:'fixtures/release.json'};
  const file=path.join(pack.root,'fixtures/new-reading.json'),original=fs.readFileSync(file);fs.appendFileSync(file,' ');
  assert.throws(()=>Catalog.compile({baseData:source,releases:[first]}));fs.writeFileSync(file,original);
  fs.appendFileSync(path.join(pack.root,'audio/synthetic.wav'),'changed');assert.throws(()=>Catalog.compile({baseData:source,releases:[first]}));
  assert.equal(JSON.stringify(source),before);
+});
+
+test('runtime append keeps the published single batch byte shape and adds a separately bound second batch',()=>{
+ const D=require('../assets/curriculum-data.js'),baseline=require('./published-public-baseline-fixture.cjs')(D),first={root,releasePath:'curriculum/family-lessons-v109/release.json'};
+ delete baseline.yearFirstUse; // Production appends before packaging the new runtime manifest.
+ const legacy=clone(baseline);require('../tools/family-public-append-v1.cjs').append(legacy,first);
+ const single=clone(baseline);Catalog.append(single,{releases:[first]});assert.deepEqual(single,legacy);
+ const pack=F.packageData(),next=second(pack,{exclude:new Set(legacy.familyLessonRelease.units.flatMap(u=>u.targets.map(t=>t.canonicalId)))}),data=clone(baseline),result=Catalog.append(data,{releases:[first,next]});
+ assert.equal(data.familyLessonRelease.batches.length,2);assert.equal(result.result.added,76);assert.equal(result.result.units,8);
+ assert.deepEqual(data.familyLessonRelease.units.slice(0,7),legacy.familyLessonRelease.units);
+ assert.deepEqual(data.familyLessonRelease.publicAppendReceipt,legacy.familyLessonRelease.publicAppendReceipt);
+ assert.deepEqual(data.materials.slice(0,legacy.materials.length),legacy.materials);assert.deepEqual(data.days,baseline.days);assert.deepEqual(data.publicCoursePlan,baseline.publicCoursePlan);
+ const unit=data.familyLessonRelease.units.at(-1);
+ assert.equal(unit.releaseId,result.catalog.releases[1].release.id);assert.notEqual(unit.releaseSha256,legacy.familyLessonRelease.releaseSha256);
+ const originalHistory=Catalog.history(legacy.familyLessonRelease),installedHistory=Catalog.history(data.familyLessonRelease);
+ assert.equal(originalHistory.length,1);assert.equal(installedHistory.length,2);
+ assert.throws(()=>Catalog.append(clone(baseline),{releases:[next],requiredHistory:originalHistory}),/Installed family batch/);
+ assert.throws(()=>Catalog.append(clone(baseline),{releases:[first],requiredHistory:installedHistory}),/Cannot remove an installed/);
+ assert.throws(()=>Catalog.append(clone(baseline),{releases:[next,first],requiredHistory:installedHistory}),/Installed family batch/);
+ const alteredHistory=clone(originalHistory);alteredHistory[0].units[0].unitSha256='a'.repeat(64);
+ assert.throws(()=>Catalog.append(clone(baseline),{releases:[first,next],requiredHistory:alteredHistory}),/Installed family batch/);
+ const before=JSON.stringify(baseline),bad=clone(baseline);fs.appendFileSync(path.join(pack.root,'next/release.json'),'bad');assert.throws(()=>Catalog.append(bad,{releases:[first,next]}));assert.equal(JSON.stringify(bad),before,'failed later batch cannot partially append the first one');
+});
+
+test('the multi-batch production build cannot omit all installed lessons',()=>{
+ const outputRoot=path.join(require('node:os').tmpdir(),'ielts-family-missing-release-test');
+ assert.throws(()=>require('../tools/build-curriculum.cjs').build({requireYearExpansion:true,activateYearFirstUse:true,gsaGradedRelease:'curriculum/gsa-graded-course/release.json',ordinaryReadingRelease:'curriculum/ordinary-reading-v92/release.json',yearRuntimeContract:'curriculum/year-first-use-runtime-contract-v113-multibatch.json',outputRoot}),/cannot omit historical lessons/);
 });
