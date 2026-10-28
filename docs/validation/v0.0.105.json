@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "version": "0.0.105",
+  "status": "development-goal-documentation-only",
+  "purpose": "reflect-latest-daily-30-and-linked-skills",
+  "tests": {
+    "publicSnapshotTriage": {
+      "dailyTarget": 30,
+      "days": 364,
+      "selectedCandidates": 3556,
+      "daysMeetingTarget": 35,
+      "totalCandidateShortfall": 7364,
+      "selectedWithMultipleSkillFields": 294,
+      "selectedInReadingAndListening": 122,
+      "scope": "static literal candidates only; includes assessment and annual-review slots"
+    },
+    "codeInspection": {
+      "developmentDailyTarget": 30,
+      "developmentFamilyUnitTarget": 30,
+      "familyStableVersion": "0.0.95",
+      "familyStableDailyTarget": 40
+    },
+    "staticSite": {
+      "pages": 27,
+      "references": 865,
+      "scripts": 129,
+      "legacyLessons": 52,
+      "legacyVocabularyAudio": 360
+    },
+    "fullRegression": "not repeated for documentation-only change"
+  },
+  "runtimeCodeAndContracts": "unchanged",
+  "familyRelease": "not-deployed",
+  "realLearnerRecords": "not accessed",
+  "realBrowser": "not run; earlier automation rejected by saved permissions or management policy",
+  "limitations": [
+    "candidates do not prove individual novelty, appropriate sense, learning, or exam score",
+    "all lessons, old drafts and real speech remain unverified",
+    "all due review debt must remain even if the daily time budget is exhausted"
+  ]
+}
