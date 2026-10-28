@@ -142,7 +142,11 @@
   try{if(root.document&&root.IELTSProfiles)profileId=root.IELTSProfiles.current().id;}catch(e){profileFailure=e;}
   function checkProfile(){root.IELTSProfiles?.assertFresh?.();if(profileFailure)throw profileFailure;if(root.IELTSProfiles){const active=root.IELTSProfiles.current().id;if(profileId===null)profileId=active;if(active!==profileId)throw Error('档案已切换，请刷新后保存作品。');}}
   function channelName(){return root.IELTSProfiles?root.IELTSProfiles.scopeKey(KEY):KEY;}
-  function notify(record){const detail={profileId,id:record?.id||null,dayNumber:record?.dayNumber||null};root.dispatchEvent?.(new CustomEvent(EVENT,{detail}));try{const channel=new BroadcastChannel(channelName());channel.postMessage(detail);channel.close();}catch(_){}}
+  // A short-lived publishing channel also reaches this page's listening
+  // channel. Its commit was already announced locally; replaying that event
+  // can invalidate the verification read immediately after an import.
+  const senderId=makeId('records-page');
+  function notify(record){const detail={profileId,id:record?.id||null,dayNumber:record?.dayNumber||null,senderId};root.dispatchEvent?.(new CustomEvent(EVENT,{detail}));try{const channel=new BroadcastChannel(channelName());channel.postMessage(detail);channel.close();}catch(_){}}
   function validateFamilyVocabulary(input,records,context){
     let artifact;try{artifact=JSON.parse(input.answer||'null');}catch(_){}const marked=artifact?.contextSource?.type==='family-lesson-v95-context';
     if(input.source!=='essential-vocabulary'&&!marked)return;
@@ -217,7 +221,7 @@
     return task&&material&&material.skill===input.skill&&(task.materialIds?.includes(material.id)||material.pool==='training'||material.independentBank===true||gateRetest)?day:null;
   }
   function autoLink(input,options={}){const result={...input},day=options.currentDay===undefined?currentDay():options.currentDay,courseDay=placedCourseDay(input,options);if(input.source==='reviewed-context-retention-v88'&&courseDay===null)throw Error('保持练习的档案、代际或完整冻结草稿尚未核验，原输入保留。');if(courseDay!==null){result.dayNumber=courseDay;return result;}let artifact;try{artifact=typeof input.answer==='string'?JSON.parse(input.answer):null;}catch(_){}if(Number.isInteger(day)&&artifact?.materialBinding&&artifact.courseDay>day&&['course-player','vocabulary-practice','mistake-review','year-review'].includes(input.source))throw Error('未来日程仅供预览；这份跨课原稿的真实队列归属尚未核验，草稿保留。');if(result.dayNumber===undefined)result.dayNumber=day!==null&&day>=1&&day<=365?day:null;if(result.dayNumber!==null&&day!==null&&result.dayNumber>day)throw Error('未来日程仅供预览；提前练习请关联实际学习日。');return result;}
-  if(root.addEventListener&&typeof root.BroadcastChannel==='function'){try{const channel=new root.BroadcastChannel(channelName());channel.onmessage=event=>{if(event.data?.profileId===profileId)root.dispatchEvent(new CustomEvent(EVENT,{detail:{...event.data,external:true}}));};}catch(_){}}
+  if(root.addEventListener&&typeof root.BroadcastChannel==='function'){try{const channel=new root.BroadcastChannel(channelName());channel.onmessage=event=>{if(event.data?.profileId===profileId&&event.data?.senderId!==senderId)root.dispatchEvent(new CustomEvent(EVENT,{detail:{...event.data,external:true}}));};}catch(_){}}
   async function durable(){if(root.document&&!root.IELTSProfiles?.isPreview?.()&&root.IELTSUserData?.syncNow){try{await root.IELTSUserData.syncNow({profileId:profileId||root.IELTSProfiles?.current?.().id||'legacy'});}catch(error){error.browserCached=true;throw error;}}}
   async function captureRecord(record,context){if(root.IELTSMistakes)await root.IELTSMistakes.captureRecord(record,context);return record;}
   async function record(input,context={}){const target=browserStore(),records=input.source==='reviewed-context-retention-v88'||['course-player','vocabulary-practice','mistake-review','year-review'].includes(input.source)||input.kind==='retest'&&input.parentId?await target.list():undefined,result=await target.record(autoLink(input,{records}),context);await captureRecord(result.record,context);try{await durable();}catch(error){error.committedResult=result;throw error;}return result;}

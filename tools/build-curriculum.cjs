@@ -136,7 +136,7 @@ function build({partial=false,requireYearExpansion=false,activateYearFirstUse=fa
  // Keep reviewed 2–10 source revisions after derivation/translation; protects the complete day-1 contract.
  require('./apply-stable-lessons-02-10.cjs').apply(data,{root});
  require('./apply-family-grammar-v89.cjs').apply(data,{root});
- if(familyLessonsRelease!==null){if(activation?.metadata.contract.path!=='curriculum/year-first-use-runtime-contract-v97-family-lessons.json')throw Error('Family lesson release requires the exact closed 55-component contract');data.audit.familyLessons=require('./apply-family-lessons-v95.cjs').apply(data,{root,releasePath:familyLessonsRelease});}
+ if(familyLessonsRelease!==null){if(!['curriculum/year-first-use-runtime-contract-v97-family-lessons.json','curriculum/year-first-use-runtime-contract-v107-broadcast.json'].includes(activation?.metadata.contract.path))throw Error('Family lesson release requires the exact closed 55-component contract');data.audit.familyLessons=require('./apply-family-lessons-v95.cjs').apply(data,{root,releasePath:familyLessonsRelease});}
  // Append only after all original rows, day selection and derived packs exist.
  // Keep original base days immutable. A separate, hash-bound required plan is
  // applied only to eligible unstarted days after the learner archive is ready.

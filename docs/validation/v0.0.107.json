@@ -1,0 +1,106 @@
+{
+  "version": "0.0.107",
+  "date": "2026-10-28",
+  "scope": "validated release candidate; development port 18765 with isolated synthetic data",
+  "automated": {
+    "tests": 2678,
+    "passed": 2676,
+    "failed": 0,
+    "skipped": 2,
+    "cancelled": 0,
+    "command": "node tools/test.cjs",
+    "logSha256": "eca7eb519e3b397db1e3ddce8d9041f0803002fe6e1932c853b81703efa03cc3",
+    "skippedTests": [
+      "ok 1234 - real installed CPU recognizer and cancellation clean all job audio # SKIP",
+      "ok 2580 - a linked in-root file is revalidated every request and link retargeting outside is refused # SKIP Native Windows file symlink privilege unavailable; native directory junction cases still run."
+    ]
+  },
+  "initialRun": {
+    "tests": 2677,
+    "passed": 2672,
+    "failed": 3,
+    "skipped": 2,
+    "corrections": [
+      "Explicit v107 public input profile alongside unchanged v98 pins; new curriculum differs only in runtime/index metadata",
+      "Stopped own development browser server before fixed-port launcher tests",
+      "HTTP persistence fixture closes each test connection before deliberate listener restart; no production retry or persistence rule changed"
+    ]
+  },
+  "staticCheck": {
+    "pages": 27,
+    "localLinksAndAssets": 865,
+    "scripts": 129,
+    "originalLessons": 52,
+    "vocabularyAudioFiles": 360
+  },
+  "formalBuild": {
+    "days": 365,
+    "materials": 1842,
+    "missing": 0,
+    "missingAudio": 0,
+    "annualOnDemandMaterials": 688,
+    "familyReleaseActivated": false,
+    "contractPath": "curriculum/year-first-use-runtime-contract-v107-broadcast.json",
+    "contractSha256": "b3cf89eb3f9e4d6fd1d7678d27f829ebce6b59c1c1559ed56760590a0553895b"
+  },
+  "curriculumAudit": {
+    "status": "passed",
+    "questions": 7426,
+    "uniqueSourceBodies": 520,
+    "listening": 283,
+    "academicWriting": 124,
+    "materialsBySkill": {
+      "reading": 266,
+      "listening": 283,
+      "writing": 214,
+      "grammar": 201,
+      "vocabulary": 368,
+      "speaking": 145,
+      "reflection": 365
+    },
+    "countBasis": "Existing material variants and schedule entries; not distinct unseen exams or complete 30-word linked-year coverage"
+  },
+  "questionAudit": {
+    "sourceMaterials": 830,
+    "questions": 7800,
+    "high": 0,
+    "reviewCandidates": 5,
+    "currentHashReviewed": 5,
+    "unresolved": 0,
+    "semanticCertification": false
+  },
+  "browser": {
+    "performed": true,
+    "environment": "IAB, http://127.0.0.1:18765; dedicated local release-browser-data-20261028, no real learner import",
+    "checks": [
+      "Grammar radio answers survive draft save and reopening; text input requires typing under the existing no-paste rule",
+      "Submit grammar 4/4, refresh, and reopen original checked choices and text in read-only form",
+      "Import old v95 synthetic vocabulary records twice: no duplicate overwrite, status saved to user folder",
+      "Lesson 2 vocabulary shows 3/3 submitted, completed and learned once; confirmation navigates actual unfinished queue",
+      "Explicit relearn preserves original completion and creates a separate draft; first spelling 1/3 survives refresh and resume",
+      "Export after interactions contains four records, with all three imported old vocabulary record objects exactly unchanged"
+    ],
+    "preservation": {
+      "originalRecordsChecked": 3,
+      "totalExportedRecords": 4,
+      "exactRecordObjectsPreserved": true,
+      "exportSha256": "28ee7d3b01274d97cdecbb24f1aec77d108139057df0cfd144cac88dd8c658ff",
+      "scope": "synthetic .95 vocabulary records imported and replayed through real browser; no learner records"
+    },
+    "syntheticVocabularySpeechEvidence": true,
+    "actualSpeechScoringTested": false,
+    "actualDeepSeekTested": false,
+    "screenshotSha256": "332919a96d438912de03b4e58f7d8a154ba3511ea98c222d50e0223007910c27"
+  },
+  "privacy": {
+    "realLearnerProfileAccessed": false,
+    "realCredentialsAccessed": false,
+    "developerDataCopiedToStable": false
+  },
+  "limitations": [
+    "365 days are scheduled but the new 30-word-linked curriculum is not complete",
+    "Lesson 2 in the old snapshot still has 19 word items; deduplicated initial-word evidence was 16/30 in the synthetic acceptance profile",
+    "New lessons 2–11 and later candidate packs remain inactive pending content/audio and usable historical-data compatibility validation",
+    "No real microphone, real upstream scoring or year-long learning outcome was tested in this release"
+  ]
+}

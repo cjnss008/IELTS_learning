@@ -20,6 +20,14 @@ const PUBLIC_V98 = Object.freeze({
   'assets/assessment-core.js': '1213fd82e082cc0979c07c9cd2084c73b08b3194524c05d44ed2232514c6e8d4',
   'assets/year-first-use-manifest.js': '662ba1544f13dd84b5f24903e68bce0c42e9cc2cb6ad4270e717fd161b82b332'
 });
+// v107 changes runtime/index bindings only; course bodies, days, word entries
+// and assessment code were compared with the v98 snapshot before adding this
+// separate profile. Keep the old profile for reproducible historical reports.
+const PUBLIC_V107 = Object.freeze({
+  ...PUBLIC_V98,
+  'assets/curriculum-data.js': '0c2ecbdecc92278378ebbc9954afee6001f749ccc43d9a334a4be43ad6ef58e3',
+  'assets/year-first-use-manifest.js': '602b599611662887fa71b0a311c512c95f4c572a2bb0110b981da66ddab326e6'
+});
 
 function tokens(text) {
   return Array.from(String(text).matchAll(tokenPattern), match => ({
@@ -327,22 +335,24 @@ function loadPublicInputs(root, profile = PUBLIC_V98) {
 }
 
 function parseArguments(argv) {
-  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40]';
+  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107]';
   assert.ok(argv.length >= 2 && argv[0] === '--root' && typeof argv[1] === 'string' && argv[1], usage);
-  let full = false, dailyTarget = 30, hasTarget = false;
+  let full = false, dailyTarget = 30, hasTarget = false, profile;
   for (let i = 2; i < argv.length; i++) {
     if (argv[i] === '--full' && !full) full = true;
     else if (argv[i] === '--daily-target' && !hasTarget && ['30', '40'].includes(argv[i + 1])) {
       dailyTarget = Number(argv[++i]); hasTarget = true;
+    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107'].includes(argv[i + 1])) {
+      profile = argv[++i];
     } else throw Error(usage);
   }
-  return { root: argv[1], full, dailyTarget };
+  return { root: argv[1], full, dailyTarget, ...(profile ? { profile } : {}) };
 }
 
 function main(argv) {
   const args = parseArguments(argv);
   const root = path.resolve(args.root);
-  const report = buildInventory(loadPublicInputs(root), { dailyTarget: args.dailyTarget });
+  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
   if (args.full) {
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     return;
@@ -362,4 +372,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
+module.exports = { PUBLIC_V98, PUBLIC_V107, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };

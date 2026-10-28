@@ -182,6 +182,14 @@ test('triage does not accept an arbitrary output path', () => {
   assert.throws(() => main(['--root', __dirname, '--output', path.join(__dirname, '..candidate.json')]), /Use --root/);
 });
 
+test('new public snapshots require an explicit known profile and retain the historical default', () => {
+  assert.deepEqual(parseArguments(['--root', 'snapshot', '--profile', '0.0.107']),
+    { root: 'snapshot', full: false, dailyTarget: 30, profile: '0.0.107' });
+  assert.equal(parseArguments(['--root', 'snapshot']).profile, undefined);
+  assert.throws(() => parseArguments(['--root', 'snapshot', '--profile', '0.0.108']), /Use --root/);
+  assert.throws(() => parseArguments(['--root', 'snapshot', '--profile', '0.0.107', '--profile', '0.0.98']), /Use --root/);
+});
+
 test('duplicate normalized headwords and missing days cannot inflate the course target', () => {
   const first = fixture();
   first.wordEntries[7999] = { id: 'essential:duplicate-map', word: 'MAP', rank: 8000 };
