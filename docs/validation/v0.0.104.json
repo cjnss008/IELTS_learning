@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "version": "0.0.104",
+  "status": "development-candidate-authoring-tool-only",
+  "purpose": "aggregate-exact-word-form-comparison-with-public-third-party-reference",
+  "scope": "pinned-public-catalog-and-public-reference-pages-only",
+  "tests": {
+    "focusedPythonTests": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "scope": "public catalog hash, parsing and incomplete pages, allowlist, redirect refusal, no output path and no raw word list in aggregate"
+    },
+    "livePublicComparison": {
+      "referenceIndex": "https://ielts.koolearn.com/20140411/785955.html",
+      "date": "2026-10-28",
+      "firstPages": 26,
+      "additionalPages": 101,
+      "articlePagesParsed": 127,
+      "paragraphs": 8012,
+      "unparsedParagraphs": 34,
+      "uniqueParsedHeadwords": 7946,
+      "exactNormalizedMatches": 5976,
+      "notExactMatches": 1970,
+      "fetchFailures": 0,
+      "scope": "exact spelling only, not personal novelty or learning evidence"
+    },
+    "staticSite": {
+      "pages": 27,
+      "references": 865,
+      "scripts": 129,
+      "legacyLessons": 52,
+      "legacyVocabularyAudio": 360
+    },
+    "gitDiffCheck": "passed",
+    "fullRegression": "not repeated for an authoring-tool-only change"
+  },
+  "familyRelease": "not-deployed",
+  "runtimeCodeAndContracts": "unchanged",
+  "realLearnerRecords": "not accessed",
+  "realBrowser": "not run; earlier automation rejected by saved permissions or management policy",
+  "realAudio": "not reviewed",
+  "limitations": [
+    "the 2014 third-party reference is not an official IELTS word list",
+    "pagination comes from visible links and 34 nonempty rows are not parsed",
+    "exact word forms do not establish sense, level, teaching, personal mastery or score",
+    "unmatched forms cannot be assumed to be missing headwords",
+    "source words and definitions are not copied",
+    "this tool does not create or activate a lesson"
+  ]
+}
