@@ -120092,16 +120092,16 @@
     "protocol": 1,
     "runtimeConnected": true,
     "contract": {
-      "path": "curriculum/year-first-use-runtime-contract-v109-linked-lessons.json",
-      "sha256": "d254c002966427193cfaaf753c416a0bb45d5f66613fee7543460a6caf3a13a8",
+      "path": "curriculum/year-first-use-runtime-contract-v111-course-audit.json",
+      "sha256": "65bcecfd08f201279a1af24697bc1d1b7567d44b189f22e72d92fd00f37bb962",
       "bytes": 11117
     },
     "components": [
       {
         "role": "frontend-adapter",
         "path": "assets/year-first-use-course.js",
-        "sha256": "5fbda9c75c41c328c6d0ecbee0b7bc62b5420ecc562dd1fd3a81d50f6b475101",
-        "bytes": 46216
+        "sha256": "adb3596b734a089a42e36a3df37d14e908f8664d196e97d6c8baa6932d7133b8",
+        "bytes": 46760
       },
       {
         "role": "queue-state",
@@ -120124,14 +120124,14 @@
       {
         "role": "course-player",
         "path": "assets/course-player.js",
-        "sha256": "8c51270cca1306337aa655bc50c48f85dad1c7f0bdd91d24d5aca580c48d7513",
-        "bytes": 268352
+        "sha256": "fe88abe0c3839ea338ab9bf7768062a389430488973c6b3af634489a1004bd9d",
+        "bytes": 267908
       },
       {
         "role": "today-hub",
         "path": "assets/today-hub.js",
-        "sha256": "d7a30651d609c678550a7b34daac57cc65973b6ef551d973e582fbc5335ed1e2",
-        "bytes": 49034
+        "sha256": "6a80148bf0efe1f7fc9f859a723fd80f8d4b4c4fac8258b3f6d13d794b28aa64",
+        "bytes": 50399
       },
       {
         "role": "backup-keys",
@@ -120154,14 +120154,14 @@
       {
         "role": "server-catalog",
         "path": "server/year-material-catalog.cjs",
-        "sha256": "c184effc3ac54cfc4dfa1989528a8dd826f32f178a56704e1cd18d5cd52d2e11",
-        "bytes": 22692
+        "sha256": "74d10bd155cccb51b207ec94b4fc198f0235477403639466e9388bc64db592c9",
+        "bytes": 22828
       },
       {
         "role": "server-routes",
         "path": "server/server.cjs",
-        "sha256": "fa588046d8a62c6e057cd1079426b22743efe5240bd05215bc47d8e5c6c06342",
-        "bytes": 79038
+        "sha256": "d081be6fdd96c4be7a96fdc081f65e1c76c64a4cebea3a6a7f7f26e186022822",
+        "bytes": 78446
       },
       {
         "role": "profile-bootstrap",
@@ -120172,8 +120172,8 @@
       {
         "role": "profile-store",
         "path": "assets/profile-store.js",
-        "sha256": "6288be1b6a273fa97f67a5920cbe213b27a9e95fa4e6a74c36204ac4c63565bb",
-        "bytes": 11051
+        "sha256": "90e651a3a7b0d34aff83ea648de222f928144c689f1463722d571ff5883e3279",
+        "bytes": 11876
       },
       {
         "role": "learning-records",
@@ -120184,26 +120184,26 @@
       {
         "role": "record-snapshot-index",
         "path": "assets/record-snapshot-index.js",
-        "sha256": "77d6db1e3538d4151eac3505155980077c7cf07dee4d0708f26e22b6a822f63d",
-        "bytes": 6430
+        "sha256": "7010c244fd84ce00222690af7b664ab19e1eb7c9f7a367a295f39b4b4d455801",
+        "bytes": 7483
       },
       {
         "role": "assessment",
         "path": "assets/assessment-core.js",
-        "sha256": "1213fd82e082cc0979c07c9cd2084c73b08b3194524c05d44ed2232514c6e8d4",
-        "bytes": 40335
+        "sha256": "ce482dd90e0ffed7ce4bff347a50a2df7b5398c93473e8af1b94beb16b61f0ac",
+        "bytes": 42583
       },
       {
         "role": "adaptive-plan",
         "path": "assets/adaptive-plan.js",
-        "sha256": "b2bee92b86ea4785ef388906078677febdbca07f25babe7d97afe24275bde44f",
-        "bytes": 62707
+        "sha256": "f8fe01d5f0c5a678e288415652d12d9aec18d60fbfc0a6b4690f19ebfef61502",
+        "bytes": 65379
       },
       {
         "role": "year-planner",
         "path": "assets/year-planner.js",
-        "sha256": "1161032edaaa0d221298bf284355dc2d990a93667ea000e211fecd8e33e0e52d",
-        "bytes": 27163
+        "sha256": "ee921b2a731a59d37dade0dd1b5fdfd82ec9eba3da49175f36a9ebae3ebd5baa",
+        "bytes": 27394
       },
       {
         "role": "stage-progression",
@@ -120244,20 +120244,20 @@
       {
         "role": "runtime-contract-policy",
         "path": "server/year-runtime-contract-policy.cjs",
-        "sha256": "acf9ba10e27302e7cf9cf2cee29010d94ce6ed9f13915998a2cef1d673fc79c6",
-        "bytes": 13110
+        "sha256": "45ce77f6d72411c051de66c1348e43b485c3ee8a5daca905cd8b45d66323ceba",
+        "bytes": 13239
       },
       {
         "role": "runtime-contract-validator",
         "path": "tools/year-runtime-activation.cjs",
-        "sha256": "bf1ede7b07918e2370465f83bfb9093651e9128d3c86c5dd5fb481040a3623aa",
-        "bytes": 5372
+        "sha256": "037d758211e4d572430ca5e25edbcb44dd0f819d35b034ef14dfb4941397c723",
+        "bytes": 5607
       },
       {
         "role": "entrypoint",
         "path": "今日学习.html",
-        "sha256": "f47c781f370a278d3e2762003c0ecffcfd3b2d640d4d9979f047406f4bd7fd48",
-        "bytes": 18077
+        "sha256": "d71dba87555268d36fab0d686de97ded7367b09754033f7d98614c7a67117d29",
+        "bytes": 17902
       },
       {
         "role": "player-page-daily-plan",
@@ -120388,8 +120388,8 @@
       {
         "role": "essential-vocabulary-core",
         "path": "assets/essential-vocabulary-core.js",
-        "sha256": "2aae97658bb1a7c8f9b60540328a8bbc7aeb853945e926620a650afd03ace1f4",
-        "bytes": 338996
+        "sha256": "e780f25922c037912a557f45c6c3fab02d09dfd71223167e2b1c768f2e571bc1",
+        "bytes": 340522
       },
       {
         "role": "memory-session",
@@ -120412,8 +120412,8 @@
       {
         "role": "family-lesson-expansion-v95",
         "path": "assets/family-lesson-expansion-v95.js",
-        "sha256": "6535324dd6993a7b70561b293ecb41bcefb2fc09ebbc8c5f61bbec994773c6cd",
-        "bytes": 88813
+        "sha256": "d12ee61db15c895f3c385ebee6c815003288cc4ee01f9e4f4ae1e447a6670e80",
+        "bytes": 89137
       },
       {
         "role": "course-expansion",

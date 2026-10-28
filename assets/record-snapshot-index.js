@@ -1,15 +1,28 @@
 (function(root,factory){'use strict';const api=factory(root);root.IELTSRecordSnapshotIndex=api;if(typeof module==='object'&&module.exports)module.exports=api;})(typeof globalThis!=='undefined'?globalThis:this,function createIndex(root){
 'use strict';
 // Derived memory only. No persistent key, score, answer or caller revision is written.
-const GENERATION='ielts52-data-generation-v1',arrays=new WeakMap(),records=new WeakMap(),objects=new WeakMap();let latest=null,sourceEpoch=0;
+const GENERATION='ielts52-data-generation-v1',arrays=new WeakMap(),records=new WeakMap(),objects=new WeakMap();let latest=null,sourceEpoch=0,projectionOwner=null;
 const error=(code,message='学习档案刚发生变化，请刷新后继续；原稿与原音保留。')=>Object.assign(Error(message),{code});
 function available(){return!!(root.document&&root.IELTSProfiles?.current&&root.IELTSProfiles?.storage&&root.IELTSRecords?.parseState&&(root.crypto?.subtle?.digest||root.IELTSAssessment?.sourceTextHash));}
-function owner(){
- root.IELTSProfiles?.assertFresh?.();root.IELTSUserData?.assertReady?.();const status=root.IELTSUserData?.status?.();if(status&&['loading','error','conflict'].includes(status.state))throw error('RECORD_SNAPSHOT_NOT_READY');
+function owner(){return projectionOwner||readOwner();}
+function readOwner(){
+ const fresh=root.IELTSProfiles?.assertFresh?.();root.IELTSUserData?.assertReady?.();const status=root.IELTSUserData?.status?.();if(status&&['loading','error','conflict'].includes(status.state))throw error('RECORD_SNAPSHOT_NOT_READY');
+ // assertFresh reads the live registry, descriptor and generation together.
+ // Reuse only this call's result; never retain it across reads or async work.
+ if(fresh&&typeof fresh.profileId==='string'&&fresh.profileId&&typeof fresh.generation==='string'&&fresh.generation&&!fresh.generation.startsWith('busy:'))return fresh;
  const profileId=root.IELTSProfiles?.current?.()?.id,storage=root.IELTSProfiles?.storage?.(),raw=storage?.getItem(GENERATION),generation=raw===null?'initial':String(raw);
  if(typeof profileId!=='string'||!profileId||!storage||raw===undefined||generation.startsWith('busy:'))throw error('RECORD_SNAPSHOT_OWNER_CHANGED');return{profileId,generation};
 }
 const same=(a,b)=>a&&b&&a.profileId===b.profileId&&a.generation===b.generation;
+// A synchronous read projection has one before/after ownership boundary.
+// No proof survives an await or the return of this function; writes do not use it.
+function projectRead(read){
+ if(typeof read!=='function')throw TypeError('A synchronous read is required');
+ if(projectionOwner)return read();
+ const captured=readOwner(),epoch=sourceEpoch;projectionOwner=captured;
+ try{const value=read();if(value&&typeof value.then==='function')throw error('RECORD_PROJECTION_ASYNC');return value;}
+ finally{projectionOwner=null;if(!same(captured,readOwner())||epoch!==sourceEpoch)throw error('RECORD_SNAPSHOT_SOURCE_CHANGED');}
+}
 function live(bound){if(!same(owner(),bound))throw error('RECORD_SNAPSHOT_OWNER_CHANGED');}
 function lease(bound){live(bound);return{...bound,epoch:sourceEpoch};}
 function verify(token){live(token);if(token.epoch!==sourceEpoch)throw error('RECORD_SNAPSHOT_SOURCE_CHANGED');}
@@ -51,5 +64,5 @@ function createStoreBoundary(){
  return Object.freeze({read,select});
 }
 if(root.addEventListener)for(const name of ['ielts:records-changed','ielts:profile-changed','ielts:profile-reset'])root.addEventListener(name,event=>{if(name==='ielts:records-changed'&&event.detail?.profileId&&root.IELTSProfiles?.current?.()?.id!==event.detail.profileId)return;sourceEpoch++;if(name!=='ielts:records-changed')latest=null;});
-return Object.freeze({create:createIndex,available,createStoreBoundary,receipt,isCurrent,parsedAnswer,parsedReview,memoizeTrustedObject,memoizeRecordsProjection});
+return Object.freeze({create:createIndex,available,createStoreBoundary,receipt,isCurrent,parsedAnswer,parsedReview,memoizeTrustedObject,memoizeRecordsProjection,projectRead});
 });

@@ -211,15 +211,13 @@
   }
   function indexedAudioFor(word, ipa, supplied, hint = {}) { return indexedAudioChoice(word,ipa,supplied,hint).audio; }
   function create(options = {}) {
-    const index = new Map();
+    const index = new Map(), resolved = new Map();
     const audioData = options.audioData || root.IELTSVocabularyAudio || (typeof require === 'function' ? require('./vocabulary-audio.js') : {});
     const audioItems = audioData.items || {};
     function add(raw, metadata) {
-      const item = safeEntry({...raw,...metadata},{audioData});
-      if (!item) return;
-      if(raw.pos||raw.partOfSpeech)item.pos=clean(raw.pos||raw.partOfSpeech,120);
-      const key = normalize(item.word), values = index.get(key) || [];
-      values.push(item); index.set(key, values);
+      const value={...raw,...metadata};if(!validWord(value.word))return;
+      const key = normalize(clean(value.word,100)), values = index.get(key) || [];
+      values.push({value,pos:clean(raw.pos||raw.partOfSpeech,120)});index.set(key,values);
     }
     BRIDGE.forEach(item => add(item));
     const course = options.courseData || root.IELTSCourse || root.IELTSCourseData || {};
@@ -229,7 +227,8 @@
     (curriculum.materials || []).forEach(material => (material.vocabulary || []).forEach(item => add(item,{materialId:material.id,source:'curriculum'})));
     (options.entries || []).forEach(item => add(item));
     function lookup(word, context = '', materialId = '') {
-      const key = normalize(word), values = index.get(key) || [];
+      const key = normalize(word);let values=resolved.get(key);
+      if(!values){values=(index.get(key)||[]).map(row=>{const item=safeEntry(row.value,{audioData});if(item&&row.pos)item.pos=row.pos;return item;}).filter(Boolean);resolved.set(key,values);}
       if (!values.length) return {...safeEntry({word:clean(word,100)}),word:clean(word,100),meaning:'',example:'',exampleTranslation:'',audio:'',materialId:'',source:'missing',complete:false};
       const text = normalize(context);
       const score = item => (materialId && item.materialId === materialId ? 1000 : 0) + (item.source === 'curriculum' ? 10 : item.source === 'course' ? 5 : 0) + (item.example && text.includes(normalize(item.example)) ? 100 : 0);

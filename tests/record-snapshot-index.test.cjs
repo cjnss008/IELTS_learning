@@ -1,5 +1,23 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),H=require('./record-snapshot-index-fixture.cjs');
+test('synchronous projections read ownership at boundaries and discard results changed during calculation',async()=>{
+ const f=H.environment(),rows=await f.store.list(),I=f.env.IELTSRecordSnapshotIndex;let checks=0,profileId='legacy',generation='test-generation';
+ f.env.IELTSProfiles.assertFresh=()=>{checks++;return{profileId,generation};};
+ I.projectRead(()=>{for(let i=0;i<100;i++)assert.ok(I.parsedAnswer(rows[0]));});assert.equal(checks,2);
+ assert.throws(()=>I.projectRead(()=>{I.parsedAnswer(rows[0]);generation='restored';return 'must not escape';}),/档案|变化/);
+ generation='test-generation';assert.throws(()=>I.projectRead(()=>{f.env.dispatchEvent(new f.env.CustomEvent('ielts:records-changed',{detail:{profileId:'legacy'}}));return 'stale';}),/档案|变化/);
+ assert.throws(()=>I.projectRead(()=>Promise.resolve('async')),/档案|变化/);
+ profileId='other-profile';assert.throws(()=>I.parsedAnswer(rows[0]),/档案|变化/,'no ownership cache survives the call');
+});
+
+test('fresh owner proof is consumed once per lookup and is never cached across owner changes',async()=>{
+ const f=H.environment(),rows=await f.store.list();let checks=0,profileId='legacy',generation='test-generation';
+ f.env.IELTSProfiles.assertFresh=()=>{checks++;return{profileId,generation};};
+ f.env.IELTSProfiles.current=()=>{throw Error('redundant owner read');};f.env.IELTSProfiles.storage=()=>{throw Error('redundant storage view');};
+ assert.ok(f.env.IELTSRecordSnapshotIndex.parsedAnswer(rows[0]));assert.equal(checks,1);
+ generation='restored-generation';assert.throws(()=>f.env.IELTSRecordSnapshotIndex.parsedAnswer(rows[0]),/档案|变化/);
+ generation='test-generation';profileId='p-another111';assert.throws(()=>f.env.IELTSRecordSnapshotIndex.receipt(rows),/档案|变化/);assert.equal(checks,3);
+});
 test('actual Records store publishes only deeply frozen, profile/generation-bound complete-content snapshots',async()=>{
  const f=H.environment(),before=JSON.stringify(f.raw()),rows=await f.store.list(),receipt=f.env.IELTSRecordSnapshotIndex.receipt(rows);assert.ok(receipt,'real store boundary must validate and brand the array');assert.match(receipt.digest,/^[a-f0-9]{64}$/);assert.equal(receipt.profileId,'legacy');assert.equal(receipt.generation,'test-generation');assert.equal(receipt.count,1);assert.ok(Object.isFrozen(rows));assert.ok(Object.isFrozen(rows[0]));assert.ok(Object.isFrozen(rows[0].history));assert.ok(Object.isFrozen(rows[0].evaluation));assert.throws(()=>{rows[0].evaluation.feedback='modified';},TypeError);assert.equal(JSON.stringify(f.raw()),before);assert.deepEqual([...f.storageMap.keys()],['ielts52-data-generation-v1']);
  const same=await f.store.list();assert.equal(same,rows,'identical validated content may reuse the immutable collection');const subset=await f.store.list({dayNumber:2});assert.ok(f.env.IELTSRecordSnapshotIndex.receipt(subset));assert.ok(Object.isFrozen(subset));

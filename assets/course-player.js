@@ -593,7 +593,7 @@
     async function refreshMediaBudget(knownRecords){
       if(!root.IELTSYearPlanner?.readBudget)return;
       const owner=profileId,current=()=>!budgetDisposed&&!storageBroken&&owner===profileId&&(root.IELTSProfiles?.current().id||'legacy')===owner;
-      if(mediaBudgetPending){await mediaBudgetPending;if(!current())return;return refreshMediaBudget(records);}
+      if(mediaBudgetPending){await mediaBudgetPending;if(!current()||!knownRecords)return;return refreshMediaBudget(records);}
       const revision=recordsRevision,pending=(async()=>{
         let works=knownRecords||await recordsForFamily();if(!current())return false;
         if(knownRecords){if(works!==records)return true;}
@@ -701,6 +701,8 @@
       const owner=profileId,view=generation;for(const record of latest.values()){const row=el('div','course-saved-work'),link=button('查看已保存作答：'+record.title,()=>replayViewCurrent(owner,view)&&viewRecord(record));link.dataset.recordId=record.id;row.append(link,el('small','',new Date(record.submittedAt).toLocaleString()+' · '+(record.kind==='retest'?'重新学习／复测原稿':record.kind==='correction'?'订正原稿':'首次原稿')));section.append(row);}
     }
     function updateSavedIntro(){
+      const existing=material&&$('courseMaterialIntro').querySelector('.course-saved-entry');
+      if(existing){const saved=latestSavedFor(material),status=materialLearningStatus(material);if(saved)existing.replaceChildren(el('p','course-learning-status',material.skill==='vocabulary'?vocabularyStatusText(status.vocabulary,true,material.id):(status.done?'已完成 · ':'')+'已学习 '+status.count+' 次'),button('查看已保存的原作答',()=>viewRecord(saved)));}
       if(attempt||!material||pendingParent)return;const saved=latestSavedFor(material),draft=draftFor(material),box=$('courseMaterialIntro');
       $('courseBegin').textContent=draft?'继续未提交原稿':saved?'查看原作答':'开始这份材料';
       if(draft&&!box.querySelector('.course-draft-entry')){const owner=profileId,view=generation,row=el('section','course-draft-entry');row.append(el('p','',draftProgress(draft,material).label+'；继续原ID与原始输入。'),button('继续未提交原稿',()=>replayViewCurrent(owner,view)&&resumeDraft(draft.id)));box.append(row);}
@@ -754,7 +756,7 @@
       const savedDraft=material&&draftFor(material),hasSavedInput=savedDraft&&draftProgress(savedDraft,material).score.some(Boolean);
       if(task.id==='vocabulary'&&linkedUnit&&!preferredMaterial&&!hasSavedInput&&!latestSavedFor(material)){
         const reading=materialMap.get(linkedUnit.tasks.find(t=>t.id==='reading')?.materialRefs[0]?.materialId);
-        $('courseMaterialIntro').replaceChildren(el('h2','','第 '+day+' 课 · '+linkedUnit.targets.length+' 个主题词'),el('p','',reading?.title||'本课关联词汇'),el('p','','先完成到期复习，再分五组六词学习；每词三遍输入、三次跟读，再做补全、拼写和听写。'),el('p','',linkedUnit.targets.map(t=>t.word).join(' · ')),button('继续本课词汇',()=>selectTask('vocabulary')));
+        $('courseMaterialIntro').replaceChildren(el('h2','','第 '+day+' 课 · '+linkedUnit.targets.length+' 个主题词'),el('p','',reading?.title||'本课关联词汇'),el('p','','先完成到期复习，再分五组六词学习；每词三遍输入、三次跟读，再做补全、拼写和听写。'),el('p','',linkedUnit.targets.map(t=>t.canonicalWord||t.word||t.surface).filter(Boolean).join(' · ')),button('继续本课词汇',()=>selectTask('vocabulary')));
         $('courseStart').hidden=true;$('courseSession').hidden=true;
       }
       renderSavedModuleEntries();
@@ -951,7 +953,8 @@
     };
     function announceView(){root.dispatchEvent(new CustomEvent('ielts:course-view',{detail:{day,taskId:task?.id,materialId:material?.id,active:!!attempt,submitted:!!submittedRecord}}));}
     function continuationRecords(){return !submittedRecord||records.some(record=>record.id===submittedRecord.id)?records:[...records,submittedRecord];}
-    function learningQueue(){
+    function learningQueue(){const index=root.IELTSRecordSnapshotIndex;return index?.projectRead?index.projectRead(buildLearningQueue):buildLearningQueue();}
+    function buildLearningQueue(){
       const load=root.IELTSDailyLearningLoad;if(!load)return null;
       const held=message=>({entries:[],next:{kind:'blocked',label:'学习状态已变化，请重试',reason:message},pending:true,reason:message});
       const build=()=>load.build({data,placement:root.IELTSPlacement,startDate:courseStartDate(),getDay:item=>dayPlan(item.day)||item,now:Date.now(),summaryForDay:n=>root.IELTSMistakes?.forDay(n),records:continuationRecords(),drafts:allDrafts(),currentDay:day,selectedDay:state.selectedCourseDay?.day,current:{day,taskId:task?.id,materialId:material?.id,active:!!attempt,submitted:!!submittedRecord},budget:calendarBudget(),hub:root.IELTSTodayHub,player:root.IELTSCoursePlayer,assessment:A,yearPlanner:root.IELTSYearPlanner,timerState:root.IELTSStudyTimer?.snapshot?.(),exposures:state.exposures,recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record),verifiedRecord:root.IELTSAdaptivePlan?.verifiedRecord,lessonVocabularySupplement:lessonSupplementAPI(),extraPlan:(source,budget)=>source&&root.IELTSAdaptivePlan?.planRemaining?.(source,continuationRecords(),undefined,{data,budgetMinutes:360,calendarBudget:budget,exposures:state.exposures,startedMaterialIds:allDrafts().map(d=>d.materialId)})});
@@ -1087,19 +1090,17 @@
         readyForRecap:({records:works})=>dayReadiness({...data,days:data.days.map(item=>item.day===day?dayPlan(day):item)},day,works,{recordCorrectionStatus:record=>root.IELTSMistakes?.recordCorrectionStatus?.(record)}),
         evaluateSubjective:evaluateMistake,
         requestRecap:async(payload,{signal})=>{
-          const sourceDay=day,guard=generation,profile=profileId,isCurrent=()=>attempt===owner&&generation===guard&&day===sourceDay&&profileId===profile&&(root.IELTSProfiles?.current().id||'legacy')===profile,api=root.IELTSPersonalizationIntegration,contextOptions={data,sourceDay,recapToken:payload.token,excludeRecordId:owner.id,getDrafts:allDrafts,getExposures:()=>copy(state.exposures),isCurrent};let before=null;
-          try{before=await api?.captureDecisionContext?.(contextOptions)||null;}catch(_){}if(!isCurrent())throw Error('课程或学习档案已改变，复盘原稿保留。');
-          const compact={...payload,records:payload.records.filter(r=>r.skill!=='reflection').slice(-35).map(r=>({id:r.id,materialId:r.materialId,materialVersion:r.materialVersion,kind:r.kind,skill:r.skill,title:r.title,minutes:r.minutes,quantity:r.quantity,evaluation:{result:r.evaluation.result,feedback:r.evaluation.feedback.slice(0,350)},answer:r.answer.slice(0,900)})),mistakes:payload.mistakes.slice(0,60).map(m=>({skill:m.skill,status:m.status,originalAnswer:typeof m.originalAnswer==='string'?m.originalAnswer.slice(0,300):m.originalAnswer,question:{prompt:m.question.prompt.slice(0,240),explanation:m.question.explanation.slice(0,300)}})),...(before?{reviewContext:before.reviewContext}:{})};
+          const sourceDay=day,guard=generation,profile=profileId,isCurrent=()=>attempt===owner&&generation===guard&&day===sourceDay&&profileId===profile&&(root.IELTSProfiles?.current().id||'legacy')===profile;
+          if(!isCurrent())throw Error('课程或学习档案已改变，复盘原稿保留。');
+          const compact={...payload,records:payload.records.filter(r=>r.skill!=='reflection').slice(-35).map(r=>({id:r.id,materialId:r.materialId,materialVersion:r.materialVersion,kind:r.kind,skill:r.skill,title:r.title,minutes:r.minutes,quantity:r.quantity,evaluation:{result:r.evaluation.result,feedback:r.evaluation.feedback.slice(0,350)},answer:r.answer.slice(0,900)})),mistakes:payload.mistakes.slice(0,60).map(m=>({skill:m.skill,status:m.status,originalAnswer:typeof m.originalAnswer==='string'?m.originalAnswer.slice(0,300):m.originalAnswer,question:{prompt:m.question.prompt.slice(0,240),explanation:m.question.explanation.slice(0,300)}}))};
           while(new TextEncoder().encode(JSON.stringify(compact)).length>60000){if(compact.records.length>4)compact.records.shift();else if(compact.mistakes.length>4)compact.mistakes.pop();else break;}
-          const result=await localJSON('/api/ai/daily-recap',compact,signal);if(!isCurrent())throw Error('课程或学习档案已改变，复盘原稿保留。');if(before)try{const after=await api.captureDecisionContext(contextOptions);if(isCurrent()&&after.fingerprint===before.fingerprint)result.adaptationContext={schema:1,sourceDay,recapToken:payload.token,excludeRecordId:owner.id,fingerprint:before.fingerprint};}catch(_){}return result;
+          const result=await localJSON('/api/ai/daily-recap',compact,signal);if(!isCurrent())throw Error('课程或学习档案已改变，复盘原稿保留。');return result;
         },
         onComplete:async({summary,recap,token})=>{
           if(attempt!==owner||submittedRecord)return;
           const sourceDay=day,guard=generation,profile=profileId,stillCurrent=()=>attempt===owner&&generation===guard&&day===sourceDay&&profileId===profile&&(root.IELTSProfiles?.current().id||'legacy')===profile;
           const saved=await saveActivity({answer:JSON.stringify({schema:1,dayNumber:sourceDay,token,recap}),token,quantity:1,unit:'份复盘',evaluation:{method:'ai',result:'pass',feedback:typeof recap.recap==='string'?recap.recap.slice(0,12000):'本日错题已全对并完成 AI 复盘。'}},'mistake-review');
-          if(!saved||!stillCurrent())return;const works=await R.list();if(!stillCurrent())return;const drafts=Object.values(state.drafts);
-          const combined=await root.IELTSPersonalizationIntegration?.applyAfterRecap({data,sourceDay,recapToken:token,excludeRecordId:owner.id,records:works,drafts,getDrafts:allDrafts,getExposures:()=>copy(state.exposures),isCurrent:stillCurrent,exposures:state.exposures});
-          if(!stillCurrent())return;if(!combined||['recap-not-ready','context-pending'].includes(combined.status))notice(combined?.reason||'复盘已保存；个性化依据待核验，未修改后续安排。');
+          if(saved&&stillCurrent())notice('本日复盘已保存，继续固定课程安排。');
         }
       });
     }

@@ -31,17 +31,39 @@
     else{if(Object.prototype.toString.call(value)!=='[object Object]')throw Error('Material snapshot is not a plain object');result='{'+Object.keys(value).sort().map(key=>{const descriptor=Object.getOwnPropertyDescriptor(value,key);if(!descriptor||descriptor.get||descriptor.set)throw Error('Material snapshot has an accessor');return JSON.stringify(key)+':'+stableMaterialJSON(descriptor.value,depth+1,seen);}).join(',')+'}';}
     seen.delete(value);return result;
   }
+  const frozenJSONObjects=new WeakSet(),frozenMaterialHashes=new WeakMap();
+  function deeplyFrozenJSON(value,seen=new Set(),depth=0){
+    if(value===null||typeof value!=='object')return true;
+    if(depth>40||seen.has(value)||!Object.isFrozen(value))return false;
+    if(frozenJSONObjects.has(value))return true;
+    if(!Array.isArray(value)&&Object.prototype.toString.call(value)!=='[object Object]')return false;
+    seen.add(value);
+    for(const key of Object.keys(value)){const d=Object.getOwnPropertyDescriptor(value,key);if(!d||d.get||d.set||!deeplyFrozenJSON(d.value,seen,depth+1)){seen.delete(value);return false;}}
+    seen.delete(value);frozenJSONObjects.add(value);return true;
+  }
+  function hashMaterialValue(value){
+    const immutable=value&&typeof value==='object'&&deeplyFrozenJSON(value);
+    if(immutable&&frozenMaterialHashes.has(value))return frozenMaterialHashes.get(value);
+    const digest=sourceTextHash(stableMaterialJSON(value));
+    if(immutable)frozenMaterialHashes.set(value,digest);return digest;
+  }
   let immutableMaterialHash=null,immutableMaterialIndex=null;
-  function materialContentHash(material) { const index=root.IELTSRecordSnapshotIndex;if(index?.memoizeTrustedObject){if(index!==immutableMaterialIndex){immutableMaterialIndex=index;immutableMaterialHash=index.memoizeTrustedObject(value=>sourceTextHash(stableMaterialJSON(value)));}return immutableMaterialHash(material);}return sourceTextHash(stableMaterialJSON(material)); }
+  function materialContentHash(material) { const index=root.IELTSRecordSnapshotIndex;if(index?.memoizeTrustedObject){if(index!==immutableMaterialIndex){immutableMaterialIndex=index;immutableMaterialHash=index.memoizeTrustedObject(hashMaterialValue);}return immutableMaterialHash(material);}return hashMaterialValue(material); }
+  const sourceHashCache=new Map();let sourceHashUnits=0;
   function sourceTextHash(text) {
     if(typeof text!=='string')throw Error('Source text must be a string');
     if(typeof require==='function')try{return require('node:crypto').createHash('sha256').update(text,'utf8').digest('hex');}catch(_){}
+    // Cache only the pure digest of an exact immutable string. This carries no
+    // owner, score, record validity or admission decision across calls.
+    const cacheable=text.length<=65536;if(cacheable&&sourceHashCache.has(text))return sourceHashCache.get(text);
     const bytes=[];for(const char of text){let cp=char.codePointAt(0);if(cp>=0xd800&&cp<=0xdfff)cp=0xfffd;if(cp<0x80)bytes.push(cp);else if(cp<0x800)bytes.push(0xc0|(cp>>6),0x80|(cp&63));else if(cp<0x10000)bytes.push(0xe0|(cp>>12),0x80|((cp>>6)&63),0x80|(cp&63));else bytes.push(0xf0|(cp>>18),0x80|((cp>>12)&63),0x80|((cp>>6)&63),0x80|(cp&63));}
     const length=bytes.length;bytes.push(0x80);while(bytes.length%64!==56)bytes.push(0);const high=Math.floor(length/0x20000000),low=(length*8)>>>0;for(let shift=24;shift>=0;shift-=8)bytes.push((high>>>shift)&255);for(let shift=24;shift>=0;shift-=8)bytes.push((low>>>shift)&255);
     const k=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
     const h=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19],ror=(x,n)=>(x>>>n)|(x<<(32-n)),w=new Uint32Array(64);
     for(let offset=0;offset<bytes.length;offset+=64){for(let i=0;i<16;i++)w[i]=((bytes[offset+i*4]<<24)|(bytes[offset+i*4+1]<<16)|(bytes[offset+i*4+2]<<8)|bytes[offset+i*4+3])>>>0;for(let i=16;i<64;i++){const a=w[i-15],b=w[i-2],s0=ror(a,7)^ror(a,18)^(a>>>3),s1=ror(b,17)^ror(b,19)^(b>>>10);w[i]=(w[i-16]+s0+w[i-7]+s1)>>>0;}let[a,b,c,d,e,f,g,j]=h;for(let i=0;i<64;i++){const s1=ror(e,6)^ror(e,11)^ror(e,25),ch=(e&f)^(~e&g),t1=(j+s1+ch+k[i]+w[i])>>>0,s0=ror(a,2)^ror(a,13)^ror(a,22),maj=(a&b)^(a&c)^(b&c),t2=(s0+maj)>>>0;j=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0;}for(const [i,v]of [a,b,c,d,e,f,g,j].entries())h[i]=(h[i]+v)>>>0;}
-    return h.map(value=>value.toString(16).padStart(8,'0')).join('');
+    const digest=h.map(value=>value.toString(16).padStart(8,'0')).join('');
+    if(cacheable){sourceHashCache.set(text,digest);sourceHashUnits+=text.length;while(sourceHashCache.size>256||sourceHashUnits>2097152){const oldest=sourceHashCache.keys().next().value;sourceHashUnits-=oldest.length;sourceHashCache.delete(oldest);}}
+    return digest;
   }
   function resolveArtifactMaterial(material,artifact,record) {
     const binding=artifact?.materialBinding;if(binding===undefined)return{valid:true,material,bound:false};
@@ -77,7 +99,13 @@
     if(skill==='vocabulary')result.vocabulary=(material.vocabulary||[]).map(word=>({word:String(word.word||'').trim().toLowerCase().replace(/\s+/g,' '),meaning:word.meaning||'',example:word.example||word.context||'',exampleTranslation:word.exampleTranslation||''}));
     return result;
   }
-  function legacyMaterialContractHash(material) { return materialContentHash(legacyMaterialContract(material)); }
+  const frozenLegacyHashes=new WeakMap();let immutableLegacyHash=null,immutableLegacyIndex=null;
+  function hashLegacyValue(material){
+    const immutable=material&&typeof material==='object'&&deeplyFrozenJSON(material);
+    if(immutable&&frozenLegacyHashes.has(material))return frozenLegacyHashes.get(material);
+    const digest=materialContentHash(legacyMaterialContract(material));if(immutable)frozenLegacyHashes.set(material,digest);return digest;
+  }
+  function legacyMaterialContractHash(material) {const index=root.IELTSRecordSnapshotIndex;if(index?.memoizeTrustedObject){if(index!==immutableLegacyIndex){immutableLegacyIndex=index;immutableLegacyHash=index.memoizeTrustedObject(hashLegacyValue);}return immutableLegacyHash(material);}return hashLegacyValue(material);}
   function createLegacyMaterialCompatibilityIndex(records,options={}) {
     const entries={},evidence=[],scope=String(options.evidenceScope||'Known public Git revisions, current public content and explicitly recovered development source candidates only; unknown uncommitted versions are not claimed.').slice(0,1000);
     for(const record of records||[]){const evidenceId=evidence.length;evidence.push({kind:record.kind,revision:String(record.revision||''),path:String(record.path||''),assetSha256:record.assetSha256||null});for(const material of record.materials||[]){if(!material||typeof material.id!=='string')continue;const contractHash=legacyMaterialContractHash(material),entry=entries[material.id]||(entries[material.id]={variantHashes:[],versions:[],evidence:[],publishedEvidenceCount:0,developmentEvidenceCount:0,currentContractHash:null,questionIds:[],wordKeys:[]});if(!entry.variantHashes.includes(contractHash))entry.variantHashes.push(contractHash);const version=String(material.version||'1');if(!entry.versions.includes(version))entry.versions.push(version);entry.evidence.push(evidenceId);if(record.kind==='git')entry.publishedEvidenceCount++;if(record.kind==='development')entry.developmentEvidenceCount++;if(record.kind==='current'){entry.currentContractHash=contractHash;entry.questionIds=(material.questions||[]).map(q=>String(q.id));entry.wordKeys=[...new Set((material.vocabulary||[]).map(v=>String(v.word||'').trim().toLowerCase().replace(/\s+/g,' ')).filter(Boolean))];}}}

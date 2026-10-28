@@ -1,0 +1,64 @@
+{
+  "version": "0.0.111",
+  "status": "development-validated-runtime-browser-performance-pending-not-released",
+  "stableVersion": "0.0.109",
+  "fullSuite": {
+    "tests": 2744,
+    "pass": 2742,
+    "fail": 0,
+    "skip": 2,
+    "durationMs": 760410.8076,
+    "log": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\audit111-frozen-final-full.log"
+  },
+  "finalCandidate": {
+    "build": "passed",
+    "index": "curriculum/year-first-use/index.b4fc7634c2643b31.json",
+    "runtimeComponents": 55,
+    "static": "passed: 27 pages, 870 local assets, 129 scripts",
+    "curriculumAudit": "passed: 365 days, 1912 materials",
+    "questionQuality": {
+      "sourceMaterials": 830,
+      "questions": 7800,
+      "high": 0,
+      "review": 5,
+      "reviewed": 5,
+      "unresolved": 0
+    }
+  },
+  "changes": [
+    "Disable automatic AI future-course adjustment while retaining recap and grading",
+    "Preserve existing frozen courses, original answers and independent review history",
+    "Coalesce homepage updates and calculate year report on demand",
+    "Bounded memoization of immutable public materials and pure SHA digests",
+    "Indexed unknown word-form matching with unchanged candidate semantics",
+    "Retain vocabulary overview words and immediate learning counts"
+  ],
+  "audio": {
+    "referencedMaterials": 148,
+    "decodedFiles": 229,
+    "failed": 0
+  },
+  "browser": {
+    "environment": "127.0.0.1:18765; synthetic 88-work history only",
+    "completed": [
+      "Fourth lesson 30-word overview and continuation visible",
+      "Grammar original selected answers and am/are values remain read-only",
+      "Listening original and completion status preserved",
+      "Reading answers, separated paragraphs and reading/question panes visible",
+      "Writing original text and completed status preserved",
+      "Speaking saved original and completed status preserved",
+      "Homepage AI course-adjustment panel removed; year report collapsed"
+    ],
+    "pending": [
+      "Intermittent long waits switching completed modules; cannot claim performance acceptance",
+      "Complete continuous ten-lesson browser interaction matrix"
+    ],
+    "limitations": "Earlier representative submit, draft recovery, audio playback and timer tests are retained; this round does not validate live DeepSeek, Ali or human microphone scoring."
+  },
+  "realCredentialsUsed": false,
+  "realUserDataTouched": false,
+  "remaining": [
+    "Remove repeated saved-record rendering/queue rebuild during module switch",
+    "Complete browser performance and interaction acceptance before merge/deploy"
+  ]
+}

@@ -133,7 +133,7 @@
     }
     function describePublic(state){
       const base=publicPlan(),engine=publicEngine();if(!base)return null;
-      let planningData=data;try{if(data.familyLessonRelease?.active&&['curriculum/year-first-use-runtime-contract-v108-linked-continuation.json','curriculum/year-first-use-runtime-contract-v109-linked-lessons.json'].includes(data.yearFirstUse?.runtimeContract?.contract?.path)){const api=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!api?.publicPlanningData)throw Error('family-public-proof-pending');planningData=api.publicPlanningData();}}catch(error){return{pending:{status:'pending-family-public-proof',assignments:[],blocked:[{reason:error.reason||error.message}]}};}
+      let planningData=data;try{if(data.familyLessonRelease?.active&&['curriculum/year-first-use-runtime-contract-v108-linked-continuation.json','curriculum/year-first-use-runtime-contract-v109-linked-lessons.json','curriculum/year-first-use-runtime-contract-v111-course-audit.json'].includes(data.yearFirstUse?.runtimeContract?.contract?.path)){const api=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!api?.publicPlanningData)throw Error('family-public-proof-pending');planningData=api.publicPlanningData();}}catch(error){return{pending:{status:'pending-family-public-proof',assignments:[],blocked:[{reason:error.reason||error.message}]}};}
       if(!contextReady)return{pending:{status:'pending-profile-history',assignments:[],blocked:[{reason:'作品与草稿归属日尚未核对，先保留原课。'}]}};
       if(!engine?.validatePlan||!engine?.replan)return{pending:{status:'pending-planner-component',assignments:[],blocked:[{reason:'普通公开课程组件尚未就绪，原课保留。'}]}};
       let route;try{route=publicRoute();}catch(error){return{pending:{status:'pending-placement-verification',assignments:[],blocked:[{reason:error.message}]}};}
@@ -198,6 +198,7 @@
     }
     function write(change){check();const raw=storage.getItem(KEY),state=decode(raw),result=change(state);const clean=parseState(state);if(storage.getItem(KEY)!==raw)throw Error('另一页面刚更新个性化计划，请重试。');check();storage.setItem(KEY,JSON.stringify(clean));return result;}
     function apply(dayNumber,proposal,context={}){
+      if(options.automaticAdjustments===false)return{applied:false,status:'disabled',reason:'AI 自动调整课程已关闭，继续固定课表。'};
       const clean=normalizeProposal(proposal,data,dayNumber),observation=context.observation?observationShape(context.observation):null;if(typeof context.recapToken!=='string'||!context.recapToken||context.recapToken.length>240)throw Error('自动调整需要已完成复盘的来源标识。');
       return write(state=>{const locked=new Set([...state.startedDays,...constraints(context)]);state.startedDays=[...locked].sort((a,b)=>a-b);const prior=state.history.find(p=>p.sourceDay===dayNumber&&p.recapToken===context.recapToken&&JSON.stringify(p.proposal)===JSON.stringify(clean));if(prior)return{applied:false,duplicate:true,plan:clone(prior),targetDays:prior.targetDays.slice()};
         const active=state.history.find(p=>p.id===state.activePlanId),riskIds=new Set(context.riskRecordIds||[]),newRisk=active&&(context.records||[]).some(r=>riskIds.has(r?.id)&&Date.parse(r.submittedAt)>Date.parse(active.at)&&['revise','pending'].includes(r.evaluation?.result)&&r.source!=='legacy-import'&&['objective','ai','none'].includes(r.evaluation?.method));
@@ -213,10 +214,28 @@
       const signature=JSON.stringify([contextRecords.map(r=>[r.id,r.version,r.dayNumber,r.courseDay,r.materialId,r.submittedAt,replacements.has(r.materialId)?assessment.sourceTextHash(r.answer||''):null,correctionRelevant(r)?correctionComplete(r):null]),contextDrafts.map(d=>[d.id,d.courseDay,d.materialId,d.startedAt,d.materialBinding?.contentHash,d.dayPlanBinding?.contentHash]),context.exposures||null]);
       if(signature!==contextSignature){contextSignature=signature;contextRevision++;publicCache=null;projectionPending.clear();admissionCache.clear();}
       const grouped=new Map();for(const item of contextRecords.concat(contextDrafts)){const days=new Set([item.dayNumber,item.courseDay].filter(validDay));let artifact;try{artifact=typeof item.answer==='string'?JSON.parse(item.answer):item.answer;}catch(_){}if(validDay(artifact?.courseDay))days.add(artifact.courseDay);for(const n of days){const list=grouped.get(n)||[];list.push({item,artifact});grouped.set(n,list);}}
-      return write(state=>{const locked=constraints(context),legacy=root.IELTSLegacyDayPlans;let changed=false;for(const day of locked){const old=state.startedDays.includes(day);if(!old){state.startedDays.push(day);changed=true;}if(state.frozenDays[day])continue;
-        const sources=(grouped.get(day)||[]).sort((a,b)=>String(a.item.startedAt||a.item.submittedAt||'').localeCompare(String(b.item.startedAt||b.item.submittedAt||''))),first=sources[0],bound=first&&validDayBinding(first.item.dayPlanBinding||first.artifact?.dayPlanBinding,day);
-        const before=old||sources.some(s=>Date.parse(s.item.startedAt||s.item.submittedAt)<Date.parse(legacy?.capturedAt)),base=bound||before&&legacy?.days?.[day]||data.days.find(d=>d.day===day);
-        if(base){const plan=state.history.find(p=>p.id===state.assignments[day]);state.frozenDays[day]=frozenDay(!bound&&plan&&regularDay(base,data)?overlay(base,plan,data):base,day);changed=true;}}
+      const courseSources=new Set(['course-player','vocabulary-practice','essential-vocabulary','family-lesson-supplement-v95','mistake-review','year-review']),daysByNumber=new Map(data.days.map(d=>[d.day,d])),materialsById=new Map(data.materials.map(m=>[m.id,m]));
+      function courseEvidence(source,day){
+        const {item,artifact}=source,base=daysByNumber.get(day),material=materialsById.get(item.materialId)||artifact?.materialBinding?.material,inCore=base?.tasks.some(t=>(t.materialIds||[]).includes(item.materialId));
+        if(material?.independentBank===true||material&&!inCore&&(material.fullTest||['gate','final','independent'].includes(material.pool)||material.assessmentGroup||material.form))return false;
+        if(item.source)return courseSources.has(item.source);
+        if(typeof item.word==='string'&&['spelling','recognition','listening','production'].includes(item.skill)&&!item.taskId||item.skill==='vocabulary'&&item.taskId==='vocabulary'&&/^retention-/.test(item.id||'')&&/^retention-[a-f0-9]{40}$/.test(item.materialId||''))return false;
+        return Boolean(validDayBinding(item.dayPlanBinding||artifact?.dayPlanBinding,day)||base?.tasks.some(t=>(t.materialIds||[]).includes(item.materialId)));
+      }
+      function courseExposure(day,plan){
+        const base=daysByNumber.get(day),ids=new Set([...(base?.tasks||[]).flatMap(t=>t.materialIds||[]),...(plan?.proposal?.reinforcementMaterialIds||[])]),exposures=context.exposures;
+        const belongs=(id,value)=>ids.has(id)&&[value?.dayNumber,value?.courseDay,value?.day,...(Array.isArray(value?.courseDays)?value.courseDays:[])].includes(day);
+        if(Array.isArray(exposures))return exposures.some(value=>belongs(value?.materialId||value?.id,value));
+        return exposures&&typeof exposures==='object'&&Object.entries(exposures).some(([id,value])=>belongs(id,value));
+      }
+      return write(state=>{const locked=constraints(context),explicit=new Set((context.startedDays||[]).filter(validDay)),legacy=root.IELTSLegacyDayPlans;let changed=false;for(const day of locked){const old=state.startedDays.includes(day);if(state.frozenDays[day])continue;
+        const sources=(grouped.get(day)||[]).sort((a,b)=>String(a.item.startedAt||a.item.submittedAt||'').localeCompare(String(b.item.startedAt||b.item.submittedAt||''))),course=sources.filter(s=>courseEvidence(s,day)),first=options.automaticAdjustments===false?(course[0]||sources[0]):sources[0],bound=first&&validDayBinding(first.item.dayPlanBinding||first.artifact?.dayPlanBinding,day),plan=state.history.find(p=>p.id===state.assignments[day]),courseWasStarted=course.length>0||explicit.has(day)||courseExposure(day,plan);
+        // A calendar-linked independent activity is not evidence that this
+        // course began. Keep its records while leaving the future day unstarted.
+        if(options.automaticAdjustments===false&&!old&&!courseWasStarted)continue;
+        if(!old){state.startedDays.push(day);changed=true;}
+        const before=old||sources.some(s=>Date.parse(s.item.startedAt||s.item.submittedAt)<Date.parse(legacy?.capturedAt)),base=bound||before&&legacy?.days?.[day]||daysByNumber.get(day);
+        if(base){state.frozenDays[day]=frozenDay(!bound&&plan&&regularDay(base,data)?overlay(base,plan,data):base,day);changed=true;}}
         state.startedDays.sort((a,b)=>a-b);if(changed)state.revision++;return state.startedDays.slice();});
     }
     function markStarted(dayNumber,snapshot){
@@ -246,7 +265,7 @@
         return plan&&regularDay(retained,data)?overlay(retained,plan,data):clone(retained);
       }
       const expanded=expand(clone(base)),integrated=projectPublic(expanded,state);
-      return plan&&regularDay(integrated,data)?overlay(integrated,plan,data):integrated;
+      return options.automaticAdjustments!==false&&plan&&regularDay(integrated,data)?overlay(integrated,plan,data):integrated;
     }
     function grammarContextApi(){return options.contextPractice||root.IELTSPublicContextPractice||(typeof require==='function'?require('./public-context-practice.js'):null);}
     function grammarContextProjection(state){
@@ -342,6 +361,6 @@
     if(!result.tasks.length){const needs=[...latest.values()].filter(r=>!verifiedRecord(r,map.get(r.materialId),now,proofContext)).sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt)));for(const record of needs){const m=map.get(record.materialId);if(!eligibleMaterial(m,day.week)||started.has(m.id))continue;const estimate=Math.min(10,Number(m.estimatedMinutes)||10);if(estimate>remaining)continue;result.tasks.push({kind:'verification',materialId:m.id,skill:m.skill,estimatedMinutes:estimate,questionIds:(m.questions||[]).slice(0,2).map(q=>q.id),unseen:false,reason:'完成很快仍需验证：先做无提示短复测；速度和自报通过不能用来升级。'});result.estimatedMinutes=estimate;break;}}
     return result;
   }
-  let runtime=null;function store(){if(!runtime)runtime=createStore();return runtime;}
-  const api=Object.freeze({KEY,SKILLS,newState,parseState,mergeStates,normalizeProposal,createObservation,observationShape,interventionSignature,promiseOfScore,eligibleMaterial,regularDay,createStore,verifiedRecord,publicContract,publicMaterialStatus,validDayBinding,planRemaining,apply:(...args)=>store().apply(...args),getDay:day=>store().getDay(day),getPreFamilyDay:(...args)=>store().getPreFamilyDay(...args),markStarted:(day,snapshot)=>store().markStarted(day,snapshot),read:()=>store().read(),publicCourseState:()=>store().publicCourseState(),verifiedPublicCourseState:()=>store().verifiedPublicCourseState(),publicContextState:()=>store().publicContextState(),preparePublicCourse:config=>store().preparePublicCourse(config),subscribePublicCourse:listener=>store().subscribePublicCourse(listener),adoptStarted:context=>store().adoptStarted(context)});root.IELTSAdaptivePlan=api;if(typeof module==='object'&&module.exports)module.exports=api;
+  let runtime=null;function store(){if(!runtime)runtime=createStore({automaticAdjustments:false});return runtime;}
+  const api=Object.freeze({automaticAdjustmentsEnabled:false,KEY,SKILLS,newState,parseState,mergeStates,normalizeProposal,createObservation,observationShape,interventionSignature,promiseOfScore,eligibleMaterial,regularDay,createStore,verifiedRecord,publicContract,publicMaterialStatus,validDayBinding,planRemaining,apply:(...args)=>store().apply(...args),getDay:day=>store().getDay(day),getPreFamilyDay:(...args)=>store().getPreFamilyDay(...args),markStarted:(day,snapshot)=>store().markStarted(day,snapshot),read:()=>store().read(),publicCourseState:()=>store().publicCourseState(),verifiedPublicCourseState:()=>store().verifiedPublicCourseState(),publicContextState:()=>store().publicContextState(),preparePublicCourse:config=>store().preparePublicCourse(config),subscribePublicCourse:listener=>store().subscribePublicCourse(listener),adoptStarted:context=>store().adoptStarted(context)});root.IELTSAdaptivePlan=api;if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

@@ -63,8 +63,17 @@ test('lesson four vocabulary sidebar and module navigation open the same admitte
  const f=await F.mounted({root:require('path').resolve(__dirname,'..'),data:D,day:D.days[3]},{entries,dictionary:true,now:Date.parse('2026-10-28T08:00:00Z')}),nav=f.win.IELTSTodayNavigation;
  for(const name of ['public-course-planner.js','public-material-selector.js','public-context-data.js','contextual-vocabulary-exposure.js','contextual-vocabulary-course.js'])require('vm').runInContext(require('fs').readFileSync(require('path').join(__dirname,'../assets',name),'utf8'),f.context,{filename:name});
  nav.showDay(4);await nav.refreshYearRecords();await F.settle();assert.equal(nav.learningQueue().next.familyVocabularyContinuation,true);
- assert.match(f.nodes.get('courseMaterialIntro').textContent,/30 个主题词/);assert.equal(f.nodes.get('courseStart').hidden,true);
+ assert.match(f.nodes.get('courseMaterialIntro').textContent,/30 个主题词/);for(const target of D.familyLessonRelease.units.find(u=>u.day===4).targets)assert.ok(f.nodes.get('courseMaterialIntro').textContent.includes(target.canonicalWord),'Overview must show '+target.canonicalWord);assert.equal(f.nodes.get('courseStart').hidden,true);
  assert.equal(await nav.showTask('vocabulary'),true);assert.equal(f.win.location.href,'词汇记忆.html?day=4');
  f.win.location.href='';await f.nodes.get('courseTasks').children.find(b=>b.dataset.taskId==='vocabulary').fire('click');assert.equal(f.win.location.href,'词汇记忆.html?day=4');
  assert.equal((await f.R.list()).length,records.length,'navigation cannot erase old answers or create fake completion');
+});
+
+test('periodic family record preparation reuses only an unchanged privately validated immutable snapshot',async()=>{
+ const f=await F.mounted(F.packageData(),{dictionary:true,complete:true}),api=f.win.IELTSFamilyLessonExpansionV95.runtime();
+ const first=await api.prepareCourseRecords(),A=f.win.IELTSAssessment,hash=A.materialContentHash;let recordHashes=0;
+ f.win.IELTSAssessment={...A,materialContentHash(value){if(Array.isArray(value)&&value.some(row=>row?.answer))recordHashes++;return hash(value);}};
+ assert.equal(await api.prepareCourseRecords(),first);assert.equal(recordHashes,0);
+ const patch=require('vm').runInContext('({notes:"Changed synthetic original metadata"})',f.context);await f.R.update(first[0].id,patch,'audit-refresh');
+ const changed=await api.prepareCourseRecords();assert.notEqual(changed,first);assert.ok(recordHashes>0,'changed source must receive the full private validation');
 });

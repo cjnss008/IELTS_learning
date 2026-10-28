@@ -43,6 +43,16 @@ function vocabularyModuleFixture({low=false,mistakes}={}){
  return{...f,submitVocabulary:async()=>submitVocabulary(session.getSubmission())};
 }
 
+test('slow budget reads coalesce interval ticks instead of queuing one refresh per tick',async()=>{
+ const planner=require('../assets/year-planner.js');let reads=0,hold=null;
+ const f=fixture({}, {window:{IELTSYearPlanner:{...planner,readBudget:async options=>{reads++;if(hold)await hold;return planner.readBudget(options);}},IELTSMediaLibrary:{list:async()=>[]}}});
+ const settle=async()=>{for(let n=0;n<20;n++)await new Promise(resolve=>setImmediate(resolve));};await settle();
+ const before=reads;let release;hold=new Promise(resolve=>release=resolve);f.advance(5000);await settle();
+ for(let n=0;n<8;n++)f.advance(5000);await settle();assert.equal(reads,before+1);
+ hold=null;release();await settle();assert.equal(reads,before+1,'waiting timer ticks must not create sequential rereads');
+ f.advance(5000);await settle();assert.equal(reads,before+2,'the next actual poll still reads live activity');
+});
+
 test('vocabulary continuation restores an older third-round draft instead of newer empty duplicates',async()=>{
  const V=require('../assets/vocabulary-practice.js'),material={id:'vocab-resume',version:'1',skill:'vocabulary',type:'vocabulary',questions:[],vocabulary:['student','teacher','desk','book','bag','pen','home','work'].map((word,index)=>({word,meaning:'词义'+index}))},advanced=V.createSession({trainingVersion:1,material});advanced.begin();for(let round=0;round<2;round++){advanced.words.forEach((word,index)=>advanced.setAnswer(index,word.word));advanced.submitRound();advanced.next();}advanced.words.slice(0,6).forEach((word,index)=>advanced.setAnswer(index,word.word));
  const make=(id,text,startedAt)=>({id,materialId:material.id,taskId:'vocabulary',courseDay:1,mode:'practice',kind:'original',parentId:null,startedAt,activeSeconds:0,exposureAtStart:'seen',answers:{},userEvidence:{},text,transcript:'',audioAvailable:false,audioCompleted:false,transcriptViewed:false,interrupted:false,assistance:{hint:false,answer:false,ai:false},media:[]}),emptyText=JSON.stringify(V.createSession({trainingVersion:1,material}).getDraft()),state={schema:1,day:1,exposures:{},drafts:{},queue:{}};
@@ -184,8 +194,8 @@ test('late recap save after navigation cannot apply the old recommendation to an
  const f=fixture({skill:'reflection',questions:[]},{window:{IELTSMistakeReview:{mount(options){callbacks=options;return{destroy(){}};}},IELTSAdaptivePlan:{getDay:d=>d,markStarted(){},apply:(...a)=>applied.push(a)}}});await Promise.resolve();await f.nodes.get('courseTasks').children.find(n=>n.dataset.taskId==='reflection').fire('click');await f.nodes.get('courseBegin').fire('click');const record=f.win.IELTSRecords.record;f.win.IELTSRecords.record=async input=>{started();await wait;return record(input);};const pending=callbacks.onComplete({recap:{ok:true,status:'complete',recap:'Specific evidence.',adaptation:{prioritySkills:['reading']}},token:'valid-original-day'});await entered;f.win.IELTSTodayNavigation.showDay(2);release();await pending;assert.equal(applied.length,0);assert.equal(f.win.IELTSTodayNavigation.current().day,2);
 });
 
-test('invalidated recap evidence never falls back to ordinary AI adjustment',async()=>{
- let callbacks;const applied=[],f=fixture({skill:'reflection',questions:[]},{window:{IELTSMistakeReview:{mount(options){callbacks=options;return{destroy(){}};}},IELTSAdaptivePlan:{getDay:d=>d,markStarted(){},apply:(...a)=>applied.push(a)},IELTSPersonalizationIntegration:{applyAfterRecap:async()=>({applied:false,status:'recap-not-ready',reason:'复盘依据已更新'})}}});await Promise.resolve();await f.nodes.get('courseTasks').children.find(n=>n.dataset.taskId==='reflection').fire('click');await f.nodes.get('courseBegin').fire('click');await callbacks.onComplete({recap:{ok:true,status:'complete',recap:'Specific evidence.',adaptation:{prioritySkills:['reading']}},token:'outdated'});assert.equal(f.records().length,1);assert.equal(applied.length,0);assert.match(f.nodes.get('courseNotice').textContent,/复盘依据已更新/);
+test('recap saves its evidence without requesting or applying a course adjustment',async()=>{
+ let callbacks,captures=0,integrations=0;const applied=[],f=fixture({skill:'reflection',questions:[]},{window:{IELTSMistakeReview:{mount(options){callbacks=options;return{destroy(){}};}},IELTSAdaptivePlan:{getDay:d=>d,markStarted(){},apply:(...a)=>applied.push(a)},IELTSPersonalizationIntegration:{captureDecisionContext:()=>{captures++;throw Error('fixed recap must not capture adjustment context');},applyAfterRecap:async()=>{integrations++;throw Error('fixed recap must not apply an adjustment');}}}});await Promise.resolve();await f.nodes.get('courseTasks').children.find(n=>n.dataset.taskId==='reflection').fire('click');await f.nodes.get('courseBegin').fire('click');const recap={ok:true,status:'complete',recap:'Specific evidence.',adaptation:{prioritySkills:['reading']}};await callbacks.onComplete({recap,token:'outdated'});assert.equal(f.records().length,1);assert.equal(JSON.parse(f.records()[0].answer).recap.recap,recap.recap);assert.equal(captures,0);assert.equal(integrations,0);assert.equal(applied.length,0);assert.match(f.nodes.get('courseNotice').textContent,/本日复盘已保存，继续固定课程安排/);
 });
 const choiceQuestions=()=>[
   {id:'q1',type:'single',prompt:'What colour is the bag?',options:['red','blue','green','yellow'],answers:['red'],explanation:'原文说明包是红色的。',evidence:'a red bag'},

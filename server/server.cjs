@@ -16,7 +16,6 @@ const { createSelection, SelectionError, PROMPT_VERSION } = require('./selection
 const review = require('./review.cjs');
 const oralCoach = require('./oral-coach.cjs');
 const dailyCoach = require('./daily-coach.cjs');
-const adaptation = require('./adaptation.cjs');
 const curriculum = require('../assets/curriculum-data.js');
 const { createEvidenceStore } = require('./evidence.cjs');
 const { createTranscriptionHandler } = require('./transcription.cjs');
@@ -577,12 +576,11 @@ function createServer(options = {}) {
         try{
           if(data?.choices?.[0]?.finish_reason==='length')throw new AppError(502,'COACH_TRUNCATED','AI 返回被截断，请重试。');
           const content=data?.choices?.[0]?.message?.content,parsed=dailyCoach.parse(content,kind,input,captured.apiKey);
-          if(kind==='recap')parsed.adaptation=adaptation.normalize(JSON.parse(content).adaptation,curriculum,input.dayNumber,captured.apiKey,input.reinforcementCandidates);
           return sendJson(res,200,{...parsed,model:captured.model});
         }catch(error){
-          if(kind!=='recap'||attempt!==0||error.status!==502){if(error instanceof adaptation.AdaptationError)throw new AppError(error.status,error.code,error.message);throw error;}
+          if(kind!=='recap'||attempt!==0||error.status!==502)throw error;
           // One fresh structured repair, using the original evidence only; an invalid plan is never applied.
-          messages.push({role:'system',content:'上一轮结构校验未通过。请重新根据原始学习数据返回完整 JSON，不增加字段。recap 至少80字符；adaptation 仅包含 prioritySkills、reason、strategies、reinforcementMaterialIds。重点0–2项且不重复；strategies 每个skill只出现一次，每个重点均有策略。reason必填，action必填。不确定补强材料时reinforcementMaterialIds使用空数组；不得承诺考试成绩。'});
+          messages.push({role:'system',content:'上一轮复盘未完整返回。请根据原始学习数据返回 JSON {"recap":"中文复盘"}，recap 至少80字符。不要返回课程调整指令或 adaptation。'});
         }
       }
     }

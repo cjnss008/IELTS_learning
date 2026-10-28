@@ -22,8 +22,15 @@ async function flow(options={}){
   for(const name of ['year-first-use-state','year-first-use-runtime','year-first-use-course','daily-learning-load'])vm.runInNewContext(fs.readFileSync(path.join(base,'assets',name+'.js'),'utf8'),context,{filename:name+'.js'});
   if(options.window)Object.assign(win,options.window);
  }});
- for(let n=0;n<20;n++)await Promise.resolve();f.win.IELTSTodayNavigation.learningQueue();await f.win.IELTSYearFirstUseCourse.refresh();return{...f,calls,holder,timer,context:contextRef,refresh:async()=>{f.win.IELTSTodayNavigation.learningQueue();await f.win.IELTSYearFirstUseCourse.refresh();return f.win.IELTSTodayNavigation.learningQueue();}};
+ for(let n=0;n<20;n++)await Promise.resolve();f.win.IELTSTodayNavigation.learningQueue();if(!options.automaticOnly)await f.win.IELTSYearFirstUseCourse.refresh();return{...f,calls,holder,timer,context:contextRef,refresh:async()=>{f.win.IELTSTodayNavigation.learningQueue();await f.win.IELTSYearFirstUseCourse.refresh();return f.win.IELTSTodayNavigation.learningQueue();}};
 }
+
+test('unfinished core modules do not automatically scan future annual supply on each render',async()=>{
+ const f=await flow({completeCurrent:false,automaticOnly:true});
+ for(let n=0;n<10;n++){const queue=f.win.IELTSTodayNavigation.learningQueue();assert.notEqual(queue.currentComplete,true);await Promise.resolve();}
+ assert.equal(f.calls.length,0,'no future annual catalogue or capability network calls while core work remains');
+ await f.refresh();assert.ok(f.calls.some(url=>url==='/api/year-first-use/status'),'explicit recovery retains its full validation path');
+});
 test('actual completed core → Load primary → Hub Start → Player explicit start → draft → Record keeps full version and ordinary evidence scope',async()=>{
  const f=await flow(),queue=f.win.IELTSTodayNavigation.learningQueue(),entry=queue.entries.find(e=>e.yearFirstUse);assert.ok(entry,JSON.stringify({peek:f.win.IELTSYearFirstUseCourse.peek(),q:queue,current:f.win.IELTSTodayNavigation.current()}));assert.equal(queue.next.kind,'year-first-use');assert.equal(queue.next.day,2);assert.equal(queue.courseDay,3);assert.equal(queue.currentComplete,true);assert.equal(f.win.IELTSYearFirstUseCourse.resolveMaterial(entry.materialId),null);assert.equal(f.calls.filter(x=>x.includes('/material?')).length,1);assert.equal(f.calls.filter(x=>x.includes('index.')).length,1);assert.equal(queue.remainingRequiredStudyMinutes,0);
  vm.runInNewContext(fs.readFileSync(path.join(base,'assets/today-hub.js'),'utf8'),f.context,{filename:'today-hub.js'});for(let n=0;n<10;n++)await Promise.resolve();assert.match(f.nodes.get('todayStart').textContent,/全年课程/);await f.nodes.get('todayStart').fire('click');

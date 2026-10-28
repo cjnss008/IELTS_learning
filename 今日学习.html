@@ -42,13 +42,13 @@
       <aside class="today-summary"><span>每天可用学习时间</span><strong>6 <small>小时</small></strong><p>按实际掌握速度推进<br>学得快，就继续新内容<br>有薄弱点，就针对性补强</p><p class="course-small">六小时是学习预算，各项时间仅为参考。学习与番茄休息共用六小时预算，完成后按剩余时间继续。</p></aside>
     </section>
     <section class="today-status" aria-label="今日进度"><div><span>当前课已提交任务</span><strong id="todayDone">0 / 7</strong></div><div><span>今天学习＋休息总占用</span><strong id="todayMinutes">0 / 360 分钟</strong></div><div><span>今日待订正</span><strong id="todayMistakes">0 道</strong></div></section>
-    <section id="yearPlanPanel" class="year-plan-panel" aria-label="全年进度、积压与负荷观察"></section>
+    <details id="yearPlanDisclosure" class="today-resources"><summary>查看全年学习报告</summary><section id="yearPlanPanel" class="year-plan-panel" aria-label="全年进度、积压与负荷观察"></section></details>
     <section class="today-resources" aria-label="今日必学队列"><h2>今日必学队列</h2><p id="todayQueueSummary" role="status"></p><div id="todayLearningQueue"></div></section>
     <section id="todayEssentialVocabulary" class="memory-mini" hidden></section>
     <div id="todayRoute" class="today-route" aria-label="今日学习顺序"></div>
     <p id="todayAdvice" class="today-advice" role="status">第一次学习：点击“开始今天第一项”，从基础词汇开始。这里就是每天唯一的课程入口。</p>
 <div id="dailyBackupNotice" class="course-notice" role="status" aria-live="polite" hidden></div>
-<section id="todayAdaptive" class="today-resources" aria-label="个性化学习安排"><h2>根据表现安排下一步</h2><div id="todayAdaptiveContent">提交今天的练习后，系统会在剩余时间内安排适级任务；每日 AI 复盘再调整后续策略。</div></section>
+
     <div id="courseNotice" class="course-notice" role="status"></div>
     <div class="course-day-controls"><label for="courseDay">课程课次 <input id="courseDay" type="number" min="1" max="365" value="1"></label><button id="coursePrevious" type="button">前一天</button><button id="courseNext" type="button">后一天</button><span id="courseDayTitle"></span></div>
     <p id="coursePrerequisites" class="course-target" hidden></p>

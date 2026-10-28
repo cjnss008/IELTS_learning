@@ -21,7 +21,17 @@
       if(profiles.length>20)throw Error('本机档案超过 20 个，请先备份。');
       return profiles.sort((a,b)=>a.id===LEGACY?-1:b.id===LEGACY?1:a.createdAt.localeCompare(b.createdAt));
     }
-    function current(){const raw=storage.getItem(registryKey),id=raw===null?LEGACY:parseRegistry(raw).activeId;const p=list().find(p=>p.id===id);if(!p)throw Error('当前档案不存在，已保留原记录。');return p;}
+    let initialListChecked=false;
+    function current(){
+      // Validate the registry once on entry; hot-path ownership checks read only
+      // the live active ID and its descriptor. Never cache either mutable value.
+      // Scanning every storage key here made every answer check quadratic when
+      // the large-text adapter and several profiles were installed.
+      if(!initialListChecked){list();initialListChecked=true;}
+      const raw=storage.getItem(registryKey),id=raw===null?LEGACY:parseRegistry(raw).activeId,descriptor=storage.getItem(profilePrefix+id);
+      if(descriptor===null){if(id===LEGACY)return legacy();throw Error('当前档案不存在，已保留原记录。');}
+      const p=parseProfile(descriptor);if(p.id!==id)throw Error('档案键与身份不一致，已保留原记录。');return p;
+    }
     function create(label){if(!preview)userData?.assertReady?.();const profiles=list();if(profiles.length>=20)throw Error('最多创建 20 个本地档案。');const p={id:idFactory(),name:name(label),createdAt:new Date().toISOString()};parseProfile(p);if(storage.getItem(profilePrefix+p.id)!==null)throw Error('档案身份重复，请重试。');storage.setItem(profilePrefix+p.id,JSON.stringify(p));notify({type:'created',profile:p});return p;}
     function activate(id){if(!preview)userData?.assertWritable?.(id);const p=list().find(p=>p.id===id);if(!p)throw Error('请选择存在的档案。');storage.setItem(registryKey,JSON.stringify({schemaVersion:1,activeId:id}));notify({type:'activated',profile:p});return p;}
     function rename(label){if(!preview)userData?.assertWritable?.(current().id);const p={...current(),name:name(label)};storage.setItem(profilePrefix+p.id,JSON.stringify(p));notify({type:'renamed',profile:p});return p;}
@@ -32,11 +42,12 @@
       function keys(){const result=[];for(let i=0;i<storage.length;i++){const k=storage.key(i);if(captured===LEGACY&&!preview){if(k?.startsWith('ielts')&&!k.startsWith('ielts52-profile:')&&!k.startsWith(KEY)&&!k.startsWith('ielts52-preview:'))result.push(k);}else{const marker=(preview?'ielts52-preview:':'')+(captured===LEGACY?'':'ielts52-profile:'+captured+':');if(k?.startsWith(marker))result.push(k.slice(marker.length));}}return result;}
       return{profileId:captured,get length(){return keys().length;},getItem:key=>storage.getItem(map(key)),setItem(key,value){check();storage.setItem(map(key),String(value));},removeItem(key){check();storage.removeItem(map(key));},key:index=>keys()[index]??null};
     }
-    return{KEY:registryKey,current,list,create,activate,rename,scopeKey,storage:view,isPreview:preview,parseProfile,parseRegistry};
+    function identity(){const p=current();return{profileId:p.id,rawGeneration:storage.getItem(scopeKey('ielts52-data-generation-v1',p.id))};}
+    return{KEY:registryKey,current,identity,list,create,activate,rename,scopeKey,storage:view,isPreview:preview,parseProfile,parseRegistry};
   }
   let manager=null,loadedId=null,loadedGeneration;
   function runtime(){if(!manager){const preview=Boolean(root.location&&new URLSearchParams(root.location.search).get('preview')==='1');manager=createManager(preview?root.sessionStorage:root.localStorage,{preview,notify:detail=>root.dispatchEvent?.(new CustomEvent('ielts:profile-changed',{detail}))});loadedId=manager.current().id;loadedGeneration=manager.storage().getItem('ielts52-data-generation-v1');}return manager;}
-  function assertFresh(){const m=runtime();if(String(m.storage().getItem('ielts52-data-generation-v1')||'').startsWith('busy:'))throw Error('学习档案正在清理或恢复，请到备份中心完成中断恢复后再继续。');if(m.current().id!==loadedId||m.storage().getItem('ielts52-data-generation-v1')!==loadedGeneration)throw Error('学习档案已切换、清空或恢复，请刷新后继续。');}
+  function assertFresh(){const value=runtime().identity();if(String(value.rawGeneration||'').startsWith('busy:'))throw Error('学习档案正在清理或恢复，请到备份中心完成中断恢复后再继续。');if(value.profileId!==loadedId||value.rawGeneration!==loadedGeneration)throw Error('学习档案已切换、清空或恢复，请刷新后继续。');return{profileId:value.profileId,generation:value.rawGeneration===null?'initial':String(value.rawGeneration)};}
   function mount(host){
     if(!host||!root.document)return;
     host.replaceChildren();const doc=root.document;

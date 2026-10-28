@@ -25,11 +25,8 @@ test('actual curriculum candidate sets are accepted by normalization across earl
  }
 });
 
-test('recap prompt states the complete deduplicated adaptation contract and a valid empty fallback',()=>{
+test('recap prompt requires a fixed curriculum and feedback only',()=>{
  const input=Coach.recap(request(),data([material('read-10')])),prompt=Coach.messages('recap',input)[0].content;
- for(const required of ['0–2项不重复','每个skill在整个strategies中只能出现一次','每项技能必须恰好有一条对应strategy','0–3项不重复','候选skill必须已在prioritySkills','不能添加分数','不能加Markdown','reason']){
-  if(required==='不能加Markdown')assert.match(prompt,/不加Markdown/);else assert.ok(prompt.includes(required),required);
- }
- assert.match(prompt,/prioritySkills:\[\],reason:/);assert.match(prompt,/strategies:\[\],reinforcementMaterialIds:\[\]/);assert.deepEqual(JSON.parse(Coach.messages('recap',input)[1].content),input);
+ assert.match(prompt,/课程采用固定安排/);assert.match(prompt,/禁止修改后续课程、难度、题目、时间分配/);assert.match(prompt,/不返回 adaptation/);assert.match(prompt,/不能减少、跳过、隐藏/);assert.match(prompt,/不改变课程、复习或测评安排/);assert.deepEqual(JSON.parse(Coach.messages('recap',input)[1].content),input);
  assert.equal(Coach.messages('glossary',{word:'hello'})[0].content.includes('prioritySkills'),false);
 });

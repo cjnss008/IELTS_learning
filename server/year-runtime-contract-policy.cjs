@@ -67,7 +67,8 @@ const HASH=/^[a-f0-9]{64}$/;
 const FAMILY_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v97-family-lessons.json',FAMILY_COMPONENTS=Object.freeze({...REQUIRED_COMPONENTS,'public-course-planner':'assets/public-course-planner.js','family-lesson-expansion-v95':'assets/family-lesson-expansion-v95.js','course-expansion':'assets/course-expansion.js','daily-plan-app':'assets/daily-plan-app.js'});
 const FAMILY_BROADCAST_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v107-broadcast.json',FAMILY_CONTINUATION_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v108-linked-continuation.json';
 const FAMILY_LINKED_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v109-linked-lessons.json';
-const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH].includes(contractPath);
+const FAMILY_AUDIT_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v111-course-audit.json';
+const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH,FAMILY_AUDIT_CONTRACT_PATH].includes(contractPath);
 function componentLimit(contractPath){return isFamilyContract(contractPath)?55:MAX_COMPONENTS;}
 
 function componentListProblem(rows,contractPath){
