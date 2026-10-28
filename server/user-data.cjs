@@ -74,12 +74,33 @@ function createUserData({rootDir,dataDir,legacyPaths,migrateLegacy=true,now=()=>
  // disappear between EEXIST and the read. Neither state is a damaged profile.
  function readLockOwner(file){try{return safeJsonFile(checked(file,{file:true}),4096);}catch(error){if(error.code==='USER_DATA_CORRUPT')return null;throw error;}}
  function removeDeadLocalLock(file){return reclaimDeadLocalLock(file,{checked});}
- const migrationLock=path.join(config,'migration.lock');let migrationFd,migrationOwner;
- const migrationWait=new Int32Array(new SharedArrayBuffer(4));
- try{for(let attempt=0;attempt<100;attempt++){try{migrationFd=fs.openSync(checked(migrationLock),'wx',0o600);break;}catch(error){if(error.code!=='EEXIST')throw error;const held=readLockOwner(migrationLock),removed=removeDeadLocalLock(migrationLock,held);if(attempt===99)fail('USER_DATA_MIGRATION_BUSY','另一台电脑或本机服务可能正在迁移共享用户目录，请稍后重新启动；原数据保留。',423);if(!removed)Atomics.wait(migrationWait,0,0,20);}}migrationOwner=crypto.randomUUID();fs.writeFileSync(migrationFd,JSON.stringify({pid:process.pid,hostname:os.hostname(),owner:migrationOwner}));migrate();}finally{if(migrationFd!==undefined){fs.closeSync(migrationFd);try{if(readLockOwner(migrationLock)?.owner===migrationOwner)fs.unlinkSync(checked(migrationLock));}catch{}}}
- function lockState(){return {pid:process.pid,hostname:os.hostname(),owner:crypto.randomUUID(),createdAt:now().toISOString()};}
- const lockFile=path.join(config,'user-data.lock');
- async function lock(run){const next=queue.then(async()=>{let fd,owner;for(let attempt=0;attempt<100;attempt++){try{checked(lockFile);fd=fs.openSync(lockFile,'wx',0o600);owner=lockState();fs.writeFileSync(fd,JSON.stringify(owner));break;}catch(e){if(e.code!=='EEXIST')throw e;const held=readLockOwner(lockFile),removed=removeDeadLocalLock(lockFile,held);if(attempt===99)fail('USER_DATA_BUSY','另一台电脑或本机服务可能正在向共享用户目录保存，请稍后重试；浏览器原稿与磁盘版本均保留。',423);if(!removed)await new Promise(r=>setTimeout(r,20));}}try{assertAvailable();return await run();}finally{if(fd!==undefined){fs.closeSync(fd);try{if(readLockOwner(lockFile)?.owner===owner.owner)fs.unlinkSync(checked(lockFile));}catch{}}}},()=>lock(run));queue=next.catch(()=>{});return next;}
+  const transientLockError=error=>['EPERM','EACCES','EBUSY'].includes(error?.code),lockAttempts=100,lockDelay=20;
+  function reclaimForRetry(file){try{const held=readLockOwner(file);return removeDeadLocalLock(file,held);}catch(error){if(!transientLockError(error))throw error;return false;}}
+  const migrationLock=path.join(config,'migration.lock');let migrationFd,migrationOwner;
+  const migrationWait=new Int32Array(new SharedArrayBuffer(4));
+  try{
+   for(let attempt=0;attempt<lockAttempts;attempt++){
+    try{migrationFd=fs.openSync(checked(migrationLock),'wx',0o600);break;}
+    catch(error){const removed=error.code==='EEXIST'?reclaimForRetry(migrationLock):false;if(error.code!=='EEXIST'&&!transientLockError(error))throw error;if(attempt===lockAttempts-1)fail('USER_DATA_MIGRATION_BUSY','共享用户目录的迁移锁暂不可访问，或另一台电脑正在迁移；请稍后重新启动，原数据保留。',423);if(!removed)Atomics.wait(migrationWait,0,0,lockDelay);}
+   }
+   migrationOwner=crypto.randomUUID();fs.writeFileSync(migrationFd,JSON.stringify({pid:process.pid,hostname:os.hostname(),owner:migrationOwner}));migrate();
+  }finally{if(migrationFd!==undefined){fs.closeSync(migrationFd);try{if(readLockOwner(migrationLock)?.owner===migrationOwner)fs.unlinkSync(checked(migrationLock));}catch{}}}
+  function lockState(){return {pid:process.pid,hostname:os.hostname(),owner:crypto.randomUUID(),createdAt:now().toISOString()};}
+  const lockFile=path.join(config,'user-data.lock');
+  async function lock(run){const next=queue.then(async()=>{
+   let fd,owner,failed=false;
+   try{
+    for(let attempt=0;attempt<lockAttempts;attempt++){
+     try{checked(lockFile);fd=fs.openSync(lockFile,'wx',0o600);}
+     catch(error){const removed=error.code==='EEXIST'?reclaimForRetry(lockFile):false;if(error.code!=='EEXIST'&&!transientLockError(error))throw error;if(attempt===lockAttempts-1)fail('USER_DATA_BUSY',error.code==='EEXIST'?'另一台电脑或本机服务可能正在向共享用户目录保存，请稍后重试；浏览器原稿与磁盘版本均保留。':'共享用户目录的锁暂不可访问，请稍后重试；浏览器原稿与磁盘版本均保留。',423);if(!removed)await new Promise(r=>setTimeout(r,lockDelay));continue;}
+     // Once the exclusive file exists, initialization and the action are never
+     // retried here: either may already have performed a write.
+     owner=lockState();fs.writeFileSync(fd,JSON.stringify(owner));break;
+    }
+    assertAvailable();return await run();
+   }catch(error){failed=true;throw error;}
+   finally{if(fd!==undefined){let closed=false;try{fs.closeSync(fd);closed=true;}catch(error){if(!failed)throw error;}if(closed)try{if(owner&&readLockOwner(lockFile)?.owner===owner.owner)fs.unlinkSync(checked(lockFile));}catch{}}}
+  },()=>lock(run));queue=next.catch(()=>{});return next;}
  function validateIndex(v){if(!plain(v)||![1,2].includes(v.schemaVersion)||!plain(v.profiles)||v.activeProfileId!==null&&!PROFILE.test(v.activeProfileId)||Object.keys(v.profiles).length>20)fail('USER_DATA_INDEX','用户档案索引无法校验，原文件保留。',503);for(const[id,p]of Object.entries(v.profiles)){profile(p.profile,id);if(p.recordsArchive){if(v.schemaVersion!==2)fail('USER_DATA_INDEX','归档档案缺少新版索引协议，原文件保留。',503);try{ArchiveDescriptor.descriptor(p.recordsArchive,id);}catch{fail('USER_DATA_INDEX','练习归档指针无法校验，原文件保留。',503);}}if(p.dataGeneration!==undefined&&(typeof p.dataGeneration!=='string'||p.dataGeneration.length>512))fail('USER_DATA_INDEX','档案代际标记无法校验。',503);for(const h of p.history||[])if(h.recordsArchive)try{if(v.schemaVersion!==2)throw Error('Archive history requires index protocol two');ArchiveDescriptor.descriptor(h.recordsArchive,id);}catch{fail('USER_DATA_INDEX','历史练习归档指针无法校验。',503);}if(p.resetEpoch!==undefined&&p.resetEpoch!==null&&!EPOCH.test(p.resetEpoch))fail('USER_DATA_INDEX','用户档案重置标记无效，原文件保留。',503);if(!Number.isSafeInteger(p.revision)||p.revision<1||typeof p.fileName!=='string'||!/^snapshot-[0-9]+-[a-f0-9-]{36}\.json$/.test(p.fileName)||!SHA.test(p.sha256)||!Array.isArray(p.history)||p.history.length>3)fail('USER_DATA_INDEX','用户档案修订索引无效，未覆盖。',503);for(const h of p.history)if(!Number.isSafeInteger(h.revision)||h.revision<1||!/^snapshot-[0-9]+-[a-f0-9-]{36}\.json$/.test(h.fileName)||!SHA.test(h.sha256))fail('USER_DATA_INDEX','用户档案历史索引无效。',503);}return v;}
  function emptyIndex(){return {schemaVersion:1,activeProfileId:null,profiles:{}};}
  function cachedIndex(stat,missingAt){if(!stat){if(indexSeen||missingAt!==indexFile)fail('USER_DATA_INDEX_MISSING','用户档案目录或索引暂不可用，保留浏览器原稿；不会视为空白档案。',503);indexCache=null;return emptyIndex();}indexSeen=true;if(stat.size>LIMITS.manifestBytes)fail('USER_DATA_CORRUPT','用户档案索引超过支持上限，原文件保留。',503);return indexCache?.stamp===fileStamp(stat)?structuredClone(indexCache.value):null;}

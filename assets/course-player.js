@@ -640,7 +640,7 @@
     function assistance(key) { if (attempt && !submittedRecord) { attempt.assistance[key] = true; try { mutate(s => { if (s.exposures[material.id]) s.exposures[material.id].assisted = true; }); } catch (_) {} scheduleSave(); renderExposure(); } }
     function stopMedia() { if (recorder?.state === 'recording') {recordingSaving=true;recorder.stop();} stream?.getTracks().forEach(track => track.stop()); stream = null; audioElement?.pause(); root.speechSynthesis?.cancel(); if (audioURL) { URL.revokeObjectURL(audioURL); audioURL = ''; } }
     function leave() { activityController?.destroy();activityController=null;listeningController?.destroy();listeningController=null;oralController?.destroy();oralController=null;root.dispatchEvent(new CustomEvent('ielts:vocabulary-testing',{detail:{active:false}})); advanceTimer(); if (attempt && !submittedRecord) { attempt.interrupted ||= attempt.mode === 'assessment'; persistDraft(); } running = false; stopMedia(); reviewAbort?.abort(); generation++; root.dispatchEvent(new CustomEvent('ielts:lesson-clear'));root.dispatchEvent(new CustomEvent('ielts:assessment-mode',{detail:{active:false}})); attempt = null; submittedRecord = null; lastDraftSerialized = null; $('courseSession').hidden = true; $('courseStart').hidden = false;configureReadingLayout(false); }
-    function showDay(value, preferredMaterial) {
+    function showDay(value, preferredMaterial, options = {}) {
       const number = Number(value); if (!Number.isInteger(number) || number < 1 || number > 365) { notice('课程日必须是 1–365 的整数。', true); $('courseDay').value = day || 1; return; }
       leave(); day = number; $('courseDay').value = day;
       const item = dayPlan(day), week = data.weeks.find(w => w.week === item?.week);
@@ -648,7 +648,7 @@
       $('courseDayTitle').textContent = '第 ' + item.week + ' 周 · ' + (week?.title || '');
       $('courseTasks').replaceChildren();
       item.tasks.forEach(t => { const b = button('', () => selectTask(t.id)); b.className = 'course-task'; b.dataset.taskId = t.id; b.append(el('strong','',NAMES[t.id] + ' · 参考 ' + t.minutes + ' 分钟'),el('small','',taskDisplayText(t.deliverable,t.id)+(day>=2&&day<=10?'':root.IELTSCurriculumCoverage?.practiceLabel(t)?' · '+root.IELTSCurriculumCoverage.practiceLabel(t):''))); $('courseTasks').append(b); });
-      const preferred=materialMap.get(preferredMaterial);const selected = preferredMaterial && (item.tasks.find(t=>t.id===preferred?.skill)||item.tasks.find(t => t.materialIds.includes(preferredMaterial))); showTask(selected || item.tasks[0], preferredMaterial);
+      const preferred=materialMap.get(preferredMaterial);const selected = preferredMaterial && (item.tasks.find(t=>t.id===preferred?.skill)||item.tasks.find(t => t.materialIds.includes(preferredMaterial))); showTask(selected || item.tasks[0], preferredMaterial, options);
       const current = R.currentDay();
       if (!storageBroken){try{const placement=placementRoute(data);notice(placement?day<placement.startDay?'这是入学起点前的基础回看；已有草稿与错题保留，未开始的基础课不计新起点积压。':'已采用四项入学测评，从第 '+placement.startDay+' 课进入匹配程度的课程；作品按实际课程日保存，掌握后按预算继续。':current&&day>current?'提前浏览材料；提交作品关联实际学习日，不自动完成未来日程。':'当天可用学习预算 '+item.tasks.reduce((n,t)=>n+t.minutes,0)+' 分钟；各项时间仅供安排，掌握后可立即继续，不必等计时。');}catch(error){storageBroken=true;$('courseBegin').disabled=true;notice('入学测评起点无法核实：'+error.message+'；已有作品与草稿保留，请到备份中心处理。',true);}}
       refreshHistory();
@@ -717,7 +717,7 @@
       if(!original||!m||!a){notice('原材料版本暂不能核实，原作答保留；不会用新题替换旧题。',true);return false;}
       setRecords(works);const draft=preferredDraft(allDrafts().filter(d=>resumableDraft(d,materialMap.get(d.materialId))),{courseDay:original.dayNumber||a.courseDay,taskId:original.skill,materialId:m.id,materialFor:id=>materialMap.get(id),profileId,records:works});
       if(draft?.materialId===m.id){await resumeDraft(draft.id);notice('已恢复这份材料的未提交草稿。原来的完成记录保留。');return true;}
-      showDay(a.courseDay||original.dayNumber||day,m.id);showMaterial(m,{showSaved:false});task={...task,...(m.taskContract||{}),id:original.skill};
+      showDay(a.courseDay||original.dayNumber||day,m.id,{showSaved:false});showMaterial(m,{showSaved:false});task={...task,...(m.taskContract||{}),id:original.skill};
       return begin({parentId:original.id,kind:'retest',mode:'practice',relearn:true});
     }
     function appendRelearning(container,record,m){
@@ -744,14 +744,14 @@
       }
       showTask(selected,preferredMaterialId);return true;
     }
-    function showTask(value, preferredMaterial) {
+    function showTask(value, preferredMaterial, options = {}) {
       leave(); const preferred=materialMap.get(preferredMaterial); task = preferred?.independentBank===true ? independentTask(preferred) : value; doc.querySelectorAll('.course-task').forEach(b => b.setAttribute('aria-current',String(b.dataset.taskId === task.id)));
       $('courseMaterials').replaceChildren(); const orderedIds=root.IELTSCourseExpansion?.orderedMaterialIds?.(task,day)||task.materialIds,materials = orderedIds.map(id => materialMap.get(id)).filter(Boolean),vocabularyGroups=vocabularyTaskSummary(task,data,{day});
       materials.forEach((m,index) => { const b = button('',()=>showMaterial(m)); b.className='course-material-button'; b.dataset.materialId=m.id; b.append(el('span','',m.title),el('small','',(materials.length>1?'第 '+(index+1)+' / '+materials.length+' 份 · ':'')+(vocabularyGroups?(vocabularyGroups.groups.find(group=>group.materialId===m.id)?.wordCount||0)+' 个词项 · ':'')+(root.IELTSCourseExpansion?.taskMaterialLabel?.(task,m.id,day)||(m.independentBank?'独立短测':m.pool==='final'?'末期保留卷':m.pool==='gate'?'关卡 '+(m.form||''):task.materialPractice?.find(p=>p.materialId===m.id)?.cycle==='scheduled-reuse'?'计划巩固同ID':task.materialPractice?.find(p=>p.materialId===m.id)?.cycle==='first-planned'?'计划首次新练':'练习'))+' · 参考 '+m.estimatedMinutes+' 分钟')); $('courseMaterials').append(b); });
       const retained=preferredDraft(allDrafts(),{courseDay:day,taskId:task.id,materialFor:id=>materialMap.get(id),profileId,records});
       const retainedGrammar=task.id==='grammar'&&dayPlan(day)?.familyGrammar?.originalTask?.materialIds?.includes(retained?.materialId);
       if(day>=2&&day<=10&&retained&&(task.materialIds.includes(retained.materialId)||retainedGrammar)&&retained.materialId!==materials[0]?.id&&draftProgress(retained,materialMap.get(retained.materialId)).score.some(Boolean)){const go=button('继续已保存的复习作答（原答案保留）：'+(materialMap.get(retained.materialId)?.title||NAMES[task.id]),()=>root.IELTSTodayNavigation.resumeDraft(retained.id));go.className='course-retained-draft';go.dataset.draftId=retained.id;$('courseMaterials').append(go);}
-      showMaterial(navigationMaterial(task,preferredMaterial,materialMap,day));
+      showMaterial(navigationMaterial(task,preferredMaterial,materialMap,day), options);
       const linkedUnit=data.familyLessonRelease?.active&&data.familyLessonRelease.units.find(unit=>unit.day===day);
       const savedDraft=material&&draftFor(material),hasSavedInput=savedDraft&&draftProgress(savedDraft,material).score.some(Boolean);
       if(task.id==='vocabulary'&&linkedUnit&&!preferredMaterial&&!hasSavedInput&&!latestSavedFor(material)){
@@ -1251,7 +1251,7 @@
     }
     function viewRecord(record) {
       const m=materialForRecord(record,materialMap.get(record.materialId),A),artifact=A.decodeArtifact(record);if(!artifact){notice('原始作品无法读取，未改动记录。',true);return false;}if(!m)return showPreservedRecord(record);
-      showDay(artifact.courseDay||record.dayNumber||day,m.id);showMaterial(m,{showSaved:false});return renderSavedRecord(record,m);
+      showDay(artifact.courseDay||record.dayNumber||day,m.id,{showSaved:false});showMaterial(m,{showSaved:false});return renderSavedRecord(record,m);
     }
     function mountYearReview(box){
       const owner=attempt,report=root.IELTSYearPlanView?.current?.(),ready=A.readiness(records,data.materials);box.append(el('h3','','年度证据总结'),el('p','',ready.label),el('p','',ready.disclaimer));for(const reason of ready.reasons)box.append(el('p','course-small',reason));if(report)box.append(el('p','','已完成课程 '+report.completedDays.length+'/365；待补 '+report.backlog.length+' 日。'+report.yearEnd.action));const input=el('textarea');input.rows=8;input.value=owner.text||'';input.placeholder='分别写出听读说写的实际证据、仍需验证的能力和下一周期补强行动。未达标继续学习。';input.addEventListener('input',()=>{owner.text=input.value;scheduleSave();});box.append(input,button('保存年度总结并继续补强',async()=>{try{if(input.value.trim().length<20)throw Error('请写出至少20字的具体证据与后续行动。');const text=input.value.trim();await saveActivity({answer:JSON.stringify({yearSummary:{schema:1,day:365,text,readiness:{ready:ready.ready,reasons:ready.reasons},recordIds:records.map(r=>r.id).slice(-300)}}),quantity:1,unit:'份复盘',evaluation:{method:'none',result:'unverified',feedback:'已保存年度总结；课程完成与正式考试能力分别判断，未达标继续补强。'}},'year-review');}catch(error){notice(error.message,true);}},'button primary'));activityController={pause(){input.disabled=true;},resume(){input.disabled=false;},destroy(){},getState:()=>({text:input.value})};

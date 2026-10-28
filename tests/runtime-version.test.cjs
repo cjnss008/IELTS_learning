@@ -54,9 +54,12 @@ test('running process health retains its loaded version and only matching local 
   fs.writeFileSync(script, `'use strict';const {createServer}=require(${JSON.stringify(path.resolve(__dirname, '../server/server.cjs'))});const server=createServer({rootDir:__dirname,dataDir:${JSON.stringify(dataDir)},migrateLegacy:false,defaultCredentialPersistence:false,materialMigration:false});server.listen(${port},'127.0.0.1',()=>console.log('SIMULATED_READY'));`);
   const child = childProcess(t, script, []); await waitReady(child);
   const base = 'http://127.0.0.1:' + port;
-  const before = await (await fetch(base + '/api/health')).json();
+  let before;
+  for (let i=0;i<100;i++){before=await (await fetch(base + '/api/health')).json();if(before.ready!==false)break;await new Promise(resolve=>setTimeout(resolve,20));}
+  assert.notEqual(before.ready,false,'the synthetic service must complete its startup before business requests');
   fs.writeFileSync(path.join(root, 'VERSION'), '0.0.62\n'); fs.appendFileSync(path.join(root, 'server/example.cjs'), '\n// simulated NAS update');
-  assert.deepEqual(await (await fetch(base + '/api/health')).json(), before, 'health must not reread the upgraded VERSION or source');
+  const fixed=value=>Object.fromEntries(['runtimeSchema','version','buildSignature','projectId','instanceId','startedAt','pid','serviceInstanceId'].map(key=>[key,value[key]]));
+  assert.deepEqual(fixed(await (await fetch(base + '/api/health')).json()), fixed(before), 'health must not reread the upgraded VERSION or source');
   assert.equal((await launcher.probeService(port, { expectedRuntime: runtime.readProjectRuntime(root) })).state, 'stale');
   const headers = { 'Content-Type': 'application/json', 'X-IELTS-Project-Id': before.projectId, 'X-IELTS-Launcher': 'restart-v1' };
   assert.equal((await fetch(base + '/api/runtime/restart', { method: 'POST', headers: { ...headers, Origin: 'https://foreign.example' }, body: JSON.stringify({ instanceId: before.instanceId }) })).status, 403);

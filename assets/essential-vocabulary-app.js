@@ -159,14 +159,33 @@
     }
     async function verifyFamilyOpen(value){
       const fields=['id','materialId','courseDay','words','wordKeys','startedAt','draft','contextSource'],same=other=>!!other&&fields.every(key=>JSON.stringify(other[key])===JSON.stringify(value[key]));
-      const listed=await refreshFamily(value.contextSource.binding.originCourseDay);check();let latest=allBatches().find(item=>item.id===value.id);if(!listed||!same(latest)||!sourceAccess(latest).allowed)throw Error('词组草稿或同源记录已变化，原输入保留。');
+      const origin=value.contextSource.binding.originCourseDay,listed=await refreshFamily(origin);check();let latest=allBatches().find(item=>item.id===value.id);if(!listed||!same(latest)||!(await familySourceAccess(latest)).allowed)throw Error('词组草稿或同源记录已变化，原输入保留。');
       const playerRaw=familyDraftFence(value.contextSource.binding.originCourseDay,value.courseDay);
-      if(!listed.some(record=>record.id===latest.draft?.id)){const budget=await familyBudget(latest.courseDay);check();latest=allBatches().find(item=>item.id===value.id);if(!same(latest)||!sourceAccess(latest).allowed)throw Error('词组来源在预算核验期间变化，原输入保留。');const plan=currentPlan(budget);if(!familyFormsSafe(latest,plan))throw Error('词形关系或已有原稿待核验，本组原输入保留。');if(plan.reviewDebt?.required||plan.allDue?.length)throw Error('请先完成全部到期复习和未交复习稿，本组原输入保留。');if(budget.exhausted||budget.dayEnded||budget.remainingMinutes<=0)throw Error('今日共享预算已用完，本组原输入保留。');}
+      if(!familySnapshots.get(origin)?.some(record=>record.id===latest.draft?.id)){const {budget,plan}=await checkedFamilyPlan(latest);check();latest=allBatches().find(item=>item.id===value.id);if(!same(latest))throw Error('词组来源在预算核验期间变化，原输入保留。');if(!familyFormsSafe(latest,plan))throw Error('词形关系或已有原稿待核验，本组原输入保留。');if(plan.reviewDebt?.required||plan.allDue?.length)throw Error('请先完成全部到期复习和未交复习稿，本组原输入保留。');if(budget.exhausted||budget.dayEnded||budget.remainingMinutes<=0)throw Error('今日共享预算已用完，本组原输入保留。');}
       if(familyDraftFence(value.contextSource.binding.originCourseDay,value.courseDay)!==playerRaw)throw Error('课程草稿在核验期间变化，原输入保留。');
     }
     function familyFormsSafe(value,plan){const forms=plan?.formSafety;if(!forms?.indexReady||forms.unindexedPending)return false;const entries=new Map((data?.entries||[]).map(entry=>[normalize(entry.word),entry]));return(value.wordKeys||[]).every(key=>!forms.blockedKeys.includes(key)&&(!forms.hasPendingForms||entries.get(key)?.id==='essential:'+key));}
     function holdFamilyOpen(error){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;if(disposed)return false;statusText=error.message;practice.replaceChildren(node('p',statusText,'memory-feedback'));Promise.resolve(options.onActiveChange?.(false,{kind:'paused'})).catch(()=>{});render();return false;}
     function sourceAccess(value){const marker=value?.contextSource;if(!familyBatch(value)&&(marker?.schema!==2||!['owned-source-context-v82','mixed-context-v82'].includes(marker.role)))return{allowed:true};return contextual?.batchTrainingAccess?.(value,sourceOptions(value))||{allowed:false};}
+    async function familySourceAccess(value){
+      const expected=JSON.stringify(value),origin=value.contextSource.binding.originCourseDay,adaptive=options.adaptive||root.IELTSAdaptivePlan;let waited=false;
+      const latest=()=>{check();const current=allBatches().find(item=>item.id===value.id);if(!current||JSON.stringify(current)!==expected)throw Error('这份词组草稿已变化，原输入保留，请重新打开。');return current;};
+      for(let attempt=0;attempt<3;attempt++){
+        const access=sourceAccess(latest());if(access.allowed||access.reason!=='family-public-course-plan-pending'||typeof adaptive?.preparePublicCourse!=='function')return{...access,waited};
+        if(adaptive.verifiedPublicCourseState?.().status!=='preparing-public-course')return{...access,waited};
+        waited=true;await adaptive.preparePublicCourse();latest();
+        const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!runtime?.isCurrentFullRecords?.(familySnapshots.get(origin))){await refreshFamily(origin);latest();}
+      }
+      return{...sourceAccess(latest()),waited};
+    }
+    async function checkedFamilyPlan(value){
+      for(let attempt=0;attempt<3;attempt++){
+        let access=await familySourceAccess(value);if(!access.allowed)throw Error('同源记录或公开课程尚未核验，原输入保留。');
+        const budget=await familyBudget(value.courseDay);check();access=await familySourceAccess(value);if(!access.allowed)throw Error('同源记录在预算核验期间变化，原输入保留。');if(access.waited)continue;
+        const plan=currentPlan(budget);access=await familySourceAccess(value);if(!access.allowed)throw Error('词组来源或公开课程尚未核验，原输入保留。');if(!access.waited)return{budget,plan};
+      }
+      throw Error('课程状态仍在更新，请稍后继续；原输入保留。');
+    }
     const ownedBatch=value=>value?.contextSource?.schema===2&&['owned-source-context-v82','mixed-context-v82'].includes(value.contextSource.role);
     const ownedContext=()=>currentContext?.contexts?.some(c=>c.contract?.words?.some(w=>w.source?.role==='owned-source-context-v82'))||currentContext?.contract?.words?.some(w=>w.source?.role==='owned-source-context-v82');
 
@@ -430,8 +449,8 @@
       check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}
       if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
       if (batch && !finished) { activity(); saveDraft(); }
-      const savedValue=allBatches(M.read()).find(item=>item.id===(typeof value==='string'?value:value.id))||value;if(familyBatch(savedValue)){await durable();await refreshFamily(savedValue.contextSource.binding.originCourseDay);await options.refreshBudget?.();}else if(ownedBatch(savedValue)&&R?.list)records=await R.list();check();if(!sourceAccess(savedValue).allowed){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;statusText='这份词组的签审原文、原音或授权尚未核验；原输入与原音保留，原句暂不展示。';practice.replaceChildren(node('p',statusText,'memory-feedback'));render();return false;}
-      if(familyBatch(savedValue)&&!records.some(record=>record.id===savedValue.draft?.id)){const budget=await familyBudget(savedValue.courseDay);check();if(!sourceAccess(savedValue).allowed)throw Error('同源记录在预算核验期间变化，原输入保留。');const plan=currentPlan(budget);if(!familyFormsSafe(savedValue,plan)){notice('词形关系或已有原稿待核验，词组原输入保留。');return false;}if(plan.reviewDebt?.required||plan.allDue?.length){notice('先完成全部到期复习与未交复习稿；这份词组的原输入保留。');return false;}if(budget.exhausted||budget.dayEnded||budget.remainingMinutes<=0){notice('今日共享预算已用完，词组原输入保留。');return false;}}
+      const savedValue=allBatches(M.read()).find(item=>item.id===(typeof value==='string'?value:value.id))||value;if(familyBatch(savedValue)){await durable();await refreshFamily(savedValue.contextSource.binding.originCourseDay);await options.refreshBudget?.();}else if(ownedBatch(savedValue)&&R?.list)records=await R.list();check();const access=familyBatch(savedValue)?await familySourceAccess(savedValue):sourceAccess(savedValue);if(!access.allowed){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;statusText='这份词组的签审原文、原音或授权尚未核验；原输入与原音保留，原句暂不展示。';practice.replaceChildren(node('p',statusText,'memory-feedback'));render();return false;}
+      if(familyBatch(savedValue)&&!records.some(record=>record.id===savedValue.draft?.id)){const {budget,plan}=await checkedFamilyPlan(savedValue);check();if(!familyFormsSafe(savedValue,plan)){notice('词形关系或已有原稿待核验，词组原输入保留。');return false;}if(plan.reviewDebt?.required||plan.allDue?.length){notice('先完成全部到期复习与未交复习稿；这份词组的原输入保留。');return false;}if(budget.exhausted||budget.dayEnded||budget.remainingMinutes<=0){notice('今日共享预算已用完，词组原输入保留。');return false;}}
       controller?.destroy?.();
       const state = M.read();
       batch = clone(allBatches(state).find(item => item.id === (typeof value==='string'?value:value.id)) || value);
@@ -562,12 +581,28 @@
     const interact = () => { lastInteraction = now();retention?.interact?.(); };
     const changed = () => { if (!savingDraft && !saving && !retention?.isBusy?.()) render(); };
     const recordsChanged = () => { R?.list?.().then(async values => { if (!disposed) { records = values; retention?.setRecords?.(values);if(!saving&&root.IELTSFamilyLessonExpansionV95?.runtime)await refreshFamily(day);if(!retention?.isBusy?.()&&!disposed)render(); } }).catch(error => notice(error.message)); };
+    let publicRefreshQueued=false,publicRefreshRunning=false,publicRefreshAgain=false;
+    const publicPlanChanged = event => {
+      if(disposed||event?.detail?.profileId&&event.detail.profileId!==owner)return;
+      if(publicRefreshQueued){if(publicRefreshRunning)publicRefreshAgain=true;return;}
+      let origins;try{check();const curriculum=options.curriculum||root.IELTSCurriculumData,release=curriculum?.familyLessonRelease,units=release?.active===true&&Array.isArray(release.units)?release.units:[];
+        origins=new Set([day,...allBatches().filter(value=>familyBatch(value)&&(value.status==='learning'||value.draft)).map(value=>value.contextSource.binding.originCourseDay)].filter(n=>units.some(unit=>unit.day===n)));
+      }catch(_){return;}
+      if(!origins.size)return;
+      publicRefreshQueued=true;
+      Promise.resolve().then(async()=>{
+        publicRefreshRunning=true;check();const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!runtime?.prepareVocabularyUnit)return;
+        for(const origin of origins){const snapshot=familySnapshots.get(origin);if(!snapshot||runtime.isCurrentFullRecords?.(snapshot)!==true)await refreshFamily(origin);check();}
+        if(!disposed&&!saving&&!savingDraft&&!retention?.isBusy?.())render();
+      }).catch(error=>{if(!disposed&&owner===P?.current?.()?.id)notice(error.message);}).finally(()=>{publicRefreshRunning=false;publicRefreshQueued=false;if(publicRefreshAgain&&!disposed){publicRefreshAgain=false;publicPlanChanged({detail:{profileId:owner}});}});
+    };
     const profileChanged = () => { disposed = true; retention?.destroy?.();controller?.destroy?.();practice.querySelectorAll('input,textarea,button').forEach(el=>{el.disabled=true;});dashboard.replaceChildren(node('p','学习档案已切换，请刷新后继续。')); };
     const pagehide = () => { try { retention?.save?.();activity(); saveDraft(); } catch (_) {} controller?.pause?.(); };
     const beforeunload=event=>{if(!disposed&&(unsaved||saving||controller?.getMediaState?.()?.busy)){event.preventDefault();event.returnValue='';}};
     ['pointerdown','keydown','input'].forEach(type => doc.addEventListener(type,interact,{passive:true}));
     root.addEventListener?.('ielts:memory-changed',changed);
     root.addEventListener?.('ielts:records-changed',recordsChanged);
+    root.addEventListener?.('ielts:public-course-plan-changed',publicPlanChanged);
     root.addEventListener?.('ielts:profile-changed',profileChanged);
     root.addEventListener?.('pagehide',pagehide);
     root.addEventListener?.('beforeunload',beforeunload);
@@ -578,7 +613,7 @@
     return {render,openBatch,openSavedBatch,refreshSavedBatches,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){retention?.pause?.();activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(records===values&&(!runtime||runtime.isCurrentFullRecords(familySnapshots.get(day))))return;records=values;retention?.setRecords?.(values);render();if(root.IELTSFamilyLessonExpansionV95?.runtime)refreshFamily(day).then(()=>{if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});},
       isBusy:()=>!!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy,save:pagehide,destroy(){pagehide();disposed=true;retention?.destroy?.();controller?.destroy?.();root.clearInterval?.(timer);
         ['pointerdown','keydown','input'].forEach(type => doc.removeEventListener?.(type,interact));
-        root.removeEventListener?.('ielts:memory-changed',changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);root.removeEventListener?.('pagehide',pagehide);root.removeEventListener?.('beforeunload',beforeunload);}};
+        root.removeEventListener?.('ielts:memory-changed',changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:public-course-plan-changed',publicPlanChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);root.removeEventListener?.('pagehide',pagehide);root.removeEventListener?.('beforeunload',beforeunload);}};
   }
   return {BATCH_SIZE,SOURCE,courseDay,courseWords,pendingCourseWords,hasUnsubmittedReviews,recordForBatch,committedRecord,legacyReleaseMapping,mount};
 });

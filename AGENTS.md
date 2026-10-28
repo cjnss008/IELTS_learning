@@ -83,3 +83,5 @@
 - 0.0.109 的正式构建使用 `curriculum/year-first-use-runtime-contract-v109-linked-lessons.json`，并增加 `--family-lessons-release curriculum/family-lessons-v109/release.json`；同时保留 GSA、ordinary-reading-v92、active-year 的所有参数。用户最新确认第 4 课尚未开始；第 4–10 课共 210 个独立目标词、70 份关联材料，追加于 1842 份原材料之后。原课、原答案、旧合同与原音频不得覆盖。页面可缓存经过完整核验并深度冻结的教材，学习档案仍单独核验；不能缓存可变的用户状态。新增后续批次前须实现旧 family release 的恢复与续接兼容，不能直接改写本批已开始词组的来源绑定。
 
 - 0.0.111 用户已取消 AI 实时调整课程与难度。运行时采用固定课表，AI 继续讲解、批改和每日复盘，不再生成或应用后续排课指令。旧调整仅作历史记录；已开始/冻结课表和原作品保持原样，独立复习、划词 AI、独立测评不得重新激活未开始课的旧分配。间隔复习、个人记忆参数、已验证入学起点及按剩余预算续学继续保留。
+
+- 0.0.112 NAS 恢复修复采用 `curriculum/year-first-use-runtime-contract-v112-nas-startup.json` 的同样55组件，保留所有旧合同和全部构建参数。锁重试只能发生在独占获得前，不能重放业务写入或删除未确认归属的锁；健康检查的 ready:false 不代表可以提交业务。新课程草稿未启用。

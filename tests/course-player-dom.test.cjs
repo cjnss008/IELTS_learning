@@ -377,3 +377,12 @@ test('a completed original without a provable material version shows its stored 
  const result=f.nodes.get('courseResult');assert.match(result.textContent,/保存时评价：pass · 1 \/ 1/);assert.equal(JSON.parse(JSON.parse(result.querySelector('.course-preserved-record').textContent).answer).answers.q1,'red');assert.equal(result.textContent.includes('A new replacement question'),false);assert.equal(JSON.stringify(f.records()[0]),original);assert.equal(JSON.parse(f.records()[0].answer).materialBinding,undefined);
  await result.querySelectorAll('button').find(button=>button.textContent==='下载完整原稿JSON').fire('click');assert.deepEqual(JSON.parse(await exported.blob.text()),f.records()[0]);assert.match(exported.name,/IELTS-原稿/);
 });
+
+
+test('opening a saved original renders its result once and relearning does not repaint the completed result',async()=>{
+ const f=fixture();await new Promise(resolve=>setImmediate(resolve));await f.win.IELTSTodayNavigation.resumeNext('reading',f.mat.id);
+ const input=optionInputs(f,'q1').find(item=>item.value==='red');input.checked=true;await input.fire('change');f.advance(1000);await f.nodes.get('courseSubmit').fire('click');await new Promise(resolve=>setImmediate(resolve));
+ const original=JSON.stringify(f.records()[0]),result=f.nodes.get('courseResult');let hidden=result.hidden,shown=0;Object.defineProperty(result,'hidden',{get:()=>hidden,set:value=>{hidden=value;if(value===false)shown++;},configurable:true});
+ await f.win.IELTSTodayNavigation.showLatestRecord('reading',f.mat.id);assert.equal(shown,1,'saved answer must not rebuild its result and continuation queue twice');assert.equal(JSON.stringify(f.records()[0]),original);assert.equal(optionInputs(f,'q1').find(item=>item.value==='red').checked,true);
+ shown=0;await result.querySelector('.course-relearn').fire('click');assert.equal(shown,0,'relearn must not rebuild a completed-result queue while opening a new draft');assert.equal(f.win.IELTSTodayNavigation.current().submitted,false);assert.equal(JSON.stringify(f.records()[0]),original);
+});

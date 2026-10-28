@@ -272,7 +272,46 @@ function createServer(options = {}) {
   // test supplies its own isolated credential location or vault explicitly.
   const vault=options.credentialVault||createCredentialVault({providers,filePath:options.credentialFilePath||userData.paths.credentials,legacyFilePaths:legacyCredentialSources,preferenceFilePath:options.credentialPreferenceFilePath||userData.paths.credentialPolicy,defaultEnabled:options.defaultCredentialPersistence??true,exclusive:userData.withLock,...(options.fetchImpl&&!options.credentialFilePath?{supported:false}:{})});
   for(const handler of [oralHandler,speechHandler,transcriptionHandler,omniHandler]){handler.getCredentialStorage=()=>vault.status().storage;handler.onConfigurationChanged=()=>vault.saveIfEnabled();}
-  const ready=vault.restore();
+  // Restore is the startup barrier. A transient NAS lock failure must not
+  // permanently poison the process, and no request may run through the barrier
+  // until restoration actually succeeds. Never retain or expose raw errors.
+  const transientStartupCodes=new Set(['EPERM','EACCES','EBUSY','EAGAIN','ETIMEDOUT','ECONNRESET','ECONNABORTED','ENETDOWN','ENETUNREACH','EHOSTUNREACH','ESTALE','USER_DATA_BUSY','USER_DATA_MIGRATION_BUSY']);
+  const retryBase=Number.isFinite(options.startupRetryBaseMs)?Math.max(10,Math.min(5000,options.startupRetryBaseMs)):500;
+  const retryMax=Number.isFinite(options.startupRetryMaxMs)?Math.max(retryBase,Math.min(30000,options.startupRetryMaxMs)):5000;
+  const maxAutomaticRetries=Number.isInteger(options.startupMaxAutomaticRetries)?Math.max(0,Math.min(20,options.startupMaxAutomaticRetries)):8;
+  const requestWait=Number.isFinite(options.startupRequestWaitMs)?Math.max(0,Math.min(1000,options.startupRequestWaitMs)):1000;
+  let startupPhase='restoring',startupCode=null,startupRetryable=true,startupFailures=0,startupRetryAt=0,startupTimer=null,startupInFlight=null,startupClosed=false;
+  const startupStatus=()=>({phase:startupPhase,retryable:startupRetryable,code:startupCode});
+  function scheduleStartupRetry(){
+    if(startupClosed||startupTimer||startupPhase!=='retry-wait'||startupFailures>maxAutomaticRetries)return;
+    startupTimer=setTimeout(()=>{startupTimer=null;startRestore();},Math.max(0,startupRetryAt-Date.now()));
+    startupTimer.unref?.();
+  }
+  function startRestore(){
+    if(startupClosed||startupInFlight||startupPhase==='ready'||startupPhase==='failed'||Date.now()<startupRetryAt)return;
+    if(startupTimer){clearTimeout(startupTimer);startupTimer=null;}
+    startupPhase='restoring';
+    const attempt=Promise.resolve().then(()=>vault.restore()).then(()=>{
+      if(startupClosed)return;
+      startupPhase='ready';startupCode=null;startupRetryable=false;
+    },error=>{
+      if(startupClosed)return;
+      let code;try{code=error?.code;}catch(_){}
+      startupRetryable=typeof code==='string'&&transientStartupCodes.has(code);
+      startupCode=startupRetryable?code:'STARTUP_RESTORE_FAILED';
+      if(!startupRetryable){startupPhase='failed';return;}
+      startupFailures++;startupPhase='retry-wait';
+      startupRetryAt=Date.now()+Math.min(retryMax,retryBase*2**Math.min(startupFailures-1,10));
+    });
+    startupInFlight=attempt;
+    attempt.then(()=>{if(startupInFlight===attempt)startupInFlight=null;scheduleStartupRetry();});
+  }
+  function retryStartupIfDue(){if(startupPhase==='retry-wait'&&Date.now()>=startupRetryAt)startRestore();}
+  async function waitForStartupAttempt(){
+    const pending=startupInFlight;if(!pending||!requestWait)return;
+    let timer;try{await Promise.race([pending,new Promise(resolve=>{timer=setTimeout(resolve,requestWait);})]);}finally{clearTimeout(timer);}
+  }
+  startRestore();
 
   function publicStatus() {
     return connection ? {
@@ -412,7 +451,7 @@ function createServer(options = {}) {
   }
 
   async function handleApi(req, res, pathname) {
-    if (req.method === 'GET' && pathname === '/api/health') {const now=new Date(),serverDayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime,serviceInstanceId:bootId,serverDayKey,restoringBackup});}
+    if (req.method === 'GET' && pathname === '/api/health') {const now=new Date(),serverDayKey=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');return sendJson(res,200,{ok:true,service:'ielts-learning-local',home:'/',...loadedRuntime,serviceInstanceId:bootId,serverDayKey,restoringBackup,ready:startupPhase==='ready',startup:startupStatus()});}
     if (req.method === 'GET' && pathname === '/api/year-first-use/status') {
       if (new URL(req.url, 'http://127.0.0.1').search) throw new AppError(400, 'YEAR_STATUS_QUERY', '全年练习状态不接受额外查询参数。');
       res.setHeader('X-IELTS-Year-Protocol', String(yearMaterials.PROTOCOL));
@@ -817,7 +856,16 @@ function createServer(options = {}) {
       if (!publicNavigation&&((origin && origin !== requestUrl.origin) || req.headers['sec-fetch-site'] === 'cross-site')) {
         throw new AppError(403, 'ORIGIN_DENIED', '请在本地学习页面内执行此操作。');
       }
-      await ready;
+      // Health is reachable only after the same Host and Origin checks, but it
+      // must not wait for a failed or still-running restore.
+      if(req.method==='GET'&&rawPath==='/api/health'){retryStartupIfDue();return await handleApi(req,res,rawPath);}
+      if(startupPhase!=='ready'){
+        retryStartupIfDue();await waitForStartupAttempt();if(res.destroyed||req.aborted)return;
+        if(startupPhase!=='ready'){
+          req.resume();res.setHeader('Retry-After','1');
+          throw new AppError(503,startupPhase==='failed'?'STARTUP_RESTORE_FAILED':'STARTUP_NOT_READY',startupPhase==='failed'?'本地服务启动核验未完成，已有记录保留；请检查本机环境后重试。':'本地服务正在恢复启动配置，请稍后重试；已有作品和原稿保留。');
+        }
+      }
       if(restoringBackup&&rawPath!=='/api/health')throw new AppError(503,'BACKUP_RESTART_PENDING','正在完整恢复用户文件夹并重新连接，原备份已保留，请稍候。');
       if(['GET','HEAD'].includes(req.method)&&decodeURIComponent(rawPath)==='/学习课程.html'){
         res.writeHead(302,{'Location':'/'+(String(req.url).includes('?')?'?'+String(req.url).split('?').slice(1).join('?'):''),'Cache-Control':'no-store'});return res.end();
@@ -837,7 +885,7 @@ function createServer(options = {}) {
   });
   server.headersTimeout = 10_000;
   server.requestTimeout = 75_000;
-  server.once('close', () => { connection = null; reviewerConnection=null;reviewerRevision++;dialogue.clear();revision++; connectAttempt++; activeController?.abort(); speechHandler.close(); transcriptionHandler.close(); oralHandler.close(); omniHandler.close(); evidenceStore.clear(); selection.clear(); budget.close(); });
+  server.once('close', () => { startupClosed=true;if(startupTimer)clearTimeout(startupTimer); connection = null; reviewerConnection=null;reviewerRevision++;dialogue.clear();revision++; connectAttempt++; activeController?.abort(); speechHandler.close(); transcriptionHandler.close(); oralHandler.close(); omniHandler.close(); evidenceStore.clear(); selection.clear(); budget.close(); });
   return server;
 }
 

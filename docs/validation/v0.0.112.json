@@ -1,0 +1,67 @@
+{
+  "version": "0.0.112",
+  "date": "2026-10-29",
+  "status": "validated-hotfix",
+  "fullSuite": {
+    "total": 2779,
+    "pass": 2777,
+    "fail": 0,
+    "skip": 2,
+    "durationMs": 798271.4424,
+    "logSha256": "794758613b79d983ef087f0d50ea258ebee6000bd189645c516855f7e1dac472"
+  },
+  "build": {
+    "status": "passed",
+    "days": 365,
+    "materials": 1912,
+    "yearConditionalMaterials": 688,
+    "runtimeComponents": 55,
+    "index": "curriculum/year-first-use/index.a30484e1437ed7b1.json"
+  },
+  "static": {
+    "pages": 27,
+    "links": 870,
+    "scripts": 129
+  },
+  "audits": {
+    "curriculum": "passed",
+    "questionQuality": {
+      "sourceMaterials": 830,
+      "questions": 7800,
+      "unresolved": 0
+    }
+  },
+  "browser": {
+    "environment": "Isolated 127.0.0.1:18765, synthetic 88-work profile only",
+    "checks": [
+      "Public-plan completion automatically enables signed vocabulary without another click",
+      "Third-lesson homepage continuation reaches the preserved vocabulary group",
+      "Existing six-word group opens through the continue button",
+      "First library spelling remains 1/3 after save/reload/resume",
+      "Input retains focus after spelling confirmation"
+    ],
+    "originalRecordsExactlyPreserved": 88,
+    "limitations": [
+      "First-create second-worker race also reproduced and validated with real component integration and controlled worker timing",
+      "First source/audio verification remains visibly slow; not a whole-app performance acceptance",
+      "Family PC has not been accessed remotely",
+      "No new live AI or human microphone assessment performed"
+    ]
+  },
+  "startup": {
+    "checks": [
+      "Transient NAS lock failures retry before ownership only",
+      "Business writes are not replayed",
+      "Startup restore failure can recover with bounded retry and single-flight operation",
+      "Health readiness gates launcher and backup restore completion"
+    ]
+  },
+  "initialRun": {
+    "log": "v112-release-initial-full.log",
+    "transientHttpFailure": "One fetch failed without a cause before diagnostics; isolated rerun plus ten sequential repetitions passed; final full rerun required",
+    "testDiagnosticsAdded": true
+  },
+  "realUserDataTouched": false,
+  "credentialsCopied": false,
+  "newCourseDraftsActivated": false
+}

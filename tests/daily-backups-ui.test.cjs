@@ -69,6 +69,18 @@ test('restore waits for a different healthy service instance, tolerates brief ou
  const selected=row(),f=fixture(t,{backups:[selected]});let polls=0;f.remote.health=async()=>{polls++;if(polls===1)return{ok:true,serviceInstanceId:'old-service'};if(polls===2)throw TypeError('restart disconnect');if(polls===3)return{ok:true,serviceInstanceId:'new-service',restoringBackup:true};return{ok:true,serviceInstanceId:'new-service',restoringBackup:false};};await f.api.restore(selected);assert.equal(polls,4);assert.equal(f.requests.filter(v=>v[0]==='restore').length,1);assert.equal(f.reloads,1);
 });
 
+test('a replacement service must finish startup before restore reconnect clears its marker or reloads',async t=>{
+ let paused,release;const sleeping=new Promise(resolve=>paused=resolve),resume=new Promise(resolve=>release=resolve);
+ const selected=row(),f=fixture(t,{backups:[selected],sleep:()=>{paused();return resume;},reconnectTimeoutMs:5000});let ready=false;
+ f.remote.health=async()=>f.requests.some(request=>request[0]==='restore')?{ok:true,serviceInstanceId:'new-service',restoringBackup:false,ready}:{ok:true,serviceInstanceId:'old-service',ready:true};
+ const restoring=f.api.restore(selected);
+ try{
+  const first=await Promise.race([sleeping.then(()=> 'waiting'),restoring.then(()=> 'reloaded')]);assert.equal(first,'waiting');
+  const marker=JSON.parse(f.storage.data.get(D.RESTORE));assert.equal(marker.oldServiceInstanceId,'old-service');assert.equal(marker.confirmed,true);assert.equal(f.reloads,0);assert.equal(f.requests.filter(request=>request[0]==='restore').length,1);
+  ready=true;release();await restoring;assert.equal(f.reloads,1);assert.equal(f.storage.data.has(D.RESTORE),false);assert.equal(f.requests.filter(request=>request[0]==='restore').length,1);
+ }finally{release();}
+});
+
 test('lost restore response reconnects using service identity instead of restoring the same backup twice',async t=>{
  const selected=row(),f=fixture(t,{backups:[selected]});let posted=false;f.remote.restore=async()=>{posted=true;f.requests.push(['restore']);throw TypeError('connection closed after commit');};f.remote.health=async()=>({ok:true,serviceInstanceId:posted?'new-service':'old-service',restoringBackup:false,serverDayKey:'2026-10-25'});await f.api.restore(selected);assert.equal(f.requests.filter(v=>v[0]==='restore').length,1);assert.equal(f.reloads,1);assert.equal(f.storage.data.has(D.RESTORE),false);
 });

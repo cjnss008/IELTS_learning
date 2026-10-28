@@ -26,7 +26,15 @@ function classifyHealth(value, expected) {
   const runtime = Object.fromEntries(['version', 'runtimeSchema', 'buildSignature', 'projectId', 'instanceId', 'startedAt', 'pid'].filter(key => Object.hasOwn(value, key)).map(key => [key, value[key]]));
   const complete = value.runtimeSchema === 1 && /^sha256:[a-f0-9]{64}$/.test(value.buildSignature || '') && value.projectId === expected.projectId && /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(value.instanceId || '') && typeof value.startedAt === 'string' && !Number.isNaN(Date.parse(value.startedAt)) && Number.isSafeInteger(value.pid) && value.pid > 0;
   if (!complete) return { state: 'stale', reason: 'MISSING_RUNTIME', ...runtime };
-  return { state: value.version === expected.version && value.buildSignature === expected.buildSignature ? 'ready' : 'stale', ...runtime };
+  if (value.version !== expected.version || value.buildSignature !== expected.buildSignature) return { state: 'stale', ...runtime };
+  if (value.ready === false) {
+    const source=value.startup||{},phase=['restoring','retry-wait','failed'].includes(source.phase)?source.phase:'restoring';
+    const codes=new Set(['EPERM','EACCES','EBUSY','EAGAIN','ETIMEDOUT','ECONNRESET','ECONNABORTED','ENETDOWN','ENETUNREACH','EHOSTUNREACH','ESTALE','USER_DATA_BUSY','USER_DATA_MIGRATION_BUSY','STARTUP_RESTORE_FAILED']);
+    return {state:'starting',...runtime,startup:{phase,retryable:typeof source.retryable==='boolean'?source.retryable:true,code:codes.has(source.code)?source.code:null}};
+  }
+  // Health responses predating the readiness field remain compatible.
+  if (Object.hasOwn(value,'ready') && value.ready !== true) return {state:'occupied',reason:'INVALID_READINESS'};
+  return { state: 'ready', ...runtime };
 }
 
 // A TCP connection by itself does not establish that this is our learning app.
@@ -143,30 +151,36 @@ async function launch(options = {}) {
   const start = options.start || startDetached, open = options.open || openBrowser;
   const sleep = options.sleep || (ms => new Promise(resolve => setTimeout(resolve, ms)));
   const pollMs = options.pollMs || 250, maxPolls = options.maxPolls || 60;
-  let status = await probe(port), reused = status.state === 'ready', upgraded = false;
+  let status = await probe(port), reused = ['ready','starting'].includes(status.state), upgraded = false;
   if (status.state === 'stale') {
     options.report?.('检测到旧版后台服务，正在核实本机进程并安全更新，请稍候。浏览器原稿继续保留。');
     const restarted = await (options.restart || restartService)(port, { expectedRuntime });
     upgraded = restarted?.state === 'stopped';
-    status = await probe(port); reused = status.state === 'ready';
+    status = await probe(port); reused = ['ready','starting'].includes(status.state);
     // Each double click makes at most one restart attempt. If files changed
     // during startup, never enter a loop that could kill the new service.
     if (status.state === 'stale') throw new LauncherError('RUNTIME_STALE', '后台仍在运行不同版本，请等待学习包文件升级完成后重新双击“启动学习.cmd”。浏览器原稿继续保留。');
   }
   if (status.state === 'occupied') throw occupiedError(port);
-  if (!reused) {
-    if (status.state !== 'absent') throw new LauncherError('HEALTH_FAILED', '未能确认本机学习服务状态，请稍后重试。');
-    const processStatus = start(port) || {};
+  if (status.state !== 'ready') {
+    if (!['absent','starting'].includes(status.state)) throw new LauncherError('HEALTH_FAILED', '未能确认本机学习服务状态，请稍后重试。');
+    // A verified instance that is still restoring owns the port already. Wait
+    // for it; never spawn a second service or terminate it as a foreign port.
+    const processStatus = status.state === 'absent' ? (start(port) || {}) : null;
+    const failedStartup=()=>status.state==='starting'&&status.startup?.phase==='failed'&&status.startup.retryable===false;
+    const startupError=()=>new LauncherError('STARTUP_RESTORE_FAILED','本地学习服务无法完成启动核验；已有记录保留。请检查本机环境和用户数据目录后重试，首页尚未打开。');
+    if(failedStartup())throw startupError();
     for (let i = 0; i < maxPolls; i++) {
       await sleep(pollMs); status = await probe(port);
       if (status.state === 'ready') break;
       if (status.state === 'occupied') throw occupiedError(port);
       if (status.state === 'stale') throw new LauncherError('RUNTIME_CHANGED', '服务启动期间学习包发生更新，请完成文件更新后重新双击“启动学习.cmd”。浏览器原稿继续保留。');
+      if (failedStartup()) throw startupError();
       // Check health first: a simultaneous double click may have started the
       // single owning service while this helper lost the listen race.
-      if (processStatus.exited) throw new LauncherError('START_FAILED', '本地学习服务启动进程已退出。请检查学习包和用户数据目录。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
+      if (processStatus?.exited && status.state !== 'starting') throw new LauncherError('START_FAILED', '本地学习服务启动进程已退出。请检查学习包和用户数据目录。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
     }
-    if (status.state !== 'ready') throw new LauncherError('START_TIMEOUT', '本地学习服务未能按时就绪。请检查学习包和用户数据目录后重试；首页尚未打开。' + (processStatus.failure?.() ? '\n' + processStatus.failure() : ''));
+    if (status.state !== 'ready') throw new LauncherError('START_TIMEOUT', '本地学习服务未能按时就绪。请检查学习包和用户数据目录后重试；首页尚未打开。' + (status.state!=='starting'&&processStatus?.failure?.() ? '\n' + processStatus.failure() : ''));
   }
   await open(url);
   return { ok: true, reused, upgraded, url, version: status.version };
