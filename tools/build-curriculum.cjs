@@ -136,7 +136,8 @@ function build({partial=false,requireYearExpansion=false,activateYearFirstUse=fa
  // Keep reviewed 2–10 source revisions after derivation/translation; protects the complete day-1 contract.
  require('./apply-stable-lessons-02-10.cjs').apply(data,{root});
  require('./apply-family-grammar-v89.cjs').apply(data,{root});
- if(familyLessonsRelease!==null){if(!['curriculum/year-first-use-runtime-contract-v97-family-lessons.json','curriculum/year-first-use-runtime-contract-v107-broadcast.json'].includes(activation?.metadata.contract.path))throw Error('Family lesson release requires the exact closed 55-component contract');data.audit.familyLessons=require('./apply-family-lessons-v95.cjs').apply(data,{root,releasePath:familyLessonsRelease});}
+ const familyPublicAppendPaths=['curriculum/year-first-use-runtime-contract-v108-linked-continuation.json'],deferFamily=familyLessonsRelease!==null&&familyPublicAppendPaths.includes(activation?.metadata.contract.path);
+ if(familyLessonsRelease!==null&&!deferFamily){if(!['curriculum/year-first-use-runtime-contract-v97-family-lessons.json','curriculum/year-first-use-runtime-contract-v107-broadcast.json'].includes(activation?.metadata.contract.path))throw Error('Family lesson release requires the exact closed 55-component contract');data.audit.familyLessons=require('./apply-family-lessons-v95.cjs').apply(data,{root,releasePath:familyLessonsRelease});}
  // Append only after all original rows, day selection and derived packs exist.
  // Keep original base days immutable. A separate, hash-bound required plan is
  // applied only to eligible unstarted days after the learner archive is ready.
@@ -157,6 +158,11 @@ function build({partial=false,requireYearExpansion=false,activateYearFirstUse=fa
  write('assets/public-context-data.js',"(function(root){'use strict';const data="+JSON.stringify(publicContexts).replace(/</g,'\\u003c')+";root.IELTSPublicContextData=data;if(typeof module==='object'&&module.exports)module.exports=data;})(typeof globalThis!=='undefined'?globalThis:this);\n");
  if(publicPlan.blocked.length)throw Error('Required public course plan has unscheduled variants: '+publicPlan.blocked.map(v=>v.materialId||v.reason).join(', '));
  data.publicCoursePlan=publicPlan;
+ // Only the explicitly selected, separately reviewed version can append
+ // after the fixed 98 public plan. Original plan/day/material pins are checked
+ // before the real loader runs. The resulting receipt is inside the family
+ // release and therefore inside the Year server's complete coreHash.
+ if(deferFamily){const appended=require('./family-public-append-v1.cjs').append(data,{root,releasePath:familyLessonsRelease});data.audit.familyLessons=appended.result;data.audit.familyPublicAppend={schema:1,status:'versioned-experiment-requires-independent-activation',originalCoreHash:appended.receipt.originalCoreHash,originalPublicPlanHash:appended.receipt.originalPublicPlanHash};}
  if(gsa){data.audit.gsaGradedCourse=require('./build-gsa-graded-course.cjs').planReceipt(gsa,publicPlan);write('curriculum/gsa-graded-course/runtime-integration.json',JSON.stringify(data.audit.gsaGradedCourse,null,2)+'\n');}
  if(requireYearExpansion){
   const budgetPlan=YearExpansion.budgetPlan(data,year.materials);

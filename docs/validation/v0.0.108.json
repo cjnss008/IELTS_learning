@@ -1,0 +1,24 @@
+{
+  "version": "0.0.108",
+  "date": "2026-10-28",
+  "status": "development-only-not-family-release",
+  "scope": "linked continuation after old vocabulary, retained drafts, source-plan coexistence and course ordering",
+  "fullRegressionInitial": {"tests":2692,"passed":2686,"failed":4,"skipped":2,"cancelled":0},
+  "failureCorrections": [
+    "Three tests pinned the former current version or rejected the newly supported explicit public input profile; assertions updated while keeping old immutable contract hashes.",
+    "Isolated backup test fixtures closed/restarted localhost listeners and could reuse a stale pooled connection after an ephemeral port was reused. Test requests now use Connection: close; production transport and backup behavior unchanged."
+  ],
+  "correctedTestFilesRerun": {"tests":22,"passed":22,"failed":0},
+  "linkedContinuationRegression": {"tests":18,"passed":18,"failed":0},
+  "newVersionHttpRegression": {"tests":1,"passed":1,"failed":0,"externalRequests":0},
+  "publishedSourceAppendRegression": {"tests":1,"passed":1,"failed":0,"unchangedOriginalMaterials":1842,"unchangedOriginalDays":365,"unchangedOriginalPublicPlan":true},
+  "staticCheck": {"pages":27,"localLinksAndAssets":865,"scripts":129,"originalLessons":52,"vocabularyAudioFiles":360},
+  "formalBuild": {"days":365,"materials":1842,"missing":0,"missingAudio":0,"annualOnDemandMaterials":688,"familyReleaseActivated":false,"contractPath":"curriculum/year-first-use-runtime-contract-v108-linked-continuation.json","components":55},
+  "curriculumAudit": {"status":"passed","questions":7426,"uniqueSourceBodies":520},
+  "questionAudit": {"sourceMaterials":830,"questionInstances":7800,"high":0,"reviewCandidates":5,"currentHashReviewed":5,"unresolved":0},
+  "browserAcceptance": "pending for activated linked content; v107 browser acceptance is not reused as proof of this change",
+  "realAiOrSpeechServiceAcceptance": "not run in this iteration",
+  "learnerData": "synthetic isolated test data only; family answers, recordings, progress and credentials not modified",
+  "deliveryPriority": "lessons 5-10; learner reports lessons 1-4 complete",
+  "limitations": ["No new family content is active yet.","Full 365-day 30-new-word linked curriculum is unfinished.","Known words must not be counted again as new vocabulary.","Course completion is not proof of an IELTS examination score."]
+}

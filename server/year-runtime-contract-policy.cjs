@@ -65,9 +65,10 @@ const RETENTION_MEMORY_PAGES=Object.freeze(['个性化学习.html','今日学习
 const RETENTION_BUDGET_PAGES=Object.freeze(['今日学习.html','每日学习计划.html','词汇记忆.html','写作补强.html','无稿口语.html']);
 const HASH=/^[a-f0-9]{64}$/;
 const FAMILY_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v97-family-lessons.json',FAMILY_COMPONENTS=Object.freeze({...REQUIRED_COMPONENTS,'public-course-planner':'assets/public-course-planner.js','family-lesson-expansion-v95':'assets/family-lesson-expansion-v95.js','course-expansion':'assets/course-expansion.js','daily-plan-app':'assets/daily-plan-app.js'});
-const FAMILY_BROADCAST_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v107-broadcast.json';
-const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH].includes(contractPath);
+const FAMILY_BROADCAST_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v107-broadcast.json',FAMILY_CONTINUATION_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v108-linked-continuation.json';
+const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH].includes(contractPath);
 function componentLimit(contractPath){return isFamilyContract(contractPath)?55:MAX_COMPONENTS;}
+
 function componentListProblem(rows,contractPath){
  const requiredComponents=isFamilyContract(contractPath)?FAMILY_COMPONENTS:REQUIRED_COMPONENTS,requiredRoles=Object.keys(requiredComponents),max=componentLimit(contractPath);
  if(!Array.isArray(rows)||rows.length<requiredRoles.length||rows.length>max)return 'runtime component count must include every required consumer and stay within '+max;
@@ -115,4 +116,4 @@ function pageDependencyProblem(file,text,contractPath){
  if(BACKUP_PAGES.includes(file)&&!before('assets/year-first-use-state.js','assets/backup-core.js'))return 'year State must execute before Backup on '+file;
  return null;
 }
-module.exports=Object.freeze({RUNTIME_SOURCE,FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,isFamilyContract,FAMILY_COMPONENTS,componentLimit,MAX_COMPONENTS,REQUIRED_COMPONENTS,REQUIRED_ROLES,PLAYER_PAGES,BACKUP_PAGES,componentListProblem,pageDependencyProblem});
+module.exports=Object.freeze({RUNTIME_SOURCE,FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,isFamilyContract,FAMILY_COMPONENTS,componentLimit,MAX_COMPONENTS,REQUIRED_COMPONENTS,REQUIRED_ROLES,PLAYER_PAGES,BACKUP_PAGES,componentListProblem,pageDependencyProblem});

@@ -116,48 +116,49 @@
     function workerProtocol(){return options.workerProtocol||root.IELTSPublicCourseWorkerProtocol||(typeof require==='function'?require('./public-course-worker.js'):null);}
     function scopeFor(descriptor){const profile=options.getProfileFence?.()||(options.storage?{id:captured}:root.IELTSProfiles?.current?.())||{id:captured},protocol=workerProtocol();return{profileFence:typeof profile==='string'?profile:String(profile.id||captured)+':'+String(profile.createdAt||''),generation:String(storage.getItem('ielts52-data-generation-v1')||'unversioned'),planHash:descriptor.base.planHash,dataContractHash:protocol?protocol.dataContractHash(descriptor.base):descriptor.engine.hash(descriptor.base.input),summaryHash:protocol?protocol.summaryHash(descriptor.replanOptions):descriptor.engine.hash(descriptor.replanOptions)};}
     function beginPreparation(descriptor){
-      if(preparation?.key===descriptor.key)return preparation.promise;
+      if(preparation?.key===descriptor.key&&preparation.planningData===descriptor.planningData)return preparation.promise;
       const protocol=workerProtocol();if(!protocol?.createRequest){const error='后台排课协议组件未加载，请刷新后重试。';preparation={key:descriptor.key,status:'public-course-prepare-failed',error,promise:Promise.resolve({valid:false,error})};return preparation.promise;}
-      let request;try{request=protocol.createRequest({requestId:'public-prepare-'+(++prepareSequence),scope:scopeFor(descriptor),data,basePlan:descriptor.base,options:descriptor.replanOptions});}catch(error){preparation={key:descriptor.key,status:'public-course-prepare-failed',error:error.message,promise:Promise.resolve({valid:false,error:error.message})};return preparation.promise;}const old=preparation;
-      const job={key:descriptor.key,requestId:request.requestId,scope:request.scope,data,base:descriptor.base,status:'preparing-public-course',error:null,promise:null};preparation=job;old?.cancel?.();
+      let request;try{request=protocol.createRequest({requestId:'public-prepare-'+(++prepareSequence),scope:scopeFor(descriptor),data:descriptor.planningData,basePlan:descriptor.base,options:descriptor.replanOptions});}catch(error){preparation={key:descriptor.key,status:'public-course-prepare-failed',error:error.message,promise:Promise.resolve({valid:false,error:error.message})};return preparation.promise;}const old=preparation;
+      const job={key:descriptor.key,requestId:request.requestId,scope:request.scope,data,planningData:descriptor.planningData,base:descriptor.base,status:'preparing-public-course',error:null,promise:null};preparation=job;old?.cancel?.();
       job.promise=workerRequest(request,job).then(response=>{
         check();const current=describePublic(readInternal());
         const currentData=options.getData?.()||(options.data?data:root.IELTSCurriculumData);
         if(preparation!==job)return{stale:true};
-        if(!current||current.pending||current.key!==job.key||current.base!==job.base||currentData!==job.data||JSON.stringify(scopeFor(current))!==JSON.stringify(job.scope))throw Error('学习档案或课程版本已更新，旧排课结果已丢弃。请刷新或重新更新后续课程。');
+        if(!current||current.pending||current.key!==job.key||current.base!==job.base||currentData!==job.data||current.planningData!==job.planningData||JSON.stringify(scopeFor(current))!==JSON.stringify(job.scope))throw Error('学习档案或课程版本已更新，旧排课结果已丢弃。请刷新或重新更新后续课程。');
         if(response?.schema!==1||response.type!=='public-course-prepared'||response.requestId!==job.requestId||JSON.stringify(response.scope)!==JSON.stringify(job.scope)||response.ok!==true||response.plan?.valid!==true||response.plan.replanOf!==job.base.planHash||!Array.isArray(response.plan.assignments)||!response.plan.planHash)throw Error(response?.error?.message||response?.error||'后台排课返回的课程合同无法核验。');
         const {planHash,...body}=response.plan;if(descriptor.engine.hash(body)!==planHash)throw Error('后台排课结果指纹不一致。');
-        publicCache={data,base:job.base,key:job.key,value:response.plan};projectionPending.clear();admissionCache.clear();job.status='ready';notifyPublic();return response.plan;
+        publicCache={data,planningData:job.planningData,base:job.base,key:job.key,value:response.plan};projectionPending.clear();admissionCache.clear();job.status='ready';notifyPublic();return response.plan;
       }).catch(error=>{if(preparation===job){job.status='public-course-prepare-failed';job.error=error.message;notifyPublic();}return{valid:false,status:'public-course-prepare-failed',error:error.message};});
       return job.promise;
     }
     function describePublic(state){
       const base=publicPlan(),engine=publicEngine();if(!base)return null;
+      let planningData=data;try{if(data.familyLessonRelease?.active&&['curriculum/year-first-use-runtime-contract-v108-linked-continuation.json'].includes(data.yearFirstUse?.runtimeContract?.contract?.path)){const api=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!api?.publicPlanningData)throw Error('family-public-proof-pending');planningData=api.publicPlanningData();}}catch(error){return{pending:{status:'pending-family-public-proof',assignments:[],blocked:[{reason:error.reason||error.message}]}};}
       if(!contextReady)return{pending:{status:'pending-profile-history',assignments:[],blocked:[{reason:'作品与草稿归属日尚未核对，先保留原课。'}]}};
       if(!engine?.validatePlan||!engine?.replan)return{pending:{status:'pending-planner-component',assignments:[],blocked:[{reason:'普通公开课程组件尚未就绪，原课保留。'}]}};
       let route;try{route=publicRoute();}catch(error){return{pending:{status:'pending-placement-verification',assignments:[],blocked:[{reason:error.message}]}};}
       const levels=Object.fromEntries(['reading','listening'].filter(skill=>route?.skills?.[skill]?.verified===true).map(skill=>[skill,route.skills[skill].level])),startDay=Math.max(2,Number(route?.startDay)||2),protectedDays=[...new Set([...state.startedDays,...Object.keys(state.frozenDays).map(Number)])].sort((a,b)=>a-b),kept=retained(state);
       const key=JSON.stringify([base.planHash,state.revision,protectedDays,kept.map(a=>[a.day,a.materialId,a.materialContentHash]),startDay,levels,contextRevision]);
-      if(descriptorCache?.key===key&&descriptorCache.base===base&&descriptorCache.data===data)return descriptorCache.value;
+      if(descriptorCache?.key===key&&descriptorCache.base===base&&descriptorCache.data===data&&descriptorCache.planningData===planningData)return descriptorCache.value;
       let capabilities=options.verifiedCapabilities?.()||[];
       if(!options.verifiedCapabilities){const practice=options.publicPractice||root.IELTSPublicMaterialPractice||(typeof require==='function'?require('./public-material-practice.js'):null),currentDay=data.days.find(d=>d.day===Math.max(2,startDay))||data.days[0];try{capabilities=practice?.context({data,day:currentDay,records:contextRecords,drafts:contextDrafts,route,assessment,verifiedRecord,now:now()})?.verifiedCapabilities||[];}catch(_){}}
       const seen=[...new Set(contextRecords.concat(contextDrafts).map(item=>{try{return assessment.decodeArtifact(item)?.materialBinding?.material?.source?.exposureGroup||item.materialBinding?.material?.source?.exposureGroup||data.materials.find(m=>m.id===item.materialId)?.source?.exposureGroup;}catch(_){return null;}}).filter(Boolean))];
       const common={assessment,materialContentHash:assessment?.materialContentHash,expandDay:root.IELTSCourseExpansion?.overlay||(typeof require==='function'?require('./course-expansion.js').overlay:null),sourceContexts:base.reference?.sourceContexts,entries:base.reference?.entryRanks};
       const affected=base.assignments.some(a=>protectedDays.includes(a.day)&&!kept.some(k=>k.day===a.day&&k.materialId===a.materialId&&k.materialContentHash===a.materialContentHash)),relocated=kept.some(k=>!base.assignments.some(a=>a.day===k.day&&a.materialId===k.materialId&&a.materialContentHash===k.materialContentHash)),routeChanges=startDay>2||base.assignments.some(a=>levelRank(levels[a.skill])>levelRank(data.materials.find(m=>m.id===a.materialId)?.level));
-      const value={base,engine,key,common,needsReplan:affected||relocated||routeChanges,replanOptions:{protectedDays,retainedAssignments:kept,verifiedSkillLevels:levels,verifiedCapabilities:capabilities,seenSourceGroups:seen,startDay}};descriptorCache={key,base,data,value};return value;
+      const value={base,engine,key,common,planningData,needsReplan:affected||relocated||routeChanges,replanOptions:{protectedDays,retainedAssignments:kept,verifiedSkillLevels:levels,verifiedCapabilities:capabilities,seenSourceGroups:seen,startDay}};descriptorCache={key,base,data,planningData,value};return value;
     }
     function runtimePublic(state){
       const descriptor=describePublic(state);if(!descriptor)return null;if(descriptor.pending)return descriptor.pending;
       const {base,engine,key,common}=descriptor;
-      if(publicCache?.data===data&&publicCache.base===base&&publicCache.key===key)return publicCache.value;
+      if(publicCache?.data===data&&publicCache.planningData===descriptor.planningData&&publicCache.base===base&&publicCache.key===key)return publicCache.value;
       if(descriptor.needsReplan&&options.synchronousPublicCourse!==true){beginPreparation(descriptor);return{status:preparation.status,assignments:[],blocked:[{reason:preparation.error||'正在后台更新后续听读课程。已有任务与草稿保留，更新完成前不固定临时课表。'}]};}
-      if(!staticValidation||staticValidation.base!==base||staticValidation.hash!==base.planHash){staticValidation={base,hash:base.planHash,value:engine.validatePlan(base,data,common)};}
+      if(!staticValidation||staticValidation.base!==base||staticValidation.hash!==base.planHash||staticValidation.data!==descriptor.planningData){staticValidation={base,hash:base.planHash,data:descriptor.planningData,value:engine.validatePlan(base,descriptor.planningData,common)};}
       let value;
       if(!staticValidation.value.valid)value={valid:false,status:'pending-plan-contract',assignments:[],blocked:staticValidation.value.reasons.map(reason=>({reason}))};
       else{
-        value=descriptor.needsReplan?engine.replan(base,data,{...common,...descriptor.replanOptions}):base;
+        value=descriptor.needsReplan?engine.replan(base,descriptor.planningData,{...common,...descriptor.replanOptions}):base;
       }
-      projectionPending.clear();admissionCache.clear();publicCache={data,base,key,value};return value;
+      projectionPending.clear();admissionCache.clear();publicCache={data,planningData:descriptor.planningData,base,key,value};return value;
     }
     function originalCompleted(occurrence){
       const material=data.materials.find(m=>m.id===occurrence.materialId);if(!material||assessment.materialContentHash(material)!==occurrence.materialContentHash)return false;
@@ -259,16 +260,38 @@
     }
     function reusableSoundEvidence(record,material){const player=options.player||root.IELTSCoursePlayer||(typeof require==='function'?require('./course-player.js'):null);return verifiedRecord(record,material,now())&&player?.bindingMatchesMaterial?.(record,material,assessment)===true;}
     function familyGrammarOptions(){return{contextReady,records:contextRecords,drafts:contextDrafts,assessment,player:options.player||root.IELTSCoursePlayer,hub:options.hub||root.IELTSTodayHub,recordCorrectionStatus:options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus};}
-    function getDay(baseDay){
-      const state=readInternal(),day=withoutGrammarContext(baseDay,state),flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),family=value=>{const prior=flow?.familyGrammarProjection?.(value,data,familyGrammarOptions())||value;return root.IELTSFamilyLessonExpansionV95?.runtime?.().planDay(prior,data,{contextReady,records:contextRecords,drafts:contextDrafts,adaptiveState:state}).day||prior;};
-      if(state.startedDays.includes(baseDay.day)||state.frozenDays[baseDay.day])return family(day);
+    // Derive exactly the same owner-scoped view used by getDay, without
+    // recursively calling the family runtime. No task or stored state is edited.
+    function preFamilyView(baseDay,state){
+      const day=withoutGrammarContext(baseDay,state),flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),grammar=value=>flow?.familyGrammarProjection?.(value,data,familyGrammarOptions())||value;
+      if(state.startedDays.includes(baseDay.day)||state.frozenDays[baseDay.day])return grammar(day);
       const api=grammarContextApi(),projected=api?.overlay?api.overlay(day,grammarContextProjection(state),{data,catalog:options.contextPracticeCatalog||root.IELTSPublicContextPracticeData,assessment,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts}):day;
-      return family(flow?.unstartedLessonFlow?.(projected,data,{contextReady,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts,now:now(),verifiedRecord:reusableSoundEvidence})||projected);
+      return grammar(flow?.unstartedLessonFlow?.(projected,data,{contextReady,protectedDays:state.startedDays,records:contextRecords,drafts:contextDrafts,now:now(),verifiedRecord:reusableSoundEvidence})||projected);
+    }
+    function getPreFamilyDay(baseDay,context={}){
+      const canonical=data.days.find(day=>day.day===baseDay?.day),family=root.IELTSFamilyLessonExpansionV95?.runtime?.();
+      if(!canonical||!assessment?.materialContentHash||assessment.materialContentHash(canonical)!==assessment.materialContentHash(baseDay)||!contextReady||!family?.isCurrentFullRecords?.(context.records)||!Array.isArray(context.drafts))throw Error('课程原日、完整作品或原稿快照尚未核验。');
+      const digest=value=>assessment.materialContentHash(value),ordered=items=>items.slice().sort((a,b)=>String(a?.id||'').localeCompare(String(b?.id||'')));
+      if(digest(contextRecords)!==digest(context.records)||digest(ordered(contextDrafts))!==digest(ordered(context.drafts)))throw Error('课程投影所用的作品或草稿已变化，请刷新。');
+      const state=readInternal(),view=preFamilyView(canonical,state);if(!family.isCurrentFullRecords(context.records))throw Error('课程投影期间作品或档案已变化。');return view;
+    }
+    function getDay(baseDay){
+      const state=readInternal(),prior=preFamilyView(baseDay,state);return root.IELTSFamilyLessonExpansionV95?.runtime?.().planDay(prior,data,{contextReady,records:contextRecords,drafts:contextDrafts,adaptiveState:state}).day||prior;
     }
     function publicContextState(){return clone(grammarContextProjection(readInternal()));}
     function publicCourseState(){const state=readInternal(),plan=runtimePublic(state);return{available:!!publicPlan(),ready:!!plan?.planHash,status:plan?.status||'not-installed',planHash:plan?.planHash||null,assignedCount:plan?.assignments?.length||0,retainedCount:plan?.retainedAssignments?.length||0,pending:[...(plan?.blocked||[]),...projectionPending.values()].map(clone),exemptions:clone(plan?.exemptions||[]),integration:{readingListening:'ordinary-task-flow',vocabularyGrammar:'pending-real-activities',reviews:'pending-real-submissions',masteryCredit:0}};}
+    // The public planner's normal cache assumes immutable input assets. Family
+    // admission additionally revalidates the original signed contract so an
+    // in-place append or edit cannot reuse an earlier successful cache entry.
+    function verifiedPublicCourseState(){
+      if(!publicPlan())return{available:false,ready:false,status:'not-installed',pending:[]};
+      const current=publicCourseState();if(!current.ready)return current;
+      const descriptor=describePublic(readInternal());if(!descriptor||descriptor.pending)return{available:true,ready:false,status:descriptor?.pending?.status||'pending-plan-contract',pending:clone(descriptor?.pending?.blocked||[])};
+      const proof=descriptor.engine.validatePlan(descriptor.base,descriptor.planningData,descriptor.common);if(!proof?.valid)return{available:true,ready:false,status:'pending-plan-contract',pending:(proof?.reasons||['public-contract-unverified']).map(reason=>({reason}))};
+      return current;
+    }
     function preparePublicCourse(config={}){if(config.retry===true&&preparation?.status==='public-course-prepare-failed')preparation=null;const current=runtimePublic(readInternal());return preparation?.status==='preparing-public-course'?preparation.promise:Promise.resolve(current);}
-    return{read,apply,markStarted,adoptStarted,getDay,publicCourseState,publicContextState,preparePublicCourse,subscribePublicCourse(listener){publicListeners.add(listener);return()=>publicListeners.delete(listener);},planRemaining:(day,records,proposal,context)=>planRemaining(day,records,proposal,{data,...context})};
+    return{read,apply,markStarted,adoptStarted,getDay,getPreFamilyDay,publicCourseState,verifiedPublicCourseState,publicContextState,preparePublicCourse,subscribePublicCourse(listener){publicListeners.add(listener);return()=>publicListeners.delete(listener);},planRemaining:(day,records,proposal,context)=>planRemaining(day,records,proposal,{data,...context})};
   }
   function levelRank(value){const found=String(value||'').match(/A[012]|B[12]|C[12]/g)||[];return Math.max(-1,...found.map(v=>['A0','A1','A2','B1','B2','C1','C2'].indexOf(v)));}
   function verifiedRecord(record,material,now,context={}){
@@ -316,5 +339,5 @@
     return result;
   }
   let runtime=null;function store(){if(!runtime)runtime=createStore();return runtime;}
-  const api=Object.freeze({KEY,SKILLS,newState,parseState,mergeStates,normalizeProposal,createObservation,observationShape,interventionSignature,promiseOfScore,eligibleMaterial,regularDay,createStore,verifiedRecord,publicContract,publicMaterialStatus,validDayBinding,planRemaining,apply:(...args)=>store().apply(...args),getDay:day=>store().getDay(day),markStarted:(day,snapshot)=>store().markStarted(day,snapshot),read:()=>store().read(),publicCourseState:()=>store().publicCourseState(),publicContextState:()=>store().publicContextState(),preparePublicCourse:config=>store().preparePublicCourse(config),subscribePublicCourse:listener=>store().subscribePublicCourse(listener),adoptStarted:context=>store().adoptStarted(context)});root.IELTSAdaptivePlan=api;if(typeof module==='object'&&module.exports)module.exports=api;
+  const api=Object.freeze({KEY,SKILLS,newState,parseState,mergeStates,normalizeProposal,createObservation,observationShape,interventionSignature,promiseOfScore,eligibleMaterial,regularDay,createStore,verifiedRecord,publicContract,publicMaterialStatus,validDayBinding,planRemaining,apply:(...args)=>store().apply(...args),getDay:day=>store().getDay(day),getPreFamilyDay:(...args)=>store().getPreFamilyDay(...args),markStarted:(day,snapshot)=>store().markStarted(day,snapshot),read:()=>store().read(),publicCourseState:()=>store().publicCourseState(),verifiedPublicCourseState:()=>store().verifiedPublicCourseState(),publicContextState:()=>store().publicContextState(),preparePublicCourse:config=>store().preparePublicCourse(config),subscribePublicCourse:listener=>store().subscribePublicCourse(listener),adoptStarted:context=>store().adoptStarted(context)});root.IELTSAdaptivePlan=api;if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

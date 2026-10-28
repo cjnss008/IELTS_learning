@@ -151,10 +151,16 @@
       const actual=await year.readBudget({courseDay,today:year.dateKey(now())});check();if(!Number.isFinite(actual?.remainingMinutes)||actual.remainingMinutes<0||actual.remainingMinutes>360||actual.budgetError)throw Error('共享学习预算待核验，词组原输入保留。');
       const supplied=options.getBudget?.();if(!supplied)return actual;const available=Number.isFinite(supplied.remainingMinutes)?Math.max(0,supplied.remainingMinutes):0,remainingMinutes=Math.min(actual.remainingMinutes,available);return{...actual,remainingMinutes,exhausted:actual.exhausted||supplied.exhausted||remainingMinutes<=0,dayEnded:actual.dayEnded||supplied.dayEnded};
     }
+    function familyDraftFence(origin,courseDay){
+      check();const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.(),player=options.player||root.IELTSCoursePlayer;if(!runtime?.assertVocabularyStartAllowed||!player?.KEY)throw Error('原课程草稿状态尚未核验，原输入保留。');
+      const raw=P.storage().getItem(player.KEY);try{runtime.assertVocabularyStartAllowed({courseDay,records:familySnapshots.get(origin),expectedPlayerRaw:raw});}catch(error){if(error.reason==='family-vocabulary-older-course-draft-pending')throw Error('请先继续或提交已有课程草稿；原输入保留。');throw error;}check();return raw;
+    }
     async function verifyFamilyOpen(value){
       const fields=['id','materialId','courseDay','words','wordKeys','startedAt','draft','contextSource'],same=other=>!!other&&fields.every(key=>JSON.stringify(other[key])===JSON.stringify(value[key]));
       const listed=await refreshFamily(value.contextSource.binding.originCourseDay);check();let latest=allBatches().find(item=>item.id===value.id);if(!listed||!same(latest)||!sourceAccess(latest).allowed)throw Error('词组草稿或同源记录已变化，原输入保留。');
+      const playerRaw=familyDraftFence(value.contextSource.binding.originCourseDay,value.courseDay);
       if(!listed.some(record=>record.id===latest.draft?.id)){const budget=await familyBudget(latest.courseDay);check();latest=allBatches().find(item=>item.id===value.id);if(!same(latest)||!sourceAccess(latest).allowed)throw Error('词组来源在预算核验期间变化，原输入保留。');const plan=currentPlan(budget);if(!familyFormsSafe(latest,plan))throw Error('词形关系或已有原稿待核验，本组原输入保留。');if(plan.reviewDebt?.required||plan.allDue?.length)throw Error('请先完成全部到期复习和未交复习稿，本组原输入保留。');if(budget.exhausted||budget.dayEnded||budget.remainingMinutes<=0)throw Error('今日共享预算已用完，本组原输入保留。');}
+      if(familyDraftFence(value.contextSource.binding.originCourseDay,value.courseDay)!==playerRaw)throw Error('课程草稿在核验期间变化，原输入保留。');
     }
     function familyFormsSafe(value,plan){const forms=plan?.formSafety;if(!forms?.indexReady||forms.unindexedPending)return false;const entries=new Map((data?.entries||[]).map(entry=>[normalize(entry.word),entry]));return(value.wordKeys||[]).every(key=>!forms.blockedKeys.includes(key)&&(!forms.hasPendingForms||entries.get(key)?.id==='essential:'+key));}
     function holdFamilyOpen(error){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;if(disposed)return false;statusText=error.message;practice.replaceChildren(node('p',statusText,'memory-feedback'));Promise.resolve(options.onActiveChange?.(false,{kind:'paused'})).catch(()=>{});render();return false;}
@@ -481,8 +487,11 @@
       if(!isFamily&&currentContext?.available)(contextual.beginDay||contextual.freeze)(currentContext,{day,data:options.curriculum||root.IELTSCurriculumData,memory:M.read(),records,drafts:contextual.courseContext({storage:P.storage()}).drafts,budget:options.getBudget?.()||{remainingMinutes:360},adaptive:options.adaptive||root.IELTSAdaptivePlan,vocabularyData:data,sourceContexts:options.sourceContexts,semanticCatalog:options.semanticCatalog,...ownedOptions(),now:now()});
       const id = 'essential-batch-'+(root.crypto?.randomUUID?.() || now().toString(36)+'-'+Math.random().toString(36).slice(2));
       const source=currentContext?.contexts?.find(c=>c.contract.day===origin)||(words.some(w=>w.source?.role==='owned-source-context-v82')?currentContext:null),contextSource=isFamily?plan.familyContext?.contextSource:source?.contract?(contextual.contextSourceFor?.(source.contract,words)||{originCourseDay:source.contract.day,contractHash:source.contract.contentHash}):undefined;if(isFamily&&!contextSource)throw Error('本课家人词组来源待核验，原输入保留。');
+      const playerRaw=isFamily?familyDraftFence(contextSource.binding.originCourseDay,day):undefined;
       const state = store.read(), next = E.startBatch(state, {id,words,now:now(),courseDay:day,...(contextSource?{contextSource}:{})});
+      if(isFamily&&familyDraftFence(contextSource.binding.originCourseDay,day)!==playerRaw)throw Error('课程草稿在新词组准备期间变化，原输入保留。');
       store.save(next);
+      if(isFamily)try{if(familyDraftFence(contextSource.binding.originCourseDay,day)!==playerRaw)throw Error('课程草稿在保存期间变化。');}catch(error){statusText=error.message+' 新词组与旧稿均已保留，请先核对旧稿。';render();return false;}
       return openBatch(allBatches(next).find(item => item.id === id));
     }
     function render() {
