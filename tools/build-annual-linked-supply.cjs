@@ -36,6 +36,13 @@ const PUBLIC_V108 = Object.freeze({
   'assets/year-first-use-manifest.js': 'a6e33b1f66750b851e184274ca07251b101b5c9890c8512b13f928ab9e71a0f6'
 });
 
+// v109 appends only the reviewed linked lessons 5–10; original public content stays pinned.
+const PUBLIC_V109 = Object.freeze({
+  ...PUBLIC_V108,
+  'assets/curriculum-data.js': 'baa5791b58a24f0527eacebd1b2a52f8324d652aff638bdf6d4d6fca1ea0499c',
+  'assets/year-first-use-manifest.js': '5df4b480a5365fd77200e1c3c6358e8cc837e77dd309aa8405ebb20dc17dbc7d'
+});
+
 function tokens(text) {
   return Array.from(String(text).matchAll(tokenPattern), match => ({
     key: norm(match[0]), start: match.index, end: match.index + match[0].length
@@ -342,14 +349,14 @@ function loadPublicInputs(root, profile = PUBLIC_V98) {
 }
 
 function parseArguments(argv) {
-  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107|0.0.108]';
+  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107|0.0.108|0.0.109]';
   assert.ok(argv.length >= 2 && argv[0] === '--root' && typeof argv[1] === 'string' && argv[1], usage);
   let full = false, dailyTarget = 30, hasTarget = false, profile;
   for (let i = 2; i < argv.length; i++) {
     if (argv[i] === '--full' && !full) full = true;
     else if (argv[i] === '--daily-target' && !hasTarget && ['30', '40'].includes(argv[i + 1])) {
       dailyTarget = Number(argv[++i]); hasTarget = true;
-    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107', '0.0.108'].includes(argv[i + 1])) {
+    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107', '0.0.108', '0.0.109'].includes(argv[i + 1])) {
       profile = argv[++i];
     } else throw Error(usage);
   }
@@ -359,7 +366,7 @@ function parseArguments(argv) {
 function main(argv) {
   const args = parseArguments(argv);
   const root = path.resolve(args.root);
-  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
+  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
   if (args.full) {
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     return;
@@ -379,4 +386,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
+module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };

@@ -1,0 +1,231 @@
+{
+  "id": "family-linked-d05-listening-v109",
+  "version": "109",
+  "week": 1,
+  "courseDay": 5,
+  "skill": "listening",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "derivation": {
+      "previousMaterialId": "candidate-d05-club-a2-v5-listening",
+      "previousMaterialVersion": "5",
+      "previousMaterialContentHash": "c528cf39e38ab9c5578774d76830af201e45ab2d5a847b26d65aad7e897ffa90",
+      "previousFileSha256": "da8d884af0acdbd6559b3de2ab484e4a076f2d215459172e114cb5611e30d5be",
+      "previousDerivation": null,
+      "scope": "Bind unchanged synthetic candidate audio to unchanged transcript and questions.",
+      "verification": "pending-independent-review"
+    },
+    "audioProvenance": {
+      "type": "synthetic-tts",
+      "metadataFile": "provenance/day05/tts-metadata.json",
+      "metadataSha256": "e42947a8e897ea7b8c31661ff2175b0ce589a82f8e909068d9dcc14b1c12203e",
+      "originalSourceFile": "provenance/day05/tts-source-material.json",
+      "originalSourceSha256": "ee9e5fe5d05be99b89965bb3b49bf1fde474dc83a56f0cdb2db0d70123a7ad01",
+      "machineAuditFile": "provenance/day05/role-pause-audit.json",
+      "machineAuditSha256": "352daa1d6e2cb5c5dacb24e097704e50345fdbac943034761f13404fc1d3a47b",
+      "humanListened": false,
+      "rightsReview": "pending",
+      "transcriptAudibility": "pending-independent-human-listening"
+    },
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "conversation",
+  "title": "Making the Club Poster",
+  "instructions": "Listen to the conversation and answer the questions.",
+  "estimatedMinutes": 30,
+  "transcript": "Maya: It is nine forty. Are you free for twenty minutes, Leo?\nLeo: Yes. I am busy after ten, so I can help now.\nMaya: We need a poster for new club members. Is this the same room as our meeting?\nLeo: Yes. We can make it here. The desk is by the door.\nMaya: The room is dark. Can you turn on the yellow desk lamp, please?\nLeo: Sure. Where should I put these pens?\nMaya: In the white cup on the desk. Please move the brown chair away from the door so people can come in.\nLeo: I found a long ruler. Can I use it to draw a straight line on the poster?\nMaya: Yes. Please write \"Welcome to our club\" above the line.\nLeo: What time should we put the poster outside?\nMaya: At nine forty-five, next to the door.\nLeo: All right. Then I will go to my class at ten.\nMaya: Thank you for helping. Good luck with your class!\nLeo: Thanks, Maya. See you later!",
+  "questions": [
+    {
+      "id": "l01",
+      "type": "single",
+      "prompt": "How long can Leo help Maya?",
+      "options": [
+        "Twenty minutes.",
+        "Thirty minutes.",
+        "All morning.",
+        "Ten minutes."
+      ],
+      "answers": [
+        "Twenty minutes."
+      ],
+      "evidence": "Are you free for twenty minutes, Leo?\nLeo: Yes.",
+      "explanation": "Maya 问能否帮忙二十分钟，Leo 回答 Yes；十点是他后面忙碌的时间。",
+      "evidenceOffsets": {
+        "start": 24,
+        "end": 71,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l02",
+      "type": "single",
+      "prompt": "Why does Maya ask Leo to turn on the lamp?",
+      "options": [
+        "Because the poster is outside.",
+        "Because the door is closed.",
+        "Because the room is dark.",
+        "Because the cup is broken."
+      ],
+      "answers": [
+        "Because the room is dark."
+      ],
+      "evidence": "The room is dark. Can you turn on the yellow desk lamp, please?",
+      "explanation": "Maya 先说房间很暗，然后请求 Leo 打开灯；其他原因没有出现在这段对话中。",
+      "evidenceOffsets": {
+        "start": 257,
+        "end": 320,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l03",
+      "type": "single",
+      "prompt": "Where should Leo put the pens?",
+      "options": [
+        "Behind the door.",
+        "In the white cup on the desk.",
+        "Under the brown chair.",
+        "Beside the clock."
+      ],
+      "answers": [
+        "In the white cup on the desk."
+      ],
+      "evidence": "In the white cup on the desk.",
+      "explanation": "Maya 说把笔放进桌上的白色杯子。",
+      "evidenceOffsets": {
+        "start": 369,
+        "end": 398,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l04",
+      "type": "single",
+      "prompt": "Why does Maya ask Leo to move the chair?",
+      "options": [
+        "To make space for the lamp.",
+        "To put the poster on it.",
+        "To let Leo sit near the desk.",
+        "So people can come in."
+      ],
+      "answers": [
+        "So people can come in."
+      ],
+      "evidence": "Please move the brown chair away from the door so people can come in.",
+      "explanation": "so 后解释目的：让人们可以进门。",
+      "evidenceOffsets": {
+        "start": 399,
+        "end": 468,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l05",
+      "type": "single",
+      "prompt": "What does Leo ask to use the long ruler for?",
+      "options": [
+        "To draw a straight line.",
+        "To cut the poster.",
+        "To open the door.",
+        "To measure the time."
+      ],
+      "answers": [
+        "To draw a straight line."
+      ],
+      "evidence": "Can I use it to draw a straight line on the poster?",
+      "explanation": "it 指刚找到的长尺子；Leo 问能否用它在海报上画直线。",
+      "evidenceOffsets": {
+        "start": 496,
+        "end": 547,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l06",
+      "type": "single",
+      "prompt": "What should Leo write on the poster?",
+      "options": [
+        "Welcome to our club.",
+        "The room is closed.",
+        "Good luck with math.",
+        "Meet at the library."
+      ],
+      "answers": [
+        "Welcome to our club."
+      ],
+      "evidence": "Please write \"Welcome to our club\" above the line.",
+      "explanation": "Maya 明确要求在横线上方写欢迎加入俱乐部。",
+      "evidenceOffsets": {
+        "start": 559,
+        "end": 609,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l07",
+      "type": "single",
+      "prompt": "When do they plan to put the poster outside?",
+      "options": [
+        "At eleven.",
+        "At nine forty-five.",
+        "At nine fifteen.",
+        "At ten thirty."
+      ],
+      "answers": [
+        "At nine forty-five."
+      ],
+      "evidence": "At nine forty-five, next to the door.",
+      "explanation": "Maya 回答九点四十五，并补充放在门旁。",
+      "evidenceOffsets": {
+        "start": 665,
+        "end": 702,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l08",
+      "type": "single",
+      "prompt": "Who wishes the other person good luck?",
+      "options": [
+        "Leo wishes Nora good luck.",
+        "Nora wishes Maya good luck.",
+        "Leo wishes Maya good luck.",
+        "Maya wishes Leo good luck."
+      ],
+      "answers": [
+        "Maya wishes Leo good luck."
+      ],
+      "evidence": "Maya: Thank you for helping. Good luck with your class!",
+      "explanation": "轮次标记显示是 Maya 对 Leo 说 Good luck；Leo 随后表示感谢。",
+      "evidenceOffsets": {
+        "start": 754,
+        "end": 809,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "transcriptSha256": "174e02f9579e0feddb8d88d327b9044d101652f514713e5b5b904bd6bc887263",
+  "audio": "audio/curriculum/day05-linked-audio-pending-v1.mp3",
+  "audioRequirements": {
+    "minimumSpeakers": 2,
+    "turnGapMs": 800,
+    "roleVoices": {
+      "maya": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural"
+    }
+  },
+  "questionCount": 8,
+  "audioKind": "synthetic",
+  "audioSynthetic": true
+}

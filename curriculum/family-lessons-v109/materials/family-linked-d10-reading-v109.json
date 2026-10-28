@@ -1,0 +1,271 @@
+{
+  "id": "family-linked-d10-reading-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 10,
+  "skill": "reading",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "passage",
+  "title": "Finding the Way in Town",
+  "instructions": "Read the whole passage. Choose ONE answer for each multiple-choice question. For short answers, use words from the passage and follow the word limit.",
+  "estimatedMinutes": 30,
+  "passage": "On Monday, Maya and Leo visit a small town. At the station, Leo checks a paper map of the town. The train station has a long hall that leads to the ticket office, and a bus stop is in front of the station. A sign on the left points toward the stairs. A bench near the station gives people a place to rest.\n\n\"Excuse me, where is the museum?\" Maya asks. A worker says, \"The museum is between the bakery and the restaurant.\" She adds, \"Walk straight along this street. Cross the street at the signal. Turn right at the corner and walk to the market. The museum is just past the market.\" A small shop is next to the market. The supermarket is not far from the clinic. The hospital is across the park. People can ask a worker for help, and the worker can answer their questions.\n\nIn the afternoon, a free local art talk starts at three. Maya would like to go, but Leo must send an email first. The worker writes the room number on a blue card. The friends decide to return to the desk at two forty-five so they will not miss the start. Before they leave the station, they read the route together. \"If another question comes up, please come back to this desk,\" the worker says. Maya thanks her for the help.\n\nMaya checks the direction of the museum entrance on the map. The short route goes past the market, while a longer route passes through the park. They are going to take the shorter one because they want to return before the art talk. At the crossing, the light is red. Leo says they must not cross yet. They wait until it changes, then continue toward the museum. They do not have to buy a ticket for the art talk, but they still need to arrive on time. Maya writes the meeting point and the return time in her notebook before putting the map away.",
+  "passageSha256": "be750e9543d5b79ea367250edcee6a2c7dd7a7b8e85eb89b640d3b66dc5b3f13",
+  "questions": [
+    {
+      "type": "short",
+      "prompt": "What is between the bakery and the restaurant? Write ONE WORD from the passage.",
+      "answers": [
+        "museum"
+      ],
+      "evidence": "The museum is between the bakery and the restaurant.",
+      "explanation": "museum 是两个参照地点之间的地方。market 在另一个位置关系中出现。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 368,
+        "end": 420,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "In which direction should they turn at the corner? Write ONE WORD from the passage.",
+      "answers": [
+        "right"
+      ],
+      "evidence": "Turn right at the corner",
+      "explanation": "right 表示向右；left 是车站里指向楼梯的标志，不是去博物馆的转弯方向。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 498,
+        "end": 522,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where should they cross the street?",
+      "options": [
+        "At the signal.",
+        "At any point near the market.",
+        "Behind the station bench.",
+        "Inside the ticket office."
+      ],
+      "answers": [
+        "At the signal."
+      ],
+      "evidence": "Cross the street at the signal.",
+      "explanation": "指路者要求在信号灯处过街，而不是随意在市场或长椅旁穿过。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 466,
+        "end": 497,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What does Leo check at the station? Write NO MORE THAN TWO WORDS from the passage.",
+      "answers": [
+        "paper map"
+      ],
+      "evidence": "Leo checks a paper map of the town.",
+      "explanation": "paper map 是在车站核对的物品；blue card 是后来写房间号用的。",
+      "maxWords": 2,
+      "caseSensitive": false,
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 60,
+        "end": 95,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r05",
+      "type": "single",
+      "prompt": "What does Maya want to attend in the afternoon?",
+      "options": [
+        "A music performance.",
+        "A local art talk.",
+        "A cooking class.",
+        "A football match."
+      ],
+      "answers": [
+        "A local art talk."
+      ],
+      "evidence": "a free local art talk starts at three. Maya would like to go",
+      "explanation": "原文说下午有艺术讲座，Maya 想参加。",
+      "evidenceOffsets": {
+        "start": 793,
+        "end": 853,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r06",
+      "type": "single",
+      "prompt": "What does the passage say about the event Maya wants to attend?",
+      "options": [
+        "It costs fifteen dollars.",
+        "It costs ten dollars.",
+        "It costs five dollars.",
+        "It is free."
+      ],
+      "answers": [
+        "It is free."
+      ],
+      "evidence": "a free local art talk",
+      "explanation": "free 表示无需付费。",
+      "evidenceOffsets": {
+        "start": 793,
+        "end": 814,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r07",
+      "type": "single",
+      "prompt": "Who must send an email first?",
+      "options": [
+        "Leo.",
+        "The bus driver.",
+        "Maya.",
+        "The worker."
+      ],
+      "answers": [
+        "Leo."
+      ],
+      "evidence": "Leo must send an email first.",
+      "explanation": "原文明确是 Leo。",
+      "evidenceOffsets": {
+        "start": 859,
+        "end": 888,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r08",
+      "type": "single",
+      "prompt": "What does the worker write the room number on?",
+      "options": [
+        "A yellow card.",
+        "A white card.",
+        "A green card.",
+        "A blue card."
+      ],
+      "answers": [
+        "A blue card."
+      ],
+      "evidence": "The worker writes the room number on a blue card.",
+      "explanation": "房间号写在蓝色卡片上。",
+      "evidenceOffsets": {
+        "start": 889,
+        "end": 938,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r09",
+      "type": "single",
+      "prompt": "When do the friends plan to return?",
+      "options": [
+        "At one fifteen.",
+        "At four.",
+        "At three thirty.",
+        "At two forty-five."
+      ],
+      "answers": [
+        "At two forty-five."
+      ],
+      "evidence": "return to the desk at two forty-five",
+      "explanation": "原文给出两点四十五分。",
+      "evidenceOffsets": {
+        "start": 961,
+        "end": 997,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r10",
+      "type": "single",
+      "prompt": "Why do the friends plan to return at that time?",
+      "options": [
+        "So they can ask for a new ticket.",
+        "So they can collect a printed schedule.",
+        "So they will not miss the start.",
+        "So they can meet the worker's friend."
+      ],
+      "answers": [
+        "So they will not miss the start."
+      ],
+      "evidence": "so they will not miss the start",
+      "explanation": "so 后说明他们不想错过开始。",
+      "evidenceOffsets": {
+        "start": 998,
+        "end": 1029,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r11",
+      "type": "single",
+      "prompt": "What do they do before leaving the station?",
+      "options": [
+        "Ask the worker for a map.",
+        "Buy tickets at the station.",
+        "Read the route together.",
+        "Write an email to the worker."
+      ],
+      "answers": [
+        "Read the route together."
+      ],
+      "evidence": "Before they leave the station, they read the route together.",
+      "explanation": "before 表明离站前一起读路线；其他选项未获原文支持。",
+      "evidenceOffsets": {
+        "start": 1031,
+        "end": 1091,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r12",
+      "type": "single",
+      "prompt": "What does the worker say to do if another question comes up?",
+      "options": [
+        "Leave a note for the worker.",
+        "Talk to the station manager.",
+        "Come back to this desk.",
+        "Ask at a library desk."
+      ],
+      "answers": [
+        "Come back to this desk."
+      ],
+      "evidence": "If another question comes up, please come back to this desk",
+      "explanation": "工作人员请他们有问题时回来询问。",
+      "evidenceOffsets": {
+        "start": 1093,
+        "end": 1152,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "questionCount": 12
+}

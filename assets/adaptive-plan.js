@@ -133,7 +133,7 @@
     }
     function describePublic(state){
       const base=publicPlan(),engine=publicEngine();if(!base)return null;
-      let planningData=data;try{if(data.familyLessonRelease?.active&&['curriculum/year-first-use-runtime-contract-v108-linked-continuation.json'].includes(data.yearFirstUse?.runtimeContract?.contract?.path)){const api=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!api?.publicPlanningData)throw Error('family-public-proof-pending');planningData=api.publicPlanningData();}}catch(error){return{pending:{status:'pending-family-public-proof',assignments:[],blocked:[{reason:error.reason||error.message}]}};}
+      let planningData=data;try{if(data.familyLessonRelease?.active&&['curriculum/year-first-use-runtime-contract-v108-linked-continuation.json','curriculum/year-first-use-runtime-contract-v109-linked-lessons.json'].includes(data.yearFirstUse?.runtimeContract?.contract?.path)){const api=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!api?.publicPlanningData)throw Error('family-public-proof-pending');planningData=api.publicPlanningData();}}catch(error){return{pending:{status:'pending-family-public-proof',assignments:[],blocked:[{reason:error.reason||error.message}]}};}
       if(!contextReady)return{pending:{status:'pending-profile-history',assignments:[],blocked:[{reason:'作品与草稿归属日尚未核对，先保留原课。'}]}};
       if(!engine?.validatePlan||!engine?.replan)return{pending:{status:'pending-planner-component',assignments:[],blocked:[{reason:'普通公开课程组件尚未就绪，原课保留。'}]}};
       let route;try{route=publicRoute();}catch(error){return{pending:{status:'pending-placement-verification',assignments:[],blocked:[{reason:error.message}]}};}
@@ -283,11 +283,15 @@
     // The public planner's normal cache assumes immutable input assets. Family
     // admission additionally revalidates the original signed contract so an
     // in-place append or edit cannot reuse an earlier successful cache entry.
+    let verifiedPublicDescriptor=null,verifiedPublicProof=null;
     function verifiedPublicCourseState(){
       if(!publicPlan())return{available:false,ready:false,status:'not-installed',pending:[]};
       const current=publicCourseState();if(!current.ready)return current;
       const descriptor=describePublic(readInternal());if(!descriptor||descriptor.pending)return{available:true,ready:false,status:descriptor?.pending?.status||'pending-plan-contract',pending:clone(descriptor?.pending?.blocked||[])};
-      const proof=descriptor.engine.validatePlan(descriptor.base,descriptor.planningData,descriptor.common);if(!proof?.valid)return{available:true,ready:false,status:'pending-plan-contract',pending:(proof?.reasons||['public-contract-unverified']).map(reason=>({reason}))};
+      const immutable=Object.isFrozen(descriptor.base)&&Object.isFrozen(descriptor.planningData)&&descriptor.planningData!==data;
+      const proof=immutable&&verifiedPublicDescriptor===descriptor?verifiedPublicProof:descriptor.engine.validatePlan(descriptor.base,descriptor.planningData,descriptor.common);
+      if(immutable){verifiedPublicDescriptor=descriptor;verifiedPublicProof=proof;}
+      if(!proof?.valid)return{available:true,ready:false,status:'pending-plan-contract',pending:(proof?.reasons||['public-contract-unverified']).map(reason=>({reason}))};
       return current;
     }
     function preparePublicCourse(config={}){if(config.retry===true&&preparation?.status==='public-course-prepare-failed')preparation=null;const current=runtimePublic(readInternal());return preparation?.status==='preparing-public-course'?preparation.promise:Promise.resolve(current);}

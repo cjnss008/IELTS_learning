@@ -79,3 +79,5 @@
 - 0.0.107 备份恢复修复使用 `curriculum/year-first-use-runtime-contract-v107-broadcast.json` 的同样 55 个组件路径，保留旧合同字节与全部 GSA、ordinary-reading、active-year 构建参数。Records 每页 senderId 仅去重本页广播，不写档案；不同页面及没有 senderId 的旧版通知继续使旧快照失效。新 family 内容仍未启用，隔离严格阻断实验不能替代可用的新课程。
 
 - 0.0.108 开发版使用 `curriculum/year-first-use-runtime-contract-v108-linked-continuation.json` 的同样 55 个组件路径，保留旧合同。关联词汇可在旧词汇完成后续接，跨页旧草稿优先；课程按实际预算逐组推进，不能因选择后课而跳过未完成前课。新 family release 在固定公开素材计划之后追加；完整来源视图须通过原始内容绑定校验。家人已完成第 4 课，优先交付第 5–10 课，未验收的候选不能表述为已部署。第 6 课候选包含过多已学代词，须更换有教学语境的新词及进阶语法；不要通过重新计数旧词满足 30 词目标。
+
+- 0.0.109 的正式构建使用 `curriculum/year-first-use-runtime-contract-v109-linked-lessons.json`，并增加 `--family-lessons-release curriculum/family-lessons-v109/release.json`；同时保留 GSA、ordinary-reading-v92、active-year 的所有参数。用户最新确认第 4 课尚未开始；第 4–10 课共 210 个独立目标词、70 份关联材料，追加于 1842 份原材料之后。原课、原答案、旧合同与原音频不得覆盖。页面可缓存经过完整核验并深度冻结的教材，学习档案仍单独核验；不能缓存可变的用户状态。新增后续批次前须实现旧 family release 的恢复与续接兼容，不能直接改写本批已开始词组的来源绑定。

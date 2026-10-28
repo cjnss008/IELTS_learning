@@ -2,7 +2,7 @@
 // Production modules and actual released units; DOM, clock, IndexedDB and speech
 // evidence are synthetic. No browser, service, filesystem profile or NAS write.
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),{createRequire}=require('node:module');
-const D=require('../assets/curriculum-data.js'),A=require('../assets/assessment-core.js'),P=require('../assets/course-player.js'),Adaptive=require('../assets/adaptive-plan.js'),Records=require('../assets/learning-records.js'),M=require('../assets/mistake-book.js'),Plan=require('../assets/daily-plan-state.js');
+const D=require('./published-public-baseline-fixture.cjs')(require('../assets/curriculum-data.js')),A=require('../assets/assessment-core.js'),P=require('../assets/course-player.js'),Adaptive=require('../assets/adaptive-plan.js'),Records=require('../assets/learning-records.js'),M=require('../assets/mistake-book.js'),Plan=require('../assets/daily-plan-state.js');
 const {original}=require('./actual-lessons-fixture.cjs');
 const Artifact=require('./public-artifact-modes-fixture.cjs');
 const copy=v=>JSON.parse(JSON.stringify(v)),NOW=Date.parse('2026-10-24T12:00:00.000Z'),grammar=day=>day.tasks.find(t=>t.id==='grammar'),byId=id=>D.materials.find(m=>m.id===id),unitFor=day=>D.familyGrammarRelease.units.find(u=>u.day===day);

@@ -134,17 +134,19 @@
     const day = options.courseDay || courseDay({storage:P.storage(),currentDay:R?.currentDay?.()});
     const contextual = options.contextual || root.IELTSContextualVocabulary;
     let currentContext = null, contextSignature = null, retention = null;
-    const familySnapshots=new Map(),familyEpoch=new Map();
+    const familySnapshots=new Map(),familyEpoch=new Map();const familyFailures=new Map(),familyJobs=new Map();
     let historyFilter = 'all', historyLimit = 10, historyBox = null, historyNote = null, historyView = null, historyReading = false;
     const ownedOptions=()=>({ownedSemanticCatalog:options.ownedSemanticCatalog,ownedSourceAcceptance:options.ownedSourceAcceptance,verifiedSkillLevels:options.verifiedSkillLevels,placement:options.placement,player:options.player||root.IELTSCoursePlayer,assessment:options.assessment||root.IELTSAssessment,recordCorrectionStatus:options.recordCorrectionStatus||root.IELTSMistakes?.recordCorrectionStatus,mistakeState:options.mistakeState});
     const familyBatch=value=>value?.contextSource?.type==='family-lesson-v95-context';
     const familyDrafts=()=>[...(contextual?.courseContext?.({storage:P.storage()})?.drafts||[]),...E.activityDrafts(M.read())];
     const sourceOptions=value=>({day,data:options.curriculum||root.IELTSCurriculumData,vocabularyData:data,memory:M.read(),records,familyRecords:familySnapshots.get(value?.contextSource?.binding?.originCourseDay||day),getFamilyRecords:origin=>familySnapshots.get(origin),drafts:familyDrafts(),adaptive:options.adaptive||root.IELTSAdaptivePlan,...ownedOptions(),now:now()});
     async function refreshFamily(origin=day){
+      if(familyJobs.has(origin))return familyJobs.get(origin);
       const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!runtime?.prepareVocabularyUnit){familySnapshots.delete(origin);return null;}
-      const epoch=(familyEpoch.get(origin)||0)+1;familyEpoch.set(origin,epoch);familySnapshots.delete(origin);
-      try{const prepared=await runtime.prepareVocabularyUnit({courseDay:origin});check();if(familyEpoch.get(origin)!==epoch)return null;if(!Array.isArray(prepared?.records))return null;familySnapshots.set(origin,prepared.records);records=prepared.records;return prepared.records;}
-      catch(error){if(familyEpoch.get(origin)===epoch)familySnapshots.delete(origin);if(disposed)throw error;return null;}
+      const job=(async()=>{const epoch=(familyEpoch.get(origin)||0)+1;familyEpoch.set(origin,epoch);
+      try{const prepared=await runtime.prepareVocabularyUnit({courseDay:origin});check();if(familyEpoch.get(origin)!==epoch)return null;if(!Array.isArray(prepared?.records)){familyFailures.set(origin,prepared?.reason||'family-records-pending');return null;}familyFailures.delete(origin);familySnapshots.set(origin,prepared.records);records=prepared.records;return prepared.records;}
+      catch(error){if(familyEpoch.get(origin)===epoch){familySnapshots.delete(origin);familyFailures.set(origin,error.reason||error.message||'family-source-pending');}if(disposed)throw error;return null;}
+      })();familyJobs.set(origin,job);try{return await job;}finally{if(familyJobs.get(origin)===job)familyJobs.delete(origin);}
     }
     async function familyBudget(courseDay){
       const year=root.IELTSYearPlanner;if(!year?.readBudget||!year?.dateKey||!root.IELTSMediaLibrary?.list)throw Error('共享学习预算或媒体草稿尚未完整读取，词组原输入保留。');
@@ -183,9 +185,9 @@
       el.type = 'button';
       el.addEventListener('click', async () => {
         if (el.disabled || saving) return;
-        el.disabled = true;
+        const label=el.textContent;el.disabled = true;el.setAttribute('aria-busy','true');el.textContent='正在处理，请稍候…';
         try { check(); await action(); } catch (error) { statusText = error.message; render(); }
-        finally { if (!disposed && el.isConnected !== false) el.disabled = false; }
+        finally { if (!disposed && el.isConnected !== false) {el.disabled = false;el.removeAttribute('aria-busy');el.textContent=label;} }
       });
       return el;
     }
@@ -526,6 +528,7 @@
       review.append(reviewButton);
       const fresh = node('article',null,'essential-step');
       const available = day<2?0:plan.newWords?.length || 0;
+      if(plan.familyContext?.status==='pending'){const waiting=node('p','本课新词尚在核验，暂时不能开始。可返回课程继续原有任务；已保存的答案和进度保留。','memory-feedback');waiting.setAttribute('data-family-pending',familyFailures.get(day)||plan.familyContext.reason||'pending');waiting.append(node('small','核验代码：'+(familyFailures.get(day)||plan.familyContext.reason||'pending')));fresh.append(waiting);}
       const pendingCount=(plan.newWords||[]).filter(word=>word.learningKind==='complete-initial').length,newCount=available-pendingCount;
       const firstOrigin=plan.newWords?.[0]?.originCourseDay,firstFamily=!!plan.newWords?.[0]?.familyCanonicalId,groupSize = Math.min(BATCH_SIZE,firstOrigin?plan.newWords.filter(w=>w.originCourseDay===firstOrigin&&!!w.familyCanonicalId===firstFamily).length:available);
       fresh.append(node('span',options.preferNewWords?'01':'02','essential-step-number'),node('h3',active ? '继续已开始的词组' : options.preferNewWords?'今日新词':'再学新词与待补词'),
@@ -572,7 +575,7 @@
     render();
     if(root.IELTSFamilyLessonExpansionV95?.runtime)Promise.resolve().then(async()=>{const origins=new Set([day,...allBatches().filter(value=>familyBatch(value)&&(value.status==='learning'||value.draft)).map(value=>value.contextSource.binding.originCourseDay)]);for(const origin of origins)await refreshFamily(origin);if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});
     if(!Object.hasOwn(options,'initialRecords'))recordsChanged();
-    return {render,openBatch,openSavedBatch,refreshSavedBatches,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){retention?.pause?.();activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){records=values;retention?.setRecords?.(values);familySnapshots.clear();render();if(root.IELTSFamilyLessonExpansionV95?.runtime)refreshFamily(day).then(()=>{if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});},
+    return {render,openBatch,openSavedBatch,refreshSavedBatches,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());if(batch&&!finished){const id=batch.draft?.id||batch.id,index=rows.findIndex(row=>row.id===id),live={id,materialId:batch.materialId,courseDay:batch.courseDay,taskId:'vocabulary',skill:'vocabulary',startedAt:batch.draft?.startedAt||batch.startedAt,activeSeconds:batch.activeSeconds||0,activityByDate:{...(batch.activityByDate||{})}};if(index>=0)rows[index]=live;else rows.push(live);}return rows;},pause(){retention?.pause?.();activity();saveDraft();controller?.pause?.();},getState:()=>controller?.getState?.()||null,setRecords(values){const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(records===values&&(!runtime||runtime.isCurrentFullRecords(familySnapshots.get(day))))return;records=values;retention?.setRecords?.(values);render();if(root.IELTSFamilyLessonExpansionV95?.runtime)refreshFamily(day).then(()=>{if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});},
       isBusy:()=>!!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy,save:pagehide,destroy(){pagehide();disposed=true;retention?.destroy?.();controller?.destroy?.();root.clearInterval?.(timer);
         ['pointerdown','keydown','input'].forEach(type => doc.removeEventListener?.(type,interact));
         root.removeEventListener?.('ielts:memory-changed',changed);root.removeEventListener?.('ielts:records-changed',recordsChanged);root.removeEventListener?.('ielts:profile-changed',profileChanged);root.removeEventListener?.('pagehide',pagehide);root.removeEventListener?.('beforeunload',beforeunload);}};

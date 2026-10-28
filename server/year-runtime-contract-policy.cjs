@@ -66,7 +66,8 @@ const RETENTION_BUDGET_PAGES=Object.freeze(['今日学习.html','每日学习计
 const HASH=/^[a-f0-9]{64}$/;
 const FAMILY_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v97-family-lessons.json',FAMILY_COMPONENTS=Object.freeze({...REQUIRED_COMPONENTS,'public-course-planner':'assets/public-course-planner.js','family-lesson-expansion-v95':'assets/family-lesson-expansion-v95.js','course-expansion':'assets/course-expansion.js','daily-plan-app':'assets/daily-plan-app.js'});
 const FAMILY_BROADCAST_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v107-broadcast.json',FAMILY_CONTINUATION_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v108-linked-continuation.json';
-const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH].includes(contractPath);
+const FAMILY_LINKED_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v109-linked-lessons.json';
+const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH].includes(contractPath);
 function componentLimit(contractPath){return isFamilyContract(contractPath)?55:MAX_COMPONENTS;}
 
 function componentListProblem(rows,contractPath){
@@ -98,6 +99,7 @@ function pageDependencyProblem(file,text,contractPath){
  const before=(first,last)=>ordered.filter(v=>v===first).length===1&&ordered.filter(v=>v===last).length===1&&ordered.indexOf(first)<ordered.indexOf(last);
  if(!isFamilyContract(contractPath)&&ordered.includes('assets/family-lesson-expansion-v95.js'))return 'family helper execution requires its exact versioned contract';
  if(isFamilyContract(contractPath))for(const consumer of ['assets/learning-records.js','assets/memory-core.js','assets/essential-vocabulary-core.js','assets/contextual-vocabulary-exposure.js','assets/course-expansion.js','assets/adaptive-plan.js','assets/daily-learning-load.js','assets/course-player.js','assets/daily-plan-app.js'])if(ordered.includes(consumer)&&!before('assets/family-lesson-expansion-v95.js',consumer))return 'family lesson helper must execute exactly once before '+consumer+' on '+file;
+ if(contractPath===FAMILY_LINKED_CONTRACT_PATH&&file==='词汇记忆.html'&&(!before('assets/daily-plan-core.js','assets/daily-plan-state.js')||!before('assets/daily-plan-state.js','assets/today-hub.js')||!before('assets/essential-vocabulary-course.js','assets/today-hub.js')||!before('assets/today-hub.js','assets/essential-vocabulary-app.js')||!before('assets/daily-learning-load.js','assets/essential-vocabulary-app.js')))return 'linked vocabulary needs the actual course-order dependencies on '+file;
  if(isFamilyContract(contractPath)&&['今日学习.html','词汇记忆.html','每日学习计划.html','个性化学习.html'].includes(file)){
   const api='assets/essential-vocabulary-core.js',consumer=file==='今日学习.html'?'assets/today-hub.js':file==='词汇记忆.html'?'assets/essential-vocabulary-app.js':file==='每日学习计划.html'?'assets/daily-plan-app.js':'assets/personalization-app.js';
   for(const prerequisite of ['assets/assessment-core.js','assets/vendor/ts-fsrs.js','assets/memory-core.js','assets/vocabulary-practice.js','assets/essential-vocabulary-data.js'])if(!before(prerequisite,api))return 'family vocabulary evidence dependency must execute before its core on '+file+': '+prerequisite;

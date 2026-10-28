@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),{createRequire}=require('node:module');
-const A=require('../assets/assessment-core.js'),P=require('../assets/course-player.js'),C=require('../assets/public-context-practice.js'),Core=require('../assets/daily-plan-core.js'),Adaptive=require('../assets/adaptive-plan.js'),Engine=require('../assets/public-course-planner.js'),D=require('../assets/curriculum-data.js'),catalog=require('../assets/public-context-practice-data.js');
+const A=require('../assets/assessment-core.js'),P=require('../assets/course-player.js'),C=require('../assets/public-context-practice.js'),Core=require('../assets/daily-plan-core.js'),Adaptive=require('../assets/adaptive-plan.js'),Engine=require('../assets/public-course-planner.js'),D=require('./published-public-baseline-fixture.cjs')(require('../assets/curriculum-data.js')),catalog=require('../assets/public-context-practice-data.js');
 require('../assets/daily-plan-content.js');
 const content=global.IELTSPlanContent,copy=v=>JSON.parse(JSON.stringify(v)),T=Date.parse('2026-10-26T12:00:00.000Z'),asset=name=>path.join(__dirname,'../assets',name);
 const helperFile=path.join(__dirname,'public-context-practice.test.cjs'),helperRaw=fs.readFileSync(helperFile,'utf8'),helper={exports:{}};

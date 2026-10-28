@@ -1,0 +1,271 @@
+{
+  "id": "family-linked-d08-reading-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 8,
+  "skill": "reading",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "passage",
+  "title": "A Visit to the Shelter Office",
+  "instructions": "Read the whole passage. Choose ONE answer for each multiple-choice question. For short answers, use words from the passage and follow the word limit.",
+  "estimatedMinutes": 30,
+  "passage": "On Sunday, Maya and Leo take the bus to an animal shelter office. A map tells them to turn left at the library. At the door, a green sign shows the office entrance.\n\nOutside, a dog plays with a ball. A cat waits in a separate room. A worker explains that each animal needs care before it can become a pet in a new home.\n\nNear the office door they find a bag. Maya gives it to the worker. The worker checks the bag and records a phone, a key, a hat and an umbrella. The worker will keep the bag until its owner returns. She keeps the bag behind the counter so its owner has one clear place to ask.\n\nMaya wears a jacket, and Leo carries a coat because the weather may change. A visitor brings a gift of clean towels. The worker asks Maya, \"Please bring a bottle of water for the table.\"\n\nLeo has an old photo of a mountain on his camera. He can use the camera to look at that photo. Maya first asks whether they may photograph the notice, and the worker agrees. The notice shows the office opening hours for volunteers. The worker puts a glass of water on the table for each visitor. Maya says, \"I need a bus ticket for the journey home,\" and she has enough money. Before the office closes at four, the worker checks her list. She marks today’s date on its back so she can find the latest version. The list stays in the office rather than online so private details are not shared publicly. The friends plan to return on Wednesday to help sort towels. Before leaving, they thank the worker for her help.\n\nA woman comes to the counter before closing. \"Is this jacket yours?\" the worker asks, pointing to a spare jacket. \"No, mine is blue,\" the woman replies. She describes her missing bag and the things inside it before the worker shows them to her. Her description matches the record, so the worker returns the bag. Maya asks why the worker did not show every item first. The worker explains that asking for a description helps check who really owns the bag. The friends learn to ask whose things they are before giving them away.\n\nInside the bag, the worker finds a wallet in a small pocket. She does not show the money to the visitors. Instead, she uses the card inside to contact the owner privately. The owner describes the wallet before collecting the bag. This protects the belongings and helps the worker return them to the right person.",
+  "passageSha256": "672c843d2cfce079b74fb475f656cbdf81548bcdd35dba1fd040151e9d2fb42b",
+  "questions": [
+    {
+      "type": "short",
+      "prompt": "What animal plays outside with a ball? Write ONE WORD from the passage.",
+      "answers": [
+        "dog"
+      ],
+      "evidence": "Outside, a dog plays with a ball.",
+      "explanation": "dog 在外面玩球；cat 在单独的房间等候。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 166,
+        "end": 199,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What does the worker record between a phone and a hat? Write ONE WORD from the passage.",
+      "answers": [
+        "key"
+      ],
+      "evidence": "records a phone, a key, a hat and an umbrella",
+      "explanation": "清单次序为 phone、key、hat、umbrella。只写 key；keys 与原文单数不同。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 418,
+        "end": 463,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why does Leo carry a coat?",
+      "options": [
+        "It is a gift for the worker.",
+        "He must put it in the lost bag.",
+        "The weather may change.",
+        "It belongs to the bag’s owner."
+      ],
+      "answers": [
+        "The weather may change."
+      ],
+      "evidence": "Leo carries a coat because the weather may change.",
+      "explanation": "because 后解释带外套的原因；并未说外套是失主的或要作为礼物。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 623,
+        "end": 673,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What time does the office close? Write ONE WORD from the passage.",
+      "answers": [
+        "four"
+      ],
+      "evidence": "Before the office closes at four",
+      "explanation": "four 是关门时间；Wednesday 是下次回来帮忙的日期。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 1163,
+        "end": 1195,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r05",
+      "type": "single",
+      "prompt": "According to the passage, why does the worker keep the bag behind the counter?",
+      "options": [
+        "To give the owner one clear place to ask.",
+        "To let volunteers take turns carrying it.",
+        "To keep it ready for a photograph.",
+        "To arrange its contents by size."
+      ],
+      "answers": [
+        "To give the owner one clear place to ask."
+      ],
+      "evidence": "She keeps the bag behind the counter so its owner has one clear place to ask.",
+      "explanation": "so 后说明这样做的目的。",
+      "evidenceOffsets": {
+        "start": 519,
+        "end": 596,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r06",
+      "type": "single",
+      "prompt": "How does the worker respond when Maya asks about photographing the notice?",
+      "options": [
+        "She asks Maya to change the notice.",
+        "She says the notice is private.",
+        "She tells Maya to take it away.",
+        "She agrees."
+      ],
+      "answers": [
+        "She agrees."
+      ],
+      "evidence": "Maya first asks whether they may photograph the notice, and the worker agrees.",
+      "explanation": "Maya 询问能否拍告示，原文说工作人员同意。",
+      "evidenceOffsets": {
+        "start": 881,
+        "end": 959,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r07",
+      "type": "single",
+      "prompt": "What information does the notice provide to volunteers?",
+      "options": [
+        "The animal adoption requirements.",
+        "Directions to the shelter.",
+        "The office opening hours.",
+        "The volunteer shift schedule."
+      ],
+      "answers": [
+        "The office opening hours."
+      ],
+      "evidence": "The notice shows the office opening hours for volunteers.",
+      "explanation": "原文明确说告示为志愿者提供办公室开放时间。",
+      "evidenceOffsets": {
+        "start": 960,
+        "end": 1017,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r08",
+      "type": "single",
+      "prompt": "When does the office close?",
+      "options": [
+        "At three fifteen.",
+        "At four.",
+        "At nine.",
+        "At eleven fifty."
+      ],
+      "answers": [
+        "At four."
+      ],
+      "evidence": "Before the office closes at four, the worker checks her list.",
+      "explanation": "原句 Before the office closes at four 明确说明办公室四点关闭。before 表示主句里的检查发生在关门之前，不会把关门时间改为三点；应选择 four。",
+      "evidenceOffsets": {
+        "start": 1163,
+        "end": 1224,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r09",
+      "type": "single",
+      "prompt": "What does the worker check before closing?",
+      "options": [
+        "Her list.",
+        "The visitor book.",
+        "The notice board.",
+        "The office calendar."
+      ],
+      "answers": [
+        "Her list."
+      ],
+      "evidence": "Before the office closes at four, the worker checks her list.",
+      "explanation": "工作人员在关门前检查清单。",
+      "evidenceOffsets": {
+        "start": 1163,
+        "end": 1224,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r10",
+      "type": "single",
+      "prompt": "What reason does the passage give for keeping the document in the office instead of online?",
+      "options": [
+        "To make it available to all visitors.",
+        "To collect volunteer schedules.",
+        "To publish animal adoption prices.",
+        "To avoid sharing private details publicly."
+      ],
+      "answers": [
+        "To avoid sharing private details publicly."
+      ],
+      "evidence": "The list stays in the office rather than online so private details are not shared publicly.",
+      "explanation": "so 后说明保留在办公室的原因。",
+      "evidenceOffsets": {
+        "start": 1296,
+        "end": 1387,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r11",
+      "type": "single",
+      "prompt": "According to the passage, what do the friends plan to do on Wednesday?",
+      "options": [
+        "Return to photograph the notice.",
+        "Return to change the opening hours.",
+        "Return to help sort towels.",
+        "Return to collect the lost bag."
+      ],
+      "answers": [
+        "Return to help sort towels."
+      ],
+      "evidence": "The friends plan to return on Wednesday to help sort towels.",
+      "explanation": "他们计划周三回来帮忙整理毛巾。",
+      "evidenceOffsets": {
+        "start": 1388,
+        "end": 1448,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r12",
+      "type": "single",
+      "prompt": "According to the passage, why does the worker put today’s date on the back of the document she checks before closing?",
+      "options": [
+        "To record the price of each item.",
+        "To find the latest version.",
+        "To record each visitor’s arrival time.",
+        "To set the next opening hours."
+      ],
+      "answers": [
+        "To find the latest version."
+      ],
+      "evidence": "She marks today’s date on its back so she can find the latest version.",
+      "explanation": "so 后说明写日期是为了找到最新版本。",
+      "evidenceOffsets": {
+        "start": 1225,
+        "end": 1295,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "questionCount": 12
+}

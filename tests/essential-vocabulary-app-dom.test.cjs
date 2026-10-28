@@ -8,7 +8,7 @@ class Element{
  set innerHTML(_){throw Error('unsafe HTML rendering');}
  append(...items){for(const item of items){item.parentElement=this;item.parentNode=this;this.children.push(item);}}
  replaceChildren(...items){this._text='';this.children=[];this.append(...items);}
- setAttribute(key,value){this.attributes[key]=String(value);}getAttribute(key){return this.attributes[key];}
+ setAttribute(key,value){this.attributes[key]=String(value);}getAttribute(key){return this.attributes[key];}removeAttribute(key){delete this.attributes[key];}
  matches(selector){if(selector.startsWith('.'))return this.className.split(' ').includes(selector.slice(1));if(selector==='[hidden]')return this.hidden;return this.tagName===selector.toUpperCase();}
  all(){return this.children.flatMap(item=>item.nodeType===1?[item,...item.all()]:[]);}
  querySelectorAll(selector){return this.all().filter(item=>selector.split(',').some(part=>item.matches(part.trim())));}querySelector(selector){return this.querySelectorAll(selector)[0]||null;}

@@ -1,0 +1,253 @@
+{
+  "id": "family-linked-d04-listening-v109",
+  "version": "1",
+  "week": 1,
+  "courseDay": 4,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料，AI 编写与对照原文审校。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original library scene; exact word sense and all question answers reviewed against passage/transcript. Ordinary learning only."
+  },
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Which books must stay in the library?",
+      "answers": [
+        "The books on the reference table."
+      ],
+      "options": [
+        "The books on the reference table.",
+        "All books with a blue cover.",
+        "All short novels.",
+        "All books about animals."
+      ],
+      "evidence": "Not the books on the reference table. The sign says those must stay here.",
+      "explanation": "those 指参考桌上的书，不是所有小说或所有蓝色封面的书。",
+      "id": "l01",
+      "evidenceOffsets": {
+        "start": 97,
+        "end": 170,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where is the dictionary?",
+      "answers": [
+        "Beside the window."
+      ],
+      "options": [
+        "On the second shelf.",
+        "Beside the printer.",
+        "In the conversation room.",
+        "Beside the window."
+      ],
+      "evidence": "On the reference table beside the window.",
+      "explanation": "词典在窗边的参考桌上，second shelf 是后面要借的信息书的位置。",
+      "id": "l02",
+      "evidenceOffsets": {
+        "start": 237,
+        "end": 278,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does Leo suggest doing before selecting the book?",
+      "answers": [
+        "Read its description."
+      ],
+      "options": [
+        "Renew the loan.",
+        "Reserve it immediately.",
+        "Read its description.",
+        "Print their notes."
+      ],
+      "evidence": "Check its description first.",
+      "explanation": "first 指先查看简介；不是先打印笔记或直接预约。",
+      "id": "l03",
+      "evidenceOffsets": {
+        "start": 407,
+        "end": 435,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What kind of information do they need?",
+      "answers": [
+        "Facts about animals."
+      ],
+      "options": [
+        "Prices of library cards.",
+        "Facts about animals.",
+        "Stories about a librarian.",
+        "Instructions for repairing a printer."
+      ],
+      "evidence": "We need facts about animals, not a novel.",
+      "explanation": "need facts 说明需要事实资料，小说故事不符合这次任务。",
+      "id": "l04",
+      "evidenceOffsets": {
+        "start": 436,
+        "end": 477,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How many chapters does the useful book have?",
+      "answers": [
+        "Six."
+      ],
+      "options": [
+        "Six.",
+        "Two.",
+        "Three.",
+        "Twelve."
+      ],
+      "evidence": "This one has an index and six short chapters.",
+      "explanation": "six short chapters 是章数；two weeks 是借期。",
+      "id": "l05",
+      "evidenceOffsets": {
+        "start": 484,
+        "end": 529,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where should Maya look for the book?",
+      "answers": [
+        "On the second shelf in the science section."
+      ],
+      "options": [
+        "On the top shelf in the fiction section.",
+        "On the reference table by the window.",
+        "On the desk beside the printer.",
+        "On the second shelf in the science section."
+      ],
+      "evidence": "In the science section, on the second shelf.",
+      "explanation": "听力给出 science section 和 second shelf 两个定位信息。阅读中的 top shelf 不能直接用于这题。",
+      "id": "l06",
+      "evidenceOffsets": {
+        "start": 565,
+        "end": 609,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How long can Maya keep the book before renewing it?",
+      "answers": [
+        "Two weeks."
+      ],
+      "options": [
+        "Three weeks.",
+        "One month.",
+        "Two weeks.",
+        "One day."
+      ],
+      "evidence": "Two weeks. You can renew the book once if nobody else needs it.",
+      "explanation": "先借两周；once 指允许续借一次，不是借一天。",
+      "id": "l07",
+      "evidenceOffsets": {
+        "start": 704,
+        "end": 767,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why is the book with the blue cover unavailable now?",
+      "answers": [
+        "Another reader has it."
+      ],
+      "options": [
+        "It is a reference dictionary.",
+        "Another reader has it.",
+        "Its cover is damaged.",
+        "The printer has stopped working."
+      ],
+      "evidence": "What about the book with the blue cover? Another reader has it.",
+      "explanation": "已被另一位读者借走，所以可预约等归还；不是说已损坏或只供馆内查阅。",
+      "id": "l08",
+      "evidenceOffsets": {
+        "start": 780,
+        "end": 843,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How much will their three printed pages cost?",
+      "answers": [
+        "Thirty cents."
+      ],
+      "options": [
+        "Thirty cents.",
+        "Ten cents.",
+        "Twenty cents.",
+        "Three dollars."
+      ],
+      "evidence": "The printer costs ten cents per page, so that will be thirty cents.",
+      "explanation": "每页十美分，三页合计三十。十美分是单页价格，不是总价。",
+      "id": "l09",
+      "evidenceOffsets": {
+        "start": 994,
+        "end": 1061,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where will they discuss their talk?",
+      "answers": [
+        "In the conversation room."
+      ],
+      "options": [
+        "Near the quiet study desks.",
+        "In the aisle beside the shelves.",
+        "At the bus stop.",
+        "In the conversation room."
+      ],
+      "evidence": "Then we can discuss our talk in the conversation room.",
+      "explanation": "计划是在 conversation room 讨论；study desks 附近需要保持安静。",
+      "id": "l10",
+      "evidenceOffsets": {
+        "start": 1062,
+        "end": 1116,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "title": "Choosing and Borrowing the Right Book",
+  "estimatedMinutes": 35,
+  "transcript": "Maya: Excuse me. We are visiting the library for the first time. Can we take any book home?\nLeo: Not the books on the reference table. The sign says those must stay here.\nMaya: I need a dictionary for one word. Where can I find it?\nLeo: On the reference table beside the window. You can use it here.\nMaya: Thanks. The computer screen shows a book about sea animals. It is available. Shall I select it?\nLeo: Check its description first. We need facts about animals, not a novel.\nMaya: This one has an index and six short chapters. It looks useful. Where is it?\nLeo: In the science section, on the second shelf. Walk along this aisle and turn left.\nMaya: I have my library card. How long is the loan?\nLeo: Two weeks. You can renew the book once if nobody else needs it.\nMaya: Good. What about the book with the blue cover? Another reader has it.\nLeo: You can reserve it with the librarian. She will tell you when it comes back.\nMaya: Let's print our notes before we go. We have three pages.\nLeo: The printer costs ten cents per page, so that will be thirty cents. Then we can discuss our talk in the conversation room.\nMaya: Right. We should keep quiet near the study desks.",
+  "instructions": "Listen to Maya and Leo. Choose ONE answer for each question. The details may differ from the reading passage.",
+  "audio": "audio/curriculum/family-linked-d04-listening-v109.mp3",
+  "audioKind": "synthetic",
+  "audioSynthetic": true,
+  "audioRequirements": {
+    "accent": "en-US",
+    "minimumSpeakers": 2,
+    "paragraphGapMs": 800,
+    "turnGapMs": 800,
+    "roleVoices": {
+      "maya": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural"
+    }
+  },
+  "questionCount": 10
+}

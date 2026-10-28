@@ -1,0 +1,254 @@
+{
+  "id": "family-linked-d05-grammar-v109",
+  "version": "109",
+  "week": 1,
+  "courseDay": 5,
+  "skill": "grammar",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "grammar",
+  "title": "Club Plans: Questions, Reasons and Requests",
+  "estimatedMinutes": 35,
+  "passage": "今天把俱乐部活动用于问时间、说明习惯与提出请求。\n\n1. 用 be 问状态：Are you free? Yes, I am. 用 do 问动作或喜好：Do you like math? Yes, I do. 问时间可用 When are you free? I am free on Wednesday morning. 问最喜欢的学科：What is your favorite subject? My favorite subject is math.\n\n2. 一般现在时中，第三人称单数常在动词后加 s：Nora works at a clinic. 复数主语用复数形式：The people are ready.\n\n3. 位置：in Room 5 表示在5号房间；on the desk 表示在桌面上；next to the clock 表示在钟旁边。\n\n4. because 引出原因：I bring a pen because I want to write. can 后接动词原形：Can you turn on the lamp, please?\n\n5. 真实未来条件可以用 if + 一般现在时，主句可用 will + 原形：If I am busy, I will send a message. 提建议也可用祈使句：If you need more light, turn on the lamp.\n\n6. 直接问地点是 Where is the room? 嵌入礼貌请求后用陈述语序：Can you tell me where the room is, please?",
+  "instructions": "Read the explanations and complete the questions.",
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Are you free? Yes, I ____.",
+      "options": [
+        "am",
+        "is",
+        "do",
+        "are"
+      ],
+      "answers": [
+        "am"
+      ],
+      "evidence": "Are you free? Yes, I am.",
+      "explanation": "I 后用 am 回答 be 问句。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Do you like math? Yes, I ____.",
+      "options": [
+        "do",
+        "is",
+        "am",
+        "does"
+      ],
+      "answers": [
+        "do"
+      ],
+      "evidence": "Do you like math? Yes, I do.",
+      "explanation": "Do you 的肯定简答用 Yes, I do。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "____ are you free? I am free on Wednesday morning.",
+      "options": [
+        "How many",
+        "When",
+        "Who",
+        "Where"
+      ],
+      "answers": [
+        "When"
+      ],
+      "evidence": "When are you free? I am free on Wednesday morning.",
+      "explanation": "回答是时间，问词用 When。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "What is your favorite ____? My favorite subject is math.",
+      "options": [
+        "ruler",
+        "lamp",
+        "neighbor",
+        "subject"
+      ],
+      "answers": [
+        "subject"
+      ],
+      "evidence": "What is your favorite subject? My favorite subject is math.",
+      "explanation": "数学作为所问的学科，与 subject 对应。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Nora ____ at a clinic.",
+      "options": [
+        "works",
+        "working",
+        "are work",
+        "work"
+      ],
+      "answers": [
+        "works"
+      ],
+      "evidence": "Nora works at a clinic.",
+      "explanation": "Nora 为第三人称单数，习惯性动作使用 works。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "The people ____ ready.",
+      "options": [
+        "are",
+        "be",
+        "am",
+        "is"
+      ],
+      "answers": [
+        "are"
+      ],
+      "evidence": "The people are ready.",
+      "explanation": "people 在此指复数的人，使用 are。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "根据“会议在5号房间内”填空：The meeting is ____ Room 5.",
+      "options": [
+        "under",
+        "in",
+        "on",
+        "above"
+      ],
+      "answers": [
+        "in"
+      ],
+      "evidence": "in Room 5",
+      "explanation": "表示在编号房间中使用 in。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "根据“笔在桌面上”填空：The pens are ____ the desk.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "from"
+      ],
+      "answers": [
+        "on"
+      ],
+      "evidence": "on the desk",
+      "explanation": "题目中的位置是桌面，用 on。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "根据“卡片在钟旁边”填空：The card is ____ the clock.",
+      "options": [
+        "inside of",
+        "next to",
+        "because",
+        "behind of"
+      ],
+      "answers": [
+        "next to"
+      ],
+      "evidence": "next to the clock",
+      "explanation": "next to 表示在旁边。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "选择明确引出原因的词：I bring a pen ____ I want to write.",
+      "options": [
+        "and",
+        "because",
+        "or",
+        "but"
+      ],
+      "answers": [
+        "because"
+      ],
+      "evidence": "I bring a pen because I want to write.",
+      "explanation": "because 引出带笔的原因。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "If I ____ busy, I will send a message.",
+      "options": [
+        "be",
+        "are",
+        "am",
+        "will be"
+      ],
+      "answers": [
+        "am"
+      ],
+      "evidence": "If I am busy, I will send a message.",
+      "explanation": "此真实未来条件从句用现在式，I 后用 am。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "If you need more light, ____ on the lamp.",
+      "options": [
+        "turns",
+        "turning",
+        "turn",
+        "will turns"
+      ],
+      "answers": [
+        "turn"
+      ],
+      "evidence": "If you need more light, turn on the lamp.",
+      "explanation": "条件后接祈使句，用动词原形 turn。"
+    },
+    {
+      "id": "g13",
+      "type": "single",
+      "prompt": "Can you ____ on the lamp, please?",
+      "options": [
+        "turns",
+        "turning",
+        "turned",
+        "turn"
+      ],
+      "answers": [
+        "turn"
+      ],
+      "evidence": "Can you turn on the lamp, please?",
+      "explanation": "can 后用动词原形 turn。"
+    },
+    {
+      "id": "g14",
+      "type": "single",
+      "prompt": "Can you tell me where ____, please?",
+      "options": [
+        "room is the",
+        "the room is",
+        "is the room",
+        "the room"
+      ],
+      "answers": [
+        "the room is"
+      ],
+      "evidence": "Can you tell me where the room is, please?",
+      "explanation": "嵌入地点问题使用 the room is 的陈述语序。"
+    }
+  ],
+  "questionCount": 14
+}

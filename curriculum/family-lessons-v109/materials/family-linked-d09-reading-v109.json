@@ -1,0 +1,271 @@
+{
+  "id": "family-linked-d09-reading-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 9,
+  "skill": "reading",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "passage",
+  "title": "Planning a Shared Meal",
+  "instructions": "Read the whole passage. Choose ONE answer for each multiple-choice question. For short answers, use words from the passage and follow the word limit.",
+  "estimatedMinutes": 30,
+  "passage": "On Tuesday, Maya and Leo visit Ms. Chen's apartment for a cooking class. Ms. Chen lived in Britain before. She explains that a flat is an apartment and a lift is an elevator. A cooker is often called a stove in the United States.\n\nOn the balcony, a small plant gets fresh air. The kitchen is bright, and an empty bowl is on the table. Ms. Chen puts bread on a plate and an apple beside it. She keeps a clean towel near the sink.\n\nThe friends plan a shared meal. Maya wants rice and chicken. Leo asks for a vegetable pie. Ms. Chen will eat fish today, but she does not want chicken. They check a recipe before they cook food together.\n\n\"We can buy fruit and an egg at the market,\" Maya says. \"Would you like to drink tea or coffee after the meal?\" Leo chooses tea, while Ms. Chen prefers coffee. The friends make a shopping list so they can prepare what each person wants.\n\nBefore shopping, Ms. Chen asks each person about the food they prefer and writes the answers on separate cards, so nobody is forgotten. The shop closes at six, so Maya and Leo plan to shop together before then. Ms. Chen will stay home and prepare the table. They will label the dishes so visitors can choose what suits them.\n\nThey compare two recipes before leaving. The vegetable pie has fewer steps than the other recipe, but it needs a bigger dish. Ms. Chen finds a bowl that is large enough to mix the filling. Leo suggests six eggs, but Maya says that is too many for this recipe: it needs only two. They already have enough rice and a little tea, so those items stay off the shopping list. The apples in the small basket look fresher than the others. They choose them for dessert and keep the older apples for cooking the next day.",
+  "passageSha256": "f8485a7f1e3065dcd8a6170d6df4b37b2a4588186773630758940119baefb99e",
+  "questions": [
+    {
+      "type": "short",
+      "prompt": "What American word has the same meaning as flat in the passage? Write ONE WORD.",
+      "answers": [
+        "apartment"
+      ],
+      "evidence": "a flat is an apartment",
+      "explanation": "文中明确 flat 对应 apartment。balcony 是阳台，不是整个住处。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 125,
+        "end": 147,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What drink does Leo choose? Write ONE WORD from the passage.",
+      "answers": [
+        "tea"
+      ],
+      "evidence": "Leo chooses tea, while Ms. Chen prefers coffee.",
+      "explanation": "Leo 选 tea；coffee 属于 Ms. Chen 的喜好。while 表示对比。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 747,
+        "end": 794,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which food does Ms. Chen not want today?",
+      "options": [
+        "Bread.",
+        "Chicken.",
+        "Fish.",
+        "Fruit."
+      ],
+      "answers": [
+        "Chicken."
+      ],
+      "evidence": "Ms. Chen will eat fish today, but she does not want chicken.",
+      "explanation": "but 后明确否定 chicken；fish 是她今天要吃的。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 521,
+        "end": 581,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What do they check before cooking? Write ONE WORD from the passage.",
+      "answers": [
+        "recipe"
+      ],
+      "evidence": "They check a recipe before they cook food together.",
+      "explanation": "recipe 指食谱；购物清单在之后准备，不能用 list 替代。",
+      "maxWords": 1,
+      "caseSensitive": false,
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 582,
+        "end": 633,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r05",
+      "type": "single",
+      "prompt": "According to the passage, why does Ms. Chen write down each person's food preference?",
+      "options": [
+        "To decide who should wash the dishes.",
+        "To compare the prices of ingredients.",
+        "To share a copy with the shop.",
+        "So nobody is forgotten."
+      ],
+      "answers": [
+        "So nobody is forgotten."
+      ],
+      "evidence": "writes the answers on separate cards, so nobody is forgotten",
+      "explanation": "so 后说明记录喜好的目的。",
+      "evidenceOffsets": {
+        "start": 947,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r06",
+      "type": "single",
+      "prompt": "Who plans to shop together?",
+      "options": [
+        "Leo and Ms. Chen.",
+        "Ms. Chen and two visitors.",
+        "Maya and Leo.",
+        "Maya and Ms. Chen."
+      ],
+      "answers": [
+        "Maya and Leo."
+      ],
+      "evidence": "Maya and Leo plan to shop together before then.",
+      "explanation": "原文说 Maya 与 Leo 一起去购物。",
+      "evidenceOffsets": {
+        "start": 1036,
+        "end": 1083,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r07",
+      "type": "single",
+      "prompt": "According to the passage, why do the friends plan to shop before six?",
+      "options": [
+        "They plan to cook at six.",
+        "The shop closes at six.",
+        "Their cooking class begins at six.",
+        "Their visitors arrive at six."
+      ],
+      "answers": [
+        "The shop closes at six."
+      ],
+      "evidence": "The shop closes at six, so Maya and Leo plan to shop together before then.",
+      "explanation": "so 把关门时间与提前购物的安排联系起来。",
+      "evidenceOffsets": {
+        "start": 1009,
+        "end": 1083,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r08",
+      "type": "single",
+      "prompt": "According to the passage, what does Ms. Chen plan to do at home?",
+      "options": [
+        "Stay home and prepare the table.",
+        "Stay home and compare ingredient prices.",
+        "Stay home and write a new recipe.",
+        "Stay home and make a shopping list for tomorrow."
+      ],
+      "answers": [
+        "Stay home and prepare the table."
+      ],
+      "evidence": "Ms. Chen will stay home and prepare the table.",
+      "explanation": "原文明确说明她留下来准备餐桌。",
+      "evidenceOffsets": {
+        "start": 1084,
+        "end": 1130,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r09",
+      "type": "single",
+      "prompt": "Why will they label the dishes?",
+      "options": [
+        "So the cook can remember the order to serve them.",
+        "So everyone can see when each dish was made.",
+        "So Ms. Chen can record the cooking time.",
+        "So visitors can choose what suits them."
+      ],
+      "answers": [
+        "So visitors can choose what suits them."
+      ],
+      "evidence": "They will label the dishes so visitors can choose what suits them.",
+      "explanation": "标注菜肴是为了方便来访者选择。",
+      "evidenceOffsets": {
+        "start": 1131,
+        "end": 1197,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r10",
+      "type": "single",
+      "prompt": "According to the passage, which action happens before the friends go shopping?",
+      "options": [
+        "Ms. Chen finishes preparing the table.",
+        "Maya and Leo buy all the ingredients.",
+        "Ms. Chen asks about food preferences.",
+        "The visitors choose the dishes."
+      ],
+      "answers": [
+        "Ms. Chen asks about food preferences."
+      ],
+      "evidence": "Before shopping, Ms. Chen asks each person about the food they prefer",
+      "explanation": "before 表明先询问喜好，再购物。",
+      "evidenceOffsets": {
+        "start": 873,
+        "end": 942,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r11",
+      "type": "single",
+      "prompt": "What does Ms. Chen use to keep track of the preferences?",
+      "options": [
+        "A recipe book.",
+        "Separate cards.",
+        "One shared notebook.",
+        "A printed shopping list."
+      ],
+      "answers": [
+        "Separate cards."
+      ],
+      "evidence": "writes the answers on separate cards, so nobody is forgotten",
+      "explanation": "Ms. Chen 把答案写在不同卡片上，以免遗漏。",
+      "evidenceOffsets": {
+        "start": 947,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "r12",
+      "type": "single",
+      "prompt": "What past experience does the passage mention about Ms. Chen?",
+      "options": [
+        "She lived in Britain.",
+        "She taught in Britain.",
+        "She owned a restaurant.",
+        "She studied at a cooking school."
+      ],
+      "answers": [
+        "She lived in Britain."
+      ],
+      "evidence": "Ms. Chen lived in Britain before.",
+      "explanation": "原文说 Ms. Chen 曾在英国居住，没有说明其他经历。",
+      "evidenceOffsets": {
+        "start": 73,
+        "end": 106,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "questionCount": 12
+}

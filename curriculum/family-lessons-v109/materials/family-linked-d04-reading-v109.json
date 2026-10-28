@@ -1,0 +1,262 @@
+{
+  "id": "family-linked-d04-reading-v109",
+  "version": "1",
+  "week": 1,
+  "courseDay": 4,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料，AI 编写与对照原文审校。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original library scene; exact word sense and all question answers reviewed against passage/transcript. Ordinary learning only."
+  },
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why do Maya and Leo visit the library?",
+      "answers": [
+        "To find information for a talk."
+      ],
+      "options": [
+        "To find information for a talk.",
+        "To buy a computer.",
+        "To meet the author of a novel.",
+        "To print a library card."
+      ],
+      "evidence": "They want to find information for a short talk about animals.",
+      "explanation": "目的由 want to find information for a short talk 明确说明。借小说是后来的额外决定，不是最初目的。",
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 59,
+        "end": 120,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "How long does a normal loan last? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "two weeks"
+      ],
+      "evidence": "A normal loan lasts two weeks.",
+      "explanation": "two weeks 是借期，weeks 要用复数；two pages 是后面打印的页数。",
+      "maxWords": 2,
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 240,
+        "end": 270,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "When can visitors renew a book?",
+      "answers": [
+        "When no other reader needs it."
+      ],
+      "options": [
+        "Only after the return date.",
+        "Only if its cover is green.",
+        "When no other reader needs it.",
+        "Whenever they want, without asking."
+      ],
+      "evidence": "Visitors can renew a book once if nobody else needs it, but they must ask before the return date.",
+      "explanation": "if 后的条件是没有别人需要这本书，还必须在归还日期之前申请；并非所有书都能无限续借。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 271,
+        "end": 368,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "How many search results does Maya see? Write ONE WORD.",
+      "answers": [
+        "twelve"
+      ],
+      "evidence": "Maya types the name of an animal and sees twelve results.",
+      "explanation": "twelve 对应搜索结果数量。不要把借期 two 或打印页数 two 当作结果数。",
+      "maxWords": 1,
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 501,
+        "end": 558,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why does Maya read a description before selecting a book?",
+      "answers": [
+        "To check whether it suits their needs."
+      ],
+      "options": [
+        "To check whether it suits their needs.",
+        "To change the book title.",
+        "To find the price of the book.",
+        "To learn how to repair the computer."
+      ],
+      "evidence": "She does not select the first result immediately. She checks whether each book is available and reads a short description.",
+      "explanation": "结合找动物资料的目的，核对简介与是否可借能帮助判断是否适合；这里没有说要购买或修改书籍。",
+      "id": "r05",
+      "evidenceOffsets": {
+        "start": 559,
+        "end": 681,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does Leo do to check whether the novel is difficult?",
+      "answers": [
+        "He reads a page from the first chapter."
+      ],
+      "options": [
+        "He counts every page.",
+        "He asks its author.",
+        "He looks only at the cover.",
+        "He reads a page from the first chapter."
+      ],
+      "evidence": "Leo opens the first chapter and reads one page to check the difficulty.",
+      "explanation": "动作和目的在同一句出现。看封面只能辨认书，不能代替读一页判断难度。",
+      "id": "r06",
+      "evidenceOffsets": {
+        "start": 936,
+        "end": 1007,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why do they decide not to use the novel for their talk?",
+      "answers": [
+        "It does not give the animal facts they need."
+      ],
+      "options": [
+        "The librarian refuses to lend it.",
+        "It is already reserved by another reader.",
+        "It does not give the animal facts they need.",
+        "It has no cover."
+      ],
+      "evidence": "He enjoys the story, but it does not answer their questions about real animals.",
+      "explanation": "but 表明故事虽有趣，却不回答真实动物的问题；不是因为小说不能借或封面损坏。",
+      "id": "r07",
+      "evidenceOffsets": {
+        "start": 1008,
+        "end": 1087,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "Where is the recommended information book? Write NO MORE THAN THREE WORDS.",
+      "answers": [
+        "the top shelf"
+      ],
+      "evidence": "The librarian recommends an information book on the top shelf.",
+      "explanation": "问题要位置，原文是 on the top shelf。答案填 the top shelf；不要写 second shelf，那是另一份听力的细节。",
+      "maxWords": 3,
+      "id": "r08",
+      "evidenceOffsets": {
+        "start": 1210,
+        "end": 1272,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How does the index help the learners?",
+      "answers": [
+        "It shows which pages contain important words."
+      ],
+      "options": [
+        "It shows which pages contain important words.",
+        "It translates every chapter.",
+        "It tells them when the library closes.",
+        "It replaces the library card."
+      ],
+      "evidence": "An index at the back lists important words and the pages where they appear.",
+      "explanation": "索引把词和页码对应起来，所以能定位信息；它不是每章的完整翻译。",
+      "id": "r09",
+      "evidenceOffsets": {
+        "start": 1273,
+        "end": 1348,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why must reference books stay inside the building?",
+      "answers": [
+        "So that everyone can use them."
+      ],
+      "options": [
+        "Because their covers are missing.",
+        "Because they are all novels.",
+        "Because nobody wants to read them.",
+        "So that everyone can use them."
+      ],
+      "evidence": "Reference books stay inside the building so that everyone can use them.",
+      "explanation": "so that 引出目的：让所有读者都能查阅，不是说参考书不重要或已经被预约。",
+      "id": "r10",
+      "evidenceOffsets": {
+        "start": 1496,
+        "end": 1567,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "How much does printing one page cost? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "ten cents"
+      ],
+      "evidence": "A printer beside the computers can produce a copy of their notes for ten cents per page.",
+      "explanation": "per page 表示每页十美分；two pages 是这次打印的数量。",
+      "maxWords": 2,
+      "id": "r11",
+      "evidenceOffsets": {
+        "start": 1763,
+        "end": 1851,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where may the learners discuss their findings aloud?",
+      "answers": [
+        "In a separate conversation room."
+      ],
+      "options": [
+        "Only outside the building.",
+        "In a separate conversation room.",
+        "Beside every study desk.",
+        "Anywhere in the quiet reading area."
+      ],
+      "evidence": "A sign asks for silence near the study desks, while conversations are allowed in a separate room.",
+      "explanation": "while 对比两个区域：学习桌附近安静，单独房间允许交流；不能把安静要求套到所有房间。",
+      "id": "r12",
+      "evidenceOffsets": {
+        "start": 1596,
+        "end": 1693,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "title": "Finding Useful Information at the Library",
+  "estimatedMinutes": 35,
+  "passage": "Maya and Leo visit the local library on Tuesday afternoon. They want to find information for a short talk about animals. A librarian welcomes them and explains how to use the building. Each visitor needs a library card to take a book home. A normal loan lasts two weeks. Visitors can renew a book once if nobody else needs it, but they must ask before the return date.\n\nThe librarian shows them a computer near the desk. Its screen displays a list of books. They can search by author, title or topic. Maya types the name of an animal and sees twelve results. She does not select the first result immediately. She checks whether each book is available and reads a short description. One useful book is already with another reader. Maya can reserve it and collect it when it comes back.\n\nLeo walks along the wide aisle to the fiction section. He finds a short novel with a green cover. Its author also writes stories for younger readers. Leo opens the first chapter and reads one page to check the difficulty. He enjoys the story, but it does not answer their questions about real animals. They decide to read it at home later rather than use it for the talk.\n\nFor their project, they need a different resource. The librarian recommends an information book on the top shelf. An index at the back lists important words and the pages where they appear. This helps the learners find facts without reading every chapter. There is also a dictionary on the reference table. It explains unfamiliar words. Reference books stay inside the building so that everyone can use them.\n\nThe reading area is quiet. A sign asks for silence near the study desks, while conversations are allowed in a separate room. Maya and Leo take notes there and compare the facts they have found. A printer beside the computers can produce a copy of their notes for ten cents per page. They print only two pages. Before leaving, they check the book's return date and put the dictionary back. They now have enough information to prepare their talk together.",
+  "instructions": "Read the whole passage. Choose ONE answer for each multiple-choice question. Follow the word limit for short answers.",
+  "questionCount": 12
+}

@@ -21,6 +21,18 @@ function core(source){
 }
 function year(source){return replace(source,"local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1')","local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1'&&value?.reviewedRetention!==undefined){const retention=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);if(!retention?.activityDrafts)throw Error('新语境保持活动组件未加载，预算核验暂停，原输入保留。');local.push(...retention.activityDrafts(value));}if(key==='ielts52-memory-v1')",'Year raw optional activity');}
 function app(source){
+ // v109 reuses immutable record snapshots instead of clearing valid audio
+ // proof every five seconds. Validate the exact later form through the old
+ // complete validator and return the actual consumer byte-for-byte.
+ const cached="setRecords(values){const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(records===values&&(!runtime||runtime.isCurrentFullRecords(familySnapshots.get(day))))return;records=values;retention?.setRecords?.(values);render();if(root.IELTSFamilyLessonExpansionV95?.runtime)refreshFamily(day).then(()=>{if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});}";
+ const refreshed="setRecords(values){records=values;retention?.setRecords?.(values);familySnapshots.clear();render();if(root.IELTSFamilyLessonExpansionV95?.runtime)refreshFamily(day).then(()=>{if(!disposed)render();}).catch(error=>{if(!disposed)notice(error.message);});}";
+ if(source.includes('setRecords(values){const runtime=')){
+  const count=source.split(cached).length-1;
+  if(count!==1||source.includes(refreshed))throw Error((count>1||source.includes(refreshed)?'Ambiguous':'Missing')+' exact family retention anchor: cached records');
+  const normalized=source.replace(cached,refreshed);
+  if(app(normalized)!==normalized)throw Error('Cached family records require an already complete retention consumer');
+  return source;
+ }
  // Preserve the exact later Bank mapping while still verifying every original v88 anchor.
  const bankHook="    const releaseMapping=legacyReleaseMapping(M.read(),{retention:retentionAPI,bankRuntime:options.bankRuntime});\n    if(releaseMapping.status!=='ready')throw Error('已保存词汇的版本待核验，原答案和原音保留，请重试加载完整学习包。');\n";
  if(source.includes('    const releaseMapping=legacyReleaseMapping(')){

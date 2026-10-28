@@ -1,7 +1,7 @@
 'use strict';
 // All reviews, speech evidence and answers below are synthetic engineering fixtures.
 // They demonstrate software reachability; they are not learner, service, or Band evidence.
-const crypto=require('node:crypto'),D=require('../assets/curriculum-data.js'),P=require('../assets/course-player.js'),A=require('../assets/assessment-core.js'),V=require('../assets/vocabulary-practice.js'),O=require('../assets/oral-practice.js'),M=require('../assets/mistake-book.js');
+const crypto=require('node:crypto'),D=require('./published-public-baseline-fixture.cjs')(require('../assets/curriculum-data.js')),P=require('../assets/course-player.js'),A=require('../assets/assessment-core.js'),V=require('../assets/vocabulary-practice.js'),O=require('../assets/oral-practice.js'),M=require('../assets/mistake-book.js');
 require('../assets/daily-plan-state.js');
 const START=Date.parse('2025-01-01T12:00:00.000Z'),DAY=86400000,map=new Map(D.materials.map(m=>[m.id,m])),clone=v=>JSON.parse(JSON.stringify(v));
 function original(day,task,m,at,unseen=true){

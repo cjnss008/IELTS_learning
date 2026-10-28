@@ -1,0 +1,231 @@
+{
+  "id": "family-linked-d10-listening-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 10,
+  "skill": "listening",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "derivation": {
+      "previousMaterialId": "candidate-d10-directions-a2-v4-listening",
+      "previousMaterialVersion": "4",
+      "previousMaterialContentHash": "321abe924b53656ab28b90c65046b5857afd1b4462c046f2cbe5ea90f4b8e3b2",
+      "previousFileSha256": "0c44c39cb035e847cac4d8645cf1a2a61e104570413c25080bf4bff91ac32d53",
+      "previousDerivation": null,
+      "scope": "Bind unchanged synthetic candidate audio to unchanged transcript and questions.",
+      "verification": "pending-independent-review"
+    },
+    "audioProvenance": {
+      "type": "synthetic-tts",
+      "metadataFile": "provenance/day10/tts-metadata.json",
+      "metadataSha256": "f68e2d1d578525a7aa744caf1a80e57f90f3bdca23a67935b03ebbe74c0162eb",
+      "originalSourceFile": "provenance/day10/tts-source-material.json",
+      "originalSourceSha256": "4586d1d40e81b0701e51dd00d3c3010b735d207fef79800f74e4ac9840e12d49",
+      "machineAuditFile": "provenance/day10/role-pause-audit.json",
+      "machineAuditSha256": "5e00f3d7bd38c4be75ef2ca7bb87a25907d6be27d39c50fd6fe1b24c1878edcd",
+      "humanListened": false,
+      "rightsReview": "pending",
+      "transcriptAudibility": "pending-independent-human-listening"
+    },
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "conversation",
+  "title": "The Next History Walk",
+  "instructions": "Listen to the conversation and answer the questions.",
+  "estimatedMinutes": 30,
+  "transcript": "Maya: Is the next history walk on Thursday?\nLeo: No. It is on Wednesday at four thirty.\nMaya: Where should we meet before it starts?\nLeo: At the public library entrance, not the station.\nMaya: Do we need to buy tickets there?\nLeo: No. The guide will bring the tickets.\nMaya: Should we take bus number eight?\nLeo: No. Take number twelve and get off at Oak Street.\nMaya: What should I bring if it rains?\nLeo: Please bring a small umbrella.\nMaya: Where can my sister wait if she is early?\nLeo: Inside the library, by the newspaper rack.\nMaya: If I am late, may I call you?\nLeo: Yes, call me. Then I can tell the guide.",
+  "transcriptSha256": "0e3bf6f27c2551f4c806372e4eb5d9b8cd0b4c8b4dbd81f69b79e698396d6360",
+  "audio": "audio/curriculum/day10-linked-audio-pending-v1.mp3",
+  "audioRequirements": {
+    "minimumSpeakers": 2,
+    "turnGapMs": 800,
+    "roleVoices": {
+      "maya": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural"
+    }
+  },
+  "questions": [
+    {
+      "id": "l01",
+      "type": "single",
+      "prompt": "When is the next history walk?",
+      "options": [
+        "Wednesday at four thirty.",
+        "Friday at four thirty.",
+        "Wednesday at three thirty.",
+        "Thursday at four thirty."
+      ],
+      "answers": [
+        "Wednesday at four thirty."
+      ],
+      "evidence": "It is on Wednesday at four thirty.",
+      "explanation": "Leo 纠正星期并说出时间。",
+      "evidenceOffsets": {
+        "start": 53,
+        "end": 87,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l02",
+      "type": "single",
+      "prompt": "Where should Maya and Leo meet?",
+      "options": [
+        "At the swimming pool entrance.",
+        "At the public library entrance.",
+        "At the sports center entrance.",
+        "At the community center entrance."
+      ],
+      "answers": [
+        "At the public library entrance."
+      ],
+      "evidence": "At the public library entrance, not the station.",
+      "explanation": "图书馆入口，而非车站。",
+      "evidenceOffsets": {
+        "start": 138,
+        "end": 186,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l03",
+      "type": "single",
+      "prompt": "Who will bring the tickets?",
+      "options": [
+        "Maya.",
+        "The bus driver.",
+        "The guide.",
+        "Leo."
+      ],
+      "answers": [
+        "The guide."
+      ],
+      "evidence": "The guide will bring the tickets.",
+      "explanation": "Leo 说导览人员带票。",
+      "evidenceOffsets": {
+        "start": 235,
+        "end": 268,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l04",
+      "type": "single",
+      "prompt": "Which bus number should Maya take?",
+      "options": [
+        "Sixteen.",
+        "Eight.",
+        "Twelve.",
+        "Six."
+      ],
+      "answers": [
+        "Twelve."
+      ],
+      "evidence": "Take number twelve",
+      "explanation": "Leo 纠正八路，改为十二路。",
+      "evidenceOffsets": {
+        "start": 317,
+        "end": 335,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l05",
+      "type": "single",
+      "prompt": "Where should Maya get off?",
+      "options": [
+        "King Street.",
+        "Oak Street.",
+        "Park Street.",
+        "Lake Street."
+      ],
+      "answers": [
+        "Oak Street."
+      ],
+      "evidence": "get off at Oak Street",
+      "explanation": "Leo 说明在 Oak Street 下车。",
+      "evidenceOffsets": {
+        "start": 340,
+        "end": 361,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l06",
+      "type": "single",
+      "prompt": "What should Maya bring if it rains?",
+      "options": [
+        "A small raincoat.",
+        "A small rain hat.",
+        "A small umbrella.",
+        "A small waterproof bag."
+      ],
+      "answers": [
+        "A small umbrella."
+      ],
+      "evidence": "Please bring a small umbrella.",
+      "explanation": "Leo 的原话是 Please bring a small umbrella，要求带一把小雨伞。问题中的 if it rains 限定下雨时需要的物品；地图用于找路，车票用于乘车，都不符合这条防雨建议。",
+      "evidenceOffsets": {
+        "start": 407,
+        "end": 437,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l07",
+      "type": "single",
+      "prompt": "Which location does Leo name for Maya’s sister to wait if she is early?",
+      "options": [
+        "Inside the library, by the front window.",
+        "Inside the library, by the newspaper rack.",
+        "Inside the library, by the stairs.",
+        "Inside the library, by the information desk."
+      ],
+      "answers": [
+        "Inside the library, by the newspaper rack."
+      ],
+      "evidence": "Inside the library, by the newspaper rack.",
+      "explanation": "Leo 明确说在图书馆报架旁。",
+      "evidenceOffsets": {
+        "start": 491,
+        "end": 533,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l08",
+      "type": "single",
+      "prompt": "What does Leo ask Maya to do if she is late?",
+      "options": [
+        "Cancel the walk.",
+        "Call the guide herself.",
+        "Return to the station.",
+        "Call Leo."
+      ],
+      "answers": [
+        "Call Leo."
+      ],
+      "evidence": "Leo: Yes, call me. Then I can tell the guide.",
+      "explanation": "Leo 请她给自己打电话，再由他转告导览人员。",
+      "evidenceOffsets": {
+        "start": 570,
+        "end": 615,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "questionCount": 8,
+  "audioKind": "synthetic",
+  "audioSynthetic": true
+}

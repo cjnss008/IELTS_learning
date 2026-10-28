@@ -15,14 +15,16 @@ const BASE={
 const FIELDS=['version','status','createdDate','scope','weeks','materials','days','gates','lessonExpansions','familyLessonRelease'];
 const textHash=value=>A.sourceTextHash(JSON.stringify(value));
 const core=data=>Object.fromEntries(FIELDS.filter(k=>data[k]!==undefined).map(k=>[k,data[k]]));
-const baseline=data=>{const value={...data};delete value.audit;delete value.yearFirstUse;delete value.familyLessonRelease;return value;};
+// Authoring leaves optional fields undefined; the published JS/JSON omits them.
+// Verify the same serialized baseline used by the signed public snapshot.
+const baseline=data=>{const value={...data};delete value.audit;delete value.yearFirstUse;delete value.familyLessonRelease;return JSON.parse(JSON.stringify(value));};
 const check=(ok,why)=>{if(!ok)throw Error('family-public-append-v1: '+why);};
 function append(data,options={}){
  check(data&&!data.familyLessonRelease&&Array.isArray(data.materials)&&data.materials.length===BASE.count,'wrong original set');
  check(A.materialContentHash(baseline(data))===BASE.fingerprint&&textHash(core(data))===BASE.core,'original data mismatch');
  check((data.yearFirstUse===undefined||data.yearFirstUse?.coreHash===BASE.core)&&data.publicCoursePlan?.planHash===BASE.plan,'original contract mismatch');
  check(A.sourceTextHash(JSON.stringify(data.publicCoursePlan,null,2)+'\n')===BASE.planBytes,'original public plan bytes differ');
- const verified=Planner.validatePlan(data.publicCoursePlan,data,{assessment:A,materialContentHash:A.materialContentHash,expandDay:Expansion.overlay});
+ const verified=Planner.validatePlan(data.publicCoursePlan,baseline(data),{assessment:A,materialContentHash:A.materialContentHash,expandDay:Expansion.overlay});
  check(verified.valid,'original planner invalid: '+verified.reasons.join(','));
  const before=JSON.stringify(baseline(data));
  const result=Loader.apply(data,{...options,assessment:A});

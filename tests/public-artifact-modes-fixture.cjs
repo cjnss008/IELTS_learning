@@ -26,7 +26,7 @@ function loadLegacy({data=require('../assets/curriculum-data.js'),sourceContexts
  const value={mode:explicit?'explicit-gsa80':'default75',actual:data,actualSourceContexts:sourceContexts,legacy,legacySourceContexts,release,newMaterialIds:[...newIds],additionalGrammarMaterialIds,legacyMaterialIds:PIN.publicMaterialIds.slice(),expected,defaultPin:PIN,auditOptions:{projectRoot,...(explicit?{gsaGradedRelease:PIN.explicit.releasePath}:{})}};cache.set(data,{signature,projectRoot,value});return value;
 }
 function load(options={}){
- const data=options.data||require('../assets/curriculum-data.js'),sourceContexts=options.sourceContexts||require('../assets/public-context-data.js'),projectRoot=options.projectRoot||repo;
+ const data=require('./published-public-baseline-fixture.cjs')(options.data||require('../assets/curriculum-data.js')),sourceContexts=options.sourceContexts||require('../assets/public-context-data.js'),projectRoot=options.projectRoot||repo;
  if(!data.audit?.ordinaryReading&&!data.materials.some(m=>/^public-ordinary-v92-/.test(m.id)))return{...loadLegacy({...options,data,sourceContexts,projectRoot}),newReadingMaterialIds:[]};
  const relative='curriculum/ordinary-reading-v92/release.json',ordinary=require('../tools/build-ordinary-reading-course.cjs').load({root:projectRoot,releasePath:relative}),ids=new Set(ordinary.materials.map(m=>m.id)),sourceIds=new Set(ordinary.release.sourceIds);
  assert.deepEqual(data.materials.filter(m=>/^public-ordinary-v92-/.test(m.id)),ordinary.materials,'exact reviewed six reading additions');

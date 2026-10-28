@@ -1,0 +1,254 @@
+{
+  "id": "family-linked-d10-grammar-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 10,
+  "skill": "grammar",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "grammar",
+  "title": "出行计划：be going to、must / must not 与路线顺序",
+  "instructions": "先理解本课新结构，再独立作答。提交后查看原句、正确表达和原因。",
+  "estimatedMinutes": 35,
+  "passage": "本课把地点和方向词用于完整出行计划。复习第5课问句、第7课过去经历，以及第9课路线之间的比较。\n\n1. 已经决定的计划可以用 be going to + 动词原形：We are going to visit the museum. She is going to take the bus. 主语变化时改变 am/is/are；going to 后不使用 visits。\n\n2. 计划问句：Are you going to walk? Where are you going to meet? 否定：We are not going to drive. 过去实际发生的动作仍用过去式：Yesterday, we took the train.\n\n3. must + 动词原形表达必须：You must cross at the signal. must not 表示禁止：You must not cross while the light is red. don't have to 表示不必：You don't have to buy a ticket because the talk is free. “禁止买”与“不必买”不同。\n\n4. 路线指令用原形：Walk straight, then turn right. Go past the bakery. The museum is between the bakery and the restaurant. past 表示经过，across 表示从一边到另一边：Cross the street at the signal.\n\n5. 顺序和终点：Before you cross, check the signal. After you cross, turn right. Walk until you reach the market. until 表示持续走到到达市场为止。\n\n6. 礼貌询问：Could you tell me where the entrance is? 嵌入问句用陈述语序 entrance is，不写 where is the entrance。选择路线时给理由：We are going to take the shorter route because we have little time.",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "We ____ going to visit the museum tomorrow.",
+      "options": [
+        "am",
+        "be",
+        "are",
+        "is"
+      ],
+      "answers": [
+        "are"
+      ],
+      "evidence": "We are going to visit the museum.",
+      "explanation": "we 配 are，构成已经决定的未来计划。",
+      "id": "g01"
+    },
+    {
+      "type": "single",
+      "prompt": "She is going to ____ the bus.",
+      "options": [
+        "taking",
+        "take",
+        "takes",
+        "took"
+      ],
+      "answers": [
+        "take"
+      ],
+      "evidence": "She is going to take the bus.",
+      "explanation": "be going to 后接原形 take，不加第三人称 s。",
+      "id": "g02"
+    },
+    {
+      "type": "single",
+      "prompt": "____ you going to walk to the station?",
+      "options": [
+        "Are",
+        "Do",
+        "Did",
+        "Is"
+      ],
+      "answers": [
+        "Are"
+      ],
+      "evidence": "Are you going to walk?",
+      "explanation": "be going to 的问句将 are 前移。",
+      "id": "g03"
+    },
+    {
+      "type": "single",
+      "prompt": "Where ____ you going to meet tomorrow?",
+      "options": [
+        "do",
+        "is",
+        "did",
+        "are"
+      ],
+      "answers": [
+        "are"
+      ],
+      "evidence": "Where are you going to meet?",
+      "explanation": "you 配 are；这里不是普通动作习惯问句，不用 do。",
+      "id": "g04"
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the negative sentence about a plan.",
+      "options": [
+        "We are going not drive.",
+        "We not are going to drive.",
+        "We are not going to drive.",
+        "We do not going to drive."
+      ],
+      "answers": [
+        "We are not going to drive."
+      ],
+      "evidence": "We are not going to drive.",
+      "explanation": "not 放在 be 之后；going to 后仍接原形。",
+      "id": "g05"
+    },
+    {
+      "type": "single",
+      "prompt": "Yesterday, we ____ the train to town.",
+      "options": [
+        "taking",
+        "took",
+        "are going to take",
+        "takes"
+      ],
+      "answers": [
+        "took"
+      ],
+      "evidence": "Yesterday, we took the train.",
+      "explanation": "Yesterday 谈过去已发生的事，用 took，而不是未来计划。",
+      "id": "g06"
+    },
+    {
+      "type": "single",
+      "prompt": "You must ____ at the signal.",
+      "options": [
+        "cross",
+        "to cross",
+        "crosses",
+        "crossing"
+      ],
+      "answers": [
+        "cross"
+      ],
+      "evidence": "You must cross at the signal.",
+      "explanation": "must 后接原形 cross，不用 to cross 或 crosses。",
+      "id": "g07"
+    },
+    {
+      "type": "single",
+      "prompt": "The light is red. You ____ cross the street now.",
+      "options": [
+        "don't have to",
+        "must",
+        "are going",
+        "must not"
+      ],
+      "answers": [
+        "must not"
+      ],
+      "evidence": "You must not cross while the light is red.",
+      "explanation": "must not 表禁止。don’t have to 仅表示没有必要，不表示禁止。",
+      "id": "g08"
+    },
+    {
+      "type": "single",
+      "prompt": "The talk is free, so you ____ buy a ticket. It is not necessary.",
+      "options": [
+        "must",
+        "are",
+        "don't have to",
+        "must not"
+      ],
+      "answers": [
+        "don't have to"
+      ],
+      "evidence": "You don't have to buy a ticket because the talk is free.",
+      "explanation": "不必购买用 don’t have to；must not 是不允许购买，意义不同。",
+      "id": "g09"
+    },
+    {
+      "type": "single",
+      "prompt": "Walk straight, ____ turn right.",
+      "options": [
+        "because of",
+        "then",
+        "than",
+        "that"
+      ],
+      "answers": [
+        "then"
+      ],
+      "evidence": "Walk straight, then turn right.",
+      "explanation": "then 表示下一步；than 用于比较。",
+      "id": "g10"
+    },
+    {
+      "type": "single",
+      "prompt": "Go ____ the bakery. Continue walking beyond it.",
+      "options": [
+        "past",
+        "pass",
+        "passed",
+        "passing"
+      ],
+      "answers": [
+        "past"
+      ],
+      "evidence": "Go past the bakery.",
+      "explanation": "past 表示从面包店旁经过并继续前行。pass 是动词，不能在 go 后这样使用。",
+      "id": "g11"
+    },
+    {
+      "type": "single",
+      "prompt": "The museum is between the bakery ____ the restaurant.",
+      "options": [
+        "to",
+        "than",
+        "of",
+        "and"
+      ],
+      "answers": [
+        "and"
+      ],
+      "evidence": "The museum is between the bakery and the restaurant.",
+      "explanation": "between A and B 固定连接两个参照地点。",
+      "id": "g12"
+    },
+    {
+      "type": "single",
+      "prompt": "Keep walking ____ you reach the market.",
+      "options": [
+        "because of",
+        "during",
+        "until",
+        "before"
+      ],
+      "answers": [
+        "until"
+      ],
+      "evidence": "Walk until you reach the market.",
+      "explanation": "until 表示一直持续到指定终点；before 会要求在到达前结束。",
+      "id": "g13"
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the polite question with correct word order.",
+      "options": [
+        "Could you tell me where does the entrance is?",
+        "Could you tell me where the entrance is?",
+        "Could you tell me where is the entrance?",
+        "Could you tell me where the entrance are?"
+      ],
+      "answers": [
+        "Could you tell me where the entrance is?"
+      ],
+      "evidence": "Could you tell me where the entrance is?",
+      "explanation": "嵌入问句使用陈述语序 the entrance is；独立问句才是 Where is the entrance?",
+      "id": "g14"
+    }
+  ],
+  "questionCount": 14
+}

@@ -1,0 +1,104 @@
+{
+  "version": "0.0.109",
+  "date": "2026-10-28",
+  "status": "release-validated",
+  "scope": "Lessons 4–10 linked content and lesson 4 vocabulary navigation; prior works retained",
+  "fullRegression": {
+    "tests": 2700,
+    "passed": 2698,
+    "failed": 0,
+    "skipped": 2,
+    "cancelled": 0,
+    "log": "release-overview-final-v109.log"
+  },
+  "targetedRegression": {
+    "tests": 67,
+    "passed": 67,
+    "failed": 0
+  },
+  "skips": [
+    "Installed CPU speech recognizer integration not available",
+    "Native Windows file symlink privilege unavailable; directory junction checks ran"
+  ],
+  "formalBuild": {
+    "days": 365,
+    "materials": 1912,
+    "unchangedOriginalMaterials": 1842,
+    "addedMaterials": 70,
+    "annualOnDemandMaterials": 688,
+    "missing": 0,
+    "audioMissing": 0,
+    "components": 55,
+    "index": "curriculum/year-first-use/index.389e509ed23882f4.json"
+  },
+  "newContent": {
+    "days": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "targetWords": 210,
+    "wordsPerUnit": 30,
+    "vocabularyGroups": 35,
+    "grammar": 7,
+    "reading": 7,
+    "listening": 7,
+    "speaking": 7,
+    "writing": 7,
+    "objectiveQuestions": 242,
+    "review": "AI-assisted editorial and engineering checks; not human examiner calibration"
+  },
+  "curriculumAudit": {
+    "status": "passed",
+    "questions": 7668
+  },
+  "questionAudit": {
+    "sourceMaterials": 830,
+    "questionInstances": 7800,
+    "high": 0,
+    "reviewedCandidates": 5,
+    "unresolved": 0,
+    "note": "Legacy source scan; new family materials separately checked by linked lessons regression and root review"
+  },
+  "static": {
+    "pages": 27,
+    "localLinksAndAssets": 870,
+    "scripts": 129,
+    "originalLessons": 52,
+    "originalVocabularyAudio": 360
+  },
+  "browser": {
+    "environment": "Isolated development server 127.0.0.1:18765 with synthetic records only",
+    "passed": [
+      "Import synthetic first-three-lesson history through backup UI",
+      "Lesson 4 home displays library theme and five groups / thirty target words",
+      "Lesson 4 vocabulary sidebar navigates to day 4 vocabulary page",
+      "First group contains library, librarian, shelf, aisle, section, fiction",
+      "Real keyboard input keeps focus and unlocks recording after three correct spellings",
+      "Save, refresh and resume retains three correct spellings",
+      "Local single-word audio plays to completion"
+    ],
+    "limitations": [
+      "No new live DeepSeek or Ali service call in this iteration",
+      "No human microphone or long-term learning-outcome validation",
+      "Some browser automation commands timed out while full regression ran; resulting UI state checked before any repeat"
+    ]
+  },
+  "dataProtection": {
+    "realLearnerDataUsed": false,
+    "realCredentialsUsed": false,
+    "originalMaterialsOverwritten": false,
+    "oldRuntimeContractsOverwritten": false
+  },
+  "remaining": [
+    "Lessons 11–365 have not all been rewritten into thirty-new-word linked units",
+    "Legacy course exercises remain, so some profiles can still have additional old unlearned words; exact total daily workload integration remains",
+    "Implement archived family release compatibility before adding further published batches or changing their bindings",
+    "Continue source diversity, unseen transfer checks and scoring reliability"
+  ],
+  "releasePolicy": "User explicitly requested early merge; no force push, no user-data migration or reset"
+}

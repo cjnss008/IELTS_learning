@@ -1,0 +1,231 @@
+{
+  "id": "family-linked-d08-listening-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 8,
+  "skill": "listening",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "derivation": {
+      "previousMaterialId": "candidate-d08-shelter-a2-v11-listening",
+      "previousMaterialVersion": "11",
+      "previousMaterialContentHash": "14b8392f76253769d180eeed2580fab5c3035610e73ce70a1a591e9fd07370de",
+      "previousFileSha256": "c0370b9e0b4bb8e3c91a90624f93ee4bade798df35947864c3361b9a2102725b",
+      "previousDerivation": null,
+      "scope": "Bind unchanged synthetic candidate audio to unchanged transcript and questions.",
+      "verification": "pending-independent-review"
+    },
+    "audioProvenance": {
+      "type": "synthetic-tts",
+      "metadataFile": "provenance/day08/tts-metadata.json",
+      "metadataSha256": "435048d04d9ef2ab2f11e38b8026bd222c38fb04f563ac3bf4da47a01a7f6284",
+      "originalSourceFile": "provenance/day08/tts-source-material.json",
+      "originalSourceSha256": "a8f8a3fe6c8c7434e65399130b13abf057252311a40d6187e09fdf9f472e9786",
+      "machineAuditFile": "provenance/day08/role-pause-audit.json",
+      "machineAuditSha256": "5b9611e315a7587e650f8b27a164ae5e603c8da3af3ee862c76cc5584ab46975",
+      "humanListened": false,
+      "rightsReview": "pending",
+      "transcriptAudibility": "pending-independent-human-listening"
+    },
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "conversation",
+  "title": "Finding the New Bus Stop",
+  "instructions": "Listen to a later conversation on Tuesday and answer the questions.",
+  "estimatedMinutes": 30,
+  "transcript": "Maya: Leo, the usual bus stop is closed today. How can we get to the new stop?\nLeo: Turn right at the bakery, then walk past the library.\nMaya: Is it beside the green gate?\nLeo: No. It is across from the library, next to the pharmacy.\nMaya: What time does the next bus leave?\nLeo: At three fifteen. We have twenty minutes.\nMaya: Good. I need to return this visitor badge first.\nLeo: The office worker said to leave it on the counter.\nMaya: I will do that. Could you carry the folded poster?\nLeo: Yes. I will keep it in my coat if it rains.\nMaya: Thank you. Should we ask the worker about tomorrow?\nLeo: Yes. She wants us to arrive at nine and bring two clean towels.\nMaya: I will write that in my notebook.\nLeo: Great. Then let us walk to the new stop together.",
+  "transcriptSha256": "dd189cac5e4ba3e5af91e9f59a4d0b3588270095221b6bc7183f0d4e441505ce",
+  "audio": "audio/curriculum/day08-linked-audio-pending-v1.mp3",
+  "audioRequirements": {
+    "minimumSpeakers": 2,
+    "turnGapMs": 800,
+    "roleVoices": {
+      "maya": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural"
+    }
+  },
+  "questions": [
+    {
+      "id": "l01",
+      "type": "single",
+      "prompt": "Why do Maya and Leo need another bus stop?",
+      "options": [
+        "The usual stop is closed.",
+        "They have missed the last bus.",
+        "The office is moving tomorrow.",
+        "The library has no map."
+      ],
+      "answers": [
+        "The usual stop is closed."
+      ],
+      "evidence": "the usual bus stop is closed today",
+      "explanation": "Maya 先说明原公交站今天关闭。",
+      "evidenceOffsets": {
+        "start": 11,
+        "end": 45,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l02",
+      "type": "single",
+      "prompt": "Which way should they turn at the bakery?",
+      "options": [
+        "Left.",
+        "Back toward the office.",
+        "Into the bakery.",
+        "Right."
+      ],
+      "answers": [
+        "Right."
+      ],
+      "evidence": "Turn right at the bakery",
+      "explanation": "Leo 指示在面包店右转。",
+      "evidenceOffsets": {
+        "start": 84,
+        "end": 108,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l03",
+      "type": "single",
+      "prompt": "Where is the new stop?",
+      "options": [
+        "Across from the pharmacy, next to the library.",
+        "Beside the library, next to the bakery.",
+        "Across from the library, next to the pharmacy.",
+        "Beside the green gate, next to the bakery."
+      ],
+      "answers": [
+        "Across from the library, next to the pharmacy."
+      ],
+      "evidence": "Maya: Is it beside the green gate?\nLeo: No. It is across from the library, next to the pharmacy.",
+      "explanation": "Leo 纠正了绿色大门旁的猜测。",
+      "evidenceOffsets": {
+        "start": 138,
+        "end": 234,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l04",
+      "type": "single",
+      "prompt": "When does the next bus leave?",
+      "options": [
+        "At four.",
+        "At three fifteen.",
+        "At two fifteen.",
+        "At three fifty."
+      ],
+      "answers": [
+        "At three fifteen."
+      ],
+      "evidence": "Maya: What time does the next bus leave?\nLeo: At three fifteen.",
+      "explanation": "对话明确给出三点十五分。",
+      "evidenceOffsets": {
+        "start": 235,
+        "end": 298,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l05",
+      "type": "single",
+      "prompt": "What does Maya need to return?",
+      "options": [
+        "A visitor badge.",
+        "A borrowed book.",
+        "A library card.",
+        "A paper form."
+      ],
+      "answers": [
+        "A visitor badge."
+      ],
+      "evidence": "Maya: Good. I need to return this visitor badge first.",
+      "explanation": "Maya 需要先归还访客证。",
+      "evidenceOffsets": {
+        "start": 323,
+        "end": 377,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l06",
+      "type": "single",
+      "prompt": "Where should Maya leave the item she needs to return?",
+      "options": [
+        "Under the bus seat.",
+        "By the green gate.",
+        "In the library.",
+        "On the counter."
+      ],
+      "answers": [
+        "On the counter."
+      ],
+      "evidence": "Maya: Good. I need to return this visitor badge first.\nLeo: The office worker said to leave it on the counter.",
+      "explanation": "it 指前一轮所说的 badge。",
+      "evidenceOffsets": {
+        "start": 323,
+        "end": 433,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l07",
+      "type": "single",
+      "prompt": "What does Maya ask Leo to carry?",
+      "options": [
+        "The folded brochure.",
+        "The folded paper bag.",
+        "The folded poster.",
+        "The folded calendar."
+      ],
+      "answers": [
+        "The folded poster."
+      ],
+      "evidence": "Maya: I will do that. Could you carry the folded poster?\nLeo: Yes.",
+      "explanation": "Maya 请求 Leo 拿折好的海报，他回答 Yes。",
+      "evidenceOffsets": {
+        "start": 434,
+        "end": 500,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l08",
+      "type": "single",
+      "prompt": "What does the worker ask them to bring tomorrow?",
+      "options": [
+        "One clean towel.",
+        "Two clean towels.",
+        "Three clean towels.",
+        "Two clean blankets."
+      ],
+      "answers": [
+        "Two clean towels."
+      ],
+      "evidence": "Maya: Thank you. Should we ask the worker about tomorrow?\nLeo: Yes. She wants us to arrive at nine and bring two clean towels.",
+      "explanation": "Leo 复述工作人员的要求。",
+      "evidenceOffsets": {
+        "start": 540,
+        "end": 666,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "questionCount": 8,
+  "audioKind": "synthetic",
+  "audioSynthetic": true
+}

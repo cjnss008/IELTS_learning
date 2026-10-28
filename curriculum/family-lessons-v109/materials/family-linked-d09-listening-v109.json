@@ -1,0 +1,238 @@
+{
+  "id": "family-linked-d09-listening-v109",
+  "version": "109",
+  "week": 2,
+  "courseDay": 9,
+  "skill": "listening",
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "project-original",
+    "rights": "项目原创教学正文、题目与例句；基础词条沿用项目已记录来源。音频为美式合成语音。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "derivation": {
+      "previousMaterialId": "candidate-d09-cooking-a2-v6-listening-cue-v2",
+      "previousMaterialVersion": "6",
+      "previousMaterialContentHash": "df7a2fe7ae91aa35f6dfd7dc9f9684500ba7711ed8c95c87fb9508cfb04e29f6",
+      "previousFileSha256": "e958583d095fb24c10c9e9b3708952a30bfbece33369fa67d6a07af195911168",
+      "previousDerivation": {
+        "previousMaterialId": "candidate-d09-cooking-a2-v5-listening",
+        "previousMaterialVersion": "5",
+        "previousMaterialContentHash": "d6d8f294b06bb84fdda44e0e7bbe9ee1fb8837677967021dc7fe8a3b9d03bfb8",
+        "previousFileSha256": "62eb962a767ed5a29cc7776fbb5027e90a58b033e7935fe45a1fb5d70f897f80",
+        "scope": "Change l04 to test who changed class time and balance l05/l06 distractors. Original transcript and audio candidate remain unchanged.",
+        "verification": "pending-independent-review"
+      },
+      "scope": "Bind unchanged synthetic candidate audio to unchanged transcript and questions.",
+      "verification": "pending-independent-review"
+    },
+    "audioProvenance": {
+      "type": "synthetic-tts",
+      "metadataFile": "provenance/day09/tts-metadata.json",
+      "metadataSha256": "c25874a7e8986603b64643887dc5888c9ca6837d5815f00dc5fba0ed6f10cba9",
+      "originalSourceFile": "provenance/day09/tts-source-material.json",
+      "originalSourceSha256": "193bc82f9f27b5cc90a728d55af705a4c80f8efe5e4ab48c44ac7dfc7d452830",
+      "machineAuditFile": "provenance/day09/role-pause-audit.json",
+      "machineAuditSha256": "7a827140f6e1edc8253555e40edef4104353e124928bf6f825548d94571fbbf3",
+      "humanListened": false,
+      "rightsReview": "pending",
+      "transcriptAudibility": "pending-independent-human-listening"
+    },
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Original ordinary teaching content; source meaning/POS and every question checked against the text; not calibrated IELTS assessment."
+  },
+  "type": "conversation",
+  "title": "Preparing for the Next Class",
+  "instructions": "Listen to the conversation and answer the questions.",
+  "estimatedMinutes": 30,
+  "transcript": "Maya: Leo, is the next cooking class at five?\nLeo: No. Ms. Chen moved it to four forty-five on Friday.\nMaya: Where should we meet before class?\nLeo: At the library entrance, not at the bus stop.\nMaya: What should I buy on the way?\nLeo: Please buy two eggs. We already have apples.\nMaya: Should I buy fish as well?\nLeo: No. Ms. Chen said she will bring the fish herself.\nMaya: All right. Do we need a new bowl?\nLeo: No, but we need a clean cloth for the table.\nMaya: I can bring one from home. What if my bus is late?\nLeo: Send me a message, and I will tell Ms. Chen.\nMaya: Thanks. I will leave early and meet you at the library.\nLeo: Great. I will bring the shopping list.",
+  "transcriptSha256": "0f8c07a9c9a1f8da1169898bff4bcd8bd47375bcabd6e89332be2cbdc9283b7f",
+  "audio": "audio/curriculum/day09-linked-audio-pending-v1.mp3",
+  "audioRequirements": {
+    "minimumSpeakers": 2,
+    "turnGapMs": 800,
+    "roleVoices": {
+      "maya": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural"
+    }
+  },
+  "questions": [
+    {
+      "id": "l01",
+      "type": "single",
+      "prompt": "When is the next class?",
+      "options": [
+        "At five on Friday.",
+        "At four fifteen on Monday.",
+        "At three on Tuesday.",
+        "At four forty-five on Friday."
+      ],
+      "answers": [
+        "At four forty-five on Friday."
+      ],
+      "evidence": "moved it to four forty-five on Friday",
+      "explanation": "Leo 纠正原来的五点时间。",
+      "evidenceOffsets": {
+        "start": 64,
+        "end": 101,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l02",
+      "type": "single",
+      "prompt": "Where will Maya and Leo meet?",
+      "options": [
+        "At the market door.",
+        "On the balcony.",
+        "At the library entrance.",
+        "At the bus stop."
+      ],
+      "answers": [
+        "At the library entrance."
+      ],
+      "evidence": "At the library entrance, not at the bus stop.",
+      "explanation": "Leo 明确区分图书馆入口与公交站。",
+      "evidenceOffsets": {
+        "start": 149,
+        "end": 194,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l03",
+      "type": "single",
+      "prompt": "How many eggs should Maya buy?",
+      "options": [
+        "Four.",
+        "Two.",
+        "One.",
+        "Three."
+      ],
+      "answers": [
+        "Two."
+      ],
+      "evidence": "Please buy two eggs.",
+      "explanation": "Leo 要求买两个鸡蛋。",
+      "evidenceOffsets": {
+        "start": 236,
+        "end": 256,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l04",
+      "type": "single",
+      "prompt": "Who changed the time of the next cooking class?",
+      "options": [
+        "Maya.",
+        "Leo.",
+        "Ms. Chen.",
+        "The cooking class coordinator."
+      ],
+      "answers": [
+        "Ms. Chen."
+      ],
+      "evidence": "Maya: Leo, is the next cooking class at five?\nLeo: No. Ms. Chen moved it to four forty-five on Friday.",
+      "explanation": "Leo 明确说 Ms. Chen 调整了下一次烹饪课的时间；前句给出 it 的指代。",
+      "evidenceOffsets": {
+        "start": 0,
+        "end": 102,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l05",
+      "type": "single",
+      "prompt": "What does Leo say they already have?",
+      "options": [
+        "Apples.",
+        "Pears.",
+        "Bananas.",
+        "Oranges."
+      ],
+      "answers": [
+        "Apples."
+      ],
+      "evidence": "We already have apples.",
+      "explanation": "already 表示苹果已有。",
+      "evidenceOffsets": {
+        "start": 257,
+        "end": 280,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l06",
+      "type": "single",
+      "prompt": "What does Leo say they need for the table?",
+      "options": [
+        "A serving tray.",
+        "A napkin holder.",
+        "A table mat.",
+        "A clean cloth."
+      ],
+      "answers": [
+        "A clean cloth."
+      ],
+      "evidence": "we need a clean cloth for the table",
+      "explanation": "Leo 明确说需要一块干净的布；其他选项并非他说需要的物品。",
+      "evidenceOffsets": {
+        "start": 423,
+        "end": 458,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l07",
+      "type": "single",
+      "prompt": "What should Maya do if her bus is late?",
+      "options": [
+        "Cancel the class herself.",
+        "Send Leo a message.",
+        "Return to the market.",
+        "Call the driver."
+      ],
+      "answers": [
+        "Send Leo a message."
+      ],
+      "evidence": "Send me a message, and I will tell Ms. Chen.",
+      "explanation": "Leo 请求她发消息给他，由他转告 Ms. Chen。",
+      "evidenceOffsets": {
+        "start": 522,
+        "end": 566,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "id": "l08",
+      "type": "single",
+      "prompt": "Who will bring the shopping list?",
+      "options": [
+        "Leo.",
+        "Maya.",
+        "Ms. Chen.",
+        "The librarian."
+      ],
+      "answers": [
+        "Leo."
+      ],
+      "evidence": "Leo: Great. I will bring the shopping list.",
+      "explanation": "由轮次可知是 Leo 带清单。",
+      "evidenceOffsets": {
+        "start": 629,
+        "end": 672,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "questionCount": 8,
+  "audioKind": "synthetic",
+  "audioSynthetic": true
+}
