@@ -21,6 +21,20 @@ function core(source){
 }
 function year(source){return replace(source,"local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1')","local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1'&&value?.reviewedRetention!==undefined){const retention=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);if(!retention?.activityDrafts)throw Error('新语境保持活动组件未加载，预算核验暂停，原输入保留。');local.push(...retention.activityDrafts(value));}if(key==='ielts52-memory-v1')",'Year raw optional activity');}
 function app(source){
+ // The review-only projection extends the already complete saved-history
+ // consumer. Verify its declaration and public API together, then validate
+ // every earlier retention anchor on a temporary normalized copy.
+ const reviewMarker='getReviewPlan:',reviewDeclaration='function currentReviewPlan(',
+  reviewApi="return {render,openBatch,openSavedBatch,refreshSavedBatches,start,getPlan:currentPlan,getReviewPlan:currentReviewPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());",
+  priorApi=reviewApi.replace('getReviewPlan:currentReviewPlan,',''),
+  reviewFunction="    function currentReviewPlan() {\n      if(typeof E.reviewPlan!=='function')return currentPlan();\n      check();const budget=options.getBudget?.()||{remainingMinutes:360,exhausted:false};\n      return E.reviewPlan(M.read(),{data,now:now(),remainingMinutes:budget.exhausted||budget.dayEnded?0:budget.remainingMinutes,timerState:root.IELTSStudyTimer?.snapshot?.(),courseDay:day,records,familyRecords:familySnapshots.get(day)});\n    }\n";
+ if(source.includes('getReviewPlan')||source.includes('currentReviewPlan')){
+  const exactlyOnce=value=>source.split(value).length===2;
+  if(!exactlyOnce('getReviewPlan')||!exactlyOnce(reviewMarker)||!exactlyOnce(reviewDeclaration)||source.split('currentReviewPlan').length!==3||!exactlyOnce(reviewApi)||!exactlyOnce(reviewFunction)||source.includes(priorApi))throw Error('Missing or Ambiguous exact review-plan retention anchors');
+  const normalized=source.replace(reviewApi,priorApi).replace(reviewFunction,'');
+  if(app(normalized)!==normalized)throw Error('Review-plan mapping requires an already complete legacy retention consumer');
+  return source;
+ }
  // v109 reuses immutable record snapshots instead of clearing valid audio
  // proof every five seconds. Validate the exact later form through the old
  // complete validator and return the actual consumer byte-for-byte.

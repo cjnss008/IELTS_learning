@@ -2,10 +2,10 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const path = require('node:path');
-const { PUBLIC_V115, loadPublicInputs, buildInventory, eligible, fields } = require('../tools/build-annual-linked-supply.cjs');
+const { PUBLIC_V117, loadPublicInputs, buildInventory, eligible, fields } = require('../tools/build-annual-linked-supply.cjs');
 
 test('every public candidate resolves to its exact ordinary source and is not counted twice', () => {
-  const input = loadPublicInputs(path.resolve(__dirname, '..'), PUBLIC_V115);
+  const input = loadPublicInputs(path.resolve(__dirname, '..'), PUBLIC_V117);
   const materials = new Map(input.materials.map(item => [item.id, item]));
   const words = new Map(input.wordEntries.map(item => [item.id, item]));
   const hashCache = new Map(), fieldCache = new Map();

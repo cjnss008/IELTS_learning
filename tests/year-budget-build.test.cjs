@@ -13,7 +13,7 @@ function expectedMaterialCount(){
  ];
  const release=D.familyLessonRelease,batches=release?.active?(release.batches||[release]):[];
  if(meta.runtimeContract?.contract?.path==='curriculum/year-first-use-runtime-contract-v114-context-lexicon.json')assert.deepEqual(batches.map(batch=>batch.id),profiles.slice(0,2).map(profile=>profile.id),'v114 requires both signed family batches in order');
- if(meta.runtimeContract?.contract?.path==='curriculum/year-first-use-runtime-contract-v115-completed-history.json')assert.deepEqual(batches.map(batch=>batch.id),profiles.map(profile=>profile.id),'v115 requires all three signed family batches in historical order');
+ if(['curriculum/year-first-use-runtime-contract-v115-completed-history.json','curriculum/year-first-use-runtime-contract-v117-vocabulary-response.json'].includes(meta.runtimeContract?.contract?.path))assert.deepEqual(batches.map(batch=>batch.id),profiles.map(profile=>profile.id),'v115 requires all three signed family batches in historical order');
  const ids=[],baseIds=new Set(modes.actual.materials.map(material=>material.id));
  for(const [i,batch] of batches.entries()){
   const profile=profiles[i];assert.ok(profile,'Unknown family release profile');assert.equal(batch.id,profile.id);

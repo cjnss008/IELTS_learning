@@ -31,7 +31,19 @@
     if(materials.length!==1||sources.length!==1||record.materialId!==material.id||String(record.materialVersion)!=='1'||record.dayNumber!==2||!['vocabulary-practice','course-player'].includes(record.source)||!artifact?.materialBinding||A.materialContentHash(material)!==LEGACY_VOCABULARY_HASH||A.materialContentHash(source)!==relation.sourceHash||typeof text!=='string'||A.sourceTextHash(text)!==relation.textHash||!text.includes(relation.quote)||word.meaning!==relation.meaning||word.example!==relation.quote||row?.meaning!==relation.meaning||row?.example!==relation.quote||row?.sourceMaterialId!==relation.sourceId||row?.sourceQuote!==relation.quote||!P.bindingMatchesMaterial(record,material,A))return null;
     return{surface:word.word,canonicalCandidate:relation.canonical,recordId:record.id,submittedAt:record.submittedAt,dictionarySha256:FORM_INDEX_SOURCE_SHA256,materialContentHash:LEGACY_VOCABULARY_HASH,sourceMaterialId:relation.sourceId,sourceMaterialContentHash:relation.sourceHash,sourceTextSha256:relation.textHash,senseStatus:'reviewed-context-noun',evidenceStatus:'verified-v2-original',newness:'seen'};
   }
-  const frozenHeadIndexes=new WeakMap(),canonicalCatalogs=new WeakMap();
+  const frozenHeadIndexes=new WeakMap(),canonicalCatalogs=new WeakMap(),canonicalEntryIndexes=new WeakMap(),reusableCatalogSources=new WeakMap();
+  function inspectCatalogSource(source){
+    const seen=new WeakSet(),prototypes=new Set(),todo=[source];
+    while(todo.length){const value=todo.pop(),type=typeof value;if(value===null||type==='string'||type==='boolean'||type==='number'&&Number.isFinite(value))continue;if(type!=='object')return null;if(seen.has(value))continue;seen.add(value);
+      const array=Array.isArray(value);if(!array&&Object.prototype.toString.call(value)!=='[object Object]')return null;
+      for(let proto=Object.getPrototypeOf(value);proto&&!prototypes.has(proto);proto=Object.getPrototypeOf(proto)){prototypes.add(proto);if(Object.getOwnPropertyDescriptor(proto,'toJSON'))return null;}
+      const keys=Reflect.ownKeys(value);if(array){if(keys.length!==value.length+1)return null;for(let i=0;i<value.length;i++)if(!Object.prototype.hasOwnProperty.call(value,i))return null;}
+      for(const key of keys){if(array&&key==='length')continue;const descriptor=Object.getOwnPropertyDescriptor(value,key);if(typeof key!=='string'||key==='toJSON'||!descriptor?.enumerable||descriptor.get||descriptor.set)return null;todo.push(descriptor.value);}
+    }
+    // The sorted projection must not depend on an inherited or live rank.
+    if(source.some(entry=>!['id','word','rank'].every(key=>{const d=Object.getOwnPropertyDescriptor(entry,key);return d&&Object.hasOwn(d,'value');})))return null;
+    return [...prototypes];
+  }
   function canonicalEntries(catalog,A){
     const source=catalog?.entries;if(!Array.isArray(source)||source.length!==8000)return null;
     if(canonicalCatalogs.has(source))return canonicalCatalogs.get(source);
@@ -39,7 +51,9 @@
     // Only immutable public vocabulary is retained. Learner evidence and drafts
     // are always read and checked again below.
     const seen=new WeakSet(),freeze=value=>{if(value&&typeof value==='object'&&!seen.has(value)){seen.add(value);for(const child of Object.values(value))freeze(child);Object.freeze(value);}};
-    freeze(source);const entries=dataFor({data:catalog});freeze(entries);canonicalCatalogs.set(source,entries);return entries;
+    const prototypes=inspectCatalogSource(source);freeze(source);const entries=dataFor({entries:source});freeze(entries);
+    canonicalEntryIndexes.set(entries,{coreById:new Map(entries.map(word=>[word.id,word])),coreKeys:new Set(entries.map(word=>norm(word.word))),byWord:new Map(entries.map(word=>[norm(word.word),word]))});
+    canonicalCatalogs.set(source,entries);if(prototypes)reusableCatalogSources.set(source,prototypes);return entries;
   }
   function potentialHeads(surface,entries){
     const raw=String(surface||'').trim(),key=norm(raw);if(Object.prototype.hasOwnProperty.call(FORM_INDEX,key))return FORM_INDEX[key].slice();
@@ -101,8 +115,16 @@
     entries.sort((a, b) => (Number(a.rank) || TARGET + 1) - (Number(b.rank) || TARGET + 1) || norm(a.word).localeCompare(norm(b.word)));
     return entries;
   }
+  // Reuse only the private projection of the checked, deeply frozen 8000-word
+  // catalog. Public entries() and caller-supplied mutable lists stay live.
+  function planningEntries(options={}){
+    const data=options.data||root.IELTS_ESSENTIAL_VOCABULARY,source=options.entries||(Array.isArray(data)?data:data?.entries);
+    const descriptor=!Array.isArray(data)&&Object.getOwnPropertyDescriptor(data||{},'entries'),stableSource=descriptor&&Object.hasOwn(descriptor,'value')&&descriptor.value===source;
+    const prototypes=!options.entries&&stableSource&&reusableCatalogSources.get(source);
+    return prototypes&&prototypes.every(proto=>!Object.getOwnPropertyDescriptor(proto,'toJSON'))&&canonicalCatalogs.get(source)||dataFor(options);
+  }
   function familyIdentity(entries,records,vocabularyData){
-    const coreById=new Map(entries.map(word=>[word.id,word])),coreKeys=new Set(entries.map(word=>norm(word.word))),aliases=new Map(),extensions=[];
+    const cached=canonicalEntryIndexes.get(entries),coreById=cached?.coreById||new Map(entries.map(word=>[word.id,word])),coreKeys=cached?.coreKeys||new Set(entries.map(word=>norm(word.word))),coreByWord=cached?.byWord||new Map(entries.map(word=>[norm(word.word),word])),aliases=new Map(),extensions=[];
     let lexicon;try{lexicon=root.IELTSContextualVocabulary?.familyVocabularyLexicon?.({records,vocabularyData});}catch(_){}
     if(lexicon?.status==='ready')for(const word of lexicon.entries||[]){
       const key=norm(word.word),base=coreById.get(word.id);
@@ -110,7 +132,8 @@
       else if(word.lexicalKind==='extension'&&word.id==='extension:'+key&&!coreKeys.has(key)&&!aliases.has(key)&&!extensions.some(entry=>entry.id===word.id||norm(entry.word)===key))extensions.push(word);
     }
     const canonicalKey=value=>{const key=norm(value);return aliases.get(key)||key;};
-    return{coreKeys,aliases,extensions,canonicalKey,trackingEntries:extensions.length?[...entries,...extensions]:entries,extensionKeys:new Set(extensions.map(word=>norm(word.word)))};
+    const extensionByWord=new Map(extensions.map(word=>[norm(word.word),word])),extensionKeys=new Set(extensionByWord.keys()),entryForWord=key=>extensionByWord.get(key)||coreByWord.get(key),knownKeys={has:key=>coreKeys.has(key)||extensionKeys.has(key)};
+    return{coreKeys,aliases,extensions,canonicalKey,trackingEntries:extensions.length?[...entries,...extensions]:entries,extensionKeys,entryForWord,knownKeys};
   }
   function wordSnapshot(word) {
     if (!word || !/^[a-z]+(?:['-][a-z]+)*$/.test(norm(word.word)) || typeof word.meaning !== 'string' || !word.meaning.trim()) throw Error('新词缺少有效词形或中文义。');
@@ -130,8 +153,8 @@
     for (const group of words.values()) group.history.sort((a, b) => a.at.localeCompare(b.at) || a.id.localeCompare(b.id));
     return words;
   }
-  function acquisition(state, records, entries, indexReady, canonicalKey = norm) {
-    const out = new Map(),aliases=new Map(),unresolved=new Map(),wanted=new Set(entries.map(word=>norm(word.word)));
+  function acquisition(state, records, entries, indexReady, canonicalKey = norm, knownKeys = null) {
+    const out = new Map(),aliases=new Map(),unresolved=new Map(),wanted=knownKeys||new Set(entries.map(word=>norm(word.word)));
     // Older course submissions did not carry the new index. Read their original
     // artifacts without rewriting an old draft, score, or record ID.
     const V = root.IELTSVocabularyPractice || (typeof require === 'function' ? require('./vocabulary-practice.js') : null);
@@ -155,7 +178,7 @@
   // completed-new-word credit, and an unindexed form remains unresolved.
   function verifiedFormEvidence(options={}){
     try{const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.(),V=root.IELTSVocabularyPractice||(typeof require==='function'?require('./vocabulary-practice.js'):null),A=root.IELTSAssessment||(typeof require==='function'?require('./assessment-core.js'):null),records=options.records,now=+(new Date(options.now??Date.now())),catalog=root.IELTS_ESSENTIAL_VOCABULARY;if(!Number.isFinite(now)||!formIndexReady()||typeof V?.verifyTrainingArtifact!=='function'||!Array.isArray(catalog?.entries)||catalog.entries.length!==8000||!A?.sourceTextHash||options.data&&options.data!==catalog||runtime?.isCurrentFullRecords?.(records)!==true)return{status:'pending',reason:'complete-records-or-form-index-pending'};
-      const entries=canonicalEntries(catalog,A);if(!entries)return{status:'pending',reason:'canonical-catalog-pending'};const identity=familyIdentity(entries,records,catalog),byWord=new Map(identity.trackingEntries.map(entry=>[norm(entry.word),entry])),result=acquisition(null,records,identity.trackingEntries,true,identity.canonicalKey),memory=options.memory||root.IELTSMemory?.read?.(),memoryWords=new Set(Object.values(memory?.items||{}).map(item=>norm(item.word))),drafts=draftFormEvidence(options.drafts||[]);if([...result.aliases.values()].some(row=>byWord.get(row.canonicalCandidate)?.id!=='essential:'+row.canonicalCandidate))return{status:'pending',reason:'canonical-catalog-pending'};const relations=[...result.aliases.values()].filter(row=>Date.parse(row.submittedAt)<=now).map(row=>({...row,canonicalId:byWord.get(row.canonicalCandidate).id,memoryCaptured:memoryWords.has(norm(row.surface))})),potentialBySurface=[...result.unresolved].filter(([,value])=>Date.parse(value.at)<=now).map(([surface,value])=>({surface:value.word,recordId:value.recordId,submittedAt:value.at,indexKnown:Object.prototype.hasOwnProperty.call(FORM_INDEX,surface),canonicalIds:potentialIdentityHeads(value.word,entries,identity.extensions).map(head=>byWord.get(identity.canonicalKey(head))?.id).filter(Boolean)})),submittedCanonicalIds=[...new Set(relations.map(row=>row.canonicalId))];for(const row of drafts.rows){const key=identity.canonicalKey(row.surface),heads=new Set(potentialIdentityHeads(row.surface,entries,identity.extensions).map(identity.canonicalKey));if(byWord.has(key))heads.add(key);potentialBySurface.push({...row,indexKnown:Object.prototype.hasOwnProperty.call(FORM_INDEX,norm(row.surface)),canonicalIds:[...heads].map(head=>byWord.get(head)?.id).filter(Boolean)});}
+      const entries=canonicalEntries(catalog,A);if(!entries)return{status:'pending',reason:'canonical-catalog-pending'};const identity=familyIdentity(entries,records,catalog),byWord={get:identity.entryForWord,has:key=>!!identity.entryForWord(key)},result=acquisition(null,records,identity.trackingEntries,true,identity.canonicalKey,identity.knownKeys),memory=options.memory||root.IELTSMemory?.read?.(),memoryWords=new Set(Object.values(memory?.items||{}).map(item=>norm(item.word))),drafts=draftFormEvidence(options.drafts||[]);if([...result.aliases.values()].some(row=>byWord.get(row.canonicalCandidate)?.id!=='essential:'+row.canonicalCandidate))return{status:'pending',reason:'canonical-catalog-pending'};const relations=[...result.aliases.values()].filter(row=>Date.parse(row.submittedAt)<=now).map(row=>({...row,canonicalId:byWord.get(row.canonicalCandidate).id,memoryCaptured:memoryWords.has(norm(row.surface))})),potentialBySurface=[...result.unresolved].filter(([,value])=>Date.parse(value.at)<=now).map(([surface,value])=>({surface:value.word,recordId:value.recordId,submittedAt:value.at,indexKnown:Object.prototype.hasOwnProperty.call(FORM_INDEX,surface),canonicalIds:potentialIdentityHeads(value.word,entries,identity.extensions).map(head=>byWord.get(identity.canonicalKey(head))?.id).filter(Boolean)})),submittedCanonicalIds=[...new Set(relations.map(row=>row.canonicalId))];for(const row of drafts.rows){const key=identity.canonicalKey(row.surface),heads=new Set(potentialIdentityHeads(row.surface,entries,identity.extensions).map(identity.canonicalKey));if(byWord.has(key))heads.add(key);potentialBySurface.push({...row,indexKnown:Object.prototype.hasOwnProperty.call(FORM_INDEX,norm(row.surface)),canonicalIds:[...heads].map(head=>byWord.get(head)?.id).filter(Boolean)});}
       return{status:'ready',seenCanonicalIds:submittedCanonicalIds,submittedCanonicalIds,relations,potentialBySurface,unindexedPending:drafts.unknown,indexSha256:FORM_INDEX_SHA256,sourceSha256:FORM_INDEX_SOURCE_SHA256};
     }catch(_){return{status:'pending',reason:'complete-records-or-form-index-pending'};}
   }
@@ -242,6 +265,26 @@
     }
     return {...base, allDue, futureRetries};
   }
+  function reviewDebtFor(state,queue){
+    const due=queue.allDue.slice(),unfinishedReviewDrafts=Object.values(state.drafts||{}),waitingRetryKeys=new Set(queue.futureRetries.map(item=>norm(item.word))),debtKeys=new Set([...due.map(item=>norm(item.word)),...waitingRetryKeys,...unfinishedReviewDrafts.map(item=>norm(item.word))]);
+    return{due,unfinishedReviewDrafts,debtKeys,reviewDebt:{required:debtKeys.size>0,requiredWords:debtKeys.size,due:due.length,waitingRetries:waitingRetryKeys.size,unfinishedDrafts:unfinishedReviewDrafts.length,heldCards:queue.held.length}};
+  }
+  function reviewTimingFor(due,unfinishedReviewDrafts,options,globalRemainingMinutes){
+    const timer=options.timerCore||root.IELTSStudyTimerCore||(typeof require==='function'?require('./study-timer-core.js'):null),timerState=options.timerState===undefined?root.IELTSStudyTimer?.snapshot?.():options.timerState;
+    let timerProblem=timerState===null?'番茄钟状态尚未读取，原任务保留。':null;
+    const forecast=minutes=>{if(timerProblem)return Infinity;try{const value=timer?.forecast?timer.forecast(minutes,timerState).totalMinutes:minutes;if(!Number.isFinite(value)||value<0)throw Error('番茄钟预算尚未核验。');return value;}catch(error){timerProblem=error.message;return Infinity;}};
+    forecast(0);let reviewMinutes=0,sessionMinutes=0,sessionCount=0,sessionFull=false;
+    for(const item of due){const cost=COST[item.skill];reviewMinutes+=cost;if(!sessionFull&&forecast(sessionMinutes+cost)<=globalRemainingMinutes+.0001){sessionMinutes+=cost;sessionCount++;}else sessionFull=true;}
+    const nextUnitStudyMinutes=due.length?COST[due[0].skill]:unfinishedReviewDrafts.length?COST[unfinishedReviewDrafts[0].skill]:0,canStartNext=nextUnitStudyMinutes>0&&forecast(nextUnitStudyMinutes)<=globalRemainingMinutes+.0001;
+    return{reviewMinutes,sessionMinutes,sessionCount,nextUnitStudyMinutes,canStartNext,forecast,get timerProblem(){return timerProblem;}};
+  }
+  // Read the review queue and its budget without rebuilding new-word plans.
+  // This is a synchronous projection of the current inputs, not a cache.
+  function reviewPlan(memory,options={}){
+    const state=M.parseState(memory),entries=planningEntries(options),now=+(new Date(options.now??Date.now()));if(!Number.isFinite(now))throw Error('词汇安排日期无效。');
+    const identity=familyIdentity(entries,options.familyRecords,options.data||root.IELTS_ESSENTIAL_VOCABULARY),groups=grouped(state),proof=delayedEvidence(state,options.records||[],now),queue=queueFor(state,groups,now,identity.trackingEntries,proof,options,identity.aliases),{due,unfinishedReviewDrafts,reviewDebt}=reviewDebtFor(state,queue),globalRemainingMinutes=Math.min(360,Math.max(0,Number.isFinite(options.remainingMinutes)?options.remainingMinutes:90)),timing=reviewTimingFor(due,unfinishedReviewDrafts,options,globalRemainingMinutes);
+    return{due,held:queue.held,reviewDebt,nextRetryAt:queue.futureRetries.map(item=>item.retryAt).sort()[0]||null,reviewBudget:{sessionCount:timing.sessionCount}};
+  }
   function activityDrafts(memory) {
     const state = M.parseState(memory);
     let retentionDrafts=[];if(state.reviewedRetention!==undefined){const api=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);if(!api?.activityDrafts)throw Error('新语境保持活动组件未加载，预算核验暂停，原输入保留。');retentionDrafts=api.activityDrafts(state);}
@@ -264,12 +307,12 @@
     return {budgetMinutes, spentMinutes: seconds / 60, remainingMinutes: Math.max(0, budgetMinutes - seconds / 60), newWordMinutes, estimateSamples: samples.length};
   }
   function plan(memory, options = {}) {
-    const state = M.parseState(memory), entries = dataFor(options), now = +(new Date(options.now ?? Date.now()));
+    const state = M.parseState(memory), entries = planningEntries(options), now = +(new Date(options.now ?? Date.now()));
     if (!Number.isFinite(now)) throw Error('词汇安排日期无效。');
     // Only the family runtime's complete branded snapshot can authorize
     // extension identity and spelling aliases. The 8000 catalog is unchanged.
-    const {coreKeys,aliases,canonicalKey,trackingEntries,extensions,extensionKeys}=familyIdentity(entries,options.familyRecords,options.data||root.IELTS_ESSENTIAL_VOCABULARY);
-    const V=root.IELTSVocabularyPractice||(typeof require==='function'?require('./vocabulary-practice.js'):null),today = dateKey(now), groups = grouped(state), indexReady=formIndexReady()&&typeof V?.verifyTrainingArtifact==='function',initial=acquisition(state, options.records || [], trackingEntries,indexReady,canonicalKey),acquired=initial.acquired, knownKeys = new Set(trackingEntries.map(word => norm(word.word)));
+    const identity=familyIdentity(entries,options.familyRecords,options.data||root.IELTS_ESSENTIAL_VOCABULARY),{coreKeys,aliases,canonicalKey,trackingEntries,extensions,extensionKeys,knownKeys}=identity;
+    const V=root.IELTSVocabularyPractice||(typeof require==='function'?require('./vocabulary-practice.js'):null),today = dateKey(now), groups = grouped(state), indexReady=formIndexReady()&&typeof V?.verifyTrainingArtifact==='function',initial=acquisition(state, options.records || [], trackingEntries,indexReady,canonicalKey,knownKeys),acquired=initial.acquired;
     const activeBatches = Object.values(state.essential.batches).filter(batch => batch.status === 'learning' || batch.draft).sort((a, b) => a.startedAt.localeCompare(b.startedAt) || a.id.localeCompare(b.id));
     // If a saved family word cannot currently be identified, keep its draft and
     // reviews but do not silently release the remaining daily new-word quota.
@@ -302,18 +345,8 @@
     // new-word reference allowance. A finite session uses the shared calendar
     // budget, including the currently configured Pomodoro rest, without hiding
     // the remainder or writing any completion into Memory.
-    const due = queue.allDue.slice(), unfinishedReviewDrafts = Object.values(state.drafts || {});
-    const waitingRetryKeys = new Set(queue.futureRetries.map(item => norm(item.word)));
-    const debtKeys = new Set([...due.map(item => norm(item.word)), ...waitingRetryKeys, ...unfinishedReviewDrafts.map(item => norm(item.word))]);
-    const reviewDebt = {required: debtKeys.size > 0, requiredWords: debtKeys.size, due: due.length, waitingRetries: waitingRetryKeys.size, unfinishedDrafts: unfinishedReviewDrafts.length, heldCards: queue.held.length};
-    const timer = options.timerCore || root.IELTSStudyTimerCore || (typeof require === 'function' ? require('./study-timer-core.js') : null), timerState = options.timerState === undefined ? root.IELTSStudyTimer?.snapshot?.() : options.timerState;
-    let timerProblem = timerState === null ? '番茄钟状态尚未读取，原任务保留。' : null;
-    const forecast = minutes => { if(timerProblem)return Infinity;try{const value=timer?.forecast ? timer.forecast(minutes,timerState).totalMinutes : minutes;if(!Number.isFinite(value)||value<0)throw Error('番茄钟预算尚未核验。');return value;}catch(error){timerProblem=error.message;return Infinity;} };
-    forecast(0);
-    let reviewMinutes = 0, sessionMinutes = 0, sessionCount = 0, sessionFull = false;
-    for (const item of due) { const cost = COST[item.skill]; reviewMinutes += cost; if (!sessionFull && forecast(sessionMinutes + cost) <= globalRemainingMinutes + .0001) { sessionMinutes += cost; sessionCount++; } else sessionFull = true; }
-    const nextUnitStudyMinutes = due.length ? COST[due[0].skill] : unfinishedReviewDrafts.length ? COST[unfinishedReviewDrafts[0].skill] : 0;
-    const canStartNext = nextUnitStudyMinutes > 0 && forecast(nextUnitStudyMinutes) <= globalRemainingMinutes + .0001;
+    const {due,unfinishedReviewDrafts,debtKeys,reviewDebt}=reviewDebtFor(state,queue);
+    const reviewClock=reviewTimingFor(due,unfinishedReviewDrafts,options,globalRemainingMinutes),{reviewMinutes,sessionMinutes,sessionCount,nextUnitStudyMinutes,canStartNext,forecast}=reviewClock;
     const reservedKeys = new Set(activeBatches.flatMap(batch => batch.wordKeys.map(canonicalKey)));
     // The family helper alone can authorize releasing the current signed unit's
     // duplicate reservation. A caller-provided list is never that authority.
@@ -325,7 +358,7 @@
     }
     const courseRows=new Map();for(const word of options.courseWords||[]){const key=canonicalKey(typeof word==='string'?word:word?.word);if(knownKeys.has(key)&&!extensionKeys.has(key)){if(!courseRows.has(key))courseRows.set(key,[]);courseRows.get(key).push(word);}}
     const releasedKeys=new Set();if(family.status==='ready')for(const target of family.targets){const key=canonicalKey(target.word),rows=courseRows.get(key);if(rows?.length&&rows.every(word=>word&&typeof word==='object'&&word.word===target.word&&word.meaning===target.meaning&&word.ipa===target.ipa&&word.example===target.example&&word.audio===target.audio&&(!word.id||word.id===target.familyCanonicalId)&&(!word.canonicalId||word.canonicalId===target.familyCanonicalId)))releasedKeys.add(key);}
-    const courseWordKeys = new Set([...courseRows.keys()].filter(key=>!releasedKeys.has(key))),catalog = new Map(trackingEntries.map(word => [norm(word.word), word]));
+    const courseWordKeys = new Set([...courseRows.keys()].filter(key=>!releasedKeys.has(key))),catalog = {get:identity.entryForWord,has:key=>!!identity.entryForWord(key)};
     const courseKeys = new Set([...courseWordKeys].filter(key => !acquired.has(key) && !reservedKeys.has(key) && !started.has(key)&&indexReady&&!blockedForms.has(key)&&!unindexedPending&&(!pendingCanonicalWords.length||catalog.get(key)?.id==='essential:'+key||extensionKeys.has(key))));
     const contextual = new Map();
     // An example from a currently selected material is the candidate's context.
@@ -359,7 +392,7 @@
     if (activeBatches.length) { count = 0; reasons.push('继续已开始的新词组，保留原始输入'); }
     if (familyHistoryPending) { count=0;reasons.push('已保存的关联课程词汇身份待核验；原稿与全部复习保留，暂不释放新词配额'); }
     if (reviewDebt.required) count = 0;
-    if (timerProblem) { count = 0; reasons.push(timerProblem); }
+    if (reviewClock.timerProblem) { count = 0; reasons.push(reviewClock.timerProblem); }
     if (budgetCapacity < dailyRemaining) reasons.push('按真实剩余预算保留复习与完整新词训练时间');
     if (vocabulary.remainingMinutes <= 0) reasons.push('新词参考份额已用完；到期复习仍为必做，按今日共享总预算逐题继续，超时保留积压');
     if (courseKeys.size) reasons.push('本课 ' + courseKeys.size + ' 个必学新词复用课程训练，不另做一遍');
@@ -406,7 +439,7 @@
     for (const batch of activeBatches) if (dateKey(batch.startedAt) < today) for (let n = 0; n < batch.wordKeys.length; n++) {
       const key = canonicalKey(batch.wordKeys[n]); if (!acquired.has(key)) carryKeys.set(key, {...catalog.get(key), ...batch.words[n], batchId: batch.id, state: 'started', status: 'started', learningKind: 'carry'});
     }
-    return {date: today, stats, familyContext:family, familyUnit,formIndexReady:indexReady,formSafety:{indexReady,unindexedPending,familyHistoryPending,blockedKeys:[...blockedForms],hasPendingForms:pendingCanonicalWords.length>0||pendingKeys.size>0||pendingDrafts.unknown},recognizedWordForms,unresolvedNewCandidates:unresolvedNewCandidates.map(word=>({word:word.word,reason:'possible-prior-form-pending'})),quota: {baseline, dailyTarget, goalRemaining: Math.max(0, dailyTarget - completedToday), target, adaptiveReference, eligible: eligibleDay, startCourseDay, annualDays, startedToday, completedToday, completed: completedToday, courseReservedToday: courseKeys.size, contextCandidates: contextual.size, remaining: newWords.length, dailyRemaining: eligibleDay ? Math.min(dailyRemaining, eligible.length) : 0, newStartAllowed: newWords.length > 0, newWordMinutes, estimateSamples: vocabulary.estimateSamples, reason: reasons.join('；') || '先完成全部必做复习，再从真实语境安排每日30个真正新词；来源或预算不足时保留缺口，不从词表凑数。'}, pendingCanonicalWords,pendingContextWords:eligible.map(word=>({...word})), due, todayDue: due, allDue: queue.allDue, held: queue.held, reviewDebt, unfinishedReviewDrafts, newWords, todayNewWords: eligibleDay ? todayNewWords : [], dayNewWords: eligibleDay ? todayNewWords : [], carryWords: [...carryKeys.values()], dailyPlanPersisted: false, activeBatches, reviewBudget: {limit: null, completed: reviewedToday.length, remaining: due.length, requiredCount: due.length, pendingCount: debtKeys.size, estimatedMinutes: Math.round(reviewMinutes * 100) / 100, requiredEstimatedMinutes: Math.round(reviewMinutes * 100) / 100, sessionCount, sessionEstimatedMinutes: Math.round(sessionMinutes * 100) / 100, nextUnitStudyMinutes, canStartNext, nextUnitMinutes: timerProblem ? null : forecast(nextUnitStudyMinutes), budgetError: timerProblem, deferredCount: due.length - sessionCount, availableMinutes: reviewDebt.required ? globalRemainingMinutes : remainingMinutes, globalRemainingMinutes, vocabularyMinutes: vocabulary.budgetMinutes, vocabularySpentMinutes: vocabulary.spentMinutes, newVocabularyAvailableMinutes: remainingMinutes, reservedNewMinutes: 0, availableForDueMinutes: globalRemainingMinutes}, nextRetryAt: queue.futureRetries.map(item => item.retryAt).sort()[0] || null, dayProgress: {reviewed: reviewedToday.length, initialStarted: startedToday, initialCompleted: completedToday}};
+    return {date: today, stats, familyContext:family, familyUnit,formIndexReady:indexReady,formSafety:{indexReady,unindexedPending,familyHistoryPending,blockedKeys:[...blockedForms],hasPendingForms:pendingCanonicalWords.length>0||pendingKeys.size>0||pendingDrafts.unknown},recognizedWordForms,unresolvedNewCandidates:unresolvedNewCandidates.map(word=>({word:word.word,reason:'possible-prior-form-pending'})),quota: {baseline, dailyTarget, goalRemaining: Math.max(0, dailyTarget - completedToday), target, adaptiveReference, eligible: eligibleDay, startCourseDay, annualDays, startedToday, completedToday, completed: completedToday, courseReservedToday: courseKeys.size, contextCandidates: contextual.size, remaining: newWords.length, dailyRemaining: eligibleDay ? Math.min(dailyRemaining, eligible.length) : 0, newStartAllowed: newWords.length > 0, newWordMinutes, estimateSamples: vocabulary.estimateSamples, reason: reasons.join('；') || '先完成全部必做复习，再从真实语境安排每日30个真正新词；来源或预算不足时保留缺口，不从词表凑数。'}, pendingCanonicalWords,pendingContextWords:eligible.map(word=>({...word})), due, todayDue: due, allDue: queue.allDue, held: queue.held, reviewDebt, unfinishedReviewDrafts, newWords, todayNewWords: eligibleDay ? todayNewWords : [], dayNewWords: eligibleDay ? todayNewWords : [], carryWords: [...carryKeys.values()], dailyPlanPersisted: false, activeBatches, reviewBudget: {limit: null, completed: reviewedToday.length, remaining: due.length, requiredCount: due.length, pendingCount: debtKeys.size, estimatedMinutes: Math.round(reviewMinutes * 100) / 100, requiredEstimatedMinutes: Math.round(reviewMinutes * 100) / 100, sessionCount, sessionEstimatedMinutes: Math.round(sessionMinutes * 100) / 100, nextUnitStudyMinutes, canStartNext, nextUnitMinutes: reviewClock.timerProblem ? null : forecast(nextUnitStudyMinutes), budgetError: reviewClock.timerProblem, deferredCount: due.length - sessionCount, availableMinutes: reviewDebt.required ? globalRemainingMinutes : remainingMinutes, globalRemainingMinutes, vocabularyMinutes: vocabulary.budgetMinutes, vocabularySpentMinutes: vocabulary.spentMinutes, newVocabularyAvailableMinutes: remainingMinutes, reservedNewMinutes: 0, availableForDueMinutes: globalRemainingMinutes}, nextRetryAt: queue.futureRetries.map(item => item.retryAt).sort()[0] || null, dayProgress: {reviewed: reviewedToday.length, initialStarted: startedToday, initialCompleted: completedToday}};
   }
   function ensureDailyPlan(memory) {
     // Compatibility with already-loaded pages. Historical day manifests remain
@@ -471,6 +504,6 @@
     batch.draft = null;
     return state;
   }
-  return {TARGET, START_COURSE_DAY, DAILY_NEW, RETRY_MINUTES, COST, dateKey, entries: dataFor, verifiedFormEvidence,plan, ensureDailyPlan, activityDrafts, startBatch, saveBatchDraft, completeBatch, clearBatchDraft};
+  return {TARGET, START_COURSE_DAY, DAILY_NEW, RETRY_MINUTES, COST, dateKey, entries: dataFor, verifiedFormEvidence,plan, reviewPlan, ensureDailyPlan, activityDrafts, startBatch, saveBatchDraft, completeBatch, clearBatchDraft};
 });
 

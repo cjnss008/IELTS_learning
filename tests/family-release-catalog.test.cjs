@@ -99,5 +99,5 @@ test('runtime append keeps the published single batch byte shape and adds a sepa
 
 test('the multi-batch production build cannot omit all installed lessons',()=>{
  const outputRoot=path.join(require('node:os').tmpdir(),'ielts-family-missing-release-test');
- assert.throws(()=>require('../tools/build-curriculum.cjs').build({requireYearExpansion:true,activateYearFirstUse:true,gsaGradedRelease:'curriculum/gsa-graded-course/release.json',ordinaryReadingRelease:'curriculum/ordinary-reading-v92/release.json',yearRuntimeContract:'curriculum/year-first-use-runtime-contract-v115-completed-history.json',outputRoot}),/cannot omit historical lessons/);
+ assert.throws(()=>require('../tools/build-curriculum.cjs').build({requireYearExpansion:true,activateYearFirstUse:true,gsaGradedRelease:'curriculum/gsa-graded-course/release.json',ordinaryReadingRelease:'curriculum/ordinary-reading-v92/release.json',yearRuntimeContract:'curriculum/year-first-use-runtime-contract-v117-vocabulary-response.json',outputRoot}),/cannot omit historical lessons/);
 });

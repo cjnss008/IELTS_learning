@@ -72,7 +72,8 @@ const FAMILY_NAS_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v112-
 const FAMILY_MULTIBATCH_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v113-multibatch.json';
 const FAMILY_CONTEXT_LEXICON_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v114-context-lexicon.json';
 const FAMILY_COMPLETED_HISTORY_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v115-completed-history.json';
-const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH,FAMILY_AUDIT_CONTRACT_PATH,FAMILY_NAS_CONTRACT_PATH,FAMILY_MULTIBATCH_CONTRACT_PATH,FAMILY_CONTEXT_LEXICON_CONTRACT_PATH,FAMILY_COMPLETED_HISTORY_CONTRACT_PATH].includes(contractPath);
+const FAMILY_RESPONSE_CONTRACT_PATH='curriculum/year-first-use-runtime-contract-v117-vocabulary-response.json';
+const isFamilyContract=contractPath=>[FAMILY_CONTRACT_PATH,FAMILY_BROADCAST_CONTRACT_PATH,FAMILY_CONTINUATION_CONTRACT_PATH,FAMILY_LINKED_CONTRACT_PATH,FAMILY_AUDIT_CONTRACT_PATH,FAMILY_NAS_CONTRACT_PATH,FAMILY_MULTIBATCH_CONTRACT_PATH,FAMILY_CONTEXT_LEXICON_CONTRACT_PATH,FAMILY_COMPLETED_HISTORY_CONTRACT_PATH,FAMILY_RESPONSE_CONTRACT_PATH].includes(contractPath);
 function componentLimit(contractPath){return isFamilyContract(contractPath)?55:MAX_COMPONENTS;}
 
 function componentListProblem(rows,contractPath){

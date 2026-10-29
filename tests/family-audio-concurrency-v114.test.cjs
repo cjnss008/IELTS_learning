@@ -95,3 +95,26 @@ test('the timeout also covers a response whose body stalls after its headers',as
  await assert.rejects(pending,e=>e.reason==='family-vocabulary-audio-timeout'&&e.retryable===true);await until(()=>timers.size===0);
  assert.equal(aborted,4);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),false);
 });
+
+test('overlapping requests for the same source and record snapshot share exactly one fresh verification',async()=>{
+ const f=await fixture(),meter=fakeAudio(f,{delay:20});f.context.setTimeout=setTimeout;f.context.clearTimeout=clearTimeout;
+ const first=f.api.testVerifyAudio(f.signed,f.records),second=f.api.testVerifyAudio(f.signed,f.records);await until(()=>meter.active===4);
+ assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),false);await Promise.all([first,second]);assert.equal(meter.calls,30);assert.equal(meter.peak,4);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),true);
+ await f.api.testVerifyAudio(f.signed,f.records);assert.equal(meter.calls,60,'subsequent verification must still detect changed file bytes');
+});
+test('shared corrupt verification rejects every waiter, revokes proof and can retry',async()=>{
+ const f=await fixture(),meter=fakeAudio(f,{delay:30,corrupt:true});f.context.setTimeout=setTimeout;f.context.clearTimeout=clearTimeout;
+ const a=f.api.testVerifyAudio(f.signed,f.records),b=f.api.testVerifyAudio(f.signed,f.records);const settled=await Promise.allSettled([a,b]);assert(settled.every(x=>x.status==='rejected'&&x.reason.reason==='family-vocabulary-audio-or-owner-changed'));assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),false);assert.equal(meter.active,0);
+ const retry=fakeAudio(f,{delay:0});await f.api.testVerifyAudio(f.signed,f.records);assert.equal(retry.calls,30);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),true);
+});
+test('owner change cancels shared pending work for every waiter',async()=>{
+ const f=await fixture(),meter=fakeAudio(f,{hang:true}),a=f.api.testVerifyAudio(f.signed,f.records),b=f.api.testVerifyAudio(f.signed,f.records);await until(()=>meter.active===4);f.win.IELTSProfiles.current=()=>({id:'another-synthetic-profile'});f.win.dispatchEvent({type:'ielts:profile-changed'});const settled=await Promise.allSettled([a,b]);assert(settled.every(x=>x.status==='rejected'&&x.reason.reason==='family-vocabulary-audio-owner-changed'));assert.equal(meter.aborted,4);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),false);
+});
+test('conflicting in-flight source pins abort the old job and grant neither proof',async()=>{
+ const f=await fixture(),meter=fakeAudio(f,{hang:true}),a=f.api.testVerifyAudio(f.signed,f.records);await until(()=>meter.active===4);const altered={unit:f.signed.unit,audio:f.signed.audio.map((x,i)=>i?x:{...x,sha256:'c'.repeat(64)})},b=f.api.testVerifyAudio(altered,f.records);const settled=await Promise.allSettled([a,b]);assert(settled.every(x=>x.status==='rejected'&&x.reason.reason==='family-vocabulary-audio-or-owner-changed'));assert.equal(meter.aborted,4);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),false);
+});
+
+test('shared timeout rejects all waiters, clears in-flight job and permits a fresh retry',async()=>{
+ const f=await fixture(),timers=new Map();let id=0;f.context.setTimeout=fn=>{const key=++id;timers.set(key,fn);return key;};f.context.clearTimeout=key=>timers.delete(key);
+ const meter=fakeAudio(f,{hang:true}),a=f.api.testVerifyAudio(f.signed,f.records),b=f.api.testVerifyAudio(f.signed,f.records);await until(()=>meter.active===4);[...timers.values()][0]();const settled=await Promise.allSettled([a,b]);assert(settled.every(x=>x.status==='rejected'&&x.reason.reason==='family-vocabulary-audio-timeout'&&x.reason.retryable));assert.equal(meter.aborted,4);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),false);fakeAudio(f,{delay:0});await f.api.testVerifyAudio(f.signed,f.records);assert.equal(f.api.testHasAudioProof(f.records,f.signed.unit.unitSha256),true);
+});
