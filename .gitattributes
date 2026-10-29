@@ -20,6 +20,9 @@ audio/public/** filter=lfs diff=lfs merge=lfs -text
 
 audio/independent-bank/us/** filter=lfs diff=lfs merge=lfs -text
 
+# Reviewed public authoring audio archived with the v115 course package.
+curriculum/family-lessons-v115/provenance/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+
 # Portable local English recognizer and model; no learner audio.
 runtime-packages/local-asr/*.zip filter=lfs diff=lfs merge=lfs -text
 runtime-packages/local-asr/*.bin filter=lfs diff=lfs merge=lfs -text

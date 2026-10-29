@@ -1,0 +1,109 @@
+{
+  "id": "d2-oral-full",
+  "day": 2,
+  "kind": "speaking",
+  "audio": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked02-03-oral-candidates\\audio\\oral-models\\d2-full-9188a3ff23a27471.mp3",
+  "audioSha256": "d89c354f3e0b5b54a2f178881437e7a7cfa7c3b7239b8e236f56655a1999c280",
+  "start": 0,
+  "end": 35.76,
+  "reference": "My name is Ava. I am a student in an English group. This is my notebook. It has a short note. I write my name in it. I have a textbook too. Please open your book, Tom. We can read one name together. A sound is not clear? Please ask me. I can speak again and help you spell it. Then we can check our work with the teacher. Thank you for your help.",
+  "referenceSha256": "9188a3ff23a274719c9156c947043b08b0560b92580c1a07543eadb52fc44ccf",
+  "active": false,
+  "sourcePromptProvided": false,
+  "paddingSeconds": 2,
+  "wavSha256": "4da5b4145f789aaa12ccca1894b204f69d9b42843e984d02c86251ef7de801d2",
+  "durationSeconds": 37.76,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "\"My name is Ava. I am a student in an English group. This is my notebook. It has a short note. I write my name in it. I have a textbook too. Please open your book, Tom. We can read one name together. A sound is not clear. Please ask me. I can speak again and help you spell it. Then we can check our work with the teacher. Thank you for your help.\"",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 21.28,
+        "text": "\"My name is Ava. I am a student in an English group. This is my notebook. It has a short note. I write my name in it. I have a textbook too. Please open your book, Tom. We can read one name together.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 21.28,
+        "endSeconds": 34.66,
+        "text": "A sound is not clear. Please ask me. I can speak again and help you spell it. Then we can check our work with the teacher. Thank you for your help.\"",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 37.76,
+    "audioSha256": "4da5b4145f789aaa12ccca1894b204f69d9b42843e984d02c86251ef7de801d2",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 88,
+    "actualTokens": 90,
+    "edits": 3,
+    "changes": [
+      {
+        "expected": [],
+        "actual": [
+          "\""
+        ],
+        "expectedIndex": 0,
+        "actualIndex": 0,
+        "contextBefore": [],
+        "contextAfter": [
+          "My",
+          "name",
+          "is",
+          "Ava",
+          "."
+        ]
+      },
+      {
+        "expected": [
+          "?"
+        ],
+        "actual": [
+          "."
+        ],
+        "expectedIndex": 57,
+        "actualIndex": 58,
+        "contextBefore": [
+          "A",
+          "sound",
+          "is",
+          "not",
+          "clear"
+        ],
+        "contextAfter": [
+          "Please",
+          "ask",
+          "me",
+          ".",
+          "I"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "\""
+        ],
+        "expectedIndex": 88,
+        "actualIndex": 89,
+        "contextBefore": [
+          "you",
+          "for",
+          "your",
+          "help",
+          "."
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 74,
+    "actualTokens": 74,
+    "edits": 0,
+    "changes": []
+  }
+}

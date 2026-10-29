@@ -1,0 +1,109 @@
+{
+  "id": "d2-oral-1",
+  "day": 2,
+  "kind": "speaking",
+  "audio": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked02-03-oral-candidates\\audio\\oral-models\\d2-part-1-0a9624dbb70daede.mp3",
+  "audioSha256": "7422942d6c33fce3d2e1521efbd692f26d3c0b12caab1b38c1fe3da7496b8761",
+  "start": 0,
+  "end": 29.904,
+  "reference": "My name is Ava. I am a student in an English group. This is my notebook. It has a short note. I write my name in it. I have a textbook too. Please open your book, Tom. We can read one name together. A sound is not clear? Please ask me. I can speak again and help you spell it.",
+  "referenceSha256": "0a9624dbb70daedea01faba0ab7e9cf25b85c383b8afbf08829dd3cce6f534cb",
+  "active": false,
+  "sourcePromptProvided": false,
+  "paddingSeconds": 2,
+  "wavSha256": "af71d8f9a659e08523e6d2098764bf7f6dd96229d47a62fd862b4ed4fe2c53a3",
+  "durationSeconds": 31.904,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "\"My name is Ava. I am a student in an English group. This is my notebook. It has a short note. I write my name in it. I have a textbook too. Please open your book, Tom. We can read one name together. A sound is not clear. Please ask me. I can speak again and help you spell it.\"",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 21.28,
+        "text": "\"My name is Ava. I am a student in an English group. This is my notebook. It has a short note. I write my name in it. I have a textbook too. Please open your book, Tom. We can read one name together.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 21.28,
+        "endSeconds": 30.72,
+        "text": "A sound is not clear. Please ask me. I can speak again and help you spell it.\"",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 31.904,
+    "audioSha256": "af71d8f9a659e08523e6d2098764bf7f6dd96229d47a62fd862b4ed4fe2c53a3",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 72,
+    "actualTokens": 74,
+    "edits": 3,
+    "changes": [
+      {
+        "expected": [],
+        "actual": [
+          "\""
+        ],
+        "expectedIndex": 0,
+        "actualIndex": 0,
+        "contextBefore": [],
+        "contextAfter": [
+          "My",
+          "name",
+          "is",
+          "Ava",
+          "."
+        ]
+      },
+      {
+        "expected": [
+          "?"
+        ],
+        "actual": [
+          "."
+        ],
+        "expectedIndex": 57,
+        "actualIndex": 58,
+        "contextBefore": [
+          "A",
+          "sound",
+          "is",
+          "not",
+          "clear"
+        ],
+        "contextAfter": [
+          "Please",
+          "ask",
+          "me",
+          ".",
+          "I"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "\""
+        ],
+        "expectedIndex": 72,
+        "actualIndex": 73,
+        "contextBefore": [
+          "help",
+          "you",
+          "spell",
+          "it",
+          "."
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 60,
+    "actualTokens": 60,
+    "edits": 0,
+    "changes": []
+  }
+}

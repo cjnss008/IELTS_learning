@@ -1,0 +1,1659 @@
+{
+  "schema": 1,
+  "active": false,
+  "status": "candidate-packaged-review-pending",
+  "scope": "Pinned local source, exact authorized changes, synthetic audio and ASR evidence only. No activation or approval.",
+  "projectHead": "735dbcc8e7c4a8e5a2ad89aa4c7ea9d65e7319d6",
+  "projectInputHashes": {
+    "assets/assessment-core.js": "ce482dd90e0ffed7ce4bff347a50a2df7b5398c93473e8af1b94beb16b61f0ac",
+    "assets/oral-practice.js": "c6023e70f713f02209ea461f4ff6fad7224b1f5783d9fe049def157d79a3bfdb",
+    "assets/course-player.js": "0bae0b4e268a71801805e52d2475c18df17f49db803d21f33a5e7ab89b0b84fa",
+    "assets/family-lesson-expansion-v95.js": "fff72eb8b252bec9d33de32db98159b7b60867f80949b821b5c35ed8e32cfaa6",
+    "assets/essential-vocabulary-data.js": "bf0f6fe5b623a9e5d5a37df16cda1a2a0c1c9ff73b76ed6318d45cc546eb8079",
+    "assets/curriculum-data.js": "14f4132ba16e5f8d691885b7e0718ee426094a81ffab604b4feb9966841124e0",
+    "tools/apply-family-lessons-v95.cjs": "ea56be2401e4a8edaf127199f4c48889e1b430fdad2305cd7901367fc5e7e0c9",
+    "tools/family-release-catalog.cjs": "27c01f58360d8abd8ecd68cfe8c06170b60812aec9d0fcfb27385952a15020ca",
+    "curriculum/family-lessons-v109/release.json": "0b18cc52823cb1ce1e72192647a7293ee260ba2d65f4799e6e8af38442cbf467",
+    "curriculum/family-lessons-v114/release.json": "17f24aef0ccbc25224fa2ed3641f6ccb8de4f9c8fff2eb085bfb8fc4315e28ca"
+  },
+  "drafts": [
+    {
+      "day": 2,
+      "path": "provenance/drafts/day02.json",
+      "sourceSha256": "8985133f495899bc533254c27669f53187305c8980da1bbb9e68ef8d8246a381",
+      "sourceBytes": 67466,
+      "previousSourcePath": "provenance/audio-rebound/history/sources/day02.json",
+      "previousSourceSha256": "ea8faf83aa0d951b76c4a58af0af68e48483c7900049f1855c0232d626e32294"
+    },
+    {
+      "day": 3,
+      "path": "provenance/drafts/day03.json",
+      "sourceSha256": "48fa5999ddbda6af4334c22b67ec21c3db36ace81211c8612423ec804d508c13",
+      "sourceBytes": 66760,
+      "previousSourcePath": "provenance/audio-rebound/history/sources/day03.json",
+      "previousSourceSha256": "60c6a394972fe6a60e89e2bd3cf2cb3b37243b7b47eeb5a0723188e32530089e"
+    }
+  ],
+  "assets": [
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g1-word-name.mp3",
+      "sha256": "494ae8deaaea4ec09b12a5079460791667c120a820a01ae9a411909729b4a3ea",
+      "bytes": 11232,
+      "canonicalId": "essential:name",
+      "spokenText": "name",
+      "textSha256": "82a3537ff0dbce7eec35d69edc3a189ee6f17d82f353a553f9aa96cb0be3ce89",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-name-candidate-v1.mp3",
+      "sourceIpaReference": "/neɪm/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/a34df6bbafa74faaa956d57175d97e90a42f6c6afb037a662f8a9ec1be78f8e1.json",
+        "sha256": "0e8bd699f80343360b6312a8c2fdc1b13eb17ed842766f9586cbaeda1b4e5423",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/a34df6bbafa74faaa956d57175d97e90a42f6c6afb037a662f8a9ec1be78f8e1.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g1-word-meet.mp3",
+      "sha256": "bbf159ec12b3451ba26ab0ccd569be36a788adc2fb3678f6f8ac6a608281df22",
+      "bytes": 11232,
+      "canonicalId": "essential:meet",
+      "spokenText": "meet",
+      "textSha256": "8ccb033c0e48b27ff91e1ab948367e3bbc6921487c97624ed7ad064025e3dc99",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-meet-candidate-v1.mp3",
+      "sourceIpaReference": "/mit/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/d81b7ed18413d235403321eed004f42be00e012b38275c845aaf3b58c91e7d47.json",
+        "sha256": "9f27b39a865c4bb4175c93eab345781cb83610f230e5eba0248588ff3eb1ac39",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/d81b7ed18413d235403321eed004f42be00e012b38275c845aaf3b58c91e7d47.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g1-word-group.mp3",
+      "sha256": "970e746b1ca3c029fbe79b0106b0bda19288fdb84dabfd50f18bd8c45567cb8d",
+      "bytes": 11232,
+      "canonicalId": "essential:group",
+      "spokenText": "group",
+      "textSha256": "ad936fcbed631fa67e05c3ea03953905221c9d46af0616b70badf105a966fb11",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-group-candidate-v1.mp3",
+      "sourceIpaReference": "/ɡɹup/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/741c5f959ce801c9a0201efbb9ec8de4f5cfb086eb173656f1b44ce24df3ff2c.json",
+        "sha256": "88de6ea205d6440e468b5267a34e88795ad22610f0efd015b785ba70f210afe7",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/741c5f959ce801c9a0201efbb9ec8de4f5cfb086eb173656f1b44ce24df3ff2c.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g1-word-question.mp3",
+      "sha256": "bee4ae17342fe8894636d650c51fc579df681a6068f13e94e6f794bd6f6897fe",
+      "bytes": 11232,
+      "canonicalId": "essential:question",
+      "spokenText": "question",
+      "textSha256": "1f5087db919ced5c123c7f507d3fcce818cb0cf6e77c2f95a8a35e951e03fdb9",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-question-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈkwɛstʃən/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/3851344febfee0d0b8aabee11006656e327d4084158c89c99f9c892e3f87474a.json",
+        "sha256": "8197f1be04a8a129f44fde828e23fe71a068414a9c08a534a3f140b11bbb463b",
+        "bytes": 462,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/3851344febfee0d0b8aabee11006656e327d4084158c89c99f9c892e3f87474a.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g1-word-please.mp3",
+      "sha256": "e35c469dbe196477f5ea155e360be540b51a22874a7cb2f1e3449ade23dab31d",
+      "bytes": 11232,
+      "canonicalId": "essential:please",
+      "spokenText": "please",
+      "textSha256": "56ccc4dcfc96534b06fc0c08a301be24f13b491484d5d984953cc0dba9bbb89a",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-please-candidate-v1.mp3",
+      "sourceIpaReference": "/pliz/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/34019c97264c9a33636b445fabc8cdea945ee694ebf9ae7302162a772128a8ba.json",
+        "sha256": "f74c29a03f93ce43a298e2bb19f1fd02220682153beea6bc5d647a395c025f8b",
+        "bytes": 458,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/34019c97264c9a33636b445fabc8cdea945ee694ebf9ae7302162a772128a8ba.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g1-word-thank.mp3",
+      "sha256": "f86c60e86921d9e7fd60a0045df886abaf14a83ce40322084498829ee7e46c09",
+      "bytes": 11232,
+      "canonicalId": "essential:thank",
+      "spokenText": "thank",
+      "textSha256": "e67fd73a84918e64c84f082cdc04e34435eb98acc712c8e8384268a7e7c5e208",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-thank-candidate-v1.mp3",
+      "sourceIpaReference": "/θæŋk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/0abc97b44c7c58867d0e179ad0cbb214bb612c0203a156e8311994ded17b0b9a.json",
+        "sha256": "04d488a5b4a9cf67c981c7116a45f64e77ac492a8a009a04b093239ad3086d62",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/0abc97b44c7c58867d0e179ad0cbb214bb612c0203a156e8311994ded17b0b9a.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g2-word-notebook.mp3",
+      "sha256": "1b47340090e0254c95db124b78e9650784538360a59ebd3dafc4d366f8d086e2",
+      "bytes": 11520,
+      "canonicalId": "essential:notebook",
+      "spokenText": "notebook",
+      "textSha256": "b53bcf919f24746d72094b8b86c0325cf40723d3d63240705db51a27b261bc96",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-notebook-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈnoʊtˌbʊk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/d6e9957bd7ec0ea98787adea15335c314a50cd8cbe9bfbfcf5bf3d0ffd900a13.json",
+        "sha256": "071310870e93a3ec5e7265eef1552f63d8e82eec73743f3f2270c30aaee87edf",
+        "bytes": 461,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/d6e9957bd7ec0ea98787adea15335c314a50cd8cbe9bfbfcf5bf3d0ffd900a13.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g2-word-textbook.mp3",
+      "sha256": "6eaff1ea0304b7d9fd97fbe9f31cb45b5a491d9502b1e9bcf0163f00f2fa551d",
+      "bytes": 12240,
+      "canonicalId": "essential:textbook",
+      "spokenText": "textbook",
+      "textSha256": "16a9b27cd7bdf707d7d10fd1b8bca249610190f766ce3f4b37b43a80681f6e3b",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-textbook-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈtɛkstˌbʊk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/2fa5fd6b8cb4d788dfe049c79bc442e0816825306166949f485ea04eb7608c3b.json",
+        "sha256": "cc5ae392be9913b234231f3b512df2d24cf1c4ab5b8a364b7487d6bd2565c52f",
+        "bytes": 461,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/2fa5fd6b8cb4d788dfe049c79bc442e0816825306166949f485ea04eb7608c3b.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g2-word-marker.mp3",
+      "sha256": "b6f333c22e5a0de648bf801fd3eb62344294df043ebb53ee57aac2d86f75e4a4",
+      "bytes": 11232,
+      "canonicalId": "essential:marker",
+      "spokenText": "marker",
+      "textSha256": "ed5b8120601641c516d02ed9dc643a59648524248d5e2af877da39ea253c723e",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-marker-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈmɑɹkɚ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/390a4e5e8f370b33ce18c91cb6de59a4d8c786cd663d5c64af706eb91e8a2b68.json",
+        "sha256": "848489f778fe404bd3326de5576beb8ab86a3953cef4f66d957f4b2899513494",
+        "bytes": 458,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/390a4e5e8f370b33ce18c91cb6de59a4d8c786cd663d5c64af706eb91e8a2b68.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g2-word-read.mp3",
+      "sha256": "9a3dde7032a139a57481975e52f8712a3394bbff82d7a0fde4679395b6e36045",
+      "bytes": 11232,
+      "canonicalId": "essential:read",
+      "spokenText": "read",
+      "textSha256": "3316348dbadfb7b11c7c2ea235949419e23f9fa898ad2c198f999617912a9925",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-read-candidate-v1.mp3",
+      "sourceIpaReference": "/ɹid/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/c556619797b4aa1baffc9511d121757a07f173ab3991a78970bc8b0a0f41695a.json",
+        "sha256": "a64f5cc3952d71e09b785b2bd92c02dc8dccbb46b6b04434694f3f839e7ff448",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/c556619797b4aa1baffc9511d121757a07f173ab3991a78970bc8b0a0f41695a.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g2-word-write.mp3",
+      "sha256": "4163b0bc27d3806e6f5a12bf79142dd4bc17cee38bfdef0ce79f1de6b806ab02",
+      "bytes": 11232,
+      "canonicalId": "essential:write",
+      "spokenText": "write",
+      "textSha256": "10fd874b68dad080ed706762c8e163dabb20514bddae38fb159c56f714a3b143",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-write-candidate-v1.mp3",
+      "sourceIpaReference": "/ɹaɪt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/c8fbb19c0a8b073a959ac8cfcdfbd8235893b23558e124d97645945a8a77749b.json",
+        "sha256": "717b7f609982cd6b91e48b1b2c382984a1371c81d338a982c00aef1766dd40d7",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/c8fbb19c0a8b073a959ac8cfcdfbd8235893b23558e124d97645945a8a77749b.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g2-word-speak.mp3",
+      "sha256": "ea70d827c38e6f711819e9f7a2564c54a1b4b17eb39f97de0d18a9ebfa554fd2",
+      "bytes": 11232,
+      "canonicalId": "essential:speak",
+      "spokenText": "speak",
+      "textSha256": "21e5205f73d9edbf72bc29b5ffcb4631cfc95e8f287c4d68e73d17ad72eb5eb3",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-speak-candidate-v1.mp3",
+      "sourceIpaReference": "/spik/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/17d71f0728ba1eff0acee5df76266d36029673e7a72324e59d95604b8348a396.json",
+        "sha256": "1de29e657304f8fb6656f847b7d5fd74c05b4f5c5053ea1dfa71a54c80c065f3",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/17d71f0728ba1eff0acee5df76266d36029673e7a72324e59d95604b8348a396.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g3-word-spell.mp3",
+      "sha256": "69274e0ba9ff2eabd26e6a2d3153aa43268501a1f7e44f18543fef60b82fab85",
+      "bytes": 11232,
+      "canonicalId": "essential:spell",
+      "spokenText": "spell",
+      "textSha256": "8f4a0aaa62c4ceef88578b1b674070e6b8d9405b80729d5c7af2f353543b2f89",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-spell-candidate-v1.mp3",
+      "sourceIpaReference": "/spɛl/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/b47a20edf2392558c00d07eef76906543b0e2b8095a8ff4a49dcb468fea1b219.json",
+        "sha256": "0cde5298831e2ba715f5dad01c3326b6b8a28cdfb859ab570670cb5d75825acf",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/b47a20edf2392558c00d07eef76906543b0e2b8095a8ff4a49dcb468fea1b219.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g3-word-sit.mp3",
+      "sha256": "120b1abedbf980e49c91a4dbc4c6fabd3f86472d00f28ce73bf63c965ca93548",
+      "bytes": 11232,
+      "canonicalId": "essential:sit",
+      "spokenText": "sit",
+      "textSha256": "584178e5e3517ddcebc66340917adc3a27ce4be359a29aa827563d481ff5d67a",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-sit-candidate-v1.mp3",
+      "sourceIpaReference": "/sɪt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/90e5db833b89ffef420f1b6867806bda9878504c8eecb4a23fdebcfed3a34f31.json",
+        "sha256": "03d8c2a388012206acd2657d291f3e43eb80111177309ca2b1af3f2a96baf2a7",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/90e5db833b89ffef420f1b6867806bda9878504c8eecb4a23fdebcfed3a34f31.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g3-word-stand.mp3",
+      "sha256": "a53f077650a027ec30880714d9bafc8dc5ca2728280e6776667d37aa600968ad",
+      "bytes": 11520,
+      "canonicalId": "essential:stand",
+      "spokenText": "stand",
+      "textSha256": "d37a24b801c6e2e338243b7361c5985e1d8e26bcf5555dd08cd8c969e01e1670",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-stand-candidate-v1.mp3",
+      "sourceIpaReference": "/stænd/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/c01e103fde4ce60962fc110c51f17340fcb3503d40e07492be5dce8a1629850e.json",
+        "sha256": "eb19796c57f8fd355d6176df793dcc0df2d4622019be142383c170ffcea6dceb",
+        "bytes": 455,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/c01e103fde4ce60962fc110c51f17340fcb3503d40e07492be5dce8a1629850e.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g3-word-open.mp3",
+      "sha256": "8ac66e4f7591881c4c4eb460ba4293f5c38156cb810949e701e67a4c2c0a36bc",
+      "bytes": 11232,
+      "canonicalId": "essential:open",
+      "spokenText": "open",
+      "textSha256": "2348f998744212575d85959674f9607ab26f67708a917157472832386337c904",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-open-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈoʊpən/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/694f004d46238307c9e70291686d0eaaf97c390467f3d21127b4902365de64ea.json",
+        "sha256": "24b4e1c3625809e4911c90bf52eca8596e53556e6687eb4e4945705c6d3ad273",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/694f004d46238307c9e70291686d0eaaf97c390467f3d21127b4902365de64ea.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g3-word-show.mp3",
+      "sha256": "af2b4fa0527d53ad7b1c2d4d29280135591d319b7088648488e77f56da51f3a6",
+      "bytes": 11232,
+      "canonicalId": "essential:show",
+      "spokenText": "show",
+      "textSha256": "1c6333509debf060200eb6bbe28db307508da67c0e3c58088393e4cf09de596d",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-show-candidate-v1.mp3",
+      "sourceIpaReference": "/ʃoʊ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/153e4a7514cdc67328b8a071532846199ffc3338758c5abf27cfbb973c75e0c0.json",
+        "sha256": "4b052b006018e560167be4f0c63e899c1b5a2f705c678d61abd302698c615cb7",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/153e4a7514cdc67328b8a071532846199ffc3338758c5abf27cfbb973c75e0c0.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g3-word-help.mp3",
+      "sha256": "e8b70443e19e443f1b673659220d7c2dda84b64e80a9adeaa5bde137bd784c59",
+      "bytes": 11232,
+      "canonicalId": "essential:help",
+      "spokenText": "help",
+      "textSha256": "106a5842fc5fce6f663176285ed1516dbb1e3d15c05abab12fdca46d60b539b7",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-help-candidate-v1.mp3",
+      "sourceIpaReference": "/hɛlp/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/2bdd9a3614f190f934cd5bf8eddb957c8aeb3d81a1a4733fb76ae48df9b4b630.json",
+        "sha256": "a657d5f3796a91c3d63f95c39305be1fd5dd14f88d88dd33c2da2d95fbff9abe",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/2bdd9a3614f190f934cd5bf8eddb957c8aeb3d81a1a4733fb76ae48df9b4b630.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g4-word-check.mp3",
+      "sha256": "37804d3af2c2fc5639c1800b248e700b5a64da1c46b5c2fa532079c37476b187",
+      "bytes": 11232,
+      "canonicalId": "essential:check",
+      "spokenText": "check",
+      "textSha256": "20f65c28671b40937c5bf23acc7c6f37e5a5ec0622e347b57685725df5ba9e50",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-check-candidate-v1.mp3",
+      "sourceIpaReference": "/tʃɛk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/0fa69b4e9dcef5c3c32f2e4a3ac63e378fb081e5d783c5034b0a89fd870f3e69.json",
+        "sha256": "6f27f4ffd6bc6141d4860105cacdf93951911d6b9b33fdb67a2a815cedadefbd",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/0fa69b4e9dcef5c3c32f2e4a3ac63e378fb081e5d783c5034b0a89fd870f3e69.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g4-word-understand.mp3",
+      "sha256": "12b2ab000fab85567bf2286334bf67ba084b37c489c9b44d2074143f06b5ac08",
+      "bytes": 12384,
+      "canonicalId": "essential:understand",
+      "spokenText": "understand",
+      "textSha256": "f9dc689e6d50ad6f35cc97059375b37b8149225f4fb7a192f4ea40051da5416a",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-understand-candidate-v1.mp3",
+      "sourceIpaReference": "/ˌʌndɚˈstænd/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/4e9b0d7562bc4dcb112ef87f4a5dc0fe433e35303c7178164982b0c42448a0e9.json",
+        "sha256": "f867973211ca0397a6c14f9c500ebedacd97ee89c883c8a5ef2e6beaaf3de920",
+        "bytes": 466,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/4e9b0d7562bc4dcb112ef87f4a5dc0fe433e35303c7178164982b0c42448a0e9.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g4-word-sound.mp3",
+      "sha256": "d60af79192a44ee6146bb25259c0a74a343746e4e75edbf765d9020a4b91cc24",
+      "bytes": 11232,
+      "canonicalId": "essential:sound",
+      "spokenText": "sound",
+      "textSha256": "dd29442deca69f52c50006b831cb216edf78a7da33748f0a80ff19f2ebe57ecd",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-sound-candidate-v1.mp3",
+      "sourceIpaReference": "/saʊnd/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/f926709b0c2e7aee5cfabc3e2779fe41e7c234b5d17cd1e920fd3dde81cf7bfd.json",
+        "sha256": "0912242f33ac0fa003ec1a02516de5d39d15ce8631c18136018b895a2ee20565",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/f926709b0c2e7aee5cfabc3e2779fe41e7c234b5d17cd1e920fd3dde81cf7bfd.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g4-word-note.mp3",
+      "sha256": "a28d070756fc77cbd0ba67b669e6450587e28fe117412747d59e26e0f11aa3e7",
+      "bytes": 11232,
+      "canonicalId": "essential:note",
+      "spokenText": "note",
+      "textSha256": "edb465624291e4053c6c5ea4b7eb320dec773e10a57d26b95dcf0564f8e310f8",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-note-candidate-v1.mp3",
+      "sourceIpaReference": "/noʊt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/2a61551d035c87c5c968bdb410140457d0d530fc47b7334f6dd67babaca428f9.json",
+        "sha256": "5232ffda1e18b9f92421b5234cc8168a18ef3fc4ac75be95bbe0246e7cd31608",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/2a61551d035c87c5c968bdb410140457d0d530fc47b7334f6dd67babaca428f9.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g4-word-three.mp3",
+      "sha256": "39a62abf8c5b2120535c81bb6c6168b982b282fc920a816bb25ba2831b16a08c",
+      "bytes": 11232,
+      "canonicalId": "essential:three",
+      "spokenText": "three",
+      "textSha256": "8b5b9db0c13db24256c829aa364aa90c6d2eba318b9232a4ab9313b954d3555f",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-three-candidate-v1.mp3",
+      "sourceIpaReference": "/θɹi/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/04dfd93d506372da2b29db30972c1e5a1ef4e28f71389fde6c1ccd0aa17a8d05.json",
+        "sha256": "b13c7ad89e622c5b34101542ec137a2f1b9a17076ae3bc02e6b10e149b1dce4d",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/04dfd93d506372da2b29db30972c1e5a1ef4e28f71389fde6c1ccd0aa17a8d05.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g4-word-four.mp3",
+      "sha256": "8a666df9ab8d8413968c07bfe683cefbdd140d36f1687387a86b8c4474e94d3c",
+      "bytes": 11232,
+      "canonicalId": "essential:four",
+      "spokenText": "four",
+      "textSha256": "04efaf080f5a3e74e1c29d1ca6a48569382cbbcd324e8d59d2b83ef21c039f00",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-four-candidate-v1.mp3",
+      "sourceIpaReference": "/fɔɹ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/28a73cfe8fc5b69af2d4a8a4554379249ab12d7cad929f75ff7165a035d9e47a.json",
+        "sha256": "26a3c5efd207d6d1b61d8d3a9e21acca5e89e0e68ca278288b4cb148eb29fd21",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/28a73cfe8fc5b69af2d4a8a4554379249ab12d7cad929f75ff7165a035d9e47a.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g5-word-five.mp3",
+      "sha256": "c36b22b59fa2cde9bb165e90ee30fc6f262d2bf4b71bdcfba9f0de6280efbf78",
+      "bytes": 11232,
+      "canonicalId": "essential:five",
+      "spokenText": "five",
+      "textSha256": "222b0bd51fcef7e65c2e62db2ed65457013bab56be6fafeb19ee11d453153c80",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-five-candidate-v1.mp3",
+      "sourceIpaReference": "/faɪv/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/d9e74afd3de9a80feaa9d74111cc6b1dbbbd6e7d0bc97ecf29700ca97eb7b04b.json",
+        "sha256": "3e34deeb048effaedd4d92dbea072e0db9897180332fadb901798e46d0b8f4b3",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/d9e74afd3de9a80feaa9d74111cc6b1dbbbd6e7d0bc97ecf29700ca97eb7b04b.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g5-word-six.mp3",
+      "sha256": "e128e5f9462aa3871e07b03455f3684cba85fb1e0a84a1fe15e0eb9883a9467d",
+      "bytes": 11232,
+      "canonicalId": "essential:six",
+      "spokenText": "six",
+      "textSha256": "44778d82365e4af681c40d5f0eef5cf6f5899d3f0ac335050a7ed6779cf3f674",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-six-candidate-v1.mp3",
+      "sourceIpaReference": "/sɪks/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/0deb4dda3c8ad59fd20ed677f783c6f6c0592761eea5b316a97e628be000315d.json",
+        "sha256": "89027ba3c2a04fe07a42165f8656c6c664a8f9001aae5c95c8f187f622248fd7",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/0deb4dda3c8ad59fd20ed677f783c6f6c0592761eea5b316a97e628be000315d.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g5-word-ten.mp3",
+      "sha256": "6b1568921cd2afde675dff574b5ab83870f28f83abd4085d5c26054387bbddc3",
+      "bytes": 11232,
+      "canonicalId": "essential:ten",
+      "spokenText": "ten",
+      "textSha256": "e4432baa90819aaef51d2a7f8e148bf7e679610f3173752fabb4dcb2d0f418d3",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-ten-candidate-v1.mp3",
+      "sourceIpaReference": "/tɛn/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/306f308d7acb1364c204e298974b81366120b28d4effeb2aebaf76499d6bb6b2.json",
+        "sha256": "c24f4dc789613fb6388a77ae88afc8f5f7f4f4a5e7d56091a374908ee716139e",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/306f308d7acb1364c204e298974b81366120b28d4effeb2aebaf76499d6bb6b2.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g5-word-short.mp3",
+      "sha256": "3af85d15479809deb6b4b69276ee0f53d06cc3f4c910b889c618673bdc04add5",
+      "bytes": 11232,
+      "canonicalId": "essential:short",
+      "spokenText": "short",
+      "textSha256": "f9b0078b5df596d2ea19010c001bbd009e651de2c57e8fb7e355f31eb9d3f739",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-short-candidate-v1.mp3",
+      "sourceIpaReference": "/ʃɔɹt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/2bce2f8dadd6818ad08af44c01157627861c502a061994b987b2eacd331f01f3.json",
+        "sha256": "c92607966bd838e60bd51c80397a54db80eacfa5be32dcfe390596089749641c",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/2bce2f8dadd6818ad08af44c01157627861c502a061994b987b2eacd331f01f3.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g5-word-fine.mp3",
+      "sha256": "7d3239ae8dc5092b0ec64dbcbbf2a28eda9c06af69fd713a5bf3864ee6489faf",
+      "bytes": 11232,
+      "canonicalId": "essential:fine",
+      "spokenText": "fine",
+      "textSha256": "d14a58bae804a2b80b5b76a010239c88ffca1fc7951a90f8e9131beda1e23c1b",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-fine-candidate-v1.mp3",
+      "sourceIpaReference": "/faɪn/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/387e693a9d23c930f42b3e5b1cd757537a0c6e0caf3345af56f5326e71ab1ac5.json",
+        "sha256": "08ec0c9472c6b5858d16ea5706ad0c796d21a28109f5cf01c330d7039eee8197",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/387e693a9d23c930f42b3e5b1cd757537a0c6e0caf3345af56f5326e71ab1ac5.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-vocabulary-v115-g5-word-again.mp3",
+      "sha256": "aba2756fa9ae85f38d6017bd65f3e9bf7bb702c8507a1f9d81cc18d985b19154",
+      "bytes": 11232,
+      "canonicalId": "essential:again",
+      "spokenText": "again",
+      "textSha256": "b4c9e14061c2fd453b36700e3b0da008db2189c711ac629f0f583089164e267d",
+      "sourceCandidate": "audio/curriculum/family-linked-d2-word-again-candidate-v1.mp3",
+      "sourceIpaReference": "/əˈɡɛn/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/a243615ce755bfc2e91ae04d588dbcaca9bb6749ad9c391162081be08407e1c4.json",
+        "sha256": "ea2a6ae48989bb273f0ea89870b765ce4091f278db982daabecc50dac4897f23",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/a243615ce755bfc2e91ae04d588dbcaca9bb6749ad9c391162081be08407e1c4.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "listening",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-listening-v115.mp3",
+      "sha256": "a58a4cdccc78169a9d49bdc43186a236f218c6cbcbaa06dcf1d5f748977f2773",
+      "bytes": 677180,
+      "sourceCandidate": "audio/curriculum/family-linked-d2-listening-candidate-v1.mp3",
+      "textSha256": "96b9d40f8dff85c122d1c81450c1062702d7947f4cdcef369ce2f96b047bde0d",
+      "metadata": {
+        "path": "provenance/audio-rebound/listening/family-linked-d2-listening-candidate-v1.json",
+        "sha256": "0b018fa1362de6a42f385331d9e441e43f513beb44f9289c997d042fc7ff9993",
+        "bytes": 12740,
+        "originalPath": "work/linked02-03-audio-rebound/provenance/family-linked-d2-listening-candidate-v1.json"
+      },
+      "candidateMaterial": {
+        "path": "provenance/audio-rebound/materials/family-linked-d2-listening-candidate-v1.json",
+        "sha256": "2d090b5fbcb1a5151c639a02fd2a13765c1f30cc33772dd181dd21a677b935db",
+        "bytes": 7974,
+        "originalPath": "work/linked02-03-audio-rebound/materials/family-linked-d2-listening-candidate-v1.json"
+      },
+      "groups": [
+        {
+          "metadata": {
+            "path": "provenance/tts/groups/e88c66d0e1e132839ca41bd8a76b30532571e444643d2fb36a704e62fae8e0cb.json",
+            "sha256": "94bc1121436af9dd17eb5751b27cc7d6110a7c55a4b64fc70ca50f4f4a41e5d3",
+            "bytes": 12561,
+            "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/e88c66d0e1e132839ca41bd8a76b30532571e444643d2fb36a704e62fae8e0cb.json"
+          },
+          "audio": {
+            "path": "provenance/tts/groups/e88c66d0e1e132839ca41bd8a76b30532571e444643d2fb36a704e62fae8e0cb.mp3",
+            "sha256": "6cc70a37d8769ba82809276a9bd01066ee7474b0b1010a1a53f707db3b035770",
+            "bytes": 388656
+          }
+        },
+        {
+          "metadata": {
+            "path": "provenance/tts/groups/30d35a310da60ad941ec2e537a6081eefbe31a0c44ab17e23bf02aec88ea3b0a.json",
+            "sha256": "2bf2a6e58ed16b76acec0677f94657cd35d5befd2d527e33c7c1b385dd624101",
+            "bytes": 10386,
+            "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/30d35a310da60ad941ec2e537a6081eefbe31a0c44ab17e23bf02aec88ea3b0a.json"
+          },
+          "audio": {
+            "path": "provenance/tts/groups/30d35a310da60ad941ec2e537a6081eefbe31a0c44ab17e23bf02aec88ea3b0a.mp3",
+            "sha256": "dbe83e737c0c49c8a1f60b140f1e6840cc93ff50e6d6492b0701e9c7c303b5f4",
+            "bytes": 302400
+          }
+        }
+      ],
+      "humanListened": false
+    },
+    {
+      "kind": "speaking-full",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-speaking-v115.mp3",
+      "sha256": "d89c354f3e0b5b54a2f178881437e7a7cfa7c3b7239b8e236f56655a1999c280",
+      "bytes": 214560,
+      "sourceCandidate": "audio/oral-models/d2-full-9188a3ff23a27471.mp3",
+      "textSha256": "9188a3ff23a274719c9156c947043b08b0560b92580c1a07543eadb52fc44ccf",
+      "metadata": {
+        "path": "provenance/tts/groups/0a6b99447752c8e43a75259e09b7e04059b0d4af1cba65db9fbfb5e397beb42e.json",
+        "sha256": "c3d49e0a2b84002706be9f44883e361e8c1e1c49fc10c77036b9c5292b6f30cd",
+        "bytes": 7522,
+        "originalPath": "work/linked02-03-oral-candidates/tts-work/groups/0a6b99447752c8e43a75259e09b7e04059b0d4af1cba65db9fbfb5e397beb42e.json"
+      },
+      "part": null,
+      "voice": "en-US-AriaNeural",
+      "humanListened": false
+    },
+    {
+      "kind": "speaking-segment",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-speaking-v115-part1.mp3",
+      "sha256": "7422942d6c33fce3d2e1521efbd692f26d3c0b12caab1b38c1fe3da7496b8761",
+      "bytes": 179424,
+      "sourceCandidate": "audio/oral-models/d2-part-1-0a9624dbb70daede.mp3",
+      "textSha256": "0a9624dbb70daedea01faba0ab7e9cf25b85c383b8afbf08829dd3cce6f534cb",
+      "metadata": {
+        "path": "provenance/tts/groups/db105294021a96090d4e2415a20224b1dcca430dc4f17c0ad7d0dc74dd74f029.json",
+        "sha256": "9e9a90a4acacfc22627c57a1df98e27dac8e17ff1c527f8446f4b2738b19a935",
+        "bytes": 6153,
+        "originalPath": "work/linked02-03-oral-candidates/tts-work/groups/db105294021a96090d4e2415a20224b1dcca430dc4f17c0ad7d0dc74dd74f029.json"
+      },
+      "part": 1,
+      "voice": "en-US-AriaNeural",
+      "humanListened": false
+    },
+    {
+      "kind": "speaking-segment",
+      "day": 2,
+      "src": "audio/curriculum/family-linked-d02-speaking-v115-part2.mp3",
+      "sha256": "957e19ceeb614c5c4a00ae5fadfee3c0d10204ac05787da6e291bd30a95639a5",
+      "bytes": 35856,
+      "sourceCandidate": "audio/oral-models/d2-part-2-11aaea16348f5836.mp3",
+      "textSha256": "11aaea16348f583654e77610c8edf5bbb5db880a0d6438ca36f43eefa18305b7",
+      "metadata": {
+        "path": "provenance/tts/groups/3aa23db5a6c33fee636065e11a77f9ccd93dfd672bf18e540b4096c5f872477e.json",
+        "sha256": "9803163dc9f81b90e8a770f703f041ceab134ba48c7d9e4dbac9e9ec5e071247",
+        "bytes": 1710,
+        "originalPath": "work/linked02-03-oral-candidates/tts-work/groups/3aa23db5a6c33fee636065e11a77f9ccd93dfd672bf18e540b4096c5f872477e.json"
+      },
+      "part": 2,
+      "voice": "en-US-AriaNeural",
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g1-word-wake.mp3",
+      "sha256": "a95d01b641794b381c74760ca6e6a660c8f7843e88877311216981140837d98c",
+      "bytes": 11232,
+      "canonicalId": "essential:wake",
+      "spokenText": "wake",
+      "textSha256": "51391bf0ab33e8272bcfca0d61b5ab242391822f331fe51ac5930b58da8e5b25",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-wake-candidate-v1.mp3",
+      "sourceIpaReference": "/weɪk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/0e8f2b5f9103a70f38e10d9e16bf2b377c2a23e3e3e0043a07b767a4eb1cd8cb.json",
+        "sha256": "89ff04587ae6c492c1627d4a301646672b7fead76d3d06602a943d7f18fc63bc",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/0e8f2b5f9103a70f38e10d9e16bf2b377c2a23e3e3e0043a07b767a4eb1cd8cb.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g1-word-start.mp3",
+      "sha256": "4a2efe899e223eae6b9add7b3b2f73318d275a4a3384f52d7a0bf0d21984b82d",
+      "bytes": 11232,
+      "canonicalId": "essential:start",
+      "spokenText": "start",
+      "textSha256": "cced28c6dc3f99c2396a5eaad732bf6b28142335892b1cd0e6af6cdb53f5ccfa",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-start-candidate-v1.mp3",
+      "sourceIpaReference": "/stɑɹt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/395c563c91c161672d7f9d529613a8b1a248589c995c26ccd41c79a927b0bf6f.json",
+        "sha256": "4934d04a89a15f47b653dd1901797d6197ee8a551bb02131106b041d75d485ea",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/395c563c91c161672d7f9d529613a8b1a248589c995c26ccd41c79a927b0bf6f.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g1-word-finish.mp3",
+      "sha256": "b3061c9a216c0ee2aa8bcf18fbcc02fb4a16fbc1699f130c413237b8766ffbaa",
+      "bytes": 11232,
+      "canonicalId": "essential:finish",
+      "spokenText": "finish",
+      "textSha256": "42af43e3616eba4a133a755540a88e6c61085dfe66c6e49e6ab8eaf9daf0c0da",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-finish-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈfɪnɪʃ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/6d146934250db786e26cf5df8e1476de902afecd1d8b2d8305576983aa636165.json",
+        "sha256": "bd62a11c89d28bc1eed2afddb86ad7fec0c74e29be2c9be33382c7fdce53c8bb",
+        "bytes": 458,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/6d146934250db786e26cf5df8e1476de902afecd1d8b2d8305576983aa636165.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g1-word-get.mp3",
+      "sha256": "573e52c0f62b74877028419dc3bbdf11104f4f3e92cf5a466ee260410495d472",
+      "bytes": 11232,
+      "canonicalId": "essential:get",
+      "spokenText": "get",
+      "textSha256": "2998b3232d29e8dc5a78d97a32ce83f556f3ed31b057077503df05641dd79158",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-get-candidate-v1.mp3",
+      "sourceIpaReference": "/ɡɛt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/25e7a4611c2a74ef7a8ce20d650281536082c95326fcca231990c9610b0f804a.json",
+        "sha256": "79ad28fab3b6333c22bb671bc14499308f1594914733e1f516c1177a08eabebb",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/25e7a4611c2a74ef7a8ce20d650281536082c95326fcca231990c9610b0f804a.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g1-word-dress.mp3",
+      "sha256": "a2be1050bc0721d9480ac6d58186f24c4fe067790c94ff2ba5f932630da05047",
+      "bytes": 11232,
+      "canonicalId": "essential:dress",
+      "spokenText": "dress",
+      "textSha256": "5b612edb571c479d1a33c2355b8933ef943bd5715b25116aaf91dbf3a842c2bd",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-dress-candidate-v1.mp3",
+      "sourceIpaReference": "/dɹɛs/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/a49dd08386c0450b3e92233353753e7d4cc7dec3ae287eee409b1235b50b7302.json",
+        "sha256": "b50347f65e2d3227cbd9eeee5d76916f7b2b4d4426919e0466a84e651bbddc7b",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/a49dd08386c0450b3e92233353753e7d4cc7dec3ae287eee409b1235b50b7302.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g1-word-put.mp3",
+      "sha256": "0ac80e38280a0a695f2987f7c0d829a38f177b799c7689bf79802d0cf5c99249",
+      "bytes": 11232,
+      "canonicalId": "essential:put",
+      "spokenText": "put",
+      "textSha256": "373cb2c6d4fe2778441d4f0266505b699fa518d002e5793b87f9b48836de3f62",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-put-candidate-v1.mp3",
+      "sourceIpaReference": "/pʊt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/dce59b73001c8e5d03698dc0f0411d9f5eda18e1489a5169f0ae91fe3fa0c6bd.json",
+        "sha256": "1d216e2265c68ea196d87d5cafa470dfd18f9df98a8eb1624a854023d8591b96",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/dce59b73001c8e5d03698dc0f0411d9f5eda18e1489a5169f0ae91fe3fa0c6bd.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g2-word-leave.mp3",
+      "sha256": "c1478822f6bc2c465dcdc67672fdef69afd1dfc029b38914bd34fea9609d85eb",
+      "bytes": 11232,
+      "canonicalId": "essential:leave",
+      "spokenText": "leave",
+      "textSha256": "af193190b8d3cd14103e20e900378a2b76414ff6428065f3f8539b3577b22fdf",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-leave-candidate-v1.mp3",
+      "sourceIpaReference": "/liv/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/7ebc95082ba6d76cc3956686e4d20bfd81f0a37a9c5aa29508510fca211f1223.json",
+        "sha256": "f931a3170df941d268c8ba2581d97235839be63f8442d29745609b9a12d6a586",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/7ebc95082ba6d76cc3956686e4d20bfd81f0a37a9c5aa29508510fca211f1223.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g2-word-stay.mp3",
+      "sha256": "0ebf789a630cc5b4aa2144cc32b5ce52f13d16a07149889e8fad9f9f2dc00281",
+      "bytes": 11232,
+      "canonicalId": "essential:stay",
+      "spokenText": "stay",
+      "textSha256": "39be15289c7942a8e7765d75584b0bce0a4a39c29a356fbaee44f63848ba6cb0",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-stay-candidate-v1.mp3",
+      "sourceIpaReference": "/steɪ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/cf89db87517635320572811fadf732fd6109a660b99e92d8b5a2b4f26ba6070c.json",
+        "sha256": "c035fa3b778057a73fbeae62a1fe4cad3e51a882108d8a8c83e44d8f310528e6",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/cf89db87517635320572811fadf732fd6109a660b99e92d8b5a2b4f26ba6070c.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g2-word-lunch.mp3",
+      "sha256": "88490ac1fa9209f4def6ddfdd002a25be9f65788bef55139622c5a3642748717",
+      "bytes": 11232,
+      "canonicalId": "essential:lunch",
+      "spokenText": "lunch",
+      "textSha256": "f3bb79e48a7a8af1d028f6acb7fa34b0c7f75da596fc205907d2a708fe28ebef",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-lunch-candidate-v1.mp3",
+      "sourceIpaReference": "/lʌntʃ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/3583c975879dcac1b48abdb2671a9789369349d1e6bcd14db272d51fe5372b6f.json",
+        "sha256": "eec537a6eba28711fc8f8ec55c8dd8818ce903e877914402c8b51062b5bfff33",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/3583c975879dcac1b48abdb2671a9789369349d1e6bcd14db272d51fe5372b6f.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g2-word-dinner.mp3",
+      "sha256": "065f3d9a347d8c8cca6c87b8a277969df638602461794ccab9e0d223d7fc7bab",
+      "bytes": 11232,
+      "canonicalId": "essential:dinner",
+      "spokenText": "dinner",
+      "textSha256": "dda209044ad44962b012ececcc2cb2f7efd35c72d22465586e294b6493bc21c1",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-dinner-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈdɪnɚ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/1e47f19ccfc2416f37a6f3beaaaff4a6d73c27383d5860ad9bcadfb9a95b5cf7.json",
+        "sha256": "8dc98e2510370c74a61c422242ed491beff7217997bdb7f3cdda20bc5e9cf4d7",
+        "bytes": 458,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/1e47f19ccfc2416f37a6f3beaaaff4a6d73c27383d5860ad9bcadfb9a95b5cf7.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g2-word-sun.mp3",
+      "sha256": "076676c6271b89100d524ca0c69f260205ee36263d747fad8b536e085cbb3df7",
+      "bytes": 11232,
+      "canonicalId": "essential:sun",
+      "spokenText": "sun",
+      "textSha256": "27756f050e14a1cb1c1ee867f0eace9ea4d9fcb81b8bee089469f1ebd5fd7b17",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-sun-candidate-v1.mp3",
+      "sourceIpaReference": "/sʌn/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/6685d28119d24cef67f410212b46047b31a2a8ae91464d6660cf8a1ba19a159d.json",
+        "sha256": "26296644f9f6a85711610e7b6cb2ac4ccc366d596f66cdfcd4b600813d3ec22d",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/6685d28119d24cef67f410212b46047b31a2a8ae91464d6660cf8a1ba19a159d.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g2-word-cool.mp3",
+      "sha256": "8b6bddb8e453437ff3399dc749151c61b6927a0433cbdbbc5b076232056ceb1f",
+      "bytes": 11232,
+      "canonicalId": "essential:cool",
+      "spokenText": "cool",
+      "textSha256": "c34045c1a1db8d1b3fca8a692198466952daae07eaf6104b4c87ed3b55b6af1b",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-cool-candidate-v1.mp3",
+      "sourceIpaReference": "/kul/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/7842167b8de4591ca0e188583629fc01720e1f63e06f76ad3d8a8dc6d0d0d82e.json",
+        "sha256": "b1062acb42e11d41cedf9c6c30db68ed8982a0ac3f832d11dda24ba9964ef3cd",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/7842167b8de4591ca0e188583629fc01720e1f63e06f76ad3d8a8dc6d0d0d82e.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g3-word-quick.mp3",
+      "sha256": "cb301c34685b8cce173c8902aec38e04a3316db2653b197d11be81b06b86989f",
+      "bytes": 11232,
+      "canonicalId": "essential:quick",
+      "spokenText": "quick",
+      "textSha256": "22c72aa82ce77c82e2ca65a711c79eaa4b51c57f85f91489ceeacc7b385943ba",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-quick-candidate-v1.mp3",
+      "sourceIpaReference": "/kwɪk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/f1c31fa698eddc1f3d71d634869e617479c92a0297b12825ee28330306ca69ff.json",
+        "sha256": "38995efca0a9b3d84e219bb540aa83359579a7cd704b7f4818dce54ba0b5a874",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/f1c31fa698eddc1f3d71d634869e617479c92a0297b12825ee28330306ca69ff.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g3-word-slow.mp3",
+      "sha256": "4e21ed71451cb17c44b2d92521b12f05dac4fcb3fe24cd5d143cdc3f5425c4ff",
+      "bytes": 11232,
+      "canonicalId": "essential:slow",
+      "spokenText": "slow",
+      "textSha256": "5e0cf7bd1dfa3831788b0cf6dedcdd228fba6f34dc238d371e746567e80bc7b6",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-slow-candidate-v1.mp3",
+      "sourceIpaReference": "/sloʊ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/aa4ee7bd5dd977d1e95c1f4aa38cc978505a890c952bdf7533edbdc37a1c8117.json",
+        "sha256": "ad63883af8c56e255d79a8f8fb5d9a89579cb9522d8d9305e54faac3310d8f87",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/aa4ee7bd5dd977d1e95c1f4aa38cc978505a890c952bdf7533edbdc37a1c8117.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g3-word-hand.mp3",
+      "sha256": "5d16000fce5a1fde3b36bf8d9c6bf391b0ca79c8158b1008089789cc3c6c1656",
+      "bytes": 11232,
+      "canonicalId": "essential:hand",
+      "spokenText": "hand",
+      "textSha256": "1b001706a418bdfca35361355c643b7918572b8f9b7503f3043a6e23b45dce52",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-hand-candidate-v1.mp3",
+      "sourceIpaReference": "/hænd/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/3b4ade1e46cc04f2e9468effd1957169e4f6e706c2487ea10e9f9d4e1497e635.json",
+        "sha256": "5f7d1f05f67ccb8080e186cecb5392320b998f651b86f3e457200b6b27525052",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/3b4ade1e46cc04f2e9468effd1957169e4f6e706c2487ea10e9f9d4e1497e635.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g3-word-face.mp3",
+      "sha256": "494a3b64e6358dea29477dc68592e8435ea0f48e45c8345c4b1baa5c6e600558",
+      "bytes": 11232,
+      "canonicalId": "essential:face",
+      "spokenText": "face",
+      "textSha256": "0282d9b79f42c74c1550b20ff2dd16aafc3fe5d8ae9a00b2f66996d0ae882775",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-face-candidate-v1.mp3",
+      "sourceIpaReference": "/feɪs/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/adcf53412689545df423f0f7608ddb1cc45d72f061c29c0bd4a2ff728e548bb7.json",
+        "sha256": "08ef59b77f116346886561718bd0e4b33c5862a9105aea3d04d80e4b53112dd8",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/adcf53412689545df423f0f7608ddb1cc45d72f061c29c0bd4a2ff728e548bb7.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g3-word-body.mp3",
+      "sha256": "96f248ed08c97049e86002f8220175dfec183efe8fe62e5a94370f81be7ca26c",
+      "bytes": 11232,
+      "canonicalId": "essential:body",
+      "spokenText": "body",
+      "textSha256": "230d8358dc8e8890b4c58deeb62912ee2f20357ae92a5cc861b98e68fe31acb5",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-body-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈbɑdi/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/c813651639e2878bfd2ad7ad4eac1bc0c971cd9021c3fa9c21e884f6c201f517.json",
+        "sha256": "7bab4b462c18be2de7e3af9f21986d62607e37925de2fdbf47f763b823b6bc9a",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/c813651639e2878bfd2ad7ad4eac1bc0c971cd9021c3fa9c21e884f6c201f517.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g3-word-head.mp3",
+      "sha256": "20d55a0fc3ad78813c20e35e09a8e5c6e0a74fed59c2920971bd654f868cf516",
+      "bytes": 11232,
+      "canonicalId": "essential:head",
+      "spokenText": "head",
+      "textSha256": "9f2e6d33a3717ee826353a404ba4618d1aeeb6879ad7936bce8ed5f46814924d",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-head-candidate-v1.mp3",
+      "sourceIpaReference": "/hɛd/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/bb85f2e4172dd08ec82a8d03c2a67b29245bf9fe2fd48bb77de5978ee3543d9d.json",
+        "sha256": "85045c79c735d99c7b432046ef59a00a1675d3a8a239eb4013030a99dabc511f",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/bb85f2e4172dd08ec82a8d03c2a67b29245bf9fe2fd48bb77de5978ee3543d9d.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g4-word-foot.mp3",
+      "sha256": "1d12ed0075a785a5dcd907ddae875aff0a4133bf672fdfcf9319f9c050d1acca",
+      "bytes": 11232,
+      "canonicalId": "essential:foot",
+      "spokenText": "foot",
+      "textSha256": "22e4f6912a6980d6fd59e0c5409247407491282cc8dbd009734066b8393a5761",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-foot-candidate-v1.mp3",
+      "sourceIpaReference": "/fʊt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/1a6839555a0db8e8490ab65a913192036678114147ab582c41cb210e48734c50.json",
+        "sha256": "532f69f15e4c7969985ef18961d5dedae14d19bcd6dea5d483e912651add96b5",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/1a6839555a0db8e8490ab65a913192036678114147ab582c41cb210e48734c50.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g4-word-shirt.mp3",
+      "sha256": "8c8ed400a8dd1c712a156516c790870e33a0cfafffca63b3e9fc60d8419472a2",
+      "bytes": 11232,
+      "canonicalId": "essential:shirt",
+      "spokenText": "shirt",
+      "textSha256": "a52514252adf86066966790e947f72ef6ea6690a6852d5bb5480ee2eeb663395",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-shirt-candidate-v1.mp3",
+      "sourceIpaReference": "/ʃɝt/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/aa44afa081cf69bc13f44e4300323840c0a57a5614489c55723ebb13e47a61eb.json",
+        "sha256": "186db7fbdd4b4a0975ec7148506654530711c7a79757fc802d26012c902429ce",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/aa44afa081cf69bc13f44e4300323840c0a57a5614489c55723ebb13e47a61eb.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g4-word-shoe.mp3",
+      "sha256": "18c5016c739f9be0c8a4191faa2745407ded0bfc3d07741c43d7ebb1e4a8671a",
+      "bytes": 11232,
+      "canonicalId": "essential:shoe",
+      "spokenText": "shoe",
+      "textSha256": "efda1c925291a74c51bb958e56bf3589677a4a3880ddf40b8323b0235b3ced09",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-shoe-candidate-v1.mp3",
+      "sourceIpaReference": "/ʃu/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/acbd36f75fe2c1d6f8681242b89db7a49cb0005ffad425c040f914c3901cbabd.json",
+        "sha256": "699db23b2366845c8ccb4acd4e3c77f0924be5e5aa3edf635ae4a13967273fec",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/acbd36f75fe2c1d6f8681242b89db7a49cb0005ffad425c040f914c3901cbabd.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g4-word-sock.mp3",
+      "sha256": "593edd1f4cfb24792d195cda4c2b373f120abf7fb2362e58da38bdd49af3b35a",
+      "bytes": 11232,
+      "canonicalId": "essential:sock",
+      "spokenText": "sock",
+      "textSha256": "06efe37f5e983469e8609e7af8399f4bdc5a80d361247a3a732ce4bec4fdb826",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-sock-candidate-v1.mp3",
+      "sourceIpaReference": "/sɑk/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/31c872d5281c2a076709aa9484d3347535239c4d1422bcb32d070eb9505858bd.json",
+        "sha256": "894a120ab80aea44e042dab49a48ad751a69badff007c0bd71c768aa2753aee6",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/31c872d5281c2a076709aa9484d3347535239c4d1422bcb32d070eb9505858bd.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g4-word-hair.mp3",
+      "sha256": "8158f72f9b07e502429b3035df4e500fd75aa2bf8e7d15d731f2013a85d89790",
+      "bytes": 11232,
+      "canonicalId": "essential:hair",
+      "spokenText": "hair",
+      "textSha256": "4dc2159bba05da394c3b94c6f54354db1f1f43b321ac4bbdfc2f658237858c70",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-hair-candidate-v1.mp3",
+      "sourceIpaReference": "/hɛɹ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/d2dbbf465b7106b4d013d3a2891b9895b6e09d5acea439ac4f26d72421b03431.json",
+        "sha256": "29fdc318bd6ade14c5c18ea216c801f6ba66947dd1f15cdb8a5a5f5caf275564",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/d2dbbf465b7106b4d013d3a2891b9895b6e09d5acea439ac4f26d72421b03431.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g4-word-bed.mp3",
+      "sha256": "c839c82493ac7d4d2b7c128a99ca22c66922d41498b885de717281198a05a8c4",
+      "bytes": 11232,
+      "canonicalId": "essential:bed",
+      "spokenText": "bed",
+      "textSha256": "c5052532c2206140dfdc3b0d756cce0831ac00fd978f2bfd150858e7ee217a8c",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-bed-candidate-v1.mp3",
+      "sourceIpaReference": "/bɛd/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/1e58ab3dcc90786b48a16b830e52e83b7a8e014ec66c8f2e7d7a6c382955c255.json",
+        "sha256": "2a0de74921c47fd5111542171bc30373f94a9dd5fba6db4287061413eb6d64e6",
+        "bytes": 452,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/1e58ab3dcc90786b48a16b830e52e83b7a8e014ec66c8f2e7d7a6c382955c255.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g5-word-today.mp3",
+      "sha256": "226640e6dd8d9a17a76464dcae4311f7a975127996015bc348860c809ed6cdd1",
+      "bytes": 11232,
+      "canonicalId": "essential:today",
+      "spokenText": "today",
+      "textSha256": "e0f4f767ac88a9303e7317843ac20be980665a36f52397e5b26d4cc2bf54011d",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-today-candidate-v1.mp3",
+      "sourceIpaReference": "/təˈdeɪ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/a43279fbe0b50b823d628e823234630cf77e823a8682d69ca949820fd9e7851c.json",
+        "sha256": "accab47691dd2312d24db3a9fe3a645d143370130da967adbf04c9f4ffd56eb7",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/a43279fbe0b50b823d628e823234630cf77e823a8682d69ca949820fd9e7851c.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g5-word-tomorrow.mp3",
+      "sha256": "d92cbcf2a73a15dbda98d94d1f44c778e928d3eb1e7f59496217d9248e7c5aca",
+      "bytes": 11232,
+      "canonicalId": "essential:tomorrow",
+      "spokenText": "tomorrow",
+      "textSha256": "bafd151a86f9a573b153e76e3a8a0053b3340ce304a301a5354288fb18bce848",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-tomorrow-candidate-v1.mp3",
+      "sourceIpaReference": "/təˈmɑˌɹoʊ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/876b41db135bebf3a11166719f0edf5ee6c92de285fda1fb393c6e2bdac9e362.json",
+        "sha256": "465b93f67c8950d0ad93db50afc1fb1674a58c0dad765498037b5a6af230ac27",
+        "bytes": 462,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/876b41db135bebf3a11166719f0edf5ee6c92de285fda1fb393c6e2bdac9e362.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g5-word-time.mp3",
+      "sha256": "a77bc9f6feb3f4810258e66d5b528b01ee144b35d5a93424d5592b149508cd3d",
+      "bytes": 11232,
+      "canonicalId": "essential:time",
+      "spokenText": "time",
+      "textSha256": "336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-time-candidate-v1.mp3",
+      "sourceIpaReference": "/taɪm/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/b57fa4b9f828c62cd3327b718740197faa0675b5eae264d3a7cbbbf26ab9565a.json",
+        "sha256": "3e8cd8d6f79ce6d0d38ee0b5234d0260f45e03f87b1df08f41f924342a75167e",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/b57fa4b9f828c62cd3327b718740197faa0675b5eae264d3a7cbbbf26ab9565a.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g5-word-before.mp3",
+      "sha256": "361a0a9fa1fc55378180604f890aef22a850763e2e930bdb5f2215f4c2e46b7e",
+      "bytes": 11232,
+      "canonicalId": "essential:before",
+      "spokenText": "before",
+      "textSha256": "6db7d803e74f1ffa7d8f5adc0bf95b3e15bf4c8373fffadf546227cc6c6742cb",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-before-candidate-v1.mp3",
+      "sourceIpaReference": "/bɪˈfɔɹ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/7ed21ca65cd63321ed67b4971e44670fbed5741876b4d54394360a171822a3dc.json",
+        "sha256": "31fd91b92f592a41e07909036671b6c55559a2b57a1a41d67b104fd3549a5a1d",
+        "bytes": 458,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/7ed21ca65cd63321ed67b4971e44670fbed5741876b4d54394360a171822a3dc.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g5-word-after.mp3",
+      "sha256": "5e14ed27e469745dcda170d55c8a5991b5d045dcf6363bcdef38b1a3aa01bcbc",
+      "bytes": 11232,
+      "canonicalId": "essential:after",
+      "spokenText": "after",
+      "textSha256": "f39592393ef0859cb196a52693d2cea00fb2df784b3c04ae54aa7cadb8e562f8",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-after-candidate-v1.mp3",
+      "sourceIpaReference": "/ˈæftɚ/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/b838015182d6d80a040a46b5fce582f787436b5ad4a34931073673da3e21585b.json",
+        "sha256": "d635a633cc1405f46e5750da79d27fece63246d5afc15537a170a3a0421f684d",
+        "bytes": 456,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/b838015182d6d80a040a46b5fce582f787436b5ad4a34931073673da3e21585b.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "word",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-vocabulary-v115-g5-word-then.mp3",
+      "sha256": "44d9d5baa1affe38e61c4f58e6371288ea7362089dabb00b718a0d60e2cf9346",
+      "bytes": 11232,
+      "canonicalId": "essential:then",
+      "spokenText": "then",
+      "textSha256": "21af6f1260f927f5b9b3ff5ca4a5d19493a1a47a5977240d8dca31bc47a63527",
+      "sourceCandidate": "audio/curriculum/family-linked-d3-word-then-candidate-v1.mp3",
+      "sourceIpaReference": "/ðɛn/",
+      "voice": "en-US-AriaNeural",
+      "metadata": {
+        "path": "provenance/tts/groups/ea02642b05823dfc47fd7ba56abd7866cc9c7d548729f050562104191bce412f.json",
+        "sha256": "593bf57e9669a51887bfee6063da847c35d1141d70c72eb327be6804946dba0d",
+        "bytes": 454,
+        "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/ea02642b05823dfc47fd7ba56abd7866cc9c7d548729f050562104191bce412f.json"
+      },
+      "humanListened": false
+    },
+    {
+      "kind": "listening",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-listening-v115.mp3",
+      "sha256": "fbe71916fb384b085ccb0bab443ac76167120c7673df5aefc3275720c2f94773",
+      "bytes": 604316,
+      "sourceCandidate": "audio/curriculum/family-linked-d3-listening-candidate-v1.mp3",
+      "textSha256": "d558f355eb958193bdc04723d08c7d0b1aed7bbf8d03d107353ff8d100615593",
+      "metadata": {
+        "path": "provenance/audio-rebound/listening/family-linked-d3-listening-candidate-v1.json",
+        "sha256": "5301fe7293284345489a98da5dfa7f74db08e491c13a0e5eb29b875d2ee4eaf0",
+        "bytes": 12618,
+        "originalPath": "work/linked02-03-audio-rebound/provenance/family-linked-d3-listening-candidate-v1.json"
+      },
+      "candidateMaterial": {
+        "path": "provenance/audio-rebound/materials/family-linked-d3-listening-candidate-v1.json",
+        "sha256": "247ea790b901d5ab3dbc94a528a3c8e92253eb36b5a0aace6b3764544c3ac024",
+        "bytes": 8021,
+        "originalPath": "work/linked02-03-audio-rebound/materials/family-linked-d3-listening-candidate-v1.json"
+      },
+      "groups": [
+        {
+          "metadata": {
+            "path": "provenance/tts/groups/2f74b2e1dc835686ac88a7cdca64cf3cc61b3da7c453b627cdaca2affbe28d6b.json",
+            "sha256": "3fe161265981671b7e2b45696d20aee6e2ff3da83b5564d37f5f6b107f9db1ec",
+            "bytes": 11761,
+            "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/2f74b2e1dc835686ac88a7cdca64cf3cc61b3da7c453b627cdaca2affbe28d6b.json"
+          },
+          "audio": {
+            "path": "provenance/tts/groups/2f74b2e1dc835686ac88a7cdca64cf3cc61b3da7c453b627cdaca2affbe28d6b.mp3",
+            "sha256": "22fd7b2d701b7cde05c7eb6f85349340d5adb56edf723bd4ddff830dc3c64226",
+            "bytes": 324288
+          }
+        },
+        {
+          "metadata": {
+            "path": "provenance/tts/groups/42b164b18a10b06f334bed7a4e0c2bb960727270eba102525ef92a4619ab0e8b.json",
+            "sha256": "be7dfda6ec06bfd4d65f7ff1a97090d4adf278db442e89582285d2f4bab50bde",
+            "bytes": 11512,
+            "originalPath": "work/linked2-3-audio-candidates/tts-work/groups/42b164b18a10b06f334bed7a4e0c2bb960727270eba102525ef92a4619ab0e8b.json"
+          },
+          "audio": {
+            "path": "provenance/tts/groups/42b164b18a10b06f334bed7a4e0c2bb960727270eba102525ef92a4619ab0e8b.mp3",
+            "sha256": "015c1d7c941f2771dd6d4acf622694e11a91a6eafdc802f4fbad37f310767de6",
+            "bytes": 294048
+          }
+        }
+      ],
+      "humanListened": false
+    },
+    {
+      "kind": "speaking-full",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-speaking-v115.mp3",
+      "sha256": "9e887c38f184ea35a5f636b73b603c10ca65844fcb36c66bb3a408dae56fe0f7",
+      "bytes": 229248,
+      "sourceCandidate": "audio/oral-models/d3-full-2b1e0a532fb037ed.mp3",
+      "textSha256": "2b1e0a532fb037ed19a6df2a6619907c0125182771ebff80ab46002cd565ac99",
+      "metadata": {
+        "path": "provenance/tts/groups/54d04ad62c56c4eb9ca6a3d21966c7310c657c9d587eecf684de640f70c5de81.json",
+        "sha256": "b7d9d0f427dc7c4c3b2465b707bf9ec110dcfeeb0ccb6399bf9957fae3091c4e",
+        "bytes": 8420,
+        "originalPath": "work/linked02-03-oral-candidates/tts-work/groups/54d04ad62c56c4eb9ca6a3d21966c7310c657c9d587eecf684de640f70c5de81.json"
+      },
+      "part": null,
+      "voice": "en-US-AriaNeural",
+      "humanListened": false
+    },
+    {
+      "kind": "speaking-segment",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-speaking-v115-part1.mp3",
+      "sha256": "f1b7d46c87a9849c5ad623d14da62c0dd4b52b86ae4fb2d5490e670da208ad09",
+      "bytes": 173664,
+      "sourceCandidate": "audio/oral-models/d3-part-1-a2a85920313d27d4.mp3",
+      "textSha256": "a2a85920313d27d482866a24e81334a4dfda09b6b6e3c39a07487f4e3a88dfe6",
+      "metadata": {
+        "path": "provenance/tts/groups/6f4a8da5330b68dca35f27d279f6a56acccd2dd193294f682dafe4aad3e0b863.json",
+        "sha256": "75b4fb057615bf309375ceaaf7094f6c57a4bbc963cfd5a28540f028978df787",
+        "bytes": 6575,
+        "originalPath": "work/linked02-03-oral-candidates/tts-work/groups/6f4a8da5330b68dca35f27d279f6a56acccd2dd193294f682dafe4aad3e0b863.json"
+      },
+      "part": 1,
+      "voice": "en-US-AriaNeural",
+      "humanListened": false
+    },
+    {
+      "kind": "speaking-segment",
+      "day": 3,
+      "src": "audio/curriculum/family-linked-d03-speaking-v115-part2.mp3",
+      "sha256": "45609be011c83a0793ae38ed051f963b2752a1e705c31bc1a3dd39d378b53f1c",
+      "bytes": 56448,
+      "sourceCandidate": "audio/oral-models/d3-part-2-bfbe4098291c343c.mp3",
+      "textSha256": "bfbe4098291c343cc6240fcdc1ea7b4094aa5b1865b0df9228131521eefde024",
+      "metadata": {
+        "path": "provenance/tts/groups/1c491fc0148cea1a85473aee90684199b541f9457115c8a9b22e4b0d625f5183.json",
+        "sha256": "c85b1b6ab4b272a6a30a2af9a166fc60d63aefd12f00fda6ce562b022dced9d1",
+        "bytes": 2179,
+        "originalPath": "work/linked02-03-oral-candidates/tts-work/groups/1c491fc0148cea1a85473aee90684199b541f9457115c8a9b22e4b0d625f5183.json"
+      },
+      "part": 2,
+      "voice": "en-US-AriaNeural",
+      "humanListened": false
+    }
+  ],
+  "historicalCollisionCheck": {
+    "releaseSources": [
+      {
+        "id": "family-linked-days04-10-v109",
+        "days": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "path": "provenance/history/family-lessons-v109-release.json",
+        "sha256": "0b18cc52823cb1ce1e72192647a7293ee260ba2d65f4799e6e8af38442cbf467"
+      },
+      {
+        "id": "family-linked-days11-20-v114",
+        "days": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "path": "provenance/history/family-lessons-v114-release.json",
+        "sha256": "17f24aef0ccbc25224fa2ed3641f6ccb8de4f9c8fff2eb085bfb8fc4315e28ca"
+      }
+    ],
+    "historicalTargetCount": 510,
+    "candidateTargetCount": 60,
+    "canonicalIdCollisions": [],
+    "spellingVariantCollisions": [],
+    "installedMaterialIdCollisions": [],
+    "installedUnitIdCollisions": [],
+    "currentAssetSha256": "14f4132ba16e5f8d691885b7e0718ee426094a81ffab604b4feb9966841124e0",
+    "currentDayHash": "03171761ee92ad032918aaedac02fc3926e110cc385692d9bc5ad22213b528d3"
+  },
+  "authorizedChanges": [
+    {
+      "day": 2,
+      "kind": "vocabulary-grouping",
+      "originalMaterialId": "family-linked-d02-vocabulary-next-v1",
+      "newMaterialIds": [
+        "family-linked-d02-vocabulary-v115-g1",
+        "family-linked-d02-vocabulary-v115-g2",
+        "family-linked-d02-vocabulary-v115-g3",
+        "family-linked-d02-vocabulary-v115-g4",
+        "family-linked-d02-vocabulary-v115-g5"
+      ],
+      "originalEstimatedMinutes": 45,
+      "groupEstimatedMinutes": 18,
+      "totalGroupEstimatedMinutes": 90,
+      "note": "Recommended per-group planning estimate; completion and carry-forward remain evidence-based."
+    },
+    {
+      "day": 2,
+      "kind": "instructions",
+      "skill": "vocabulary",
+      "before": "先分组看中文义和原句；再按既定流程逐词练习。音标沿用核心词库，音频尚未生成和听审。",
+      "after": "先完成到期复习，再练本组六词：每词正确输入三遍、录音跟读三遍，再完成补全、中文写英文和听写。提交后查看结果与订正。"
+    },
+    {
+      "day": 2,
+      "kind": "instructions",
+      "skill": "listening",
+      "before": "先按对话分段听人物与数字，再做题；音频尚未生成，当前文字仅供草稿审核。",
+      "after": "先按对话分段听人物与数字，再独立作答；订正时回听对应片段。"
+    },
+    {
+      "day": 2,
+      "kind": "question-field",
+      "skill": "listening",
+      "id": "l05",
+      "field": "prompt",
+      "before": "What can Ava and Tom write in their books?",
+      "after": "What does Ava say they can write?"
+    },
+    {
+      "day": 3,
+      "kind": "vocabulary-grouping",
+      "originalMaterialId": "family-linked-d03-vocabulary-next-v1",
+      "newMaterialIds": [
+        "family-linked-d03-vocabulary-v115-g1",
+        "family-linked-d03-vocabulary-v115-g2",
+        "family-linked-d03-vocabulary-v115-g3",
+        "family-linked-d03-vocabulary-v115-g4",
+        "family-linked-d03-vocabulary-v115-g5"
+      ],
+      "originalEstimatedMinutes": 45,
+      "groupEstimatedMinutes": 18,
+      "totalGroupEstimatedMinutes": 90,
+      "note": "Recommended per-group planning estimate; completion and carry-forward remain evidence-based."
+    },
+    {
+      "day": 3,
+      "kind": "instructions",
+      "skill": "vocabulary",
+      "before": "先分组看中文义和原句；再按既定流程逐词练习。音标沿用核心词库，音频尚未生成和听审。",
+      "after": "先完成到期复习，再练本组六词：每词正确输入三遍、录音跟读三遍，再完成补全、中文写英文和听写。提交后查看结果与订正。"
+    },
+    {
+      "day": 3,
+      "kind": "instructions",
+      "skill": "listening",
+      "before": "先按对话分段听人物与数字，再做题；音频尚未生成，当前文字仅供草稿审核。",
+      "after": "先按对话分段听人物与数字，再独立作答；订正时回听对应片段。"
+    },
+    {
+      "day": 3,
+      "kind": "question-field",
+      "skill": "listening",
+      "id": "l07",
+      "field": "explanation",
+      "before": "她下课后留下五分钟检查给老师的便条；没有说留下吃晚饭、等到十点或找鞋。",
+      "after": "结合“下课后留下五分钟”和紧接着“检查给老师的便条”两句，可推断她留下是为了检查便条；没有说留下吃晚饭、等到十点或找鞋。"
+    }
+  ],
+  "asr": {
+    "plan": {
+      "path": "provenance/asr/plan.json",
+      "sha256": "143df01480101e7417c49fd8ac3a15adb8753f5dfe4711eb8351209d3ba4353c",
+      "bytes": 9090,
+      "originalPath": "work/linked02-03-audio-content/plan.json"
+    },
+    "report": {
+      "path": "provenance/asr/report.json",
+      "sha256": "ec9018546acecbb39962260ee88eae421d7b157489e993974292a96f2bdfee9b",
+      "bytes": 3208,
+      "originalPath": "work/linked02-03-audio-content/report.json"
+    },
+    "results": [
+      {
+        "id": "d2-listening-1",
+        "path": "provenance/asr/results/d2-listening-1.json",
+        "sha256": "a66c7afb4fa103538164e136cee938150d7dcb19885593d39eb7513e206cea15",
+        "normalizedEdits": 1
+      },
+      {
+        "id": "d2-listening-2",
+        "path": "provenance/asr/results/d2-listening-2.json",
+        "sha256": "dd4e7bf4569e1a4727978a5e41381d5b66a93719160a226cab8ac1e7510fbdd0",
+        "normalizedEdits": 0
+      },
+      {
+        "id": "d3-listening-1",
+        "path": "provenance/asr/results/d3-listening-1.json",
+        "sha256": "b0619b26e9fc9f2b5bf569defecd85edadbd5557e9de50976cabedb794f44585",
+        "normalizedEdits": 0
+      },
+      {
+        "id": "d3-listening-2",
+        "path": "provenance/asr/results/d3-listening-2.json",
+        "sha256": "3532f9a42487862c4a4871bc94a84547a3b9bf3b41e5035be5ecb3625d955d25",
+        "normalizedEdits": 1
+      },
+      {
+        "id": "d2-oral-full",
+        "path": "provenance/asr/results/d2-oral-full.json",
+        "sha256": "66dc08ac60ebff5f670460cbd213ba497cd7f2d27883dc273391809a49e1f5e5",
+        "normalizedEdits": 0
+      },
+      {
+        "id": "d2-oral-1",
+        "path": "provenance/asr/results/d2-oral-1.json",
+        "sha256": "85123a9c6150e50812707a6276c0a7ddeeb99c5fa48ba44853dceaad57b43129",
+        "normalizedEdits": 0
+      },
+      {
+        "id": "d2-oral-2",
+        "path": "provenance/asr/results/d2-oral-2.json",
+        "sha256": "6390d3a77331c1128310ae35a51ffdc1e6ee6a1dc3293709c4776eacfeb84313",
+        "normalizedEdits": 0
+      },
+      {
+        "id": "d3-oral-full",
+        "path": "provenance/asr/results/d3-oral-full.json",
+        "sha256": "21485b6ba044832cba7fb2928b68ce8af253e10ba07cd3a54e033dccbc5cd39e",
+        "normalizedEdits": 1
+      },
+      {
+        "id": "d3-oral-1",
+        "path": "provenance/asr/results/d3-oral-1.json",
+        "sha256": "aef1aa521d1f90b8d43573df75bc8336c60e77954677e3c924744b14db929d13",
+        "normalizedEdits": 1
+      },
+      {
+        "id": "d3-oral-2",
+        "path": "provenance/asr/results/d3-oral-2.json",
+        "sha256": "c9ba28e2f909afaf51f7fe02f8855e217dd5e51dfe77c87c6ab8b29159e77ec9",
+        "normalizedEdits": 0
+      }
+    ],
+    "exact": 6,
+    "withDifferences": 4,
+    "classification": "pending-root-review"
+  },
+  "release": {
+    "path": "release.json",
+    "sha256": "7d962a9095218d549b4c2b880a19c7f5e186f56a7457bf518ddf90b80d910ca7",
+    "bytes": 62352
+  },
+  "limitations": [
+    "All material source.verification fields remain pending and release.active is false.",
+    "Audio hashes, generation metadata, pauses and ASR do not establish pronunciation or learner outcomes.",
+    "Content review, browser behavior, older draft compatibility and release approval remain outstanding."
+  ]
+}

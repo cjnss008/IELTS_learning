@@ -1,0 +1,329 @@
+{
+  "schema": 1,
+  "active": false,
+  "status": "structural-checks-passed-review-pending",
+  "releaseSha256": "7d962a9095218d549b4c2b880a19c7f5e186f56a7457bf518ddf90b80d910ca7",
+  "packageFileInventory": {
+    "path": "file-hashes.json",
+    "sha256": "5ef3668e0b837768a1fbe9228c785138a8e99a232404f7a8920c57a457d0c702",
+    "bytes": 40649
+  },
+  "counts": {
+    "days": 2,
+    "materials": 20,
+    "vocabularyGroups": 10,
+    "targets": 60,
+    "grammarQuestions": 24,
+    "readingQuestions": 20,
+    "listeningQuestions": 20,
+    "audio": {
+      "word": 60,
+      "listening": 2,
+      "speaking-full": 2,
+      "speaking-segment": 4
+    }
+  },
+  "byDay": {
+    "2": {
+      "materials": 10,
+      "targets": 30,
+      "vocabularyGroups": 5,
+      "grammarQuestions": 12,
+      "readingQuestions": 10,
+      "listeningQuestions": 10,
+      "speakingSegments": 2
+    },
+    "3": {
+      "materials": 10,
+      "targets": 30,
+      "vocabularyGroups": 5,
+      "grammarQuestions": 12,
+      "readingQuestions": 10,
+      "listeningQuestions": 10,
+      "speakingSegments": 2
+    }
+  },
+  "sourceEquivalence": {
+    "allFieldsMatchAfterDocumentedProjection": true,
+    "draftHashes": {
+      "2": "8985133f495899bc533254c27669f53187305c8980da1bbb9e68ef8d8246a381",
+      "3": "48fa5999ddbda6af4334c22b67ec21c3db36ace81211c8612423ec804d508c13"
+    },
+    "allowedChanges": [
+      {
+        "day": 2,
+        "kind": "vocabulary-grouping",
+        "originalMaterialId": "family-linked-d02-vocabulary-next-v1",
+        "newMaterialIds": [
+          "family-linked-d02-vocabulary-v115-g1",
+          "family-linked-d02-vocabulary-v115-g2",
+          "family-linked-d02-vocabulary-v115-g3",
+          "family-linked-d02-vocabulary-v115-g4",
+          "family-linked-d02-vocabulary-v115-g5"
+        ],
+        "originalEstimatedMinutes": 45,
+        "groupEstimatedMinutes": 18,
+        "totalGroupEstimatedMinutes": 90,
+        "note": "Recommended per-group planning estimate; completion and carry-forward remain evidence-based."
+      },
+      {
+        "day": 2,
+        "kind": "instructions",
+        "skill": "vocabulary",
+        "before": "先分组看中文义和原句；再按既定流程逐词练习。音标沿用核心词库，音频尚未生成和听审。",
+        "after": "先完成到期复习，再练本组六词：每词正确输入三遍、录音跟读三遍，再完成补全、中文写英文和听写。提交后查看结果与订正。"
+      },
+      {
+        "day": 2,
+        "kind": "instructions",
+        "skill": "listening",
+        "before": "先按对话分段听人物与数字，再做题；音频尚未生成，当前文字仅供草稿审核。",
+        "after": "先按对话分段听人物与数字，再独立作答；订正时回听对应片段。"
+      },
+      {
+        "day": 2,
+        "kind": "question-field",
+        "skill": "listening",
+        "id": "l05",
+        "field": "prompt",
+        "before": "What can Ava and Tom write in their books?",
+        "after": "What does Ava say they can write?"
+      },
+      {
+        "day": 3,
+        "kind": "vocabulary-grouping",
+        "originalMaterialId": "family-linked-d03-vocabulary-next-v1",
+        "newMaterialIds": [
+          "family-linked-d03-vocabulary-v115-g1",
+          "family-linked-d03-vocabulary-v115-g2",
+          "family-linked-d03-vocabulary-v115-g3",
+          "family-linked-d03-vocabulary-v115-g4",
+          "family-linked-d03-vocabulary-v115-g5"
+        ],
+        "originalEstimatedMinutes": 45,
+        "groupEstimatedMinutes": 18,
+        "totalGroupEstimatedMinutes": 90,
+        "note": "Recommended per-group planning estimate; completion and carry-forward remain evidence-based."
+      },
+      {
+        "day": 3,
+        "kind": "instructions",
+        "skill": "vocabulary",
+        "before": "先分组看中文义和原句；再按既定流程逐词练习。音标沿用核心词库，音频尚未生成和听审。",
+        "after": "先完成到期复习，再练本组六词：每词正确输入三遍、录音跟读三遍，再完成补全、中文写英文和听写。提交后查看结果与订正。"
+      },
+      {
+        "day": 3,
+        "kind": "instructions",
+        "skill": "listening",
+        "before": "先按对话分段听人物与数字，再做题；音频尚未生成，当前文字仅供草稿审核。",
+        "after": "先按对话分段听人物与数字，再独立作答；订正时回听对应片段。"
+      },
+      {
+        "day": 3,
+        "kind": "question-field",
+        "skill": "listening",
+        "id": "l07",
+        "field": "explanation",
+        "before": "她下课后留下五分钟检查给老师的便条；没有说留下吃晚饭、等到十点或找鞋。",
+        "after": "结合“下课后留下五分钟”和紧接着“检查给老师的便条”两句，可推断她留下是为了检查便条；没有说留下吃晚饭、等到十点或找鞋。"
+      }
+    ],
+    "originalReadingListeningAndReferencesPreserved": true
+  },
+  "collisionCheck": {
+    "historicDays": "4–20",
+    "historicCanonicalTargets": 510,
+    "candidateCanonicalTargets": 60,
+    "canonicalIdCollisions": 0,
+    "spellingVariantCollisions": 0,
+    "existingMaterialIdCollisions": 0,
+    "existingUnitIdCollisions": 0,
+    "installedMaterialsChecked": 2012
+  },
+  "audioVerification": {
+    "decodedNonSilentFiles": 68,
+    "wordAndIpaReferencesMatched": 60,
+    "listeningTranscriptRoleAndGapChecks": [
+      {
+        "day": 2,
+        "turns": 8,
+        "gaps": 7,
+        "expectedGapSeconds": 0.65,
+        "maximumCentralGapRms": 0
+      },
+      {
+        "day": 3,
+        "turns": 8,
+        "gaps": 7,
+        "expectedGapSeconds": 0.65,
+        "maximumCentralGapRms": 0
+      }
+    ],
+    "fullSpeakingReferences": 2,
+    "exactSpokenReferenceParts65": 4,
+    "synthetic": true
+  },
+  "asr": {
+    "unprompted": true,
+    "segments": 10,
+    "normalizedExact": 6,
+    "segmentsWithDifferences": 4,
+    "differences": [
+      {
+        "id": "d2-listening-1",
+        "edits": 1,
+        "changes": [
+          {
+            "expected": [],
+            "actual": [
+              "s"
+            ],
+            "expectedIndex": 91,
+            "actualIndex": 91,
+            "contextBefore": [
+              "i",
+              "do",
+              "not",
+              "understand",
+              "one"
+            ],
+            "contextAfter": [
+              "sound",
+              "can",
+              "you",
+              "speak",
+              "again"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d3-listening-2",
+        "edits": 1,
+        "changes": [
+          {
+            "expected": [
+              "too"
+            ],
+            "actual": [
+              "two"
+            ],
+            "expectedIndex": 36,
+            "actualIndex": 36,
+            "contextBefore": [
+              "teacher",
+              "i",
+              "finish",
+              "at",
+              "three"
+            ],
+            "contextAfter": [
+              "then",
+              "i",
+              "leave",
+              "with",
+              "you"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d3-oral-full",
+        "edits": 1,
+        "changes": [
+          {
+            "expected": [
+              "and"
+            ],
+            "actual": [
+              "in"
+            ],
+            "expectedIndex": 29,
+            "actualIndex": 29,
+            "contextBefore": [
+              "put",
+              "on",
+              "a",
+              "blue",
+              "shirt"
+            ],
+            "contextAfter": [
+              "my",
+              "shoes",
+              "the",
+              "sun",
+              "is"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d3-oral-1",
+        "edits": 1,
+        "changes": [
+          {
+            "expected": [
+              "and"
+            ],
+            "actual": [
+              "in"
+            ],
+            "expectedIndex": 29,
+            "actualIndex": 29,
+            "contextBefore": [
+              "put",
+              "on",
+              "a",
+              "blue",
+              "shirt"
+            ],
+            "contextAfter": [
+              "my",
+              "shoes",
+              "the",
+              "sun",
+              "is"
+            ]
+          }
+        ]
+      }
+    ],
+    "classification": "pending-root-review",
+    "scope": "ASR covered listening and oral examples; it did not assess the 60 word clips."
+  },
+  "scheduling": {
+    "sourceVocabularyEstimateMinutes": 45,
+    "perGroupEstimateMinutes": 18,
+    "vocabularyGroups": 5,
+    "vocabularyEstimateTotalMinutes": 90,
+    "otherModuleEstimateMinutes": 300,
+    "suggestedTotalMinutes": 390,
+    "dailyAvailableMinutes": 360,
+    "note": "390 minutes excludes due review and breaks. Actual budget and carry-forward remain for runtime validation; unfinished work must remain outstanding."
+  },
+  "loaderSimulation": {
+    "scope": "isolated synthetic root; review and reviewed flags are fabricated solely for structural testing",
+    "approval": false,
+    "base": "two synthetic lessons with no learner records",
+    "inactiveCandidate": {
+      "active": false,
+      "added": 0,
+      "unchanged": true
+    },
+    "unsignedActiveRejected": true,
+    "temporarySimulatedLoader": {
+      "added": 20,
+      "units": 2,
+      "syntheticDaysUnchanged": true
+    },
+    "wordAudioTamperRejected": true,
+    "materialTamperRejected": true
+  },
+  "limitations": [
+    "The candidate is unsigned and inactive; all source.verification fields remain pending.",
+    "The 4 ASR differences require contextual classification; no pronunciation or learner outcome is certified.",
+    "Semantic review, real browser playback, old-draft/backup compatibility and runtime budget behavior remain separate acceptance steps.",
+    "No service was started and no learner state was used."
+  ]
+}

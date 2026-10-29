@@ -2,7 +2,9 @@
 // Synthetic DOM/IndexedDB regression using the production vocabulary session,
 // course player, Records adapter and mistake book. No real profile is opened.
 const test=require('node:test'),assert=require('node:assert/strict'),crypto=require('node:crypto'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const {D,P,A,copy,settle,mount}=require('./answer-replay-fixture-v95.cjs');
+const replay=require('./answer-replay-fixture-v95.cjs'),{P,A,copy,settle,mount}=replay;
+// Keep these old group, original and draft checks on the verified public baseline.
+const D=require('./published-public-baseline-fixture.cjs')(replay.D);
 const V=require('../assets/vocabulary-practice.js'),X=require('../assets/course-expansion.js'),M=require('../assets/mistake-book.js');
 const day=X.overlay(D.days.find(d=>d.day===2),D),task=day.tasks.find(t=>t.id==='vocabulary'),ids=X.orderedMaterialIds(task,2),materials=ids.map(id=>D.materials.find(m=>m.id===id));
 let serial=0;
@@ -19,7 +21,7 @@ function submission(material,{wrong=false,kind='original',parentId=null}={}){
 }
 function setup(options={}){
  let raw=null,mounted=null;const store=M.createStore({getItem:()=>raw,setItem:(_key,value)=>{raw=value;}});
- const f=mount({beforePlayer(win,context){win.IELTSCurriculumData.days[1]=copy(day);win.IELTSCourseExpansion=X;win.IELTSMistakes={EVENT:'synthetic-mistake-change',forDay:n=>store.summary(n),recordCorrectionStatus:r=>store.recordCorrectionStatus(r),historicalRecordCorrectionStatus:r=>store.historicalRecordCorrectionStatus(r),captureRecord:r=>store.captureRecord(r,{materials:D.materials}),syncRecords:records=>records.forEach(r=>store.captureRecord(r,{materials:D.materials}))};
+ const f=mount({beforePlayer(win,context){win.IELTSCurriculumData=copy(D);win.IELTSCurriculumData.days[1]=copy(day);win.IELTSCourseExpansion=X;win.IELTSMistakes={EVENT:'synthetic-mistake-change',forDay:n=>store.summary(n),recordCorrectionStatus:r=>store.recordCorrectionStatus(r),historicalRecordCorrectionStatus:r=>store.historicalRecordCorrectionStatus(r),captureRecord:r=>store.captureRecord(r,{materials:D.materials}),syncRecords:records=>records.forEach(r=>store.captureRecord(r,{materials:D.materials}))};
   if(options.unprovable)win.IELTSAssessment={...win.IELTSAssessment,proveLegacyMaterial:()=>({compatible:false,reason:'Synthetic old material not proven'})};
   const lookup=win.document.getElementById;win.document.getElementById=id=>id==='todayOverview'?null:lookup(id);vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../assets/today-hub.js'),'utf8'),context,{filename:'actual-today-hub.js'});win.document.getElementById=lookup;
   if(options.capture){const vocabulary=win.IELTSVocabularyPractice;win.IELTSVocabularyPractice={...vocabulary,mount(host,value){mounted=value;return vocabulary.mount(host,value);}};}

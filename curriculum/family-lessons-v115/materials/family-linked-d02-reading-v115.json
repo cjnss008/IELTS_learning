@@ -1,0 +1,241 @@
+{
+  "id": "family-linked-d02-reading-v115",
+  "version": "1",
+  "week": 1,
+  "courseDay": 2,
+  "level": "A0",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "reading",
+  "type": "reading",
+  "title": "A Small English Group",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "项目原创虚构教学材料；AI 编写并逐词逐题对照语境复核。",
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Foundational A0/A1 practice, author-estimated difficulty. Final source senses,64objective questions and explicit package wording revisions reviewed. Synthetic en-US audio source/bytes/decoding/roles/pause checks and unprompted ASR retained;4recognition differences are not declared phonemically verified."
+  },
+  "questions": [
+    {
+      "id": "r01",
+      "type": "single",
+      "prompt": "Who is the teacher?",
+      "options": [
+        "Sara.",
+        "Ben.",
+        "Ms Lee.",
+        "A student in another group."
+      ],
+      "answers": [
+        "Ms Lee."
+      ],
+      "evidence": "At ten, they meet their teacher, Ms Lee.",
+      "evidenceOffsets": {
+        "start": 51,
+        "end": 91,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "第一段说 Ms Lee 是老师；Sara 和 Ben 是学生，另一组学生没有被介绍为老师。"
+    },
+    {
+      "id": "r02",
+      "type": "single",
+      "prompt": "How many students are in the group?",
+      "options": [
+        "Three.",
+        "Four.",
+        "Five.",
+        "Six."
+      ],
+      "answers": [
+        "Six."
+      ],
+      "evidence": "There is a group of six students.",
+      "evidenceOffsets": {
+        "start": 92,
+        "end": 125,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "小组有六名学生，Sara 和 Ben 计入其中；三、四、五分别出现在其他物品的数量中。"
+    },
+    {
+      "id": "r03",
+      "type": "single",
+      "prompt": "When do Sara and Ben meet Ms Lee?",
+      "options": [
+        "At ten.",
+        "At three.",
+        "At four.",
+        "At six."
+      ],
+      "answers": [
+        "At ten."
+      ],
+      "evidence": "At ten, they meet their teacher, Ms Lee.",
+      "evidenceOffsets": {
+        "start": 51,
+        "end": 91,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "见老师的时间是十点；三、四和六是文中其他数量，不是这个时间。"
+    },
+    {
+      "id": "r04",
+      "type": "single",
+      "prompt": "How many textbooks are on one table?",
+      "options": [
+        "Four.",
+        "Three.",
+        "Five.",
+        "Six."
+      ],
+      "answers": [
+        "Three."
+      ],
+      "evidence": "Three textbooks are on one table.",
+      "evidenceOffsets": {
+        "start": 377,
+        "end": 410,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "一张桌上有三本教科书；四本是笔记本，五是便条上的名字数，六是学生人数。"
+    },
+    {
+      "id": "r05",
+      "type": "single",
+      "prompt": "What does Ms Lee have?",
+      "options": [
+        "A notebook from Ben.",
+        "The note with five names.",
+        "A marker.",
+        "A textbook from Sara."
+      ],
+      "answers": [
+        "A marker."
+      ],
+      "evidence": "Ms Lee has a marker.",
+      "evidenceOffsets": {
+        "start": 486,
+        "end": 506,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "文中明确说 Ms Lee 有一支记号笔；没有说她拿着 Ben 的笔记本、那张便条或 Sara 的教科书。"
+    },
+    {
+      "id": "r06",
+      "type": "single",
+      "prompt": "What does Ms Lee ask students to write?",
+      "options": [
+        "Five questions.",
+        "The teacher’s whole note.",
+        "The number of tables.",
+        "Their names."
+      ],
+      "answers": [
+        "Their names."
+      ],
+      "evidence": "Please write your name in your notebook.",
+      "evidenceOffsets": {
+        "start": 569,
+        "end": 609,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "她请学生把自己的名字写在笔记本里；没有要求写五个问题、整张便条或桌子数量。"
+    },
+    {
+      "id": "r07",
+      "type": "single",
+      "prompt": "What does the group read together?",
+      "options": [
+        "A short note.",
+        "A long story.",
+        "A list of six questions.",
+        "A name on a marker."
+      ],
+      "answers": [
+        "A short note."
+      ],
+      "evidence": "The group can read a short note together.",
+      "evidenceOffsets": {
+        "start": 683,
+        "end": 724,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "小组可以一起读一张短便条；其余三个内容没有被说成共同阅读材料。"
+    },
+    {
+      "id": "r08",
+      "type": "single",
+      "prompt": "How many names are on the note?",
+      "options": [
+        "Three.",
+        "Five.",
+        "Four.",
+        "Six."
+      ],
+      "answers": [
+        "Five."
+      ],
+      "evidence": "The note has five names.",
+      "evidenceOffsets": {
+        "start": 725,
+        "end": 749,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "短便条上有五个名字；三和四是书本数量，六是学生人数。"
+    },
+    {
+      "id": "r09",
+      "type": "single",
+      "prompt": "Why does Ben ask Ms Lee to speak again?",
+      "options": [
+        "He cannot find a table.",
+        "He wants to leave the group.",
+        "He does not understand a sound.",
+        "He has finished every note."
+      ],
+      "answers": [
+        "He does not understand a sound."
+      ],
+      "evidence": "I do not understand this sound. Please speak again.",
+      "evidenceOffsets": {
+        "start": 898,
+        "end": 949,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Ben 说自己不理解这个声音，请老师再说一次；没有说他找不到桌子、要离组或做完全部便条。"
+    },
+    {
+      "id": "r10",
+      "type": "single",
+      "prompt": "What does Ms Lee show Ben?",
+      "options": [
+        "The students’ textbooks.",
+        "The full list of six students.",
+        "The number of tables.",
+        "The letters of the name."
+      ],
+      "answers": [
+        "The letters of the name."
+      ],
+      "evidence": "Ms Lee shows him the letters.",
+      "evidenceOffsets": {
+        "start": 1063,
+        "end": 1092,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Ben 问名字怎样拼写，老师给他看字母；原文没有说她向他展示教材、六人完整名单或桌子数。"
+    }
+  ],
+  "estimatedMinutes": 60,
+  "instructions": "先按小段读，圈出人物和数字；每题选择一个答案，回到原句核对。",
+  "passage": "Sara and Ben are new students at an English class. At ten, they meet their teacher, Ms Lee. There is a group of six students. Sara and Ben are two of the six. Ms Lee says hello and shows them the room. The students can ask for help. There are two tables in the room. The group can sit at the tables. They have time to learn together. Ms Lee is happy to help the new students.\n\nThree textbooks are on one table. Four notebooks are on another table. Sara has a notebook. Ben has one too. Ms Lee has a marker. She writes her name on the board. She says, \"This is my name. Please write your name in your notebook.\"\n\nSara and Ben sit at a table. Ms Lee says, \"Please open your textbook.\" The group can read a short note together. The note has five names. Sara reads one name. Ben reads another. They do not need to read very fast. The teacher can help them.\n\nBen has a question about a sound. He says, \"I do not understand this sound. Please speak again.\" Ms Lee says the sound again. Ben tries it. He wants to check his answer. He asks, \"How do you spell this name?\" Ms Lee shows him the letters.\n\nThe students stand and speak to one another. Sara says, \"I am fine. Thank you, Ms Lee.\" Ben says, \"Thank you for your help.\" They write one more note and show it to the teacher. The group is small, and everyone has time to ask a question.",
+  "questionCount": 10
+}

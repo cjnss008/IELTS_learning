@@ -1,0 +1,235 @@
+{
+  "schema": 1,
+  "version": "0.0.115",
+  "status": "development-candidate-not-published",
+  "formalVersion": "0.0.112",
+  "fullRegression": {
+    "command": "node tools/test.cjs",
+    "tests": 2928,
+    "passed": 2926,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "durationMs": 900355.0308,
+    "exitCode": 0,
+    "localLog": "work/v115-final-full-regression.log",
+    "logSha256": "0efcc5e0668c944a1b654efd01e2b5b239920ea29f0addd23d3c2615cfa98a00"
+  },
+  "priorRuns": [
+    {
+      "exitCode": 1,
+      "failed": 6,
+      "localLog": "work/v115-full-regression.log",
+      "logSha256": "baa89a70fe73e5ab4b76285bc20658572161d6d893a7124a07eec9661b59705e"
+    },
+    {
+      "exitCode": 1,
+      "failed": 7,
+      "localLog": "work/v115-fixed-full-regression.log",
+      "logSha256": "48e0146368f342b467e2f2adf4c9c00df7717d9f8f1b2e2eb30e19d7e78f428b"
+    }
+  ],
+  "runtime": {
+    "index": "curriculum/year-first-use/index.b44a4e456373b8a2.json",
+    "manifestSha256": "f673830aa5dddac63f7fad0023a287c784721099b95fda3977649935f09d7853",
+    "contract": "curriculum/year-first-use-runtime-contract-v115-completed-history.json",
+    "contractSha256": "b41e4b9b4b119273f2c9b3c77ce2c3451ac0a8c914d28018c8a5b0d9d66d8d36",
+    "components": 55,
+    "oldComponentPathsPreserved": true
+  },
+  "preservation": {
+    "schema": 1,
+    "baselineCommit": "735dbcc8e7c4a8e5a2ad89aa4c7ea9d65e7319d6",
+    "oldMaterialsPreserved": 2012,
+    "oldDayPlansPreserved": 365,
+    "oldFamilyUnitsPreserved": 17,
+    "oldBatchesPreserved": 2,
+    "oldContractsPreserved": 14,
+    "runtimePath": "curriculum/year-first-use-runtime-contract-v115-completed-history.json",
+    "unchangedRuntimeComponentPaths": 55,
+    "changedRuntimeComponents": [
+      "assets/course-player.js",
+      "server/year-material-catalog.cjs",
+      "assets/adaptive-plan.js",
+      "server/year-runtime-contract-policy.cjs",
+      "tools/year-runtime-activation.cjs",
+      "assets/family-lesson-expansion-v95.js"
+    ],
+    "addedMaterials": 20,
+    "addedLinkedDays": [
+      2,
+      3
+    ],
+    "userDataReadOrWritten": false,
+    "formalChanged": false,
+    "changed": [
+      {
+        "path": "assets/curriculum-data.js",
+        "sha256": "2ab585d06f382cff35019da50d532714e37f3a777e0fdab4ed0b7b566f1162bb"
+      },
+      {
+        "path": "assets/year-first-use-manifest.js",
+        "sha256": "f673830aa5dddac63f7fad0023a287c784721099b95fda3977649935f09d7853"
+      },
+      {
+        "path": "curriculum/year-expansion-budget-plan.json",
+        "sha256": "2ce5f48af67ab5792c27f868a56a550d9cafc3f977c312e9c9ffad63e1890cad"
+      },
+      {
+        "path": "curriculum/year-first-use/index.b44a4e456373b8a2.json",
+        "sha256": "b44a4e456373b8a2470937ccedf973f1364eb9d9e66a099f9290186af1a1e61a"
+      }
+    ]
+  },
+  "content": {
+    "addedDays": [
+      2,
+      3
+    ],
+    "newMaterials": 20,
+    "newCanonicalTargets": 60,
+    "newCoreTargets": 60,
+    "newAudioFiles": 68,
+    "newObjectiveQuestions": 64,
+    "linkedDaysInDevelop": [
+      2,
+      20
+    ],
+    "linkedUnits": 19,
+    "linkedTargets": 570,
+    "coreTargets": 546,
+    "extensionTargets": 24,
+    "linkedMaterials": 190,
+    "release": "curriculum/family-lessons-v115/release.json",
+    "releaseSha256": "c72610a3c8e64acd57441255d693b68bd51e1930e23fbe44d801b6ede290beb1"
+  },
+  "checks": {
+    "staticResources": "27 pages,870 links,129 scripts,52 old lessons,360 word audio paths",
+    "curriculumStructure": {
+      "status": "passed",
+      "materials": 2032,
+      "days": 365
+    },
+    "questionRules": {
+      "sourceMaterials": 830,
+      "questions": 7800,
+      "high": 0,
+      "unresolvedReview": 0,
+      "scope": "Original-source rule scanner; new family questions separately reviewed in the package evidence."
+    },
+    "semanticReviewSha256": "1e29ad4392eef3b55352048ff813b11df73839d81c101709e2d0123abeb73d81",
+    "audio": {
+      "provider": "Local Whisper.cpp base.en",
+      "sourcePromptProvided": false,
+      "reportSha256": "ec9018546acecbb39962260ee88eae421d7b157489e993974292a96f2bdfee9b",
+      "jobs": [
+        {
+          "id": "d2-listening-1",
+          "normalizedEdits": 1,
+          "resultSha256": "a66c7afb4fa103538164e136cee938150d7dcb19885593d39eb7513e206cea15",
+          "classification": {
+            "expected": "one sound",
+            "recognized": "one’s sound",
+            "status": "unresolved-ASR-word-boundary-spelling",
+            "note": "ASR adds a possessive marker at a sibilant boundary. It does not establish an omission or a verified acoustic error."
+          }
+        },
+        {
+          "id": "d2-listening-2",
+          "normalizedEdits": 0,
+          "resultSha256": "dd4e7bf4569e1a4727978a5e41381d5b66a93719160a226cab8ac1e7510fbdd0",
+          "classification": {
+            "status": "reference-aligned-after-declared-normalization"
+          }
+        },
+        {
+          "id": "d3-listening-1",
+          "normalizedEdits": 0,
+          "resultSha256": "b0619b26e9fc9f2b5bf569defecd85edadbd5557e9de50976cabedb794f44585",
+          "classification": {
+            "status": "reference-aligned-after-declared-normalization"
+          }
+        },
+        {
+          "id": "d3-listening-2",
+          "normalizedEdits": 1,
+          "resultSha256": "3532f9a42487862c4a4871bc94a84547a3b9bf3b41e5035be5ecb3625d955d25",
+          "classification": {
+            "expected": "three too",
+            "recognized": "3-2",
+            "status": "homophone-and-number-formatting",
+            "note": "too and two have the same spoken form; the original reference and numerical answer remain unchanged."
+          }
+        },
+        {
+          "id": "d2-oral-full",
+          "normalizedEdits": 0,
+          "resultSha256": "66dc08ac60ebff5f670460cbd213ba497cd7f2d27883dc273391809a49e1f5e5",
+          "classification": {
+            "status": "reference-aligned-after-declared-normalization"
+          }
+        },
+        {
+          "id": "d2-oral-1",
+          "normalizedEdits": 0,
+          "resultSha256": "85123a9c6150e50812707a6276c0a7ddeeb99c5fa48ba44853dceaad57b43129",
+          "classification": {
+            "status": "reference-aligned-after-declared-normalization"
+          }
+        },
+        {
+          "id": "d2-oral-2",
+          "normalizedEdits": 0,
+          "resultSha256": "6390d3a77331c1128310ae35a51ffdc1e6ee6a1dc3293709c4776eacfeb84313",
+          "classification": {
+            "status": "reference-aligned-after-declared-normalization"
+          }
+        },
+        {
+          "id": "d3-oral-full",
+          "normalizedEdits": 1,
+          "resultSha256": "21485b6ba044832cba7fb2928b68ce8af253e10ba07cd3a54e033dccbc5cd39e",
+          "classification": {
+            "expected": "shirt and my shoes",
+            "recognized": "shirt in my shoes",
+            "status": "unresolved-weak-function-word",
+            "note": "The same weak connector differs in full and segmented recognition; text/boundary provenance confirms the synthesis input but does not prove each phoneme."
+          }
+        },
+        {
+          "id": "d3-oral-1",
+          "normalizedEdits": 1,
+          "resultSha256": "aef1aa521d1f90b8d43573df75bc8336c60e77954677e3c924744b14db929d13",
+          "classification": {
+            "expected": "shirt and my shoes",
+            "recognized": "shirt in my shoes",
+            "status": "unresolved-weak-function-word",
+            "note": "Retained as a recognition/acoustic ambiguity rather than declared correct by ASR."
+          }
+        },
+        {
+          "id": "d3-oral-2",
+          "normalizedEdits": 0,
+          "resultSha256": "c9ba28e2f909afaf51f7fe02f8855e217dd5e51dfe77c87c6ab8b29159e77ec9",
+          "classification": {
+            "status": "reference-aligned-after-declared-normalization"
+          }
+        }
+      ],
+      "decision": "Suitable for continued ordinary-practice integration with recorded recognition limitations; not a clean-ASR or phoneme-accuracy certificate."
+    }
+  },
+  "browser": {
+    "passed": false,
+    "block": "Local browser use is disabled in Work settings",
+    "formalLearnerDataAccessed": false
+  },
+  "limitations": [
+    "Full combination regression is reported separately from actual browser acceptance.",
+    "390recommended material minutes per new unit exceed360before review and breaks; unfinished work must remain debt.",
+    "Unprompted synthetic ASR had6normalized matches and4differences; no professional phoneme certification or real microphone validation.",
+    "Content difficulty is author-estimated; no validated IELTS outcome guarantee.",
+    "Actual family-PC latency remains unverified; Keep-Alive timeout=5 is an idle connection header.",
+    "New linked curriculum still needs completion for days21–365; original day365 annual-review protocol remains unchanged."
+  ]
+}

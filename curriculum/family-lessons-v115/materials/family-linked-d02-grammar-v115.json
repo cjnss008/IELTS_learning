@@ -1,0 +1,283 @@
+{
+  "id": "family-linked-d02-grammar-v115",
+  "version": "1",
+  "week": 1,
+  "courseDay": 2,
+  "level": "A0",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "this / these、礼貌指令和 my / your",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "项目原创虚构教学材料；AI 编写并逐词逐题对照语境复核。",
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Foundational A0/A1 practice, author-estimated difficulty. Final source senses,64objective questions and explicit package wording revisions reviewed. Synthetic en-US audio source/bytes/decoding/roles/pause checks and unprompted ASR retained;4recognition differences are not declared phonemically verified."
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Choose the correct word: This ____ my notebook.",
+      "options": [
+        "are",
+        "am",
+        "is",
+        "be"
+      ],
+      "answers": [
+        "is"
+      ],
+      "evidence": "This is my notebook.",
+      "evidenceOffsets": {
+        "start": 66,
+        "end": 86,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "this 指一个笔记本，搭配 is；are 用于复数，am 用于 I，be 不能直接放在此处。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Choose the correct word: These ____ my notes.",
+      "options": [
+        "is",
+        "am",
+        "be",
+        "are"
+      ],
+      "answers": [
+        "are"
+      ],
+      "evidence": "These are my notes.",
+      "evidenceOffsets": {
+        "start": 87,
+        "end": 106,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "these 指多个笔记，搭配 are；is 用于单数，am 用于 I，be 此处未变形。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Choose the correct sentence.",
+      "options": [
+        "This is a textbook.",
+        "This are a textbook.",
+        "These is a textbook.",
+        "This am a textbook."
+      ],
+      "answers": [
+        "This is a textbook."
+      ],
+      "evidence": "This is a textbook.",
+      "evidenceOffsets": {
+        "start": 107,
+        "end": 126,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "一个教科书用 this is；其他选项的 this/these 与 be 动词搭配错误。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Choose the correct word: These ____ three markers.",
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "answers": [
+        "are"
+      ],
+      "evidence": "These are three markers.",
+      "evidenceOffsets": {
+        "start": 127,
+        "end": 151,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "three markers 是复数，these 后用 are；is、am 和原形 be 不符合这个句子。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Complete the instruction: Please ____ your notebook.",
+      "options": [
+        "opens",
+        "opening",
+        "open",
+        "opened"
+      ],
+      "answers": [
+        "open"
+      ],
+      "evidence": "Please open your notebook.",
+      "evidenceOffsets": {
+        "start": 210,
+        "end": 236,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "礼貌指令使用动词原形 open；opens、opening 和 opened 不能直接用作这个指令。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Complete the instruction: Please ____ here.",
+      "options": [
+        "sits",
+        "sitting",
+        "sat",
+        "sit"
+      ],
+      "answers": [
+        "sit"
+      ],
+      "evidence": "Please sit here.",
+      "evidenceOffsets": {
+        "start": 237,
+        "end": 253,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "请对方坐下时用原形 sit；sits 是第三人称单数，sitting 和 sat 不是此处的指令形式。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "Complete the instruction: Please ____ your name.",
+      "options": [
+        "write",
+        "writes",
+        "writing",
+        "wrote"
+      ],
+      "answers": [
+        "write"
+      ],
+      "evidence": "Please write your name.",
+      "evidenceOffsets": {
+        "start": 254,
+        "end": 277,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "please 后的指令动词用原形 write；writes、writing 和 wrote 不符合此句结构。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "Complete the instruction: Please ____ again.",
+      "options": [
+        "speaks",
+        "speak",
+        "speaking",
+        "spoke"
+      ],
+      "answers": [
+        "speak"
+      ],
+      "evidence": "Please speak again.",
+      "evidenceOffsets": {
+        "start": 278,
+        "end": 297,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "请对方再说一遍时用原形 speak；speaks、speaking 和 spoke 不符合此处的指令结构。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "I talk about my own book: This is ____ textbook.",
+      "options": [
+        "your",
+        "his",
+        "my",
+        "their"
+      ],
+      "answers": [
+        "my"
+      ],
+      "evidence": "my 表示“我的”，your 表示“你的/你们的”；它们后面接名词。选项中 his 是“他的”，her 是“她的”，their 是“他们的”；先判断物品属于谁。",
+      "evidenceOffsets": {
+        "start": 302,
+        "end": 382,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "说话人谈自己的教科书，用 my；your、his、their 分别指你的、他的和他们的。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "The note belongs to Ben. I ask Ben: Is this ____ note?",
+      "options": [
+        "my",
+        "her",
+        "their",
+        "your"
+      ],
+      "answers": [
+        "your"
+      ],
+      "evidence": "my 表示“我的”，your 表示“你的/你们的”；它们后面接名词。选项中 his 是“他的”，her 是“她的”，their 是“他们的”；先判断物品属于谁。",
+      "evidenceOffsets": {
+        "start": 302,
+        "end": 382,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "说话人直接问 Ben 他的便条，用 your；my、her 和 their 指向其他所属关系。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "Ava says her own name: ____ name is Ava.",
+      "options": [
+        "My",
+        "Your",
+        "His",
+        "Their"
+      ],
+      "answers": [
+        "My"
+      ],
+      "evidence": "my 表示“我的”，your 表示“你的/你们的”；它们后面接名词。选项中 his 是“他的”，her 是“她的”，their 是“他们的”；先判断物品属于谁。",
+      "evidenceOffsets": {
+        "start": 302,
+        "end": 382,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Ava 在介绍自己的名字，句首用 My；其他选项不是“我的”。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "The marker belongs to Tom. I ask Tom: Is this ____ marker?",
+      "options": [
+        "my",
+        "your",
+        "her",
+        "their"
+      ],
+      "answers": [
+        "your"
+      ],
+      "evidence": "my 表示“我的”，your 表示“你的/你们的”；它们后面接名词。选项中 his 是“他的”，her 是“她的”，their 是“他们的”；先判断物品属于谁。",
+      "evidenceOffsets": {
+        "start": 302,
+        "end": 382,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "说话人直接询问 Tom 他的记号笔，用 your；my、her 和 their 不指代被问的 Tom。"
+    }
+  ],
+  "estimatedMinutes": 30,
+  "instructions": "先读中文解释和例句，做前 8 道引导题，再做 4 道新情境题；不确定时可回看规则。",
+  "passage": "1. this 指近处的一个人或物，后面常用 is；these 指近处的多个物品，后面常用 are。先看名词是单数还是复数。\n例句：This is my notebook. These are my notes. This is a textbook. These are three markers.\n\n2. 给出简短指令时，句首使用动词原形；加 please 表示礼貌。动词不因对方是一个人或多人而加 -s。\n例句：Please open your notebook. Please sit here. Please write your name. Please speak again.\n\n3. my 表示“我的”，your 表示“你的/你们的”；它们后面接名词。选项中 his 是“他的”，her 是“她的”，their 是“他们的”；先判断物品属于谁。\n例句：My name is Sara. Your name is Ben.",
+  "questionCount": 12
+}

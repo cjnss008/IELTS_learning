@@ -1,0 +1,255 @@
+{
+  "id": "d3-listening-1",
+  "day": 3,
+  "kind": "listening",
+  "audio": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked02-03-audio-rebound\\audio\\curriculum\\family-linked-d3-listening-candidate-v1.mp3",
+  "audioSha256": "fbe71916fb384b085ccb0bab443ac76167120c7673df5aefc3275720c2f94773",
+  "start": 0,
+  "end": 48.08470833333333,
+  "reference": "Hello, Cal. On class days, I wake at five. I get up and wash my face. My room is cool. What time do you wake? I wake at six. I put on a shirt. I put a sock on each foot. My shoe is under the bed. I find it and put it on. I have a blue shirt today. I also have a dress, but I choose the shirt. The sun is out, so I put a hat on my head before I leave. I take a quick look at my note. I start class at ten. Do you start at ten too? We can meet our group at the table.",
+  "referenceSha256": "6695f4ef755ce692b30e09de89e49a11595b23f4dfab4e10318d9cf6007a9789",
+  "active": false,
+  "sourcePromptProvided": false,
+  "paddingSeconds": 2,
+  "wavSha256": "a3aa88d6a8c27c7b922126b7a725da70faf2c7fc938992b0b5c3fb247c38065a",
+  "durationSeconds": 50.0846875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Hello, Cal. On class days, I wake at 5. I get up and wash my face. My room is cool. What time do you wake? I wake at 6. I put on a shirt. I put a sock on each foot. My shoe is under the bed. I find it and put it on. I have a blue shirt today. I also have a dress, but I choose the shirt. The sun is out, so I put a hat on my head before I leave. I take a quick look at my note. I start class at 10. Do you start at 10, too? We can meet our group at the table.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 2.3,
+        "text": "Hello, Cal.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 2.3,
+        "endSeconds": 5.9,
+        "text": "On class days, I wake at 5.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 5.9,
+        "endSeconds": 8.9,
+        "text": "I get up and wash my face.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 8.9,
+        "endSeconds": 11.2,
+        "text": "My room is cool.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 11.2,
+        "endSeconds": 13.5,
+        "text": "What time do you wake?",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 13.5,
+        "endSeconds": 15.9,
+        "text": "I wake at 6.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 15.9,
+        "endSeconds": 18.2,
+        "text": "I put on a shirt.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 18.2,
+        "endSeconds": 21,
+        "text": "I put a sock on each foot.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 21,
+        "endSeconds": 23.7,
+        "text": "My shoe is under the bed.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 23.7,
+        "endSeconds": 26.1,
+        "text": "I find it and put it on.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 26.1,
+        "endSeconds": 28.9,
+        "text": "I have a blue shirt today.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 28.9,
+        "endSeconds": 32.9,
+        "text": "I also have a dress, but I choose the shirt.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 32.9,
+        "endSeconds": 37.6,
+        "text": "The sun is out, so I put a hat on my head before I leave.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 37.6,
+        "endSeconds": 40.6,
+        "text": "I take a quick look at my note.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 40.6,
+        "endSeconds": 43.3,
+        "text": "I start class at 10.",
+        "confidence": null
+      },
+      {
+        "id": "segment-15",
+        "startSeconds": 43.3,
+        "endSeconds": 45.9,
+        "text": "Do you start at 10, too?",
+        "confidence": null
+      },
+      {
+        "id": "segment-16",
+        "startSeconds": 45.9,
+        "endSeconds": 48.9,
+        "text": "We can meet our group at the table.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 50.0846875,
+    "audioSha256": "a3aa88d6a8c27c7b922126b7a725da70faf2c7fc938992b0b5c3fb247c38065a",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 133,
+    "actualTokens": 134,
+    "edits": 5,
+    "changes": [
+      {
+        "expected": [
+          "five"
+        ],
+        "actual": [
+          "5"
+        ],
+        "expectedIndex": 11,
+        "actualIndex": 11,
+        "contextBefore": [
+          "days",
+          ",",
+          "I",
+          "wake",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "I",
+          "get",
+          "up",
+          "and"
+        ]
+      },
+      {
+        "expected": [
+          "six"
+        ],
+        "actual": [
+          "6"
+        ],
+        "expectedIndex": 35,
+        "actualIndex": 35,
+        "contextBefore": [
+          "wake",
+          "?",
+          "I",
+          "wake",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "I",
+          "put",
+          "on",
+          "a"
+        ]
+      },
+      {
+        "expected": [
+          "ten"
+        ],
+        "actual": [
+          "10"
+        ],
+        "expectedIndex": 115,
+        "actualIndex": 115,
+        "contextBefore": [
+          ".",
+          "I",
+          "start",
+          "class",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "Do",
+          "you",
+          "start",
+          "at"
+        ]
+      },
+      {
+        "expected": [
+          "ten"
+        ],
+        "actual": [
+          "10",
+          ","
+        ],
+        "expectedIndex": 121,
+        "actualIndex": 121,
+        "contextBefore": [
+          ".",
+          "Do",
+          "you",
+          "start",
+          "at"
+        ],
+        "contextAfter": [
+          "too",
+          "?",
+          "We",
+          "can",
+          "meet"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 112,
+    "actualTokens": 112,
+    "edits": 0,
+    "changes": []
+  }
+}

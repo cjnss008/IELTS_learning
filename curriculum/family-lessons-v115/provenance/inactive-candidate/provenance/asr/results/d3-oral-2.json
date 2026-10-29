@@ -1,0 +1,84 @@
+{
+  "id": "d3-oral-2",
+  "day": 3,
+  "kind": "speaking",
+  "audio": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked02-03-oral-candidates\\audio\\oral-models\\d3-part-2-bfbe4098291c343c.mp3",
+  "audioSha256": "45609be011c83a0793ae38ed051f963b2752a1e705c31bc1a3dd39d378b53f1c",
+  "start": 0,
+  "end": 9.408,
+  "reference": "Then I take a slow walk. I eat dinner at six. Before dinner, I write a note for tomorrow.",
+  "referenceSha256": "bfbe4098291c343cc6240fcdc1ea7b4094aa5b1865b0df9228131521eefde024",
+  "active": false,
+  "sourcePromptProvided": false,
+  "paddingSeconds": 2,
+  "wavSha256": "48e3dcdf96bb1205eaaf59a2528ea736ab7dcf57c61733c37771f1d342f36d5b",
+  "durationSeconds": 11.408,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Then I take a slow walk. I eat dinner at 6. Before dinner, I write a note for tomorrow.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 2.86,
+        "text": "Then I take a slow walk.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 2.86,
+        "endSeconds": 5.62,
+        "text": "I eat dinner at 6.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 5.62,
+        "endSeconds": 8.86,
+        "text": "Before dinner, I write a note for tomorrow.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 11.408,
+    "audioSha256": "48e3dcdf96bb1205eaaf59a2528ea736ab7dcf57c61733c37771f1d342f36d5b",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 23,
+    "actualTokens": 23,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "six"
+        ],
+        "actual": [
+          "6"
+        ],
+        "expectedIndex": 11,
+        "actualIndex": 11,
+        "contextBefore": [
+          ".",
+          "I",
+          "eat",
+          "dinner",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "Before",
+          "dinner",
+          ",",
+          "I"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 19,
+    "actualTokens": 19,
+    "edits": 0,
+    "changes": []
+  }
+}

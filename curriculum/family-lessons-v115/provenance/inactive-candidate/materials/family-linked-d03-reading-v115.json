@@ -1,0 +1,239 @@
+{
+  "id": "family-linked-d03-reading-v115",
+  "version": "1",
+  "week": 1,
+  "courseDay": 3,
+  "level": "A0",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "reading",
+  "type": "reading",
+  "title": "Hana’s Class Day",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "author-draft-pending-independent-review",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "原创 AI 辅助虚构草稿；未启用，尚待独立语义与发音审核。"
+  },
+  "questions": [
+    {
+      "id": "r01",
+      "type": "single",
+      "prompt": "When does Hana wake on class days?",
+      "options": [
+        "At five.",
+        "At four.",
+        "At ten.",
+        "At six."
+      ],
+      "answers": [
+        "At six."
+      ],
+      "evidence": "On class days, I wake at six.",
+      "evidenceOffsets": {
+        "start": 48,
+        "end": 77,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Hana 说上课日六点醒；Leo 五点醒，四点是下课时间，十点是上课时间。"
+    },
+    {
+      "id": "r02",
+      "type": "single",
+      "prompt": "What does Hana choose to wear today?",
+      "options": [
+        "The shirt.",
+        "The dress.",
+        "A different hat.",
+        "Leo’s shirt."
+      ],
+      "answers": [
+        "The shirt."
+      ],
+      "evidence": "I choose the shirt today. The dress is for tomorrow.",
+      "evidenceOffsets": {
+        "start": 221,
+        "end": 273,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "她今天选衬衫，连衣裙留到明天；原文没有说选另一顶帽子或 Leo 的衬衫。"
+    },
+    {
+      "id": "r03",
+      "type": "single",
+      "prompt": "Where does Hana put her socks?",
+      "options": [
+        "Only on her left foot.",
+        "On each foot.",
+        "Only on her right foot.",
+        "Inside her shoes before putting them on."
+      ],
+      "answers": [
+        "On each foot."
+      ],
+      "evidence": "I put a sock on each foot.",
+      "evidenceOffsets": {
+        "start": 275,
+        "end": 301,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "她先在每只脚上穿一只袜子，再穿鞋；不是只穿一只脚，也不是先把袜子放进鞋里。"
+    },
+    {
+      "id": "r04",
+      "type": "single",
+      "prompt": "When does Hana put on her hat?",
+      "options": [
+        "After lunch.",
+        "After class.",
+        "Before she leaves.",
+        "After dinner."
+      ],
+      "answers": [
+        "Before she leaves."
+      ],
+      "evidence": "I put a hat on my head before I leave.",
+      "evidenceOffsets": {
+        "start": 356,
+        "end": 394,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "她明确在出门前戴帽子；文中没有说午饭、下课或晚饭后才戴。"
+    },
+    {
+      "id": "r05",
+      "type": "single",
+      "prompt": "When does Hana start class?",
+      "options": [
+        "At five.",
+        "At six.",
+        "At four.",
+        "At ten."
+      ],
+      "answers": [
+        "At ten."
+      ],
+      "evidence": "I start class at ten.",
+      "evidenceOffsets": {
+        "start": 562,
+        "end": 583,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Hana 十点开始上课；五和六是起床时间，四是下课时间。"
+    },
+    {
+      "id": "r06",
+      "type": "single",
+      "prompt": "Who wakes at five?",
+      "options": [
+        "Leo.",
+        "Hana.",
+        "The teacher.",
+        "The whole group."
+      ],
+      "answers": [
+        "Leo."
+      ],
+      "evidence": "Leo starts at ten too. He wakes at five, but I wake at six.",
+      "evidenceOffsets": {
+        "start": 584,
+        "end": 643,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "前一句说明 He 指 Leo，他五点醒；Hana 六点醒，老师和全组的起床时间没有给出。"
+    },
+    {
+      "id": "r07",
+      "type": "single",
+      "prompt": "When does Hana read the note?",
+      "options": [
+        "Before class.",
+        "After lunch.",
+        "Before lunch.",
+        "After dinner."
+      ],
+      "answers": [
+        "After lunch."
+      ],
+      "evidence": "After lunch, I read a short note.",
+      "evidenceOffsets": {
+        "start": 769,
+        "end": 802,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "她午饭后读短便条；原文没有说她在上课前、午饭前或晚饭后读这张便条。"
+    },
+    {
+      "id": "r08",
+      "type": "single",
+      "prompt": "When does Hana finish class?",
+      "options": [
+        "At one.",
+        "At five.",
+        "At four.",
+        "At ten."
+      ],
+      "answers": [
+        "At four."
+      ],
+      "evidence": "I finish class at four.",
+      "evidenceOffsets": {
+        "start": 803,
+        "end": 826,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Hana 四点结束上课；一点吃午饭，五点是 Leo 起床时间，十点开始上课。"
+    },
+    {
+      "id": "r09",
+      "type": "single",
+      "prompt": "Why does Hana stay in the room for five minutes?",
+      "options": [
+        "To eat dinner.",
+        "To choose a dress.",
+        "To meet a new group.",
+        "To check her note."
+      ],
+      "answers": [
+        "To check her note."
+      ],
+      "evidence": "I stay in the room for five minutes to check my note.",
+      "evidenceOffsets": {
+        "start": 853,
+        "end": 906,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "她留五分钟检查便条；晚饭、选择连衣裙和见新小组不是这次留下的原因。"
+    },
+    {
+      "id": "r10",
+      "type": "single",
+      "prompt": "What does Hana write before dinner?",
+      "options": [
+        "A note for tomorrow.",
+        "A list of dinner foods.",
+        "A note for Leo about his lunch.",
+        "A note for next week."
+      ],
+      "answers": [
+        "A note for tomorrow."
+      ],
+      "evidence": "Before dinner, I write a note for tomorrow.",
+      "evidenceOffsets": {
+        "start": 1013,
+        "end": 1056,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "晚饭前她写一张给明天用的便条；没有说写晚饭食品清单、Leo 的午饭便条或下周便条。"
+    }
+  ],
+  "estimatedMinutes": 60,
+  "instructions": "先按小段读，圈出人物和数字；每题选择一个答案，回到原句核对。",
+  "passage": "My name is Hana. Today I have an English class. On class days, I wake at six. I get up. My bed is near the chair. The room is cool. I wash my face and look at my hair. My shirt is on a chair. A dress is on the chair too. I choose the shirt today. The dress is for tomorrow.\n\nI put a sock on each foot. Then I put on one shoe and the other. The sun is out. I put a hat on my head before I leave. At the door, I lift my hand and wave to my friend Leo. A short walk helps my body feel ready for class.\n\nI take a quick look at the time. I take a slow walk to class. I start class at ten. Leo starts at ten too. He wakes at five, but I wake at six. We meet our group at the table. We open our books and say hello to the teacher. I do not need to hurry.\n\nI eat lunch at one. After lunch, I read a short note. I finish class at four. Leo finishes at four too. I stay in the room for five minutes to check my note. Then I leave. Leo has a question for the teacher, so he stays for a short time too.\n\nI eat dinner at six. Before dinner, I write a note for tomorrow. It has my class time and one question. This is my plan for a class day. Leo has a different plan. We can change our plans when we need to.",
+  "questionCount": 10
+}

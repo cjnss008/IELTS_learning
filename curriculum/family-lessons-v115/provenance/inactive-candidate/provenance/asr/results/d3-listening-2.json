@@ -1,0 +1,239 @@
+{
+  "id": "d3-listening-2",
+  "day": 3,
+  "kind": "listening",
+  "audio": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked02-03-audio-rebound\\audio\\curriculum\\family-linked-d3-listening-candidate-v1.mp3",
+  "audioSha256": "fbe71916fb384b085ccb0bab443ac76167120c7673df5aefc3275720c2f94773",
+  "start": 48.73470833333333,
+  "end": 100.62520833333333,
+  "reference": "Yes. I start at ten. I eat lunch at one and finish class at three. After class, I stay in the room for five minutes. I check a note for the teacher. I finish at three too. Then I leave with you. I take a slow walk to the shop. A short walk helps my body feel ready for the next part of the day. I lift my hand to wave to a friend. I eat dinner at six. Before dinner, I write my class time for tomorrow. I plan to wear my dress tomorrow. That is a good plan. I check my hair before dinner. I do not need the same plan as you. We can each choose our own times.",
+  "referenceSha256": "afe0994c216f90f13b1cd122f4a8a822c48e404cb5a25d019828b1403a1e3f0c",
+  "active": false,
+  "sourcePromptProvided": false,
+  "paddingSeconds": 2,
+  "wavSha256": "82ebe01d4b3583ea97f676a1da3b5af8559033107d814b015ae250b7e7f9b5b5",
+  "durationSeconds": 53.8905,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Yes. I start at 10. I eat lunch at 1 and finish class at 3. After class, I stay in the room for 5 minutes. I check a note for the teacher. I finish at 3-2. Then I leave with you. I take a slow walk to the shop. A short walk helps my body feel ready for the next part of the day. I lift my hand to wave to a friend. I eat dinner at 6. Before dinner, I write my class time for tomorrow. I plan to wear my dress tomorrow. That is a good plan. I check my hair before dinner. I do not need the same plan as you. We can each choose our own times.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 15,
+        "text": "Yes. I start at 10. I eat lunch at 1 and finish class at 3. After class, I stay in the room for 5 minutes. I check a note for the teacher.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 15,
+        "endSeconds": 28,
+        "text": "I finish at 3-2. Then I leave with you. I take a slow walk to the shop. A short walk helps my body feel ready for the next part of the day.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 28,
+        "endSeconds": 41,
+        "text": "I lift my hand to wave to a friend. I eat dinner at 6. Before dinner, I write my class time for tomorrow. I plan to wear my dress tomorrow.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 41,
+        "endSeconds": 53,
+        "text": "That is a good plan. I check my hair before dinner. I do not need the same plan as you. We can each choose our own times.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 53.8905,
+    "audioSha256": "82ebe01d4b3583ea97f676a1da3b5af8559033107d814b015ae250b7e7f9b5b5",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 141,
+    "actualTokens": 142,
+    "edits": 8,
+    "changes": [
+      {
+        "expected": [
+          "ten"
+        ],
+        "actual": [
+          "10"
+        ],
+        "expectedIndex": 5,
+        "actualIndex": 5,
+        "contextBefore": [
+          "Yes",
+          ".",
+          "I",
+          "start",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "I",
+          "eat",
+          "lunch",
+          "at"
+        ]
+      },
+      {
+        "expected": [
+          "one"
+        ],
+        "actual": [
+          "1"
+        ],
+        "expectedIndex": 11,
+        "actualIndex": 11,
+        "contextBefore": [
+          ".",
+          "I",
+          "eat",
+          "lunch",
+          "at"
+        ],
+        "contextAfter": [
+          "and",
+          "finish",
+          "class",
+          "at",
+          "three"
+        ]
+      },
+      {
+        "expected": [
+          "three"
+        ],
+        "actual": [
+          "3"
+        ],
+        "expectedIndex": 16,
+        "actualIndex": 16,
+        "contextBefore": [
+          "one",
+          "and",
+          "finish",
+          "class",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "After",
+          "class",
+          ",",
+          "I"
+        ]
+      },
+      {
+        "expected": [
+          "five"
+        ],
+        "actual": [
+          "5"
+        ],
+        "expectedIndex": 27,
+        "actualIndex": 27,
+        "contextBefore": [
+          "stay",
+          "in",
+          "the",
+          "room",
+          "for"
+        ],
+        "contextAfter": [
+          "minutes",
+          ".",
+          "I",
+          "check",
+          "a"
+        ]
+      },
+      {
+        "expected": [
+          "three",
+          "too"
+        ],
+        "actual": [
+          "3",
+          "-",
+          "2"
+        ],
+        "expectedIndex": 41,
+        "actualIndex": 41,
+        "contextBefore": [
+          "teacher",
+          ".",
+          "I",
+          "finish",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "Then",
+          "I",
+          "leave",
+          "with"
+        ]
+      },
+      {
+        "expected": [
+          "six"
+        ],
+        "actual": [
+          "6"
+        ],
+        "expectedIndex": 89,
+        "actualIndex": 90,
+        "contextBefore": [
+          ".",
+          "I",
+          "eat",
+          "dinner",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "Before",
+          "dinner",
+          ",",
+          "I"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 122,
+    "actualTokens": 122,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "too"
+        ],
+        "actual": [
+          "two"
+        ],
+        "expectedIndex": 36,
+        "actualIndex": 36,
+        "contextBefore": [
+          "teacher",
+          "i",
+          "finish",
+          "at",
+          "three"
+        ],
+        "contextAfter": [
+          "then",
+          "i",
+          "leave",
+          "with",
+          "you"
+        ]
+      }
+    ]
+  }
+}
