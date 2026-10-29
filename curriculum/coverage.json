@@ -2,15 +2,15 @@
   "status": "complete-material-set",
   "days": 365,
   "minutes": 131400,
-  "materials": 2132,
+  "materials": 2232,
   "compiledMaterialCount": 2530,
   "bySkill": {
-    "reading": 295,
-    "listening": 312,
-    "writing": 243,
-    "grammar": 230,
-    "vocabulary": 513,
-    "speaking": 174,
+    "reading": 305,
+    "listening": 322,
+    "writing": 253,
+    "grammar": 240,
+    "vocabulary": 563,
+    "speaking": 184,
     "reflection": 365
   },
   "expectedAuthoringJobs": 815,
@@ -831,9 +831,11 @@
         "reading": "text-evidence-and-blind-review-passed",
         "listening": "blocked-pending-audio-review",
         "canonicalAudio": {
-          "status": "blocked-audio-absent-as-required-in-public-clone",
+          "status": "hash-verified-but-usage-blocked",
           "required": false,
-          "usable": false
+          "usable": false,
+          "audioSha256": "540e100de05a012bbe9f0dc0b849d5a84da6c0fa5fb2efbb95c57911d41cab6f",
+          "durationSeconds": 157.635918
         },
         "sourceExposureGroup": "public-source:voa-l1-24"
       },
@@ -5146,8 +5148,8 @@
   "familyLessons": {
     "schema": 1,
     "active": true,
-    "added": 290,
-    "units": 29,
+    "added": 390,
+    "units": 39,
     "releaseSha256": "0b18cc52823cb1ce1e72192647a7293ee260ba2d65f4799e6e8af38442cbf467",
     "rootReviewSha256": "f3c8088855220007c9184dd2f909a0727cac028082e7cf6f4aca03ac2751a38f"
   },
@@ -5159,31 +5161,32 @@
   },
   "familyReleaseCatalog": {
     "schema": 1,
-    "catalogSha256": "aab6f8d87d208a0cd21452b651d4e140762d859b38ccde618072d248049a5435",
+    "catalogSha256": "68a973878c88a8ba79e983c2c5d982be002986c9b8ff4de161a2fe9f7b74f811",
     "counts": {
-      "batches": 4,
-      "days": 29,
-      "newWords": 870,
-      "materials": 290
+      "batches": 5,
+      "days": 39,
+      "newWords": 1170,
+      "materials": 390
     },
     "sourcePaths": [
       "curriculum/family-lessons-v109/release.json",
       "curriculum/family-lessons-v114/release.json",
       "curriculum/family-lessons-v115/release.json",
-      "curriculum/family-lessons-v118/release.json"
+      "curriculum/family-lessons-v118/release.json",
+      "curriculum/family-lessons-v119/release.json"
     ]
   },
   "lexicalCoverage": {
     "schema": 1,
     "days": 365,
-    "sourceMaterials": 607,
-    "sourceWords": 206027,
+    "sourceMaterials": 627,
+    "sourceWords": 214157,
     "trainingCandidateLexemes": 1693,
-    "trainingGroupLexemes": 2282,
+    "trainingGroupLexemes": 2517,
     "scheduledLexemes": 1693,
     "scheduledMeaningLabels": 1803,
     "explicitMappedFamilies": 16,
-    "lexemesWithoutFamilyMapping": 2257,
+    "lexemesWithoutFamilyMapping": 2490,
     "collocations": 370,
     "trainingGroupCollocations": 370,
     "scheduledGroups": 365,

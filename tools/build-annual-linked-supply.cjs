@@ -81,9 +81,17 @@ const PUBLIC_V117 = Object.freeze({ ...PUBLIC_V115,
 });
 
 // v118 appends 100 reviewed ordinary materials and ten linked units; prior data is preserved.
+
 const PUBLIC_V118 = Object.freeze({ ...PUBLIC_V117,
   "assets/curriculum-data.js": "5f41a1373d6e5b9e8884442273d25db43e3648390e539d2458029ff19bc11ff6",
   "assets/year-first-use-manifest.js": "e50cd02de9c342c3bfce6e16d12098e1a4323e4f115c0db34cc419534afd020d"
+});
+
+
+// v119 appends the 31-40 linked batch; the public plan and prior batches stay byte-identical.
+const PUBLIC_V119 = Object.freeze({ ...PUBLIC_V118,
+  "assets/curriculum-data.js": "11c0aae0d8ee6afc66a5512fd94c151f67a5ebaf3725e1c2c8dcb1e275567537",
+  "assets/year-first-use-manifest.js": "b5994282f1f073181c8dd38c3aae9840fc439ccdaf5fd33c04fbb428b65fd246"
 });
 
 function tokens(text) {
@@ -409,7 +417,7 @@ function parseArguments(argv) {
 function main(argv) {
   const args = parseArguments(argv);
   const root = path.resolve(args.root);
-  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.118' ? PUBLIC_V118 : args.profile === '0.0.117' ? PUBLIC_V117 : args.profile === '0.0.115' ? PUBLIC_V115 : args.profile === '0.0.114' ? PUBLIC_V114 : args.profile === '0.0.113' ? PUBLIC_V113 : args.profile === '0.0.112' ? PUBLIC_V112 : args.profile === '0.0.111' ? PUBLIC_V111 : args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
+  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.119' ? PUBLIC_V119 : args.profile === '0.0.118' ? PUBLIC_V118 : args.profile === '0.0.117' ? PUBLIC_V117 : args.profile === '0.0.115' ? PUBLIC_V115 : args.profile === '0.0.114' ? PUBLIC_V114 : args.profile === '0.0.113' ? PUBLIC_V113 : args.profile === '0.0.112' ? PUBLIC_V112 : args.profile === '0.0.111' ? PUBLIC_V111 : args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
   if (args.full) {
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     return;
@@ -429,4 +437,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, PUBLIC_V111, PUBLIC_V112, PUBLIC_V113, PUBLIC_V114, PUBLIC_V115, PUBLIC_V117, PUBLIC_V118, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
+module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, PUBLIC_V111, PUBLIC_V112, PUBLIC_V113, PUBLIC_V114, PUBLIC_V115, PUBLIC_V117, PUBLIC_V118, PUBLIC_V119, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };

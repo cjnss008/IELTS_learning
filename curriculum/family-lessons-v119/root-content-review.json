@@ -1,0 +1,821 @@
+{
+  "schema": 1,
+  "releaseId": "family-linked-days31-40-v119",
+  "decision": "approved-ordinary-six-module-content",
+  "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+  "independentAssessmentEligible": false,
+  "targetBindingsReviewed": true,
+  "scope": "Ordinary teaching content approval only. Runtime composition, history preservation, browser and live speech acceptance remain separate release requirements.",
+  "method": {
+    "bindingChecks": "automated over all 100 materials: target quote/surface/offset against reading passage, listening-target coverage, answer in options, unique options, evidence presence and offsets, explanation presence, material/question hashes",
+    "contentRead": "full text read of ten reading passages and ten listening transcripts; word meanings and part of speech reviewed for the 300 targets",
+    "counts": {
+      "materials": 100,
+      "targets": 300,
+      "questions": 320,
+      "vocabularyEntries": 300,
+      "audioFiles": 350
+    },
+    "notedReuse": "two generic grammar stems and one generic reading/listening prompt reuse; the full questions differ in options, answers and evidence",
+    "limits": [
+      "AI root review, not a human teacher or examiner",
+      "synthetic TTS audio; no phoneme certification",
+      "no learner data or IELTS band evidence"
+    ]
+  },
+  "releasePayloadSha256": "13b9cbbdcf4da10d86500fac1ed64aa307a0f856559a0b16767dbd40771d2e0a",
+  "materials": [
+    {
+      "id": "family-linked-d31-vocabulary-v119-g1",
+      "file": "materials/family-linked-d31-vocabulary-v119-g1.json",
+      "fileSha256": "43b80363a1eb8f62b99c401fb387b754b4c55da49fbacabee8dddf544a0430d6",
+      "materialContentHash": "040a1fb904a41869c177963b09eb36f213e207c7b417ecf5d15ccf0afc55e2e8",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d31-vocabulary-v119-g2",
+      "file": "materials/family-linked-d31-vocabulary-v119-g2.json",
+      "fileSha256": "633789b06826beecd04085c5f76b646ac7e0ba50e6e9c84ee65a4f437b88c376",
+      "materialContentHash": "c843db7c6bf887fa05f1c595902934273e7d2190f22c9b7d4547bb76c26148c0",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d31-vocabulary-v119-g3",
+      "file": "materials/family-linked-d31-vocabulary-v119-g3.json",
+      "fileSha256": "7f74005632272476a7f8b21443ad426e95e243d40a6bf701c9f87d499e2cc6b9",
+      "materialContentHash": "6fee48bb3ed75c6268074b0783e4ccc5d39e6f3d0b685f97c7c6678ce30791be",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d31-vocabulary-v119-g4",
+      "file": "materials/family-linked-d31-vocabulary-v119-g4.json",
+      "fileSha256": "f9ceb2619b67322d678d99c6d18fc48d15cdddcb95fa737135433abddc46b738",
+      "materialContentHash": "9a82cb1c70bec114d5dcc0dd72b39c0c07c126e0eaa7613de9a320d6d48ba15f",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d31-vocabulary-v119-g5",
+      "file": "materials/family-linked-d31-vocabulary-v119-g5.json",
+      "fileSha256": "c86c9dd97087acf94d348c2ec9bc712a107e68aa58023024cd706f9341168fa5",
+      "materialContentHash": "30ae8b4e5c252f7e18ec965719493099d3c0a72667bbe0faa73df39b5b551b6c",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d31-grammar-v119",
+      "file": "materials/family-linked-d31-grammar-v119.json",
+      "fileSha256": "fbeb3820ec9be76441ec56c0afd4a575da9daf167dff8e2c3585bd193fec6eb1",
+      "materialContentHash": "8450dadd55a8c87018262d14f1f8e6b7b34911b4e6eb9f218d33a15f37f633fb",
+      "questionsSha256": "4c1e1ed079f75a6d2fa0c7feb3e17a6782462384c74afb5d924bdce5c803f5be"
+    },
+    {
+      "id": "family-linked-d31-reading-v119",
+      "file": "materials/family-linked-d31-reading-v119.json",
+      "fileSha256": "50d678962a049fd833390e7469bacff8ad9bf81206461a5a058d6c6c27373217",
+      "materialContentHash": "3d1f6f7399428d56a52e5694f1d714ab8131594ff27794fad5b9594c9b2c0e0a",
+      "questionsSha256": "0dae55cef8203064f46be4ed4ea1ac129e85fb7a057ffc6a041ac1b89525b1ec"
+    },
+    {
+      "id": "family-linked-d31-listening-v119",
+      "file": "materials/family-linked-d31-listening-v119.json",
+      "fileSha256": "60c956e9bdf30a288ee958957effa5227961a79c292376750b7df858d85ebe9a",
+      "materialContentHash": "8071402a1c62902a9dee09ddaa0504943e16eaa130466f5259de9ce1f8b7c472",
+      "questionsSha256": "2be41f61614fa53201b2a809126d6ca5c5b08035316160b68629b65f5f71cb3d",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d31-v119-listening.mp3",
+        "sha256": "6f93c47949e502d931c08cbd8355322eb22a73cde0fea1ac45646c69185e3f31",
+        "bytes": 837020
+      }
+    },
+    {
+      "id": "family-linked-d31-speaking-v119",
+      "file": "materials/family-linked-d31-speaking-v119.json",
+      "fileSha256": "61ce8ef9633ec0715db6b4b92e6e2458f866c56d75b0613e870522cc727daa22",
+      "materialContentHash": "0836f287667cb3dde2b722ae2420de893ec6efe2650538496a25db602432353e",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d31-writing-v119",
+      "file": "materials/family-linked-d31-writing-v119.json",
+      "fileSha256": "15322c89885dc077b8f4f67bf1e34321d533583c766b5476582e5638877ac729",
+      "materialContentHash": "d2daeec1342410aa3ba168e89a7a806260be74200e50bbbe906e209730412ab4",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-vocabulary-v119-g1",
+      "file": "materials/family-linked-d32-vocabulary-v119-g1.json",
+      "fileSha256": "8f6726924a6fe6019741582b3c2d4233c7e3e86c699ec0f062dae0918eee4321",
+      "materialContentHash": "49a6a7ca696a2bf830ee3d96685ac4370ba984db436c8842f6cd664e137cf400",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-vocabulary-v119-g2",
+      "file": "materials/family-linked-d32-vocabulary-v119-g2.json",
+      "fileSha256": "b8acf5f2c563192e91b6236a0bd9cf49d4dd6ced22da9f3eb4f3074df199c056",
+      "materialContentHash": "5ca3181d2c6472e110351c9c14c214c25fab344ff5c8653fe8087a186e1d7f77",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-vocabulary-v119-g3",
+      "file": "materials/family-linked-d32-vocabulary-v119-g3.json",
+      "fileSha256": "5375c134c4a786e615e821175980b3a436ca411a0eaa030dbeb924f0153dca46",
+      "materialContentHash": "fe205c7abb4a2740e01d379dbf69d86ec1c0eab863e368de61fb54776ce8d1fa",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-vocabulary-v119-g4",
+      "file": "materials/family-linked-d32-vocabulary-v119-g4.json",
+      "fileSha256": "28ef9b2e86ec4efaa554066397409d9872648ec929c32aa9368ce67dc0b2d62e",
+      "materialContentHash": "5b8554cf99e17c23a1bd1347ebde420dbd228d84d3fa2579cf8417462f7beddd",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-vocabulary-v119-g5",
+      "file": "materials/family-linked-d32-vocabulary-v119-g5.json",
+      "fileSha256": "883545c6ac104ab011bce468c648ee76d4d01f110bd6fc5f9836beb8c943044f",
+      "materialContentHash": "61b774cba82a17142db95b7134bcd8693b99894f4b40d283b607fc45df24eeef",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-grammar-v119",
+      "file": "materials/family-linked-d32-grammar-v119.json",
+      "fileSha256": "02f0f61bc062fc991ee44d5a393e8a92294eac8d13adcf251d7ea74c0236348d",
+      "materialContentHash": "da0c694d232a9f34e465bb60a132e060323f8a7c0b86c291f10a8231da2cc858",
+      "questionsSha256": "12439a4028741381a9b672735a884f0da43abea3528043188a3654583cd0995c"
+    },
+    {
+      "id": "family-linked-d32-reading-v119",
+      "file": "materials/family-linked-d32-reading-v119.json",
+      "fileSha256": "2eef062834aca1714ff6b427ee7c35d3c5ba2838d5f017597661bde37c31914a",
+      "materialContentHash": "8ddb46733a259b992eb1b4a1d36a5b8ff472794d977d2db6051c1fc98b935556",
+      "questionsSha256": "015bd63c737acf63c136174261dc13d405894d60cc31ce6f0aaf13e6bbd5b166"
+    },
+    {
+      "id": "family-linked-d32-listening-v119",
+      "file": "materials/family-linked-d32-listening-v119.json",
+      "fileSha256": "10f4ac20c04fae3ba02195b28980b30f78504404d3fa072a067c1683e217db6d",
+      "materialContentHash": "18744233727e80ff7824b0830cbc1e069feec7113522f7cc0babc5b35c99cc6c",
+      "questionsSha256": "5faebd9f472a65d711cac56841a16abc1aa80de225b0b3badd9309f473542da1",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d32-v119-listening.mp3",
+        "sha256": "b66a67a58635bc60b975de8ac90719a27564ff833d4612fb120e07b1682569d4",
+        "bytes": 784892
+      }
+    },
+    {
+      "id": "family-linked-d32-speaking-v119",
+      "file": "materials/family-linked-d32-speaking-v119.json",
+      "fileSha256": "a8a63e1315e552704988535ff7c35d9ddeabc6bb099f18fe4616572e977dc823",
+      "materialContentHash": "fc6dd9e1a16a940625e07ac4e45609c04e917909bcdaea9656a7d6f868e59545",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d32-writing-v119",
+      "file": "materials/family-linked-d32-writing-v119.json",
+      "fileSha256": "a0a1e30d6c7e01bb866503d95d062b89c4963d0d0f755e8d074a0e90ec59bc03",
+      "materialContentHash": "2bbaa4a8102fbbe8be7040868119738b198e4c2f95f6046d0f6455ea49cd43de",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-vocabulary-v119-g1",
+      "file": "materials/family-linked-d33-vocabulary-v119-g1.json",
+      "fileSha256": "119c3184c160f356b8065455b539bd21c2ed26712d0a30e8cb62e739987798b3",
+      "materialContentHash": "d430adcbadb8a267567c044cc663c87dbefe7a3c81ed3b9f43d4467b89c4c4d2",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-vocabulary-v119-g2",
+      "file": "materials/family-linked-d33-vocabulary-v119-g2.json",
+      "fileSha256": "b833ffd4bd977153c2c8998d9d2c0e60fb4390542c3b53f02a5006427f368fcd",
+      "materialContentHash": "5ccdc5ff0dafb15772b0e556c9a938229655a180ae2bc90f38952384a50c4e80",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-vocabulary-v119-g3",
+      "file": "materials/family-linked-d33-vocabulary-v119-g3.json",
+      "fileSha256": "cad45c065f86b5699162b4058d9b2c72aeca6cd2e8537e87b12ee6f789aa977b",
+      "materialContentHash": "1b1e5c4f6ddce532c07715f7f423cc246c849fb18693fba4e2c8225c14f25e1f",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-vocabulary-v119-g4",
+      "file": "materials/family-linked-d33-vocabulary-v119-g4.json",
+      "fileSha256": "86c1abf4abde73ca57f7c60b58a1bd5024b40ef77c6ebd1a74f8b4d22f66530f",
+      "materialContentHash": "3b6cf5ac8ddde48e93f1646ad689af7869062ff351288ebaec152a4ed4e53b74",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-vocabulary-v119-g5",
+      "file": "materials/family-linked-d33-vocabulary-v119-g5.json",
+      "fileSha256": "aab9f26b09c808cf5145dff52654d73acb8abb2088733c03bd2006141ca3a174",
+      "materialContentHash": "2b99749d6b48eaedeca4547e760d488fbb08de4128aa71c2b7e958679bde18db",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-grammar-v119",
+      "file": "materials/family-linked-d33-grammar-v119.json",
+      "fileSha256": "6b2435a1d1742cd75a547d2604f0edf9ea81eeba96527b982fcee4fa0b2d5da0",
+      "materialContentHash": "25e252f36320d1433b311b1280fb90238bcc03752f984ad7bb2766ce37e36c79",
+      "questionsSha256": "bcde1ca031690ead65ed883ccb5abc8ea5c250dcd1734b8080a26c697a61c9d9"
+    },
+    {
+      "id": "family-linked-d33-reading-v119",
+      "file": "materials/family-linked-d33-reading-v119.json",
+      "fileSha256": "844bd6bfdd509852d7a43486f7a85db564e27cc64bdebc7aca3c7e40c0a56247",
+      "materialContentHash": "a4110a5e29e3749cc46c5f145d61a2e3e35bc5169d4eba69b72264beca2471db",
+      "questionsSha256": "3ad2a4581308dc3a8545b84aed1d9b6668fd63bcccadc4889a6938c4907b4b3b"
+    },
+    {
+      "id": "family-linked-d33-listening-v119",
+      "file": "materials/family-linked-d33-listening-v119.json",
+      "fileSha256": "250d81ff3a3ddadd5b5463fac09c943dc940c9ddbba29e704776426e285ed399",
+      "materialContentHash": "620837cbc2da80050b952da206eaf80f33aa4f915f7f1ca48f0d413b7d581726",
+      "questionsSha256": "39a1bccc0cf8e5cc48b850b6e5262eb0e275b27f5ce5c8c85039212621db6b2d",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d33-v119-listening.mp3",
+        "sha256": "83d668e94252d1d42eb91b6b16623c9ad5975df486621bcce265e3494a6bbcd6",
+        "bytes": 800732
+      }
+    },
+    {
+      "id": "family-linked-d33-speaking-v119",
+      "file": "materials/family-linked-d33-speaking-v119.json",
+      "fileSha256": "3f9848c8f213f6d5c2b05b15dd330d773efbfaa81ce49d995a0a0408b107f63f",
+      "materialContentHash": "0b9d16b620c66efb72283ea11ffb702116773287d78392d9079fee4738e3d7a6",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d33-writing-v119",
+      "file": "materials/family-linked-d33-writing-v119.json",
+      "fileSha256": "90b3d27ab0b6db09231d48ed6cee1ecd4f7b14a17999357da8662818f773e57a",
+      "materialContentHash": "6f3d900ec3387be59a808243b04df65571ce817bf8b7452d37113bcd3d9854fd",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-vocabulary-v119-g1",
+      "file": "materials/family-linked-d34-vocabulary-v119-g1.json",
+      "fileSha256": "57b4cd7765f91942c0a7da3227d2035986e7c0a884e6ade6952d3f194393c8d5",
+      "materialContentHash": "5599f4ee4c6435a11ee110402111dc099678fec3781b5a06ddb213c986ec3c9e",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-vocabulary-v119-g2",
+      "file": "materials/family-linked-d34-vocabulary-v119-g2.json",
+      "fileSha256": "e00e3ff8d511bfcb648b6a8aee80bab7079bf86e8c2014d2fbc60196c9080077",
+      "materialContentHash": "8d973aa00bf1bfdab8f1a6eafebc98994e9ad911a763a08d90ea231e96c4a1d1",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-vocabulary-v119-g3",
+      "file": "materials/family-linked-d34-vocabulary-v119-g3.json",
+      "fileSha256": "3e8658919aa428f6afe3be07e549940808f4c2ffd2a5d863cad258945eb72690",
+      "materialContentHash": "27ff2b1e829ca4228fa0f512a71b4c6fbb37de9e1ccffe81fc31d8bfe3e3cb6f",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-vocabulary-v119-g4",
+      "file": "materials/family-linked-d34-vocabulary-v119-g4.json",
+      "fileSha256": "0a33a9f0d822d5cdcf01776ab63ec82672e6d64017308da83d284c78859a0df1",
+      "materialContentHash": "e248df59351545c205d986bc5d819ba1a22b109d1a3d346ab863aacdace88ab9",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-vocabulary-v119-g5",
+      "file": "materials/family-linked-d34-vocabulary-v119-g5.json",
+      "fileSha256": "3b8c2eaa3b4d7894000abd2f9d3376ad8fe89a16188b5a3506dd579106962d77",
+      "materialContentHash": "ac2ace702cea012524f4c12b1a84347a57c565b58bf801598056805031dcba0a",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-grammar-v119",
+      "file": "materials/family-linked-d34-grammar-v119.json",
+      "fileSha256": "91f4b0622714f40851c500a32c3b53d3cbe86a2cdec229cf34c814c52d80d6e3",
+      "materialContentHash": "54e248b18cfee8d324e8bbcd7a3af0b1fc35ce11dbc77192bb15fc88329f8720",
+      "questionsSha256": "e29f767723b3171e3b294a16919bdb1e718b44ae5f9cb1d6e9a13204aef1621a"
+    },
+    {
+      "id": "family-linked-d34-reading-v119",
+      "file": "materials/family-linked-d34-reading-v119.json",
+      "fileSha256": "9980d9269ae0aacba6bfcaa1c0afe2e06b4193eab0b33ad4db71230e00362e60",
+      "materialContentHash": "97f89b053ab6af2803d09cfd81d19e9e9908f8fbccf8155ee57cf3a4f87bdf3c",
+      "questionsSha256": "218965ba71a9a04bc8b42407bea1641cf349c66c379b876fcb85e0dc134f1714"
+    },
+    {
+      "id": "family-linked-d34-listening-v119",
+      "file": "materials/family-linked-d34-listening-v119.json",
+      "fileSha256": "cf5a7c652bbdcdc4642a111fcd5c906f048949b4c46bd8536e92640930251ab0",
+      "materialContentHash": "3f83e7a577407c0cf7e5313aa87fd5cfd6547100aa519706f2a3f128e2552e3f",
+      "questionsSha256": "1aff6ed7520c3577691d923ef98e42716e766f0368ff9cf2dee46ab5f929a8ad",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d34-v119-listening.mp3",
+        "sha256": "817bee6e6415336dfb7ba25a0e1a83381938b3b7bf3741c8e8f8ad33ae347663",
+        "bytes": 829964
+      }
+    },
+    {
+      "id": "family-linked-d34-speaking-v119",
+      "file": "materials/family-linked-d34-speaking-v119.json",
+      "fileSha256": "dcd4c9d57a127717d07a77dcae23cf6fffb13a4bcc7765c6c85616fd38484a2e",
+      "materialContentHash": "a49f0ae8b457fa64f587a911c9bfd89ee98cc8e9d1c9afb18d4377676464f468",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d34-writing-v119",
+      "file": "materials/family-linked-d34-writing-v119.json",
+      "fileSha256": "6cc587a494e94f799dba6abeedb180a1ea6f64871183240bd412bf973a1bdd4c",
+      "materialContentHash": "075ca5a9e4103d81d088cd951b044b02b200bbf8e486089edc49ef4dcb4efc22",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-vocabulary-v119-g1",
+      "file": "materials/family-linked-d35-vocabulary-v119-g1.json",
+      "fileSha256": "5516de38f404dbd84a2451b3356b7f634edca33a7adee9cc49e3cdabcb9351a3",
+      "materialContentHash": "1abdcb05e15bad1c1c3c5f0b0bbc460eeb1a564809dd1bb8f9b5709e502aa0d2",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-vocabulary-v119-g2",
+      "file": "materials/family-linked-d35-vocabulary-v119-g2.json",
+      "fileSha256": "ee9e47aa798aab78d25605771f34be90855ddd885cbbbc40c92527716b838b6e",
+      "materialContentHash": "b42c2811eceeedcc6bfe0ae18621c08231993d04aad5e0190c47f93e2d3e6f99",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-vocabulary-v119-g3",
+      "file": "materials/family-linked-d35-vocabulary-v119-g3.json",
+      "fileSha256": "ea44863472571d79fb3faf282f1092214ad52028d68d2fcc34181702f4674df7",
+      "materialContentHash": "44de492a3f0fcbc18b014e0130cbb978f0e6f24d7a71cc61d7c028ca2969b918",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-vocabulary-v119-g4",
+      "file": "materials/family-linked-d35-vocabulary-v119-g4.json",
+      "fileSha256": "a80b9f43a9ed647b3f30a2246c3c1d424cbe86e5149190fb2a560e1028dfed2a",
+      "materialContentHash": "55a38df56f09d8c623a60ce8946b9737f0f512b000726edb5eb7506d14370184",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-vocabulary-v119-g5",
+      "file": "materials/family-linked-d35-vocabulary-v119-g5.json",
+      "fileSha256": "9ba53ebe68a1d547fc76f445fbfaeacb5bc32d022e31989f50d8125956ad7e05",
+      "materialContentHash": "df205081de3b5c062ceb1ba2d4b0bc552594532d73bc1d87b3b02f26418e4c98",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-grammar-v119",
+      "file": "materials/family-linked-d35-grammar-v119.json",
+      "fileSha256": "6d2c7f10203e91e8e00d5543d1704f7ce63aa57887ebcb831d3b0832324d4162",
+      "materialContentHash": "590bb38519ffb95f68ffbd8c6e396b9243c5f10dca6c87220a05e8e30084c6a5",
+      "questionsSha256": "816141557e1e43304f3f3e165767ce728850168ee58dd6ba3092b60b34c072f0"
+    },
+    {
+      "id": "family-linked-d35-reading-v119",
+      "file": "materials/family-linked-d35-reading-v119.json",
+      "fileSha256": "3d11c0a9dba2e9cfa8f911d570887524ff2782dcd338b0ad032b1fdad4eaff4a",
+      "materialContentHash": "14522e3ea76aca848e1c5fda4ad63b601839013eab3cd8bed67c83188161057f",
+      "questionsSha256": "27f570d077bd8b881f3557200bd23781004430bc00cc28243219b88690696036"
+    },
+    {
+      "id": "family-linked-d35-listening-v119",
+      "file": "materials/family-linked-d35-listening-v119.json",
+      "fileSha256": "30531192b4890d1cf6df9ec6dfe15244ad97e7291b4bb691e47393816728fbcf",
+      "materialContentHash": "d0c74f9c718cac4863801b8cd01263e36b250f07ada2d9ac24e31a537b466031",
+      "questionsSha256": "179f6084f6e3b8b4b4ffde53c11366fcf2523fb6450182847f115440fc346d29",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d35-v119-listening.mp3",
+        "sha256": "9f4ac842dd7e2a9fcba09fb7cd0f33700fd22cbfef77451728ab31e07f0cf708",
+        "bytes": 904988
+      }
+    },
+    {
+      "id": "family-linked-d35-speaking-v119",
+      "file": "materials/family-linked-d35-speaking-v119.json",
+      "fileSha256": "171e55fca85731fc90a241ba84edc8b6160967f028a0f1c21c0eabd9566c1fba",
+      "materialContentHash": "366856508cb827c3c17c72744b20f4075979e9c7a6871665a23bf34b77a202b7",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d35-writing-v119",
+      "file": "materials/family-linked-d35-writing-v119.json",
+      "fileSha256": "ecf97429593dcd596b48b187a36d48b5394359edd1fbcd131d70225ca2e2ef8a",
+      "materialContentHash": "77ab23749b958a60249e950147b1cfd54344f5934e6d146215069f3105ac2193",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-vocabulary-v119-g1",
+      "file": "materials/family-linked-d36-vocabulary-v119-g1.json",
+      "fileSha256": "180470f6578854798d6dead8659539bddcfe15053fb3990093dc3094e63d4f65",
+      "materialContentHash": "9b5cb087296de07849e3aea5a224d6b916be11d97604efe3fc82caaf0c4a59a1",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-vocabulary-v119-g2",
+      "file": "materials/family-linked-d36-vocabulary-v119-g2.json",
+      "fileSha256": "02c5369b53ede9170a73c0293c06a1386c5dba72c982cac8c84a12d2f66c4129",
+      "materialContentHash": "8dc74c53244f1d1bff65edb1e872bae0238d0453e06c4336ce54ddfe05cb4101",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-vocabulary-v119-g3",
+      "file": "materials/family-linked-d36-vocabulary-v119-g3.json",
+      "fileSha256": "12ffa5440d5b74b32961699c78584f9bba7a52cf32e504a61ab35b198d6708fa",
+      "materialContentHash": "d3a4f311dd3d1bfa84f5185ee1da1c9b79819362ecbe9ba639902d1b7d0836b3",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-vocabulary-v119-g4",
+      "file": "materials/family-linked-d36-vocabulary-v119-g4.json",
+      "fileSha256": "6f18e1b3581b86e77e8710ca1cd318a714a792c44707b265adab7664655926f3",
+      "materialContentHash": "e2efaf97b32b36e9d76dec9300af21284cbdceb473d277f4535b8ddd022fa75e",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-vocabulary-v119-g5",
+      "file": "materials/family-linked-d36-vocabulary-v119-g5.json",
+      "fileSha256": "c6ed95533aa2b7be00ff42fbfd8b09f5c0c2eb464cf949a0f329dff16e2c9d6c",
+      "materialContentHash": "4f86b20eaad94c091f9bea9a047b8c3272b8e9e41405c995ab4ad7b9fed53cbe",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-grammar-v119",
+      "file": "materials/family-linked-d36-grammar-v119.json",
+      "fileSha256": "9073f4443b46c26c5f97bccb082c8194349368f668d4eaada0413e3013fcf635",
+      "materialContentHash": "ffcdf7a65bc05812acd3e68700dd7faca7751613b6f0d676f449dda0f2906764",
+      "questionsSha256": "655bf0cde2e25498acd12633793ba86338e2aa0a9cada8d95f95bd66aade7b4b"
+    },
+    {
+      "id": "family-linked-d36-reading-v119",
+      "file": "materials/family-linked-d36-reading-v119.json",
+      "fileSha256": "a0a26ce863dcbf1b1132928038ceca36cc24d30a5aca0ec72f64c6e905584500",
+      "materialContentHash": "55ca35ba9871fd2b2ea93165c0bb8dd3854aa9bd4c67696073288753b468e3f2",
+      "questionsSha256": "769b85b3ef16904729f2c7bf092eff37bb939c256a4a7541761304f324baabf3"
+    },
+    {
+      "id": "family-linked-d36-listening-v119",
+      "file": "materials/family-linked-d36-listening-v119.json",
+      "fileSha256": "e4588675f81ecff12fed85c9ce4b440a221a91e43f26987017614a7c7e578a16",
+      "materialContentHash": "8b191c0e51e92e0eb8471a1ac09afa7a03af944de6ea69f8a9972f6c9298aba1",
+      "questionsSha256": "23fe81be4ef1607cc323af143c6818692ca65546ddf3138b67e4e0a25b214595",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d36-v119-listening.mp3",
+        "sha256": "93a0f00ea5c39fa4b7e1bc34e00773ca147a61bf29eb82765435a2d8bd70e188",
+        "bytes": 814988
+      }
+    },
+    {
+      "id": "family-linked-d36-speaking-v119",
+      "file": "materials/family-linked-d36-speaking-v119.json",
+      "fileSha256": "61a81d956201fa7938c4f46b74da0e8934ddbfb9cda1c43d09a8cfd1bf67fed7",
+      "materialContentHash": "81abf9320233d7a692fa04bb04701c17c973141f3e781cb9f0dc654ca6833a9f",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d36-writing-v119",
+      "file": "materials/family-linked-d36-writing-v119.json",
+      "fileSha256": "a94c1fd262124f791b0120a7e327573f5ba8397e7ea959dba69349cc15dee092",
+      "materialContentHash": "7190469d77fbd10e9b9332ae96b73a77bab861cbd46b889d4cc605a7cbd91582",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-vocabulary-v119-g1",
+      "file": "materials/family-linked-d37-vocabulary-v119-g1.json",
+      "fileSha256": "b0328514c0f3a45a956b49e8d8161625ff4941e3e75b13da450ce19538739454",
+      "materialContentHash": "245e7ecae6f9f781a4539cffbbe318da17d0815a7f1193a360eb3bf174ac5462",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-vocabulary-v119-g2",
+      "file": "materials/family-linked-d37-vocabulary-v119-g2.json",
+      "fileSha256": "0298b296d97071bdff7bc7edeb38d08a4b50c578ef6eb7fe37cf97f4f23ed080",
+      "materialContentHash": "c79d873d82c04cb25d34974d009e7c3f134f2384f3bdebb83451ca2a575c0f93",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-vocabulary-v119-g3",
+      "file": "materials/family-linked-d37-vocabulary-v119-g3.json",
+      "fileSha256": "51ec460898b5acab1a101a12e2511cf0920ae3a58092f483cfbf6a550d537523",
+      "materialContentHash": "75f046be130f0710c106dc94db2a8572b8007b0c5093e191bef41d586f3bde25",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-vocabulary-v119-g4",
+      "file": "materials/family-linked-d37-vocabulary-v119-g4.json",
+      "fileSha256": "6d4b92729c31952312a849156690bd6c4c175710a83aedb5432cd812b221075f",
+      "materialContentHash": "9f7c405a9a1100fe5e740475f2a5470f15add17209425f5081365db21df32f83",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-vocabulary-v119-g5",
+      "file": "materials/family-linked-d37-vocabulary-v119-g5.json",
+      "fileSha256": "d6431151980eded9530510c25296ba7882045abd61d8d23edf49ead3ad99a916",
+      "materialContentHash": "1d4f32f31007141645e51df0d6473830292aeadc1810f45317d4f624a2534a01",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-grammar-v119",
+      "file": "materials/family-linked-d37-grammar-v119.json",
+      "fileSha256": "c75290a15e265bccf88efb7763cc68601126eeba73ba2ea94d4ccbc4600fe851",
+      "materialContentHash": "05127974fb697959ef9c6ae1d07788507c1f5150d9ef84692def4a4df785b22f",
+      "questionsSha256": "2c7306716bc6f31d595d8f33ce5160c9f2889fea8f9e8103f91ce0e9535cec15"
+    },
+    {
+      "id": "family-linked-d37-reading-v119",
+      "file": "materials/family-linked-d37-reading-v119.json",
+      "fileSha256": "6ee98070e73921885171df0f0ceb0958323b2f7f84879f5f521b365a798dbbad",
+      "materialContentHash": "75a5fb9ddebd75c68fc13eb1d9babb7b7bffbff6feafa460a63756b018a02754",
+      "questionsSha256": "f2e0febb02a4ac2ac864f714db59cee9db91484e5bb34f36fbb55a2b0d546d6b"
+    },
+    {
+      "id": "family-linked-d37-listening-v119",
+      "file": "materials/family-linked-d37-listening-v119.json",
+      "fileSha256": "5d4a91bb0e17d8e1542774d5f3618c51374e31c9ec86a790117d5eff9c96512f",
+      "materialContentHash": "881190043bb44f93cc3012fcc02f421a1b77c188c52568723eb5896614b775bf",
+      "questionsSha256": "c4127c4636ea6eec385c206071c034574c5d613c323b02c5c4baf18c75f8306e",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d37-v119-listening.mp3",
+        "sha256": "868239633f2f0ccf8e5881ba830951d9a0018c4ecf84a2ebb59dd27cd9175ccf",
+        "bytes": 841484
+      }
+    },
+    {
+      "id": "family-linked-d37-speaking-v119",
+      "file": "materials/family-linked-d37-speaking-v119.json",
+      "fileSha256": "82d2042cc1c9c4a2eb443520311ea993f02bd1701b3a5c974966424c3c5d5075",
+      "materialContentHash": "18e64d13d8611e006d284524db252f51229124ec429148e69248a118f17b5060",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d37-writing-v119",
+      "file": "materials/family-linked-d37-writing-v119.json",
+      "fileSha256": "7953fc92324d16a941a9eb9bbc6a4662a59243fac9b6685bb688d5b25a0ff7dd",
+      "materialContentHash": "96080a4338849eb6ab1058b4f3fe109517f9e3b1c81c2d35d2ed1e90564d6662",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-vocabulary-v119-g1",
+      "file": "materials/family-linked-d38-vocabulary-v119-g1.json",
+      "fileSha256": "7d71774995c28998a26a8ef8c87cb35f8e5f8b53335b1eb44f0ff7851a9b0259",
+      "materialContentHash": "438367c62e97bd209b82f04316ed9cae41913609e0b40996054d9c5f4ed33f38",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-vocabulary-v119-g2",
+      "file": "materials/family-linked-d38-vocabulary-v119-g2.json",
+      "fileSha256": "131ec0ab74a9338a5211aa5467d939d473b642b10d3e1a106e9bf67559c00fc8",
+      "materialContentHash": "c4eef1f9cd94e49d04d7cfca4c881e13122e145f5a062ba2eb4ac1c1d75d314c",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-vocabulary-v119-g3",
+      "file": "materials/family-linked-d38-vocabulary-v119-g3.json",
+      "fileSha256": "c2e1a85216f20ed6cbb6c94492acf1a467b9984606e9b3bb6eb4aa5fccd87446",
+      "materialContentHash": "30f8ff51f0098d5c359c0d3fbfd8716ee32ccd710736b72a188465ac12be5f9d",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-vocabulary-v119-g4",
+      "file": "materials/family-linked-d38-vocabulary-v119-g4.json",
+      "fileSha256": "03ab91ec9858a776e6bd2fbd42292903393ff3cdccb40a33566dcc645ad6fe1f",
+      "materialContentHash": "6f5825465040385976e22b64e9660f8759536a5eb7e56570446142f90d0a0157",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-vocabulary-v119-g5",
+      "file": "materials/family-linked-d38-vocabulary-v119-g5.json",
+      "fileSha256": "dd3a260c76c3e8593dc9b60ffb25cf21c184ec3278dbcf05c59a8fae6e99426c",
+      "materialContentHash": "fac498eb278e2d52e95d442d7d19891428f0f82be3b0c7eee534bf9b88452ff4",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-grammar-v119",
+      "file": "materials/family-linked-d38-grammar-v119.json",
+      "fileSha256": "b25437160da1e172ed1950464cdda76710440ea3d9200d29ccd76f3b419d8cb2",
+      "materialContentHash": "a2c2f2043e780ce31b715ee02285eb025c72f904604ca24ec46ac61532cb4721",
+      "questionsSha256": "4c32b98930a491e4770d48f16f60d7fd9127846d9fd5a6a280205ed4964f5291"
+    },
+    {
+      "id": "family-linked-d38-reading-v119",
+      "file": "materials/family-linked-d38-reading-v119.json",
+      "fileSha256": "bcf08fa19b73c33091becbc0b451c83be54a2625ae6137c0484594457e213015",
+      "materialContentHash": "d947bf8d50218d3f4243ac7533b82790932b83895f12fc3d5ab5200a9a5a7d3b",
+      "questionsSha256": "6b1580b8b0cd46a66408da961c7f0444ce727efa29334078aad450058131c1d9"
+    },
+    {
+      "id": "family-linked-d38-listening-v119",
+      "file": "materials/family-linked-d38-listening-v119.json",
+      "fileSha256": "ec7fe5ac7acea2b6285e04d10f2943a391fd1e1c4bea86313f09c4c9083f6919",
+      "materialContentHash": "50a246de66d368e02dec592952ad35718bdf9aad5a4a81cddd5c89008bfbb82f",
+      "questionsSha256": "642cc205caa0bb2ff5e9a5d3fd4449ded8ce79a166e732f3e98e5336f5e19c2f",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d38-v119-listening.mp3",
+        "sha256": "cce2664bb424585aeb7b25525243eb17266919f0eb5306da7b9ecafb7eaaaed3",
+        "bytes": 863660
+      }
+    },
+    {
+      "id": "family-linked-d38-speaking-v119",
+      "file": "materials/family-linked-d38-speaking-v119.json",
+      "fileSha256": "f481da910686c4fbbc3f6b1fe1057ff51d395bb965c84ee57c0d4ea5365553cb",
+      "materialContentHash": "139904709f5005d8356f08ef21edc5e70f710484816302f2d010eba0fc49cc1f",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d38-writing-v119",
+      "file": "materials/family-linked-d38-writing-v119.json",
+      "fileSha256": "ccf44acdc6d52eddb956a4ad257acb7d4cb7ce7c5ac7dea762f7d3e1885fc7b8",
+      "materialContentHash": "b33b3cb78b776088a8a5872baa5ce8c60ae5c1bdb1761b0050c375f03645d94b",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-vocabulary-v119-g1",
+      "file": "materials/family-linked-d39-vocabulary-v119-g1.json",
+      "fileSha256": "c461a227f47ddab78bb60f809d8509dfc58fe3bcc73b49341f9933ff2568c143",
+      "materialContentHash": "925d93f66bfb8e9fe63c4fbc1461483168b94376fd463829fddbeae672d4e478",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-vocabulary-v119-g2",
+      "file": "materials/family-linked-d39-vocabulary-v119-g2.json",
+      "fileSha256": "8c5cbecded87d55d29bf6f3c34559feb925ea803016e33e78843e3e0e7b81f83",
+      "materialContentHash": "25749e30e57488f82b5b82278e558fb3d91af7e3a4f1fe6df86f3790c9dc6e37",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-vocabulary-v119-g3",
+      "file": "materials/family-linked-d39-vocabulary-v119-g3.json",
+      "fileSha256": "2836c766330aa03f7f2ec4125610ceb6e218a09416f606fb7bc84d151a950b50",
+      "materialContentHash": "17d24fbc3a6c2cdc03684f7827654f2dd6491c789db56460355d37d175f778c9",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-vocabulary-v119-g4",
+      "file": "materials/family-linked-d39-vocabulary-v119-g4.json",
+      "fileSha256": "0107b4293560c7a1f0a4499659ef72d6f450baecc3e598b56f85e20bf3f37aa6",
+      "materialContentHash": "ae270b64b0331f2eb7739a9e38d81ba211ec6616455e5ee28f00b9c17953b8ea",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-vocabulary-v119-g5",
+      "file": "materials/family-linked-d39-vocabulary-v119-g5.json",
+      "fileSha256": "baa539595b3a5a1f1e65b63fe00d7473d5a8b450dddc87d03e30239f3db3d428",
+      "materialContentHash": "a2d772756ac94a9cbd7a3accd342a2c5e7c8334a4cfa534810679a7af690cc44",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-grammar-v119",
+      "file": "materials/family-linked-d39-grammar-v119.json",
+      "fileSha256": "48effae4c38996e2673398b795441eec2d2b0d1a9bcfda1df35f8c19367f3a19",
+      "materialContentHash": "86ba1137f80b6f371e5df73aadca5c44b80175230cfecdec8b4ca7aab305152b",
+      "questionsSha256": "5257f61031f69582bc44bb927e0c77ceb41f09ca8a46a6415c16fb2571f66561"
+    },
+    {
+      "id": "family-linked-d39-reading-v119",
+      "file": "materials/family-linked-d39-reading-v119.json",
+      "fileSha256": "eddd585b08a93f0bda04937f41fae1c0fc570546ddaae46c26247fecabbae8c4",
+      "materialContentHash": "19841dcdf765166519600dd5a77eeb848118cce7b3b3592cccc0cddec9120aff",
+      "questionsSha256": "fc0483c26dbffbc96830da059f98f22e321d50daa34b606cf433f7be3be2ccd5"
+    },
+    {
+      "id": "family-linked-d39-listening-v119",
+      "file": "materials/family-linked-d39-listening-v119.json",
+      "fileSha256": "eda17428f1e8e212c7c4c4d80fe5212db989074bae985ec0974c2a7dca052019",
+      "materialContentHash": "727659ad35488b1e00cbc1637a924df522c00c6d1d383fa7e98b533289670fa0",
+      "questionsSha256": "72b2148ff3d022bfa168484a45ee16a330214141e779346c457514fb6afb3e9b",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d39-v119-listening.mp3",
+        "sha256": "4fc4998b9055dcac1c4a1aa75bb265e7b014a8aafddfff4811113c0eb5ee3980",
+        "bytes": 853436
+      }
+    },
+    {
+      "id": "family-linked-d39-speaking-v119",
+      "file": "materials/family-linked-d39-speaking-v119.json",
+      "fileSha256": "bf9d485932ef00deb21ebf777d93a085154fe35efa7d8a8b093ccb8074d92d14",
+      "materialContentHash": "55c6e7a77d8797aec7f929f6b773264edb01086c7021545b04cba7a75784ff88",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d39-writing-v119",
+      "file": "materials/family-linked-d39-writing-v119.json",
+      "fileSha256": "8a65ae6e45ad42988baf9a43da09f8d483b31973636c88b0239f709eb2ab8d6a",
+      "materialContentHash": "37eb98b76b79e0265cc70453b2fc66d65cf5269a817ae1db2d5a5c6b05020a00",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-vocabulary-v119-g1",
+      "file": "materials/family-linked-d40-vocabulary-v119-g1.json",
+      "fileSha256": "99040ba0eefc58ed54c5093dd92df233dc00adc7753209afe802f00cdff78d9d",
+      "materialContentHash": "380ea5d68b6d1d614c4589e8d63617914a358500b5ef1427be2563131a1f803e",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-vocabulary-v119-g2",
+      "file": "materials/family-linked-d40-vocabulary-v119-g2.json",
+      "fileSha256": "ba89ebac1b1ca0a63a19cca86883a83ceef17148e0940a925e7e9afd93003728",
+      "materialContentHash": "6c96479cd631947c098065d4bbbc4283fa8f2d5faedff01e7b7fe931de3afc75",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-vocabulary-v119-g3",
+      "file": "materials/family-linked-d40-vocabulary-v119-g3.json",
+      "fileSha256": "436fdd71cd5d75bf0ab8d3ade0bb29caf591e2ed06b3aec1572763b4108d1dcc",
+      "materialContentHash": "c2ae9dfab0584a4dce56451bb40c3c6f2e0c9f7436cb039dbf97cbdb270b7876",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-vocabulary-v119-g4",
+      "file": "materials/family-linked-d40-vocabulary-v119-g4.json",
+      "fileSha256": "a9f915a7f986302efc2c96f93212698fc0eb38092ca0fb9c181d3f16ac88fc11",
+      "materialContentHash": "bfe43a34b49a39547f9cb9215a95921e183254d0f688167aab850ff6c754095b",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-vocabulary-v119-g5",
+      "file": "materials/family-linked-d40-vocabulary-v119-g5.json",
+      "fileSha256": "b1ee6e1a289b8b5bcc02dd824cde96402070497191046a4e97b954f8c0441265",
+      "materialContentHash": "53666fd5e1ea04bef2f3466acdeae777b511354f4ef17db883fecccef3e513a1",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-grammar-v119",
+      "file": "materials/family-linked-d40-grammar-v119.json",
+      "fileSha256": "74eb54b28ebef0423d503fa6c83c46b72c9fcacd370a1b5a17a3f016a2e7f7ba",
+      "materialContentHash": "27df1197f1e08238998bc34cea9d38ce8e1381a7f108117e568e11f47554be9d",
+      "questionsSha256": "8a4efacccd3d6edc7df599a768e2729412abbfc83631d90bfcf822806e910f5e"
+    },
+    {
+      "id": "family-linked-d40-reading-v119",
+      "file": "materials/family-linked-d40-reading-v119.json",
+      "fileSha256": "16ea1a7fc9d0c6fee73d3dc54fa36799649f3d02f878eb5d15955ab705b5de4b",
+      "materialContentHash": "ae32724ab09b580dbe04ccaaa307b440d2dc18df1c5130bd513691637ddc342b",
+      "questionsSha256": "5fefae96f473d9b6b082dd139629a0b72b613454f35316cfb97c567f7ebde185"
+    },
+    {
+      "id": "family-linked-d40-listening-v119",
+      "file": "materials/family-linked-d40-listening-v119.json",
+      "fileSha256": "bda60b2beb2a5a4139e148729b2cb21e0b180a51fd4ee470a9d5333df63ce443",
+      "materialContentHash": "ace9f5e079c291acf7bec684a0608eeba0ca0155c38d4278a5a995fe0c784a5b",
+      "questionsSha256": "c470da77885afcacbbc98cb42789fa99ae4f3007311ff55eeb52fc5c2a8c55d8",
+      "audio": {
+        "src": "audio/curriculum/family-linked-d40-v119-listening.mp3",
+        "sha256": "3e6bbf761e39370bb5041002039378b4512db5670e9724fab4f234f774914e00",
+        "bytes": 898796
+      }
+    },
+    {
+      "id": "family-linked-d40-speaking-v119",
+      "file": "materials/family-linked-d40-speaking-v119.json",
+      "fileSha256": "70208529c9437350a7ec1a85313db87aa9fa0ae6207369a8f0d9345b78f5b5ca",
+      "materialContentHash": "768baf51e82970865c2c34d018efae1dc0fec126bafec8bc1407231d3ad96f24",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "id": "family-linked-d40-writing-v119",
+      "file": "materials/family-linked-d40-writing-v119.json",
+      "fileSha256": "bec194e1b6cf9ba6de94bace5d790e5e96df09a6a37f009d0457ef673462ac3d",
+      "materialContentHash": "a9354bff964fd9f6e43b76f5b5c8fc431d63cce83be8e2a4f0776b863c859bf5",
+      "questionsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "units": [
+    {
+      "id": "family-linked-d31-unit-v119",
+      "unitPayloadSha256": "12dcc34067fc22bb084af9b9132560dd9f9533ebf23743288851c7549488efa6"
+    },
+    {
+      "id": "family-linked-d32-unit-v119",
+      "unitPayloadSha256": "c6d613745a077df656b07bee50dfe9194edd5e75cff5a3f35239d2f9a6dd5616"
+    },
+    {
+      "id": "family-linked-d33-unit-v119",
+      "unitPayloadSha256": "14f8b50f3e5c949ba70324c8590ed21cae46c20a8259f4aac0611fcb96cf0ffa"
+    },
+    {
+      "id": "family-linked-d34-unit-v119",
+      "unitPayloadSha256": "37a4637d2d5867a48f5fd11ffec1d58cd33b7ea80d3be178131e06d26dd98a08"
+    },
+    {
+      "id": "family-linked-d35-unit-v119",
+      "unitPayloadSha256": "2d2af9b9d9d1a40f2d5b05c974d73362a6a66e7d17c3edbb10753d435da4ce89"
+    },
+    {
+      "id": "family-linked-d36-unit-v119",
+      "unitPayloadSha256": "270b847fba07e26508031fcc90f2349ba132e889337f9bed6514f7367da6df84"
+    },
+    {
+      "id": "family-linked-d37-unit-v119",
+      "unitPayloadSha256": "3b67956f810957a68f3664995c4025ab2ed039eecae1e757727066e1789da232"
+    },
+    {
+      "id": "family-linked-d38-unit-v119",
+      "unitPayloadSha256": "b79c9a09b46e6e8ad9559cd478ccaf4e892f8b99704c21f45189d26cb37c498c"
+    },
+    {
+      "id": "family-linked-d39-unit-v119",
+      "unitPayloadSha256": "4363353a65c90ad4e177569550e83f373b228358cb9fe1e0ad38699fa3cd5155"
+    },
+    {
+      "id": "family-linked-d40-unit-v119",
+      "unitPayloadSha256": "6796b18f7e2eb2ebf0da6777abf9868e6f02ac93ed2c51dc4cc61fb8867a36ca"
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "id": "family-linked-d32-grammar-v119",
+  "version": "1",
+  "week": 5,
+  "courseDay": 32,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "一般规律、除非与将来条件",
+  "pool": "training",
+  "practiceOnly": true,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "原创 AI 辅助虚构教学材料；尚待独立教学与发音审核。"
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Complete the general statement: If rain falls, the earth ____ wet.",
+      "options": [
+        "gets",
+        "get",
+        "will getting",
+        "got"
+      ],
+      "answers": [
+        "gets"
+      ],
+      "evidence": "If rain falls, the earth gets wet.",
+      "evidenceOffsets": {
+        "start": 72,
+        "end": 106,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "一般规律用一般现在时，单数 earth 配 gets；get 缺单数变化，will getting 结构错误，got 是过去式。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Choose the grammatical general possibility: If a seed has warmth and water, it ____ sprout.",
+      "options": [
+        "cans",
+        "can",
+        "can to",
+        "can will"
+      ],
+      "answers": [
+        "can"
+      ],
+      "evidence": "If a seed has warmth and water, it can sprout.",
+      "evidenceOffsets": {
+        "start": 107,
+        "end": 153,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "can 后接动词原形 sprout；can 不加 s，也不与 to 或 will 连用。句子表示可能，不保证结果。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Complete the general statement: If the room is locked, the key ____ at the desk.",
+      "options": [
+        "are",
+        "be",
+        "is",
+        "were"
+      ],
+      "answers": [
+        "is"
+      ],
+      "evidence": "If the room is locked, the key is at the desk.",
+      "evidenceOffsets": {
+        "start": 154,
+        "end": 200,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "单数 key 用 is；are 为复数，be 在此缺少变化，were 是过去式。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Complete the general statement: If the sun rises, the shade ____.",
+      "options": [
+        "move",
+        "moving",
+        "moved",
+        "moves"
+      ],
+      "answers": [
+        "moves"
+      ],
+      "evidence": "If the sun rises, the shade moves.",
+      "evidenceOffsets": {
+        "start": 201,
+        "end": 235,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "单数 shade 的一般现在时用 moves；move 缺单数词尾，moving 不能单独作谓语，moved 是过去式。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Which sentence means the same as “We will meet outside unless it rains”?",
+      "options": [
+        "We will meet outside if it does not rain.",
+        "We will meet outside if it rains.",
+        "We will meet outside after it rains.",
+        "We will meet outside while it rains."
+      ],
+      "answers": [
+        "We will meet outside if it does not rain."
+      ],
+      "evidence": "We will meet outside unless it rains.",
+      "evidenceOffsets": {
+        "start": 302,
+        "end": 339,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "unless it rains 相当于 if it does not rain；其他三项分别表示下雨时、雨后或下雨期间，逻辑不同。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Which sentence means the same as “Unless the room is open, we will wait”?",
+      "options": [
+        "If the room is open, we will wait.",
+        "If the room is not open, we will wait.",
+        "We will wait during the room.",
+        "We waited before the room opened."
+      ],
+      "answers": [
+        "If the room is not open, we will wait."
+      ],
+      "evidence": "Unless the room is open, we will wait.",
+      "evidenceOffsets": {
+        "start": 340,
+        "end": 378,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "房间未开放才等候；第一项把条件反转，第二项结构不通，第三项改成过去发生的事情。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "When will I bring a notebook in this sentence: “I will bring the notebook unless Sam brings one”?",
+      "options": [
+        "Only if Sam brings one.",
+        "After Sam has brought two.",
+        "If Sam does not bring one.",
+        "Whenever the notebook is missing its cover."
+      ],
+      "answers": [
+        "If Sam does not bring one."
+      ],
+      "evidence": "I will bring the notebook unless Sam brings one.",
+      "evidenceOffsets": {
+        "start": 379,
+        "end": 427,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "除非 Sam 带，否则我带，即 Sam 没带时；其他选项改变条件或加入不存在的信息。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "Complete the sentence with the same meaning as “if staff do not say no”: The group will use the bed ____ staff say no.",
+      "options": [
+        "because",
+        "after",
+        "during",
+        "unless"
+      ],
+      "answers": [
+        "unless"
+      ],
+      "evidence": "The group will use the bed unless staff say no.",
+      "evidenceOffsets": {
+        "start": 428,
+        "end": 475,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "unless staff say no 表示工作人员不说不时使用；because 表原因，after 表先后，during 后不能直接接此从句。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "Complete the future plan: When the train ____, I will call you.",
+      "options": [
+        "arrives",
+        "will arrive",
+        "arriving",
+        "arrive"
+      ],
+      "answers": [
+        "arrives"
+      ],
+      "evidence": "表示将来的真实时间或条件时，when、if 引导的从句通常用一般现在时，主句可用 will 或 can；when 强调预期发生，if 强调是否发生不确定。",
+      "evidenceOffsets": {
+        "start": 480,
+        "end": 557,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "将来时间从句用一般现在时，单数 train 用 arrives；will arrive 不用于此从句，arriving 缺谓语，arrive 缺单数词尾。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "Complete the possible future condition: If the shop ____, we can enter.",
+      "options": [
+        "will open",
+        "opens",
+        "opening",
+        "open"
+      ],
+      "answers": [
+        "opens"
+      ],
+      "evidence": "表示将来的真实时间或条件时，when、if 引导的从句通常用一般现在时，主句可用 will 或 can；when 强调预期发生，if 强调是否发生不确定。",
+      "evidenceOffsets": {
+        "start": 480,
+        "end": 557,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "if 从句用一般现在时，单数 shop 用 opens；其他项分别误用 will、缺谓语和缺单数词尾。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "Complete the future plan: When the film ____, we will leave.",
+      "options": [
+        "will end",
+        "ending",
+        "ends",
+        "end"
+      ],
+      "answers": [
+        "ends"
+      ],
+      "evidence": "表示将来的真实时间或条件时，when、if 引导的从句通常用一般现在时，主句可用 will 或 can；when 强调预期发生，if 强调是否发生不确定。",
+      "evidenceOffsets": {
+        "start": 480,
+        "end": 557,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "when 从句用一般现在时，单数 film 配 ends；will end、ending 和未变形 end 不符合此结构。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "Complete the future condition: If the bus ____, I will walk.",
+      "options": [
+        "will stop",
+        "stopping",
+        "stop",
+        "stops"
+      ],
+      "answers": [
+        "stops"
+      ],
+      "evidence": "表示将来的真实时间或条件时，when、if 引导的从句通常用一般现在时，主句可用 will 或 can；when 强调预期发生，if 强调是否发生不确定。",
+      "evidenceOffsets": {
+        "start": 480,
+        "end": 557,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "真实将来条件从句用 stops；will stop 误放在从句，stopping 缺谓语，stop 缺单数词尾。"
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Read the Chinese explanations; the last four questions transfer the rule to new situations.",
+  "passage": "1. 零条件句用 if 加一般现在时，主句也常用一般现在时，表达在该情境中反复成立的规律。不要把一条具体安排写成所有情况下都成立的规律。\n例句：If rain falls, the earth gets wet. If a seed has warmth and water, it can sprout. If the room is locked, the key is at the desk. If the sun rises, the shade moves.\n\n2. unless 表示“除非”，常可改写为 if ... not；换写时只保留一次相应的否定，并检查两句的逻辑是否相同。\n例句：We will meet outside unless it rains. Unless the room is open, we will wait. I will bring the notebook unless Sam brings one. The group will use the bed unless staff say no.\n\n3. 表示将来的真实时间或条件时，when、if 引导的从句通常用一般现在时，主句可用 will 或 can；when 强调预期发生，if 强调是否发生不确定。\n例句：When the rain stops, we will go outside. If the room opens, we can enter.",
+  "questionCount": 12
+}

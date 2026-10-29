@@ -1,0 +1,279 @@
+{
+  "id": "family-linked-d39-grammar-v119",
+  "version": "1",
+  "week": 6,
+  "courseDay": 39,
+  "level": "B1",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "转述陈述、提问与回答",
+  "pool": "training",
+  "practiceOnly": true,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "原创 AI 辅助虚构教学材料；尚待独立教学与发音审核。"
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "The guide ____ that the room was open.",
+      "options": [
+        "told to",
+        "said to that",
+        "said",
+        "telling"
+      ],
+      "answers": [
+        "said"
+      ],
+      "evidence": "转述陈述时，say 后可直接接 that 从句；tell 通常先接被告知的人，再接 that 从句。不要把 tell 和 say 的宾语结构混为一谈。",
+      "evidenceOffsets": {
+        "start": 3,
+        "end": 78,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "said 可直接接 that 从句；told 通常需要受话人，其他形式不能构成该句。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "The guide ____ the reporter that the room was open.",
+      "options": [
+        "said",
+        "told",
+        "told to",
+        "speaking"
+      ],
+      "answers": [
+        "told"
+      ],
+      "evidence": "转述陈述时，say 后可直接接 that 从句；tell 通常先接被告知的人，再接 that 从句。不要把 tell 和 say 的宾语结构混为一谈。",
+      "evidenceOffsets": {
+        "start": 3,
+        "end": 78,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "told 后直接接受话人 the reporter；said 不能直接以人作此位置的宾语。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Choose the correct report of a statement.",
+      "options": [
+        "Hana said that the event was planned.",
+        "Hana told that the event was planned.",
+        "Hana said the editor that the event was planned.",
+        "Hana saying that the event was planned."
+      ],
+      "answers": [
+        "Hana said that the event was planned."
+      ],
+      "evidence": "转述陈述时，say 后可直接接 that 从句；tell 通常先接被告知的人，再接 that 从句。不要把 tell 和 say 的宾语结构混为一谈。",
+      "evidenceOffsets": {
+        "start": 3,
+        "end": 78,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "said 后可接 that 从句；told 缺受话人，said 后不能这样直接接受话人。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Choose the sentence with the person receiving the message.",
+      "options": [
+        "The editor told that the date was unclear.",
+        "The editor said Leena that the date was unclear.",
+        "The editor told Leena that the date was unclear.",
+        "The editor telling Leena that the date was unclear."
+      ],
+      "answers": [
+        "The editor told Leena that the date was unclear."
+      ],
+      "evidence": "转述陈述时，say 后可直接接 that 从句；tell 通常先接被告知的人，再接 that 从句。不要把 tell 和 say 的宾语结构混为一谈。",
+      "evidenceOffsets": {
+        "start": 3,
+        "end": 78,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "told 后有受话人 Leena，再接 that 从句；其他选项缺宾语或谓语结构错误。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Yesterday Maya said, “I am tired.” Report her past statement.",
+      "options": [
+        "Maya said that she was tired.",
+        "Maya said that she are tired.",
+        "Maya said that she be tired.",
+        "Maya said that she tired was."
+      ],
+      "answers": [
+        "Maya said that she was tired."
+      ],
+      "evidence": "叙述已经结束的过去谈话时，转述动词用过去式，原话中的 am / is、have 和 will 常分别后移为 was、had 和 would；若内容仍然真实，也可能保留原时态。",
+      "evidenceOffsets": {
+        "start": 178,
+        "end": 265,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "过去叙述中 am 常后移为 was；are 与 she 不一致，be 和倒装词序也不合。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Yesterday Arun said, “I will return.” Choose the backshifted report.",
+      "options": [
+        "Arun said that he would returned.",
+        "Arun said that he will to return.",
+        "Arun said that he would returns.",
+        "Arun said that he would return."
+      ],
+      "answers": [
+        "Arun said that he would return."
+      ],
+      "evidence": "叙述已经结束的过去谈话时，转述动词用过去式，原话中的 am / is、have 和 will 常分别后移为 was、had 和 would；若内容仍然真实，也可能保留原时态。",
+      "evidenceOffsets": {
+        "start": 178,
+        "end": 265,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "will 可后移为 would，would 后接动词原形 return；其他形式均不合结构。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "Yesterday the guide said, “I have finished.” Choose the backshifted report of her words.",
+      "options": [
+        "The guide said that she had finish.",
+        "The guide said that she had finished.",
+        "The guide said that she have finished.",
+        "The guide said that she had finishing."
+      ],
+      "answers": [
+        "The guide said that she had finished."
+      ],
+      "evidence": "叙述已经结束的过去谈话时，转述动词用过去式，原话中的 am / is、have 和 will 常分别后移为 was、had 和 would；若内容仍然真实，也可能保留原时态。",
+      "evidenceOffsets": {
+        "start": 178,
+        "end": 265,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "转述过去谈话时 have finished 可后移为 had finished；had 后要用过去分词。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "A female representative said, “I am ready.” Choose a correct backshifted report of her words.",
+      "options": [
+        "The representative said that she was ready.",
+        "The representative said that she were ready.",
+        "The representative said that she ready was.",
+        "The representative said that she be ready."
+      ],
+      "answers": [
+        "The representative said that she was ready."
+      ],
+      "evidence": "叙述已经结束的过去谈话时，转述动词用过去式，原话中的 am / is、have 和 will 常分别后移为 was、had 和 would；若内容仍然真实，也可能保留原时态。",
+      "evidenceOffsets": {
+        "start": 178,
+        "end": 265,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "am 可后移为 was，she 使用单数形式，陈述从句保留正常语序。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "A visitor asked, “Is the door open?” Choose the reported question.",
+      "options": [
+        "The visitor asked if was the door open.",
+        "The visitor asked that was the door open.",
+        "The visitor asked if the door was open.",
+        "The visitor asked if the door open was."
+      ],
+      "answers": [
+        "The visitor asked if the door was open."
+      ],
+      "evidence": "转述一般疑问句可用 asked if / whether；转述特殊疑问句保留疑问词，但从句使用主语在动词前的陈述语序，不再使用原来的倒装。",
+      "evidenceOffsets": {
+        "start": 337,
+        "end": 406,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "一般疑问转述用 if，后面用 the door was 的陈述语序；原问句倒装不能保留。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "The reporter asked, “Where is the picture?” Choose the reported question.",
+      "options": [
+        "The reporter asked where was the picture.",
+        "The reporter asked if where the picture was.",
+        "The reporter asked where the picture were.",
+        "The reporter asked where the picture was."
+      ],
+      "answers": [
+        "The reporter asked where the picture was."
+      ],
+      "evidence": "转述一般疑问句可用 asked if / whether；转述特殊疑问句保留疑问词，但从句使用主语在动词前的陈述语序，不再使用原来的倒装。",
+      "evidenceOffsets": {
+        "start": 337,
+        "end": 406,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "保留疑问词 where，后接 the picture was；不再倒装，picture 为单数。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "The editor asked, “Did Maya agree?” Choose the reported question.",
+      "options": [
+        "The editor asked whether had Maya agreed.",
+        "The editor asked whether Maya had agree.",
+        "The editor asked that did Maya agree.",
+        "The editor asked whether Maya had agreed."
+      ],
+      "answers": [
+        "The editor asked whether Maya had agreed."
+      ],
+      "evidence": "转述一般疑问句可用 asked if / whether；转述特殊疑问句保留疑问词，但从句使用主语在动词前的陈述语序，不再使用原来的倒装。",
+      "evidenceOffsets": {
+        "start": 337,
+        "end": 406,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "一般疑问可用 whether，后接 Maya had agreed；倒装和缺少过去分词都不合。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "The visitor asked, “When does the class start?” Choose the indirect question.",
+      "options": [
+        "The visitor asked when did the class start.",
+        "The visitor asked when the class started.",
+        "The visitor asked if when the class started.",
+        "The visitor asked when the class start did."
+      ],
+      "answers": [
+        "The visitor asked when the class started."
+      ],
+      "evidence": "转述一般疑问句可用 asked if / whether；转述特殊疑问句保留疑问词，但从句使用主语在动词前的陈述语序，不再使用原来的倒装。",
+      "evidenceOffsets": {
+        "start": 337,
+        "end": 406,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "when 后用陈述语序 the class started；不能再加 did 倒装或同时加 if。"
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Read the Chinese explanations; the last four questions transfer the rule to new situations.",
+  "passage": "1. 转述陈述时，say 后可直接接 that 从句；tell 通常先接被告知的人，再接 that 从句。不要把 tell 和 say 的宾语结构混为一谈。\n例句：The editor said that the date was uncertain. The visitor told Hana that she had a question.\n\n2. 叙述已经结束的过去谈话时，转述动词用过去式，原话中的 am / is、have 和 will 常分别后移为 was、had 和 would；若内容仍然真实，也可能保留原时态。\n例句：She said that the hall was ready. He said that he would return.\n\n3. 转述一般疑问句可用 asked if / whether；转述特殊疑问句保留疑问词，但从句使用主语在动词前的陈述语序，不再使用原来的倒装。\n例句：They asked if the room was open. She asked where the map was.",
+  "questionCount": 12
+}

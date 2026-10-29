@@ -1,0 +1,279 @@
+{
+  "id": "family-linked-d31-grammar-v119",
+  "version": "1",
+  "week": 5,
+  "courseDay": 31,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "截止时间、持续时间与同时发生",
+  "pool": "training",
+  "practiceOnly": true,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "原创 AI 辅助虚构教学材料；尚待独立教学与发音审核。"
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Choose the deadline word: Please choose a book ____ Friday; Friday is the last day to choose.",
+      "options": [
+        "until",
+        "while",
+        "during",
+        "by"
+      ],
+      "answers": [
+        "by"
+      ],
+      "evidence": "Please choose a book by Friday.",
+      "evidenceOffsets": {
+        "start": 66,
+        "end": 97,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "by 表示不迟于星期五完成；until 表示持续，while 接从句，during 接活动名词。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Choose the word showing a continuous state: The reading room stays open ____ six.",
+      "options": [
+        "until",
+        "by",
+        "because",
+        "while"
+      ],
+      "answers": [
+        "until"
+      ],
+      "evidence": "The reading room stays open until six.",
+      "evidenceOffsets": {
+        "start": 98,
+        "end": 136,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "房间一直开放到六点用 until；by 只表达最迟点，because 与 while 后需要从句。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Choose the deadline word: The form is due ____ Wednesday, and it may be handed in earlier.",
+      "options": [
+        "until",
+        "by",
+        "during",
+        "while"
+      ],
+      "answers": [
+        "by"
+      ],
+      "evidence": "The form is due by Wednesday.",
+      "evidenceOffsets": {
+        "start": 137,
+        "end": 166,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "可以提前交、最迟星期三交，应用 by；until 指持续，during 和 while 结构不符。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Choose the word showing the room remains available throughout the morning: We can use the room ____ noon.",
+      "options": [
+        "by",
+        "because",
+        "until",
+        "during"
+      ],
+      "answers": [
+        "until"
+      ],
+      "evidence": "We can use the room until noon.",
+      "evidenceOffsets": {
+        "start": 167,
+        "end": 198,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "可一直使用到中午用 until；by 是截止点，because 后需从句，during noon 不表示此持续区间。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Complete the sentence: After ____ the catalogue, Maya chooses a book.",
+      "options": [
+        "check",
+        "checked",
+        "checks",
+        "checking"
+      ],
+      "answers": [
+        "checking"
+      ],
+      "evidence": "After checking the catalogue, Maya chooses a book.",
+      "evidenceOffsets": {
+        "start": 278,
+        "end": 328,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "after 此处后接动词 ing，checking 与主句主语 Maya 对应；check、checked、checks 均不能这样直接跟在 after 后。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Complete the sentence: Before ____, Ben writes the date.",
+      "options": [
+        "leaving",
+        "leave",
+        "left",
+        "leaves"
+      ],
+      "answers": [
+        "leaving"
+      ],
+      "evidence": "Before leaving, Ben writes the date.",
+      "evidenceOffsets": {
+        "start": 329,
+        "end": 365,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "before 后用 leaving，动作执行者与主句主语 Ben 一致；其余三项不能直接作该介词结构。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "Choose the noun phrase that completes the time expression: After ____, the group reads.",
+      "options": [
+        "eat",
+        "lunch",
+        "eats",
+        "ate"
+      ],
+      "answers": [
+        "lunch"
+      ],
+      "evidence": "After lunch, the group reads.",
+      "evidenceOffsets": {
+        "start": 366,
+        "end": 395,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "after 后可接名词 lunch；eat、eats、ate 是动词形式，不能这样单独构成名词短语。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "Complete the sentence: Before ____, Ava asks a question.",
+      "options": [
+        "register",
+        "registered",
+        "registering",
+        "registers"
+      ],
+      "answers": [
+        "registering"
+      ],
+      "evidence": "Before registering, Ava asks a question.",
+      "evidenceOffsets": {
+        "start": 396,
+        "end": 436,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "before 后接 registering；三种其他动词形式不能直接放在此位置。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "Choose the word for waiting at a time within the workshop: We waited ____ the workshop.",
+      "options": [
+        "while",
+        "because",
+        "although",
+        "during"
+      ],
+      "answers": [
+        "during"
+      ],
+      "evidence": "during 后接名词或名词短语；while 后接有主语和动词的从句。during 可指整个期间或其中某时，单靠这个词不能保证从头到尾；先看结构，再核对时间关系。",
+      "evidenceOffsets": {
+        "start": 441,
+        "end": 522,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "workshop 是名词，during 后可接名词；during 不单独保证从头到尾，while、because 和 although 需要完整从句。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "Choose the word showing simultaneous actions: They drew ____ the musician played.",
+      "options": [
+        "while",
+        "during",
+        "because of",
+        "despite"
+      ],
+      "answers": [
+        "while"
+      ],
+      "evidence": "during 后接名词或名词短语；while 后接有主语和动词的从句。during 可指整个期间或其中某时，单靠这个词不能保证从头到尾；先看结构，再核对时间关系。",
+      "evidenceOffsets": {
+        "start": 441,
+        "end": 522,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "the musician played 是完整从句，while 表同时；during、because of、despite 此处需名词或 ing。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "Choose the word for checking names at a time within lunch: We checked names ____ lunch.",
+      "options": [
+        "while",
+        "during",
+        "because",
+        "although"
+      ],
+      "answers": [
+        "during"
+      ],
+      "evidence": "during 后接名词或名词短语；while 后接有主语和动词的从句。during 可指整个期间或其中某时，单靠这个词不能保证从头到尾；先看结构，再核对时间关系。",
+      "evidenceOffsets": {
+        "start": 441,
+        "end": 522,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "lunch 是名词，during lunch 表午餐期间，单靠 during 不保证全程；其余选项后通常需要完整从句。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "Choose the word showing the two actions happened at the same time: ____ the game continued, the children drew.",
+      "options": [
+        "During",
+        "Because of",
+        "While",
+        "Despite"
+      ],
+      "answers": [
+        "While"
+      ],
+      "evidence": "during 后接名词或名词短语；while 后接有主语和动词的从句。during 可指整个期间或其中某时，单靠这个词不能保证从头到尾；先看结构，再核对时间关系。",
+      "evidenceOffsets": {
+        "start": 441,
+        "end": 522,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "the game continued 是从句，While 表两个动作同时；During、Because of 和 Despite 不能直接接这个有限从句。"
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Read the Chinese explanations; the last four questions transfer the rule to new situations.",
+  "passage": "1. by 表示最迟在某个时间完成；until 表示状态或活动一直持续到该时间。两者含义不同，不能仅因为后面都是时间就互换。\n例句：Please choose a book by Friday. The reading room stays open until six. The form is due by Wednesday. We can use the room until noon.\n\n2. before 和 after 后可接名词，或接动词 ing 形式；主句与省略主语的 ing 动作应由同一人完成。若主语不同，用完整从句更清楚。\n例句：After checking the catalogue, Maya chooses a book. Before leaving, Ben writes the date. After lunch, the group reads. Before registering, Ava asks a question.\n\n3. during 后接名词或名词短语；while 后接有主语和动词的从句。during 可指整个期间或其中某时，单靠这个词不能保证从头到尾；先看结构，再核对时间关系。\n例句：We read during the meeting. We read while Ben speaks.",
+  "questionCount": 12
+}

@@ -2,7 +2,7 @@
 // UI contract test against public, root-reviewed build data. Queue and learner
 // state are synthetic; no browser profile, audio or service is accessed.
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const source=require('../../v118-linked-build-output/assets/curriculum-data.js'),P=require('../assets/course-player.js'),V=require('../assets/vocabulary-practice.js'),A=require('../assets/assessment-core.js');
+const source=require('../assets/curriculum-data.js'),P=require('../assets/course-player.js'),V=require('../assets/vocabulary-practice.js'),A=require('../assets/assessment-core.js');
 class Node {constructor(tag='div'){this.tagName=tag;this.children=[];this._text='';this.dataset={};this.listeners={};this.hidden=false;this.disabled=false;}set textContent(v){this._text=String(v);this.children=[];}get textContent(){return this._text+this.children.map(x=>x.textContent).join('');}append(...nodes){for(const node of nodes)this.children.push(node);}replaceChildren(...nodes){this.children=[];this._text='';this.append(...nodes);}setAttribute(){}addEventListener(name,fn){this.listeners[name]=fn;}querySelectorAll(){return[];}}
 async function render({number,queue,projected=false}){
  const data=JSON.parse(JSON.stringify(source)),raw=data.days.find(d=>d.day===number),unit=data.familyLessonRelease.units.find(u=>u.day===number);

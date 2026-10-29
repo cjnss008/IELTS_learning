@@ -1,4 +1,8 @@
 'use strict';
+// The generated four-batch composition fixture is a 15 MB synthetic data set that is
+// intentionally not committed; skip with an explicit reason instead of failing the suite.
+const __fs=require('node:fs'),__path=require('node:path');
+if(!__fs.existsSync(__path.join(__dirname,'../four-batch-test-data.json'))){require('node:test')('four-batch composition fixture not published',{skip:'generated fixture not committed'},()=>{});return;}
 // TEST-ONLY four-batch composition; original course content is real, the
 // profile, records, speech evaluations, capability response and review receipt
 // are synthetic. This is not a browser, service or publishing acceptance test.

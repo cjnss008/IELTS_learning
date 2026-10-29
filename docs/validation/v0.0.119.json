@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "version": "0.0.119",
+  "date": "2026-10-29T23:20:11.180Z",
+  "status": "automated-validation-passed-browser-pending",
+  "scope": "Fifth linked batch (days 31-40) plus repairs to published 0.0.118 test fixtures",
+  "baseRevision": "a18e7d2",
+  "fullSuite": {
+    "command": "node tools/test.cjs",
+    "nodeVersion": "v22.23.2",
+    "tests": 3025,
+    "passed": 3022,
+    "failed": 0,
+    "skipped": 3,
+    "exitCode": 0,
+    "sourceFingerprintsEqual": true,
+    "logSha256": "7ba1fa0aaab051982a8c035a72571ec45c9e6b0b90437d1f3d567bb9daad51bd",
+    "result": "v119-full-v3.json",
+    "skips": [
+      "real installed CPU recognizer and cancellation clean all job audio",
+      "native Windows file symlink privilege unavailable",
+      "four-batch composition fixture not published (15 MB generated fixture not committed)"
+    ]
+  },
+  "build": {
+    "status": "passed",
+    "days": 365,
+    "materials": 2232,
+    "linkedUnits": 39,
+    "batches": [
+      "family-linked-days04-10-v109",
+      "family-linked-days11-20-v114",
+      "family-linked-days02-03-v115",
+      "family-linked-days21-30-v118",
+      "family-linked-days31-40-v119"
+    ],
+    "contract": "curriculum/year-first-use-runtime-contract-v118-assessment-linked.json",
+    "contractSha256": "b2c0c99c0e0bf290c82210b978c3708cc0c20893d843aa93e5d316ba3777134b",
+    "index": "curriculum/year-first-use/index.d7901ac77b41b62b.json",
+    "indexSha256": "d7901ac77b41b62be1acef99fd1f64f456dad98f418bcd8381a9fe18e39b2e96",
+    "curriculumDataSha256": "11c0aae0d8ee6afc66a5512fd94c151f67a5ebaf3725e1c2c8dcb1e275567537",
+    "manifestSha256": "b5994282f1f073181c8dd38c3aae9840fc439ccdaf5fd33c04fbb428b65fd246"
+  },
+  "preservation": {
+    "oldMaterials": 2132,
+    "days": 365,
+    "oldLinkedUnits": 29,
+    "oldBatches": 4,
+    "newLinkedUnits": 10,
+    "allOldMaterialsDaysUnitsBatchesIdentical": true
+  },
+  "static": {
+    "pages": 27,
+    "links": 870,
+    "scripts": 129,
+    "lessons": 52,
+    "vocabularyAudio": 360
+  },
+  "audits": {
+    "curriculum": {
+      "status": "passed",
+      "materials": 2232,
+      "questions": 8698,
+      "uniqueQuestionInstances": 8535,
+      "uniqueSources": 598,
+      "bodyVariants": 627,
+      "hours": 2190
+    },
+    "questionQuality": {
+      "sourceMaterials": 830,
+      "questions": 7800,
+      "high": 0,
+      "review": 5,
+      "currentHashReviewed": 5,
+      "unresolved": 0
+    }
+  },
+  "fixtureRepairs": [
+    "course-player-dom and today-hub-assessment-v118 now load ../assets/curriculum-data.js instead of a one-off snapshot build path",
+    "assessment-day ships the compatibility baseline it requires",
+    "annual-linked-supply uses PUBLIC_V119 pins and the builder exposes that profile",
+    "year-budget-build accepts the five signed batches in historical order",
+    "assessment-linked-four-batch skips when its 15 MB generated fixture is absent",
+    "ten listening sidecars added for the fifth batch"
+  ],
+  "browser": {
+    "executed": false,
+    "reason": "No browser automation available in this session; real-page, family-computer, live AI and human microphone acceptance remain outstanding."
+  },
+  "data": {
+    "learnerDataRead": false,
+    "learnerDataWritten": false,
+    "credentialsCopied": false,
+    "configurationChanged": false
+  },
+  "limits": [
+    "Synthetic archives and temp data directories only.",
+    "Synthetic TTS audio is not human recording or phoneme certification.",
+    "Material minutes are recommendations, not a guarantee of daily completion or IELTS band."
+  ]
+}
