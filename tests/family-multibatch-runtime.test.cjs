@@ -35,14 +35,14 @@ function syntheticPack(simple=false){
 function historicalViews(current){
  const base=require('./published-public-baseline-fixture.cjs')(current);delete base.yearFirstUse;
  const legacy=clone(base),first=Catalog.append(legacy,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'}]});
- legacy.yearFirstUse=clone(current.yearFirstUse);legacy.yearFirstUse.coreHash=first.combinedCoreHash;legacy.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v117-vocabulary-response.json'}).metadata;
+ legacy.yearFirstUse=clone(current.yearFirstUse);legacy.yearFirstUse.coreHash=first.combinedCoreHash;legacy.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v118-assessment-linked.json'}).metadata;
  return{base,legacy};
 }
 
 test('v109 bindings and receipt survive a reviewed appended batch and the public projection admits its own signed unit',async()=>{
  const D=require('../assets/curriculum-data.js'),{base,legacy}=historicalViews(D),pack=F.packageData(),excluded=new Set(legacy.familyLessonRelease.units.flatMap(u=>u.targets.map(t=>t.canonicalId))),next=nextRelease(pack,11,excluded),helper=require('../assets/family-lesson-expansion-v95.js');
  const combined=clone(base),appended=Catalog.append(combined,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'},next]}),catalog=appended.catalog;
- combined.yearFirstUse=clone(D.yearFirstUse);combined.yearFirstUse.coreHash=appended.combinedCoreHash;combined.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v117-vocabulary-response.json'}).metadata;
+ combined.yearFirstUse=clone(D.yearFirstUse);combined.yearFirstUse.coreHash=appended.combinedCoreHash;combined.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v118-assessment-linked.json'}).metadata;
  assert.deepEqual(combined.familyLessonRelease.publicAppendReceipt,legacy.familyLessonRelease.publicAppendReceipt);assert.deepEqual(combined.familyLessonRelease.units.slice(0,7),legacy.familyLessonRelease.units);assert.equal(JSON.stringify(combined.familyLessonRelease.units.slice(0,7)),JSON.stringify(legacy.familyLessonRelease.units));assert.deepEqual(combined.materials.slice(0,legacy.materials.length),legacy.materials);
  for(const unit of legacy.familyLessonRelease.units){const old=binding(unit,legacy);assert.deepEqual(helper.cleanVocabularyBinding(old,{currentRelease:true,data:legacy,assessment:A}),helper.cleanVocabularyBinding(old,{currentRelease:true,data:combined,assessment:A}));}
  const newer=combined.familyLessonRelease.units.find(u=>u.day===11),expected=binding(newer,combined);assert.equal(expected.rootReviewSha256,catalog.releases[1].release.rootReviewSha256);assert.notEqual(expected.rootReviewSha256,legacy.familyLessonRelease.rootReviewSha256);

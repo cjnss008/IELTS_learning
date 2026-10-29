@@ -20,7 +20,7 @@ function core(source){
  source=replace(source,"const batches = Object.values(state.essential.batches).filter(batch => batch.draft || batch.status === 'learning').map(batch => ({...batch, id: batch.draft?.id || batch.id, startedAt: batch.draft?.startedAt || batch.startedAt}));","const batches = activityDrafts(state);",'E vocabulary spent ledger');return source;
 }
 function year(source){return replace(source,"local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1')","local.push(...Object.values(value?.[section]||{}));if(key==='ielts52-memory-v1'&&value?.reviewedRetention!==undefined){const retention=root.IELTSLexicalRetentionV88||(typeof require==='function'?require('./lexical-retention-v88.js'):null);if(!retention?.activityDrafts)throw Error('新语境保持活动组件未加载，预算核验暂停，原输入保留。');local.push(...retention.activityDrafts(value));}if(key==='ielts52-memory-v1')",'Year raw optional activity');}
-function app(source){
+function appCore(source){
  // The review-only projection extends the already complete saved-history
  // consumer. Verify its declaration and public API together, then validate
  // every earlier retention anchor on a temporary normalized copy.
@@ -79,10 +79,11 @@ function app(source){
   api="return {render,openBatch,start,getPlan:currentPlan,getRetentionPlan:()=>retention?.getPlan?.()||{required:false,ready:[],waiting:[],completed:[],lapses:0},startRetention:(key,index)=>retention?.start?.(key,index),submitRetention:()=>retention?.submit?.(),getDrafts:()=>{const rows=E.activityDrafts(M.read());",
   savedApi=api.replace('render,openBatch,start','render,openBatch,openSavedBatch,refreshSavedBatches,start'),
   busy="isBusy:()=>!!saving || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy",
-  savedBusy="isBusy:()=>!!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy";
- if([savedActive,savedApi,savedBusy].some(anchor=>source.includes(anchor))){
+  savedBusy="isBusy:()=>!!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy",
+  busyV118="isBusy:()=>!!opening || !!saving || historyReading || !!retention?.isBusy?.() || !!controller?.getMediaState?.()?.busy";
+ if([savedActive,savedApi,savedBusy,busyV118].some(anchor=>source.includes(anchor))){
   let legacy=source;
-  for(const [later,prior,label]of [[savedActive,active,'App one active draft'],[savedApi,api,'App public retention consumer API'],[savedBusy,busy,'App busy']]){
+  for(const [later,prior,label]of [[savedActive,active,'App one active draft'],[savedApi,api,'App public retention consumer API'],[source.includes(busyV118)?busyV118:savedBusy,busy,'App busy']]){
    const count=legacy.split(later).length-1;
    if(count!==1||legacy.includes(prior))throw Error((count>1||legacy.includes(prior)?'Ambiguous':'Missing')+' exact saved-history retention anchor: '+label);
    legacy=legacy.replace(later,prior);
@@ -108,6 +109,18 @@ function app(source){
  source=replace(source,"    function activity() {\n      const time = now()","    function activity() {\n      if(retention?.isActive?.()){retention.tick?.();return;}\n      const time = now()",'App one active clock');
  source=replace(source,"const interact = () => { lastInteraction = now(); };","const interact = () => { lastInteraction = now();retention?.interact?.(); };",'App shared interaction window');
  source=replace(source,"if (batch && !finished) { activity(); saveDraft(); }\n        controller?.destroy?.();","if (batch && !finished) { activity(); saveDraft(); }\n        if(retention?.isActive?.())await retention.close();\n        controller?.destroy?.();",'App reverse review handoff');return source;
+}
+function app(source){
+ // v118 adds an opening-verification window and shifts its guard ahead of the
+ // saved-history branch. Normalize only these validation deltas on a temporary
+ // copy; the returned consumer keeps every real guard, and a legacy consumer
+ // still returns its transformed form.
+ const normalized=source.replace(/[ \t]*next\.disabled=!!opening;\r?\n/g,'')
+  .replace('canStart:()=>!opening&&','canStart:()=>')
+  .replace(/async function openBatch\(value\) \{\n\s*if\(opening\)\{[^\n]*\n/,'async function openBatch(value) {\n')
+  .replace(/async function start\(requestedOrigin\) \{\n\s*if\(opening\)\{[^\n]*\n/,'async function start(requestedOrigin) {\n');
+ const result=appCore(normalized);
+ return result===normalized?source:result;
 }
 function records(source){
  // Context is passed into the real transaction for both family guards; their

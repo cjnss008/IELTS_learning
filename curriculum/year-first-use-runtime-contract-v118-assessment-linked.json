@@ -1,0 +1,339 @@
+{
+  "schema": 1,
+  "kind": "year-first-use-runtime-contract",
+  "protocol": 1,
+  "runtimeConnected": true,
+  "activationReviewed": true,
+  "components": [
+    {
+      "role": "frontend-adapter",
+      "path": "assets/year-first-use-course.js",
+      "sha256": "adb3596b734a089a42e36a3df37d14e908f8664d196e97d6c8baa6932d7133b8",
+      "bytes": 46760
+    },
+    {
+      "role": "queue-state",
+      "path": "assets/year-first-use-state.js",
+      "sha256": "c87269aa0508432f82914e9c3f7b6990a3bd5a8cbcf813a2ef323fbcdea1787c",
+      "bytes": 7189
+    },
+    {
+      "role": "queue-runtime",
+      "path": "assets/year-first-use-runtime.js",
+      "sha256": "66499072a7236f81eb919e4f9130c037ea6267948e3d7236fcadb87db1c4b1f6",
+      "bytes": 27284
+    },
+    {
+      "role": "daily-load",
+      "path": "assets/daily-learning-load.js",
+      "sha256": "b18d77392e179f8a8e68f3dc8a2e73905a315fc9f62aedce60614a648642ca71",
+      "bytes": 35110
+    },
+    {
+      "role": "course-player",
+      "path": "assets/course-player.js",
+      "sha256": "a15f59a71542eb845dcae5c52a91f56ce8037c2e7892a39aa27da71788231e40",
+      "bytes": 280328
+    },
+    {
+      "role": "today-hub",
+      "path": "assets/today-hub.js",
+      "sha256": "1f65cc8507a4fb529488e85ee399062a19a31f5d16be030544c94e9904a4342a",
+      "bytes": 53874
+    },
+    {
+      "role": "backup-keys",
+      "path": "assets/backup-core.js",
+      "sha256": "c81028823d32adccd8b72d8fa81451857aff9e5eba6879baa334fbe37df82513",
+      "bytes": 13881
+    },
+    {
+      "role": "user-data-browser",
+      "path": "assets/user-data-store.js",
+      "sha256": "775d7681373ef0b6708e2711efdc59c583ced7f5167de8c33074783d7ada179b",
+      "bytes": 50537
+    },
+    {
+      "role": "user-data-server",
+      "path": "server/user-data.cjs",
+      "sha256": "5c431b5e9dcc964f0f02d60f48bd500e9bee16df0508e36dde446266459a73c1",
+      "bytes": 54572
+    },
+    {
+      "role": "server-catalog",
+      "path": "server/year-material-catalog.cjs",
+      "sha256": "17bc1f627eaec1db8e31ee0e6a49b7b4babb901f1c3c520402d6f8f753381e26",
+      "bytes": 23678
+    },
+    {
+      "role": "server-routes",
+      "path": "server/server.cjs",
+      "sha256": "9e2fb9f04b5ee3f9540050dbed9e6572ded79264948fedcefa332694848fd28a",
+      "bytes": 82214
+    },
+    {
+      "role": "profile-bootstrap",
+      "path": "assets/user-data-bootstrap.js",
+      "sha256": "d4bb73439be3718fdb129c61c2f713889992a44f1bcb42b6f4ee22e4a889abf8",
+      "bytes": 7177
+    },
+    {
+      "role": "profile-store",
+      "path": "assets/profile-store.js",
+      "sha256": "90e651a3a7b0d34aff83ea648de222f928144c689f1463722d571ff5883e3279",
+      "bytes": 11876
+    },
+    {
+      "role": "learning-records",
+      "path": "assets/learning-records.js",
+      "sha256": "a7078e16b0ed98c23c256928e7c0a855cdb76c2b5530944f4ac10b619498bdf8",
+      "bytes": 41570
+    },
+    {
+      "role": "record-snapshot-index",
+      "path": "assets/record-snapshot-index.js",
+      "sha256": "e88cd6b1cff936752b375eeed5b8bbc99a7851182d3bc05c79fd0f206b572ddd",
+      "bytes": 8787
+    },
+    {
+      "role": "assessment",
+      "path": "assets/assessment-core.js",
+      "sha256": "ce482dd90e0ffed7ce4bff347a50a2df7b5398c93473e8af1b94beb16b61f0ac",
+      "bytes": 42583
+    },
+    {
+      "role": "adaptive-plan",
+      "path": "assets/adaptive-plan.js",
+      "sha256": "5b069fcbdee40c12a7f0678d7ab7c805a340e50b4fe72cd21f8c551834508a09",
+      "bytes": 65804
+    },
+    {
+      "role": "year-planner",
+      "path": "assets/year-planner.js",
+      "sha256": "ee921b2a731a59d37dade0dd1b5fdfd82ec9eba3da49175f36a9ebae3ebd5baa",
+      "bytes": 27394
+    },
+    {
+      "role": "stage-progression",
+      "path": "assets/stage-progression.js",
+      "sha256": "4dc5e8c4659448b4d29661996faf36889a0e94f4fbafbe833996daebd6f89c77",
+      "bytes": 12918
+    },
+    {
+      "role": "study-timer-core",
+      "path": "assets/study-timer-core.js",
+      "sha256": "ce65faab3dba03377ea105e4cf91c6fc0f16f4e3c9fa4e38067349db4e51f66e",
+      "bytes": 10030
+    },
+    {
+      "role": "study-timer-ui",
+      "path": "assets/study-timer.js",
+      "sha256": "4d83e1e4a9a4278dc17d5c1dfa1554037a3bc00b66c48edb248b8ad69eef3b86",
+      "bytes": 16516
+    },
+    {
+      "role": "mistake-book",
+      "path": "assets/mistake-book.js",
+      "sha256": "bda6606c492985539c6b1f9ed04db76eff0a26c5718ccf3c936cf296bb0074c1",
+      "bytes": 82644
+    },
+    {
+      "role": "daily-plan-state",
+      "path": "assets/daily-plan-state.js",
+      "sha256": "8cfb8492d37ec4feb4678ba156aa61844bb593a85319843c41b111331cd41c8f",
+      "bytes": 25619
+    },
+    {
+      "role": "vocabulary-exposure",
+      "path": "assets/contextual-vocabulary-exposure.js",
+      "sha256": "3c2a798620c9a19ee43095d358c2b018c0408888ce00b83d730422625c7e2ecb",
+      "bytes": 11866
+    },
+    {
+      "role": "runtime-contract-policy",
+      "path": "server/year-runtime-contract-policy.cjs",
+      "sha256": "b67a88ec3bd5107214ae807497176c04299c339c8d61dd86beb64c17aa216c9d",
+      "bytes": 14110
+    },
+    {
+      "role": "runtime-contract-validator",
+      "path": "tools/year-runtime-activation.cjs",
+      "sha256": "4b3eebb4506810ca4ce02ae72e2672a63ff1dea1b6afe128ccfaa2152e1b6bbe",
+      "bytes": 7068
+    },
+    {
+      "role": "entrypoint",
+      "path": "今日学习.html",
+      "sha256": "d71dba87555268d36fab0d686de97ded7367b09754033f7d98614c7a67117d29",
+      "bytes": 17902
+    },
+    {
+      "role": "player-page-daily-plan",
+      "path": "每日学习计划.html",
+      "sha256": "a470c1044b4a8ab7a8d6fad57150c1b2fd615d087af5d4cd7baa00ae21dbfe94",
+      "bytes": 16995
+    },
+    {
+      "role": "player-page-backup",
+      "path": "备份中心.html",
+      "sha256": "b6da2ee35a9f883d9d382d44f7db32e4299c2f905e0845bca24bfaabb1bc3d8f",
+      "bytes": 8884
+    },
+    {
+      "role": "player-page-writing-coach",
+      "path": "写作与AI辅导.html",
+      "sha256": "25536275dd600fd05b94f0fb89e0c534237ca6820c14d74b02d6b13f1fbb77a1",
+      "bytes": 12074
+    },
+    {
+      "role": "player-page-writing-path",
+      "path": "写作补强.html",
+      "sha256": "da4c6f9ae54b68cb737b3a2b7e1e0c57553c798a65c1d00da4fe99b3aa773ead",
+      "bytes": 9086
+    },
+    {
+      "role": "player-page-speaking",
+      "path": "口语练习.html",
+      "sha256": "87c5c2e8b9c1ea105572366c6a5464c3f3534b39e55dd464f605fdbf773e2bb2",
+      "bytes": 15667
+    },
+    {
+      "role": "player-page-dialogue",
+      "path": "无稿口语.html",
+      "sha256": "afddd9abda5972ee42a64b0bc06007fcb2f18d9e926fb96e24143c4fce3872b5",
+      "bytes": 9887
+    },
+    {
+      "role": "player-page-memory",
+      "path": "词汇记忆.html",
+      "sha256": "f7593784bd32af3b06b5d270e9069d84815770c99ab22ef4d747d2cddd8127e4",
+      "bytes": 10993
+    },
+    {
+      "role": "player-page-independent-bank",
+      "path": "陌生材料库.html",
+      "sha256": "1ca8f44f8f58956e5ab7dc27862990930446c1a3262b86023dd75099c1f3b029",
+      "bytes": 7990
+    },
+    {
+      "role": "player-page-human-sources",
+      "path": "真人听力来源.html",
+      "sha256": "b790cdd553a4457c3265ee8f2d27affe894e7520854038c0cd124dfc1a54a674",
+      "bytes": 3701
+    },
+    {
+      "role": "backup-page-calibration",
+      "path": "评分校准.html",
+      "sha256": "fb566c4c60b36ac78b01624d13d810413b1ca8fe9ad8821a53f1d62abe86159d",
+      "bytes": 12877
+    },
+    {
+      "role": "context-vocabulary-course",
+      "path": "assets/contextual-vocabulary-course.js",
+      "sha256": "1123bdec87d3fe23879512c1bae2ebcdd57c19c83748df15371f62b2c88f12ee",
+      "bytes": 37925
+    },
+    {
+      "role": "essential-vocabulary-course",
+      "path": "assets/essential-vocabulary-course.js",
+      "sha256": "b91fc3ff3f88883d862c344adfc821a97e7b14f03770c4bdfaa02968d3e614f0",
+      "bytes": 7904
+    },
+    {
+      "role": "essential-vocabulary-app",
+      "path": "assets/essential-vocabulary-app.js",
+      "sha256": "9b50708b3c977bbf3e17477fd851e030738e60bd35ac7fc4148ff4f8a5a0566e",
+      "bytes": 73152
+    },
+    {
+      "role": "public-course-planner",
+      "path": "assets/public-course-planner.js",
+      "sha256": "3876630638a8f1c6563a8cdb34f3138c7e97e1d5a667bd34cf8685fdc17bd6c2",
+      "bytes": 42603
+    },
+    {
+      "role": "memory-page-personalization",
+      "path": "个性化学习.html",
+      "sha256": "d9cfdb72b2c16af1ab69d8e5d7de4e90fe6ba8dc4bdb141951e340bbb991f6e1",
+      "bytes": 7823
+    },
+    {
+      "role": "lexical-retention-feedback",
+      "path": "assets/lexical-retention-v88-feedback.js",
+      "sha256": "a8ab6062a85af88061971f406bbab34b4d10b29806ac5d39bba683632e181a80",
+      "bytes": 30316
+    },
+    {
+      "role": "lexical-retention-helper",
+      "path": "assets/lexical-retention-v88.js",
+      "sha256": "21e3ececc78f5c6680f5d3471463cb9aa61f6e38413b32a68b14bf1967e52c47",
+      "bytes": 110526
+    },
+    {
+      "role": "lexical-reviewed-context-policy",
+      "path": "assets/lexical-reviewed-v88-policy.js",
+      "sha256": "d274744e37a03eeb610a9ad6c213849d8ebe9bec3fb5a6c79ea4d4fcb8808f19",
+      "bytes": 574
+    },
+    {
+      "role": "lexical-reviewed-context-data",
+      "path": "assets/lexical-reviewed-v88-data.js",
+      "sha256": "165160278572ad43afd917528ffc64d743c367def71e6e81e5f22ce8e2bca4a5",
+      "bytes": 136183
+    },
+    {
+      "role": "lexical-reviewed-context-helper",
+      "path": "assets/lexical-reviewed-context-v88.js",
+      "sha256": "69db7f7e50c529419c50e37bcdce2ac9f1ad82c1bf10ca7df8a77750dd6549da",
+      "bytes": 5969
+    },
+    {
+      "role": "vocabulary-practice",
+      "path": "assets/vocabulary-practice.js",
+      "sha256": "d17995fa31284c00d32f8cbd41fa42267d496c7f3dccc6cb490182ce98c01d1d",
+      "bytes": 63523
+    },
+    {
+      "role": "essential-vocabulary-core",
+      "path": "assets/essential-vocabulary-core.js",
+      "sha256": "347b75fd4ec4bf054ea9a7bdacc83c1f5ecf87c2135d1e8096fbd608ab3ab969",
+      "bytes": 351599
+    },
+    {
+      "role": "memory-session",
+      "path": "assets/memory-session.js",
+      "sha256": "1553daa422b66361f8a79a3965b2409b04e0ae06a8a58a729a22d11b22dc8e0b",
+      "bytes": 5519
+    },
+    {
+      "role": "memory-core",
+      "path": "assets/memory-core.js",
+      "sha256": "cdef94aea0b3f267a608050d7173fc2d17e433fd5e7ede2361ab47137e32fb6f",
+      "bytes": 24535
+    },
+    {
+      "role": "lexical-bank-runtime",
+      "path": "assets/lexical-bank-runtime.js",
+      "sha256": "a8d2fde6162223f2fb7ce93440bf5b4479269bfdc7b844a7a461a6932c650307",
+      "bytes": 24085
+    },
+    {
+      "role": "family-lesson-expansion-v95",
+      "path": "assets/family-lesson-expansion-v95.js",
+      "sha256": "38ee35ab010b6c96cf2774f41d5f2c7c4561ec702d2ada14923e8a034d7e2e14",
+      "bytes": 118931
+    },
+    {
+      "role": "course-expansion",
+      "path": "assets/course-expansion.js",
+      "sha256": "9c7d1081fb13432f1eb33de91d5ce9ac5608b5cfab807db165e5047af0fa08d8",
+      "bytes": 22603
+    },
+    {
+      "role": "daily-plan-app",
+      "path": "assets/daily-plan-app.js",
+      "sha256": "40843f4e39df184d64c227c66e923b19cdbedac93580ca83bd2251ef7111cc9d",
+      "bytes": 45354
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "version": "0.0.118",
+  "date": "2026-10-29T21:30:12.108Z",
+  "status": "automated-validation-passed-browser-pending",
+  "scope": "Linked lessons 21-30 batch, vocabulary opening verification race, tool/test seam updates",
+  "baseRevision": "dd4c174d0b847dbc354ee89eaa25800c9499860e",
+  "previousVersion": "0.0.117",
+  "fullSuite": {
+    "command": "node tools/test.cjs",
+    "nodeVersion": "v22.23.2",
+    "tests": 3025,
+    "passed": 3023,
+    "failed": 0,
+    "skipped": 2,
+    "exitCode": 0,
+    "sourceFingerprintsEqual": true,
+    "logSha256": "ebee1c8b49269bfa272821af242909a6e40cafaf213dc785c3f86ff92c794c0c",
+    "result": "v118-full-v4.json"
+  },
+  "build": {
+    "status": "passed",
+    "days": 365,
+    "materials": 2132,
+    "linkedUnits": 29,
+    "batches": [
+      "family-linked-days04-10-v109",
+      "family-linked-days11-20-v114",
+      "family-linked-days02-03-v115",
+      "family-linked-days21-30-v118"
+    ],
+    "contract": "curriculum/year-first-use-runtime-contract-v118-assessment-linked.json",
+    "contractSha256": "b2c0c99c0e0bf290c82210b978c3708cc0c20893d843aa93e5d316ba3777134b",
+    "index": "curriculum/year-first-use/index.e0d7c43e6f09b874.json",
+    "indexSha256": "e0d7c43e6f09b8743477bd4d9031407e657daff6ad9822b6ce5f3917b8fc64a1",
+    "curriculumDataSha256": "5f41a1373d6e5b9e8884442273d25db43e3648390e539d2458029ff19bc11ff6",
+    "manifestSha256": "e50cd02de9c342c3bfce6e16d12098e1a4323e4f115c0db34cc419534afd020d"
+  },
+  "preservation": {
+    "oldMaterials": 2032,
+    "days": 365,
+    "oldLinkedUnits": 19,
+    "newLinkedUnits": 10,
+    "allOldMaterialsDaysAndUnitsIdentical": true
+  },
+  "static": {
+    "pages": 42,
+    "links": 1260,
+    "scripts": 132,
+    "lessons": 52,
+    "vocabularyAudio": 360
+  },
+  "audits": {
+    "curriculum": {
+      "status": "passed",
+      "materials": 2132,
+      "questions": 8378,
+      "uniqueQuestionInstances": 8215,
+      "uniqueSources": 578,
+      "bodyVariants": 607,
+      "hours": 2190
+    },
+    "questionQuality": {
+      "sourceMaterials": 830,
+      "questions": 7800,
+      "high": 0,
+      "review": 5,
+      "currentHashReviewed": 5,
+      "unresolved": 0
+    }
+  },
+  "browser": {
+    "executed": false,
+    "reason": "No browser automation available in this session; real-page, family-computer, live AI and human microphone acceptance remain outstanding."
+  },
+  "data": {
+    "learnerDataRead": false,
+    "learnerDataWritten": false,
+    "credentialsCopied": false,
+    "configurationChanged": false
+  },
+  "limits": [
+    "Synthetic archives and temporary data directories only.",
+    "No real AI, Aliyun speech, or human microphone evidence.",
+    "Material minutes are recommendations; not a guarantee of daily completion or IELTS band.",
+    "Course body count is not a claim that all 365 enhanced lessons are delivered."
+  ]
+}

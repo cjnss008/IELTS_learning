@@ -59,5 +59,5 @@ test('day 1 to day 2 next-course button cannot append day 1 vocabulary group cou
  f.root.IELTSTodayNavigation.learningQueue=()=>queue;for(const render of f.events['ielts:study-timer-changed']||[])render();
  assert.match(f.nodes.get('todayStart').textContent,/第 2 课/);assert.equal(f.nodes.get('todayNext').textContent,next.reason);assert.doesNotMatch(f.nodes.get('todayNext').textContent,/本课共|12 个词项/);assert.equal(f.calls.length,0);
  next.day=1;next.materialId=data.days[0].tasks[0].materialIds[0];next.label='继续本课词汇';for(const render of f.events['ielts:study-timer-changed']||[])render();
- assert.match(f.nodes.get('todayNext').textContent,/本课共/);const summary=P.vocabularyTaskSummary(data.days[0].tasks[0],data);assert.ok(f.nodes.get('todayNext').textContent.includes(summary.wordCount+' 个词项'));
+ assert.match(f.nodes.get('todayNext').textContent,/当前词汇任务共/);const summary=P.vocabularyTaskSummary(data.days[0].tasks[0],data);assert.ok(f.nodes.get('todayNext').textContent.includes(summary.wordCount+' 个词项'));
 });

@@ -80,6 +80,12 @@ const PUBLIC_V117 = Object.freeze({ ...PUBLIC_V115,
   "assets/year-first-use-manifest.js": "adfa6010f7d3e9334e2d5d314fe7063f78644854c008c46ada2e301dfaf561e1"
 });
 
+// v118 appends 100 reviewed ordinary materials and ten linked units; prior data is preserved.
+const PUBLIC_V118 = Object.freeze({ ...PUBLIC_V117,
+  "assets/curriculum-data.js": "5f41a1373d6e5b9e8884442273d25db43e3648390e539d2458029ff19bc11ff6",
+  "assets/year-first-use-manifest.js": "e50cd02de9c342c3bfce6e16d12098e1a4323e4f115c0db34cc419534afd020d"
+});
+
 function tokens(text) {
   return Array.from(String(text).matchAll(tokenPattern), match => ({
     key: norm(match[0]), start: match.index, end: match.index + match[0].length
@@ -386,14 +392,14 @@ function loadPublicInputs(root, profile = PUBLIC_V98) {
 }
 
 function parseArguments(argv) {
-  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107|0.0.108|0.0.109|0.0.111|0.0.112|0.0.113|0.0.114|0.0.115|0.0.117]';
+  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107|0.0.108|0.0.109|0.0.111|0.0.112|0.0.113|0.0.114|0.0.115|0.0.117|0.0.118]';
   assert.ok(argv.length >= 2 && argv[0] === '--root' && typeof argv[1] === 'string' && argv[1], usage);
   let full = false, dailyTarget = 30, hasTarget = false, profile;
   for (let i = 2; i < argv.length; i++) {
     if (argv[i] === '--full' && !full) full = true;
     else if (argv[i] === '--daily-target' && !hasTarget && ['30', '40'].includes(argv[i + 1])) {
       dailyTarget = Number(argv[++i]); hasTarget = true;
-    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107', '0.0.108', '0.0.109', '0.0.111', '0.0.112', '0.0.113', '0.0.114', '0.0.115', '0.0.117'].includes(argv[i + 1])) {
+    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107', '0.0.108', '0.0.109', '0.0.111', '0.0.112', '0.0.113', '0.0.114', '0.0.115', '0.0.117', '0.0.118'].includes(argv[i + 1])) {
       profile = argv[++i];
     } else throw Error(usage);
   }
@@ -403,7 +409,7 @@ function parseArguments(argv) {
 function main(argv) {
   const args = parseArguments(argv);
   const root = path.resolve(args.root);
-  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.117' ? PUBLIC_V117 : args.profile === '0.0.115' ? PUBLIC_V115 : args.profile === '0.0.114' ? PUBLIC_V114 : args.profile === '0.0.113' ? PUBLIC_V113 : args.profile === '0.0.112' ? PUBLIC_V112 : args.profile === '0.0.111' ? PUBLIC_V111 : args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
+  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.118' ? PUBLIC_V118 : args.profile === '0.0.117' ? PUBLIC_V117 : args.profile === '0.0.115' ? PUBLIC_V115 : args.profile === '0.0.114' ? PUBLIC_V114 : args.profile === '0.0.113' ? PUBLIC_V113 : args.profile === '0.0.112' ? PUBLIC_V112 : args.profile === '0.0.111' ? PUBLIC_V111 : args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
   if (args.full) {
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     return;
@@ -423,4 +429,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, PUBLIC_V111, PUBLIC_V112, PUBLIC_V113, PUBLIC_V114, PUBLIC_V115, PUBLIC_V117, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
+module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, PUBLIC_V111, PUBLIC_V112, PUBLIC_V113, PUBLIC_V114, PUBLIC_V115, PUBLIC_V117, PUBLIC_V118, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };

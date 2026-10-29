@@ -53,6 +53,30 @@ test('slow budget reads coalesce interval ticks instead of queuing one refresh p
  f.advance(5000);await settle();assert.equal(reads,before+2,'the next actual poll still reads live activity');
 });
 
+const optionInputs=(f,id)=>f.nodes.get('courseQuestions').children.find(n=>n.dataset.questionId===id).querySelectorAll('input');
+
+test('resuming a paused draft shows budget progress and ignores repeated clicks until the check finishes',async()=>{
+ const planner=require('../assets/year-planner.js');let hold=null,calls=0;
+ const f=fixture({}, {window:{IELTSYearPlanner:{...planner,readBudget:async options=>{calls++;if(hold)await hold;return planner.readBudget(options);}},IELTSMediaLibrary:{list:async()=>[]}}});
+ const settle=async()=>{for(let n=0;n<15;n++)await new Promise(resolve=>setImmediate(resolve));};await settle();await f.win.IELTSTodayNavigation.resumeNext('reading','reading-one');
+ const input=optionInputs(f,'q1').find(node=>node.value==='red');input.checked=true;await input.fire('change');await f.nodes.get('coursePause').fire('click');const before=f.win.IELTSTodayNavigation.allDrafts()[0];assert.equal(f.nodes.get('courseOutput').hidden,true);
+ let release;hold=new Promise(resolve=>release=resolve);const pending=f.nodes.get('coursePause').fire('click');await settle();assert.equal(f.nodes.get('coursePause').textContent,'正在核对预算…');assert.equal(f.nodes.get('coursePause').disabled,true);const started=calls;await f.nodes.get('coursePause').fire('click');assert.equal(calls,started);assert.equal(f.nodes.get('courseOutput').hidden,true);
+ hold=null;release();await pending;assert.equal(f.nodes.get('coursePause').disabled,false);assert.equal(f.nodes.get('coursePause').textContent,'暂停');assert.equal(f.nodes.get('courseOutput').hidden,false);const after=f.win.IELTSTodayNavigation.allDrafts()[0];assert.equal(after.id,before.id);assert.equal(after.answers.q1,'red');assert.equal(f.records().length,0);
+});
+
+test('a pending resume cannot restart after switching lessons or invalidating the owner',async()=>{
+ const planner=require('../assets/year-planner.js');
+ for(const switchOwner of [false,true]){let hold=null;const f=fixture({}, {window:{IELTSYearPlanner:{...planner,readBudget:async options=>{if(hold)await hold;return planner.readBudget(options);}},IELTSMediaLibrary:{list:async()=>[]}}});const settle=async()=>{for(let n=0;n<15;n++)await new Promise(resolve=>setImmediate(resolve));};await settle();await f.win.IELTSTodayNavigation.resumeNext('reading','reading-one');await settle();await f.nodes.get('coursePause').fire('click');await settle();
+  let release;hold=new Promise(resolve=>release=resolve);const pending=f.nodes.get('coursePause').fire('click');await settle();assert.equal(f.nodes.get('coursePause').disabled,true);if(switchOwner)f.win.dispatchEvent({type:'ielts:profile-changed'});else{f.win.IELTSTodayNavigation.showDay(2);assert.equal(f.nodes.get('coursePause').disabled,false);}const before=f.map.get(f.win.IELTSCoursePlayer.KEY);hold=null;release();await pending;assert.equal(f.map.get(f.win.IELTSCoursePlayer.KEY),before);if(switchOwner){assert.equal(f.nodes.get('courseOutput').hidden,true);assert.match(f.nodes.get('courseNotice').textContent,/档案已切换/);}else assert.equal(f.win.IELTSTodayNavigation.current().active,false);assert.equal(f.records().length,0);
+ }
+});
+
+test('an unstarted assessment day presents its actual native vocabulary task before linked material',async()=>{
+ const data=require('../../v118-linked-build-output/assets/curriculum-data.js'),day=JSON.parse(JSON.stringify(data.days.find(item=>item.day===28))),unit=JSON.parse(JSON.stringify(data.familyLessonRelease.units.find(item=>item.day===28))),nativeId=day.tasks.find(task=>task.id==='vocabulary').materialIds[0],native=data.materials.find(item=>item.id===nativeId),ids=new Set(day.tasks.flatMap(task=>task.materialIds));for(const task of unit.tasks)for(const ref of task.materialRefs)ids.add(ref.materialId);
+ const f=fixture(native,{search:'?day=28',window:{IELTSVocabularyPractice:require('../assets/vocabulary-practice.js')},setup:(local,material)=>{local.days=[day];local.materials=data.materials.filter(item=>ids.has(item.id)).map(item=>item.id===nativeId?material:item);local.familyLessonRelease={active:true,units:[unit]};}});await new Promise(resolve=>setImmediate(resolve));
+ assert.match(f.nodes.get('courseMaterialIntro').textContent,/At the School Gate/);assert.doesNotMatch(f.nodes.get('courseMaterialIntro').textContent,/30 个主题词/);assert.equal(f.nodes.get('courseStart').hidden,false);assert.equal(f.win.IELTSTodayNavigation.current().materialId,nativeId);assert.equal(f.records().length,0);
+});
+
 test('vocabulary continuation restores an older third-round draft instead of newer empty duplicates',async()=>{
  const V=require('../assets/vocabulary-practice.js'),material={id:'vocab-resume',version:'1',skill:'vocabulary',type:'vocabulary',questions:[],vocabulary:['student','teacher','desk','book','bag','pen','home','work'].map((word,index)=>({word,meaning:'词义'+index}))},advanced=V.createSession({trainingVersion:1,material});advanced.begin();for(let round=0;round<2;round++){advanced.words.forEach((word,index)=>advanced.setAnswer(index,word.word));advanced.submitRound();advanced.next();}advanced.words.slice(0,6).forEach((word,index)=>advanced.setAnswer(index,word.word));
  const make=(id,text,startedAt)=>({id,materialId:material.id,taskId:'vocabulary',courseDay:1,mode:'practice',kind:'original',parentId:null,startedAt,activeSeconds:0,exposureAtStart:'seen',answers:{},userEvidence:{},text,transcript:'',audioAvailable:false,audioCompleted:false,transcriptViewed:false,interrupted:false,assistance:{hint:false,answer:false,ai:false},media:[]}),emptyText=JSON.stringify(V.createSession({trainingVersion:1,material}).getDraft()),state={schema:1,day:1,exposures:{},drafts:{},queue:{}};
@@ -187,7 +211,6 @@ test('Academic map renders region dimensions, north direction and exact year lab
  const f=fixture({figure:{type:'map',title:'Site changes',map:{beforeYear:2000,afterYear:2025,before:[{name:'Library',x:10,y:20,w:30,h:40}],after:[{name:'Library',x:60,y:20,w:30,h:40}]}}});await Promise.resolve();await f.nodes.get('courseBegin').fire('click');const box=f.nodes.get('courseFigure');assert.equal(box.querySelectorAll('svg').length,2);assert.match(box.textContent,/2000/);assert.match(box.textContent,/2025/);assert.match(box.textContent,/↑ N/);const regions=box.querySelectorAll('rect').filter(n=>n.attributes.width==='120');assert.equal(regions.length,2);assert.equal(regions[0].attributes.x,'60');assert.equal(regions[0].attributes.height,'112');assert.equal(regions[1].attributes.x,'260');
 });
 
-const optionInputs=(f,id)=>f.nodes.get('courseQuestions').children.find(n=>n.dataset.questionId===id).querySelectorAll('input');
 
 test('late recap save after navigation cannot apply the old recommendation to another course day',async()=>{
  let callbacks,release,started;const wait=new Promise(r=>release=r),entered=new Promise(r=>started=r),applied=[];
