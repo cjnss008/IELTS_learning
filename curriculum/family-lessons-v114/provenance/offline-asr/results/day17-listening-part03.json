@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "day": 17,
+  "skill": "listening",
+  "id": "day17-listening",
+  "materialId": "family-linked-d17-listening-next-v1",
+  "part": 3,
+  "audioStartSeconds": 119.00329166666667,
+  "audioEndSeconds": 134.947083,
+  "sourceAudioSha256": "c2e32cf06e9971b67cd755842889bdd6add65df77307e258fe40d89905109a90",
+  "sourceTextSha256": "f2c1f6ca295718038c45a53ab8545e2c27b365133c3d6071c5d2d45b7f6070a4",
+  "expectedText": "Great. I do not mind who will win or lose. It will be fun to see how each opponent works with their team. The winner gets a small cup, but nobody has to be a champion to join the morning sessions.",
+  "expectedTextSha256": "04f22e853e7fa135a81ec84b6888c724586e150e91c5a6c27366da4823ed5e2f",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day17-listening-part03.wav",
+  "wavSha256": "8f6fa6de8e491dc8a5ef3730b1379806bff5e238eae37e7e3121ff386a7f3e6f",
+  "wavDurationSeconds": 15.9438125,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Great! I do not mind who will win or lose. It will be fun to see how each opponent works with their team. The winner gets a small cup, but nobody has to be a champion to join the morning sessions.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 8.14,
+        "text": "Great! I do not mind who will win or lose. It will be fun to see how each opponent works",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 8.14,
+        "endSeconds": 10.26,
+        "text": "with their team.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10.26,
+        "endSeconds": 15.86,
+        "text": "The winner gets a small cup, but nobody has to be a champion to join the morning sessions.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 15.9438125,
+    "audioSha256": "8f6fa6de8e491dc8a5ef3730b1379806bff5e238eae37e7e3121ff386a7f3e6f",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 46,
+    "actualTokens": 46,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "."
+        ],
+        "actual": [
+          "!"
+        ],
+        "expectedIndex": 1,
+        "actualIndex": 1,
+        "contextBefore": [
+          "Great"
+        ],
+        "contextAfter": [
+          "I",
+          "do",
+          "not",
+          "mind",
+          "who"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 41,
+    "actualTokens": 41,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

@@ -1,0 +1,261 @@
+{
+  "id": "family-linked-d14-listening-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 14,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "A Second Pair of Apartments",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is the monthly rent at Pine Street?",
+      "options": [
+        "300 pounds.",
+        "690 pounds.",
+        "720 pounds.",
+        "650 pounds."
+      ],
+      "answers": [
+        "650 pounds."
+      ],
+      "evidence": "The Pine Street apartment has a monthly rent of 650 pounds.",
+      "explanation": "Pine 月租 650 英镑；Cedar 为 690。",
+      "id": "l01",
+      "evidenceOffsets": {
+        "start": 87,
+        "end": 146,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which room is bigger at Pine than at Cedar?",
+      "options": [
+        "The bathroom.",
+        "The kitchen.",
+        "The bedroom.",
+        "The ceiling."
+      ],
+      "answers": [
+        "The bedroom."
+      ],
+      "evidence": "Pine has the bigger bedroom, but the kitchen is smaller than Cedar's.",
+      "explanation": "Pine 卧室更大，但厨房较小。",
+      "id": "l02",
+      "evidenceOffsets": {
+        "start": 219,
+        "end": 288,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What furniture is included at Pine?",
+      "options": [
+        "Only a refrigerator.",
+        "Two desks and a sofa.",
+        "A bed and three chairs.",
+        "A sofa and a small table."
+      ],
+      "answers": [
+        "A sofa and a small table."
+      ],
+      "evidence": "Yes, a sofa and a small table.",
+      "explanation": "对话列出沙发和小桌；阅读里的另一套住房有床。",
+      "id": "l03",
+      "evidenceOffsets": {
+        "start": 371,
+        "end": 401,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What did Omar photograph?",
+      "options": [
+        "A leak by the window.",
+        "A stain on the ceiling.",
+        "The small table.",
+        "A mark on the wall."
+      ],
+      "answers": [
+        "A stain on the ceiling."
+      ],
+      "evidence": "I checked the floor and took a picture of a stain on the ceiling.",
+      "explanation": "他拍下的是天花板上的污迹，不是墙面痕迹。",
+      "id": "l04",
+      "evidenceOffsets": {
+        "start": 402,
+        "end": 467,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How is Pine heated?",
+      "options": [
+        "With electricity.",
+        "With a wood fire.",
+        "With solar panels.",
+        "With gas."
+      ],
+      "answers": [
+        "With electricity."
+      ],
+      "evidence": "Heating uses electricity.",
+      "explanation": "Omar 明确说供暖使用电力。",
+      "id": "l05",
+      "evidenceOffsets": {
+        "start": 597,
+        "end": 622,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How is the electricity charged?",
+      "options": [
+        "It is charged only when the heating is used.",
+        "It is separate from rent.",
+        "It is covered by the deposit instead of the rent.",
+        "It is included in rent."
+      ],
+      "answers": [
+        "It is included in rent."
+      ],
+      "evidence": "The electricity charge is included in the rent, and there is no gas supply in that apartment.",
+      "explanation": "对话中电费包含在租金里；阅读中另一处房源的电费另计。",
+      "id": "l06",
+      "evidenceOffsets": {
+        "start": 623,
+        "end": 716,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What deposit is in the draft contract?",
+      "options": [
+        "300 pounds.",
+        "690 pounds.",
+        "400 pounds.",
+        "650 pounds."
+      ],
+      "answers": [
+        "300 pounds."
+      ],
+      "evidence": "The draft contract lists a deposit of 300 pounds and a six-month lease.",
+      "explanation": "押金 300 英镑，租期六个月。",
+      "id": "l07",
+      "evidenceOffsets": {
+        "start": 774,
+        "end": 845,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How long is the proposed lease?",
+      "options": [
+        "Three months.",
+        "Two years.",
+        "Six months.",
+        "Twelve months."
+      ],
+      "answers": [
+        "Six months."
+      ],
+      "evidence": "The draft contract lists a deposit of 300 pounds and a six-month lease.",
+      "explanation": "six-month lease 是六个月租约。",
+      "id": "l08",
+      "evidenceOffsets": {
+        "start": 774,
+        "end": 845,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What repair will Omar ask about?",
+      "options": [
+        "A loose window frame.",
+        "A loose cupboard door.",
+        "A leak near the window.",
+        "A stain on the ceiling."
+      ],
+      "answers": [
+        "A loose cupboard door."
+      ],
+      "evidence": "First, I will ask whether the landlord can repair a loose cupboard door.",
+      "explanation": "他打算问房东能否修松动的柜门。",
+      "id": "l09",
+      "evidenceOffsets": {
+        "start": 1247,
+        "end": 1319,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "When is the suggested move?",
+      "options": [
+        "Tuesday.",
+        "Monday.",
+        "Saturday.",
+        "Thursday."
+      ],
+      "answers": [
+        "Saturday."
+      ],
+      "evidence": "The suggested date is Saturday.",
+      "explanation": "suggested date 是建议的搬家日期，星期六。",
+      "id": "l10",
+      "evidenceOffsets": {
+        "start": 1182,
+        "end": 1213,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Listen to the two speakers and choose one answer. Use this dialogue rather than the reading passage.",
+  "transcript": "Asha: Did you visit the two apartments in the Riverside neighborhood, Omar?\nOmar: Yes. The Pine Street apartment has a monthly rent of 650 pounds. The Cedar Street one costs 690.\nAsha: Which one is more spacious?\nOmar: Pine has the bigger bedroom, but the kitchen is smaller than Cedar's. The bathroom is private in both places.\nAsha: Does Pine have any furniture?\nOmar: Yes, a sofa and a small table. I checked the floor and took a picture of a stain on the ceiling. The wall is a pale color. There was no leak near the window when I visited.\nAsha: What did the landlord say about heating?\nOmar: Heating uses electricity. The electricity charge is included in the rent, and there is no gas supply in that apartment.\nAsha: Did you ask about the deposit and the lease?\nOmar: The draft contract lists a deposit of 300 pounds and a six-month lease. I want to read the agreement carefully and ask about any existing damage before I sign.\nAsha: What about the Cedar place?\nOmar: The ceiling is lower, but the window in the living room is larger. It is as quiet as Pine in the afternoon. The front door looks secure, though I will check it again.\nAsha: When would you need to move?\nOmar: The suggested date is Saturday. I have the address written here. First, I will ask whether the landlord can repair a loose cupboard door.\nAsha: Do you have to decide today?\nOmar: No. I can take the information home and compare the rooms, any other bill and the travel time before replying.",
+  "audioRequirements": {
+    "accent": "en-US",
+    "minimumSpeakers": 2,
+    "paragraphGapMs": 850,
+    "turnGapMs": 850,
+    "roleVoices": {
+      "asha": "en-US-AriaNeural",
+      "omar": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    }
+  },
+  "questionCount": 10,
+  "audio": "audio/curriculum/family-linked-d14-listening-v114.mp3",
+  "audioKind": "synthetic",
+  "audioSynthetic": true,
+  "audioLocale": "en-US",
+  "audioVoices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "audioProvider": "Microsoft online TTS via edge-tts",
+  "audioDurationSeconds": 115.256542
+}

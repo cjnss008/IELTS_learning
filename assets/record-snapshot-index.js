@@ -6,12 +6,25 @@ const error=(code,message='学习档案刚发生变化，请刷新后继续；�
 function available(){return!!(root.document&&root.IELTSProfiles?.current&&root.IELTSProfiles?.storage&&root.IELTSRecords?.parseState&&(root.crypto?.subtle?.digest||root.IELTSAssessment?.sourceTextHash));}
 function owner(){return projectionOwner||readOwner();}
 function readOwner(){
- const fresh=root.IELTSProfiles?.assertFresh?.();root.IELTSUserData?.assertReady?.();const status=root.IELTSUserData?.status?.();if(status&&['loading','error','conflict'].includes(status.state))throw error('RECORD_SNAPSHOT_NOT_READY');
+ const fresh=root.IELTSProfiles?.assertFresh?.();root.IELTSUserData?.assertReady?.();const status=root.IELTSUserData?.status?.();
+ if(status&&(['loading','error'].includes(status.state)||['loading','error'].includes(status.operationState)))throw error('RECORD_SNAPSHOT_NOT_READY');
  // assertFresh reads the live registry, descriptor and generation together.
  // Reuse only this call's result; never retain it across reads or async work.
- if(fresh&&typeof fresh.profileId==='string'&&fresh.profileId&&typeof fresh.generation==='string'&&fresh.generation&&!fresh.generation.startsWith('busy:'))return fresh;
- const profileId=root.IELTSProfiles?.current?.()?.id,storage=root.IELTSProfiles?.storage?.(),raw=storage?.getItem(GENERATION),generation=raw===null?'initial':String(raw);
- if(typeof profileId!=='string'||!profileId||!storage||raw===undefined||generation.startsWith('busy:'))throw error('RECORD_SNAPSHOT_OWNER_CHANGED');return{profileId,generation};
+ let bound;if(fresh&&typeof fresh.profileId==='string'&&fresh.profileId&&typeof fresh.generation==='string'&&fresh.generation&&!fresh.generation.startsWith('busy:'))bound=fresh;
+ else{const profileId=root.IELTSProfiles?.current?.()?.id,storage=root.IELTSProfiles?.storage?.(),raw=storage?.getItem(GENERATION),generation=raw===null?'initial':String(raw);
+  if(typeof profileId!=='string'||!profileId||!storage||raw===undefined||generation.startsWith('busy:'))throw error('RECORD_SNAPSHOT_OWNER_CHANGED');bound={profileId,generation};}
+ if(status){
+  const blocked=status.blockedProfileIds,conflicts=status.conflicts;
+  if(Array.isArray(blocked)&&blocked.includes(bound.profileId)||Array.isArray(conflicts)&&conflicts.some(item=>item?.profileId===bound.profileId))throw error('RECORD_SNAPSHOT_NOT_READY');
+  if(status.state==='conflict'){
+   // A global warning may describe other profiles. Only a complete, consistent
+   // conflict list and an independently healthy operation can establish that.
+   const valid=Array.isArray(blocked)&&blocked.length>0&&blocked.every(id=>typeof id==='string'&&id)&&new Set(blocked).size===blocked.length&&Array.isArray(conflicts)&&conflicts.length===blocked.length&&conflicts.every(item=>item&&typeof item.profileId==='string'&&blocked.includes(item.profileId))&&new Set(conflicts.map(item=>item.profileId)).size===blocked.length&&blocked.includes(status.profileId);
+   const operation=status.operationState,allowed=['conflict','ready','pending','syncing'].includes(operation),failedCode=status.errorCode&&!(operation==='conflict'&&status.errorCode==='USER_DATA_CONFLICT'),failedOperation=operation!=='conflict'&&status.error;
+   if(!valid||!allowed||failedCode||failedOperation)throw error('RECORD_SNAPSHOT_NOT_READY');
+  }
+ }
+ return bound;
 }
 const same=(a,b)=>a&&b&&a.profileId===b.profileId&&a.generation===b.generation;
 // A synchronous read projection has one before/after ownership boundary.

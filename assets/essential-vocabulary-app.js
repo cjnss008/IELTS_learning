@@ -164,7 +164,15 @@
       if(!familySnapshots.get(origin)?.some(record=>record.id===latest.draft?.id)){const {budget,plan}=await checkedFamilyPlan(latest);check();latest=allBatches().find(item=>item.id===value.id);if(!same(latest))throw Error('词组来源在预算核验期间变化，原输入保留。');if(!familyFormsSafe(latest,plan))throw Error('词形关系或已有原稿待核验，本组原输入保留。');if(plan.reviewDebt?.required||plan.allDue?.length)throw Error('请先完成全部到期复习和未交复习稿，本组原输入保留。');if(budget.exhausted||budget.dayEnded||budget.remainingMinutes<=0)throw Error('今日共享预算已用完，本组原输入保留。');}
       if(familyDraftFence(value.contextSource.binding.originCourseDay,value.courseDay)!==playerRaw)throw Error('课程草稿在核验期间变化，原输入保留。');
     }
-    function familyFormsSafe(value,plan){const forms=plan?.formSafety;if(!forms?.indexReady||forms.unindexedPending)return false;const entries=new Map((data?.entries||[]).map(entry=>[normalize(entry.word),entry]));return(value.wordKeys||[]).every(key=>!forms.blockedKeys.includes(key)&&(!forms.hasPendingForms||entries.get(key)?.id==='essential:'+key));}
+    function familyFormsSafe(value,plan){
+      const forms=plan?.formSafety;if(!forms?.indexReady||forms.unindexedPending)return false;
+      // Resolve saved group identities against its own verified origin; the
+      // current day may be different and an unrelated pending form must not
+      // hide an independently signed extension or spelling variant.
+      const access=contextual?.familyBatchAccess?.(value,sourceOptions(value));if(!access?.allowed)return false;
+      const targets=new Map(access.context.targets.map(target=>[normalize(target.word),target])),blocked=new Set(forms.blockedKeys.map(normalize));
+      return(value.wordKeys||[]).every(value=>{const key=normalize(value),target=targets.get(key),canonical=normalize(target?.canonicalWord||target?.word);return!!target&&!!canonical&&!blocked.has(key)&&!blocked.has(canonical);});
+    }
     function holdFamilyOpen(error){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;if(disposed)return false;statusText=error.message;practice.replaceChildren(node('p',statusText,'memory-feedback'));Promise.resolve(options.onActiveChange?.(false,{kind:'paused'})).catch(()=>{});render();return false;}
     function sourceAccess(value){const marker=value?.contextSource;if(!familyBatch(value)&&(marker?.schema!==2||!['owned-source-context-v82','mixed-context-v82'].includes(marker.role)))return{allowed:true};return contextual?.batchTrainingAccess?.(value,sourceOptions(value))||{allowed:false};}
     async function familySourceAccess(value){
@@ -472,7 +480,7 @@
       const host = node('div');
       practice.replaceChildren(heading,host);
       options.onNewWordsOpened?.();
-      controller = V.mount(host, {material,courseDay:batch.courseDay,draft:batch.draft || undefined,
+      controller = V.mount(host, {material,courseDay:batch.courseDay,draft:batch.draft || undefined,...(familyBatch(batch)?{familyBatch:batch,familyRecords:familySnapshots.get(batch.contextSource.binding.originCourseDay),vocabularyData:data}:{}),
         returnUrl:options.returnUrlForBatch?.(batch)||'词汇记忆.html?day='+day+'&batch='+encodeURIComponent(batch.id)+(P.isPreview?.() ? '&preview=1' : ''),
         onChange:change => { try { if (!finished) saveDraft(change); } catch (error) { statusText = error.message; } const status=dashboard.querySelector('.essential-status');if(status)status.textContent=statusText;const list=dashboard.querySelector('.essential-new-list');if(list)list.hidden=change.testing===true||['completion','meaning','dictation'].includes(change.phase)||options.isReviewActive?.()===true;if(historyBox){historyBox.hidden=historyBlocked();if(historyNote)historyNote.hidden=!historyBox.hidden||!savedRows().length;} },
         onMistake:event => { check(); if (!root.IELTSMistakes?.captureVocabulary) throw Error('错题本组件未加载，原答案保留。'); return root.IELTSMistakes.captureVocabulary(event); },

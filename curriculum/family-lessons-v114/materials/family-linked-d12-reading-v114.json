@@ -1,0 +1,240 @@
+{
+  "id": "family-linked-d12-reading-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 12,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "A Clear Note for a Clinic Visit",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why does Lena speak to the receptionist?",
+      "options": [
+        "She wants to cancel her appointment.",
+        "She needs to find the dentist.",
+        "She needs to correct her appointment time.",
+        "Her phone number has an incorrect digit."
+      ],
+      "answers": [
+        "Her phone number has an incorrect digit."
+      ],
+      "evidence": "Lena notices that the last digit of her number is wrong, so she asks the receptionist to change it.",
+      "explanation": "她发现电话号码最后一位不对，因此请接待员修改。",
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 193,
+        "end": 292,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What has Lena written on separate lines?",
+      "options": [
+        "The appointment details she wants to confirm.",
+        "The symptoms she wants to describe.",
+        "Questions about the medicine label.",
+        "A list of medicine doses."
+      ],
+      "answers": [
+        "The symptoms she wants to describe."
+      ],
+      "evidence": "Lena has written one symptom on each line of a small card.",
+      "explanation": "one symptom on each line 明确说明卡片记录的是症状。",
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 374,
+        "end": 432,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why does she leave the temperature part empty?",
+      "options": [
+        "She has not measured her temperature.",
+        "She already knows she has a fever.",
+        "The nurse has already filled it in.",
+        "The form asks her to record it at a later visit."
+      ],
+      "answers": [
+        "She has not measured her temperature."
+      ],
+      "evidence": "She has not measured her temperature today, and she does not know whether she has a fever.",
+      "explanation": "她尚未测体温，因此不猜测。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 541,
+        "end": 631,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does the poster invite visitors to write down if relevant?",
+      "options": [
+        "The time and room number of the appointment.",
+        "The medicine labels of other patients.",
+        "An allergy and a previous injury.",
+        "The names and contact details of all clinic staff."
+      ],
+      "answers": [
+        "An allergy and a previous injury."
+      ],
+      "evidence": "It suggests writing down an allergy and any previous injury if these are relevant.",
+      "explanation": "if relevant 表示在有关时记录过敏和既往伤情。",
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 854,
+        "end": 936,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does the poster suggest bringing when someone has a medicine question?",
+      "options": [
+        "A completed patient form.",
+        "The medicine label or a tablet package.",
+        "A card with the appointment time.",
+        "A prescription from a previous visit."
+      ],
+      "answers": [
+        "The medicine label or a tablet package."
+      ],
+      "evidence": "The poster asks visitors to bring the medicine label or a tablet package if they have a question.",
+      "explanation": "海报建议有疑问时带药品标签或药片包装，以便向专业人员询问。",
+      "id": "r05",
+      "evidenceOffsets": {
+        "start": 1020,
+        "end": 1117,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does Lena understand about the poster?",
+      "options": [
+        "A word on it is not a diagnosis.",
+        "It gives her a diagnosis.",
+        "It describes David’s dentist appointment.",
+        "It replaces the clinic conversation."
+      ],
+      "answers": [
+        "A word on it is not a diagnosis."
+      ],
+      "evidence": "She knows that a word on a poster is not a diagnosis.",
+      "explanation": "词语本身不能诊断个人情况；她准备向工作人员询问。",
+      "id": "r06",
+      "evidenceOffsets": {
+        "start": 1395,
+        "end": 1448,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "According to the passage, who is specifically mentioned as answering questions about a medicine label?",
+      "options": [
+        "The clinic reception desk.",
+        "A pharmacy.",
+        "The dentist David is visiting.",
+        "The nurse shown in the poster."
+      ],
+      "answers": [
+        "A pharmacy."
+      ],
+      "evidence": "She can ask the clinic staff for advice about her own situation, and a pharmacy can answer questions about a label.",
+      "explanation": "句子将标签问题与 pharmacy 对应。",
+      "id": "r07",
+      "evidenceOffsets": {
+        "start": 1449,
+        "end": 1564,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where will David wait?",
+      "options": [
+        "Near the blue door.",
+        "Inside the examination room.",
+        "At the green entrance.",
+        "Beside a yellow bench."
+      ],
+      "answers": [
+        "Near the blue door."
+      ],
+      "evidence": "Please wait near the blue door.",
+      "explanation": "Lena 的信息明确约在蓝色门附近。",
+      "id": "r08",
+      "evidenceOffsets": {
+        "start": 1822,
+        "end": 1853,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why is David visiting another building?",
+      "options": [
+        "He is changing Lena’s appointment.",
+        "He is working at reception.",
+        "He is buying medicine for Lena.",
+        "He has a dentist visit."
+      ],
+      "answers": [
+        "He has a dentist visit."
+      ],
+      "evidence": "He is visiting a dentist in another building, not the clinic.",
+      "explanation": "David 去另一栋楼看牙医，并非在诊所工作。",
+      "id": "r09",
+      "evidenceOffsets": {
+        "start": 1699,
+        "end": 1760,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What is Lena’s plan for the conversation?",
+      "options": [
+        "Choose her own diagnosis from the poster.",
+        "Avoid asking any questions.",
+        "Describe what she notices and listen carefully.",
+        "Give the nurse a treatment plan."
+      ],
+      "answers": [
+        "Describe what she notices and listen carefully."
+      ],
+      "evidence": "Her plan is to describe what she notices and listen carefully rather than decide what the words mean for her health.",
+      "explanation": "rather than 表示她不自行判断词语对自身健康的意义。",
+      "id": "r10",
+      "evidenceOffsets": {
+        "start": 2528,
+        "end": 2644,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Read the passage and choose one answer for each question.",
+  "passage": "On Monday, Lena has an appointment at the Oak Street clinic at 10:15. She arrives early and goes to reception. A notice asks each patient to check that their name and phone number are correct. Lena notices that the last digit of her number is wrong, so she asks the receptionist to change it. The receptionist gives her a form and says that she can wait in the quiet room.\n\nLena has written one symptom on each line of a small card. Her list includes a cough and a sore throat. She also wants to mention a headache and pain in her shoulder. She has not measured her temperature today, and she does not know whether she has a fever. Rather than guessing, she leaves that part of the form empty. There is room for her to add a question about her stomach, too.\n\nIn the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse. It suggests writing down an allergy and any previous injury if these are relevant. A visitor may also ask about a prescription or a treatment they do not understand. The poster asks visitors to bring the medicine label or a tablet package if they have a question. It suggests asking a professional what the word dose means on that label.\n\nThe poster shows a patient speaking with a nurse during an examination. In the picture, the patient asks what the word infection means. Lena also wants to understand the words people use in the clinic. She knows that a word on a poster is not a diagnosis. She can ask the clinic staff for advice about her own situation, and a pharmacy can answer questions about a label. She writes both questions down because she does not want to forget them.\n\nHer friend David has agreed to meet her outside afterwards. He is visiting a dentist in another building, not the clinic. Lena sends him a short message: “My appointment is at 10:15. Please wait near the blue door.” David replies that he will bring a book while he waits. He remembers that Lena sometimes forgets her card when she is in a hurry.\n\nBefore her name is called, Lena looks at her list again. She adds questions about how to recover and when she might return to her usual routine. She has had less sleep than usual and wants to talk about a quiet afternoon of rest. She searches for words to describe feeling ill without saying that she already knows what is wrong. In the past, a walk in the park helped her feel healthy, and she wonders how to describe that. She plans to tell the nurse whether it is difficult to breathe while sitting quietly, then puts the card in her bag. Her plan is to describe what she notices and listen carefully rather than decide what the words mean for her health.",
+  "questionCount": 10
+}

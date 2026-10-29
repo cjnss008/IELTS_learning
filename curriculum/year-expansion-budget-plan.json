@@ -5,8 +5,8 @@
   "version": "year-expansion-69",
   "status": "reviewed-runtime-first-use-with-explicit-pending",
   "scheduleAxis": "Existing day numbers are course/lesson indices, not measured natural-calendar days. Static 360-minute buckets are conservative admission scenarios; runtime carries unfinished work and may advance early across lessons within one shared calendar budget.",
-  "inputHash": "e292ab7f983d8a383023148af74b3676461a7189c93ff3c0449a7d20103f11f2",
-  "baseHash": "4aa2edfe55605298daf24ebccfc5b42258b46b7cce701c8558b7c66236344ba4",
+  "inputHash": "2b19776b9af0d931920f5abc5a9bfec53a4ed855452f9db65f3bdacf7c257638",
+  "baseHash": "8dd50e4e4db8ac131d1723a463a939e212f672cca4b8f80cc09b0f482e7f2850",
   "publicPlanHash": "58ed4123517b79d688642843c1e8fb72c80114d5ea9c3fcabd7781335a16c251",
   "contextCatalogHash": "bc9f9deffc46a2badb12da2cc8bb70377aac62a29d1a010748e90ac3aad1d141",
   "policy": {
@@ -120092,9 +120092,9 @@
     "protocol": 1,
     "runtimeConnected": true,
     "contract": {
-      "path": "curriculum/year-first-use-runtime-contract-v113-multibatch.json",
-      "sha256": "d622a59e7c508385154f4f00e5efea798ac3e4e8320381598872d1d855d01169",
-      "bytes": 11117
+      "path": "curriculum/year-first-use-runtime-contract-v114-context-lexicon.json",
+      "sha256": "fd51bb84f1b3b4ad3d6bf5e60a72863fca3f9eed79d4b62e65b9014d4bb66878",
+      "bytes": 11118
     },
     "components": [
       {
@@ -120124,14 +120124,14 @@
       {
         "role": "course-player",
         "path": "assets/course-player.js",
-        "sha256": "df6060b4930c222f46a0accf15d26612d422bdf199eddbb74ae90a3b96c568a2",
-        "bytes": 267990
+        "sha256": "0bae0b4e268a71801805e52d2475c18df17f49db803d21f33a5e7ab89b0b84fa",
+        "bytes": 273775
       },
       {
         "role": "today-hub",
         "path": "assets/today-hub.js",
-        "sha256": "6a80148bf0efe1f7fc9f859a723fd80f8d4b4c4fac8258b3f6d13d794b28aa64",
-        "bytes": 50399
+        "sha256": "cf520af30a8e303cb29877ebbe137a8afbc6868c6584741fe7df0763f69e3766",
+        "bytes": 53448
       },
       {
         "role": "backup-keys",
@@ -120154,8 +120154,8 @@
       {
         "role": "server-catalog",
         "path": "server/year-material-catalog.cjs",
-        "sha256": "97c8a8e828594b22963443384232ecb221fd5f714a821f047edb666dd46568db",
-        "bytes": 23094
+        "sha256": "d722466d4d8a0ab31ecd926b755320748c29c3e8c1c46b0779fcd2874702ea26",
+        "bytes": 23236
       },
       {
         "role": "server-routes",
@@ -120184,8 +120184,8 @@
       {
         "role": "record-snapshot-index",
         "path": "assets/record-snapshot-index.js",
-        "sha256": "7010c244fd84ce00222690af7b664ab19e1eb7c9f7a367a295f39b4b4d455801",
-        "bytes": 7483
+        "sha256": "e88cd6b1cff936752b375eeed5b8bbc99a7851182d3bc05c79fd0f206b572ddd",
+        "bytes": 8787
       },
       {
         "role": "assessment",
@@ -120196,8 +120196,8 @@
       {
         "role": "adaptive-plan",
         "path": "assets/adaptive-plan.js",
-        "sha256": "cd2680074bcd7e408dd19ce6852b21f65c9d001c7e315a9824e0b7e6244f9f95",
-        "bytes": 65512
+        "sha256": "753c8f6b7c9510d244973ba950694d4eb170efa16a1d966173b656487e9bf6d5",
+        "bytes": 65583
       },
       {
         "role": "year-planner",
@@ -120226,8 +120226,8 @@
       {
         "role": "mistake-book",
         "path": "assets/mistake-book.js",
-        "sha256": "d8cf109f19dcaaae76a3fcaaeecd1fd6054b2dcad4b68b2554d49953587d2e23",
-        "bytes": 82166
+        "sha256": "bda6606c492985539c6b1f9ed04db76eff0a26c5718ccf3c936cf296bb0074c1",
+        "bytes": 82644
       },
       {
         "role": "daily-plan-state",
@@ -120244,14 +120244,14 @@
       {
         "role": "runtime-contract-policy",
         "path": "server/year-runtime-contract-policy.cjs",
-        "sha256": "50bb2b8f555aef2899746e2db7f95c1a860d0e677110dcc5cb26890555b31a82",
-        "bytes": 13500
+        "sha256": "2681bc9ae3dfb137f3de2dfbbadf9f5b6933a33e3412d62a9aa2b40c0058adac",
+        "bytes": 13652
       },
       {
         "role": "runtime-contract-validator",
         "path": "tools/year-runtime-activation.cjs",
-        "sha256": "7bee524282e14a563cacd9e943b8cd7237639a3e260c54d805a462744d56b2ac",
-        "bytes": 6068
+        "sha256": "fbeb9788bb4ae5e69b5ea029fd36beb07b592fa9e08d6c38e498653f624c79d1",
+        "bytes": 6312
       },
       {
         "role": "entrypoint",
@@ -120322,8 +120322,8 @@
       {
         "role": "context-vocabulary-course",
         "path": "assets/contextual-vocabulary-course.js",
-        "sha256": "44fdec67432878d6a8f602305e8bc53837ba5895ed86e9f9ad2aa239f78302e3",
-        "bytes": 34645
+        "sha256": "b9b3f7ddc5c2a852615f0798e04d6c2fb4cc3da0926f6582dc4dd11dcff20af5",
+        "bytes": 37490
       },
       {
         "role": "essential-vocabulary-course",
@@ -120334,8 +120334,8 @@
       {
         "role": "essential-vocabulary-app",
         "path": "assets/essential-vocabulary-app.js",
-        "sha256": "560fdeb45fc28daab10f3f6f2498d72628f431de61bb6e59a4f9edac3df04ef4",
-        "bytes": 68452
+        "sha256": "a960a3d9b3f735a17ae84ba29a93c38d0acd66c9b32636fd98b8766148ad9dec",
+        "bytes": 69101
       },
       {
         "role": "public-course-planner",
@@ -120382,14 +120382,14 @@
       {
         "role": "vocabulary-practice",
         "path": "assets/vocabulary-practice.js",
-        "sha256": "e333312b4d82361fddf92c960e3f08543b2c0290b0213d78d7776dcb3bc3c4a4",
-        "bytes": 55455
+        "sha256": "d17995fa31284c00d32f8cbd41fa42267d496c7f3dccc6cb490182ce98c01d1d",
+        "bytes": 63523
       },
       {
         "role": "essential-vocabulary-core",
         "path": "assets/essential-vocabulary-core.js",
-        "sha256": "e780f25922c037912a557f45c6c3fab02d09dfd71223167e2b1c768f2e571bc1",
-        "bytes": 340522
+        "sha256": "28adb36f7f62afd7423885cb6d6a82ebbe783a1b647a2ced73018df5f195df39",
+        "bytes": 347084
       },
       {
         "role": "memory-session",
@@ -120412,8 +120412,8 @@
       {
         "role": "family-lesson-expansion-v95",
         "path": "assets/family-lesson-expansion-v95.js",
-        "sha256": "3fab8ccd68eacea5a331cd65af570dd4752104138d10eaed4fd161f2ab208ace",
-        "bytes": 94236
+        "sha256": "fff72eb8b252bec9d33de32db98159b7b60867f80949b821b5c35ed8e32cfaa6",
+        "bytes": 102686
       },
       {
         "role": "course-expansion",

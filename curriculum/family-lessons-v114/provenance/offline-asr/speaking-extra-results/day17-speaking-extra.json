@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "day": 17,
+  "materialId": "family-linked-d17-speaking-next-v1",
+  "sourceAudioSha256": "1fff7be14b79b91105241a07732d7b09b80dc48a247c9bfa9dce5f7c7a9b6566",
+  "sourceTextSha256": "53350be44caa7ca471b91ed0413198e778e09306ddf26f9141817f117da3ba3c",
+  "expectedText": "I have tried several activities in my leisure time, but my favorite hobby is volleyball. I first played it with friends last year at a small gym. I have never joined a serious competition, and I do not worry much about the score. I enjoy exercise more when everyone helps the team. A coach showed us how to pass the ball safely, and the center provided the equipment. I have also watched a match as a spectator, which gave me some ideas for practice. I would like to cycle to the gym next time, so I will wear a helmet. My goal is to improve my fitness and enjoy time with friends.",
+  "originalWavSha256": "8fb548bf7a32e68375664b66737664ee2fac3cc0be7672f104040c0e4bae90a4",
+  "originalDurationSeconds": 45.024,
+  "paddedWavSha256": "0ab2496ecc48582d035423b4508a849bef6646adcc185d563000aa364e47c1c7",
+  "paddedDurationSeconds": 60.5,
+  "sourceSamplesIdentical": true,
+  "addedSamplesAllZero": true,
+  "sourcePromptProvided": false,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I have tried several activities in my leisure time, but my favorite hobby is volleyball. I first played it with friends last year at a small gym. I have never joined a serious competition, and I do not worry much about the score. I enjoy exercise more when everyone helps the team. A coach showed us how to pass the ball safely, and the center provided the equipment. I have also watched a match as a spectator, which gave me some ideas for practice. I would like to cycle to the gym next time, so I will wear a helmet. My goal is to improve my fitness and enjoy time with friends.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 6.8,
+        "text": "I have tried several activities in my leisure time, but my favorite hobby is volleyball.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 6.8,
+        "endSeconds": 11.24,
+        "text": "I first played it with friends last year at a small gym.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 11.24,
+        "endSeconds": 17.52,
+        "text": "I have never joined a serious competition, and I do not worry much about the score.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 17.52,
+        "endSeconds": 22.16,
+        "text": "I enjoy exercise more when everyone helps the team.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 22.16,
+        "endSeconds": 28.52,
+        "text": "A coach showed us how to pass the ball safely, and the center provided the equipment.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 28.52,
+        "endSeconds": 34.72,
+        "text": "I have also watched a match as a spectator, which gave me some ideas for practice.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 34.72,
+        "endSeconds": 39.92,
+        "text": "I would like to cycle to the gym next time, so I will wear a helmet.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 39.92,
+        "endSeconds": 44.52,
+        "text": "My goal is to improve my fitness and enjoy time with friends.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "0ab2496ecc48582d035423b4508a849bef6646adcc185d563000aa364e47c1c7",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 125,
+    "actualTokens": 125,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 112,
+    "actualTokens": 112,
+    "edits": 0,
+    "changes": []
+  }
+}

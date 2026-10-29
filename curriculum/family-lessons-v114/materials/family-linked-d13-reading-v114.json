@@ -1,0 +1,240 @@
+{
+  "id": "family-linked-d13-reading-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 13,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "A Picnic Shop with a Fixed Budget",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "What is the original food and drink budget?",
+      "options": [
+        "Seventeen pounds.",
+        "Nine pounds.",
+        "Fifteen pounds.",
+        "Twenty-four pounds."
+      ],
+      "answers": [
+        "Twenty-four pounds."
+      ],
+      "evidence": "They have a budget of twenty-four pounds for food and drinks.",
+      "explanation": "原预算是 twenty-four pounds；十五是折后花费。",
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 72,
+        "end": 133,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why do they avoid a very large quantity?",
+      "options": [
+        "They have no basket.",
+        "They need food for twenty people.",
+        "They do not want food to be wasted.",
+        "The shop has no beans."
+      ],
+      "answers": [
+        "They do not want food to be wasted."
+      ],
+      "evidence": "They want enough food for six people, but they do not want to buy a large quantity that will go to waste.",
+      "explanation": "go to waste 表示浪费，不是指食物太贵。",
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 280,
+        "end": 385,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How much do the two packets of beans cost?",
+      "options": [
+        "Nine pounds.",
+        "Four pounds.",
+        "Three pounds.",
+        "Six pounds."
+      ],
+      "answers": [
+        "Six pounds."
+      ],
+      "evidence": "They choose two packets, so the cost is six pounds.",
+      "explanation": "两包合计六英镑，三英镑是一包的价格。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 454,
+        "end": 505,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What is the weight of the carrots?",
+      "options": [
+        "One liter.",
+        "One kilogram.",
+        "Four kilograms.",
+        "Two kilograms."
+      ],
+      "answers": [
+        "One kilogram."
+      ],
+      "evidence": "A sign asks customers to weigh loose vegetables, and the scale shows a weight of one kilogram.",
+      "explanation": "scale shows a weight of one kilogram 给出重量。",
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 635,
+        "end": 729,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How much is the food before the reduction?",
+      "options": [
+        "Nineteen pounds.",
+        "Seventeen pounds.",
+        "Twenty-four pounds.",
+        "Fifteen pounds."
+      ],
+      "answers": [
+        "Seventeen pounds."
+      ],
+      "evidence": "The total before any reduction is seventeen pounds.",
+      "explanation": "打折前总额是十七英镑，不是十五英镑。",
+      "id": "r05",
+      "evidenceOffsets": {
+        "start": 923,
+        "end": 974,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why do they leave the paper plates?",
+      "options": [
+        "The plates are free.",
+        "The assistant asks for them back.",
+        "They already have plates at home.",
+        "The plates are needed at home."
+      ],
+      "answers": [
+        "They already have plates at home."
+      ],
+      "evidence": "There are plates at home, so they decide not to include that purchase.",
+      "explanation": "已有盘子，所以不购买额外的纸盘。",
+      "id": "r06",
+      "evidenceOffsets": {
+        "start": 1033,
+        "end": 1103,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How much must they pay after the reduction?",
+      "options": [
+        "Twenty pounds.",
+        "Fifteen pounds.",
+        "Seventeen pounds.",
+        "Nine pounds."
+      ],
+      "answers": [
+        "Fifteen pounds."
+      ],
+      "evidence": "The amount they need to pay is therefore fifteen pounds.",
+      "explanation": "打折两英镑后应付十五英镑。",
+      "id": "r07",
+      "evidenceOffsets": {
+        "start": 1275,
+        "end": 1331,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What form is their change in?",
+      "options": [
+        "Five one-pound coins.",
+        "Three one-pound coins.",
+        "A five-pound note only.",
+        "Two dollar coins."
+      ],
+      "answers": [
+        "Five one-pound coins."
+      ],
+      "evidence": "The assistant gives him five one-pound coins as change and hands him a receipt.",
+      "explanation": "找零为五枚一英镑硬币。",
+      "id": "r08",
+      "evidenceOffsets": {
+        "start": 1384,
+        "end": 1463,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What do they decide to do with the remaining nine pounds for now?",
+      "options": [
+        "Spend it on paper plates.",
+        "Give it to the assistant.",
+        "Save it.",
+        "Exchange it for dollars."
+      ],
+      "answers": [
+        "Save it."
+      ],
+      "evidence": "They agree to save that money for now instead of choosing an unnecessary extra item.",
+      "explanation": "for now 表示暂时保留这笔钱，不立即购买额外物品。",
+      "id": "r09",
+      "evidenceOffsets": {
+        "start": 1699,
+        "end": 1783,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why does Mina avoid directly comparing the dollar price with a pound?",
+      "options": [
+        "The poster is not a currency exchange guide.",
+        "The poster gives a fixed exchange rate.",
+        "The price is given without a currency.",
+        "The dollar is another name for the pound."
+      ],
+      "answers": [
+        "The poster is not a currency exchange guide."
+      ],
+      "evidence": "The poster is not a currency exchange guide, so Mina does not compare it directly with a pound.",
+      "explanation": "海报不是汇率指南，不能直接把美元与英镑价格当成相等。",
+      "id": "r10",
+      "evidenceOffsets": {
+        "start": 2015,
+        "end": 2110,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Read the passage and choose one answer for each question.",
+  "passage": "Mina and her brother Ravi are shopping for a small neighborhood picnic. They have a budget of twenty-four pounds for food and drinks. Before leaving home, they write a list with a pound sign beside each price and agree that Ravi will check the prices while Mina carries a basket. They want enough food for six people, but they do not want to buy a large quantity that will go to waste.\n\nAt the first shelf, Mina finds a packet of beans for three pounds. They choose two packets, so the cost is six pounds. Nearby, a bag of rice has a price of four pounds. The label says that the bag contains one kilogram. Ravi also picks up carrots. A sign asks customers to weigh loose vegetables, and the scale shows a weight of one kilogram. The carrots cost four pounds.\n\nThe last item is one liter of oil for three pounds. Ravi checks the numbers on the list: six pounds for beans, four for rice, four for carrots and three for oil. The total before any reduction is seventeen pounds. Mina sees a package of paper plates, but it is expensive. There are plates at home, so they decide not to include that purchase. A cheap bag is not useful if they do not need it.\n\nAt the checkout, the assistant notices that the shop has agreed to discount their food by two pounds for a local event. The amount they need to pay is therefore fifteen pounds. Ravi plans to pay in cash with a twenty-pound note. The assistant gives him five one-pound coins as change and hands him a receipt. Mina counts every coin and checks the receipt before they leave.\n\nOutside, the two discuss how much of the original budget remains. They spend fifteen pounds at the shop, leaving nine pounds for anything else the group decides to buy. They agree to save that money for now instead of choosing an unnecessary extra item. If the group later wants fruit, they can decide together what they can afford.\n\nRavi notices a poster for a similar picnic in the United States. Its example price is shown in dollars, and one small drink has a price of one dollar. The poster is not a currency exchange guide, so Mina does not compare it directly with a pound. They join a short queue to collect the picnic notice and walk home. Mina is pleased that the list and receipt explain their choices clearly.",
+  "questionCount": 10
+}

@@ -62,6 +62,12 @@ const PUBLIC_V113 = Object.freeze({ ...PUBLIC_V112,
   "assets/year-first-use-manifest.js": "a4ff0d474e81ca5fc0a4b5e79d28cf2af15d104368f892eaeb4f6e8b8c76e956"
 });
 
+// v114 appends days11–20; the original public plan and first batch stay unchanged.
+const PUBLIC_V114 = Object.freeze({ ...PUBLIC_V113,
+  "assets/curriculum-data.js": "14f4132ba16e5f8d691885b7e0718ee426094a81ffab604b4feb9966841124e0",
+  "assets/year-first-use-manifest.js": "faa6758ae410f16f913ca8f833b3ade727fe0737b28503eb8ba734cf35a477a3"
+});
+
 function tokens(text) {
   return Array.from(String(text).matchAll(tokenPattern), match => ({
     key: norm(match[0]), start: match.index, end: match.index + match[0].length
@@ -368,14 +374,14 @@ function loadPublicInputs(root, profile = PUBLIC_V98) {
 }
 
 function parseArguments(argv) {
-  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107|0.0.108|0.0.109|0.0.111|0.0.112|0.0.113]';
+  const usage = 'Use --root REVIEWED_PUBLIC_SNAPSHOT [--full] [--daily-target 30|40] [--profile 0.0.98|0.0.107|0.0.108|0.0.109|0.0.111|0.0.112|0.0.113|0.0.114]';
   assert.ok(argv.length >= 2 && argv[0] === '--root' && typeof argv[1] === 'string' && argv[1], usage);
   let full = false, dailyTarget = 30, hasTarget = false, profile;
   for (let i = 2; i < argv.length; i++) {
     if (argv[i] === '--full' && !full) full = true;
     else if (argv[i] === '--daily-target' && !hasTarget && ['30', '40'].includes(argv[i + 1])) {
       dailyTarget = Number(argv[++i]); hasTarget = true;
-    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107', '0.0.108', '0.0.109', '0.0.111', '0.0.112', '0.0.113'].includes(argv[i + 1])) {
+    } else if (argv[i] === '--profile' && !profile && ['0.0.98', '0.0.107', '0.0.108', '0.0.109', '0.0.111', '0.0.112', '0.0.113', '0.0.114'].includes(argv[i + 1])) {
       profile = argv[++i];
     } else throw Error(usage);
   }
@@ -385,7 +391,7 @@ function parseArguments(argv) {
 function main(argv) {
   const args = parseArguments(argv);
   const root = path.resolve(args.root);
-  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.113' ? PUBLIC_V113 : args.profile === '0.0.112' ? PUBLIC_V112 : args.profile === '0.0.111' ? PUBLIC_V111 : args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
+  const report = buildInventory(loadPublicInputs(root, args.profile === '0.0.114' ? PUBLIC_V114 : args.profile === '0.0.113' ? PUBLIC_V113 : args.profile === '0.0.112' ? PUBLIC_V112 : args.profile === '0.0.111' ? PUBLIC_V111 : args.profile === '0.0.109' ? PUBLIC_V109 : args.profile === '0.0.108' ? PUBLIC_V108 : args.profile === '0.0.107' ? PUBLIC_V107 : PUBLIC_V98), { dailyTarget: args.dailyTarget });
   if (args.full) {
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     return;
@@ -405,4 +411,4 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); }
   catch (error) { console.error('Annual supply triage failed:', error.message); process.exitCode = 1; }
 }
-module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, PUBLIC_V111, PUBLIC_V112, PUBLIC_V113, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };
+module.exports = { PUBLIC_V98, PUBLIC_V107, PUBLIC_V108, PUBLIC_V109, PUBLIC_V111, PUBLIC_V112, PUBLIC_V113, PUBLIC_V114, tokens, indexWords, matchText, eligible, fields, summarizeLiteralLinks, buildInventory, safePublicRead, loadPublicInputs, parseArguments, main };

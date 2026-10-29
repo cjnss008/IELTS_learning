@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "day": 15,
+  "skill": "listening",
+  "id": "day15-listening",
+  "materialId": "family-linked-d15-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 60.60325,
+  "sourceAudioSha256": "b2e5a58da26dae2e3ebbea5f81a0d8c38e06125602b949b9efb83a07dcfb3186",
+  "sourceTextSha256": "eac276bf58e6dee5ef3d43cf11092239f4a264757000116a95db79e3c881b3cc",
+  "expectedText": "How was your interview at the neighborhood museum on Friday, Rina? It was interesting. I went at eleven in the morning and spoke to the manager of the events department. What position did you apply for? The vacancy was for a weekend workshop assistant. I sent the application on Wednesday. The employer wanted someone to help visitors find materials. Did you give an example of your experience? Yes. I described a garden event where my colleague and I worked as a team. I showed a certificate from a short art course as one qualification. I also brought a copy of my application for the manager. What did they ask about? They asked how I would help a customer who arrived late. I said I would listen, check the task list and ask an employee if I was unsure.",
+  "expectedTextSha256": "20b194b0e809407573f6371e74ebdf600e159912da2b90f043fba9bdb09f818d",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day15-listening-part01.wav",
+  "wavSha256": "013d0756cbfd7a9ee463a898ace36ef74e1b88f8c43af186b8679687ec194ebf",
+  "wavDurationSeconds": 60.60325,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "How was your interview at the Neighborhood Museum on Friday, Rina? It was interesting. I went at 11 in the morning and spoke to the manager of the Events Department. What position did you apply for? The vacancy was for a weekend workshop assistant. I sent the application on Wednesday. The employer wanted someone to help visitors find materials. Did you give an example of your experience? Yes. I described a garden event where my colleague and I worked as a team. I showed a certificate from a short art course as one qualification. I also brought a copy of my application for the manager. What did they ask about? They asked how I would help a customer who arrived late. I said I would listen, check the task list and ask an employee if I was unsure.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 5.06,
+        "text": "How was your interview at the Neighborhood Museum on Friday, Rina?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 5.06,
+        "endSeconds": 7.4,
+        "text": "It was interesting.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 7.4,
+        "endSeconds": 13.02,
+        "text": "I went at 11 in the morning and spoke to the manager of the Events Department.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 13.02,
+        "endSeconds": 16.12,
+        "text": "What position did you apply for?",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 16.12,
+        "endSeconds": 20.28,
+        "text": "The vacancy was for a weekend workshop assistant.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 20.28,
+        "endSeconds": 23.7,
+        "text": "I sent the application on Wednesday.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 23.7,
+        "endSeconds": 28.48,
+        "text": "The employer wanted someone to help visitors find materials.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 28.48,
+        "endSeconds": 32.24,
+        "text": "Did you give an example of your experience?",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 32.24,
+        "endSeconds": 33.96,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 33.96,
+        "endSeconds": 38.9,
+        "text": "I described a garden event where my colleague and I worked as a team.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 38.9,
+        "endSeconds": 44.08,
+        "text": "I showed a certificate from a short art course as one qualification.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 44.08,
+        "endSeconds": 48.6,
+        "text": "I also brought a copy of my application for the manager.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 48.6,
+        "endSeconds": 51.28,
+        "text": "What did they ask about?",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 51.28,
+        "endSeconds": 55.36,
+        "text": "They asked how I would help a customer who arrived late.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 55.36,
+        "endSeconds": 60.16,
+        "text": "I said I would listen, check the task list and ask an employee if I was unsure.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.60325,
+    "audioSha256": "013d0756cbfd7a9ee463a898ace36ef74e1b88f8c43af186b8679687ec194ebf",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 155,
+    "actualTokens": 155,
+    "edits": 5,
+    "changes": [
+      {
+        "expected": [
+          "neighborhood",
+          "museum"
+        ],
+        "actual": [
+          "Neighborhood",
+          "Museum"
+        ],
+        "expectedIndex": 6,
+        "actualIndex": 6,
+        "contextBefore": [
+          "was",
+          "your",
+          "interview",
+          "at",
+          "the"
+        ],
+        "contextAfter": [
+          "on",
+          "Friday",
+          ",",
+          "Rina",
+          "?"
+        ]
+      },
+      {
+        "expected": [
+          "eleven"
+        ],
+        "actual": [
+          "11"
+        ],
+        "expectedIndex": 20,
+        "actualIndex": 20,
+        "contextBefore": [
+          "interesting",
+          ".",
+          "I",
+          "went",
+          "at"
+        ],
+        "contextAfter": [
+          "in",
+          "the",
+          "morning",
+          "and",
+          "spoke"
+        ]
+      },
+      {
+        "expected": [
+          "events",
+          "department"
+        ],
+        "actual": [
+          "Events",
+          "Department"
+        ],
+        "expectedIndex": 31,
+        "actualIndex": 31,
+        "contextBefore": [
+          "to",
+          "the",
+          "manager",
+          "of",
+          "the"
+        ],
+        "contextAfter": [
+          ".",
+          "What",
+          "position",
+          "did",
+          "you"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 138,
+    "actualTokens": 138,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

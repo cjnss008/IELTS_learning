@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "day": 11,
+  "materialId": "family-linked-d11-speaking-v111",
+  "sourceAudioSha256": "ec269935ce95f95529af122c92cada6868e6d0df58ad659dbbdbcac7b7c0c10a",
+  "sourceTextSha256": "8e07077ad8e636d3856f8aaf5cf98c415b42bd05c5607257f9fd7b8a6180d5e2",
+  "expectedText": "I usually check the timetable before I travel. Today I am waiting at the main terminal with a small suitcase. My destination is a town by the sea, but there is a delay. I am checking the new departure time and listening to the announcement. My ticket is valid on a direct service, so I do not need a transfer. I am asking the conductor about a seat reservation near the luggage space. My friend is meeting me at the station this afternoon. I am sending her the new arrival time so that she does not have to wait too long. Before I board, I will check the platform display once more.",
+  "originalWavSha256": "8332260cc7f505f1d3ead338770711aa00313a3125cf95cdb11c58b934fb6d0a",
+  "originalDurationSeconds": 44.928,
+  "paddedWavSha256": "ef0502e9e4c44a8f02c714e43243e33723edefee158dd6c268ade3dd780e9395",
+  "paddedDurationSeconds": 60.5,
+  "sourceSamplesIdentical": true,
+  "addedSamplesAllZero": true,
+  "sourcePromptProvided": false,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I usually check the timetable before I travel. Today I am waiting at the main terminal with a small suitcase. My destination is a town by the sea, but there is a delay. I am checking the new departure time and listening to the announcement. My ticket is valid on a direct service, so I do not need a transfer. I am asking the conductor about a seat reservation near the luggage space. My friend is meeting me at the station this afternoon. I am sending her the new arrival time so that she does not have to wait too long. Before I board, I will check the platform display once more.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.1,
+        "text": "I usually check the timetable before I travel.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.1,
+        "endSeconds": 8.94,
+        "text": "Today I am waiting at the main terminal with a small suitcase.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8.94,
+        "endSeconds": 13.8,
+        "text": "My destination is a town by the sea, but there is a delay.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 13.8,
+        "endSeconds": 18.72,
+        "text": "I am checking the new departure time and listening to the announcement.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 18.72,
+        "endSeconds": 24.52,
+        "text": "My ticket is valid on a direct service, so I do not need a transfer.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 24.52,
+        "endSeconds": 30.02,
+        "text": "I am asking the conductor about a seat reservation near the luggage space.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 30.02,
+        "endSeconds": 34.12,
+        "text": "My friend is meeting me at the station this afternoon.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 34.12,
+        "endSeconds": 39.82,
+        "text": "I am sending her the new arrival time so that she does not have to wait too long.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 39.82,
+        "endSeconds": 44.52,
+        "text": "Before I board, I will check the platform display once more.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "ef0502e9e4c44a8f02c714e43243e33723edefee158dd6c268ade3dd780e9395",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 124,
+    "actualTokens": 124,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 112,
+    "actualTokens": 112,
+    "edits": 0,
+    "changes": []
+  }
+}

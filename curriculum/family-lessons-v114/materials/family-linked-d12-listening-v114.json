@@ -1,0 +1,261 @@
+{
+  "id": "family-linked-d12-listening-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 12,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "A Different Clinic Visit",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "When is Leo’s appointment?",
+      "options": [
+        "Monday at 10:15 a.m.",
+        "Monday at 2:40 p.m.",
+        "Thursday at 2:40 p.m.",
+        "Thursday at 3:30 p.m."
+      ],
+      "answers": [
+        "Thursday at 2:40 p.m."
+      ],
+      "evidence": "Is your appointment still on Thursday, Leo?\nLeo: Yes, at two forty in the afternoon.",
+      "explanation": "Leo 先确认星期四，再说下午两点四十分。",
+      "id": "l01",
+      "evidenceOffsets": {
+        "start": 6,
+        "end": 90,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where is reception?",
+      "options": [
+        "Beside the blue door.",
+        "Beside the green entrance.",
+        "By the yellow bench.",
+        "Across the street."
+      ],
+      "answers": [
+        "Beside the green entrance."
+      ],
+      "evidence": "It is beside the green entrance.",
+      "explanation": "green entrance 是接待处位置，yellow bench 是稍后的会合地点。",
+      "id": "l02",
+      "evidenceOffsets": {
+        "start": 222,
+        "end": 254,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does Leo want the desk to check?",
+      "options": [
+        "The spelling of his name.",
+        "His phone number.",
+        "Mara’s home address.",
+        "The time of Mara’s dentist visit."
+      ],
+      "answers": [
+        "The spelling of his name."
+      ],
+      "evidence": "The patient form is available there, and I can ask them to check the spelling of my name.",
+      "explanation": "他想请接待处核对自己姓名的拼写。",
+      "id": "l03",
+      "evidenceOffsets": {
+        "start": 255,
+        "end": 344,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What will Leo not guess?",
+      "options": [
+        "His temperature.",
+        "The day of the appointment.",
+        "Mara’s meeting place.",
+        "The location of reception."
+      ],
+      "answers": [
+        "His temperature."
+      ],
+      "evidence": "I will not guess a temperature or say I have a fever if I have not measured it.",
+      "explanation": "没有测量时他不会猜体温或断言发热。",
+      "id": "l04",
+      "evidenceOffsets": {
+        "start": 469,
+        "end": 548,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does Leo plan to explain about the pain?",
+      "options": [
+        "Its location and when he first noticed it.",
+        "When the pain stopped and how much the medicine cost.",
+        "A treatment he has chosen.",
+        "Which part of the form records his appointment."
+      ],
+      "answers": [
+        "Its location and when he first noticed it."
+      ],
+      "evidence": "I will describe where it is and when I first noticed it.",
+      "explanation": "where 和 when 分别对应位置及首次注意到的时间。",
+      "id": "l05",
+      "evidenceOffsets": {
+        "start": 611,
+        "end": 667,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where is the pharmacy?",
+      "options": [
+        "On another floor of reception.",
+        "Across the street.",
+        "Inside the dentist’s office.",
+        "Behind the yellow bench."
+      ],
+      "answers": [
+        "Across the street."
+      ],
+      "evidence": "There is a pharmacy across the street.",
+      "explanation": "across the street 表示街对面。",
+      "id": "l06",
+      "evidenceOffsets": {
+        "start": 845,
+        "end": 883,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why will Leo show the tablet package at the pharmacy?",
+      "options": [
+        "To ask whether the package contains enough tablets.",
+        "To ask whether the medicine needs a prescription.",
+        "To ask the pharmacy to arrange his next appointment.",
+        "To ask what the label means."
+      ],
+      "answers": [
+        "To ask what the label means."
+      ],
+      "evidence": "I will show the tablet package and ask what the label means.",
+      "explanation": "Leo 想把药片包装交给专业人员看，询问标签的含义，不是自行决定用药。",
+      "id": "l07",
+      "evidenceOffsets": {
+        "start": 1028,
+        "end": 1088,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does Leo want to know about his allergy question?",
+      "options": [
+        "Where his medicine label can be explained.",
+        "When his appointment will take place.",
+        "What information the clinic needs.",
+        "How long Mara should wait by the bench."
+      ],
+      "answers": [
+        "What information the clinic needs."
+      ],
+      "evidence": "Did you write down your allergy question as well?\nLeo: Yes. My main question is what information they need.",
+      "explanation": "Mara 问过敏问题，Leo 说主要想知道诊所需要什么信息。",
+      "id": "l08",
+      "evidenceOffsets": {
+        "start": 1147,
+        "end": 1254,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where will Mara meet Leo?",
+      "options": [
+        "Inside the pharmacy.",
+        "At the green entrance.",
+        "Near the blue door.",
+        "At the yellow bench."
+      ],
+      "answers": [
+        "At the yellow bench."
+      ],
+      "evidence": "Please meet me by the yellow bench at three thirty, not at the green entrance.",
+      "explanation": "句子明确纠正不是绿色入口，而是黄色长椅旁。",
+      "id": "l09",
+      "evidenceOffsets": {
+        "start": 1441,
+        "end": 1519,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What will Leo do if the meeting time changes?",
+      "options": [
+        "Meet Mara at the green entrance instead.",
+        "Send Mara a text.",
+        "Ask the dentist to move Mara’s visit.",
+        "Leave a note at the reception desk."
+      ],
+      "answers": [
+        "Send Mara a text."
+      ],
+      "evidence": "I will text you if the time changes.",
+      "explanation": "text you 表示时间改变时给 Mara 发消息。",
+      "id": "l10",
+      "evidenceOffsets": {
+        "start": 1520,
+        "end": 1556,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "Listen to the two speakers and choose one answer. Use this dialogue rather than the reading passage.",
+  "transcript": "Mara: Is your appointment still on Thursday, Leo?\nLeo: Yes, at two forty in the afternoon. I checked it this morning because I had written down two different times.\nMara: Where is the reception desk in that building?\nLeo: It is beside the green entrance. The patient form is available there, and I can ask them to check the spelling of my name.\nMara: Have you prepared your questions?\nLeo: I have a small list. I want to describe a cough, a sore throat and a headache. I will not guess a temperature or say I have a fever if I have not measured it.\nMara: Good. What about the pain you mentioned yesterday?\nLeo: I will describe where it is and when I first noticed it. I also wrote down a question about my stomach. The nurse can ask for any other information during the examination.\nMara: Is there a place to ask about a prescription?\nLeo: Yes. There is a pharmacy across the street. I have a question about a word on a medicine label, but I will ask the professional there rather than guess.\nMara: Which word is it?\nLeo: Dose. I will show the tablet package and ask what the label means. I will not decide what to take from the word alone.\nMara: Did you write down your allergy question as well?\nLeo: Yes. My main question is what information they need. I will ask the nurse how to describe how I breathe and when I might recover. I will also ask for advice about my treatment.\nMara: I can wait for you after my dentist visit.\nLeo: Thanks. Please meet me by the yellow bench at three thirty, not at the green entrance. I will text you if the time changes.",
+  "audioRequirements": {
+    "accent": "en-US",
+    "minimumSpeakers": 2,
+    "paragraphGapMs": 850,
+    "turnGapMs": 850,
+    "roleVoices": {
+      "mara": "en-US-AriaNeural",
+      "leo": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    }
+  },
+  "questionCount": 10,
+  "audio": "audio/curriculum/family-linked-d12-listening-v114.mp3",
+  "audioKind": "synthetic",
+  "audioSynthetic": true,
+  "audioLocale": "en-US",
+  "audioVoices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "audioProvider": "Microsoft online TTS via edge-tts",
+  "audioDurationSeconds": 119.168292
+}

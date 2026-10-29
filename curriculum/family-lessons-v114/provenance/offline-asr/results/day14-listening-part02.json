@@ -1,0 +1,310 @@
+{
+  "schema": 1,
+  "day": 14,
+  "skill": "listening",
+  "id": "day14-listening",
+  "materialId": "family-linked-d14-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 62.00095833333333,
+  "audioEndSeconds": 115.256542,
+  "sourceAudioSha256": "8058b4fa9668a5c1c8c26aef3c132a46a8584812bf59952ad238f60474cd73c5",
+  "sourceTextSha256": "fd3cbe45cf4560992ed0c538669b793680b2a5fa5a58e9b0bd6faf641b6e9e99",
+  "expectedText": "The draft contract lists a deposit of 300 pounds and a six-month lease. I want to read the agreement carefully and ask about any existing damage before I sign. What about the Cedar place? The ceiling is lower, but the window in the living room is larger. It is as quiet as Pine in the afternoon. The front door looks secure, though I will check it again. When would you need to move? The suggested date is Saturday. I have the address written here. First, I will ask whether the landlord can repair a loose cupboard door. Do you have to decide today? No. I can take the information home and compare the rooms, any other bill and the travel time before replying.",
+  "expectedTextSha256": "fb895f6d3b693b4612d785164152041269501095228e111c3da37711d71c1795",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day14-listening-part02.wav",
+  "wavSha256": "31f8347a04c2333d89a1a1a5ab2186705ff836485909a5a66d6b9a2f43f1e9ed",
+  "wavDurationSeconds": 53.2555625,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "The draft contract lists a deposit of 300 pounds and a six month lease. I want to read the agreement carefully and ask about any existing damage before I sign. What about the cedar place? The ceiling is lower, but the window in the living room is larger. It is as quiet as pine in the afternoon. The front door looks secure, though I will check it again. Then would you need to move? The suggested date is Saturday. I have the address written here. First, I will ask whether the landlord can repair a loose cupboard door. Do you have to decide today? No. I can take the information home and compare the rooms, any other bill in the travel time before replying.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 6.6,
+        "text": "The draft contract lists a deposit of 300 pounds and a six month lease.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 6.6,
+        "endSeconds": 12.94,
+        "text": "I want to read the agreement carefully and ask about any existing damage before I sign.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 12.94,
+        "endSeconds": 15.52,
+        "text": "What about the cedar place?",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 15.52,
+        "endSeconds": 20.64,
+        "text": "The ceiling is lower, but the window in the living room is larger.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 20.64,
+        "endSeconds": 24.28,
+        "text": "It is as quiet as pine in the afternoon.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 24.28,
+        "endSeconds": 28.72,
+        "text": "The front door looks secure, though I will check it again.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 28.72,
+        "endSeconds": 31.2,
+        "text": "Then would you need to move?",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 31.2,
+        "endSeconds": 34.28,
+        "text": "The suggested date is Saturday.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 34.28,
+        "endSeconds": 37.08,
+        "text": "I have the address written here.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 37.08,
+        "endSeconds": 42.84,
+        "text": "First, I will ask whether the landlord can repair a loose cupboard door.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 42.84,
+        "endSeconds": 45.2,
+        "text": "Do you have to decide today?",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 45.2,
+        "endSeconds": 47.2,
+        "text": "No.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 47.2,
+        "endSeconds": 52.16,
+        "text": "I can take the information home and compare the rooms, any other bill in the travel time",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 52.16,
+        "endSeconds": 53.24,
+        "text": "before replying.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 53.2555625,
+    "audioSha256": "31f8347a04c2333d89a1a1a5ab2186705ff836485909a5a66d6b9a2f43f1e9ed",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 140,
+    "actualTokens": 141,
+    "edits": 6,
+    "changes": [
+      {
+        "expected": [
+          "six-month"
+        ],
+        "actual": [
+          "six",
+          "month"
+        ],
+        "expectedIndex": 11,
+        "actualIndex": 11,
+        "contextBefore": [
+          "of",
+          "300",
+          "pounds",
+          "and",
+          "a"
+        ],
+        "contextAfter": [
+          "lease",
+          ".",
+          "I",
+          "want",
+          "to"
+        ]
+      },
+      {
+        "expected": [
+          "Cedar"
+        ],
+        "actual": [
+          "cedar"
+        ],
+        "expectedIndex": 34,
+        "actualIndex": 35,
+        "contextBefore": [
+          "sign",
+          ".",
+          "What",
+          "about",
+          "the"
+        ],
+        "contextAfter": [
+          "place",
+          "?",
+          "The",
+          "ceiling",
+          "is"
+        ]
+      },
+      {
+        "expected": [
+          "Pine"
+        ],
+        "actual": [
+          "pine"
+        ],
+        "expectedIndex": 57,
+        "actualIndex": 58,
+        "contextBefore": [
+          "It",
+          "is",
+          "as",
+          "quiet",
+          "as"
+        ],
+        "contextAfter": [
+          "in",
+          "the",
+          "afternoon",
+          ".",
+          "The"
+        ]
+      },
+      {
+        "expected": [
+          "When"
+        ],
+        "actual": [
+          "Then"
+        ],
+        "expectedIndex": 75,
+        "actualIndex": 76,
+        "contextBefore": [
+          "will",
+          "check",
+          "it",
+          "again",
+          "."
+        ],
+        "contextAfter": [
+          "would",
+          "you",
+          "need",
+          "to",
+          "move"
+        ]
+      },
+      {
+        "expected": [
+          "and"
+        ],
+        "actual": [
+          "in"
+        ],
+        "expectedIndex": 133,
+        "actualIndex": 134,
+        "contextBefore": [
+          "rooms",
+          ",",
+          "any",
+          "other",
+          "bill"
+        ],
+        "contextAfter": [
+          "the",
+          "travel",
+          "time",
+          "before",
+          "replying"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 125,
+    "actualTokens": 125,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          "when"
+        ],
+        "actual": [
+          "then"
+        ],
+        "expectedIndex": 69,
+        "actualIndex": 69,
+        "contextBefore": [
+          "i",
+          "will",
+          "check",
+          "it",
+          "again"
+        ],
+        "contextAfter": [
+          "would",
+          "you",
+          "need",
+          "to",
+          "move"
+        ]
+      },
+      {
+        "expected": [
+          "and"
+        ],
+        "actual": [
+          "in"
+        ],
+        "expectedIndex": 119,
+        "actualIndex": 119,
+        "contextBefore": [
+          "the",
+          "rooms",
+          "any",
+          "other",
+          "bill"
+        ],
+        "contextAfter": [
+          "the",
+          "travel",
+          "time",
+          "before",
+          "replying"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

@@ -1,0 +1,282 @@
+{
+  "id": "family-linked-d12-grammar-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 12,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "建议、规则与药品名词",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Choose the correct advice about a note.",
+      "options": [
+        "She should bring the note.",
+        "She should bringing the note.",
+        "She should to bring the note.",
+        "She should brings the note."
+      ],
+      "answers": [
+        "She should bring the note."
+      ],
+      "evidence": "She should bring the note.",
+      "explanation": "should 后接动词原形，不随 she 加 s。",
+      "id": "g01",
+      "evidenceOffsets": {
+        "start": 51,
+        "end": 77,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct negative advice.",
+      "options": [
+        "He should not guesses the number.",
+        "He should not guess the number.",
+        "He should not to guess the number.",
+        "He not should guess the number."
+      ],
+      "answers": [
+        "He should not guess the number."
+      ],
+      "evidence": "He should not guess the number.",
+      "explanation": "should not 后用动词原形 guess。",
+      "id": "g02",
+      "evidenceOffsets": {
+        "start": 78,
+        "end": 109,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct question.",
+      "options": [
+        "Should I bring my card?",
+        "Do I should bring my card?",
+        "Should bring I my card?",
+        "Should I bringing my card?"
+      ],
+      "answers": [
+        "Should I bring my card?"
+      ],
+      "evidence": "Should I bring my card?",
+      "explanation": "疑问句将 should 放在主语前，动词用原形。",
+      "id": "g03",
+      "evidenceOffsets": {
+        "start": 146,
+        "end": 169,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "The sign requires visitors to check names. Choose the correct sentence.",
+      "options": [
+        "You must to check your name.",
+        "You must checks your name.",
+        "You must checking your name.",
+        "You must check your name."
+      ],
+      "answers": [
+        "You must check your name."
+      ],
+      "evidence": "You must check your name.",
+      "explanation": "must 后接 check 原形。",
+      "id": "g04",
+      "evidenceOffsets": {
+        "start": 233,
+        "end": 258,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "The sign prohibits entry. Choose the correct sentence.",
+      "options": [
+        "You must not enters the staff room.",
+        "You not must enter the staff room.",
+        "You must not to enter the staff room.",
+        "You must not enter the staff room."
+      ],
+      "answers": [
+        "You must not enter the staff room."
+      ],
+      "evidence": "You must not enter the staff room.",
+      "explanation": "must not 表示禁止进入。",
+      "id": "g05",
+      "evidenceOffsets": {
+        "start": 259,
+        "end": 293,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What does “must not enter” mean in the example?",
+      "options": [
+        "Entering is optional.",
+        "Entering is required.",
+        "Entering is prohibited.",
+        "Entering happened yesterday."
+      ],
+      "answers": [
+        "Entering is prohibited."
+      ],
+      "evidence": "You must not enter the staff room.",
+      "explanation": "must not 表示不允许，并非仅仅不需要。",
+      "id": "g06",
+      "evidenceOffsets": {
+        "start": 259,
+        "end": 293,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct sentence about one visitor.",
+      "options": [
+        "The visitor has to signs the form.",
+        "The visitor have to sign the form.",
+        "The visitor has sign to the form.",
+        "The visitor has to sign the form."
+      ],
+      "answers": [
+        "The visitor has to sign the form."
+      ],
+      "evidence": "The visitor has to sign the form.",
+      "explanation": "第三人称单数用 has to，后接 sign 原形。",
+      "id": "g07",
+      "evidenceOffsets": {
+        "start": 294,
+        "end": 327,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which phrase means “not necessary,” rather than “prohibited”?",
+      "options": [
+        "has to",
+        "do not have to",
+        "must not",
+        "must"
+      ],
+      "answers": [
+        "do not have to"
+      ],
+      "evidence": "do not have to",
+      "explanation": "do not have to 指不必；must not 指禁止。",
+      "id": "g08",
+      "evidenceOffsets": {
+        "start": 342,
+        "end": 356,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the sentence with uncountable medicine.",
+      "options": [
+        "There are some medicine in the picture.",
+        "There is a medicines in the picture.",
+        "There is some medicine in the picture.",
+        "There are two medicine in the picture."
+      ],
+      "answers": [
+        "There is some medicine in the picture."
+      ],
+      "evidence": "There is some medicine in the picture.",
+      "explanation": "这里 medicine 指药物这一物质，搭配 some。",
+      "id": "g09",
+      "evidenceOffsets": {
+        "start": 447,
+        "end": 485,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which phrase names two separate items?",
+      "options": [
+        "two tablets",
+        "two a tablet",
+        "two tablet",
+        "two tableties"
+      ],
+      "answers": [
+        "two tablets"
+      ],
+      "evidence": "Two tablets are in the picture.",
+      "explanation": "tablet 是可数名词；two 后使用复数 tablets。",
+      "id": "g10",
+      "evidenceOffsets": {
+        "start": 508,
+        "end": 539,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the singular countable sentence.",
+      "options": [
+        "A tablets are one item.",
+        "A tablet is one item.",
+        "A tablet are one item.",
+        "Tablet are one items."
+      ],
+      "answers": [
+        "A tablet is one item."
+      ],
+      "evidence": "A tablet is one item.",
+      "explanation": "a tablet 表示一片；单数主语用 is。",
+      "id": "g11",
+      "evidenceOffsets": {
+        "start": 486,
+        "end": 507,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct phrase.",
+      "options": [
+        "ask for advices",
+        "ask for a advice",
+        "ask for advice",
+        "ask for an advice"
+      ],
+      "answers": [
+        "ask for advice"
+      ],
+      "evidence": "She asks for advice.",
+      "explanation": "本课 advice 为不可数名词，不用 an advice 或 advices。",
+      "id": "g12",
+      "evidenceOffsets": {
+        "start": 611,
+        "end": 631,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "阅读中文讲解及例句，再独立完成十二题并根据证据订正。",
+  "passage": "1. should / should not 表示建议或不建议，后面用动词原形，不随第三人称加 -s：She should bring the note. He should not guess the number. 这是交流安排的例句，不是诊疗建议。疑问句可将 should 提到主语前：Should I bring my card? 易错：不说 should brings，也不加 to。\n\n2. must / must not 与 have to 表示规定。You must check your name. You must not enter the staff room. The visitor has to sign the form. must not 表示禁止；do not have to 表示不必，两者意思不同。第三人称单数用 has to；must 后用原形。上面是虚构场所规则，不推断所有诊所相同。\n\n3. 本课 medicine 表示药物这一物质时作不可数名词：There is some medicine in the picture. A tablet is one item. Two tablets are in the picture. 不说 two medicines 表示两片；如果说不同种类，可根据语境使用 medicines，但不把种类等同片数。advice 通常不可数：She asks for advice.",
+  "questionCount": 12
+}

@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "purpose": "Recheck the final previously empty five-second chunk with preceding full turns; no prompt supplied.",
+  "job": {
+    "day": 11,
+    "skill": "listening",
+    "id": "day11-context-tail",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d11-listening-v111.mp3",
+    "sourceAudioSha256": "716119a3bf3eaf485a39e27d5697dd405f89b616cbe87417565267efb657550b",
+    "sourceTextSha256": "435f90bdd66ce5f762df883e16f293ca543cf9b8b030c2104e69bf1e628bd919",
+    "start": 104.911,
+    "end": 127.620083,
+    "reference": "Thanks. I'm buying some water before we board. Do you want anything? Just water. Please meet me by the stairs at ten fifty. We should allow ten minutes to get to the right carriage. All right. I'll check the platform display again before I come."
+  },
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day11-context-tail-part01.wav",
+  "wavSha256": "965763d233056cbbb10aa034c0b5ee866e47b6d922f582534b5ad599d11afcc0",
+  "wavDurationSeconds": 22.7090625,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Thanks. I'm buying some water before we board. Do you want anything? Just water. Please meet me by the stairs at 10.50. We should allow 10 minutes to get to the",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 9.18,
+        "text": "Thanks. I'm buying some water before we board. Do you want anything? Just water.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 9.18,
+        "endSeconds": 15.68,
+        "text": "Please meet me by the stairs at 10.50. We should allow 10 minutes to get to the",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 22.7090625,
+    "audioSha256": "965763d233056cbbb10aa034c0b5ee866e47b6d922f582534b5ad599d11afcc0",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 53,
+    "actualTokens": 36,
+    "edits": 19,
+    "changes": [
+      {
+        "expected": [
+          "ten",
+          "fifty"
+        ],
+        "actual": [
+          "10.50"
+        ],
+        "expectedIndex": 25,
+        "actualIndex": 25,
+        "contextBefore": [
+          "me",
+          "by",
+          "the",
+          "stairs",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "We",
+          "should",
+          "allow",
+          "ten"
+        ]
+      },
+      {
+        "expected": [
+          "ten"
+        ],
+        "actual": [
+          "10"
+        ],
+        "expectedIndex": 31,
+        "actualIndex": 30,
+        "contextBefore": [
+          "fifty",
+          ".",
+          "We",
+          "should",
+          "allow"
+        ],
+        "contextAfter": [
+          "minutes",
+          "to",
+          "get",
+          "to",
+          "the"
+        ]
+      },
+      {
+        "expected": [
+          "the",
+          "right",
+          "carriage",
+          ".",
+          "All",
+          "right",
+          ".",
+          "I'll",
+          "check"
+        ],
+        "actual": [],
+        "expectedIndex": 36,
+        "actualIndex": 35,
+        "contextBefore": [
+          "ten",
+          "minutes",
+          "to",
+          "get",
+          "to"
+        ],
+        "contextAfter": [
+          "the",
+          "platform",
+          "display",
+          "again",
+          "before"
+        ]
+      },
+      {
+        "expected": [
+          "platform",
+          "display",
+          "again",
+          "before",
+          "I",
+          "come",
+          "."
+        ],
+        "actual": [],
+        "expectedIndex": 46,
+        "actualIndex": 36,
+        "contextBefore": [
+          "right",
+          ".",
+          "I'll",
+          "check",
+          "the"
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 47,
+    "actualTokens": 33,
+    "edits": 14,
+    "changes": [
+      {
+        "expected": [
+          "the",
+          "right",
+          "carriage",
+          "all",
+          "right",
+          "i",
+          "will",
+          "check"
+        ],
+        "actual": [],
+        "expectedIndex": 32,
+        "actualIndex": 32,
+        "contextBefore": [
+          "ten",
+          "minutes",
+          "to",
+          "get",
+          "to"
+        ],
+        "contextAfter": [
+          "the",
+          "platform",
+          "display",
+          "again",
+          "before"
+        ]
+      },
+      {
+        "expected": [
+          "platform",
+          "display",
+          "again",
+          "before",
+          "i",
+          "come"
+        ],
+        "actual": [],
+        "expectedIndex": 41,
+        "actualIndex": 33,
+        "contextBefore": [
+          "right",
+          "i",
+          "will",
+          "check",
+          "the"
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "sourcePromptProvided": false
+}

@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "day": 19,
+  "materialId": "family-linked-d19-speaking-next-v1",
+  "sourceAudioSha256": "a115229e9308feec79c429f2b5f938c3dd002ad3e23039791972e5faac6afeb3",
+  "sourceTextSha256": "63e64bc034c184214559238f536da842567b67959dce1999c79e4020ace7f196",
+  "expectedText": "I would like to take an evening course at a local college. I want to learn about geography because I enjoy reading about places and people. I plan to visit the campus to ask about the curriculum and the time of each lesson. A short lecture could introduce a topic, and a seminar could give students time to discuss it. I would like to do research about my neighborhood and write a report. I work during the day, so I want to avoid studying too late. I will finish my homework in two short sessions each week. If I need help with an assignment, I will ask the teacher for a tutorial.",
+  "originalWavSha256": "453cdd761f8bc4d672f8a9a6668a236b13896648ad098fb53e321ccb241c97f7",
+  "originalDurationSeconds": 43.512,
+  "paddedWavSha256": "5c2e56cf2e844d7335b3ba6ce115e18d53b7e3a1f4abf0d8b45bb7f9bdb68e29",
+  "paddedDurationSeconds": 60.5,
+  "sourceSamplesIdentical": true,
+  "addedSamplesAllZero": true,
+  "sourcePromptProvided": false,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I would like to take an evening course at a local college. I want to learn about geography because I enjoy reading about places and people. I plan to visit the campus to ask about the curriculum and the time of each lesson. A short lecture could introduce a topic, and a seminar could give students time to discuss it. I would like to do research about my neighborhood and write a report. I work during the day, so I want to avoid studying too late. I will finish my homework in two short sessions each week. If I need help with an assignment, I will ask the teacher for a tutorial.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4,
+        "text": "I would like to take an evening course at a local college.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4,
+        "endSeconds": 10,
+        "text": "I want to learn about geography because I enjoy reading about places and people.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10,
+        "endSeconds": 16,
+        "text": "I plan to visit the campus to ask about the curriculum and the time of each lesson.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 16,
+        "endSeconds": 23,
+        "text": "A short lecture could introduce a topic, and a seminar could give students time to discuss it.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 23,
+        "endSeconds": 28,
+        "text": "I would like to do research about my neighborhood and write a report.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 28,
+        "endSeconds": 33,
+        "text": "I work during the day, so I want to avoid studying too late.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 33,
+        "endSeconds": 38,
+        "text": "I will finish my homework in two short sessions each week.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 38,
+        "endSeconds": 43,
+        "text": "If I need help with an assignment, I will ask the teacher for a tutorial.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "5c2e56cf2e844d7335b3ba6ce115e18d53b7e3a1f4abf0d8b45bb7f9bdb68e29",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 123,
+    "actualTokens": 123,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 112,
+    "actualTokens": 112,
+    "edits": 0,
+    "changes": []
+  }
+}

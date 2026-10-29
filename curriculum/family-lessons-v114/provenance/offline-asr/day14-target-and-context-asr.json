@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "job": {
+    "day": 14,
+    "skill": "listening",
+    "id": "day14-target-and",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d14-listening-next-v1.mp3",
+    "sourceAudioSha256": "8058b4fa9668a5c1c8c26aef3c132a46a8584812bf59952ad238f60474cd73c5",
+    "sourceTextSha256": "fd3cbe45cf4560992ed0c538669b793680b2a5fa5a58e9b0bd6faf641b6e9e99",
+    "start": 104.22445833333333,
+    "end": 115.256542,
+    "reference": "Do you have to decide today? No. I can take the information home and compare the rooms, any other bill and the travel time before replying.",
+    "focus": "compare the rooms, any other bill and the travel time"
+  },
+  "originalWavSha256": "2ecb65ec6ba0831a75c0f844ada9fbd899d91e33f7986a7ed2241ba6dfb3662f",
+  "paddedWavSha256": "36b340cfcf65e92d0b746fddf4e6165510137c76402fd15f8bffd88146c82a1a",
+  "sourceSamplesIdentical": true,
+  "appendedSamplesAllZero": true,
+  "paddedDurationSeconds": 30.5,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Do you have to decide today? No. I can take the information home and compare the rooms, any other bill in the travel time before replying.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 3.2,
+        "text": "Do you have to decide today?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 3.2,
+        "endSeconds": 4.96,
+        "text": "No.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 4.96,
+        "endSeconds": 9.92,
+        "text": "I can take the information home and compare the rooms, any other bill in the travel time",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 9.92,
+        "endSeconds": 11,
+        "text": "before replying.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 30.5,
+    "audioSha256": "36b340cfcf65e92d0b746fddf4e6165510137c76402fd15f8bffd88146c82a1a",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 30,
+    "actualTokens": 30,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "and"
+        ],
+        "actual": [
+          "in"
+        ],
+        "expectedIndex": 23,
+        "actualIndex": 23,
+        "contextBefore": [
+          "rooms",
+          ",",
+          "any",
+          "other",
+          "bill"
+        ],
+        "contextAfter": [
+          "the",
+          "travel",
+          "time",
+          "before",
+          "replying"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 26,
+    "actualTokens": 26,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "and"
+        ],
+        "actual": [
+          "in"
+        ],
+        "expectedIndex": 20,
+        "actualIndex": 20,
+        "contextBefore": [
+          "the",
+          "rooms",
+          "any",
+          "other",
+          "bill"
+        ],
+        "contextAfter": [
+          "the",
+          "travel",
+          "time",
+          "before",
+          "replying"
+        ]
+      }
+    ]
+  },
+  "sourcePromptProvided": false
+}

@@ -1,0 +1,367 @@
+{
+  "id": "family-linked-d11-grammar-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 11,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Look at Owen now. He ____ a suitcase.",
+      "options": [
+        "is pulling",
+        "is pull",
+        "are pulling",
+        "pull"
+      ],
+      "answers": [
+        "is pulling"
+      ],
+      "evidence": "Owen is pulling a suitcase.",
+      "explanation": "now 和 Look 表明眼前动作；he 对应 is，再接 pulling。",
+      "id": "g01",
+      "evidenceOffsets": {
+        "start": 31,
+        "end": 58,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "The friends ____ on the platform right now.",
+      "options": [
+        "are wait",
+        "is waiting",
+        "waits",
+        "are waiting"
+      ],
+      "answers": [
+        "are waiting"
+      ],
+      "evidence": "They are waiting on the platform.",
+      "explanation": "复数主语 friends 用 are，动作 wait 变为 waiting。",
+      "id": "g02",
+      "evidenceOffsets": {
+        "start": 99,
+        "end": 132,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "They are not ready to get on. Choose the correct sentence.",
+      "options": [
+        "They not are boarding yet.",
+        "They do not boarding yet.",
+        "They are not boarding yet.",
+        "They are not board yet."
+      ],
+      "answers": [
+        "They are not boarding yet."
+      ],
+      "evidence": "They are not boarding yet.",
+      "explanation": "进行时否定为 be + not + -ing，不加 do。",
+      "id": "g03",
+      "evidenceOffsets": {
+        "start": 149,
+        "end": 175,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the question about an action happening now.",
+      "options": [
+        "Do they are waiting here?",
+        "Are they waiting here?",
+        "They are wait here?",
+        "Are they wait here?"
+      ],
+      "answers": [
+        "Are they waiting here?"
+      ],
+      "evidence": "Are they waiting here?",
+      "explanation": "把 are 放到 they 前；不写 Do they are。",
+      "id": "g04",
+      "evidenceOffsets": {
+        "start": 189,
+        "end": 211,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "The commuter usually ____ this way every weekday.",
+      "options": [
+        "is travel",
+        "traveling",
+        "travels",
+        "travel"
+      ],
+      "answers": [
+        "travels"
+      ],
+      "evidence": "The commuter travels every weekday.",
+      "explanation": "日常习惯用一般现在时；commuter 单数，动词加 -s。",
+      "id": "g05",
+      "evidenceOffsets": {
+        "start": 236,
+        "end": 271,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Today, instead of going to work, she ____ her sister.",
+      "options": [
+        "is visiting",
+        "visiting",
+        "are visiting",
+        "is visit"
+      ],
+      "answers": [
+        "is visiting"
+      ],
+      "evidence": "Today she is visiting her sister.",
+      "explanation": "这里描述今天的临时行程；she 与 is visiting 搭配。",
+      "id": "g06",
+      "evidenceOffsets": {
+        "start": 331,
+        "end": 364,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "I ____ by train every Monday.",
+      "options": [
+        "am travel",
+        "travel",
+        "traveling",
+        "travels"
+      ],
+      "answers": [
+        "travel"
+      ],
+      "evidence": "I travel on Mondays.",
+      "explanation": "I 作主语的一般现在时用原形 travel，不加 -s。",
+      "id": "g07",
+      "evidenceOffsets": {
+        "start": 272,
+        "end": 292,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "We have arranged tomorrow’s meeting. Our friend ____ us at the station tomorrow.",
+      "options": [
+        "are meeting",
+        "meeting",
+        "is meeting",
+        "is meet"
+      ],
+      "answers": [
+        "is meeting"
+      ],
+      "evidence": "Our friend is meeting us at the station tomorrow.",
+      "explanation": "双方已约定的未来安排可用现在进行时；tomorrow 不代表这句只能用 will。",
+      "id": "g08",
+      "evidenceOffsets": {
+        "start": 407,
+        "end": 456,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "According to the published timetable, the service ____ at eleven.",
+      "options": [
+        "leaves",
+        "leave",
+        "leaving",
+        "is leave"
+      ],
+      "answers": [
+        "leaves"
+      ],
+      "evidence": "The service leaves at eleven.",
+      "explanation": "固定时刻表用一般现在时，service 是单数，leaves 加 -s。",
+      "id": "g09",
+      "evidenceOffsets": {
+        "start": 532,
+        "end": 561,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct sentence about the train’s timetable.",
+      "options": [
+        "The train is arrive at twelve ten.",
+        "The train arriving at twelve ten.",
+        "The train arrive at twelve ten.",
+        "The train arrives at twelve ten."
+      ],
+      "answers": [
+        "The train arrives at twelve ten."
+      ],
+      "evidence": "The train arrives at twelve ten.",
+      "explanation": "train 单数，一般现在时 arrives；不能漏主谓一致或混入 be。",
+      "id": "g10",
+      "evidenceOffsets": {
+        "start": 562,
+        "end": 594,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "The train ____ late at the moment.",
+      "options": [
+        "are running",
+        "running is",
+        "is running",
+        "is run"
+      ],
+      "answers": [
+        "is running"
+      ],
+      "evidence": "The train is running late.",
+      "explanation": "眼前状态用 is running late，run 的 -ing 双写 n。",
+      "id": "g11",
+      "evidenceOffsets": {
+        "start": 623,
+        "end": 649,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct -ing form of make.",
+      "options": [
+        "makking",
+        "makesing",
+        "makeing",
+        "making"
+      ],
+      "answers": [
+        "making"
+      ],
+      "evidence": "make → making",
+      "explanation": "make 末尾不发音的 e 去掉，再加 ing。",
+      "id": "g12",
+      "evidenceOffsets": {
+        "start": 686,
+        "end": 699,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Owen is ____ in an unreserved seat now.",
+      "options": [
+        "sitting",
+        "sit",
+        "siting",
+        "sits"
+      ],
+      "answers": [
+        "sitting"
+      ],
+      "evidence": "sit → sitting",
+      "explanation": "sit 的短元音后单辅音要双写 t，再加 ing。",
+      "id": "g13",
+      "evidenceOffsets": {
+        "start": 709,
+        "end": 722,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the normal expression for a fact you know.",
+      "options": [
+        "I knowing the platform.",
+        "I know the platform.",
+        "I knows the platform.",
+        "I am knowing the platform."
+      ],
+      "answers": [
+        "I know the platform."
+      ],
+      "evidence": "I know the platform.",
+      "explanation": "know 在这里表示知道这一状态，通常不用进行时。",
+      "id": "g14",
+      "evidenceOffsets": {
+        "start": 800,
+        "end": 820,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Our luggage ____ beside the seat.",
+      "options": [
+        "have",
+        "is",
+        "are",
+        "be"
+      ],
+      "answers": [
+        "is"
+      ],
+      "evidence": "Our luggage is here",
+      "explanation": "luggage 不可数，按单数一致用 is，不能因中文“行李很多”改为 are。",
+      "id": "g15",
+      "evidenceOffsets": {
+        "start": 876,
+        "end": 895,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct expression for three separate items of luggage.",
+      "options": [
+        "three piece of luggage",
+        "three luggages",
+        "a luggage three",
+        "three pieces of luggage"
+      ],
+      "answers": [
+        "three pieces of luggage"
+      ],
+      "evidence": "three pieces of luggage",
+      "explanation": "用可数的 pieces 表示件数；luggage 本身不加 -s。",
+      "id": "g16",
+      "evidenceOffsets": {
+        "start": 931,
+        "end": 954,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "title": "正在发生、日常习惯与已安排的行程",
+  "estimatedMinutes": 40,
+  "instructions": "先比较三个时间含义，再独立选答；订正时说清主语、时间线索和动词形式。",
+  "passage": "1. 正在发生：am / is / are + 动词-ing。Owen is pulling a suitcase. Jade is checking the display. 主语复数用 are：They are waiting on the platform. 否定把 not 放在 be 后：They are not boarding yet. 问句把 be 提到主语前：Are they waiting here? 不再添加 do。\n\n2. 日常习惯用一般现在时：The commuter travels every weekday. I travel on Mondays. 第三人称单数加 -s；today / now 发生的临时活动常用现在进行时：Today she is visiting her sister. 注意判断句意，不能仅凭一个时间词套公式。\n\n3. 已确定的未来安排也可用现在进行时：Our friend is meeting us at the station tomorrow. 这里不是说她此刻已在见我们，而是双方约好的安排。与前课 going to 表示意图相联系；本课区分安排与眼前动作。\n\n4. 列车时刻表常用一般现在时：The service leaves at eleven. The train arrives at twelve ten. 说当前延误状态则可用 is running late。 The train is running late. 时刻表时间和眼前动作不同。\n\n5. 拼写：wait → waiting；make → making（去不发音的 e）；sit → sitting（双写末尾辅音）。不要写 is wait、is makes 或 is siting。\n\n6. know、need 等表示状态的动词在本课含义下用一般现在时：I know the platform. We need a valid ticket. 不写 I am knowing。luggage 是不可数名词：Our luggage is here，不能写 three luggages；可说 three bags 或 three pieces of luggage。",
+  "questionCount": 16,
+  "practiceOnly": true
+}

@@ -1,0 +1,859 @@
+{
+  "schema": 1,
+  "status": "root-ai-lexical-review-not-human",
+  "scope": "Two flagged derivative headwords in days11–20. Counts use distinct dictionary headwords, not word families. No spelling/plural variants added as new words.",
+  "collisionReport": {
+    "status": "semantic-review-required",
+    "gatePassed": false,
+    "scope": "Lexical collision screen only; dictionary-reference metadata is not checked against the live dictionary and does not approve a source, meaning, audio, content, or release.",
+    "courseOrderPolicy": "Earlier published/legacy lessons and all other candidate units can block the screen. Same/later legacy lessons are future review leads, not evidence of past learning. Actual learner history, including skipped-ahead lessons, is checked separately at runtime.",
+    "limitations": "The pinned project form index and spelling variants do not cover every possible English form, inflection, homograph, or meaning; an empty collision list is not a proof of lexical or historical uniqueness.",
+    "candidateCount": 300,
+    "priorEntryCount": 716,
+    "extensionCount": 24,
+    "counts": {
+      "invalid": 0,
+      "definiteRepeats": 0,
+      "semanticReviewNeeded": 2,
+      "plannedReviewLeads": 9,
+      "plannedSameDay": 0,
+      "plannedLater": 9
+    },
+    "invalid": [],
+    "collisions": [
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-2-vocabulary",
+          "day": 16,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-2",
+          "day": 16,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-3-vocabulary",
+          "day": 17,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-3",
+          "day": 17,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-5-vocabulary",
+          "day": 19,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-5",
+          "day": 19,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-6-vocabulary",
+          "day": 20,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 12,
+          "word": "nurse",
+          "canonicalId": "essential:nurse",
+          "meaning": "护士",
+          "pos": "n.",
+          "quote": "In the waiting room, Lena reads a poster about how to prepare for a conversation with a nurse.",
+          "sourceMaterialId": "family-linked-d12-reading-next-v1",
+          "sourceTextSha256": "32b5d3934be7a7d52ad7234a1c2e21c2cd77de2997f924d38024aa09cfa0e8ec",
+          "start": 847,
+          "end": 852,
+          "quoteStart": 759,
+          "quoteEnd": 853
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-read-6",
+          "day": 20,
+          "word": "nurse",
+          "meaning": "护士",
+          "quote": "My mother is a nurse."
+        },
+        "sharedHeads": [
+          "nurse"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "planned-review",
+        "reason": "same-or-later-prior-course-not-prior-learning",
+        "courseDayRelation": "later",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 14,
+          "word": "kitchen",
+          "canonicalId": "essential:kitchen",
+          "meaning": "厨房",
+          "pos": "n.",
+          "quote": "Its bedroom is smaller than the one on Elm Street, but its kitchen is larger.",
+          "sourceMaterialId": "family-linked-d14-reading-next-v1",
+          "sourceTextSha256": "1286d89abfdaba870daaf73639d82ba88cfa2e261bd3a42093dc909ed822a9b4",
+          "start": 448,
+          "end": 455,
+          "quoteStart": 389,
+          "quoteEnd": 466
+        },
+        "prior": {
+          "source": "legacy-scheduled/w03-listen-3",
+          "day": 17,
+          "word": "kitchen",
+          "meaning": "厨房",
+          "quote": "They are in the kitchen."
+        },
+        "sharedHeads": [
+          "kitchen"
+        ],
+        "dictionaryReview": null
+      },
+      {
+        "classification": "semantic-review-needed",
+        "reason": "extension-surface-is-indexed-core-inflection",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 14,
+          "word": "heating",
+          "canonicalId": "extension:heating",
+          "meaning": "供暖系统；供暖",
+          "pos": "n.",
+          "quote": "Ben asks how the heating works and whether electricity and gas are included.",
+          "sourceMaterialId": "family-linked-d14-reading-next-v1",
+          "sourceTextSha256": "1286d89abfdaba870daaf73639d82ba88cfa2e261bd3a42093dc909ed822a9b4",
+          "start": 1237,
+          "end": 1244,
+          "quoteStart": 1220,
+          "quoteEnd": 1296
+        },
+        "prior": {
+          "source": "8000-core-index",
+          "word": "heat",
+          "canonicalId": "essential:heat"
+        },
+        "indexedHeads": [
+          "heat"
+        ],
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/heating",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/heating",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "classification": "semantic-review-needed",
+        "reason": "extension-surface-is-indexed-core-inflection",
+        "candidate": {
+          "source": "candidate-family",
+          "day": 16,
+          "word": "freezing",
+          "canonicalId": "extension:freezing",
+          "meaning": "极冷的",
+          "pos": "adj.",
+          "quote": "On a freezing night, volunteers sometimes move young plants into a sheltered room.",
+          "sourceMaterialId": "family-linked-d16-reading-next-v1",
+          "sourceTextSha256": "196252b4bcd1cab70c7e53177958a4e19973c2d14638d9c8a7a2b4789decc20e",
+          "start": 1556,
+          "end": 1564,
+          "quoteStart": 1551,
+          "quoteEnd": 1633
+        },
+        "prior": {
+          "source": "8000-core-index",
+          "word": "freeze",
+          "canonicalId": "essential:freeze"
+        },
+        "indexedHeads": [
+          "freeze"
+        ],
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/freezing",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/freezing",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "day": 13,
+        "word": "kilogram",
+        "canonicalId": "extension:kilogram",
+        "meaning": "千克",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/kilogram",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/kilogram",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 14,
+        "word": "rent",
+        "canonicalId": "extension:rent",
+        "meaning": "租金",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/rent",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/rent",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 14,
+        "word": "heating",
+        "canonicalId": "extension:heating",
+        "meaning": "供暖系统；供暖",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/heating",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/heating",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 16,
+        "word": "cloudy",
+        "canonicalId": "extension:cloudy",
+        "meaning": "多云的",
+        "pos": "adj.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/cloudy",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/cloudy",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 16,
+        "word": "snowy",
+        "canonicalId": "extension:snowy",
+        "meaning": "下雪的",
+        "pos": "adj.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/snowy",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/snowy",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 16,
+        "word": "freezing",
+        "canonicalId": "extension:freezing",
+        "meaning": "极冷的",
+        "pos": "adj.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/freezing",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/freezing",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 16,
+        "word": "Celsius",
+        "canonicalId": "extension:celsius",
+        "meaning": "摄氏的（温标）",
+        "pos": "adj.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/celsius",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/celsius",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 17,
+        "word": "volleyball",
+        "canonicalId": "extension:volleyball",
+        "meaning": "排球",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/volleyball",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/volleyball",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 17,
+        "word": "aerobics",
+        "canonicalId": "extension:aerobics",
+        "meaning": "有氧健身操",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/aerobics",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/aerobics",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 17,
+        "word": "yoga",
+        "canonicalId": "extension:yoga",
+        "meaning": "瑜伽",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/yoga",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/yoga",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "website",
+        "canonicalId": "extension:website",
+        "meaning": "网站",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/website",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/website",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "email",
+        "canonicalId": "extension:email",
+        "meaning": "电子邮件",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/email",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/email",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "password",
+        "canonicalId": "extension:password",
+        "meaning": "密码",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/password",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/password",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "username",
+        "canonicalId": "extension:username",
+        "meaning": "用户名",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/username",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/username",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "login",
+        "canonicalId": "extension:login",
+        "meaning": "登录",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/login",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/login",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "logout",
+        "canonicalId": "extension:logout",
+        "meaning": "退出登录",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/logout",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/logout",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "download",
+        "canonicalId": "extension:download",
+        "meaning": "下载",
+        "pos": "v.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/download",
+          "partOfSpeech": "v.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/download",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "upload",
+        "canonicalId": "extension:upload",
+        "meaning": "上传",
+        "pos": "v.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/upload",
+          "partOfSpeech": "v.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/upload",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "browser",
+        "canonicalId": "extension:browser",
+        "meaning": "浏览器",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/browser",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/browser",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "online",
+        "canonicalId": "extension:online",
+        "meaning": "在线的",
+        "pos": "adj.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/online",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/online",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 18,
+        "word": "offline",
+        "canonicalId": "extension:offline",
+        "meaning": "离线的",
+        "pos": "adj.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/offline",
+          "partOfSpeech": "adj.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/offline",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 19,
+        "word": "tutorial",
+        "canonicalId": "extension:tutorial",
+        "meaning": "辅导课",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/tutorial",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/tutorial",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 19,
+        "word": "algebra",
+        "canonicalId": "extension:algebra",
+        "meaning": "代数",
+        "pos": "n.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/algebra",
+          "partOfSpeech": "n.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/algebra",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      },
+      {
+        "day": 20,
+        "word": "reuse",
+        "canonicalId": "extension:reuse",
+        "meaning": "重复使用",
+        "pos": "v.",
+        "dictionaryReview": {
+          "status": "dictionary-reference-checked",
+          "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/reuse",
+          "partOfSpeech": "v.",
+          "checkedOn": "2026-10-29",
+          "ipaReferenceSourceUrls": [
+            "https://dictionary.cambridge.org/us/dictionary/english/reuse",
+            "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict"
+          ],
+          "audioListeningReview": "pending"
+        }
+      }
+    ],
+    "formIndexSha256": "b6c722d087adc585f4b030de9a54bfd11cd5a0f37c0f60d39a93d6a09910e644",
+    "corpus": "Legacy scheduled/captured/expansion vocabulary days 2–20; published family days 4–10; candidate family days 11–20."
+  },
+  "decisions": [
+    {
+      "day": 14,
+      "word": "heating",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/heating",
+      "meaning": "供暖系统",
+      "partOfSpeech": "n.",
+      "decision": "retain-distinct-dictionary-headword",
+      "reason": "这里是词典独立列出的不可数名词，表示供暖系统，并非正在加热的动词形式。与 heat 有词族和同义关系；美式在该系统义常用 heat。两者不算两个核心词，heating 仅作为扩展词头，已学过 heating 时不再作为新词。",
+      "usageNote": "heating 的该系统义主要见于英式；美式常用 heat。课程保留这个雅思生活场景词，并提供美式语音示例。",
+      "canonicalId": "extension:heating",
+      "sourceDraft": "curriculum/linked-course-next/day14.json",
+      "sourceDraftSha256": "51d24ff555284aebb0f0f74d82d738d920273603dac7de637b1dcb64aa47c08d",
+      "targetSha256": "bd4483eed9abd974aef8415213df69892c1297a9c01066950aa40b5839f87013",
+      "quote": "Ben asks how the heating works and whether electricity and gas are included.",
+      "sourceTextSha256": "1286d89abfdaba870daaf73639d82ba88cfa2e261bd3a42093dc909ed822a9b4",
+      "checkedOn": "2026-10-29",
+      "evidenceMethod": "Cambridge official dictionary search-index text; direct page fetch returned HTTP403; definitions paraphrased, no long dictionary text copied."
+    },
+    {
+      "day": 16,
+      "word": "freezing",
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/freezing?topic=cold",
+      "meaning": "极冷的",
+      "partOfSpeech": "adj.",
+      "decision": "retain-distinct-dictionary-headword",
+      "reason": "这里是词典独立列出的形容词，表示天气或环境极冷，不是把 freeze 动词的进行时直接当新词。仅计扩展词头，不计入8000核心词进度；已有该词的真实学习原稿仍由运行时排除。",
+      "canonicalId": "extension:freezing",
+      "sourceDraft": "curriculum/linked-course-next/day16.json",
+      "sourceDraftSha256": "6eea84d36d223fd773febe6a1ba0e25207cc2fac6ca9ed2431c183bcfb35f715",
+      "targetSha256": "aed45c0eb84bfd011e4b028385468c560e5097914e9e591757ec3c61524f9b9b",
+      "quote": "On a freezing night, volunteers sometimes move young plants into a sheltered room.",
+      "sourceTextSha256": "196252b4bcd1cab70c7e53177958a4e19973c2d14638d9c8a7a2b4789decc20e",
+      "checkedOn": "2026-10-29",
+      "evidenceMethod": "Cambridge official dictionary search-index text; direct page fetch returned HTTP403; definitions paraphrased, no long dictionary text copied."
+    }
+  ],
+  "releaseApproval": false,
+  "limitations": [
+    "This addresses word identity and contextual meaning only. No audio pronunciation, learner mastery or IELTS level certified.",
+    "Legacy future-course repetitions are review opportunities, not extra new-word credit. Actual learner history still takes precedence."
+  ]
+}

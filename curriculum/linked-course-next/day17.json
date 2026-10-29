@@ -2111,7 +2111,7 @@
         {
           "id": "g07",
           "type": "single",
-          "prompt": "She has not decided ____.",
+          "prompt": "Choose the usual sentence-final word meaning “up to now”: She has not decided ____.",
           "options": [
             "already",
             "ever",
@@ -2195,7 +2195,7 @@
         {
           "id": "g11",
           "type": "single",
-          "prompt": "Choose the past participle for the experience “She has ____ to the gym.”",
+          "prompt": "She is at the gym now. Choose the past participle: “She has ____ to the gym.”",
           "options": [
             "going",
             "gone",
@@ -2205,13 +2205,13 @@
           "answers": [
             "gone"
           ],
-          "evidence": "go → gone",
+          "evidence": "She has gone to the gym.",
           "evidenceOffsets": {
-            "start": 630,
-            "end": 639,
+            "start": 735,
+            "end": 759,
             "unit": "UTF-16-code-unit"
           },
-          "explanation": "go 的过去分词是 gone；has 后使用过去分词。"
+          "explanation": "go 的过去分词是 gone；has gone to 表示去了那里，通常尚未回来。若谈去过且已回来，用 has been to。"
         },
         {
           "id": "g12",
@@ -2237,7 +2237,7 @@
       ],
       "instructions": "先阅读说明与例句，再作答并根据解释订正。",
       "estimatedMinutes": 40,
-      "passage": "1. 现在完成时可谈到目前为止的经历，不说具体已结束的时间：I have played tennis. She has tried yoga. 结构是 have / has + 过去分词；he / she / it 用 has。一般疑问句把 have / has 提到主语前：Have you ever played tennis? 肯定回答 Yes, I have. 不用 did。\n\n2. ever 常用于问“曾经”；never 表示从未，本身已有否定意义：I have never played volleyball. 不再加 not。already 常放在 have / has 后：He has already tried basketball. yet 常放在否定句或疑问句末：She has not decided yet. Has Sol decided yet? 这些词的位置有常见用法，但也有其他表达方式。\n\n3. 过去具体结束的时间用一般过去时：We borrowed rackets last year. 不写 We have borrowed rackets last year。经历问题可以先问 Have you ever played tennis? 再用 I played tennis last year. 提供已结束时间。I have played tennis. I played it last year.注意过去分词：go → gone、do → done 是不规则形式；play → played 是规则形式。",
+      "passage": "1. 现在完成时可谈到目前为止的经历，不说具体已结束的时间：I have played tennis. She has tried yoga. 结构是 have / has + 过去分词；he / she / it 用 has。一般疑问句把 have / has 提到主语前：Have you ever played tennis? 肯定回答 Yes, I have. 不用 did。\n\n2. ever 常用于问“曾经”；never 表示从未，本身已有否定意义：I have never played volleyball. 不再加 not。already 常放在 have / has 后：He has already tried basketball. yet 常放在否定句或疑问句末：She has not decided yet. Has Sol decided yet? 这些词的位置有常见用法，但也有其他表达方式。\n\n3. 过去具体结束的时间用一般过去时：We borrowed rackets last year. 不写 We have borrowed rackets last year。经历问题可以先问 Have you ever played tennis? 再用 I played tennis last year. 提供已结束时间。I have played tennis. I played it last year.注意过去分词：go → gone、do → done 是不规则形式；play → played 是规则形式。\n\n4. been 与 gone 的含义不同：She has been to the gym. 表示她去过并已回来；She has gone to the gym. 通常表示她去了，现在仍在那儿或途中。谈过去经历时，不要把 have gone 一律当作 have been。",
       "questionCount": 12
     },
     {

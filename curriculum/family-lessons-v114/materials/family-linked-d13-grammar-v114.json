@@ -1,0 +1,282 @@
+{
+  "id": "family-linked-d13-grammar-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 13,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "数量问句与可数、不可数名词",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Ask about the amount of oil.",
+      "options": [
+        "How much oil do we need?",
+        "How many a oil do we need?",
+        "How many oil do we need?",
+        "How much oils do we needs?"
+      ],
+      "answers": [
+        "How much oil do we need?"
+      ],
+      "evidence": "How much oil do we need?",
+      "explanation": "oil 此处不可数，用 how much。",
+      "id": "g01",
+      "evidenceOffsets": {
+        "start": 23,
+        "end": 47,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Ask about the number of carrots.",
+      "options": [
+        "How many carrot do we needs?",
+        "How much carrots do we need?",
+        "How many a carrots do we need?",
+        "How many carrots do we need?"
+      ],
+      "answers": [
+        "How many carrots do we need?"
+      ],
+      "evidence": "How many carrots do we need?",
+      "explanation": "carrots 是可数复数，用 how many。",
+      "id": "g02",
+      "evidenceOffsets": {
+        "start": 67,
+        "end": 95,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Ask about a price.",
+      "options": [
+        "How much does it costs?",
+        "How much do it costs?",
+        "How much does it cost?",
+        "How many does it cost?"
+      ],
+      "answers": [
+        "How much does it cost?"
+      ],
+      "evidence": "How much does it cost?",
+      "explanation": "问价格可用 How much，does 后动词为原形 cost。",
+      "id": "g03",
+      "evidenceOffsets": {
+        "start": 102,
+        "end": 124,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the phrase for some carrots.",
+      "options": [
+        "a few carrot",
+        "a few carrots",
+        "a much carrots",
+        "a little carrots"
+      ],
+      "answers": [
+        "a few carrots"
+      ],
+      "evidence": "We have a few carrots.",
+      "explanation": "a few 后接可数复数 carrots。",
+      "id": "g04",
+      "evidenceOffsets": {
+        "start": 188,
+        "end": 210,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the phrase for some oil.",
+      "options": [
+        "a little oils",
+        "a many oil",
+        "a few oil",
+        "a little oil"
+      ],
+      "answers": [
+        "a little oil"
+      ],
+      "evidence": "We have a little oil.",
+      "explanation": "oil 在此不可数，a little 修饰不可数名词。",
+      "id": "g05",
+      "evidenceOffsets": {
+        "start": 262,
+        "end": 283,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct sentence about bags.",
+      "options": [
+        "We do not has many bags.",
+        "We do not have much bags.",
+        "We do not have many bag.",
+        "We do not have many bags."
+      ],
+      "answers": [
+        "We do not have many bags."
+      ],
+      "evidence": "We do not have many bags.",
+      "explanation": "many 修饰可数复数 bags。",
+      "id": "g06",
+      "evidenceOffsets": {
+        "start": 211,
+        "end": 236,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct sentence about water.",
+      "options": [
+        "We do not have much waters.",
+        "We do not have much water.",
+        "We do not have many water.",
+        "We do not has much water."
+      ],
+      "answers": [
+        "We do not have much water."
+      ],
+      "evidence": "We do not have much water.",
+      "explanation": "water 不可数，用 much；do not 后用 have。",
+      "id": "g07",
+      "evidenceOffsets": {
+        "start": 284,
+        "end": 310,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct plural container phrase.",
+      "options": [
+        "two packets of beans",
+        "two packets of beanes",
+        "two a packet of beans",
+        "two packet of beans"
+      ],
+      "answers": [
+        "two packets of beans"
+      ],
+      "evidence": "We need two packets of beans.",
+      "explanation": "two 后使用可数单位 packets 的复数。",
+      "id": "g08",
+      "evidenceOffsets": {
+        "start": 402,
+        "end": 431,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct singular quantity.",
+      "options": [
+        "one kilogram of rice",
+        "one kilograms of rice",
+        "one kilogram of rices",
+        "one a kilograms rice"
+      ],
+      "answers": [
+        "one kilogram of rice"
+      ],
+      "evidence": "The packet has one kilogram of rice.",
+      "explanation": "one 后用单数 kilogram；rice 作为物质不可数。",
+      "id": "g09",
+      "evidenceOffsets": {
+        "start": 432,
+        "end": 468,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct phrase for oil.",
+      "options": [
+        "one liter of oils",
+        "one a liter of oil",
+        "one liter of oil",
+        "one liters of oil"
+      ],
+      "answers": [
+        "one liter of oil"
+      ],
+      "evidence": "There is one liter of oil.",
+      "explanation": "one liter 是单数容量单位，oil 不加 s。",
+      "id": "g10",
+      "evidenceOffsets": {
+        "start": 469,
+        "end": 495,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which sentence uses a few correctly?",
+      "options": [
+        "We have a few oil.",
+        "We have a few rice.",
+        "We have a few carrots.",
+        "We have a few water."
+      ],
+      "answers": [
+        "We have a few carrots."
+      ],
+      "evidence": "We have a few carrots.",
+      "explanation": "a few 后跟可数复数。",
+      "id": "g11",
+      "evidenceOffsets": {
+        "start": 188,
+        "end": 210,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which sentence uses a little correctly?",
+      "options": [
+        "We have a little packets.",
+        "We have a little oil.",
+        "We have a little carrots.",
+        "We have a little bags."
+      ],
+      "answers": [
+        "We have a little oil."
+      ],
+      "evidence": "We have a little oil.",
+      "explanation": "a little 后跟不可数 oil。",
+      "id": "g12",
+      "evidenceOffsets": {
+        "start": 262,
+        "end": 283,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "阅读中文讲解及例句，再独立完成十二题并根据证据订正。",
+  "passage": "1. 对不可数名词问数量用 how much：How much oil do we need? 对可数复数问数量用 how many：How many carrots do we need? 问价格可说 How much does it cost? 注意 does 后用动词原形 cost，不写 does it costs。\n\n2. many / a few 与可数复数搭配：We have a few carrots. We do not have many bags. much / a little 与不可数名词搭配：We have a little oil. We do not have much water. a few 和 a little 都表示有一些，但所接名词类型不同；不能说 a few oil 或 a little carrots。\n\n3. 不可数物品可借可数容器或单位表达数量：We need two packets of beans. The packet has one kilogram of rice. There is one liter of oil. packets、kilogram 和 liter 是可数单位；rice 和 oil 在这些句子中不可数。别在 one 后把单位写成复数，也不要把 two packet 当作正确复数。",
+  "questionCount": 12
+}

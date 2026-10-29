@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "day": 16,
+  "skill": "listening",
+  "id": "day16-listening",
+  "materialId": "family-linked-d16-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 53.786833333333334,
+  "audioEndSeconds": 109.92208333333333,
+  "sourceAudioSha256": "b0ab6f3eb0fd4c1729862d39f7949100c0ab5eab5d7a5d2e896137450402aa24",
+  "sourceTextSha256": "8c2b1cac00eda5b362bae5449f28aae8f8267c97d5ebf12cb9e44bce3309cc59",
+  "expectedText": "I will bring an umbrella and a cloth for the food. The cafe has room for eight people, and our group has only six. What about a storm? Last summer we heard thunder during a walk, and then we saw lightning. I do not want anyone to stay outside in that situation. If we hear thunder or see lightning, we will go straight inside. We can ask the cafe staff when it is safe to leave. The lake looks very different in each season. In winter, fog sometimes hides the other side. I remember one cold, snowy visit when the ground was freezing. I prefer spring. The climate here is mild, and even a windy day can feel pleasant. Today the humidity is high, though, so let us take plenty of water.",
+  "expectedTextSha256": "5f5297b9839b22ef377b8786a9ab4a718d9d77bf4ca370c47a44b451c0af3cd6",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day16-listening-part02.wav",
+  "wavSha256": "4619f7729893023dbd29aef92f6a89dc0e5e6318e0985ef1af2d1ce554e1fe1b",
+  "wavDurationSeconds": 56.13525,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I will bring an umbrella and a cloth for the food. The cafe has room for eight people, and our group has only six. What about a storm? Last summer we heard thunder during a walk, and then we saw lightning. I do not want anyone to stay outside in that situation. If we hear thunder or see lightning, we will go straight inside. We can ask the cafe staff when it is safe to leave. The lake looks very different in each season. In winter, fog sometimes hides the other side. I remember one cold, snowy visit when the ground was freezing. I prefer spring. The climate here is mild, and even a windy day can feel pleasant. Today the humidity is high though, so let us take plenty of water.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.6,
+        "text": "I will bring an umbrella and a cloth for the food.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.6,
+        "endSeconds": 9.76,
+        "text": "The cafe has room for eight people, and our group has only six.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 9.76,
+        "endSeconds": 12.22,
+        "text": "What about a storm?",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.22,
+        "endSeconds": 17.04,
+        "text": "Last summer we heard thunder during a walk, and then we saw lightning.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 17.04,
+        "endSeconds": 21.82,
+        "text": "I do not want anyone to stay outside in that situation.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21.82,
+        "endSeconds": 26.52,
+        "text": "If we hear thunder or see lightning, we will go straight inside.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 26.52,
+        "endSeconds": 30.82,
+        "text": "We can ask the cafe staff when it is safe to leave.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 30.82,
+        "endSeconds": 34.48,
+        "text": "The lake looks very different in each season.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 34.48,
+        "endSeconds": 39,
+        "text": "In winter, fog sometimes hides the other side.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 39,
+        "endSeconds": 44.12,
+        "text": "I remember one cold, snowy visit when the ground was freezing.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 44.12,
+        "endSeconds": 46.4,
+        "text": "I prefer spring.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 46.4,
+        "endSeconds": 51.52,
+        "text": "The climate here is mild, and even a windy day can feel pleasant.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 51.52,
+        "endSeconds": 55.56,
+        "text": "Today the humidity is high though, so let us take plenty of water.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 56.13525,
+    "audioSha256": "4619f7729893023dbd29aef92f6a89dc0e5e6318e0985ef1af2d1ce554e1fe1b",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 153,
+    "actualTokens": 152,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          ","
+        ],
+        "actual": [],
+        "expectedIndex": 142,
+        "actualIndex": 142,
+        "contextBefore": [
+          "Today",
+          "the",
+          "humidity",
+          "is",
+          "high"
+        ],
+        "contextAfter": [
+          "though",
+          ",",
+          "so",
+          "let",
+          "us"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 132,
+    "actualTokens": 132,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

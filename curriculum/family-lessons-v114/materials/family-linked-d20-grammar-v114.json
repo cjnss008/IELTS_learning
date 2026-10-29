@@ -1,0 +1,283 @@
+{
+  "id": "family-linked-d20-grammar-v114",
+  "version": "1",
+  "week": 3,
+  "courseDay": 20,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "一般现在时被动语态与过程说明",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Complete the passive: Plastic bottles ____ placed in a box.",
+      "options": [
+        "are",
+        "is",
+        "does",
+        "am"
+      ],
+      "answers": [
+        "are"
+      ],
+      "evidence": "Plastic bottles are placed in a box.",
+      "evidenceOffsets": {
+        "start": 43,
+        "end": 79,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "bottles 是复数，使用 are + 过去分词 placed。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "A sign ____ displayed on the wall.",
+      "options": [
+        "is",
+        "have",
+        "do",
+        "are"
+      ],
+      "answers": [
+        "is"
+      ],
+      "evidence": "A sign is displayed on the wall.",
+      "evidenceOffsets": {
+        "start": 87,
+        "end": 119,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "sign 单数，使用 is + displayed。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Choose the correct negative passive.",
+      "options": [
+        "The cans are not place here.",
+        "The cans are not placed here.",
+        "The cans not are placed here.",
+        "The cans do not are placed here."
+      ],
+      "answers": [
+        "The cans are not placed here."
+      ],
+      "evidence": "The cans are not placed here.",
+      "evidenceOffsets": {
+        "start": 136,
+        "end": 165,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "否定词 not 放在 are 后，placed 保持过去分词。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Choose the present passive sentence.",
+      "options": [
+        "Plastic bottles is placed in a box.",
+        "Plastic bottles are placed in a box.",
+        "Plastic bottles are place in a box.",
+        "Plastic bottles placed are in a box."
+      ],
+      "answers": [
+        "Plastic bottles are placed in a box."
+      ],
+      "evidence": "Plastic bottles are placed in a box.",
+      "evidenceOffsets": {
+        "start": 43,
+        "end": 79,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "复数承受者 bottles + are + 过去分词 placed。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Who collects the rubbish in “Rubbish is collected by volunteers”?",
+      "options": [
+        "The wall.",
+        "The boxes.",
+        "Volunteers.",
+        "The rubbish."
+      ],
+      "answers": [
+        "Volunteers."
+      ],
+      "evidence": "Rubbish is collected by volunteers.",
+      "evidenceOffsets": {
+        "start": 218,
+        "end": 253,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "by 后的 volunteers 是执行收集动作的人。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Complete: Rubbish is collected ____ volunteers.",
+      "options": [
+        "at",
+        "by",
+        "with by",
+        "from to"
+      ],
+      "answers": [
+        "by"
+      ],
+      "evidence": "Rubbish is collected by volunteers.",
+      "evidenceOffsets": {
+        "start": 218,
+        "end": 253,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "需要指出执行者时，by 引出 volunteers。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "Choose the passive sentence that names the agent.",
+      "options": [
+        "Rubbish is collected by volunteers.",
+        "Rubbish collected volunteers.",
+        "Volunteers is collected by rubbish.",
+        "Rubbish is collected by."
+      ],
+      "answers": [
+        "Rubbish is collected by volunteers."
+      ],
+      "evidence": "Rubbish is collected by volunteers.",
+      "evidenceOffsets": {
+        "start": 218,
+        "end": 253,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "by volunteers 指明执行者。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "If the agent is unknown or unimportant, which passive sentence is complete?",
+      "options": [
+        "Rubbish is by.",
+        "Rubbish collected by.",
+        "Rubbish is collected.",
+        "Rubbish is collect by."
+      ],
+      "answers": [
+        "Rubbish is collected."
+      ],
+      "evidence": "Rubbish is collected.",
+      "evidenceOffsets": {
+        "start": 300,
+        "end": 321,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "被动句可以省略 by + 执行者，句子仍完整。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "Which sentence focuses on the people doing the sorting?",
+      "options": [
+        "The bottles are sorted.",
+        "The bottles is sorted.",
+        "Volunteers sort the bottles.",
+        "The bottles sorting."
+      ],
+      "answers": [
+        "Volunteers sort the bottles."
+      ],
+      "evidence": "Volunteers sort the bottles.",
+      "evidenceOffsets": {
+        "start": 362,
+        "end": 390,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "主动句以 volunteers 作主语，突出执行动作的人。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "Which sentence focuses on the bottles being processed?",
+      "options": [
+        "Volunteers sort the bottles.",
+        "The bottles sort volunteers.",
+        "Volunteers are the sorting.",
+        "The bottles are sorted."
+      ],
+      "answers": [
+        "The bottles are sorted."
+      ],
+      "evidence": "The bottles are sorted.",
+      "evidenceOffsets": {
+        "start": 397,
+        "end": 420,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "被动句以 bottles 作主语，突出被处理的对象。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "In the example process, what happens before the bottles are collected?",
+      "options": [
+        "They are sold.",
+        "They are painted.",
+        "They are written.",
+        "They are sorted."
+      ],
+      "answers": [
+        "They are sorted."
+      ],
+      "evidence": "First, the bottles are sorted. Then they are collected.",
+      "evidenceOffsets": {
+        "start": 444,
+        "end": 499,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "first 是分类，then 是收集。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "Choose the correct past participle: The cards are ____.",
+      "options": [
+        "write",
+        "wrote",
+        "writing",
+        "written"
+      ],
+      "answers": [
+        "written"
+      ],
+      "evidence": "write → written",
+      "evidenceOffsets": {
+        "start": 510,
+        "end": 525,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "write 的过去分词为 written；are 后用过去分词。"
+    }
+  ],
+  "instructions": "先阅读说明与例句，再作答并根据解释订正。",
+  "estimatedMinutes": 40,
+  "passage": "1. 一般现在时被动语态用 am / is / are + 过去分词，表示动作承受者：Plastic bottles are placed in a box. 单数用 is：A sign is displayed on the wall. 否定在 be 后加 not，如 The cans are not placed here. 不要漏 be，也不要把复数 bottles 搭配 is。\n\n2. 需要指出执行者时用 by + 执行者：Rubbish is collected by volunteers. 当读者需要知道是谁做的，可保留 by volunteers；执行者未知或不重要时，可以省略：Rubbish is collected. by 后是执行者，不是动作承受者。\n\n3. 描述过程时，根据重点选择主动或被动：Volunteers sort the bottles. 强调执行者；The bottles are sorted. 强调处理对象。两句均为一般现在时。过程可以写 First, the bottles are sorted. Then they are collected. 注意不规则过去分词 write → written；动词过去式与过去分词并非总是相同。",
+  "questionCount": 12
+}

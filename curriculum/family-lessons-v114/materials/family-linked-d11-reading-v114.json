@@ -1,0 +1,271 @@
+{
+  "id": "family-linked-d11-reading-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 11,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "reading",
+  "type": "reading",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Why do the friends choose the express service?",
+      "options": [
+        "It is the cheapest service.",
+        "It leaves in the evening.",
+        "It stops at every station.",
+        "It gives them more time with their friend."
+      ],
+      "answers": [
+        "It gives them more time with their friend."
+      ],
+      "evidence": "The fare is higher than the fare for the slower service, but the shorter journey gives them more time with their friend.",
+      "explanation": "but 后说明取舍：快车较贵，但节省路程时间；不是最便宜的选择。",
+      "id": "r01",
+      "evidenceOffsets": {
+        "start": 268,
+        "end": 388,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What time was their train originally scheduled to depart? Write ONE TIME.",
+      "answers": [
+        "9:20",
+        "09:20"
+      ],
+      "evidence": "The timetable lists a departure at 9:20 and an arrival at 10:10.",
+      "explanation": "departure 是发车，arrival 是到达；9:20 和 09:20 表示同一时间。9:05 是广播时刻。",
+      "maxWords": 1,
+      "id": "r02",
+      "evidenceOffsets": {
+        "start": 137,
+        "end": 201,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How is the commuter’s Saturday journey different from her usual journey?",
+      "options": [
+        "She is visiting a relative instead of going to work.",
+        "She is taking a train for the first time.",
+        "She is starting a new job.",
+        "She is working on the train."
+      ],
+      "answers": [
+        "She is visiting a relative instead of going to work."
+      ],
+      "evidence": "Today she is visiting her sister instead of going to work.",
+      "explanation": "today 与 every weekday 对照；今天去见姐姐或妹妹，并非改变了工作地点。",
+      "id": "r03",
+      "evidenceOffsets": {
+        "start": 624,
+        "end": 682,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What is different about Jade’s and Owen’s tickets?",
+      "options": [
+        "Jade can only stand during the journey.",
+        "They are traveling to different towns.",
+        "Only Jade has a reserved seat.",
+        "Only Owen has a valid ticket."
+      ],
+      "answers": [
+        "Only Jade has a reserved seat."
+      ],
+      "evidence": "Jade has a seat reservation in carriage three, but Owen has a ticket without a reserved seat.",
+      "explanation": "without a reserved seat 不表示没有车票，只表示未预订具体座位。",
+      "id": "r04",
+      "evidenceOffsets": {
+        "start": 754,
+        "end": 847,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "How long is the announced delay? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "twenty minutes",
+        "20 minutes"
+      ],
+      "evidence": "There is a twenty-minute delay because workers are checking part of the track.",
+      "explanation": "twenty-minute 在名词 delay 前作定语，minute 用单数；回答时长可写 twenty minutes 或 20 minutes。",
+      "maxWords": 2,
+      "id": "r05",
+      "evidenceOffsets": {
+        "start": 885,
+        "end": 963,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why should they avoid boarding the train at platform four?",
+      "options": [
+        "It has no luggage space.",
+        "It has already been canceled.",
+        "It costs less than their train.",
+        "It is traveling in the wrong direction."
+      ],
+      "answers": [
+        "It is traveling in the wrong direction."
+      ],
+      "evidence": "It goes inland, in the opposite direction from their destination.",
+      "explanation": "另一班车开往内陆，与海边目的地方向相反；不能因为站台原本正确就不核对车次。",
+      "id": "r06",
+      "evidenceOffsets": {
+        "start": 1150,
+        "end": 1215,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why do they reject the route through West Junction?",
+      "options": [
+        "It is a direct service.",
+        "It reaches the coast too early.",
+        "The transfer would require a second ticket.",
+        "They might not catch the second train."
+      ],
+      "answers": [
+        "They might not catch the second train."
+      ],
+      "evidence": "That option would require a transfer, and the second train might leave before they reach it.",
+      "explanation": "might 表示可能赶不上接续班次，并不表示已经确定取消。",
+      "id": "r07",
+      "evidenceOffsets": {
+        "start": 1273,
+        "end": 1365,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What do staff say about the original service?",
+      "options": [
+        "It will be canceled for the whole day.",
+        "They do not plan to cancel the service.",
+        "It will go inland instead.",
+        "It will stop at West Junction only."
+      ],
+      "answers": [
+        "They do not plan to cancel the service."
+      ],
+      "evidence": "Staff do not plan to cancel it; they expect the track check to finish soon.",
+      "explanation": "原文明确说工作人员不打算取消该班次；预计轨道检查很快结束，但没有保证具体何时开行。",
+      "id": "r08",
+      "evidenceOffsets": {
+        "start": 1413,
+        "end": 1488,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How does the conductor help Owen?",
+      "options": [
+        "He cancels another passenger’s reservation.",
+        "He moves Jade to a different train.",
+        "He finds an unreserved seat in Jade’s carriage.",
+        "He tells Owen that every seat is reserved."
+      ],
+      "answers": [
+        "He finds an unreserved seat in Jade’s carriage."
+      ],
+      "evidence": "The conductor checks the reservation display and finds an unreserved seat in the same carriage.",
+      "explanation": "same carriage 指与 Jade 同一车厢；没有承诺紧挨她的座位。",
+      "id": "r09",
+      "evidenceOffsets": {
+        "start": 1735,
+        "end": 1830,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "short",
+      "prompt": "What must the friends keep clear? Write NO MORE THAN TWO WORDS.",
+      "answers": [
+        "the aisle",
+        "aisle"
+      ],
+      "evidence": "They board carefully, put the suitcase in the luggage space and keep the aisle clear.",
+      "explanation": "clear 在这里指保持通道畅通，行李要放进行李区；aisle 是 passageway，不是座位。",
+      "maxWords": 2,
+      "id": "r10",
+      "evidenceOffsets": {
+        "start": 1893,
+        "end": 1978,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why does Jade message their friend?",
+      "options": [
+        "To explain that they will be late.",
+        "To tell her they have canceled the trip.",
+        "To ask her to buy another ticket.",
+        "To ask her to meet them at West Junction."
+      ],
+      "answers": [
+        "To explain that they will be late."
+      ],
+      "evidence": "Jade sends their friend a message explaining that they will arrive later than planned.",
+      "explanation": "later than planned 表示晚于原计划，不是取消见面。",
+      "id": "r11",
+      "evidenceOffsets": {
+        "start": 1489,
+        "end": 1575,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What will they do differently before their next trip?",
+      "options": [
+        "Avoid every express service.",
+        "Check travel updates as well as the printed timetable.",
+        "Use only a printed timetable.",
+        "Always cancel a delayed journey."
+      ],
+      "answers": [
+        "Check travel updates as well as the printed timetable."
+      ],
+      "evidence": "Before leaving home next time, they will check for travel updates as well as reading the printed timetable.",
+      "explanation": "as well as 表示两者都查看；打印时刻表未必反映临时变更。",
+      "id": "r12",
+      "evidenceOffsets": {
+        "start": 2240,
+        "end": 2347,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "title": "A Journey with a Change of Plan",
+  "estimatedMinutes": 40,
+  "passage": "Jade and Owen are meeting at the central railway terminal on Saturday morning. Their destination is a coastal town where a friend lives. The timetable lists a departure at 9:20 and an arrival at 10:10. They have chosen an express service because it makes fewer stops. The fare is higher than the fare for the slower service, but the shorter journey gives them more time with their friend.\n\nOwen reaches the station first. He is pulling a small suitcase, while Jade is carrying their lunch. They keep their luggage close because the main hall is busy. A commuter beside them explains that she travels this way every weekday. Today she is visiting her sister instead of going to work. Each passenger needs a valid ticket before entering the platform area. Jade has a seat reservation in carriage three, but Owen has a ticket without a reserved seat.\n\nAt 9:05, they hear an announcement. There is a twenty-minute delay because workers are checking part of the track. The train will depart from platform six instead of platform four. Jade checks the display before they move. The change matters because another train is already waiting at platform four. It goes inland, in the opposite direction from their destination.\n\nThe friends discuss a connection through West Junction. That option would require a transfer, and the second train might leave before they reach it. They decide to stay with their direct service. Staff do not plan to cancel it; they expect the track check to finish soon. Jade sends their friend a message explaining that they will arrive later than planned. Their friend replies that she is meeting them outside the station and can wait.\n\nWhen boarding begins, Owen asks the conductor whether he can sit beside Jade. The conductor checks the reservation display and finds an unreserved seat in the same carriage. He also points out the emergency information beside the door. They board carefully, put the suitcase in the luggage space and keep the aisle clear. Jade is reading the updated arrival time, while Owen is checking that they have all their bags.\n\nThe delay has changed their plan, but it has not ended their trip. They have checked the platform, chosen a workable route and told their friend what is happening. Before leaving home next time, they will check for travel updates as well as reading the printed timetable.",
+  "instructions": "Read the passage and answer each question. Use the stated word limit for short answers.",
+  "questionCount": 12,
+  "practiceOnly": true
+}

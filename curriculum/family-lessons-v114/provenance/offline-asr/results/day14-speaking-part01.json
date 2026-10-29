@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "day": 14,
+  "skill": "speaking",
+  "id": "day14-speaking",
+  "materialId": "family-linked-d14-speaking-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 44.088,
+  "sourceAudioSha256": "ff6d1bda4873a330de25beb1b87b5044d79f2a2f37d5756069cd998ad5b82f94",
+  "sourceTextSha256": "5968c760337c5fea7333b54670b733918b523ce1dafb848ceca70985e1043a11",
+  "expectedText": "I am comparing two apartments near my class. The first apartment has a larger bedroom, while the second has a more spacious kitchen. The monthly rent is lower at the first place, but I still need to ask about the electricity bill. I would also check whether the bathroom is private and whether the heating is included. Before I move, I want to read the lease and ask the landlord about any damage. I will take photographs of the wall and floor so I can discuss any marks clearly. The first place looks quiet enough for study, but I will compare the travel time and the full agreement before I decide.",
+  "expectedTextSha256": "5968c760337c5fea7333b54670b733918b523ce1dafb848ceca70985e1043a11",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day14-speaking-part01.wav",
+  "wavSha256": "ac378f9308460476272b91ff05a172ba7545915f40d78ef3714564421cbcfb0c",
+  "wavDurationSeconds": 44.088,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I am comparing two apartments near my class. The first apartment has a larger bedroom, while the second has a more spacious kitchen. The monthly rent is lower at the first place, but I still need to ask about the electricity bill. I would also check whether the bathroom is private and whether the heating is included. Before I move, I want to read the lease and ask the landlord about any damage. I will take photographs of the wall and floor so I can discuss any marks clearly. The first place looks quiet enough for study, but I will compare the travel time and the full agreement before I decide.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4,
+        "text": "I am comparing two apartments near my class.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4,
+        "endSeconds": 10.3,
+        "text": "The first apartment has a larger bedroom, while the second has a more spacious kitchen.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10.3,
+        "endSeconds": 17.54,
+        "text": "The monthly rent is lower at the first place, but I still need to ask about the electricity bill.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 17.54,
+        "endSeconds": 23.3,
+        "text": "I would also check whether the bathroom is private and whether the heating is included.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 23.3,
+        "endSeconds": 29.7,
+        "text": "Before I move, I want to read the lease and ask the landlord about any damage.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 29.7,
+        "endSeconds": 35.7,
+        "text": "I will take photographs of the wall and floor so I can discuss any marks clearly.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 35.7,
+        "endSeconds": 44.7,
+        "text": "The first place looks quiet enough for study, but I will compare the travel time and the full agreement before I decide.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 44.088,
+    "audioSha256": "ac378f9308460476272b91ff05a172ba7545915f40d78ef3714564421cbcfb0c",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 122,
+    "actualTokens": 122,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 111,
+    "actualTokens": 111,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

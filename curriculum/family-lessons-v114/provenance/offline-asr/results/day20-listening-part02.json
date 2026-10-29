@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "day": 20,
+  "skill": "listening",
+  "id": "day20-listening",
+  "materialId": "family-linked-d20-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 56.778499999999994,
+  "audioEndSeconds": 109.69320833333333,
+  "sourceAudioSha256": "aa2f457ed2f0a13e0357c44d60e0a623bcb7555aa1d39be489b4537bacf5a828",
+  "sourceTextSha256": "88cb001d640605f3f9e633555c3ba7b223063527d52b3c726e726d261033701c",
+  "expectedText": "I also have a box for clean metal cans. In our school's program, those cans are accepted for recycling. Can we recycle plastic there too? Only the bottles listed on the school notice. We should read the notice before we put anything in the box. Other garbage goes in the regular bin. What about the old wood from the garden signs? Could we reuse it instead of buying new material? Yes. It is kept in the storage room, and the art group will turn it into new signs. That is one sustainable choice we can explain. I want to add a display about renewable energy. The science class has a small model that uses sunlight to power a lamp.",
+  "expectedTextSha256": "0884d58bfb4a51a04550aa390c7f99c188ffa99dd39dfcff34e39aff8bbae22f",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day20-listening-part02.wav",
+  "wavSha256": "7d9b12addb473038709c4402b9bd471ca0b6b714aa54d8c20c10c6f77ebd3d51",
+  "wavDurationSeconds": 52.9146875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I also have a box for clean metal cans. In our schools program, those cans are accepted for recycling. Can we recycle plastic there too? Only the bottles listed on the school notice. We should read the notice before we put anything in the box. Other garbage goes in the regular bin. What about the old wood from the garden signs? Could we reuse it instead of buying new material? Yes. It is kept in the storage room, and the art group will turn it into new signs. That is one sustainable choice we can explain. I want to add a display about renewable energy. The science class has a small model that uses sunlight to power a lamp.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.2,
+        "text": "I also have a box for clean metal cans.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.2,
+        "endSeconds": 9.5,
+        "text": "In our schools program, those cans are accepted for recycling.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 9.5,
+        "endSeconds": 12.6,
+        "text": "Can we recycle plastic there too?",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.6,
+        "endSeconds": 16.5,
+        "text": "Only the bottles listed on the school notice.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 16.5,
+        "endSeconds": 21,
+        "text": "We should read the notice before we put anything in the box.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21,
+        "endSeconds": 24.5,
+        "text": "Other garbage goes in the regular bin.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 24.5,
+        "endSeconds": 28,
+        "text": "What about the old wood from the garden signs?",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 28,
+        "endSeconds": 32,
+        "text": "Could we reuse it instead of buying new material?",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 32,
+        "endSeconds": 34,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 34,
+        "endSeconds": 39.5,
+        "text": "It is kept in the storage room, and the art group will turn it into new signs.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 39.5,
+        "endSeconds": 43.5,
+        "text": "That is one sustainable choice we can explain.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 43.5,
+        "endSeconds": 47.5,
+        "text": "I want to add a display about renewable energy.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 47.5,
+        "endSeconds": 53.5,
+        "text": "The science class has a small model that uses sunlight to power a lamp.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 52.9146875,
+    "audioSha256": "7d9b12addb473038709c4402b9bd471ca0b6b714aa54d8c20c10c6f77ebd3d51",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 134,
+    "actualTokens": 134,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "school's"
+        ],
+        "actual": [
+          "schools"
+        ],
+        "expectedIndex": 12,
+        "actualIndex": 12,
+        "contextBefore": [
+          "metal",
+          "cans",
+          ".",
+          "In",
+          "our"
+        ],
+        "contextAfter": [
+          "program",
+          ",",
+          "those",
+          "cans",
+          "are"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 120,
+    "actualTokens": 119,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          "school",
+          "s"
+        ],
+        "actual": [
+          "schools"
+        ],
+        "expectedIndex": 11,
+        "actualIndex": 11,
+        "contextBefore": [
+          "clean",
+          "metal",
+          "cans",
+          "in",
+          "our"
+        ],
+        "contextAfter": [
+          "program",
+          "those",
+          "cans",
+          "are",
+          "accepted"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

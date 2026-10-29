@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "day": 19,
+  "skill": "listening",
+  "id": "day19-listening",
+  "materialId": "family-linked-d19-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 58.60320833333333,
+  "sourceAudioSha256": "48c7854fd6d7fbd9856709bd904e916b8411fa230e5b6468dd274a560eca0a56",
+  "sourceTextSha256": "07f34dd2073e6174be9e1e76ee4f56b4b14e174d9d84acdd784494b678e8d947",
+  "expectedText": "Have you decided on a course at the college yet? I have chosen the evening science course. I want to learn more about the river near my home, and the curriculum includes a project about local water. That sounds useful. Is the first lesson on Monday? No, it is on Wednesday at seven. The adviser said the classroom is in the older building on campus, next to the library. What will you do in the first week? We will hear a short lecture about asking clear questions. Then we will have a seminar to discuss possible topics in small groups. I enjoy reading about geography. I might join you to understand how the river changes through the town. Please do. The teacher also offers a tutorial on Friday for students who need help with the assignment.",
+  "expectedTextSha256": "ecae0d43c43b7bab515af7c022c86b11e808df0dc33751c5e12cce89e4a756ba",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day19-listening-part01.wav",
+  "wavSha256": "ed36f0d0cd7ee9503ccb90cf107c63a578ced60102108a156c25f7f390c069e7",
+  "wavDurationSeconds": 58.6031875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Have you decided on a course at the college yet? I have chosen the evening science course. I want to learn more about the river near my home, and the curriculum includes a project about local water. That sounds useful. Is the first lesson on Monday? No, it is on Wednesday at 7. The advisor said the classroom is in the older building on campus, next to the library. What will you do in the first week? We will hear a short lecture about asking clear questions. Then we will have a seminar to discuss possible topics in small groups. I enjoy reading about geography. I might join you to understand how the river changes through the town. Please do. The teacher also offers a tutorial on Friday for students who need help with the assignment.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 3.82,
+        "text": "Have you decided on a course at the college yet?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 3.82,
+        "endSeconds": 7.5,
+        "text": "I have chosen the evening science course.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 7.5,
+        "endSeconds": 14.74,
+        "text": "I want to learn more about the river near my home, and the curriculum includes a project about local water.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 14.74,
+        "endSeconds": 17.12,
+        "text": "That sounds useful.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 17.12,
+        "endSeconds": 20.1,
+        "text": "Is the first lesson on Monday?",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 20.1,
+        "endSeconds": 23.46,
+        "text": "No, it is on Wednesday at 7.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 23.46,
+        "endSeconds": 29.76,
+        "text": "The advisor said the classroom is in the older building on campus, next to the library.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 29.76,
+        "endSeconds": 32.76,
+        "text": "What will you do in the first week?",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 32.76,
+        "endSeconds": 37.16,
+        "text": "We will hear a short lecture about asking clear questions.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 37.16,
+        "endSeconds": 42.56,
+        "text": "Then we will have a seminar to discuss possible topics in small groups.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 42.56,
+        "endSeconds": 45.9,
+        "text": "I enjoy reading about geography.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 45.9,
+        "endSeconds": 50.96,
+        "text": "I might join you to understand how the river changes through the town.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 50.96,
+        "endSeconds": 52.82,
+        "text": "Please do.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 52.82,
+        "endSeconds": 58.82,
+        "text": "The teacher also offers a tutorial on Friday for students who need help with the assignment.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 58.6031875,
+    "audioSha256": "ed36f0d0cd7ee9503ccb90cf107c63a578ced60102108a156c25f7f390c069e7",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 153,
+    "actualTokens": 153,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          "seven"
+        ],
+        "actual": [
+          "7"
+        ],
+        "expectedIndex": 59,
+        "actualIndex": 59,
+        "contextBefore": [
+          "it",
+          "is",
+          "on",
+          "Wednesday",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "The",
+          "adviser",
+          "said",
+          "the"
+        ]
+      },
+      {
+        "expected": [
+          "adviser"
+        ],
+        "actual": [
+          "advisor"
+        ],
+        "expectedIndex": 62,
+        "actualIndex": 62,
+        "contextBefore": [
+          "Wednesday",
+          "at",
+          "seven",
+          ".",
+          "The"
+        ],
+        "contextAfter": [
+          "said",
+          "the",
+          "classroom",
+          "is",
+          "in"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 136,
+    "actualTokens": 136,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "adviser"
+        ],
+        "actual": [
+          "advisor"
+        ],
+        "expectedIndex": 54,
+        "actualIndex": 54,
+        "contextBefore": [
+          "on",
+          "wednesday",
+          "at",
+          "seven",
+          "the"
+        ],
+        "contextAfter": [
+          "said",
+          "the",
+          "classroom",
+          "is",
+          "in"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

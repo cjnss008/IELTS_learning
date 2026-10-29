@@ -1,0 +1,323 @@
+{
+  "schema": 1,
+  "day": 11,
+  "skill": "listening",
+  "id": "day11-listening",
+  "materialId": "family-linked-d11-listening-v111",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 60.5685,
+  "sourceAudioSha256": "716119a3bf3eaf485a39e27d5697dd405f89b616cbe87417565267efb657550b",
+  "sourceTextSha256": "435f90bdd66ce5f762df883e16f293ca543cf9b8b030c2104e69bf1e628bd919",
+  "expectedText": "I'm at the ticket hall. Are you waiting on platform six? No. The announcement has changed our platform to eight. I'm standing beside the stairs. Is our express train still leaving at ten thirty? It is running fifteen minutes late. The display now says ten forty-five. Did the announcement explain the delay? Yes. Staff are checking a signal beside the track near North Junction. They cannot say when it will be ready. I don't want to cancel our journey, but we will miss our connection at North Junction. Shall we use a direct service instead? Yes. The conductor says the eleven o'clock service goes directly to the coast. We won't need a transfer. Is our ticket valid on that service?",
+  "expectedTextSha256": "b38f1cad6f7d8597cecd58289cdfe025194c2da0c0d89b988acc99699b6578ea",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day11-listening-part01.wav",
+  "wavSha256": "4069fec123e5101d6f6d455b8831ea0b23216cd5114a111c1a8a67226debb891",
+  "wavDurationSeconds": 60.5685,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I'm at the ticket hall. Are you waiting on Platform 6? No. The announcement has changed our platform to 8. I'm standing beside the stairs. Is our express train still leaving at 10.30? It is running 15 minutes late. The display now says 10.45. Did the announcement explain the delay? Yes. Staff are checking a signal beside the track near North Junction. They cannot say when it will be ready. I don't want to cancel our journey, but we will miss our connection at North Junction. Shall we use a direct service instead? Yes. The conductor says the 11 o'clock service goes directly to the coast. We won't need a transfer. Is our ticket valid on that service?",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 2.48,
+        "text": "I'm at the ticket hall.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 2.48,
+        "endSeconds": 5.76,
+        "text": "Are you waiting on Platform 6?",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 5.76,
+        "endSeconds": 7.52,
+        "text": "No.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 7.52,
+        "endSeconds": 11.4,
+        "text": "The announcement has changed our platform to 8.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 11.4,
+        "endSeconds": 14.56,
+        "text": "I'm standing beside the stairs.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 14.56,
+        "endSeconds": 18.72,
+        "text": "Is our express train still leaving at 10.30?",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 18.72,
+        "endSeconds": 22,
+        "text": "It is running 15 minutes late.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 22,
+        "endSeconds": 25.52,
+        "text": "The display now says 10.45.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 25.52,
+        "endSeconds": 28.84,
+        "text": "Did the announcement explain the delay?",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 28.84,
+        "endSeconds": 30.56,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 30.56,
+        "endSeconds": 35.28,
+        "text": "Staff are checking a signal beside the track near North Junction.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 35.28,
+        "endSeconds": 38.48,
+        "text": "They cannot say when it will be ready.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 38.48,
+        "endSeconds": 40.68,
+        "text": "I don't want to cancel our journey,",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 40.68,
+        "endSeconds": 44.4,
+        "text": "but we will miss our connection at North Junction.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 44.4,
+        "endSeconds": 47.92,
+        "text": "Shall we use a direct service instead?",
+        "confidence": null
+      },
+      {
+        "id": "segment-15",
+        "startSeconds": 47.92,
+        "endSeconds": 49.64,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-16",
+        "startSeconds": 49.64,
+        "endSeconds": 54.96,
+        "text": "The conductor says the 11 o'clock service goes directly to the coast.",
+        "confidence": null
+      },
+      {
+        "id": "segment-17",
+        "startSeconds": 54.96,
+        "endSeconds": 57.68,
+        "text": "We won't need a transfer.",
+        "confidence": null
+      },
+      {
+        "id": "segment-18",
+        "startSeconds": 57.68,
+        "endSeconds": 60.08,
+        "text": "Is our ticket valid on that service?",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5685,
+    "audioSha256": "4069fec123e5101d6f6d455b8831ea0b23216cd5114a111c1a8a67226debb891",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 139,
+    "actualTokens": 137,
+    "edits": 9,
+    "changes": [
+      {
+        "expected": [
+          "platform",
+          "six"
+        ],
+        "actual": [
+          "Platform",
+          "6"
+        ],
+        "expectedIndex": 10,
+        "actualIndex": 10,
+        "contextBefore": [
+          ".",
+          "Are",
+          "you",
+          "waiting",
+          "on"
+        ],
+        "contextAfter": [
+          "?",
+          "No",
+          ".",
+          "The",
+          "announcement"
+        ]
+      },
+      {
+        "expected": [
+          "eight"
+        ],
+        "actual": [
+          "8"
+        ],
+        "expectedIndex": 22,
+        "actualIndex": 22,
+        "contextBefore": [
+          "has",
+          "changed",
+          "our",
+          "platform",
+          "to"
+        ],
+        "contextAfter": [
+          ".",
+          "I'm",
+          "standing",
+          "beside",
+          "the"
+        ]
+      },
+      {
+        "expected": [
+          "ten",
+          "thirty"
+        ],
+        "actual": [
+          "10.30"
+        ],
+        "expectedIndex": 37,
+        "actualIndex": 37,
+        "contextBefore": [
+          "express",
+          "train",
+          "still",
+          "leaving",
+          "at"
+        ],
+        "contextAfter": [
+          "?",
+          "It",
+          "is",
+          "running",
+          "fifteen"
+        ]
+      },
+      {
+        "expected": [
+          "fifteen"
+        ],
+        "actual": [
+          "15"
+        ],
+        "expectedIndex": 43,
+        "actualIndex": 42,
+        "contextBefore": [
+          "thirty",
+          "?",
+          "It",
+          "is",
+          "running"
+        ],
+        "contextAfter": [
+          "minutes",
+          "late",
+          ".",
+          "The",
+          "display"
+        ]
+      },
+      {
+        "expected": [
+          "ten",
+          "forty-five"
+        ],
+        "actual": [
+          "10.45"
+        ],
+        "expectedIndex": 51,
+        "actualIndex": 50,
+        "contextBefore": [
+          ".",
+          "The",
+          "display",
+          "now",
+          "says"
+        ],
+        "contextAfter": [
+          ".",
+          "Did",
+          "the",
+          "announcement",
+          "explain"
+        ]
+      },
+      {
+        "expected": [
+          "eleven"
+        ],
+        "actual": [
+          "11"
+        ],
+        "expectedIndex": 116,
+        "actualIndex": 114,
+        "contextBefore": [
+          ".",
+          "The",
+          "conductor",
+          "says",
+          "the"
+        ],
+        "contextAfter": [
+          "o'clock",
+          "service",
+          "goes",
+          "directly",
+          "to"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 126,
+    "actualTokens": 126,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

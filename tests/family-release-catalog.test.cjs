@@ -31,7 +31,11 @@ test('published v109 words retain their exact source binding in the independentl
  const catalog=Catalog.compile({baseData:baseline,releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'}]});
  assert.equal(catalog.active,false);assert.deepEqual(catalog.counts,{batches:1,days:7,newWords:210,materials:70});
  assert.equal(JSON.stringify(baseline),before);const compiled=catalog.releases[0].release,Helper=require('../assets/family-lesson-expansion-v95.js');
- assert.deepEqual(compiled.units,D.familyLessonRelease.units);
+ const installedOld=D.familyLessonRelease.units.slice(0,compiled.units.length),installedMaterials=D.materials.slice(baseline.materials.length,baseline.materials.length+catalog.releases[0].materials.length);
+ assert.equal(compiled.releaseSha256,D.familyLessonRelease.releaseSha256);assert.equal(compiled.rootReviewSha256,D.familyLessonRelease.rootReviewSha256);
+ assert.deepEqual(compiled.units,installedOld);assert.equal(JSON.stringify(compiled.units),JSON.stringify(installedOld));
+ assert.deepEqual(catalog.releases[0].materials,installedMaterials);assert.equal(JSON.stringify(catalog.releases[0].materials),JSON.stringify(installedMaterials));
+ // The real 114 appended batch is verified independently by family-multibatch-runtime.test.cjs.
  for(const unit of compiled.units){
   const task=unit.tasks.find(t=>t.id==='vocabulary'),owners=new Map(unit.tasks.flatMap(t=>t.materialRefs.map(ref=>[ref.materialId,{task:t,ref}]))),todo=[...unit.targets.map(t=>t.sourceMaterialId),...task.requires],ids=new Set();
   while(todo.length){const id=todo.pop();if(ids.has(id))continue;ids.add(id);todo.push(...owners.get(id).task.requires);}
@@ -95,5 +99,5 @@ test('runtime append keeps the published single batch byte shape and adds a sepa
 
 test('the multi-batch production build cannot omit all installed lessons',()=>{
  const outputRoot=path.join(require('node:os').tmpdir(),'ielts-family-missing-release-test');
- assert.throws(()=>require('../tools/build-curriculum.cjs').build({requireYearExpansion:true,activateYearFirstUse:true,gsaGradedRelease:'curriculum/gsa-graded-course/release.json',ordinaryReadingRelease:'curriculum/ordinary-reading-v92/release.json',yearRuntimeContract:'curriculum/year-first-use-runtime-contract-v113-multibatch.json',outputRoot}),/cannot omit historical lessons/);
+ assert.throws(()=>require('../tools/build-curriculum.cjs').build({requireYearExpansion:true,activateYearFirstUse:true,gsaGradedRelease:'curriculum/gsa-graded-course/release.json',ordinaryReadingRelease:'curriculum/ordinary-reading-v92/release.json',yearRuntimeContract:'curriculum/year-first-use-runtime-contract-v114-context-lexicon.json',outputRoot}),/cannot omit historical lessons/);
 });

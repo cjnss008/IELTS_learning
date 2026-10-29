@@ -7,10 +7,16 @@ const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 test('the actual linked release adds seven complete lessons, five small word groups per lesson, and leaves all historical course objects unchanged',()=>{
  assert.deepEqual(D.days,baseline.days);
  assert.deepEqual(D.materials.slice(0,1842),baseline.materials);
- assert.deepEqual(D.familyLessonRelease.units.map(u=>u.day),[4,5,6,7,8,9,10]);
- assert.equal(manifest.materials.length,70);
+ const units=D.familyLessonRelease.units.slice(0,manifest.units.length);
+ assert.equal(manifest.units.length,7);assert.deepEqual(units.map(u=>u.day),[4,5,6,7,8,9,10]);assert.deepEqual(units.map(u=>u.id),manifest.units.map(u=>u.id));
+ assert.ok(units.every(unit=>unit.releaseId===manifest.id));assert.equal(D.familyLessonRelease.units.filter(unit=>unit.releaseId===manifest.id).length,7);
+ assert.equal(manifest.materials.length,70);assert.deepEqual(D.materials.slice(1842,1912).map(m=>m.id),manifest.materials.map(row=>row.id));
+ const oldReceipt=D.familyLessonRelease.publicAppendReceipt.appended;assert.equal(oldReceipt.length,70);
+ for(const material of D.materials.slice(1842,1912))assert.equal(A.materialContentHash(material),oldReceipt.find(row=>row.id===material.id).contentHash);
+ // The separately reviewed 114 release and its actual source/audio files are
+ // independently checked by family-multibatch-runtime.test.cjs.
  const all=new Set(),prior=new Set(baseline.days.slice(0,4).flatMap(d=>d.tasks.filter(t=>t.id==='vocabulary').flatMap(t=>t.materialIds.flatMap(id=>baseline.materials.find(m=>m.id===id).vocabulary.map(w=>w.word.toLowerCase())))));
- for(const unit of D.familyLessonRelease.units){
+ for(const unit of units){
   assert.equal(unit.targets.length,30);
   assert.deepEqual(unit.tasks.map(t=>t.id).sort(),['grammar','listening','reading','speaking','vocabulary','writing']);
   const refs=unit.tasks.find(t=>t.id==='vocabulary').materialRefs;

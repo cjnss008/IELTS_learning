@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "day": 18,
+  "materialId": "family-linked-d18-speaking-next-v1",
+  "sourceAudioSha256": "7db9abab570f679cd55458ebc6357b70df4a4a3676f4f6b5e649879a69860cbe",
+  "sourceTextSha256": "403b0e5a84672066f2901a0f0b94cd6f96a999092e20483a9eed8c5b6880081a",
+  "expectedText": "I would like to prepare a document for my local club. First, I connect my device to a wireless network and open a browser. Then I visit the club website and use my own account. I type the notes with the keyboard and save a file in a folder. Before I upload the document, I check the date and the place. After I upload it, I look for the correct file name online. If the internet is unavailable, my offline copy still opens. I do not share my password in an email. When I finish, I use the logout button so that the next person cannot use my account.",
+  "originalWavSha256": "6c2e3ccb397e578b66229f6c8d6a10d597b5bdd63ac609025226c737c5aecd88",
+  "originalDurationSeconds": 45.168,
+  "paddedWavSha256": "de52b1eb57618e9416475fd52d8cb0a84c58c850f4361752e516ecbe8e4c5e22",
+  "paddedDurationSeconds": 60.5,
+  "sourceSamplesIdentical": true,
+  "addedSamplesAllZero": true,
+  "sourcePromptProvided": false,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I would like to prepare a document for my local club. First, I connect my device to a wireless network and open a browser. Then I visit the club website and use my own account. I type the notes with the keyboard and save a file in a folder. Before I upload the document, I check the date and the place. After I upload it, I look for the correct file name online. If the internet is unavailable, my offline copy still opens. I do not share my password in an email. When I finish, I use the logout button so that the next person cannot use my account.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4,
+        "text": "I would like to prepare a document for my local club.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4,
+        "endSeconds": 10,
+        "text": "First, I connect my device to a wireless network and open a browser.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10,
+        "endSeconds": 14,
+        "text": "Then I visit the club website and use my own account.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 14,
+        "endSeconds": 19,
+        "text": "I type the notes with the keyboard and save a file in a folder.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 19,
+        "endSeconds": 24,
+        "text": "Before I upload the document, I check the date and the place.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 24,
+        "endSeconds": 29,
+        "text": "After I upload it, I look for the correct file name online.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 29,
+        "endSeconds": 34,
+        "text": "If the internet is unavailable, my offline copy still opens.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 34,
+        "endSeconds": 38,
+        "text": "I do not share my password in an email.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 38,
+        "endSeconds": 44,
+        "text": "When I finish, I use the logout button so that the next person cannot use my account.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "de52b1eb57618e9416475fd52d8cb0a84c58c850f4361752e516ecbe8e4c5e22",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 123,
+    "actualTokens": 123,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 109,
+    "actualTokens": 109,
+    "edits": 0,
+    "changes": []
+  }
+}

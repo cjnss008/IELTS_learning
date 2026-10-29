@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "job": {
+    "day": 18,
+    "skill": "listening",
+    "id": "day18-target-friday",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d18-listening-next-v1.mp3",
+    "sourceAudioSha256": "8674788425e471b5e7e3b81cd8b17e408ad2d164eeffe46b18594fe9221bdc0e",
+    "sourceTextSha256": "d2b0d9bb5fa64032dc0da11e2d3133d4e2e227a173518a481b1c8e10a1abfa26",
+    "start": 59.41970833333333,
+    "end": 88.90683333333334,
+    "reference": "Good. After the login screen, I see a folder called Events. Which file should I open? Open the one called Agenda Practice. Then add Friday's start time, which is six thirty. Before you save it, check that the room is number twelve. Done. I will save a copy on the device. Should I upload it to the shared area now?",
+    "focus": "Then add Friday's start time, which is six thirty."
+  },
+  "originalWavSha256": "a4e247799fe7f14a5dbb683168110fbea1d59d8e69d011051ae4434c98a0a0f2",
+  "paddedWavSha256": "8951783c7823d180eee63f553e1ec1c81fd749bb9a25b571386745a6d18ff84d",
+  "sourceSamplesIdentical": true,
+  "appendedSamplesAllZero": true,
+  "paddedDurationSeconds": 60.5,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Good. After the login screen, I see a folder called Events. Which file should I open? Open the one called Agenda Practice. Then add Friday Start Time, which is 6.30. Before you save it, check that the room is number 12. Done. I will save a copy on the device. Should I upload it to the shared area now?",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 6.28,
+        "text": "Good. After the login screen, I see a folder called Events.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 6.28,
+        "endSeconds": 8.84,
+        "text": "Which file should I open?",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8.84,
+        "endSeconds": 12.4,
+        "text": "Open the one called Agenda Practice.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.4,
+        "endSeconds": 16.56,
+        "text": "Then add Friday Start Time, which is 6.30.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 16.56,
+        "endSeconds": 21.04,
+        "text": "Before you save it, check that the room is number 12.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21.04,
+        "endSeconds": 25.96,
+        "text": "Done. I will save a copy on the device.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 25.96,
+        "endSeconds": 30.72,
+        "text": "Should I upload it to the shared area now?",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "8951783c7823d180eee63f553e1ec1c81fd749bb9a25b571386745a6d18ff84d",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 72,
+    "actualTokens": 71,
+    "edits": 6,
+    "changes": [
+      {
+        "expected": [
+          "Friday's",
+          "start",
+          "time"
+        ],
+        "actual": [
+          "Friday",
+          "Start",
+          "Time"
+        ],
+        "expectedIndex": 29,
+        "actualIndex": 29,
+        "contextBefore": [
+          "Agenda",
+          "Practice",
+          ".",
+          "Then",
+          "add"
+        ],
+        "contextAfter": [
+          ",",
+          "which",
+          "is",
+          "six",
+          "thirty"
+        ]
+      },
+      {
+        "expected": [
+          "six",
+          "thirty"
+        ],
+        "actual": [
+          "6.30"
+        ],
+        "expectedIndex": 35,
+        "actualIndex": 35,
+        "contextBefore": [
+          "start",
+          "time",
+          ",",
+          "which",
+          "is"
+        ],
+        "contextAfter": [
+          ".",
+          "Before",
+          "you",
+          "save",
+          "it"
+        ]
+      },
+      {
+        "expected": [
+          "twelve"
+        ],
+        "actual": [
+          "12"
+        ],
+        "expectedIndex": 49,
+        "actualIndex": 48,
+        "contextBefore": [
+          "that",
+          "the",
+          "room",
+          "is",
+          "number"
+        ],
+        "contextAfter": [
+          ".",
+          "Done",
+          ".",
+          "I",
+          "will"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 61,
+    "actualTokens": 60,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "s"
+        ],
+        "actual": [],
+        "expectedIndex": 25,
+        "actualIndex": 25,
+        "contextBefore": [
+          "agenda",
+          "practice",
+          "then",
+          "add",
+          "friday"
+        ],
+        "contextAfter": [
+          "start",
+          "time",
+          "which",
+          "is",
+          "six"
+        ]
+      }
+    ]
+  },
+  "sourcePromptProvided": false
+}

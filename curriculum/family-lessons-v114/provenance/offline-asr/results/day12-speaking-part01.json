@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "day": 12,
+  "skill": "speaking",
+  "id": "day12-speaking",
+  "materialId": "family-linked-d12-speaking-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 44.52,
+  "sourceAudioSha256": "5ac897637b1eb38edb2b201de49b0c7bd1b9ad1b25804e7e9f5d2f1d82840c25",
+  "sourceTextSha256": "289a1972df74055b74ebfc89b1e16f14e0203a765a59fb42a49c6e20fcc4d4f4",
+  "expectedText": "I have an appointment at a community clinic next week. Before I go, I will write down the symptom I want to describe and the time I first noticed it. At reception, I will check my name and phone number. If I have a question about an allergy, I will put it on the same card. I might also ask a nurse what an examination involves. If a prescription has a word I do not understand, I can ask the pharmacy to explain the label. I will listen to the professional and take notes instead of guessing. My friend will wait outside, and I will send a message when the conversation is finished.",
+  "expectedTextSha256": "289a1972df74055b74ebfc89b1e16f14e0203a765a59fb42a49c6e20fcc4d4f4",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day12-speaking-part01.wav",
+  "wavSha256": "f60de6fe6b53fc77f715713ad59aabe082f9235b2cb09ff49b459c7026d08171",
+  "wavDurationSeconds": 44.52,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I have an appointment at a community clinic next week. Before I go, I will write down the symptom I want to describe and the time I first noticed it. At reception, I will check my name and phone number. If I have a question about an allergy, I will put it on the same card. I might also ask a nurse what an examination involves. If a prescription has a word I do not understand, I can ask the pharmacy to explain the label. I will listen to the professional and take notes instead of guessing. My friend will wait outside, and I will send a message when the conversation is finished.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.34,
+        "text": "I have an appointment at a community clinic next week.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.34,
+        "endSeconds": 11.34,
+        "text": "Before I go, I will write down the symptom I want to describe and the time I first noticed it.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 11.34,
+        "endSeconds": 15.68,
+        "text": "At reception, I will check my name and phone number.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 15.68,
+        "endSeconds": 21.02,
+        "text": "If I have a question about an allergy, I will put it on the same card.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 21.02,
+        "endSeconds": 25.76,
+        "text": "I might also ask a nurse what an examination involves.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 25.76,
+        "endSeconds": 33.08,
+        "text": "If a prescription has a word I do not understand, I can ask the pharmacy to explain the label.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 33.08,
+        "endSeconds": 37.98,
+        "text": "I will listen to the professional and take notes instead of guessing.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 37.98,
+        "endSeconds": 43.98,
+        "text": "My friend will wait outside, and I will send a message when the conversation is finished.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 44.52,
+    "audioSha256": "f60de6fe6b53fc77f715713ad59aabe082f9235b2cb09ff49b459c7026d08171",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 126,
+    "actualTokens": 126,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 113,
+    "actualTokens": 113,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

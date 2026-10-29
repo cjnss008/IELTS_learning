@@ -1,0 +1,411 @@
+{
+  "schema": 1,
+  "day": 13,
+  "skill": "listening",
+  "id": "day13-listening",
+  "materialId": "family-linked-d13-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 52.43433333333333,
+  "sourceAudioSha256": "9e7e045e2af98ec11aae28eb5a96604665adb50df1fdbdbe39368695cb537b08",
+  "sourceTextSha256": "f64831ed7e8c6a771931ce3f3a5a41681a077a3981ef7f1d4edf8646734be8b3",
+  "expectedText": "We have a budget of twenty-five pounds for the soup evening. Have you made a list, Ben? Yes. We need two loaves of bread, one bag of rice, three packets of soup and one liter of juice. Let us take a basket. How much is the bread? Each loaf has a price of two pounds fifty. Two loaves cost five pounds in total. The rice is six pounds for the bag. The label says two kilograms, so we do not need to weigh it. The smaller one-kilogram bag was out of stock. What about the soup? Each packet costs two pounds. The quantity is three, so that is six pounds. The juice is two pounds.",
+  "expectedTextSha256": "4c61918db4788d313c5c6e369e520f96afa1fe1ebacbacfefa5b9491e7ceff74",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day13-listening-part01.wav",
+  "wavSha256": "643d040fdfe9460cd78b9d690d18c8c7426d9e016ad6a7d50274b9168aea6020",
+  "wavDurationSeconds": 52.4343125,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "We have a budget of £25 for the soup evening. Have you made a list, Ben? Yes. We need two loaves of bread, one bag of rice, three packets of soup and one liter of juice. Let us take a basket. How much is the bread? Each loaf has a price of £2.50. Two loaves cost £5 in total. The rice is £6 for the bag. The label says two kilograms, so we do not need to weigh it. The smaller one kilogram bag was out of stock. What about the soup? Each packet costs two pounds. The quantity is three, so that is six pounds. the juice is 2 pounds.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.66,
+        "text": "We have a budget of £25 for the soup evening.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.66,
+        "endSeconds": 7.54,
+        "text": "Have you made a list, Ben?",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 7.54,
+        "endSeconds": 9.2,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 9.2,
+        "endSeconds": 15.84,
+        "text": "We need two loaves of bread, one bag of rice, three packets of soup and one liter of juice.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 15.84,
+        "endSeconds": 18.44,
+        "text": "Let us take a basket.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 18.44,
+        "endSeconds": 20.84,
+        "text": "How much is the bread?",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 20.84,
+        "endSeconds": 24.64,
+        "text": "Each loaf has a price of £2.50.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 24.64,
+        "endSeconds": 28.2,
+        "text": "Two loaves cost £5 in total.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 28.2,
+        "endSeconds": 31.56,
+        "text": "The rice is £6 for the bag.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 31.56,
+        "endSeconds": 36.56,
+        "text": "The label says two kilograms, so we do not need to weigh it.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 36.56,
+        "endSeconds": 40.76,
+        "text": "The smaller one kilogram bag was out of stock.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 40.76,
+        "endSeconds": 43.04,
+        "text": "What about the soup?",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 43.04,
+        "endSeconds": 46.24,
+        "text": "Each packet costs two pounds.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 46.24,
+        "endSeconds": 50.28,
+        "text": "The quantity is three, so that is six pounds.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 50.28,
+        "endSeconds": 51.94,
+        "text": "the juice is 2 pounds.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 52.4343125,
+    "audioSha256": "643d040fdfe9460cd78b9d690d18c8c7426d9e016ad6a7d50274b9168aea6020",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 135,
+    "actualTokens": 135,
+    "edits": 13,
+    "changes": [
+      {
+        "expected": [
+          "twenty-five",
+          "pounds"
+        ],
+        "actual": [
+          "£",
+          "25"
+        ],
+        "expectedIndex": 5,
+        "actualIndex": 5,
+        "contextBefore": [
+          "We",
+          "have",
+          "a",
+          "budget",
+          "of"
+        ],
+        "contextAfter": [
+          "for",
+          "the",
+          "soup",
+          "evening",
+          "."
+        ]
+      },
+      {
+        "expected": [
+          "two",
+          "pounds",
+          "fifty"
+        ],
+        "actual": [
+          "£",
+          "2.50"
+        ],
+        "expectedIndex": 62,
+        "actualIndex": 62,
+        "contextBefore": [
+          "loaf",
+          "has",
+          "a",
+          "price",
+          "of"
+        ],
+        "contextAfter": [
+          ".",
+          "Two",
+          "loaves",
+          "cost",
+          "five"
+        ]
+      },
+      {
+        "expected": [
+          "five",
+          "pounds"
+        ],
+        "actual": [
+          "£",
+          "5"
+        ],
+        "expectedIndex": 69,
+        "actualIndex": 68,
+        "contextBefore": [
+          "fifty",
+          ".",
+          "Two",
+          "loaves",
+          "cost"
+        ],
+        "contextAfter": [
+          "in",
+          "total",
+          ".",
+          "The",
+          "rice"
+        ]
+      },
+      {
+        "expected": [
+          "six",
+          "pounds"
+        ],
+        "actual": [
+          "£",
+          "6"
+        ],
+        "expectedIndex": 77,
+        "actualIndex": 76,
+        "contextBefore": [
+          "total",
+          ".",
+          "The",
+          "rice",
+          "is"
+        ],
+        "contextAfter": [
+          "for",
+          "the",
+          "bag",
+          ".",
+          "The"
+        ]
+      },
+      {
+        "expected": [
+          "one-kilogram"
+        ],
+        "actual": [
+          "one",
+          "kilogram"
+        ],
+        "expectedIndex": 100,
+        "actualIndex": 99,
+        "contextBefore": [
+          "weigh",
+          "it",
+          ".",
+          "The",
+          "smaller"
+        ],
+        "contextAfter": [
+          "bag",
+          "was",
+          "out",
+          "of",
+          "stock"
+        ]
+      },
+      {
+        "expected": [
+          "The"
+        ],
+        "actual": [
+          "the"
+        ],
+        "expectedIndex": 129,
+        "actualIndex": 129,
+        "contextBefore": [
+          "that",
+          "is",
+          "six",
+          "pounds",
+          "."
+        ],
+        "contextAfter": [
+          "juice",
+          "is",
+          "two",
+          "pounds",
+          "."
+        ]
+      },
+      {
+        "expected": [
+          "two"
+        ],
+        "actual": [
+          "2"
+        ],
+        "expectedIndex": 132,
+        "actualIndex": 132,
+        "contextBefore": [
+          "pounds",
+          ".",
+          "The",
+          "juice",
+          "is"
+        ],
+        "contextAfter": [
+          "pounds",
+          "."
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 117,
+    "actualTokens": 113,
+    "edits": 4,
+    "changes": [
+      {
+        "expected": [
+          "pounds"
+        ],
+        "actual": [],
+        "expectedIndex": 7,
+        "actualIndex": 7,
+        "contextBefore": [
+          "a",
+          "budget",
+          "of",
+          "twenty",
+          "five"
+        ],
+        "contextAfter": [
+          "for",
+          "the",
+          "soup",
+          "evening",
+          "have"
+        ]
+      },
+      {
+        "expected": [
+          "pounds"
+        ],
+        "actual": [],
+        "expectedIndex": 55,
+        "actualIndex": 54,
+        "contextBefore": [
+          "has",
+          "a",
+          "price",
+          "of",
+          "two"
+        ],
+        "contextAfter": [
+          "fifty",
+          "two",
+          "loaves",
+          "cost",
+          "five"
+        ]
+      },
+      {
+        "expected": [
+          "pounds"
+        ],
+        "actual": [],
+        "expectedIndex": 61,
+        "actualIndex": 59,
+        "contextBefore": [
+          "fifty",
+          "two",
+          "loaves",
+          "cost",
+          "five"
+        ],
+        "contextAfter": [
+          "in",
+          "total",
+          "the",
+          "rice",
+          "is"
+        ]
+      },
+      {
+        "expected": [
+          "pounds"
+        ],
+        "actual": [],
+        "expectedIndex": 68,
+        "actualIndex": 65,
+        "contextBefore": [
+          "total",
+          "the",
+          "rice",
+          "is",
+          "six"
+        ],
+        "contextAfter": [
+          "for",
+          "the",
+          "bag",
+          "the",
+          "label"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

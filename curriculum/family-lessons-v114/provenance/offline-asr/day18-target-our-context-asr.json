@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "job": {
+    "day": 18,
+    "skill": "listening",
+    "id": "day18-target-our",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d18-listening-next-v1.mp3",
+    "sourceAudioSha256": "8674788425e471b5e7e3b81cd8b17e408ad2d164eeffe46b18594fe9221bdc0e",
+    "sourceTextSha256": "d2b0d9bb5fa64032dc0da11e2d3133d4e2e227a173518a481b1c8e10a1abfa26",
+    "start": 7.010875,
+    "end": 39.03616666666667,
+    "reference": "Yes. First, let's connect the laptop to the wireless network. The internet is working, and I can open the club website in the browser. Is this our real account? I do not want to use my usual password during a lesson. No, this is a practice account. The username is printed on the lesson card, and the password is on a separate card. We will remove both cards after practice.",
+    "focus": "Is this our real account?"
+  },
+  "originalWavSha256": "e4bbdc7acc11196bf3e51ea696cc260e153428edbb67059ee45cd6b04ab74676",
+  "paddedWavSha256": "3d747b2bcf50806212e1c87cf58df477c104ef565abda82a23045172c1d6fc1a",
+  "sourceSamplesIdentical": true,
+  "appendedSamplesAllZero": true,
+  "paddedDurationSeconds": 60.5,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Yes. First, let's connect the laptop to the wireless network. The internet is working, and I can open the club website in the browser. Is this our real account? I do not want to use my usual password during a lesson. No, this is a practice account. The username is printed on the lesson card, and the password is on a separate card. We will remove both cards after practice.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 8.64,
+        "text": "Yes. First, let's connect the laptop to the wireless network. The internet is working,",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 8.64,
+        "endSeconds": 12.44,
+        "text": "and I can open the club website in the browser.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 12.44,
+        "endSeconds": 19.12,
+        "text": "Is this our real account? I do not want to use my usual password during a lesson.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 19.12,
+        "endSeconds": 26.32,
+        "text": "No, this is a practice account. The username is printed on the lesson card, and the password",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 26.32,
+        "endSeconds": 31.6,
+        "text": "is on a separate card. We will remove both cards after practice.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "3d747b2bcf50806212e1c87cf58df477c104ef565abda82a23045172c1d6fc1a",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 82,
+    "actualTokens": 82,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 71,
+    "actualTokens": 71,
+    "edits": 0,
+    "changes": []
+  },
+  "sourcePromptProvided": false
+}

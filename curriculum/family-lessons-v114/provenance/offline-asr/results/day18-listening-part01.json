@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "day": 18,
+  "skill": "listening",
+  "id": "day18-listening",
+  "materialId": "family-linked-d18-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 59.41970833333333,
+  "sourceAudioSha256": "8674788425e471b5e7e3b81cd8b17e408ad2d164eeffe46b18594fe9221bdc0e",
+  "sourceTextSha256": "d2b0d9bb5fa64032dc0da11e2d3133d4e2e227a173518a481b1c8e10a1abfa26",
+  "expectedText": "The club meeting is on Friday. Can we prepare a digital document with the agenda today? Yes. First, let's connect the laptop to the wireless network. The internet is working, and I can open the club website in the browser. Is this our real account? I do not want to use my usual password during a lesson. No, this is a practice account. The username is printed on the lesson card, and the password is on a separate card. We will remove both cards after practice. I can type with the keyboard, but the mouse is not moving the pointer. Is that a hardware problem? Maybe. Press this small button underneath it first. If the mouse is switched off, the pointer does not move. There, it works now.",
+  "expectedTextSha256": "619459436dd765223914897bcd288bd089ea14152b6d976450b2a2c3e60495e1",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day18-listening-part01.wav",
+  "wavSha256": "4d787bf379953d7aa130483a38b376eab5f76a17ac7e2e34b1b367ba81b2462d",
+  "wavDurationSeconds": 59.4196875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "The club meeting is on Friday. Can we prepare a digital document with the agenda today? Yes. First, let's connect the laptop to the wireless network. The internet is working, and I can open the club website in the browser. Is this a real account? I do not want to use my usual password during a lesson. No, this is a practice account. The username is printed on the lesson card, and the password is on a separate card. We will remove both cards after practice. I can type with the keyboard, but the mouse is not moving the pointer. Is that a hardware problem? Maybe. Press the small button underneath it first. If the mouse is switched off, the pointer does not move. There it works now.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 2.96,
+        "text": "The club meeting is on Friday.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 2.96,
+        "endSeconds": 7.48,
+        "text": "Can we prepare a digital document with the agenda today?",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 7.48,
+        "endSeconds": 9.16,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 9.16,
+        "endSeconds": 13.8,
+        "text": "First, let's connect the laptop to the wireless network.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 13.8,
+        "endSeconds": 19.16,
+        "text": "The internet is working, and I can open the club website in the browser.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 19.16,
+        "endSeconds": 21.76,
+        "text": "Is this a real account?",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 21.76,
+        "endSeconds": 26.28,
+        "text": "I do not want to use my usual password during a lesson.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 26.28,
+        "endSeconds": 29.52,
+        "text": "No, this is a practice account.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 29.52,
+        "endSeconds": 35.6,
+        "text": "The username is printed on the lesson card, and the password is on a separate card.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 35.6,
+        "endSeconds": 39.44,
+        "text": "We will remove both cards after practice.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 39.44,
+        "endSeconds": 44.56,
+        "text": "I can type with the keyboard, but the mouse is not moving the pointer.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 44.56,
+        "endSeconds": 47.28,
+        "text": "Is that a hardware problem?",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 47.28,
+        "endSeconds": 49,
+        "text": "Maybe.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 49,
+        "endSeconds": 52.84,
+        "text": "Press the small button underneath it first.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 52.84,
+        "endSeconds": 57.24,
+        "text": "If the mouse is switched off, the pointer does not move.",
+        "confidence": null
+      },
+      {
+        "id": "segment-15",
+        "startSeconds": 57.24,
+        "endSeconds": 59.24,
+        "text": "There it works now.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 59.4196875,
+    "audioSha256": "4d787bf379953d7aa130483a38b376eab5f76a17ac7e2e34b1b367ba81b2462d",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 151,
+    "actualTokens": 150,
+    "edits": 3,
+    "changes": [
+      {
+        "expected": [
+          "our"
+        ],
+        "actual": [
+          "a"
+        ],
+        "expectedIndex": 49,
+        "actualIndex": 49,
+        "contextBefore": [
+          "the",
+          "browser",
+          ".",
+          "Is",
+          "this"
+        ],
+        "contextAfter": [
+          "real",
+          "account",
+          "?",
+          "I",
+          "do"
+        ]
+      },
+      {
+        "expected": [
+          "this"
+        ],
+        "actual": [
+          "the"
+        ],
+        "expectedIndex": 125,
+        "actualIndex": 125,
+        "contextBefore": [
+          "problem",
+          "?",
+          "Maybe",
+          ".",
+          "Press"
+        ],
+        "contextAfter": [
+          "small",
+          "button",
+          "underneath",
+          "it",
+          "first"
+        ]
+      },
+      {
+        "expected": [
+          ","
+        ],
+        "actual": [],
+        "expectedIndex": 146,
+        "actualIndex": 146,
+        "contextBefore": [
+          "does",
+          "not",
+          "move",
+          ".",
+          "There"
+        ],
+        "contextAfter": [
+          "it",
+          "works",
+          "now",
+          "."
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 129,
+    "actualTokens": 129,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          "our"
+        ],
+        "actual": [
+          "a"
+        ],
+        "expectedIndex": 43,
+        "actualIndex": 43,
+        "contextBefore": [
+          "in",
+          "the",
+          "browser",
+          "is",
+          "this"
+        ],
+        "contextAfter": [
+          "real",
+          "account",
+          "i",
+          "do",
+          "not"
+        ]
+      },
+      {
+        "expected": [
+          "this"
+        ],
+        "actual": [
+          "the"
+        ],
+        "expectedIndex": 108,
+        "actualIndex": 108,
+        "contextBefore": [
+          "a",
+          "hardware",
+          "problem",
+          "maybe",
+          "press"
+        ],
+        "contextAfter": [
+          "small",
+          "button",
+          "underneath",
+          "it",
+          "first"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

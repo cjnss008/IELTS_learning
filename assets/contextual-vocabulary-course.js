@@ -76,6 +76,31 @@ function waitingMessage(rows){const api=root.IELTSLexicalRetentionV88||(typeof r
 const FAMILY='family-lesson-v95-context';
 const bindingFields=['schema','originCourseDay','releaseId','releaseSha256','rootReviewSha256','unitId','unitSha256','targetSetSha256','sourceContractSha256'];
 function sameFamilyBinding(a,b){return !!a&&!!b&&bindingFields.every(key=>a[key]===b[key]);}
+// Only the family runtime can authenticate this lexicon and its complete,
+// current record snapshot. Caller-provided contextWords are never a lexicon.
+function familyVocabularyLexicon(options={}){
+ const empty=reason=>({status:'pending',reason,entries:[]}),api=root.IELTSFamilyLessonExpansionV95;
+ if(!api?.runtime||!Array.isArray(options.records))return empty('family-lexicon-records-pending');
+ try{
+  const runtime=api.runtime();if(!runtime?.readVocabularyLexicon)return empty('family-lexicon-runtime-pending');
+  const value=runtime.readVocabularyLexicon({records:options.records});if(value?.status!=='ready'||!Array.isArray(value.entries))return empty(value?.reason||'family-lexicon-pending');
+  const core=options.vocabularyData?.entries||root.IELTS_ESSENTIAL_VOCABULARY?.entries;if(!Array.isArray(core))return empty('family-canonical-catalog-pending');
+  const byId=new Map(core.map(entry=>[entry.id,entry])),seen=new Set(),entries=[];
+  for(const row of value.entries){const id=row?.id,canonical=norm(row?.canonicalWord||row?.word),base=byId.get(id);
+   if(typeof id!=='string'||seen.has(id)||!canonical||!/^\w+(?:['-]\w+)*$/.test(canonical))return empty('family-lexicon-identity-pending');
+   if(row.kind==='core'){
+    const variants=array(row.spellingVariants).map(norm),known=new Set(array(base?.spellingVariants).map(norm));
+    if(!base||norm(base.word)!==canonical||variants.some(word=>!word||!known.has(word)))return empty('family-lexicon-core-pending');
+    entries.push({...base,spellingVariants:variants,lexicalKind:'core'});
+   }else if(row.kind==='extension'){
+    if(!/^extension:[a-z]+(?:['-][a-z]+)*$/.test(id)||id!=='extension:'+canonical||base||!row.dictionaryReview||row.dictionaryReview.status!=='dictionary-reference-checked')return empty('family-lexicon-extension-pending');
+    const canonicalWord=String(row.canonicalWord||row.word).trim();entries.push({...row,id,word:canonicalWord,canonicalWord,lexicalKind:'extension'});
+   }else return empty('family-lexicon-kind-pending');
+   seen.add(id);
+  }
+  return{status:'ready',entries};
+ }catch(_){return empty('family-lexicon-unverified');}
+}
 function familyVocabularyContext(options={}){
  const api=root.IELTSFamilyLessonExpansionV95,empty=(status,reason)=>({status,reason,targets:[],releaseCanonicalIds:[]});
  if(!api)return empty('inactive','family-role-not-loaded');
@@ -83,8 +108,10 @@ function familyVocabularyContext(options={}){
  let value,binding;try{const runtime=api.runtime();if(!runtime?.readVocabularyContext)return empty('pending','family-runtime-pending');value=runtime.readVocabularyContext({courseDay:options.courseDay,records:options.records,drafts:options.drafts||[],...(options.binding?{binding:options.binding}:{})});if(value?.status!=='ready')return empty(value?.status==='inactive'?'inactive':'pending',value?.reason||'family-source-pending');binding=api.cleanVocabularyBinding(value.binding);}catch(_){return empty('pending','family-source-unverified');}
  const size=value?.releaseCanonicalIds?.length,allowedSize=options.binding?[30,40].includes(size):size===30;if(!binding||binding.originCourseDay!==options.courseDay||options.binding&&!sameFamilyBinding(binding,options.binding)||!Array.isArray(value.releaseCanonicalIds)||!allowedSize||new Set(value.releaseCanonicalIds).size!==size||!Array.isArray(value.targets)||value.targets.length!==size)return empty('pending','family-unit-shape-pending');
  const entries=options.vocabularyData?.entries||root.IELTS_ESSENTIAL_VOCABULARY?.entries;if(!Array.isArray(entries))return empty('pending','family-canonical-catalog-pending');
- const byId=new Map(entries.map(entry=>[entry.id,entry])),ids=new Set(value.releaseCanonicalIds),seen=new Set(),words=new Set(),targets=[];
- for(const target of value.targets){const entry=byId.get(target?.canonicalId),key=norm(target?.word);if(!entry||!ids.has(target.canonicalId)||seen.has(target.canonicalId)||!key||norm(entry.word)!==key||words.has(key)||typeof target.meaning!=='string'||!target.meaning.trim()||target.meaning.length>500||typeof target.ipa!=='string'||target.ipa.length>200||typeof target.example!=='string'||!target.example.trim()||target.example.length>2000||typeof target.audio!=='string'||!target.audio||target.audio.length>500||!target.sourceRef)return empty('pending','family-canonical-target-pending');seen.add(target.canonicalId);words.add(key);targets.push({...entry,word:target.word,meaning:target.meaning,ipa:target.ipa,example:target.example,audio:target.audio,partOfSpeech:target.partOfSpeech,sourceRef:target.sourceRef,familyCanonicalId:target.canonicalId,originCourseDay:binding.originCourseDay});}
+ const byId=new Map(entries.map(entry=>[entry.id,entry])),lexicon=familyVocabularyLexicon({records:options.records,vocabularyData:options.vocabularyData}),lexById=new Map((lexicon.entries||[]).map(entry=>[entry.id,entry])),ids=new Set(value.releaseCanonicalIds),seen=new Set(),words=new Set(),targets=[];
+ for(const target of value.targets){const base=byId.get(target?.canonicalId),entry=base||lexById.get(target?.canonicalId),key=norm(target?.word),canonical=norm(entry?.word),variants=lexicon.status==='ready'?array(lexById.get(target?.canonicalId)?.spellingVariants).map(norm):[],isExtension=!base;
+  if(!entry||isExtension&&(lexicon.status!=='ready'||entry.lexicalKind!=='extension'||target.lexicalKind!=='extension')||!ids.has(target.canonicalId)||seen.has(target.canonicalId)||!key||key!==canonical&&!variants.includes(key)||target.canonicalWord&&norm(target.canonicalWord)!==canonical||words.has(key)||typeof target.meaning!=='string'||!target.meaning.trim()||target.meaning.length>500||typeof target.ipa!=='string'||target.ipa.length>200||typeof target.example!=='string'||!target.example.trim()||target.example.length>2000||typeof target.audio!=='string'||!target.audio||target.audio.length>500||!target.sourceRef)return empty('pending','family-canonical-target-pending');
+  seen.add(target.canonicalId);words.add(key);targets.push({...entry,word:target.word,canonicalWord:entry.word,lexicalKind:isExtension?'extension':'core',meaning:target.meaning,ipa:target.ipa,example:target.example,audio:target.audio,partOfSpeech:target.partOfSpeech,sourceRef:target.sourceRef,...(target.dictionaryReview?{dictionaryReview:target.dictionaryReview}:{}),familyCanonicalId:target.canonicalId,originCourseDay:binding.originCourseDay});}
  return{status:'ready',binding,releaseCanonicalIds:value.releaseCanonicalIds.slice(),targets,contextSource:{type:FAMILY,binding}};
 }
 function familyBatchAccess(batch,options={}){
@@ -145,5 +172,5 @@ function freeze(value,options={}){
  const day={...copy(current.dayPlan),contextualVocabulary:copy(current.contract)};adaptive.markStarted(day.day,day);return day;
 }
 function contextSourceFor(contract,words){const owned=array(words).some(w=>w.source?.role==='owned-source-context-v82'),publicSource=array(words).some(w=>w.source?.role!=='owned-source-context-v82');return{originCourseDay:contract.day,contractHash:contract.contentHash,...(owned?{schema:2,role:publicSource?'mixed-context-v82':'owned-source-context-v82'}:{})};}
-return Object.freeze({ROLE,FAMILY,courseContext,sentence,timerSnapshot,projectedRest,remainingCore,budgetFor,waitingMessage,validatedWords,sourceTrainingStatus,familyVocabularyContext,familyBatchAccess,batchTrainingAccess,applySourceTrainingGate,resolve,attachBeforeStart,daily,beginDay,freeze,contextSourceFor});
+return Object.freeze({ROLE,FAMILY,courseContext,sentence,timerSnapshot,projectedRest,remainingCore,budgetFor,waitingMessage,validatedWords,sourceTrainingStatus,familyVocabularyLexicon,familyVocabularyContext,familyBatchAccess,batchTrainingAccess,applySourceTrainingGate,resolve,attachBeforeStart,daily,beginDay,freeze,contextSourceFor});
 });

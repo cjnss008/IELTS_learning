@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "version": "0.0.114",
+  "status": "development-candidate-not-published",
+  "formalVersion": "0.0.112",
+  "fullRegression": {
+    "command": "node tools/test.cjs",
+    "tests": 2906,
+    "passed": 2904,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 2,
+    "durationMs": 845863.6508,
+    "exitCode": 0,
+    "localLog": "work/v114-performance-full.log",
+    "logSha256": "c9bd706cda07807a438a3bd3102cebd09b178953424bd3ba6a420821a55240a1"
+  },
+  "runtime": {
+    "index": "curriculum/year-first-use/index.11771a4a10757dc8.json",
+    "manifestSha256": "faa6758ae410f16f913ca8f833b3ade727fe0737b28503eb8ba734cf35a477a3",
+    "contract": "curriculum/year-first-use-runtime-contract-v114-context-lexicon.json",
+    "contractSha256": "fd51bb84f1b3b4ad3d6bf5e60a72863fca3f9eed79d4b62e65b9014d4bb66878",
+    "components": 55
+  },
+  "preservation": {
+    "oldVersion": "0.0.112",
+    "newVersion": "0.0.114",
+    "oldMaterialsPreserved": 1912,
+    "oldDayPlansPreserved": 365,
+    "oldFamilyUnitsPreserved": 7,
+    "oldContractsPreserved": 12,
+    "newMaterials": 100,
+    "userDataReadOrWritten": false
+  },
+  "checks": {
+    "staticResources": "27 pages,870 links,129 scripts,52 old lessons,360 word audio paths",
+    "curriculumStructure": "2012 materials,365 days",
+    "questionRules": "830 source materials,7800 questions,0 high-priority candidates,0 unresolved candidates; not a whole-pool semantic/psychometric validation"
+  },
+  "browser": {
+    "passed": false,
+    "block": "Local browser use is disabled in Work settings",
+    "formalLearnerDataAccessed": false
+  },
+  "clarification": "Keep-Alive: timeout=5 is a normal idle HTTP connection parameter, not a request failure.",
+  "limitations": [
+    "Actual family-PC button latency remains unverified.",
+    "Synthetic saved-original click A/B was8.21s versus0.92s; subsequent queue still blocks.",
+    "Current combined synthetic ready queue measured5.9s on a shared machine; not a comparable real-browser benchmark.",
+    "New course and audio candidates are not proof of IELTS outcomes."
+  ]
+}

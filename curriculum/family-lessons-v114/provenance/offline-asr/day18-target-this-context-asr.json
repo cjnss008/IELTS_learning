@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "job": {
+    "day": 18,
+    "skill": "listening",
+    "id": "day18-target-this",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d18-listening-next-v1.mp3",
+    "sourceAudioSha256": "8674788425e471b5e7e3b81cd8b17e408ad2d164eeffe46b18594fe9221bdc0e",
+    "sourceTextSha256": "d2b0d9bb5fa64032dc0da11e2d3133d4e2e227a173518a481b1c8e10a1abfa26",
+    "start": 39.03616666666667,
+    "end": 68.317375,
+    "reference": "I can type with the keyboard, but the mouse is not moving the pointer. Is that a hardware problem? Maybe. Press this small button underneath it first. If the mouse is switched off, the pointer does not move. There, it works now. Good. After the login screen, I see a folder called Events. Which file should I open?",
+    "focus": "Press this small button underneath it first."
+  },
+  "originalWavSha256": "0bf86b3d1a753e35ca96aaa60fd6683687751ac6c5ea174b8808bb957b1dca61",
+  "paddedWavSha256": "f2280a0b102674b8f72f4c3600d3932450b804e294223b28b91dba72bcd264fd",
+  "sourceSamplesIdentical": true,
+  "appendedSamplesAllZero": true,
+  "paddedDurationSeconds": 60.5,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I can type with the keyboard, but the mouse is not moving the pointer. Is that a hardware problem? Maybe. Press the small button underneath it first. If the mouse is switched off, the pointer does not move. There, it works now. Good. After the login screen, I see a folder called Events. Which file should I open?",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 5,
+        "text": "I can type with the keyboard, but the mouse is not moving the pointer.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 5,
+        "endSeconds": 8,
+        "text": "Is that a hardware problem?",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8,
+        "endSeconds": 10,
+        "text": "Maybe.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 10,
+        "endSeconds": 13,
+        "text": "Press the small button underneath it first.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 13,
+        "endSeconds": 18,
+        "text": "If the mouse is switched off, the pointer does not move.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 18,
+        "endSeconds": 20,
+        "text": "There, it works now.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 20,
+        "endSeconds": 22,
+        "text": "Good.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 22,
+        "endSeconds": 27,
+        "text": "After the login screen, I see a folder called Events.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 27,
+        "endSeconds": 31,
+        "text": "Which file should I open?",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "f2280a0b102674b8f72f4c3600d3932450b804e294223b28b91dba72bcd264fd",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 71,
+    "actualTokens": 71,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "this"
+        ],
+        "actual": [
+          "the"
+        ],
+        "expectedIndex": 25,
+        "actualIndex": 25,
+        "contextBefore": [
+          "problem",
+          "?",
+          "Maybe",
+          ".",
+          "Press"
+        ],
+        "contextAfter": [
+          "small",
+          "button",
+          "underneath",
+          "it",
+          "first"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 58,
+    "actualTokens": 58,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "this"
+        ],
+        "actual": [
+          "the"
+        ],
+        "expectedIndex": 21,
+        "actualIndex": 21,
+        "contextBefore": [
+          "a",
+          "hardware",
+          "problem",
+          "maybe",
+          "press"
+        ],
+        "contextAfter": [
+          "small",
+          "button",
+          "underneath",
+          "it",
+          "first"
+        ]
+      }
+    ]
+  },
+  "sourcePromptProvided": false
+}

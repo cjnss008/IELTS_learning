@@ -1,0 +1,344 @@
+{
+  "schema": 1,
+  "day": 15,
+  "skill": "listening",
+  "id": "day15-listening",
+  "materialId": "family-linked-d15-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 60.60325,
+  "audioEndSeconds": 118.432917,
+  "sourceAudioSha256": "b2e5a58da26dae2e3ebbea5f81a0d8c38e06125602b949b9efb83a07dcfb3186",
+  "sourceTextSha256": "eac276bf58e6dee5ef3d43cf11092239f4a264757000116a95db79e3c881b3cc",
+  "expectedText": "Did they explain the pay? Yes. The hourly wage was fourteen pounds. The manager also mentioned a monthly salary, but that was for a different full-time position. Did you get a decision at the interview? No. They will contact each candidate next Tuesday. My goal was to speak clearly, and I felt successful in giving my example. What will you do while you wait? I will resume my library volunteering on Sunday. I enjoy that service, and I want to build a reliable work routine for my career. Did you ask about the first responsibility? Yes. A new assistant starts by preparing tables before visitors arrive. I wrote it in my notes, because this opportunity could teach me a new skill.",
+  "expectedTextSha256": "6636a6d5a09d6ccd333124fae634552247d9fd5261714e9582bcd672a0a8dc0c",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day15-listening-part02.wav",
+  "wavSha256": "8070346e1071e50dd1e998c68e711107d504f8896b29b9d78383aac09a0fd539",
+  "wavDurationSeconds": 57.8296875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "- Did they explain the pay? - Yes. The hourly wage was 14 pounds. The manager also mentioned a monthly salary, but that was for a different full-time position. - Did you get a decision at the interview? - No. They will contact each candidate next Tuesday. My goal was to speak clearly, and I felt successful in giving my example. - What will you do while you wait? - I will resume my library volunteering on Sunday. I enjoy that service, and I want to build a reliable work routine for my career. - Did you ask about the first responsibility? - Yes. A new assistant starts by preparing tables before visitors arrive. I wrote it in my notes, because this opportunity He could teach me a new skill.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 8.96,
+        "text": "- Did they explain the pay? - Yes. The hourly wage was 14 pounds. The manager",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 8.96,
+        "endSeconds": 15.16,
+        "text": "also mentioned a monthly salary, but that was for a different full-time position.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 15.16,
+        "endSeconds": 22.2,
+        "text": "- Did you get a decision at the interview? - No. They will contact each candidate next",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 22.2,
+        "endSeconds": 29.8,
+        "text": "Tuesday. My goal was to speak clearly, and I felt successful in giving my example.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 29.8,
+        "endSeconds": 34.8,
+        "text": "- What will you do while you wait? - I will resume my library volunteering",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 34.8,
+        "endSeconds": 42.8,
+        "text": "on Sunday. I enjoy that service, and I want to build a reliable work routine for my career.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 42.8,
+        "endSeconds": 50.16,
+        "text": "- Did you ask about the first responsibility? - Yes. A new assistant starts by preparing",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 50.16,
+        "endSeconds": 56.24,
+        "text": "tables before visitors arrive. I wrote it in my notes, because this opportunity",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 56.24,
+        "endSeconds": 57.82,
+        "text": "He could teach me a new skill.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 57.8296875,
+    "audioSha256": "8070346e1071e50dd1e998c68e711107d504f8896b29b9d78383aac09a0fd539",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 140,
+    "actualTokens": 149,
+    "edits": 10,
+    "changes": [
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 0,
+        "actualIndex": 0,
+        "contextBefore": [],
+        "contextAfter": [
+          "Did",
+          "they",
+          "explain",
+          "the",
+          "pay"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 6,
+        "actualIndex": 7,
+        "contextBefore": [
+          "they",
+          "explain",
+          "the",
+          "pay",
+          "?"
+        ],
+        "contextAfter": [
+          "Yes",
+          ".",
+          "The",
+          "hourly",
+          "wage"
+        ]
+      },
+      {
+        "expected": [
+          "fourteen"
+        ],
+        "actual": [
+          "14"
+        ],
+        "expectedIndex": 12,
+        "actualIndex": 14,
+        "contextBefore": [
+          ".",
+          "The",
+          "hourly",
+          "wage",
+          "was"
+        ],
+        "contextAfter": [
+          "pounds",
+          ".",
+          "The",
+          "manager",
+          "also"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 32,
+        "actualIndex": 34,
+        "contextBefore": [
+          "a",
+          "different",
+          "full-time",
+          "position",
+          "."
+        ],
+        "contextAfter": [
+          "Did",
+          "you",
+          "get",
+          "a",
+          "decision"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 41,
+        "actualIndex": 44,
+        "contextBefore": [
+          "decision",
+          "at",
+          "the",
+          "interview",
+          "?"
+        ],
+        "contextAfter": [
+          "No",
+          ".",
+          "They",
+          "will",
+          "contact"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 67,
+        "actualIndex": 71,
+        "contextBefore": [
+          "in",
+          "giving",
+          "my",
+          "example",
+          "."
+        ],
+        "contextAfter": [
+          "What",
+          "will",
+          "you",
+          "do",
+          "while"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 75,
+        "actualIndex": 80,
+        "contextBefore": [
+          "do",
+          "while",
+          "you",
+          "wait",
+          "?"
+        ],
+        "contextAfter": [
+          "I",
+          "will",
+          "resume",
+          "my",
+          "library"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 102,
+        "actualIndex": 108,
+        "contextBefore": [
+          "routine",
+          "for",
+          "my",
+          "career",
+          "."
+        ],
+        "contextAfter": [
+          "Did",
+          "you",
+          "ask",
+          "about",
+          "the"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "-"
+        ],
+        "expectedIndex": 110,
+        "actualIndex": 117,
+        "contextBefore": [
+          "about",
+          "the",
+          "first",
+          "responsibility",
+          "?"
+        ],
+        "contextAfter": [
+          "Yes",
+          ".",
+          "A",
+          "new",
+          "assistant"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "He"
+        ],
+        "expectedIndex": 133,
+        "actualIndex": 141,
+        "contextBefore": [
+          "notes",
+          ",",
+          "because",
+          "this",
+          "opportunity"
+        ],
+        "contextAfter": [
+          "could",
+          "teach",
+          "me",
+          "a",
+          "new"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 122,
+    "actualTokens": 123,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [],
+        "actual": [
+          "he"
+        ],
+        "expectedIndex": 116,
+        "actualIndex": 116,
+        "contextBefore": [
+          "my",
+          "notes",
+          "because",
+          "this",
+          "opportunity"
+        ],
+        "contextAfter": [
+          "could",
+          "teach",
+          "me",
+          "a",
+          "new"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

@@ -1,0 +1,282 @@
+{
+  "id": "family-linked-d14-grammar-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 14,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "title": "比较级、同等比较与程度",
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Compare the two rooms: the bedroom is smaller.",
+      "options": [
+        "The bedroom is smaller than the kitchen.",
+        "The bedroom is small than the kitchen.",
+        "The bedroom is more smaller than the kitchen.",
+        "The bedroom is smaller as the kitchen."
+      ],
+      "answers": [
+        "The bedroom is smaller than the kitchen."
+      ],
+      "evidence": "The bedroom is smaller than the kitchen.",
+      "explanation": "比较两个对象时 smaller 后接 than。",
+      "id": "g01",
+      "evidenceOffsets": {
+        "start": 31,
+        "end": 71,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct comparative form of big.",
+      "options": [
+        "more bigger",
+        "biger",
+        "bigger",
+        "biggest than"
+      ],
+      "answers": [
+        "bigger"
+      ],
+      "evidence": "The living room is bigger than the bedroom.",
+      "explanation": "big 的比较级双写 g 再加 er。",
+      "id": "g02",
+      "evidenceOffsets": {
+        "start": 72,
+        "end": 115,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct comparison with spacious.",
+      "options": [
+        "Oak is more spaciouser than Elm.",
+        "Oak is more spacious than Elm.",
+        "Oak is spaciousest than Elm.",
+        "Oak is more spacious as Elm."
+      ],
+      "answers": [
+        "Oak is more spacious than Elm."
+      ],
+      "evidence": "Oak is more spacious than Elm.",
+      "explanation": "spacious 通常用 more 构成比较级，后接 than。",
+      "id": "g03",
+      "evidenceOffsets": {
+        "start": 139,
+        "end": 169,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which phrase completes “The kitchen is larger ___ the bedroom”?",
+      "options": [
+        "that",
+        "as",
+        "from",
+        "than"
+      ],
+      "answers": [
+        "than"
+      ],
+      "evidence": "The bedroom is smaller than the kitchen.",
+      "explanation": "比较级连接另一对象通常用 than。",
+      "id": "g04",
+      "evidenceOffsets": {
+        "start": 31,
+        "end": 71,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "The places are equally quiet. Choose the sentence.",
+      "options": [
+        "Pine is quiet as than Cedar.",
+        "Pine is as quiet as Cedar.",
+        "Pine is as quieter as Cedar.",
+        "Pine is more as quiet Cedar."
+      ],
+      "answers": [
+        "Pine is as quiet as Cedar."
+      ],
+      "evidence": "Pine is as quiet as Cedar.",
+      "explanation": "as ... as 中使用 quiet 原级。",
+      "id": "g05",
+      "evidenceOffsets": {
+        "start": 222,
+        "end": 248,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Pine is smaller than Cedar. Choose the equivalent sentence.",
+      "options": [
+        "Pine is not large than as Cedar.",
+        "Pine is not as large as Cedar.",
+        "Pine is not as larger as Cedar.",
+        "Pine is as more large as Cedar."
+      ],
+      "answers": [
+        "Pine is not as large as Cedar."
+      ],
+      "evidence": "Pine is not as large as Cedar.",
+      "explanation": "not as large as 表示前者不及后者大。",
+      "id": "g06",
+      "evidenceOffsets": {
+        "start": 275,
+        "end": 305,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the adjective form in “as ___ as”.",
+      "options": [
+        "more quiet than",
+        "quietest",
+        "quieter",
+        "quiet"
+      ],
+      "answers": [
+        "quiet"
+      ],
+      "evidence": "Pine is as quiet as Cedar.",
+      "explanation": "同等比较结构使用形容词原级 quiet。",
+      "id": "g07",
+      "evidenceOffsets": {
+        "start": 222,
+        "end": 248,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which phrase expresses that the desk exceeds the space?",
+      "options": [
+        "wide enough",
+        "more private",
+        "too wide",
+        "as quiet"
+      ],
+      "answers": [
+        "too wide"
+      ],
+      "evidence": "The desk is too wide for this room.",
+      "explanation": "too wide 指宽得超过空间所需，放不下。",
+      "id": "g08",
+      "evidenceOffsets": {
+        "start": 387,
+        "end": 422,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct position of enough.",
+      "options": [
+        "wide enough",
+        "wide than enough",
+        "too enough wide",
+        "enough wide"
+      ],
+      "answers": [
+        "wide enough"
+      ],
+      "evidence": "The room is wide enough for the desk.",
+      "explanation": "修饰形容词时 enough 放在形容词后。",
+      "id": "g09",
+      "evidenceOffsets": {
+        "start": 445,
+        "end": 482,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Choose the correct phrase before a noun.",
+      "options": [
+        "space enough the",
+        "enough spaciously",
+        "too enough space",
+        "enough space"
+      ],
+      "answers": [
+        "enough space"
+      ],
+      "evidence": "enough space",
+      "explanation": "enough 修饰名词时可以放在名词前。",
+      "id": "g10",
+      "evidenceOffsets": {
+        "start": 503,
+        "end": 515,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which sentence says the room meets the required width?",
+      "options": [
+        "The room is wide enough for the desk.",
+        "The room is more wide enough the desk.",
+        "The room is too narrow for the desk.",
+        "The room is as wide than the desk."
+      ],
+      "answers": [
+        "The room is wide enough for the desk."
+      ],
+      "evidence": "The room is wide enough for the desk.",
+      "explanation": "wide enough 表示宽度达到需要。",
+      "id": "g11",
+      "evidenceOffsets": {
+        "start": 445,
+        "end": 482,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Avoid a double comparative. Choose the correct form.",
+      "options": [
+        "as bigger than",
+        "more bigger",
+        "bigger",
+        "biggerer"
+      ],
+      "answers": [
+        "bigger"
+      ],
+      "evidence": "The living room is bigger than the bedroom.",
+      "explanation": "bigger 已是比较级，不再加 more。",
+      "id": "g12",
+      "evidenceOffsets": {
+        "start": 72,
+        "end": 115,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "estimatedMinutes": 40,
+  "instructions": "阅读中文讲解及例句，再独立完成十二题并根据证据订正。",
+  "passage": "1. 比较两者可用比较级 + than。短形容词常加 -er：The bedroom is smaller than the kitchen. The living room is bigger than the bedroom. big 末尾辅音双写；多音节词常用 more：Oak is more spacious than Elm. 不说 more bigger，也不要漏掉 than。\n\n2. as + 形容词原级 + as 表示一样：Pine is as quiet as Cedar. not as + 原级 + as 表示前者不及后者：Pine is not as large as Cedar. 这里用 quiet、large 原级，而不是 quieter 或 larger。比较必须有明确的两个对象与比较维度。\n\n3. too + 形容词表示超过所需程度：The desk is too wide for this room. 形容词 + enough 表示达到所需程度：The room is wide enough for the desk. enough 放在形容词后；名词前可说 enough space。too wide 不等于 wide enough，判断时要看句意。",
+  "questionCount": 12
+}

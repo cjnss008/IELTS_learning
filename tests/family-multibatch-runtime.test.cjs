@@ -30,19 +30,55 @@ function syntheticPack(simple=false){
  const data=aggregate(base,pack.data.familyLessonRelease,catalog,pack.data.yearFirstUse);if(simple)data.days=[clone(pack.data.days[0]),{...clone(pack.data.days[0]),day:3}];return{pack,catalog,combined:{...pack,data}};
 }
 
+// Verify all installed batch owners and hashes before reducing to the immutable
+// public baseline, then rebuild v109 from its actual signed release.
+function historicalViews(current){
+ const base=require('./published-public-baseline-fixture.cjs')(current);delete base.yearFirstUse;
+ const legacy=clone(base),first=Catalog.append(legacy,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'}]});
+ legacy.yearFirstUse=clone(current.yearFirstUse);legacy.yearFirstUse.coreHash=first.combinedCoreHash;legacy.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v114-context-lexicon.json'}).metadata;
+ return{base,legacy};
+}
+
 test('v109 bindings and receipt survive a reviewed appended batch and the public projection admits its own signed unit',async()=>{
- const D=require('../assets/curriculum-data.js'),base=require('./published-public-baseline-fixture.cjs')(D),pack=F.packageData(),excluded=new Set(D.familyLessonRelease.units.flatMap(u=>u.targets.map(t=>t.canonicalId))),next=nextRelease(pack,11,excluded),helper=require('../assets/family-lesson-expansion-v95.js');
- delete base.yearFirstUse;const combined=clone(base),appended=Catalog.append(combined,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'},next]}),catalog=appended.catalog;
- combined.yearFirstUse=clone(D.yearFirstUse);combined.yearFirstUse.coreHash=appended.combinedCoreHash;combined.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v113-multibatch.json'}).metadata;
- assert.deepEqual(combined.familyLessonRelease.publicAppendReceipt,D.familyLessonRelease.publicAppendReceipt);assert.deepEqual(combined.familyLessonRelease.units.slice(0,7),D.familyLessonRelease.units);assert.deepEqual(combined.materials.slice(0,D.materials.length),D.materials);
- for(const unit of D.familyLessonRelease.units){const old=binding(unit,D);assert.deepEqual(helper.cleanVocabularyBinding(old,{currentRelease:true,data:D,assessment:A}),helper.cleanVocabularyBinding(old,{currentRelease:true,data:combined,assessment:A}));}
- const newer=combined.familyLessonRelease.units.find(u=>u.day===11),expected=binding(newer,combined);assert.equal(expected.rootReviewSha256,catalog.releases[1].release.rootReviewSha256);assert.notEqual(expected.rootReviewSha256,D.familyLessonRelease.rootReviewSha256);
+ const D=require('../assets/curriculum-data.js'),{base,legacy}=historicalViews(D),pack=F.packageData(),excluded=new Set(legacy.familyLessonRelease.units.flatMap(u=>u.targets.map(t=>t.canonicalId))),next=nextRelease(pack,11,excluded),helper=require('../assets/family-lesson-expansion-v95.js');
+ const combined=clone(base),appended=Catalog.append(combined,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'},next]}),catalog=appended.catalog;
+ combined.yearFirstUse=clone(D.yearFirstUse);combined.yearFirstUse.coreHash=appended.combinedCoreHash;combined.yearFirstUse.runtimeContract=require('../tools/year-runtime-activation.cjs').validateRuntimeContract({root,contractPath:'curriculum/year-first-use-runtime-contract-v114-context-lexicon.json'}).metadata;
+ assert.deepEqual(combined.familyLessonRelease.publicAppendReceipt,legacy.familyLessonRelease.publicAppendReceipt);assert.deepEqual(combined.familyLessonRelease.units.slice(0,7),legacy.familyLessonRelease.units);assert.equal(JSON.stringify(combined.familyLessonRelease.units.slice(0,7)),JSON.stringify(legacy.familyLessonRelease.units));assert.deepEqual(combined.materials.slice(0,legacy.materials.length),legacy.materials);
+ for(const unit of legacy.familyLessonRelease.units){const old=binding(unit,legacy);assert.deepEqual(helper.cleanVocabularyBinding(old,{currentRelease:true,data:legacy,assessment:A}),helper.cleanVocabularyBinding(old,{currentRelease:true,data:combined,assessment:A}));}
+ const newer=combined.familyLessonRelease.units.find(u=>u.day===11),expected=binding(newer,combined);assert.equal(expected.rootReviewSha256,catalog.releases[1].release.rootReviewSha256);assert.notEqual(expected.rootReviewSha256,legacy.familyLessonRelease.rootReviewSha256);
  const f=await F.mounted({root:pack.root,data:combined,day:combined.days[10]},{dictionary:true}),fallback=f.win.fetch;f.win.fetch=async url=>{if(String(url).startsWith('/audio/')){const file=String(url)==='/audio/synthetic.wav'?path.join(pack.root,'audio/synthetic.wav'):path.join(root,String(url).slice(1)),bytes=fs.readFileSync(file);return{ok:true,headers:{get:()=>String(bytes.length)},arrayBuffer:async()=>bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength)};}return fallback(url);};
  const api=f.win.IELTSFamilyLessonExpansionV95.runtime();await api.ensureReady();const publicData=api.publicPlanningData();assert.equal(publicData.materials.length,1842);assert.equal(publicData.publicCoursePlan.planHash,D.publicCoursePlan.planHash);
  for(const file of ['public-course-planner.js','public-course-worker.js'])vm.runInContext(fs.readFileSync(path.join(root,'assets',file),'utf8'),f.context,{filename:file});
  const adaptive=f.win.IELTSAdaptivePlan.createStore({data:f.win.IELTSCurriculumData,storage:f.win.IELTSProfiles.storage(),profileId:'legacy',getProfile:()=>f.win.IELTSProfiles.current().id,automaticAdjustments:false,preparePublicCourse:async request=>{let response;await f.win.IELTSPublicCourseWorkerProtocol.createHandler({planner:f.win.IELTSPublicCoursePlanner,postMessage:value=>{response=value;}})(request);return response;}});f.win.IELTSAdaptivePlan={...f.win.IELTSAdaptivePlan,...adaptive};adaptive.adoptStarted({records:await api.prepareCourseRecords(),drafts:[]});await adaptive.preparePublicCourse();assert.equal(adaptive.verifiedPublicCourseState().ready,true);
  f.context.__binding=JSON.stringify(expected);const bound=vm.runInContext('JSON.parse(__binding)',f.context),prepared=await api.prepareVocabularyUnit({courseDay:11}),read=api.readVocabularyContext({courseDay:11,records:prepared.records,drafts:[],binding:bound});assert.equal(read.status,'ready',read.reason);assert.deepEqual(JSON.parse(JSON.stringify(read.binding)),expected);
  const bad=clone(combined);bad.familyLessonRelease.batches[1].rootReviewSha256='f'.repeat(64);assert.throws(()=>helper.cleanVocabularyBinding(expected,{currentRelease:true,data:bad,assessment:A}),/current-release-pending/);
+});
+
+test('installed v109 and v114 releases preserve old bindings and pin all 300 new source and audio targets',()=>{
+ const D=require('../assets/curriculum-data.js'),{base,legacy}=historicalViews(D),helper=require('../assets/family-lesson-expansion-v95.js'),Oral=require('../assets/oral-practice.js'),essential=require('../assets/essential-vocabulary-data.js');
+ const compiled=clone(base),result=Catalog.append(compiled,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'},{root,releasePath:'curriculum/family-lessons-v114/release.json'}]});
+ assert.equal(base.materials.length,1842);assert.equal(legacy.materials.length,1912);assert.equal(D.materials.length,2012);assert.equal(D.familyLessonRelease.units.length,17);assert.equal(D.familyLessonRelease.batches.length,2);
+ assert.deepEqual(D.familyLessonRelease.units.map(unit=>unit.day),Array.from({length:17},(_,i)=>i+4));assert.equal(result.catalog.counts.days,17);assert.equal(result.catalog.counts.newWords,510);assert.equal(result.catalog.counts.materials,170);
+ assert.equal(JSON.stringify(D.familyLessonRelease.units.slice(0,7)),JSON.stringify(legacy.familyLessonRelease.units));assert.deepEqual(D.familyLessonRelease.units.slice(0,7),legacy.familyLessonRelease.units);
+ assert.deepEqual(D.familyLessonRelease.publicAppendReceipt,legacy.familyLessonRelease.publicAppendReceipt);assert.deepEqual(D.materials.slice(0,legacy.materials.length),legacy.materials);assert.deepEqual(D.materials,compiled.materials);assert.deepEqual(D.familyLessonRelease,compiled.familyLessonRelease);
+ for(const unit of legacy.familyLessonRelease.units){const before=binding(unit,legacy),after=helper.cleanVocabularyBinding(before,{currentRelease:true,data:D,assessment:A});assert.deepEqual(after,helper.cleanVocabularyBinding(before,{currentRelease:true,data:legacy,assessment:A}));}
+ const raw=JSON.parse(fs.readFileSync(path.join(root,'curriculum/family-lessons-v114/release.json'),'utf8')),newUnits=D.familyLessonRelease.units.slice(7),byMaterial=new Map(D.materials.map(m=>[m.id,m])),resolve=helper.createLexemeResolver(essential.entries),identities=new Set();let audioPins=0,speechParts=0;
+ function assertAudio(pin){assert.ok(pin&&/^audio\/[A-Za-z0-9._/-]+$/.test(pin.src)&&!pin.src.split('/').some(part=>!part||part==='.'||part==='..'));const file=path.resolve(root,pin.src);assert.ok(file.startsWith(root+path.sep));const bytes=fs.readFileSync(file);assert.equal(bytes.length,pin.bytes,pin.src);assert.equal(F.sha(bytes),pin.sha256,pin.src);audioPins++;}
+ for(const unit of newUnits){
+  const approved=raw.units.find(row=>row.id===unit.id);assert.ok(approved);assert.equal(unit.targets.length,30);assert.deepEqual(unit.targets,approved.targets);assert.equal(unit.releaseId,raw.id);
+  const words=unit.tasks.find(task=>task.id==='vocabulary').materialRefs.flatMap(ref=>byMaterial.get(ref.materialId).vocabulary);
+  assert.equal(words.length,30);
+  for(const target of unit.targets){
+   assert.ok(!identities.has(target.canonicalId),target.canonicalId);identities.add(target.canonicalId);
+   const source=byMaterial.get(target.sourceMaterialId),text=source.skill==='listening'?source.transcript:source.passage,identity=resolve(target),word=words.find(row=>row.word===identity.word);
+   assert.ok(word,target.canonicalId);assert.equal(A.sourceTextHash(text),target.sourceTextSha256);assert.equal(text.slice(target.start,target.end),target.surface);assert.equal(text.slice(target.quoteStart,target.quoteEnd),target.quote);
+   assert.equal(word.example,target.quote);assert.equal(word.meaning,target.meaning);assert.equal(word.pos,target.partOfSpeech);assert.equal(word.audio,target.audioRef.src);assertAudio(target.audioRef);
+  }
+  for(const ref of unit.tasks.find(task=>task.id==='listening').materialRefs)assertAudio(ref.audioRef);
+  for(const ref of unit.tasks.find(task=>task.id==='speaking').materialRefs){const material=byMaterial.get(ref.materialId),parts=Oral.spokenReferenceParts(material.reference,65);assert.deepEqual(material.oralModelAudio.map(row=>row.text),parts);for(const clip of material.oralModelAudio){assertAudio(clip);speechParts++;}}
+ }
+ assert.equal(identities.size,300);assert.equal([...identities].filter(id=>id.startsWith('extension:')).length,24);assert.equal(audioPins,330);assert.equal(speechParts,20);
+ const liter=newUnits.flatMap(unit=>unit.targets).find(target=>target.canonicalId==='essential:litre'),celsius=newUnits.flatMap(unit=>unit.targets).find(target=>target.canonicalId==='extension:celsius');assert.equal(liter.trainingWord,'liter');assert.equal(liter.canonicalWord,'litre');assert.equal(celsius.canonicalWord,'Celsius');
 });
 
 test('old saved record and unfinished family draft restore unchanged after a later batch is appended',async()=>{
@@ -74,12 +110,12 @@ test('multi-batch runtime rejects reordering, missing units and repeated day, wo
 });
 
 test('reviewed batches can share a pinned ordinary baseline material while changed and new-material duplicates stay blocked',async()=>{
- const D=require('../assets/curriculum-data.js'),base=require('./published-public-baseline-fixture.cjs')(D);delete base.yearFirstUse;
+ const D=require('../assets/curriculum-data.js'),{base,legacy}=historicalViews(D);
  const original=base.materials.find(m=>m.skill==='grammar'&&m.pool==='training'&&!m.fullTest&&!m.independentBank&&!m.assessmentGroup&&!m.form&&!m.source?.holdout&&m.source?.verification==='reviewed');assert.ok(original);
- const used=new Set(D.familyLessonRelease.units.flatMap(unit=>unit.targets.map(target=>target.canonicalId))),pack11=F.packageData(),next11=nextRelease(pack11,11,used,{grammarFrom:original});
+ const used=new Set(legacy.familyLessonRelease.units.flatMap(unit=>unit.targets.map(target=>target.canonicalId))),pack11=F.packageData(),next11=nextRelease(pack11,11,used,{grammarFrom:original});
  const nextSource=JSON.parse(fs.readFileSync(path.join(next11.root,next11.releasePath)));for(const target of nextSource.units[0].targets)used.add(target.canonicalId);
  const pack12=F.packageData(),next12=nextRelease(pack12,12,used,{grammarFrom:original}),combined=clone(base),appended=Catalog.append(combined,{releases:[{root,releasePath:'curriculum/family-lessons-v109/release.json'},next11,next12]});
- combined.yearFirstUse=clone(D.yearFirstUse);combined.yearFirstUse.coreHash=appended.combinedCoreHash;combined.yearFirstUse.runtimeContract.contract.path='curriculum/year-first-use-runtime-contract-v113-multibatch.json';
+ combined.yearFirstUse=clone(D.yearFirstUse);combined.yearFirstUse.coreHash=appended.combinedCoreHash;combined.yearFirstUse.runtimeContract=legacy.yearFirstUse.runtimeContract;
  for(const day of [11,12]){const unit=combined.familyLessonRelease.units.find(u=>u.day===day);assert.equal(unit.tasks.find(t=>t.id==='grammar').materialRefs[0].materialId,original.id);}
  const f=await F.mounted({root:pack11.root,data:combined,day:combined.days[10]},{dictionary:true}),api=f.win.IELTSFamilyLessonExpansionV95.runtime();await api.ensureReady();assert.equal(api.publicPlanningData().materials.length,1842);
  const helper=require('../assets/family-lesson-expansion-v95.js'),old=binding(combined.familyLessonRelease.units[0],combined),reject=mutate=>{const bad=clone(combined),release=bad.familyLessonRelease,u11=release.units.find(u=>u.day===11),u12=release.units.find(u=>u.day===12);mutate(u11,u12);const body={...u12};delete body.unitSha256;u12.unitSha256=A.materialContentHash(body);release.batches.find(b=>b.id===u12.releaseId).units.find(u=>u.day===12).unitSha256=u12.unitSha256;assert.throws(()=>helper.cleanVocabularyBinding(old,{currentRelease:true,data:bad,assessment:A}),/family-release-catalog-material-reused/);};

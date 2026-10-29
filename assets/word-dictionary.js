@@ -210,25 +210,104 @@
     return {word:clean(value.word,100), meaning:clean(value.meaning,800), ipa, ipaAccent:ipa && (pronunciation || labelledAmerican) ? 'en-US' : '', ipaVariants:pronunciation?.ipaVariants || (ipa ? [ipa] : []), ipaSource:pronunciation?.ipaSource || (labelledAmerican ? 'provided-American-supplement' : ''), example:clean(value.example || value.context,1600), exampleTranslation:clean(value.exampleTranslation,1600), audio, materialId:clean(value.materialId,160), source:clean(value.source,80)};
   }
   function indexedAudioFor(word, ipa, supplied, hint = {}) { return indexedAudioChoice(word,ipa,supplied,hint).audio; }
+  // Only the current public curriculum's fully frozen JSON graph may supply a
+  // reusable sub-index. Course entries are indexed on every call; custom
+  // entries use the original path. Audio and user state are never cached here.
+  const frozenPublicIndexes = new WeakMap();
+  const indexMapConstructor = Map;
+  const indexMapSizeGetter = Object.getOwnPropertyDescriptor(Map.prototype,'size')?.get;
+  const indexMapIterator = Object.getPrototypeOf(new Map().keys());
+  const indexMapIteratorNext = Object.getOwnPropertyDescriptor(indexMapIterator,'next')?.value;
+  const indexPrototypeMethods = [
+    [Array.prototype,'forEach',Array.prototype.forEach],
+    [Array.prototype,'push',Array.prototype.push],
+    [Array.prototype,'pop',Array.prototype.pop],
+    [Array.prototype,'concat',Array.prototype.concat],
+    [Object.prototype,'hasOwnProperty',Object.prototype.hasOwnProperty],
+    [Map.prototype,'get',Map.prototype.get],
+    [Map.prototype,'set',Map.prototype.set],
+    [Map.prototype,'has',Map.prototype.has],
+    [Map.prototype,'keys',Map.prototype.keys],
+    [String.prototype,'trim',String.prototype.trim],
+    [String.prototype,'toLowerCase',String.prototype.toLowerCase],
+    [String.prototype,'replace',String.prototype.replace],
+    [RegExp.prototype,'test',RegExp.prototype.test]
+  ];
+  const indexInheritedFields = ['materials','vocab','vocabulary','word','pos','partOfSpeech','id','entries','courseData','curriculumData','toJSON'];
+  function stableIndexPrototypes() {
+    if (Map!==indexMapConstructor) return false;
+    if (Object.getOwnPropertyDescriptor(Map.prototype,'size')?.get!==indexMapSizeGetter || Object.getOwnPropertyDescriptor(indexMapIterator,'next')?.value!==indexMapIteratorNext) return false;
+    if (Object.getOwnPropertyDescriptor(Object.prototype,Symbol.isConcatSpreadable) || Object.getOwnPropertyDescriptor(Array.prototype,Symbol.isConcatSpreadable)) return false;
+    for (let i=0;i<indexPrototypeMethods.length;i++) {
+      const row=indexPrototypeMethods[i], descriptor=Object.getOwnPropertyDescriptor(row[0],row[1]);
+      if (!descriptor || descriptor.value!==row[2]) return false;
+    }
+    for (let i=0;i<indexInheritedFields.length;i++) {
+      const key=indexInheritedFields[i];
+      if (Object.getOwnPropertyDescriptor(Object.prototype,key) || key!=='entries' && Object.getOwnPropertyDescriptor(Array.prototype,key)) return false;
+    }
+    return true;
+  }
+  function deeplyFrozenJSON(value) {
+    const pending=[value], seen=new WeakSet();
+    while (pending.length) {
+      const item=pending.pop(), type=typeof item;
+      if (item===null || type==='string' || type==='boolean' || type==='number' && Number.isFinite(item)) continue;
+      if (type!=='object' || !Object.isFrozen(item)) return false;
+      if (seen.has(item)) continue;
+      seen.add(item);
+      const array=Array.isArray(item), proto=Object.getPrototypeOf(item);
+      if (array ? proto!==Array.prototype : proto!==Object.prototype && proto!==null) return false;
+      const keys=Reflect.ownKeys(item);
+      if (array) {
+        if (keys.length!==item.length+1) return false;
+        for (let i=0;i<item.length;i++) if (!Object.prototype.hasOwnProperty.call(item,i)) return false;
+      }
+      for (const key of keys) {
+        if (array && key==='length') continue;
+        const descriptor=Object.getOwnPropertyDescriptor(item,key);
+        if (typeof key!=='string' || key==='toJSON' || !descriptor?.enumerable || !('value' in descriptor)) return false;
+        pending.push(descriptor.value);
+      }
+    }
+    return true;
+  }
+  function publicIndexEligible(curriculum,options) {
+    if (!curriculum || !Object.isFrozen(curriculum) || Object.getPrototypeOf(options)!==Object.prototype || !stableIndexPrototypes()) return false;
+    const entry=Object.getOwnPropertyDescriptor(options,'entries');
+    if (entry && (!('value' in entry) || entry.value!=null)) return false;
+    const publicData=Object.getOwnPropertyDescriptor(root,'IELTSCurriculumData');
+    const materials=Object.getOwnPropertyDescriptor(curriculum,'materials');
+    return Boolean(publicData && 'value' in publicData && publicData.value===curriculum && materials && 'value' in materials && Array.isArray(materials.value) && Object.isFrozen(materials.value));
+  }
   function create(options = {}) {
     const index = new Map(), resolved = new Map();
     const audioData = options.audioData || root.IELTSVocabularyAudio || (typeof require === 'function' ? require('./vocabulary-audio.js') : {});
     const audioItems = audioData.items || {};
-    function add(raw, metadata) {
+    function add(raw, metadata, target = index) {
       const value={...raw,...metadata};if(!validWord(value.word))return;
-      const key = normalize(clean(value.word,100)), values = index.get(key) || [];
-      values.push({value,pos:clean(raw.pos||raw.partOfSpeech,120)});index.set(key,values);
+      const key = normalize(clean(value.word,100)), values = target.get(key) || [];
+      values.push({value,pos:clean(raw.pos||raw.partOfSpeech,120)});target.set(key,values);
     }
     BRIDGE.forEach(item => add(item));
     const course = options.courseData || root.IELTSCourse || root.IELTSCourseData || {};
     const old = Array.isArray(course.vocab) ? course.vocab : Object.values(course.vocab || {}).flat();
     old.forEach(item => add(item,{source:'course'}));
     const curriculum = options.curriculumData || root.IELTSCurriculumData || {};
-    (curriculum.materials || []).forEach(material => (material.vocabulary || []).forEach(item => add(item,{materialId:material.id,source:'curriculum'})));
+    const eligible = publicIndexEligible(curriculum,options);
+    let publicIndex = eligible && frozenPublicIndexes.get(curriculum);
+    if (!publicIndex && eligible && deeplyFrozenJSON(curriculum)) {
+      const built = new Map();
+      (curriculum.materials || []).forEach(material => (material.vocabulary || []).forEach(item => add(item,{materialId:material.id,source:'curriculum'},built)));
+      frozenPublicIndexes.set(curriculum,built);
+      publicIndex = built;
+    } else if (!publicIndex) {
+      (curriculum.materials || []).forEach(material => (material.vocabulary || []).forEach(item => add(item,{materialId:material.id,source:'curriculum'})));
+    }
     (options.entries || []).forEach(item => add(item));
     function lookup(word, context = '', materialId = '') {
       const key = normalize(word);let values=resolved.get(key);
-      if(!values){values=(index.get(key)||[]).map(row=>{const item=safeEntry(row.value,{audioData});if(item&&row.pos)item.pos=row.pos;return item;}).filter(Boolean);resolved.set(key,values);}
+      if(!values){const prefix=index.get(key)||[],rows=publicIndex?prefix.concat(publicIndex.get(key)||[]):prefix;values=rows.map(row=>{const item=safeEntry(row.value,{audioData});if(item&&row.pos)item.pos=row.pos;return item;}).filter(Boolean);resolved.set(key,values);}
       if (!values.length) return {...safeEntry({word:clean(word,100)}),word:clean(word,100),meaning:'',example:'',exampleTranslation:'',audio:'',materialId:'',source:'missing',complete:false};
       const text = normalize(context);
       const score = item => (materialId && item.materialId === materialId ? 1000 : 0) + (item.source === 'curriculum' ? 10 : item.source === 'course' ? 5 : 0) + (item.example && text.includes(normalize(item.example)) ? 100 : 0);
@@ -245,7 +324,12 @@
       result.complete = Boolean(result.meaning && result.ipa && result.example);
       return result;
     }
-    return {lookup, size:index.size};
+    let size=index.size;
+    if (publicIndex) {
+      size=publicIndex.size;
+      for (const key of index.keys()) if (!publicIndex.has(key)) size++;
+    }
+    return {lookup, size};
   }
   function mergeAI(local, result) {
     const item = safeEntry(result?.entry || result?.glossary || result);

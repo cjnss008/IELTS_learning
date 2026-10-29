@@ -1,22 +1,46 @@
 'use strict';
-const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),http=require('node:http');
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),http=require('node:http'),crypto=require('node:crypto'),{EventEmitter}=require('node:events');
 const {createServer}=require('../server/server.cjs'),launcher=require('../tools/start-learning.cjs'),runtime=require('../server/runtime-version.cjs');
 const secret='private-test-diagnostic-never-returned';
 const deferred=()=>{let resolve,reject;const promise=new Promise((yes,no)=>{resolve=yes;reject=no;});return{promise,resolve,reject};};
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 async function until(read,accept,{timeout=3000}={}){const end=Date.now()+timeout;while(Date.now()<end){const value=await read();if(accept(value))return value;await wait(10);}throw Error('Timed out waiting for the synthetic fixture');}
+// On some Windows systems listen(0) draws from 1024–15000, including Fetch's
+// forbidden ports (e.g. 6000 and 10080). Stay above that range while retaining
+// real fetch/host/origin coverage; retry only address allocation, not requests.
+async function listenOnFetchPort(server,choose=()=>crypto.randomInt(20000,60000)){
+ let lastError;
+ for(let attempt=0;attempt<32;attempt++){
+  const port=choose();if(!Number.isInteger(port)||port<20000||port>=60000)throw Error('Synthetic port selection is outside the allowed range');
+  try{await new Promise((resolve,reject)=>{const failed=error=>{server.removeListener('error',failed);reject(error);};server.once('error',failed);server.listen(port,'127.0.0.1',()=>{server.removeListener('error',failed);resolve();});});return;}
+  catch(error){if(!['EADDRINUSE','EACCES'].includes(error.code))throw error;lastError=error;}
+ }
+ throw new Error('No available synthetic fetch port after 32 attempts',{cause:lastError});
+}
 async function fixture(t,vault,options={}){
  const tempRoot=fs.realpathSync(os.tmpdir()),root=fs.mkdtempSync(path.join(tempRoot,'ielts-startup-test-'));
  fs.mkdirSync(path.join(root,'assets'));fs.mkdirSync(path.join(root,'server'));fs.writeFileSync(path.join(root,'VERSION'),'0.0.111\n');fs.writeFileSync(path.join(root,'今日学习.html'),'synthetic');
  const server=createServer({rootDir:root,dataDir:path.join(root,'isolated-user-data'),materialMigration:false,migrateLegacy:false,credentialVault:vault,fetchImpl:async()=>{throw Error('No real provider');},startupRetryBaseMs:80,startupRetryMaxMs:80,startupRequestWaitMs:30,...options});
- await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
- t.after(async()=>{await new Promise(resolve=>{server.close(resolve);server.closeAllConnections();});const resolved=fs.realpathSync(root);assert.equal(path.dirname(resolved).toLowerCase(),tempRoot.toLowerCase());fs.rmSync(resolved,{recursive:true,force:true});});
+ t.after(async()=>{if(server.listening)await new Promise(resolve=>{server.close(resolve);server.closeAllConnections();});const resolved=fs.realpathSync(root);assert.equal(path.dirname(resolved).toLowerCase(),tempRoot.toLowerCase());fs.rmSync(resolved,{recursive:true,force:true});});
+ await listenOnFetchPort(server);
  const base='http://127.0.0.1:'+server.address().port;
- const api=async(endpoint,init)=>{const response=await fetch(base+endpoint,init),text=await response.text();return{status:response.status,text,json:JSON.parse(text)};};
+ const api=async(endpoint,init)=>{let response;try{response=await fetch(base+endpoint,init);}catch(error){const cause=error?.cause,kind=/^[A-Z_0-9]+$/.test(cause?.code||'')?cause.code:cause?.message==='bad port'?'bad port':cause?.name||'unknown';throw new Error('Synthetic fetch failed on port '+server.address()?.port+' (cause: '+kind+')',{cause:error});}const text=await response.text();return{status:response.status,text,json:JSON.parse(text)};};
  return{server,base,api};
 }
 function fakeVault(restore){let writes=0;return{restore,status:()=>({storage:'memory'}),handle:async(req,res,pathname)=>{if(pathname!=='/api/synthetic-write')return false;writes++;res.writeHead(200,{'Content-Type':'application/json'});res.end('{"ok":true}');return true;},get writes(){return writes;}};}
 function requestWithHost(port,host){return new Promise((resolve,reject)=>{const req=http.request({host:'127.0.0.1',port,path:'/api/health',headers:{host}},res=>{res.resume();res.once('end',()=>resolve(res.statusCode));});req.on('error',reject);req.end();});}
+
+test('synthetic listener avoids fetch-restricted ports and retries only unavailable addresses',async t=>{
+ const held=http.createServer((_req,res)=>res.end('synthetic')),server=http.createServer((_req,res)=>res.end('synthetic'));t.after(async()=>{for(const item of [server,held])if(item.listening)await new Promise(resolve=>{item.close(resolve);item.closeAllConnections();});});
+ await assert.rejects(listenOnFetchPort(server,()=>18765),/outside the allowed range/);
+ await listenOnFetchPort(held);const busy=held.address().port;let chosen=0;await listenOnFetchPort(server,()=>++chosen===1?busy:crypto.randomInt(20000,60000));
+ assert.ok(chosen>=2);assert.ok(server.address().port>=20000&&server.address().port<60000);assert.notEqual(server.address().port,busy);
+ const response=await fetch('http://127.0.0.1:'+server.address().port+'/');assert.equal(response.status,200);assert.equal(await response.text(),'synthetic');
+ const excluded=new EventEmitter();let attempts=0;excluded.listen=(_port,_host,callback)=>{if(++attempts===1)queueMicrotask(()=>excluded.emit('error',Object.assign(Error('synthetic excluded port'),{code:'EACCES'})));else queueMicrotask(callback);};
+ await listenOnFetchPort(excluded,()=>20000+attempts);assert.equal(attempts,2);
+ const denied=new EventEmitter();let deniedCount=0;denied.listen=()=>{deniedCount++;queueMicrotask(()=>denied.emit('error',Object.assign(Error('synthetic bind denial'),{code:'EACCES'})));};
+ await assert.rejects(listenOnFetchPort(denied,()=>20000),error=>error.cause?.code==='EACCES');assert.equal(deniedCount,32);assert.equal(denied.listenerCount('error'),0);
+});
 
 test('startup restore is single-flight, health is safe, and blocked writes are never replayed',async t=>{
  const first=deferred(),second=deferred();let calls=0;

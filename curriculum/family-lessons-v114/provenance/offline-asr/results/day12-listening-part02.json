@@ -1,0 +1,214 @@
+{
+  "schema": 1,
+  "day": 12,
+  "skill": "listening",
+  "id": "day12-listening",
+  "materialId": "family-linked-d12-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 62.19208333333333,
+  "audioEndSeconds": 119.168292,
+  "sourceAudioSha256": "cce25522cf12eaafedd83f13c638314905312cb7caf8398eaec11849cdc173ca",
+  "sourceTextSha256": "83ec41aaddf821044c5f26f5ca39a5bebbeb96d3273c2177184c0298aa80a4e7",
+  "expectedText": "Yes. There is a pharmacy across the street. I have a question about a word on a medicine label, but I will ask the professional there rather than guess. Which word is it? Dose. I will show the tablet package and ask what the label means. I will not decide what to take from the word alone. Did you write down your allergy question as well? Yes. My main question is what information they need. I will ask the nurse how to describe how I breathe and when I might recover. I will also ask for advice about my treatment. I can wait for you after my dentist visit. Thanks. Please meet me by the yellow bench at three thirty, not at the green entrance. I will text you if the time changes.",
+  "expectedTextSha256": "31c74e02a52aa06d905719ff0a524abc167561ff3742dd51392234dd95a8c293",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day12-listening-part02.wav",
+  "wavSha256": "f6946286ea324d67efeab7c0f597419fcb4a1a790939300c69b02adc4e7009cf",
+  "wavDurationSeconds": 56.9761875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Yes. There is a pharmacy across the street. I have a question about a word on a medicine label, but I will ask the professional there rather than guess. Which word is it? Doss. I will show the tablet package and ask what the label means. I will not decide what to take from the word alone. Did you write down your allergy question as well? Yes. My main question is what information they need. I will ask the nurse how to describe how I breathe and when I might recover. I will also ask for advice about my treatment. I can wait for you after my dentist visit. Thanks. Please meet me by the yellow bench at 3.30, not at the green entrance. I will text you if the time changes.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 5.08,
+        "text": "Yes. There is a pharmacy across the street.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 5.08,
+        "endSeconds": 10.52,
+        "text": "I have a question about a word on a medicine label, but I will ask the professional there",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10.52,
+        "endSeconds": 12.74,
+        "text": "rather than guess.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.74,
+        "endSeconds": 14.88,
+        "text": "Which word is it?",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 14.88,
+        "endSeconds": 21.28,
+        "text": "Doss. I will show the tablet package and ask what the label means.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21.28,
+        "endSeconds": 25.36,
+        "text": "I will not decide what to take from the word alone.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 25.36,
+        "endSeconds": 29,
+        "text": "Did you write down your allergy question as well?",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 29,
+        "endSeconds": 34.68,
+        "text": "Yes. My main question is what information they need.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 34.68,
+        "endSeconds": 39.88,
+        "text": "I will ask the nurse how to describe how I breathe and when I might recover.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 39.88,
+        "endSeconds": 43.8,
+        "text": "I will also ask for advice about my treatment.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 43.8,
+        "endSeconds": 47.6,
+        "text": "I can wait for you after my dentist visit.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 47.6,
+        "endSeconds": 49.32,
+        "text": "Thanks.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 49.32,
+        "endSeconds": 54.64,
+        "text": "Please meet me by the yellow bench at 3.30, not at the green entrance.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 54.64,
+        "endSeconds": 56.92,
+        "text": "I will text you if the time changes.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 56.9761875,
+    "audioSha256": "f6946286ea324d67efeab7c0f597419fcb4a1a790939300c69b02adc4e7009cf",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 151,
+    "actualTokens": 150,
+    "edits": 3,
+    "changes": [
+      {
+        "expected": [
+          "Dose"
+        ],
+        "actual": [
+          "Doss"
+        ],
+        "expectedIndex": 38,
+        "actualIndex": 38,
+        "contextBefore": [
+          "Which",
+          "word",
+          "is",
+          "it",
+          "?"
+        ],
+        "contextAfter": [
+          ".",
+          "I",
+          "will",
+          "show",
+          "the"
+        ]
+      },
+      {
+        "expected": [
+          "three",
+          "thirty"
+        ],
+        "actual": [
+          "3.30"
+        ],
+        "expectedIndex": 133,
+        "actualIndex": 133,
+        "contextBefore": [
+          "by",
+          "the",
+          "yellow",
+          "bench",
+          "at"
+        ],
+        "contextAfter": [
+          ",",
+          "not",
+          "at",
+          "the",
+          "green"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 133,
+    "actualTokens": 133,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "dose"
+        ],
+        "actual": [
+          "doss"
+        ],
+        "expectedIndex": 33,
+        "actualIndex": 33,
+        "contextBefore": [
+          "guess",
+          "which",
+          "word",
+          "is",
+          "it"
+        ],
+        "contextAfter": [
+          "i",
+          "will",
+          "show",
+          "the",
+          "tablet"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

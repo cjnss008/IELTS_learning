@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "day": 18,
+  "skill": "listening",
+  "id": "day18-listening",
+  "materialId": "family-linked-d18-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 59.41970833333333,
+  "audioEndSeconds": 119.61449999999999,
+  "sourceAudioSha256": "8674788425e471b5e7e3b81cd8b17e408ad2d164eeffe46b18594fe9221bdc0e",
+  "sourceTextSha256": "d2b0d9bb5fa64032dc0da11e2d3133d4e2e227a173518a481b1c8e10a1abfa26",
+  "expectedText": "Good. After the login screen, I see a folder called Events. Which file should I open? Open the one called Agenda Practice. Then add Friday's start time, which is six thirty. Before you save it, check that the room is number twelve. Done. I will save a copy on the device. Should I upload it to the shared area now? Yes, but use the practice area, not the real members' area. After you upload it, check that its name appears on the page. I can see it. Can I download the blank form as well? I want offline access when I am traveling without a connection. Of course. You do not need to install any new software for this form. The center staff update the program when necessary.",
+  "expectedTextSha256": "6af4443269710502f62de4611a3d6df038c708d6f5acd3bd22a06775ffbfe1cb",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day18-listening-part02.wav",
+  "wavSha256": "4f1a7d88edd54a1b3bc880d2112ccbada71258c876a68d864f641d8ccbd8c859",
+  "wavDurationSeconds": 60.1948125,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Good. After the login screen, I see a folder called Events. Which file should I open? Open the one called Agenda Practice. Then add Friday Start Time, which is 6.30. Before you save it, check that the room is number 12. Done. I will save a copy on the device. Should I upload it to the shared area now? Yes, but use the practice area, not the real members area. After you upload it, check that its name appears on the page. I can see it. Can I download the blank form as well? I want offline access when I am traveling without a connection. Of course. You do not need to install any new software for this form. The center staff update the program when necessary.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 6.28,
+        "text": "Good. After the login screen, I see a folder called Events.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 6.28,
+        "endSeconds": 8.92,
+        "text": "Which file should I open?",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8.92,
+        "endSeconds": 12.48,
+        "text": "Open the one called Agenda Practice.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.48,
+        "endSeconds": 16.62,
+        "text": "Then add Friday Start Time, which is 6.30.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 16.62,
+        "endSeconds": 21.08,
+        "text": "Before you save it, check that the room is number 12.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21.08,
+        "endSeconds": 25.96,
+        "text": "Done. I will save a copy on the device.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 25.96,
+        "endSeconds": 29.96,
+        "text": "Should I upload it to the shared area now?",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 29.96,
+        "endSeconds": 34.96,
+        "text": "Yes, but use the practice area, not the real members area.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 34.96,
+        "endSeconds": 39.4,
+        "text": "After you upload it, check that its name appears on the page.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 39.4,
+        "endSeconds": 44.88,
+        "text": "I can see it. Can I download the blank form as well?",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 44.88,
+        "endSeconds": 49.96,
+        "text": "I want offline access when I am traveling without a connection.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 49.96,
+        "endSeconds": 56.96,
+        "text": "Of course. You do not need to install any new software for this form.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 56.96,
+        "endSeconds": 60.96,
+        "text": "The center staff update the program when necessary.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.1948125,
+    "audioSha256": "4f1a7d88edd54a1b3bc880d2112ccbada71258c876a68d864f641d8ccbd8c859",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 151,
+    "actualTokens": 150,
+    "edits": 7,
+    "changes": [
+      {
+        "expected": [
+          "Friday's",
+          "start",
+          "time"
+        ],
+        "actual": [
+          "Friday",
+          "Start",
+          "Time"
+        ],
+        "expectedIndex": 29,
+        "actualIndex": 29,
+        "contextBefore": [
+          "Agenda",
+          "Practice",
+          ".",
+          "Then",
+          "add"
+        ],
+        "contextAfter": [
+          ",",
+          "which",
+          "is",
+          "six",
+          "thirty"
+        ]
+      },
+      {
+        "expected": [
+          "six",
+          "thirty"
+        ],
+        "actual": [
+          "6.30"
+        ],
+        "expectedIndex": 35,
+        "actualIndex": 35,
+        "contextBefore": [
+          "start",
+          "time",
+          ",",
+          "which",
+          "is"
+        ],
+        "contextAfter": [
+          ".",
+          "Before",
+          "you",
+          "save",
+          "it"
+        ]
+      },
+      {
+        "expected": [
+          "twelve"
+        ],
+        "actual": [
+          "12"
+        ],
+        "expectedIndex": 49,
+        "actualIndex": 48,
+        "contextBefore": [
+          "that",
+          "the",
+          "room",
+          "is",
+          "number"
+        ],
+        "contextAfter": [
+          ".",
+          "Done",
+          ".",
+          "I",
+          "will"
+        ]
+      },
+      {
+        "expected": [
+          "members'"
+        ],
+        "actual": [
+          "members"
+        ],
+        "expectedIndex": 83,
+        "actualIndex": 82,
+        "contextBefore": [
+          "area",
+          ",",
+          "not",
+          "the",
+          "real"
+        ],
+        "contextAfter": [
+          "area",
+          ".",
+          "After",
+          "you",
+          "upload"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 129,
+    "actualTokens": 128,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "s"
+        ],
+        "actual": [],
+        "expectedIndex": 25,
+        "actualIndex": 25,
+        "contextBefore": [
+          "agenda",
+          "practice",
+          "then",
+          "add",
+          "friday"
+        ],
+        "contextAfter": [
+          "start",
+          "time",
+          "which",
+          "is",
+          "six"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

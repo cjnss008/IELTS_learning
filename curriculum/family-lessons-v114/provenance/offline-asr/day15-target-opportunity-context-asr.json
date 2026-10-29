@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "job": {
+    "day": 15,
+    "skill": "listening",
+    "id": "day15-target-opportunity",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d15-listening-next-v1.mp3",
+    "sourceAudioSha256": "b2e5a58da26dae2e3ebbea5f81a0d8c38e06125602b949b9efb83a07dcfb3186",
+    "sourceTextSha256": "eac276bf58e6dee5ef3d43cf11092239f4a264757000116a95db79e3c881b3cc",
+    "start": 102.650875,
+    "end": 118.432917,
+    "reference": "Did you ask about the first responsibility? Yes. A new assistant starts by preparing tables before visitors arrive. I wrote it in my notes, because this opportunity could teach me a new skill.",
+    "focus": "because this opportunity could teach me a new skill"
+  },
+  "originalWavSha256": "637faf599c8892ba52e08b4bec7507fd54bf7f66480828d413aafa85636a103b",
+  "paddedWavSha256": "e99d654c50a418f4afd1857f06fc10790b6f297a85f7b2841fb93d7b82942f63",
+  "sourceSamplesIdentical": true,
+  "appendedSamplesAllZero": true,
+  "paddedDurationSeconds": 30.5,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Did you ask about the first responsibility? Yes. A new assistant starts by preparing tables before visitors arrive. I wrote it in my notes, because this opportunity could teach me a new skill.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 3.82,
+        "text": "Did you ask about the first responsibility?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 3.82,
+        "endSeconds": 10.88,
+        "text": "Yes. A new assistant starts by preparing tables before visitors arrive.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10.88,
+        "endSeconds": 16.16,
+        "text": "I wrote it in my notes, because this opportunity could teach me a new skill.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 30.5,
+    "audioSha256": "e99d654c50a418f4afd1857f06fc10790b6f297a85f7b2841fb93d7b82942f63",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 38,
+    "actualTokens": 38,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 33,
+    "actualTokens": 33,
+    "edits": 0,
+    "changes": []
+  },
+  "sourcePromptProvided": false
+}

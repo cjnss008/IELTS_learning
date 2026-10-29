@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "day": 19,
+  "skill": "listening",
+  "id": "day19-listening",
+  "materialId": "family-linked-d19-listening-next-v1",
+  "part": 3,
+  "audioStartSeconds": 113.85729166666667,
+  "audioEndSeconds": 142.184083,
+  "sourceAudioSha256": "48c7854fd6d7fbd9856709bd904e916b8411fa230e5b6468dd274a560eca0a56",
+  "sourceTextSha256": "07f34dd2073e6174be9e1e76ee4f56b4b14e174d9d84acdd784494b678e8d947",
+  "expectedText": "No. A graduate I met said people with different levels of education are welcome. She also studied history and literature at the center. I will register tomorrow, then. I plan to finish reading the course description tonight and ask about the fee before I pay. Great. I will bring my notebook on Wednesday so we can compare ideas after the lecture.",
+  "expectedTextSha256": "bfea8eb2970a025e9d2701fef2cc49b44fc5bc131eefb789fbba74211a4c771c",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day19-listening-part03.wav",
+  "wavSha256": "49615078dd2a74070b0414e9f86f6f0f7b43b8f715f843fa46d841ae7b6e89fc",
+  "wavDurationSeconds": 28.3268125,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "No. A graduate I met said people with different levels of education are welcome. She also studied history and literature at the center. I will register tomorrow, then. I plan to finish reading the course description tonight and ask about the fee before I pay. Great! I will bring my notebook on Wednesday so we can compare ideas after the lecture.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 8,
+        "text": "No. A graduate I met said people with different levels of education are welcome.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 8,
+        "endSeconds": 12,
+        "text": "She also studied history and literature at the center.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 12,
+        "endSeconds": 15,
+        "text": "I will register tomorrow, then.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 15,
+        "endSeconds": 22,
+        "text": "I plan to finish reading the course description tonight and ask about the fee before I pay.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 22,
+        "endSeconds": 29,
+        "text": "Great! I will bring my notebook on Wednesday so we can compare ideas after the lecture.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 28.3268125,
+    "audioSha256": "49615078dd2a74070b0414e9f86f6f0f7b43b8f715f843fa46d841ae7b6e89fc",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 69,
+    "actualTokens": 69,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "."
+        ],
+        "actual": [
+          "!"
+        ],
+        "expectedIndex": 52,
+        "actualIndex": 52,
+        "contextBefore": [
+          "before",
+          "I",
+          "pay",
+          ".",
+          "Great"
+        ],
+        "contextAfter": [
+          "I",
+          "will",
+          "bring",
+          "my",
+          "notebook"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 61,
+    "actualTokens": 61,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

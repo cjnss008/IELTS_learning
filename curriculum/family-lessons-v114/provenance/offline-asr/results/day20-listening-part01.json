@@ -1,0 +1,330 @@
+{
+  "schema": 1,
+  "day": 20,
+  "skill": "listening",
+  "id": "day20-listening",
+  "materialId": "family-linked-d20-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 56.778499999999994,
+  "sourceAudioSha256": "aa2f457ed2f0a13e0357c44d60e0a623bcb7555aa1d39be489b4537bacf5a828",
+  "sourceTextSha256": "88cb001d640605f3f9e633555c3ba7b223063527d52b3c726e726d261033701c",
+  "expectedText": "Are you ready for our school's environment event next week? Almost. It is on Thursday at two, and the hall is booked. I want visitors to understand how we can reduce waste at school. I have made a sign about litter near the river. After lunch, paper and plastic are often left beside the path. We need to protect the wildlife there. Good. We should explain that litter can harm a bird's habitat. I will ask the nature club to show a picture of one local species. Shall we call the activity a cleanup? I have gloves for twelve students, and the rubbish will be collected in bags. Yes, but first we will check the path with a teacher. The cleanup will start at three, after the hall discussion.",
+  "expectedTextSha256": "18d00a8ddce8c0ed81e3b8577d9186deec2dcca76cb14eca5c87a2e9344c6116",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day20-listening-part01.wav",
+  "wavSha256": "6206757c6d73ed047964db04ca76af2f1df85d858516df14f427a29ddd50ab8c",
+  "wavDurationSeconds": 56.7785,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Are you ready for our school's environment event next week? Almost. It is on Thursday at 2, and the hall is booked. I want visitors to understand how we can reduce wasted school. I have made a sign about litter near the river. After lunch, paper and plastic are often left beside the path. We need to protect the wildlife there. Good. We should explain that litter can harm a bird's habitat. I will ask the Nature Club to show a picture of one local species. Shall we call the activity a cleanup? I have gloves for 12 students, and the rubbish will be collected in bags. Yes, but first we will check the path with a teacher. The cleanup will start at 3, after the whole discussion.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.48,
+        "text": "Are you ready for our school's environment event next week?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.48,
+        "endSeconds": 6.4,
+        "text": "Almost.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 6.4,
+        "endSeconds": 10.56,
+        "text": "It is on Thursday at 2, and the hall is booked.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 10.56,
+        "endSeconds": 15.52,
+        "text": "I want visitors to understand how we can reduce wasted school.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 15.52,
+        "endSeconds": 19.28,
+        "text": "I have made a sign about litter near the river.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 19.28,
+        "endSeconds": 24.8,
+        "text": "After lunch, paper and plastic are often left beside the path.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 24.8,
+        "endSeconds": 28.24,
+        "text": "We need to protect the wildlife there.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 28.24,
+        "endSeconds": 29.76,
+        "text": "Good.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 29.76,
+        "endSeconds": 34,
+        "text": "We should explain that litter can harm a bird's habitat.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 34,
+        "endSeconds": 39.2,
+        "text": "I will ask the Nature Club to show a picture of one local species.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 39.2,
+        "endSeconds": 42.48,
+        "text": "Shall we call the activity a cleanup?",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 42.48,
+        "endSeconds": 48.32,
+        "text": "I have gloves for 12 students, and the rubbish will be collected in bags.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 48.32,
+        "endSeconds": 52.72,
+        "text": "Yes, but first we will check the path with a teacher.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 52.72,
+        "endSeconds": 56.56,
+        "text": "The cleanup will start at 3, after the whole discussion.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 56.7785,
+    "audioSha256": "6206757c6d73ed047964db04ca76af2f1df85d858516df14f427a29ddd50ab8c",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 148,
+    "actualTokens": 147,
+    "edits": 8,
+    "changes": [
+      {
+        "expected": [
+          "two"
+        ],
+        "actual": [
+          "2"
+        ],
+        "expectedIndex": 18,
+        "actualIndex": 18,
+        "contextBefore": [
+          "It",
+          "is",
+          "on",
+          "Thursday",
+          "at"
+        ],
+        "contextAfter": [
+          ",",
+          "and",
+          "the",
+          "hall",
+          "is"
+        ]
+      },
+      {
+        "expected": [
+          "waste",
+          "at"
+        ],
+        "actual": [
+          "wasted"
+        ],
+        "expectedIndex": 35,
+        "actualIndex": 35,
+        "contextBefore": [
+          "understand",
+          "how",
+          "we",
+          "can",
+          "reduce"
+        ],
+        "contextAfter": [
+          "school",
+          ".",
+          "I",
+          "have",
+          "made"
+        ]
+      },
+      {
+        "expected": [
+          "nature",
+          "club"
+        ],
+        "actual": [
+          "Nature",
+          "Club"
+        ],
+        "expectedIndex": 88,
+        "actualIndex": 87,
+        "contextBefore": [
+          ".",
+          "I",
+          "will",
+          "ask",
+          "the"
+        ],
+        "contextAfter": [
+          "to",
+          "show",
+          "a",
+          "picture",
+          "of"
+        ]
+      },
+      {
+        "expected": [
+          "twelve"
+        ],
+        "actual": [
+          "12"
+        ],
+        "expectedIndex": 111,
+        "actualIndex": 110,
+        "contextBefore": [
+          "?",
+          "I",
+          "have",
+          "gloves",
+          "for"
+        ],
+        "contextAfter": [
+          "students",
+          ",",
+          "and",
+          "the",
+          "rubbish"
+        ]
+      },
+      {
+        "expected": [
+          "three"
+        ],
+        "actual": [
+          "3"
+        ],
+        "expectedIndex": 141,
+        "actualIndex": 140,
+        "contextBefore": [
+          "The",
+          "cleanup",
+          "will",
+          "start",
+          "at"
+        ],
+        "contextAfter": [
+          ",",
+          "after",
+          "the",
+          "hall",
+          "discussion"
+        ]
+      },
+      {
+        "expected": [
+          "hall"
+        ],
+        "actual": [
+          "whole"
+        ],
+        "expectedIndex": 145,
+        "actualIndex": 144,
+        "contextBefore": [
+          "at",
+          "three",
+          ",",
+          "after",
+          "the"
+        ],
+        "contextAfter": [
+          "discussion",
+          "."
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 131,
+    "actualTokens": 130,
+    "edits": 3,
+    "changes": [
+      {
+        "expected": [
+          "waste",
+          "at"
+        ],
+        "actual": [
+          "wasted"
+        ],
+        "expectedIndex": 32,
+        "actualIndex": 32,
+        "contextBefore": [
+          "understand",
+          "how",
+          "we",
+          "can",
+          "reduce"
+        ],
+        "contextAfter": [
+          "school",
+          "i",
+          "have",
+          "made",
+          "a"
+        ]
+      },
+      {
+        "expected": [
+          "hall"
+        ],
+        "actual": [
+          "whole"
+        ],
+        "expectedIndex": 129,
+        "actualIndex": 128,
+        "contextBefore": [
+          "start",
+          "at",
+          "three",
+          "after",
+          "the"
+        ],
+        "contextAfter": [
+          "discussion"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

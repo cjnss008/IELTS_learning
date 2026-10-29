@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "day": 11,
+  "skill": "listening",
+  "id": "day11-listening",
+  "materialId": "family-linked-d11-listening-v111",
+  "part": 2,
+  "audioStartSeconds": 60.5685,
+  "audioEndSeconds": 122.01508333333334,
+  "sourceAudioSha256": "716119a3bf3eaf485a39e27d5697dd405f89b616cbe87417565267efb657550b",
+  "sourceTextSha256": "435f90bdd66ce5f762df883e16f293ca543cf9b8b030c2104e69bf1e628bd919",
+  "expectedText": "Yes, but our seat reservation is not. We can ask for new seats at the desk. I'd like a seat near the luggage space. This suitcase is heavy. There are two seats together in carriage five. The fare is the same, so we don't need to pay extra. Good. What is the new arrival time? Twelve ten. I'll message our friend now. She is meeting us outside the station. What if she gets there early? The terminal has an indoor waiting room. She can wait there and come outside when our train arrives. Thanks. I'm buying some water before we board. Do you want anything? Just water. Please meet me by the stairs at ten fifty. We should allow ten minutes to get to the right carriage.",
+  "expectedTextSha256": "33d612e4089b734f20e7a3699ae14c897b51678fc9cf0f04fd70936e86ec6830",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day11-listening-part02.wav",
+  "wavSha256": "ac7a5649ed93c453d4774e839f255a5a046438b2465d39c1bfa55b0ef7af05a0",
+  "wavDurationSeconds": 61.4465625,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Yes, but our seat reservation is not. We can ask for new seats at the desk. I'd like a seat near the luggage space. This suitcase is heavy. There are two seats together in carriage 5. The fare is the same, so we don't need to pay extra. Good. What is the new arrival time? 1210. I'll message our friend now. She is meeting us outside the station. What if she gets there early? The terminal has an indoor waiting room. She can wait there and come outside when our train arrives. Thanks. I'm buying some water before we board. Do you want anything? Just water. Please meet me by the stairs at 10.50. We should allow 10 minutes to get to the right carriage.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.46,
+        "text": "Yes, but our seat reservation is not.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.46,
+        "endSeconds": 7.78,
+        "text": "We can ask for new seats at the desk.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 7.78,
+        "endSeconds": 11.46,
+        "text": "I'd like a seat near the luggage space.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 11.46,
+        "endSeconds": 14.1,
+        "text": "This suitcase is heavy.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 14.1,
+        "endSeconds": 17.84,
+        "text": "There are two seats together in carriage 5.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 17.84,
+        "endSeconds": 21.98,
+        "text": "The fare is the same, so we don't need to pay extra.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 21.98,
+        "endSeconds": 23.78,
+        "text": "Good.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 23.78,
+        "endSeconds": 26.42,
+        "text": "What is the new arrival time?",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 26.42,
+        "endSeconds": 28.54,
+        "text": "1210.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 28.54,
+        "endSeconds": 31.3,
+        "text": "I'll message our friend now.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 31.3,
+        "endSeconds": 34.62,
+        "text": "She is meeting us outside the station.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 34.62,
+        "endSeconds": 37.3,
+        "text": "What if she gets there early?",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 37.3,
+        "endSeconds": 40.78,
+        "text": "The terminal has an indoor waiting room.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 40.78,
+        "endSeconds": 44.94,
+        "text": "She can wait there and come outside when our train arrives.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 44.94,
+        "endSeconds": 46.7,
+        "text": "Thanks.",
+        "confidence": null
+      },
+      {
+        "id": "segment-15",
+        "startSeconds": 46.7,
+        "endSeconds": 50.1,
+        "text": "I'm buying some water before we board.",
+        "confidence": null
+      },
+      {
+        "id": "segment-16",
+        "startSeconds": 50.1,
+        "endSeconds": 52.3,
+        "text": "Do you want anything?",
+        "confidence": null
+      },
+      {
+        "id": "segment-17",
+        "startSeconds": 52.3,
+        "endSeconds": 54.34,
+        "text": "Just water.",
+        "confidence": null
+      },
+      {
+        "id": "segment-18",
+        "startSeconds": 54.34,
+        "endSeconds": 57.94,
+        "text": "Please meet me by the stairs at 10.50.",
+        "confidence": null
+      },
+      {
+        "id": "segment-19",
+        "startSeconds": 57.94,
+        "endSeconds": 61.02,
+        "text": "We should allow 10 minutes to get to the right carriage.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 61.4465625,
+    "audioSha256": "ac7a5649ed93c453d4774e839f255a5a046438b2465d39c1bfa55b0ef7af05a0",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 149,
+    "actualTokens": 147,
+    "edits": 6,
+    "changes": [
+      {
+        "expected": [
+          "five"
+        ],
+        "actual": [
+          "5"
+        ],
+        "expectedIndex": 40,
+        "actualIndex": 40,
+        "contextBefore": [
+          "two",
+          "seats",
+          "together",
+          "in",
+          "carriage"
+        ],
+        "contextAfter": [
+          ".",
+          "The",
+          "fare",
+          "is",
+          "the"
+        ]
+      },
+      {
+        "expected": [
+          "Twelve",
+          "ten"
+        ],
+        "actual": [
+          "1210"
+        ],
+        "expectedIndex": 65,
+        "actualIndex": 65,
+        "contextBefore": [
+          "the",
+          "new",
+          "arrival",
+          "time",
+          "?"
+        ],
+        "contextAfter": [
+          ".",
+          "I'll",
+          "message",
+          "our",
+          "friend"
+        ]
+      },
+      {
+        "expected": [
+          "ten",
+          "fifty"
+        ],
+        "actual": [
+          "10.50"
+        ],
+        "expectedIndex": 134,
+        "actualIndex": 133,
+        "contextBefore": [
+          "me",
+          "by",
+          "the",
+          "stairs",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "We",
+          "should",
+          "allow",
+          "ten"
+        ]
+      },
+      {
+        "expected": [
+          "ten"
+        ],
+        "actual": [
+          "10"
+        ],
+        "expectedIndex": 140,
+        "actualIndex": 138,
+        "contextBefore": [
+          "fifty",
+          ".",
+          "We",
+          "should",
+          "allow"
+        ],
+        "contextAfter": [
+          "minutes",
+          "to",
+          "get",
+          "to",
+          "the"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 131,
+    "actualTokens": 134,
+    "edits": 4,
+    "changes": [
+      {
+        "expected": [
+          "twelve"
+        ],
+        "actual": [
+          "one",
+          "thousand",
+          "two",
+          "hundred"
+        ],
+        "expectedIndex": 57,
+        "actualIndex": 57,
+        "contextBefore": [
+          "is",
+          "the",
+          "new",
+          "arrival",
+          "time"
+        ],
+        "contextAfter": [
+          "ten",
+          "i",
+          "will",
+          "message",
+          "our"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

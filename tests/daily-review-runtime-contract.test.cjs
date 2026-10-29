@@ -2,7 +2,7 @@
 const test = require('node:test'), assert = require('node:assert/strict'), path = require('node:path'), fs = require('node:fs'), crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const Activation = require('../tools/year-runtime-activation.cjs');
-const current = 'curriculum/year-first-use-runtime-contract-v113-multibatch.json';
+const current = 'curriculum/year-first-use-runtime-contract-v114-context-lexicon.json';
 const sha = file => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');
 
 test('the current build resolves the reviewed daily queue with all existing role paths and unchanged historical contract bytes', () => {
@@ -21,7 +21,7 @@ test('the current build resolves the reviewed daily queue with all existing role
 });
 
 test('adding this release does not make arbitrary version-like contract paths valid', () => {
-  for (const contractPath of [current + '.backup', current.replace('v113', 'v114'), '../' + current, path.resolve(root, current)]) {
+  for (const contractPath of [current + '.backup', current.replace('v114', 'v115'), '../' + current, path.resolve(root, current)]) {
     assert.throws(() => Activation.validateRuntimeContract({root, contractPath}), /Unsupported exact runtime contract path/);
   }
 });

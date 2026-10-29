@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "day": 13,
+  "skill": "speaking",
+  "id": "day13-speaking",
+  "materialId": "family-linked-d13-speaking-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 41.952,
+  "sourceAudioSha256": "c8ef9c7857b1976bd63a2853a65c5d1290b09693022d0874e27d92e3154446fb",
+  "sourceTextSha256": "5e86fb6c8a989c5d42c1a4e80f52822ec847aa693815bfa482fecfd44812273e",
+  "expectedText": "My friends and I have a budget for a small lunch. First, we will write a list and agree on the quantity of each item. I will check the price on every label and put the food in a basket. We need a few vegetables and a little oil, but we do not need a large package of cups. Before we pay, I will add the cost of the items and check the total. If there is a discount, I will check that it appears on the receipt. I may use cash, so I will count the change as well. We will save the money left over and decide together whether we can afford fruit.",
+  "expectedTextSha256": "5e86fb6c8a989c5d42c1a4e80f52822ec847aa693815bfa482fecfd44812273e",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day13-speaking-part01.wav",
+  "wavSha256": "cf79b02921e2d6fccac104ed6eb789d358bcd34fbeb08325b0867fccc72ac22b",
+  "wavDurationSeconds": 41.952,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "My friends and I have a budget for a small lunch. First, we will write a list and agree on the quantity of each item. I will check the price on every label and put the food in a basket. We need a few vegetables and a little oil, but we do not need a large package of cups. Before we pay, I will add the cost of the items and check the total. If there is a discount, I will check that it appears on the receipt. I may use cash, so I will count the change as well. We will save the money left over and decide together whether we can afford fruit.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4,
+        "text": "My friends and I have a budget for a small lunch.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4,
+        "endSeconds": 9,
+        "text": "First, we will write a list and agree on the quantity of each item.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 9,
+        "endSeconds": 14,
+        "text": "I will check the price on every label and put the food in a basket.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 14,
+        "endSeconds": 21,
+        "text": "We need a few vegetables and a little oil, but we do not need a large package of cups.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 21,
+        "endSeconds": 26,
+        "text": "Before we pay, I will add the cost of the items and check the total.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 26,
+        "endSeconds": 31,
+        "text": "If there is a discount, I will check that it appears on the receipt.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 31,
+        "endSeconds": 36,
+        "text": "I may use cash, so I will count the change as well.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 36,
+        "endSeconds": 41,
+        "text": "We will save the money left over and decide together whether we can afford fruit.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 41.952,
+    "audioSha256": "cf79b02921e2d6fccac104ed6eb789d358bcd34fbeb08325b0867fccc72ac22b",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 128,
+    "actualTokens": 128,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 115,
+    "actualTokens": 115,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

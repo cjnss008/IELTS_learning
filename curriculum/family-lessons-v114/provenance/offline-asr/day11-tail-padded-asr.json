@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "purpose": "Repeat failed tail using the same source audio with only trailing silence padded; no prompt.",
+  "sourceAudioSha256": "716119a3bf3eaf485a39e27d5697dd405f89b616cbe87417565267efb657550b",
+  "sourceTextSha256": "435f90bdd66ce5f762df883e16f293ca543cf9b8b030c2104e69bf1e628bd919",
+  "originalWavSha256": "d6379603274490c05d25b2bdad8a7a47fbf90cf60ea084a1a7cb6c19618335f0",
+  "originalDurationSeconds": 5.605,
+  "paddedWavSha256": "fdb9219215da8f7d0ec0d37b9409e8a6b4934718fd3a4026ea2a367c9e178ecf",
+  "paddedDurationSeconds": 30.5,
+  "paddingSeconds": 24.895,
+  "expectedText": "All right. I'll check the platform display again before I come.",
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "All right. I'll check the platform display again before I come.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 7.3,
+        "text": "All right. I'll check the platform display again before I come.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 30.5,
+    "audioSha256": "fdb9219215da8f7d0ec0d37b9409e8a6b4934718fd3a4026ea2a367c9e178ecf",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 13,
+    "actualTokens": 13,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 12,
+    "actualTokens": 12,
+    "edits": 0,
+    "changes": []
+  },
+  "sourcePromptProvided": false
+}

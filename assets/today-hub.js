@@ -226,11 +226,17 @@ function mount(){
   if(remainingEntries.length>2){const details=node('details'),title=node('summary','查看后续队列（'+(remainingEntries.length-2)+'项）');details.append(title);for(const entry of remainingEntries.slice(2))details.append(node('p','第 '+entry.day+' 课 · '+(entry.title||NAMES[entry.taskId]||'后续学习')+'：'+entry.label));box.append(details);}
   if(!primary)box.append(node('p',learningQueue.reason||'正在核对下一步课程。'));
  }
- let renderFrame=null;
- function render(){
-  const draw=()=>{renderFrame=null;const index=root.IELTSRecordSnapshotIndex;return index?.projectRead?index.projectRead(renderNow):renderNow();};
-  if(typeof root.requestAnimationFrame!=='function')return draw();
-  if(renderFrame===null)renderFrame=root.requestAnimationFrame(draw);
+ let renderFrame=null,publicRenderTimer=null,pendingPublicFence=null,renderFence=null,publicScopeEpoch=0,publicPageInvalid=false;
+ const schedulePublic=typeof root.setTimeout==='function'?root.setTimeout.bind(root):typeof setTimeout==='function'?setTimeout:null,cancelPublic=typeof root.clearTimeout==='function'?root.clearTimeout.bind(root):typeof clearTimeout==='function'?clearTimeout:null;
+ function stalePublicNotice(){const note=$('todayQueueSummary');if(note)note.textContent='学习档案已变化，请刷新页面；原稿保留。';}
+ function publicFenceCurrent(fence){try{const current=root.IELTSProfiles?.assertFresh?.();return !publicPageInvalid&&publicScopeEpoch===fence.epoch&&current?.profileId===fence.profileId&&current?.generation===fence.generation;}catch(_){return false;}}
+ function invalidatePublicPage(event){if((event?.type==='ielts:profile-reset'||event?.type==='ielts:user-data-reset')&&event.detail?.profileId){try{const current=root.IELTSProfiles?.current?.()?.id;if(current&&current!==event.detail.profileId)return;}catch(_){}}publicScopeEpoch++;publicPageInvalid=true;if(publicRenderTimer!==null){cancelPublic(publicRenderTimer);publicRenderTimer=null;pendingPublicFence=null;}stalePublicNotice();}
+ function render(){if(publicPageInvalid){stalePublicNotice();return;}return requestRender(null);}
+ function requestRender(fence){
+  if(publicRenderTimer!==null){cancelPublic(publicRenderTimer);publicRenderTimer=null;if(!fence)fence=pendingPublicFence;pendingPublicFence=null;}
+  const draw=()=>{const captured=renderFence;renderFrame=null;renderFence=null;if(publicPageInvalid){stalePublicNotice();return;}if(captured&&!publicFenceCurrent(captured)){invalidatePublicPage();return;}const index=root.IELTSRecordSnapshotIndex;return index?.projectRead?index.projectRead(renderNow):renderNow();};
+  if(typeof root.requestAnimationFrame!=='function'){renderFence=fence;return draw();}
+  if(renderFrame===null){renderFence=fence;renderFrame=root.requestAnimationFrame(draw);}
  }
  function renderNow(){
   const base=data.days.find(item=>item.day===current.day);if(!base)return;const day=planDay(base);
@@ -282,8 +288,26 @@ function mount(){
    const buttons=$('todayRoute').querySelectorAll('button');for(let n=0;n<buttons.length;n++)buttons[n].setAttribute('aria-current',String(states[n]?.task.id===current.taskId));return;
   }
   render();});
- root.addEventListener('ielts:memory-changed',render);root.addEventListener('ielts:study-timer-changed',render);root.addEventListener('ielts:course-budget-paused',render);root.addEventListener('focus',refreshRecords);doc.addEventListener?.('visibilitychange',()=>{if(!doc.hidden)refreshRecords();});
- root.addEventListener('ielts:public-course-plan-changed',render);root.addEventListener('ielts:year-first-use-changed',render);
+ root.addEventListener('ielts:profile-changed',invalidatePublicPage);root.addEventListener('ielts:profile-reset',invalidatePublicPage);root.addEventListener('ielts:user-data-reset',invalidatePublicPage);
+ root.addEventListener('ielts:memory-changed',render);root.addEventListener('ielts:study-timer-changed',event=>{if(event?.detail?.invalidated){invalidatePublicPage();return;}render();});root.addEventListener('ielts:course-budget-paused',render);root.addEventListener('focus',refreshRecords);doc.addEventListener?.('visibilitychange',()=>{if(!doc.hidden)refreshRecords();});
+ function publicPlanChanged(event){
+  if(publicRenderTimer!==null)return;
+  if(!schedulePublic||!cancelPublic){render();return;}
+  if(publicPageInvalid){stalePublicNotice();return;}
+  if(typeof root.IELTSProfiles?.assertFresh!=='function'){render();return;}
+  let fence;try{fence=root.IELTSProfiles.assertFresh();}catch(_){invalidatePublicPage();return;}
+  if(!fence||typeof fence.profileId!=='string'||typeof fence.generation!=='string'){invalidatePublicPage();return;}
+  if(event?.detail?.profileId&&event.detail.profileId!==fence.profileId){render();return;}
+  fence={profileId:fence.profileId,generation:fence.generation,epoch:publicScopeEpoch};
+  if(renderFrame!==null){if(!renderFence)renderFence=fence;return;}
+  // Give a concurrent history refresh one bounded opportunity to request the
+  // normal frame; otherwise the public-plan notification still renders.
+  pendingPublicFence=fence;publicRenderTimer=schedulePublic(()=>{
+   publicRenderTimer=null;pendingPublicFence=null;
+   if(publicFenceCurrent(fence)){requestRender(fence);return;}invalidatePublicPage();
+  },250);
+ }
+ root.addEventListener('ielts:public-course-plan-changed',publicPlanChanged);root.addEventListener('ielts:year-first-use-changed',render);
  root.addEventListener('ielts:budget-changed',event=>{if(Array.isArray(event.detail?.records))dailyRecords=event.detail.records;render();});
  root.addEventListener('ielts:course-progress',event=>{if(event.detail.day!==current.day)return;loading++;dailyRecords=Array.isArray(event.detail.allRecords)?event.detail.allRecords:Array.isArray(event.detail.records)?event.detail.records:[];render();});
  if(root.IELTSMistakes?.EVENT)root.addEventListener(root.IELTSMistakes.EVENT,render);

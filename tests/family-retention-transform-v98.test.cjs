@@ -38,3 +38,38 @@ test('batch transform validates every consumer before writing any bytes',()=>{
  const initial=bytes();assert.deepEqual(T.applyConsumers(dir),[]);assert.deepEqual(bytes(),initial);
  const broken=initial[5].replace(appPairs[0][0],'');assert.notEqual(broken,initial[5]);fs.writeFileSync(path.join(dir,'assets',files[5]),broken);const corrupt=bytes();assert.throws(()=>T.applyConsumers(dir),/family retention anchor/);assert.deepEqual(bytes(),corrupt);
 });
+
+const batchNames=['memory-core.js','contextual-vocabulary-course.js','essential-vocabulary-course.js','essential-vocabulary-core.js','year-planner.js','essential-vocabulary-app.js','learning-records.js'];
+function withEndings(source,kind){let n=0;return source.replace(/\r\n/g,'\n').replace(/\n/g,()=>kind==='crlf'?'\r\n':kind==='mixed'&&n++%2?'\r\n':'\n');}
+function bytesFixture(t,kind){
+ const tempRoot=fs.realpathSync(os.tmpdir()),dir=fs.realpathSync(fs.mkdtempSync(path.join(tempRoot,'family-retention-bytes-')));
+ assert.equal(path.dirname(dir).toLowerCase(),tempRoot.toLowerCase());t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));fs.mkdirSync(path.join(dir,'assets'));
+ const project=process.env.FAMILY_V98_TEST_ROOT||path.resolve(__dirname,'..');for(const name of batchNames){const raw=fs.readFileSync(path.join(project,'assets',name),'utf8');fs.writeFileSync(path.join(dir,'assets',name),withEndings(raw,kind));}
+ return{dir,read:()=>batchNames.map(name=>fs.readFileSync(path.join(dir,'assets',name)))};
+}
+test('a no-op batch preserves every original byte and performs no writes for LF, CRLF, or mixed line endings',t=>{
+ for(const kind of ['lf','crlf','mixed']){
+  const f=bytesFixture(t,kind),before=f.read(),text=before[5].toString('utf8'),normalized=text.replace(/\r\n/g,'\n');assert.equal(T.app(normalized),normalized);
+  if(kind==='mixed'){assert.ok(text.includes('\r\n'));assert.ok(/(^|[^\r])\n/.test(text));}
+  let writes=0;const write=fs.writeFileSync;fs.writeFileSync=(...args)=>{writes++;return write(...args);};
+  try{assert.deepEqual(T.applyConsumers(f.dir),[]);assert.deepEqual(T.applyConsumers(f.dir),[]);}finally{fs.writeFileSync=write;}
+  assert.equal(writes,0,kind);assert.deepEqual(f.read(),before,kind);
+ }
+});
+test('a real transform keeps the existing newline policy and only writes the changed consumer',t=>{
+ for(const kind of ['lf','crlf','mixed']){
+  const f=bytesFixture(t,kind),file=path.join(f.dir,'assets','essential-vocabulary-app.js'),original=fixture('v88-unapplied-app.js'),input=withEndings(original,kind),transformed=T.app(original);
+  assert.notEqual(transformed,original);fs.writeFileSync(file,input);const before=f.read();let writes=0;const write=fs.writeFileSync;fs.writeFileSync=(...args)=>{writes++;return write(...args);};
+  try{assert.deepEqual(T.applyConsumers(f.dir),['assets/essential-vocabulary-app.js']);assert.equal(writes,1);assert.deepEqual(T.applyConsumers(f.dir),[]);assert.equal(writes,1);}finally{fs.writeFileSync=write;}
+  const after=f.read(),expected=kind==='lf'?transformed:transformed.replace(/\n/g,'\r\n');assert.deepEqual(after[5],Buffer.from(expected));
+  after.forEach((value,i)=>{if(i!==5)assert.deepEqual(value,before[i],kind+' '+batchNames[i]);});
+ }
+});
+test('a later invalid consumer prevents writes even when an earlier transform would change bytes',t=>{
+ const f=bytesFixture(t,'mixed'),appFile=path.join(f.dir,'assets','essential-vocabulary-app.js'),recordsFile=path.join(f.dir,'assets','learning-records.js'),unapplied=fixture('v88-unapplied-app.js');
+ assert.notEqual(T.app(unapplied),unapplied);fs.writeFileSync(appFile,withEndings(unapplied,'mixed'));
+ const marker='function validateFamilyVocabulary(input,records,context){',records=fs.readFileSync(recordsFile,'utf8');unique(records,marker);fs.writeFileSync(recordsFile,records.replace(marker,''));
+ const before=f.read();let writes=0;const write=fs.writeFileSync;fs.writeFileSync=(...args)=>{writes++;return write(...args);};
+ try{assert.throws(()=>T.applyConsumers(f.dir),/Missing|family records marker/);}finally{fs.writeFileSync=write;}
+ assert.equal(writes,0);assert.deepEqual(f.read(),before);
+});

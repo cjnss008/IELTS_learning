@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "day": 16,
+  "skill": "listening",
+  "id": "day16-listening",
+  "materialId": "family-linked-d16-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 53.786833333333334,
+  "sourceAudioSha256": "b0ab6f3eb0fd4c1729862d39f7949100c0ab5eab5d7a5d2e896137450402aa24",
+  "sourceTextSha256": "8c2b1cac00eda5b362bae5449f28aae8f8267c97d5ebf12cb9e44bce3309cc59",
+  "expectedText": "Have you seen the weather forecast for our picnic by the lake? I am bringing the food, so I need to know where we will eat. Yes. Saturday should be warm, around 22 degrees Celsius, but the afternoon might be rainy. The morning will be sunny according to the latest report. There is a dark cloud above the lake already. I think it is going to rain before noon. Should we cancel everything? I would wait. A cloud can pass quickly, and the wind is moving it toward the hills. Let's plan for both possibilities. Good idea. If it stays dry, we will meet under the large tree at eleven. If rain starts, we will move to the cafe beside the path.",
+  "expectedTextSha256": "382f3baf8e30d7beb1bdf17679374b5435d58cbdef9fa1fb9f848b8c79b31944",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day16-listening-part01.wav",
+  "wavSha256": "36e775800098ddb8b8482c9d23c4fe5fd30ab5b5d3a903fd948b5a74311f5df6",
+  "wavDurationSeconds": 53.7868125,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Have you seen the weather forecast for our picnic by the lake? I am bringing the food, so I need to know where we will eat. Yes. Saturday should be warm, around 22 degrees Celsius, but the afternoon might be rainy. The morning will be sunny according to the latest report. There is a dark cloud above the lake already. I think it is going to rain before noon. Should we cancel everything? I would wait. A cloud can pass quickly, and the wind is moving it toward the hills. Let's plan for both possibilities. Good idea. If it stays dry, we will meet under the large tree at 11. If rain starts, we will move to the cafe beside the path.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.6,
+        "text": "Have you seen the weather forecast for our picnic by the lake?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.6,
+        "endSeconds": 9.08,
+        "text": "I am bringing the food, so I need to know where we will eat.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 9.08,
+        "endSeconds": 10.8,
+        "text": "Yes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 10.8,
+        "endSeconds": 17.56,
+        "text": "Saturday should be warm, around 22 degrees Celsius, but the afternoon might be rainy.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 17.56,
+        "endSeconds": 21.92,
+        "text": "The morning will be sunny according to the latest report.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21.92,
+        "endSeconds": 25.62,
+        "text": "There is a dark cloud above the lake already.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 25.62,
+        "endSeconds": 29.06,
+        "text": "I think it is going to rain before noon.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 29.06,
+        "endSeconds": 31.72,
+        "text": "Should we cancel everything?",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 31.72,
+        "endSeconds": 33.72,
+        "text": "I would wait.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 33.72,
+        "endSeconds": 38.86,
+        "text": "A cloud can pass quickly, and the wind is moving it toward the hills.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 38.86,
+        "endSeconds": 42.2,
+        "text": "Let's plan for both possibilities.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 42.2,
+        "endSeconds": 44.16,
+        "text": "Good idea.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 44.16,
+        "endSeconds": 49.2,
+        "text": "If it stays dry, we will meet under the large tree at 11.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 49.2,
+        "endSeconds": 53.56,
+        "text": "If rain starts, we will move to the cafe beside the path.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 53.7868125,
+    "audioSha256": "36e775800098ddb8b8482c9d23c4fe5fd30ab5b5d3a903fd948b5a74311f5df6",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 142,
+    "actualTokens": 142,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "eleven"
+        ],
+        "actual": [
+          "11"
+        ],
+        "expectedIndex": 126,
+        "actualIndex": 126,
+        "contextBefore": [
+          "under",
+          "the",
+          "large",
+          "tree",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "If",
+          "rain",
+          "starts",
+          ","
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 124,
+    "actualTokens": 124,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

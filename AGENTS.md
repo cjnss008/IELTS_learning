@@ -87,3 +87,5 @@
 - 0.0.112 NAS 恢复修复采用 `curriculum/year-first-use-runtime-contract-v112-nas-startup.json` 的同样55组件，保留所有旧合同和全部构建参数。锁重试只能发生在独占获得前，不能重放业务写入或删除未确认归属的锁；健康检查的 ready:false 不代表可以提交业务。新课程草稿未启用。
 
 - 0.0.113 开发版使用 `curriculum/year-first-use-runtime-contract-v113-multibatch.json`，保持55组件精确路径。完整构建须显式保留 v109 release 及全部既有参数，追加批次可重复传 `--family-lessons-release`，按历史顺序排列。构建从当前版本控制的 `assets/curriculum-data.js` 固定既有批次和编译后 unit 哈希，不能删除旧批、改写旧绑定或省略全部 release。新增批次须独立审签、音频核验、旧稿恢复及浏览器验收；第11–20课草稿/合成音频不等于已发布。不得在全套测试运行期间重签合同、替换构建产物或同时占用测试需要的开发18765端口。
+
+- 0.0.114 开发候选使用 `curriculum/year-first-use-runtime-contract-v114-context-lexicon.json`，保持55个精确组件路径和全部旧合同。完整构建必须同时传入 v109、v114 两个 family release，保留 GSA、ordinary-reading、active-year 参数。扩展词须有词典参考、正确语境和独立规范身份，不计入原8000核心总数；拼写变体和已学词不重复记新词。词汇训练及播放须保持已验证批次的原音标与词音绑定，不能用通用词典覆盖后再授予已完成。第21课以后草稿不得混入运行材料；本候选在全部回归与真实页面验收前不发布。

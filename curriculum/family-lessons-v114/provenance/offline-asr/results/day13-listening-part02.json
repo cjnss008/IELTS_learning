@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "day": 13,
+  "skill": "listening",
+  "id": "day13-listening",
+  "materialId": "family-linked-d13-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 52.43433333333333,
+  "audioEndSeconds": 111.60016666666667,
+  "sourceAudioSha256": "9e7e045e2af98ec11aae28eb5a96604665adb50df1fdbdbe39368695cb537b08",
+  "sourceTextSha256": "f64831ed7e8c6a771931ce3f3a5a41681a077a3981ef7f1d4edf8646734be8b3",
+  "expectedText": "Then our total before the reduction is nineteen pounds. There is a card saying the shop will discount this purchase by three pounds. That leaves an amount of sixteen pounds to pay. We can afford it and save nine pounds from our budget. I have a twenty-pound note in cash. Will you check the change and receipt with me? Of course. We should get four pounds back. If the assistant gives us a coin, we will count it with the notes. Shall we take that package of cups too? No. It is expensive, and the hall already has cups. A cheap extra is still unnecessary if we do not need it. Agreed. In the shop near my old home, prices were shown in dollars. Here the pound sign is easy to see.",
+  "expectedTextSha256": "d12fa4adb386d38ddef9ee7e6f28985f2a744c32366689e823859a994f414eed",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day13-listening-part02.wav",
+  "wavSha256": "ef97bc82309be2d5ccf346ff6239bb0766521fd3e75acc1a567ea544c7c97687",
+  "wavDurationSeconds": 59.1658125,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Then our total before the reduction is 19 pounds. There is a card saying the shop will discount this purchase by 3 pounds. That leaves an amount of 16 pounds to pay. We can afford it and save 9 pounds from our budget. I have a 20 pound note in cash. Will you check the change and receipt with me? Of course. We should get 4 pounds back. If the assistant gives us a coin, we will count it with the notes. Shall we take that package of cups too? No. It is expensive and the hall already has cups. A cheap extra is still unnecessary if we do not need it. Agreed. In the shop near my old home, prices were shown in dollars.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.56,
+        "text": "Then our total before the reduction is 19 pounds.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.56,
+        "endSeconds": 10.34,
+        "text": "There is a card saying the shop will discount this purchase by 3 pounds.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10.34,
+        "endSeconds": 14.2,
+        "text": "That leaves an amount of 16 pounds to pay.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 14.2,
+        "endSeconds": 18.6,
+        "text": "We can afford it and save 9 pounds from our budget.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 18.6,
+        "endSeconds": 21.84,
+        "text": "I have a 20 pound note in cash.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 21.84,
+        "endSeconds": 25.36,
+        "text": "Will you check the change and receipt with me?",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 25.36,
+        "endSeconds": 27.24,
+        "text": "Of course.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 27.24,
+        "endSeconds": 30.68,
+        "text": "We should get 4 pounds back.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 30.68,
+        "endSeconds": 35.5,
+        "text": "If the assistant gives us a coin, we will count it with the notes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 35.5,
+        "endSeconds": 39,
+        "text": "Shall we take that package of cups too?",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 39,
+        "endSeconds": 40.72,
+        "text": "No.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 40.72,
+        "endSeconds": 45,
+        "text": "It is expensive and the hall already has cups.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 45,
+        "endSeconds": 49.6,
+        "text": "A cheap extra is still unnecessary if we do not need it.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 49.6,
+        "endSeconds": 51.4,
+        "text": "Agreed.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 51.4,
+        "endSeconds": 56.44,
+        "text": "In the shop near my old home, prices were shown in dollars.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 59.1658125,
+    "audioSha256": "ef97bc82309be2d5ccf346ff6239bb0766521fd3e75acc1a567ea544c7c97687",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 151,
+    "actualTokens": 142,
+    "edits": 17,
+    "changes": [
+      {
+        "expected": [
+          "nineteen"
+        ],
+        "actual": [
+          "19"
+        ],
+        "expectedIndex": 7,
+        "actualIndex": 7,
+        "contextBefore": [
+          "total",
+          "before",
+          "the",
+          "reduction",
+          "is"
+        ],
+        "contextAfter": [
+          "pounds",
+          ".",
+          "There",
+          "is",
+          "a"
+        ]
+      },
+      {
+        "expected": [
+          "three"
+        ],
+        "actual": [
+          "3"
+        ],
+        "expectedIndex": 22,
+        "actualIndex": 22,
+        "contextBefore": [
+          "will",
+          "discount",
+          "this",
+          "purchase",
+          "by"
+        ],
+        "contextAfter": [
+          "pounds",
+          ".",
+          "That",
+          "leaves",
+          "an"
+        ]
+      },
+      {
+        "expected": [
+          "sixteen"
+        ],
+        "actual": [
+          "16"
+        ],
+        "expectedIndex": 30,
+        "actualIndex": 30,
+        "contextBefore": [
+          "That",
+          "leaves",
+          "an",
+          "amount",
+          "of"
+        ],
+        "contextAfter": [
+          "pounds",
+          "to",
+          "pay",
+          ".",
+          "We"
+        ]
+      },
+      {
+        "expected": [
+          "nine"
+        ],
+        "actual": [
+          "9"
+        ],
+        "expectedIndex": 41,
+        "actualIndex": 41,
+        "contextBefore": [
+          "can",
+          "afford",
+          "it",
+          "and",
+          "save"
+        ],
+        "contextAfter": [
+          "pounds",
+          "from",
+          "our",
+          "budget",
+          "."
+        ]
+      },
+      {
+        "expected": [
+          "twenty-pound"
+        ],
+        "actual": [
+          "20",
+          "pound"
+        ],
+        "expectedIndex": 50,
+        "actualIndex": 50,
+        "contextBefore": [
+          "budget",
+          ".",
+          "I",
+          "have",
+          "a"
+        ],
+        "contextAfter": [
+          "note",
+          "in",
+          "cash",
+          ".",
+          "Will"
+        ]
+      },
+      {
+        "expected": [
+          "four"
+        ],
+        "actual": [
+          "4"
+        ],
+        "expectedIndex": 71,
+        "actualIndex": 72,
+        "contextBefore": [
+          "course",
+          ".",
+          "We",
+          "should",
+          "get"
+        ],
+        "contextAfter": [
+          "pounds",
+          "back",
+          ".",
+          "If",
+          "the"
+        ]
+      },
+      {
+        "expected": [
+          ","
+        ],
+        "actual": [],
+        "expectedIndex": 105,
+        "actualIndex": 106,
+        "contextBefore": [
+          "No",
+          ".",
+          "It",
+          "is",
+          "expensive"
+        ],
+        "contextAfter": [
+          "and",
+          "the",
+          "hall",
+          "already",
+          "has"
+        ]
+      },
+      {
+        "expected": [
+          ".",
+          "Here",
+          "the",
+          "pound",
+          "sign",
+          "is",
+          "easy",
+          "to",
+          "see"
+        ],
+        "actual": [],
+        "expectedIndex": 141,
+        "actualIndex": 141,
+        "contextBefore": [
+          "prices",
+          "were",
+          "shown",
+          "in",
+          "dollars"
+        ],
+        "contextAfter": [
+          "."
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 133,
+    "actualTokens": 125,
+    "edits": 8,
+    "changes": [
+      {
+        "expected": [
+          "here",
+          "the",
+          "pound",
+          "sign",
+          "is",
+          "easy",
+          "to",
+          "see"
+        ],
+        "actual": [],
+        "expectedIndex": 125,
+        "actualIndex": 125,
+        "contextBefore": [
+          "prices",
+          "were",
+          "shown",
+          "in",
+          "dollars"
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

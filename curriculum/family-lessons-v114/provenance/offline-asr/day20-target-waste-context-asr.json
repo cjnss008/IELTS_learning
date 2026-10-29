@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "job": {
+    "day": 20,
+    "skill": "listening",
+    "id": "day20-target-waste",
+    "part": 1,
+    "audioPath": "\\\\mynas\\family\\IELTS_learning开发\\work\\linked-course-next-audio-v1\\audio\\listening\\family-linked-d20-listening-next-v1.mp3",
+    "sourceAudioSha256": "aa2f457ed2f0a13e0357c44d60e0a623bcb7555aa1d39be489b4537bacf5a828",
+    "sourceTextSha256": "88cb001d640605f3f9e633555c3ba7b223063527d52b3c726e726d261033701c",
+    "start": 0,
+    "end": 27.703208333333333,
+    "reference": "Are you ready for our school's environment event next week? Almost. It is on Thursday at two, and the hall is booked. I want visitors to understand how we can reduce waste at school. I have made a sign about litter near the river. After lunch, paper and plastic are often left beside the path. We need to protect the wildlife there.",
+    "focus": "reduce waste at school"
+  },
+  "originalWavSha256": "83e17bb0880b6454d263cee3c6ae13e33fb26e637e0d607ce866a9454bcd309f",
+  "paddedWavSha256": "178c8909c480b0ebe2ac49406ad6d6af76dbb3dcd0b147e1390bf83ca2419644",
+  "sourceSamplesIdentical": true,
+  "appendedSamplesAllZero": true,
+  "paddedDurationSeconds": 60.5,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Are you ready for our school's environment event next week? Almost. It is on Thursday at 2, and the hall is booked. I want visitors to understand how we can reduce wasted school. I have made a sign about litter near the river. After lunch, paper and plastic are often left beside the path. We need to protect the wildlife there. [BLANK_AUDIO]",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.46,
+        "text": "Are you ready for our school's environment event next week?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.46,
+        "endSeconds": 6.36,
+        "text": "Almost.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 6.36,
+        "endSeconds": 10.56,
+        "text": "It is on Thursday at 2, and the hall is booked.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 10.56,
+        "endSeconds": 15.48,
+        "text": "I want visitors to understand how we can reduce wasted school.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 15.48,
+        "endSeconds": 19.24,
+        "text": "I have made a sign about litter near the river.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 19.24,
+        "endSeconds": 24.8,
+        "text": "After lunch, paper and plastic are often left beside the path.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 24.8,
+        "endSeconds": 28.12,
+        "text": "We need to protect the wildlife there.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 30,
+        "endSeconds": 40,
+        "text": "[BLANK_AUDIO]",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "178c8909c480b0ebe2ac49406ad6d6af76dbb3dcd0b147e1390bf83ca2419644",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 71,
+    "actualTokens": 75,
+    "edits": 8,
+    "changes": [
+      {
+        "expected": [
+          "two"
+        ],
+        "actual": [
+          "2"
+        ],
+        "expectedIndex": 18,
+        "actualIndex": 18,
+        "contextBefore": [
+          "It",
+          "is",
+          "on",
+          "Thursday",
+          "at"
+        ],
+        "contextAfter": [
+          ",",
+          "and",
+          "the",
+          "hall",
+          "is"
+        ]
+      },
+      {
+        "expected": [
+          "waste",
+          "at"
+        ],
+        "actual": [
+          "wasted"
+        ],
+        "expectedIndex": 35,
+        "actualIndex": 35,
+        "contextBefore": [
+          "understand",
+          "how",
+          "we",
+          "can",
+          "reduce"
+        ],
+        "contextAfter": [
+          "school",
+          ".",
+          "I",
+          "have",
+          "made"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "[",
+          "BLANK",
+          "_",
+          "AUDIO",
+          "]"
+        ],
+        "expectedIndex": 71,
+        "actualIndex": 70,
+        "contextBefore": [
+          "protect",
+          "the",
+          "wildlife",
+          "there",
+          "."
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 63,
+    "actualTokens": 64,
+    "edits": 4,
+    "changes": [
+      {
+        "expected": [
+          "waste",
+          "at"
+        ],
+        "actual": [
+          "wasted"
+        ],
+        "expectedIndex": 32,
+        "actualIndex": 32,
+        "contextBefore": [
+          "understand",
+          "how",
+          "we",
+          "can",
+          "reduce"
+        ],
+        "contextAfter": [
+          "school",
+          "i",
+          "have",
+          "made",
+          "a"
+        ]
+      },
+      {
+        "expected": [],
+        "actual": [
+          "blank",
+          "audio"
+        ],
+        "expectedIndex": 63,
+        "actualIndex": 62,
+        "contextBefore": [
+          "to",
+          "protect",
+          "the",
+          "wildlife",
+          "there"
+        ],
+        "contextAfter": []
+      }
+    ]
+  },
+  "sourcePromptProvided": false
+}

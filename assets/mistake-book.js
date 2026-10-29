@@ -40,7 +40,11 @@
   // these known, shape-checked annotations are omitted from the mistake schema;
   // unknown fields still fail rather than being silently discarded.
   function capturedQuestion(value,material){
-    fields(value,QUESTION_FIELDS.concat(['displayOrder','lexeme','understanding','evidenceOffsets','eligibleModalities','spokenEvidence','acceptableAnswerScope','sourceCanonicalAnswers','answerAliasPolicy','correctExpression','evidenceSpan','commonErrorReasons','wordLimit','instructions']),'原题快照');
+    fields(value,QUESTION_FIELDS.concat(['displayOrder','lexeme','understanding','evidenceOffsets','eligibleModalities','spokenEvidence','acceptableAnswerScope','sourceCanonicalAnswers','answerAliasPolicy','correctExpression','evidenceSpan','commonErrorReasons','wordLimit','instructions','caseSensitive']),'原题快照');
+    // Both objective graders normalize answers case-insensitively. False is
+    // equivalent; keep it only in the frozen original so older mistake
+    // snapshots remain unchanged. True is unsupported and cannot be discarded.
+    if(own(value,'caseSensitive')){if(typeof value.caseSensitive!=='boolean')throw Error('原题大小写标记须为布尔值。');if(value.caseSensitive)throw Error('当前客观判分不支持区分大小写，原题保留。');}
     const approvedGsa=()=>material?.source?.gradedCourseRelease?.sha256==='3a9b2d0c6beec4e7ec5ad4e2dd85dfdb4b34c69beff74469c277e35c95ba2f3f'&&/^gsa-plain-language-(02|03|06|07|08)$/.test(material?.source?.publicSourceId||'')&&material.id==='public-'+material.source.publicSourceId+'-reading';
     const offset=(v,label,unit)=>{fields(v,unit?['start','end','unit','offsetUnit']:['quote','start','end'],label);if(!Number.isInteger(v.start)||!Number.isInteger(v.end)||v.start<0||v.end<v.start)throw Error(label+'位置无效。');if(unit){if(own(v,'unit')===own(v,'offsetUnit')||(v.unit??v.offsetUnit)!=='UTF-16-code-unit')throw Error(label+'位置单位无效。');if(own(v,'offsetUnit')&&(!approvedGsa()||text(value.evidence,30000,label,false).length!==v.end-v.start||material.passage?.slice(v.start,v.end)!==value.evidence))throw Error(label+'文本与位置不一致。');}if(!unit&&text(v.quote,30000,label,false).length!==v.end-v.start)throw Error(label+'文本与位置不一致。');};
     if(value.displayOrder!==undefined){const order=list(value.displayOrder,100,'冻结选项顺序'),length=value.options?.length||0;if(order.length!==length||new Set(order).size!==length||order.some(i=>!Number.isInteger(i)||i<0||i>=length))throw Error('冻结选项顺序无效。');}

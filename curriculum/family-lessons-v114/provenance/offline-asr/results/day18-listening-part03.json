@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "day": 18,
+  "skill": "listening",
+  "id": "day18-listening",
+  "materialId": "family-linked-d18-listening-next-v1",
+  "part": 3,
+  "audioStartSeconds": 119.61449999999999,
+  "audioEndSeconds": 143.132417,
+  "sourceAudioSha256": "8674788425e471b5e7e3b81cd8b17e408ad2d164eeffe46b18594fe9221bdc0e",
+  "sourceTextSha256": "d2b0d9bb5fa64032dc0da11e2d3133d4e2e227a173518a481b1c8e10a1abfa26",
+  "expectedText": "Should I send an email to the club today? Wait until we check the real agenda tomorrow. For now, use the logout button before leaving the computer. Online notes can be useful, but we need to check them carefully. Thanks. This technology is less confusing when we take one step at a time.",
+  "expectedTextSha256": "3674236dfae2e35beb72014db7f2a60e6c12a2eab5fd836057e7eda630431231",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day18-listening-part03.wav",
+  "wavSha256": "d22199410bf9bbf245216744904a7188b2444844bc5587fc750f459b474fdcb7",
+  "wavDurationSeconds": 23.5179375,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Should I send an email to the club today? Wait until we check the real agenda tomorrow. For now, use the logout button before leaving the computer. Online notes can be useful, but we need to check them carefully. Thanks. This technology is less confusing when we take one step at a time.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.16,
+        "text": "Should I send an email to the club today?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.16,
+        "endSeconds": 8,
+        "text": "Wait until we check the real agenda tomorrow.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8,
+        "endSeconds": 12.92,
+        "text": "For now, use the logout button before leaving the computer.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.92,
+        "endSeconds": 17.48,
+        "text": "Online notes can be useful, but we need to check them carefully.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 17.48,
+        "endSeconds": 19.44,
+        "text": "Thanks.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 19.44,
+        "endSeconds": 23.44,
+        "text": "This technology is less confusing when we take one step at a time.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 23.5179375,
+    "audioSha256": "d22199410bf9bbf245216744904a7188b2444844bc5587fc750f459b474fdcb7",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 61,
+    "actualTokens": 61,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 53,
+    "actualTokens": 53,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

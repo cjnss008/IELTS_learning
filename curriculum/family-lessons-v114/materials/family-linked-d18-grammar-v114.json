@@ -1,0 +1,283 @@
+{
+  "id": "family-linked-d18-grammar-v114",
+  "version": "1",
+  "week": 3,
+  "courseDay": 18,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "操作步骤与重复结果",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Choose the instruction to open a document.",
+      "options": [
+        "To open the document.",
+        "Opening the document.",
+        "Open the document.",
+        "Opens the document."
+      ],
+      "answers": [
+        "Open the document."
+      ],
+      "evidence": "Open the document.",
+      "evidenceOffsets": {
+        "start": 15,
+        "end": 33,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "祈使句以动词原形 open 开头。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Choose the negative instruction.",
+      "options": [
+        "Share don't a real password.",
+        "Don't share a real password.",
+        "Not share a real password.",
+        "Don't shares a real password."
+      ],
+      "answers": [
+        "Don't share a real password."
+      ],
+      "evidence": "Don't share a real password.",
+      "evidenceOffsets": {
+        "start": 68,
+        "end": 96,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "否定祈使句用 Don’t + 动词原形。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Complete the instruction: ____ the folder.",
+      "options": [
+        "Open",
+        "Opens",
+        "To opening",
+        "Opening"
+      ],
+      "answers": [
+        "Open"
+      ],
+      "evidence": "Open the document.",
+      "evidenceOffsets": {
+        "start": 15,
+        "end": 33,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "发出直接指令时，用动词原形 open。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Complete the warning: Don't ____ the password.",
+      "options": [
+        "to share",
+        "sharing",
+        "share",
+        "shares"
+      ],
+      "answers": [
+        "share"
+      ],
+      "evidence": "Don't share a real password.",
+      "evidenceOffsets": {
+        "start": 68,
+        "end": 96,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "Don’t 后接动词原形 share。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Which action comes first: “First, open the folder. Then save a copy”?",
+      "options": [
+        "Open the folder.",
+        "Send an email.",
+        "Close the browser.",
+        "Save a copy."
+      ],
+      "answers": [
+        "Open the folder."
+      ],
+      "evidence": "First, open the folder. Then save a copy.",
+      "evidenceOffsets": {
+        "start": 155,
+        "end": 196,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "first 引出先做的事，then 引出下一步。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Before you save it, ____ the date.",
+      "options": [
+        "check",
+        "checks",
+        "checking",
+        "to check"
+      ],
+      "answers": [
+        "check"
+      ],
+      "evidence": "Before you save it, check the date.",
+      "evidenceOffsets": {
+        "start": 212,
+        "end": 247,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "before 从句说明保存之前，主句祈使动词用 check。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "After you upload it, what should you check?",
+      "options": [
+        "The keyboard color.",
+        "The weather.",
+        "The password card.",
+        "The file name."
+      ],
+      "answers": [
+        "The file name."
+      ],
+      "evidence": "After you upload it, check the file name.",
+      "evidenceOffsets": {
+        "start": 262,
+        "end": 303,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "after 表示上传完成之后；此时检查文件名。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "Which sentence has the same order as “Before you save it, check the date”?",
+      "options": [
+        "Check the date after you save it.",
+        "Save it before you check the date.",
+        "Save the date before you check it.",
+        "Check the date before you save it."
+      ],
+      "answers": [
+        "Check the date before you save it."
+      ],
+      "evidence": "Check the date before you save it.",
+      "evidenceOffsets": {
+        "start": 308,
+        "end": 342,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "两个句子都要求先检查日期、后保存。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "If the mouse is off, the pointer ____ move.",
+      "options": [
+        "do not",
+        "will not to",
+        "does not",
+        "is not to"
+      ],
+      "answers": [
+        "does not"
+      ],
+      "evidence": "If the mouse is off, the pointer does not move.",
+      "evidenceOffsets": {
+        "start": 414,
+        "end": 461,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "单数主语 pointer 的一般现在时否定为 does not + 原形。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "Complete the repeated result: If the connection is unavailable, the local form still ____.",
+      "options": [
+        "open",
+        "opens",
+        "opening",
+        "will opens"
+      ],
+      "answers": [
+        "opens"
+      ],
+      "evidence": "If the connection is unavailable, the local form still opens.",
+      "evidenceOffsets": {
+        "start": 471,
+        "end": 532,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "单数 form 作主语，一般现在时 open 加 -s。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "Choose a zero conditional describing a repeated result.",
+      "options": [
+        "If the mouse will be off, the pointer moves.",
+        "If the mouse is off, the pointer does not move.",
+        "If the mouse is off, the pointer do not moves.",
+        "If the mouse off, the pointer not move."
+      ],
+      "answers": [
+        "If the mouse is off, the pointer does not move."
+      ],
+      "evidence": "If the mouse is off, the pointer does not move.",
+      "evidenceOffsets": {
+        "start": 414,
+        "end": 461,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "两部分都用一般现在时，表达设备在此条件下的重复结果。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "When does the local form open in the example?",
+      "options": [
+        "Only while the website is online.",
+        "Only when a new mouse is installed.",
+        "Only after an email arrives.",
+        "Even if the connection is unavailable."
+      ],
+      "answers": [
+        "Even if the connection is unavailable."
+      ],
+      "evidence": "If the connection is unavailable, the local form still opens.",
+      "evidenceOffsets": {
+        "start": 471,
+        "end": 532,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "if 从句给出连接不可用的条件，主句说本地表单仍可打开。"
+    }
+  ],
+  "instructions": "先阅读说明与例句，再作答并根据解释订正。",
+  "estimatedMinutes": 40,
+  "passage": "1. 祈使句用于给步骤或指令：Open the document. 动词原形开头，通常省略 you。否定祈使句用 Don't + 原形：Don't share a real password. 不写 Don't shares，也不要把 don't 放在动词后。\n\n2. first / then 表示步骤先后：First, open the folder. Then save a copy. before 表示在某事之前：Before you save it, check the date. after 表示在某事之后：After you upload it, check the file name. 也可说 Check the date before you save it. 根据实际先后理解；before 并不总是放在句首。\n\n3. 零条件句描述每次符合条件时的重复结果，常用 if + 一般现在时，主句一般现在时：If the mouse is off, the pointer does not move. 在这个练习设备上，If the connection is unavailable, the local form still opens. 这类句子描述稳定的重复结果；主语为单数时注意动词和 be 的一致，不必用 will。",
+  "questionCount": 12
+}

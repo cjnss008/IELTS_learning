@@ -1,0 +1,283 @@
+{
+  "id": "family-linked-d16-grammar-v114",
+  "version": "1",
+  "week": 3,
+  "courseDay": 16,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "预测与条件下的安排",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Choose the prediction with a normal verb form: The morning ____ cloudy.",
+      "options": [
+        "will to be",
+        "will being",
+        "will be",
+        "will is"
+      ],
+      "answers": [
+        "will be"
+      ],
+      "evidence": "I think the morning will be cloudy.",
+      "evidenceOffsets": {
+        "start": 21,
+        "end": 56,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "will 后用动词原形 be。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Which sentence expresses an uncertain possibility?",
+      "options": [
+        "It might rains in the afternoon.",
+        "It might rain in the afternoon.",
+        "It might to rain in the afternoon.",
+        "It rains might in the afternoon."
+      ],
+      "answers": [
+        "It might rain in the afternoon."
+      ],
+      "evidence": "It might rain in the afternoon.",
+      "evidenceOffsets": {
+        "start": 66,
+        "end": 97,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "might 表示可能，后接 rain 原形。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Choose the correct negative prediction.",
+      "options": [
+        "It not might rain.",
+        "It might do not rain.",
+        "It might not rain.",
+        "It might not rains."
+      ],
+      "answers": [
+        "It might not rain."
+      ],
+      "evidence": "It might not rain.",
+      "evidenceOffsets": {
+        "start": 153,
+        "end": 171,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "might 的否定为 might not，后面仍接原形 rain。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "Complete: We ____ need an umbrella tomorrow.",
+      "options": [
+        "might",
+        "might needs",
+        "might will",
+        "might to"
+      ],
+      "answers": [
+        "might"
+      ],
+      "evidence": "It might rain in the afternoon.",
+      "evidenceOffsets": {
+        "start": 66,
+        "end": 97,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "对不确定的将来作预测可用 might + 动词原形。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "Look at the dark cloud. It ____ rain soon.",
+      "options": [
+        "is going to",
+        "going to",
+        "is going to be rains",
+        "is going"
+      ],
+      "answers": [
+        "is going to"
+      ],
+      "evidence": "It is going to rain.",
+      "evidenceOffsets": {
+        "start": 249,
+        "end": 269,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "根据眼前黑云预测，用 is going to + 动词原形。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "Choose the correct evidence-based prediction.",
+      "options": [
+        "The sky is dark. It is going to rains.",
+        "The sky is dark. It is going raining.",
+        "The sky is dark. It going to rain.",
+        "The sky is dark. It is going to rain."
+      ],
+      "answers": [
+        "The sky is dark. It is going to rain."
+      ],
+      "evidence": "Look at that dark cloud. It is going to rain.",
+      "evidenceOffsets": {
+        "start": 224,
+        "end": 269,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "先有黑云证据，再用 is going to rain。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "Complete: Look at those clouds! They ____ cover the sun.",
+      "options": [
+        "is going to",
+        "are going to covers",
+        "are going to",
+        "are going"
+      ],
+      "answers": [
+        "are going to"
+      ],
+      "evidence": "It is going to rain.",
+      "evidenceOffsets": {
+        "start": 249,
+        "end": 269,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "复数 clouds 对应 are，going to 后用原形 cover。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "Choose the correct verb after going to.",
+      "options": [
+        "raining",
+        "rain",
+        "rains",
+        "rained"
+      ],
+      "answers": [
+        "rain"
+      ],
+      "evidence": "It is going to rain.",
+      "evidenceOffsets": {
+        "start": 249,
+        "end": 269,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "going to 后接 rain 的原形。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "If it rains, we ____ inside.",
+      "options": [
+        "will moving",
+        "will move",
+        "move will",
+        "will moves"
+      ],
+      "answers": [
+        "will move"
+      ],
+      "evidence": "If it rains, we will move inside.",
+      "evidenceOffsets": {
+        "start": 360,
+        "end": 393,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "if 从句一般现在时，主句 will + move 原形。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "If it ____ safe, the children will plant outside.",
+      "options": [
+        "being",
+        "are",
+        "will be",
+        "is"
+      ],
+      "answers": [
+        "is"
+      ],
+      "evidence": "If it is safe, the children will plant outside.",
+      "evidenceOffsets": {
+        "start": 473,
+        "end": 520,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "if 从句用一般现在时，it 对应 is。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "Choose the correct future condition.",
+      "options": [
+        "If it rains, we will move inside.",
+        "If it rains, we will moves inside.",
+        "If it will rain, we will move inside.",
+        "If it raining, we move will inside."
+      ],
+      "answers": [
+        "If it rains, we will move inside."
+      ],
+      "evidence": "If it rains, we will move inside.",
+      "evidenceOffsets": {
+        "start": 360,
+        "end": 393,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "未来条件句的 if 从句不用 will；主句用 will move。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "Which sentence means the same as “If it rains, we will move inside”?",
+      "options": [
+        "We move inside if it will rain.",
+        "If we move inside, it will rain.",
+        "We will rain if it moves inside.",
+        "We will move inside if it rains."
+      ],
+      "answers": [
+        "We will move inside if it rains."
+      ],
+      "evidence": "We will move inside if it rains.",
+      "evidenceOffsets": {
+        "start": 440,
+        "end": 472,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "两个分句可以交换顺序，条件和结果保持相同。"
+    }
+  ],
+  "instructions": "先阅读说明与例句，再作答并根据解释订正。",
+  "estimatedMinutes": 40,
+  "passage": "1. will / might 表示预测：I think the morning will be cloudy. 说话人认为会发生；It might rain in the afternoon. 表示可能发生但不确定。两者后接动词原形；否定分别是 will not / won't 与 might not。It might not rain. 不要写 might rains。\n\n2. 根据眼前证据预测，可用 be going to + 动词原形：Look at that dark cloud. It is going to rain. 黑云是眼前证据，不是已发生的雨；不要漏掉 is，也不要在 going to 后加 rains。\n\n3. 真实可能的未来条件常用 if + 一般现在时，主句 will + 动词原形：If it rains, we will move inside. 即使说将来，if 从句也用 rains，不写 if it will rain。顺序可以互换：We will move inside if it rains. If it is safe, the children will plant outside. 条件成立时才发生主句动作；这不是保证预报一定准确。",
+  "questionCount": 12
+}

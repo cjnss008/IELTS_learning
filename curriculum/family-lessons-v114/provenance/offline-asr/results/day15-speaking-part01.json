@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "day": 15,
+  "skill": "speaking",
+  "id": "day15-speaking",
+  "materialId": "family-linked-d15-speaking-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 47.808,
+  "sourceAudioSha256": "eea7bce315888a2553227869df9154bc8cd7f09a64a6964868847b0c905d1731",
+  "sourceTextSha256": "a2a58344a3fc6f43899e586dc362c7ec501f91e8d66c439d48e0c3969a45d71c",
+  "expectedText": "Last month I saw a vacancy at a community center and sent an application. I wanted the position because I enjoy helping people find useful information. At the interview, the manager asked about my experience. I described a library event where a colleague and I worked as a team. My example showed that I could listen to a customer and finish a task carefully. I also asked about the wage and the first responsibility in the department. The employer did not give me a decision that day, so I wrote down the date for a reply. After the interview, I planned to resume volunteering and practice another example for my career goal.",
+  "expectedTextSha256": "a2a58344a3fc6f43899e586dc362c7ec501f91e8d66c439d48e0c3969a45d71c",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day15-speaking-part01.wav",
+  "wavSha256": "6a03473b64a1c1937218e9f7e8400951c22b6d59a2c4a5fcc3a96fb184effb4c",
+  "wavDurationSeconds": 47.808,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Last month I saw a vacancy at a community center and sent an application. I wanted the position because I enjoy helping people find useful information. At the interview, the manager asked about my experience. I described a library event where a colleague and I worked as a team. My example showed that I could listen to a customer and finish a task carefully. I also asked about the wage and the first responsibility in the Department. The employer did not give me a decision that day, so I wrote down the date for a reply. After the interview, I planned to resume volunteering and practice another example for my career goal.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 5.94,
+        "text": "Last month I saw a vacancy at a community center and sent an application.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 5.94,
+        "endSeconds": 11.74,
+        "text": "I wanted the position because I enjoy helping people find useful information.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 11.74,
+        "endSeconds": 16.68,
+        "text": "At the interview, the manager asked about my experience.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 16.68,
+        "endSeconds": 21.78,
+        "text": "I described a library event where a colleague and I worked as a team.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 21.78,
+        "endSeconds": 27.82,
+        "text": "My example showed that I could listen to a customer and finish a task carefully.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 27.82,
+        "endSeconds": 33.42,
+        "text": "I also asked about the wage and the first responsibility in the Department.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 33.42,
+        "endSeconds": 40.02,
+        "text": "The employer did not give me a decision that day, so I wrote down the date for a reply.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 40.02,
+        "endSeconds": 47.32,
+        "text": "After the interview, I planned to resume volunteering and practice another example for my career goal.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 47.808,
+    "audioSha256": "6a03473b64a1c1937218e9f7e8400951c22b6d59a2c4a5fcc3a96fb184effb4c",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 123,
+    "actualTokens": 123,
+    "edits": 1,
+    "changes": [
+      {
+        "expected": [
+          "department"
+        ],
+        "actual": [
+          "Department"
+        ],
+        "expectedIndex": 82,
+        "actualIndex": 82,
+        "contextBefore": [
+          "the",
+          "first",
+          "responsibility",
+          "in",
+          "the"
+        ],
+        "contextAfter": [
+          ".",
+          "The",
+          "employer",
+          "did",
+          "not"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 112,
+    "actualTokens": 112,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

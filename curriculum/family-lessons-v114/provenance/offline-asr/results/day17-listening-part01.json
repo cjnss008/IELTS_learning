@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "day": 17,
+  "skill": "listening",
+  "id": "day17-listening",
+  "materialId": "family-linked-d17-listening-next-v1",
+  "part": 1,
+  "audioStartSeconds": 0,
+  "audioEndSeconds": 61.41141666666667,
+  "sourceAudioSha256": "c2e32cf06e9971b67cd755842889bdd6add65df77307e258fe40d89905109a90",
+  "sourceTextSha256": "f2c1f6ca295718038c45a53ab8545e2c27b365133c3d6071c5d2d45b7f6070a4",
+  "expectedText": "Have you chosen an activity for the leisure club day next month? Not yet. I want a hobby I can share with my brother, but our fitness levels are different. He is a keen athlete, and I have only recently started to exercise. Have you ever played tennis together? Yes, we have. We borrowed a racket each from the center last year, and I enjoyed it. He wants to try a different sport this time. The gym has a beginner volleyball session at ten. Its coach says no experience is needed, and the equipment is included. That sounds good. My brother has already tried basketball, but I have never played volleyball. We could learn together. There is also an aerobics class at twelve, followed by yoga at two. Both are indoors, so the weather will not matter.",
+  "expectedTextSha256": "634aa0cfb32a61c27b9d04d83ee6862eca164c6009a697e8edb8ac90f61323ac",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day17-listening-part01.wav",
+  "wavSha256": "842bfc7b4d8db1d7b32c6b9a1e98d840b46a496f7681da976fc7a93f6bab4fbf",
+  "wavDurationSeconds": 61.4114375,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Have you chosen an activity for the leisure club day next month? Not yet. I want a hobby I can share with my brother, but our fitness levels are different. He is a keen athlete, and I have only recently started to exercise. Have you ever played tennis together? Yes, we have. We borrowed a racket each from the center last year, and I enjoyed it. He wants to try a different sport this time. The gym has a beginner volleyball session at 10. Its coach says no experience is needed, and the equipment is included. That sounds good. My brother has already tried basketball, but I have never played volleyball. We could learn together. There is also an aerobics class at 12, followed by yoga at 2. Both are indoors, so the weather will not matter.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.86,
+        "text": "Have you chosen an activity for the leisure club day next month?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.86,
+        "endSeconds": 6.8,
+        "text": "Not yet.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 6.8,
+        "endSeconds": 12.38,
+        "text": "I want a hobby I can share with my brother, but our fitness levels are different.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.38,
+        "endSeconds": 17.78,
+        "text": "He is a keen athlete, and I have only recently started to exercise.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 17.78,
+        "endSeconds": 20.92,
+        "text": "Have you ever played tennis together?",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 20.92,
+        "endSeconds": 23.24,
+        "text": "Yes, we have.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 23.24,
+        "endSeconds": 28.2,
+        "text": "We borrowed a racket each from the center last year, and I enjoyed it.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 28.2,
+        "endSeconds": 31.76,
+        "text": "He wants to try a different sport this time.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 31.76,
+        "endSeconds": 35.86,
+        "text": "The gym has a beginner volleyball session at 10.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 35.86,
+        "endSeconds": 41.56,
+        "text": "Its coach says no experience is needed, and the equipment is included.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 41.56,
+        "endSeconds": 43.84,
+        "text": "That sounds good.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 43.84,
+        "endSeconds": 49.52,
+        "text": "My brother has already tried basketball, but I have never played volleyball.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 49.52,
+        "endSeconds": 52.04,
+        "text": "We could learn together.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 52.04,
+        "endSeconds": 57.8,
+        "text": "There is also an aerobics class at 12, followed by yoga at 2.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 57.8,
+        "endSeconds": 61.06,
+        "text": "Both are indoors, so the weather will not matter.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 61.4114375,
+    "audioSha256": "842bfc7b4d8db1d7b32c6b9a1e98d840b46a496f7681da976fc7a93f6bab4fbf",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 160,
+    "actualTokens": 160,
+    "edits": 3,
+    "changes": [
+      {
+        "expected": [
+          "ten"
+        ],
+        "actual": [
+          "10"
+        ],
+        "expectedIndex": 95,
+        "actualIndex": 95,
+        "contextBefore": [
+          "a",
+          "beginner",
+          "volleyball",
+          "session",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "Its",
+          "coach",
+          "says",
+          "no"
+        ]
+      },
+      {
+        "expected": [
+          "twelve"
+        ],
+        "actual": [
+          "12"
+        ],
+        "expectedIndex": 141,
+        "actualIndex": 141,
+        "contextBefore": [
+          "also",
+          "an",
+          "aerobics",
+          "class",
+          "at"
+        ],
+        "contextAfter": [
+          ",",
+          "followed",
+          "by",
+          "yoga",
+          "at"
+        ]
+      },
+      {
+        "expected": [
+          "two"
+        ],
+        "actual": [
+          "2"
+        ],
+        "expectedIndex": 147,
+        "actualIndex": 147,
+        "contextBefore": [
+          ",",
+          "followed",
+          "by",
+          "yoga",
+          "at"
+        ],
+        "contextAfter": [
+          ".",
+          "Both",
+          "are",
+          "indoors",
+          ","
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 137,
+    "actualTokens": 137,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

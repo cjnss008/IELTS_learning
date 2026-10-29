@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "day": 16,
+  "skill": "listening",
+  "id": "day16-listening",
+  "materialId": "family-linked-d16-listening-next-v1",
+  "part": 3,
+  "audioStartSeconds": 109.92208333333333,
+  "audioEndSeconds": 128.483542,
+  "sourceAudioSha256": "b0ab6f3eb0fd4c1729862d39f7949100c0ab5eab5d7a5d2e896137450402aa24",
+  "sourceTextSha256": "8c2b1cac00eda5b362bae5449f28aae8f8267c97d5ebf12cb9e44bce3309cc59",
+  "expectedText": "Agreed. The sunshine may return later, but we can enjoy lunch indoors too. I will send everyone the two meeting places by nine thirty. Thanks. I will check the new report at ten and call you if anything changes.",
+  "expectedTextSha256": "da100bfd3a1a98ddf62db7ccd3c15bfea3386a12b886dab4b3bc526d6d01d3bb",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day16-listening-part03.wav",
+  "wavSha256": "c64b8f26660560e1fc4c0b9dfc4e1f49990decb34a9ffcda49ef28d9101977b4",
+  "wavDurationSeconds": 18.5614375,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Agreed. The sunshine may return later, but we can enjoy lunch indoors too. I will send everyone the two meeting places by 9.30. Thanks. I will check the new reported 10 and call you if anything changes.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 2.46,
+        "text": "Agreed.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 2.46,
+        "endSeconds": 8.22,
+        "text": "The sunshine may return later, but we can enjoy lunch indoors too.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8.22,
+        "endSeconds": 13.06,
+        "text": "I will send everyone the two meeting places by 9.30.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 13.06,
+        "endSeconds": 14.74,
+        "text": "Thanks.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 14.74,
+        "endSeconds": 18.5,
+        "text": "I will check the new reported 10 and call you if anything changes.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 18.5614375,
+    "audioSha256": "c64b8f26660560e1fc4c0b9dfc4e1f49990decb34a9ffcda49ef28d9101977b4",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 45,
+    "actualTokens": 43,
+    "edits": 5,
+    "changes": [
+      {
+        "expected": [
+          "nine",
+          "thirty"
+        ],
+        "actual": [
+          "9.30"
+        ],
+        "expectedIndex": 25,
+        "actualIndex": 25,
+        "contextBefore": [
+          "the",
+          "two",
+          "meeting",
+          "places",
+          "by"
+        ],
+        "contextAfter": [
+          ".",
+          "Thanks",
+          ".",
+          "I",
+          "will"
+        ]
+      },
+      {
+        "expected": [
+          "report",
+          "at",
+          "ten"
+        ],
+        "actual": [
+          "reported",
+          "10"
+        ],
+        "expectedIndex": 35,
+        "actualIndex": 34,
+        "contextBefore": [
+          "I",
+          "will",
+          "check",
+          "the",
+          "new"
+        ],
+        "contextAfter": [
+          "and",
+          "call",
+          "you",
+          "if",
+          "anything"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 39,
+    "actualTokens": 38,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          "report",
+          "at"
+        ],
+        "actual": [
+          "reported"
+        ],
+        "expectedIndex": 30,
+        "actualIndex": 30,
+        "contextBefore": [
+          "i",
+          "will",
+          "check",
+          "the",
+          "new"
+        ],
+        "contextAfter": [
+          "ten",
+          "and",
+          "call",
+          "you",
+          "if"
+        ]
+      }
+    ]
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

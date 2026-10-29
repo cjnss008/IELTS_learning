@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "day": 17,
+  "skill": "listening",
+  "id": "day17-listening",
+  "materialId": "family-linked-d17-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 61.41141666666667,
+  "audioEndSeconds": 119.00329166666667,
+  "sourceAudioSha256": "c2e32cf06e9971b67cd755842889bdd6add65df77307e258fe40d89905109a90",
+  "sourceTextSha256": "f2c1f6ca295718038c45a53ab8545e2c27b365133c3d6071c5d2d45b7f6070a4",
+  "expectedText": "I enjoy music, but my brother prefers a game with a ball. Let's book the ten o'clock session. How much does it cost? Six dollars for each person. The center asks visitors to book by Thursday, because the room is small. I will tell him tonight. Could we cycle there? He has a bicycle, and I can borrow one. Yes, and please wear a helmet. You can leave the bikes next to the front door. There is also a place to jog or hike in the park afterward. Is there a competition at the stadium that day too? I would like to watch a match after our session. Yes. The first game begins at four. You can be a spectator without paying, and the coach will explain the score.",
+  "expectedTextSha256": "4df38c6ef8eb0def8d09d2c1c321b8a7fa27fc40a764423f25ca29bf33bc7c8b",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day17-listening-part02.wav",
+  "wavSha256": "84ff34c7e0889354243de3f263f7bfc10740a3ba50890fad33493f042bf02fe8",
+  "wavDurationSeconds": 57.591875,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I enjoy music, but my brother prefers a game with a ball. Let's book the ten o'clock session. How much does it cost? Six dollars for each person. The center asks visitors to book by Thursday, because the room is small. I will tell him tonight. Could we cycle there? He has a bicycle, and I can borrow one. Yes, and please wear a helmet. You can leave the bikes next to the front door. There is also a place to jog or hike in the park afterward. Is there a competition at the stadium that day too? I would like to watch a match after our session. Yes, the first game begins at four. You can be a spectator without paying, and the coach will explain the score.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.7,
+        "text": "I enjoy music, but my brother prefers a game with a ball.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.7,
+        "endSeconds": 8.62,
+        "text": "Let's book the ten o'clock session.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 8.62,
+        "endSeconds": 11.4,
+        "text": "How much does it cost?",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 11.4,
+        "endSeconds": 14.32,
+        "text": "Six dollars for each person.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 14.32,
+        "endSeconds": 19.96,
+        "text": "The center asks visitors to book by Thursday, because the room is small.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 19.96,
+        "endSeconds": 22.56,
+        "text": "I will tell him tonight.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 22.56,
+        "endSeconds": 24.84,
+        "text": "Could we cycle there?",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 24.84,
+        "endSeconds": 28.2,
+        "text": "He has a bicycle, and I can borrow one.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 28.2,
+        "endSeconds": 31.76,
+        "text": "Yes, and please wear a helmet.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 31.76,
+        "endSeconds": 35.48,
+        "text": "You can leave the bikes next to the front door.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 35.48,
+        "endSeconds": 40.2,
+        "text": "There is also a place to jog or hike in the park afterward.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 40.2,
+        "endSeconds": 44.2,
+        "text": "Is there a competition at the stadium that day too?",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 44.2,
+        "endSeconds": 47.72,
+        "text": "I would like to watch a match after our session.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 47.72,
+        "endSeconds": 52.56,
+        "text": "Yes, the first game begins at four.",
+        "confidence": null
+      },
+      {
+        "id": "segment-14",
+        "startSeconds": 52.56,
+        "endSeconds": 57.2,
+        "text": "You can be a spectator without paying, and the coach will explain the score.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 57.591875,
+    "audioSha256": "84ff34c7e0889354243de3f263f7bfc10740a3ba50890fad33493f042bf02fe8",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 150,
+    "actualTokens": 150,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          ".",
+          "The"
+        ],
+        "actual": [
+          ",",
+          "the"
+        ],
+        "expectedIndex": 126,
+        "actualIndex": 126,
+        "contextBefore": [
+          "after",
+          "our",
+          "session",
+          ".",
+          "Yes"
+        ],
+        "contextAfter": [
+          "first",
+          "game",
+          "begins",
+          "at",
+          "four"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 131,
+    "actualTokens": 131,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

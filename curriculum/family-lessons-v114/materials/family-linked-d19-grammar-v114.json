@@ -1,0 +1,283 @@
+{
+  "id": "family-linked-d19-grammar-v114",
+  "version": "1",
+  "week": 3,
+  "courseDay": 19,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "grammar",
+  "type": "grammar",
+  "title": "目的、不定式与动名词",
+  "pool": "training",
+  "practiceOnly": true,
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "id": "g01",
+      "type": "single",
+      "prompt": "Why does Lena visit college in this sentence: “Lena visits the college to ask about a course”?",
+      "options": [
+        "To ask about a course.",
+        "To teach the adviser.",
+        "Because the course has ended.",
+        "Because she already has a degree."
+      ],
+      "answers": [
+        "To ask about a course."
+      ],
+      "evidence": "Lena visits the college to ask about a course.",
+      "evidenceOffsets": {
+        "start": 27,
+        "end": 73,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "to ask 表示她去学院的目的。"
+    },
+    {
+      "id": "g02",
+      "type": "single",
+      "prompt": "Complete the purpose: She goes to the library ____ a book.",
+      "options": [
+        "finds to",
+        "to find",
+        "finding to",
+        "to finding"
+      ],
+      "answers": [
+        "to find"
+      ],
+      "evidence": "Lena visits the college to ask about a course.",
+      "evidenceOffsets": {
+        "start": 27,
+        "end": 73,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "表示目的用 to + 动词原形，因此 to find。"
+    },
+    {
+      "id": "g03",
+      "type": "single",
+      "prompt": "Choose the correct purpose sentence.",
+      "options": [
+        "We meet to discuss the project.",
+        "We meet discuss to the project.",
+        "We meet to discussed the project.",
+        "We meet to discussing the project."
+      ],
+      "answers": [
+        "We meet to discuss the project."
+      ],
+      "evidence": "Lena visits the college to ask about a course.",
+      "evidenceOffsets": {
+        "start": 27,
+        "end": 73,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "to discuss 用不定式表达会面的目的。"
+    },
+    {
+      "id": "g04",
+      "type": "single",
+      "prompt": "In “to ask about a course,” which form follows to?",
+      "options": [
+        "The past form only.",
+        "The base form of the verb.",
+        "A noun ending in -s.",
+        "The -ing form only."
+      ],
+      "answers": [
+        "The base form of the verb."
+      ],
+      "evidence": "Lena visits the college to ask about a course.",
+      "evidenceOffsets": {
+        "start": 27,
+        "end": 73,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "ask 是动词原形，表示目的时 to 后用原形。"
+    },
+    {
+      "id": "g05",
+      "type": "single",
+      "prompt": "I want ____ more about the river.",
+      "options": [
+        "to learn",
+        "to learning",
+        "learning",
+        "learned to"
+      ],
+      "answers": [
+        "to learn"
+      ],
+      "evidence": "I want to learn.",
+      "evidenceOffsets": {
+        "start": 165,
+        "end": 181,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "want 后接 to + 动词原形 learn。"
+    },
+    {
+      "id": "g06",
+      "type": "single",
+      "prompt": "We plan ____ research at the library.",
+      "options": [
+        "to doing",
+        "doing to",
+        "does",
+        "to do"
+      ],
+      "answers": [
+        "to do"
+      ],
+      "evidence": "We plan to do research.",
+      "evidenceOffsets": {
+        "start": 182,
+        "end": 205,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "plan 后接 to do，而非 to doing。"
+    },
+    {
+      "id": "g07",
+      "type": "single",
+      "prompt": "She decided ____ one evening free.",
+      "options": [
+        "keeped",
+        "to keep",
+        "to kept",
+        "keeping to"
+      ],
+      "answers": [
+        "to keep"
+      ],
+      "evidence": "She decided to keep one evening free.",
+      "evidenceOffsets": {
+        "start": 206,
+        "end": 243,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "decided 为过去时，但 to 后 keep 仍用原形。"
+    },
+    {
+      "id": "g08",
+      "type": "single",
+      "prompt": "Choose the correct sentence.",
+      "options": [
+        "I want to learning.",
+        "I want to learns.",
+        "I want learning to.",
+        "I want to learn."
+      ],
+      "answers": [
+        "I want to learn."
+      ],
+      "evidence": "I want to learn.",
+      "evidenceOffsets": {
+        "start": 165,
+        "end": 181,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "want 后用 to learn；不接 to learning。"
+    },
+    {
+      "id": "g09",
+      "type": "single",
+      "prompt": "I enjoy ____ about local history.",
+      "options": [
+        "read to",
+        "reads",
+        "reading",
+        "to read"
+      ],
+      "answers": [
+        "reading"
+      ],
+      "evidence": "I enjoy reading.",
+      "evidenceOffsets": {
+        "start": 336,
+        "end": 352,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "enjoy 后接动词-ing，read 变 reading。"
+    },
+    {
+      "id": "g10",
+      "type": "single",
+      "prompt": "I want to avoid ____ too late.",
+      "options": [
+        "studies",
+        "study to",
+        "studying",
+        "to study"
+      ],
+      "answers": [
+        "studying"
+      ],
+      "evidence": "I want to avoid studying too late.",
+      "evidenceOffsets": {
+        "start": 353,
+        "end": 387,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "avoid 后接动词-ing：studying。"
+    },
+    {
+      "id": "g11",
+      "type": "single",
+      "prompt": "I finish ____ the report before dinner.",
+      "options": [
+        "write to",
+        "to write",
+        "writing",
+        "writes"
+      ],
+      "answers": [
+        "writing"
+      ],
+      "evidence": "I finish writing the report.",
+      "evidenceOffsets": {
+        "start": 388,
+        "end": 416,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "finish 后接动词-ing，表示完成写作。"
+    },
+    {
+      "id": "g12",
+      "type": "single",
+      "prompt": "Which sentence correctly describes an enjoyable activity?",
+      "options": [
+        "I enjoy to read.",
+        "I enjoy read to.",
+        "I enjoy reads.",
+        "I enjoy reading."
+      ],
+      "answers": [
+        "I enjoy reading."
+      ],
+      "evidence": "I enjoy reading.",
+      "evidenceOffsets": {
+        "start": 336,
+        "end": 352,
+        "unit": "UTF-16-code-unit"
+      },
+      "explanation": "enjoy 的宾语可用 reading，不能在此用 to read。"
+    }
+  ],
+  "instructions": "先阅读说明与例句，再作答并根据解释订正。",
+  "estimatedMinutes": 40,
+  "passage": "1. to + 动词原形可以说明目的，相当于“为了”：Lena visits the college to ask about a course. 这里 to ask 说明她去的目的；不写 to asking。目的不定式与表示方向的介词 to 不同。\n\n2. want / plan / decide 后常接 to + 动词原形：I want to learn. We plan to do research. She decided to keep one evening free. 第三个例句主句为过去时 decided，后面的动词仍用原形 keep；不要写 decided to kept。\n\n3. enjoy / avoid / finish 后接动词-ing：I enjoy reading. I want to avoid studying too late. I finish writing the report. enjoy 后不能用 to read；finish writing 表示完成写作，不是开始写。动词-ing 在这些例句中是动词的宾语。",
+  "questionCount": 12
+}

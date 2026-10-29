@@ -11,6 +11,35 @@
   const NAMES = {meaning:'中文写英文',completion:'补全单词',dictation:'听写'};
   const clone = value => JSON.parse(JSON.stringify(value));
   const normalizeAnswer = value => typeof value === 'string' ? value.trim().toLowerCase() : '';
+  // A family audio authorization is private to this module. It derives only
+  // from the family runtime's current branded records and the exact saved
+  // batch, never from caller-provided contextWords or a path-shaped claim.
+  const familyProofs=new WeakMap();
+  function currentFamilySource(meta){
+    const C=root.IELTSContextualVocabulary,access=C?.familyBatchAccess?.(meta.batch,{familyRecords:meta.records,vocabularyData:meta.vocabularyData});
+    if(!access?.allowed)throw Error('家人课程词组来源或档案已变化，原输入保留。');
+    const binding=meta.batch.contextSource?.binding,data=root.IELTSCurriculumData,unit=data?.familyLessonRelease?.units?.find(value=>value.id===binding?.unitId);
+    if(!unit||unit.day!==binding.originCourseDay||unit.unitSha256!==binding.unitSha256||unit.releaseId!==binding.releaseId||unit.releaseSha256!==binding.releaseSha256)throw Error('家人课程签审词条已变化，原输入保留。');
+    const out=new Map(),targets=access.context?.targets||[];
+    for(const word of meta.batch.words){
+      const target=targets.find(value=>normalizeAnswer(value.word)===normalizeAnswer(word.word)),raw=unit.targets.find(value=>value.canonicalId===target?.familyCanonicalId),pin=raw?.audioRef;
+      if(!target||!pin||pin.src!==word.audio||target.audio!==word.audio||typeof pin.src!=='string'||pin.src.length>200||!/^audio\/(?:curriculum|vocabulary|words)\/[A-Za-z0-9._/-]+\.mp3$/.test(pin.src)||pin.src.split('/').some(part=>!part||part==='.'||part==='..')||!/^[a-f0-9]{64}$/.test(pin.sha256||'')||!Number.isSafeInteger(pin.bytes)||pin.bytes<1||pin.bytes>2*1024*1024)throw Error('家人课程词音来源待核验，原输入保留。');
+      out.set(normalizeAnswer(word.word),{word:clone(word),pin:clone(pin)});
+    }
+    return out;
+  }
+  function familyProof(options){
+    if(!Object.prototype.hasOwnProperty.call(options,'familyBatch'))return null;
+    const batch=options.familyBatch,material=options.material,words=options.words||material?.vocabulary;
+    if(!batch||!material||material.id!==batch.materialId||String(material.version||'1')!==String(batch.materialVersion||'1')||options.courseDay!==batch.courseDay||!Array.isArray(material.vocabulary)||JSON.stringify(material.vocabulary)!==JSON.stringify(batch.words)||!Array.isArray(words)||JSON.stringify(words)!==JSON.stringify(batch.words)||!Array.isArray(options.familyRecords))throw Error('家人课程词组与原绑定不一致，原输入保留。');
+    const meta={batch:clone(batch),records:options.familyRecords,vocabularyData:options.vocabularyData},pins=currentFamilySource(meta),proof=Object.freeze({});
+    meta.pins=pins;familyProofs.set(proof,meta);return proof;
+  }
+  function familyWords(options,proof){
+    const meta=familyProofs.get(proof);if(!meta)return null;currentFamilySource(meta);
+    const prepared=wordsFor(options.material,options);if(prepared.length!==meta.batch.words.length)throw Error('家人课程原词条待核验，原输入保留。');
+    return prepared.map((value,index)=>({...value,...clone(meta.batch.words[index]),index}));
+  }
   const uniqueId = () => 'vocab-'+(root.crypto?.randomUUID?.() || Date.now().toString(36)+'-'+Math.random().toString(36).slice(2));
 
   function maskWord(word) {
@@ -55,11 +84,12 @@
     const label=Number.isInteger(first)?first>day?'本周其他课原句预习':first===day?'本课听力原句':'其他课原句':'其他课原句';
     return label+' · 来源：'+(Number.isInteger(first)?'第 '+first+' 课，':'')+sources.map(item=>item.title||item.id).join(' / ')+'。同源听力不应当作完全陌生检测。';
   }
-  function createSession(options = {}) {
+  function createSession(options = {}, suppliedFamilyProof = null) {
+    const proof=familyProofs.has(suppliedFamilyProof)?suppliedFamilyProof:familyProof(options);
     if (typeof options.draft === 'string' && options.draft.length > 15000) throw Error('词汇草稿超过15KB，已保留原稿。');
     const incoming = typeof options.draft === 'string' ? JSON.parse(options.draft) : options.draft;
     const version = incoming?.schema === 1 || options.trainingVersion === 1 ? 1 : 2, modes = version === 1 ? LEGACY_MODES : MODES;
-    const material = options.material || {}, words = wordsFor(options.words ? {...material,vocabulary:options.words} : material,options);
+    const material = options.material || {}, words = familyWords(options,proof) || wordsFor(options.words ? {...material,vocabulary:options.words} : material,options);
     if (!Number.isInteger(options.courseDay || 1) || (options.courseDay || 1) < 1 || (options.courseDay || 1) > 365) throw Error('课程日应为1至365。');
     if (!words.length) throw Error('这份材料没有绑定必学词，请选择当天的词汇材料。');
     const state = {schema:version,trainingVersion:version,study:{spellings:{},speaking:{},workIds:{},inputs:{}},restoring:false,id:uniqueId(),materialId:material.id || 'vocabulary',materialVersion:String(material.version || '1'),courseDay:options.courseDay || 1,startedAt:new Date().toISOString(),phase:'learn',round:0,answers:{meaning:{},completion:{},dictation:{}},audio:{},rounds:[],testing:false};
@@ -249,10 +279,10 @@
     return{valid:true,submitted:true,testsCorrect,professionalPassed,mastered:testsCorrect&&professionalPassed,trainingVersion:2,wordCount:keys.length,reason:testsCorrect&&professionalPassed?'三写三读及三轮原始证据完整且本次全部达到门槛；同级新题仍用于迁移验证。':'三写三读及三轮已真实提交，原始错词或专业低分仍需统一错题订正和短验证。'};
   }
 
-  function createAudioPlayer(options = {}) {
-    const host = options.root || root;
-    let cancelCurrent = null;
-    function cancel() { if (cancelCurrent) { const fn = cancelCurrent; cancelCurrent = null; fn(); } }
+  function createAudioPlayer(options = {}, suppliedFamilyProof = null) {
+    const proof=familyProofs.has(suppliedFamilyProof)?suppliedFamilyProof:familyProof(options),host = proof ? root : options.root || root;
+    let cancelCurrent = null,playGeneration=0;
+    function cancel() { playGeneration++;if (cancelCurrent) { const fn = cancelCurrent; cancelCurrent = null; fn(); } }
     async function localAudio(word) {
       const AudioClass = options.Audio || host.Audio;
       if (!word.audio || !AudioClass) throw Error('本词没有可用的本地音频。');
@@ -297,7 +327,34 @@
       });
     }
     async function play(word, onStatus = () => {}) {
-      cancel();
+      cancel();const generation=playGeneration;
+      if(proof){
+        const meta=familyProofs.get(proof),initial=currentFamilySource(meta),saved=meta.pins.get(normalizeAnswer(word?.word)),candidate=initial.get(normalizeAnswer(word?.word));
+        if(!saved||!candidate||JSON.stringify(candidate)!==JSON.stringify(saved)||['word','meaning','ipa','example','audio'].some(key=>word[key]!==saved.word[key]))throw Error('家人课程词音或原词条已变化，原输入保留。');
+        const fetchAudio=host.fetch,subtle=host.crypto?.subtle,Context=host.AudioContext||host.webkitAudioContext,pin=saved.pin;
+        if(typeof fetchAudio!=='function'||!subtle?.digest||!Context)throw Error('家人课程词音核验组件未就绪，原输入保留。');
+        // Resume synchronously in the click's activation before any network or
+        // hashing await. No source is connected or counted until verified.
+        let audioContext,resume;try{audioContext=new Context();resume=audioContext.resume();}catch(_){try{audioContext?.close?.();}catch(__){}throw Error('浏览器未允许播放本地词音，原输入保留。');}
+        const Abort=host.AbortController||root.AbortController,controller=Abort?new Abort():null;let stopped=false,sourceNode=null,rejectCancel;
+        const canceled=new Promise((_,reject)=>{rejectCancel=reject;}),stop=error=>{if(stopped)return;stopped=true;controller?.abort();try{sourceNode?.stop();}catch(_){}rejectCancel(error);};
+        const cancelFamily=()=>stop(Error('播放已取消。'));cancelCurrent=cancelFamily;const timeout=host.setTimeout?.(()=>stop(Error('本地词音核验或播放超时，原输入保留。')),30000),check=()=>{if(stopped||generation!==playGeneration)throw Error('播放已取消。');};
+        try{
+          const work=(async()=>{
+            await resume;check();if(audioContext.state!=='running')throw Error('浏览器未允许播放本地词音，原输入保留。');
+            onStatus('正在核验本地课程词音……');const response=await fetchAudio.call(host,'/'+pin.src,{credentials:'same-origin',cache:'no-store',redirect:'error',...(controller?{signal:controller.signal}:{})});check();
+            if(!response?.ok||typeof response.arrayBuffer!=='function')throw Error('家人课程词音暂不可用，原输入保留。');
+            const bytes=await response.arrayBuffer();check();if(bytes.byteLength!==pin.bytes)throw Error('家人课程词音长度已变化，原输入保留。');
+            const digest=await subtle.digest('SHA-256',bytes),actual=Array.from(new Uint8Array(digest),value=>value.toString(16).padStart(2,'0')).join('');check();
+            if(actual!==pin.sha256||JSON.stringify(currentFamilySource(meta).get(normalizeAnswer(word.word)))!==JSON.stringify(saved))throw Error('家人课程词音或档案已变化，原输入保留。');
+            let decoded;try{decoded=await audioContext.decodeAudioData(bytes.slice(0));}catch(_){throw Error('家人课程词音解码失败，原输入保留。');}check();if(JSON.stringify(currentFamilySource(meta).get(normalizeAnswer(word.word)))!==JSON.stringify(saved))throw Error('家人课程词音或档案已变化，原输入保留。');
+            if(!Number.isFinite(decoded?.duration)||decoded.duration<=0||decoded.duration>120||audioContext.state!=='running')throw Error('家人课程词音无法播放，原输入保留。');
+            sourceNode=audioContext.createBufferSource();sourceNode.buffer=decoded;sourceNode.connect(audioContext.destination);const start=audioContext.currentTime;
+            onStatus('正在播放已核验的本地课程词音……');await new Promise((resolve,reject)=>{sourceNode.onended=()=>{if(!stopped&&audioContext.state==='running'&&audioContext.currentTime>start)resolve();else reject(Error('音频未实际完成可听播放，原输入保留。'));};try{sourceNode.start();}catch(_){reject(Error('本地词音无法播放，原输入保留。'));}});check();
+            if(JSON.stringify(currentFamilySource(meta).get(normalizeAnswer(word.word)))!==JSON.stringify(saved))throw Error('家人课程词音或档案已变化，原输入保留。');return{kind:'local-audio',source:pin.src,started:true,completed:true,completedAt:new Date().toISOString(),durationSeconds:decoded.duration};
+          })();return await Promise.race([work,canceled]);
+        }finally{if(timeout)host.clearTimeout?.(timeout);if(cancelCurrent===cancelFamily)cancelCurrent=null;try{sourceNode?.disconnect?.();}catch(_){}try{const closing=audioContext.close();closing?.catch?.(()=>{});}catch(_){}}
+      }
       const localPath=Dictionary?.safeAudioPath(word.audio)||'',prepared={...word,audio:localPath},indexed=(options.audioData||host.IELTSVocabularyAudio||root.IELTSVocabularyAudio)?.items?.[String(word.word).trim().toLowerCase()],variants=Array.isArray(indexed?.senseVariants)?indexed.senseVariants.filter(item=>item&&Dictionary.safeAudioPath(item.audio)===localPath):[],source=localPath?(indexed?.audio===localPath?indexed:variants.length===1?variants[0]:null):null,voice=source?String(source.voice||source.locale||''):'';
       const localLabel=/^en[-_]US/i.test(voice)?'本地美式英语合成词音':/^en[-_]GB/i.test(voice)?'本地英式英语合成词音（原文件）':'本地词音（口音按原来源）';
       if (localPath) {
@@ -311,7 +368,7 @@
 
   function mount(container, options = {}) {
     if (!container?.ownerDocument && !root.document) throw Error('词汇训练需要页面容器。');
-    const doc = container.ownerDocument || root.document, session = createSession(options), player = options.player || createAudioPlayer(options);
+    const proof=familyProof(options),doc = container.ownerDocument || root.document, session = createSession(options,proof), player = proof ? createAudioPlayer(options,proof) : options.player || createAudioPlayer(options,proof);
     let destroyed = false, busy = false, saved = false, stale = false, lastRound = null, savePromise = null;
     const profile = root.IELTSProfiles?.current?.()?.id, notified = new Set(), studyRows = new Map(), studyRestoreNotes = new Map(), studyAttemptRun=uniqueId();
     let studySerial = 0;

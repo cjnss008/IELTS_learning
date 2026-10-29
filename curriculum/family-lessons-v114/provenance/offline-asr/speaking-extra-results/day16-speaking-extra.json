@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "day": 16,
+  "materialId": "family-linked-d16-speaking-next-v1",
+  "sourceAudioSha256": "01d5f12ca384e1558445fd1fb9f11c82205f617e165b0f06f3ada3a8d596d09d",
+  "sourceTextSha256": "48a4d5575050ad671eb83f1fdb3009c687ac7fdd308c6bf8ca5695b2b7e9e09b",
+  "expectedText": "I would like to have a picnic with my friends near a lake in spring. I will check the weather forecast the night before and again in the morning. I think the day will be warm, but it might be windy. If I see a dark cloud, I will take an umbrella. If it is going to rain, we will use a nearby cafe instead of sitting outside. We will go indoors immediately if we hear thunder or see lightning. I enjoy sunshine, but a little rain will not end our plan. The important thing is to tell everyone both meeting places before they leave home. Then nobody needs to wait in the wrong place.",
+  "originalWavSha256": "686c5db9bf889b7ecb40884a4be3dc210bd63df82c95cf790e6159cec0a90bc7",
+  "originalDurationSeconds": 44.664,
+  "paddedWavSha256": "3b18d6ce8e06029c737ae1bff01666e9ccbfde909926b84b8f41cc887db8ebcf",
+  "paddedDurationSeconds": 60.5,
+  "sourceSamplesIdentical": true,
+  "addedSamplesAllZero": true,
+  "sourcePromptProvided": false,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "I would like to have a picnic with my friends near a lake in spring. I will check the weather forecast the night before and again in the morning. I think the day will be warm, but it might be windy. If I see a dark cloud, I will take an umbrella. If it is going to rain, we will use a nearby cafe instead of sitting outside. We will go indoors immediately if we hear thunder or see lightning. I enjoy sunshine, but a little rain will not end our plan. The important thing is to tell everyone both meeting places before they leave home. Then nobody needs to wait in the wrong place.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 5,
+        "text": "I would like to have a picnic with my friends near a lake in spring.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 5,
+        "endSeconds": 10,
+        "text": "I will check the weather forecast the night before and again in the morning.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 10,
+        "endSeconds": 14,
+        "text": "I think the day will be warm, but it might be windy.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 14,
+        "endSeconds": 18,
+        "text": "If I see a dark cloud, I will take an umbrella.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 18,
+        "endSeconds": 24,
+        "text": "If it is going to rain, we will use a nearby cafe instead of sitting outside.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 24,
+        "endSeconds": 29,
+        "text": "We will go indoors immediately if we hear thunder or see lightning.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 29,
+        "endSeconds": 34,
+        "text": "I enjoy sunshine, but a little rain will not end our plan.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 34,
+        "endSeconds": 40,
+        "text": "The important thing is to tell everyone both meeting places before they leave home.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 40,
+        "endSeconds": 44,
+        "text": "Then nobody needs to wait in the wrong place.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 60.5,
+    "audioSha256": "3b18d6ce8e06029c737ae1bff01666e9ccbfde909926b84b8f41cc887db8ebcf",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 128,
+    "actualTokens": 128,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 115,
+    "actualTokens": 115,
+    "edits": 0,
+    "changes": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "day": 13,
+  "skill": "listening",
+  "id": "day13-listening",
+  "materialId": "family-linked-d13-listening-next-v1",
+  "part": 3,
+  "audioStartSeconds": 111.60016666666667,
+  "audioEndSeconds": 119.543417,
+  "sourceAudioSha256": "9e7e045e2af98ec11aae28eb5a96604665adb50df1fdbdbe39368695cb537b08",
+  "sourceTextSha256": "f64831ed7e8c6a771931ce3f3a5a41681a077a3981ef7f1d4edf8646734be8b3",
+  "expectedText": "Let us join the queue and then take the food to the hall. We can tell the others exactly how much we spend.",
+  "expectedTextSha256": "a6c7cf7a714ea5fa125b00833151d2feb4932ac740304ae75e208f684dba2779",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day13-listening-part03.wav",
+  "wavSha256": "8de238c222d44170ad5196444657765f04c8977cd79b03fae755e416655edf42",
+  "wavDurationSeconds": 7.94325,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Let us join the queue and then take the food to the hall. We can tell the others exactly how much we spend.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4,
+        "text": "Let us join the queue and then take the food to the hall.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4,
+        "endSeconds": 8,
+        "text": "We can tell the others exactly how much we spend.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 7.94325,
+    "audioSha256": "8de238c222d44170ad5196444657765f04c8977cd79b03fae755e416655edf42",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 25,
+    "actualTokens": 25,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 23,
+    "actualTokens": 23,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

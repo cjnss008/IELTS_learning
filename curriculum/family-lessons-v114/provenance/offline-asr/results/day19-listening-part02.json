@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "day": 19,
+  "skill": "listening",
+  "id": "day19-listening",
+  "materialId": "family-linked-d19-listening-next-v1",
+  "part": 2,
+  "audioStartSeconds": 58.60320833333333,
+  "audioEndSeconds": 113.85729166666667,
+  "sourceAudioSha256": "48c7854fd6d7fbd9856709bd904e916b8411fa230e5b6468dd274a560eca0a56",
+  "sourceTextSha256": "07f34dd2073e6174be9e1e76ee4f56b4b14e174d9d84acdd784494b678e8d947",
+  "expectedText": "What is the assignment? An essay? A short report. First we plan to do research using the library's books. Then we decide what information belongs in the report. Will there be an experiment in a laboratory? Not in the first week. Later, a biology teacher will show us how to observe water plants safely. A chemistry teacher will help another group. I hope the homework is manageable. I work full time, and I want to avoid studying too late every night. The teacher recommends two short study periods a week. The final assessment is a project and a discussion, not a long examination. Good. Do I need a university degree to join?",
+  "expectedTextSha256": "0a17a69578b6f3c5ea773cccc71b96b41a2395708a889efc59b2c8d86c8b27b3",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day19-listening-part02.wav",
+  "wavSha256": "09160e02bb4b35286cae1d2c000a774dce5afb9681ffe385355d4ff16c086c76",
+  "wavDurationSeconds": 55.2540625,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "What is the assignment? An essay? A short report. First we plan to do research using the library's books. Then we decide what information belongs in the report. Will there be an experiment in a laboratory? Not in the first week. Later, a biology teacher will show us how to observe water plants safely. A chemistry teacher will help another group. I hope the homework is manageable. I work full-time, and I want to avoid studying too late every night. The teacher recommends two short study periods a week. The final assessment is a project and a discussion, not a long examination. Good. Do I need a university degree to join?",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 4.58,
+        "text": "What is the assignment? An essay?",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 4.58,
+        "endSeconds": 6.84,
+        "text": "A short report.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 6.84,
+        "endSeconds": 11.44,
+        "text": "First we plan to do research using the library's books.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 11.44,
+        "endSeconds": 15.84,
+        "text": "Then we decide what information belongs in the report.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 15.84,
+        "endSeconds": 19.44,
+        "text": "Will there be an experiment in a laboratory?",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 19.44,
+        "endSeconds": 22.08,
+        "text": "Not in the first week.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 22.08,
+        "endSeconds": 27.72,
+        "text": "Later, a biology teacher will show us how to observe water plants safely.",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 27.72,
+        "endSeconds": 31.56,
+        "text": "A chemistry teacher will help another group.",
+        "confidence": null
+      },
+      {
+        "id": "segment-8",
+        "startSeconds": 31.56,
+        "endSeconds": 34.6,
+        "text": "I hope the homework is manageable.",
+        "confidence": null
+      },
+      {
+        "id": "segment-9",
+        "startSeconds": 34.6,
+        "endSeconds": 40.24,
+        "text": "I work full-time, and I want to avoid studying too late every night.",
+        "confidence": null
+      },
+      {
+        "id": "segment-10",
+        "startSeconds": 40.24,
+        "endSeconds": 44.72,
+        "text": "The teacher recommends two short study periods a week.",
+        "confidence": null
+      },
+      {
+        "id": "segment-11",
+        "startSeconds": 44.72,
+        "endSeconds": 50.6,
+        "text": "The final assessment is a project and a discussion, not a long examination.",
+        "confidence": null
+      },
+      {
+        "id": "segment-12",
+        "startSeconds": 50.6,
+        "endSeconds": 52.16,
+        "text": "Good.",
+        "confidence": null
+      },
+      {
+        "id": "segment-13",
+        "startSeconds": 52.16,
+        "endSeconds": 55.2,
+        "text": "Do I need a university degree to join?",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 55.2540625,
+    "audioSha256": "09160e02bb4b35286cae1d2c000a774dce5afb9681ffe385355d4ff16c086c76",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 130,
+    "actualTokens": 129,
+    "edits": 2,
+    "changes": [
+      {
+        "expected": [
+          "full",
+          "time"
+        ],
+        "actual": [
+          "full-time"
+        ],
+        "expectedIndex": 80,
+        "actualIndex": 80,
+        "contextBefore": [
+          "is",
+          "manageable",
+          ".",
+          "I",
+          "work"
+        ],
+        "contextAfter": [
+          ",",
+          "and",
+          "I",
+          "want",
+          "to"
+        ]
+      }
+    ]
+  },
+  "normalizedDiff": {
+    "expectedTokens": 113,
+    "actualTokens": 113,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}

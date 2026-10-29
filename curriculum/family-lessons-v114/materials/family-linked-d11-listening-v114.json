@@ -1,0 +1,262 @@
+{
+  "id": "family-linked-d11-listening-v114",
+  "version": "1",
+  "week": 2,
+  "courseDay": 11,
+  "level": "A2",
+  "difficultyVerification": "author-estimate-not-calibrated",
+  "skill": "listening",
+  "type": "listening",
+  "pool": "training",
+  "fullTest": false,
+  "independentBank": false,
+  "source": {
+    "kind": "original-ai-assisted-fiction",
+    "rights": "项目原创虚构教学材料；AI 编写并对照教学规则、原文和题目证据复核。",
+    "verification": "reviewed",
+    "practiceOnly": true,
+    "independentAssessmentEligible": false,
+    "independentTransferEligible": false,
+    "reviewStatus": "root-ai-content-and-binding-reviewed-not-human",
+    "reviewScope": "Ordinary A2 practice. Exact source contexts and answers reviewed; synthetic en-US audio checked for file integrity, decoding, role/segment alignment and unprompted ASR content. Pronunciation and intonation are not independently certified."
+  },
+  "questions": [
+    {
+      "type": "single",
+      "prompt": "Which platform has the announcement given for their original train?",
+      "options": [
+        "Eight.",
+        "Four.",
+        "Five.",
+        "Six."
+      ],
+      "answers": [
+        "Eight."
+      ],
+      "evidence": "The announcement has changed our platform to eight.",
+      "explanation": "six 是 Jade 猜的旧信息，Owen 用 No 纠正为 eight。",
+      "id": "l01",
+      "evidenceOffsets": {
+        "start": 73,
+        "end": 124,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What is the delayed departure time of the original train?",
+      "options": [
+        "11:00.",
+        "10:50.",
+        "10:45.",
+        "10:30."
+      ],
+      "answers": [
+        "10:45."
+      ],
+      "evidence": "The display now says ten forty-five.",
+      "explanation": "原计划 ten thirty，晚十五分钟后是 ten forty-five；不要选后来替代车的时间。",
+      "id": "l02",
+      "evidenceOffsets": {
+        "start": 255,
+        "end": 291,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why are they considering a different service?",
+      "options": [
+        "Their friend has canceled the visit.",
+        "Their suitcase is missing.",
+        "They expect to miss a connection.",
+        "Their destination has changed."
+      ],
+      "answers": [
+        "They expect to miss a connection."
+      ],
+      "evidence": "I don't want to cancel our journey, but we will miss our connection at North Junction.",
+      "explanation": "Jade 认为他们会赶不上 North Junction 的接续班次，因此考虑直达车。",
+      "id": "l03",
+      "evidenceOffsets": {
+        "start": 460,
+        "end": 546,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "When does the direct service leave?",
+      "options": [
+        "10:45.",
+        "10:30.",
+        "12:10.",
+        "11:00."
+      ],
+      "answers": [
+        "11:00."
+      ],
+      "evidence": "The conductor says the eleven o'clock service goes directly to the coast.",
+      "explanation": "eleven o’clock 是直达车发车时刻；十点五十是两人会合时刻。",
+      "id": "l04",
+      "evidenceOffsets": {
+        "start": 597,
+        "end": 670,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Which part of their booking must be changed?",
+      "options": [
+        "The whole ticket because it is invalid.",
+        "Their seat reservation.",
+        "The travel date on their tickets.",
+        "The destination on their tickets."
+      ],
+      "answers": [
+        "Their seat reservation."
+      ],
+      "evidence": "Yes, but our seat reservation is not. We can ask for new seats at the desk.",
+      "explanation": "Yes 回答车票仍有效；but 后指出旧座位预订不能用于新班次。",
+      "id": "l05",
+      "evidenceOffsets": {
+        "start": 746,
+        "end": 821,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Where are the two available seats?",
+      "options": [
+        "In carriage five.",
+        "In carriage eight.",
+        "In carriage six.",
+        "In carriage three."
+      ],
+      "answers": [
+        "In carriage five."
+      ],
+      "evidence": "There are two seats together in carriage five.",
+      "explanation": "carriage 是车厢编号；platform 是站台，两种数字不能混用。",
+      "id": "l06",
+      "evidenceOffsets": {
+        "start": 898,
+        "end": 944,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "How much extra will the new service cost them?",
+      "options": [
+        "Fifteen dollars.",
+        "Ten dollars.",
+        "Twice the original fare.",
+        "Nothing."
+      ],
+      "answers": [
+        "Nothing."
+      ],
+      "evidence": "The fare is the same, so we don't need to pay extra.",
+      "explanation": "the same 与 don’t need to pay extra 表示无需补差价，并非整趟免费。",
+      "id": "l07",
+      "evidenceOffsets": {
+        "start": 945,
+        "end": 997,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "When will they arrive on the new service?",
+      "options": [
+        "12:30.",
+        "12:10.",
+        "11:00.",
+        "10:45."
+      ],
+      "answers": [
+        "12:10."
+      ],
+      "evidence": "Twelve ten. I'll message our friend now.",
+      "explanation": "上一问为 new arrival time；twelve ten 是到达时间，不是出发时间。",
+      "id": "l08",
+      "evidenceOffsets": {
+        "start": 1046,
+        "end": 1086,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "What is Jade doing before boarding?",
+      "options": [
+        "Buying water.",
+        "Buying replacement train tickets.",
+        "Canceling the journey.",
+        "Collecting a new seat reservation at the desk."
+      ],
+      "answers": [
+        "Buying water."
+      ],
+      "evidence": "I'm buying some water before we board.",
+      "explanation": "buying some water 是明确动作，不是买新的车票。",
+      "id": "l09",
+      "evidenceOffsets": {
+        "start": 1283,
+        "end": 1321,
+        "unit": "UTF-16-code-unit"
+      }
+    },
+    {
+      "type": "single",
+      "prompt": "Why will they meet at 10:50?",
+      "options": [
+        "Because their friend arrives then.",
+        "Because the train departs at 10:50.",
+        "To leave enough time to buy another ticket.",
+        "To allow ten minutes to reach the right carriage."
+      ],
+      "answers": [
+        "To allow ten minutes to reach the right carriage."
+      ],
+      "evidence": "We should allow ten minutes to get to the right carriage.",
+      "explanation": "11 点发车，提前十分钟会合；并非列车改为10:50发车。",
+      "id": "l10",
+      "evidenceOffsets": {
+        "start": 1405,
+        "end": 1462,
+        "unit": "UTF-16-code-unit"
+      }
+    }
+  ],
+  "title": "Which Train Should We Take Now?",
+  "estimatedMinutes": 40,
+  "transcript": "Jade: I'm at the ticket hall. Are you waiting on platform six?\nOwen: No. The announcement has changed our platform to eight. I'm standing beside the stairs.\nJade: Is our express train still leaving at ten thirty?\nOwen: It is running fifteen minutes late. The display now says ten forty-five.\nJade: Did the announcement explain the delay?\nOwen: Yes. Staff are checking a signal beside the track near North Junction. They cannot say when it will be ready.\nJade: I don't want to cancel our journey, but we will miss our connection at North Junction. Shall we use a direct service instead?\nOwen: Yes. The conductor says the eleven o'clock service goes directly to the coast. We won't need a transfer.\nJade: Is our ticket valid on that service?\nOwen: Yes, but our seat reservation is not. We can ask for new seats at the desk.\nJade: I'd like a seat near the luggage space. This suitcase is heavy.\nOwen: There are two seats together in carriage five. The fare is the same, so we don't need to pay extra.\nJade: Good. What is the new arrival time?\nOwen: Twelve ten. I'll message our friend now. She is meeting us outside the station.\nJade: What if she gets there early?\nOwen: The terminal has an indoor waiting room. She can wait there and come outside when our train arrives.\nJade: Thanks. I'm buying some water before we board. Do you want anything?\nOwen: Just water. Please meet me by the stairs at ten fifty. We should allow ten minutes to get to the right carriage.\nJade: All right. I'll check the platform display again before I come.",
+  "instructions": "Listen to Jade and Owen. Choose ONE answer. Use the details in this recording, which differ from the reading passage.",
+  "audioKind": "synthetic",
+  "audioSynthetic": true,
+  "audioRequirements": {
+    "accent": "en-US",
+    "minimumSpeakers": 2,
+    "paragraphGapMs": 850,
+    "turnGapMs": 850,
+    "roleVoices": {
+      "jade": "en-US-AriaNeural",
+      "owen": "en-US-GuyNeural",
+      "narrator": "en-US-AvaNeural"
+    }
+  },
+  "questionCount": 10,
+  "practiceOnly": true,
+  "audio": "audio/curriculum/family-linked-d11-listening-v114.mp3",
+  "audioLocale": "en-US",
+  "audioVoices": [
+    "en-US-AriaNeural",
+    "en-US-GuyNeural"
+  ],
+  "audioProvider": "Microsoft online TTS via edge-tts",
+  "audioDurationSeconds": 127.620083
+}

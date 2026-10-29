@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "day": 20,
+  "skill": "listening",
+  "id": "day20-listening",
+  "materialId": "family-linked-d20-listening-next-v1",
+  "part": 3,
+  "audioStartSeconds": 109.69320833333333,
+  "audioEndSeconds": 139.358208,
+  "sourceAudioSha256": "aa2f457ed2f0a13e0357c44d60e0a623bcb7555aa1d39be489b4537bacf5a828",
+  "sourceTextSha256": "88cb001d640605f3f9e633555c3ba7b223063527d52b3c726e726d261033701c",
+  "expectedText": "Bring it, please. We can put it beside the map of the lake and the ocean. The geography teacher is drawing arrows to show where the water goes. I will make a second card about ecology and conservation, too. It can ask visitors how their choices affect a natural place. Great. After the event, the ideas are read by the club, and we choose one to try the following month.",
+  "expectedTextSha256": "f574ae303532169dca2c0e0f8a21e0735711d5c7a9d0e8c37d2077f9fc1af989",
+  "wavPath": "C:\\Users\\yinya\\Documents\\Codex\\2026-10-24\\du-q\\work\\linked-next-offline-asr-v1\\wav\\day20-listening-part03.wav",
+  "wavSha256": "6bab802a14e3bce0e540eb467a84a156de200f18c7c2b42a831651cfbad038e6",
+  "wavDurationSeconds": 29.665,
+  "recognition": {
+    "provider": "Local Whisper.cpp 1.8.2-static-baseline-1 / base.en",
+    "text": "Bring it, please. We can put it beside the map of the lake and the ocean. The geography teacher is drawing arrows to show where the water goes. I will make a second card about ecology and conservation, too. It can ask visitors how their choices affect a natural place. Great. After the event, the ideas are read by the club, and we choose one to try the following month.",
+    "segments": [
+      {
+        "id": "segment-0",
+        "startSeconds": 0,
+        "endSeconds": 3.08,
+        "text": "Bring it, please.",
+        "confidence": null
+      },
+      {
+        "id": "segment-1",
+        "startSeconds": 3.08,
+        "endSeconds": 7.16,
+        "text": "We can put it beside the map of the lake and the ocean.",
+        "confidence": null
+      },
+      {
+        "id": "segment-2",
+        "startSeconds": 7.16,
+        "endSeconds": 12.2,
+        "text": "The geography teacher is drawing arrows to show where the water goes.",
+        "confidence": null
+      },
+      {
+        "id": "segment-3",
+        "startSeconds": 12.2,
+        "endSeconds": 17.68,
+        "text": "I will make a second card about ecology and conservation, too.",
+        "confidence": null
+      },
+      {
+        "id": "segment-4",
+        "startSeconds": 17.68,
+        "endSeconds": 22.52,
+        "text": "It can ask visitors how their choices affect a natural place.",
+        "confidence": null
+      },
+      {
+        "id": "segment-5",
+        "startSeconds": 22.52,
+        "endSeconds": 24.52,
+        "text": "Great.",
+        "confidence": null
+      },
+      {
+        "id": "segment-6",
+        "startSeconds": 24.52,
+        "endSeconds": 29.32,
+        "text": "After the event, the ideas are read by the club, and we choose one to try the following",
+        "confidence": null
+      },
+      {
+        "id": "segment-7",
+        "startSeconds": 29.32,
+        "endSeconds": 29.82,
+        "text": "month.",
+        "confidence": null
+      }
+    ],
+    "durationSeconds": 29.665,
+    "audioSha256": "6bab802a14e3bce0e540eb467a84a156de200f18c7c2b42a831651cfbad038e6",
+    "local": true,
+    "disclaimer": "本机英文自动转写可能漏词或改写，请对照原音核对。它不是发音分、完整口语评测或IELTS成绩。"
+  },
+  "rawDiff": {
+    "expectedTokens": 81,
+    "actualTokens": 81,
+    "edits": 0,
+    "changes": []
+  },
+  "normalizedDiff": {
+    "expectedTokens": 70,
+    "actualTokens": 70,
+    "edits": 0,
+    "changes": []
+  },
+  "normalization": "NFKC, lowercase, punctuation, explicit common contractions, numeric/cardinal/time expansion; does not equate general homophones.",
+  "sourcePromptProvided": false
+}
