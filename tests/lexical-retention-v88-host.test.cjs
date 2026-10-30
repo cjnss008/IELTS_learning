@@ -26,3 +26,95 @@ test('the actual page interval counts40s reading,10s ordinary recall and5s resum
  const f=await H.dueFixture({},{nativeMemory:true});let page;try{page=await actualMemoryPage(f);const{app,ordinary}=page,input=ordinary.querySelector('input');input.value='old ordinary draft input';await input.fire('input');const before=f.dom.memory.read(),old=Object.values(before.drafts)[0],cards=JSON.stringify(before.items),row=app.getRetentionPlan().ready.find(r=>r.variant===1);await app.startRetention(row.contractKey,1);const id=H.retentionRows(f)[0].id;let saves=0;const saved=()=>saves++;f.dom.win.addEventListener('ielts:memory-changed',saved);await page.advance(40);f.dom.win.removeEventListener('ielts:memory-changed',saved);let memory=f.dom.memory.read(),retention=H.retentionRows(f)[0],normal=memory.drafts[old.id];assert.equal(ordinary.hidden,true);assert.equal(normal.activeSeconds,0);assert.equal(retention.activeSeconds,40);assert.equal(retention.answers.form,'');assert.ok(saves<=8,'clock persists periodically instead of each second: '+saves);const review=f.dom.dashboard.querySelectorAll('button').find(b=>/^开始本轮复习|^查看复习安排/.test(b.textContent));await review.click();assert.equal(ordinary.hidden,false);assert.equal(ordinary.querySelector('input').value,'old ordinary draft input');await page.advance(10);await ordinary.querySelectorAll('button').find(b=>b.textContent.startsWith('查看提示')).click();memory=f.dom.memory.read();normal=memory.drafts[old.id];assert.equal(normal.activeSeconds,10);assert.equal(H.retentionRows(f)[0].activeSeconds,40);const normalBytes=JSON.stringify(normal);await app.startRetention(row.contractKey,1);assert.equal(ordinary.hidden,true);assert.equal(H.retentionRows(f)[0].id,id);await page.advance(5);memory=f.dom.memory.read();retention=H.retentionRows(f)[0];assert.equal(retention.activeSeconds,45);assert.equal(JSON.stringify(memory.drafts[old.id]),normalBytes);const E=f.dom.win.IELTSEssentialVocabulary,budget=f.dom.win.IELTSYearPlanner.calendarBudget(await f.dom.records.list(),Object.values(memory.drafts).concat(E.activityDrafts(memory)),E.dateKey(f.clock));assert.ok(Math.abs(budget.spentMinutes-55/60)<1e-8);assert.equal(JSON.stringify(memory.items),cards);assert.equal(app.getRetentionPlan().lapses,0);assert.equal(app.getRetentionPlan().completed.length,0);assert.equal((await f.dom.records.list()).filter(r=>r.source==='reviewed-context-retention-v88').length,0);await H.H.DOM.button(f.dom.practice,'保存并收起保持练习').click();assert.equal(H.retentionRows(f)[0].activeSeconds,45);
  }finally{page?.app.destroy();f.close();}
 });
+
+test('opening coalesces public repaint and finally freezes the real eligible retention contract', async () => {
+  const f = H.setup({nativeMemory:true});
+  const {win, storage, memory, practice, dashboard} = f.dom;
+  const memoryKey = H.M.KEY;
+  const previousCurriculum = win.IELTSCurriculumData;
+  const previousFamily = win.IELTSFamilyLessonExpansionV95;
+  let oldApp = null, app = null, opening = null, releaseOpen = () => {};
+  let watchPublic = false, signalPublic = () => {};
+  const bounded = (promise, label) => {
+    let timer;
+    return Promise.race([promise, new Promise((_, reject) => { timer = setTimeout(() => reject(Error('timeout: ' + label)), 15000); })])
+      .finally(() => clearTimeout(timer));
+  };
+  try {
+    const initial = await H.initial(f);
+    oldApp = initial.app;
+    oldApp.getRetentionPlan();
+    const complete = H.copy(memory.read());
+    const original = Object.entries(complete.reviewedRetention?.contracts || {}).find(([, c]) => c.initial?.recordId === initial.record.id);
+    assert.ok(original, 'real initial must yield a reviewed contract');
+    const [contractKey, expectedContract] = original;
+    const oldBatchId = expectedContract.initial.batchId;
+    const oldBatch = H.copy(complete.essential.batches[oldBatchId]);
+    assert.ok(oldBatch && oldBatch.status === 'submitted' && !oldBatch.draft);
+    assert.equal(oldBatch.recordId, initial.record.id);
+    assert.ok(!Object.values(complete.reviewedRetention.drafts || {}).some(d => d.contractKey === contractKey));
+    assert.ok(!Object.values(complete.reviewedRetention.observations || {}).some(o => o.contractKey === contractKey));
+    const originalAnswer = initial.record.answer;
+    oldApp.destroy(); oldApp = null;
+
+    delete complete.essential.batches[oldBatchId];
+    delete complete.reviewedRetention.contracts[contractKey];
+    storage.setItem(memoryKey, JSON.stringify(complete));
+    const records = await f.dom.records.list();
+    assert.ok(records.some(r => r.id === initial.record.id && r.answer === originalAnswer));
+
+    let signalOpening;
+    const reachedOpening = new Promise(resolve => { signalOpening = resolve; });
+    const openGate = new Promise(resolve => { releaseOpen = resolve; });
+    const publicChecked = new Promise(resolve => { signalPublic = resolve; });
+    const runtime = {
+      async prepareVocabularyUnit() { return {status:'ready', records:await f.dom.records.list()}; },
+      isCurrentFullRecords(rows) { assert.ok(Array.isArray(rows)); if (watchPublic) signalPublic(); return true; }
+    };
+    win.IELTSFamilyLessonExpansionV95 = {runtime: () => runtime};
+    win.IELTSCurriculumData = {...previousCurriculum, familyLessonRelease:{active:true, units:[{day:53}]}};
+    app = f.mount({courseDay:53, now:() => f.clock, initialRecords:records, contextWords:f.dom.entries, courseWords:[], onActiveChange:async (active, info) => { if (active && info?.kind === 'new') { signalOpening(); await openGate; } }});
+    await tick(); await tick();
+    assert.equal(memory.read().reviewedRetention.contracts[contractKey], undefined);
+    opening = app.start();
+    await bounded(reachedOpening, 'opening gate');
+    assert.equal(app.isBusy(), true);
+    assert.equal(app.getState(), null);
+
+    const during = H.copy(memory.read());
+    during.essential.batches[oldBatchId] = H.copy(oldBatch);
+    storage.setItem(memoryKey, JSON.stringify(during));
+    const R = win.IELTSLexicalRetentionV88;
+    const preview = R.freeze(during, records, {adaptive:f.adaptive, day:53, now:f.clock});
+    assert.equal(preview.changed, true, 'genuine pending contract must be eligible');
+    assert.deepEqual(H.copy(preview.state.reviewedRetention.contracts[contractKey]), H.copy(expectedContract));
+    assert.equal(memory.read().reviewedRetention.contracts[contractKey], undefined);
+
+    watchPublic = true;
+    win.dispatchEvent(new win.CustomEvent('ielts:public-course-plan-changed', {detail:{profileId:win.IELTSProfiles.current().id}}));
+    await bounded(publicChecked, 'public callback');
+    await tick();
+    watchPublic = false;
+    assert.equal(app.isBusy(), true);
+    assert.equal(memory.read().reviewedRetention.contracts[contractKey], undefined, 'public repaint is suppressed while opening');
+
+    releaseOpen();
+    await bounded(opening, 'verified opening');
+    assert.ok(app.getState(), 'the real vocabulary controller opened');
+    assert.ok(practice.querySelector('.vocab-answer'));
+    const finalMemory = memory.read();
+    assert.deepEqual(H.copy(finalMemory.reviewedRetention.contracts[contractKey]), H.copy(expectedContract), 'finally must run real retention.prepare');
+    assert.deepEqual(H.copy(finalMemory.essential.batches[oldBatchId]), oldBatch);
+    assert.equal((await f.dom.records.list()).find(r => r.id === initial.record.id)?.answer, originalAnswer);
+    assert.equal(Object.keys(finalMemory.reviewedRetention.observations || {}).length, 0);
+  } finally {
+    watchPublic = false;
+    try { releaseOpen(); } catch (_) {}
+    if (opening) await Promise.race([opening.catch(() => {}), new Promise(resolve => setTimeout(resolve, 1000))]);
+    try { app?.destroy(); } catch (_) {}
+    try { oldApp?.destroy(); } catch (_) {}
+    win.IELTSFamilyLessonExpansionV95 = previousFamily;
+    win.IELTSCurriculumData = previousCurriculum;
+    f.close();
+  }
+});

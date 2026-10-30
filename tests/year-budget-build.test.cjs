@@ -16,7 +16,7 @@ function expectedMaterialCount(){
  const release=D.familyLessonRelease,batches=release?.active?(release.batches||[release]):[];
  if(meta.runtimeContract?.contract?.path==='curriculum/year-first-use-runtime-contract-v114-context-lexicon.json')assert.deepEqual(batches.map(batch=>batch.id),profiles.slice(0,2).map(profile=>profile.id),'v114 requires both signed family batches in order');
  if(['curriculum/year-first-use-runtime-contract-v115-completed-history.json','curriculum/year-first-use-runtime-contract-v117-vocabulary-response.json'].includes(meta.runtimeContract?.contract?.path))assert.deepEqual(batches.map(batch=>batch.id),profiles.slice(0,3).map(profile=>profile.id),'v115/v117 require the original three signed family batches in historical order');
- if(['curriculum/year-first-use-runtime-contract-v118-assessment-linked.json','curriculum/year-first-use-runtime-contract-v119-content-batch.json'].includes(meta.runtimeContract?.contract?.path))assert.deepEqual(batches.map(batch=>batch.id),profiles.map(profile=>profile.id),'v118/v119 require all signed family batches in historical order');
+ if(['curriculum/year-first-use-runtime-contract-v120-stability.json','curriculum/year-first-use-runtime-contract-v119-content-batch.json'].includes(meta.runtimeContract?.contract?.path))assert.deepEqual(batches.map(batch=>batch.id),profiles.map(profile=>profile.id),'v118/v119 require all signed family batches in historical order');
  const ids=[],baseIds=new Set(modes.actual.materials.map(material=>material.id));
  for(const [i,batch] of batches.entries()){
   const profile=profiles[i];assert.ok(profile,'Unknown family release profile');assert.equal(batch.id,profile.id);

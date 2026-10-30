@@ -9,6 +9,7 @@ const Essential=require('../assets/essential-vocabulary-data.js');
 const Helper=require('../assets/family-lesson-expansion-v95.js');
 const {binding}=require('./daily-review-fixture.cjs').helper('family-multibatch-runtime.test.cjs','binding');
 const root=path.resolve(__dirname,'..'),copy=F.copy,A=F.A,P=F.P;
+function progressForRecord(win,id){let finish;const promise=new Promise((resolve,reject)=>{let settled=false,timer;const handler=event=>{if(Array.isArray(event.detail?.allRecords)&&event.detail.allRecords.some(row=>row.id===id))finish(null,event);};finish=(error,event)=>{if(settled)return;settled=true;clearTimeout(timer);win.removeEventListener?.('ielts:course-progress',handler);if(error)reject(error);else resolve(event);};timer=setTimeout(()=>finish(Error('timeout waiting for progress: '+id)),15000);win.addEventListener('ielts:course-progress',handler);});return{promise,cancel:()=>finish(null,null)};}
 // Environment overrides are intended for an isolated inactive-package copy;
 // a normal integrated checkout reads its own eventual v115 release.
 const earlyRoot=process.env.FAMILY_EARLY_BATCH_ROOT?path.resolve(process.env.FAMILY_EARLY_BATCH_ROOT):root;
@@ -277,13 +278,13 @@ test('due review stays ahead of the early unit and real exhausted or insufficien
  // answer and long duration are synthetic, not a claimed learner activity.
  const S=require('../assets/memory-session.js'),word=Essential.entries.find(w=>w.word!=='student'),item={...word,skill:'spelling'},seconds=359.9*60;
  const draft=S.makeDraft(item,{id:'synthetic-budget-spent',courseDay:2,now:now-seconds*1000});draft.answer=item.word;draft.activeSeconds=seconds;draft.activityByDate={[win.IELTSYearPlanner.dateKey(now)]:seconds};
- const spent=S.recordFor(draft,item,{correct:true},{now});f.context.__spent=JSON.stringify(spent);await vm.runInContext('window.IELTSRecords.record(JSON.parse(__spent))',f.context);
- await F.settle();await nav.refreshYearRecords();await F.settle();const remaining=nav.budget();assert.equal(remaining.budgetMinutes,360);assert.ok(remaining.remainingMinutes>0&&remaining.remainingMinutes<1,JSON.stringify(remaining));
+ const spent=S.recordFor(draft,item,{correct:true},{now});f.context.__spent=JSON.stringify(spent);const spentGate=progressForRecord(win,spent.id);try{await Promise.all([spentGate.promise,vm.runInContext('window.IELTSRecords.record(JSON.parse(__spent))',f.context)]);}finally{spentGate.cancel();}
+ await F.settle();const remaining=nav.budget();assert.equal(remaining.budgetMinutes,360);assert.ok(remaining.remainingMinutes>0&&remaining.remainingMinutes<1,JSON.stringify(remaining));
  const low=nav.learningQueue(),due=low.entries.find(e=>e.dueReview);assert.ok(due);assert.equal(due.fitsBudget,false);assert.equal(low.next.kind,'rest');
  assert.equal(await nav.openQueued(available),false);assert.equal(win.location.href,href);assert.equal(JSON.stringify(M.read()),oldMemory);
  const beforeFinish=JSON.stringify(await f.R.list());f.advance(7000);const end=f.context.Date.now(),small=S.makeDraft(item,{id:'synthetic-budget-last',courseDay:2,now:end-7000});
  small.answer=item.word;small.activeSeconds=7;small.activityByDate={[win.IELTSYearPlanner.dateKey(end)]:7};const input=S.recordFor(small,item,{correct:true},{now:end});
- f.context.__finish=JSON.stringify(input);await vm.runInContext('window.IELTSRecords.record(JSON.parse(__finish))',f.context);await F.settle();await nav.refreshYearRecords();await F.settle();
+ f.context.__finish=JSON.stringify(input);const finishGate=progressForRecord(win,input.id);try{await Promise.all([finishGate.promise,vm.runInContext('window.IELTSRecords.record(JSON.parse(__finish))',f.context)]);}finally{finishGate.cancel();}await F.settle();
  const exhausted=nav.budget();assert.equal(exhausted.exhausted,true);assert.equal(nav.learningQueue().next.kind,'budget');assert.equal(await nav.openQueued(available),false);
  const finalRows=await f.R.list();for(const prior of JSON.parse(beforeFinish))assert.equal(JSON.stringify(finalRows.find(r=>r.id===prior.id)),JSON.stringify(prior));
  assert.equal(JSON.stringify(M.read()),oldMemory);assert.equal(nav.learningQueue().currentComplete,false);

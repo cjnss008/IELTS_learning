@@ -1,0 +1,244 @@
+{
+  "version": "0.0.120",
+  "date": "2026-10-31",
+  "status": "passed-with-known-limitations",
+  "scope": [
+    "开组核验期间显示提示并禁用开始按钮，完成后开放词卡",
+    "仅按精确字符串键缓存纯 SHA 摘要：单项阈值 65536→131072，总量/条数限制不变；不缓存用户授权、可变档案、来源或预算结论",
+    "可信冻结记录索引的 parsedAnswer 复用：外部/未认证记录仍走原解析，不因缓存放宽来源或 owner 校验",
+    "courseDayOnly 窄查询与同次已验证 taskState/latest 复用：未读/未知仍拒绝，所有来源、owner、音频与预算守卫保留",
+    "publicPlanChanged 开组期间合并重复 render；最终开组仍由开组 finally 绘制",
+    "v120 精确 55 组件运行合同；历史合同字节、旧批次绑定和旧教材/课表不变",
+    "按当前合同更新测试期望，并建立独立 PUBLIC_V120 公开快照 profile",
+    "浏览器合成档案验收：预算耗尽阻止、已提交原答回显、同 owner 受控旧回调"
+  ],
+  "contract": {
+    "path": "curriculum/year-first-use-runtime-contract-v120-stability.json",
+    "sha256": "4f08f57fa130417b67e668a9a9af787d5455c9d6e40eb08335edc6c1c2998c70",
+    "bytes": 11118,
+    "components": 55,
+    "previousContractsPreserved": true
+  },
+  "build": {
+    "status": "complete-material-set",
+    "materials": 2232,
+    "days": 365,
+    "units": 39,
+    "familyBatches": 5,
+    "missing": 0,
+    "audioMissing": 0,
+    "index": "curriculum/year-first-use/index.f0c7bd8a026928d1.json",
+    "indexSha256": "f0c7bd8a026928d10c52961d59d9d617a8516f353f4881422e628dda2c6cdc2b",
+    "indexBytes": 384128,
+    "curriculumDataSha256": "2557cc509ed89d74105275f53a7bbebdfc260d76378a03db95d94ed1d9abca02",
+    "manifestSha256": "c0eb085a9bf48d5ca861324b16f8daa94f7de44711360d22882871921a4eb6cb",
+    "assessmentCoreSha256": "5b3901a031ddf273f6b39b306a33728a92b41044d272d2ac9e26cd1faa6242ad",
+    "budgetPlanSha256": "1a3dc10be3843613c0cea0aa286a259bb43d9fb90f84ad1aad85058f0fcbbe3d"
+  },
+  "automated": {
+    "fullSuite": {
+      "tests": 3047,
+      "pass": 3044,
+      "fail": 0,
+      "skipped": 3,
+      "exitCode": 0,
+      "evidence": "work/v121-accept-full.log"
+    },
+    "fingerprints": {
+      "sourceFingerprintsEqual": true,
+      "components": 55,
+      "contractBefore": "4f08f57fa130417b67e668a9a9af787d5455c9d6e40eb08335edc6c1c2998c70",
+      "contractAfter": "4f08f57fa130417b67e668a9a9af787d5455c9d6e40eb08335edc6c1c2998c70",
+      "componentChanged": 0,
+      "keyChanged": 0,
+      "testChanged": 0,
+      "testNew": 0,
+      "testMissing": 0,
+      "evidence": "work/v121-accept-fingerprints-after.json"
+    },
+    "check": {
+      "exitCode": 0,
+      "pages": 27,
+      "localLinksAssets": 870,
+      "scripts": 129,
+      "lessons": 52,
+      "vocabularyAudio": 360,
+      "evidence": "work/v121-accept-check.log"
+    },
+    "curriculumAudit": {
+      "exitCode": 0,
+      "status": "passed",
+      "days": 365,
+      "hours": 2190,
+      "materials": 2232,
+      "questions": 8698,
+      "uniqueQuestionInstances": 8535,
+      "sourceInputs": 598,
+      "evidence": "work/v121-accept-audit-curriculum.log"
+    },
+    "questionQuality": {
+      "exitCode": 0,
+      "sources": 830,
+      "questions": 7800,
+      "high": 0,
+      "review": 5,
+      "currentHashReviewed": 5,
+      "unresolved": 0,
+      "evidence": "work/v121-accept-audit-question.log"
+    }
+  },
+  "performance": {
+    "method": "strict same-condition controlled pair; synthetic profile; no p95",
+    "openMs": {
+      "baseline": 30846,
+      "candidate": 19915
+    },
+    "saveCloseMs": {
+      "baseline": 3656,
+      "candidate": 2816
+    },
+    "resumeMs": {
+      "baseline": 2701,
+      "candidate": 2147
+    },
+    "verdict": "single controlled pair only; first open still about 20 seconds; not claimed solved and no p95 target"
+  },
+  "browserAcceptance": {
+    "tool": "CDP headless Edge on isolated ports",
+    "syntheticProfile": {
+      "name": "02-day28-core-complete",
+      "rows": 224,
+      "sha256": "49b96e19b915ff035b86e6e9df9c931906368525aa140dc403b1e0e2363c52f6",
+      "nonSyntheticData": false
+    },
+    "A": {
+      "purpose": "保存并收起、续学与刷新后的草稿恢复",
+      "normalSaveReload": {
+        "baseline": "pass",
+        "candidate": "pass",
+        "dialogs": 0,
+        "records": 224,
+        "recordsDigest": "ed8ffaf01720b0792df0a02a296fbf3f39af58b714db6d95cf51a0939b7a89f2",
+        "draftDigest": "ec174cd037b1aa83096897de142bf87fc8c12c40f0b130a1065c4c8bb5fe41ea"
+      },
+      "forcedLeave": {
+        "baseline": "conflict after accepting beforeunload while sync was in flight",
+        "candidate": "one immediate run reached ready; not deterministic in this run",
+        "conclusion": "known un-fixed forced-leave sync race; beforeunload protection is present; no source change"
+      },
+      "evidence": [
+        "work/v121-reload-comparison.json",
+        "work/v121-reload-base-r2a-auto.json",
+        "work/v121-reload-cand-r2a-auto.json",
+        "work/v121-reload-base-r2i-immediate.json",
+        "work/v121-reload-cand-r2i-immediate.json"
+      ]
+    },
+    "B": {
+      "purpose": "共享预算真实耗尽后阻止续学",
+      "owner": "legacy",
+      "records": 224,
+      "recordsDigestBefore": "ed8ffaf01720b0792df0a02a296fbf3f39af58b714db6d95cf51a0939b7a89f2",
+      "recordsDigestAfter": "ed8ffaf01720b0792df0a02a296fbf3f39af58b714db6d95cf51a0939b7a89f2",
+      "batchIdsBefore": [
+        "essential-batch-9181c663-9dd4-49bd-b74c-885fbc1e31b1"
+      ],
+      "batchIdsAfter": [
+        "essential-batch-9181c663-9dd4-49bd-b74c-885fbc1e31b1"
+      ],
+      "readBudget": {
+        "remainingMinutes": 0,
+        "exhausted": true,
+        "dayEnded": false,
+        "budgetError": null
+      },
+      "resumeTarget": {
+        "exists": true,
+        "disabled": false,
+        "hit": true
+      },
+      "clickDelivered": 1,
+      "blockedMessage": true,
+      "usableInputsAfter": 0,
+      "requiredMissing": 0,
+      "evidence": "work/v121-browser-b2.json"
+    },
+    "C1": {
+      "purpose": "已提交原答的只读回显",
+      "recordId": "stage-fixture-27-w04-read-6-writing",
+      "materialId": "w04-read-6-writing",
+      "day": 27,
+      "matchingSession": true,
+      "expectedView": true,
+      "visible": true,
+      "readOnly": true,
+      "textMatches": true,
+      "recordsCountSame": true,
+      "recordsDigestSame": true,
+      "requiredMissing": 0,
+      "evidence": "work/v121-browser-c1.json"
+    },
+    "C2": {
+      "purpose": "同 owner 真实旧实例 dispose 后，受控真实回调完成",
+      "scope": "same-owner controlled destroy/remount; not cross-profile and not natural click routing",
+      "gate": {
+        "entered": true,
+        "realReady": true,
+        "realCurrent": true,
+        "oldPhase": true,
+        "claimed": true
+      },
+      "newViewMounted": true,
+      "oldCallbackConsumerReached": true,
+      "oldDomUnchanged": true,
+      "newViewSurvived": true,
+      "records": 224,
+      "recordDigestSame": true,
+      "batchIdsSame": true,
+      "memoryDigestSame": true,
+      "requiredMissing": 0,
+      "evidence": "work/v121-browser-c2b.json"
+    }
+  },
+  "dataProtection": {
+    "syntheticOnly": true,
+    "familyDataTouched": false,
+    "realUserConfigsTouched": false,
+    "realProgressOrRecordingsTouched": false,
+    "oldContractBytesPreserved": true,
+    "oldUserAnswersAndDraftsUntouched": true,
+    "publishedAtAcceptance": false,
+    "formalBaselineAtAcceptance": {
+      "version": "0.0.119",
+      "commit": "71a61118a9cb28bf288601b11eef7f0bceba0d55"
+    },
+    "baselineNote": "0.0.119 / 71a6111 is the formal baseline observed during acceptance, not a post-release state.",
+    "releaseReceipt": {
+      "status": "not-created",
+      "required": true,
+      "separateFromValidation": true
+    }
+  },
+  "knownLimitations": [
+    "保存尚未完成时接受 beforeunload 强制离开的同步竞态仍可产生版本冲突；未修复，不能称为已解决",
+    "首次新建词组的受控单对样本仍约 20 秒；没有 p95，也没有覆盖家人 NAS 的真实耗时",
+    "C2 只覆盖同 owner 受控 destroy/remount，不覆盖跨档案或自然点击路由",
+    "真实 AI、真人麦克风、家人电脑与长期学习效果未验证",
+    "浏览器验收使用合成档案与合成活动标记，不代表真实学习完成或 IELTS 成绩"
+  ],
+  "developmentEvidence": {
+    "note": "Paths are development-workspace evidence, not files shipped to the formal product.",
+    "files": [
+      "work/v121-accept-full.log",
+      "work/v121-accept-fingerprints-after.json",
+      "work/v121-accept-build.log",
+      "work/v121-accept-check.log",
+      "work/v121-accept-audit-curriculum.log",
+      "work/v121-accept-audit-question.log",
+      "work/v121-reload-comparison.json",
+      "work/v121-browser-b2.json",
+      "work/v121-browser-c1.json",
+      "work/v121-browser-c2b.json"
+    ]
+  }
+}

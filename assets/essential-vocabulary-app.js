@@ -472,7 +472,7 @@
       check();if(retention?.isActive?.()){notice('先保存并收起新语境保持练习，原输入保留。');return false;}
       if (controller?.getMediaState?.()?.busy) throw Error('正在录音或评测，请先完成当前操作。');
       if (batch && !finished) { activity(); saveDraft(); }
-      const ticket={};opening=ticket;
+      const ticket={};opening=ticket;statusText='正在核对词组来源与词音，请稍候…';
       try{
       render();
       const savedValue=allBatches(M.read()).find(item=>item.id===(typeof value==='string'?value:value.id))||value;if(familyBatch(savedValue)){await durable();await refreshFamily(savedValue.contextSource.binding.originCourseDay);await options.refreshBudget?.();}else if(ownedBatch(savedValue)&&R?.list)records=await R.list();check();const access=familyBatch(savedValue)?await familySourceAccess(savedValue):sourceAccess(savedValue);if(!access.allowed){controller?.pause?.();controller?.destroy?.();controller=null;batch=null;statusText='这份词组的签审原文、原音或授权尚未核验；原输入与原音保留，原句暂不展示。';practice.replaceChildren(node('p',statusText,'memory-feedback'));render();return false;}
@@ -596,7 +596,7 @@
       const knownForms=plan.recognizedWordForms||[];if(day>=2&&knownForms.length)fresh.append(node('p','已核验的原稿词形：'+knownForms.map(item=>item.surface+' → '+item.canonicalCandidate).join('、')+'。仅用于避免重复，不代表原形已掌握。'));
       if(day>=2&&plan.unresolvedNewCandidates?.length)fresh.append(node('p','有 '+plan.unresolvedNewCandidates.length+' 个候选词与旧词形可能重合或缺少词形关系，待核验；其他已验证候选可继续。'));
       if(day>=2&&plan.familyUnit){const unit=plan.familyUnit;fresh.append(node('p','本课新增单元已完成 '+unit.completed+'/'+unit.target+'。'+(unit.sourceGap?'其中 '+unit.sourceGap+' 个目标已有学习记录或词形关系待核验，须另审核不同新词补足，不重复训练旧词。':unit.goalRemaining?'剩余 '+unit.goalRemaining+' 个待完成。':'真实原稿已保留，后续按时复习。')));}
-      const startButton = button(active ? '继续未完成词组' : available ? '开始本组 '+groupSize+' 词' : '暂不增加新词', active ? () => openBatch(active) : start, !!options.preferNewWords || !!active || !reviewCount);
+      const startButton = button(opening ? '正在核对词组与词音，请稍候…' : active ? '继续未完成词组' : available ? '开始本组 '+groupSize+' 词' : '暂不增加新词', active ? () => openBatch(active) : start, !!options.preferNewWords || !!active || !reviewCount);if(opening){startButton.disabled=true;startButton.setAttribute('aria-busy','true');}
       startButton.disabled = !!opening || day<2 || !active && (!available || reviewRequired) || !!batch && !finished;
       fresh.append(startButton);const sourceWaiting=currentContext?.awaitingSourceWords?.length||0;if(sourceWaiting)fresh.append(node('p',contextual?.waitingMessage?.(currentContext.awaitingSourceWords)||'对应来源资格待核验，原输入保留。','memory-subtle'));if(plan.heldSourceBatches?.length)fresh.append(node('p','有旧词组等待同源原稿核验，原输入与原音保留，暂不开训练。','memory-subtle'));const heldSenses=(currentContext?.pending||[]).filter(p=>p.reason==='owned-source-existing-word-snapshot-preserved');if(heldSenses.length)fresh.append(node('p','有 '+heldSenses.length+' 个新语境义项与旧词卡不同，旧义与原稿保留；新义项待单独安排。','memory-subtle'));const held=(plan.pendingContextWords||[]).filter(w=>w.heldForVerification===true);if(held.length)fresh.append(node('p','有 '+held.length+' 个原课语境词的原文版本待核验，原词义与来源已保留；核验后继续，不用新版原文替代。','memory-subtle'));if(currentContext?.heldContexts?.length)fresh.append(node('p','有旧语境来源合同待核对，原任务保留，暂不新增该组。','memory-subtle'));const carryGroups=new Map();for(const word of plan.pendingContextWords||[])if(word.originCourseDay<day&&word.heldForVerification!==true)carryGroups.set(word.originCourseDay,(carryGroups.get(word.originCourseDay)||0)+1);if(carryGroups.size){fresh.append(node('p','前课待补内容仍保留；补学原稿与用时计入当前课次和实际日期，旧课结果不重开。','memory-subtle'));for(const [originDay,count]of carryGroups){fresh.append(node('p','第 '+originDay+' 课：'+count+' 个语境词待补'));const resume=button('补第 '+originDay+' 课语境词',()=>start(originDay));resume.disabled=!!active||!!batch&&!finished||reviewRequired||!available;fresh.append(resume);}}if(options.preferNewWords&&!reviewRequired)route.append(fresh,review);else route.append(review,fresh);
       if(!options.inline&&(plan.quota?.courseReservedToday||pendingCourseWords(P.storage()).length)){const line=node('p',plan.quota?.courseReservedToday?'本课另有 '+plan.quota.courseReservedToday+' 个必学新词，沿用课程训练，不重复初学。':'课程中的未提交词汇已保留，继续原稿即可。','memory-subtle'),link=node('a','继续本课词汇');link.href='今日学习.html?day='+day+(P.isPreview?.()?'&preview=1':'');line.append(doc.createTextNode(' '),link);fresh.append(line);}
@@ -635,7 +635,11 @@
       Promise.resolve().then(async()=>{
         publicRefreshRunning=true;check();const runtime=root.IELTSFamilyLessonExpansionV95?.runtime?.();if(!runtime?.prepareVocabularyUnit)return;
         for(const origin of origins){const snapshot=familySnapshots.get(origin);if(!snapshot||runtime.isCurrentFullRecords?.(snapshot)!==true)await refreshFamily(origin);check();}
-        if(!disposed&&!saving&&!savingDraft&&!retention?.isBusy?.())render();
+        // Opening already owns the final render in its own finally. Defer this
+        // UI-only repaint until then instead of rendering the opening state twice.
+        // Refresh/check above still run; a callback that finishes after opening
+        // renders itself below. Retention.prepare therefore runs once at final render.
+        if(!disposed&&!saving&&!savingDraft&&!retention?.isBusy?.()&&!opening)render();
       }).catch(error=>{if(!disposed&&owner===P?.current?.()?.id)notice(error.message);}).finally(()=>{publicRefreshRunning=false;publicRefreshQueued=false;if(publicRefreshAgain&&!disposed){publicRefreshAgain=false;publicPlanChanged({detail:{profileId:owner}});}});
     };
     const profileChanged = () => { disposed = true; retention?.destroy?.();controller?.destroy?.();practice.querySelectorAll('input,textarea,button').forEach(el=>{el.disabled=true;});dashboard.replaceChildren(node('p','学习档案已切换，请刷新后继续。')); };

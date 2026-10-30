@@ -1,5 +1,6 @@
 (function (root) {
   'use strict';
+  const initialSnapshotIndex=root.IELTSRecordSnapshotIndex,initialAssessment=root.IELTSAssessment;
   const KEY = 'ielts52-course-player-v1';
   const SKILLS = ['vocabulary', 'grammar', 'listening', 'reading', 'speaking', 'writing', 'reflection'];
   const NAMES = {vocabulary:'词汇', grammar:'语法', listening:'听力', reading:'阅读', speaking:'口语', writing:'写作', reflection:'复盘'};
@@ -460,7 +461,13 @@
   }
   function objectiveSubmissionComplete(record,material,assessment=root.IELTSAssessment) {
 
-    let artifact;try{artifact=typeof record?.answer==='string'?JSON.parse(record.answer):record?.answer;}catch(_){return false;}
+    let artifact;try{
+      if(typeof record?.answer==='string'){
+        let parsed=null;const useIndex=initialSnapshotIndex&&initialAssessment&&root.IELTSRecordSnapshotIndex===initialSnapshotIndex&&root.IELTSAssessment===initialAssessment&&assessment===initialAssessment&&typeof initialSnapshotIndex.parsedAnswer==='function';
+        if(useIndex)parsed=initialSnapshotIndex.parsedAnswer(record);
+        artifact=parsed?.available===true?parsed.value:JSON.parse(record.answer);
+      }else artifact=record?.answer;
+    }catch(_){return false;}
     const api=assessment||(typeof require==='function'?require('./assessment-core.js'):null);if(!artifact?.answers||!api)return false;
     try{const bound=api.resolveArtifactMaterial?.(material,artifact,record);if(bound&&!bound.valid)return false;material=bound?.material||material;if(!material||!['reading','listening','grammar'].includes(material.skill)||!Array.isArray(material.questions)||!material.questions.length)return false;const grade=api.gradeMaterialForArtifact(material,artifact);return grade.allGradable===true&&grade.total===material.questions.length&&grade.answered===material.questions.length;}catch(_){return false;}
   }

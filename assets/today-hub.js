@@ -123,8 +123,12 @@ function latestForMaterial(task,records,dayNumber,materials=[],data){
  }
  return byMaterial;
 }
-function taskState(task,records,options={}){
+function taskStateAndLatest(task,records,options={}){
  const flow=root.IELTSCourseExpansion||(typeof require==='function'?require('./course-expansion.js'):null),required=[...new Set(flow?.orderedMaterialIds?.(task,options.dayNumber)||task.materialIds||[])],latest=latestForMaterial(task,records,options.dayNumber,options.materials||options.data?.materials||root.IELTSCurriculumData?.materials||[],options.data);
+ return{state:taskStateFrom(task,records,options,required,latest),latest};
+}
+function taskState(task,records,options={}){return taskStateAndLatest(task,records,options).state;}
+function taskStateFrom(task,records,options,required,latest){
  if(task.id==='reflection'){
   const annual=options.dayNumber===365&&(Array.isArray(records)?records:[]).some(r=>r.source==='year-review'&&r.materialId==='reflection-365'&&artifact(r.answer)?.yearSummary?.text?.trim().length>=20);const done=annual||options.completionValid===true;return{done,pending:false,count:done?1:0,total:1,missingMaterialIds:done?[]:required,nextMaterialId:required[0]||null};
  }
@@ -316,5 +320,5 @@ function mount(){
  if(new URLSearchParams(root.location.search).get('preview')==='1')doc.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href');if(href&&!/^(https?:|#)/.test(href)&&/\.html(?:[?#]|$)/.test(href)){const url=new URL(href,root.location.href);url.searchParams.set('preview','1');link.href=url.href;}});
  return{render,start,refreshRecords};
 }
-return{artifact,relearningRecord,learningCount,vocabularyModuleProgress,learningStatus,latestForMaterial,taskState,chooseNext,hasDraft,lessonTheme,mount};
+return{artifact,relearningRecord,learningCount,vocabularyModuleProgress,learningStatus,latestForMaterial,taskState,taskStateAndLatest,chooseNext,hasDraft,lessonTheme,mount};
 });
